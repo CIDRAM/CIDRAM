@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{xmlLang}">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{css_url}/theme.min.css" />
+    <link rel="stylesheet" href="{css_url}/theme.colors.css" />
+    <title>IPTestScript</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="wrapper_inner">
+            <hr class="hline" />
+            <div id="results">
+                <div id="denied">{denied}</div>
+            </div>
+            <div id="detected">{ReasonMessage}</div>
+            <hr class="hline" />
+            <div id="infoblock">
+                {field_id}XXX<br />
+                {field_datetime}{DateTime}<br />
+                {field_ipaddr}{IPAddr}<br />
+                {field_path}{Path}<br />
+                {field_query}{Query}<br />
+                {field_sigcount}{SignatureCount}<br />
+                {field_sigref}{Signatures}<br />
+                {field_ua}{UA}<br />
+            </div>
+            <hr class="hline" />
+            <div id="footer">
+                <div id="footer_inner" title="DESC_EXAMPLE">
+                <div id="generated_by">&nbsp;{generated_by}&nbsp;</div>
+                <div id="IPTestScriptversion">{IPTestScriptVersion}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

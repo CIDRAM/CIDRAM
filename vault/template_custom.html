@@ -18,22 +18,24 @@
                 <div id="denied">{denied}</div>
             </div>
             <div id="detected">{ReasonMessage}</div>
+            <div id="mailsupport">{EmailAddr}</div>
             <hr class="hline" />
             <div id="infoblock">
-                {field_id}XXX<br />
+                {field_id}{Counter}<br />
+                {field_scriptversion}{ScriptIdent}<br />
                 {field_datetime}{DateTime}<br />
                 {field_ipaddr}{IPAddr}<br />
-                {field_path}{Path}<br />
                 {field_query}{Query}<br />
+                {field_referrer}{Referrer}<br />
                 {field_sigcount}{SignatureCount}<br />
                 {field_sigref}{Signatures}<br />
                 {field_ua}{UA}<br />
             </div>
             <hr class="hline" />
             <div id="footer">
-                <div id="footer_inner" title="DESC_EXAMPLE">
-                <div id="generated_by">&nbsp;{generated_by}&nbsp;</div>
-                <div id="IPTestScriptversion">{IPTestScriptVersion}</div>
+                <div id="footer_inner">
+                    <div id="generated_by">&nbsp;{generated_by}&nbsp;</div>
+                    <div id="ScriptIdent">{ScriptIdent}</div>
                 </div>
             </div>
         </div>

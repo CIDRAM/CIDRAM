@@ -16,38 +16,29 @@
 <td>
 <center>
 <hr style="border-style:solid none none none;border-width:1px;margin:5px 2px 0px 2px;padding:2px;color:#990000;" />
-</center>
-</td>
-</tr>
-<tr>
-<td>
-<center>
 <p style="font-size:20px;font-weight:bold;color:#ff0000;">{denied}</p>
-<p><strong>{ReasonMessage}</strong></p>
+<p><strong>{ReasonMessage}</strong></p>{EmailAddr}
 <hr style="border-style:solid none none none;border-width:1px;margin:5px 2px 0px 2px;padding:2px;color:#990000;" />
 </center>
 <p><strong>
-{field_id}XXX<br />
+{field_id}{Counter}<br />
+{field_scriptversion}{ScriptIdent}<br />
 {field_datetime}{DateTime}<br />
 {field_ipaddr}{IPAddr}<br />
-{field_path}{Path}<br />
 {field_query}{Query}<br />
+{field_referrer}{Referrer}<br />
 {field_sigcount}{SignatureCount}<br />
 {field_sigref}{Signatures}<br />
 {field_ua}{UA}<br />
 </strong></p>
-</td>
-</tr>
-
-<tr>
-<td>
 <center>
 <hr style="border-style:solid none none none;border-width:1px;margin:5px 2px 0px 2px;padding:2px;color:#990000;" />
 </center>
 </td>
 </tr>
+
 <tr>
-<td align="right" style="width:100%;"><span title="DESC_EXAMPLE" style="font-family:Verdana,Arial,Helvetica,sans-serif;letter-spacing:-1px;font-size:8pt;background-color:#ffffff;text-decoration:none;font-weight:bold;white-space:nowrap;"><span style="color:#000000;">&nbsp;{generated_by}&nbsp;</span><span style="color:#ff0000;">{IPTestScriptVersion}</span></span></td>
+<td align="right" style="width:100%;"><span style="font-family:Verdana,Arial,Helvetica,sans-serif;letter-spacing:-1px;font-size:8pt;background-color:#ffffff;text-decoration:none;font-weight:bold;white-space:nowrap;"><span style="color:#000000;">&nbsp;{generated_by}&nbsp;</span><span style="color:#ff0000;">{ScriptIdent}</span></span></td>
 </tr>
 </table>
 </td>

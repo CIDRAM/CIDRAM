@@ -10,40 +10,115 @@
  */
 
 /**
- * Determines the location of the "vault" directory of IPTestScript and saves this information to the $vault variable,
- * required by IPTestScript in order to call, read, write, delete, etc, its files (signatures, includes, logs, etc).
- * (There's this, and a few other parts of this script, borrowed/adapted from phpMussel).
- */
-$vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
-
-/**
  * Set all temporary vars to this, so that it's easier to unset it all later.
  */
 $IPTestScript=array();
-$IPTestScript['Version']='IPTestScript v0.0.2';
 
 /**
- * Kills the script if $vault isn't defined or if it isn't a valid directory.
+ * Script version (we use semver to determine versioning).
  */
-if(!is_dir($vault))die('[IPTestScript] Vault directory not correctly set: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
+$IPTestScript['ScriptVersion']='0.0.3';
+
+/**
+ * How the script identifies itself to clients/users is determined here.
+ */
+$IPTestScript['ScriptIdent']='IPTestScript v'.$IPTestScript['ScriptVersion'];
+
+/**
+ * How the script identifies itself to APIs/servers is determined here.
+ */
+$IPTestScript['ScriptUA']='IPTestScript/'.$IPTestScript['ScriptVersion'].' (https://github.com/Maikuolan/IPTestScript)';
+
+/**
+ * Determines the location of the "vault" directory of IPTestScript and saves this information to the
+ * $IPTestScript['Vault'] variable, required by IPTestScript in order to call, read, write and delete its files when
+ * needed (this includes signatures, includes, logs, etc).
+ *
+ * (There's this, and a few other parts of this script, borrowed/adapted from phpMussel).
+ */
+$IPTestScript['Vault']=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
+
+/**
+ * Kills the script if $IPTestScript['Vault'] isn't defined or if it isn't a valid directory.
+ */
+if(!is_dir($IPTestScript['Vault']))die('[IPTestScript] Vault directory not correctly set: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
+
+if(!empty($_SERVER['QUERY_STRING']))
+    {
+    $IPTestScript['Query']=$_SERVER['QUERY_STRING'];
+    parse_str($_SERVER['QUERY_STRING'],$IPTestScript['QueryVars']);
+    }
+else
+    {
+    $IPTestScript['Query']='';
+    $IPTestScript['QueryVars']=array();
+    }
+
+if(!function_exists('IPTestScriptReadFile'))
+    {
+    /**
+     * This function reads files and returns the contents of those files.
+     *
+     * @param string $f Path and filename of the file to read.
+     * @return string|bool Content of the file returned by the function (or false on failure).
+     */
+    function IPTestScriptReadFile($f)
+        {
+        if(!is_file($f))return false;
+        $s=@ceil(filesize($f)/49152);
+        $d='';
+        if($s>0)
+            {
+            $fh=fopen($f,'rb');
+            $r=0;
+            while($r<$s)
+                {
+                $d.=fread($fh,49152);
+                $r++;
+                }
+            fclose($fh);
+            }
+        return (!empty($d))?$d:false;
+        }
+    }
 
 if(!defined('IPTestScript'))
     {
     define('IPTestScript',true);
     $display_errors=error_reporting(1);
-    $IPTestScript['Config']=@(!file_exists($vault.'config.ini'))?false:parse_ini_file($vault.'config.ini',true);
+    $IPTestScript['Config']=@(!file_exists($IPTestScript['Vault'].'config.ini'))?false:parse_ini_file($IPTestScript['Vault'].'config.ini',true);
     if(!is_array($IPTestScript['Config']))die('[IPTestScript] Could not read config.ini: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
     if(!isset($IPTestScript['Config']['general']))$IPTestScript['Config']['general']=array();
     if(!isset($IPTestScript['Config']['general']['ipaddr']))$IPTestScript['Config']['general']['ipaddr']='REMOTE_ADDR';
+    if(!isset($IPTestScript['Config']['general']['emailaddr']))$IPTestScript['Config']['general']['emailaddr']='';
     if(!isset($_SERVER))$_SERVER=array();
     if(!isset($_SERVER[$IPTestScript['Config']['general']['ipaddr']]))$_SERVER[$IPTestScript['Config']['general']['ipaddr']]='';
-    if(!file_exists($vault.'lang.inc'))die('[IPTestScript] Language data file missing! Please reinstall IPTestScript.');
-    require $vault.'lang.inc';
+    if(!file_exists($IPTestScript['Vault'].'lang.inc'))die('[IPTestScript] Language data file missing! Please reinstall IPTestScript.');
+    require $IPTestScript['Vault'].'lang.inc';
     if(!isset($IPTestScript['Config']['signatures']))$IPTestScript['Config']['signatures']=array();
     if(!isset($IPTestScript['Config']['signatures']['block_cloud']))$IPTestScript['Config']['signatures']['block_cloud']=true;
     if(!isset($IPTestScript['Config']['signatures']['block_bogons']))$IPTestScript['Config']['signatures']['block_bogons']=true;
     if(!isset($IPTestScript['Config']['signatures']['block_generic']))$IPTestScript['Config']['signatures']['block_generic']=true;
     if(!isset($IPTestScript['Config']['signatures']['block_spam']))$IPTestScript['Config']['signatures']['block_spam']=true;
+    $IPTestScript['CacheModified']=false;
+    if(!file_exists($IPTestScript['Vault'].'cache.dat'))
+        {
+        $IPTestScript['handle']=fopen($IPTestScript['Vault'].'cache.dat','w');
+        $IPTestScript['Cache']=array();
+        $IPTestScript['Cache']['Counter']=0;
+        fwrite($IPTestScript['handle'],serialize($IPTestScript['Cache']));
+        fclose($IPTestScript['handle']);
+        if(!file_exists($IPTestScript['Vault'].'cache.dat'))die('[IPTestScript] '.$IPTestScript['lang']['Error_WriteCache']);
+        }
+    else
+        {
+        $IPTestScript['Cache']=unserialize(IPTestScriptReadFile($IPTestScript['Vault'].'cache.dat'));
+        if(!isset($IPTestScript['Cache']['Counter']))
+            {
+            $IPTestScript['CacheModified']=true;
+            $IPTestScript['Cache']['Counter']=0;
+            }
+        }
     }
 
 if(!function_exists('ParseVars'))
@@ -131,7 +206,7 @@ function IPv4Test($Addr,$Dump=false)
     $cidr[30]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.(floor($octets[4]/2)*2).'/31';
     $cidr[31]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.$octets[4].'/32';
     if($Dump)return $cidr;
-    $IPv4Sigs=IPTestScriptReadFile($GLOBALS['vault'].'ipv4.dat');
+    $IPv4Sigs=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv4.dat');
     for($i=0;$i<32;$i++)
         {
         $PosA=strpos($IPv4Sigs,"\n".$cidr[$i].' ');
@@ -143,7 +218,7 @@ function IPv4Test($Addr,$Dump=false)
         $Sig=substr($Sig,strpos($Sig,' ')+1);
         if($Cat==='Run')
             {
-            if(file_exists($GLOBALS['vault'].$Sig))require_once $GLOBALS['vault'].$Sig;
+            if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
             // AAA else give me some error message
             continue;
             }
@@ -402,7 +477,7 @@ function IPv6Test($Addr,$Dump=false)
             }
         }
     if($Dump)return $cidr;
-    $IPv6Sigs=IPTestScriptReadFile($GLOBALS['vault'].'ipv6.dat');
+    $IPv6Sigs=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv6.dat');
     for($i=0;$i<128;$i++)
         {
         $PosA=strpos($IPv6Sigs,"\n".$cidr[$i].' ');
@@ -414,7 +489,7 @@ function IPv6Test($Addr,$Dump=false)
         $Sig=substr($Sig,strpos($Sig,' ')+1);
         if($Cat==='Run')
             {
-            if(file_exists($GLOBALS['vault'].$Sig))require_once $GLOBALS['vault'].$Sig;
+            if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
             // AAA else give me some error message
             continue;
             }
@@ -465,44 +540,16 @@ function IPv6Test($Addr,$Dump=false)
     return true;
     }
 
-if(!function_exists('IPTestScriptReadFile'))
-    {
-    /**
-     * This function reads files and returns the contents of those files.
-     *
-     * @param string $f Path and filename of the file to read.
-     * @return string|bool Content of the file returned by the function (or false on failure).
-     */
-    function IPTestScriptReadFile($f)
-        {
-        if(!is_file($f))return false;
-        $s=@ceil(filesize($f)/49152);
-        $d='';
-        if($s>0)
-            {
-            $fh=fopen($f,'rb');
-            $r=0;
-            while($r<$s)
-                {
-                $d.=fread($fh,49152);
-                $r++;
-                }
-            fclose($fh);
-            }
-        return (!empty($d))?$d:false;
-        }
-    }
-
 $IPTestScript['BlockInfo']=array();
 $IPTestScript['BlockInfo']['DateTime']=date('r');
 $IPTestScript['BlockInfo']['IPAddr']=$_SERVER[$IPTestScript['Config']['general']['ipaddr']];
-$IPTestScript['BlockInfo']['IPTestScriptVersion']=$IPTestScript['Version'];
-$IPTestScript['BlockInfo']['Path']=(!empty($_SERVER['PATH_INFO']))?$_SERVER['PATH_INFO']:'';
-$IPTestScript['BlockInfo']['Query']=(!empty($_SERVER['QUERY_STRING']))?$_SERVER['QUERY_STRING']:'';
+$IPTestScript['BlockInfo']['ScriptIdent']=$IPTestScript['ScriptIdent'];
+$IPTestScript['BlockInfo']['Query']=$IPTestScript['Query'];
+$IPTestScript['BlockInfo']['Referrer']=(!empty($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
+$IPTestScript['BlockInfo']['UA']=(!empty($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'';
 $IPTestScript['BlockInfo']['ReasonMessage']='';
 $IPTestScript['BlockInfo']['SignatureCount']=0;
 $IPTestScript['BlockInfo']['Signatures']='';
-$IPTestScript['BlockInfo']['UA']=(!empty($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'';
 $IPTestScript['BlockInfo']['xmlLang']=$IPTestScript['Config']['general']['lang'];
 
 /**
@@ -527,6 +574,26 @@ if(!$IPTestScript['TestIPv4']&&!$IPTestScript['TestIPv6'])
     }
 
 /**
+ * If any signatures were triggered, and if logging is enabled, increment the counter.
+ */
+if($IPTestScript['BlockInfo']['SignatureCount']&&$IPTestScript['Config']['general']['logfile'])
+    {
+    $IPTestScript['Cache']['Counter']++;
+    $IPTestScript['CacheModified']=true;
+    }
+$IPTestScript['BlockInfo']['Counter']=$IPTestScript['Cache']['Counter'];
+
+/**
+ * Save cache data to the cache.
+ */
+if($IPTestScript['CacheModified'])
+    {
+    $IPTestScript['handle']=fopen($IPTestScript['Vault'].'cache.dat','w');
+    fwrite($IPTestScript['handle'],serialize($IPTestScript['Cache']));
+    fclose($IPTestScript['handle']);
+    }
+
+/**
  * If any signatures were triggered, log the event and generate page output.
  */
 if($IPTestScript['BlockInfo']['SignatureCount'])
@@ -535,21 +602,30 @@ if($IPTestScript['BlockInfo']['SignatureCount'])
     if($IPTestScript['Config']['general']['logfile'])
         {
         $IPTestScript['logfileData']=array();
-        $IPTestScript['logfileData']['d']=(!file_exists($vault.$IPTestScript['Config']['general']['logfile']))?"\x3c\x3fphp die; \x3f\x3e\n\n":'';
-        $IPTestScript['logfileData']['d'].=ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],"{field_id}XXX\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_path}{Path}\n{field_query}{Query}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n"));
-        $IPTestScript['logfileData']['f']=fopen($vault.$IPTestScript['Config']['general']['logfile'],'a');
+        $IPTestScript['logfileData']['d']=(!file_exists($IPTestScript['Vault'].$IPTestScript['Config']['general']['logfile']))?"\x3c\x3fphp die; \x3f\x3e\n\n":'';
+        $IPTestScript['logfileData']['d'].=ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n"));
+        $IPTestScript['logfileData']['f']=fopen($IPTestScript['Vault'].$IPTestScript['Config']['general']['logfile'],'a');
         fwrite($IPTestScript['logfileData']['f'],$IPTestScript['logfileData']['d']);
         fclose($IPTestScript['logfileData']['f']);
         unset($IPTestScript['logfileData']);
         }
-    if(!file_exists($vault.$IPTestScript['template_file']))plaintext_echo_die('[IPTestScript] '.$IPTestScript['lang']['denied']);
+    if(!file_exists($IPTestScript['Vault'].$IPTestScript['template_file']))plaintext_echo_die('[IPTestScript] '.$IPTestScript['lang']['denied']);
+    if(!$IPTestScript['Config']['general']['emailaddr'])
+        {
+        $IPTestScript['BlockInfo']['EmailAddr']='';
+        }
+    else
+        {
+        $IPTestScript['BlockInfo']['EmailAddr']='<strong><a href="mailto:'.$IPTestScript['Config']['general']['emailaddr'].'?subject=IPTestScript%20Event&body='.urlencode(ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n{preamble}\n\n"))).'">'.$IPTestScript['lang']['click_here'].'</a></strong>';
+        $IPTestScript['BlockInfo']['EmailAddr']="\n<p><strong>".ParseVars(array('ClickHereLink'=>$IPTestScript['BlockInfo']['EmailAddr']),$IPTestScript['lang']['Support_Email']).'</strong></p>';
+        }
     if($IPTestScript['Config']['general']['forbid_on_block'])
         {
         header('HTTP/1.0 403 Forbidden');
         header('HTTP/1.1 403 Forbidden');
         header('Status: 403 Forbidden');
         }
-    $IPTestScript['html']=ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],IPTestScriptReadFile($vault.$IPTestScript['template_file'])));
+    $IPTestScript['html']=ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],IPTestScriptReadFile($IPTestScript['Vault'].$IPTestScript['template_file'])));
     die($IPTestScript['html']);
     }
 
@@ -567,4 +643,4 @@ if($IPTestScript['BlockInfo']['SignatureCount'])
 /**
  * We unset the script variables and exit cleanly.
  */
-unset($IPTestScript,$vault);
+unset($IPTestScript);

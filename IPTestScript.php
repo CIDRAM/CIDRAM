@@ -20,7 +20,7 @@ $vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
  * Set all temporary vars to this, so that it's easier to unset it all later.
  */
 $IPTestScript=array();
-$IPTestScript['Version']='IPTestScript v0.0.1';
+$IPTestScript['Version']='IPTestScript v0.0.2';
 
 /**
  * Kills the script if $vault isn't defined or if it isn't a valid directory.
@@ -42,6 +42,7 @@ if(!defined('IPTestScript'))
     if(!isset($IPTestScript['Config']['signatures']))$IPTestScript['Config']['signatures']=array();
     if(!isset($IPTestScript['Config']['signatures']['block_cloud']))$IPTestScript['Config']['signatures']['block_cloud']=true;
     if(!isset($IPTestScript['Config']['signatures']['block_bogons']))$IPTestScript['Config']['signatures']['block_bogons']=true;
+    if(!isset($IPTestScript['Config']['signatures']['block_generic']))$IPTestScript['Config']['signatures']['block_generic']=true;
     if(!isset($IPTestScript['Config']['signatures']['block_spam']))$IPTestScript['Config']['signatures']['block_spam']=true;
     }
 
@@ -419,7 +420,6 @@ function IPv6Test($Addr,$Dump=false)
             }
         if($Cat==='Deny')
             {
-            // AAA Need to sort out categories for blocking.
             // AAA Need to sort out categories for blocking.
             if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
                 {

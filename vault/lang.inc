@@ -4,7 +4,7 @@
  *
  * This file: File description here.
  *
- * @package Maikuolan/???
+ * @package Maikuolan/IPTestScript
  *
  * @todo EVERYTHING! This is still an ALPHA.
  */

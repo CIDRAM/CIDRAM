@@ -17,7 +17,7 @@ $IPTestScript=array();
 /**
  * Script version (we use semver to determine versioning).
  */
-$IPTestScript['ScriptVersion']='0.0.3';
+$IPTestScript['ScriptVersion']='0.0.4';
 
 /**
  * How the script identifies itself to clients/users is determined here.
@@ -206,64 +206,77 @@ function IPv4Test($Addr,$Dump=false)
     $cidr[30]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.(floor($octets[4]/2)*2).'/31';
     $cidr[31]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.$octets[4].'/32';
     if($Dump)return $cidr;
-    $IPv4Sigs=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv4.dat');
-    for($i=0;$i<32;$i++)
+    $IPv4Sigs=array();
+    $IPv4Sigs[0]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv4.dat');
+    $IPv4Sigs[1]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv4_custom.dat');
+    $y=count($IPv4Sigs);
+    for($x=0;$x<$y;$x++)
         {
-        $PosA=strpos($IPv4Sigs,"\n".$cidr[$i].' ');
-        if($PosA===false)continue;
-        $PosA+=strlen($cidr[$i])+2;
-        if(!$PosB=strpos($IPv4Sigs,"\n",$PosA))continue;
-        $Sig=substr($IPv4Sigs,$PosA,($PosB-$PosA));
-        $Cat=substr($Sig,0,strpos($Sig,' '));
-        $Sig=substr($Sig,strpos($Sig,' ')+1);
-        if($Cat==='Run')
+        for($i=0;$i<32;$i++)
             {
-            if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
-            // AAA else give me some error message
-            continue;
-            }
-        if($Cat==='Deny')
-            {
-            // AAA Need to sort out categories for blocking.
-            if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
+            $PosB=0;
+            while(true)
                 {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                continue;
+                $PosA=strpos($IPv4Sigs[$x],"\n".$cidr[$i].' ',($PosB+1));
+                if($PosA===false)break;
+                $PosA+=strlen($cidr[$i])+2;
+                if(!$PosB=strpos($IPv4Sigs[$x],"\n",$PosA))break;
+                $Sig=substr($IPv4Sigs[$x],$PosA,($PosB-$PosA));
+                $Cat=substr($Sig,0,strpos($Sig,' '));
+                $Sig=substr($Sig,strpos($Sig,' ')+1);
+                if($Cat==='Run')
+                    {
+                    if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
+                    // AAA else give me some error message
+                    continue;
+                    }
+                if($Cat==='Whitelist')
+                    {
+                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures']=$GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage']='';
+                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']=0;
+                    break 3;
+                    }
+                if($Cat==='Deny')
+                    {
+                    // AAA Need to sort out categories for blocking.
+                    if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    if($Sig==='Cloud'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_cloud'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    if($Sig==='Generic'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_generic'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Generic'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    if($Sig==='Spam'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_spam'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Spam'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$Sig;
+                    if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                    }
                 }
-            if($Sig==='Cloud'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_cloud'])
-                {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                continue;
-                }
-            if($Sig==='Generic'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_generic'])
-                {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Generic'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                continue;
-                }
-            if($Sig==='Spam'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_spam'])
-                {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Spam'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                }
-            continue;
-            }
-        if($Cat==='DenyCustom')
-            {
-            $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$Sig;
-            if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-            $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-            $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
             }
         }
     return true;
@@ -477,64 +490,77 @@ function IPv6Test($Addr,$Dump=false)
             }
         }
     if($Dump)return $cidr;
-    $IPv6Sigs=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv6.dat');
-    for($i=0;$i<128;$i++)
+    $IPv6Sigs=array();
+    $IPv6Sigs[0]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv6.dat');
+    $IPv6Sigs[1]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv6_custom.dat');
+    $y=count($IPv6Sigs);
+    for($x=0;$x<$y;$x++)
         {
-        $PosA=strpos($IPv6Sigs,"\n".$cidr[$i].' ');
-        if($PosA===false)continue;
-        $PosA+=strlen($cidr[$i])+2;
-        if(!$PosB=strpos($IPv6Sigs,"\n",$PosA))continue;
-        $Sig=substr($IPv6Sigs,$PosA,($PosB-$PosA));
-        $Cat=substr($Sig,0,strpos($Sig,' '));
-        $Sig=substr($Sig,strpos($Sig,' ')+1);
-        if($Cat==='Run')
+        for($i=0;$i<128;$i++)
             {
-            if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
-            // AAA else give me some error message
-            continue;
-            }
-        if($Cat==='Deny')
-            {
-            // AAA Need to sort out categories for blocking.
-            if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
+            $PosB=0;
+            while(true)
                 {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                continue;
+                $PosA=strpos($IPv6Sigs[$x],"\n".$cidr[$i].' ',($PosB+1));
+                if($PosA===false)break;
+                $PosA+=strlen($cidr[$i])+2;
+                if(!$PosB=strpos($IPv6Sigs[$x],"\n",$PosA))break;
+                $Sig=substr($IPv6Sigs[$x],$PosA,($PosB-$PosA));
+                $Cat=substr($Sig,0,strpos($Sig,' '));
+                $Sig=substr($Sig,strpos($Sig,' ')+1);
+                if($Cat==='Run')
+                    {
+                    if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
+                    // AAA else give me some error message
+                    continue;
+                    }
+                if($Cat==='Whitelist')
+                    {
+                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures']=$GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage']='';
+                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']=0;
+                    break 3;
+                    }
+                if($Cat==='Deny')
+                    {
+                    // AAA Need to sort out categories for blocking.
+                    if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    if($Sig==='Cloud'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_cloud'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    if($Sig==='Generic'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_generic'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Generic'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    if($Sig==='Spam'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_spam'])
+                        {
+                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Spam'];
+                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        continue;
+                        }
+                    $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$Sig;
+                    if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
+                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
+                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                    }
                 }
-            if($Sig==='Cloud'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_cloud'])
-                {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                continue;
-                }
-            if($Sig==='Generic'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_generic'])
-                {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Generic'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                continue;
-                }
-            if($Sig==='Spam'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_spam'])
-                {
-                $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Spam'];
-                if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
-                }
-            continue;
-            }
-        if($Cat==='DenyCustom')
-            {
-            $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$Sig;
-            if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-            $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-            $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
             }
         }
     return true;

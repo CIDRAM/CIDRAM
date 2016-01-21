@@ -1,9 +1,18 @@
 IPv6 signatures file.
 
+Ranges for ASNs discovered using <http://bgp.he.net/>.
+
 
 ---
-These signatures based upon the information available via <http://hostexploit.com/?p=whr-201403>.
-Ranges for ASNs discovered using <http://bgp.he.net/>.
+Some basic whitelisting to avoid problems with the local network being blocked by some of the bogon CIDR signatures
+that appear further down into the signature files.
+
+::/8 Whitelist
+
+
+---
+The following signatures are based upon a selection of some of the worst offending ASNs, as described by Host Exploit's
+World Hosts Report, March 2014, which can be downloaded from <http://hostexploit.com/?p=whr-201403>.
 
 
 "New Dream Network, LLC"
@@ -193,7 +202,7 @@ Updated: 2016.01.18
 "1&1 Internet AG"
 HE RANK 11 (World Hosts Report March 2014)
 ASN 8560
-Updated: 2016.01.18
+Updated: 2016.01.21
 
 2001:8d8::/32 Deny Generic
 2001:8d8:fe::/47 Deny Generic
@@ -205,7 +214,7 @@ Updated: 2016.01.18
 "OVH Systems"
 HE RANK 12 (World Hosts Report March 2014)
 ASN 16276
-Updated: 2016.01.18
+Updated: 2016.01.20
 
 2001:41d0::/32 Deny Generic
 2402:1f00::/32 Deny Generic
@@ -250,7 +259,8 @@ Updated: 2016.01.18
 
 
 "Leaseweb Network"
-HE RANK 18 (World Hosts Report March 2014)
+HE RANK 18 (16265) (World Hosts Report March 2014)
+HE RANK 31 (30633) (World Hosts Report March 2014)
 ASN 16265, 28753, 30633
 Updated: 2016.01.18
 
@@ -269,7 +279,162 @@ Updated: 2016.01.18
 2a06:2340:94::/64 Deny Generic
 
 
+"Hetzner Online GmbH"
+HE RANK 22 (World Hosts Report March 2014)
+ASN 24940
+Updated: 2016.01.20
+
+2001:67c:192c::/48 Deny Generic
+2a01:4f8::/29 Deny Generic
+2a06:be80::/29 Deny Generic
+
+
+"Agava Ltd."
+HE RANK 23 (World Hosts Report March 2014)
+ASN 43146
+Updated: 2016.01.21
+
+2a03:4900::/48 Deny Cloud
+2a03:4900:1::/48 Deny Cloud
+2a03:4900:2::/48 Deny Cloud
+2a03:4900:3::/48 Deny Cloud
+2a03:4900:4::/48 Deny Cloud
+2a03:4900:8000::/48 Deny Cloud
+2a03:4900:ff01::/48 Deny Cloud
+2a03:4900:ff02::/48 Deny Cloud
+2a03:4900:fffb::/48 Deny Cloud
+2a03:4900:fffc::/48 Deny Cloud
+2a03:4900:fffd::/48 Deny Cloud
+2a03:4900:fffe::/48 Deny Cloud
+2a03:4900:ffff::/48 Deny Cloud
+
+
+SoftLayer Technologies, The Planet, Everyones Internet, Reach
+HE RANK 24 (World Hosts Report March 2014)
+ASN 36351, 36420, 30315, 13749, 21844
+Updated: 2016.01.19
+
+2001:df3:8800::/48 Deny Cloud
+2001:df4:f000::/48 Deny Cloud
+2001:df5:9000::/48 Deny Cloud
+2401:c900:1000::/40 Deny Cloud
+2401:c900:1100::/40 Deny Cloud
+2401:c900:1200::/40 Deny Cloud
+2401:c900:1300::/40 Deny Cloud
+2401:c900:1400::/40 Deny Cloud
+2401:c900:1500::/40 Deny Cloud
+2402:7380::/48 Deny Cloud
+2402:7380:800::/48 Deny Cloud
+2402:9e80::/48 Deny Cloud
+2402:9e80:1::/48 Deny Cloud
+2402:b180:1::/48 Deny Cloud
+2402:e380::/48 Deny Cloud
+2403:1480:1000::/36 Deny Cloud
+2403:2c80::/48 Deny Cloud
+2403:2c80:1::/48 Deny Cloud
+2403:2c80:2::/48 Deny Cloud
+2403:a280:8000::/36 Deny Cloud
+2403:ad80:10::/48 Deny Cloud
+2403:ad80:20::/48 Deny Cloud
+2403:ce80::/48 Deny Cloud
+2600:3c00::/32 Deny Cloud
+2600:3c00:3c00::/48 Deny Cloud
+2602:ff84:1::/48 Deny Cloud
+2602:ff84:c::/48 Deny Cloud
+2602:ff84:d::/48 Deny Cloud
+2602:ff84:e::/48 Deny Cloud
+2602:ff84:f::/48 Deny Cloud
+2602:ff84:10::/48 Deny Cloud
+2602:ff84:11::/48 Deny Cloud
+2602:ff84:12::/48 Deny Cloud
+2602:ff84:13::/48 Deny Cloud
+2606:2e00:8004::/48 Deny Cloud
+2606:2e00:8005::/48 Deny Cloud
+2606:2e00:8006::/48 Deny Cloud
+2606:2e00:8008::/48 Deny Cloud
+2606:2e00:8009::/48 Deny Cloud
+2606:2e00:800a::/48 Deny Cloud
+2606:2e00:800b::/48 Deny Cloud
+2606:2e00:800c::/48 Deny Cloud
+2606:2e00:800d::/48 Deny Cloud
+2606:2e00:800e::/48 Deny Cloud
+2606:2e00:800f::/48 Deny Cloud
+2606:2e00:8010::/48 Deny Cloud
+2606:2e00:8011::/48 Deny Cloud
+2606:2e00:8012::/48 Deny Cloud
+2606:2e00:8013::/48 Deny Cloud
+2606:2e00:8014::/48 Deny Cloud
+2606:2e00:8015::/48 Deny Cloud
+2606:2e00:8016::/48 Deny Cloud
+2606:2e00:8017::/48 Deny Cloud
+2606:2e00:8018::/48 Deny Cloud
+2606:4980:9000::/48 Deny Cloud
+2607:f0d0::/32 Deny Cloud
+2607:f0d0:1000::/40 Deny Cloud
+2607:f0d0:1100::/40 Deny Cloud
+2607:f0d0:1200::/40 Deny Cloud
+2607:f0d0:1300::/40 Deny Cloud
+2607:f0d0:1400::/40 Deny Cloud
+2607:f0d0:1900::/40 Deny Cloud
+2607:f0d0:1a00::/40 Deny Cloud
+2607:f0d0:1b00::/40 Deny Cloud
+2607:f0d0:1c00::/40 Deny Cloud
+2607:f0d0:1d00::/40 Deny Cloud
+2607:f0d0:2000::/40 Deny Cloud
+2607:f0d0:2100::/40 Deny Cloud
+2607:f0d0:2600::/40 Deny Cloud
+2607:f0d0:3000::/40 Deny Cloud
+2607:f0d0:3100::/40 Deny Cloud
+2607:f0d0:3500::/40 Deny Cloud
+2607:f0d0:3600::/40 Deny Cloud
+2607:f0d0:3700::/40 Deny Cloud
+2607:f0d0:3800::/40 Deny Cloud
+2620:121:5000::/48 Deny Cloud
+2620:121:5001::/48 Deny Cloud
+2620:121:5002::/48 Deny Cloud
+2803:3240:1::/48 Deny Cloud
+2a01:6f0:fffe::/48 Deny Cloud
+2a02:2498:3::/48 Deny Cloud
+2a03:8180:1000::/40 Deny Cloud
+2a03:8180:1100::/40 Deny Cloud
+2a03:8180:1200::/40 Deny Cloud
+2a03:8180:1300::/40 Deny Cloud
+2a03:8180:1400::/40 Deny Cloud
+2a03:8180:1500::/40 Deny Cloud
+
+
+"Server Internet Bilisim ve Bilgisayar Hizmetleri"
+HE RANK 26 (World Hosts Report March 2014)
+ASN 51559
+Updated: 2016.01.21
+
+2a03:2100::/32 Deny Generic
+
+
+"Hosting Operator eServer.ru Ltd."
+HE RANK 28 (World Hosts Report March 2014)
+ASN 42244
+Updated: 2016.01.21
+
+2a03:c980:1::/48 Deny Cloud
+2a03:c980:2::/48 Deny Cloud
+2a04:b540:1000::/36 Deny Cloud
+2a04:b540:2000::/36 Deny Cloud
+
+
+"Webzilla B.V."
+HE RANK 29 (World Hosts Report March 2014)
+ASN 35415
+Updated: 2016.01.21
+
+2803:8700:5::/48 Deny Generic
+2803:8700:45::/48 Deny Generic
+2a00:1178::/32 Deny Generic
+2a06:7740::/48 Deny Generic
+2a06:78c0::/48 Deny Generic
+
 "SuperHost.pl"
+HE RANK 32 (World Hosts Report March 2014)
 ASN 41079
 Updated: 2016.01.18
 
@@ -277,10 +442,16 @@ Updated: 2016.01.18
 
 
 "IPGLOBE DATACENTER"
+HE RANK 34 (World Hosts Report March 2014)
 ASN 53225
 Updated: 2016.01.18
 
 2804:644::/32 Deny Spam
+
+
+---
+The following signatures are intended to mirror many of the various other CIDR ranges covered by `zbb-badip-fork`, one
+of the two unofficial signature file repositories I've been managing, intended for ZB Block.
 
 
 "sfip84"
@@ -431,99 +602,6 @@ Updated: 2016.01.19
 2a02:748:f000::/36 Deny Cloud
 
 
-SoftLayer Technologies, The Planet, Everyones Internet, Reach
-ASN 36351, 36420, 30315, 13749, 21844
-Updated: 2016.01.19
-
-2001:df3:8800::/48 Deny Cloud
-2001:df4:f000::/48 Deny Cloud
-2001:df5:9000::/48 Deny Cloud
-2401:c900:1000::/40 Deny Cloud
-2401:c900:1100::/40 Deny Cloud
-2401:c900:1200::/40 Deny Cloud
-2401:c900:1300::/40 Deny Cloud
-2401:c900:1400::/40 Deny Cloud
-2401:c900:1500::/40 Deny Cloud
-2402:7380::/48 Deny Cloud
-2402:7380:800::/48 Deny Cloud
-2402:9e80::/48 Deny Cloud
-2402:9e80:1::/48 Deny Cloud
-2402:b180:1::/48 Deny Cloud
-2402:e380::/48 Deny Cloud
-2403:1480:1000::/36 Deny Cloud
-2403:2c80::/48 Deny Cloud
-2403:2c80:1::/48 Deny Cloud
-2403:2c80:2::/48 Deny Cloud
-2403:a280:8000::/36 Deny Cloud
-2403:ad80:10::/48 Deny Cloud
-2403:ad80:20::/48 Deny Cloud
-2403:ce80::/48 Deny Cloud
-2600:3c00::/32 Deny Cloud
-2600:3c00:3c00::/48 Deny Cloud
-2602:ff84:1::/48 Deny Cloud
-2602:ff84:c::/48 Deny Cloud
-2602:ff84:d::/48 Deny Cloud
-2602:ff84:e::/48 Deny Cloud
-2602:ff84:f::/48 Deny Cloud
-2602:ff84:10::/48 Deny Cloud
-2602:ff84:11::/48 Deny Cloud
-2602:ff84:12::/48 Deny Cloud
-2602:ff84:13::/48 Deny Cloud
-2606:2e00:8004::/48 Deny Cloud
-2606:2e00:8005::/48 Deny Cloud
-2606:2e00:8006::/48 Deny Cloud
-2606:2e00:8008::/48 Deny Cloud
-2606:2e00:8009::/48 Deny Cloud
-2606:2e00:800a::/48 Deny Cloud
-2606:2e00:800b::/48 Deny Cloud
-2606:2e00:800c::/48 Deny Cloud
-2606:2e00:800d::/48 Deny Cloud
-2606:2e00:800e::/48 Deny Cloud
-2606:2e00:800f::/48 Deny Cloud
-2606:2e00:8010::/48 Deny Cloud
-2606:2e00:8011::/48 Deny Cloud
-2606:2e00:8012::/48 Deny Cloud
-2606:2e00:8013::/48 Deny Cloud
-2606:2e00:8014::/48 Deny Cloud
-2606:2e00:8015::/48 Deny Cloud
-2606:2e00:8016::/48 Deny Cloud
-2606:2e00:8017::/48 Deny Cloud
-2606:2e00:8018::/48 Deny Cloud
-2606:4980:9000::/48 Deny Cloud
-2607:f0d0::/32 Deny Cloud
-2607:f0d0:1000::/40 Deny Cloud
-2607:f0d0:1100::/40 Deny Cloud
-2607:f0d0:1200::/40 Deny Cloud
-2607:f0d0:1300::/40 Deny Cloud
-2607:f0d0:1400::/40 Deny Cloud
-2607:f0d0:1900::/40 Deny Cloud
-2607:f0d0:1a00::/40 Deny Cloud
-2607:f0d0:1b00::/40 Deny Cloud
-2607:f0d0:1c00::/40 Deny Cloud
-2607:f0d0:1d00::/40 Deny Cloud
-2607:f0d0:2000::/40 Deny Cloud
-2607:f0d0:2100::/40 Deny Cloud
-2607:f0d0:2600::/40 Deny Cloud
-2607:f0d0:3000::/40 Deny Cloud
-2607:f0d0:3100::/40 Deny Cloud
-2607:f0d0:3500::/40 Deny Cloud
-2607:f0d0:3600::/40 Deny Cloud
-2607:f0d0:3700::/40 Deny Cloud
-2607:f0d0:3800::/40 Deny Cloud
-2620:121:5000::/48 Deny Cloud
-2620:121:5001::/48 Deny Cloud
-2620:121:5002::/48 Deny Cloud
-2803:3240:1::/48 Deny Cloud
-2a01:6f0:fffe::/48 Deny Cloud
-2a02:2498:3::/48 Deny Cloud
-2a03:8180:1000::/40 Deny Cloud
-2a03:8180:1100::/40 Deny Cloud
-2a03:8180:1200::/40 Deny Cloud
-2a03:8180:1300::/40 Deny Cloud
-2a03:8180:1400::/40 Deny Cloud
-2a03:8180:1500::/40 Deny Cloud
-
-
 "Prolexic Technologies"
 ASN 32787, 7743
 Updated: 2016.01.20
@@ -598,15 +676,6 @@ Updated: 2016.01.20
 2a00:1d78::/32 Deny Generic
 
 
-"OVH Hosting, Inc."
-ASN 16276
-Updated: 2016.01.20
-
-2001:41d0::/32 Deny Cloud
-2402:1f00::/32 Deny Cloud
-2607:5300::/32 Deny Cloud
-
-
 "Bytemark Limited"
 ASN 35425
 Updated: 2016.01.20
@@ -646,15 +715,6 @@ Updated: 2016.01.20
 2620:101:403c::/48 Deny Generic
 2620:101:402f::/48 Deny Generic
 2620:101:403a::/48 Deny Generic
-
-
-"Hetzner Online GmbH"
-ASN 24940
-Updated: 2016.01.20
-
-2001:67c:192c::/48 Deny Generic
-2a01:4f8::/29 Deny Generic
-2a06:be80::/29 Deny Generic
 
 
 "Digital Ocean, Inc."
@@ -751,6 +811,50 @@ Updated: 2016.01.20
 2604:4300::/32 Deny Cloud
 
 
+"Avante Hosting Services Inc."
+ASN 36137
+Updated: 2016.01.21
+
+2607:bd00::/32 Deny Cloud
+
+
+"Ready Server - Dedicated Server Hosting"
+ASN 63930
+Updated: 2016.01.21
+
+2401:e780::/32 Deny Cloud
+2602:ffa0::/48 Deny Cloud
+
+
+"ON-LINE Ltd" / "Best Hosting"
+ASN 42655
+Updated: 2016.01.21
+
+2001:67c:2224::/48 Deny Cloud
+
+
+"Internap Network Services Corporation"
+ASN 10912, 12182
+Updated: 2016.01.21
+
+2600:c02::/32 Deny Cloud
+2600:c02:1025::/48 Deny Cloud
+2600:c02:2:100::/56 Deny Cloud
+2600:c02:b002:100::/56 Deny Cloud
+2600:c02:b010::/56 Deny Cloud
+2604:1900::/40 Deny Cloud
+
+
+"Xirra GmbH"
+ASN 51191
+Updated: 2016.01.21
+
+2a01:4a0:2000::/48 Deny Generic
+2a01:4a0:2001::/48 Deny Generic
+2a01:4a0:2002::/48 Deny Generic
+2a06:4b00::/29 Deny Generic
+
+
 ---
 "Init7"
 ASN 13030
@@ -774,12 +878,18 @@ Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 2a05:36c0::/29 Deny Generic
 
 
+"HyperHosting - Cloud Infrastructure"
+ASN 197746
+Updated: 2016.01.21
+
+2a00:6620:2000::/48 Deny Cloud
+
+
 ---
 IPv6 Bogons List
-Updated: 2016.01.18
+Updated: 2016.01.21
 Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
-0::/8 Deny Bogon
 100::/8 Deny Bogon
 200::/7 Deny Bogon
 400::/6 Deny Bogon
@@ -1682,8 +1792,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:f4::/46 Deny Bogon
-2001:678:f8::/45 Deny Bogon
+2001:678:fc::/46 Deny Bogon
 2001:678:100::/40 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -2521,7 +2630,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df0:5840::/42 Deny Bogon
 2001:df0:5880::/41 Deny Bogon
 2001:df0:5900::/40 Deny Bogon
-2001:df0:5a00::/39 Deny Bogon
+2001:df0:5a01::/48 Deny Bogon
+2001:df0:5a02::/47 Deny Bogon
+2001:df0:5a04::/46 Deny Bogon
+2001:df0:5a08::/45 Deny Bogon
+2001:df0:5a10::/44 Deny Bogon
+2001:df0:5a20::/43 Deny Bogon
+2001:df0:5a40::/42 Deny Bogon
+2001:df0:5a80::/41 Deny Bogon
+2001:df0:5b00::/40 Deny Bogon
 2001:df0:5c01::/48 Deny Bogon
 2001:df0:5c02::/47 Deny Bogon
 2001:df0:5c04::/46 Deny Bogon
@@ -21908,7 +22025,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:2410::/28 Deny Bogon
 2404:2420::/27 Deny Bogon
 2404:2440::/26 Deny Bogon
-2404:2480::/25 Deny Bogon
+2404:2481::/32 Deny Bogon
+2404:2482::/31 Deny Bogon
+2404:2484::/30 Deny Bogon
+2404:2488::/29 Deny Bogon
+2404:2490::/28 Deny Bogon
+2404:24a0::/27 Deny Bogon
+2404:24c0::/26 Deny Bogon
 2404:2501::/32 Deny Bogon
 2404:2502::/31 Deny Bogon
 2404:2504::/30 Deny Bogon
@@ -21916,7 +22039,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:2510::/28 Deny Bogon
 2404:2520::/27 Deny Bogon
 2404:2540::/26 Deny Bogon
-2404:2580::/25 Deny Bogon
+2404:2581::/32 Deny Bogon
+2404:2582::/31 Deny Bogon
+2404:2584::/30 Deny Bogon
+2404:2588::/29 Deny Bogon
+2404:2590::/28 Deny Bogon
+2404:25a0::/27 Deny Bogon
+2404:25c0::/26 Deny Bogon
 2404:2601::/32 Deny Bogon
 2404:2602::/31 Deny Bogon
 2404:2604::/30 Deny Bogon
@@ -21924,7 +22053,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:2610::/28 Deny Bogon
 2404:2620::/27 Deny Bogon
 2404:2640::/26 Deny Bogon
-2404:2680::/25 Deny Bogon
+2404:2681::/32 Deny Bogon
+2404:2682::/31 Deny Bogon
+2404:2684::/30 Deny Bogon
+2404:2688::/29 Deny Bogon
+2404:2690::/28 Deny Bogon
+2404:26a0::/27 Deny Bogon
+2404:26c0::/26 Deny Bogon
 2404:2701::/32 Deny Bogon
 2404:2702::/31 Deny Bogon
 2404:2704::/30 Deny Bogon
@@ -34450,7 +34585,9 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2606:ed10::/28 Deny Bogon
 2606:ed20::/27 Deny Bogon
 2606:ed40::/26 Deny Bogon
-2606:ed80::/25 Deny Bogon
+2606:ed90::/28 Deny Bogon
+2606:eda0::/27 Deny Bogon
+2606:edc0::/26 Deny Bogon
 2606:ee10::/28 Deny Bogon
 2606:ee20::/27 Deny Bogon
 2606:ee40::/26 Deny Bogon
@@ -44736,7 +44873,16 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:f4:8800::/37 Deny Bogon
 2620:f4:9000::/36 Deny Bogon
 2620:f4:a000::/35 Deny Bogon
-2620:f4:c000::/34 Deny Bogon
+2620:f4:c010::/44 Deny Bogon
+2620:f4:c020::/43 Deny Bogon
+2620:f4:c040::/42 Deny Bogon
+2620:f4:c080::/41 Deny Bogon
+2620:f4:c100::/40 Deny Bogon
+2620:f4:c200::/39 Deny Bogon
+2620:f4:c400::/38 Deny Bogon
+2620:f4:c800::/37 Deny Bogon
+2620:f4:d000::/36 Deny Bogon
+2620:f4:e000::/35 Deny Bogon
 2620:f5:10::/44 Deny Bogon
 2620:f5:20::/43 Deny Bogon
 2620:f5:40::/42 Deny Bogon
@@ -46484,7 +46630,12 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:125:2200::/39 Deny Bogon
 2620:125:2400::/38 Deny Bogon
 2620:125:2800::/37 Deny Bogon
-2620:125:4000::/34 Deny Bogon
+2620:125:4100::/40 Deny Bogon
+2620:125:4200::/39 Deny Bogon
+2620:125:4400::/38 Deny Bogon
+2620:125:4800::/37 Deny Bogon
+2620:125:5000::/36 Deny Bogon
+2620:125:6000::/35 Deny Bogon
 2620:125:8000::/33 Deny Bogon
 2620:126::/31 Deny Bogon
 2620:128::/29 Deny Bogon
@@ -46730,7 +46881,14 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2801:10:8200::/39 Deny Bogon
 2801:10:8400::/38 Deny Bogon
 2801:10:8800::/37 Deny Bogon
-2801:10:9000::/36 Deny Bogon
+2801:10:9010::/44 Deny Bogon
+2801:10:9020::/43 Deny Bogon
+2801:10:9040::/42 Deny Bogon
+2801:10:9080::/41 Deny Bogon
+2801:10:9100::/40 Deny Bogon
+2801:10:9200::/39 Deny Bogon
+2801:10:9400::/38 Deny Bogon
+2801:10:9800::/37 Deny Bogon
 2801:10:a010::/44 Deny Bogon
 2801:10:a020::/43 Deny Bogon
 2801:10:a040::/42 Deny Bogon
@@ -55164,7 +55322,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2804:1f19::/32 Deny Bogon
 2804:1f1b::/32 Deny Bogon
 2804:1f1d::/32 Deny Bogon
-2804:1f1e::/31 Deny Bogon
+2804:1f1f::/32 Deny Bogon
 2804:1f20::/27 Deny Bogon
 2804:1f40::/26 Deny Bogon
 2804:1f80::/25 Deny Bogon
@@ -56868,9 +57026,28 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2804:2d46::/31 Deny Bogon
 2804:2d49::/32 Deny Bogon
 2804:2d4a::/31 Deny Bogon
-2804:2d4c::/30 Deny Bogon
-2804:2d50::/28 Deny Bogon
-2804:2d60::/27 Deny Bogon
+2804:2d4d::/32 Deny Bogon
+2804:2d4e::/31 Deny Bogon
+2804:2d51::/32 Deny Bogon
+2804:2d52::/31 Deny Bogon
+2804:2d55::/32 Deny Bogon
+2804:2d56::/31 Deny Bogon
+2804:2d59::/32 Deny Bogon
+2804:2d5a::/31 Deny Bogon
+2804:2d5d::/32 Deny Bogon
+2804:2d5e::/31 Deny Bogon
+2804:2d61::/32 Deny Bogon
+2804:2d62::/31 Deny Bogon
+2804:2d65::/32 Deny Bogon
+2804:2d66::/31 Deny Bogon
+2804:2d69::/32 Deny Bogon
+2804:2d6a::/31 Deny Bogon
+2804:2d6d::/32 Deny Bogon
+2804:2d6e::/31 Deny Bogon
+2804:2d71::/32 Deny Bogon
+2804:2d72::/31 Deny Bogon
+2804:2d74::/30 Deny Bogon
+2804:2d78::/29 Deny Bogon
 2804:2d80::/25 Deny Bogon
 2804:2e00::/23 Deny Bogon
 2804:3000::/20 Deny Bogon
@@ -56898,7 +57075,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2806:216:2000::/35 Deny Bogon
 2806:216:4000::/34 Deny Bogon
 2806:216:8000::/33 Deny Bogon
-2806:21e::/31 Deny Bogon
+2806:21e::/32 Deny Bogon
 2806:221::/32 Deny Bogon
 2806:222::/31 Deny Bogon
 2806:224::/30 Deny Bogon
@@ -61842,6 +62019,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a01:bff0::/28 Deny Bogon
 2a02:1a0::/29 Deny Bogon
 2a02:1b0::/29 Deny Bogon
+2a02:2d0::/29 Deny Bogon
 2a02:378::/29 Deny Bogon
 2a02:4c0::/29 Deny Bogon
 2a02:510::/29 Deny Bogon
@@ -62140,7 +62318,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a02:4f30::/28 Deny Bogon
 2a02:4f48::/29 Deny Bogon
 2a02:4f50::/28 Deny Bogon
-2a02:4f80::/27 Deny Bogon
+2a02:4f88::/29 Deny Bogon
+2a02:4f90::/28 Deny Bogon
 2a02:4fa8::/29 Deny Bogon
 2a02:4fb0::/28 Deny Bogon
 2a02:4fc8::/29 Deny Bogon
@@ -62888,7 +63067,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a02:7ff0::/28 Deny Bogon
 2a02:fa88::/29 Deny Bogon
 2a02:fa90::/28 Deny Bogon
-2a02:faa0::/27 Deny Bogon
+2a02:faa8::/29 Deny Bogon
+2a02:fab0::/28 Deny Bogon
 2a03:8::/29 Deny Bogon
 2a03:10::/28 Deny Bogon
 2a03:28::/29 Deny Bogon
@@ -66389,9 +66569,11 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a05:5090::/28 Deny Bogon
 2a05:7dd0::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a06:ee80::/25 Deny Bogon
-2a06:ef00::/24 Deny Bogon
-2a06:f000::/20 Deny Bogon
+2a06:f240::/26 Deny Bogon
+2a06:f280::/25 Deny Bogon
+2a06:f300::/24 Deny Bogon
+2a06:f400::/22 Deny Bogon
+2a06:f800::/21 Deny Bogon
 2a07::/16 Deny Bogon
 2a08::/13 Deny Bogon
 2c00::/13 Deny Bogon

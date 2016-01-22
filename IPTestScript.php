@@ -17,7 +17,7 @@ $IPTestScript=array();
 /**
  * Script version (we use semver to determine versioning).
  */
-$IPTestScript['ScriptVersion']='0.0.4';
+$IPTestScript['ScriptVersion']='0.0.5';
 
 /**
  * How the script identifies itself to clients/users is determined here.
@@ -227,7 +227,7 @@ function IPv4Test($Addr,$Dump=false)
                 if($Cat==='Run')
                     {
                     if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
-                    // AAA else give me some error message
+                    else die(ParseVars(array('FileName'=>$Sig),'[IPTestScript] '.$IPTestScript['lang']['Error_MissingRequire']));
                     continue;
                     }
                 if($Cat==='Whitelist')
@@ -511,7 +511,7 @@ function IPv6Test($Addr,$Dump=false)
                 if($Cat==='Run')
                     {
                     if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
-                    // AAA else give me some error message
+                    else die(ParseVars(array('FileName'=>$Sig),'[IPTestScript] '.$IPTestScript['lang']['Error_MissingRequire']));
                     continue;
                     }
                 if($Cat==='Whitelist')
@@ -566,6 +566,24 @@ function IPv6Test($Addr,$Dump=false)
     return true;
     }
 
+/**
+ * Determine PHP path.
+ */
+$IPTestScript['IPTestScript_PHP']=defined('PHP_BINARY')?PHP_BINARY:'';
+
+/**
+ * Determine the operating system in use.
+ */
+$IPTestScript['IPTestScript_OS']=strtoupper(substr(PHP_OS,0,3));
+
+/**
+ * Determine if operating in CLI.
+ */
+$IPTestScript['IPTestScript_sapi']=php_sapi_name();
+
+/**
+ * Initialise array for containing block information (for if we're to block the connection and kill the request).
+ */
 $IPTestScript['BlockInfo']=array();
 $IPTestScript['BlockInfo']['DateTime']=date('r');
 $IPTestScript['BlockInfo']['IPAddr']=$_SERVER[$IPTestScript['Config']['general']['ipaddr']];
@@ -589,9 +607,10 @@ $IPTestScript['TestIPv4']=IPv4Test($_SERVER[$IPTestScript['Config']['general']['
 $IPTestScript['TestIPv6']=IPv6Test($_SERVER[$IPTestScript['Config']['general']['ipaddr']]);
 
 /**
- * If both fail...
+ * If both fail, report an invalid IP address and block.
+ * (Skip this check if operating in CLI).
  */
-if(!$IPTestScript['TestIPv4']&&!$IPTestScript['TestIPv6'])
+if(!$IPTestScript['TestIPv4']&&!$IPTestScript['TestIPv6']&&$IPTestScript['IPTestScript_sapi']!=='cli')
     {
     $IPTestScript['BlockInfo']['ReasonMessage'].=$IPTestScript['lang']['ReasonMessage_BadIP'];
     if(!empty($IPTestScript['BlockInfo']['Signatures']))$IPTestScript['BlockInfo']['Signatures'].=', ';
@@ -635,11 +654,8 @@ if($IPTestScript['BlockInfo']['SignatureCount'])
         fclose($IPTestScript['logfileData']['f']);
         unset($IPTestScript['logfileData']);
         }
-    if(!file_exists($IPTestScript['Vault'].$IPTestScript['template_file']))plaintext_echo_die('[IPTestScript] '.$IPTestScript['lang']['denied']);
-    if(!$IPTestScript['Config']['general']['emailaddr'])
-        {
-        $IPTestScript['BlockInfo']['EmailAddr']='';
-        }
+    if(!file_exists($IPTestScript['Vault'].$IPTestScript['template_file']))die('[IPTestScript] '.$IPTestScript['lang']['denied']);
+    if(!$IPTestScript['Config']['general']['emailaddr'])$IPTestScript['BlockInfo']['EmailAddr']='';
     else
         {
         $IPTestScript['BlockInfo']['EmailAddr']='<strong><a href="mailto:'.$IPTestScript['Config']['general']['emailaddr'].'?subject=IPTestScript%20Event&body='.urlencode(ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n{preamble}\n\n"))).'">'.$IPTestScript['lang']['click_here'].'</a></strong>';

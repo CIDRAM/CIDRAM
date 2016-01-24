@@ -24,11 +24,8 @@ $bypass=false;
 /** Feedly/Feedspot bypass. */
 if(preg_match('/\.getpebble\.com$/i',$GLOBALS['IPTestScript']['BlockInfo']['UALC'])||substr_count($GLOBALS['IPTestScript']['BlockInfo']['UA'],'Feedspot http://www.feedspot.com')||substr_count($GLOBALS['IPTestScript']['BlockInfo']['UA'],'Feedly'))$bypass=true;
 
-if($cidr[$i]==='65.49.0.0/17')
-    {
-    /** Access provider block bypass (65.49.67.0/24). */
-    if(matchElement($cidr,'65.49.67.0/24'))$bypass=true;
-    }
+/** Access provider block bypass. */
+if($cidr[23]==='65.49.67.0/24')$bypass=true;
 
 if(!$bypass)
     {

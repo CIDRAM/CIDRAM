@@ -17,7 +17,7 @@ $IPTestScript=array();
 /**
  * Script version (we use semver to determine versioning).
  */
-$IPTestScript['ScriptVersion']='0.0.6';
+$IPTestScript['ScriptVersion']='0.0.7';
 
 /**
  * How the script identifies itself to clients/users is determined here.
@@ -264,7 +264,6 @@ function IPv4Test($Addr,$Dump=false)
                     }
                 if($Cat==='Deny')
                     {
-                    // AAA Need to sort out categories for blocking.
                     if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
                         {
                         $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
@@ -548,7 +547,6 @@ function IPv6Test($Addr,$Dump=false)
                     }
                 if($Cat==='Deny')
                     {
-                    // AAA Need to sort out categories for blocking.
                     if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
                         {
                         $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];

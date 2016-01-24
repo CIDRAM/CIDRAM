@@ -17,7 +17,7 @@ $IPTestScript=array();
 /**
  * Script version (we use semver to determine versioning).
  */
-$IPTestScript['ScriptVersion']='0.0.5';
+$IPTestScript['ScriptVersion']='0.0.6';
 
 /**
  * How the script identifies itself to clients/users is determined here.
@@ -118,6 +118,32 @@ if(!defined('IPTestScript'))
             $IPTestScript['CacheModified']=true;
             $IPTestScript['Cache']['Counter']=0;
             }
+        }
+    }
+
+if(!function_exists('matchElement'))
+    {
+    /**
+     * Takes two parameters; The first parameter must be an array. The function iterates through the array, comparing
+     * each array element against the second parameter. If the array element exactly matches the second parameter,
+     * the function returns true. Otherwise, after finishing iterating through the array, the function returns false.
+     *
+     * @param array $arr The input array.
+     * @param string|int|bool $e The second parameter (can be a string, an integer, a boolean, etc).
+     * @return bool The results of the comparison.
+     */
+    function matchElement($arr,$e)
+        {
+        if(!is_array($arr))return false;
+        reset($arr);
+        $c=count($arr);
+        for($i=0;$i<$c;$i++)
+            {
+            $k=key($arr);
+            if($arr[$k]===$e)return true;
+            next($arr);
+            }
+        return false;
         }
     }
 
@@ -591,6 +617,7 @@ $IPTestScript['BlockInfo']['ScriptIdent']=$IPTestScript['ScriptIdent'];
 $IPTestScript['BlockInfo']['Query']=$IPTestScript['Query'];
 $IPTestScript['BlockInfo']['Referrer']=(!empty($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 $IPTestScript['BlockInfo']['UA']=(!empty($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'';
+$IPTestScript['BlockInfo']['UALC']=strtolower($IPTestScript['BlockInfo']['UA']);
 $IPTestScript['BlockInfo']['ReasonMessage']='';
 $IPTestScript['BlockInfo']['SignatureCount']=0;
 $IPTestScript['BlockInfo']['Signatures']='';

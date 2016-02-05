@@ -546,9 +546,6 @@ HE RANK 31 (30633) (World Hosts Report March 2014)
 ASN 16265, 28753, 30633, 60781
 Updated: 2016.01.27
 
-Possible human A/DSL range (should remove from future aggregates for this section): 46.165.192.0/18
-Refer: github.com/Maikuolan/zbb-badip-fork/issues/1
-
 5.44.144.0/22 Deny Cloud
 5.61.32.0/20 Deny Cloud
 5.79.64.0/18 Deny Cloud
@@ -565,6 +562,7 @@ Refer: github.com/Maikuolan/zbb-badip-fork/issues/1
 46.17.0.0/21 Deny Cloud
 46.17.14.0/23 Deny Cloud
 46.102.240.0/21 Deny Cloud
+46.165.192.0/18 Deny Cloud
 46.182.120.0/21 Deny Cloud
 46.182.176.0/21 Deny Cloud
 46.243.0.0/21 Deny Cloud
@@ -5309,12 +5307,228 @@ Updated: 2016.01.25
 212.129.0.0/18 Deny Cloud
 
 
+ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
+"High Point Host", "Lunanode Hosting Inc.", "Pleasant Hosting", "Power Up Hosting, Inc.",
+"Rica Costa Hosting RCH, S.A.", "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may
+change as time passes, and may need continual adjustments in the future). Updated: 2016.02.05
+
+Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
+attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
+traffic, usually, should definitely be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
+significantly with with a number of benign, innocent ISPs, human endpoint connections (DSL and ADSL connections, etc),
+as well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking. As a
+compromise for this situation, I'm including a section in this signature file for their CIDRs, but, rather than simply
+including the entire ASN, I'm making a point of only including those CIDRs that I can confirm don't belong the human
+endpoint connections and those CIDRs that appear to be cloud services (ie, if they announce in a way that makes them
+appear to be a hosting service, server leaser, colocation service, etc).
+
+Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
+Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
+Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
+Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
+HE Rank: 249; Refer sitevet.com/db/asn/AS174
+
+23.27.15.0/24 Deny Cloud
+50.7.1.0/24 Deny Cloud
+50.7.2.0/23 Deny Cloud
+50.7.36.0/22 Deny Cloud
+50.7.40.0/21 Deny Cloud
+50.7.50.0/23 Deny Cloud
+50.7.60.0/22 Deny Cloud
+50.7.64.0/22 Deny Cloud
+50.7.80.0/20 Deny Cloud
+50.7.113.0/24 Deny Cloud
+50.7.114.0/23 Deny Cloud
+50.7.120.0/21 Deny Cloud
+50.7.128.0/21 Deny Cloud
+50.7.136.0/22 Deny Cloud
+50.7.144.0/21 Deny Cloud
+50.7.152.0/22 Deny Cloud
+50.7.160.0/22 Deny Cloud
+50.7.168.0/21 Deny Cloud
+50.7.180.0/22 Deny Cloud
+50.7.184.0/24 Deny Cloud
+66.90.82.0/24 Deny Cloud
+66.90.84.0/24 Deny Cloud
+66.90.91.0/24 Deny Cloud
+66.90.96.0/24 Deny Cloud
+66.90.98.0/23 Deny Cloud
+66.90.108.0/24 Deny Cloud
+66.90.119.0/24 Deny Cloud
+66.90.120.0/23 Deny Cloud
+66.90.122.0/24 Deny Cloud
+66.90.125.0/24 Deny Cloud
+67.159.0.0/23 Deny Cloud
+67.159.10.0/24 Deny Cloud
+67.159.13.0/24 Deny Cloud
+67.159.16.0/24 Deny Cloud
+67.159.19.0/24 Deny Cloud
+67.159.39.0/24 Deny Cloud
+67.159.40.0/21 Deny Cloud
+67.159.48.0/22 Deny Cloud
+67.159.52.0/23 Deny Cloud
+67.159.55.0/24 Deny Cloud
+67.159.56.0/23 Deny Cloud
+67.159.58.0/24 Deny Cloud
+69.1.227.0/24 Deny Cloud
+69.1.228.0/24 Deny Cloud
+74.63.64.0/21 Deny Cloud
+74.63.72.0/23 Deny Cloud
+74.63.75.0/24 Deny Cloud
+74.63.79.0/24 Deny Cloud
+74.63.84.0/22 Deny Cloud
+74.63.88.0/22 Deny Cloud
+74.63.92.0/23 Deny Cloud
+74.63.97.0/24 Deny Cloud
+74.63.99.0/24 Deny Cloud
+74.63.101.0/24 Deny Cloud
+74.63.105.0/24 Deny Cloud
+74.63.109.0/24 Deny Cloud
+74.63.111.0/24 Deny Cloud
+74.63.112.0/24 Deny Cloud
+74.63.116.0/23 Deny Cloud
+74.63.118.0/24 Deny Cloud
+74.63.122.0/23 Deny Cloud
+74.221.210.0/23 Deny Cloud
+74.221.212.0/22 Deny Cloud
+74.221.217.0/24 Deny Cloud
+74.221.219.0/24 Deny Cloud
+74.221.220.0/24 Deny Cloud
+74.221.222.0/23 Deny Cloud
+76.73.1.0/24 Deny Cloud
+76.73.2.0/23 Deny Cloud
+76.73.4.0/22 Deny Cloud
+76.73.8.0/22 Deny Cloud
+76.73.12.0/24 Deny Cloud
+76.73.19.0/24 Deny Cloud
+76.73.20.0/23 Deny Cloud
+76.73.22.0/24 Deny Cloud
+76.73.25.0/24 Deny Cloud
+76.73.26.0/23 Deny Cloud
+76.73.28.0/24 Deny Cloud
+76.73.30.0/23 Deny Cloud
+76.73.35.0/24 Deny Cloud
+76.73.36.0/22 Deny Cloud
+76.73.40.0/21 Deny Cloud
+76.73.48.0/23 Deny Cloud
+76.73.50.0/24 Deny Cloud
+76.73.52.0/24 Deny Cloud
+76.73.54.0/23 Deny Cloud
+76.73.57.0/24 Deny Cloud
+76.73.58.0/24 Deny Cloud
+76.73.62.0/24 Deny Cloud
+76.73.64.0/24 Deny Cloud
+76.73.66.0/23 Deny Cloud
+76.73.69.0/24 Deny Cloud
+76.73.71.0/24 Deny Cloud
+76.73.72.0/24 Deny Cloud
+76.73.74.0/23 Deny Cloud
+76.73.76.0/23 Deny Cloud
+76.73.78.0/24 Deny Cloud
+76.73.80.0/24 Deny Cloud
+76.73.82.0/23 Deny Cloud
+76.73.86.0/23 Deny Cloud
+76.73.88.0/22 Deny Cloud
+76.73.94.0/24 Deny Cloud
+76.73.101.0/24 Deny Cloud
+76.73.102.0/23 Deny Cloud
+76.73.104.0/24 Deny Cloud
+76.73.106.0/23 Deny Cloud
+76.73.108.0/23 Deny Cloud
+76.73.114.0/23 Deny Cloud
+76.73.116.0/23 Deny Cloud
+76.73.118.0/24 Deny Cloud
+76.73.122.0/23 Deny Cloud
+91.220.173.0/24 Deny Cloud
+104.37.56.0/23 Deny Cloud
+104.254.212.0/22 Deny Cloud
+162.244.8.0/21 Deny Cloud
+170.75.160.0/20 Deny Cloud
+172.81.176.0/21 Deny Cloud
+179.51.192.0/20 Deny Cloud
+192.240.98.0/23 Deny Cloud
+192.240.104.0/21 Deny Cloud
+192.240.112.0/22 Deny Cloud
+192.240.118.0/23 Deny Cloud
+192.240.120.0/23 Deny Cloud
+192.240.123.0/24 Deny Cloud
+192.240.124.0/22 Deny Cloud
+198.16.66.0/23 Deny Cloud
+198.16.68.0/22 Deny Cloud
+198.16.72.0/21 Deny Cloud
+198.16.80.0/21 Deny Cloud
+198.16.88.0/22 Deny Cloud
+198.16.92.0/23 Deny Cloud
+198.16.94.0/24 Deny Cloud
+198.16.127.0/24 Deny Cloud
+198.255.3.0/24 Deny Cloud
+198.255.4.0/22 Deny Cloud
+198.255.8.0/21 Deny Cloud
+198.255.16.0/22 Deny Cloud
+198.255.24.0/23 Deny Cloud
+198.255.44.0/22 Deny Cloud
+198.255.123.0/24 Deny Cloud
+198.255.127.0/24 Deny Cloud
+204.45.0.0/23 Deny Cloud
+204.45.2.0/24 Deny Cloud
+204.45.11.0/24 Deny Cloud
+204.45.12.0/24 Deny Cloud
+204.45.16.0/24 Deny Cloud
+204.45.18.0/24 Deny Cloud
+204.45.21.0/24 Deny Cloud
+204.45.22.0/24 Deny Cloud
+204.45.28.0/24 Deny Cloud
+204.45.33.0/24 Deny Cloud
+204.45.39.0/24 Deny Cloud
+204.45.41.0/24 Deny Cloud
+204.45.42.0/24 Deny Cloud
+204.45.46.0/24 Deny Cloud
+204.45.48.0/23 Deny Cloud
+204.45.52.0/24 Deny Cloud
+204.45.55.0/24 Deny Cloud
+204.45.56.0/22 Deny Cloud
+204.45.60.0/23 Deny Cloud
+204.45.63.0/24 Deny Cloud
+204.45.103.0/24 Deny Cloud
+204.45.105.0/24 Deny Cloud
+204.45.139.0/24 Deny Cloud
+204.45.207.0/24 Deny Cloud
+204.45.208.0/24 Deny Cloud
+204.45.211.0/24 Deny Cloud
+204.45.213.0/24 Deny Cloud
+204.45.216.0/24 Deny Cloud
+204.45.220.0/24 Deny Cloud
+204.45.227.0/24 Deny Cloud
+204.45.238.0/24 Deny Cloud
+204.45.244.0/24 Deny Cloud
+204.45.246.0/24 Deny Cloud
+204.45.248.0/24 Deny Cloud
+204.45.253.0/24 Deny Cloud
+204.45.254.0/24 Deny Cloud
+208.53.133.0/24 Deny Cloud
+208.53.149.0/24 Deny Cloud
+208.53.153.0/24 Deny Cloud
+208.53.154.0/24 Deny Cloud
+208.53.156.0/22 Deny Cloud
+208.53.164.0/24 Deny Cloud
+208.53.166.0/24 Deny Cloud
+208.53.168.0/24 Deny Cloud
+208.53.174.0/24 Deny Cloud
+208.53.177.0/24 Deny Cloud
+208.53.178.0/23 Deny Cloud
+208.53.183.0/24 Deny Cloud
+208.53.190.0/24 Deny Cloud
+209.73.140.0/24 Deny Cloud
+216.128.69.0/24 Deny Cloud
+
+
 ---
 IPv4 Bogons List
-Updated: 2016.01.27
+Updated: 2016.02.05
 Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
-0.0.0.0/8 Deny Bogon
 2.56.0.0/14 Deny Bogon
 5.8.248.0/21 Deny Bogon
 5.45.32.0/20 Deny Bogon
@@ -5322,7 +5536,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 5.180.0.0/14 Deny Bogon
 5.199.184.0/21 Deny Bogon
 5.252.0.0/15 Deny Bogon
-27.0.128.0/17 Deny Bogon
 31.13.184.0/21 Deny Bogon
 31.22.8.0/21 Deny Bogon
 31.40.192.0/18 Deny Bogon
@@ -5801,11 +6014,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 102.0.0.0/8 Deny Bogon
 103.64.0.0/10 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.207.102.0/23 Deny Bogon
-103.207.108.0/22 Deny Bogon
-103.207.112.0/20 Deny Bogon
-103.207.128.0/17 Deny Bogon
-103.208.0.0/12 Deny Bogon
+103.208.137.0/24 Deny Bogon
+103.208.148.0/22 Deny Bogon
+103.208.152.0/21 Deny Bogon
+103.208.160.0/19 Deny Bogon
+103.208.192.0/18 Deny Bogon
+103.209.0.0/16 Deny Bogon
+103.210.0.0/15 Deny Bogon
+103.212.0.0/14 Deny Bogon
+103.216.0.0/13 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
 109.71.248.0/21 Deny Bogon
@@ -5816,8 +6033,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 109.207.64.0/20 Deny Bogon
 109.232.160.0/21 Deny Bogon
 109.236.48.0/20 Deny Bogon
-121.46.80.0/20 Deny Bogon
-121.46.96.0/19 Deny Bogon
 124.150.137.0/24 Deny Bogon
 124.150.138.0/23 Deny Bogon
 128.0.156.0/22 Deny Bogon
@@ -5826,7 +6041,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 129.140.0.0/16 Deny Bogon
 130.185.112.0/20 Deny Bogon
 137.59.59.0/24 Deny Bogon
-137.59.128.0/17 Deny Bogon
+137.59.160.0/19 Deny Bogon
+137.59.192.0/18 Deny Bogon
 137.64.0.0/16 Deny Bogon
 137.115.0.0/16 Deny Bogon
 137.196.0.0/16 Deny Bogon
@@ -5843,7 +6059,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 154.68.128.0/19 Deny Bogon
 154.114.128.0/17 Deny Bogon
 154.115.128.0/17 Deny Bogon
-154.118.232.0/21 Deny Bogon
 154.128.0.0/9 Deny Bogon
 155.12.128.0/17 Deny Bogon
 155.93.128.0/17 Deny Bogon
@@ -5871,10 +6086,11 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 165.49.0.0/16 Deny Bogon
 165.73.0.0/16 Deny Bogon
 165.210.0.0/15 Deny Bogon
-168.90.0.0/22 Deny Bogon
-168.121.52.0/22 Deny Bogon
-168.121.64.0/18 Deny Bogon
-168.121.128.0/17 Deny Bogon
+168.90.228.0/22 Deny Bogon
+168.121.196.0/22 Deny Bogon
+168.121.200.0/21 Deny Bogon
+168.121.216.0/21 Deny Bogon
+168.121.224.0/19 Deny Bogon
 168.181.0.0/16 Deny Bogon
 168.194.0.0/15 Deny Bogon
 168.196.0.0/15 Deny Bogon
@@ -5900,7 +6116,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 170.244.0.0/14 Deny Bogon
 170.254.0.0/16 Deny Bogon
 172.16.0.0/12 Deny Bogon
-175.111.128.0/18 Deny Bogon
 176.53.128.0/18 Deny Bogon
 176.56.40.0/21 Deny Bogon
 176.57.64.0/21 Deny Bogon
@@ -5926,6 +6141,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 178.217.232.0/21 Deny Bogon
 178.218.192.0/21 Deny Bogon
 178.218.240.0/20 Deny Bogon
+178.237.48.0/20 Deny Bogon
 178.238.0.0/20 Deny Bogon
 178.249.232.0/21 Deny Bogon
 178.255.112.0/21 Deny Bogon
@@ -5935,11 +6151,9 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.136.24.0/21 Deny Bogon
-185.136.32.0/19 Deny Bogon
-185.136.64.0/18 Deny Bogon
-185.136.128.0/17 Deny Bogon
-185.137.0.0/16 Deny Bogon
+185.137.108.0/22 Deny Bogon
+185.137.112.0/20 Deny Bogon
+185.137.128.0/17 Deny Bogon
 185.138.0.0/15 Deny Bogon
 185.140.0.0/14 Deny Bogon
 185.144.0.0/12 Deny Bogon
@@ -8685,6 +8899,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 195.88.104.0/23 Deny Bogon
 195.88.150.0/23 Deny Bogon
 195.88.168.0/23 Deny Bogon
+195.88.210.0/23 Deny Bogon
 195.88.226.0/23 Deny Bogon
 195.88.230.0/23 Deny Bogon
 195.88.234.0/23 Deny Bogon
@@ -8866,7 +9081,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 196.6.104.0/21 Deny Bogon
 196.6.112.0/21 Deny Bogon
 196.6.176.0/21 Deny Bogon
-196.6.226.0/23 Deny Bogon
+196.6.227.0/24 Deny Bogon
 196.6.228.0/22 Deny Bogon
 196.6.232.0/22 Deny Bogon
 196.11.103.0/24 Deny Bogon
@@ -8895,7 +9110,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 196.201.96.0/19 Deny Bogon
 196.201.232.0/21 Deny Bogon
 196.202.224.0/21 Deny Bogon
-196.216.226.0/23 Deny Bogon
 196.216.244.0/24 Deny Bogon
 196.216.254.0/24 Deny Bogon
 196.223.29.0/24 Deny Bogon
@@ -8909,7 +9123,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 200.10.176.0/23 Deny Bogon
 200.10.180.0/23 Deny Bogon
 200.10.192.0/23 Deny Bogon
-200.10.245.0/24 Deny Bogon
 200.12.131.0/24 Deny Bogon
 200.12.139.0/24 Deny Bogon
 200.12.157.0/24 Deny Bogon
@@ -8988,7 +9201,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 202.94.81.0/24 Deny Bogon
 202.125.109.0/24 Deny Bogon
 202.129.208.0/24 Deny Bogon
-202.129.210.0/23 Deny Bogon
 202.130.39.0/24 Deny Bogon
 202.146.186.0/24 Deny Bogon
 202.151.33.0/24 Deny Bogon

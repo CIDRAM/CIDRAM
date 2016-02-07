@@ -6,9 +6,9 @@
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
- * @see LICENSE.md
+ * @see LICENSE.txt
  *
- * This file: CIDRAM custom Soft Layer rules (last modified: 2016.02.07).
+ * This file: CIDRAM Soft Layer ruleset (last modified: 2016.02.08).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -26,35 +26,37 @@ if (!isset($cidr[$i])) {
 $bypass=false;
 
 /** ShowyouBot bypass. */
-if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UALC'], 'showyoubot')) {
+if (substr_count($CIDRAM['BlockInfo']['UALC'], 'showyoubot')) {
     $bypass=true;
 }
 
 /** Disqus bypass. */
-if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UALC'], 'disqus')) {
+if (substr_count($CIDRAM['BlockInfo']['UALC'], 'disqus')) {
     $bypass=true;
 }
 
 /** Feedspot bypass. */
-if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
+if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
     $bypass=true;
 }
 
 /** Superfeedr bypass. */
-if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
+if (substr_count($CIDRAM['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
     $bypass=true;
 }
 
 /** Feedbot bypass. */
-if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'], 'Feedbot')) {
+if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedbot')) {
     $bypass=true;
 }
 
-if (!$bypass)
-    {
-    $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Cloud'];
-    if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
-    $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
-    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
+if (!$bypass) {
+    $CIDRAM['BlockInfo']['ReasonMessage'] .= $CIDRAM['lang']['ReasonMessage_Cloud'];
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'].=', ';
     }
+    $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
+}
+
 $bypass=false;

@@ -6,9 +6,9 @@
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
- * @see LICENSE.md
+ * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2016.02.07).
+ * This file: Portuguese language data (last modified: 2016.02.08).
  *
  * @package Maikuolan/CIDRAM
  */

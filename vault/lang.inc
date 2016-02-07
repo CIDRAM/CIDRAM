@@ -6,9 +6,9 @@
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
- * @see LICENSE.md
+ * @see LICENSE.txt
  *
- * This file: CIDRAM language handler (last modified: 2016.02.07).
+ * This file: CIDRAM language handler (last modified: 2016.02.08).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -18,8 +18,22 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-if (!isset($CIDRAM['Config']['general']))$CIDRAM['Config']['general']=array();
-if (empty($CIDRAM['Config']['general']['lang']))$CIDRAM['Config']['general']['lang']='en';
+/** If the language directive is empty, default to English. */
+if (empty($CIDRAM['Config']['general']['lang'])) {
+    $CIDRAM['Config']['general']['lang']='en';
+}
+
+/** Create the language data array. */
 $CIDRAM['lang']=array();
-if (!file_exists($CIDRAM['Vault'].'lang/lang.'.$CIDRAM['Config']['general']['lang'].'.inc'))plaintext_echo_die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
-require $CIDRAM['Vault'].'lang/lang.'.$CIDRAM['Config']['general']['lang'].'.inc';
+
+/**
+ * Kill the script if the language data file corresponding to the language
+ * directive (%CIDRAM%/vault/lang/lang.%%.inc) doesn't exist.
+ */
+if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.inc')) {
+    header('Content-Type: text/plain');
+    die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
+}
+
+/** Load the necessary language data. */
+require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.inc';

@@ -6,9 +6,9 @@
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
- * @see LICENSE.md
+ * @see LICENSE.txt
  *
- * This file: CIDRAM custom rules for AS6939 (last modified: 2016.02.07).
+ * This file: CIDRAM AS6939 ruleset (last modified: 2016.02.08).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -26,16 +26,26 @@ if (!isset($cidr[$i])) {
 $bypass=false;
 
 /** Feedly/Feedspot bypass. */
-if (preg_match('/\.getpebble\.com$/i',$GLOBALS['CIDRAM']['BlockInfo']['UALC'])||substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'],'Feedspot http://www.feedspot.com')||substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'],'Feedly'))$bypass=true;
+if (
+    preg_match('/\.getpebble\.com$/i', $CIDRAM['BlockInfo']['UALC']) ||
+    substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') ||
+    substr_count($CIDRAM['BlockInfo']['UA'], 'Feedly')
+) {
+    $bypass=true;
+}
 
 /** Access provider block bypass. */
-if ($cidr[23]==='65.49.67.0/24')$bypass=true;
+if ($cidr[23] === '65.49.67.0/24') {
+    $bypass=true;
+}
 
-if (!$bypass)
-    {
-    $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Cloud'];
-    if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
-    $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
-    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
+if (!$bypass) {
+    $CIDRAM['BlockInfo']['ReasonMessage'] .= $CIDRAM['lang']['ReasonMessage_Cloud'];
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }
+    $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
+}
+
 $bypass=false;

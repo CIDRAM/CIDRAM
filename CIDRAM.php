@@ -1,188 +1,189 @@
 <?php
 /**
- * Description to go here.
+ * This file is a part of the CIDRAM package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
  *
- * This file: File description here.
+ * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
- * @package Maikuolan/IPTestScript
+ * License: GNU/GPLv2
+ * @see LICENSE.md
  *
- * @todo EVERYTHING! This is still an ALPHA.
+ * This file: CIDRAM loader file (last modified: 2016.02.07).
+ *
+ * @package Maikuolan/CIDRAM
  */
 
 /**
  * Set all temporary vars to this, so that it's easier to unset it all later.
  */
-$IPTestScript=array();
+$CIDRAM=array();
+
+/** Script version (we use semver to determine versioning). */
+$CIDRAM['ScriptVersion']='0.0.8';
+
+/** How the script identifies itself to clients/users is determined here. */
+$CIDRAM['ScriptIdent']='CIDRAM v'.$CIDRAM['ScriptVersion'];
+
+/** How the script identifies itself to APIs/servers is determined here. */
+$CIDRAM['ScriptUA']='CIDRAM/'.$CIDRAM['ScriptVersion'].' (https://github.com/Maikuolan/CIDRAM)';
 
 /**
- * Script version (we use semver to determine versioning).
- */
-$IPTestScript['ScriptVersion']='0.0.7';
-
-/**
- * How the script identifies itself to clients/users is determined here.
- */
-$IPTestScript['ScriptIdent']='IPTestScript v'.$IPTestScript['ScriptVersion'];
-
-/**
- * How the script identifies itself to APIs/servers is determined here.
- */
-$IPTestScript['ScriptUA']='IPTestScript/'.$IPTestScript['ScriptVersion'].' (https://github.com/Maikuolan/IPTestScript)';
-
-/**
- * Determines the location of the "vault" directory of IPTestScript and saves this information to the
- * $IPTestScript['Vault'] variable, required by IPTestScript in order to call, read, write and delete its files when
- * needed (this includes signatures, includes, logs, etc).
+ * Determines the location of the "vault" directory of CIDRAM and saves this
+ * information to the $CIDRAM['Vault'] variable, required by CIDRAM in order to
+ * call, read, write and delete its files when needed (this includes
+ * signatures, includes, logs, etc).
  *
- * (There's this, and a few other parts of this script, borrowed/adapted from phpMussel).
+ * (There's this, and a few other parts of this script, borrowed/adapted from
+ * phpMussel).
  */
-$IPTestScript['Vault']=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
+$CIDRAM['Vault']=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
 
 /**
- * Kills the script if $IPTestScript['Vault'] isn't defined or if it isn't a valid directory.
+ * Kills the script if $CIDRAM['Vault'] isn't defined or if it isn't a valid
+ * directory.
  */
-if(!is_dir($IPTestScript['Vault']))die('[IPTestScript] Vault directory not correctly set: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
+if (!is_dir($CIDRAM['Vault'])) {
+    die('[CIDRAM] Vault directory not correctly set: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
+}
 
-if(!empty($_SERVER['QUERY_STRING']))
-    {
-    $IPTestScript['Query']=$_SERVER['QUERY_STRING'];
-    parse_str($_SERVER['QUERY_STRING'],$IPTestScript['QueryVars']);
-    }
-else
-    {
-    $IPTestScript['Query']='';
-    $IPTestScript['QueryVars']=array();
-    }
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $CIDRAM['Query']=$_SERVER['QUERY_STRING'];
+    parse_str($_SERVER['QUERY_STRING'],$CIDRAM['QueryVars']);
+} else {
+    $CIDRAM['Query']='';
+    $CIDRAM['QueryVars']=array();
+}
 
-if(!function_exists('IPTestScriptReadFile'))
+if (!function_exists('CIDRAMReadFile'))
     {
     /**
      * This function reads files and returns the contents of those files.
      *
      * @param string $f Path and filename of the file to read.
-     * @return string|bool Content of the file returned by the function (or false on failure).
+     * @return string|bool Content of the file returned by the function (or
+     *      false on failure).
      */
-    function IPTestScriptReadFile($f)
-        {
-        if(!is_file($f))return false;
+    function CIDRAMReadFile($f) {
+        if (!is_file($f)) {
+            return false;
+        }
         $s=@ceil(filesize($f)/49152);
         $d='';
-        if($s>0)
-            {
+        if ($s>0) {
             $fh=fopen($f,'rb');
             $r=0;
-            while($r<$s)
-                {
+            while($r<$s) {
                 $d.=fread($fh,49152);
                 $r++;
-                }
+            }
             fclose($fh);
-            }
+        }
         return (!empty($d))?$d:false;
-        }
     }
+}
 
-if(!defined('IPTestScript'))
-    {
-    define('IPTestScript',true);
+if (!defined('CIDRAM')) {
+    define('CIDRAM',true);
     $display_errors=error_reporting(1);
-    $IPTestScript['Config']=@(!file_exists($IPTestScript['Vault'].'config.ini'))?false:parse_ini_file($IPTestScript['Vault'].'config.ini',true);
-    if(!is_array($IPTestScript['Config']))die('[IPTestScript] Could not read config.ini: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
-    if(!isset($IPTestScript['Config']['general']))$IPTestScript['Config']['general']=array();
-    if(!isset($IPTestScript['Config']['general']['ipaddr']))$IPTestScript['Config']['general']['ipaddr']='REMOTE_ADDR';
-    if(!isset($IPTestScript['Config']['general']['emailaddr']))$IPTestScript['Config']['general']['emailaddr']='';
-    if(!isset($_SERVER))$_SERVER=array();
-    if(!isset($_SERVER[$IPTestScript['Config']['general']['ipaddr']]))$_SERVER[$IPTestScript['Config']['general']['ipaddr']]='';
-    if(!file_exists($IPTestScript['Vault'].'lang.inc'))die('[IPTestScript] Language data file missing! Please reinstall IPTestScript.');
-    require $IPTestScript['Vault'].'lang.inc';
-    if(!isset($IPTestScript['Config']['signatures']))$IPTestScript['Config']['signatures']=array();
-    if(!isset($IPTestScript['Config']['signatures']['block_cloud']))$IPTestScript['Config']['signatures']['block_cloud']=true;
-    if(!isset($IPTestScript['Config']['signatures']['block_bogons']))$IPTestScript['Config']['signatures']['block_bogons']=true;
-    if(!isset($IPTestScript['Config']['signatures']['block_generic']))$IPTestScript['Config']['signatures']['block_generic']=true;
-    if(!isset($IPTestScript['Config']['signatures']['block_spam']))$IPTestScript['Config']['signatures']['block_spam']=true;
-    $IPTestScript['CacheModified']=false;
-    if(!file_exists($IPTestScript['Vault'].'cache.dat'))
-        {
-        $IPTestScript['handle']=fopen($IPTestScript['Vault'].'cache.dat','w');
-        $IPTestScript['Cache']=array();
-        $IPTestScript['Cache']['Counter']=0;
-        fwrite($IPTestScript['handle'],serialize($IPTestScript['Cache']));
-        fclose($IPTestScript['handle']);
-        if(!file_exists($IPTestScript['Vault'].'cache.dat'))die('[IPTestScript] '.$IPTestScript['lang']['Error_WriteCache']);
-        }
-    else
-        {
-        $IPTestScript['Cache']=unserialize(IPTestScriptReadFile($IPTestScript['Vault'].'cache.dat'));
-        if(!isset($IPTestScript['Cache']['Counter']))
-            {
-            $IPTestScript['CacheModified']=true;
-            $IPTestScript['Cache']['Counter']=0;
-            }
+    $CIDRAM['Config']=@(!file_exists($CIDRAM['Vault'].'config.ini'))?false:parse_ini_file($CIDRAM['Vault'].'config.ini',true);
+    if (!is_array($CIDRAM['Config']))die('[CIDRAM] Could not read config.ini: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
+    if (!isset($CIDRAM['Config']['general']))$CIDRAM['Config']['general']=array();
+    if (!isset($CIDRAM['Config']['general']['ipaddr']))$CIDRAM['Config']['general']['ipaddr']='REMOTE_ADDR';
+    if (!isset($CIDRAM['Config']['general']['emailaddr']))$CIDRAM['Config']['general']['emailaddr']='';
+    if (!isset($_SERVER))$_SERVER=array();
+    if (!isset($_SERVER[$CIDRAM['Config']['general']['ipaddr']]))$_SERVER[$CIDRAM['Config']['general']['ipaddr']]='';
+    if (!file_exists($CIDRAM['Vault'].'lang.inc'))die('[CIDRAM] Language data file missing! Please reinstall CIDRAM.');
+    require $CIDRAM['Vault'].'lang.inc';
+    if (!isset($CIDRAM['Config']['signatures']))$CIDRAM['Config']['signatures']=array();
+    if (!isset($CIDRAM['Config']['signatures']['block_cloud']))$CIDRAM['Config']['signatures']['block_cloud']=true;
+    if (!isset($CIDRAM['Config']['signatures']['block_bogons']))$CIDRAM['Config']['signatures']['block_bogons']=true;
+    if (!isset($CIDRAM['Config']['signatures']['block_generic']))$CIDRAM['Config']['signatures']['block_generic']=true;
+    if (!isset($CIDRAM['Config']['signatures']['block_spam']))$CIDRAM['Config']['signatures']['block_spam']=true;
+    $CIDRAM['CacheModified']=false;
+    if (!file_exists($CIDRAM['Vault'].'cache.dat')) {
+        $CIDRAM['handle']=fopen($CIDRAM['Vault'].'cache.dat','w');
+        $CIDRAM['Cache']=array();
+        $CIDRAM['Cache']['Counter']=0;
+        fwrite($CIDRAM['handle'],serialize($CIDRAM['Cache']));
+        fclose($CIDRAM['handle']);
+        if (!file_exists($CIDRAM['Vault'].'cache.dat'))die('[CIDRAM] '.$CIDRAM['lang']['Error_WriteCache']);
+    } else {
+        $CIDRAM['Cache']=unserialize(CIDRAMReadFile($CIDRAM['Vault'].'cache.dat'));
+        if (!isset($CIDRAM['Cache']['Counter'])) {
+            $CIDRAM['CacheModified']=true;
+            $CIDRAM['Cache']['Counter']=0;
         }
     }
+}
 
-if(!function_exists('matchElement'))
-    {
+if (!function_exists('matchElement')) {
     /**
-     * Takes two parameters; The first parameter must be an array. The function iterates through the array, comparing
-     * each array element against the second parameter. If the array element exactly matches the second parameter,
-     * the function returns true. Otherwise, after finishing iterating through the array, the function returns false.
+     * Takes two parameters; The first parameter must be an array. The function
+     * iterates through the array, comparing each array element against the
+     * second parameter. If the array element exactly matches the second
+     * parameter, the function returns true. Otherwise, after finishing
+     * iterating through the array, the function returns false.
      *
      * @param array $arr The input array.
-     * @param string|int|bool $e The second parameter (can be a string, an integer, a boolean, etc).
+     * @param string|int|bool $e The second parameter (can be a string, an
+     *      integer, a boolean, etc).
      * @return bool The results of the comparison.
      */
-    function matchElement($arr,$e)
-        {
-        if(!is_array($arr))return false;
+    function matchElement($arr, $e) {
+        if (!is_array($arr)) {
+            return false;
+        }
         reset($arr);
         $c=count($arr);
-        for($i=0;$i<$c;$i++)
-            {
+        for($i=0;$i<$c;$i++) {
             $k=key($arr);
-            if($arr[$k]===$e)return true;
+            if ($arr[$k]===$e)return true;
             next($arr);
-            }
-        return false;
         }
+        return false;
     }
+}
 
-if(!function_exists('ParseVars'))
-    {
+if (!function_exists('ParseVars')){
     /**
-     * This is a specialised search-and-replace function, designed to replace encapsulated substrings within a given
-     * input string based upon the elements of a given input array. The function accepts two input parameters: The
-     * first, the input array, and the second, the input string. The function searches for any instances of each array
-     * key, encapsulated by curly brackets, as substrings within the input string, and replaces any instances found
-     * with the array element content corresponding to the array key associated with each instance found.
+     * This is a specialised search-and-replace function, designed to replace
+     * encapsulated substrings within a given input string based upon the
+     * elements of a given input array. The function accepts two input
+     * parameters: The first, the input array, and the second, the input
+     * string. The function searches for any instances of each array key,
+     * encapsulated by curly brackets, as substrings within the input string,
+     * and replaces any instances found with the array element content
+     * corresponding to the array key associated with each instance found.
      *
-     * This function is used extensively throughout IPTestScript, to parse its language data and to parse any messages
-     * related to any detections found during the scan process and any other related processes.
+     * This function is used extensively throughout CIDRAM, to parse its
+     * language data and to parse any messages related to any detections found
+     * during the scan process and any other related processes.
      *
      * @param array $v The input array.
      * @param string $b The input string.
-     * @return string The results of the function are returned directly to the calling scope as a string.
+     * @return string The results of the function are returned directly to the
+     *      calling scope as a string.
      */
-    function ParseVars($v,$b)
-        {
-        if(!is_array($v)||empty($b))return '';
+    function ParseVars($v,$b) {
+        if (!is_array($v) || empty($b)) {
+            return '';
+        }
         $c=count($v);
         reset($v);
-        for($i=0;$i<$c;$i++)
-            {
+        for($i=0;$i<$c;$i++) {
             $k=key($v);
-            $b=str_replace('{'.$k.'}',$v[$k],$b);
+            $b=str_replace('{'.$k.'}', $v[$k], $b);
             next($v);
-            }
-        return $b;
         }
+        return $b;
     }
+}
 
 /**
  * Tests if $input is an IPv4 address, and if so, reconstructs the appropriate CIDR ranges from which the specified IP
  * address should belong to, and then checks those reconstructed CIDRs against the CIDR signatures file, and if any
- * matches are found, increments $IPTestScript['BlockInfo']['SignatureCount'] and appends to
- * $IPTestScript['BlockInfo']['ReasonMessage']. If $input is NOT an IPv4 address, or if the test fails, false will be
+ * matches are found, increments $CIDRAM['BlockInfo']['SignatureCount'] and appends to
+ * $CIDRAM['BlockInfo']['ReasonMessage']. If $input is NOT an IPv4 address, or if the test fails, false will be
  * returned. If the test succeeds (regardless of whether there are any matches), true will be returned. CIDR ranges are
  * reconstructed as a numeric array containing 32 elements, representing the 32 possible block sizes of IPv4.
  *
@@ -196,8 +197,8 @@ if(!function_exists('ParseVars'))
  */
 function IPv4Test($Addr,$Dump=false)
     {
-    if(!preg_match('/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])$/i',$Addr,$octets))return false;
-    if(!isset($GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'])||!isset($GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']))return false;
+    if (!preg_match('/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])$/i',$Addr,$octets))return false;
+    if (!isset($GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'])||!isset($GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']))return false;
     $cidr=array();
     $cidr[0]=($octets[1]<128)?'0.0.0.0/1':'128.0.0.0/1';
     $cidr[1]=(floor($octets[1]/64)*64).'.0.0.0/2';
@@ -231,10 +232,10 @@ function IPv4Test($Addr,$Dump=false)
     $cidr[29]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.(floor($octets[4]/4)*4).'/30';
     $cidr[30]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.(floor($octets[4]/2)*2).'/31';
     $cidr[31]=$octets[1].'.'.$octets[2].'.'.$octets[3].'.'.$octets[4].'/32';
-    if($Dump)return $cidr;
+    if ($Dump)return $cidr;
     $IPv4Sigs=array();
-    $IPv4Sigs[0]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv4.dat');
-    $IPv4Sigs[1]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv4_custom.dat');
+    $IPv4Sigs[0]=CIDRAMReadFile($GLOBALS['CIDRAM']['Vault'].'ipv4.dat');
+    $IPv4Sigs[1]=CIDRAMReadFile($GLOBALS['CIDRAM']['Vault'].'ipv4_custom.dat');
     $y=count($IPv4Sigs);
     for($x=0;$x<$y;$x++)
         {
@@ -244,62 +245,62 @@ function IPv4Test($Addr,$Dump=false)
             while(true)
                 {
                 $PosA=strpos($IPv4Sigs[$x],"\n".$cidr[$i].' ',($PosB+1));
-                if($PosA===false)break;
+                if ($PosA===false)break;
                 $PosA+=strlen($cidr[$i])+2;
-                if(!$PosB=strpos($IPv4Sigs[$x],"\n",$PosA))break;
+                if (!$PosB=strpos($IPv4Sigs[$x],"\n",$PosA))break;
                 $Sig=substr($IPv4Sigs[$x],$PosA,($PosB-$PosA));
                 $Cat=substr($Sig,0,strpos($Sig,' '));
                 $Sig=substr($Sig,strpos($Sig,' ')+1);
-                if($Cat==='Run')
+                if ($Cat==='Run')
                     {
-                    if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
-                    else die(ParseVars(array('FileName'=>$Sig),'[IPTestScript] '.$IPTestScript['lang']['Error_MissingRequire']));
+                    if (file_exists($GLOBALS['CIDRAM']['Vault'].$Sig))require_once $GLOBALS['CIDRAM']['Vault'].$Sig;
+                    else die(ParseVars(array('FileName'=>$Sig),'[CIDRAM] '.$CIDRAM['lang']['Error_MissingRequire']));
                     continue;
                     }
-                if($Cat==='Whitelist')
+                if ($Cat==='Whitelist')
                     {
-                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures']=$GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage']='';
-                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']=0;
+                    $GLOBALS['CIDRAM']['BlockInfo']['Signatures']=$GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage']='';
+                    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']=0;
                     break 3;
                     }
-                if($Cat==='Deny')
+                if ($Cat==='Deny')
                     {
-                    if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
+                    if ($Sig==='Bogon'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_bogons'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Bogon'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    if($Sig==='Cloud'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_cloud'])
+                    if ($Sig==='Cloud'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_cloud'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Cloud'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    if($Sig==='Generic'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_generic'])
+                    if ($Sig==='Generic'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_generic'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Generic'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Generic'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    if($Sig==='Spam'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_spam'])
+                    if ($Sig==='Spam'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_spam'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Spam'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Spam'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$Sig;
-                    if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                    $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$Sig;
+                    if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                    $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                     }
                 }
             }
@@ -310,8 +311,8 @@ function IPv4Test($Addr,$Dump=false)
 /**
  * Tests if $input is an IPv6 address, and if so, reconstructs the appropriate CIDR ranges from which the specified IP
  * address should belong to, and then checks those reconstructed CIDRs against the CIDR signatures file, and if any
- * matches are found, increments $IPTestScript['BlockInfo']['SignatureCount'] and appends to
- * $IPTestScript['BlockInfo']['ReasonMessage']. If $input is NOT an IPv6 address, or if the test fails, false will be
+ * matches are found, increments $CIDRAM['BlockInfo']['SignatureCount'] and appends to
+ * $CIDRAM['BlockInfo']['ReasonMessage']. If $input is NOT an IPv6 address, or if the test fails, false will be
  * returned. If the test succeeds (regardless of whether there are any matches), true will be returned. CIDR ranges are
  * reconstructed as a numeric array containing 128 elements, representing the 128 possible block sizes of IPv6.
  *
@@ -336,11 +337,11 @@ function IPv6Test($Addr,$Dump=false)
      * thorough testing of it to ensure that it'll always return the expected results. I -believe- it should be
      * satisfactory, but it -may- require modifying or replacing in the future, pending further testing.
      */
-    if(!preg_match('/^(([0-9a-f]{1,4}\:){7}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){6}\:[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){5}\:([0-9a-f]{1,4}\:)?[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){4}\:([0-9a-f]{1,4}\:){0,2}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){3}\:([0-9a-f]{1,4}\:){0,3}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){2}\:([0-9a-f]{1,4}\:){0,4}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9a-f]{1,4}\:){0,5}\:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(\:\:([0-9a-f]{1,4}\:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9a-f]{1,4}\:\:([0-9a-f]{1,4}\:){0,5}[0-9a-f]{1,4})|(\:\:([0-9a-f]{1,4}\:){0,6}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){1,7}\:)$/i',$Addr))return false;
+    if (!preg_match('/^(([0-9a-f]{1,4}\:){7}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){6}\:[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){5}\:([0-9a-f]{1,4}\:)?[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){4}\:([0-9a-f]{1,4}\:){0,2}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){3}\:([0-9a-f]{1,4}\:){0,3}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){2}\:([0-9a-f]{1,4}\:){0,4}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9a-f]{1,4}\:){0,5}\:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(\:\:([0-9a-f]{1,4}\:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9a-f]{1,4}\:\:([0-9a-f]{1,4}\:){0,5}[0-9a-f]{1,4})|(\:\:([0-9a-f]{1,4}\:){0,6}[0-9a-f]{1,4})|(([0-9a-f]{1,4}\:){1,7}\:)$/i',$Addr))return false;
     $NAddr=$Addr;
-    if(preg_match('/^\:\:/i',$NAddr))$NAddr='0'.$NAddr;
-    if(preg_match('/\:\:$/i',$NAddr))$NAddr.='0';
-    if(substr_count($NAddr,'::'))
+    if (preg_match('/^\:\:/i',$NAddr))$NAddr='0'.$NAddr;
+    if (preg_match('/\:\:$/i',$NAddr))$NAddr.='0';
+    if (substr_count($NAddr,'::'))
         {
         $c=7-substr_count($Addr,':');
         $arr=array(':0:',':0:0:',':0:0:0:',':0:0:0:0:',':0:0:0:0:0:',':0:0:0:0:0:0:');
@@ -348,7 +349,7 @@ function IPv6Test($Addr,$Dump=false)
         unset($arr);
         }
     $NAddr=explode(':',$NAddr);
-    if(count($NAddr)!==8)return false;
+    if (count($NAddr)!==8)return false;
     $NAddr[0]=hexdec($NAddr[0]);
     $NAddr[1]=hexdec($NAddr[1]);
     $NAddr[2]=hexdec($NAddr[2]);
@@ -496,28 +497,28 @@ function IPv6Test($Addr,$Dump=false)
     $cidr[127]=$NAddr[0].':'.$NAddr[1].':'.$NAddr[2].':'.$NAddr[3].':'.$NAddr[4].':'.$NAddr[5].':'.$NAddr[6].':'.$NAddr[7].'/128';
     for($i=0;$i<128;$i++)
         {
-        if(substr_count($cidr[$i],'::'))
+        if (substr_count($cidr[$i],'::'))
             {
             $cidr[$i]=preg_replace('/(\:0)*\:\:(0\:)*/i','::',$cidr[$i],1);
             $cidr[$i]=str_replace('::0/','::/',$cidr[$i]);
             continue;
             }
-        if(substr_count($cidr[$i],':0:0/'))
+        if (substr_count($cidr[$i],':0:0/'))
             {
             $cidr[$i]=preg_replace('/(\:0){2,}\//i','::/',$cidr[$i],1);
             continue;
             }
-        if(substr_count($cidr[$i],':0:0:'))
+        if (substr_count($cidr[$i],':0:0:'))
             {
             $cidr[$i]=preg_replace('/(\:0)+\:(0\:)+/i','::',$cidr[$i],1);
             $cidr[$i]=str_replace('::0/','::/',$cidr[$i]);
             continue;
             }
         }
-    if($Dump)return $cidr;
+    if ($Dump)return $cidr;
     $IPv6Sigs=array();
-    $IPv6Sigs[0]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv6.dat');
-    $IPv6Sigs[1]=IPTestScriptReadFile($GLOBALS['IPTestScript']['Vault'].'ipv6_custom.dat');
+    $IPv6Sigs[0]=CIDRAMReadFile($GLOBALS['CIDRAM']['Vault'].'ipv6.dat');
+    $IPv6Sigs[1]=CIDRAMReadFile($GLOBALS['CIDRAM']['Vault'].'ipv6_custom.dat');
     $y=count($IPv6Sigs);
     for($x=0;$x<$y;$x++)
         {
@@ -527,62 +528,62 @@ function IPv6Test($Addr,$Dump=false)
             while(true)
                 {
                 $PosA=strpos($IPv6Sigs[$x],"\n".$cidr[$i].' ',($PosB+1));
-                if($PosA===false)break;
+                if ($PosA===false)break;
                 $PosA+=strlen($cidr[$i])+2;
-                if(!$PosB=strpos($IPv6Sigs[$x],"\n",$PosA))break;
+                if (!$PosB=strpos($IPv6Sigs[$x],"\n",$PosA))break;
                 $Sig=substr($IPv6Sigs[$x],$PosA,($PosB-$PosA));
                 $Cat=substr($Sig,0,strpos($Sig,' '));
                 $Sig=substr($Sig,strpos($Sig,' ')+1);
-                if($Cat==='Run')
+                if ($Cat==='Run')
                     {
-                    if(file_exists($GLOBALS['IPTestScript']['Vault'].$Sig))require_once $GLOBALS['IPTestScript']['Vault'].$Sig;
-                    else die(ParseVars(array('FileName'=>$Sig),'[IPTestScript] '.$IPTestScript['lang']['Error_MissingRequire']));
+                    if (file_exists($GLOBALS['CIDRAM']['Vault'].$Sig))require_once $GLOBALS['CIDRAM']['Vault'].$Sig;
+                    else die(ParseVars(array('FileName'=>$Sig),'[CIDRAM] '.$CIDRAM['lang']['Error_MissingRequire']));
                     continue;
                     }
-                if($Cat==='Whitelist')
+                if ($Cat==='Whitelist')
                     {
-                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures']=$GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage']='';
-                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']=0;
+                    $GLOBALS['CIDRAM']['BlockInfo']['Signatures']=$GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage']='';
+                    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']=0;
                     break 3;
                     }
-                if($Cat==='Deny')
+                if ($Cat==='Deny')
                     {
-                    if($Sig==='Bogon'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_bogons'])
+                    if ($Sig==='Bogon'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_bogons'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Bogon'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Bogon'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    if($Sig==='Cloud'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_cloud'])
+                    if ($Sig==='Cloud'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_cloud'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Cloud'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    if($Sig==='Generic'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_generic'])
+                    if ($Sig==='Generic'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_generic'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Generic'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Generic'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    if($Sig==='Spam'&&$GLOBALS['IPTestScript']['Config']['signatures']['block_spam'])
+                    if ($Sig==='Spam'&&$GLOBALS['CIDRAM']['Config']['signatures']['block_spam'])
                         {
-                        $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Spam'];
-                        if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                        $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                        $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                        $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Spam'];
+                        if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                        $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                        $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                         continue;
                         }
-                    $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$Sig;
-                    if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-                    $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-                    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+                    $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$Sig;
+                    if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+                    $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+                    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
                     }
                 }
             }
@@ -593,107 +594,107 @@ function IPv6Test($Addr,$Dump=false)
 /**
  * Determine PHP path.
  */
-$IPTestScript['IPTestScript_PHP']=defined('PHP_BINARY')?PHP_BINARY:'';
+$CIDRAM['CIDRAM_PHP']=defined('PHP_BINARY')?PHP_BINARY:'';
 
 /**
  * Determine the operating system in use.
  */
-$IPTestScript['IPTestScript_OS']=strtoupper(substr(PHP_OS,0,3));
+$CIDRAM['CIDRAM_OS']=strtoupper(substr(PHP_OS,0,3));
 
 /**
  * Determine if operating in CLI.
  */
-$IPTestScript['IPTestScript_sapi']=php_sapi_name();
+$CIDRAM['CIDRAM_sapi']=php_sapi_name();
 
 /**
  * Initialise array for containing block information (for if we're to block the connection and kill the request).
  */
-$IPTestScript['BlockInfo']=array();
-$IPTestScript['BlockInfo']['DateTime']=date('r');
-$IPTestScript['BlockInfo']['IPAddr']=$_SERVER[$IPTestScript['Config']['general']['ipaddr']];
-$IPTestScript['BlockInfo']['ScriptIdent']=$IPTestScript['ScriptIdent'];
-$IPTestScript['BlockInfo']['Query']=$IPTestScript['Query'];
-$IPTestScript['BlockInfo']['Referrer']=(!empty($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
-$IPTestScript['BlockInfo']['UA']=(!empty($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'';
-$IPTestScript['BlockInfo']['UALC']=strtolower($IPTestScript['BlockInfo']['UA']);
-$IPTestScript['BlockInfo']['ReasonMessage']='';
-$IPTestScript['BlockInfo']['SignatureCount']=0;
-$IPTestScript['BlockInfo']['Signatures']='';
-$IPTestScript['BlockInfo']['xmlLang']=$IPTestScript['Config']['general']['lang'];
+$CIDRAM['BlockInfo']=array();
+$CIDRAM['BlockInfo']['DateTime']=date('r');
+$CIDRAM['BlockInfo']['IPAddr']=$_SERVER[$CIDRAM['Config']['general']['ipaddr']];
+$CIDRAM['BlockInfo']['ScriptIdent']=$CIDRAM['ScriptIdent'];
+$CIDRAM['BlockInfo']['Query']=$CIDRAM['Query'];
+$CIDRAM['BlockInfo']['Referrer']=(!empty($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
+$CIDRAM['BlockInfo']['UA']=(!empty($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'';
+$CIDRAM['BlockInfo']['UALC']=strtolower($CIDRAM['BlockInfo']['UA']);
+$CIDRAM['BlockInfo']['ReasonMessage']='';
+$CIDRAM['BlockInfo']['SignatureCount']=0;
+$CIDRAM['BlockInfo']['Signatures']='';
+$CIDRAM['BlockInfo']['xmlLang']=$CIDRAM['Config']['general']['lang'];
 
 /**
  * Run the IPv4 test.
  */
-$IPTestScript['TestIPv4']=IPv4Test($_SERVER[$IPTestScript['Config']['general']['ipaddr']]);
+$CIDRAM['TestIPv4']=IPv4Test($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
 
 /**
  * Run the IPv6 test.
  */
-$IPTestScript['TestIPv6']=IPv6Test($_SERVER[$IPTestScript['Config']['general']['ipaddr']]);
+$CIDRAM['TestIPv6']=IPv6Test($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
 
 /**
  * If both fail, report an invalid IP address and block.
  * (Skip this check if operating in CLI).
  */
-if(!$IPTestScript['TestIPv4']&&!$IPTestScript['TestIPv6']&&$IPTestScript['IPTestScript_sapi']!=='cli')
+if (!$CIDRAM['TestIPv4']&&!$CIDRAM['TestIPv6']&&$CIDRAM['CIDRAM_sapi']!=='cli')
     {
-    $IPTestScript['BlockInfo']['ReasonMessage'].=$IPTestScript['lang']['ReasonMessage_BadIP'];
-    if(!empty($IPTestScript['BlockInfo']['Signatures']))$IPTestScript['BlockInfo']['Signatures'].=', ';
-    $IPTestScript['BlockInfo']['Signatures'].=$IPTestScript['lang']['Short_BadIP'];
-    $IPTestScript['BlockInfo']['SignatureCount']++;
+    $CIDRAM['BlockInfo']['ReasonMessage'].=$CIDRAM['lang']['ReasonMessage_BadIP'];
+    if (!empty($CIDRAM['BlockInfo']['Signatures']))$CIDRAM['BlockInfo']['Signatures'].=', ';
+    $CIDRAM['BlockInfo']['Signatures'].=$CIDRAM['lang']['Short_BadIP'];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
     }
 
 /**
  * If any signatures were triggered, and if logging is enabled, increment the counter.
  */
-if($IPTestScript['BlockInfo']['SignatureCount']&&$IPTestScript['Config']['general']['logfile'])
+if ($CIDRAM['BlockInfo']['SignatureCount']&&$CIDRAM['Config']['general']['logfile'])
     {
-    $IPTestScript['Cache']['Counter']++;
-    $IPTestScript['CacheModified']=true;
+    $CIDRAM['Cache']['Counter']++;
+    $CIDRAM['CacheModified']=true;
     }
-$IPTestScript['BlockInfo']['Counter']=$IPTestScript['Cache']['Counter'];
+$CIDRAM['BlockInfo']['Counter']=$CIDRAM['Cache']['Counter'];
 
 /**
  * Save cache data to the cache.
  */
-if($IPTestScript['CacheModified'])
+if ($CIDRAM['CacheModified'])
     {
-    $IPTestScript['handle']=fopen($IPTestScript['Vault'].'cache.dat','w');
-    fwrite($IPTestScript['handle'],serialize($IPTestScript['Cache']));
-    fclose($IPTestScript['handle']);
+    $CIDRAM['handle']=fopen($CIDRAM['Vault'].'cache.dat','w');
+    fwrite($CIDRAM['handle'],serialize($CIDRAM['Cache']));
+    fclose($CIDRAM['handle']);
     }
 
 /**
  * If any signatures were triggered, log the event and generate page output.
  */
-if($IPTestScript['BlockInfo']['SignatureCount'])
+if ($CIDRAM['BlockInfo']['SignatureCount'])
     {
-    $IPTestScript['template_file']='template.html';
-    if($IPTestScript['Config']['general']['logfile'])
+    $CIDRAM['template_file']='template.html';
+    if ($CIDRAM['Config']['general']['logfile'])
         {
-        $IPTestScript['logfileData']=array();
-        $IPTestScript['logfileData']['d']=(!file_exists($IPTestScript['Vault'].$IPTestScript['Config']['general']['logfile']))?"\x3c\x3fphp die; \x3f\x3e\n\n":'';
-        $IPTestScript['logfileData']['d'].=ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n"));
-        $IPTestScript['logfileData']['f']=fopen($IPTestScript['Vault'].$IPTestScript['Config']['general']['logfile'],'a');
-        fwrite($IPTestScript['logfileData']['f'],$IPTestScript['logfileData']['d']);
-        fclose($IPTestScript['logfileData']['f']);
-        unset($IPTestScript['logfileData']);
+        $CIDRAM['logfileData']=array();
+        $CIDRAM['logfileData']['d']=(!file_exists($CIDRAM['Vault'].$CIDRAM['Config']['general']['logfile']))?"\x3c\x3fphp die; \x3f\x3e\n\n":'';
+        $CIDRAM['logfileData']['d'].=ParseVars($CIDRAM['lang'],ParseVars($CIDRAM['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n"));
+        $CIDRAM['logfileData']['f']=fopen($CIDRAM['Vault'].$CIDRAM['Config']['general']['logfile'],'a');
+        fwrite($CIDRAM['logfileData']['f'],$CIDRAM['logfileData']['d']);
+        fclose($CIDRAM['logfileData']['f']);
+        unset($CIDRAM['logfileData']);
         }
-    if(!file_exists($IPTestScript['Vault'].$IPTestScript['template_file']))die('[IPTestScript] '.$IPTestScript['lang']['denied']);
-    if(!$IPTestScript['Config']['general']['emailaddr'])$IPTestScript['BlockInfo']['EmailAddr']='';
+    if (!file_exists($CIDRAM['Vault'].$CIDRAM['template_file']))die('[CIDRAM] '.$CIDRAM['lang']['denied']);
+    if (!$CIDRAM['Config']['general']['emailaddr'])$CIDRAM['BlockInfo']['EmailAddr']='';
     else
         {
-        $IPTestScript['BlockInfo']['EmailAddr']='<strong><a href="mailto:'.$IPTestScript['Config']['general']['emailaddr'].'?subject=IPTestScript%20Event&body='.urlencode(ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n{preamble}\n\n"))).'">'.$IPTestScript['lang']['click_here'].'</a></strong>';
-        $IPTestScript['BlockInfo']['EmailAddr']="\n<p><strong>".ParseVars(array('ClickHereLink'=>$IPTestScript['BlockInfo']['EmailAddr']),$IPTestScript['lang']['Support_Email']).'</strong></p>';
+        $CIDRAM['BlockInfo']['EmailAddr']='<strong><a href="mailto:'.$CIDRAM['Config']['general']['emailaddr'].'?subject=CIDRAM%20Event&body='.urlencode(ParseVars($CIDRAM['lang'],ParseVars($CIDRAM['BlockInfo'],"{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referrer}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatures}\n{field_ua}{UA}\n\n{preamble}\n\n"))).'">'.$CIDRAM['lang']['click_here'].'</a></strong>';
+        $CIDRAM['BlockInfo']['EmailAddr']="\n<p><strong>".ParseVars(array('ClickHereLink'=>$CIDRAM['BlockInfo']['EmailAddr']),$CIDRAM['lang']['Support_Email']).'</strong></p>';
         }
-    if($IPTestScript['Config']['general']['forbid_on_block'])
+    if ($CIDRAM['Config']['general']['forbid_on_block'])
         {
         header('HTTP/1.0 403 Forbidden');
         header('HTTP/1.1 403 Forbidden');
         header('Status: 403 Forbidden');
         }
-    $IPTestScript['html']=ParseVars($IPTestScript['lang'],ParseVars($IPTestScript['BlockInfo'],IPTestScriptReadFile($IPTestScript['Vault'].$IPTestScript['template_file'])));
-    die($IPTestScript['html']);
+    $CIDRAM['html']=ParseVars($CIDRAM['lang'],ParseVars($CIDRAM['BlockInfo'],CIDRAMReadFile($CIDRAM['Vault'].$CIDRAM['template_file'])));
+    die($CIDRAM['html']);
     }
 
 /**
@@ -710,4 +711,4 @@ if($IPTestScript['BlockInfo']['SignatureCount'])
 /**
  * We unset the script variables and exit cleanly.
  */
-unset($IPTestScript);
+unset($CIDRAM);

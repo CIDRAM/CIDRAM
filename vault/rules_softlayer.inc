@@ -1,46 +1,60 @@
 <?php
 /**
- * Description to go here.
+ * This file is a part of the CIDRAM package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
  *
- * This file: File description here.
+ * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
- * @package Maikuolan/IPTestScript
+ * License: GNU/GPLv2
+ * @see LICENSE.md
  *
- * @todo EVERYTHING! This is still an ALPHA.
+ * This file: CIDRAM custom Soft Layer rules (last modified: 2016.02.07).
+ *
+ * @package Maikuolan/CIDRAM
  */
 
-/**
- * Prevents execution from outside of IPTestScript.
- */
-if(!defined('IPTestScript'))die('[IPTestScript] This should not be accessed directly.');
+/** Prevents execution from outside of CIDRAM. */
+if (!defined('CIDRAM')) {
+    die('[CIDRAM] This should not be accessed directly.');
+}
 
-/**
- * Prevents execution from outside of the IP test functions.
- */
-if(!isset($cidr[$i]))die('[IPTestScript] This should not be accessed directly.');
+/** Prevents execution from outside of the IP test functions. */
+if (!isset($cidr[$i])) {
+    die('[CIDRAM] This should not be accessed directly.');
+}
 
 $bypass=false;
 
 /** ShowyouBot bypass. */
-if(substr_count($GLOBALS['IPTestScript']['BlockInfo']['UALC'],'showyoubot'))$bypass=true;
+if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UALC'], 'showyoubot')) {
+    $bypass=true;
+}
 
 /** Disqus bypass. */
-if(substr_count($GLOBALS['IPTestScript']['BlockInfo']['UALC'],'disqus'))$bypass=true;
+if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UALC'], 'disqus')) {
+    $bypass=true;
+}
 
 /** Feedspot bypass. */
-if(substr_count($GLOBALS['IPTestScript']['BlockInfo']['UA'],'Feedspot http://www.feedspot.com'))$bypass=true;
+if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
+    $bypass=true;
+}
 
 /** Superfeedr bypass. */
-if(substr_count($GLOBALS['IPTestScript']['BlockInfo']['UA'],'Superfeedr bot/2.0'))$bypass=true;
+if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
+    $bypass=true;
+}
 
 /** Feedbot bypass. */
-if(substr_count($GLOBALS['IPTestScript']['BlockInfo']['UA'],'Feedbot'))$bypass=true;
+if (substr_count($GLOBALS['CIDRAM']['BlockInfo']['UA'], 'Feedbot')) {
+    $bypass=true;
+}
 
-if(!$bypass)
+if (!$bypass)
     {
-    $GLOBALS['IPTestScript']['BlockInfo']['ReasonMessage'].=$GLOBALS['IPTestScript']['lang']['ReasonMessage_Cloud'];
-    if(!empty($GLOBALS['IPTestScript']['BlockInfo']['Signatures']))$GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=', ';
-    $GLOBALS['IPTestScript']['BlockInfo']['Signatures'].=$cidr[$i];
-    $GLOBALS['IPTestScript']['BlockInfo']['SignatureCount']++;
+    $GLOBALS['CIDRAM']['BlockInfo']['ReasonMessage'].=$GLOBALS['CIDRAM']['lang']['ReasonMessage_Cloud'];
+    if (!empty($GLOBALS['CIDRAM']['BlockInfo']['Signatures']))$GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=', ';
+    $GLOBALS['CIDRAM']['BlockInfo']['Signatures'].=$cidr[$i];
+    $GLOBALS['CIDRAM']['BlockInfo']['SignatureCount']++;
     }
 $bypass=false;

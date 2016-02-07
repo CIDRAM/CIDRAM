@@ -1,21 +1,25 @@
 <?php
 /**
- * Description to go here.
+ * This file is a part of the CIDRAM package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
  *
- * This file: File description here.
+ * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
- * @package Maikuolan/IPTestScript
+ * License: GNU/GPLv2
+ * @see LICENSE.md
  *
- * @todo EVERYTHING! This is still an ALPHA.
+ * This file: CIDRAM language handler (last modified: 2016.02.07).
+ *
+ * @package Maikuolan/CIDRAM
  */
 
-/**
- * Prevents execution from outside of IPTestScript.
- */
-if(!defined('IPTestScript'))die('[IPTestScript] This should not be accessed directly.');
+/** Prevents execution from outside of CIDRAM. */
+if (!defined('CIDRAM')) {
+    die('[CIDRAM] This should not be accessed directly.');
+}
 
-if(!isset($IPTestScript['Config']['general']))$IPTestScript['Config']['general']=array();
-if(empty($IPTestScript['Config']['general']['lang']))$IPTestScript['Config']['general']['lang']='en';
-$IPTestScript['lang']=array();
-if(!file_exists($IPTestScript['Vault'].'lang/lang.'.$IPTestScript['Config']['general']['lang'].'.inc'))plaintext_echo_die('[IPTestScript] Language undefined or incorrectly defined. Can\'t continue.');
-require $IPTestScript['Vault'].'lang/lang.'.$IPTestScript['Config']['general']['lang'].'.inc';
+if (!isset($CIDRAM['Config']['general']))$CIDRAM['Config']['general']=array();
+if (empty($CIDRAM['Config']['general']['lang']))$CIDRAM['Config']['general']['lang']='en';
+$CIDRAM['lang']=array();
+if (!file_exists($CIDRAM['Vault'].'lang/lang.'.$CIDRAM['Config']['general']['lang'].'.inc'))plaintext_echo_die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
+require $CIDRAM['Vault'].'lang/lang.'.$CIDRAM['Config']['general']['lang'].'.inc';

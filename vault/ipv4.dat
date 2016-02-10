@@ -1,7 +1,7 @@
 IPv4 signatures file.
 
 Ranges for ASNs discovered using <http://bgp.he.net/>.
-Ranges for ASNs (IPv4) aggregated using <http://etmg.altervista.org/tools/aggregate.php>.
+Ranges for ASNs (IPv4) aggregated using <https://www.stopforumspam.com/aggregate>.
 Useful for checking rankings/cleanliness/health/trust of ASNs <http://sitevet.com/db/asn/AS%Num%>.
 Another useful tool for checking the activity of ASNs <https://radar.qrator.net/as%Num%>
 (Replace %Num% with the ASN number of the ASN you want to look up).
@@ -5535,11 +5535,23 @@ HE Rank: 249; Refer sitevet.com/db/asn/AS174
 216.128.69.0/24 Deny Cloud
 
 
+"FORTUNIX NETWORKS L.P."
+ASN 59711
+Updated: 2016.02.10
+
+5.149.248.0/23 Deny Cloud
+5.149.254.0/23 Deny Cloud
+185.80.52.0/22 Deny Cloud
+185.81.114.0/23 Deny Cloud
+200.7.96.0/23 Deny Cloud
+
+
 ---
 IPv4 Bogons List
-Updated: 2016.02.05
+Updated: 2016.02.10
 Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
+0.0.0.0/8 Deny Bogon
 2.56.0.0/14 Deny Bogon
 5.8.248.0/21 Deny Bogon
 5.45.32.0/20 Deny Bogon
@@ -6011,6 +6023,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 94.143.160.0/21 Deny Bogon
 94.158.16.0/20 Deny Bogon
 94.158.240.0/20 Deny Bogon
+94.198.40.0/21 Deny Bogon
 94.199.96.0/21 Deny Bogon
 94.199.136.0/21 Deny Bogon
 94.231.208.0/20 Deny Bogon
@@ -6025,11 +6038,9 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 102.0.0.0/8 Deny Bogon
 103.64.0.0/10 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.208.137.0/24 Deny Bogon
-103.208.148.0/22 Deny Bogon
-103.208.152.0/21 Deny Bogon
-103.208.160.0/19 Deny Bogon
-103.208.192.0/18 Deny Bogon
+103.208.199.0/24 Deny Bogon
+103.208.208.0/20 Deny Bogon
+103.208.224.0/19 Deny Bogon
 103.209.0.0/16 Deny Bogon
 103.210.0.0/15 Deny Bogon
 103.212.0.0/14 Deny Bogon
@@ -6052,8 +6063,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 129.140.0.0/16 Deny Bogon
 130.185.112.0/20 Deny Bogon
 137.59.59.0/24 Deny Bogon
-137.59.160.0/19 Deny Bogon
-137.59.192.0/18 Deny Bogon
+137.59.244.0/22 Deny Bogon
+137.59.248.0/21 Deny Bogon
 137.64.0.0/16 Deny Bogon
 137.115.0.0/16 Deny Bogon
 137.196.0.0/16 Deny Bogon
@@ -6072,7 +6083,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 154.115.128.0/17 Deny Bogon
 154.128.0.0/9 Deny Bogon
 155.12.128.0/17 Deny Bogon
-155.93.128.0/17 Deny Bogon
 155.196.0.0/16 Deny Bogon
 155.251.0.0/16 Deny Bogon
 155.255.0.0/16 Deny Bogon
@@ -6097,11 +6107,10 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 165.49.0.0/16 Deny Bogon
 165.73.0.0/16 Deny Bogon
 165.210.0.0/15 Deny Bogon
-168.90.228.0/22 Deny Bogon
-168.121.196.0/22 Deny Bogon
-168.121.200.0/21 Deny Bogon
-168.121.216.0/21 Deny Bogon
-168.121.224.0/19 Deny Bogon
+168.0.248.0/22 Deny Bogon
+168.121.56.0/22 Deny Bogon
+168.121.244.0/22 Deny Bogon
+168.121.248.0/21 Deny Bogon
 168.181.0.0/16 Deny Bogon
 168.194.0.0/15 Deny Bogon
 168.196.0.0/15 Deny Bogon
@@ -6111,8 +6120,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 168.232.0.0/16 Deny Bogon
 169.159.208.0/20 Deny Bogon
 169.159.224.0/19 Deny Bogon
-169.239.196.0/22 Deny Bogon
-169.239.200.0/21 Deny Bogon
 169.239.208.0/20 Deny Bogon
 169.239.224.0/19 Deny Bogon
 169.254.0.0/16 Deny Bogon
@@ -6162,10 +6169,11 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.137.108.0/22 Deny Bogon
-185.137.112.0/20 Deny Bogon
-185.137.128.0/17 Deny Bogon
-185.138.0.0/15 Deny Bogon
+185.138.52.0/22 Deny Bogon
+185.138.56.0/21 Deny Bogon
+185.138.64.0/18 Deny Bogon
+185.138.128.0/17 Deny Bogon
+185.139.0.0/16 Deny Bogon
 185.140.0.0/14 Deny Bogon
 185.144.0.0/12 Deny Bogon
 185.160.0.0/11 Deny Bogon
@@ -6189,6 +6197,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 192.76.149.0/24 Deny Bogon
 192.76.153.0/24 Deny Bogon
 192.109.10.0/24 Deny Bogon
+192.109.15.0/24 Deny Bogon
 192.109.17.0/24 Deny Bogon
 192.109.37.0/24 Deny Bogon
 192.109.38.0/24 Deny Bogon
@@ -8612,6 +8621,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 194.150.92.0/22 Deny Bogon
 194.150.124.0/22 Deny Bogon
 194.150.180.0/23 Deny Bogon
+194.150.204.0/23 Deny Bogon
 194.150.214.0/23 Deny Bogon
 194.150.234.0/23 Deny Bogon
 194.152.58.0/23 Deny Bogon
@@ -9016,6 +9026,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 195.206.104.0/21 Deny Bogon
 195.206.230.0/23 Deny Bogon
 195.206.234.0/23 Deny Bogon
+195.216.128.0/19 Deny Bogon
 195.216.202.0/23 Deny Bogon
 195.216.208.0/23 Deny Bogon
 195.216.238.0/24 Deny Bogon
@@ -9098,7 +9109,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 196.11.103.0/24 Deny Bogon
 196.11.176.0/21 Deny Bogon
 196.13.202.0/23 Deny Bogon
-196.32.248.0/21 Deny Bogon
 196.41.64.0/24 Deny Bogon
 196.41.66.0/23 Deny Bogon
 196.41.68.0/22 Deny Bogon
@@ -9168,7 +9178,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 200.192.106.0/23 Deny Bogon
 200.219.149.0/24 Deny Bogon
 200.229.250.0/23 Deny Bogon
-202.4.187.0/24 Deny Bogon
 202.4.189.0/24 Deny Bogon
 202.6.80.0/24 Deny Bogon
 202.6.118.0/24 Deny Bogon
@@ -9215,7 +9224,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 202.130.39.0/24 Deny Bogon
 202.146.186.0/24 Deny Bogon
 202.151.33.0/24 Deny Bogon
-202.153.4.0/23 Deny Bogon
 202.153.7.0/24 Deny Bogon
 202.158.242.0/24 Deny Bogon
 202.171.232.0/24 Deny Bogon
@@ -9259,9 +9267,9 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 203.217.162.0/23 Deny Bogon
 207.248.80.0/23 Deny Bogon
 207.248.86.0/23 Deny Bogon
-207.248.102.0/23 Deny Bogon
 212.60.0.0/19 Deny Bogon
 212.80.192.0/19 Deny Bogon
+212.81.32.0/19 Deny Bogon
 212.87.192.0/19 Deny Bogon
 212.90.96.0/19 Deny Bogon
 212.103.32.0/19 Deny Bogon

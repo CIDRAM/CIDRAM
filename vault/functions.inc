@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM functions file (last modified: 2016.02.08).
+ * This file: CIDRAM functions file (last modified: 2016.02.12).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -129,12 +129,6 @@ function IPv4Test($Addr, $Dump = false) {
             '][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[' .
             '0-9]{1,2}|2[0-4][0-9]|25[0-5])$/i', $Addr, $octets
         )
-    ) {
-        return false;
-    }
-    if (
-        !isset($CIDRAM['BlockInfo']['ReasonMessage']) ||
-        !isset($CIDRAM['BlockInfo']['SignatureCount'])
     ) {
         return false;
     }

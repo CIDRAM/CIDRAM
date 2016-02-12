@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI file (last modified: 2016.02.08).
+ * This file: CIDRAM CLI handler (last modified: 2016.02.09).
  *
  * @package Maikuolan/CIDRAM
  */

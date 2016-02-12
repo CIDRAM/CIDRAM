@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM loader file (last modified: 2016.02.08).
+ * This file: CIDRAM loader (last modified: 2016.02.09).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -38,7 +38,7 @@ if (!defined('CIDRAM')) {
 
     /** CIDRAM User Agent (for external requests). */
     $CIDRAM['ScriptUA'] =
-        'CIDRAM/' . $CIDRAM['ScriptVersion'] .
+        'CIDRAM v' . $CIDRAM['ScriptVersion'] .
         ' (https://github.com/Maikuolan/CIDRAM)';
 
     /** Determine the location of the "vault" directory. */
@@ -157,7 +157,7 @@ if (!defined('CIDRAM')) {
     }
 
     /**
-     * Check if the CLI file exists; Load it if it does.
+     * Check if the CLI handler exists; Load it if it does.
      * Skip this check if we're not in CLI-mode.
      */
     if ($CIDRAM['CIDRAM_sapi'] === 'cli') {

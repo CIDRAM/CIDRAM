@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM loader (last modified: 2016.02.09).
+ * This file: CIDRAM loader (last modified: 2016.02.15).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -42,10 +42,7 @@ if (!defined('CIDRAM')) {
         ' (https://github.com/Maikuolan/CIDRAM)';
 
     /** Determine the location of the "vault" directory. */
-    $CIDRAM['Vault'] =
-        @(__DIR__ === '__DIR__') ?
-        dirname(__FILE__) . '/vault/' :
-        __DIR__ . '/vault/';
+    $CIDRAM['Vault'] = __DIR__ . '/vault/';
 
     /** Kill the script if we can't find the vault directory. */
     if (!is_dir($CIDRAM['Vault'])) {

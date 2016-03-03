@@ -70,7 +70,7 @@ Si tiene algún falsos positivos, por favor contacto conmigo para decirme.
 ---
 
 
-###5. <a name="SECTION5"></a>ARCHIVOS INCLUIDOS EN ESTE PAQUETE
+###4. <a name="SECTION4"></a>ARCHIVOS INCLUIDOS EN ESTE PAQUETE
 
 La siguiente es una lista de todos los archivos que debería haberse incluido en la copia de este script cuando descargado, todos los archivos que pueden ser potencialmente creados como resultado de su uso de este script, junto con una breve descripción de lo que todos estos archivos son para.
 
@@ -80,7 +80,7 @@ Archivo | Descripción
 /Changelog.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /composer.json | Composer/Packagist información (no se requiere para usar la script).
 /LICENSE.txt | Una copia de la GNU/GPLv2 licencia.
-/loader.php | Cargador (cargar el principal script, el actualizador, etcétera). Esto es lo que se supone debe enganchando (esencial)!
+/loader.php | Cargador. Esto es lo que se supone debe enganchando (esencial)!
 /README.md | Sumario información del proyecto.
 /web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 /_docs/ | Documentación directorio (contiene varios archivos).
@@ -88,6 +88,8 @@ Archivo | Descripción
 /_docs/readme.es.md | Documentación Español.
 /_docs/readme.fr.md | Documentación Francés.
 /_docs/readme.id.md | Documentación Indonesio.
+/_docs/readme.it.md | Documentación Italiano.
+/_docs/readme.pt.md | Documentación Portugués.
 /vault/ | Vault directorio (contiene varios archivos).
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache.dat | Cache data.
@@ -120,7 +122,7 @@ Archivo | Descripción
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURACIÓN OPCIONES
+###5. <a name="SECTION5"></a>CONFIGURACIÓN OPCIONES
 La siguiente es una lista de variables encuentran en la `config.ini` configuración archivo de CIDRAM, junto con una descripción de sus propósito y función.
 
 ####"general" (Categoría)
@@ -159,11 +161,11 @@ Configuración de firmas.
 ---
 
 
-###7. <a name="SECTION7"></a>FIRMA FORMATOS
+###6. <a name="SECTION6"></a>FIRMA FORMATOS
 
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
 
 ---
 
 
-Última Actualización: 2 Marzo 2016 (2016.03.02).
+Última Actualización: 3 Marzo 2016 (2016.03.03).

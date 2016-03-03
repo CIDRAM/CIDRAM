@@ -70,7 +70,7 @@ If you encounter any false positives, please contact me to let me know about it.
 ---
 
 
-###5. <a name="SECTION4"></a>FILES INCLUDED IN THIS PACKAGE
+###4. <a name="SECTION4"></a>FILES INCLUDED IN THIS PACKAGE
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, along with a short description of the purpose of these files.
 
@@ -88,6 +88,8 @@ File | Description
 /_docs/readme.es.md | Spanish documentation.
 /_docs/readme.fr.md | French documentation.
 /_docs/readme.id.md | Indonesian documentation.
+/_docs/readme.it.md | Italian documentation.
+/_docs/readme.pt.md | Portuguese documentation.
 /vault/ | Vault directory (contains various files).
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
@@ -120,7 +122,7 @@ File | Description
 ---
 
 
-###6. <a name="SECTION5"></a>CONFIGURATION OPTIONS
+###5. <a name="SECTION5"></a>CONFIGURATION OPTIONS
 The following is a list of the directives available to CIDRAM in the `config.ini` configuration file, along with a description of the purpose of these directives.
 
 ####"general" (Category)
@@ -159,11 +161,11 @@ Signatures configuration.
 ---
 
 
-###7. <a name="SECTION6"></a>SIGNATURE FORMAT
+###6. <a name="SECTION6"></a>SIGNATURE FORMAT
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
 ---
 
 
-Last Updated: 2nd March 2016 (2016.03.02).
+Last Updated: 3rd March 2016 (2016.03.03).

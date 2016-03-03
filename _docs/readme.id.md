@@ -70,7 +70,7 @@ Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tah
 ---
 
 
-###5. <a name="SECTION5"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
+###4. <a name="SECTION4"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
@@ -80,7 +80,7 @@ Data | Deskripsi
 /Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /LICENSE.txt | Salinan lisensi GNU/GPLv2.
-/loader.php | Pemuat (memuat skrip utama, pengupdate, dll). Ini yang apa Anda ingin masukkan (utama)!
+/loader.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
 /README.md | Ringkasan informasi proyek.
 /web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
@@ -88,6 +88,8 @@ Data | Deskripsi
 /_docs/readme.es.md | Dokumentasi Bahasa Spanyol.
 /_docs/readme.fr.md | Dokumentasi Bahasa Perancis.
 /_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
+/_docs/readme.it.md | Dokumentasi Bahasa Italia.
+/_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache.dat | Cache data.
@@ -120,7 +122,7 @@ Data | Deskripsi
 ---
 
 
-###6. <a name="SECTION6"></a>OPSI KONFIGURASI
+###5. <a name="SECTION5"></a>OPSI KONFIGURASI
 Berikut list variabel yang ditemukan pada file konfigurasi CIDRAM `config.ini`, dengan deskripsi dari tujuan dan fungsi.
 
 ####"general" (Kategori)
@@ -134,9 +136,6 @@ Konfigurasi umum dari CIDRAM.
 
 "forbid_on_block"
 - Seharusnya CIDRAM menanggapi dengan 403 header untuk permintaan diblokir, atau cocok dengan 200 OK? False = Tidak (200) [Default]; True = Ya (403).
-
-"delete_on_sight"
-- Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus file apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. file-file ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali file yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload file biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya PHP akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus file terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan di sini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak selalu bersikap pada perilaku yang diharapkan. False = Setelah pemindahaian, biarkan file [Default]; True = Setelah pemindaian, jika tidak bersih, hapus langsung.
 
 "lang"
 - Tentukan bahasa default untuk CIDRAM.
@@ -162,11 +161,11 @@ Konfigurasi untuk tanda tangan.
 ---
 
 
-###7. <a name="SECTION7"></a>FORMAT TANDA TANGAN
+###6. <a name="SECTION6"></a>FORMAT TANDA TANGAN
 
 Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silakan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
 
 ---
 
 
-Terakhir Diperbarui: 2 Maret 2016 (2016.03.02).
+Terakhir Diperbarui: 3 Maret 2016 (2016.03.03).

@@ -87,7 +87,9 @@ Fichier | Description
 /_docs/readme.en.md | Documentation en Anglais.
 /_docs/readme.es.md | Documentation en Espagnol.
 /_docs/readme.fr.md | Documentation en Français.
-/_docs/readme.fr.md | Documentation en Indonésien.
+/_docs/readme.id.md | Documentation en Indonésien.
+/_docs/readme.it.md | Documentation en Italien.
+/_docs/readme.pt.md | Documentation en Portugais.
 /vault/ | Voûte répertoire (contient divers fichiers).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache.dat | Données du cache.
@@ -166,4 +168,4 @@ Une description du format et de la structure du signatures utilisé par CIDRAM p
 ---
 
 
-Dernière Réactualisé: 2 Mars 2016 (2016.03.02).
+Dernière Réactualisé: 3 Mars 2016 (2016.03.03).

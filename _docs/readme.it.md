@@ -2,8 +2,8 @@
 
 ### Contenuti
 - 1. [PREAMBOLO](#SECTION1)
-- 2. [COME INSTALLARE (PER WEB SERVER)](#SECTION2)
-- 3. [COME USARE (PER WEB SERVER)](#SECTION3)
+- 2. [COME INSTALLARE](#SECTION2)
+- 3. [COME USARE](#SECTION3)
 - 4. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION4)
 - 5. [OPZIONI DI CONFIGURAZIONE](#SECTION5)
 - 6. [FIRMA FORMATO](#SECTION6)
@@ -168,4 +168,4 @@ Una descrizione del formato e la struttura delle firme utilizzate da CIDRAM può
 ---
 
 
-Ultimo Aggiornamento: 3 Marzo 2016 (2016.03.03).
+Ultimo Aggiornamento: 5 Marzo 2016 (2016.03.05).

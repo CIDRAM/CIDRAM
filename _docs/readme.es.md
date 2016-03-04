@@ -5,8 +5,8 @@
 - 2. [CÓMO INSTALAR](#SECTION2)
 - 3. [CÓMO USO](#SECTION3)
 - 4. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION4)
-- 5. [CONFIGURACIÓN OPCIONES](#SECTION5)
-- 6. [FIRMA FORMATOS](#SECTION6)
+- 5. [OPCIONES DE CONFIGURACIÓN](#SECTION5)
+- 6. [FORMATO DE FIRMAS](#SECTION6)
 
 ---
 
@@ -95,7 +95,7 @@ Archivo | Descripción
 /vault/cache.dat | Cache data.
 /vault/cli.inc | Módulo de la CLI.
 /vault/config.inc | Módulo de configuración.
-/vault/config.ini | Archivo de configuración; Contiene todas las configuración opciones para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (esencial)!
+/vault/config.ini | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (esencial)!
 /vault/functions.inc | Archivo de funciones (esencial).
 /vault/ipv4.dat | Archivo de firmas por IPv4.
 /vault/ipv4_custom.dat | Archivo de firmas por IPv4 personalizado.
@@ -122,7 +122,7 @@ Archivo | Descripción
 ---
 
 
-###5. <a name="SECTION5"></a>CONFIGURACIÓN OPCIONES
+###5. <a name="SECTION5"></a>OPCIONES DE CONFIGURACIÓN
 La siguiente es una lista de variables encuentran en la `config.ini` configuración archivo de CIDRAM, junto con una descripción de sus propósito y función.
 
 ####"general" (Categoría)
@@ -161,11 +161,11 @@ Configuración de firmas.
 ---
 
 
-###6. <a name="SECTION6"></a>FIRMA FORMATOS
+###6. <a name="SECTION6"></a>FORMATO DE FIRMAS
 
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
 
 ---
 
 
-Última Actualización: 3 Marzo 2016 (2016.03.03).
+Última Actualización: 5 Marzo 2016 (2016.03.05).

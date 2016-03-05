@@ -89,6 +89,7 @@ Data | Deskripsi
 /_docs/readme.fr.md | Dokumentasi Bahasa Perancis.
 /_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
+/_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -111,8 +112,8 @@ Data | Deskripsi
 /vault/lang/lang.it.inc | File Bahasa Italia.
 /vault/lang/lang.nl.inc | File Bahasa Belanda.
 /vault/lang/lang.pt.inc | File Bahasa Portugis.
-/vault/lang/lang.zh-TW.inc | File Bahasa Cina Tradisional.
-/vault/lang/lang.zh.inc | File Bahasa Cina Sederhana.
+/vault/lang/lang.zh-TW.inc | File Bahasa Cina tradisional.
+/vault/lang/lang.zh.inc | File Bahasa Cina sederhana.
 /vault/outgen.inc | Output generator.
 /vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
@@ -168,4 +169,4 @@ Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapa
 ---
 
 
-Terakhir Diperbarui: 3 Maret 2016 (2016.03.03).
+Terakhir Diperbarui: 6 Maret 2016 (2016.03.06).

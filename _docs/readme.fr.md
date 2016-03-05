@@ -89,6 +89,7 @@ Fichier | Description
 /_docs/readme.fr.md | Documentation en Français.
 /_docs/readme.id.md | Documentation en Indonésien.
 /_docs/readme.it.md | Documentation en Italien.
+/_docs/readme.nl.md | Documentation en Néerlandais.
 /_docs/readme.pt.md | Documentation en Portugais.
 /vault/ | Voûte répertoire (contient divers fichiers).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -111,8 +112,8 @@ Fichier | Description
 /vault/lang/lang.it.inc | Linguistiques données en Italien.
 /vault/lang/lang.nl.inc | Linguistiques données en Néerlandais.
 /vault/lang/lang.pt.inc | Linguistiques données en Portugais.
-/vault/lang/lang.zh-TW.inc | Linguistiques données en Chinois (Traditionnel).
-/vault/lang/lang.zh.inc | Linguistiques données en Chinois (Simplifié).
+/vault/lang/lang.zh-TW.inc | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh.inc | Linguistiques données en Chinois (simplifié).
 /vault/outgen.inc | Générateur de sortie.
 /vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
@@ -168,4 +169,4 @@ Une description du format et de la structure du signatures utilisé par CIDRAM p
 ---
 
 
-Dernière Réactualisé: 3 Mars 2016 (2016.03.03).
+Dernière Réactualisé: 6 Mars 2016 (2016.03.06).

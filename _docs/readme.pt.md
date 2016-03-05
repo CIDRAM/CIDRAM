@@ -89,6 +89,7 @@ Arquivo | Descrição
 /_docs/readme.fr.md | Documentação Francesa.
 /_docs/readme.id.md | Documentação Indonésio.
 /_docs/readme.it.md | Documentação Italiano.
+/_docs/readme.nl.md | Documentação Holandês.
 /_docs/readme.pt.md | Documentação Português.
 /vault/ | Vault diretório (contém vários arquivos).
 /vault/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
@@ -111,8 +112,8 @@ Arquivo | Descrição
 /vault/lang/lang.it.inc | Linguagem dados Italiano.
 /vault/lang/lang.nl.inc | Linguagem dados Holandês.
 /vault/lang/lang.pt.inc | Linguagem dados Português.
-/vault/lang/lang.zh-TW.inc | Linguagem dados Chinês (Tradicional).
-/vault/lang/lang.zh.inc | Linguagem dados Chinês (Simplificado).
+/vault/lang/lang.zh-TW.inc | Linguagem dados Chinês (tradicional).
+/vault/lang/lang.zh.inc | Linguagem dados Chinês (simplificado).
 /vault/outgen.inc | Gerador de saída.
 /vault/template.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
@@ -168,4 +169,4 @@ A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode 
 ---
 
 
-Última Atualização: 5 Março 2016 (2016.03.05).
+Última Atualização: 6 Março 2016 (2016.03.06).

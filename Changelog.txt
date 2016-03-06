@@ -9,6 +9,25 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 (none)
 
+=== Version/Release 0.1.1 ===
+
+- [2016.03.03-2016.03.07; Documentation; Maikuolan]: Completed translations for
+  the README documentation of CIDRAM (written originally in English) into
+  Spanish, French, Indonesian, Italian, Portuguese and Dutch (none of these
+  translations have been checked/audited by a native/fluent speaker yet, but
+  they should be at least accurate enough to be understood). This totals 7
+  different languages versions of the README document now available.
+
+- [2016.03.07; Sub-minor code change; Maikuolan]: Converted all functions to
+  closures (anonymous functions), in order to be able to unset them from memory
+  after the script execution has finished (we shouldn't leave unrequired data
+  in the memory afer execution has finished). Changed the blocksize for reading
+  files with the "ReadFile" function from 48KB to 128KB (we can afford this,
+  and this should *slightly* increase the speed of the script).
+
+Caleb M / Maikuolan,
+7th March 2016.
+
 === Version/Release 0.1.0 ===
 
 - [2015.12.12; Documentation; Maikuolan]: Added a changelog; Added READMEs.

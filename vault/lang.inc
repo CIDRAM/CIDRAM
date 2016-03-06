@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM language handler (last modified: 2016.02.08).
+ * This file: Language handler (last modified: 2016.03.07).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -20,11 +20,11 @@ if (!defined('CIDRAM')) {
 
 /** If the language directive is empty, default to English. */
 if (empty($CIDRAM['Config']['general']['lang'])) {
-    $CIDRAM['Config']['general']['lang']='en';
+    $CIDRAM['Config']['general']['lang'] = 'en';
 }
 
 /** Create the language data array. */
-$CIDRAM['lang']=array();
+$CIDRAM['lang'] = array();
 
 /**
  * Kill the script if the language data file corresponding to the language

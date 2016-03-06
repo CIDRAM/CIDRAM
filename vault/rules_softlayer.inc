@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM Soft Layer ruleset (last modified: 2016.02.08).
+ * This file: Custom rules file for Soft Layer (last modified: 2016.03.07).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -23,40 +23,40 @@ if (!isset($cidr[$i])) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$bypass=false;
+$bypass = false;
 
 /** ShowyouBot bypass. */
 if (substr_count($CIDRAM['BlockInfo']['UALC'], 'showyoubot')) {
-    $bypass=true;
+    $bypass = true;
 }
 
 /** Disqus bypass. */
 if (substr_count($CIDRAM['BlockInfo']['UALC'], 'disqus')) {
-    $bypass=true;
+    $bypass = true;
 }
 
 /** Feedspot bypass. */
 if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
-    $bypass=true;
+    $bypass = true;
 }
 
 /** Superfeedr bypass. */
 if (substr_count($CIDRAM['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
-    $bypass=true;
+    $bypass = true;
 }
 
 /** Feedbot bypass. */
 if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedbot')) {
-    $bypass=true;
+    $bypass = true;
 }
 
 if (!$bypass) {
     $CIDRAM['BlockInfo']['ReasonMessage'] .= $CIDRAM['lang']['ReasonMessage_Cloud'];
     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-        $CIDRAM['BlockInfo']['Signatures'].=', ';
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }
     $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
     $CIDRAM['BlockInfo']['SignatureCount']++;
 }
 
-$bypass=false;
+$bypass = false;

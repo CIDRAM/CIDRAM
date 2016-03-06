@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM AS6939 ruleset (last modified: 2016.02.08).
+ * This file: Custom rules file for AS6939 (last modified: 2016.03.07).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -23,7 +23,7 @@ if (!isset($cidr[$i])) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$bypass=false;
+$bypass = false;
 
 /** Feedly/Feedspot bypass. */
 if (
@@ -31,12 +31,12 @@ if (
     substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') ||
     substr_count($CIDRAM['BlockInfo']['UA'], 'Feedly')
 ) {
-    $bypass=true;
+    $bypass = true;
 }
 
 /** Access provider block bypass. */
 if ($cidr[23] === '65.49.67.0/24') {
-    $bypass=true;
+    $bypass = true;
 }
 
 if (!$bypass) {
@@ -48,4 +48,4 @@ if (!$bypass) {
     $CIDRAM['BlockInfo']['SignatureCount']++;
 }
 
-$bypass=false;
+$bypass = false;

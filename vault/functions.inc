@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM functions file (last modified: 2016.02.12).
+ * This file: Functions file (last modified: 2016.03.07).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -20,23 +20,23 @@
  * @return string|bool Content of the file returned by the function (or false
  *      on failure).
  */
-function CIDRAM_ReadFile($f) {
+$CIDRAM['ReadFile'] = function ($f) {
     if (!is_file($f)) {
         return false;
     }
-    $s = @ceil(filesize($f) / 49152);
+    $s = @ceil(filesize($f) / 131072);
     $d = '';
     if ($s > 0) {
         $fh = fopen($f, 'rb');
         $r = 0;
         while($r < $s) {
-            $d .= fread($fh, 49152);
+            $d .= fread($fh, 131072);
             $r++;
         }
         fclose($fh);
     }
     return (!empty($d)) ? $d : false;
-}
+};
 
 /**
  * Takes two parameters; The first parameter must be an array. The function
@@ -85,7 +85,7 @@ function matchElement($arr, $e) {
  * @return string The results of the function are returned directly to the
  *      calling scope as a string.
  */
-function ParseVars($v, $b) {
+$CIDRAM['ParseVars'] = function ($v, $b) {
     if (!is_array($v) || empty($b)) {
         return '';
     }
@@ -97,7 +97,7 @@ function ParseVars($v, $b) {
         next($v);
     }
     return $b;
-}
+};
 
 /**
  * Tests if $input is an IPv4 address, and if so, reconstructs the appropriate
@@ -121,8 +121,7 @@ function ParseVars($v, $b) {
  * @return bool|array A boolean indicating whether the test succeeded (or an
  *      array of the CIDRs, when $Dump is true).
  */
-function IPv4Test($Addr, $Dump = false) {
-    global $CIDRAM;
+$CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     if (
         !preg_match(
             '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4' .
@@ -169,8 +168,8 @@ function IPv4Test($Addr, $Dump = false) {
         return $cidr;
     }
     $IPv4Sigs = array();
-    $IPv4Sigs[0] = CIDRAM_ReadFile($CIDRAM['Vault'] . 'ipv4.dat');
-    $IPv4Sigs[1] = CIDRAM_ReadFile($CIDRAM['Vault'] . 'ipv4_custom.dat');
+    $IPv4Sigs[0] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv4.dat');
+    $IPv4Sigs[1] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv4_custom.dat');
     $y = count($IPv4Sigs);
     for ($x = 0; $x < $y; $x++) {
         for ($i = 0; $i < 32; $i++) {
@@ -191,7 +190,7 @@ function IPv4Test($Addr, $Dump = false) {
                     if (file_exists($CIDRAM['Vault'] . $Sig)) {
                         require_once $CIDRAM['Vault'] . $Sig;
                     } else {
-                        die(ParseVars(
+                        die($CIDRAM['ParseVars'](
                             array('FileName' => $Sig),
                             '[CIDRAM] ' . $CIDRAM['lang']['Error_MissingRequire']
                         ));
@@ -251,7 +250,7 @@ function IPv4Test($Addr, $Dump = false) {
         }
     }
     return true;
-}
+};
 
 /**
  * Tests if $input is an IPv6 address, and if so, reconstructs the appropriate
@@ -275,8 +274,7 @@ function IPv4Test($Addr, $Dump = false) {
  * @return bool|array A boolean indicating whether the test succeeded (or an
  *      array of the CIDRs, when $Dump is true).
  */
-function IPv6Test($Addr,$Dump=false) {
-    global $CIDRAM;
+$CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     /**
      * The REGEX pattern used by this `preg_match` call was adapted from the
      * IPv6 REGEX pattern that can be found at
@@ -504,8 +502,8 @@ function IPv6Test($Addr,$Dump=false) {
         return $cidr;
     }
     $IPv6Sigs = array();
-    $IPv6Sigs[0] = CIDRAM_ReadFile($CIDRAM['Vault'] . 'ipv6.dat');
-    $IPv6Sigs[1] = CIDRAM_ReadFile($CIDRAM['Vault'] . 'ipv6_custom.dat');
+    $IPv6Sigs[0] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv6.dat');
+    $IPv6Sigs[1] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv6_custom.dat');
     $y = count($IPv6Sigs);
     for ($x = 0; $x < $y; $x++) {
         for ($i = 0; $i < 128; $i++) {
@@ -526,7 +524,7 @@ function IPv6Test($Addr,$Dump=false) {
                     if (file_exists($CIDRAM['Vault'] . $Sig)) {
                         require_once $CIDRAM['Vault'] . $Sig;
                     } else {
-                        die(ParseVars(
+                        die($CIDRAM['ParseVars'](
                             array('FileName' => $Sig),
                             '[CIDRAM] ' . $CIDRAM['lang']['Error_MissingRequire']
                         ));
@@ -586,4 +584,4 @@ function IPv6Test($Addr,$Dump=false) {
         }
     }
     return true;
-}
+};

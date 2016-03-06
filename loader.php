@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM loader (last modified: 2016.02.15).
+ * This file: The loader (last modified: 2016.03.07).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -23,15 +23,11 @@ if (!defined('CIDRAM')) {
 
     /**
      * Create an array for our working data.
-     * @global array $CIDRAM
      */
     $CIDRAM = array();
 
-    /** Make our array a superglobal. */
-    global $CIDRAM;
-
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.1.0';
+    $CIDRAM['ScriptVersion'] = '0.1.1';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];

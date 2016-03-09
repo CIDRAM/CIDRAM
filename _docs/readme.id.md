@@ -84,6 +84,7 @@ Data | Deskripsi
 /README.md | Ringkasan informasi proyek.
 /web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
+/_docs/readme.de.md | Dokumentasi Bahasa Jerman.
 /_docs/readme.en.md | Dokumentasi Bahasa Inggris.
 /_docs/readme.es.md | Dokumentasi Bahasa Spanyol.
 /_docs/readme.fr.md | Dokumentasi Bahasa Perancis.
@@ -91,6 +92,8 @@ Data | Deskripsi
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
+/_docs/readme.zh-TW.md | Dokumentasi Cina Tradisional.
+/_docs/readme.zh.md | Dokumentasi Cina Sederhana.
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache.dat | Cache data.
@@ -169,4 +172,4 @@ Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapa
 ---
 
 
-Terakhir Diperbarui: 6 Maret 2016 (2016.03.06).
+Terakhir Diperbarui: 8 Maret 2016 (2016.03.08).

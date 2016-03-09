@@ -84,6 +84,7 @@ File | Description
 /README.md | Project summary information.
 /web.config | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
 /_docs/ | Documentation directory (contains various files).
+/_docs/readme.de.md | German documentation.
 /_docs/readme.en.md | English documentation.
 /_docs/readme.es.md | Spanish documentation.
 /_docs/readme.fr.md | French documentation.
@@ -91,6 +92,8 @@ File | Description
 /_docs/readme.it.md | Italian documentation.
 /_docs/readme.nl.md | Dutch documentation.
 /_docs/readme.pt.md | Portuguese documentation.
+/_docs/readme.zh-TW.md | Chinese (Traditional) documentation.
+/_docs/readme.zh.md | Chinese (Simplified) documentation.
 /vault/ | Vault directory (contains various files).
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
@@ -169,4 +172,4 @@ A description of the format and structure of the signatures used by CIDRAM can b
 ---
 
 
-Last Updated: 6th March 2016 (2016.03.06).
+Last Updated: 8th March 2016 (2016.03.08).

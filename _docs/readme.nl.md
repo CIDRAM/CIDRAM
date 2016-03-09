@@ -84,6 +84,7 @@ Bestand | Beschrijving
 /README.md | Project beknopte informatie.
 /web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
+/_docs/readme.de.md | Duitse documentatie.
 /_docs/readme.en.md | Engels documentatie.
 /_docs/readme.es.md | Spaanse documentatie.
 /_docs/readme.fr.md | Franse documentatie.
@@ -91,6 +92,8 @@ Bestand | Beschrijving
 /_docs/readme.it.md | Italiaanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
+/_docs/readme.zh-TW.md | Chinees (Traditioneel) documentatie.
+/_docs/readme.zh.md | Chinees (Vereenvoudigd) documentatie.
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache.dat | Cache data/gegevens.
@@ -169,4 +172,4 @@ Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt 
 ---
 
 
-Laatste Bijgewerkt: 6 Maart 2016 (2016.03.06).
+Laatste Bijgewerkt: 8 Maart 2016 (2016.03.08).

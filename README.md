@@ -18,14 +18,21 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 ### Documentation:
 - **[English](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md)**
+- **※العربية
+- **※[Deutsch](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.de.md)**
 - **[Español](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.es.md)**
 - **[Français](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.fr.md)**
 - **[Bahasa Indonesia](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.id.md)**
 - **[Italiano](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.it.md)**
+- **[Nederlandse](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.nl.md)**
 - **[Português](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.pt.md)**
+- **※Русский
+- **※Tiếng Việt
+- **※[中文（简体）](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh.md)**
+- **※[中文（傳統）](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh-TW.md)**
 
-*Translations of the documentation to other languages coming soon.*
+※ = W.I.P. (Work-In-Progress) / Incomplete.
 
 ---
 
-*This file, "README.md", last edited: 5th March 2016 (2016.03.05).*
+*This file, "README.md", last edited: 8th March 2016 (2016.03.08).*

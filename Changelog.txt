@@ -7,11 +7,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2016.03.11; Sub-minor code change; Maikuolan]: When converting all functions
+  to closures (anonymous functions) for the previous release, I missed the
+  "matchElement" function. I'd thought I'd got them all, but I'd missed this
+  one (this function wasn't yet being used anywhere anyhow, so, missing it
+  wouldn't have been particularly problematic, anyhow); In any case, this has
+  now been corrected.
 
 === Version/Release 0.1.1 ===
+PATCH RELEASE.
 
-- [2016.03.03-2016.03.07; Documentation; Maikuolan]: Completed translations for
+- [2016.03.03-2016.03.06; Documentation; Maikuolan]: Completed translations for
   the README documentation of CIDRAM (written originally in English) into
   Spanish, French, Indonesian, Italian, Portuguese and Dutch (none of these
   translations have been checked/audited by a native/fluent speaker yet, but
@@ -29,6 +35,7 @@ Caleb M / Maikuolan,
 7th March 2016.
 
 === Version/Release 0.1.0 ===
+MINOR RELEASE (FIRST BETA).
 
 - [2015.12.12; Documentation; Maikuolan]: Added a changelog; Added READMEs.
 

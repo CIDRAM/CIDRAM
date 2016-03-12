@@ -34,9 +34,9 @@ Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos her
 
 Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um CIDRAM auf den *meisten Systemen und CMS zu installieren:
 
-1) Entpacken Sie das heruntergeladene Archiv auf Ihren lokalen PC. Erstellen Sie ein Verzeichnis, wohin Sie den Inhalt dieses Paketes auf Ihrem Host oder CMS installieren möchten. Ein Verzeichnis wie `/public_html/CIDRAM/` o.ä. genügt, solange es Ihren Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
+1) Entpacken Sie das heruntergeladene Archiv auf Ihren lokalen PC. Erstellen Sie ein Verzeichnis, wohin Sie den Inhalt dieses Paketes auf Ihrem Host oder CMS installieren möchten. Ein Verzeichnis wie `/public_html/cidram/` o.ä. genügt, solange es Ihren Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
 
-2) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie die Datei `CIDRAM.ini` im `vault`-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen für CIDRAM. Über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
+2) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie die Datei `config.ini` im `vault`-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen für CIDRAM. Über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
 
 3) Laden Sie den kompletten Inhalt (CIDRAM und die Dateien) in das Verzeichnis hoch, für das Sie sich in Schritt 1 entschieden haben. Die Dateien `*.txt`/`*.md` müssen nicht mit hochgeladen werden.
 
@@ -44,7 +44,7 @@ Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis d
 
 5) Binden Sie CIDRAM in Ihr System oder CMS ein. Es gibt viele verschiedene Möglichkeiten, ein Script wie CIDRAM einzubinden, am einfachsten ist es, das Script am Anfang einer Haupt-Datei (eine Datei, die immer geladen wird, wenn irgend eine beliebige Seite Ihres Webauftritts aufgerufen wird) Ihres Systems oder CMS mit Hilfe des require- oder include-Befehls einzubinden. Üblicherweise wird eine solche Datei in Verzeichnissen wie `/includes`, `/assets` or `/functions` gespeichert und wird häufig `init.php`, `common_functions.php`, `functions.php` o.ä. genannt. Sie müssen herausfinden, welche Datei dies für Ihre Bedürfnisse ist; Wenn Sie dabei Schwierigkeiten haben das herauszufinden, besuchen Sie die CIDRAM Support-Foren und lassen Sie es uns wissen; Es ist möglich, dass entweder ich oder ein anderer Benutzer mit dem CMS, das Sie verwenden, Erfahrung hat (Sie müssen Sie mitteilen, welche CMS Sie verwenden) und möglicherweise in der Lage ist, etwas Unterstützung anzubieten. Fügen Sie in dieser Datei folgenden Code direkt am Anfang ein:
 
-`<?php require '/user_name/public_html/CIDRAM/loader.php'; ?>`
+`<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
 Ersetzen Sie den String zwischen den Anführungszeichen mit dem lokalen Pfad der Datei `loader.php`, nicht mit der HTTP-Adresse (ähnlich dem Pfad für das `vault`-Verzeichnis). Speichern und schließen Sie die Datei, laden Sie sie ggf. erneut hoch.
 
@@ -52,11 +52,11 @@ Ersetzen Sie den String zwischen den Anführungszeichen mit dem lokalen Pfad der
 
 Wenn Sie einen Apache-Webserver haben und wenn Sie Zugriff auf die `php.ini` oder eine ähnliche Datei haben, dann können Sie die `auto_prepend_file` Direktive verwenden um CIDRAM voranstellen wenn eine PHP-Anfrage erfolgt. Ungefähr so:
 
-`auto_prepend_file = "/user_name/public_html/CIDRAM/loader.php"`
+`auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
 Oder das in der `.htaccess` Datei:
 
-`php_value auto_prepend_file "/user_name/public_html/CIDRAM/loader.php"`
+`php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) Das ist alles! :-)
 
@@ -131,7 +131,7 @@ Datei | Beschreibung
 
 
 ###5. <a name="SECTION5"></a>EINSTELLUNGEN
-Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `CIDRAM.ini` mit einer kurzen Beschreibung ihrer Funktionen.
+Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `config.ini` mit einer kurzen Beschreibung ihrer Funktionen.
 
 ####"general" (Kategorie)
 Generelle Konfiguration von CIDRAM.

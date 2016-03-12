@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.07).
+ * This file: Functions file (last modified: 2016.03.11).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -50,7 +50,7 @@ $CIDRAM['ReadFile'] = function ($f) {
  *      a boolean, etc).
  * @return bool The results of the comparison.
  */
-function matchElement($arr, $e) {
+$CIDRAM['matchElement'] = function ($arr, $e) {
     if (!is_array($arr)) {
         return false;
     }
@@ -64,7 +64,7 @@ function matchElement($arr, $e) {
         next($arr);
     }
     return false;
-}
+};
 
 /**
  * This is a specialised search-and-replace function, designed to replace

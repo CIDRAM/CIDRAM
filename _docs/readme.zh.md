@@ -34,9 +34,9 @@ CIDRAM COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 我可能在将来会创建一个安装程序来简化安装过程，但在之前，按照下面的这些安装说明能在大多数的系统和CMS上成功安装：
 
-1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。现在，您要决定将脚本放在您服务器上的哪些文件夹中，例如`/public_html/CIDRAM/`或其他任何你觉得满意和安全的地方。*上传完成后，继续阅读。。*
+1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。现在，您要决定将脚本放在您服务器上的哪些文件夹中，例如`/public_html/cidram/`或其他任何你觉得满意和安全的地方。*上传完成后，继续阅读。。*
 
-2） 自定义（强烈推荐高级用户，但不推荐业余用户或者新手使用这个方法），打开`CIDRAM.ini`（位于内`vault`） - 这个文件包含所有CIDRAM的可用配置选项。以上的每一个配置选项应有一个简介来说明它是做什么的和它的具有的功能。按照你认为合适的参数来调整这些选项，然后保存文件，关闭。
+2） 自定义（强烈推荐高级用户，但不推荐业余用户或者新手使用这个方法），打开`config.ini`（位于内`vault`） - 这个文件包含所有CIDRAM的可用配置选项。以上的每一个配置选项应有一个简介来说明它是做什么的和它的具有的功能。按照你认为合适的参数来调整这些选项，然后保存文件，关闭。
 
 3） 上传（CIDRAM和它的文件）到你选定的文件夹（不需要包括`*.txt`/`*.md`文件，但大多数情况下，您应上传所有的文件）。
 
@@ -44,7 +44,7 @@ CIDRAM COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 5） 接下来，您需要为您的系统或CMS设定启动CIDRAM的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，访问CIDRAM支持论坛和发送问题；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。（注意，本人不是PHP程序员，关于这一段仅仅是直译，如有错误，请在对应项目上提交问题更正）。
 
-`<?php require '/user_name/public_html/CIDRAM/loader.php'; ?>`
+`<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
 保存文件，关闭，重新上传。
 
@@ -52,11 +52,11 @@ CIDRAM COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 如果您使用Apache网络服务器并且您可以访问`php.ini`，您可以使用该`auto_prepend_file`指令为任何PHP请求创建附上的CIDRAM。就像是：
 
-`auto_prepend_file = "/user_name/public_html/CIDRAM/loader.php"`
+`auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
 或在该`.htaccess`文件：
 
-`php_value auto_prepend_file "/user_name/public_html/CIDRAM/loader.php"`
+`php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) 这就是一切！ :-)
 
@@ -132,7 +132,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 
 ###5. <a name="SECTION5"></a>配置选项
-下列是一个列表的变量发现在`CIDRAM.ini`配置文件的CIDRAM，以及一个说明的他们的目的和功能。
+下列是一个列表的变量发现在`config.ini`配置文件的CIDRAM，以及一个说明的他们的目的和功能。
 
 ####"general" （类别）
 基本CIDRAM配置。

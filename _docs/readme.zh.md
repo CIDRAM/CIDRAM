@@ -4,9 +4,9 @@
 - 1. [前言](#SECTION1)
 - 2. [如何安装](#SECTION2)
 - 3. [如何使用](#SECTION3)
-- 4. [文件在包](#SECTION5)
-- 5. [配置选项](#SECTION6)
-- 6. [签名格式](#SECTION7)
+- 4. [文件在包](#SECTION4)
+- 5. [配置选项](#SECTION5)
+- 6. [签名格式](#SECTION6)
 
 ---
 

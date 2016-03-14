@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.11).
+ * This file: Functions file (last modified: 2016.03.14).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -305,7 +305,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
         $NAddr.='0';
     }
     if (substr_count($NAddr, '::')) {
-        $c = 7 - substr_count($Addr, ' : ');
+        $c = 7 - substr_count($Addr, ':');
         $arr = array(
             ':0:',
             ':0:0:',
@@ -317,7 +317,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
         $NAddr = str_replace('::', $arr[$c], $Addr);
         unset($arr);
     }
-    $NAddr = explode(' : ', $NAddr);
+    $NAddr = explode(':', $NAddr);
     if (count($NAddr) !== 8) {
         return false;
     }
@@ -352,136 +352,136 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     $cidr[16] = ($NAddr[1] < 32768) ?
         $NAddr[0] . '::/17' :
         $NAddr[0] . ':8000::/17';
-    $cidr[17] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 16384) * 16384) . '::/18';
-    $cidr[18] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 8192) * 8192) . '::/19';
-    $cidr[19] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 4096) * 4096) . '::/20';
-    $cidr[20] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 2048) * 2048) . '::/21';
-    $cidr[21] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 1024) * 1024) . '::/22';
-    $cidr[22] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 512) * 512) . '::/23';
-    $cidr[23] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 256) * 256) . '::/24';
-    $cidr[24] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 128) * 128) . '::/25';
-    $cidr[25] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 64) * 64) . '::/26';
-    $cidr[26] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 32) * 32) . '::/27';
-    $cidr[27] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 16) * 16) . '::/28';
-    $cidr[28] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 8) * 8) . '::/29';
-    $cidr[29] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 4) * 4) . '::/30';
-    $cidr[30] = $NAddr[0] . ' : '.dechex(floor($NAddr[1] / 2) * 2) . '::/31';
+    $cidr[17] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 16384) * 16384) . '::/18';
+    $cidr[18] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 8192) * 8192) . '::/19';
+    $cidr[19] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 4096) * 4096) . '::/20';
+    $cidr[20] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 2048) * 2048) . '::/21';
+    $cidr[21] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 1024) * 1024) . '::/22';
+    $cidr[22] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 512) * 512) . '::/23';
+    $cidr[23] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 256) * 256) . '::/24';
+    $cidr[24] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 128) * 128) . '::/25';
+    $cidr[25] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 64) * 64) . '::/26';
+    $cidr[26] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 32) * 32) . '::/27';
+    $cidr[27] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 16) * 16) . '::/28';
+    $cidr[28] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 8) * 8) . '::/29';
+    $cidr[29] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 4) * 4) . '::/30';
+    $cidr[30] = $NAddr[0] . ':' . dechex(floor($NAddr[1] / 2) * 2) . '::/31';
     $NAddr[1] = dechex($NAddr[1]);
-    $cidr[31] = $NAddr[0] . ' : ' . $NAddr[1] . '::/32';
+    $cidr[31] = $NAddr[0] . ':' . $NAddr[1] . '::/32';
     $cidr[32] = ($NAddr[2] < 32768) ?
-        $NAddr[0] . ' : ' . $NAddr[1] . '::/33' :
-        $NAddr[0] . ' : ' . $NAddr[1] . ':8000::/33';
-    $cidr[33] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 16384) * 16384) . '::/34';
-    $cidr[34] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 8192) * 8192) . '::/35';
-    $cidr[35] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 4096) * 4096) . '::/36';
-    $cidr[36] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 2048) * 2048) . '::/37';
-    $cidr[37] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 1024) * 1024) . '::/38';
-    $cidr[38] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 512) * 512) . '::/39';
-    $cidr[39] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 256) * 256) . '::/40';
-    $cidr[40] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 128) * 128) . '::/41';
-    $cidr[41] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 64) * 64) . '::/42';
-    $cidr[42] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 32) * 32) . '::/43';
-    $cidr[43] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 16) * 16) . '::/44';
-    $cidr[44] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 8) * 8) . '::/45';
-    $cidr[45] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 4) * 4) . '::/46';
-    $cidr[46] = $NAddr[0] . ' : ' . $NAddr[1] . ' : '.dechex(floor($NAddr[2] / 2) * 2) . '::/47';
+        $NAddr[0] . ':' . $NAddr[1] . '::/33' :
+        $NAddr[0] . ':' . $NAddr[1] . ':8000::/33';
+    $cidr[33] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 16384) * 16384) . '::/34';
+    $cidr[34] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 8192) * 8192) . '::/35';
+    $cidr[35] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 4096) * 4096) . '::/36';
+    $cidr[36] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 2048) * 2048) . '::/37';
+    $cidr[37] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 1024) * 1024) . '::/38';
+    $cidr[38] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 512) * 512) . '::/39';
+    $cidr[39] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 256) * 256) . '::/40';
+    $cidr[40] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 128) * 128) . '::/41';
+    $cidr[41] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 64) * 64) . '::/42';
+    $cidr[42] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 32) * 32) . '::/43';
+    $cidr[43] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 16) * 16) . '::/44';
+    $cidr[44] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 8) * 8) . '::/45';
+    $cidr[45] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 4) * 4) . '::/46';
+    $cidr[46] = $NAddr[0] . ':' . $NAddr[1] . ':' . dechex(floor($NAddr[2] / 2) * 2) . '::/47';
     $NAddr[2] = dechex($NAddr[2]);
-    $cidr[47] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . '::/48';
+    $cidr[47] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . '::/48';
     $cidr[48] = ($NAddr[3] < 32768) ?
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . '::/49' :
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ':8000::/49';
-    $cidr[49] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 16384) * 16384) . '::/50';
-    $cidr[50] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 8192) * 8192) . '::/51';
-    $cidr[51] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 4096) * 4096) . '::/52';
-    $cidr[52] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 2048) * 2048) . '::/53';
-    $cidr[53] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 1024) * 1024) . '::/54';
-    $cidr[54] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 512) * 512) . '::/55';
-    $cidr[55] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 256) * 256) . '::/56';
-    $cidr[56] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 128) * 128) . '::/57';
-    $cidr[57] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 64) * 64) . '::/58';
-    $cidr[58] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 32) * 32) . '::/59';
-    $cidr[59] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 16) * 16) . '::/60';
-    $cidr[60] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 8) * 8) . '::/61';
-    $cidr[61] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 4) * 4) . '::/62';
-    $cidr[62] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : '.dechex(floor($NAddr[3] / 2) * 2) . '::/63';
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . '::/49' :
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':8000::/49';
+    $cidr[49] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 16384) * 16384) . '::/50';
+    $cidr[50] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 8192) * 8192) . '::/51';
+    $cidr[51] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 4096) * 4096) . '::/52';
+    $cidr[52] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 2048) * 2048) . '::/53';
+    $cidr[53] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 1024) * 1024) . '::/54';
+    $cidr[54] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 512) * 512) . '::/55';
+    $cidr[55] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 256) * 256) . '::/56';
+    $cidr[56] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 128) * 128) . '::/57';
+    $cidr[57] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 64) * 64) . '::/58';
+    $cidr[58] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 32) * 32) . '::/59';
+    $cidr[59] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 16) * 16) . '::/60';
+    $cidr[60] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 8) * 8) . '::/61';
+    $cidr[61] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 4) * 4) . '::/62';
+    $cidr[62] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . dechex(floor($NAddr[3] / 2) * 2) . '::/63';
     $NAddr[3] = dechex($NAddr[3]);
-    $cidr[63] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . '::/64';
+    $cidr[63] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . '::/64';
     $cidr[64] = ($NAddr[4] < 32768) ?
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . '::/65' :
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ':8000::/65';
-    $cidr[65] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 16384) * 16384) . '::/66';
-    $cidr[66] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 8192) * 8192) . '::/67';
-    $cidr[67] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 4096) * 4096) . '::/68';
-    $cidr[68] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 2048) * 2048) . '::/69';
-    $cidr[69] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 1024) * 1024) . '::/70';
-    $cidr[70] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 512) * 512) . '::/71';
-    $cidr[71] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 256) * 256) . '::/72';
-    $cidr[72] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 128) * 128) . '::/73';
-    $cidr[73] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 64) * 64) . '::/74';
-    $cidr[74] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 32) * 32) . '::/75';
-    $cidr[75] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 16) * 16) . '::/76';
-    $cidr[76] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 8) * 8) . '::/77';
-    $cidr[77] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 4) * 4) . '::/78';
-    $cidr[78] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : '.dechex(floor($NAddr[4] / 2) * 2) . '::/79';
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . '::/65' :
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':8000::/65';
+    $cidr[65] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 16384) * 16384) . '::/66';
+    $cidr[66] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 8192) * 8192) . '::/67';
+    $cidr[67] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 4096) * 4096) . '::/68';
+    $cidr[68] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 2048) * 2048) . '::/69';
+    $cidr[69] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 1024) * 1024) . '::/70';
+    $cidr[70] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 512) * 512) . '::/71';
+    $cidr[71] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 256) * 256) . '::/72';
+    $cidr[72] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 128) * 128) . '::/73';
+    $cidr[73] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 64) * 64) . '::/74';
+    $cidr[74] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 32) * 32) . '::/75';
+    $cidr[75] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 16) * 16) . '::/76';
+    $cidr[76] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 8) * 8) . '::/77';
+    $cidr[77] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 4) * 4) . '::/78';
+    $cidr[78] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . dechex(floor($NAddr[4] / 2) * 2) . '::/79';
     $NAddr[4] = dechex($NAddr[4]);
-    $cidr[79] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . '::/80';
+    $cidr[79] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . '::/80';
     $cidr[80] = ($NAddr[5] < 32768) ?
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . '::/81' :
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ':8000::/81';
-    $cidr[81] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 16384) * 16384) . '::/82';
-    $cidr[82] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 8192) * 8192) . '::/83';
-    $cidr[83] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 4096) * 4096) . '::/84';
-    $cidr[84] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 2048) * 2048) . '::/85';
-    $cidr[85] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 1024) * 1024) . '::/86';
-    $cidr[86] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 512) * 512) . '::/87';
-    $cidr[87] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 256) * 256) . '::/88';
-    $cidr[88] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 128) * 128) . '::/89';
-    $cidr[89] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 64) * 64) . '::/90';
-    $cidr[90] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 32) * 32) . '::/91';
-    $cidr[91] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 16) * 16) . '::/92';
-    $cidr[92] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 8) * 8) . '::/93';
-    $cidr[93] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 4) * 4) . '::/94';
-    $cidr[94] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : '.dechex(floor($NAddr[5] / 2) * 2) . '::/95';
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . '::/81' :
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':8000::/81';
+    $cidr[81] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 16384) * 16384) . '::/82';
+    $cidr[82] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 8192) * 8192) . '::/83';
+    $cidr[83] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 4096) * 4096) . '::/84';
+    $cidr[84] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 2048) * 2048) . '::/85';
+    $cidr[85] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 1024) * 1024) . '::/86';
+    $cidr[86] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 512) * 512) . '::/87';
+    $cidr[87] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 256) * 256) . '::/88';
+    $cidr[88] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 128) * 128) . '::/89';
+    $cidr[89] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 64) * 64) . '::/90';
+    $cidr[90] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 32) * 32) . '::/91';
+    $cidr[91] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 16) * 16) . '::/92';
+    $cidr[92] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 8) * 8) . '::/93';
+    $cidr[93] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 4) * 4) . '::/94';
+    $cidr[94] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . dechex(floor($NAddr[5] / 2) * 2) . '::/95';
     $NAddr[5] = dechex($NAddr[5]);
-    $cidr[95] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . '::/96';
+    $cidr[95] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . '::/96';
     $cidr[96] = ($NAddr[6] < 32768) ?
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . '::/97' :
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ':8000:0/97';
-    $cidr[97] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 16384) * 16384) . ':0/98';
-    $cidr[98] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 8192) * 8192) . ':0/99';
-    $cidr[99] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 4096) * 4096) . ':0/100';
-    $cidr[100] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 2048) * 2048) . ':0/101';
-    $cidr[101] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 1024) * 1024) . ':0/102';
-    $cidr[102] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 512) * 512) . ':0/103';
-    $cidr[103] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 256) * 256) . ':0/104';
-    $cidr[104] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 128) * 128) . ':0/105';
-    $cidr[105] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 64) * 64) . ':0/106';
-    $cidr[106] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 32) * 32) . ':0/107';
-    $cidr[107] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 16) * 16) . ':0/108';
-    $cidr[108] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 8) * 8) . ':0/109';
-    $cidr[109] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 4) * 4) . ':0/110';
-    $cidr[110] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : '.dechex(floor($NAddr[6] / 2) * 2) . ':0/111';
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . '::/97' :
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':8000:0/97';
+    $cidr[97] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 16384) * 16384) . ':0/98';
+    $cidr[98] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 8192) * 8192) . ':0/99';
+    $cidr[99] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 4096) * 4096) . ':0/100';
+    $cidr[100] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 2048) * 2048) . ':0/101';
+    $cidr[101] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 1024) * 1024) . ':0/102';
+    $cidr[102] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 512) * 512) . ':0/103';
+    $cidr[103] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 256) * 256) . ':0/104';
+    $cidr[104] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 128) * 128) . ':0/105';
+    $cidr[105] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 64) * 64) . ':0/106';
+    $cidr[106] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 32) * 32) . ':0/107';
+    $cidr[107] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 16) * 16) . ':0/108';
+    $cidr[108] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 8) * 8) . ':0/109';
+    $cidr[109] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 4) * 4) . ':0/110';
+    $cidr[110] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . dechex(floor($NAddr[6] / 2) * 2) . ':0/111';
     $NAddr[6] = dechex($NAddr[6]);
-    $cidr[111] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ':0/112';
+    $cidr[111] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':0/112';
     $cidr[112] = ($NAddr[7] < 32768) ?
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ':0/113' :
-        $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ':8000/113';
-    $cidr[113] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 16384) * 16384) . '/114';
-    $cidr[114] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 8192) * 8192) . '/115';
-    $cidr[115] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 4096) * 4096) . '/116';
-    $cidr[116] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 2048) * 2048) . '/117';
-    $cidr[117] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 1024) * 1024) . '/118';
-    $cidr[118] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 512) * 512) . '/119';
-    $cidr[119] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 256) * 256) . '/120';
-    $cidr[120] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 128) * 128) . '/121';
-    $cidr[121] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 64) * 64) . '/122';
-    $cidr[122] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 32) * 32) . '/123';
-    $cidr[123] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 16) * 16) . '/124';
-    $cidr[124] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 8) * 8) . '/125';
-    $cidr[125] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 4) * 4) . '/126';
-    $cidr[126] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : '.dechex(floor($NAddr[7] / 2) * 2) . '/127';
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':0/113' :
+        $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':8000/113';
+    $cidr[113] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 16384) * 16384) . '/114';
+    $cidr[114] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 8192) * 8192) . '/115';
+    $cidr[115] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 4096) * 4096) . '/116';
+    $cidr[116] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 2048) * 2048) . '/117';
+    $cidr[117] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 1024) * 1024) . '/118';
+    $cidr[118] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 512) * 512) . '/119';
+    $cidr[119] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 256) * 256) . '/120';
+    $cidr[120] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 128) * 128) . '/121';
+    $cidr[121] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 64) * 64) . '/122';
+    $cidr[122] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 32) * 32) . '/123';
+    $cidr[123] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 16) * 16) . '/124';
+    $cidr[124] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 8) * 8) . '/125';
+    $cidr[125] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 4) * 4) . '/126';
+    $cidr[126] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . dechex(floor($NAddr[7] / 2) * 2) . '/127';
     $NAddr[7] = dechex($NAddr[7]);
-    $cidr[127] = $NAddr[0] . ' : ' . $NAddr[1] . ' : ' . $NAddr[2] . ' : ' . $NAddr[3] . ' : ' . $NAddr[4] . ' : ' . $NAddr[5] . ' : ' . $NAddr[6] . ' : ' . $NAddr[7] . '/128';
+    $cidr[127] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . $NAddr[7] . '/128';
     for ($i = 0; $i < 128; $i++) {
         if (substr_count($cidr[$i], '::')) {
             $cidr[$i] = preg_replace('/(\:0)*\:\:(0\:)*/i', '::', $cidr[$i], 1);

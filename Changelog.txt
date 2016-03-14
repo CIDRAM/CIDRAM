@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.1.2 ===
+PATCH RELEASE.
+
 - [2016.03.11; Sub-minor code change; Maikuolan]: When converting all functions
   to closures (anonymous functions) for the previous release, I missed the
   "matchElement" function. I'd thought I'd got them all, but I'd missed this
@@ -17,6 +22,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.03.13; Documentation; Maikuolan]: Completed translation for the CIDRAM
   README documentation into Chinese. This totals 9 different language versions
   of the README documentation now available.
+
+- [2016.03.14; Bug-fix; Maikuolan]: A bug was found within the IPv6Test closure
+  function (used for calculating IPv6 CIDRs), caused by some excess spaces in
+  the code that existed where they shouldn't have existed; Fixed.
+  Refer github.com/Maikuolan/CIDRAM/issues/2
 
 === Version/Release 0.1.1 ===
 PATCH RELEASE.

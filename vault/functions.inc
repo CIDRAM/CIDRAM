@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.14).
+ * This file: Functions file (last modified: 2016.03.15).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -302,7 +302,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
         $NAddr = '0' . $NAddr;
     }
     if (preg_match('/\:\:$/i', $NAddr)) {
-        $NAddr.='0';
+        $NAddr .= '0';
     }
     if (substr_count($NAddr, '::')) {
         $c = 7 - substr_count($Addr, ':');

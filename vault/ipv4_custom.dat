@@ -32,7 +32,7 @@ If "Run" is used, when the signature is triggered, the script will attempt to ex
 statement) an external PHP script, specified by the %Param% value (the working directory should be the "/vault/"
 directory of the script, and the scope of execution is within the IPv4 test function).
 
-Example: 1.2.3.4/8 Run example.php
+Example: 127.0.0.0/8 Run example.php
 
 This can be useful if you wish to execute some specific PHP code for some specific IPs and/or CIDRs.
 
@@ -77,11 +77,11 @@ These available shorthand words (these examples assume that you've specified Eng
 - Spam:     "Your access to this page was denied because your IP address belongs to a network considered high-risk for
              spam."
 
-Example 1: 1.2.3.4/8 Deny Bogon
-Example 2: 1.2.3.4/8 Deny Cloud
-Example 3: 1.2.3.4/8 Deny Generic
-Example 4: 1.2.3.4/8 Deny Spam
-Example 5: 1.2.3.4/8 Deny Your access to this page was denied because (of some other reason)...
+Example 1: 127.0.0.0/8 Deny Bogon
+Example 2: 127.0.0.0/8 Deny Cloud
+Example 3: 127.0.0.0/8 Deny Generic
+Example 4: 127.0.0.0/8 Deny Spam
+Example 5: 127.0.0.0/8 Deny Your access to this page was denied because (of some other reason)...
 
 More possible %Function% values and more possible %Param% values for "Deny" may, and likely will, be added at a future
 date. For now, what has been documented is what is available, and at such a future time where new possible values are

@@ -1,9 +1,59 @@
 IPv6 signatures file.
 
-Ranges for ASNs discovered using <http://bgp.he.net/>.
-Useful for checking rankings/cleanliness/health/trust of ASNs <http://sitevet.com/db/asn/AS%Num%>.
-Another useful tool for checking the activity of ASNs <https://radar.qrator.net/as%Num%>
-(Replace %Num% with the ASN number of the ASN you want to look up).
+
+---
+Some additional useful resources:
+
+http://bgp.he.net/
+- Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.
+
+https://www.stopforumspam.com/aggregate
+- Useful aggregation tool for IPv4 IPs.
+
+https://www.google.com/transparencyreport/safebrowsing/malware/
+- Google Malware Dashboard; Useful for checking the cleanliness of ASNs and for checking for the presence of malware.
+
+https://radar.qrator.net/as%Num%
+- Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.
+
+http://www.ipdeny.com/ipblocks/
+- A fantastic and accurate service for generating country-wide signatures. They maintain lists of CIDRs based upon
+  countries, so, if you want to use CIDRAM to block entire countries from accessing your website, you can use their
+  lists to do this (you just need to append the "Deny %Reason%" to the end of list items; this can be done quickly and
+  easily with most regex-capable text editors, such as Notepad++, for example; you can do this in Notepad++ by using
+  Search and Replace, accessible with Ctrl+H; use "$" in "Find what" and " Deny Generic" in "Replace with").
+  IPDeny.com IPv4 country-based lists:
+  * http://www.ipdeny.com/ipblocks/
+  IPDeny.com IPv4 aggregated country-based lists (recommended over non-aggregated):
+  * http://www.ipdeny.com/ipblocks/data/aggregated/
+  IPDeny.com IPv6 country-based lists:
+  * http://www.ipdeny.com/ipv6/ipaddresses/blocks/
+  IPDeny.com IPv6 aggregated country-based lists (recommended over non-aggregated):
+  * http://www.ipdeny.com/ipv6/ipaddresses/aggregated/
+
+
+
+---
+WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
+Updated: 2016.03.17 (statistics account for scanning by Google from 1 year up until the cited update date).
+
+RANK    ASN     AS                  RATE    INCLUDED IN CIDRAM? RANK SHIFT (SINCE LAST UPDATE)
+ 1      46844  Sharktech            44.77%  Yes (> 0.1.2)       NA
+ 2      35916  Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
+ 3      38197  Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
+ 4      32097  WholeSale Internet   22.89%  Yes (all versions)  NA
+ 5      26658  HT                   19.52%  Yes (> 0.1.2)       NA
+ 6      17139  Corporate Colocation 17.37%  Yes (all versions)  NA
+ 7      62468  VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
+ 8      133618 Trellian Pty. Ltd.   15.38%  Yes (> 0.1.2)       NA
+ 9      33387  DataShack, LC        13.46%  Yes (all versions)  NA
+10      16138  INTERIA              12.37%  Yes (> 0.1.2)       NA
+
+
+
+---
+INCLUDED DEFAULT IPV6 SIGNATURES ARE BELOW THIS LINE.
+
 
 
 ---
@@ -14,13 +64,46 @@ that appear further down into the signature files.
 
 
 ---
-The following signatures are based upon a selection of some of the worst offending ASNs, as described by Host Exploit's
-World Hosts Report, March 2014, which can be downloaded from <http://hostexploit.com/?p=whr-201403>.
+"Sharktech"
+ASN 46844.
+Infected by malware (as per reported by Google): 44.77%.
+Updated: 2016.03.17
+
+2001:67c:2f08::/48 Deny Cloud
+2610:150::/34 Deny Cloud
+2610:150:4000::/34 Deny Cloud
+2610:150:8000::/34 Deny Cloud
+2610:150:c000::/34 Deny Cloud
+
+
+"MULTACOM CORPORATION"
+ASN 35916.
+Infected by malware (as per reported by Google): 42.64%.
+Updated: 2016.03.17
+
+2607:9a00::/32 Deny Cloud
+2607:f130::/32 Deny Cloud
+
+
+"Sun Network (Hong Kong) Limited"
+ASN 38197.
+Infected by malware (as per reported by Google): 26.09%.
+Updated: 2016.03.17
+
+2403:ea00::/32 Deny Generic
+
+
+"INTERIA.PL Sp z.o.o."
+ASN 16138.
+Infected by malware (as per reported by Google): 12.37%.
+Updated: 2016.03.17
+
+2a00:1308::/32 Deny Cloud
 
 
 "New Dream Network, LLC"
-HE RANK 2 (World Hosts Report March 2014)
 ASN 26347.
+Infected by malware (as per reported by Google): 1.01%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2607:f298:1::/48 Deny Generic
@@ -32,8 +115,8 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "HostDime.com, Inc"
-HE RANK 3 (World Hosts Report March 2014)
 ASN 33182.
+Infected by malware (as per reported by Google): 1.43%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2404:a700::/32 Deny Generic
@@ -47,8 +130,11 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "Aruba S.p.A."
-HE RANK 4 (World Hosts Report March 2014)
 ASN 30548, 31034, 199653, 394189.
+Infected by malware (as per reported by Google), 30548: 0%.
+Infected by malware (as per reported by Google), 31034: 2.20%.
+Infected by malware (as per reported by Google), 199653: 34.04%.
+Infected by malware (as per reported by Google), 394189: "ASN not found".
 Updated: 2016.02.27
 
 2620:11d:6000::/42 Deny Generic
@@ -66,8 +152,8 @@ Updated: 2016.02.27
 
 
 "ISPsystem"
-HE RANK 5 (World Hosts Report March 2014)
 ASN 29182.
+Infected by malware (as per reported by Google): 3.26%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a01:230::/48 Deny Generic
@@ -76,8 +162,8 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "Hostinger International"
-HE RANK 6 (World Hosts Report March 2014)
 ASN 47583.
+Infected by malware (as per reported by Google): 1.28%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a02:4780:1::/48 Deny Generic
@@ -85,102 +171,112 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "CloudFlare, Inc"
-HE RANK 7 (World Hosts Report March 2014)
-ASN 13335, 132892, 133877, 203898, 394536.
-Updated: 2016.01.18 / Checked: 2016.02.27
+ASN 13335, 132892, 203898, 394536.
+Infected by malware (as per reported by Google), 13335: 1.42%.
+Infected by malware (as per reported by Google), 132892: 0%.
+Infected by malware (as per reported by Google), 203898: "ASN not found".
+Infected by malware (as per reported by Google), 394536: 0%.
+Updated: 2016.03.17
 
-2400:cb00:4::/48 Deny Generic
-2400:cb00:11::/48 Deny Generic
-2400:cb00:12::/48 Deny Generic
-2400:cb00:14::/48 Deny Generic
-2400:cb00:15::/48 Deny Generic
-2400:cb00:16::/48 Deny Generic
-2400:cb00:17::/48 Deny Generic
-2400:cb00:19::/48 Deny Generic
-2400:cb00:20::/48 Deny Generic
-2400:cb00:21::/48 Deny Generic
-2400:cb00:22::/48 Deny Generic
-2400:cb00:23::/48 Deny Generic
-2400:cb00:25::/48 Deny Generic
-2400:cb00:26::/48 Deny Generic
-2400:cb00:27::/48 Deny Generic
-2400:cb00:28::/48 Deny Generic
-2400:cb00:29::/48 Deny Generic
-2400:cb00:30::/48 Deny Generic
-2400:cb00:31::/48 Deny Generic
-2400:cb00:32::/48 Deny Generic
-2400:cb00:33::/48 Deny Generic
-2400:cb00:34::/48 Deny Generic
-2400:cb00:35::/48 Deny Generic
-2400:cb00:36::/48 Deny Generic
-2400:cb00:38::/48 Deny Generic
-2400:cb00:39::/48 Deny Generic
-2400:cb00:40::/48 Deny Generic
-2400:cb00:41::/48 Deny Generic
-2400:cb00:42::/48 Deny Generic
-2400:cb00:43::/48 Deny Generic
-2400:cb00:44::/48 Deny Generic
-2400:cb00:45::/48 Deny Generic
-2400:cb00:46::/48 Deny Generic
-2400:cb00:47::/48 Deny Generic
-2400:cb00:48::/48 Deny Generic
-2400:cb00:49::/48 Deny Generic
-2400:cb00:50::/48 Deny Generic
-2400:cb00:51::/48 Deny Generic
-2400:cb00:52::/48 Deny Generic
-2400:cb00:53::/48 Deny Generic
-2400:cb00:54::/48 Deny Generic
-2400:cb00:55::/48 Deny Generic
-2400:cb00:56::/48 Deny Generic
-2400:cb00:57::/48 Deny Generic
-2400:cb00:58::/48 Deny Generic
-2400:cb00:59::/48 Deny Generic
-2400:cb00:60::/48 Deny Generic
-2400:cb00:61::/48 Deny Generic
-2400:cb00:62::/48 Deny Generic
-2400:cb00:63::/48 Deny Generic
-2400:cb00:64::/48 Deny Generic
-2400:cb00:65::/48 Deny Generic
-2400:cb00:66::/48 Deny Generic
-2400:cb00:67::/48 Deny Generic
-2400:cb00:69::/48 Deny Generic
-2400:cb00:70::/48 Deny Generic
-2400:cb00:71::/48 Deny Generic
-2400:cb00:72::/48 Deny Generic
-2400:cb00:73::/48 Deny Generic
-2400:cb00:74::/48 Deny Generic
-2400:cb00:75::/48 Deny Generic
-2400:cb00:83::/48 Deny Generic
-2400:cb00:2048::/48 Deny Generic
-2400:cb00:2049::/48 Deny Generic
-2400:cb00:beef::/48 Deny Generic
-2400:cb00:f00d::/48 Deny Generic
-2405:8100:8001::/48 Deny Generic
-2405:8100:8002::/48 Deny Generic
-2606:4700::/32 Deny Generic
-2606:4700:1000::/48 Deny Generic
-2a06:98c0:1000::/48 Deny Generic
+2400:cb00::/48 Deny Cloud
+2400:cb00:4::/48 Deny Cloud
+2400:cb00:11::/48 Deny Cloud
+2400:cb00:12::/48 Deny Cloud
+2400:cb00:14::/48 Deny Cloud
+2400:cb00:15::/48 Deny Cloud
+2400:cb00:16::/48 Deny Cloud
+2400:cb00:17::/48 Deny Cloud
+2400:cb00:19::/48 Deny Cloud
+2400:cb00:20::/48 Deny Cloud
+2400:cb00:21::/48 Deny Cloud
+2400:cb00:22::/48 Deny Cloud
+2400:cb00:23::/48 Deny Cloud
+2400:cb00:25::/48 Deny Cloud
+2400:cb00:26::/48 Deny Cloud
+2400:cb00:27::/48 Deny Cloud
+2400:cb00:28::/48 Deny Cloud
+2400:cb00:29::/48 Deny Cloud
+2400:cb00:30::/48 Deny Cloud
+2400:cb00:31::/48 Deny Cloud
+2400:cb00:32::/48 Deny Cloud
+2400:cb00:34::/48 Deny Cloud
+2400:cb00:35::/48 Deny Cloud
+2400:cb00:36::/48 Deny Cloud
+2400:cb00:38::/48 Deny Cloud
+2400:cb00:39::/48 Deny Cloud
+2400:cb00:40::/48 Deny Cloud
+2400:cb00:41::/48 Deny Cloud
+2400:cb00:42::/48 Deny Cloud
+2400:cb00:43::/48 Deny Cloud
+2400:cb00:44::/48 Deny Cloud
+2400:cb00:45::/48 Deny Cloud
+2400:cb00:46::/48 Deny Cloud
+2400:cb00:47::/48 Deny Cloud
+2400:cb00:48::/48 Deny Cloud
+2400:cb00:49::/48 Deny Cloud
+2400:cb00:50::/48 Deny Cloud
+2400:cb00:51::/48 Deny Cloud
+2400:cb00:52::/48 Deny Cloud
+2400:cb00:53::/48 Deny Cloud
+2400:cb00:54::/48 Deny Cloud
+2400:cb00:55::/48 Deny Cloud
+2400:cb00:56::/48 Deny Cloud
+2400:cb00:57::/48 Deny Cloud
+2400:cb00:58::/48 Deny Cloud
+2400:cb00:59::/48 Deny Cloud
+2400:cb00:60::/48 Deny Cloud
+2400:cb00:61::/48 Deny Cloud
+2400:cb00:62::/48 Deny Cloud
+2400:cb00:63::/48 Deny Cloud
+2400:cb00:64::/48 Deny Cloud
+2400:cb00:65::/48 Deny Cloud
+2400:cb00:66::/48 Deny Cloud
+2400:cb00:67::/48 Deny Cloud
+2400:cb00:68::/48 Deny Cloud
+2400:cb00:69::/48 Deny Cloud
+2400:cb00:70::/48 Deny Cloud
+2400:cb00:71::/48 Deny Cloud
+2400:cb00:72::/48 Deny Cloud
+2400:cb00:73::/48 Deny Cloud
+2400:cb00:74::/48 Deny Cloud
+2400:cb00:75::/48 Deny Cloud
+2400:cb00:78::/48 Deny Cloud
+2400:cb00:80::/48 Deny Cloud
+2400:cb00:82::/48 Deny Cloud
+2400:cb00:83::/48 Deny Cloud
+2400:cb00:84::/48 Deny Cloud
+2400:cb00:86::/48 Deny Cloud
+2400:cb00:2048::/48 Deny Cloud
+2400:cb00:2049::/48 Deny Cloud
+2400:cb00:beef::/48 Deny Cloud
+2606:4700::/44 Deny Cloud
+2606:4700:10::/44 Deny Cloud
+2606:4700:20::/44 Deny Cloud
+2606:4700:30::/44 Deny Cloud
+2606:4700:50::/44 Deny Cloud
+2606:4700:1000::/48 Deny Cloud
+2a06:98c0:1000::/48 Deny Cloud
 
 
 "home.pl"
-HE RANK 8 (World Hosts Report March 2014)
 ASN 12824.
+Infected by malware (as per reported by Google): 4.20%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a02:25a8::/29 Deny Generic
 
 
 "Masterhost"
-HE RANK 9 (World Hosts Report March 2014)
 ASN 25532.
+Infected by malware (as per reported by Google): 1.35%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a00:15f8::/32 Deny Generic
 
 
 "GoDaddy.com, LLC"
-HE RANK 10 (World Hosts Report March 2014)
 ASN 26496.
+Infected by malware (as per reported by Google): 2.78%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2407:1c00::/32 Deny Generic
@@ -190,19 +286,19 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "1&1 Internet AG"
-HE RANK 11 (World Hosts Report March 2014)
 ASN 8560.
-Updated: 2016.01.21 / Checked: 2016.02.27
+Infected by malware (as per reported by Google): 0.24%.
+Updated: 2016.03.17
 
-2001:8d8::/32 Deny Generic
-2001:ba0::/32 Deny Generic
-2607:f1c0::/32 Deny Generic
-2a00:da00::/32 Deny Generic
+2001:8d8::/32 Deny Cloud
+2001:ba0::/32 Deny Cloud
+2607:f1c0::/32 Deny Cloud
+2a00:da00::/32 Deny Cloud
 
 
 "OVH Systems"
-HE RANK 12 (World Hosts Report March 2014)
 ASN 16276.
+Infected by malware (as per reported by Google): 1.00%.
 Updated: 2016.01.20 / Checked: 2016.02.27
 
 2001:41d0::/32 Deny Generic
@@ -211,16 +307,16 @@ Updated: 2016.01.20 / Checked: 2016.02.27
 
 
 "Çizgi Telekomünikasyon"
-HE RANK 13 (World Hosts Report March 2014)
 ASN 34619.
+Infected by malware (as per reported by Google): 3.90%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a02:2020::/32 Deny Generic
 
 
 "Vautron Rechenzentrum AG"
-HE RANK 14 (World Hosts Report March 2014)
 ASN 25504.
+Infected by malware (as per reported by Google): 2.77%.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
 2001:67c:2394::/48 Deny Generic
@@ -228,7 +324,6 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "Dattatec.com"
-HE RANK 16 (World Hosts Report March 2014)
 ASN 27823.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
@@ -236,7 +331,6 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "World4You Internet Services"
-HE RANK 17 (World Hosts Report March 2014)
 ASN 38955.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
@@ -244,7 +338,6 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "Leaseweb Network"
-HE RANK 18 (16265) (World Hosts Report March 2014)
 HE RANK 31 (30633) (World Hosts Report March 2014)
 ASN 16265, 28753, 30633, 60781.
 Updated: 2016.03.15
@@ -279,7 +372,6 @@ Updated: 2016.03.15
 
 
 "Hetzner Online GmbH"
-HE RANK 22 (World Hosts Report March 2014)
 ASN 24940, 37153.
 Updated: 2016.03.02
 
@@ -290,7 +382,6 @@ Updated: 2016.03.02
 
 
 "Agava Ltd."
-HE RANK 23 (World Hosts Report March 2014)
 ASN 43146.
 Updated: 2016.01.21 / Checked: 2016.03.02
 
@@ -310,7 +401,6 @@ Updated: 2016.01.21 / Checked: 2016.03.02
 
 
 SoftLayer Technologies, The Planet, Everyones Internet, Reach
-HE RANK 24 (World Hosts Report March 2014)
 ASN 36351, 36420, 30315, 13749, 21844.
 Updated: 2016.01.24
 
@@ -366,7 +456,6 @@ Updated: 2016.01.24
 
 
 "Server Internet Bilisim ve Bilgisayar Hizmetleri"
-HE RANK 26 (World Hosts Report March 2014)
 ASN 51559.
 Updated: 2016.02.27 / Checked: 2016.03.10
 Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
@@ -378,7 +467,6 @@ Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 
 
 "Hosting Operator eServer.ru Ltd."
-HE RANK 28 (World Hosts Report March 2014)
 ASN 42244.
 Updated: 2016.01.21 / Checked: 2016.03.12
 
@@ -388,7 +476,6 @@ Updated: 2016.01.21 / Checked: 2016.03.12
 
 
 "Webzilla B.V."
-HE RANK 29 (35415) (World Hosts Report March 2014)
 ASN 35415, 48792, 49376.
 Updated: 2016.03.12
 
@@ -403,7 +490,6 @@ Updated: 2016.03.12
 
 
 "SuperHost.pl"
-HE RANK 32 (World Hosts Report March 2014)
 ASN 41079.
 Updated: 2016.01.18 / Checked: 2016.02.27
 
@@ -411,16 +497,10 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 
 
 "IPGLOBE DATACENTER"
-HE RANK 34 (World Hosts Report March 2014)
 ASN 53225.
 Updated: 2016.01.18 / Checked: 2016.03.02
 
 2804:644::/32 Deny Spam
-
-
----
-The following signatures are intended to mirror many of the various other CIDR ranges covered by `zbb-badip-fork`, one
-of the two unofficial signature file repositories I've been managing, intended for ZB Block.
 
 
 "sfip84"
@@ -722,6 +802,7 @@ Updated: 2016.01.19 / Checked: 2016.03.07
 
 "Corporate Colocation Inc."
 ASN 17139.
+Infected by malware (as per reported by Google): 17.37%.
 Updated: 2016.01.20 / Checked: 2016.03.12
 
 2401:f500:1::/48 Deny Cloud
@@ -767,8 +848,10 @@ Updated: 2016.01.20 / Checked: 2016.03.12
 2001:4cd0::/32 Deny Cloud
 
 
-"WholeSale Internet, Inc."
+"WholeSale Internet, Inc." and "DataShack, LC"
 ASN 32097, 33387.
+Infected by malware (as per reported by Google), 32097: 22.89%.
+Infected by malware (as per reported by Google), 33387: 13.46%.
 Updated: 2016.01.20 / Checked: 2016.03.12
 
 2001:4858::/32 Deny Cloud
@@ -1092,10 +1175,6 @@ Updated: 2016.03.10
 2607:f7a0:a::/48 Deny Cloud
 
 
----
-New ranges.
-
-
 "Init7"
 ASN 13030.
 Updated: 2016.01.18 / Checked: 2016.03.07
@@ -1180,7 +1259,6 @@ Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWAR
 Refer research.dyn.com/2013/11/mitm-internet-hijacking/
 Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
 Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
-HE Rank: 249; Refer sitevet.com/db/asn/AS174
 
 2001:49f0:100d::/48 Deny Cloud
 2001:49f0:1010::/48 Deny Cloud

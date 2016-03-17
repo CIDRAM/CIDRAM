@@ -87,38 +87,40 @@ More possible %Function% values and more possible %Param% values for "Deny" may,
 date. For now, what has been documented is what is available, and at such a future time where new possible values are
 added, they will be added, also, to the documentation.
 
+
+---
 Some additional useful resources:
 
-- http://bgp.he.net/                            Get CIDRs from ASNs, determine ASN relationships, discover ASNs based
-                                                upon network names, etc.
+http://bgp.he.net/
+- Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.
 
-- https://www.stopforumspam.com/aggregate       Useful aggregation tool for IPv4 IPs.
+https://www.stopforumspam.com/aggregate
+- Useful aggregation tool for IPv4 IPs.
 
-- http://sitevet.com/db/asn/AS%Num%             Useful for checking rankings/cleanliness/health/trust of ASNs.
+https://www.google.com/transparencyreport/safebrowsing/malware/
+- Google Malware Dashboard; Useful for checking the cleanliness of ASNs and for checking for the presence of malware.
 
-- https://radar.qrator.net/as%Num%              Another useful tool for checking the various activities of ASNs.
+https://radar.qrator.net/as%Num%
+- Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.
 
-- http://www.ipdeny.com/ipblocks/               A fantastic and accurate service for generating country-wide
-                                                signatures. They maintain lists of CIDRs based upon countries, so, if
-                                                you want to use CIDRAM to block entire countries from accessing your
-                                                website, you can use their lists to do this (you just need to append
-                                                the "Deny %Reason%" to the end of list items; this can be done quickly
-                                                and easily with most regex-capable text editors, such as Notepad++, for
-                                                example; you can do this in Notepad++ by using Search and Replace,
-                                                accessible with Ctrl+H; use "$" in "Find what" and " Deny Generic" in
-                                                "Replace with").
-
-IPDeny.com IPv4 country-based lists:
-- http://www.ipdeny.com/ipblocks/
-IPDeny.com IPv4 aggregated country-based lists (recommended over non-aggregated):
-- http://www.ipdeny.com/ipblocks/data/aggregated/
-IPDeny.com IPv6 country-based lists:
-- http://www.ipdeny.com/ipv6/ipaddresses/blocks/
-IPDeny.com IPv6 aggregated country-based lists (recommended over non-aggregated):
-- http://www.ipdeny.com/ipv6/ipaddresses/aggregated/
-
+http://www.ipdeny.com/ipblocks/
+- A fantastic and accurate service for generating country-wide signatures. They maintain lists of CIDRs based upon
+  countries, so, if you want to use CIDRAM to block entire countries from accessing your website, you can use their
+  lists to do this (you just need to append the "Deny %Reason%" to the end of list items; this can be done quickly and
+  easily with most regex-capable text editors, such as Notepad++, for example; you can do this in Notepad++ by using
+  Search and Replace, accessible with Ctrl+H; use "$" in "Find what" and " Deny Generic" in "Replace with").
+  IPDeny.com IPv4 country-based lists:
+  * http://www.ipdeny.com/ipblocks/
+  IPDeny.com IPv4 aggregated country-based lists (recommended over non-aggregated):
+  * http://www.ipdeny.com/ipblocks/data/aggregated/
+  IPDeny.com IPv6 country-based lists:
+  * http://www.ipdeny.com/ipv6/ipaddresses/blocks/
+  IPDeny.com IPv6 aggregated country-based lists (recommended over non-aggregated):
+  * http://www.ipdeny.com/ipv6/ipaddresses/aggregated/
 
 
+
+---
 > ADD YOUR CUSTOM SIGNATURES AFTER THIS LINE <
 
 

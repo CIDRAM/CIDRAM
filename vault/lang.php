@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.03.07).
+ * This file: Language handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -28,12 +28,12 @@ $CIDRAM['lang'] = array();
 
 /**
  * Kill the script if the language data file corresponding to the language
- * directive (%CIDRAM%/vault/lang/lang.%%.inc) doesn't exist.
+ * directive (%CIDRAM%/vault/lang/lang.%%.php) doesn't exist.
  */
-if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.inc')) {
+if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php')) {
     header('Content-Type: text/plain');
     die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
 }
 
 /** Load the necessary language data. */
-require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.inc';
+require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php';

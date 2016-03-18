@@ -97,31 +97,31 @@ Data | Deskripsi
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache.dat | Cache data.
-/vault/cli.inc | Modul CLI.
-/vault/config.inc | Modul konfigurasi.
+/vault/cli.php | Modul CLI.
 /vault/config.ini | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
-/vault/functions.inc | Modul fungsi (utama).
+/vault/config.php | Modul konfigurasi.
+/vault/functions.php | Modul fungsi (utama).
 /vault/ipv4.dat | File tanda tangan IPv4.
 /vault/ipv4_custom.dat | File tanda tangan IPv4 disesuaikan.
 /vault/ipv6.dat | File tanda tangan IPv6.
 /vault/ipv6_custom.dat | File tanda tangan IPv6 disesuaikan.
-/vault/lang.inc | File bahasa.
+/vault/lang.php | File bahasa.
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/lang.en.inc | File Bahasa Inggris.
-/vault/lang/lang.es.inc | File Bahasa Spanyol.
-/vault/lang/lang.fr.inc | File Bahasa Perancis.
-/vault/lang/lang.id.inc | File Bahasa Indonesia.
-/vault/lang/lang.it.inc | File Bahasa Italia.
-/vault/lang/lang.nl.inc | File Bahasa Belanda.
-/vault/lang/lang.pt.inc | File Bahasa Portugis.
-/vault/lang/lang.zh-TW.inc | File Bahasa Cina tradisional.
-/vault/lang/lang.zh.inc | File Bahasa Cina sederhana.
-/vault/outgen.inc | Output generator.
+/vault/lang/lang.en.php | File Bahasa Inggris.
+/vault/lang/lang.es.php | File Bahasa Spanyol.
+/vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.id.php | File Bahasa Indonesia.
+/vault/lang/lang.it.php | File Bahasa Italia.
+/vault/lang/lang.nl.php | File Bahasa Belanda.
+/vault/lang/lang.pt.php | File Bahasa Portugis.
+/vault/lang/lang.zh-TW.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh.php | File Bahasa Cina sederhana.
+/vault/outgen.php | Output generator.
 /vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
-/vault/rules_as6939.inc | File aturan disesuaikan untuk AS6939.
-/vault/rules_softlayer.inc | File aturan disesuaikan untuk Soft Layer.
+/vault/rules_as6939.php | File aturan disesuaikan untuk AS6939.
+/vault/rules_softlayer.php | File aturan disesuaikan untuk Soft Layer.
 
 ---
 
@@ -172,4 +172,4 @@ Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapa
 ---
 
 
-Terakhir Diperbarui: 8 Maret 2016 (2016.03.08).
+Terakhir Diperbarui: 18 Maret 2016 (2016.03.18).

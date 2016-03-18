@@ -97,31 +97,31 @@ Archivo | Descripción
 /vault/ | Vault directorio (contiene varios archivos).
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache.dat | Cache data.
-/vault/cli.inc | Módulo de la CLI.
-/vault/config.inc | Módulo de configuración.
+/vault/cli.php | Módulo de la CLI.
 /vault/config.ini | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (esencial)!
-/vault/functions.inc | Archivo de funciones (esencial).
+/vault/config.php | Módulo de configuración.
+/vault/functions.php | Archivo de funciones (esencial).
 /vault/ipv4.dat | Archivo de firmas por IPv4.
 /vault/ipv4_custom.dat | Archivo de firmas por IPv4 personalizado.
 /vault/ipv6.dat | Archivo de firmas por IPv6.
 /vault/ipv6_custom.dat | Archivo de firmas por IPv6 personalizado.
-/vault/lang.inc | Lingüísticos datos.
+/vault/lang.php | Lingüísticos datos.
 /vault/lang/ | Contiene lingüísticos datos.
 /vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/lang/lang.en.inc | Lingüísticos datos Inglés.
-/vault/lang/lang.es.inc | Lingüísticos datos Español.
-/vault/lang/lang.fr.inc | Lingüísticos datos Francés.
-/vault/lang/lang.id.inc | Lingüísticos datos Indonesio.
-/vault/lang/lang.it.inc | Lingüísticos datos Italiano.
-/vault/lang/lang.nl.inc | Lingüísticos datos Holandés.
-/vault/lang/lang.pt.inc | Lingüísticos datos Portugués.
-/vault/lang/lang.zh-TW.inc | Lingüísticos datos Chino (tradicional).
-/vault/lang/lang.zh.inc | Lingüísticos datos Chino (simplificado).
-/vault/outgen.inc | Generador de salida.
+/vault/lang/lang.en.php | Lingüísticos datos Inglés.
+/vault/lang/lang.es.php | Lingüísticos datos Español.
+/vault/lang/lang.fr.php | Lingüísticos datos Francés.
+/vault/lang/lang.id.php | Lingüísticos datos Indonesio.
+/vault/lang/lang.it.php | Lingüísticos datos Italiano.
+/vault/lang/lang.nl.php | Lingüísticos datos Holandés.
+/vault/lang/lang.pt.php | Lingüísticos datos Portugués.
+/vault/lang/lang.zh-TW.php | Lingüísticos datos Chino (tradicional).
+/vault/lang/lang.zh.php | Lingüísticos datos Chino (simplificado).
+/vault/outgen.php | Generador de salida.
 /vault/template.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
-/vault/rules_as6939.inc | Archivo de reglas personalizado para AS6939.
-/vault/rules_softlayer.inc | Archivo de reglas personalizado para Soft Layer.
+/vault/rules_as6939.php | Archivo de reglas personalizado para AS6939.
+/vault/rules_softlayer.php | Archivo de reglas personalizado para Soft Layer.
 
 ---
 
@@ -172,4 +172,4 @@ Una descripción del formato y la estructura de las firmas utilizado por CIDRAM 
 ---
 
 
-Última Actualización: 8 Marzo 2016 (2016.03.08).
+Última Actualización: 18 Marzo 2016 (2016.03.18).

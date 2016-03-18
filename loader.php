@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.14).
+ * This file: The loader (last modified: 2016.03.18).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -122,31 +122,31 @@ if (!defined('CIDRAM')) {
     $CIDRAM['CIDRAM_sapi'] = php_sapi_name();
 
     /** Check if the language handler exists; Kill the script if it doesn't. */
-    if (!file_exists($CIDRAM['Vault'] . 'lang.inc')) {
+    if (!file_exists($CIDRAM['Vault'] . 'lang.php')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Language handler missing! Please reinstall CIDRAM.');
     }
     /** Load the language handler. */
-    require $CIDRAM['Vault'] . 'lang.inc';
+    require $CIDRAM['Vault'] . 'lang.php';
 
     /** Check if the functions file exists; Kill the script if it doesn't. */
-    if (!file_exists($CIDRAM['Vault'] . 'functions.inc')) {
+    if (!file_exists($CIDRAM['Vault'] . 'functions.php')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Functions file missing! Please reinstall CIDRAM.');
     }
     /** Load the functions file. */
-    require $CIDRAM['Vault'] . 'functions.inc';
+    require $CIDRAM['Vault'] . 'functions.php';
 
     /**
      * Check if the output generator exists; Kill the script if it doesn't;
      * Load it if it does. Skip this check if we're in CLI-mode.
      */
     if ($CIDRAM['CIDRAM_sapi'] !== 'cli') {
-        if (!file_exists($CIDRAM['Vault'] . 'outgen.inc')) {
+        if (!file_exists($CIDRAM['Vault'] . 'outgen.php')) {
             header('Content-Type: text/plain');
             die('[CIDRAM] Output generator missing! Please reinstall CIDRAM.');
         }
-        require $CIDRAM['Vault'] . 'outgen.inc';
+        require $CIDRAM['Vault'] . 'outgen.php';
     }
 
     /**
@@ -154,8 +154,8 @@ if (!defined('CIDRAM')) {
      * Skip this check if we're not in CLI-mode.
      */
     if ($CIDRAM['CIDRAM_sapi'] === 'cli') {
-        if (file_exists($CIDRAM['Vault'] . 'cli.inc')) {
-            require $CIDRAM['Vault'] . 'cli.inc';
+        if (file_exists($CIDRAM['Vault'] . 'cli.php')) {
+            require $CIDRAM['Vault'] . 'cli.php';
         }
     }
 

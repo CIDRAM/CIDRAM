@@ -97,31 +97,31 @@ Bestand | Beschrijving
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache.dat | Cache data/gegevens.
-/vault/cli.inc | CLI-handler.
-/vault/config.inc | Configuratie-handler.
+/vault/cli.php | CLI-handler.
 /vault/config.ini | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (essentiële)!
-/vault/functions.inc | Functies bestand (essentieel).
+/vault/config.php | Configuratie-handler.
+/vault/functions.php | Functies bestand (essentieel).
 /vault/ipv4.dat | IPv4 handtekeningen bestand.
 /vault/ipv4_custom.dat | IPv4 aangepaste handtekeningen bestand.
 /vault/ipv6.dat | IPv6 handtekeningen bestand.
 /vault/ipv6_custom.dat | IPv6 aangepaste handtekeningen bestand.
-/vault/lang.inc | Taal-handler.
+/vault/lang.php | Taal-handler.
 /vault/lang/ | Bevat CIDRAM taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.en.inc | Engels taaldata/taalgegevens.
-/vault/lang/lang.es.inc | Spaanse taaldata/taalgegevens.
-/vault/lang/lang.fr.inc | Franse taaldata/taalgegevens.
-/vault/lang/lang.id.inc | Indonesisch taaldata/taalgegevens.
-/vault/lang/lang.it.inc | Italiaanse taaldata/taalgegevens.
-/vault/lang/lang.nl.inc | Nederlandse taaldata/taalgegevens.
-/vault/lang/lang.pt.inc | Portugees taaldata/taalgegevens.
-/vault/lang/lang.zh-TW.inc | Chinees (traditioneel) taaldata/taalgegevens.
-/vault/lang/lang.zh.inc | Chinees (vereenvoudigd) taaldata/taalgegevens.
-/vault/outgen.inc | Uitvoer generator.
+/vault/lang/lang.en.php | Engels taaldata/taalgegevens.
+/vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
+/vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
+/vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
+/vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
+/vault/lang/lang.zh-TW.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
+/vault/outgen.php | Uitvoer generator.
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
-/vault/rules_as6939.inc | Aangepaste regels bestand voor AS6939.
-/vault/rules_softlayer.inc | Aangepaste regels bestand voor Layer.
+/vault/rules_as6939.php | Aangepaste regels bestand voor AS6939.
+/vault/rules_softlayer.php | Aangepaste regels bestand voor Layer.
 
 ---
 
@@ -172,4 +172,4 @@ Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt 
 ---
 
 
-Laatste Bijgewerkt: 8 Maart 2016 (2016.03.08).
+Laatste Bijgewerkt: 18 Maart 2016 (2016.03.18).

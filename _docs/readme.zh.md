@@ -102,31 +102,31 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
 /vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/cache.dat | 缓存数据。
-/vault/cli.inc | CLI处理文件。
-/vault/config.inc | 配置处理文件。
+/vault/cli.php | CLI处理文件。
 /vault/config.ini | 配置文件；包含所有配置指令为CIDRAM，告诉它什么做和怎么正确地经营（必不可少）！
-/vault/functions.inc | 功能处理文件（必不可少）。
+/vault/config.php | 配置处理文件。
+/vault/functions.php | 功能处理文件（必不可少）。
 /vault/ipv4.dat | IPv4签名文件。
 /vault/ipv4_custom.dat | IPv4定制签名文件。
 /vault/ipv6.dat | IPv6签名文件。
 /vault/ipv6_custom.dat | IPv6定制签名文件。
-/vault/lang.inc | 语言数据。
+/vault/lang.php | 语言数据。
 /vault/lang/ | 包含CIDRAM语言数据。
 /vault/lang/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/lang/lang.en.inc | 英文语言数据。
-/vault/lang/lang.es.inc | 西班牙文语言数据。
-/vault/lang/lang.fr.inc | 法文语言数据。
-/vault/lang/lang.id.inc | 印度尼西亚文语言数据。
-/vault/lang/lang.it.inc | 意大利文语言数据。
-/vault/lang/lang.nl.inc | 荷兰文语言数据。
-/vault/lang/lang.pt.inc | 葡萄牙文语言数据。
-/vault/lang/lang.zh-TW.inc | 中文（传统）语言数据。
-/vault/lang/lang.zh.inc | 中文（简体）语言数据。
-/vault/outgen.inc | 输出发生器。
+/vault/lang/lang.en.php | 英文语言数据。
+/vault/lang/lang.es.php | 西班牙文语言数据。
+/vault/lang/lang.fr.php | 法文语言数据。
+/vault/lang/lang.id.php | 印度尼西亚文语言数据。
+/vault/lang/lang.it.php | 意大利文语言数据。
+/vault/lang/lang.nl.php | 荷兰文语言数据。
+/vault/lang/lang.pt.php | 葡萄牙文语言数据。
+/vault/lang/lang.zh-TW.php | 中文（传统）语言数据。
+/vault/lang/lang.zh.php | 中文（简体）语言数据。
+/vault/outgen.php | 输出发生器。
 /vault/template.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
-/vault/rules_as6939.inc | 定制规则文件为 AS6939。
-/vault/rules_softlayer.inc | 定制规则文件为 Soft Layer。
+/vault/rules_as6939.php | 定制规则文件为 AS6939。
+/vault/rules_softlayer.php | 定制规则文件为 Soft Layer。
 
 ---
 
@@ -177,4 +177,4 @@ CIDRAM签名格式和结构描述可以被发现记录在纯文本在自定义�
 ---
 
 
-最后更新：2016年3月13日。
+最后更新：2016年3月18日。

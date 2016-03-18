@@ -101,31 +101,31 @@ Datei | Beschreibung
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cache.dat | Cache-Daten.
-/vault/cli.inc | CLI-Handler.
-/vault/config.inc | Konfiguration-Handler.
+/vault/cli.php | CLI-Handler.
 /vault/config.ini | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (absolut notwendig)!
-/vault/functions.inc | Funktionen-Datei.
+/vault/config.php | Konfiguration-Handler.
+/vault/functions.php | Funktionen-Datei.
 /vault/ipv4.dat | IPv4 Signaturdatei.
 /vault/ipv4_custom.dat | IPv4 benutzerdefinierte Signaturdatei.
 /vault/ipv6.dat | IPv6 Signaturdatei.
 /vault/ipv6_custom.dat | IPv6 benutzerdefinierte Signaturdatei.
-/vault/lang.inc | Sprachdateien.
+/vault/lang.php | Sprachdateien.
 /vault/lang/ | Enthält Sprachdaten für CIDRAM.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.en.inc | Englische Sprachdateien.
-/vault/lang/lang.es.inc | Spanische Sprachdateien.
-/vault/lang/lang.fr.inc | Französische Sprachdateien.
-/vault/lang/lang.id.inc | Indonesische Sprachdateien.
-/vault/lang/lang.it.inc | Italienische Sprachdateien.
-/vault/lang/lang.nl.inc | Niederländische Sprachdateien.
-/vault/lang/lang.pt.inc | Portugiesische Sprachdateien.
-/vault/lang/lang.zh-TW.inc | Chinesische Sprachdateien (traditionell).
-/vault/lang/lang.zh.inc | Chinesische Sprachdateien (vereinfacht).
-/vault/outgen.inc | Ausgabe-Generator.
+/vault/lang/lang.en.php | Englische Sprachdateien.
+/vault/lang/lang.es.php | Spanische Sprachdateien.
+/vault/lang/lang.fr.php | Französische Sprachdateien.
+/vault/lang/lang.id.php | Indonesische Sprachdateien.
+/vault/lang/lang.it.php | Italienische Sprachdateien.
+/vault/lang/lang.nl.php | Niederländische Sprachdateien.
+/vault/lang/lang.pt.php | Portugiesische Sprachdateien.
+/vault/lang/lang.zh-TW.php | Chinesische Sprachdateien (traditionell).
+/vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
+/vault/outgen.php | Ausgabe-Generator.
 /vault/template.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
-/vault/rules_as6939.inc | Benutzerdefinierte Regeldatei für AS6939.
-/vault/rules_softlayer.inc | Benutzerdefinierte Regeldatei für Soft Layer.
+/vault/rules_as6939.php | Benutzerdefinierte Regeldatei für AS6939.
+/vault/rules_softlayer.php | Benutzerdefinierte Regeldatei für Soft Layer.
 
 ---
 
@@ -176,4 +176,4 @@ A description of the format and structure of the signatures used by CIDRAM can b
 ---
 
 
-Zuletzt aktualisiert: 9. März 2016 (2016.03.09).
+Zuletzt aktualisiert: 18. März 2016 (2016.03.18).

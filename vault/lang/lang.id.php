@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.03.07).
+ * This file: Indonesian language data (last modified: 2016.03.20).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -39,3 +39,27 @@ $CIDRAM['lang']['ReasonMessage_Generic'] = 'Akses Anda ke halaman ini ditolak ka
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan dianggap berisiko tinggi untuk spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP tidak valid!';
 $CIDRAM['lang']['Support_Email'] = 'Jika Anda yakin ini adalah kesalahan, atau untuk mencari bantuan, {ClickHereLink} untuk mengirim tiket dukungan email ke webmaster dari situs ini (silahkan jangan mengubah pembukaan atau baris subjek email).';
+
+$CIDRAM['lang']['CLI_H'] = "
+ CIDRAM CLI-mode help.
+
+ Usage:
+ /jalan/ke/php/php.exe /jalan/ke/cidram/loader.php -Flag (Masukkan)
+
+ Flag:  -h  Menampilkan informasi bantuan ini.
+        -c  Periksa apakah alamat IP diblokir dengan file tanda tangan CIDRAM.
+        -g  Menghasilkan CIDR dari alamat IP.
+
+ Masukkan:  Dapat menjadi apa-apa alamat IPv4 atau IPv6 valid.
+
+ Contoh:
+        -c  192.168.0.0/16
+        -c  127.0.0.1/32
+        -c  2001:db8::/32
+        -c  2002::1/128
+
+";
+
+$CIDRAM['lang']['CLI_Bad_IP'] = ' Alamat IP yang ditetapkan, "{IP}", yang tidak valid!';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' Alamat IP yang ditetapkan, "{IP}", *YANG* diblokir oleh satu atau lebih tanda tangan.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Alamat IP yang ditetapkan, "{IP}", yang *TIDAK* diblokir oleh satu atau lebih tanda tangan.';

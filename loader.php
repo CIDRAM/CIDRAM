@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.18).
+ * This file: The loader (last modified: 2016.03.20).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -27,7 +27,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.1.2';
+    $CIDRAM['ScriptVersion'] = '0.2.0-DEV';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -83,12 +83,21 @@ if (!defined('CIDRAM')) {
         $CIDRAM['Config']['general'] = array();
     }
     /** Fallback for missing "ipaddr" configuration directive. */
-    if (!isset($CIDRAM['Config']['general']['ipaddr'])) {
+    if (
+        empty($CIDRAM['Config']['general']['ipaddr']) || (
+            $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' &&
+            empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
+        )
+    ) {
         $CIDRAM['Config']['general']['ipaddr'] = 'REMOTE_ADDR';
     }
     /** Fallback for missing "emailaddr" configuration directive. */
     if (!isset($CIDRAM['Config']['general']['emailaddr'])) {
         $CIDRAM['Config']['general']['emailaddr'] = '';
+    }
+    /** Fallback for missing "disable_cli" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['disable_cli'])) {
+        $CIDRAM['Config']['general']['disable_cli'] = false;
     }
 
     /** Fallback for missing "signatures" configuration category. */
@@ -101,7 +110,7 @@ if (!defined('CIDRAM')) {
     }
     /** Fallback for missing "block_bogons" configuration directive. */
     if (!isset($CIDRAM['Config']['signatures']['block_bogons'])) {
-        $CIDRAM['Config']['signatures']['block_bogons'] = true;
+        $CIDRAM['Config']['signatures']['block_bogons'] = false;
     }
     /** Fallback for missing "block_generic" configuration directive. */
     if (!isset($CIDRAM['Config']['signatures']['block_generic'])) {
@@ -153,10 +162,12 @@ if (!defined('CIDRAM')) {
      * Check if the CLI handler exists; Load it if it does.
      * Skip this check if we're not in CLI-mode.
      */
-    if ($CIDRAM['CIDRAM_sapi'] === 'cli') {
-        if (file_exists($CIDRAM['Vault'] . 'cli.php')) {
+    if (
+        $CIDRAM['CIDRAM_sapi'] === 'cli' &&
+        !$CIDRAM['Config']['general']['disable_cli'] &&
+        file_exists($CIDRAM['Vault'] . 'cli.php')
+    ) {
             require $CIDRAM['Vault'] . 'cli.php';
-        }
     }
 
     /** Unset our working data so that we can exit cleanly. */

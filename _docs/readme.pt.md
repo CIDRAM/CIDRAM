@@ -147,6 +147,9 @@ Configuração geral por CIDRAM.
 "emailaddr"
 - Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail).
 
+"disable_cli"
+- Desativar o CLI modo? CLI modo é ativado por padrão, mas às vezes pode interferir com certas testes ferramentas (tal como PHPUnit, por exemplo) e outras aplicações baseadas em CLI. Se você não precisa desativar o CLI modo, você deve ignorar esta directiva. False = Ativar o CLI modo [Padrão]; True = Desativar o CLI modo.
+
 ####"signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -172,4 +175,4 @@ A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode 
 ---
 
 
-Última Atualização: 18 Março 2016 (2016.03.18).
+Última Atualização: 20 Março 2016 (2016.03.20).

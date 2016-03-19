@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.03.17).
+ * This file: CLI handler (last modified: 2016.03.20).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -26,14 +26,7 @@ $CIDRAM['argv'] = array(
 
 if ($CIDRAM['argv'][1] === '-h') {
     /** CIDRAM CLI-mode help. */
-    echo
-        "\nCIDRAM CLI-mode help.\n\nUsage:\n    /path/to/php/php.exe /path/t" .
-        "o/cidram/loader.php -Flag (Input)\n\nFlags:\n    -h      Display th" .
-        "is help information.\n    -c      Check if an IP address is blocked" .
-        "by the CIDRAM signature files.\n    -g      Generate CIDRs from an " .
-        "IP address.\n\nInput:\n    Can be any valid IPv4 or IPv6 IP address" .
-        ".\n\nExamples:\n    -c 192.168.0.0/16\n    -c 127.0.0.1/32\n    -c " .
-        "2001:db8::/32\n    -c 2002::1/128\n\n";
+    echo $CIDRAM['lang']['CLI_H'];
 } elseif ($CIDRAM['argv'][1] === '-c') {
     /** Generate CIDRs from an IP address. */
     echo "\n";
@@ -52,18 +45,14 @@ if ($CIDRAM['argv'][1] === '-h') {
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2]);
     $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2]);
     if (!$CIDRAM['TestIPv4'] && !$CIDRAM['TestIPv6']) {
-        echo
-            'The specified IP address, "' . $CIDRAM['argv'][2] . '", is not ' .
-            "a valid IPv4 or IPv6 IP address!\n";
+        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 79, "\n ");
     } else {
         echo
             ($CIDRAM['BlockInfo']['SignatureCount']) ?
-                'The specified IP address, "' . $CIDRAM['argv'][2] . '", IS bloc' .
-                "ked by one or more of the CIDRAM signature files.\n"
-            :
-                'The specified IP address, "' . $CIDRAM['argv'][2] . '", is NOT ' .
-                "blocked by any of the CIDRAM signature files.\n";
+            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Blocked']), 79, "\n ") :
+            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Not_Blocked']), 79, "\n ");
     }
+    echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-g') {
     /** Check if an IP address is blocked by the CIDRAM signature files. */
     echo "\n";
@@ -74,9 +63,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     } elseif (!empty($CIDRAM['TestIPv6'])) {
         var_dump($CIDRAM['TestIPv6']);
     } else {
-        echo
-            'The specified IP address, "' . $CIDRAM['argv'][2] . '", is not ' .
-            "a valid IPv4 or IPv6 IP address!\n";
+        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 79, "\n ");
     }
     echo "\n";
 }

@@ -135,37 +135,40 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 ###5. <a name="SECTION5"></a>配置選項
 下列是一個列表的變量發現在`config.ini`配置文件的CIDRAM，以及一個說明的他們的目的和功能。
 
-####"general" （類別）
+####“general" （類別）
 基本CIDRAM配置。
 
-"logfile"
+“logfile”
 - 文件為記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。
 
 “ipaddr”
 - 在哪裡可以找到連接請求IP地址？（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。警告！不要修改此除非您知道什麼您做著！
 
-"forbid_on_block"
+“forbid_on_block”
 - CIDRAM 應該響應以 “403 Forbidden” 到被阻止的請求，或 “200 OK”？ False = 200 [Default]; True = 403。
 
 “lang”
 - 指定標準CIDRAM語言。
 
-"emailaddr"
+“emailaddr”
 - 如果您希望，您可以提供電子郵件地址這裡要給予用戶當他們被阻止，他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。警告:您提供的任何電子郵件地址，它肯定會被獲得通過垃圾郵件機器人和鏟運機，所以，它強烈推薦如果選擇提供一個電子郵件地址這裡，您保證它是一次性的和/或不是很重要（換一種說法，您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。
 
-####"signatures" （類別）
+“disable_cli”
+- 關閉CLI模式嗎？CLI模式是按說激活作為標準，但可以有時干擾某些測試工具（例如PHPUnit，為例子）和其他基於CLI應用。如果您沒有需要關閉CLI模式，您應該忽略這個指令。 False = 激活CLI模式【標準】； True = 關閉CLI模式。
+
+####“signatures” （類別）
 簽名配置。
 
-"block_cloud"
+“block_cloud”
 - 阻止CIDR認定為屬於虛擬主機或云服務嗎？如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，這應該被設置為“false”（假）。如果不，這應該被設置為“true”（真）。
 
-"block_bogons"
+“block_bogons”
 - 阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（​​“火星”）CIDR嗎？如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，這應該被設置為“false”（假）。如果不，這應該被設置為“true”（真）。
 
-"block_generic"
+“block_generic”
 - 阻止CIDR一般建議對於黑名單嗎？這包括簽名不標記為的一部分任何其他更具體簽名類別。
 
-"block_spam"
+“block_spam”
 - 阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。
 
 ---
@@ -178,4 +181,4 @@ CIDRAM簽名格式和結構描述可以被發現記錄在純文本在自定義�
 ---
 
 
-最後更新：2016年3月18日。
+最後更新：2016年3月20日。

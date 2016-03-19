@@ -147,6 +147,9 @@ Algemene configuratie voor CIDRAM.
 "emailaddr"
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
+"disable_cli"
+- Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
+
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
 
@@ -172,4 +175,4 @@ Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt 
 ---
 
 
-Laatste Bijgewerkt: 18 Maart 2016 (2016.03.18).
+Laatste Bijgewerkt: 20 Maart 2016 (2016.03.20).

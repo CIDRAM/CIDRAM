@@ -24,6 +24,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   files and changed all references to them accordingly.
   Refer github.com/Maikuolan/CIDRAM/issues/3
 
+- [2016.03.19; Sub-minor code change; Maikuolan]: Changed the default value of
+  the "block_bogons" directive from true to false. Added a new directive,
+  "disable_cli", to optionally disable the CLI mode implementation for CIDRAM.
+  Added a fallback to help deal with situations where multiple IP address
+  server variables may be in use.
+
 === Version/Release 0.1.2 ===
 PATCH RELEASE.
 

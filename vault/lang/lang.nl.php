@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.03.07).
+ * This file: Dutch language data (last modified: 2016.03.20).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -39,3 +39,28 @@ $CIDRAM['lang']['ReasonMessage_Generic'] = 'Uw toegang tot dit pagina is geweige
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres behoort tot een netwerk beschouwd als een hoog risico op spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ongeldig IP!';
 $CIDRAM['lang']['Support_Email'] = 'Als je denkt dat dit een fout, of om hulp te zoeken, {ClickHereLink} om een email support ticket te sturen naar de webmaster van dit site (alsjeblieft niet wijzigen de preambule of de onderwerpregel van de email).';
+
+$CIDRAM['lang']['CLI_H'] = "
+ CIDRAM CLI-modus hulp.
+
+ Gebruik:
+ /pad/naar/php/php.exe /pad/naar/cidram/loader.php -Vlag (Invoer)
+
+ Vlaggen:   -h  Geeft dit help informatie.
+            -c  Controleer of een IP-adres is geblokkeerd door de CIDRAM
+                handtekening bestanden.
+            -g  Genereer CIDRs van een IP-adres.
+
+ Invoer: Kan ieder geldig IP-adres zijn.
+
+ Voorbeelden:
+        -c  192.168.0.0/16
+        -c  127.0.0.1/32
+        -c  2001:db8::/32
+        -c  2002::1/128
+
+";
+
+$CIDRAM['lang']['CLI_Bad_IP'] = ' Het opgegeven IP-adres, "{IP}", is geen geldig IPv4 of IPv6 IP-adres!';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' Het opgegeven IP-adres, "{IP}", *IS* geblokkeerd door een of meer van de CIDRAM handtekening bestanden.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Het opgegeven IP-adres, "{IP}", is *NIET* geblokkeerd door een of meer van de CIDRAM handtekening bestanden.';

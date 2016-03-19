@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2016.03.07).
+ * This file: Italian language data (last modified: 2016.03.20).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -39,3 +39,27 @@ $CIDRAM['lang']['ReasonMessage_Generic'] = 'Accesso a questa pagina è stato neg
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Accesso a questa pagina è stato negato perché il suo indirizzo appartiene a una rete considerati ad alto rischio per lo spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP non valido!';
 $CIDRAM['lang']['Support_Email'] = 'Se credi che questo è in errore, o per cercare assistenza, {ClickHereLink} per inviare una richiesta di assistenza via e-mail per il webmaster di questo sito (si prega di non modificare il preambolo o linea oggetto dell\'e-mail).';
+
+$CIDRAM['lang']['CLI_H'] = "
+ CIDRAM CLI modalità aiuto.
+
+ Uso:
+ /cartella/a/php/php.exe /cartella/a/cidram/loader.php -Flag (Ingresso)
+
+ Flags: -h  Visualizzare queste informazioni di aiuto.
+        -c  Verificare se un indirizzo IP è bloccato dalle firme di CIDRAM.
+        -g  Generare CIDRs da un indirizzo IP.
+
+ Ingresso: Può essere qualsiasi indirizzo IPv4 o IPv6 valido.
+
+ Esempi:
+        -c  192.168.0.0/16
+        -c  127.0.0.1/32
+        -c  2001:db8::/32
+        -c  2002::1/128
+
+";
+
+$CIDRAM['lang']['CLI_Bad_IP'] = ' L\'indirizzo IP specificato, "{IP}", non è un indirizzo IPv4 o IPv6 valido!';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' L\'indirizzo IP specificato, "{IP}", è bloccato da uno o più delle firme di CIDRAM.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' L\'indirizzo IP specificato, "{IP}", *NON* è bloccato da uno o più delle firme di CIDRAM.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2016.03.07).
+ * This file: Chinese (simplified) language data (last modified: 2016.03.20).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -39,3 +39,28 @@ $CIDRAM['lang']['ReasonMessage_Generic'] = '您的访问这个页面被拒绝因
 $CIDRAM['lang']['ReasonMessage_Spam'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络被认为是高风险的垃圾邮件。';
 $CIDRAM['lang']['Short_BadIP'] = '无效的IP！';
 $CIDRAM['lang']['Support_Email'] = '如果您认为这是错误的，或寻求援助，{ClickHereLink}发送电子邮件支持票本网站的网站管理员（请不要改变序言或主题行）。';
+
+$CIDRAM['lang']['CLI_H'] = "
+ CIDRAM CLI模式辅助。
+
+ 用法：
+ /path/to/php/php.exe /path/to/cidram/loader.php -键 （输入）
+
+ 键：
+    -h  显示此帮助信息。
+    -c  检查如果一个IP地址被阻止由CIDRAM签名文件。
+    -g  生成CIDR从一个IP地址。
+
+ 输入： 可以是任何有效的地址（IPv4/IPv6）。
+
+ 例子：
+        -c  192.168.0.0/16
+        -c  127.0.0.1/32
+        -c  2001:db8::/32
+        -c  2002::1/128
+
+";
+
+$CIDRAM['lang']['CLI_Bad_IP'] = ' 指定的IP地址，“{IP}”，不是有效地址（IPv4/IPv6）！';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' 指定的IP地址，“{IP}”，是由一个或多个阻塞签名文件。';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' 指定的IP地址，“{IP}”，不是由一个或多个阻塞签名文件。';

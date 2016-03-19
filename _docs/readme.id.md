@@ -147,6 +147,9 @@ Konfigurasi umum dari CIDRAM.
 "emailaddr"
 - Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).
 
+"disable_cli"
+- Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI.
+
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -172,4 +175,4 @@ Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapa
 ---
 
 
-Terakhir Diperbarui: 18 Maret 2016 (2016.03.18).
+Terakhir Diperbarui: 20 Maret 2016 (2016.03.20).

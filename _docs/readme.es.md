@@ -147,6 +147,9 @@ General configuración para CIDRAM.
 "emailaddr"
 - Si deseado, usted puede suministrar una dirección de email aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de email que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de email aquí, que se asegura de que la dirección de email usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal).
 
+"disable_cli"
+- Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo.
+
 ####"signatures" (Categoría)
 Configuración de firmas.
 
@@ -172,4 +175,4 @@ Una descripción del formato y la estructura de las firmas utilizado por CIDRAM 
 ---
 
 
-Última Actualización: 18 Marzo 2016 (2016.03.18).
+Última Actualización: 20 Marzo 2016 (2016.03.20).

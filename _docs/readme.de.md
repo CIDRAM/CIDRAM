@@ -151,6 +151,9 @@ Generelle Konfiguration von CIDRAM.
 "emailaddr"
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
+"disable_cli"
+- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
+
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -176,4 +179,4 @@ A description of the format and structure of the signatures used by CIDRAM can b
 ---
 
 
-Zuletzt aktualisiert: 18. März 2016 (2016.03.18).
+Zuletzt aktualisiert: 20. März 2016 (2016.03.20).

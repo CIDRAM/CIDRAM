@@ -127,9 +127,8 @@ if (!defined('CIDRAM')) {
     /** Determine the operating system in use. */
     $CIDRAM['CIDRAM_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
-    /** Determine if operating in CLI or CGI. */
-    $CIDRAM['CIDRAM_sapi'] = substr(php_sapi_name(), 0, 3);
-    $CIDRAM['CIDRAM_sapi'] = ($CIDRAM['CIDRAM_sapi'] === 'cli' || $CIDRAM['CIDRAM_sapi'] === 'cgi');
+    /** Determine if operating in CLI-mode. */
+    $CIDRAM['CIDRAM_sapi'] = isset($_SERVER['argv']);
 
     /** Check if the language handler exists; Kill the script if it doesn't. */
     if (!file_exists($CIDRAM['Vault'] . 'lang.php')) {
@@ -149,7 +148,7 @@ if (!defined('CIDRAM')) {
 
     /**
      * Check if the output generator exists; Kill the script if it doesn't;
-     * Load it if it does. Skip this check if we're using CLI or CGI.
+     * Load it if it does. Skip this check if we're in CLI-mode.
      */
     if (!$CIDRAM['CIDRAM_sapi']) {
         if (!file_exists($CIDRAM['Vault'] . 'outgen.php')) {
@@ -161,7 +160,7 @@ if (!defined('CIDRAM')) {
 
     /**
      * Check if the CLI handler exists; Load it if it does.
-     * Skip this check if we're not using CLI or CGI.
+     * Skip this check if we're not in CLI-mode.
      */
     if (
         $CIDRAM['CIDRAM_sapi'] &&

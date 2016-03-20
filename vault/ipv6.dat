@@ -35,19 +35,29 @@ http://www.ipdeny.com/ipblocks/
 
 ---
 WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
-Updated: 2016.03.17 (statistics account for scanning by Google from 1 year up until the cited update date).
+Updated: 2016.03.20 (statistics account for scanning by Google from 1 year up until the cited update date).
 
-RANK    ASN    AS                   RATE    INCLUDED IN CIDRAM? RANK SHIFT (SINCE LAST UPDATE)
- 1      46844  Sharktech            44.77%  Yes (> 0.1.2)       NA
- 2      35916  Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
- 3      38197  Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
- 4      32097  WholeSale Internet   22.89%  Yes (all versions)  NA
- 5      26658  HT                   19.52%  Yes (> 0.1.2)       NA
- 6      17139  Corporate Colocation 17.37%  Yes (all versions)  NA
- 7      62468  VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
+RANK    ASN    AS                   RATE    INCLUDED IN HERE?   RANK SHIFT (SINCE LAST UPDATE)
+ 1       46844 Sharktech            44.77%  Yes (> 0.1.2)       NA
+ 2       35916 Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
+ 3       38197 Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
+ 4       32097 WholeSale Internet   22.89%  Yes (all versions)  NA
+ 5       26658 HT                   19.52%  Yes (> 0.1.2)       NA
+ 6       17139 Corporate Colocation 17.37%  Yes (all versions)  NA
+ 7       62468 VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
  8      133618 Trellian Pty. Ltd.   15.38%  Yes (> 0.1.2)       NA
- 9      33387  DataShack, LC        13.46%  Yes (all versions)  NA
-10      16138  INTERIA              12.37%  Yes (> 0.1.2)       NA
+ 9       33387 DataShack, LC        13.46%  Yes (all versions)  NA
+10       16138 INTERIA              12.37%  Yes (> 0.1.2)       NA
+11       58879 ShangHai AnchNet Tec 12.23%  Yes (> 0.1.2)       NA
+12       35908 Krypt Technologies   10.97%  Yes (all versions)  NA
+13        7497 CST-NET              10.49%  Yes (> 0.1.2)       NA
+14       20248 Take 2 Hosting, Inc. 10.05%  Yes (> 0.1.2)       NA
+15       46573 Global Frag Networks 10.02%  Yes (> 0.1.2)       NA
+16       54600 PEG TECH INC          9.95%  Yes (all versions)  NA
+17       40676 Psychz Networks       8.79%  Yes (all versions)  NA
+18      133731 Royal Network Tech.   8.70%  Yes (> 0.1.2)       NA
+19       38277 CommuniLink Internet  8.55%  Yes (> 0.1.2)       NA
+20      134121 Rainbow Network Ltd   7.83%  Yes (> 0.1.2)       NA
 
 
 
@@ -99,6 +109,32 @@ Infected by malware (as per reported by Google): 12.37%.
 Updated: 2016.03.17
 
 2a00:1308::/32 Deny Cloud
+
+
+"Computer Network Information Center"
+ASN 7497.
+Infected by malware (as per reported by Google): 10.49%.
+Updated: 2016.03.20
+
+2400:dd00::/28 Deny Cloud
+2401:de00::/32 Deny Cloud
+
+
+"Global Frag Networks"
+ASN 46573.
+Infected by malware (as per reported by Google): 10.02%.
+Updated: 2016.03.20
+
+2604:d180::/32 Deny Cloud
+2605:2080::/34 Deny Cloud
+
+
+"PEG TECH INC"
+ASN 54600.
+Infected by malware (as per reported by Google): 9.95%.
+Updated: 2016.03.20
+
+2605:7280::/32 Deny Cloud
 
 
 "New Dream Network, LLC"
@@ -674,13 +710,6 @@ Updated: 2016.01.20 / Checked: 2016.03.12
 2607:ff28::/32 Deny Generic
 
 
-"Pegasus Web Technology" and "Fortress ITX"
-ASN 17363, 25653, 54600.
-Updated: 2016.01.19 / Checked: 2016.03.07
-
-2605:7280::/32 Deny Cloud
-
-
 "Steadfast Networks"
 ASN 32748, 46440.
 Updated: 2016.03.13
@@ -980,11 +1009,11 @@ Updated: 2016.03.15
 
 "SingleHop, Inc."
 ASN 32475.
-Updated: 2016.01.22 / Checked: 2016.03.15
+Infected by malware (as per reported by Google): 1.13%.
+Updated: 2016.01.22 / Checked: 2016.03.20
 
 2607:f978:2::/48 Deny Cloud
-2607:f978:4::/48 Deny Cloud
-2607:f978:5::/48 Deny Cloud
+2607:f978:4::/47 Deny Cloud
 2a06:7a00:1::/48 Deny Cloud
 
 
@@ -1021,14 +1050,16 @@ Updated: 2016.01.22 / Checked: 2016.03.12
 
 "Psychz Networks"
 ASN 40676.
-Updated: 2016.02.27
+Infected by malware (as per reported by Google): 8.79%.
+Updated: 2016.03.20
 
 2602:ff96:5::/48 Deny Cloud
+2602:ff96:9::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
 2602:ffb0:ffe::/48 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
-2620:1e8::/48 Deny Cloud
+2605:e280:c65a::/48 Deny Cloud
 2a05:b0c6:1300::/44 Deny Cloud
 2a06:e881:100::/48 Deny Cloud
 
@@ -1080,19 +1111,20 @@ Updated: 2016.03.12
 
 "Versaweb, LLC"
 ASN 36114.
-Updated: 2016.01.23
+Infected by malware (as per reported by Google): 8.42%.
+Updated: 2016.01.23 / Checked: 2016.03.20
 
 2605:6f80::/40 Deny Cloud
 
 
 "WorldStream"
 ASN 49981.
-Updated: 2016.01.23
+Infected by malware (as per reported by Google): 1.96%.
+Updated: 2016.03.20
 
 2001:16c0:fefe::/48 Deny Generic
 2a00:7c80::/32 Deny Generic
 2a06:3880::/29 Deny Generic
-2a06:7a00::/48 Deny Generic
 2a06:d641::/32 Deny Generic
 
 
@@ -1148,7 +1180,8 @@ Updated: 2016.02.27
 
 "UOL DIVEO S.A."
 ASN 7162.
-Updated: 2016.01.23
+Infected by malware (as per reported by Google): 0.91%.
+Updated: 2016.01.23 / Checked: 2016.03.20
 
 2804:49c::/32 Deny Generic
 
@@ -1343,7 +1376,8 @@ Updated: 2016.02.11
 
 "Krypt Technologies"
 ASN 35908.
-Updated: 2016.02.27 / Checked: 2016.03.10
+Infected by malware (as per reported by Google): 10.97%.
+Updated: 2016.02.27 / Checked: 2016.03.20
 Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
 
 2607:f180::/31 Deny Generic

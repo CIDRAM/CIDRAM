@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.20).
+ * This file: The loader (last modified: 2016.03.21).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -150,7 +150,7 @@ if (!defined('CIDRAM')) {
      * Check if the output generator exists; Kill the script if it doesn't;
      * Load it if it does. Skip this check if we're in CLI-mode.
      */
-    if ($CIDRAM['CIDRAM_sapi'] !== 'cli') {
+    if (substr($CIDRAM['CIDRAM_sapi'], 0, 3) !== 'cli') {
         if (!file_exists($CIDRAM['Vault'] . 'outgen.php')) {
             header('Content-Type: text/plain');
             die('[CIDRAM] Output generator missing! Please reinstall CIDRAM.');
@@ -163,7 +163,7 @@ if (!defined('CIDRAM')) {
      * Skip this check if we're not in CLI-mode.
      */
     if (
-        $CIDRAM['CIDRAM_sapi'] === 'cli' &&
+        substr($CIDRAM['CIDRAM_sapi'], 0, 3) === 'cli' &&
         !$CIDRAM['Config']['general']['disable_cli'] &&
         file_exists($CIDRAM['Vault'] . 'cli.php')
     ) {

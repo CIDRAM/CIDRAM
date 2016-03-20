@@ -86,7 +86,7 @@ if (!defined('CIDRAM')) {
     if (
         empty($CIDRAM['Config']['general']['ipaddr']) || (
             $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' &&
-            isset($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
+            empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
         )
     ) {
         $CIDRAM['Config']['general']['ipaddr'] = 'REMOTE_ADDR';

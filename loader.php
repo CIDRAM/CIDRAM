@@ -127,8 +127,9 @@ if (!defined('CIDRAM')) {
     /** Determine the operating system in use. */
     $CIDRAM['CIDRAM_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
-    /** Determine if operating in CLI. */
-    $CIDRAM['CIDRAM_sapi'] = php_sapi_name();
+    /** Determine if operating in CLI or CGI. */
+    $CIDRAM['CIDRAM_sapi'] = substr(php_sapi_name(), 0, 3);
+    $CIDRAM['CIDRAM_sapi'] = ($CIDRAM['CIDRAM_sapi'] === 'cli' || $CIDRAM['CIDRAM_sapi'] === 'cgi');
 
     /** Check if the language handler exists; Kill the script if it doesn't. */
     if (!file_exists($CIDRAM['Vault'] . 'lang.php')) {
@@ -148,9 +149,9 @@ if (!defined('CIDRAM')) {
 
     /**
      * Check if the output generator exists; Kill the script if it doesn't;
-     * Load it if it does. Skip this check if we're in CLI-mode.
+     * Load it if it does. Skip this check if we're using CLI or CGI.
      */
-    if (substr($CIDRAM['CIDRAM_sapi'], 0, 3) !== 'cli') {
+    if (!$CIDRAM['CIDRAM_sapi']) {
         if (!file_exists($CIDRAM['Vault'] . 'outgen.php')) {
             header('Content-Type: text/plain');
             die('[CIDRAM] Output generator missing! Please reinstall CIDRAM.');
@@ -160,10 +161,10 @@ if (!defined('CIDRAM')) {
 
     /**
      * Check if the CLI handler exists; Load it if it does.
-     * Skip this check if we're not in CLI-mode.
+     * Skip this check if we're not using CLI or CGI.
      */
     if (
-        substr($CIDRAM['CIDRAM_sapi'], 0, 3) === 'cli' &&
+        $CIDRAM['CIDRAM_sapi'] &&
         !$CIDRAM['Config']['general']['disable_cli'] &&
         file_exists($CIDRAM['Vault'] . 'cli.php')
     ) {
@@ -172,5 +173,4 @@ if (!defined('CIDRAM')) {
 
     /** Unset our working data so that we can exit cleanly. */
     unset($CIDRAM);
-
 }

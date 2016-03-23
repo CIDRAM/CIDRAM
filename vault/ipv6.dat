@@ -578,22 +578,15 @@ Updated: 2016.03.02
 
 2001:67c:1334::/64 Deny Generic
 2001:67c:1334:1::/64 Deny Generic
-2001:67c:1334:2::/64 Deny Generic
-2001:67c:1334:3::/64 Deny Generic
-2001:67c:1334:4::/64 Deny Generic
-2001:67c:1334:5::/64 Deny Generic
-2001:67c:1334:6::/64 Deny Generic
-2001:67c:1334:7::/64 Deny Generic
-2001:67c:1334:8::/64 Deny Generic
-2001:67c:1334:9::/64 Deny Generic
+2001:67c:1334:2::/63 Deny Generic
+2001:67c:1334:4::/62 Deny Generic
+2001:67c:1334:8::/63 Deny Generic
 2602:ff84:8::/48 Deny Generic
 2a02:13f0:8100::/48 Deny Generic
 2a03:5180::/48 Deny Generic
 2a03:5180:1::/48 Deny Generic
-2a03:5180:2::/48 Deny Generic
-2a03:5180:3::/48 Deny Generic
-2a03:5180:4::/48 Deny Generic
-2a03:5180:5::/48 Deny Generic
+2a03:5180:2::/47 Deny Generic
+2a03:5180:4::/47 Deny Generic
 2a05:3a40:2::/48 Deny Generic
 
 
@@ -1115,6 +1108,15 @@ Infected by malware (as per reported by Google): 8.42%.
 Updated: 2016.01.23 / Checked: 2016.03.20
 
 2605:6f80::/40 Deny Cloud
+
+
+"DataWagon LLC" and "VolumeDrive"
+ASN 27176, 46664.
+Infected by malware (as per reported by Google), 27176: 0%.
+Infected by malware (as per reported by Google), 46664: 0.53%.
+Updated: 2016.03.23
+
+2605:aa80::/32 Deny Cloud
 
 
 "WorldStream"
@@ -1904,7 +1906,7 @@ Updated: 2016.03.13
 
 ---
 IPv6 Bogons List.
-Updated: 2016.03.18
+Updated: 2016.03.23
 Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -2811,7 +2813,11 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:100::/40 Deny Bogon
+2001:678:108::/45 Deny Bogon
+2001:678:110::/44 Deny Bogon
+2001:678:120::/43 Deny Bogon
+2001:678:140::/42 Deny Bogon
+2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
 2001:678:800::/37 Deny Bogon
@@ -2822,8 +2828,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:679::/32 Deny Bogon
 2001:67a::/31 Deny Bogon
 2001:67c:800::/37 Deny Bogon
-2001:67c:2ff4::/46 Deny Bogon
-2001:67c:2ff8::/45 Deny Bogon
 2001:67c:3000::/36 Deny Bogon
 2001:67c:4000::/34 Deny Bogon
 2001:67c:8000::/33 Deny Bogon
@@ -4580,7 +4584,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:2440::/42 Deny Bogon
 2001:df1:2480::/41 Deny Bogon
 2001:df1:2500::/40 Deny Bogon
-2001:df1:2600::/39 Deny Bogon
+2001:df1:2601::/48 Deny Bogon
+2001:df1:2602::/47 Deny Bogon
+2001:df1:2604::/46 Deny Bogon
+2001:df1:2608::/45 Deny Bogon
+2001:df1:2610::/44 Deny Bogon
+2001:df1:2620::/43 Deny Bogon
+2001:df1:2640::/42 Deny Bogon
+2001:df1:2680::/41 Deny Bogon
+2001:df1:2700::/40 Deny Bogon
 2001:df1:2801::/48 Deny Bogon
 2001:df1:2802::/47 Deny Bogon
 2001:df1:2804::/46 Deny Bogon
@@ -4590,7 +4602,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:2840::/42 Deny Bogon
 2001:df1:2880::/41 Deny Bogon
 2001:df1:2900::/40 Deny Bogon
-2001:df1:2a00::/39 Deny Bogon
+2001:df1:2a01::/48 Deny Bogon
+2001:df1:2a02::/47 Deny Bogon
+2001:df1:2a04::/46 Deny Bogon
+2001:df1:2a08::/45 Deny Bogon
+2001:df1:2a10::/44 Deny Bogon
+2001:df1:2a20::/43 Deny Bogon
+2001:df1:2a40::/42 Deny Bogon
+2001:df1:2a80::/41 Deny Bogon
+2001:df1:2b00::/40 Deny Bogon
 2001:df1:2c01::/48 Deny Bogon
 2001:df1:2c02::/47 Deny Bogon
 2001:df1:2c04::/46 Deny Bogon
@@ -4600,7 +4620,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:2c40::/42 Deny Bogon
 2001:df1:2c80::/41 Deny Bogon
 2001:df1:2d00::/40 Deny Bogon
-2001:df1:2e00::/39 Deny Bogon
+2001:df1:2e01::/48 Deny Bogon
+2001:df1:2e02::/47 Deny Bogon
+2001:df1:2e04::/46 Deny Bogon
+2001:df1:2e08::/45 Deny Bogon
+2001:df1:2e10::/44 Deny Bogon
+2001:df1:2e20::/43 Deny Bogon
+2001:df1:2e40::/42 Deny Bogon
+2001:df1:2e80::/41 Deny Bogon
+2001:df1:2f00::/40 Deny Bogon
 2001:df1:3001::/48 Deny Bogon
 2001:df1:3002::/47 Deny Bogon
 2001:df1:3004::/46 Deny Bogon
@@ -4610,7 +4638,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:3040::/42 Deny Bogon
 2001:df1:3080::/41 Deny Bogon
 2001:df1:3100::/40 Deny Bogon
-2001:df1:3200::/39 Deny Bogon
+2001:df1:3201::/48 Deny Bogon
+2001:df1:3202::/47 Deny Bogon
+2001:df1:3204::/46 Deny Bogon
+2001:df1:3208::/45 Deny Bogon
+2001:df1:3210::/44 Deny Bogon
+2001:df1:3220::/43 Deny Bogon
+2001:df1:3240::/42 Deny Bogon
+2001:df1:3280::/41 Deny Bogon
+2001:df1:3300::/40 Deny Bogon
 2001:df1:3401::/48 Deny Bogon
 2001:df1:3402::/47 Deny Bogon
 2001:df1:3404::/46 Deny Bogon
@@ -24927,7 +24963,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:8f10::/28 Deny Bogon
 2404:8f20::/27 Deny Bogon
 2404:8f40::/26 Deny Bogon
-2404:8f80::/25 Deny Bogon
+2404:8f81::/32 Deny Bogon
+2404:8f82::/31 Deny Bogon
+2404:8f84::/30 Deny Bogon
+2404:8f88::/29 Deny Bogon
+2404:8f90::/28 Deny Bogon
+2404:8fa0::/27 Deny Bogon
+2404:8fc0::/26 Deny Bogon
 2404:9001::/32 Deny Bogon
 2404:9002::/31 Deny Bogon
 2404:9004::/30 Deny Bogon
@@ -24935,7 +24977,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9010::/28 Deny Bogon
 2404:9020::/27 Deny Bogon
 2404:9040::/26 Deny Bogon
-2404:9080::/25 Deny Bogon
+2404:9081::/32 Deny Bogon
+2404:9082::/31 Deny Bogon
+2404:9084::/30 Deny Bogon
+2404:9088::/29 Deny Bogon
+2404:9090::/28 Deny Bogon
+2404:90a0::/27 Deny Bogon
+2404:90c0::/26 Deny Bogon
 2404:9101::/32 Deny Bogon
 2404:9102::/31 Deny Bogon
 2404:9104::/30 Deny Bogon
@@ -24943,7 +24991,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9110::/28 Deny Bogon
 2404:9120::/27 Deny Bogon
 2404:9140::/26 Deny Bogon
-2404:9180::/25 Deny Bogon
+2404:9181::/32 Deny Bogon
+2404:9182::/31 Deny Bogon
+2404:9184::/30 Deny Bogon
+2404:9188::/29 Deny Bogon
+2404:9190::/28 Deny Bogon
+2404:91a0::/27 Deny Bogon
+2404:91c0::/26 Deny Bogon
 2404:9201::/32 Deny Bogon
 2404:9202::/31 Deny Bogon
 2404:9204::/30 Deny Bogon
@@ -24951,7 +25005,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9210::/28 Deny Bogon
 2404:9220::/27 Deny Bogon
 2404:9240::/26 Deny Bogon
-2404:9280::/25 Deny Bogon
+2404:9281::/32 Deny Bogon
+2404:9282::/31 Deny Bogon
+2404:9284::/30 Deny Bogon
+2404:9288::/29 Deny Bogon
+2404:9290::/28 Deny Bogon
+2404:92a0::/27 Deny Bogon
+2404:92c0::/26 Deny Bogon
 2404:9301::/32 Deny Bogon
 2404:9302::/31 Deny Bogon
 2404:9304::/30 Deny Bogon
@@ -24959,7 +25019,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9310::/28 Deny Bogon
 2404:9320::/27 Deny Bogon
 2404:9340::/26 Deny Bogon
-2404:9380::/25 Deny Bogon
+2404:9381::/32 Deny Bogon
+2404:9382::/31 Deny Bogon
+2404:9384::/30 Deny Bogon
+2404:9388::/29 Deny Bogon
+2404:9390::/28 Deny Bogon
+2404:93a0::/27 Deny Bogon
+2404:93c0::/26 Deny Bogon
 2404:9401::/32 Deny Bogon
 2404:9402::/31 Deny Bogon
 2404:9404::/30 Deny Bogon
@@ -24967,7 +25033,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9410::/28 Deny Bogon
 2404:9420::/27 Deny Bogon
 2404:9440::/26 Deny Bogon
-2404:9480::/25 Deny Bogon
+2404:9481::/32 Deny Bogon
+2404:9482::/31 Deny Bogon
+2404:9484::/30 Deny Bogon
+2404:9488::/29 Deny Bogon
+2404:9490::/28 Deny Bogon
+2404:94a0::/27 Deny Bogon
+2404:94c0::/26 Deny Bogon
 2404:9502::/31 Deny Bogon
 2404:9504::/30 Deny Bogon
 2404:9508::/29 Deny Bogon
@@ -32109,8 +32181,10 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2602:fc00::/23 Deny Bogon
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
-2602:ff40::/28 Deny Bogon
-2602:ff50::/32 Deny Bogon
+2602:ff40::/29 Deny Bogon
+2602:ff48::/30 Deny Bogon
+2602:ff4c::/31 Deny Bogon
+2602:ff4e::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -36909,15 +36983,21 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2607:1b10::/28 Deny Bogon
 2607:1b20::/27 Deny Bogon
 2607:1b40::/26 Deny Bogon
-2607:1b80::/25 Deny Bogon
+2607:1b90::/28 Deny Bogon
+2607:1ba0::/27 Deny Bogon
+2607:1bc0::/26 Deny Bogon
 2607:1c10::/28 Deny Bogon
 2607:1c20::/27 Deny Bogon
 2607:1c40::/26 Deny Bogon
-2607:1c80::/25 Deny Bogon
+2607:1c90::/28 Deny Bogon
+2607:1ca0::/27 Deny Bogon
+2607:1cc0::/26 Deny Bogon
 2607:1d10::/28 Deny Bogon
 2607:1d20::/27 Deny Bogon
 2607:1d40::/26 Deny Bogon
-2607:1d80::/25 Deny Bogon
+2607:1d90::/28 Deny Bogon
+2607:1da0::/27 Deny Bogon
+2607:1dc0::/26 Deny Bogon
 2607:1e10::/28 Deny Bogon
 2607:1e20::/27 Deny Bogon
 2607:1e40::/26 Deny Bogon
@@ -49037,7 +49117,21 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:125:f200::/39 Deny Bogon
 2620:125:f400::/38 Deny Bogon
 2620:125:f800::/37 Deny Bogon
-2620:126::/31 Deny Bogon
+2620:126:100::/40 Deny Bogon
+2620:126:200::/39 Deny Bogon
+2620:126:400::/38 Deny Bogon
+2620:126:800::/37 Deny Bogon
+2620:126:1100::/40 Deny Bogon
+2620:126:1200::/39 Deny Bogon
+2620:126:1400::/38 Deny Bogon
+2620:126:1800::/37 Deny Bogon
+2620:126:4100::/40 Deny Bogon
+2620:126:4200::/39 Deny Bogon
+2620:126:4400::/38 Deny Bogon
+2620:126:4800::/37 Deny Bogon
+2620:126:6000::/35 Deny Bogon
+2620:126:8000::/33 Deny Bogon
+2620:127::/32 Deny Bogon
 2620:128::/29 Deny Bogon
 2620:130::/28 Deny Bogon
 2620:140:1000::/36 Deny Bogon
@@ -49450,7 +49544,14 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2801:12:8200::/39 Deny Bogon
 2801:12:8400::/38 Deny Bogon
 2801:12:8800::/37 Deny Bogon
-2801:12:9000::/36 Deny Bogon
+2801:12:9010::/44 Deny Bogon
+2801:12:9020::/43 Deny Bogon
+2801:12:9040::/42 Deny Bogon
+2801:12:9080::/41 Deny Bogon
+2801:12:9100::/40 Deny Bogon
+2801:12:9200::/39 Deny Bogon
+2801:12:9400::/38 Deny Bogon
+2801:12:9800::/37 Deny Bogon
 2801:12:a000::/35 Deny Bogon
 2801:12:c010::/44 Deny Bogon
 2801:12:c020::/43 Deny Bogon
@@ -52496,7 +52597,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2803:42c0::/26 Deny Bogon
 2803:4310::/28 Deny Bogon
 2803:4320::/27 Deny Bogon
-2803:4340::/26 Deny Bogon
+2803:4350::/28 Deny Bogon
+2803:4360::/27 Deny Bogon
 2803:4390::/28 Deny Bogon
 2803:43a0::/27 Deny Bogon
 2803:43c0::/26 Deny Bogon
@@ -59721,9 +59823,29 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2804:2f2e::/31 Deny Bogon
 2804:2f31::/32 Deny Bogon
 2804:2f32::/31 Deny Bogon
-2804:2f34::/30 Deny Bogon
-2804:2f38::/29 Deny Bogon
-2804:2f40::/26 Deny Bogon
+2804:2f35::/32 Deny Bogon
+2804:2f36::/31 Deny Bogon
+2804:2f39::/32 Deny Bogon
+2804:2f3a::/31 Deny Bogon
+2804:2f3d::/32 Deny Bogon
+2804:2f3e::/31 Deny Bogon
+2804:2f41::/32 Deny Bogon
+2804:2f42::/31 Deny Bogon
+2804:2f45::/32 Deny Bogon
+2804:2f46::/31 Deny Bogon
+2804:2f49::/32 Deny Bogon
+2804:2f4a::/31 Deny Bogon
+2804:2f4d::/32 Deny Bogon
+2804:2f4e::/31 Deny Bogon
+2804:2f51::/32 Deny Bogon
+2804:2f52::/31 Deny Bogon
+2804:2f55::/32 Deny Bogon
+2804:2f56::/31 Deny Bogon
+2804:2f59::/32 Deny Bogon
+2804:2f5a::/31 Deny Bogon
+2804:2f5d::/32 Deny Bogon
+2804:2f5e::/31 Deny Bogon
+2804:2f60::/27 Deny Bogon
 2804:2f80::/25 Deny Bogon
 2804:3000::/20 Deny Bogon
 2804:4000::/18 Deny Bogon
@@ -61546,8 +61668,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a00:add0::/28 Deny Bogon
 2a00:ade8::/29 Deny Bogon
 2a00:adf0::/28 Deny Bogon
-2a00:ae08::/29 Deny Bogon
-2a00:ae10::/28 Deny Bogon
 2a00:ae28::/29 Deny Bogon
 2a00:ae30::/28 Deny Bogon
 2a00:ae48::/29 Deny Bogon
@@ -63151,7 +63271,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a01:5ad0::/28 Deny Bogon
 2a01:5ae8::/29 Deny Bogon
 2a01:5af0::/28 Deny Bogon
-2a01:5b00::/27 Deny Bogon
+2a01:5b08::/29 Deny Bogon
+2a01:5b10::/28 Deny Bogon
 2a01:5b28::/29 Deny Bogon
 2a01:5b30::/28 Deny Bogon
 2a01:5b48::/29 Deny Bogon
@@ -68173,7 +68294,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a03:a310::/28 Deny Bogon
 2a03:a328::/29 Deny Bogon
 2a03:a330::/28 Deny Bogon
-2a03:a340::/27 Deny Bogon
+2a03:a348::/29 Deny Bogon
+2a03:a350::/28 Deny Bogon
 2a03:a368::/29 Deny Bogon
 2a03:a370::/28 Deny Bogon
 2a03:a388::/29 Deny Bogon
@@ -68260,7 +68382,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a03:a8f0::/28 Deny Bogon
 2a03:a908::/29 Deny Bogon
 2a03:a910::/28 Deny Bogon
-2a03:a920::/27 Deny Bogon
+2a03:a928::/29 Deny Bogon
+2a03:a930::/28 Deny Bogon
 2a03:a948::/29 Deny Bogon
 2a03:a950::/28 Deny Bogon
 2a03:a960::/27 Deny Bogon
@@ -69235,8 +69358,8 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:3a00::/23 Deny Bogon
-2a07:3c00::/22 Deny Bogon
+2a07:3ec0::/26 Deny Bogon
+2a07:3f00::/24 Deny Bogon
 2a07:4000::/18 Deny Bogon
 2a07:8000::/17 Deny Bogon
 2a08::/13 Deny Bogon

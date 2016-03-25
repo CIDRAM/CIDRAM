@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.03.07).
- *
- * @package Maikuolan/CIDRAM
+ * This file: Output generator (last modified: 2016.03.25).
  */
 
 $CIDRAM['CacheModified'] = false;

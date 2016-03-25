@@ -9,8 +9,6 @@
  * @see LICENSE.txt
  *
  * This file: The loader (last modified: 2016.03.25).
- *
- * @package Maikuolan/CIDRAM
  */
 
 /**
@@ -21,9 +19,7 @@
 if (!defined('CIDRAM')) {
     define('CIDRAM', true);
 
-    /**
-     * Create an array for our working data.
-     */
+    /** Create an array for our working data. */
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */

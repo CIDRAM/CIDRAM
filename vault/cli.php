@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.03.20).
- *
- * @package Maikuolan/CIDRAM
+ * This file: CLI handler (last modified: 2016.03.25).
  */
 
 /** Fallback for missing $_SERVER superglobal. */

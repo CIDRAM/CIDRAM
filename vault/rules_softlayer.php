@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2016.03.07).
- *
- * @package Maikuolan/CIDRAM
+ * This file: Custom rules file for Soft Layer (last modified: 2016.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */

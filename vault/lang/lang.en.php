@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2016.03.20).
- *
- * @package Maikuolan/CIDRAM
+ * This file: English language data (last modified: 2016.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */

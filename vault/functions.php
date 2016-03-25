@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.15).
- *
- * @package Maikuolan/CIDRAM
+ * This file: Functions file (last modified: 2016.03.25).
  */
 
 /**

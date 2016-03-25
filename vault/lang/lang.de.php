@@ -8,9 +8,8 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.03.20).
+ * This file: German language data (last modified: 2016.03.25).
  *
- * @package Maikuolan/CIDRAM
  * @todo (This is incomplete).
  */
 

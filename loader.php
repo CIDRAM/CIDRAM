@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.21).
+ * This file: The loader (last modified: 2016.03.25).
  *
  * @package Maikuolan/CIDRAM
  */
@@ -128,7 +128,10 @@ if (!defined('CIDRAM')) {
     $CIDRAM['CIDRAM_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
     /** Determine if operating in CLI-mode. */
-    $CIDRAM['CIDRAM_sapi'] = isset($_SERVER['argv']);
+    $CIDRAM['CIDRAM_sapi'] = (
+        substr(php_sapi_name(), 0, 3) === 'cli' ||
+        (!empty($_SERVER['argc']) && is_numeric($_SERVER['argc']) && $_SERVER['argc'] > 0)
+    );
 
     /** Check if the language handler exists; Kill the script if it doesn't. */
     if (!file_exists($CIDRAM['Vault'] . 'lang.php')) {

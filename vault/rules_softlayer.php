@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2016.03.27).
+ * This file: Custom rules file for Soft Layer (last modified: 2016.03.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,11 @@ if (!defined('CIDRAM')) {
 /** Prevents execution from outside of the IP test functions. */
 if (!isset($cidr[$i])) {
     die('[CIDRAM] This should not be accessed directly.');
+}
+
+/** Skip further processing if the `block_cloud` directive is false. */
+if(!$CIDRAM['Config']['signatures']['block_cloud']) {
+    continue;
 }
 
 $bypass = false;

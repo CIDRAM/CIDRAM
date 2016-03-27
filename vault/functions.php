@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.27).
+ * This file: Functions file (last modified: 2016.03.28).
  */
 
 /**
@@ -174,7 +174,10 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     $y = count($IPv4Sigs);
     for ($x = 0; $x < $y; $x++) {
         if (strpos($IPv4Sigs[$x], "\r")) {
-            $IPv4Sigs[$x] = str_replace("\r", '', $IPv4Sigs[$x]);
+            $IPv4Sigs[$x] =
+                (strpos($IPv4Sigs[$x], "\r\n")) ?
+                str_replace("\r", '', $IPv4Sigs[$x]) :
+                str_replace("\r", "\n", $IPv4Sigs[$x]);
         }
         for ($i = 0; $i < 32; $i++) {
             $PosB = 0;
@@ -214,57 +217,31 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
-                    }
-                    if ($Sig === 'Cloud' && $CIDRAM['Config']['signatures']['block_cloud']) {
+                    } elseif ($Sig === 'Cloud' && $CIDRAM['Config']['signatures']['block_cloud']) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
-                    }
-                    if ($Sig === 'Generic' && $CIDRAM['Config']['signatures']['block_generic']) {
+                    } elseif ($Sig === 'Generic' && $CIDRAM['Config']['signatures']['block_generic']) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
-                    }
-                    if ($Sig === 'Spam' && $CIDRAM['Config']['signatures']['block_spam']) {
+                    } elseif ($Sig === 'Spam' && $CIDRAM['Config']['signatures']['block_spam']) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Spam'];
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Spam'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+                    } else {
+                        $CIDRAM['BlockInfo']['ReasonMessage'] = $Sig;
+                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
+                        $CIDRAM['BlockInfo']['WhyReason'] .= $Sig . $LN;
                     }
-                    $CIDRAM['BlockInfo']['ReasonMessage'] = $Sig;
-                    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                    }
-                    $CIDRAM['BlockInfo']['WhyReason'] .= $Sig . $LN;
                     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
                     }
@@ -534,8 +511,11 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     $IPv6Sigs[1] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv6_custom.dat');
     $y = count($IPv6Sigs);
     for ($x = 0; $x < $y; $x++) {
-        if (strpos($IPv4Sigs[$x], "\r")) {
-            $IPv4Sigs[$x] = str_replace("\r", '', $IPv4Sigs[$x]);
+        if (strpos($IPv6Sigs[$x], "\r")) {
+            $IPv6Sigs[$x] =
+                (strpos($IPv6Sigs[$x], "\r\n")) ?
+                str_replace("\r", '', $IPv6Sigs[$x]) :
+                str_replace("\r", "\n", $IPv6Sigs[$x]);
         }
         for ($i = 0; $i < 128; $i++) {
             $PosB = 0;
@@ -575,57 +555,31 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
-                    }
-                    if ($Sig === 'Cloud' && $CIDRAM['Config']['signatures']['block_cloud']) {
+                    } elseif ($Sig === 'Cloud' && $CIDRAM['Config']['signatures']['block_cloud']) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
-                    }
-                    if ($Sig === 'Generic' && $CIDRAM['Config']['signatures']['block_generic']) {
+                    } elseif ($Sig === 'Generic' && $CIDRAM['Config']['signatures']['block_generic']) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
-                    }
-                    if ($Sig === 'Spam' && $CIDRAM['Config']['signatures']['block_spam']) {
+                    } elseif ($Sig === 'Spam' && $CIDRAM['Config']['signatures']['block_spam']) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Spam'];
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Spam'] . $LN;
-                        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-                            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+                    } else {
+                        $CIDRAM['BlockInfo']['ReasonMessage'] = $Sig;
+                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
-                        $CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-                        $CIDRAM['BlockInfo']['SignatureCount']++;
-                        continue;
+                        $CIDRAM['BlockInfo']['WhyReason'] .= $Sig . $LN;
                     }
-                    $CIDRAM['BlockInfo']['ReasonMessage'] = $Sig;
-                    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                    }
-                    $CIDRAM['BlockInfo']['WhyReason'] .= $Sig . $LN;
                     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
                         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
                     }

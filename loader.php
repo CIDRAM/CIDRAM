@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.25).
+ * This file: The loader (last modified: 2016.03.28).
  */
 
 /**
@@ -40,9 +40,9 @@ if (!defined('CIDRAM')) {
     if (!is_dir($CIDRAM['Vault'])) {
         header('Content-Type: text/plain');
         die(
-            '[CIDRAM] Vault directory not correctly set: Can\'t continue. ' .
-            'Refer to documentation if this is a first-time run, and if ' .
-            'problems persist, seek assistance.'
+            '[CIDRAM] Vault directory not correctly set: Can\'t continue. Refer to do' .
+            'cumentation if this is a first-time run, and if problems persist, seek a' .
+            'ssistance.'
         );
     }
 
@@ -68,9 +68,9 @@ if (!defined('CIDRAM')) {
     if (!is_array($CIDRAM['Config'])) {
         header('Content-Type: text/plain');
         die(
-            '[CIDRAM] Could not read config.ini: Can\'t continue. '.
-            'Refer to the documentation if this is a first-time run, and if '.
-            'problems persist, seek assistance.'
+            '[CIDRAM] Could not read config.ini: Can\'t continue. Refer to the docume' .
+            'ntation if this is a first-time run, and if problems persist, seek assis' .
+            'tance.'
         );
     }
 
@@ -166,7 +166,7 @@ if (!defined('CIDRAM')) {
         !$CIDRAM['Config']['general']['disable_cli'] &&
         file_exists($CIDRAM['Vault'] . 'cli.php')
     ) {
-            require $CIDRAM['Vault'] . 'cli.php';
+        require $CIDRAM['Vault'] . 'cli.php';
     }
 
     /** Unset our working data so that we can exit cleanly. */

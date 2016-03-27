@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for AS6939 (last modified: 2016.03.25).
+ * This file: Custom rules file for AS6939 (last modified: 2016.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,7 +38,11 @@ if ($cidr[23] === '65.49.67.0/24') {
 }
 
 if (!$bypass) {
-    $CIDRAM['BlockInfo']['ReasonMessage'] .= $CIDRAM['lang']['ReasonMessage_Cloud'];
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }

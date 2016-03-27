@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.03.25).
+ * This file: French language data (last modified: 2016.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['field_referrer'] = 'Referrer: ';
 $CIDRAM['lang']['field_scriptversion'] = 'La version du script: ';
 $CIDRAM['lang']['field_sigcount'] = 'Signatures Compte: ';
 $CIDRAM['lang']['field_sigref'] = 'Signatures Référence: ';
+$CIDRAM['lang']['field_whyreason'] = 'Raison Bloquée: ';
 $CIDRAM['lang']['field_ua'] = 'Agent Utilisateur: ';
 $CIDRAM['lang']['generated_by'] = 'Généré par';
 $CIDRAM['lang']['preamble'] = '-- Fin du préambule. Ajouter vos questions ou commentaires après cette ligne. --';
@@ -36,6 +37,10 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Votre accès à cette page a été ref
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Votre accès à cette page a été refusée parce que votre IP adresse appartient à un réseau figurant sur une liste noire utilisée par ce site.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Votre accès à cette page a été refusée parce que votre IP adresse appartient à un réseau considéré comme à haut risque pour le spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Invalide IP!';
+$CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
+$CIDRAM['lang']['Short_Cloud'] = 'Service de cloud';
+$CIDRAM['lang']['Short_Generic'] = 'Générique';
+$CIDRAM['lang']['Short_Spam'] = 'Spam risque';
 $CIDRAM['lang']['Support_Email'] = 'Si vous croyez que cela est dans l\'erreur, ou pour demander de l\'aide, {ClickHereLink} pour envoyer un e-mail ticket de support au webmaster de ce site (s\'il vous plaît, ne pas modifier le préambule ou la ligne d\'objet de l\'e-mail).';
 
 $CIDRAM['lang']['CLI_H'] = "

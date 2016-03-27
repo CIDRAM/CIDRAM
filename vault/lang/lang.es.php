@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2016.03.25).
+ * This file: Spanish language data (last modified: 2016.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['field_referrer'] = 'Referente: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Guión Versión: ';
 $CIDRAM['lang']['field_sigcount'] = 'Firmas Cuentas: ';
 $CIDRAM['lang']['field_sigref'] = 'Firmas Referencias: ';
+$CIDRAM['lang']['field_whyreason'] = 'Razón Bloqueado: ';
 $CIDRAM['lang']['field_ua'] = 'Agente de Usuario: ';
 $CIDRAM['lang']['generated_by'] = 'Generado por';
 $CIDRAM['lang']['preamble'] = '-- Fin de la preámbulo. Añadir sus preguntas o comentarios después de esta línea. --';
@@ -34,8 +35,12 @@ $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Su acceso a esta página se negó porq
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Su acceso a esta página se negó porque su dirección IP se reconoce como una dirección bogon, y la conexión de bogons a este sitio web no está permitido por el propietario del sitio web.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Su acceso a esta página se negó porque su dirección IP se reconoce como perteneciente a un servicio en la nube, y la conexión de servicios en la nube a este sitio web no está permitido por el propietario del sitio web.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red figuran en una lista negra utilizada por este sitio web.';
-$CIDRAM['lang']['ReasonMessage_Spam'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red considerados de alto riesgo para el spam.';
+$CIDRAM['lang']['ReasonMessage_Spam'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red considerados de alto riesgo de spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP no válida!';
+$CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
+$CIDRAM['lang']['Short_Cloud'] = 'Servicio en la nube';
+$CIDRAM['lang']['Short_Generic'] = 'Genérico';
+$CIDRAM['lang']['Short_Spam'] = 'Riesgo de spam';
 $CIDRAM['lang']['Support_Email'] = 'Si considera que este es un error, o para buscar ayuda, {ClickHereLink} para enviar un correo electrónico ticket de soporte al webmaster de esta web (por favor, no cambie el preámbulo o la línea de asunto del correo electrónico).';
 
 $CIDRAM['lang']['CLI_H'] = "

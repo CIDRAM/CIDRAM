@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.03.25).
+ * This file: Dutch language data (last modified: 2016.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['field_referrer'] = 'Verwijzer: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Script Versie: ';
 $CIDRAM['lang']['field_sigcount'] = 'Handtekeningen Tellen: ';
 $CIDRAM['lang']['field_sigref'] = 'Handtekeningen Referentie: ';
+$CIDRAM['lang']['field_whyreason'] = 'Waarom Geblokkeerde: ';
 $CIDRAM['lang']['field_ua'] = 'User Agent: ';
 $CIDRAM['lang']['generated_by'] = 'Gegenereerd door';
 $CIDRAM['lang']['preamble'] = '-- Einde van preambule. Voeg uw vragen of opmerkingen na dit lijn. --';
@@ -36,6 +37,10 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Uw toegang tot dit pagina is geweigerd
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres behoort tot een netwerk dat is op een zwarte lijst gebruikt door dit website.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres behoort tot een netwerk beschouwd als een hoog risico op spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ongeldig IP!';
+$CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
+$CIDRAM['lang']['Short_Cloud'] = 'Cloud Service';
+$CIDRAM['lang']['Short_Generic'] = 'Algemeen';
+$CIDRAM['lang']['Short_Spam'] = 'Spam risico';
 $CIDRAM['lang']['Support_Email'] = 'Als je denkt dat dit een fout, of om hulp te zoeken, {ClickHereLink} om een email support ticket te sturen naar de webmaster van dit site (alsjeblieft niet wijzigen de preambule of de onderwerpregel van de email).';
 
 $CIDRAM['lang']['CLI_H'] = "

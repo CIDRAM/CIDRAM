@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.03.25).
+ * This file: Output generator (last modified: 2016.03.27).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -61,6 +61,7 @@ $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
 $CIDRAM['BlockInfo']['ReasonMessage'] = '';
 $CIDRAM['BlockInfo']['SignatureCount'] = 0;
 $CIDRAM['BlockInfo']['Signatures'] = '';
+$CIDRAM['BlockInfo']['WhyReason'] = '';
 $CIDRAM['BlockInfo']['xmlLang'] = $CIDRAM['Config']['general']['lang'];
 
 /** Run the IPv4 test. */
@@ -71,11 +72,9 @@ $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($_SERVER[$CIDRAM['Config']['general'][
 
 /** If both tests fail, report an invalid IP address and kill the request. */
 if (!$CIDRAM['TestIPv4'] && !$CIDRAM['TestIPv6']) {
-    $CIDRAM['BlockInfo']['ReasonMessage'] .= $CIDRAM['lang']['ReasonMessage_BadIP'];
-    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-    }
-    $CIDRAM['BlockInfo']['Signatures'] .= $CIDRAM['lang']['Short_BadIP'];
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_BadIP'];
+    $CIDRAM['BlockInfo']['Signatures'] = '';
+    $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['lang']['Short_BadIP'];
     $CIDRAM['BlockInfo']['SignatureCount']++;
 }
 
@@ -110,11 +109,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                 $CIDRAM['lang'],
                 $CIDRAM['ParseVars'](
                     $CIDRAM['BlockInfo'],
-                    "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}" .
-                    "\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n" .
-                    "{field_query}{Query}\n{field_referrer}{Referrer}\n" .
-                    "{field_sigcount}{SignatureCount}\n{field_sigref}" .
-                    "{Signatures}\n{field_ua}{UA}\n\n"
+                    "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
+                    "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
+                    "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
+                    "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n\n"
                 )
             );
         $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], 'a');
@@ -136,11 +134,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                 $CIDRAM['lang'],
                 $CIDRAM['ParseVars'](
                     $CIDRAM['BlockInfo'],
-                    "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}" .
-                    "\n{field_datetime}{DateTime}\n{field_ipaddr}{IPAddr}\n" .
-                    "{field_query}{Query}\n{field_referrer}{Referrer}\n" .
-                    "{field_sigcount}{SignatureCount}\n{field_sigref}" .
-                    "{Signatures}\n{field_ua}{UA}\n\n{preamble}\n\n"
+                    "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
+                    "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
+                    "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
+                    "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n\n"
                 )
             )) .
             '">' . $CIDRAM['lang']['click_here'] . '</a></strong>';

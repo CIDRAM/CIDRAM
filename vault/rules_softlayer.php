@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2016.03.25).
+ * This file: Custom rules file for Soft Layer (last modified: 2016.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -49,7 +49,11 @@ if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedbot')) {
 }
 
 if (!$bypass) {
-    $CIDRAM['BlockInfo']['ReasonMessage'] .= $CIDRAM['lang']['ReasonMessage_Cloud'];
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
     if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
         $CIDRAM['BlockInfo']['Signatures'] .= ', ';
     }

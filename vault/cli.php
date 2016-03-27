@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.03.25).
+ * This file: CLI handler (last modified: 2016.03.27).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -26,7 +26,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     /** CIDRAM CLI-mode help. */
     echo $CIDRAM['lang']['CLI_H'];
 } elseif ($CIDRAM['argv'][1] === '-c') {
-    /** Generate CIDRs from an IP address. */
+    /** Check if an IP address is blocked by the CIDRAM signature files. */
     echo "\n";
     /** Prepare variables to simulate the normal IP checking process. */
     $CIDRAM['BlockInfo'] = array(
@@ -38,6 +38,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         'ReasonMessage' => '',
         'SignatureCount' => 0,
         'Signatures' => '',
+        'WhyReason' => '',
         'xmlLang' => $CIDRAM['Config']['general']['lang']
     );
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2]);
@@ -52,7 +53,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-g') {
-    /** Check if an IP address is blocked by the CIDRAM signature files. */
+    /** Generate CIDRs from an IP address. */
     echo "\n";
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2], true);
     $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2], true);

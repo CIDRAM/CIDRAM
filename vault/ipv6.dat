@@ -1,142 +1,142 @@
-IPv6 signatures file.
+# IPv6 signatures file.
 
 
----
-Some additional useful resources:
+# ---
+# Some additional useful resources:
 
-http://bgp.he.net/
-- Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.
+# http://bgp.he.net/
+# - Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.
 
-https://www.stopforumspam.com/aggregate
-- Useful aggregation tool for IPv4 IPs.
+# https://www.stopforumspam.com/aggregate
+# - Useful aggregation tool for IPv4 IPs.
 
-https://www.google.com/transparencyreport/safebrowsing/malware/
-- Google Malware Dashboard; Useful for checking the cleanliness of ASNs and for checking for the presence of malware.
+# https://www.google.com/transparencyreport/safebrowsing/malware/
+# - Google Malware Dashboard; Useful for checking the cleanliness of ASNs and for checking for the presence of malware.
 
-https://radar.qrator.net/as%Num%
-- Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.
+# https://radar.qrator.net/as%Num%
+# - Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.
 
-http://www.ipdeny.com/ipblocks/
-- A fantastic and accurate service for generating country-wide signatures. They maintain lists of CIDRs based upon
-  countries, so, if you want to use CIDRAM to block entire countries from accessing your website, you can use their
-  lists to do this (you just need to append the "Deny %Reason%" to the end of list items; this can be done quickly and
-  easily with most regex-capable text editors, such as Notepad++, for example; you can do this in Notepad++ by using
-  Search and Replace, accessible with Ctrl+H; use "$" in "Find what" and " Deny Generic" in "Replace with").
-  IPDeny.com IPv4 country-based lists:
-  * http://www.ipdeny.com/ipblocks/
-  IPDeny.com IPv4 aggregated country-based lists (recommended over non-aggregated):
-  * http://www.ipdeny.com/ipblocks/data/aggregated/
-  IPDeny.com IPv6 country-based lists:
-  * http://www.ipdeny.com/ipv6/ipaddresses/blocks/
-  IPDeny.com IPv6 aggregated country-based lists (recommended over non-aggregated):
-  * http://www.ipdeny.com/ipv6/ipaddresses/aggregated/
-
-
-
----
-WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
-Updated: 2016.03.20 (statistics account for scanning by Google from 1 year up until the cited update date).
-
-RANK    ASN    AS                   RATE    INCLUDED IN HERE?   RANK SHIFT (SINCE LAST UPDATE)
- 1       46844 Sharktech            43.44%  Yes (> 0.1.2)       NA
- 2       35916 Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
- 3       38197 Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
- 4       32097 WholeSale Internet   22.89%  Yes (all versions)  NA
- 5       26658 HT                   19.52%  Yes (> 0.1.2)       NA
- 6       17139 Corporate Colocation 17.37%  Yes (all versions)  NA
- 7       62468 VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
- 8      133618 Trellian Pty. Ltd.   15.38%  Yes (> 0.1.2)       NA
- 9       33387 DataShack, LC        13.46%  Yes (all versions)  NA
-10       16138 INTERIA              12.37%  Yes (> 0.1.2)       NA
-11       58879 ShangHai AnchNet Tec 12.23%  Yes (> 0.1.2)       NA
-12       35908 Krypt Technologies   10.97%  Yes (all versions)  NA
-13        7497 CST-NET              10.49%  Yes (> 0.1.2)       NA
-14       20248 Take 2 Hosting, Inc. 10.05%  Yes (> 0.1.2)       NA
-15       46573 Global Frag Networks 10.02%  Yes (> 0.1.2)       NA
-16       54600 PEG TECH INC          9.95%  Yes (all versions)  NA
-17       40676 Psychz Networks       8.79%  Yes (all versions)  NA
-18      133731 Royal Network Tech.   8.70%  Yes (> 0.1.2)       NA
-19       38277 CommuniLink Internet  8.55%  Yes (> 0.1.2)       NA
-20      134121 Rainbow Network Ltd   7.83%  Yes (> 0.1.2)       NA
+# http://www.ipdeny.com/ipblocks/
+# - A fantastic and accurate service for generating country-wide signatures. They maintain lists of CIDRs based upon
+#   countries, so, if you want to use CIDRAM to block entire countries from accessing your website, you can use their
+#   lists to do this (you just need to append the "Deny %Reason%" to the end of list items; this can be done quickly
+#   and easily with most regex-capable text editors, such as Notepad++, for example; you can do this in Notepad++ by
+#   using Search and Replace, accessible with Ctrl+H; use "$" in "Find what" and " Deny Generic" in "Replace with").
+#   IPDeny.com IPv4 country-based lists:
+#   * http://www.ipdeny.com/ipblocks/
+#   IPDeny.com IPv4 aggregated country-based lists (recommended over non-aggregated):
+#   * http://www.ipdeny.com/ipblocks/data/aggregated/
+#   IPDeny.com IPv6 country-based lists:
+#   * http://www.ipdeny.com/ipv6/ipaddresses/blocks/
+#   IPDeny.com IPv6 aggregated country-based lists (recommended over non-aggregated):
+#   * http://www.ipdeny.com/ipv6/ipaddresses/aggregated/
 
 
 
----
-INCLUDED DEFAULT IPV6 SIGNATURES ARE BELOW THIS LINE.
+# ---
+# WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
+# Updated: 2016.03.20 (statistics account for scanning by Google from 1 year up until the cited update date).
+
+# RANK    ASN    AS                   RATE    INCLUDED IN HERE?   RANK SHIFT (SINCE LAST UPDATE)
+#  1       46844 Sharktech            43.44%  Yes (> 0.1.2)       NA
+#  2       35916 Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
+#  3       38197 Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
+#  4       32097 WholeSale Internet   22.89%  Yes (all versions)  NA
+#  5       26658 HT                   19.52%  Yes (> 0.1.2)       NA
+#  6       17139 Corporate Colocation 17.37%  Yes (all versions)  NA
+#  7       62468 VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
+#  8      133618 Trellian Pty. Ltd.   15.38%  Yes (> 0.1.2)       NA
+#  9       33387 DataShack, LC        13.46%  Yes (all versions)  NA
+# 10       16138 INTERIA              12.37%  Yes (> 0.1.2)       NA
+# 11       58879 ShangHai AnchNet Tec 12.23%  Yes (> 0.1.2)       NA
+# 12       35908 Krypt Technologies   10.97%  Yes (all versions)  NA
+# 13        7497 CST-NET              10.49%  Yes (> 0.1.2)       NA
+# 14       20248 Take 2 Hosting, Inc. 10.05%  Yes (> 0.1.2)       NA
+# 15       46573 Global Frag Networks 10.02%  Yes (> 0.1.2)       NA
+# 16       54600 PEG TECH INC          9.95%  Yes (all versions)  NA
+# 17       40676 Psychz Networks       8.79%  Yes (all versions)  NA
+# 18      133731 Royal Network Tech.   8.70%  Yes (> 0.1.2)       NA
+# 19       38277 CommuniLink Internet  8.55%  Yes (> 0.1.2)       NA
+# 20      134121 Rainbow Network Ltd   7.83%  Yes (> 0.1.2)       NA
 
 
 
----
-Some basic whitelisting to avoid problems with the local network being blocked by some of the bogon CIDR signatures
-that appear further down into the signature files.
+# ---
+# INCLUDED DEFAULT IPV6 SIGNATURES ARE BELOW THIS LINE.
+
+
+
+# ---
+# Some basic whitelisting to avoid problems with the local network being blocked by some of the bogon CIDR signatures
+# that appear further down into the signature files.
 
 0::/8 Whitelist
 
 
----
-ASN 46844 ("Sharktech").
-Infected by malware (as per reported by Google): 43.44%.
-Updated: 2016.03.27
+# ---
+# ASN 46844 ("Sharktech").
+# Infected by malware (as per reported by Google): 43.44%.
+# Updated: 2016.03.27
 
 2001:67c:2f08::/48 Deny Cloud
 2610:150::/32 Deny Cloud
 Tag: Sharktech
 
 
-ASN 35916 ("MULTACOM CORPORATION").
-Infected by malware (as per reported by Google): 42.64%.
-Updated: 2016.03.17
+# ASN 35916 ("MULTACOM CORPORATION").
+# Infected by malware (as per reported by Google): 42.64%.
+# Updated: 2016.03.17
 
 2607:9a00::/32 Deny Cloud
 2607:f130::/32 Deny Cloud
 Tag: Multacom Corp.
 
 
-ASN 38197 ("Sun Network (Hong Kong) Limited").
-Infected by malware (as per reported by Google): 26.09%.
-Updated: 2016.03.17
+# ASN 38197 ("Sun Network (Hong Kong) Limited").
+# Infected by malware (as per reported by Google): 26.09%.
+# Updated: 2016.03.17
 
 2403:ea00::/32 Deny Generic
 Tag: Sun Network (H.K.)
 
 
-ASN 16138 ("INTERIA.PL Sp z.o.o.").
-Infected by malware (as per reported by Google): 12.37%.
-Updated: 2016.03.17
+# ASN 16138 ("INTERIA.PL Sp z.o.o.").
+# Infected by malware (as per reported by Google): 12.37%.
+# Updated: 2016.03.17
 
 2a00:1308::/32 Deny Cloud
 Tag: INTERIA
 
 
-ASN 7497 ("Computer Network Information Center").
-Infected by malware (as per reported by Google): 10.49%.
-Updated: 2016.03.20
+# ASN 7497 ("Computer Network Information Center").
+# Infected by malware (as per reported by Google): 10.49%.
+# Updated: 2016.03.20
 
 2400:dd00::/28 Deny Cloud
 2401:de00::/32 Deny Cloud
 Tag: CST-NET
 
 
-ASN 46573 ("Global Frag Networks").
-Infected by malware (as per reported by Google): 10.02%.
-Updated: 2016.03.20
+# ASN 46573 ("Global Frag Networks").
+# Infected by malware (as per reported by Google): 10.02%.
+# Updated: 2016.03.20
 
 2604:d180::/32 Deny Cloud
 2605:2080::/34 Deny Cloud
 Tag: Global Frag Networks
 
 
-ASN 54600 ("PEG TECH INC").
-Infected by malware (as per reported by Google): 9.95%.
-Updated: 2016.03.20
+# ASN 54600 ("PEG TECH INC").
+# Infected by malware (as per reported by Google): 9.95%.
+# Updated: 2016.03.20
 
 2605:7280::/32 Deny Cloud
 Tag: PEG TECH INC
 
 
-ASN 26347 ("New Dream Network, LLC").
-Infected by malware (as per reported by Google): 1.03%.
-Updated: 2016.03.28
+# ASN 26347 ("New Dream Network, LLC").
+# Infected by malware (as per reported by Google): 1.03%.
+# Updated: 2016.03.28
 
 2607:f298:1::/48 Deny Cloud
 2607:f298:4::/48 Deny Cloud
@@ -147,9 +147,9 @@ Updated: 2016.03.28
 Tag: New Dream Network
 
 
-ASN 33182 ("HostDime.com, Inc").
-Infected by malware (as per reported by Google): 1.39%.
-Updated: 2016.03.28
+# ASN 33182 ("HostDime.com, Inc").
+# Infected by malware (as per reported by Google): 1.39%.
+# Updated: 2016.03.28
 
 2404:a700::/32 Deny Cloud
 2605:2080::/33 Deny Cloud
@@ -161,12 +161,10 @@ Updated: 2016.03.28
 Tag: HostDime.com, Inc
 
 
-ASNs 30548, 31034, 199653, 394189 ("Aruba S.p.A.").
-Infected by malware (as per reported by Google), 30548: 0%.
-Infected by malware (as per reported by Google), 31034: 2.20%.
-Infected by malware (as per reported by Google), 199653: 33.25%.
-Infected by malware (as per reported by Google), 394189: "ASN not found".
-Updated: 2016.02.27 / Checked: 2016.03.28
+# ASNs 30548, 31034, 199653, 394189 ("Aruba S.p.A.").
+# Infected by malware (as per reported by Google): 0% (AS30548), 2.20% (AS31034), 33.25% (AS199653),
+#   "ASN not found" (AS394189).
+# Updated: 2016.02.27 / Checked: 2016.03.28
 
 2620:11d:6000::/42 Deny Generic
 2620:11d:6018::/48 Deny Generic
@@ -181,30 +179,28 @@ Updated: 2016.02.27 / Checked: 2016.03.28
 Tag: Aruba S.p.A.
 
 
-ASN 29182 ("ISPsystem").
-Infected by malware (as per reported by Google): 3.26%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 29182 ("ISPsystem").
+# Infected by malware (as per reported by Google): 3.26%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a01:230::/47 Deny Generic
 2a01:230:2::/48 Deny Generic
 Tag: ISPsystem
 
 
-ASN 47583 ("Hostinger International").
-Infected by malware (as per reported by Google): 1.28%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 47583 ("Hostinger International").
+# Infected by malware (as per reported by Google): 1.28%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a02:4780:1::/48 Deny Generic
 2a02:4780:2::/48 Deny Generic
 Tag: Hostinger Int.
 
 
-ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc").
-Infected by malware (as per reported by Google), 13335: 1.42%.
-Infected by malware (as per reported by Google), 132892: 0%.
-Infected by malware (as per reported by Google), 203898: "ASN not found".
-Infected by malware (as per reported by Google), 394536: 0%.
-Updated: 2016.03.28
+# ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc").
+# Infected by malware (as per reported by Google): 1.42% (AS13335), 0% (AS132892), "ASN not found" (AS203898),
+#   0% (AS394536).
+# Updated: 2016.03.28
 
 2400:cb00::/48 Deny Cloud
 2400:cb00:4::/48 Deny Cloud
@@ -243,25 +239,25 @@ Updated: 2016.03.28
 Tag: CloudFlare, Inc
 
 
-ASN 12824 ("home.pl").
-Infected by malware (as per reported by Google): 4.20%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 12824 ("home.pl").
+# Infected by malware (as per reported by Google): 4.20%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a02:25a8::/29 Deny Generic
 Tag: home.pl
 
 
-ASN 25532 ("Masterhost").
-Infected by malware (as per reported by Google): 1.35%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 25532 ("Masterhost").
+# Infected by malware (as per reported by Google): 1.35%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a00:15f8::/32 Deny Generic
 Tag: Masterhost
 
 
-ASN 26496 ("GoDaddy.com, LLC").
-Infected by malware (as per reported by Google): 2.78%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 26496 ("GoDaddy.com, LLC").
+# Infected by malware (as per reported by Google): 2.78%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2407:1c00::/32 Deny Generic
 2603::/20 Deny Generic
@@ -270,9 +266,9 @@ Updated: 2016.01.18 / Checked: 2016.02.27
 Tag: GoDaddy.com, LLC
 
 
-ASN 8560 ("1&1 Internet AG").
-Infected by malware (as per reported by Google): 0.24%.
-Updated: 2016.03.17
+# ASN 8560 ("1&1 Internet AG").
+# Infected by malware (as per reported by Google): 0.24%.
+# Updated: 2016.03.17
 
 2001:8d8::/32 Deny Cloud
 2001:ba0::/32 Deny Cloud
@@ -281,9 +277,9 @@ Updated: 2016.03.17
 Tag: 1&1 Internet AG
 
 
-ASN 16276 ("OVH Systems").
-Infected by malware (as per reported by Google): 1.00%.
-Updated: 2016.01.20 / Checked: 2016.02.27
+# ASN 16276 ("OVH Systems").
+# Infected by malware (as per reported by Google): 1.00%.
+# Updated: 2016.01.20 / Checked: 2016.02.27
 
 2001:41d0::/32 Deny Generic
 2402:1f00::/32 Deny Generic
@@ -291,45 +287,42 @@ Updated: 2016.01.20 / Checked: 2016.02.27
 Tag: OVH Systems
 
 
-ASN 34619 ("Çizgi Telekomünikasyon").
-Infected by malware (as per reported by Google): 3.90%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 34619 ("Çizgi Telekomünikasyon").
+# Infected by malware (as per reported by Google): 3.90%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a02:2020::/32 Deny Generic
 Tag: AS34619
 
 
-ASN 25504 ("Vautron Rechenzentrum AG").
-Infected by malware (as per reported by Google): 2.77%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 25504 ("Vautron Rechenzentrum AG").
+# Infected by malware (as per reported by Google): 2.77%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
 Tag: Vautron Rech. AG
 
 
-ASN 27823 ("Dattatec.com").
-Infected by malware (as per reported by Google): 1.52%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 27823 ("Dattatec.com").
+# Infected by malware (as per reported by Google): 1.52%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2800:6c0::/32 Deny Generic
 Tag: Dattatec.com
 
 
-ASN 38955 ("World4You Internet Services").
-Infected by malware (as per reported by Google): 1.87%.
-Updated: 2016.01.18 / Checked: 2016.02.27
+# ASN 38955 ("World4You Internet Services").
+# Infected by malware (as per reported by Google): 1.87%.
+# Updated: 2016.01.18 / Checked: 2016.02.27
 
 2a00:1a68::/32 Deny Generic
 Tag: World4You
 
 
-ASNs 16265, 28753, 30633, 60781 ("Leaseweb Network").
-Infected by malware (as per reported by Google), 16265: 0.86%.
-Infected by malware (as per reported by Google), 28753: 0.81%.
-Infected by malware (as per reported by Google), 30633: 0.56%.
-Infected by malware (as per reported by Google), 60781: 0.93%.
-Updated: 2016.03.15
+# ASNs 16265, 28753, 30633, 60781 ("Leaseweb Network").
+# Infected by malware (as per reported by Google): 0.86% (AS16265), 0.81% (AS28753), 0.56% (AS30633), 0.93% (AS60781).
+# Updated: 2016.03.15
 
 2001:67c:28d4::/48 Deny Cloud
 2001:1af8::/32 Deny Cloud
@@ -361,10 +354,9 @@ Updated: 2016.03.15
 Tag: Leaseweb
 
 
-ASNs 24940, 37153 ("Hetzner Online GmbH").
-Infected by malware (as per reported by Google), 24940: 1.18%.
-Infected by malware (as per reported by Google), 37153: 1.28%.
-Updated: 2016.03.02
+# ASNs 24940, 37153 ("Hetzner Online GmbH").
+# Infected by malware (as per reported by Google): 1.18% (AS24940), 1.28% (AS37153).
+# Updated: 2016.03.02
 
 2a01:4f8::/29 Deny Generic
 2a06:be80::/29 Deny Generic
@@ -372,9 +364,9 @@ Updated: 2016.03.02
 Tag: Hetzner
 
 
-ASN 43146 ("Agava Ltd.").
-Infected by malware (as per reported by Google): 1.39%.
-Updated: 2016.01.21 / Checked: 2016.03.02
+# ASN 43146 ("Agava Ltd.").
+# Infected by malware (as per reported by Google): 1.39%.
+# Updated: 2016.01.21 / Checked: 2016.03.02
 
 2a03:4900::/46 Deny Cloud
 2a03:4900:4::/48 Deny Cloud
@@ -386,10 +378,9 @@ Updated: 2016.01.21 / Checked: 2016.03.02
 Tag: Agava Ltd.
 
 
-ASNs 21844, 36351 ("SoftLayer Technologies").
-Infected by malware (as per reported by Google), 21844: 1.08%.
-Infected by malware (as per reported by Google), 36351: 0.20%.
-Updated: 2016.03.28
+# ASNs 21844, 36351 ("SoftLayer Technologies").
+# Infected by malware (as per reported by Google): 1.08% (AS21844), 0.20% (AS36351).
+# Updated: 2016.03.28
 
 2001:df3:8800::/48 Run rules_softlayer.php
 2001:df4:f000::/48 Run rules_softlayer.php
@@ -429,10 +420,10 @@ Updated: 2016.03.28
 Tag: SoftLayer
 
 
-ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-Infected by malware (as per reported by Google): 1.97%.
-Updated: 2016.02.27 / Checked: 2016.03.28
-Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
+# ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
+# Infected by malware (as per reported by Google): 1.97%.
+# Updated: 2016.02.27 / Checked: 2016.03.28
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 
 2a03:2100::/32 Deny Generic
 2a05:9bc0::/29 Deny Generic
@@ -441,9 +432,9 @@ Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 Tag: AS51559
 
 
-ASN 42244 ("Hosting Operator eServer.ru Ltd.").
-Infected by malware (as per reported by Google): 1.49%.
-Updated: 2016.03.28
+# ASN 42244 ("Hosting Operator eServer.ru Ltd.").
+# Infected by malware (as per reported by Google): 1.49%.
+# Updated: 2016.03.28
 
 2a03:c980:1::/48 Deny Cloud
 2a03:c980:2::/48 Deny Cloud
@@ -452,9 +443,9 @@ Updated: 2016.03.28
 Tag: eServer.ru
 
 
-ASN 35415 ("Webzilla B.V.").
-Infected by malware (as per reported by Google): 1.70%.
-Updated: 2016.03.28
+# ASN 35415 ("Webzilla B.V.").
+# Infected by malware (as per reported by Google): 1.70%.
+# Updated: 2016.03.28
 
 2803:8700:5::/48 Deny Generic
 2803:8700:45::/48 Deny Generic
@@ -467,42 +458,42 @@ Updated: 2016.03.28
 Tag: Webzilla B.V.
 
 
-ASN 41079 ("SuperHost.pl").
-Infected by malware (as per reported by Google): 2.46%.
-Updated: 2016.01.18 / Checked: 2016.03.28
+# ASN 41079 ("SuperHost.pl").
+# Infected by malware (as per reported by Google): 2.46%.
+# Updated: 2016.01.18 / Checked: 2016.03.28
 
 2a02:1778::/32 Deny Generic
 Tag: SuperHost.pl
 
 
-ASN 53225 ("IPGLOBE DATACENTER").
-Infected by malware (as per reported by Google): 0%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 53225 ("IPGLOBE DATACENTER").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2804:644::/32 Deny Spam
 Tag: IPGLOBE DATACENTER
 
 
-ASN 57879 ("sfip84").
-Infected by malware (as per reported by Google): 0%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 57879 ("sfip84").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2a00:b540::/32 Deny Spam
 Tag: sfip84
 
 
-ASN 45727 ("PT Hutchison CP Telecommunications").
-Infected by malware (as per reported by Google): 1.20%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 45727 ("PT Hutchison CP Telecommunications").
+# Infected by malware (as per reported by Google): 1.20%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2400:8b00:1000:1::/64 Deny Spam
 2400:8b00:a000::/47 Deny Spam
 Tag: PT Hutchison
 
 
-ASN 24203 ("PT Excelcomindo Pratama").
-Infected by malware (as per reported by Google): 0%.
-Updated: 2016.03.02
+# ASN 24203 ("PT Excelcomindo Pratama").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.03.02
 
 2400:9800::/32 Deny Spam
 2400:9800:3::/48 Deny Spam
@@ -510,34 +501,33 @@ Updated: 2016.03.02
 Tag: PT Excelcomindo
 
 
-ASN 45682 ("Excite Japan Co., Ltd.").
-Infected by malware (as per reported by Google): 0.01%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 45682 ("Excite Japan Co., Ltd.").
+# Infected by malware (as per reported by Google): 0.01%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2402:dc00::/32 Deny Generic
 Tag: Excite Japan
 
 
-ASN 31080 ("o2 Sp. Z.o.o.").
-Infected by malware (as per reported by Google): 0.24%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 31080 ("o2 Sp. Z.o.o.").
+# Infected by malware (as per reported by Google): 0.24%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2001:67c:25c4::/48 Deny Generic
 Tag: AS31080
 
 
-ASN 6870 ("H1 LLC").
-Infected by malware (as per reported by Google): 0.74%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 6870 ("H1 LLC").
+# Infected by malware (as per reported by Google): 0.74%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2a00:1f70::/32 Deny Generic
 Tag: H1 LLC
 
 
-ASNs 3223, 39743 ("Voxility LLC").
-Infected by malware (as per reported by Google), 3223: 1.35%.
-Infected by malware (as per reported by Google), 39743: 0.93%.
-Updated: 2016.03.28
+# ASNs 3223, 39743 ("Voxility LLC").
+# Infected by malware (as per reported by Google): 1.35% (AS3223), 0.93% (AS39743).
+# Updated: 2016.03.28
 
 2602:ff84:8::/48 Deny Generic
 2a02:13f0:8100::/48 Deny Generic
@@ -547,60 +537,53 @@ Updated: 2016.03.28
 Tag: Voxility LLC
 
 
-ASN 46475 ("Limestone Networks, Inc").
-Infected by malware (as per reported by Google): 4.39%.
-Updated: 2016.01.19 / Checked: 2016.03.28
+# ASN 46475 ("Limestone Networks, Inc").
+# Infected by malware (as per reported by Google): 4.39%.
+# Updated: 2016.01.19 / Checked: 2016.03.28
 
 2607:ff68::/32 Deny Cloud
 Tag: Limestone Networks
 
 
-ASN 35662 ("Redstation Limited").
-Infected by malware (as per reported by Google): 0.65%.
-Updated: 2016.01.19 / Checked: 2016.03.04
+# ASN 35662 ("Redstation Limited").
+# Infected by malware (as per reported by Google): 0.65%.
+# Updated: 2016.01.19 / Checked: 2016.03.04
 
 2a02:2658::/32 Deny Cloud
 Tag: Redstation Limited
 
 
-ASN 24961 ("myLoc managed IT AG").
-Infected by malware (as per reported by Google): 0.94%.
-Updated: 2016.03.02
+# ASN 24961 ("myLoc managed IT AG").
+# Infected by malware (as per reported by Google): 0.94%.
+# Updated: 2016.03.02
 
 2001:4ba0::/32 Deny Generic
 2001:67c:192c::/48 Deny Generic
 Tag: myLoc
 
 
-ASN 30968 ("INFOBOX").
-Infected by malware (as per reported by Google): 1.57%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 30968 ("INFOBOX").
+# Infected by malware (as per reported by Google): 1.57%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2a02:440::/32 Deny Generic
 Tag: INFOBOX
 
 
-ASN 57043 ("HOSTKEY B.V.").
-Infected by malware (as per reported by Google): 0.76%.
-Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 57043 ("HOSTKEY B.V.").
+# Infected by malware (as per reported by Google): 0.76%.
+# Updated: 2016.01.18 / Checked: 2016.03.02
 
 2a05:b40::/29 Deny Spam
 2a05:b40::/32 Deny Spam
 Tag: HOSTKEY B.V.
 
 
-ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
-Infected by malware (as per reported by Google), 10532: 0%.
-Infected by malware (as per reported by Google), 15395: 0.55%.
-Infected by malware (as per reported by Google), 19994: 1.22%.
-Infected by malware (as per reported by Google), 22720: "ASN not found".
-Infected by malware (as per reported by Google), 27357: 0.61%.
-Infected by malware (as per reported by Google), 33070: 1.19%.
-Infected by malware (as per reported by Google), 44716: 0%.
-Infected by malware (as per reported by Google), 45187: 0.77%.
-Infected by malware (as per reported by Google), 47715: 2.52%.
-Infected by malware (as per reported by Google), 58683: 0.52%.
-Updated: 2016.03.28
+# ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
+# Infected by malware (as per reported by Google): 0% (AS10532), 0.55% (AS15395), 1.22% (AS19994),
+#   "ASN not found" (AS22720), 0.61% (AS27357), 1.19% (AS33070), 0% (AS44716), 0.77% (AS45187), 2.52% (AS47715),
+#   0.52% (AS58683).
+# Updated: 2016.03.28
 
 2001:bf0::/29 Deny Cloud
 2001:4800::/31 Deny Cloud
@@ -613,9 +596,9 @@ Updated: 2016.03.28
 Tag: Rackspace Hosting
 
 
-ASN 35017 ("Swiftway Communications, Inc").
-Infected by malware (as per reported by Google): 1.10%.
-Updated: 2016.03.07
+# ASN 35017 ("Swiftway Communications, Inc").
+# Infected by malware (as per reported by Google): 1.10%.
+# Updated: 2016.03.07
 
 2605:3b80::/32 Deny Cloud
 2a02:748::/32 Deny Cloud
@@ -624,17 +607,17 @@ Updated: 2016.03.07
 Tag: Swiftway
 
 
-ASN 7743 ("JPMorgan Chase & Co.").
-Infected by malware (as per reported by Google): 0%.
-Updated: 2016.03.13
+# ASN 7743 ("JPMorgan Chase & Co.").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.03.13
 
 2620:11::/40 Deny Generic
 Tag: JPMorgan Chase & Co.
 
 
-ASN 42708 ("Portlane Networks AB").
-Infected by malware (as per reported by Google): 0.10%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 42708 ("Portlane Networks AB").
+# Infected by malware (as per reported by Google): 0.10%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2a00:1a28::/32 Deny Spam
 2a01:6f0:ffff::/48 Deny Spam
@@ -644,13 +627,13 @@ Updated: 2016.01.20 / Checked: 2016.03.12
 Tag: Portlane Networks AB
 
 
-ASN 6939 ("Hurricane Electric, Inc.").
-Infected by malware (as per reported by Google): 0.21%.
-Updated: 2016.03.18
+# ASN 6939 ("Hurricane Electric, Inc.").
+# Infected by malware (as per reported by Google): 0.21%.
+# Updated: 2016.03.18
 
-Note for when updating: "2002::/16" appears in the announces; This is a "6to4" block, and should never be included as a
-default signature. When seen, just delete it from the list (so that it'll effectively be greylisted). If a user wants
-to block this range, they can add it as a custom signature.
+# Note for when updating: "2002::/16" appears in the announces; This is a "6to4" block, and should never be included as
+# a default signature. When seen, just delete it from the list (so that it'll effectively be greylisted). If a user
+# wants to block this range, they can add it as a custom signature.
 
 2001::/32 Run rules_as6939.php
 2001:470::/32 Run rules_as6939.php
@@ -671,18 +654,17 @@ to block this range, they can add it as a custom signature.
 Tag: Hurricane Electric
 
 
-ASN 30693 ("Eonix Corporation").
-Infected by malware (as per reported by Google): 1.95%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 30693 ("Eonix Corporation").
+# Infected by malware (as per reported by Google): 1.95%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2607:ff28::/32 Deny Generic
 Tag: Eonix Corporation
 
 
-ASNs 32748, 46440 ("Steadfast Networks").
-Infected by malware (as per reported by Google), 32748: 1.26%.
-Infected by malware (as per reported by Google), 46440: 0%.
-Updated: 2016.03.13
+# ASNs 32748, 46440 ("Steadfast Networks").
+# Infected by malware (as per reported by Google): 1.26% (AS32748), 0% (AS46440).
+# Updated: 2016.03.13
 
 2607:f128::/32 Deny Cloud
 2607:fd60:c930::/48 Deny Cloud
@@ -691,9 +673,9 @@ Updated: 2016.03.13
 Tag: Steadfast Networks
 
 
-ASN 51088 ("A2B IP B.V.").
-Infected by malware (as per reported by Google): 0.65%.
-Updated: 2016.03.29
+# ASN 51088 ("A2B IP B.V.").
+# Infected by malware (as per reported by Google): 0.65%.
+# Updated: 2016.03.29
 
 2001:67c:1064::/48 Deny Cloud
 2a02:1668::/32 Deny Cloud
@@ -701,20 +683,19 @@ Updated: 2016.03.29
 Tag: A2B IP B.V.
 
 
-ASN 44050 ("Petersburg Internet Network ltd.").
-Infected by malware (as per reported by Google): 1.05%.
-Updated: 2016.01.20 / Checked: 2016.03.29
+# ASN 44050 ("Petersburg Internet Network ltd.").
+# Infected by malware (as per reported by Google): 1.05%.
+# Updated: 2016.01.20 / Checked: 2016.03.29
 
 2001:67c:29b8::/48 Deny Generic
 2a00:1d78::/32 Deny Generic
 Tag: PIN-AS
 
 
-ASNs 20860, 21130 ("IOMart").
-Crimeware friendly ISP; Warnings about them at the hpHosts Blog.
-Infected by malware (as per reported by Google), 20860: 0.82%.
-Infected by malware (as per reported by Google), 21130: 0%.
-Updated: 2016.03.29
+# ASNs 20860, 21130 ("IOMart").
+# Crimeware friendly ISP; Warnings about them at the hpHosts Blog.
+# Infected by malware (as per reported by Google): 0.82% (AS20860), 0% (AS21130).
+# Updated: 2016.03.29
 
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
@@ -727,20 +708,18 @@ Updated: 2016.03.29
 Tag: IOMart
 
 
-ASNs 35425, 58117 ("Bytemark Limited").
-Infected by malware (as per reported by Google), 35425: 0.41%.
-Infected by malware (as per reported by Google), 58117: 0%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASNs 35425, 58117 ("Bytemark Limited").
+# Infected by malware (as per reported by Google): 0.41% (AS35425), 0% (AS58117).
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2001:41c8::/29 Deny Generic
 2a03:9ba0::/40 Deny Generic
 Tag: Bytemark Limited
 
 
-ASNs 8972, 25074 ("PlusServer AG").
-Infected by malware (as per reported by Google), 8972: 0.68%.
-Infected by malware (as per reported by Google), 25074: 2.23%.
-Updated: 2016.03.28
+# ASNs 8972, 25074 ("PlusServer AG").
+# Infected by malware (as per reported by Google): 0.68% (AS8972), 2.23% (AS25074).
+# Updated: 2016.03.28
 
 2001:67c:2050::/48 Deny Cloud
 2001:830::/32 Deny Cloud
@@ -753,11 +732,10 @@ Updated: 2016.03.28
 Tag: PlusServer AG
 
 
-ASNs 16880, 36421 ("Trend Micro Incorporated").
-Follows their users around and attempts to get into restricted/private parts of websites.
-Infected by malware (as per reported by Google), 16880: 0%.
-Infected by malware (as per reported by Google), 36421: 0%.
-Updated: 2016.03.12
+# ASNs 16880, 36421 ("Trend Micro Incorporated").
+# Follows their users around and attempts to get into restricted/private parts of websites.
+# Infected by malware (as per reported by Google): 0% (AS16880 + AS36421).
+# Updated: 2016.03.12
 
 2001:450:2045::/48 Deny Generic
 2620:101:4025::/48 Deny Generic
@@ -772,16 +750,10 @@ Updated: 2016.03.12
 Tag: Trend Micro
 
 
-ASNs 14061, 46652, 62567, 65040, 200130, 202018, 393406, 394362 ("Digital Ocean, Inc.").
-Infected by malware (as per reported by Google), 14061: 0.53%.
-Infected by malware (as per reported by Google), 46652: 0.78%.
-Infected by malware (as per reported by Google), 62567: 1.40%.
-Infected by malware (as per reported by Google), 65040: "ASN not found".
-Infected by malware (as per reported by Google), 200130: 3.17%.
-Infected by malware (as per reported by Google), 202018: 2.36%.
-Infected by malware (as per reported by Google), 393406: 0.74%.
-Infected by malware (as per reported by Google), 394362: 1.83%.
-Updated: 2016.03.29
+# ASNs 14061, 46652, 62567, 65040, 200130, 202018, 393406, 394362 ("Digital Ocean, Inc.").
+# Infected by malware (as per reported by Google): 0.53% (AS14061), 0.78% (AS46652), 1.40% (AS62567),
+#   "ASN not found" (AS65040), 3.17% (AS200130), 2.36% (AS202018), 0.74% (AS393406), 1.83% (AS394362).
+# Updated: 2016.03.29
 
 2604:a880::/47 Deny Cloud
 2604:a880:400::/48 Deny Cloud
@@ -793,9 +765,9 @@ Updated: 2016.03.29
 Tag: Digital Ocean, Inc.
 
 
-ASN 5577 ("Root SA").
-Infected by malware (as per reported by Google): 5.18%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 5577 ("Root SA").
+# Infected by malware (as per reported by Google): 5.18%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2001:67c:15a3::/48 Deny Cloud
 2a01:608::/32 Deny Cloud
@@ -803,18 +775,18 @@ Updated: 2016.01.20 / Checked: 2016.03.12
 Tag: Root SA
 
 
-ASN 11878 ("Tzulo Inc").
-Infected by malware (as per reported by Google): 1.10%.
-Updated: 2016.01.19 / Checked: 2016.03.07
+# ASN 11878 ("Tzulo Inc").
+# Infected by malware (as per reported by Google): 1.10%.
+# Updated: 2016.01.19 / Checked: 2016.03.07
 
 2607:8b00::/32 Deny Cloud
 2607:9000::/32 Deny Cloud
 Tag: Tzulo Inc
 
 
-ASN 17139 ("Corporate Colocation Inc.")
-Infected by malware (as per reported by Google): 17.37%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 17139 ("Corporate Colocation Inc.")
+# Infected by malware (as per reported by Google): 17.37%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2401:f500:1::/48 Deny Cloud
 2602:ffe5:400::/40 Deny Cloud
@@ -822,86 +794,86 @@ Updated: 2016.01.20 / Checked: 2016.03.12
 Tag: Corporate Colocation
 
 
-ASN 32613 ("iWeb Technologies Inc.")
-Infected by malware (as per reported by Google): 1.03%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 32613 ("iWeb Technologies Inc.")
+# Infected by malware (as per reported by Google): 1.03%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2606:5d80::/32 Deny Cloud
 2607:f748::/32 Deny Cloud
 Tag: iWeb
 
 
-ASN 29713 ("Reliable Hosting Services").
-Infected by malware (as per reported by Google): 4.16%.
-Updated: 2016.01.27
+# ASN 29713 ("Reliable Hosting Services").
+# Infected by malware (as per reported by Google): 4.16%.
+# Updated: 2016.01.27
 
 2604:4100::/36 Deny Cloud
 Tag: Reliable Hosting
 
 
-ASN 33597 ("InfoRelay Online Systems, Inc.").
-Infected by malware (as per reported by Google): 0.70%.
-Updated: 2016.01.27 / Checked: 2016.03.12
+# ASN 33597 ("InfoRelay Online Systems, Inc.").
+# Infected by malware (as per reported by Google): 0.70%.
+# Updated: 2016.01.27 / Checked: 2016.03.12
 
 2607:f108::/32 Deny Cloud
 2a03:b280:1000::/48 Deny Cloud
 Tag: InfoRelay Online
 
 
-ASN 29854 ("WestHost, Inc.").
-Infected by malware (as per reported by Google): 1.13%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 29854 ("WestHost, Inc.").
+# Infected by malware (as per reported by Google): 1.13%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2606:2e00::/33 Deny Cloud
 2607:fc98::/32 Deny Cloud
 Tag: WestHost, Inc.
 
 
-ASN 8551 ("Bezeq International-Ltd").
-Infected by malware (as per reported by Google): 1.46%.
-Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 8551 ("Bezeq International-Ltd").
+# Infected by malware (as per reported by Google): 1.46%.
+# Updated: 2016.01.20 / Checked: 2016.03.12
 
 2001:4cd0::/32 Deny Cloud
 Tag: Bezeq International
 
 
-ASN 32097 ("WholeSale Internet, Inc.").
-Infected by malware (as per reported by Google): 23.72%.
-Updated: 2016.01.20 / Checked: 2016.03.29
+# ASN 32097 ("WholeSale Internet, Inc.").
+# Infected by malware (as per reported by Google): 23.72%.
+# Updated: 2016.01.20 / Checked: 2016.03.29
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
 Tag: WholeSale Internet
 
 
-ASN 36137 ("Avante Hosting Services Inc.").
-Infected by malware (as per reported by Google): 0%.
-Updated: 2016.01.21 / Checked: 2016.03.12
+# ASN 36137 ("Avante Hosting Services Inc.").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.01.21 / Checked: 2016.03.12
 
 2607:bd00::/32 Deny Cloud
 Tag: Avante Hosting
 
 
-ASN 63930 ("Ready Server - Dedicated Server Hosting").
-Infected by malware (as per reported by Google): 3.80%.
-Updated: 2016.01.21 / Checked: 2016.03.12
+# ASN 63930 ("Ready Server - Dedicated Server Hosting").
+# Infected by malware (as per reported by Google): 3.80%.
+# Updated: 2016.01.21 / Checked: 2016.03.12
 
 2401:e780::/32 Deny Cloud
 2602:ffa0::/48 Deny Cloud
 Tag: Ready Server
 
 
-ASN 42655 ("ON-LINE Ltd").
-Infected by malware (as per reported by Google): 1.50%.
-Updated: 2016.01.21 / Checked: 2016.03.12
+# ASN 42655 ("ON-LINE Ltd").
+# Infected by malware (as per reported by Google): 1.50%.
+# Updated: 2016.01.21 / Checked: 2016.03.12
 
 2001:67c:2224::/48 Deny Cloud
 Tag: ON-LINE Ltd
 
 
-ASNs 10910, 10912, 10913, 11853, 11854, 11855, 12178, 12179, 12180, 12181, 12182, 13789, 13790, 13791, 13792, 14742,
-ASNs 14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910,
-"Internap Network Services Corporation", Updated: 2016.03.30
+# ASNs 10910, 10912, 10913, 11853, 11854, 11855, 12178, 12179, 12180, 12181, 12182, 13789, 13790, 13791, 13792, 14742,
+# ASNs 14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910,
+# "Internap Network Services Corporation", Updated: 2016.03.30
 
 2400:f800::/32 Deny Cloud
 2404:ca00::/32 Deny Cloud
@@ -930,9 +902,9 @@ ASNs 14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246
 Tag: Internap Network
 
 
-ASN 51191 ("Xirra GmbH").
-Infected by malware (as per reported by Google): 2.77%.
-Updated: 2016.01.21 / Checked: 2016.03.30
+# ASN 51191 ("Xirra GmbH").
+# Infected by malware (as per reported by Google): 2.77%.
+# Updated: 2016.01.21 / Checked: 2016.03.30
 
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
@@ -940,43 +912,42 @@ Updated: 2016.01.21 / Checked: 2016.03.30
 Tag: Xirra GmbH
 
 
-ASN 23033 ("Wowrack.com").
-Infected by malware (as per reported by Google): 10.79%.
-Updated: 2016.03.15 / Checked: 2016.03.30
+# ASN 23033 ("Wowrack.com").
+# Infected by malware (as per reported by Google): 10.79%.
+# Updated: 2016.03.15 / Checked: 2016.03.30
 
 2604:c00::/32 Deny Cloud
 2607:f8f8::/32 Deny Cloud
 Tag: Wowrack.com
 
 
-ASN 197746 ("HyperHosting - Cloud Infrastructure").
-Infected by malware (as per reported by Google): 5.19%.
-Updated: 2016.01.21 / Checked: 2016.03.12
+# ASN 197746 ("HyperHosting - Cloud Infrastructure").
+# Infected by malware (as per reported by Google): 5.19%.
+# Updated: 2016.01.21 / Checked: 2016.03.12
 
 2a00:6620:2000::/48 Deny Cloud
 Tag: HyperHosting
 
 
-ASN 11051 ("Cyberverse, Inc.").
-Infected by malware (as per reported by Google): 1.88%.
-Updated: 2016.01.22 / Checked: 2016.03.15
+# ASN 11051 ("Cyberverse, Inc.").
+# Infected by malware (as per reported by Google): 1.88%.
+# Updated: 2016.01.22 / Checked: 2016.03.15
 
 2607:f820::/32 Deny Cloud
 Tag: Cyberverse, Inc.
 
 
-ASN 54489 ("CoreSpace, Inc.").
-Infected by malware (as per reported by Google): 0.41%.
-Updated: 2016.01.22 / Checked: 2016.03.15
+# ASN 54489 ("CoreSpace, Inc.").
+# Infected by malware (as per reported by Google): 0.41%.
+# Updated: 2016.01.22 / Checked: 2016.03.15
 
 2604:7780::/32 Deny Cloud
 Tag: CoreSpace, Inc.
 
 
--- FROM HERE --
-"QuadraNet, Inc"
-ASN 7185, 8100, 29761, 62639.
-Updated: 2016.02.27
+# ASNs 8100, 29761, 62639 ("QuadraNet, Inc").
+# Infected by malware (as per reported by Google): 4.25% (AS8100), 0% (AS29761), 4.91% (AS62639).
+# Updated: 2016.02.27
 
 2602:ff96:2::/48 Deny Cloud
 2602:ff96:4::/48 Deny Cloud
@@ -990,18 +961,20 @@ Updated: 2016.02.27
 2607:ff48::/32 Deny Cloud
 2a05:4240::/29 Deny Cloud
 2a05:b0c6:300::/40 Deny Cloud
+Tag: QuadraNet, Inc
 
 
-"ColoCrossing"
-ASN 36352.
-Updated: 2016.01.22 / Checked: 2016.02.27
+# ASN 36352 ("ColoCrossing").
+# Infected by malware (as per reported by Google): 0.73%.
+# Updated: 2016.01.22 / Checked: 2016.02.27
 
 2607:9d00:1::/48 Deny Cloud
+Tag: ColoCrossing
 
 
-"Connexions4London Ltd"
-ASN 25577.
-Updated: 2016.03.15
+# ASN 25577 ("Connexions4London Ltd").
+# Infected by malware (as per reported by Google): 0.96%.
+# Updated: 2016.03.15
 
 2001:67c:1c0::/48 Deny Cloud
 2001:67c:580::/48 Deny Cloud
@@ -1009,40 +982,43 @@ Updated: 2016.03.15
 2803:8700:10::/48 Deny Cloud
 2a00:85c0::/32 Deny Cloud
 2a05:2e00::/29 Deny Cloud
+Tag: Connexions4London
 
 
-"SingleHop, Inc."
-ASN 32475.
-Infected by malware (as per reported by Google): 1.13%.
-Updated: 2016.01.22 / Checked: 2016.03.20
+# ASN 32475 ("SingleHop, Inc.").
+# Infected by malware (as per reported by Google): 1.13%.
+# Updated: 2016.01.22 / Checked: 2016.03.20
 
 2607:f978:2::/48 Deny Cloud
 2607:f978:4::/47 Deny Cloud
 2a06:7a00:1::/48 Deny Cloud
+Tag: SingleHop, Inc.
 
 
-"eUKhost LTD"
-ASN 29550.
-Updated: 2016.01.22 / Checked: 2016.03.12
+# ASN 29550 ("eUKhost LTD").
+# Infected by malware (as per reported by Google): 1.82%.
+# Updated: 2016.01.22 / Checked: 2016.03.12
 
 2a02:af8::/32 Deny Cloud
 2a00:f9c0::/32 Deny Cloud
+Tag: eUKhost LTD
 
 
-"Dataflame Internet Services Ltd"
-ASN 12703.
-Updated: 2016.01.22 / Checked: 2016.03.12
+# ASN 12703 ("Dataflame Internet Services Ltd").
+# Infected by malware (as per reported by Google): 0.96%.
+# Updated: 2016.01.22 / Checked: 2016.03.12
 
 2a01:5ae0::/32 Deny Cloud
 2a01:6ca0::/32 Deny Cloud
 2a02:16e0::/32 Deny Cloud
 2a03:67c0::/32 Deny Cloud
 2a04:4300::/48 Deny Cloud
+Tag: Dataflame Internet
 
 
-"Private Layer INC"
-ASN 51852.
-Updated: 2016.01.22 / Checked: 2016.03.12
+# ASN 51852 ("Private Layer INC").
+# Infected by malware (as per reported by Google): 1.12%.
+# Updated: 2016.01.22 / Checked: 2016.03.12
 
 2800:980:1::/48 Deny Cloud
 2800:980:2::/48 Deny Cloud
@@ -1050,12 +1026,12 @@ Updated: 2016.01.22 / Checked: 2016.03.12
 2800:980:5::/48 Deny Cloud
 2800:980:1000::/48 Deny Cloud
 2a02:29b8::/32 Deny Cloud
+Tag: Private Layer INC
 
 
-"Psychz Networks"
-ASN 40676.
-Infected by malware (as per reported by Google): 8.79%.
-Updated: 2016.03.20
+# ASN 40676 ("Psychz Networks").
+# Infected by malware (as per reported by Google): 8.79%.
+# Updated: 2016.03.20
 
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
@@ -1066,18 +1042,20 @@ Updated: 2016.03.20
 2605:e280:c65a::/48 Deny Cloud
 2a05:b0c6:1300::/44 Deny Cloud
 2a06:e881:100::/48 Deny Cloud
+Tag: Psychz Networks
 
 
-"PP SKS-LUGAN"
-ASN 35804.
-Updated: 2016.01.18 / Checked: 2016.03.07
+# ASN 35804 ("PP SKS-LUGAN").
+# Infected by malware (as per reported by Google): 3.31%.
+# Updated: 2016.03.30
 
 2a00:ede0::/32 Deny Generic
+Tag: PP SKS-LUGAN
 
 
-"Sistema Shyam Teleservices Ltd."
-ASN 131222.
-Updated: 2016.03.12
+# ASN 131222 ("Sistema Shyam Teleservices Ltd.").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.03.12
 
 2406:5600:9::/48 Deny Spam
 2406:5600:a::/48 Deny Spam
@@ -1111,39 +1089,40 @@ Updated: 2016.03.12
 2406:5600:d2::/47 Deny Spam
 2406:5600:d4::/46 Deny Spam
 2406:5600:d8::/45 Deny Spam
+Tag: Sistema Shyam
 
 
-"Versaweb, LLC"
-ASN 36114.
-Infected by malware (as per reported by Google): 8.42%.
-Updated: 2016.01.23 / Checked: 2016.03.20
+# ASN 36114 ("Versaweb, LLC").
+# Infected by malware (as per reported by Google): 8.42%.
+# Updated: 2016.01.23 / Checked: 2016.03.20
 
 2605:6f80::/40 Deny Cloud
+Tag: Versaweb, LLC
 
 
-"DataWagon LLC" and "VolumeDrive"
-ASN 27176, 46664.
-Infected by malware (as per reported by Google), 27176: 0%.
-Infected by malware (as per reported by Google), 46664: 0.53%.
-Updated: 2016.03.23
+# ASN 27176 ("DataWagon LLC").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.03.23 / Checked: 2016.03.30
 
 2605:aa80::/32 Deny Cloud
+Tag: DataWagon LLC
 
 
-"WorldStream"
-ASN 49981.
-Infected by malware (as per reported by Google): 1.96%.
-Updated: 2016.03.20
+# ASN 49981 ("WorldStream").
+# Infected by malware (as per reported by Google): 1.96%.
+# Updated: 2016.03.20
 
 2001:16c0:fefe::/48 Deny Generic
 2a00:7c80::/32 Deny Generic
 2a06:3880::/29 Deny Generic
 2a06:d641::/32 Deny Generic
+Tag: WorldStream
 
 
-"Choopa, LLC"
-ASN 11508, 20473, 46407, 133795.
-Updated: 2016.02.27
+# -- FROM HERE --
+# "Choopa, LLC"
+# ASN 11508, 20473, 46407, 133795.
+# Updated: 2016.02.27
 
 2001:19f0::/38 Deny Generic
 2001:19f0:200:461e::/64 Deny Generic
@@ -1191,17 +1170,17 @@ Updated: 2016.02.27
 2605:9880:400::/38 Deny Generic
 
 
-"UOL DIVEO S.A."
-ASN 7162.
-Infected by malware (as per reported by Google): 0.91%.
-Updated: 2016.01.23 / Checked: 2016.03.20
+# "UOL DIVEO S.A."
+# ASN 7162.
+# Infected by malware (as per reported by Google): 0.91%.
+# Updated: 2016.01.23 / Checked: 2016.03.20
 
 2804:49c::/32 Deny Generic
 
 
-"RAM Host", "Total Server Solutions L.L.C."
-ASN 46562, 53841.
-Updated: 2016.03.10
+# "RAM Host", "Total Server Solutions L.L.C."
+# ASN 46562, 53841.
+# Updated: 2016.03.10
 
 2602:fff6:5::/48 Deny Cloud
 2604:2880::/48 Deny Cloud
@@ -1214,10 +1193,10 @@ Updated: 2016.03.10
 2607:f7a0:a::/48 Deny Cloud
 
 
-"Init7"
-ASN 13030.
-Updated: 2016.01.18 / Checked: 2016.03.07
-Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
+# "Init7"
+# ASN 13030.
+# Updated: 2016.01.18 / Checked: 2016.03.07
+# Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 
 2001:67c:1388::/48 Deny Generic
 2001:67c:2570::/48 Deny Generic
@@ -1231,17 +1210,17 @@ Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 2a05:36c0::/29 Deny Generic
 
 
-"K SERVERS LTD"
-ASN 14576.
-Updated: 2016.01.23 / Checked: 2016.03.10
+# "K SERVERS LTD"
+# ASN 14576.
+# Updated: 2016.01.23 / Checked: 2016.03.10
 
 2606:5e00::/32 Deny Generic
 2a06:2e80::/29 Deny Generic
 
 
-"Enzu Inc"
-ASN 18978.
-Updated: 2016.03.10
+# "Enzu Inc"
+# ASN 18978.
+# Updated: 2016.03.10
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
@@ -1254,51 +1233,51 @@ Updated: 2016.03.10
 2605:f700:400::/38 Deny Cloud
 
 
-"EGIHosting"
-ASN 18779.
-Updated: 2016.01.25 / Checked: 2016.03.10
+# "EGIHosting"
+# ASN 18779.
+# Updated: 2016.01.25 / Checked: 2016.03.10
 
 2604:4f00::/36 Deny Cloud
 2607:f358::/32 Deny Cloud
 2607:f940:365::/48 Deny Cloud
 
 
-"Hosting Solutions International, Inc."
-ASN 30083.
-Updated: 2016.01.25 / Checked: 2016.03.10
+# "Hosting Solutions International, Inc."
+# ASN 30083.
+# Updated: 2016.01.25 / Checked: 2016.03.10
 
 2605:de00::/32 Deny Cloud
 
 
-"ONLINE S.A.S."
-ASN 12876.
-Infected by malware (as per reported by Google): 0.89%.
-Updated: 2016.01.25 / Checked: 2016.03.28
+# "ONLINE S.A.S."
+# ASN 12876.
+# Infected by malware (as per reported by Google): 0.89%.
+# Updated: 2016.01.25 / Checked: 2016.03.28
 
 2001:bc8::/32 Deny Cloud
 
 
-ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
-"High Point Host", "Lunanode Hosting Inc.", "Pleasant Hosting", "Power Up Hosting, Inc.",
-"Rica Costa Hosting RCH, S.A.", "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may
-change as time passes, and may need continual adjustments in the future). Updated: 2016.02.05
+# ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
+# "High Point Host", "Lunanode Hosting Inc.", "Pleasant Hosting", "Power Up Hosting, Inc.",
+# "Rica Costa Hosting RCH, S.A.", "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may
+# change as time passes, and may need continual adjustments in the future). Updated: 2016.02.05
 
-Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
-traffic, usually, should definitely be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
-significantly with with a number of benign, innocent ISPs, human endpoint connections (DSL and ADSL connections, etc),
-as well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking. As a
-compromise for this situation, I'm including a section in this signature file for their CIDRs, but, rather than simply
-including the entire ASN, I'm making a point of only including those CIDRs that I can confirm don't belong the human
-endpoint connections and those CIDRs that appear to be cloud services (ie, if they announce in a way that makes them
-appear to be a hosting service, server leaser, colocation service, etc).
+# Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
+# attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
+# traffic, usually, should definitely be blocked, but unfortunately, their ASN is very widely-encompassing and
+# interlaces significantly with with a number of benign, innocent ISPs, human endpoint connections (DSL and ADSL
+# connections, etc), as well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be
+# blocking. As a compromise for this situation, I'm including a section in this signature file for their CIDRs, but,
+# rather than simply including the entire ASN, I'm making a point of only including those CIDRs that I can confirm
+# don't belong the human endpoint connections and those CIDRs that appear to be cloud services (ie, if they announce in
+# a way that makes them appear to be a hosting service, server leaser, colocation service, etc).
 
-Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
-Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
-Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
-Refer research.dyn.com/2013/11/mitm-internet-hijacking/
-Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
-Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
+# Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
+# Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+# Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 
 2001:49f0:100d::/48 Deny Cloud
 2001:49f0:1010::/48 Deny Cloud
@@ -1373,66 +1352,66 @@ Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 2a01:8640:4::/48 Deny Cloud
 
 
-"FORTUNIX NETWORKS L.P."
-ASN 59711.
-Updated: 2016.02.10
+# "FORTUNIX NETWORKS L.P."
+# ASN 59711.
+# Updated: 2016.02.10
 
 2a01:8640::/48 Deny Cloud
 2a01:8640:2::/48 Deny Cloud
 
 
-"Micfo, LLC." and "Contina"
-ASN 53889, 63008.
-Updated: 2016.02.11
+# "Micfo, LLC." and "Contina"
+# ASN 53889, 63008.
+# Updated: 2016.02.11
 
 2605:3e80::/32 Deny Cloud
 
 
-"Krypt Technologies"
-ASN 35908.
-Infected by malware (as per reported by Google): 10.97%.
-Updated: 2016.02.27 / Checked: 2016.03.20
-Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
+# "Krypt Technologies"
+# ASN 35908.
+# Infected by malware (as per reported by Google): 10.97%.
+# Updated: 2016.02.27 / Checked: 2016.03.20
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
 
 2607:f180::/31 Deny Generic
 
 
-"Continuum Data Centers, LLC."
-ASN 53264.
-Updated: 2016.03.02
+# "Continuum Data Centers, LLC."
+# ASN 53264.
+# Updated: 2016.03.02
 
 2605:a880:8000::/48 Deny Cloud
 2607:ff50::/32 Deny Cloud
 
 
-"Contabo GmbH"
-ASN 51167.
-Updated: 2016.03.10
+# "Contabo GmbH"
+# ASN 51167.
+# Updated: 2016.03.10
 
 2a02:c200::/32 Deny Cloud
 
 
-"ESDS Software Solution"
-ASN 45815.
-Updated: 2016.03.10
+# "ESDS Software Solution"
+# ASN 45815.
+# Updated: 2016.03.10
 
 2400:5300::/48 Deny Cloud
 
 
-"AltusHost B.V."
-ASN 51430.
-Updated: 2016.03.10
+# "AltusHost B.V."
+# ASN 51430.
+# Updated: 2016.03.10
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
 
 
-"Akamai Technologies"
-Refer to gist.github.com/Maikuolan/3e74406a857c989d8b1e for the ASN information for these listings.
-ASN 12222, 16625, 16702, 17334, 18680, 18717, 20189, 20940, 21342, 21357, 21399, 22207, 23454, 23455, 23903, 24319,
-    30675, 31107, 31108, 31109, 31110, 31377, 32787, 33905, 34164, 34850, 35204, 35993, 35994, 36183, 39836, 43639,
-    45700, 48163, 49846, 55770, 393234, 393560.
-Updated: 2016.03.13
+# "Akamai Technologies"
+# Refer to gist.github.com/Maikuolan/3e74406a857c989d8b1e for the ASN information for these listings.
+# ASN 12222, 16625, 16702, 17334, 18680, 18717, 20189, 20940, 21342, 21357, 21399, 22207, 23454, 23455, 23903, 24319,
+#   30675, 31107, 31108, 31109, 31110, 31377, 32787, 33905, 34164, 34850, 35204, 35993, 35994, 36183, 39836, 43639,
+#   45700, 48163, 49846, 55770, 393234, 393560.
+# Updated: 2016.03.13
 
 2001:1702:1a::/64 Deny Cloud
 2001:418:1401:21::/64 Deny Cloud
@@ -1916,10 +1895,10 @@ Updated: 2016.03.13
 2c0f:fd58:9::/48 Deny Cloud
 
 
----
-IPv6 Bogons List.
-Updated: 2016.03.27
-Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
+# ---
+# IPv6 Bogons List.
+# Updated: 2016.03.30
+# Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
 200::/7 Deny Bogon
@@ -2825,9 +2804,9 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:10c::/46 Deny Bogon
-2001:678:110::/44 Deny Bogon
-2001:678:120::/43 Deny Bogon
+2001:678:124::/46 Deny Bogon
+2001:678:128::/45 Deny Bogon
+2001:678:130::/44 Deny Bogon
 2001:678:140::/42 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
@@ -4758,7 +4737,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:4840::/42 Deny Bogon
 2001:df1:4880::/41 Deny Bogon
 2001:df1:4900::/40 Deny Bogon
-2001:df1:4a00::/39 Deny Bogon
+2001:df1:4a01::/48 Deny Bogon
+2001:df1:4a02::/47 Deny Bogon
+2001:df1:4a04::/46 Deny Bogon
+2001:df1:4a08::/45 Deny Bogon
+2001:df1:4a10::/44 Deny Bogon
+2001:df1:4a20::/43 Deny Bogon
+2001:df1:4a40::/42 Deny Bogon
+2001:df1:4a80::/41 Deny Bogon
+2001:df1:4b00::/40 Deny Bogon
 2001:df1:4c01::/48 Deny Bogon
 2001:df1:4c02::/47 Deny Bogon
 2001:df1:4c04::/46 Deny Bogon
@@ -4768,7 +4755,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:4c40::/42 Deny Bogon
 2001:df1:4c80::/41 Deny Bogon
 2001:df1:4d00::/40 Deny Bogon
-2001:df1:4e00::/39 Deny Bogon
+2001:df1:4e01::/48 Deny Bogon
+2001:df1:4e02::/47 Deny Bogon
+2001:df1:4e04::/46 Deny Bogon
+2001:df1:4e08::/45 Deny Bogon
+2001:df1:4e10::/44 Deny Bogon
+2001:df1:4e20::/43 Deny Bogon
+2001:df1:4e40::/42 Deny Bogon
+2001:df1:4e80::/41 Deny Bogon
+2001:df1:4f00::/40 Deny Bogon
 2001:df1:5001::/48 Deny Bogon
 2001:df1:5002::/47 Deny Bogon
 2001:df1:5004::/46 Deny Bogon
@@ -4778,7 +4773,15 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2001:df1:5040::/42 Deny Bogon
 2001:df1:5080::/41 Deny Bogon
 2001:df1:5100::/40 Deny Bogon
-2001:df1:5200::/39 Deny Bogon
+2001:df1:5201::/48 Deny Bogon
+2001:df1:5202::/47 Deny Bogon
+2001:df1:5204::/46 Deny Bogon
+2001:df1:5208::/45 Deny Bogon
+2001:df1:5210::/44 Deny Bogon
+2001:df1:5220::/43 Deny Bogon
+2001:df1:5240::/42 Deny Bogon
+2001:df1:5280::/41 Deny Bogon
+2001:df1:5300::/40 Deny Bogon
 2001:df1:5401::/48 Deny Bogon
 2001:df1:5402::/47 Deny Bogon
 2001:df1:5404::/46 Deny Bogon
@@ -25140,7 +25143,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9810::/28 Deny Bogon
 2404:9820::/27 Deny Bogon
 2404:9840::/26 Deny Bogon
-2404:9880::/25 Deny Bogon
+2404:9881::/32 Deny Bogon
+2404:9882::/31 Deny Bogon
+2404:9884::/30 Deny Bogon
+2404:9888::/29 Deny Bogon
+2404:9890::/28 Deny Bogon
+2404:98a0::/27 Deny Bogon
+2404:98c0::/26 Deny Bogon
 2404:9901::/32 Deny Bogon
 2404:9902::/31 Deny Bogon
 2404:9904::/30 Deny Bogon
@@ -25148,7 +25157,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9910::/28 Deny Bogon
 2404:9920::/27 Deny Bogon
 2404:9940::/26 Deny Bogon
-2404:9980::/25 Deny Bogon
+2404:9981::/32 Deny Bogon
+2404:9982::/31 Deny Bogon
+2404:9984::/30 Deny Bogon
+2404:9988::/29 Deny Bogon
+2404:9990::/28 Deny Bogon
+2404:99a0::/27 Deny Bogon
+2404:99c0::/26 Deny Bogon
 2404:9a01::/32 Deny Bogon
 2404:9a02::/31 Deny Bogon
 2404:9a04::/30 Deny Bogon
@@ -25156,7 +25171,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9a10::/28 Deny Bogon
 2404:9a20::/27 Deny Bogon
 2404:9a40::/26 Deny Bogon
-2404:9a80::/25 Deny Bogon
+2404:9a81::/32 Deny Bogon
+2404:9a82::/31 Deny Bogon
+2404:9a84::/30 Deny Bogon
+2404:9a88::/29 Deny Bogon
+2404:9a90::/28 Deny Bogon
+2404:9aa0::/27 Deny Bogon
+2404:9ac0::/26 Deny Bogon
 2404:9b01::/32 Deny Bogon
 2404:9b02::/31 Deny Bogon
 2404:9b04::/30 Deny Bogon
@@ -25164,7 +25185,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9b10::/28 Deny Bogon
 2404:9b20::/27 Deny Bogon
 2404:9b40::/26 Deny Bogon
-2404:9b80::/25 Deny Bogon
+2404:9b81::/32 Deny Bogon
+2404:9b82::/31 Deny Bogon
+2404:9b84::/30 Deny Bogon
+2404:9b88::/29 Deny Bogon
+2404:9b90::/28 Deny Bogon
+2404:9ba0::/27 Deny Bogon
+2404:9bc0::/26 Deny Bogon
 2404:9c01::/32 Deny Bogon
 2404:9c02::/31 Deny Bogon
 2404:9c04::/30 Deny Bogon
@@ -25172,7 +25199,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9c10::/28 Deny Bogon
 2404:9c20::/27 Deny Bogon
 2404:9c40::/26 Deny Bogon
-2404:9c80::/25 Deny Bogon
+2404:9c81::/32 Deny Bogon
+2404:9c82::/31 Deny Bogon
+2404:9c84::/30 Deny Bogon
+2404:9c88::/29 Deny Bogon
+2404:9c90::/28 Deny Bogon
+2404:9ca0::/27 Deny Bogon
+2404:9cc0::/26 Deny Bogon
 2404:9d01::/32 Deny Bogon
 2404:9d02::/31 Deny Bogon
 2404:9d04::/30 Deny Bogon
@@ -25180,7 +25213,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9d10::/28 Deny Bogon
 2404:9d20::/27 Deny Bogon
 2404:9d40::/26 Deny Bogon
-2404:9d80::/25 Deny Bogon
+2404:9d81::/32 Deny Bogon
+2404:9d82::/31 Deny Bogon
+2404:9d84::/30 Deny Bogon
+2404:9d88::/29 Deny Bogon
+2404:9d90::/28 Deny Bogon
+2404:9da0::/27 Deny Bogon
+2404:9dc0::/26 Deny Bogon
 2404:9e01::/32 Deny Bogon
 2404:9e02::/31 Deny Bogon
 2404:9e04::/30 Deny Bogon
@@ -25188,7 +25227,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9e10::/28 Deny Bogon
 2404:9e20::/27 Deny Bogon
 2404:9e40::/26 Deny Bogon
-2404:9e80::/25 Deny Bogon
+2404:9e81::/32 Deny Bogon
+2404:9e82::/31 Deny Bogon
+2404:9e84::/30 Deny Bogon
+2404:9e88::/29 Deny Bogon
+2404:9e90::/28 Deny Bogon
+2404:9ea0::/27 Deny Bogon
+2404:9ec0::/26 Deny Bogon
 2404:9f01::/32 Deny Bogon
 2404:9f02::/31 Deny Bogon
 2404:9f04::/30 Deny Bogon
@@ -25196,7 +25241,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:9f10::/28 Deny Bogon
 2404:9f20::/27 Deny Bogon
 2404:9f40::/26 Deny Bogon
-2404:9f80::/25 Deny Bogon
+2404:9f81::/32 Deny Bogon
+2404:9f82::/31 Deny Bogon
+2404:9f84::/30 Deny Bogon
+2404:9f88::/29 Deny Bogon
+2404:9f90::/28 Deny Bogon
+2404:9fa0::/27 Deny Bogon
+2404:9fc0::/26 Deny Bogon
 2404:a001::/32 Deny Bogon
 2404:a002::/31 Deny Bogon
 2404:a004::/30 Deny Bogon
@@ -25204,7 +25255,13 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2404:a010::/28 Deny Bogon
 2404:a020::/27 Deny Bogon
 2404:a040::/26 Deny Bogon
-2404:a080::/25 Deny Bogon
+2404:a081::/32 Deny Bogon
+2404:a082::/31 Deny Bogon
+2404:a084::/30 Deny Bogon
+2404:a088::/29 Deny Bogon
+2404:a090::/28 Deny Bogon
+2404:a0a0::/27 Deny Bogon
+2404:a0c0::/26 Deny Bogon
 2404:a101::/32 Deny Bogon
 2404:a102::/31 Deny Bogon
 2404:a104::/30 Deny Bogon
@@ -32257,7 +32314,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2602:ff00::/26 Deny Bogon
 2602:ff40::/29 Deny Bogon
 2602:ff48::/30 Deny Bogon
-2602:ff4c::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -37092,23 +37148,33 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2607:2110::/28 Deny Bogon
 2607:2120::/27 Deny Bogon
 2607:2140::/26 Deny Bogon
-2607:2180::/25 Deny Bogon
+2607:2190::/28 Deny Bogon
+2607:21a0::/27 Deny Bogon
+2607:21c0::/26 Deny Bogon
 2607:2210::/28 Deny Bogon
 2607:2220::/27 Deny Bogon
 2607:2240::/26 Deny Bogon
-2607:2280::/25 Deny Bogon
+2607:2290::/28 Deny Bogon
+2607:22a0::/27 Deny Bogon
+2607:22c0::/26 Deny Bogon
 2607:2310::/28 Deny Bogon
 2607:2320::/27 Deny Bogon
 2607:2340::/26 Deny Bogon
-2607:2380::/25 Deny Bogon
+2607:2390::/28 Deny Bogon
+2607:23a0::/27 Deny Bogon
+2607:23c0::/26 Deny Bogon
 2607:2410::/28 Deny Bogon
 2607:2420::/27 Deny Bogon
 2607:2440::/26 Deny Bogon
-2607:2480::/25 Deny Bogon
+2607:2490::/28 Deny Bogon
+2607:24a0::/27 Deny Bogon
+2607:24c0::/26 Deny Bogon
 2607:2510::/28 Deny Bogon
 2607:2520::/27 Deny Bogon
 2607:2540::/26 Deny Bogon
-2607:2580::/25 Deny Bogon
+2607:2590::/28 Deny Bogon
+2607:25a0::/27 Deny Bogon
+2607:25c0::/26 Deny Bogon
 2607:2610::/28 Deny Bogon
 2607:2620::/27 Deny Bogon
 2607:2640::/26 Deny Bogon
@@ -39416,7 +39482,16 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:24:8800::/37 Deny Bogon
 2620:24:9000::/36 Deny Bogon
 2620:24:a000::/35 Deny Bogon
-2620:24:c000::/34 Deny Bogon
+2620:24:c000::/42 Deny Bogon
+2620:24:c050::/44 Deny Bogon
+2620:24:c060::/43 Deny Bogon
+2620:24:c080::/41 Deny Bogon
+2620:24:c100::/40 Deny Bogon
+2620:24:c200::/39 Deny Bogon
+2620:24:c400::/38 Deny Bogon
+2620:24:c800::/37 Deny Bogon
+2620:24:d000::/36 Deny Bogon
+2620:24:e000::/35 Deny Bogon
 2620:25:10::/44 Deny Bogon
 2620:25:20::/43 Deny Bogon
 2620:25:40::/42 Deny Bogon
@@ -39511,7 +39586,16 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:27:8800::/37 Deny Bogon
 2620:27:9000::/36 Deny Bogon
 2620:27:a000::/35 Deny Bogon
-2620:27:c000::/34 Deny Bogon
+2620:27:c000::/42 Deny Bogon
+2620:27:c050::/44 Deny Bogon
+2620:27:c060::/43 Deny Bogon
+2620:27:c080::/41 Deny Bogon
+2620:27:c100::/40 Deny Bogon
+2620:27:c200::/39 Deny Bogon
+2620:27:c400::/38 Deny Bogon
+2620:27:c800::/37 Deny Bogon
+2620:27:d000::/36 Deny Bogon
+2620:27:e000::/35 Deny Bogon
 2620:28:10::/44 Deny Bogon
 2620:28:20::/43 Deny Bogon
 2620:28:40::/42 Deny Bogon
@@ -42269,7 +42353,16 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:74:800::/37 Deny Bogon
 2620:74:1000::/36 Deny Bogon
 2620:74:2000::/35 Deny Bogon
-2620:74:4000::/34 Deny Bogon
+2620:74:4000::/41 Deny Bogon
+2620:74:4080::/42 Deny Bogon
+2620:74:40d0::/44 Deny Bogon
+2620:74:40e0::/43 Deny Bogon
+2620:74:4100::/40 Deny Bogon
+2620:74:4200::/39 Deny Bogon
+2620:74:4400::/38 Deny Bogon
+2620:74:4800::/37 Deny Bogon
+2620:74:5000::/36 Deny Bogon
+2620:74:6000::/35 Deny Bogon
 2620:74:8000::/41 Deny Bogon
 2620:74:8090::/44 Deny Bogon
 2620:74:80a0::/43 Deny Bogon
@@ -49226,7 +49319,10 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:126:4200::/39 Deny Bogon
 2620:126:4400::/38 Deny Bogon
 2620:126:4800::/37 Deny Bogon
-2620:126:6000::/35 Deny Bogon
+2620:126:7100::/40 Deny Bogon
+2620:126:7200::/39 Deny Bogon
+2620:126:7400::/38 Deny Bogon
+2620:126:7800::/37 Deny Bogon
 2620:126:8000::/33 Deny Bogon
 2620:127::/32 Deny Bogon
 2620:128::/29 Deny Bogon
@@ -49244,7 +49340,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2620:143:4000::/34 Deny Bogon
 2620:143:8000::/33 Deny Bogon
 2620:17d::/32 Deny Bogon
-2620:1d9::/32 Deny Bogon
 2620:1da::/31 Deny Bogon
 2620:1dc::/30 Deny Bogon
 2800::/29 Deny Bogon
@@ -51834,7 +51929,10 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2801:80:16e2::/47 Deny Bogon
 2801:80:16e4::/46 Deny Bogon
 2801:80:16e8::/45 Deny Bogon
-2801:80:16f0::/44 Deny Bogon
+2801:80:16f1::/48 Deny Bogon
+2801:80:16f2::/47 Deny Bogon
+2801:80:16f4::/46 Deny Bogon
+2801:80:16f8::/45 Deny Bogon
 2801:80:1800::/37 Deny Bogon
 2801:80:2000::/35 Deny Bogon
 2801:80:4000::/34 Deny Bogon
@@ -59954,8 +60052,25 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2804:2f72::/31 Deny Bogon
 2804:2f75::/32 Deny Bogon
 2804:2f76::/31 Deny Bogon
-2804:2f78::/29 Deny Bogon
-2804:2f80::/25 Deny Bogon
+2804:2f79::/32 Deny Bogon
+2804:2f7a::/31 Deny Bogon
+2804:2f7d::/32 Deny Bogon
+2804:2f7e::/31 Deny Bogon
+2804:2f81::/32 Deny Bogon
+2804:2f82::/31 Deny Bogon
+2804:2f85::/32 Deny Bogon
+2804:2f86::/31 Deny Bogon
+2804:2f89::/32 Deny Bogon
+2804:2f8a::/31 Deny Bogon
+2804:2f8d::/32 Deny Bogon
+2804:2f8e::/31 Deny Bogon
+2804:2f91::/32 Deny Bogon
+2804:2f92::/31 Deny Bogon
+2804:2f95::/32 Deny Bogon
+2804:2f96::/31 Deny Bogon
+2804:2f98::/29 Deny Bogon
+2804:2fa0::/27 Deny Bogon
+2804:2fc0::/26 Deny Bogon
 2804:3000::/20 Deny Bogon
 2804:4000::/18 Deny Bogon
 2804:8000::/17 Deny Bogon
@@ -61456,8 +61571,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a00:98d0::/28 Deny Bogon
 2a00:98e8::/29 Deny Bogon
 2a00:98f0::/28 Deny Bogon
-2a00:9908::/29 Deny Bogon
-2a00:9910::/28 Deny Bogon
 2a00:9948::/29 Deny Bogon
 2a00:9950::/28 Deny Bogon
 2a00:9968::/29 Deny Bogon
@@ -65638,8 +65751,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a02:6b70::/28 Deny Bogon
 2a02:6b88::/29 Deny Bogon
 2a02:6b90::/28 Deny Bogon
-2a02:6ba8::/29 Deny Bogon
-2a02:6bb0::/28 Deny Bogon
 2a02:6bc8::/29 Deny Bogon
 2a02:6bd0::/28 Deny Bogon
 2a02:6be8::/29 Deny Bogon
@@ -69178,9 +69289,6 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a03:e808::/29 Deny Bogon
 2a03:e810::/28 Deny Bogon
 2a03:e820::/27 Deny Bogon
-2a03:e848::/29 Deny Bogon
-2a03:e850::/28 Deny Bogon
-2a03:e860::/27 Deny Bogon
 2a03:e888::/29 Deny Bogon
 2a03:e890::/28 Deny Bogon
 2a03:e8a0::/27 Deny Bogon
@@ -69463,8 +69571,7 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:4180::/25 Deny Bogon
-2a07:4200::/23 Deny Bogon
+2a07:4300::/24 Deny Bogon
 2a07:4400::/22 Deny Bogon
 2a07:4800::/21 Deny Bogon
 2a07:5000::/20 Deny Bogon
@@ -69493,5 +69600,3 @@ Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 2c0f:ff38::/29 Deny Bogon
 4000::/2 Deny Bogon
 8000::/1 Deny Bogon
-
-EOF

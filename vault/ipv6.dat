@@ -10,11 +10,11 @@
 # https://www.stopforumspam.com/aggregate
 # - Useful aggregation tool for IPv4 IPs.
 
-# https://www.google.com/transparencyreport/safebrowsing/malware/
-# - Google Malware Dashboard; Useful for checking the cleanliness of ASNs and for checking for the presence of malware.
-
 # https://radar.qrator.net/as%Num%
 # - Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.
+
+# http://macmathan.info/zbblock-range-blocks
+# - Some fantastic additional blocklists provided by MacMathan that can be used with CIDRAM and/or ZB Block.
 
 # http://www.ipdeny.com/ipblocks/
 # - A fantastic and accurate service for generating country-wide signatures. They maintain lists of CIDRs based upon
@@ -35,31 +35,50 @@
 
 # ---
 # WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
+# https://www.google.com/transparencyreport/safebrowsing/malware/
 # Updated: 2016.03.20 (statistics account for scanning by Google from 1 year up until the cited update date).
 
-# RANK    ASN    AS                   RATE    INCLUDED IN HERE?   RANK SHIFT (SINCE LAST UPDATE)
-#  1       46844 Sharktech            43.44%  Yes (> 0.1.2)       NA
-#  2       35916 Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
-#  3       38197 Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
-#  4       32097 WholeSale Internet   22.89%  Yes (all versions)  NA
-#  5       26658 HT                   19.52%  Yes (> 0.1.2)       NA
-#  6       17139 Corporate Colocation 17.37%  Yes (all versions)  NA
-#  7       62468 VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
-#  8      133618 Trellian Pty. Ltd.   15.38%  Yes (> 0.1.2)       NA
-#  9       33387 DataShack, LC        13.46%  Yes (all versions)  NA
-# 10       16138 INTERIA              12.37%  Yes (> 0.1.2)       NA
-# 11       58879 ShangHai AnchNet Tec 12.23%  Yes (> 0.1.2)       NA
-# 12       35908 Krypt Technologies   10.97%  Yes (all versions)  NA
-# 13        7497 CST-NET              10.49%  Yes (> 0.1.2)       NA
-# 14       20248 Take 2 Hosting, Inc. 10.05%  Yes (> 0.1.2)       NA
-# 15       46573 Global Frag Networks 10.02%  Yes (> 0.1.2)       NA
-# 16       54600 PEG TECH INC          9.95%  Yes (all versions)  NA
-# 17       40676 Psychz Networks       8.79%  Yes (all versions)  NA
-# 18      133731 Royal Network Tech.   8.70%  Yes (> 0.1.2)       NA
-# 19       38277 CommuniLink Internet  8.55%  Yes (> 0.1.2)       NA
-# 20      134121 Rainbow Network Ltd   7.83%  Yes (> 0.1.2)       NA
+#   RANK     ASN    AS                      RATE    INCLUDED IN HERE?   RANK SHIFT†
+#      1   46844    Sharktech             43.44%    Yes (> 0.1.2)       NA
+#      2   35916    Multacom Corp.        42.64%    Yes (> 0.1.2)       NA
+#      3   38197    Sun Network (H.K.)    26.09%    Yes (> 0.1.2)       NA
+#      4   32097    WholeSale Internet    22.89%    Yes (all versions)  NA
+#      5   26658    HT                    19.52%    Yes (> 0.1.2)       NA
+#      6   17139    Corporate Colocation  17.37%    Yes (all versions)  NA
+#      7   62468    VpsQuan LLC.          15.46%    Yes (> 0.1.2)       NA
+#      8  133618    Trellian Pty. Ltd.    15.38%    Yes (> 0.1.2)       NA
+#      9   33387    DataShack, LC         13.46%    Yes (all versions)  NA
+#     10   16138    INTERIA               12.37%    Yes (> 0.1.2)       NA
+#     11   58879    ShangHai AnchNet Tec  12.23%    Yes (> 0.1.2)       NA
+#     12   35908    Krypt Technologies    10.97%    Yes (all versions)  NA
+#     13    7497    CST-NET               10.49%    Yes (> 0.1.2)       NA
+#     14   20248    Take 2 Hosting, Inc.  10.05%    Yes (> 0.1.2)       NA
+#     15   46573    Global Frag Networks  10.02%    Yes (> 0.1.2)       NA
+#     16   54600    PEG TECH INC           9.95%    Yes (all versions)  NA
+#     17   40676    Psychz Networks        8.79%    Yes (all versions)  NA
+#     18  133731    Royal Network Tech.    8.70%    Yes (> 0.1.2)       NA
+#     19   38277    CommuniLink Internet   8.55%    Yes (> 0.1.2)       NA
+#     20  134121    Rainbow Network Ltd    7.83%    Yes (> 0.1.2)       NA
 
+# THE WORLD's WORST BOTNET ASNs, ACCORDING TO SPAMHAUS.ORG's BOTNET ASNs LIST
+# https://www.spamhaus.org/statistics/botnet-asn/
+# Updated: 2016.03.31
 
+#   RANK     ASN    AS            No. of BOTNETS  SATURATION†   INCLUDED IN HERE?   RANK SHIFT†
+#      1    9829    BSNL                 608,019      10.19%    Pending†            NA
+#      2   45899    VNPT Corp            595,733      13.05%    Pending†            NA
+#      3    4134    China Tel. Backbone  464,928       0.40%    No                  NA
+#      4   17974    PT Tel. Indonesia    292,654       7.81%    Pending†            NA
+#      5   45595    Pakistan Telecom     219,498       5.88%    Yes (all versions)  NA
+#      6   24560    Bharti Airtel        197,757      10.35%    Pending†            NA
+#      7    7552    Viettel Corporation  195,178       4.43%    Pending†            NA
+#      8    4837    China Uni. Backbone  146,415       0.26%    No                  NA
+#      9   18403    CFPT                 135,706       4.25%    Pending†            NA
+#     10    3462    DCBG                 121,584       0.99%    No                  NA
+
+# RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
+# SATURATION† = (No. of BOTNETS / IPs ORIGINATED) * 100
+# Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
 
 # ---
 # INCLUDED DEFAULT IPV6 SIGNATURES ARE BELOW THIS LINE.
@@ -1119,82 +1138,68 @@ Tag: DataWagon LLC
 Tag: WorldStream
 
 
-# -- FROM HERE --
-# "Choopa, LLC"
-# ASN 11508, 20473, 46407, 133795.
-# Updated: 2016.02.27
+# ASN 20473 ("Choopa, LLC").
+# Infected by malware (as per reported by Google): 0.07%.
+# Updated: 2016.03.31
 
-2001:19f0::/38 Deny Generic
-2001:19f0:200:461e::/64 Deny Generic
-2001:19f0:300:1704::/64 Deny Generic
-2001:19f0:a06::/48 Deny Generic
-2001:19f0:ccc::/48 Deny Generic
-2001:19f0:ccd::/48 Deny Generic
-2001:19f0:1000::/38 Deny Generic
-2001:19f0:1400::/38 Deny Generic
-2001:19f0:1568:41b3::/64 Deny Generic
-2001:19f0:4000::/38 Deny Generic
-2001:19f0:5000::/38 Deny Generic
-2001:19f0:5400::/38 Deny Generic
-2001:19f0:5800::/38 Deny Generic
-2001:19f0:5c00::/38 Deny Generic
-2001:19f0:6000::/38 Deny Generic
-2001:19f0:6400::/38 Deny Generic
-2001:19f0:6800::/38 Deny Generic
-2001:19f0:6c00::/38 Deny Generic
-2001:19f0:7000::/38 Deny Generic
-2001:19f0:7400::/48 Deny Generic
-2001:19f0:7401::/48 Deny Generic
-2001:19f0:7800::/38 Deny Generic
-2001:19f0:8000::/38 Deny Generic
-2001:19f0:8800::/38 Deny Generic
-2001:19f0:9000::/38 Deny Generic
-2001:19f0:9400::/38 Deny Generic
-2001:19f0:a800::/38 Deny Generic
-2001:19f0:ac00::/38 Deny Generic
-2001:19f0:ac00::/48 Deny Generic
-2402:d581::/32 Deny Generic
-2602:ffb0:5::/48 Deny Generic
-2602:ffb0:6::/48 Deny Generic
-2602:ffb0:7::/48 Deny Generic
-2602:ffb0:8::/48 Deny Generic
-2602:ffb0:9::/48 Deny Generic
-2602:ffb0:13::/48 Deny Generic
-2602:ffb0:14::/48 Deny Generic
-2602:ffb0:15::/48 Deny Generic
-2602:ffb0:16::/48 Deny Generic
-2602:ffb0:17::/48 Deny Generic
-2602:ffe5:800::/40 Deny Generic
-2602:fff6:4::/48 Deny Generic
-2605:9880::/38 Deny Generic
-2605:9880:400::/38 Deny Generic
+2001:19f0::/38 Deny Cloud
+2001:19f0:a06::/48 Deny Cloud
+2001:19f0:ccc::/47 Deny Cloud
+2001:19f0:1000::/37 Deny Cloud
+2001:19f0:4000::/38 Deny Cloud
+2001:19f0:5000::/36 Deny Cloud
+2001:19f0:6000::/36 Deny Cloud
+2001:19f0:7000::/37 Deny Cloud
+2001:19f0:7800::/38 Deny Cloud
+2001:19f0:8000::/38 Deny Cloud
+2001:19f0:8800::/38 Deny Cloud
+2001:19f0:9000::/37 Deny Cloud
+2001:19f0:a800::/37 Deny Cloud
+2402:d581::/32 Deny Cloud
+2602:ff71::/48 Deny Cloud
+2602:ffb0:5::/48 Deny Cloud
+2602:ffb0:6::/47 Deny Cloud
+2602:ffb0:8::/47 Deny Cloud
+2602:ffb0:13::/48 Deny Cloud
+2602:ffb0:14::/46 Deny Cloud
+2602:ffe5:800::/40 Deny Cloud
+2602:fff6:4::/48 Deny Cloud
+2605:9880::/37 Deny Cloud
+Tag: Choopa, LLC
 
 
-# "UOL DIVEO S.A."
-# ASN 7162.
+# ASN 7162 ("UOL DIVEO S.A.").
 # Infected by malware (as per reported by Google): 0.91%.
 # Updated: 2016.01.23 / Checked: 2016.03.20
 
 2804:49c::/32 Deny Generic
+Tag: UOL DIVEO S.A.
 
 
-# "RAM Host", "Total Server Solutions L.L.C."
-# ASN 46562, 53841.
-# Updated: 2016.03.10
+# ASN 46562 ("Total Server Solutions L.L.C.").
+# Infected by malware (as per reported by Google): 1.23%.
+# Updated: 2016.03.31
 
 2602:fff6:5::/48 Deny Cloud
 2604:2880::/48 Deny Cloud
-2605:8900::/32 Deny Cloud
 2607:f7a0:1::/48 Deny Cloud
 2607:f7a0:3::/48 Deny Cloud
-2607:f7a0:6::/48 Deny Cloud
-2607:f7a0:7::/48 Deny Cloud
+2607:f7a0:6::/47 Deny Cloud
 2607:f7a0:8::/48 Deny Cloud
 2607:f7a0:a::/48 Deny Cloud
+Tag: AS46562
 
 
-# "Init7"
-# ASN 13030.
+# ASN 53841 ("RAM Host").
+# Infected by malware (as per reported by Google): 14.10%.
+# Updated: 2016.03.31
+
+2605:8900::/32 Deny Cloud
+Tag: RAM Host
+
+
+# ASN 13030 ("Init7").
+# Infected by malware (as per reported by Google): 0.33%.
 # Updated: 2016.01.18 / Checked: 2016.03.07
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 
@@ -1208,45 +1213,49 @@ Tag: WorldStream
 2a02:16a0::/32 Deny Generic
 2a03:7520::/32 Deny Generic
 2a05:36c0::/29 Deny Generic
+Tag: Init7
 
 
-# "K SERVERS LTD"
-# ASN 14576.
+# ASN 14576 ("K SERVERS LTD").
+# Infected by malware (as per reported by Google): 0.77%.
 # Updated: 2016.01.23 / Checked: 2016.03.10
 
 2606:5e00::/32 Deny Generic
 2a06:2e80::/29 Deny Generic
+Tag: K SERVERS LTD
 
 
-# "Enzu Inc"
-# ASN 18978.
+# ASN 18978 ("Enzu Inc").
+# Infected by malware (as per reported by Google): 5.65%.
 # Updated: 2016.03.10
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
-2605:f700:42::/48 Deny Cloud
 2605:f700:80::/44 Deny Cloud
 2605:f700:c0::/44 Deny Cloud
 2605:f700:100::/44 Deny Cloud
 2605:f700:140::/42 Deny Cloud
 2605:f700:180::/42 Deny Cloud
 2605:f700:400::/38 Deny Cloud
+Tag: Enzu Inc
 
 
-# "EGIHosting"
-# ASN 18779.
+# ASN 18779 ("EGIHosting").
+# Infected by malware (as per reported by Google): 2.54%.
 # Updated: 2016.01.25 / Checked: 2016.03.10
 
 2604:4f00::/36 Deny Cloud
 2607:f358::/32 Deny Cloud
 2607:f940:365::/48 Deny Cloud
+Tag: EGIHosting
 
 
-# "Hosting Solutions International, Inc."
-# ASN 30083.
+# ASN 30083 ("Hosting Solutions International, Inc.").
+# Infected by malware (as per reported by Google): 0.55%.
 # Updated: 2016.01.25 / Checked: 2016.03.10
 
 2605:de00::/32 Deny Cloud
+Tag: AS30083
 
 
 # "ONLINE S.A.S."
@@ -1261,6 +1270,8 @@ Tag: WorldStream
 # "High Point Host", "Lunanode Hosting Inc.", "Pleasant Hosting", "Power Up Hosting, Inc.",
 # "Rica Costa Hosting RCH, S.A.", "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may
 # change as time passes, and may need continual adjustments in the future). Updated: 2016.02.05
+
+# Infected by malware (as per reported by Google): 0.85%.
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
 # attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
@@ -1350,60 +1361,67 @@ Tag: WorldStream
 2001:49f0:d040::/48 Deny Cloud
 2602:ffb6::/36 Deny Cloud
 2a01:8640:4::/48 Deny Cloud
+Tag: Cogent
 
 
-# "FORTUNIX NETWORKS L.P."
-# ASN 59711.
+# ASN 59711 ("FORTUNIX NETWORKS L.P.").
+# Infected by malware (as per reported by Google): 3.06%.
 # Updated: 2016.02.10
 
 2a01:8640::/48 Deny Cloud
 2a01:8640:2::/48 Deny Cloud
+Tag: FORTUNIX NETWORKS
 
 
-# "Micfo, LLC." and "Contina"
-# ASN 53889, 63008.
-# Updated: 2016.02.11
+# ASN 53889 ("Micfo, LLC.").
+# Infected by malware (as per reported by Google): 1.99%.
+# Updated: 2016.03.31
 
 2605:3e80::/32 Deny Cloud
+Tag: Micfo, LLC.
 
 
-# "Krypt Technologies"
-# ASN 35908.
+# ASN 35908 ("Krypt Technologies").
 # Infected by malware (as per reported by Google): 10.97%.
 # Updated: 2016.02.27 / Checked: 2016.03.20
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
 
 2607:f180::/31 Deny Generic
+Tag: Krypt Technologies
 
 
-# "Continuum Data Centers, LLC."
-# ASN 53264.
+# ASN 53264 ("Continuum Data Centers, LLC.").
+# Infected by malware (as per reported by Google): 1.22%.
 # Updated: 2016.03.02
 
 2605:a880:8000::/48 Deny Cloud
 2607:ff50::/32 Deny Cloud
+Tag: Continuum
 
 
-# "Contabo GmbH"
-# ASN 51167.
+# ASN 51167 ("Contabo GmbH").
+# Infected by malware (as per reported by Google): 0.25%.
 # Updated: 2016.03.10
 
 2a02:c200::/32 Deny Cloud
+Tag: Contabo GmbH
 
 
-# "ESDS Software Solution"
-# ASN 45815.
+# ASN 45815 ("ESDS Software Solution").
+# Infected by malware (as per reported by Google): 2.24%.
 # Updated: 2016.03.10
 
 2400:5300::/48 Deny Cloud
+Tag: ESDS
 
 
-# "AltusHost B.V."
-# ASN 51430.
+# ASN 51430 ("AltusHost B.V.").
+# Infected by malware (as per reported by Google): 0.94%.
 # Updated: 2016.03.10
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
+Tag: AltusHost B.V.
 
 
 # "Akamai Technologies"
@@ -1438,8 +1456,8 @@ Tag: WorldStream
 2001:418:1456:200::/56 Deny Cloud
 2001:418:1c01:1::/64 Deny Cloud
 2001:418:2003::/48 Deny Cloud
-2001:418:3801:100::/56 Deny Cloud
 2001:418:3801:3::/64 Deny Cloud
+2001:418:3801:100::/56 Deny Cloud
 2001:418:5403::/48 Deny Cloud
 2001:418:5c03::/48 Deny Cloud
 2001:418:8001:3::/64 Deny Cloud
@@ -1453,35 +1471,69 @@ Tag: WorldStream
 2001:428:4c03::/48 Deny Cloud
 2001:428:7006::/48 Deny Cloud
 2001:428:7008::/48 Deny Cloud
-2001:4878:102::/48 Deny Cloud
+2001:559:10::/48 Deny Cloud
+2001:590:1001::/48 Deny Cloud
+2001:590:1003::/48 Deny Cloud
+2001:590:1006::/48 Deny Cloud
+2001:590:1403::/48 Deny Cloud
+2001:590:1801::/48 Deny Cloud
+2001:590:2004::/48 Deny Cloud
+2001:590:3401::/48 Deny Cloud
+2001:590:3c01::/48 Deny Cloud
+2001:728:1801:1::/64 Deny Cloud
+2001:728:2003::/48 Deny Cloud
+2001:728:2805:100::/56 Deny Cloud
+2001:728:2805:200::/56 Deny Cloud
+2001:728:2805:300::/56 Deny Cloud
+2001:728:3401::/64 Deny Cloud
+2001:4878::/47 Deny Cloud
+2001:4878:3::/48 Deny Cloud
+2001:4878:6::/47 Deny Cloud
+2001:4878:8::/47 Deny Cloud
 2001:4878:10::/48 Deny Cloud
+2001:4878:26::/48 Deny Cloud
+2001:4878:27::/48 Deny Cloud
+2001:4878:33::/48 Deny Cloud
+2001:4878:34::/48 Deny Cloud
+2001:4878:37::/48 Deny Cloud
+2001:4878:38::/48 Deny Cloud
+2001:4878:39::/48 Deny Cloud
+2001:4878:45::/48 Deny Cloud
+2001:4878:102::/48 Deny Cloud
 2001:4878:129::/48 Deny Cloud
 2001:4878:136::/48 Deny Cloud
-2001:4878:1::/48 Deny Cloud
 2001:4878:1e0::/44 Deny Cloud
+2001:4878:204::/48 Deny Cloud
+2001:4878:216::/47 Deny Cloud
+2001:4878:219::/48 Deny Cloud
+2001:4878:220::/48 Deny Cloud
+2001:4878:225::/48 Deny Cloud
+2001:4878:228::/48 Deny Cloud
+2001:4878:230::/48 Deny Cloud
+2001:4878:234::/48 Deny Cloud
+2001:4878:242::/48 Deny Cloud
+2001:4878:246::/48 Deny Cloud
+2001:4878:305::/48 Deny Cloud
+2001:4878:321::/48 Deny Cloud
+2001:4878:322::/47 Deny Cloud
+2001:4878:344::/48 Deny Cloud
+2001:4878:347::/48 Deny Cloud
+2001:4878:348::/48 Deny Cloud
 2001:4878:2000::/48 Deny Cloud
-2001:4878:2006::/48 Deny Cloud
-2001:4878:2007::/48 Deny Cloud
-2001:4878:2008::/48 Deny Cloud
-2001:4878:2009::/48 Deny Cloud
+2001:4878:2006::/47 Deny Cloud
+2001:4878:2008::/47 Deny Cloud
 2001:4878:2010::/48 Deny Cloud
-2001:4878:2026::/48 Deny Cloud
-2001:4878:2027::/48 Deny Cloud
+2001:4878:2026::/47 Deny Cloud
 2001:4878:2033::/48 Deny Cloud
 2001:4878:2034::/48 Deny Cloud
 2001:4878:2037::/48 Deny Cloud
 2001:4878:2038::/48 Deny Cloud
 2001:4878:2045::/48 Deny Cloud
-2001:4878:204::/48 Deny Cloud
 2001:4878:2102::/48 Deny Cloud
 2001:4878:2129::/48 Deny Cloud
 2001:4878:2136::/48 Deny Cloud
-2001:4878:216::/48 Deny Cloud
-2001:4878:217::/48 Deny Cloud
-2001:4878:219::/48 Deny Cloud
 2001:4878:21e0::/44 Deny Cloud
 2001:4878:2204::/48 Deny Cloud
-2001:4878:220::/48 Deny Cloud
 2001:4878:2216::/48 Deny Cloud
 2001:4878:2217::/48 Deny Cloud
 2001:4878:2219::/48 Deny Cloud
@@ -1492,34 +1544,13 @@ Tag: WorldStream
 2001:4878:2234::/48 Deny Cloud
 2001:4878:2242::/48 Deny Cloud
 2001:4878:2246::/48 Deny Cloud
-2001:4878:225::/48 Deny Cloud
-2001:4878:228::/48 Deny Cloud
 2001:4878:2305::/48 Deny Cloud
-2001:4878:230::/48 Deny Cloud
 2001:4878:2321::/48 Deny Cloud
 2001:4878:2322::/48 Deny Cloud
 2001:4878:2323::/48 Deny Cloud
 2001:4878:2344::/48 Deny Cloud
 2001:4878:2347::/48 Deny Cloud
 2001:4878:2348::/48 Deny Cloud
-2001:4878:234::/48 Deny Cloud
-2001:4878:242::/48 Deny Cloud
-2001:4878:246::/48 Deny Cloud
-2001:4878:26::/48 Deny Cloud
-2001:4878:27::/48 Deny Cloud
-2001:4878:305::/48 Deny Cloud
-2001:4878:321::/48 Deny Cloud
-2001:4878:322::/48 Deny Cloud
-2001:4878:323::/48 Deny Cloud
-2001:4878:33::/48 Deny Cloud
-2001:4878:344::/48 Deny Cloud
-2001:4878:347::/48 Deny Cloud
-2001:4878:348::/48 Deny Cloud
-2001:4878:34::/48 Deny Cloud
-2001:4878:37::/48 Deny Cloud
-2001:4878:38::/48 Deny Cloud
-2001:4878:39::/48 Deny Cloud
-2001:4878:3::/48 Deny Cloud
 2001:4878:4000::/47 Deny Cloud
 2001:4878:4003::/48 Deny Cloud
 2001:4878:4007::/48 Deny Cloud
@@ -1552,8 +1583,6 @@ Tag: WorldStream
 2001:4878:4344::/48 Deny Cloud
 2001:4878:4347::/48 Deny Cloud
 2001:4878:4348::/48 Deny Cloud
-2001:4878:45::/48 Deny Cloud
-2001:4878:6::/47 Deny Cloud
 2001:4878:8000::/48 Deny Cloud
 2001:4878:8006::/47 Deny Cloud
 2001:4878:8008::/47 Deny Cloud
@@ -1585,8 +1614,6 @@ Tag: WorldStream
 2001:4878:8344::/48 Deny Cloud
 2001:4878:8347::/48 Deny Cloud
 2001:4878:8348::/48 Deny Cloud
-2001:4878:8::/47 Deny Cloud
-2001:4878::/48 Deny Cloud
 2001:4878:a000::/48 Deny Cloud
 2001:4878:a246::/48 Deny Cloud
 2001:4878:a305::/48 Deny Cloud
@@ -1617,31 +1644,15 @@ Tag: WorldStream
 2001:4878:c321::/48 Deny Cloud
 2001:4878:c322::/47 Deny Cloud
 2001:4878:c347::/47 Deny Cloud
-2001:559:10::/48 Deny Cloud
-2001:590:1001::/48 Deny Cloud
-2001:590:1003::/48 Deny Cloud
-2001:590:1006::/48 Deny Cloud
-2001:590:1403::/48 Deny Cloud
-2001:590:1801::/48 Deny Cloud
-2001:590:2004::/48 Deny Cloud
-2001:590:3401::/48 Deny Cloud
-2001:590:3c01::/48 Deny Cloud
-2001:728:1801:1::/64 Deny Cloud
-2001:728:2003::/48 Deny Cloud
-2001:728:2805:100::/56 Deny Cloud
-2001:728:2805:200::/56 Deny Cloud
-2001:728:2805:300::/56 Deny Cloud
-2001:728:3401::/64 Deny Cloud
+2404:4e00::/47 Deny Cloud
 2404:4e00:100::/47 Deny Cloud
-2404:4e00:1::/48 Deny Cloud
-2404:4e00::/48 Deny Cloud
 2404:c800:8203::/48 Deny Cloud
 2406:3000:35::/48 Deny Cloud
-2600:1400:10::/47 Deny Cloud
 2600:1400:4::/47 Deny Cloud
 2600:1400:6::/48 Deny Cloud
 2600:1400:a::/48 Deny Cloud
 2600:1400:d::/48 Deny Cloud
+2600:1400:10::/47 Deny Cloud
 2600:1401:1::/48 Deny Cloud
 2600:1401:2::/47 Deny Cloud
 2600:1401:5::/48 Deny Cloud
@@ -1681,16 +1692,13 @@ Tag: WorldStream
 2600:1405:6::/48 Deny Cloud
 2600:1405:8::/48 Deny Cloud
 2600:1406:3::/48 Deny Cloud
-2600:1406:6::/48 Deny Cloud
-2600:1406:7::/48 Deny Cloud
+2600:1406:6::/47 Deny Cloud
 2600:1406:9::/48 Deny Cloud
-2600:1406:a::/48 Deny Cloud
-2600:1406:b::/48 Deny Cloud
+2600:1406:a::/47 Deny Cloud
 2600:1406:d::/48 Deny Cloud
 2600:1406:f::/48 Deny Cloud
 2600:1406:10::/48 Deny Cloud
-2600:1406:12::/48 Deny Cloud
-2600:1406:13::/48 Deny Cloud
+2600:1406:12::/47 Deny Cloud
 2600:1406:19::/48 Deny Cloud
 2600:1406:1a::/47 Deny Cloud
 2600:1406:1c::/47 Deny Cloud
@@ -1710,31 +1718,20 @@ Tag: WorldStream
 2600:1406:43::/48 Deny Cloud
 2600:1406:45::/48 Deny Cloud
 2600:1406:47::/48 Deny Cloud
-2600:1407:10::/48 Deny Cloud
-2600:1407:11::/48 Deny Cloud
-2600:1407:12::/48 Deny Cloud
-2600:1407:13::/48 Deny Cloud
-2600:1407:14::/48 Deny Cloud
-2600:1407:15::/48 Deny Cloud
-2600:1407:16::/48 Deny Cloud
-2600:1407:17::/48 Deny Cloud
-2600:1407:18::/46 Deny Cloud
-2600:1407:1d::/48 Deny Cloud
-2600:1407:1e::/47 Deny Cloud
-2600:1407:20::/46 Deny Cloud
-2600:1407:24::/48 Deny Cloud
 2600:1407:3::/48 Deny Cloud
 2600:1407:4::/47 Deny Cloud
 2600:1407:9::/48 Deny Cloud
 2600:1407:a::/47 Deny Cloud
 2600:1407:c::/46 Deny Cloud
-2600:1408:4::/48 Deny Cloud
-2600:1408:5::/48 Deny Cloud
-2600:1408:6::/48 Deny Cloud
-2600:1408:7::/48 Deny Cloud
+2600:1407:10::/45 Deny Cloud
+2600:1407:18::/46 Deny Cloud
+2600:1407:1d::/48 Deny Cloud
+2600:1407:1e::/47 Deny Cloud
+2600:1407:20::/46 Deny Cloud
+2600:1407:24::/48 Deny Cloud
+2600:1408:4::/46 Deny Cloud
 2600:1408:8::/48 Deny Cloud
-2600:1408:a::/48 Deny Cloud
-2600:1408:b::/48 Deny Cloud
+2600:1408:a::/47 Deny Cloud
 2600:1408:d::/48 Deny Cloud
 2600:1408:e::/48 Deny Cloud
 2600:1408:10::/48 Deny Cloud
@@ -1783,8 +1780,7 @@ Tag: WorldStream
 2600:140e:6::/48 Deny Cloud
 2600:140f:4::/46 Deny Cloud
 2600:140f:8::/47 Deny Cloud
-2600:1411::/48 Deny Cloud
-2600:1411:1::/48 Deny Cloud
+2600:1411::/47 Deny Cloud
 2600:1413:1::/48 Deny Cloud
 2600:1413:2::/48 Deny Cloud
 2600:1415:1::/48 Deny Cloud
@@ -1869,8 +1865,7 @@ Tag: WorldStream
 2600:141d::/48 Deny Cloud
 2600:141e:2::/48 Deny Cloud
 2600:141f:1::/48 Deny Cloud
-2600:1480::/48 Deny Cloud
-2600:1480:1::/48 Deny Cloud
+2600:1480::/47 Deny Cloud
 2600:1480:2::/48 Deny Cloud
 2600:1480:1000::/40 Deny Cloud
 2600:1480:2000::/40 Deny Cloud
@@ -1879,8 +1874,7 @@ Tag: WorldStream
 2600:1480:5000::/40 Deny Cloud
 2600:1480:6000::/40 Deny Cloud
 2606:6c00:2::/48 Deny Cloud
-2606:6c00:100::/48 Deny Cloud
-2606:6c00:101::/48 Deny Cloud
+2606:6c00:100::/47 Deny Cloud
 2606:6c00:102::/48 Deny Cloud
 2800:280:4000::/48 Deny Cloud
 2800:550:2a::/48 Deny Cloud
@@ -1893,6 +1887,7 @@ Tag: WorldStream
 2a02:2f0f:4::/48 Deny Cloud
 2c0f:fc00:b011::/48 Deny Cloud
 2c0f:fd58:9::/48 Deny Cloud
+Tag: Akamai Technologies
 
 
 # ---

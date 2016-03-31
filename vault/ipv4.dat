@@ -10,11 +10,11 @@
 # https://www.stopforumspam.com/aggregate
 # - Useful aggregation tool for IPv4 IPs.
 
-# https://www.google.com/transparencyreport/safebrowsing/malware/
-# - Google Malware Dashboard; Useful for checking the cleanliness of ASNs and for checking for the presence of malware.
-
 # https://radar.qrator.net/as%Num%
 # - Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.
+
+# http://macmathan.info/zbblock-range-blocks
+# - Some fantastic additional blocklists provided by MacMathan that can be used with CIDRAM and/or ZB Block.
 
 # http://www.ipdeny.com/ipblocks/
 # - A fantastic and accurate service for generating country-wide signatures. They maintain lists of CIDRs based upon
@@ -35,30 +35,50 @@
 
 # ---
 # WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
+# https://www.google.com/transparencyreport/safebrowsing/malware/
 # Updated: 2016.03.20 (statistics account for scanning by Google from 1 year up until the cited update date).
 
-# RANK    ASN    AS                   RATE    INCLUDED IN HERE?   RANK SHIFT (SINCE LAST UPDATE)
-#  1       46844 Sharktech            43.44%  Yes (> 0.1.2)       NA
-#  2       35916 Multacom Corp.       42.64%  Yes (> 0.1.2)       NA
-#  3       38197 Sun Network (H.K.)   26.09%  Yes (> 0.1.2)       NA
-#  4       32097 WholeSale Internet   22.89%  Yes (all versions)  NA
-#  5       26658 HT                   19.52%  Yes (> 0.1.2)       NA
-#  6       17139 Corporate Colocation 17.37%  Yes (all versions)  NA
-#  7       62468 VpsQuan LLC.         15.46%  Yes (> 0.1.2)       NA
-#  8      133618 Trellian Pty. Ltd.   15.38%  Yes (> 0.1.2)       NA
-#  9       33387 DataShack, LC        13.46%  Yes (all versions)  NA
-# 10       16138 INTERIA              12.37%  Yes (> 0.1.2)       NA
-# 11       58879 ShangHai AnchNet Tec 12.23%  Yes (> 0.1.2)       NA
-# 12       35908 Krypt Technologies   10.97%  Yes (all versions)  NA
-# 13        7497 CST-NET              10.49%  Yes (> 0.1.2)       NA
-# 14       20248 Take 2 Hosting, Inc. 10.05%  Yes (> 0.1.2)       NA
-# 15       46573 Global Frag Networks 10.02%  Yes (> 0.1.2)       NA
-# 16       54600 PEG TECH INC          9.95%  Yes (all versions)  NA
-# 17       40676 Psychz Networks       8.79%  Yes (all versions)  NA
-# 18      133731 Royal Network Tech.   8.70%  Yes (> 0.1.2)       NA
-# 19       38277 CommuniLink Internet  8.55%  Yes (> 0.1.2)       NA
-# 20      134121 Rainbow Network Ltd   7.83%  Yes (> 0.1.2)       NA
+#   RANK     ASN    AS                      RATE    INCLUDED IN HERE?   RANK SHIFT†
+#      1   46844    Sharktech             43.44%    Yes (> 0.1.2)       NA
+#      2   35916    Multacom Corp.        42.64%    Yes (> 0.1.2)       NA
+#      3   38197    Sun Network (H.K.)    26.09%    Yes (> 0.1.2)       NA
+#      4   32097    WholeSale Internet    22.89%    Yes (all versions)  NA
+#      5   26658    HT                    19.52%    Yes (> 0.1.2)       NA
+#      6   17139    Corporate Colocation  17.37%    Yes (all versions)  NA
+#      7   62468    VpsQuan LLC.          15.46%    Yes (> 0.1.2)       NA
+#      8  133618    Trellian Pty. Ltd.    15.38%    Yes (> 0.1.2)       NA
+#      9   33387    DataShack, LC         13.46%    Yes (all versions)  NA
+#     10   16138    INTERIA               12.37%    Yes (> 0.1.2)       NA
+#     11   58879    ShangHai AnchNet Tec  12.23%    Yes (> 0.1.2)       NA
+#     12   35908    Krypt Technologies    10.97%    Yes (all versions)  NA
+#     13    7497    CST-NET               10.49%    Yes (> 0.1.2)       NA
+#     14   20248    Take 2 Hosting, Inc.  10.05%    Yes (> 0.1.2)       NA
+#     15   46573    Global Frag Networks  10.02%    Yes (> 0.1.2)       NA
+#     16   54600    PEG TECH INC           9.95%    Yes (all versions)  NA
+#     17   40676    Psychz Networks        8.79%    Yes (all versions)  NA
+#     18  133731    Royal Network Tech.    8.70%    Yes (> 0.1.2)       NA
+#     19   38277    CommuniLink Internet   8.55%    Yes (> 0.1.2)       NA
+#     20  134121    Rainbow Network Ltd    7.83%    Yes (> 0.1.2)       NA
 
+# THE WORLD's WORST BOTNET ASNs, ACCORDING TO SPAMHAUS.ORG's BOTNET ASNs LIST
+# https://www.spamhaus.org/statistics/botnet-asn/
+# Updated: 2016.03.31
+
+#   RANK     ASN    AS            No. of BOTNETS  SATURATION†   INCLUDED IN HERE?   RANK SHIFT†
+#      1    9829    BSNL                 608,019      10.19%    Pending†            NA
+#      2   45899    VNPT Corp            595,733      13.05%    Pending†            NA
+#      3    4134    China Tel. Backbone  464,928       0.40%    No                  NA
+#      4   17974    PT Tel. Indonesia    292,654       7.81%    Pending†            NA
+#      5   45595    Pakistan Telecom     219,498       5.88%    Yes (all versions)  NA
+#      6   24560    Bharti Airtel        197,757      10.35%    Pending†            NA
+#      7    7552    Viettel Corporation  195,178       4.43%    Pending†            NA
+#      8    4837    China Uni. Backbone  146,415       0.26%    No                  NA
+#      9   18403    CFPT                 135,706       4.25%    Pending†            NA
+#     10    3462    DCBG                 121,584       0.99%    No                  NA
+
+# RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
+# SATURATION† = (No. of BOTNETS / IPs ORIGINATED) * 100
+# Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
 
 # ---
 # INCLUDED DEFAULT IPV4 SIGNATURES ARE BELOW THIS LINE.
@@ -3098,6 +3118,11 @@ Tag: Sedo Domain Parking
 
 # "Spamahost"
 # Unknown ASN (adopted from `badip.inc` of ZB Block).
+# Updated: "77g" (ZB Block Bad IPs) / Checked: 2016.03.31
+# Note: As of the last check, "Spamahost" no longer appears in any BGP tables or announces. Previously listed ranges
+# here remain somewhat suspicious, so, we'll keep them here, for now. This notice will be removed upon confirmation of
+# suspicious behaviour, or, failing that, they (the signatures) will be immediately removed from the signature files if
+# there are any problems (such as false positives) or complaints.
 
 66.96.128.0/18 Deny Spam
 83.229.128.0/17 Deny Spam
@@ -6094,177 +6119,175 @@ Tag: VolumeDrive
 Tag: WorldStream
 
 
-# -- FROM HERE --
-# "Choopa, LLC"
-# ASN 11508, 20473, 46407, 133795.
-# Updated: 2016.02.27
+# ASN 20473 ("Choopa, LLC").
+# Infected by malware (as per reported by Google): 0.07%.
+# Updated: 2016.03.31
 
-4.79.145.0/24 Deny Generic
-8.2.0.0/24 Deny Generic
-8.2.120.0/23 Deny Generic
-8.2.122.0/24 Deny Generic
-8.3.5.0/24 Deny Generic
-8.3.6.0/23 Deny Generic
-8.3.28.0/23 Deny Generic
-8.6.2.0/23 Deny Generic
-8.6.8.0/23 Deny Generic
-8.6.15.0/24 Deny Generic
-8.6.193.0/24 Deny Generic
-8.7.233.0/24 Deny Generic
-8.9.3.0/24 Deny Generic
-8.9.4.0/23 Deny Generic
-8.9.6.0/24 Deny Generic
-8.9.8.0/23 Deny Generic
-8.9.11.0/24 Deny Generic
-8.9.15.0/24 Deny Generic
-8.9.16.0/23 Deny Generic
-8.9.30.0/23 Deny Generic
-8.9.36.0/23 Deny Generic
-8.12.16.0/21 Deny Generic
-8.12.64.0/23 Deny Generic
-8.12.68.0/22 Deny Generic
-8.18.92.0/23 Deny Generic
-43.224.32.0/22 Deny Generic
-44.34.96.0/24 Deny Generic
-45.32.0.0/17 Deny Generic
-45.32.128.0/19 Deny Generic
-45.32.160.0/20 Deny Generic
-45.32.176.0/21 Deny Generic
-45.32.192.0/18 Deny Generic
-45.43.2.0/23 Deny Generic
-45.43.10.0/23 Deny Generic
-45.43.14.0/23 Deny Generic
-45.43.18.0/23 Deny Generic
-45.43.20.0/24 Deny Generic
-45.56.148.0/23 Deny Generic
-45.58.112.0/20 Deny Generic
-45.59.17.0/24 Deny Generic
-45.59.23.0/24 Deny Generic
-45.63.0.0/17 Deny Generic
-45.76.0.0/15 Deny Generic
-45.117.156.0/22 Deny Generic
-45.126.208.0/22 Deny Generic
-62.67.42.0/24 Deny Generic
-63.208.142.0/24 Deny Generic
-63.209.32.0/22 Deny Generic
-63.209.36.0/23 Deny Generic
-63.210.145.0/24 Deny Generic
-63.210.148.0/23 Deny Generic
-63.211.105.0/24 Deny Generic
-63.211.110.0/23 Deny Generic
-63.211.221.0/24 Deny Generic
-63.215.74.0/24 Deny Generic
-64.110.131.0/24 Deny Generic
-64.154.38.0/24 Deny Generic
-64.156.14.0/24 Deny Generic
-64.237.32.0/19 Deny Generic
-66.11.112.0/24 Deny Generic
-66.11.114.0/24 Deny Generic
-66.11.116.0/24 Deny Generic
-66.55.128.0/19 Deny Generic
-68.232.160.0/19 Deny Generic
-85.190.153.0/24 Deny Generic
-85.203.21.0/24 Deny Generic
-89.167.134.0/24 Deny Generic
-103.43.72.0/22 Deny Generic
-103.195.100.0/22 Deny Generic
-103.241.212.0/24 Deny Generic
-104.145.229.0/24 Deny Generic
-104.156.224.0/19 Deny Generic
-104.207.128.0/19 Deny Generic
-104.238.128.0/21 Deny Generic
-104.238.136.0/22 Deny Generic
-104.238.140.0/23 Deny Generic
-104.238.143.0/24 Deny Generic
-104.238.144.0/20 Deny Generic
-104.238.160.0/19 Deny Generic
-104.243.32.0/20 Deny Generic
-104.250.119.0/24 Deny Generic
-104.250.120.0/24 Deny Generic
-104.250.122.0/23 Deny Generic
-104.250.164.0/24 Deny Generic
-104.250.188.0/24 Deny Generic
-104.251.85.0/24 Deny Generic
-104.251.91.0/24 Deny Generic
-104.255.224.0/24 Deny Generic
-104.255.226.0/24 Deny Generic
-104.255.228.0/24 Deny Generic
-104.255.230.0/24 Deny Generic
-107.181.69.0/24 Deny Generic
-107.181.148.0/24 Deny Generic
-107.191.32.0/19 Deny Generic
-108.61.0.0/18 Deny Generic
-108.61.64.0/19 Deny Generic
-108.61.96.0/22 Deny Generic
-108.61.100.0/23 Deny Generic
-108.61.103.0/24 Deny Generic
-108.61.104.0/21 Deny Generic
-108.61.112.0/20 Deny Generic
-108.61.128.0/19 Deny Generic
-108.61.160.0/20 Deny Generic
-108.61.176.0/21 Deny Generic
-108.61.184.0/23 Deny Generic
-108.61.188.0/22 Deny Generic
-108.61.192.0/19 Deny Generic
-108.61.224.0/20 Deny Generic
-108.61.240.0/22 Deny Generic
-108.61.245.0/24 Deny Generic
-108.61.246.0/23 Deny Generic
-108.61.249.0/24 Deny Generic
-108.61.250.0/23 Deny Generic
-108.61.252.0/22 Deny Generic
-131.221.45.0/24 Deny Generic
-162.220.219.0/24 Deny Generic
-162.253.176.0/24 Deny Generic
-172.86.144.0/24 Deny Generic
-172.93.96.0/20 Deny Generic
-172.94.37.0/24 Deny Generic
-172.94.40.0/23 Deny Generic
-172.98.210.0/24 Deny Generic
-172.98.215.0/24 Deny Generic
-172.111.151.0/24 Deny Generic
-173.199.64.0/20 Deny Generic
-173.199.81.0/24 Deny Generic
-173.199.82.0/23 Deny Generic
-173.199.84.0/22 Deny Generic
-173.199.88.0/21 Deny Generic
-173.199.96.0/19 Deny Generic
-185.35.78.0/24 Deny Generic
-185.92.220.0/22 Deny Generic
-190.102.111.0/24 Deny Generic
-191.101.28.0/24 Deny Generic
-191.101.183.0/24 Deny Generic
-192.154.213.0/24 Deny Generic
-192.154.214.0/24 Deny Generic
-192.209.62.0/24 Deny Generic
-195.122.134.0/23 Deny Generic
-198.17.215.0/24 Deny Generic
-199.48.176.0/22 Deny Generic
-199.48.183.0/24 Deny Generic
-204.80.128.0/24 Deny Generic
-205.234.250.0/24 Deny Generic
-206.221.176.0/20 Deny Generic
-208.167.224.0/19 Deny Generic
-209.182.110.0/24 Deny Generic
-209.222.0.0/20 Deny Generic
-209.222.16.0/21 Deny Generic
-209.222.24.0/22 Deny Generic
-209.222.29.0/24 Deny Generic
-209.222.30.0/24 Deny Generic
-209.222.96.0/20 Deny Generic
-209.246.142.0/23 Deny Generic
-209.246.170.0/24 Deny Generic
-209.247.83.0/24 Deny Generic
-212.187.208.0/23 Deny Generic
-212.187.246.0/23 Deny Generic
-216.155.128.0/19 Deny Generic
-217.163.10.0/23 Deny Generic
-217.163.22.0/23 Deny Generic
-217.163.24.0/21 Deny Generic
+4.79.145.0/24 Deny Cloud
+8.2.0.0/24 Deny Cloud
+8.2.120.0/23 Deny Cloud
+8.2.122.0/24 Deny Cloud
+8.3.5.0/24 Deny Cloud
+8.3.6.0/23 Deny Cloud
+8.3.28.0/23 Deny Cloud
+8.6.2.0/23 Deny Cloud
+8.6.8.0/23 Deny Cloud
+8.6.15.0/24 Deny Cloud
+8.6.193.0/24 Deny Cloud
+8.7.233.0/24 Deny Cloud
+8.9.3.0/24 Deny Cloud
+8.9.4.0/23 Deny Cloud
+8.9.6.0/24 Deny Cloud
+8.9.8.0/23 Deny Cloud
+8.9.11.0/24 Deny Cloud
+8.9.15.0/24 Deny Cloud
+8.9.16.0/23 Deny Cloud
+8.9.30.0/23 Deny Cloud
+8.9.36.0/23 Deny Cloud
+8.12.16.0/21 Deny Cloud
+8.12.64.0/23 Deny Cloud
+8.12.68.0/22 Deny Cloud
+8.18.92.0/23 Deny Cloud
+43.224.32.0/22 Deny Cloud
+44.34.96.0/24 Deny Cloud
+45.32.0.0/18 Deny Cloud
+45.32.64.0/19 Deny Cloud
+45.32.128.0/17 Deny Cloud
+45.43.2.0/23 Deny Cloud
+45.43.10.0/23 Deny Cloud
+45.43.14.0/23 Deny Cloud
+45.43.18.0/23 Deny Cloud
+45.43.20.0/24 Deny Cloud
+45.56.148.0/23 Deny Cloud
+45.58.112.0/20 Deny Cloud
+45.59.17.0/24 Deny Cloud
+45.59.23.0/24 Deny Cloud
+45.63.0.0/17 Deny Cloud
+45.76.0.0/15 Deny Cloud
+45.117.156.0/22 Deny Cloud
+45.126.208.0/22 Deny Cloud
+62.67.42.0/24 Deny Cloud
+63.208.142.0/24 Deny Cloud
+63.209.32.0/22 Deny Cloud
+63.209.36.0/23 Deny Cloud
+63.210.145.0/24 Deny Cloud
+63.210.148.0/23 Deny Cloud
+63.211.105.0/24 Deny Cloud
+63.211.110.0/23 Deny Cloud
+63.211.221.0/24 Deny Cloud
+63.215.74.0/24 Deny Cloud
+64.110.131.0/24 Deny Cloud
+64.154.38.0/24 Deny Cloud
+64.156.14.0/24 Deny Cloud
+64.237.32.0/19 Deny Cloud
+66.11.112.0/24 Deny Cloud
+66.11.114.0/24 Deny Cloud
+66.11.116.0/24 Deny Cloud
+66.55.128.0/19 Deny Cloud
+68.232.160.0/19 Deny Cloud
+85.190.153.0/24 Deny Cloud
+85.203.21.0/24 Deny Cloud
+89.167.134.0/24 Deny Cloud
+103.43.72.0/22 Deny Cloud
+103.195.100.0/22 Deny Cloud
+103.241.212.0/23 Deny Cloud
+104.145.229.0/24 Deny Cloud
+104.156.224.0/19 Deny Cloud
+104.207.128.0/19 Deny Cloud
+104.238.128.0/21 Deny Cloud
+104.238.136.0/22 Deny Cloud
+104.238.140.0/23 Deny Cloud
+104.238.143.0/24 Deny Cloud
+104.238.144.0/20 Deny Cloud
+104.238.160.0/19 Deny Cloud
+104.243.32.0/20 Deny Cloud
+104.250.118.0/23 Deny Cloud
+104.250.120.0/24 Deny Cloud
+104.250.122.0/23 Deny Cloud
+104.250.164.0/24 Deny Cloud
+104.250.188.0/24 Deny Cloud
+104.251.85.0/24 Deny Cloud
+104.251.91.0/24 Deny Cloud
+104.255.224.0/24 Deny Cloud
+104.255.226.0/24 Deny Cloud
+104.255.228.0/24 Deny Cloud
+104.255.230.0/24 Deny Cloud
+107.181.69.0/24 Deny Cloud
+107.181.148.0/24 Deny Cloud
+107.191.32.0/19 Deny Cloud
+108.61.0.0/18 Deny Cloud
+108.61.64.0/19 Deny Cloud
+108.61.96.0/22 Deny Cloud
+108.61.100.0/23 Deny Cloud
+108.61.103.0/24 Deny Cloud
+108.61.104.0/21 Deny Cloud
+108.61.112.0/20 Deny Cloud
+108.61.128.0/19 Deny Cloud
+108.61.160.0/20 Deny Cloud
+108.61.176.0/21 Deny Cloud
+108.61.184.0/23 Deny Cloud
+108.61.188.0/22 Deny Cloud
+108.61.192.0/19 Deny Cloud
+108.61.224.0/20 Deny Cloud
+108.61.240.0/22 Deny Cloud
+108.61.245.0/24 Deny Cloud
+108.61.246.0/23 Deny Cloud
+108.61.249.0/24 Deny Cloud
+108.61.250.0/23 Deny Cloud
+108.61.252.0/22 Deny Cloud
+131.221.45.0/24 Deny Cloud
+162.220.219.0/24 Deny Cloud
+162.253.176.0/24 Deny Cloud
+172.86.144.0/24 Deny Cloud
+172.93.96.0/20 Deny Cloud
+172.94.37.0/24 Deny Cloud
+172.94.40.0/23 Deny Cloud
+172.98.210.0/24 Deny Cloud
+172.98.215.0/24 Deny Cloud
+172.111.151.0/24 Deny Cloud
+173.199.64.0/20 Deny Cloud
+173.199.81.0/24 Deny Cloud
+173.199.82.0/23 Deny Cloud
+173.199.84.0/22 Deny Cloud
+173.199.88.0/21 Deny Cloud
+173.199.96.0/19 Deny Cloud
+185.35.78.0/24 Deny Cloud
+185.92.220.0/22 Deny Cloud
+190.102.111.0/24 Deny Cloud
+191.101.28.0/24 Deny Cloud
+191.101.183.0/24 Deny Cloud
+192.154.213.0/24 Deny Cloud
+192.154.214.0/24 Deny Cloud
+192.209.62.0/24 Deny Cloud
+193.34.134.0/24 Deny Cloud
+195.122.134.0/23 Deny Cloud
+198.17.215.0/24 Deny Cloud
+199.48.176.0/22 Deny Cloud
+199.48.183.0/24 Deny Cloud
+204.80.128.0/24 Deny Cloud
+205.234.250.0/24 Deny Cloud
+206.221.176.0/20 Deny Cloud
+208.167.224.0/19 Deny Cloud
+209.182.110.0/24 Deny Cloud
+209.222.0.0/20 Deny Cloud
+209.222.16.0/21 Deny Cloud
+209.222.24.0/22 Deny Cloud
+209.222.29.0/24 Deny Cloud
+209.222.30.0/24 Deny Cloud
+209.222.96.0/20 Deny Cloud
+209.246.142.0/23 Deny Cloud
+209.246.170.0/24 Deny Cloud
+209.247.83.0/24 Deny Cloud
+212.187.208.0/23 Deny Cloud
+212.187.246.0/23 Deny Cloud
+216.155.128.0/19 Deny Cloud
+217.163.10.0/23 Deny Cloud
+217.163.22.0/23 Deny Cloud
+217.163.24.0/21 Deny Cloud
+Tag: Choopa, LLC
 
 
-# "UOL DIVEO S.A."
-# ASN 7162.
+# ASN 7162 ("UOL DIVEO S.A.").
 # Infected by malware (as per reported by Google): 0.91%.
 # Updated: 2016.03.20
 
@@ -6282,27 +6305,31 @@ Tag: WorldStream
 200.187.192.0/18 Deny Generic
 200.221.0.0/16 Deny Generic
 201.85.123.0/24 Deny Generic
+Tag: UOL DIVEO S.A.
 
 
 # "Siftlogic LLC"
-# Updated: "77g" (ZB Block Bad IPs) / Checked: 2016.03.10
+# Unknown ASN (adopted from `badip.inc` of ZB Block).
+# Updated: "77g" (ZB Block Bad IPs) / Checked: 2016.03.31
 
 23.90.192.0/18 Deny Cloud
 192.119.48.0/20 Deny Cloud
 192.196.192.0/20 Deny Cloud
+Tag: Siftlogic LLC
 
 
-# "INFOKOM Ltd"
-# ASN 48226.
-# Updated: 2016.03.10
+# ASN 48226 ("INFOKOM Ltd").
+# Infected by malware (as per reported by Google): "ASN not found".
+# Updated: 2016.03.10 / Checked: 2016.03.31
 
 81.161.32.0/20 Deny Generic
 91.241.68.0/23 Deny Generic
+Tag: INFOKOM Ltd
 
 
-# "RAM Host", "Total Server Solutions L.L.C."
-# ASN 46562, 53841.
-# Updated: 2016.03.10
+# ASN 46562 ("Total Server Solutions L.L.C.").
+# Infected by malware (as per reported by Google): 1.23%.
+# Updated: 2016.03.31
 
 66.71.240.0/20 Deny Cloud
 67.210.254.0/24 Deny Cloud
@@ -6314,9 +6341,7 @@ Tag: WorldStream
 104.200.130.0/23 Deny Cloud
 104.200.132.0/24 Deny Cloud
 104.200.134.0/23 Deny Cloud
-104.200.136.0/22 Deny Cloud
-104.200.141.0/24 Deny Cloud
-104.200.142.0/23 Deny Cloud
+104.200.136.0/21 Deny Cloud
 104.200.144.0/21 Deny Cloud
 104.200.152.0/24 Deny Cloud
 104.200.154.0/24 Deny Cloud
@@ -6327,6 +6352,7 @@ Tag: WorldStream
 107.181.172.0/22 Deny Cloud
 107.181.176.0/21 Deny Cloud
 107.181.184.0/22 Deny Cloud
+107.181.189.0/24 Deny Cloud
 107.181.190.0/23 Deny Cloud
 130.185.170.0/23 Deny Cloud
 162.211.66.0/24 Deny Cloud
@@ -6344,7 +6370,6 @@ Tag: WorldStream
 181.114.240.0/20 Deny Cloud
 184.170.240.0/20 Deny Cloud
 185.67.24.0/22 Deny Cloud
-185.89.248.0/22 Deny Cloud
 192.40.56.0/22 Deny Cloud
 192.111.128.0/22 Deny Cloud
 192.111.133.0/24 Deny Cloud
@@ -6362,11 +6387,10 @@ Tag: WorldStream
 199.116.112.0/21 Deny Cloud
 199.168.160.0/22 Deny Cloud
 199.168.164.0/23 Deny Cloud
-199.180.248.0/22 Deny Cloud
-199.180.252.0/23 Deny Cloud
+199.180.248.0/23 Deny Cloud
+199.180.250.0/24 Deny Cloud
 199.187.208.0/22 Deny Cloud
-199.229.248.0/23 Deny Cloud
-199.229.251.0/24 Deny Cloud
+199.229.248.0/22 Deny Cloud
 199.229.252.0/24 Deny Cloud
 199.229.254.0/23 Deny Cloud
 206.40.160.0/20 Deny Cloud
@@ -6379,13 +6403,21 @@ Tag: WorldStream
 208.78.40.0/22 Deny Cloud
 208.84.152.0/22 Deny Cloud
 208.93.192.0/22 Deny Cloud
-209.113.128.0/22 Deny Cloud
 209.140.20.0/24 Deny Cloud
-216.41.48.0/22 Deny Cloud
+Tag: AS46562
 
 
-# "Init7"
-# ASN 13030.
+# ASN 53841 ("RAM Host").
+# Infected by malware (as per reported by Google): 14.10%.
+# Updated: 2016.03.31
+
+199.180.251.0/24 Deny Cloud
+199.180.252.0/23 Deny Cloud
+Tag: RAM Host
+
+
+# ASN 13030 ("Init7").
+# Infected by malware (as per reported by Google): 0.33%.
 # Updated: 2016.01.18 / Checked: 2016.03.07
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 
@@ -6415,10 +6447,11 @@ Tag: WorldStream
 212.51.128.0/19 Deny Generic
 213.144.128.0/19 Deny Generic
 216.185.39.0/24 Deny Generic
+Tag: Init7
 
 
-# "K SERVERS LTD"
-# ASN 14576.
+# ASN 14576 ("K SERVERS LTD").
+# Infected by malware (as per reported by Google): 0.77%.
 # Updated: 2016.01.23 / Checked: 2016.03.10
 
 31.148.219.0/24 Deny Generic
@@ -6429,11 +6462,12 @@ Tag: WorldStream
 185.104.8.0/22 Deny Generic
 185.130.104.0/22 Deny Generic
 204.155.28.0/22 Deny Generic
+Tag: K SERVERS LTD
 
 
-# "Biznes-Host.pl sp. z o.o."
-# ASN 198414.
-# Updated: 2016.01.25 / Checked: 2016.03.10
+# ASN 198414 ("Biznes-Host.pl sp. z o.o.").
+# Infected by malware (as per reported by Google): 2.47%.
+# Updated: 2016.01.25 / Checked: 2016.03.31
 
 91.189.32.0/21 Deny Cloud
 91.196.48.0/22 Deny Cloud
@@ -6448,17 +6482,18 @@ Tag: WorldStream
 185.49.12.0/22 Deny Cloud
 193.17.184.0/24 Deny Cloud
 195.64.158.0/23 Deny Cloud
+Tag: Biznes-Host.pl
 
 
-# "Yes Networks Unlimited Ltd"
-# ASN 24700.
+# ASN 24700 ("Yes Networks Unlimited Ltd").
+# Infected by malware (as per reported by Google): 0%.
 # Updated: 2016.01.25 / Checked: 2016.03.10
 
 46.174.190.0/23 Deny Generic
+Tag: Yes Networks
 
 
-# "Staminus Communications"
-# ASN 25761.
+# ASN 25761 ("Staminus Communications").
 # Infected by malware (as per reported by Google): 4.61%.
 # Updated: 2016.01.25 / Checked: 2016.03.28
 
@@ -6477,10 +6512,11 @@ Tag: WorldStream
 199.241.196.0/24 Deny Cloud
 199.241.198.0/23 Deny Cloud
 201.150.116.0/22 Deny Cloud
+Tag: Staminus
 
 
-# "Enzu Inc"
-# ASN 18978.
+# ASN 18978 ("Enzu Inc").
+# Infected by malware (as per reported by Google): 5.65%.
 # Updated: 2016.03.10
 
 23.88.0.0/15 Deny Cloud
@@ -6542,10 +6578,11 @@ Tag: WorldStream
 216.158.218.0/23 Deny Cloud
 216.158.220.0/23 Deny Cloud
 216.158.222.0/24 Deny Cloud
+Tag: Enzu Inc
 
 
-# "EGIHosting"
-# ASN 18779.
+# ASN 18779 ("EGIHosting").
+# Infected by malware (as per reported by Google): 2.54%.
 # Updated: 2016.03.10
 
 23.27.0.0/22 Deny Cloud
@@ -6636,10 +6673,11 @@ Tag: WorldStream
 216.172.128.0/19 Deny Cloud
 216.185.36.0/24 Deny Cloud
 216.224.112.0/20 Deny Cloud
+Tag: EGIHosting
 
 
-# "Hosting Solutions International, Inc."
-# ASN 30083.
+# ASN 30083 ("Hosting Solutions International, Inc.").
+# Infected by malware (as per reported by Google): 0.55%.
 # Updated: 2016.01.25 / Checked: 2016.03.10
 
 50.30.32.0/20 Deny Cloud
@@ -6649,10 +6687,10 @@ Tag: WorldStream
 199.217.112.0/21 Deny Cloud
 209.126.96.0/19 Deny Cloud
 209.239.112.0/20 Deny Cloud
+Tag: AS30083
 
 
-# "ONLINE S.A.S."
-# ASN 12876.
+# ASN 12876 ("ONLINE S.A.S.").
 # Infected by malware (as per reported by Google): 0.89%.
 # Updated: 2016.01.25 / Checked: 2016.03.28
 
@@ -6663,12 +6701,15 @@ Tag: WorldStream
 212.47.224.0/19 Deny Cloud
 212.83.128.0/18 Deny Cloud
 212.129.0.0/18 Deny Cloud
+Tag: ONLINE S.A.S.
 
 
 # ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
 # "High Point Host", "Lunanode Hosting Inc.", "Pleasant Hosting", "Power Up Hosting, Inc.",
 # "Rica Costa Hosting RCH, S.A.", "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may
 # change as time passes, and may need continual adjustments in the future). Updated: 2016.02.05
+
+# Infected by malware (as per reported by Google): 0.85%.
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
 # attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
@@ -6879,10 +6920,11 @@ Tag: WorldStream
 208.53.190.0/24 Deny Cloud
 209.73.140.0/24 Deny Cloud
 216.128.69.0/24 Deny Cloud
+Tag: Cogent
 
 
-# "FORTUNIX NETWORKS L.P."
-# ASN 59711.
+# ASN 59711 ("FORTUNIX NETWORKS L.P.").
+# Infected by malware (as per reported by Google): 3.06%.
 # Updated: 2016.02.10
 
 5.149.248.0/23 Deny Cloud
@@ -6890,25 +6932,29 @@ Tag: WorldStream
 185.80.52.0/22 Deny Cloud
 185.81.114.0/23 Deny Cloud
 200.7.96.0/23 Deny Cloud
+Tag: FORTUNIX NETWORKS
 
 
-# "Micfo, LLC." and "Contina"
-# ASN 53889, 63008.
-# Updated: 2016.02.11
+# ASN 53889 ("Micfo, LLC.").
+# Infected by malware (as per reported by Google): 1.99%.
+# Updated: 2016.03.31
 
 8.29.120.0/21 Deny Cloud
 23.232.128.0/17 Deny Cloud
 23.247.128.0/17 Deny Cloud
 24.235.4.0/23 Deny Cloud
+45.41.7.0/24 Deny Cloud
 45.41.26.0/24 Deny Cloud
-45.41.198.0/24 Deny Cloud
-45.45.128.0/17 Deny Cloud
+45.41.44.0/24 Deny Cloud
+45.41.48.0/24 Deny Cloud
+45.41.60.0/24 Deny Cloud
+45.42.191.0/24 Deny Cloud
+45.42.237.0/24 Deny Cloud
 45.59.131.0/24 Deny Cloud
 45.59.156.0/24 Deny Cloud
 45.59.186.0/24 Deny Cloud
 45.59.191.0/24 Deny Cloud
 45.61.33.0/24 Deny Cloud
-45.61.35.0/24 Deny Cloud
 45.61.37.0/24 Deny Cloud
 45.61.40.0/24 Deny Cloud
 45.61.42.0/24 Deny Cloud
@@ -6920,31 +6966,22 @@ Tag: WorldStream
 45.62.63.0/24 Deny Cloud
 64.85.24.0/22 Deny Cloud
 66.133.72.0/21 Deny Cloud
-66.150.32.0/21 Deny Cloud
-66.151.84.0/22 Deny Cloud
-66.151.216.0/22 Deny Cloud
+66.171.32.0/21 Deny Cloud
 67.17.32.0/20 Deny Cloud
-69.25.236.0/22 Deny Cloud
 69.161.192.0/21 Deny Cloud
 72.35.240.0/21 Deny Cloud
-74.217.152.0/21 Deny Cloud
 104.37.2.0/24 Deny Cloud
 104.37.7.0/24 Deny Cloud
 104.128.138.0/24 Deny Cloud
 104.143.218.0/24 Deny Cloud
 104.156.208.0/24 Deny Cloud
-104.166.98.0/24 Deny Cloud
-104.167.192.0/18 Deny Cloud
 104.207.64.0/24 Deny Cloud
-104.207.86.0/24 Deny Cloud
 104.222.132.0/24 Deny Cloud
-104.222.206.0/24 Deny Cloud
 104.224.28.0/24 Deny Cloud
-104.237.84.0/24 Deny Cloud
 104.237.88.0/24 Deny Cloud
 104.243.240.0/24 Deny Cloud
 104.243.242.0/23 Deny Cloud
-104.243.244.0/23 Deny Cloud
+104.243.244.0/24 Deny Cloud
 104.243.247.0/24 Deny Cloud
 104.247.7.0/24 Deny Cloud
 104.247.13.0/24 Deny Cloud
@@ -6952,7 +6989,7 @@ Tag: WorldStream
 104.247.99.0/24 Deny Cloud
 104.247.110.0/24 Deny Cloud
 104.247.121.0/24 Deny Cloud
-104.249.128.0/18 Deny Cloud
+104.249.139.0/24 Deny Cloud
 104.250.165.0/24 Deny Cloud
 104.250.167.0/24 Deny Cloud
 104.250.169.0/24 Deny Cloud
@@ -6965,20 +7002,24 @@ Tag: WorldStream
 104.250.246.0/24 Deny Cloud
 107.153.0.0/16 Deny Cloud
 107.168.0.0/15 Deny Cloud
-107.181.64.0/20 Deny Cloud
 135.84.208.0/21 Deny Cloud
 146.88.192.0/22 Deny Cloud
 155.254.111.0/24 Deny Cloud
-155.254.192.0/18 Deny Cloud
-167.88.100.0/24 Deny Cloud
-167.160.96.0/19 Deny Cloud
-172.82.0.0/17 Deny Cloud
+155.254.203.0/24 Deny Cloud
+165.84.224.0/21 Deny Cloud
 172.94.42.0/24 Deny Cloud
 172.94.65.0/24 Deny Cloud
+172.110.149.0/24 Deny Cloud
+172.110.150.0/24 Deny Cloud
 172.111.133.0/24 Deny Cloud
+172.111.169.0/24 Deny Cloud
 173.44.31.0/24 Deny Cloud
+192.64.24.0/22 Deny Cloud
 192.69.248.0/21 Deny Cloud
 192.77.240.0/20 Deny Cloud
+192.144.133.0/24 Deny Cloud
+192.144.134.0/24 Deny Cloud
+192.171.24.0/21 Deny Cloud
 192.171.224.0/19 Deny Cloud
 192.200.16.0/20 Deny Cloud
 192.230.32.0/19 Deny Cloud
@@ -7002,22 +7043,107 @@ Tag: WorldStream
 206.144.176.0/20 Deny Cloud
 206.144.192.0/24 Deny Cloud
 206.144.208.0/24 Deny Cloud
-206.191.152.0/21 Deny Cloud
-206.191.184.0/21 Deny Cloud
 206.225.132.0/22 Deny Cloud
-206.253.200.0/21 Deny Cloud
 207.89.16.0/21 Deny Cloud
 208.87.164.0/23 Deny Cloud
-216.52.56.0/22 Deny Cloud
-216.52.72.0/22 Deny Cloud
-216.52.108.0/22 Deny Cloud
-216.52.136.0/22 Deny Cloud
+209.251.249.0/24 Deny Cloud
+213.159.14.0/23 Deny Cloud
 216.99.219.0/24 Deny Cloud
 216.162.40.0/21 Deny Cloud
+Tag: Micfo, LLC.
 
 
-# "Krypt Technologies"
-# ASN 35908.
+# ASN 63008 ("Contina").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.03.31
+
+23.232.133.0/24 Deny Cloud
+23.232.139.0/24 Deny Cloud
+23.232.149.0/24 Deny Cloud
+23.232.160.0/24 Deny Cloud
+23.232.175.0/24 Deny Cloud
+23.232.193.0/24 Deny Cloud
+23.232.254.0/24 Deny Cloud
+23.247.135.0/24 Deny Cloud
+23.247.136.0/24 Deny Cloud
+23.247.142.0/24 Deny Cloud
+23.247.183.0/24 Deny Cloud
+23.247.184.0/23 Deny Cloud
+23.247.201.0/24 Deny Cloud
+23.247.202.0/23 Deny Cloud
+23.247.211.0/24 Deny Cloud
+23.247.212.0/23 Deny Cloud
+23.247.222.0/23 Deny Cloud
+23.247.224.0/24 Deny Cloud
+45.41.198.0/24 Deny Cloud
+45.41.205.0/24 Deny Cloud
+45.42.197.0/24 Deny Cloud
+45.42.222.0/24 Deny Cloud
+45.45.128.0/17 Deny Cloud
+45.61.35.0/24 Deny Cloud
+64.85.26.0/23 Deny Cloud
+66.171.32.0/23 Deny Cloud
+104.166.98.0/24 Deny Cloud
+104.167.192.0/18 Deny Cloud
+104.207.73.0/24 Deny Cloud
+104.207.86.0/24 Deny Cloud
+104.222.206.0/24 Deny Cloud
+104.237.84.0/24 Deny Cloud
+104.237.95.0/24 Deny Cloud
+104.249.128.0/18 Deny Cloud
+107.153.6.0/24 Deny Cloud
+107.153.13.0/24 Deny Cloud
+107.153.28.0/24 Deny Cloud
+107.153.110.0/24 Deny Cloud
+107.153.126.0/24 Deny Cloud
+107.153.249.0/24 Deny Cloud
+107.153.251.0/24 Deny Cloud
+107.153.255.0/24 Deny Cloud
+107.168.1.0/24 Deny Cloud
+107.168.3.0/24 Deny Cloud
+107.168.55.0/24 Deny Cloud
+107.168.56.0/24 Deny Cloud
+107.168.71.0/24 Deny Cloud
+107.169.246.0/24 Deny Cloud
+107.181.64.0/20 Deny Cloud
+135.84.214.0/24 Deny Cloud
+155.254.192.0/18 Deny Cloud
+165.84.224.0/23 Deny Cloud
+167.88.100.0/24 Deny Cloud
+167.160.96.0/19 Deny Cloud
+172.82.0.0/17 Deny Cloud
+172.98.3.0/24 Deny Cloud
+172.98.35.0/24 Deny Cloud
+172.110.170.0/23 Deny Cloud
+192.64.24.0/24 Deny Cloud
+192.64.26.0/24 Deny Cloud
+192.69.251.0/24 Deny Cloud
+192.77.248.0/24 Deny Cloud
+192.144.156.0/23 Deny Cloud
+192.144.188.0/23 Deny Cloud
+192.144.220.0/23 Deny Cloud
+192.171.30.0/23 Deny Cloud
+192.171.227.0/24 Deny Cloud
+192.200.26.0/24 Deny Cloud
+192.200.29.0/24 Deny Cloud
+192.200.31.0/24 Deny Cloud
+192.230.39.0/24 Deny Cloud
+192.230.61.0/24 Deny Cloud
+192.240.192.0/24 Deny Cloud
+192.240.212.0/24 Deny Cloud
+192.240.245.0/24 Deny Cloud
+192.255.70.0/24 Deny Cloud
+192.255.93.0/24 Deny Cloud
+192.255.108.0/24 Deny Cloud
+204.62.122.0/24 Deny Cloud
+205.234.120.0/23 Deny Cloud
+205.234.126.0/23 Deny Cloud
+206.225.135.0/24 Deny Cloud
+207.89.22.0/23 Deny Cloud
+Tag: Contina
+
+
+# ASN 35908 ("Krypt Technologies").
 # Infected by malware (as per reported by Google): 10.97%.
 # Updated: 2016.02.27 / Checked: 2016.03.20
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
@@ -7050,10 +7176,11 @@ Tag: WorldStream
 192.250.240.0/20 Deny Generic
 198.61.96.0/19 Deny Generic
 209.11.240.0/20 Deny Generic
+Tag: Krypt Technologies
 
 
-# "Continuum Data Centers, LLC."
-# ASN 53264.
+# ASN 53264 ("Continuum Data Centers, LLC.").
+# Infected by malware (as per reported by Google): 1.22%.
 # Updated: 2016.03.02
 
 64.79.96.0/20 Deny Cloud
@@ -7073,10 +7200,11 @@ Tag: WorldStream
 199.244.88.0/22 Deny Cloud
 216.107.144.0/20 Deny Cloud
 216.231.128.0/20 Deny Cloud
+Tag: Continuum
 
 
-# "Contabo GmbH"
-# ASN 51167.
+# ASN 51167 ("Contabo GmbH").
+# Infected by malware (as per reported by Google): 0.25%.
 # Updated: 2016.03.10
 
 5.189.128.0/18 Deny Cloud
@@ -7101,10 +7229,11 @@ Tag: WorldStream
 193.164.132.0/23 Deny Cloud
 193.200.241.0/24 Deny Cloud
 213.136.64.0/19 Deny Cloud
+Tag: Contabo GmbH
 
 
-# "ESDS Software Solution"
-# ASN 45815.
+# ASN 45815 ("ESDS Software Solution").
+# Infected by malware (as per reported by Google): 2.24%.
 # Updated: 2016.03.10
 
 103.249.99.0/24 Deny Cloud
@@ -7114,10 +7243,11 @@ Tag: WorldStream
 115.124.108.0/23 Deny Cloud
 115.124.112.0/22 Deny Cloud
 115.124.120.0/21 Deny Cloud
+Tag: ESDS
 
 
-# "AltusHost B.V."
-# ASN 51430.
+# ASN 51430 ("AltusHost B.V.").
+# Infected by malware (as per reported by Google): 0.94%.
 # Updated: 2016.03.10
 
 5.62.20.0/24 Deny Cloud
@@ -7140,16 +7270,18 @@ Tag: WorldStream
 185.10.56.0/22 Deny Cloud
 194.152.52.0/24 Deny Cloud
 213.5.64.0/21 Deny Cloud
+Tag: AltusHost B.V.
 
 
-# "Unit-IS Ltd."
-# ASN 59564.
+# ASN 59564 ("Unit-IS Ltd.").
+# Infected by malware (as per reported by Google): 5.26%.
 # Updated: 2016.03.10
 
 46.243.140.0/24 Deny Cloud
 46.243.142.0/24 Deny Cloud
 188.72.101.0/24 Deny Cloud
 195.211.152.0/22 Deny Cloud
+Tag: Unit-IS Ltd.
 
 
 # "Akamai Technologies"
@@ -7350,6 +7482,7 @@ Tag: WorldStream
 216.206.36.0/24 Deny Cloud
 216.238.147.0/24 Deny Cloud
 219.76.11.0/24 Deny Cloud
+Tag: Akamai Technologies
 
 
 # ---

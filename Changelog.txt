@@ -46,6 +46,26 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   as so that it can now correctly interpret more than just Unix-style
   linebreaks.
 
+- [2016.03.28; Minor code change; Maikuolan]: Added support for section tags!
+  It's now possible to uniquely identify specific signature sections from the
+  signature files by tagging sections with a section tag; These section tags
+  will be included in the logfiles whenever any of the signatures from the
+  tagged sections are triggered and will appear alongside debug information
+  for the user whenever they're blocked.
+
+- [2016.03.31; Signatures; Maikuolan]: Renamed "ipv4_custom.dat" to
+  "ipv4_custom.dat.RenameMe" and renamed "ipv6_custom.dat" to
+  "ipv6_custom.dat.RenameMe". The reason for appending ".RenameMe" onto the end
+  of the names of the custom signature files is to prevent accidentally
+  overwriting these files whenever someone updates CIDRAM blindly (such as via
+  a dependency manager, installer or auto-updater; The custom signature files
+  should be renamed back to their original former names by the user to active
+  them. Shell-style hashing implemented to all signature files for all
+  comments and for all non-signature and non-syntactical entries; This won't
+  be enforced onto users, but is recommended to improve readability for IDEs
+  and text editors. Added some information from Spamhaus to help users gauge
+  the merit of blocking or not blocking some particular ASNs.
+
 === Version/Release 0.1.2 ===
 PATCH RELEASE.
 

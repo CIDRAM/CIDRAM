@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.28).
+ * This file: Functions file (last modified: 2016.03.31).
  */
 
 /**
@@ -174,6 +174,9 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     $y = count($IPv4Sigs);
     $DefTag = 'IPv4';
     for ($x = 0; $x < $y; $x++) {
+        if (!$IPv4Sigs[$x]) {
+            continue;
+        }
         if (strpos($IPv4Sigs[$x], "\r")) {
             $IPv4Sigs[$x] =
                 (strpos($IPv4Sigs[$x], "\r\n")) ?
@@ -531,6 +534,9 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     $y = count($IPv6Sigs);
     $DefTag = 'IPv6';
     for ($x = 0; $x < $y; $x++) {
+        if (!$IPv6Sigs[$x]) {
+            continue;
+        }
         if (strpos($IPv6Sigs[$x], "\r")) {
             $IPv6Sigs[$x] =
                 (strpos($IPv6Sigs[$x], "\r\n")) ?

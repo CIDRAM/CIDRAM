@@ -79,7 +79,7 @@ Fichier | Description
 /.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
 /Changelog.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
-/LICENSE.txt | Une copie de la GNU/GPLv2 license.
+/LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
 /loader.php | Chargeur/Loader. C'est ce que vous êtes censé être attacher dans à (essentiel)!
 /README.md | Sommaire de l'information du projet.
 /web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
@@ -102,9 +102,9 @@ Fichier | Description
 /vault/config.php | Module de configuration.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/ipv4.dat | Fichier de signatures pour IPv4.
-/vault/ipv4_custom.dat | Fichier de signatures pour IPv4 personnalisés.
+/vault/ipv4_custom.dat.RenameMe | Fichier de signatures pour IPv4 personnalisés (renommer pour activer).
 /vault/ipv6.dat | Fichier de signatures pour IPv6.
-/vault/ipv6_custom.dat | Fichier de signatures pour IPv6 personnalisés.
+/vault/ipv6_custom.dat.RenameMe | Fichier de signatures pour IPv6 personnalisés (renommer pour activer).
 /vault/lang.php | Module de linguistiques.
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -172,7 +172,80 @@ Configuration pour les signatures.
 
 Une description du format et de la structure du signatures utilisé par CIDRAM peut être trouvée documentée en plain-text dans les deux fichiers de signatures personnalisées. S'il vous plaît référez à cette documentation pour apprendre plus sur le format et la structure du signatures de CIDRAM.
 
+All IPv4 signatures follow the format: `xxx.xxx.xxx.xxx/yy %Function% %Param%`.
+- `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
+- `yy` represents the CIDR block size [1-32].
+- `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
+- `%Param%` represents whatever additional information may be required by `%Function%`.
+
+All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`.
+- `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
+- `yy` represents the CIDR block size [1-128].
+- `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
+- `%Param%` represents whatever additional information may be required by `%Function%`.
+
+The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows` %0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+
+Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
+
+Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use shell-style hashing for comments, but using shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, shell-style hashing can assist as a visual aid while editing).
+
+The possible values of `%Function%` are as follows:
+- Run
+- Whitelist
+- Deny
+
+If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `%Param%` value (the working directory should be the "/vault/" directory of the script).
+
+Example: `127.0.0.0/8 Run example.php`
+
+This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
+
+If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `%Param%` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+
+Example: `127.0.0.1/32 Whitelist`
+
+If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
+
+The `%Param%` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
+
+The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `%Param%` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `%Param%` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+
+The available shorthand words are:
+- Bogon
+- Cloud
+- Generic
+- Spam
+
+Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+
+Example:
+```
+# "Section 1."
+1.2.3.4/32 Deny Bogon
+2.3.4.5/32 Deny Cloud
+4.5.6.7/32 Deny Generic
+5.6.7.8/32 Deny Spam
+Tag: Section 1
+```
+
+To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
+
+Example:
+```
+1.2.3.4/32 Deny Bogon
+2.3.4.5/32 Deny Cloud
+
+4.5.6.7/32 Deny Generic
+5.6.7.8/32 Deny Spam
+Tag: Section 1
+```
+
+In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+
+Refer to the custom signature files for more information.
+
 ---
 
 
-Dernière Réactualisé: 20 Mars 2016 (2016.03.20).
+Dernière Réactualisé: 31 Mars 2016 (2016.03.31).

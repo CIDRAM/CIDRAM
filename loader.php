@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.28).
+ * This file: The loader (last modified: 2016.04.01).
  */
 
 /**
@@ -58,25 +58,23 @@ if (!defined('CIDRAM')) {
         $CIDRAM['QueryVars'] = array();
     }
 
-    /** Parses the CIDRAM configuration file. */
+    /** Attempts to parse the CIDRAM configuration file. */
     $CIDRAM['Config'] =
-        @(!file_exists($CIDRAM['Vault'] . 'config.ini')) ?
-        false :
-        parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
+        (file_exists($CIDRAM['Vault'] . 'config.ini')) ?
+        parse_ini_file($CIDRAM['Vault'] . 'config.ini', true) :
+        array();
 
-    /** Kill the script if we fail to parse the configuration file. */
+    /** Fallback for any potential parse failure. */
     if (!is_array($CIDRAM['Config'])) {
-        header('Content-Type: text/plain');
-        die(
-            '[CIDRAM] Could not read config.ini: Can\'t continue. Refer to the docume' .
-            'ntation if this is a first-time run, and if problems persist, seek assis' .
-            'tance.'
-        );
+        $CIDRAM['Config'] = array();
     }
-
     /** Fallback for missing "general" configuration category. */
     if (!isset($CIDRAM['Config']['general'])) {
         $CIDRAM['Config']['general'] = array();
+    }
+    /** Fallback for missing "logfile" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['logfile'])) {
+        $CIDRAM['Config']['general']['logfile'] = '';
     }
     /** Fallback for missing "ipaddr" configuration directive. */
     if (
@@ -86,6 +84,10 @@ if (!defined('CIDRAM')) {
         )
     ) {
         $CIDRAM['Config']['general']['ipaddr'] = 'REMOTE_ADDR';
+    }
+    /** Fallback for missing "forbid_on_block" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['forbid_on_block'])) {
+        $CIDRAM['Config']['general']['forbid_on_block'] = false;
     }
     /** Fallback for missing "emailaddr" configuration directive. */
     if (!isset($CIDRAM['Config']['general']['emailaddr'])) {

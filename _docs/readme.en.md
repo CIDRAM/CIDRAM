@@ -32,7 +32,7 @@ I hope to streamline this process by making an installer at some point in the no
 
 1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/cidram/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
 
-2) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `config.ini` (located inside `vault`) - This file contains all the directives available for CIDRAM. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+2) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
 
 3) Upload the contents (CIDRAM and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
 
@@ -98,7 +98,7 @@ File | Description
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
 /vault/cli.php | CLI handler.
-/vault/config.ini | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (essential)!
+/vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/functions.php | Functions file (essential).
 /vault/ipv4.dat | IPv4 signatures file.
@@ -248,4 +248,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 31st March 2016 (2016.03.31).
+Last Updated: 1st April 2016 (2016.04.01).

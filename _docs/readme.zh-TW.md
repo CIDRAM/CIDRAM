@@ -37,7 +37,7 @@ CIDRAM COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 1） 在閱讀到這里之前，我假設您已經下載腳本的一個副本，已解壓縮其內容並保存在您的機器的某個地方。現在，您要決定將腳本放在您服務器上的哪些文件夾中，例如`/public_html/cidram/`或其他任何您覺得滿意和安全的地方。*上傳完成後，繼續閱讀。。*
 
-2） 自定義（強烈推薦高級用戶，但不推薦業餘用戶或者新手使用這個方法），打開`config.ini`（位於內`vault`） - 這個文件包含所有CIDRAM的可用配置選項。以上的每一個配置選項應有一個簡介來說明它是做什麼的和它的具有的功能。按照您認為合適的參數來調整這些選項，然後保存文件，關閉。
+2） 自定義（強烈推薦高級用戶，但不推薦業餘用戶或者新手使用這個方法），重命名`config.ini.RenameMe`到`config.ini`（位於內`vault`），並打開它（這個文件包含所有CIDRAM的可用配置選項；以上的每一個配置選項應有一個簡介來說明它是做什麼的和它的具有的功能）。按照您認為合適的參數來調整這些選項，然後保存文件，關閉。
 
 3） 上傳（CIDRAM和它的文件）到您選定的文件夾（不需要包括`*.txt`/`*.md`文件，但大多數情況下，您應上傳所有的文件）。
 
@@ -104,7 +104,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/cache.dat | 緩存數據。
 /vault/cli.php | CLI處理文件。
-/vault/config.ini | 配置文件；包含所有配置指令為CIDRAM，告訴它什麼做和怎麼正確地經營（必不可少）！
+/vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，告訴它什麼做和怎麼正確地經營（重命名為激活）。
 /vault/config.php | 配置處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/ipv4.dat | IPv4簽名文件。
@@ -254,4 +254,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-最後更新：2016年3月31日。
+最後更新：2016年4月1日。

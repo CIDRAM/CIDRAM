@@ -32,7 +32,7 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 1) Omdat u zijn lezen dit, ik ben ervan uit u al gedownload een gearchiveerde kopie van het script, uitgepakt zijn inhoud en heeft het ergens op uw lokale computer. Vanaf hier, u nodig te bepalen waar op uw host of CMS die inhoud te plaatsen. Een bestandsmap zoals `/public_html/cidram/` of soortgelijk (hoewel, het is niet belangrijk welke u kiest, zolang het is iets veilig en iets waar u blij mee bent) zal volstaan. *Voordat u het uploaden begint, lees verder..*
 
-2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `config.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare CIDRAM configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), hernoemen `config.ini.RenameMe` naar `config.ini` (gelegen binnen `vault`), en open het (dit bestand bevat alle beschikbare CIDRAM configuratie opties; boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor). Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
 3) Upload de inhoud (CIDRAM en zijn bestanden) naar het bestandsmap die u zou op eerder besloten (u nodig niet de `*.txt`/`*.md` bestanden opgenomen, maar meestal, u moeten uploaden alles).
 
@@ -98,7 +98,7 @@ Bestand | Beschrijving
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache.dat | Cache data/gegevens.
 /vault/cli.php | CLI-handler.
-/vault/config.ini | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (essentiële)!
+/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/ipv4.dat | IPv4 handtekeningen bestand.
@@ -248,4 +248,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Laatste Bijgewerkt: 31 Maart 2016 (2016.03.31).
+Laatste Bijgewerkt: 1 April 2016 (2016.04.01).

@@ -32,9 +32,9 @@ Espero para agilizar este proceso al hacer un instalador en algún momento en un
 
 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una copia de la script, descomprimido y tenerlo en algún lugar en su computer. Desde aquí, usted querrá averiguar dónde en el host o CMS que desea para colocar el contenido. Un directorio como `/public_html/cidram/` o similar (aunque, no importa que usted elija, a condición de que se algo que estés satisfecho con) será suficiente. *Antes usted enviar archivos a su host, seguir leyendo..*
 
-2) Opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), abrir `config.ini` (situado en el interior del `vault`) - Este archivo contiene todas las disponibles operativas opciones para CIDRAM. Por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
+2) Opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), cambiar el nombre `config.ini.RenameMe` a `config.ini` (situado en el interior del `vault`), y abrirlo (este archivo contiene todas las disponibles operativas opciones para CIDRAM; por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve). Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
 
-3) Cargar contenidos (CIDRAM y sus archivos) al directorio que habías decidido sobre más temprano (los `*.txt`/`*.md` archivos no son necesarios, pero, en su mayoría, usted debe cargar todos).
+3) Subir el contenidos (CIDRAM y sus archivos) al directorio que habías decidido sobre más temprano (los `*.txt`/`*.md` archivos no son necesarios, pero, en su mayoría, usted debe cargar todos).
 
 4) CHMOD al `vault` directorio a "777". La principal directorio de almacenamiento de los contenidos (el uno decidió desde antes), en general, puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido problemas de permisos en el pasado en su sistema (predefinido, debería ser algo como "755").
 
@@ -98,7 +98,7 @@ Archivo | Descripción
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache.dat | Cache data.
 /vault/cli.php | Módulo de la CLI.
-/vault/config.ini | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (esencial)!
+/vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/ipv4.dat | Archivo de firmas por IPv4.
@@ -248,4 +248,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Última Actualización: 31 Marzo 2016 (2016.03.31).
+Última Actualización: 1 Abril 2016 (2016.04.01).

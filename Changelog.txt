@@ -59,12 +59,20 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   of the names of the custom signature files is to prevent accidentally
   overwriting these files whenever someone updates CIDRAM blindly (such as via
   a dependency manager, installer or auto-updater; The custom signature files
-  should be renamed back to their original former names by the user to active
-  them. Shell-style hashing implemented to all signature files for all
+  should be renamed back to their original former names by the user to activate
+  them). Shell-style hashing implemented to all signature files for all
   comments and for all non-signature and non-syntactical entries; This won't
   be enforced onto users, but is recommended to improve readability for IDEs
-  and text editors. Added some information from Spamhaus to help users gauge
-  the merit of blocking or not blocking some particular ASNs.
+  and text editors. Added some information from Spamhaus to help users gage the
+  merit of blocking or not blocking some particular ASNs.
+
+- [2016.04.01; Minor code change; Maikuolan]: Renamed "config.ini" to
+  "config.ini.RenameMe". The reason here is the same as the reason for having
+  recently done the same thing to the custom signature files (to prevent
+  accidentally overwriting this file whenever someone updates CIDRAM blindly).
+  Additionally, the configuration file is now optional; The script has
+  fallbacks implemented for all configuration directives and no longer dies an
+  error to the user/client when the configuration file is unavailable.
 
 === Version/Release 0.1.2 ===
 PATCH RELEASE.

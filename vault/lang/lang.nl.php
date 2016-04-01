@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.03.27).
+ * This file: Dutch language data (last modified: 2016.04.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['field_sigcount'] = 'Handtekeningen Tellen: ';
 $CIDRAM['lang']['field_sigref'] = 'Handtekeningen Referentie: ';
 $CIDRAM['lang']['field_whyreason'] = 'Waarom Geblokkeerde: ';
 $CIDRAM['lang']['field_ua'] = 'User Agent: ';
+$CIDRAM['lang']['field_rURI'] = 'Gereconstrueerde URI: ';
 $CIDRAM['lang']['generated_by'] = 'Gegenereerd door';
 $CIDRAM['lang']['preamble'] = '-- Einde van preambule. Voeg uw vragen of opmerkingen na dit lijn. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Uw toegang tot dit pagina is geweigerd omdat u geprobeerd om toegang tot dit pagina met behulp van een ongeldig IP-adres.';

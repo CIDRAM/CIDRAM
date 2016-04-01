@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.03.27).
+ * This file: Indonesian language data (last modified: 2016.04.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['field_sigcount'] = 'Menghitung Tanda Tangan: ';
 $CIDRAM['lang']['field_sigref'] = 'Tanda Tangan Referensi: ';
 $CIDRAM['lang']['field_whyreason'] = 'Mengapa Diblokir: ';
 $CIDRAM['lang']['field_ua'] = 'Agen Pengguna: ';
+$CIDRAM['lang']['field_rURI'] = 'Direkonstruksi URI: ';
 $CIDRAM['lang']['generated_by'] = 'Dihasilkan oleh';
 $CIDRAM['lang']['preamble'] = '-- Akhir pembukaan. Tambah pertanyaan atau komentar setelah baris ini. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Akses Anda ke halaman ini ditolak karena Anda mencoba untuk mengakses halaman ini menggunakan alamat IP yang tidak valid.';

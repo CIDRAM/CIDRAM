@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.03.27).
+ * This file: French language data (last modified: 2016.04.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['field_sigcount'] = 'Signatures Compte: ';
 $CIDRAM['lang']['field_sigref'] = 'Signatures Référence: ';
 $CIDRAM['lang']['field_whyreason'] = 'Raison Bloquée: ';
 $CIDRAM['lang']['field_ua'] = 'Agent Utilisateur: ';
+$CIDRAM['lang']['field_rURI'] = 'Reconstruite URI: ';
 $CIDRAM['lang']['generated_by'] = 'Généré par';
 $CIDRAM['lang']['preamble'] = '-- Fin du préambule. Ajouter vos questions ou commentaires après cette ligne. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Votre accès à cette page a été refusée parce que vous avez tenté d\'accéder à cette page en utilisant un invalide IP adresse.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.03.27).
+ * This file: CLI handler (last modified: 2016.04.01).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -39,7 +39,8 @@ if ($CIDRAM['argv'][1] === '-h') {
         'SignatureCount' => 0,
         'Signatures' => '',
         'WhyReason' => '',
-        'xmlLang' => $CIDRAM['Config']['general']['lang']
+        'xmlLang' => $CIDRAM['Config']['general']['lang'],
+        'rURI' => 'CLI'
     );
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2]);
     $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2]);

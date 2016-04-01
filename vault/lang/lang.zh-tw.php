@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2016.03.27).
+ * This file: Chinese (traditional) language data (last modified: 2016.04.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['field_sigcount'] = '簽名計數：';
 $CIDRAM['lang']['field_sigref'] = '簽名參考：';
 $CIDRAM['lang']['field_whyreason'] = '為何受阻：';
 $CIDRAM['lang']['field_ua'] = '用戶代理：';
+$CIDRAM['lang']['field_rURI'] = '重建URI：';
 $CIDRAM['lang']['generated_by'] = '所產生通過';
 $CIDRAM['lang']['preamble'] = '-- 結束序言。添加您的問題或意見該行之後。 --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = '您的訪問這個頁面被拒絕因為您試圖訪問該頁面使用一個無效的IP地址。';

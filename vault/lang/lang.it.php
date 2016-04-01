@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2016.03.27).
+ * This file: Italian language data (last modified: 2016.04.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['field_sigcount'] = 'Firme Conteggio: ';
 $CIDRAM['lang']['field_sigref'] = 'Firme Riferimento: ';
 $CIDRAM['lang']['field_whyreason'] = 'Perché Bloccato: ';
 $CIDRAM['lang']['field_ua'] = 'User Agent: ';
+$CIDRAM['lang']['field_rURI'] = 'URI Ricostruito: ';
 $CIDRAM['lang']['generated_by'] = 'Generato da';
 $CIDRAM['lang']['preamble'] = '-- Fine del preambolo. Aggiungere le vostre domande o commenti dopo questa linea. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Accesso a questa pagina è stato negato perché si è tentato di accedere a questa pagina utilizzando un indirizzo IP non valido.';

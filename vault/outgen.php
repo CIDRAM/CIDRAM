@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.03.27).
+ * This file: Output generator (last modified: 2016.04.01).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -63,6 +63,13 @@ $CIDRAM['BlockInfo']['SignatureCount'] = 0;
 $CIDRAM['BlockInfo']['Signatures'] = '';
 $CIDRAM['BlockInfo']['WhyReason'] = '';
 $CIDRAM['BlockInfo']['xmlLang'] = $CIDRAM['Config']['general']['lang'];
+$CIDRAM['BlockInfo']['rURI'] = (
+	(!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+	(!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on') ||
+	(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+) ? 'https://' : 'http://';
+$CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : 'Unknown.Host';
+$CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
 
 /** Run the IPv4 test. */
 $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
@@ -112,7 +119,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                     "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
                     "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
                     "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
-                    "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n\n"
+                    "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
                 )
             );
         $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], 'a');
@@ -137,7 +144,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                     "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
                     "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
                     "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
-                    "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n\n"
+                    "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
                 )
             )) .
             '">' . $CIDRAM['lang']['click_here'] . '</a></strong>';

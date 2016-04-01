@@ -72,7 +72,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   accidentally overwriting this file whenever someone updates CIDRAM blindly).
   Additionally, the configuration file is now optional; The script has
   fallbacks implemented for all configuration directives and no longer dies an
-  error to the user/client when the configuration file is unavailable.
+  error to the user/client when the configuration file is unavailable. Added a
+  "Reconstructed URL" field for the "Access Denied" page and for logging, to
+  determine which resource was being requested at the time of a user/client
+  being blocked.
 
 === Version/Release 0.1.2 ===
 PATCH RELEASE.

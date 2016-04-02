@@ -1,8 +1,21 @@
 [general]
-; Log blocked access attempts to a file? If yes, specify the name of the file
-; to log results to. If no, leave this variable blank.
-; Example: logfile='logfile.txt'
+; Log blocked access attempts to a human readable logfile? If yes, specify the
+; name of the file to log results to. If no, leave this variable blank. It's
+; recommended to enable this feature whenever possible to assist with debugging
+; and monitoring. Example: logfile='logfile.txt'
 logfile=''
+; Log blocked access attempts to an Apache-style logfile? If yes, specify the
+; name of the file to log results to. If no, leave this variable blank. This
+; feature can be useful if you want to integrate CIDRAM with packages such as
+; fail2ban, which require Apache-style logfiles (but isn't generally required
+; otherwise). Example: logfileApache='access.txt'
+logfileApache=''
+; Log blocked access attempts to a serialised logfile? If yes, specify the name
+; of the file to log results to. If no, leave this variable blank. This feature
+; can be useful if you want to integrate CIDRAM with packages that work with
+; serialised data (but isn't generally required otherwise).
+; Example: logfileSerialized='serial.txt'
+logfileSerialized=''
 ; Where to find IP address of connecting request? (Useful for services such as
 ; Cloudflare and the likes) Default = REMOTE_ADDR
 ; WARNING: Don't change this unless you know what you're doing!
@@ -10,6 +23,11 @@ ipaddr='REMOTE_ADDR'
 ; Should CIDRAM send 403 headers with the file upload blocked message, or stick
 ; with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
 forbid_on_block=false
+; Should CIDRAM silently redirect blocked access attempts instead of displaying
+; the "Access Denied" page? If yes, specify the location to redirect blocked
+; access attempts to. If no, leave this variable blank.
+; Examples: silent_mode='http://127.0.0.1/' or silent_mode='http://google.com/'
+silent_mode=''
 ; Specify here the default language for the script.
 lang='en'
 ; If you wish, you can supply an email address here to be given to users when

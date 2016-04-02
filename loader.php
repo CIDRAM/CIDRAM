@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.04.01).
+ * This file: The loader (last modified: 2016.04.03).
  */
 
 /**
@@ -76,6 +76,14 @@ if (!defined('CIDRAM')) {
     if (!isset($CIDRAM['Config']['general']['logfile'])) {
         $CIDRAM['Config']['general']['logfile'] = '';
     }
+    /** Fallback for missing "logfileApache" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['logfileApache'])) {
+        $CIDRAM['Config']['general']['logfileApache'] = '';
+    }
+    /** Fallback for missing "logfileSerialized" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['logfileSerialized'])) {
+        $CIDRAM['Config']['general']['logfileSerialized'] = '';
+    }
     /** Fallback for missing "ipaddr" configuration directive. */
     if (
         empty($CIDRAM['Config']['general']['ipaddr']) || (
@@ -88,6 +96,10 @@ if (!defined('CIDRAM')) {
     /** Fallback for missing "forbid_on_block" configuration directive. */
     if (!isset($CIDRAM['Config']['general']['forbid_on_block'])) {
         $CIDRAM['Config']['general']['forbid_on_block'] = false;
+    }
+    /** Fallback for missing "silent_mode" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['silent_mode'])) {
+        $CIDRAM['Config']['general']['silent_mode'] = '';
     }
     /** Fallback for missing "emailaddr" configuration directive. */
     if (!isset($CIDRAM['Config']['general']['emailaddr'])) {

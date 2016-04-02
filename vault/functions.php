@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.04.02).
+ * This file: Functions file (last modified: 2016.04.03).
  */
 
 /**
@@ -222,7 +222,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     break 3;
                 } elseif ($Cat === 'Deny') {
                     if ($Sig === 'Bogon') {
-                        if(!$CIDRAM['Config']['signatures']['block_bogons']) {
+                        if (!$CIDRAM['Config']['signatures']['block_bogons']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Bogon'];
@@ -231,7 +231,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
                     } elseif ($Sig === 'Cloud') {
-                        if(!$CIDRAM['Config']['signatures']['block_cloud']) {
+                        if (!$CIDRAM['Config']['signatures']['block_cloud']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
@@ -240,7 +240,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
                     } elseif ($Sig === 'Generic') {
-                        if(!$CIDRAM['Config']['signatures']['block_generic']) {
+                        if (!$CIDRAM['Config']['signatures']['block_generic']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
@@ -249,7 +249,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
                     } elseif ($Sig === 'Spam') {
-                        if(!$CIDRAM['Config']['signatures']['block_spam']) {
+                        if (!$CIDRAM['Config']['signatures']['block_spam']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Spam'];
@@ -582,7 +582,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     break 3;
                 } elseif ($Cat === 'Deny') {
                     if ($Sig === 'Bogon') {
-                        if(!$CIDRAM['Config']['signatures']['block_bogons']) {
+                        if (!$CIDRAM['Config']['signatures']['block_bogons']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Bogon'];
@@ -591,7 +591,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
                     } elseif ($Sig === 'Cloud') {
-                        if(!$CIDRAM['Config']['signatures']['block_cloud']) {
+                        if (!$CIDRAM['Config']['signatures']['block_cloud']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
@@ -600,7 +600,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
                     } elseif ($Sig === 'Generic') {
-                        if(!$CIDRAM['Config']['signatures']['block_generic']) {
+                        if (!$CIDRAM['Config']['signatures']['block_generic']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
@@ -609,7 +609,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
                     } elseif ($Sig === 'Spam') {
-                        if(!$CIDRAM['Config']['signatures']['block_spam']) {
+                        if (!$CIDRAM['Config']['signatures']['block_spam']) {
                             continue;
                         }
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Spam'];

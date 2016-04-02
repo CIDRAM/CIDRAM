@@ -30,8 +30,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   Added a fallback to help deal with situations where multiple IP address
   server variables may be in use.
 
-- [2016.03.21; Sub-minor code change; Maikuolan]: Improved the way in which we
-  can detect whether we're in CLI-mode.
+- [2016.03.21; Bug-fix; Maikuolan]: Improved the way in which we can detect
+  whether we're in CLI-mode (there was a problem previously whereby cronjobs
+  could sometimes be blocked in certain circumstances, and this shouldn't
+  happen normally, thus qualifying this problem as a bug; this improvement
+  corrects this problem).
   Refer github.com/Maikuolan/CIDRAM/issues/4
 
 - [2016.03.25; Sub-minor code change; Maikuolan]: Removed references to the
@@ -45,6 +48,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   allow CIDRAM to handle Windows-style linebreaks within the signature files,
   as so that it can now correctly interpret more than just Unix-style
   linebreaks.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
+  Refer github.com/Maikuolan/CIDRAM/issues/3
 
 - [2016.03.28; Minor code change; Maikuolan]: Added support for section tags!
   It's now possible to uniquely identify specific signature sections from the
@@ -52,6 +57,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   will be included in the logfiles whenever any of the signatures from the
   tagged sections are triggered and will appear alongside debug information
   for the user whenever they're blocked.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
+  Refer github.com/Maikuolan/CIDRAM/issues/3
 
 - [2016.03.31; Signatures; Maikuolan]: Renamed "ipv4_custom.dat" to
   "ipv4_custom.dat.RenameMe" and renamed "ipv6_custom.dat" to
@@ -65,6 +72,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   be enforced onto users, but is recommended to improve readability for IDEs
   and text editors. Added some information from Spamhaus to help users gage the
   merit of blocking or not blocking some particular ASNs.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
+  Refer github.com/Maikuolan/CIDRAM/issues/3
 
 - [2016.04.01; Minor code change; Maikuolan]: Renamed "config.ini" to
   "config.ini.RenameMe". The reason here is the same as the reason for having
@@ -76,6 +85,24 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   "Reconstructed URL" field for the "Access Denied" page and for logging, to
   determine which resource was being requested at the time of a user/client
   being blocked.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
+  Refer github.com/Maikuolan/CIDRAM/issues/3
+
+- [2016.04.02; Bug-fix; Maikuolan]: A bug was found by GaffNet whereby custom
+  whitelist signatures were ignored by the script as of the latest version of
+  the codebase due to the way that whitelist signatures were handled; This has
+  been fixed.
+  Refer github.com/Maikuolan/CIDRAM/issues/7
+
+- [2016.04.03; Minor code change; Maikuolan]: Added support for Apache-style
+  logging and for serialised logging (this could help any users wanting to
+  integrate CIDRAM with packages such as fail2ban, which require Apache-style
+  logs), and two related new configuration directives. Extended the
+  "forbid_on_block" directive to allow 503 header responses. Added the ability
+  to silently redirect blocked access attempts instead of displaying the usual
+  "Access Denied" page. Did some more minor code refactoring.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
+  Refer github.com/Maikuolan/CIDRAM/issues/3
 
 === Version/Release 0.1.2 ===
 PATCH RELEASE.

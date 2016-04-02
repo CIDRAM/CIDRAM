@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2016.03.28).
+ * This file: Custom rules file for Soft Layer (last modified: 2016.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,7 +22,7 @@ if (!isset($cidr[$i])) {
 }
 
 /** Skip further processing if the `block_cloud` directive is false. */
-if(!$CIDRAM['Config']['signatures']['block_cloud']) {
+if (!$CIDRAM['Config']['signatures']['block_cloud']) {
     continue;
 }
 

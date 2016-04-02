@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.31).
+ * This file: Functions file (last modified: 2016.04.02).
  */
 
 /**
@@ -183,8 +183,9 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 str_replace("\r", '', $IPv4Sigs[$x]) :
                 str_replace("\r", "\n", $IPv4Sigs[$x]);
         }
+        $IPv4Sigs[$x] = "\n" . $IPv4Sigs[$x] . "\n";
         for ($i = 0; $i < 32; $i++) {
-            $PosB = 0;
+            $PosB = -1;
             while(true) {
                 $PosA = strpos($IPv4Sigs[$x], "\n" . $cidr[$i] . ' ', ($PosB + 1));
                 if ($PosA === false) {
@@ -194,19 +195,18 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 if (!$PosB = strpos($IPv4Sigs[$x], "\n", $PosA)) {
                     break;
                 }
-                if (
+                $Tag = (
                     ($PosX = strpos($IPv4Sigs[$x], "\nTag: ", $PosA)) &&
                     ($PosY = strpos($IPv4Sigs[$x], "\n", ($PosX + 1))) &&
                     !substr_count($IPv4Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1))
-                ) {
-                    $Tag = substr($IPv4Sigs[$x], ($PosX + 6), ($PosY - $PosX - 6));
-                } else {
-                    $Tag = $DefTag;
-                }
+                ) ? substr($IPv4Sigs[$x], ($PosX + 6), ($PosY - $PosX - 6)) : $DefTag;
                 $LN = ' ("' . $Tag . '", L' . substr_count($IPv4Sigs[$x], "\n", 0, $PosA) . ':F' . $x . ')';
                 $Sig = substr($IPv4Sigs[$x], $PosA, ($PosB - $PosA));
-                $Cat = substr($Sig, 0, strpos($Sig, ' '));
-                $Sig = substr($Sig, strpos($Sig, ' ') + 1);
+                if (!$Cat = substr($Sig, 0, strpos($Sig, ' '))) {
+                    $Cat = $Sig;
+                } else {
+                    $Sig = substr($Sig, strpos($Sig, ' ') + 1);
+                }
                 if ($Cat === 'Run') {
                     if (file_exists($CIDRAM['Vault'] . $Sig)) {
                         require_once $CIDRAM['Vault'] . $Sig;
@@ -543,8 +543,9 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 str_replace("\r", '', $IPv6Sigs[$x]) :
                 str_replace("\r", "\n", $IPv6Sigs[$x]);
         }
+        $IPv6Sigs[$x] = "\n" . $IPv6Sigs[$x] . "\n";
         for ($i = 0; $i < 128; $i++) {
-            $PosB = 0;
+            $PosB = -1;
             while(true) {
                 $PosA = strpos($IPv6Sigs[$x], "\n" . $cidr[$i] . ' ', ($PosB + 1));
                 if ($PosA === false) {
@@ -554,19 +555,18 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 if (!$PosB = strpos($IPv6Sigs[$x], "\n", $PosA)) {
                     break;
                 }
-                if (
+                $Tag = (
                     ($PosX = strpos($IPv6Sigs[$x], "\nTag: ", $PosA)) &&
                     ($PosY = strpos($IPv6Sigs[$x], "\n", ($PosX + 1))) &&
                     !substr_count($IPv6Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1))
-                ) {
-                    $Tag = substr($IPv6Sigs[$x], ($PosX + 6), ($PosY - $PosX - 6));
-                } else {
-                    $Tag = $DefTag;
-                }
+                ) ? substr($IPv6Sigs[$x], ($PosX + 6), ($PosY - $PosX - 6)) : $DefTag;
                 $LN = ' ("' . $Tag . '", L' . substr_count($IPv6Sigs[$x], "\n", 0, $PosA) . ':F' . $x . ')';
                 $Sig = substr($IPv6Sigs[$x], $PosA, ($PosB - $PosA));
-                $Cat = substr($Sig, 0, strpos($Sig, ' '));
-                $Sig = substr($Sig, strpos($Sig, ' ') + 1);
+                if (!$Cat = substr($Sig, 0, strpos($Sig, ' '))) {
+                    $Cat = $Sig;
+                } else {
+                    $Sig = substr($Sig, strpos($Sig, ' ') + 1);
+                }
                 if ($Cat === 'Run') {
                     if (file_exists($CIDRAM['Vault'] . $Sig)) {
                         require_once $CIDRAM['Vault'] . $Sig;

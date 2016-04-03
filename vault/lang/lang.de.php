@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.04.01).
+ * This file: German language data (last modified: 2016.04.03).
  *
  * @todo (This is incomplete).
  */
@@ -68,4 +68,4 @@ $CIDRAM['lang']['CLI_H'] = "
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' The specified IP address, "{IP}", is not a valid IPv4 or IPv6 IP address!';
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' The specified IP address, "{IP}", *IS* blocked by one or more of the CIDRAM signature files.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *NOT* blocked by one or more of the CIDRAM signature files.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *NOT* blocked by any of the CIDRAM signature files.';

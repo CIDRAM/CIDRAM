@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2016.04.01).
+ * This file: Portuguese language data (last modified: 2016.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,4 +66,4 @@ $CIDRAM['lang']['CLI_H'] = "
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' O endereço IP especificado, "{IP}", não é um endereço válido!';
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' O endereço IP especificado, "{IP}", é bloqueado por um ou mais das assinaturas.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' O endereço IP especificado, "{IP}", *NÃO* é bloqueado por um ou mais das assinaturas.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' O endereço IP especificado, "{IP}", *NÃO* é bloqueado por qualquer um das assinaturas.';

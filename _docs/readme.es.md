@@ -133,13 +133,22 @@ La siguiente es una lista de variables encuentran en la `config.ini` configuraci
 General configuración para CIDRAM.
 
 "logfile"
-- Nombre del archivo para registrando todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar.
+- Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar.
+
+"logfileApache"
+- Un archivo en el estilo de Apache para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar.
+
+"logfileSerialized"
+- Un archivo serializado para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar.
 
 "ipaddr"
 - Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 "forbid_on_block"
-- Debería CIDRAM responder con 403 headers a solicitudes bloqueadas, o seguir con la habitual 200 OK? False = No (200) [Predefinido]; True = Sí (403).
+- Debería CIDRAM responder con 403 headers a solicitudes bloqueadas, o seguir con la habitual 200 OK? False/200 = No (200) [Predefinido]; True = Sí (403); 503 = Servicio no disponible (503).
+
+"silent_mode"
+- Debería CIDRAM silencio redirigir los intentos de acceso bloqueados en lugar de mostrar la página "Acceso Denegado"? En caso afirmativo, especifique la ubicación para redirigir los intentos de acceso bloqueados. Si no, dejar esta variable en blanco.
 
 "lang"
 - Especifique la predefinido del lenguaje para CIDRAM.
@@ -165,6 +174,14 @@ Configuración de firmas.
 "block_spam"
 - Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true.
 
+####"template_data" (Categoría)
+Directivas/Variables para las plantillas y temas.
+
+Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si utiliza temas personalizados para CIDRAM, HTML se obtiene a partir del `template_custom.html` archivo, y para de otra manera, HTML se obtiene a partir del `template.html` archivo. Variables escritas a esta sección de la configuración archivo se procesado para el HTML a través de la sustitución de los nombres de variables circunfijo por llaves que se encuentran dentro del HTML con el variable datos correspondiente. Por ejemplo, dónde `foo="bar"`, cualquier instancias de `<p>{foo}</p>` que se encuentran dentro del HTML se convertirá `<p>bar</p>`.
+
+"css_url"
+- El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir CIDRAM de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, CIDRAM utilizará el plantilla archivo para el predefinida tema.
+
 ---
 
 
@@ -184,7 +201,7 @@ All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% 
 - `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
 - `%Param%` represents whatever additional information may be required by `%Function%`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows` %0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
@@ -248,4 +265,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Última Actualización: 1 Abril 2016 (2016.04.01).
+Última Actualización: 3 Abril 2016 (2016.04.03).

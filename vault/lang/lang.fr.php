@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.04.01).
+ * This file: French language data (last modified: 2016.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,4 +66,4 @@ $CIDRAM['lang']['CLI_H'] = "
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' L\'adresse IP spécifiée, "{IP}", est pas une adresse IPv4 ou IPv6 valide!';
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' L\'adresse IP spécifiée, "{IP}", *EST* bloqué par un ou plusieurs du signatures de CIDRAM.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' L\'adresse IP spécifiée, "{IP}", n\'est *PAS* bloqué par un ou plusieurs du signatures de CIDRAM.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' L\'adresse IP spécifiée, "{IP}", n\'est *PAS* bloqué par les signatures de CIDRAM.';

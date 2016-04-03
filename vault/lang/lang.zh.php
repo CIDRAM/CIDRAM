@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2016.04.01).
+ * This file: Chinese (simplified) language data (last modified: 2016.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,5 +66,5 @@ $CIDRAM['lang']['CLI_H'] = "
 ";
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' 指定的IP地址，“{IP}”，不是有效地址（IPv4/IPv6）！';
-$CIDRAM['lang']['CLI_IP_Blocked'] = ' 指定的IP地址，“{IP}”，是由一个或多个阻塞签名文件。';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' 指定的IP地址，“{IP}”，不是由一个或多个阻塞签名文件。';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' 指定的IP地址，“{IP}”，是阻塞由一个或多签名文件。';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' 指定的IP地址，“{IP}”，不是阻塞由任何签名文件。';

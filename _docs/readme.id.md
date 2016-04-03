@@ -133,13 +133,22 @@ Berikut list variabel yang ditemukan pada file konfigurasi CIDRAM `config.ini`, 
 Konfigurasi umum dari CIDRAM.
 
 "logfile"
-- Nama file untuk mencatat semua akses upaya yang diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+- File yang dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+
+"logfileApache"
+- File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+
+"logfileSerialized"
+- File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
 "ipaddr"
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
 "forbid_on_block"
-- Seharusnya CIDRAM menanggapi dengan 403 header untuk permintaan diblokir, atau cocok dengan 200 OK? False = Tidak (200) [Default]; True = Ya (403).
+- Seharusnya CIDRAM menanggapi dengan 403 header untuk permintaan diblokir, atau cocok dengan 200 OK? False/200 = Tidak (200) [Default]; True = Ya (403); 503 = Layanan tidak tersedia (503).
+
+"silent_mode"
+- Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.
 
 "lang"
 - Tentukan bahasa default untuk CIDRAM.
@@ -165,6 +174,14 @@ Konfigurasi untuk tanda tangan.
 "block_spam"
 - Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar.
 
+####"template_data" (Kategori)
+Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
+
+Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika Anda menggunakan tema kustom untuk CIDRAM, HTML diproduksi yang bersumber dari file `template_custom.html`, dan sebaliknya, HTML diproduksi yang bersumber dari file `template.html`. Variabel ditulis untuk file konfigurasi bagian ini yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan file variabel sesuai. Sebagai contoh, dimana `foo="bar"`, setiap terjadinya `<p>{foo}</p>` ditemukan dalam HTML diproduksi akan menjadi `<p>bar</p>`.
+
+"css_url"
+- File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan CIDRAM menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable `css_url`. Jika Anda biarkan kosong variabel ini, CIDRAM akan menggunakan file template untuk tema default.
+
 ---
 
 
@@ -184,7 +201,7 @@ All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% 
 - `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
 - `%Param%` represents whatever additional information may be required by `%Function%`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows` %0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
@@ -248,4 +265,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Terakhir Diperbarui: 1 April 2016 (2016.04.01).
+Terakhir Diperbarui: 3 April 2016 (2016.04.03).

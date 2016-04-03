@@ -85,7 +85,8 @@ if (!$CIDRAM['TestIPv4'] && !$CIDRAM['TestIPv6']) {
 if (
     $CIDRAM['BlockInfo']['SignatureCount'] && (
         $CIDRAM['Config']['general']['logfile'] ||
-        $CIDRAM['Config']['general']['logfileApache']
+        $CIDRAM['Config']['general']['logfileApache'] ||
+        $CIDRAM['Config']['general']['logfileSerialized']
     )
 ) {
     $CIDRAM['Cache']['Counter']++;
@@ -102,8 +103,14 @@ if ($CIDRAM['CacheModified']) {
 
 /** If any signatures were triggered, log it, generate output, then die. */
 if ($CIDRAM['BlockInfo']['SignatureCount']) {
-    $CIDRAM['template_file'] = 'template.html';
+
+    $CIDRAM['template_file'] =
+        (!$CIDRAM['Config']['template_data']['css_url']) ? 'template.html' : 'template_custom.html';
+
+    $CIDRAM['Parsables'] = $CIDRAM['lang'] + $CIDRAM['BlockInfo'] + $CIDRAM['Config']['template_data'];
+
     if (!$CIDRAM['Config']['general']['silent_mode']) {
+
         if ($CIDRAM['Config']['general']['forbid_on_block'] == 503) {
             $CIDRAM['errCode'] = 503;
             header('HTTP/1.0 503 Service Unavailable');
@@ -117,6 +124,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         } else {
             $CIDRAM['errCode'] = 200;
         }
+
         if (!file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
             header('Content-Type: text/plain');
             $CIDRAM['html'] = '[CIDRAM] ' . $CIDRAM['lang']['denied'];
@@ -126,21 +134,21 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
             } else {
                 $CIDRAM['BlockInfo']['EmailAddr'] =
                     '<strong><a href="mailto:' . $CIDRAM['Config']['general']['emailaddr'] . '?subject=CIDRAM%20Event&body=' .
-                    urlencode($CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ParseVars']($CIDRAM['BlockInfo'],
+                    urlencode($CIDRAM['ParseVars']($CIDRAM['Parsables'],
                         "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
                         "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
                         "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
                         "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
-                    ))) . '">' . $CIDRAM['lang']['click_here'] . '</a></strong>';
+                    )) . '">' . $CIDRAM['lang']['click_here'] . '</a></strong>';
                 $CIDRAM['BlockInfo']['EmailAddr'] = "\n<p><strong>" . $CIDRAM['ParseVars'](array(
                     'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
                 ), $CIDRAM['lang']['Support_Email']) . '</strong></p>';
             }
-            $CIDRAM['html'] = $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ParseVars'](
-                $CIDRAM['BlockInfo'],
+            $CIDRAM['html'] = $CIDRAM['ParseVars']($CIDRAM['Parsables'],
                 $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['template_file'])
-            ));
+            );
         }
+
     } else {
         $CIDRAM['errCode'] = 301;
         header('HTTP/1.0 301 Moved Permanently');
@@ -149,24 +157,25 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['html'] = '';
     }
+
     if ($CIDRAM['Config']['general']['logfile']) {
         $CIDRAM['logfileData'] = array('d' =>
             (!file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'])) ?
             "\x3c\x3fphp die; \x3f\x3e\n\n" :
             ''
         );
-        $CIDRAM['logfileData']['d'] .=
-            $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ParseVars']($CIDRAM['BlockInfo'],
-                "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
-                "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
-                "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
-                "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
-            ));
+        $CIDRAM['logfileData']['d'] .= $CIDRAM['ParseVars']($CIDRAM['Parsables'],
+            "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
+            "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
+            "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
+            "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
+        );
         $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], 'a');
         fwrite($CIDRAM['logfileData']['f'], $CIDRAM['logfileData']['d']);
         fclose($CIDRAM['logfileData']['f']);
         unset($CIDRAM['logfileData']);
     }
+
     if ($CIDRAM['Config']['general']['logfileApache']) {
         $CIDRAM['logfileApacheData'] = array('d' => sprintf(
             "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
@@ -185,6 +194,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         fclose($CIDRAM['logfileApacheData']['f']);
         unset($CIDRAM['logfileApacheData']);
     }
+
     if ($CIDRAM['Config']['general']['logfileSerialized']) {
         if (isset($CIDRAM['BlockInfo']['EmailAddr'])) {
             unset($CIDRAM['BlockInfo']['EmailAddr']);
@@ -197,5 +207,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         fclose($CIDRAM['logfileSerialData']);
         unset($CIDRAM['logfileSerialData']);
     }
+
     die($CIDRAM['html']);
+
 }

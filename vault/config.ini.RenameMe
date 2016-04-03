@@ -20,8 +20,9 @@ logfileSerialized=''
 ; Cloudflare and the likes) Default = REMOTE_ADDR
 ; WARNING: Don't change this unless you know what you're doing!
 ipaddr='REMOTE_ADDR'
-; Should CIDRAM send 403 headers with the file upload blocked message, or stick
-; with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
+; Should CIDRAM respond with 403 headers to blocked requests, or stick with the
+; usual 200 OK? False/200 = No (200) [Default]; True = Yes (403);
+; 503 = Service unavailable (503).
 forbid_on_block=false
 ; Should CIDRAM silently redirect blocked access attempts instead of displaying
 ; the "Access Denied" page? If yes, specify the location to redirect blocked
@@ -67,3 +68,20 @@ block_generic=true
 ; problems when doing so, generally, this should always be set to true.
 ; False = No; True = Yes [Default].
 block_spam=true
+
+[template_data]
+; Relates to the HTML output used to generate the "Access Denied" page. If
+; you're using custom themes for CIDRAM, HTML output is sourced from the
+; "template_custom.html" file, and otherwise, HTML output is sourced from the
+; "template.html" file. Variables written to this section of the configuration
+; file are parsed to the HTML output by way of replacing any variable names
+; circumfixed by curly brackets found within the HTML output with the
+; corresponding variable data. For example, where foo='bar', any instance of
+; <p>{foo}</p> found within the HTML output will become <p>bar</p>.
+; The template file for custom themes utilises external CSS properties, whereas
+; the template file for the default theme utilises internal CSS properties. To
+; instruct CIDRAM to use the template file for custom themes, specify the
+; public HTTP address of your custom theme's CSS files using the "css_url"
+; variable. If you leave this variable blank, CIDRAM will use the template file
+; for the default theme.
+css_url=''

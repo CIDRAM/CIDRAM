@@ -138,13 +138,22 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 基本CIDRAM配置。
 
 “logfile”
-- 文件为记录所有被拦截的访问。指定一个文件名，或留空以禁用。
+- 人类可读文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。
+
+“logfileApache”
+- Apache风格文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。
+
+“logfileSerialized”
+- 连载的文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。
 
 “ipaddr”
 - 在哪里可以找到连接请求IP地址？（可以使用为服务例如Cloudflare和类似）标准是`REMOTE_ADDR`。警告！不要修改此除非您知道什么您做着！
 
 “forbid_on_block”
-- CIDRAM 应该响应以 “403 Forbidden” 到被阻止的请求，或 “200 OK”？ False = 200 [Default]; True = 403。
+- CIDRAM 应该响应以 “403 Forbidden” 到被阻止的请求，或 “200 OK”？ False/200 = 200 [默认]; True = 403; 503 = 服务不可用（503）。
+
+“silent_mode”
+- CIDRAM 应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。
 
 “lang”
 - 指定标准CIDRAM语言。
@@ -170,6 +179,14 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 “block_spam”
 - 阻止高风险垃圾邮件CIDR吗？除非您遇到问题当这样做，通常，这应该被设置为“true”（真）。
 
+####“template_data” （类别）
+指令和变量为模板和主题。
+
+涉及的HTML输出用于生成该“拒绝访问”页。如果您使用个性化主题为CIDRAM，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
+
+“css_url”
+- 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。以指示CIDRAM使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。如果您离开这个变量空白，CIDRAM将使用模板文件为默认主题。
+
 ---
 
 
@@ -189,7 +206,7 @@ All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% 
 - `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
 - `%Param%` represents whatever additional information may be required by `%Function%`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows` %0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
@@ -253,4 +270,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-最后更新：2016年4月1日。
+最后更新：2016年4月3日。

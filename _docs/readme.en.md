@@ -133,13 +133,22 @@ The following is a list of the directives available to CIDRAM in the `config.ini
 General CIDRAM configuration.
 
 "logfile"
-- Filename of file to log all blocked access attempts to. Specify a filename, or leave blank to disable.
+- Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+
+"logfileApache"
+- Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+
+"logfileSerialized"
+- Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
 
 "ipaddr"
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
-- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
+- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
+
+"silent_mode"
+- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
 
 "lang"
 - Specify the default language for CIDRAM.
@@ -164,6 +173,14 @@ Signatures configuration.
 
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
+
+####"template_data" (Category)
+Directives/Variables for templates and themes.
+
+Relates to the HTML output used to generate the "Access Denied" page. If you're using custom themes for CIDRAM, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+
+"css_url"
+- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct CIDRAM to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, CIDRAM will use the template file for the default theme.
 
 ---
 
@@ -248,4 +265,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 1st April 2016 (2016.04.01).
+Last Updated: 3rd April 2016 (2016.04.03).

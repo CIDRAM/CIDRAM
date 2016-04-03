@@ -137,13 +137,22 @@ Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `conf
 Generelle Konfiguration von CIDRAM.
 
 "logfile"
-- Filename of file to log all blocked access attempts to. Specify a filename, or leave blank to disable.
+- Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+
+"logfileApache"
+- Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+
+"logfileSerialized"
+- Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
 
 "ipaddr"
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 "forbid_on_block"
-- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
+- Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. False/200 = Nein (200) [Standardeinstellung]; True = Ja (403); 503 = Service nicht verfügbar (503).
+
+"silent_mode"
+- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
 
 "lang"
 - Gibt die Standardsprache für CIDRAM an.
@@ -169,6 +178,14 @@ Konfiguration der Signaturen.
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
+####"template_data" (Kategorie)
+Anweisungen/Variablen für Templates und Themes.
+
+Relates to the HTML output used to generate the "Access Denied" page. Falls Sie benutzerdefinierte Themes für CIDRAM verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`.
+
+"css_url"
+- Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um CIDRAM anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird CIDRAM die Template-Datei für das normale Theme verwenden.
+
 ---
 
 
@@ -188,7 +205,7 @@ All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% 
 - `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
 - `%Param%` represents whatever additional information may be required by `%Function%`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows` %0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
@@ -252,4 +269,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Zuletzt aktualisiert: 1. April 2016 (2016.04.01).
+Zuletzt aktualisiert: 3. April 2016 (2016.04.03).

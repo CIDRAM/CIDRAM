@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.04.01).
+ * This file: Indonesian language data (last modified: 2016.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,4 +66,4 @@ $CIDRAM['lang']['CLI_H'] = "
 
 $CIDRAM['lang']['CLI_Bad_IP'] = ' Alamat IP yang ditetapkan, "{IP}", yang tidak valid!';
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' Alamat IP yang ditetapkan, "{IP}", *YANG* diblokir oleh satu atau lebih tanda tangan.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Alamat IP yang ditetapkan, "{IP}", yang *TIDAK* diblokir oleh satu atau lebih tanda tangan.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Alamat IP yang ditetapkan, "{IP}", yang *TIDAK* diblokir oleh apapun tanda tangan.';

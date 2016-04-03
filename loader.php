@@ -131,6 +131,15 @@ if (!defined('CIDRAM')) {
         $CIDRAM['Config']['signatures']['block_spam'] = true;
     }
 
+    /** Fallback for missing "template_data" configuration category. */
+    if (!isset($CIDRAM['Config']['template_data'])) {
+        $CIDRAM['Config']['template_data'] = array();
+    }
+    /** Fallback for missing "css_url" configuration directive. */
+    if (!isset($CIDRAM['Config']['template_data']['css_url'])) {
+        $CIDRAM['Config']['template_data']['css_url'] = '';
+    }
+
     /** Determine PHP path. */
     $CIDRAM['CIDRAM_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 

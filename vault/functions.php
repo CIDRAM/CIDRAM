@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.04.03).
+ * This file: Functions file (last modified: 2016.04.04).
  */
 
 /**
@@ -634,4 +634,15 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
         }
     }
     return true;
+};
+
+/**
+ * A very simple closure for preparing validator/fixer messages in CLI-mode.
+ *
+ * @param string $lvl Error level.
+ * @param string $msg The unprepared message (in).
+ * @return string The prepared message (out).
+ */
+$CIDRAM['ValidatorMsg'] = function ($lvl, $msg) {
+    return wordwrap(sprintf(' [%s] %s', $lvl, $msg), 79, "\n ") . "\n\n";
 };

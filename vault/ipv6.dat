@@ -141,7 +141,6 @@ Tag: CST-NET
 # Updated: 2016.03.20
 
 2604:d180::/32 Deny Cloud
-2605:2080::/34 Deny Cloud
 Tag: Global Frag Networks
 
 
@@ -186,7 +185,6 @@ Tag: HostDime.com, Inc
 # Updated: 2016.02.27 / Checked: 2016.03.28
 
 2620:11d:6000::/42 Deny Generic
-2620:11d:6018::/48 Deny Generic
 2a00:6d40::/31 Deny Generic
 2a01:5940::/35 Deny Generic
 2a01:5940:2000::/36 Deny Generic
@@ -308,7 +306,7 @@ Tag: OVH Systems
 
 # ASN 34619 ("Çizgi Telekomünikasyon").
 # Infected by malware (as per reported by Google): 3.90%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Updated: 2016.01.18 / Checked: 2016.04.04
 
 2a02:2020::/32 Deny Generic
 Tag: AS34619
@@ -515,8 +513,6 @@ Tag: PT Hutchison
 # Updated: 2016.03.02
 
 2400:9800::/32 Deny Spam
-2400:9800:3::/48 Deny Spam
-2400:9800:4::/46 Deny Spam
 Tag: PT Excelcomindo
 
 
@@ -552,7 +548,6 @@ Tag: H1 LLC
 2a02:13f0:8100::/48 Deny Generic
 2a03:5180::/46 Deny Generic
 2a03:5180:4::/47 Deny Generic
-2a05:3a40:2::/48 Deny Generic
 Tag: Voxility LLC
 
 
@@ -594,7 +589,6 @@ Tag: INFOBOX
 # Updated: 2016.01.18 / Checked: 2016.03.02
 
 2a05:b40::/29 Deny Spam
-2a05:b40::/32 Deny Spam
 Tag: HOSTKEY B.V.
 
 
@@ -719,7 +713,6 @@ Tag: PIN-AS
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
 2403:cc00:3000::/36 Deny Cloud
-2607:bd00:100::/48 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a03:b201::/32 Deny Cloud
 2a03:ca80::/31 Deny Cloud
@@ -983,7 +976,6 @@ Tag: Black Lotus
 2602:ffea:1000::/36 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
-2605:8900:3000::/36 Deny Cloud
 2607:8700:102::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
@@ -1321,7 +1313,7 @@ Tag: AS30083
 2001:49f0:4021::/48 Deny Cloud
 2001:49f0:5000::/48 Deny Cloud
 2001:49f0:6000::/48 Deny Cloud
-2001:49f0:7001::/47 Deny Cloud
+2001:49f0:7000::/47 Deny Cloud
 2001:49f0:a007::/48 Deny Cloud
 2001:49f0:a00b::/48 Deny Cloud
 2001:49f0:a00d::/48 Deny Cloud
@@ -1375,7 +1367,7 @@ Tag: Cogent
 
 # ASN 59711 ("FORTUNIX NETWORKS L.P.").
 # Infected by malware (as per reported by Google): 3.06%.
-# Updated: 2016.02.10
+# Updated: 2016.02.10 / Checked: 2016.04.04
 
 2a01:8640::/48 Deny Cloud
 2a01:8640:2::/48 Deny Cloud
@@ -1434,7 +1426,6 @@ Tag: AltusHost B.V.
 
 
 # "Akamai Technologies"
-# Refer to gist.github.com/Maikuolan/3e74406a857c989d8b1e for the ASN information for these listings.
 # ASN 12222, 16625, 16702, 17334, 18680, 18717, 20189, 20940, 21342, 21357, 21399, 22207, 23454, 23455, 23903, 24319,
 #   30675, 31107, 31108, 31109, 31110, 31377, 32787, 33905, 34164, 34850, 35204, 35993, 35994, 36183, 39836, 43639,
 #   45700, 48163, 49846, 55770, 393234, 393560.
@@ -1597,7 +1588,7 @@ Tag: AltusHost B.V.
 2001:4878:8008::/47 Deny Cloud
 2001:4878:8010::/48 Deny Cloud
 2001:4878:8026::/47 Deny Cloud
-2001:4878:8033::/47 Deny Cloud
+2001:4878:8032::/47 Deny Cloud
 2001:4878:8037::/48 Deny Cloud
 2001:4878:8038::/48 Deny Cloud
 2001:4878:8045::/48 Deny Cloud
@@ -1652,7 +1643,7 @@ Tag: AltusHost B.V.
 2001:4878:c305::/48 Deny Cloud
 2001:4878:c321::/48 Deny Cloud
 2001:4878:c322::/47 Deny Cloud
-2001:4878:c347::/47 Deny Cloud
+2001:4878:c346::/47 Deny Cloud
 2404:4e00::/47 Deny Cloud
 2404:4e00:100::/47 Deny Cloud
 2404:c800:8203::/48 Deny Cloud
@@ -1907,9 +1898,52 @@ Tag: Akamai Technologies
 Tag: Latisys-Irvine, LLC
 
 
+# ASN 46261 ("QuickPacket, LLC").
+# Infected by malware (as per reported by Google): 1.84%.
+# Updated: 2016.04.04
+
+2403:bb80::/32 Deny Cloud
+2607:3f00::/43 Deny Cloud
+Tag: QuickPacket, LLC
+
+
+# ASN 29802 ("HIVELOCITY VENTURES CORP").
+# Infected by malware (as per reported by Google): 2.15%.
+# Updated: 2016.04.04
+
+2604:4500::/32 Deny Cloud
+Tag: HIVELOCITY VENTURES
+
+
+# ASN 48095 ("XT GLOBAL NETWORKS LTD.").
+# Infected by malware (as per reported by Google): 0.17%.
+# Updated: 2016.04.04
+
+2a05:6700::/29 Deny Cloud
+Tag: XT GLOBAL
+
+
+# ASN 13739 ("Datacenter IP, LLC").
+# Infected by malware (as per reported by Google): 1.58%.
+# Updated: 2016.04.04
+
+2602:ffad::/36 Deny Cloud
+2604:6080::/32 Deny Cloud
+2605:5980::/32 Deny Cloud
+Tag: Datacenter IP, LLC
+
+
+# ASN 43578 ("MBA DATACENTERS S.L.").
+# Infected by malware (as per reported by Google): 2.20%.
+# Updated: 2016.04.04
+
+2a05:4700:100::/48 Deny Cloud
+Tag: MBA DATACENTERS S.L.
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.03.30
+# Updated: 2016.04.04
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -2816,7 +2850,6 @@ Tag: Latisys-Irvine, LLC
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:124::/46 Deny Bogon
 2001:678:128::/45 Deny Bogon
 2001:678:130::/44 Deny Bogon
 2001:678:140::/42 Deny Bogon
@@ -4803,7 +4836,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:5440::/42 Deny Bogon
 2001:df1:5480::/41 Deny Bogon
 2001:df1:5500::/40 Deny Bogon
-2001:df1:5600::/39 Deny Bogon
+2001:df1:5601::/48 Deny Bogon
+2001:df1:5602::/47 Deny Bogon
+2001:df1:5604::/46 Deny Bogon
+2001:df1:5608::/45 Deny Bogon
+2001:df1:5610::/44 Deny Bogon
+2001:df1:5620::/43 Deny Bogon
+2001:df1:5640::/42 Deny Bogon
+2001:df1:5680::/41 Deny Bogon
+2001:df1:5700::/40 Deny Bogon
 2001:df1:5801::/48 Deny Bogon
 2001:df1:5802::/47 Deny Bogon
 2001:df1:5804::/46 Deny Bogon
@@ -4813,7 +4854,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:5840::/42 Deny Bogon
 2001:df1:5880::/41 Deny Bogon
 2001:df1:5900::/40 Deny Bogon
-2001:df1:5a00::/39 Deny Bogon
+2001:df1:5a01::/48 Deny Bogon
+2001:df1:5a02::/47 Deny Bogon
+2001:df1:5a04::/46 Deny Bogon
+2001:df1:5a08::/45 Deny Bogon
+2001:df1:5a10::/44 Deny Bogon
+2001:df1:5a20::/43 Deny Bogon
+2001:df1:5a40::/42 Deny Bogon
+2001:df1:5a80::/41 Deny Bogon
+2001:df1:5b00::/40 Deny Bogon
 2001:df1:5c01::/48 Deny Bogon
 2001:df1:5c02::/47 Deny Bogon
 2001:df1:5c04::/46 Deny Bogon
@@ -4823,7 +4872,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:5c40::/42 Deny Bogon
 2001:df1:5c80::/41 Deny Bogon
 2001:df1:5d00::/40 Deny Bogon
-2001:df1:5e00::/39 Deny Bogon
+2001:df1:5e01::/48 Deny Bogon
+2001:df1:5e02::/47 Deny Bogon
+2001:df1:5e04::/46 Deny Bogon
+2001:df1:5e08::/45 Deny Bogon
+2001:df1:5e10::/44 Deny Bogon
+2001:df1:5e20::/43 Deny Bogon
+2001:df1:5e40::/42 Deny Bogon
+2001:df1:5e80::/41 Deny Bogon
+2001:df1:5f00::/40 Deny Bogon
 2001:df1:6001::/48 Deny Bogon
 2001:df1:6002::/47 Deny Bogon
 2001:df1:6004::/46 Deny Bogon
@@ -4833,7 +4890,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:6040::/42 Deny Bogon
 2001:df1:6080::/41 Deny Bogon
 2001:df1:6100::/40 Deny Bogon
-2001:df1:6200::/39 Deny Bogon
+2001:df1:6201::/48 Deny Bogon
+2001:df1:6202::/47 Deny Bogon
+2001:df1:6204::/46 Deny Bogon
+2001:df1:6208::/45 Deny Bogon
+2001:df1:6210::/44 Deny Bogon
+2001:df1:6220::/43 Deny Bogon
+2001:df1:6240::/42 Deny Bogon
+2001:df1:6280::/41 Deny Bogon
+2001:df1:6300::/40 Deny Bogon
 2001:df1:6401::/48 Deny Bogon
 2001:df1:6402::/47 Deny Bogon
 2001:df1:6404::/46 Deny Bogon
@@ -4843,7 +4908,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:6440::/42 Deny Bogon
 2001:df1:6480::/41 Deny Bogon
 2001:df1:6500::/40 Deny Bogon
-2001:df1:6600::/39 Deny Bogon
+2001:df1:6601::/48 Deny Bogon
+2001:df1:6602::/47 Deny Bogon
+2001:df1:6604::/46 Deny Bogon
+2001:df1:6608::/45 Deny Bogon
+2001:df1:6610::/44 Deny Bogon
+2001:df1:6620::/43 Deny Bogon
+2001:df1:6640::/42 Deny Bogon
+2001:df1:6680::/41 Deny Bogon
+2001:df1:6700::/40 Deny Bogon
 2001:df1:6801::/48 Deny Bogon
 2001:df1:6802::/47 Deny Bogon
 2001:df1:6804::/46 Deny Bogon
@@ -4853,7 +4926,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:6840::/42 Deny Bogon
 2001:df1:6880::/41 Deny Bogon
 2001:df1:6900::/40 Deny Bogon
-2001:df1:6a00::/39 Deny Bogon
+2001:df1:6a01::/48 Deny Bogon
+2001:df1:6a02::/47 Deny Bogon
+2001:df1:6a04::/46 Deny Bogon
+2001:df1:6a08::/45 Deny Bogon
+2001:df1:6a10::/44 Deny Bogon
+2001:df1:6a20::/43 Deny Bogon
+2001:df1:6a40::/42 Deny Bogon
+2001:df1:6a80::/41 Deny Bogon
+2001:df1:6b00::/40 Deny Bogon
 2001:df1:6c01::/48 Deny Bogon
 2001:df1:6c02::/47 Deny Bogon
 2001:df1:6c04::/46 Deny Bogon
@@ -4863,7 +4944,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:6c40::/42 Deny Bogon
 2001:df1:6c80::/41 Deny Bogon
 2001:df1:6d00::/40 Deny Bogon
-2001:df1:6e00::/39 Deny Bogon
+2001:df1:6e01::/48 Deny Bogon
+2001:df1:6e02::/47 Deny Bogon
+2001:df1:6e04::/46 Deny Bogon
+2001:df1:6e08::/45 Deny Bogon
+2001:df1:6e10::/44 Deny Bogon
+2001:df1:6e20::/43 Deny Bogon
+2001:df1:6e40::/42 Deny Bogon
+2001:df1:6e80::/41 Deny Bogon
+2001:df1:6f00::/40 Deny Bogon
 2001:df1:7001::/48 Deny Bogon
 2001:df1:7002::/47 Deny Bogon
 2001:df1:7004::/46 Deny Bogon
@@ -4873,7 +4962,15 @@ Tag: Latisys-Irvine, LLC
 2001:df1:7040::/42 Deny Bogon
 2001:df1:7080::/41 Deny Bogon
 2001:df1:7100::/40 Deny Bogon
-2001:df1:7200::/39 Deny Bogon
+2001:df1:7201::/48 Deny Bogon
+2001:df1:7202::/47 Deny Bogon
+2001:df1:7204::/46 Deny Bogon
+2001:df1:7208::/45 Deny Bogon
+2001:df1:7210::/44 Deny Bogon
+2001:df1:7220::/43 Deny Bogon
+2001:df1:7240::/42 Deny Bogon
+2001:df1:7280::/41 Deny Bogon
+2001:df1:7300::/40 Deny Bogon
 2001:df1:7401::/48 Deny Bogon
 2001:df1:7402::/47 Deny Bogon
 2001:df1:7404::/46 Deny Bogon
@@ -25281,7 +25378,13 @@ Tag: Latisys-Irvine, LLC
 2404:a110::/28 Deny Bogon
 2404:a120::/27 Deny Bogon
 2404:a140::/26 Deny Bogon
-2404:a180::/25 Deny Bogon
+2404:a181::/32 Deny Bogon
+2404:a182::/31 Deny Bogon
+2404:a184::/30 Deny Bogon
+2404:a188::/29 Deny Bogon
+2404:a190::/28 Deny Bogon
+2404:a1a0::/27 Deny Bogon
+2404:a1c0::/26 Deny Bogon
 2404:a201::/32 Deny Bogon
 2404:a202::/31 Deny Bogon
 2404:a204::/30 Deny Bogon
@@ -25289,7 +25392,13 @@ Tag: Latisys-Irvine, LLC
 2404:a210::/28 Deny Bogon
 2404:a220::/27 Deny Bogon
 2404:a240::/26 Deny Bogon
-2404:a280::/25 Deny Bogon
+2404:a281::/32 Deny Bogon
+2404:a282::/31 Deny Bogon
+2404:a284::/30 Deny Bogon
+2404:a288::/29 Deny Bogon
+2404:a290::/28 Deny Bogon
+2404:a2a0::/27 Deny Bogon
+2404:a2c0::/26 Deny Bogon
 2404:a301::/32 Deny Bogon
 2404:a302::/31 Deny Bogon
 2404:a304::/30 Deny Bogon
@@ -25297,7 +25406,13 @@ Tag: Latisys-Irvine, LLC
 2404:a310::/28 Deny Bogon
 2404:a320::/27 Deny Bogon
 2404:a340::/26 Deny Bogon
-2404:a380::/25 Deny Bogon
+2404:a381::/32 Deny Bogon
+2404:a382::/31 Deny Bogon
+2404:a384::/30 Deny Bogon
+2404:a388::/29 Deny Bogon
+2404:a390::/28 Deny Bogon
+2404:a3a0::/27 Deny Bogon
+2404:a3c0::/26 Deny Bogon
 2404:a401::/32 Deny Bogon
 2404:a402::/31 Deny Bogon
 2404:a404::/30 Deny Bogon
@@ -25305,7 +25420,13 @@ Tag: Latisys-Irvine, LLC
 2404:a410::/28 Deny Bogon
 2404:a420::/27 Deny Bogon
 2404:a440::/26 Deny Bogon
-2404:a480::/25 Deny Bogon
+2404:a481::/32 Deny Bogon
+2404:a482::/31 Deny Bogon
+2404:a484::/30 Deny Bogon
+2404:a488::/29 Deny Bogon
+2404:a490::/28 Deny Bogon
+2404:a4a0::/27 Deny Bogon
+2404:a4c0::/26 Deny Bogon
 2404:a501::/32 Deny Bogon
 2404:a502::/31 Deny Bogon
 2404:a504::/30 Deny Bogon
@@ -25313,7 +25434,13 @@ Tag: Latisys-Irvine, LLC
 2404:a510::/28 Deny Bogon
 2404:a520::/27 Deny Bogon
 2404:a540::/26 Deny Bogon
-2404:a580::/25 Deny Bogon
+2404:a581::/32 Deny Bogon
+2404:a582::/31 Deny Bogon
+2404:a584::/30 Deny Bogon
+2404:a588::/29 Deny Bogon
+2404:a590::/28 Deny Bogon
+2404:a5a0::/27 Deny Bogon
+2404:a5c0::/26 Deny Bogon
 2404:a601::/32 Deny Bogon
 2404:a602::/31 Deny Bogon
 2404:a604::/30 Deny Bogon
@@ -25321,7 +25448,13 @@ Tag: Latisys-Irvine, LLC
 2404:a610::/28 Deny Bogon
 2404:a620::/27 Deny Bogon
 2404:a640::/26 Deny Bogon
-2404:a680::/25 Deny Bogon
+2404:a681::/32 Deny Bogon
+2404:a682::/31 Deny Bogon
+2404:a684::/30 Deny Bogon
+2404:a688::/29 Deny Bogon
+2404:a690::/28 Deny Bogon
+2404:a6a0::/27 Deny Bogon
+2404:a6c0::/26 Deny Bogon
 2404:a701::/32 Deny Bogon
 2404:a702::/31 Deny Bogon
 2404:a704::/30 Deny Bogon
@@ -25329,7 +25462,13 @@ Tag: Latisys-Irvine, LLC
 2404:a710::/28 Deny Bogon
 2404:a720::/27 Deny Bogon
 2404:a740::/26 Deny Bogon
-2404:a780::/25 Deny Bogon
+2404:a781::/32 Deny Bogon
+2404:a782::/31 Deny Bogon
+2404:a784::/30 Deny Bogon
+2404:a788::/29 Deny Bogon
+2404:a790::/28 Deny Bogon
+2404:a7a0::/27 Deny Bogon
+2404:a7c0::/26 Deny Bogon
 2404:aa01::/32 Deny Bogon
 2404:aa02::/31 Deny Bogon
 2404:aa04::/30 Deny Bogon
@@ -25337,7 +25476,13 @@ Tag: Latisys-Irvine, LLC
 2404:aa10::/28 Deny Bogon
 2404:aa20::/27 Deny Bogon
 2404:aa40::/26 Deny Bogon
-2404:aa80::/25 Deny Bogon
+2404:aa81::/32 Deny Bogon
+2404:aa82::/31 Deny Bogon
+2404:aa84::/30 Deny Bogon
+2404:aa88::/29 Deny Bogon
+2404:aa90::/28 Deny Bogon
+2404:aaa0::/27 Deny Bogon
+2404:aac0::/26 Deny Bogon
 2404:ab01::/32 Deny Bogon
 2404:ab02::/31 Deny Bogon
 2404:ab04::/30 Deny Bogon
@@ -25345,7 +25490,13 @@ Tag: Latisys-Irvine, LLC
 2404:ab10::/28 Deny Bogon
 2404:ab20::/27 Deny Bogon
 2404:ab40::/26 Deny Bogon
-2404:ab80::/25 Deny Bogon
+2404:ab81::/32 Deny Bogon
+2404:ab82::/31 Deny Bogon
+2404:ab84::/30 Deny Bogon
+2404:ab88::/29 Deny Bogon
+2404:ab90::/28 Deny Bogon
+2404:aba0::/27 Deny Bogon
+2404:abc0::/26 Deny Bogon
 2404:ac01::/32 Deny Bogon
 2404:ac02::/31 Deny Bogon
 2404:ac04::/30 Deny Bogon
@@ -32325,7 +32476,8 @@ Tag: Latisys-Irvine, LLC
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
 2602:ff40::/29 Deny Bogon
-2602:ff48::/30 Deny Bogon
+2602:ff48::/31 Deny Bogon
+2602:ff4a::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -37190,7 +37342,9 @@ Tag: Latisys-Irvine, LLC
 2607:2610::/28 Deny Bogon
 2607:2620::/27 Deny Bogon
 2607:2640::/26 Deny Bogon
-2607:2680::/25 Deny Bogon
+2607:2690::/28 Deny Bogon
+2607:26a0::/27 Deny Bogon
+2607:26c0::/26 Deny Bogon
 2607:2710::/28 Deny Bogon
 2607:2720::/27 Deny Bogon
 2607:2740::/26 Deny Bogon
@@ -39778,7 +39932,16 @@ Tag: Latisys-Irvine, LLC
 2620:2c:8800::/37 Deny Bogon
 2620:2c:9000::/36 Deny Bogon
 2620:2c:a000::/35 Deny Bogon
-2620:2c:c000::/34 Deny Bogon
+2620:2c:c000::/42 Deny Bogon
+2620:2c:c050::/44 Deny Bogon
+2620:2c:c060::/43 Deny Bogon
+2620:2c:c080::/41 Deny Bogon
+2620:2c:c100::/40 Deny Bogon
+2620:2c:c200::/39 Deny Bogon
+2620:2c:c400::/38 Deny Bogon
+2620:2c:c800::/37 Deny Bogon
+2620:2c:d000::/36 Deny Bogon
+2620:2c:e000::/35 Deny Bogon
 2620:2d:10::/44 Deny Bogon
 2620:2d:20::/43 Deny Bogon
 2620:2d:40::/42 Deny Bogon
@@ -49335,7 +49498,12 @@ Tag: Latisys-Irvine, LLC
 2620:126:7200::/39 Deny Bogon
 2620:126:7400::/38 Deny Bogon
 2620:126:7800::/37 Deny Bogon
-2620:126:8000::/33 Deny Bogon
+2620:126:8100::/40 Deny Bogon
+2620:126:8200::/39 Deny Bogon
+2620:126:8400::/38 Deny Bogon
+2620:126:8800::/37 Deny Bogon
+2620:126:a000::/35 Deny Bogon
+2620:126:c000::/34 Deny Bogon
 2620:127::/32 Deny Bogon
 2620:128::/29 Deny Bogon
 2620:130::/28 Deny Bogon
@@ -50392,7 +50560,14 @@ Tag: Latisys-Irvine, LLC
 2801:1a:8200::/39 Deny Bogon
 2801:1a:8400::/38 Deny Bogon
 2801:1a:8800::/37 Deny Bogon
-2801:1a:9000::/36 Deny Bogon
+2801:1a:9010::/44 Deny Bogon
+2801:1a:9020::/43 Deny Bogon
+2801:1a:9040::/42 Deny Bogon
+2801:1a:9080::/41 Deny Bogon
+2801:1a:9100::/40 Deny Bogon
+2801:1a:9200::/39 Deny Bogon
+2801:1a:9400::/38 Deny Bogon
+2801:1a:9800::/37 Deny Bogon
 2801:1a:a010::/44 Deny Bogon
 2801:1a:a020::/43 Deny Bogon
 2801:1a:a040::/42 Deny Bogon
@@ -53719,7 +53894,8 @@ Tag: Latisys-Irvine, LLC
 2803:c2c0::/26 Deny Bogon
 2803:c310::/28 Deny Bogon
 2803:c320::/27 Deny Bogon
-2803:c340::/26 Deny Bogon
+2803:c350::/28 Deny Bogon
+2803:c360::/27 Deny Bogon
 2803:c390::/28 Deny Bogon
 2803:c3a0::/27 Deny Bogon
 2803:c3c0::/26 Deny Bogon
@@ -60080,8 +60256,22 @@ Tag: Latisys-Irvine, LLC
 2804:2f92::/31 Deny Bogon
 2804:2f95::/32 Deny Bogon
 2804:2f96::/31 Deny Bogon
-2804:2f98::/29 Deny Bogon
-2804:2fa0::/27 Deny Bogon
+2804:2f99::/32 Deny Bogon
+2804:2f9a::/31 Deny Bogon
+2804:2f9d::/32 Deny Bogon
+2804:2f9e::/31 Deny Bogon
+2804:2fa1::/32 Deny Bogon
+2804:2fa2::/31 Deny Bogon
+2804:2fa5::/32 Deny Bogon
+2804:2fa6::/31 Deny Bogon
+2804:2fa9::/32 Deny Bogon
+2804:2faa::/31 Deny Bogon
+2804:2fad::/32 Deny Bogon
+2804:2fae::/31 Deny Bogon
+2804:2fb1::/32 Deny Bogon
+2804:2fb2::/31 Deny Bogon
+2804:2fb4::/30 Deny Bogon
+2804:2fb8::/29 Deny Bogon
 2804:2fc0::/26 Deny Bogon
 2804:3000::/20 Deny Bogon
 2804:4000::/18 Deny Bogon
@@ -62251,8 +62441,6 @@ Tag: Latisys-Irvine, LLC
 2a00:c550::/28 Deny Bogon
 2a00:c588::/29 Deny Bogon
 2a00:c590::/28 Deny Bogon
-2a00:c5a8::/29 Deny Bogon
-2a00:c5b0::/28 Deny Bogon
 2a00:c5c8::/29 Deny Bogon
 2a00:c5d0::/28 Deny Bogon
 2a00:c5e8::/29 Deny Bogon
@@ -64384,8 +64572,6 @@ Tag: Latisys-Irvine, LLC
 2a01:94f0::/28 Deny Bogon
 2a01:9508::/29 Deny Bogon
 2a01:9510::/28 Deny Bogon
-2a01:9528::/29 Deny Bogon
-2a01:9530::/28 Deny Bogon
 2a01:9548::/29 Deny Bogon
 2a01:9550::/28 Deny Bogon
 2a01:9568::/29 Deny Bogon
@@ -68614,19 +68800,24 @@ Tag: Latisys-Irvine, LLC
 2a03:a930::/28 Deny Bogon
 2a03:a948::/29 Deny Bogon
 2a03:a950::/28 Deny Bogon
-2a03:a960::/27 Deny Bogon
+2a03:a968::/29 Deny Bogon
+2a03:a970::/28 Deny Bogon
 2a03:a988::/29 Deny Bogon
 2a03:a990::/28 Deny Bogon
-2a03:a9a0::/27 Deny Bogon
+2a03:a9a8::/29 Deny Bogon
+2a03:a9b0::/28 Deny Bogon
 2a03:a9c8::/29 Deny Bogon
 2a03:a9d0::/28 Deny Bogon
-2a03:a9e0::/27 Deny Bogon
+2a03:a9e8::/29 Deny Bogon
+2a03:a9f0::/28 Deny Bogon
 2a03:aa08::/29 Deny Bogon
 2a03:aa10::/28 Deny Bogon
-2a03:aa20::/27 Deny Bogon
+2a03:aa28::/29 Deny Bogon
+2a03:aa30::/28 Deny Bogon
 2a03:aa48::/29 Deny Bogon
 2a03:aa50::/28 Deny Bogon
-2a03:aa60::/27 Deny Bogon
+2a03:aa68::/29 Deny Bogon
+2a03:aa70::/28 Deny Bogon
 2a03:aa88::/29 Deny Bogon
 2a03:aa90::/28 Deny Bogon
 2a03:aaa0::/27 Deny Bogon
@@ -69583,9 +69774,10 @@ Tag: Latisys-Irvine, LLC
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:4300::/24 Deny Bogon
-2a07:4400::/22 Deny Bogon
-2a07:4800::/21 Deny Bogon
+2a07:48c0::/26 Deny Bogon
+2a07:4900::/24 Deny Bogon
+2a07:4a00::/23 Deny Bogon
+2a07:4c00::/22 Deny Bogon
 2a07:5000::/20 Deny Bogon
 2a07:6000::/19 Deny Bogon
 2a07:8000::/17 Deny Bogon

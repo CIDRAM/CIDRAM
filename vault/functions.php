@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.04.04).
+ * This file: Functions file (last modified: 2016.04.05).
  */
 
 /**
@@ -644,5 +644,5 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
  * @return string The prepared message (out).
  */
 $CIDRAM['ValidatorMsg'] = function ($lvl, $msg) {
-    return wordwrap(sprintf(' [%s] %s', $lvl, $msg), 79, "\n ") . "\n\n";
+    return wordwrap(sprintf(' [%s] %s', $lvl, $msg), 78, "\n ") . "\n\n";
 };

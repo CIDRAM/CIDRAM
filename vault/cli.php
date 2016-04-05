@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.04).
+ * This file: CLI handler (last modified: 2016.04.05).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -45,12 +45,12 @@ if ($CIDRAM['argv'][1] === '-h') {
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2]);
     $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2]);
     if (!$CIDRAM['TestIPv4'] && !$CIDRAM['TestIPv6']) {
-        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 79, "\n ");
+        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
     } else {
         echo
             ($CIDRAM['BlockInfo']['SignatureCount']) ?
-            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Blocked']), 79, "\n ") :
-            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Not_Blocked']), 79, "\n ");
+            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Blocked']), 78, "\n ") :
+            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Not_Blocked']), 78, "\n ");
     }
     echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-g') {
@@ -59,18 +59,18 @@ if ($CIDRAM['argv'][1] === '-h') {
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2], true);
     $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2], true);
     if (!empty($CIDRAM['TestIPv4'])) {
-        var_dump($CIDRAM['TestIPv4']);
+        echo ' ' . implode("\n ", $CIDRAM['TestIPv4']) . ' ';
     } elseif (!empty($CIDRAM['TestIPv6'])) {
-        var_dump($CIDRAM['TestIPv6']);
+        echo ' ' . implode("\n ", $CIDRAM['TestIPv6']) . ' ';
     } else {
-        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 79, "\n ");
+        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
     }
     echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-v') {
     /** Validates signature files (WARNING: BETA AND UNSTABLE!). */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature validator has started.');
+    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature validator has started (' . date('r'). ').');
     if (empty($FileToValidate)) {
         echo $CIDRAM['ValidatorMsg']('Fatal Error', 'Specified signature file is empty or doesn\'t exist.') . "\n";
         die;
@@ -136,9 +136,12 @@ if ($CIDRAM['argv'][1] === '-h') {
             } else {
                 $Sig['Param'] = '';
             }
+            if ($Sig['Function'] !== 'Deny' && $Sig['Function'] !== 'Whitelist' && $Sig['Function'] !== 'Run') {
+                echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Unrecognised %Function%; Signature could be broken.');
+            }
         } else {
             $Sig['Param'] = $Sig['Function'] = '';
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Missing %Function%; Signature appears to be incomplete.');
+            echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Missing %Function%; Signature appears to be incomplete.');
         }
         if ($Sig['Function'] === 'Deny' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Deny ')) && $Sig['n'] > 1) {
             echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
@@ -152,7 +155,11 @@ if ($CIDRAM['argv'][1] === '-h') {
                 echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv4'][$Sig['Key']] . '".');
             }
             for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
-                if (substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' ')) {
+                if (
+                    ($Sig['Function'] === 'Deny' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Deny')) ||
+                    ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Whitelist')) ||
+                    ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Run'))
+                ) {
                     echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
                 }
             }
@@ -166,7 +173,11 @@ if ($CIDRAM['argv'][1] === '-h') {
                 echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv6'][$Sig['Key']] . '".');
             }
             for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
-                if (substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' ')) {
+                if (
+                    ($Sig['Function'] === 'Deny' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Deny')) ||
+                    ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Whitelist')) ||
+                    ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Run'))
+                ) {
                     echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
                 }
             }
@@ -177,12 +188,12 @@ if ($CIDRAM['argv'][1] === '-h') {
             }
         }
     }
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature validator has finished. If no warnings or errors have appeared, your signature file is *probably* okay. :-)') . "\n";
+    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature validator has finished (' . date('r'). '). If no warnings or errors have appeared, your signature file is *probably* okay. :-)') . "\n";
 } elseif ($CIDRAM['argv'][1] === '-f') {
     /** Attempts to automatically fix signature files (WARNING: BETA AND UNSTABLE!). */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature fixer has started.');
+    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature fixer has started (' . date('r'). ').');
     if (empty($FileToValidate)) {
         echo $CIDRAM['ValidatorMsg']('Fatal Error', 'Specified signature file is empty or doesn\'t exist.') . "\n";
         die;
@@ -330,5 +341,5 @@ if ($CIDRAM['argv'][1] === '-h') {
         fwrite($Handle, $FileToValidate);
         fclose($Handle);
     }
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature fixer has finished, with ' . $Changes . ' changes made over ' . $Operations . ' operations.') . "\n";
+    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature fixer has finished, with ' . $Changes . ' changes made over ' . $Operations . ' operations (' . date('r'). ').') . "\n";
 }

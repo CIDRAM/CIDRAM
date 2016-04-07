@@ -59,9 +59,9 @@ if ($CIDRAM['argv'][1] === '-h') {
     $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2], true);
     $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2], true);
     if (!empty($CIDRAM['TestIPv4'])) {
-        echo ' ' . implode("\n ", $CIDRAM['TestIPv4']) . ' ';
+        echo ' ' . implode("\n ", $CIDRAM['TestIPv4']);
     } elseif (!empty($CIDRAM['TestIPv6'])) {
-        echo ' ' . implode("\n ", $CIDRAM['TestIPv6']) . ' ';
+        echo ' ' . implode("\n ", $CIDRAM['TestIPv6']);
     } else {
         echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
     }

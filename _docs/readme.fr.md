@@ -246,7 +246,7 @@ Exemple:
 Tag: Section 1
 ```
 
-To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive sauts de ligne between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
+Pour briser les tagues de sections et assurer que les tagues ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre tague et vos sections précédent. Toutes les signatures non tagué sera par défaut soit "IPv4" ou "IPv6" (en fonction de quels types de signatures sont déclenchés).
 
 Exemple:
 ```
@@ -258,11 +258,11 @@ Exemple:
 Tag: Section 1
 ```
 
-In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront tagués comme "IPv4", tandis que `4.5.6.7/32` et `5.6.7.8/32` seront tagués comme "Section 1".
 
-Refer to the custom signature files for more information.
+Reportez-vous aux fichiers de signatures personnalisées pour plus d'informations.
 
 ---
 
 
-Dernière Réactualisé: 3 Avril 2016 (2016.04.03).
+Dernière Réactualisé: 5 Avril 2016 (2016.04.05).

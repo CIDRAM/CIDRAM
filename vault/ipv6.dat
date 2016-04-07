@@ -206,8 +206,8 @@ Tag: ISPsystem
 
 
 # ASN 47583 ("Hostinger International").
-# Infected by malware (as per reported by Google): 1.28%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 1.20%.
+# Updated: 2016.01.18 / Checked: 2016.04.06
 
 2a02:4780:1::/48 Deny Generic
 2a02:4780:2::/48 Deny Generic
@@ -1943,7 +1943,7 @@ Tag: MBA DATACENTERS S.L.
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.04
+# Updated: 2016.04.06
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -2850,7 +2850,6 @@ Tag: MBA DATACENTERS S.L.
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:128::/45 Deny Bogon
 2001:678:130::/44 Deny Bogon
 2001:678:140::/42 Deny Bogon
 2001:678:180::/41 Deny Bogon
@@ -2863,6 +2862,7 @@ Tag: MBA DATACENTERS S.L.
 2001:678:8000::/33 Deny Bogon
 2001:679::/32 Deny Bogon
 2001:67a::/31 Deny Bogon
+2001:67c:470::/46 Deny Bogon
 2001:67c:800::/37 Deny Bogon
 2001:67c:3000::/36 Deny Bogon
 2001:67c:4000::/34 Deny Bogon
@@ -4980,7 +4980,15 @@ Tag: MBA DATACENTERS S.L.
 2001:df1:7440::/42 Deny Bogon
 2001:df1:7480::/41 Deny Bogon
 2001:df1:7500::/40 Deny Bogon
-2001:df1:7600::/39 Deny Bogon
+2001:df1:7601::/48 Deny Bogon
+2001:df1:7602::/47 Deny Bogon
+2001:df1:7604::/46 Deny Bogon
+2001:df1:7608::/45 Deny Bogon
+2001:df1:7610::/44 Deny Bogon
+2001:df1:7620::/43 Deny Bogon
+2001:df1:7640::/42 Deny Bogon
+2001:df1:7680::/41 Deny Bogon
+2001:df1:7700::/40 Deny Bogon
 2001:df1:7801::/48 Deny Bogon
 2001:df1:7802::/47 Deny Bogon
 2001:df1:7804::/46 Deny Bogon
@@ -4990,7 +4998,15 @@ Tag: MBA DATACENTERS S.L.
 2001:df1:7840::/42 Deny Bogon
 2001:df1:7880::/41 Deny Bogon
 2001:df1:7900::/40 Deny Bogon
-2001:df1:7a00::/39 Deny Bogon
+2001:df1:7a01::/48 Deny Bogon
+2001:df1:7a02::/47 Deny Bogon
+2001:df1:7a04::/46 Deny Bogon
+2001:df1:7a08::/45 Deny Bogon
+2001:df1:7a10::/44 Deny Bogon
+2001:df1:7a20::/43 Deny Bogon
+2001:df1:7a40::/42 Deny Bogon
+2001:df1:7a80::/41 Deny Bogon
+2001:df1:7b00::/40 Deny Bogon
 2001:df1:7c01::/48 Deny Bogon
 2001:df1:7c02::/47 Deny Bogon
 2001:df1:7c04::/46 Deny Bogon
@@ -25504,7 +25520,13 @@ Tag: MBA DATACENTERS S.L.
 2404:ac10::/28 Deny Bogon
 2404:ac20::/27 Deny Bogon
 2404:ac40::/26 Deny Bogon
-2404:ac80::/25 Deny Bogon
+2404:ac81::/32 Deny Bogon
+2404:ac82::/31 Deny Bogon
+2404:ac84::/30 Deny Bogon
+2404:ac88::/29 Deny Bogon
+2404:ac90::/28 Deny Bogon
+2404:aca0::/27 Deny Bogon
+2404:acc0::/26 Deny Bogon
 2404:ad01::/32 Deny Bogon
 2404:ad02::/31 Deny Bogon
 2404:ad04::/30 Deny Bogon
@@ -25512,7 +25534,13 @@ Tag: MBA DATACENTERS S.L.
 2404:ad10::/28 Deny Bogon
 2404:ad20::/27 Deny Bogon
 2404:ad40::/26 Deny Bogon
-2404:ad80::/25 Deny Bogon
+2404:ad81::/32 Deny Bogon
+2404:ad82::/31 Deny Bogon
+2404:ad84::/30 Deny Bogon
+2404:ad88::/29 Deny Bogon
+2404:ad90::/28 Deny Bogon
+2404:ada0::/27 Deny Bogon
+2404:adc0::/26 Deny Bogon
 2404:ae01::/32 Deny Bogon
 2404:ae02::/31 Deny Bogon
 2404:ae04::/30 Deny Bogon
@@ -25520,7 +25548,13 @@ Tag: MBA DATACENTERS S.L.
 2404:ae10::/28 Deny Bogon
 2404:ae20::/27 Deny Bogon
 2404:ae40::/26 Deny Bogon
-2404:ae80::/25 Deny Bogon
+2404:ae81::/32 Deny Bogon
+2404:ae82::/31 Deny Bogon
+2404:ae84::/30 Deny Bogon
+2404:ae88::/29 Deny Bogon
+2404:ae90::/28 Deny Bogon
+2404:aea0::/27 Deny Bogon
+2404:aec0::/26 Deny Bogon
 2404:af01::/32 Deny Bogon
 2404:af02::/31 Deny Bogon
 2404:af04::/30 Deny Bogon
@@ -25528,7 +25562,13 @@ Tag: MBA DATACENTERS S.L.
 2404:af10::/28 Deny Bogon
 2404:af20::/27 Deny Bogon
 2404:af40::/26 Deny Bogon
-2404:af80::/25 Deny Bogon
+2404:af81::/32 Deny Bogon
+2404:af82::/31 Deny Bogon
+2404:af84::/30 Deny Bogon
+2404:af88::/29 Deny Bogon
+2404:af90::/28 Deny Bogon
+2404:afa0::/27 Deny Bogon
+2404:afc0::/26 Deny Bogon
 2404:b001::/32 Deny Bogon
 2404:b002::/31 Deny Bogon
 2404:b004::/30 Deny Bogon
@@ -52442,7 +52482,13 @@ Tag: MBA DATACENTERS S.L.
 2801:1d1::/32 Deny Bogon
 2801:1d2::/31 Deny Bogon
 2801:1d4::/30 Deny Bogon
-2801:1d8::/29 Deny Bogon
+2801:1d8:1000::/36 Deny Bogon
+2801:1d8:2000::/35 Deny Bogon
+2801:1d8:4000::/34 Deny Bogon
+2801:1d8:8000::/33 Deny Bogon
+2801:1d9::/32 Deny Bogon
+2801:1da::/31 Deny Bogon
+2801:1dc::/30 Deny Bogon
 2801:1e0:100::/40 Deny Bogon
 2801:1e0:200::/39 Deny Bogon
 2801:1e0:400::/38 Deny Bogon
@@ -52753,7 +52799,8 @@ Tag: MBA DATACENTERS S.L.
 2803:22c0::/26 Deny Bogon
 2803:2310::/28 Deny Bogon
 2803:2320::/27 Deny Bogon
-2803:2340::/26 Deny Bogon
+2803:2350::/28 Deny Bogon
+2803:2360::/27 Deny Bogon
 2803:2390::/28 Deny Bogon
 2803:23a0::/27 Deny Bogon
 2803:23c0::/26 Deny Bogon
@@ -60270,8 +60317,11 @@ Tag: MBA DATACENTERS S.L.
 2804:2fae::/31 Deny Bogon
 2804:2fb1::/32 Deny Bogon
 2804:2fb2::/31 Deny Bogon
-2804:2fb4::/30 Deny Bogon
-2804:2fb8::/29 Deny Bogon
+2804:2fb5::/32 Deny Bogon
+2804:2fb6::/31 Deny Bogon
+2804:2fb9::/32 Deny Bogon
+2804:2fba::/31 Deny Bogon
+2804:2fbc::/30 Deny Bogon
 2804:2fc0::/26 Deny Bogon
 2804:3000::/20 Deny Bogon
 2804:4000::/18 Deny Bogon
@@ -66376,8 +66426,6 @@ Tag: MBA DATACENTERS S.L.
 2a03:730::/28 Deny Bogon
 2a03:748::/29 Deny Bogon
 2a03:750::/28 Deny Bogon
-2a03:768::/29 Deny Bogon
-2a03:770::/28 Deny Bogon
 2a03:788::/29 Deny Bogon
 2a03:790::/28 Deny Bogon
 2a03:7a8::/29 Deny Bogon
@@ -68820,7 +68868,6 @@ Tag: MBA DATACENTERS S.L.
 2a03:aa70::/28 Deny Bogon
 2a03:aa88::/29 Deny Bogon
 2a03:aa90::/28 Deny Bogon
-2a03:aaa0::/27 Deny Bogon
 2a03:aac8::/29 Deny Bogon
 2a03:aad0::/28 Deny Bogon
 2a03:aae0::/27 Deny Bogon
@@ -69774,10 +69821,10 @@ Tag: MBA DATACENTERS S.L.
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:48c0::/26 Deny Bogon
-2a07:4900::/24 Deny Bogon
-2a07:4a00::/23 Deny Bogon
-2a07:4c00::/22 Deny Bogon
+2a07:4c40::/26 Deny Bogon
+2a07:4c80::/25 Deny Bogon
+2a07:4d00::/24 Deny Bogon
+2a07:4e00::/23 Deny Bogon
 2a07:5000::/20 Deny Bogon
 2a07:6000::/19 Deny Bogon
 2a07:8000::/17 Deny Bogon

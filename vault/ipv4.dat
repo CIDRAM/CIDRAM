@@ -1168,8 +1168,8 @@ Tag: ISPsystem
 
 
 # ASN 47583 ("Hostinger International").
-# Infected by malware (as per reported by Google): 1.28%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 1.20%.
+# Updated: 2016.01.18 / Checked: 2016.04.06
 
 31.170.160.0/21 Deny Generic
 31.220.16.0/21 Deny Generic
@@ -8710,7 +8710,7 @@ Tag: Azure
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.04.04
+# Updated: 2016.04.06
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 0.0.0.0/8 Deny Bogon
@@ -9060,6 +9060,7 @@ Tag: Azure
 91.213.138.0/24 Deny Bogon
 91.213.148.0/24 Deny Bogon
 91.213.151.0/24 Deny Bogon
+91.213.157.0/24 Deny Bogon
 91.213.167.0/24 Deny Bogon
 91.213.174.0/24 Deny Bogon
 91.213.217.0/24 Deny Bogon
@@ -9218,11 +9219,9 @@ Tag: Azure
 102.0.0.0/8 Deny Bogon
 103.64.0.0/10 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.213.30.0/23 Deny Bogon
-103.213.100.0/22 Deny Bogon
-103.213.104.0/21 Deny Bogon
-103.213.112.0/20 Deny Bogon
-103.213.128.0/17 Deny Bogon
+103.213.228.0/22 Deny Bogon
+103.213.232.0/21 Deny Bogon
+103.213.240.0/20 Deny Bogon
 103.214.0.0/15 Deny Bogon
 103.216.0.0/13 Deny Bogon
 109.71.72.0/21 Deny Bogon
@@ -9284,11 +9283,10 @@ Tag: Azure
 165.210.0.0/15 Deny Bogon
 168.194.0.0/15 Deny Bogon
 168.196.0.0/15 Deny Bogon
-168.227.148.0/22 Deny Bogon
-168.228.100.0/22 Deny Bogon
-168.228.104.0/21 Deny Bogon
-168.228.112.0/20 Deny Bogon
-168.228.128.0/17 Deny Bogon
+168.227.216.0/22 Deny Bogon
+168.228.156.0/22 Deny Bogon
+168.228.160.0/19 Deny Bogon
+168.228.192.0/18 Deny Bogon
 168.232.0.0/16 Deny Bogon
 169.159.224.0/19 Deny Bogon
 169.239.252.0/22 Deny Bogon
@@ -9338,11 +9336,11 @@ Tag: Azure
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.145.164.0/22 Deny Bogon
-185.145.168.0/21 Deny Bogon
-185.145.176.0/20 Deny Bogon
-185.145.192.0/18 Deny Bogon
-185.146.0.0/15 Deny Bogon
+185.146.16.0/20 Deny Bogon
+185.146.32.0/19 Deny Bogon
+185.146.64.0/18 Deny Bogon
+185.146.128.0/17 Deny Bogon
+185.147.0.0/16 Deny Bogon
 185.148.0.0/14 Deny Bogon
 185.152.0.0/13 Deny Bogon
 185.160.0.0/11 Deny Bogon
@@ -9366,6 +9364,7 @@ Tag: Azure
 192.76.149.0/24 Deny Bogon
 192.76.150.0/24 Deny Bogon
 192.76.153.0/24 Deny Bogon
+192.76.160.0/24 Deny Bogon
 192.76.163.0/24 Deny Bogon
 192.76.164.0/24 Deny Bogon
 192.76.171.0/24 Deny Bogon
@@ -9374,7 +9373,7 @@ Tag: Azure
 192.109.17.0/24 Deny Bogon
 192.109.37.0/24 Deny Bogon
 192.109.38.0/24 Deny Bogon
-192.109.40.0/24 Deny Bogon
+192.109.40.0/23 Deny Bogon
 192.109.47.0/24 Deny Bogon
 192.109.71.0/24 Deny Bogon
 192.109.74.0/24 Deny Bogon
@@ -9420,10 +9419,8 @@ Tag: Azure
 192.109.253.0/24 Deny Bogon
 192.122.254.0/24 Deny Bogon
 192.135.63.0/24 Deny Bogon
-192.140.140.0/22 Deny Bogon
-192.140.144.0/20 Deny Bogon
-192.140.160.0/19 Deny Bogon
-192.140.192.0/18 Deny Bogon
+192.140.226.0/23 Deny Bogon
+192.140.248.0/21 Deny Bogon
 192.142.0.0/15 Deny Bogon
 192.144.0.0/18 Deny Bogon
 192.145.0.0/17 Deny Bogon
@@ -10197,6 +10194,7 @@ Tag: Azure
 193.104.93.0/24 Deny Bogon
 193.104.153.0/24 Deny Bogon
 193.104.176.0/24 Deny Bogon
+193.104.198.0/24 Deny Bogon
 193.104.211.0/24 Deny Bogon
 193.104.222.0/24 Deny Bogon
 193.104.252.0/24 Deny Bogon
@@ -10212,6 +10210,7 @@ Tag: Azure
 193.105.154.0/24 Deny Bogon
 193.105.162.0/24 Deny Bogon
 193.105.184.0/24 Deny Bogon
+193.105.207.0/24 Deny Bogon
 193.105.244.0/23 Deny Bogon
 193.106.20.0/22 Deny Bogon
 193.106.32.0/22 Deny Bogon
@@ -12328,7 +12327,6 @@ Tag: Azure
 196.51.0.0/16 Deny Bogon
 196.60.0.0/15 Deny Bogon
 196.160.0.0/13 Deny Bogon
-196.192.72.0/21 Deny Bogon
 196.192.88.0/21 Deny Bogon
 196.192.116.0/22 Deny Bogon
 196.192.120.0/22 Deny Bogon
@@ -12377,7 +12375,6 @@ Tag: Azure
 200.192.106.0/23 Deny Bogon
 200.219.149.0/24 Deny Bogon
 200.229.250.0/23 Deny Bogon
-202.9.55.0/24 Deny Bogon
 202.9.64.0/24 Deny Bogon
 202.9.68.0/24 Deny Bogon
 202.9.89.0/24 Deny Bogon

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.04.03).
+ * This file: Output generator (last modified: 2016.04.08).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -144,9 +144,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                     'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
                 ), $CIDRAM['lang']['Support_Email']) . '</strong></p>';
             }
-            $CIDRAM['html'] = $CIDRAM['ParseVars']($CIDRAM['Parsables'],
-                $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['template_file'])
-            );
+            $CIDRAM['html'] = $CIDRAM['ParseVars'](array(
+                'EmailAddr' => $CIDRAM['BlockInfo']['EmailAddr']
+            ), $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['ReadFile'](
+                $CIDRAM['Vault'] . $CIDRAM['template_file']
+            )));
         }
 
     } else {

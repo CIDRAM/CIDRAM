@@ -194,23 +194,23 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 CIDRAM签名格式和结构描述可以被发现记录在纯文本在自定义签名文件。请参阅该文档了解更多有关CIDRAM签名格式和结构。
 
-All IPv4 signatures follow the format: `xxx.xxx.xxx.xxx/yy %Function% %Param%`.
-- `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
-- `yy` represents the CIDR block size [1-32].
-- `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
-- `%Param%` represents whatever additional information may be required by `%Function%`.
+所有IPv4签名遵循格式： `xxx.xxx.xxx.xxx/yy %Function% %Param%`。
+- `xxx.xxx.xxx.xxx` 代表CIDR块开始（初始IP地址八比特组）。
+- `yy` 代表CIDR块大小 [1-32]。
+- `%Function%` 指示脚本做什么用的署名（应该怎么签名考虑）。
+- `%Param%` 代表任何其他信息其可以由需要 `%Function%`。
 
-All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
-- `yy` represents the CIDR block size [1-128].
-- `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
-- `%Param%` represents whatever additional information may be required by `%Function%`.
+所有IPv6签名遵循格式： `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`。
+- `xxxx:xxxx:xxxx:xxxx::xxxx` 代表CIDR块的开始（初始IP地址八比特组）。完整符号和缩写符号是可以接受的（和每都必须遵循相应和相关IPv6符号标准，但有一个例外：IPv6地址不能开头是与缩写 when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`）。
+- `yy` 代表CIDR块大小 [1-128]。
+- `%Function%` 指示脚本做什么用的署名（应该怎么签名考虑）。
+- `%Param%` 代表任何其他信息其可以由需要 `%Function%`。
 
 The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use shell-style hashing for comments, but using shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, shell-style hashing can assist as a visual aid while editing).
+Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
 The possible values of `%Function%` are as follows:
 - Run
@@ -270,4 +270,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-最后更新：2016年4月3日。
+最后更新：2016年4月10日。

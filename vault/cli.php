@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.05).
+ * This file: CLI handler (last modified: 2016.04.11).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -110,6 +110,47 @@ if ($CIDRAM['argv'][1] === '-h') {
         if (substr($ArrayToValidate[$i], 0, 5) === 'Tag: ') {
             if ($len > 25) {
                 echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Section tag is greater than 20 bytes; Section tags should be clear and concise.');
+            }
+            continue;
+        }
+        if (substr($ArrayToValidate[$i], 0, 9) === 'Expires: ') {
+            $Expires = substr($ArrayToValidate[$i], 9);
+            if (
+                preg_match(
+                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
+                    ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
+                $Expires, $ExpiresArr) ||
+                preg_match(
+                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
+                    ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
+                $Expires, $ExpiresArr) ||
+                preg_match(
+                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
+                    ')$/i',
+                $Expires, $ExpiresArr) ||
+                preg_match(
+                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
+                $Expires, $ExpiresArr) ||
+                preg_match('/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $Expires, $ExpiresArr) ||
+                preg_match('/^([12][0-9]{3})$/i', $Expires, $ExpiresArr)
+            ) {
+                $ExpiresArr = array(
+                    $ExpiresArr[1],
+                        (isset($ExpiresArr[2])) ? $ExpiresArr[2] : '01',
+                        (isset($ExpiresArr[3])) ? $ExpiresArr[3] : '01',
+                        (isset($ExpiresArr[4])) ? $ExpiresArr[4] : '00',
+                        (isset($ExpiresArr[5])) ? $ExpiresArr[5] : '00',
+                        (isset($ExpiresArr[6])) ? $ExpiresArr[6] : '00'
+                );
+                if (!mktime($ExpiresArr[3], $ExpiresArr[4], $ExpiresArr[5], $ExpiresArr[1], $ExpiresArr[2], $ExpiresArr[0])) {
+                    echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Expiry tag doesn\'t contain a valid ISO 8601 date/time!');
+                }
+            } else {
+                echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Expiry tag doesn\'t contain a valid ISO 8601 date/time!');
             }
             continue;
         }

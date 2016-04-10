@@ -1266,12 +1266,13 @@ Tag: AS30083
 Tag: ONLINE S.A.S.
 
 
-# ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
-# "High Point Host", "Lunanode Hosting Inc.", "Pleasant Hosting", "Power Up Hosting, Inc.",
-# "Rica Costa Hosting RCH, S.A.", "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may
-# change as time passes, and may need continual adjustments in the future). Updated: 2016.02.05
+# ASN 174 ("Cogent Communications"): "Big Hosting Plus", "Blue Box Group", "DME Hosting LLC", "EGIHosting",
+# "FDCservers.net", "High Point Host", "Lunanode Hosting Inc.", "Nexeon Technologies", "New Dream Network",
+# "Pleasant Hosting", "QuadraNet", "Power Up Hosting, Inc.", "Rica Costa Hosting RCH, S.A.",
+# "Sovremennie Techologii Biznesa", "FORTUNIX NETWORKS L.P." (this list of names may change as time passes, and may
+# need continual adjustments in the future). Updated: 2016.04.10
 
-# Infected by malware (as per reported by Google): 0.85%.
+# Infected by malware (as per reported by Google): 0.87%.
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
 # attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
@@ -1290,14 +1291,16 @@ Tag: ONLINE S.A.S.
 # Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 
+2001:550::/32 Deny Cloud
+2001:978::/32 Deny Cloud
+2001:49f0:1::/48 Deny Cloud
 2001:49f0:100d::/48 Deny Cloud
 2001:49f0:1010::/48 Deny Cloud
 2001:49f0:2001::/48 Deny Cloud
 2001:49f0:2002::/47 Deny Cloud
 2001:49f0:2004::/46 Deny Cloud
 2001:49f0:2008::/45 Deny Cloud
-2001:49f0:2010::/45 Deny Cloud
-2001:49f0:2018::/45 Deny Cloud
+2001:49f0:2010::/44 Deny Cloud
 2001:49f0:2020::/46 Deny Cloud
 2001:49f0:2024::/48 Deny Cloud
 2001:49f0:2027::/48 Deny Cloud
@@ -1312,7 +1315,8 @@ Tag: ONLINE S.A.S.
 2001:49f0:4021::/48 Deny Cloud
 2001:49f0:5000::/48 Deny Cloud
 2001:49f0:6000::/48 Deny Cloud
-2001:49f0:7000::/47 Deny Cloud
+2001:49f0:7001::/48 Deny Cloud
+2001:49f0:7002::/48 Deny Cloud
 2001:49f0:a007::/48 Deny Cloud
 2001:49f0:a00b::/48 Deny Cloud
 2001:49f0:a00d::/48 Deny Cloud
@@ -1345,22 +1349,30 @@ Tag: ONLINE S.A.S.
 2001:49f0:a062::/47 Deny Cloud
 2001:49f0:a06a::/48 Deny Cloud
 2001:49f0:d004::/46 Deny Cloud
-2001:49f0:d009::/48 Deny Cloud
+2001:49f0:d008::/47 Deny Cloud
+2001:49f0:d00a::/48 Deny Cloud
 2001:49f0:d00c::/48 Deny Cloud
 2001:49f0:d00e::/47 Deny Cloud
 2001:49f0:d010::/45 Deny Cloud
+2001:49f0:d018::/48 Deny Cloud
 2001:49f0:d01a::/48 Deny Cloud
 2001:49f0:d01c::/46 Deny Cloud
-2001:49f0:d020::/47 Deny Cloud
-2001:49f0:d022::/48 Deny Cloud
-2001:49f0:d027::/48 Deny Cloud
-2001:49f0:d02b::/48 Deny Cloud
-2001:49f0:d02d::/48 Deny Cloud
-2001:49f0:d02e::/48 Deny Cloud
-2001:49f0:d030::/47 Deny Cloud
-2001:49f0:d040::/48 Deny Cloud
+2001:49f0:d020::/44 Deny Cloud
+2001:49f0:d030::/46 Deny Cloud
+2001:49f0:d034::/47 Deny Cloud
+2001:49f0:d036::/48 Deny Cloud
+2001:49f0:d038::/48 Deny Cloud
+2001:49f0:d03f::/48 Deny Cloud
+2001:49f0:d040::/45 Deny Cloud
+2001:49f0:d048::/47 Deny Cloud
+2001:49f0:d04b::/48 Deny Cloud
+2001:49f0:d04c::/47 Deny Cloud
+2001:49f0:d050::/46 Deny Cloud
+2001:49f0:d054::/47 Deny Cloud
 2602:ffb6::/36 Deny Cloud
 2a01:8640:4::/48 Deny Cloud
+2607:f298:a::/48 Deny Cloud
+2607:f700::/32 Deny Cloud
 Tag: Cogent
 
 
@@ -1948,9 +1960,143 @@ Tag: MBA DATACENTERS S.L.
 Tag: CariNet, Inc.
 
 
+# ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
+# Infected by malware (as per reported by Google): 1.62%.
+# Updated: 2016.04.10
+
+2a02:e00::/32 Deny Cloud
+Tag: Bradler & Krantz
+
+
+# ASN 39234 ("Stone Internet Services bvba").
+# Infected by malware (as per reported by Google): 0.94%.
+# Updated: 2016.04.10
+
+2a00:7000::/32 Deny Cloud
+Tag: Stone Internet
+
+
+# ASN 39020 ("Comvive Servidores S.L.").
+# Infected by malware (as per reported by Google): 2.07%.
+# Updated: 2016.04.10
+
+2a00:1d70::/32 Deny Cloud
+Tag: Comvive Servidores
+
+
+# ASN 34971 ("Prometeus di Daniela Agro").
+# Infected by malware (as per reported by Google): 1.11%.
+# Updated: 2016.04.10
+
+2a00:dcc0::/32 Deny Cloud
+2a00:dcc7:1a00::/40 Deny Cloud
+2a00:dcc7:d000::/38 Deny Cloud
+2a06:fdc0::/32 Deny Cloud
+Tag: Daniela Agro
+
+
+# ASN 52173 ("Makonix SIA").
+# Infected by malware (as per reported by Google): 3.55%.
+# Updated: 2016.04.10
+
+2a02:7aa0::/34 Deny Cloud
+Tag: Makonix SIA
+
+
+# ASN 57169 ("EDIS GmbH").
+# Infected by malware (as per reported by Google): 1.10%.
+# Updated: 2016.04.10
+
+2a03:f80:852::/48 Deny Cloud
+2a03:f80:ed15::/48 Deny Cloud
+2a03:f80:ed16::/47 Deny Cloud
+2a03:f81::/32 Deny Cloud
+2a03:f83::/32 Deny Cloud
+2a03:f84::/32 Deny Cloud
+Tag: EDIS GmbH
+
+
+# ASN 8426 ("ClaraNET LTD").
+# Infected by malware (as per reported by Google): 1.65%.
+# Updated: 2016.04.10
+
+2001:67c:1088::/47 Deny Cloud
+2001:67c:27dc::/48 Deny Cloud
+2001:a70::/32 Deny Cloud
+2001:a88::/32 Deny Cloud
+2001:4cc0::/32 Deny Cloud
+2a00:ed0::/32 Deny Cloud
+2a00:1798::/32 Deny Cloud
+2a00:7740::/32 Deny Cloud
+2a01:7b8::/32 Deny Cloud
+2a02:a0::/32 Deny Cloud
+2a02:830::/32 Deny Cloud
+2a03:6420::/32 Deny Cloud
+2a03:73c0::/48 Deny Cloud
+2a03:8bc0:33::/48 Deny Cloud
+2a03:9c80::/32 Deny Cloud
+Tag: ClaraNET LTD
+
+
+# ASN 43289 ("Trabia-Network S.R.L.").
+# Infected by malware (as per reported by Google): 0.81%.
+# Updated: 2016.04.10
+
+2403:280::/32 Deny Cloud
+2a00:1dc0::/29 Deny Cloud
+Tag: Trabia-Network
+
+
+# ASN 29691 ("Nine Internet Solutions AG").
+# Infected by malware (as per reported by Google): 0.52%.
+# Updated: 2016.04.10
+
+2a02:418::/29 Deny Cloud
+2a05:9a80::/29 Deny Cloud
+Tag: Nine Internet
+
+
+# ASN 61102 ("Interhost Communication Solutions Ltd.").
+# Infected by malware (as per reported by Google): 1.06%.
+# Updated: 2016.04.10
+
+2a03:f80:972::/48 Deny Cloud
+2a03:ff40::/32 Deny Cloud
+Tag: AS61102
+
+
+# ASN 14442 ("Media-Hosts Inc.").
+# Infected by malware (as per reported by Google): 1.98%.
+# Updated: 2016.04.10
+
+2605:2100::/36 Deny Cloud
+Tag: Media-Hosts Inc.
+
+# ASN 53667 ("FranTech Solutions").
+# Infected by malware (as per reported by Google): 2.96%.
+# Updated: 2016.04.10
+
+2605:6400:1::/48 Deny Cloud
+2605:6400:2::/47 Deny Cloud
+2605:6400:10::/48 Deny Cloud
+2605:6400:20::/48 Deny Cloud
+2605:6400:30::/48 Deny Cloud
+2605:6400:100::/48 Deny Cloud
+2605:6400:2460::/48 Deny Cloud
+Tag: FranTech Solutions
+
+
+# ASN 29527 ("Astutium Limited").
+# Infected by malware (as per reported by Google): 0.62%.
+# Updated: 2016.04.10
+
+2001:4bf0:1::/48 Deny Cloud
+Tag: Astutium Limited
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.08
+# Updated: 2016.04.10
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -2857,8 +3003,7 @@ Tag: CariNet, Inc.
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:134::/46 Deny Bogon
-2001:678:138::/45 Deny Bogon
+2001:678:13c::/46 Deny Bogon
 2001:678:140::/42 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
@@ -5040,7 +5185,15 @@ Tag: CariNet, Inc.
 2001:df1:8040::/42 Deny Bogon
 2001:df1:8080::/41 Deny Bogon
 2001:df1:8100::/40 Deny Bogon
-2001:df1:8200::/39 Deny Bogon
+2001:df1:8201::/48 Deny Bogon
+2001:df1:8202::/47 Deny Bogon
+2001:df1:8204::/46 Deny Bogon
+2001:df1:8208::/45 Deny Bogon
+2001:df1:8210::/44 Deny Bogon
+2001:df1:8220::/43 Deny Bogon
+2001:df1:8240::/42 Deny Bogon
+2001:df1:8280::/41 Deny Bogon
+2001:df1:8300::/40 Deny Bogon
 2001:df1:8401::/48 Deny Bogon
 2001:df1:8402::/47 Deny Bogon
 2001:df1:8404::/46 Deny Bogon
@@ -5050,7 +5203,15 @@ Tag: CariNet, Inc.
 2001:df1:8440::/42 Deny Bogon
 2001:df1:8480::/41 Deny Bogon
 2001:df1:8500::/40 Deny Bogon
-2001:df1:8600::/39 Deny Bogon
+2001:df1:8601::/48 Deny Bogon
+2001:df1:8602::/47 Deny Bogon
+2001:df1:8604::/46 Deny Bogon
+2001:df1:8608::/45 Deny Bogon
+2001:df1:8610::/44 Deny Bogon
+2001:df1:8620::/43 Deny Bogon
+2001:df1:8640::/42 Deny Bogon
+2001:df1:8680::/41 Deny Bogon
+2001:df1:8700::/40 Deny Bogon
 2001:df1:8801::/48 Deny Bogon
 2001:df1:8802::/47 Deny Bogon
 2001:df1:8804::/46 Deny Bogon
@@ -5060,7 +5221,15 @@ Tag: CariNet, Inc.
 2001:df1:8840::/42 Deny Bogon
 2001:df1:8880::/41 Deny Bogon
 2001:df1:8900::/40 Deny Bogon
-2001:df1:8a00::/39 Deny Bogon
+2001:df1:8a01::/48 Deny Bogon
+2001:df1:8a02::/47 Deny Bogon
+2001:df1:8a04::/46 Deny Bogon
+2001:df1:8a08::/45 Deny Bogon
+2001:df1:8a10::/44 Deny Bogon
+2001:df1:8a20::/43 Deny Bogon
+2001:df1:8a40::/42 Deny Bogon
+2001:df1:8a80::/41 Deny Bogon
+2001:df1:8b00::/40 Deny Bogon
 2001:df1:8c01::/48 Deny Bogon
 2001:df1:8c02::/47 Deny Bogon
 2001:df1:8c04::/46 Deny Bogon
@@ -9558,43 +9727,6 @@ Tag: CariNet, Inc.
 2001:4098::/29 Deny Bogon
 2001:4110::/29 Deny Bogon
 2001:4148::/29 Deny Bogon
-2001:4280::/29 Deny Bogon
-2001:42e8::/29 Deny Bogon
-2001:4348::/29 Deny Bogon
-2001:4360::/29 Deny Bogon
-2001:4380::/29 Deny Bogon
-2001:4390::/29 Deny Bogon
-2001:43f8:40::/44 Deny Bogon
-2001:43f8:f0::/44 Deny Bogon
-2001:43f8:220::/44 Deny Bogon
-2001:43f8:2d0::/44 Deny Bogon
-2001:43f8:300::/44 Deny Bogon
-2001:43f8:350::/44 Deny Bogon
-2001:43f8:690::/44 Deny Bogon
-2001:43f8:6f0::/44 Deny Bogon
-2001:43f8:730::/44 Deny Bogon
-2001:43f8:a70::/44 Deny Bogon
-2001:43f8:b50::/44 Deny Bogon
-2001:43f8:b60::/43 Deny Bogon
-2001:43f8:b80::/41 Deny Bogon
-2001:43f8:c00::/38 Deny Bogon
-2001:43f8:1000::/36 Deny Bogon
-2001:43f8:2000::/35 Deny Bogon
-2001:43f8:4000::/34 Deny Bogon
-2001:43f8:8000::/35 Deny Bogon
-2001:43f8:a000::/38 Deny Bogon
-2001:43f8:a400::/39 Deny Bogon
-2001:43f8:a600::/40 Deny Bogon
-2001:43f8:a710::/44 Deny Bogon
-2001:43f8:a720::/43 Deny Bogon
-2001:43f8:a740::/42 Deny Bogon
-2001:43f8:a780::/41 Deny Bogon
-2001:43f8:a800::/37 Deny Bogon
-2001:43f8:b000::/36 Deny Bogon
-2001:43f8:c000::/34 Deny Bogon
-2001:43f9::/32 Deny Bogon
-2001:43fa::/31 Deny Bogon
-2001:43fc::/30 Deny Bogon
 2001:4404::/30 Deny Bogon
 2001:4409::/32 Deny Bogon
 2001:440a::/31 Deny Bogon
@@ -25688,7 +25820,13 @@ Tag: CariNet, Inc.
 2404:b710::/28 Deny Bogon
 2404:b720::/27 Deny Bogon
 2404:b740::/26 Deny Bogon
-2404:b780::/25 Deny Bogon
+2404:b781::/32 Deny Bogon
+2404:b782::/31 Deny Bogon
+2404:b784::/30 Deny Bogon
+2404:b788::/29 Deny Bogon
+2404:b790::/28 Deny Bogon
+2404:b7a0::/27 Deny Bogon
+2404:b7c0::/26 Deny Bogon
 2404:b801::/32 Deny Bogon
 2404:b802::/31 Deny Bogon
 2404:b804::/30 Deny Bogon
@@ -25696,7 +25834,13 @@ Tag: CariNet, Inc.
 2404:b810::/28 Deny Bogon
 2404:b820::/27 Deny Bogon
 2404:b840::/26 Deny Bogon
-2404:b880::/25 Deny Bogon
+2404:b881::/32 Deny Bogon
+2404:b882::/31 Deny Bogon
+2404:b884::/30 Deny Bogon
+2404:b888::/29 Deny Bogon
+2404:b890::/28 Deny Bogon
+2404:b8a0::/27 Deny Bogon
+2404:b8c0::/26 Deny Bogon
 2404:b901::/32 Deny Bogon
 2404:b902::/31 Deny Bogon
 2404:b904::/30 Deny Bogon
@@ -25704,7 +25848,13 @@ Tag: CariNet, Inc.
 2404:b910::/28 Deny Bogon
 2404:b920::/27 Deny Bogon
 2404:b940::/26 Deny Bogon
-2404:b980::/25 Deny Bogon
+2404:b981::/32 Deny Bogon
+2404:b982::/31 Deny Bogon
+2404:b984::/30 Deny Bogon
+2404:b988::/29 Deny Bogon
+2404:b990::/28 Deny Bogon
+2404:b9a0::/27 Deny Bogon
+2404:b9c0::/26 Deny Bogon
 2404:ba01::/32 Deny Bogon
 2404:ba02::/31 Deny Bogon
 2404:ba04::/30 Deny Bogon
@@ -25712,7 +25862,13 @@ Tag: CariNet, Inc.
 2404:ba10::/28 Deny Bogon
 2404:ba20::/27 Deny Bogon
 2404:ba40::/26 Deny Bogon
-2404:ba80::/25 Deny Bogon
+2404:ba81::/32 Deny Bogon
+2404:ba82::/31 Deny Bogon
+2404:ba84::/30 Deny Bogon
+2404:ba88::/29 Deny Bogon
+2404:ba90::/28 Deny Bogon
+2404:baa0::/27 Deny Bogon
+2404:bac0::/26 Deny Bogon
 2404:bb01::/32 Deny Bogon
 2404:bb02::/31 Deny Bogon
 2404:bb04::/30 Deny Bogon
@@ -25720,7 +25876,13 @@ Tag: CariNet, Inc.
 2404:bb10::/28 Deny Bogon
 2404:bb20::/27 Deny Bogon
 2404:bb40::/26 Deny Bogon
-2404:bb80::/25 Deny Bogon
+2404:bb81::/32 Deny Bogon
+2404:bb82::/31 Deny Bogon
+2404:bb84::/30 Deny Bogon
+2404:bb88::/29 Deny Bogon
+2404:bb90::/28 Deny Bogon
+2404:bba0::/27 Deny Bogon
+2404:bbc0::/26 Deny Bogon
 2404:bc01::/32 Deny Bogon
 2404:bc02::/31 Deny Bogon
 2404:bc04::/30 Deny Bogon
@@ -25728,7 +25890,13 @@ Tag: CariNet, Inc.
 2404:bc10::/28 Deny Bogon
 2404:bc20::/27 Deny Bogon
 2404:bc40::/26 Deny Bogon
-2404:bc80::/25 Deny Bogon
+2404:bc81::/32 Deny Bogon
+2404:bc82::/31 Deny Bogon
+2404:bc84::/30 Deny Bogon
+2404:bc88::/29 Deny Bogon
+2404:bc90::/28 Deny Bogon
+2404:bca0::/27 Deny Bogon
+2404:bcc0::/26 Deny Bogon
 2404:bd01::/32 Deny Bogon
 2404:bd02::/31 Deny Bogon
 2404:bd04::/30 Deny Bogon
@@ -25736,7 +25904,13 @@ Tag: CariNet, Inc.
 2404:bd10::/28 Deny Bogon
 2404:bd20::/27 Deny Bogon
 2404:bd40::/26 Deny Bogon
-2404:bd80::/25 Deny Bogon
+2404:bd81::/32 Deny Bogon
+2404:bd82::/31 Deny Bogon
+2404:bd84::/30 Deny Bogon
+2404:bd88::/29 Deny Bogon
+2404:bd90::/28 Deny Bogon
+2404:bda0::/27 Deny Bogon
+2404:bdc0::/26 Deny Bogon
 2404:be01::/32 Deny Bogon
 2404:be02::/31 Deny Bogon
 2404:be04::/30 Deny Bogon
@@ -25744,7 +25918,13 @@ Tag: CariNet, Inc.
 2404:be10::/28 Deny Bogon
 2404:be20::/27 Deny Bogon
 2404:be40::/26 Deny Bogon
-2404:be80::/25 Deny Bogon
+2404:be81::/32 Deny Bogon
+2404:be82::/31 Deny Bogon
+2404:be84::/30 Deny Bogon
+2404:be88::/29 Deny Bogon
+2404:be90::/28 Deny Bogon
+2404:bea0::/27 Deny Bogon
+2404:bec0::/26 Deny Bogon
 2404:bf01::/32 Deny Bogon
 2404:bf02::/31 Deny Bogon
 2404:bf04::/30 Deny Bogon
@@ -25752,7 +25932,13 @@ Tag: CariNet, Inc.
 2404:bf10::/28 Deny Bogon
 2404:bf20::/27 Deny Bogon
 2404:bf40::/26 Deny Bogon
-2404:bf80::/25 Deny Bogon
+2404:bf81::/32 Deny Bogon
+2404:bf82::/31 Deny Bogon
+2404:bf84::/30 Deny Bogon
+2404:bf88::/29 Deny Bogon
+2404:bf90::/28 Deny Bogon
+2404:bfa0::/27 Deny Bogon
+2404:bfc0::/26 Deny Bogon
 2404:c001::/32 Deny Bogon
 2404:c002::/31 Deny Bogon
 2404:c004::/30 Deny Bogon
@@ -32572,8 +32758,7 @@ Tag: CariNet, Inc.
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
 2602:ff40::/29 Deny Bogon
-2602:ff48::/31 Deny Bogon
-2602:ff4a::/32 Deny Bogon
+2602:ff48::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -37474,11 +37659,15 @@ Tag: CariNet, Inc.
 2607:2c10::/28 Deny Bogon
 2607:2c20::/27 Deny Bogon
 2607:2c40::/26 Deny Bogon
-2607:2c80::/25 Deny Bogon
+2607:2c90::/28 Deny Bogon
+2607:2ca0::/27 Deny Bogon
+2607:2cc0::/26 Deny Bogon
 2607:2d10::/28 Deny Bogon
 2607:2d20::/27 Deny Bogon
 2607:2d40::/26 Deny Bogon
-2607:2d80::/25 Deny Bogon
+2607:2d90::/28 Deny Bogon
+2607:2da0::/27 Deny Bogon
+2607:2dc0::/26 Deny Bogon
 2607:2e10::/28 Deny Bogon
 2607:2e20::/27 Deny Bogon
 2607:2e40::/26 Deny Bogon
@@ -49621,7 +49810,12 @@ Tag: CariNet, Inc.
 2620:126:a200::/39 Deny Bogon
 2620:126:a400::/38 Deny Bogon
 2620:126:a800::/37 Deny Bogon
-2620:126:c000::/34 Deny Bogon
+2620:126:c100::/40 Deny Bogon
+2620:126:c200::/39 Deny Bogon
+2620:126:c400::/38 Deny Bogon
+2620:126:c800::/37 Deny Bogon
+2620:126:d000::/36 Deny Bogon
+2620:126:e000::/35 Deny Bogon
 2620:127::/32 Deny Bogon
 2620:128::/29 Deny Bogon
 2620:130::/28 Deny Bogon
@@ -53796,7 +53990,8 @@ Tag: CariNet, Inc.
 2803:a2c0::/26 Deny Bogon
 2803:a310::/28 Deny Bogon
 2803:a320::/27 Deny Bogon
-2803:a340::/26 Deny Bogon
+2803:a350::/28 Deny Bogon
+2803:a360::/27 Deny Bogon
 2803:a390::/28 Deny Bogon
 2803:a3a0::/27 Deny Bogon
 2803:a3c0::/26 Deny Bogon
@@ -60418,7 +60613,8 @@ Tag: CariNet, Inc.
 2804:2fce::/31 Deny Bogon
 2804:2fd1::/32 Deny Bogon
 2804:2fd2::/31 Deny Bogon
-2804:2fd4::/30 Deny Bogon
+2804:2fd5::/32 Deny Bogon
+2804:2fd6::/31 Deny Bogon
 2804:2fd8::/29 Deny Bogon
 2804:2fe0::/27 Deny Bogon
 2804:3000::/20 Deny Bogon
@@ -69922,8 +70118,6 @@ Tag: CariNet, Inc.
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:5080::/25 Deny Bogon
-2a07:5100::/24 Deny Bogon
 2a07:5200::/23 Deny Bogon
 2a07:5400::/22 Deny Bogon
 2a07:5800::/21 Deny Bogon
@@ -69940,14 +70134,5 @@ Tag: CariNet, Inc.
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
 2c0f:f000::/22 Deny Bogon
-2c0f:f5c0::/26 Deny Bogon
-2c0f:f868::/29 Deny Bogon
-2c0f:f910::/29 Deny Bogon
-2c0f:fa50::/29 Deny Bogon
-2c0f:faa8::/29 Deny Bogon
-2c0f:fcc0::/29 Deny Bogon
-2c0f:fe00::/29 Deny Bogon
-2c0f:fee8::/29 Deny Bogon
-2c0f:ff38::/29 Deny Bogon
 4000::/2 Deny Bogon
 8000::/1 Deny Bogon

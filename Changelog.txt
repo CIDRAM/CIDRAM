@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+- [2016.03.15; Signatures; Maikuolan]: Added Microsoft Azure CIDRs to the IPv4
+  signatures file; Updating several sections; Changed the "example" CIDRs in
+  the IPv4 custom signatures file to reduce ambiguity (because the previous
+  examples used CIDRs that wouldn't normally be triggered; fixed).
+
 - [2016.03.17; Signatures; Maikuolan]: Removed all references to HostExploit
   and SiteVet from CIDRAM. These two services appear to have not been updated
   in over a year and a half, and emails I've sent to them to ask whether their
@@ -71,7 +76,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   comments and for all non-signature and non-syntactical entries; This won't
   be enforced onto users, but is recommended to improve readability for IDEs
   and text editors. Added some information from Spamhaus to help users gage the
-  merit of blocking or not blocking some particular ASNs.
+  merit of blocking or not blocking some particular ASNs. Numerous new
+  signature sections added to both the IPv4 and IPv6 signature files.
   Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
   Refer github.com/Maikuolan/CIDRAM/issues/3
 
@@ -113,6 +119,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   seems to function correctly and as intended; Currently only available in CLI,
   but will be available via other means after work has been completed.
   Refer github.com/Maikuolan/CIDRAM/issues/9
+
+- [2016.04.10; Minor code change; Maikuolan]: Added support for section expiry!
+  It's now possible to mark signature sections with an expiry date, to ensure
+  that any signatures they contain won't be triggered after a specified date.
+  This feature is optional; Unmarked signature sections won't expire.
+
+- [2016.04.10; Signatures; Maikuolan]: Added numerous new signature sections to
+  the signature files, covering a number of different new ASNs. Added IPs from
+  ZeuS C&C tracker.
 
 === Version/Release 0.1.2 ===
 PATCH RELEASE.

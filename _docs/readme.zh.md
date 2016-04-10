@@ -150,7 +150,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 - 在哪里可以找到连接请求IP地址？（可以使用为服务例如Cloudflare和类似）标准是`REMOTE_ADDR`。警告！不要修改此除非您知道什么您做着！
 
 “forbid_on_block”
-- CIDRAM 应该响应以 “403 Forbidden” 到被阻止的请求，或 “200 OK”？ False/200 = 200 [默认]; True = 403; 503 = 服务不可用（503）。
+- CIDRAM 应该响应以 “403 Forbidden” 到被阻止的请求，或 “200 OK”？ False/200 = 200 [默认]； True = 403； 503 = 服务不可用（503）。
 
 “silent_mode”
 - CIDRAM 应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。
@@ -182,7 +182,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 ####“template_data” （类别）
 指令和变量为模板和主题。
 
-涉及的HTML输出用于生成该“拒绝访问”页。如果您使用个性化主题为CIDRAM，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
+涉及的HTML输出用于生成该“拒绝访问”页面。如果您使用个性化主题为CIDRAM，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
 
 “css_url”
 - 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。以指示CIDRAM使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。如果您离开这个变量空白，CIDRAM将使用模板文件为默认主题。
@@ -201,37 +201,37 @@ CIDRAM签名格式和结构描述可以被发现记录在纯文本在自定义�
 - `%Param%` 代表任何其他信息其可以由需要 `%Function%`。
 
 所有IPv6签名遵循格式： `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`。
-- `xxxx:xxxx:xxxx:xxxx::xxxx` 代表CIDR块的开始（初始IP地址八比特组）。完整符号和缩写符号是可以接受的（和每都必须遵循相应和相关IPv6符号标准，但有一个例外：IPv6地址不能开头是与缩写 when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`）。
+- `xxxx:xxxx:xxxx:xxxx::xxxx` 代表CIDR块的开始（初始IP地址八比特组）。完整符号和缩写符号是可以接受的（和每都必须遵循相应和相关IPv6符号标准，但有一个例外：IPv6地址不能开头是与缩写当用来在签名该脚本，由于以何种方式CIDR是构建由脚本；例如，当用来在签名，`::1/128`应该这样写`0::1/128`，和`::0/128`应该这样写`0::/128`）。
 - `yy` 代表CIDR块大小 [1-128]。
 - `%Function%` 指示脚本做什么用的署名（应该怎么签名考虑）。
 - `%Param%` 代表任何其他信息其可以由需要 `%Function%`。
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+CIDRAM签名文件应该使用Unix的换行符（`%0A`，或`\n`）！其他换行符类型/风格（例如，Windows `%0D%0A`或`\r\n`换行符，Mac `%0D`或`\r`换行符，等等） 可以被用于，但不是优选。非Unix的换行符将正常化至Unix的换行符由脚本。
 
-Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
+精准无误的CIDR符号是必须的，不会是承认签名。另外，所有的CIDR签名必须用一个IP地址该始于一个数在该CIDR块分割适合于它的块大小（例如，如果您想阻止所有的IP从`10.128.0.0`到`11.127.255.255`，`10.128.0.0/8`不会是承认由脚本，但`10.128.0.0/9`和`11.0.0.0/9`结合使用，将是承认由脚本）。
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
+任何数据在签名文件不承认为一个签名也不为签名相关的语法由脚本将被忽略，因此，这意味着您可以放心地把任何未签名数据和任何您想要的在签名文件没有打破他们和没有打破该脚本。注释是可以接受的在签名文件，和没有特殊的格式需要为他们。Shell风格的哈希注释是首选，但并非强制；从功能的角度，无论您是否选择使用Shell风格的哈希注释，有没有区别为脚本，但使用Shell风格的哈希帮助IDE和纯文本编辑器正确地突出的各个部分签名文件（所以，Shell风格的哈希可以帮助作为视觉辅助在编辑）。
 
-The possible values of `%Function%` are as follows:
+`%Function%` 可能的值如下：
 - Run
 - Whitelist
 - Deny
 
-If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `%Param%` value (the working directory should be the "/vault/" directory of the script).
+如果“Run”是用来，当该签名被触发，该脚本将尝试执行（使用一个`require_once`声明）一个外部PHP脚本，由指定的`%Param%`值（工作目录应该是“/vault/”脚本目录）。
 
-Example: `127.0.0.0/8 Run example.php`
+例子：`127.0.0.0/8 Run example.php`
 
-This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
+This can be useful if you want to execute some specific PHP code for some specific IPs和/或CIDRs.
 
-If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `%Param%` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+如果“Whitelist”是用来，当该签名被触发，该脚本将重置所有检测（如果有过任何检测）和打破该测试功能。`%Param%`被忽略。此功能将白名单一个IP地址或一个CIDR。
 
-Example: `127.0.0.1/32 Whitelist`
+例子：`127.0.0.1/32 Whitelist`
 
-If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
+如果“Deny”是用来，当该签名被触发，假设没有白名单签名已触发为IP地址和/或CIDR，访问至保护的页面被拒绝。你要使用“Deny”为实际拒绝一个IP地址和/或CIDR范围。当任何签名利用的“Deny”被触发，该“拒绝访问”脚本页面将生成和请求到保护的页面会被杀死。
 
-The `%Param%` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
+The `%Param%` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied 由脚本, that if used, will be replaced 由脚本 with a pre-prepared explanation of why the client/user has been blocked.
 
-The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `%Param%` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `%Param%` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+The pre-prepared explanations have i18n support and can be translated 由脚本 based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `%Param%` value (if they're using these shorthand words) via the directives specified 由脚本 configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `%Param%` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated 由脚本, and additionally, aren't directly controllable 由脚本 configuration.
 
 The available shorthand words are:
 - Bogon
@@ -241,7 +241,7 @@ The available shorthand words are:
 
 Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
 
-Example:
+例子：
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -253,7 +253,7 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-Example:
+例子：
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -263,11 +263,11 @@ Example:
 Tag: Section 1
 ```
 
-In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+在上面的例子`1.2.3.4/32`和`2.3.4.5/32`将标为“IPv4”，而`4.5.6.7/32`和`5.6.7.8/32`将标为“Section 1”.
 
-Refer to the custom signature files for more information.
+参考定制签名文件了解更多信息。
 
 ---
 
 
-最后更新：2016年4月10日。
+最后更新：2016年4月11日。

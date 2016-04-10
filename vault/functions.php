@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.04.05).
+ * This file: Functions file (last modified: 2016.04.11).
  */
 
 /**
@@ -194,6 +194,49 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 $PosA += strlen($cidr[$i]) + 2;
                 if (!$PosB = strpos($IPv4Sigs[$x], "\n", $PosA)) {
                     break;
+                }
+                if (
+                    ($PosX = strpos($IPv4Sigs[$x], "\nExpires: ", $PosA)) &&
+                    ($PosY = strpos($IPv4Sigs[$x], "\n", ($PosX + 1))) &&
+                    !substr_count($IPv4Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
+                    ($Expires = substr($IPv4Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10))) && (
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
+                            ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
+                            ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
+                            ')$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match('/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $Expires, $ExpiresArr) ||
+                        preg_match('/^([12][0-9]{3})$/i', $Expires, $ExpiresArr)
+                    )
+                ) {
+                    $ExpiresArr = array(
+                        $ExpiresArr[1],
+                        (isset($ExpiresArr[2])) ? $ExpiresArr[2] : '01',
+                        (isset($ExpiresArr[3])) ? $ExpiresArr[3] : '01',
+                        (isset($ExpiresArr[4])) ? $ExpiresArr[4] : '00',
+                        (isset($ExpiresArr[5])) ? $ExpiresArr[5] : '00',
+                        (isset($ExpiresArr[6])) ? $ExpiresArr[6] : '00'
+                    );
+                    if (
+                        ($Expires = mktime($ExpiresArr[3], $ExpiresArr[4], $ExpiresArr[5], $ExpiresArr[1], $ExpiresArr[2], $ExpiresArr[0])) &&
+                        $Expires < time()
+                    ) {
+                        continue;
+                    }
                 }
                 $Tag = (
                     ($PosX = strpos($IPv4Sigs[$x], "\nTag: ", $PosA)) &&
@@ -554,6 +597,48 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 $PosA += strlen($cidr[$i]) + 2;
                 if (!$PosB = strpos($IPv6Sigs[$x], "\n", $PosA)) {
                     break;
+                }
+                if (
+                    ($PosX = strpos($IPv6Sigs[$x], "\nExpires: ", $PosA)) &&
+                    ($PosY = strpos($IPv6Sigs[$x], "\n", ($PosX + 1))) &&
+                    !substr_count($IPv6Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
+                    ($Expires = substr($IPv6Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10))) && (
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([0-9]{2})[\x2d\x' .
+                            '2e\x3a]?([0-9]{2})[\x2d\x2e\x3a]?([0-9]{2})$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([0-9]{2})[\x2d\x' .
+                            '2e\x3a]?([0-9]{2})$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([0-9]{2})$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match(
+                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
+                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
+                        $Expires, $ExpiresArr) ||
+                        preg_match('/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $Expires, $ExpiresArr) ||
+                        preg_match('/^([12][0-9]{3})$/i', $Expires, $ExpiresArr)
+                    )
+                ) {
+                    $ExpiresArr = array(
+                        $ExpiresArr[1],
+                        $ExpiresArr[2],
+                        $ExpiresArr[3],
+                        (isset($ExpiresArr[4])) ? $ExpiresArr[4] : '00',
+                        (isset($ExpiresArr[5])) ? $ExpiresArr[5] : '00',
+                        (isset($ExpiresArr[6])) ? $ExpiresArr[6] : '00'
+                    );
+                    if (
+                        ($Expires = mktime($ExpiresArr[3], $ExpiresArr[4], $ExpiresArr[5], $ExpiresArr[1], $ExpiresArr[2], $ExpiresArr[0])) &&
+                        $Expires < time()
+                    ) {
+                        continue;
+                    }
                 }
                 $Tag = (
                     ($PosX = strpos($IPv6Sigs[$x], "\nTag: ", $PosA)) &&

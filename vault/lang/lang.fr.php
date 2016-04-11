@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.04.03).
+ * This file: French language data (last modified: 2016.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,12 +24,12 @@ $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP Adresse: ';
 $CIDRAM['lang']['field_query'] = 'Query: ';
 $CIDRAM['lang']['field_referrer'] = 'Referrer: ';
+$CIDRAM['lang']['field_rURI'] = 'Reconstruite URI: ';
 $CIDRAM['lang']['field_scriptversion'] = 'La version du script: ';
 $CIDRAM['lang']['field_sigcount'] = 'Signatures Compte: ';
 $CIDRAM['lang']['field_sigref'] = 'Signatures Référence: ';
-$CIDRAM['lang']['field_whyreason'] = 'Raison Bloquée: ';
 $CIDRAM['lang']['field_ua'] = 'Agent Utilisateur: ';
-$CIDRAM['lang']['field_rURI'] = 'Reconstruite URI: ';
+$CIDRAM['lang']['field_whyreason'] = 'Raison Bloquée: ';
 $CIDRAM['lang']['generated_by'] = 'Généré par';
 $CIDRAM['lang']['preamble'] = '-- Fin du préambule. Ajouter vos questions ou commentaires après cette ligne. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Votre accès à cette page a été refusée parce que vous avez tenté d\'accéder à cette page en utilisant un invalide IP adresse.';
@@ -67,3 +67,26 @@ $CIDRAM['lang']['CLI_H'] = "
 $CIDRAM['lang']['CLI_Bad_IP'] = ' L\'adresse IP spécifiée, "{IP}", est pas une adresse IPv4 ou IPv6 valide!';
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' L\'adresse IP spécifiée, "{IP}", *EST* bloqué par un ou plusieurs du signatures de CIDRAM.';
 $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' L\'adresse IP spécifiée, "{IP}", n\'est *PAS* bloqué par les signatures de CIDRAM.';
+
+$CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
+$CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
+$CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
+$CIDRAM['lang']['CLI_VF_Level_0'] = 'Notice';
+$CIDRAM['lang']['CLI_VF_Level_1'] = 'Avertissement';
+$CIDRAM['lang']['CLI_VF_Level_2'] = 'Erreur';
+$CIDRAM['lang']['CLI_VF_Level_3'] = 'Erreur Fatale';
+
+$CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';
+$CIDRAM['lang']['CLI_V_LineByLine'] = 'Line-by-line validation has started.';
+$CIDRAM['lang']['CLI_V_Started'] = 'Signature validator has started (%s).';
+$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature files should terminate with an LF linebreak.';
+
+$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Control characters detected; This could indicate corruption and should be investigated.';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Expiry tag doesn\'t contain a valid ISO 8601 date/time!';
+$CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s and L%s are identical, and thus, mergeable.';
+$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Not syntactically precise.';
+$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';

@@ -70,103 +70,68 @@ if ($CIDRAM['argv'][1] === '-h') {
     /** Validates signature files (WARNING: BETA AND UNSTABLE!). */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature validator has started (' . date('r'). ').');
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Started'], date('r')));
     if (empty($FileToValidate)) {
-        echo $CIDRAM['ValidatorMsg']('Fatal Error', 'Specified signature file is empty or doesn\'t exist.') . "\n";
+        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n";
         die;
     }
     if (strpos($FileToValidate, "\r")) {
-        echo $CIDRAM['ValidatorMsg']('Warning', 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.');
+        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_CRLF']);
         $FileToValidate = (strpos($FileToValidate, "\r\n")) ? str_replace("\r", '', $FileToValidate) : str_replace("\r", "\n", $FileToValidate);
     }
     if (substr($FileToValidate, -1) !== "\n") {
-        echo $CIDRAM['ValidatorMsg']('Warning', 'Signature files should terminate with an LF linebreak.');
+        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_Terminal_LF']);
         $FileToValidate .= "\n";
     }
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Line-by-line validation has started.');
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], $CIDRAM['lang']['CLI_V_LineByLine']);
     $ArrayToValidate = explode("\n", $FileToValidate);
     $c = count($ArrayToValidate);
     for ($i = 0; $i < $c; $i++) {
         $len = strlen($ArrayToValidate[$i]);
         if ($len > 120) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_L120'], $i));
         } elseif (!$len) {
             continue;
         }
         if (isset($ArrayToValidate[$i + 1]) && $ArrayToValidate[$i + 1] === $ArrayToValidate[$i]) {
-            echo $CIDRAM['ValidatorMsg']('Notice', 'L' . $i . ' and L' . ($i + 1) . ' are identical, and thus, mergeable.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_VL_L120'], $i, ($i + 1)));
         }
         if (preg_match('/\s+$/', $ArrayToValidate[$i])) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Excess trailing whitespace detected on this line.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Whitespace'], $i));
         }
         if (substr($ArrayToValidate[$i], 0, 1) === '#') {
             continue;
         }
         if (substr_count($ArrayToValidate[$i], "\t")) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Tabs detected; Spaces are preferred over tabs for optimal readability.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Tabs'], $i));
         } elseif (preg_match('/[^\x20-\xff]/', $ArrayToValidate[$i])) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Control characters detected; This could indicate corruption and should be investigated.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_CC'], $i));
         }
         if (substr($ArrayToValidate[$i], 0, 5) === 'Tag: ') {
             if ($len > 25) {
-                echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Section tag is greater than 20 bytes; Section tags should be clear and concise.');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Tags'], $i));
             }
             continue;
         }
         if (substr($ArrayToValidate[$i], 0, 9) === 'Expires: ') {
-            $Expires = substr($ArrayToValidate[$i], 9);
-            if (
-                preg_match(
-                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
-                    ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
-                $Expires, $ExpiresArr) ||
-                preg_match(
-                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
-                    ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
-                $Expires, $ExpiresArr) ||
-                preg_match(
-                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
-                    ')$/i',
-                $Expires, $ExpiresArr) ||
-                preg_match(
-                    '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                    '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
-                $Expires, $ExpiresArr) ||
-                preg_match('/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $Expires, $ExpiresArr) ||
-                preg_match('/^([12][0-9]{3})$/i', $Expires, $ExpiresArr)
-            ) {
-                $ExpiresArr = array(
-                    $ExpiresArr[1],
-                        (isset($ExpiresArr[2])) ? $ExpiresArr[2] : '01',
-                        (isset($ExpiresArr[3])) ? $ExpiresArr[3] : '01',
-                        (isset($ExpiresArr[4])) ? $ExpiresArr[4] : '00',
-                        (isset($ExpiresArr[5])) ? $ExpiresArr[5] : '00',
-                        (isset($ExpiresArr[6])) ? $ExpiresArr[6] : '00'
-                );
-                if (!mktime($ExpiresArr[3], $ExpiresArr[4], $ExpiresArr[5], $ExpiresArr[1], $ExpiresArr[2], $ExpiresArr[0])) {
-                    echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Expiry tag doesn\'t contain a valid ISO 8601 date/time!');
-                }
-            } else {
-                echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Expiry tag doesn\'t contain a valid ISO 8601 date/time!');
+            if (!$CIDRAM['FetchExpires'](substr($ArrayToValidate[$i], 9))) {
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Expiry'], $i));
             }
             continue;
         }
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
         if ($Sig['x'] = strpos($Sig['Base'], '/')) {
             $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
-            $Sig['Prefix'] = (integer)substr($Sig['Base'], $Sig['x'] + 1);
+            $Sig['Prefix'] = (int)substr($Sig['Base'], $Sig['x'] + 1);
             $Sig['Key'] = $Sig['Prefix'] - 1;
         } else {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Not syntactically precise.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Syntax'], $i));
             continue;
         }
         $Sig['IPv4'] = $CIDRAM['IPv4Test']($Sig['Initial'], true);
         $Sig['IPv6'] = $CIDRAM['IPv6Test']($Sig['Initial'], true);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
-            echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': "' . $Sig['Initial'] . '" is *NOT* a valid IPv4 or IPv6 address!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: "' . $Sig['Initial'] . '" is *NOT* a valid IPv4 or IPv6 address!');
             continue;
         }
         if ($Sig['Base'] !== $ArrayToValidate[$i]) {
@@ -178,22 +143,22 @@ if ($CIDRAM['argv'][1] === '-h') {
                 $Sig['Param'] = '';
             }
             if ($Sig['Function'] !== 'Deny' && $Sig['Function'] !== 'Whitelist' && $Sig['Function'] !== 'Run') {
-                echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Unrecognised %Function%; Signature could be broken.');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: Unrecognised %Function%; Signature could be broken.');
             }
         } else {
             $Sig['Param'] = $Sig['Function'] = '';
-            echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': Missing %Function%; Signature appears to be incomplete.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: Missing %Function%; Signature appears to be incomplete.');
         }
         if ($Sig['Function'] === 'Deny' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Deny ')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
         } elseif ($Sig['Function'] === 'Whitelist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Whitelist')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
         } elseif ($Sig['Function'] === 'Run' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Run ')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
         }
         if ($Sig['IPv4']) {
             if ($Sig['Key'] < 0 || $Sig['IPv4'][$Sig['Key']] !== $Sig['Base']) {
-                echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv4'][$Sig['Key']] . '".');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv4'][$Sig['Key']] . '".');
             }
             for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
                 if (
@@ -201,17 +166,17 @@ if ($CIDRAM['argv'][1] === '-h') {
                     ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Whitelist')) ||
                     ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Run'))
                 ) {
-                    echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
                 }
             }
             for ($Sig['Iterator'] = $Sig['Prefix']; $Sig['Iterator'] < 32; $Sig['Iterator']++) {
                 if (substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' ')) {
-                    echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': "' . $Sig['Base'] . '" is a superset to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is a superset to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
                 }
             }
         } elseif ($Sig['IPv6']) {
             if ($Sig['Key'] < 0 || $Sig['IPv6'][$Sig['Key']] !== $Sig['Base']) {
-                echo $CIDRAM['ValidatorMsg']('Error', 'L' . $i . ': "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv6'][$Sig['Key']] . '".');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv6'][$Sig['Key']] . '".');
             }
             for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
                 if (
@@ -219,24 +184,24 @@ if ($CIDRAM['argv'][1] === '-h') {
                     ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Whitelist')) ||
                     ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Run'))
                 ) {
-                    echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
                 }
             }
             for ($Sig['Iterator'] = $Sig['Prefix']; $Sig['Iterator'] < 128; $Sig['Iterator']++) {
                 if (substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' ')) {
-                    echo $CIDRAM['ValidatorMsg']('Warning', 'L' . $i . ': "' . $Sig['Base'] . '" is a superset to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is a superset to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
                 }
             }
         }
     }
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature validator has finished (' . date('r'). '). If no warnings or errors have appeared, your signature file is *probably* okay. :-)') . "\n";
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Finished'], date('r'))) . "\n";
 } elseif ($CIDRAM['argv'][1] === '-f') {
     /** Attempts to automatically fix signature files (WARNING: BETA AND UNSTABLE!). */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature fixer has started (' . date('r'). ').');
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Started'], date('r')));
     if (empty($FileToValidate)) {
-        echo $CIDRAM['ValidatorMsg']('Fatal Error', 'Specified signature file is empty or doesn\'t exist.') . "\n";
+        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n";
         die;
     }
     $ModCheckBefore = '[' . md5($FileToValidate) . ':' . strlen($FileToValidate) . ']';
@@ -286,7 +251,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
         if ($Sig['x'] = strpos($Sig['Base'], '/')) {
             $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
-            $Sig['Prefix'] = (integer)substr($Sig['Base'], $Sig['x'] + 1);
+            $Sig['Prefix'] = (int)substr($Sig['Base'], $Sig['x'] + 1);
             $Sig['Key'] = $Sig['Prefix'] - 1;
         } else {
             $FileToValidate = str_replace("\n" . $ArrayToValidate[$i] . "\n", "\n# " . $ArrayToValidate[$i] . "\n", $FileToValidate);
@@ -382,5 +347,5 @@ if ($CIDRAM['argv'][1] === '-h') {
         fwrite($Handle, $FileToValidate);
         fclose($Handle);
     }
-    echo $CIDRAM['ValidatorMsg']('Notice', 'Signature fixer has finished, with ' . $Changes . ' changes made over ' . $Operations . ' operations (' . date('r'). ').') . "\n";
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Finished'], $Changes, $Operations, date('r'))) . "\n";
 }

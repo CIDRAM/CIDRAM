@@ -199,44 +199,10 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     ($PosX = strpos($IPv4Sigs[$x], "\nExpires: ", $PosA)) &&
                     ($PosY = strpos($IPv4Sigs[$x], "\n", ($PosX + 1))) &&
                     !substr_count($IPv4Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
-                    ($Expires = substr($IPv4Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10))) && (
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
-                            ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
-                            ')[\x2d\x2e\x3a]?([01][0-9]|2[0-3])$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[0-3]' .
-                            ')$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match('/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $Expires, $ExpiresArr) ||
-                        preg_match('/^([12][0-9]{3})$/i', $Expires, $ExpiresArr)
-                    )
+                    ($Expires = $CIDRAM['FetchExpires'](substr($IPv4Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10)))) &&
+                    $Expires < time()
                 ) {
-                    $ExpiresArr = array(
-                        $ExpiresArr[1],
-                        (isset($ExpiresArr[2])) ? $ExpiresArr[2] : '01',
-                        (isset($ExpiresArr[3])) ? $ExpiresArr[3] : '01',
-                        (isset($ExpiresArr[4])) ? $ExpiresArr[4] : '00',
-                        (isset($ExpiresArr[5])) ? $ExpiresArr[5] : '00',
-                        (isset($ExpiresArr[6])) ? $ExpiresArr[6] : '00'
-                    );
-                    if (
-                        ($Expires = mktime($ExpiresArr[3], $ExpiresArr[4], $ExpiresArr[5], $ExpiresArr[1], $ExpiresArr[2], $ExpiresArr[0])) &&
-                        $Expires < time()
-                    ) {
-                        continue;
-                    }
+                    continue;
                 }
                 $Tag = (
                     ($PosX = strpos($IPv4Sigs[$x], "\nTag: ", $PosA)) &&
@@ -602,43 +568,10 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     ($PosX = strpos($IPv6Sigs[$x], "\nExpires: ", $PosA)) &&
                     ($PosY = strpos($IPv6Sigs[$x], "\n", ($PosX + 1))) &&
                     !substr_count($IPv6Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
-                    ($Expires = substr($IPv6Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10))) && (
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([0-9]{2})[\x2d\x' .
-                            '2e\x3a]?([0-9]{2})[\x2d\x2e\x3a]?([0-9]{2})$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([0-9]{2})[\x2d\x' .
-                            '2e\x3a]?([0-9]{2})$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([0-9]{2})$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match(
-                            '/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(\xe2\x88' .
-                            '\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
-                        $Expires, $ExpiresArr) ||
-                        preg_match('/^([12][0-9]{3})(\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $Expires, $ExpiresArr) ||
-                        preg_match('/^([12][0-9]{3})$/i', $Expires, $ExpiresArr)
-                    )
+                    ($Expires = $CIDRAM['FetchExpires'](substr($IPv6Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10)))) &&
+                    $Expires < time()
                 ) {
-                    $ExpiresArr = array(
-                        $ExpiresArr[1],
-                        $ExpiresArr[2],
-                        $ExpiresArr[3],
-                        (isset($ExpiresArr[4])) ? $ExpiresArr[4] : '00',
-                        (isset($ExpiresArr[5])) ? $ExpiresArr[5] : '00',
-                        (isset($ExpiresArr[6])) ? $ExpiresArr[6] : '00'
-                    );
-                    if (
-                        ($Expires = mktime($ExpiresArr[3], $ExpiresArr[4], $ExpiresArr[5], $ExpiresArr[1], $ExpiresArr[2], $ExpiresArr[0])) &&
-                        $Expires < time()
-                    ) {
-                        continue;
-                    }
+                    continue;
                 }
                 $Tag = (
                     ($PosX = strpos($IPv6Sigs[$x], "\nTag: ", $PosA)) &&
@@ -730,4 +663,50 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
  */
 $CIDRAM['ValidatorMsg'] = function ($lvl, $msg) {
     return wordwrap(sprintf(' [%s] %s', $lvl, $msg), 78, "\n ") . "\n\n";
+};
+
+/**
+ * Reduces code duplicity (the contained code used by multiple parts of the
+ * script for dealing with expiry tags).
+ *
+ * @param string $in Expiry tag.
+ * @return int|bool A unix timestamp representing the expiry tag, or false if
+ *      the expiry tag doesn't contain a valid ISO 8601 date/time.
+ */
+$CIDRAM['FetchExpires'] = function ($in) {
+    if (
+        preg_match(
+            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
+            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[' .
+            '0-3])[\x2d\x2e\x3a]?([0-5][0-9])[\x2d\x2e\x3a]?([0-5][0-9])$/i',
+        $in, $Arr) ||
+        preg_match(
+            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
+            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[' .
+            '0-3])[\x2d\x2e\x3a]?([0-5][0-9])$/i',
+        $in, $Arr) ||
+        preg_match(
+            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
+            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[' .
+            '0-3])$/i',
+        $in, $Arr) ||
+        preg_match(
+            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
+            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
+        $in, $Arr) ||
+        preg_match('/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $in, $Arr) ||
+        preg_match('/^([12][0-9]{3})$/i', $in, $Arr)
+    ) {
+        $Arr = array(
+            (int)$Arr[1],
+            (isset($Arr[2])) ? (int)$Arr[2] : 1,
+            (isset($Arr[3])) ? (int)$Arr[3] : 1,
+            (isset($Arr[4])) ? (int)$Arr[4] : 0,
+            (isset($Arr[5])) ? (int)$Arr[5] : 0,
+            (isset($Arr[6])) ? (int)$Arr[6] : 0
+        );
+        $Expires = mktime($Arr[3], $Arr[4], $Arr[5], $Arr[1], $Arr[2], $Arr[0]);
+        return ($Expires) ? $Expires : false;
+    }
+    return false;
 };

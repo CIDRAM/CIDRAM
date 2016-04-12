@@ -175,7 +175,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 - 阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（​​“火星”）CIDR嗎？如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，這應該被設置為“false”（假）。如果不，這應該被設置為“true”（真）。
 
 “block_generic”
-- 阻止CIDR一般建議對於黑名單嗎？這包括簽名不標記為的一部分任何其他更具體簽名類別。
+- 阻止CIDR一般建議對於黑名單嗎？這包括簽名不標記為的一章节任何其他更具體簽名類別。
 
 “block_spam”
 - 阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。
@@ -183,10 +183,10 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 ####“template_data” （類別）
 指令和變量為模板和主題。
 
-涉及的HTML輸出用於生成該“拒絕訪問”頁面。如果您使用個性化主題為CIDRAM，HTML產量資源是從`template_custom.html`文件，和否則，HTML產量資源是從`template.html`文件。變量書面在這個配置文件部分是餵在HTML產量通過更換任何變量名包圍在大括號發現在HTML產量使用相應變量數據。為例子，哪里`foo="bar"`，任何發生的`<p>{foo}</p>`發現在HTML產量將成為`<p>bar</p>`。
+涉及的HTML輸出用於生成該“拒絕訪問”頁面。如果您使用個性化主題為CIDRAM，HTML產量資源是從`template_custom.html`文件，和否則，HTML產量資源是從`template.html`文件。變量書面在這個配置文件章节是餵在HTML產量通過更換任何變量名包圍在大括號發現在HTML產量使用相應變量數據。為例子，哪里`foo="bar"`，任何發生的`<p>{foo}</p>`發現在HTML產量將成為`<p>bar</p>`。
 
 “css_url”
-- 模板文件為個性化主題使用外部CSS屬性，而模板文件為t標準主題使用內部CSS屬性。以指示CIDRAM使用模板文件為個性化主題，指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。如果您離開這個變量空白，CIDRAM將使用模板文件為默認主題。
+- 模板文件為個性化主題使用外部CSS屬性，而模板文件為t標準主題使用內部CSS屬性。以指令CIDRAM使用模板文件為個性化主題，指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。如果您離開這個變量空白，CIDRAM將使用模板文件為默認主題。
 
 ---
 
@@ -198,20 +198,20 @@ CIDRAM簽名格式和結構描述可以被發現記錄在純文本在自定義�
 所有IPv4簽名遵循格式： `xxx.xxx.xxx.xxx/yy %Function% %Param%`。
 - `xxx.xxx.xxx.xxx` 代表CIDR塊開始（初始IP地址八比特組）。
 - `yy` 代表CIDR塊大小 [1-32]。
-- `%Function%` 指示腳本做什麼用的署名（應該怎麼簽名考慮）。
+- `%Function%` 指令腳本做什麼用的署名（應該怎麼簽名考慮）。
 - `%Param%` 代表任何其他信息其可以由需要 `%Function%`。
 
 所有IPv6簽名遵循格式： `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`。
 - `xxxx:xxxx:xxxx:xxxx::xxxx` 代表CIDR塊的開始（初始IP地址八比特組）。完整符號和縮寫符號是可以接受的（和每都必須遵循相應和相關IPv6符號標準，但有一個例外：IPv6地址不能開頭是與縮寫當用來在簽名該腳本，由於以何種方式CIDR是構建由腳本；例如，當用來在簽名，`::1/128`應該這樣寫`0::1/128`，和`::0/128`應該這樣寫`0::/128`)。
 - `yy` 代表CIDR塊大小 [1-128]。
-- `%Function%` 指示腳本做什麼用的署名（應該怎麼簽名考慮）。
+- `%Function%` 指令腳本做什麼用的署名（應該怎麼簽名考慮）。
 - `%Param%` 代表任何其他信息其可以由需要 `%Function%`。
 
 CIDRAM簽名文件應該使用Unix的換行符（`%0A`，或`\n`）！其他換行符類型/風格（例如，Windows `%0D%0A`或`\r\n`換行符，Mac `%0D`或`\r`換行符，等等） 可以被用於，但不是優選。非Unix的換行符將正常化至Unix的換行符由腳本。
 
 精準無誤的CIDR符號是必須的，不會是承認簽名。另外，所有的CIDR簽名必須用一個IP地址該始於一個數在該CIDR塊分割適合於它的塊大小（例如，如果您想阻止所有的IP從`10.128.0.0`到`11.127.255.255`，`10.128.0.0/8`不會是承認由腳本，但`10.128.0.0/9`和`11.0.0.0/9`結合使用，將是承認由腳本）。
 
-任何數據在簽名文件不承認為一個簽名也不為簽名相關的語法由腳本將被忽略，因此，這意味著您可以放心地把任何未簽名數據和任何您想要的在簽名文件沒有打破他們和沒有打破該腳本。註釋是可以接受的在簽名文件，和沒有特殊的格式需要為他們。Shell風格的哈希註釋是首選，但並非強制；從功能的角度，無論您是否選擇使用Shell風格的哈希註釋，有沒有區別為腳本，但使用Shell風格的哈希幫助IDE和純文本編輯器正確地突出的各個部分簽名文件（所以，Shell風格的哈希可以幫助作為視覺輔助在編輯）。
+任何數據在簽名文件不承認為一個簽名也不為簽名相關的語法由腳本將被忽略，因此，這意味著您可以放心地把任何未簽名數據和任何您想要的在簽名文件沒有打破他們和沒有打破該腳本。註釋是可以接受的在簽名文件，和沒有特殊的格式需要為他們。Shell風格的哈希註釋是首選，但並非強制；從功能的角度，無論您是否選擇使用Shell風格的哈希註釋，有沒有區別為腳本，但使用Shell風格的哈希幫助IDE和純文本編輯器正確地突出的各個章节簽名文件（所以，Shell風格的哈希可以幫助作為視覺輔助在編輯）。
 
 `%Function%` 可能的值如下：
 - Run
@@ -222,7 +222,7 @@ CIDRAM簽名文件應該使用Unix的換行符（`%0A`，或`\n`）！其他換�
 
 例子：`127.0.0.0/8 Run example.php`
 
-This can be useful if you want to execute some specific PHP code for some specific IPs和/或CIDRs.
+這可能是有用如果您想執行一些特定的PHP代碼對一些特定的IP和/或CIDR。
 
 如果“Whitelist”是用來，當該簽名被觸發，該腳本將重置所有檢測（如果有過任何檢測）和打破該測試功能。`%Param%`被忽略。此功能將白名單一個IP地址或一個CIDR。
 
@@ -230,17 +230,17 @@ This can be useful if you want to execute some specific PHP code for some specif
 
 如果“Deny”是用來，當該簽名被觸發，假設沒有白名單簽名已觸發為IP地址和/或CIDR，訪問至保護的頁面被拒絕。你要使用“Deny”為實際拒絕一個IP地址和/或CIDR範圍。當任何簽名利用的“Deny”被觸發，該“拒絕訪問”腳本頁面將生成和請求到保護的頁面會被殺死。
 
-The `%Param%` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied 由脚本, that if used, will be replaced 由脚本 with a pre-prepared explanation of why the client/user has been blocked.
+“Deny”的`%Param%`值會被解析為“拒絕訪問”頁面，提供給客戶機/用戶作為引原因他們訪問到請求的頁面被拒絕。它可以是一個短期和簡單的句子，為解釋原因（什麼應該足夠了；一個簡單的消息像“我不想讓你在我的網站”會好起來的），或一小撮之一的短關鍵字供應的通過腳本。如果使用，它們將被替換由腳本使用預先準備的解釋為什麼客戶機/用戶已被封鎖。
 
-The pre-prepared explanations have i18n support and can be translated 由脚本 based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `%Param%` value (if they're using these shorthand words) via the directives specified 由脚本 configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `%Param%` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated 由脚本, and additionally, aren't directly controllable 由脚本 configuration.
+預先準備的解釋具有多語言支持和可以翻譯通過腳本根據您的語言指定的通過`lang`腳本配置指令。另外，您可以指令腳本忽略“Deny”簽名根據他們的價`%Param%`值（如果他們使用這些短關鍵字）通過腳本配置指令（每短關鍵字有一個相應的指令到處理相應的簽名或忽略它）。`%Param%`值不使用這些短關鍵字，然而，沒有多語言支持和因此不會被翻譯通過腳本，並且還，不能直接控制由腳本配置。
 
-The available shorthand words are:
+可用的短關鍵字是：
 - Bogon
 - Cloud
 - Generic
 - Spam
 
-Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+自選：如果要分割您的自定義簽名成各個章节，您可以識別這些各個章节為腳本通過加入一個“Tag:”標籤立即跟著每章节簽名，伴隨著章节簽名名字。
 
 例子：
 ```
@@ -252,7 +252,7 @@ Optional: If you want to split your custom signatures into individual sections, 
 Tag: Section 1
 ```
 
-To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
+為了打破章節標籤和以確保標籤不是確定不正確的對於簽名章節從較早的在簽名文件，確保有至少有兩個連續的換行符之間您的標籤和您的較早的簽名章節。任何未標記簽名將默認為“IPv4”或“IPv6”（取決於簽名類型被觸發的）。
 
 例子：
 ```
@@ -271,4 +271,4 @@ Tag: Section 1
 ---
 
 
-最後更新：2016年4月11日。
+最後更新：2016年4月12日。

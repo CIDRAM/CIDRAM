@@ -3456,6 +3456,14 @@ Tag: Pakistan Telecom
 Tag: Kintiskton LLC
 
 
+# www.anonymouse.org (1 CIDR; no ASN).
+# Anonymous proxy service; Potential source of SPAM and hacking attacks.
+# Updated: 2016.04.13
+
+193.200.150.0/24 Deny Generic
+Tag: anonymouse.org
+
+
 # ASN 46475 ("Limestone Networks, Inc").
 # Infected by malware (as per reported by Google): 4.39%.
 # Updated: 2016.01.19 / Checked: 2016.03.28
@@ -8103,6 +8111,82 @@ Tag: FranTech Solutions
 Tag: Astutium Limited
 
 
+# ASN 3491 ("PCCW Global" / "Beyond The Network America, Inc.").
+# Infected by malware (as per reported by Google): 2.21%.
+# Updated: 2016.04.14
+
+23.32.176.0/20 Deny Generic
+23.33.44.0/22 Deny Generic
+23.33.80.0/20 Deny Generic
+23.46.16.0/23 Deny Generic
+23.60.78.0/23 Deny Generic
+23.60.112.0/20 Deny Generic
+23.60.128.0/20 Deny Generic
+23.60.144.0/22 Deny Generic
+41.79.244.0/22 Deny Generic
+41.79.248.0/23 Deny Generic
+41.221.208.0/20 Deny Generic
+63.216.0.0/13 Deny Generic
+65.72.64.0/20 Deny Generic
+69.1.66.0/24 Deny Generic
+69.1.80.0/24 Deny Generic
+69.1.86.0/23 Deny Generic
+69.1.88.0/24 Deny Generic
+103.17.116.0/22 Deny Generic
+103.20.192.0/22 Deny Generic
+103.24.92.0/22 Deny Generic
+103.27.176.0/22 Deny Generic
+103.30.4.0/22 Deny Generic
+103.36.52.0/22 Deny Generic
+103.41.16.0/22 Deny Generic
+103.56.136.0/22 Deny Generic
+103.226.152.0/22 Deny Generic
+103.230.108.0/22 Deny Generic
+103.234.96.0/22 Deny Generic
+103.244.148.0/22 Deny Generic
+104.95.20.0/22 Deny Generic
+104.95.24.0/21 Deny Generic
+104.95.32.0/19 Deny Generic
+104.95.64.0/19 Deny Generic
+104.99.60.0/22 Deny Generic
+104.99.96.0/19 Deny Generic
+104.99.128.0/23 Deny Generic
+112.78.49.0/24 Deny Generic
+112.121.42.0/24 Deny Generic
+116.66.216.0/21 Deny Generic
+121.50.191.0/24 Deny Generic
+122.10.203.0/24 Deny Generic
+123.108.119.0/24 Deny Generic
+146.222.18.0/24 Deny Generic
+146.222.35.0/24 Deny Generic
+146.222.187.0/24 Deny Generic
+146.222.194.0/24 Deny Generic
+149.134.175.0/24 Deny Generic
+169.239.144.0/22 Deny Generic
+185.10.106.0/24 Deny Generic
+192.221.77.0/24 Deny Generic
+196.216.156.0/24 Deny Generic
+198.69.128.0/20 Deny Generic
+199.0.216.0/21 Deny Generic
+202.183.39.0/24 Deny Generic
+203.5.148.0/24 Deny Generic
+203.30.26.0/23 Deny Generic
+204.180.160.0/19 Deny Generic
+205.161.96.0/20 Deny Generic
+205.177.0.0/16 Deny Generic
+205.252.0.0/16 Deny Generic
+206.161.0.0/16 Deny Generic
+207.176.0.0/17 Deny Generic
+207.226.0.0/16 Deny Generic
+209.8.0.0/15 Deny Generic
+209.170.64.0/23 Deny Generic
+213.248.118.0/23 Deny Generic
+213.248.120.0/23 Deny Generic
+217.113.64.0/19 Deny Generic
+217.156.160.0/21 Deny Generic
+Tag: PCCW Global
+
+
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Thanks to chris_c for finding these. :-)
@@ -9205,7 +9289,7 @@ Tag: Azure
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-# Expires: 2016.07.13
+Expires: 2016.07.13
 
 
 # ---

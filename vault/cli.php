@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.12).
+ * This file: CLI handler (last modified: 2016.04.13).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -245,7 +245,11 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Changes++;
             $Operations++;
         }
-        if (substr($ArrayToValidate[$i], 0, 1) === '#' || substr($ArrayToValidate[$i], 0, 5) === 'Tag: ') {
+        if (
+            substr($ArrayToValidate[$i], 0, 1) === '#' ||
+            substr($ArrayToValidate[$i], 0, 5) === 'Tag: ' ||
+            substr($ArrayToValidate[$i], 0, 9) === 'Expires: '
+        ) {
             continue;
         }
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);

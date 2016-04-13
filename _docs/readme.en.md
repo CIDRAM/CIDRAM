@@ -108,14 +108,23 @@ File | Description
 /vault/lang.php | Language handler.
 /vault/lang/ | Contains CIDRAM language data.
 /vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/lang/lang.en.cli.php | English language data for CLI.
 /vault/lang/lang.en.php | English language data.
+/vault/lang/lang.es.cli.php | Spanish language data for CLI.
 /vault/lang/lang.es.php | Spanish language data.
+/vault/lang/lang.fr.cli.php | French language data for CLI.
 /vault/lang/lang.fr.php | French language data.
+/vault/lang/lang.id.cli.php | Indonesian language data for CLI.
 /vault/lang/lang.id.php | Indonesian language data.
+/vault/lang/lang.it.cli.php | Italian language data for CLI.
 /vault/lang/lang.it.php | Italian language data.
+/vault/lang/lang.nl.cli.php | Dutch language data for CLI.
 /vault/lang/lang.nl.php | Dutch language data.
+/vault/lang/lang.pt.cli.php | Portuguese language data for CLI.
 /vault/lang/lang.pt.php | Portuguese language data.
-/vault/lang/lang.zh-TW.php | Chinese (traditional) language data.
+/vault/lang/lang.zh-tw.cli.php | Chinese (traditional) language data for CLI.
+/vault/lang/lang.zh-tw.php | Chinese (traditional) language data.
+/vault/lang/lang.zh.cli.php | Chinese (simplified) language data for CLI.
 /vault/lang/lang.zh.php | Chinese (simplified) language data.
 /vault/outgen.php | Output generator.
 /vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
@@ -265,4 +274,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 9th April 2016 (2016.04.09).
+Last Updated: 12th April 2016 (2016.04.12).

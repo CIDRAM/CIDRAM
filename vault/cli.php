@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.11).
+ * This file: CLI handler (last modified: 2016.04.12).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -131,7 +131,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig['IPv4'] = $CIDRAM['IPv4Test']($Sig['Initial'], true);
         $Sig['IPv6'] = $CIDRAM['IPv6Test']($Sig['Initial'], true);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: "' . $Sig['Initial'] . '" is *NOT* a valid IPv4 or IPv6 address!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Invalid'], $i, $Sig['Initial']));
             continue;
         }
         if ($Sig['Base'] !== $ArrayToValidate[$i]) {
@@ -143,22 +143,22 @@ if ($CIDRAM['argv'][1] === '-h') {
                 $Sig['Param'] = '';
             }
             if ($Sig['Function'] !== 'Deny' && $Sig['Function'] !== 'Whitelist' && $Sig['Function'] !== 'Run') {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: Unrecognised %Function%; Signature could be broken.');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Unrecognised'], $i));
             }
         } else {
             $Sig['Param'] = $Sig['Function'] = '';
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: Missing %Function%; Signature appears to be incomplete.');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Missing'], $i));
         }
         if ($Sig['Function'] === 'Deny' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Deny ')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Whitelist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Whitelist')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Run' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Run ')) && $Sig['n'] > 1) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: Signature "' . $Sig['Base'] . '" is duplicated (' . $Sig['n'] . ' counts)!');
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
         }
         if ($Sig['IPv4']) {
             if ($Sig['Key'] < 0 || $Sig['IPv4'][$Sig['Key']] !== $Sig['Base']) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv4'][$Sig['Key']] . '".');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Key']]));
             }
             for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
                 if (
@@ -166,17 +166,17 @@ if ($CIDRAM['argv'][1] === '-h') {
                     ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Whitelist')) ||
                     ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Run'))
                 ) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
                 }
             }
             for ($Sig['Iterator'] = $Sig['Prefix']; $Sig['Iterator'] < 32; $Sig['Iterator']++) {
                 if (substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' ')) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is a superset to the already existing "' . $Sig['IPv4'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
                 }
             }
         } elseif ($Sig['IPv6']) {
             if ($Sig['Key'] < 0 || $Sig['IPv6'][$Sig['Key']] !== $Sig['Base']) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], 'L%s: "' . $Sig['Base'] . '" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "' . $Sig['IPv6'][$Sig['Key']] . '".');
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Key']]));
             }
             for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
                 if (
@@ -184,12 +184,12 @@ if ($CIDRAM['argv'][1] === '-h') {
                     ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Whitelist')) ||
                     ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Run'))
                 ) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is subordinate to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
                 }
             }
             for ($Sig['Iterator'] = $Sig['Prefix']; $Sig['Iterator'] < 128; $Sig['Iterator']++) {
                 if (substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' ')) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], 'L%s: "' . $Sig['Base'] . '" is a superset to the already existing "' . $Sig['IPv6'][$Sig['Iterator']] . '" signature.');
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
                 }
             }
         }

@@ -108,14 +108,23 @@ Bestand | Beschrijving
 /vault/lang.php | Taal-handler.
 /vault/lang/ | Bevat CIDRAM taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.en.cli.php | Engels taaldata/taalgegevens voor CLI.
 /vault/lang/lang.en.php | Engels taaldata/taalgegevens.
+/vault/lang/lang.es.cli.php | Spaanse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
+/vault/lang/lang.fr.cli.php | Franse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.id.cli.php | Indonesisch taaldata/taalgegevens voor CLI.
 /vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
+/vault/lang/lang.it.cli.php | Italiaanse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.nl.cli.php | Nederlandse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
+/vault/lang/lang.pt.cli.php | Portugees taaldata/taalgegevens voor CLI.
 /vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
-/vault/lang/lang.zh-TW.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh-tw.cli.php | Chinees (traditioneel) taaldata/taalgegevens voor CLI.
+/vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.cli.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor CLI.
 /vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
 /vault/outgen.php | Uitvoer generator.
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
@@ -205,7 +214,7 @@ The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use shell-style hashing for comments, but using shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, shell-style hashing can assist as a visual aid while editing).
+Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
 The possible values of `%Function%` are as follows:
 - Run
@@ -265,4 +274,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Laatste Bijgewerkt: 3 April 2016 (2016.04.03).
+Laatste Bijgewerkt: 12 April 2016 (2016.04.12).

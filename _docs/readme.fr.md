@@ -108,14 +108,23 @@ Fichier | Description
 /vault/lang.php | Module de linguistiques.
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
 /vault/lang/lang.en.php | Linguistiques données en Anglais.
+/vault/lang/lang.es.cli.php | Linguistiques données en Espagnol pour CLI.
 /vault/lang/lang.es.php | Linguistiques données en Espagnol.
+/vault/lang/lang.fr.cli.php | Linguistiques données en Français pour CLI.
 /vault/lang/lang.fr.php | Linguistiques données en Français.
+/vault/lang/lang.id.cli.php | Linguistiques données en Indonésien pour CLI.
 /vault/lang/lang.id.php | Linguistiques données en Indonésien.
+/vault/lang/lang.it.cli.php | Linguistiques données en Italien pour CLI.
 /vault/lang/lang.it.php | Linguistiques données en Italien.
+/vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandais pour CLI.
 /vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
+/vault/lang/lang.pt.cli.php | Linguistiques données en Portugais pour CLI.
 /vault/lang/lang.pt.php | Linguistiques données en Portugais.
-/vault/lang/lang.zh-TW.php | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
+/vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh.cli.php | Linguistiques données en Chinois (simplifié) pour CLI.
 /vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/outgen.php | Générateur de sortie.
 /vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
@@ -265,4 +274,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 5 Avril 2016 (2016.04.05).
+Dernière Réactualisé: 12 Avril 2016 (2016.04.12).

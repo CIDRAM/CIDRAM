@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.03.25).
+ * This file: Language handler (last modified: 2016.04.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,14 +24,26 @@ if (empty($CIDRAM['Config']['general']['lang'])) {
 /** Create the language data array. */
 $CIDRAM['lang'] = array();
 
-/**
- * Kill the script if the language data file corresponding to the language
- * directive (%CIDRAM%/vault/lang/lang.%%.php) doesn't exist.
- */
-if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php')) {
-    header('Content-Type: text/plain');
-    die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
+if ($CIDRAM['CIDRAM_sapi']) {
+    /**
+     * Kill the script if the language data file corresponding to the language
+     * directive for CLI-mode (%CIDRAM%/vault/lang/lang.%%.cli.php) doesn't exist.
+     */
+    if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.cli.php')) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
+    }
+    /** Load the necessary language data. */
+    require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.cli.php';
+} else {
+    /**
+     * Kill the script if the language data file corresponding to the language
+     * directive (%CIDRAM%/vault/lang/lang.%%.php) doesn't exist.
+     */
+    if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php')) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
+    }
+    /** Load the necessary language data. */
+    require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php';
 }
-
-/** Load the necessary language data. */
-require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php';

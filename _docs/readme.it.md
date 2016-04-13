@@ -108,14 +108,23 @@ File | Descrizione
 /vault/lang.php | Linguistici dati.
 /vault/lang/ | Contiene linguistici dati.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
+/vault/lang/lang.en.cli.php | Linguistici dati Inglese per CLI.
 /vault/lang/lang.en.php | Linguistici dati Inglese.
+/vault/lang/lang.es.cli.php | Linguistici dati Spagnola per CLI.
 /vault/lang/lang.es.php | Linguistici dati Spagnola.
+/vault/lang/lang.fr.cli.php | Linguistici dati Francese per CLI.
 /vault/lang/lang.fr.php | Linguistici dati Francese.
+/vault/lang/lang.id.cli.php | Linguistici dati Indonesiana per CLI.
 /vault/lang/lang.id.php | Linguistici dati Indonesiana.
+/vault/lang/lang.it.cli.php | Linguistici dati Italiana per CLI.
 /vault/lang/lang.it.php | Linguistici dati Italiana.
+/vault/lang/lang.nl.cli.php | Linguistici dati Olandese per CLI.
 /vault/lang/lang.nl.php | Linguistici dati Olandese.
+/vault/lang/lang.pt.cli.php | Linguistici dati Portoghese per CLI.
 /vault/lang/lang.pt.php | Linguistici dati Portoghese.
-/vault/lang/lang.zh-TW.php | Linguistici dati Cinese (tradizionale).
+/vault/lang/lang.zh-tw.cli.php | Linguistici dati Cinese (tradizionale) per CLI.
+/vault/lang/lang.zh-tw.php | Linguistici dati Cinese (tradizionale).
+/vault/lang/lang.zh.cli.php | Linguistici dati Cinese (semplificata) per CLI.
 /vault/lang/lang.zh.php | Linguistici dati Cinese (semplificata).
 /vault/outgen.php | Generatore di output.
 /vault/template.html | File di modello; Modello per l'output HTML prodotto dal generatore di output per CIDRAM.
@@ -265,4 +274,4 @@ Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 ---
 
 
-Ultimo Aggiornamento: 9 Aprile 2016 (2016.04.09).
+Ultimo Aggiornamento: 12 Aprile 2016 (2016.04.12).

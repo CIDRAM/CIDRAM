@@ -814,8 +814,8 @@ Tag: iWeb
 
 
 # ASN 29713 ("Reliable Hosting Services").
-# Infected by malware (as per reported by Google): 4.16%.
-# Updated: 2016.01.27
+# Infected by malware (as per reported by Google): 4.18%.
+# Updated: 2016.01.27 / Checked: 2016.04.13
 
 2604:4100::/36 Deny Cloud
 Tag: Reliable Hosting
@@ -970,8 +970,7 @@ Tag: Black Lotus
 
 2602:ff96:2::/48 Deny Cloud
 2602:ff96:4::/48 Deny Cloud
-2602:ffea::/36 Deny Cloud
-2602:ffea:1000::/36 Deny Cloud
+2602:ffea::/35 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
 2607:8700:102::/48 Deny Cloud
@@ -2096,7 +2095,7 @@ Tag: Astutium Limited
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.10
+# Updated: 2016.04.13
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3003,8 +3002,9 @@ Tag: Astutium Limited
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:13c::/46 Deny Bogon
-2001:678:140::/42 Deny Bogon
+2001:678:148::/45 Deny Bogon
+2001:678:150::/44 Deny Bogon
+2001:678:160::/43 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -5239,7 +5239,15 @@ Tag: Astutium Limited
 2001:df1:8c40::/42 Deny Bogon
 2001:df1:8c80::/41 Deny Bogon
 2001:df1:8d00::/40 Deny Bogon
-2001:df1:8e00::/39 Deny Bogon
+2001:df1:8e01::/48 Deny Bogon
+2001:df1:8e02::/47 Deny Bogon
+2001:df1:8e04::/46 Deny Bogon
+2001:df1:8e08::/45 Deny Bogon
+2001:df1:8e10::/44 Deny Bogon
+2001:df1:8e20::/43 Deny Bogon
+2001:df1:8e40::/42 Deny Bogon
+2001:df1:8e80::/41 Deny Bogon
+2001:df1:8f00::/40 Deny Bogon
 2001:df1:9001::/48 Deny Bogon
 2001:df1:9002::/47 Deny Bogon
 2001:df1:9004::/46 Deny Bogon
@@ -5249,7 +5257,15 @@ Tag: Astutium Limited
 2001:df1:9040::/42 Deny Bogon
 2001:df1:9080::/41 Deny Bogon
 2001:df1:9100::/40 Deny Bogon
-2001:df1:9200::/39 Deny Bogon
+2001:df1:9201::/48 Deny Bogon
+2001:df1:9202::/47 Deny Bogon
+2001:df1:9204::/46 Deny Bogon
+2001:df1:9208::/45 Deny Bogon
+2001:df1:9210::/44 Deny Bogon
+2001:df1:9220::/43 Deny Bogon
+2001:df1:9240::/42 Deny Bogon
+2001:df1:9280::/41 Deny Bogon
+2001:df1:9300::/40 Deny Bogon
 2001:df1:9401::/48 Deny Bogon
 2001:df1:9402::/47 Deny Bogon
 2001:df1:9404::/46 Deny Bogon
@@ -5259,7 +5275,15 @@ Tag: Astutium Limited
 2001:df1:9440::/42 Deny Bogon
 2001:df1:9480::/41 Deny Bogon
 2001:df1:9500::/40 Deny Bogon
-2001:df1:9600::/39 Deny Bogon
+2001:df1:9601::/48 Deny Bogon
+2001:df1:9602::/47 Deny Bogon
+2001:df1:9604::/46 Deny Bogon
+2001:df1:9608::/45 Deny Bogon
+2001:df1:9610::/44 Deny Bogon
+2001:df1:9620::/43 Deny Bogon
+2001:df1:9640::/42 Deny Bogon
+2001:df1:9680::/41 Deny Bogon
+2001:df1:9700::/40 Deny Bogon
 2001:df1:9801::/48 Deny Bogon
 2001:df1:9802::/47 Deny Bogon
 2001:df1:9804::/46 Deny Bogon
@@ -5269,7 +5293,15 @@ Tag: Astutium Limited
 2001:df1:9840::/42 Deny Bogon
 2001:df1:9880::/41 Deny Bogon
 2001:df1:9900::/40 Deny Bogon
-2001:df1:9a00::/39 Deny Bogon
+2001:df1:9a01::/48 Deny Bogon
+2001:df1:9a02::/47 Deny Bogon
+2001:df1:9a04::/46 Deny Bogon
+2001:df1:9a08::/45 Deny Bogon
+2001:df1:9a10::/44 Deny Bogon
+2001:df1:9a20::/43 Deny Bogon
+2001:df1:9a40::/42 Deny Bogon
+2001:df1:9a80::/41 Deny Bogon
+2001:df1:9b00::/40 Deny Bogon
 2001:df1:9c01::/48 Deny Bogon
 2001:df1:9c02::/47 Deny Bogon
 2001:df1:9c04::/46 Deny Bogon
@@ -5279,7 +5311,15 @@ Tag: Astutium Limited
 2001:df1:9c40::/42 Deny Bogon
 2001:df1:9c80::/41 Deny Bogon
 2001:df1:9d00::/40 Deny Bogon
-2001:df1:9e00::/39 Deny Bogon
+2001:df1:9e01::/48 Deny Bogon
+2001:df1:9e02::/47 Deny Bogon
+2001:df1:9e04::/46 Deny Bogon
+2001:df1:9e08::/45 Deny Bogon
+2001:df1:9e10::/44 Deny Bogon
+2001:df1:9e20::/43 Deny Bogon
+2001:df1:9e40::/42 Deny Bogon
+2001:df1:9e80::/41 Deny Bogon
+2001:df1:9f00::/40 Deny Bogon
 2001:df1:a001::/48 Deny Bogon
 2001:df1:a002::/47 Deny Bogon
 2001:df1:a004::/46 Deny Bogon
@@ -5289,7 +5329,15 @@ Tag: Astutium Limited
 2001:df1:a040::/42 Deny Bogon
 2001:df1:a080::/41 Deny Bogon
 2001:df1:a100::/40 Deny Bogon
-2001:df1:a200::/39 Deny Bogon
+2001:df1:a201::/48 Deny Bogon
+2001:df1:a202::/47 Deny Bogon
+2001:df1:a204::/46 Deny Bogon
+2001:df1:a208::/45 Deny Bogon
+2001:df1:a210::/44 Deny Bogon
+2001:df1:a220::/43 Deny Bogon
+2001:df1:a240::/42 Deny Bogon
+2001:df1:a280::/41 Deny Bogon
+2001:df1:a300::/40 Deny Bogon
 2001:df1:a401::/48 Deny Bogon
 2001:df1:a402::/47 Deny Bogon
 2001:df1:a404::/46 Deny Bogon
@@ -5299,7 +5347,15 @@ Tag: Astutium Limited
 2001:df1:a440::/42 Deny Bogon
 2001:df1:a480::/41 Deny Bogon
 2001:df1:a500::/40 Deny Bogon
-2001:df1:a600::/39 Deny Bogon
+2001:df1:a601::/48 Deny Bogon
+2001:df1:a602::/47 Deny Bogon
+2001:df1:a604::/46 Deny Bogon
+2001:df1:a608::/45 Deny Bogon
+2001:df1:a610::/44 Deny Bogon
+2001:df1:a620::/43 Deny Bogon
+2001:df1:a640::/42 Deny Bogon
+2001:df1:a680::/41 Deny Bogon
+2001:df1:a700::/40 Deny Bogon
 2001:df1:a801::/48 Deny Bogon
 2001:df1:a802::/47 Deny Bogon
 2001:df1:a804::/46 Deny Bogon
@@ -5309,7 +5365,15 @@ Tag: Astutium Limited
 2001:df1:a840::/42 Deny Bogon
 2001:df1:a880::/41 Deny Bogon
 2001:df1:a900::/40 Deny Bogon
-2001:df1:aa00::/39 Deny Bogon
+2001:df1:aa01::/48 Deny Bogon
+2001:df1:aa02::/47 Deny Bogon
+2001:df1:aa04::/46 Deny Bogon
+2001:df1:aa08::/45 Deny Bogon
+2001:df1:aa10::/44 Deny Bogon
+2001:df1:aa20::/43 Deny Bogon
+2001:df1:aa40::/42 Deny Bogon
+2001:df1:aa80::/41 Deny Bogon
+2001:df1:ab00::/40 Deny Bogon
 2001:df1:ac01::/48 Deny Bogon
 2001:df1:ac02::/47 Deny Bogon
 2001:df1:ac04::/46 Deny Bogon
@@ -25946,7 +26010,13 @@ Tag: Astutium Limited
 2404:c010::/28 Deny Bogon
 2404:c020::/27 Deny Bogon
 2404:c040::/26 Deny Bogon
-2404:c080::/25 Deny Bogon
+2404:c081::/32 Deny Bogon
+2404:c082::/31 Deny Bogon
+2404:c084::/30 Deny Bogon
+2404:c088::/29 Deny Bogon
+2404:c090::/28 Deny Bogon
+2404:c0a0::/27 Deny Bogon
+2404:c0c0::/26 Deny Bogon
 2404:c101::/32 Deny Bogon
 2404:c102::/31 Deny Bogon
 2404:c104::/30 Deny Bogon
@@ -25954,7 +26024,13 @@ Tag: Astutium Limited
 2404:c110::/28 Deny Bogon
 2404:c120::/27 Deny Bogon
 2404:c140::/26 Deny Bogon
-2404:c180::/25 Deny Bogon
+2404:c181::/32 Deny Bogon
+2404:c182::/31 Deny Bogon
+2404:c184::/30 Deny Bogon
+2404:c188::/29 Deny Bogon
+2404:c190::/28 Deny Bogon
+2404:c1a0::/27 Deny Bogon
+2404:c1c0::/26 Deny Bogon
 2404:c201::/32 Deny Bogon
 2404:c202::/31 Deny Bogon
 2404:c204::/30 Deny Bogon
@@ -25962,7 +26038,13 @@ Tag: Astutium Limited
 2404:c210::/28 Deny Bogon
 2404:c220::/27 Deny Bogon
 2404:c240::/26 Deny Bogon
-2404:c280::/25 Deny Bogon
+2404:c281::/32 Deny Bogon
+2404:c282::/31 Deny Bogon
+2404:c284::/30 Deny Bogon
+2404:c288::/29 Deny Bogon
+2404:c290::/28 Deny Bogon
+2404:c2a0::/27 Deny Bogon
+2404:c2c0::/26 Deny Bogon
 2404:c301::/32 Deny Bogon
 2404:c302::/31 Deny Bogon
 2404:c304::/30 Deny Bogon
@@ -25970,7 +26052,13 @@ Tag: Astutium Limited
 2404:c310::/28 Deny Bogon
 2404:c320::/27 Deny Bogon
 2404:c340::/26 Deny Bogon
-2404:c380::/25 Deny Bogon
+2404:c381::/32 Deny Bogon
+2404:c382::/31 Deny Bogon
+2404:c384::/30 Deny Bogon
+2404:c388::/29 Deny Bogon
+2404:c390::/28 Deny Bogon
+2404:c3a0::/27 Deny Bogon
+2404:c3c0::/26 Deny Bogon
 2404:c401::/32 Deny Bogon
 2404:c402::/31 Deny Bogon
 2404:c404::/30 Deny Bogon
@@ -25978,7 +26066,13 @@ Tag: Astutium Limited
 2404:c410::/28 Deny Bogon
 2404:c420::/27 Deny Bogon
 2404:c440::/26 Deny Bogon
-2404:c480::/25 Deny Bogon
+2404:c481::/32 Deny Bogon
+2404:c482::/31 Deny Bogon
+2404:c484::/30 Deny Bogon
+2404:c488::/29 Deny Bogon
+2404:c490::/28 Deny Bogon
+2404:c4a0::/27 Deny Bogon
+2404:c4c0::/26 Deny Bogon
 2404:c501::/32 Deny Bogon
 2404:c502::/31 Deny Bogon
 2404:c504::/30 Deny Bogon
@@ -25986,7 +26080,13 @@ Tag: Astutium Limited
 2404:c510::/28 Deny Bogon
 2404:c520::/27 Deny Bogon
 2404:c540::/26 Deny Bogon
-2404:c580::/25 Deny Bogon
+2404:c581::/32 Deny Bogon
+2404:c582::/31 Deny Bogon
+2404:c584::/30 Deny Bogon
+2404:c588::/29 Deny Bogon
+2404:c590::/28 Deny Bogon
+2404:c5a0::/27 Deny Bogon
+2404:c5c0::/26 Deny Bogon
 2404:c601::/32 Deny Bogon
 2404:c602::/31 Deny Bogon
 2404:c604::/30 Deny Bogon
@@ -25994,7 +26094,13 @@ Tag: Astutium Limited
 2404:c610::/28 Deny Bogon
 2404:c620::/27 Deny Bogon
 2404:c640::/26 Deny Bogon
-2404:c680::/25 Deny Bogon
+2404:c681::/32 Deny Bogon
+2404:c682::/31 Deny Bogon
+2404:c684::/30 Deny Bogon
+2404:c688::/29 Deny Bogon
+2404:c690::/28 Deny Bogon
+2404:c6a0::/27 Deny Bogon
+2404:c6c0::/26 Deny Bogon
 2404:c701::/32 Deny Bogon
 2404:c702::/31 Deny Bogon
 2404:c704::/30 Deny Bogon
@@ -32758,7 +32864,6 @@ Tag: Astutium Limited
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
 2602:ff40::/29 Deny Bogon
-2602:ff48::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -52439,7 +52544,17 @@ Tag: Astutium Limited
 2801:80:16f2::/47 Deny Bogon
 2801:80:16f4::/46 Deny Bogon
 2801:80:16f8::/45 Deny Bogon
-2801:80:1800::/37 Deny Bogon
+2801:80:1800::/40 Deny Bogon
+2801:80:1901::/48 Deny Bogon
+2801:80:1902::/47 Deny Bogon
+2801:80:1904::/46 Deny Bogon
+2801:80:1908::/45 Deny Bogon
+2801:80:1910::/44 Deny Bogon
+2801:80:1920::/43 Deny Bogon
+2801:80:1940::/42 Deny Bogon
+2801:80:1980::/41 Deny Bogon
+2801:80:1a00::/39 Deny Bogon
+2801:80:1c00::/38 Deny Bogon
 2801:80:2000::/35 Deny Bogon
 2801:80:4000::/34 Deny Bogon
 2801:80:8000::/33 Deny Bogon
@@ -60615,8 +60730,19 @@ Tag: Astutium Limited
 2804:2fd2::/31 Deny Bogon
 2804:2fd5::/32 Deny Bogon
 2804:2fd6::/31 Deny Bogon
-2804:2fd8::/29 Deny Bogon
-2804:2fe0::/27 Deny Bogon
+2804:2fd9::/32 Deny Bogon
+2804:2fda::/31 Deny Bogon
+2804:2fdd::/32 Deny Bogon
+2804:2fde::/31 Deny Bogon
+2804:2fe1::/32 Deny Bogon
+2804:2fe2::/31 Deny Bogon
+2804:2fe5::/32 Deny Bogon
+2804:2fe6::/31 Deny Bogon
+2804:2fe9::/32 Deny Bogon
+2804:2fea::/31 Deny Bogon
+2804:2fed::/32 Deny Bogon
+2804:2fee::/31 Deny Bogon
+2804:2ff0::/28 Deny Bogon
 2804:3000::/20 Deny Bogon
 2804:4000::/18 Deny Bogon
 2804:8000::/17 Deny Bogon
@@ -60668,7 +60794,6 @@ Tag: Astutium Limited
 2806:238:2000::/35 Deny Bogon
 2806:238:4000::/34 Deny Bogon
 2806:238:8000::/33 Deny Bogon
-2806:23d::/32 Deny Bogon
 2806:23e::/31 Deny Bogon
 2806:241::/32 Deny Bogon
 2806:242::/31 Deny Bogon
@@ -69176,10 +69301,10 @@ Tag: Astutium Limited
 2a03:ab70::/28 Deny Bogon
 2a03:ab88::/29 Deny Bogon
 2a03:ab90::/28 Deny Bogon
-2a03:aba0::/27 Deny Bogon
+2a03:aba8::/29 Deny Bogon
+2a03:abb0::/28 Deny Bogon
 2a03:abc8::/29 Deny Bogon
 2a03:abd0::/28 Deny Bogon
-2a03:abe0::/27 Deny Bogon
 2a03:ac08::/29 Deny Bogon
 2a03:ac10::/28 Deny Bogon
 2a03:ac20::/27 Deny Bogon
@@ -69923,9 +70048,7 @@ Tag: Astutium Limited
 2a03:ef88::/29 Deny Bogon
 2a03:ef90::/28 Deny Bogon
 2a03:efa0::/27 Deny Bogon
-2a03:efc8::/29 Deny Bogon
-2a03:efd0::/28 Deny Bogon
-2a03:efe0::/27 Deny Bogon
+2a03:efc0::/26 Deny Bogon
 2a03:f008::/29 Deny Bogon
 2a03:f010::/28 Deny Bogon
 2a03:f020::/27 Deny Bogon
@@ -70118,8 +70241,8 @@ Tag: Astutium Limited
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:5200::/23 Deny Bogon
-2a07:5400::/22 Deny Bogon
+2a07:5500::/24 Deny Bogon
+2a07:5600::/23 Deny Bogon
 2a07:5800::/21 Deny Bogon
 2a07:6000::/19 Deny Bogon
 2a07:8000::/17 Deny Bogon

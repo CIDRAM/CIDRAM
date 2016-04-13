@@ -112,14 +112,23 @@ Datei | Beschreibung
 /vault/lang.php | Sprachdateien.
 /vault/lang/ | Enthält Sprachdaten für CIDRAM.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/lang/lang.en.cli.php | Englische Sprachdateien für CLI.
 /vault/lang/lang.en.php | Englische Sprachdateien.
+/vault/lang/lang.es.cli.php | Spanische Sprachdateien für CLI.
 /vault/lang/lang.es.php | Spanische Sprachdateien.
+/vault/lang/lang.fr.cli.php | Französische Sprachdateien für CLI.
 /vault/lang/lang.fr.php | Französische Sprachdateien.
+/vault/lang/lang.id.cli.php | Indonesische Sprachdateien für CLI.
 /vault/lang/lang.id.php | Indonesische Sprachdateien.
+/vault/lang/lang.it.cli.php | Italienische Sprachdateien für CLI.
 /vault/lang/lang.it.php | Italienische Sprachdateien.
+/vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
+/vault/lang/lang.pt.cli.php | Portugiesische Sprachdateien für CLI.
 /vault/lang/lang.pt.php | Portugiesische Sprachdateien.
-/vault/lang/lang.zh-TW.php | Chinesische Sprachdateien (traditionell).
+/vault/lang/lang.zh-tw.cli.php | Chinesische Sprachdateien (traditionell) für CLI.
+/vault/lang/lang.zh-tw.php | Chinesische Sprachdateien (traditionell).
+/vault/lang/lang.zh.cli.php | Chinesische Sprachdateien (vereinfacht) für CLI.
 /vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/outgen.php | Ausgabe-Generator.
 /vault/template.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
@@ -209,7 +218,7 @@ The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use shell-style hashing for comments, but using shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, shell-style hashing can assist as a visual aid while editing).
+Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
 The possible values of `%Function%` are as follows:
 - Run
@@ -269,4 +278,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Zuletzt aktualisiert: 3. April 2016 (2016.04.03).
+Zuletzt aktualisiert: 12. April 2016 (2016.04.12).

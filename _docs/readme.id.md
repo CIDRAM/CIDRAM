@@ -108,14 +108,23 @@ Data | Deskripsi
 /vault/lang.php | File bahasa.
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/lang.en.cli.php | File Bahasa Inggris untuk CLI.
 /vault/lang/lang.en.php | File Bahasa Inggris.
+/vault/lang/lang.es.cli.php | File Bahasa Spanyol untuk CLI.
 /vault/lang/lang.es.php | File Bahasa Spanyol.
+/vault/lang/lang.fr.cli.php | File Bahasa Perancis untuk CLI.
 /vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.id.cli.php | File Bahasa Indonesia untuk CLI.
 /vault/lang/lang.id.php | File Bahasa Indonesia.
+/vault/lang/lang.it.cli.php | File Bahasa Italia untuk CLI.
 /vault/lang/lang.it.php | File Bahasa Italia.
+/vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
+/vault/lang/lang.pt.cli.php | File Bahasa Portugis untuk CLI.
 /vault/lang/lang.pt.php | File Bahasa Portugis.
-/vault/lang/lang.zh-TW.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh-tw.cli.php | File Bahasa Cina tradisional untuk CLI.
+/vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh.cli.php | File Bahasa Cina sederhana untuk CLI.
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/outgen.php | Output generator.
 /vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
@@ -265,4 +274,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 7 April 2016 (2016.04.07).
+Terakhir Diperbarui: 12 April 2016 (2016.04.12).

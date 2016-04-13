@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.04.03).
+ * This file: The loader (last modified: 2016.04.12).
  */
 
 /**
@@ -168,28 +168,28 @@ if (!defined('CIDRAM')) {
     /** Load the functions file. */
     require $CIDRAM['Vault'] . 'functions.php';
 
-    /**
-     * Check if the output generator exists; Kill the script if it doesn't;
-     * Load it if it does. Skip this check if we're in CLI-mode.
-     */
     if (!$CIDRAM['CIDRAM_sapi']) {
+
+        /**
+         * Check if the output generator exists; Kill the script if it doesn't;
+         * Load it if it does. Skip this check if we're in CLI-mode.
+         */
         if (!file_exists($CIDRAM['Vault'] . 'outgen.php')) {
             header('Content-Type: text/plain');
             die('[CIDRAM] Output generator missing! Please reinstall CIDRAM.');
         }
         require $CIDRAM['Vault'] . 'outgen.php';
-    }
 
-    /**
-     * Check if the CLI handler exists; Load it if it does.
-     * Skip this check if we're not in CLI-mode.
-     */
-    if (
-        $CIDRAM['CIDRAM_sapi'] &&
-        !$CIDRAM['Config']['general']['disable_cli'] &&
-        file_exists($CIDRAM['Vault'] . 'cli.php')
-    ) {
-        require $CIDRAM['Vault'] . 'cli.php';
+    } else {
+
+        /**
+         * Check if the CLI handler exists; Load it if it does.
+         * Skip this check if we're not in CLI-mode.
+         */
+        if (!$CIDRAM['Config']['general']['disable_cli'] && file_exists($CIDRAM['Vault'] . 'cli.php')) {
+            require $CIDRAM['Vault'] . 'cli.php';
+        }
+
     }
 
     /** Unset our working data so that we can exit cleanly. */

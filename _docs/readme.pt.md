@@ -108,14 +108,23 @@ Arquivo | Descrição
 /vault/lang.php | Linguagem dados.
 /vault/lang/ | Contém linguagem dados.
 /vault/lang/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
+/vault/lang/lang.en.cli.php | Linguagem dados Inglês para CLI.
 /vault/lang/lang.en.php | Linguagem dados Inglês.
+/vault/lang/lang.es.cli.php | Linguagem dados Espanhol para CLI.
 /vault/lang/lang.es.php | Linguagem dados Espanhol.
+/vault/lang/lang.fr.cli.php | Linguagem dados Francesa para CLI.
 /vault/lang/lang.fr.php | Linguagem dados Francesa.
+/vault/lang/lang.id.cli.php | Linguagem dados Indonésio para CLI.
 /vault/lang/lang.id.php | Linguagem dados Indonésio.
+/vault/lang/lang.it.cli.php | Linguagem dados Italiano para CLI.
 /vault/lang/lang.it.php | Linguagem dados Italiano.
+/vault/lang/lang.nl.cli.php | Linguagem dados Holandês para CLI.
 /vault/lang/lang.nl.php | Linguagem dados Holandês.
+/vault/lang/lang.pt.cli.php | Linguagem dados Português para CLI.
 /vault/lang/lang.pt.php | Linguagem dados Português.
-/vault/lang/lang.zh-TW.php | Linguagem dados Chinês (tradicional).
+/vault/lang/lang.zh-tw.cli.php | Linguagem dados Chinês (tradicional) para CLI.
+/vault/lang/lang.zh-tw.php | Linguagem dados Chinês (tradicional).
+/vault/lang/lang.zh.cli.php | Linguagem dados Chinês (simplificado) para CLI.
 /vault/lang/lang.zh.php | Linguagem dados Chinês (simplificado).
 /vault/outgen.php | Gerador de saída.
 /vault/template.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
@@ -265,4 +274,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 10 Abril 2016 (2016.04.10).
+Última Atualização: 12 Abril 2016 (2016.04.12).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for CLI (last modified: 2016.04.12).
+ * This file: Dutch language data for CLI (last modified: 2016.04.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,32 +41,32 @@ $CIDRAM['lang']['CLI_Bad_IP'] = ' Het opgegeven IP-adres, "{IP}", is geen geldig
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' Het opgegeven IP-adres, "{IP}", *IS* geblokkeerd door een of meer van de CIDRAM handtekening bestanden.';
 $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Het opgegeven IP-adres, "{IP}", is *NIET* geblokkeerd door een van de CIDRAM handtekening bestanden.';
 
-$CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
-$CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
-$CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
+$CIDRAM['lang']['CLI_F_Finished'] = 'Handtekening fixeer heeft voltooid, met %s veranderingen in %s operaties (%s).';
+$CIDRAM['lang']['CLI_F_Started'] = 'Handtekening fixeer heeft begonnen (%s).';
+$CIDRAM['lang']['CLI_VF_Empty'] = 'Het opgegeven handtekening bestand is leeg of niet bestaat.';
 $CIDRAM['lang']['CLI_VF_Level_0'] = 'Kennisgeving';
 $CIDRAM['lang']['CLI_VF_Level_1'] = 'Waarschuwing';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'Fout';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Fatale Fout';
 
-$CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';
-$CIDRAM['lang']['CLI_V_LineByLine'] = 'Line-by-line validation has started.';
-$CIDRAM['lang']['CLI_V_Started'] = 'Signature validator has started (%s).';
-$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature files should terminate with an LF linebreak.';
+$CIDRAM['lang']['CLI_V_CRLF'] = 'Gedetecteerd CR/CRLF in de handtekening bestand; Deze zijn toegestaan en zal geen problemen veroorzaken, maar de LF heeft de voorkeur.';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Handtekening validatie heeft voltooid (%s). Als er geen waarschuwingen of fouten, uw handtekening bestand is *waarschijnlijk* goed. :-)';
+$CIDRAM['lang']['CLI_V_LineByLine'] = 'Lijn-bij-lijn validatie heeft begonnen.';
+$CIDRAM['lang']['CLI_V_Started'] = 'Handtekening validatie heeft begonnen (%s).';
+$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Handtekening bestanden moet eindigen met een LF regeleinde.';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Control characters detected; This could indicate corruption and should be investigated.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Signature "%s" is duplicated (%s counts)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Expiry tag doesn\'t contain a valid ISO 8601 date/time!';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
-$CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s and L%s are identical, and thus, mergeable.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Missing %Function%; Signature appears to be incomplete.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Not syntactically precise.';
-$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised %Function%; Signature could be broken.';
-$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';
+$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Controle karakters gedetecteerd; Dit kan duiden corruptie en moet worden onderzocht.';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Handtekening "%s" is gedupliceerd (%s tellingen)!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Vervaltijd label bevat geen geldig ISO 8601 datum/tijd bevatten!';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *GEEN* geldig IPv4 of IPv6 adres!';
+$CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Lijnlengte is groter dan 120 bytes; Lijnlengte moet worden beperkt tot 120 bytes voor optimale leesbaarheid.';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s en L%s zijn identiek, en daarom, kan worden samengevoegd.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Ontbrekende %Function%; Handtekening lijkt onvolledig.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" kan niet worden geactiveerd! Haar basis niet overeen met het begin van zijn gamma! Probeer te vervangen het door "%s".';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is ondergeschikt aan de reeds bestaande "%s" handtekening.';
+$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is een superset aan de reeds bestaande "%s" handtekening.';
+$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Niet syntactisch precies.';
+$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs gedetecteerd; Spaces voorkeur boven tabs voor optimale leesbaarheid.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sectie label is groter dan 20 bytes; Sectie labels moeten duidelijk en beknopt zijn.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: %Function% is niet herkend; Handtekening misschien gebroken.';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Overmaat afsluitende witruimte gedetecteerd op dit lijn.';

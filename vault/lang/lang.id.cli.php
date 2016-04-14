@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for CLI (last modified: 2016.04.13).
+ * This file: Indonesian language data for CLI (last modified: 2016.04.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -49,7 +49,7 @@ $CIDRAM['lang']['CLI_VF_Level_2'] = 'Kesalahan';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Kesalahan Fatal';
 
 $CIDRAM['lang']['CLI_V_CRLF'] = 'Terdeteksi CR/CRLF dalam file tanda tangan; Ini adalah dibolehkan dan tidak akan menimbulkan masalah, tapi LF adalah direkomendasikan.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Validator tanda tangan telah selesai (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Validator tanda tangan telah selesai (%s). Jika tidak ada peringatan atau kesalahan, file tanda tangan Anda kemungkinan besar baik-baik. :-)';
 $CIDRAM['lang']['CLI_V_LineByLine'] = 'Validator baris demi baris telah dimulai.';
 $CIDRAM['lang']['CLI_V_Started'] = 'Validator tanda tangan telah dimulai (%s).';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'File tanda tangan harus mengakhiri dengan jeda baris LF.';

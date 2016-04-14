@@ -38,7 +38,7 @@ Spero di semplificare questo processo tramite un installatore ad un certo punto 
 
 4) CHMOD la cartella `vault` a "777". La principale cartella che memorizzare il contenuti (quello scelto in precedenza), solitamente, può essere lasciato solo, Ma lo CHMOD stato dovrebbe essere controllato se hai avuto problemi di autorizzazioni in passato sul vostro sistema (per predefinita, dovrebbe essere qualcosa simile a "755").
 
-5) Successivamente, sarà necessario collegare CIDRAM al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come CIDRAM al vostre sistema o CMS, Ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, visitare la pagina dei problemi (issues) di CIDRAM su GitHub. Per fare questo [utilizzare `require` o `include`], inserire la seguente linea di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto della "CIDRAM" file (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
+5) Successivamente, sarà necessario collegare CIDRAM al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come CIDRAM al vostre sistema o CMS, Ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, visitare la pagina dei problemi (issues) di CIDRAM su GitHub. Per fare questo [utilizzare `require` o `include`], inserire la seguente riga di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto della "CIDRAM" file (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -243,7 +243,7 @@ Le parole brevi disponibili sono:
 - Generic
 - Spam
 
-Opzionale: Se si desidera dividere le vostre firme personalizzate in singole sezioni, è possibile identificare queste singole sezioni per lo script per aggiungendo un'etichetta "Tag:" subito dopo le firme di ogni sezione, insieme con il nome della sezione firma.
+Opzionale: Se si desidera dividere le vostre firme personalizzate in singole sezioni, è possibile identificare queste singole sezioni per lo script per aggiungendo un'etichetta "Tag:" subito dopo le firme di ogni sezione, insieme con il nome della sezione di firme.
 
 Esempio:
 ```
@@ -255,7 +255,8 @@ Esempio:
 Tag: Section 1
 ```
 
-Per rompere la sezione tag e per assicurare che i tag non sono identificati erroneamente alle sezioni di firme da prima nelle file di firme, semplicemente assicurare che ci sono almeno due interruzioni di riga consecutivi tra il tag e le sezioni firma precedenti. Qualsiasi firme senza tag saranno come "IPv4" o "IPv6" per predefinito (dipendente sui quali tipi di firme vengono attivati).
+Per rompere l'etichetta della sezione e per assicurare che l'etichetta non sono identificati erroneamente alle sezioni di firme da prima nelle file di firme, 
+semplicemente assicurare che ci sono almeno due interruzioni di riga consecutivi tra l'etichetta e le sezioni di firme precedenti. Qualsiasi firme senza un'etichetta saranno etichettato come "IPv4" o "IPv6" per predefinito (dipendente sui quali tipi di firme vengono attivati).
 
 Esempio:
 ```
@@ -267,11 +268,11 @@ Esempio:
 Tag: Section 1
 ```
 
-Nell'esempio sopra `1.2.3.4/32` e `2.3.4.5/32` saranno tag come "IPv4", mentre `4.5.6.7/32` e `5.6.7.8/32` saranno tag come "Section 1".
+Nell'esempio sopra `1.2.3.4/32` e `2.3.4.5/32` saranno etichettato come "IPv4", mentre `4.5.6.7/32` e `5.6.7.8/32` saranno etichettato come "Section 1".
 
 Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 
 ---
 
 
-Ultimo Aggiornamento: 12 Aprile 2016 (2016.04.12).
+Ultimo Aggiornamento: 14 Aprile 2016 (2016.04.14).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for CLI last modified: 2016.04.12).
+ * This file: French language data for CLI last modified: 2016.04.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -49,7 +49,7 @@ $CIDRAM['lang']['CLI_VF_Level_2'] = 'Erreur';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Erreur Fatale';
 
 $CIDRAM['lang']['CLI_V_CRLF'] = 'CR/CRLF détecté dans le fichier de signatures; Ceux-ci sont permissible et ne causera pas de problèmes, mais LF est préférable.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Validation de signatures a terminé (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Validation de signatures a terminé (%s). Si aucun avertissement et aucun erreurs apparaissent, votre fichier de signatures est *probablement* bien. :-)';
 $CIDRAM['lang']['CLI_V_LineByLine'] = 'Validation ligne par ligne a commencé.';
 $CIDRAM['lang']['CLI_V_Started'] = 'Validation de signatures a commencé (%s).';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Fichiers de signatures devrait terminer avec un saut de ligne LF.';

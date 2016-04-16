@@ -163,7 +163,7 @@ Algemene configuratie voor CIDRAM.
 - Geef de standaardtaal voor CIDRAM.
 
 "emailaddr"
-- Indien u wenst, u kan een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).
+- Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).
 
 "disable_cli"
 - Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
@@ -198,54 +198,54 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 
 Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste handtekeningen bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de handtekeningen van CIDRAM.
 
-All IPv4 signatures follow the format: `xxx.xxx.xxx.xxx/yy %Function% %Param%`.
-- `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
-- `yy` represents the CIDR block size [1-32].
-- `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
-- `%Param%` represents whatever additional information may be required by `%Function%`.
+Alle IPv4 handtekeningen volgt het formaat: `xxx.xxx.xxx.xxx/yy %Function% %Param%`.
+- `xxx.xxx.xxx.xxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok).
+- `yy` vertegenwoordigt het CIDR blokgrootte [1-32].
+- `%Function%` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
+- `%Param%` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `%Function%`.
 
-All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
-- `yy` represents the CIDR block size [1-128].
-- `%Function%` instructs the script what to do with the signature (how the signature should be regarded).
-- `%Param%` represents whatever additional information may be required by `%Function%`.
+Alle IPv6 handtekeningen volgt het formaat: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`.
+- `xxxx:xxxx:xxxx:xxxx::xxxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok). Compleet notatie en verkorte notatie zijn beide aanvaardbaar (en ieder moet volg de juiste en relevante normen van IPv6-notatie, maar met één uitzondering: een IPv6-adres kan nooit beginnen met een afkorting wanneer het wordt gebruikt in een handtekening voor dit script, vanwege de manier waarop CIDRs door het script zijn gereconstrueerd; Bijvoorbeeld, `::1/128` moet worden uitgedrukt, bij gebruik in een handtekening, als `0::1/128`, en `::0/128` uitgedrukt als `0::/128`).
+- `yy` vertegenwoordigt het CIDR blokgrootte [1-128].
+- `%Function%` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
+- `%Param%` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `%Function%`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+De handtekening bestanden voor CIDRAM MOET gebruiken Unix-stijl regeleinden (`%0A`, or `\n`)! Andere soorten/stijlen van regeleinden (bv, Windows `%0D%0A` of `\r\n` regeleinden, Mac `%0D` of `\r` regeleinden, ezv) KAN worden gebruikt, maar zijn NIET voorkeur. Non-Unix-stijl regeleinden wordt genormaliseerd naar Unix-stijl regeleinden door het script.
 
-Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
+Nauwkeurig en correct CIDR-notatie is vereist, anders zal het script NIET de handtekeningen herkennen. Tevens, alle CIDR handtekeningen van dit script MOET beginnen met een IP-adres waarvan het IP-nummer kan gelijkmatig in het blok divisie vertegenwoordigd door haar CIDR blokgrootte verdelen (bv, als u wilde alle IP-adressen van `10.128.0.0` naar `11.127.255.255` te blokkeren, `10.128.0.0/8` zou door het script NIET worden herkend, maar `10.128.0.0/9` en `11.0.0.0/9` in combinatie, ZOU door het script worden herkend).
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
+Alles wat in de handtekening bestanden niet herkend als een handtekening noch als handtekening-gerelateerde syntaxis door het script worden GENEGEERD, daarom dit betekent dat om veilig alle niet-handtekening gegevens die u wilt in de handtekening bestanden u kunnen zetten zonder verbreking van de handtekening bestanden of de script. Reacties zijn in de handtekening bestanden aanvaardbare, en geen speciale opmaak of formaat is vereist voor hen. Shell-stijl hashing voor commentaar heeft de voorkeur, maar is niet afgedwongen; Functioneel, het maakt geen verschil voor het script ongeacht of u kiest voor Shell-stijl hashing om commentaar te gebruiken, maar gebruik van Shell-stijl hashing helpt IDE's en platte tekst editors om correct te markeren de verschillende delen van de handtekening bestanden (en dus, Shell-stijl hashing kan helpen als een visueel hulpmiddel tijdens het bewerken).
 
-The possible values of `%Function%` are as follows:
+Mogelijke waarden van `%Function%` zijn als volgt:
 - Run
 - Whitelist
 - Deny
 
-If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `%Param%` value (the working directory should be the "/vault/" directory of the script).
+Als "Run" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `%Param%` waarde (de werkmap moet worden de "/vault/" map van het script).
 
-Example: `127.0.0.0/8 Run example.php`
+Voorbeeld: `127.0.0.0/8 Run example.php`
 
-This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
+Dit kan handig zijn als u wilt, voor enige specifieke IPs en/of CIDRs, om specifieke PHP-code uit te voeren.
 
-If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `%Param%` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+Als "Whitelist" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `%Param%` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
 
-Example: `127.0.0.1/32 Whitelist`
+Voorbeeld: `127.0.0.1/32 Whitelist`
 
-If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
+Als "Deny" wordt gebruikt, als de handtekening wordt geactiveerd, veronderstelling dat er geen whitelist handtekening is geactiveerd voor het opgegeven IP-adres en/of opgegeven CIDR, toegang tot de beveiligde pagina wordt ontzegd. "Deny" is wat u wilt gebruiken om een IP-adres en/of CIDR range te daadwerkelijk blokkeren. Wanneer enige handtekeningen zijn geactiveerd er dat gebruik "Deny", de "Toegang Geweigerd" pagina van het script zal worden gegenereerd en het verzoek naar de beveiligde pagina wordt gedood.
 
-The `%Param%` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
+De `%Param%` waarde geaccepteerd door "Deny" zal worden parsed aan de "Toegang Geweigerd" pagina-uitgang, geleverd aan de klant/gebruiker als de genoemde reden voor hun toegang tot de gevraagde pagina worden geweigerd. Het kan een korte en eenvoudige zin zijn, uit te leggen waarom u hebt gekozen om ze te blokkeren (iets moeten volstaan, zelfs een simpele "Ik wil je niet op mijn website"), of een van het handjevol korte woorden geleverd door het script, dat als gebruikt, wordt vervangen door het script met een voorbereide toelichting waarom de klant/gebruiker is geblokkeerd.
 
-The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `%Param%` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `%Param%` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+De voorbereide toelichtingen hebben i18n ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script configuratie. Tevens, u kunt het script instrueren om "Deny" handtekeningen te negeren op basis van hun `%Param%` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende handtekeningen of te negeren hen). `%Param%` waarden dat niet gebruiken deze korte woorden, echter, hebben geen i18n ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script configuratie.
 
-The available shorthand words are:
+De beschikbare korte woorden zijn:
 - Bogon
 - Cloud
 - Generic
 - Spam
 
-Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+Facultatief: Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "Tag:" etiket onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie.
 
-Example:
+Voorbeeld:
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -255,9 +255,9 @@ Example:
 Tag: Section 1
 ```
 
-To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
+Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met handtekening secties uit eerder in de handtekening bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere handtekening secties. Een ongeëtiketteerd handtekeningen wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten handtekeningen worden geactiveerd).
 
-Example:
+Voorbeeld:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -267,11 +267,11 @@ Example:
 Tag: Section 1
 ```
 
-In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Section 1".
 
-Refer to the custom signature files for more information.
+Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 
 ---
 
 
-Laatste Bijgewerkt: 12 April 2016 (2016.04.12).
+Laatste Bijgewerkt: 17 April 2016 (2016.04.17).

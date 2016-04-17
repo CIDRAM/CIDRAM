@@ -59,24 +59,34 @@
 #     19   38277    CommuniLink Internet   8.55%    Yes (> 0.1.2)       NA
 #     20  134121    Rainbow Network Ltd    7.83%    Yes (> 0.1.2)       NA
 
-# THE WORLD's WORST BOTNET ASNs, ACCORDING TO SPAMHAUS.ORG's BOTNET ASNs LIST
+# THE WORLD's WORST BOTNET ASNs, ACCORDING TO ABUSEAT.ORG's CBL ("COMPOSITE BLOCKING LIST").
 # https://www.spamhaus.org/statistics/botnet-asn/
-# Updated: 2016.03.31
+# http://www.abuseat.org/asn.html
+# Updated: 2016.04.17 (Previously: 2016.03.31)
 
-#   RANK     ASN    AS            No. of BOTNETS  SATURATION†   INCLUDED IN HERE?   RANK SHIFT†
-#      1    9829    BSNL                 608,019      10.19%    Pending†            NA
-#      2   45899    VNPT Corp            595,733      13.05%    Pending†            NA
-#      3    4134    China Tel. Backbone  464,928       0.40%    No                  NA
-#      4   17974    PT Tel. Indonesia    292,654       7.81%    Pending†            NA
-#      5   45595    Pakistan Telecom     219,498       5.88%    Yes (all versions)  NA
-#      6   24560    Bharti Airtel        197,757      10.35%    Pending†            NA
-#      7    7552    Viettel Corporation  195,178       4.43%    Pending†            NA
-#      8    4837    China Uni. Backbone  146,415       0.26%    No                  NA
-#      9   18403    CFPT                 135,706       4.25%    Pending†            NA
-#     10    3462    DCBG                 121,584       0.99%    No                  NA
+#   RANK     ASN    AS            No. of BOTNETS     INFECT%    INCLUDED IN HERE?   RANK SHIFT†
+#      1    9829    BSNL                 619,654       9.25%    Pending†            ±0
+#      2   45899    VNPT Corp            536,739      11.29%    Pending†            ±0
+#      3    4134    No.31, Jin-rong St   423,214       0.35%    No                  ±0
+#      4   17974    PT Tel. Indonesia    300,701       4.10%    Pending†            ±0
+#      5   45595    Pakistan Telecom     230,975       1.54%    Yes (all versions)  ±0
+#      6   24560    Bharti Airtel        195,975       7.00%    Pending†            ±0
+#      7    7552    Viettel Corporation  170,786       1.21%    Pending†            ±0
+#      8    4837    CNCGROUP China169    136,374       0.24%    No                  ±0
+#      9    8151    Uninet S.A. de C.V.  135,796       0.86%    Pending†            ±0
+#     10    8048    Servicios, Venezuela 119,912       3.17%    Pending†            ±0
+#     11   18403    CFPT                 119,233       2.20%    Pending†            -2
+#     12    3462    DCBG                 116,839       0.86%    No                  -2
+#     13       ?    ?                    107,105         NA%    No                  NA
+#     14   12880    DCI-AS                98,740       1.16%    Pending†            NA
+#     15    8452    TE-AS                 93,909       0.33%    Pending†            NA
+#     16   36947    ALGTEL                87,987       0.78%    Pending†            NA
+#     17   45609    Bharti Airtel         83,196       1.58%    Pending†            NA
+#     18   47331    TTNet A.S.            82,298       1.53%    Pending†            NA
+#     19   22927    Tel. de Argentina     75,969       1.56%    Pending†            NA
+#     20   17813    Mahanagar Tel. Nigam  73,841       2.48%    Pending†            NA
 
 # RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
-# SATURATION† = (No. of BOTNETS / IPs ORIGINATED) * 100
 # Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
 
 # ---
@@ -965,13 +975,14 @@ Tag: Black Lotus
 
 
 # ASNs 8100, 29761, 62639 ("QuadraNet, Inc").
-# Infected by malware (as per reported by Google): 4.25% (AS8100), 0% (AS29761), 4.91% (AS62639).
-# Updated: 2016.02.27
+# Infected by malware (as per reported by Google): 4.46% (AS8100), 0% (AS29761), 5.00% (AS62639).
+# Updated: 2016.04.17
 
 2602:ff96:2::/48 Deny Cloud
 2602:ff96:4::/48 Deny Cloud
 2602:ffea::/35 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
+2602:fff6:3::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
 2607:8700:102::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
@@ -982,8 +993,8 @@ Tag: QuadraNet, Inc
 
 
 # ASN 36352 ("ColoCrossing").
-# Infected by malware (as per reported by Google): 0.73%.
-# Updated: 2016.01.22 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 0.72%.
+# Updated: 2016.01.22 / Checked: 2016.04.17
 
 2607:9d00:1::/48 Deny Cloud
 Tag: ColoCrossing
@@ -2108,9 +2119,18 @@ Tag: Astutium Limited
 Tag: PCCW Global
 
 
+# ASN 31815 ("Media Temple, Inc.").
+# Infected by malware (as per reported by Google): 2.63%.
+# Updated: 2016.04.17
+
+2606:2300::/32 Deny Cloud
+2607:f211:1::/48 Deny Cloud
+Tag: Media Temple, Inc.
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.13
+# Updated: 2016.04.17
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -2972,7 +2992,6 @@ Tag: PCCW Global
 2001:504:56::/48 Deny Bogon
 2001:504:5a::/47 Deny Bogon
 2001:504:5c::/46 Deny Bogon
-2001:504:62::/47 Deny Bogon
 2001:504:64::/46 Deny Bogon
 2001:504:68::/45 Deny Bogon
 2001:504:70::/44 Deny Bogon
@@ -3017,8 +3036,6 @@ Tag: PCCW Global
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:148::/45 Deny Bogon
-2001:678:150::/44 Deny Bogon
 2001:678:160::/43 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
@@ -5398,7 +5415,15 @@ Tag: PCCW Global
 2001:df1:ac40::/42 Deny Bogon
 2001:df1:ac80::/41 Deny Bogon
 2001:df1:ad00::/40 Deny Bogon
-2001:df1:ae00::/39 Deny Bogon
+2001:df1:ae01::/48 Deny Bogon
+2001:df1:ae02::/47 Deny Bogon
+2001:df1:ae04::/46 Deny Bogon
+2001:df1:ae08::/45 Deny Bogon
+2001:df1:ae10::/44 Deny Bogon
+2001:df1:ae20::/43 Deny Bogon
+2001:df1:ae40::/42 Deny Bogon
+2001:df1:ae80::/41 Deny Bogon
+2001:df1:af00::/40 Deny Bogon
 2001:df1:b001::/48 Deny Bogon
 2001:df1:b002::/47 Deny Bogon
 2001:df1:b004::/46 Deny Bogon
@@ -5408,7 +5433,15 @@ Tag: PCCW Global
 2001:df1:b040::/42 Deny Bogon
 2001:df1:b080::/41 Deny Bogon
 2001:df1:b100::/40 Deny Bogon
-2001:df1:b200::/39 Deny Bogon
+2001:df1:b201::/48 Deny Bogon
+2001:df1:b202::/47 Deny Bogon
+2001:df1:b204::/46 Deny Bogon
+2001:df1:b208::/45 Deny Bogon
+2001:df1:b210::/44 Deny Bogon
+2001:df1:b220::/43 Deny Bogon
+2001:df1:b240::/42 Deny Bogon
+2001:df1:b280::/41 Deny Bogon
+2001:df1:b300::/40 Deny Bogon
 2001:df1:b401::/48 Deny Bogon
 2001:df1:b402::/47 Deny Bogon
 2001:df1:b404::/46 Deny Bogon
@@ -5418,7 +5451,15 @@ Tag: PCCW Global
 2001:df1:b440::/42 Deny Bogon
 2001:df1:b480::/41 Deny Bogon
 2001:df1:b500::/40 Deny Bogon
-2001:df1:b600::/39 Deny Bogon
+2001:df1:b601::/48 Deny Bogon
+2001:df1:b602::/47 Deny Bogon
+2001:df1:b604::/46 Deny Bogon
+2001:df1:b608::/45 Deny Bogon
+2001:df1:b610::/44 Deny Bogon
+2001:df1:b620::/43 Deny Bogon
+2001:df1:b640::/42 Deny Bogon
+2001:df1:b680::/41 Deny Bogon
+2001:df1:b700::/40 Deny Bogon
 2001:df1:b801::/48 Deny Bogon
 2001:df1:b802::/47 Deny Bogon
 2001:df1:b804::/46 Deny Bogon
@@ -5428,7 +5469,15 @@ Tag: PCCW Global
 2001:df1:b840::/42 Deny Bogon
 2001:df1:b880::/41 Deny Bogon
 2001:df1:b900::/40 Deny Bogon
-2001:df1:ba00::/39 Deny Bogon
+2001:df1:ba01::/48 Deny Bogon
+2001:df1:ba02::/47 Deny Bogon
+2001:df1:ba04::/46 Deny Bogon
+2001:df1:ba08::/45 Deny Bogon
+2001:df1:ba10::/44 Deny Bogon
+2001:df1:ba20::/43 Deny Bogon
+2001:df1:ba40::/42 Deny Bogon
+2001:df1:ba80::/41 Deny Bogon
+2001:df1:bb00::/40 Deny Bogon
 2001:df1:bc01::/48 Deny Bogon
 2001:df1:bc02::/47 Deny Bogon
 2001:df1:bc04::/46 Deny Bogon
@@ -5438,7 +5487,15 @@ Tag: PCCW Global
 2001:df1:bc40::/42 Deny Bogon
 2001:df1:bc80::/41 Deny Bogon
 2001:df1:bd00::/40 Deny Bogon
-2001:df1:be00::/39 Deny Bogon
+2001:df1:be01::/48 Deny Bogon
+2001:df1:be02::/47 Deny Bogon
+2001:df1:be04::/46 Deny Bogon
+2001:df1:be08::/45 Deny Bogon
+2001:df1:be10::/44 Deny Bogon
+2001:df1:be20::/43 Deny Bogon
+2001:df1:be40::/42 Deny Bogon
+2001:df1:be80::/41 Deny Bogon
+2001:df1:bf00::/40 Deny Bogon
 2001:df1:c001::/48 Deny Bogon
 2001:df1:c002::/47 Deny Bogon
 2001:df1:c004::/46 Deny Bogon
@@ -23187,7 +23244,6 @@ Tag: PCCW Global
 2403:f410::/28 Deny Bogon
 2403:f420::/27 Deny Bogon
 2403:f440::/26 Deny Bogon
-2403:f481::/32 Deny Bogon
 2403:f482::/31 Deny Bogon
 2403:f484::/30 Deny Bogon
 2403:f488::/29 Deny Bogon
@@ -26123,12 +26179,24 @@ Tag: PCCW Global
 2404:c710::/28 Deny Bogon
 2404:c720::/27 Deny Bogon
 2404:c740::/26 Deny Bogon
-2404:c780::/25 Deny Bogon
+2404:c781::/32 Deny Bogon
+2404:c782::/31 Deny Bogon
+2404:c784::/30 Deny Bogon
+2404:c788::/29 Deny Bogon
+2404:c790::/28 Deny Bogon
+2404:c7a0::/27 Deny Bogon
+2404:c7c0::/26 Deny Bogon
 2404:c808::/29 Deny Bogon
 2404:c810::/28 Deny Bogon
 2404:c820::/27 Deny Bogon
 2404:c840::/26 Deny Bogon
-2404:c880::/25 Deny Bogon
+2404:c881::/32 Deny Bogon
+2404:c882::/31 Deny Bogon
+2404:c884::/30 Deny Bogon
+2404:c888::/29 Deny Bogon
+2404:c890::/28 Deny Bogon
+2404:c8a0::/27 Deny Bogon
+2404:c8c0::/26 Deny Bogon
 2404:c901::/32 Deny Bogon
 2404:c902::/31 Deny Bogon
 2404:c904::/30 Deny Bogon
@@ -26136,7 +26204,13 @@ Tag: PCCW Global
 2404:c910::/28 Deny Bogon
 2404:c920::/27 Deny Bogon
 2404:c940::/26 Deny Bogon
-2404:c980::/25 Deny Bogon
+2404:c981::/32 Deny Bogon
+2404:c982::/31 Deny Bogon
+2404:c984::/30 Deny Bogon
+2404:c988::/29 Deny Bogon
+2404:c990::/28 Deny Bogon
+2404:c9a0::/27 Deny Bogon
+2404:c9c0::/26 Deny Bogon
 2404:ca01::/32 Deny Bogon
 2404:ca02::/31 Deny Bogon
 2404:ca04::/30 Deny Bogon
@@ -26144,7 +26218,13 @@ Tag: PCCW Global
 2404:ca10::/28 Deny Bogon
 2404:ca20::/27 Deny Bogon
 2404:ca40::/26 Deny Bogon
-2404:ca80::/25 Deny Bogon
+2404:ca81::/32 Deny Bogon
+2404:ca82::/31 Deny Bogon
+2404:ca84::/30 Deny Bogon
+2404:ca88::/29 Deny Bogon
+2404:ca90::/28 Deny Bogon
+2404:caa0::/27 Deny Bogon
+2404:cac0::/26 Deny Bogon
 2404:cb01::/32 Deny Bogon
 2404:cb02::/31 Deny Bogon
 2404:cb04::/30 Deny Bogon
@@ -26152,7 +26232,13 @@ Tag: PCCW Global
 2404:cb10::/28 Deny Bogon
 2404:cb20::/27 Deny Bogon
 2404:cb40::/26 Deny Bogon
-2404:cb80::/25 Deny Bogon
+2404:cb81::/32 Deny Bogon
+2404:cb82::/31 Deny Bogon
+2404:cb84::/30 Deny Bogon
+2404:cb88::/29 Deny Bogon
+2404:cb90::/28 Deny Bogon
+2404:cba0::/27 Deny Bogon
+2404:cbc0::/26 Deny Bogon
 2404:cc01::/32 Deny Bogon
 2404:cc02::/31 Deny Bogon
 2404:cc04::/30 Deny Bogon
@@ -26160,7 +26246,13 @@ Tag: PCCW Global
 2404:cc10::/28 Deny Bogon
 2404:cc20::/27 Deny Bogon
 2404:cc40::/26 Deny Bogon
-2404:cc80::/25 Deny Bogon
+2404:cc81::/32 Deny Bogon
+2404:cc82::/31 Deny Bogon
+2404:cc84::/30 Deny Bogon
+2404:cc88::/29 Deny Bogon
+2404:cc90::/28 Deny Bogon
+2404:cca0::/27 Deny Bogon
+2404:ccc0::/26 Deny Bogon
 2404:cd02::/31 Deny Bogon
 2404:cd04::/30 Deny Bogon
 2404:cd08::/29 Deny Bogon
@@ -32878,7 +32970,9 @@ Tag: PCCW Global
 2602:fc00::/23 Deny Bogon
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
-2602:ff40::/29 Deny Bogon
+2602:ff40::/30 Deny Bogon
+2602:ff44::/31 Deny Bogon
+2602:ff46::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -37791,23 +37885,33 @@ Tag: PCCW Global
 2607:2e10::/28 Deny Bogon
 2607:2e20::/27 Deny Bogon
 2607:2e40::/26 Deny Bogon
-2607:2e80::/25 Deny Bogon
+2607:2e90::/28 Deny Bogon
+2607:2ea0::/27 Deny Bogon
+2607:2ec0::/26 Deny Bogon
 2607:2f10::/28 Deny Bogon
 2607:2f20::/27 Deny Bogon
 2607:2f40::/26 Deny Bogon
-2607:2f80::/25 Deny Bogon
+2607:2f90::/28 Deny Bogon
+2607:2fa0::/27 Deny Bogon
+2607:2fc0::/26 Deny Bogon
 2607:3010::/28 Deny Bogon
 2607:3020::/27 Deny Bogon
 2607:3040::/26 Deny Bogon
-2607:3080::/25 Deny Bogon
+2607:3090::/28 Deny Bogon
+2607:30a0::/27 Deny Bogon
+2607:30c0::/26 Deny Bogon
 2607:3110::/28 Deny Bogon
 2607:3120::/27 Deny Bogon
 2607:3140::/26 Deny Bogon
-2607:3180::/25 Deny Bogon
+2607:3190::/28 Deny Bogon
+2607:31a0::/27 Deny Bogon
+2607:31c0::/26 Deny Bogon
 2607:3210::/28 Deny Bogon
 2607:3220::/27 Deny Bogon
 2607:3240::/26 Deny Bogon
-2607:3280::/25 Deny Bogon
+2607:3290::/28 Deny Bogon
+2607:32a0::/27 Deny Bogon
+2607:32c0::/26 Deny Bogon
 2607:3310::/28 Deny Bogon
 2607:3320::/27 Deny Bogon
 2607:3340::/26 Deny Bogon
@@ -40923,7 +41027,16 @@ Tag: PCCW Global
 2620:3c:8800::/37 Deny Bogon
 2620:3c:9000::/36 Deny Bogon
 2620:3c:a000::/35 Deny Bogon
-2620:3c:c000::/34 Deny Bogon
+2620:3c:c000::/42 Deny Bogon
+2620:3c:c050::/44 Deny Bogon
+2620:3c:c060::/43 Deny Bogon
+2620:3c:c080::/41 Deny Bogon
+2620:3c:c100::/40 Deny Bogon
+2620:3c:c200::/39 Deny Bogon
+2620:3c:c400::/38 Deny Bogon
+2620:3c:c800::/37 Deny Bogon
+2620:3c:d000::/36 Deny Bogon
+2620:3c:e000::/35 Deny Bogon
 2620:3d:10::/44 Deny Bogon
 2620:3d:20::/43 Deny Bogon
 2620:3d:40::/42 Deny Bogon
@@ -41414,7 +41527,16 @@ Tag: PCCW Global
 2620:49:8800::/37 Deny Bogon
 2620:49:9000::/36 Deny Bogon
 2620:49:a000::/35 Deny Bogon
-2620:49:c000::/34 Deny Bogon
+2620:49:c000::/42 Deny Bogon
+2620:49:c050::/44 Deny Bogon
+2620:49:c060::/43 Deny Bogon
+2620:49:c080::/41 Deny Bogon
+2620:49:c100::/40 Deny Bogon
+2620:49:c200::/39 Deny Bogon
+2620:49:c400::/38 Deny Bogon
+2620:49:c800::/37 Deny Bogon
+2620:49:d000::/36 Deny Bogon
+2620:49:e000::/35 Deny Bogon
 2620:4a:10::/44 Deny Bogon
 2620:4a:20::/43 Deny Bogon
 2620:4a:40::/42 Deny Bogon
@@ -41649,7 +41771,16 @@ Tag: PCCW Global
 2620:50:8800::/37 Deny Bogon
 2620:50:9000::/36 Deny Bogon
 2620:50:a000::/35 Deny Bogon
-2620:50:c000::/34 Deny Bogon
+2620:50:c000::/42 Deny Bogon
+2620:50:c050::/44 Deny Bogon
+2620:50:c060::/43 Deny Bogon
+2620:50:c080::/41 Deny Bogon
+2620:50:c100::/40 Deny Bogon
+2620:50:c200::/39 Deny Bogon
+2620:50:c400::/38 Deny Bogon
+2620:50:c800::/37 Deny Bogon
+2620:50:d000::/36 Deny Bogon
+2620:50:e000::/35 Deny Bogon
 2620:51:10::/44 Deny Bogon
 2620:51:20::/43 Deny Bogon
 2620:51:40::/42 Deny Bogon
@@ -49934,7 +50065,10 @@ Tag: PCCW Global
 2620:126:c200::/39 Deny Bogon
 2620:126:c400::/38 Deny Bogon
 2620:126:c800::/37 Deny Bogon
-2620:126:d000::/36 Deny Bogon
+2620:126:d100::/40 Deny Bogon
+2620:126:d200::/39 Deny Bogon
+2620:126:d400::/38 Deny Bogon
+2620:126:d800::/37 Deny Bogon
 2620:126:e000::/35 Deny Bogon
 2620:127::/32 Deny Bogon
 2620:128::/29 Deny Bogon
@@ -51335,7 +51469,14 @@ Tag: PCCW Global
 2801:1e:8200::/39 Deny Bogon
 2801:1e:8400::/38 Deny Bogon
 2801:1e:8800::/37 Deny Bogon
-2801:1e:9000::/36 Deny Bogon
+2801:1e:9010::/44 Deny Bogon
+2801:1e:9020::/43 Deny Bogon
+2801:1e:9040::/42 Deny Bogon
+2801:1e:9080::/41 Deny Bogon
+2801:1e:9100::/40 Deny Bogon
+2801:1e:9200::/39 Deny Bogon
+2801:1e:9400::/38 Deny Bogon
+2801:1e:9800::/37 Deny Bogon
 2801:1e:a010::/44 Deny Bogon
 2801:1e:a020::/43 Deny Bogon
 2801:1e:a040::/42 Deny Bogon
@@ -60757,8 +60898,44 @@ Tag: PCCW Global
 2804:2fea::/31 Deny Bogon
 2804:2fed::/32 Deny Bogon
 2804:2fee::/31 Deny Bogon
-2804:2ff0::/28 Deny Bogon
-2804:3000::/20 Deny Bogon
+2804:2ff1::/32 Deny Bogon
+2804:2ff2::/31 Deny Bogon
+2804:2ff5::/32 Deny Bogon
+2804:2ff6::/31 Deny Bogon
+2804:2ff9::/32 Deny Bogon
+2804:2ffa::/31 Deny Bogon
+2804:2ffd::/32 Deny Bogon
+2804:2ffe::/31 Deny Bogon
+2804:3001::/32 Deny Bogon
+2804:3002::/31 Deny Bogon
+2804:3005::/32 Deny Bogon
+2804:3006::/31 Deny Bogon
+2804:3009::/32 Deny Bogon
+2804:300a::/31 Deny Bogon
+2804:300d::/32 Deny Bogon
+2804:300e::/31 Deny Bogon
+2804:3011::/32 Deny Bogon
+2804:3012::/31 Deny Bogon
+2804:3015::/32 Deny Bogon
+2804:3016::/31 Deny Bogon
+2804:3019::/32 Deny Bogon
+2804:301a::/31 Deny Bogon
+2804:301d::/32 Deny Bogon
+2804:301e::/31 Deny Bogon
+2804:3021::/32 Deny Bogon
+2804:3022::/31 Deny Bogon
+2804:3025::/32 Deny Bogon
+2804:3026::/31 Deny Bogon
+2804:3029::/32 Deny Bogon
+2804:302a::/31 Deny Bogon
+2804:302c::/30 Deny Bogon
+2804:3030::/28 Deny Bogon
+2804:3040::/26 Deny Bogon
+2804:3080::/25 Deny Bogon
+2804:3100::/24 Deny Bogon
+2804:3200::/23 Deny Bogon
+2804:3400::/22 Deny Bogon
+2804:3800::/21 Deny Bogon
 2804:4000::/18 Deny Bogon
 2804:8000::/17 Deny Bogon
 2805::/16 Deny Bogon
@@ -61009,8 +61186,6 @@ Tag: PCCW Global
 2a00:44f0::/28 Deny Bogon
 2a00:4508::/29 Deny Bogon
 2a00:4510::/28 Deny Bogon
-2a00:4528::/29 Deny Bogon
-2a00:4530::/28 Deny Bogon
 2a00:4548::/29 Deny Bogon
 2a00:4550::/28 Deny Bogon
 2a00:4568::/29 Deny Bogon
@@ -70256,9 +70431,10 @@ Tag: PCCW Global
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:5500::/24 Deny Bogon
-2a07:5600::/23 Deny Bogon
-2a07:5800::/21 Deny Bogon
+2a07:5a40::/26 Deny Bogon
+2a07:5a80::/25 Deny Bogon
+2a07:5b00::/24 Deny Bogon
+2a07:5c00::/22 Deny Bogon
 2a07:6000::/19 Deny Bogon
 2a07:8000::/17 Deny Bogon
 2a08::/13 Deny Bogon

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.04.12).
+ * This file: The loader (last modified: 2016.04.17).
  */
 
 /**
@@ -58,20 +58,19 @@ if (!defined('CIDRAM')) {
         $CIDRAM['QueryVars'] = array();
     }
 
+    /** Checks whether the CIDRAM configuration file is readable. */
+    if (!is_readable($CIDRAM['Vault'] . 'config.ini')) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] Can\'t read the configuration file! Please reconfigure CIDRAM.');
+    }
+
     /** Attempts to parse the CIDRAM configuration file. */
-    if(!is_readable($CIDRAM['Vault'] . 'config.ini')){
-        header('Content-Type: text/plain');
-        die('[CIDRAM] cannot read the configuration file! Please reconfigure CIDRAM.');
-    }
     $CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
-    if(false===$CIDRAM['Config']){
+    if ($CIDRAM['Config'] === false) {
         header('Content-Type: text/plain');
-        die('[CIDRAM] configuration file is corrupt! Please reconfigure CIDRAM.');
+        die('[CIDRAM] Configuration file is corrupt! Please reconfigure CIDRAM.');
     }
-    /** Fallback for any potential parse failure. */
-    if (!is_array($CIDRAM['Config'])) {
-        $CIDRAM['Config'] = array();
-    }
+
     /** Fallback for missing "general" configuration category. */
     if (!isset($CIDRAM['Config']['general'])) {
         $CIDRAM['Config']['general'] = array();

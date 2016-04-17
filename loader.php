@@ -59,11 +59,15 @@ if (!defined('CIDRAM')) {
     }
 
     /** Attempts to parse the CIDRAM configuration file. */
-    $CIDRAM['Config'] =
-        (file_exists($CIDRAM['Vault'] . 'config.ini')) ?
-        parse_ini_file($CIDRAM['Vault'] . 'config.ini', true) :
-        array();
-
+    if(!is_readable($CIDRAM['Vault'] . 'config.ini')){
+        header('Content-Type: text/plain');
+        die('[CIDRAM] cannot read the configuration file! Please reconfigure CIDRAM.');
+    }
+    $CIDRAM['Config'] = parse_ini_file($CIDRAM['Vault'] . 'config.ini', true);
+    if(false===$CIDRAM['Config']){
+        header('Content-Type: text/plain');
+        die('[CIDRAM] configuration file is corrupt! Please reconfigure CIDRAM.');
+    }
     /** Fallback for any potential parse failure. */
     if (!is_array($CIDRAM['Config'])) {
         $CIDRAM['Config'] = array();

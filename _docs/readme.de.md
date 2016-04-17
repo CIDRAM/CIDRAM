@@ -23,8 +23,6 @@ Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizie
 
 Besonderer Dank geht an [ClamAV](http://www.clamav.net/) für die Inspiration und die Signaturen, die dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren würde oder bestenfalls einen sehr begrenzten Wert hätte.
 
-Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der Projektdateien, an [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) für die CIDRAM Diskussionforen, und an die weiteren Quellen einiger von CIDRAM verwendeten Signaturen: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) und andere, und Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
-
 Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos heruntergeladen werden [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
@@ -278,4 +276,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Zuletzt aktualisiert: 17. April 2016 (2016.04.17).
+Zuletzt aktualisiert: 18. April 2016 (2016.04.18).

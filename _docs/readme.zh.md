@@ -21,10 +21,6 @@ CIDRAM COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-谢谢[ClamAV](http://www.clamav.net/)为本脚本提供文件签名库访问许可。没有它，这个脚本很可能不会存在，或者其价值有限。
-
-谢谢Sourceforge和GitHub开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的CIDRAM的讨论论坛，谢谢为CIDRAM提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
-
 现在CIDRAM的代码文件和关联包可以从以下地址免费下载[GitHub](https://github.com/Maikuolan/CIDRAM/)。
 
 ---
@@ -279,4 +275,4 @@ Tag: Section 1
 ---
 
 
-最后更新：2016年4月17日。
+最后更新：2016年4月18日。

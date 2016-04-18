@@ -73,8 +73,8 @@
 #      6   24560    Bharti Airtel        195,975       7.00%    Pending†            ±0
 #      7    7552    Viettel Corporation  170,786       1.21%    Pending†            ±0
 #      8    4837    CNCGROUP China169    136,374       0.24%    No                  ±0
-#      9    8151    Uninet S.A. de C.V.  135,796       0.86%    Pending†            ±0
-#     10    8048    Servicios, Venezuela 119,912       3.17%    Pending†            ±0
+#      9    8151    Uninet S.A. de C.V.  135,796       0.86%    Pending†            NA
+#     10    8048    Servicios, Venezuela 119,912       3.17%    Pending†            NA
 #     11   18403    CFPT                 119,233       2.20%    Pending†            -2
 #     12    3462    DCBG                 116,839       0.86%    No                  -2
 #     13       ?    ?                    107,105         NA%    No                  NA
@@ -1145,8 +1145,8 @@ Tag: Aruba S.p.A.
 
 
 # ASN 29182 ("ISPsystem").
-# Infected by malware (as per reported by Google): 3.26%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 3.48%.
+# Updated: 2016.04.18
 
 5.8.63.0/24 Deny Generic
 37.46.128.0/21 Deny Generic
@@ -1156,7 +1156,9 @@ Tag: Aruba S.p.A.
 78.24.216.0/21 Deny Generic
 80.87.192.0/21 Deny Generic
 80.87.200.0/22 Deny Generic
-82.146.32.0/19 Deny Generic
+82.146.32.0/20 Deny Generic
+82.146.52.0/22 Deny Generic
+82.146.56.0/21 Deny Generic
 83.220.168.0/21 Deny Generic
 91.240.84.0/22 Deny Generic
 92.63.96.0/20 Deny Generic
@@ -1167,6 +1169,8 @@ Tag: Aruba S.p.A.
 185.63.188.0/22 Deny Generic
 188.120.224.0/19 Deny Generic
 193.150.0.0/23 Deny Generic
+212.8.232.0/21 Deny Generic
+212.8.240.0/20 Deny Generic
 212.22.83.0/24 Deny Generic
 212.109.192.0/21 Deny Generic
 212.109.216.0/21 Deny Generic
@@ -1263,68 +1267,68 @@ Tag: CloudFlare, Inc
 
 
 # ASN 12824 ("home.pl").
-# Infected by malware (as per reported by Google): 4.20%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 4.40%.
+# Updated: 2016.04.18
 
-46.41.128.0/18 Deny Generic
-46.242.128.0/17 Deny Generic
-62.129.192.0/18 Deny Generic
-79.96.0.0/16 Deny Generic
-89.161.128.0/17 Deny Generic
-188.128.128.0/17 Deny Generic
-212.85.96.0/19 Deny Generic
+46.41.128.0/18 Deny Cloud
+46.242.128.0/17 Deny Cloud
+62.129.192.0/18 Deny Cloud
+79.96.0.0/16 Deny Cloud
+89.161.128.0/17 Deny Cloud
+188.128.128.0/17 Deny Cloud
+212.85.96.0/19 Deny Cloud
 Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# Infected by malware (as per reported by Google): 1.35%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 1.67%.
+# Updated: 2016.04.18
 
-83.222.0.0/19 Deny Generic
-84.252.128.0/18 Deny Generic
-87.242.64.0/18 Deny Generic
-90.156.128.0/17 Deny Generic
-217.16.16.0/20 Deny Generic
+83.222.0.0/19 Deny Cloud
+84.252.128.0/18 Deny Cloud
+87.242.64.0/18 Deny Cloud
+90.156.128.0/17 Deny Cloud
+217.16.16.0/20 Deny Cloud
 Tag: Masterhost
 
 
 # ASN 26496 ("GoDaddy.com, LLC").
 # Infected by malware (as per reported by Google): 2.78%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Updated: 2016.04.18
 
-23.229.128.0/17 Deny Generic
-37.148.200.0/21 Deny Generic
-43.255.152.0/22 Deny Generic
-45.40.128.0/18 Deny Generic
-46.252.192.0/20 Deny Generic
-50.62.0.0/15 Deny Generic
-63.241.136.0/24 Deny Generic
-64.202.160.0/19 Deny Generic
-66.210.39.0/24 Deny Generic
-68.178.128.0/17 Deny Generic
-72.167.0.0/16 Deny Generic
-97.74.0.0/16 Deny Generic
-103.1.172.0/22 Deny Generic
-104.238.64.0/18 Deny Generic
-107.180.0.0/17 Deny Generic
-118.139.160.0/19 Deny Generic
-132.148.0.0/21 Deny Generic
-146.255.32.0/20 Deny Generic
-148.72.232.0/22 Deny Generic
-160.153.0.0/16 Deny Generic
-166.62.0.0/17 Deny Generic
-173.201.0.0/16 Deny Generic
-182.50.128.0/19 Deny Generic
-184.168.0.0/16 Deny Generic
-185.7.248.0/22 Deny Generic
-188.121.32.0/19 Deny Generic
-192.169.128.0/17 Deny Generic
-192.186.192.0/18 Deny Generic
-198.12.128.0/17 Deny Generic
-198.71.128.0/17 Deny Generic
-203.124.96.0/19 Deny Generic
-208.109.0.0/16 Deny Generic
-216.69.128.0/18 Deny Generic
+23.229.128.0/17 Deny Cloud
+37.148.200.0/21 Deny Cloud
+43.255.152.0/22 Deny Cloud
+45.40.128.0/18 Deny Cloud
+46.252.192.0/20 Deny Cloud
+50.62.0.0/15 Deny Cloud
+63.241.136.0/24 Deny Cloud
+64.202.160.0/19 Deny Cloud
+66.210.39.0/24 Deny Cloud
+68.178.128.0/17 Deny Cloud
+72.167.0.0/16 Deny Cloud
+97.74.0.0/16 Deny Cloud
+103.1.172.0/22 Deny Cloud
+104.238.64.0/18 Deny Cloud
+107.180.0.0/17 Deny Cloud
+118.139.160.0/19 Deny Cloud
+132.148.0.0/21 Deny Cloud
+146.255.32.0/20 Deny Cloud
+148.72.232.0/22 Deny Cloud
+160.153.0.0/16 Deny Cloud
+166.62.0.0/17 Deny Cloud
+173.201.0.0/16 Deny Cloud
+182.50.128.0/19 Deny Cloud
+184.168.0.0/16 Deny Cloud
+185.7.248.0/22 Deny Cloud
+188.121.32.0/19 Deny Cloud
+192.169.128.0/17 Deny Cloud
+192.186.192.0/18 Deny Cloud
+198.12.128.0/17 Deny Cloud
+198.71.128.0/17 Deny Cloud
+203.124.96.0/19 Deny Cloud
+208.109.0.0/16 Deny Cloud
+216.69.128.0/18 Deny Cloud
 Tag: GoDaddy.com, LLC
 
 
@@ -1367,8 +1371,8 @@ Tag: 1&1 Internet AG
 
 
 # ASN 16276 ("OVH Systems").
-# Infected by malware (as per reported by Google): 1.00%.
-# Updated: 2016.01.20 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 0.96%.
+# Updated: 2016.04.18
 
 5.39.0.0/17 Deny Generic
 5.135.0.0/16 Deny Generic
@@ -1395,6 +1399,7 @@ Tag: 1&1 Internet AG
 87.98.128.0/17 Deny Generic
 91.90.88.0/21 Deny Generic
 91.121.0.0/16 Deny Generic
+91.134.0.0/16 Deny Generic
 92.222.0.0/16 Deny Generic
 94.23.0.0/16 Deny Generic
 103.5.12.0/22 Deny Generic
@@ -1440,8 +1445,8 @@ Tag: AS34619
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# Infected by malware (as per reported by Google): 2.77%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 2.17%.
+# Updated: 2016.01.18 / Checked: 2016.04.18
 
 46.151.160.0/21 Deny Generic
 46.175.56.0/21 Deny Generic
@@ -1495,19 +1500,20 @@ Tag: Unified Layer
 
 
 # ASN 27823 ("Dattatec.com").
-# Infected by malware (as per reported by Google): 1.52%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 1.46%.
+# Updated: 2016.04.18
 
-138.36.236.0/22 Deny Generic
-138.219.40.0/22 Deny Generic
-179.43.112.0/20 Deny Generic
-200.58.96.0/19 Deny Generic
+138.36.236.0/22 Deny Cloud
+138.219.40.0/22 Deny Cloud
+168.181.184.0/23 Deny Cloud
+179.43.112.0/20 Deny Cloud
+200.58.96.0/19 Deny Cloud
 Tag: Dattatec.com
 
 
 # ASN 38955 ("World4You Internet Services").
-# Infected by malware (as per reported by Google): 1.87%.
-# Updated: 2016.01.18 / Checked: 2016.02.27
+# Infected by malware (as per reported by Google): 1.79%.
+# Updated: 2016.01.18 / Checked: 2016.04.18
 
 81.19.144.0/20 Deny Generic
 178.23.80.0/21 Deny Generic

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.13).
+ * This file: CLI handler (last modified: 2016.04.18).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -67,7 +67,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-v') {
-    /** Validates signature files (WARNING: BETA AND UNSTABLE!). */
+    /** Validates signature files. */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Started'], date('r')));
@@ -196,7 +196,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Finished'], date('r'))) . "\n";
 } elseif ($CIDRAM['argv'][1] === '-f') {
-    /** Attempts to automatically fix signature files (WARNING: BETA AND UNSTABLE!). */
+    /** Attempts to automatically fix signature files. */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Started'], date('r')));

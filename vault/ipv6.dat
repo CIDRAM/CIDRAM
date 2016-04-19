@@ -35,29 +35,30 @@
 # ---
 # WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
 # https://www.google.com/transparencyreport/safebrowsing/malware/
-# Updated: 2016.03.20 (statistics account for scanning by Google from 1 year up until the cited update date).
+# Updated: 2016.04.19 (Previously: 2016.03.20)
+# Statistics account for scanning by Google from 1 year up until the cited update date.
 
 #   RANK     ASN    AS                      RATE    INCLUDED IN HERE?   RANK SHIFT†
-#      1   46844    Sharktech             43.44%    Yes (> 0.1.2)       NA
-#      2   35916    Multacom Corp.        42.64%    Yes (> 0.1.2)       NA
-#      3   38197    Sun Network (H.K.)    26.09%    Yes (> 0.1.2)       NA
-#      4   32097    WholeSale Internet    22.89%    Yes (all versions)  NA
-#      5   26658    HT                    19.52%    Yes (> 0.1.2)       NA
-#      6   17139    Corporate Colocation  17.37%    Yes (all versions)  NA
-#      7   62468    VpsQuan LLC.          15.46%    Yes (> 0.1.2)       NA
-#      8  133618    Trellian Pty. Ltd.    15.38%    Yes (> 0.1.2)       NA
-#      9   33387    DataShack, LC         13.46%    Yes (all versions)  NA
-#     10   16138    INTERIA               12.37%    Yes (> 0.1.2)       NA
-#     11   58879    ShangHai AnchNet Tec  12.23%    Yes (> 0.1.2)       NA
-#     12   35908    Krypt Technologies    10.97%    Yes (all versions)  NA
-#     13    7497    CST-NET               10.49%    Yes (> 0.1.2)       NA
-#     14   20248    Take 2 Hosting, Inc.  10.05%    Yes (> 0.1.2)       NA
-#     15   46573    Global Frag Networks  10.02%    Yes (> 0.1.2)       NA
-#     16   54600    PEG TECH INC           9.95%    Yes (all versions)  NA
-#     17   40676    Psychz Networks        8.79%    Yes (all versions)  NA
-#     18  133731    Royal Network Tech.    8.70%    Yes (> 0.1.2)       NA
-#     19   38277    CommuniLink Internet   8.55%    Yes (> 0.1.2)       NA
-#     20  134121    Rainbow Network Ltd    7.83%    Yes (> 0.1.2)       NA
+#      1   35916    Multacom Corp.        43.02%    Yes (> 0.1.2)       +1
+#      2   46844    Sharktech             35.36%    Yes (> 0.1.2)       -1
+#      3   38197    Sun Network (H.K.)    26.18%    Yes (> 0.1.2)       ±0
+#      4   32097    WholeSale Internet    25.23%    Yes (all versions)  ±0
+#      5   26658    HT                    19.88%    Yes (> 0.1.2)       ±0
+#      6   62468    VpsQuan LLC.          17.09%    Yes (> 0.1.2)       +1
+#      7   17139    Corporate Colocation  16.00%    Yes (all versions)  -1
+#      8  133618    Trellian Pty. Ltd.    15.53%    Yes (> 0.1.2)       ±0
+#      9   33387    DataShack, LC         14.33%    Yes (all versions)  ±0
+#     10   58879    ShangHai AnchNet Tec  12.85%    Yes (> 0.1.2)       +1
+#     11   54600    PEG TECH INC          11.74%    Yes (all versions)  +5
+#     12   46573    Global Frag Networks  10.02%    Yes (> 0.1.2)       +4
+#     13    9304    Hutchison Global      11.19%    Pending†            NA
+#     14   16138    INTERIA               10.92%    Yes (> 0.1.2)       -4
+#     15   20248    Take 2 Hosting, Inc.  10.59%    Yes (> 0.1.2)       -1
+#     16    7497    CST-NET               10.25%    Yes (> 0.1.2)       -3
+#     17   40676    Psychz Networks        9.56%    Yes (all versions)  ±0
+#     18   35908    Krypt Technologies     9.35%    Yes (all versions)  -6
+#     19   38277    CommuniLink Internet   8.71%    Yes (> 0.1.2)       ±0
+#     20  133731    Royal Network Tech.    8.70%    Yes (> 0.1.2)       -2
 
 # THE WORLD's WORST BOTNET ASNs, ACCORDING TO ABUSEAT.ORG's CBL ("COMPOSITE BLOCKING LIST").
 # https://www.spamhaus.org/statistics/botnet-asn/
@@ -102,8 +103,8 @@
 
 # ---
 # ASN 46844 ("Sharktech").
-# Infected by malware (as per reported by Google): 43.44%.
-# Updated: 2016.03.27
+# Infected by malware (as per reported by Google): 35.36%.
+# Updated: 2016.03.27 / Checked: 2016.04.19
 
 2001:67c:2f08::/48 Deny Cloud
 2610:150::/32 Deny Cloud
@@ -111,33 +112,34 @@ Tag: Sharktech
 
 
 # ASN 35916 ("MULTACOM CORPORATION").
-# Infected by malware (as per reported by Google): 42.64%.
-# Updated: 2016.03.17
+# Infected by malware (as per reported by Google): 43.02%.
+# Updated: 2016.03.17 / Checked: 2016.04.19
 
 2607:9a00::/32 Deny Cloud
 2607:f130::/32 Deny Cloud
-Tag: Multacom Corp.
+Tag: Multacom Corp
 
 
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# Infected by malware (as per reported by Google): 26.09%.
-# Updated: 2016.03.17
+# Infected by malware (as per reported by Google): 26.18%.
+# Updated: 2016.04.19
 
+2400:1c80::/48 Deny Generic
 2403:ea00::/32 Deny Generic
 Tag: Sun Network (H.K.)
 
 
 # ASN 16138 ("INTERIA.PL Sp z.o.o.").
-# Infected by malware (as per reported by Google): 12.37%.
-# Updated: 2016.03.17
+# Infected by malware (as per reported by Google): 10.92%.
+# Updated: 2016.03.17 / Checked: 2016.04.19
 
 2a00:1308::/32 Deny Cloud
 Tag: INTERIA
 
 
 # ASN 7497 ("Computer Network Information Center").
-# Infected by malware (as per reported by Google): 10.49%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 10.25%.
+# Updated: 2016.03.20 / Checked: 2016.04.19
 
 2400:dd00::/28 Deny Cloud
 2401:de00::/32 Deny Cloud
@@ -153,8 +155,8 @@ Tag: Global Frag Networks
 
 
 # ASN 54600 ("PEG TECH INC").
-# Infected by malware (as per reported by Google): 9.95%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 11.74%.
+# Updated: 2016.03.20 / Checked: 2016.04.19
 
 2605:7280::/32 Deny Cloud
 Tag: PEG TECH INC
@@ -174,8 +176,8 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# Infected by malware (as per reported by Google): 1.39%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.30%.
+# Updated: 2016.03.28 / Checked: 2016.04.19
 
 2404:a700::/32 Deny Cloud
 2605:2080::/33 Deny Cloud
@@ -201,7 +203,7 @@ Tag: HostDime.com, Inc
 2a03:2c40::/32 Deny Generic
 2a03:cdc0::/35 Deny Generic
 2a04:e100::/31 Deny Generic
-Tag: Aruba S.p.A.
+Tag: Aruba S.p.A
 
 
 # ASN 29182 ("ISPsystem").
@@ -220,7 +222,7 @@ Tag: ISPsystem
 
 2a02:4780:1::/48 Deny Generic
 2a02:4780:2::/48 Deny Generic
-Tag: Hostinger Int.
+Tag: Hostinger Int
 
 
 # ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc").
@@ -401,7 +403,7 @@ Tag: Hetzner
 2a03:4900:ff02::/48 Deny Cloud
 2a03:4900:fffb::/48 Deny Cloud
 2a03:4900:fffc::/46 Deny Cloud
-Tag: Agava Ltd.
+Tag: Agava Ltd
 
 
 # ASNs 21844, 36351 ("SoftLayer Technologies").
@@ -481,7 +483,7 @@ Tag: eServer.ru
 2a06:4100::/29 Deny Generic
 2a06:7740::/48 Deny Generic
 2a06:78c0::/48 Deny Generic
-Tag: Webzilla B.V.
+Tag: Webzilla B.V
 
 
 # ASN 41079 ("SuperHost.pl").
@@ -598,7 +600,7 @@ Tag: INFOBOX
 # Updated: 2016.01.18 / Checked: 2016.03.02
 
 2a05:b40::/29 Deny Spam
-Tag: HOSTKEY B.V.
+Tag: HOSTKEY B.V
 
 
 # ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
@@ -634,7 +636,7 @@ Tag: Swiftway
 # Updated: 2016.03.13
 
 2620:11::/40 Deny Generic
-Tag: JPMorgan Chase & Co.
+Tag: JPMorgan Chase & Co
 
 
 # ASN 42708 ("Portlane Networks AB").
@@ -702,7 +704,7 @@ Tag: Steadfast Networks
 2001:67c:1064::/48 Deny Cloud
 2a02:1668::/32 Deny Cloud
 2a02:2738::/32 Deny Cloud
-Tag: A2B IP B.V.
+Tag: A2B IP B.V
 
 
 # ASN 44050 ("Petersburg Internet Network ltd.").
@@ -783,7 +785,7 @@ Tag: Trend Micro
 2a03:b0c0:2::/48 Deny Cloud
 2604:a880:800::/47 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
-Tag: Digital Ocean, Inc.
+Tag: Digital Ocean, Inc
 
 
 # ASN 5577 ("Root SA").
@@ -806,8 +808,8 @@ Tag: Tzulo Inc
 
 
 # ASN 17139 ("Corporate Colocation Inc.")
-# Infected by malware (as per reported by Google): 17.37%.
-# Updated: 2016.01.20 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 16.00%.
+# Updated: 2016.01.20 / Checked: 2016.04.19
 
 2401:f500:1::/48 Deny Cloud
 2602:ffe5:400::/40 Deny Cloud
@@ -847,7 +849,7 @@ Tag: InfoRelay Online
 
 2606:2e00::/33 Deny Cloud
 2607:fc98::/32 Deny Cloud
-Tag: WestHost, Inc.
+Tag: WestHost, Inc
 
 
 # ASN 8551 ("Bezeq International-Ltd").
@@ -859,8 +861,8 @@ Tag: Bezeq International
 
 
 # ASN 32097 ("WholeSale Internet, Inc.").
-# Infected by malware (as per reported by Google): 23.72%.
-# Updated: 2016.01.20 / Checked: 2016.03.29
+# Infected by malware (as per reported by Google): 25.23%.
+# Updated: 2016.01.20 / Checked: 2016.04.19
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
@@ -955,7 +957,7 @@ Tag: HyperHosting
 # Updated: 2016.01.22 / Checked: 2016.03.15
 
 2607:f820::/32 Deny Cloud
-Tag: Cyberverse, Inc.
+Tag: Cyberverse, Inc
 
 
 # ASN 54489 ("CoreSpace, Inc.").
@@ -963,7 +965,7 @@ Tag: Cyberverse, Inc.
 # Updated: 2016.01.22 / Checked: 2016.04.03
 
 2604:7780::/32 Deny Cloud
-Tag: CoreSpace, Inc.
+Tag: CoreSpace, Inc
 
 
 # ASNs 26458, 32421 ("Black Lotus Communications").
@@ -1021,7 +1023,7 @@ Tag: Connexions4London
 2607:f978:2::/48 Deny Cloud
 2607:f978:4::/47 Deny Cloud
 2a06:7a00:1::/48 Deny Cloud
-Tag: SingleHop, Inc.
+Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
@@ -1059,15 +1061,17 @@ Tag: Private Layer INC
 
 
 # ASN 40676 ("Psychz Networks").
-# Infected by malware (as per reported by Google): 8.79%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 9.56%.
+# Updated: 2016.04.19
 
+2404:9680::/32 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
 2602:ffb0:ffe::/48 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
+2605:5200:c91a::/48 Deny Cloud
 2605:e280:c65a::/48 Deny Cloud
 2a05:b0c6:1300::/44 Deny Cloud
 2a06:e881:100::/48 Deny Cloud
@@ -1150,7 +1154,7 @@ Tag: WorldStream
 
 # ASN 20473 ("Choopa, LLC").
 # Infected by malware (as per reported by Google): 0.07%.
-# Updated: 2016.03.31
+# Updated: 2016.04.19
 
 2001:19f0::/38 Deny Cloud
 2001:19f0:a06::/48 Deny Cloud
@@ -1159,22 +1163,26 @@ Tag: WorldStream
 2001:19f0:4000::/38 Deny Cloud
 2001:19f0:5000::/36 Deny Cloud
 2001:19f0:6000::/36 Deny Cloud
-2001:19f0:7000::/37 Deny Cloud
+2001:19f0:7000::/38 Deny Cloud
+2001:19f0:7400::/47 Deny Cloud
 2001:19f0:7800::/38 Deny Cloud
 2001:19f0:8000::/38 Deny Cloud
 2001:19f0:8800::/38 Deny Cloud
-2001:19f0:9000::/37 Deny Cloud
-2001:19f0:a800::/37 Deny Cloud
+2001:19f0:9000::/38 Deny Cloud
+2001:19f0:9400::/38 Deny Cloud
+2001:19f0:a800::/38 Deny Cloud
+2001:19f0:ac00::/38 Deny Cloud
 2402:d581::/32 Deny Cloud
 2602:ff71::/48 Deny Cloud
 2602:ffb0:5::/48 Deny Cloud
 2602:ffb0:6::/47 Deny Cloud
 2602:ffb0:8::/47 Deny Cloud
 2602:ffb0:13::/48 Deny Cloud
-2602:ffb0:14::/46 Deny Cloud
+2602:ffb0:16::/47 Deny Cloud
 2602:ffe5:800::/40 Deny Cloud
 2602:fff6:4::/48 Deny Cloud
 2605:9880::/37 Deny Cloud
+2a07:4cc1::/32 Deny Cloud
 Tag: Choopa, LLC
 
 
@@ -1183,7 +1191,7 @@ Tag: Choopa, LLC
 # Updated: 2016.01.23 / Checked: 2016.03.20
 
 2804:49c::/32 Deny Generic
-Tag: UOL DIVEO S.A.
+Tag: UOL DIVEO S.A
 
 
 # ASN 46562 ("Total Server Solutions L.L.C.").
@@ -1236,8 +1244,8 @@ Tag: K SERVERS LTD
 
 
 # ASN 18978 ("Enzu Inc").
-# Infected by malware (as per reported by Google): 5.65%.
-# Updated: 2016.03.10
+# Infected by malware (as per reported by Google): 5.67%.
+# Updated: 2016.04.19
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
@@ -1251,8 +1259,8 @@ Tag: Enzu Inc
 
 
 # ASN 18779 ("EGIHosting").
-# Infected by malware (as per reported by Google): 2.54%.
-# Updated: 2016.01.25 / Checked: 2016.03.10
+# Infected by malware (as per reported by Google): 3.41%.
+# Updated: 2016.01.25 / Checked: 2016.04.19
 
 2604:4f00::/36 Deny Cloud
 2607:f358::/32 Deny Cloud
@@ -1274,7 +1282,7 @@ Tag: AS30083
 # Updated: 2016.01.25 / Checked: 2016.03.28
 
 2001:bc8::/32 Deny Cloud
-Tag: ONLINE S.A.S.
+Tag: ONLINE S.A.S
 
 
 # ASN 174 ("Cogent Communications"): "Big Hosting Plus", "Blue Box Group", "DME Hosting LLC", "EGIHosting",
@@ -1401,12 +1409,12 @@ Tag: FORTUNIX NETWORKS
 # Updated: 2016.03.31
 
 2605:3e80::/32 Deny Cloud
-Tag: Micfo, LLC.
+Tag: Micfo, LLC
 
 
 # ASN 35908 ("Krypt Technologies").
-# Infected by malware (as per reported by Google): 10.97%.
-# Updated: 2016.02.27 / Checked: 2016.03.20
+# Infected by malware (as per reported by Google): 9.35%.
+# Updated: 2016.02.27 / Checked: 2016.04.19
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
 
 2607:f180::/31 Deny Generic
@@ -1444,7 +1452,7 @@ Tag: ESDS
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
-Tag: AltusHost B.V.
+Tag: AltusHost B.V
 
 
 # "Akamai Technologies"
@@ -1921,8 +1929,8 @@ Tag: Latisys-Irvine, LLC
 
 
 # ASN 46261 ("QuickPacket, LLC").
-# Infected by malware (as per reported by Google): 1.84%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 1.83%.
+# Updated: 2016.04.04 / Checked: 2016.04.19
 
 2403:bb80::/32 Deny Cloud
 2607:3f00::/43 Deny Cloud
@@ -1960,7 +1968,7 @@ Tag: Datacenter IP, LLC
 # Updated: 2016.04.04
 
 2a05:4700:100::/48 Deny Cloud
-Tag: MBA DATACENTERS S.L.
+Tag: MBA DATACENTERS S.L
 
 
 # ASN 10439 ("CariNet, Inc.").
@@ -1968,7 +1976,7 @@ Tag: MBA DATACENTERS S.L.
 # Updated: 2016.04.08
 
 2607:ff10::/32 Deny Cloud
-Tag: CariNet, Inc.
+Tag: CariNet, Inc
 
 
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
@@ -2081,7 +2089,7 @@ Tag: AS61102
 # Updated: 2016.04.10
 
 2605:2100::/36 Deny Cloud
-Tag: Media-Hosts Inc.
+Tag: Media-Hosts Inc
 
 # ASN 53667 ("FranTech Solutions").
 # Infected by malware (as per reported by Google): 2.96%.
@@ -2126,12 +2134,76 @@ Tag: PCCW Global
 
 2606:2300::/32 Deny Cloud
 2607:f211:1::/48 Deny Cloud
-Tag: Media Temple, Inc.
+Tag: Media Temple, Inc
+
+
+# ASN 12586 ("GHOSTnet GmbH").
+# Infected by malware (as per reported by Google): 1.76%.
+# Updated: 2016.04.19
+
+2001:67c:2f84::/48 Deny Cloud
+2a00:12d8::/32 Deny Cloud
+2a00:1890::/29 Deny Cloud
+2a00:1910::/29 Deny Cloud
+2a00:cdc0::/32 Deny Cloud
+2a00:d1a0::/32 Deny Cloud
+2a02:2fc0::/29 Deny Cloud
+Tag: GHOSTnet GmbH
+
+
+# ASN 21859 ("Yesup Ecommerce Solutions Inc.").
+# Infected by malware (as per reported by Google): 0.78%.
+# Updated: 2016.04.19
+
+2604:6880::/32 Deny Cloud
+Tag: Yesup Ecommerce
+
+
+# ASN 30475 ("Handy Networks, LLC").
+# Infected by malware (as per reported by Google): 0.74%.
+# Updated: 2016.04.19
+
+2602:fff6:d::/48 Deny Cloud
+2607:fc88::/32 Deny Cloud
+Tag: Handy Networks, LLC
+
+
+# ASN 31863 ("Centrilogic, Inc.").
+# Infected by malware (as per reported by Google): 1.59%.
+# Updated: 2016.04.19
+
+2602:ff96:3::/48 Deny Cloud
+2602:ff96:7::/48 Deny Cloud
+2606:1e80:dace::/48 Deny Cloud
+2607:5600::/32 Deny Cloud
+2a00:a700::/48 Deny Cloud
+2a00:a700:a::/48 Deny Cloud
+Tag: Centrilogic
+
+
+# ASN 53340 ("VegasNAP, LLC").
+# Infected by malware (as per reported by Google): 0.63%.
+# Updated: 2016.04.19
+
+2604:2280:4100::/40 Deny Cloud
+2604:2280:ff00::/40 Deny Cloud
+2605:6f80:ffff::/48 Deny Cloud
+Tag: VegasNAP, LLC
+
+
+# ASN 54290 ("Hostwinds LLC").
+# Infected by malware (as per reported by Google): 1.97%.
+# Updated: 2016.04.19
+
+2607:5500::/32 Deny Cloud
+2607:5501::/32 Deny Cloud
+2a06:4700::/29 Deny Cloud
+Tag: Hostwinds LLC
 
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.17
+# Updated: 2016.04.19
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3037,7 +3109,9 @@ Tag: Media Temple, Inc.
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:160::/43 Deny Bogon
+2001:678:164::/46 Deny Bogon
+2001:678:168::/45 Deny Bogon
+2001:678:170::/44 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -5506,7 +5580,15 @@ Tag: Media Temple, Inc.
 2001:df1:c040::/42 Deny Bogon
 2001:df1:c080::/41 Deny Bogon
 2001:df1:c100::/40 Deny Bogon
-2001:df1:c200::/39 Deny Bogon
+2001:df1:c201::/48 Deny Bogon
+2001:df1:c202::/47 Deny Bogon
+2001:df1:c204::/46 Deny Bogon
+2001:df1:c208::/45 Deny Bogon
+2001:df1:c210::/44 Deny Bogon
+2001:df1:c220::/43 Deny Bogon
+2001:df1:c240::/42 Deny Bogon
+2001:df1:c280::/41 Deny Bogon
+2001:df1:c300::/40 Deny Bogon
 2001:df1:c401::/48 Deny Bogon
 2001:df1:c402::/47 Deny Bogon
 2001:df1:c404::/46 Deny Bogon
@@ -26260,7 +26342,13 @@ Tag: Media Temple, Inc.
 2404:cd10::/28 Deny Bogon
 2404:cd20::/27 Deny Bogon
 2404:cd40::/26 Deny Bogon
-2404:cd80::/25 Deny Bogon
+2404:cd81::/32 Deny Bogon
+2404:cd82::/31 Deny Bogon
+2404:cd84::/30 Deny Bogon
+2404:cd88::/29 Deny Bogon
+2404:cd90::/28 Deny Bogon
+2404:cda0::/27 Deny Bogon
+2404:cdc0::/26 Deny Bogon
 2404:ce01::/32 Deny Bogon
 2404:ce02::/31 Deny Bogon
 2404:ce04::/30 Deny Bogon
@@ -26268,7 +26356,13 @@ Tag: Media Temple, Inc.
 2404:ce10::/28 Deny Bogon
 2404:ce20::/27 Deny Bogon
 2404:ce40::/26 Deny Bogon
-2404:ce80::/25 Deny Bogon
+2404:ce81::/32 Deny Bogon
+2404:ce82::/31 Deny Bogon
+2404:ce84::/30 Deny Bogon
+2404:ce88::/29 Deny Bogon
+2404:ce90::/28 Deny Bogon
+2404:cea0::/27 Deny Bogon
+2404:cec0::/26 Deny Bogon
 2404:cf01::/32 Deny Bogon
 2404:cf02::/31 Deny Bogon
 2404:cf04::/30 Deny Bogon
@@ -53805,7 +53899,8 @@ Tag: Media Temple, Inc.
 2803:62c0::/26 Deny Bogon
 2803:6310::/28 Deny Bogon
 2803:6320::/27 Deny Bogon
-2803:6340::/26 Deny Bogon
+2803:6350::/28 Deny Bogon
+2803:6360::/27 Deny Bogon
 2803:6390::/28 Deny Bogon
 2803:63a0::/27 Deny Bogon
 2803:63c0::/26 Deny Bogon
@@ -60929,8 +61024,13 @@ Tag: Media Temple, Inc.
 2804:3026::/31 Deny Bogon
 2804:3029::/32 Deny Bogon
 2804:302a::/31 Deny Bogon
-2804:302c::/30 Deny Bogon
-2804:3030::/28 Deny Bogon
+2804:302d::/32 Deny Bogon
+2804:302e::/31 Deny Bogon
+2804:3031::/32 Deny Bogon
+2804:3032::/31 Deny Bogon
+2804:3035::/32 Deny Bogon
+2804:3036::/31 Deny Bogon
+2804:3038::/29 Deny Bogon
 2804:3040::/26 Deny Bogon
 2804:3080::/25 Deny Bogon
 2804:3100::/24 Deny Bogon
@@ -66900,8 +67000,7 @@ Tag: Media Temple, Inc.
 2a02:7e90::/28 Deny Bogon
 2a02:7ea8::/29 Deny Bogon
 2a02:7eb0::/28 Deny Bogon
-2a02:7ec8::/29 Deny Bogon
-2a02:7ed0::/28 Deny Bogon
+2a02:7ec0::/27 Deny Bogon
 2a02:7ee8::/29 Deny Bogon
 2a02:7ef0::/28 Deny Bogon
 2a02:7f08::/29 Deny Bogon
@@ -70432,9 +70531,6 @@ Tag: Media Temple, Inc.
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:5a40::/26 Deny Bogon
-2a07:5a80::/25 Deny Bogon
-2a07:5b00::/24 Deny Bogon
 2a07:5c00::/22 Deny Bogon
 2a07:6000::/19 Deny Bogon
 2a07:8000::/17 Deny Bogon

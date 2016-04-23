@@ -521,7 +521,7 @@ Tag: PT Hutchison
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.02
+# Updated: 2016.03.02 / Checked: 2016.04.23
 
 2400:9800::/32 Deny Spam
 Tag: PT Excelcomindo
@@ -544,8 +544,8 @@ Tag: AS31080
 
 
 # ASN 6870 ("H1 LLC").
-# Infected by malware (as per reported by Google): 0.74%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 1.17%.
+# Updated: 2016.01.18 / Checked: 2016.04.23
 
 2a00:1f70::/32 Deny Generic
 Tag: H1 LLC
@@ -579,11 +579,12 @@ Tag: Redstation Limited
 
 
 # ASN 24961 ("myLoc managed IT AG").
-# Infected by malware (as per reported by Google): 0.94%.
-# Updated: 2016.03.02
+# Infected by malware (as per reported by Google): 0.87%.
+# Updated: 2016.04.23
 
-2001:4ba0::/32 Deny Generic
 2001:67c:192c::/48 Deny Generic
+2001:4ba0::/32 Deny Generic
+2a07:4400::/29 Deny Generic
 Tag: myLoc
 
 
@@ -621,13 +622,11 @@ Tag: Rackspace Hosting
 
 
 # ASN 35017 ("Swiftway Communications, Inc").
-# Infected by malware (as per reported by Google): 1.10%.
-# Updated: 2016.03.07
+# Infected by malware (as per reported by Google): 1.14%.
+# Updated: 2016.04.23
 
 2605:3b80::/32 Deny Cloud
 2a02:748::/32 Deny Cloud
-2a06:4740::/29 Deny Cloud
-2a06:5780::/29 Deny Cloud
 Tag: Swiftway
 
 
@@ -1422,8 +1421,8 @@ Tag: Krypt Technologies
 
 
 # ASN 53264 ("Continuum Data Centers, LLC.").
-# Infected by malware (as per reported by Google): 1.22%.
-# Updated: 2016.03.02
+# Infected by malware (as per reported by Google): 1.61%.
+# Updated: 2016.03.02 / Checked: 2016.04.23
 
 2605:a880:8000::/48 Deny Cloud
 2607:ff50::/32 Deny Cloud
@@ -2201,9 +2200,73 @@ Tag: VegasNAP, LLC
 Tag: Hostwinds LLC
 
 
+# ASN 8342 ("OJSC RTComm.RU").
+# Infected by malware (as per reported by Google): 1.32%.
+# Updated: 2016.04.23
+
+2001:1bb0::/32 Deny Cloud
+Tag: OJSC RTComm.RU
+
+
+# ASN 62454 ("Zyztm Research Division 10 B.V.").
+# Infected by malware (as per reported by Google): 0.42%.
+# Updated: 2016.04.23
+
+2a01:54c0::/32 Deny Generic
+Tag: Zyztm
+
+
+# ASN 9009 ("M247 Ltd").
+# Infected by malware (as per reported by Google): 4.09%.
+# Updated: 2016.04.23
+
+2001:ac8::/32 Deny Cloud
+2a00:b320::/48 Deny Cloud
+2a01:300::/29 Deny Cloud
+2a02:40::/32 Deny Cloud
+2a03:34c0::/32 Deny Cloud
+2a04:9dc0::/29 Deny Cloud
+2a07:5803::/32 Deny Cloud
+2a07:5805::/32 Deny Cloud
+Tag: M247 Ltd
+
+
+# ASN 9123 ("OOO TimeWeb").
+# Infected by malware (as per reported by Google): 1.87%.
+# Updated: 2016.04.23
+
+2a03:6f00::/46 Deny Cloud
+2a03:6f00:4::/48 Deny Cloud
+Tag: OOO TimeWeb
+
+
+# ASN 10098 ("Henderson Data Centre Limited").
+# Infected by malware (as per reported by Google): 3.06%.
+# Updated: 2016.04.23
+
+2407:7200::/32 Deny Cloud
+Tag: Henderson
+
+
+# ASN 15967 ("Nazwa.pl Sp.z.o.o.").
+# Infected by malware (as per reported by Google): 3.58%.
+# Updated: 2016.04.23
+
+2a01:6100::/32 Deny Cloud
+Tag: Nazwa.pl
+
+
+# ASN 18450 ("WebNX, Inc.").
+# Infected by malware (as per reported by Google): 3.60%.
+# Updated: 2016.04.23
+
+2607:f2d8::/32 Deny Cloud
+Tag: WebNX, Inc
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.19
+# Updated: 2016.04.23
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3109,9 +3172,8 @@ Tag: Hostwinds LLC
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:164::/46 Deny Bogon
-2001:678:168::/45 Deny Bogon
-2001:678:170::/44 Deny Bogon
+2001:678:174::/46 Deny Bogon
+2001:678:178::/45 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -5598,7 +5660,15 @@ Tag: Hostwinds LLC
 2001:df1:c440::/42 Deny Bogon
 2001:df1:c480::/41 Deny Bogon
 2001:df1:c500::/40 Deny Bogon
-2001:df1:c600::/39 Deny Bogon
+2001:df1:c601::/48 Deny Bogon
+2001:df1:c602::/47 Deny Bogon
+2001:df1:c604::/46 Deny Bogon
+2001:df1:c608::/45 Deny Bogon
+2001:df1:c610::/44 Deny Bogon
+2001:df1:c620::/43 Deny Bogon
+2001:df1:c640::/42 Deny Bogon
+2001:df1:c680::/41 Deny Bogon
+2001:df1:c700::/40 Deny Bogon
 2001:df1:c801::/48 Deny Bogon
 2001:df1:c802::/47 Deny Bogon
 2001:df1:c804::/46 Deny Bogon
@@ -5608,7 +5678,15 @@ Tag: Hostwinds LLC
 2001:df1:c840::/42 Deny Bogon
 2001:df1:c880::/41 Deny Bogon
 2001:df1:c900::/40 Deny Bogon
-2001:df1:ca00::/39 Deny Bogon
+2001:df1:ca01::/48 Deny Bogon
+2001:df1:ca02::/47 Deny Bogon
+2001:df1:ca04::/46 Deny Bogon
+2001:df1:ca08::/45 Deny Bogon
+2001:df1:ca10::/44 Deny Bogon
+2001:df1:ca20::/43 Deny Bogon
+2001:df1:ca40::/42 Deny Bogon
+2001:df1:ca80::/41 Deny Bogon
+2001:df1:cb00::/40 Deny Bogon
 2001:df1:cc01::/48 Deny Bogon
 2001:df1:cc02::/47 Deny Bogon
 2001:df1:cc04::/46 Deny Bogon
@@ -5618,7 +5696,15 @@ Tag: Hostwinds LLC
 2001:df1:cc40::/42 Deny Bogon
 2001:df1:cc80::/41 Deny Bogon
 2001:df1:cd00::/40 Deny Bogon
-2001:df1:ce00::/39 Deny Bogon
+2001:df1:ce01::/48 Deny Bogon
+2001:df1:ce02::/47 Deny Bogon
+2001:df1:ce04::/46 Deny Bogon
+2001:df1:ce08::/45 Deny Bogon
+2001:df1:ce10::/44 Deny Bogon
+2001:df1:ce20::/43 Deny Bogon
+2001:df1:ce40::/42 Deny Bogon
+2001:df1:ce80::/41 Deny Bogon
+2001:df1:cf00::/40 Deny Bogon
 2001:df1:d001::/48 Deny Bogon
 2001:df1:d002::/47 Deny Bogon
 2001:df1:d004::/46 Deny Bogon
@@ -5628,7 +5714,15 @@ Tag: Hostwinds LLC
 2001:df1:d040::/42 Deny Bogon
 2001:df1:d080::/41 Deny Bogon
 2001:df1:d100::/40 Deny Bogon
-2001:df1:d200::/39 Deny Bogon
+2001:df1:d201::/48 Deny Bogon
+2001:df1:d202::/47 Deny Bogon
+2001:df1:d204::/46 Deny Bogon
+2001:df1:d208::/45 Deny Bogon
+2001:df1:d210::/44 Deny Bogon
+2001:df1:d220::/43 Deny Bogon
+2001:df1:d240::/42 Deny Bogon
+2001:df1:d280::/41 Deny Bogon
+2001:df1:d300::/40 Deny Bogon
 2001:df1:d402::/47 Deny Bogon
 2001:df1:d404::/46 Deny Bogon
 2001:df1:d408::/45 Deny Bogon
@@ -5637,7 +5731,15 @@ Tag: Hostwinds LLC
 2001:df1:d440::/42 Deny Bogon
 2001:df1:d480::/41 Deny Bogon
 2001:df1:d500::/40 Deny Bogon
-2001:df1:d600::/39 Deny Bogon
+2001:df1:d601::/48 Deny Bogon
+2001:df1:d602::/47 Deny Bogon
+2001:df1:d604::/46 Deny Bogon
+2001:df1:d608::/45 Deny Bogon
+2001:df1:d610::/44 Deny Bogon
+2001:df1:d620::/43 Deny Bogon
+2001:df1:d640::/42 Deny Bogon
+2001:df1:d680::/41 Deny Bogon
+2001:df1:d700::/40 Deny Bogon
 2001:df1:d801::/48 Deny Bogon
 2001:df1:d802::/47 Deny Bogon
 2001:df1:d804::/46 Deny Bogon
@@ -5647,7 +5749,15 @@ Tag: Hostwinds LLC
 2001:df1:d840::/42 Deny Bogon
 2001:df1:d880::/41 Deny Bogon
 2001:df1:d900::/40 Deny Bogon
-2001:df1:da00::/39 Deny Bogon
+2001:df1:da01::/48 Deny Bogon
+2001:df1:da02::/47 Deny Bogon
+2001:df1:da04::/46 Deny Bogon
+2001:df1:da08::/45 Deny Bogon
+2001:df1:da10::/44 Deny Bogon
+2001:df1:da20::/43 Deny Bogon
+2001:df1:da40::/42 Deny Bogon
+2001:df1:da80::/41 Deny Bogon
+2001:df1:db00::/40 Deny Bogon
 2001:df1:dc01::/48 Deny Bogon
 2001:df1:dc02::/47 Deny Bogon
 2001:df1:dc04::/46 Deny Bogon
@@ -5657,7 +5767,15 @@ Tag: Hostwinds LLC
 2001:df1:dc40::/42 Deny Bogon
 2001:df1:dc80::/41 Deny Bogon
 2001:df1:dd00::/40 Deny Bogon
-2001:df1:de00::/39 Deny Bogon
+2001:df1:de01::/48 Deny Bogon
+2001:df1:de02::/47 Deny Bogon
+2001:df1:de04::/46 Deny Bogon
+2001:df1:de08::/45 Deny Bogon
+2001:df1:de10::/44 Deny Bogon
+2001:df1:de20::/43 Deny Bogon
+2001:df1:de40::/42 Deny Bogon
+2001:df1:de80::/41 Deny Bogon
+2001:df1:df00::/40 Deny Bogon
 2001:df1:e001::/48 Deny Bogon
 2001:df1:e002::/47 Deny Bogon
 2001:df1:e004::/46 Deny Bogon
@@ -25996,8 +26114,6 @@ Tag: Hostwinds LLC
 2404:b410::/28 Deny Bogon
 2404:b420::/27 Deny Bogon
 2404:b440::/26 Deny Bogon
-2404:b481::/32 Deny Bogon
-2404:b482::/31 Deny Bogon
 2404:b484::/30 Deny Bogon
 2404:b488::/29 Deny Bogon
 2404:b490::/28 Deny Bogon
@@ -26370,7 +26486,13 @@ Tag: Hostwinds LLC
 2404:cf10::/28 Deny Bogon
 2404:cf20::/27 Deny Bogon
 2404:cf40::/26 Deny Bogon
-2404:cf80::/25 Deny Bogon
+2404:cf81::/32 Deny Bogon
+2404:cf82::/31 Deny Bogon
+2404:cf84::/30 Deny Bogon
+2404:cf88::/29 Deny Bogon
+2404:cf90::/28 Deny Bogon
+2404:cfa0::/27 Deny Bogon
+2404:cfc0::/26 Deny Bogon
 2404:d001::/32 Deny Bogon
 2404:d002::/31 Deny Bogon
 2404:d004::/30 Deny Bogon
@@ -26378,7 +26500,13 @@ Tag: Hostwinds LLC
 2404:d010::/28 Deny Bogon
 2404:d020::/27 Deny Bogon
 2404:d040::/26 Deny Bogon
-2404:d080::/25 Deny Bogon
+2404:d081::/32 Deny Bogon
+2404:d082::/31 Deny Bogon
+2404:d084::/30 Deny Bogon
+2404:d088::/29 Deny Bogon
+2404:d090::/28 Deny Bogon
+2404:d0a0::/27 Deny Bogon
+2404:d0c0::/26 Deny Bogon
 2404:d101::/32 Deny Bogon
 2404:d102::/31 Deny Bogon
 2404:d104::/30 Deny Bogon
@@ -26386,7 +26514,13 @@ Tag: Hostwinds LLC
 2404:d110::/28 Deny Bogon
 2404:d120::/27 Deny Bogon
 2404:d140::/26 Deny Bogon
-2404:d180::/25 Deny Bogon
+2404:d181::/32 Deny Bogon
+2404:d182::/31 Deny Bogon
+2404:d184::/30 Deny Bogon
+2404:d188::/29 Deny Bogon
+2404:d190::/28 Deny Bogon
+2404:d1a0::/27 Deny Bogon
+2404:d1c0::/26 Deny Bogon
 2404:d201::/32 Deny Bogon
 2404:d202::/31 Deny Bogon
 2404:d204::/30 Deny Bogon
@@ -26394,7 +26528,13 @@ Tag: Hostwinds LLC
 2404:d210::/28 Deny Bogon
 2404:d220::/27 Deny Bogon
 2404:d240::/26 Deny Bogon
-2404:d280::/25 Deny Bogon
+2404:d281::/32 Deny Bogon
+2404:d282::/31 Deny Bogon
+2404:d284::/30 Deny Bogon
+2404:d288::/29 Deny Bogon
+2404:d290::/28 Deny Bogon
+2404:d2a0::/27 Deny Bogon
+2404:d2c0::/26 Deny Bogon
 2404:d301::/32 Deny Bogon
 2404:d302::/31 Deny Bogon
 2404:d304::/30 Deny Bogon
@@ -26402,7 +26542,13 @@ Tag: Hostwinds LLC
 2404:d310::/28 Deny Bogon
 2404:d320::/27 Deny Bogon
 2404:d340::/26 Deny Bogon
-2404:d380::/25 Deny Bogon
+2404:d381::/32 Deny Bogon
+2404:d382::/31 Deny Bogon
+2404:d384::/30 Deny Bogon
+2404:d388::/29 Deny Bogon
+2404:d390::/28 Deny Bogon
+2404:d3a0::/27 Deny Bogon
+2404:d3c0::/26 Deny Bogon
 2404:d401::/32 Deny Bogon
 2404:d402::/31 Deny Bogon
 2404:d404::/30 Deny Bogon
@@ -26410,7 +26556,13 @@ Tag: Hostwinds LLC
 2404:d410::/28 Deny Bogon
 2404:d420::/27 Deny Bogon
 2404:d440::/26 Deny Bogon
-2404:d480::/25 Deny Bogon
+2404:d481::/32 Deny Bogon
+2404:d482::/31 Deny Bogon
+2404:d484::/30 Deny Bogon
+2404:d488::/29 Deny Bogon
+2404:d490::/28 Deny Bogon
+2404:d4a0::/27 Deny Bogon
+2404:d4c0::/26 Deny Bogon
 2404:d501::/32 Deny Bogon
 2404:d502::/31 Deny Bogon
 2404:d504::/30 Deny Bogon
@@ -26418,7 +26570,13 @@ Tag: Hostwinds LLC
 2404:d510::/28 Deny Bogon
 2404:d520::/27 Deny Bogon
 2404:d540::/26 Deny Bogon
-2404:d580::/25 Deny Bogon
+2404:d581::/32 Deny Bogon
+2404:d582::/31 Deny Bogon
+2404:d584::/30 Deny Bogon
+2404:d588::/29 Deny Bogon
+2404:d590::/28 Deny Bogon
+2404:d5a0::/27 Deny Bogon
+2404:d5c0::/26 Deny Bogon
 2404:d601::/32 Deny Bogon
 2404:d602::/31 Deny Bogon
 2404:d604::/30 Deny Bogon
@@ -26426,7 +26584,13 @@ Tag: Hostwinds LLC
 2404:d610::/28 Deny Bogon
 2404:d620::/27 Deny Bogon
 2404:d640::/26 Deny Bogon
-2404:d680::/25 Deny Bogon
+2404:d681::/32 Deny Bogon
+2404:d682::/31 Deny Bogon
+2404:d684::/30 Deny Bogon
+2404:d688::/29 Deny Bogon
+2404:d690::/28 Deny Bogon
+2404:d6a0::/27 Deny Bogon
+2404:d6c0::/26 Deny Bogon
 2404:d701::/32 Deny Bogon
 2404:d702::/31 Deny Bogon
 2404:d704::/30 Deny Bogon
@@ -26434,7 +26598,13 @@ Tag: Hostwinds LLC
 2404:d710::/28 Deny Bogon
 2404:d720::/27 Deny Bogon
 2404:d740::/26 Deny Bogon
-2404:d780::/25 Deny Bogon
+2404:d781::/32 Deny Bogon
+2404:d782::/31 Deny Bogon
+2404:d784::/30 Deny Bogon
+2404:d788::/29 Deny Bogon
+2404:d790::/28 Deny Bogon
+2404:d7a0::/27 Deny Bogon
+2404:d7c0::/26 Deny Bogon
 2404:d801::/32 Deny Bogon
 2404:d802::/31 Deny Bogon
 2404:d804::/30 Deny Bogon
@@ -26442,7 +26612,13 @@ Tag: Hostwinds LLC
 2404:d810::/28 Deny Bogon
 2404:d820::/27 Deny Bogon
 2404:d840::/26 Deny Bogon
-2404:d880::/25 Deny Bogon
+2404:d881::/32 Deny Bogon
+2404:d882::/31 Deny Bogon
+2404:d884::/30 Deny Bogon
+2404:d888::/29 Deny Bogon
+2404:d890::/28 Deny Bogon
+2404:d8a0::/27 Deny Bogon
+2404:d8c0::/26 Deny Bogon
 2404:d901::/32 Deny Bogon
 2404:d902::/31 Deny Bogon
 2404:d904::/30 Deny Bogon
@@ -26450,7 +26626,13 @@ Tag: Hostwinds LLC
 2404:d910::/28 Deny Bogon
 2404:d920::/27 Deny Bogon
 2404:d940::/26 Deny Bogon
-2404:d980::/25 Deny Bogon
+2404:d981::/32 Deny Bogon
+2404:d982::/31 Deny Bogon
+2404:d984::/30 Deny Bogon
+2404:d988::/29 Deny Bogon
+2404:d990::/28 Deny Bogon
+2404:d9a0::/27 Deny Bogon
+2404:d9c0::/26 Deny Bogon
 2404:da01::/32 Deny Bogon
 2404:da02::/31 Deny Bogon
 2404:da04::/30 Deny Bogon
@@ -26458,7 +26640,13 @@ Tag: Hostwinds LLC
 2404:da10::/28 Deny Bogon
 2404:da20::/27 Deny Bogon
 2404:da40::/26 Deny Bogon
-2404:da80::/25 Deny Bogon
+2404:da81::/32 Deny Bogon
+2404:da82::/31 Deny Bogon
+2404:da84::/30 Deny Bogon
+2404:da88::/29 Deny Bogon
+2404:da90::/28 Deny Bogon
+2404:daa0::/27 Deny Bogon
+2404:dac0::/26 Deny Bogon
 2404:db01::/32 Deny Bogon
 2404:db02::/31 Deny Bogon
 2404:db04::/30 Deny Bogon
@@ -26466,7 +26654,13 @@ Tag: Hostwinds LLC
 2404:db10::/28 Deny Bogon
 2404:db20::/27 Deny Bogon
 2404:db40::/26 Deny Bogon
-2404:db80::/25 Deny Bogon
+2404:db81::/32 Deny Bogon
+2404:db82::/31 Deny Bogon
+2404:db84::/30 Deny Bogon
+2404:db88::/29 Deny Bogon
+2404:db90::/28 Deny Bogon
+2404:dba0::/27 Deny Bogon
+2404:dbc0::/26 Deny Bogon
 2404:dc01::/32 Deny Bogon
 2404:dc02::/31 Deny Bogon
 2404:dc04::/30 Deny Bogon
@@ -38010,11 +38204,15 @@ Tag: Hostwinds LLC
 2607:3310::/28 Deny Bogon
 2607:3320::/27 Deny Bogon
 2607:3340::/26 Deny Bogon
-2607:3380::/25 Deny Bogon
+2607:3390::/28 Deny Bogon
+2607:33a0::/27 Deny Bogon
+2607:33c0::/26 Deny Bogon
 2607:3410::/28 Deny Bogon
 2607:3420::/27 Deny Bogon
 2607:3440::/26 Deny Bogon
-2607:3480::/25 Deny Bogon
+2607:3490::/28 Deny Bogon
+2607:34a0::/27 Deny Bogon
+2607:34c0::/26 Deny Bogon
 2607:3510::/28 Deny Bogon
 2607:3520::/27 Deny Bogon
 2607:3540::/26 Deny Bogon
@@ -43198,7 +43396,16 @@ Tag: Hostwinds LLC
 2620:74:8800::/37 Deny Bogon
 2620:74:9000::/36 Deny Bogon
 2620:74:a000::/35 Deny Bogon
-2620:74:c000::/34 Deny Bogon
+2620:74:c000::/42 Deny Bogon
+2620:74:c050::/44 Deny Bogon
+2620:74:c060::/43 Deny Bogon
+2620:74:c080::/41 Deny Bogon
+2620:74:c100::/40 Deny Bogon
+2620:74:c200::/39 Deny Bogon
+2620:74:c400::/38 Deny Bogon
+2620:74:c800::/37 Deny Bogon
+2620:74:d000::/36 Deny Bogon
+2620:74:e000::/35 Deny Bogon
 2620:75:10::/44 Deny Bogon
 2620:75:20::/43 Deny Bogon
 2620:75:40::/42 Deny Bogon
@@ -45024,7 +45231,16 @@ Tag: Hostwinds LLC
 2620:a4:8800::/37 Deny Bogon
 2620:a4:9000::/36 Deny Bogon
 2620:a4:a000::/35 Deny Bogon
-2620:a4:c000::/34 Deny Bogon
+2620:a4:c000::/42 Deny Bogon
+2620:a4:c050::/44 Deny Bogon
+2620:a4:c060::/43 Deny Bogon
+2620:a4:c080::/41 Deny Bogon
+2620:a4:c100::/40 Deny Bogon
+2620:a4:c200::/39 Deny Bogon
+2620:a4:c400::/38 Deny Bogon
+2620:a4:c800::/37 Deny Bogon
+2620:a4:d000::/36 Deny Bogon
+2620:a4:e000::/35 Deny Bogon
 2620:a5:10::/44 Deny Bogon
 2620:a5:20::/43 Deny Bogon
 2620:a5:40::/42 Deny Bogon
@@ -50164,8 +50380,18 @@ Tag: Hostwinds LLC
 2620:126:d200::/39 Deny Bogon
 2620:126:d400::/38 Deny Bogon
 2620:126:d800::/37 Deny Bogon
-2620:126:e000::/35 Deny Bogon
-2620:127::/32 Deny Bogon
+2620:126:f100::/40 Deny Bogon
+2620:126:f200::/39 Deny Bogon
+2620:126:f400::/38 Deny Bogon
+2620:126:f800::/37 Deny Bogon
+2620:127:100::/40 Deny Bogon
+2620:127:200::/39 Deny Bogon
+2620:127:400::/38 Deny Bogon
+2620:127:800::/37 Deny Bogon
+2620:127:1000::/36 Deny Bogon
+2620:127:2000::/35 Deny Bogon
+2620:127:4000::/34 Deny Bogon
+2620:127:8000::/33 Deny Bogon
 2620:128::/29 Deny Bogon
 2620:130::/28 Deny Bogon
 2620:140:1000::/36 Deny Bogon
@@ -50494,7 +50720,14 @@ Tag: Hostwinds LLC
 2801:11:8200::/39 Deny Bogon
 2801:11:8400::/38 Deny Bogon
 2801:11:8800::/37 Deny Bogon
-2801:11:9000::/36 Deny Bogon
+2801:11:9010::/44 Deny Bogon
+2801:11:9020::/43 Deny Bogon
+2801:11:9040::/42 Deny Bogon
+2801:11:9080::/41 Deny Bogon
+2801:11:9100::/40 Deny Bogon
+2801:11:9200::/39 Deny Bogon
+2801:11:9400::/38 Deny Bogon
+2801:11:9800::/37 Deny Bogon
 2801:11:a010::/44 Deny Bogon
 2801:11:a020::/43 Deny Bogon
 2801:11:a040::/42 Deny Bogon
@@ -54819,7 +55052,8 @@ Tag: Hostwinds LLC
 2803:e2c0::/26 Deny Bogon
 2803:e310::/28 Deny Bogon
 2803:e320::/27 Deny Bogon
-2803:e340::/26 Deny Bogon
+2803:e350::/28 Deny Bogon
+2803:e360::/27 Deny Bogon
 2803:e390::/28 Deny Bogon
 2803:e3a0::/27 Deny Bogon
 2803:e3c0::/26 Deny Bogon
@@ -61030,7 +61264,10 @@ Tag: Hostwinds LLC
 2804:3032::/31 Deny Bogon
 2804:3035::/32 Deny Bogon
 2804:3036::/31 Deny Bogon
-2804:3038::/29 Deny Bogon
+2804:3039::/32 Deny Bogon
+2804:303a::/31 Deny Bogon
+2804:303d::/32 Deny Bogon
+2804:303e::/31 Deny Bogon
 2804:3040::/26 Deny Bogon
 2804:3080::/25 Deny Bogon
 2804:3100::/24 Deny Bogon
@@ -67000,7 +67237,8 @@ Tag: Hostwinds LLC
 2a02:7e90::/28 Deny Bogon
 2a02:7ea8::/29 Deny Bogon
 2a02:7eb0::/28 Deny Bogon
-2a02:7ec0::/27 Deny Bogon
+2a02:7ec8::/29 Deny Bogon
+2a02:7ed0::/28 Deny Bogon
 2a02:7ee8::/29 Deny Bogon
 2a02:7ef0::/28 Deny Bogon
 2a02:7f08::/29 Deny Bogon
@@ -69597,7 +69835,8 @@ Tag: Hostwinds LLC
 2a03:abd0::/28 Deny Bogon
 2a03:ac08::/29 Deny Bogon
 2a03:ac10::/28 Deny Bogon
-2a03:ac20::/27 Deny Bogon
+2a03:ac28::/29 Deny Bogon
+2a03:ac30::/28 Deny Bogon
 2a03:ac48::/29 Deny Bogon
 2a03:ac50::/28 Deny Bogon
 2a03:ac60::/27 Deny Bogon
@@ -70338,7 +70577,6 @@ Tag: Hostwinds LLC
 2a03:ef88::/29 Deny Bogon
 2a03:ef90::/28 Deny Bogon
 2a03:efa0::/27 Deny Bogon
-2a03:efc0::/26 Deny Bogon
 2a03:f008::/29 Deny Bogon
 2a03:f010::/28 Deny Bogon
 2a03:f020::/27 Deny Bogon
@@ -70531,8 +70769,11 @@ Tag: Hostwinds LLC
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:5c00::/22 Deny Bogon
-2a07:6000::/19 Deny Bogon
+2a07:61c0::/26 Deny Bogon
+2a07:6200::/23 Deny Bogon
+2a07:6400::/22 Deny Bogon
+2a07:6800::/21 Deny Bogon
+2a07:7000::/20 Deny Bogon
 2a07:8000::/17 Deny Bogon
 2a08::/13 Deny Bogon
 2c00::/13 Deny Bogon

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.04.11).
+ * This file: Functions file (last modified: 2016.04.25).
  */
 
 /**
@@ -168,12 +168,17 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     if (!isset($CIDRAM['BlockInfo'])) {
         return false;
     }
-    $IPv4Sigs = array();
-    $IPv4Sigs[0] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv4.dat');
-    $IPv4Sigs[1] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv4_custom.dat');
+    if (empty($CIDRAM['Config']['signatures']['ipv4'])) {
+        $IPv4Sigs = array();
+    } elseif (strpos($CIDRAM['Config']['signatures']['ipv4'], ',')) {
+        $IPv4Sigs = explode(',', $CIDRAM['Config']['signatures']['ipv4']);
+    } else {
+        $IPv4Sigs = array($CIDRAM['Config']['signatures']['ipv4']);
+    }
     $y = count($IPv4Sigs);
     $DefTag = 'IPv4';
     for ($x = 0; $x < $y; $x++) {
+        $IPv4Sigs[$x] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $IPv4Sigs[$x]);
         if (!$IPv4Sigs[$x]) {
             continue;
         }
@@ -216,7 +221,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 } else {
                     $Sig = substr($Sig, strpos($Sig, ' ') + 1);
                 }
-                if ($Cat === 'Run') {
+                if ($Cat === 'Run' && !$CIDRAM['CIDRAM_sapi']) {
                     if (file_exists($CIDRAM['Vault'] . $Sig)) {
                         require_once $CIDRAM['Vault'] . $Sig;
                     } else {
@@ -230,7 +235,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                     break 3;
                 } elseif ($Cat === 'Deny') {
-                    if ($Sig === 'Bogon') {
+                    if ($Sig === 'Bogon' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_bogons']) {
                             continue;
                         }
@@ -239,7 +244,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
-                    } elseif ($Sig === 'Cloud') {
+                    } elseif ($Sig === 'Cloud' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_cloud']) {
                             continue;
                         }
@@ -248,7 +253,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
-                    } elseif ($Sig === 'Generic') {
+                    } elseif ($Sig === 'Generic' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_generic']) {
                             continue;
                         }
@@ -257,7 +262,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
-                    } elseif ($Sig === 'Spam') {
+                    } elseif ($Sig === 'Spam' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_spam']) {
                             continue;
                         }
@@ -537,12 +542,17 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
     if (!isset($CIDRAM['BlockInfo'])) {
         return false;
     }
-    $IPv6Sigs = array();
-    $IPv6Sigs[0] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv6.dat');
-    $IPv6Sigs[1] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ipv6_custom.dat');
+    if (empty($CIDRAM['Config']['signatures']['ipv6'])) {
+        $IPv6Sigs = array();
+    } elseif (strpos($CIDRAM['Config']['signatures']['ipv6'], ',')) {
+        $IPv6Sigs = explode(',', $CIDRAM['Config']['signatures']['ipv6']);
+    } else {
+        $IPv6Sigs = array($CIDRAM['Config']['signatures']['ipv6']);
+    }
     $y = count($IPv6Sigs);
     $DefTag = 'IPv6';
     for ($x = 0; $x < $y; $x++) {
+        $IPv6Sigs[$x] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $IPv6Sigs[$x]);
         if (!$IPv6Sigs[$x]) {
             continue;
         }
@@ -585,7 +595,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                 } else {
                     $Sig = substr($Sig, strpos($Sig, ' ') + 1);
                 }
-                if ($Cat === 'Run') {
+                if ($Cat === 'Run' && !$CIDRAM['CIDRAM_sapi']) {
                     if (file_exists($CIDRAM['Vault'] . $Sig)) {
                         require_once $CIDRAM['Vault'] . $Sig;
                     } else {
@@ -599,7 +609,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                     break 3;
                 } elseif ($Cat === 'Deny') {
-                    if ($Sig === 'Bogon') {
+                    if ($Sig === 'Bogon' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_bogons']) {
                             continue;
                         }
@@ -608,7 +618,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
-                    } elseif ($Sig === 'Cloud') {
+                    } elseif ($Sig === 'Cloud' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_cloud']) {
                             continue;
                         }
@@ -617,7 +627,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
-                    } elseif ($Sig === 'Generic') {
+                    } elseif ($Sig === 'Generic' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_generic']) {
                             continue;
                         }
@@ -626,7 +636,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
-                    } elseif ($Sig === 'Spam') {
+                    } elseif ($Sig === 'Spam' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_spam']) {
                             continue;
                         }

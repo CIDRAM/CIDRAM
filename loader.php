@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.04.18).
+ * This file: The loader (last modified: 2016.04.25).
  */
 
 /**
@@ -23,15 +23,13 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.2.0';
+    $CIDRAM['ScriptVersion'] = '0.3.0-DEV';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
 
     /** CIDRAM User Agent (for external requests). */
-    $CIDRAM['ScriptUA'] =
-        'CIDRAM v' . $CIDRAM['ScriptVersion'] .
-        ' (https://github.com/Maikuolan/CIDRAM)';
+    $CIDRAM['ScriptUA'] = $CIDRAM['ScriptIdent'] . ' (http://maikuolan.github.io/CIDRAM/)';
 
     /** Determine the location of the "vault" directory. */
     $CIDRAM['Vault'] = __DIR__ . '/vault/';
@@ -116,6 +114,14 @@ if (!defined('CIDRAM')) {
     /** Fallback for missing "signatures" configuration category. */
     if (!isset($CIDRAM['Config']['signatures'])) {
         $CIDRAM['Config']['signatures'] = array();
+    }
+    /** Fallback for missing "ipv4" configuration directive. */
+    if (!isset($CIDRAM['Config']['signatures']['ipv4'])) {
+        $CIDRAM['Config']['signatures']['ipv4'] = 'ipv4.dat,ipv4_custom.dat';
+    }
+    /** Fallback for missing "ipv6" configuration directive. */
+    if (!isset($CIDRAM['Config']['signatures']['ipv6'])) {
+        $CIDRAM['Config']['signatures']['ipv4'] = 'ipv6.dat,ipv6_custom.dat';
     }
     /** Fallback for missing "block_cloud" configuration directive. */
     if (!isset($CIDRAM['Config']['signatures']['block_cloud'])) {

@@ -49,6 +49,14 @@ emailaddr=''
 disable_cli=false
 
 [signatures]
+; A list of the IPv4 signature files that CIDRAM should attempt to parse,
+; delimited by commas. You can add entries here if you want to include
+; additional IPv4 signature files into CIDRAM.
+ipv4='ipv4.dat,ipv4_custom.dat'
+; A list of the IPv6 signature files that CIDRAM should attempt to parse,
+; delimited by commas. You can add entries here if you want to include
+; additional IPv4 signature files into CIDRAM.
+ipv6='ipv6.dat,ipv6_custom.dat'
 ; Block CIDRs identified as belonging to webhosting/cloud services? If you
 ; operate an API service from your website or if you expect other websites to
 ; connect to your website, this should be set to false. If you don't, then,

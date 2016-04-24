@@ -144,13 +144,13 @@ Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `conf
 Generelle Konfiguration von CIDRAM.
 
 "logfile"
-- Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+- Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable. @TranslateMe@
 
 "logfileApache"
-- Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+- Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable. @TranslateMe@
 
 "logfileSerialized"
-- Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+- Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable. @TranslateMe@
 
 "ipaddr"
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
@@ -159,13 +159,13 @@ Generelle Konfiguration von CIDRAM.
 - Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. False/200 = Nein (200) [Standardeinstellung]; True = Ja (403); 503 = Service nicht verfügbar (503).
 
 "silent_mode"
-- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
+- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank. @TranslateMe@
 
 "lang"
 - Gibt die Standardsprache für CIDRAM an.
 
 "emailaddr"
-- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
+- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses). @TranslateMe@
 
 "disable_cli"
 - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
@@ -173,22 +173,28 @@ Generelle Konfiguration von CIDRAM.
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
+"ipv4"
+- A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM. @TranslateMe@
+
+"ipv6"
+- A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM. @TranslateMe@
+
 "block_cloud"
-- Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true.
+- Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true. @TranslateMe@
 
 "block_bogons"
-- Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true.
+- Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true. @TranslateMe@
 
 "block_generic"
-- Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories.
+- Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories. @TranslateMe@
 
 "block_spam"
-- Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
+- Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true. @TranslateMe@
 
 ####"template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
 
-Relates to the HTML output used to generate the "Access Denied" page. Falls Sie benutzerdefinierte Themes für CIDRAM verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`.
+Relates to the HTML output used to generate the "Access Denied" page. Falls Sie benutzerdefinierte Themes für CIDRAM verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`. @TranslateMe@
 
 "css_url"
 - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um CIDRAM anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird CIDRAM die Template-Datei für das normale Theme verwenden.
@@ -276,4 +282,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Zuletzt aktualisiert: 18. April 2016 (2016.04.18).
+Zuletzt aktualisiert: 25. April 2016 (2016.04.25).

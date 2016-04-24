@@ -171,6 +171,12 @@ Configuração geral por CIDRAM.
 ####"signatures" (Categoria)
 Configuração por assinaturas.
 
+"ipv4"
+- A lista dos arquivos de assinaturas IPv4 que CIDRAM deve tentar usar, delimitado por vírgulas. Você pode adicionar entradas aqui Se você quiser incluir arquivos adicionais em CIDRAM.
+
+"ipv6"
+- A lista dos arquivos de assinaturas IPv6 que CIDRAM deve tentar usar, delimitado por vírgulas. Você pode adicionar entradas aqui Se você quiser incluir arquivos adicionais em CIDRAM.
+
 "block_cloud"
 - Bloquear CIDRs identificado como pertencente a webhosting e/ou serviços em nuvem? Se você operar um serviço de API a partir do seu site ou se você espera outros sites para se conectar para o seu site, este deve ser definido como false. Se não, este deve ser definido como true.
 
@@ -274,4 +280,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 17 Abril 2016 (2016.04.17).
+Última Atualização: 25 Abril 2016 (2016.04.25).

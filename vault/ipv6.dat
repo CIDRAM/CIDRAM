@@ -772,16 +772,17 @@ Tag: PlusServer AG
 Tag: Trend Micro
 
 
-# ASNs 14061, 46652, 62567, 65040, 200130, 202018, 393406, 394362 ("Digital Ocean, Inc.").
-# Infected by malware (as per reported by Google): 0.53% (AS14061), 0.78% (AS46652), 1.40% (AS62567),
-#   "ASN not found" (AS65040), 3.17% (AS200130), 2.36% (AS202018), 0.74% (AS393406), 1.83% (AS394362).
-# Updated: 2016.03.29
+# ASNs 14061, 46652, 62567, 65040, 133165, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc.").
+# Infected by malware (as per reported by Google): 0.54% (AS14061), 0.74% (AS46652), 1.39% (AS62567),
+#   "ASN not found" (AS65040), 1.06% (AS133165), 3.23% (AS200130), 5.88% (AS201229), 2.28% (AS202018),
+#   1.82% (AS202109), 0.69% (AS393406), 1.62% (AS394362).
+# Updated: 2016.04.25
 
+2400:6180::/48 Deny Cloud
 2604:a880::/47 Deny Cloud
 2604:a880:400::/48 Deny Cloud
 2610:f0:6b4::/48 Deny Cloud
-2a03:b0c0::/48 Deny Cloud
-2a03:b0c0:2::/48 Deny Cloud
+2a03:b0c0::/46 Deny Cloud
 2604:a880:800::/47 Deny Cloud
 2604:a880:cad::/48 Deny Cloud
 Tag: Digital Ocean, Inc
@@ -2262,6 +2263,35 @@ Tag: Nazwa.pl
 
 2607:f2d8::/32 Deny Cloud
 Tag: WebNX, Inc
+
+
+# ASN 201848 ("Trader soft LLC").
+# Infected by malware (as per reported by Google): 5.01%.
+# Updated: 2016.04.25
+
+2a04:ac00:1::/48 Deny Generic
+Tag: Trader soft LLC
+
+
+# ASN 198068 ("FASTVPS EESTI OU").
+# Infected by malware (as per reported by Google): 4.86%.
+# Updated: 2016.04.25
+
+2a03:f480:1::/48 Deny Generic
+Tag: FASTVPS EESTI OU
+
+
+# ASN 62638 ("Query Foundry, LLC").
+# Infected by malware (as per reported by Google): 3.83%.
+# Updated: 2016.04.25
+
+2402:2f80:4::/48 Deny Cloud
+2402:a580::/32 Deny Cloud
+2602:ffe8:100::/40 Deny Cloud
+2602:ffe8:200::/39 Deny Cloud
+2602:ffe8:400::/40 Deny Cloud
+2605:dd80::/32 Deny Cloud
+Tag: Query Foundry, LLC
 
 
 # ---

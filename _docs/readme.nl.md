@@ -171,6 +171,12 @@ Algemene configuratie voor CIDRAM.
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
 
+"ipv4"
+- Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv4 signature files in CIDRAM bevatten.
+
+"ipv6"
+- Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv6 signature files in CIDRAM bevatten.
+
 "block_cloud"
 - Blokkeren CIDRs geïdentificeerd als behorend tot webhosting/cloud-diensten? Als u een api te bedienen vanaf uw website of als u verwacht dat andere websites aan te sluiten op uw website, dit richtlijn moet worden ingesteld op false. Als u niet, dan, dit richtlijn moet worden ingesteld op true.
 
@@ -274,4 +280,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 17 April 2016 (2016.04.17).
+Laatste Bijgewerkt: 25 April 2016 (2016.04.25).

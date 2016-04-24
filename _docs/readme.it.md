@@ -171,6 +171,12 @@ Generale configurazione per CIDRAM.
 ####"signatures" (Categoria)
 Configurazione per firme.
 
+"ipv4"
+- Un elenco dei file di firma IPv4 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole. È possibile aggiungere voci qui se si desidera includere ulteriori file di firma IPv4 per CIDRAM.
+
+"ipv6"
+- Un elenco dei file di firma IPv6 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole. È possibile aggiungere voci qui se si desidera includere ulteriori file di firma IPv6 per CIDRAM.
+
 "block_cloud"
 - Bloccare CIDRs identificato come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true.
 
@@ -274,4 +280,4 @@ Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 ---
 
 
-Ultimo Aggiornamento: 17 Aprile 2016 (2016.04.17).
+Ultimo Aggiornamento: 25 Aprile 2016 (2016.04.25).

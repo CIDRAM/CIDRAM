@@ -171,6 +171,12 @@ Konfigurasi umum dari CIDRAM.
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
+"ipv4"
+- Daftar file tanda tangan IPv4 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma. Anda dapat menambahkan entri disini jika Anda ingin memasukkan file-file tambahan untuk CIDRAM.
+
+"ipv6"
+- Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma. Anda dapat menambahkan entri disini jika Anda ingin memasukkan file-file tambahan untuk CIDRAM.
+
 "block_cloud"
 - Memblokir CIDR yang diidentifikasi sebagai milik webhosting dan/atau layanan cloud? Jika Anda mengoperasikan layanan API dari website Anda atau jika Anda mengharapkan website lain untuk menghubungkan ke website Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak, maka, direktif ini harus didefinisikan untuk true/benar.
 
@@ -274,4 +280,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 17 April 2016 (2016.04.17).
+Terakhir Diperbarui: 25 April 2016 (2016.04.25).

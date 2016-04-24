@@ -171,6 +171,12 @@ General CIDRAM configuration.
 ####"signatures" (Category)
 Signatures configuration.
 
+"ipv4"
+- A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
+
+"ipv6"
+- A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM.
+
 "block_cloud"
 - Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true.
 
@@ -274,4 +280,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 17th April 2016 (2016.04.17).
+Last Updated: 25th April 2016 (2016.04.25).

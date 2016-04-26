@@ -717,8 +717,8 @@ Tag: PIN-AS
 
 # ASNs 20860, 21130 ("IOMart").
 # Crimeware friendly ISP; Warnings about them at the hpHosts Blog.
-# Infected by malware (as per reported by Google): 0.82% (AS20860), 0% (AS21130).
-# Updated: 2016.03.29
+# Infected by malware (as per reported by Google): 0.91% (AS20860), 0% (AS21130).
+# Updated: 2016.04.25
 
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
@@ -727,6 +727,7 @@ Tag: PIN-AS
 2a03:b201::/32 Deny Cloud
 2a03:ca80::/31 Deny Cloud
 2a04:de40::/32 Deny Cloud
+2a07:4840::/48 Deny Cloud
 Tag: IOMart
 
 
@@ -799,9 +800,10 @@ Tag: Root SA
 
 
 # ASN 11878 ("Tzulo Inc").
-# Infected by malware (as per reported by Google): 1.10%.
-# Updated: 2016.01.19 / Checked: 2016.03.07
+# Infected by malware (as per reported by Google): 1.01%.
+# Updated: 2016.04.25
 
+2607:2780::/48 Deny Cloud
 2607:8b00::/32 Deny Cloud
 2607:9000::/32 Deny Cloud
 Tag: Tzulo Inc
@@ -1080,7 +1082,7 @@ Tag: Psychz Networks
 
 # ASN 35804 ("PP SKS-LUGAN").
 # Infected by malware (as per reported by Google): 3.31%.
-# Updated: 2016.03.30
+# Updated: 2016.03.30 / Checked: 2016.04.25
 
 2a00:ede0::/32 Deny Generic
 Tag: PP SKS-LUGAN
@@ -2294,9 +2296,18 @@ Tag: FASTVPS EESTI OU
 Tag: Query Foundry, LLC
 
 
+# ASN 43513 ("Sia Nano IT").
+# Infected by malware (as per reported by Google): 1.15%.
+# Updated: 2016.04.25
+
+2a00:c68::/32 Deny Cloud
+2a05:8700::/29 Deny Cloud
+Tag: Sia Nano IT
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.23
+# Updated: 2016.04.27
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3202,8 +3213,6 @@ Tag: Query Foundry, LLC
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:174::/46 Deny Bogon
-2001:678:178::/45 Deny Bogon
 2001:678:180::/41 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -3215,6 +3224,7 @@ Tag: Query Foundry, LLC
 2001:679::/32 Deny Bogon
 2001:67a::/31 Deny Bogon
 2001:67c:800::/37 Deny Bogon
+2001:67c:2d5c::/46 Deny Bogon
 2001:67c:3000::/36 Deny Bogon
 2001:67c:4000::/34 Deny Bogon
 2001:67c:8000::/33 Deny Bogon
@@ -5815,7 +5825,15 @@ Tag: Query Foundry, LLC
 2001:df1:e040::/42 Deny Bogon
 2001:df1:e080::/41 Deny Bogon
 2001:df1:e100::/40 Deny Bogon
-2001:df1:e200::/39 Deny Bogon
+2001:df1:e201::/48 Deny Bogon
+2001:df1:e202::/47 Deny Bogon
+2001:df1:e204::/46 Deny Bogon
+2001:df1:e208::/45 Deny Bogon
+2001:df1:e210::/44 Deny Bogon
+2001:df1:e220::/43 Deny Bogon
+2001:df1:e240::/42 Deny Bogon
+2001:df1:e280::/41 Deny Bogon
+2001:df1:e300::/40 Deny Bogon
 2001:df1:e401::/48 Deny Bogon
 2001:df1:e402::/47 Deny Bogon
 2001:df1:e404::/46 Deny Bogon
@@ -26698,7 +26716,13 @@ Tag: Query Foundry, LLC
 2404:dc10::/28 Deny Bogon
 2404:dc20::/27 Deny Bogon
 2404:dc40::/26 Deny Bogon
-2404:dc80::/25 Deny Bogon
+2404:dc81::/32 Deny Bogon
+2404:dc82::/31 Deny Bogon
+2404:dc84::/30 Deny Bogon
+2404:dc88::/29 Deny Bogon
+2404:dc90::/28 Deny Bogon
+2404:dca0::/27 Deny Bogon
+2404:dcc0::/26 Deny Bogon
 2404:dd01::/32 Deny Bogon
 2404:dd02::/31 Deny Bogon
 2404:dd04::/30 Deny Bogon
@@ -26706,7 +26730,13 @@ Tag: Query Foundry, LLC
 2404:dd10::/28 Deny Bogon
 2404:dd20::/27 Deny Bogon
 2404:dd40::/26 Deny Bogon
-2404:dd80::/25 Deny Bogon
+2404:dd81::/32 Deny Bogon
+2404:dd82::/31 Deny Bogon
+2404:dd84::/30 Deny Bogon
+2404:dd88::/29 Deny Bogon
+2404:dd90::/28 Deny Bogon
+2404:dda0::/27 Deny Bogon
+2404:ddc0::/26 Deny Bogon
 2404:de01::/32 Deny Bogon
 2404:de02::/31 Deny Bogon
 2404:de04::/30 Deny Bogon
@@ -26714,7 +26744,13 @@ Tag: Query Foundry, LLC
 2404:de10::/28 Deny Bogon
 2404:de20::/27 Deny Bogon
 2404:de40::/26 Deny Bogon
-2404:de80::/25 Deny Bogon
+2404:de81::/32 Deny Bogon
+2404:de82::/31 Deny Bogon
+2404:de84::/30 Deny Bogon
+2404:de88::/29 Deny Bogon
+2404:de90::/28 Deny Bogon
+2404:dea0::/27 Deny Bogon
+2404:dec0::/26 Deny Bogon
 2404:df01::/32 Deny Bogon
 2404:df02::/31 Deny Bogon
 2404:df04::/30 Deny Bogon
@@ -26722,7 +26758,13 @@ Tag: Query Foundry, LLC
 2404:df10::/28 Deny Bogon
 2404:df20::/27 Deny Bogon
 2404:df40::/26 Deny Bogon
-2404:df80::/25 Deny Bogon
+2404:df81::/32 Deny Bogon
+2404:df82::/31 Deny Bogon
+2404:df84::/30 Deny Bogon
+2404:df88::/29 Deny Bogon
+2404:df90::/28 Deny Bogon
+2404:dfa0::/27 Deny Bogon
+2404:dfc0::/26 Deny Bogon
 2404:e001::/32 Deny Bogon
 2404:e002::/31 Deny Bogon
 2404:e004::/30 Deny Bogon
@@ -26730,14 +26772,26 @@ Tag: Query Foundry, LLC
 2404:e010::/28 Deny Bogon
 2404:e020::/27 Deny Bogon
 2404:e040::/26 Deny Bogon
-2404:e080::/25 Deny Bogon
+2404:e081::/32 Deny Bogon
+2404:e082::/31 Deny Bogon
+2404:e084::/30 Deny Bogon
+2404:e088::/29 Deny Bogon
+2404:e090::/28 Deny Bogon
+2404:e0a0::/27 Deny Bogon
+2404:e0c0::/26 Deny Bogon
 2404:e102::/31 Deny Bogon
 2404:e104::/30 Deny Bogon
 2404:e108::/29 Deny Bogon
 2404:e110::/28 Deny Bogon
 2404:e120::/27 Deny Bogon
 2404:e140::/26 Deny Bogon
-2404:e180::/25 Deny Bogon
+2404:e181::/32 Deny Bogon
+2404:e182::/31 Deny Bogon
+2404:e184::/30 Deny Bogon
+2404:e188::/29 Deny Bogon
+2404:e190::/28 Deny Bogon
+2404:e1a0::/27 Deny Bogon
+2404:e1c0::/26 Deny Bogon
 2404:e201::/32 Deny Bogon
 2404:e202::/31 Deny Bogon
 2404:e204::/30 Deny Bogon
@@ -26745,7 +26799,13 @@ Tag: Query Foundry, LLC
 2404:e210::/28 Deny Bogon
 2404:e220::/27 Deny Bogon
 2404:e240::/26 Deny Bogon
-2404:e280::/25 Deny Bogon
+2404:e281::/32 Deny Bogon
+2404:e282::/31 Deny Bogon
+2404:e284::/30 Deny Bogon
+2404:e288::/29 Deny Bogon
+2404:e290::/28 Deny Bogon
+2404:e2a0::/27 Deny Bogon
+2404:e2c0::/26 Deny Bogon
 2404:e301::/32 Deny Bogon
 2404:e302::/31 Deny Bogon
 2404:e304::/30 Deny Bogon
@@ -26753,7 +26813,13 @@ Tag: Query Foundry, LLC
 2404:e310::/28 Deny Bogon
 2404:e320::/27 Deny Bogon
 2404:e340::/26 Deny Bogon
-2404:e380::/25 Deny Bogon
+2404:e381::/32 Deny Bogon
+2404:e382::/31 Deny Bogon
+2404:e384::/30 Deny Bogon
+2404:e388::/29 Deny Bogon
+2404:e390::/28 Deny Bogon
+2404:e3a0::/27 Deny Bogon
+2404:e3c0::/26 Deny Bogon
 2404:e401::/32 Deny Bogon
 2404:e402::/31 Deny Bogon
 2404:e404::/30 Deny Bogon
@@ -38246,31 +38312,45 @@ Tag: Query Foundry, LLC
 2607:3510::/28 Deny Bogon
 2607:3520::/27 Deny Bogon
 2607:3540::/26 Deny Bogon
-2607:3580::/25 Deny Bogon
+2607:3590::/28 Deny Bogon
+2607:35a0::/27 Deny Bogon
+2607:35c0::/26 Deny Bogon
 2607:3610::/28 Deny Bogon
 2607:3620::/27 Deny Bogon
 2607:3640::/26 Deny Bogon
-2607:3680::/25 Deny Bogon
+2607:3690::/28 Deny Bogon
+2607:36a0::/27 Deny Bogon
+2607:36c0::/26 Deny Bogon
 2607:3710::/28 Deny Bogon
 2607:3720::/27 Deny Bogon
 2607:3740::/26 Deny Bogon
-2607:3780::/25 Deny Bogon
+2607:3790::/28 Deny Bogon
+2607:37a0::/27 Deny Bogon
+2607:37c0::/26 Deny Bogon
 2607:3810::/28 Deny Bogon
 2607:3820::/27 Deny Bogon
 2607:3840::/26 Deny Bogon
-2607:3880::/25 Deny Bogon
+2607:3890::/28 Deny Bogon
+2607:38a0::/27 Deny Bogon
+2607:38c0::/26 Deny Bogon
 2607:3910::/28 Deny Bogon
 2607:3920::/27 Deny Bogon
 2607:3940::/26 Deny Bogon
-2607:3980::/25 Deny Bogon
+2607:3990::/28 Deny Bogon
+2607:39a0::/27 Deny Bogon
+2607:39c0::/26 Deny Bogon
 2607:3a10::/28 Deny Bogon
 2607:3a20::/27 Deny Bogon
 2607:3a40::/26 Deny Bogon
-2607:3a80::/25 Deny Bogon
+2607:3a90::/28 Deny Bogon
+2607:3aa0::/27 Deny Bogon
+2607:3ac0::/26 Deny Bogon
 2607:3b10::/28 Deny Bogon
 2607:3b20::/27 Deny Bogon
 2607:3b40::/26 Deny Bogon
-2607:3b80::/25 Deny Bogon
+2607:3b90::/28 Deny Bogon
+2607:3ba0::/27 Deny Bogon
+2607:3bc0::/26 Deny Bogon
 2607:3c10::/28 Deny Bogon
 2607:3c20::/27 Deny Bogon
 2607:3c40::/26 Deny Bogon
@@ -51411,7 +51491,14 @@ Tag: Query Foundry, LLC
 2801:19:8200::/39 Deny Bogon
 2801:19:8400::/38 Deny Bogon
 2801:19:8800::/37 Deny Bogon
-2801:19:9000::/36 Deny Bogon
+2801:19:9010::/44 Deny Bogon
+2801:19:9020::/43 Deny Bogon
+2801:19:9040::/42 Deny Bogon
+2801:19:9080::/41 Deny Bogon
+2801:19:9100::/40 Deny Bogon
+2801:19:9200::/39 Deny Bogon
+2801:19:9400::/38 Deny Bogon
+2801:19:9800::/37 Deny Bogon
 2801:19:a010::/44 Deny Bogon
 2801:19:a020::/43 Deny Bogon
 2801:19:a040::/42 Deny Bogon
@@ -53585,7 +53672,8 @@ Tag: Query Foundry, LLC
 2803:1308::/29 Deny Bogon
 2803:1310::/28 Deny Bogon
 2803:1320::/27 Deny Bogon
-2803:1340::/26 Deny Bogon
+2803:1350::/28 Deny Bogon
+2803:1360::/27 Deny Bogon
 2803:1390::/28 Deny Bogon
 2803:13a0::/27 Deny Bogon
 2803:13c0::/26 Deny Bogon
@@ -54046,7 +54134,8 @@ Tag: Query Foundry, LLC
 2803:52c0::/26 Deny Bogon
 2803:5310::/28 Deny Bogon
 2803:5320::/27 Deny Bogon
-2803:5340::/26 Deny Bogon
+2803:5350::/28 Deny Bogon
+2803:5360::/27 Deny Bogon
 2803:5390::/28 Deny Bogon
 2803:53a0::/27 Deny Bogon
 2803:53c0::/26 Deny Bogon
@@ -54505,7 +54594,8 @@ Tag: Query Foundry, LLC
 2803:92c0::/26 Deny Bogon
 2803:9310::/28 Deny Bogon
 2803:9320::/27 Deny Bogon
-2803:9340::/26 Deny Bogon
+2803:9350::/28 Deny Bogon
+2803:9360::/27 Deny Bogon
 2803:9390::/28 Deny Bogon
 2803:93a0::/27 Deny Bogon
 2803:93c0::/26 Deny Bogon
@@ -61298,7 +61388,19 @@ Tag: Query Foundry, LLC
 2804:303a::/31 Deny Bogon
 2804:303d::/32 Deny Bogon
 2804:303e::/31 Deny Bogon
-2804:3040::/26 Deny Bogon
+2804:3041::/32 Deny Bogon
+2804:3042::/31 Deny Bogon
+2804:3045::/32 Deny Bogon
+2804:3046::/31 Deny Bogon
+2804:3049::/32 Deny Bogon
+2804:304a::/31 Deny Bogon
+2804:304d::/32 Deny Bogon
+2804:304e::/31 Deny Bogon
+2804:3051::/32 Deny Bogon
+2804:3052::/31 Deny Bogon
+2804:3054::/30 Deny Bogon
+2804:3058::/29 Deny Bogon
+2804:3060::/27 Deny Bogon
 2804:3080::/25 Deny Bogon
 2804:3100::/24 Deny Bogon
 2804:3200::/23 Deny Bogon
@@ -62363,8 +62465,7 @@ Tag: Query Foundry, LLC
 2a00:7c10::/28 Deny Bogon
 2a00:7c28::/29 Deny Bogon
 2a00:7c30::/28 Deny Bogon
-2a00:7c48::/29 Deny Bogon
-2a00:7c50::/28 Deny Bogon
+2a00:7c40::/27 Deny Bogon
 2a00:7c68::/29 Deny Bogon
 2a00:7c70::/28 Deny Bogon
 2a00:7ca8::/29 Deny Bogon
@@ -64587,8 +64688,6 @@ Tag: Query Foundry, LLC
 2a01:5190::/28 Deny Bogon
 2a01:51a8::/29 Deny Bogon
 2a01:51b0::/28 Deny Bogon
-2a01:5208::/29 Deny Bogon
-2a01:5210::/28 Deny Bogon
 2a01:5228::/29 Deny Bogon
 2a01:5230::/28 Deny Bogon
 2a01:5268::/29 Deny Bogon
@@ -69859,8 +69958,6 @@ Tag: Query Foundry, LLC
 2a03:ab70::/28 Deny Bogon
 2a03:ab88::/29 Deny Bogon
 2a03:ab90::/28 Deny Bogon
-2a03:aba8::/29 Deny Bogon
-2a03:abb0::/28 Deny Bogon
 2a03:abc8::/29 Deny Bogon
 2a03:abd0::/28 Deny Bogon
 2a03:ac08::/29 Deny Bogon
@@ -70796,12 +70893,13 @@ Tag: Query Foundry, LLC
 2a04:f308::/29 Deny Bogon
 2a04:fec8::/29 Deny Bogon
 2a04:fed0::/28 Deny Bogon
+2a05:2940::/26 Deny Bogon
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
+2a05:c0c0::/26 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:61c0::/26 Deny Bogon
-2a07:6200::/23 Deny Bogon
-2a07:6400::/22 Deny Bogon
+2a07:65c0::/26 Deny Bogon
+2a07:6600::/23 Deny Bogon
 2a07:6800::/21 Deny Bogon
 2a07:7000::/20 Deny Bogon
 2a07:8000::/17 Deny Bogon
@@ -70816,5 +70914,16 @@ Tag: Query Foundry, LLC
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
 2c0f:f000::/22 Deny Bogon
+2c0f:f5c0::/29 Deny Bogon
+2c0f:f5f8::/29 Deny Bogon
+2c0f:f790::/128 Deny Bogon
+2c0f:f868::/29 Deny Bogon
+2c0f:f910::/29 Deny Bogon
+2c0f:fa50::/29 Deny Bogon
+2c0f:faa8::/29 Deny Bogon
+2c0f:fcc0::/29 Deny Bogon
+2c0f:fe00::/29 Deny Bogon
+2c0f:fee8::/29 Deny Bogon
+2c0f:ff38::/29 Deny Bogon
 4000::/2 Deny Bogon
 8000::/1 Deny Bogon

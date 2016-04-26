@@ -131,6 +131,7 @@ File | Description
 /vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/rules_as6939.php | Custom rules file for AS6939.
 /vault/rules_softlayer.php | Custom rules file for Soft Layer.
+/vault/rules_specific.php | Custom rules file for some specific CIDRs.
 
 ---
 
@@ -280,4 +281,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 25th April 2016 (2016.04.25).
+Last Updated: 27th April 2016 (2016.04.27).

@@ -130,7 +130,8 @@ Bestand | Beschrijving
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/rules_as6939.php | Aangepaste regels bestand voor AS6939.
-/vault/rules_softlayer.php | Aangepaste regels bestand voor Layer.
+/vault/rules_softlayer.php | Aangepaste regels bestand voor Soft Layer.
+/vault/rules_specific.php | Aangepaste regels bestand voor sommige specifiek CIDRs.
 
 ---
 
@@ -280,4 +281,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 25 April 2016 (2016.04.25).
+Laatste Bijgewerkt: 27 April 2016 (2016.04.27).

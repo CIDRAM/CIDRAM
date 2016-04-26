@@ -131,6 +131,7 @@ Fichier | Description
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/rules_as6939.php | Fichier de règles personnalisés pour AS6939.
 /vault/rules_softlayer.php | Fichier de règles personnalisés pour Soft Layer.
+/vault/rules_specific.php | Fichier de règles personnalisés pour certains CIDRs spécifiques.
 
 ---
 
@@ -280,4 +281,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 25 Avril 2016 (2016.04.25).
+Dernière Réactualisé: 27 Avril 2016 (2016.04.27).

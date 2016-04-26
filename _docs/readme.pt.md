@@ -131,6 +131,7 @@ Arquivo | Descrição
 /vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/rules_as6939.php | Arquivo de regras personalizadas para AS6939.
 /vault/rules_softlayer.php | Arquivo de regras personalizadas para Soft Layer.
+/vault/rules_specific.php | Arquivo de regras personalizadas alguns CIDRs específicos.
 
 ---
 
@@ -280,4 +281,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 25 Abril 2016 (2016.04.25).
+Última Atualização: 27 Abril 2016 (2016.04.27).

@@ -133,6 +133,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/template_custom.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
 /vault/rules_as6939.php | 定制規則文件為 AS6939。
 /vault/rules_softlayer.php | 定制規則文件為 Soft Layer。
+/vault/rules_specific.php | 定制規則文件為一些特定的CIDR。
 
 ---
 
@@ -282,4 +283,4 @@ Tag: Section 1
 ---
 
 
-最後更新：2016年4月25日。
+最後更新：2016年4月27日。

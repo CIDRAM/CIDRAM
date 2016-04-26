@@ -131,6 +131,7 @@ Data | Deskripsi
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/rules_as6939.php | File aturan disesuaikan untuk AS6939.
 /vault/rules_softlayer.php | File aturan disesuaikan untuk Soft Layer.
+/vault/rules_specific.php | File aturan disesuaikan untuk beberapa CIDR spesifik.
 
 ---
 
@@ -280,4 +281,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 25 April 2016 (2016.04.25).
+Terakhir Diperbarui: 27 April 2016 (2016.04.27).

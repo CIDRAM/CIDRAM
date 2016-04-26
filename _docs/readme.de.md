@@ -133,6 +133,7 @@ Datei | Beschreibung
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/rules_as6939.php | Benutzerdefinierte Regeldatei für AS6939.
 /vault/rules_softlayer.php | Benutzerdefinierte Regeldatei für Soft Layer.
+/vault/rules_specific.php | Benutzerdefinierte Regeldatei für einige spezifische CIDRs.
 
 ---
 
@@ -282,4 +283,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Zuletzt aktualisiert: 25. April 2016 (2016.04.25).
+Zuletzt aktualisiert: 27. April 2016 (2016.04.27).

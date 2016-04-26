@@ -132,6 +132,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/rules_as6939.php | 定制规则文件为 AS6939。
 /vault/rules_softlayer.php | 定制规则文件为 Soft Layer。
+/vault/rules_specific.php | 定制规则文件为一些特定的CIDR。
 
 ---
 
@@ -281,4 +282,4 @@ Tag: Section 1
 ---
 
 
-最后更新：2016年4月25日。
+最后更新：2016年4月27日。

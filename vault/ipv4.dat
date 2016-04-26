@@ -3104,23 +3104,9 @@ Tag: INFOBOX
 Tag: Sedo Domain Parking
 
 
-# "Spamahost"
-# Unknown ASN (adopted from `badip.inc` of ZB Block).
-# Updated: "77g" (ZB Block Bad IPs) / Checked: 2016.03.31
-# Note: As of the last check, "Spamahost" no longer appears in any BGP tables or announces. Previously listed ranges
-# here remain somewhat suspicious, so, we'll keep them here, for now. This notice will be removed upon confirmation of
-# suspicious behaviour, or, failing that, they (the signatures) will be immediately removed from the signature files if
-# there are any problems (such as false positives) or complaints.
-
-66.96.128.0/18 Deny Spam
-83.229.128.0/17 Deny Spam
-185.53.176.0/22 Deny Spam
-Tag: "Spamahost"
-
-
 # ASN 57043 ("HOSTKEY B.V.").
-# Infected by malware (as per reported by Google): 0.76%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 0.74%.
+# Updated: 2016.01.18 / Checked: 2016.04.27
 
 5.39.216.0/21 Deny Spam
 31.192.109.0/24 Deny Spam
@@ -3133,6 +3119,34 @@ Tag: "Spamahost"
 193.109.68.0/23 Deny Spam
 195.162.68.0/23 Deny Spam
 Tag: HOSTKEY B.V
+
+
+# ASN 49335 ("Mir Telematiki Ltd").
+# Infected by malware (as per reported by Google): 0.28%.
+# Updated: 2016.04.27
+
+31.192.104.0/22 Deny Spam
+31.192.108.0/24 Deny Spam
+31.192.111.0/24 Deny Spam
+62.76.255.0/24 Deny Spam
+80.90.244.0/24 Deny Spam
+86.105.227.0/24 Deny Spam
+86.106.102.0/24 Deny Spam
+91.210.104.0/22 Deny Spam
+91.218.112.0/22 Deny Spam
+91.218.244.0/22 Deny Spam
+91.237.249.0/24 Deny Spam
+94.177.123.0/24 Deny Spam
+111.90.159.0/24 Deny Spam
+141.105.64.0/21 Deny Spam
+158.255.0.0/21 Deny Spam
+185.42.100.0/24 Deny Spam
+185.42.102.0/23 Deny Spam
+185.70.104.0/22 Deny Spam
+185.130.212.0/22 Deny Spam
+185.133.228.0/22 Deny Spam
+193.124.20.0/23 Deny Spam
+Tag: Mir Telematiki Ltd
 
 
 # ASN 15003 ("Nobis Technology Group, LLC").
@@ -3317,10 +3331,10 @@ Tag: Nobis/Ubiquity
 
 
 # ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
-# Infected by malware (as per reported by Google): 0% (AS10532), 0.55% (AS15395), 1.22% (AS19994),
-#   "ASN not found" (AS22720), 0.61% (AS27357), 1.19% (AS33070), 0% (AS44716), 0.77% (AS45187), 2.52% (AS47715),
-#   0.52% (AS58683).
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 0% (AS10532), 0.57% (AS15395), 1.27% (AS19994),
+#   "ASN not found" (AS22720), 0.59% (AS27357), 1.24% (AS33070), 0% (AS44716), 0.81% (AS45187), 2.63% (AS47715),
+#   0.51% (AS58683).
+# Updated: 2016.04.27
 
 5.79.0.0/18 Deny Cloud
 5.152.187.0/24 Deny Cloud
@@ -3331,6 +3345,7 @@ Tag: Nobis/Ubiquity
 46.38.160.0/19 Deny Cloud
 50.28.192.0/19 Deny Cloud
 50.28.224.0/21 Deny Cloud
+50.28.232.0/22 Deny Cloud
 50.56.0.0/15 Deny Cloud
 64.39.0.0/19 Deny Cloud
 64.49.192.0/18 Deny Cloud
@@ -3377,7 +3392,7 @@ Tag: Nobis/Ubiquity
 156.43.59.0/24 Deny Cloud
 159.127.178.0/23 Deny Cloud
 161.47.0.0/18 Deny Cloud
-162.13.0.0/16 Deny Cloud
+162.13.0.0/16 Run rules_specific.php
 162.209.0.0/17 Deny Cloud
 162.220.0.0/24 Deny Cloud
 162.242.128.0/17 Deny Cloud
@@ -3409,6 +3424,7 @@ Tag: Nobis/Ubiquity
 198.210.16.0/21 Deny Cloud
 198.254.64.0/20 Deny Cloud
 199.166.36.0/23 Deny Cloud
+201.131.3.0/24 Deny Cloud
 203.55.21.0/24 Deny Cloud
 203.55.138.0/24 Deny Cloud
 203.60.0.0/17 Deny Cloud
@@ -3437,8 +3453,8 @@ Tag: Rackspace Hosting
 
 
 # ASN 45595 ("Pakistan Telecom").
-# Infected by malware (as per reported by Google): 0.26%.
-# Updated: 2016.03.04
+# Infected by malware (as per reported by Google): 0.25%.
+# Updated: 2016.04.27
 
 39.32.0.0/11 Deny Spam
 59.103.0.0/19 Deny Spam
@@ -9220,6 +9236,409 @@ Tag: Drake Holdings LLC
 Tag: Sia Nano IT
 
 
+# ASNs 8987, 14618, 16509, 39111 ("Amazon.com, Inc.").
+# Infected by malware (as per reported by Google): 0% (AS8987), 1.11% (AS14618), 0.02% (AS16509), 0.14% (AS39111).
+# Updated: 2016.04.27
+
+8.18.144.0/23 Deny Cloud
+23.20.0.0/14 Deny Cloud
+27.0.0.0/22 Deny Cloud
+43.250.192.0/23 Deny Cloud
+46.51.128.0/18 Deny Cloud
+46.51.192.0/20 Deny Cloud
+46.51.216.0/21 Deny Cloud
+46.51.224.0/19 Deny Cloud
+46.137.0.0/16 Deny Cloud
+50.16.0.0/14 Deny Cloud
+50.112.0.0/16 Deny Cloud
+52.0.0.0/13 Deny Cloud
+52.8.0.0/14 Deny Cloud
+52.12.0.0/15 Deny Cloud
+52.15.0.0/16 Deny Cloud
+52.16.0.0/12 Deny Cloud
+52.32.0.0/13 Deny Cloud
+52.40.0.0/14 Deny Cloud
+52.48.0.0/14 Deny Cloud
+52.52.0.0/15 Deny Cloud
+52.58.0.0/15 Deny Cloud
+52.62.0.0/15 Deny Cloud
+52.64.0.0/13 Deny Cloud
+52.72.0.0/15 Deny Cloud
+52.74.0.0/16 Deny Cloud
+52.76.0.0/15 Deny Cloud
+52.79.0.0/16 Deny Cloud
+52.84.0.0/21 Deny Cloud
+52.84.8.0/24 Deny Cloud
+52.84.11.0/24 Deny Cloud
+52.84.13.0/24 Deny Cloud
+52.84.14.0/23 Deny Cloud
+52.84.16.0/20 Deny Cloud
+52.84.32.0/23 Deny Cloud
+52.84.34.0/24 Deny Cloud
+52.84.37.0/24 Deny Cloud
+52.84.39.0/24 Deny Cloud
+52.84.40.0/23 Deny Cloud
+52.84.50.0/23 Deny Cloud
+52.84.55.0/24 Deny Cloud
+52.84.121.0/24 Deny Cloud
+52.84.122.0/23 Deny Cloud
+52.84.124.0/22 Deny Cloud
+52.84.128.0/22 Deny Cloud
+52.84.150.0/24 Deny Cloud
+52.84.194.0/23 Deny Cloud
+52.84.198.0/24 Deny Cloud
+52.84.205.0/24 Deny Cloud
+52.84.206.0/23 Deny Cloud
+52.84.210.0/24 Deny Cloud
+52.84.212.0/23 Deny Cloud
+52.84.216.0/24 Deny Cloud
+52.84.218.0/23 Deny Cloud
+52.84.223.0/24 Deny Cloud
+52.84.224.0/23 Deny Cloud
+52.84.229.0/24 Deny Cloud
+52.84.230.0/23 Deny Cloud
+52.84.232.0/24 Deny Cloud
+52.84.236.0/22 Deny Cloud
+52.84.242.0/23 Deny Cloud
+52.84.246.0/24 Deny Cloud
+52.84.254.0/24 Deny Cloud
+52.85.2.0/24 Deny Cloud
+52.85.4.0/23 Deny Cloud
+52.85.6.0/24 Deny Cloud
+52.85.10.0/23 Deny Cloud
+52.85.12.0/24 Deny Cloud
+52.85.16.0/23 Deny Cloud
+52.85.19.0/24 Deny Cloud
+52.85.22.0/23 Deny Cloud
+52.85.34.0/23 Deny Cloud
+52.85.40.0/23 Deny Cloud
+52.85.43.0/24 Deny Cloud
+52.85.46.0/23 Deny Cloud
+52.85.50.0/24 Deny Cloud
+52.85.57.0/24 Deny Cloud
+52.85.58.0/23 Deny Cloud
+52.85.63.0/24 Deny Cloud
+52.85.64.0/24 Deny Cloud
+52.85.70.0/23 Deny Cloud
+52.85.74.0/24 Deny Cloud
+52.85.76.0/23 Deny Cloud
+52.85.81.0/24 Deny Cloud
+52.85.82.0/23 Deny Cloud
+52.85.85.0/24 Deny Cloud
+52.85.88.0/23 Deny Cloud
+52.85.90.0/24 Deny Cloud
+52.85.94.0/23 Deny Cloud
+52.85.99.0/24 Deny Cloud
+52.85.107.0/24 Deny Cloud
+52.85.110.0/24 Deny Cloud
+52.85.112.0/23 Deny Cloud
+52.85.115.0/24 Deny Cloud
+52.85.118.0/23 Deny Cloud
+52.85.124.0/23 Deny Cloud
+52.85.129.0/24 Deny Cloud
+52.85.130.0/23 Deny Cloud
+52.85.133.0/24 Deny Cloud
+52.85.136.0/23 Deny Cloud
+52.85.140.0/24 Deny Cloud
+52.85.142.0/24 Deny Cloud
+52.85.147.0/24 Deny Cloud
+52.85.148.0/23 Deny Cloud
+52.85.151.0/24 Deny Cloud
+52.85.154.0/23 Deny Cloud
+52.85.159.0/24 Deny Cloud
+52.85.160.0/23 Deny Cloud
+52.85.166.0/23 Deny Cloud
+52.85.171.0/24 Deny Cloud
+52.85.172.0/23 Deny Cloud
+52.85.178.0/23 Deny Cloud
+52.85.180.0/24 Deny Cloud
+52.85.184.0/23 Deny Cloud
+52.85.189.0/24 Deny Cloud
+52.85.196.0/24 Deny Cloud
+52.85.202.0/23 Deny Cloud
+52.85.204.0/22 Deny Cloud
+52.85.208.0/23 Deny Cloud
+52.85.211.0/24 Deny Cloud
+52.85.214.0/23 Deny Cloud
+52.85.217.0/24 Deny Cloud
+52.85.220.0/23 Deny Cloud
+52.85.225.0/24 Deny Cloud
+52.85.229.0/24 Deny Cloud
+52.85.232.0/23 Deny Cloud
+52.85.239.0/24 Deny Cloud
+52.85.240.0/24 Deny Cloud
+52.85.244.0/23 Deny Cloud
+52.85.246.0/24 Deny Cloud
+52.85.249.0/24 Deny Cloud
+52.85.250.0/24 Deny Cloud
+52.85.254.0/24 Deny Cloud
+52.86.0.0/15 Deny Cloud
+52.88.0.0/14 Deny Cloud
+52.92.0.0/19 Deny Cloud
+52.92.32.0/22 Deny Cloud
+52.92.40.0/21 Deny Cloud
+52.92.48.0/20 Deny Cloud
+52.92.64.0/20 Deny Cloud
+52.92.248.0/21 Deny Cloud
+52.94.0.0/21 Deny Cloud
+52.94.8.0/22 Deny Cloud
+52.94.12.0/23 Deny Cloud
+52.94.224.0/20 Deny Cloud
+52.94.254.0/23 Deny Cloud
+52.95.0.0/21 Deny Cloud
+52.95.8.0/23 Deny Cloud
+52.95.16.0/21 Deny Cloud
+52.95.24.0/22 Deny Cloud
+52.95.28.0/24 Deny Cloud
+52.95.30.0/23 Deny Cloud
+52.95.34.0/23 Deny Cloud
+52.95.48.0/22 Deny Cloud
+52.95.56.0/22 Deny Cloud
+52.95.62.0/24 Deny Cloud
+52.95.64.0/19 Deny Cloud
+52.95.96.0/22 Deny Cloud
+52.95.104.0/22 Deny Cloud
+52.95.192.0/20 Deny Cloud
+52.95.212.0/22 Deny Cloud
+52.95.240.0/21 Deny Cloud
+52.95.248.0/24 Deny Cloud
+52.95.252.0/24 Deny Cloud
+52.192.0.0/15 Deny Cloud
+52.196.0.0/14 Deny Cloud
+52.200.0.0/13 Deny Cloud
+52.220.0.0/15 Deny Cloud
+52.222.0.0/17 Deny Cloud
+54.64.0.0/15 Deny Cloud
+54.66.0.0/16 Deny Cloud
+54.67.0.0/17 Deny Cloud
+54.68.0.0/14 Deny Cloud
+54.72.0.0/13 Deny Cloud
+54.80.0.0/12 Deny Cloud
+54.144.0.0/12 Deny Cloud
+54.160.0.0/12 Deny Cloud
+54.176.0.0/14 Deny Cloud
+54.182.0.0/21 Deny Cloud
+54.182.128.0/19 Deny Cloud
+54.182.160.0/21 Deny Cloud
+54.182.174.0/23 Deny Cloud
+54.182.176.0/21 Deny Cloud
+54.182.184.0/23 Deny Cloud
+54.182.192.0/20 Deny Cloud
+54.182.209.0/24 Deny Cloud
+54.182.210.0/23 Deny Cloud
+54.182.212.0/22 Deny Cloud
+54.182.216.0/21 Deny Cloud
+54.182.224.0/22 Deny Cloud
+54.182.228.0/23 Deny Cloud
+54.182.230.0/24 Deny Cloud
+54.183.0.0/16 Deny Cloud
+54.184.0.0/13 Deny Cloud
+54.192.0.0/20 Deny Cloud
+54.192.16.0/22 Deny Cloud
+54.192.24.0/21 Deny Cloud
+54.192.32.0/22 Deny Cloud
+54.192.44.0/22 Deny Cloud
+54.192.48.0/20 Deny Cloud
+54.192.72.0/21 Deny Cloud
+54.192.80.0/20 Deny Cloud
+54.192.96.0/21 Deny Cloud
+54.192.108.0/22 Deny Cloud
+54.192.116.0/22 Deny Cloud
+54.192.120.0/21 Deny Cloud
+54.192.128.0/20 Deny Cloud
+54.192.144.0/21 Deny Cloud
+54.192.156.0/22 Deny Cloud
+54.192.160.0/22 Deny Cloud
+54.192.172.0/22 Deny Cloud
+54.192.180.0/22 Deny Cloud
+54.192.184.0/21 Deny Cloud
+54.192.192.0/20 Deny Cloud
+54.192.208.0/21 Deny Cloud
+54.192.216.0/22 Deny Cloud
+54.192.224.0/21 Deny Cloud
+54.192.232.0/22 Deny Cloud
+54.193.0.0/16 Deny Cloud
+54.194.0.0/15 Deny Cloud
+54.196.0.0/14 Deny Cloud
+54.200.0.0/13 Deny Cloud
+54.208.0.0/13 Deny Cloud
+54.216.0.0/14 Deny Cloud
+54.220.0.0/15 Deny Cloud
+54.224.0.0/14 Deny Cloud
+54.228.0.0/15 Deny Cloud
+54.230.0.0/20 Deny Cloud
+54.230.16.0/22 Deny Cloud
+54.230.24.0/21 Deny Cloud
+54.230.32.0/22 Deny Cloud
+54.230.44.0/22 Deny Cloud
+54.230.48.0/20 Deny Cloud
+54.230.72.0/21 Deny Cloud
+54.230.80.0/20 Deny Cloud
+54.230.96.0/21 Deny Cloud
+54.230.108.0/22 Deny Cloud
+54.230.116.0/22 Deny Cloud
+54.230.120.0/21 Deny Cloud
+54.230.128.0/20 Deny Cloud
+54.230.144.0/21 Deny Cloud
+54.230.156.0/22 Deny Cloud
+54.230.160.0/22 Deny Cloud
+54.230.172.0/22 Deny Cloud
+54.230.180.0/22 Deny Cloud
+54.230.184.0/21 Deny Cloud
+54.230.192.0/20 Deny Cloud
+54.230.208.0/21 Deny Cloud
+54.230.216.0/22 Deny Cloud
+54.230.224.0/21 Deny Cloud
+54.230.232.0/22 Deny Cloud
+54.230.240.0/20 Deny Cloud
+54.231.0.0/17 Deny Cloud
+54.231.128.0/18 Deny Cloud
+54.231.192.0/20 Deny Cloud
+54.231.224.0/20 Deny Cloud
+54.231.240.0/21 Deny Cloud
+54.231.252.0/23 Deny Cloud
+54.231.254.0/24 Deny Cloud
+54.232.0.0/16 Deny Cloud
+54.233.64.0/18 Deny Cloud
+54.233.128.0/17 Deny Cloud
+54.234.0.0/15 Deny Cloud
+54.236.0.0/15 Deny Cloud
+54.238.0.0/16 Deny Cloud
+54.239.2.0/23 Deny Cloud
+54.239.4.0/22 Deny Cloud
+54.239.8.0/21 Deny Cloud
+54.239.16.0/20 Deny Cloud
+54.239.32.0/21 Deny Cloud
+54.239.48.0/20 Deny Cloud
+54.239.96.0/24 Deny Cloud
+54.239.98.0/23 Deny Cloud
+54.239.104.0/23 Deny Cloud
+54.239.108.0/22 Deny Cloud
+54.239.116.0/22 Deny Cloud
+54.239.120.0/21 Deny Cloud
+54.239.128.0/22 Deny Cloud
+54.239.132.0/23 Deny Cloud
+54.239.134.0/24 Deny Cloud
+54.239.136.0/23 Deny Cloud
+54.239.140.0/22 Deny Cloud
+54.239.144.0/23 Deny Cloud
+54.239.151.0/24 Deny Cloud
+54.239.152.0/23 Deny Cloud
+54.239.154.0/24 Deny Cloud
+54.239.156.0/22 Deny Cloud
+54.239.160.0/20 Deny Cloud
+54.239.176.0/21 Deny Cloud
+54.239.186.0/23 Deny Cloud
+54.239.188.0/22 Deny Cloud
+54.239.192.0/22 Deny Cloud
+54.239.196.0/24 Deny Cloud
+54.239.200.0/21 Deny Cloud
+54.239.208.0/21 Deny Cloud
+54.239.216.0/22 Deny Cloud
+54.239.220.0/23 Deny Cloud
+54.239.222.0/24 Deny Cloud
+54.240.0.0/20 Deny Cloud
+54.240.16.0/24 Deny Cloud
+54.240.24.0/22 Deny Cloud
+54.240.128.0/22 Deny Cloud
+54.240.144.0/23 Deny Cloud
+54.240.147.0/24 Deny Cloud
+54.240.148.0/23 Deny Cloud
+54.240.150.0/24 Deny Cloud
+54.240.152.0/24 Deny Cloud
+54.240.156.0/22 Deny Cloud
+54.240.160.0/22 Deny Cloud
+54.240.166.0/23 Deny Cloud
+54.240.168.0/21 Deny Cloud
+54.240.176.0/23 Deny Cloud
+54.240.184.0/22 Deny Cloud
+54.240.190.0/23 Deny Cloud
+54.240.192.0/21 Deny Cloud
+54.240.200.0/24 Deny Cloud
+54.240.202.0/23 Deny Cloud
+54.240.204.0/22 Deny Cloud
+54.240.208.0/20 Deny Cloud
+54.240.225.0/24 Deny Cloud
+54.240.226.0/23 Deny Cloud
+54.240.228.0/22 Deny Cloud
+54.240.232.0/22 Deny Cloud
+54.240.244.0/22 Deny Cloud
+54.240.248.0/21 Deny Cloud
+54.241.0.0/16 Deny Cloud
+54.242.0.0/15 Deny Cloud
+54.244.0.0/14 Deny Cloud
+54.248.0.0/13 Deny Cloud
+67.202.0.0/18 Deny Cloud
+72.21.192.0/19 Deny Cloud
+72.44.32.0/19 Deny Cloud
+75.101.128.0/17 Deny Cloud
+79.125.0.0/17 Deny Cloud
+87.238.80.0/21 Deny Cloud
+96.127.0.0/20 Deny Cloud
+96.127.32.0/19 Deny Cloud
+96.127.64.0/18 Deny Cloud
+103.4.8.0/21 Deny Cloud
+103.246.148.0/22 Deny Cloud
+107.20.0.0/14 Deny Cloud
+122.248.192.0/18 Deny Cloud
+174.129.0.0/16 Deny Cloud
+175.41.128.0/17 Deny Cloud
+176.32.64.0/19 Deny Cloud
+176.32.96.0/20 Deny Cloud
+176.32.112.0/21 Deny Cloud
+176.32.120.0/22 Deny Cloud
+176.32.126.0/23 Deny Cloud
+176.34.0.0/16 Deny Cloud
+177.71.128.0/17 Deny Cloud
+177.72.240.0/21 Deny Cloud
+178.236.0.0/20 Deny Cloud
+184.72.0.0/15 Deny Cloud
+184.169.128.0/17 Deny Cloud
+185.48.120.0/22 Deny Cloud
+199.127.232.0/22 Deny Cloud
+199.255.192.0/22 Deny Cloud
+203.83.220.0/22 Deny Cloud
+204.236.128.0/17 Deny Cloud
+204.246.160.0/22 Deny Cloud
+204.246.164.0/23 Deny Cloud
+204.246.166.0/24 Deny Cloud
+204.246.168.0/24 Deny Cloud
+204.246.174.0/23 Deny Cloud
+204.246.176.0/24 Deny Cloud
+204.246.179.0/24 Deny Cloud
+204.246.180.0/23 Deny Cloud
+204.246.182.0/24 Deny Cloud
+204.246.185.0/24 Deny Cloud
+204.246.186.0/24 Deny Cloud
+204.246.188.0/22 Deny Cloud
+205.251.192.0/21 Deny Cloud
+205.251.200.0/22 Deny Cloud
+205.251.206.0/23 Deny Cloud
+205.251.208.0/23 Deny Cloud
+205.251.211.0/24 Deny Cloud
+205.251.212.0/22 Deny Cloud
+205.251.216.0/24 Deny Cloud
+205.251.218.0/23 Deny Cloud
+205.251.220.0/22 Deny Cloud
+205.251.224.0/20 Deny Cloud
+205.251.240.0/22 Deny Cloud
+205.251.244.0/23 Deny Cloud
+205.251.247.0/24 Deny Cloud
+205.251.248.0/22 Deny Cloud
+205.251.252.0/23 Deny Cloud
+205.251.254.0/24 Deny Cloud
+207.171.160.0/19 Deny Cloud
+216.137.32.0/23 Deny Cloud
+216.137.36.0/22 Deny Cloud
+216.137.42.0/23 Deny Cloud
+216.137.44.0/23 Deny Cloud
+216.137.48.0/22 Deny Cloud
+216.137.52.0/23 Deny Cloud
+216.137.56.0/21 Deny Cloud
+216.182.224.0/20 Deny Cloud
+Tag: Amazon.com, Inc
+
+
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Thanks to chris_c for finding these. :-)
@@ -10429,7 +10848,6 @@ Tag: Azure
 46.151.52.61/32 Deny Generic
 46.151.52.191/32 Deny Generic
 46.151.54.46/32 Deny Generic
-52.76.167.228/32 Deny Generic
 58.195.1.4/32 Deny Generic
 59.157.4.2/32 Deny Generic
 60.13.186.5/32 Deny Generic
@@ -10474,7 +10892,6 @@ Tag: Azure
 123.30.129.179/32 Deny Generic
 124.110.195.160/32 Deny Generic
 128.210.157.251/32 Deny Generic
-141.105.71.73/32 Deny Generic
 151.97.190.239/32 Deny Generic
 157.7.170.62/32 Deny Generic
 160.97.52.229/32 Deny Generic

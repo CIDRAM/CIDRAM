@@ -685,11 +685,13 @@ Tag: Portlane Networks AB
 Tag: Hurricane Electric
 
 
-# ASN 30693 ("Eonix Corporation").
-# Infected by malware (as per reported by Google): 1.95%.
-# Updated: 2016.01.20 / Checked: 2016.03.12
+# ASNs 30693, 49532, 62904 ("Eonix Corporation").
+# Infected by malware (as per reported by Google): 2.11% (AS30693), 0% (AS49532), 0.57% (AS62904).
+# Updated: 2016.04.30
 
-2607:ff28::/32 Deny Generic
+2605:f680::/32 Deny Cloud
+2607:ff28::/32 Deny Cloud
+2a07:440::/32 Deny Cloud
 Tag: Eonix Corporation
 
 
@@ -2390,16 +2392,17 @@ Tag: Netdirekt A.S
 Tag: EVANZO GmbH
 
 
-# ASN 21321 ("Areti Internet Ltd").
-# Infected by malware (as per reported by Google): 0%.
+# ASN 21321 ("Areti Internet Ltd"), ASNs 25745, 4250 ("Alentus Corporation").
+# Infected by malware (as per reported by Google): 0% (AS21321), 0.87% (AS25745) 2.36% (AS4250).
 # Updated: 2016.04.30
 
-2001:590:1405::/48 Deny Generic
-2001:590:3c03::/48 Deny Generic
-2a01:b840::/32 Deny Generic
-2a03:4a80::/45 Deny Generic
-2a03:4a80:8::/47 Deny Generic
-Tag: Areti Internet Ltd
+2001:590:1405::/48 Deny Cloud
+2001:590:3c03::/48 Deny Cloud
+2001:590:4802::/48 Deny Cloud
+2a01:b840::/32 Deny Cloud
+2a03:4a80::/45 Deny Cloud
+2a03:4a80:8::/47 Deny Cloud
+Tag: Areti/Alentus
 
 
 # ASN 31251 ("Falco Networks B.V").

@@ -4002,50 +4002,31 @@ Tag: Inter Connects Inc
 Tag: Hurricane Electric
 
 
-# ASN 30693 ("Eonix Corporation").
-# Infected by malware (as per reported by Google): 1.95%.
-# Updated: 2016.03.12
+# ASNs 30693, 49532, 62904 ("Eonix Corporation").
+# Infected by malware (as per reported by Google): 2.11% (AS30693), 0% (AS49532), 0.57% (AS62904).
+# Updated: 2016.04.30
 
-23.90.0.0/18 Deny Generic
-23.231.0.0/17 Deny Generic
-23.252.16.0/20 Deny Generic
-50.2.0.0/15 Deny Generic
-75.75.224.0/19 Deny Generic
-104.140.0.0/18 Deny Generic
-104.140.64.0/22 Deny Generic
-104.140.72.0/21 Deny Generic
-104.140.84.0/22 Deny Generic
-104.140.88.0/21 Deny Generic
-104.140.96.0/21 Deny Generic
-104.140.108.0/22 Deny Generic
-104.140.112.0/20 Deny Generic
-104.140.128.0/21 Deny Generic
-104.140.136.0/22 Deny Generic
-104.140.144.0/20 Deny Generic
-104.140.160.0/20 Deny Generic
-104.140.176.0/21 Deny Generic
-104.140.188.0/22 Deny Generic
-104.140.192.0/21 Deny Generic
-104.140.204.0/22 Deny Generic
-104.140.208.0/21 Deny Generic
-104.140.217.0/24 Deny Generic
-104.140.218.0/23 Deny Generic
-104.140.220.0/23 Deny Generic
-104.140.222.0/24 Deny Generic
-104.140.224.0/20 Deny Generic
-104.140.240.0/21 Deny Generic
-104.140.248.0/22 Deny Generic
-104.206.0.0/16 Deny Generic
-107.158.0.0/16 Deny Generic
-170.130.0.0/16 Deny Generic
-172.94.93.0/24 Deny Generic
-173.44.128.0/17 Deny Generic
-173.213.64.0/18 Deny Generic
-173.232.0.0/16 Deny Generic
-192.157.60.0/22 Deny Generic
-192.230.144.0/20 Deny Generic
-206.214.64.0/19 Deny Generic
-208.89.216.0/21 Deny Generic
+23.90.0.0/18 Deny Cloud
+23.231.0.0/17 Deny Cloud
+50.2.0.0/15 Deny Cloud
+75.75.224.0/19 Deny Cloud
+104.140.0.0/16 Deny Cloud
+104.193.40.0/22 Deny Cloud
+104.206.0.0/16 Deny Cloud
+104.218.232.0/21 Deny Cloud
+107.158.0.0/16 Deny Cloud
+170.130.0.0/16 Deny Cloud
+172.94.93.0/24 Deny Cloud
+173.44.128.0/17 Deny Cloud
+173.213.64.0/18 Deny Cloud
+173.232.0.0/16 Deny Cloud
+185.137.136.0/22 Deny Cloud
+192.157.60.0/22 Deny Cloud
+192.230.144.0/20 Deny Cloud
+199.66.112.0/22 Deny Cloud
+199.127.72.0/21 Deny Cloud
+206.214.64.0/19 Deny Cloud
+208.89.216.0/21 Deny Cloud
 Tag: Eonix Corporation
 
 
@@ -9929,87 +9910,112 @@ Tag: EVANZO GmbH
 Tag: CNSERVERS LLC
 
 
-# ASN 21321 ("Areti Internet Ltd").
-# Infected by malware (as per reported by Google): 0%.
+# ASN 21321 ("Areti Internet Ltd"), ASNs 25745, 4250 ("Alentus Corporation").
+# Infected by malware (as per reported by Google): 0% (AS21321), 0.87% (AS25745) 2.36% (AS4250).
 # Updated: 2016.04.30
 
-23.27.18.0/24 Deny Generic
-23.27.220.0/24 Deny Generic
-31.187.77.0/24 Deny Generic
-31.187.79.0/24 Deny Generic
-46.16.32.0/21 Deny Generic
-63.141.198.0/23 Deny Generic
-63.141.204.0/24 Deny Generic
-63.141.217.0/24 Deny Generic
-64.40.156.0/24 Deny Generic
-64.40.159.0/24 Deny Generic
-66.171.228.0/24 Deny Generic
-69.22.129.0/24 Deny Generic
-69.22.168.0/22 Deny Generic
-69.22.172.0/24 Deny Generic
-69.22.179.0/24 Deny Generic
-69.22.184.0/22 Deny Generic
-69.31.50.0/23 Deny Generic
-69.31.101.0/24 Deny Generic
-69.31.103.0/24 Deny Generic
-74.115.1.0/24 Deny Generic
-80.251.25.0/24 Deny Generic
-80.251.31.0/24 Deny Generic
-85.158.56.0/21 Deny Generic
-85.237.192.0/19 Deny Generic
-91.247.76.0/24 Deny Generic
-116.119.128.0/24 Deny Generic
-121.100.143.0/24 Deny Generic
-138.99.144.0/24 Deny Generic
-159.253.255.0/24 Deny Generic
-162.217.27.0/24 Deny Generic
-162.217.29.0/24 Deny Generic
-162.217.31.0/24 Deny Generic
-172.99.23.0/24 Deny Generic
-185.20.255.0/24 Deny Generic
-185.89.76.0/22 Deny Generic
-185.93.32.0/22 Deny Generic
-185.100.212.0/22 Deny Generic
-191.101.30.0/24 Deny Generic
-193.109.192.0/21 Deny Generic
-194.169.217.0/24 Deny Generic
-196.53.32.0/23 Deny Generic
-196.53.34.0/24 Deny Generic
-196.53.36.0/24 Deny Generic
-196.53.38.0/24 Deny Generic
-196.53.40.0/23 Deny Generic
-196.53.43.0/24 Deny Generic
-196.53.45.0/24 Deny Generic
-196.53.47.0/24 Deny Generic
-196.53.48.0/24 Deny Generic
-196.53.51.0/24 Deny Generic
-196.53.52.0/24 Deny Generic
-196.53.54.0/24 Deny Generic
-196.53.58.0/24 Deny Generic
-196.53.60.0/24 Deny Generic
-198.47.112.0/24 Deny Generic
-198.47.115.0/24 Deny Generic
-198.144.104.0/24 Deny Generic
-198.144.106.0/23 Deny Generic
-198.144.116.0/24 Deny Generic
-198.144.118.0/24 Deny Generic
-199.68.218.0/23 Deny Generic
-199.101.170.0/23 Deny Generic
-199.255.210.0/24 Deny Generic
-199.255.214.0/23 Deny Generic
-204.14.72.0/24 Deny Generic
-204.14.75.0/24 Deny Generic
-204.14.76.0/22 Deny Generic
-204.93.58.0/23 Deny Generic
-204.93.60.0/24 Deny Generic
-204.93.188.0/24 Deny Generic
-208.123.221.0/24 Deny Generic
-208.123.223.0/24 Deny Generic
-216.177.128.0/23 Deny Generic
-216.185.38.0/24 Deny Generic
-216.185.45.0/24 Deny Generic
-216.185.58.0/24 Deny Generic
-Tag: Areti Internet Ltd
+23.27.14.0/24 Deny Cloud
+23.27.18.0/24 Deny Cloud
+23.27.220.0/24 Deny Cloud
+31.187.77.0/24 Deny Cloud
+31.187.79.0/24 Deny Cloud
+46.16.32.0/21 Deny Cloud
+63.141.198.0/23 Deny Cloud
+63.141.204.0/24 Deny Cloud
+63.141.217.0/24 Deny Cloud
+64.40.144.0/23 Deny Cloud
+64.40.149.0/24 Deny Cloud
+64.40.150.0/23 Deny Cloud
+64.40.153.0/24 Deny Cloud
+64.40.154.0/23 Deny Cloud
+64.40.156.0/24 Deny Cloud
+64.40.158.0/23 Deny Cloud
+66.171.228.0/23 Deny Cloud
+67.220.158.0/24 Deny Cloud
+69.22.129.0/24 Deny Cloud
+69.22.168.0/22 Deny Cloud
+69.22.172.0/24 Deny Cloud
+69.22.174.0/24 Deny Cloud
+69.22.179.0/24 Deny Cloud
+69.22.184.0/22 Deny Cloud
+69.31.50.0/23 Deny Cloud
+69.31.101.0/24 Deny Cloud
+69.31.103.0/24 Deny Cloud
+74.115.1.0/24 Deny Cloud
+80.251.25.0/24 Deny Cloud
+80.251.31.0/24 Deny Cloud
+85.158.56.0/21 Deny Cloud
+85.237.192.0/19 Deny Cloud
+91.247.76.0/24 Deny Cloud
+98.124.175.0/24 Deny Cloud
+116.119.128.0/24 Deny Cloud
+121.100.143.0/24 Deny Cloud
+138.99.144.0/24 Deny Cloud
+159.253.255.0/24 Deny Cloud
+162.217.27.0/24 Deny Cloud
+162.217.28.0/23 Deny Cloud
+162.217.31.0/24 Deny Cloud
+172.99.23.0/24 Deny Cloud
+176.56.174.0/24 Deny Cloud
+181.214.54.0/24 Deny Cloud
+185.20.255.0/24 Deny Cloud
+185.89.76.0/22 Deny Cloud
+185.93.32.0/22 Deny Cloud
+185.100.212.0/22 Deny Cloud
+191.101.30.0/24 Deny Cloud
+193.109.192.0/21 Deny Cloud
+194.169.217.0/24 Deny Cloud
+196.53.32.0/23 Deny Cloud
+196.53.34.0/24 Deny Cloud
+196.53.36.0/22 Deny Cloud
+196.53.40.0/23 Deny Cloud
+196.53.43.0/24 Deny Cloud
+196.53.44.0/22 Deny Cloud
+196.53.48.0/24 Deny Cloud
+196.53.50.0/23 Deny Cloud
+196.53.52.0/23 Deny Cloud
+196.53.54.0/24 Deny Cloud
+196.53.57.0/24 Deny Cloud
+196.53.58.0/23 Deny Cloud
+196.53.60.0/24 Deny Cloud
+196.53.62.0/24 Deny Cloud
+198.47.112.0/24 Deny Cloud
+198.47.115.0/24 Deny Cloud
+198.144.104.0/22 Deny Cloud
+198.144.116.0/24 Deny Cloud
+198.144.118.0/24 Deny Cloud
+199.68.216.0/24 Deny Cloud
+199.68.218.0/23 Deny Cloud
+199.101.170.0/23 Deny Cloud
+199.101.192.0/24 Deny Cloud
+199.101.196.0/24 Deny Cloud
+199.188.236.0/23 Deny Cloud
+199.255.210.0/23 Deny Cloud
+199.255.213.0/24 Deny Cloud
+199.255.214.0/23 Deny Cloud
+204.14.72.0/24 Deny Cloud
+204.14.75.0/24 Deny Cloud
+204.14.76.0/22 Deny Cloud
+204.93.58.0/23 Deny Cloud
+204.93.60.0/24 Deny Cloud
+204.93.188.0/24 Deny Cloud
+208.123.208.0/20 Deny Cloud
+216.177.128.0/23 Deny Cloud
+216.177.131.0/24 Deny Cloud
+216.177.132.0/22 Deny Cloud
+216.177.136.0/21 Deny Cloud
+216.185.33.0/24 Deny Cloud
+216.185.34.0/23 Deny Cloud
+216.185.38.0/24 Deny Cloud
+216.185.40.0/24 Deny Cloud
+216.185.42.0/23 Deny Cloud
+216.185.44.0/23 Deny Cloud
+216.185.52.0/24 Deny Cloud
+216.185.54.0/23 Deny Cloud
+216.185.57.0/24 Deny Cloud
+216.185.58.0/24 Deny Cloud
+216.185.62.0/23 Deny Cloud
+Tag: Areti/Alentus
 
 
 # ASN 31251 ("Falco Networks B.V").
@@ -11218,7 +11224,7 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.04.25
+# Updated: 2016.04.30
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 27.121.64.198/32 Deny Generic
@@ -11236,8 +11242,8 @@ Tag: Azure
 64.85.233.8/32 Deny Generic
 64.90.187.131/32 Deny Generic
 64.127.71.73/32 Deny Generic
+65.182.101.221/32 Deny Generic
 66.45.245.150/32 Deny Generic
-77.40.30.111/32 Deny Generic
 80.65.93.241/32 Deny Generic
 81.169.145.156/32 Deny Generic
 83.15.254.242/32 Deny Generic
@@ -11247,7 +11253,6 @@ Tag: Azure
 87.236.210.124/32 Deny Generic
 87.237.198.245/32 Deny Generic
 87.254.167.37/32 Deny Generic
-91.203.147.183/32 Deny Generic
 91.231.84.245/32 Deny Generic
 91.236.75.11/32 Deny Generic
 91.236.213.74/32 Deny Generic
@@ -11344,7 +11349,7 @@ Tag: Azure
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.07.25
+Expires: 2016.07.30
 
 
 # ---

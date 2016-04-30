@@ -879,8 +879,8 @@ Tag: Global Frag Networks
 
 
 # ASN 54600 ("PEG TECH INC").
-# Infected by malware (as per reported by Google): 11.74%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 12.73%.
+# Updated: 2016.04.19 / Checked: 2016.04.27
 
 104.192.80.0/21 Deny Cloud
 104.233.128.0/18 Deny Cloud
@@ -899,8 +899,8 @@ Tag: PEG TECH INC
 
 
 # ASN 25653 ("FortressITX").
-# Infected by malware (as per reported by Google): 1.37%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 1.35%.
+# Updated: 2016.03.20 / Checked: 2016.04.27
 
 50.60.0.0/15 Deny Cloud
 63.140.0.0/21 Deny Cloud
@@ -1719,9 +1719,9 @@ Tag: World4You
 Tag: Leaseweb
 
 
-# ASN 29073 ("Ecatel Network").
-# Infected by malware (as per reported by Google): 1.21%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# ASN 29073 ("Quasi Networks LTD.", formerly "Ecatel Network").
+# Infected by malware (as per reported by Google): 1.24%.
+# Updated: 2016.04.29
 
 5.8.61.0/24 Deny Generic
 46.243.146.0/24 Deny Generic
@@ -1736,17 +1736,20 @@ Tag: Leaseweb
 89.248.174.0/24 Deny Generic
 93.174.88.0/21 Deny Generic
 94.102.48.0/20 Deny Generic
+154.16.63.0/24 Deny Generic
 172.94.9.0/24 Deny Generic
 185.56.82.0/24 Deny Generic
 188.72.103.0/24 Deny Generic
 188.72.106.0/24 Deny Generic
 188.72.117.0/24 Deny Generic
+191.96.249.0/24 Deny Generic
 213.184.105.0/24 Deny Generic
 213.184.113.0/24 Deny Generic
 213.184.115.0/24 Deny Generic
 213.184.117.0/24 Deny Generic
+213.184.118.0/24 Deny Generic
 213.184.124.0/24 Deny Generic
-Tag: Ecatel
+Tag: Quasi Networks LTD
 
 
 # ASN 40034 ("Confluence Networks Inc").
@@ -3588,11 +3591,8 @@ Tag: Redstation Limited
 # Infected by malware (as per reported by Google): 0%.
 # Updated: 2016.01.19 / Checked: 2016.03.04
 
-46.16.34.0/23 Deny Cloud
 74.115.3.0/24 Deny Cloud
 74.115.5.0/24 Deny Cloud
-85.237.197.0/24 Deny Cloud
-85.237.222.0/24 Deny Cloud
 Tag: AnchorFree Ltd
 
 
@@ -4080,8 +4080,8 @@ Tag: Steadfast Networks
 
 
 # ASN 51088 ("A2B IP B.V.").
-# Infected by malware (as per reported by Google): 0.65%.
-# Updated: 2016.03.29
+# Infected by malware (as per reported by Google): 0.67%.
+# Updated: 2016.04.27
 
 5.44.72.0/21 Deny Cloud
 31.134.200.0/21 Deny Cloud
@@ -4094,7 +4094,13 @@ Tag: Steadfast Networks
 92.240.144.0/21 Deny Cloud
 93.93.120.0/21 Deny Cloud
 93.188.68.0/22 Deny Cloud
-157.97.0.0/16 Deny Cloud
+157.97.0.0/18 Deny Cloud
+157.97.64.0/19 Deny Cloud
+157.97.96.0/23 Deny Cloud
+157.97.100.0/22 Deny Cloud
+157.97.104.0/21 Deny Cloud
+157.97.112.0/20 Deny Cloud
+157.97.128.0/17 Deny Cloud
 178.249.152.0/21 Deny Cloud
 185.30.204.0/22 Deny Cloud
 185.34.220.0/22 Deny Cloud
@@ -6217,7 +6223,6 @@ Tag: WorldStream
 66.55.128.0/19 Deny Cloud
 68.232.160.0/19 Deny Cloud
 85.190.153.0/24 Deny Cloud
-85.203.21.0/24 Deny Cloud
 89.167.134.0/24 Deny Cloud
 103.43.72.0/22 Deny Cloud
 103.195.100.0/22 Deny Cloud
@@ -8517,7 +8522,6 @@ Tag: GHOSTnet GmbH
 69.160.32.0/20 Deny Cloud
 103.44.108.0/24 Deny Cloud
 104.153.148.0/22 Deny Cloud
-104.161.16.0/20 Deny Cloud
 104.193.176.0/21 Deny Cloud
 104.219.0.0/22 Deny Cloud
 104.219.4.0/23 Deny Cloud
@@ -9637,6 +9641,383 @@ Tag: Sia Nano IT
 216.137.56.0/21 Deny Cloud
 216.182.224.0/20 Deny Cloud
 Tag: Amazon.com, Inc
+
+
+# ASN 62282 ("UAB Rakrejus").
+# Infected by malware (as per reported by Google): 2.18%.
+# Updated: 2016.04.29
+
+31.14.176.0/22 Deny Cloud
+79.98.24.0/21 Deny Cloud
+109.235.64.0/21 Deny Cloud
+185.5.52.0/22 Deny Cloud
+185.38.164.0/22 Deny Cloud
+185.69.52.0/22 Deny Cloud
+185.79.244.0/22 Deny Cloud
+185.81.164.0/22 Deny Cloud
+194.135.80.0/20 Deny Cloud
+212.24.96.0/20 Deny Cloud
+Tag: UAB Rakrejus
+
+
+# ASN 54641 ("InMotion Hosting, Inc.").
+# Infected by malware (as per reported by Google): 2.08%.
+# Updated: 2016.04.29
+
+23.235.192.0/24 Deny Cloud
+23.235.194.0/23 Deny Cloud
+23.235.196.0/22 Deny Cloud
+23.235.200.0/21 Deny Cloud
+67.199.146.0/24 Deny Cloud
+69.174.48.0/24 Deny Cloud
+69.174.52.0/23 Deny Cloud
+69.174.114.0/23 Deny Cloud
+70.39.144.0/21 Deny Cloud
+70.39.232.0/22 Deny Cloud
+70.39.248.0/22 Deny Cloud
+104.193.140.0/22 Deny Cloud
+172.81.116.0/22 Deny Cloud
+173.205.124.0/22 Deny Cloud
+198.46.80.0/20 Deny Cloud
+199.223.114.0/23 Deny Cloud
+216.194.170.0/23 Deny Cloud
+Tag: InMotion Hosting, Inc
+
+
+# ASN 53755 ("Input Output Flood LLC").
+# Infected by malware (as per reported by Google): 5.70%.
+# Updated: 2016.04.29
+
+23.226.64.0/20 Deny Cloud
+104.161.0.0/16 Deny Cloud
+107.167.64.0/19 Deny Cloud
+107.178.64.0/18 Deny Cloud
+107.189.128.0/18 Deny Cloud
+148.163.0.0/17 Deny Cloud
+162.213.208.0/22 Deny Cloud
+162.218.112.0/21 Deny Cloud
+184.164.64.0/19 Deny Cloud
+192.30.136.0/22 Deny Cloud
+192.110.160.0/21 Deny Cloud
+199.30.48.0/21 Deny Cloud
+199.167.132.0/22 Deny Cloud
+199.231.84.0/22 Deny Cloud
+Tag: IOFlood LLC
+
+
+# ASN 51557 ("FBS BILISIM COZUMLERI TIC LTD STI").
+# Infected by malware (as per reported by Google): 3.25%.
+# Updated: 2016.04.29
+
+93.89.224.0/20 Deny Cloud
+185.33.232.0/22 Deny Cloud
+185.111.232.0/23 Deny Cloud
+185.111.234.0/24 Deny Cloud
+Tag: FBS BILISIM
+
+
+# ASN 45753 ("Unit 1205-1207").
+# Infected by malware (as per reported by Google): 2.95%.
+# Updated: 2016.04.29
+
+43.225.196.0/22 Deny Generic
+45.121.104.0/22 Deny Generic
+45.125.4.0/22 Deny Generic
+103.1.224.0/22 Deny Generic
+103.31.8.0/22 Deny Generic
+103.42.104.0/22 Deny Generic
+103.44.160.0/22 Deny Generic
+103.57.108.0/22 Deny Generic
+103.61.184.0/22 Deny Generic
+103.61.240.0/22 Deny Generic
+103.193.132.0/22 Deny Generic
+103.199.104.0/22 Deny Generic
+103.203.48.0/22 Deny Generic
+103.212.96.0/22 Deny Generic
+103.249.196.0/22 Deny Generic
+106.3.86.0/24 Deny Generic
+110.173.48.0/20 Deny Generic
+111.68.0.0/20 Deny Generic
+112.121.160.0/19 Deny Generic
+116.213.36.0/22 Deny Generic
+119.42.144.0/21 Deny Generic
+137.59.20.0/22 Deny Generic
+139.5.200.0/22 Deny Generic
+175.41.16.0/20 Deny Generic
+180.87.114.0/24 Deny Generic
+180.178.32.0/19 Deny Generic
+182.16.0.0/18 Deny Generic
+182.16.64.0/21 Deny Generic
+182.16.72.0/22 Deny Generic
+182.16.76.0/24 Deny Generic
+182.16.96.0/24 Deny Generic
+182.16.120.0/24 Deny Generic
+Tag: AS45753
+
+
+# ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
+# Infected by malware (as per reported by Google): 2.36%.
+# Updated: 2016.04.29
+
+43.241.52.0/22 Deny Cloud
+103.9.168.0/22 Deny Cloud
+103.11.204.0/22 Deny Cloud
+103.252.152.0/22 Deny Cloud
+110.232.140.0/22 Deny Cloud
+112.140.176.0/21 Deny Cloud
+223.130.24.0/22 Deny Cloud
+Tag: SYNERGY WHOLESALE
+
+
+# ASN 45538 ("Online data services").
+# Infected by malware (as per reported by Google): 2.17%.
+# Updated: 2016.04.29
+
+43.239.224.0/22 Deny Cloud
+45.117.164.0/22 Deny Cloud
+45.125.236.0/24 Deny Cloud
+103.15.48.0/22 Deny Cloud
+103.56.164.0/23 Deny Cloud
+103.200.20.0/23 Deny Cloud
+103.234.36.0/22 Deny Cloud
+103.235.212.0/22 Deny Cloud
+103.237.148.0/22 Deny Cloud
+103.238.76.0/22 Deny Cloud
+103.249.100.0/22 Deny Cloud
+112.78.0.0/20 Deny Cloud
+125.253.112.0/20 Deny Cloud
+Tag: AS45538
+
+
+# ASN 45102 ("Alibaba (China) Technology Co., Ltd.").
+# Infected by malware (as per reported by Google): 1.87%.
+# Updated: 2016.04.29
+
+47.88.0.0/16 Deny Cloud
+47.89.0.0/18 Deny Cloud
+47.89.128.0/17 Deny Cloud
+47.90.0.0/16 Deny Cloud
+47.91.99.0/24 Deny Cloud
+116.251.64.0/18 Deny Cloud
+140.205.122.0/24 Deny Cloud
+198.11.128.0/18 Deny Cloud
+205.204.96.0/19 Deny Cloud
+Tag: Alibaba
+
+
+# ASN 45090 ("Shenzhen Tencent Computer Systems Company Limited").
+# Infected by malware (as per reported by Google): 3.29%.
+# Updated: 2016.04.29
+
+43.242.252.0/22 Deny Cloud
+43.247.196.0/22 Deny Cloud
+58.87.64.0/18 Deny Cloud
+103.38.116.0/22 Deny Cloud
+103.238.16.0/22 Deny Cloud
+115.159.0.0/16 Deny Cloud
+118.89.0.0/16 Deny Cloud
+119.28.28.0/24 Deny Cloud
+119.29.0.0/16 Deny Cloud
+121.51.0.0/16 Deny Cloud
+122.152.192.0/18 Deny Cloud
+123.206.0.0/15 Deny Cloud
+139.199.0.0/16 Deny Cloud
+182.254.0.0/16 Deny Cloud
+203.195.128.0/17 Deny Cloud
+211.159.128.0/17 Deny Cloud
+Tag: Shenzhen Tencent
+
+
+# ASN 44112 ("SpaceWeb Ltd").
+# Infected by malware (as per reported by Google): 1.73%.
+# Updated: 2016.04.29
+
+77.222.40.0/22 Deny Cloud
+77.222.50.0/23 Deny Cloud
+77.222.54.0/23 Deny Cloud
+77.222.56.0/21 Deny Cloud
+Tag: SpaceWeb Ltd
+
+
+# ASN 43391 ("Netdirekt A.S.").
+# Infected by malware (as per reported by Google): 2.46%.
+# Updated: 2016.04.29
+
+77.223.128.0/20 Deny Cloud
+77.223.152.0/23 Deny Cloud
+77.223.156.0/24 Deny Cloud
+77.223.158.0/24 Deny Cloud
+78.40.224.0/21 Deny Cloud
+91.191.160.0/20 Deny Cloud
+92.45.58.0/24 Deny Cloud
+92.45.72.0/24 Deny Cloud
+93.187.200.0/21 Deny Cloud
+176.53.7.0/24 Deny Cloud
+178.18.192.0/23 Deny Cloud
+178.18.196.0/22 Deny Cloud
+178.18.200.0/24 Deny Cloud
+178.18.204.0/23 Deny Cloud
+185.131.208.0/22 Deny Cloud
+195.244.32.0/23 Deny Cloud
+195.244.35.0/24 Deny Cloud
+195.244.36.0/23 Deny Cloud
+195.244.38.0/24 Deny Cloud
+195.244.41.0/24 Deny Cloud
+195.244.42.0/24 Deny Cloud
+195.244.55.0/24 Deny Cloud
+195.244.57.0/24 Deny Cloud
+195.244.58.0/23 Deny Cloud
+195.244.60.0/24 Deny Cloud
+195.244.62.0/23 Deny Cloud
+212.252.24.0/22 Deny Cloud
+212.252.36.0/24 Deny Cloud
+212.252.45.0/24 Deny Cloud
+212.252.46.0/24 Deny Cloud
+213.74.4.0/24 Deny Cloud
+213.238.169.0/24 Deny Cloud
+Tag: Netdirekt A.S
+
+
+# ASN 42730 ("EVANZO e-commerce GmbH").
+# Infected by malware (as per reported by Google): 2.23%.
+# Updated: 2016.04.29
+
+87.238.192.0/21 Deny Cloud
+178.254.0.0/19 Deny Cloud
+178.254.32.0/20 Deny Cloud
+178.254.48.0/24 Deny Cloud
+178.254.50.0/23 Deny Cloud
+178.254.52.0/22 Deny Cloud
+178.254.56.0/22 Deny Cloud
+178.254.62.0/24 Deny Cloud
+195.90.193.0/24 Deny Cloud
+195.90.194.0/23 Deny Cloud
+195.90.196.0/22 Deny Cloud
+195.90.200.0/21 Deny Cloud
+195.90.208.0/20 Deny Cloud
+195.90.224.0/19 Deny Cloud
+Tag: EVANZO GmbH
+
+
+# ASN 40065 ("CNSERVERS LLC").
+# Infected by malware (as per reported by Google): 4.74%.
+# Updated: 2016.04.29
+
+38.103.161.0/24 Deny Cloud
+45.43.6.0/24 Deny Cloud
+45.43.9.0/24 Deny Cloud
+45.43.23.0/24 Deny Cloud
+104.37.29.0/24 Deny Cloud
+104.143.94.0/24 Deny Cloud
+104.194.206.0/24 Deny Cloud
+104.194.212.0/24 Deny Cloud
+107.161.32.0/24 Deny Cloud
+107.191.112.0/24 Deny Cloud
+162.212.252.0/22 Deny Cloud
+162.218.48.0/21 Deny Cloud
+162.252.8.0/22 Deny Cloud
+162.253.66.0/23 Deny Cloud
+172.81.150.0/24 Deny Cloud
+174.127.195.0/24 Deny Cloud
+192.133.80.0/23 Deny Cloud
+198.12.12.0/22 Deny Cloud
+198.47.121.0/24 Deny Cloud
+198.57.47.0/24 Deny Cloud
+199.83.48.0/23 Deny Cloud
+199.83.50.0/24 Deny Cloud
+208.81.164.0/22 Deny Cloud
+Tag: CNSERVERS LLC
+
+
+# ASN 21321 ("Areti Internet Ltd").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.04.30
+
+23.27.18.0/24 Deny Generic
+23.27.220.0/24 Deny Generic
+31.187.77.0/24 Deny Generic
+31.187.79.0/24 Deny Generic
+46.16.32.0/21 Deny Generic
+63.141.198.0/23 Deny Generic
+63.141.204.0/24 Deny Generic
+63.141.217.0/24 Deny Generic
+64.40.156.0/24 Deny Generic
+64.40.159.0/24 Deny Generic
+66.171.228.0/24 Deny Generic
+69.22.129.0/24 Deny Generic
+69.22.168.0/22 Deny Generic
+69.22.172.0/24 Deny Generic
+69.22.179.0/24 Deny Generic
+69.22.184.0/22 Deny Generic
+69.31.50.0/23 Deny Generic
+69.31.101.0/24 Deny Generic
+69.31.103.0/24 Deny Generic
+74.115.1.0/24 Deny Generic
+80.251.25.0/24 Deny Generic
+80.251.31.0/24 Deny Generic
+85.158.56.0/21 Deny Generic
+85.237.192.0/19 Deny Generic
+91.247.76.0/24 Deny Generic
+116.119.128.0/24 Deny Generic
+121.100.143.0/24 Deny Generic
+138.99.144.0/24 Deny Generic
+159.253.255.0/24 Deny Generic
+162.217.27.0/24 Deny Generic
+162.217.29.0/24 Deny Generic
+162.217.31.0/24 Deny Generic
+172.99.23.0/24 Deny Generic
+185.20.255.0/24 Deny Generic
+185.89.76.0/22 Deny Generic
+185.93.32.0/22 Deny Generic
+185.100.212.0/22 Deny Generic
+191.101.30.0/24 Deny Generic
+193.109.192.0/21 Deny Generic
+194.169.217.0/24 Deny Generic
+196.53.32.0/23 Deny Generic
+196.53.34.0/24 Deny Generic
+196.53.36.0/24 Deny Generic
+196.53.38.0/24 Deny Generic
+196.53.40.0/23 Deny Generic
+196.53.43.0/24 Deny Generic
+196.53.45.0/24 Deny Generic
+196.53.47.0/24 Deny Generic
+196.53.48.0/24 Deny Generic
+196.53.51.0/24 Deny Generic
+196.53.52.0/24 Deny Generic
+196.53.54.0/24 Deny Generic
+196.53.58.0/24 Deny Generic
+196.53.60.0/24 Deny Generic
+198.47.112.0/24 Deny Generic
+198.47.115.0/24 Deny Generic
+198.144.104.0/24 Deny Generic
+198.144.106.0/23 Deny Generic
+198.144.116.0/24 Deny Generic
+198.144.118.0/24 Deny Generic
+199.68.218.0/23 Deny Generic
+199.101.170.0/23 Deny Generic
+199.255.210.0/24 Deny Generic
+199.255.214.0/23 Deny Generic
+204.14.72.0/24 Deny Generic
+204.14.75.0/24 Deny Generic
+204.14.76.0/22 Deny Generic
+204.93.58.0/23 Deny Generic
+204.93.60.0/24 Deny Generic
+204.93.188.0/24 Deny Generic
+208.123.221.0/24 Deny Generic
+208.123.223.0/24 Deny Generic
+216.177.128.0/23 Deny Generic
+216.185.38.0/24 Deny Generic
+216.185.45.0/24 Deny Generic
+216.185.58.0/24 Deny Generic
+Tag: Areti Internet Ltd
+
+
+# ASN 31251 ("Falco Networks B.V").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.04.30
+
+85.203.0.0/18 Deny Cloud
+Tag: Falco Networks B.V
 
 
 # ---
@@ -10968,7 +11349,7 @@ Expires: 2016.07.25
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.04.27
+# Updated: 2016.04.30
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 0.0.0.0/8 Deny Bogon
@@ -11009,7 +11390,14 @@ Expires: 2016.07.25
 45.128.0.0/11 Deny Bogon
 45.220.0.0/15 Deny Bogon
 45.222.0.0/16 Deny Bogon
-45.248.0.0/13 Deny Bogon
+45.248.12.0/22 Deny Bogon
+45.248.16.0/20 Deny Bogon
+45.248.32.0/19 Deny Bogon
+45.248.64.0/18 Deny Bogon
+45.248.128.0/17 Deny Bogon
+45.249.0.0/16 Deny Bogon
+45.250.0.0/15 Deny Bogon
+45.252.0.0/14 Deny Bogon
 46.29.24.0/21 Deny Bogon
 46.30.184.0/21 Deny Bogon
 46.183.184.0/21 Deny Bogon
@@ -11479,12 +11867,12 @@ Expires: 2016.07.25
 102.0.0.0/8 Deny Bogon
 103.64.0.0/10 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.215.135.0/24 Deny Bogon
-103.215.210.0/23 Deny Bogon
-103.215.212.0/22 Deny Bogon
-103.215.216.0/21 Deny Bogon
-103.215.224.0/19 Deny Bogon
-103.216.0.0/13 Deny Bogon
+103.216.135.0/24 Deny Bogon
+103.216.160.0/19 Deny Bogon
+103.216.192.0/18 Deny Bogon
+103.217.0.0/16 Deny Bogon
+103.218.0.0/15 Deny Bogon
+103.220.0.0/14 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
 109.71.248.0/21 Deny Bogon
@@ -11512,15 +11900,14 @@ Expires: 2016.07.25
 154.65.16.0/20 Deny Bogon
 154.114.128.0/17 Deny Bogon
 154.115.128.0/17 Deny Bogon
-154.128.0.0/9 Deny Bogon
+154.128.0.0/10 Deny Bogon
+154.192.0.0/11 Deny Bogon
+154.224.0.0/12 Deny Bogon
 155.12.128.0/17 Deny Bogon
 155.255.0.0/16 Deny Bogon
 156.0.0.0/16 Deny Bogon
 156.38.0.0/16 Deny Bogon
 156.155.0.0/16 Deny Bogon
-157.119.92.0/22 Deny Bogon
-157.119.96.0/19 Deny Bogon
-157.119.128.0/17 Deny Bogon
 160.0.0.0/16 Deny Bogon
 160.77.0.0/16 Deny Bogon
 160.89.0.0/16 Deny Bogon
@@ -11538,13 +11925,9 @@ Expires: 2016.07.25
 165.73.0.0/16 Deny Bogon
 168.194.0.0/15 Deny Bogon
 168.196.0.0/15 Deny Bogon
-168.228.204.0/22 Deny Bogon
-168.232.148.0/22 Deny Bogon
-168.232.152.0/21 Deny Bogon
-168.232.160.0/21 Deny Bogon
-168.232.172.0/22 Deny Bogon
-168.232.176.0/20 Deny Bogon
-168.232.192.0/18 Deny Bogon
+168.232.212.0/22 Deny Bogon
+168.232.216.0/21 Deny Bogon
+168.232.224.0/19 Deny Bogon
 169.254.0.0/16 Deny Bogon
 170.0.0.0/16 Deny Bogon
 170.78.0.0/15 Deny Bogon
@@ -11591,10 +11974,12 @@ Expires: 2016.07.25
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.149.60.0/22 Deny Bogon
-185.149.64.0/18 Deny Bogon
-185.149.128.0/17 Deny Bogon
-185.150.0.0/15 Deny Bogon
+185.150.20.0/22 Deny Bogon
+185.150.24.0/21 Deny Bogon
+185.150.32.0/19 Deny Bogon
+185.150.64.0/18 Deny Bogon
+185.150.128.0/17 Deny Bogon
+185.151.0.0/16 Deny Bogon
 185.152.0.0/13 Deny Bogon
 185.160.0.0/11 Deny Bogon
 185.192.0.0/10 Deny Bogon
@@ -12454,6 +12839,7 @@ Expires: 2016.07.25
 193.105.31.0/24 Deny Bogon
 193.105.81.0/24 Deny Bogon
 193.105.84.0/24 Deny Bogon
+193.105.88.0/24 Deny Bogon
 193.105.95.0/24 Deny Bogon
 193.105.96.0/24 Deny Bogon
 193.105.121.0/24 Deny Bogon
@@ -14598,7 +14984,6 @@ Expires: 2016.07.25
 200.10.174.0/23 Deny Bogon
 200.10.180.0/23 Deny Bogon
 200.10.192.0/23 Deny Bogon
-200.23.116.0/24 Deny Bogon
 200.23.118.0/23 Deny Bogon
 200.23.148.0/24 Deny Bogon
 200.23.152.0/23 Deny Bogon

@@ -155,8 +155,8 @@ Tag: Global Frag Networks
 
 
 # ASN 54600 ("PEG TECH INC").
-# Infected by malware (as per reported by Google): 11.74%.
-# Updated: 2016.03.20 / Checked: 2016.04.19
+# Infected by malware (as per reported by Google): 12.73%.
+# Updated: 2016.03.20 / Checked: 2016.04.27
 
 2605:7280::/32 Deny Cloud
 Tag: PEG TECH INC
@@ -705,8 +705,8 @@ Tag: Steadfast Networks
 
 
 # ASN 51088 ("A2B IP B.V.").
-# Infected by malware (as per reported by Google): 0.65%.
-# Updated: 2016.03.29
+# Infected by malware (as per reported by Google): 0.67%.
+# Updated: 2016.03.29 / Checked: 2016.04.27
 
 2001:67c:1064::/48 Deny Cloud
 2a02:1668::/32 Deny Cloud
@@ -2341,9 +2341,79 @@ Tag: Sia Nano IT
 Tag: Amazon.com, Inc
 
 
+# ASN 62282 ("UAB Rakrejus").
+# Infected by malware (as per reported by Google): 2.18%.
+# Updated: 2016.04.29
+
+2a01:41a0::/32 Deny Cloud
+Tag: UAB Rakrejus
+
+
+# ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
+# Infected by malware (as per reported by Google): 2.36%.
+# Updated: 2016.04.29
+
+2400:8f80::/47 Deny Cloud
+2400:b800::/47 Deny Cloud
+Tag: SYNERGY WHOLESALE
+
+
+# ASN 45090 ("Shenzhen Tencent Computer Systems Company Limited").
+# Infected by malware (as per reported by Google): 3.29%.
+# Updated: 2016.04.29
+
+2402:4e00::/35 Deny Cloud
+Tag: Shenzhen Tencent
+
+
+# ASN 44112 ("SpaceWeb Ltd").
+# Infected by malware (as per reported by Google): 1.73%.
+# Updated: 2016.04.29
+
+2a02:408:7722::/48 Deny Cloud
+Tag: SpaceWeb Ltd
+
+
+# ASN 43391 ("Netdirekt A.S.").
+# Infected by malware (as per reported by Google): 2.46%.
+# Updated: 2016.04.29
+
+2a01:aac0::/32 Deny Cloud
+Tag: Netdirekt A.S
+
+
+# ASN 42730 ("EVANZO e-commerce GmbH").
+# Infected by malware (as per reported by Google): 2.23%.
+# Updated: 2016.04.29
+
+2a00:6800::/32 Deny Cloud
+Tag: EVANZO GmbH
+
+
+# ASN 21321 ("Areti Internet Ltd").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.04.30
+
+2001:590:1405::/48 Deny Generic
+2001:590:3c03::/48 Deny Generic
+2a01:b840::/32 Deny Generic
+2a03:4a80::/45 Deny Generic
+2a03:4a80:8::/47 Deny Generic
+Tag: Areti Internet Ltd
+
+
+# ASN 31251 ("Falco Networks B.V").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.04.30
+
+2a02:a10::/32 Deny Cloud
+2a03:60c0::/32 Deny Cloud
+Tag: Falco Networks B.V
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.04.27
+# Updated: 2016.04.30
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3249,7 +3319,10 @@ Tag: Amazon.com, Inc
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:180::/41 Deny Bogon
+2001:678:188::/45 Deny Bogon
+2001:678:190::/44 Deny Bogon
+2001:678:1a0::/43 Deny Bogon
+2001:678:1c0::/42 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
 2001:678:800::/37 Deny Bogon
@@ -3260,7 +3333,6 @@ Tag: Amazon.com, Inc
 2001:679::/32 Deny Bogon
 2001:67a::/31 Deny Bogon
 2001:67c:800::/37 Deny Bogon
-2001:67c:2d5c::/46 Deny Bogon
 2001:67c:3000::/36 Deny Bogon
 2001:67c:4000::/34 Deny Bogon
 2001:67c:8000::/33 Deny Bogon
@@ -5879,7 +5951,15 @@ Tag: Amazon.com, Inc
 2001:df1:e440::/42 Deny Bogon
 2001:df1:e480::/41 Deny Bogon
 2001:df1:e500::/40 Deny Bogon
-2001:df1:e600::/39 Deny Bogon
+2001:df1:e601::/48 Deny Bogon
+2001:df1:e602::/47 Deny Bogon
+2001:df1:e604::/46 Deny Bogon
+2001:df1:e608::/45 Deny Bogon
+2001:df1:e610::/44 Deny Bogon
+2001:df1:e620::/43 Deny Bogon
+2001:df1:e640::/42 Deny Bogon
+2001:df1:e680::/41 Deny Bogon
+2001:df1:e700::/40 Deny Bogon
 2001:df1:e801::/48 Deny Bogon
 2001:df1:e802::/47 Deny Bogon
 2001:df1:e804::/46 Deny Bogon
@@ -5889,7 +5969,15 @@ Tag: Amazon.com, Inc
 2001:df1:e840::/42 Deny Bogon
 2001:df1:e880::/41 Deny Bogon
 2001:df1:e900::/40 Deny Bogon
-2001:df1:ea00::/39 Deny Bogon
+2001:df1:ea01::/48 Deny Bogon
+2001:df1:ea02::/47 Deny Bogon
+2001:df1:ea04::/46 Deny Bogon
+2001:df1:ea08::/45 Deny Bogon
+2001:df1:ea10::/44 Deny Bogon
+2001:df1:ea20::/43 Deny Bogon
+2001:df1:ea40::/42 Deny Bogon
+2001:df1:ea80::/41 Deny Bogon
+2001:df1:eb00::/40 Deny Bogon
 2001:df1:ec01::/48 Deny Bogon
 2001:df1:ec02::/47 Deny Bogon
 2001:df1:ec04::/46 Deny Bogon
@@ -5899,7 +5987,15 @@ Tag: Amazon.com, Inc
 2001:df1:ec40::/42 Deny Bogon
 2001:df1:ec80::/41 Deny Bogon
 2001:df1:ed00::/40 Deny Bogon
-2001:df1:ee00::/39 Deny Bogon
+2001:df1:ee01::/48 Deny Bogon
+2001:df1:ee02::/47 Deny Bogon
+2001:df1:ee04::/46 Deny Bogon
+2001:df1:ee08::/45 Deny Bogon
+2001:df1:ee10::/44 Deny Bogon
+2001:df1:ee20::/43 Deny Bogon
+2001:df1:ee40::/42 Deny Bogon
+2001:df1:ee80::/41 Deny Bogon
+2001:df1:ef00::/40 Deny Bogon
 2001:df1:f001::/48 Deny Bogon
 2001:df1:f002::/47 Deny Bogon
 2001:df1:f004::/46 Deny Bogon
@@ -5909,7 +6005,15 @@ Tag: Amazon.com, Inc
 2001:df1:f040::/42 Deny Bogon
 2001:df1:f080::/41 Deny Bogon
 2001:df1:f100::/40 Deny Bogon
-2001:df1:f200::/39 Deny Bogon
+2001:df1:f201::/48 Deny Bogon
+2001:df1:f202::/47 Deny Bogon
+2001:df1:f204::/46 Deny Bogon
+2001:df1:f208::/45 Deny Bogon
+2001:df1:f210::/44 Deny Bogon
+2001:df1:f220::/43 Deny Bogon
+2001:df1:f240::/42 Deny Bogon
+2001:df1:f280::/41 Deny Bogon
+2001:df1:f300::/40 Deny Bogon
 2001:df1:f401::/48 Deny Bogon
 2001:df1:f402::/47 Deny Bogon
 2001:df1:f404::/46 Deny Bogon
@@ -5919,7 +6023,15 @@ Tag: Amazon.com, Inc
 2001:df1:f440::/42 Deny Bogon
 2001:df1:f480::/41 Deny Bogon
 2001:df1:f500::/40 Deny Bogon
-2001:df1:f600::/39 Deny Bogon
+2001:df1:f601::/48 Deny Bogon
+2001:df1:f602::/47 Deny Bogon
+2001:df1:f604::/46 Deny Bogon
+2001:df1:f608::/45 Deny Bogon
+2001:df1:f610::/44 Deny Bogon
+2001:df1:f620::/43 Deny Bogon
+2001:df1:f640::/42 Deny Bogon
+2001:df1:f680::/41 Deny Bogon
+2001:df1:f700::/40 Deny Bogon
 2001:df1:f801::/48 Deny Bogon
 2001:df1:f802::/47 Deny Bogon
 2001:df1:f804::/46 Deny Bogon
@@ -5929,7 +6041,15 @@ Tag: Amazon.com, Inc
 2001:df1:f840::/42 Deny Bogon
 2001:df1:f880::/41 Deny Bogon
 2001:df1:f900::/40 Deny Bogon
-2001:df1:fa00::/39 Deny Bogon
+2001:df1:fa01::/48 Deny Bogon
+2001:df1:fa02::/47 Deny Bogon
+2001:df1:fa04::/46 Deny Bogon
+2001:df1:fa08::/45 Deny Bogon
+2001:df1:fa10::/44 Deny Bogon
+2001:df1:fa20::/43 Deny Bogon
+2001:df1:fa40::/42 Deny Bogon
+2001:df1:fa80::/41 Deny Bogon
+2001:df1:fb00::/40 Deny Bogon
 2001:df1:fc01::/48 Deny Bogon
 2001:df1:fc02::/47 Deny Bogon
 2001:df1:fc04::/46 Deny Bogon
@@ -10148,6 +10268,36 @@ Tag: Amazon.com, Inc
 2001:4098::/29 Deny Bogon
 2001:4110::/29 Deny Bogon
 2001:4148::/29 Deny Bogon
+2001:4208::/29 Deny Bogon
+2001:4230::/29 Deny Bogon
+2001:4280::/29 Deny Bogon
+2001:42e8::/29 Deny Bogon
+2001:42f8::/29 Deny Bogon
+2001:4348::/29 Deny Bogon
+2001:4360::/29 Deny Bogon
+2001:4380::/29 Deny Bogon
+2001:4390::/29 Deny Bogon
+2001:43f8:40::/44 Deny Bogon
+2001:43f8:f0::/44 Deny Bogon
+2001:43f8:2d0::/44 Deny Bogon
+2001:43f8:300::/44 Deny Bogon
+2001:43f8:350::/44 Deny Bogon
+2001:43f8:3f0::/44 Deny Bogon
+2001:43f8:500::/40 Deny Bogon
+2001:43f8:690::/44 Deny Bogon
+2001:43f8:6f0::/44 Deny Bogon
+2001:43f8:730::/44 Deny Bogon
+2001:43f8:a70::/44 Deny Bogon
+2001:43f8:b60::/43 Deny Bogon
+2001:43f8:b80::/41 Deny Bogon
+2001:43f8:c00::/38 Deny Bogon
+2001:43f8:1000::/36 Deny Bogon
+2001:43f8:2000::/35 Deny Bogon
+2001:43f8:4000::/34 Deny Bogon
+2001:43f8:8000::/33 Deny Bogon
+2001:43f9::/32 Deny Bogon
+2001:43fa::/31 Deny Bogon
+2001:43fc::/30 Deny Bogon
 2001:4404::/30 Deny Bogon
 2001:4409::/32 Deny Bogon
 2001:440a::/31 Deny Bogon
@@ -26863,7 +27013,13 @@ Tag: Amazon.com, Inc
 2404:e410::/28 Deny Bogon
 2404:e420::/27 Deny Bogon
 2404:e440::/26 Deny Bogon
-2404:e480::/25 Deny Bogon
+2404:e481::/32 Deny Bogon
+2404:e482::/31 Deny Bogon
+2404:e484::/30 Deny Bogon
+2404:e488::/29 Deny Bogon
+2404:e490::/28 Deny Bogon
+2404:e4a0::/27 Deny Bogon
+2404:e4c0::/26 Deny Bogon
 2404:e501::/32 Deny Bogon
 2404:e502::/31 Deny Bogon
 2404:e504::/30 Deny Bogon
@@ -26871,7 +27027,13 @@ Tag: Amazon.com, Inc
 2404:e510::/28 Deny Bogon
 2404:e520::/27 Deny Bogon
 2404:e540::/26 Deny Bogon
-2404:e580::/25 Deny Bogon
+2404:e581::/32 Deny Bogon
+2404:e582::/31 Deny Bogon
+2404:e584::/30 Deny Bogon
+2404:e588::/29 Deny Bogon
+2404:e590::/28 Deny Bogon
+2404:e5a0::/27 Deny Bogon
+2404:e5c0::/26 Deny Bogon
 2404:e601::/32 Deny Bogon
 2404:e602::/31 Deny Bogon
 2404:e604::/30 Deny Bogon
@@ -26879,7 +27041,13 @@ Tag: Amazon.com, Inc
 2404:e610::/28 Deny Bogon
 2404:e620::/27 Deny Bogon
 2404:e640::/26 Deny Bogon
-2404:e680::/25 Deny Bogon
+2404:e681::/32 Deny Bogon
+2404:e682::/31 Deny Bogon
+2404:e684::/30 Deny Bogon
+2404:e688::/29 Deny Bogon
+2404:e690::/28 Deny Bogon
+2404:e6a0::/27 Deny Bogon
+2404:e6c0::/26 Deny Bogon
 2404:e701::/32 Deny Bogon
 2404:e702::/31 Deny Bogon
 2404:e704::/30 Deny Bogon
@@ -26887,14 +27055,26 @@ Tag: Amazon.com, Inc
 2404:e710::/28 Deny Bogon
 2404:e720::/27 Deny Bogon
 2404:e740::/26 Deny Bogon
-2404:e780::/25 Deny Bogon
+2404:e781::/32 Deny Bogon
+2404:e782::/31 Deny Bogon
+2404:e784::/30 Deny Bogon
+2404:e788::/29 Deny Bogon
+2404:e790::/28 Deny Bogon
+2404:e7a0::/27 Deny Bogon
+2404:e7c0::/26 Deny Bogon
 2404:e802::/31 Deny Bogon
 2404:e804::/30 Deny Bogon
 2404:e808::/29 Deny Bogon
 2404:e810::/28 Deny Bogon
 2404:e820::/27 Deny Bogon
 2404:e840::/26 Deny Bogon
-2404:e880::/25 Deny Bogon
+2404:e881::/32 Deny Bogon
+2404:e882::/31 Deny Bogon
+2404:e884::/30 Deny Bogon
+2404:e888::/29 Deny Bogon
+2404:e890::/28 Deny Bogon
+2404:e8a0::/27 Deny Bogon
+2404:e8c0::/26 Deny Bogon
 2404:e901::/32 Deny Bogon
 2404:e902::/31 Deny Bogon
 2404:e904::/30 Deny Bogon
@@ -26902,7 +27082,13 @@ Tag: Amazon.com, Inc
 2404:e910::/28 Deny Bogon
 2404:e920::/27 Deny Bogon
 2404:e940::/26 Deny Bogon
-2404:e980::/25 Deny Bogon
+2404:e981::/32 Deny Bogon
+2404:e982::/31 Deny Bogon
+2404:e984::/30 Deny Bogon
+2404:e988::/29 Deny Bogon
+2404:e990::/28 Deny Bogon
+2404:e9a0::/27 Deny Bogon
+2404:e9c0::/26 Deny Bogon
 2404:ea01::/32 Deny Bogon
 2404:ea02::/31 Deny Bogon
 2404:ea04::/30 Deny Bogon
@@ -26910,7 +27096,13 @@ Tag: Amazon.com, Inc
 2404:ea10::/28 Deny Bogon
 2404:ea20::/27 Deny Bogon
 2404:ea40::/26 Deny Bogon
-2404:ea80::/25 Deny Bogon
+2404:ea81::/32 Deny Bogon
+2404:ea82::/31 Deny Bogon
+2404:ea84::/30 Deny Bogon
+2404:ea88::/29 Deny Bogon
+2404:ea90::/28 Deny Bogon
+2404:eaa0::/27 Deny Bogon
+2404:eac0::/26 Deny Bogon
 2404:eb01::/32 Deny Bogon
 2404:eb02::/31 Deny Bogon
 2404:eb04::/30 Deny Bogon
@@ -26918,7 +27110,13 @@ Tag: Amazon.com, Inc
 2404:eb10::/28 Deny Bogon
 2404:eb20::/27 Deny Bogon
 2404:eb40::/26 Deny Bogon
-2404:eb80::/25 Deny Bogon
+2404:eb81::/32 Deny Bogon
+2404:eb82::/31 Deny Bogon
+2404:eb84::/30 Deny Bogon
+2404:eb88::/29 Deny Bogon
+2404:eb90::/28 Deny Bogon
+2404:eba0::/27 Deny Bogon
+2404:ebc0::/26 Deny Bogon
 2404:ec01::/32 Deny Bogon
 2404:ec02::/31 Deny Bogon
 2404:ec04::/30 Deny Bogon
@@ -26926,7 +27124,13 @@ Tag: Amazon.com, Inc
 2404:ec10::/28 Deny Bogon
 2404:ec20::/27 Deny Bogon
 2404:ec40::/26 Deny Bogon
-2404:ec80::/25 Deny Bogon
+2404:ec81::/32 Deny Bogon
+2404:ec82::/31 Deny Bogon
+2404:ec84::/30 Deny Bogon
+2404:ec88::/29 Deny Bogon
+2404:ec90::/28 Deny Bogon
+2404:eca0::/27 Deny Bogon
+2404:ecc0::/26 Deny Bogon
 2404:ed01::/32 Deny Bogon
 2404:ed02::/31 Deny Bogon
 2404:ed04::/30 Deny Bogon
@@ -26934,7 +27138,13 @@ Tag: Amazon.com, Inc
 2404:ed10::/28 Deny Bogon
 2404:ed20::/27 Deny Bogon
 2404:ed40::/26 Deny Bogon
-2404:ed80::/25 Deny Bogon
+2404:ed81::/32 Deny Bogon
+2404:ed82::/31 Deny Bogon
+2404:ed84::/30 Deny Bogon
+2404:ed88::/29 Deny Bogon
+2404:ed90::/28 Deny Bogon
+2404:eda0::/27 Deny Bogon
+2404:edc0::/26 Deny Bogon
 2404:ee01::/32 Deny Bogon
 2404:ee02::/31 Deny Bogon
 2404:ee04::/30 Deny Bogon
@@ -26942,7 +27152,13 @@ Tag: Amazon.com, Inc
 2404:ee10::/28 Deny Bogon
 2404:ee20::/27 Deny Bogon
 2404:ee40::/26 Deny Bogon
-2404:ee80::/25 Deny Bogon
+2404:ee81::/32 Deny Bogon
+2404:ee82::/31 Deny Bogon
+2404:ee84::/30 Deny Bogon
+2404:ee88::/29 Deny Bogon
+2404:ee90::/28 Deny Bogon
+2404:eea0::/27 Deny Bogon
+2404:eec0::/26 Deny Bogon
 2404:ef01::/32 Deny Bogon
 2404:ef02::/31 Deny Bogon
 2404:ef04::/30 Deny Bogon
@@ -26950,7 +27166,13 @@ Tag: Amazon.com, Inc
 2404:ef10::/28 Deny Bogon
 2404:ef20::/27 Deny Bogon
 2404:ef40::/26 Deny Bogon
-2404:ef80::/25 Deny Bogon
+2404:ef81::/32 Deny Bogon
+2404:ef82::/31 Deny Bogon
+2404:ef84::/30 Deny Bogon
+2404:ef88::/29 Deny Bogon
+2404:ef90::/28 Deny Bogon
+2404:efa0::/27 Deny Bogon
+2404:efc0::/26 Deny Bogon
 2404:f001::/32 Deny Bogon
 2404:f002::/31 Deny Bogon
 2404:f004::/30 Deny Bogon
@@ -26958,7 +27180,13 @@ Tag: Amazon.com, Inc
 2404:f010::/28 Deny Bogon
 2404:f020::/27 Deny Bogon
 2404:f040::/26 Deny Bogon
-2404:f080::/25 Deny Bogon
+2404:f081::/32 Deny Bogon
+2404:f082::/31 Deny Bogon
+2404:f084::/30 Deny Bogon
+2404:f088::/29 Deny Bogon
+2404:f090::/28 Deny Bogon
+2404:f0a0::/27 Deny Bogon
+2404:f0c0::/26 Deny Bogon
 2404:f101::/32 Deny Bogon
 2404:f102::/31 Deny Bogon
 2404:f104::/30 Deny Bogon
@@ -26966,7 +27194,13 @@ Tag: Amazon.com, Inc
 2404:f110::/28 Deny Bogon
 2404:f120::/27 Deny Bogon
 2404:f140::/26 Deny Bogon
-2404:f180::/25 Deny Bogon
+2404:f181::/32 Deny Bogon
+2404:f182::/31 Deny Bogon
+2404:f184::/30 Deny Bogon
+2404:f188::/29 Deny Bogon
+2404:f190::/28 Deny Bogon
+2404:f1a0::/27 Deny Bogon
+2404:f1c0::/26 Deny Bogon
 2404:f201::/32 Deny Bogon
 2404:f202::/31 Deny Bogon
 2404:f204::/30 Deny Bogon
@@ -26974,7 +27208,13 @@ Tag: Amazon.com, Inc
 2404:f210::/28 Deny Bogon
 2404:f220::/27 Deny Bogon
 2404:f240::/26 Deny Bogon
-2404:f280::/25 Deny Bogon
+2404:f281::/32 Deny Bogon
+2404:f282::/31 Deny Bogon
+2404:f284::/30 Deny Bogon
+2404:f288::/29 Deny Bogon
+2404:f290::/28 Deny Bogon
+2404:f2a0::/27 Deny Bogon
+2404:f2c0::/26 Deny Bogon
 2404:f301::/32 Deny Bogon
 2404:f302::/31 Deny Bogon
 2404:f304::/30 Deny Bogon
@@ -33393,7 +33633,6 @@ Tag: Amazon.com, Inc
 2602:ff00::/26 Deny Bogon
 2602:ff40::/30 Deny Bogon
 2602:ff44::/31 Deny Bogon
-2602:ff46::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -38390,15 +38629,21 @@ Tag: Amazon.com, Inc
 2607:3c10::/28 Deny Bogon
 2607:3c20::/27 Deny Bogon
 2607:3c40::/26 Deny Bogon
-2607:3c80::/25 Deny Bogon
+2607:3c90::/28 Deny Bogon
+2607:3ca0::/27 Deny Bogon
+2607:3cc0::/26 Deny Bogon
 2607:3d10::/28 Deny Bogon
 2607:3d20::/27 Deny Bogon
 2607:3d40::/26 Deny Bogon
-2607:3d80::/25 Deny Bogon
+2607:3d90::/28 Deny Bogon
+2607:3da0::/27 Deny Bogon
+2607:3dc0::/26 Deny Bogon
 2607:3e10::/28 Deny Bogon
 2607:3e20::/27 Deny Bogon
 2607:3e40::/26 Deny Bogon
-2607:3e80::/25 Deny Bogon
+2607:3e90::/28 Deny Bogon
+2607:3ea0::/27 Deny Bogon
+2607:3ec0::/26 Deny Bogon
 2607:3f10::/28 Deny Bogon
 2607:3f20::/27 Deny Bogon
 2607:3f40::/26 Deny Bogon
@@ -42064,7 +42309,16 @@ Tag: Amazon.com, Inc
 2620:4c:4800::/37 Deny Bogon
 2620:4c:5000::/36 Deny Bogon
 2620:4c:6000::/35 Deny Bogon
-2620:4c:8000::/34 Deny Bogon
+2620:4c:8000::/41 Deny Bogon
+2620:4c:8090::/44 Deny Bogon
+2620:4c:80a0::/43 Deny Bogon
+2620:4c:80c0::/42 Deny Bogon
+2620:4c:8100::/40 Deny Bogon
+2620:4c:8200::/39 Deny Bogon
+2620:4c:8400::/38 Deny Bogon
+2620:4c:8800::/37 Deny Bogon
+2620:4c:9000::/36 Deny Bogon
+2620:4c:a000::/35 Deny Bogon
 2620:4c:c010::/44 Deny Bogon
 2620:4c:c020::/43 Deny Bogon
 2620:4c:c040::/42 Deny Bogon
@@ -61434,9 +61688,20 @@ Tag: Amazon.com, Inc
 2804:304e::/31 Deny Bogon
 2804:3051::/32 Deny Bogon
 2804:3052::/31 Deny Bogon
-2804:3054::/30 Deny Bogon
-2804:3058::/29 Deny Bogon
-2804:3060::/27 Deny Bogon
+2804:3055::/32 Deny Bogon
+2804:3056::/31 Deny Bogon
+2804:3059::/32 Deny Bogon
+2804:305a::/31 Deny Bogon
+2804:305d::/32 Deny Bogon
+2804:305e::/31 Deny Bogon
+2804:3061::/32 Deny Bogon
+2804:3062::/31 Deny Bogon
+2804:3065::/32 Deny Bogon
+2804:3066::/31 Deny Bogon
+2804:3069::/32 Deny Bogon
+2804:306a::/31 Deny Bogon
+2804:306c::/30 Deny Bogon
+2804:3070::/28 Deny Bogon
 2804:3080::/25 Deny Bogon
 2804:3100::/24 Deny Bogon
 2804:3200::/23 Deny Bogon
@@ -62501,7 +62766,8 @@ Tag: Amazon.com, Inc
 2a00:7c10::/28 Deny Bogon
 2a00:7c28::/29 Deny Bogon
 2a00:7c30::/28 Deny Bogon
-2a00:7c40::/27 Deny Bogon
+2a00:7c48::/29 Deny Bogon
+2a00:7c50::/28 Deny Bogon
 2a00:7c68::/29 Deny Bogon
 2a00:7c70::/28 Deny Bogon
 2a00:7ca8::/29 Deny Bogon
@@ -63793,8 +64059,6 @@ Tag: Amazon.com, Inc
 2a00:d1d0::/28 Deny Bogon
 2a00:d1e8::/29 Deny Bogon
 2a00:d1f0::/28 Deny Bogon
-2a00:d208::/29 Deny Bogon
-2a00:d210::/28 Deny Bogon
 2a00:d228::/29 Deny Bogon
 2a00:d230::/28 Deny Bogon
 2a00:d248::/29 Deny Bogon
@@ -64768,8 +65032,6 @@ Tag: Amazon.com, Inc
 2a01:54d0::/28 Deny Bogon
 2a01:54e8::/29 Deny Bogon
 2a01:54f0::/28 Deny Bogon
-2a01:5548::/29 Deny Bogon
-2a01:5550::/28 Deny Bogon
 2a01:5568::/29 Deny Bogon
 2a01:5570::/28 Deny Bogon
 2a01:5588::/29 Deny Bogon
@@ -70929,14 +71191,11 @@ Tag: Amazon.com, Inc
 2a04:f308::/29 Deny Bogon
 2a04:fec8::/29 Deny Bogon
 2a04:fed0::/28 Deny Bogon
-2a05:2940::/26 Deny Bogon
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
-2a05:c0c0::/26 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:65c0::/26 Deny Bogon
-2a07:6600::/23 Deny Bogon
-2a07:6800::/21 Deny Bogon
+2a07:6d00::/24 Deny Bogon
+2a07:6e00::/23 Deny Bogon
 2a07:7000::/20 Deny Bogon
 2a07:8000::/17 Deny Bogon
 2a08::/13 Deny Bogon
@@ -70952,7 +71211,7 @@ Tag: Amazon.com, Inc
 2c0f:f000::/22 Deny Bogon
 2c0f:f5c0::/29 Deny Bogon
 2c0f:f5f8::/29 Deny Bogon
-2c0f:f790::/128 Deny Bogon
+2c0f:f790::/29 Deny Bogon
 2c0f:f868::/29 Deny Bogon
 2c0f:f910::/29 Deny Bogon
 2c0f:fa50::/29 Deny Bogon

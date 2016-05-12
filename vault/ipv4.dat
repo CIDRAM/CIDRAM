@@ -2013,8 +2013,8 @@ Tag: AS48159
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Infected by malware (as per reported by Google): 1.18% (AS24940), 1.28% (AS37153).
-# Updated: 2016.03.02
+# Infected by malware (as per reported by Google): 1.16% (AS24940), 1.39% (AS37153).
+# Updated: 2016.05.12
 
 5.9.0.0/16 Deny Generic
 41.72.128.0/19 Deny Generic
@@ -2032,8 +2032,9 @@ Tag: AS48159
 144.76.0.0/16 Deny Generic
 148.251.0.0/16 Deny Generic
 169.239.152.0/22 Deny Generic
-169.239.180.0/24 Deny Generic
+169.239.180.0/23 Deny Generic
 169.239.204.0/22 Deny Generic
+169.239.224.0/22 Deny Generic
 176.9.0.0/16 Deny Generic
 176.102.168.0/21 Deny Generic
 178.63.0.0/16 Deny Generic
@@ -2041,6 +2042,7 @@ Tag: AS48159
 185.50.120.0/23 Deny Generic
 185.107.52.0/22 Deny Generic
 185.126.28.0/22 Deny Generic
+185.141.200.0/24 Deny Generic
 188.40.0.0/16 Deny Generic
 192.96.96.0/24 Deny Generic
 193.25.170.0/23 Deny Generic
@@ -6224,7 +6226,6 @@ Tag: WorldStream
 104.250.122.0/23 Deny Cloud
 104.250.164.0/24 Deny Cloud
 104.250.188.0/24 Deny Cloud
-104.251.91.0/24 Deny Cloud
 104.255.224.0/24 Deny Cloud
 104.255.226.0/24 Deny Cloud
 104.255.228.0/24 Deny Cloud
@@ -7549,7 +7550,6 @@ Tag: Latisys-Irvine, LLC
 172.85.100.0/22 Deny Cloud
 172.85.104.0/21 Deny Cloud
 172.98.162.0/24 Deny Cloud
-172.98.164.0/24 Deny Cloud
 172.98.171.0/24 Deny Cloud
 172.98.172.0/23 Deny Cloud
 172.98.181.0/24 Deny Cloud
@@ -8470,6 +8470,8 @@ Tag: GHOSTnet GmbH
 104.244.53.0/24 Deny Cloud
 104.244.54.0/23 Deny Cloud
 104.245.88.0/23 Deny Cloud
+104.251.83.0/24 Deny Cloud
+104.251.95.0/24 Deny Cloud
 104.254.232.0/21 Deny Cloud
 108.170.0.0/18 Deny Cloud
 131.153.0.0/20 Deny Cloud
@@ -8664,7 +8666,6 @@ Tag: Handy Networks, LLC
 104.254.60.0/24 Deny Cloud
 162.248.240.0/21 Deny Cloud
 172.97.65.0/24 Deny Cloud
-172.98.165.0/24 Deny Cloud
 172.98.167.0/24 Deny Cloud
 172.98.192.0/21 Deny Cloud
 172.98.200.0/22 Deny Cloud
@@ -8723,8 +8724,8 @@ Tag: Beijing Blue
 
 
 # ASN 53340 ("VegasNAP, LLC").
-# Infected by malware (as per reported by Google): 0.63%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 0.68%.
+# Updated: 2016.05.12
 
 5.226.169.0/24 Deny Cloud
 5.226.170.0/24 Deny Cloud
@@ -8737,7 +8738,8 @@ Tag: Beijing Blue
 104.225.128.0/17 Deny Cloud
 104.244.4.0/23 Deny Cloud
 104.244.6.0/24 Deny Cloud
-104.251.90.0/24 Deny Cloud
+104.251.82.0/24 Deny Cloud
+104.251.94.0/24 Deny Cloud
 146.71.64.0/19 Deny Cloud
 162.248.4.0/23 Deny Cloud
 162.249.224.0/22 Deny Cloud
@@ -8745,7 +8747,12 @@ Tag: Beijing Blue
 162.251.232.0/21 Deny Cloud
 162.254.232.0/21 Deny Cloud
 172.93.0.0/21 Deny Cloud
+172.93.20.0/22 Deny Cloud
+172.93.24.0/22 Deny Cloud
+172.93.36.0/22 Deny Cloud
 172.93.40.0/21 Deny Cloud
+172.93.48.0/21 Deny Cloud
+172.93.56.0/22 Deny Cloud
 172.93.62.0/23 Deny Cloud
 179.61.251.0/24 Deny Cloud
 185.48.204.0/22 Deny Cloud
@@ -8761,21 +8768,26 @@ Tag: Beijing Blue
 Tag: VegasNAP, LLC
 
 
-# ASN 53340 ("Wirels Connect (PTY) Ltd").
+# ASN 37254 ("GREEN FLASH TRADING").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.04.19
+# Updated: 2016.05.12
 
+41.76.216.0/21 Deny Spam
 154.73.248.0/22 Deny Spam
 161.123.0.0/17 Deny Spam
-Tag: Wirels Connect
+Tag: GREEN FLASH TRADING
 
 
 # "Braveway LLC."; Various ASNs; A cloud provider caught spamming.
-# Updated: 2016.04.19
+# Updated: 2016.05.12
 
-104.251.80.0/22 Deny Cloud
+104.251.80.0/23 Deny Cloud
 104.251.84.0/23 Deny Cloud
-104.251.92.0/22 Deny Cloud
+104.251.90.0/23 Deny Cloud
+104.251.92.0/23 Deny Cloud
+172.98.160.0/24 Deny Cloud
+172.98.163.0/24 Deny Cloud
+172.98.164.0/23 Deny Cloud
 Tag: Braveway LLC
 
 

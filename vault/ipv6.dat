@@ -383,12 +383,14 @@ Tag: Leaseweb
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Infected by malware (as per reported by Google): 1.18% (AS24940), 1.28% (AS37153).
-# Updated: 2016.03.02
+# Infected by malware (as per reported by Google): 1.16% (AS24940), 1.39% (AS37153).
+# Updated: 2016.05.12
 
-2a01:4f8::/29 Deny Generic
-2a06:be80::/29 Deny Generic
-2c0f:fce8::/33 Deny Generic
+2a01:4f8::/29 Deny Cloud
+2a02:49e0::/35 Deny Cloud
+2a02:c740::/29 Deny Cloud
+2a06:be80::/29 Deny Cloud
+2c0f:fce8::/33 Deny Cloud
 Tag: Hetzner
 
 
@@ -2199,13 +2201,21 @@ Tag: Centrilogic
 
 
 # ASN 53340 ("VegasNAP, LLC").
-# Infected by malware (as per reported by Google): 0.63%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 0.68%.
+# Updated: 2016.04.19 / Checked: 2016.05.12
 
 2604:2280:4100::/40 Deny Cloud
 2604:2280:ff00::/40 Deny Cloud
 2605:6f80:ffff::/48 Deny Cloud
 Tag: VegasNAP, LLC
+
+
+# ASN 37254 ("GREEN FLASH TRADING").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.05.12
+
+2c0f:f4a8::/32 Deny Spam
+Tag: GREEN FLASH TRADING
 
 
 # ASN 54290 ("Hostwinds LLC").
@@ -2569,6 +2579,13 @@ Tag: Serverius Holding
 2a00:4e40:2::/48 Deny Cloud
 2a01:7c8::/32 Deny Cloud
 Tag: Transip B.V
+
+
+# ASN 200429 ("HostSlim BV")
+# Infected by malware (as per reported by Google): 0.61%.
+# Updated: 2016.05.09
+
+Tag: HostSlim BV
 
 
 # ASN 43350 ("NForce Entertainment B.V")

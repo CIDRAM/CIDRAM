@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for CLI (last modified: 2016.05.13).
+ * This file: Arabic language data for CLI (last modified: 2016.05.13).
  *
  * @todo (This is incomplete).
  */
@@ -45,10 +45,10 @@ $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *
 $CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
 $CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
 $CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
-$CIDRAM['lang']['CLI_VF_Level_0'] = 'Beachten';
-$CIDRAM['lang']['CLI_VF_Level_1'] = 'Warnung';
-$CIDRAM['lang']['CLI_VF_Level_2'] = 'Fehler';
-$CIDRAM['lang']['CLI_VF_Level_3'] = 'Fataler Fehler';
+$CIDRAM['lang']['CLI_VF_Level_0'] = 'Notice';
+$CIDRAM['lang']['CLI_VF_Level_1'] = 'Warning';
+$CIDRAM['lang']['CLI_VF_Level_2'] = 'Error';
+$CIDRAM['lang']['CLI_VF_Level_3'] = 'Fatal Error';
 
 $CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
 $CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';

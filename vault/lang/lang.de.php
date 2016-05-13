@@ -9,8 +9,6 @@
  * @see LICENSE.txt
  *
  * This file: German language data (last modified: 2016.05.13).
- *
- * @todo (This is incomplete).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +21,7 @@ $CIDRAM['lang']['denied'] = 'Zugriff verweigert!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Kann nicht in den Cache schreiben! Bitte überprüfen Sie Ihre CHMOD Dateiberechtigungen!';
 $CIDRAM['lang']['field_datetime'] = 'Datum/Uhrzeit: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
-$CIDRAM['lang']['field_ipaddr'] = 'IP Adresse: ';
+$CIDRAM['lang']['field_ipaddr'] = 'IP-Adresse: ';
 $CIDRAM['lang']['field_query'] = 'Abfrage/Query: ';
 $CIDRAM['lang']['field_referrer'] = 'Referrer: ';
 $CIDRAM['lang']['field_rURI'] = 'Rekonstruierte URI: ';
@@ -40,7 +38,7 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Ihr Zugriff auf diese Seite wurde verw
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einem Netzwerk aufgelistet auf eine Schwarzliste benutzten mit dieser Website.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einem Netzwerk auf einem hohen Risiko für Spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ungültige IP!';
-$CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
+$CIDRAM['lang']['Short_Bogon'] = 'Bogon-IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Cloud-Service';
 $CIDRAM['lang']['Short_Generic'] = 'Generisches';
 $CIDRAM['lang']['Short_Spam'] = 'Spam Risiko';

@@ -386,11 +386,11 @@ Tag: Leaseweb
 # Infected by malware (as per reported by Google): 1.16% (AS24940), 1.39% (AS37153).
 # Updated: 2016.05.12
 
-2a01:4f8::/29 Deny Cloud
-2a02:49e0::/35 Deny Cloud
-2a02:c740::/29 Deny Cloud
-2a06:be80::/29 Deny Cloud
-2c0f:fce8::/33 Deny Cloud
+2a01:4f8::/29 Deny Generic
+2a02:49e0::/35 Deny Generic
+2a02:c740::/29 Deny Generic
+2a06:be80::/29 Deny Generic
+2c0f:fce8::/33 Deny Generic
 Tag: Hetzner
 
 
@@ -581,13 +581,23 @@ Tag: Redstation Limited
 
 
 # ASN 24961 ("myLoc managed IT AG").
-# Infected by malware (as per reported by Google): 0.87%.
-# Updated: 2016.04.23
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 0.92%.
+# Updated: 2016.04.23 / Checked: 2016.05.13
 
 2001:67c:192c::/48 Deny Generic
 2001:4ba0::/32 Deny Generic
 2a07:4400::/29 Deny Generic
 Tag: myLoc
+
+
+# ASN 13301 ("United Gameserver GmbH").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 0.16%.
+# Updated: 2016.05.13
+
+2a01:480::/32 Deny Cloud
+Tag: United Gameserver
 
 
 # ASN 30968 ("INFOBOX").
@@ -2581,13 +2591,6 @@ Tag: Serverius Holding
 Tag: Transip B.V
 
 
-# ASN 200429 ("HostSlim BV")
-# Infected by malware (as per reported by Google): 0.61%.
-# Updated: 2016.05.09
-
-Tag: HostSlim BV
-
-
 # ASN 43350 ("NForce Entertainment B.V")
 # Infected by malware (as per reported by Google): 1.23%.
 # Updated: 2016.05.09
@@ -2615,9 +2618,55 @@ Tag: HostSlim BV
 Tag: NForce Entertainment
 
 
+# ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.82%.
+# Updated: 2016.05.13
+
+2402:1780:1::/48 Deny Generic
+2a04:4280:10::/48 Deny Generic
+2a04:4280:100::/47 Deny Generic
+2a05:b700::/29 Deny Generic
+2a05:bf00::/29 Deny Generic
+2a06:9140::/29 Deny Generic
+Tag: DGN TEKNOLOJI
+
+
+# ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.35%.
+# Updated: 2016.05.13
+
+2400:fb80::/32 Deny Cloud
+2402:2f80:1::/48 Deny Cloud
+2406:f400::/32 Deny Cloud
+Tag: NewMedia Express
+
+
+# ASN 42868 ("Niobe Bilisim Teknolojileri Yazilim San. Tic. Ltd. Sti").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 2.70%.
+# Updated: 2016.05.13
+
+77.245.144.0/20 Deny Generic
+Tag: Niobe Bilisim
+
+
+# ASN 38731 ("Vietel - CHT Compamy Ltd").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.81%.
+# Updated: 2016.05.13
+
+2401:5f80::/36 Deny Generic
+2401:5f80:1001::/48 Deny Generic
+2401:5f80:2000::/35 Deny Generic
+2401:5f80:5000::/36 Deny Generic
+Tag: Vietel
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.05.09
+# Updated: 2016.05.13
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -2852,7 +2901,10 @@ Tag: NForce Entertainment
 2001:500:f2::/47 Deny Bogon
 2001:500:f4::/46 Deny Bogon
 2001:500:f8::/45 Deny Bogon
-2001:500:110::/44 Deny Bogon
+2001:500:111::/48 Deny Bogon
+2001:500:112::/47 Deny Bogon
+2001:500:114::/46 Deny Bogon
+2001:500:118::/45 Deny Bogon
 2001:500:140::/42 Deny Bogon
 2001:500:180::/41 Deny Bogon
 2001:500:200::/40 Deny Bogon
@@ -3523,8 +3575,8 @@ Tag: NForce Entertainment
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:198::/45 Deny Bogon
-2001:678:1a0::/43 Deny Bogon
+2001:678:1a8::/45 Deny Bogon
+2001:678:1b0::/44 Deny Bogon
 2001:678:1c0::/42 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -6316,7 +6368,15 @@ Tag: NForce Entertainment
 2001:df2:840::/42 Deny Bogon
 2001:df2:880::/41 Deny Bogon
 2001:df2:900::/40 Deny Bogon
-2001:df2:a00::/39 Deny Bogon
+2001:df2:a01::/48 Deny Bogon
+2001:df2:a02::/47 Deny Bogon
+2001:df2:a04::/46 Deny Bogon
+2001:df2:a08::/45 Deny Bogon
+2001:df2:a10::/44 Deny Bogon
+2001:df2:a20::/43 Deny Bogon
+2001:df2:a40::/42 Deny Bogon
+2001:df2:a80::/41 Deny Bogon
+2001:df2:b00::/40 Deny Bogon
 2001:df2:c01::/48 Deny Bogon
 2001:df2:c02::/47 Deny Bogon
 2001:df2:c04::/46 Deny Bogon
@@ -6326,7 +6386,15 @@ Tag: NForce Entertainment
 2001:df2:c40::/42 Deny Bogon
 2001:df2:c80::/41 Deny Bogon
 2001:df2:d00::/40 Deny Bogon
-2001:df2:e00::/39 Deny Bogon
+2001:df2:e01::/48 Deny Bogon
+2001:df2:e02::/47 Deny Bogon
+2001:df2:e04::/46 Deny Bogon
+2001:df2:e08::/45 Deny Bogon
+2001:df2:e10::/44 Deny Bogon
+2001:df2:e20::/43 Deny Bogon
+2001:df2:e40::/42 Deny Bogon
+2001:df2:e80::/41 Deny Bogon
+2001:df2:f00::/40 Deny Bogon
 2001:df2:1002::/47 Deny Bogon
 2001:df2:1004::/46 Deny Bogon
 2001:df2:1008::/45 Deny Bogon
@@ -6335,7 +6403,15 @@ Tag: NForce Entertainment
 2001:df2:1040::/42 Deny Bogon
 2001:df2:1080::/41 Deny Bogon
 2001:df2:1100::/40 Deny Bogon
-2001:df2:1200::/39 Deny Bogon
+2001:df2:1201::/48 Deny Bogon
+2001:df2:1202::/47 Deny Bogon
+2001:df2:1204::/46 Deny Bogon
+2001:df2:1208::/45 Deny Bogon
+2001:df2:1210::/44 Deny Bogon
+2001:df2:1220::/43 Deny Bogon
+2001:df2:1240::/42 Deny Bogon
+2001:df2:1280::/41 Deny Bogon
+2001:df2:1300::/40 Deny Bogon
 2001:df2:1401::/48 Deny Bogon
 2001:df2:1402::/47 Deny Bogon
 2001:df2:1404::/46 Deny Bogon
@@ -6345,7 +6421,15 @@ Tag: NForce Entertainment
 2001:df2:1440::/42 Deny Bogon
 2001:df2:1480::/41 Deny Bogon
 2001:df2:1500::/40 Deny Bogon
-2001:df2:1600::/39 Deny Bogon
+2001:df2:1601::/48 Deny Bogon
+2001:df2:1602::/47 Deny Bogon
+2001:df2:1604::/46 Deny Bogon
+2001:df2:1608::/45 Deny Bogon
+2001:df2:1610::/44 Deny Bogon
+2001:df2:1620::/43 Deny Bogon
+2001:df2:1640::/42 Deny Bogon
+2001:df2:1680::/41 Deny Bogon
+2001:df2:1700::/40 Deny Bogon
 2001:df2:1804::/46 Deny Bogon
 2001:df2:1808::/45 Deny Bogon
 2001:df2:1810::/44 Deny Bogon
@@ -27609,7 +27693,13 @@ Tag: NForce Entertainment
 2404:ff10::/28 Deny Bogon
 2404:ff20::/27 Deny Bogon
 2404:ff40::/26 Deny Bogon
-2404:ff80::/25 Deny Bogon
+2404:ff81::/32 Deny Bogon
+2404:ff82::/31 Deny Bogon
+2404:ff84::/30 Deny Bogon
+2404:ff88::/29 Deny Bogon
+2404:ff90::/28 Deny Bogon
+2404:ffa0::/27 Deny Bogon
+2404:ffc0::/26 Deny Bogon
 2405:1::/32 Deny Bogon
 2405:2::/31 Deny Bogon
 2405:4::/30 Deny Bogon
@@ -27617,7 +27707,13 @@ Tag: NForce Entertainment
 2405:10::/28 Deny Bogon
 2405:20::/27 Deny Bogon
 2405:40::/26 Deny Bogon
-2405:80::/25 Deny Bogon
+2405:81::/32 Deny Bogon
+2405:82::/31 Deny Bogon
+2405:84::/30 Deny Bogon
+2405:88::/29 Deny Bogon
+2405:90::/28 Deny Bogon
+2405:a0::/27 Deny Bogon
+2405:c0::/26 Deny Bogon
 2405:101::/32 Deny Bogon
 2405:102::/31 Deny Bogon
 2405:104::/30 Deny Bogon
@@ -27625,7 +27721,13 @@ Tag: NForce Entertainment
 2405:110::/28 Deny Bogon
 2405:120::/27 Deny Bogon
 2405:140::/26 Deny Bogon
-2405:180::/25 Deny Bogon
+2405:181::/32 Deny Bogon
+2405:182::/31 Deny Bogon
+2405:184::/30 Deny Bogon
+2405:188::/29 Deny Bogon
+2405:190::/28 Deny Bogon
+2405:1a0::/27 Deny Bogon
+2405:1c0::/26 Deny Bogon
 2405:401::/32 Deny Bogon
 2405:402::/31 Deny Bogon
 2405:404::/30 Deny Bogon
@@ -27633,7 +27735,13 @@ Tag: NForce Entertainment
 2405:410::/28 Deny Bogon
 2405:420::/27 Deny Bogon
 2405:440::/26 Deny Bogon
-2405:480::/25 Deny Bogon
+2405:481::/32 Deny Bogon
+2405:482::/31 Deny Bogon
+2405:484::/30 Deny Bogon
+2405:488::/29 Deny Bogon
+2405:490::/28 Deny Bogon
+2405:4a0::/27 Deny Bogon
+2405:4c0::/26 Deny Bogon
 2405:501::/32 Deny Bogon
 2405:502::/31 Deny Bogon
 2405:504::/30 Deny Bogon
@@ -27641,7 +27749,13 @@ Tag: NForce Entertainment
 2405:510::/28 Deny Bogon
 2405:520::/27 Deny Bogon
 2405:540::/26 Deny Bogon
-2405:580::/25 Deny Bogon
+2405:581::/32 Deny Bogon
+2405:582::/31 Deny Bogon
+2405:584::/30 Deny Bogon
+2405:588::/29 Deny Bogon
+2405:590::/28 Deny Bogon
+2405:5a0::/27 Deny Bogon
+2405:5c0::/26 Deny Bogon
 2405:601::/32 Deny Bogon
 2405:602::/31 Deny Bogon
 2405:604::/30 Deny Bogon
@@ -27649,7 +27763,13 @@ Tag: NForce Entertainment
 2405:610::/28 Deny Bogon
 2405:620::/27 Deny Bogon
 2405:640::/26 Deny Bogon
-2405:680::/25 Deny Bogon
+2405:681::/32 Deny Bogon
+2405:682::/31 Deny Bogon
+2405:684::/30 Deny Bogon
+2405:688::/29 Deny Bogon
+2405:690::/28 Deny Bogon
+2405:6a0::/27 Deny Bogon
+2405:6c0::/26 Deny Bogon
 2405:701::/32 Deny Bogon
 2405:702::/31 Deny Bogon
 2405:704::/30 Deny Bogon
@@ -27657,7 +27777,13 @@ Tag: NForce Entertainment
 2405:710::/28 Deny Bogon
 2405:720::/27 Deny Bogon
 2405:740::/26 Deny Bogon
-2405:780::/25 Deny Bogon
+2405:781::/32 Deny Bogon
+2405:782::/31 Deny Bogon
+2405:784::/30 Deny Bogon
+2405:788::/29 Deny Bogon
+2405:790::/28 Deny Bogon
+2405:7a0::/27 Deny Bogon
+2405:7c0::/26 Deny Bogon
 2405:801::/32 Deny Bogon
 2405:802::/31 Deny Bogon
 2405:804::/30 Deny Bogon
@@ -27665,7 +27791,13 @@ Tag: NForce Entertainment
 2405:810::/28 Deny Bogon
 2405:820::/27 Deny Bogon
 2405:840::/26 Deny Bogon
-2405:880::/25 Deny Bogon
+2405:881::/32 Deny Bogon
+2405:882::/31 Deny Bogon
+2405:884::/30 Deny Bogon
+2405:888::/29 Deny Bogon
+2405:890::/28 Deny Bogon
+2405:8a0::/27 Deny Bogon
+2405:8c0::/26 Deny Bogon
 2405:901::/32 Deny Bogon
 2405:902::/31 Deny Bogon
 2405:904::/30 Deny Bogon
@@ -27673,7 +27805,13 @@ Tag: NForce Entertainment
 2405:910::/28 Deny Bogon
 2405:920::/27 Deny Bogon
 2405:940::/26 Deny Bogon
-2405:980::/25 Deny Bogon
+2405:981::/32 Deny Bogon
+2405:982::/31 Deny Bogon
+2405:984::/30 Deny Bogon
+2405:988::/29 Deny Bogon
+2405:990::/28 Deny Bogon
+2405:9a0::/27 Deny Bogon
+2405:9c0::/26 Deny Bogon
 2405:a01::/32 Deny Bogon
 2405:a02::/31 Deny Bogon
 2405:a04::/30 Deny Bogon
@@ -27681,7 +27819,13 @@ Tag: NForce Entertainment
 2405:a10::/28 Deny Bogon
 2405:a20::/27 Deny Bogon
 2405:a40::/26 Deny Bogon
-2405:a80::/25 Deny Bogon
+2405:a81::/32 Deny Bogon
+2405:a82::/31 Deny Bogon
+2405:a84::/30 Deny Bogon
+2405:a88::/29 Deny Bogon
+2405:a90::/28 Deny Bogon
+2405:aa0::/27 Deny Bogon
+2405:ac0::/26 Deny Bogon
 2405:b01::/32 Deny Bogon
 2405:b02::/31 Deny Bogon
 2405:b04::/30 Deny Bogon
@@ -27689,7 +27833,13 @@ Tag: NForce Entertainment
 2405:b10::/28 Deny Bogon
 2405:b20::/27 Deny Bogon
 2405:b40::/26 Deny Bogon
-2405:b80::/25 Deny Bogon
+2405:b81::/32 Deny Bogon
+2405:b82::/31 Deny Bogon
+2405:b84::/30 Deny Bogon
+2405:b88::/29 Deny Bogon
+2405:b90::/28 Deny Bogon
+2405:ba0::/27 Deny Bogon
+2405:bc0::/26 Deny Bogon
 2405:c01::/32 Deny Bogon
 2405:c02::/31 Deny Bogon
 2405:c04::/30 Deny Bogon
@@ -27697,7 +27847,13 @@ Tag: NForce Entertainment
 2405:c10::/28 Deny Bogon
 2405:c20::/27 Deny Bogon
 2405:c40::/26 Deny Bogon
-2405:c80::/25 Deny Bogon
+2405:c81::/32 Deny Bogon
+2405:c82::/31 Deny Bogon
+2405:c84::/30 Deny Bogon
+2405:c88::/29 Deny Bogon
+2405:c90::/28 Deny Bogon
+2405:ca0::/27 Deny Bogon
+2405:cc0::/26 Deny Bogon
 2405:d01::/32 Deny Bogon
 2405:d02::/31 Deny Bogon
 2405:d04::/30 Deny Bogon
@@ -27705,7 +27861,13 @@ Tag: NForce Entertainment
 2405:d10::/28 Deny Bogon
 2405:d20::/27 Deny Bogon
 2405:d40::/26 Deny Bogon
-2405:d80::/25 Deny Bogon
+2405:d81::/32 Deny Bogon
+2405:d82::/31 Deny Bogon
+2405:d84::/30 Deny Bogon
+2405:d88::/29 Deny Bogon
+2405:d90::/28 Deny Bogon
+2405:da0::/27 Deny Bogon
+2405:dc0::/26 Deny Bogon
 2405:e01::/32 Deny Bogon
 2405:e02::/31 Deny Bogon
 2405:e04::/30 Deny Bogon
@@ -27713,7 +27875,13 @@ Tag: NForce Entertainment
 2405:e10::/28 Deny Bogon
 2405:e20::/27 Deny Bogon
 2405:e40::/26 Deny Bogon
-2405:e80::/25 Deny Bogon
+2405:e81::/32 Deny Bogon
+2405:e82::/31 Deny Bogon
+2405:e84::/30 Deny Bogon
+2405:e88::/29 Deny Bogon
+2405:e90::/28 Deny Bogon
+2405:ea0::/27 Deny Bogon
+2405:ec0::/26 Deny Bogon
 2405:f01::/32 Deny Bogon
 2405:f02::/31 Deny Bogon
 2405:f04::/30 Deny Bogon
@@ -27721,7 +27889,13 @@ Tag: NForce Entertainment
 2405:f10::/28 Deny Bogon
 2405:f20::/27 Deny Bogon
 2405:f40::/26 Deny Bogon
-2405:f80::/25 Deny Bogon
+2405:f81::/32 Deny Bogon
+2405:f82::/31 Deny Bogon
+2405:f84::/30 Deny Bogon
+2405:f88::/29 Deny Bogon
+2405:f90::/28 Deny Bogon
+2405:fa0::/27 Deny Bogon
+2405:fc0::/26 Deny Bogon
 2405:1001::/32 Deny Bogon
 2405:1002::/31 Deny Bogon
 2405:1004::/30 Deny Bogon
@@ -27729,7 +27903,13 @@ Tag: NForce Entertainment
 2405:1010::/28 Deny Bogon
 2405:1020::/27 Deny Bogon
 2405:1040::/26 Deny Bogon
-2405:1080::/25 Deny Bogon
+2405:1081::/32 Deny Bogon
+2405:1082::/31 Deny Bogon
+2405:1084::/30 Deny Bogon
+2405:1088::/29 Deny Bogon
+2405:1090::/28 Deny Bogon
+2405:10a0::/27 Deny Bogon
+2405:10c0::/26 Deny Bogon
 2405:1101::/32 Deny Bogon
 2405:1102::/31 Deny Bogon
 2405:1104::/30 Deny Bogon
@@ -27737,7 +27917,13 @@ Tag: NForce Entertainment
 2405:1110::/28 Deny Bogon
 2405:1120::/27 Deny Bogon
 2405:1140::/26 Deny Bogon
-2405:1180::/25 Deny Bogon
+2405:1181::/32 Deny Bogon
+2405:1182::/31 Deny Bogon
+2405:1184::/30 Deny Bogon
+2405:1188::/29 Deny Bogon
+2405:1190::/28 Deny Bogon
+2405:11a0::/27 Deny Bogon
+2405:11c0::/26 Deny Bogon
 2405:1201::/32 Deny Bogon
 2405:1202::/31 Deny Bogon
 2405:1204::/30 Deny Bogon
@@ -27745,7 +27931,13 @@ Tag: NForce Entertainment
 2405:1210::/28 Deny Bogon
 2405:1220::/27 Deny Bogon
 2405:1240::/26 Deny Bogon
-2405:1280::/25 Deny Bogon
+2405:1281::/32 Deny Bogon
+2405:1282::/31 Deny Bogon
+2405:1284::/30 Deny Bogon
+2405:1288::/29 Deny Bogon
+2405:1290::/28 Deny Bogon
+2405:12a0::/27 Deny Bogon
+2405:12c0::/26 Deny Bogon
 2405:1301::/32 Deny Bogon
 2405:1302::/31 Deny Bogon
 2405:1304::/30 Deny Bogon
@@ -27753,7 +27945,13 @@ Tag: NForce Entertainment
 2405:1310::/28 Deny Bogon
 2405:1320::/27 Deny Bogon
 2405:1340::/26 Deny Bogon
-2405:1380::/25 Deny Bogon
+2405:1381::/32 Deny Bogon
+2405:1382::/31 Deny Bogon
+2405:1384::/30 Deny Bogon
+2405:1388::/29 Deny Bogon
+2405:1390::/28 Deny Bogon
+2405:13a0::/27 Deny Bogon
+2405:13c0::/26 Deny Bogon
 2405:1401::/32 Deny Bogon
 2405:1402::/31 Deny Bogon
 2405:1404::/30 Deny Bogon
@@ -27761,7 +27959,13 @@ Tag: NForce Entertainment
 2405:1410::/28 Deny Bogon
 2405:1420::/27 Deny Bogon
 2405:1440::/26 Deny Bogon
-2405:1480::/25 Deny Bogon
+2405:1481::/32 Deny Bogon
+2405:1482::/31 Deny Bogon
+2405:1484::/30 Deny Bogon
+2405:1488::/29 Deny Bogon
+2405:1490::/28 Deny Bogon
+2405:14a0::/27 Deny Bogon
+2405:14c0::/26 Deny Bogon
 2405:1501::/32 Deny Bogon
 2405:1502::/31 Deny Bogon
 2405:1504::/30 Deny Bogon
@@ -27769,7 +27973,13 @@ Tag: NForce Entertainment
 2405:1510::/28 Deny Bogon
 2405:1520::/27 Deny Bogon
 2405:1540::/26 Deny Bogon
-2405:1580::/25 Deny Bogon
+2405:1581::/32 Deny Bogon
+2405:1582::/31 Deny Bogon
+2405:1584::/30 Deny Bogon
+2405:1588::/29 Deny Bogon
+2405:1590::/28 Deny Bogon
+2405:15a0::/27 Deny Bogon
+2405:15c0::/26 Deny Bogon
 2405:1601::/32 Deny Bogon
 2405:1602::/31 Deny Bogon
 2405:1604::/30 Deny Bogon
@@ -27777,7 +27987,13 @@ Tag: NForce Entertainment
 2405:1610::/28 Deny Bogon
 2405:1620::/27 Deny Bogon
 2405:1640::/26 Deny Bogon
-2405:1680::/25 Deny Bogon
+2405:1681::/32 Deny Bogon
+2405:1682::/31 Deny Bogon
+2405:1684::/30 Deny Bogon
+2405:1688::/29 Deny Bogon
+2405:1690::/28 Deny Bogon
+2405:16a0::/27 Deny Bogon
+2405:16c0::/26 Deny Bogon
 2405:1701::/32 Deny Bogon
 2405:1702::/31 Deny Bogon
 2405:1704::/30 Deny Bogon
@@ -27785,7 +28001,13 @@ Tag: NForce Entertainment
 2405:1710::/28 Deny Bogon
 2405:1720::/27 Deny Bogon
 2405:1740::/26 Deny Bogon
-2405:1780::/25 Deny Bogon
+2405:1781::/32 Deny Bogon
+2405:1782::/31 Deny Bogon
+2405:1784::/30 Deny Bogon
+2405:1788::/29 Deny Bogon
+2405:1790::/28 Deny Bogon
+2405:17a0::/27 Deny Bogon
+2405:17c0::/26 Deny Bogon
 2405:1801::/32 Deny Bogon
 2405:1802::/31 Deny Bogon
 2405:1804::/30 Deny Bogon
@@ -27793,7 +28015,13 @@ Tag: NForce Entertainment
 2405:1810::/28 Deny Bogon
 2405:1820::/27 Deny Bogon
 2405:1840::/26 Deny Bogon
-2405:1880::/25 Deny Bogon
+2405:1881::/32 Deny Bogon
+2405:1882::/31 Deny Bogon
+2405:1884::/30 Deny Bogon
+2405:1888::/29 Deny Bogon
+2405:1890::/28 Deny Bogon
+2405:18a0::/27 Deny Bogon
+2405:18c0::/26 Deny Bogon
 2405:1901::/32 Deny Bogon
 2405:1902::/31 Deny Bogon
 2405:1904::/30 Deny Bogon
@@ -27801,7 +28029,13 @@ Tag: NForce Entertainment
 2405:1910::/28 Deny Bogon
 2405:1920::/27 Deny Bogon
 2405:1940::/26 Deny Bogon
-2405:1980::/25 Deny Bogon
+2405:1981::/32 Deny Bogon
+2405:1982::/31 Deny Bogon
+2405:1984::/30 Deny Bogon
+2405:1988::/29 Deny Bogon
+2405:1990::/28 Deny Bogon
+2405:19a0::/27 Deny Bogon
+2405:19c0::/26 Deny Bogon
 2405:1a01::/32 Deny Bogon
 2405:1a02::/31 Deny Bogon
 2405:1a04::/30 Deny Bogon
@@ -27809,7 +28043,13 @@ Tag: NForce Entertainment
 2405:1a10::/28 Deny Bogon
 2405:1a20::/27 Deny Bogon
 2405:1a40::/26 Deny Bogon
-2405:1a80::/25 Deny Bogon
+2405:1a81::/32 Deny Bogon
+2405:1a82::/31 Deny Bogon
+2405:1a84::/30 Deny Bogon
+2405:1a88::/29 Deny Bogon
+2405:1a90::/28 Deny Bogon
+2405:1aa0::/27 Deny Bogon
+2405:1ac0::/26 Deny Bogon
 2405:1b01::/32 Deny Bogon
 2405:1b02::/31 Deny Bogon
 2405:1b04::/30 Deny Bogon
@@ -27817,7 +28057,13 @@ Tag: NForce Entertainment
 2405:1b10::/28 Deny Bogon
 2405:1b20::/27 Deny Bogon
 2405:1b40::/26 Deny Bogon
-2405:1b80::/25 Deny Bogon
+2405:1b81::/32 Deny Bogon
+2405:1b82::/31 Deny Bogon
+2405:1b84::/30 Deny Bogon
+2405:1b88::/29 Deny Bogon
+2405:1b90::/28 Deny Bogon
+2405:1ba0::/27 Deny Bogon
+2405:1bc0::/26 Deny Bogon
 2405:1c01::/32 Deny Bogon
 2405:1c02::/31 Deny Bogon
 2405:1c04::/30 Deny Bogon
@@ -27825,7 +28071,13 @@ Tag: NForce Entertainment
 2405:1c10::/28 Deny Bogon
 2405:1c20::/27 Deny Bogon
 2405:1c40::/26 Deny Bogon
-2405:1c80::/25 Deny Bogon
+2405:1c81::/32 Deny Bogon
+2405:1c82::/31 Deny Bogon
+2405:1c84::/30 Deny Bogon
+2405:1c88::/29 Deny Bogon
+2405:1c90::/28 Deny Bogon
+2405:1ca0::/27 Deny Bogon
+2405:1cc0::/26 Deny Bogon
 2405:1d01::/32 Deny Bogon
 2405:1d02::/31 Deny Bogon
 2405:1d04::/30 Deny Bogon
@@ -27833,7 +28085,13 @@ Tag: NForce Entertainment
 2405:1d10::/28 Deny Bogon
 2405:1d20::/27 Deny Bogon
 2405:1d40::/26 Deny Bogon
-2405:1d80::/25 Deny Bogon
+2405:1d81::/32 Deny Bogon
+2405:1d82::/31 Deny Bogon
+2405:1d84::/30 Deny Bogon
+2405:1d88::/29 Deny Bogon
+2405:1d90::/28 Deny Bogon
+2405:1da0::/27 Deny Bogon
+2405:1dc0::/26 Deny Bogon
 2405:1e01::/32 Deny Bogon
 2405:1e02::/31 Deny Bogon
 2405:1e04::/30 Deny Bogon
@@ -27841,7 +28099,13 @@ Tag: NForce Entertainment
 2405:1e10::/28 Deny Bogon
 2405:1e20::/27 Deny Bogon
 2405:1e40::/26 Deny Bogon
-2405:1e80::/25 Deny Bogon
+2405:1e81::/32 Deny Bogon
+2405:1e82::/31 Deny Bogon
+2405:1e84::/30 Deny Bogon
+2405:1e88::/29 Deny Bogon
+2405:1e90::/28 Deny Bogon
+2405:1ea0::/27 Deny Bogon
+2405:1ec0::/26 Deny Bogon
 2405:1f01::/32 Deny Bogon
 2405:1f02::/31 Deny Bogon
 2405:1f04::/30 Deny Bogon
@@ -27849,14 +28113,26 @@ Tag: NForce Entertainment
 2405:1f10::/28 Deny Bogon
 2405:1f20::/27 Deny Bogon
 2405:1f40::/26 Deny Bogon
-2405:1f80::/25 Deny Bogon
+2405:1f81::/32 Deny Bogon
+2405:1f82::/31 Deny Bogon
+2405:1f84::/30 Deny Bogon
+2405:1f88::/29 Deny Bogon
+2405:1f90::/28 Deny Bogon
+2405:1fa0::/27 Deny Bogon
+2405:1fc0::/26 Deny Bogon
 2405:2002::/31 Deny Bogon
 2405:2004::/30 Deny Bogon
 2405:2008::/29 Deny Bogon
 2405:2010::/28 Deny Bogon
 2405:2020::/27 Deny Bogon
 2405:2040::/26 Deny Bogon
-2405:2080::/25 Deny Bogon
+2405:2081::/32 Deny Bogon
+2405:2082::/31 Deny Bogon
+2405:2084::/30 Deny Bogon
+2405:2088::/29 Deny Bogon
+2405:2090::/28 Deny Bogon
+2405:20a0::/27 Deny Bogon
+2405:20c0::/26 Deny Bogon
 2405:2101::/32 Deny Bogon
 2405:2102::/31 Deny Bogon
 2405:2104::/30 Deny Bogon
@@ -27864,7 +28140,13 @@ Tag: NForce Entertainment
 2405:2110::/28 Deny Bogon
 2405:2120::/27 Deny Bogon
 2405:2140::/26 Deny Bogon
-2405:2180::/25 Deny Bogon
+2405:2181::/32 Deny Bogon
+2405:2182::/31 Deny Bogon
+2405:2184::/30 Deny Bogon
+2405:2188::/29 Deny Bogon
+2405:2190::/28 Deny Bogon
+2405:21a0::/27 Deny Bogon
+2405:21c0::/26 Deny Bogon
 2405:2201::/32 Deny Bogon
 2405:2202::/31 Deny Bogon
 2405:2204::/30 Deny Bogon
@@ -27872,7 +28154,13 @@ Tag: NForce Entertainment
 2405:2210::/28 Deny Bogon
 2405:2220::/27 Deny Bogon
 2405:2240::/26 Deny Bogon
-2405:2280::/25 Deny Bogon
+2405:2281::/32 Deny Bogon
+2405:2282::/31 Deny Bogon
+2405:2284::/30 Deny Bogon
+2405:2288::/29 Deny Bogon
+2405:2290::/28 Deny Bogon
+2405:22a0::/27 Deny Bogon
+2405:22c0::/26 Deny Bogon
 2405:2301::/32 Deny Bogon
 2405:2302::/31 Deny Bogon
 2405:2304::/30 Deny Bogon
@@ -27880,7 +28168,13 @@ Tag: NForce Entertainment
 2405:2310::/28 Deny Bogon
 2405:2320::/27 Deny Bogon
 2405:2340::/26 Deny Bogon
-2405:2380::/25 Deny Bogon
+2405:2381::/32 Deny Bogon
+2405:2382::/31 Deny Bogon
+2405:2384::/30 Deny Bogon
+2405:2388::/29 Deny Bogon
+2405:2390::/28 Deny Bogon
+2405:23a0::/27 Deny Bogon
+2405:23c0::/26 Deny Bogon
 2405:2401::/32 Deny Bogon
 2405:2402::/31 Deny Bogon
 2405:2404::/30 Deny Bogon
@@ -27888,7 +28182,13 @@ Tag: NForce Entertainment
 2405:2410::/28 Deny Bogon
 2405:2420::/27 Deny Bogon
 2405:2440::/26 Deny Bogon
-2405:2480::/25 Deny Bogon
+2405:2481::/32 Deny Bogon
+2405:2482::/31 Deny Bogon
+2405:2484::/30 Deny Bogon
+2405:2488::/29 Deny Bogon
+2405:2490::/28 Deny Bogon
+2405:24a0::/27 Deny Bogon
+2405:24c0::/26 Deny Bogon
 2405:2501::/32 Deny Bogon
 2405:2502::/31 Deny Bogon
 2405:2504::/30 Deny Bogon
@@ -27896,7 +28196,13 @@ Tag: NForce Entertainment
 2405:2510::/28 Deny Bogon
 2405:2520::/27 Deny Bogon
 2405:2540::/26 Deny Bogon
-2405:2580::/25 Deny Bogon
+2405:2581::/32 Deny Bogon
+2405:2582::/31 Deny Bogon
+2405:2584::/30 Deny Bogon
+2405:2588::/29 Deny Bogon
+2405:2590::/28 Deny Bogon
+2405:25a0::/27 Deny Bogon
+2405:25c0::/26 Deny Bogon
 2405:2601::/32 Deny Bogon
 2405:2602::/31 Deny Bogon
 2405:2604::/30 Deny Bogon
@@ -27904,7 +28210,13 @@ Tag: NForce Entertainment
 2405:2610::/28 Deny Bogon
 2405:2620::/27 Deny Bogon
 2405:2640::/26 Deny Bogon
-2405:2680::/25 Deny Bogon
+2405:2681::/32 Deny Bogon
+2405:2682::/31 Deny Bogon
+2405:2684::/30 Deny Bogon
+2405:2688::/29 Deny Bogon
+2405:2690::/28 Deny Bogon
+2405:26a0::/27 Deny Bogon
+2405:26c0::/26 Deny Bogon
 2405:2701::/32 Deny Bogon
 2405:2702::/31 Deny Bogon
 2405:2704::/30 Deny Bogon
@@ -27912,7 +28224,13 @@ Tag: NForce Entertainment
 2405:2710::/28 Deny Bogon
 2405:2720::/27 Deny Bogon
 2405:2740::/26 Deny Bogon
-2405:2780::/25 Deny Bogon
+2405:2781::/32 Deny Bogon
+2405:2782::/31 Deny Bogon
+2405:2784::/30 Deny Bogon
+2405:2788::/29 Deny Bogon
+2405:2790::/28 Deny Bogon
+2405:27a0::/27 Deny Bogon
+2405:27c0::/26 Deny Bogon
 2405:2801::/32 Deny Bogon
 2405:2802::/31 Deny Bogon
 2405:2804::/30 Deny Bogon
@@ -27920,7 +28238,13 @@ Tag: NForce Entertainment
 2405:2810::/28 Deny Bogon
 2405:2820::/27 Deny Bogon
 2405:2840::/26 Deny Bogon
-2405:2880::/25 Deny Bogon
+2405:2881::/32 Deny Bogon
+2405:2882::/31 Deny Bogon
+2405:2884::/30 Deny Bogon
+2405:2888::/29 Deny Bogon
+2405:2890::/28 Deny Bogon
+2405:28a0::/27 Deny Bogon
+2405:28c0::/26 Deny Bogon
 2405:2901::/32 Deny Bogon
 2405:2902::/31 Deny Bogon
 2405:2904::/30 Deny Bogon
@@ -27928,7 +28252,13 @@ Tag: NForce Entertainment
 2405:2910::/28 Deny Bogon
 2405:2920::/27 Deny Bogon
 2405:2940::/26 Deny Bogon
-2405:2980::/25 Deny Bogon
+2405:2981::/32 Deny Bogon
+2405:2982::/31 Deny Bogon
+2405:2984::/30 Deny Bogon
+2405:2988::/29 Deny Bogon
+2405:2990::/28 Deny Bogon
+2405:29a0::/27 Deny Bogon
+2405:29c0::/26 Deny Bogon
 2405:2a01::/32 Deny Bogon
 2405:2a02::/31 Deny Bogon
 2405:2a04::/30 Deny Bogon
@@ -27936,7 +28266,13 @@ Tag: NForce Entertainment
 2405:2a10::/28 Deny Bogon
 2405:2a20::/27 Deny Bogon
 2405:2a40::/26 Deny Bogon
-2405:2a80::/25 Deny Bogon
+2405:2a81::/32 Deny Bogon
+2405:2a82::/31 Deny Bogon
+2405:2a84::/30 Deny Bogon
+2405:2a88::/29 Deny Bogon
+2405:2a90::/28 Deny Bogon
+2405:2aa0::/27 Deny Bogon
+2405:2ac0::/26 Deny Bogon
 2405:2b01::/32 Deny Bogon
 2405:2b02::/31 Deny Bogon
 2405:2b04::/30 Deny Bogon
@@ -27944,7 +28280,13 @@ Tag: NForce Entertainment
 2405:2b10::/28 Deny Bogon
 2405:2b20::/27 Deny Bogon
 2405:2b40::/26 Deny Bogon
-2405:2b80::/25 Deny Bogon
+2405:2b81::/32 Deny Bogon
+2405:2b82::/31 Deny Bogon
+2405:2b84::/30 Deny Bogon
+2405:2b88::/29 Deny Bogon
+2405:2b90::/28 Deny Bogon
+2405:2ba0::/27 Deny Bogon
+2405:2bc0::/26 Deny Bogon
 2405:2c01::/32 Deny Bogon
 2405:2c02::/31 Deny Bogon
 2405:2c04::/30 Deny Bogon
@@ -27952,7 +28294,13 @@ Tag: NForce Entertainment
 2405:2c10::/28 Deny Bogon
 2405:2c20::/27 Deny Bogon
 2405:2c40::/26 Deny Bogon
-2405:2c80::/25 Deny Bogon
+2405:2c81::/32 Deny Bogon
+2405:2c82::/31 Deny Bogon
+2405:2c84::/30 Deny Bogon
+2405:2c88::/29 Deny Bogon
+2405:2c90::/28 Deny Bogon
+2405:2ca0::/27 Deny Bogon
+2405:2cc0::/26 Deny Bogon
 2405:2d01::/32 Deny Bogon
 2405:2d02::/31 Deny Bogon
 2405:2d04::/30 Deny Bogon
@@ -27960,7 +28308,13 @@ Tag: NForce Entertainment
 2405:2d10::/28 Deny Bogon
 2405:2d20::/27 Deny Bogon
 2405:2d40::/26 Deny Bogon
-2405:2d80::/25 Deny Bogon
+2405:2d81::/32 Deny Bogon
+2405:2d82::/31 Deny Bogon
+2405:2d84::/30 Deny Bogon
+2405:2d88::/29 Deny Bogon
+2405:2d90::/28 Deny Bogon
+2405:2da0::/27 Deny Bogon
+2405:2dc0::/26 Deny Bogon
 2405:2e01::/32 Deny Bogon
 2405:2e02::/31 Deny Bogon
 2405:2e04::/30 Deny Bogon
@@ -27968,7 +28322,13 @@ Tag: NForce Entertainment
 2405:2e10::/28 Deny Bogon
 2405:2e20::/27 Deny Bogon
 2405:2e40::/26 Deny Bogon
-2405:2e80::/25 Deny Bogon
+2405:2e81::/32 Deny Bogon
+2405:2e82::/31 Deny Bogon
+2405:2e84::/30 Deny Bogon
+2405:2e88::/29 Deny Bogon
+2405:2e90::/28 Deny Bogon
+2405:2ea0::/27 Deny Bogon
+2405:2ec0::/26 Deny Bogon
 2405:2f01::/32 Deny Bogon
 2405:2f02::/31 Deny Bogon
 2405:2f04::/30 Deny Bogon
@@ -27976,14 +28336,26 @@ Tag: NForce Entertainment
 2405:2f10::/28 Deny Bogon
 2405:2f20::/27 Deny Bogon
 2405:2f40::/26 Deny Bogon
-2405:2f80::/25 Deny Bogon
+2405:2f81::/32 Deny Bogon
+2405:2f82::/31 Deny Bogon
+2405:2f84::/30 Deny Bogon
+2405:2f88::/29 Deny Bogon
+2405:2f90::/28 Deny Bogon
+2405:2fa0::/27 Deny Bogon
+2405:2fc0::/26 Deny Bogon
 2405:3002::/31 Deny Bogon
 2405:3004::/30 Deny Bogon
 2405:3008::/29 Deny Bogon
 2405:3010::/28 Deny Bogon
 2405:3020::/27 Deny Bogon
 2405:3040::/26 Deny Bogon
-2405:3080::/25 Deny Bogon
+2405:3081::/32 Deny Bogon
+2405:3082::/31 Deny Bogon
+2405:3084::/30 Deny Bogon
+2405:3088::/29 Deny Bogon
+2405:3090::/28 Deny Bogon
+2405:30a0::/27 Deny Bogon
+2405:30c0::/26 Deny Bogon
 2405:3101::/32 Deny Bogon
 2405:3102::/31 Deny Bogon
 2405:3104::/30 Deny Bogon
@@ -27991,7 +28363,13 @@ Tag: NForce Entertainment
 2405:3110::/28 Deny Bogon
 2405:3120::/27 Deny Bogon
 2405:3140::/26 Deny Bogon
-2405:3180::/25 Deny Bogon
+2405:3181::/32 Deny Bogon
+2405:3182::/31 Deny Bogon
+2405:3184::/30 Deny Bogon
+2405:3188::/29 Deny Bogon
+2405:3190::/28 Deny Bogon
+2405:31a0::/27 Deny Bogon
+2405:31c0::/26 Deny Bogon
 2405:3201::/32 Deny Bogon
 2405:3202::/31 Deny Bogon
 2405:3204::/30 Deny Bogon
@@ -27999,7 +28377,13 @@ Tag: NForce Entertainment
 2405:3210::/28 Deny Bogon
 2405:3220::/27 Deny Bogon
 2405:3240::/26 Deny Bogon
-2405:3280::/25 Deny Bogon
+2405:3281::/32 Deny Bogon
+2405:3282::/31 Deny Bogon
+2405:3284::/30 Deny Bogon
+2405:3288::/29 Deny Bogon
+2405:3290::/28 Deny Bogon
+2405:32a0::/27 Deny Bogon
+2405:32c0::/26 Deny Bogon
 2405:3301::/32 Deny Bogon
 2405:3302::/31 Deny Bogon
 2405:3304::/30 Deny Bogon
@@ -33924,7 +34308,6 @@ Tag: NForce Entertainment
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
 2602:ff40::/30 Deny Bogon
-2602:ff44::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -38981,35 +39364,51 @@ Tag: NForce Entertainment
 2607:4610::/28 Deny Bogon
 2607:4620::/27 Deny Bogon
 2607:4640::/26 Deny Bogon
-2607:4680::/25 Deny Bogon
+2607:4690::/28 Deny Bogon
+2607:46a0::/27 Deny Bogon
+2607:46c0::/26 Deny Bogon
 2607:4710::/28 Deny Bogon
 2607:4720::/27 Deny Bogon
 2607:4740::/26 Deny Bogon
-2607:4780::/25 Deny Bogon
+2607:4790::/28 Deny Bogon
+2607:47a0::/27 Deny Bogon
+2607:47c0::/26 Deny Bogon
 2607:4810::/28 Deny Bogon
 2607:4820::/27 Deny Bogon
 2607:4840::/26 Deny Bogon
-2607:4880::/25 Deny Bogon
+2607:4890::/28 Deny Bogon
+2607:48a0::/27 Deny Bogon
+2607:48c0::/26 Deny Bogon
 2607:4910::/28 Deny Bogon
 2607:4920::/27 Deny Bogon
 2607:4940::/26 Deny Bogon
-2607:4980::/25 Deny Bogon
+2607:4990::/28 Deny Bogon
+2607:49a0::/27 Deny Bogon
+2607:49c0::/26 Deny Bogon
 2607:4a10::/28 Deny Bogon
 2607:4a20::/27 Deny Bogon
 2607:4a40::/26 Deny Bogon
-2607:4a80::/25 Deny Bogon
+2607:4a90::/28 Deny Bogon
+2607:4aa0::/27 Deny Bogon
+2607:4ac0::/26 Deny Bogon
 2607:4b10::/28 Deny Bogon
 2607:4b20::/27 Deny Bogon
 2607:4b40::/26 Deny Bogon
-2607:4b80::/25 Deny Bogon
+2607:4b90::/28 Deny Bogon
+2607:4ba0::/27 Deny Bogon
+2607:4bc0::/26 Deny Bogon
 2607:4c10::/28 Deny Bogon
 2607:4c20::/27 Deny Bogon
 2607:4c40::/26 Deny Bogon
-2607:4c80::/25 Deny Bogon
+2607:4c90::/28 Deny Bogon
+2607:4ca0::/27 Deny Bogon
+2607:4cc0::/26 Deny Bogon
 2607:4d10::/28 Deny Bogon
 2607:4d20::/27 Deny Bogon
 2607:4d40::/26 Deny Bogon
-2607:4d80::/25 Deny Bogon
+2607:4d90::/28 Deny Bogon
+2607:4da0::/27 Deny Bogon
+2607:4dc0::/26 Deny Bogon
 2607:4e10::/28 Deny Bogon
 2607:4e20::/27 Deny Bogon
 2607:4e40::/26 Deny Bogon
@@ -40043,7 +40442,16 @@ Tag: NForce Entertainment
 2620:8:800::/37 Deny Bogon
 2620:8:1000::/36 Deny Bogon
 2620:8:2000::/35 Deny Bogon
-2620:8:4000::/34 Deny Bogon
+2620:8:4000::/39 Deny Bogon
+2620:8:4200::/40 Deny Bogon
+2620:8:4310::/44 Deny Bogon
+2620:8:4320::/43 Deny Bogon
+2620:8:4340::/42 Deny Bogon
+2620:8:4380::/41 Deny Bogon
+2620:8:4400::/38 Deny Bogon
+2620:8:4800::/37 Deny Bogon
+2620:8:5000::/36 Deny Bogon
+2620:8:6000::/35 Deny Bogon
 2620:8:8000::/39 Deny Bogon
 2620:8:8210::/44 Deny Bogon
 2620:8:8220::/43 Deny Bogon
@@ -45757,7 +46165,16 @@ Tag: NForce Entertainment
 2620:9f:800::/37 Deny Bogon
 2620:9f:1000::/36 Deny Bogon
 2620:9f:2000::/35 Deny Bogon
-2620:9f:4000::/34 Deny Bogon
+2620:9f:4000::/41 Deny Bogon
+2620:9f:4090::/44 Deny Bogon
+2620:9f:40a0::/43 Deny Bogon
+2620:9f:40c0::/42 Deny Bogon
+2620:9f:4100::/40 Deny Bogon
+2620:9f:4200::/39 Deny Bogon
+2620:9f:4400::/38 Deny Bogon
+2620:9f:4800::/37 Deny Bogon
+2620:9f:5000::/36 Deny Bogon
+2620:9f:6000::/35 Deny Bogon
 2620:9f:8010::/44 Deny Bogon
 2620:9f:8020::/43 Deny Bogon
 2620:9f:8040::/42 Deny Bogon
@@ -46160,7 +46577,16 @@ Tag: NForce Entertainment
 2620:a9:8800::/37 Deny Bogon
 2620:a9:9000::/36 Deny Bogon
 2620:a9:a000::/35 Deny Bogon
-2620:a9:c000::/34 Deny Bogon
+2620:a9:c000::/41 Deny Bogon
+2620:a9:c090::/44 Deny Bogon
+2620:a9:c0a0::/43 Deny Bogon
+2620:a9:c0c0::/42 Deny Bogon
+2620:a9:c100::/40 Deny Bogon
+2620:a9:c200::/39 Deny Bogon
+2620:a9:c400::/38 Deny Bogon
+2620:a9:c800::/37 Deny Bogon
+2620:a9:d000::/36 Deny Bogon
+2620:a9:e000::/35 Deny Bogon
 2620:aa:10::/44 Deny Bogon
 2620:aa:20::/43 Deny Bogon
 2620:aa:40::/42 Deny Bogon
@@ -49483,7 +49909,16 @@ Tag: NForce Entertainment
 2620:fe:800::/37 Deny Bogon
 2620:fe:1000::/36 Deny Bogon
 2620:fe:2000::/35 Deny Bogon
-2620:fe:4000::/34 Deny Bogon
+2620:fe:4000::/41 Deny Bogon
+2620:fe:4090::/44 Deny Bogon
+2620:fe:40a0::/43 Deny Bogon
+2620:fe:40c0::/42 Deny Bogon
+2620:fe:4100::/40 Deny Bogon
+2620:fe:4200::/39 Deny Bogon
+2620:fe:4400::/38 Deny Bogon
+2620:fe:4800::/37 Deny Bogon
+2620:fe:5000::/36 Deny Bogon
+2620:fe:6000::/35 Deny Bogon
 2620:fe:8010::/44 Deny Bogon
 2620:fe:8020::/43 Deny Bogon
 2620:fe:8040::/42 Deny Bogon
@@ -51125,7 +51560,10 @@ Tag: NForce Entertainment
 2620:127:2200::/39 Deny Bogon
 2620:127:2400::/38 Deny Bogon
 2620:127:2800::/37 Deny Bogon
-2620:127:3000::/36 Deny Bogon
+2620:127:3100::/40 Deny Bogon
+2620:127:3200::/39 Deny Bogon
+2620:127:3400::/38 Deny Bogon
+2620:127:3800::/37 Deny Bogon
 2620:127:4000::/34 Deny Bogon
 2620:127:8000::/33 Deny Bogon
 2620:128::/29 Deny Bogon
@@ -53783,7 +54221,10 @@ Tag: NForce Entertainment
 2801:80:1902::/47 Deny Bogon
 2801:80:1904::/46 Deny Bogon
 2801:80:1908::/45 Deny Bogon
-2801:80:1910::/44 Deny Bogon
+2801:80:1911::/48 Deny Bogon
+2801:80:1912::/47 Deny Bogon
+2801:80:1914::/46 Deny Bogon
+2801:80:1918::/45 Deny Bogon
 2801:80:1920::/43 Deny Bogon
 2801:80:1940::/42 Deny Bogon
 2801:80:1980::/41 Deny Bogon
@@ -54247,7 +54688,8 @@ Tag: NForce Entertainment
 2803:ac0::/26 Deny Bogon
 2803:b10::/28 Deny Bogon
 2803:b20::/27 Deny Bogon
-2803:b40::/26 Deny Bogon
+2803:b50::/28 Deny Bogon
+2803:b60::/27 Deny Bogon
 2803:b90::/28 Deny Bogon
 2803:ba0::/27 Deny Bogon
 2803:bc0::/26 Deny Bogon
@@ -54714,7 +55156,8 @@ Tag: NForce Entertainment
 2803:4ac0::/26 Deny Bogon
 2803:4b10::/28 Deny Bogon
 2803:4b20::/27 Deny Bogon
-2803:4b40::/26 Deny Bogon
+2803:4b50::/28 Deny Bogon
+2803:4b60::/27 Deny Bogon
 2803:4b90::/28 Deny Bogon
 2803:4ba0::/27 Deny Bogon
 2803:4bc0::/26 Deny Bogon
@@ -55171,7 +55614,8 @@ Tag: NForce Entertainment
 2803:8ac0::/26 Deny Bogon
 2803:8b10::/28 Deny Bogon
 2803:8b20::/27 Deny Bogon
-2803:8b40::/26 Deny Bogon
+2803:8b50::/28 Deny Bogon
+2803:8b60::/27 Deny Bogon
 2803:8b90::/28 Deny Bogon
 2803:8ba0::/27 Deny Bogon
 2803:8bc0::/26 Deny Bogon
@@ -55923,7 +56367,8 @@ Tag: NForce Entertainment
 2803:f2c0::/26 Deny Bogon
 2803:f310::/28 Deny Bogon
 2803:f320::/27 Deny Bogon
-2803:f340::/26 Deny Bogon
+2803:f350::/28 Deny Bogon
+2803:f360::/27 Deny Bogon
 2803:f390::/28 Deny Bogon
 2803:f3a0::/27 Deny Bogon
 2803:f3c0::/26 Deny Bogon
@@ -59944,7 +60389,11 @@ Tag: NForce Entertainment
 2804:1f1b::/32 Deny Bogon
 2804:1f1d::/32 Deny Bogon
 2804:1f1f::/32 Deny Bogon
-2804:1f20::/27 Deny Bogon
+2804:1f21::/32 Deny Bogon
+2804:1f23::/32 Deny Bogon
+2804:1f24::/30 Deny Bogon
+2804:1f28::/29 Deny Bogon
+2804:1f30::/28 Deny Bogon
 2804:1f40::/26 Deny Bogon
 2804:1f80::/25 Deny Bogon
 2804:2001::/32 Deny Bogon
@@ -62055,8 +62504,23 @@ Tag: NForce Entertainment
 2804:3076::/31 Deny Bogon
 2804:3079::/32 Deny Bogon
 2804:307a::/31 Deny Bogon
-2804:307c::/30 Deny Bogon
-2804:3080::/25 Deny Bogon
+2804:307d::/32 Deny Bogon
+2804:307e::/31 Deny Bogon
+2804:3081::/32 Deny Bogon
+2804:3082::/31 Deny Bogon
+2804:3085::/32 Deny Bogon
+2804:3086::/31 Deny Bogon
+2804:3089::/32 Deny Bogon
+2804:308a::/31 Deny Bogon
+2804:308d::/32 Deny Bogon
+2804:308e::/31 Deny Bogon
+2804:3091::/32 Deny Bogon
+2804:3092::/31 Deny Bogon
+2804:3095::/32 Deny Bogon
+2804:3096::/31 Deny Bogon
+2804:3098::/29 Deny Bogon
+2804:30a0::/27 Deny Bogon
+2804:30c0::/26 Deny Bogon
 2804:3100::/24 Deny Bogon
 2804:3200::/23 Deny Bogon
 2804:3400::/22 Deny Bogon
@@ -71552,9 +72016,9 @@ Tag: NForce Entertainment
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:7680::/25 Deny Bogon
-2a07:7700::/24 Deny Bogon
-2a07:7800::/21 Deny Bogon
+2a07:7c80::/25 Deny Bogon
+2a07:7d00::/24 Deny Bogon
+2a07:7e00::/23 Deny Bogon
 2a07:8000::/17 Deny Bogon
 2a08::/13 Deny Bogon
 2c00::/13 Deny Bogon
@@ -71566,8 +72030,12 @@ Tag: NForce Entertainment
 2c0f:8000::/18 Deny Bogon
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
-2c0f:f000::/22 Deny Bogon
-2c0f:f5c0::/29 Deny Bogon
+2c0f:f000::/23 Deny Bogon
+2c0f:f210::/28 Deny Bogon
+2c0f:f220::/27 Deny Bogon
+2c0f:f240::/26 Deny Bogon
+2c0f:f280::/25 Deny Bogon
+2c0f:f300::/24 Deny Bogon
 2c0f:f790::/29 Deny Bogon
 2c0f:f868::/29 Deny Bogon
 2c0f:f910::/29 Deny Bogon

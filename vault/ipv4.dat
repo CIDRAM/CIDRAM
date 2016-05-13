@@ -3040,8 +3040,9 @@ Tag: Tehnologii Budushego
 
 
 # ASN 24961 ("myLoc managed IT AG").
-# Infected by malware (as per reported by Google): 0.87%.
-# Updated: 2016.04.23
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 0.92%.
+# Updated: 2016.05.13
 
 5.104.104.0/21 Deny Generic
 5.199.128.0/20 Deny Generic
@@ -3059,11 +3060,7 @@ Tag: Tehnologii Budushego
 80.86.186.0/24 Deny Generic
 81.30.144.0/20 Deny Generic
 83.136.80.0/21 Deny Generic
-85.14.240.0/20 Deny Generic
 85.114.128.0/19 Deny Generic
-89.163.128.0/19 Deny Generic
-89.163.208.0/20 Deny Generic
-89.163.224.0/19 Deny Generic
 91.194.84.0/23 Deny Generic
 91.212.85.0/24 Deny Generic
 91.242.212.0/24 Deny Generic
@@ -3075,6 +3072,7 @@ Tag: Tehnologii Budushego
 185.97.5.0/24 Deny Generic
 185.114.108.0/24 Deny Generic
 185.144.236.0/22 Deny Generic
+185.146.60.0/22 Deny Generic
 188.214.93.0/24 Deny Generic
 191.96.66.0/24 Deny Generic
 193.22.251.0/24 Deny Generic
@@ -3083,9 +3081,19 @@ Tag: Tehnologii Budushego
 193.111.136.0/21 Deny Generic
 193.111.198.0/23 Deny Generic
 199.201.240.0/24 Deny Generic
-213.202.208.0/20 Deny Generic
 217.79.176.0/20 Deny Generic
 Tag: myLoc
+
+
+# ASN 13301 ("United Gameserver GmbH").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 0.16%.
+# Updated: 2016.05.13
+
+85.14.192.0/18 Deny Cloud
+89.163.128.0/17 Deny Cloud
+213.202.192.0/18 Deny Cloud
+Tag: United Gameserver
 
 
 # ASN 30968 ("INFOBOX").
@@ -5038,6 +5046,7 @@ Tag: ON-LINE Ltd
 138.36.16.0/22 Deny Cloud
 142.54.20.0/24 Deny Cloud
 142.75.16.0/23 Deny Cloud
+144.208.128.0/21 Deny Cloud
 162.210.172.0/24 Deny Cloud
 162.210.174.0/24 Deny Cloud
 162.217.8.0/21 Deny Cloud
@@ -5235,8 +5244,6 @@ Tag: SWIFT VENTURES Inc
 185.85.237.0/24 Deny Cloud
 185.85.238.0/23 Deny Cloud
 185.86.5.0/24 Deny Cloud
-185.86.153.0/24 Deny Cloud
-185.86.154.0/24 Deny Cloud
 185.86.164.0/22 Deny Cloud
 185.87.26.0/23 Deny Cloud
 185.87.121.0/24 Deny Cloud
@@ -9649,8 +9656,9 @@ Tag: IOFlood LLC
 
 
 # ASN 51557 ("FBS BILISIM COZUMLERI TIC LTD STI").
-# Infected by malware (as per reported by Google): 3.25%.
-# Updated: 2016.04.29
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 3.49%.
+# Updated: 2016.04.29 / Checked: 2016.05.13
 
 93.89.224.0/20 Deny Cloud
 185.33.232.0/22 Deny Cloud
@@ -10507,10 +10515,157 @@ Tag: NForce Entertainment
 Tag: Huawei Cloud Service
 
 
+# ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.82%.
+# Updated: 2016.05.13
+
+31.210.152.0/21 Deny Generic
+31.214.129.0/24 Deny Generic
+31.214.152.0/24 Deny Generic
+37.247.96.0/22 Deny Generic
+37.247.100.0/24 Deny Generic
+37.247.102.0/23 Deny Generic
+37.247.104.0/21 Deny Generic
+46.20.0.0/21 Deny Generic
+46.20.8.0/23 Deny Generic
+46.20.11.0/24 Deny Generic
+46.20.14.0/23 Deny Generic
+89.43.78.0/24 Deny Generic
+89.107.224.0/21 Deny Generic
+93.114.130.0/24 Deny Generic
+93.115.10.0/24 Deny Generic
+95.130.168.0/22 Deny Generic
+95.130.172.0/23 Deny Generic
+95.130.175.0/24 Deny Generic
+109.230.196.0/24 Deny Generic
+109.235.248.0/21 Deny Generic
+134.255.199.0/24 Deny Generic
+154.16.165.0/24 Deny Generic
+181.215.195.0/24 Deny Generic
+181.215.253.0/24 Deny Generic
+185.28.60.0/23 Deny Generic
+185.28.62.0/24 Deny Generic
+185.29.120.0/22 Deny Generic
+185.42.172.0/22 Deny Generic
+185.78.84.0/22 Deny Generic
+185.81.152.0/22 Deny Generic
+185.82.220.0/22 Deny Generic
+185.85.72.0/22 Deny Generic
+185.85.188.0/24 Deny Generic
+185.85.236.0/24 Deny Generic
+185.86.4.0/24 Deny Generic
+185.86.6.0/23 Deny Generic
+185.86.12.0/22 Deny Generic
+185.86.80.0/22 Deny Generic
+185.86.152.0/22 Deny Generic
+185.87.24.0/24 Deny Generic
+185.87.120.0/24 Deny Generic
+185.88.172.0/22 Deny Generic
+185.90.240.0/22 Deny Generic
+185.92.0.0/22 Deny Generic
+185.93.52.0/22 Deny Generic
+185.93.68.0/22 Deny Generic
+185.95.120.0/22 Deny Generic
+185.98.61.0/24 Deny Generic
+185.98.62.0/23 Deny Generic
+185.103.196.0/22 Deny Generic
+185.106.20.0/22 Deny Generic
+185.119.83.0/24 Deny Generic
+185.122.200.0/22 Deny Generic
+185.124.84.0/22 Deny Generic
+185.128.112.0/22 Deny Generic
+185.132.124.0/22 Deny Generic
+185.136.204.0/22 Deny Generic
+185.141.32.0/22 Deny Generic
+191.96.118.0/24 Deny Generic
+Tag: DGN TEKNOLOJI
+
+
+# ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.35%.
+# Updated: 2016.05.13
+
+43.228.158.0/24 Deny Cloud
+43.245.60.0/22 Deny Cloud
+45.114.117.0/24 Deny Cloud
+45.115.27.0/24 Deny Cloud
+45.119.200.0/23 Deny Cloud
+45.119.202.0/24 Deny Cloud
+103.14.76.0/23 Deny Cloud
+103.14.79.0/24 Deny Cloud
+103.25.52.0/24 Deny Cloud
+103.25.62.0/24 Deny Cloud
+103.46.140.0/24 Deny Cloud
+103.46.142.0/24 Deny Cloud
+103.47.144.0/24 Deny Cloud
+103.53.197.0/24 Deny Cloud
+103.53.198.0/23 Deny Cloud
+103.60.8.0/24 Deny Cloud
+103.60.10.0/23 Deny Cloud
+103.62.48.0/24 Deny Cloud
+103.200.4.0/23 Deny Cloud
+103.200.6.0/24 Deny Cloud
+103.200.216.0/22 Deny Cloud
+103.253.24.0/22 Deny Cloud
+111.221.44.0/22 Deny Cloud
+113.29.226.0/24 Deny Cloud
+113.29.228.0/22 Deny Cloud
+113.29.232.0/23 Deny Cloud
+119.161.100.0/22 Deny Cloud
+172.94.33.0/24 Deny Cloud
+179.61.193.0/24 Deny Cloud
+182.54.239.0/24 Deny Cloud
+192.253.240.0/24 Deny Cloud
+192.253.247.0/24 Deny Cloud
+192.253.249.0/24 Deny Cloud
+192.253.251.0/24 Deny Cloud
+192.253.253.0/24 Deny Cloud
+192.253.254.0/24 Deny Cloud
+198.177.120.0/24 Deny Cloud
+202.150.208.0/20 Deny Cloud
+203.174.80.0/21 Deny Cloud
+Tag: NewMedia Express
+
+
+# ASN 49467 ("Inetmar internet Hizmetleri San. Tic. Ltd. Sti").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.41%.
+# Updated: 2016.05.13
+
+37.152.73.0/24 Deny Generic
+37.152.74.0/23 Deny Generic
+37.152.76.0/24 Deny Generic
+85.95.224.0/21 Deny Generic
+85.95.232.0/22 Deny Generic
+85.95.236.0/24 Deny Generic
+85.95.245.0/24 Deny Generic
+85.95.246.0/23 Deny Generic
+85.95.248.0/22 Deny Generic
+85.95.252.0/24 Deny Generic
+92.42.32.0/21 Deny Generic
+185.8.34.0/23 Deny Generic
+185.150.128.0/22 Deny Generic
+Tag: Inetmar
+
+
+# ASN 38731 ("Vietel - CHT Compamy Ltd").
+# Caught trying to DDoS SFS.
+# Infected by malware (as per reported by Google): 1.81%.
+# Updated: 2016.05.13
+
+45.117.160.0/22 Deny Generic
+103.1.208.0/22 Deny Generic
+115.84.176.0/21 Deny Generic
+210.211.96.0/19 Deny Generic
+Tag: Vietel
+
+
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Thanks to chris_c for finding these. :-)
-# Updated: 2016.05.09
+# Updated: 2016.05.13
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3799
 # Refer microsoft.com/en-us/download/details.aspx?id=41653
 
@@ -10526,8 +10681,7 @@ Tag: Huawei Cloud Service
 13.65.108.0/22 Deny Cloud
 13.65.112.0/20 Deny Cloud
 13.65.128.0/17 Deny Cloud
-13.66.0.0/18 Deny Cloud
-13.66.64.0/19 Deny Cloud
+13.66.0.0/17 Deny Cloud
 13.67.0.0/16 Deny Cloud
 13.68.0.0/17 Deny Cloud
 13.68.128.0/19 Deny Cloud
@@ -10806,12 +10960,17 @@ Tag: Huawei Cloud Service
 13.95.104.0/21 Deny Cloud
 13.95.112.0/20 Deny Cloud
 13.95.128.0/19 Deny Cloud
+13.95.160.0/20 Deny Cloud
+13.95.176.0/21 Deny Cloud
 13.95.184.0/28 Deny Cloud
 13.95.185.0/24 Deny Cloud
 13.95.192.0/19 Deny Cloud
 13.95.224.0/20 Deny Cloud
 13.95.240.0/26 Deny Cloud
 13.95.240.64/27 Deny Cloud
+13.95.240.96/28 Deny Cloud
+13.95.241.0/24 Deny Cloud
+13.95.248.0/21 Deny Cloud
 23.96.0.0/18 Deny Cloud
 23.96.64.0/28 Deny Cloud
 23.96.64.64/26 Deny Cloud
@@ -11233,6 +11392,7 @@ Tag: Huawei Cloud Service
 52.171.0.0/20 Deny Cloud
 52.171.16.0/21 Deny Cloud
 52.171.64.0/21 Deny Cloud
+52.171.80.0/20 Deny Cloud
 52.171.144.0/26 Deny Cloud
 52.171.144.144/28 Deny Cloud
 52.171.145.0/24 Deny Cloud
@@ -11240,6 +11400,8 @@ Tag: Huawei Cloud Service
 52.171.152.0/21 Deny Cloud
 52.171.160.0/19 Deny Cloud
 52.172.0.0/20 Deny Cloud
+52.172.16.64/26 Deny Cloud
+52.172.16.128/27 Deny Cloud
 52.172.16.160/28 Deny Cloud
 52.172.17.0/24 Deny Cloud
 52.172.24.0/21 Deny Cloud
@@ -11283,7 +11445,8 @@ Tag: Huawei Cloud Service
 52.174.169.0/24 Deny Cloud
 52.174.176.0/20 Deny Cloud
 52.174.192.0/19 Deny Cloud
-52.174.224.96/27 Deny Cloud
+52.174.224.48/28 Deny Cloud
+52.174.224.64/26 Deny Cloud
 52.174.224.128/28 Deny Cloud
 52.175.0.0/19 Deny Cloud
 52.175.32.0/21 Deny Cloud
@@ -11767,7 +11930,7 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.05.09
+# Updated: 2016.05.13
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 31.28.27.17/32 Deny Generic
@@ -11777,7 +11940,6 @@ Tag: Azure
 59.157.4.2/32 Deny Generic
 60.13.186.5/32 Deny Generic
 60.241.184.209/32 Deny Generic
-62.60.138.150/32 Deny Generic
 64.85.233.8/32 Deny Generic
 64.90.187.131/32 Deny Generic
 64.127.71.73/32 Deny Generic
@@ -11808,7 +11970,6 @@ Tag: Azure
 109.127.8.242/32 Deny Generic
 109.229.36.65/32 Deny Generic
 109.229.210.250/32 Deny Generic
-113.29.230.24/32 Deny Generic
 116.193.77.118/32 Deny Generic
 120.31.134.133/32 Deny Generic
 120.63.157.195/32 Deny Generic
@@ -11841,6 +12002,7 @@ Tag: Azure
 190.123.35.140/31 Deny Generic
 190.128.29.1/32 Deny Generic
 192.64.11.244/32 Deny Generic
+192.185.12.231/32 Deny Generic
 193.146.210.69/32 Deny Generic
 193.201.227.142/32 Deny Generic
 194.15.112.29/32 Deny Generic
@@ -11869,7 +12031,6 @@ Tag: Azure
 203.170.193.23/32 Deny Generic
 207.210.229.69/32 Deny Generic
 210.4.76.221/32 Deny Generic
-210.211.108.215/32 Deny Generic
 212.44.64.202/32 Deny Generic
 213.147.67.20/32 Deny Generic
 216.176.100.240/32 Deny Generic
@@ -11877,7 +12038,7 @@ Tag: Azure
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.08.09
+Expires: 2016.08.13
 
 
 # ---
@@ -11885,7 +12046,7 @@ Expires: 2016.08.09
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2016.05.09
+# Updated: 2016.05.13
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
@@ -11969,6 +12130,7 @@ Expires: 2016.08.09
 45.119.164.0/22 Deny Generic
 45.121.144.0/22 Deny Generic
 45.121.204.0/22 Deny Generic
+45.126.72.0/22 Deny Generic
 45.127.204.0/22 Deny Generic
 46.8.255.0/24 Deny Generic
 46.148.112.0/20 Deny Generic
@@ -11984,6 +12146,7 @@ Expires: 2016.08.09
 60.233.0.0/16 Deny Generic
 61.11.224.0/19 Deny Generic
 61.13.128.0/17 Deny Generic
+61.14.224.0/22 Deny Generic
 61.45.251.0/24 Deny Generic
 62.112.16.0/21 Deny Generic
 63.141.32.0/19 Deny Generic
@@ -12068,6 +12231,7 @@ Expires: 2016.08.09
 103.200.116.0/22 Deny Generic
 103.204.176.0/22 Deny Generic
 103.205.72.0/22 Deny Generic
+103.205.84.0/22 Deny Generic
 103.206.84.0/22 Deny Generic
 103.207.160.0/22 Deny Generic
 103.209.32.0/22 Deny Generic
@@ -12105,7 +12269,6 @@ Expires: 2016.08.09
 116.128.0.0/10 Deny Generic
 117.58.0.0/17 Deny Generic
 117.100.0.0/15 Deny Generic
-118.177.0.0/16 Deny Generic
 118.185.0.0/16 Deny Generic
 119.3.0.0/16 Deny Generic
 119.58.0.0/16 Deny Generic
@@ -12163,7 +12326,6 @@ Expires: 2016.08.09
 138.249.0.0/16 Deny Generic
 139.5.116.0/22 Deny Generic
 139.47.0.0/16 Deny Generic
-139.167.0.0/16 Deny Generic
 139.188.0.0/16 Deny Generic
 140.143.128.0/17 Deny Generic
 140.167.0.0/16 Deny Generic
@@ -12182,7 +12344,6 @@ Expires: 2016.08.09
 143.135.0.0/16 Deny Generic
 143.189.0.0/16 Deny Generic
 144.207.0.0/16 Deny Generic
-144.208.0.0/16 Deny Generic
 145.231.0.0/16 Deny Generic
 146.3.0.0/16 Deny Generic
 146.183.0.0/16 Deny Generic
@@ -12559,7 +12720,6 @@ Expires: 2016.08.09
 203.169.0.0/22 Deny Generic
 203.189.112.0/22 Deny Generic
 203.191.64.0/18 Deny Generic
-204.8.136.0/21 Deny Generic
 204.19.38.0/23 Deny Generic
 204.44.32.0/20 Deny Generic
 204.44.192.0/20 Deny Generic
@@ -12685,12 +12845,12 @@ Expires: 2016.08.09
 223.201.0.0/16 Deny Generic
 223.254.0.0/16 Deny Generic
 Tag: Spamhaus DROP/EDROP
-Expires: 2016.08.09
+Expires: 2016.08.13
 
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.05.09
+# Updated: 2016.05.13
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 0.0.0.0/8 Deny Bogon
@@ -12731,12 +12891,8 @@ Expires: 2016.08.09
 45.128.0.0/11 Deny Bogon
 45.220.0.0/15 Deny Bogon
 45.222.0.0/16 Deny Bogon
-45.248.38.0/23 Deny Bogon
-45.248.196.0/22 Deny Bogon
-45.248.200.0/21 Deny Bogon
-45.248.208.0/20 Deny Bogon
-45.248.224.0/19 Deny Bogon
-45.249.0.0/16 Deny Bogon
+45.249.184.0/21 Deny Bogon
+45.249.192.0/18 Deny Bogon
 45.250.0.0/15 Deny Bogon
 45.252.0.0/14 Deny Bogon
 46.29.24.0/21 Deny Bogon
@@ -13061,6 +13217,7 @@ Expires: 2016.08.09
 91.216.122.0/24 Deny Bogon
 91.216.169.0/24 Deny Bogon
 91.216.190.0/24 Deny Bogon
+91.216.215.0/24 Deny Bogon
 91.217.6.0/23 Deny Bogon
 91.217.80.0/23 Deny Bogon
 91.217.139.0/24 Deny Bogon
@@ -13208,11 +13365,11 @@ Expires: 2016.08.09
 102.0.0.0/8 Deny Bogon
 103.64.0.0/10 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.217.106.0/23 Deny Bogon
-103.217.156.0/22 Deny Bogon
-103.217.160.0/19 Deny Bogon
-103.217.192.0/18 Deny Bogon
-103.218.0.0/15 Deny Bogon
+103.218.165.0/24 Deny Bogon
+103.218.166.0/23 Deny Bogon
+103.218.188.0/22 Deny Bogon
+103.218.192.0/18 Deny Bogon
+103.219.0.0/16 Deny Bogon
 103.220.0.0/14 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
@@ -13259,23 +13416,23 @@ Expires: 2016.08.09
 160.226.128.0/17 Deny Bogon
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
-164.160.4.0/22 Deny Bogon
-164.160.8.0/21 Deny Bogon
 164.160.16.0/20 Deny Bogon
 164.160.32.0/19 Deny Bogon
 164.160.64.0/18 Deny Bogon
-164.160.128.0/17 Deny Bogon
+164.160.128.0/18 Deny Bogon
+164.160.192.0/19 Deny Bogon
+164.160.240.0/20 Deny Bogon
 165.16.0.0/16 Deny Bogon
 165.49.0.0/16 Deny Bogon
 165.73.0.0/16 Deny Bogon
 168.194.0.0/15 Deny Bogon
 168.196.0.0/15 Deny Bogon
-168.228.196.0/22 Deny Bogon
+168.232.188.0/22 Deny Bogon
 169.254.0.0/16 Deny Bogon
-170.0.20.0/22 Deny Bogon
-170.0.24.0/21 Deny Bogon
-170.0.32.0/19 Deny Bogon
-170.0.64.0/18 Deny Bogon
+170.0.76.0/22 Deny Bogon
+170.0.80.0/22 Deny Bogon
+170.0.88.0/22 Deny Bogon
+170.0.96.0/19 Deny Bogon
 170.0.128.0/17 Deny Bogon
 170.78.0.0/15 Deny Bogon
 170.80.0.0/14 Deny Bogon
@@ -13321,11 +13478,8 @@ Expires: 2016.08.09
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.151.36.0/22 Deny Bogon
-185.151.40.0/21 Deny Bogon
-185.151.48.0/20 Deny Bogon
-185.151.64.0/18 Deny Bogon
-185.151.128.0/17 Deny Bogon
+185.151.236.0/22 Deny Bogon
+185.151.240.0/20 Deny Bogon
 185.152.0.0/13 Deny Bogon
 185.160.0.0/11 Deny Bogon
 185.192.0.0/10 Deny Bogon
@@ -14451,6 +14605,7 @@ Expires: 2016.08.09
 193.176.64.0/19 Deny Bogon
 193.176.112.0/20 Deny Bogon
 193.176.128.0/23 Deny Bogon
+193.176.147.0/24 Deny Bogon
 193.176.153.0/24 Deny Bogon
 193.176.154.0/23 Deny Bogon
 193.176.156.0/23 Deny Bogon
@@ -14482,7 +14637,7 @@ Expires: 2016.08.09
 193.178.31.0/24 Deny Bogon
 193.178.33.0/24 Deny Bogon
 193.178.36.0/22 Deny Bogon
-193.178.42.0/24 Deny Bogon
+193.178.42.0/23 Deny Bogon
 193.178.44.0/22 Deny Bogon
 193.178.48.0/22 Deny Bogon
 193.178.52.0/24 Deny Bogon

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.04.25).
+ * This file: Functions file (last modified: 2016.05.12).
  */
 
 /**
@@ -22,13 +22,20 @@ $CIDRAM['ReadFile'] = function ($f) {
     if (!is_file($f)) {
         return false;
     }
-    $s = @ceil(filesize($f) / 131072);
+    /**
+     * $bsize represents the size of each block to be read from the target
+     * file. 131072 = 128KB. Decreasing this value will increase stability but
+     * decrease performance, whereas increasing this value will increase
+     * performance but decrease stability.
+     */
+    $bsize = 131072;
+    $s = @ceil(filesize($f) / $bsize);
     $d = '';
     if ($s > 0) {
         $fh = fopen($f, 'rb');
         $r = 0;
         while($r < $s) {
-            $d .= fread($fh, 131072);
+            $d .= fread($fh, $bsize);
             $r++;
         }
         fclose($fh);

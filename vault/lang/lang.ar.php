@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.05.13).
+ * This file: Arabic language data (last modified: 2016.05.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['click_here'] = 'أنقر هنا';
 $CIDRAM['lang']['denied'] = 'تم رفض الوصول!';
-$CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا, يرجى التأكد من تصاريح الملفات';
+$CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات';
 $CIDRAM['lang']['field_datetime'] = 'الوقت / التاريخ: ';
 $CIDRAM['lang']['field_id'] = 'الهوية الشخصية: ';
 $CIDRAM['lang']['field_ipaddr'] = 'عنوان IP: ';
@@ -35,11 +35,11 @@ $CIDRAM['lang']['preamble'] = '-- نهاية الديباجة. إضافة أسئ
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'عنوان ال IP غير صالح.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'تم حجب الوصول من قبل صاحب الموقع.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'الموقع لا يسمح بالخدمات السحابية.';
-$CIDRAM['lang']['ReasonMessage_Generic'] = 'تم رفض الوصول, عنوان ال IP الخاص بك مدرج بالقائمة السوداء للموقع.';
-$CIDRAM['lang']['ReasonMessage_Spam'] = 'تم رفض الوصول, عنوان ال IP غير مرغوب فيه.';
+$CIDRAM['lang']['ReasonMessage_Generic'] = 'تم رفض الوصول، عنوان ال IP الخاص بك مدرج بالقائمة السوداء للموقع.';
+$CIDRAM['lang']['ReasonMessage_Spam'] = 'تم رفض الوصول، عنوان ال IP غير مرغوب فيه.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP غير صالح';
 $CIDRAM['lang']['Short_Bogon'] = 'المريخ IP';
 $CIDRAM['lang']['Short_Cloud'] = 'الخدمات السحابية';
 $CIDRAM['lang']['Short_Generic'] = 'عام';
 $CIDRAM['lang']['Short_Spam'] = 'خطر البريد المزعج';
-$CIDRAM['lang']['Support_Email'] = 'لطلب المساعدة أو لأي إستفسار يمكنك التواصل معنا عبر البريد الإلكتروني {ClickHereLin}).';
+$CIDRAM['lang']['Support_Email'] = 'لطلب المساعدة أو لأي إستفسار يمكنك التواصل معنا عبر البريد الإلكتروني ({ClickHereLink}).';

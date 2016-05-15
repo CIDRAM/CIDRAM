@@ -5,10 +5,10 @@
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
- * License： GNU/GPLv2
+ * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file： Japanese language data (last modified： 2016.05.14).
+ * This file: Japanese language data (last modified： 2016.05.14).
  *
  * @todo (This is incomplete).
  */

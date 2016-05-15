@@ -226,9 +226,9 @@ Tag: Hostinger Int
 
 
 # ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc").
-# Infected by malware (as per reported by Google): 1.42% (AS13335), 0% (AS132892), "ASN not found" (AS203898),
+# Infected by malware (as per reported by Google): 1.58% (AS13335), 0% (AS132892), "ASN not found" (AS203898),
 #   0% (AS394536).
-# Updated: 2016.03.28
+# Updated: 2016.05.15
 
 2400:cb00::/48 Deny Cloud
 2400:cb00:4::/48 Deny Cloud
@@ -257,11 +257,11 @@ Tag: Hostinger Int
 2400:cb00:80::/48 Deny Cloud
 2400:cb00:82::/47 Deny Cloud
 2400:cb00:84::/48 Deny Cloud
-2400:cb00:86::/48 Deny Cloud
+2400:cb00:86::/47 Deny Cloud
+2400:cb00:97::/48 Deny Cloud
 2400:cb00:2048::/47 Deny Cloud
 2400:cb00:beef::/48 Deny Cloud
-2606:4700::/42 Deny Cloud
-2606:4700:50::/44 Deny Cloud
+2405:8100:8003::/48 Deny Cloud
 2606:4700:1000::/48 Deny Cloud
 2a06:98c0:1000::/48 Deny Cloud
 Tag: CloudFlare, Inc
@@ -506,24 +506,25 @@ Tag: IPGLOBE DATACENTER
 
 # ASN 57879 ("sfip84").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 2a00:b540::/32 Deny Spam
 Tag: sfip84
 
 
 # ASN 45727 ("PT Hutchison CP Telecommunications").
-# Infected by malware (as per reported by Google): 1.20%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 1.10%.
+# Updated: 2016.05.15
 
 2400:8b00:1000:1::/64 Deny Spam
+2400:8b00:1000:2::/64 Deny Spam
 2400:8b00:a000::/47 Deny Spam
 Tag: PT Hutchison
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.02 / Checked: 2016.04.23
+# Updated: 2016.03.02 / Checked: 2016.05.15
 
 2400:9800::/32 Deny Spam
 Tag: PT Excelcomindo
@@ -538,8 +539,8 @@ Tag: Excite Japan
 
 
 # ASN 31080 ("o2 Sp. Z.o.o").
-# Infected by malware (as per reported by Google): 0.24%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 0.27%.
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 2001:67c:25c4::/48 Deny Generic
 Tag: AS31080
@@ -553,14 +554,17 @@ Tag: AS31080
 Tag: H1 LLC
 
 
-# ASNs 3223, 39743 ("Voxility LLC").
-# Infected by malware (as per reported by Google): 1.35% (AS3223), 0.93% (AS39743).
-# Updated: 2016.03.28
+# ASN 3223 ("Voxility LLC").
+# Infected by malware (as per reported by Google): 1.43%.
+# Updated: 2016.05.15
 
+2404:8080::/32 Deny Generic
 2602:ff84:8::/48 Deny Generic
 2a02:13f0:8100::/48 Deny Generic
 2a03:5180::/46 Deny Generic
 2a03:5180:4::/47 Deny Generic
+2a06:1700::/48 Deny Generic
+2a07:7500::/29 Deny Generic
 Tag: Voxility LLC
 
 

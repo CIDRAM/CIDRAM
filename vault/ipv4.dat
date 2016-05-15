@@ -1216,29 +1216,34 @@ Tag: Hostinger Int
 
 
 # ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc")
-# Infected by malware (as per reported by Google): 1.42% (AS13335), 0% (AS132892), "ASN not found" (AS203898),
+# Infected by malware (as per reported by Google): 1.58% (AS13335), 0% (AS132892), "ASN not found" (AS203898),
 #   0% (AS394536).
-# Updated: 2016.03.17
+# Updated: 2016.05.15
 
 66.6.45.0/24 Deny Cloud
-103.21.244.0/22 Deny Cloud
+103.21.246.0/23 Deny Cloud
 103.22.200.0/23 Deny Cloud
 103.22.203.0/24 Deny Cloud
 103.31.4.0/22 Deny Cloud
 104.16.0.0/12 Deny Cloud
 108.162.192.0/19 Deny Cloud
-108.162.225.0/24 Deny Cloud
 108.162.226.0/23 Deny Cloud
 108.162.228.0/23 Deny Cloud
-108.162.232.0/21 Deny Cloud
+108.162.232.0/23 Deny Cloud
+108.162.235.0/24 Deny Cloud
+108.162.236.0/22 Deny Cloud
 108.162.240.0/21 Deny Cloud
 108.162.248.0/22 Deny Cloud
-108.162.254.0/24 Deny Cloud
+108.162.254.0/23 Deny Cloud
 141.101.64.0/22 Deny Cloud
-141.101.68.0/24 Deny Cloud
 141.101.70.0/23 Deny Cloud
-141.101.72.0/21 Deny Cloud
-141.101.80.0/20 Deny Cloud
+141.101.72.0/22 Deny Cloud
+141.101.77.0/24 Deny Cloud
+141.101.78.0/23 Deny Cloud
+141.101.80.0/22 Deny Cloud
+141.101.84.0/23 Deny Cloud
+141.101.90.0/23 Deny Cloud
+141.101.92.0/22 Deny Cloud
 141.101.96.0/19 Deny Cloud
 162.158.0.0/18 Deny Cloud
 162.158.64.0/22 Deny Cloud
@@ -1263,6 +1268,15 @@ Tag: Hostinger Int
 162.158.240.0/22 Deny Cloud
 162.158.248.0/21 Deny Cloud
 162.159.0.0/16 Deny Cloud
+172.64.0.0/18 Deny Cloud
+172.64.64.0/20 Deny Cloud
+172.64.96.0/20 Deny Cloud
+172.64.128.0/20 Deny Cloud
+172.64.160.0/20 Deny Cloud
+172.64.192.0/20 Deny Cloud
+172.68.0.0/21 Deny Cloud
+172.68.8.0/22 Deny Cloud
+172.68.16.0/20 Deny Cloud
 173.245.48.0/23 Deny Cloud
 173.245.50.0/24 Deny Cloud
 173.245.52.0/22 Deny Cloud
@@ -1277,7 +1291,10 @@ Tag: Hostinger Int
 198.41.128.0/19 Deny Cloud
 198.41.176.0/20 Deny Cloud
 198.41.192.0/19 Deny Cloud
-198.41.224.0/20 Deny Cloud
+198.41.224.0/21 Deny Cloud
+198.41.233.0/24 Deny Cloud
+198.41.234.0/23 Deny Cloud
+198.41.236.0/22 Deny Cloud
 198.41.240.0/22 Deny Cloud
 198.41.246.0/23 Deny Cloud
 198.41.248.0/21 Deny Cloud
@@ -2712,7 +2729,7 @@ Tag: IPGLOBE DATACENTER
 
 # ASN 50810 ("Mobin Net Communication Company").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.05.15
 
 2.182.160.0/20 Deny Spam
 2.183.128.0/20 Deny Spam
@@ -2724,11 +2741,9 @@ Tag: IPGLOBE DATACENTER
 37.98.0.0/17 Deny Spam
 37.156.16.0/20 Deny Spam
 62.102.128.0/20 Deny Spam
-80.242.0.0/20 Deny Spam
 85.239.192.0/19 Deny Spam
 86.107.0.0/20 Deny Spam
 86.107.208.0/20 Deny Spam
-89.37.0.0/20 Deny Spam
 89.43.0.0/20 Deny Spam
 89.45.48.0/20 Deny Spam
 91.133.128.0/17 Deny Spam
@@ -2738,7 +2753,7 @@ Tag: IPGLOBE DATACENTER
 94.101.128.0/20 Deny Spam
 94.101.240.0/20 Deny Spam
 109.108.160.0/19 Deny Spam
-109.203.128.0/19 Deny Spam
+109.203.144.0/20 Deny Spam
 130.255.192.0/18 Deny Spam
 178.131.0.0/16 Deny Spam
 185.22.28.0/22 Deny Spam
@@ -2746,17 +2761,15 @@ Tag: IPGLOBE DATACENTER
 188.209.192.0/20 Deny Spam
 188.210.64.0/20 Deny Spam
 188.210.192.0/20 Deny Spam
-188.211.0.0/20 Deny Spam
 188.212.48.0/20 Deny Spam
 188.212.240.0/21 Deny Spam
-188.213.64.0/20 Deny Spam
 188.213.192.0/21 Deny Spam
 Tag: Mobin
 
 
 # ASN 57879 ("sfip84").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 37.143.48.0/20 Deny Spam
 185.3.248.0/22 Deny Spam
@@ -2764,10 +2777,11 @@ Tag: sfip84
 
 
 # ASN 45727 ("PT Hutchison CP Telecommunications").
-# Infected by malware (as per reported by Google): 1.20%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 1.10%.
+# Updated: 2016.05.15
 
 103.10.64.0/22 Deny Spam
+124.153.32.0/23 Deny Spam
 180.214.232.0/23 Deny Spam
 180.214.234.0/24 Deny Spam
 202.67.32.0/20 Deny Spam
@@ -2779,7 +2793,7 @@ Tag: PT Hutchison
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.04.23
+# Updated: 2016.04.23 / Checked: 2016.05.15
 
 112.215.16.0/24 Deny Spam
 112.215.19.0/24 Deny Spam
@@ -2814,7 +2828,7 @@ Tag: PT Excelcomindo
 
 # ASN 48359 ("Hesabgar Pardaz Gharb Company").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.04.23
+# Updated: 2016.04.23 / Checked: 2016.05.15
 
 185.47.48.0/22 Deny Spam
 185.82.64.0/22 Deny Spam
@@ -2830,7 +2844,7 @@ Tag: AS48359
 
 # ASN 22368 ("TELEBUCARAMANGA S.A. E.S.P").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.02 / Checked: 2016.04.23
+# Updated: 2016.03.02 / Checked: 2016.05.15
 
 181.174.0.0/18 Deny Spam
 186.183.128.0/18 Deny Spam
@@ -2854,8 +2868,8 @@ Tag: TELEBUCARAMANGA
 
 
 # ASN 16322 ("Pars Online PJS").
-# Infected by malware (as per reported by Google): 0.46%.
-# Updated: 2016.03.02
+# Infected by malware (as per reported by Google): 0.58%.
+# Updated: 2016.05.15
 
 5.78.0.0/16 Deny Spam
 31.214.132.0/23 Deny Spam
@@ -2869,6 +2883,7 @@ Tag: TELEBUCARAMANGA
 37.27.0.0/16 Deny Spam
 46.41.192.0/18 Deny Spam
 46.62.128.0/17 Deny Spam
+79.143.86.0/24 Deny Spam
 82.99.192.0/18 Deny Spam
 91.98.0.0/15 Deny Spam
 95.156.216.0/22 Deny Spam
@@ -2888,18 +2903,22 @@ Tag: TELEBUCARAMANGA
 134.255.245.0/24 Deny Spam
 134.255.246.0/24 Deny Spam
 134.255.248.0/23 Deny Spam
-185.4.30.0/23 Deny Spam
+185.4.31.0/24 Deny Spam
 185.13.228.0/22 Deny Spam
-185.44.64.0/23 Deny Spam
+185.87.180.0/24 Deny Spam
+185.87.183.0/24 Deny Spam
+185.105.184.0/24 Deny Spam
+185.126.202.0/24 Deny Spam
 188.245.0.0/16 Deny Spam
 213.217.32.0/19 Deny Spam
 Tag: Pars Online PJS
 
 
-# ASN 133042 ("OBEC").
+# ASN 133042 ("Office of the basic education commission").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.05.15
 
+61.7.248.0/24 Deny Spam
 202.29.66.0/24 Deny Spam
 202.29.172.0/22 Deny Spam
 202.29.176.0/22 Deny Spam
@@ -2908,15 +2927,15 @@ Tag: OBEC
 
 # ASN 45682 ("Excite Japan Co., Ltd").
 # Infected by malware (as per reported by Google): 0.01%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 180.235.96.0/21 Deny Generic
 Tag: Excite Japan
 
 
 # ASN 31080 ("o2 Sp. Z.o.o").
-# Infected by malware (as per reported by Google): 0.24%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 0.27%.
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 193.17.41.0/24 Deny Generic
 193.222.135.0/24 Deny Generic
@@ -2925,24 +2944,26 @@ Tag: AS31080
 
 # ASN 48271 ("City Telecom").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 212.2.224.0/19 Deny Generic
 Tag: City Telecom
 
 
-# ASN 32527 ("FriendFinder Networks Inc").
-# Infected by malware (as per reported by Google): 0.38%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# ASNs 25875, 1429 ("FriendFinder Networks Inc").
+# Infected by malware (as per reported by Google): 0.25% (AS25875), "ASN not found" (AS1429).
+# Updated: 2016.05.15
 
-208.88.176.0/22 Deny Cloud
-69.165.98.0/24 Deny Cloud
+69.165.98.0/23 Deny Cloud
+69.165.110.0/23 Deny Cloud
+208.88.176.0/23 Deny Cloud
+208.88.180.0/22 Deny Cloud
 Tag: FriendFinder
 
 
 # ASN 46179 ("MediaFire, LLC").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Updated: 2016.01.18 / Checked: 2016.05.15
 
 199.91.152.0/21 Deny Generic
 205.196.120.0/22 Deny Generic
@@ -2951,7 +2972,7 @@ Tag: MediaFire, LLC
 
 # ASN 6870 ("H1 LLC").
 # Infected by malware (as per reported by Google): 1.17%.
-# Updated: 2016.03.02 / Checked: 2016.04.23
+# Updated: 2016.03.02 / Checked: 2016.05.15
 
 37.252.0.0/23 Deny Generic
 91.105.232.0/21 Deny Generic
@@ -2967,9 +2988,9 @@ Tag: MediaFire, LLC
 Tag: H1 LLC
 
 
-# ASNs 3223, 39743 ("Voxility LLC").
-# Infected by malware (as per reported by Google): 1.35% (AS3223), 0.93% (AS39743).
-# Updated: 2016.03.28
+# ASN 3223 ("Voxility LLC").
+# Infected by malware (as per reported by Google): 1.43%.
+# Updated: 2016.05.15
 
 5.254.64.0/20 Deny Generic
 5.254.84.0/23 Deny Generic
@@ -2980,6 +3001,7 @@ Tag: H1 LLC
 5.254.122.0/23 Deny Generic
 5.254.124.0/24 Deny Generic
 5.254.126.0/23 Deny Generic
+31.220.31.0/24 Deny Generic
 37.156.32.0/23 Deny Generic
 37.221.160.0/20 Deny Generic
 45.74.58.0/24 Deny Generic
@@ -2995,12 +3017,12 @@ Tag: H1 LLC
 89.40.104.0/23 Deny Generic
 89.40.233.0/24 Deny Generic
 89.45.89.0/24 Deny Generic
+89.46.222.0/23 Deny Generic
 91.217.232.0/24 Deny Generic
 92.114.32.0/24 Deny Generic
 93.114.40.0/21 Deny Generic
 93.115.80.0/20 Deny Generic
 93.115.210.0/24 Deny Generic
-93.120.36.0/22 Deny Generic
 94.176.131.0/24 Deny Generic
 103.249.70.0/24 Deny Generic
 104.152.44.0/22 Deny Generic
@@ -3013,6 +3035,7 @@ Tag: H1 LLC
 185.72.176.0/24 Deny Generic
 185.92.192.0/24 Deny Generic
 185.96.160.0/23 Deny Generic
+185.151.16.0/22 Deny Generic
 188.213.19.0/24 Deny Generic
 188.213.22.0/24 Deny Generic
 188.213.212.0/24 Deny Generic
@@ -6521,7 +6544,6 @@ Tag: Yes Networks
 # Infected by malware (as per reported by Google): 4.61%.
 # Updated: 2016.01.25 / Checked: 2016.03.28
 
-31.220.31.0/24 Deny Cloud
 69.197.0.0/18 Deny Cloud
 72.8.128.0/18 Deny Cloud
 72.20.0.0/18 Deny Cloud

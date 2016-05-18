@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for CLI (last modified: 2016.05.13).
+ * This file: Japanese language data for CLI (last modified: 2016.05.18).
  *
  * @todo (This is incomplete).
  */
@@ -19,18 +19,19 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['CLI_H'] = "
- CIDRAM CLI-mode help.
+ CIDRAM CLIモードのヘルプ。
 
- Usage:
- /path/to/php/php.exe /path/to/cidram/loader.php -Flag (Input)
+ 使用法：
+ /path/to/php/php.exe /path/to/cidram/loader.php -フラグ： （入力）
 
- Flags: -h  Display this help information.
-        -c  Check if an IP address is blocked by the CIDRAM signature files.
-        -g  Generate CIDRs from an IP address.
+ フラグ：
+    -h  このヘルプ情報を表示します。
+    -c  IPアドレスを確認してください、かどうかはCIDRAMによってブロックされています。
+    -g  IPアドレスからCIDRを生成します。
 
- Input: Can be any valid IPv4 or IPv6 IP address.
+ 入力： 任意の有効なアドレス（IPv4/IPv6）を指定できます。
 
- Examples:
+ 例：
         -c  192.168.0.0/16
         -c  127.0.0.1/32
         -c  2001:db8::/32
@@ -45,10 +46,10 @@ $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *
 $CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
 $CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
 $CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
-$CIDRAM['lang']['CLI_VF_Level_0'] = 'Notice';
-$CIDRAM['lang']['CLI_VF_Level_1'] = 'Warning';
-$CIDRAM['lang']['CLI_VF_Level_2'] = 'Error';
-$CIDRAM['lang']['CLI_VF_Level_3'] = 'Fatal Error';
+$CIDRAM['lang']['CLI_VF_Level_0'] = '通知';
+$CIDRAM['lang']['CLI_VF_Level_1'] = '警告';
+$CIDRAM['lang']['CLI_VF_Level_2'] = 'エラー';
+$CIDRAM['lang']['CLI_VF_Level_3'] = '致命的なエラー';
 
 $CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
 $CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';

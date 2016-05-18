@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for CLI (last modified: 2016.05.13).
+ * This file: Russian language data for CLI (last modified: 2016.05.18).
  *
  * @todo (This is incomplete).
  */
@@ -19,18 +19,18 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['CLI_H'] = "
- CIDRAM CLI-mode help.
+ CIDRAM CLI-модус справки.
 
- Usage:
- /path/to/php/php.exe /path/to/cidram/loader.php -Flag (Input)
+ Применение:
+ /путь/к/php/php.exe /путь/к/cidram/loader.php -Флаг (Ввод)
 
- Flags: -h  Display this help information.
+ Флаги: -h  Покажи помощь информации.
         -c  Check if an IP address is blocked by the CIDRAM signature files.
         -g  Generate CIDRs from an IP address.
 
- Input: Can be any valid IPv4 or IPv6 IP address.
+ Ввод: Может быть любым допустимым IPv4 или IPv6 IP-адрес.
 
- Examples:
+ Примеры:
         -c  192.168.0.0/16
         -c  127.0.0.1/32
         -c  2001:db8::/32

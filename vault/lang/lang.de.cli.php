@@ -24,11 +24,11 @@ $CIDRAM['lang']['CLI_H'] = "
  Verwendung:
  /Pfad/zu/php/php.exe /Pfad/zu/cidram/loader.php -Flagge (Eingabe)
 
- Flaggen:   -h  Anzeige dieses Hilfe-Informationen.
+ Flaggen:   -h  Anzeige dieser Hilfe-Informationen.
             -c  Check if an IP address is blocked by the CIDRAM signature files.
             -g  Generate CIDRs from an IP address.
 
- Eingabe: Kann jeder gültige IPv4 oder IPv6 IP-Adresse sein.
+ Eingabe: Kann jede gültige IPv4 oder IPv6 IP-Adresse sein.
 
  Beispiele:
         -c  192.168.0.0/16
@@ -45,7 +45,7 @@ $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *
 $CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
 $CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
 $CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
-$CIDRAM['lang']['CLI_VF_Level_0'] = 'Beachten';
+$CIDRAM['lang']['CLI_VF_Level_0'] = 'Achtung';
 $CIDRAM['lang']['CLI_VF_Level_1'] = 'Warnung';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'Fehler';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Fataler Fehler';

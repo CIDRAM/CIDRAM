@@ -103,8 +103,8 @@
 
 # ---
 # ASN 46844 ("Sharktech").
-# Infected by malware (as per reported by Google): 35.36%.
-# Updated: 2016.03.27 / Checked: 2016.04.19
+# Infected by malware (as per reported by Google): 29.29%.
+# Updated: 2016.03.27 / Checked: 2016.05.20
 
 2001:67c:2f08::/48 Deny Cloud
 2610:150::/32 Deny Cloud
@@ -121,25 +121,26 @@ Tag: Multacom Corp
 
 
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# Infected by malware (as per reported by Google): 26.18%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 25.46%.
+# Updated: 2016.05.20
 
+2001:7fa:0:1::/64 Deny Generic
 2400:1c80::/48 Deny Generic
 2403:ea00::/32 Deny Generic
 Tag: Sun Network (H.K.)
 
 
 # ASN 16138 ("INTERIA.PL Sp z.o.o").
-# Infected by malware (as per reported by Google): 10.92%.
-# Updated: 2016.03.17 / Checked: 2016.04.19
+# Infected by malware (as per reported by Google): 2.94%.
+# Updated: 2016.03.17 / Checked: 2016.05.20
 
 2a00:1308::/32 Deny Cloud
 Tag: INTERIA
 
 
 # ASN 7497 ("Computer Network Information Center").
-# Infected by malware (as per reported by Google): 10.25%.
-# Updated: 2016.03.20 / Checked: 2016.04.19
+# Infected by malware (as per reported by Google): 10.03%.
+# Updated: 2016.03.20 / Checked: 2016.05.20
 
 2400:dd00::/28 Deny Cloud
 2401:de00::/32 Deny Cloud
@@ -147,8 +148,8 @@ Tag: CST-NET
 
 
 # ASN 46573 ("Global Frag Networks").
-# Infected by malware (as per reported by Google): 10.02%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 10.77%.
+# Updated: 2016.03.20 / Checked: 2016.05.20
 
 2604:d180::/32 Deny Cloud
 Tag: Global Frag Networks
@@ -294,15 +295,15 @@ Tag: Masterhost
 Tag: GoDaddy.com, LLC
 
 
-# ASN 8560 ("1&1 Internet AG").
+# ASN 8560 ("1&1 Internet SE").
 # Infected by malware (as per reported by Google): 0.24%.
-# Updated: 2016.03.17
+# Updated: 2016.03.17 / Checked: 2016.05.20
 
 2001:8d8::/32 Deny Cloud
 2001:ba0::/32 Deny Cloud
 2607:f1c0::/32 Deny Cloud
 2a00:da00::/32 Deny Cloud
-Tag: 1&1 Internet AG
+Tag: 1&1 Internet SE
 
 
 # ASN 16276 ("OVH Systems").
@@ -316,11 +317,11 @@ Tag: OVH Systems
 
 
 # ASN 34619 ("Çizgi Telekomünikasyon").
-# Infected by malware (as per reported by Google): 3.90%.
-# Updated: 2016.01.18 / Checked: 2016.04.04
+# Infected by malware (as per reported by Google): 5.10%.
+# Updated: 2016.01.18 / Checked: 2016.05.20
 
 2a02:2020::/32 Deny Generic
-Tag: AS34619
+Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
@@ -2596,6 +2597,13 @@ Tag: Serverius Holding
 Tag: Transip B.V
 
 
+# ASN 200429 ("HostSlim BV")
+# Infected by malware (as per reported by Google): 0.61%.
+# Updated: 2016.05.09
+
+Tag: HostSlim BV
+
+
 # ASN 43350 ("NForce Entertainment B.V")
 # Infected by malware (as per reported by Google): 1.23%.
 # Updated: 2016.05.09
@@ -2671,7 +2679,7 @@ Tag: Vietel
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.05.17
+# Updated: 2016.05.20
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3580,8 +3588,8 @@ Tag: Vietel
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:1ac::/46 Deny Bogon
-2001:678:1b0::/44 Deny Bogon
+2001:678:1b4::/46 Deny Bogon
+2001:678:1b8::/45 Deny Bogon
 2001:678:1c0::/42 Deny Bogon
 2001:678:200::/39 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -3598,7 +3606,6 @@ Tag: Vietel
 2001:67c:8000::/33 Deny Bogon
 2001:67d::/32 Deny Bogon
 2001:67e::/31 Deny Bogon
-2001:7f8:a2::/47 Deny Bogon
 2001:7f8:a4::/46 Deny Bogon
 2001:7f8:a8::/45 Deny Bogon
 2001:7f8:b0::/44 Deny Bogon
@@ -3678,9 +3685,6 @@ Tag: Vietel
 2001:c21::/32 Deny Bogon
 2001:c22::/31 Deny Bogon
 2001:c24::/30 Deny Bogon
-2001:c29::/32 Deny Bogon
-2001:c2a::/31 Deny Bogon
-2001:c2c::/30 Deny Bogon
 2001:c31::/32 Deny Bogon
 2001:c32::/31 Deny Bogon
 2001:c34::/30 Deny Bogon
@@ -6550,7 +6554,15 @@ Tag: Vietel
 2001:df2:3040::/42 Deny Bogon
 2001:df2:3080::/41 Deny Bogon
 2001:df2:3100::/40 Deny Bogon
-2001:df2:3200::/39 Deny Bogon
+2001:df2:3201::/48 Deny Bogon
+2001:df2:3202::/47 Deny Bogon
+2001:df2:3204::/46 Deny Bogon
+2001:df2:3208::/45 Deny Bogon
+2001:df2:3210::/44 Deny Bogon
+2001:df2:3220::/43 Deny Bogon
+2001:df2:3240::/42 Deny Bogon
+2001:df2:3280::/41 Deny Bogon
+2001:df2:3300::/40 Deny Bogon
 2001:df2:3401::/48 Deny Bogon
 2001:df2:3402::/47 Deny Bogon
 2001:df2:3404::/46 Deny Bogon
@@ -6560,7 +6572,15 @@ Tag: Vietel
 2001:df2:3440::/42 Deny Bogon
 2001:df2:3480::/41 Deny Bogon
 2001:df2:3500::/40 Deny Bogon
-2001:df2:3600::/39 Deny Bogon
+2001:df2:3601::/48 Deny Bogon
+2001:df2:3602::/47 Deny Bogon
+2001:df2:3604::/46 Deny Bogon
+2001:df2:3608::/45 Deny Bogon
+2001:df2:3610::/44 Deny Bogon
+2001:df2:3620::/43 Deny Bogon
+2001:df2:3640::/42 Deny Bogon
+2001:df2:3680::/41 Deny Bogon
+2001:df2:3700::/40 Deny Bogon
 2001:df2:3801::/48 Deny Bogon
 2001:df2:3802::/47 Deny Bogon
 2001:df2:3804::/46 Deny Bogon
@@ -6570,14 +6590,30 @@ Tag: Vietel
 2001:df2:3840::/42 Deny Bogon
 2001:df2:3880::/41 Deny Bogon
 2001:df2:3900::/40 Deny Bogon
-2001:df2:3a00::/39 Deny Bogon
+2001:df2:3a01::/48 Deny Bogon
+2001:df2:3a02::/47 Deny Bogon
+2001:df2:3a04::/46 Deny Bogon
+2001:df2:3a08::/45 Deny Bogon
+2001:df2:3a10::/44 Deny Bogon
+2001:df2:3a20::/43 Deny Bogon
+2001:df2:3a40::/42 Deny Bogon
+2001:df2:3a80::/41 Deny Bogon
+2001:df2:3b00::/40 Deny Bogon
 2001:df2:3c08::/45 Deny Bogon
 2001:df2:3c10::/44 Deny Bogon
 2001:df2:3c20::/43 Deny Bogon
 2001:df2:3c40::/42 Deny Bogon
 2001:df2:3c80::/41 Deny Bogon
 2001:df2:3d00::/40 Deny Bogon
-2001:df2:3e00::/39 Deny Bogon
+2001:df2:3e01::/48 Deny Bogon
+2001:df2:3e02::/47 Deny Bogon
+2001:df2:3e04::/46 Deny Bogon
+2001:df2:3e08::/45 Deny Bogon
+2001:df2:3e10::/44 Deny Bogon
+2001:df2:3e20::/43 Deny Bogon
+2001:df2:3e40::/42 Deny Bogon
+2001:df2:3e80::/41 Deny Bogon
+2001:df2:3f00::/40 Deny Bogon
 2001:df2:4001::/48 Deny Bogon
 2001:df2:4002::/47 Deny Bogon
 2001:df2:4004::/46 Deny Bogon
@@ -6587,7 +6623,15 @@ Tag: Vietel
 2001:df2:4040::/42 Deny Bogon
 2001:df2:4080::/41 Deny Bogon
 2001:df2:4100::/40 Deny Bogon
-2001:df2:4200::/39 Deny Bogon
+2001:df2:4201::/48 Deny Bogon
+2001:df2:4202::/47 Deny Bogon
+2001:df2:4204::/46 Deny Bogon
+2001:df2:4208::/45 Deny Bogon
+2001:df2:4210::/44 Deny Bogon
+2001:df2:4220::/43 Deny Bogon
+2001:df2:4240::/42 Deny Bogon
+2001:df2:4280::/41 Deny Bogon
+2001:df2:4300::/40 Deny Bogon
 2001:df2:4401::/48 Deny Bogon
 2001:df2:4402::/47 Deny Bogon
 2001:df2:4404::/46 Deny Bogon
@@ -6597,7 +6641,15 @@ Tag: Vietel
 2001:df2:4440::/42 Deny Bogon
 2001:df2:4480::/41 Deny Bogon
 2001:df2:4500::/40 Deny Bogon
-2001:df2:4600::/39 Deny Bogon
+2001:df2:4601::/48 Deny Bogon
+2001:df2:4602::/47 Deny Bogon
+2001:df2:4604::/46 Deny Bogon
+2001:df2:4608::/45 Deny Bogon
+2001:df2:4610::/44 Deny Bogon
+2001:df2:4620::/43 Deny Bogon
+2001:df2:4640::/42 Deny Bogon
+2001:df2:4680::/41 Deny Bogon
+2001:df2:4700::/40 Deny Bogon
 2001:df2:4801::/48 Deny Bogon
 2001:df2:4802::/47 Deny Bogon
 2001:df2:4804::/46 Deny Bogon
@@ -6607,7 +6659,15 @@ Tag: Vietel
 2001:df2:4840::/42 Deny Bogon
 2001:df2:4880::/41 Deny Bogon
 2001:df2:4900::/40 Deny Bogon
-2001:df2:4a00::/39 Deny Bogon
+2001:df2:4a01::/48 Deny Bogon
+2001:df2:4a02::/47 Deny Bogon
+2001:df2:4a04::/46 Deny Bogon
+2001:df2:4a08::/45 Deny Bogon
+2001:df2:4a10::/44 Deny Bogon
+2001:df2:4a20::/43 Deny Bogon
+2001:df2:4a40::/42 Deny Bogon
+2001:df2:4a80::/41 Deny Bogon
+2001:df2:4b00::/40 Deny Bogon
 2001:df2:4c01::/48 Deny Bogon
 2001:df2:4c02::/47 Deny Bogon
 2001:df2:4c04::/46 Deny Bogon
@@ -6617,7 +6677,15 @@ Tag: Vietel
 2001:df2:4c40::/42 Deny Bogon
 2001:df2:4c80::/41 Deny Bogon
 2001:df2:4d00::/40 Deny Bogon
-2001:df2:4e00::/39 Deny Bogon
+2001:df2:4e01::/48 Deny Bogon
+2001:df2:4e02::/47 Deny Bogon
+2001:df2:4e04::/46 Deny Bogon
+2001:df2:4e08::/45 Deny Bogon
+2001:df2:4e10::/44 Deny Bogon
+2001:df2:4e20::/43 Deny Bogon
+2001:df2:4e40::/42 Deny Bogon
+2001:df2:4e80::/41 Deny Bogon
+2001:df2:4f00::/40 Deny Bogon
 2001:df2:5001::/48 Deny Bogon
 2001:df2:5002::/47 Deny Bogon
 2001:df2:5004::/46 Deny Bogon
@@ -10651,6 +10719,7 @@ Tag: Vietel
 2001:43f8:690::/44 Deny Bogon
 2001:43f8:6f0::/44 Deny Bogon
 2001:43f8:730::/44 Deny Bogon
+2001:43f8:910::/44 Deny Bogon
 2001:43f8:a70::/44 Deny Bogon
 2001:43f8:b90::/44 Deny Bogon
 2001:43f8:ba0::/43 Deny Bogon
@@ -10688,7 +10757,6 @@ Tag: Vietel
 2001:4443::/32 Deny Bogon
 2001:4444::/30 Deny Bogon
 2001:4448::/29 Deny Bogon
-2001:4451::/32 Deny Bogon
 2001:4452::/31 Deny Bogon
 2001:4454::/30 Deny Bogon
 2001:4459::/32 Deny Bogon
@@ -28796,7 +28864,13 @@ Tag: Vietel
 2405:4c10::/28 Deny Bogon
 2405:4c20::/27 Deny Bogon
 2405:4c40::/26 Deny Bogon
-2405:4c80::/25 Deny Bogon
+2405:4c81::/32 Deny Bogon
+2405:4c82::/31 Deny Bogon
+2405:4c84::/30 Deny Bogon
+2405:4c88::/29 Deny Bogon
+2405:4c90::/28 Deny Bogon
+2405:4ca0::/27 Deny Bogon
+2405:4cc0::/26 Deny Bogon
 2405:4d01::/32 Deny Bogon
 2405:4d02::/31 Deny Bogon
 2405:4d04::/30 Deny Bogon
@@ -28804,7 +28878,13 @@ Tag: Vietel
 2405:4d10::/28 Deny Bogon
 2405:4d20::/27 Deny Bogon
 2405:4d40::/26 Deny Bogon
-2405:4d80::/25 Deny Bogon
+2405:4d81::/32 Deny Bogon
+2405:4d82::/31 Deny Bogon
+2405:4d84::/30 Deny Bogon
+2405:4d88::/29 Deny Bogon
+2405:4d90::/28 Deny Bogon
+2405:4da0::/27 Deny Bogon
+2405:4dc0::/26 Deny Bogon
 2405:4e01::/32 Deny Bogon
 2405:4e02::/31 Deny Bogon
 2405:4e04::/30 Deny Bogon
@@ -28812,7 +28892,13 @@ Tag: Vietel
 2405:4e10::/28 Deny Bogon
 2405:4e20::/27 Deny Bogon
 2405:4e40::/26 Deny Bogon
-2405:4e80::/25 Deny Bogon
+2405:4e81::/32 Deny Bogon
+2405:4e82::/31 Deny Bogon
+2405:4e84::/30 Deny Bogon
+2405:4e88::/29 Deny Bogon
+2405:4e90::/28 Deny Bogon
+2405:4ea0::/27 Deny Bogon
+2405:4ec0::/26 Deny Bogon
 2405:4f01::/32 Deny Bogon
 2405:4f02::/31 Deny Bogon
 2405:4f04::/30 Deny Bogon
@@ -28820,7 +28906,13 @@ Tag: Vietel
 2405:4f10::/28 Deny Bogon
 2405:4f20::/27 Deny Bogon
 2405:4f40::/26 Deny Bogon
-2405:4f80::/25 Deny Bogon
+2405:4f81::/32 Deny Bogon
+2405:4f82::/31 Deny Bogon
+2405:4f84::/30 Deny Bogon
+2405:4f88::/29 Deny Bogon
+2405:4f90::/28 Deny Bogon
+2405:4fa0::/27 Deny Bogon
+2405:4fc0::/26 Deny Bogon
 2405:5001::/32 Deny Bogon
 2405:5002::/31 Deny Bogon
 2405:5004::/30 Deny Bogon
@@ -28828,7 +28920,13 @@ Tag: Vietel
 2405:5010::/28 Deny Bogon
 2405:5020::/27 Deny Bogon
 2405:5040::/26 Deny Bogon
-2405:5080::/25 Deny Bogon
+2405:5081::/32 Deny Bogon
+2405:5082::/31 Deny Bogon
+2405:5084::/30 Deny Bogon
+2405:5088::/29 Deny Bogon
+2405:5090::/28 Deny Bogon
+2405:50a0::/27 Deny Bogon
+2405:50c0::/26 Deny Bogon
 2405:5101::/32 Deny Bogon
 2405:5102::/31 Deny Bogon
 2405:5104::/30 Deny Bogon
@@ -28836,7 +28934,13 @@ Tag: Vietel
 2405:5110::/28 Deny Bogon
 2405:5120::/27 Deny Bogon
 2405:5140::/26 Deny Bogon
-2405:5180::/25 Deny Bogon
+2405:5181::/32 Deny Bogon
+2405:5182::/31 Deny Bogon
+2405:5184::/30 Deny Bogon
+2405:5188::/29 Deny Bogon
+2405:5190::/28 Deny Bogon
+2405:51a0::/27 Deny Bogon
+2405:51c0::/26 Deny Bogon
 2405:5201::/32 Deny Bogon
 2405:5202::/31 Deny Bogon
 2405:5204::/30 Deny Bogon
@@ -28844,7 +28948,13 @@ Tag: Vietel
 2405:5210::/28 Deny Bogon
 2405:5220::/27 Deny Bogon
 2405:5240::/26 Deny Bogon
-2405:5280::/25 Deny Bogon
+2405:5281::/32 Deny Bogon
+2405:5282::/31 Deny Bogon
+2405:5284::/30 Deny Bogon
+2405:5288::/29 Deny Bogon
+2405:5290::/28 Deny Bogon
+2405:52a0::/27 Deny Bogon
+2405:52c0::/26 Deny Bogon
 2405:5301::/32 Deny Bogon
 2405:5302::/31 Deny Bogon
 2405:5304::/30 Deny Bogon
@@ -28852,7 +28962,13 @@ Tag: Vietel
 2405:5310::/28 Deny Bogon
 2405:5320::/27 Deny Bogon
 2405:5340::/26 Deny Bogon
-2405:5380::/25 Deny Bogon
+2405:5381::/32 Deny Bogon
+2405:5382::/31 Deny Bogon
+2405:5384::/30 Deny Bogon
+2405:5388::/29 Deny Bogon
+2405:5390::/28 Deny Bogon
+2405:53a0::/27 Deny Bogon
+2405:53c0::/26 Deny Bogon
 2405:5401::/32 Deny Bogon
 2405:5402::/31 Deny Bogon
 2405:5404::/30 Deny Bogon
@@ -28860,7 +28976,13 @@ Tag: Vietel
 2405:5410::/28 Deny Bogon
 2405:5420::/27 Deny Bogon
 2405:5440::/26 Deny Bogon
-2405:5480::/25 Deny Bogon
+2405:5481::/32 Deny Bogon
+2405:5482::/31 Deny Bogon
+2405:5484::/30 Deny Bogon
+2405:5488::/29 Deny Bogon
+2405:5490::/28 Deny Bogon
+2405:54a0::/27 Deny Bogon
+2405:54c0::/26 Deny Bogon
 2405:5501::/32 Deny Bogon
 2405:5502::/31 Deny Bogon
 2405:5504::/30 Deny Bogon
@@ -28868,7 +28990,13 @@ Tag: Vietel
 2405:5510::/28 Deny Bogon
 2405:5520::/27 Deny Bogon
 2405:5540::/26 Deny Bogon
-2405:5580::/25 Deny Bogon
+2405:5581::/32 Deny Bogon
+2405:5582::/31 Deny Bogon
+2405:5584::/30 Deny Bogon
+2405:5588::/29 Deny Bogon
+2405:5590::/28 Deny Bogon
+2405:55a0::/27 Deny Bogon
+2405:55c0::/26 Deny Bogon
 2405:5601::/32 Deny Bogon
 2405:5602::/31 Deny Bogon
 2405:5604::/30 Deny Bogon
@@ -28876,7 +29004,13 @@ Tag: Vietel
 2405:5610::/28 Deny Bogon
 2405:5620::/27 Deny Bogon
 2405:5640::/26 Deny Bogon
-2405:5680::/25 Deny Bogon
+2405:5681::/32 Deny Bogon
+2405:5682::/31 Deny Bogon
+2405:5684::/30 Deny Bogon
+2405:5688::/29 Deny Bogon
+2405:5690::/28 Deny Bogon
+2405:56a0::/27 Deny Bogon
+2405:56c0::/26 Deny Bogon
 2405:5701::/32 Deny Bogon
 2405:5702::/31 Deny Bogon
 2405:5704::/30 Deny Bogon
@@ -28884,7 +29018,13 @@ Tag: Vietel
 2405:5710::/28 Deny Bogon
 2405:5720::/27 Deny Bogon
 2405:5740::/26 Deny Bogon
-2405:5780::/25 Deny Bogon
+2405:5781::/32 Deny Bogon
+2405:5782::/31 Deny Bogon
+2405:5784::/30 Deny Bogon
+2405:5788::/29 Deny Bogon
+2405:5790::/28 Deny Bogon
+2405:57a0::/27 Deny Bogon
+2405:57c0::/26 Deny Bogon
 2405:5801::/32 Deny Bogon
 2405:5802::/31 Deny Bogon
 2405:5804::/30 Deny Bogon
@@ -28892,7 +29032,13 @@ Tag: Vietel
 2405:5810::/28 Deny Bogon
 2405:5820::/27 Deny Bogon
 2405:5840::/26 Deny Bogon
-2405:5880::/25 Deny Bogon
+2405:5881::/32 Deny Bogon
+2405:5882::/31 Deny Bogon
+2405:5884::/30 Deny Bogon
+2405:5888::/29 Deny Bogon
+2405:5890::/28 Deny Bogon
+2405:58a0::/27 Deny Bogon
+2405:58c0::/26 Deny Bogon
 2405:5901::/32 Deny Bogon
 2405:5902::/31 Deny Bogon
 2405:5904::/30 Deny Bogon
@@ -28900,7 +29046,13 @@ Tag: Vietel
 2405:5910::/28 Deny Bogon
 2405:5920::/27 Deny Bogon
 2405:5940::/26 Deny Bogon
-2405:5980::/25 Deny Bogon
+2405:5981::/32 Deny Bogon
+2405:5982::/31 Deny Bogon
+2405:5984::/30 Deny Bogon
+2405:5988::/29 Deny Bogon
+2405:5990::/28 Deny Bogon
+2405:59a0::/27 Deny Bogon
+2405:59c0::/26 Deny Bogon
 2405:5a01::/32 Deny Bogon
 2405:5a02::/31 Deny Bogon
 2405:5a04::/30 Deny Bogon
@@ -28908,7 +29060,13 @@ Tag: Vietel
 2405:5a10::/28 Deny Bogon
 2405:5a20::/27 Deny Bogon
 2405:5a40::/26 Deny Bogon
-2405:5a80::/25 Deny Bogon
+2405:5a81::/32 Deny Bogon
+2405:5a82::/31 Deny Bogon
+2405:5a84::/30 Deny Bogon
+2405:5a88::/29 Deny Bogon
+2405:5a90::/28 Deny Bogon
+2405:5aa0::/27 Deny Bogon
+2405:5ac0::/26 Deny Bogon
 2405:5b01::/32 Deny Bogon
 2405:5b02::/31 Deny Bogon
 2405:5b04::/30 Deny Bogon
@@ -28916,7 +29074,13 @@ Tag: Vietel
 2405:5b10::/28 Deny Bogon
 2405:5b20::/27 Deny Bogon
 2405:5b40::/26 Deny Bogon
-2405:5b80::/25 Deny Bogon
+2405:5b81::/32 Deny Bogon
+2405:5b82::/31 Deny Bogon
+2405:5b84::/30 Deny Bogon
+2405:5b88::/29 Deny Bogon
+2405:5b90::/28 Deny Bogon
+2405:5ba0::/27 Deny Bogon
+2405:5bc0::/26 Deny Bogon
 2405:5c01::/32 Deny Bogon
 2405:5c02::/31 Deny Bogon
 2405:5c04::/30 Deny Bogon
@@ -28924,7 +29088,13 @@ Tag: Vietel
 2405:5c10::/28 Deny Bogon
 2405:5c20::/27 Deny Bogon
 2405:5c40::/26 Deny Bogon
-2405:5c80::/25 Deny Bogon
+2405:5c81::/32 Deny Bogon
+2405:5c82::/31 Deny Bogon
+2405:5c84::/30 Deny Bogon
+2405:5c88::/29 Deny Bogon
+2405:5c90::/28 Deny Bogon
+2405:5ca0::/27 Deny Bogon
+2405:5cc0::/26 Deny Bogon
 2405:5d01::/32 Deny Bogon
 2405:5d02::/31 Deny Bogon
 2405:5d04::/30 Deny Bogon
@@ -28932,7 +29102,13 @@ Tag: Vietel
 2405:5d10::/28 Deny Bogon
 2405:5d20::/27 Deny Bogon
 2405:5d40::/26 Deny Bogon
-2405:5d80::/25 Deny Bogon
+2405:5d81::/32 Deny Bogon
+2405:5d82::/31 Deny Bogon
+2405:5d84::/30 Deny Bogon
+2405:5d88::/29 Deny Bogon
+2405:5d90::/28 Deny Bogon
+2405:5da0::/27 Deny Bogon
+2405:5dc0::/26 Deny Bogon
 2405:5e01::/32 Deny Bogon
 2405:5e02::/31 Deny Bogon
 2405:5e04::/30 Deny Bogon
@@ -28940,7 +29116,13 @@ Tag: Vietel
 2405:5e10::/28 Deny Bogon
 2405:5e20::/27 Deny Bogon
 2405:5e40::/26 Deny Bogon
-2405:5e80::/25 Deny Bogon
+2405:5e81::/32 Deny Bogon
+2405:5e82::/31 Deny Bogon
+2405:5e84::/30 Deny Bogon
+2405:5e88::/29 Deny Bogon
+2405:5e90::/28 Deny Bogon
+2405:5ea0::/27 Deny Bogon
+2405:5ec0::/26 Deny Bogon
 2405:5f01::/32 Deny Bogon
 2405:5f02::/31 Deny Bogon
 2405:5f04::/30 Deny Bogon
@@ -28948,7 +29130,13 @@ Tag: Vietel
 2405:5f10::/28 Deny Bogon
 2405:5f20::/27 Deny Bogon
 2405:5f40::/26 Deny Bogon
-2405:5f80::/25 Deny Bogon
+2405:5f81::/32 Deny Bogon
+2405:5f82::/31 Deny Bogon
+2405:5f84::/30 Deny Bogon
+2405:5f88::/29 Deny Bogon
+2405:5f90::/28 Deny Bogon
+2405:5fa0::/27 Deny Bogon
+2405:5fc0::/26 Deny Bogon
 2405:6001::/32 Deny Bogon
 2405:6002::/31 Deny Bogon
 2405:6004::/30 Deny Bogon
@@ -28956,7 +29144,13 @@ Tag: Vietel
 2405:6010::/28 Deny Bogon
 2405:6020::/27 Deny Bogon
 2405:6040::/26 Deny Bogon
-2405:6080::/25 Deny Bogon
+2405:6081::/32 Deny Bogon
+2405:6082::/31 Deny Bogon
+2405:6084::/30 Deny Bogon
+2405:6088::/29 Deny Bogon
+2405:6090::/28 Deny Bogon
+2405:60a0::/27 Deny Bogon
+2405:60c0::/26 Deny Bogon
 2405:6101::/32 Deny Bogon
 2405:6102::/31 Deny Bogon
 2405:6104::/30 Deny Bogon
@@ -28964,7 +29158,13 @@ Tag: Vietel
 2405:6110::/28 Deny Bogon
 2405:6120::/27 Deny Bogon
 2405:6140::/26 Deny Bogon
-2405:6180::/25 Deny Bogon
+2405:6181::/32 Deny Bogon
+2405:6182::/31 Deny Bogon
+2405:6184::/30 Deny Bogon
+2405:6188::/29 Deny Bogon
+2405:6190::/28 Deny Bogon
+2405:61a0::/27 Deny Bogon
+2405:61c0::/26 Deny Bogon
 2405:6201::/32 Deny Bogon
 2405:6202::/31 Deny Bogon
 2405:6204::/30 Deny Bogon
@@ -28972,7 +29172,13 @@ Tag: Vietel
 2405:6210::/28 Deny Bogon
 2405:6220::/27 Deny Bogon
 2405:6240::/26 Deny Bogon
-2405:6280::/25 Deny Bogon
+2405:6281::/32 Deny Bogon
+2405:6282::/31 Deny Bogon
+2405:6284::/30 Deny Bogon
+2405:6288::/29 Deny Bogon
+2405:6290::/28 Deny Bogon
+2405:62a0::/27 Deny Bogon
+2405:62c0::/26 Deny Bogon
 2405:6301::/32 Deny Bogon
 2405:6302::/31 Deny Bogon
 2405:6304::/30 Deny Bogon
@@ -28980,7 +29186,13 @@ Tag: Vietel
 2405:6310::/28 Deny Bogon
 2405:6320::/27 Deny Bogon
 2405:6340::/26 Deny Bogon
-2405:6380::/25 Deny Bogon
+2405:6381::/32 Deny Bogon
+2405:6382::/31 Deny Bogon
+2405:6384::/30 Deny Bogon
+2405:6388::/29 Deny Bogon
+2405:6390::/28 Deny Bogon
+2405:63a0::/27 Deny Bogon
+2405:63c0::/26 Deny Bogon
 2405:6401::/32 Deny Bogon
 2405:6402::/31 Deny Bogon
 2405:6404::/30 Deny Bogon
@@ -28988,7 +29200,13 @@ Tag: Vietel
 2405:6410::/28 Deny Bogon
 2405:6420::/27 Deny Bogon
 2405:6440::/26 Deny Bogon
-2405:6480::/25 Deny Bogon
+2405:6481::/32 Deny Bogon
+2405:6482::/31 Deny Bogon
+2405:6484::/30 Deny Bogon
+2405:6488::/29 Deny Bogon
+2405:6490::/28 Deny Bogon
+2405:64a0::/27 Deny Bogon
+2405:64c0::/26 Deny Bogon
 2405:6501::/32 Deny Bogon
 2405:6502::/31 Deny Bogon
 2405:6504::/30 Deny Bogon
@@ -28996,7 +29214,10 @@ Tag: Vietel
 2405:6510::/28 Deny Bogon
 2405:6520::/27 Deny Bogon
 2405:6540::/26 Deny Bogon
-2405:6580::/25 Deny Bogon
+2405:6588::/29 Deny Bogon
+2405:6590::/28 Deny Bogon
+2405:65a0::/27 Deny Bogon
+2405:65c0::/26 Deny Bogon
 2405:6601::/32 Deny Bogon
 2405:6602::/31 Deny Bogon
 2405:6604::/30 Deny Bogon
@@ -29004,7 +29225,13 @@ Tag: Vietel
 2405:6610::/28 Deny Bogon
 2405:6620::/27 Deny Bogon
 2405:6640::/26 Deny Bogon
-2405:6680::/25 Deny Bogon
+2405:6681::/32 Deny Bogon
+2405:6682::/31 Deny Bogon
+2405:6684::/30 Deny Bogon
+2405:6688::/29 Deny Bogon
+2405:6690::/28 Deny Bogon
+2405:66a0::/27 Deny Bogon
+2405:66c0::/26 Deny Bogon
 2405:6701::/32 Deny Bogon
 2405:6702::/31 Deny Bogon
 2405:6704::/30 Deny Bogon
@@ -29012,7 +29239,13 @@ Tag: Vietel
 2405:6710::/28 Deny Bogon
 2405:6720::/27 Deny Bogon
 2405:6740::/26 Deny Bogon
-2405:6780::/25 Deny Bogon
+2405:6781::/32 Deny Bogon
+2405:6782::/31 Deny Bogon
+2405:6784::/30 Deny Bogon
+2405:6788::/29 Deny Bogon
+2405:6790::/28 Deny Bogon
+2405:67a0::/27 Deny Bogon
+2405:67c0::/26 Deny Bogon
 2405:6801::/32 Deny Bogon
 2405:6802::/31 Deny Bogon
 2405:6804::/30 Deny Bogon
@@ -29020,7 +29253,13 @@ Tag: Vietel
 2405:6810::/28 Deny Bogon
 2405:6820::/27 Deny Bogon
 2405:6840::/26 Deny Bogon
-2405:6880::/25 Deny Bogon
+2405:6881::/32 Deny Bogon
+2405:6882::/31 Deny Bogon
+2405:6884::/30 Deny Bogon
+2405:6888::/29 Deny Bogon
+2405:6890::/28 Deny Bogon
+2405:68a0::/27 Deny Bogon
+2405:68c0::/26 Deny Bogon
 2405:6901::/32 Deny Bogon
 2405:6902::/31 Deny Bogon
 2405:6904::/30 Deny Bogon
@@ -29028,7 +29267,13 @@ Tag: Vietel
 2405:6910::/28 Deny Bogon
 2405:6920::/27 Deny Bogon
 2405:6940::/26 Deny Bogon
-2405:6980::/25 Deny Bogon
+2405:6981::/32 Deny Bogon
+2405:6982::/31 Deny Bogon
+2405:6984::/30 Deny Bogon
+2405:6988::/29 Deny Bogon
+2405:6990::/28 Deny Bogon
+2405:69a0::/27 Deny Bogon
+2405:69c0::/26 Deny Bogon
 2405:6a01::/32 Deny Bogon
 2405:6a02::/31 Deny Bogon
 2405:6a04::/30 Deny Bogon
@@ -29036,7 +29281,13 @@ Tag: Vietel
 2405:6a10::/28 Deny Bogon
 2405:6a20::/27 Deny Bogon
 2405:6a40::/26 Deny Bogon
-2405:6a80::/25 Deny Bogon
+2405:6a81::/32 Deny Bogon
+2405:6a82::/31 Deny Bogon
+2405:6a84::/30 Deny Bogon
+2405:6a88::/29 Deny Bogon
+2405:6a90::/28 Deny Bogon
+2405:6aa0::/27 Deny Bogon
+2405:6ac0::/26 Deny Bogon
 2405:6b01::/32 Deny Bogon
 2405:6b02::/31 Deny Bogon
 2405:6b04::/30 Deny Bogon
@@ -29044,7 +29295,13 @@ Tag: Vietel
 2405:6b10::/28 Deny Bogon
 2405:6b20::/27 Deny Bogon
 2405:6b40::/26 Deny Bogon
-2405:6b80::/25 Deny Bogon
+2405:6b81::/32 Deny Bogon
+2405:6b82::/31 Deny Bogon
+2405:6b84::/30 Deny Bogon
+2405:6b88::/29 Deny Bogon
+2405:6b90::/28 Deny Bogon
+2405:6ba0::/27 Deny Bogon
+2405:6bc0::/26 Deny Bogon
 2405:6c01::/32 Deny Bogon
 2405:6c02::/31 Deny Bogon
 2405:6c04::/30 Deny Bogon
@@ -29052,7 +29309,13 @@ Tag: Vietel
 2405:6c10::/28 Deny Bogon
 2405:6c20::/27 Deny Bogon
 2405:6c40::/26 Deny Bogon
-2405:6c80::/25 Deny Bogon
+2405:6c81::/32 Deny Bogon
+2405:6c82::/31 Deny Bogon
+2405:6c84::/30 Deny Bogon
+2405:6c88::/29 Deny Bogon
+2405:6c90::/28 Deny Bogon
+2405:6ca0::/27 Deny Bogon
+2405:6cc0::/26 Deny Bogon
 2405:6d01::/32 Deny Bogon
 2405:6d02::/31 Deny Bogon
 2405:6d04::/30 Deny Bogon
@@ -29060,7 +29323,13 @@ Tag: Vietel
 2405:6d10::/28 Deny Bogon
 2405:6d20::/27 Deny Bogon
 2405:6d40::/26 Deny Bogon
-2405:6d80::/25 Deny Bogon
+2405:6d81::/32 Deny Bogon
+2405:6d82::/31 Deny Bogon
+2405:6d84::/30 Deny Bogon
+2405:6d88::/29 Deny Bogon
+2405:6d90::/28 Deny Bogon
+2405:6da0::/27 Deny Bogon
+2405:6dc0::/26 Deny Bogon
 2405:6e01::/32 Deny Bogon
 2405:6e02::/31 Deny Bogon
 2405:6e04::/30 Deny Bogon
@@ -29068,7 +29337,13 @@ Tag: Vietel
 2405:6e10::/28 Deny Bogon
 2405:6e20::/27 Deny Bogon
 2405:6e40::/26 Deny Bogon
-2405:6e80::/25 Deny Bogon
+2405:6e81::/32 Deny Bogon
+2405:6e82::/31 Deny Bogon
+2405:6e84::/30 Deny Bogon
+2405:6e88::/29 Deny Bogon
+2405:6e90::/28 Deny Bogon
+2405:6ea0::/27 Deny Bogon
+2405:6ec0::/26 Deny Bogon
 2405:6f01::/32 Deny Bogon
 2405:6f02::/31 Deny Bogon
 2405:6f04::/30 Deny Bogon
@@ -29076,7 +29351,13 @@ Tag: Vietel
 2405:6f10::/28 Deny Bogon
 2405:6f20::/27 Deny Bogon
 2405:6f40::/26 Deny Bogon
-2405:6f80::/25 Deny Bogon
+2405:6f81::/32 Deny Bogon
+2405:6f82::/31 Deny Bogon
+2405:6f84::/30 Deny Bogon
+2405:6f88::/29 Deny Bogon
+2405:6f90::/28 Deny Bogon
+2405:6fa0::/27 Deny Bogon
+2405:6fc0::/26 Deny Bogon
 2405:7001::/32 Deny Bogon
 2405:7002::/31 Deny Bogon
 2405:7004::/30 Deny Bogon
@@ -29084,7 +29365,13 @@ Tag: Vietel
 2405:7010::/28 Deny Bogon
 2405:7020::/27 Deny Bogon
 2405:7040::/26 Deny Bogon
-2405:7080::/25 Deny Bogon
+2405:7081::/32 Deny Bogon
+2405:7082::/31 Deny Bogon
+2405:7084::/30 Deny Bogon
+2405:7088::/29 Deny Bogon
+2405:7090::/28 Deny Bogon
+2405:70a0::/27 Deny Bogon
+2405:70c0::/26 Deny Bogon
 2405:7101::/32 Deny Bogon
 2405:7102::/31 Deny Bogon
 2405:7104::/30 Deny Bogon
@@ -29092,7 +29379,13 @@ Tag: Vietel
 2405:7110::/28 Deny Bogon
 2405:7120::/27 Deny Bogon
 2405:7140::/26 Deny Bogon
-2405:7180::/25 Deny Bogon
+2405:7181::/32 Deny Bogon
+2405:7182::/31 Deny Bogon
+2405:7184::/30 Deny Bogon
+2405:7188::/29 Deny Bogon
+2405:7190::/28 Deny Bogon
+2405:71a0::/27 Deny Bogon
+2405:71c0::/26 Deny Bogon
 2405:7201::/32 Deny Bogon
 2405:7202::/31 Deny Bogon
 2405:7204::/30 Deny Bogon
@@ -29100,7 +29393,13 @@ Tag: Vietel
 2405:7210::/28 Deny Bogon
 2405:7220::/27 Deny Bogon
 2405:7240::/26 Deny Bogon
-2405:7280::/25 Deny Bogon
+2405:7281::/32 Deny Bogon
+2405:7282::/31 Deny Bogon
+2405:7284::/30 Deny Bogon
+2405:7288::/29 Deny Bogon
+2405:7290::/28 Deny Bogon
+2405:72a0::/27 Deny Bogon
+2405:72c0::/26 Deny Bogon
 2405:7301::/32 Deny Bogon
 2405:7302::/31 Deny Bogon
 2405:7304::/30 Deny Bogon
@@ -29108,7 +29407,13 @@ Tag: Vietel
 2405:7310::/28 Deny Bogon
 2405:7320::/27 Deny Bogon
 2405:7340::/26 Deny Bogon
-2405:7380::/25 Deny Bogon
+2405:7381::/32 Deny Bogon
+2405:7382::/31 Deny Bogon
+2405:7384::/30 Deny Bogon
+2405:7388::/29 Deny Bogon
+2405:7390::/28 Deny Bogon
+2405:73a0::/27 Deny Bogon
+2405:73c0::/26 Deny Bogon
 2405:7401::/32 Deny Bogon
 2405:7402::/31 Deny Bogon
 2405:7404::/30 Deny Bogon
@@ -29116,7 +29421,13 @@ Tag: Vietel
 2405:7410::/28 Deny Bogon
 2405:7420::/27 Deny Bogon
 2405:7440::/26 Deny Bogon
-2405:7480::/25 Deny Bogon
+2405:7481::/32 Deny Bogon
+2405:7482::/31 Deny Bogon
+2405:7484::/30 Deny Bogon
+2405:7488::/29 Deny Bogon
+2405:7490::/28 Deny Bogon
+2405:74a0::/27 Deny Bogon
+2405:74c0::/26 Deny Bogon
 2405:7501::/32 Deny Bogon
 2405:7502::/31 Deny Bogon
 2405:7504::/30 Deny Bogon
@@ -29124,7 +29435,13 @@ Tag: Vietel
 2405:7510::/28 Deny Bogon
 2405:7520::/27 Deny Bogon
 2405:7540::/26 Deny Bogon
-2405:7580::/25 Deny Bogon
+2405:7581::/32 Deny Bogon
+2405:7582::/31 Deny Bogon
+2405:7584::/30 Deny Bogon
+2405:7588::/29 Deny Bogon
+2405:7590::/28 Deny Bogon
+2405:75a0::/27 Deny Bogon
+2405:75c0::/26 Deny Bogon
 2405:7601::/32 Deny Bogon
 2405:7602::/31 Deny Bogon
 2405:7604::/30 Deny Bogon
@@ -29132,7 +29449,13 @@ Tag: Vietel
 2405:7610::/28 Deny Bogon
 2405:7620::/27 Deny Bogon
 2405:7640::/26 Deny Bogon
-2405:7680::/25 Deny Bogon
+2405:7681::/32 Deny Bogon
+2405:7682::/31 Deny Bogon
+2405:7684::/30 Deny Bogon
+2405:7688::/29 Deny Bogon
+2405:7690::/28 Deny Bogon
+2405:76a0::/27 Deny Bogon
+2405:76c0::/26 Deny Bogon
 2405:7701::/32 Deny Bogon
 2405:7702::/31 Deny Bogon
 2405:7704::/30 Deny Bogon
@@ -29140,7 +29463,13 @@ Tag: Vietel
 2405:7710::/28 Deny Bogon
 2405:7720::/27 Deny Bogon
 2405:7740::/26 Deny Bogon
-2405:7780::/25 Deny Bogon
+2405:7781::/32 Deny Bogon
+2405:7782::/31 Deny Bogon
+2405:7784::/30 Deny Bogon
+2405:7788::/29 Deny Bogon
+2405:7790::/28 Deny Bogon
+2405:77a0::/27 Deny Bogon
+2405:77c0::/26 Deny Bogon
 2405:7801::/32 Deny Bogon
 2405:7802::/31 Deny Bogon
 2405:7804::/30 Deny Bogon
@@ -29148,7 +29477,13 @@ Tag: Vietel
 2405:7810::/28 Deny Bogon
 2405:7820::/27 Deny Bogon
 2405:7840::/26 Deny Bogon
-2405:7880::/25 Deny Bogon
+2405:7881::/32 Deny Bogon
+2405:7882::/31 Deny Bogon
+2405:7884::/30 Deny Bogon
+2405:7888::/29 Deny Bogon
+2405:7890::/28 Deny Bogon
+2405:78a0::/27 Deny Bogon
+2405:78c0::/26 Deny Bogon
 2405:7901::/32 Deny Bogon
 2405:7902::/31 Deny Bogon
 2405:7904::/30 Deny Bogon
@@ -29156,7 +29491,13 @@ Tag: Vietel
 2405:7910::/28 Deny Bogon
 2405:7920::/27 Deny Bogon
 2405:7940::/26 Deny Bogon
-2405:7980::/25 Deny Bogon
+2405:7981::/32 Deny Bogon
+2405:7982::/31 Deny Bogon
+2405:7984::/30 Deny Bogon
+2405:7988::/29 Deny Bogon
+2405:7990::/28 Deny Bogon
+2405:79a0::/27 Deny Bogon
+2405:79c0::/26 Deny Bogon
 2405:7a01::/32 Deny Bogon
 2405:7a02::/31 Deny Bogon
 2405:7a04::/30 Deny Bogon
@@ -29164,7 +29505,13 @@ Tag: Vietel
 2405:7a10::/28 Deny Bogon
 2405:7a20::/27 Deny Bogon
 2405:7a40::/26 Deny Bogon
-2405:7a80::/25 Deny Bogon
+2405:7a81::/32 Deny Bogon
+2405:7a82::/31 Deny Bogon
+2405:7a84::/30 Deny Bogon
+2405:7a88::/29 Deny Bogon
+2405:7a90::/28 Deny Bogon
+2405:7aa0::/27 Deny Bogon
+2405:7ac0::/26 Deny Bogon
 2405:7b01::/32 Deny Bogon
 2405:7b02::/31 Deny Bogon
 2405:7b04::/30 Deny Bogon
@@ -29172,7 +29519,13 @@ Tag: Vietel
 2405:7b10::/28 Deny Bogon
 2405:7b20::/27 Deny Bogon
 2405:7b40::/26 Deny Bogon
-2405:7b80::/25 Deny Bogon
+2405:7b81::/32 Deny Bogon
+2405:7b82::/31 Deny Bogon
+2405:7b84::/30 Deny Bogon
+2405:7b88::/29 Deny Bogon
+2405:7b90::/28 Deny Bogon
+2405:7ba0::/27 Deny Bogon
+2405:7bc0::/26 Deny Bogon
 2405:7c01::/32 Deny Bogon
 2405:7c02::/31 Deny Bogon
 2405:7c04::/30 Deny Bogon
@@ -29180,7 +29533,13 @@ Tag: Vietel
 2405:7c10::/28 Deny Bogon
 2405:7c20::/27 Deny Bogon
 2405:7c40::/26 Deny Bogon
-2405:7c80::/25 Deny Bogon
+2405:7c81::/32 Deny Bogon
+2405:7c82::/31 Deny Bogon
+2405:7c84::/30 Deny Bogon
+2405:7c88::/29 Deny Bogon
+2405:7c90::/28 Deny Bogon
+2405:7ca0::/27 Deny Bogon
+2405:7cc0::/26 Deny Bogon
 2405:7d01::/32 Deny Bogon
 2405:7d02::/31 Deny Bogon
 2405:7d04::/30 Deny Bogon
@@ -34512,7 +34871,6 @@ Tag: Vietel
 2602:fc00::/23 Deny Bogon
 2602:fe00::/24 Deny Bogon
 2602:ff00::/26 Deny Bogon
-2602:ff40::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -39629,7 +39987,9 @@ Tag: Vietel
 2607:5010::/28 Deny Bogon
 2607:5020::/27 Deny Bogon
 2607:5040::/26 Deny Bogon
-2607:5080::/25 Deny Bogon
+2607:5090::/28 Deny Bogon
+2607:50a0::/27 Deny Bogon
+2607:50c0::/26 Deny Bogon
 2607:5110::/28 Deny Bogon
 2607:5120::/27 Deny Bogon
 2607:5140::/26 Deny Bogon
@@ -45067,7 +45427,16 @@ Tag: Vietel
 2620:7b:e400::/38 Deny Bogon
 2620:7b:e800::/37 Deny Bogon
 2620:7b:f000::/36 Deny Bogon
-2620:7c::/34 Deny Bogon
+2620:7c::/36 Deny Bogon
+2620:7c:1010::/44 Deny Bogon
+2620:7c:1020::/43 Deny Bogon
+2620:7c:1040::/42 Deny Bogon
+2620:7c:1080::/41 Deny Bogon
+2620:7c:1100::/40 Deny Bogon
+2620:7c:1200::/39 Deny Bogon
+2620:7c:1400::/38 Deny Bogon
+2620:7c:1800::/37 Deny Bogon
+2620:7c:2000::/35 Deny Bogon
 2620:7c:4010::/44 Deny Bogon
 2620:7c:4020::/43 Deny Bogon
 2620:7c:4040::/42 Deny Bogon
@@ -51812,8 +52181,13 @@ Tag: Vietel
 2620:127:5200::/39 Deny Bogon
 2620:127:5400::/38 Deny Bogon
 2620:127:5800::/37 Deny Bogon
-2620:127:7000::/36 Deny Bogon
-2620:127:8000::/33 Deny Bogon
+2620:127:7100::/40 Deny Bogon
+2620:127:7200::/39 Deny Bogon
+2620:127:7400::/38 Deny Bogon
+2620:127:7800::/37 Deny Bogon
+2620:127:9000::/36 Deny Bogon
+2620:127:a000::/35 Deny Bogon
+2620:127:c000::/34 Deny Bogon
 2620:128::/29 Deny Bogon
 2620:130::/28 Deny Bogon
 2620:140:1000::/36 Deny Bogon
@@ -54477,7 +54851,10 @@ Tag: Vietel
 2801:80:1922::/47 Deny Bogon
 2801:80:1924::/46 Deny Bogon
 2801:80:1928::/45 Deny Bogon
-2801:80:1930::/44 Deny Bogon
+2801:80:1931::/48 Deny Bogon
+2801:80:1932::/47 Deny Bogon
+2801:80:1934::/46 Deny Bogon
+2801:80:1938::/45 Deny Bogon
 2801:80:1940::/42 Deny Bogon
 2801:80:1980::/41 Deny Bogon
 2801:80:1a00::/39 Deny Bogon
@@ -62796,9 +63173,25 @@ Tag: Vietel
 2804:30c6::/31 Deny Bogon
 2804:30c9::/32 Deny Bogon
 2804:30ca::/31 Deny Bogon
-2804:30cc::/30 Deny Bogon
-2804:30d0::/28 Deny Bogon
-2804:30e0::/27 Deny Bogon
+2804:30cd::/32 Deny Bogon
+2804:30ce::/31 Deny Bogon
+2804:30d1::/32 Deny Bogon
+2804:30d2::/31 Deny Bogon
+2804:30d5::/32 Deny Bogon
+2804:30d6::/31 Deny Bogon
+2804:30d9::/32 Deny Bogon
+2804:30da::/31 Deny Bogon
+2804:30dd::/32 Deny Bogon
+2804:30de::/31 Deny Bogon
+2804:30e1::/32 Deny Bogon
+2804:30e2::/31 Deny Bogon
+2804:30e5::/32 Deny Bogon
+2804:30e6::/31 Deny Bogon
+2804:30e9::/32 Deny Bogon
+2804:30ea::/31 Deny Bogon
+2804:30ed::/32 Deny Bogon
+2804:30ee::/31 Deny Bogon
+2804:30f0::/28 Deny Bogon
 2804:3100::/24 Deny Bogon
 2804:3200::/23 Deny Bogon
 2804:3400::/22 Deny Bogon
@@ -66497,8 +66890,6 @@ Tag: Vietel
 2a01:6d30::/28 Deny Bogon
 2a01:6d48::/29 Deny Bogon
 2a01:6d50::/28 Deny Bogon
-2a01:6d68::/29 Deny Bogon
-2a01:6d70::/28 Deny Bogon
 2a01:6d88::/29 Deny Bogon
 2a01:6d90::/28 Deny Bogon
 2a01:6da8::/29 Deny Bogon
@@ -71382,10 +71773,12 @@ Tag: Vietel
 2a03:adb0::/28 Deny Bogon
 2a03:adc8::/29 Deny Bogon
 2a03:add0::/28 Deny Bogon
-2a03:ade0::/27 Deny Bogon
+2a03:ade8::/29 Deny Bogon
+2a03:adf0::/28 Deny Bogon
 2a03:ae08::/29 Deny Bogon
 2a03:ae10::/28 Deny Bogon
-2a03:ae20::/27 Deny Bogon
+2a03:ae28::/29 Deny Bogon
+2a03:ae30::/28 Deny Bogon
 2a03:ae48::/29 Deny Bogon
 2a03:ae50::/28 Deny Bogon
 2a03:ae60::/27 Deny Bogon
@@ -72294,9 +72687,11 @@ Tag: Vietel
 2a05:5088::/29 Deny Bogon
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
-2a07:7dc0::/26 Deny Bogon
-2a07:7e00::/23 Deny Bogon
-2a07:8000::/17 Deny Bogon
+2a07:8400::/22 Deny Bogon
+2a07:8800::/21 Deny Bogon
+2a07:9000::/20 Deny Bogon
+2a07:a000::/19 Deny Bogon
+2a07:c000::/18 Deny Bogon
 2a08::/13 Deny Bogon
 2c00::/13 Deny Bogon
 2c08::/14 Deny Bogon
@@ -72308,7 +72703,7 @@ Tag: Vietel
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
 2c0f:f000::/23 Deny Bogon
-2c0f:f210::/28 Deny Bogon
+2c0f:f218::/29 Deny Bogon
 2c0f:f220::/27 Deny Bogon
 2c0f:f240::/26 Deny Bogon
 2c0f:f280::/25 Deny Bogon

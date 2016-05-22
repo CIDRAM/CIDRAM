@@ -384,20 +384,18 @@ Tag: Leaseweb
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Infected by malware (as per reported by Google): 1.16% (AS24940), 1.39% (AS37153).
-# Updated: 2016.05.12
+# Infected by malware (as per reported by Google): 1.15% (AS24940), 1.39% (AS37153).
+# Updated: 2016.05.21
 
 2a01:4f8::/29 Deny Generic
-2a02:49e0::/35 Deny Generic
-2a02:c740::/29 Deny Generic
 2a06:be80::/29 Deny Generic
 2c0f:fce8::/33 Deny Generic
-Tag: Hetzner
+Tag: Hetzner Online GmbH
 
 
 # ASN 43146 ("Agava Ltd").
-# Infected by malware (as per reported by Google): 1.80%.
-# Updated: 2016.05.15
+# Infected by malware (as per reported by Google): 1.85%.
+# Updated: 2016.05.15 / Checked: 2016.05.21
 
 2a03:4900::/46 Deny Cloud
 2a03:4900:4::/47 Deny Cloud
@@ -411,8 +409,8 @@ Tag: Agava Ltd
 
 
 # ASNs 21844, 36351 ("SoftLayer Technologies").
-# Infected by malware (as per reported by Google): 1.08% (AS21844), 0.20% (AS36351).
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.09% (AS21844), 0.23% (AS36351).
+# Updated: 2016.03.28 / Checked: 2016.05.21
 
 2001:df3:8800::/48 Run rules_softlayer.php
 2001:df4:f000::/48 Run rules_softlayer.php
@@ -453,8 +451,8 @@ Tag: SoftLayer
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# Infected by malware (as per reported by Google): 1.97%.
-# Updated: 2016.02.27 / Checked: 2016.03.28
+# Infected by malware (as per reported by Google): 2.43%.
+# Updated: 2016.02.27 / Checked: 2016.05.21
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 
 2a03:2100::/32 Deny Generic
@@ -465,8 +463,8 @@ Tag: AS51559
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Infected by malware (as per reported by Google): 1.49%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.69%.
+# Updated: 2016.03.28 / Checked: 2016.05.21
 
 2a03:c980:1::/48 Deny Cloud
 2a03:c980:2::/48 Deny Cloud
@@ -476,8 +474,8 @@ Tag: eServer.ru
 
 
 # ASN 35415 ("Webzilla B.V").
-# Infected by malware (as per reported by Google): 1.70%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.60%.
+# Updated: 2016.03.28 / Checked: 2016.05.21
 
 2803:8700:5::/48 Deny Generic
 2803:8700:45::/48 Deny Generic
@@ -579,8 +577,8 @@ Tag: Limestone Networks
 
 
 # ASN 35662 ("Redstation Limited").
-# Infected by malware (as per reported by Google): 0.65%.
-# Updated: 2016.01.19 / Checked: 2016.03.04
+# Infected by malware (as per reported by Google): 0.70%.
+# Updated: 2016.01.19 / Checked: 2016.05.21
 
 2a02:2658::/32 Deny Cloud
 Tag: Redstation Limited
@@ -896,8 +894,8 @@ Tag: Bezeq International
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# Infected by malware (as per reported by Google): 25.23%.
-# Updated: 2016.01.20 / Checked: 2016.04.19
+# Infected by malware (as per reported by Google): 25.78%.
+# Updated: 2016.01.20 / Checked: 2016.05.21
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
@@ -1070,16 +1068,16 @@ Tag: SingleHop, Inc
 Tag: eUKhost LTD
 
 
-# ASN 12703 ("Dataflame Internet Services Ltd").
-# Infected by malware (as per reported by Google): 0.96%.
-# Updated: 2016.01.22 / Checked: 2016.03.12
+# ASN 12703 ("Pulsant (Scotland) Ltd").
+# Infected by malware (as per reported by Google): 3.33%.
+# Updated: 2016.01.22 / Checked: 2016.05.22
 
 2a01:5ae0::/32 Deny Cloud
 2a01:6ca0::/32 Deny Cloud
 2a02:16e0::/32 Deny Cloud
 2a03:67c0::/32 Deny Cloud
 2a04:4300::/48 Deny Cloud
-Tag: Dataflame Internet
+Tag: Pulsant
 
 
 # ASN 51852 ("Private Layer INC").
@@ -1177,8 +1175,8 @@ Tag: DataWagon LLC
 
 
 # ASN 49981 ("WorldStream").
-# Infected by malware (as per reported by Google): 1.96%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 1.89%.
+# Updated: 2016.03.20 / Checked: 2016.05.21
 
 2001:16c0:fefe::/48 Deny Generic
 2a00:7c80::/32 Deny Generic
@@ -1253,7 +1251,7 @@ Tag: RAM Host
 
 # ASN 13030 ("Init7").
 # Infected by malware (as per reported by Google): 0.33%.
-# Updated: 2016.01.18 / Checked: 2016.03.07
+# Updated: 2016.01.18 / Checked: 2016.05.21
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 
 2001:67c:1388::/48 Deny Generic
@@ -1270,11 +1268,12 @@ Tag: Init7
 
 
 # ASN 14576 ("K SERVERS LTD").
-# Infected by malware (as per reported by Google): 0.77%.
-# Updated: 2016.01.23 / Checked: 2016.03.10
+# Infected by malware (as per reported by Google): 0.43%.
+# Updated: 2016.05.21
 
-2606:5e00::/32 Deny Generic
-2a06:2e80::/29 Deny Generic
+2606:5e00::/32 Deny Cloud
+2a06:2e80::/29 Deny Cloud
+2a07:4dc0::/29 Deny Cloud
 Tag: K SERVERS LTD
 
 
@@ -2595,13 +2594,6 @@ Tag: Serverius Holding
 2a00:4e40:2::/48 Deny Cloud
 2a01:7c8::/32 Deny Cloud
 Tag: Transip B.V
-
-
-# ASN 200429 ("HostSlim BV")
-# Infected by malware (as per reported by Google): 0.61%.
-# Updated: 2016.05.09
-
-Tag: HostSlim BV
 
 
 # ASN 43350 ("NForce Entertainment B.V")

@@ -1575,8 +1575,8 @@ Tag: Vautron Rech. AG
 
 
 # ASN 46606 ("Unified Layer").
-# Infected by malware (as per reported by Google): 2.37%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 2.90%.
+# Updated: 2016.05.21
 
 50.87.0.0/16 Deny Cloud
 66.147.240.0/20 Deny Cloud
@@ -1616,8 +1616,8 @@ Tag: Dattatec.com
 
 
 # ASN 38955 ("World4You Internet Services").
-# Infected by malware (as per reported by Google): 1.79%.
-# Updated: 2016.01.18 / Checked: 2016.04.18
+# Infected by malware (as per reported by Google): 1.39%.
+# Updated: 2016.01.18 / Checked: 2016.05.21
 
 81.19.144.0/20 Deny Generic
 178.23.80.0/21 Deny Generic
@@ -1838,39 +1838,24 @@ Tag: Quasi Networks LTD
 
 
 # ASN 40034 ("Confluence Networks Inc").
-# Infected by malware (as per reported by Google): 1.28%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 1.42%.
+# Updated: 2016.05.21
 
-5.100.152.0/21 Deny Generic
-43.225.52.0/22 Deny Generic
-45.113.120.0/22 Deny Generic
+5.100.152.0/22 Deny Generic
+5.100.158.0/23 Deny Generic
 50.58.197.0/24 Deny Generic
-103.21.58.0/23 Deny Generic
-103.50.160.0/22 Deny Generic
-103.53.40.0/22 Deny Generic
-103.195.184.0/22 Deny Generic
-103.224.22.0/23 Deny Generic
 104.254.96.0/22 Deny Generic
-111.118.212.0/22 Deny Generic
-119.18.52.0/24 Deny Generic
-119.18.54.0/23 Deny Generic
-119.18.57.0/24 Deny Generic
-119.18.58.0/23 Deny Generic
-119.18.60.0/22 Deny Generic
-137.59.148.0/22 Deny Generic
 141.8.224.0/21 Deny Generic
 162.210.68.0/22 Deny Generic
 162.222.224.0/22 Deny Generic
 162.251.80.0/21 Deny Generic
 199.79.60.0/22 Deny Generic
 199.191.50.0/23 Deny Generic
-203.13.40.0/24 Deny Generic
 204.11.56.0/22 Deny Generic
 207.174.212.0/22 Deny Generic
 208.73.208.0/22 Deny Generic
 208.91.196.0/22 Deny Generic
-209.99.16.0/23 Deny Generic
-209.99.40.0/24 Deny Generic
+209.99.17.0/24 Deny Generic
 209.99.45.0/24 Deny Generic
 209.99.64.0/23 Deny Generic
 Tag: Confluence
@@ -2098,8 +2083,8 @@ Tag: AS48159
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# Infected by malware (as per reported by Google): 1.16% (AS24940), 1.39% (AS37153).
-# Updated: 2016.05.12
+# Infected by malware (as per reported by Google): 1.15% (AS24940), 1.39% (AS37153).
+# Updated: 2016.05.12 / Checked: 2016.05.21
 
 5.9.0.0/16 Deny Generic
 41.72.128.0/19 Deny Generic
@@ -2148,12 +2133,12 @@ Tag: AS48159
 213.133.96.0/19 Deny Generic
 213.169.144.0/22 Deny Generic
 213.239.192.0/18 Deny Generic
-Tag: Hetzner
+Tag: Hetzner Online GmbH
 
 
 # ASN 43146 ("Agava Ltd").
-# Infected by malware (as per reported by Google): 1.80%.
-# Updated: 2016.01.21 / Checked: 2016.05.15
+# Infected by malware (as per reported by Google): 1.85%.
+# Updated: 2016.01.21 / Checked: 2016.05.21
 
 80.78.240.0/23 Deny Cloud
 80.78.244.0/22 Deny Cloud
@@ -2164,14 +2149,13 @@ Tag: Agava Ltd
 
 
 # ASNs 21844, 36351 ("SoftLayer Technologies").
-# Infected by malware (as per reported by Google): 1.08% (AS21844), 0.20% (AS36351).
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.09% (AS21844), 0.23% (AS36351).
+# Updated: 2016.05.21
 
 5.10.64.0/18 Run rules_softlayer.php
 5.62.21.0/24 Run rules_softlayer.php
 5.153.0.0/18 Run rules_softlayer.php
 12.96.160.0/21 Run rules_softlayer.php
-14.1.96.0/24 Run rules_softlayer.php
 23.91.120.0/21 Run rules_softlayer.php
 23.239.24.0/21 Run rules_softlayer.php
 23.246.192.0/18 Run rules_softlayer.php
@@ -2179,8 +2163,6 @@ Tag: Agava Ltd
 27.100.36.0/23 Run rules_softlayer.php
 31.24.225.0/24 Run rules_softlayer.php
 37.18.176.0/22 Run rules_softlayer.php
-37.46.10.0/23 Run rules_softlayer.php
-37.46.14.0/23 Run rules_softlayer.php
 37.58.64.0/18 Run rules_softlayer.php
 37.60.246.0/24 Run rules_softlayer.php
 37.60.254.0/24 Run rules_softlayer.php
@@ -2254,15 +2236,19 @@ Tag: Agava Ltd
 74.52.0.0/14 Run rules_softlayer.php
 74.86.0.0/16 Run rules_softlayer.php
 74.116.84.0/23 Run rules_softlayer.php
-74.121.55.0/24 Run rules_softlayer.php
+74.121.54.0/23 Run rules_softlayer.php
 75.125.0.0/16 Run rules_softlayer.php
 75.126.0.0/16 Run rules_softlayer.php
 77.104.128.0/22 Run rules_softlayer.php
 77.104.132.0/23 Run rules_softlayer.php
 77.104.134.0/24 Run rules_softlayer.php
+77.104.140.0/24 Run rules_softlayer.php
+77.104.142.0/23 Run rules_softlayer.php
 81.95.144.0/20 Run rules_softlayer.php
 85.203.20.0/24 Run rules_softlayer.php
-85.203.44.0/24 Run rules_softlayer.php
+85.203.23.0/24 Run rules_softlayer.php
+85.203.44.0/23 Run rules_softlayer.php
+85.203.47.0/24 Run rules_softlayer.php
 86.105.160.0/22 Run rules_softlayer.php
 86.106.120.0/24 Run rules_softlayer.php
 89.37.28.0/24 Run rules_softlayer.php
@@ -2273,17 +2259,14 @@ Tag: Agava Ltd
 96.47.32.0/23 Run rules_softlayer.php
 96.47.40.0/21 Run rules_softlayer.php
 96.126.112.0/20 Run rules_softlayer.php
-100.42.49.0/24 Run rules_softlayer.php
 100.42.50.0/23 Run rules_softlayer.php
 100.42.52.0/22 Run rules_softlayer.php
 100.42.56.0/22 Run rules_softlayer.php
-100.42.60.0/23 Run rules_softlayer.php
-100.42.62.0/24 Run rules_softlayer.php
 103.4.192.0/22 Run rules_softlayer.php
 103.19.0.0/22 Run rules_softlayer.php
 103.26.204.0/22 Run rules_softlayer.php
 103.27.76.0/22 Run rules_softlayer.php
-103.41.172.0/23 Run rules_softlayer.php
+103.41.172.0/24 Run rules_softlayer.php
 103.44.72.0/23 Run rules_softlayer.php
 103.46.141.0/24 Run rules_softlayer.php
 103.46.143.0/24 Run rules_softlayer.php
@@ -2327,8 +2310,8 @@ Tag: Agava Ltd
 104.167.217.0/24 Run rules_softlayer.php
 104.171.0.0/22 Run rules_softlayer.php
 104.171.4.0/23 Run rules_softlayer.php
-104.171.7.0/24 Run rules_softlayer.php
-104.171.8.0/22 Run rules_softlayer.php
+104.171.9.0/24 Run rules_softlayer.php
+104.171.10.0/23 Run rules_softlayer.php
 104.171.13.0/24 Run rules_softlayer.php
 104.171.14.0/23 Run rules_softlayer.php
 104.193.183.0/24 Run rules_softlayer.php
@@ -2353,12 +2336,15 @@ Tag: Agava Ltd
 104.238.51.0/24 Run rules_softlayer.php
 104.238.57.0/24 Run rules_softlayer.php
 104.238.59.0/24 Run rules_softlayer.php
+104.243.245.0/24 Run rules_softlayer.php
 104.243.249.0/24 Run rules_softlayer.php
 104.243.253.0/24 Run rules_softlayer.php
 104.245.12.0/22 Run rules_softlayer.php
+104.249.128.0/24 Run rules_softlayer.php
 104.250.172.0/24 Run rules_softlayer.php
 104.250.179.0/24 Run rules_softlayer.php
 104.250.183.0/24 Run rules_softlayer.php
+104.251.239.0/24 Run rules_softlayer.php
 107.153.20.0/24 Run rules_softlayer.php
 107.168.32.0/24 Run rules_softlayer.php
 107.168.48.0/24 Run rules_softlayer.php
@@ -2369,10 +2355,12 @@ Tag: Agava Ltd
 108.174.144.0/21 Run rules_softlayer.php
 108.174.154.0/23 Run rules_softlayer.php
 108.174.156.0/22 Run rules_softlayer.php
-108.175.144.0/21 Run rules_softlayer.php
-108.175.152.0/23 Run rules_softlayer.php
-108.175.154.0/24 Run rules_softlayer.php
-108.175.156.0/22 Run rules_softlayer.php
+108.175.147.0/24 Run rules_softlayer.php
+108.175.148.0/23 Run rules_softlayer.php
+108.175.150.0/24 Run rules_softlayer.php
+108.175.152.0/24 Run rules_softlayer.php
+108.175.157.0/24 Run rules_softlayer.php
+108.175.158.0/23 Run rules_softlayer.php
 108.229.0.0/17 Run rules_softlayer.php
 109.73.228.0/24 Run rules_softlayer.php
 109.73.234.0/24 Run rules_softlayer.php
@@ -2391,7 +2379,16 @@ Tag: Agava Ltd
 124.108.23.0/24 Run rules_softlayer.php
 129.33.138.0/23 Run rules_softlayer.php
 129.33.243.0/24 Run rules_softlayer.php
+129.35.158.0/23 Run rules_softlayer.php
+129.35.176.0/22 Run rules_softlayer.php
+129.35.180.0/23 Run rules_softlayer.php
+129.35.182.0/24 Run rules_softlayer.php
+129.35.190.0/24 Run rules_softlayer.php
+129.35.236.0/23 Run rules_softlayer.php
+129.35.238.0/24 Run rules_softlayer.php
 129.41.128.0/19 Run rules_softlayer.php
+129.41.181.0/24 Run rules_softlayer.php
+129.41.184.0/22 Run rules_softlayer.php
 129.41.222.0/24 Run rules_softlayer.php
 129.41.224.0/19 Run rules_softlayer.php
 129.42.18.0/23 Run rules_softlayer.php
@@ -2402,6 +2399,7 @@ Tag: Agava Ltd
 146.88.128.0/22 Run rules_softlayer.php
 146.88.135.0/24 Run rules_softlayer.php
 147.75.130.0/23 Run rules_softlayer.php
+147.75.132.0/24 Run rules_softlayer.php
 149.75.192.0/18 Run rules_softlayer.php
 153.92.41.0/24 Run rules_softlayer.php
 153.92.43.0/24 Run rules_softlayer.php
@@ -2427,19 +2425,23 @@ Tag: Agava Ltd
 167.160.113.0/24 Run rules_softlayer.php
 168.1.0.0/17 Run rules_softlayer.php
 168.1.128.0/18 Run rules_softlayer.php
+168.227.36.0/22 Run rules_softlayer.php
 169.38.64.0/18 Run rules_softlayer.php
 169.44.0.0/16 Run rules_softlayer.php
 169.45.0.0/19 Run rules_softlayer.php
 169.45.64.0/18 Run rules_softlayer.php
 169.45.128.0/17 Run rules_softlayer.php
+169.46.0.0/17 Run rules_softlayer.php
 169.50.0.0/17 Run rules_softlayer.php
 169.50.128.0/18 Run rules_softlayer.php
 169.53.0.0/16 Run rules_softlayer.php
 169.54.0.0/15 Run rules_softlayer.php
+169.56.128.0/19 Run rules_softlayer.php
 169.57.0.0/16 Run rules_softlayer.php
 170.224.168.0/23 Run rules_softlayer.php
-172.81.96.0/24 Run rules_softlayer.php
-172.81.110.0/24 Run rules_softlayer.php
+170.224.170.0/24 Run rules_softlayer.php
+170.224.208.0/23 Run rules_softlayer.php
+172.81.110.0/23 Run rules_softlayer.php
 172.94.3.0/24 Run rules_softlayer.php
 172.94.4.0/23 Run rules_softlayer.php
 172.94.6.0/24 Run rules_softlayer.php
@@ -2453,19 +2455,24 @@ Tag: Agava Ltd
 172.94.86.0/23 Run rules_softlayer.php
 172.94.88.0/22 Run rules_softlayer.php
 172.94.94.0/24 Run rules_softlayer.php
+172.94.100.0/24 Run rules_softlayer.php
+172.94.103.0/24 Run rules_softlayer.php
+172.94.104.0/23 Run rules_softlayer.php
 172.94.111.0/24 Run rules_softlayer.php
 172.94.116.0/24 Run rules_softlayer.php
 172.94.118.0/23 Run rules_softlayer.php
 172.94.120.0/21 Run rules_softlayer.php
 172.111.135.0/24 Run rules_softlayer.php
 172.111.137.0/24 Run rules_softlayer.php
+172.111.139.0/24 Run rules_softlayer.php
 172.111.142.0/23 Run rules_softlayer.php
 172.111.145.0/24 Run rules_softlayer.php
 172.111.147.0/24 Run rules_softlayer.php
 172.111.153.0/24 Run rules_softlayer.php
 172.111.155.0/24 Run rules_softlayer.php
-172.111.160.0/23 Run rules_softlayer.php
+172.111.161.0/24 Run rules_softlayer.php
 172.111.162.0/24 Run rules_softlayer.php
+172.111.164.0/24 Run rules_softlayer.php
 172.111.167.0/24 Run rules_softlayer.php
 172.111.168.0/24 Run rules_softlayer.php
 172.111.172.0/22 Run rules_softlayer.php
@@ -2486,6 +2493,7 @@ Tag: Agava Ltd
 173.192.248.0/21 Run rules_softlayer.php
 173.193.0.0/16 Run rules_softlayer.php
 173.239.207.0/24 Run rules_softlayer.php
+173.244.192.0/23 Run rules_softlayer.php
 173.244.194.0/24 Run rules_softlayer.php
 173.244.196.0/23 Run rules_softlayer.php
 173.244.199.0/24 Run rules_softlayer.php
@@ -2534,12 +2542,13 @@ Tag: Agava Ltd
 185.13.56.0/22 Run rules_softlayer.php
 185.21.132.0/24 Run rules_softlayer.php
 185.51.164.0/22 Run rules_softlayer.php
+185.62.236.0/23 Run rules_softlayer.php
 185.74.47.0/24 Run rules_softlayer.php
 185.99.135.0/24 Run rules_softlayer.php
 185.106.204.0/23 Run rules_softlayer.php
 185.115.241.0/24 Run rules_softlayer.php
 185.123.96.0/22 Run rules_softlayer.php
-186.26.96.0/20 Run rules_softlayer.php
+185.147.58.0/23 Run rules_softlayer.php
 188.72.100.0/24 Run rules_softlayer.php
 188.214.40.0/21 Run rules_softlayer.php
 188.240.32.0/22 Run rules_softlayer.php
@@ -2555,6 +2564,7 @@ Tag: Agava Ltd
 192.40.176.0/20 Run rules_softlayer.php
 192.77.241.0/24 Run rules_softlayer.php
 192.81.139.0/24 Run rules_softlayer.php
+192.86.39.0/24 Run rules_softlayer.php
 192.155.192.0/18 Run rules_softlayer.php
 192.156.219.0/24 Run rules_softlayer.php
 192.169.48.0/20 Run rules_softlayer.php
@@ -2571,7 +2581,8 @@ Tag: Agava Ltd
 198.23.64.0/18 Run rules_softlayer.php
 198.58.80.0/24 Run rules_softlayer.php
 198.58.82.0/23 Run rules_softlayer.php
-198.58.84.0/22 Run rules_softlayer.php
+198.58.84.0/24 Run rules_softlayer.php
+198.58.86.0/24 Run rules_softlayer.php
 198.58.88.0/21 Run rules_softlayer.php
 198.58.96.0/19 Run rules_softlayer.php
 198.105.221.0/24 Run rules_softlayer.php
@@ -2588,16 +2599,18 @@ Tag: Agava Ltd
 199.167.226.0/24 Run rules_softlayer.php
 199.185.180.0/24 Run rules_softlayer.php
 199.187.172.0/22 Run rules_softlayer.php
+199.195.192.0/23 Run rules_softlayer.php
 199.244.72.0/22 Run rules_softlayer.php
+199.255.32.0/22 Run rules_softlayer.php
 202.5.220.0/23 Run rules_softlayer.php
 202.5.223.0/24 Run rules_softlayer.php
 202.81.5.0/24 Run rules_softlayer.php
 202.170.196.0/22 Run rules_softlayer.php
 203.27.26.0/24 Run rules_softlayer.php
 203.57.74.0/23 Run rules_softlayer.php
-203.76.244.0/24 Run rules_softlayer.php
-205.201.131.0/24 Run rules_softlayer.php
-205.201.136.0/22 Run rules_softlayer.php
+203.76.244.0/23 Run rules_softlayer.php
+203.76.246.0/24 Run rules_softlayer.php
+205.201.138.0/24 Run rules_softlayer.php
 206.190.155.0/24 Run rules_softlayer.php
 206.190.156.0/22 Run rules_softlayer.php
 206.217.192.0/22 Run rules_softlayer.php
@@ -2631,16 +2644,16 @@ Tag: SoftLayer
 
 
 # ASN 50465 ("IQHost Ltd").
-# Infected by malware (as per reported by Google): 3.29%.
-# Updated: 2016.01.21 / Checked: 2016.03.28
+# Infected by malware (as per reported by Google): 3.39%.
+# Updated: 2016.01.21 / Checked: 2016.05.21
 
 193.106.172.0/22 Deny Cloud
 Tag: IQHost Ltd
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# Infected by malware (as per reported by Google): 1.97%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 2.43%.
+# Updated: 2016.05.21
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 
 31.192.208.0/21 Deny Generic
@@ -2656,13 +2669,14 @@ Tag: IQHost Ltd
 185.95.84.0/22 Deny Generic
 185.106.208.0/22 Deny Generic
 185.126.216.0/23 Deny Generic
-213.238.168.0/24 Deny Generic
+185.146.88.0/22 Deny Generic
+185.149.100.0/22 Deny Generic
 Tag: AS51559
 
 
 # ASN 54444 ("Avesta Networks LLC").
-# Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.22 / Checked: 2016.03.28
+# Infected by malware (as per reported by Google): 0.77%.
+# Updated: 2016.01.22 / Checked: 2016.05.21
 
 142.0.68.0/22 Deny Generic
 142.0.72.0/24 Deny Generic
@@ -2673,11 +2687,10 @@ Tag: Avesta Networks LLC
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# Infected by malware (as per reported by Google): 1.49%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.69%.
+# Updated: 2016.05.21
 
 5.45.80.0/22 Deny Cloud
-31.148.221.0/24 Deny Cloud
 37.143.12.0/22 Deny Cloud
 46.254.16.0/22 Deny Cloud
 46.254.23.0/24 Deny Cloud
@@ -2694,8 +2707,8 @@ Tag: eServer.ru
 
 
 # ASN 35415 ("Webzilla B.V").
-# Infected by malware (as per reported by Google): 1.70%.
-# Updated: 2016.03.28
+# Infected by malware (as per reported by Google): 1.60%.
+# Updated: 2016.05.21
 
 46.30.40.0/21 Deny Generic
 78.140.128.0/18 Deny Generic
@@ -2722,6 +2735,7 @@ Tag: eServer.ru
 185.106.240.0/23 Deny Generic
 185.117.132.0/23 Deny Generic
 185.117.134.0/24 Deny Generic
+188.42.160.0/21 Deny Generic
 188.42.224.0/21 Deny Generic
 188.42.232.0/22 Deny Generic
 188.42.236.0/24 Deny Generic
@@ -2749,8 +2763,8 @@ Tag: Webzilla B.V
 
 
 # ASN 42807 ("Aerotek Bilisim Taahhut Sanayi ve Ticaret Limited Sirketi").
-# Infected by malware (as per reported by Google): 2.25%.
-# Updated: 2016.03.12
+# Infected by malware (as per reported by Google): 2.32%.
+# Updated: 2016.03.12 / Checked: 2016.05.21
 
 31.207.80.0/21 Deny Cloud
 37.230.104.0/21 Deny Cloud
@@ -2774,12 +2788,12 @@ Tag: AS42807
 Tag: SuperHost.pl
 
 
-# ASN 41126 ('JSC "RU-CENTER"').
-# Infected by malware (as per reported by Google): 1.70%.
-# Updated: 2016.01.21 / Checked: 2016.03.28
+# ASN 41126 ("CJSC Registrar R01").
+# Infected by malware (as per reported by Google): 1.79%.
+# Updated: 2016.01.21 / Checked: 2016.05.21
 
 89.111.176.0/20 Deny Cloud
-Tag: AS41126
+Tag: CJSC Registrar R01
 
 
 # ASN 53225 ("IPGLOBE DATACENTER").
@@ -3130,8 +3144,8 @@ Tag: Voxility LLC
 
 
 # ASN 41665 ("Tehnologii Budushego LLC").
-# Infected by malware (as per reported by Google): 1.18%.
-# Updated: 2016.01.18 / Checked: 2016.03.02
+# Infected by malware (as per reported by Google): 2.70%.
+# Updated: 2016.01.18 / Checked: 2016.05.22
 
 78.109.16.0/20 Deny Generic
 194.54.88.0/22 Deny Generic
@@ -3653,8 +3667,8 @@ Tag: Limestone Networks
 
 
 # ASN 35662 ("Redstation Limited").
-# Infected by malware (as per reported by Google): 0.65%.
-# Updated: 2016.01.19 / Checked: 2016.03.04
+# Infected by malware (as per reported by Google): 0.70%.
+# Updated: 2016.05.21
 
 5.152.192.0/19 Deny Cloud
 31.3.224.0/19 Deny Cloud
@@ -3698,7 +3712,7 @@ Tag: Redstation Limited
 
 # ASN 26642 ("AnchorFree Ltd").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.19 / Checked: 2016.03.04
+# Updated: 2016.01.19 / Checked: 2016.05.22
 
 74.115.3.0/24 Deny Cloud
 74.115.5.0/24 Deny Cloud
@@ -3927,8 +3941,8 @@ Tag: Portlane Networks AB
 
 
 # ASNs 57858, 57972, 60485 ("Inter Connects Inc").
-# Infected by malware (as per reported by Google): 0.20% (AS57858), 0.48% (AS57972), 0% (AS60485).
-# Updated: 2016.03.12
+# Infected by malware (as per reported by Google): 0.37% (AS57858), 0.49% (AS57972), 1.37% (AS60485).
+# Updated: 2016.05.21
 
 5.34.240.0/21 Deny Cloud
 5.153.232.0/23 Deny Cloud
@@ -3944,6 +3958,7 @@ Tag: Portlane Networks AB
 5.157.44.0/23 Deny Cloud
 5.157.48.0/24 Deny Cloud
 5.157.50.0/23 Deny Cloud
+5.157.53.0/24 Deny Cloud
 5.157.54.0/24 Deny Cloud
 37.72.184.0/23 Deny Cloud
 37.72.188.0/24 Deny Cloud
@@ -4894,13 +4909,14 @@ Tag: Bezeq International
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# Infected by malware (as per reported by Google): 25.23%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 25.78%.
+# Updated: 2016.05.21
 
 69.30.192.0/18 Deny Cloud
 69.197.128.0/18 Deny Cloud
 162.251.120.0/22 Deny Cloud
 173.208.128.0/17 Deny Cloud
+204.10.160.0/22 Deny Cloud
 204.12.192.0/18 Deny Cloud
 208.67.0.0/21 Deny Cloud
 208.110.64.0/19 Deny Cloud
@@ -4908,8 +4924,8 @@ Tag: WholeSale Internet
 
 
 # ASN 33387 ("DataShack, LC").
-# Infected by malware (as per reported by Google): 14.33%.
-# Updated: 2016.03.29
+# Infected by malware (as per reported by Google): 15.31%.
+# Updated: 2016.03.29 / Checked: 2016.05.21
 
 63.141.224.0/19 Deny Cloud
 74.91.16.0/20 Deny Cloud
@@ -5909,9 +5925,9 @@ Tag: eUKhost LTD
 Tag: Total Web Solutions
 
 
-# ASN 12703 ("Dataflame Internet Services Ltd").
-# Infected by malware (as per reported by Google): 0.96%.
-# Updated: 2016.01.22 / Checked: 2016.03.12
+# ASN 12703 ("Pulsant (Scotland) Ltd").
+# Infected by malware (as per reported by Google): 3.33%.
+# Updated: 2016.05.22
 
 5.153.64.0/19 Deny Cloud
 5.172.152.0/21 Deny Cloud
@@ -5945,6 +5961,7 @@ Tag: Total Web Solutions
 185.71.184.0/22 Deny Cloud
 185.76.44.0/24 Deny Cloud
 185.94.184.0/22 Deny Cloud
+185.143.76.0/24 Deny Cloud
 188.68.164.0/22 Deny Cloud
 193.29.223.0/24 Deny Cloud
 193.187.55.0/24 Deny Cloud
@@ -5959,7 +5976,7 @@ Tag: Total Web Solutions
 203.62.208.0/23 Deny Cloud
 212.20.224.0/19 Deny Cloud
 217.30.112.0/20 Deny Cloud
-Tag: Dataflame Internet
+Tag: Pulsant
 
 
 # ASN 51852 ("Private Layer INC").
@@ -6208,14 +6225,13 @@ Tag: VolumeDrive
 
 
 # ASN 49981 ("WorldStream").
-# Infected by malware (as per reported by Google): 1.96%.
-# Updated: 2016.03.20
+# Infected by malware (as per reported by Google): 1.89%.
+# Updated: 2016.05.21
 
 86.105.18.0/24 Deny Generic
 89.42.212.0/24 Deny Generic
 91.193.75.0/24 Deny Generic
 91.212.229.0/24 Deny Generic
-91.213.126.0/24 Deny Generic
 91.226.31.0/24 Deny Generic
 91.227.154.0/23 Deny Generic
 91.229.23.0/24 Deny Generic
@@ -6227,6 +6243,7 @@ Tag: VolumeDrive
 95.156.251.0/24 Deny Generic
 103.44.75.0/24 Deny Generic
 109.236.80.0/20 Deny Generic
+154.16.17.0/24 Deny Generic
 176.61.129.0/24 Deny Generic
 185.2.80.0/22 Deny Generic
 185.28.38.0/24 Deny Generic
@@ -6541,8 +6558,8 @@ Tag: RAM Host
 
 
 # ASN 13030 ("Init7").
-# Infected by malware (as per reported by Google): 0.33%.
-# Updated: 2016.01.18 / Checked: 2016.03.07
+# Infected by malware (as per reported by Google): 0.42%.
+# Updated: 2016.01.18 / Checked: 2016.05.21
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 
 37.17.232.0/21 Deny Generic
@@ -6575,23 +6592,23 @@ Tag: Init7
 
 
 # ASN 14576 ("K SERVERS LTD").
-# Infected by malware (as per reported by Google): 0.77%.
-# Updated: 2016.01.23 / Checked: 2016.03.10
+# Infected by malware (as per reported by Google): 0.43%.
+# Updated: 2016.05.21
 
-31.148.219.0/24 Deny Generic
-31.148.220.0/24 Deny Generic
-93.170.13.0/24 Deny Generic
-104.193.252.0/22 Deny Generic
-162.244.32.0/22 Deny Generic
-185.104.8.0/22 Deny Generic
-185.130.104.0/22 Deny Generic
-204.155.28.0/22 Deny Generic
+31.148.219.0/24 Deny Cloud
+31.148.220.0/24 Deny Cloud
+93.170.13.0/24 Deny Cloud
+104.193.252.0/22 Deny Cloud
+162.244.32.0/22 Deny Cloud
+185.104.8.0/22 Deny Cloud
+185.130.104.0/22 Deny Cloud
+204.155.28.0/22 Deny Cloud
 Tag: K SERVERS LTD
 
 
 # ASN 198414 ("Biznes-Host.pl sp. z o.o").
-# Infected by malware (as per reported by Google): 2.47%.
-# Updated: 2016.01.25 / Checked: 2016.03.31
+# Infected by malware (as per reported by Google): 3.60%.
+# Updated: 2016.01.25 / Checked: 2016.05.22
 
 91.189.32.0/21 Deny Cloud
 91.196.48.0/22 Deny Cloud
@@ -6611,15 +6628,15 @@ Tag: Biznes-Host.pl
 
 # ASN 24700 ("Yes Networks Unlimited Ltd").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.25 / Checked: 2016.03.10
+# Updated: 2016.01.25 / Checked: 2016.05.22
 
 46.174.190.0/23 Deny Generic
 Tag: Yes Networks
 
 
 # ASN 25761 ("Staminus Communications").
-# Infected by malware (as per reported by Google): 4.61%.
-# Updated: 2016.01.25 / Checked: 2016.03.28
+# Infected by malware (as per reported by Google): 1.09%.
+# Updated: 2016.05.22
 
 69.197.0.0/18 Deny Cloud
 72.8.128.0/18 Deny Cloud
@@ -8925,7 +8942,23 @@ Tag: Hostwinds LLC
 # Infected by malware (as per reported by Google): 1.32%.
 # Updated: 2016.04.23
 
+5.100.156.0/23 Deny Cloud
+43.225.52.0/22 Deny Cloud
+45.113.120.0/22 Deny Cloud
+103.21.58.0/23 Deny Cloud
+103.50.160.0/22 Deny Cloud
+103.53.40.0/22 Deny Cloud
+103.195.184.0/22 Deny Cloud
 103.211.216.0/22 Deny Cloud
+103.224.22.0/23 Deny Cloud
+111.118.212.0/22 Deny Cloud
+119.18.52.0/24 Deny Cloud
+119.18.54.0/23 Deny Cloud
+119.18.57.0/24 Deny Cloud
+119.18.58.0/23 Deny Cloud
+119.18.60.0/22 Deny Cloud
+137.59.148.0/22 Deny Cloud
+203.13.40.0/24 Deny Cloud
 Tag: PDR
 
 
@@ -9244,7 +9277,7 @@ Tag: Query Foundry, LLC
 
 
 # ASN 62540 ("Drake Holdings LLC").
-# Updated: 2016.04.25
+# Updated: 2016.04.25 / Checked: 2016.05.22
 
 192.92.196.0/24 Deny Generic
 204.79.180.0/24 Deny Generic
@@ -10274,13 +10307,6 @@ Tag: eSited Solutions
 217.18.68.0/23 Deny Cloud
 217.18.78.0/23 Deny Cloud
 Tag: ProServe B.V
-
-
-# ASN 20718 ("ARSYS INTERNET S.L").
-# Infected by malware (as per reported by Google): 2.15%.
-# Updated: 2016.05.01
-
-Tag: ARSYS INTERNET S.L
 
 
 # ASN 39326 ("HighSpeed Office Limited").
@@ -12028,7 +12054,7 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.05.13
+# Updated: 2016.05.22
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 31.28.27.17/32 Deny Generic
@@ -12042,7 +12068,6 @@ Tag: Azure
 64.90.187.131/32 Deny Generic
 64.127.71.73/32 Deny Generic
 65.182.101.221/32 Deny Generic
-66.45.245.150/32 Deny Generic
 80.65.93.241/32 Deny Generic
 81.169.145.156/32 Deny Generic
 83.15.254.242/32 Deny Generic
@@ -12053,7 +12078,6 @@ Tag: Azure
 87.237.198.245/32 Deny Generic
 87.254.167.37/32 Deny Generic
 91.231.86.19/32 Deny Generic
-93.171.205.12/32 Deny Generic
 94.103.36.55/32 Deny Generic
 98.131.185.136/32 Deny Generic
 101.0.89.3/32 Deny Generic
@@ -12100,7 +12124,6 @@ Tag: Azure
 190.123.35.140/31 Deny Generic
 190.128.29.1/32 Deny Generic
 192.64.11.244/32 Deny Generic
-192.185.12.231/32 Deny Generic
 193.146.210.69/32 Deny Generic
 193.201.227.142/32 Deny Generic
 194.15.112.29/32 Deny Generic
@@ -12124,6 +12147,7 @@ Tag: Azure
 202.29.22.38/32 Deny Generic
 202.29.230.198/32 Deny Generic
 202.67.13.107/32 Deny Generic
+202.75.53.11/32 Deny Generic
 202.142.215.16/32 Deny Generic
 202.144.144.195/32 Deny Generic
 203.170.193.23/32 Deny Generic
@@ -12136,7 +12160,7 @@ Tag: Azure
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.08.13
+Expires: 2016.08.22
 
 
 # ---
@@ -12144,7 +12168,7 @@ Expires: 2016.08.13
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2016.05.13
+# Updated: 2016.05.22
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
@@ -12156,6 +12180,7 @@ Expires: 2016.08.13
 5.101.218.0/24 Deny Generic
 5.101.221.0/24 Deny Generic
 5.134.128.0/19 Deny Generic
+8.34.128.0/20 Deny Generic
 14.4.0.0/14 Deny Generic
 14.102.172.0/22 Deny Generic
 14.245.0.0/16 Deny Generic
@@ -12277,6 +12302,7 @@ Expires: 2016.08.13
 91.212.124.0/24 Deny Generic
 91.212.201.0/24 Deny Generic
 91.212.220.0/24 Deny Generic
+91.213.126.0/24 Deny Generic
 91.215.136.0/23 Deny Generic
 91.217.10.0/23 Deny Generic
 91.220.35.0/24 Deny Generic
@@ -12302,6 +12328,7 @@ Expires: 2016.08.13
 91.243.115.0/24 Deny Generic
 92.63.87.0/24 Deny Generic
 93.113.158.0/24 Deny Generic
+93.171.205.0/24 Deny Generic
 93.179.89.0/24 Deny Generic
 93.179.90.0/23 Deny Generic
 94.26.112.0/20 Deny Generic
@@ -12344,6 +12371,7 @@ Expires: 2016.08.13
 103.232.136.0/22 Deny Generic
 103.232.172.0/22 Deny Generic
 103.236.32.0/22 Deny Generic
+103.236.212.0/22 Deny Generic
 103.242.184.0/22 Deny Generic
 103.248.220.0/22 Deny Generic
 104.143.112.0/20 Deny Generic
@@ -12397,7 +12425,6 @@ Expires: 2016.08.13
 130.196.0.0/16 Deny Generic
 130.201.0.0/16 Deny Generic
 130.222.0.0/16 Deny Generic
-131.100.148.0/22 Deny Generic
 131.221.152.0/22 Deny Generic
 132.145.0.0/16 Deny Generic
 132.154.0.0/16 Deny Generic
@@ -12414,6 +12441,7 @@ Expires: 2016.08.13
 137.76.0.0/16 Deny Generic
 137.105.0.0/16 Deny Generic
 137.171.0.0/16 Deny Generic
+137.218.0.0/16 Deny Generic
 138.36.136.0/22 Deny Generic
 138.36.148.0/22 Deny Generic
 138.43.0.0/16 Deny Generic
@@ -12585,6 +12613,7 @@ Expires: 2016.08.13
 185.75.56.0/22 Deny Generic
 185.93.185.0/24 Deny Generic
 185.93.187.0/24 Deny Generic
+185.103.109.0/24 Deny Generic
 185.103.252.0/24 Deny Generic
 185.106.92.0/24 Deny Generic
 185.106.94.0/24 Deny Generic
@@ -12943,7 +12972,7 @@ Expires: 2016.08.13
 223.201.0.0/16 Deny Generic
 223.254.0.0/16 Deny Generic
 Tag: Spamhaus DROP/EDROP
-Expires: 2016.08.13
+Expires: 2016.08.22
 
 
 # ---

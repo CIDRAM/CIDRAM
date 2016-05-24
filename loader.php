@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.04.25).
+ * This file: The loader (last modified: 2016.05.23).
  */
 
 /**
@@ -157,8 +157,15 @@ if (!defined('CIDRAM')) {
 
     /** Determine if operating in CLI-mode. */
     $CIDRAM['CIDRAM_sapi'] = (
+        empty($_SERVER['REQUEST_METHOD']) ||
         substr(php_sapi_name(), 0, 3) === 'cli' ||
-        (!empty($_SERVER['argc']) && is_numeric($_SERVER['argc']) && $_SERVER['argc'] > 0)
+        (
+            empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']]) &&
+            empty($_SERVER['HTTP_USER_AGENT']) &&
+            !empty($_SERVER['argc']) &&
+            is_numeric($_SERVER['argc']) &&
+            $_SERVER['argc'] > 0
+        )
     );
 
     /** Check if the language handler exists; Kill the script if it doesn't. */

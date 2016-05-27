@@ -108,6 +108,10 @@ Archivo | Descripción
 /vault/lang.php | Lingüísticos datos.
 /vault/lang/ | Contiene lingüísticos datos.
 /vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/lang/lang.ar.cli.php | Lingüísticos datos Árabe para CLI.
+/vault/lang/lang.ar.php | Lingüísticos datos Árabe.
+/vault/lang/lang.de.cli.php | Lingüísticos datos Alemán para CLI.
+/vault/lang/lang.de.php | Lingüísticos datos Alemán.
 /vault/lang/lang.en.cli.php | Lingüísticos datos Inglés para CLI.
 /vault/lang/lang.en.php | Lingüísticos datos Inglés.
 /vault/lang/lang.es.cli.php | Lingüísticos datos Español para CLI.
@@ -118,10 +122,16 @@ Archivo | Descripción
 /vault/lang/lang.id.php | Lingüísticos datos Indonesio.
 /vault/lang/lang.it.cli.php | Lingüísticos datos Italiano para CLI.
 /vault/lang/lang.it.php | Lingüísticos datos Italiano.
+/vault/lang/lang.ja.cli.php | Lingüísticos datos Japonés para CLI.
+/vault/lang/lang.ja.php | Lingüísticos datos Japonés.
 /vault/lang/lang.nl.cli.php | Lingüísticos datos Holandés para CLI.
 /vault/lang/lang.nl.php | Lingüísticos datos Holandés.
 /vault/lang/lang.pt.cli.php | Lingüísticos datos Portugués para CLI.
 /vault/lang/lang.pt.php | Lingüísticos datos Portugués.
+/vault/lang/lang.ru.cli.php | Lingüísticos datos Ruso para CLI.
+/vault/lang/lang.ru.php | Lingüísticos datos Ruso.
+/vault/lang/lang.vi.cli.php | Lingüísticos datos Vietnamita para CLI.
+/vault/lang/lang.vi.php | Lingüísticos datos Vietnamita.
 /vault/lang/lang.zh-tw.cli.php | Lingüísticos datos Chino (tradicional) para CLI.
 /vault/lang/lang.zh-tw.php | Lingüísticos datos Chino (tradicional).
 /vault/lang/lang.zh.cli.php | Lingüísticos datos Chino (simplificado) para CLI.
@@ -187,6 +197,9 @@ Configuración de firmas.
 "block_generic"
 - Bloquear CIDRs recomendado generalmente para las listas negras? Esto abarca todos las firmas que no están marcadas como parte de cualquiera de los otros mas especifico categorías de firmas.
 
+"block_proxies"
+- Bloquear CIDRs identificados como pertenecientes de servicios de proxy? Si requiere que los usuarios puedan acceder a su sitio web a partir de los servicios de proxy anónimos, esta directiva debe ser establecido para false. Alternativamente, Si usted no requiere proxies anónimos, esta directiva debe ser establecido para true como un medio para mejorar la seguridad.
+
 "block_spam"
 - Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true.
 
@@ -248,6 +261,7 @@ Las palabras abreviadas disponibles son:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Opcional: Si desea dividir sus firmas personalizadas en secciones individuales, se puede identificar estas secciones individuales a la script mediante la adición de una etiqueta "Tag:" inmediatamente después de las firmas de cada sección, junto con el nombre de su sección de firmas.
@@ -259,6 +273,7 @@ Ejemplo:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -281,4 +296,4 @@ Consulte los archivos de firmas personalizadas para obtener más información.
 ---
 
 
-Última Actualización: 27 Abril 2016 (2016.04.27).
+Última Actualización: 27 Mayo 2016 (2016.05.27).

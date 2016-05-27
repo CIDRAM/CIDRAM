@@ -108,6 +108,10 @@ Bestand | Beschrijving
 /vault/lang.php | Taal-handler.
 /vault/lang/ | Bevat CIDRAM taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.ar.cli.php | Arabisch taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
+/vault/lang/lang.de.cli.php | Duitse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
 /vault/lang/lang.en.cli.php | Engels taaldata/taalgegevens voor CLI.
 /vault/lang/lang.en.php | Engels taaldata/taalgegevens.
 /vault/lang/lang.es.cli.php | Spaanse taaldata/taalgegevens voor CLI.
@@ -118,10 +122,16 @@ Bestand | Beschrijving
 /vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
 /vault/lang/lang.it.cli.php | Italiaanse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.ja.cli.php | Japanse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
 /vault/lang/lang.nl.cli.php | Nederlandse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
 /vault/lang/lang.pt.cli.php | Portugees taaldata/taalgegevens voor CLI.
 /vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
+/vault/lang/lang.ru.cli.php | Russische taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
+/vault/lang/lang.vi.cli.php | Vietnamees taaldata/taalgegevens voor CLI.
+/vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
 /vault/lang/lang.zh-tw.cli.php | Chinees (traditioneel) taaldata/taalgegevens voor CLI.
 /vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
 /vault/lang/lang.zh.cli.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor CLI.
@@ -187,6 +197,9 @@ Configuratie voor handtekeningen.
 "block_generic"
 - Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle handtekeningen die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke handtekening categorieën.
 
+"block_proxies"
+- Blokkeren CIDRs geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
+
 "block_spam"
 - Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
 
@@ -248,6 +261,7 @@ De beschikbare korte woorden zijn:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Facultatief: Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "Tag:" etiket onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie.
@@ -259,6 +273,7 @@ Voorbeeld:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -281,4 +296,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 27 April 2016 (2016.04.27).
+Laatste Bijgewerkt: 27 Mei 2016 (2016.05.27).

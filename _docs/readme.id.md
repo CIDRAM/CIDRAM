@@ -108,6 +108,10 @@ Data | Deskripsi
 /vault/lang.php | File bahasa.
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/lang.ar.cli.php | File Bahasa untuk CLI.
+/vault/lang/lang.ar.php | File Bahasa Arab.
+/vault/lang/lang.de.cli.php | File Bahasa untuk CLI.
+/vault/lang/lang.de.php | File Bahasa Jerman.
 /vault/lang/lang.en.cli.php | File Bahasa Inggris untuk CLI.
 /vault/lang/lang.en.php | File Bahasa Inggris.
 /vault/lang/lang.es.cli.php | File Bahasa Spanyol untuk CLI.
@@ -118,10 +122,16 @@ Data | Deskripsi
 /vault/lang/lang.id.php | File Bahasa Indonesia.
 /vault/lang/lang.it.cli.php | File Bahasa Italia untuk CLI.
 /vault/lang/lang.it.php | File Bahasa Italia.
+/vault/lang/lang.ja.cli.php | File Bahasa Jepang untuk CLI.
+/vault/lang/lang.ja.php | File Bahasa Jepang.
 /vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
 /vault/lang/lang.pt.cli.php | File Bahasa Portugis untuk CLI.
 /vault/lang/lang.pt.php | File Bahasa Portugis.
+/vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
+/vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.vi.cli.php | File Bahasa Vietnam untuk CLI.
+/vault/lang/lang.vi.php | File Bahasa Vietnam.
 /vault/lang/lang.zh-tw.cli.php | File Bahasa Cina tradisional untuk CLI.
 /vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
 /vault/lang/lang.zh.cli.php | File Bahasa Cina sederhana untuk CLI.
@@ -187,6 +197,9 @@ Konfigurasi untuk tanda tangan.
 "block_generic"
 - Memblokir CIDR umumnya direkomendasikan untuk mendaftar hitam / blacklist? Ini mencakup tanda tangan apapun yang tidak ditandai sebagai bagian dari apapun lainnya kategori tanda tangan lebih spesifik.
 
+"block_proxies"
+- Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy anonymous, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan.
+
 "block_spam"
 - Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar.
 
@@ -248,6 +261,7 @@ Kata-kata singkat yang tersedia adalah:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Opsional: Jika Anda ingin membagi tanda tangan kustom Anda ke bagian individual, Anda dapat mengidentifikasi bagian individual untuk skrip dengan menambahkan label "Tag:" segera setelah tanda tangan dari setiap bagian, bersama dengan nama bagian tanda tangan Anda.
@@ -259,6 +273,7 @@ Contoh:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -281,4 +296,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 27 April 2016 (2016.04.27).
+Terakhir Diperbarui: 27 Mei 2016 (2016.05.27).

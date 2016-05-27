@@ -108,6 +108,10 @@ Fichier | Description
 /vault/lang.php | Module de linguistiques.
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/lang/lang.ar.cli.php | Linguistiques données en Arabe pour CLI.
+/vault/lang/lang.ar.php | Linguistiques données en Arabe.
+/vault/lang/lang.de.cli.php | Linguistiques données en Allemand pour CLI.
+/vault/lang/lang.de.php | Linguistiques données en Allemand.
 /vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
 /vault/lang/lang.en.php | Linguistiques données en Anglais.
 /vault/lang/lang.es.cli.php | Linguistiques données en Espagnol pour CLI.
@@ -118,10 +122,16 @@ Fichier | Description
 /vault/lang/lang.id.php | Linguistiques données en Indonésien.
 /vault/lang/lang.it.cli.php | Linguistiques données en Italien pour CLI.
 /vault/lang/lang.it.php | Linguistiques données en Italien.
+/vault/lang/lang.ja.cli.php | Linguistiques données en Japonais pour CLI.
+/vault/lang/lang.ja.php | Linguistiques données en Japonais.
 /vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandais pour CLI.
 /vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
 /vault/lang/lang.pt.cli.php | Linguistiques données en Portugais pour CLI.
 /vault/lang/lang.pt.php | Linguistiques données en Portugais.
+/vault/lang/lang.ru.cli.php | Linguistiques données en Russe pour CLI.
+/vault/lang/lang.ru.php | Linguistiques données en Russe.
+/vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamien pour CLI.
+/vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
 /vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
 /vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
 /vault/lang/lang.zh.cli.php | Linguistiques données en Chinois (simplifié) pour CLI.
@@ -187,6 +197,9 @@ Configuration pour les signatures.
 "block_generic"
 - Bloquer CIDRs recommandé en généralement pour les listes noires? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l'autre plus spécifique catégories de signatures.
 
+"block_proxies"
+- Bloquer CIDRs identifié comme appartenant à services de proxy? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d'améliorer la sécurité.
+
 "block_spam"
 - Bloquer CIDRs identifié comme étant risque élevé pour le spam? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.
 
@@ -248,6 +261,7 @@ Les mots courts disponibles sont:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Optionnel: Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant un label "Tag:" immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures.
@@ -259,6 +273,7 @@ Exemple:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -281,4 +296,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 27 Avril 2016 (2016.04.27).
+Dernière Réactualisé: 27 Mai 2016 (2016.05.27).

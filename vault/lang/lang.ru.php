@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.05.14).
+ * This file: Russian language data (last modified: 2016.05.26).
  *
  * @todo (This is incomplete).
  */
@@ -38,10 +38,12 @@ $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Your access to this page was denied be
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Your access to this page was denied because your IP address is recognised as a bogon address, and connecting from bogons to this website isn\'t permitted by the website owner.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Your access to this page was denied because your IP address is recognised as belonging to a cloud service, and connecting to this website from cloud services isn\'t permitted by the website owner.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Your access to this page was denied because your IP address belongs to a network listed on a blacklist used by this website.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Your access to this page was denied because your IP address is recognised as belonging to a proxy service, and connecting to this website from proxy services isn\'t permitted by the website owner.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Your access to this page was denied because your IP address belongs to a network considered high-risk for spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Неверный IP';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/Марсианин IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Облачный сервис';
 $CIDRAM['lang']['Short_Generic'] = 'Общий';
+$CIDRAM['lang']['Short_Proxy'] = 'Прокси';
 $CIDRAM['lang']['Short_Spam'] = 'Спам риск';
 $CIDRAM['lang']['Support_Email'] = 'If you believe this is in error, or to seek assistance, {ClickHereLink} to send an email support ticket to the webmaster of this website (please don\'t change the preamble or subject line of the email).';

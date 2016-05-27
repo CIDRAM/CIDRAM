@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2016.04.12).
+ * This file: Chinese (simplified) language data (last modified: 2016.05.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,10 +36,12 @@ $CIDRAM['lang']['ReasonMessage_BadIP'] = '您的访问这个页面被拒绝因�
 $CIDRAM['lang']['ReasonMessage_Bogon'] = '您的访问这个页面被拒绝因为您的IP地址被识别作为火星IP地址，和来自这些IP连接不是由网站所有者允许。';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于云服务，和来自这些IP连接不是由网站所有者允许。';
 $CIDRAM['lang']['ReasonMessage_Generic'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络在黑名单中所列使用本网站。';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于代理服务，和来自这些IP连接不是由网站所有者允许。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络被认为是高风险的垃圾邮件。';
 $CIDRAM['lang']['Short_BadIP'] = '无效的IP！';
 $CIDRAM['lang']['Short_Bogon'] = '火星IP';
 $CIDRAM['lang']['Short_Cloud'] = '云服务';
 $CIDRAM['lang']['Short_Generic'] = '通用';
+$CIDRAM['lang']['Short_Proxy'] = '代理';
 $CIDRAM['lang']['Short_Spam'] = '垃圾邮件的风险';
 $CIDRAM['lang']['Support_Email'] = '如果您认为这是错误的，或寻求援助，{ClickHereLink}发送电子邮件支持票本网站的网站管理员（请不要改变序言或主题行）。';

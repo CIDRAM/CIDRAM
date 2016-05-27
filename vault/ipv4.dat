@@ -3636,8 +3636,32 @@ Tag: Kintiskton LLC
 # Anonymous proxy service; Potential source of SPAM and hacking attacks.
 # Updated: 2016.04.13
 
-193.200.150.0/24 Deny Generic
+193.200.150.0/24 Deny Proxy
 Tag: anonymouse.org
+
+
+# proXPN Direct LLC (1 CIDR; no ASN).
+# Anonymous proxy service; Potential source of SPAM and hacking attacks.
+# Updated: 2016.05.26
+
+173.0.0.0/20 Deny Proxy
+Tag: proXPN Direct LLC
+
+
+# Announcing as "Reverse-Proxy" (various non-specific ASNs).
+# Updated: 2016.05.26
+
+5.153.232.0/23 Deny Proxy
+5.153.234.0/24 Deny Proxy
+5.153.236.0/24 Deny Proxy
+5.153.238.0/23 Deny Proxy
+5.157.4.0/24 Deny Proxy
+5.157.36.0/24 Deny Proxy
+5.157.50.0/23 Deny Proxy
+37.72.184.0/23 Deny Proxy
+37.72.188.0/24 Deny Proxy
+37.72.190.0/23 Deny Proxy
+Tag: Reverse-Proxy
 
 
 # These CIDRs caught spoofing localhost.
@@ -3945,24 +3969,16 @@ Tag: Portlane Networks AB
 # Updated: 2016.05.21
 
 5.34.240.0/21 Deny Cloud
-5.153.232.0/23 Deny Cloud
-5.153.234.0/24 Deny Cloud
-5.153.238.0/24 Deny Cloud
 5.157.0.0/22 Deny Cloud
 5.157.11.0/24 Deny Cloud
 5.157.14.0/23 Deny Cloud
 5.157.16.0/24 Deny Cloud
-5.157.36.0/24 Deny Cloud
 5.157.38.0/24 Deny Cloud
 5.157.40.0/22 Deny Cloud
 5.157.44.0/23 Deny Cloud
 5.157.48.0/24 Deny Cloud
-5.157.50.0/23 Deny Cloud
 5.157.53.0/24 Deny Cloud
 5.157.54.0/24 Deny Cloud
-37.72.184.0/23 Deny Cloud
-37.72.188.0/24 Deny Cloud
-37.72.190.0/23 Deny Cloud
 37.203.209.0/24 Deny Cloud
 37.203.212.0/23 Deny Cloud
 37.203.214.0/24 Deny Cloud
@@ -7109,15 +7125,14 @@ Tag: HZ Hosting Ltd
 
 
 # ASN 53889 ("Micfo, LLC").
-# Infected by malware (as per reported by Google): 1.99%.
-# Updated: 2016.03.31
+# Infected by malware (as per reported by Google): 1.93%.
+# Updated: 2016.05.26
 
 8.29.120.0/21 Deny Cloud
 23.232.128.0/17 Deny Cloud
 23.247.128.0/17 Deny Cloud
 24.235.4.0/23 Deny Cloud
 45.41.7.0/24 Deny Cloud
-45.41.26.0/24 Deny Cloud
 45.41.44.0/24 Deny Cloud
 45.41.48.0/24 Deny Cloud
 45.41.60.0/24 Deny Cloud
@@ -7126,17 +7141,15 @@ Tag: HZ Hosting Ltd
 45.59.131.0/24 Deny Cloud
 45.59.156.0/24 Deny Cloud
 45.59.186.0/24 Deny Cloud
-45.59.191.0/24 Deny Cloud
 45.61.33.0/24 Deny Cloud
 45.61.37.0/24 Deny Cloud
-45.61.40.0/24 Deny Cloud
 45.61.42.0/24 Deny Cloud
 45.61.46.0/24 Deny Cloud
 45.62.35.0/24 Deny Cloud
 45.62.47.0/24 Deny Cloud
 45.62.55.0/24 Deny Cloud
 45.62.61.0/24 Deny Cloud
-45.62.63.0/24 Deny Cloud
+52.119.3.0/24 Deny Cloud
 64.85.24.0/22 Deny Cloud
 66.133.72.0/21 Deny Cloud
 66.171.32.0/21 Deny Cloud
@@ -7157,10 +7170,8 @@ Tag: HZ Hosting Ltd
 104.243.244.0/24 Deny Cloud
 104.243.247.0/24 Deny Cloud
 104.247.7.0/24 Deny Cloud
-104.247.13.0/24 Deny Cloud
 104.247.21.0/24 Deny Cloud
 104.247.99.0/24 Deny Cloud
-104.247.110.0/24 Deny Cloud
 104.247.121.0/24 Deny Cloud
 104.250.165.0/24 Deny Cloud
 104.250.167.0/24 Deny Cloud
@@ -7170,12 +7181,15 @@ Tag: HZ Hosting Ltd
 104.250.187.0/24 Deny Cloud
 104.250.191.0/24 Deny Cloud
 104.250.226.0/24 Deny Cloud
-104.250.235.0/24 Deny Cloud
+104.250.231.0/24 Deny Cloud
 104.250.246.0/24 Deny Cloud
 107.153.0.0/16 Deny Cloud
 107.168.0.0/15 Deny Cloud
 135.84.208.0/21 Deny Cloud
+144.208.116.0/22 Deny Cloud
+144.208.120.0/22 Deny Cloud
 146.88.192.0/22 Deny Cloud
+148.59.232.0/22 Deny Cloud
 155.254.111.0/24 Deny Cloud
 165.84.224.0/21 Deny Cloud
 172.94.42.0/24 Deny Cloud
@@ -7197,6 +7211,7 @@ Tag: HZ Hosting Ltd
 192.240.192.0/18 Deny Cloud
 192.255.64.0/18 Deny Cloud
 198.22.224.0/24 Deny Cloud
+198.52.32.0/21 Deny Cloud
 199.189.248.0/21 Deny Cloud
 199.223.116.0/22 Deny Cloud
 199.241.120.0/21 Deny Cloud
@@ -7217,6 +7232,7 @@ Tag: HZ Hosting Ltd
 206.225.132.0/22 Deny Cloud
 207.89.16.0/21 Deny Cloud
 208.87.164.0/23 Deny Cloud
+209.161.110.0/24 Deny Cloud
 209.251.249.0/24 Deny Cloud
 213.159.14.0/23 Deny Cloud
 216.99.219.0/24 Deny Cloud
@@ -7226,29 +7242,40 @@ Tag: Micfo, LLC
 
 # ASN 63008 ("Contina").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.31
+# Updated: 2016.05.26
 
 45.41.198.0/24 Deny Cloud
-45.41.205.0/24 Deny Cloud
+45.41.211.0/24 Deny Cloud
 45.42.197.0/24 Deny Cloud
 45.42.222.0/24 Deny Cloud
 45.45.128.0/17 Deny Cloud
 45.61.35.0/24 Deny Cloud
+45.62.42.0/24 Deny Cloud
+104.143.30.0/24 Deny Cloud
 104.166.98.0/24 Deny Cloud
+104.166.117.0/24 Deny Cloud
 104.167.192.0/18 Deny Cloud
 104.207.73.0/24 Deny Cloud
-104.207.86.0/24 Deny Cloud
+104.207.80.0/24 Deny Cloud
+104.207.93.0/24 Deny Cloud
 104.222.206.0/24 Deny Cloud
 104.237.84.0/24 Deny Cloud
+104.237.86.0/24 Deny Cloud
 104.237.95.0/24 Deny Cloud
 104.249.128.0/18 Deny Cloud
 107.181.64.0/20 Deny Cloud
+107.182.115.0/24 Deny Cloud
+155.254.117.0/24 Deny Cloud
 155.254.192.0/18 Deny Cloud
 167.88.100.0/24 Deny Cloud
 167.160.96.0/19 Deny Cloud
 172.82.0.0/17 Deny Cloud
+172.97.88.0/24 Deny Cloud
+172.97.92.0/24 Deny Cloud
+172.97.94.0/24 Deny Cloud
 172.98.3.0/24 Deny Cloud
 172.98.35.0/24 Deny Cloud
+172.102.134.0/24 Deny Cloud
 172.110.170.0/23 Deny Cloud
 192.144.156.0/23 Deny Cloud
 192.144.188.0/23 Deny Cloud
@@ -7291,8 +7318,8 @@ Tag: Krypt Technologies
 
 
 # ASN 53264 ("Continuum Data Centers, LLC").
-# Infected by malware (as per reported by Google): 1.61%.
-# Updated: 2016.04.23
+# Infected by malware (as per reported by Google): 2.04%.
+# Updated: 2016.05.26
 
 64.79.96.0/20 Deny Cloud
 64.187.232.0/21 Deny Cloud
@@ -7300,7 +7327,6 @@ Tag: Krypt Technologies
 74.119.216.0/22 Deny Cloud
 74.121.180.0/22 Deny Cloud
 74.122.192.0/21 Deny Cloud
-104.36.56.0/24 Deny Cloud
 162.244.132.0/22 Deny Cloud
 173.243.112.0/20 Deny Cloud
 192.208.176.0/20 Deny Cloud
@@ -7308,6 +7334,7 @@ Tag: Krypt Technologies
 199.16.8.0/21 Deny Cloud
 199.96.80.0/21 Deny Cloud
 199.192.200.0/21 Deny Cloud
+210.16.102.0/24 Deny Cloud
 216.107.144.0/20 Deny Cloud
 216.231.128.0/20 Deny Cloud
 Tag: Continuum
@@ -7343,15 +7370,17 @@ Tag: Contabo GmbH
 
 
 # ASN 45815 ("ESDS Software Solution").
-# Infected by malware (as per reported by Google): 2.24%.
-# Updated: 2016.03.10
+# Infected by malware (as per reported by Google): 2.86%.
+# Updated: 2016.05.26
 
+103.212.120.0/23 Deny Cloud
 103.249.99.0/24 Deny Cloud
 115.124.96.0/21 Deny Cloud
 115.124.104.0/24 Deny Cloud
 115.124.106.0/23 Deny Cloud
 115.124.108.0/23 Deny Cloud
-115.124.112.0/22 Deny Cloud
+115.124.112.0/24 Deny Cloud
+115.124.114.0/23 Deny Cloud
 115.124.120.0/21 Deny Cloud
 Tag: ESDS
 
@@ -7643,8 +7672,8 @@ Tag: Latisys-Irvine, LLC
 
 
 # ASN 46261 ("QuickPacket, LLC").
-# Infected by malware (as per reported by Google): 1.83%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 6.63%.
+# Updated: 2016.05.26
 
 23.251.224.0/19 Deny Cloud
 45.43.192.0/19 Deny Cloud
@@ -7660,6 +7689,7 @@ Tag: Latisys-Irvine, LLC
 155.254.60.0/24 Deny Cloud
 160.202.64.0/18 Deny Cloud
 162.210.36.0/22 Deny Cloud
+162.213.215.0/24 Deny Cloud
 162.217.172.0/22 Deny Cloud
 162.223.28.0/22 Deny Cloud
 162.248.208.0/21 Deny Cloud
@@ -7687,8 +7717,8 @@ Tag: QuickPacket, LLC
 
 
 # ASN 29802 ("HIVELOCITY VENTURES CORP").
-# Infected by malware (as per reported by Google): 2.15%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 2.07%.
+# Updated: 2016.04.04 / Checked: 2016.05.27
 
 5.62.152.0/21 Deny Cloud
 23.111.128.0/21 Deny Cloud
@@ -7739,8 +7769,8 @@ Tag: HIVELOCITY VENTURES
 
 
 # ASN 48095 ("XT GLOBAL NETWORKS LTD").
-# Infected by malware (as per reported by Google): 0.17%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 0.09%.
+# Updated: 2016.05.27
 
 31.14.0.0/21 Deny Cloud
 31.14.24.0/22 Deny Cloud
@@ -7888,6 +7918,7 @@ Tag: HIVELOCITY VENTURES
 176.223.128.0/20 Deny Cloud
 176.223.172.0/22 Deny Cloud
 176.223.176.0/22 Deny Cloud
+185.77.248.0/22 Deny Cloud
 188.208.0.0/20 Deny Cloud
 188.208.40.0/21 Deny Cloud
 188.208.216.0/22 Deny Cloud
@@ -7906,8 +7937,8 @@ Tag: XT GLOBAL
 
 
 # ASN 13739 ("Datacenter IP, LLC").
-# Infected by malware (as per reported by Google): 1.58%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 1.50%.
+# Updated: 2016.04.04 / Checked: 2016.05.27
 
 104.143.72.0/21 Deny Cloud
 162.219.40.0/22 Deny Cloud
@@ -7926,15 +7957,16 @@ Tag: Datacenter IP, LLC
 
 
 # ASN 43578 ("MBA DATACENTERS S.L").
-# Infected by malware (as per reported by Google): 2.20%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 0.62%.
+# Updated: 2016.05.27
 
-77.246.176.0/23 Deny Cloud
+5.226.172.0/24 Deny Cloud
+77.246.176.0/24 Deny Cloud
 77.246.179.0/24 Deny Cloud
 77.246.181.0/24 Deny Cloud
 77.246.182.0/23 Deny Cloud
 77.246.188.0/24 Deny Cloud
-77.246.191.0/24 Deny Cloud
+77.246.190.0/23 Deny Cloud
 154.16.158.0/24 Deny Cloud
 181.214.90.0/23 Deny Cloud
 191.96.102.0/24 Deny Cloud
@@ -7944,8 +7976,8 @@ Tag: MBA DATACENTERS S.L
 
 
 # ASN 46805 ("CachedNet LLC").
-# Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 14.29%.
+# Updated: 2016.04.04 / Checked: 2016.05.27
 
 23.92.112.0/20 Deny Cloud
 104.160.0.0/19 Deny Cloud
@@ -7962,18 +7994,17 @@ Tag: CachedNet LLC
 
 
 # ASN 20068 ("Hawk Host Inc").
-# Infected by malware (as per reported by Google): 1.50%.
-# Updated: 2016.04.04
+# Infected by malware (as per reported by Google): 1.59%.
+# Updated: 2016.05.27
 
 198.252.106.0/23 Deny Cloud
 198.252.108.0/24 Deny Cloud
-198.252.111.0/24 Deny Cloud
 Tag: Hawk Host Inc
 
 
 # ASN 10439 ("CariNet, Inc").
-# Infected by malware (as per reported by Google): 0.99%.
-# Updated: 2016.04.08
+# Infected by malware (as per reported by Google): 0.88%.
+# Updated: 2016.04.08 / Checked: 2016.05.27
 
 66.240.192.0/18 Deny Cloud
 71.6.128.0/17 Deny Cloud
@@ -8286,8 +8317,8 @@ Tag: Media-Hosts Inc
 
 
 # ASN 53667 ("FranTech Solutions").
-# Infected by malware (as per reported by Google): 2.96%.
-# Updated: 2016.04.10
+# Infected by malware (as per reported by Google): 2.87%.
+# Updated: 2016.04.10 / Checked: 2016.05.26
 
 104.244.72.0/21 Deny Cloud
 107.189.0.0/21 Deny Cloud
@@ -8636,7 +8667,6 @@ Tag: GHOSTnet GmbH
 199.89.194.0/24 Deny Cloud
 199.201.110.0/23 Deny Cloud
 199.204.16.0/21 Deny Cloud
-202.165.124.0/24 Deny Cloud
 202.165.126.0/24 Deny Cloud
 204.8.59.0/24 Deny Cloud
 207.66.31.0/24 Deny Cloud
@@ -10844,10 +10874,38 @@ Tag: RouteLabel V.O.F
 Tag: MnogoByte LLC
 
 
+# ASN 29014 ("ScaleUp Technologies GmbH & Co. KG").
+# Infected by malware (as per reported by Google): 0.66%.
+# Updated: 2016.05.27
+
+81.28.224.0/21 Deny Cloud
+81.28.232.0/22 Deny Cloud
+81.28.237.0/24 Deny Cloud
+85.158.0.0/21 Deny Cloud
+93.92.128.0/21 Deny Cloud
+185.8.8.0/22 Deny Cloud
+193.41.116.0/23 Deny Cloud
+193.53.23.0/24 Deny Cloud
+195.177.232.0/23 Deny Cloud
+Tag: ScaleUp Technologies
+
+
+# ASN 27458 ("Proxy Pipe, Inc").
+# Infected by malware (as per reported by Google): 0%.
+# Updated: 2016.05.27
+
+31.187.72.0/22 Deny Cloud
+31.220.12.0/23 Deny Cloud
+31.220.14.0/24 Deny Cloud
+192.150.57.0/24 Deny Cloud
+202.165.124.0/23 Deny Cloud
+Tag: Proxy Pipe, Inc
+
+
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Thanks to chris_c for finding these. :-)
-# Updated: 2016.05.13
+# Updated: 2016.05.27
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3799
 # Refer microsoft.com/en-us/download/details.aspx?id=41653
 
@@ -10863,8 +10921,22 @@ Tag: MnogoByte LLC
 13.65.108.0/22 Deny Cloud
 13.65.112.0/20 Deny Cloud
 13.65.128.0/17 Deny Cloud
-13.66.0.0/17 Deny Cloud
-13.67.0.0/16 Deny Cloud
+13.66.0.0/19 Deny Cloud
+13.66.32.0/21 Deny Cloud
+13.66.48.0/20 Deny Cloud
+13.66.64.0/18 Deny Cloud
+13.67.0.0/17 Deny Cloud
+13.67.128.0/20 Deny Cloud
+13.67.144.0/21 Deny Cloud
+13.67.152.0/24 Deny Cloud
+13.67.153.0/28 Deny Cloud
+13.67.153.32/27 Deny Cloud
+13.67.153.64/26 Deny Cloud
+13.67.153.128/25 Deny Cloud
+13.67.155.0/24 Deny Cloud
+13.67.156.0/22 Deny Cloud
+13.67.160.0/19 Deny Cloud
+13.67.192.0/18 Deny Cloud
 13.68.0.0/17 Deny Cloud
 13.68.128.0/19 Deny Cloud
 13.68.160.0/22 Deny Cloud
@@ -10920,8 +10992,10 @@ Tag: MnogoByte LLC
 13.77.64.0/19 Deny Cloud
 13.77.112.176/28 Deny Cloud
 13.77.112.192/26 Deny Cloud
-13.77.115.0/24 Deny Cloud
-13.77.116.0/22 Deny Cloud
+13.77.115.64/26 Deny Cloud
+13.77.115.128/25 Deny Cloud
+13.77.117.0/24 Deny Cloud
+13.77.118.0/23 Deny Cloud
 13.78.0.0/17 Deny Cloud
 13.78.152.96/27 Deny Cloud
 13.78.152.128/25 Deny Cloud
@@ -10954,7 +11028,10 @@ Tag: MnogoByte LLC
 13.83.212.0/22 Deny Cloud
 13.83.216.0/21 Deny Cloud
 13.83.224.0/19 Deny Cloud
-13.84.0.0/16 Deny Cloud
+13.84.0.0/18 Deny Cloud
+13.84.104.0/21 Deny Cloud
+13.84.112.0/20 Deny Cloud
+13.84.128.0/17 Deny Cloud
 13.85.0.0/18 Deny Cloud
 13.85.64.0/20 Deny Cloud
 13.85.80.0/21 Deny Cloud
@@ -10967,7 +11044,17 @@ Tag: MnogoByte LLC
 13.85.92.0/22 Deny Cloud
 13.85.144.0/20 Deny Cloud
 13.85.160.0/19 Deny Cloud
-13.85.192.0/18 Deny Cloud
+13.85.192.0/21 Deny Cloud
+13.85.200.48/28 Deny Cloud
+13.85.200.64/26 Deny Cloud
+13.85.200.128/28 Deny Cloud
+13.85.200.160/27 Deny Cloud
+13.85.200.192/26 Deny Cloud
+13.85.201.0/24 Deny Cloud
+13.85.202.0/23 Deny Cloud
+13.85.204.0/22 Deny Cloud
+13.85.208.0/20 Deny Cloud
+13.85.224.0/19 Deny Cloud
 13.86.0.0/17 Deny Cloud
 13.86.128.0/20 Deny Cloud
 13.86.144.0/28 Deny Cloud
@@ -11226,7 +11313,12 @@ Tag: MnogoByte LLC
 23.99.32.0/25 Deny Cloud
 23.99.32.128/28 Deny Cloud
 23.99.33.0/28 Deny Cloud
-23.99.34.0/23 Deny Cloud
+23.99.34.0/26 Deny Cloud
+23.99.34.64/27 Deny Cloud
+23.99.34.96/28 Deny Cloud
+23.99.34.160/27 Deny Cloud
+23.99.34.192/26 Deny Cloud
+23.99.35.0/24 Deny Cloud
 23.99.36.0/24 Deny Cloud
 23.99.37.0/26 Deny Cloud
 23.99.37.80/28 Deny Cloud
@@ -11343,17 +11435,26 @@ Tag: MnogoByte LLC
 40.79.56.0/21 Deny Cloud
 40.79.64.0/20 Deny Cloud
 40.79.80.0/21 Deny Cloud
-40.79.88.32/28 Deny Cloud
-40.79.89.0/24 Deny Cloud
 40.79.90.0/24 Deny Cloud
 40.79.91.0/28 Deny Cloud
 40.79.92.0/24 Deny Cloud
 40.79.93.0/28 Deny Cloud
 40.79.94.0/24 Deny Cloud
 40.79.95.0/28 Deny Cloud
-40.79.96.0/19 Deny Cloud
 40.79.128.0/17 Deny Cloud
-40.80.0.0/14 Deny Cloud
+40.80.0.0/15 Deny Cloud
+40.82.0.0/16 Deny Cloud
+40.83.0.0/20 Deny Cloud
+40.83.16.0/21 Deny Cloud
+40.83.24.0/26 Deny Cloud
+40.83.24.64/27 Deny Cloud
+40.83.24.128/25 Deny Cloud
+40.83.25.0/24 Deny Cloud
+40.83.26.0/23 Deny Cloud
+40.83.28.0/22 Deny Cloud
+40.83.32.0/19 Deny Cloud
+40.83.64.0/18 Deny Cloud
+40.83.128.0/17 Deny Cloud
 40.84.0.0/17 Deny Cloud
 40.84.128.0/18 Deny Cloud
 40.84.192.0/19 Deny Cloud
@@ -11412,7 +11513,10 @@ Tag: MnogoByte LLC
 40.117.128.0/17 Deny Cloud
 40.118.0.0/16 Deny Cloud
 40.121.0.0/16 Deny Cloud
-40.122.0.0/16 Deny Cloud
+40.122.16.0/20 Deny Cloud
+40.122.32.0/19 Deny Cloud
+40.122.64.0/18 Deny Cloud
+40.122.128.0/17 Deny Cloud
 40.123.16.0/27 Deny Cloud
 40.123.16.32/28 Deny Cloud
 40.123.17.0/24 Deny Cloud
@@ -11460,6 +11564,7 @@ Tag: MnogoByte LLC
 52.163.192.0/19 Deny Cloud
 52.163.224.0/21 Deny Cloud
 52.163.232.0/27 Deny Cloud
+52.163.240.0/20 Deny Cloud
 52.164.112.0/27 Deny Cloud
 52.164.112.32/28 Deny Cloud
 52.164.113.0/24 Deny Cloud
@@ -11513,8 +11618,11 @@ Tag: MnogoByte LLC
 52.167.80.0/21 Deny Cloud
 52.167.88.16/28 Deny Cloud
 52.167.88.32/27 Deny Cloud
-52.167.88.96/27 Deny Cloud
-52.167.144.0/21 Deny Cloud
+52.167.88.64/26 Deny Cloud
+52.167.144.0/20 Deny Cloud
+52.167.160.0/19 Deny Cloud
+52.167.240.0/27 Deny Cloud
+52.167.248.0/21 Deny Cloud
 52.168.0.0/19 Deny Cloud
 52.168.32.0/21 Deny Cloud
 52.168.40.0/28 Deny Cloud
@@ -11573,14 +11681,21 @@ Tag: MnogoByte LLC
 52.170.240.0/20 Deny Cloud
 52.171.0.0/20 Deny Cloud
 52.171.16.0/21 Deny Cloud
+52.171.24.16/28 Deny Cloud
+52.171.25.0/24 Deny Cloud
+52.171.32.0/19 Deny Cloud
 52.171.64.0/21 Deny Cloud
 52.171.80.0/20 Deny Cloud
+52.171.128.0/20 Deny Cloud
 52.171.144.0/26 Deny Cloud
-52.171.144.144/28 Deny Cloud
+52.171.144.112/28 Deny Cloud
+52.171.144.128/27 Deny Cloud
 52.171.145.0/24 Deny Cloud
 52.171.146.0/24 Deny Cloud
 52.171.152.0/21 Deny Cloud
 52.171.160.0/19 Deny Cloud
+52.171.192.0/19 Deny Cloud
+52.171.224.0/20 Deny Cloud
 52.172.0.0/20 Deny Cloud
 52.172.16.64/26 Deny Cloud
 52.172.16.128/27 Deny Cloud
@@ -11643,6 +11758,7 @@ Tag: MnogoByte LLC
 52.175.48.0/20 Deny Cloud
 52.175.64.0/19 Deny Cloud
 52.175.96.0/20 Deny Cloud
+52.175.112.0/27 Deny Cloud
 52.175.112.32/28 Deny Cloud
 52.175.113.0/24 Deny Cloud
 52.175.120.0/21 Deny Cloud
@@ -11662,6 +11778,13 @@ Tag: MnogoByte LLC
 52.176.160.0/21 Deny Cloud
 52.176.224.0/26 Deny Cloud
 52.176.224.64/28 Deny Cloud
+52.177.0.0/19 Deny Cloud
+52.177.32.0/21 Deny Cloud
+52.177.48.0/21 Deny Cloud
+52.177.112.0/20 Deny Cloud
+52.177.128.0/20 Deny Cloud
+52.177.144.0/21 Deny Cloud
+52.177.160.0/21 Deny Cloud
 52.177.208.0/28 Deny Cloud
 52.177.209.0/24 Deny Cloud
 52.177.216.0/21 Deny Cloud
@@ -11677,6 +11800,14 @@ Tag: MnogoByte LLC
 52.179.0.0/20 Deny Cloud
 52.179.16.0/21 Deny Cloud
 52.179.24.0/27 Deny Cloud
+52.179.24.32/28 Deny Cloud
+52.179.25.0/24 Deny Cloud
+52.179.32.0/19 Deny Cloud
+52.179.64.0/20 Deny Cloud
+52.179.144.80/28 Deny Cloud
+52.179.146.0/24 Deny Cloud
+52.179.192.0/19 Deny Cloud
+52.179.224.0/20 Deny Cloud
 52.179.240.32/27 Deny Cloud
 52.179.240.64/26 Deny Cloud
 52.179.240.128/26 Deny Cloud
@@ -11698,6 +11829,12 @@ Tag: MnogoByte LLC
 52.186.16.0/20 Deny Cloud
 52.186.32.0/20 Deny Cloud
 52.186.48.0/21 Deny Cloud
+52.187.0.0/18 Deny Cloud
+52.187.64.0/20 Deny Cloud
+52.187.192.0/20 Deny Cloud
+52.187.208.0/21 Deny Cloud
+52.190.0.0/19 Deny Cloud
+52.190.32.0/20 Deny Cloud
 65.52.0.0/19 Deny Cloud
 65.52.32.0/21 Deny Cloud
 65.52.48.0/20 Deny Cloud
@@ -11782,7 +11919,8 @@ Tag: MnogoByte LLC
 104.47.128.0/18 Deny Cloud
 104.47.200.0/21 Deny Cloud
 104.47.208.0/21 Deny Cloud
-104.208.0.0/18 Deny Cloud
+104.208.0.0/19 Deny Cloud
+104.208.32.0/20 Deny Cloud
 104.208.80.0/20 Deny Cloud
 104.208.96.0/19 Deny Cloud
 104.208.128.0/27 Deny Cloud
@@ -11885,7 +12023,21 @@ Tag: MnogoByte LLC
 157.56.28.0/22 Deny Cloud
 157.56.160.0/21 Deny Cloud
 157.56.176.0/21 Deny Cloud
-168.61.0.0/16 Deny Cloud
+168.61.0.0/19 Deny Cloud
+168.61.32.0/20 Deny Cloud
+168.61.48.0/21 Deny Cloud
+168.61.56.0/25 Deny Cloud
+168.61.56.128/26 Deny Cloud
+168.61.56.192/28 Deny Cloud
+168.61.56.224/27 Deny Cloud
+168.61.57.0/24 Deny Cloud
+168.61.58.0/26 Deny Cloud
+168.61.58.96/27 Deny Cloud
+168.61.58.128/25 Deny Cloud
+168.61.59.0/24 Deny Cloud
+168.61.60.0/22 Deny Cloud
+168.61.64.0/18 Deny Cloud
+168.61.128.0/17 Deny Cloud
 168.62.0.0/21 Deny Cloud
 168.62.8.0/22 Deny Cloud
 168.62.12.0/23 Deny Cloud
@@ -11895,7 +12047,16 @@ Tag: MnogoByte LLC
 168.62.15.96/27 Deny Cloud
 168.62.15.128/25 Deny Cloud
 168.62.16.0/20 Deny Cloud
-168.62.32.0/21 Deny Cloud
+168.62.32.0/25 Deny Cloud
+168.62.32.128/27 Deny Cloud
+168.62.32.192/26 Deny Cloud
+168.62.33.0/24 Deny Cloud
+168.62.34.0/26 Deny Cloud
+168.62.34.64/28 Deny Cloud
+168.62.34.96/27 Deny Cloud
+168.62.34.128/25 Deny Cloud
+168.62.35.0/24 Deny Cloud
+168.62.36.0/22 Deny Cloud
 168.62.40.0/22 Deny Cloud
 168.62.44.0/23 Deny Cloud
 168.62.46.0/24 Deny Cloud
@@ -11949,15 +12110,21 @@ Tag: MnogoByte LLC
 168.63.132.0/22 Deny Cloud
 168.63.136.0/21 Deny Cloud
 168.63.144.0/20 Deny Cloud
-168.63.160.0/25 Deny Cloud
+168.63.160.0/26 Deny Cloud
+168.63.160.96/27 Deny Cloud
 168.63.160.128/27 Deny Cloud
 168.63.160.192/26 Deny Cloud
-168.63.161.0/24 Deny Cloud
+168.63.161.0/27 Deny Cloud
+168.63.161.32/28 Deny Cloud
+168.63.161.64/26 Deny Cloud
+168.63.161.128/25 Deny Cloud
 168.63.162.0/25 Deny Cloud
 168.63.162.128/27 Deny Cloud
 168.63.162.176/28 Deny Cloud
 168.63.162.192/26 Deny Cloud
-168.63.163.0/24 Deny Cloud
+168.63.163.0/25 Deny Cloud
+168.63.163.128/26 Deny Cloud
+168.63.163.224/27 Deny Cloud
 168.63.164.0/22 Deny Cloud
 168.63.168.0/21 Deny Cloud
 168.63.176.0/20 Deny Cloud
@@ -11965,10 +12132,12 @@ Tag: MnogoByte LLC
 191.232.32.0/19 Deny Cloud
 191.232.192.0/20 Deny Cloud
 191.232.208.0/21 Deny Cloud
-191.232.216.16/28 Deny Cloud
-191.232.216.32/27 Deny Cloud
-191.232.219.0/28 Deny Cloud
-191.232.219.32/27 Deny Cloud
+191.232.216.0/26 Deny Cloud
+191.232.216.64/28 Deny Cloud
+191.232.217.0/24 Deny Cloud
+191.232.218.0/24 Deny Cloud
+191.232.219.0/26 Deny Cloud
+191.232.220.0/24 Deny Cloud
 191.232.224.0/28 Deny Cloud
 191.232.225.0/24 Deny Cloud
 191.232.232.0/21 Deny Cloud
@@ -11978,6 +12147,7 @@ Tag: MnogoByte LLC
 191.233.144.0/24 Deny Cloud
 191.233.168.0/21 Deny Cloud
 191.233.176.0/21 Deny Cloud
+191.233.192.0/19 Deny Cloud
 191.234.2.16/28 Deny Cloud
 191.234.2.32/27 Deny Cloud
 191.234.2.64/26 Deny Cloud
@@ -11986,6 +12156,8 @@ Tag: MnogoByte LLC
 191.234.16.0/20 Deny Cloud
 191.234.32.0/19 Deny Cloud
 191.234.138.0/24 Deny Cloud
+191.234.160.0/19 Deny Cloud
+191.235.64.0/19 Deny Cloud
 191.235.128.0/18 Deny Cloud
 191.235.192.0/24 Deny Cloud
 191.235.193.0/26 Deny Cloud
@@ -12112,12 +12284,13 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.05.22
+# Updated: 2016.05.27
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 31.28.27.17/32 Deny Generic
 37.123.99.188/32 Deny Generic
 37.143.11.189/32 Deny Generic
+46.18.32.75/32 Deny Generic
 58.195.1.4/32 Deny Generic
 59.157.4.2/32 Deny Generic
 60.13.186.5/32 Deny Generic
@@ -12126,8 +12299,8 @@ Tag: Azure
 64.90.187.131/32 Deny Generic
 64.127.71.73/32 Deny Generic
 65.182.101.221/32 Deny Generic
+66.45.245.150/32 Deny Generic
 80.65.93.241/32 Deny Generic
-81.169.145.156/32 Deny Generic
 83.15.254.242/32 Deny Generic
 83.69.233.121/32 Deny Generic
 83.212.117.233/32 Deny Generic
@@ -12151,6 +12324,7 @@ Tag: Azure
 109.229.36.65/32 Deny Generic
 109.229.210.250/32 Deny Generic
 116.193.77.118/32 Deny Generic
+120.25.63.2/32 Deny Generic
 120.31.134.133/32 Deny Generic
 120.63.157.195/32 Deny Generic
 123.30.129.179/32 Deny Generic
@@ -12186,7 +12360,6 @@ Tag: Azure
 193.201.227.142/32 Deny Generic
 194.15.112.29/32 Deny Generic
 194.15.112.30/32 Deny Generic
-194.28.133.37/32 Deny Generic
 194.58.103.199/32 Deny Generic
 195.20.40.123/32 Deny Generic
 195.20.41.233/32 Deny Generic
@@ -12209,16 +12382,16 @@ Tag: Azure
 202.142.215.16/32 Deny Generic
 202.144.144.195/32 Deny Generic
 203.170.193.23/32 Deny Generic
-207.210.229.69/32 Deny Generic
 210.4.76.221/32 Deny Generic
 212.44.64.202/32 Deny Generic
 213.147.67.20/32 Deny Generic
 216.176.100.240/32 Deny Generic
 216.215.112.149/32 Deny Generic
+217.70.184.38/32 Deny Generic
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.08.22
+Expires: 2016.08.27
 
 
 # ---
@@ -12226,7 +12399,7 @@ Expires: 2016.08.22
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2016.05.22
+# Updated: 2016.05.27
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
@@ -12238,7 +12411,6 @@ Expires: 2016.08.22
 5.101.218.0/24 Deny Generic
 5.101.221.0/24 Deny Generic
 5.134.128.0/19 Deny Generic
-8.34.128.0/20 Deny Generic
 14.4.0.0/14 Deny Generic
 14.102.172.0/22 Deny Generic
 14.245.0.0/16 Deny Generic
@@ -12430,7 +12602,6 @@ Expires: 2016.08.22
 103.232.172.0/22 Deny Generic
 103.236.32.0/22 Deny Generic
 103.236.212.0/22 Deny Generic
-103.242.184.0/22 Deny Generic
 103.248.220.0/22 Deny Generic
 104.143.112.0/20 Deny Generic
 104.153.112.0/21 Deny Generic
@@ -12447,6 +12618,7 @@ Expires: 2016.08.22
 108.166.224.0/19 Deny Generic
 110.172.64.0/18 Deny Generic
 114.8.0.0/16 Deny Generic
+115.47.0.0/18 Deny Generic
 115.127.224.0/19 Deny Generic
 116.78.0.0/15 Deny Generic
 116.119.0.0/17 Deny Generic
@@ -12478,7 +12650,6 @@ Expires: 2016.08.22
 128.13.0.0/16 Deny Generic
 128.168.0.0/16 Deny Generic
 128.191.0.0/16 Deny Generic
-129.47.0.0/16 Deny Generic
 130.148.0.0/16 Deny Generic
 130.196.0.0/16 Deny Generic
 130.201.0.0/16 Deny Generic
@@ -12581,7 +12752,6 @@ Expires: 2016.08.22
 158.90.0.0/17 Deny Generic
 159.65.0.0/16 Deny Generic
 159.85.0.0/16 Deny Generic
-159.100.0.0/18 Deny Generic
 159.111.0.0/16 Deny Generic
 159.135.0.0/16 Deny Generic
 159.151.0.0/16 Deny Generic
@@ -12662,8 +12832,6 @@ Expires: 2016.08.22
 185.2.32.0/24 Deny Generic
 185.11.140.0/24 Deny Generic
 185.11.143.0/24 Deny Generic
-185.44.77.0/24 Deny Generic
-185.44.78.0/23 Deny Generic
 185.46.84.0/22 Deny Generic
 185.50.250.0/23 Deny Generic
 185.68.156.0/22 Deny Generic
@@ -12722,7 +12890,6 @@ Expires: 2016.08.22
 192.101.248.0/23 Deny Generic
 192.125.0.0/17 Deny Generic
 192.133.3.0/24 Deny Generic
-192.152.0.0/24 Deny Generic
 192.152.194.0/24 Deny Generic
 192.154.11.0/24 Deny Generic
 192.158.51.0/24 Deny Generic
@@ -13030,12 +13197,12 @@ Expires: 2016.08.22
 223.201.0.0/16 Deny Generic
 223.254.0.0/16 Deny Generic
 Tag: Spamhaus DROP/EDROP
-Expires: 2016.08.22
+Expires: 2016.08.27
 
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.05.20
+# Updated: 2016.05.26
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 0.0.0.0/8 Deny Bogon
@@ -13076,10 +13243,9 @@ Expires: 2016.08.22
 45.128.0.0/11 Deny Bogon
 45.220.0.0/15 Deny Bogon
 45.222.0.0/16 Deny Bogon
-45.249.218.0/23 Deny Bogon
-45.251.44.0/22 Deny Bogon
-45.251.48.0/20 Deny Bogon
-45.251.64.0/18 Deny Bogon
+45.251.84.0/22 Deny Bogon
+45.251.88.0/21 Deny Bogon
+45.251.96.0/19 Deny Bogon
 45.251.128.0/17 Deny Bogon
 45.252.0.0/14 Deny Bogon
 46.29.24.0/21 Deny Bogon
@@ -13378,6 +13544,7 @@ Expires: 2016.08.22
 91.212.226.0/24 Deny Bogon
 91.212.231.0/24 Deny Bogon
 91.212.240.0/24 Deny Bogon
+91.212.246.0/24 Deny Bogon
 91.213.29.0/24 Deny Bogon
 91.213.35.0/24 Deny Bogon
 91.213.50.0/24 Deny Bogon
@@ -13552,10 +13719,12 @@ Expires: 2016.08.22
 102.0.0.0/8 Deny Bogon
 103.64.0.0/10 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.219.214.0/23 Deny Bogon
-103.219.220.0/22 Deny Bogon
-103.219.224.0/19 Deny Bogon
-103.220.0.0/14 Deny Bogon
+103.220.44.0/22 Deny Bogon
+103.220.48.0/20 Deny Bogon
+103.220.64.0/18 Deny Bogon
+103.220.128.0/17 Deny Bogon
+103.221.0.0/16 Deny Bogon
+103.222.0.0/15 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
 109.71.248.0/21 Deny Bogon
@@ -13586,7 +13755,7 @@ Expires: 2016.08.22
 154.128.0.0/10 Deny Bogon
 154.192.0.0/11 Deny Bogon
 154.224.0.0/12 Deny Bogon
-155.12.192.0/18 Deny Bogon
+155.12.224.0/19 Deny Bogon
 155.255.0.0/16 Deny Bogon
 156.0.0.0/16 Deny Bogon
 156.38.0.0/16 Deny Bogon
@@ -13601,7 +13770,7 @@ Expires: 2016.08.22
 160.226.128.0/17 Deny Bogon
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
-164.160.16.0/20 Deny Bogon
+164.160.24.0/21 Deny Bogon
 164.160.32.0/19 Deny Bogon
 164.160.64.0/18 Deny Bogon
 164.160.128.0/18 Deny Bogon
@@ -13615,14 +13784,7 @@ Expires: 2016.08.22
 169.254.0.0/16 Deny Bogon
 170.78.0.0/15 Deny Bogon
 170.80.0.0/14 Deny Bogon
-170.84.0.0/21 Deny Bogon
-170.84.12.0/22 Deny Bogon
-170.84.16.0/20 Deny Bogon
-170.84.32.0/21 Deny Bogon
-170.84.40.0/22 Deny Bogon
-170.84.48.0/20 Deny Bogon
-170.84.64.0/18 Deny Bogon
-170.84.128.0/17 Deny Bogon
+170.84.192.0/18 Deny Bogon
 170.150.0.0/16 Deny Bogon
 170.231.0.0/16 Deny Bogon
 170.233.0.0/16 Deny Bogon
@@ -13665,9 +13827,8 @@ Expires: 2016.08.22
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.152.216.0/21 Deny Bogon
-185.152.224.0/19 Deny Bogon
-185.153.0.0/16 Deny Bogon
+185.153.236.0/22 Deny Bogon
+185.153.240.0/20 Deny Bogon
 185.154.0.0/15 Deny Bogon
 185.156.0.0/14 Deny Bogon
 185.160.0.0/11 Deny Bogon
@@ -16326,6 +16487,8 @@ Expires: 2016.08.22
 194.246.88.0/21 Deny Bogon
 194.246.100.0/24 Deny Bogon
 194.246.103.0/24 Deny Bogon
+194.247.43.0/24 Deny Bogon
+194.247.44.0/23 Deny Bogon
 194.247.58.0/24 Deny Bogon
 194.247.182.0/23 Deny Bogon
 194.247.186.0/23 Deny Bogon
@@ -16674,7 +16837,6 @@ Expires: 2016.08.22
 197.159.80.0/20 Deny Bogon
 198.18.0.0/15 Deny Bogon
 198.51.100.0/24 Deny Bogon
-200.10.174.0/23 Deny Bogon
 200.10.180.0/23 Deny Bogon
 200.10.192.0/23 Deny Bogon
 200.23.118.0/23 Deny Bogon
@@ -16682,9 +16844,6 @@ Expires: 2016.08.22
 200.23.206.0/23 Deny Bogon
 200.23.254.0/23 Deny Bogon
 200.33.82.0/23 Deny Bogon
-200.33.85.0/24 Deny Bogon
-200.33.96.0/24 Deny Bogon
-200.33.108.0/24 Deny Bogon
 200.33.113.0/24 Deny Bogon
 200.33.115.0/24 Deny Bogon
 200.33.117.0/24 Deny Bogon

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.05.12).
+ * This file: Vietnamese language data (last modified: 2016.05.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,10 +36,12 @@ $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Truy cập của bạn để trang nà
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Truy cập của bạn để trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như một địa chỉ bogon, và kết nối từ bogon đến trang web này không được phép bởi chủ sở hữu trang web.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Truy cập của bạn để trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ điện toán đám mây, và kết nối đến trang web này từ dịch vụ điện toán đám mây không được phép bởi chủ sở hữu trang web.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Truy cập của bạn để trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một mạng lưới được liệt kê vào danh sách đen được sử dụng bởi trang web này.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Truy cập của bạn để trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ proxy, và kết nối đến trang web này từ dịch vụ proxy không được phép bởi chủ sở hữu trang web.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Truy cập của bạn để trang này bị từ chối bởi vì địa chỉ IP của bạn thuộc về một mạng lưới coi có nguy cơ cao đối với thư rác.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP không hợp lệ';
 $CIDRAM['lang']['Short_Bogon'] = 'IP bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'Dịch vụ điện toán đám mây';
 $CIDRAM['lang']['Short_Generic'] = 'Chủng loại';
+$CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Nguy cơ rác';
 $CIDRAM['lang']['Support_Email'] = 'Nếu bạn tin chắc đây là lỗi, hoặc để tìm sự giúp đỡ, {ClickHereLink} để gửi một vé hỗ trợ email cho webmaster của trang web này (vui lòng không thay đổi lời nói đầu hoặc dòng tiêu đề của email).';

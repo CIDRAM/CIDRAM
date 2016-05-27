@@ -72,6 +72,12 @@ block_bogons=false
 ; signatures that aren't marked as being part of any of the other more specific
 ; signature categories. False = No; True = Yes [Default].
 block_generic=true
+; Block CIDRs identified as belonging to proxy services? If you require that
+; users be able to access your website from anonymous proxy services, this
+; should be set to false. Otherwise, if you don't require anonymous proxies,
+; this directive should be set to true as a means of improving security.
+; False = No [Default]; True = Yes.
+block_proxies=false
 ; Block CIDRs identified as being high-risk for spam? Unless you experience
 ; problems when doing so, generally, this should always be set to true.
 ; False = No; True = Yes [Default].

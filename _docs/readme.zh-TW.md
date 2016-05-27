@@ -110,6 +110,10 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/lang.php | 語音數據。
 /vault/lang/ | 包含CIDRAM語言數據。
 /vault/lang/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
+/vault/lang/lang.ar.cli.php | 阿拉伯文語言數據為CLI。
+/vault/lang/lang.ar.php | 阿拉伯文語言數據。
+/vault/lang/lang.de.cli.php | 德文語言數據為CLI。
+/vault/lang/lang.de.php | 德文語言數據。
 /vault/lang/lang.en.cli.php | 英文語言數據為CLI。
 /vault/lang/lang.en.php | 英文語言數據。
 /vault/lang/lang.es.cli.php | 西班牙文語言數據為CLI。
@@ -120,10 +124,16 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/lang/lang.id.php | 印度尼西亞文語言數據。
 /vault/lang/lang.it.cli.php | 意大利文語言數據為CLI。
 /vault/lang/lang.it.php | 意大利文語言數據。
+/vault/lang/lang.ja.cli.php | 日文語言數據為CLI。
+/vault/lang/lang.ja.php | 日文語言數據。
 /vault/lang/lang.nl.cli.php | 荷蘭文語言數據為CLI。
 /vault/lang/lang.nl.php | 荷蘭文語言數據。
 /vault/lang/lang.pt.cli.php | 葡萄牙文語言數據為CLI。
 /vault/lang/lang.pt.php | 葡萄牙文語言數據。
+/vault/lang/lang.ru.cli.php | 俄文語言數據為CLI。
+/vault/lang/lang.ru.php | 俄文語言數據。
+/vault/lang/lang.vi.cli.php | 越南文語言數據為CLI。
+/vault/lang/lang.vi.php | 越南文語言數據。
 /vault/lang/lang.zh-tw.cli.php | 中文（傳統）語言數據為CLI。
 /vault/lang/lang.zh-tw.php | 中文（傳統）語言數據。
 /vault/lang/lang.zh.cli.php | 中文（簡體）語言數據為CLI。
@@ -189,6 +199,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 “block_generic”
 - 阻止CIDR一般建議對於黑名單嗎？這包括簽名不標記為的一章节任何其他更具體簽名類別。
 
+"block_proxies"
+- 阻止CIDR認定為屬於代理服務嗎？如果您需要該用戶可以訪問您的網站從匿名代理服務，這應該被設置為“false”（假）。除此以外，如果您不需要匿名代理服務，這應該被設置為“true”（真）作為一個方式以提高安全性。
+
 “block_spam”
 - 阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。
 
@@ -240,9 +253,9 @@ CIDRAM簽名文件應該使用Unix的換行符（`%0A`，或`\n`）！其他換�
 
 例子：`127.0.0.1/32 Whitelist`
 
-如果“Deny”是用來，當該簽名被觸發，假設沒有白名單簽名已觸發為IP地址和/或CIDR，訪問至保護的頁面被拒絕。你要使用“Deny”為實際拒絕一個IP地址和/或CIDR範圍。當任何簽名利用的“Deny”被觸發，該“拒絕訪問”腳本頁面將生成和請求到保護的頁面會被殺死。
+如果“Deny”是用來，當該簽名被觸發，假設沒有白名單簽名已觸發為IP地址和/或CIDR，訪問至保護的頁面被拒絕。您要使用“Deny”為實際拒絕一個IP地址和/或CIDR範圍。當任何簽名利用的“Deny”被觸發，該“拒絕訪問”腳本頁面將生成和請求到保護的頁面會被殺死。
 
-“Deny”的`%Param%`值會被解析為“拒絕訪問”頁面，提供給客戶機/用戶作為引原因他們訪問到請求的頁面被拒絕。它可以是一個短期和簡單的句子，為解釋原因（什麼應該足夠了；一個簡單的消息像“我不想讓你在我的網站”會好起來的），或一小撮之一的短關鍵字供應的通過腳本。如果使用，它們將被替換由腳本使用預先準備的解釋為什麼客戶機/用戶已被封鎖。
+“Deny”的`%Param%`值會被解析為“拒絕訪問”頁面，提供給客戶機/用戶作為引原因他們訪問到請求的頁面被拒絕。它可以是一個短期和簡單的句子，為解釋原因（什麼應該足夠了；一個簡單的消息像“我不想讓您在我的網站”會好起來的），或一小撮之一的短關鍵字供應的通過腳本。如果使用，它們將被替換由腳本使用預先準備的解釋為什麼客戶機/用戶已被封鎖。
 
 預先準備的解釋具有多語言支持和可以翻譯通過腳本根據您的語言指定的通過`lang`腳本配置指令。另外，您可以指令腳本忽略“Deny”簽名根據他們的價`%Param%`值（如果他們使用這些短關鍵字）通過腳本配置指令（每短關鍵字有一個相應的指令到處理相應的簽名或忽略它）。`%Param%`值不使用這些短關鍵字，然而，沒有多語言支持和因此不會被翻譯通過腳本，並且還，不能直接控制由腳本配置。
 
@@ -250,6 +263,7 @@ CIDRAM簽名文件應該使用Unix的換行符（`%0A`，或`\n`）！其他換�
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 自選：如果要分割您的自定義簽名成各個章节，您可以識別這些各個章节為腳本通過加入一個“Tag:”標籤立即跟著每章节簽名，伴隨著章节簽名名字。
@@ -261,6 +275,7 @@ CIDRAM簽名文件應該使用Unix的換行符（`%0A`，或`\n`）！其他換�
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -283,4 +298,4 @@ Tag: Section 1
 ---
 
 
-最後更新：2016年4月27日。
+最後更新：2016年5月27日。

@@ -110,6 +110,10 @@ Datei | Beschreibung
 /vault/lang.php | Sprachdateien.
 /vault/lang/ | Enthält Sprachdaten für CIDRAM.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
+/vault/lang/lang.ar.php | Arabische Sprachdateien.
+/vault/lang/lang.de.cli.php | Deutsche Sprachdateien für CLI.
+/vault/lang/lang.de.php | Deutsche Sprachdateien.
 /vault/lang/lang.en.cli.php | Englische Sprachdateien für CLI.
 /vault/lang/lang.en.php | Englische Sprachdateien.
 /vault/lang/lang.es.cli.php | Spanische Sprachdateien für CLI.
@@ -120,10 +124,16 @@ Datei | Beschreibung
 /vault/lang/lang.id.php | Indonesische Sprachdateien.
 /vault/lang/lang.it.cli.php | Italienische Sprachdateien für CLI.
 /vault/lang/lang.it.php | Italienische Sprachdateien.
+/vault/lang/lang.ja.cli.php | Japanische Sprachdateien für CLI.
+/vault/lang/lang.ja.php | Japanische Sprachdateien.
 /vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
 /vault/lang/lang.pt.cli.php | Portugiesische Sprachdateien für CLI.
 /vault/lang/lang.pt.php | Portugiesische Sprachdateien.
+/vault/lang/lang.ru.cli.php | Russische Sprachdateien für CLI.
+/vault/lang/lang.ru.php | Russische Sprachdateien.
+/vault/lang/lang.vi.cli.php | Vietnamesische Sprachdateien für CLI.
+/vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
 /vault/lang/lang.zh-tw.cli.php | Chinesische Sprachdateien (traditionell) für CLI.
 /vault/lang/lang.zh-tw.php | Chinesische Sprachdateien (traditionell).
 /vault/lang/lang.zh.cli.php | Chinesische Sprachdateien (vereinfacht) für CLI.
@@ -145,13 +155,13 @@ Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `conf
 Generelle Konfiguration von CIDRAM.
 
 "logfile"
-- Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable. @TranslateMe@
+- Name einer Datei für Menschen lesbar zu protokollieren alle blockierten Zugriffsversuche. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 "logfileApache"
-- Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable. @TranslateMe@
+- Name einer Apache-Stil-Datei zu protokollieren alle blockierten Zugriffsversuche. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 "logfileSerialized"
-- Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable. @TranslateMe@
+- Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 "ipaddr"
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
@@ -188,6 +198,9 @@ Konfiguration der Signaturen.
 
 "block_generic"
 - Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories. @TranslateMe@
+
+"block_proxies"
+- Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security. @TranslateMe@
 
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true. @TranslateMe@
@@ -250,6 +263,7 @@ The available shorthand words are:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
@@ -261,6 +275,7 @@ Example:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -283,4 +298,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Zuletzt aktualisiert: 27. April 2016 (2016.04.27).
+Zuletzt aktualisiert: 27. Mai 2016 (2016.05.27).

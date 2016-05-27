@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.05.23).
+ * This file: The loader (last modified: 2016.05.26).
  */
 
 /**
@@ -134,6 +134,10 @@ if (!defined('CIDRAM')) {
     /** Fallback for missing "block_generic" configuration directive. */
     if (!isset($CIDRAM['Config']['signatures']['block_generic'])) {
         $CIDRAM['Config']['signatures']['block_generic'] = true;
+    }
+    /** Fallback for missing "block_proxies" configuration directive. */
+    if (!isset($CIDRAM['Config']['signatures']['block_proxies'])) {
+        $CIDRAM['Config']['signatures']['block_proxies'] = false;
     }
     /** Fallback for missing "block_spam" configuration directive. */
     if (!isset($CIDRAM['Config']['signatures']['block_spam'])) {

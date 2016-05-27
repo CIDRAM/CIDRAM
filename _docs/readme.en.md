@@ -108,6 +108,10 @@ File | Description
 /vault/lang.php | Language handler.
 /vault/lang/ | Contains CIDRAM language data.
 /vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/lang/lang.ar.cli.php | Arabic language data for CLI.
+/vault/lang/lang.ar.php | Arabic language data.
+/vault/lang/lang.de.cli.php | German language data for CLI.
+/vault/lang/lang.de.php | German language data.
 /vault/lang/lang.en.cli.php | English language data for CLI.
 /vault/lang/lang.en.php | English language data.
 /vault/lang/lang.es.cli.php | Spanish language data for CLI.
@@ -118,10 +122,16 @@ File | Description
 /vault/lang/lang.id.php | Indonesian language data.
 /vault/lang/lang.it.cli.php | Italian language data for CLI.
 /vault/lang/lang.it.php | Italian language data.
+/vault/lang/lang.ja.cli.php | Japanese language data for CLI.
+/vault/lang/lang.ja.php | Japanese language data.
 /vault/lang/lang.nl.cli.php | Dutch language data for CLI.
 /vault/lang/lang.nl.php | Dutch language data.
 /vault/lang/lang.pt.cli.php | Portuguese language data for CLI.
 /vault/lang/lang.pt.php | Portuguese language data.
+/vault/lang/lang.ru.cli.php | Russian language data for CLI.
+/vault/lang/lang.ru.php | Russian language data.
+/vault/lang/lang.vi.cli.php | Vietnamese language data for CLI.
+/vault/lang/lang.vi.php | Vietnamese language data.
 /vault/lang/lang.zh-tw.cli.php | Chinese (traditional) language data for CLI.
 /vault/lang/lang.zh-tw.php | Chinese (traditional) language data.
 /vault/lang/lang.zh.cli.php | Chinese (simplified) language data for CLI.
@@ -187,6 +197,9 @@ Signatures configuration.
 "block_generic"
 - Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories.
 
+"block_proxies"
+- Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security.
+
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
@@ -248,6 +261,7 @@ The available shorthand words are:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
@@ -259,6 +273,7 @@ Example:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -281,4 +296,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 27th April 2016 (2016.04.27).
+Last Updated: 27th May 2016 (2016.05.27).

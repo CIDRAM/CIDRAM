@@ -74,6 +74,7 @@
 # - Bogon
 # - Cloud
 # - Generic
+# - Proxy
 # - Spam
 
 # These available shorthand words (these examples assume that you've specified English as your desired language to the
@@ -84,6 +85,8 @@
 #               service, and connecting to this website from cloud services isn't permitted by the website owner.
 # - Generic:    "Your access to this page was denied because your IP address belongs to a network listed on a blacklist
 #               used by this website."
+# - Proxy:      "Your access to this page was denied because your IP address is recognised as belonging to a proxy
+#               service, and connecting to this website from proxy services isn't permitted by the website owner."
 # - Spam:       "Your access to this page was denied because your IP address belongs to a network considered high-risk
 #               for spam."
 
@@ -108,6 +111,7 @@
 # 2.3.4.5/32 Deny Cloud
 # 4.5.6.7/32 Deny Generic
 # 5.6.7.8/32 Deny Spam
+# 6.7.8.9/32 Deny Proxy
 # Tag: Section 1
 
 # To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in

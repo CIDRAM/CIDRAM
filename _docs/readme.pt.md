@@ -108,6 +108,10 @@ Arquivo | Descrição
 /vault/lang.php | Linguagem dados.
 /vault/lang/ | Contém linguagem dados.
 /vault/lang/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
+/vault/lang/lang.ar.cli.php | Linguagem dados Árabe para CLI.
+/vault/lang/lang.ar.php | Linguagem dados Árabe.
+/vault/lang/lang.de.cli.php | Linguagem dados Alemão para CLI.
+/vault/lang/lang.de.php | Linguagem dados Alemão.
 /vault/lang/lang.en.cli.php | Linguagem dados Inglês para CLI.
 /vault/lang/lang.en.php | Linguagem dados Inglês.
 /vault/lang/lang.es.cli.php | Linguagem dados Espanhol para CLI.
@@ -118,10 +122,16 @@ Arquivo | Descrição
 /vault/lang/lang.id.php | Linguagem dados Indonésio.
 /vault/lang/lang.it.cli.php | Linguagem dados Italiano para CLI.
 /vault/lang/lang.it.php | Linguagem dados Italiano.
+/vault/lang/lang.ja.cli.php | Linguagem dados Japonês para CLI.
+/vault/lang/lang.ja.php | Linguagem dados Japonês.
 /vault/lang/lang.nl.cli.php | Linguagem dados Holandês para CLI.
 /vault/lang/lang.nl.php | Linguagem dados Holandês.
 /vault/lang/lang.pt.cli.php | Linguagem dados Português para CLI.
 /vault/lang/lang.pt.php | Linguagem dados Português.
+/vault/lang/lang.ru.cli.php | Linguagem dados Russo para CLI.
+/vault/lang/lang.ru.php | Linguagem dados Russo.
+/vault/lang/lang.vi.cli.php | Linguagem dados Vietnamita para CLI.
+/vault/lang/lang.vi.php | Linguagem dados Vietnamita.
 /vault/lang/lang.zh-tw.cli.php | Linguagem dados Chinês (tradicional) para CLI.
 /vault/lang/lang.zh-tw.php | Linguagem dados Chinês (tradicional).
 /vault/lang/lang.zh.cli.php | Linguagem dados Chinês (simplificado) para CLI.
@@ -187,6 +197,9 @@ Configuração por assinaturas.
 "block_generic"
 - Bloquear CIDRs geralmente recomendado para a lista negra? Isso abrange todas as assinaturas que não são marcados como sendo parte de qualquer um dos outros mais categorias de assinaturas mais específica.
 
+"block_proxies"
+- Bloquear CIDRs identificado como pertencente a serviços de proxy? Se você precisar que os usuários poderão acessar seu site dos serviços de proxy anônimos, este deve ser definido como false. De outra forma, se você não precisa de proxies anônimos, este deve ser definido como true como um meio de melhorar a segurança.
+
 "block_spam"
 - Bloquear CIDRs identificado como sendo de alto risco para spam? A menos que você tiver problemas ao fazê-lo, geralmente, esta deve sempre ser definido como true.
 
@@ -248,6 +261,7 @@ As palavras curtas disponíveis são:
 - Bogon
 - Cloud
 - Generic
+- Proxy
 - Spam
 
 Opcional: Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas secções individuais para o script por adição de uma etiqueta "Tag:" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas.
@@ -259,6 +273,7 @@ Exemplo:
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
+6.7.8.9/32 Deny Proxy
 Tag: Section 1
 ```
 
@@ -281,4 +296,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 27 Abril 2016 (2016.04.27).
+Última Atualização: 27 Maio 2016 (2016.05.27).

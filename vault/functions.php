@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.12).
+ * This file: Functions file (last modified: 2016.05.26).
  */
 
 /**
@@ -269,6 +269,15 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
+                    } elseif ($Sig === 'Proxy' && !$CIDRAM['CIDRAM_sapi']) {
+                        if (!$CIDRAM['Config']['signatures']['block_proxies']) {
+                            continue;
+                        }
+                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Proxy'];
+                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+                        }
+                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Proxy'] . $LN;
                     } elseif ($Sig === 'Spam' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_spam']) {
                             continue;
@@ -643,6 +652,15 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
                         }
                         $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
+                    } elseif ($Sig === 'Proxy' && !$CIDRAM['CIDRAM_sapi']) {
+                        if (!$CIDRAM['Config']['signatures']['block_proxies']) {
+                            continue;
+                        }
+                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Proxy'];
+                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+                        }
+                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Proxy'] . $LN;
                     } elseif ($Sig === 'Spam' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_spam']) {
                             continue;

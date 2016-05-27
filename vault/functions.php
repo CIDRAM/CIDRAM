@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.26).
+ * This file: Functions file (last modified: 2016.05.28).
  */
 
 /**
@@ -212,7 +212,7 @@ $CIDRAM['IPv4Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     ($PosY = strpos($IPv4Sigs[$x], "\n", ($PosX + 1))) &&
                     !substr_count($IPv4Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
                     ($Expires = $CIDRAM['FetchExpires'](substr($IPv4Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10)))) &&
-                    $Expires < time()
+                    $Expires < $CIDRAM['Now']
                 ) {
                     continue;
                 }
@@ -595,7 +595,7 @@ $CIDRAM['IPv6Test'] = function ($Addr, $Dump = false) use (&$CIDRAM) {
                     ($PosY = strpos($IPv6Sigs[$x], "\n", ($PosX + 1))) &&
                     !substr_count($IPv6Sigs[$x], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
                     ($Expires = $CIDRAM['FetchExpires'](substr($IPv6Sigs[$x], ($PosX + 10), ($PosY - $PosX - 10)))) &&
-                    $Expires < time()
+                    $Expires < $CIDRAM['Now']
                 ) {
                     continue;
                 }
@@ -744,4 +744,31 @@ $CIDRAM['FetchExpires'] = function ($in) {
         return ($Expires) ? $Expires : false;
     }
     return false;
+};
+
+/**
+ * A simple closure for replacing date/time placeholders in the logfile
+ * directives with corresponding date/time information.
+ *
+ * @param int $time A unix timestamp.
+ * @param string|array $dir A directive entry or an array of directive entries.
+ * @return string|array The adjusted directive entry or entries.
+ */
+$CIDRAM['Time2Logfile'] = function ($time, $dir) use (&$CIDRAM) {
+    $time = date('dmYH', $time);
+    $values = array(
+        'dd' => substr($time, 0, 2),
+        'mm' => substr($time, 2, 2),
+        'yyyy' => substr($time, 4, 4),
+        'yy' => substr($time, 6, 2),
+        'hh' => substr($time, 8, 2)
+    );
+    if (is_array($dir)) {
+        $c = count($dir);
+        for ($i = 0; $i < $c; $i++) {
+            $dir[$i] = $CIDRAM['ParseVars']($values, $dir[$i]);
+        }
+        return $dir;
+    }
+    return $CIDRAM['ParseVars']($values, $dir);
 };

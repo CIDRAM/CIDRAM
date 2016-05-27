@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.05.26).
+ * This file: The loader (last modified: 2016.05.28).
  */
 
 /**
@@ -85,6 +85,10 @@ if (!defined('CIDRAM')) {
     if (!isset($CIDRAM['Config']['general']['logfileSerialized'])) {
         $CIDRAM['Config']['general']['logfileSerialized'] = '';
     }
+    /** Fallback for missing "timeOffset" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['timeOffset'])) {
+        $CIDRAM['Config']['general']['timeOffset'] = 0;
+    }
     /** Fallback for missing "ipaddr" configuration directive. */
     if (
         empty($CIDRAM['Config']['general']['ipaddr']) || (
@@ -152,6 +156,9 @@ if (!defined('CIDRAM')) {
     if (!isset($CIDRAM['Config']['template_data']['css_url'])) {
         $CIDRAM['Config']['template_data']['css_url'] = '';
     }
+
+    /** Adjusted present time. */
+    $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
 
     /** Determine PHP path. */
     $CIDRAM['CIDRAM_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';

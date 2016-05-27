@@ -3,19 +3,40 @@
 ; name of the file to log results to. If no, leave this variable blank. It's
 ; recommended to enable this feature whenever possible to assist with debugging
 ; and monitoring. Example: logfile='logfile.txt'
+; Useful tip: If you want, you can append date/time information to the name of
+; your logfile by including these in the name: {yyyy} for complete year, {yy}
+; for abbreviated year, {mm} for month, {dd} for day, {hh} for hour.
+; Example: logfile='logfile.{yyyy}-{mm}-{dd}.txt'
 logfile=''
 ; Log blocked access attempts to an Apache-style logfile? If yes, specify the
 ; name of the file to log results to. If no, leave this variable blank. This
 ; feature can be useful if you want to integrate CIDRAM with packages such as
 ; fail2ban, which require Apache-style logfiles (but isn't generally required
 ; otherwise). Example: logfileApache='access.txt'
+; Useful tip: If you want, you can append date/time information to the name of
+; your logfile by including these in the name: {yyyy} for complete year, {yy}
+; for abbreviated year, {mm} for month, {dd} for day, {hh} for hour.
+; Example: logfileApache='access.{yyyy}-{mm}-{dd}.txt'
 logfileApache=''
 ; Log blocked access attempts to a serialised logfile? If yes, specify the name
 ; of the file to log results to. If no, leave this variable blank. This feature
 ; can be useful if you want to integrate CIDRAM with packages that work with
 ; serialised data (but isn't generally required otherwise).
 ; Example: logfileSerialized='serial.txt'
+; Useful tip: If you want, you can append date/time information to the name of
+; your logfile by including these in the name: {yyyy} for complete year, {yy}
+; for abbreviated year, {mm} for month, {dd} for day, {hh} for hour.
+; Example: logfileSerialized='serial.{yyyy}-{mm}-{dd}.txt'
 logfileSerialized=''
+; If you're appending date/time information to the names of your logfiles, and
+; if your server time offset doesn't match your local time, you can specify an
+; offset here to adjust the appended date/time information according to your
+; needs. It's generally recommended instead to adjust the timezone directive in
+; your php.ini file, but sometimes (such as when working with limited shared
+; hosting providers) this isn't always possible to do, and so, this option is
+; provided here. Time offset is how many minutes to add to the date/time
+; information. Example (to add one hour): timeOffset=60
+timeOffset=0
 ; Where to find IP address of connecting request? (Useful for services such as
 ; Cloudflare and the likes) Default = REMOTE_ADDR
 ; WARNING: Don't change this unless you know what you're doing!

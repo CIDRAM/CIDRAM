@@ -28,6 +28,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.05.26; Minor code change; Maikuolan]: Added a new i18n shorthand value
   for "Deny": "Proxy" (for blocking private and anonymous proxies).
 
+- [2016.05.27; Minor code change; Maikuolan]: Added the ability to use dated
+  logfiles! Now, some simple variables ({dd}, {mm}, {yyyy}/{yy}, {hh}) can be
+  included when specifying the names to use for logfiles in order to organise
+  logfiles by date/time. Added a new directive ("timeOffset") to account for
+  the possibility of discrepancies between servers and the local time of those
+  using CIDRAM.
+
 === Version/Release 0.2.0 ===
 MINOR RELEASE.
 

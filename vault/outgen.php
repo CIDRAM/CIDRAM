@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.04.08).
+ * This file: Output generator (last modified: 2016.05.28).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -43,7 +43,7 @@ if (!isset($_SERVER[$CIDRAM['Config']['general']['ipaddr']])) {
 
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = array(
-    'DateTime' => date('r'),
+    'DateTime' => date('r', $CIDRAM['Now']),
     'IPAddr' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'Query' => $CIDRAM['Query'],
@@ -158,6 +158,22 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         header('Status: 301 Moved Permanently');
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['html'] = '';
+    }
+
+    if (
+        substr_count($CIDRAM['Config']['general']['logfile'], '{') ||
+        substr_count($CIDRAM['Config']['general']['logfileApache'], '{') ||
+        substr_count($CIDRAM['Config']['general']['logfileSerialized'], '{')
+    ) {
+        list(
+            $CIDRAM['Config']['general']['logfile'],
+            $CIDRAM['Config']['general']['logfileApache'],
+            $CIDRAM['Config']['general']['logfileSerialized']
+        ) = $CIDRAM['Time2Logfile']($CIDRAM['Now'], array(
+            $CIDRAM['Config']['general']['logfile'],
+            $CIDRAM['Config']['general']['logfileApache'],
+            $CIDRAM['Config']['general']['logfileSerialized']
+        ));
     }
 
     if ($CIDRAM['Config']['general']['logfile']) {

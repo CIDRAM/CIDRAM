@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.28).
+ * This file: Functions file (last modified: 2016.06.02).
  */
 
 /**
@@ -85,23 +85,23 @@ $CIDRAM['matchElement'] = function ($arr, $e) {
  * data and to parse any messages related to any detections found during the
  * scan process and any other related processes.
  *
- * @param array $v The input array.
- * @param string $b The input string.
+ * @param array $Needle The input array (what we're looking *for*).
+ * @param string $Haystack The input string (what we're looking *in*).
  * @return string The results of the function are returned directly to the
  *      calling scope as a string.
  */
-$CIDRAM['ParseVars'] = function ($v, $b) {
-    if (!is_array($v) || empty($b)) {
+$CIDRAM['ParseVars'] = function ($Needle, $Haystack) {
+    if (!is_array($Needle) || empty($Haystack)) {
         return '';
     }
-    $c = count($v);
-    reset($v);
+    $c = count($Needle);
+    reset($Needle);
     for ($i = 0; $i < $c; $i++) {
-        $k = key($v);
-        $b = str_replace('{' . $k . '}', $v[$k], $b);
-        next($v);
+        $k = key($Needle);
+        $Haystack = str_replace('{' . $k . '}', $Needle[$k], $Haystack);
+        next($Needle);
     }
-    return $b;
+    return $Haystack;
 };
 
 /**

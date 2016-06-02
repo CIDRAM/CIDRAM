@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.05.28).
+ * This file: The loader (last modified: 2016.06.02).
  */
 
 /**
@@ -89,6 +89,8 @@ if (!defined('CIDRAM')) {
     if (!isset($CIDRAM['Config']['general']['timeOffset'])) {
         $CIDRAM['Config']['general']['timeOffset'] = 0;
     }
+    /** Ensure "timeOffset" is an integer. */
+    $CIDRAM['Config']['general']['timeOffset'] = (int)$CIDRAM['Config']['general']['timeOffset'];
     /** Fallback for missing "ipaddr" configuration directive. */
     if (
         empty($CIDRAM['Config']['general']['ipaddr']) || (

@@ -170,7 +170,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-"timeOffset"
+“timeOffset”
 - 如果您的服務器時間不符合您的本地時間，您可以在這裡指定的偏移調整日期/時間信息該產生通過CIDRAM根據您的需要。它一般建議，而不是，調整時區指令的文件`php.ini`，但是有時（例如，當利用有限的共享主機提供商）這並不總是可能做到，所以，此選項在這裡是提供。偏移量是在分鐘。
 - 例子（添加1小時）： `timeOffset=60`
 
@@ -309,4 +309,4 @@ Tag: Section 1
 ---
 
 
-最後更新：2016年5月28日。
+最後更新：2016年6月2日。

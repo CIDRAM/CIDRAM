@@ -438,9 +438,9 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
         'Factors' => count($Factors)
     );
     for ($FileIndex = 0; $FileIndex < $Counts['Files']; $FileIndex++) {
-        if ($Counts['Files'] === 32) {
+        if ($Counts['Factors'] === 32) {
             $DefTag = 'IPv4';
-        } elseif ($Counts['Files'] === 128) {
+        } elseif ($Counts['Factors'] === 128) {
             $DefTag = 'IPv6';
         } else {
             $DefTag = $Files[$FileIndex];

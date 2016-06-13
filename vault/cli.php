@@ -43,17 +43,21 @@ if ($CIDRAM['argv'][1] === '-h') {
         'rURI' => 'CLI'
     );
     try {
+        $CIDRAM['Caught'] = false;
         $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['argv'][2]);
     } catch (\Exception $e) {
+        $CIDRAM['Caught'] = true;
         echo wordwrap($e->getMessage(), 78, "\n ");
     }
-    if (!$CIDRAM['TestResults']) {
-        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
-    } else {
-        echo
-            ($CIDRAM['BlockInfo']['SignatureCount']) ?
-            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Blocked']), 78, "\n ") :
-            wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Not_Blocked']), 78, "\n ");
+    if (!$CIDRAM['Caught']) {
+        if (!$CIDRAM['TestResults']) {
+            echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
+        } else {
+            echo
+                ($CIDRAM['BlockInfo']['SignatureCount']) ?
+                wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Blocked']), 78, "\n ") :
+                wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Not_Blocked']), 78, "\n ");
+        }
     }
     echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-g') {

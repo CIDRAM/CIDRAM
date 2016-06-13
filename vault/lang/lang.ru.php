@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, и can be downloaded for free
+ * This file is a part of the CIDRAM package, and can be downloaded for free
  * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).

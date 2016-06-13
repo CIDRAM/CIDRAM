@@ -302,9 +302,16 @@ Tag: Section 1
 
 No exemplo acima, `1.2.3.4/32` e `2.3.4.5/32` será etiquetadas como "IPv4", enquanto que `4.5.6.7/32` e `5.6.7.8/32` será etiquetadas como "Section 1".
 
+Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos ficheiros de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar.
+
+Exemplo:
+```
+Ignore Section 1
+```
+
 Consulte os arquivos de assinaturas personalizadas para obter mais informações.
 
 ---
 
 
-Última Atualização: 28 Maio 2016 (2016.05.28).
+Última Atualização: 13 Junho 2016 (2016.06.13).

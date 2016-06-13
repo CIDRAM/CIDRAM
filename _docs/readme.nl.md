@@ -302,9 +302,16 @@ Tag: Section 1
 
 In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Section 1".
 
+Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de handtekening bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren.
+
+Voorbeeld:
+```
+Ignore Section 1
+```
+
 Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 
 ---
 
 
-Laatste Bijgewerkt: 28 Mei 2016 (2016.05.28).
+Laatste Bijgewerkt: 13 Juni 2016 (2016.06.13).

@@ -35,6 +35,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   the possibility of discrepancies between servers and the local time of those
   using CIDRAM.
 
+- [2016.06.13; Minor code change; Maikuolan]: Added the ability to ignore
+  signature sections by identifying their section tags to an ignore file.
+  Refactored a number of closures to reduce code duplication and to improve the
+  their process logic; Some old closures renamed and split into multiple new
+  closures.
+
 === Version/Release 0.2.0 ===
 MINOR RELEASE.
 

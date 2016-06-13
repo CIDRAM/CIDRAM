@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
+ * This file is a part of the CIDRAM package, и can be downloaded for free
  * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.05.26).
+ * This file: Russian language data (last modified: 2016.06.13).
  *
  * @todo (This is incomplete).
  */
@@ -34,16 +34,16 @@ $CIDRAM['lang']['field_ua'] = 'Агент пользователя (User Agent):
 $CIDRAM['lang']['field_whyreason'] = 'Почему Заблокированные: ';
 $CIDRAM['lang']['generated_by'] = 'Генерируется от';
 $CIDRAM['lang']['preamble'] = '-- Конец преамбулы. Добавьте ваши вопросы или комментарии после этой строки. --';
-$CIDRAM['lang']['ReasonMessage_BadIP'] = 'Your access to this page was denied because you attempted to access this page using an invalid IP address.';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Your access to this page was denied because your IP address is recognised as a bogon address, and connecting from bogons to this website isn\'t permitted by the website owner.';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Your access to this page was denied because your IP address is recognised as belonging to a cloud service, and connecting to this website from cloud services isn\'t permitted by the website owner.';
-$CIDRAM['lang']['ReasonMessage_Generic'] = 'Your access to this page was denied because your IP address belongs to a network listed on a blacklist used by this website.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Your access to this page was denied because your IP address is recognised as belonging to a proxy service, and connecting to this website from proxy services isn\'t permitted by the website owner.';
-$CIDRAM['lang']['ReasonMessage_Spam'] = 'Your access to this page was denied because your IP address belongs to a network considered high-risk for spam.';
+$CIDRAM['lang']['ReasonMessage_BadIP'] = 'Ваш доступ к этой странице было отказано потому что вы попытались получить доступ к этой странице используя неверный IP-адрес.';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес распознается как адрес bogon/марсианин, и подключения от bogons/марсиане к этому сайту не допускается.';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес признается принадлежность к облачной службе, и подключение к этому сайту из облачных сервисов не допускается.';
+$CIDRAM['lang']['ReasonMessage_Generic'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес принадлежит к сети, перечисленные в черном списке используемый этим сайтом.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес распознается как принадлежность к прокси-сервис, и подключение к этому сайту от прокси-серверов не допускается.';
+$CIDRAM['lang']['ReasonMessage_Spam'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес принадлежит к сети считается высоким риском для спама.';
 $CIDRAM['lang']['Short_BadIP'] = 'Неверный IP';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/Марсианин IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Облачный сервис';
 $CIDRAM['lang']['Short_Generic'] = 'Общий';
 $CIDRAM['lang']['Short_Proxy'] = 'Прокси';
 $CIDRAM['lang']['Short_Spam'] = 'Спам риск';
-$CIDRAM['lang']['Support_Email'] = 'If you believe this is in error, or to seek assistance, {ClickHereLink} to send an email support ticket to the webmaster of this website (please don\'t change the preamble or subject line of the email).';
+$CIDRAM['lang']['Support_Email'] = 'Если вы считаете, что это ошибка, или для того, попросить о помощи, {ClickHereLink}, чтобы отправить билет поддержки по электронной почте его на веб-мастеру этого сайта (пожалуйста, не изменить преамбулу или электронная почта тема линия).';

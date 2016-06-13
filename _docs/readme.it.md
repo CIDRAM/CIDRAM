@@ -302,9 +302,16 @@ Tag: Section 1
 
 Nell'esempio sopra `1.2.3.4/32` e `2.3.4.5/32` saranno etichettato come "IPv4", mentre `4.5.6.7/32` e `5.6.7.8/32` saranno etichettato come "Section 1".
 
+In aggiunta, se si desidera CIDRAM di ignorare completamente alcune sezioni specifiche in qualsiasi una delle file di firma, è possibile utilizzare il file `ignore.dat` per specificare quali sezioni a ignorare. In una nuova riga, scivere `Ignore`, seguito da uno spazio, seguito dal nome della sezione che si desidera CIDRAM a ignorare.
+
+Esempio:
+```
+Ignore Section 1
+```
+
 Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 
 ---
 
 
-Ultimo Aggiornamento: 28 Maggio 2016 (2016.05.28).
+Ultimo Aggiornamento: 13 Giugno 2016 (2016.06.13).

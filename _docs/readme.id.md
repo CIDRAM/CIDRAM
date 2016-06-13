@@ -302,9 +302,16 @@ Tag: Section 1
 
 Dalam contoh di atas `1.2.3.4/32` dan `2.3.4.5/32` akan di-tag sebagai "IPv4", sedangkan `4.5.6.7/32` dan `5.6.7.8/32` akan di-tag sebagai "Section 1".
 
+Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian tertentu dalam salah satu file tanda tangan, Anda dapat menggunakan file `ignore.dat` untuk menentukan bagian untuk mengabaikan. Pada baris baru, menulis `Ignore`, diikuti dengan spasi, diikuti dengan nama bagian yang Anda ingin CIDRAM untuk mengabaikan.
+
+Contoh:
+```
+Ignore Section 1
+```
+
 Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 
 ---
 
 
-Terakhir Diperbarui: 28 Mei 2016 (2016.05.28).
+Terakhir Diperbarui: 13 Juni 2016 (2016.06.13).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.18).
+ * This file: CLI handler (last modified: 2016.06.13).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -42,9 +42,12 @@ if ($CIDRAM['argv'][1] === '-h') {
         'xmlLang' => $CIDRAM['Config']['general']['lang'],
         'rURI' => 'CLI'
     );
-    $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2]);
-    $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2]);
-    if (!$CIDRAM['TestIPv4'] && !$CIDRAM['TestIPv6']) {
+    try {
+        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['argv'][2]);
+    } catch (\Exception $e) {
+        echo wordwrap($e->getMessage(), 78, "\n ");
+    }
+    if (!$CIDRAM['TestResults']) {
         echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
     } else {
         echo
@@ -56,14 +59,14 @@ if ($CIDRAM['argv'][1] === '-h') {
 } elseif ($CIDRAM['argv'][1] === '-g') {
     /** Generate CIDRs from an IP address. */
     echo "\n";
-    $CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($CIDRAM['argv'][2], true);
-    $CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($CIDRAM['argv'][2], true);
-    if (!empty($CIDRAM['TestIPv4'])) {
-        echo ' ' . implode("\n ", $CIDRAM['TestIPv4']);
-    } elseif (!empty($CIDRAM['TestIPv6'])) {
-        echo ' ' . implode("\n ", $CIDRAM['TestIPv6']);
-    } else {
+    $CIDRAM['TestResults'] = $CIDRAM['ExpandIPv4']($CIDRAM['argv'][2]);
+    if (empty($CIDRAM['TestResults'])) {
+        $CIDRAM['TestResults'] = $CIDRAM['ExpandIPv6']($CIDRAM['argv'][2]);
+    }
+    if (empty($CIDRAM['TestResults'])) {
         echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
+    } else {
+        echo ' ' . implode("\n ", $CIDRAM['TestResults']);
     }
     echo "\n";
 } elseif ($CIDRAM['argv'][1] === '-v') {
@@ -72,8 +75,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Started'], date('r')));
     if (empty($FileToValidate)) {
-        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n";
-        die;
+        die($CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n");
     }
     if (strpos($FileToValidate, "\r")) {
         echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_CRLF']);
@@ -128,8 +130,8 @@ if ($CIDRAM['argv'][1] === '-h') {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Syntax'], $i));
             continue;
         }
-        $Sig['IPv4'] = $CIDRAM['IPv4Test']($Sig['Initial'], true);
-        $Sig['IPv6'] = $CIDRAM['IPv6Test']($Sig['Initial'], true);
+        $Sig['IPv4'] = $CIDRAM['ExpandIPv4']($Sig['Initial']);
+        $Sig['IPv6'] = $CIDRAM['ExpandIPv6']($Sig['Initial']);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Invalid'], $i, $Sig['Initial']));
             continue;
@@ -201,8 +203,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Started'], date('r')));
     if (empty($FileToValidate)) {
-        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n";
-        die;
+        die($CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n");
     }
     $ModCheckBefore = '[' . md5($FileToValidate) . ':' . strlen($FileToValidate) . ']';
     $Operations = $Changes = 0;
@@ -263,8 +264,8 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Operations++;
             continue;
         }
-        $Sig['IPv4'] = $CIDRAM['IPv4Test']($Sig['Initial'], true);
-        $Sig['IPv6'] = $CIDRAM['IPv6Test']($Sig['Initial'], true);
+        $Sig['IPv4'] = $CIDRAM['ExpandIPv4']($Sig['Initial']);
+        $Sig['IPv6'] = $CIDRAM['ExpandIPv6']($Sig['Initial']);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
             $FileToValidate = str_replace("\n" . $ArrayToValidate[$i] . "\n", "\n# " . $ArrayToValidate[$i] . "\n", $FileToValidate);
             $Changes++;

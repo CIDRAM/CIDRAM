@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.05.28).
+ * This file: Output generator (last modified: 2016.06.13).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -64,14 +64,15 @@ $CIDRAM['BlockInfo']['rURI'] = (
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : 'Unknown.Host';
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
 
-/** Run the IPv4 test. */
-$CIDRAM['TestIPv4'] = $CIDRAM['IPv4Test']($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
+/** Run all IPv4/IPv6 tests. */
+try {
+    $CIDRAM['TestResults'] = $CIDRAM['RunTests']($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
-/** Run the IPv6 test. */
-$CIDRAM['TestIPv6'] = $CIDRAM['IPv6Test']($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
-
-/** If both tests fail, report an invalid IP address and kill the request. */
-if (!$CIDRAM['TestIPv4'] && !$CIDRAM['TestIPv6']) {
+/** If all tests fail, report an invalid IP address and kill the request. */
+if (!$CIDRAM['TestResults']) {
     $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_BadIP'];
     $CIDRAM['BlockInfo']['Signatures'] = '';
     $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['lang']['Short_BadIP'];

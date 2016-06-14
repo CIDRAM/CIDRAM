@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.3.0 ===
+MINOR RELEASE.
+
 - [2016.04.25; Minor code change; Maikuolan]: Signature files can now be
   specified via the configuration file (and so, modifying core script files in
   order to add additional custom signature files is no longer required).
@@ -39,7 +44,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   signature sections by identifying their section tags to an ignore file.
   Refactored a number of closures to reduce code duplication and to improve the
   their process logic; Some old closures renamed and split into multiple new
-  closures.
+  closures. Added internal language support for Russian (13 language options
+  now supported in total, not including CLI-mode support).
+
+Caleb M / Maikuolan,
+14th June 2016.
 
 === Version/Release 0.2.0 ===
 MINOR RELEASE.

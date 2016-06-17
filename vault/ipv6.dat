@@ -35,57 +35,57 @@
 # ---
 # WORST OFFENDING ASNs FOR MALWARE INFECTIONS, ACCORDING TO THE GOOGLE MALWARE DASHBOARD.
 # https://www.google.com/transparencyreport/safebrowsing/malware/
-# Updated: 2016.04.19 (Previously: 2016.03.20)
+# Updated: 2016.06.15 (Previously: 2016.04.19)
 # Statistics account for scanning by Google from 1 year up until the cited update date.
 
 #   RANK     ASN    AS                      RATE    INCLUDED IN HERE?   RANK SHIFT†
-#      1   35916    Multacom Corp.        43.02%    Yes (> 0.1.2)       +1
-#      2   46844    Sharktech             35.36%    Yes (> 0.1.2)       -1
-#      3   38197    Sun Network (H.K.)    26.18%    Yes (> 0.1.2)       ±0
-#      4   32097    WholeSale Internet    25.23%    Yes (all versions)  ±0
-#      5   26658    HT                    19.88%    Yes (> 0.1.2)       ±0
-#      6   62468    VpsQuan LLC.          17.09%    Yes (> 0.1.2)       +1
-#      7   17139    Corporate Colocation  16.00%    Yes (all versions)  -1
-#      8  133618    Trellian Pty. Ltd.    15.53%    Yes (> 0.1.2)       ±0
-#      9   33387    DataShack, LC         14.33%    Yes (all versions)  ±0
-#     10   58879    ShangHai AnchNet Tec  12.85%    Yes (> 0.1.2)       +1
-#     11   54600    PEG TECH INC          11.74%    Yes (all versions)  +5
-#     12   46573    Global Frag Networks  10.02%    Yes (> 0.1.2)       +4
-#     13    9304    Hutchison Global      11.19%    Pending†            NA
-#     14   16138    INTERIA               10.92%    Yes (> 0.1.2)       -4
-#     15   20248    Take 2 Hosting, Inc.  10.59%    Yes (> 0.1.2)       -1
-#     16    7497    CST-NET               10.25%    Yes (> 0.1.2)       -3
-#     17   40676    Psychz Networks        9.56%    Yes (all versions)  ±0
-#     18   35908    Krypt Technologies     9.35%    Yes (all versions)  -6
-#     19   38277    CommuniLink Internet   8.71%    Yes (> 0.1.2)       ±0
-#     20  133731    Royal Network Tech.    8.70%    Yes (> 0.1.2)       -2
+#      1   35916    Multacom Corp.        42.88%    Yes (> 0.1.2)       ±0
+#      2   22653    Cyber Wurx LLC        28.75%    Yes (=> 0.3.0)      NA
+#      3   32097    WholeSale Internet    26.56%    Yes (all versions)  +1
+#      4   38197    Sun Network (H.K.)    24.48%    Yes (> 0.1.2)       -1
+#      5   46844    Sharktech             22.03%    Yes (> 0.1.2)       -3
+#      6   21859    Zenlayer Inc          21.41%    Yes (=> 0.3.0)      NA
+#      7   26658    HT                    19.18%    Yes (> 0.1.2)       -2
+#      8   33387    DataShack, LC         16.25%    Yes (all versions)  +1
+#      9  133618    Trellian Pty. Ltd.    15.84%    Yes (> 0.1.2)       -1
+#     10   62468    VpsQuan LLC.          15.77%    Yes (> 0.1.2)       -4
+#     11   17139    Corporate Colocation  15.03%    Yes (all versions)  -4
+#     12   54600    PEG TECH INC          14.77%    Yes (all versions)  -1
+#     13   18978    Enzu Inc              14.16%    Yes (> 0.1.2)       NA
+#     14   36114    Versaweb, LLC         13.08%    Yes (> 0.1.2)       NA
+#     15   40676    Psychz Networks       11.66%    Yes (all versions)  +2
+#     16   35908    Krypt Technologies    11.62%    Yes (all versions)  +2
+#     17   58879    ShangHai AnchNet Tec  11.49%    Yes (> 0.1.2)       -7
+#     18   22552    eSited Solutions      10.43%    Yes (=> 0.3.0)      NA
+#     19   18779    EGIHosting            10.41%    Yes (=> 0.3.0)      NA
+#     20    7497    CST-NET               10.00%    Yes (> 0.1.2)       -4
 
 # THE WORLD's WORST BOTNET ASNs, ACCORDING TO ABUSEAT.ORG's CBL ("COMPOSITE BLOCKING LIST").
 # https://www.spamhaus.org/statistics/botnet-asn/
 # http://www.abuseat.org/asn.html
-# Updated: 2016.04.17 (Previously: 2016.03.31)
+# Updated: 2016.06.17 (Previously: 2016.04.17)
 
 #   RANK     ASN    AS            No. of BOTNETS     INFECT%    INCLUDED IN HERE?   RANK SHIFT†
-#      1    9829    BSNL                 619,654       9.25%    Pending†            ±0
-#      2   45899    VNPT Corp            536,739      11.29%    Pending†            ±0
-#      3    4134    No.31, Jin-rong St   423,214       0.35%    No                  ±0
-#      4   17974    PT Tel. Indonesia    300,701       4.10%    Pending†            ±0
-#      5   45595    Pakistan Telecom     230,975       1.54%    Yes (all versions)  ±0
-#      6   24560    Bharti Airtel        195,975       7.00%    Pending†            ±0
-#      7    7552    Viettel Corporation  170,786       1.21%    Pending†            ±0
-#      8    4837    CNCGROUP China169    136,374       0.24%    No                  ±0
-#      9    8151    Uninet S.A. de C.V.  135,796       0.86%    Pending†            NA
-#     10    8048    Servicios, Venezuela 119,912       3.17%    Pending†            NA
-#     11   18403    CFPT                 119,233       2.20%    Pending†            -2
-#     12    3462    DCBG                 116,839       0.86%    No                  -2
-#     13       ?    ?                    107,105         NA%    No                  NA
-#     14   12880    DCI-AS                98,740       1.16%    Pending†            NA
-#     15    8452    TE-AS                 93,909       0.33%    Pending†            NA
-#     16   36947    ALGTEL                87,987       0.78%    Pending†            NA
-#     17   45609    Bharti Airtel         83,196       1.58%    Pending†            NA
-#     18   47331    TTNet A.S.            82,298       1.53%    Pending†            NA
-#     19   22927    Tel. de Argentina     75,969       1.56%    Pending†            NA
-#     20   17813    Mahanagar Tel. Nigam  73,841       2.48%    Pending†            NA
+#      1    4134    No.31, Jin-rong St   532,393       0.44%    No                  +2
+#      2    9829    BSNL                 529,824       7.85%    Pending†            -1
+#      3   45899    VNPT Corp            466,147       9.75%    Pending†            -1
+#      4   17974    PT Tel. Indonesia    292,142       4.00%    Pending†            ±0
+#      5    3462    DCBG                 170,276       1.26%    No                  +7
+#      6    4837    CNCGROUP China169    154,343       0.27%    No                  +2
+#      7    7552    Viettel Corporation  139,335       0.95%    Pending†            ±0
+#      8   24560    Bharti Airtel        133,052       4.60%    Pending†            -2
+#      9    8048    Servicios, Venezuela 129,808       3.41%    Pending†            +1
+#     10   45595    Pakistan Telecom     112,833       2.05%    Yes (all versions)  -5
+#     11   18403    CFPT                 111,856       0.65%    Pending†            ±0
+#     12    8151    Uninet S.A. de C.V.  100,961       0.35%    Pending†            -3
+#     13    8452    TE-AS                 96,108       1.87%    Pending†            +2
+#     14   22927    Tel. de Argentina     87,090       0.72%    Pending†            +5
+#     15   36947    ALGTEL                82,462       1.49%    Pending†            +1
+#     16   47331    TTNet A.S.            79,709       7.34%    Pending†            +2
+#     17   12880    DCI-AS                76,899       0.90%    Pending†            -3
+#     18   23969    TOT Public Company    72,798       0.33%    Pending†            NA
+#     19    3269    Telecom Italia S.p.a  64,001       1.16%    Pending†            NA
+#     20   24086    Viettel Corporation   62,042       1.21%    Pending†            NA
 
 # RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
 # Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
@@ -563,6 +563,7 @@ Tag: H1 LLC
 2a02:13f0:8100::/48 Deny Generic
 2a03:5180::/46 Deny Generic
 2a03:5180:4::/47 Deny Generic
+2a05:3a40:2::/48 Deny Generic
 2a06:1700::/48 Deny Generic
 2a07:7500::/29 Deny Generic
 Tag: Voxility LLC
@@ -750,6 +751,7 @@ Tag: PIN-AS
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
 2403:cc00:3000::/36 Deny Cloud
+2607:bd00:100::/48 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a03:b201::/32 Deny Cloud
 2a03:ca80::/31 Deny Cloud
@@ -1021,6 +1023,7 @@ Tag: Black Lotus
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:3::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
+2605:8900:3000::/36 Deny Cloud
 2607:8700:102::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
@@ -1106,6 +1109,7 @@ Tag: Private Layer INC
 2604:6600::/32 Deny Cloud
 2605:5200:c91a::/48 Deny Cloud
 2605:e280:c65a::/48 Deny Cloud
+2804:644::/32 Deny Cloud
 2a05:b0c6:1300::/44 Deny Cloud
 2a06:e881:100::/48 Deny Cloud
 Tag: Psychz Networks
@@ -1186,8 +1190,8 @@ Tag: WorldStream
 
 
 # ASN 20473 ("Choopa, LLC").
-# Infected by malware (as per reported by Google): 0.07%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 0.06%.
+# Updated: 2016.06.17
 
 2001:19f0::/38 Deny Cloud
 2001:19f0:a06::/48 Deny Cloud
@@ -1201,21 +1205,125 @@ Tag: WorldStream
 2001:19f0:7800::/38 Deny Cloud
 2001:19f0:8000::/38 Deny Cloud
 2001:19f0:8800::/38 Deny Cloud
-2001:19f0:9000::/38 Deny Cloud
-2001:19f0:9400::/38 Deny Cloud
-2001:19f0:a800::/38 Deny Cloud
-2001:19f0:ac00::/38 Deny Cloud
-2402:d581::/32 Deny Cloud
-2602:ff71::/48 Deny Cloud
-2602:ffb0:5::/48 Deny Cloud
-2602:ffb0:6::/47 Deny Cloud
-2602:ffb0:8::/47 Deny Cloud
-2602:ffb0:13::/48 Deny Cloud
-2602:ffb0:16::/47 Deny Cloud
+2001:19f0:9000::/37 Deny Cloud
+2001:19f0:a800::/37 Deny Cloud
+2404:bd80:c1::/48 Deny Cloud
+2602:ffb0:e::/48 Deny Cloud
+2602:ffb0:10::/48 Deny Cloud
 2602:ffe5:800::/40 Deny Cloud
 2602:fff6:4::/48 Deny Cloud
 2605:9880::/37 Deny Cloud
+2a07:4240::/29 Deny Cloud
+2a07:4cc0::/32 Deny Cloud
 2a07:4cc1::/32 Deny Cloud
+2a07:7ec0::/38 Deny Cloud
+2a07:7ec0:c00::/38 Deny Cloud
+2a07:7ec0:1000::/38 Deny Cloud
+2a07:7ec0:2400::/38 Deny Cloud
+2a07:7ec0:3000::/38 Deny Cloud
+2a07:7ec0:3c00::/38 Deny Cloud
+2a07:7ec0:6000::/38 Deny Cloud
+2a07:7ec0:7000::/38 Deny Cloud
+2a07:7ec0:7c00::/38 Deny Cloud
+2a07:7ec0:8400::/38 Deny Cloud
+2a07:7ec0:9000::/38 Deny Cloud
+2a07:7ec0:ac00::/38 Deny Cloud
+2a07:7ec0:c000::/38 Deny Cloud
+2a07:7ec0:d800::/38 Deny Cloud
+2a07:7ec0:ec00::/38 Deny Cloud
+2a07:7ec1:1800::/38 Deny Cloud
+2a07:7ec1:2800::/38 Deny Cloud
+2a07:7ec1:3400::/38 Deny Cloud
+2a07:7ec1:3800::/38 Deny Cloud
+2a07:7ec1:4400::/38 Deny Cloud
+2a07:7ec1:4c00::/38 Deny Cloud
+2a07:7ec1:5800::/37 Deny Cloud
+2a07:7ec1:6000::/37 Deny Cloud
+2a07:7ec1:7000::/37 Deny Cloud
+2a07:7ec1:7c00::/38 Deny Cloud
+2a07:7ec1:8000::/37 Deny Cloud
+2a07:7ec1:8c00::/38 Deny Cloud
+2a07:7ec1:9400::/38 Deny Cloud
+2a07:7ec1:ac00::/38 Deny Cloud
+2a07:7ec1:d400::/38 Deny Cloud
+2a07:7ec1:dc00::/38 Deny Cloud
+2a07:7ec1:ec00::/38 Deny Cloud
+2a07:7ec2::/34 Deny Cloud
+2a07:7ec2:4c00::/38 Deny Cloud
+2a07:7ec2:5400::/38 Deny Cloud
+2a07:7ec2:5800::/38 Deny Cloud
+2a07:7ec2:6000::/38 Deny Cloud
+2a07:7ec2:6800::/38 Deny Cloud
+2a07:7ec2:7000::/38 Deny Cloud
+2a07:7ec2:8c00::/38 Deny Cloud
+2a07:7ec2:9800::/37 Deny Cloud
+2a07:7ec2:b000::/38 Deny Cloud
+2a07:7ec2:c800::/38 Deny Cloud
+2a07:7ec2:dc00::/38 Deny Cloud
+2a07:7ec3:c00::/38 Deny Cloud
+2a07:7ec3:2400::/38 Deny Cloud
+2a07:7ec3:3c00::/38 Deny Cloud
+2a07:7ec3:4000::/37 Deny Cloud
+2a07:7ec3:5400::/38 Deny Cloud
+2a07:7ec3:6c00::/38 Deny Cloud
+2a07:7ec3:7000::/38 Deny Cloud
+2a07:7ec3:7800::/38 Deny Cloud
+2a07:7ec3:8000::/34 Deny Cloud
+2a07:7ec3:c800::/38 Deny Cloud
+2a07:7ec3:d400::/38 Deny Cloud
+2a07:7ec3:e000::/37 Deny Cloud
+2a07:7ec4::/38 Deny Cloud
+2a07:7ec4:1400::/38 Deny Cloud
+2a07:7ec4:1800::/38 Deny Cloud
+2a07:7ec4:2800::/38 Deny Cloud
+2a07:7ec4:3400::/38 Deny Cloud
+2a07:7ec4:4000::/37 Deny Cloud
+2a07:7ec4:5c00::/38 Deny Cloud
+2a07:7ec4:6800::/38 Deny Cloud
+2a07:7ec4:7400::/38 Deny Cloud
+2a07:7ec4:7c00::/38 Deny Cloud
+2a07:7ec4:8800::/38 Deny Cloud
+2a07:7ec4:9000::/38 Deny Cloud
+2a07:7ec4:a800::/38 Deny Cloud
+2a07:7ec4:c000::/38 Deny Cloud
+2a07:7ec4:c800::/37 Deny Cloud
+2a07:7ec4:f800::/38 Deny Cloud
+2a07:7ec5::/38 Deny Cloud
+2a07:7ec5:2000::/38 Deny Cloud
+2a07:7ec5:5400::/38 Deny Cloud
+2a07:7ec5:7000::/38 Deny Cloud
+2a07:7ec5:7800::/38 Deny Cloud
+2a07:7ec5:9c00::/38 Deny Cloud
+2a07:7ec5:a400::/38 Deny Cloud
+2a07:7ec5:b000::/38 Deny Cloud
+2a07:7ec5:d000::/38 Deny Cloud
+2a07:7ec5:dc00::/38 Deny Cloud
+2a07:7ec5:f800::/37 Deny Cloud
+2a07:7ec6::/34 Deny Cloud
+2a07:7ec6:6800::/38 Deny Cloud
+2a07:7ec6:7800::/38 Deny Cloud
+2a07:7ec6:8400::/38 Deny Cloud
+2a07:7ec6:9000::/37 Deny Cloud
+2a07:7ec6:c800::/38 Deny Cloud
+2a07:7ec6:d400::/38 Deny Cloud
+2a07:7ec6:e400::/38 Deny Cloud
+2a07:7ec6:f000::/38 Deny Cloud
+2a07:7ec6:fc00::/38 Deny Cloud
+2a07:7ec7::/38 Deny Cloud
+2a07:7ec7:1400::/38 Deny Cloud
+2a07:7ec7:1800::/38 Deny Cloud
+2a07:7ec7:2000::/37 Deny Cloud
+2a07:7ec7:3400::/38 Deny Cloud
+2a07:7ec7:3c00::/38 Deny Cloud
+2a07:7ec7:5400::/38 Deny Cloud
+2a07:7ec7:6800::/38 Deny Cloud
+2a07:7ec7:8400::/38 Deny Cloud
+2a07:7ec7:ac00::/38 Deny Cloud
+2a07:7ec7:b000::/38 Deny Cloud
+2a07:7ec7:bc00::/38 Deny Cloud
+2a07:7ec7:ec00::/38 Deny Cloud
+2a07:7ec7:f400::/38 Deny Cloud
+2a07:8000::/29 Deny Cloud
 Tag: Choopa, LLC
 
 
@@ -1283,6 +1391,7 @@ Tag: K SERVERS LTD
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
+2605:f700:42::/48 Deny Cloud
 2605:f700:80::/44 Deny Cloud
 2605:f700:c0::/44 Deny Cloud
 2605:f700:100::/44 Deny Cloud
@@ -1762,6 +1871,9 @@ Tag: AltusHost B.V
 2600:1406:10::/48 Deny Cloud
 2600:1406:12::/47 Deny Cloud
 2600:1406:19::/48 Deny Cloud
+2600:1406:19:1::/64 Deny Cloud
+2600:1406:19:2::/63 Deny Cloud
+2600:1406:19:4::/64 Deny Cloud
 2600:1406:1a::/47 Deny Cloud
 2600:1406:1c::/46 Deny Cloud
 2600:1406:20::/46 Deny Cloud
@@ -1777,6 +1889,13 @@ Tag: AltusHost B.V
 2600:1406:3e::/47 Deny Cloud
 2600:1406:40::/48 Deny Cloud
 2600:1406:43::/48 Deny Cloud
+2600:1406:43:101::/64 Deny Cloud
+2600:1406:43:102::/63 Deny Cloud
+2600:1406:43:104::/62 Deny Cloud
+2600:1406:43:108::/63 Deny Cloud
+2600:1406:43:110::/61 Deny Cloud
+2600:1406:43:118::/63 Deny Cloud
+2600:1406:43:120::/64 Deny Cloud
 2600:1406:45::/48 Deny Cloud
 2600:1406:47::/48 Deny Cloud
 2600:1407:3::/48 Deny Cloud
@@ -2243,6 +2362,8 @@ Tag: Zyztm
 # Infected by malware (as per reported by Google): 4.09%.
 # Updated: 2016.04.23
 
+2001:978:2305::/48 Deny Cloud
+2001:978:3400::/48 Deny Cloud
 2001:ac8::/32 Deny Cloud
 2a00:b320::/48 Deny Cloud
 2a01:300::/29 Deny Cloud
@@ -2272,8 +2393,8 @@ Tag: Henderson
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
-# Infected by malware (as per reported by Google): 3.58%.
-# Updated: 2016.04.23
+# Infected by malware (as per reported by Google): 9.72%.
+# Updated: 2016.04.23 / Checked: 2016.06.17
 
 2a01:6100::/32 Deny Cloud
 Tag: Nazwa.pl
@@ -2409,6 +2530,11 @@ Tag: EVANZO GmbH
 2001:590:1405::/48 Deny Cloud
 2001:590:3c03::/48 Deny Cloud
 2001:590:4802::/48 Deny Cloud
+2607:f358:7::/48 Deny Cloud
+2607:f358:f::/48 Deny Cloud
+2607:f358:19::/48 Deny Cloud
+2607:f358:1f::/48 Deny Cloud
+2607:f358:2d::/48 Deny Cloud
 2a01:b840::/32 Deny Cloud
 2a03:4a80::/45 Deny Cloud
 2a03:4a80:8::/47 Deny Cloud
@@ -2466,8 +2592,8 @@ Tag: NetRegistry Pty Ltd
 
 
 # ASN 22552 ("eSited Solutions").
-# Infected by malware (as per reported by Google): 7.71%.
-# Updated: 2016.05.01
+# Infected by malware (as per reported by Google): 10.43%.
+# Updated: 2016.05.01 / Checked: 2016.06.17
 
 2001:470:9b::/48 Deny Cloud
 2604:4480::/32 Deny Cloud
@@ -2523,6 +2649,8 @@ Tag: 23Media GmbH
 2605:7300::/31 Deny Cloud
 2606:d880::/32 Deny Cloud
 2a00:1630::/29 Deny Cloud
+2a00:1632::/31 Deny Cloud
+2a00:1634::/32 Deny Cloud
 2a00:1708::/32 Deny Cloud
 2a00:1d20::/32 Deny Cloud
 2a02:50e0::/32 Deny Cloud
@@ -2574,6 +2702,18 @@ Tag: Serverius Holding
 2a00:4e40:2::/48 Deny Cloud
 2a01:7c8::/32 Deny Cloud
 Tag: Transip B.V
+
+
+# ASN 200429 ("HostSlim BV")
+# Infected by malware (as per reported by Google): 0.61%.
+# Updated: 2016.05.09
+
+2a00:1ca8:17::/48 Deny Cloud
+2a00:1ca8:19::/48 Deny Cloud
+2a00:1ca8:37::/48 Deny Cloud
+2a06:4140::/29 Deny Cloud
+2a06:4741::/32 Deny Cloud
+Tag: HostSlim BV
 
 
 # ASN 43350 ("NForce Entertainment B.V")
@@ -2818,6 +2958,14 @@ Tag: D.E.Tech
 2a02:4e8:d::/48 Deny Cloud
 2a02:4e8:14::/48 Deny Cloud
 Tag: Host Europe GmbH
+
+
+# ASN 29873 ("The Endurance International Group, Inc").
+# Infected by malware (as per reported by Google): 0.91%.
+# Updated: 2016.06.17
+
+2605:f300:ffff::/48 Deny Cloud
+Tag: Endurance Int
 
 
 # ---

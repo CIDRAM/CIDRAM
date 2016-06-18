@@ -7,7 +7,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2016.06.18; Bug-fix; Maikuolan]: A bug was found by joe38 whereby some of
+  the provider-specific bypasses included in the default CIDRAM signatures
+  would trigger an error instead of the expected CIDRAM Access Denied message,
+  and additionally, some bypasses weren't written with the considerations
+  appropriate to the execution context required from which they were executing;
+  Fixed. Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3905
 
 === Version/Release 0.3.0 ===
 MINOR RELEASE.

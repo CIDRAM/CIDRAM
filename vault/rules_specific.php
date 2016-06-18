@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2016.04.27).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2016.06.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,30 +16,34 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-/** Prevents execution from outside of the IP test functions. */
-if (!isset($cidr[$i])) {
+/** Prevents execution from outside of the CheckFactors closure. */
+if (!isset($Factors[$FactorIndex])) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-/** Skip further processing if the `block_cloud` directive is false. */
+$bypass = false;
+
+/** Skip further processing if the "block_cloud" directive is false. */
 if (!$CIDRAM['Config']['signatures']['block_cloud']) {
-    continue;
+    $bypass = true;
 }
 
 /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". **/
-if ($Addr === '162.13.83.46') {
-    continue;
+if ($Factors[31] === '162.13.83.46/32') {
+    $bypass = true;
 }
 
-if (!$CIDRAM['CIDRAM_sapi']) {
-    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
-    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+if (!$bypass) {
+    if (!$CIDRAM['CIDRAM_sapi']) {
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
+        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+        }
+        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
+        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+        }
     }
-    $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
-    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-    }
+    $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
 }
-$CIDRAM['BlockInfo']['Signatures'] .= $cidr[$i];
-$CIDRAM['BlockInfo']['SignatureCount']++;

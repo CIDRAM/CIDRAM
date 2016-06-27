@@ -3619,7 +3619,7 @@ Tag: Pakistan Telecom
 
 # Kintiskton LLC; Mark Manager copyright check bot (abusive history).
 # Seen split inconsistently over multiple ASNs (need to be careful when updating).
-# Updated: 2016.04.13
+# Updated: 2016.04.13 / Checked: 2016.06.24
 
 63.110.187.0/24 Deny Generic
 Tag: Kintiskton LLC
@@ -3627,7 +3627,7 @@ Tag: Kintiskton LLC
 
 # www.anonymouse.org (1 CIDR; no ASN).
 # Anonymous proxy service; Potential source of SPAM and hacking attacks.
-# Updated: 2016.04.13
+# Updated: 2016.04.13 / Checked: 2016.06.24
 
 193.200.150.0/24 Deny Proxy
 Tag: anonymouse.org
@@ -3635,25 +3635,30 @@ Tag: anonymouse.org
 
 # proXPN Direct LLC (1 CIDR; no ASN).
 # Anonymous proxy service; Potential source of SPAM and hacking attacks.
-# Updated: 2016.05.26
+# Updated: 2016.05.26 / Checked: 2016.06.24
 
 173.0.0.0/20 Deny Proxy
 Tag: proXPN Direct LLC
 
 
 # Announcing as "Reverse-Proxy" (various non-specific ASNs).
-# Updated: 2016.05.26
+# Updated: 2016.06.24
 
 5.153.232.0/23 Deny Proxy
 5.153.234.0/24 Deny Proxy
 5.153.236.0/24 Deny Proxy
 5.153.238.0/23 Deny Proxy
 5.157.4.0/24 Deny Proxy
+5.157.11.0/24 Deny Proxy
 5.157.36.0/24 Deny Proxy
-5.157.50.0/23 Deny Proxy
+5.157.40.0/22 Deny Proxy
+5.157.44.0/23 Deny Proxy
 37.72.184.0/23 Deny Proxy
 37.72.188.0/24 Deny Proxy
 37.72.190.0/23 Deny Proxy
+37.203.212.0/23 Deny Proxy
+37.203.214.0/24 Deny Proxy
+91.108.176.0/22 Deny Proxy
 Tag: Reverse-Proxy
 
 
@@ -3963,20 +3968,15 @@ Tag: Portlane Networks AB
 
 5.34.240.0/21 Deny Cloud
 5.157.0.0/22 Deny Cloud
-5.157.11.0/24 Deny Cloud
 5.157.14.0/23 Deny Cloud
 5.157.16.0/24 Deny Cloud
 5.157.38.0/24 Deny Cloud
-5.157.40.0/22 Deny Cloud
-5.157.44.0/23 Deny Cloud
 5.157.48.0/24 Deny Cloud
+5.157.50.0/23 Deny Cloud
 5.157.53.0/24 Deny Cloud
 5.157.54.0/24 Deny Cloud
 37.203.209.0/24 Deny Cloud
-37.203.212.0/23 Deny Cloud
-37.203.214.0/24 Deny Cloud
 46.29.248.0/21 Deny Cloud
-91.108.176.0/22 Deny Cloud
 91.108.180.0/23 Deny Cloud
 91.108.183.0/24 Deny Cloud
 130.185.152.0/23 Deny Cloud
@@ -10285,13 +10285,6 @@ Tag: eSited Solutions
 Tag: ProServe B.V
 
 
-# ASN 20718 ("ARSYS INTERNET S.L").
-# Infected by malware (as per reported by Google): 2.15%.
-# Updated: 2016.05.01
-
-Tag: ARSYS INTERNET S.L
-
-
 # ASN 39326 ("HighSpeed Office Limited").
 # Infected by malware (as per reported by Google): 1.12%.
 # Updated: 2016.05.05
@@ -11448,7 +11441,7 @@ Tag: SICRES SRL
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Thanks to chris_c for finding these. :-)
-# Updated: 2016.06.19
+# Updated: 2016.06.27
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3799
 # Refer microsoft.com/en-us/download/details.aspx?id=41653
 
@@ -12144,10 +12137,9 @@ Tag: SICRES SRL
 52.166.25.0/24 Deny Cloud
 52.166.32.0/19 Deny Cloud
 52.166.64.0/20 Deny Cloud
-52.166.80.0/26 Deny Cloud
-52.166.80.64/27 Deny Cloud
-52.166.80.96/28 Deny Cloud
+52.166.80.0/25 Deny Cloud
 52.166.81.0/24 Deny Cloud
+52.166.82.0/24 Deny Cloud
 52.166.88.0/21 Deny Cloud
 52.166.96.0/19 Deny Cloud
 52.166.128.0/20 Deny Cloud
@@ -12348,7 +12340,9 @@ Tag: SICRES SRL
 52.177.224.0/19 Deny Cloud
 52.178.0.0/19 Deny Cloud
 52.178.32.0/20 Deny Cloud
-52.178.64.0/21 Deny Cloud
+52.178.64.0/19 Deny Cloud
+52.178.96.0/20 Deny Cloud
+52.178.112.0/21 Deny Cloud
 52.178.128.0/19 Deny Cloud
 52.178.160.0/21 Deny Cloud
 52.178.168.0/28 Deny Cloud
@@ -12364,15 +12358,18 @@ Tag: SICRES SRL
 52.179.25.0/24 Deny Cloud
 52.179.32.0/19 Deny Cloud
 52.179.64.0/20 Deny Cloud
+52.179.80.0/21 Deny Cloud
+52.179.96.0/19 Deny Cloud
 52.179.144.48/28 Deny Cloud
 52.179.144.64/27 Deny Cloud
 52.179.146.0/24 Deny Cloud
 52.179.192.0/19 Deny Cloud
 52.179.224.0/20 Deny Cloud
-52.179.240.32/27 Deny Cloud
-52.179.240.64/26 Deny Cloud
+52.179.240.0/25 Deny Cloud
 52.179.240.128/26 Deny Cloud
 52.179.240.192/27 Deny Cloud
+52.179.241.16/28 Deny Cloud
+52.179.241.32/27 Deny Cloud
 52.179.241.64/28 Deny Cloud
 52.179.242.0/24 Deny Cloud
 52.179.248.0/21 Deny Cloud
@@ -12399,6 +12396,8 @@ Tag: SICRES SRL
 52.184.128.0/19 Deny Cloud
 52.184.160.0/21 Deny Cloud
 52.184.168.0/28 Deny Cloud
+52.184.168.80/28 Deny Cloud
+52.184.168.96/27 Deny Cloud
 52.184.168.128/28 Deny Cloud
 52.184.169.0/24 Deny Cloud
 52.184.170.0/24 Deny Cloud
@@ -12413,6 +12412,9 @@ Tag: SICRES SRL
 52.186.16.0/20 Deny Cloud
 52.186.32.0/20 Deny Cloud
 52.186.48.0/21 Deny Cloud
+52.186.112.0/28 Deny Cloud
+52.186.113.0/24 Deny Cloud
+52.186.120.0/21 Deny Cloud
 52.187.0.0/18 Deny Cloud
 52.187.64.0/20 Deny Cloud
 52.187.80.0/28 Deny Cloud
@@ -12442,6 +12444,9 @@ Tag: SICRES SRL
 52.190.136.0/21 Deny Cloud
 52.190.144.0/20 Deny Cloud
 52.190.160.0/21 Deny Cloud
+52.190.168.0/28 Deny Cloud
+52.190.169.0/24 Deny Cloud
+52.190.176.0/20 Deny Cloud
 52.190.240.48/28 Deny Cloud
 52.190.240.64/27 Deny Cloud
 52.191.64.0/19 Deny Cloud
@@ -12459,6 +12464,26 @@ Tag: SICRES SRL
 52.224.41.0/24 Deny Cloud
 52.224.48.0/20 Deny Cloud
 52.224.64.0/19 Deny Cloud
+52.224.96.0/28 Deny Cloud
+52.224.97.0/24 Deny Cloud
+52.224.104.0/21 Deny Cloud
+52.224.112.0/20 Deny Cloud
+52.224.128.0/20 Deny Cloud
+52.224.144.0/21 Deny Cloud
+52.224.152.0/28 Deny Cloud
+52.224.153.0/24 Deny Cloud
+52.224.160.0/19 Deny Cloud
+52.224.192.0/20 Deny Cloud
+52.224.208.0/28 Deny Cloud
+52.224.209.0/24 Deny Cloud
+52.224.216.0/21 Deny Cloud
+52.224.224.0/19 Deny Cloud
+52.225.40.0/28 Deny Cloud
+52.225.41.0/24 Deny Cloud
+52.225.48.0/20 Deny Cloud
+52.225.64.0/19 Deny Cloud
+52.225.240.0/28 Deny Cloud
+52.226.0.0/21 Deny Cloud
 52.226.8.112/28 Deny Cloud
 52.226.8.128/27 Deny Cloud
 52.226.128.0/19 Deny Cloud
@@ -12627,7 +12652,9 @@ Tag: SICRES SRL
 138.91.96.128/26 Deny Cloud
 138.91.96.192/28 Deny Cloud
 138.91.112.0/20 Deny Cloud
-138.91.128.0/24 Deny Cloud
+138.91.128.48/28 Deny Cloud
+138.91.128.64/26 Deny Cloud
+138.91.128.128/25 Deny Cloud
 138.91.129.0/26 Deny Cloud
 138.91.129.64/28 Deny Cloud
 138.91.136.0/21 Deny Cloud
@@ -12916,9 +12943,10 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.06.19
+# Updated: 2016.06.27
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
+5.154.191.194/32 Deny Generic
 31.28.27.17/32 Deny Generic
 37.123.99.188/32 Deny Generic
 37.143.11.189/32 Deny Generic
@@ -12929,6 +12957,7 @@ Tag: Azure
 60.241.184.209/32 Deny Generic
 64.85.233.8/32 Deny Generic
 64.127.71.73/32 Deny Generic
+65.99.252.118/32 Deny Generic
 65.182.101.221/32 Deny Generic
 66.45.245.150/32 Deny Generic
 80.65.93.241/32 Deny Generic
@@ -12968,7 +12997,6 @@ Tag: Azure
 173.233.77.122/32 Deny Generic
 177.4.23.159/32 Deny Generic
 180.182.234.200/32 Deny Generic
-185.25.49.241/32 Deny Generic
 185.25.117.49/32 Deny Generic
 185.25.119.84/32 Deny Generic
 185.80.129.62/32 Deny Generic
@@ -12991,11 +13019,9 @@ Tag: Azure
 195.20.40.123/32 Deny Generic
 195.20.41.233/32 Deny Generic
 195.20.42.1/32 Deny Generic
-195.20.43.189/32 Deny Generic
 195.20.44.100/32 Deny Generic
 195.20.44.109/32 Deny Generic
 195.20.46.116/32 Deny Generic
-195.20.47.56/32 Deny Generic
 195.242.161.117/32 Deny Generic
 198.245.202.92/32 Deny Generic
 199.7.234.100/32 Deny Generic
@@ -13011,13 +13037,14 @@ Tag: Azure
 203.170.193.23/32 Deny Generic
 210.4.76.221/32 Deny Generic
 212.44.64.202/32 Deny Generic
+212.56.214.162/32 Deny Generic
 213.147.67.20/32 Deny Generic
 216.176.100.240/32 Deny Generic
 216.215.112.149/32 Deny Generic
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.09.19
+Expires: 2016.09.27
 
 
 # ---
@@ -13025,7 +13052,7 @@ Expires: 2016.09.19
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2016.06.19
+# Updated: 2016.06.27
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
@@ -13037,6 +13064,7 @@ Expires: 2016.09.19
 5.101.218.0/24 Deny Generic
 5.101.221.0/24 Deny Generic
 5.134.128.0/19 Deny Generic
+8.24.224.0/20 Deny Generic
 14.4.0.0/14 Deny Generic
 14.102.172.0/22 Deny Generic
 14.245.0.0/16 Deny Generic
@@ -13079,6 +13107,7 @@ Expires: 2016.09.19
 41.203.64.0/24 Deny Generic
 41.203.67.0/24 Deny Generic
 41.203.69.0/24 Deny Generic
+41.216.176.0/20 Deny Generic
 42.0.32.0/19 Deny Generic
 42.1.56.0/22 Deny Generic
 42.1.128.0/17 Deny Generic
@@ -13159,6 +13188,7 @@ Expires: 2016.09.19
 91.220.101.0/24 Deny Generic
 91.220.163.0/24 Deny Generic
 91.223.89.0/24 Deny Generic
+91.225.216.0/22 Deny Generic
 91.226.97.0/24 Deny Generic
 91.229.210.0/24 Deny Generic
 91.230.110.0/24 Deny Generic
@@ -13356,6 +13386,7 @@ Expires: 2016.09.19
 155.204.0.0/16 Deny Generic
 155.249.0.0/16 Deny Generic
 157.115.0.0/16 Deny Generic
+157.122.148.0/24 Deny Generic
 157.162.0.0/16 Deny Generic
 157.186.0.0/16 Deny Generic
 157.195.0.0/16 Deny Generic
@@ -13458,6 +13489,8 @@ Expires: 2016.09.19
 185.112.80.0/23 Deny Generic
 185.112.102.0/23 Deny Generic
 185.130.4.0/22 Deny Generic
+185.133.20.0/22 Deny Generic
+185.135.184.0/22 Deny Generic
 185.147.156.0/22 Deny Generic
 186.1.128.0/19 Deny Generic
 186.65.112.0/20 Deny Generic
@@ -13808,12 +13841,12 @@ Expires: 2016.09.19
 223.201.0.0/16 Deny Generic
 223.254.0.0/16 Deny Generic
 Tag: Spamhaus DROP/EDROP
-Expires: 2016.09.19
+Expires: 2016.09.27
 
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.06.19
+# Updated: 2016.06.27
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 2.56.0.0/14 Deny Bogon
@@ -13823,6 +13856,7 @@ Expires: 2016.09.19
 5.180.0.0/14 Deny Bogon
 5.199.184.0/21 Deny Bogon
 5.252.0.0/15 Deny Bogon
+14.192.48.0/21 Deny Bogon
 31.13.184.0/21 Deny Bogon
 31.22.8.0/21 Deny Bogon
 31.40.192.0/18 Deny Bogon
@@ -13847,14 +13881,18 @@ Expires: 2016.09.19
 37.252.216.0/21 Deny Bogon
 41.84.160.0/19 Deny Bogon
 41.245.0.0/16 Deny Bogon
+43.228.244.0/22 Deny Bogon
+43.245.120.0/22 Deny Bogon
+43.250.76.0/22 Deny Bogon
 45.8.0.0/13 Deny Bogon
 45.65.64.0/18 Deny Bogon
 45.66.0.0/15 Deny Bogon
 45.80.0.0/12 Deny Bogon
+45.114.4.0/22 Deny Bogon
 45.128.0.0/11 Deny Bogon
 45.220.0.0/15 Deny Bogon
-45.222.0.0/17 Deny Bogon
-45.222.128.0/18 Deny Bogon
+45.222.0.0/18 Deny Bogon
+45.222.96.0/20 Deny Bogon
 46.29.24.0/21 Deny Bogon
 46.30.184.0/21 Deny Bogon
 46.183.184.0/21 Deny Bogon
@@ -13919,6 +13957,7 @@ Expires: 2016.09.19
 84.39.192.0/20 Deny Bogon
 84.252.64.0/18 Deny Bogon
 85.8.128.0/18 Deny Bogon
+85.31.32.0/19 Deny Bogon
 85.92.96.0/19 Deny Bogon
 85.117.224.0/19 Deny Bogon
 85.158.8.0/21 Deny Bogon
@@ -14328,21 +14367,60 @@ Expires: 2016.09.19
 95.215.140.0/22 Deny Bogon
 100.64.0.0/10 Deny Bogon
 102.0.0.0/8 Deny Bogon
-103.29.0.0/22 Deny Bogon
-103.66.170.0/23 Deny Bogon
-103.66.176.0/20 Deny Bogon
-103.66.192.0/18 Deny Bogon
-103.67.0.0/16 Deny Bogon
+103.17.127.0/24 Deny Bogon
+103.19.219.0/24 Deny Bogon
+103.23.215.0/24 Deny Bogon
+103.30.213.0/24 Deny Bogon
+103.31.27.0/24 Deny Bogon
+103.67.177.0/24 Deny Bogon
+103.67.186.0/23 Deny Bogon
+103.67.196.0/22 Deny Bogon
+103.67.200.0/21 Deny Bogon
+103.67.208.0/20 Deny Bogon
+103.67.224.0/19 Deny Bogon
 103.68.0.0/14 Deny Bogon
 103.72.0.0/13 Deny Bogon
 103.80.0.0/12 Deny Bogon
 103.96.0.0/11 Deny Bogon
 103.128.0.0/10 Deny Bogon
-103.246.72.0/22 Deny Bogon
+103.225.116.0/22 Deny Bogon
+103.227.1.0/24 Deny Bogon
+103.227.4.0/22 Deny Bogon
+103.227.92.0/22 Deny Bogon
+103.227.180.0/22 Deny Bogon
+103.227.184.0/22 Deny Bogon
+103.228.8.0/22 Deny Bogon
+103.228.84.0/22 Deny Bogon
+103.228.104.0/22 Deny Bogon
+103.228.136.0/22 Deny Bogon
+103.228.168.0/22 Deny Bogon
+103.228.224.0/22 Deny Bogon
+103.229.60.0/22 Deny Bogon
+103.229.68.0/22 Deny Bogon
+103.230.116.0/22 Deny Bogon
+103.230.172.0/22 Deny Bogon
+103.232.104.0/22 Deny Bogon
+103.232.142.0/23 Deny Bogon
+103.232.248.0/22 Deny Bogon
+103.233.40.0/22 Deny Bogon
+103.233.200.0/22 Deny Bogon
+103.240.188.0/22 Deny Bogon
+103.243.48.0/22 Deny Bogon
+103.244.112.0/22 Deny Bogon
+103.244.192.0/22 Deny Bogon
+103.246.172.0/22 Deny Bogon
+103.247.19.0/24 Deny Bogon
+103.252.32.0/22 Deny Bogon
+103.252.96.0/22 Deny Bogon
+103.252.176.0/22 Deny Bogon
+103.254.248.0/22 Deny Bogon
+103.255.56.0/22 Deny Bogon
+103.255.132.0/22 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
 109.71.248.0/21 Deny Bogon
 109.73.128.0/20 Deny Bogon
+109.94.208.0/20 Deny Bogon
 109.95.120.0/21 Deny Bogon
 109.196.160.0/20 Deny Bogon
 109.206.224.0/19 Deny Bogon
@@ -14350,6 +14428,10 @@ Expires: 2016.09.19
 109.232.160.0/21 Deny Bogon
 109.233.104.0/21 Deny Bogon
 109.236.48.0/20 Deny Bogon
+116.66.176.0/20 Deny Bogon
+116.197.152.0/21 Deny Bogon
+119.42.32.0/19 Deny Bogon
+121.54.184.0/21 Deny Bogon
 128.0.156.0/22 Deny Bogon
 128.127.8.0/21 Deny Bogon
 128.127.176.0/21 Deny Bogon
@@ -14381,7 +14463,7 @@ Expires: 2016.09.19
 160.226.128.0/17 Deny Bogon
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
-164.160.80.0/20 Deny Bogon
+164.160.88.0/21 Deny Bogon
 164.160.96.0/19 Deny Bogon
 164.160.128.0/19 Deny Bogon
 164.160.176.0/20 Deny Bogon
@@ -14396,11 +14478,9 @@ Expires: 2016.09.19
 169.254.0.0/16 Deny Bogon
 170.78.0.0/15 Deny Bogon
 170.80.0.0/14 Deny Bogon
-170.150.40.0/22 Deny Bogon
-170.231.84.0/22 Deny Bogon
-170.231.88.0/21 Deny Bogon
-170.231.96.0/19 Deny Bogon
-170.231.128.0/17 Deny Bogon
+170.84.216.0/22 Deny Bogon
+170.150.160.0/22 Deny Bogon
+170.231.224.0/19 Deny Bogon
 170.233.0.0/16 Deny Bogon
 170.238.0.0/15 Deny Bogon
 170.244.0.0/14 Deny Bogon
@@ -14435,13 +14515,17 @@ Expires: 2016.09.19
 178.238.0.0/20 Deny Bogon
 178.249.232.0/21 Deny Bogon
 178.255.112.0/21 Deny Bogon
+180.149.224.0/20 Deny Bogon
+180.222.120.0/21 Deny Bogon
+182.255.32.0/19 Deny Bogon
 185.1.76.0/22 Deny Bogon
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.156.176.0/20 Deny Bogon
-185.156.192.0/18 Deny Bogon
-185.157.0.0/16 Deny Bogon
+185.97.84.0/22 Deny Bogon
+185.157.104.0/21 Deny Bogon
+185.157.112.0/20 Deny Bogon
+185.157.128.0/17 Deny Bogon
 185.158.0.0/15 Deny Bogon
 185.160.0.0/11 Deny Bogon
 185.192.0.0/10 Deny Bogon
@@ -17170,6 +17254,7 @@ Expires: 2016.09.19
 195.39.250.0/23 Deny Bogon
 195.39.252.0/23 Deny Bogon
 195.42.158.0/23 Deny Bogon
+195.42.232.0/22 Deny Bogon
 195.42.240.0/21 Deny Bogon
 195.42.248.0/24 Deny Bogon
 195.43.80.0/23 Deny Bogon
@@ -17458,15 +17543,14 @@ Expires: 2016.09.19
 196.223.248.0/22 Deny Bogon
 196.223.252.0/24 Deny Bogon
 196.250.0.0/15 Deny Bogon
-197.159.88.0/21 Deny Bogon
 198.18.0.0/15 Deny Bogon
 198.51.100.0/24 Deny Bogon
-200.23.152.0/23 Deny Bogon
+200.10.180.0/23 Deny Bogon
+200.10.192.0/23 Deny Bogon
+200.23.148.0/24 Deny Bogon
 200.23.206.0/23 Deny Bogon
 200.23.254.0/23 Deny Bogon
 200.33.82.0/23 Deny Bogon
-200.33.115.0/24 Deny Bogon
-200.33.117.0/24 Deny Bogon
 200.33.125.0/24 Deny Bogon
 200.33.126.0/23 Deny Bogon
 200.33.174.0/23 Deny Bogon
@@ -17475,7 +17559,18 @@ Expires: 2016.09.19
 200.34.173.0/24 Deny Bogon
 200.192.106.0/23 Deny Bogon
 200.229.250.0/23 Deny Bogon
+202.3.76.0/24 Deny Bogon
+202.58.233.0/24 Deny Bogon
+202.74.55.0/24 Deny Bogon
 203.0.113.0/24 Deny Bogon
+203.3.132.0/24 Deny Bogon
+203.11.65.0/24 Deny Bogon
+203.88.96.0/20 Deny Bogon
+203.142.218.0/24 Deny Bogon
+203.160.48.0/21 Deny Bogon
+203.161.179.0/24 Deny Bogon
+203.185.188.0/24 Deny Bogon
+203.207.63.0/24 Deny Bogon
 207.248.80.0/23 Deny Bogon
 207.248.86.0/23 Deny Bogon
 207.248.102.0/23 Deny Bogon

@@ -92,6 +92,7 @@ Fichier | Description
 /_docs/readme.it.md | Documentation en Italien.
 /_docs/readme.nl.md | Documentation en Néerlandais.
 /_docs/readme.pt.md | Documentation en Portugais.
+/_docs/readme.vi.md | Documentation en Vietnamien.
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
 /vault/ | Voûte répertoire (contient divers fichiers).
@@ -314,4 +315,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 13 Juin 2016 (2016.06.13).
+Dernière Réactualisé: 30 Juin 2016 (2016.06.30).

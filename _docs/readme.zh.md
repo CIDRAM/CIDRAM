@@ -93,6 +93,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /_docs/readme.it.md | 意大利文自述文件。
 /_docs/readme.nl.md | 荷兰文自述文件。
 /_docs/readme.pt.md | 葡萄牙文自述文件。
+/_docs/readme.vi.md | 越南文自述文件。
 /_docs/readme.zh-TW.md | 中文（传统）自述文件。
 /_docs/readme.zh.md | 中文（简体）自述文件。
 /vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
@@ -315,4 +316,4 @@ Ignore Section 1
 ---
 
 
-最后更新：2016年6月13日。
+最后更新：2016年6月30日。

@@ -92,6 +92,7 @@ File | Descrizione
 /_docs/readme.it.md | Italiano documentazione.
 /_docs/readme.nl.md | Olandese documentazione.
 /_docs/readme.pt.md | Portoghese documentazione.
+/_docs/readme.vi.md | Vietnamita documentazione.
 /_docs/readme.zh-TW.md | Cinese (Tradizionale) documentazione.
 /_docs/readme.zh.md | Cinese (Semplificato) documentazione.
 /vault/ | La vault cartella (contiene vari file).
@@ -314,4 +315,4 @@ Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 ---
 
 
-Ultimo Aggiornamento: 13 Giugno 2016 (2016.06.13).
+Ultimo Aggiornamento: 30 Giugno 2016 (2016.06.30).

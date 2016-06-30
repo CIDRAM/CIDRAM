@@ -92,6 +92,7 @@ Bestand | Beschrijving
 /_docs/readme.it.md | Italiaanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
+/_docs/readme.vi.md | Vietnamees documentatie.
 /_docs/readme.zh-TW.md | Chinees (Traditioneel) documentatie.
 /_docs/readme.zh.md | Chinees (Vereenvoudigd) documentatie.
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
@@ -314,4 +315,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 13 Juni 2016 (2016.06.13).
+Laatste Bijgewerkt: 30 Juni 2016 (2016.06.30).

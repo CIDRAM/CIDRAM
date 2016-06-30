@@ -92,6 +92,7 @@ Data | Deskripsi
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
+/_docs/readme.vi.md | Dokumentasi Bahasa Vietnam.
 /_docs/readme.zh-TW.md | Dokumentasi Cina Tradisional.
 /_docs/readme.zh.md | Dokumentasi Cina Sederhana.
 /vault/ | Direktori Vault (berisikan bermacam file).
@@ -314,4 +315,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 13 Juni 2016 (2016.06.13).
+Terakhir Diperbarui: 30 Juni 2016 (2016.06.30).

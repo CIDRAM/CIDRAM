@@ -190,10 +190,10 @@ Tag: New Dream Network
 Tag: HostDime.com, Inc
 
 
-# ASNs 30548, 31034, 199653, 394189 ("Aruba S.p.A").
-# Infected by malware (as per reported by Google): 0% (AS30548), 2.20% (AS31034), 33.25% (AS199653),
-#   "ASN not found" (AS394189).
-# Updated: 2016.02.27 / Checked: 2016.03.28
+# ASNs 30548, 31034, 199653, 200185, 394189 ("Aruba S.p.A" / "Aruba SAS").
+# Infected by malware (as per reported by Google): 0% (AS30548), 2.28% (AS31034), 30.82% (AS199653),
+#   4.86% (AS200185), "ASN not found" (AS394189).
+# Updated: 2016.07.02
 
 2620:11d:6000::/42 Deny Generic
 2a00:6d40::/31 Deny Generic
@@ -202,6 +202,7 @@ Tag: HostDime.com, Inc
 2a02:4ae0:a::/48 Deny Generic
 2a02:fd40::/31 Deny Generic
 2a03:2c40::/32 Deny Generic
+2a03:a140::/32 Deny Generic
 2a03:cdc0::/35 Deny Generic
 2a04:e100::/31 Deny Generic
 Tag: Aruba S.p.A
@@ -498,10 +499,19 @@ Tag: SuperHost.pl
 
 # ASN 53225 ("IPGLOBE DATACENTER").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.05.15
+# Updated: 2016.05.15 / Checked: 2016.07.02
 
 2804:644::/32 Deny Cloud
 Tag: IPGLOBE DATACENTER
+
+
+# ASN 28271 ("DataCorpore Servios e Representaes").
+# Infected by malware (as per reported by Google): 0.20%.
+# Updated: 2016.07.02
+
+2804:4c4::/32 Deny Cloud
+2804:cc0::/32 Deny Cloud
+Tag: DataCorpore Servios
 
 
 # ASN 57879 ("sfip84").
@@ -1094,19 +1104,25 @@ Tag: Private Layer INC
 
 
 # ASN 40676 ("Psychz Networks").
-# Infected by malware (as per reported by Google): 9.56%.
-# Updated: 2016.04.19
+# Infected by malware (as per reported by Google): 11.67%.
+# Updated: 2016.07.02
 
-2404:9680::/32 Deny Cloud
+2001:df2:c600::/48 Deny Cloud
+2602:ff62:fff::/48 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
+2602:ff96:12::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
-2602:ffb0:ffe::/48 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
 2605:5200:c91a::/48 Deny Cloud
-2605:e280:c65a::/48 Deny Cloud
+2606:6680:2::/48 Deny Cloud
+2606:6680:4::/48 Deny Cloud
+2606:f280::/32 Deny Cloud
 2a05:b0c6:1300::/44 Deny Cloud
+2a06:a006:c4::/48 Deny Cloud
+2a06:a006:c5::/48 Deny Cloud
+2a06:a006:f0::/47 Deny Cloud
 2a06:e881:100::/48 Deny Cloud
 Tag: Psychz Networks
 
@@ -1584,7 +1600,7 @@ Tag: ESDS
 
 # ASN 51430 ("AltusHost B.V").
 # Infected by malware (as per reported by Google): 1.72%.
-# Updated: 2016.03.10 / Checked: 2016.06.09
+# Updated: 2016.07.02
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
@@ -2973,6 +2989,26 @@ Tag: Host Europe GmbH
 
 2605:f300:ffff::/48 Deny Cloud
 Tag: Endurance Int
+
+
+# ASN 17819 ("Equinix Asia Pacific").
+# Infected by malware (as per reported by Google): 0.44%.
+# Updated: 2016.07.02
+
+2400:7600::/32 Deny Cloud
+2404:4f00::/32 Deny Cloud
+2404:6900::/32 Deny Cloud
+2407:b000::/32 Deny Cloud
+2407:d300::/32 Deny Cloud
+2a03:8fa0:1000::/36 Deny Cloud
+
+
+# ASN 6364 ("Atlantic.net, Inc").
+# Infected by malware (as per reported by Google): 0.47%.
+# Updated: 2016.07.02
+
+2607:f170::/32 Deny Cloud
+Tag: Atlantic.net, Inc
 
 
 # ---

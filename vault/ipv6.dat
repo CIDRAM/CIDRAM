@@ -384,6 +384,15 @@ Tag: World4You
 Tag: Leaseweb
 
 
+# ASN 48159 ("Telecommunication Infrastructure Company").
+# Refer cloudtacker.com/docs/AS48159
+# Infected by malware (as per reported by Google): 0.54%.
+# Updated: 2016.07.13
+
+2a03:57c0::/32 Deny Generic
+Tag: AS48159
+
+
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
 # Infected by malware (as per reported by Google): 1.15% (AS24940), 1.39% (AS37153).
 # Updated: 2016.05.21
@@ -1349,22 +1358,24 @@ Tag: UOL DIVEO S.A
 
 
 # ASN 46562 ("Total Server Solutions L.L.C").
-# Infected by malware (as per reported by Google): 1.23%.
-# Updated: 2016.03.31
+# Infected by malware (as per reported by Google): 1.68%.
+# Updated: 2016.07.13
 
 2602:fff6:5::/48 Deny Cloud
 2604:2880::/48 Deny Cloud
+2604:4600:aa01::/48 Deny Cloud
+2604:8180::/32 Deny Cloud
 2607:f7a0:1::/48 Deny Cloud
 2607:f7a0:3::/48 Deny Cloud
 2607:f7a0:6::/47 Deny Cloud
 2607:f7a0:8::/48 Deny Cloud
-2607:f7a0:a::/48 Deny Cloud
+2607:f7a0:a::/47 Deny Cloud
 Tag: AS46562
 
 
 # ASN 53841 ("RAM Host").
-# Infected by malware (as per reported by Google): 14.10%.
-# Updated: 2016.03.31
+# Infected by malware (as per reported by Google): 14.84%.
+# Updated: 2016.03.31 / Checked: 2016.07.13
 
 2605:8900::/32 Deny Cloud
 Tag: RAM Host

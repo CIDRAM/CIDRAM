@@ -532,12 +532,14 @@ Tag: sfip84
 
 
 # ASN 45727 ("PT Hutchison CP Telecommunications").
-# Infected by malware (as per reported by Google): 1.10%.
-# Updated: 2016.05.15
+# Infected by malware (as per reported by Google): 1.12%.
+# Updated: 2016.07.20
 
 2400:8b00:1000:1::/64 Deny Spam
 2400:8b00:1000:2::/64 Deny Spam
+2400:8b00:1000:4::/64 Deny Spam
 2400:8b00:a000::/47 Deny Spam
+2400:8b00:a400::/64 Deny Spam
 Tag: PT Hutchison
 
 
@@ -551,7 +553,7 @@ Tag: PT Excelcomindo
 
 # ASN 45682 ("Excite Japan Co., Ltd").
 # Infected by malware (as per reported by Google): 0.01%.
-# Updated: 2016.01.18 / Checked: 2016.05.15
+# Updated: 2016.01.18 / Checked: 2016.07.20
 
 2402:dc00::/32 Deny Generic
 Tag: Excite Japan
@@ -989,10 +991,13 @@ Tag: Xirra GmbH
 
 
 # ASN 23033 ("Wowrack.com").
-# Infected by malware (as per reported by Google): 10.79%.
-# Updated: 2016.03.15 / Checked: 2016.03.30
+# Infected by malware (as per reported by Google): 7.07%.
+# Updated: 2016.07.16
 
+2402:6680::/32 Deny Cloud
+2602:ffc4:8::/47 Deny Cloud
 2604:c00::/32 Deny Cloud
+2605:fe00::/36 Deny Cloud
 2607:f8f8::/32 Deny Cloud
 Tag: Wowrack.com
 
@@ -2261,18 +2266,18 @@ Tag: FranTech Solutions
 Tag: Astutium Limited
 
 
-# ASN 3491 ("PCCW Global" / "Beyond The Network America, Inc").
-# Infected by malware (as per reported by Google): 2.21%.
-# Updated: 2016.04.14
+# ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
+# Infected by malware (as per reported by Google): 2.67% (AS3491), 0% (AS6279), "ASN not found" (AS7262).
+# Updated: 2016.07.20
 
-2001:478:124::/48 Deny Generic
-2400:8800::/32 Deny Generic
-2600:1400:7::/48 Deny Generic
-2600:1407:8::/48 Deny Generic
-2602:ff95::/36 Deny Generic
-2a02:b48:4000::/34 Deny Generic
-2a02:13e0:2::/48 Deny Generic
-2a03:5400::/32 Deny Generic
+2001:478:124::/48 Deny Spam
+2400:8800::/32 Deny Spam
+2600:1400:7::/48 Deny Spam
+2600:1407:8::/48 Deny Spam
+2602:ff95::/36 Deny Spam
+2a02:b48:4000::/34 Deny Spam
+2a02:13e0:2::/48 Deny Spam
+2a03:5400::/32 Deny Spam
 Tag: PCCW Global
 
 
@@ -2753,6 +2758,13 @@ Tag: Serverius Holding
 Tag: Transip B.V
 
 
+# ASN 200429 ("HostSlim BV")
+# Infected by malware (as per reported by Google): 0.61%.
+# Updated: 2016.05.09
+
+Tag: HostSlim BV
+
+
 # ASN 43350 ("NForce Entertainment B.V")
 # Infected by malware (as per reported by Google): 1.23%.
 # Updated: 2016.05.09
@@ -3066,9 +3078,78 @@ Tag: Bird Hosting Inc
 Tag: Data Center
 
 
+# ASN 19133 ("Data Room, Inc").
+# Infected by malware (as per reported by Google): 0.13%.
+# Updated: 2016.07.16
+
+2607:f710:33::/48 Deny Cloud
+2607:f710:34::/48 Deny Cloud
+2607:f710:47::/48 Deny Cloud
+2607:f710:85::/48 Deny Cloud
+Tag: Data Room, Inc
+
+
+# ASN 6461 ("Zayo Bandwidth Inc").
+# Infected by malware (as per reported by Google): 2.51%.
+# Updated: 2016.07.20
+
+2001:428:4401:6::/64 Deny Cloud
+2001:438::/32 Deny Cloud
+2001:468:f000:1016::/64 Deny Cloud
+2001:504:47::/64 Deny Cloud
+2001:1498:1:39a::/64 Deny Cloud
+2001:1498:1:39e::/64 Deny Cloud
+2001:1b70:b1::/48 Deny Cloud
+2001:1b70:4280::/48 Deny Cloud
+2001:1b70:4293::/48 Deny Cloud
+2001:1b70:4294::/48 Deny Cloud
+2001:1b70:86c0::/48 Deny Cloud
+2001:2000:3080:860::/64 Deny Cloud
+2001:2000:3080:d4c::/64 Deny Cloud
+2001:2000:3080:dfe::/64 Deny Cloud
+2001:49f0:d003::/48 Deny Cloud
+2003:0:1308:800d::/64 Deny Cloud
+2003:0:f000:801f::/64 Deny Cloud
+2003:3c0:1603:f::/64 Deny Cloud
+2604:9700:8000::/48 Deny Cloud
+2604:e500::/32 Deny Cloud
+2607:c200:1106::/48 Deny Cloud
+2620:0:50a0:821::/64 Deny Cloud
+2620:0:50a0:bf5::/64 Deny Cloud
+2620:bc:8000::/48 Deny Cloud
+2620:107:4008:73::/64 Deny Cloud
+2a00:16f8::/32 Deny Cloud
+2a00:f300:1::/48 Deny Cloud
+Tag: Zayo Bandwidth Inc
+
+
+# ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
+# Infected by malware (as per reported by Google): 2.39%.
+# Updated: 2016.07.20
+
+2a04:2c00::/29 Deny Generic
+Tag: TeNeT
+
+
+# ASN 7151 ("Bay Area Internet Solutions").
+# Infected by malware (as per reported by Google): 0.28%.
+# Updated: 2016.07.20
+
+2607:fce0::/32 Deny Cloud
+Tag: Bay Area IS
+
+
+# ASN 34309 ("Link11 GmbH").
+# Infected by malware (as per reported by Google): 1.07%.
+# Updated: 2016.07.20
+
+2001:4d50::/32 Deny Cloud
+Tag: Link11 GmbH
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.07.10
+# Updated: 2016.07.20
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -3978,9 +4059,8 @@ Tag: Data Center
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:208::/45 Deny Bogon
-2001:678:210::/44 Deny Bogon
-2001:678:220::/43 Deny Bogon
+2001:678:228::/45 Deny Bogon
+2001:678:230::/44 Deny Bogon
 2001:678:240::/42 Deny Bogon
 2001:678:280::/41 Deny Bogon
 2001:678:300::/40 Deny Bogon
@@ -3992,13 +4072,31 @@ Tag: Data Center
 2001:678:8000::/33 Deny Bogon
 2001:679::/32 Deny Bogon
 2001:67a::/31 Deny Bogon
+2001:67c:74::/46 Deny Bogon
+2001:67c:474::/46 Deny Bogon
+2001:67c:554::/46 Deny Bogon
+2001:67c:584::/46 Deny Bogon
+2001:67c:614::/46 Deny Bogon
+2001:67c:6f4::/46 Deny Bogon
+2001:67c:770::/45 Deny Bogon
 2001:67c:800::/37 Deny Bogon
+2001:67c:1420::/43 Deny Bogon
+2001:67c:1540::/46 Deny Bogon
+2001:67c:1688::/46 Deny Bogon
+2001:67c:16e0::/46 Deny Bogon
+2001:67c:1788::/46 Deny Bogon
+2001:67c:179c::/46 Deny Bogon
+2001:67c:19e0::/46 Deny Bogon
+2001:67c:22d4::/46 Deny Bogon
+2001:67c:232c::/46 Deny Bogon
+2001:67c:2668::/46 Deny Bogon
+2001:67c:2814::/46 Deny Bogon
+2001:67c:2e20::/46 Deny Bogon
 2001:67c:3000::/36 Deny Bogon
 2001:67c:4000::/34 Deny Bogon
 2001:67c:8000::/33 Deny Bogon
 2001:67d::/32 Deny Bogon
 2001:67e::/31 Deny Bogon
-2001:7f8:a7::/48 Deny Bogon
 2001:7f8:a8::/45 Deny Bogon
 2001:7f8:b0::/44 Deny Bogon
 2001:7f8:c0::/42 Deny Bogon
@@ -8106,7 +8204,15 @@ Tag: Data Center
 2001:df3:2c40::/42 Deny Bogon
 2001:df3:2c80::/41 Deny Bogon
 2001:df3:2d00::/40 Deny Bogon
-2001:df3:2e00::/39 Deny Bogon
+2001:df3:2e01::/48 Deny Bogon
+2001:df3:2e02::/47 Deny Bogon
+2001:df3:2e04::/46 Deny Bogon
+2001:df3:2e08::/45 Deny Bogon
+2001:df3:2e10::/44 Deny Bogon
+2001:df3:2e20::/43 Deny Bogon
+2001:df3:2e40::/42 Deny Bogon
+2001:df3:2e80::/41 Deny Bogon
+2001:df3:2f00::/40 Deny Bogon
 2001:df3:3001::/48 Deny Bogon
 2001:df3:3002::/47 Deny Bogon
 2001:df3:3004::/46 Deny Bogon
@@ -8116,7 +8222,15 @@ Tag: Data Center
 2001:df3:3040::/42 Deny Bogon
 2001:df3:3080::/41 Deny Bogon
 2001:df3:3100::/40 Deny Bogon
-2001:df3:3200::/39 Deny Bogon
+2001:df3:3201::/48 Deny Bogon
+2001:df3:3202::/47 Deny Bogon
+2001:df3:3204::/46 Deny Bogon
+2001:df3:3208::/45 Deny Bogon
+2001:df3:3210::/44 Deny Bogon
+2001:df3:3220::/43 Deny Bogon
+2001:df3:3240::/42 Deny Bogon
+2001:df3:3280::/41 Deny Bogon
+2001:df3:3300::/40 Deny Bogon
 2001:df3:3401::/48 Deny Bogon
 2001:df3:3402::/47 Deny Bogon
 2001:df3:3404::/46 Deny Bogon
@@ -8126,7 +8240,14 @@ Tag: Data Center
 2001:df3:3440::/42 Deny Bogon
 2001:df3:3480::/41 Deny Bogon
 2001:df3:3500::/40 Deny Bogon
-2001:df3:3600::/39 Deny Bogon
+2001:df3:3602::/47 Deny Bogon
+2001:df3:3604::/46 Deny Bogon
+2001:df3:3608::/45 Deny Bogon
+2001:df3:3610::/44 Deny Bogon
+2001:df3:3620::/43 Deny Bogon
+2001:df3:3640::/42 Deny Bogon
+2001:df3:3680::/41 Deny Bogon
+2001:df3:3700::/40 Deny Bogon
 2001:df3:3801::/48 Deny Bogon
 2001:df3:3802::/47 Deny Bogon
 2001:df3:3804::/46 Deny Bogon
@@ -8136,7 +8257,15 @@ Tag: Data Center
 2001:df3:3840::/42 Deny Bogon
 2001:df3:3880::/41 Deny Bogon
 2001:df3:3900::/40 Deny Bogon
-2001:df3:3a00::/39 Deny Bogon
+2001:df3:3a01::/48 Deny Bogon
+2001:df3:3a02::/47 Deny Bogon
+2001:df3:3a04::/46 Deny Bogon
+2001:df3:3a08::/45 Deny Bogon
+2001:df3:3a10::/44 Deny Bogon
+2001:df3:3a20::/43 Deny Bogon
+2001:df3:3a40::/42 Deny Bogon
+2001:df3:3a80::/41 Deny Bogon
+2001:df3:3b00::/40 Deny Bogon
 2001:df3:3c01::/48 Deny Bogon
 2001:df3:3c02::/47 Deny Bogon
 2001:df3:3c04::/46 Deny Bogon
@@ -8146,7 +8275,15 @@ Tag: Data Center
 2001:df3:3c40::/42 Deny Bogon
 2001:df3:3c80::/41 Deny Bogon
 2001:df3:3d00::/40 Deny Bogon
-2001:df3:3e00::/39 Deny Bogon
+2001:df3:3e01::/48 Deny Bogon
+2001:df3:3e02::/47 Deny Bogon
+2001:df3:3e04::/46 Deny Bogon
+2001:df3:3e08::/45 Deny Bogon
+2001:df3:3e10::/44 Deny Bogon
+2001:df3:3e20::/43 Deny Bogon
+2001:df3:3e40::/42 Deny Bogon
+2001:df3:3e80::/41 Deny Bogon
+2001:df3:3f00::/40 Deny Bogon
 2001:df3:4001::/48 Deny Bogon
 2001:df3:4002::/47 Deny Bogon
 2001:df3:4004::/46 Deny Bogon
@@ -8156,7 +8293,15 @@ Tag: Data Center
 2001:df3:4040::/42 Deny Bogon
 2001:df3:4080::/41 Deny Bogon
 2001:df3:4100::/40 Deny Bogon
-2001:df3:4200::/39 Deny Bogon
+2001:df3:4201::/48 Deny Bogon
+2001:df3:4202::/47 Deny Bogon
+2001:df3:4204::/46 Deny Bogon
+2001:df3:4208::/45 Deny Bogon
+2001:df3:4210::/44 Deny Bogon
+2001:df3:4220::/43 Deny Bogon
+2001:df3:4240::/42 Deny Bogon
+2001:df3:4280::/41 Deny Bogon
+2001:df3:4300::/40 Deny Bogon
 2001:df3:4401::/48 Deny Bogon
 2001:df3:4402::/47 Deny Bogon
 2001:df3:4404::/46 Deny Bogon
@@ -8166,7 +8311,15 @@ Tag: Data Center
 2001:df3:4440::/42 Deny Bogon
 2001:df3:4480::/41 Deny Bogon
 2001:df3:4500::/40 Deny Bogon
-2001:df3:4600::/39 Deny Bogon
+2001:df3:4601::/48 Deny Bogon
+2001:df3:4602::/47 Deny Bogon
+2001:df3:4604::/46 Deny Bogon
+2001:df3:4608::/45 Deny Bogon
+2001:df3:4610::/44 Deny Bogon
+2001:df3:4620::/43 Deny Bogon
+2001:df3:4640::/42 Deny Bogon
+2001:df3:4680::/41 Deny Bogon
+2001:df3:4700::/40 Deny Bogon
 2001:df3:4801::/48 Deny Bogon
 2001:df3:4802::/47 Deny Bogon
 2001:df3:4804::/46 Deny Bogon
@@ -8176,7 +8329,15 @@ Tag: Data Center
 2001:df3:4840::/42 Deny Bogon
 2001:df3:4880::/41 Deny Bogon
 2001:df3:4900::/40 Deny Bogon
-2001:df3:4a00::/39 Deny Bogon
+2001:df3:4a01::/48 Deny Bogon
+2001:df3:4a02::/47 Deny Bogon
+2001:df3:4a04::/46 Deny Bogon
+2001:df3:4a08::/45 Deny Bogon
+2001:df3:4a10::/44 Deny Bogon
+2001:df3:4a20::/43 Deny Bogon
+2001:df3:4a40::/42 Deny Bogon
+2001:df3:4a80::/41 Deny Bogon
+2001:df3:4b00::/40 Deny Bogon
 2001:df3:4c01::/48 Deny Bogon
 2001:df3:4c02::/47 Deny Bogon
 2001:df3:4c04::/46 Deny Bogon
@@ -8186,7 +8347,15 @@ Tag: Data Center
 2001:df3:4c40::/42 Deny Bogon
 2001:df3:4c80::/41 Deny Bogon
 2001:df3:4d00::/40 Deny Bogon
-2001:df3:4e00::/39 Deny Bogon
+2001:df3:4e01::/48 Deny Bogon
+2001:df3:4e02::/47 Deny Bogon
+2001:df3:4e04::/46 Deny Bogon
+2001:df3:4e08::/45 Deny Bogon
+2001:df3:4e10::/44 Deny Bogon
+2001:df3:4e20::/43 Deny Bogon
+2001:df3:4e40::/42 Deny Bogon
+2001:df3:4e80::/41 Deny Bogon
+2001:df3:4f00::/40 Deny Bogon
 2001:df3:5001::/48 Deny Bogon
 2001:df3:5002::/47 Deny Bogon
 2001:df3:5004::/46 Deny Bogon
@@ -8196,7 +8365,15 @@ Tag: Data Center
 2001:df3:5040::/42 Deny Bogon
 2001:df3:5080::/41 Deny Bogon
 2001:df3:5100::/40 Deny Bogon
-2001:df3:5200::/39 Deny Bogon
+2001:df3:5201::/48 Deny Bogon
+2001:df3:5202::/47 Deny Bogon
+2001:df3:5204::/46 Deny Bogon
+2001:df3:5208::/45 Deny Bogon
+2001:df3:5210::/44 Deny Bogon
+2001:df3:5220::/43 Deny Bogon
+2001:df3:5240::/42 Deny Bogon
+2001:df3:5280::/41 Deny Bogon
+2001:df3:5300::/40 Deny Bogon
 2001:df3:5401::/48 Deny Bogon
 2001:df3:5402::/47 Deny Bogon
 2001:df3:5404::/46 Deny Bogon
@@ -11582,8 +11759,10 @@ Tag: Data Center
 2001:4380::/29 Deny Bogon
 2001:4390::/29 Deny Bogon
 2001:43f8:40::/44 Deny Bogon
+2001:43f8:d0::/44 Deny Bogon
 2001:43f8:f0::/44 Deny Bogon
 2001:43f8:170::/44 Deny Bogon
+2001:43f8:220::/44 Deny Bogon
 2001:43f8:350::/44 Deny Bogon
 2001:43f8:3f0::/44 Deny Bogon
 2001:43f8:500::/40 Deny Bogon
@@ -11592,7 +11771,6 @@ Tag: Data Center
 2001:43f8:730::/44 Deny Bogon
 2001:43f8:910::/44 Deny Bogon
 2001:43f8:a70::/44 Deny Bogon
-2001:43f8:bb0::/44 Deny Bogon
 2001:43f8:bc0::/42 Deny Bogon
 2001:43f8:c00::/38 Deny Bogon
 2001:43f8:1000::/36 Deny Bogon
@@ -31870,7 +32048,13 @@ Tag: Data Center
 2405:e710::/28 Deny Bogon
 2405:e720::/27 Deny Bogon
 2405:e740::/26 Deny Bogon
-2405:e780::/25 Deny Bogon
+2405:e781::/32 Deny Bogon
+2405:e782::/31 Deny Bogon
+2405:e784::/30 Deny Bogon
+2405:e788::/29 Deny Bogon
+2405:e790::/28 Deny Bogon
+2405:e7a0::/27 Deny Bogon
+2405:e7c0::/26 Deny Bogon
 2405:e801::/32 Deny Bogon
 2405:e802::/31 Deny Bogon
 2405:e804::/30 Deny Bogon
@@ -31878,7 +32062,13 @@ Tag: Data Center
 2405:e810::/28 Deny Bogon
 2405:e820::/27 Deny Bogon
 2405:e840::/26 Deny Bogon
-2405:e880::/25 Deny Bogon
+2405:e881::/32 Deny Bogon
+2405:e882::/31 Deny Bogon
+2405:e884::/30 Deny Bogon
+2405:e888::/29 Deny Bogon
+2405:e890::/28 Deny Bogon
+2405:e8a0::/27 Deny Bogon
+2405:e8c0::/26 Deny Bogon
 2405:e901::/32 Deny Bogon
 2405:e902::/31 Deny Bogon
 2405:e904::/30 Deny Bogon
@@ -31886,7 +32076,13 @@ Tag: Data Center
 2405:e910::/28 Deny Bogon
 2405:e920::/27 Deny Bogon
 2405:e940::/26 Deny Bogon
-2405:e980::/25 Deny Bogon
+2405:e981::/32 Deny Bogon
+2405:e982::/31 Deny Bogon
+2405:e984::/30 Deny Bogon
+2405:e988::/29 Deny Bogon
+2405:e990::/28 Deny Bogon
+2405:e9a0::/27 Deny Bogon
+2405:e9c0::/26 Deny Bogon
 2405:ea01::/32 Deny Bogon
 2405:ea02::/31 Deny Bogon
 2405:ea04::/30 Deny Bogon
@@ -31894,7 +32090,13 @@ Tag: Data Center
 2405:ea10::/28 Deny Bogon
 2405:ea20::/27 Deny Bogon
 2405:ea40::/26 Deny Bogon
-2405:ea80::/25 Deny Bogon
+2405:ea81::/32 Deny Bogon
+2405:ea82::/31 Deny Bogon
+2405:ea84::/30 Deny Bogon
+2405:ea88::/29 Deny Bogon
+2405:ea90::/28 Deny Bogon
+2405:eaa0::/27 Deny Bogon
+2405:eac0::/26 Deny Bogon
 2405:eb01::/32 Deny Bogon
 2405:eb02::/31 Deny Bogon
 2405:eb04::/30 Deny Bogon
@@ -31902,7 +32104,13 @@ Tag: Data Center
 2405:eb10::/28 Deny Bogon
 2405:eb20::/27 Deny Bogon
 2405:eb40::/26 Deny Bogon
-2405:eb80::/25 Deny Bogon
+2405:eb81::/32 Deny Bogon
+2405:eb82::/31 Deny Bogon
+2405:eb84::/30 Deny Bogon
+2405:eb88::/29 Deny Bogon
+2405:eb90::/28 Deny Bogon
+2405:eba0::/27 Deny Bogon
+2405:ebc0::/26 Deny Bogon
 2405:ec01::/32 Deny Bogon
 2405:ec02::/31 Deny Bogon
 2405:ec04::/30 Deny Bogon
@@ -31910,7 +32118,13 @@ Tag: Data Center
 2405:ec10::/28 Deny Bogon
 2405:ec20::/27 Deny Bogon
 2405:ec40::/26 Deny Bogon
-2405:ec80::/25 Deny Bogon
+2405:ec81::/32 Deny Bogon
+2405:ec82::/31 Deny Bogon
+2405:ec84::/30 Deny Bogon
+2405:ec88::/29 Deny Bogon
+2405:ec90::/28 Deny Bogon
+2405:eca0::/27 Deny Bogon
+2405:ecc0::/26 Deny Bogon
 2405:ed01::/32 Deny Bogon
 2405:ed02::/31 Deny Bogon
 2405:ed04::/30 Deny Bogon
@@ -31918,7 +32132,13 @@ Tag: Data Center
 2405:ed10::/28 Deny Bogon
 2405:ed20::/27 Deny Bogon
 2405:ed40::/26 Deny Bogon
-2405:ed80::/25 Deny Bogon
+2405:ed81::/32 Deny Bogon
+2405:ed82::/31 Deny Bogon
+2405:ed84::/30 Deny Bogon
+2405:ed88::/29 Deny Bogon
+2405:ed90::/28 Deny Bogon
+2405:eda0::/27 Deny Bogon
+2405:edc0::/26 Deny Bogon
 2405:ee01::/32 Deny Bogon
 2405:ee02::/31 Deny Bogon
 2405:ee04::/30 Deny Bogon
@@ -31926,7 +32146,13 @@ Tag: Data Center
 2405:ee10::/28 Deny Bogon
 2405:ee20::/27 Deny Bogon
 2405:ee40::/26 Deny Bogon
-2405:ee80::/25 Deny Bogon
+2405:ee81::/32 Deny Bogon
+2405:ee82::/31 Deny Bogon
+2405:ee84::/30 Deny Bogon
+2405:ee88::/29 Deny Bogon
+2405:ee90::/28 Deny Bogon
+2405:eea0::/27 Deny Bogon
+2405:eec0::/26 Deny Bogon
 2405:ef01::/32 Deny Bogon
 2405:ef02::/31 Deny Bogon
 2405:ef04::/30 Deny Bogon
@@ -31934,7 +32160,13 @@ Tag: Data Center
 2405:ef10::/28 Deny Bogon
 2405:ef20::/27 Deny Bogon
 2405:ef40::/26 Deny Bogon
-2405:ef80::/25 Deny Bogon
+2405:ef81::/32 Deny Bogon
+2405:ef82::/31 Deny Bogon
+2405:ef84::/30 Deny Bogon
+2405:ef88::/29 Deny Bogon
+2405:ef90::/28 Deny Bogon
+2405:efa0::/27 Deny Bogon
+2405:efc0::/26 Deny Bogon
 2405:f001::/32 Deny Bogon
 2405:f002::/31 Deny Bogon
 2405:f004::/30 Deny Bogon
@@ -31942,7 +32174,13 @@ Tag: Data Center
 2405:f010::/28 Deny Bogon
 2405:f020::/27 Deny Bogon
 2405:f040::/26 Deny Bogon
-2405:f080::/25 Deny Bogon
+2405:f081::/32 Deny Bogon
+2405:f082::/31 Deny Bogon
+2405:f084::/30 Deny Bogon
+2405:f088::/29 Deny Bogon
+2405:f090::/28 Deny Bogon
+2405:f0a0::/27 Deny Bogon
+2405:f0c0::/26 Deny Bogon
 2405:f101::/32 Deny Bogon
 2405:f102::/31 Deny Bogon
 2405:f104::/30 Deny Bogon
@@ -31950,7 +32188,13 @@ Tag: Data Center
 2405:f110::/28 Deny Bogon
 2405:f120::/27 Deny Bogon
 2405:f140::/26 Deny Bogon
-2405:f180::/25 Deny Bogon
+2405:f181::/32 Deny Bogon
+2405:f182::/31 Deny Bogon
+2405:f184::/30 Deny Bogon
+2405:f188::/29 Deny Bogon
+2405:f190::/28 Deny Bogon
+2405:f1a0::/27 Deny Bogon
+2405:f1c0::/26 Deny Bogon
 2405:f201::/32 Deny Bogon
 2405:f202::/31 Deny Bogon
 2405:f204::/30 Deny Bogon
@@ -31958,7 +32202,13 @@ Tag: Data Center
 2405:f210::/28 Deny Bogon
 2405:f220::/27 Deny Bogon
 2405:f240::/26 Deny Bogon
-2405:f280::/25 Deny Bogon
+2405:f281::/32 Deny Bogon
+2405:f282::/31 Deny Bogon
+2405:f284::/30 Deny Bogon
+2405:f288::/29 Deny Bogon
+2405:f290::/28 Deny Bogon
+2405:f2a0::/27 Deny Bogon
+2405:f2c0::/26 Deny Bogon
 2405:f301::/32 Deny Bogon
 2405:f302::/31 Deny Bogon
 2405:f304::/30 Deny Bogon
@@ -31966,7 +32216,13 @@ Tag: Data Center
 2405:f310::/28 Deny Bogon
 2405:f320::/27 Deny Bogon
 2405:f340::/26 Deny Bogon
-2405:f380::/25 Deny Bogon
+2405:f381::/32 Deny Bogon
+2405:f382::/31 Deny Bogon
+2405:f384::/30 Deny Bogon
+2405:f388::/29 Deny Bogon
+2405:f390::/28 Deny Bogon
+2405:f3a0::/27 Deny Bogon
+2405:f3c0::/26 Deny Bogon
 2405:f401::/32 Deny Bogon
 2405:f402::/31 Deny Bogon
 2405:f404::/30 Deny Bogon
@@ -31974,7 +32230,13 @@ Tag: Data Center
 2405:f410::/28 Deny Bogon
 2405:f420::/27 Deny Bogon
 2405:f440::/26 Deny Bogon
-2405:f480::/25 Deny Bogon
+2405:f481::/32 Deny Bogon
+2405:f482::/31 Deny Bogon
+2405:f484::/30 Deny Bogon
+2405:f488::/29 Deny Bogon
+2405:f490::/28 Deny Bogon
+2405:f4a0::/27 Deny Bogon
+2405:f4c0::/26 Deny Bogon
 2405:f501::/32 Deny Bogon
 2405:f502::/31 Deny Bogon
 2405:f504::/30 Deny Bogon
@@ -31982,7 +32244,13 @@ Tag: Data Center
 2405:f510::/28 Deny Bogon
 2405:f520::/27 Deny Bogon
 2405:f540::/26 Deny Bogon
-2405:f580::/25 Deny Bogon
+2405:f581::/32 Deny Bogon
+2405:f582::/31 Deny Bogon
+2405:f584::/30 Deny Bogon
+2405:f588::/29 Deny Bogon
+2405:f590::/28 Deny Bogon
+2405:f5a0::/27 Deny Bogon
+2405:f5c0::/26 Deny Bogon
 2405:f601::/32 Deny Bogon
 2405:f602::/31 Deny Bogon
 2405:f604::/30 Deny Bogon
@@ -31990,7 +32258,13 @@ Tag: Data Center
 2405:f610::/28 Deny Bogon
 2405:f620::/27 Deny Bogon
 2405:f640::/26 Deny Bogon
-2405:f680::/25 Deny Bogon
+2405:f681::/32 Deny Bogon
+2405:f682::/31 Deny Bogon
+2405:f684::/30 Deny Bogon
+2405:f688::/29 Deny Bogon
+2405:f690::/28 Deny Bogon
+2405:f6a0::/27 Deny Bogon
+2405:f6c0::/26 Deny Bogon
 2405:f701::/32 Deny Bogon
 2405:f702::/31 Deny Bogon
 2405:f704::/30 Deny Bogon
@@ -31998,7 +32272,13 @@ Tag: Data Center
 2405:f710::/28 Deny Bogon
 2405:f720::/27 Deny Bogon
 2405:f740::/26 Deny Bogon
-2405:f780::/25 Deny Bogon
+2405:f781::/32 Deny Bogon
+2405:f782::/31 Deny Bogon
+2405:f784::/30 Deny Bogon
+2405:f788::/29 Deny Bogon
+2405:f790::/28 Deny Bogon
+2405:f7a0::/27 Deny Bogon
+2405:f7c0::/26 Deny Bogon
 2405:f801::/32 Deny Bogon
 2405:f802::/31 Deny Bogon
 2405:f804::/30 Deny Bogon
@@ -32006,7 +32286,13 @@ Tag: Data Center
 2405:f810::/28 Deny Bogon
 2405:f820::/27 Deny Bogon
 2405:f840::/26 Deny Bogon
-2405:f880::/25 Deny Bogon
+2405:f881::/32 Deny Bogon
+2405:f882::/31 Deny Bogon
+2405:f884::/30 Deny Bogon
+2405:f888::/29 Deny Bogon
+2405:f890::/28 Deny Bogon
+2405:f8a0::/27 Deny Bogon
+2405:f8c0::/26 Deny Bogon
 2405:f901::/32 Deny Bogon
 2405:f902::/31 Deny Bogon
 2405:f904::/30 Deny Bogon
@@ -32014,7 +32300,13 @@ Tag: Data Center
 2405:f910::/28 Deny Bogon
 2405:f920::/27 Deny Bogon
 2405:f940::/26 Deny Bogon
-2405:f980::/25 Deny Bogon
+2405:f981::/32 Deny Bogon
+2405:f982::/31 Deny Bogon
+2405:f984::/30 Deny Bogon
+2405:f988::/29 Deny Bogon
+2405:f990::/28 Deny Bogon
+2405:f9a0::/27 Deny Bogon
+2405:f9c0::/26 Deny Bogon
 2405:fa01::/32 Deny Bogon
 2405:fa02::/31 Deny Bogon
 2405:fa04::/30 Deny Bogon
@@ -32022,7 +32314,13 @@ Tag: Data Center
 2405:fa10::/28 Deny Bogon
 2405:fa20::/27 Deny Bogon
 2405:fa40::/26 Deny Bogon
-2405:fa80::/25 Deny Bogon
+2405:fa81::/32 Deny Bogon
+2405:fa82::/31 Deny Bogon
+2405:fa84::/30 Deny Bogon
+2405:fa88::/29 Deny Bogon
+2405:fa90::/28 Deny Bogon
+2405:faa0::/27 Deny Bogon
+2405:fac0::/26 Deny Bogon
 2405:fb01::/32 Deny Bogon
 2405:fb02::/31 Deny Bogon
 2405:fb04::/30 Deny Bogon
@@ -36363,8 +36661,8 @@ Tag: Data Center
 2602:fe00::/24 Deny Bogon
 2602:ff00::/27 Deny Bogon
 2602:ff20::/28 Deny Bogon
-2602:ff30::/30 Deny Bogon
-2602:ff34::/31 Deny Bogon
+2602:ff30::/31 Deny Bogon
+2602:ff32::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -41649,31 +41947,45 @@ Tag: Data Center
 2607:6d10::/28 Deny Bogon
 2607:6d20::/27 Deny Bogon
 2607:6d40::/26 Deny Bogon
-2607:6d80::/25 Deny Bogon
+2607:6d90::/28 Deny Bogon
+2607:6da0::/27 Deny Bogon
+2607:6dc0::/26 Deny Bogon
 2607:6e10::/28 Deny Bogon
 2607:6e20::/27 Deny Bogon
 2607:6e40::/26 Deny Bogon
-2607:6e80::/25 Deny Bogon
+2607:6e90::/28 Deny Bogon
+2607:6ea0::/27 Deny Bogon
+2607:6ec0::/26 Deny Bogon
 2607:6f10::/28 Deny Bogon
 2607:6f20::/27 Deny Bogon
 2607:6f40::/26 Deny Bogon
-2607:6f80::/25 Deny Bogon
+2607:6f90::/28 Deny Bogon
+2607:6fa0::/27 Deny Bogon
+2607:6fc0::/26 Deny Bogon
 2607:7010::/28 Deny Bogon
 2607:7020::/27 Deny Bogon
 2607:7040::/26 Deny Bogon
-2607:7080::/25 Deny Bogon
+2607:7090::/28 Deny Bogon
+2607:70a0::/27 Deny Bogon
+2607:70c0::/26 Deny Bogon
 2607:7110::/28 Deny Bogon
 2607:7120::/27 Deny Bogon
 2607:7140::/26 Deny Bogon
-2607:7180::/25 Deny Bogon
+2607:7190::/28 Deny Bogon
+2607:71a0::/27 Deny Bogon
+2607:71c0::/26 Deny Bogon
 2607:7210::/28 Deny Bogon
 2607:7220::/27 Deny Bogon
 2607:7240::/26 Deny Bogon
-2607:7280::/25 Deny Bogon
+2607:7290::/28 Deny Bogon
+2607:72a0::/27 Deny Bogon
+2607:72c0::/26 Deny Bogon
 2607:7310::/28 Deny Bogon
 2607:7320::/27 Deny Bogon
 2607:7340::/26 Deny Bogon
-2607:7380::/25 Deny Bogon
+2607:7390::/28 Deny Bogon
+2607:73a0::/27 Deny Bogon
+2607:73c0::/26 Deny Bogon
 2607:7410::/28 Deny Bogon
 2607:7420::/27 Deny Bogon
 2607:7440::/26 Deny Bogon
@@ -42413,7 +42725,15 @@ Tag: Data Center
 2620:2:8400::/38 Deny Bogon
 2620:2:8800::/37 Deny Bogon
 2620:2:9000::/36 Deny Bogon
-2620:2:a000::/35 Deny Bogon
+2620:2:a010::/44 Deny Bogon
+2620:2:a020::/43 Deny Bogon
+2620:2:a040::/42 Deny Bogon
+2620:2:a080::/41 Deny Bogon
+2620:2:a100::/40 Deny Bogon
+2620:2:a200::/39 Deny Bogon
+2620:2:a400::/38 Deny Bogon
+2620:2:a800::/37 Deny Bogon
+2620:2:b000::/36 Deny Bogon
 2620:2:c010::/44 Deny Bogon
 2620:2:c020::/43 Deny Bogon
 2620:2:c040::/42 Deny Bogon
@@ -42423,7 +42743,15 @@ Tag: Data Center
 2620:2:c400::/38 Deny Bogon
 2620:2:c800::/37 Deny Bogon
 2620:2:d000::/36 Deny Bogon
-2620:2:e000::/35 Deny Bogon
+2620:2:e010::/44 Deny Bogon
+2620:2:e020::/43 Deny Bogon
+2620:2:e040::/42 Deny Bogon
+2620:2:e080::/41 Deny Bogon
+2620:2:e100::/40 Deny Bogon
+2620:2:e200::/39 Deny Bogon
+2620:2:e400::/38 Deny Bogon
+2620:2:e800::/37 Deny Bogon
+2620:2:f000::/36 Deny Bogon
 2620:3:10::/44 Deny Bogon
 2620:3:20::/43 Deny Bogon
 2620:3:40::/42 Deny Bogon
@@ -42433,7 +42761,15 @@ Tag: Data Center
 2620:3:400::/38 Deny Bogon
 2620:3:800::/37 Deny Bogon
 2620:3:1000::/36 Deny Bogon
-2620:3:2000::/35 Deny Bogon
+2620:3:2010::/44 Deny Bogon
+2620:3:2020::/43 Deny Bogon
+2620:3:2040::/42 Deny Bogon
+2620:3:2080::/41 Deny Bogon
+2620:3:2100::/40 Deny Bogon
+2620:3:2200::/39 Deny Bogon
+2620:3:2400::/38 Deny Bogon
+2620:3:2800::/37 Deny Bogon
+2620:3:3000::/36 Deny Bogon
 2620:3:4010::/44 Deny Bogon
 2620:3:4020::/43 Deny Bogon
 2620:3:4040::/42 Deny Bogon
@@ -42443,7 +42779,15 @@ Tag: Data Center
 2620:3:4400::/38 Deny Bogon
 2620:3:4800::/37 Deny Bogon
 2620:3:5000::/36 Deny Bogon
-2620:3:6000::/35 Deny Bogon
+2620:3:6010::/44 Deny Bogon
+2620:3:6020::/43 Deny Bogon
+2620:3:6040::/42 Deny Bogon
+2620:3:6080::/41 Deny Bogon
+2620:3:6100::/40 Deny Bogon
+2620:3:6200::/39 Deny Bogon
+2620:3:6400::/38 Deny Bogon
+2620:3:6800::/37 Deny Bogon
+2620:3:7000::/36 Deny Bogon
 2620:3:8010::/44 Deny Bogon
 2620:3:8020::/43 Deny Bogon
 2620:3:8040::/42 Deny Bogon
@@ -53901,8 +54245,20 @@ Tag: Data Center
 2620:128:4200::/39 Deny Bogon
 2620:128:4400::/38 Deny Bogon
 2620:128:4800::/37 Deny Bogon
-2620:128:6000::/35 Deny Bogon
-2620:128:8000::/33 Deny Bogon
+2620:128:6100::/40 Deny Bogon
+2620:128:6200::/39 Deny Bogon
+2620:128:6400::/38 Deny Bogon
+2620:128:6800::/37 Deny Bogon
+2620:128:7100::/40 Deny Bogon
+2620:128:7200::/39 Deny Bogon
+2620:128:7400::/38 Deny Bogon
+2620:128:7800::/37 Deny Bogon
+2620:128:8100::/40 Deny Bogon
+2620:128:8200::/39 Deny Bogon
+2620:128:8400::/38 Deny Bogon
+2620:128:8800::/37 Deny Bogon
+2620:128:a000::/35 Deny Bogon
+2620:128:c000::/34 Deny Bogon
 2620:129::/32 Deny Bogon
 2620:12a::/31 Deny Bogon
 2620:12c::/30 Deny Bogon
@@ -53920,8 +54276,7 @@ Tag: Data Center
 2620:143:4000::/34 Deny Bogon
 2620:143:8000::/33 Deny Bogon
 2620:17d::/32 Deny Bogon
-2620:1dd::/32 Deny Bogon
-2620:1de::/31 Deny Bogon
+2620:1df::/32 Deny Bogon
 2800::/29 Deny Bogon
 2800:19::/32 Deny Bogon
 2800:1a::/31 Deny Bogon
@@ -54741,7 +55096,14 @@ Tag: Data Center
 2801:17:8200::/39 Deny Bogon
 2801:17:8400::/38 Deny Bogon
 2801:17:8800::/37 Deny Bogon
-2801:17:9000::/36 Deny Bogon
+2801:17:9010::/44 Deny Bogon
+2801:17:9020::/43 Deny Bogon
+2801:17:9040::/42 Deny Bogon
+2801:17:9080::/41 Deny Bogon
+2801:17:9100::/40 Deny Bogon
+2801:17:9200::/39 Deny Bogon
+2801:17:9400::/38 Deny Bogon
+2801:17:9800::/37 Deny Bogon
 2801:17:a010::/44 Deny Bogon
 2801:17:a020::/43 Deny Bogon
 2801:17:a040::/42 Deny Bogon
@@ -55085,7 +55447,14 @@ Tag: Data Center
 2801:1b:8200::/39 Deny Bogon
 2801:1b:8400::/38 Deny Bogon
 2801:1b:8800::/37 Deny Bogon
-2801:1b:9000::/36 Deny Bogon
+2801:1b:9010::/44 Deny Bogon
+2801:1b:9020::/43 Deny Bogon
+2801:1b:9040::/42 Deny Bogon
+2801:1b:9080::/41 Deny Bogon
+2801:1b:9100::/40 Deny Bogon
+2801:1b:9200::/39 Deny Bogon
+2801:1b:9400::/38 Deny Bogon
+2801:1b:9800::/37 Deny Bogon
 2801:1b:a010::/44 Deny Bogon
 2801:1b:a020::/43 Deny Bogon
 2801:1b:a040::/42 Deny Bogon
@@ -56614,7 +56983,12 @@ Tag: Data Center
 2801:80:19b2::/47 Deny Bogon
 2801:80:19b4::/46 Deny Bogon
 2801:80:19b8::/45 Deny Bogon
-2801:80:19c0::/42 Deny Bogon
+2801:80:19c1::/48 Deny Bogon
+2801:80:19c2::/47 Deny Bogon
+2801:80:19c4::/46 Deny Bogon
+2801:80:19c8::/45 Deny Bogon
+2801:80:19d0::/44 Deny Bogon
+2801:80:19e0::/43 Deny Bogon
 2801:80:1a00::/39 Deny Bogon
 2801:80:1c00::/38 Deny Bogon
 2801:80:2000::/35 Deny Bogon
@@ -57638,7 +58012,8 @@ Tag: Data Center
 2803:56c0::/26 Deny Bogon
 2803:5710::/28 Deny Bogon
 2803:5720::/27 Deny Bogon
-2803:5740::/26 Deny Bogon
+2803:5750::/28 Deny Bogon
+2803:5760::/27 Deny Bogon
 2803:5790::/28 Deny Bogon
 2803:57a0::/27 Deny Bogon
 2803:57c0::/26 Deny Bogon
@@ -58574,7 +58949,8 @@ Tag: Data Center
 2803:d6c0::/26 Deny Bogon
 2803:d710::/28 Deny Bogon
 2803:d720::/27 Deny Bogon
-2803:d740::/26 Deny Bogon
+2803:d750::/28 Deny Bogon
+2803:d760::/27 Deny Bogon
 2803:d790::/28 Deny Bogon
 2803:d7a0::/27 Deny Bogon
 2803:d7c0::/26 Deny Bogon
@@ -65176,8 +65552,66 @@ Tag: Data Center
 2804:3272::/31 Deny Bogon
 2804:3275::/32 Deny Bogon
 2804:3276::/31 Deny Bogon
-2804:3278::/29 Deny Bogon
-2804:3280::/25 Deny Bogon
+2804:3279::/32 Deny Bogon
+2804:327a::/31 Deny Bogon
+2804:327d::/32 Deny Bogon
+2804:327e::/31 Deny Bogon
+2804:3281::/32 Deny Bogon
+2804:3282::/31 Deny Bogon
+2804:3285::/32 Deny Bogon
+2804:3286::/31 Deny Bogon
+2804:3289::/32 Deny Bogon
+2804:328a::/31 Deny Bogon
+2804:328d::/32 Deny Bogon
+2804:328e::/31 Deny Bogon
+2804:3291::/32 Deny Bogon
+2804:3292::/31 Deny Bogon
+2804:3295::/32 Deny Bogon
+2804:3296::/31 Deny Bogon
+2804:3299::/32 Deny Bogon
+2804:329a::/31 Deny Bogon
+2804:329d::/32 Deny Bogon
+2804:329e::/31 Deny Bogon
+2804:32a1::/32 Deny Bogon
+2804:32a2::/31 Deny Bogon
+2804:32a5::/32 Deny Bogon
+2804:32a6::/31 Deny Bogon
+2804:32a9::/32 Deny Bogon
+2804:32aa::/31 Deny Bogon
+2804:32ad::/32 Deny Bogon
+2804:32ae::/31 Deny Bogon
+2804:32b1::/32 Deny Bogon
+2804:32b2::/31 Deny Bogon
+2804:32b5::/32 Deny Bogon
+2804:32b6::/31 Deny Bogon
+2804:32b9::/32 Deny Bogon
+2804:32ba::/31 Deny Bogon
+2804:32bd::/32 Deny Bogon
+2804:32be::/31 Deny Bogon
+2804:32c1::/32 Deny Bogon
+2804:32c2::/31 Deny Bogon
+2804:32c5::/32 Deny Bogon
+2804:32c6::/31 Deny Bogon
+2804:32c9::/32 Deny Bogon
+2804:32ca::/31 Deny Bogon
+2804:32cd::/32 Deny Bogon
+2804:32ce::/31 Deny Bogon
+2804:32d1::/32 Deny Bogon
+2804:32d2::/31 Deny Bogon
+2804:32d5::/32 Deny Bogon
+2804:32d6::/31 Deny Bogon
+2804:32d9::/32 Deny Bogon
+2804:32da::/31 Deny Bogon
+2804:32dd::/32 Deny Bogon
+2804:32de::/31 Deny Bogon
+2804:32e1::/32 Deny Bogon
+2804:32e2::/31 Deny Bogon
+2804:32e5::/32 Deny Bogon
+2804:32e6::/31 Deny Bogon
+2804:32e9::/32 Deny Bogon
+2804:32ea::/31 Deny Bogon
+2804:32ec::/30 Deny Bogon
+2804:32f0::/28 Deny Bogon
 2804:3300::/24 Deny Bogon
 2804:3400::/22 Deny Bogon
 2804:3800::/21 Deny Bogon
@@ -66704,7 +67138,8 @@ Tag: Data Center
 2a00:9b10::/28 Deny Bogon
 2a00:9b28::/29 Deny Bogon
 2a00:9b30::/28 Deny Bogon
-2a00:9b40::/27 Deny Bogon
+2a00:9b48::/29 Deny Bogon
+2a00:9b50::/28 Deny Bogon
 2a00:9b68::/29 Deny Bogon
 2a00:9b70::/28 Deny Bogon
 2a00:9b88::/29 Deny Bogon
@@ -69970,8 +70405,7 @@ Tag: Data Center
 2a01:b770::/28 Deny Bogon
 2a01:b788::/29 Deny Bogon
 2a01:b790::/28 Deny Bogon
-2a01:b7a8::/29 Deny Bogon
-2a01:b7b0::/28 Deny Bogon
+2a01:b7a0::/27 Deny Bogon
 2a01:b7c8::/29 Deny Bogon
 2a01:b7d0::/28 Deny Bogon
 2a01:b7e8::/29 Deny Bogon
@@ -70127,6 +70561,8 @@ Tag: Data Center
 2a02:20e8::/29 Deny Bogon
 2a02:2238::/29 Deny Bogon
 2a02:2418::/29 Deny Bogon
+2a02:2508::/29 Deny Bogon
+2a02:2550::/29 Deny Bogon
 2a02:2570::/29 Deny Bogon
 2a02:2598::/29 Deny Bogon
 2a02:26d8::/29 Deny Bogon
@@ -71141,6 +71577,9 @@ Tag: Data Center
 2a02:7fd0::/28 Deny Bogon
 2a02:7fe8::/29 Deny Bogon
 2a02:7ff0::/28 Deny Bogon
+2a02:d888::/29 Deny Bogon
+2a02:d890::/28 Deny Bogon
+2a02:d8a0::/27 Deny Bogon
 2a02:fa88::/29 Deny Bogon
 2a02:fa90::/28 Deny Bogon
 2a02:faa8::/29 Deny Bogon
@@ -71635,8 +72074,7 @@ Tag: Data Center
 2a03:2090::/28 Deny Bogon
 2a03:20a8::/29 Deny Bogon
 2a03:20b0::/28 Deny Bogon
-2a03:20c8::/29 Deny Bogon
-2a03:20d0::/28 Deny Bogon
+2a03:20c0::/27 Deny Bogon
 2a03:20e8::/29 Deny Bogon
 2a03:20f0::/28 Deny Bogon
 2a03:2108::/29 Deny Bogon
@@ -73783,7 +74221,8 @@ Tag: Data Center
 2a03:b070::/28 Deny Bogon
 2a03:b088::/29 Deny Bogon
 2a03:b090::/28 Deny Bogon
-2a03:b0a0::/27 Deny Bogon
+2a03:b0a8::/29 Deny Bogon
+2a03:b0b0::/28 Deny Bogon
 2a03:b0c8::/29 Deny Bogon
 2a03:b0d0::/28 Deny Bogon
 2a03:b0e0::/27 Deny Bogon
@@ -74657,10 +75096,8 @@ Tag: Data Center
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
 2a07:8ba0::/27 Deny Bogon
-2a07:b1c0::/26 Deny Bogon
-2a07:b200::/23 Deny Bogon
-2a07:b400::/22 Deny Bogon
-2a07:b800::/21 Deny Bogon
+2a07:ba00::/23 Deny Bogon
+2a07:bc00::/22 Deny Bogon
 2a07:c000::/18 Deny Bogon
 2a09::/16 Deny Bogon
 2a0a::/15 Deny Bogon
@@ -74675,7 +75112,6 @@ Tag: Data Center
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
 2c0f:f000::/23 Deny Bogon
-2c0f:f290::/28 Deny Bogon
 2c0f:f2a0::/27 Deny Bogon
 2c0f:f2c0::/26 Deny Bogon
 2c0f:f300::/24 Deny Bogon

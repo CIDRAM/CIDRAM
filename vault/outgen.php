@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.06.13).
+ * This file: Output generator (last modified: 2016.07.22).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -105,9 +105,21 @@ if ($CIDRAM['CacheModified']) {
 /** If any signatures were triggered, log it, generate output, then die. */
 if ($CIDRAM['BlockInfo']['SignatureCount']) {
 
+    /**
+     * Some simple sanitisation for our block information (helps to prevent
+     * some obscure types of XXS attacks).
+     */
+    $CIDRAM['BlockInfo'] = str_replace(
+        array('<', '>', "\r", "\n", "\t"),
+        array('&lt;', '&gt;', '&#13;', '&#10;', '&#9;'),
+        $CIDRAM['BlockInfo']
+    );
+
+    /** Determine which template file to use. */
     $CIDRAM['template_file'] =
         (!$CIDRAM['Config']['template_data']['css_url']) ? 'template.html' : 'template_custom.html';
 
+    /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['lang'] + $CIDRAM['BlockInfo'] + $CIDRAM['Config']['template_data'];
 
     if (!$CIDRAM['Config']['general']['silent_mode']) {
@@ -161,6 +173,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         $CIDRAM['html'] = '';
     }
 
+    /** Determining date/time information for logfile names. */
     if (
         substr_count($CIDRAM['Config']['general']['logfile'], '{') ||
         substr_count($CIDRAM['Config']['general']['logfileApache'], '{') ||
@@ -177,6 +190,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         ));
     }
 
+    /** Writing to the standard logfile. */
     if ($CIDRAM['Config']['general']['logfile']) {
         $CIDRAM['logfileData'] = array('d' =>
             (!file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'])) ?
@@ -195,6 +209,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         unset($CIDRAM['logfileData']);
     }
 
+    /** Writing to the Apache-style logfile. */
     if ($CIDRAM['Config']['general']['logfileApache']) {
         $CIDRAM['logfileApacheData'] = array('d' => sprintf(
             "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
@@ -214,6 +229,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         unset($CIDRAM['logfileApacheData']);
     }
 
+    /** Writing to the serialised logfile. */
     if ($CIDRAM['Config']['general']['logfileSerialized']) {
         if (isset($CIDRAM['BlockInfo']['EmailAddr'])) {
             unset($CIDRAM['BlockInfo']['EmailAddr']);
@@ -227,6 +243,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         unset($CIDRAM['logfileSerialData']);
     }
 
+    /** All necessary processing and logging has completed; Now we die. */
     die($CIDRAM['html']);
 
 }

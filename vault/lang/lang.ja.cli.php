@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for CLI (last modified: 2016.05.18).
+ * This file: Japanese language data for CLI (last modified: 2016.07.23).
  *
  * @todo (This is incomplete).
  */
@@ -22,7 +22,7 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLIモードのヘルプ。
 
  使用法：
- /path/to/php/php.exe /path/to/cidram/loader.php -フラグ： （入力）
+ /PHPへのパス/php.exe /CIDRAMへのパス/loader.php -フラグ： （入力）
 
  フラグ：
     -h  このヘルプ情報を表示します。
@@ -63,12 +63,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Expiry tag doesn\'t contain a valid ISO
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s and L%s are identical, and thus, mergeable.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Missing %Function%; Signature appears to be incomplete.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Missing 「Function」; Signature appears to be incomplete.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" is non-triggerable! "%s" is not a valid range!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already existing "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Not syntactically precise.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised %Function%; Signature could be broken.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised 「Function」; Signature could be broken.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';

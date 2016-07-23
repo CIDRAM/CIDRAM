@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.06.13).
+ * This file: Functions file (last modified: 2016.07.23).
  */
 
 /**
@@ -504,6 +504,10 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
                     $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                     break 3;
+                } elseif ($Category === 'Greylist') {
+                    $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
+                    $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                    break 2;
                 } elseif ($Category === 'Deny') {
                     if ($Signature === 'Bogon' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_bogons']) {

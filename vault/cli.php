@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.06.13).
+ * This file: CLI handler (last modified: 2016.07.23).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -128,8 +128,9 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
         if ($Sig['x'] = strpos($Sig['Base'], '/')) {
             $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
-            $Sig['Prefix'] = (int)substr($Sig['Base'], $Sig['x'] + 1);
-            $Sig['Key'] = $Sig['Prefix'] - 1;
+            $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
+            $Sig['PrefixInt'] = (int)$Sig['Prefix'];
+            $Sig['Key'] = $Sig['PrefixInt'] - 1;
         } else {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Syntax'], $i));
             continue;
@@ -148,7 +149,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             } else {
                 $Sig['Param'] = '';
             }
-            if ($Sig['Function'] !== 'Deny' && $Sig['Function'] !== 'Whitelist' && $Sig['Function'] !== 'Run') {
+            if ($Sig['Function'] !== 'Deny' && $Sig['Function'] !== 'Whitelist' && $Sig['Function'] !== 'Greylist' && $Sig['Function'] !== 'Run') {
                 echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Unrecognised'], $i));
             }
         } else {
@@ -159,43 +160,55 @@ if ($CIDRAM['argv'][1] === '-h') {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Whitelist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Whitelist')) && $Sig['n'] > 1) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
+        } elseif ($Sig['Function'] === 'Greylist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Greylist')) && $Sig['n'] > 1) {
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
         } elseif ($Sig['Function'] === 'Run' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Run ')) && $Sig['n'] > 1) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Duplicated'], $i, $Sig['Base'], $Sig['n']));
         }
         if ($Sig['IPv4']) {
-            if ($Sig['Key'] < 0 || $Sig['IPv4'][$Sig['Key']] !== $Sig['Base']) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Key']]));
-            }
-            for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
-                if (
-                    ($Sig['Function'] === 'Deny' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Deny')) ||
-                    ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Whitelist')) ||
-                    ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Run'))
-                ) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
+            if ($Sig['Key'] < 0 || $Sig['Key'] > 31) {
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable_Range'], $i, $Sig['Base'], $Sig['Prefix']));
+            } else {
+                if ($Sig['IPv4'][$Sig['Key']] !== $Sig['Base']) {
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Key']]));
                 }
-            }
-            for ($Sig['Iterator'] = $Sig['Prefix']; $Sig['Iterator'] < 32; $Sig['Iterator']++) {
-                if (substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' ')) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
+                for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
+                    if (
+                        ($Sig['Function'] === 'Deny' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Deny')) ||
+                        ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Whitelist')) ||
+                        ($Sig['Function'] === 'Greylist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Greylist')) ||
+                        ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Run'))
+                    ) {
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
+                    }
+                }
+                for ($Sig['Iterator'] = $Sig['PrefixInt']; $Sig['Iterator'] < 32; $Sig['Iterator']++) {
+                    if (substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' ')) {
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv4'][$Sig['Iterator']]));
+                    }
                 }
             }
         } elseif ($Sig['IPv6']) {
-            if ($Sig['Key'] < 0 || $Sig['IPv6'][$Sig['Key']] !== $Sig['Base']) {
-                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Key']]));
-            }
-            for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
-                if (
-                    ($Sig['Function'] === 'Deny' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Deny')) ||
-                    ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Whitelist')) ||
-                    ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Run'))
-                ) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
+            if ($Sig['Key'] < 0 || $Sig['Key'] > 127) {
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable_Range'], $i, $Sig['Base'], $Sig['Prefix']));
+            } else {
+                if ($Sig['IPv6'][$Sig['Key']] !== $Sig['Base']) {
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Nontriggerable'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Key']]));
                 }
-            }
-            for ($Sig['Iterator'] = $Sig['Prefix']; $Sig['Iterator'] < 128; $Sig['Iterator']++) {
-                if (substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' ')) {
-                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
+                for ($Sig['Iterator'] = 0; $Sig['Iterator'] < $Sig['Key']; $Sig['Iterator']++) {
+                    if (
+                        ($Sig['Function'] === 'Deny' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Deny')) ||
+                        ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Whitelist')) ||
+                        ($Sig['Function'] === 'Greylist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Greylist')) ||
+                        ($Sig['Function'] === 'Run' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Run'))
+                    ) {
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Subordinate'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
+                    }
+                }
+                for ($Sig['Iterator'] = $Sig['PrefixInt']; $Sig['Iterator'] < 128; $Sig['Iterator']++) {
+                    if (substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' ')) {
+                        echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Superset'], $i, $Sig['Base'], $Sig['IPv6'][$Sig['Iterator']]));
+                    }
                 }
             }
         }
@@ -260,8 +273,9 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
         if ($Sig['x'] = strpos($Sig['Base'], '/')) {
             $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
-            $Sig['Prefix'] = (int)substr($Sig['Base'], $Sig['x'] + 1);
-            $Sig['Key'] = $Sig['Prefix'] - 1;
+            $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
+            $Sig['PrefixInt'] = (int)$Sig['Prefix'];
+            $Sig['Key'] = $Sig['PrefixInt'] - 1;
         } else {
             $FileToValidate = str_replace("\n" . $ArrayToValidate[$i] . "\n", "\n# " . $ArrayToValidate[$i] . "\n", $FileToValidate);
             $Changes++;
@@ -307,6 +321,14 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Sig['FilePartial'] = '';
             $Changes += $Sig['n'] - 1;
             $Operations++;
+        } elseif ($Sig['Function'] === 'Greylist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Greylist')) && $Sig['n'] > 1) {
+            $Sig['x'] = strpos($FileToValidate, "\n" . $Sig['Base'] . ' Greylist') + strlen("\n" . $Sig['Base'] . ' Greylist');
+            $Sig['FilePartial'] = array(substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x']));
+            $Sig['FilePartial'][1] = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Greylist[^\n]*\n\x1ai", "\n", $Sig['FilePartial'][1]);
+            $FileToValidate = $Sig['FilePartial'][0] . $Sig['FilePartial'][1];
+            $Sig['FilePartial'] = '';
+            $Changes += $Sig['n'] - 1;
+            $Operations++;
         }
         if ($Sig['IPv4']) {
             if ($Sig['Key'] >= 0 && $Sig['IPv4'][$Sig['Key']] !== $Sig['Base'] && $LNs = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' ')) {
@@ -327,6 +349,11 @@ if ($CIDRAM['argv'][1] === '-h') {
                     $Changes++;
                     $Operations++;
                 }
+                if ($Sig['Function'] === 'Greylist' && substr_count($FileToValidate, "\n" . $Sig['IPv4'][$Sig['Iterator']] . ' Greylist')) {
+                    $FileToValidate = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Greylist[^\n]*\n\x1ai", "\n", $FileToValidate);
+                    $Changes++;
+                    $Operations++;
+                }
             }
         } elseif ($Sig['IPv6']) {
             if ($Sig['Key'] >= 0 && $Sig['IPv6'][$Sig['Key']] !== $Sig['Base'] && $LNs = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' ')) {
@@ -344,6 +371,11 @@ if ($CIDRAM['argv'][1] === '-h') {
                 }
                 if ($Sig['Function'] === 'Whitelist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Whitelist')) {
                     $FileToValidate = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Whitelist[^\n]*\n\x1ai", "\n", $FileToValidate);
+                    $Changes++;
+                    $Operations++;
+                }
+                if ($Sig['Function'] === 'Greylist' && substr_count($FileToValidate, "\n" . $Sig['IPv6'][$Sig['Iterator']] . ' Greylist')) {
+                    $FileToValidate = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Greylist[^\n]*\n\x1ai", "\n", $FileToValidate);
                     $Changes++;
                     $Operations++;
                 }

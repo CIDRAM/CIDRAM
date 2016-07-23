@@ -230,17 +230,17 @@ Correspond à la sortie HTML utilisé pour générer la page "Accès Refusé". S
 
 Une description du format et de la structure du signatures utilisé par CIDRAM peut être trouvée documentée en plain-text dans les deux fichiers de signatures personnalisées. S'il vous plaît référez à cette documentation pour apprendre plus sur le format et la structure du signatures de CIDRAM.
 
-Toutes les signatures IPv4 suivre le format: `xxx.xxx.xxx.xxx/yy %Function% %Param%`.
+Toutes les signatures IPv4 suivre le format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` représente le début du bloc (les octets de l'adresse IP initiale dans le bloc).
 - `yy` représente la taille du bloc [1-32].
-- `%Function%` instruit le script ce qu'il faut faire avec la signature (la façon dont la signature doit être considérée).
-- `%Param%` représente les informations complémentaires qui peuvent être exigés par `%Function%`.
+- `[Function]` instruit le script ce qu'il faut faire avec la signature (la façon dont la signature doit être considérée).
+- `[Param]` représente les informations complémentaires qui peuvent être exigés par `[Function]`.
 
-Toutes les signatures IPv6 follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`.
+Toutes les signatures IPv6 follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
 - `xxxx:xxxx:xxxx:xxxx::xxxx` représente le début du bloc (les octets de l'adresse IP initiale dans le bloc). Notation complète et notation abrégée sont à la fois acceptable (et chacun DOIT suivre les normes appropriées et pertinentes de la notation d'IPv6, mais avec une exception: une adresse IPv6 ne peut jamais commencer par une abréviation quand il est utilisé dans une signature pour ce script, en raison de la façon dont les CIDRs sont reconstruits par le script; Par exemple, `::1/128` doit être exprimée, quand il est utilisé dans une signature, comme `0::1/128`, et `::0/128` exprimée comme `0::/128`).
 - `yy` représente la taille du bloc [1-128].
-- `%Function%` instruit le script ce qu'il faut faire avec la signature (la façon dont la signature doit être considérée).
-- `%Param%` représente les informations complémentaires qui peuvent être exigés par `%Function%`.
+- `[Function]` instruit le script ce qu'il faut faire avec la signature (la façon dont la signature doit être considérée).
+- `[Param]` représente les informations complémentaires qui peuvent être exigés par `[Function]`.
 
 Les fichiers de signatures pour CIDRAM DEVRAIT utiliser les sauts de ligne de type Unix (`%0A`, or `\n`)! D'autres types/styles de sauts de ligne (par exemple, Windows `%0D%0A` ou `\r\n` sauts de ligne, Mac `%0D` ou `\r` sauts de ligne, etc) PEUT être utilisé, mais ne sont PAS préférés. Ceux sauts de ligne qui ne sont pas du type Unix sera normalisé à sauts de ligne de type Unix par le script.
 
@@ -248,26 +248,31 @@ Notation précise et correcte pour CIDRs est exigée, autrement le script ne ser
 
 Tout dans les fichiers de signatures non reconnu comme une signature ni comme liées à la syntaxe par le script seront IGNORÉS, donc ce qui signifie que vous pouvez mettre toutes les données non-signature que vous voulez dans les fichiers de signatures sans risque, sans les casser et sans casser le script. Les commentaires sont acceptables dans les fichiers de signatures, et aucun formatage spécial est nécessaire pour eux. Hachage dans le style de Shell pour les commentaires est préféré, mais pas forcée; Fonctionnellement, il ne fait aucune différence pour le script si vous choisissez d'utiliser hachage dans le style de Shell pour les commentaires, mais d'utilisation du hachage dans le style de Shell est utile pour IDEs et éditeurs de texte brut de mettre en surligner correctement les différentes parties des fichiers de signatures (et donc, hachage dans le style de Shell peut aider comme une aide visuelle lors de l'édition).
 
-Les valeurs possibles de `%Function%` sont les suivants:
+Les valeurs possibles de `[Function]` sont les suivants:
 - Run
 - Whitelist
+- Greylist
 - Deny
 
-Si "Run" est utilisé, quand la signature est déclenchée, le script tentera d'exécuter (utilisant un statement `require_once`) un script PHP externe, spécifié par la valeur de `%Param%` (le répertoire de travail devrait être le répertoire "/vault/" du script).
+Si "Run" est utilisé, quand la signature est déclenchée, le script tentera d'exécuter (utilisant un statement `require_once`) un script PHP externe, spécifié par la valeur de `[Param]` (le répertoire de travail devrait être le répertoire "/vault/" du script).
 
 Exemple: `127.0.0.0/8 Run example.php`
 
 Cela peut être utile si vous voulez exécuter du code PHP spécifique pour certaines adresses IP et/ou CIDRs spécifiques.
 
-Si "Whitelist" est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et de briser la fonction du test. `%Param%` est ignorée. Cette fonction est l'équivalent de mettre une adresse IP ou CIDR particulière sur un whitelist pour empêcher la détection.
+Si "Whitelist" est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et de briser la fonction du test. `[Param]` est ignorée. Cette fonction est l'équivalent de mettre une adresse IP ou CIDR particulière sur un whitelist pour empêcher la détection.
 
 Exemple: `127.0.0.1/32 Whitelist`
 
+Si "Greylist" est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et passer au fichier de signatures suivant pour continuer le traitement. `[Param]` est ignorée.
+
+Exemple: `127.0.0.1/32 Greylist`
+
 Si "Deny" est utilisé, quand la signature est déclenchée, en supposant qu'aucune signature whitelist a été déclenchée pour l'adresse IP donnée et/ou CIDR donnée, accès à la page protégée sera refusée. "Deny" est ce que vous aurez envie d'utiliser d'effectivement bloquer une adresse IP et/ou CIDR. Quand quelconque les signatures sont déclenchées que faire usage de "Deny", la page "Access Denied" du script seront générés et la demande à la page protégée tué.
 
-La valeur de `%Param%` accepté par "Deny" seront traitées au la sortie de la page "Accès Refusé", fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple "Je ne veux tu pas sur mon site"), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
+La valeur de `[Param]` accepté par "Deny" seront traitées au la sortie de la page "Accès Refusé", fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple "Je ne veux tu pas sur mon site"), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
 
-Les explications pré-préparés avoir le soutien de i18n et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de "Deny" sur la base de leur valeur de `%Param%` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `%Param%` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le soutien de i18n et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
+Les explications pré-préparés avoir le soutien de i18n et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de "Deny" sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le soutien de i18n et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
 
 Les mots courts disponibles sont:
 - Bogon
@@ -315,4 +320,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 30 Juin 2016 (2016.06.30).
+Dernière Réactualisé: 23 Juillet 2016 (2016.07.23).

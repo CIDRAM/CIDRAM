@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for CLI last modified: 2016.04.14).
+ * This file: French language data for CLI last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,12 +60,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Tag d\'expiration ne contient pas un IS
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" n\'est *PAS* une adresse IPv4 ou IPv6 valide!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: La longueur de la ligne est supérieure à 120 octets; La longueur de la ligne devrait être limitée à 120 octets pour lisibilité optimale.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s et L%s sont identiques, et ainsi, fusionnables.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: %Function% absent; Signature semble être incomplètes.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] absent; Signature semble être incomplètes.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" est non déclenchable! Sa base ne correspond pas au début de sa gamme! Essayez de remplacer avec "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" est non déclenchable! "%s" n\'est pas une gamme valide!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" est subordonnée à l\'existant signature "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" est un superset du déjà existant signature "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Non syntaxiquement précis.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs/Onglets détectés; Les espaces sont préférables aux tabs/onglets pour lisibilité optimale.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Inconnu %Function%; Signature pourrait être rompu.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Inconnu [Function]; Signature pourrait être rompu.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excès d\'espace blanc terminant sur cette ligne détecté.';

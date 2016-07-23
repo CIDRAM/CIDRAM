@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for CLI (last modified: 2016.04.14).
+ * This file: Chinese (traditional) language data for CLI (last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -61,12 +61,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s：到期標籤不包含有效的ISO8601�
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s：“%s”不是一個有效的IPv4或IPv6地址！';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s：線路長度大於120字節；線路長度應限制在120字節為最佳可讀性。';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s和L%s是相同的，和因此，可合併。';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s：%Function%失踪；簽名似乎是不完整。';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s：“%s”不可觸發！其基不匹配開始其範圍內的！試圖取代它以“%s”。';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s：【Function】失踪；簽名似乎是不完整。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s：“%s”不可觸發！其基不匹配開始其範圍內！試圖取代它以“%s”。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s：“%s”不可觸發！“%s”不是一個有效的範圍內！';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s：“%s”是從屬於現有簽名“%s”。';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s：“%s”是一個超集現有簽名“%s”。';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s：語法上不准確的。';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s：製表是檢測；空間是首選到製表為最佳可讀性。';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s：章節標籤大於20字節；章節標籤應該清晰和簡明。';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s：%Function%未知；簽名可能被打破。';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s：【Function】未知；簽名可能被打破。';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s：多餘的尾隨空白在這個線是檢測。';

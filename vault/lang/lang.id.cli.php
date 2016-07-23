@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for CLI (last modified: 2016.04.14).
+ * This file: Indonesian language data for CLI (last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,12 +60,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Tag kadaluwarsa tidak berisi tanggal/wa
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" adalah *TIDAK* alamat IPv4 atau IPv6 valid!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Ukuran baris adalah lebih besar dari 120 bytes; Ukuran baris harus dibatasi 120 bytes untuk dibaca optimal.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s dan L%s adalah identik, dan demikian, dapat digabungkan.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: %Function% tidak ada; Tanda tangan tampaknya tidak lengkap.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] tidak ada; Tanda tangan tampaknya tidak lengkap.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" tidak dapat dipicu! Basisnya tidak cocok awal untuk jangkauannya! Cobalah mengganti dengan "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" tidak dapat dipicu! "%s" tidak rentang valid!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" adalah bawahan untuk tanda tangan sudah ada "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" adalah superset untuk tanda tangan sudah ada "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Sintaksis tidak tepat.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tab terdeteksi; Spasi adalah direkomendasikan daripada tab untuk dibaca optimal.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Tag untuk bagian adalah lebih besar dari 20 bytes; Tag untuk bagian harus jelas dan ringkas.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: %Function% tidak diketahui; Tanda tangan mungkin rusak.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] tidak diketahui; Tanda tangan mungkin rusak.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Mubazir spasi terdeteksi pada akhir baris ini.';

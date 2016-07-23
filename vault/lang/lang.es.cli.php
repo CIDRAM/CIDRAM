@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for CLI (last modified: 2016.04.15).
+ * This file: Spanish language data for CLI (last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,12 +60,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Etiqueta de expiración no contiene una
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" *NO* es una dirección IPv4 o IPv6 válida!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Longitud de la línea es mayor que 120 bytes; Longitud de la línea debe limitarse a 120 bytes para la legibilidad óptima.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s y L%s son identicos, y por lo tanto, pueden fusionarse.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: %Function% es ausente; Firma parece estar incompletos.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" no es activable! Su base no coincide con el comienzo de su gama! Intente reemplazarlo con "%s".';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] es ausente; Firma parece estar incompletos.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" no es activable! Su base no coincide con el comienzo de su rango! Intente reemplazarlo con "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" no es activable! "%s" no es un rango válido!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" está subordinada a la ya existente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" es un superconjunto a la ya existente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: No sintácticamente precisa.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabulaciones detectadas; Espacios son preferibles a las tabulaciones para la legibilidad óptima.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Etiqueta de sección es mayor que 20 bytes; Etiquetas de secciones debe ser clara y concisa.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: %Function% no reconocido; Firma podía ser roto.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] no reconocido; Firma podía ser roto.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Exceso de espacios en blanco detectado en el extremo de esta línea.';

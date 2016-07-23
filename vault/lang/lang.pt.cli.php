@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for CLI (last modified: 2016.04.14).
+ * This file: Portuguese language data for CLI (last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,12 +60,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Etiqueta de expiração não contém um
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" *NÃO* é um endereço IPv4 ou IPv6 válido!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Comprimento da linha é maior que 120 bytes; Comprimento da linha deve ser limitado a 120 bytes para facilitar a leitura ótimo.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s e L%s são idênticos, e assim, mesclável.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Ausência de %Function%; Assinatura parece estar incompleto.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Ausência de [Function]; Assinatura parece estar incompleto.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" não pode ser desencadeada! Sua base não coincide com o início da sua gama! Tente substituindo-o por "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" não pode ser desencadeada! "%s" não é uma gama válida!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" é subordinado ao já existente assinatura de "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" é um superconjunto ao já existente assinatura de "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Não sintaticamente precisa.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detectados; Espaços têm preferência sobre tabs para facilitar a leitura ótimo.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Etiqueta da seção é maior que 20 bytes; Etiquetas da seções deve ser claro e conciso.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: %Function% não reconhecido; Assinatura poderia ser quebrado.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] não reconhecido; Assinatura poderia ser quebrado.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excesso de espaços em branco detectado à direita desta linha.';

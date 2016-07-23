@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for CLI (last modified: 2016.04.15).
+ * This file: Dutch language data for CLI (last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -61,12 +61,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Vervaltijd label bevat geen geldig ISO 
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *GEEN* geldig IPv4 of IPv6 adres!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Lijnlengte is groter dan 120 bytes; Lijnlengte moet worden beperkt tot 120 bytes voor optimale leesbaarheid.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s en L%s zijn identiek, en daarom, kan worden samengevoegd.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Ontbrekende %Function%; Handtekening lijkt onvolledig.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" kan niet worden geactiveerd! Haar basis niet overeen met het begin van zijn gamma! Probeer te vervangen het door "%s".';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Ontbrekende [Function]; Handtekening lijkt onvolledig.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" kan niet worden geactiveerd! Haar basis niet overeen met het begin van de series! Probeer te vervangen het door "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" kan niet worden geactiveerd! "%s" is niet een geldig series!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is ondergeschikt aan de reeds bestaande "%s" handtekening.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is een superset aan de reeds bestaande "%s" handtekening.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Niet syntactisch precies.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs gedetecteerd; Spaces voorkeur boven tabs voor optimale leesbaarheid.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sectie label is groter dan 20 bytes; Sectie labels moeten duidelijk en beknopt zijn.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: %Function% is niet herkend; Handtekening misschien gebroken.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] is niet herkend; Handtekening misschien gebroken.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Overmaat afsluitende witruimte gedetecteerd op dit lijn.';

@@ -11,6 +11,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   simple sanitisation to the block information; This should help to prevent
   some obscure types of XXS attacks.
 
+- [2016.07.23; Minor code change; Maikuolan]: Added internal language support
+  for Japanese (14 language options now supported in total, not including
+  CLI-mode support; I'm not fluent and it hasn't yet been audited, so, the new
+  translation should be regarded as fuzzy). Added a new function: "Greylist";
+  This can be used in the same way taht whitelisting is used, but for escaping
+  a CIDR from a single file, rather than from all files. Slightly improved the
+  signature validator/fixer (can now detect broken/invalid ranges).
+
 === Version/Release 0.3.1 ===
 PATCH RELEASE.
 

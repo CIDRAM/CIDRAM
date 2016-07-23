@@ -95,10 +95,10 @@
 
 
 # ---
-# Some basic whitelisting to avoid problems with the local network being blocked by some of the bogon CIDR signatures
+# Some basic greylisting to avoid problems with the local network being blocked by some of the bogon CIDR signatures
 # that appear further down into the signature files.
 
-0::/8 Whitelist
+0::/8 Greylist
 
 
 # ---
@@ -2758,13 +2758,6 @@ Tag: Serverius Holding
 Tag: Transip B.V
 
 
-# ASN 200429 ("HostSlim BV")
-# Infected by malware (as per reported by Google): 0.61%.
-# Updated: 2016.05.09
-
-Tag: HostSlim BV
-
-
 # ASN 43350 ("NForce Entertainment B.V")
 # Infected by malware (as per reported by Google): 1.23%.
 # Updated: 2016.05.09
@@ -3147,9 +3140,37 @@ Tag: Bay Area IS
 Tag: Link11 GmbH
 
 
+# ASN 30870 ("Trans-IX B.V").
+# Infected by malware (as per reported by Google): 0.96%.
+# Updated: 2016.07.24
+
+2001:67c:1724::/48 Deny Cloud
+2a01:4d60::/32 Deny Cloud
+2a02:6460::/32 Deny Cloud
+2a06:4a80::/29 Deny Cloud
+Tag: Trans-IX B.V
+
+
+# ASN 31103 ("Keyweb AG").
+# Infected by malware (as per reported by Google): 1.49%.
+# Updated: 2016.07.24
+
+2001:1b60::/29 Deny Cloud
+Tag: Keyweb AG
+
+
+# ASN 31252 ("STARNET S.R.L").
+# Infected by malware (as per reported by Google): 2.48%.
+# Updated: 2016.07.24
+
+2a00:9900::/29 Deny Generic
+2a01:320::/29 Deny Generic
+Tag: STARNET S.R.L
+
+
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.07.20
+# Updated: 2016.07.24
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -4072,20 +4093,19 @@ Tag: Link11 GmbH
 2001:678:8000::/33 Deny Bogon
 2001:679::/32 Deny Bogon
 2001:67a::/31 Deny Bogon
-2001:67c:74::/46 Deny Bogon
-2001:67c:474::/46 Deny Bogon
-2001:67c:554::/46 Deny Bogon
 2001:67c:584::/46 Deny Bogon
 2001:67c:614::/46 Deny Bogon
 2001:67c:6f4::/46 Deny Bogon
 2001:67c:770::/45 Deny Bogon
 2001:67c:800::/37 Deny Bogon
+2001:67c:1160::/46 Deny Bogon
 2001:67c:1420::/43 Deny Bogon
 2001:67c:1540::/46 Deny Bogon
 2001:67c:1688::/46 Deny Bogon
 2001:67c:16e0::/46 Deny Bogon
 2001:67c:1788::/46 Deny Bogon
 2001:67c:179c::/46 Deny Bogon
+2001:67c:1878::/46 Deny Bogon
 2001:67c:19e0::/46 Deny Bogon
 2001:67c:22d4::/46 Deny Bogon
 2001:67c:232c::/46 Deny Bogon
@@ -4150,7 +4170,7 @@ Tag: Link11 GmbH
 2001:7fa:2000::/35 Deny Bogon
 2001:7fa:4000::/34 Deny Bogon
 2001:7fa:8000::/33 Deny Bogon
-2001:7fc:3::/48 Deny Bogon
+2001:7fc:2::/47 Deny Bogon
 2001:7fc:4::/46 Deny Bogon
 2001:7fc:8::/45 Deny Bogon
 2001:7fc:10::/44 Deny Bogon
@@ -8383,7 +8403,15 @@ Tag: Link11 GmbH
 2001:df3:5440::/42 Deny Bogon
 2001:df3:5480::/41 Deny Bogon
 2001:df3:5500::/40 Deny Bogon
-2001:df3:5600::/39 Deny Bogon
+2001:df3:5601::/48 Deny Bogon
+2001:df3:5602::/47 Deny Bogon
+2001:df3:5604::/46 Deny Bogon
+2001:df3:5608::/45 Deny Bogon
+2001:df3:5610::/44 Deny Bogon
+2001:df3:5620::/43 Deny Bogon
+2001:df3:5640::/42 Deny Bogon
+2001:df3:5680::/41 Deny Bogon
+2001:df3:5700::/40 Deny Bogon
 2001:df3:5801::/48 Deny Bogon
 2001:df3:5802::/47 Deny Bogon
 2001:df3:5804::/46 Deny Bogon
@@ -8393,7 +8421,15 @@ Tag: Link11 GmbH
 2001:df3:5840::/42 Deny Bogon
 2001:df3:5880::/41 Deny Bogon
 2001:df3:5900::/40 Deny Bogon
-2001:df3:5a00::/39 Deny Bogon
+2001:df3:5a01::/48 Deny Bogon
+2001:df3:5a02::/47 Deny Bogon
+2001:df3:5a04::/46 Deny Bogon
+2001:df3:5a08::/45 Deny Bogon
+2001:df3:5a10::/44 Deny Bogon
+2001:df3:5a20::/43 Deny Bogon
+2001:df3:5a40::/42 Deny Bogon
+2001:df3:5a80::/41 Deny Bogon
+2001:df3:5b00::/40 Deny Bogon
 2001:df3:5c01::/48 Deny Bogon
 2001:df3:5c02::/47 Deny Bogon
 2001:df3:5c04::/46 Deny Bogon
@@ -8403,7 +8439,15 @@ Tag: Link11 GmbH
 2001:df3:5c40::/42 Deny Bogon
 2001:df3:5c80::/41 Deny Bogon
 2001:df3:5d00::/40 Deny Bogon
-2001:df3:5e00::/39 Deny Bogon
+2001:df3:5e01::/48 Deny Bogon
+2001:df3:5e02::/47 Deny Bogon
+2001:df3:5e04::/46 Deny Bogon
+2001:df3:5e08::/45 Deny Bogon
+2001:df3:5e10::/44 Deny Bogon
+2001:df3:5e20::/43 Deny Bogon
+2001:df3:5e40::/42 Deny Bogon
+2001:df3:5e80::/41 Deny Bogon
+2001:df3:5f00::/40 Deny Bogon
 2001:df3:6001::/48 Deny Bogon
 2001:df3:6002::/47 Deny Bogon
 2001:df3:6004::/46 Deny Bogon
@@ -8413,7 +8457,15 @@ Tag: Link11 GmbH
 2001:df3:6040::/42 Deny Bogon
 2001:df3:6080::/41 Deny Bogon
 2001:df3:6100::/40 Deny Bogon
-2001:df3:6200::/39 Deny Bogon
+2001:df3:6201::/48 Deny Bogon
+2001:df3:6202::/47 Deny Bogon
+2001:df3:6204::/46 Deny Bogon
+2001:df3:6208::/45 Deny Bogon
+2001:df3:6210::/44 Deny Bogon
+2001:df3:6220::/43 Deny Bogon
+2001:df3:6240::/42 Deny Bogon
+2001:df3:6280::/41 Deny Bogon
+2001:df3:6300::/40 Deny Bogon
 2001:df3:6401::/48 Deny Bogon
 2001:df3:6402::/47 Deny Bogon
 2001:df3:6404::/46 Deny Bogon
@@ -8423,7 +8475,15 @@ Tag: Link11 GmbH
 2001:df3:6440::/42 Deny Bogon
 2001:df3:6480::/41 Deny Bogon
 2001:df3:6500::/40 Deny Bogon
-2001:df3:6600::/39 Deny Bogon
+2001:df3:6601::/48 Deny Bogon
+2001:df3:6602::/47 Deny Bogon
+2001:df3:6604::/46 Deny Bogon
+2001:df3:6608::/45 Deny Bogon
+2001:df3:6610::/44 Deny Bogon
+2001:df3:6620::/43 Deny Bogon
+2001:df3:6640::/42 Deny Bogon
+2001:df3:6680::/41 Deny Bogon
+2001:df3:6700::/40 Deny Bogon
 2001:df3:6801::/48 Deny Bogon
 2001:df3:6802::/47 Deny Bogon
 2001:df3:6804::/46 Deny Bogon
@@ -8433,7 +8493,15 @@ Tag: Link11 GmbH
 2001:df3:6840::/42 Deny Bogon
 2001:df3:6880::/41 Deny Bogon
 2001:df3:6900::/40 Deny Bogon
-2001:df3:6a00::/39 Deny Bogon
+2001:df3:6a01::/48 Deny Bogon
+2001:df3:6a02::/47 Deny Bogon
+2001:df3:6a04::/46 Deny Bogon
+2001:df3:6a08::/45 Deny Bogon
+2001:df3:6a10::/44 Deny Bogon
+2001:df3:6a20::/43 Deny Bogon
+2001:df3:6a40::/42 Deny Bogon
+2001:df3:6a80::/41 Deny Bogon
+2001:df3:6b00::/40 Deny Bogon
 2001:df3:6c01::/48 Deny Bogon
 2001:df3:6c02::/47 Deny Bogon
 2001:df3:6c04::/46 Deny Bogon
@@ -8443,7 +8511,15 @@ Tag: Link11 GmbH
 2001:df3:6c40::/42 Deny Bogon
 2001:df3:6c80::/41 Deny Bogon
 2001:df3:6d00::/40 Deny Bogon
-2001:df3:6e00::/39 Deny Bogon
+2001:df3:6e01::/48 Deny Bogon
+2001:df3:6e02::/47 Deny Bogon
+2001:df3:6e04::/46 Deny Bogon
+2001:df3:6e08::/45 Deny Bogon
+2001:df3:6e10::/44 Deny Bogon
+2001:df3:6e20::/43 Deny Bogon
+2001:df3:6e40::/42 Deny Bogon
+2001:df3:6e80::/41 Deny Bogon
+2001:df3:6f00::/40 Deny Bogon
 2001:df3:7001::/48 Deny Bogon
 2001:df3:7002::/47 Deny Bogon
 2001:df3:7004::/46 Deny Bogon
@@ -32328,7 +32404,13 @@ Tag: Link11 GmbH
 2405:fb10::/28 Deny Bogon
 2405:fb20::/27 Deny Bogon
 2405:fb40::/26 Deny Bogon
-2405:fb80::/25 Deny Bogon
+2405:fb81::/32 Deny Bogon
+2405:fb82::/31 Deny Bogon
+2405:fb84::/30 Deny Bogon
+2405:fb88::/29 Deny Bogon
+2405:fb90::/28 Deny Bogon
+2405:fba0::/27 Deny Bogon
+2405:fbc0::/26 Deny Bogon
 2405:fc01::/32 Deny Bogon
 2405:fc02::/31 Deny Bogon
 2405:fc04::/30 Deny Bogon
@@ -32336,7 +32418,13 @@ Tag: Link11 GmbH
 2405:fc10::/28 Deny Bogon
 2405:fc20::/27 Deny Bogon
 2405:fc40::/26 Deny Bogon
-2405:fc80::/25 Deny Bogon
+2405:fc81::/32 Deny Bogon
+2405:fc82::/31 Deny Bogon
+2405:fc84::/30 Deny Bogon
+2405:fc88::/29 Deny Bogon
+2405:fc90::/28 Deny Bogon
+2405:fca0::/27 Deny Bogon
+2405:fcc0::/26 Deny Bogon
 2405:fd01::/32 Deny Bogon
 2405:fd02::/31 Deny Bogon
 2405:fd04::/30 Deny Bogon
@@ -32344,7 +32432,13 @@ Tag: Link11 GmbH
 2405:fd10::/28 Deny Bogon
 2405:fd20::/27 Deny Bogon
 2405:fd40::/26 Deny Bogon
-2405:fd80::/25 Deny Bogon
+2405:fd81::/32 Deny Bogon
+2405:fd82::/31 Deny Bogon
+2405:fd84::/30 Deny Bogon
+2405:fd88::/29 Deny Bogon
+2405:fd90::/28 Deny Bogon
+2405:fda0::/27 Deny Bogon
+2405:fdc0::/26 Deny Bogon
 2405:fe01::/32 Deny Bogon
 2405:fe02::/31 Deny Bogon
 2405:fe04::/30 Deny Bogon
@@ -32352,7 +32446,13 @@ Tag: Link11 GmbH
 2405:fe10::/28 Deny Bogon
 2405:fe20::/27 Deny Bogon
 2405:fe40::/26 Deny Bogon
-2405:fe80::/25 Deny Bogon
+2405:fe81::/32 Deny Bogon
+2405:fe82::/31 Deny Bogon
+2405:fe84::/30 Deny Bogon
+2405:fe88::/29 Deny Bogon
+2405:fe90::/28 Deny Bogon
+2405:fea0::/27 Deny Bogon
+2405:fec0::/26 Deny Bogon
 2405:ff01::/32 Deny Bogon
 2405:ff02::/31 Deny Bogon
 2405:ff04::/30 Deny Bogon
@@ -32360,7 +32460,13 @@ Tag: Link11 GmbH
 2405:ff10::/28 Deny Bogon
 2405:ff20::/27 Deny Bogon
 2405:ff40::/26 Deny Bogon
-2405:ff80::/25 Deny Bogon
+2405:ff81::/32 Deny Bogon
+2405:ff82::/31 Deny Bogon
+2405:ff84::/30 Deny Bogon
+2405:ff88::/29 Deny Bogon
+2405:ff90::/28 Deny Bogon
+2405:ffa0::/27 Deny Bogon
+2405:ffc0::/26 Deny Bogon
 2406:1::/32 Deny Bogon
 2406:2::/31 Deny Bogon
 2406:4::/30 Deny Bogon
@@ -32368,7 +32474,13 @@ Tag: Link11 GmbH
 2406:10::/28 Deny Bogon
 2406:20::/27 Deny Bogon
 2406:40::/26 Deny Bogon
-2406:80::/25 Deny Bogon
+2406:81::/32 Deny Bogon
+2406:82::/31 Deny Bogon
+2406:84::/30 Deny Bogon
+2406:88::/29 Deny Bogon
+2406:90::/28 Deny Bogon
+2406:a0::/27 Deny Bogon
+2406:c0::/26 Deny Bogon
 2406:101::/32 Deny Bogon
 2406:102::/31 Deny Bogon
 2406:104::/30 Deny Bogon
@@ -32376,7 +32488,13 @@ Tag: Link11 GmbH
 2406:110::/28 Deny Bogon
 2406:120::/27 Deny Bogon
 2406:140::/26 Deny Bogon
-2406:180::/25 Deny Bogon
+2406:181::/32 Deny Bogon
+2406:182::/31 Deny Bogon
+2406:184::/30 Deny Bogon
+2406:188::/29 Deny Bogon
+2406:190::/28 Deny Bogon
+2406:1a0::/27 Deny Bogon
+2406:1c0::/26 Deny Bogon
 2406:201::/32 Deny Bogon
 2406:202::/31 Deny Bogon
 2406:204::/30 Deny Bogon
@@ -32384,7 +32502,13 @@ Tag: Link11 GmbH
 2406:210::/28 Deny Bogon
 2406:220::/27 Deny Bogon
 2406:240::/26 Deny Bogon
-2406:280::/25 Deny Bogon
+2406:281::/32 Deny Bogon
+2406:282::/31 Deny Bogon
+2406:284::/30 Deny Bogon
+2406:288::/29 Deny Bogon
+2406:290::/28 Deny Bogon
+2406:2a0::/27 Deny Bogon
+2406:2c0::/26 Deny Bogon
 2406:301::/32 Deny Bogon
 2406:302::/31 Deny Bogon
 2406:304::/30 Deny Bogon
@@ -32392,7 +32516,13 @@ Tag: Link11 GmbH
 2406:310::/28 Deny Bogon
 2406:320::/27 Deny Bogon
 2406:340::/26 Deny Bogon
-2406:380::/25 Deny Bogon
+2406:381::/32 Deny Bogon
+2406:382::/31 Deny Bogon
+2406:384::/30 Deny Bogon
+2406:388::/29 Deny Bogon
+2406:390::/28 Deny Bogon
+2406:3a0::/27 Deny Bogon
+2406:3c0::/26 Deny Bogon
 2406:401::/32 Deny Bogon
 2406:402::/31 Deny Bogon
 2406:404::/30 Deny Bogon
@@ -32400,7 +32530,13 @@ Tag: Link11 GmbH
 2406:410::/28 Deny Bogon
 2406:420::/27 Deny Bogon
 2406:440::/26 Deny Bogon
-2406:480::/25 Deny Bogon
+2406:481::/32 Deny Bogon
+2406:482::/31 Deny Bogon
+2406:484::/30 Deny Bogon
+2406:488::/29 Deny Bogon
+2406:490::/28 Deny Bogon
+2406:4a0::/27 Deny Bogon
+2406:4c0::/26 Deny Bogon
 2406:501::/32 Deny Bogon
 2406:502::/31 Deny Bogon
 2406:504::/30 Deny Bogon
@@ -32408,7 +32544,13 @@ Tag: Link11 GmbH
 2406:510::/28 Deny Bogon
 2406:520::/27 Deny Bogon
 2406:540::/26 Deny Bogon
-2406:580::/25 Deny Bogon
+2406:581::/32 Deny Bogon
+2406:582::/31 Deny Bogon
+2406:584::/30 Deny Bogon
+2406:588::/29 Deny Bogon
+2406:590::/28 Deny Bogon
+2406:5a0::/27 Deny Bogon
+2406:5c0::/26 Deny Bogon
 2406:601::/32 Deny Bogon
 2406:602::/31 Deny Bogon
 2406:604::/30 Deny Bogon
@@ -36662,7 +36804,6 @@ Tag: Link11 GmbH
 2602:ff00::/27 Deny Bogon
 2602:ff20::/28 Deny Bogon
 2602:ff30::/31 Deny Bogon
-2602:ff32::/32 Deny Bogon
 2602:ff96:1000::/36 Deny Bogon
 2602:ff96:2000::/35 Deny Bogon
 2602:ff96:4000::/34 Deny Bogon
@@ -41989,7 +42130,9 @@ Tag: Link11 GmbH
 2607:7410::/28 Deny Bogon
 2607:7420::/27 Deny Bogon
 2607:7440::/26 Deny Bogon
-2607:7480::/25 Deny Bogon
+2607:7490::/28 Deny Bogon
+2607:74a0::/27 Deny Bogon
+2607:74c0::/26 Deny Bogon
 2607:7510::/28 Deny Bogon
 2607:7520::/27 Deny Bogon
 2607:7540::/26 Deny Bogon
@@ -42797,7 +42940,15 @@ Tag: Link11 GmbH
 2620:3:8400::/38 Deny Bogon
 2620:3:8800::/37 Deny Bogon
 2620:3:9000::/36 Deny Bogon
-2620:3:a000::/35 Deny Bogon
+2620:3:a010::/44 Deny Bogon
+2620:3:a020::/43 Deny Bogon
+2620:3:a040::/42 Deny Bogon
+2620:3:a080::/41 Deny Bogon
+2620:3:a100::/40 Deny Bogon
+2620:3:a200::/39 Deny Bogon
+2620:3:a400::/38 Deny Bogon
+2620:3:a800::/37 Deny Bogon
+2620:3:b000::/36 Deny Bogon
 2620:3:c010::/44 Deny Bogon
 2620:3:c020::/43 Deny Bogon
 2620:3:c040::/42 Deny Bogon
@@ -54257,8 +54408,6 @@ Tag: Link11 GmbH
 2620:128:8200::/39 Deny Bogon
 2620:128:8400::/38 Deny Bogon
 2620:128:8800::/37 Deny Bogon
-2620:128:a000::/35 Deny Bogon
-2620:128:c000::/34 Deny Bogon
 2620:129::/32 Deny Bogon
 2620:12a::/31 Deny Bogon
 2620:12c::/30 Deny Bogon
@@ -54276,6 +54425,10 @@ Tag: Link11 GmbH
 2620:143:4000::/34 Deny Bogon
 2620:143:8000::/33 Deny Bogon
 2620:17d::/32 Deny Bogon
+2620:181::/32 Deny Bogon
+2620:182::/31 Deny Bogon
+2620:184::/30 Deny Bogon
+2620:188::/29 Deny Bogon
 2620:1df::/32 Deny Bogon
 2800::/29 Deny Bogon
 2800:19::/32 Deny Bogon
@@ -57784,7 +57937,8 @@ Tag: Link11 GmbH
 2803:36c0::/26 Deny Bogon
 2803:3710::/28 Deny Bogon
 2803:3720::/27 Deny Bogon
-2803:3740::/26 Deny Bogon
+2803:3750::/28 Deny Bogon
+2803:3760::/27 Deny Bogon
 2803:3790::/28 Deny Bogon
 2803:37a0::/27 Deny Bogon
 2803:37c0::/26 Deny Bogon
@@ -58254,7 +58408,8 @@ Tag: Link11 GmbH
 2803:76c0::/26 Deny Bogon
 2803:7710::/28 Deny Bogon
 2803:7720::/27 Deny Bogon
-2803:7740::/26 Deny Bogon
+2803:7750::/28 Deny Bogon
+2803:7760::/27 Deny Bogon
 2803:7790::/28 Deny Bogon
 2803:77a0::/27 Deny Bogon
 2803:77c0::/26 Deny Bogon
@@ -58716,7 +58871,8 @@ Tag: Link11 GmbH
 2803:b6c0::/26 Deny Bogon
 2803:b710::/28 Deny Bogon
 2803:b720::/27 Deny Bogon
-2803:b740::/26 Deny Bogon
+2803:b750::/28 Deny Bogon
+2803:b760::/27 Deny Bogon
 2803:b790::/28 Deny Bogon
 2803:b7a0::/27 Deny Bogon
 2803:b7c0::/26 Deny Bogon
@@ -65610,9 +65766,25 @@ Tag: Link11 GmbH
 2804:32e6::/31 Deny Bogon
 2804:32e9::/32 Deny Bogon
 2804:32ea::/31 Deny Bogon
-2804:32ec::/30 Deny Bogon
-2804:32f0::/28 Deny Bogon
-2804:3300::/24 Deny Bogon
+2804:32ed::/32 Deny Bogon
+2804:32ee::/31 Deny Bogon
+2804:32f1::/32 Deny Bogon
+2804:32f2::/31 Deny Bogon
+2804:32f5::/32 Deny Bogon
+2804:32f6::/31 Deny Bogon
+2804:32f9::/32 Deny Bogon
+2804:32fa::/31 Deny Bogon
+2804:32fd::/32 Deny Bogon
+2804:32fe::/31 Deny Bogon
+2804:3301::/32 Deny Bogon
+2804:3302::/31 Deny Bogon
+2804:3305::/32 Deny Bogon
+2804:3306::/31 Deny Bogon
+2804:3308::/29 Deny Bogon
+2804:3310::/28 Deny Bogon
+2804:3320::/27 Deny Bogon
+2804:3340::/26 Deny Bogon
+2804:3380::/25 Deny Bogon
 2804:3400::/22 Deny Bogon
 2804:3800::/21 Deny Bogon
 2804:4000::/18 Deny Bogon
@@ -70405,7 +70577,8 @@ Tag: Link11 GmbH
 2a01:b770::/28 Deny Bogon
 2a01:b788::/29 Deny Bogon
 2a01:b790::/28 Deny Bogon
-2a01:b7a0::/27 Deny Bogon
+2a01:b7a8::/29 Deny Bogon
+2a01:b7b0::/28 Deny Bogon
 2a01:b7c8::/29 Deny Bogon
 2a01:b7d0::/28 Deny Bogon
 2a01:b7e8::/29 Deny Bogon
@@ -75096,8 +75269,7 @@ Tag: Link11 GmbH
 2a05:5090::/28 Deny Bogon
 2a05:eb10::/28 Deny Bogon
 2a07:8ba0::/27 Deny Bogon
-2a07:ba00::/23 Deny Bogon
-2a07:bc00::/22 Deny Bogon
+2a07:bf00::/24 Deny Bogon
 2a07:c000::/18 Deny Bogon
 2a09::/16 Deny Bogon
 2a0a::/15 Deny Bogon
@@ -75112,7 +75284,8 @@ Tag: Link11 GmbH
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
 2c0f:f000::/23 Deny Bogon
-2c0f:f2a0::/27 Deny Bogon
+2c0f:f2a8::/29 Deny Bogon
+2c0f:f2b0::/28 Deny Bogon
 2c0f:f2c0::/26 Deny Bogon
 2c0f:f300::/24 Deny Bogon
 2c0f:f790::/29 Deny Bogon

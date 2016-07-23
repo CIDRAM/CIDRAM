@@ -230,17 +230,17 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 
 Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste handtekeningen bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de handtekeningen van CIDRAM.
 
-Alle IPv4 handtekeningen volgt het formaat: `xxx.xxx.xxx.xxx/yy %Function% %Param%`.
+Alle IPv4 handtekeningen volgt het formaat: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok).
 - `yy` vertegenwoordigt het CIDR blokgrootte [1-32].
-- `%Function%` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
-- `%Param%` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `%Function%`.
+- `[Function]` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
+- `[Param]` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `[Function]`.
 
-Alle IPv6 handtekeningen volgt het formaat: `xxxx:xxxx:xxxx:xxxx::xxxx/yy %Function% %Param%`.
+Alle IPv6 handtekeningen volgt het formaat: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
 - `xxxx:xxxx:xxxx:xxxx::xxxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok). Compleet notatie en verkorte notatie zijn beide aanvaardbaar (en ieder moet volg de juiste en relevante normen van IPv6-notatie, maar met één uitzondering: een IPv6-adres kan nooit beginnen met een afkorting wanneer het wordt gebruikt in een handtekening voor dit script, vanwege de manier waarop CIDRs door het script zijn gereconstrueerd; Bijvoorbeeld, `::1/128` moet worden uitgedrukt, bij gebruik in een handtekening, als `0::1/128`, en `::0/128` uitgedrukt als `0::/128`).
 - `yy` vertegenwoordigt het CIDR blokgrootte [1-128].
-- `%Function%` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
-- `%Param%` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `%Function%`.
+- `[Function]` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
+- `[Param]` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `[Function]`.
 
 De handtekening bestanden voor CIDRAM MOET gebruiken Unix-stijl regeleinden (`%0A`, or `\n`)! Andere soorten/stijlen van regeleinden (bv, Windows `%0D%0A` of `\r\n` regeleinden, Mac `%0D` of `\r` regeleinden, ezv) KAN worden gebruikt, maar zijn NIET voorkeur. Non-Unix-stijl regeleinden wordt genormaliseerd naar Unix-stijl regeleinden door het script.
 
@@ -248,26 +248,31 @@ Nauwkeurig en correct CIDR-notatie is vereist, anders zal het script NIET de han
 
 Alles wat in de handtekening bestanden niet herkend als een handtekening noch als handtekening-gerelateerde syntaxis door het script worden GENEGEERD, daarom dit betekent dat om veilig alle niet-handtekening gegevens die u wilt in de handtekening bestanden u kunnen zetten zonder verbreking van de handtekening bestanden of de script. Reacties zijn in de handtekening bestanden aanvaardbare, en geen speciale opmaak of formaat is vereist voor hen. Shell-stijl hashing voor commentaar heeft de voorkeur, maar is niet afgedwongen; Functioneel, het maakt geen verschil voor het script ongeacht of u kiest voor Shell-stijl hashing om commentaar te gebruiken, maar gebruik van Shell-stijl hashing helpt IDE's en platte tekst editors om correct te markeren de verschillende delen van de handtekening bestanden (en dus, Shell-stijl hashing kan helpen als een visueel hulpmiddel tijdens het bewerken).
 
-Mogelijke waarden van `%Function%` zijn als volgt:
+Mogelijke waarden van `[Function]` zijn als volgt:
 - Run
 - Whitelist
+- Greylist
 - Deny
 
-Als "Run" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `%Param%` waarde (de werkmap moet worden de "/vault/" map van het script).
+Als "Run" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `[Param]` waarde (de werkmap moet worden de "/vault/" map van het script).
 
 Voorbeeld: `127.0.0.0/8 Run example.php`
 
 Dit kan handig zijn als u wilt, voor enige specifieke IPs en/of CIDRs, om specifieke PHP-code uit te voeren.
 
-Als "Whitelist" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `%Param%` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
+Als "Whitelist" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
 
 Voorbeeld: `127.0.0.1/32 Whitelist`
 
+Als "Greylist" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en doorgaan naar de volgende handtekening bestand te gaan met verwerken. `[Param]` worden genegeerd.
+
+Voorbeeld: `127.0.0.1/32 Greylist`
+
 Als "Deny" wordt gebruikt, als de handtekening wordt geactiveerd, veronderstelling dat er geen whitelist handtekening is geactiveerd voor het opgegeven IP-adres en/of opgegeven CIDR, toegang tot de beveiligde pagina wordt ontzegd. "Deny" is wat u wilt gebruiken om een IP-adres en/of CIDR range te daadwerkelijk blokkeren. Wanneer enige handtekeningen zijn geactiveerd er dat gebruik "Deny", de "Toegang Geweigerd" pagina van het script zal worden gegenereerd en het verzoek naar de beveiligde pagina wordt gedood.
 
-De `%Param%` waarde geaccepteerd door "Deny" zal worden parsed aan de "Toegang Geweigerd" pagina-uitgang, geleverd aan de klant/gebruiker als de genoemde reden voor hun toegang tot de gevraagde pagina worden geweigerd. Het kan een korte en eenvoudige zin zijn, uit te leggen waarom u hebt gekozen om ze te blokkeren (iets moeten volstaan, zelfs een simpele "Ik wil je niet op mijn website"), of een van het handjevol korte woorden geleverd door het script, dat als gebruikt, wordt vervangen door het script met een voorbereide toelichting waarom de klant/gebruiker is geblokkeerd.
+De `[Param]` waarde geaccepteerd door "Deny" zal worden parsed aan de "Toegang Geweigerd" pagina-uitgang, geleverd aan de klant/gebruiker als de genoemde reden voor hun toegang tot de gevraagde pagina worden geweigerd. Het kan een korte en eenvoudige zin zijn, uit te leggen waarom u hebt gekozen om ze te blokkeren (iets moeten volstaan, zelfs een simpele "Ik wil je niet op mijn website"), of een van het handjevol korte woorden geleverd door het script, dat als gebruikt, wordt vervangen door het script met een voorbereide toelichting waarom de klant/gebruiker is geblokkeerd.
 
-De voorbereide toelichtingen hebben i18n ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script configuratie. Tevens, u kunt het script instrueren om "Deny" handtekeningen te negeren op basis van hun `%Param%` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende handtekeningen of te negeren hen). `%Param%` waarden dat niet gebruiken deze korte woorden, echter, hebben geen i18n ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script configuratie.
+De voorbereide toelichtingen hebben i18n ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script configuratie. Tevens, u kunt het script instrueren om "Deny" handtekeningen te negeren op basis van hun `[Param]` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende handtekeningen of te negeren hen). `[Param]` waarden dat niet gebruiken deze korte woorden, echter, hebben geen i18n ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script configuratie.
 
 De beschikbare korte woorden zijn:
 - Bogon
@@ -315,4 +320,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 30 Juni 2016 (2016.06.30).
+Laatste Bijgewerkt: 23 Juli 2016 (2016.07.23).

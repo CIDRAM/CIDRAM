@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for CLI (last modified: 2016.04.14).
+ * This file: Italian language data for CLI (last modified: 2016.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,12 +60,13 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Etichetta di scadenza non contiene una 
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" *NON* è un indirizzo IPv4 o IPv6 valida!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: La lunghezza della riga è maggiore di 120 byte; Lunghezza della riga dovrebbe essere limitato a 120 byte per una leggibilità ottimale.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s e L%s sono identici, e quindi, unificabile.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: %Function% é mancante; Firma sembra essere incompleta.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] é mancante; Firma sembra essere incompleta.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" non può essere attivato! La sua base non corrisponde l\'inizio della sua gamma! Prova sostituendolo con "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" non può essere attivato! "%s" non è un gamma valida!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" è subordinata alla già esistente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" è un sovrainsieme alla già esistente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Non sintatticamente preciso.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabulazioni rilevati; Spazi sono preferiti sopra tabulazioni per una leggibilità ottimale.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Etichetta della sezione è maggiore di 20 byte; Etichetta della sezione dovrebbe essere chiaro e conciso.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: %Function% non riconosciuta; Firma potrebbe essere rotto.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] non riconosciuta; Firma potrebbe essere rotto.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: L\'eccesso di spazio bianco in coda rilevato su questa riga.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for CLI (last modified: 2016.07.23).
+ * This file: Vietnamese language data for CLI (last modified: 2016.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -71,3 +71,4 @@ $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tab được phát hiện; Không gian đ
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Chỉ số phần lớn hơn 20 byte; Chỉ số phần phải rõ ràng và súc tích.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] không xác định; Chữ ký có thể bị phá vỡ.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Khoảng trắng dư thừa dấu phát hiện trên dòng này.';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: Dữ liệu tương tự như YAML đã được phát hiện, nhưng không thể xử lý.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for CLI (last modified: 2016.07.23).
+ * This file: Chinese (traditional) language data for CLI (last modified: 2016.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,7 +20,7 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI模式輔助。
 
  用法：
- /path/to/php/php.exe /path/to/cidram/loader.php -鍵 （輸入）
+ /路徑到PHP/php.exe /路徑到CIDRAM/loader.php -鍵 （輸入）
 
  鍵：
     -h  顯示此幫助信息。
@@ -55,19 +55,20 @@ $CIDRAM['lang']['CLI_V_LineByLine'] = '線由行驗證已開始。';
 $CIDRAM['lang']['CLI_V_Started'] = '簽名驗證已開始（%s）。';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = '簽名文件應終止通過一個LF換行符。';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'L%s：控製字符檢測；這可能表明腐敗和應進行調查。';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s：簽名“%s”是一個賦值（%s計數）！';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s：到期標籤不包含有效的ISO8601日期/時間！';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s：“%s”不是一個有效的IPv4或IPv6地址！';
-$CIDRAM['lang']['CLI_VL_L120'] = 'L%s：線路長度大於120字節；線路長度應限制在120字節為最佳可讀性。';
-$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s和L%s是相同的，和因此，可合併。';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s：【Function】失踪；簽名似乎是不完整。';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s：“%s”不可觸發！其基不匹配開始其範圍內！試圖取代它以“%s”。';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s：“%s”不可觸發！“%s”不是一個有效的範圍內！';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s：“%s”是從屬於現有簽名“%s”。';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s：“%s”是一個超集現有簽名“%s”。';
-$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s：語法上不准確的。';
-$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s：製表是檢測；空間是首選到製表為最佳可讀性。';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s：章節標籤大於20字節；章節標籤應該清晰和簡明。';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s：【Function】未知；簽名可能被打破。';
-$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s：多餘的尾隨空白在這個線是檢測。';
+$CIDRAM['lang']['CLI_VL_CC'] = '線%s：控製字符檢測；這可能表明腐敗和應進行調查。';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = '線%s：簽名“%s”是一個賦值（%s計數）！';
+$CIDRAM['lang']['CLI_VL_Expiry'] = '線%s：到期標籤不包含有效的ISO8601日期/時間！';
+$CIDRAM['lang']['CLI_VL_Invalid'] = '線%s：“%s”不是一個有效的IPv4或IPv6地址！';
+$CIDRAM['lang']['CLI_VL_L120'] = '線%s：線路長度大於120字節；線路長度應限制在120字節為最佳可讀性。';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = '線%s和線%s是相同的，和因此，可合併。';
+$CIDRAM['lang']['CLI_VL_Missing'] = '線%s：【Function】失踪；簽名似乎是不完整。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = '線%s：“%s”不可觸發！其基不匹配開始其範圍內！試圖取代它以“%s”。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = '線%s：“%s”不可觸發！“%s”不是一個有效的範圍內！';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = '線%s：“%s”是從屬於現有簽名“%s”。';
+$CIDRAM['lang']['CLI_VL_Superset'] = '線%s：“%s”是一個超集現有簽名“%s”。';
+$CIDRAM['lang']['CLI_VL_Syntax'] = '線%s：語法上不准確的。';
+$CIDRAM['lang']['CLI_VL_Tabs'] = '線%s：製表是檢測；空間是首選到製表為最佳可讀性。';
+$CIDRAM['lang']['CLI_VL_Tags'] = '線%s：章節標籤大於20字節；章節標籤應該清晰和簡明。';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = '線%s：【Function】未知；簽名可能被打破。';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = '線%s：多餘的尾隨空白在這個線是檢測。';
+$CIDRAM['lang']['CLI_VL_YAML'] = '線%s：YAML樣數據是檢測，但無法處理它。';

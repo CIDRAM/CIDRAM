@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for CLI (last modified: 2016.07.23).
+ * This file: Russian language data for CLI (last modified: 2016.07.26).
  *
  * @todo (This is incomplete).
  */
@@ -56,19 +56,20 @@ $CIDRAM['lang']['CLI_V_LineByLine'] = 'Line-by-line validation has started.';
 $CIDRAM['lang']['CLI_V_Started'] = 'Signature validator has started (%s).';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature files should terminate with an LF linebreak.';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Control characters detected; This could indicate corruption and should be investigated.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Signature "%s" is duplicated (%s counts)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Expiry tag doesn\'t contain a valid ISO 8601 date/time!';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
-$CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s and L%s are identical, and thus, mergeable.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Missing [Function]; Signature appears to be incomplete.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" is non-triggerable! "%s" is not a valid range!';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Not syntactically precise.';
-$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised [Function]; Signature could be broken.';
-$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';
+$CIDRAM['lang']['CLI_VL_CC'] = 'Л%s: Control characters detected; This could indicate corruption and should be investigated.';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'Л%s: Signature "%s" is duplicated (%s counts)!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'Л%s: Expiry tag doesn\'t contain a valid ISO 8601 date/time!';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'Л%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
+$CIDRAM['lang']['CLI_VL_L120'] = 'Л%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = 'Л%s and Л%s are identical, and thus, mergeable.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'Л%s: Missing [Function]; Signature appears to be incomplete.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'Л%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'Л%s: "%s" is non-triggerable! "%s" is not a valid range!';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = 'Л%s: "%s" is subordinate to the already existing "%s" signature.';
+$CIDRAM['lang']['CLI_VL_Superset'] = 'Л%s: "%s" is a superset to the already existing "%s" signature.';
+$CIDRAM['lang']['CLI_VL_Syntax'] = 'Л%s: Не синтаксически точно.';
+$CIDRAM['lang']['CLI_VL_Tabs'] = 'Л%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'Л%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'Л%s: Непризнанная [Function]; Подпись может быть нарушена.';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = 'Л%s: Excess trailing whitespace detected on this line.';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'Л%s: YAML-подобные данные обнаруженные, но не может обработать его.';

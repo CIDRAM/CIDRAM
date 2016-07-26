@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for CLI (last modified: 2016.07.23).
+ * This file: Dutch language data for CLI (last modified: 2016.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -71,3 +71,4 @@ $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs gedetecteerd; Spaces voorkeur boven 
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sectie label is groter dan 20 bytes; Sectie labels moeten duidelijk en beknopt zijn.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] is niet herkend; Handtekening misschien gebroken.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Overmaat afsluitende witruimte gedetecteerd op dit lijn.';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: YAML-achtige data gedetecteerd, maar kon het niet verwerken.';

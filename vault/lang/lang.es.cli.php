@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for CLI (last modified: 2016.07.23).
+ * This file: Spanish language data for CLI (last modified: 2016.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,3 +70,4 @@ $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabulaciones detectadas; Espacios son pre
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Etiqueta de sección es mayor que 20 bytes; Etiquetas de secciones debe ser clara y concisa.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] no reconocido; Firma podía ser roto.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Exceso de espacios en blanco detectado en el extremo de esta línea.';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: Datos similares a YAML detectados, pero no podía procesarlo.';

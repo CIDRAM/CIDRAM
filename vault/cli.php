@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.07.23).
+ * This file: CLI handler (last modified: 2016.07.26).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -92,6 +92,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], $CIDRAM['lang']['CLI_V_LineByLine']);
     $ArrayToValidate = explode("\n", $FileToValidate);
     $c = count($ArrayToValidate);
+    $YAMLM = $YAMLL = false;
     for ($i = 0; $i < $c; $i++) {
         $len = strlen($ArrayToValidate[$i]);
         if ($len > 120) {
@@ -100,7 +101,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             continue;
         }
         if (isset($ArrayToValidate[$i + 1]) && $ArrayToValidate[$i + 1] === $ArrayToValidate[$i]) {
-            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_VL_L120'], $i, ($i + 1)));
+            echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_VL_Mergeable'], $i, ($i + 1)));
         }
         if (preg_match('/\s+$/', $ArrayToValidate[$i])) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Whitespace'], $i));
@@ -123,6 +124,22 @@ if ($CIDRAM['argv'][1] === '-h') {
             if (!$CIDRAM['FetchExpires'](substr($ArrayToValidate[$i], 9))) {
                 echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Expiry'], $i));
             }
+            continue;
+        }
+        if ($YAMLM) {
+            $YAMLD .= $ArrayToValidate[$i] . "\n";
+            if (empty($ArrayToValidate[$i + 1])) {
+                $YAMLM = false;
+                if ($YAMLD = $CIDRAM['YAML']($YAMLD, true)) {
+                    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_YAML'], $YAMLL));
+                }
+            }
+            continue;
+        }
+        if (!$YAMLM && $ArrayToValidate[$i] === '---') {
+            $YAMLM = true;
+            $YAMLL = $i;
+            $YAMLD = '';
             continue;
         }
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
@@ -248,6 +265,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     $FileToValidate = "\n" . $FileToValidate;
     $ArrayToValidate = explode("\n", $FileToValidate);
     $c = count($ArrayToValidate);
+    $YAMLM = $YAMLL = false;
     for ($i = 0; $i < $c; $i++) {
         if (!$len = strlen($ArrayToValidate[$i])) {
             continue;
@@ -268,6 +286,16 @@ if ($CIDRAM['argv'][1] === '-h') {
             substr($ArrayToValidate[$i], 0, 5) === 'Tag: ' ||
             substr($ArrayToValidate[$i], 0, 9) === 'Expires: '
         ) {
+            continue;
+        }
+        if ($YAMLM) {
+            if (empty($ArrayToValidate[$i + 1])) {
+                $YAMLM = false;
+            }
+            continue;
+        }
+        if (!$YAMLM && $ArrayToValidate[$i] === '---') {
+            $YAMLM = true;
             continue;
         }
         $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);

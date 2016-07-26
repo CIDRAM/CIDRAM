@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for CLI (last modified: 2016.07.23).
+ * This file: Indonesian language data for CLI (last modified: 2016.07.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,3 +70,4 @@ $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tab terdeteksi; Spasi adalah direkomendas
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Tag untuk bagian adalah lebih besar dari 20 bytes; Tag untuk bagian harus jelas dan ringkas.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] tidak diketahui; Tanda tangan mungkin rusak.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Mubazir spasi terdeteksi pada akhir baris ini.';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: Data seperti YAML terdeteksi, tapi tidak bisa memprosesnya.';

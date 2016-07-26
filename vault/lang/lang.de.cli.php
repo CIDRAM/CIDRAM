@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for CLI (last modified: 2016.07.23).
+ * This file: German language data for CLI (last modified: 2016.07.26).
  *
  * @todo (This is incomplete).
  */
@@ -72,3 +72,4 @@ $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over 
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised [Function]; Signature could be broken.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: YAML-like data detected, but couldn\'t process it.';

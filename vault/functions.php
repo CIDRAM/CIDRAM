@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.07.26).
+ * This file: Functions file (last modified: 2016.07.28).
  */
 
 /**
@@ -734,7 +734,7 @@ $CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
         }
         $ThisTab = 0;
         $Chr = substr($in[$i], $ThisTab, 1);
-        while ($Chr === " " || $Chr === "\t") {
+        while ($Chr === ' ' || $Chr === "\t") {
             $ThisTab++;
             $Chr = substr($in[$i], $ThisTab, 1);
         }
@@ -782,6 +782,12 @@ $CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
                 if (strlen($DirValInt) === $DirValLen && $DirVal == $DirValInt) {
                     $DirVal = $DirValInt;
                 }
+            }
+            $DirValLow = strtolower($DirVal);
+            if ($DirValLow === 'true') {
+                $DirVal = true;
+            } elseif ($DirValLow === 'false') {
+                $DirVal = false;
             }
             if (!$vm) {
                 $CIDRAM['Config'][$Cat][$Dir] = $DirVal;

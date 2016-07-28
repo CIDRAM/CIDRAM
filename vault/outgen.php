@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.07.22).
+ * This file: Output generator (last modified: 2016.07.28).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -107,7 +107,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
 
     /**
      * Some simple sanitisation for our block information (helps to prevent
-     * some obscure types of XXS attacks).
+     * some obscure types of XSS attacks).
      */
     $CIDRAM['BlockInfo'] = str_replace(
         array('<', '>', "\r", "\n", "\t"),

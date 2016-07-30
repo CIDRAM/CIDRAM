@@ -24,6 +24,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   which can used to specify per signature section custom configuration values.
   Refer github.com/Maikuolan/CIDRAM/issues/6
 
+- [2016.07.30; Bug-fix; Maikuolan]: Fixed a bug whereby some configuration
+  directives (in particular, "forbid_on_block") would sometimes be incorrectly
+  typecasted, resulting in unexpected behaviour contrary to the documentation.
+
 === Version/Release 0.3.1 ===
 PATCH RELEASE.
 

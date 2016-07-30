@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.07.28).
+ * This file: Output generator (last modified: 2016.07.30).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -124,12 +124,12 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
 
     if (!$CIDRAM['Config']['general']['silent_mode']) {
 
-        if ($CIDRAM['Config']['general']['forbid_on_block'] == 503) {
+        if ($CIDRAM['Config']['general']['forbid_on_block'] === 503) {
             $CIDRAM['errCode'] = 503;
             header('HTTP/1.0 503 Service Unavailable');
             header('HTTP/1.1 503 Service Unavailable');
             header('Status: 503 Service Unavailable');
-        } elseif ($CIDRAM['Config']['general']['forbid_on_block'] && $CIDRAM['Config']['general']['forbid_on_block'] != 200) {
+        } elseif ($CIDRAM['Config']['general']['forbid_on_block'] && $CIDRAM['Config']['general']['forbid_on_block'] !== 200) {
             $CIDRAM['errCode'] = 403;
             header('HTTP/1.0 403 Forbidden');
             header('HTTP/1.1 403 Forbidden');

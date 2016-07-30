@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.07.28).
+ * This file: Functions file (last modified: 2016.07.30).
  */
 
 /**
@@ -795,4 +795,18 @@ $CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
         }
     }
     return true;
+};
+
+/**
+ * Fix incorrect typecasting for some for some variables that sometimes default
+ * to strings instead of booleans or integers.
+ */
+$CIDRAM['AutoType'] = function (&$var) {
+    if ($var === 'true') {
+        $var = true;
+    } elseif ($var === 'false') {
+        $var = false;
+    } else {
+        $var = (int)$var;
+    }
 };

@@ -806,7 +806,7 @@ $CIDRAM['AutoType'] = function (&$var) {
         $var = true;
     } elseif ($var === 'false') {
         $var = false;
-    } else {
+    } elseif ($var !== true && $var !== false) {
         $var = (int)$var;
     }
 };

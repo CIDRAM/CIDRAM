@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.4.0 ===
+MINOR RELEASE.
+
 - [2016.07.22; Sub-minor code change; Maikuolan]: Added code to perform some
   simple sanitisation to the block information; This should help to prevent
   some obscure types of XSS attacks.
@@ -21,12 +26,16 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2016.07.26; NEW FEATURE; Maikuolan]: Added some basic support for YAML-like
   data (note: not a true YAML implementation) to be read from signature files,
-  which can used to specify per signature section custom configuration values.
+  which can used to specify and modify the values of configuration directives
+  for separate signature sections.
   Refer github.com/Maikuolan/CIDRAM/issues/6
 
 - [2016.07.30; Bug-fix; Maikuolan]: Fixed a bug whereby some configuration
   directives (in particular, "forbid_on_block") would sometimes be incorrectly
   typecasted, resulting in unexpected behaviour contrary to the documentation.
+
+Caleb M / Maikuolan,
+31st July 2016.
 
 === Version/Release 0.3.1 ===
 PATCH RELEASE.

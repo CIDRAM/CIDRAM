@@ -1,4 +1,8 @@
-# IPv4 signatures file.
+---
+Meta:
+ Name: IPv4 signatures file.
+ Source: https://github.com/Maikuolan/CIDRAM/blob/master/vault/ipv4.dat
+ Hash: https://github.com/Maikuolan/CIDRAM-Extras/blob/master/hashes/ipv4.dat
 
 
 # ---
@@ -192,17 +196,9 @@ Tag: Multacom Corp
 
 
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# Infected by malware (as per reported by Google): 25.46%.
-# Updated: 2016.05.20
+# Infected by malware (as per reported by Google): 21.05%.
+# Updated: 2016.07.31
 
-10.0.40.0/22 Deny Generic
-10.0.45.0/24 Deny Generic
-10.0.46.0/23 Deny Generic
-10.7.51.0/24 Deny Generic
-10.9.70.0/24 Deny Generic
-10.27.56.0/24 Deny Generic
-10.33.88.0/24 Deny Generic
-10.140.66.0/24 Deny Generic
 14.192.4.0/22 Deny Generic
 23.226.48.0/22 Deny Generic
 23.226.52.0/23 Deny Generic
@@ -269,7 +265,9 @@ Tag: Multacom Corp
 45.127.124.0/23 Deny Generic
 45.127.126.0/24 Deny Generic
 45.127.176.0/22 Deny Generic
-103.1.40.0/22 Deny Generic
+45.250.196.0/22 Deny Generic
+103.1.40.0/24 Deny Generic
+103.1.42.0/23 Deny Generic
 103.9.252.0/22 Deny Generic
 103.12.68.0/22 Deny Generic
 103.12.92.0/22 Deny Generic
@@ -335,10 +333,13 @@ Tag: Multacom Corp
 103.211.124.0/22 Deny Generic
 103.212.104.0/22 Deny Generic
 103.214.164.0/22 Deny Generic
+103.214.172.0/22 Deny Generic
 103.214.224.0/22 Deny Generic
 103.215.4.0/22 Deny Generic
+103.215.8.0/22 Deny Generic
 103.215.76.0/22 Deny Generic
 103.215.212.0/22 Deny Generic
+103.219.104.0/22 Deny Generic
 103.224.16.0/22 Deny Generic
 103.229.180.0/22 Deny Generic
 103.230.228.0/22 Deny Generic
@@ -364,11 +365,62 @@ Tag: Multacom Corp
 121.54.168.0/21 Deny Generic
 121.127.224.0/19 Deny Generic
 122.9.64.0/18 Deny Generic
-122.9.128.0/17 Deny Generic
-122.10.0.0/18 Deny Generic
+122.9.128.0/21 Deny Generic
+122.9.136.0/22 Deny Generic
+122.9.140.0/23 Deny Generic
+122.9.142.0/24 Deny Generic
+122.9.144.0/20 Deny Generic
+122.9.160.0/22 Deny Generic
+122.9.165.0/24 Deny Generic
+122.9.166.0/23 Deny Generic
+122.9.168.0/21 Deny Generic
+122.9.176.0/20 Deny Generic
+122.9.192.0/18 Deny Generic
+122.10.4.0/22 Deny Generic
+122.10.8.0/23 Deny Generic
+122.10.10.0/24 Deny Generic
+122.10.13.0/24 Deny Generic
+122.10.14.0/23 Deny Generic
+122.10.16.0/24 Deny Generic
+122.10.18.0/23 Deny Generic
+122.10.20.0/24 Deny Generic
+122.10.22.0/24 Deny Generic
+122.10.24.0/22 Deny Generic
+122.10.28.0/23 Deny Generic
+122.10.31.0/24 Deny Generic
+122.10.32.0/21 Deny Generic
+122.10.40.0/23 Deny Generic
+122.10.43.0/24 Deny Generic
+122.10.44.0/23 Deny Generic
+122.10.47.0/24 Deny Generic
+122.10.48.0/22 Deny Generic
+122.10.52.0/23 Deny Generic
+122.10.54.0/24 Deny Generic
+122.10.56.0/24 Deny Generic
+122.10.59.0/24 Deny Generic
+122.10.61.0/24 Deny Generic
+122.10.62.0/24 Deny Generic
 122.10.68.0/22 Deny Generic
 122.10.72.0/21 Deny Generic
-123.60.0.0/17 Deny Generic
+123.60.0.0/19 Deny Generic
+123.60.32.0/20 Deny Generic
+123.60.48.0/23 Deny Generic
+123.60.50.0/24 Deny Generic
+123.60.52.0/22 Deny Generic
+123.60.56.0/21 Deny Generic
+123.60.64.0/21 Deny Generic
+123.60.72.0/23 Deny Generic
+123.60.74.0/24 Deny Generic
+123.60.76.0/22 Deny Generic
+123.60.80.0/20 Deny Generic
+123.60.96.0/21 Deny Generic
+123.60.104.0/22 Deny Generic
+123.60.108.0/23 Deny Generic
+123.60.111.0/24 Deny Generic
+123.60.112.0/22 Deny Generic
+123.60.116.0/23 Deny Generic
+123.60.119.0/24 Deny Generic
+123.60.120.0/21 Deny Generic
 123.60.128.0/20 Deny Generic
 123.60.144.0/22 Deny Generic
 123.60.148.0/24 Deny Generic
@@ -376,73 +428,14 @@ Tag: Multacom Corp
 123.60.152.0/21 Deny Generic
 123.60.160.0/19 Deny Generic
 123.60.192.0/18 Deny Generic
-123.255.88.0/21 Deny Generic
 139.5.208.0/22 Deny Generic
 144.48.124.0/22 Deny Generic
 144.48.172.0/22 Deny Generic
-144.48.192.0/22 Deny Generic
+144.48.192.0/21 Deny Generic
 144.48.236.0/22 Deny Generic
 157.119.92.0/22 Deny Generic
 160.202.44.0/22 Deny Generic
 160.238.84.0/22 Deny Generic
-172.16.0.0/24 Deny Generic
-172.16.8.0/24 Deny Generic
-172.16.10.0/23 Deny Generic
-172.16.12.0/23 Deny Generic
-172.16.14.0/24 Deny Generic
-172.16.21.0/24 Deny Generic
-172.16.22.0/23 Deny Generic
-172.16.24.0/23 Deny Generic
-172.16.26.0/24 Deny Generic
-172.16.31.0/24 Deny Generic
-172.16.32.0/22 Deny Generic
-172.16.36.0/23 Deny Generic
-172.16.38.0/24 Deny Generic
-172.16.51.0/24 Deny Generic
-172.16.52.0/22 Deny Generic
-172.16.56.0/23 Deny Generic
-172.16.58.0/24 Deny Generic
-172.16.121.0/24 Deny Generic
-172.16.122.0/23 Deny Generic
-172.16.124.0/23 Deny Generic
-172.16.126.0/24 Deny Generic
-172.16.131.0/24 Deny Generic
-172.16.132.0/22 Deny Generic
-172.16.136.0/23 Deny Generic
-172.16.138.0/24 Deny Generic
-172.16.151.0/24 Deny Generic
-172.16.152.0/22 Deny Generic
-172.16.156.0/23 Deny Generic
-172.16.158.0/24 Deny Generic
-172.16.250.0/24 Deny Generic
-172.17.0.0/21 Deny Generic
-172.17.8.0/23 Deny Generic
-172.17.44.0/24 Deny Generic
-172.17.46.0/24 Deny Generic
-172.17.60.0/24 Deny Generic
-172.17.200.0/23 Deny Generic
-172.17.251.0/24 Deny Generic
-172.18.8.0/24 Deny Generic
-172.18.14.0/23 Deny Generic
-172.18.18.0/24 Deny Generic
-172.20.0.0/24 Deny Generic
-172.20.20.0/24 Deny Generic
-172.20.109.0/24 Deny Generic
-172.20.119.0/24 Deny Generic
-172.20.129.0/24 Deny Generic
-172.20.159.0/24 Deny Generic
-172.20.160.0/22 Deny Generic
-172.20.230.0/24 Deny Generic
-172.25.208.0/24 Deny Generic
-172.25.240.0/24 Deny Generic
-172.25.242.0/24 Deny Generic
-172.25.246.0/24 Deny Generic
-172.25.248.0/24 Deny Generic
-172.29.200.0/24 Deny Generic
-172.30.0.0/22 Deny Generic
-172.31.66.0/24 Deny Generic
-172.31.100.0/24 Deny Generic
-172.31.120.0/24 Deny Generic
 175.176.180.0/22 Deny Generic
 182.161.60.0/22 Deny Generic
 192.61.80.0/23 Deny Generic
@@ -450,9 +443,11 @@ Tag: Multacom Corp
 192.151.228.0/23 Deny Generic
 192.151.232.0/22 Deny Generic
 192.151.248.0/21 Deny Generic
-192.168.64.0/19 Deny Generic
-192.249.84.0/22 Deny Generic
-198.44.240.0/21 Deny Generic
+192.249.84.0/23 Deny Generic
+192.249.87.0/24 Deny Generic
+198.44.240.0/23 Deny Generic
+198.44.242.0/24 Deny Generic
+198.44.244.0/22 Deny Generic
 202.40.160.0/23 Deny Generic
 202.89.0.0/22 Deny Generic
 202.146.216.0/21 Deny Generic
@@ -1017,7 +1012,6 @@ Tag: FortressITX
 103.200.28.0/22 Deny Cloud
 103.212.32.0/22 Deny Cloud
 103.213.248.0/22 Deny Cloud
-103.214.172.0/22 Deny Cloud
 103.224.80.0/22 Deny Cloud
 103.226.124.0/22 Deny Cloud
 103.229.116.0/22 Deny Cloud
@@ -13847,7 +13841,7 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.07.24
+# Updated: 2016.07.31
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 37.123.99.188/32 Deny Generic
@@ -13859,7 +13853,6 @@ Tag: Azure
 60.241.184.209/32 Deny Generic
 64.85.233.8/32 Deny Generic
 64.127.71.73/32 Deny Generic
-65.182.101.221/32 Deny Generic
 66.45.245.150/32 Deny Generic
 80.65.93.241/32 Deny Generic
 83.15.254.242/32 Deny Generic
@@ -13870,6 +13863,7 @@ Tag: Azure
 87.237.198.245/32 Deny Generic
 87.254.167.37/32 Deny Generic
 94.103.36.55/32 Deny Generic
+98.124.243.47/32 Deny Generic
 98.131.185.136/32 Deny Generic
 101.0.89.3/32 Deny Generic
 101.200.81.187/32 Deny Generic
@@ -13911,10 +13905,9 @@ Tag: Azure
 190.15.192.25/32 Deny Generic
 190.128.29.1/32 Deny Generic
 192.64.11.244/32 Deny Generic
+193.19.118.159/32 Deny Generic
 193.146.210.69/32 Deny Generic
 193.201.227.142/32 Deny Generic
-194.15.112.29/32 Deny Generic
-194.15.112.30/32 Deny Generic
 194.58.103.199/32 Deny Generic
 195.20.40.123/32 Deny Generic
 195.20.41.233/32 Deny Generic
@@ -13945,7 +13938,7 @@ Tag: Azure
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.10.24
+Expires: 2016.10.31
 
 
 # ---
@@ -13953,7 +13946,7 @@ Expires: 2016.10.24
 # The DROP/EDROP text lists are copyrighted to Spamhaus.org; Spamhaus DROP/EDROP as plain text lists are free for
 # commercial and non-commercial usage. If you want to redistribute one of the plain text feeds please ensure that you
 # name Spamhaus as source of the data. (For example, include the copyright statement at the top of the list).
-# Updated: 2016.07.24
+# Updated: 2016.07.31
 # Refer spamhaus.org/drop/drop.txt
 # Refer spamhaus.org/drop/edrop.txt
 
@@ -14129,7 +14122,6 @@ Expires: 2016.10.24
 103.36.64.0/22 Deny Generic
 103.37.86.0/24 Deny Generic
 103.41.180.0/22 Deny Generic
-103.42.115.0/24 Deny Generic
 103.57.248.0/22 Deny Generic
 103.61.4.0/22 Deny Generic
 103.200.116.0/22 Deny Generic
@@ -14223,6 +14215,7 @@ Expires: 2016.10.24
 137.105.0.0/16 Deny Generic
 137.171.0.0/16 Deny Generic
 137.218.0.0/16 Deny Generic
+138.31.0.0/16 Deny Generic
 138.36.136.0/22 Deny Generic
 138.36.148.0/22 Deny Generic
 138.43.0.0/16 Deny Generic
@@ -14404,6 +14397,7 @@ Expires: 2016.10.24
 185.130.4.0/22 Deny Generic
 185.133.20.0/22 Deny Generic
 185.135.184.0/22 Deny Generic
+185.137.219.0/24 Deny Generic
 185.141.188.0/22 Deny Generic
 185.147.140.0/22 Deny Generic
 185.147.156.0/22 Deny Generic
@@ -14735,7 +14729,6 @@ Expires: 2016.10.24
 207.234.0.0/17 Deny Generic
 207.254.128.0/21 Deny Generic
 208.12.64.0/19 Deny Generic
-208.38.135.0/24 Deny Generic
 208.81.136.0/21 Deny Generic
 208.90.0.0/21 Deny Generic
 208.93.4.0/22 Deny Generic
@@ -14758,18 +14751,17 @@ Expires: 2016.10.24
 220.154.0.0/16 Deny Generic
 221.132.192.0/18 Deny Generic
 223.0.0.0/15 Deny Generic
-223.25.252.0/22 Deny Generic
 223.169.0.0/16 Deny Generic
 223.173.0.0/16 Deny Generic
 223.201.0.0/16 Deny Generic
 223.254.0.0/16 Deny Generic
 Tag: Spamhaus DROP/EDROP
-Expires: 2016.10.24
+Expires: 2016.10.31
 
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.07.24
+# Updated: 2016.07.31
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 2.56.0.0/14 Deny Bogon
@@ -15054,6 +15046,7 @@ Expires: 2016.10.24
 91.208.128.0/24 Deny Bogon
 91.208.137.0/24 Deny Bogon
 91.208.162.0/24 Deny Bogon
+91.208.177.0/24 Deny Bogon
 91.208.197.0/24 Deny Bogon
 91.208.206.0/24 Deny Bogon
 91.208.208.0/24 Deny Bogon
@@ -15297,12 +15290,9 @@ Expires: 2016.10.24
 103.23.215.0/24 Deny Bogon
 103.30.213.0/24 Deny Bogon
 103.31.27.0/24 Deny Bogon
-103.69.255.0/24 Deny Bogon
-103.70.20.0/22 Deny Bogon
-103.70.24.0/21 Deny Bogon
-103.70.32.0/19 Deny Bogon
-103.70.64.0/18 Deny Bogon
-103.70.128.0/17 Deny Bogon
+103.70.168.0/21 Deny Bogon
+103.70.176.0/20 Deny Bogon
+103.70.192.0/18 Deny Bogon
 103.71.0.0/16 Deny Bogon
 103.72.0.0/13 Deny Bogon
 103.80.0.0/12 Deny Bogon
@@ -15313,6 +15303,9 @@ Expires: 2016.10.24
 103.232.142.0/23 Deny Bogon
 103.239.213.0/24 Deny Bogon
 103.247.19.0/24 Deny Bogon
+103.248.250.0/24 Deny Bogon
+103.254.197.0/24 Deny Bogon
+103.254.198.0/23 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
 109.71.248.0/21 Deny Bogon
@@ -15356,8 +15349,7 @@ Expires: 2016.10.24
 160.226.128.0/17 Deny Bogon
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
-164.160.116.0/22 Deny Bogon
-164.160.120.0/21 Deny Bogon
+164.160.124.0/22 Deny Bogon
 164.160.128.0/19 Deny Bogon
 164.160.184.0/21 Deny Bogon
 164.160.192.0/20 Deny Bogon
@@ -15366,21 +15358,19 @@ Expires: 2016.10.24
 165.16.192.0/21 Deny Bogon
 165.49.0.0/16 Deny Bogon
 165.73.0.0/16 Deny Bogon
-168.194.0.0/15 Deny Bogon
+168.194.96.0/22 Deny Bogon
+168.194.104.0/21 Deny Bogon
+168.194.112.0/20 Deny Bogon
+168.194.128.0/17 Deny Bogon
+168.195.0.0/16 Deny Bogon
 168.196.0.0/15 Deny Bogon
 169.254.0.0/16 Deny Bogon
 170.78.0.0/15 Deny Bogon
 170.80.0.0/14 Deny Bogon
 170.238.0.0/15 Deny Bogon
 170.244.0.0/14 Deny Bogon
-170.254.180.0/22 Deny Bogon
-170.254.184.0/21 Deny Bogon
-170.254.196.0/22 Deny Bogon
-170.254.200.0/22 Deny Bogon
-170.254.208.0/20 Deny Bogon
-170.254.224.0/22 Deny Bogon
-170.254.232.0/21 Deny Bogon
-170.254.240.0/20 Deny Bogon
+170.254.52.0/22 Deny Bogon
+170.254.60.0/22 Deny Bogon
 172.16.0.0/12 Deny Bogon
 176.53.128.0/18 Deny Bogon
 176.56.40.0/21 Deny Bogon
@@ -15412,16 +15402,16 @@ Expires: 2016.10.24
 178.238.0.0/20 Deny Bogon
 178.249.232.0/21 Deny Bogon
 178.255.112.0/21 Deny Bogon
-182.54.128.0/19 Deny Bogon
+182.54.156.0/22 Deny Bogon
 182.255.32.0/19 Deny Bogon
-185.1.77.0/24 Deny Bogon
 185.1.78.0/23 Deny Bogon
 185.1.80.0/20 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.160.176.0/20 Deny Bogon
-185.160.192.0/18 Deny Bogon
-185.161.0.0/16 Deny Bogon
+185.161.140.0/22 Deny Bogon
+185.161.144.0/20 Deny Bogon
+185.161.160.0/19 Deny Bogon
+185.161.192.0/18 Deny Bogon
 185.162.0.0/15 Deny Bogon
 185.164.0.0/14 Deny Bogon
 185.168.0.0/13 Deny Bogon
@@ -16278,6 +16268,7 @@ Expires: 2016.10.24
 193.104.67.0/24 Deny Bogon
 193.104.80.0/24 Deny Bogon
 193.104.93.0/24 Deny Bogon
+193.104.94.0/24 Deny Bogon
 193.104.110.0/24 Deny Bogon
 193.104.153.0/24 Deny Bogon
 193.104.176.0/24 Deny Bogon
@@ -16777,6 +16768,7 @@ Expires: 2016.10.24
 193.223.248.0/22 Deny Bogon
 193.223.252.0/23 Deny Bogon
 193.227.103.0/24 Deny Bogon
+193.227.109.0/24 Deny Bogon
 193.227.114.0/24 Deny Bogon
 193.227.121.0/24 Deny Bogon
 193.227.122.0/24 Deny Bogon
@@ -18432,7 +18424,9 @@ Expires: 2016.10.24
 196.13.202.0/23 Deny Bogon
 196.41.83.0/24 Deny Bogon
 196.41.84.0/22 Deny Bogon
-196.41.88.0/21 Deny Bogon
+196.41.88.0/22 Deny Bogon
+196.41.92.0/23 Deny Bogon
+196.41.94.0/24 Deny Bogon
 196.51.0.0/16 Deny Bogon
 196.61.0.0/16 Deny Bogon
 196.160.0.0/13 Deny Bogon
@@ -18448,25 +18442,22 @@ Expires: 2016.10.24
 196.216.254.0/24 Deny Bogon
 196.223.11.0/24 Deny Bogon
 196.223.29.0/24 Deny Bogon
-196.223.48.0/20 Deny Bogon
 196.223.64.0/18 Deny Bogon
-196.223.128.0/20 Deny Bogon
-196.223.144.0/21 Deny Bogon
 196.223.160.0/19 Deny Bogon
-196.223.192.0/19 Deny Bogon
-196.223.224.0/20 Deny Bogon
 196.223.248.0/22 Deny Bogon
 196.250.0.0/15 Deny Bogon
 198.18.0.0/15 Deny Bogon
 198.51.100.0/24 Deny Bogon
-200.23.118.0/23 Deny Bogon
 200.23.206.0/23 Deny Bogon
 200.23.254.0/23 Deny Bogon
 200.33.82.0/23 Deny Bogon
+200.33.113.0/24 Deny Bogon
 200.33.126.0/23 Deny Bogon
 200.33.174.0/23 Deny Bogon
 200.192.106.0/23 Deny Bogon
 200.229.250.0/23 Deny Bogon
+202.9.90.0/24 Deny Bogon
+202.43.91.0/24 Deny Bogon
 202.74.55.0/24 Deny Bogon
 203.0.113.0/24 Deny Bogon
 203.3.132.0/24 Deny Bogon

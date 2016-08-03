@@ -1,108 +1,108 @@
-## Documentation for CIDRAM (English).
+## Документация для CIDRAM (Русский)
 
-### Contents
-- 1. [PREAMBLE](#SECTION1)
-- 2. [HOW TO INSTALL](#SECTION2)
-- 3. [HOW TO USE](#SECTION3)
-- 4. [FILES INCLUDED IN THIS PACKAGE](#SECTION4)
-- 5. [CONFIGURATION OPTIONS](#SECTION5)
-- 6. [SIGNATURE FORMAT](#SECTION6)
+### Содержание
+- 1. [ПРЕДИСЛОВИЕ](#SECTION1)
+- 2. [ИНСТАЛЛЯЦИЯ](#SECTION2)
+- 3. [ИСПОЛЬЗОВАНИЕ](#SECTION3)
+- 4. [СОДЕРЖАНИЕ ПАКЕТА ФАЙЛОВ](#SECTION4)
+- 5. [НАСТРОЙКИ](#SECTION5)
+- 6. [ФОРМАТ ПОДПИСЕЙ](#SECTION6)
 
 ---
 
 
-###1. <a name="SECTION1"></a>PREAMBLE
+###1. <a name="SECTION1"></a>ПРЕДИСЛОВИЕ
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked.
+CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked. @TranslateMe@
 
-CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by Caleb M (Maikuolan).
 
-This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE.txt` file and available also from:
+Это руководство находится в свободном доступе. Вы можете его передавать и/или модифицировать на условиях GNU General Public License, как публикует Фонд свободного программного обеспечения (Free Software Foundation); либо под второй версией лицензии, либо любой другой более поздней версией (по вашему выбору). Пособие публикуется не в целях увеличения прибыли или создания себе рекламы, а лишь в надежде принести пользу, правда, без всякой гарантии. Подробности вы можете узнать на странице GNU General Public License в разделе `LICENSE.txt`, а также на страницах:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-This document and its associated package can be downloaded for free from [Github](https://github.com/Maikuolan/CIDRAM/).
+Этот документ с относящимися к нему пакетом файлов можно бесплатно скачать на страницах [Github](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
 
-###2. <a name="SECTION2"></a>HOW TO INSTALL
+###2. <a name="SECTION2"></a>ИНСТАЛЛЯЦИЯ
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get CIDRAM working on *most systems and CMS:
+Уже ведутся работы по упрощению процесса инсталляции, но пока, чтобы установить CIDRAM на большинство используемых систем и систем управления содержимым (CMS), следуйте указаниям:
 
-1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/cidram/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
+1) Скачайте архив на свой компьютер и откройте его. На хост-компьютере или в системе управления содержимым (CMS) создайте регистр, куда вы хотите загрузить содержимое этого пакета. Такой регистр, как `/public_html/cidram/`, будет вполне достаточным, пока он отвечает вашим требованиям к защите или личным предпочтениям.
 
-2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close. @TranslateMe@
 
-3) Upload the contents (CIDRAM and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
+3) Скачайте всё содержимое (CIDRAM и файлы) в указанный в пункте 1 регистр, кроме файлов `*.txt`/`*.md`.
 
-4) CHMOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+4) Право доступа `vault`-регистра поменяйте на «777». Права доступа вышестоящего регистра, в котором находится содержание (регистр, в который вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ (Если уже случались проблемы с доступом, когда предварительная установка была, например, «755»).
 
-5) Next, you'll need to "hook" CIDRAM to your system or CMS. There are several different ways you can "hook" scripts such as CIDRAM to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the CIDRAM issues page on Github. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+5) Скрепите CIDRAM с Вашей системой или с системой управления содержимым (CMS). Для этого есть много способов. Самым простым является способ, когда CIDRAM-руководство является началом главного файла, который будет загружаться всякий раз, когда будут заходить на ваш интернет-сайт. Этот файл нужно связать с Вашей системой или с системой управления содержимым (CMS) при помощи `require` или `include` команд. Обычно такой файл обозначается в регистре как `/includes`, `/assets` или `/functions`, и часто называется `init.php`, `common_functions.php`, `functions.php`. Вы должны найти тот файл, который соответствует Вашим требованиям. Если это трудно для Вас, то посетите страница вопросов CIDRAM на Github. Возможно я или кто-то другой уже имеет опыт работы с CMS, которую используете вы, и сможет дать Вам совет (обязательно сообщите, какой CMS Вы пользуетесь). Введите прямо в начало этого файла следующий код:
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
-Save file, close, reupload.
+Строку между кавычками замените локальным путём файла в формате `loader.php`, без HTTP-адреса (подобно пути для `vault`-регистра). Сохраните файл и закройте его; Загрузите его заново.
 
--- OR ALTERNATIVELY --
+-- АЛЬТЕРНАТИВА --
 
-If you're using an Apache webserver and if you have access to `php.ini`, you can use the `auto_prepend_file` directive to prepend CIDRAM whenever any PHP request is made. Something like:
+Если у Вас Apache HTTP-сервер и доступ к нему в формате `php.ini` или похожем формате, вы можете воспользоваться `auto_prepend_file`-директивой, установя приоритет CIDRAM, когда последует PHP-запрос. Примерно так:
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
-Or this in the `.htaccess` file:
+Или в `.htaccess` файлом:
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
-6) That's everything! :-)
+6) На этом инсталляционный процесс заканчивается. :-)
 
 ---
 
 
-###3. <a name="SECTION3"></a>HOW TO USE
+###3. <a name="SECTION3"></a>ИСПОЛЬЗОВАНИЕ
 
-CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation.
+CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation. @TranslateMe@
 
-Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files.
+Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files. @TranslateMe@
 
-If you encounter any false positives, please contact me to let me know about it.
+If you encounter any false positives, please contact me to let me know about it. @TranslateMe@
 
 ---
 
 
-###4. <a name="SECTION4"></a>FILES INCLUDED IN THIS PACKAGE
+###5. <a name="SECTION5"></a>СОДЕРЖАНИЕ ПАКЕТА ФАЙЛОВ
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, along with a short description of the purpose of these files.
+Следующая таблица содержит все файлы, содержащиеся в скаченном архиве руководства, а также файлы, которые можно создать, используя данное руководство, с кратким описанием этих файлов.
 
-File | Description
+Файл | Описание
 ----|----
-/.gitattributes | A Github project file (not required for proper function of the script).
-/Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
-/composer.json | Composer/Packagist information (not required for proper function of the script).
-/LICENSE.txt | A copy of the GNU/GPLv2 license (not required for proper function of the script).
-/loader.php | Loader. This is what you're supposed to be hooking into (essential)!
-/README.md | Project summary information.
-/web.config | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
-/_docs/ | Documentation directory (contains various files).
-/_docs/readme.ar.md | Arabic documentation.
-/_docs/readme.de.md | German documentation.
-/_docs/readme.en.md | English documentation.
-/_docs/readme.es.md | Spanish documentation.
-/_docs/readme.fr.md | French documentation.
-/_docs/readme.id.md | Indonesian documentation.
-/_docs/readme.it.md | Italian documentation.
-/_docs/readme.ja.md | Japanese documentation.
-/_docs/readme.nl.md | Dutch documentation.
-/_docs/readme.pt.md | Portuguese documentation.
-/_docs/readme.ru.md | Russian documentation.
-/_docs/readme.vi.md | Vietnamese documentation.
-/_docs/readme.zh-TW.md | Chinese (traditional) documentation.
-/_docs/readme.zh.md | Chinese (simplified) documentation.
+/.gitattributes | Файл из Github проекта (на эффективность данного руководства не влияет).
+/Changelog.txt | Перечень внесённых в руководство изменений и его различные версии (на эффективность данного руководства не влияет).
+/composer.json | Composer/Packagist информация (на эффективность данного руководства не влияет).
+/LICENSE.txt | Копия лицензии GNU/GPLv2 (на эффективность данного руководства не влияет).
+/loader.php | Загрузчик. Этот файл будет связан с Вашей системой управления содержимым (обязательно!).
+/README.md | Резюме информации о проекте.
+/web.config | Файл с ASP.NET-конфигурации. Этот файл необходим для защиты `/vault` регистров от неавторизованного доступа, когда руководство инсталлируется на один из серверов, базирующихся на ASP.NET-технологиях.
+/_docs/ | Регистр с документами (содержит различные файлы).
+/_docs/readme.ar.md | Документация на Арабском языке.
+/_docs/readme.de.md | Документация на Немецком языке.
+/_docs/readme.en.md | Документация на Английском языке.
+/_docs/readme.es.md | Документация на Испанском языке.
+/_docs/readme.fr.md | Документация на Французском языке.
+/_docs/readme.id.md | Документация на Индонезийском языке.
+/_docs/readme.it.md | Документация на Итальянском языке.
+/_docs/readme.ja.md | Документация на Японском языке.
+/_docs/readme.nl.md | Документация на Нидерланском языке.
+/_docs/readme.pt.md | Документация на Португальском языке.
+/_docs/readme.ru.md | Документация на Русском языке.
+/_docs/readme.vi.md | Документация на Вьетнамском язык.
+/_docs/readme.zh-TW.md | Документация на Китайском традиционный.
+/_docs/readme.zh.md | Документация на Китайском упрощенный.
 /vault/ | Vault directory (contains various files).
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
 /vault/cli.php | CLI handler.
-/vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
+/vault/config.ini.RenameMe | Configuration file; Contains all the НАСТРОЙКИ of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/functions.php | Functions file (essential).
 /vault/ipv4.dat | IPv4 signatures file.
@@ -150,7 +150,7 @@ File | Description
 ---
 
 
-###5. <a name="SECTION5"></a>CONFIGURATION OPTIONS
+###5. <a name="SECTION5"></a>НАСТРОЙКИ
 The following is a list of the directives available to CIDRAM in the `config.ini` configuration file, along with a description of the purpose of these directives.
 
 ####"general" (Category)
@@ -229,7 +229,7 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 ---
 
 
-###6. <a name="SECTION6"></a>SIGNATURE FORMAT
+###6. <a name="SECTION6"></a>ФОРМАТ ПОДПИСЕЙ
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -323,4 +323,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 3rd August 2016 (2016.08.03).
+Последнее обновление: 3 Август 2016 (2016.08.03).

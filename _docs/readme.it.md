@@ -21,7 +21,7 @@ Questo script è libero software; è possibile ridistribuirlo e/o modificarlo so
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Questo documento ed il pacchetto associtato ad esso possono essere scaricati liberamente da [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Questo documento ed il pacchetto associtato ad esso possono essere scaricati liberamente da [Github](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -38,7 +38,7 @@ Spero di semplificare questo processo tramite un installatore ad un certo punto 
 
 4) CHMOD la cartella `vault` a "777". La principale cartella che memorizzare il contenuti (quello scelto in precedenza), solitamente, può essere lasciato solo, Ma lo CHMOD stato dovrebbe essere controllato se hai avuto problemi di autorizzazioni in passato sul vostro sistema (per predefinita, dovrebbe essere qualcosa simile a "755").
 
-5) Successivamente, sarà necessario collegare CIDRAM al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come CIDRAM al vostre sistema o CMS, Ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, visitare la pagina dei problemi (issues) di CIDRAM su GitHub. Per fare questo [utilizzare `require` o `include`], inserire la seguente riga di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto della "CIDRAM" file (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
+5) Successivamente, sarà necessario collegare CIDRAM al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come CIDRAM al vostre sistema o CMS, Ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, per assistenza, visitare la pagina di problemi/issues per CIDRAM. Per fare questo [utilizzare `require` o `include`], inserire la seguente riga di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto del file `loader.php` (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -76,7 +76,7 @@ Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella arc
 
 File | Descrizione
 ----|----
-/.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
+/.gitattributes | Un file del Github progetto (non richiesto per il corretto funzionamento dello script).
 /Changelog.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
 /LICENSE.txt | Una copia della GNU/GPLv2 licenza (non richiesto per il corretto funzionamento dello script).
@@ -84,17 +84,20 @@ File | Descrizione
 /README.md | Informazioni di riepilogo del progetto.
 /web.config | Un ASP.NET file di configurazione (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 /_docs/ | Documentazione cartella (contiene vari file).
-/_docs/readme.de.md | Tedesco documentazione.
-/_docs/readme.en.md | Inglese documentazione.
-/_docs/readme.es.md | Spagnolo documentazione.
-/_docs/readme.fr.md | Francese documentazione.
-/_docs/readme.id.md | Indonesiano documentazione.
-/_docs/readme.it.md | Italiano documentazione.
-/_docs/readme.nl.md | Olandese documentazione.
-/_docs/readme.pt.md | Portoghese documentazione.
-/_docs/readme.vi.md | Vietnamita documentazione.
-/_docs/readme.zh-TW.md | Cinese (Tradizionale) documentazione.
-/_docs/readme.zh.md | Cinese (Semplificato) documentazione.
+/_docs/readme.ar.md | Documentazione Arabo.
+/_docs/readme.de.md | Documentazione Tedesco.
+/_docs/readme.en.md | Documentazione Inglese.
+/_docs/readme.es.md | Documentazione Spagnolo.
+/_docs/readme.fr.md | Documentazione Francese.
+/_docs/readme.id.md | Documentazione Indonesiano.
+/_docs/readme.it.md | Documentazione Italiano.
+/_docs/readme.ja.md | Documentazione Giapponese.
+/_docs/readme.nl.md | Documentazione Olandese.
+/_docs/readme.pt.md | Documentazione Portoghese.
+/_docs/readme.ru.md | Documentazione Russo.
+/_docs/readme.vi.md | Documentazione Vietnamita.
+/_docs/readme.zh-TW.md | Documentazione Cinese (tradizionale).
+/_docs/readme.zh.md | Documentazione Cinese (semplificato).
 /vault/ | La vault cartella (contiene vari file).
 /vault/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/cache.dat | Cache data.
@@ -320,4 +323,4 @@ Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 ---
 
 
-Ultimo Aggiornamento: 23 Luglio 2016 (2016.07.23).
+Ultimo Aggiornamento: 3 Agosto 2016 (2016.08.03).

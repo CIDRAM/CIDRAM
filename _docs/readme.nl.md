@@ -21,7 +21,7 @@ Dit script is gratis software; u kunt, onder de voorwaarden van de GNU General P
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Dit document en de bijbehorende pakket kunt gedownload gratis zijn van [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Dit document en de bijbehorende pakket kunt gedownload gratis zijn van [Github](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -38,7 +38,7 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 4) CHMOD het bestandsmap `vault` naar "777". De belangrijkste bestandsmap opslaan van de inhoud (degene die u eerder koos), gewoonlijk, kunt worden genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen problemen heeft in het verleden met uw systeem (standaard, moet iets zijn als "755").
 
-5) Volgende, u nodig om "haak" CIDRAM om uw systeem of CMS. Er zijn verschillende manieren waarop u kunt "haak" scripts zoals CIDRAM om uw systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script aan het begin van een kern bestand van uw systeem of CMS (een die het algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een pagina in uw website) met behulp van een `require` of `include` opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals `/includes`, `/assets` of `/functions`, en zal vaak zijn vernoemd iets als `init.php`, `common_functions.php`, `functions.php` of soortgelijk. U nodig om te bepalen welk bestand dit is voor uw situatie; Als u problemen ondervindt in het werken dit uit voor uzelf, bezoek de CIDRAM kwesties (issues) pagina op GitHub. Om dit te doen [te gebruiken `require` of `include`], plaatst u de volgende regel code aan het begin op die kern bestand, vervangen van de string die binnen de aanhalingstekens met het exacte adres van het `loader.php` bestand (lokaal adres, niet het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
+5) Volgende, u nodig om "haak" CIDRAM om uw systeem of CMS. Er zijn verschillende manieren waarop u kunt "haak" scripts zoals CIDRAM om uw systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script aan het begin van een kern bestand van uw systeem of CMS (een die het algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een pagina in uw website) met behulp van een `require` of `include` opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals `/includes`, `/assets` of `/functions`, en zal vaak zijn vernoemd iets als `init.php`, `common_functions.php`, `functions.php` of soortgelijk. U nodig om te bepalen welk bestand dit is voor uw situatie; Als u problemen ondervindt bij het bepalen van dit voor uzelf, ga naar de CIDRAM kwesties/issues pagina op Github voor assistentie. Om dit te doen [te gebruiken `require` of `include`], plaatst u de volgende regel code aan het begin op die kern bestand, vervangen van de string die binnen de aanhalingstekens met het exacte adres van het `loader.php` bestand (lokaal adres, niet het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -76,7 +76,7 @@ Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de g
 
 Bestand | Beschrijving
 ----|----
-/.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
+/.gitattributes | Een Github project bestand (niet vereist voor een goede werking van het script).
 /Changelog.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
 /LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
@@ -84,17 +84,20 @@ Bestand | Beschrijving
 /README.md | Project beknopte informatie.
 /web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
+/_docs/readme.ar.md | Arabisch documentatie.
 /_docs/readme.de.md | Duitse documentatie.
 /_docs/readme.en.md | Engels documentatie.
 /_docs/readme.es.md | Spaanse documentatie.
 /_docs/readme.fr.md | Franse documentatie.
 /_docs/readme.id.md | Indonesisch documentatie.
 /_docs/readme.it.md | Italiaanse documentatie.
+/_docs/readme.ja.md | Japanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
+/_docs/readme.ru.md | Russische documentatie.
 /_docs/readme.vi.md | Vietnamees documentatie.
-/_docs/readme.zh-TW.md | Chinees (Traditioneel) documentatie.
-/_docs/readme.zh.md | Chinees (Vereenvoudigd) documentatie.
+/_docs/readme.zh-TW.md | Chinees (traditioneel) documentatie.
+/_docs/readme.zh.md | Chinees (vereenvoudigd) documentatie.
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache.dat | Cache data/gegevens.
@@ -320,4 +323,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 23 Juli 2016 (2016.07.23).
+Laatste Bijgewerkt: 3 Augustus 2016 (2016.08.03).

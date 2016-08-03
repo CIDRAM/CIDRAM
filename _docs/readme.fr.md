@@ -21,7 +21,7 @@ Ce script est un logiciel libre; vous pouvez redistribuer et/ou le modifier selo
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de [Github](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -38,7 +38,7 @@ J'ai l'intention de simplifier ce processus par la création d'un programme d'in
 
 4) CHMOD la `vault` répertoire à "777". Le principal répertoire qui est stocker le contenu (celui que vous avez choisi plus tôt), généralement, peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu problèmes d'autorisations dans le passé sur votre système (par défaut, devrait être quelque chose comme "755").
 
-5) Suivant, vous aurez besoin de l'attacher CIDRAM à votre système ou CMS. Il est plusieurs façons vous pouvez attacher CIDRAM à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés dans déterminer de ce pour vous-même, visiter les CIDRAM issues page dans GitHub. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `loader.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
+5) Suivant, vous aurez besoin de l'attacher CIDRAM à votre système ou CMS. Il est plusieurs façons vous pouvez attacher CIDRAM à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés pour la détermination de ce par vous-même, à l'aide, visitez la page des problèmes/issues pour CIDRAM à Github. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `loader.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -76,7 +76,7 @@ Voici une liste de tous les fichiers inclus dans CIDRAM dans son natif état, to
 
 Fichier | Description
 ----|----
-/.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
+/.gitattributes | Un fichier du Github projet (pas nécessaire pour le bon fonctionnement du script).
 /Changelog.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
 /LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
@@ -84,14 +84,17 @@ Fichier | Description
 /README.md | Sommaire de l'information du projet.
 /web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 /_docs/ | Documentation répertoire (contient divers fichiers).
+/_docs/readme.ar.md | Documentation en Arabe.
 /_docs/readme.de.md | Documentation en Allemand.
 /_docs/readme.en.md | Documentation en Anglais.
 /_docs/readme.es.md | Documentation en Espagnol.
 /_docs/readme.fr.md | Documentation en Français.
 /_docs/readme.id.md | Documentation en Indonésien.
 /_docs/readme.it.md | Documentation en Italien.
+/_docs/readme.ja.md | Documentation en Japonaise.
 /_docs/readme.nl.md | Documentation en Néerlandais.
 /_docs/readme.pt.md | Documentation en Portugais.
+/_docs/readme.ru.md | Documentation en Russe.
 /_docs/readme.vi.md | Documentation en Vietnamien.
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
@@ -320,4 +323,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 23 Juillet 2016 (2016.07.23).
+Dernière Réactualisé: 3 Août 2016 (2016.08.03).

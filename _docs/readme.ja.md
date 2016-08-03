@@ -1,108 +1,108 @@
-## Documentation for CIDRAM (English).
+## CIDRAMのドキュメンテーション（日本語）。
 
-### Contents
-- 1. [PREAMBLE](#SECTION1)
-- 2. [HOW TO INSTALL](#SECTION2)
-- 3. [HOW TO USE](#SECTION3)
-- 4. [FILES INCLUDED IN THIS PACKAGE](#SECTION4)
-- 5. [CONFIGURATION OPTIONS](#SECTION5)
-- 6. [SIGNATURE FORMAT](#SECTION6)
-
----
-
-
-###1. <a name="SECTION1"></a>PREAMBLE
-
-CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked.
-
-CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-
-This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE.txt` file and available also from:
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
-
-This document and its associated package can be downloaded for free from [Github](https://github.com/Maikuolan/CIDRAM/).
+### 目次
+- 1. [序文](#SECTION1)
+- 2. [インストール方法](#SECTION2)
+- 3. [使用方法](#SECTION3)
+- 4. [本パッケージに含まれるファイル](#SECTION4)
+- 5. [設定オプション](#SECTION5)
+- 6. [署名（シグニチャ）フォーマット](#SECTION6)
 
 ---
 
 
-###2. <a name="SECTION2"></a>HOW TO INSTALL
+###1. <a name="SECTION1"></a>序文
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get CIDRAM working on *most systems and CMS:
+CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked. @TranslateMe@
 
-1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/cidram/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
+CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利について: Caleb M (Maikuolan)著。
 
-2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+本スクリプトはフリーウェアです。フリーソフトウェア財団発行のGNU一般公衆ライセンス・バージョン２（またはそれ以降のバージョン）に従い、再配布ならびに加工が可能です。配布の目的は、役に立つことを願ってのものですが、『保証はなく、また商品性や特定の目的に適合するのを示唆するものでもありません』。"LICENSE.txt" にあるGNU General Public License（一般ライセンス）を参照して下さい。 以下のURLからも閲覧できます：
+- <http://www.gnu.org/licenses/>。
+- <http://opensource.org/licenses/>。
 
-3) Upload the contents (CIDRAM and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
+本ドキュメントならびに関連パッケージ、[Github](https://github.com/Maikuolan/CIDRAM/)からダウンロードできます。
 
-4) CHMOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+---
 
-5) Next, you'll need to "hook" CIDRAM to your system or CMS. There are several different ways you can "hook" scripts such as CIDRAM to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the CIDRAM issues page on Github. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+
+###2A. <a name="SECTION2A"></a>インストール方法（ウェブサーバー編）
+
+近い将来にはインストーラーを作成しインストールの簡素化を図りたいと考えていますが、現状では以下のインストラクションに従ってCIDRAMをインストールして下さい。少数の例外はあるものの、大多数*のシステムおよびCMSで機能します。
+
+1) 本項を読んでいるということから、アーカイブ・スクリプトのローカルマシンへのダウンロードと解凍は終了していると考えます。ホストあるいはCMSに`/public_html/cidram/`のようなディレクトリを作り、ローカルマシンからそこにコンテンツをアップロードするのが次のステップです。アップロード先のディレクトリ名や場所については、安全でさえあれば、もちろん制約などはありませんので、自由に決めて下さい。
+
+2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close. @TranslateMe@
+
+3) コンテンツ（CIDRAM本体とファイル）を先に定めたディレクトリにアップロードします。（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、大抵は全てをアップロードしてもらって構いません）。
+
+4) `vault`ディレクトリは`777`にアクセス権変更します。コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。（デフォルトでは`755`が一般的です）。
+
+5) 次に、システム内あるいはCMSにCIDRAMをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内／CMCのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。よく分からない場合は、CIDRAMサポートフォーラムを参照するか、またはGithubのでCIDRAMの問題のページ、あるいはお知らせください（CMS情報必須）。私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。ただし、クォーテーションマークで囲まれた部分は`loader.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
-Save file, close, reupload.
+ファイルを保存して閉じ、再アップロードします。
 
--- OR ALTERNATIVELY --
+-- 他の手法 --
 
-If you're using an Apache webserver and if you have access to `php.ini`, you can use the `auto_prepend_file` directive to prepend CIDRAM whenever any PHP request is made. Something like:
+Apacheウェブサーバーを利用していて、かつ`php.ini`を編集できるようであれば、`auto_prepend_file`ディレクティブを使って、PHPリクエストがあった場合にはいつもphpMusselを先頭に追加するようにすることも可能です。以下に例を挙げます。
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
-Or this in the `.htaccess` file:
+あるいは、`.htaccess` において：
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
-6) That's everything! :-)
+6) インストールは完了しました。 :-)
 
 ---
 
 
-###3. <a name="SECTION3"></a>HOW TO USE
+###3. <a name="SECTION3"></a>使用方法
 
-CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation.
+CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation. @TranslateMe@
 
-Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files.
+Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files. @TranslateMe@
 
-If you encounter any false positives, please contact me to let me know about it.
+If you encounter any false positives, please contact me to let me know about it. @TranslateMe@
 
 ---
 
 
-###4. <a name="SECTION4"></a>FILES INCLUDED IN THIS PACKAGE
+###5. <a name="SECTION5"></a>本パッケージに含まれるファイル
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, along with a short description of the purpose of these files.
+以下はアーカイブから一括ダウンロードされるファイルのリスト、ならびにスクリプト使用により作成されるファイルとこれらのファイルが何のためかという簡単な説明です。
 
-File | Description
+ファイル | 説明
 ----|----
-/.gitattributes | A Github project file (not required for proper function of the script).
-/Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
-/composer.json | Composer/Packagist information (not required for proper function of the script).
-/LICENSE.txt | A copy of the GNU/GPLv2 license (not required for proper function of the script).
-/loader.php | Loader. This is what you're supposed to be hooking into (essential)!
-/README.md | Project summary information.
-/web.config | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
-/_docs/ | Documentation directory (contains various files).
-/_docs/readme.ar.md | Arabic documentation.
-/_docs/readme.de.md | German documentation.
-/_docs/readme.en.md | English documentation.
-/_docs/readme.es.md | Spanish documentation.
-/_docs/readme.fr.md | French documentation.
-/_docs/readme.id.md | Indonesian documentation.
-/_docs/readme.it.md | Italian documentation.
-/_docs/readme.ja.md | Japanese documentation.
-/_docs/readme.nl.md | Dutch documentation.
-/_docs/readme.pt.md | Portuguese documentation.
-/_docs/readme.ru.md | Russian documentation.
-/_docs/readme.vi.md | Vietnamese documentation.
-/_docs/readme.zh-TW.md | Chinese (traditional) documentation.
-/_docs/readme.zh.md | Chinese (simplified) documentation.
+/.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
+/Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
+/composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
+/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
+/loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
+/README.md | プロジェクト概要情報。
+/web.config | ASP.NET設定ファイルです（スクリプトがASP.NET テクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
+/_docs/ | ドキュメンテーション用のディレクトリです（様々なファイルを含みます）。
+/_docs/readme.ar.md | アラビア語ドキュメンテーション。
+/_docs/readme.de.md | ドイツ語ドキュメンテーション。
+/_docs/readme.en.md | 英語ドキュメンテーション。
+/_docs/readme.es.md | スペイン語ドキュメンテーション。
+/_docs/readme.fr.md | フランス語ドキュメンテーション。
+/_docs/readme.id.md | インドネシア語ドキュメンテーション。
+/_docs/readme.it.md | 伊語ドキュメンテーション。
+/_docs/readme.ja.md | 日本語ドキュメンテーション。
+/_docs/readme.nl.md | オランダ語ドキュメンテーション。
+/_docs/readme.pt.md | ポルトガル語ドキュメンテーション。
+/_docs/readme.ru.md | ロシア語ドキュメンテーション。
+/_docs/readme.vi.md | ベトナム語ドキュメンテーション。
+/_docs/readme.zh-TW.md | 繁体字中国語ドキュメンテーション。
+/_docs/readme.zh.md | 簡体字中国語ドキュメンテーション。
 /vault/ | Vault directory (contains various files).
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
 /vault/cli.php | CLI handler.
-/vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
+/vault/config.ini.RenameMe | Configuration file; Contains all the 設定オプション of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/functions.php | Functions file (essential).
 /vault/ipv4.dat | IPv4 signatures file.
@@ -150,7 +150,7 @@ File | Description
 ---
 
 
-###5. <a name="SECTION5"></a>CONFIGURATION OPTIONS
+###5. <a name="SECTION5"></a>設定オプション
 The following is a list of the directives available to CIDRAM in the `config.ini` configuration file, along with a description of the purpose of these directives.
 
 ####"general" (Category)
@@ -229,7 +229,7 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 ---
 
 
-###6. <a name="SECTION6"></a>SIGNATURE FORMAT
+###6. <a name="SECTION6"></a>署名（シグニチャ）フォーマット
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -323,4 +323,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 3rd August 2016 (2016.08.03).
+最終アップデート： 2016年08月03日。

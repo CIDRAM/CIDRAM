@@ -21,7 +21,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-现在CIDRAM的代码文件和关联包可以从以下地址免费下载[GitHub](https://github.com/Maikuolan/CIDRAM/)。
+现在CIDRAM的代码文件和关联包可以从以下地址免费下载[Github](https://github.com/Maikuolan/CIDRAM/)。
 
 ---
 
@@ -38,7 +38,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 修改的`vault`文件夹权限为“755”。注意，主文件夹也应该是该权限，如果遇上其他权限问题，请修改对应文件夹和文件的权限。
 
-5） 接下来，您需要为您的系统或CMS设定启动CIDRAM的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，访问CIDRAM支持论坛和发送问题；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。（注意，本人不是PHP程序员，关于这一段仅仅是直译，如有错误，请在对应项目上提交问题更正）。
+5） 接下来，您需要为您的系统或CMS设定启动CIDRAM的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，参观Github上的CIDRAM问题页面；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -77,7 +77,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 文件 | 说明
 ----|----
-/.gitattributes | GitHub文件（不需要为正确经营脚本）。
+/.gitattributes | Github文件（不需要为正确经营脚本）。
 /Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
 /LICENSE.txt | GNU/GPLv2 执照文件（不需要为正确经营脚本）。
@@ -85,14 +85,17 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /README.md | 项目概要信息。
 /web.config | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
 /_docs/ | 笔记文件夹（包含若干文件）。
+/_docs/readme.ar.md | 阿拉伯文自述文件。
 /_docs/readme.de.md | 德文自述文件。
 /_docs/readme.en.md | 英文自述文件。
 /_docs/readme.es.md | 西班牙文自述文件。
 /_docs/readme.fr.md | 法文自述文件。
 /_docs/readme.id.md | 印度尼西亚文自述文件。
 /_docs/readme.it.md | 意大利文自述文件。
+/_docs/readme.ja.md | 日文自述文件。
 /_docs/readme.nl.md | 荷兰文自述文件。
 /_docs/readme.pt.md | 葡萄牙文自述文件。
+/_docs/readme.ru.md | 俄文自述文件。
 /_docs/readme.vi.md | 越南文自述文件。
 /_docs/readme.zh-TW.md | 中文（传统）自述文件。
 /_docs/readme.zh.md | 中文（简体）自述文件。
@@ -321,4 +324,4 @@ Ignore Section 1
 ---
 
 
-最后更新：2016年7月23日。
+最后更新：2016年8月3日。

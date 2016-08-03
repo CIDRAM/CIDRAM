@@ -1,34 +1,36 @@
-## Documentation for CIDRAM (English).
+## <div dir="rtl">CIDRAM بالعربية</div>
 
-### Contents
-- 1. [PREAMBLE](#SECTION1)
-- 2. [HOW TO INSTALL](#SECTION2)
-- 3. [HOW TO USE](#SECTION3)
-- 4. [FILES INCLUDED IN THIS PACKAGE](#SECTION4)
-- 5. [CONFIGURATION OPTIONS](#SECTION5)
-- 6. [SIGNATURE FORMAT](#SECTION6)
+### <div dir="rtl">المحتويات:</div>
+<div dir="rtl"><ul>
+ <li>1. <a href="#SECTION1">مقدمة</a></li>
+ <li>2. <a href="#SECTION2">كيفية التحميل</a></li>
+ <li>3. <a href="#SECTION3">كيفية الإستخدام</a></li>
+ <li>5. <a href="#SECTION4">الملفاتالموجودةفيهذهالحزمة</a></li>
+ <li>6. <a href="#SECTION5">خياراتالتكوين/التهيئة</a></li>
+ <li>7. <a href="#SECTION6">شكل/تنسيق التوقيع</a></li>
+</ul></div>
 
 ---
 
 
-###1. <a name="SECTION1"></a>PREAMBLE
+### <div dir="rtl">1. <a name="SECTION1"></a>مقدمة</div>
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked.
+CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked. @TranslateMe@
 
-CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+<div dir="rtl">حقوق النشر محفوظة ل CIDRAM لعام 2016 وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
 
-This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE.txt` file and available also from:
+<div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU. نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف `LICENSE.txt` وللمزيد من المعلومات:</div>
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-This document and its associated package can be downloaded for free from [Github](https://github.com/Maikuolan/CIDRAM/).
+<div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من [Github](https://github.com/Maikuolan/CIDRAM/).</div>
 
 ---
 
 
-###2. <a name="SECTION2"></a>HOW TO INSTALL
+### <div dir="rtl">2. <a name="SECTION2"></a>كيفية كيفية التحميل</div>
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get CIDRAM working on *most systems and CMS:
+<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS : <br /><br /></div>
 
 1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/cidram/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
 
@@ -44,13 +46,13 @@ I hope to streamline this process by making an installer at some point in the no
 
 Save file, close, reupload.
 
--- OR ALTERNATIVELY --
+<div dir="rtl">--أو بدلاً من ذلك--<br /><br /></div>
 
-If you're using an Apache webserver and if you have access to `php.ini`, you can use the `auto_prepend_file` directive to prepend CIDRAM whenever any PHP request is made. Something like:
+<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل `php.ini`، بإستطاعتك إستخدام `auto_prpend_file` للتوجيه ل CIDRAM لكل طلب مثل:<br /><br /></div>
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
-Or this in the `.htaccess` file:
+<div dir="rtl">أو هذا في ملف `.htaccess`:<br /><br /></div>
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
@@ -70,34 +72,34 @@ If you encounter any false positives, please contact me to let me know about it.
 ---
 
 
-###4. <a name="SECTION4"></a>FILES INCLUDED IN THIS PACKAGE
+### <div dir="rtl">5. <a name="SECTION4"></a>الملفاتالموجودةفيهذهالحزمة</div>
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, along with a short description of the purpose of these files.
+<div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
-File | Description
+الوصف | الملف
 ----|----
-/.gitattributes | A Github project file (not required for proper function of the script).
-/Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
-/composer.json | Composer/Packagist information (not required for proper function of the script).
-/LICENSE.txt | A copy of the GNU/GPLv2 license (not required for proper function of the script).
-/loader.php | Loader. This is what you're supposed to be hooking into (essential)!
-/README.md | Project summary information.
-/web.config | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
-/_docs/ | Documentation directory (contains various files).
-/_docs/readme.ar.md | Arabic documentation.
-/_docs/readme.de.md | German documentation.
-/_docs/readme.en.md | English documentation.
-/_docs/readme.es.md | Spanish documentation.
-/_docs/readme.fr.md | French documentation.
-/_docs/readme.id.md | Indonesian documentation.
-/_docs/readme.it.md | Italian documentation.
-/_docs/readme.ja.md | Japanese documentation.
-/_docs/readme.nl.md | Dutch documentation.
-/_docs/readme.pt.md | Portuguese documentation.
-/_docs/readme.ru.md | Russian documentation.
-/_docs/readme.vi.md | Vietnamese documentation.
-/_docs/readme.zh-TW.md | Chinese (traditional) documentation.
-/_docs/readme.zh.md | Chinese (simplified) documentation.
+<div dir="rtl" style="display:inline;">أ ملف المشروع Github (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
+<div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog.txt
+<div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
+<div dir="rtl" style="display:inline;">نسخة من GNU/GPLv2 رخصة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /LICENSE.txt
+<div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و، إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /loader.php
+<div dir="rtl" style="display:inline;">معلومات موجزة المشروع.</div> | /README.md
+<div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة، لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
+<div dir="rtl" style="display:inline;">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
+<div dir="rtl" style="display:inline;">الوثائق العربية.</div> | /_docs/readme.ar.md
+<div dir="rtl" style="display:inline;">الوثائق الألمانية.</div> | /_docs/readme.de.md
+<div dir="rtl" style="display:inline;">الوثائق الإنجليزية.</div> | /_docs/readme.en.md
+<div dir="rtl" style="display:inline;">الوثائق الأسبانية.</div> | /_docs/readme.es.md
+<div dir="rtl" style="display:inline;">الوثائق الفرنسية.</div> | /_docs/readme.fr.md
+<div dir="rtl" style="display:inline;">الوثائق الاندونيسية.</div> | /_docs/readme.id.md
+<div dir="rtl" style="display:inline;">الوثائق الايطالية.</div> | /_docs/readme.it.md
+<div dir="rtl" style="display:inline;">الوثائق اليابانية.</div> | /_docs/readme.ja.md
+<div dir="rtl" style="display:inline;">الوثائق الهولندية.</div> | /_docs/readme.nl.md
+<div dir="rtl" style="display:inline;">الوثائق البرتغالية.</div> | /_docs/readme.pt.md
+<div dir="rtl" style="display:inline;">الوثائق الروسية.</div> | /_docs/readme.ru.md
+<div dir="rtl" style="display:inline;">الوثائق الفيتنامية.</div> | /_docs/readme.vi.md
+<div dir="rtl" style="display:inline;">الوثائق الصينية (المبسطة).</div> | /_docs/readme.zh.md
+<div dir="rtl" style="display:inline;">الوثائق الصينية (التقليدية).</div> | /_docs/readme.zh-TW.md
 /vault/ | Vault directory (contains various files).
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
@@ -323,4 +325,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 3rd August 2016 (2016.08.03).
+<div dir="rtl">آخر تحديث: 3 أغسطس 2016 (2016.08.03).</div>

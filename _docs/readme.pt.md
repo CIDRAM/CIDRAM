@@ -21,7 +21,7 @@ Este script é livre software; você pode redistribuí-lo e/ou modificá-lo de a
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Este documento e seu associado pacote pode ser baixado gratuitamente de [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Este documento e seu associado pacote pode ser baixado gratuitamente de [Github](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -38,7 +38,7 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 4) CHMOD o `vault` diretório para "777". O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
 
-5) Seguida, você vai precisar "enganchar" CIDRAM ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como CIDRAM ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, visite as página dos problemas (issues) de CIDRAM no GitHub. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `loader.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
+5) Seguida, você vai precisar "enganchar" CIDRAM ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como CIDRAM ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas/issues CIDRAM no Github. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `loader.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -76,7 +76,7 @@ O seguinte está uma lista de todos os arquivos que deveria sido incluídos na a
 
 Arquivo | Descrição
 ----|----
-/.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
+/.gitattributes | Um arquivo do Github projeto (não é necessário para o correto funcionamento do script).
 /Changelog.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
 /LICENSE.txt | Uma cópia da GNU/GPLv2 licença (não é necessário para o correto funcionamento do script).
@@ -84,17 +84,20 @@ Arquivo | Descrição
 /README.md | Informações do projeto em sumário.
 /web.config | Um arquivo de configuração para ASP.NET (neste caso, para protegendo o`/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
 /_docs/ | Documentação diretório (contém vários arquivos).
+/_docs/readme.ar.md | Documentação Árabe.
 /_docs/readme.de.md | Documentação Alemão.
 /_docs/readme.en.md | Documentação Inglês.
 /_docs/readme.es.md | Documentação Espanhol.
 /_docs/readme.fr.md | Documentação Francesa.
 /_docs/readme.id.md | Documentação Indonésio.
 /_docs/readme.it.md | Documentação Italiano.
+/_docs/readme.ja.md | Documentação Japonesa.
 /_docs/readme.nl.md | Documentação Holandês.
 /_docs/readme.pt.md | Documentação Português.
+/_docs/readme.ru.md | Documentação Russo.
 /_docs/readme.vi.md | Documentação Vietnamita.
-/_docs/readme.zh-TW.md | Documentação Chinês (Tradicional).
-/_docs/readme.zh.md | Documentação Chinês (Simplificado).
+/_docs/readme.zh-TW.md | Documentação Chinês (tradicional).
+/_docs/readme.zh.md | Documentação Chinês (simplificado).
 /vault/ | Vault diretório (contém vários arquivos).
 /vault/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/cache.dat | Dados de cache.
@@ -320,4 +323,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 23 Julho 2016 (2016.07.23).
+Última Atualização: 3 Agosto 2016 (2016.08.03).

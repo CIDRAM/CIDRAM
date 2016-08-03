@@ -21,7 +21,7 @@ Bản này là chương trình miễn phí; bạn có thể phân phối lại h
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ [Github](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -38,7 +38,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 4) CHMOD thư mục `vault` thành "777". Các thư mục chính kho lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
 
-5) Tiếp theo, bạn sẽ cần "nối" CIDRAM vào hệ thống của bạn hay CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như CIDRAM vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tập tin hoạc hệ thống hay CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra tập tin nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này ra cho chính mình, thăm các trang issues (vấn đề) cho CIDRAM trên GitHub. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của tập tin, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tập tin `CIDRAM.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
+5) Tiếp theo, bạn sẽ cần "nối" CIDRAM vào hệ thống của bạn hay CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như CIDRAM vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tập tin hoạc hệ thống hay CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra tập tin nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này ra cho chính mình, hãy truy các trang issues (các vấn đề) của CIDRAM và cho chúng tôi biêt. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của tập tin, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tập tin `loader.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -76,22 +76,25 @@ Sau đây là một danh sách tất cả các tập tin mà cần phải có đ
 
 Tập tin | Chi tiết
 ----|----
-/.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
+/.gitattributes | Tập tin dự án cho Github (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
-/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2.
+/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
 /loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
 /README.md | Thông tin tóm tắt dự án.
 /web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 /_docs/ | Thư mực cho tài liệu.
+/_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
 /_docs/readme.de.md | Tài liệu tiếng Đức.
 /_docs/readme.en.md | Tài liệu tiếng Anh.
 /_docs/readme.es.md | Tài liệu tiếng Tây Ban Nha.
 /_docs/readme.fr.md | Tài liệu tiếng Pháp.
 /_docs/readme.id.md | Tài liệu tiếng Indonesia.
 /_docs/readme.it.md | Tài liệu tiếng Ý.
+/_docs/readme.ja.md | Tài liệu tiếng Nhật.
 /_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
+/_docs/readme.ru.md | Tài liệu tiếng Nga.
 /_docs/readme.vi.md | Tài liệu tiếng Việt.
 /_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (truyền thống).
 /_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (giản thể).
@@ -320,4 +323,4 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 ---
 
 
-Lần cuối cập nhật: 23 Tháng Bảy 2016 (2016.07.23).
+Lần cuối cập nhật: 3 Tháng Tám 2016 (2016.08.03).

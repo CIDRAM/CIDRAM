@@ -70,7 +70,7 @@ If you encounter any false positives, please contact me to let me know about it.
 ---
 
 
-###5. <a name="SECTION5"></a>СОДЕРЖАНИЕ ПАКЕТА ФАЙЛОВ
+###4. <a name="SECTION4"></a>СОДЕРЖАНИЕ ПАКЕТА ФАЙЛОВ
 
 Следующая таблица содержит все файлы, содержащиеся в скаченном архиве руководства, а также файлы, которые можно создать, используя данное руководство, с кратким описанием этих файлов.
 
@@ -98,63 +98,63 @@ If you encounter any false positives, please contact me to let me know about it.
 /_docs/readme.vi.md | Документация на Вьетнамском язык.
 /_docs/readme.zh-TW.md | Документация на Китайском традиционный.
 /_docs/readme.zh.md | Документация на Китайском упрощенный.
-/vault/ | Vault directory (contains various files).
-/vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/cache.dat | Cache data.
-/vault/cli.php | CLI handler.
-/vault/config.ini.RenameMe | Configuration file; Contains all the НАСТРОЙКИ of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
-/vault/config.php | Configuration handler.
-/vault/functions.php | Functions file (essential).
-/vault/ipv4.dat | IPv4 signatures file.
-/vault/ipv4_custom.dat.RenameMe | IPv4 custom signatures file (rename to activate).
-/vault/ipv6.dat | IPv6 signatures file.
-/vault/ipv6_custom.dat.RenameMe | IPv6 custom signatures file (rename to activate).
-/vault/lang.php | Language handler.
-/vault/lang/ | Contains CIDRAM language data.
-/vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.ar.cli.php | Arabic language data for CLI.
-/vault/lang/lang.ar.php | Arabic language data.
-/vault/lang/lang.de.cli.php | German language data for CLI.
-/vault/lang/lang.de.php | German language data.
-/vault/lang/lang.en.cli.php | English language data for CLI.
-/vault/lang/lang.en.php | English language data.
-/vault/lang/lang.es.cli.php | Spanish language data for CLI.
-/vault/lang/lang.es.php | Spanish language data.
-/vault/lang/lang.fr.cli.php | French language data for CLI.
-/vault/lang/lang.fr.php | French language data.
-/vault/lang/lang.id.cli.php | Indonesian language data for CLI.
-/vault/lang/lang.id.php | Indonesian language data.
-/vault/lang/lang.it.cli.php | Italian language data for CLI.
-/vault/lang/lang.it.php | Italian language data.
-/vault/lang/lang.ja.cli.php | Japanese language data for CLI.
-/vault/lang/lang.ja.php | Japanese language data.
-/vault/lang/lang.nl.cli.php | Dutch language data for CLI.
-/vault/lang/lang.nl.php | Dutch language data.
-/vault/lang/lang.pt.cli.php | Portuguese language data for CLI.
-/vault/lang/lang.pt.php | Portuguese language data.
-/vault/lang/lang.ru.cli.php | Russian language data for CLI.
-/vault/lang/lang.ru.php | Russian language data.
-/vault/lang/lang.vi.cli.php | Vietnamese language data for CLI.
-/vault/lang/lang.vi.php | Vietnamese language data.
-/vault/lang/lang.zh-tw.cli.php | Chinese (traditional) language data for CLI.
-/vault/lang/lang.zh-tw.php | Chinese (traditional) language data.
-/vault/lang/lang.zh.cli.php | Chinese (simplified) language data for CLI.
-/vault/lang/lang.zh.php | Chinese (simplified) language data.
-/vault/outgen.php | Output generator.
-/vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/vault/rules_as6939.php | Custom rules file for AS6939.
-/vault/rules_softlayer.php | Custom rules file for Soft Layer.
-/vault/rules_specific.php | Custom rules file for some specific CIDRs.
+/vault/ | Vault-регистр (содержит различные файлы)
+/vault/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
+/vault/cache.dat | Cache-данные.
+/vault/cli.php | Обработчик CLI (Способ Командных Строк).
+/vault/config.ini.RenameMe | Файл с конфигурации. Содержит всевозможные конфигурации CIDRAM (переименовать чтобы активировать).
+/vault/config.php | Обработчик конфигурации.
+/vault/functions.php | Функции файла (обязательно).
+/vault/ipv4.dat | IPv4 подписи файла.
+/vault/ipv4_custom.dat.RenameMe | IPv4 пользовательские подписи файлов (переименовать чтобы активировать).
+/vault/ipv6.dat | IPv6 подписи файла.
+/vault/ipv6_custom.dat.RenameMe | IPv6 пользовательские подписи файлов (переименовать чтобы активировать).
+/vault/lang.php | Язык обработчика.
+/vault/lang/ | Содержит CIDRAM файлы на разных языках.
+/vault/lang/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
+/vault/lang/lang.ar.cli.php | Арабском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.ar.php | Арабском языковые файлы.
+/vault/lang/lang.de.cli.php | Немецком языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.de.php | Немецком языковые файлы.
+/vault/lang/lang.en.cli.php | Английском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.en.php | Английском языковые файлы.
+/vault/lang/lang.es.cli.php | Испанском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.es.php | Испанском языковые файлы.
+/vault/lang/lang.fr.cli.php | Французском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.fr.php | Французском языковые файлы.
+/vault/lang/lang.id.cli.php | Индонезийском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.id.php | Индонезийском языковые файлы.
+/vault/lang/lang.it.cli.php | Итальянском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.it.php | Итальянском языковые файлы.
+/vault/lang/lang.ja.cli.php | Японском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.ja.php | Японском языковые файлы.
+/vault/lang/lang.nl.cli.php | Нидерланском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.nl.php | Нидерланском языковые файлы.
+/vault/lang/lang.pt.cli.php | Португальском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.pt.php | Португальском языковые файлы.
+/vault/lang/lang.ru.cli.php | Русском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.ru.php | Русском языковые файлы.
+/vault/lang/lang.vi.cli.php | Вьетнамском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.vi.php | Вьетнамском языковые файлы.
+/vault/lang/lang.zh-cli.TW.php | Китайском традиционный языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.zh-TW.php | Китайском традиционный языковые файлы.
+/vault/lang/lang.zh.cli.php | Китайском упрощенный языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.zh.php | Китайском упрощенный языковые файлы.
+/vault/outgen.php | Выход генератора.
+/vault/template.html | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована CIDRAM (сообщение, которое будет показано пользователю).
+/vault/template_custom.html | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована CIDRAM (сообщение, которое будет показано пользователю).
+/vault/rules_as6939.php | Пользовательские правила файл для AS6939.
+/vault/rules_softlayer.php | Пользовательские правила файл для Soft Layer.
+/vault/rules_specific.php | Пользовательские правила файл для некоторые специфические CIDRs.
 
 ---
 
 
 ###5. <a name="SECTION5"></a>НАСТРОЙКИ
-The following is a list of the directives available to CIDRAM in the `config.ini` configuration file, along with a description of the purpose of these directives.
+Ниже представлен список переменных данных в файле конфигурации `config.ini`, а также краткое описание их функций.
 
-####"general" (Category)
-General CIDRAM configuration.
+####"general" (Категория)
+Генеральная конфигурация от CIDRAM.
 
 "logfile"
 - Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
@@ -165,19 +165,19 @@ General CIDRAM configuration.
 "logfileSerialized"
 - Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
 
-*Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name: `{yyyy}` for complete year, `{yy}` for abbreviated year, `{mm}` for month, `{dd}` for day, `{hh}` for hour.*
+*Полезный совет: Если ты хочешь, вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
 
-*Examples:*
+*Примеры:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "timeOffset"
-- If your server time doesn't match your local time, you can specify an offset here to adjust the date/time information generated by CIDRAM according to your needs. It's generally recommended instead to adjust the timezone directive in your `php.ini` file, but sometimes (such as when working with limited shared hosting providers) this isn't always possible to do, and so, this option is provided here. Offset is in minutes.
-- Example (to add one hour): `timeOffset=60`
+- Если ваш сервер времени не соответствует вашему местному времени, вы можете указать смещение здесь для корректировки информации о дате/времени генерируется от CIDRAM в соответствии с вашими потребностями. Обычно рекомендуется вместо того, чтобы настроить директиву о зоне времени в файле `php.ini`, но иногда (например, при работе с общими хостинг-провайдеров, которые ограничены) это не всегда возможно, и так, эта опция представлена здесь. Смещение описывается как минут.
+- Пример (добавить один час): `timeOffset=60`
 
 "ipaddr"
-- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+- Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. Внимание! Изменяйте это значение только в том случае, если вы уверены в своих действиях!
 
 "forbid_on_block"
 - Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
@@ -186,16 +186,16 @@ General CIDRAM configuration.
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
 
 "lang"
-- Specify the default language for CIDRAM.
+- Задаёт CIDRAM стандарт языка.
 
 "emailaddr"
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
 "disable_cli"
-- Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
+- Деактивировать ли CLI-модус? Обычно CLI-модус активирован. Однако иногда он может отрицательно влиять на определённые тестовые программы (например на PHPUnit) и другие приложения, базирующиеся на CLI. Если CLI-модус нельзя деактивировать, то эту команду нужно игнорировать. False = CLI-модус активирован [Стандарт]; True = CLI-модус деактивирован.
 
-####"signatures" (Category)
-Signatures configuration.
+####"signatures" (Категория)
+Конфигурация подписями.
 
 "ipv4"
 - A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
@@ -218,13 +218,13 @@ Signatures configuration.
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
-####"template_data" (Category)
-Directives/Variables for templates and themes.
+####"template_data" (Категория)
+Директивы/Переменные для шаблоны и темы.
 
 Relates to the HTML output used to generate the "Access Denied" page. If you're using custom themes for CIDRAM, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
 
 "css_url"
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct CIDRAM to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, CIDRAM will use the template file for the default theme.
+- Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить CIDRAM использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя `css_url` переменная. Если оставить это переменная пустым, CIDRAM будет использовать шаблонный файл для стандарт тема.
 
 ---
 
@@ -259,17 +259,17 @@ The possible values of `[Function]` are as follows:
 
 If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Param]` value (the working directory should be the "/vault/" directory of the script).
 
-Example: `127.0.0.0/8 Run example.php`
+Примеры: `127.0.0.0/8 Run example.php`
 
 This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
 
 If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `[Param]` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
 
-Example: `127.0.0.1/32 Whitelist`
+Примеры: `127.0.0.1/32 Whitelist`
 
 If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `[Param]` is ignored.
 
-Example: `127.0.0.1/32 Greylist`
+Примеры: `127.0.0.1/32 Greylist`
 
 If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
 
@@ -286,7 +286,7 @@ The available shorthand words are:
 
 Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
 
-Example:
+Примеры:
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -299,7 +299,7 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-Example:
+Примеры:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -313,7 +313,7 @@ In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whe
 
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore.
 
-Example:
+Примеры:
 ```
 Ignore Section 1
 ```

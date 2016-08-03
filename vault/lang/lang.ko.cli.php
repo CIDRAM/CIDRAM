@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for CLI (last modified: 2016.08.03).
+ * This file: Korean language data (last modified: 2016.08.03).
  *
  * @todo (This is incomplete).
  */
@@ -19,18 +19,19 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['CLI_H'] = "
- CIDRAM CLI-Modus Hilfe.
+ CIDRAM CLI 모드 도움.
 
- Verwendung:
- /Pfad/zu/php/php.exe /Pfad/zu/cidram/loader.php -Flagge (Eingabe)
+ 용법:
+ /path/to/php/php.exe /path/to/cidram/loader.php -플래그 (입력)
 
- Flaggen:   -h  Anzeige dieser Hilfe-Informationen.
-            -c  Überprüfen Sie ob eine IP-Adresse blockiert wird.
-            -g  Generieren Sie CIDRs von einer IP-Adresse.
+ 플래그:
+    -h  이 도움말 정보를 표시합니다.
+    -c  IP 주소가 차단되어 있는지 여부를 확인합니다.
+    -g  IP 주소에서 CIDR을 생성합니다.
 
- Eingabe: Kann jede gültige IPv4 oder IPv6 IP-Adresse sein.
+ 입력: 유효한 IPv4 또는 IPv6 IP 주소 일 수 있습니다.
 
- Beispiele:
+ 몇 가지 예:
         -c  192.168.0.0/16
         -c  127.0.0.1/32
         -c  2001:db8::/32
@@ -45,10 +46,10 @@ $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *
 $CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
 $CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
 $CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
-$CIDRAM['lang']['CLI_VF_Level_0'] = 'Achtung';
-$CIDRAM['lang']['CLI_VF_Level_1'] = 'Warnung';
-$CIDRAM['lang']['CLI_VF_Level_2'] = 'Fehler';
-$CIDRAM['lang']['CLI_VF_Level_3'] = 'Fataler Fehler';
+$CIDRAM['lang']['CLI_VF_Level_0'] = '주의';
+$CIDRAM['lang']['CLI_VF_Level_1'] = '경고';
+$CIDRAM['lang']['CLI_VF_Level_2'] = '오류';
+$CIDRAM['lang']['CLI_VF_Level_3'] = '치명적 오류';
 
 $CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
 $CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';

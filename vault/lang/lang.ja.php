@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified： 2016.07.23).
- *
- * @todo (This is incomplete).
+ * This file: Japanese language data (last modified： 2016.08.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */

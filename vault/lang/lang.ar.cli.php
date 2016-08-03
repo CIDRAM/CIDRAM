@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for CLI (last modified: 2016.07.26).
+ * This file: Arabic language data for CLI (last modified: 2016.08.03).
  *
  * @todo (This is incomplete).
  */
@@ -19,18 +19,19 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['CLI_H'] = "
- CIDRAM CLI-mode help.
+ CIDRAM CLI المساعدة.
 
  استعمال:
- /الطريق/إلى/php/php.exe /الطريق/إلى/cidram/loader.php -Flag (Input)
+ /الطريق/إلى/php/php.exe /الطريق/إلى/cidram/loader.php -علامة (إدخال)
 
- Flags: -h  Display this help information.
-        -c  Check if an IP address is blocked by the CIDRAM signature files.
-        -g  Generate CIDRs from an IP address.
+ علامة:
+    -h  عرض هذه المعلومات المساعدة.
+    -c  تحقق إذا تم حظر عنوان IP.
+    -g  توليد CIDR من عنوان IP.
 
- Input: Can be any valid IPv4 or IPv6 IP address.
+ إدخال: يمكن أن يكون أي عنوان IPv4 أو IPv6 صالح.
 
- Examples:
+ أمثلة:
         -c  192.168.0.0/16
         -c  127.0.0.1/32
         -c  2001:db8::/32

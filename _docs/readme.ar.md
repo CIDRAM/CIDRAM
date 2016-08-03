@@ -72,7 +72,7 @@ If you encounter any false positives, please contact me to let me know about it.
 ---
 
 
-### <div dir="rtl">5. <a name="SECTION4"></a>الملفاتالموجودةفيهذهالحزمة</div>
+### <div dir="rtl">4. <a name="SECTION4"></a>الملفاتالموجودةفيهذهالحزمة</div>
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
@@ -100,63 +100,63 @@ If you encounter any false positives, please contact me to let me know about it.
 <div dir="rtl" style="display:inline;">الوثائق الفيتنامية.</div> | /_docs/readme.vi.md
 <div dir="rtl" style="display:inline;">الوثائق الصينية (المبسطة).</div> | /_docs/readme.zh.md
 <div dir="rtl" style="display:inline;">الوثائق الصينية (التقليدية).</div> | /_docs/readme.zh-TW.md
-/vault/ | Vault directory (contains various files).
-/vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/cache.dat | Cache data.
-/vault/cli.php | CLI handler.
-/vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
-/vault/config.php | Configuration handler.
-/vault/functions.php | Functions file (essential).
-/vault/ipv4.dat | IPv4 signatures file.
-/vault/ipv4_custom.dat.RenameMe | IPv4 custom signatures file (rename to activate).
-/vault/ipv6.dat | IPv6 signatures file.
-/vault/ipv6_custom.dat.RenameMe | IPv6 custom signatures file (rename to activate).
-/vault/lang.php | Language handler.
-/vault/lang/ | Contains CIDRAM language data.
-/vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.ar.cli.php | Arabic language data for CLI.
-/vault/lang/lang.ar.php | Arabic language data.
-/vault/lang/lang.de.cli.php | German language data for CLI.
-/vault/lang/lang.de.php | German language data.
-/vault/lang/lang.en.cli.php | English language data for CLI.
-/vault/lang/lang.en.php | English language data.
-/vault/lang/lang.es.cli.php | Spanish language data for CLI.
-/vault/lang/lang.es.php | Spanish language data.
-/vault/lang/lang.fr.cli.php | French language data for CLI.
-/vault/lang/lang.fr.php | French language data.
-/vault/lang/lang.id.cli.php | Indonesian language data for CLI.
-/vault/lang/lang.id.php | Indonesian language data.
-/vault/lang/lang.it.cli.php | Italian language data for CLI.
-/vault/lang/lang.it.php | Italian language data.
-/vault/lang/lang.ja.cli.php | Japanese language data for CLI.
-/vault/lang/lang.ja.php | Japanese language data.
-/vault/lang/lang.nl.cli.php | Dutch language data for CLI.
-/vault/lang/lang.nl.php | Dutch language data.
-/vault/lang/lang.pt.cli.php | Portuguese language data for CLI.
-/vault/lang/lang.pt.php | Portuguese language data.
-/vault/lang/lang.ru.cli.php | Russian language data for CLI.
-/vault/lang/lang.ru.php | Russian language data.
-/vault/lang/lang.vi.cli.php | Vietnamese language data for CLI.
-/vault/lang/lang.vi.php | Vietnamese language data.
-/vault/lang/lang.zh-tw.cli.php | Chinese (traditional) language data for CLI.
-/vault/lang/lang.zh-tw.php | Chinese (traditional) language data.
-/vault/lang/lang.zh.cli.php | Chinese (simplified) language data for CLI.
-/vault/lang/lang.zh.php | Chinese (simplified) language data.
-/vault/outgen.php | Output generator.
-/vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/vault/rules_as6939.php | Custom rules file for AS6939.
-/vault/rules_softlayer.php | Custom rules file for Soft Layer.
-/vault/rules_specific.php | Custom rules file for some specific CIDRs.
+<div dir="rtl" style="display:inline;">دليل /vault/ (يحتوي على ملفات متنوعة).</div> | /vault/
+<div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
+<div dir="rtl" style="display:inline;">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
+<div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
+<div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
+<div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
+<div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
+<div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات.</div> | /vault/ipv4.dat
+<div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv4_custom.dat.RenameMe
+<div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات.</div> | /vault/ipv6.dat
+<div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv6_custom.dat.RenameMe
+<div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
+<div dir="rtl" style="display:inline;">يحتوي على بيانات اللغة لـ CIDRAM.</div> | /vault/lang/
+<div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/lang/.htaccess
+<div dir="rtl" style="display:inline;">ملفات اللغة العربية لCLI.</div> | /vault/lang/lang.ar.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة العربية.</div> | /vault/lang/lang.ar.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الألمانية لCLI.</div> | /vault/lang/lang.de.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الألمانية.</div> | /vault/lang/lang.de.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية لCLI.</div> | /vault/lang/lang.en.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية.</div> | /vault/lang/lang.en.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية لCLI.</div> | /vault/lang/lang.es.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية.</div> | /vault/lang/lang.es.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية لCLI.</div> | /vault/lang/lang.fr.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية.</div> | /vault/lang/lang.fr.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية لCLI.</div> | /vault/lang/lang.id.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية.</div> | /vault/lang/lang.id.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الايطالية لCLI.</div> | /vault/lang/lang.it.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الايطالية.</div> | /vault/lang/lang.it.php
+<div dir="rtl" style="display:inline;">ملفات اللغة اليابانية لCLI.</div> | /vault/lang/lang.ja.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة اليابانية.</div> | /vault/lang/lang.ja.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لCLI.</div> | /vault/lang/lang.nl.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.php
+<div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية لCLI.</div> | /vault/lang/lang.pt.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية.</div> | /vault/lang/lang.pt.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الروسية لCLI.</div> | /vault/lang/lang.ru.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية لCLI.</div> | /vault/lang/lang.vi.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة) لCLI.</div> | /vault/lang/lang.zh.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية) لCLI.</div> | /vault/lang/lang.zh-TW.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-TW.php
+<div dir="rtl" style="display:inline;">الناتج معالج.</div> | /vault/outgen.php
+<div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها CIDRAM لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template.html
+<div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها CIDRAM لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
+<div dir="rtl" style="display:inline;">ملف قواعد العرف لAS6939.</div> | /vault/rules_as6939.php
+<div dir="rtl" style="display:inline;">ملف قواعد العرف لSoft Layer.</div> | /vault/rules_softlayer.php
+<div dir="rtl" style="display:inline;">ملف قواعد العرف لبعض CIDRs محددة.</div> | /vault/rules_specific.php
 
 ---
 
 
-###5. <a name="SECTION5"></a>CONFIGURATION OPTIONS
-The following is a list of the directives available to CIDRAM in the `config.ini` configuration file, along with a description of the purpose of these directives.
+### <div dir="rtl">5. <a name="SECTION5"></a>خياراتالتكوين/التهيئة</div>
+<div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين `config.ini`، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
-####"general" (Category)
-General CIDRAM configuration.
+#### <div dir="rtl">"general" (التصنيف)<br /></div>
+<div dir="rtl">التكوين العام لـ CIDRAM.<br /><br /></div>
 
 "logfile"
 - Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.

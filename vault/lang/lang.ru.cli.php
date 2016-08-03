@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for CLI (last modified: 2016.07.26).
- *
- * @todo (This is incomplete).
+ * This file: Russian language data for CLI (last modified: 2016.08.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -50,26 +48,26 @@ $CIDRAM['lang']['CLI_VF_Level_1'] = 'Предупреждение';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'Ошибка';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Фатальная Ошибка';
 
-$CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';
-$CIDRAM['lang']['CLI_V_LineByLine'] = 'Line-by-line validation has started.';
-$CIDRAM['lang']['CLI_V_Started'] = 'Signature validator has started (%s).';
-$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature files should terminate with an LF linebreak.';
+$CIDRAM['lang']['CLI_V_CRLF'] = 'Обнаружен CR/CRLF(ВК/ВКПТ) в файле подписи; Это допустимо и не вызовет проблем, но LF(ПТ) предпочтительнее.';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Проверка подписи завершена (%s). Если не предупреждений и не сообщений появилось, ваш файл подписи вероятно хорошо. :-)';
+$CIDRAM['lang']['CLI_V_LineByLine'] = 'Линия за линией проверки начала.';
+$CIDRAM['lang']['CLI_V_Started'] = 'Проверка подписи началась (%s).';
+$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Подпись файлы должны завершаться с LF(ПТ) разрыв строки.';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'Л%s: Control characters detected; This could indicate corruption and should be investigated.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'Л%s: Signature "%s" is duplicated (%s counts)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'Л%s: Expiry tag doesn\'t contain a valid ISO 8601 date/time!';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'Л%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
-$CIDRAM['lang']['CLI_VL_L120'] = 'Л%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Mergeable'] = 'Л%s and Л%s are identical, and thus, mergeable.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'Л%s: Missing [Function]; Signature appears to be incomplete.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'Л%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'Л%s: "%s" is non-triggerable! "%s" is not a valid range!';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'Л%s: "%s" is subordinate to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'Л%s: "%s" is a superset to the already existing "%s" signature.';
+$CIDRAM['lang']['CLI_VL_CC'] = 'Л%s: Управляющие символы обнаружены; Это может свидетельствовать о коррупции и должны быть исследованы.';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'Л%s: Подпись "%s" дублируется (%s счетчики)!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'Л%s: Истекло тег не содержит действительный ISO 8601 дата/время!';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'Л%s: "%s" НЕ является допустимым IPv4 или IPv6 IP-адрес!';
+$CIDRAM['lang']['CLI_VL_L120'] = 'Л%s: Длина линии превышает 120 байт; Длина линии должна быть ограничена до 120 байт для оптимальной читаемости.';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = 'Л%s и Л%s идентичны, и поэтому, объединяемы.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'Л%s: Отсутствует [Функция]; Подпись, как представляется, будет неполным.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'Л%s: "%s" не может быть активирован! Его база не соответствует началу своего диапазона! Попробуйте заменить его с "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'Л%s: "%s" не может быть активирован! "%s" не допустимый диапазон!';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = 'Л%s: "%s" подчиняется уже существующей подписи "%s".';
+$CIDRAM['lang']['CLI_VL_Superset'] = 'Л%s: "%s" является надстройкой к уже существующей подписи "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'Л%s: Не синтаксически точно.';
-$CIDRAM['lang']['CLI_VL_Tabs'] = 'Л%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'Л%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'Л%s: Непризнанная [Function]; Подпись может быть нарушена.';
-$CIDRAM['lang']['CLI_VL_Whitespace'] = 'Л%s: Excess trailing whitespace detected on this line.';
+$CIDRAM['lang']['CLI_VL_Tabs'] = 'Л%s: Вкладки обнаружены; Пробелы предпочтительнее Вкладки для оптимальной читаемости.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'Л%s: Секция тег больше 20 байт; Секция теги должны быть четкими и краткими.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'Л%s: Непризнанная [Функция]; Подпись может быть нарушена.';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = 'Л%s: Избыточный заканчивая пробельные обнаружены на этой линии.';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'Л%s: YAML-подобные данные обнаруженные, но не может обработать его.';

@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = 'кликните сюда';
 $CIDRAM['lang']['denied'] = 'Доступ Закрыт!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Невозможно записать в кэш! Пожалуйста проверьте ваш CHMOD!';

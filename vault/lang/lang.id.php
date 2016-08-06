@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = 'klik disini';
 $CIDRAM['lang']['denied'] = 'Akses Ditolak!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Tidak dapat menulis ke cache! Silakan periksa hak akses file CHMOD Anda!';

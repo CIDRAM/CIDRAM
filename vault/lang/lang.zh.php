@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = '点击这里';
 $CIDRAM['lang']['denied'] = '拒绝访问！';
 $CIDRAM['lang']['Error_WriteCache'] = '无法写入缓存！请检查您的CHMOD文件的权限！';

@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = 'clique aqui';
 $CIDRAM['lang']['denied'] = 'Acesso Negado!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Não é possível gravar para o cache! Por favor verifique suas permissões CHMOD!';

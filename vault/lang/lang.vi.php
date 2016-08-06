@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = 'nhấp vào đây';
 $CIDRAM['lang']['denied'] = 'Truy cập bị từ chối!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Không thể ghi vào cache! Vui lòng kiểm tra quyền tập tin CHMOD của bạn!';

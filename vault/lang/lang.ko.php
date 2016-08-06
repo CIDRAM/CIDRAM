@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = '여기를 클릭';
 $CIDRAM['lang']['denied'] = '접근 거부!';
 $CIDRAM['lang']['Error_WriteCache'] = '캐시에 쓸 수 없습니다! 당신의 CHMOD를 확인하십시오!';

@@ -7,10 +7,32 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-- [2016.08.03; Minor code change; Maikuolan]: Added internal language support
-  for Korean (15 language options now supported in total, not including
+(none)
+
+=== Version/Release 0.4.1 ===
+PATCH RELEASE.
+
+- [2016.08.03; Sub-minor code change; Maikuolan]: Added internal language
+  support for Korean (15 language options now supported in total, not including
   CLI-mode support; Done with machine assistance, I'm not fluent, and it hasn't
   yet been audited, so, the new translation should be regarded as fuzzy).
+
+- [2016.08.06; Sub-minor code change; Maikuolan]: Slightly improved RTL text
+  support; Adjusted the template file to compensate for display problems
+  associated LTR/RTL mixed content. More work done on the documentation
+  translations; Slightly closer to completing the translations for all targeted
+  languages.
+
+- [2016.08.06; Sub-minor code change (CIDRAM Wordpress plugin only);
+  Maikuolan]: Opted to removed action hook call and instead load everything
+  immediately, as to avoid conflicts associated with caching plugins and other
+  caching systems which could sometimes prevent requests from being blocked.
+
+- [2016.08.07; Sub-minor code change; Maikuolan]: Slightly improved/optimised
+  the template file.
+
+Caleb M / Maikuolan,
+7th August 2016.
 
 === Version/Release 0.4.0 ===
 MINOR RELEASE.
@@ -67,16 +89,16 @@ MINOR RELEASE.
 - [2016.04.27; Sub-minor code change; Maikuolan]: An additional custom rules
   file added for additional bypasses.
 
-- [2016.05.12; Minor code change; Maikuolan]: Added internal language support
-  for Vietnamese (now supported: English, Spanish, French, Indonesian,
+- [2016.05.12; Sub-minor code change; Maikuolan]: Added internal language
+  support for Vietnamese (now supported: English, Spanish, French, Indonesian,
   Italian, Dutch, Portuguese, Vietnamese, Chinese [simplified and
   traditional]; 10 language options now supported in total).
 
-- [2016.05.13; Minor code change; Maikuolan]: Added internal language support
-  for German (11 language options now supported in total).
+- [2016.05.13; Sub-minor code change; Maikuolan]: Added internal language
+  support for German (11 language options now supported in total).
 
-- [2016.05.13; Minor code change; Maikuolan/m7mdtiger]: Added language support
-  for Arabic (12 language options now supported in total).
+- [2016.05.13; Sub-minor code change; Maikuolan/m7mdtiger]: Added internal
+  language support for Arabic (12 language options now supported in total).
 
 - [2016.05.26; Minor code change; Maikuolan]: Added a new i18n shorthand value
   for "Deny": "Proxy" (for blocking private and anonymous proxies).

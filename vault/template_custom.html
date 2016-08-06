@@ -12,30 +12,30 @@
 <body>
     <div id="wrapper">
         <div id="wrapper_inner">
-            <hr class="hline" />
+            <hr />
             <div id="results">
                 <div id="denied">{denied}</div>
             </div>
             <div id="detected">{ReasonMessage}</div>
             <div id="mailsupport">{EmailAddr}</div>
-            <hr class="hline" />
-            <div id="infoblock">
-                {field_id}{Counter}<br />
-                {field_scriptversion}{ScriptIdent}<br />
-                {field_datetime}{DateTime}<br />
-                {field_ipaddr}{IPAddr}<br />
-                {field_query}{Query}<br />
-                {field_referrer}{Referrer}<br />
-                {field_sigcount}{SignatureCount}<br />
-                {field_sigref}{Signatures}<br />
-                {field_whyreason}{WhyReason}!<br />
-                {field_ua}{UA}<br />
-                {field_rURI}{rURI}<br />
+            <hr />
+            <div id="textBlock">
+                <span class="textLabel">{field_id}</span><span class="textData">{Counter}</span><br />
+                <span class="textLabel">{field_scriptversion}</span><span class="textData">{ScriptIdent}</span><br />
+                <span class="textLabel">{field_datetime}</span><span class="textData">{DateTime}</span><br />
+                <span class="textLabel">{field_ipaddr}</span><span class="textData">{IPAddr}</span><br />
+                <span class="textLabel">{field_query}</span><span class="textData">{Query}</span><br />
+                <span class="textLabel">{field_referrer}</span><span class="textData">{Referrer}</span><br />
+                <span class="textLabel">{field_sigcount}</span><span class="textData">{SignatureCount}</span><br />
+                <span class="textLabel">{field_sigref}</span><span class="textData">{Signatures}</span><br />
+                <span class="textLabel">{field_whyreason}</span><span class="textData">{WhyReason}!<br />
+                <span class="textLabel">{field_ua}</span><span class="textData">{UA}</span><br />
+                <span class="textLabel">{field_rURI}</span><span class="textData">{rURI}</span><br />
             </div>
-            <hr class="hline" />
+            <hr />
             <div id="footer">
                 <div id="footer_inner">
-                    <div id="generated_by">&nbsp;{generated_by}&nbsp;</div>
+                    <div id="generated_by">{generated_by} </div>
                     <div id="ScriptIdent">{ScriptIdent}</div>
                 </div>
             </div>

@@ -13,7 +13,7 @@
 
 ###1. <a name="SECTION1"></a>序文
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked. @TranslateMe@
+CIDRAM（シドラム、クラスレス・ドメイン間・ルーティング 「Classless Inter-Domain Routing Access Manager」）は、PHPスクリプトです。ウェブサイトを保護するように設計されて、IPアドレス（望ましくないトラフィックのあるソースとみなします）から、発信要求をブロックすることによって（ヒト以外のアクセスエンドポイント、クラウドサービス、スパムロボット、スクレーパー、等）。IPアドレスの可能CIDRを計算することにより、CIDRは、その署名ファイルと比較することができます（これらの署名ファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）；一致が見つかった場合、要求はブロックされます。
 
 CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利について: Caleb M (Maikuolan)著。
 
@@ -222,7 +222,7 @@ If you encounter any false positives, please contact me to let me know about it.
 ####"template_data" （テンプレート・データ、カテゴリ）
 テンプレートとテーマ用のディレクティブ／変数。
 
-Relates to the HTML output used to generate the "Access Denied" page. If you're using custom themes for CIDRAM, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+テンプレートのデータは、ユーザーに向けてアクセス拒否のメッセージをHTML形式でアウトプットする際に使用されます。カスタムテーマを使っている場合は`template_custom.html`を使用して、そうでない場合は`template.html`を使用してHTMLアウトプットが生成されます。設定ファイル内にあるこのセクション用の変数は、HTMLアウトプットのために解析され、で囲まれた変数名は対応する変数データに置き換えられます。例えば`foo="bar"`とすると、HTMLアウトプット内の`<p>{foo}</p>`は`<p>bar</p>`となります。
 
 "css_url" （シーエスエス・ユーアールエル）
 - カスタムテーマ用のテンプレートファイルは、外部CSSプロパティーを使っています。一方、デフォルトテーマは内部CSSです。カスタムテーマを適用するためには、CSSファイルのパブリック HTTPアドレスを"css_url"変数を使って指定して下さい。この変数が空白であれば、デフォルトテーマが適用されます。
@@ -324,4 +324,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-最終アップデート： 2016年08月03日。
+最終アップデート： 2016年08月06日。

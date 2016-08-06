@@ -13,7 +13,7 @@
 
 ###1. <a name="SECTION1"></a>ПРЕДИСЛОВИЕ
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked. @TranslateMe@
+CIDRAM/СИДРАМ (Бесклассовая Адресация Доступа Менеджер / Classless Inter-Domain Routing Access Manager) это скрипт предназначен для защиты веб-сайтов, путем блокирования запросов, исходящих из IP-адресов рассматривается как источников нежелательного трафика, в том числе (но не ограничивается) трафик с конечными точками доступа нечеловеческих, клоуд/облачные сервисы, спамботы, скребки, и т.д. Она делает это путем вычисления возможной CIDR из IP-адресов, поставляется из входящих запросов, а затем попытка сопоставить эти возможные CIDR с его подписи файлов (эти файлы сигнатур содержат списки CIDR из IP-адресов рассматривается как источников нежелательного трафика); Если совпадения найдены, запросы блокируются.
 
 CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by Caleb M (Maikuolan).
 
@@ -32,7 +32,7 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 1) Скачайте архив на свой компьютер и откройте его. На хост-компьютере или в системе управления содержимым (CMS) создайте регистр, куда вы хотите загрузить содержимое этого пакета. Такой регистр, как `/public_html/cidram/`, будет вполне достаточным, пока он отвечает вашим требованиям к защите или личным предпочтениям.
 
-2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close. @TranslateMe@
+2) Переименовать `config.ini.RenameMe` в `config.ini` (расположенный внутри `vault`), и если вы хотите (рекомендуются для опытных пользователей, имеющих соответствующие знания), открой это (этот файл содержит все параметры конфигурации для CIDRAM; краткие комментарии описывают задачи каждой параметры). Измените величины в соответствии с Вашими потребностями. Сохраните файл и закройте.
 
 3) Скачайте всё содержимое (CIDRAM и файлы) в указанный в пункте 1 регистр, кроме файлов `*.txt`/`*.md`.
 
@@ -61,11 +61,11 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 ###3. <a name="SECTION3"></a>ИСПОЛЬЗОВАНИЕ
 
-CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation. @TranslateMe@
+CIDRAM должен автоматически блокировать нежелательные запросы на свой веб-сайт, без необходимости ручного помощь, кроме его первоначальной установки.
 
-Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files. @TranslateMe@
+Обновление производится вручную, и вы можете настроить конфигурацию, и настроить какие CIDRs заблокированы, путем изменения файла конфигурации и/или ваши файлы сигнатур.
 
-If you encounter any false positives, please contact me to let me know about it. @TranslateMe@
+Если вы обнаружили ложных результатов, пожалуйста, свяжитесь со мной чтобы сообщить мне об этом.
 
 ---
 
@@ -157,13 +157,13 @@ If you encounter any false positives, please contact me to let me know about it.
 Генеральная конфигурация от CIDRAM.
 
 "logfile"
-- Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+- Файл разборчивыми для людей, для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.
 
 "logfileApache"
-- Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+- Apache-стиль файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.
 
 "logfileSerialized"
-- Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
+- Сериализованная файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.
 
 *Полезный совет: Если ты хочешь, вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
 
@@ -221,7 +221,7 @@ If you encounter any false positives, please contact me to let me know about it.
 ####"template_data" (Категория)
 Директивы/Переменные для шаблоны и темы.
 
-Relates to the HTML output used to generate the "Access Denied" page. If you're using custom themes for CIDRAM, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+Шаблонный данных относится к HTML-вывода, используемый для генерации "Доступ Закрыт" сообщения отображается для пользователей когда/на загрузки/уплоад файлов блокируются. Если вы используете персонализированные темы для CIDRAM, HTML-выход получены из `template_custom.html` файл, а в противном случае, HTML-выход получены из `template.html` файл. Переменные, записанные в этом разделе файл конфигурации обрабатываются на HTML-выход в виде заменой любой имена переменных в окружении фигурных скобках найденный в HTML-вывода с соответствующей переменных данных. Например, где `foo="bar"`, любое вхождение `<p>{foo}</p>` найденный в HTML-вывода станет `<p>bar</p>`.
 
 "css_url"
 - Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить CIDRAM использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя `css_url` переменная. Если оставить это переменная пустым, CIDRAM будет использовать шаблонный файл для стандарт тема.
@@ -323,4 +323,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Последнее обновление: 3 Август 2016 (2016.08.03).
+Последнее обновление: 6 Август 2016 (2016.08.06).

@@ -28,27 +28,27 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 
-### <div dir="rtl">2. <a name="SECTION2"></a>كيفية كيفية التحميل</div>
+### <div dir="rtl">2. <a name="SECTION2"></a>كيفية التحميل</div>
 
-<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS : <br /><br /></div>
+<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS:<br /><br /></div>
 
-1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/cidram/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
+<div dir="rtl">1. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل `/public_html/cidram/` أو ما شابه سيكون كاف.<br /><br /></div>
 
-2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+<div dir="rtl">2. إعادة تسمية `config.ini.RenameMe` إلى `config.ini` (تقع داخل `vault`)، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
 
-3) Upload the contents (CIDRAM and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
+<div dir="rtl">3. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع `*.txt/*.md` لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
-4) CHMOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+<div dir="rtl">4. غير التصريح لمجلد vault للتصريح "777". المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
 
-5) Next, you'll need to "hook" CIDRAM to your system or CMS. There are several different ways you can "hook" scripts such as CIDRAM to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the CIDRAM issues page on Github. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+<div dir="rtl">5. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل `require` أو `include`، بالعادة سيتم التخزين في  `/includes`، `/assets` أو `/functions`، وسيتم تسميته بالغالب مثل: `init.php`، `common_functions.php`، `functions.php` أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام `require` أو `include` قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار `loader.php` لديك.<br /><br /></div>
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
-Save file, close, reupload.
+<div dir="rtl">إحفظ الملف ثم قم بإعادة رفعه.<br /><br /></div>
 
-<div dir="rtl">--أو بدلاً من ذلك--<br /><br /></div>
+<div dir="rtl">-- أو بدلاً من ذلك --<br /><br /></div>
 
-<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل `php.ini`، بإستطاعتك إستخدام `auto_prpend_file` للتوجيه ل CIDRAM لكل طلب مثل:<br /><br /></div>
+<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل `php.ini`، بإستطاعتك إستخدام `auto_prepend_file` للتوجيه ل CIDRAM لكل طلب مثل:<br /><br /></div>
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -56,12 +56,12 @@ Save file, close, reupload.
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
-6) That's everything! :-)
+<div dir="rtl">6. هذا كل شئ. :-)<br /><br /></div>
 
 ---
 
 
-###3. <a name="SECTION3"></a>HOW TO USE
+### <div dir="rtl">3-أ. <a name="SECTION3A"></a>كيفية الإستخدام</div>
 
 CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation.
 
@@ -167,19 +167,25 @@ If you encounter any false positives, please contact me to let me know about it.
 "logfileSerialized"
 - Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
 
-*Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name: `{yyyy}` for complete year, `{yy}` for abbreviated year, `{mm}` for month, `{dd}` for day, `{hh}` for hour.*
+<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: `{yyyy}` لمدة عام كامل، `{yy}` لمدة عام يختصر، `{mm}` لمدة شهر، `{dd}` ليوم واحد، `{hh}` لمدة ساعة.</em><br /><br /></div>
 
-*Examples:*
-- *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
-- *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
-- *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+<div dir="rtl"><em>أمثلة:</em><br /></div>
+<div dir="rtl"><ul><em>
+ <li>logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
+ <li>logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
+ <li>logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
+</em></ul></div>
 
-"timeOffset"
-- If your server time doesn't match your local time, you can specify an offset here to adjust the date/time information generated by CIDRAM according to your needs. It's generally recommended instead to adjust the timezone directive in your `php.ini` file, but sometimes (such as when working with limited shared hosting providers) this isn't always possible to do, and so, this option is provided here. Offset is in minutes.
-- Example (to add one hour): `timeOffset=60`
+<div dir="rtl">"timeOffset"<br /></div>
+<div dir="rtl"><ul>
+ <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة CIDRAM). الإزاحة المستندة دقيقة.</li>
+ <li>مثال (لإضافة ساعة واحدة): `timeOffset=60`</li>
+</ul></div>
 
-"ipaddr"
-- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+<div dir="rtl">"ipaddr"<br /></div>
+<div dir="rtl"><ul>
+ <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
+</ul></div>
 
 "forbid_on_block"
 - Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
@@ -187,8 +193,10 @@ If you encounter any false positives, please contact me to let me know about it.
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
 
-"lang"
-- Specify the default language for CIDRAM.
+<div dir="rtl">"lang"<br /></div>
+<div dir="rtl"><ul>
+ <li>تحديد اللغة الافتراضية الخاصة بـ CIDRAM.</li>
+</ul></div>
 
 "emailaddr"
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
@@ -196,8 +204,8 @@ If you encounter any false positives, please contact me to let me know about it.
 "disable_cli"
 - Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
 
-####"signatures" (Category)
-Signatures configuration.
+#### <div dir="rtl">"signatures" (التصنيف)<br /></div>
+<div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
 "ipv4"
 - A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
@@ -220,18 +228,20 @@ Signatures configuration.
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
-####"template_data" (Category)
-Directives/Variables for templates and themes.
+#### <div dir="rtl">"template_data" (التصنيف)<br /></div>
+<div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
 
-Relates to the HTML output used to generate the "Access Denied" page. If you're using custom themes for CIDRAM, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+<div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "تم رفض الوصول" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ CIDRAM، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين `foo="bar"`، أي مثيل `<p>{foo}</p>` وجدت داخل إخراج HTML ستصبح `<p>bar</p>`.<br /><br /></div>
 
-"css_url"
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct CIDRAM to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, CIDRAM will use the template file for the default theme.
+<div dir="rtl">"css_url"<br /></div>
+<div dir="rtl"><ul>
+ <li>ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد CIDRAM لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم CIDRAM باستخدام ملف القالب لموضوع التقصير.</li>
+</ul></div>
 
 ---
 
 
-###6. <a name="SECTION6"></a>SIGNATURE FORMAT
+### <div dir="rtl">6. <a name="SECTION6"></a>شكل/تنسيق التوقيع</div>
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -325,4 +335,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-<div dir="rtl">آخر تحديث: 3 أغسطس 2016 (2016.08.03).</div>
+<div dir="rtl">آخر تحديث: 6 أغسطس 2016 (2016.08.06).</div>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.05.26).
+ * This file: Vietnamese language data (last modified: 2016.08.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['textDir'] = 'ltr';
 $CIDRAM['lang']['click_here'] = 'nhấp vào đây';
 $CIDRAM['lang']['denied'] = 'Truy cập bị từ chối!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Không thể ghi vào cache! Vui lòng kiểm tra quyền tập tin CHMOD của bạn!';

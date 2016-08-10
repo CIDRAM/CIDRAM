@@ -809,16 +809,13 @@ Tag: PlusServer AG
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
 # Infected by malware (as per reported by Google): 0% (AS16880 + AS36421).
-# Updated: 2016.03.12
+# Updated: 2016.08.09
 
 2001:450:2045::/48 Deny Generic
-2620:101:4025::/48 Deny Generic
 2620:101:402c::/47 Deny Generic
-2620:101:402f::/48 Deny Generic
 2620:101:4030::/48 Deny Generic
 2620:101:4032::/48 Deny Generic
-2620:101:4034::/47 Deny Generic
-2620:101:4036::/47 Deny Generic
+2620:101:4034::/46 Deny Generic
 2620:101:403a::/48 Deny Generic
 2620:101:403c::/48 Deny Generic
 Tag: Trend Micro
@@ -1110,14 +1107,10 @@ Tag: Pulsant
 
 
 # ASN 51852 ("Private Layer INC").
-# Infected by malware (as per reported by Google): 1.12%.
-# Updated: 2016.01.22 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 0.46%.
+# Updated: 2016.08.09
 
-2800:980:1::/48 Deny Cloud
-2800:980:2::/48 Deny Cloud
-2800:980:3::/48 Deny Cloud
-2800:980:5::/48 Deny Cloud
-2800:980:1000::/48 Deny Cloud
+2800:980::/32 Deny Cloud
 2a02:29b8::/32 Deny Cloud
 Tag: Private Layer INC
 
@@ -1156,7 +1149,7 @@ Tag: PP SKS-LUGAN
 
 # ASN 131222 ("Sistema Shyam Teleservices Ltd").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.12
+# Updated: 2016.08.09
 
 2406:5600:9::/48 Deny Spam
 2406:5600:a::/48 Deny Spam
@@ -1166,15 +1159,17 @@ Tag: PP SKS-LUGAN
 2406:5600:20::/44 Deny Spam
 2406:5600:30::/47 Deny Spam
 2406:5600:53::/48 Deny Spam
-2406:5600:54::/47 Deny Spam
-2406:5600:56::/47 Deny Spam
+2406:5600:54::/46 Deny Spam
 2406:5600:58::/45 Deny Spam
 2406:5600:60::/44 Deny Spam
 2406:5600:70::/48 Deny Spam
 2406:5600:73::/48 Deny Spam
 2406:5600:74::/46 Deny Spam
 2406:5600:78::/45 Deny Spam
-2406:5600:80::/44 Deny Spam
+2406:5600:80::/45 Deny Spam
+2406:5600:88::/48 Deny Spam
+2406:5600:8a::/47 Deny Spam
+2406:5600:8c::/46 Deny Spam
 2406:5600:90::/48 Deny Spam
 2406:5600:93::/48 Deny Spam
 2406:5600:94::/46 Deny Spam

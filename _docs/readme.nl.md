@@ -180,7 +180,7 @@ Algemene configuratie voor CIDRAM.
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 "forbid_on_block"
-- Moet CIDRAM reageren met 403 headers voor geblokkeerde verzoeken, of blijven met de gebruikelijke 200 OK? False/200 = Nee (200) [Standaard]; True = Ja (403); 503 = Service onbeschikbaar (503).
+- Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken? False/200 = 200 OK [Standaard]; True = 403 Forbidden (Verboden); 503 = 503 Service unavailable (Service onbeschikbaar).
 
 "silent_mode"
 - Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.
@@ -323,4 +323,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 3 Augustus 2016 (2016.08.03).
+Laatste Bijgewerkt: 10 Augustus 2016 (2016.08.10).

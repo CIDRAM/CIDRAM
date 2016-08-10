@@ -180,7 +180,7 @@ General CIDRAM configuration.
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
-- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
+- Which headers should CIDRAM respond with when blocking requests? False/200 = 200 OK [Default]; True = 403 Forbidden; 503 = 503 Service unavailable.
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -323,4 +323,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 3rd August 2016 (2016.08.03).
+Last Updated: 10th August 2016 (2016.08.10).

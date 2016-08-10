@@ -180,7 +180,7 @@ CIDRAM должен автоматически блокировать нежел
 - Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. Внимание! Изменяйте это значение только в том случае, если вы уверены в своих действиях!
 
 "forbid_on_block"
-- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
+- Какой тип заголовка должен CIDRAM ответить при блокировке запросов? False/200 = 200 OK (Хорошо) [Стандарт]; True = 403 Forbidden (Запрещено); 503 = Service unavailable (Сервис недоступен).
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -318,9 +318,9 @@ In addition, if you want CIDRAM to completely ignore some specific sections with
 Ignore Section 1
 ```
 
-Refer to the custom signature files for more information.
+Смотрите пользовательские подписи файлов для получения дополнительной информации.
 
 ---
 
 
-Последнее обновление: 6 Август 2016 (2016.08.06).
+Последнее обновление: 10 Август 2016 (2016.08.10).

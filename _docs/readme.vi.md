@@ -180,7 +180,7 @@ Cấu hình chung cho CIDRAM.
 - Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như CloudFlare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 "forbid_on_block"
-- CIDRAM nên đáp lại với các header 403 để yêu cầu bị chặn, hoặc dính vào bình thường 200 OK? False/200 = Không (200) [Mặc định]; True = Vâng (403); 503 = Service unavailable / Dịch vụ không có sẵn (503).
+- Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn? False/200 = 200 OK [Mặc định]; True = 403 Forbidden (Cấm); 503 = 503 Service unavailable (Dịch vụ không có sẵn).
 
 "silent_mode"
 - CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
@@ -323,4 +323,4 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 ---
 
 
-Lần cuối cập nhật: 3 Tháng Tám 2016 (2016.08.03).
+Lần cuối cập nhật: 10 Tháng Tám 2016 (2016.08.10).

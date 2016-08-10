@@ -180,7 +180,7 @@ Konfigurasi umum dari CIDRAM.
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
 "forbid_on_block"
-- Seharusnya CIDRAM menanggapi dengan 403 header untuk permintaan diblokir, atau cocok dengan 200 OK? False/200 = Tidak (200) [Default]; True = Ya (403); 503 = Layanan tidak tersedia (503).
+- Apa header harus CIDRAM merespon dengan ketika memblokir permintaan? False/200 = 200 OK (Baik) [Default]; True = 403 Forbidden (Terlarang); 503 = 503 Service unavailable (Layanan tidak tersedia).
 
 "silent_mode"
 - Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.
@@ -323,4 +323,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 3 Agustus 2016 (2016.08.03).
+Terakhir Diperbarui: 10 Agustus 2016 (2016.08.10).

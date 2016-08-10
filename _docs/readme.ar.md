@@ -187,8 +187,10 @@ If you encounter any false positives, please contact me to let me know about it.
  <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
 
-"forbid_on_block"
-- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
+<div dir="rtl">"forbid_on_block"<br /></div>
+<div dir="rtl"><ul>
+ <li>الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟ False/200 = 200 OK (حسنا) [الافتراضي]; True = 403 Forbidden (ممنوع); 503 = 503 Service unavailable (الخدمة غير متوفرة).</li>
+</ul></div>
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -201,8 +203,10 @@ If you encounter any false positives, please contact me to let me know about it.
 "emailaddr"
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
-"disable_cli"
-- Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
+<div dir="rtl">"disable_cli"<br /></div>
+<div dir="rtl"><ul>
+ <li>وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خطأ = تمكين وضع CLI [الافتراضي]. صحيح = وضع تعطيل CLI.</li>
+</ul></div>
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
@@ -335,4 +339,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 أغسطس 2016 (2016.08.06).</div>
+<div dir="rtl">آخر تحديث: 10 أغسطس 2016 (2016.08.10).</div>

@@ -182,7 +182,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 - 在哪裡可以找到連接請求IP地址？（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。警告！不要修改此除非您知道什麼您做著！
 
 “forbid_on_block”
-- CIDRAM 應該響應以 “403 Forbidden” 到被阻止的請求，或 “200 OK”？ False/200 = 200 [默認]； True = 403； 503 = 服務不可用（503）。
+- 什麼頭CIDRAM應該應對當申請是拒絕？ False/200 = 200 OK 【標準】； True = 403 Forbidden （被禁止）； 503 = 503 Service unavailable （服務暫停）。
 
 “silent_mode”
 - CIDRAM 應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。
@@ -325,4 +325,4 @@ Ignore Section 1
 ---
 
 
-最後更新：2016年8月3日。
+最後更新：2016年8月10日。

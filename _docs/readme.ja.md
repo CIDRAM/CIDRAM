@@ -32,7 +32,7 @@ CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利につ�
 
 1) 本項を読んでいるということから、アーカイブ・スクリプトのローカルマシンへのダウンロードと解凍は終了していると考えます。ホストあるいはCMSに`/public_html/cidram/`のようなディレクトリを作り、ローカルマシンからそこにコンテンツをアップロードするのが次のステップです。アップロード先のディレクトリ名や場所については、安全でさえあれば、もちろん制約などはありませんので、自由に決めて下さい。
 
-2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for CIDRAM; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close. @TranslateMe@
+2) `config.ini`に`config.ini.RenameMe`の名前を変更します（`vault`の内側に位置する）。オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）、それを開いて下さい（本ファイルはCIDRAMが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります）。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
 
 3) コンテンツ（CIDRAM本体とファイル）を先に定めたディレクトリにアップロードします。（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、大抵は全てをアップロードしてもらって構いません）。
 
@@ -61,11 +61,11 @@ Apacheウェブサーバーを利用していて、かつ`php.ini`を編集で�
 
 ###3. <a name="SECTION3"></a>使用方法
 
-CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation. @TranslateMe@
+CIDRAMは自動的に望ましくない要求をブロックする必要があります；支援が必要とされていません（インストールを除きます）。
 
-Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files. @TranslateMe@
+更新（アップデイト）は手動で行われています。あなたの設定ファイルを変更することによって、構成設定をカスタマイズすることができます。あなたの署名ファイルを変更することによって、CIDRsがブロックされて変更することができます。
 
-If you encounter any false positives, please contact me to let me know about it. @TranslateMe@
+誤検出や新種の疑わしきものに遭遇した、関することについては何でもお知らせ下さい。
 
 ---
 
@@ -82,7 +82,7 @@ If you encounter any false positives, please contact me to let me know about it.
 /LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
 /loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
 /README.md | プロジェクト概要情報。
-/web.config | ASP.NET設定ファイルです（スクリプトがASP.NET テクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
+/web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 /_docs/ | ドキュメンテーション用のディレクトリです（様々なファイルを含みます）。
 /_docs/readme.ar.md | アラビア語ドキュメンテーション。
 /_docs/readme.de.md | ドイツ語ドキュメンテーション。
@@ -181,7 +181,7 @@ If you encounter any false positives, please contact me to let me know about it.
 - 注意: 変更には最新の注意が必要です。
 
 "forbid_on_block" （フォービッド・オン・ブロック）
-- Should CIDRAM respond with 403 headers to blocked requests, or stick with the usual 200 OK? False/200 = No (200) [Default]; True = Yes (403); 503 = Service unavailable (503).
+- 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？ `false`（偽）/200 = 200 OK 「Default（デフォルルト）」； `true`（真） = 403 Forbidden （４０３禁止されている）； 503 = 503 Service unavailable （５０３サービス利用不可）。
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -319,9 +319,9 @@ In addition, if you want CIDRAM to completely ignore some specific sections with
 Ignore Section 1
 ```
 
-Refer to the custom signature files for more information.
+詳細については、カスタムシグネチャファイルを参照してください。
 
 ---
 
 
-最終アップデート： 2016年08月06日。
+最終アップデート： 2016年08月10日。

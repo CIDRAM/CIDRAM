@@ -179,10 +179,10 @@ Generelle Konfiguration von CIDRAM.
 - Beispiel (eine Stunde hinzufügen): `timeOffset=60`
 
 "ipaddr"
-- Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
+- Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 "forbid_on_block"
-- Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. False/200 = Nein (200) [Standardeinstellung]; True = Ja (403); 503 = Service nicht verfügbar (503).
+- Welche Header sollte CIDRAM reagieren mit, wenn Anfragen blockiert? False/200 = 200 OK [Standardeinstellung]; True = 403 Forbidden (Verboten); 503 = 503 Service unavailable (Service nicht verfügbar).
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank. @TranslateMe@
@@ -253,7 +253,7 @@ Precise and correct CIDR notation is required, otherwise the script will NOT rec
 
 Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
-The possible values of `[Function]` are as follows:
+Die möglichen Werte von `[Funktion]` sind wie folgt:
 - Run
 - Whitelist
 - Greylist
@@ -320,9 +320,9 @@ Beispiel:
 Ignore Section 1
 ```
 
-Refer to the custom signature files for more information.
+Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informationen.
 
 ---
 
 
-Zuletzt aktualisiert: 6. August 2016 (2016.08.06).
+Zuletzt aktualisiert: 10. August 2016 (2016.08.10).

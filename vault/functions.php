@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.07.30).
+ * This file: Functions file (last modified: 2016.08.13).
  */
 
 /**
@@ -809,4 +809,45 @@ $CIDRAM['AutoType'] = function (&$var) {
     } elseif ($var !== true && $var !== false) {
         $var = (int)$var;
     }
+};
+
+/**
+ * Used to send cURL requests.
+ *
+ * @param string $URI The resource to request.
+ * @param array $Params (Optional) An associative array of key-value pairs to
+ *      to send along with the request.
+ * @return string The results of the request.
+ */
+$CIDRAM['Request'] = function ($URI, $Params = '') use (&$CIDRAM) {
+    /** Initialise the cURL session. */
+    $Request = curl_init($URI);
+
+    $LCURI = strtolower($URI);
+    $SSL = (substr($LCURI, 0, 6) === 'https:');
+
+    curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
+    curl_setopt($Request, CURLOPT_HEADER, false);
+    if (empty($Params)) {
+        curl_setopt($Request, CURLOPT_POST, false);
+    } else {
+        curl_setopt($Request, CURLOPT_POST, true);
+        curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
+    }
+    if ($SSL) {
+        curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
+    }
+    curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($Request, CURLOPT_TIMEOUT, $CIDRAM['Timeout']);
+    curl_setopt($Request, CURLOPT_USERAGENT, $CIDRAM['ScriptUA']);
+
+    /** Execute and get the response. */
+    $Response = curl_exec($Request);
+
+    /** Close the cURL session. */
+    curl_close($Request);
+
+    /** Return the results of the request. */
+    return $Response;
 };

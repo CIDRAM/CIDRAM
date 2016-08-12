@@ -7,7 +7,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2016.08.11; Sub-minor code change; Maikuolan]: Revisited the changes made as
+  of the previous versioned release (0.4.1) regarding the slightly improved RTL
+  text support (there were some rendering problems for some languages caused by
+  the approach taken; this has been corrected).
+
+- [2016.08.11; Non-core change (Wordpress plugin); Maikuolan]: Added code to
+  ensure that CIDRAM will be loaded before any other plugins in order to help
+  avoid conflicts associated with caching plugins and other caching systems
+  which could sometimes prevent requests from being blocked.
 
 === Version/Release 0.4.1 ===
 PATCH RELEASE.
@@ -19,7 +27,9 @@ PATCH RELEASE.
 
 - [2016.08.06; Sub-minor code change; Maikuolan]: Slightly improved RTL text
   support; Adjusted the template file to compensate for display problems
-  associated LTR/RTL mixed content. More work done on the documentation
+  associated LTR/RTL mixed content.
+
+- [2016.08.06; Documentation; Maikuolan]: More work done on the documentation
   translations; Slightly closer to completing the translations for all targeted
   languages.
 

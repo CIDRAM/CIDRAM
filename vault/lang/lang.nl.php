@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.08.06).
+ * This file: Dutch language data (last modified: 2016.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['click_here'] = 'klik hier';
 $CIDRAM['lang']['denied'] = 'Toegang Geweigerd!';
-$CIDRAM['lang']['Error_WriteCache'] = 'Kan niet schrijven naar de cache! Controleer uw CHMOD permissies!';
+$CIDRAM['lang']['Error_WriteCache'] = 'Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!';
 $CIDRAM['lang']['field_datetime'] = 'Datum/Tijd: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP-Adres: ';
@@ -27,21 +27,23 @@ $CIDRAM['lang']['field_referrer'] = 'Verwijzer: ';
 $CIDRAM['lang']['field_rURI'] = 'Gereconstrueerde URI: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Script Versie: ';
 $CIDRAM['lang']['field_sigcount'] = 'Handtekeningen Tellen: ';
-$CIDRAM['lang']['field_sigref'] = 'Handtekeningen Referentie: ';
+$CIDRAM['lang']['field_sigref'] = 'Handtekeningen Verwijzing: ';
 $CIDRAM['lang']['field_ua'] = 'User Agent: ';
-$CIDRAM['lang']['field_whyreason'] = 'Waarom Geblokkeerde: ';
+$CIDRAM['lang']['field_whyreason'] = 'Waarom Geblokkeerd: ';
 $CIDRAM['lang']['generated_by'] = 'Gegenereerd door';
 $CIDRAM['lang']['preamble'] = '-- Einde van preambule. Voeg uw vragen of opmerkingen na dit lijn. --';
-$CIDRAM['lang']['ReasonMessage_BadIP'] = 'Uw toegang tot dit pagina is geweigerd omdat u geprobeerd om toegang tot dit pagina met behulp van een ongeldig IP-adres.';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres wordt herkend als bogon adres, en het verbinden van bogons naar dit website is niet toegestaan door de eigenaar van dit website.';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een cloud service, en het verbinden van cloud services naar dit website is niet toegestaan door de eigenaar van dit website.';
-$CIDRAM['lang']['ReasonMessage_Generic'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres behoort tot een netwerk dat is op een zwarte lijst gebruikt door dit website.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een proxy service, en het verbinden van proxy services naar dit website is niet toegestaan door de eigenaar van dit website.';
-$CIDRAM['lang']['ReasonMessage_Spam'] = 'Uw toegang tot dit pagina is geweigerd omdat uw IP-adres behoort tot een netwerk beschouwd als een hoog risico op spam.';
+$CIDRAM['lang']['ReasonMessage_BadIP'] = 'Uw toegang tot deze pagina is geweigerd omdat u heeft geprobeerd om deze pagina te openen met een geblackliste IP adres.';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als bogon adres, en het verbinden van bogons naar deze website is niet toegestaan door de eigenaar van deze website.';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een cloud service, en het bezoeken van deze website via cloud services niet is toegestaan door de beheerder van deze website.';
+$CIDRAM['lang']['ReasonMessage_Generic'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres behoort tot een netwerk dat is op een zwarte lijst gebruikt door deze website.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een proxy service, en het verbinden van proxy services naar deze website is niet toegestaan door de eigenaar van deze website.';
+$CIDRAM['lang']['ReasonMessage_Spam'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres behoort tot een netwerk beschouwd als een hoog risico op spam.';
+$CIDRAM['lang']['recaptcha_message'] = 'Om toegang tot deze pagina te herwinnen, vul dan onderstaand geleverd CAPTCHA en druk op de knop zenden.';
+$CIDRAM['lang']['recaptcha_submit'] = 'Zenden';
 $CIDRAM['lang']['Short_BadIP'] = 'Ongeldig IP!';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Cloud Service';
 $CIDRAM['lang']['Short_Generic'] = 'Algemeen';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risico';
-$CIDRAM['lang']['Support_Email'] = 'Als je denkt dat dit een fout, of om hulp te zoeken, {ClickHereLink} om een email support ticket te sturen naar de webmaster van dit site (alsjeblieft niet wijzigen de preambule of de onderwerpregel van de email).';
+$CIDRAM['lang']['Support_Email'] = 'Als u denkt dat deze melding een fout is, of u heeft een vraag, {ClickHereLink} om een email sturen naar de webmaster van dit site (Wijzig a.u.b. het onderwerp veld van de email niet).';

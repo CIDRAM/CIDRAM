@@ -8,7 +8,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2016.08.06).
+ * This file: Korean language data (last modified: 2016.08.12).
+ *
+ * @todo Most of these confirmed to be incorrect; Changes required and pending.
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,10 +40,12 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = '왜 차단 되었습니까: 클라우�
 $CIDRAM['lang']['ReasonMessage_Generic'] = '왜 차단 되었습니까: IP가 블랙리스트에 게재되어 있습니다 / 위험한 네트워크.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = '왜 차단 되었습니까: 프록시 서비스 연결.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '왜 차단 되었습니까: 스팸/위험한 네트워크.';
+$CIDRAM['lang']['recaptcha_message'] = '이 페이지에 다시 액세스하기 위해, 제공되는 CAPTCHA를 완료합니다 및 송신 버튼을 누릅니다.';
+$CIDRAM['lang']['recaptcha_submit'] = '송신';
 $CIDRAM['lang']['Short_BadIP'] = '잘못된 IP';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/화성의 IP';
 $CIDRAM['lang']['Short_Cloud'] = '클라우드 서비스';
 $CIDRAM['lang']['Short_Generic'] = '일반';
 $CIDRAM['lang']['Short_Proxy'] = '프록시';
 $CIDRAM['lang']['Short_Spam'] = '스팸 위험';
-$CIDRAM['lang']['Support_Email'] = '이메일 지원 티켓을 제출 내용이나 지원 내용은, {ClickHereLink} (프리앰블을 변경하지 마십시오).';
+$CIDRAM['lang']['Support_Email'] = '당신이 생각하는 경우이 오류가, 또는 기술 지원을 받다, 이메일 지원 티켓을 송신 위해, {ClickHereLink} (프리앰블을 변경하지 마십시오).';

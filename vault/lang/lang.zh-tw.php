@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2016.08.06).
+ * This file: Chinese (traditional) language data (last modified: 2016.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,8 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = '您的訪問這個頁面被拒絕因�
 $CIDRAM['lang']['ReasonMessage_Generic'] = '您的訪問這個頁面被拒絕因為您的IP地址屬於一個網絡在黑名單中所列使用本網站。';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = '您的訪問這個頁面被拒絕因為您的IP地址被識別為屬於代理服務，和來自這些IP連接不是由網站所有者允許。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '您的訪問這個頁面被拒絕因為您的IP地址屬於一個網絡被認為是高風險的垃圾郵件。';
+$CIDRAM['lang']['recaptcha_message'] = '為了重新進入此頁面，請填寫以下提供的CAPTCHA並按提交按鈕。';
+$CIDRAM['lang']['recaptcha_submit'] = '提交';
 $CIDRAM['lang']['Short_BadIP'] = '無效的IP！';
 $CIDRAM['lang']['Short_Bogon'] = '火星IP';
 $CIDRAM['lang']['Short_Cloud'] = '雲服務';

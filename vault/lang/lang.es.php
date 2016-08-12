@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2016.08.06).
+ * This file: Spanish language data (last modified: 2016.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,8 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Su acceso a esta página se negó porq
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red figuran en una lista negra utilizada por este sitio web.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Su acceso a esta página se negó porque su dirección IP se reconoce como perteneciente a un servicio de proxy, y la conexión de servicios de proxy a este sitio web no está permitido por el propietario del sitio web.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red considerados de alto riesgo de spam.';
+$CIDRAM['lang']['recaptcha_message'] = 'Con el fin de recuperar el acceso a esta página, por favor completar el CAPTCHA suministrado por debajo y pulse el botón enviar.';
+$CIDRAM['lang']['recaptcha_submit'] = 'Enviar';
 $CIDRAM['lang']['Short_BadIP'] = 'IP no válida!';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Servicio en la nube';

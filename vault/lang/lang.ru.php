@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.08.06).
+ * This file: Russian language data (last modified: 2016.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,8 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Ваш доступ к этой стр
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес принадлежит к сети, перечисленные в черном списке используемый этим сайтом.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес распознается как принадлежность к прокси-сервис, и подключение к этому сайту от прокси-серверов не допускается.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес принадлежит к сети считается высоким риском для спама.';
+$CIDRAM['lang']['recaptcha_message'] = 'Чтобы вновь получить доступ к этой странице, пожалуйста, заполните ниже CAPTCHA, и нажмите кнопку отправить.';
+$CIDRAM['lang']['recaptcha_submit'] = 'Отправить';
 $CIDRAM['lang']['Short_BadIP'] = 'Неверный IP';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/Марсианин IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Облачный сервис';

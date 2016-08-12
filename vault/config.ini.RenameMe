@@ -40,9 +40,9 @@ timeOffset=0
 ; Cloudflare and the likes) Default = REMOTE_ADDR
 ; WARNING: Don't change this unless you know what you're doing!
 ipaddr='REMOTE_ADDR'
-; Should CIDRAM respond with 403 headers to blocked requests, or stick with the
-; usual 200 OK? False/200 = No (200) [Default]; True = Yes (403);
-; 503 = Service unavailable (503).
+; Which headers should CIDRAM respond with when blocking requests?
+; False/200 = 200 OK [Default]; True = 403 Forbidden;
+; 503 = 503 Service unavailable.
 forbid_on_block=false
 ; Should CIDRAM silently redirect blocked access attempts instead of displaying
 ; the "Access Denied" page? If yes, specify the location to redirect blocked
@@ -102,6 +102,12 @@ block_proxies=false
 ; problems when doing so, generally, this should always be set to true.
 ; False = No; True = Yes [Default].
 block_spam=true
+
+[recaptcha]
+; Future feature (it won't yet work as expected, so, just ignore it for now).
+; usemode=0
+; sitekey=''
+; secret=''
 
 [template_data]
 ; Relates to the HTML output used to generate the "Access Denied" page. If

@@ -4,22 +4,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noindex,nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CIDRAM</title>
+    <title>CIDRAM</title>{recaptcha_api_include}
 </head>
 
 <style>
-body {font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-align:center;text-decoration:none;border-style:none;margin:0px;padding:0px;white-space:normal;background-color:#cccccc;color:#003333;}
-hr {border-style:solid none none none;border-width:1px;margin:5px 2px 0px 2px;padding:2px;color:#990000;}
-.textBlock {text-align:{textBlockAlign};font-weight:bold;}
-.textStrong {font-weight:bold;}
-.textLabel {float:{textBlockAlign};color:#666666;white-space:pre;}
-.textData {color:#000000;}
+.denied,.generator,.textStrong,.textBlock,.generator,input{font-weight:700}
+body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-align:center;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
+hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
+.textBlock{{textBlockAlign}}
+.denied,.textRed,input{color:red}
+.textBlack{color:#000}
+.textLabel{{textBlockFloat}color:#466;white-space:pre}
+.denied{font-size:20px}
+.generator,input{font-family:Verdana,Arial,Helvetica,sans-serif}
+.generator{font-size:8pt;letter-spacing:-1px;white-space:nowrap}
+input{font-size:10pt;background-color:#fff;border:1px solid red}
 </style>
 
 <body>
 <center>
 
-<table style="border-style:solid;border-width:1px;border-color:#c7ced3;background-color:#ffffff;width:98%;text-align:center;">
+<table style="border-style:solid;border-width:1px;border-color:#c7ced3;background-color:#fff;width:98%;text-align:center;">
 <tr>
 <td align="center">
 <table style="width:96%;text-align:left;">
@@ -27,29 +32,29 @@ hr {border-style:solid none none none;border-width:1px;margin:5px 2px 0px 2px;pa
 <td>
 <center>
     <hr />
-    <p style="font-size:20px;font-weight:bold;color:#ff0000;">{denied}</p>
-    <p class="textStrong">{ReasonMessage}</p>{EmailAddr}
+    <p class="denied">{denied}</p>
+    <p class="textStrong">{ReasonMessage}</p>{EmailAddr}{recaptcha_div_include}
     <hr />
 </center>
 <p class="textBlock">
-    <span class="textLabel">{field_id}</span><span class="textData">{Counter}</span><br />
-    <span class="textLabel">{field_scriptversion}</span><span class="textData">{ScriptIdent}</span><br />
-    <span class="textLabel">{field_datetime}</span><span class="textData">{DateTime}</span><br />
-    <span class="textLabel">{field_ipaddr}</span><span class="textData">{IPAddr}</span><br />
-    <span class="textLabel">{field_query}</span><span class="textData">{Query}</span><br />
-    <span class="textLabel">{field_referrer}</span><span class="textData">{Referrer}</span><br />
-    <span class="textLabel">{field_sigcount}</span><span class="textData">{SignatureCount}</span><br />
-    <span class="textLabel">{field_sigref}</span><span class="textData">{Signatures}</span><br />
-    <span class="textLabel">{field_whyreason}</span><span class="textData">{WhyReason}!<br />
-    <span class="textLabel">{field_ua}</span><span class="textData">{UA}</span><br />
-    <span class="textLabel">{field_rURI}</span><span class="textData">{rURI}</span><br />
+    <span class="textLabel">{field_id}</span>{Counter}<br />
+    <span class="textLabel">{field_scriptversion}</span>{ScriptIdent}<br />
+    <span class="textLabel">{field_datetime}</span>{DateTime}<br />
+    <span class="textLabel">{field_ipaddr}</span>{IPAddr}<br />
+    <span class="textLabel">{field_query}</span>{Query}<br />
+    <span class="textLabel">{field_referrer}</span>{Referrer}<br />
+    <span class="textLabel">{field_sigcount}</span>{SignatureCount}<br />
+    <span class="textLabel">{field_sigref}</span>{Signatures}<br />
+    <span class="textLabel">{field_whyreason}</span>{WhyReason}!<br />
+    <span class="textLabel">{field_ua}</span>{UA}<br />
+    <span class="textLabel">{field_rURI}</span>{rURI}<br />
 </p>
 <center><hr /></center>
 </td>
 </tr>
 
 <tr>
-<td align="right" style="width:100%;"><span style="font-family:Verdana,Arial,Helvetica,sans-serif;letter-spacing:-1px;font-size:8pt;font-weight:bold;white-space:nowrap;"><span style="color:#000000;">{generated_by}</span> <span style="color:#ff0000;">{ScriptIdent}</span></span></td>
+<td align="right" style="width:100%;"><span class="generator"><span class="textBlack">{generated_by}</span> <span class="textRed">{ScriptIdent}</span></span></td>
 </tr>
 </table>
 </td>

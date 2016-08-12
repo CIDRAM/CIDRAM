@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.07).
+ * This file: The loader (last modified: 2016.08.13).
  */
 
 /**
@@ -23,13 +23,16 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.4.1';
+    $CIDRAM['ScriptVersion'] = '0.5.0-DEV';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
 
     /** CIDRAM User Agent (for external requests). */
     $CIDRAM['ScriptUA'] = $CIDRAM['ScriptIdent'] . ' (http://maikuolan.github.io/CIDRAM/)';
+
+    /** Default timeout (for external requests). */
+    $CIDRAM['Timeout'] = 12;
 
     /** Determine the location of the "vault" directory. */
     $CIDRAM['Vault'] = __DIR__ . '/vault/';
@@ -159,6 +162,25 @@ if (!defined('CIDRAM')) {
         $CIDRAM['Config']['template_data']['css_url'] = '';
     }
 
+    /** Fallback for missing "recaptcha" configuration category. */
+    if (!isset($CIDRAM['Config']['recaptcha'])) {
+        $CIDRAM['Config']['recaptcha'] = array();
+    }
+    /** Fallback for missing "usemode" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['usemode'])) {
+        $CIDRAM['Config']['recaptcha']['usemode'] = 0;
+    }
+    /** Fallback for missing "sitekey" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['sitekey'])) {
+        $CIDRAM['Config']['recaptcha']['sitekey'] = '';
+    }
+    /** Fallback for missing "secret" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['secret'])) {
+        $CIDRAM['Config']['recaptcha']['secret'] = '';
+    }
+    /** This should always have an initial state of false. */
+    $CIDRAM['Config']['recaptcha']['enabled'] = false;
+
     /** Adjusted present time. */
     $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
 
@@ -206,6 +228,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_generic']);
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_proxies']);
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_spam']);
+    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['usemode']);
 
     if (!$CIDRAM['CIDRAM_sapi']) {
 

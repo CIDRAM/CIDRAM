@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified： 2016.08.06).
+ * This file: Japanese language data (last modified： 2016.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,8 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'なぜブロックされましたか�
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'なぜブロックされましたか： IPがブラックリストに掲載されています/危険なネットワーク。';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'なぜブロックされましたか： プロキシサービス接続。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'なぜブロックされましたか： スパムネットワーク/危険なネットワーク。';
+$CIDRAM['lang']['recaptcha_message'] = 'このページへのアクセスを回復するためには、以下の供給CAPTCHAを完了し、送信ボタンを押してください。';
+$CIDRAM['lang']['recaptcha_submit'] = '送信';
 $CIDRAM['lang']['Short_BadIP'] = '無効なIP';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/火星のIP';
 $CIDRAM['lang']['Short_Cloud'] = 'クラウドサービス';

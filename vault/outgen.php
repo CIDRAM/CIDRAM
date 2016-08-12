@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.08.06).
+ * This file: Output generator (last modified: 2016.08.13).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -79,21 +79,71 @@ if (!$CIDRAM['TestResults']) {
     $CIDRAM['BlockInfo']['SignatureCount']++;
 }
 
-/**
- * If any signatures were triggered and logging is enabled, increment the
- * counter.
- */
-if (
-    $CIDRAM['BlockInfo']['SignatureCount'] && (
+/** This code block only executed if signatures were triggered. */
+if ($CIDRAM['BlockInfo']['SignatureCount']) {
+
+    /** If logging is enabled, increment the counter. */
+    if (
         $CIDRAM['Config']['general']['logfile'] ||
         $CIDRAM['Config']['general']['logfileApache'] ||
         $CIDRAM['Config']['general']['logfileSerialized']
-    )
-) {
-    $CIDRAM['Cache']['Counter']++;
-    $CIDRAM['CacheModified'] = true;
+    ) {
+        $CIDRAM['Cache']['Counter']++;
+        $CIDRAM['CacheModified'] = true;
+    }
+    /** Set block information counter to match the updated cached counter. */
+    $CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']['Counter'];
+
+    /** Handling reCAPTCHA stuff here ({@todo work-in-progress feature}). */
+    if (
+        !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
+        !empty($CIDRAM['Config']['recaptcha']['secret']) &&
+        $CIDRAM['BlockInfo']['SignatureCount'] === 1
+    ) {
+        // 0 = Never use. 1 = Always use. 2 = Opt in to use.
+        if (
+            $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
+                $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
+                $CIDRAM['Config']['recaptcha']['enabled'] === true
+            )
+        ) {
+            if (!empty($_POST['g-recaptcha-response'])) {
+                $CIDRAM['reCAPTCHA'] = array(
+                    'Results' => $CIDRAM['Request']('https://www.google.com/recaptcha/api/siteverify', array(
+                        'secret' => $CIDRAM['Config']['recaptcha']['secret'],
+                        'response' => $_POST['g-recaptcha-response'],
+                        'remoteip' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                    ))
+                );
+                $CIDRAM['reCAPTCHA']['Offset'] = strpos($CIDRAM['reCAPTCHA']['Results'], '"success": ');
+                if ($CIDRAM['reCAPTCHA']['Offset'] !== false) {
+                    $CIDRAM['reCAPTCHA']['Success'] = (
+                        substr($CIDRAM['reCAPTCHA']['Results'], $CIDRAM['reCAPTCHA']['Offset'] + 11, 4) === 'true'
+                    );
+                } else {
+                    $CIDRAM['reCAPTCHA']['Success'] = false;
+                }
+                /** The next line is temporary; Will replace with real code shortly. */
+                die(($CIDRAM['reCAPTCHA']['Success']) ? 'Success!' : 'Failure!');
+                // Refer https://developers.google.com/recaptcha/docs/verify
+            }
+            $CIDRAM['Config']['template_data']['recaptcha_api_include'] =
+                "\n    <script src='https://www.google.com/recaptcha/api.js'></script>";
+            $CIDRAM['Config']['template_data']['recaptcha_div_include'] =
+                "\n    <hr />\n    <p class=\"textStrong\">{recaptcha_message}<br /><br /></p>" .
+                "\n    <form method=\"POST\" action=\"\"><div class=\"g-recaptcha\" data-sitekey=\"" .
+                $CIDRAM['Config']['recaptcha']['sitekey'] . "\"></div><br /><br />" .
+                "<input type=\"submit\" value=\"{recaptcha_submit}\" /></form>";
+        }
+    }
+    if (empty($CIDRAM['Config']['template_data']['recaptcha_api_include'])) {
+        $CIDRAM['Config']['template_data']['recaptcha_api_include'] = '';
+    }
+    if (empty($CIDRAM['Config']['template_data']['recaptcha_div_include'])) {
+        $CIDRAM['Config']['template_data']['recaptcha_div_include'] = '';
+    }
+
 }
-$CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']['Counter'];
 
 /** Update the cache. */
 if ($CIDRAM['CacheModified']) {
@@ -122,13 +172,15 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
     /** A fix for correctly displaying LTR/RTL text. */
     if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
         $CIDRAM['lang']['textDir'] = 'ltr';
-        $CIDRAM['lang']['textBlockAlign'] = 'left';
+        $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:left;';
+        $CIDRAM['Config']['template_data']['textBlockFloat'] = '';
     } else {
-        $CIDRAM['lang']['textBlockAlign'] = 'right';
+        $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
+        $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
     }
 
     /** Parsed to the template file upon generating HTML output. */
-    $CIDRAM['Parsables'] = $CIDRAM['lang'] + $CIDRAM['BlockInfo'] + $CIDRAM['Config']['template_data'];
+    $CIDRAM['Parsables'] = $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
 
     if (!$CIDRAM['Config']['general']['silent_mode']) {
 
@@ -154,16 +206,18 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                 $CIDRAM['BlockInfo']['EmailAddr'] = '';
             } else {
                 $CIDRAM['BlockInfo']['EmailAddr'] =
-                    '<strong><a href="mailto:' . $CIDRAM['Config']['general']['emailaddr'] . '?subject=CIDRAM%20Event&body=' .
+                    '<a href="mailto:' . $CIDRAM['Config']['general']['emailaddr'] .
+                    '?subject=CIDRAM%20Event&body=' .
                     urlencode($CIDRAM['ParseVars']($CIDRAM['Parsables'],
                         "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
                         "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
                         "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
                         "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
-                    )) . '">' . $CIDRAM['lang']['click_here'] . '</a></strong>';
-                $CIDRAM['BlockInfo']['EmailAddr'] = "\n<p><strong>" . $CIDRAM['ParseVars'](array(
-                    'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
-                ), $CIDRAM['lang']['Support_Email']) . '</strong></p>';
+                    )) . '">' . $CIDRAM['lang']['click_here'] . '</a>';
+                $CIDRAM['BlockInfo']['EmailAddr'] =
+                    "\n    <p class=\"textStrong\">" . $CIDRAM['ParseVars'](array(
+                        'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
+                    ), $CIDRAM['lang']['Support_Email']) . '</p>';
             }
             $CIDRAM['html'] = $CIDRAM['ParseVars'](array(
                 'EmailAddr' => $CIDRAM['BlockInfo']['EmailAddr']

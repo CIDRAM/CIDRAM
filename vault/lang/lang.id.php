@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.08.06).
+ * This file: Indonesian language data (last modified: 2016.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,8 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Akses Anda ke halaman ini ditolak kare
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan terdaftar pada daftar hitam yang digunakan oleh situs ini.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai milik dari layanan proxy, dan menghubungkan dari layanan proxy ke situs ini tidak diizinkan oleh pemilik situs.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan dianggap berisiko tinggi untuk spam.';
+$CIDRAM['lang']['recaptcha_message'] = 'Dalam rangka untuk mendapatkan kembali akses ke halaman ini, melengkapi CAPTCHA disediakan di bawah dan tekan tombol mengirim.';
+$CIDRAM['lang']['recaptcha_submit'] = 'Mengirim';
 $CIDRAM['lang']['Short_BadIP'] = 'IP tidak valid!';
 $CIDRAM['lang']['Short_Bogon'] = 'IP yang bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'Layanan komputasi awan';

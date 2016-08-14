@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.08.12).
+ * This file: Dutch language data (last modified: 2016.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,7 @@ $CIDRAM['lang']['field_datetime'] = 'Datum/Tijd: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP-Adres: ';
 $CIDRAM['lang']['field_query'] = 'Query: ';
+$CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA State: ';
 $CIDRAM['lang']['field_referrer'] = 'Verwijzer: ';
 $CIDRAM['lang']['field_rURI'] = 'Gereconstrueerde URI: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Script Versie: ';
@@ -38,6 +39,9 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Uw toegang tot deze pagina is geweiger
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres behoort tot een netwerk dat is op een zwarte lijst gebruikt door deze website.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een proxy service, en het verbinden van proxy services naar deze website is niet toegestaan door de eigenaar van deze website.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres behoort tot een netwerk beschouwd als een hoog risico op spam.';
+$CIDRAM['lang']['recaptcha_disabled'] = 'Gedeactiveerd.';
+$CIDRAM['lang']['recaptcha_enabled'] = 'Geactiveerd.';
+$CIDRAM['lang']['recaptcha_failed'] = 'Mislukt!';
 $CIDRAM['lang']['recaptcha_message'] = 'Om toegang tot deze pagina te herwinnen, vul dan onderstaand geleverd CAPTCHA en druk op de knop zenden.';
 $CIDRAM['lang']['recaptcha_submit'] = 'Zenden';
 $CIDRAM['lang']['Short_BadIP'] = 'Ongeldig IP!';

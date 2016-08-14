@@ -8,17 +8,17 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.08.13).
+ * This file: Output generator (last modified: 2016.08.15).
  */
 
 $CIDRAM['CacheModified'] = false;
 
 /** Prepare the cache. */
 if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
-    $CIDRAM['handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
     $CIDRAM['Cache'] = array('Counter' => 0);
-    fwrite($CIDRAM['handle'], serialize($CIDRAM['Cache']));
-    fclose($CIDRAM['handle']);
+    fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
+    fclose($CIDRAM['Handle']);
     if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] ' . $CIDRAM['lang']['Error_WriteCache']);
@@ -29,6 +29,22 @@ if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
         $CIDRAM['CacheModified'] = true;
         $CIDRAM['Cache']['Counter'] = 0;
     }
+}
+
+/**
+ * Check whether the salt file exists; If it doesn't, generate a new salt and
+ * create the file (this salt isn't essential for core functionality of the
+ * script, but may be used for some optional peripheral functionality, such as
+ * the reCAPTCHA feature). If it does, fetch it and extract its content for the
+ * script to use.
+ */
+if (!file_exists($CIDRAM['Vault'] . 'salt.dat')) {
+    $CIDRAM['Salt'] = $CIDRAM['GenerateSalt']();
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'salt.dat', 'w');
+    fwrite($CIDRAM['Handle'], $CIDRAM['Salt']);
+    fclose($CIDRAM['Handle']);
+} else {
+    $CIDRAM['Salt'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'salt.dat');
 }
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -82,60 +98,167 @@ if (!$CIDRAM['TestResults']) {
 /** This code block only executed if signatures were triggered. */
 if ($CIDRAM['BlockInfo']['SignatureCount']) {
 
-    /** If logging is enabled, increment the counter. */
-    if (
-        $CIDRAM['Config']['general']['logfile'] ||
-        $CIDRAM['Config']['general']['logfileApache'] ||
-        $CIDRAM['Config']['general']['logfileSerialized']
-    ) {
-        $CIDRAM['Cache']['Counter']++;
-        $CIDRAM['CacheModified'] = true;
-    }
-    /** Set block information counter to match the updated cached counter. */
-    $CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']['Counter'];
+    /** Define reCAPTCHA working data. */
+    $CIDRAM['reCAPTCHA'] = array('Bypass' => false, 'Expiry' => ($CIDRAM['Config']['recaptcha']['expiry'] * 3600));
 
-    /** Handling reCAPTCHA stuff here ({@todo work-in-progress feature}). */
+    /** Handling reCAPTCHA here. */
     if (
         !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
         $CIDRAM['BlockInfo']['SignatureCount'] === 1
     ) {
-        // 0 = Never use. 1 = Always use. 2 = Opt in to use.
+
+        /** Attempt to load the hash list. */
+        if (file_exists($CIDRAM['Vault'] . 'hashes.dat')) {
+            $CIDRAM['reCAPTCHA']['HashList'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'hashes.dat');
+            $CIDRAM['reCAPTCHA']['HashListMod'] = false;
+        } else {
+            $CIDRAM['reCAPTCHA']['HashList'] = "HASH LIST\n---------\n";
+            $CIDRAM['reCAPTCHA']['HashListMod'] = true;
+        }
+
+        /** Cycle through the hash list and remove any expired hashes. */
+        if ($CIDRAM['reCAPTCHA']['HashList']) {
+            $CIDRAM['reCAPTCHA']['HashPosEnd'] = 0;
+            while (true) {
+                $CIDRAM['reCAPTCHA']['HashPosBegin'] = $CIDRAM['reCAPTCHA']['HashPosEnd'];
+                if ($CIDRAM['reCAPTCHA']['HashPosEnd'] = strpos($CIDRAM['reCAPTCHA']['HashList'], "\n", $CIDRAM['reCAPTCHA']['HashPosBegin'] + 1)) {
+                    $CIDRAM['reCAPTCHA']['HashLine'] = substr(
+                        $CIDRAM['reCAPTCHA']['HashList'],
+                        $CIDRAM['reCAPTCHA']['HashPosBegin'],
+                        $CIDRAM['reCAPTCHA']['HashPosEnd'] - $CIDRAM['reCAPTCHA']['HashPosBegin']
+                    );
+                    if ($CIDRAM['reCAPTCHA']['Split'] = strpos($CIDRAM['reCAPTCHA']['HashLine'], ':')) {
+                        $CIDRAM['reCAPTCHA']['HashExpiry'] = (int)substr($CIDRAM['reCAPTCHA']['HashLine'], $CIDRAM['reCAPTCHA']['Split'] + 1);
+                        if ($CIDRAM['reCAPTCHA']['HashExpiry'] < $CIDRAM['Now']) {
+                            $CIDRAM['reCAPTCHA']['HashList'] = str_replace($CIDRAM['reCAPTCHA']['HashLine'], '', $CIDRAM['reCAPTCHA']['HashList']);
+                            $CIDRAM['reCAPTCHA']['HashPosEnd'] = 0;
+                            $CIDRAM['reCAPTCHA']['HashListMod'] = true;
+                        }
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+
+        /**
+         * Determine whether the user has already entered a CAPTCHA before and
+         * populate relevant variables.
+         */
+        if (!empty($_COOKIE['CIDRAM']) && $CIDRAM['reCAPTCHA']['Split'] = strpos($_COOKIE['CIDRAM'], '|')) {
+            $CIDRAM['reCAPTCHA']['UsrHash'] = substr($_COOKIE['CIDRAM'], 0, $CIDRAM['reCAPTCHA']['Split']);
+            if (strpos($CIDRAM['reCAPTCHA']['HashList'], "\n" . $CIDRAM['reCAPTCHA']['UsrHash'] . ':') !== false) {
+                $CIDRAM['reCAPTCHA']['UsrSalt'] = base64_decode(substr($_COOKIE['CIDRAM'], $CIDRAM['reCAPTCHA']['Split']));
+                if ($CIDRAM['Config']['recaptcha']['lockip']) {
+                    $CIDRAM['reCAPTCHA']['UsrMeld'] = $CIDRAM['Meld'](
+                        $CIDRAM['Salt'],
+                        $CIDRAM['reCAPTCHA']['UsrSalt'],
+                        $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                    );
+                } else {
+                    $CIDRAM['reCAPTCHA']['UsrMeld'] = $CIDRAM['Meld'](
+                        $CIDRAM['Salt'],
+                        $CIDRAM['reCAPTCHA']['UsrSalt']
+                    );
+                }
+                if (strpos($CIDRAM['reCAPTCHA']['UsrMeld'], "\x00") !== false) {
+                    $CIDRAM['reCAPTCHA']['UsrMeld'] = str_replace("\x00", '', $CIDRAM['reCAPTCHA']['UsrMeld']);
+                }
+            } else {
+                $CIDRAM['reCAPTCHA']['UsrMeld'] = $CIDRAM['reCAPTCHA']['UsrSalt'] = $CIDRAM['reCAPTCHA']['UsrHash'] = '';
+            }
+        } else {
+            $CIDRAM['reCAPTCHA']['UsrMeld'] = $CIDRAM['reCAPTCHA']['UsrSalt'] = $CIDRAM['reCAPTCHA']['UsrHash'] = '';
+        }
+
+        /**
+         * Verify whether they've passed the CAPTCHA, update cookies and/or
+         * generate CAPTCHA fields.
+         */
         if (
-            $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
-                $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
-                $CIDRAM['Config']['recaptcha']['enabled'] === true
-            )
+            $CIDRAM['reCAPTCHA']['UsrHash'] &&
+            $CIDRAM['reCAPTCHA']['UsrMeld'] &&
+            password_verify($CIDRAM['reCAPTCHA']['UsrMeld'], $CIDRAM['reCAPTCHA']['UsrHash'])
         ) {
-            if (!empty($_POST['g-recaptcha-response'])) {
-                $CIDRAM['reCAPTCHA'] = array(
-                    'Results' => $CIDRAM['Request']('https://www.google.com/recaptcha/api/siteverify', array(
+
+            $CIDRAM['reCAPTCHA']['Bypass'] = true;
+            $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+
+        } else {
+
+            if (
+                $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
+                    $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
+                    $CIDRAM['Config']['recaptcha']['enabled'] === true
+                )
+            ) {
+                /** Set status for reCAPTCHA block information. */
+                $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_enabled'];
+                /** We've received a response. */
+                if (!empty($_POST['g-recaptcha-response'])) {
+                    $CIDRAM['reCAPTCHA']['Results'] = $CIDRAM['Request']('https://www.google.com/recaptcha/api/siteverify', array(
                         'secret' => $CIDRAM['Config']['recaptcha']['secret'],
                         'response' => $_POST['g-recaptcha-response'],
                         'remoteip' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
-                    ))
-                );
-                $CIDRAM['reCAPTCHA']['Offset'] = strpos($CIDRAM['reCAPTCHA']['Results'], '"success": ');
-                if ($CIDRAM['reCAPTCHA']['Offset'] !== false) {
-                    $CIDRAM['reCAPTCHA']['Success'] = (
-                        substr($CIDRAM['reCAPTCHA']['Results'], $CIDRAM['reCAPTCHA']['Offset'] + 11, 4) === 'true'
-                    );
-                } else {
-                    $CIDRAM['reCAPTCHA']['Success'] = false;
+                    ));
+                    $CIDRAM['reCAPTCHA']['Offset'] = strpos($CIDRAM['reCAPTCHA']['Results'], '"success": ');
+                    if ($CIDRAM['reCAPTCHA']['Offset'] !== false) {
+                        // Refer https://developers.google.com/recaptcha/docs/verify
+                        $CIDRAM['reCAPTCHA']['Bypass'] = (
+                            substr($CIDRAM['reCAPTCHA']['Results'], $CIDRAM['reCAPTCHA']['Offset'] + 11, 4) === 'true'
+                        );
+                    }
+                    if ($CIDRAM['reCAPTCHA']['Bypass']) {
+                        /** Generate client-side salt. */
+                        $CIDRAM['reCAPTCHA']['UsrSalt'] = $CIDRAM['GenerateSalt']();
+                        /** Generate authentication hash. */
+                        $CIDRAM['reCAPTCHA']['Cookie'] = ($CIDRAM['Config']['recaptcha']['lockip']) ?
+                            $CIDRAM['Meld'](
+                                $CIDRAM['Salt'],
+                                $CIDRAM['reCAPTCHA']['UsrSalt'],
+                                $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                            ) : $CIDRAM['Meld'](
+                                $CIDRAM['Salt'],
+                                $CIDRAM['reCAPTCHA']['UsrSalt']
+                            );
+                        if (strpos($CIDRAM['reCAPTCHA']['Cookie'], "\x00") !== false) {
+                            $CIDRAM['reCAPTCHA']['Cookie'] = str_replace("\x00", '', $CIDRAM['reCAPTCHA']['Cookie']);
+                        }
+                        $CIDRAM['reCAPTCHA']['UsrHash'] = password_hash($CIDRAM['reCAPTCHA']['Cookie'], PASSWORD_DEFAULT);
+                        $CIDRAM['reCAPTCHA']['Cookie'] = $CIDRAM['reCAPTCHA']['UsrHash'] . '|' . base64_encode($CIDRAM['reCAPTCHA']['UsrSalt']);
+                        setcookie('CIDRAM', $CIDRAM['reCAPTCHA']['Cookie'], $CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry'], '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+                        $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                        $CIDRAM['reCAPTCHA']['HashList'] .= $CIDRAM['reCAPTCHA']['UsrHash'] . ':' . ($CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry']) . "\n";
+                        $CIDRAM['reCAPTCHA']['HashListMod'] = true;
+                    } else {
+                        /** Set status for reCAPTCHA block information. */
+                        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
+                    }
                 }
-                /** The next line is temporary; Will replace with real code shortly. */
-                die(($CIDRAM['reCAPTCHA']['Success']) ? 'Success!' : 'Failure!');
-                // Refer https://developers.google.com/recaptcha/docs/verify
+                if (!$CIDRAM['reCAPTCHA']['Bypass']) {
+                    $CIDRAM['Config']['template_data']['recaptcha_api_include'] =
+                        "\n    <script src='https://www.google.com/recaptcha/api.js'></script>";
+                    $CIDRAM['Config']['template_data']['recaptcha_div_include'] =
+                        "\n    <hr />\n    <p class=\"textStrong\">{recaptcha_message}<br /><br /></p>" .
+                        "\n    <form method=\"POST\" action=\"\"><div class=\"g-recaptcha\" data-sitekey=\"" .
+                        $CIDRAM['Config']['recaptcha']['sitekey'] . "\"></div><br /><br />" .
+                        "<input type=\"submit\" value=\"{recaptcha_submit}\" /></form>";
+                }
+
             }
-            $CIDRAM['Config']['template_data']['recaptcha_api_include'] =
-                "\n    <script src='https://www.google.com/recaptcha/api.js'></script>";
-            $CIDRAM['Config']['template_data']['recaptcha_div_include'] =
-                "\n    <hr />\n    <p class=\"textStrong\">{recaptcha_message}<br /><br /></p>" .
-                "\n    <form method=\"POST\" action=\"\"><div class=\"g-recaptcha\" data-sitekey=\"" .
-                $CIDRAM['Config']['recaptcha']['sitekey'] . "\"></div><br /><br />" .
-                "<input type=\"submit\" value=\"{recaptcha_submit}\" /></form>";
+
         }
+
+        /** Update the hash list if any changes were made. */
+        if ($CIDRAM['reCAPTCHA']['HashListMod']) {
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'hashes.dat', 'w');
+            fwrite($CIDRAM['Handle'], $CIDRAM['reCAPTCHA']['HashList']);
+            fclose($CIDRAM['Handle']);
+        }
+
     }
+
     if (empty($CIDRAM['Config']['template_data']['recaptcha_api_include'])) {
         $CIDRAM['Config']['template_data']['recaptcha_api_include'] = '';
     }
@@ -143,17 +266,41 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         $CIDRAM['Config']['template_data']['recaptcha_div_include'] = '';
     }
 
+    if (!$CIDRAM['reCAPTCHA']['Bypass']) {
+
+        /** If logging is enabled, increment the counter. */
+        if (
+            $CIDRAM['Config']['general']['logfile'] ||
+            $CIDRAM['Config']['general']['logfileApache'] ||
+            $CIDRAM['Config']['general']['logfileSerialized']
+        ) {
+            $CIDRAM['Cache']['Counter']++;
+            $CIDRAM['CacheModified'] = true;
+        }
+        /** Set block information counter to match the updated cached counter. */
+        $CIDRAM['BlockInfo']['Counter'] = $CIDRAM['Cache']['Counter'];
+
+    }
+
+    /** Unset our reCAPTCHA working data cleanly. */
+    unset($CIDRAM['reCAPTCHA']);
+
 }
 
 /** Update the cache. */
 if ($CIDRAM['CacheModified']) {
-    $CIDRAM['handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-    fwrite($CIDRAM['handle'], serialize($CIDRAM['Cache']));
-    fclose($CIDRAM['handle']);
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+    fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
+    fclose($CIDRAM['Handle']);
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */
 if ($CIDRAM['BlockInfo']['SignatureCount']) {
+
+    /** Set status for reCAPTCHA block information. */
+    if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
+        $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_disabled'];
+    }
 
     /**
      * Some simple sanitisation for our block information (helps to prevent
@@ -263,7 +410,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
             "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
             "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
             "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
-            "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
+            "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n" .
+            "{field_reCAPTCHA_state}{reCAPTCHA}\n\n"
         );
         $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], 'a');
         fwrite($CIDRAM['logfileData']['f'], $CIDRAM['logfileData']['d']);

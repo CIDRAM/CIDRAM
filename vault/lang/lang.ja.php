@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified： 2016.08.12).
+ * This file: Japanese language data (last modified： 2016.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,7 @@ $CIDRAM['lang']['field_datetime'] = '日/月/年/時刻： ';
 $CIDRAM['lang']['field_id'] = 'ID： ';
 $CIDRAM['lang']['field_ipaddr'] = 'IPアドレス： ';
 $CIDRAM['lang']['field_query'] = 'クエリー： ';
+$CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHAのステータス： ';
 $CIDRAM['lang']['field_referrer'] = 'リファラー： ';
 $CIDRAM['lang']['field_rURI'] = 'URI再構築された： ';
 $CIDRAM['lang']['field_scriptversion'] = 'スクリプトのバージョン： ';
@@ -38,6 +39,9 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'なぜブロックされましたか�
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'なぜブロックされましたか： IPがブラックリストに掲載されています/危険なネットワーク。';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'なぜブロックされましたか： プロキシサービス接続。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'なぜブロックされましたか： スパムネットワーク/危険なネットワーク。';
+$CIDRAM['lang']['recaptcha_disabled'] = 'オフ。';
+$CIDRAM['lang']['recaptcha_enabled'] = 'オン。';
+$CIDRAM['lang']['recaptcha_failed'] = '失敗！';
 $CIDRAM['lang']['recaptcha_message'] = 'このページへのアクセスを回復するためには、以下の供給CAPTCHAを完了し、送信ボタンを押してください。';
 $CIDRAM['lang']['recaptcha_submit'] = '送信';
 $CIDRAM['lang']['Short_BadIP'] = '無効なIP';

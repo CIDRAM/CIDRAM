@@ -1472,61 +1472,62 @@ Tag: 1&1 Internet SE
 
 
 # ASN 16276 ("OVH Systems").
-# Infected by malware (as per reported by Google): 0.96%.
-# Updated: 2016.04.18
+# Infected by malware (as per reported by Google): 1.22%.
+# Updated: 2016.08.15
 
-5.39.0.0/17 Deny Generic
-5.135.0.0/16 Deny Generic
-5.196.0.0/16 Deny Generic
-8.7.244.0/24 Deny Generic
-8.18.128.0/24 Deny Generic
-8.18.136.0/21 Deny Generic
-8.18.172.0/24 Deny Generic
-8.20.110.0/24 Deny Generic
-8.21.41.0/24 Deny Generic
-8.24.8.0/21 Deny Generic
-8.26.94.0/24 Deny Generic
-8.29.224.0/24 Deny Generic
-8.30.208.0/21 Deny Generic
-8.33.96.0/21 Deny Generic
-8.33.128.0/21 Deny Generic
-8.33.136.0/23 Deny Generic
-37.59.0.0/16 Deny Generic
-37.60.48.0/20 Deny Generic
-37.187.0.0/16 Deny Generic
-46.105.0.0/16 Deny Generic
-51.254.0.0/15 Deny Generic
-62.245.0.0/19 Deny Generic
-87.98.128.0/17 Deny Generic
-91.90.88.0/21 Deny Generic
-91.121.0.0/16 Deny Generic
-91.134.0.0/16 Deny Generic
-92.222.0.0/16 Deny Generic
-94.23.0.0/16 Deny Generic
-103.5.12.0/22 Deny Generic
-142.4.192.0/19 Deny Generic
-149.56.0.0/16 Deny Generic
-149.202.0.0/16 Deny Generic
-151.80.0.0/16 Deny Generic
-158.69.0.0/16 Deny Generic
-164.132.0.0/16 Deny Generic
-167.114.0.0/16 Deny Generic
-176.31.0.0/16 Deny Generic
-178.32.0.0/15 Deny Generic
-185.12.32.0/23 Deny Generic
-188.165.0.0/16 Deny Generic
-192.95.0.0/18 Deny Generic
-192.99.0.0/16 Deny Generic
-193.104.19.0/24 Deny Generic
-193.109.63.0/24 Deny Generic
-195.110.30.0/23 Deny Generic
-195.246.232.0/23 Deny Generic
-198.27.64.0/18 Deny Generic
-198.50.128.0/17 Deny Generic
-198.100.144.0/20 Deny Generic
-198.245.48.0/20 Deny Generic
-213.186.32.0/19 Deny Generic
-213.251.128.0/18 Deny Generic
+5.39.0.0/17 Deny Cloud
+5.135.0.0/16 Deny Cloud
+5.196.0.0/16 Deny Cloud
+8.7.244.0/24 Deny Cloud
+8.18.128.0/24 Deny Cloud
+8.18.136.0/21 Deny Cloud
+8.18.172.0/24 Deny Cloud
+8.20.110.0/24 Deny Cloud
+8.21.41.0/24 Deny Cloud
+8.24.8.0/21 Deny Cloud
+8.26.94.0/24 Deny Cloud
+8.29.224.0/24 Deny Cloud
+8.30.208.0/21 Deny Cloud
+8.33.96.0/21 Deny Cloud
+8.33.128.0/21 Deny Cloud
+8.33.136.0/23 Deny Cloud
+37.59.0.0/16 Deny Cloud
+37.60.48.0/20 Deny Cloud
+37.187.0.0/16 Deny Cloud
+46.105.0.0/16 Deny Cloud
+51.254.0.0/15 Deny Cloud
+62.245.0.0/19 Deny Cloud
+87.98.128.0/17 Deny Cloud
+91.90.88.0/21 Deny Cloud
+91.121.0.0/16 Deny Cloud
+91.134.0.0/16 Deny Cloud
+92.222.0.0/16 Deny Cloud
+94.23.0.0/16 Deny Cloud
+103.5.12.0/22 Deny Cloud
+137.74.0.0/16 Deny Cloud
+142.4.192.0/19 Deny Cloud
+149.56.0.0/16 Deny Cloud
+149.202.0.0/16 Deny Cloud
+151.80.0.0/16 Deny Cloud
+158.69.0.0/16 Deny Cloud
+164.132.0.0/16 Deny Cloud
+167.114.0.0/16 Deny Cloud
+176.31.0.0/16 Deny Cloud
+178.32.0.0/15 Deny Cloud
+185.12.32.0/23 Deny Cloud
+188.165.0.0/16 Deny Cloud
+192.95.0.0/18 Deny Cloud
+192.99.0.0/16 Deny Cloud
+193.104.19.0/24 Deny Cloud
+193.109.63.0/24 Deny Cloud
+195.110.30.0/23 Deny Cloud
+195.246.232.0/23 Deny Cloud
+198.27.64.0/18 Deny Cloud
+198.50.128.0/17 Deny Cloud
+198.100.144.0/20 Deny Cloud
+198.245.48.0/20 Deny Cloud
+213.186.32.0/19 Deny Cloud
+213.251.128.0/18 Deny Cloud
 Tag: OVH Systems
 
 
@@ -3755,7 +3756,7 @@ Tag: Swiftway
 
 # ASN 7743 ("JPMorgan Chase & Co").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.13 / Checked: 2016.05.31
+# Updated: 2016.03.13 / Checked: 2016.08.15
 
 159.53.0.0/16 Deny Generic
 199.253.243.0/24 Deny Generic
@@ -4064,27 +4065,40 @@ Tag: Eonix Corporation
 
 
 # ASNs 32748, 46440 ("Steadfast Networks").
-# Infected by malware (as per reported by Google): 1.26% (AS32748), 0% (AS46440).
-# Updated: 2016.03.13
+# Infected by malware (as per reported by Google): 4.01% (AS32748), 0% (AS46440).
+# Updated: 2016.08.15
 
 23.29.128.0/19 Deny Cloud
-45.114.132.0/22 Deny Cloud
 49.156.0.0/22 Deny Cloud
 50.31.0.0/17 Deny Cloud
 66.85.89.0/24 Deny Cloud
+67.20.50.0/23 Deny Cloud
+67.20.52.0/23 Deny Cloud
+67.20.57.0/24 Deny Cloud
+67.20.58.0/24 Deny Cloud
+67.20.61.0/24 Deny Cloud
+67.20.62.0/24 Deny Cloud
 67.202.64.0/18 Deny Cloud
 69.162.128.0/18 Deny Cloud
+72.44.88.0/22 Deny Cloud
+72.44.93.0/24 Deny Cloud
+72.44.94.0/23 Deny Cloud
 74.120.120.0/22 Deny Cloud
 103.30.196.0/22 Deny Cloud
-103.54.84.0/22 Deny Cloud
+104.36.56.0/21 Deny Cloud
 104.171.128.0/21 Deny Cloud
 107.191.176.0/22 Deny Cloud
 162.208.54.0/23 Deny Cloud
 162.210.96.0/21 Deny Cloud
-162.249.125.0/24 Deny Cloud
-162.249.126.0/23 Deny Cloud
+162.249.124.0/22 Deny Cloud
 167.89.0.0/20 Deny Cloud
+173.249.144.0/23 Deny Cloud
+173.249.149.0/24 Deny Cloud
+173.249.150.0/23 Deny Cloud
+173.249.152.0/24 Deny Cloud
+185.153.164.0/22 Deny Cloud
 198.23.48.0/20 Deny Cloud
+199.48.252.0/22 Deny Cloud
 204.238.229.0/24 Deny Cloud
 208.66.168.0/21 Deny Cloud
 208.100.0.0/18 Deny Cloud
@@ -4488,8 +4502,8 @@ Tag: Digital Ocean, Inc
 
 
 # ASN 5577 ("Root SA").
-# Infected by malware (as per reported by Google): 5.18%.
-# Updated: 2016.03.12
+# Infected by malware (as per reported by Google): 0.37%.
+# Updated: 2016.08.15
 
 31.131.7.0/24 Deny Cloud
 83.243.8.0/21 Deny Cloud
@@ -4500,7 +4514,7 @@ Tag: Digital Ocean, Inc
 179.63.80.0/20 Deny Cloud
 185.103.172.0/24 Deny Cloud
 185.103.174.0/24 Deny Cloud
-185.121.24.0/23 Deny Cloud
+185.153.151.0/24 Deny Cloud
 194.68.32.0/24 Deny Cloud
 195.24.72.0/21 Deny Cloud
 195.26.4.0/23 Deny Cloud
@@ -4705,22 +4719,26 @@ Tag: InfoRelay Online
 
 
 # ASN 29854 ("WestHost, Inc").
-# Infected by malware (as per reported by Google): 1.13%.
-# Updated: 2016.03.12
+# Infected by malware (as per reported by Google): 1.70%.
+# Updated: 2016.08.15
 
 27.126.249.0/24 Deny Cloud
 50.115.112.0/20 Deny Cloud
 67.212.224.0/20 Deny Cloud
+67.213.219.0/24 Deny Cloud
 68.169.32.0/20 Deny Cloud
 69.36.160.0/19 Deny Cloud
-107.181.188.0/24 Deny Cloud
+74.123.244.0/22 Deny Cloud
 107.182.224.0/20 Deny Cloud
-172.98.91.0/24 Deny Cloud
+162.244.167.0/24 Deny Cloud
 173.244.192.0/19 Deny Cloud
 173.255.128.0/22 Deny Cloud
+174.127.79.0/24 Deny Cloud
+174.127.84.0/24 Deny Cloud
 174.127.104.0/21 Deny Cloud
 174.127.112.0/21 Deny Cloud
 185.72.156.0/22 Deny Cloud
+192.40.144.0/21 Deny Cloud
 192.245.255.0/24 Deny Cloud
 198.105.208.0/20 Deny Cloud
 199.189.104.0/21 Deny Cloud
@@ -4825,9 +4843,10 @@ Tag: CoS International
 
 # ASN 36137 ("Avante Hosting Services Inc").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.03.12
+# Updated: 2016.08.15
 
-66.248.192.0/19 Deny Cloud
+66.248.192.0/21 Deny Cloud
+66.248.208.0/20 Deny Cloud
 192.119.148.0/24 Deny Cloud
 192.241.8.0/21 Deny Cloud
 198.52.128.0/17 Deny Cloud
@@ -4871,8 +4890,8 @@ Tag: Swift Networks
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# Infected by malware (as per reported by Google): 1.50%.
-# Updated: 2016.01.21 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 2.30%.
+# Updated: 2016.01.21 / Checked: 2016.08.15
 
 31.41.216.0/21 Deny Cloud
 194.28.172.0/22 Deny Cloud
@@ -4940,12 +4959,6 @@ Tag: ON-LINE Ltd
 66.151.220.0/22 Deny Cloud
 66.151.224.0/19 Deny Cloud
 66.171.192.0/20 Deny Cloud
-67.20.50.0/23 Deny Cloud
-67.20.52.0/23 Deny Cloud
-67.20.57.0/24 Deny Cloud
-67.20.58.0/24 Deny Cloud
-67.20.61.0/24 Deny Cloud
-67.20.62.0/24 Deny Cloud
 67.215.161.0/24 Deny Cloud
 67.215.170.0/24 Deny Cloud
 67.215.173.0/24 Deny Cloud
@@ -4975,9 +4988,6 @@ Tag: ON-LINE Ltd
 72.5.48.0/20 Deny Cloud
 72.5.64.0/18 Deny Cloud
 72.5.128.0/17 Deny Cloud
-72.44.88.0/22 Deny Cloud
-72.44.93.0/24 Deny Cloud
-72.44.94.0/23 Deny Cloud
 74.91.112.0/24 Deny Cloud
 74.91.114.0/24 Deny Cloud
 74.91.116.0/24 Deny Cloud
@@ -5042,10 +5052,6 @@ Tag: ON-LINE Ltd
 173.230.230.0/23 Deny Cloud
 173.230.235.0/24 Deny Cloud
 173.230.238.0/23 Deny Cloud
-173.249.144.0/23 Deny Cloud
-173.249.149.0/24 Deny Cloud
-173.249.150.0/23 Deny Cloud
-173.249.152.0/24 Deny Cloud
 174.34.48.0/20 Deny Cloud
 178.22.8.0/23 Deny Cloud
 178.22.10.0/24 Deny Cloud
@@ -5080,7 +5086,6 @@ Tag: ON-LINE Ltd
 199.21.76.0/22 Deny Cloud
 199.21.80.0/22 Deny Cloud
 199.30.64.0/24 Deny Cloud
-199.48.252.0/22 Deny Cloud
 199.168.132.0/22 Deny Cloud
 199.233.179.0/24 Deny Cloud
 199.244.252.0/22 Deny Cloud
@@ -5790,8 +5795,8 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# Infected by malware (as per reported by Google): 1.82%.
-# Updated: 2016.01.22 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 3.41%.
+# Updated: 2016.01.22 / Checked: 2016.08.15
 
 31.193.128.0/20 Deny Cloud
 85.234.128.0/19 Deny Cloud
@@ -5814,8 +5819,8 @@ Tag: eUKhost LTD
 
 
 # ASN 8669 ("Total Web Solutions Ltd").
-# Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.22 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 5.93%.
+# Updated: 2016.01.22 / Checked: 2016.08.15
 
 195.206.160.0/23 Deny Cloud
 195.206.162.0/24 Deny Cloud
@@ -13768,7 +13773,7 @@ Tag: Azure
 
 # ---
 # Adapted from ZeuS tracker IPs.
-# Updated: 2016.07.31
+# Updated: 2016.08.15
 # Refer zeustracker.abuse.ch/blocklist.php?download=ipblocklist
 
 37.123.99.188/32 Deny Generic
@@ -13780,6 +13785,7 @@ Tag: Azure
 60.241.184.209/32 Deny Generic
 64.85.233.8/32 Deny Generic
 64.127.71.73/32 Deny Generic
+65.182.101.221/32 Deny Generic
 66.45.245.150/32 Deny Generic
 80.65.93.241/32 Deny Generic
 83.15.254.242/32 Deny Generic
@@ -13790,6 +13796,7 @@ Tag: Azure
 87.237.198.245/32 Deny Generic
 87.254.167.37/32 Deny Generic
 94.103.36.55/32 Deny Generic
+98.124.243.37/32 Deny Generic
 98.124.243.47/32 Deny Generic
 98.131.185.136/32 Deny Generic
 101.0.89.3/32 Deny Generic
@@ -13820,11 +13827,11 @@ Tag: Azure
 180.182.234.200/32 Deny Generic
 185.25.117.49/32 Deny Generic
 185.25.119.84/32 Deny Generic
-185.80.129.62/32 Deny Generic
 185.99.133.163/32 Deny Generic
 186.64.120.104/32 Deny Generic
 186.250.243.100/32 Deny Generic
 187.174.252.247/32 Deny Generic
+188.209.52.208/32 Deny Generic
 188.219.154.228/32 Deny Generic
 188.241.140.212/32 Deny Generic
 188.241.140.222/32 Deny Generic
@@ -13832,9 +13839,9 @@ Tag: Azure
 190.15.192.25/32 Deny Generic
 190.128.29.1/32 Deny Generic
 192.64.11.244/32 Deny Generic
-193.19.118.159/32 Deny Generic
 193.146.210.69/32 Deny Generic
 193.201.227.142/32 Deny Generic
+194.58.56.45/32 Deny Generic
 194.58.103.199/32 Deny Generic
 195.20.40.123/32 Deny Generic
 195.20.41.233/32 Deny Generic
@@ -13842,7 +13849,6 @@ Tag: Azure
 195.20.44.100/32 Deny Generic
 195.20.44.109/32 Deny Generic
 195.20.46.116/32 Deny Generic
-195.242.161.117/32 Deny Generic
 198.245.202.92/32 Deny Generic
 199.7.234.100/32 Deny Generic
 199.187.129.193/32 Deny Generic
@@ -13865,7 +13871,7 @@ Tag: Azure
 217.195.200.70/32 Deny Generic
 222.29.197.232/32 Deny Generic
 Tag: ZeuS C&C
-Expires: 2016.10.31
+Expires: 2016.11.15
 
 
 # ---

@@ -104,10 +104,29 @@ block_proxies=false
 block_spam=true
 
 [recaptcha]
-; Future feature (it won't yet work as expected, so, just ignore it for now).
-; usemode=0
-; sitekey=''
-; secret=''
+; 0 = reCAPTCHA is completely disabled (default).
+; 1 = reCAPTCHA is enabled for all signatures.
+; 2 = reCAPTCHA is enabled only for signatures belonging to sections specially
+;     marked as reCAPTCHA-enabled within the signature files.
+; (Any other value will be treated in the same way as 0).
+usemode=0
+; Specifies whether hashes should be locked to specific IPs. False = Cookies
+; and hashes CAN be used across multiple IPs (default). True = Cookies and
+; hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+lockip=false
+; This value should correspond to the "Site key" for your reCAPTCHA, which can
+; be found within the reCAPTCHA dashboard.
+sitekey=''
+; This value should correspond to the "Secret key" for your reCAPTCHA, which
+; can be found within the reCAPTCHA dashboard.
+secret=''
+; In order to remember when a user has successfully passed a reCAPTCHA
+; instance, for future page requests, CIDRAM generates a standard HTTP cookie
+; containing a hash which corresponds to an internal record containing that
+; same hash. Future page requests will use these corresponding hashes to
+; authenticate that a user has previously already passed a reCAPTCHA instance.
+; For how many hours should these hashes remain valid? Default = 720 (1 month).
+expiry=720
 
 [template_data]
 ; Relates to the HTML output used to generate the "Access Denied" page. If

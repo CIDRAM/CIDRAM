@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2016.08.12).
+ * This file: Korean language data (last modified: 2016.08.15).
  *
  * @todo Most of these confirmed to be incorrect; Changes required and pending.
  */
@@ -25,6 +25,7 @@ $CIDRAM['lang']['field_datetime'] = '일/월/년/시간: ';
 $CIDRAM['lang']['field_id'] = '신분증: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP 주소: ';
 $CIDRAM['lang']['field_query'] = '쿼리: ';
+$CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA 상태: ';
 $CIDRAM['lang']['field_referrer'] = '추천자: ';
 $CIDRAM['lang']['field_rURI'] = 'URI 재구성 된: ';
 $CIDRAM['lang']['field_scriptversion'] = '스크립트 버전: ';
@@ -40,6 +41,9 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = '왜 차단 되었습니까: 클라우�
 $CIDRAM['lang']['ReasonMessage_Generic'] = '왜 차단 되었습니까: IP가 블랙리스트에 게재되어 있습니다 / 위험한 네트워크.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = '왜 차단 되었습니까: 프록시 서비스 연결.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '왜 차단 되었습니까: 스팸/위험한 네트워크.';
+$CIDRAM['lang']['recaptcha_disabled'] = '오프라인.';
+$CIDRAM['lang']['recaptcha_enabled'] = '온라인.';
+$CIDRAM['lang']['recaptcha_failed'] = '실패!';
 $CIDRAM['lang']['recaptcha_message'] = '이 페이지에 다시 액세스하기 위해, 제공되는 CAPTCHA를 완료합니다 및 송신 버튼을 누릅니다.';
 $CIDRAM['lang']['recaptcha_submit'] = '송신';
 $CIDRAM['lang']['Short_BadIP'] = '잘못된 IP';

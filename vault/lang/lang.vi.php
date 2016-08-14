@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.08.12).
+ * This file: Vietnamese language data (last modified: 2016.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,7 @@ $CIDRAM['lang']['field_datetime'] = 'Ngày / Thời gian: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'Địa chỉ IP: ';
 $CIDRAM['lang']['field_query'] = 'Truy vấn: ';
+$CIDRAM['lang']['field_reCAPTCHA_state'] = 'Tình trạng reCAPTCHA: ';
 $CIDRAM['lang']['field_referrer'] = 'Trang giới thiệu: ';
 $CIDRAM['lang']['field_rURI'] = 'URI được xây dựng lại: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Phiên bản kịch bản: ';
@@ -38,6 +39,9 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Truy cập của bạn vào trang này
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một mạng lưới được liệt kê vào danh sách đen được sử dụng bởi trang web này.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ proxy, và kết nối đến trang web này từ dịch vụ proxy không được phép bởi chủ sở hữu trang web.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn thuộc về một mạng lưới coi có nguy cơ cao đối với thư rác.';
+$CIDRAM['lang']['recaptcha_disabled'] = 'Tắt.';
+$CIDRAM['lang']['recaptcha_enabled'] = 'Trên.';
+$CIDRAM['lang']['recaptcha_failed'] = 'Thất bại!';
 $CIDRAM['lang']['recaptcha_message'] = 'Để lấy lại truy cập trang này, xin điền CAPTCHA được cung cấp dưới đây và nhấn nút gửi.';
 $CIDRAM['lang']['recaptcha_submit'] = 'Gửi';
 $CIDRAM['lang']['Short_BadIP'] = 'IP không hợp lệ';

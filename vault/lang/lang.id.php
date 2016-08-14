@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.08.12).
+ * This file: Indonesian language data (last modified: 2016.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,7 @@ $CIDRAM['lang']['field_datetime'] = 'Tanggal/Waktu: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'Alamat IP: ';
 $CIDRAM['lang']['field_query'] = 'Kueri: ';
+$CIDRAM['lang']['field_reCAPTCHA_state'] = 'Status reCAPTCHA: ';
 $CIDRAM['lang']['field_referrer'] = 'Halaman Mengacu: ';
 $CIDRAM['lang']['field_rURI'] = 'Direkonstruksi URI: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Versi Skrip: ';
@@ -38,6 +39,9 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Akses Anda ke halaman ini ditolak kare
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan terdaftar pada daftar hitam yang digunakan oleh situs ini.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai milik dari layanan proxy, dan menghubungkan dari layanan proxy ke situs ini tidak diizinkan oleh pemilik situs.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan dianggap berisiko tinggi untuk spam.';
+$CIDRAM['lang']['recaptcha_disabled'] = 'Dinonaktifkan.';
+$CIDRAM['lang']['recaptcha_enabled'] = 'Diaktifkan.';
+$CIDRAM['lang']['recaptcha_failed'] = 'Gagal!';
 $CIDRAM['lang']['recaptcha_message'] = 'Dalam rangka untuk mendapatkan kembali akses ke halaman ini, melengkapi CAPTCHA disediakan di bawah dan tekan tombol mengirim.';
 $CIDRAM['lang']['recaptcha_submit'] = 'Mengirim';
 $CIDRAM['lang']['Short_BadIP'] = 'IP tidak valid!';

@@ -17,6 +17,19 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   avoid conflicts associated with caching plugins and other caching systems
   which could sometimes prevent requests from being blocked.
 
+- [2016.08.14; NEW FEATURE; Maikuolan]: Added reCAPTCHA support to CIDRAM! It's
+  now (optionally) possible to allow users to bypass the normal "Access Denied"
+  page by submitting a reCAPTCHA form. This should help mitigate some of the
+  risks associated with blocking any CIDRs that may potentially carry human
+  users/traffic. Due to some of the functionality required by this feature, the
+  minimum version of PHP required in order to execute CIDRAM has been raised
+  from "5.3.0" to "5.5.0" (that said though, "5.5.0" itself reached offial "End
+  of Life" status 24 days ago, so it would extremely advisable for users to not
+  be using any versions of PHP older than that version anyhow). Additionally,
+  this feature has resulted in the creation of some new configuration
+  directives and some new files added to the vault (but the changes are
+  entirely backwards-compatible).
+
 === Version/Release 0.4.1 ===
 PATCH RELEASE.
 

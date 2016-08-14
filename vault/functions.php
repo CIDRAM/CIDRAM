@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.08.13).
+ * This file: Functions file (last modified: 2016.08.15).
  */
 
 /**
@@ -34,7 +34,7 @@ $CIDRAM['ReadFile'] = function ($f) {
     if ($s > 0) {
         $fh = fopen($f, 'rb');
         $r = 0;
-        while($r < $s) {
+        while ($r < $s) {
             $d .= fread($fh, $bsize);
             $r++;
         }
@@ -120,7 +120,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
     }
     $IgnoreFile = "\n" . $IgnoreFile . "\n";
     $PosB = -1;
-    while(true) {
+    while (true) {
         $PosA = strpos($IgnoreFile, "\nIgnore ", ($PosB + 1));
         if ($PosA === false) {
             break;
@@ -458,7 +458,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
         $Files[$FileIndex] = "\n" . $Files[$FileIndex] . "\n";
         for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
             $PosB = -1;
-            while(true) {
+            while (true) {
                 $PosA = strpos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
                 if ($PosA === false) {
                     break;
@@ -850,4 +850,81 @@ $CIDRAM['Request'] = function ($URI, $Params = '') use (&$CIDRAM) {
 
     /** Return the results of the request. */
     return $Response;
+};
+
+/**
+ * Used to generate new salts when necessary, which may be occasionally used by
+ * some specific optional peripheral features (note: should not be considered
+ * cryptographically secure; especially so for versions of PHP < 7).
+ *
+ * @return string Salt.
+ */
+$CIDRAM['GenerateSalt'] = function () {
+    static $MinLen = 32;
+    static $MaxLen = 72;
+    static $MinChr = 1;
+    static $MaxChr = 255;
+    $Salt = '';
+    if (function_exists('random_int')) {
+        try {
+            $Length = random_int($MinLen, $MaxLen);
+        } catch (\Exception $e) {
+            $Length = rand($MinLen, $MaxLen);
+        }
+    } else {
+        $Length = rand($MinLen, $MaxLen);
+    }
+    if (function_exists('random_bytes')) {
+        try {
+            $Salt = random_bytes($Length);
+        } catch (\Exception $e) {
+            $Salt = '';
+        }
+    }
+    if (empty($Salt)) {
+        if (function_exists('random_int')) {
+            try {
+                for ($Index = 0; $Index < $Length; $Index++) {
+                    $Salt .= chr(random_int($MinChr, $MaxChr));
+                }
+            } catch (\Exception $e) {
+                $Salt = '';
+                for ($Index = 0; $Index < $Length; $Index++) {
+                    $Salt .= chr(rand($MinChr, $MaxChr));
+                }
+            }
+        } else {
+            for ($Index = 0; $Index < $Length; $Index++) {
+                $Salt .= chr(rand($MinChr, $MaxChr));
+            }
+        }
+    }
+    return $Salt;
+};
+
+/**
+ * Meld together two or more strings by padding to equal length and
+ * bitshifting each by each other.
+ *
+ * @return string The melded string.
+ */
+$CIDRAM['Meld'] = function () {
+    $Strings = func_get_args();
+    $StrLens = array_map('strlen', $Strings);
+    $WalkLen = max($StrLens);
+    $Count = count($Strings);
+    for ($Index = 0; $Index < $Count; $Index++) {
+        if ($StrLens[$Index] < $WalkLen) {
+            $Strings[$Index] = str_pad($Strings[$Index], $WalkLen, "\xff");
+        }
+    }
+    for ($Lt = $Strings[0], $Index = 1, $Meld = ''; $Index < $Count; $Index++, $Meld = '') {
+        $Rt = $Strings[$Index];
+        for ($Caret = 0; $Caret < $WalkLen; $Caret++) {
+            $Meld .= $Lt[$Caret] ^ $Rt[$Caret];
+        }
+        $Lt = $Meld;
+    }
+    $Meld = $Lt;
+    return $Meld;
 };

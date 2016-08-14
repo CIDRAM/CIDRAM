@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.13).
+ * This file: The loader (last modified: 2016.08.15).
  */
 
 /**
@@ -170,6 +170,10 @@ if (!defined('CIDRAM')) {
     if (!isset($CIDRAM['Config']['recaptcha']['usemode'])) {
         $CIDRAM['Config']['recaptcha']['usemode'] = 0;
     }
+    /** Fallback for missing "lockip" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['lockip'])) {
+        $CIDRAM['Config']['recaptcha']['lockip'] = false;
+    }
     /** Fallback for missing "sitekey" configuration directive. */
     if (!isset($CIDRAM['Config']['recaptcha']['sitekey'])) {
         $CIDRAM['Config']['recaptcha']['sitekey'] = '';
@@ -177,6 +181,10 @@ if (!defined('CIDRAM')) {
     /** Fallback for missing "secret" configuration directive. */
     if (!isset($CIDRAM['Config']['recaptcha']['secret'])) {
         $CIDRAM['Config']['recaptcha']['secret'] = '';
+    }
+    /** Fallback for missing "expiry" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['expiry'])) {
+        $CIDRAM['Config']['recaptcha']['expiry'] = 720;
     }
     /** This should always have an initial state of false. */
     $CIDRAM['Config']['recaptcha']['enabled'] = false;
@@ -229,6 +237,8 @@ if (!defined('CIDRAM')) {
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_proxies']);
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_spam']);
     $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['usemode']);
+    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockip']);
+    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['expiry']);
 
     if (!$CIDRAM['CIDRAM_sapi']) {
 

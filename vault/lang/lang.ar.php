@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.08.15).
+ * This file: Arabic language data (last modified: 2016.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,10 +40,12 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'الموقع لا يسمح بالخد�
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'تم رفض الوصول، عنوان ال IP الخاص بك مدرج بالقائمة السوداء للموقع.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'الموقع لا يسمح بخدمة بروكسي.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'تم رفض الوصول، عنوان ال IP غير مرغوب فيه.';
+$CIDRAM['lang']['recaptcha_cookie_warning'] = 'إشعار: CIDRAM يستخدم الكوكي أن نتذكر عندما يقوم المستخدمون إكمال CAPTCHA. من خلال استكمال CAPTCHA، فإنك موافقتك على الكوكيز.';
 $CIDRAM['lang']['recaptcha_disabled'] = 'تعطيل.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'تمكين.';
 $CIDRAM['lang']['recaptcha_failed'] = 'فشل!';
 $CIDRAM['lang']['recaptcha_message'] = 'من أجل استعادة الوصول إلى هذه الصفحة، يرجى إكمال CAPTCHA زودت أدناه واضغط على زر الإرسال.';
+$CIDRAM['lang']['recaptcha_passed'] = 'نجحت!';
 $CIDRAM['lang']['recaptcha_submit'] = 'الإرسال';
 $CIDRAM['lang']['Short_BadIP'] = 'IP غير صالح';
 $CIDRAM['lang']['Short_Bogon'] = 'المريخ IP';

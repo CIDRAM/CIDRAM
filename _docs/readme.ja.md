@@ -105,6 +105,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
+/vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/ipv4.dat | IPv4のシグネチャファイル。
 /vault/ipv4_custom.dat.RenameMe | IPv4のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/ipv6.dat | IPv6のシグネチャファイル。
@@ -141,11 +142,12 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.zh.cli.php | CLIの簡体字中国語言語データ。
 /vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/outgen.php | 出力発生器。
-/vault/template.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
-/vault/template_custom.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/rules_as6939.php | カスタムルールは、AS6939のためのファイル。
 /vault/rules_softlayer.php | カスタムルールは、Soft Layerのためのファイル。
 /vault/rules_specific.php | カスタムルールは、いくつかの特定のCIDRのためのファイル。
+/vault/salt.dat | ソルトファイル（一部の周辺機能によって使用されます）。
+/vault/template.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template_custom.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 
 ---
 
@@ -218,6 +220,38 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
+
+####"recaptcha" （リーキャプチャ、カテゴリ）
+Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+
+To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+
+"usemode"
+- Defines how CIDRAM should use reCAPTCHA.
+- 0 = reCAPTCHA is completely disabled (default).
+- 1 = reCAPTCHA is enabled for all signatures.
+- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
+- (Any other value will be treated in the same way as 0).
+
+"lockip"
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+
+"sitekey"
+- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"secret"
+- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"expiry"
+- In order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash. Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. For how many hours should these hashes remain valid? Default = 720 (1 month).
+
+"logfile"
+- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank. Example: logfile='recaptcha.txt'
+
+*有用な先端： あなたがしたい場合は、ログファイルの名前に日付/時刻情報を付加することができます、名前にこれらを含めることで:完全な年のため`{yyyy}`、省略された年のため`{yy}`、月`{mm}`、日`{dd}`、時間`{hh}`。*
+
+*例:*
+- *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 ####"template_data" （テンプレート・データ、カテゴリ）
 テンプレートとテーマ用のディレクティブ／変数。
@@ -324,4 +358,4 @@ Ignore Section 1
 ---
 
 
-最終アップデート： 2016年08月10日。
+最終アップデート： 2016年08月16日。

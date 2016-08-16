@@ -104,6 +104,14 @@ block_proxies=false
 block_spam=true
 
 [recaptcha]
+; Optionally, you can provide users with a way to bypass the "Access Denied"
+; page by way of completing a reCAPTCHA instance, if you want to do so. This
+; can help to mitigate some of the risks associated with false positives in
+; those situations where we're not entirely sure whether a request has
+; originated from a machine or a human.
+; To obtain a "site key" and a "secret key" (required for using reCAPTCHA),
+; please go to: https://developers.google.com/recaptcha/
+; "usemode" defines how CIDRAM should use reCAPTCHA.
 ; 0 = reCAPTCHA is completely disabled (default).
 ; 1 = reCAPTCHA is enabled for all signatures.
 ; 2 = reCAPTCHA is enabled only for signatures belonging to sections specially
@@ -114,10 +122,10 @@ usemode=0
 ; and hashes CAN be used across multiple IPs (default). True = Cookies and
 ; hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
 lockip=false
-; This value should correspond to the "Site key" for your reCAPTCHA, which can
+; This value should correspond to the "site key" for your reCAPTCHA, which can
 ; be found within the reCAPTCHA dashboard.
 sitekey=''
-; This value should correspond to the "Secret key" for your reCAPTCHA, which
+; This value should correspond to the "secret key" for your reCAPTCHA, which
 ; can be found within the reCAPTCHA dashboard.
 secret=''
 ; In order to remember when a user has successfully passed a reCAPTCHA
@@ -127,6 +135,13 @@ secret=''
 ; authenticate that a user has previously already passed a reCAPTCHA instance.
 ; For how many hours should these hashes remain valid? Default = 720 (1 month).
 expiry=720
+; Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile.
+; If no, leave this variable blank. Example: logfile='recaptcha.txt'
+; Useful tip: If you want, you can append date/time information to the name of
+; your logfile by including these in the name: {yyyy} for complete year, {yy}
+; for abbreviated year, {mm} for month, {dd} for day, {hh} for hour.
+; Example: logfile='recaptcha.{yyyy}-{mm}-{dd}.txt'
+logfile=''
 
 [template_data]
 ; Relates to the HTML output used to generate the "Access Denied" page. If

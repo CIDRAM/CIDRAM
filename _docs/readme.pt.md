@@ -105,6 +105,7 @@ Arquivo | Descrição
 /vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para CIDRAM, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
 /vault/config.php | Módulo de configuração.
 /vault/functions.php | Arquivo de funções.
+/vault/hashes.dat | Contém uma lista de hashes aceitos (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
 /vault/ipv4.dat | Arquivo de assinaturas para IPv4.
 /vault/ipv4_custom.dat.RenameMe | Arquivo de assinaturas personalizadas para IPv4 (renomear para ativar).
 /vault/ipv6.dat | Arquivo de assinaturas para IPv6.
@@ -141,11 +142,12 @@ Arquivo | Descrição
 /vault/lang/lang.zh.cli.php | Linguagem dados Chinês (simplificado) para CLI.
 /vault/lang/lang.zh.php | Linguagem dados Chinês (simplificado).
 /vault/outgen.php | Gerador de saída.
-/vault/template.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
-/vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/rules_as6939.php | Arquivo de regras personalizadas para AS6939.
 /vault/rules_softlayer.php | Arquivo de regras personalizadas para Soft Layer.
 /vault/rules_specific.php | Arquivo de regras personalizadas alguns CIDRs específicos.
+/vault/salt.dat | Arquivo de sal (utilizada por algumas funcionalidades periférica).
+/vault/template.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
+/vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 
 ---
 
@@ -217,6 +219,38 @@ Configuração por assinaturas.
 
 "block_spam"
 - Bloquear CIDRs identificado como sendo de alto risco para spam? A menos que você tiver problemas ao fazê-lo, geralmente, esta deve sempre ser definido como true.
+
+####"recaptcha" (Categoria)
+Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+
+To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+
+"usemode"
+- Defines how CIDRAM should use reCAPTCHA.
+- 0 = reCAPTCHA is completely disabled (default).
+- 1 = reCAPTCHA is enabled for all signatures.
+- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
+- (Any other value will be treated in the same way as 0).
+
+"lockip"
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+
+"sitekey"
+- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"secret"
+- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"expiry"
+- In order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash. Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. For how many hours should these hashes remain valid? Default = 720 (1 month).
+
+"logfile"
+- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank. Example: logfile='recaptcha.txt'
+
+*Dica útil: Se você quiser, você pode acrescentar informações tempo/hora aos nomes dos seus arquivos de registro através incluir estas em nome: `{yyyy}` para o ano completo, `{yy}` para o ano abreviado, `{mm}` por mês, `{dd}` por dia, `{hh}` por hora.*
+
+*Exemplos:*
+- *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 ####"template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
@@ -323,4 +357,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 10 Agosto 2016 (2016.08.10).
+Última Atualização: 16 Agosto 2016 (2016.08.16).

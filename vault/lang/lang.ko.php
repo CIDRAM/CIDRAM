@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2016.08.15).
+ * This file: Korean language data (last modified: 2016.08.16).
  *
  * @todo Most of these confirmed to be incorrect; Changes required and pending.
  */
@@ -41,10 +41,12 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = '왜 차단 되었습니까: 클라우�
 $CIDRAM['lang']['ReasonMessage_Generic'] = '왜 차단 되었습니까: IP가 블랙리스트에 게재되어 있습니다 / 위험한 네트워크.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = '왜 차단 되었습니까: 프록시 서비스 연결.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '왜 차단 되었습니까: 스팸/위험한 네트워크.';
+$CIDRAM['lang']['recaptcha_cookie_warning'] = '주의: CIDRAM uses a cookie to remember when users complete the CAPTCHA. By completing the CAPTCHA, you give your consent for a cookie to be created and stored by your browser.';
 $CIDRAM['lang']['recaptcha_disabled'] = '오프라인.';
 $CIDRAM['lang']['recaptcha_enabled'] = '온라인.';
 $CIDRAM['lang']['recaptcha_failed'] = '실패!';
 $CIDRAM['lang']['recaptcha_message'] = '이 페이지에 다시 액세스하기 위해, 제공되는 CAPTCHA를 완료합니다 및 송신 버튼을 누릅니다.';
+$CIDRAM['lang']['recaptcha_passed'] = '합격!';
 $CIDRAM['lang']['recaptcha_submit'] = '송신';
 $CIDRAM['lang']['Short_BadIP'] = '잘못된 IP';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/화성의 IP';

@@ -106,6 +106,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令为CIDRAM，告诉它什么做和怎么正确地经营（重命名为激活）。
 /vault/config.php | 配置处理文件。
 /vault/functions.php | 功能处理文件（必不可少）。
+/vault/hashes.dat | 包含接受哈希表（相关的reCAPTCHA功能；只有生成如果reCAPTCHA功能被启用）。
 /vault/ipv4.dat | IPv4签名文件。
 /vault/ipv4_custom.dat.RenameMe | IPv4定制签名文件（重命名为激活）。
 /vault/ipv6.dat | IPv6签名文件。
@@ -142,11 +143,12 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/lang/lang.zh.cli.php | 中文（简体）语言数据为CLI。
 /vault/lang/lang.zh.php | 中文（简体）语言数据。
 /vault/outgen.php | 输出发生器。
-/vault/template.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
-/vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/rules_as6939.php | 定制规则文件为 AS6939。
 /vault/rules_softlayer.php | 定制规则文件为 Soft Layer。
 /vault/rules_specific.php | 定制规则文件为一些特定的CIDR。
+/vault/salt.dat | 盐文件（使用由一些外围功能）。
+/vault/template.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
+/vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 
 ---
 
@@ -218,6 +220,38 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 “block_spam”
 - 阻止高风险垃圾邮件CIDR吗？除非您遇到问题当这样做，通常，这应该被设置为“true”（真）。
+
+####“recaptcha” （类别）
+Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+
+To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+
+"usemode"
+- Defines how CIDRAM should use reCAPTCHA.
+- 0 = reCAPTCHA is completely disabled (default).
+- 1 = reCAPTCHA is enabled for all signatures.
+- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
+- (Any other value will be treated in the same way as 0).
+
+"lockip"
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+
+"sitekey"
+- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"secret"
+- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"expiry"
+- In order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash. Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. For how many hours should these hashes remain valid? Default = 720 (1 month).
+
+"logfile"
+- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank. Example: logfile='recaptcha.txt'
+
+*有用的建议：如果您想，可以追加日期/时间信息至附加到你的日志文件的名称通过包括这些中的名称： `{yyyy}` 为今年完整， `{yy}` 为今年缩写， `{mm}` 为今月， `{dd}` 为今日， `{hh}` 为今小时。*
+
+*例子：
+- *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 ####“template_data” （类别）
 指令和变量为模板和主题。
@@ -324,4 +358,4 @@ Ignore Section 1
 ---
 
 
-最后更新：2016年8月10日。
+最后更新：2016年8月16日。

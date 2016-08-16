@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.15).
+ * This file: The loader (last modified: 2016.08.16).
  */
 
 /**
@@ -185,6 +185,10 @@ if (!defined('CIDRAM')) {
     /** Fallback for missing "expiry" configuration directive. */
     if (!isset($CIDRAM['Config']['recaptcha']['expiry'])) {
         $CIDRAM['Config']['recaptcha']['expiry'] = 720;
+    }
+    /** Fallback for missing "logfile" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['logfile'])) {
+        $CIDRAM['Config']['recaptcha']['logfile'] = '';
     }
     /** This should always have an initial state of false. */
     $CIDRAM['Config']['recaptcha']['enabled'] = false;

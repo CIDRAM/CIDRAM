@@ -105,6 +105,7 @@ File | Description
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/functions.php | Functions file (essential).
+/vault/hashes.dat | Contains a list of accepted hashes (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
 /vault/ipv4.dat | IPv4 signatures file.
 /vault/ipv4_custom.dat.RenameMe | IPv4 custom signatures file (rename to activate).
 /vault/ipv6.dat | IPv6 signatures file.
@@ -141,11 +142,12 @@ File | Description
 /vault/lang/lang.zh.cli.php | Chinese (simplified) language data for CLI.
 /vault/lang/lang.zh.php | Chinese (simplified) language data.
 /vault/outgen.php | Output generator.
-/vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/rules_as6939.php | Custom rules file for AS6939.
 /vault/rules_softlayer.php | Custom rules file for Soft Layer.
 /vault/rules_specific.php | Custom rules file for some specific CIDRs.
+/vault/salt.dat | Salt file (used by some peripheral functionality).
+/vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
+/vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 
 ---
 
@@ -217,6 +219,38 @@ Signatures configuration.
 
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
+
+####"recaptcha" (Category)
+Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+
+To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+
+"usemode"
+- Defines how CIDRAM should use reCAPTCHA.
+- 0 = reCAPTCHA is completely disabled (default).
+- 1 = reCAPTCHA is enabled for all signatures.
+- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
+- (Any other value will be treated in the same way as 0).
+
+"lockip"
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+
+"sitekey"
+- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"secret"
+- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"expiry"
+- In order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash. Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. For how many hours should these hashes remain valid? Default = 720 (1 month).
+
+"logfile"
+- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank. Example: logfile='recaptcha.txt'
+
+*Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name: `{yyyy}` for complete year, `{yy}` for abbreviated year, `{mm}` for month, `{dd}` for day, `{hh}` for hour.*
+
+*Examples:*
+- *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 ####"template_data" (Category)
 Directives/Variables for templates and themes.
@@ -323,4 +357,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-Last Updated: 10th August 2016 (2016.08.10).
+Last Updated: 16th August 2016 (2016.08.16).

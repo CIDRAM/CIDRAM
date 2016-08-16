@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2016.08.15).
+ * This file: Chinese (simplified) language data (last modified: 2016.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -39,10 +39,12 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = '您的访问这个页面被拒绝因�
 $CIDRAM['lang']['ReasonMessage_Generic'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络在黑名单中所列使用本网站。';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于代理服务，和来自这些IP连接不是由网站所有者允许。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络被认为是高风险的垃圾邮件。';
+$CIDRAM['lang']['recaptcha_cookie_warning'] = '请注意：CIDRAM使用cookie来记得当用户完成CAPTCHA。通过完成CAPTCHA，您同意的将要创建的cookie并通过浏览器保存。';
 $CIDRAM['lang']['recaptcha_disabled'] = '关掉。';
 $CIDRAM['lang']['recaptcha_enabled'] = '打开。';
 $CIDRAM['lang']['recaptcha_failed'] = '失败！';
 $CIDRAM['lang']['recaptcha_message'] = '为了重新进入此页面，请填写以下提供的CAPTCHA并按提交按钮。';
+$CIDRAM['lang']['recaptcha_passed'] = '成功！';
 $CIDRAM['lang']['recaptcha_submit'] = '提交';
 $CIDRAM['lang']['Short_BadIP'] = '无效的IP！';
 $CIDRAM['lang']['Short_Bogon'] = '火星IP';

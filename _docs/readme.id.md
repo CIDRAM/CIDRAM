@@ -105,6 +105,7 @@ Data | Deskripsi
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
 /vault/functions.php | Modul fungsi (utama).
+/vault/hashes.dat | Berisi daftar hash diterima (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
 /vault/ipv4.dat | File tanda tangan IPv4.
 /vault/ipv4_custom.dat.RenameMe | File tanda tangan IPv4 disesuaikan (mengubah nama untuk mengaktifkan).
 /vault/ipv6.dat | File tanda tangan IPv6.
@@ -141,11 +142,12 @@ Data | Deskripsi
 /vault/lang/lang.zh.cli.php | File Bahasa Cina sederhana untuk CLI.
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/outgen.php | Output generator.
-/vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
-/vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/rules_as6939.php | File aturan disesuaikan untuk AS6939.
 /vault/rules_softlayer.php | File aturan disesuaikan untuk Soft Layer.
 /vault/rules_specific.php | File aturan disesuaikan untuk beberapa CIDR spesifik.
+/vault/salt.dat | File garam (digunakan oleh beberapa fungsi periferal).
+/vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
+/vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 
 ---
 
@@ -217,6 +219,38 @@ Konfigurasi untuk tanda tangan.
 
 "block_spam"
 - Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar.
+
+####"recaptcha" (Kategori)
+Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+
+To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+
+"usemode"
+- Defines how CIDRAM should use reCAPTCHA.
+- 0 = reCAPTCHA is completely disabled (default).
+- 1 = reCAPTCHA is enabled for all signatures.
+- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
+- (Any other value will be treated in the same way as 0).
+
+"lockip"
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+
+"sitekey"
+- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"secret"
+- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+
+"expiry"
+- In order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash. Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. For how many hours should these hashes remain valid? Default = 720 (1 month).
+
+"logfile"
+- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank. Example: logfile='recaptcha.txt'
+
+*Tip berguna: Jika Anda mau, Anda dapat menambahkan informasi tanggal/waktu untuk nama-nama file log Anda oleh termasuk ini dalam nama: `{yyyy}` untuk tahun lengkap, `{yy}` untuk tahun disingkat, `{mm}` untuk bulan, `{dd}` untuk hari, `{hh}` untuk jam.*
+
+*Contoh:*
+- *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 ####"template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
@@ -323,4 +357,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 10 Agustus 2016 (2016.08.10).
+Terakhir Diperbarui: 16 Agustus 2016 (2016.08.16).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.08.15).
+ * This file: French language data (last modified: 2016.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -39,10 +39,12 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Votre accès à cette page a été ref
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Votre accès à cette page a été refusée parce que votre IP adresse appartient à un réseau figurant sur une liste noire utilisée par ce site.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme appartenant à un service de proxy, et la connexion des services de proxy à cette site est pas autorisée par le propriétaire du site.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Votre accès à cette page a été refusée parce que votre IP adresse appartient à un réseau considéré comme à haut risque pour le spam.';
+$CIDRAM['lang']['recaptcha_cookie_warning'] = 'Note: CIDRAM fait usage d\'un cookie pour se rappeler quand les utilisateurs complètent le CAPTCHA. En remplissant le CAPTCHA, vous donnez votre consentement à un cookie pour être créé et stocké par votre navigateur web.';
 $CIDRAM['lang']['recaptcha_disabled'] = 'Désactivé.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Activée.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Échoué!';
 $CIDRAM['lang']['recaptcha_message'] = 'Afin de retrouver l\'accès à cette page, s\'il vous plaît compléter le CAPTCHA fourni ci-dessous et appuyez sur le bouton d\'envoi.';
+$CIDRAM['lang']['recaptcha_passed'] = 'Passé!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Envoi';
 $CIDRAM['lang']['Short_BadIP'] = 'Invalide IP!';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';

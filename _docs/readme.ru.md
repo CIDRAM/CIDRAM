@@ -142,10 +142,11 @@ CIDRAM должен автоматически блокировать нежел
 /vault/lang/lang.zh.cli.php | Китайском упрощенный языковые файлы для CLI (Способ Командных Строк).
 /vault/lang/lang.zh.php | Китайском упрощенный языковые файлы.
 /vault/outgen.php | Выход генератора.
+/vault/recaptcha.php | Модуль reCAPTCHA.
 /vault/rules_as6939.php | Пользовательские правила файл для AS6939.
 /vault/rules_softlayer.php | Пользовательские правила файл для Soft Layer.
 /vault/rules_specific.php | Пользовательские правила файл для некоторые специфические CIDRs.
-/vault/salt.dat | Соль файл (используется некоторыми периферического функциональностью).
+/vault/salt.dat | Соль файл (используется некоторыми периферического функциональностью; генерируется только при необходимости).
 /vault/template.html | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована CIDRAM (сообщение, которое будет показано пользователю).
 /vault/template_custom.html | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована CIDRAM (сообщение, которое будет показано пользователю).
 
@@ -223,6 +224,8 @@ CIDRAM должен автоматически блокировать нежел
 ####"recaptcha" (Категория)
 Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
 
+Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+
 To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
@@ -234,6 +237,10 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 
 "lockip"
 - Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
+- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+
+"lockuser"
+- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
 
 "sitekey"
 - This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
@@ -242,10 +249,10 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 - This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
 
 "expiry"
-- In order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash. Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. For how many hours should these hashes remain valid? Default = 720 (1 month).
+- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
 
 "logfile"
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank. Example: logfile='recaptcha.txt'
+- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
 
 *Полезный совет: Если ты хочешь, вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
 
@@ -357,4 +364,4 @@ Ignore Section 1
 ---
 
 
-Последнее обновление: 16 Август 2016 (2016.08.16).
+Последнее обновление: 17 Август 2016 (2016.08.17).

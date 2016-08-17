@@ -30,6 +30,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   directives and some new files added to the vault (but the changes are
   entirely backwards-compatible).
 
+- [2016.08.17; Minor code change; Maikuolan]: Improved SoC for the reCAPTCHA
+  feature (split into its own file and improved modularisation); Added code to
+  allow certain specific HTML tags within the block information (requested by
+  some users; these would've previously been broken by the anti-XSS
+  sanitisation); Added some additional configuration options for the reCAPTCHA
+  feature.
+
 === Version/Release 0.4.1 ===
 PATCH RELEASE.
 

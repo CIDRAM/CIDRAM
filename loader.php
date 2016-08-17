@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.16).
+ * This file: The loader (last modified: 2016.08.17).
  */
 
 /**
@@ -174,6 +174,10 @@ if (!defined('CIDRAM')) {
     if (!isset($CIDRAM['Config']['recaptcha']['lockip'])) {
         $CIDRAM['Config']['recaptcha']['lockip'] = false;
     }
+    /** Fallback for missing "lockuser" configuration directive. */
+    if (!isset($CIDRAM['Config']['recaptcha']['lockuser'])) {
+        $CIDRAM['Config']['recaptcha']['lockuser'] = true;
+    }
     /** Fallback for missing "sitekey" configuration directive. */
     if (!isset($CIDRAM['Config']['recaptcha']['sitekey'])) {
         $CIDRAM['Config']['recaptcha']['sitekey'] = '';
@@ -242,6 +246,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_spam']);
     $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['usemode']);
     $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockip']);
+    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockuser']);
     $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['expiry']);
 
     if (!$CIDRAM['CIDRAM_sapi']) {

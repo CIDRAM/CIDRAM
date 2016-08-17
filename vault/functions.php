@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.08.15).
+ * This file: Functions file (last modified: 2016.08.18).
  */
 
 /**
@@ -801,13 +801,21 @@ $CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
  * Fix incorrect typecasting for some for some variables that sometimes default
  * to strings instead of booleans or integers.
  */
-$CIDRAM['AutoType'] = function (&$var) {
-    if ($var === 'true') {
-        $var = true;
-    } elseif ($var === 'false') {
-        $var = false;
-    } elseif ($var !== true && $var !== false) {
-        $var = (int)$var;
+$CIDRAM['AutoType'] = function (&$Var, $Type = '') {
+    if ($Type === 'Bool') {
+        if ($Var === 'false' || !$Var) {
+            $Var = false;
+        } else {
+            $Var = true;
+        }
+    } else {
+        if ($Var === 'true') {
+            $Var = true;
+        } elseif ($Var === 'false') {
+            $Var = false;
+        } elseif ($Var !== true && $Var !== false) {
+            $Var = (int)$Var;
+        }
     }
 };
 
@@ -927,4 +935,29 @@ $CIDRAM['Meld'] = function () {
     }
     $Meld = $Lt;
     return $Meld;
+};
+
+/**
+ * Clears expired entries from a list.
+ */
+$CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
+    if ($List) {
+        $End = 0;
+        while (true) {
+            $Begin = $End;
+            if ($End = strpos($List, "\n", $Begin + 1)) {
+                $Line = substr($List, $Begin, $End - $Begin);
+                if ($Split = strpos($Line, ',')) {
+                    $Expiry = (int)substr($Line, $Split + 1);
+                    if ($Expiry < $CIDRAM['Now']) {
+                        $List = str_replace($Line, '', $List);
+                        $End = 0;
+                        $Check = true;
+                    }
+                }
+            } else {
+                break;
+            }
+        }
+    }
 };

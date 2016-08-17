@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.17).
+ * This file: The loader (last modified: 2016.08.18).
  */
 
 /**
@@ -238,15 +238,15 @@ if (!defined('CIDRAM')) {
     /** Fix incorrect typecasting for some configuration directives. */
     $CIDRAM['AutoType']($CIDRAM['Config']['general']['timeOffset']);
     $CIDRAM['AutoType']($CIDRAM['Config']['general']['forbid_on_block']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['general']['disable_cli']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_cloud']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_bogons']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_generic']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_proxies']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_spam']);
+    $CIDRAM['AutoType']($CIDRAM['Config']['general']['disable_cli'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_cloud'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_bogons'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_generic'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_proxies'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_spam'], 'Bool');
     $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['usemode']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockip']);
-    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockuser']);
+    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockip'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['lockuser'], 'Bool');
     $CIDRAM['AutoType']($CIDRAM['Config']['recaptcha']['expiry']);
 
     if (!$CIDRAM['CIDRAM_sapi']) {

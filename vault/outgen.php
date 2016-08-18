@@ -187,14 +187,14 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
     );
 
     /**
-     * Allows certain specific HTML tags to be included within our block
-     * information (requested by some users; these would've previously been
-     * broken by the above anti-XSS sanitisation).
+     * Allows certain specific HTML tags to be included within certain specific
+     * elements of our block information (requested by some users; these
+     * would've previously been broken by the above anti-XSS sanitisation).
      */
-    $CIDRAM['BlockInfo'] = str_ireplace(
+    list($CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason']) = str_ireplace(
         array('&lt;br /&gt;', '&lt;br&gt;'),
         array('<br />', '<br />'),
-        $CIDRAM['BlockInfo']
+        array($CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason'])
     );
 
     /** Determine which template file to use. */

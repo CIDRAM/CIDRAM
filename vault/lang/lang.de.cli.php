@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for CLI (last modified: 2016.08.12).
+ * This file: German language data for CLI (last modified: 2016.08.21).
  *
  * @todo (This is incomplete).
  */
@@ -38,38 +38,38 @@ $CIDRAM['lang']['CLI_H'] = "
 
 ";
 
-$CIDRAM['lang']['CLI_Bad_IP'] = ' The specified IP address, "{IP}", is not a valid IPv4 or IPv6 IP address!';
-$CIDRAM['lang']['CLI_IP_Blocked'] = ' The specified IP address, "{IP}", *IS* blocked by one or more of the CIDRAM signature files.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *NOT* blocked by any of the CIDRAM signature files.';
+$CIDRAM['lang']['CLI_Bad_IP'] = ' Die angegebene IP-Adresse, "{IP}", ist keine gültige IPv4 oder IPv6 IP-Adresse!';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' Die angegebene IP-Adresse, "{IP}", *IST* wird durch eine oder mehrere der CIDRAM Signaturdateien blockiert.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Die angegebene IP-Adresse, "{IP}", *NICHT* ist wird durch eine oder mehrere der CIDRAM Signaturdateien blockiert.';
 
-$CIDRAM['lang']['CLI_F_Finished'] = 'Signature fixer has finished, with %s changes made over %s operations (%s).';
-$CIDRAM['lang']['CLI_F_Started'] = 'Signature fixer has started (%s).';
-$CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
+$CIDRAM['lang']['CLI_F_Finished'] = 'Signature Fixierer abgeschlossen ist, mit %s Änderungen über %s Operationen (%s).';
+$CIDRAM['lang']['CLI_F_Started'] = 'Signature Fixierer hat begonnen (%s).';
+$CIDRAM['lang']['CLI_VF_Empty'] = 'Die angegebene Signaturdatei leer ist oder nicht existiert.';
 $CIDRAM['lang']['CLI_VF_Level_0'] = 'Achtung';
 $CIDRAM['lang']['CLI_VF_Level_1'] = 'Warnung';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'Fehler';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Fataler Fehler';
 
-$CIDRAM['lang']['CLI_V_CRLF'] = 'Detected CR/CRLF in signature file; These are permissible and won\'t cause problems, but LF is preferable.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Signature validator has finished (%s). If no warnings or errors have appeared, your signature file is *probably* okay. :-)';
-$CIDRAM['lang']['CLI_V_LineByLine'] = 'Line-by-line validation has started.';
-$CIDRAM['lang']['CLI_V_Started'] = 'Signature validator has started (%s).';
-$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature files should terminate with an LF linebreak.';
+$CIDRAM['lang']['CLI_V_CRLF'] = 'Erkannt CR/CRLF in Signaturdatei; Diese sind zulässig und werden nicht zu Problemen führen, aber LF bevorzugt ist.';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Signatur Validator abgeschlossen ist (%s). Wenn keine Warnungen oder Fehler erschienen, Ihre Signaturdatei ist *wahrscheinlich* in Ordnung. :-)';
+$CIDRAM['lang']['CLI_V_LineByLine'] = 'Zeile für Zeile Validierung hat begonnen.';
+$CIDRAM['lang']['CLI_V_Started'] = 'Signatur Validator hat begonnen (%s).';
+$CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signaturdateien sollten mit einem LF Zeilenumbruch beenden.';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Control characters detected; This could indicate corruption and should be investigated.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Signature "%s" is duplicated (%s counts)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Expiry tag doesn\'t contain a valid ISO 8601 date/time!';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
-$CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s and L%s are identical, and thus, mergeable.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Missing [Function]; Signature appears to be incomplete.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" is non-triggerable! "%s" is not a valid range!';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already existing "%s" signature.';
-$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Not syntactically precise.';
-$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised [Function]; Signature could be broken.';
-$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';
+$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Steuerzeichen entdeckt; Dies könnte darauf hindeuten Korruption und sollte untersucht werden.';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Signatur "%s" ist dupliziert (%s zählt)!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Ablauf-Tag enthält keinen gültigen ISO 8601 Datum/Zeit!';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" ist keine gültige IPv4 oder IPv6 Adresse!';
+$CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Leitungslänge ist größer als 120 Byte; Für optimale Lesbarkeit, Leitungslänge sollte auf 120 Bytes beschränkt werden.';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s und L%s sind identisch, und somit, zusammenführbar.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Fehlende [Function]; Signatur scheint unvollständig zu sein.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" kann nicht ausgelöst werden! Seine Basis passt nicht auf den Beginn seiner Reichweite! Versuchen Sie es mit "%s" ersetzen.';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" kann nicht ausgelöst werden! "%s" ist kein gültiges Reichweite!';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" ist eine Teilmenge den bereits bestehenden "%s" Signatur.';
+$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" ist eine Obermenge zu den bereits bestehenden "%s" Signatur.';
+$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Nicht syntaktisch präzise.';
+$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs entdeckt; Leerzeichen sind über Laschen für eine optimale Lesbarkeit bevorzugt.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sektion-Tag größer als 20 Byte; Sektion-Tags sollten klar und prägnant sein.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unerkannt [Function]; Signatur könnte gebrochen werden.';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Überschüssiges nachfolgende Leerzeichen auf dieser Linie entdeckt.';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: YAML-ähnliche Daten entdeckt, aber nicht verarbeitet werden konnte.';

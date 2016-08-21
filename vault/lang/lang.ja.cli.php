@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for CLI (last modified: 2016.08.12).
+ * This file: Japanese language data for CLI (last modified: 2016.08.21).
  *
  * @todo (This is incomplete).
  */
@@ -43,9 +43,9 @@ $CIDRAM['lang']['CLI_Bad_IP'] = ' The specified IP address, "{IP}", is not a val
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' The specified IP address, "{IP}", *IS* blocked by one or more of the CIDRAM signature files.';
 $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' The specified IP address, "{IP}", is *NOT* blocked by any of the CIDRAM signature files.';
 
-$CIDRAM['lang']['CLI_F_Finished'] = '署名フィクサー has finished, with %s changes made over %s operations (%s).';
-$CIDRAM['lang']['CLI_F_Started'] = '署名フィクサー has started (%s).';
-$CIDRAM['lang']['CLI_VF_Empty'] = 'Specified signature file is empty or doesn\'t exist.';
+$CIDRAM['lang']['CLI_F_Finished'] = '署名フィクサーが完了しました； 変更：%s； オペレーション：%s （%s）。';
+$CIDRAM['lang']['CLI_F_Started'] = '署名フィクサーが始まりました（%s）。';
+$CIDRAM['lang']['CLI_VF_Empty'] = '存在指定された署名ファイルが空であるか存在しません。';
 $CIDRAM['lang']['CLI_VF_Level_0'] = '通知';
 $CIDRAM['lang']['CLI_VF_Level_1'] = '警告';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'エラー';
@@ -63,7 +63,7 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Expiry tag doesn\'t contain a valid ISO
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *NOT* a valid IPv4 or IPv6 address!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Line length is greater than 120 bytes; Line length should be limited to 120 bytes for optimal readability.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s and L%s are identical, and thus, mergeable.';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Missing 「Function」; Signature appears to be incomplete.';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s： 「Function」は存在しません； 署名は不完全であることが表示されます。';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" is non-triggerable! Its base doesn\'t match the beginning of its range! Try replacing it with "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" is non-triggerable! "%s" is not a valid range!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
@@ -71,6 +71,6 @@ $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already exi
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s： 文法的に正確ではありません。';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs detected; Spaces are preferred over tabs for optimal readability.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Section tag is greater than 20 bytes; Section tags should be clear and concise.';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Unrecognised 「Function」; Signature could be broken.';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: 「Function」が認識されません； 署名が壊れている可能性があります。';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Excess trailing whitespace detected on this line.';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'L%s： YAMLのようなデータが検出されたが、それを処理できませんでした。';

@@ -107,7 +107,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，告訴它什麼做和怎麼正確地經營（重命名為激活）。
 /vault/config.php | 配置處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
-/vault/hashes.dat | 包含接受哈希表（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
+/vault/hashes.dat | 包含列表接受哈希表（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
+/vault/ipbypass.dat | 包含列表IP旁路（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
 /vault/ipv4.dat | IPv4簽名文件。
 /vault/ipv4_custom.dat.RenameMe | IPv4定制簽名文件（重命名為激活）。
 /vault/ipv6.dat | IPv6簽名文件。
@@ -224,37 +225,37 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 - 阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。
 
 ####“recaptcha” （類別）
-Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+如果您想，您可以為用戶提供了一種方法繞過“拒絕訪問”頁面通過完成reCAPTCHA事件。這有助於減輕一些風險假陽性有關，對於當我們不能完全肯定一個請求是否源自機器或人。
 
-Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+由於風險相關的提供的方法為終端用戶至繞過“拒絕訪問”頁面，通常，我建議不要啟用此功能除非您覺得這是必要的做。情況由此有必要：如果您的網站有客戶/用戶該需要具有訪問權限您的網站，而如果這一點該不能妥協的，但如果這些客戶/用戶碰巧被來自敵對網絡連接該可能被攜帶不需要的流量，並阻斷這種不需要的流量也不能妥協的，在那些沒有雙贏的局面，reCAPTCHA的功能可能是有用的作為一種手段允許需要的客戶/用戶，而避開不需要的流量從同一網絡。雖然說，鑑於一個CAPTCHA的預期目的是人類和非人類區分，reCAPTCHA的功能只會協助在這些沒有雙贏的局面如果我們假設該不需要的流量是非人（例如，垃圾郵件機器人，網站鏟運機，黑客工具，交通自動化），而不是作為人的不需要的流量（如人的垃圾郵件機器人，黑客，等等）。
 
-To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+為了獲得“site key”和“secret key”（需要為了使用reCAPTCHA），請訪問： [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-"usemode"
-- Defines how CIDRAM should use reCAPTCHA.
-- 0 = reCAPTCHA is completely disabled (default).
-- 1 = reCAPTCHA is enabled for all signatures.
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0).
+“usemode”
+- 它定義瞭如何CIDRAM應該使用reCAPTCHA。
+- 0 = reCAPTCHA是完全禁用【標準】。
+- 1 = reCAPTCHA是啟用為所有簽名。
+- 2 = reCAPTCHA是啟用只為簽名部分被特殊標記在簽名文件作為reCAPTCHA啟用。
+- （任何其他值將以同樣的方式被視作0）。
 
-"lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
-- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+“lockip”
+- 指定是否哈希應鎖定到特定IP地址。 False（假） = Cookie和哈希可以由多個IP地址使用【標準】。 True（真） = Cookie和哈希不能由多個IP地址使用（cookies/哈希是鎖定到IP地址）。
+- 注意：“lockip”值被忽略當“lockuser”是`false`（假），由於該機制為記憶的“用戶”可以根據這個值的變化。
 
-"lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
+“lockuser”
+- 指定是否一個reCAPTCHA成功完成應鎖定到特定用戶。 False（假） = 一個reCAPTCHA成功完成將授予訪問為所有請求該來自同IP作為由用戶使用當完成的reCAPTCHA； Cookie和哈希不被使用；代替，一個IP白名單將被用於。 True（真） = 一個reCAPTCHA成功完成只會授予訪問為用戶該完成了reCAPTCHA； Cookie和哈希是用於記住用戶；一個IP白名單不被使用【標準】。
 
-"sitekey"
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+“sitekey”
+- 該值應該對應於“site key”為您的reCAPTCHA，該可以發現在reCAPTCHA的儀表板。
 
-"secret"
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+“secret”
+- 該值應該對應於“secret key”為您的reCAPTCHA，該可以發現在reCAPTCHA的儀表板。
 
-"expiry"
-- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
+“expiry”
+- 當“lockuser”是true（真）【標準】，為了記住當用戶已經成功完成reCAPTCHA，為未來頁面請求，CIDRAM生成一個標準的HTTP cookie含哈希對應於內部哈希記錄含有相同哈希；未來頁面請求將使用這些對應的哈希為了驗證該用戶已預先完成reCAPTCHA。當“lockuser”是false（假），一個IP白名單被用來確定是否請求應允許從請求的入站IP；條目添加到這個白名單當reCAPTCHA是成功完成。這些cookies，哈希，和白名單條目應在多少小時內有效？ 標準 = 720 （1個月）。
 
-"logfile"
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
+“logfile”
+- 記錄所有的reCAPTCHA的嘗試？要做到這一點，指定一個文件名到使用。如果不，離開這個變量為空白。
 
 *有用的建議：如果您想，可以追加日期/時間信息至附加到你的日誌文件的名稱通過包括這些中的名稱： `{yyyy}` 為今年完整， `{yy}` 為今年縮寫， `{mm}` 為今月， `{dd}` 為今日， `{hh}` 為今小時。*
 
@@ -366,4 +367,4 @@ Ignore Section 1
 ---
 
 
-最後更新：2016年8月17日。
+最後更新：2016年8月21日。

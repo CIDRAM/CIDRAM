@@ -46,7 +46,7 @@ Salve o arquivo, fechar, recarregar-lo.
 
 -- OU ALTERNATIVAMENTE --
 
-Se você é usando um Apache web servidor e se você tem acesso a `php.ini`, você pode usar o `auto_prepend_file` directiva para pré-carga CIDRAM sempre que qualquer pedido de PHP é feito. Algo como:
+Se você é usando um Apache web servidor e se você tem acesso a `php.ini`, você pode usar o `auto_prepend_file` directiva para pré-carga CIDRAM sempre que qualquer solicitação para PHP é feito. Algo como:
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -106,6 +106,7 @@ Arquivo | Descrição
 /vault/config.php | Módulo de configuração.
 /vault/functions.php | Arquivo de funções.
 /vault/hashes.dat | Contém uma lista de hashes aceitos (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
+/vault/ipbypass.dat | Contém uma lista de bypasses IP (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
 /vault/ipv4.dat | Arquivo de assinaturas para IPv4.
 /vault/ipv4_custom.dat.RenameMe | Arquivo de assinaturas personalizadas para IPv4 (renomear para ativar).
 /vault/ipv6.dat | Arquivo de assinaturas para IPv6.
@@ -180,7 +181,7 @@ Configuração geral por CIDRAM.
 - Exemplo (para adicionar uma hora): `timeOffset=60`
 
 "ipaddr"
-- Onde encontrar o IP endereço dos pedidos? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
+- Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
 "forbid_on_block"
 - Quais cabeçalhos deve CIDRAM responder com quando bloqueando solicitações? False/200 = 200 OK [Padrão]; True = 403 Forbidden (Proibido); 503 = 503 Service unavailable (Serviço indisponível).
@@ -222,37 +223,37 @@ Configuração por assinaturas.
 - Bloquear CIDRs identificado como sendo de alto risco para spam? A menos que você tiver problemas ao fazê-lo, geralmente, esta deve sempre ser definido como true.
 
 ####"recaptcha" (Categoria)
-Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se um pedido tem originado a partir de uma máquina ou um ser humano.
+Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
 
-Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Devido aos riscos associados com fornecimento de uma maneira para os usuários a ignorar a página de "Acesso Negado", geralmente, gostaria de aconselhar contra habilitação deste recurso a menos que você sente que isso é necessário para fazê-lo. Situações em que poderia ser necessário: Se seu site tem clientes/usuários que precisam ter acesso ao seu site, e se essa é algo que não pode ser comprometida em, mas se os clientes/usuários acontecer a ser conectando a partir de uma rede hostil que poderiam ser também carregando de tráfego indesejável, e bloqueando este tráfego indesejável também é algo que não pode ser comprometida em, nessas situações particulares sem vitória, o recurso reCAPTCHA poderia ser útil como um meio de permitir que os clientes/usuários desejáveis, enquanto mantendo fora o tráfego indesejável a partir da mesma rede. Dito isto, considerando que o propósito de um CAPTCHA é distinguir entre humanos e não-humanos, o recurso reCAPTCHA só iria ajudar nestas situações sem vitória se fosse para supor que este tráfego indesejável é não-humano (por exemplo, spambots, raspadores, ferramentas de hackers, tráfego automatizado), ao contrário de ser tráfego humano indesejável (tais como spammer humanos, hackers, et ai).
 
-To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+Para obter uma "site key" e uma "secret key" (necessário para usando reCAPTCHA), por favor vá a: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
-- Defines how CIDRAM should use reCAPTCHA.
-- 0 = reCAPTCHA is completely disabled (default).
-- 1 = reCAPTCHA is enabled for all signatures.
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0).
+- Define como CIDRAM deve usar reCAPTCHA.
+- 0 = reCAPTCHA é completamente desativado (padrão).
+- 1 = reCAPTCHA é ativado para todas as assinaturas.
+- 2 = reCAPTCHA é ativado apenas para assinaturas pertencentes a seções especialmente marcados dentro dos arquivos de assinatura.
+- (Qualquer outro valor será tratado da mesma maneira como 0).
 
 "lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
-- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+- Especifica se hashes deve ser ligado para IPs específicos. False = Cookies e hashes PODE ser usado por vários IPs (padrão). True = Cookies e hashes NÃO pode ser usado por vários IPs (cookies/hashes não estão ligados para IPs).
+- Notar: O valor de "lockip" é ignorado quando "lockuser" é false, devido a que o mecanismo para lembrar "usuários" varia de acordo com este valor.
 
 "lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
+- Especifica se a conclusão bem sucedida de uma instância de reCAPTCHA deve ser ligado a usuários específicos. False = A conclusão bem sucedida de uma instância de reCAPTCHA irá conceder acesso a todos os solicitações provenientes do mesmo IP como aquilo utilizado pelo utilizador completar a instância de reCAPTCHA; Cookies e hashes não são usados; Em vez disso, um IP whitelist será usado. True = A conclusão bem sucedida de uma instância de reCAPTCHA só irá conceder acesso para o usuário completar a instância de reCAPTCHA; Cookies e hashes são usados para lembrar o usuário; Um IP whitelist não é usado (padrão).
 
 "sitekey"
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- Este valor deve corresponder ao "site key" para o seu reCAPTCHA, que pode ser encontrado dentro do painel de reCAPTCHA.
 
 "secret"
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- Este valor deve corresponder ao "secret key" para o seu reCAPTCHA, que pode ser encontrado dentro do painel de reCAPTCHA.
 
 "expiry"
-- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
+- Quando "lockuser" é true (padrão), a fim de lembrar quando um usuário tenha já passou com êxito uma instância de reCAPTCHA, para solicitações de página no futuro, CIDRAM gera um cookie HTTP norma contendo um hash que corresponde a um registro interno que contém a mesma hash; Solicitações de página no futuro vai usar esses hashes correspondentes para autenticar que o usuário tenha previamente já passou com êxito uma instância de reCAPTCHA. Quando "lockuser" é false, um IP whitelist é usado para determinar se as solicitações devem ser permitidas do IP de solicitações de entrada; As entradas são adicionadas a esta whitelist quando a instância de reCAPTCHA passou com êxito. Por quantas horas devem estes cookies, hashes e entradas de o whitelist permanecem válidos? Padrão = 720 (1 mês).
 
 "logfile"
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
+- Registrar todas as tentativas de reCAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco.
 
 *Dica útil: Se você quiser, você pode acrescentar informações tempo/hora aos nomes dos seus arquivos de registro através incluir estas em nome: `{yyyy}` para o ano completo, `{yy}` para o ano abreviado, `{mm}` por mês, `{dd}` por dia, `{hh}` por hora.*
 
@@ -312,7 +313,7 @@ Se "Greylist" é utilizado, quando a assinatura é desencadeada, o script irá r
 
 Exemplo: `127.0.0.1/32 Greylist`
 
-Se "Deny" é utilizado, quando a assinatura é desencadeada, assumindo que não assinatura whitelist foi desencadeado para o dado endereço IP e/ou dado CIDR, acesso à página protegida será negado. "Deny" é o que você deseja usar para realmente bloquear um endereço IP e/ou gama CIDR. Quando qualquer as assinaturas usando "Deny" são desencadeados, o "Acesso Negado" página do script será gerado e o pedido para a página protegida será morto.
+Se "Deny" é utilizado, quando a assinatura é desencadeada, assumindo que não assinatura whitelist foi desencadeado para o dado endereço IP e/ou dado CIDR, acesso à página protegida será negado. "Deny" é o que você deseja usar para realmente bloquear um endereço IP e/ou gama CIDR. Quando qualquer as assinaturas usando "Deny" são desencadeados, o "Acesso Negado" página do script será gerado ea solicitação para a página protegida será morto.
 
 O valor da `[Param]` aceita por "Deny" será processado com o saída da "Acesso Negado" página, fornecido ao cliente/utilizador como a razão citada para o seu acesso à página solicitada ser negada. Pode ser uma curta e simples frase, explicando o motivo de ter escolhido para bloqueá-los (qualquer coisa deve ser suficiente, até mesmo uma "eu não quero você no meu site"), ou um de um pequeno punhado de palavras curtas fornecidas pelo script que, se usadas, será substituído pelo script com uma explicação pré-preparado de porque o cliente/usuário foi bloqueado.
 
@@ -364,4 +365,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 17 Agosto 2016 (2016.08.17).
+Última Atualização: 21 Agosto 2016 (2016.08.21).

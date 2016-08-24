@@ -23,7 +23,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.5.0-DEV';
+    $CIDRAM['ScriptVersion'] = '0.5.0';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];

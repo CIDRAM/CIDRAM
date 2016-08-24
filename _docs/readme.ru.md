@@ -106,6 +106,7 @@ CIDRAM должен автоматически блокировать нежел
 /vault/config.php | Обработчик конфигурации.
 /vault/functions.php | Функции файла (обязательно).
 /vault/hashes.dat | Содержит список принятых хэшей (связана с функция reCAPTCHA; генерируется только если функция reCAPTCHA активирована).
+/vault/ipbypass.dat | Содержит список IP байпасов (связана с функция reCAPTCHA; генерируется только если функция reCAPTCHA активирована).
 /vault/ipv4.dat | IPv4 подписи файла.
 /vault/ipv4_custom.dat.RenameMe | IPv4 пользовательские подписи файлов (переименовать чтобы активировать).
 /vault/ipv6.dat | IPv6 подписи файла.
@@ -222,9 +223,9 @@ CIDRAM должен автоматически блокировать нежел
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
 ####"recaptcha" (Категория)
-Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+Optionally, you can provide users with a way to bypass the "Доступ Закрыт" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
 
-Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Due to the risks associated with providing a way for end-users to bypass the "Доступ Закрыт" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
 
 To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
@@ -252,7 +253,7 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 - When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
 
 "logfile"
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
+- Записывать все попытки reCAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым.
 
 *Полезный совет: Если ты хочешь, вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
 
@@ -364,4 +365,4 @@ Ignore Section 1
 ---
 
 
-Последнее обновление: 17 Август 2016 (2016.08.17).
+Последнее обновление: 24 Август 2016 (2016.08.24).

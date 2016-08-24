@@ -107,7 +107,8 @@ If you encounter any false positives, please contact me to let me know about it.
 <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
 <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
 <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
-<div dir="rtl" style="display:inline;">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA; فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
+<div dir="rtl" style="display:inline;">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
+<div dir="rtl" style="display:inline;">يحتوي على قائمة من الالتفافية IP (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/ipbypass.dat
 <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات.</div> | /vault/ipv4.dat
 <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv4_custom.dat.RenameMe
 <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات.</div> | /vault/ipv6.dat
@@ -236,9 +237,9 @@ If you encounter any false positives, please contact me to let me know about it.
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
 #### <div dir="rtl">"recaptcha" (التصنيف)<br /></div>
-Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+Optionally, you can provide users with a way to bypass the "تم رفض الوصول!" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
 
-Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Due to the risks associated with providing a way for end-users to bypass the "تم رفض الوصول!" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
 
 To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
@@ -318,17 +319,20 @@ The possible values of `[Function]` are as follows:
 
 If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Param]` value (the working directory should be the "/vault/" directory of the script).
 
-Example: `127.0.0.0/8 Run example.php`
+<div dir="rtl">مثال:<br /></div>
+`127.0.0.0/8 Run example.php`
 
 This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
 
 If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `[Param]` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
 
-Example: `127.0.0.1/32 Whitelist`
+<div dir="rtl">مثال:<br /></div>
+`127.0.0.1/32 Whitelist`
 
 If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `[Param]` is ignored.
 
-Example: `127.0.0.1/32 Greylist`
+<div dir="rtl">مثال:<br /></div>
+`127.0.0.1/32 Greylist`
 
 If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
 
@@ -345,7 +349,7 @@ The available shorthand words are:
 
 Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
 
-Example:
+<div dir="rtl">مثال:<br /></div>
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -358,7 +362,7 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-Example:
+<div dir="rtl">مثال:<br /></div>
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -372,7 +376,7 @@ In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whe
 
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore.
 
-Example:
+<div dir="rtl">مثال:<br /></div>
 ```
 Ignore Section 1
 ```
@@ -382,4 +386,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-<div dir="rtl">آخر تحديث: 17 أغسطس 2016 (2016.08.17).</div>
+<div dir="rtl">آخر تحديث: 24 أغسطس 2016 (2016.08.24).</div>

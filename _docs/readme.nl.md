@@ -106,6 +106,7 @@ Bestand | Beschrijving
 /vault/config.php | Configuratie-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
+/vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ipv4.dat | IPv4 handtekeningen bestand.
 /vault/ipv4_custom.dat.RenameMe | IPv4 aangepaste handtekeningen bestand (hernoemen om te activeren).
 /vault/ipv6.dat | IPv6 handtekeningen bestand.
@@ -168,7 +169,7 @@ Algemene configuratie voor CIDRAM.
 "logfileSerialized"
 - Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
-*Handige tip: Als u wil, U kunt datum/tijd informatie toevoegen om de namen van uw logbestanden door deze op in naam inclusief: `{yyyy}` voor volledige jaar, `{yy}` voor verkorte jaar, `{mm}` voor maand, `{dd}` voor dag, `{hh}` voor het uur.*
+*Handige tip: Als u wil, u kunt datum/tijd informatie toevoegen om de namen van uw logbestanden door deze op in naam inclusief: `{yyyy}` voor volledige jaar, `{yy}` voor verkorte jaar, `{mm}` voor maand, `{dd}` voor dag, `{hh}` voor het uur.*
 
 *Voorbeelden:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -222,39 +223,39 @@ Configuratie voor handtekeningen.
 - Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
 
 ####"recaptcha" (Categorie)
-Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+Optioneel, u kan uw gebruikers te voorzien van een manier om de "Toegang Geweigerd" pagina te omzeilen, door middel van het invullen van een reCAPTCHA instantie, als u wilt om dit te doen. Dit kan helpen om een aantal van de risico's die samenhangen met valse positieven te beperken, in die situaties waar we niet helemaal zeker of er een verzoek is voortgekomen uit een machine of een mens.
 
-Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Vanwege de risico's die samenhangen met het verstrekken van een manier voor eindgebruikers om de "Toegang Geweigerd" pagina te omzeilen, algemeen, ik zou adviseren tegen het inschakelen van deze functie tenzij u voelt het om nodig om dit te doen. Situaties waarin het nodig zou zijn: Als uw website heeft klanten/gebruikers die moeten toegang hebben tot uw website, en als dit is iets dat niet kan worden gecompromitteerd, maar als deze klanten/gebruikers deze verbinding maakt vanuit een vijandig netwerk dat mogelijk ook zou kunnen dragen ongewenste verkeer, en het blokkeren van deze ongewenste verkeer is ook iets dat niet kan worden gecompromitteerd, in deze bijzondere no-win situaties, de functie reCAPTCHA kan van pas komen als een middel van het toestaan van de wenselijke klanten/gebruikers, terwijl het vermijden van het het ongewenste verkeer vanaf hetzelfde netwerk. Dat gezegd hebbende hoewel, gezien het feit dat de bestemming van een CAPTCHA is om onderscheid te maken tussen mensen en niet-mensen, de functie reCAPTCHA zou alleen helpen in deze no-win situaties als zou veronderstellen dat deze ongewenste verkeer is niet-humaan (b.v., spambots, schrapers, hack gereedschappen, geautomatiseerde verkeer), in tegenstelling tot ongewenst menselijk verkeer (zoals menselijke spammers, hackers, c.s.).
 
-To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik van reCAPTCHA), ga naar: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
-- Defines how CIDRAM should use reCAPTCHA.
-- 0 = reCAPTCHA is completely disabled (default).
-- 1 = reCAPTCHA is enabled for all signatures.
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0).
+- Bepaalt hoe CIDRAM reCAPTCHA moet gebruiken.
+- 0 = reCAPTCHA is volledig uitgeschakeld (standaard).
+- 1 = reCAPTCHA is ingeschakeld voor alle handtekeningen.
+- 2 = reCAPTCHA is ingeschakeld alleen voor handtekeningen die behoren tot secties speciaal gemarkeerde binnen de handtekening bestanden.
+- (Een andere waarde wordt op dezelfde wijze als 0 behandeld).
 
 "lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
-- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+- Geeft aan of hashes moeten worden vergrendeld om specifieke IPs. False = Cookies en hashes KAN worden gebruikt voor meerdere IP-adressen (standaard). True = Cookies en hashes kan NIET worden gebruikt voor meerdere IP-adressen (cookies/hashes worden vergrendeld om IPs).
+- Notitie: "lockip" waarde wordt genegeerd als "lockuser" is false, te wijten aan dat het mechanisme voor het onthouden van "gebruikers" verschilt afhankelijk van deze waarde.
 
 "lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
+- Geeft aan of het succesvol afronden van een reCAPTCHA instantie moet worden vergrendeld om specifieke gebruikers. False = Succesvolle afronding van een reCAPTCHA instantie zal het verlenen van de toegang tot alle verzoeken die afkomstig zijn van hetzelfde IP als die gebruikt wordt door de gebruiker het invullen van de reCAPTCHA instantie; Cookies en hashes worden niet gebruikt; In plaats daarvan zal een IP whitelist worden gebruikt. True = Succesvolle afronding van een reCAPTCHA instantie zal alleen toegang tot de gebruiker te verlenen het invullen van de reCAPTCHA instantie; Cookies en hashes worden gebruikt om de gebruiker te herinneren; Een IP whitelist wordt niet gebruikt (standaard).
 
 "sitekey"
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- Deze waarde moet overeenkomen met de "site key" voor uw reCAPTCHA, die kan worden gevonden binnen de reCAPTCHA dashboard.
 
 "secret"
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- Deze waarde moet overeenkomen met de "secret key" voor uw reCAPTCHA, die kan worden gevonden binnen de reCAPTCHA dashboard.
 
 "expiry"
-- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
+- Wanneer "lockuser" is true (standaard), om te onthouden wanneer een gebruiker met succes heeft doorstaan een reCAPTCHA instantie, voor pagina verzoeken, CIDRAM genereert een standaard cookie bevat een hash die overeenkomt met een intern register met dezelfde hash; Toekomstige pagina verzoeken zullen deze overeenkomstige hashes gebruiken om te verifiëren dat een gebruiker eerder al heeft gepasseerd een reCAPTCHA instantie. Wanneer "lockuser" is false, een IP whitelist wordt gebruikt om te bepalen of verzoeken moeten worden toegestaan van het IP-adres van inkomende verzoeken; Inzendingen worden toegevoegd aan deze whitelist wanneer de reCAPTCHA instantie met succes heeft doorstaan. Hoeveel uren moeten deze cookies, hashes en whitelist inzendingen blijven geldig? Standaard = 720 (1 maand).
 
 "logfile"
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
+- Log alle reCAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg.
 
-*Handige tip: Als u wil, U kunt datum/tijd informatie toevoegen om de namen van uw logbestanden door deze op in naam inclusief: `{yyyy}` voor volledige jaar, `{yy}` voor verkorte jaar, `{mm}` voor maand, `{dd}` voor dag, `{hh}` voor het uur.*
+*Handige tip: Als u wil, u kunt datum/tijd informatie toevoegen om de namen van uw logbestanden door deze op in naam inclusief: `{yyyy}` voor volledige jaar, `{yy}` voor verkorte jaar, `{mm}` voor maand, `{dd}` voor dag, `{hh}` voor het uur.*
 
 *Voorbeelden:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -364,4 +365,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 17 Augustus 2016 (2016.08.17).
+Laatste Bijgewerkt: 24 Augustus 2016 (2016.08.24).

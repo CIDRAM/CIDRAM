@@ -106,6 +106,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
+/vault/ipbypass.dat | IPバイパスの一覧（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/ipv4.dat | IPv4のシグネチャファイル。
 /vault/ipv4_custom.dat.RenameMe | IPv4のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/ipv6.dat | IPv6のシグネチャファイル。
@@ -186,13 +187,13 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "forbid_on_block" （フォービッド・オン・ブロック）
 - 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？ `false`（偽）/200 = 200 OK 「Default（デフォルルト）」； `true`（真） = 403 Forbidden （４０３禁止されている）； 503 = 503 Service unavailable （５０３サービス利用不可）。
 
-"silent_mode"
+"silent_mode" （サイレント・モード）
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
 
 "lang" （ラング）
 - CIDRAMのデフォルト言語を設定します。
 
-"emailaddr"
+"emailaddr" （Eメール・アドレス）
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
 "disable_cli" （ディスエイブル・シーエルアイ）
@@ -201,59 +202,59 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
 
-"ipv4"
+"ipv4" （アイピーブイ4）
 - A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
 
-"ipv6"
+"ipv6" （アイピーブイ6）
 - A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM.
 
-"block_cloud"
+"block_cloud" （ブロック・クラウド）
 - Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true.
 
-"block_bogons"
+"block_bogons" （ブロック・ぼごん）
 - Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true.
 
-"block_generic"
+"block_generic" （ブロック・ジェネリック）
 - Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories.
 
-"block_proxies"
+"block_proxies" （ブロック・プロキシ）
 - Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security.
 
-"block_spam"
+"block_spam" （ブロック・スパム）
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
 ####"recaptcha" （リーキャプチャ、カテゴリ）
-Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
 
-Due to the risks associated with providing a way for end-users to bypass the "Access Denied" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said, though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Due to the risks associated with providing a way for end-users to bypass the "アクセス拒否" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
 
-To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+「site key」および「secret key」を得るために（reCAPTCHAのを使用するために必要）、このリンクをクリックしてください： [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-"usemode"
+"usemode" （ユース・モード）
 - Defines how CIDRAM should use reCAPTCHA.
 - 0 = reCAPTCHA is completely disabled (default).
 - 1 = reCAPTCHA is enabled for all signatures.
 - 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
 - (Any other value will be treated in the same way as 0).
 
-"lockip"
+"lockip" （ロックIP）
 - Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
 - Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
 
-"lockuser"
+"lockuser" （ロック・ユーザー）
 - Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
 
-"sitekey"
+"sitekey" （サイト・キー）
 - This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
 
-"secret"
+"secret" （シークレット）
 - This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
 
 "expiry"
 - When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
 
-"logfile"
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
+"logfile" （ログ・ファイル）
+- reCAPTCHA試行の記録。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。
 
 *有用な先端： あなたがしたい場合は、ログファイルの名前に日付/時刻情報を付加することができます、名前にこれらを含めることで:完全な年のため`{yyyy}`、省略された年のため`{yy}`、月`{mm}`、日`{dd}`、時間`{hh}`。*
 
@@ -293,7 +294,7 @@ Precise and correct CIDR notation is required, otherwise the script will NOT rec
 
 Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
-The possible values of `[Function]` are as follows:
+「Function」の可能な値：
 - Run
 - Whitelist
 - Greylist
@@ -319,7 +320,7 @@ The `[Param]` value accepted by "Deny" will be parsed to the "Access Denied" pag
 
 The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Param]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Param]` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
 
-The available shorthand words are:
+略語：
 - Bogon
 - Cloud
 - Generic
@@ -365,4 +366,4 @@ Ignore Section 1
 ---
 
 
-最終アップデート： 2016年08月17日。
+最終アップデート： 2016年08月24日。

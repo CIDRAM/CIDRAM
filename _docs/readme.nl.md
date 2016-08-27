@@ -273,6 +273,8 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 
 ###6. <a name="SECTION6"></a>HANDTEKENINGFORMAAT
 
+####6.0 BASICS
+
 Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste handtekeningen bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de handtekeningen van CIDRAM.
 
 Alle IPv4 handtekeningen volgt het formaat: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
@@ -326,9 +328,10 @@ De beschikbare korte woorden zijn:
 - Proxy
 - Spam
 
-Facultatief: Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "Tag:" etiket onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie.
+####6.1 ETIKETTEN
 
-Voorbeeld:
+Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie (zie het onderstaande voorbeeld).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -341,7 +344,6 @@ Tag: Section 1
 
 Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met handtekening secties uit eerder in de handtekening bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere handtekening secties. Een ongeëtiketteerd handtekeningen wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten handtekeningen worden geactiveerd).
 
-Voorbeeld:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -353,9 +355,32 @@ Tag: Section 1
 
 In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Section 1".
 
-Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de handtekening bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren.
+Als u wilt handtekeningen te vervallen na verloop van tijd, op soortgelijke wijze als sectie etiketten, u kan een "vervaltijd etiket" gebruikt om aan te geven wanneer handtekeningen moet niet meer geldig. Vervaltijd etiketten gebruiken het formaat "JJJJ.MM.DD" (zie het onderstaande voorbeeld).
 
-Voorbeeld:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Sectie etiketten en vervaltijd etiketten kunnen worden gebruikt in combinatie, en beide zijn optioneel (zie het onderstaande voorbeeld).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 EXTRA INFORMATIE
+
+Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de handtekening bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
+
 ```
 Ignore Section 1
 ```
@@ -365,4 +390,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 24 Augustus 2016 (2016.08.24).
+Laatste Bijgewerkt: 27 Augustus 2016 (2016.08.27).

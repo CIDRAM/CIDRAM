@@ -273,6 +273,8 @@ Correspond à la sortie HTML utilisé pour générer la page "Accès Refusé". S
 
 ###6. <a name="SECTION6"></a>FORMATS DE SIGNATURES
 
+####6.0 BASES
+
 Une description du format et de la structure du signatures utilisé par CIDRAM peut être trouvée documentée en plain-text dans les deux fichiers de signatures personnalisées. S'il vous plaît référez à cette documentation pour apprendre plus sur le format et la structure du signatures de CIDRAM.
 
 Toutes les signatures IPv4 suivre le format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
@@ -326,9 +328,10 @@ Les mots courts disponibles sont:
 - Proxy
 - Spam
 
-Optionnel: Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant un label "Tag:" immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures.
+####6.1 BALISES
 
-Exemple:
+Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant une "balise de section" immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures (voir l'exemple ci-dessous).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -339,9 +342,8 @@ Exemple:
 Tag: Section 1
 ```
 
-Pour briser les tagues de sections et assurer que les tagues ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre tague et vos sections précédent. Toutes les signatures non tagué sera par défaut soit "IPv4" ou "IPv6" (en fonction de quels types de signatures sont déclenchés).
+Pour briser les balises de section et assurer que les balises ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre balise et vos sections précédent. Toutes les signatures non balisé sera par défaut soit "IPv4" ou "IPv6" (en fonction de quels types de signatures sont déclenchés).
 
-Exemple:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -351,11 +353,34 @@ Exemple:
 Tag: Section 1
 ```
 
-Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront tagués comme "IPv4", tandis que `4.5.6.7/32` et `5.6.7.8/32` seront tagués comme "Section 1".
+Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront balisés comme "IPv4", tandis que `4.5.6.7/32` et `5.6.7.8/32` seront balisés comme "Section 1".
 
-En addition, si vous voulez CIDRAM à ignorer complètement certaines sections spécifiques dans aucun des fichiers de signatures, vous pouvez utiliser le fichier `ignore.dat` pour spécifier les sections à ignorer. Sur une nouvelle ligne, écrire `Ignore`, suivi d'un espace, suivi du nom de la section que vous souhaitez CIDRAM à ignorer.
+Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les balises de section, vous pouvez utiliser une "balise d'expiration" à spécifier quand les signatures doivent cesser d'être valide. Les balises d'expiration utilisent le format "AAAA.MM.JJ" (voir l'exemple ci-dessous).
 
-Exemple:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Les balises de section et les balises d'expiration peuvent être utilisés en conjonction, et les deux sont optionnel (voir l'exemple ci-dessous).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 AUXILIAIRE
+
+En addition, si vous voulez CIDRAM à ignorer complètement certaines sections spécifiques dans aucun des fichiers de signatures, vous pouvez utiliser le fichier `ignore.dat` pour spécifier les sections à ignorer. Sur une nouvelle ligne, écrire `Ignore`, suivi d'un espace, suivi du nom de la section que vous souhaitez CIDRAM à ignorer (voir l'exemple ci-dessous).
+
 ```
 Ignore Section 1
 ```
@@ -365,4 +390,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 20 Août 2016 (2016.08.20).
+Dernière Réactualisé: 27 Août 2016 (2016.08.27).

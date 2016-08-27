@@ -273,6 +273,8 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 
 ###6. <a name="SECTION6"></a>FORMAT TANDA TANGAN
 
+####6.0 DASAR-DASAR
+
 Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silakan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
 
 Semua tanda tangan IPv4 mengikuti format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
@@ -326,9 +328,10 @@ Kata-kata singkat yang tersedia adalah:
 - Proxy
 - Spam
 
-Opsional: Jika Anda ingin membagi tanda tangan kustom Anda ke bagian individual, Anda dapat mengidentifikasi bagian individual untuk skrip dengan menambahkan label "Tag:" segera setelah tanda tangan dari setiap bagian, bersama dengan nama bagian tanda tangan Anda.
+####6.1 TAG
 
-Contoh:
+Jika Anda ingin membagi tanda tangan kustom Anda ke bagian individual, Anda dapat mengidentifikasi bagian individual untuk skrip dengan menambahkan "tag bagian" segera setelah tanda tangan dari setiap bagian, bersama dengan nama bagian tanda tangan Anda (lihat contoh dibawah ini).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -339,9 +342,8 @@ Contoh:
 Tag: Section 1
 ```
 
-Untuk mematahkan bagian tag dan untuk memastikan bahwa tag tidak salah mengidentifikasi untuk bagian tanda tangan dari sebelumnya dalam file tanda tangan, hanya memastikan bahwa setidaknya ada dua jeda baris berturut-turut antara tag Anda dan bagian tanda tangan sebelumnya Anda. Apapun tanda tangan tidak di-tag akan default untuk "IPv4" atau "IPv6" (tergantung pada jenis tanda tangan yang dipicu).
+Untuk mematahkan tag bagian dan untuk memastikan bahwa tag tidak salah mengidentifikasi untuk bagian tanda tangan dari sebelumnya dalam file tanda tangan, hanya memastikan bahwa setidaknya ada dua jeda baris berturut-turut antara tag Anda dan bagian tanda tangan sebelumnya Anda. Apapun tanda tangan tidak di-tag akan default untuk "IPv4" atau "IPv6" (tergantung pada jenis tanda tangan yang dipicu).
 
-Contoh:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -353,9 +355,32 @@ Tag: Section 1
 
 Dalam contoh di atas `1.2.3.4/32` dan `2.3.4.5/32` akan di-tag sebagai "IPv4", sedangkan `4.5.6.7/32` dan `5.6.7.8/32` akan di-tag sebagai "Section 1".
 
-Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian tertentu dalam salah satu file tanda tangan, Anda dapat menggunakan file `ignore.dat` untuk menentukan bagian untuk mengabaikan. Pada baris baru, menulis `Ignore`, diikuti dengan spasi, diikuti dengan nama bagian yang Anda ingin CIDRAM untuk mengabaikan.
+Jika Anda ingin tanda tangan untuk berakhir setelah beberapa waktu, dengan cara yang sama untuk tag bagian, Anda dapat menggunakan "tag kadaluarsa" untuk menentukan kapan tanda tangan harus berhenti menjadi valid. Tag kadaluarsa menggunakan format "TTTT.BB.HH" (lihat contoh dibawah ini).
 
-Contoh:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Tag bagian dan tag kadaluarsa dapat digunakan bersama, dan mereka berdua opsional (lihat contoh dibawah ini).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 INFORMASI TAMBAHAN
+
+Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian tertentu dalam salah satu file tanda tangan, Anda dapat menggunakan file `ignore.dat` untuk menentukan bagian untuk mengabaikan. Pada baris baru, menulis `Ignore`, diikuti dengan spasi, diikuti dengan nama bagian yang Anda ingin CIDRAM untuk mengabaikan (lihat contoh dibawah ini).
+
 ```
 Ignore Section 1
 ```
@@ -365,4 +390,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 20 Agustus 2016 (2016.08.20).
+Terakhir Diperbarui: 27 Agustus 2016 (2016.08.27).

@@ -202,16 +202,16 @@ CIDRAM должен автоматически блокировать нежел
 Конфигурация подписями.
 
 "ipv4"
-- A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
+- Список подписи IPv4 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми. Вы можете добавлять записи здесь, если вы хотите, чтобы включить дополнительные IPv4 подписи файлов в CIDRAM.
 
 "ipv6"
-- A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM.
+- Список подписи IPv6 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми. Вы можете добавлять записи здесь, если вы хотите, чтобы включить дополнительные IPv6 подписи файлов в CIDRAM.
 
 "block_cloud"
-- Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true.
+- Блокировать CIDRs идентифицирован как принадлежащий услуг веб-хостинга / облачные сервисы? Если вы управляете службы API с вашего сайта, или если вы ожидать что другие веб-сайты чтобы подключиться к ваш веб-сайт, это должно быть установлено в false. Если вы этого не сделаете, эта директива должна быть установлена true.
 
 "block_bogons"
-- Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true.
+- Блокировать марсианин/bogon CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true.
 
 "block_generic"
 - Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories.
@@ -273,6 +273,8 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 
 ###6. <a name="SECTION6"></a>ФОРМАТ ПОДПИСЕЙ
 
+####6.0 ОСНОВЫ
+
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
 All IPv4 signatures follow the format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
@@ -326,9 +328,10 @@ The available shorthand words are:
 - Proxy
 - Spam
 
-Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+####6.1 ТЕГИ
 
-Примеры:
+If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (смотрите пример ниже).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -341,7 +344,6 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-Примеры:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -353,9 +355,32 @@ Tag: Section 1
 
 In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
 
-In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore.
+If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "ГГГГ.ММ.ДД" (смотрите пример ниже).
 
-Примеры:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Section tags and expiry tags may be used in conjunction, and both are optional (смотрите пример ниже).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 ВСПОМОГАТЕЛЬНЫЙ
+
+In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (смотрите пример ниже).
+
 ```
 Ignore Section 1
 ```
@@ -365,4 +390,4 @@ Ignore Section 1
 ---
 
 
-Последнее обновление: 24 Август 2016 (2016.08.24).
+Последнее обновление: 27 Август 2016 (2016.08.27).

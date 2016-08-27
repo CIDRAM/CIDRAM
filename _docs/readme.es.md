@@ -273,6 +273,8 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 
 ###6. <a name="SECTION6"></a>FORMATO DE FIRMAS
 
+####6.0 LO ESENCIAL
+
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
 
 Todas las firmas IPv4 siguen el formato: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
@@ -326,9 +328,10 @@ Las palabras abreviadas disponibles son:
 - Proxy
 - Spam
 
-Opcional: Si desea dividir sus firmas personalizadas en secciones individuales, se puede identificar estas secciones individuales a la script mediante la adición de una etiqueta "Tag:" inmediatamente después de las firmas de cada sección, junto con el nombre de su sección de firmas.
+####6.1 ETIQUETAS
 
-Ejemplo:
+Si desea dividir sus firmas personalizadas en secciones individuales, se puede identificar estas secciones individuales a la script mediante la adición de una "etiqueta de sección" inmediatamente después de las firmas de cada sección, junto con el nombre de su sección de firmas (vea el ejemplo siguiente).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -341,7 +344,6 @@ Tag: Section 1
 
 Para romper las etiquetas de secciones y para asegurar que las etiquetas no son identificado incorrectamente a las secciones de firmas más temprano en los archivos de firmas, Simplemente asegúrese de que hay al menos dos saltos de línea consecutivos entre su etiqueta y su sección de firmas de más temprano. Cualquier firmas que no son etiquetados será predefinida a ya sea "IPv4" o "IPv6" (dependiendo de qué tipos de firmas se activan).
 
-Ejemplo:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -353,9 +355,32 @@ Tag: Section 1
 
 En el ejemplo anterior `1.2.3.4/32` y `2.3.4.5/32` será etiquetado como "IPv4", mientras `4.5.6.7/32` y `5.6.7.8/32` será etiquetado como "Section 1".
 
-En adición, si quieres CIDRAM ignorar completamente algunas secciones específicas dentro de cualquiera de los archivos de firmas, puede utilizar el archivo `ignore.dat` para especificar qué secciones por ignorar. En una línea nueva, escribir `Ignore`, seguido de un espacio, seguido del nombre de la sección que desea CIDRAM ignorar.
+Si desea firmas para expiran después de un tiempo, de una manera similar a las etiquetas de sección, se puede utilizar una "etiqueta de expiración" para especificar cuándo deben firmas dejarán de ser válidas. Etiquetas de expiración utilizan el formato "AAAA.MM.DD" (vea el ejemplo siguiente).
 
-Ejemplo:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Etiquetas de sección y etiquetas de expiración se pueden utilizar en conjunción, y ambos son opcionales (vea el ejemplo siguiente).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 AUXILIAR
+
+En adición, si quieres CIDRAM ignorar completamente algunas secciones específicas dentro de cualquiera de los archivos de firmas, puede utilizar el archivo `ignore.dat` para especificar qué secciones por ignorar. En una línea nueva, escribir `Ignore`, seguido de un espacio, seguido del nombre de la sección que desea CIDRAM ignorar (vea el ejemplo siguiente).
+
 ```
 Ignore Section 1
 ```
@@ -365,4 +390,4 @@ Consulte los archivos de firmas personalizadas para obtener más información.
 ---
 
 
-Última Actualización: 23 Agosto 2016 (2016.08.23).
+Última Actualización: 27 Agosto 2016 (2016.08.27).

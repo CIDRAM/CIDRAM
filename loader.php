@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.18).
+ * This file: The loader (last modified: 2016.08.26).
  */
 
 /**
@@ -23,7 +23,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.5.0';
+    $CIDRAM['ScriptVersion'] = '0.5.1-DEV';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -236,7 +236,6 @@ if (!defined('CIDRAM')) {
     require $CIDRAM['Vault'] . 'functions.php';
 
     /** Fix incorrect typecasting for some configuration directives. */
-    $CIDRAM['AutoType']($CIDRAM['Config']['general']['timeOffset']);
     $CIDRAM['AutoType']($CIDRAM['Config']['general']['forbid_on_block']);
     $CIDRAM['AutoType']($CIDRAM['Config']['general']['disable_cli'], 'Bool');
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_cloud'], 'Bool');

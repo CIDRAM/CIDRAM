@@ -275,6 +275,8 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 
 ###6. <a name="SECTION6"></a>SIGNATURENFORMAT
 
+####6.0 WESENTLICHE
+
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
 Alle IPv4 Signaturen folgen dem Format: `xxx.xxx.xxx.xxx/yy [Funktion] [Param]`.
@@ -328,9 +330,10 @@ The available shorthand words are:
 - Proxy
 - Spam
 
-Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+####6.1 TAGS
 
-Beispiel:
+If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (siehe Beispiel unten).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -343,7 +346,6 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-Beispiel:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -355,9 +357,32 @@ Tag: Section 1
 
 In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
 
-In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore.
+If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "JJJJ.MM.TT" (siehe Beispiel unten).
 
-Beispiel:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Section tags and expiry tags may be used in conjunction, and both are optional (siehe Beispiel unten).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 ZUSATZINFORMATION
+
+In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (siehe Beispiel unten).
+
 ```
 Ignore Section 1
 ```
@@ -367,4 +392,4 @@ Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informat
 ---
 
 
-Zuletzt aktualisiert: 24. August 2016 (2016.08.24).
+Zuletzt aktualisiert: 27. August 2016 (2016.08.27).

@@ -273,6 +273,8 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 
 ###6. <a name="SECTION6"></a>FORMATO DE ASSINATURAS
 
+####6.0 NOÇÕES BÁSICAS
+
 A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode ser encontrada documentado em texto simples dentro de qualquer um dos dois arquivos de assinaturas personalizados. Por favor, consulte que a documentação para saber mais sobre o formato e estrutura das assinaturas de CIDRAM.
 
 Todas as assinaturas IPv4 seguir o formato: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
@@ -326,9 +328,10 @@ As palavras curtas disponíveis são:
 - Proxy
 - Spam
 
-Opcional: Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas secções individuais para o script por adição de uma etiqueta "Tag:" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas.
+####6.1 ETIQUETAS
 
-Exemplo:
+Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas secções individuais para o script por adição de uma "etiqueta de secção" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -341,7 +344,6 @@ Tag: Section 1
 
 Para quebrar etiquetas de seção e assegurar que os etiquetas não são identificados incorretamente a seções de assinaturas de mais cedo nos arquivos de assinaturas, simplesmente assegurar que há pelo menos dois quebras de linha consecutivas entre o sua etiqueta e suas seções de assinaturas anteriores. Quaisquer assinaturas não etiquetados será padrão para qualquer "IPv4" ou "IPv6" (dependendo de quais tipos de assinaturas estão sendo desencadeados).
 
-Exemplo:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -353,9 +355,32 @@ Tag: Section 1
 
 No exemplo acima, `1.2.3.4/32` e `2.3.4.5/32` será etiquetadas como "IPv4", enquanto que `4.5.6.7/32` e `5.6.7.8/32` será etiquetadas como "Section 1".
 
-Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos ficheiros de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar.
+Se você quiser assinaturas para expirar depois de algum tempo, de um modo semelhante para etiquetas de secção, você pode usar um "etiqueta de expiração" para especificar quando as assinaturas devem deixar de ser válida. Etiquetas de expiração usam o formato "AAAA.MM.DD" (veja o exemplo abaixo).
 
-Exemplo:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Etiquetas de secção and e etiquetas de expiração pode ser usado em conjunto, e ambos são opcionais (veja o exemplo abaixo).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 AUXILIAR
+
+Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos ficheiros de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
+
 ```
 Ignore Section 1
 ```
@@ -365,4 +390,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 21 Agosto 2016 (2016.08.21).
+Última Atualização: 27 Agosto 2016 (2016.08.27).

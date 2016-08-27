@@ -5,9 +5,9 @@
  <li>1. <a href="#SECTION1">مقدمة</a></li>
  <li>2. <a href="#SECTION2">كيفية التحميل</a></li>
  <li>3. <a href="#SECTION3">كيفية الإستخدام</a></li>
- <li>5. <a href="#SECTION4">الملفاتالموجودةفيهذهالحزمة</a></li>
- <li>6. <a href="#SECTION5">خياراتالتكوين/التهيئة</a></li>
- <li>7. <a href="#SECTION6">شكل/تنسيق التوقيع</a></li>
+ <li>4. <a href="#SECTION4">الملفاتالموجودةفيهذهالحزمة</a></li>
+ <li>5. <a href="#SECTION5">خياراتالتكوين/التهيئة</a></li>
+ <li>6. <a href="#SECTION6">شكل/تنسيق التوقيع</a></li>
 </ul></div>
 
 ---
@@ -19,7 +19,7 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 <div dir="rtl">حقوق النشر محفوظة ل CIDRAM لعام 2016 وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
 
-<div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU. نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف `LICENSE.txt` وللمزيد من المعلومات:</div>
+<div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU. نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف "LICENSE.txt" وللمزيد من المعلومات:</div>
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -34,13 +34,13 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 <div dir="rtl">1. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل `/public_html/cidram/` أو ما شابه سيكون كاف.<br /><br /></div>
 
-<div dir="rtl">2. إعادة تسمية `config.ini.RenameMe` إلى `config.ini` (تقع داخل `vault`)، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
+<div dir="rtl">2. إعادة تسمية "config.ini.RenameMe" إلى "config.ini" (تقع داخل "vault")، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
 
-<div dir="rtl">3. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع `*.txt/*.md` لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
+<div dir="rtl">3. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "*.txt/*.md" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
 <div dir="rtl">4. غير التصريح لمجلد vault للتصريح "777". المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
 
-<div dir="rtl">5. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل `require` أو `include`، بالعادة سيتم التخزين في  `/includes`، `/assets` أو `/functions`، وسيتم تسميته بالغالب مثل: `init.php`، `common_functions.php`، `functions.php` أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام `require` أو `include` قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار `loader.php` لديك.<br /><br /></div>
+<div dir="rtl">5. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل "require" أو "include"، بالعادة سيتم التخزين في  "/includes"، "/assets" أو "/functions"، وسيتم تسميته بالغالب مثل: "init.php"، "common_functions.php"، "functions.php" أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام "require" أو "include" قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار "loader.php" لديك.<br /><br /></div>
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -48,11 +48,11 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 <div dir="rtl">-- أو بدلاً من ذلك --<br /><br /></div>
 
-<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل `php.ini`، بإستطاعتك إستخدام `auto_prepend_file` للتوجيه ل CIDRAM لكل طلب مثل:<br /><br /></div>
+<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل "php.ini"، بإستطاعتك إستخدام "auto_prepend_file" للتوجيه ل CIDRAM لكل طلب مثل:<br /><br /></div>
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
-<div dir="rtl">أو هذا في ملف `.htaccess`:<br /><br /></div>
+<div dir="rtl">أو هذا في ملف ".htaccess":<br /><br /></div>
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
@@ -157,7 +157,7 @@ If you encounter any false positives, please contact me to let me know about it.
 
 
 ### <div dir="rtl">5. <a name="SECTION5"></a>خياراتالتكوين/التهيئة</div>
-<div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين `config.ini`، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
+<div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين "config.ini"، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
 <div dir="rtl">التكوين العام لـ CIDRAM.<br /><br /></div>
@@ -171,20 +171,21 @@ If you encounter any false positives, please contact me to let me know about it.
 "logfileSerialized"
 - Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.
 
-<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: `{yyyy}` لمدة عام كامل، `{yy}` لمدة عام يختصر، `{mm}` لمدة شهر، `{dd}` ليوم واحد، `{hh}` لمدة ساعة.</em><br /><br /></div>
+<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: "{yyyy}" لمدة عام كامل، "{yy}" لمدة عام يختصر، "{mm}" لمدة شهر، "{dd}" ليوم واحد، "{hh}" لمدة ساعة (راجع الأمثلة أدناه).</em><br /><br /></div>
 
-<div dir="rtl"><em>أمثلة:</em><br /></div>
-<div dir="rtl"><ul><em>
- <li>logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
- <li>logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
- <li>logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
-</em></ul></div>
+```
+ logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'
+ logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'
+ logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'
+```
 
 <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
- <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة CIDRAM). الإزاحة المستندة دقيقة.</li>
- <li>مثال (لإضافة ساعة واحدة): `timeOffset=60`</li>
+ <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة CIDRAM). الإزاحة المستندة دقيقة.<br /></li>
+ <li>مثال (لإضافة ساعة واحدة):</li>
 </ul></div>
+
+`timeOffset=60`
 
 <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
@@ -193,7 +194,7 @@ If you encounter any false positives, please contact me to let me know about it.
 
 <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
- <li>الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟ False/200 = 200 OK (حسنا) [الافتراضي]; True = 403 Forbidden (ممنوع); 503 = 503 Service unavailable (الخدمة غير متوفرة).</li>
+ <li>الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟ False/200 = 200 OK (حسنا) [الافتراضي]؛ True = 403 Forbidden (ممنوع)؛ 503 = 503 Service unavailable (الخدمة غير متوفرة).</li>
 </ul></div>
 
 "silent_mode"
@@ -269,17 +270,14 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 "logfile"
 - Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.
 
-<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: `{yyyy}` لمدة عام كامل، `{yy}` لمدة عام يختصر، `{mm}` لمدة شهر، `{dd}` ليوم واحد، `{hh}` لمدة ساعة.</em><br /><br /></div>
+<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: "{yyyy}" لمدة عام كامل، "{yy}" لمدة عام يختصر، "{mm}" لمدة شهر، "{dd}" ليوم واحد، "{hh}" لمدة ساعة (راجع الأمثلة أدناه).</em><br /><br /></div>
 
-<div dir="rtl"><em>أمثلة:</em><br /></div>
-<div dir="rtl"><ul><em>
- <li>logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
-</em></ul></div>
+`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt`
 
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
 <div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
 
-<div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "تم رفض الوصول" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ CIDRAM، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين `foo="bar"`، أي مثيل `<p>{foo}</p>` وجدت داخل إخراج HTML ستصبح `<p>bar</p>`.<br /><br /></div>
+<div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "تم رفض الوصول" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ CIDRAM، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين foo="bar"، أي مثيل <p>{foo}</p> وجدت داخل إخراج HTML ستصبح <p>bar</p>.<br /><br /></div>
 
 <div dir="rtl">"css_url"<br /></div>
 <div dir="rtl"><ul>
@@ -290,6 +288,8 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 
 
 ### <div dir="rtl">6. <a name="SECTION6"></a>شكل/تنسيق التوقيع</div>
+
+#### <div dir="rtl">6.0 مبادئ<br /><br /></div>
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -347,9 +347,10 @@ The available shorthand words are:
 - Proxy
 - Spam
 
-Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+#### <div dir="rtl">6.1 علامات<br /><br /></div>
 
-<div dir="rtl">مثال:<br /></div>
+If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (راجع الأمثلة أدناه).
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -362,7 +363,6 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-<div dir="rtl">مثال:<br /></div>
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -374,9 +374,32 @@ Tag: Section 1
 
 In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
 
-In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore.
+If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "YYYY.MM.DD" (راجع الأمثلة أدناه).
 
-<div dir="rtl">مثال:<br /></div>
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Section tags and expiry tags may be used in conjunction, and both are optional (راجع الأمثلة أدناه).
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+#### <div dir="rtl">6.2 YAML<br /><br /></div>
+
+%% Information about YAML-like data %%
+
+#### <div dir="rtl">6.3 معلومات اضافية<br /><br /></div>
+
+In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (راجع الأمثلة أدناه).
+
 ```
 Ignore Section 1
 ```
@@ -386,4 +409,4 @@ Refer to the custom signature files for more information.
 ---
 
 
-<div dir="rtl">آخر تحديث: 24 أغسطس 2016 (2016.08.24).</div>
+<div dir="rtl">آخر تحديث: 27 أغسطس 2016 (2016.08.27).</div>

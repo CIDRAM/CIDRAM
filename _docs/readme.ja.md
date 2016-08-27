@@ -202,26 +202,26 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
 
-"ipv4" （アイピーブイ4）
+"ipv4" （アイピーブイ４）
 - A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
 
-"ipv6" （アイピーブイ6）
+"ipv6" （アイピーブイ６）
 - A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM.
 
 "block_cloud" （ブロック・クラウド）
-- Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true.
+- クラウドサービスからのCIDRをブロックする必要がありますか？ あなたのウェブサイトからのAPIサービスを操作する場合、または、あなたがウェブサイトツーサイト接続が予想される場合、これはfalseに設定する必要があります。ない場合は、これをtrueに設定する必要があります。
 
 "block_bogons" （ブロック・ぼごん）
-- Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true.
+- 火星の\ぼごんからのCIDRをブロックする必要がありますか？ あなたがローカルホストから、またはお使いのLANから、ローカルネットワーク内からの接続を受信した場合、これはfalseに設定する必要があります。ない場合は、これをtrueに設定する必要があります。
 
 "block_generic" （ブロック・ジェネリック）
-- Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories.
+- 一般的なCIDRをブロックする必要がありますか？ （他のオプションに固有ではないもの）。
 
 "block_proxies" （ブロック・プロキシ）
-- Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security.
+- プロキシサービスからのCIDRをブロックする必要がありますか？ 匿名プロキシサービスが必要な場合は、これをfalseに設定する必要があります。ない場合は、セキュリティを向上させるために、これをtrueに設定する必要があります。
 
 "block_spam" （ブロック・スパム）
-- Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
+- スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。
 
 ####"recaptcha" （リーキャプチャ、カテゴリ）
 Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
@@ -273,6 +273,8 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 
 
 ###6. <a name="SECTION6"></a>署名（シグニチャ）フォーマット
+
+####6.0 基本原則
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -327,9 +329,10 @@ The pre-prepared explanations have i18n support and can be translated by the scr
 - Proxy
 - Spam
 
-Optional: If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "Tag:" label immediately after the signatures of each section, along with the name of your signature section.
+####6.1 タグ
 
-例:
+If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section （以下の例を参照してください）。
+
 ```
 # "Section 1."
 1.2.3.4/32 Deny Bogon
@@ -342,7 +345,6 @@ Tag: Section 1
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
-例:
 ```
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
@@ -352,11 +354,34 @@ To break section tagging and to ensure that tags aren't incorrectly identified t
 Tag: Section 1
 ```
 
-In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+上記の例で、`1.2.3.4/32`と`2.3.4.5/32`は、「IPv4」でタグ付けされま；す一方、`4.5.6.7/32`と`5.6.7.8/32`は、「Section 1」でタグ付けされま。
 
-In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore.
+If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. 期限切れのタグがこの形式を使用します： 「年年年年.月月.日日」 （以下の例を参照してください）。
 
-例:
+```
+# "Section 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Expires: 2016.12.31
+```
+
+Section tags and expiry tags may be used in conjunction, and both are optional （以下の例を参照してください）。
+
+```
+# "Example Section."
+1.2.3.4/32 Deny Generic
+Tag: Example Section
+Expires: 2016.12.31
+```
+
+####6.2 YAML
+
+%% Information about YAML-like data %%
+
+####6.3 補助
+
+In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore （以下の例を参照してください）。
+
 ```
 Ignore Section 1
 ```
@@ -366,4 +391,4 @@ Ignore Section 1
 ---
 
 
-最終アップデート： 2016年08月24日。
+最終アップデート： 2016年08月27日。

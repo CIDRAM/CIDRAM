@@ -3593,7 +3593,7 @@ Tag: Reverse-Proxy
 
 
 # "Packet Flip, LLC" (various non-specific ASNs).
-# Updated: 2016.06.24 / Checked: 2016.07.24
+# Updated: 2016.08.20
 
 31.207.8.0/21 Deny Proxy
 31.207.16.0/20 Deny Proxy
@@ -3827,18 +3827,11 @@ Tag: JPMorgan Chase & Co
 
 # ASN 42708 ("Portlane Networks AB").
 # Infected by malware (as per reported by Google): 0.10%.
-# Updated: 2016.01.20 / Checked: 2016.03.12
+# Updated: 2016.08.26
 
 5.198.248.0/21 Deny Spam
 5.249.160.0/21 Deny Spam
 5.254.128.0/19 Deny Spam
-31.187.64.0/24 Deny Spam
-31.187.76.0/24 Deny Spam
-31.220.4.0/22 Deny Spam
-31.220.15.0/24 Deny Spam
-31.220.30.0/24 Deny Spam
-31.220.42.0/23 Deny Spam
-31.220.44.0/23 Deny Spam
 46.246.0.0/17 Deny Spam
 80.67.0.0/20 Deny Spam
 80.243.125.0/24 Deny Spam
@@ -3846,10 +3839,8 @@ Tag: JPMorgan Chase & Co
 91.217.189.0/24 Deny Spam
 91.236.116.0/24 Deny Spam
 141.138.208.0/21 Deny Spam
-153.92.126.0/23 Deny Spam
+159.253.28.0/24 Deny Spam
 172.94.0.0/24 Deny Spam
-176.126.65.0/24 Deny Spam
-176.126.84.0/23 Deny Spam
 178.73.192.0/18 Deny Spam
 185.5.44.0/24 Deny Spam
 185.9.3.0/24 Deny Spam
@@ -3857,7 +3848,8 @@ Tag: JPMorgan Chase & Co
 185.16.87.0/24 Deny Spam
 185.66.144.0/22 Deny Spam
 185.97.214.0/24 Deny Spam
-185.120.6.0/24 Deny Spam
+185.117.88.0/23 Deny Spam
+185.142.237.0/24 Deny Spam
 188.126.64.0/19 Deny Spam
 192.36.119.0/24 Deny Spam
 192.36.121.0/24 Deny Spam
@@ -3904,7 +3896,6 @@ Tag: JPMorgan Chase & Co
 192.121.186.0/24 Deny Spam
 192.121.225.0/24 Deny Spam
 192.121.251.0/24 Deny Spam
-192.165.17.0/24 Deny Spam
 192.165.48.0/24 Deny Spam
 192.165.121.0/24 Deny Spam
 192.165.123.0/24 Deny Spam
@@ -3923,8 +3914,6 @@ Tag: JPMorgan Chase & Co
 193.183.88.0/23 Deny Spam
 193.183.108.0/22 Deny Spam
 193.183.120.0/22 Deny Spam
-193.234.255.0/24 Deny Spam
-193.235.73.0/24 Deny Spam
 193.235.200.0/23 Deny Spam
 194.14.28.0/23 Deny Spam
 194.14.45.0/24 Deny Spam
@@ -4381,9 +4370,9 @@ Tag: PIN-AS
 Tag: IOMart
 
 
-# ASNs 35425, 58117 ("Bytemark Limited").
-# Infected by malware (as per reported by Google): 0.41% (AS35425), 0% (AS58117).
-# Updated: 2016.01.20 / Checked: 2016.03.12
+# ASN 35425 ("Bytemark Limited").
+# Infected by malware (as per reported by Google): 0.69%.
+# Updated: 2016.01.20 / Checked: 2016.08.26
 
 5.28.56.0/21 Deny Generic
 5.153.224.0/21 Deny Generic
@@ -4653,13 +4642,15 @@ Tag: Tzulo Inc
 
 
 # ASN 17139 ("Corporate Colocation Inc").
-# Infected by malware (as per reported by Google): 16.00%.
-# Updated: 2016.03.12 / Checked: 2016.04.19
+# Infected by malware (as per reported by Google): 16.42%.
+# Updated: 2016.08.26
 
 45.3.32.0/20 Deny Cloud
 45.3.55.0/24 Deny Cloud
 45.3.56.0/21 Deny Cloud
 45.78.80.0/20 Deny Cloud
+59.153.60.0/23 Deny Cloud
+59.153.63.0/24 Deny Cloud
 66.117.0.0/20 Deny Cloud
 68.64.160.0/20 Deny Cloud
 72.37.152.0/24 Deny Cloud
@@ -4683,6 +4674,7 @@ Tag: Tzulo Inc
 206.62.144.0/22 Deny Cloud
 206.62.148.0/24 Deny Cloud
 208.51.60.0/22 Deny Cloud
+208.103.154.0/24 Deny Cloud
 216.179.168.0/21 Deny Cloud
 216.179.208.0/24 Deny Cloud
 216.179.212.0/24 Deny Cloud
@@ -4749,8 +4741,8 @@ Tag: Reliable Hosting
 
 
 # ASN 33597 ("InfoRelay Online Systems, Inc").
-# Infected by malware (as per reported by Google): 0.70%.
-# Updated: 2016.01.27 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 0.66%.
+# Updated: 2016.08.26
 
 38.81.194.0/23 Deny Cloud
 66.231.176.0/20 Deny Cloud
@@ -4770,6 +4762,7 @@ Tag: Reliable Hosting
 199.188.228.0/22 Deny Cloud
 205.251.0.0/17 Deny Cloud
 208.94.144.0/24 Deny Cloud
+209.170.138.0/24 Deny Cloud
 Tag: InfoRelay Online
 
 
@@ -4886,7 +4879,7 @@ Tag: DataShack, LC
 
 # ASN 7914 ("Church of Scientology International").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.20 / Checked: 2016.03.29
+# Updated: 2016.01.20 / Checked: 2016.08.26
 
 12.9.239.0/24 Deny Generic
 192.216.201.0/24 Deny Generic
@@ -4926,18 +4919,21 @@ Tag: Tex-Link
 
 
 # ASN 63930 ("Ready Server - Dedicated Server Hosting").
-# Infected by malware (as per reported by Google): 3.80%.
-# Updated: 2016.01.21 / Checked: 2016.03.12
+# Infected by malware (as per reported by Google): 4.37%.
+# Updated: 2016.08.26
 
 45.125.192.0/22 Deny Cloud
+103.41.173.0/24 Deny Cloud
 103.47.208.0/22 Deny Cloud
-154.16.95.0/24 Deny Cloud
+103.200.208.0/22 Deny Cloud
+103.217.253.0/24 Deny Cloud
+113.20.156.0/24 Deny Cloud
 Tag: Ready Server
 
 
 # ASN 36923 ("Swift Networks Limited").
 # Infected by malware (as per reported by Google): 0%.
-# Updated: 2016.01.21 / Checked: 2016.03.29
+# Updated: 2016.01.21 / Checked: 2016.08.26
 
 41.58.0.0/16 Deny Generic
 41.189.0.0/19 Deny Generic
@@ -5200,8 +5196,8 @@ Tag: Internap Network
 
 
 # ASN 51013 ("Websupport s.r.o").
-# Infected by malware (as per reported by Google): 1.96%.
-# Updated: 2016.01.21 / Checked: 2016.03.30
+# Infected by malware (as per reported by Google): 4.38%.
+# Updated: 2016.01.21 / Checked: 2016.08.26
 
 37.9.168.0/21 Deny Generic
 185.111.88.0/22 Deny Generic
@@ -5282,10 +5278,9 @@ Tag: HyperHosting
 
 
 # ASN 25700 ("SWIFT VENTURES Inc").
-# Infected by malware (as per reported by Google): 2.72%.
-# Updated: 2016.01.22 / Checked: 2016.03.20
+# Infected by malware (as per reported by Google): 2.28%.
+# Updated: 2016.08.26
 
-74.117.174.0/24 Deny Cloud
 204.8.32.0/24 Deny Cloud
 204.8.34.0/24 Deny Cloud
 204.13.164.0/22 Deny Cloud
@@ -5323,7 +5318,7 @@ Tag: SUNUCU INTERNET HIZM
 
 # ASN 11051 ("Cyberverse, Inc").
 # Infected by malware (as per reported by Google): 1.88%.
-# Updated: 2016.01.22 / Checked: 2016.03.15
+# Updated: 2016.01.22 / Checked: 2016.08.26
 
 66.172.0.0/18 Deny Cloud
 66.180.192.0/20 Deny Cloud
@@ -5686,13 +5681,14 @@ Tag: ColoCrossing
 
 
 # ASN 11282 ("SERVERYOU INC").
-# Infected by malware (as per reported by Google): 1.90%.
-# Updated: 2016.01.22 / Checked: 2016.03.20
+# Infected by malware (as per reported by Google): 3.60%.
+# Updated: 2016.08.26
 
 104.251.224.0/21 Deny Cloud
 104.251.232.0/22 Deny Cloud
 104.251.236.0/23 Deny Cloud
-122.10.120.0/21 Deny Cloud
+122.10.121.0/24 Deny Cloud
+122.10.123.0/24 Deny Cloud
 192.0.16.0/20 Deny Cloud
 192.249.80.0/22 Deny Cloud
 198.1.128.0/18 Deny Cloud
@@ -12224,6 +12220,28 @@ Tag: Netelligent Hosting
 Tag: Powerbase DataCenter
 
 
+# ASN 32392 ("Ecommerce Corporation").
+# Infected by malware (as per reported by Google): 6.59%.
+# Updated: 2016.08.28
+
+50.6.0.0/16 Deny Cloud
+50.118.0.0/17 Deny Cloud
+64.17.128.0/18 Deny Cloud
+65.254.64.0/19 Deny Cloud
+66.116.128.0/17 Deny Cloud
+69.6.192.0/18 Deny Cloud
+69.49.224.0/19 Deny Cloud
+71.18.0.0/16 Deny Cloud
+72.41.0.0/16 Deny Cloud
+74.91.128.0/17 Deny Cloud
+76.162.0.0/15 Deny Cloud
+96.0.0.0/16 Deny Cloud
+98.130.0.0/15 Deny Cloud
+166.63.0.0/17 Deny Cloud
+173.83.0.0/16 Deny Cloud
+Tag: Ecommerce Corporation
+
+
 # ---
 # Microsoft Azure IPv4 CIDRs.
 # Thanks to chris_c for finding these. :-)
@@ -14015,7 +14033,6 @@ Tag: Azure
 94.103.36.55/32 Deny Generic
 98.124.243.37/32 Deny Generic
 98.124.243.47/32 Deny Generic
-98.131.185.136/32 Deny Generic
 101.0.89.3/32 Deny Generic
 101.200.81.187/32 Deny Generic
 103.4.52.150/32 Deny Generic
@@ -14945,7 +14962,7 @@ Tag: SFS Toxic CIDRs
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.08.21
+# Updated: 2016.08.28
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 2.56.0.0/14 Deny Bogon
@@ -14978,7 +14995,6 @@ Tag: SFS Toxic CIDRs
 37.221.64.0/18 Deny Bogon
 37.252.216.0/21 Deny Bogon
 41.84.160.0/19 Deny Bogon
-41.245.0.0/17 Deny Bogon
 45.8.0.0/13 Deny Bogon
 45.65.64.0/18 Deny Bogon
 45.66.0.0/15 Deny Bogon
@@ -15124,6 +15140,7 @@ Tag: SFS Toxic CIDRs
 91.196.220.0/22 Deny Bogon
 91.196.232.0/22 Deny Bogon
 91.197.0.0/22 Deny Bogon
+91.197.36.0/22 Deny Bogon
 91.197.40.0/22 Deny Bogon
 91.197.120.0/22 Deny Bogon
 91.197.196.0/22 Deny Bogon
@@ -15417,6 +15434,7 @@ Tag: SFS Toxic CIDRs
 91.238.83.0/24 Deny Bogon
 91.238.84.0/24 Deny Bogon
 91.238.92.0/23 Deny Bogon
+91.238.207.0/24 Deny Bogon
 91.239.15.0/24 Deny Bogon
 91.239.37.0/24 Deny Bogon
 91.239.130.0/24 Deny Bogon
@@ -15469,9 +15487,9 @@ Tag: SFS Toxic CIDRs
 95.215.140.0/22 Deny Bogon
 100.64.0.0/10 Deny Bogon
 102.0.0.0/8 Deny Bogon
-103.72.188.0/22 Deny Bogon
-103.72.192.0/18 Deny Bogon
-103.73.0.0/16 Deny Bogon
+103.73.83.0/24 Deny Bogon
+103.73.96.0/19 Deny Bogon
+103.73.128.0/17 Deny Bogon
 103.74.0.0/15 Deny Bogon
 103.76.0.0/14 Deny Bogon
 103.80.0.0/12 Deny Bogon
@@ -15521,19 +15539,13 @@ Tag: SFS Toxic CIDRs
 160.226.128.0/17 Deny Bogon
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
-164.160.136.0/21 Deny Bogon
+164.160.140.0/22 Deny Bogon
 164.160.144.0/20 Deny Bogon
-164.160.184.0/21 Deny Bogon
 165.16.0.0/17 Deny Bogon
 165.16.128.0/18 Deny Bogon
 165.16.192.0/21 Deny Bogon
 165.49.0.0/16 Deny Bogon
 165.73.0.0/16 Deny Bogon
-168.196.4.0/22 Deny Bogon
-168.196.8.0/21 Deny Bogon
-168.196.16.0/20 Deny Bogon
-168.196.32.0/19 Deny Bogon
-168.196.64.0/18 Deny Bogon
 168.196.128.0/17 Deny Bogon
 168.197.0.0/16 Deny Bogon
 169.254.0.0/16 Deny Bogon
@@ -15572,13 +15584,15 @@ Tag: SFS Toxic CIDRs
 178.238.0.0/20 Deny Bogon
 178.249.232.0/21 Deny Bogon
 178.255.112.0/21 Deny Bogon
-185.1.80.0/20 Deny Bogon
+185.1.81.0/24 Deny Bogon
+185.1.82.0/23 Deny Bogon
+185.1.84.0/22 Deny Bogon
+185.1.88.0/21 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.164.152.0/21 Deny Bogon
-185.164.160.0/19 Deny Bogon
-185.164.192.0/18 Deny Bogon
-185.165.0.0/16 Deny Bogon
+185.165.172.0/22 Deny Bogon
+185.165.176.0/20 Deny Bogon
+185.165.192.0/18 Deny Bogon
 185.166.0.0/15 Deny Bogon
 185.168.0.0/13 Deny Bogon
 185.176.0.0/12 Deny Bogon
@@ -16058,6 +16072,7 @@ Tag: SFS Toxic CIDRs
 193.35.24.0/24 Deny Bogon
 193.35.26.0/23 Deny Bogon
 193.35.28.0/22 Deny Bogon
+193.35.61.0/24 Deny Bogon
 193.35.80.0/20 Deny Bogon
 193.35.98.0/24 Deny Bogon
 193.35.101.0/24 Deny Bogon
@@ -16462,6 +16477,7 @@ Tag: SFS Toxic CIDRs
 193.105.162.0/24 Deny Bogon
 193.105.184.0/24 Deny Bogon
 193.105.207.0/24 Deny Bogon
+193.105.208.0/24 Deny Bogon
 193.105.217.0/24 Deny Bogon
 193.105.244.0/23 Deny Bogon
 193.106.20.0/22 Deny Bogon
@@ -16623,6 +16639,7 @@ Tag: SFS Toxic CIDRs
 193.148.248.0/22 Deny Bogon
 193.148.252.0/23 Deny Bogon
 193.148.255.0/24 Deny Bogon
+193.149.2.0/23 Deny Bogon
 193.149.16.0/20 Deny Bogon
 193.150.168.0/24 Deny Bogon
 193.150.170.0/23 Deny Bogon
@@ -17470,6 +17487,7 @@ Tag: SFS Toxic CIDRs
 194.50.0.0/23 Deny Bogon
 194.50.3.0/24 Deny Bogon
 194.50.4.0/23 Deny Bogon
+194.50.8.0/24 Deny Bogon
 194.50.12.0/22 Deny Bogon
 194.50.16.0/21 Deny Bogon
 194.50.25.0/24 Deny Bogon
@@ -18599,12 +18617,13 @@ Tag: SFS Toxic CIDRs
 196.6.230.0/23 Deny Bogon
 196.11.103.0/24 Deny Bogon
 196.13.203.0/24 Deny Bogon
-196.41.86.0/23 Deny Bogon
+196.41.87.0/24 Deny Bogon
 196.41.88.0/22 Deny Bogon
 196.41.92.0/23 Deny Bogon
-196.41.94.0/24 Deny Bogon
-196.51.0.0/16 Deny Bogon
-196.61.0.0/16 Deny Bogon
+196.61.0.0/17 Deny Bogon
+196.61.128.0/18 Deny Bogon
+196.61.192.0/19 Deny Bogon
+196.61.224.0/20 Deny Bogon
 196.160.0.0/13 Deny Bogon
 196.192.116.0/22 Deny Bogon
 196.192.120.0/22 Deny Bogon
@@ -18618,14 +18637,10 @@ Tag: SFS Toxic CIDRs
 196.216.254.0/24 Deny Bogon
 196.223.11.0/24 Deny Bogon
 196.223.29.0/24 Deny Bogon
-196.223.64.0/19 Deny Bogon
 196.223.248.0/22 Deny Bogon
 196.250.0.0/15 Deny Bogon
 198.18.0.0/15 Deny Bogon
 198.51.100.0/24 Deny Bogon
-200.23.207.0/24 Deny Bogon
-200.33.126.0/23 Deny Bogon
-200.33.174.0/23 Deny Bogon
 200.192.106.0/23 Deny Bogon
 200.229.250.0/23 Deny Bogon
 203.0.113.0/24 Deny Bogon

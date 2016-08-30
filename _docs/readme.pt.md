@@ -330,7 +330,7 @@ As palavras curtas disponíveis são:
 
 ####6.1 ETIQUETAS
 
-Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas secções individuais para o script por adição de uma "etiqueta de secção" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
+Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas seções individuais para o script por adição de uma "etiqueta de secção" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
 
 ```
 # "Section 1."
@@ -375,7 +375,78 @@ Expires: 2016.12.31
 
 ####6.2 YAML
 
-%% Information about YAML-like data %%
+#####6.2.0 YAML BÁSICOS
+
+Uma forma simplificada de marcação YAML pode ser usado em arquivos de assinatura com a finalidade de definir comportamentos e configurações específicas para as seções de assinaturas individuais. Isto pode ser útil se você quiser que o valor de suas diretivas de configuração para diferir na base de assinaturas individuais e seções de assinatura (por exemplo; se você quiser fornecer um endereço de e-mail para tickets de suporte para quaisquer usuários bloqueados por uma assinatura específica, mas não quer fornecer um endereço de e-mail para tickets de suporte para usuários bloqueados por quaisquer outras assinaturas; se você quiser algumas assinaturas específicas para provocar um redirecionamento página; se você quiser marcar uma seção de assinaturas para uso com reCAPTCHA; Se você quiser registrar tentativas de acesso bloqueadas para separar arquivos na base de assinaturas individuais e/ou seções de assinatura).
+
+Uso de marcação YAML nos arquivos de assinatura é totalmente opcional (isto é, você pode usá-lo se desejar fazê-lo, mas você não é obrigado a fazê-lo), e é capaz de alavancar mais (mas nem todos) das diretivas de configuração.
+
+Nota: Implementação de marcação YAML em CIDRAM é muito simplista e muito limitado; Destina-se a cumprir as exigências específicas para CIDRAM de uma maneira que tem a familiaridade de marcação YAML, mas nem segue nem está de acordo com as especificações oficiais (e portanto, não se comporta da mesma forma como outros implementações mais completas, e pode não ser apropriado para outros projetos).
+
+Em CIDRAM, Segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens em uma linha imediatamente após a lista de CIDRs e todas as tags, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso secção de assinaturas é desencadeada (veja os exemplos abaixo).
+
+```
+# "Foobar 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 1
+---
+general:
+ logfile: logfile.{yyyy}-{mm}-{dd}.txt
+ logfileApache: access.{yyyy}-{mm}-{dd}.txt
+ logfileSerialized: serial.{yyyy}-{mm}-{dd}.txt
+ forbid_on_block: false
+ emailaddr: username@domain.tld
+recaptcha:
+ lockip: false
+ lockuser: true
+ expiry: 720
+ logfile: recaptcha.{yyyy}-{mm}-{dd}.txt
+ enabled: true
+template_data:
+ css_url: http://domain.tld/cidram.css
+
+# "Foobar 2."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 2
+---
+general:
+ logfile: "logfile.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileApache: "access.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ forbid_on_block: 503
+
+# "Foobar 3."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 3
+---
+general:
+ forbid_on_block: 403
+ silent_mode: "http://127.0.0.1/"
+```
+
+#####6.2.1 COMO "MARCAR ESPECIALMENTE" SEÇÕES DE ASSINATURA PARA USO COM RECAPTCHA
+
+Quando "usemode" é 0 ou 1, seções de assinatura não precisa ser "marcado especialmente" para uso com reCAPTCHA (porque eles já vão usar ou não vão usar o reCAPTCHA, dependendo essa configuração).
+
+Quando "usemode" é 2, para "marcar especialmente" seções de assinatura para uso com reCAPTCHA, uma entrada está incluído no segmento de YAML para que a secção de assinatura (veja o exemplo abaixo).
+
+```
+# This section will use reCAPTCHA.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Tag: reCAPTCHA-Enabled
+---
+recaptcha:
+ enabled: true
+```
+
+Nota: Um instância de reCAPTCHA vai SOMENTE ser oferecido ao usuário se reCAPTCHA está habilitado (quer com "usemode" como 1, ou "usemode" como 2 com "enabled" como true), e se exatamente UMA assinatura foi desencadeada (nem mais, nem menos; se assinaturas múltiplas são desencadeadas, uma instância de reCAPTCHA NÃO será oferecida).
 
 ####6.3 AUXILIAR
 
@@ -390,4 +461,4 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-Última Atualização: 27 Agosto 2016 (2016.08.27).
+Última Atualização: 30 Agosto 2016 (2016.08.30).

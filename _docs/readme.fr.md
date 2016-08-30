@@ -375,7 +375,78 @@ Expires: 2016.12.31
 
 ####6.2 YAML
 
-%% Information about YAML-like data %%
+#####6.2.0 BASES DE YAML
+
+Une forme simplifiée de YAML peut être utilisé dans les fichiers de signature dans le but de définir des comportements et des paramètres spécifiques aux différentes sections de signatures. Cela peut être utile si vous voulez que la valeur de vos directives de configuration différer sur la base des signatures individuelles et des sections de signature (par exemple; si vous voulez fournir une adresse e-mail pour les tickets de support pour tous les utilisateurs bloqués par une signature particulière, mais ne veulent pas fournir une adresse e-mail pour les tickets de support pour les utilisateurs bloqués par d'autres signatures; si vous voulez des signatures spécifiques pour déclencher une redirection de page; si vous voulez marquer une section de signature pour l'utilisation avec reCAPTCHA; si vous voulez enregistrer les tentatives d'accès bloquées à des fichiers séparés sur la base des signatures individuelles et/ou des sections de signatures).
+
+L'utilisation de YAML dans les fichiers de signature est entièrement facultative (c'est à dire, vous pouvez l'utiliser si vous le souhaitez, mais vous n'êtes pas obligé de le faire), et est capable d'affecter la plupart (mais pas tout) les directives de configuration.
+
+Note: L'implémentation de YAML dans CIDRAM est très simpliste et très limitée; L'intention est de satisfaire aux exigences spécifiques à CIDRAM d'une manière qui a la familiarité de YAML, mais ne suit pas et ne sont pas conformes aux spécifications officielles (et ne sera donc pas se comporter de la même manière que des implémentations plus approfondies ailleurs, et peuvent ne pas convenir à d'autres projets ailleurs).
+
+Dans CIDRAM, segments YAML sont identifiés au script par trois tirets ("---"), et terminer aux côtés de leur contenant sections de signature par sauts de ligne double. Un segment YAML typique dans une section de signatures se compose de trois tirets sur une ligne immédiatement après la liste des CIDRs et des balises, suivi d'une liste de bidimensionnelle paires clé-valeur (première dimension, catégories de directives de configuration; deuxième dimension, directives de configuration) pour les directives de configuration que doivent être modifiés (et pour quelles valeurs) chaque fois qu'une signature dans cette section de signatures est déclenchée (voir les exemples ci-dessous).
+
+```
+# "Foobar 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 1
+---
+general:
+ logfile: logfile.{yyyy}-{mm}-{dd}.txt
+ logfileApache: access.{yyyy}-{mm}-{dd}.txt
+ logfileSerialized: serial.{yyyy}-{mm}-{dd}.txt
+ forbid_on_block: false
+ emailaddr: username@domain.tld
+recaptcha:
+ lockip: false
+ lockuser: true
+ expiry: 720
+ logfile: recaptcha.{yyyy}-{mm}-{dd}.txt
+ enabled: true
+template_data:
+ css_url: http://domain.tld/cidram.css
+
+# "Foobar 2."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 2
+---
+general:
+ logfile: "logfile.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileApache: "access.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ forbid_on_block: 503
+
+# "Foobar 3."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 3
+---
+general:
+ forbid_on_block: 403
+ silent_mode: "http://127.0.0.1/"
+```
+
+#####6.2.1 COMMENT "SPÉCIALEMENT MARQUER" LES SECTIONS DE SIGNATURE POUR L'UTILISATION AVEC reCAPTCHA
+
+Quand "usemode" est 0 ou 1, les sections de signature ne doivent pas être "spécialement marqué" pour l'utilisation avec reCAPTCHA (parce qu'ils déjà seront ou non utiliser reCAPTCHA, en fonction de ce paramètre).
+
+Quand "usemode" est 2, à "spécialement marquer" les sections de signature pour l'utilisation avec reCAPTCHA, une entrée est incluse dans le segment de YAML pour cette section de signatures (voir l'exemple ci-dessous).
+
+```
+# This section will use reCAPTCHA.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Tag: reCAPTCHA-Enabled
+---
+recaptcha:
+ enabled: true
+```
+
+Note: Une instance de reCAPTCHA sera SEULEMENT présenté à l'utilisateur si reCAPTCHA est activé (soit avec "usemode" comme 1, ou "usemode" comme 2 avec "enabled" comme true), et si exactement UNE signature a été déclenchée (ni plus ni moins; si plusieurs signatures sont déclenchées, une instance de reCAPTCHA NE SERA PAS présenté).
 
 ####6.3 AUXILIAIRE
 
@@ -390,4 +461,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 27 Août 2016 (2016.08.27).
+Dernière Réactualisé: 30 Août 2016 (2016.08.30).

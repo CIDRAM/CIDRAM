@@ -15,7 +15,7 @@
 
 CIDRAM （无类别域间路由访问管理器）是一个PHP脚本，旨在保护网站途经阻止请求该从始发IP地址视为不良的流量来源，包括（但不限于）流量该从非人类的访问端点，云服务，垃圾邮件发送者，网站铲运机，等等。它通过计算CIDR的提供的IP地址从入站请求和试图匹配这些CIDR反对它的签名文件（这些签名文件包含CIDR的IP地址视为不良的流量来源）；如果找到匹配，请求被阻止。
 
-CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
+CIDRAM COPYRIGHT 2016和beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 本脚本是基于GNU通用许可V2.0版许可协议发布的，您可以在许可协议的允许范围内自行修改和发布，但请遵守GNU通用许可协议。使用脚本的过程中，作者不提供任何担保和任何隐含担保。更多的细节请参见GNU通用公共许可证，下的`LICENSE.txt`文件也可从访问：
 - <http://www.gnu.org/licenses/>。
@@ -40,7 +40,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 5） 接下来，您需要为您的系统或CMS设定启动CIDRAM的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，参观Github上的CIDRAM问题页面；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。
 
-`<?php require '/user_name/public_html/cidram/loader.php'; ?>`
+`<?php require '/user_name/public_html/cidram/loader.php'；?>`
 
 保存文件，关闭，重新上传。
 
@@ -170,7 +170,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 “logfileSerialized”
 - 连载的文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。
 
-*有用的建议：如果您想，可以追加日期/时间信息至附加到你的日志文件的名称通过包括这些中的名称： `{yyyy}` 为今年完整， `{yy}` 为今年缩写， `{mm}` 为今月， `{dd}` 为今日， `{hh}` 为今小时。*
+*有用的建议：如果您想，可以追加日期/时间信息至附加到您的日志文件的名称通过包括这些中的名称： `{yyyy}` 为今年完整， `{yy}` 为今年缩写， `{mm}` 为今月， `{dd}` 为今日， `{hh}` 为今小时。*
 
 *例子：
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -256,7 +256,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 “logfile”
 - 记录所有的reCAPTCHA的尝试？要做到这一点，指定一个文件名到使用。如果不，离开这个变量为空白。
 
-*有用的建议：如果您想，可以追加日期/时间信息至附加到你的日志文件的名称通过包括这些中的名称： `{yyyy}` 为今年完整， `{yy}` 为今年缩写， `{mm}` 为今月， `{dd}` 为今日， `{hh}` 为今小时。*
+*有用的建议：如果您想，可以追加日期/时间信息至附加到您的日志文件的名称通过包括这些中的名称： `{yyyy}` 为今年完整， `{yy}` 为今年缩写， `{mm}` 为今月， `{dd}` 为今日， `{hh}` 为今小时。*
 
 *例子：
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -376,7 +376,78 @@ Expires: 2016.12.31
 
 ####6.2 YAML
 
-%% Information about YAML-like data %%
+#####6.2.0 YAML基本概念
+
+简化形式的YAML标记可以使用在签名文件用于目的定义行为和配置设置具体到个人签名章节。这可能是有用的如果您希望您的配置指令值到变化之间的个人签名和签名章节（例如；如果您想提供一个电子邮件地址为支持票为任何用户拦截的通过一个特定的签名，但不希望提供一个电子邮件地址为支持票为用户拦截的通过任何其他签名；如果您想一些具体的签名到触发页面重定向；如果您想标记一个签名为使用的reCAPTCHA；如果您想日志拦截的访问到单独的文件按照个人签名和/或签名章节）。
+
+使用YAML标记在签名文件是完全可选（即，如果您想用这个，您可以用这个，但您没有需要用这个），和能够利用最的（但不所有的）配置指令。
+
+注意：YAML标记实施在CIDRAM是很简单也很有限；它的目的是满足特定要求的CIDRAM在方式具有熟悉的YAML标记，但不跟随也不符合规定的官方规格（因此，将不会是相同的其他实现别处，和可能不适合其他项目别处）。
+
+在CIDRAM，YAML标记段被识别到脚本通过使用三个连字符（“---”），和终止靠他们的签名章节通过双换行符。一个典型的YAML标记段在一个签名章节被组成的三个连字符在一行立马之后的CIDR列表和任何标签，接着是二维表为键值对（第一维，配置指令类别；第二维，配置指令）为哪些配置指令应修改（和哪些值）每当一个签名内那签名章节被触发（看下面的例子）。
+
+```
+# "Foobar 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 1
+---
+general:
+ logfile: logfile.{yyyy}-{mm}-{dd}.txt
+ logfileApache: access.{yyyy}-{mm}-{dd}.txt
+ logfileSerialized: serial.{yyyy}-{mm}-{dd}.txt
+ forbid_on_block: false
+ emailaddr: username@domain.tld
+recaptcha:
+ lockip: false
+ lockuser: true
+ expiry: 720
+ logfile: recaptcha.{yyyy}-{mm}-{dd}.txt
+ enabled: true
+template_data:
+ css_url: http://domain.tld/cidram.css
+
+# "Foobar 2."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 2
+---
+general:
+ logfile: "logfile.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileApache: "access.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ forbid_on_block: 503
+
+# "Foobar 3."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 3
+---
+general:
+ forbid_on_block: 403
+ silent_mode: "http://127.0.0.1/"
+```
+
+#####6.2.1 如何“特别标记”签名章节为使用的reCAPTCHA
+
+当“usemode”是“0”或“1”，签名章节不需要是“特别标记”签名章节为使用的reCAPTCHA（因为他们已会或不会使用reCAPTCHA，根据此设置）。
+
+当“usemode”是“2”，为“特别标记”签名章节为使用的reCAPTCHA，一个条目是包括在YAML段为了那个签名章节（看下面的例子）。
+
+```
+# This section will use reCAPTCHA.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Tag: reCAPTCHA-Enabled
+---
+recaptcha:
+ enabled: true
+```
+
+注意：一个reCAPTCHA将仅提供给用户如果reCAPTCHA是启用（当“usemode”是“1”，或“usemode”是“2”和“enabled”是“true”），和如果只有一个签名已触发（不多不少；如果多个签名被触发，一个reCAPTCHA将不提供）。
 
 ####6.3 辅
 
@@ -391,4 +462,4 @@ Ignore Section 1
 ---
 
 
-最后更新：2016年8月27日。
+最后更新：2016年9月2日。

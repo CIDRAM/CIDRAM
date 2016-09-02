@@ -377,7 +377,78 @@ Expires: 2016.12.31
 
 ####6.2 YAML
 
-%% Information about YAML-like data %%
+#####6.2.0 YAML基本概念
+
+簡化形式的YAML標記可以使用在簽名文件用於目的定義行為和配置設置具體到個人簽名章節。這可能是有用的如果您希望您的配置指令值到變化之間的個人簽名和簽名章節（例如；如果您想提供一個電子郵件地址為支持票為任何用戶攔截的通過一個特定的簽名，但不希望提供一個電子郵件地址為支持票為用戶攔截的通過任何其他簽名；如果您想一些具體的簽名到觸發頁面重定向；如果您想標記一個簽名為使用的reCAPTCHA；如果您想日誌攔截的訪問到單獨的文件按照個人簽名和/或簽名章節）。
+
+使用YAML標記在簽名文件是完全可選（即，如果您想用這個，您可以用這個，但您沒有需要用這個），和能夠利用最的（但不所有的）配置指令。
+
+注意：YAML標記實施在CIDRAM是很簡單也很有限；它的目的是滿足特定要求的CIDRAM在方式具有熟悉的YAML標記，但不跟隨也不符合規定的官方規格（因此，將不會是相同的其他實現別處，和可能不適合其他項目別處）。
+
+在CIDRAM，YAML標記段被識別到腳本通過使用三個連字符（“---”），和終止靠他們的簽名章節通過雙換行符。一個典型的YAML標記段在一個簽名章節被組成的三個連字符在一行立馬之後的CIDR列表和任何標籤，接著是二維表為鍵值對（第一維，配置指令類別；第二維，配置指令）為哪些配置指令應修改（和哪些值）每當一個簽名內那簽名章節被觸發（看下面的例子）。
+
+```
+# "Foobar 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 1
+---
+general:
+ logfile: logfile.{yyyy}-{mm}-{dd}.txt
+ logfileApache: access.{yyyy}-{mm}-{dd}.txt
+ logfileSerialized: serial.{yyyy}-{mm}-{dd}.txt
+ forbid_on_block: false
+ emailaddr: username@domain.tld
+recaptcha:
+ lockip: false
+ lockuser: true
+ expiry: 720
+ logfile: recaptcha.{yyyy}-{mm}-{dd}.txt
+ enabled: true
+template_data:
+ css_url: http://domain.tld/cidram.css
+
+# "Foobar 2."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 2
+---
+general:
+ logfile: "logfile.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileApache: "access.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ forbid_on_block: 503
+
+# "Foobar 3."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 3
+---
+general:
+ forbid_on_block: 403
+ silent_mode: "http://127.0.0.1/"
+```
+
+#####6.2.1 如何“特別標記”簽名章節為使用的reCAPTCHA
+
+當“usemode”是“0”或“1”，簽名章節不需要是“特別標記”簽名章節為使用的reCAPTCHA（因為他們也會或不會使用reCAPTCHA，根據此設置）。
+
+當“usemode”是“2”，為“特別標記”簽名章節為使用的reCAPTCHA，一個條目是包括在YAML段為了那個簽名章節（看下面的例子）。
+
+```
+# This section will use reCAPTCHA.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Tag: reCAPTCHA-Enabled
+---
+recaptcha:
+ enabled: true
+```
+
+注意：一個reCAPTCHA將僅提供給用戶如果reCAPTCHA是啟用（當“usemode”是“1”，或“usemode”是“2”和“enabled”是“true”），和如果只有一個簽名已觸發（不多不少；如果多個簽名被觸發，一個reCAPTCHA將不提供）。
 
 ####6.3 輔
 
@@ -392,4 +463,4 @@ Ignore Section 1
 ---
 
 
-最後更新：2016年8月27日。
+最後更新：2016年9月2日。

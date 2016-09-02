@@ -225,7 +225,7 @@ Cấu hình cho chữ ký.
 ####"recaptcha" (Thể loại)
 Nếu bạn muốn, bạn có thể cung cấp cho người dùng một cách để vượt qua các trang "Truy cập bị từ chối" bằng cách hoàn thành một reCAPTCHA. Điều này có thể giúp giảm thiểu một số rủi ro kết hợp với sai tích cực trong những tình huống theo đó chúng tôi không hoàn toàn chắc chắn liệu một yêu cầu bắt nguồn từ một máy tính hay một con người.
 
-Do những rủi ro liên quan đến việc cung cấp một cách cho người dùng để bỏ qua trang "Truy cập bị từ chối", nói chung, tôi sẽ tư vấn để không cho phép tính năng này trừ khi bạn cảm thấy nó là cần thiết phải làm như vậy. Tình huống mà nó sẽ là cần thiết: Nếu trang mạng của bạn có khách hàng hay người sử dụng mà cần phải có quyền truy cập vào trang mạng của bạn, và nếu điều này là một cái gì đó mà không thể được thỏa hiệp, nhưng nếu những khách hàng hay người sử dụng xảy ra để được kết nối từ một mạng thù địch mà có lẽ được mang giao thông không mong muốn, và ngăn chặn giao thông không mong muốn này cũng là một cái gì đó mà không thể được thỏa hiệp, trong những tình huống mà không chiến thắng này, tính năng reCAPTCHA có thể hữu ích như một phương tiện cho phép các giao thông mong muốn từ khách hàng hay người sử dụng, trong khi ngăn chặn các giao thông không mong muốn từ cùng một mạng. Tuy vậy, xem xét rằng mục đích của một CAPTCHA là để phân biệt giữa con người và chương trình máy tính, tính năng reCAPTCHA sẽ chỉ giúp đỡ trong những tình huống mà không chiến thắng này nếu chúng ta giả định rằng giao thông không mong muốn này là từ một chương trình máy tính (ví dụ, chương trình thư rác, công cụ cào, công cụ hack, giao thông tự động, vv), như trái ngược với giao thông không mong muốn từ người (như thế thư rác từ người, hacker, vv).
+Do những rủi ro liên quan đến việc cung cấp một cách cho người dùng để bỏ qua trang "Truy cập bị từ chối", nói chung, tôi sẽ tư vấn để không cho phép tính năng này trừ khi bạn cảm thấy nó là cần thiết phải làm như vậy. Tình huống mà nó sẽ là cần thiết: Nếu trang mạng của bạn có khách hàng hay người dùng mà cần phải có quyền truy cập vào trang mạng của bạn, và nếu điều này là một cái gì đó mà không thể được thỏa hiệp, nhưng nếu những khách hàng hay người dùng xảy ra để được kết nối từ một mạng thù địch mà có lẽ được mang giao thông không mong muốn, và ngăn chặn giao thông không mong muốn này cũng là một cái gì đó mà không thể được thỏa hiệp, trong những tình huống mà không chiến thắng này, tính năng reCAPTCHA có thể hữu ích như một phương tiện cho phép các giao thông mong muốn từ khách hàng hay người dùng, trong khi ngăn chặn các giao thông không mong muốn từ cùng một mạng. Tuy vậy, xem xét rằng mục đích của một CAPTCHA là để phân biệt giữa con người và chương trình máy tính, tính năng reCAPTCHA sẽ chỉ giúp đỡ trong những tình huống mà không chiến thắng này nếu chúng ta giả định rằng giao thông không mong muốn này là từ một chương trình máy tính (ví dụ, chương trình thư rác, công cụ cào, công cụ hack, giao thông tự động, vv), như trái ngược với giao thông không mong muốn từ người (như thế thư rác từ người, hacker, vv).
 
 Để có được một "site key" và một "secret key" (cần thiết để sử dụng reCAPTCHA), xin truy cập vào: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
@@ -238,10 +238,10 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 
 "lockip"
 - Chỉ định liệu các băm/hash nên được khóa trên IP cụ thể. False = Cookie và băm/hash CÓ THỂ được sử dụng bởi nhiều IP (mặc định). True = Cookie và băm/hash KHÔNG THỂ được sử dụng sử dụng bởi nhiều IP (cookie và băm/hash được khóa trên các IP).
-- Chú thích: Giá trị "lockip" được bỏ qua khi "lockuser" là false, bởi vì các cơ chế để nhớ "người sử dụng" khác nhau ơ tùy thuộc vào giá trị này.
+- Chú thích: Giá trị "lockip" được bỏ qua khi "lockuser" là false, bởi vì các cơ chế để nhớ "người dùng" khác nhau ơ tùy thuộc vào giá trị này.
 
 "lockuser"
-- Chỉ định liệu thành công hoàn thành của reCAPTCHA nên được khóa trên người sử dụng cụ thể. False = Thành công hoàn thành của reCAPTCHA sẽ cấp quyền truy cập cho tất cả các yêu cầu có nguồn gốc từ cùng một IP như được sử dụng bởi người sử dụng mà hoàn thành reCAPTCHA; Cookie và băm/hash không được sử dụng; Thay vào đó, một danh sách trắng IP sẽ được sử dụng. True = Thành công hoàn thành của reCAPTCHA sẽ chỉ cấp quyền truy cập cho người sử dụng mà hoàn thành reCAPTCHA; Cookie và băm/hash được sử dụng để nhớ người sử dụng; Một danh sách trắng IP sẽ không được sử dụng (mặc định).
+- Chỉ định liệu thành công hoàn thành của reCAPTCHA nên được khóa trên người dùng cụ thể. False = Thành công hoàn thành của reCAPTCHA sẽ cấp quyền truy cập cho tất cả các yêu cầu có nguồn gốc từ cùng một IP như được sử dụng bởi người dùng mà hoàn thành reCAPTCHA; Cookie và băm/hash không được sử dụng; Thay vào đó, một danh sách trắng IP sẽ được sử dụng. True = Thành công hoàn thành của reCAPTCHA sẽ chỉ cấp quyền truy cập cho người dùng mà hoàn thành reCAPTCHA; Cookie và băm/hash được sử dụng để nhớ người dùng; Một danh sách trắng IP sẽ không được sử dụng (mặc định).
 
 "sitekey"
 - Giá trị này nên tương ứng với "site key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA.
@@ -250,7 +250,7 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 - Giá trị này nên tương ứng với "secret key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA.
 
 "expiry"
-- Khi "lockuser" là true (mặc định), để nhớ khi một người sử dụng hoàn thành reCAPTCHA, cho yêu cầu trang tương lai, CIDRAM tạo ra một cookie chuẩn chứa một băm/hash tương ứng với một bản ghi nội chứa cùng băm/hash; Yêu cầu trang tương lai sẽ sử dụng các tương ứng giá trị băm/hash để xác thực mà người sử dụng đã hoàn thành reCAPTCHA. Khi "lockuser" là false, một danh sách trắng IP được sử dụng để xác định liệu các yêu cầu nên được chấp nhận từ các IP của các yêu; Mục được thêm vào danh sách trắng này khi reCAPTCHA được hoàn thành. Đối với bao nhiêu giờ nên các cookie, băm/hash và mục danh sách trắng vẫn còn hợp lệ? Mặc định = 720 (1 tháng).
+- Khi "lockuser" là true (mặc định), để nhớ khi một người dùng hoàn thành reCAPTCHA, cho yêu cầu trang tương lai, CIDRAM tạo ra một cookie chuẩn chứa một băm/hash tương ứng với một bản ghi nội chứa cùng băm/hash; Yêu cầu trang tương lai sẽ sử dụng các tương ứng giá trị băm/hash để xác thực mà người dùng đã hoàn thành reCAPTCHA. Khi "lockuser" là false, một danh sách trắng IP được sử dụng để xác định liệu các yêu cầu nên được chấp nhận từ các IP của các yêu; Mục được thêm vào danh sách trắng này khi reCAPTCHA được hoàn thành. Đối với bao nhiêu giờ nên các cookie, băm/hash và mục danh sách trắng vẫn còn hợp lệ? Mặc định = 720 (1 tháng).
 
 "logfile"
 - Đăng nhập tất cả các nỗ lực cho reCAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này.
@@ -375,7 +375,78 @@ Expires: 2016.12.31
 
 ####6.2 YAML
 
-%% Information about YAML-like data %%
+#####6.2.0 YAML CƠ BẢN
+
+Một hình thức đơn giản của YAML có thể được sử dụng trong các tập tin chữ ký cho mục đích xác định các hành vi và các thiết lập cụ thể để phần chữ ký cá nhân. Điều này có thể hữu ích nếu bạn muốn giá trị của chỉ thị cấu hình của bạn để khác biệt trên cơ sở chữ ký cá nhân và phần chữ ký (ví dụ; nếu bạn muốn cung cấp một địa chỉ email cho vé hỗ trợ cho bất kỳ người dùng bị chặn bởi một chữ ký đặc biệt, nhưng không muốn cung cấp một địa chỉ email cho vé hỗ trợ cho người dùng bị chặn bởi bất kỳ chữ ký khác; nếu bạn muốn có một số chữ ký cụ thể để kích hoạt một chuyển hướng trang; nếu bạn muốn đánh dấu một phần chữ ký để sử dụng với reCAPTCHA; nếu bạn muốn ghi lại cố gắng truy cập bị chặn vào các tập tin riêng biệt trên cơ sở chữ ký cá nhân hay phần chữ ký).
+
+Sử dụng YAML trong các tập tin chữ ký là không bắt buộc (có nghĩa là, bạn có thể sử dụng nó nếu bạn muốn làm như vậy, nhưng bạn không cần phải làm như vậy), và có thể tận dụng nhiều nhất (nhưng không phải tất cả) tùy chọn cấu hình.
+
+Lưu ý: YAML của CIDRAM là rất đơn giản và rất hạn chế; Nó được thiết kế để đáp ứng yêu cầu cụ thể để CIDRAM trong một cách mà có sự quen thuộc với YAML, nhưng không theo cũng không tuân thủ các thông số kỹ thuật chính thức (và do đó sẽ không cư xử theo cách tương tự như một số biến thể nơi khác, và có thể không thích hợp cho các dự án khác nơi khác).
+
+Trong CIDRAM, phân khúc YAML được xác định để kịch bản bằng ba dấu gạch ngang ("---"), và chấm dứt cùng với phần chữ ký chứa của họ bởi hai ngắt dòng. Một phân khúc YAML điển hình trong phần chữ ký bao gồm ba dấu gạch ngang trên một dòng ngay sau khi danh sách các CIDRS và bất kỳ gắn thẻ, theo sau là một danh sách cặp khóa giá trị hai chiều (chiều đầu tiên, loại tùy chọn cấu hình; chiều thứ cấp, tùy chọn cấu hình) cho những tùy chọn cấu hình mà cần được sửa đổi (và những giá trị) bất cứ khi nào một chữ ký trong đó phần chữ ký được kích hoạt (xem các ví dụ dưới đây).
+
+```
+# "Foobar 1."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 1
+---
+general:
+ logfile: logfile.{yyyy}-{mm}-{dd}.txt
+ logfileApache: access.{yyyy}-{mm}-{dd}.txt
+ logfileSerialized: serial.{yyyy}-{mm}-{dd}.txt
+ forbid_on_block: false
+ emailaddr: username@domain.tld
+recaptcha:
+ lockip: false
+ lockuser: true
+ expiry: 720
+ logfile: recaptcha.{yyyy}-{mm}-{dd}.txt
+ enabled: true
+template_data:
+ css_url: http://domain.tld/cidram.css
+
+# "Foobar 2."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 2
+---
+general:
+ logfile: "logfile.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileApache: "access.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ forbid_on_block: 503
+
+# "Foobar 3."
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 3
+---
+general:
+ forbid_on_block: 403
+ silent_mode: "http://127.0.0.1/"
+```
+
+#####6.2.1 LÀM THẾ NÀO ĐỂ "ĐẶC BIỆT ĐÁNH DẤU" PHẦN CHỮ KÝ ĐỂ SỬ DỤNG VỚI reCAPTCHA
+
+Khi "usemode" là 0 hay 1, phần chữ ký không cần phải được "đặc biệt đánh dấu" để sử dụng với reCAPTCHA (bởi vì họ đã sẽ hoặc sẽ không sử dụng reCAPTCHA, tùy thuộc vào tùy chọn này).
+
+Khi "usemode" là 2, để "đặc biệt đánh dấu" phần chữ ký để sử dụng với reCAPTCHA, một mục được bao gồm trong phân khúc YAML cho rằng phần chữ ký (xem ví dụ dưới đây).
+
+```
+# This section will use reCAPTCHA.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+Tag: reCAPTCHA-Enabled
+---
+recaptcha:
+ enabled: true
+```
+
+Lưu ý: Một trường hợp reCAPTCHA sẽ chỉ được cung cấp cho người dùng nếu reCAPTCHA được kích hoạt (với "usemode" như 1, hay "usemode" như 2 với "enabled" như true), và nếu chính xác MỘT chữ ký đã được kích hoạt (không nhiều hơn, không ít hơn; nếu nhiều chữ ký được kích hoạt, một trường hợp reCAPTCHA sẽ KHÔNG được cung cấp).
 
 ####6.3 PHỤ TRỢ
 
@@ -390,4 +461,4 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Tám 2016 (2016.08.27).
+Lần cuối cập nhật: 2 Tháng Chín 2016 (2016.09.02).

@@ -304,7 +304,7 @@ Anything in the signature files not recognised as a signature nor as signature-r
 
 If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Param]` value (the working directory should be the "/vault/" directory of the script).
 
-例c`127.0.0.0/8 Run example.php`
+例：`127.0.0.0/8 Run example.php`
 
 This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
 

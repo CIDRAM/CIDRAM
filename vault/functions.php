@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.08.18).
+ * This file: Functions file (last modified: 2016.08.28).
  */
 
 /**
@@ -40,7 +40,7 @@ $CIDRAM['ReadFile'] = function ($f) {
         }
         fclose($fh);
     }
-    return (!empty($d)) ? $d : false;
+    return $d ?: false;
 };
 
 /**

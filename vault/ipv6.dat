@@ -3102,16 +3102,6 @@ Tag: Panamaserver.com
 Tag: Bird Hosting Inc
 
 
-# Various CIDRs announcing as "Data Center" (and/or some varients thereof).
-# Various ASNs; Sourced from HE.
-# Updated: 2016.07.10
-
-2406:fe00::/32 Deny Cloud
-2402:7a00::/32 Deny Cloud
-2401:9800::/32 Deny Cloud
-Tag: Data Center
-
-
 # ASN 19133 ("Data Room, Inc").
 # %Listed, Google Malware Dashboard: 0.13%.
 # Updated: 2016.07.16
@@ -3360,6 +3350,69 @@ Tag: Seeweb S.r.l
 
 2607:f178::/32 Deny Cloud
 Tag: Desync Networks
+
+
+# ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
+# %Listed, Google Malware Dashboard: 0.25% (AS52048), 0% (AS60567/AS202920/AS203557).
+# Updated: 2016.09.06
+
+2a02:4840::/47 Deny Cloud
+2a02:4840:2::/48 Deny Cloud
+2a02:4840:201::/48 Deny Cloud
+2a02:4840:1000::/48 Deny Cloud
+Tag: DataClub S.A
+
+
+# ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
+# %Listed, Google Malware Dashboard: 3.10% (AS7552), 2.87% (AS24086), 0% (AS37620/AS133606/AS262210/AS327799/AS327885).
+# %Listed, abuseat.org (CBL-Listed): 1.12% (AS7552), 1.52% (AS24086).
+# Updated: 2016.09.06
+
+2401:800:63ff:1::/64 Deny Spam
+2402:800::/32 Deny Spam
+Tag: Viettel Corporation
+---
+recaptcha:
+ enabled: true
+
+
+# Announcing as: "Data Center", "Data Centre".
+# Various ASNs; Sourced from HE.
+# Updated: 2016.09.07
+
+2401:200::/32 Deny Cloud
+2401:8800::/40 Deny Cloud
+2401:8800:400::/40 Deny Cloud
+2401:8800:600::/40 Deny Cloud
+2401:8800:800::/40 Deny Cloud
+2401:8800:a00::/40 Deny Cloud
+2401:8800:c05::/48 Deny Cloud
+2401:9800::/32 Deny Cloud
+2402:7a00::/32 Deny Cloud
+2403:bc00:1::/48 Deny Cloud
+2403:bc00:7fff::/48 Deny Cloud
+2403:bc00:8000::/47 Deny Cloud
+2404:3d00:400::/40 Deny Cloud
+2404:6300::/32 Deny Cloud
+2404:d8::/32 Deny Cloud
+2406:fe00::/32 Deny Cloud
+2602:fff8::/36 Deny Cloud
+2605:3380::/32 Deny Cloud
+2605:9700::/32 Deny Cloud
+2605:bc00::/32 Deny Cloud
+2804:160::/32 Deny Cloud
+2804:888::/32 Deny Cloud
+2804:122c::/32 Deny Cloud
+2a00:7580:10::/48 Deny Cloud
+2a00:a300::/32 Deny Cloud
+2a02:118::/32 Deny Cloud
+2a02:1760::/32 Deny Cloud
+2a02:f48:2000::/48 Deny Cloud
+2a03:7580:1::/48 Deny Cloud
+2a04:a180::/32 Deny Cloud
+2a04:b2c0::/29 Deny Cloud
+2a07:6d40::/29 Deny Cloud
+Tag: Data Center
 
 
 # ---

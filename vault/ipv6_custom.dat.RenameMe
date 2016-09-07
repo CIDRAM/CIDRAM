@@ -40,6 +40,7 @@
 # The possible values of %Function% are as follows:
 # - Run
 # - Whitelist
+# - Greylist
 # - Deny
 
 # If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once`
@@ -55,6 +56,11 @@
 # particular IP or CIDR from being detected.
 
 # Example: 0::1/128 Whitelist
+
+# If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any
+# detections) and skip to the next signature file to continue processing. %Param% is ignored.
+
+# Example: 0::1/128 Greylist
 
 # If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given
 # IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to
@@ -135,6 +141,43 @@
 
 # In the above example "1.2.3.4/32" and "2.3.4.5/32" will be tagged as "IPv4", whereas "4.5.6.7/32" and "5.6.7.8/32"
 # will be tagged as "Section 1".
+
+# If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to
+# specify when signatures should cease to be valid. Expiry tags use the format "YYYY.MM.DD".
+
+# Example:
+
+# # "Section 1."
+# 1.2.3.4/32 Deny Generic
+# 2.3.4.5/32 Deny Generic
+# Expires: 2016.12.31
+
+# Section tags and expiry tags may be used in conjunction, and both are optional.
+
+# A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings
+# specific to individual signature sections. This may be useful if you want the value of your configuration directives
+# to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email
+# address for support tickets for any users blocked by one particular signature, but don't want to supply an email
+# address for support tickets for users blocked by any other signatures; if you want some specific signatures to
+# trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked
+# access attempts to separate files on the basis of individual signatures and/or signature sections).
+
+# Use of YAML markup in the signature files is entirely optional (ie, you may use it if you wish to do so, but you are
+# not required to do so), and is able to leverage most (but not all) configuration directives.
+
+# Note: YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill
+# requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies
+# with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere,
+# and may not be appropriate for other projects elsewhere).
+
+# In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their
+# containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists
+# of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of
+# key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for
+# which configuration directives should be modified (and to which values) whenever a signature within that signature
+# section is triggered.
+
+# Refer to the documentation for more information regarding what you've read thus far.
 
 
 # ---

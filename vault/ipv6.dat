@@ -72,7 +72,7 @@ Meta:
 #   RANK     ASN    AS            No. of BOTNETS     INFECT%    INCLUDED IN HERE?   RANK SHIFT†
 #      1    9829    BSNL               1,102,544      16.55%    Yes                 ±0
 #      2   45899    VNPT Corp            578,328      10.29%    Pending†            ±0
-#      3    4134    No.31, Jin-rong St   498,231       0.42%    No                  ±0
+#      3    4134    No.31, Jin-rong St   498,231       0.42%    Pending†            ±0
 #      4   45595    Pakistan Telecom     429,713       2.82%    Yes                 ±0
 #      5   24560    Bharti Airtel        342,686      11.13%    Pending†            ±0
 #      6   17974    PT Tel. Indonesia    261,798       3.60%    Pending†            ±0
@@ -85,11 +85,26 @@ Meta:
 #     13   12880    ITC (Iran)           147,906       1.71%    Yes                 NA
 #     14    4837    CNCGROUP China169    137,494       0.24%    No                  -2
 #     15    8048    Servicios, Venezuela 116,994       3.16%    Pending†            -4
-#     16   36947    ALGTEL               113,847       0.96%    Pending†            -1
+#     16   36947    ALGTEL               113,847       0.96%    No                  -1
 #     17   23969    TOT Public Company   107,715       9.89%    No                  ±0
 #     18   22927    Tel. de Argentina    105,202       2.27%    Pending†            -4
 #     19   48159    TIC (Iran)            96,224      11.87%    Yes                 NA
 #     20   12389    PJSC Rostelecom       90,495       1.04%    Pending†            ±0
+
+# THE WORLD's WORST SPAM ISPs, ACCORDING TO MEGARBL.NET (https://www.megarbl.net/top10/isps).
+# Updated: 2016.09.10
+
+#   RANK     ASN    AS                   INCLUDED IN HERE?   RANK SHIFT†
+#      1    4134    No.31, Jin-rong St   Pending†            NA
+#      2   45899    VNPT Corp            Pending†            NA
+#      3    9829    BSNL                 Yes                 NA
+#      4    8151    Uninet S.A. de C.V.  Pending†            NA
+#      5   45595    Pakistan Telecom     Yes                 NA
+#      6   24560    Bharti Airtel        Pending†            NA
+#      7   18403    CFPT                 Pending†            NA
+#      8    7552    Viettel Corporation  Yes                 NA
+#      9   13999    Mega Cable, S.A      Pending†            NA
+#     10    4837    CNCGROUP China169    No                  NA
 
 # RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
 # Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
@@ -3470,6 +3485,23 @@ Tag: BSNL
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 6724 ("Strato AG").
+# %Listed, Google Malware Dashboard: 0.11%.
+# Updated: 2016.09.10
+
+2a01:238::/32 Deny Cloud
+Tag: Strato AG
+
+
+# ASN 8001 ("Net Access Corporation").
+# %Listed, Google Malware Dashboard: 0.05%.
+# Updated: 2016.09.10
+
+2001:518::/32 Deny Cloud
+2620:4d:4002::/48 Deny Cloud
+Tag: Net Access Corp
 
 
 # Announcing as: "Data Center", "Data Centre".

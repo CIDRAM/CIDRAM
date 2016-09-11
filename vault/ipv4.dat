@@ -72,7 +72,7 @@ Meta:
 #   RANK     ASN    AS            No. of BOTNETS     INFECT%    INCLUDED IN HERE?   RANK SHIFT†
 #      1    9829    BSNL               1,102,544      16.55%    Yes                 ±0
 #      2   45899    VNPT Corp            578,328      10.29%    Pending†            ±0
-#      3    4134    No.31, Jin-rong St   498,231       0.42%    No                  ±0
+#      3    4134    No.31, Jin-rong St   498,231       0.42%    Pending†            ±0
 #      4   45595    Pakistan Telecom     429,713       2.82%    Yes                 ±0
 #      5   24560    Bharti Airtel        342,686      11.13%    Pending†            ±0
 #      6   17974    PT Tel. Indonesia    261,798       3.60%    Pending†            ±0
@@ -85,11 +85,26 @@ Meta:
 #     13   12880    ITC (Iran)           147,906       1.71%    Yes                 NA
 #     14    4837    CNCGROUP China169    137,494       0.24%    No                  -2
 #     15    8048    Servicios, Venezuela 116,994       3.16%    Pending†            -4
-#     16   36947    ALGTEL               113,847       0.96%    Pending†            -1
+#     16   36947    ALGTEL               113,847       0.96%    No                  -1
 #     17   23969    TOT Public Company   107,715       9.89%    No                  ±0
 #     18   22927    Tel. de Argentina    105,202       2.27%    Pending†            -4
 #     19   48159    TIC (Iran)            96,224      11.87%    Yes                 NA
 #     20   12389    PJSC Rostelecom       90,495       1.04%    Pending†            ±0
+
+# THE WORLD's WORST SPAM ISPs, ACCORDING TO MEGARBL.NET (https://www.megarbl.net/top10/isps).
+# Updated: 2016.09.10
+
+#   RANK     ASN    AS                   INCLUDED IN HERE?   RANK SHIFT†
+#      1    4134    No.31, Jin-rong St   Pending†            NA
+#      2   45899    VNPT Corp            Pending†            NA
+#      3    9829    BSNL                 Yes                 NA
+#      4    8151    Uninet S.A. de C.V.  Pending†            NA
+#      5   45595    Pakistan Telecom     Yes                 NA
+#      6   24560    Bharti Airtel        Pending†            NA
+#      7   18403    CFPT                 Pending†            NA
+#      8    7552    Viettel Corporation  Yes                 NA
+#      9   13999    Mega Cable, S.A      Pending†            NA
+#     10    4837    CNCGROUP China169    No                  NA
 
 # RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
 # Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
@@ -11064,16 +11079,11 @@ Tag: Incero LLC
 64.71.152.0/24 Deny Cloud
 65.19.178.0/24 Deny Cloud
 65.49.60.0/24 Deny Cloud
-66.29.91.0/24 Deny Cloud
 66.160.141.0/24 Deny Cloud
 66.175.208.0/20 Deny Cloud
 66.220.1.0/24 Deny Cloud
 66.228.32.0/20 Deny Cloud
-66.246.75.0/24 Deny Cloud
-66.246.76.0/24 Deny Cloud
-66.246.138.0/24 Deny Cloud
 69.164.208.0/20 Deny Cloud
-70.47.152.0/21 Deny Cloud
 74.82.2.0/23 Deny Cloud
 74.82.5.0/24 Deny Cloud
 74.207.240.0/20 Deny Cloud
@@ -11094,10 +11104,6 @@ Tag: Incero LLC
 192.155.88.0/22 Deny Cloud
 198.74.48.0/22 Deny Cloud
 198.74.56.0/21 Deny Cloud
-207.192.68.0/22 Deny Cloud
-207.192.72.0/22 Deny Cloud
-209.123.162.0/24 Deny Cloud
-209.123.234.0/24 Deny Cloud
 Tag: Linode, LLC
 
 
@@ -13194,6 +13200,200 @@ recaptcha:
  enabled: true
 
 
+# ASN 6724 ("Strato AG").
+# %Listed, Google Malware Dashboard: 0.11%.
+# Updated: 2016.09.10
+
+81.169.128.0/17 Deny Cloud
+85.214.0.0/15 Deny Cloud
+185.56.148.0/22 Deny Cloud
+192.67.197.0/24 Deny Cloud
+192.67.198.0/24 Deny Cloud
+193.141.3.0/24 Deny Cloud
+194.45.97.0/24 Deny Cloud
+Tag: Strato AG
+
+
+# ASN 8001 ("Net Access Corporation").
+# %Listed, Google Malware Dashboard: 0.05%.
+# Updated: 2016.09.10
+
+31.220.8.0/22 Deny Cloud
+31.220.32.0/21 Deny Cloud
+64.21.0.0/17 Deny Cloud
+64.21.128.0/18 Deny Cloud
+64.247.0.0/18 Deny Cloud
+66.29.0.0/17 Deny Cloud
+66.241.105.0/24 Deny Cloud
+66.246.0.0/16 Deny Cloud
+67.196.0.0/16 Deny Cloud
+67.219.128.0/20 Deny Cloud
+70.47.0.0/16 Deny Cloud
+74.91.32.0/20 Deny Cloud
+74.116.192.0/21 Deny Cloud
+77.67.101.0/24 Deny Cloud
+162.208.28.0/23 Deny Cloud
+190.112.192.0/22 Deny Cloud
+190.112.200.0/23 Deny Cloud
+190.112.203.0/24 Deny Cloud
+192.135.223.0/24 Deny Cloud
+199.127.148.0/22 Deny Cloud
+199.233.220.0/22 Deny Cloud
+200.35.152.0/24 Deny Cloud
+200.35.154.0/23 Deny Cloud
+207.99.0.0/17 Deny Cloud
+207.192.64.0/18 Deny Cloud
+209.123.0.0/16 Deny Cloud
+216.118.64.0/18 Deny Cloud
+216.169.208.0/20 Deny Cloud
+Tag: Net Access Corp
+
+
+# ASN 11230 ("Managed Hosting Services, LLC").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+198.183.220.0/22 Deny Cloud
+Tag: Managed Hosting
+
+
+# ASN 14120 ("IT Hosting Services, LLC").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+38.76.4.0/24 Deny Cloud
+165.254.199.0/24 Deny Cloud
+Tag: IT Hosting
+
+
+# ASN 17657 ("e-Business Hosting Services").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+202.161.160.0/20 Deny Cloud
+Tag: e-Business Hosting
+
+
+# ASN 18120 ("Gemini Software Solutions (P) Limited").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+110.232.180.0/22 Deny Cloud
+202.72.248.0/22 Deny Cloud
+Tag: Gemini Software
+
+
+# ASN 18586 ("Divine Hosting Services").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+204.2.210.0/24 Deny Cloud
+Tag: Divine Hosting
+
+
+# ASN 19318 ("Interserver, Inc").
+# %Listed, Google Malware Dashboard: 3.27%.
+# Updated: 2016.09.10
+
+45.126.36.0/22 Deny Cloud
+64.10.32.0/20 Deny Cloud
+64.20.32.0/19 Deny Cloud
+66.23.224.0/20 Deny Cloud
+66.45.224.0/19 Deny Cloud
+66.245.180.0/22 Deny Cloud
+67.211.208.0/20 Deny Cloud
+67.217.48.0/20 Deny Cloud
+68.168.208.0/20 Deny Cloud
+69.10.32.0/19 Deny Cloud
+69.164.240.0/20 Deny Cloud
+74.50.64.0/19 Deny Cloud
+91.208.95.0/24 Deny Cloud
+103.197.16.0/22 Deny Cloud
+104.37.184.0/21 Deny Cloud
+104.218.48.0/21 Deny Cloud
+108.171.40.0/23 Deny Cloud
+108.171.48.0/23 Deny Cloud
+162.216.112.0/22 Deny Cloud
+162.220.160.0/21 Deny Cloud
+162.246.16.0/21 Deny Cloud
+162.250.120.0/21 Deny Cloud
+173.214.160.0/20 Deny Cloud
+192.64.80.0/21 Deny Cloud
+199.231.184.0/21 Deny Cloud
+200.115.64.0/21 Deny Cloud
+202.53.73.0/24 Deny Cloud
+203.76.228.0/22 Deny Cloud
+204.8.218.0/24 Deny Cloud
+205.209.96.0/19 Deny Cloud
+206.72.192.0/20 Deny Cloud
+208.73.200.0/21 Deny Cloud
+209.159.144.0/20 Deny Cloud
+209.250.230.0/24 Deny Cloud
+209.250.253.0/24 Deny Cloud
+209.250.254.0/24 Deny Cloud
+216.158.224.0/20 Deny Cloud
+216.219.80.0/20 Deny Cloud
+Tag: Interserver, Inc
+
+
+# ASN 38894 ("manageNET Pty Ltd hosting services").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+119.82.0.0/21 Deny Cloud
+Tag: manageNET
+
+
+# ASN 49949 ("24 Solutions AB").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+176.124.250.0/23 Deny Cloud
+195.110.44.0/23 Deny Cloud
+Tag: 24 Solutions AB
+
+
+# ASN 202882 ("Poort80 Hosting Services BV").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+185.151.220.0/22 Deny Cloud
+Tag: Poort80 Hosting
+
+
+# ASN 202954 ("Rapiddot Hosting Services Ltd").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+185.149.88.0/22 Deny Cloud
+Tag: Rapiddot Hosting
+
+
+# ASN 203194 ("Global Domain Hosting Services Ltd").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+185.142.228.0/22 Deny Cloud
+Tag: Global Domain HS
+
+
+# ASN 203300 ("Speed Web Hosting Services Ltd").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.10
+
+185.139.152.0/22 Deny Cloud
+Tag: Speed Web Hosting
+
+
+# ASN 54782 ("GMO-Z.com USA, INC").
+# %Listed, Google Malware Dashboard: 0.84%.
+# Updated: 2016.09.10
+
+192.249.64.0/20 Deny Cloud
+209.54.48.0/20 Deny Cloud
+Tag: GMO-Z.com USA, INC
+
+
 # "Hosteurope GmbH" (no ASN).
 # Updated: 2016.09.06
 
@@ -13262,7 +13462,6 @@ Tag: Reverse-Proxy
 45.43.24.0/24 Deny Proxy
 66.11.118.0/24 Deny Proxy
 66.11.123.0/24 Deny Proxy
-74.91.32.0/20 Deny Proxy
 80.240.108.0/23 Deny Proxy
 82.97.192.0/23 Deny Proxy
 86.105.160.0/22 Deny Proxy
@@ -15407,7 +15606,6 @@ Tag: Azure
 64.85.233.8/32 Deny Generic
 64.127.71.73/32 Deny Generic
 65.182.101.221/32 Deny Generic
-66.45.245.150/32 Deny Generic
 80.65.93.241/32 Deny Generic
 83.15.254.242/32 Deny Generic
 83.69.233.121/32 Deny Generic

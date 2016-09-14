@@ -44,15 +44,15 @@ Meta:
 
 #   RANK     ASN    AS                      RATE    INCLUDED IN HERE?   RANK SHIFT†
 #      1   35916    Multacom Corp.        38.26%    Yes                 ±0
-#      2  132422    H.K. Tel. Data Centre 31.82%    Yes                 NA
+#      2  132422    AS132422 Data Centre  31.82%    Yes                 NA
 #      3   18978    Enzu Inc              30.54%    Yes                 ±0
 #      4   22653    Cyber Wurx LLC        30.07%    Yes                 -2
 #      5   32097    WholeSale Internet    26.42%    Yes                 -1
 #      6   21859    Zenlayer Inc          26.41%    Yes                 -1
 #      7   36114    Versaweb, LLC         22.09%    Yes                 ±0
 #      8   33387    DataShack, LC         17.82%    Yes                 +1
-#      9   38197    Sun Network (H.K.)    17.35%    Yes                 -3
-#     10   62468    VpsQuan LLC.          17.01%    Yes                 ±0
+#      9   38197    Sun Network HK        17.35%    Yes                 -3
+#     10   62468    VpsQuan LLC           17.01%    Yes                 ±0
 #     11   23033    Wowrack.com           16.44%    Yes                 +1
 #     12   26658    HT                    15.45%    Yes                 -4
 #     13   46261    QuickPacket, LLC      15.35%    Yes                 +1
@@ -71,40 +71,40 @@ Meta:
 
 #   RANK     ASN    AS            No. of BOTNETS     INFECT%    INCLUDED IN HERE?   RANK SHIFT†
 #      1    9829    BSNL               1,102,544      16.55%    Yes                 ±0
-#      2   45899    VNPT Corp            578,328      10.29%    Pending†            ±0
-#      3    4134    No.31, Jin-rong St   498,231       0.42%    Pending†            ±0
+#      2   45899    VNPT Corp            578,328      10.29%    Yes                 ±0
+#      3    4134    China Backbone 4134  498,231       0.42%    Yes                 ±0
 #      4   45595    Pakistan Telecom     429,713       2.82%    Yes                 ±0
-#      5   24560    Bharti Airtel        342,686      11.13%    Pending†            ±0
+#      5   24560    Bharti Airtel        342,686      11.13%    Yes                 ±0
 #      6   17974    PT Tel. Indonesia    261,798       3.60%    Pending†            ±0
-#      7   45609    Bharti Airtel        191,083       3.49%    Pending†            +6
+#      7   45609    Bharti Airtel        191,083       3.49%    Yes                 +6
 #      8    8151    Uninet S.A. de C.V.  189,247       1.18%    Pending†            +2
-#      9    3462    DCBG                 182,438       1.40%    No                  -1
+#      9    3462    DCBG                 182,438       1.40%    Yes                 -1
 #     10    7552    Viettel Corporation  164,206       1.11%    Yes                 -3
-#     11   18403    CFPT                 159,439       2.85%    Pending†            -2
+#     11   18403    CFPT                 159,439       2.85%    Yes                 -2
 #     12   45271    Idea Cellular Ltd    153,286      21.36%    Yes                 +4
-#     13   12880    ITC (Iran)           147,906       1.71%    Yes                 NA
-#     14    4837    CNCGROUP China169    137,494       0.24%    No                  -2
+#     13   12880    AS12880              147,906       1.71%    Yes                 NA
+#     14    4837    China Backbone 4837  137,494       0.24%    Yes                 -2
 #     15    8048    Servicios, Venezuela 116,994       3.16%    Pending†            -4
 #     16   36947    ALGTEL               113,847       0.96%    No                  -1
 #     17   23969    TOT Public Company   107,715       9.89%    No                  ±0
-#     18   22927    Tel. de Argentina    105,202       2.27%    Pending†            -4
-#     19   48159    TIC (Iran)            96,224      11.87%    Yes                 NA
-#     20   12389    PJSC Rostelecom       90,495       1.04%    Pending†            ±0
+#     18   22927    Tel. de Argentina    105,202       2.27%    No                  -4
+#     19   48159    AS48159               96,224      11.87%    Yes                 NA
+#     20   12389    PJSC Rostelecom       90,495       1.04%    No                  ±0
 
 # THE WORLD's WORST SPAM ISPs, ACCORDING TO MEGARBL.NET (https://www.megarbl.net/top10/isps).
 # Updated: 2016.09.10
 
 #   RANK     ASN    AS                   INCLUDED IN HERE?   RANK SHIFT†
-#      1    4134    No.31, Jin-rong St   Pending†            NA
-#      2   45899    VNPT Corp            Pending†            NA
+#      1    4134    China Backbone 4134  Yes                 NA
+#      2   45899    VNPT Corp            Yes                 NA
 #      3    9829    BSNL                 Yes                 NA
 #      4    8151    Uninet S.A. de C.V.  Pending†            NA
 #      5   45595    Pakistan Telecom     Yes                 NA
-#      6   24560    Bharti Airtel        Pending†            NA
-#      7   18403    CFPT                 Pending†            NA
+#      6   24560    Bharti Airtel        Yes                 NA
+#      7   18403    CFPT                 Yes                 NA
 #      8    7552    Viettel Corporation  Yes                 NA
 #      9   13999    Mega Cable, S.A      Pending†            NA
-#     10    4837    CNCGROUP China169    No                  NA
+#     10    4837    China Backbone 4837  Yes                 NA
 
 # RANK SHIFT† = RANK SHIFT SINCE LAST UPDATE
 # Pending† = Not yet included, but under consideration (possibly to be added in the future, pending further research).
@@ -3502,6 +3502,193 @@ Tag: Strato AG
 2001:518::/32 Deny Cloud
 2620:4d:4002::/48 Deny Cloud
 Tag: Net Access Corp
+
+
+# ASN 201628 ("Internet Unie Services B.V").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.12
+
+2a00:1ac0:f1be::/48 Deny Cloud
+Tag: iu.nl
+
+
+# ASN 4134 ("China Telecom Backbone").
+# Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
+# be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
+# events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
+# tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
+# that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
+# false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
+# traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
+# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
+# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 6.37%.
+# %Listed, abuseat.org (CBL-Listed): 0.42%.
+# Updated: 2016.09.12
+
+2406:8500::/32 Deny Generic
+240e::/24 Deny Generic
+Tag: China Backbone 4134
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 4837 ("China Unicom Backbone").
+# Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
+# be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
+# events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
+# tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
+# that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
+# false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
+# traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
+# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
+# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 2.58%.
+# %Listed, abuseat.org (CBL-Listed): 0.25%.
+# Updated: 2016.09.14
+
+2408:8000::/24 Deny Generic
+Tag: China Backbone 4837
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 3462 ("Data Communication Business Group").
+# Interlaces with human access endpoints in Taiwan; Would rather not be including this section here due to the high
+# risk of false positives, but the numerous records of spamming events seen originating from across a wide range of
+# CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
+# considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
+# the risk of false positives, and I would encourage any Taiwanese CIDRAM users, and any CIDRAM users expecting to
+# receive any traffic from Taiwan, to list this section in their ignore file as a means of minimising the potential
+# impact of false positives. A balanced approach for those that may expect some such traffic, but not a lot of it,
+# would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 1.09%.
+# %Listed, abuseat.org (CBL-Listed): 1.37%.
+# Updated: 2016.09.14
+
+2001:b032:6::/47 Deny Generic
+2001:b032:b::/48 Deny Generic
+2001:b032:c::/46 Deny Generic
+2001:b032:10::/47 Deny Generic
+2001:b032:12::/48 Deny Generic
+2001:b032:14::/47 Deny Generic
+2001:b032:17::/48 Deny Generic
+2001:b032:19::/48 Deny Generic
+2001:b032:1b::/48 Deny Generic
+2001:b032:1c::/46 Deny Generic
+2001:b032:20::/48 Deny Generic
+2001:b032:5c00::/48 Deny Generic
+2001:b032:7001::/48 Deny Generic
+2001:b032:8010::/47 Deny Generic
+2001:b032:c000::/48 Deny Generic
+2405:6100::/32 Deny Generic
+2406:300::/32 Deny Generic
+2407:4700::/32 Deny Generic
+Tag: DCBG
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 45899 ("VietNam Post and Telecom Corporation").
+# Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
+# not be including this section here due to the high risk of false positives, but the massive influx/uptick of
+# undesirable events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide
+# range of CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are
+# not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
+# due to the risk of false positives, and I would encourage any Vietnamese CIDRAM users, and any CIDRAM users
+# expecting to receive any traffic from Vietnam, to list this section in their ignore file as a means of minimising
+# the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
+# lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
+# configuration.
+# %Listed, Google Malware Dashboard: 3.92%.
+# %Listed, abuseat.org (CBL-Listed): 10.29%.
+# Updated: 2016.09.12
+
+2001:df2:ca00::/48 Deny Generic
+2001:df2:ce00::/48 Deny Generic
+2001:df3:5c00::/48 Deny Generic
+2001:ee0::/48 Deny Generic
+2001:ee0:1::/48 Deny Generic
+2001:ee0:300::/47 Deny Generic
+2001:ee0:304::/47 Deny Generic
+2001:ee0:37f::/48 Deny Generic
+2001:ee0:3c0::/43 Deny Generic
+2001:ee0:1080::/48 Deny Generic
+2001:ee0:2f00::/48 Deny Generic
+2001:ee0:3209::/48 Deny Generic
+2001:ee0:3e00:1::/64 Deny Generic
+2001:ef0:1:1b::/64 Deny Generic
+Tag: VNPT Corp
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 18403 ("The Corporation for Financing & Promoting Technology").
+# Interlaces with numerous providers and contains a large portion of Vietnamese human access endpoints; Would rather
+# not be including this section here due to the high risk of false positives, but the massive influx/uptick of
+# undesirable events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide
+# range of CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are
+# not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
+# due to the risk of false positives, and I would encourage any Vietnamese CIDRAM users, and any CIDRAM users
+# expecting to receive any traffic from Vietnam, to list this section in their ignore file as a means of minimising
+# the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
+# lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
+# configuration.
+# %Listed, Google Malware Dashboard: 3.92%.
+# %Listed, abuseat.org (CBL-Listed): 10.29%.
+# Updated: 2016.09.12
+
+2405:4800::/32 Deny Generic
+Tag: CFPT
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 9498, 24560, 45514, 45609 ("Bharti Airtel").
+# Interlaces with numerous providers and contains a large portion of Indian human access endpoints; Would rather not
+# be including this section here due to the high risk of false positives, but the significant number of spamming events
+# originating from CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists,
+# are not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
+# due to the risk of false positives, and I would encourage any Indian CIDRAM users, and any CIDRAM users expecting to
+# receive any traffic from India, to list this section in their ignore file as a means of minimising the potential
+# impact of false positives. A balanced approach for those that may expect some such traffic, but not a lot of it,
+# would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 1.49% (AS9498), 1.82% (AS24560), 0% (AS45514/AS45609).
+# %Listed, abuseat.org (CBL-Listed): 9.74% (AS24560), 3.05% (AS45609).
+# Updated: 2016.09.12
+
+2401:4900:808::/45 Deny Spam
+2401:4900:810::/44 Deny Spam
+2401:4900:840::/44 Deny Spam
+2401:4900:880::/45 Deny Spam
+2401:4900:900::/45 Deny Spam
+2401:4900:940::/45 Deny Spam
+2401:4900:980::/45 Deny Spam
+2401:4900:1100::/41 Deny Spam
+2404:a800::/32 Deny Spam
+2407:7400::/48 Deny Spam
+2600:140f:b::/48 Deny Spam
+2600:140f:d::/48 Deny Spam
+2600:140f:e::/48 Deny Spam
+2600:1417:1e::/48 Deny Spam
+2600:1417:20::/48 Deny Spam
+2600:1417:2c::/48 Deny Spam
+2600:1417:53::/48 Deny Spam
+2600:1417:56::/48 Deny Spam
+2600:1417:6a::/47 Deny Spam
+2600:1417:6d::/48 Deny Spam
+2600:1417:6e::/48 Deny Spam
+2600:1417:70::/48 Deny Spam
+2600:1417:78::/48 Deny Spam
+Tag: Bharti Airtel
+---
+recaptcha:
+ enabled: true
 
 
 # Announcing as: "Data Center", "Data Centre".

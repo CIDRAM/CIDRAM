@@ -106,6 +106,7 @@ Bestand | Beschrijving
 /vault/config.php | Configuratie-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
+/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke handtekening secties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ipv4.dat | IPv4 handtekeningen bestand.
 /vault/ipv4_custom.dat.RenameMe | IPv4 aangepaste handtekeningen bestand (hernoemen om te activeren).
@@ -461,4 +462,4 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-Laatste Bijgewerkt: 2 September 2016 (2016.09.02).
+Laatste Bijgewerkt: 15 September 2016 (2016.09.15).

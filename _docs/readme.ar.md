@@ -108,6 +108,7 @@ If you encounter any false positives, please contact me to let me know about it.
 <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
 <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
 <div dir="rtl" style="display:inline;">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
+<div dir="rtl" style="display:inline;">تستخدم لتحديد أقسام توقيع التي CIDRAM يجب تجاهل.</div> | /vault/ignore.dat
 <div dir="rtl" style="display:inline;">يحتوي على قائمة من الالتفافية IP (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/ipbypass.dat
 <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات.</div> | /vault/ipv4.dat
 <div dir="rtl" style="display:inline;">عناوين IPv4 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv4_custom.dat.RenameMe
@@ -481,4 +482,4 @@ Ignore Section 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 3 سبتمبر 2016 (2016.09.03).</div>
+<div dir="rtl">آخر تحديث: 15 سبتمبر 2016 (2016.09.15).</div>

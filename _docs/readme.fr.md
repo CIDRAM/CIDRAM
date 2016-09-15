@@ -106,6 +106,7 @@ Fichier | Description
 /vault/config.php | Module de configuration.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/hashes.dat | Contient une liste de hashes acceptées (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
+/vault/ignore.dat | Fichier de ignores (utilisé pour spécifier la signature sections CIDRAM devrait ignorer).
 /vault/ipbypass.dat | Contient une liste de contournements IP (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
 /vault/ipv4.dat | Fichier de signatures pour IPv4.
 /vault/ipv4_custom.dat.RenameMe | Fichier de signatures pour IPv4 personnalisés (renommer pour activer).
@@ -461,4 +462,4 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 ---
 
 
-Dernière Réactualisé: 30 Août 2016 (2016.08.30).
+Dernière Réactualisé: 15 Septembre 2016 (2016.09.15).

@@ -106,6 +106,7 @@ Tập tin | Chi tiết
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/hashes.dat | Danh sách các giá trị băm được chấp nhận (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
+/vault/ignore.dat | Tập tin các bỏ qua (được sử dụng để xác định mà phần chữ ký CIDRAM nên bỏ qua).
 /vault/ipbypass.dat | Danh sách các đường tránh IP (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
 /vault/ipv4.dat | Tập tin chữ ký IPv4.
 /vault/ipv4_custom.dat.RenameMe | Tập tin chữ ký IPv4 tùy chỉnh (đổi tên để kích hoạt).
@@ -461,4 +462,4 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 ---
 
 
-Lần cuối cập nhật: 2 Tháng Chín 2016 (2016.09.02).
+Lần cuối cập nhật: 15 Tháng Chín 2016 (2016.09.15).

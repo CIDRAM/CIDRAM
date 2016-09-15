@@ -108,6 +108,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/config.php | 配置處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
+/vault/ignore.dat | 忽略文件（用於指定其中章節簽名CIDRAM應該忽略）。
 /vault/ipbypass.dat | 包含列表IP旁路（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
 /vault/ipv4.dat | IPv4簽名文件。
 /vault/ipv4_custom.dat.RenameMe | IPv4定制簽名文件（重命名為激活）。
@@ -463,4 +464,4 @@ Ignore Section 1
 ---
 
 
-最後更新：2016年9月2日。
+最後更新：2016年9月15日。

@@ -106,6 +106,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
+/vault/ignore.dat | 無視ファイル（これは署名セクション無視します）。
 /vault/ipbypass.dat | IPバイパスの一覧（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/ipv4.dat | IPv4のシグネチャファイル。
 /vault/ipv4_custom.dat.RenameMe | IPv4のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
@@ -462,4 +463,4 @@ Ignore Section 1
 ---
 
 
-最終アップデート： 2016年9月3日。
+最終アップデート： 2016年9月15日。

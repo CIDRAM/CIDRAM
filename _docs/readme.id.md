@@ -106,6 +106,7 @@ Data | Deskripsi
 /vault/config.php | Modul konfigurasi.
 /vault/functions.php | Modul fungsi (utama).
 /vault/hashes.dat | Berisi daftar hash diterima (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
+/vault/ignore.dat | File abaikan (digunakan untuk menentukan bagian tanda tangan CIDRAM harus mengabaikan).
 /vault/ipbypass.dat | Berisi daftar bypass IP (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
 /vault/ipv4.dat | File tanda tangan IPv4.
 /vault/ipv4_custom.dat.RenameMe | File tanda tangan IPv4 disesuaikan (mengubah nama untuk mengaktifkan).
@@ -461,4 +462,4 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-Terakhir Diperbarui: 30 Agustus 2016 (2016.08.30).
+Terakhir Diperbarui: 15 September 2016 (2016.09.15).

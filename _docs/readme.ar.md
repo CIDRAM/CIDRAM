@@ -8,6 +8,7 @@
  <li>4. <a href="#SECTION4">الملفاتالموجودةفيهذهالحزمة</a></li>
  <li>5. <a href="#SECTION5">خياراتالتكوين/التهيئة</a></li>
  <li>6. <a href="#SECTION6">شكل/تنسيق التوقيع</a></li>
+ <li>7. <a href="#SECTION7">أسئلة وأجوبة (FAQ)</a></li>
 </ul></div>
 
 ---
@@ -61,7 +62,7 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 
-### <div dir="rtl">3-أ. <a name="SECTION3A"></a>كيفية الإستخدام</div>
+### <div dir="rtl">3. <a name="SECTION3"></a>كيفية الإستخدام</div>
 
 CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation.
 
@@ -482,4 +483,24 @@ Ignore Section 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 15 سبتمبر 2016 (2016.09.15).</div>
+### <div dir="rtl">7. <a name="SECTION7"></a>أسئلة وأجوبة (FAQ)</div>
+
+####What is a "false positive"?
+
+The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+
+Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+
+In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+
+This can be summarised by the table below:
+
+&nbsp; | CIDRAM should *NOT* block an IP address | CIDRAM *SHOULD* block an IP address
+---|---|---
+CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
+CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
+
+---
+
+
+<div dir="rtl">آخر تحديث: 21 سبتمبر 2016 (2016.09.21).</div>

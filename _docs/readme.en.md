@@ -37,7 +37,7 @@ I hope to streamline this process by making an installer at some point in the no
 
 3) Upload the contents (CIDRAM and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
 
-4) CHMOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+4) CHMOD the `vault` directory to "755" (if there are problems, you can try "777"; this is less secure, though). The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
 
 5) Next, you'll need to "hook" CIDRAM to your system or CMS. There are several different ways you can "hook" scripts such as CIDRAM to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the CIDRAM issues page on Github. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
 
@@ -483,4 +483,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 21st September 2016 (2016.09.21).
+Last Updated: 24th September 2016 (2016.09.24).

@@ -38,7 +38,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 3） 上傳（CIDRAM和它的文件）到您選定的文件夾（不需要包括`*.txt`/`*.md`文件，但大多數情況下，您應上傳所有的文件）。
 
-4） 修改的`vault`文件夾權限為“755”。注意，主文件夾也應該是該權限，如果遇上其他權限問題，請修改對應文件夾和文件的權限。
+4） 修改的`vault`文件夾權限為“755”（如果有問題，您可以試試“777”，但是這是不太安全）。注意，主文件夾也應該是該權限，如果遇上其他權限問題，請修改對應文件夾和文件的權限。
 
 5） 接下來，您需要為您的系統或CMS設定啟動CIDRAM的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，參觀Github上的CIDRAM問題頁面；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`loader.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。
 
@@ -467,22 +467,22 @@ Ignore Section 1
 
 ###7. <a name="SECTION7"></a>常見問題（FAQ）
 
-####What is a "false positive"?
+####什麼是“假陽性”？
 
-The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+術語“假陽性”（*或者：“假陽性錯誤”；“虛驚”*；英語：*false positive*; *false positive error*; *false alarm*），很簡單地描述，和在一個廣義上下文，被用來當測試一個因子，作為參考的測試結果，當結果是陽性（即：因子被確定為“陽性”，或“真”），但預計將為（或者應該是）陰性（即：因子，在現實中，是“陰性”，或“假”）。一個“假陽性”可被認為是同樣的“哭狼” (其中，因子被測試是是否有狼靠近牛群，因子是“假”由於該有沒有狼靠近牛群，和因子是報告為“陽性”由牧羊人通過叫喊“狼，狼”），或類似在醫學檢測情況，當患者被診斷有一些疾病，當在現實中，他們沒有疾病。
 
-Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+一些相關術語是“真陽性”，“真陰性”和“假陰性”。一個“真陽性”指的是當測試結果和真實因子狀態都是“真”（或“陽性”），和一個“真陰性”指的是當測試結果和真實因子狀態都是“假”（或“陰性”）；一個“真陽性”或“真陰性”被認為是一個“正確的推理”。對立面“假陽性”是一個“假陰性”；一個“假陰性”指的是當測試結果是“陰性”（即：因子被確定為“陰性”，或“假”），但預計將為（或者應該是）陽性（即：因子，在現實中，是“陽性”，或“真”）。
 
-In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+在CIDRAM的上下文，這些術語指的是CIDRAM的簽名和什麼/誰他們阻止。當CIDRAM阻止一個IP地址由於惡劣的，過時的，或不正確的簽名，但不應該這樣做，或當它這樣做為錯誤的原因，我們將此事件作為一個“假陽性”。當CIDRAM未能阻止IP地址該應該已被阻止，由於不可預見的威脅，缺少簽名或不足簽名，我們將此事件作為一個“檢測錯過”（同樣的“假陰性”）。
 
-This can be summarised by the table below:
+這可以通過下表來概括：
 
-&nbsp; | CIDRAM should *NOT* block an IP address | CIDRAM *SHOULD* block an IP address
+&nbsp; | CIDRAM不應該阻止IP地址 | CIDRAM應該阻止IP地址
 ---|---|---
-CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
-CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
+CIDRAM__不__會阻止IP地址 | 真陰性（正確的推理） | 檢測錯過（同樣的“假陰性”）
+CIDRAM__會__阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 
 ---
 
 
-最後更新：2016年9月21日。
+最後更新：2016年9月25日。

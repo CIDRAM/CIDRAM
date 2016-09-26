@@ -39,7 +39,7 @@ Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis d
 
 3) Laden Sie den kompletten Inhalt (CIDRAM und die Dateien) in das Verzeichnis hoch, für das Sie sich in Schritt 1 entschieden haben. Die Dateien `*.txt`/`*.md` müssen nicht mit hochgeladen werden.
 
-4) Ändern Sie die Zugriffsberechtigungen des `vault`-Verzeichnisses auf "777". Die Berechtigungen des übergeordneten Verzeichnises, in welchem sich der Inhalt befindet (das Verzeichnis, wofür Sie sich entschieden haben), können so belassen werden, überprüfen Sie jedoch die Berechtigungen, wenn in der Vergangenheit Zugriffsprobleme aufgetreten sind (Voreinstellung "755" o.ä.).
+4) Ändern Sie die Zugriffsberechtigungen des `vault`-Verzeichnisses auf "755" (wenn es Probleme gibt, Sie können "777" versuchen; Dies ist weniger sicher, obwohl). Die Berechtigungen des übergeordneten Verzeichnises, in welchem sich der Inhalt befindet (das Verzeichnis, wofür Sie sich entschieden haben), können so belassen werden, überprüfen Sie jedoch die Berechtigungen, wenn in der Vergangenheit Zugriffsprobleme aufgetreten sind (Voreinstellung "755" o.ä.).
 
 5) Binden Sie CIDRAM in Ihr System oder CMS ein. Es gibt viele verschiedene Möglichkeiten, ein Script wie CIDRAM einzubinden, am einfachsten ist es, das Script am Anfang einer Haupt-Datei (eine Datei, die immer geladen wird, wenn irgend eine beliebige Seite Ihres Webauftritts aufgerufen wird) Ihres Systems oder CMS mit Hilfe des require- oder include-Befehls einzubinden. Üblicherweise wird eine solche Datei in Verzeichnissen wie `/includes`, `/assets` or `/functions` gespeichert und wird häufig `init.php`, `common_functions.php`, `functions.php` o.ä. genannt. Sie müssen herausfinden, welche Datei dies für Ihre Bedürfnisse ist; Wenn Sie dabei Schwierigkeiten haben das herauszufinden, besuchen Sie die CIDRAM Issues-Seiten bei Github und lassen Sie es uns wissen; Es ist möglich, dass entweder ich oder ein anderer Benutzer mit dem CMS, das Sie verwenden, Erfahrung hat (Sie müssen Sie mitteilen, welche CMS Sie verwenden) und möglicherweise in der Lage ist, etwas Unterstützung anzubieten. Fügen Sie in dieser Datei folgenden Code direkt am Anfang ein:
 
@@ -467,22 +467,22 @@ Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informat
 
 ###7. <a name="SECTION7"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
-####What is a "false positive"?
+####Was ist ein "Falsch-Positiv"?
 
-The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
 
-Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+Related outcomes when testing for a condition can be described using the terms "Wahr-Positiv", "Wahr-Negativ" and "Falsch-Negativ". A "Wahr-Positiv" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "Wahr-Negativ" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "Wahr-Positiv" or a "Wahr-Negativ" is considered to be a "korrekte Folgerung". The antithesis of a "false positive" is a "Falsch-Negativ"; A "Falsch-Negativ" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
 
-In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "Falsch-Negativ").
 
-This can be summarised by the table below:
+Dies kann durch die folgende Tabelle zusammengefasst werden:
 
-&nbsp; | CIDRAM should *NOT* block an IP address | CIDRAM *SHOULD* block an IP address
+&nbsp; | CIDRAM sollte *KEINE* IP-Adresse blockieren | CIDRAM *SOLLTE* eine IP-Adresse blockieren
 ---|---|---
-CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
-CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
+CIDRAM tut blockiert eine IP-Adresse *NICHT* | Wahr-Negativ (korrekte Folgerung) | Verpasste Erkennung (analog zu Falsch-Negativ)
+CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korrekte Folgerung)
 
 ---
 
 
-Zuletzt aktualisiert: 21. September 2016 (2016.09.21).
+Zuletzt aktualisiert: 27. September 2016 (2016.09.27).

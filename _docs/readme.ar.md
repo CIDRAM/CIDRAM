@@ -39,7 +39,7 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 <div dir="rtl">3. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "*.txt/*.md" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
-<div dir="rtl">4. غير التصريح لمجلد vault للتصريح "777". المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
+<div dir="rtl">4. غير التصريح لمجلد vault للتصريح "755" (إذا كان هناك مشاكل، يمكنك محاولة "777"، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
 
 <div dir="rtl">5. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل "require" أو "include"، بالعادة سيتم التخزين في  "/includes"، "/assets" أو "/functions"، وسيتم تسميته بالغالب مثل: "init.php"، "common_functions.php"، "functions.php" أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام "require" أو "include" قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار "loader.php" لديك.<br /><br /></div>
 
@@ -485,22 +485,22 @@ Ignore Section 1
 
 ### <div dir="rtl">7. <a name="SECTION7"></a>أسئلة وأجوبة (FAQ)</div>
 
-####What is a "false positive"?
+#### <div dir="rtl">ما هو "إيجابية خاطئة"؟<br /><br /></div>
 
-The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+<div dir="rtl" style="display:inline;">المصطلح "إيجابية خاطئة" (<em>بدلا من ذلك: "خطأ إيجابية خاطئة"؛ "انذار خاطئة"</em>؛ الإنجليزية: <em>false positive</em>; <em>false positive error</em>; <em>false alarm</em>)، وصف ببساطة، بشكل عام، is used when testing for a condition، to refer to the results of that test، when the results are إيجابية (أي، the condition is determined to be "إيجابية"، أو "صحيح")، but are expected to be (or should have been) سلبي (أي، الحالة، في الواقع، هو "سلبي"، أو "خاطئة"). "إيجابية خاطئة" ويمكن اعتبار التناظرية من "الذئب الباكي" (wherein the condition being tested is whether there's a wolf near the herd، the condition is "خاطئة" in that there's no wolf near the herd، and the condition is reported as "إيجابية" by the shepherd by way of calling "wolf، wolf")، أو التناظرية من situations in medical testing wherein a patient is diagnosed as having some illness or disease، when in reality، they have no such illness or disease.<br /><br /></div>
 
-Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+<div dir="rtl" style="display:inline;">Related outcomes when testing for a condition can be described using the terms "إيجابية صحيح"، "سلبي صحيح" and "سلبي خاطئة". "إيجابية صحيح" refers to when the results of the test and the actual state of the condition are both صحيح (or "إيجابية")، and a "سلبي صحيح" refers to when the results of the test and the actual state of the condition are both خاطئة (or "سلبي"); A "إيجابية صحيح" or a "سلبي صحيح" is considered to be a "الاستدلال الصحيح". The antithesis of a "إيجابية خاطئة" is a "سلبي خاطئة"; A "سلبي خاطئة" refers to when the results of the test are سلبي (أي، the condition is determined to be "سلبي"، أو "خاطئة")، but are expected to be (or should have been) إيجابية (أي، الحالة، في الواقع، هو "إيجابية"، أو "صحيح").<br /><br /></div>
 
-In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+<div dir="rtl" style="display:inline;">In the context of CIDRAM، these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad، outdated or incorrect signatures، but shouldn't have done so، أو when it does so for the wrong reasons، we refer to this event as a "إيجابية خاطئة". When CIDRAM fails to block an IP address that should have been blocked، due to unforeseen threats، missing signatures or shortfalls in its signatures، we refer to this event as a "افتقد" (هذا هو التناظرية من ا "سلبي خاطئة").<br /><br /></div>
 
-This can be summarised by the table below:
+<div dir="rtl">هذا يمكن تلخيصها حسب الجدول أدناه:<br /><br /></div>
 
-&nbsp; | CIDRAM should *NOT* block an IP address | CIDRAM *SHOULD* block an IP address
+&nbsp; | <div dir="rtl" style="display:inline;">يجب CIDRAM عدم عرقلة عنوان IP | <div dir="rtl" style="display:inline;">CIDRAM يجب منع عنوان IP
 ---|---|---
-CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
-CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
+<div dir="rtl" style="display:inline;">CIDRAM لا يمنع عنوان IP | <div dir="rtl" style="display:inline;">سلبي صحيح (الاستدلال الصحيح) <div dir="rtl" style="display:inline;">| افتقد (التناظرية من سلبي خاطئة)
+<div dir="rtl" style="display:inline;">CIDRAM منع عنوان IP | <div dir="rtl" style="display:inline;">__إيجابية خاطئة__ | <div dir="rtl" style="display:inline;">إيجابية صحيح (الاستدلال الصحيح)
 
 ---
 
 
-<div dir="rtl">آخر تحديث: 21 سبتمبر 2016 (2016.09.21).</div>
+<div dir="rtl">آخر تحديث: 27 سبتمبر 2016 (2016.09.27).</div>

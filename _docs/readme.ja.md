@@ -37,7 +37,7 @@ CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利につ�
 
 3) コンテンツ（CIDRAM本体とファイル）を先に定めたディレクトリにアップロードします。（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、大抵は全てをアップロードしてもらって構いません）。
 
-4) `vault`ディレクトリは`777`にアクセス権変更します。コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。（デフォルトでは`755`が一般的です）。
+4) `vault`ディレクトリは「７５５」にアクセス権変更します（問題がある場合は、「７７７」を試すことができます；これは、しかし、安全ではありません）。コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。（デフォルトでは「７５５」が一般的です）。
 
 5) 次に、システム内あるいはCMSにCIDRAMをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内／CMCのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。よく分からない場合は、CIDRAMサポートフォーラムを参照するか、またはGithubのでCIDRAMの問題のページ、あるいはお知らせください（CMS情報必須）。私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。ただし、クォーテーションマークで囲まれた部分は`loader.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
 
@@ -66,7 +66,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 更新（アップデイト）は手動で行われています。あなたの設定ファイルを変更することによって、構成設定をカスタマイズすることができます。あなたの署名ファイルを変更することによって、CIDRsがブロックされて変更することができます。
 
-誤検出や新種の疑わしきものに遭遇した、関することについては何でもお知らせ下さい。
+誤検出（偽陽性）や新種の疑わしきものに遭遇した、関することについては何でもお知らせ下さい。
 
 ---
 
@@ -382,7 +382,7 @@ Expires: 2016.12.31
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
-Use of YAML markup in the signature files is entirely optional (ie, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
+Use of YAML markup in the signature files is entirely optional （即ち、 you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
 
 注意：YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
 
@@ -466,22 +466,22 @@ Ignore Section 1
 
 ###7. <a name="SECTION7"></a>よくある質問（FAQ）
 
-####What is a "false positive"?
+####「偽陽性」とは何ですか？
 
-The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are 陽性（即ち、 the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
 
-Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+Related outcomes when testing for a condition can be described using the 用語 「真陽性」, 「真陰性」 and 「偽陰性」. A 「真陽性」 refers to when the results of the test and the actual state of the condition are both 真 (or 「陽性」), and a 「真陰性」 refers to when the results of the test and the actual state of the condition are both 偽 (or 「陰性」); A 「真陽性」 or a 「真陰性」 is considered to be a 「正しい推論」. The antithesis of a 「偽陽性」 is a 「偽陰性」; A 「偽陰性」 refers to when the results of the test are 陰性 （即ち、 the condition is determined to be 「陰性」、または、「偽」), but are expected to be (or should have been) 陽性 （即ち、 the condition, in reality, is 「陽性」、または、「真」）。
 
-In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+In the context of CIDRAM, these 用語 refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a 「偽陽性」. When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a 「不在検出」 (which is analogous to a 「偽陰性」）。
 
-This can be summarised by the table below:
+これは、以下の表に要約することができます。
 
-&nbsp; | CIDRAM should *NOT* block an IP address | CIDRAM *SHOULD* block an IP address
+&nbsp; | CIDRAMは、IPアドレスをブロック必要がありません | CIDRAMは、IPアドレスをブロック必要があります
 ---|---|---
-CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
-CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
+CIDRAMは、IPアドレスをブロックしません | 真陰性（正しい推論） | 不在検出 (それは「偽陰性」と同じです)
+CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性（正しい推論）
 
 ---
 
 
-最終アップデート： 2016年9月21日。
+最終アップデート： 2016年9月27日。

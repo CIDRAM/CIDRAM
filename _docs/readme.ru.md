@@ -37,7 +37,7 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 3) Скачайте всё содержимое (CIDRAM и файлы) в указанный в пункте 1 регистр, кроме файлов `*.txt`/`*.md`.
 
-4) Право доступа `vault`-регистра поменяйте на «777». Права доступа вышестоящего регистра, в котором находится содержание (регистр, в который вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ (Если уже случались проблемы с доступом, когда предварительная установка была, например, «755»).
+4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, вы можете попробовать «777»; это менее безопасно, хотя). Права доступа вышестоящего регистра, в котором находится содержание (регистр, в который вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ (Если уже случались проблемы с доступом, когда предварительная установка была, например, «755»).
 
 5) Скрепите CIDRAM с Вашей системой или с системой управления содержимым (CMS). Для этого есть много способов. Самым простым является способ, когда CIDRAM-руководство является началом главного файла, который будет загружаться всякий раз, когда будут заходить на ваш интернет-сайт. Этот файл нужно связать с Вашей системой или с системой управления содержимым (CMS) при помощи `require` или `include` команд. Обычно такой файл обозначается в регистре как `/includes`, `/assets` или `/functions`, и часто называется `init.php`, `common_functions.php`, `functions.php`. Вы должны найти тот файл, который соответствует Вашим требованиям. Если это трудно для Вас, то посетите страница вопросов CIDRAM на Github. Возможно я или кто-то другой уже имеет опыт работы с CMS, которую используете вы, и сможет дать Вам совет (обязательно сообщите, какой CMS Вы пользуетесь). Введите прямо в начало этого файла следующий код:
 
@@ -66,7 +66,7 @@ CIDRAM должен автоматически блокировать нежел
 
 Обновление производится вручную, и вы можете настроить конфигурацию, и настроить какие CIDRs заблокированы, путем изменения файла конфигурации и/или ваши файлы сигнатур.
 
-Если вы обнаружили ложных результатов, пожалуйста, свяжитесь со мной чтобы сообщить мне об этом.
+Если вы обнаружили ложноположительный, пожалуйста, свяжитесь со мной чтобы сообщить мне об этом.
 
 ---
 
@@ -381,7 +381,7 @@ Expires: 2016.12.31
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
-Use of YAML markup in the signature files is entirely optional (ie, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
+Use of YAML markup in the signature files is entirely optional (то есть, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
 
 Заметка: YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
 
@@ -465,22 +465,22 @@ Ignore Section 1
 
 ###7. <a name="SECTION7"></a>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQ)
 
-####What is a "false positive"?
+####Что такое ложноположительный?
 
-The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+Термин "ложноположительный" (*альтернативно: "ложноположительными ошибка"; "ложная сигнализация"*; Английский: *false positive*; *false positive error*; *false alarm*), описал очень просто, и в обобщенном контексте, используется при проверке условия, для ссылаясь на результаты этого теста, когда результаты будут положительный (то есть, условия определяется будут "положительный", или "истинно"), но как ожидается будет (или должно было) отрицательный (то есть, условие, в действительности, является "отрицательный", или "ложно"). Термин "ложноположительный" можно было бы считать аналогом "плачет волк" (английский идиома в которой условие проверяется является ли там волк возле стада, условие является "ложно" в том, что нет никакого волка возле стада, и условие сообщается "положительный" посредством пастух путем кричать "волк, волк"), или аналогично ситуации в медицинском тестировании в которой пациент диагностирован как какую-то болезнь, когда в действительности, у них нет болезни.
 
-Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+Related outcomes when testing for a condition can be described using the terms "истинноположительный", "истинноотрицательный" and "ложноотрицательный". A "истинноположительный" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "истинноотрицательный" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "истинноположительный" or a "истинноотрицательный" is considered to be a "правильный вывод". The antithesis of a "ложноположительный" is a "ложноотрицательный"; A "ложноотрицательный" refers to when the results of the test are negative (то есть, the condition is determined to be "negative", or "ложно"), но как ожидается будет (или должно было) positive (то есть, условие, в действительности, является "положительный", или "истинно").
 
-In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+In the context of CIDRAM, these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "ложноположительный". When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "обнаружение не удалось" (аналогична "ложноотрицательный").
 
-This can be summarised by the table below:
+Это может быть суммированы в таблице ниже:
 
-&nbsp; | CIDRAM should *NOT* block an IP address | CIDRAM *SHOULD* block an IP address
+&nbsp; | CIDRAM *НЕ* должны блокировать IP-адрес | CIDRAM *ДОЛЖНЫ* блокировать IP-адрес
 ---|---|---
-CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
-CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
+CIDRAM *НЕ* блокирует IP-адрес | Истинноотрицательный (правильный вывод) | Обнаружение не удалось (аналогична ложноотрицательный)
+CIDRAM *ДЕЛАЕТ* блокирует IP-адрес | __Ложноположительный__ | Истинноположительный (правильный вывод)
 
 ---
 
 
-Последнее обновление: 21 Сентябрь 2016 (2016.09.21).
+Последнее обновление: 27 Сентябрь 2016 (2016.09.27).

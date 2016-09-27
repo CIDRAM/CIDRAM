@@ -139,18 +139,6 @@ Tag: Sharktech
 Tag: Multacom Corp
 
 
-# ASN 38197 ("Sun Network (Hong Kong) Limited").
-# %Listed, Google Malware Dashboard: 21.05%.
-# Updated: 2016.07.31
-
-2400:1c80::/48 Deny Generic
-2403:ea00::/32 Deny Generic
-Tag: Sun Network HK
----
-recaptcha:
- enabled: true
-
-
 # ASN 16138 ("INTERIA.PL Sp z.o.o").
 # %Listed, Google Malware Dashboard: 2.94%.
 # Updated: 2016.03.17 / Checked: 2016.05.20
@@ -210,34 +198,6 @@ Tag: New Dream Network
 2806:213::/32 Deny Cloud
 2a04:840::/44 Deny Cloud
 Tag: HostDime.com, Inc
-
-
-# ASNs 30548, 31034, 199653, 200185, 394189 ("Aruba S.p.A" / "Aruba SAS").
-# %Listed, Google Malware Dashboard: 0% (AS30548), 2.28% (AS31034), 30.82% (AS199653),
-#   4.86% (AS200185), "ASN not found" (AS394189).
-# Updated: 2016.07.02
-
-2620:11d:6000::/42 Deny Generic
-2a00:6d40::/31 Deny Generic
-2a01:5940::/35 Deny Generic
-2a01:5940:2000::/36 Deny Generic
-2a02:4ae0:a::/48 Deny Generic
-2a02:fd40::/31 Deny Generic
-2a03:2c40::/32 Deny Generic
-2a03:a140::/32 Deny Generic
-2a03:cdc0::/35 Deny Generic
-2a04:e100::/31 Deny Generic
-Tag: Aruba S.p.A
-
-
-# ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 3.48%.
-# Updated: 2016.04.18
-
-2a01:230::/47 Deny Generic
-2a01:230:2::/48 Deny Generic
-2a07:500::/29 Deny Generic
-Tag: ISPsystem
 
 
 # ASN 47583 ("Hostinger International").
@@ -333,29 +293,12 @@ Tag: 1&1 Internet SE
 
 # ASN 16276 ("OVH Systems").
 # %Listed, Google Malware Dashboard: 1.22%.
-# Updated: 2016.01.20 / Checked: 2016.08.15
+# Updated: 2016.09.27
 
-2001:41d0::/32 Deny Generic
-2402:1f00::/32 Deny Generic
-2607:5300::/32 Deny Generic
+2001:41d0::/32 Deny Cloud
+2402:1f00::/32 Deny Cloud
+2607:5300::/32 Deny Cloud
 Tag: OVH Systems
-
-
-# ASN 34619 ("Çizgi Telekomünikasyon").
-# %Listed, Google Malware Dashboard: 5.10%.
-# Updated: 2016.01.18 / Checked: 2016.05.20
-
-2a02:2020::/32 Deny Generic
-Tag: CIZGI TELEKOM
-
-
-# ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 2.17%.
-# Updated: 2016.01.18 / Checked: 2016.04.18
-
-2001:67c:2394::/48 Deny Generic
-2a00:19e0::/29 Deny Generic
-Tag: Vautron Rech. AG
 
 
 # ASN 27823 ("Dattatec.com").
@@ -364,14 +307,6 @@ Tag: Vautron Rech. AG
 
 2800:6c0::/32 Deny Cloud
 Tag: Dattatec.com
-
-
-# ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 1.79%.
-# Updated: 2016.01.18 / Checked: 2016.04.18
-
-2a00:1a68::/32 Deny Generic
-Tag: World4You
 
 
 # ASNs 16265, 28753, 30633, 60781 ("Leaseweb Network").
@@ -406,34 +341,6 @@ Tag: World4You
 2a05:3f40::/30 Deny Cloud
 2c0f:f9b8:d::/48 Deny Cloud
 Tag: Leaseweb
-
-
-# ASN 48159 ("Telecommunication Infrastructure Company").
-# %Listed, Google Malware Dashboard: 0.60%.
-# %Listed, abuseat.org (CBL-Listed): 11.87%.
-# Updated: 2016.07.13 / Checked: 2016.09.09
-
-2a03:57c0::/32 Deny Generic
-Tag: AS48159
-
-
-# ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 1.23%.
-# %Listed, abuseat.org (CBL-Listed): 1.71%.
-# Updated: 2016.09.09
-
-2001:4188::/32 Deny Generic
-Tag: AS12880
-
-
-# ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 1.15% (AS24940), 1.39% (AS37153).
-# Updated: 2016.05.21
-
-2a01:4f8::/29 Deny Generic
-2a06:be80::/29 Deny Generic
-2c0f:fce8::/33 Deny Generic
-Tag: Hetzner Online GmbH
 
 
 # ASN 43146 ("Agava Ltd").
@@ -493,18 +400,6 @@ Tag: Agava Ltd
 Tag: SoftLayer
 
 
-# ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# %Listed, Google Malware Dashboard: 2.43%.
-# Updated: 2016.02.27 / Checked: 2016.05.21
-# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
-
-2a03:2100::/32 Deny Generic
-2a05:9bc0::/29 Deny Generic
-2a06:41c0::/29 Deny Generic
-2a06:c400::/29 Deny Generic
-Tag: AS51559
-
-
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
 # %Listed, Google Malware Dashboard: 1.69%.
 # Updated: 2016.03.28 / Checked: 2016.05.21
@@ -517,26 +412,20 @@ Tag: eServer.ru
 
 
 # ASN 35415 ("Webzilla B.V").
-# %Listed, Google Malware Dashboard: 1.60%.
-# Updated: 2016.03.28 / Checked: 2016.05.21
+# %Listed, Google Malware Dashboard: 1.16%.
+# Updated: 2016.09.27
 
-2803:8700:5::/48 Deny Generic
-2803:8700:45::/48 Deny Generic
-2803:8700:b591::/48 Deny Generic
-2803:8700:deb9::/48 Deny Generic
-2a00:1178::/32 Deny Generic
-2a06:4100::/29 Deny Generic
-2a06:7740::/48 Deny Generic
-2a06:78c0::/48 Deny Generic
+2803:8700:5::/48 Deny Cloud
+2803:8700:45::/48 Deny Cloud
+2803:8700:2f3a::/48 Deny Cloud
+2803:8700:6f32::/48 Deny Cloud
+2803:8700:b591::/48 Deny Cloud
+2803:8700:deb9::/48 Deny Cloud
+2a00:1178::/32 Deny Cloud
+2a06:4100::/32 Deny Cloud
+2a06:7740::/48 Deny Cloud
+2a06:78c0::/48 Deny Cloud
 Tag: Webzilla B.V
-
-
-# ASN 41079 ("SuperHost.pl").
-# %Listed, Google Malware Dashboard: 2.46%.
-# Updated: 2016.01.18 / Checked: 2016.03.28
-
-2a02:1778::/32 Deny Generic
-Tag: SuperHost.pl
 
 
 # ASN 53225 ("IPGLOBE DATACENTER").
@@ -556,76 +445,63 @@ Tag: IPGLOBE DATACENTER
 Tag: DataCorpore Servios
 
 
-# ASN 57879 ("sfip84").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.01.18 / Checked: 2016.05.15
+# ASN 53850 ("GorillaServers, Inc").
+# %Listed, Google Malware Dashboard: 3.74%.
+# Updated: 2016.09.15
 
-2a00:b540::/32 Deny Spam
-Tag: sfip84
-
-
-# ASN 45727 ("PT Hutchison CP Telecommunications").
-# %Listed, Google Malware Dashboard: 1.12%.
-# Updated: 2016.07.20
-
-2400:8b00:1000:1::/64 Deny Spam
-2400:8b00:1000:2::/64 Deny Spam
-2400:8b00:1000:4::/64 Deny Spam
-2400:8b00:a000::/47 Deny Spam
-2400:8b00:a400::/64 Deny Spam
-Tag: PT Hutchison
----
-recaptcha:
- enabled: true
+2606:c700::/32 Deny Cloud
+Tag: GorillaServers, Inc
 
 
-# ASN 24203 ("PT Excelcomindo Pratama").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.03.02 / Checked: 2016.05.15
+# Announcing as: "Data Center", "Data Centre".
+# Various ASNs; Sourced from HE.
+# Updated: 2016.09.07
 
-2400:9800::/32 Deny Spam
-Tag: PT Excelcomindo
----
-recaptcha:
- enabled: true
+2401:200::/32 Deny Cloud
+2401:8800::/40 Deny Cloud
+2401:8800:400::/40 Deny Cloud
+2401:8800:600::/40 Deny Cloud
+2401:8800:800::/40 Deny Cloud
+2401:8800:a00::/40 Deny Cloud
+2401:8800:c05::/48 Deny Cloud
+2401:9800::/32 Deny Cloud
+2401:9f00::/32 Deny Cloud
+2402:7a00::/32 Deny Cloud
+2403:bc00:1::/48 Deny Cloud
+2403:bc00:7fff::/48 Deny Cloud
+2403:bc00:8000::/47 Deny Cloud
+2404:3d00:400::/40 Deny Cloud
+2404:6300::/32 Deny Cloud
+2404:d8::/32 Deny Cloud
+2406:fe00::/32 Deny Cloud
+2407:7200::/32 Deny Cloud
+2602:fff8::/36 Deny Cloud
+2605:3380::/32 Deny Cloud
+2605:9700::/32 Deny Cloud
+2605:bc00::/32 Deny Cloud
+2804:160::/32 Deny Cloud
+2804:888::/32 Deny Cloud
+2804:122c::/32 Deny Cloud
+2a00:7580:10::/48 Deny Cloud
+2a00:a300::/32 Deny Cloud
+2a02:118::/32 Deny Cloud
+2a02:1760::/32 Deny Cloud
+2a02:f48:2000::/48 Deny Cloud
+2a03:7580:1::/48 Deny Cloud
+2a04:a180::/32 Deny Cloud
+2a04:b2c0::/29 Deny Cloud
+2a07:6d40::/29 Deny Cloud
+Tag: Data Center
 
 
-# ASN 45682 ("Excite Japan Co., Ltd").
-# %Listed, Google Malware Dashboard: 0.01%.
-# Updated: 2016.01.18 / Checked: 2016.07.20
+# ASNs 34360, 41079, 48760 ("H88 S.A").
+# %Listed, Google Malware Dashboard: 2.18% (AS34360), 9.49% (AS41079), 0% (AS48760).
+# Updated: 2016.01.18 / Checked: 2016.03.28
 
-2402:dc00::/32 Deny Generic
-Tag: Excite Japan
-
-
-# ASN 31080 ("o2 Sp. Z.o.o").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Updated: 2016.01.18 / Checked: 2016.05.15
-
-2001:67c:25c4::/48 Deny Generic
-Tag: AS31080
-
-
-# ASN 6870 ("H1 LLC").
-# %Listed, Google Malware Dashboard: 1.17%.
-# Updated: 2016.01.18 / Checked: 2016.04.23
-
-2a00:1f70::/32 Deny Generic
-Tag: H1 LLC
-
-
-# ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 1.43%.
-# Updated: 2016.05.15
-
-2404:8080::/32 Deny Generic
-2602:ff84:8::/48 Deny Generic
-2a02:13f0:8100::/48 Deny Generic
-2a03:5180::/46 Deny Generic
-2a03:5180:4::/47 Deny Generic
-2a06:1700::/48 Deny Generic
-2a07:7500::/29 Deny Generic
-Tag: Voxility LLC
+2a01:4660::/32 Deny Cloud
+2a02:1778::/32 Deny Cloud
+2a07:1cc0::/29 Deny Cloud
+Tag: H88 S.A
 
 
 # ASN 46475 ("Limestone Networks, Inc").
@@ -645,17 +521,6 @@ Tag: Limestone Networks
 Tag: Redstation Limited
 
 
-# ASN 24961 ("myLoc managed IT AG").
-# Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.92%.
-# Updated: 2016.04.23 / Checked: 2016.05.13
-
-2001:67c:192c::/48 Deny Generic
-2001:4ba0::/32 Deny Generic
-2a07:4400::/29 Deny Generic
-Tag: myLoc
-
-
 # ASN 13301 ("United Gameserver GmbH").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 0.16%.
@@ -665,12 +530,15 @@ Tag: myLoc
 Tag: United Gameserver
 
 
-# ASN 30968 ("INFOBOX").
-# %Listed, Google Malware Dashboard: 2.23%.
-# Updated: 2016.01.18 / Checked: 2016.05.15
+# ASN 24961 ("myLoc managed IT AG").
+# Caught trying to DDoS SFS.
+# %Listed, Google Malware Dashboard: 1.13%.
+# Updated: 2016.09.27
 
-2a02:440::/32 Deny Generic
-Tag: INFOBOX
+2001:67c:192c::/48 Deny Cloud
+2001:4ba0::/32 Deny Cloud
+2a07:4400::/29 Deny Cloud
+Tag: myLoc
 
 
 # ASN 57043 ("HOSTKEY B.V").
@@ -679,14 +547,6 @@ Tag: INFOBOX
 
 2a05:b40::/29 Deny Cloud
 Tag: HOSTKEY B.V
-
-
-# ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Updated: 2016.04.27
-
-2a05:b80::/29 Deny Spam
-Tag: Mir Telematiki Ltd
 
 
 # ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
@@ -713,34 +573,6 @@ Tag: Rackspace Hosting
 2605:3b80::/32 Deny Cloud
 2a02:748::/32 Deny Cloud
 Tag: Swiftway
-
-
-# ASN 7743 ("JPMorgan Chase & Co").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.03.13 / Checked: 2016.08.15
-
-2620:11::/40 Deny Generic
-Tag: JPMorgan Chase & Co
-
-
-# ASN 42708 ("Portlane Networks AB").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Updated: 2016.08.26
-
-2a00:1a28::/32 Deny Spam
-2a01:6f0:ffff::/48 Deny Spam
-2a01:8640:6::/48 Deny Spam
-2a02:750:10::/48 Deny Spam
-2a02:750:14::/48 Deny Spam
-2a02:7ac0::/32 Deny Spam
-2a02:d507:ffff::/48 Deny Spam
-2a03:4bc0:2931::/48 Deny Spam
-2a03:4bc0:2944::/48 Deny Spam
-2a06:2f40::/48 Deny Spam
-Tag: Portlane Networks AB
----
-recaptcha:
- enabled: true
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
@@ -802,15 +634,6 @@ Tag: Steadfast Networks
 Tag: A2B IP B.V
 
 
-# ASN 44050 ("Petersburg Internet Network ltd").
-# %Listed, Google Malware Dashboard: 1.05%.
-# Updated: 2016.01.20 / Checked: 2016.03.29
-
-2001:67c:29b8::/48 Deny Generic
-2a00:1d78::/32 Deny Generic
-Tag: PIN-AS
-
-
 # ASNs 20860, 21130 ("IOMart").
 # Crimeware friendly ISP; Warnings about them at the hpHosts Blog.
 # %Listed, Google Malware Dashboard: 0.91% (AS20860), 0% (AS21130).
@@ -831,8 +654,8 @@ Tag: IOMart
 # %Listed, Google Malware Dashboard: 0.69%.
 # Updated: 2016.01.20 / Checked: 2016.08.26
 
-2001:41c8::/29 Deny Generic
-2a03:9ba0::/40 Deny Generic
+2001:41c8::/29 Deny Cloud
+2a03:9ba0::/40 Deny Cloud
 Tag: Bytemark Limited
 
 
@@ -848,21 +671,6 @@ Tag: Bytemark Limited
 2a02:e740::/29 Deny Cloud
 2a04:2f80::/29 Deny Cloud
 Tag: PlusServer AG
-
-
-# ASNs 16880, 36421 ("Trend Micro Incorporated").
-# Follows their users around and attempts to get into restricted/private parts of websites.
-# %Listed, Google Malware Dashboard: 0% (AS16880 + AS36421).
-# Updated: 2016.08.09
-
-2001:450:2045::/48 Deny Generic
-2620:101:402c::/47 Deny Generic
-2620:101:4030::/48 Deny Generic
-2620:101:4032::/48 Deny Generic
-2620:101:4034::/46 Deny Generic
-2620:101:403a::/48 Deny Generic
-2620:101:403c::/48 Deny Generic
-Tag: Trend Micro
 
 
 # ASNs 14061, 46652, 62567, 65040, 133165, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc").
@@ -953,17 +761,6 @@ Tag: InfoRelay Online
 Tag: WestHost, Inc
 
 
-# ASN 8551 ("Bezeq International-Ltd").
-# %Listed, Google Malware Dashboard: 1.55%.
-# Updated: 2016.01.20 / Checked: 2016.09.20
-
-2001:4cd0::/32 Deny Generic
-Tag: Bezeq International
----
-recaptcha:
- enabled: true
-
-
 # ASN 32097 ("WholeSale Internet, Inc").
 # %Listed, Google Malware Dashboard: 25.78%.
 # Updated: 2016.01.20 / Checked: 2016.05.21
@@ -1026,16 +823,6 @@ Tag: ON-LINE Ltd
 2a02:b50::/33 Deny Cloud
 2a02:b50:8000::/34 Deny Cloud
 Tag: Internap Network
-
-
-# ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 2.77%.
-# Updated: 2016.01.21 / Checked: 2016.03.30
-
-2a01:4a0:2000::/47 Deny Generic
-2a01:4a0:2002::/48 Deny Generic
-2a06:4b00::/29 Deny Generic
-Tag: Xirra GmbH
 
 
 # ASN 23033 ("Wowrack.com").
@@ -1186,58 +973,6 @@ Tag: Private Layer INC
 Tag: Psychz Networks
 
 
-# ASN 35804 ("PP SKS-LUGAN").
-# %Listed, Google Malware Dashboard: 3.31%.
-# Updated: 2016.03.30 / Checked: 2016.04.25
-
-2a00:ede0::/32 Deny Generic
-Tag: PP SKS-LUGAN
-
-
-# ASN 131222 ("Sistema Shyam Teleservices Ltd").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.08.09
-
-2406:5600:9::/48 Deny Spam
-2406:5600:a::/48 Deny Spam
-2406:5600:13::/48 Deny Spam
-2406:5600:14::/46 Deny Spam
-2406:5600:18::/45 Deny Spam
-2406:5600:20::/44 Deny Spam
-2406:5600:30::/47 Deny Spam
-2406:5600:53::/48 Deny Spam
-2406:5600:54::/46 Deny Spam
-2406:5600:58::/45 Deny Spam
-2406:5600:60::/44 Deny Spam
-2406:5600:70::/48 Deny Spam
-2406:5600:73::/48 Deny Spam
-2406:5600:74::/46 Deny Spam
-2406:5600:78::/45 Deny Spam
-2406:5600:80::/45 Deny Spam
-2406:5600:88::/48 Deny Spam
-2406:5600:8a::/47 Deny Spam
-2406:5600:8c::/46 Deny Spam
-2406:5600:90::/48 Deny Spam
-2406:5600:93::/48 Deny Spam
-2406:5600:94::/46 Deny Spam
-2406:5600:98::/45 Deny Spam
-2406:5600:a0::/47 Deny Spam
-2406:5600:a2::/48 Deny Spam
-2406:5600:b3::/48 Deny Spam
-2406:5600:b4::/47 Deny Spam
-2406:5600:b9::/48 Deny Spam
-2406:5600:ba::/47 Deny Spam
-2406:5600:bc::/46 Deny Spam
-2406:5600:c0::/48 Deny Spam
-2406:5600:d2::/47 Deny Spam
-2406:5600:d4::/46 Deny Spam
-2406:5600:d8::/45 Deny Spam
-Tag: Sistema Shyam
----
-recaptcha:
- enabled: true
-
-
 # ASN 36114 ("Versaweb, LLC").
 # %Listed, Google Malware Dashboard: 8.42%.
 # Updated: 2016.01.23 / Checked: 2016.03.20
@@ -1252,17 +987,6 @@ Tag: Versaweb, LLC
 
 2605:aa80::/32 Deny Cloud
 Tag: DataWagon LLC
-
-
-# ASN 49981 ("WorldStream").
-# %Listed, Google Malware Dashboard: 1.89%.
-# Updated: 2016.03.20 / Checked: 2016.05.21
-
-2001:16c0:fefe::/48 Deny Generic
-2a00:7c80::/32 Deny Generic
-2a06:3880::/29 Deny Generic
-2a06:d641::/32 Deny Generic
-Tag: WorldStream
 
 
 # ASN 20473 ("Choopa, LLC").
@@ -1435,22 +1159,25 @@ Tag: AS46562
 Tag: RAM Host
 
 
-# ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Updated: 2016.01.18 / Checked: 2016.05.21
-# Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
+# ASNs 8972, 20738, 20773, 25074, 31100, 34011, 39779, 44497, 50932, 61157 ("Host Europe GmbH").
+# %Listed, Google Malware Dashboard: 0.75% (AS8972), 2.35% (AS20738), 1.71% (AS20773), 2.01% (AS25074), 0% (AS31100),
+#    1.64% (AS34011), 2.62% (AS39779), 3.51% (AS44497), 100% (AS50932), 0.14% (AS61157).
+# Note: When updating, check for both "Host Europe" and "HostEurope" (no space). There are some additional CIDRs in use
+# that aren't tied to any particular ASN (should aggregate these alongside those announced by the aforementioned ASNs).
+# Updated: 2016.09.28
 
-2001:67c:1388::/48 Deny Generic
-2001:67c:2570::/48 Deny Generic
-2001:67c:2648::/48 Deny Generic
-2001:1620::/32 Deny Generic
-2a00:5640::/32 Deny Generic
-2a00:e020::/32 Deny Generic
-2a02:168::/32 Deny Generic
-2a02:16a0::/32 Deny Generic
-2a03:7520::/32 Deny Generic
-2a05:36c0::/29 Deny Generic
-Tag: Init7
+2001:1520::/32 Deny Cloud
+2a00:1158::/32 Deny Cloud
+2a01:488::/32 Deny Cloud
+2a02:4e8:1::/48 Deny Cloud
+2a02:4e8:4::/47 Deny Cloud
+2a02:4e8:a::/48 Deny Cloud
+2a02:4e8:d::/48 Deny Cloud
+2a02:4e8:14::/48 Deny Cloud
+2a02:4e8:de::/48 Deny Cloud
+2a02:cbf0::/29 Deny Cloud
+2a04:e540::/32 Deny Cloud
+Tag: Host Europe GmbH
 
 
 # ASN 14576 ("K SERVERS LTD").
@@ -1496,8 +1223,9 @@ Tag: AS30083
 
 
 # ASN 12876 ("ONLINE S.A.S").
-# %Listed, Google Malware Dashboard: 1.07%.
-# Updated: 2016.01.25 / Checked: 2016.05.24
+# Caught trying to DDoS SFS.
+# %Listed, Google Malware Dashboard: 1.98%.
+# Updated: 2016.09.28
 
 2001:bc8::/32 Deny Cloud
 Tag: ONLINE S.A.S
@@ -1628,15 +1356,6 @@ Tag: HZ Hosting Ltd
 
 2605:3e80::/32 Deny Cloud
 Tag: Micfo, LLC
-
-
-# ASN 35908 ("Krypt Technologies").
-# %Listed, Google Malware Dashboard: 12.50%.
-# Updated: 2016.02.27 / Checked: 2016.07.09
-# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
-
-2607:f180::/31 Deny Generic
-Tag: Krypt Technologies
 
 
 # ASN 53264 ("Continuum Data Centers, LLC").
@@ -2315,22 +2034,13 @@ Tag: FranTech Solutions
 Tag: Astutium Limited
 
 
-# ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# %Listed, Google Malware Dashboard: 2.67% (AS3491), 0% (AS6279), "ASN not found" (AS7262).
-# Updated: 2016.07.20
+# ASN 35908 ("Krypt Technologies").
+# %Listed, Google Malware Dashboard: 13.67%.
+# Updated: 2016.09.28
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
 
-2001:478:124::/48 Deny Spam
-2400:8800::/32 Deny Spam
-2600:1400:7::/48 Deny Spam
-2600:1407:8::/48 Deny Spam
-2602:ff95::/36 Deny Spam
-2a02:b48:4000::/34 Deny Spam
-2a02:13e0:2::/48 Deny Spam
-2a03:5400::/32 Deny Spam
-Tag: PCCW Global
----
-recaptcha:
- enabled: true
+2607:f180::/31 Deny Cloud
+Tag: Krypt Technologies
 
 
 # ASN 31815 ("Media Temple, Inc").
@@ -2396,14 +2106,6 @@ Tag: Centrilogic
 Tag: VegasNAP, LLC
 
 
-# ASN 37254 ("GREEN FLASH TRADING").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.05.12
-
-2c0f:f4a8::/32 Deny Spam
-Tag: GREEN FLASH TRADING
-
-
 # ASN 54290 ("Hostwinds LLC").
 # %Listed, Google Malware Dashboard: 1.97%.
 # Updated: 2016.04.19
@@ -2420,14 +2122,6 @@ Tag: Hostwinds LLC
 
 2001:1bb0::/32 Deny Cloud
 Tag: OJSC RTComm.RU
-
-
-# ASN 62454 ("Zyztm Research Division 10 B.V").
-# %Listed, Google Malware Dashboard: 0.42%.
-# Updated: 2016.04.23
-
-2a01:54c0::/32 Deny Generic
-Tag: Zyztm
 
 
 # ASN 9009 ("M247 Ltd").
@@ -2455,10 +2149,9 @@ Tag: OOO TimeWeb
 
 
 # ASN 10098 ("Henderson Data Centre Limited").
-# %Listed, Google Malware Dashboard: 3.06%.
-# Updated: 2016.04.23
+# %Listed, Google Malware Dashboard: 3.17%.
+# Updated: 2016.04.23 / Checked: 2016.09.28
 
-2407:7200::/32 Deny Cloud
 Tag: Henderson
 
 
@@ -2476,22 +2169,6 @@ Tag: Nazwa.pl
 
 2607:f2d8::/32 Deny Cloud
 Tag: WebNX, Inc
-
-
-# ASN 201848 ("Trader soft LLC").
-# %Listed, Google Malware Dashboard: 5.01%.
-# Updated: 2016.04.25
-
-2a04:ac00:1::/48 Deny Generic
-Tag: Trader soft LLC
-
-
-# ASN 198068 ("FASTVPS EESTI OU").
-# %Listed, Google Malware Dashboard: 4.86%.
-# Updated: 2016.04.25
-
-2a03:f480:1::/48 Deny Generic
-Tag: FASTVPS EESTI OU
 
 
 # ASN 62638 ("Query Foundry, LLC").
@@ -2810,6 +2487,14 @@ Tag: Serverius Holding
 Tag: Transip B.V
 
 
+# ASN 200429 ("HostSlim BV")
+# %Listed, Google Malware Dashboard: 0.71%.
+# Updated: 2016.09.28
+
+2a06:5b80::/32 Deny Cloud
+Tag: HostSlim BV
+
+
 # ASN 43350 ("NForce Entertainment B.V")
 # %Listed, Google Malware Dashboard: 1.23%.
 # Updated: 2016.05.09
@@ -2837,20 +2522,6 @@ Tag: Transip B.V
 Tag: NForce Entertainment
 
 
-# ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
-# Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 1.82%.
-# Updated: 2016.05.13
-
-2402:1780:1::/48 Deny Generic
-2a04:4280:10::/48 Deny Generic
-2a04:4280:100::/47 Deny Generic
-2a05:b700::/29 Deny Generic
-2a05:bf00::/29 Deny Generic
-2a06:9140::/29 Deny Generic
-Tag: DGN TEKNOLOJI
-
-
 # ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 1.35%.
@@ -2860,29 +2531,6 @@ Tag: DGN TEKNOLOJI
 2402:2f80:1::/48 Deny Cloud
 2406:f400::/32 Deny Cloud
 Tag: NewMedia Express
-
-
-# ASN 42868 ("Niobe Bilisim Teknolojileri Yazilim San. Tic. Ltd. Sti").
-# Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 2.70%.
-# Updated: 2016.05.13
-
-77.245.144.0/20 Deny Generic
-Tag: Niobe Bilisim
-
-
-# ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 1.81%.
-# Updated: 2016.05.13
-
-2401:5f80::/36 Deny Generic
-2401:5f80:1001::/48 Deny Generic
-2401:5f80:2000::/35 Deny Generic
-2401:5f80:5000::/36 Deny Generic
-Tag: Vietel
----
-recaptcha:
- enabled: true
 
 
 # ASN 3842 ("RamNode LLC").
@@ -3055,18 +2703,6 @@ Tag: Host Sailor Ltd
 Tag: D.E.Tech
 
 
-# ASN 20738 ("Host Europe GmbH").
-# %Listed, Google Malware Dashboard: 1.45%.
-# Updated: 2016.06.09
-
-2a02:4e8:1::/48 Deny Cloud
-2a02:4e8:4::/47 Deny Cloud
-2a02:4e8:a::/48 Deny Cloud
-2a02:4e8:d::/48 Deny Cloud
-2a02:4e8:14::/48 Deny Cloud
-Tag: Host Europe GmbH
-
-
 # ASN 29873 ("The Endurance International Group, Inc").
 # %Listed, Google Malware Dashboard: 0.91%.
 # Updated: 2016.06.17
@@ -3159,6 +2795,8 @@ Tag: Data Room, Inc
 2003:0:1308:800d::/64 Deny Cloud
 2003:0:f000:801f::/64 Deny Cloud
 2003:3c0:1603:f::/64 Deny Cloud
+2400:8800:3f10:5::/64 Deny Cloud
+2400:8800:7f01:c::/64 Deny Cloud
 2604:9700:8000::/48 Deny Cloud
 2604:e500::/32 Deny Cloud
 2607:c200:1106::/48 Deny Cloud
@@ -3169,14 +2807,6 @@ Tag: Data Room, Inc
 2a00:16f8::/32 Deny Cloud
 2a00:f300:1::/48 Deny Cloud
 Tag: Zayo Bandwidth Inc
-
-
-# ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 2.39%.
-# Updated: 2016.07.20
-
-2a04:2c00::/29 Deny Generic
-Tag: TeNeT
 
 
 # ASN 7151 ("Bay Area Internet Solutions").
@@ -3214,15 +2844,6 @@ Tag: Trans-IX B.V
 Tag: Keyweb AG
 
 
-# ASN 31252 ("STARNET S.R.L").
-# %Listed, Google Malware Dashboard: 2.48%.
-# Updated: 2016.07.24
-
-2a00:9900::/29 Deny Generic
-2a01:320::/29 Deny Generic
-Tag: STARNET S.R.L
-
-
 # ASN 10929 ("Netelligent Hosting Services Inc").
 # %Listed, Google Malware Dashboard: 1.94%.
 # Updated: 2016.08.19
@@ -3236,7 +2857,6 @@ Tag: Netelligent Hosting
 # %Listed, Google Malware Dashboard: 0.25%.
 # Updated: 2016.08.19
 
-2401:9f00::/32 Deny Cloud
 Tag: Powerbase DataCenter
 
 
@@ -3246,6 +2866,538 @@ Tag: Powerbase DataCenter
 
 2604:7800::/32 Deny Cloud
 Tag: Ecommerce Corporation
+
+
+# ASNs 132412, 135511 ("CyberWorld Data Center").
+# Updated: 2016.09.06
+
+2404:b0:15::/48 Deny Cloud
+Tag: CyberWorld
+
+
+# ASNs 24931, 32911, 55369, 57669 ("DediPower Managed Hosting Limited").
+# %Listed, Google Malware Dashboard: 0.16% (AS24931), 0% (AS32911/AS55369/AS57669).
+# Updated: 2016.09.06
+
+2a01:ba20::/32 Deny Cloud
+2a02:16f8::/32 Deny Cloud
+Tag: DediPower
+
+
+# ASNs 12637, 20522 ("Seeweb S.r.l").
+# %Listed, Google Malware Dashboard: 1.19% (AS12637), 0% (AS20522).
+# Updated: 2016.09.06
+
+2001:4b78::/29 Deny Cloud
+2a04:2700::/29 Deny Cloud
+2a07:50c0::/29 Deny Cloud
+Tag: Seeweb S.r.l
+
+
+# ASN 30217 ("Desync Networks").
+# %Listed, Google Malware Dashboard: 0.92%.
+# Updated: 2016.09.06
+
+2607:f178::/32 Deny Cloud
+Tag: Desync Networks
+
+
+# ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
+# %Listed, Google Malware Dashboard: 0.25% (AS52048), 0% (AS60567/AS202920/AS203557).
+# Updated: 2016.09.06
+
+2a02:4840::/47 Deny Cloud
+2a02:4840:2::/48 Deny Cloud
+2a02:4840:201::/48 Deny Cloud
+2a02:4840:1000::/48 Deny Cloud
+Tag: DataClub S.A
+
+
+# ASN 30962 ("comtrance GmbH").
+# %Listed, Google Malware Dashboard: 1.52%.
+# Updated: 2016.09.09
+
+2001:67c:208::/48 Deny Cloud
+2a00:f70::/32 Deny Cloud
+Tag: comtrance GmbH
+
+
+# ASN 132422 ("Hong Kong Telecom Global Data Centre").
+# %Listed, Google Malware Dashboard: 31.82%.
+# Updated: 2016.09.09
+
+2401:2c80::/32 Deny Cloud
+Tag: AS132422 Data Centre
+
+
+# ASN 6724 ("Strato AG").
+# %Listed, Google Malware Dashboard: 0.11%.
+# Updated: 2016.09.10
+
+2a01:238::/32 Deny Cloud
+Tag: Strato AG
+
+
+# ASN 8001 ("Net Access Corporation").
+# %Listed, Google Malware Dashboard: 0.05%.
+# Updated: 2016.09.10
+
+2001:518::/32 Deny Cloud
+2620:4d:4002::/48 Deny Cloud
+Tag: Net Access Corp
+
+
+# ASN 201628 ("Internet Unie Services B.V").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.09.12
+
+2a00:1ac0:f1be::/48 Deny Cloud
+Tag: iu.nl
+
+
+# ---
+# ASN 38197 ("Sun Network (Hong Kong) Limited").
+# %Listed, Google Malware Dashboard: 21.05%.
+# Updated: 2016.07.31
+
+2400:1c80::/48 Deny Generic
+2403:ea00::/32 Deny Generic
+Tag: Sun Network HK
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 30548, 31034, 199653, 200185, 394189 ("Aruba S.p.A" / "Aruba SAS").
+# %Listed, Google Malware Dashboard: 0% (AS30548), 2.28% (AS31034), 30.82% (AS199653),
+#   4.86% (AS200185), "ASN not found" (AS394189).
+# Updated: 2016.07.02
+
+2620:11d:6000::/42 Deny Generic
+2a00:6d40::/31 Deny Generic
+2a01:5940::/35 Deny Generic
+2a01:5940:2000::/36 Deny Generic
+2a02:4ae0:a::/48 Deny Generic
+2a02:fd40::/31 Deny Generic
+2a03:2c40::/32 Deny Generic
+2a03:a140::/32 Deny Generic
+2a03:cdc0::/35 Deny Generic
+2a04:e100::/31 Deny Generic
+Tag: Aruba S.p.A
+
+
+# ASN 29182 ("ISPsystem").
+# %Listed, Google Malware Dashboard: 3.48%.
+# Updated: 2016.04.18
+
+2a01:230::/47 Deny Generic
+2a01:230:2::/48 Deny Generic
+2a07:500::/29 Deny Generic
+Tag: ISPsystem
+
+
+# ASN 34619 ("Çizgi Telekomünikasyon").
+# %Listed, Google Malware Dashboard: 5.10%.
+# Updated: 2016.01.18 / Checked: 2016.05.20
+
+2a02:2020::/32 Deny Generic
+Tag: CIZGI TELEKOM
+
+
+# ASN 25504 ("Vautron Rechenzentrum AG").
+# %Listed, Google Malware Dashboard: 2.17%.
+# Updated: 2016.01.18 / Checked: 2016.04.18
+
+2001:67c:2394::/48 Deny Generic
+2a00:19e0::/29 Deny Generic
+Tag: Vautron Rech. AG
+
+
+# ASN 38955 ("World4You Internet Services").
+# %Listed, Google Malware Dashboard: 1.79%.
+# Updated: 2016.01.18 / Checked: 2016.04.18
+
+2a00:1a68::/32 Deny Generic
+Tag: World4You
+
+
+# ASN 48159 ("Telecommunication Infrastructure Company").
+# %Listed, Google Malware Dashboard: 0.60%.
+# %Listed, abuseat.org (CBL-Listed): 11.87%.
+# Updated: 2016.07.13 / Checked: 2016.09.09
+
+2a03:57c0::/32 Deny Generic
+Tag: AS48159
+
+
+# ASN 12880 ("Information Technology Company (ITC)").
+# %Listed, Google Malware Dashboard: 1.23%.
+# %Listed, abuseat.org (CBL-Listed): 1.71%.
+# Updated: 2016.09.09
+
+2001:4188::/32 Deny Generic
+Tag: AS12880
+
+
+# ASNs 24940, 37153 ("Hetzner Online GmbH").
+# %Listed, Google Malware Dashboard: 1.15% (AS24940), 1.39% (AS37153).
+# Updated: 2016.05.21
+
+2a01:4f8::/29 Deny Generic
+2a06:be80::/29 Deny Generic
+2c0f:fce8::/33 Deny Generic
+Tag: Hetzner Online GmbH
+
+
+# ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
+# %Listed, Google Malware Dashboard: 2.43%.
+# Updated: 2016.02.27 / Checked: 2016.05.21
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
+
+2a03:2100::/32 Deny Generic
+2a05:9bc0::/29 Deny Generic
+2a06:41c0::/29 Deny Generic
+2a06:c400::/29 Deny Generic
+Tag: AS51559
+
+
+# ASN 45727 ("PT Hutchison CP Telecommunications").
+# %Listed, Google Malware Dashboard: 1.12%.
+# Updated: 2016.07.20
+
+2400:8b00:1000:1::/64 Deny Spam
+2400:8b00:1000:2::/64 Deny Spam
+2400:8b00:1000:4::/64 Deny Spam
+2400:8b00:a000::/47 Deny Spam
+2400:8b00:a400::/64 Deny Spam
+Tag: PT Hutchison
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 24203 ("PT Excelcomindo Pratama").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.03.02 / Checked: 2016.05.15
+
+2400:9800::/32 Deny Spam
+Tag: PT Excelcomindo
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 45682 ("Excite Japan Co., Ltd").
+# %Listed, Google Malware Dashboard: 0.01%.
+# Updated: 2016.01.18 / Checked: 2016.07.20
+
+2402:dc00::/32 Deny Generic
+Tag: Excite Japan
+
+
+# ASN 31080 ("o2 Sp. Z.o.o").
+# %Listed, Google Malware Dashboard: 0.27%.
+# Updated: 2016.01.18 / Checked: 2016.05.15
+
+2001:67c:25c4::/48 Deny Generic
+Tag: AS31080
+
+
+# ASN 6870 ("H1 LLC").
+# %Listed, Google Malware Dashboard: 1.17%.
+# Updated: 2016.01.18 / Checked: 2016.04.23
+
+2a00:1f70::/32 Deny Generic
+Tag: H1 LLC
+
+
+# ASN 3223 ("Voxility LLC").
+# %Listed, Google Malware Dashboard: 1.43%.
+# Updated: 2016.05.15
+
+2404:8080::/32 Deny Generic
+2602:ff84:8::/48 Deny Generic
+2a02:13f0:8100::/48 Deny Generic
+2a03:5180::/46 Deny Generic
+2a03:5180:4::/47 Deny Generic
+2a05:3a40:2::/48 Deny Generic
+2a06:1700::/48 Deny Generic
+2a07:7500::/29 Deny Generic
+Tag: Voxility LLC
+
+
+# ASN 30968 ("INFOBOX").
+# %Listed, Google Malware Dashboard: 2.23%.
+# Updated: 2016.01.18 / Checked: 2016.05.15
+
+2a02:440::/32 Deny Generic
+Tag: INFOBOX
+
+
+# ASN 49335 ("Mir Telematiki Ltd").
+# %Listed, Google Malware Dashboard: 0.28%.
+# Updated: 2016.04.27
+
+2a05:b80::/29 Deny Spam
+Tag: Mir Telematiki Ltd
+
+
+# ASN 7743 ("JPMorgan Chase & Co").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.03.13 / Checked: 2016.08.15
+
+2620:11::/40 Deny Generic
+Tag: JPMorgan Chase & Co
+
+
+# ASN 42708 ("Portlane Networks AB").
+# %Listed, Google Malware Dashboard: 0.10%.
+# Updated: 2016.08.26
+
+2a00:1a28::/32 Deny Spam
+2a01:6f0:ffff::/48 Deny Spam
+2a01:8640:6::/48 Deny Spam
+2a02:750:10::/48 Deny Spam
+2a02:750:14::/48 Deny Spam
+2a02:7ac0::/32 Deny Spam
+2a02:d507:ffff::/48 Deny Spam
+2a03:4bc0:2931::/48 Deny Spam
+2a03:4bc0:2944::/48 Deny Spam
+2a06:2f40::/48 Deny Spam
+Tag: Portlane Networks AB
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 44050 ("Petersburg Internet Network ltd").
+# %Listed, Google Malware Dashboard: 1.05%.
+# Updated: 2016.01.20 / Checked: 2016.03.29
+
+2001:67c:29b8::/48 Deny Generic
+2a00:1d78::/32 Deny Generic
+Tag: PIN-AS
+
+
+# ASNs 16880, 36421 ("Trend Micro Incorporated").
+# Follows their users around and attempts to get into restricted/private parts of websites.
+# %Listed, Google Malware Dashboard: 0% (AS16880 + AS36421).
+# Updated: 2016.08.09
+
+2001:450:2045::/48 Deny Generic
+2620:101:402c::/47 Deny Generic
+2620:101:4030::/48 Deny Generic
+2620:101:4032::/48 Deny Generic
+2620:101:4034::/46 Deny Generic
+2620:101:403a::/48 Deny Generic
+2620:101:403c::/48 Deny Generic
+Tag: Trend Micro
+
+
+# ASN 8551 ("Bezeq International-Ltd").
+# %Listed, Google Malware Dashboard: 1.55%.
+# Updated: 2016.01.20 / Checked: 2016.09.20
+
+2001:4cd0::/32 Deny Generic
+Tag: Bezeq International
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 51191 ("Xirra GmbH").
+# %Listed, Google Malware Dashboard: 2.77%.
+# Updated: 2016.01.21 / Checked: 2016.03.30
+
+2a01:4a0:2000::/47 Deny Generic
+2a01:4a0:2002::/48 Deny Generic
+2a06:4b00::/29 Deny Generic
+Tag: Xirra GmbH
+
+
+# ASN 35804 ("PP SKS-LUGAN").
+# %Listed, Google Malware Dashboard: 3.31%.
+# Updated: 2016.03.30 / Checked: 2016.04.25
+
+2a00:ede0::/32 Deny Generic
+Tag: PP SKS-LUGAN
+
+
+# ASN 131222 ("Sistema Shyam Teleservices Ltd").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.08.09
+
+2406:5600:9::/48 Deny Spam
+2406:5600:a::/48 Deny Spam
+2406:5600:13::/48 Deny Spam
+2406:5600:14::/46 Deny Spam
+2406:5600:18::/45 Deny Spam
+2406:5600:20::/44 Deny Spam
+2406:5600:30::/47 Deny Spam
+2406:5600:53::/48 Deny Spam
+2406:5600:54::/46 Deny Spam
+2406:5600:58::/45 Deny Spam
+2406:5600:60::/44 Deny Spam
+2406:5600:70::/48 Deny Spam
+2406:5600:73::/48 Deny Spam
+2406:5600:74::/46 Deny Spam
+2406:5600:78::/45 Deny Spam
+2406:5600:80::/45 Deny Spam
+2406:5600:88::/48 Deny Spam
+2406:5600:8a::/47 Deny Spam
+2406:5600:8c::/46 Deny Spam
+2406:5600:90::/48 Deny Spam
+2406:5600:93::/48 Deny Spam
+2406:5600:94::/46 Deny Spam
+2406:5600:98::/45 Deny Spam
+2406:5600:a0::/47 Deny Spam
+2406:5600:a2::/48 Deny Spam
+2406:5600:b3::/48 Deny Spam
+2406:5600:b4::/47 Deny Spam
+2406:5600:b9::/48 Deny Spam
+2406:5600:ba::/47 Deny Spam
+2406:5600:bc::/46 Deny Spam
+2406:5600:c0::/48 Deny Spam
+2406:5600:d2::/47 Deny Spam
+2406:5600:d4::/46 Deny Spam
+2406:5600:d8::/45 Deny Spam
+Tag: Sistema Shyam
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 49981 ("WorldStream").
+# %Listed, Google Malware Dashboard: 1.89%.
+# Updated: 2016.03.20 / Checked: 2016.05.21
+
+2001:16c0:fefe::/48 Deny Generic
+2a00:7c80::/32 Deny Generic
+2a06:3880::/29 Deny Generic
+2a06:d641::/32 Deny Generic
+Tag: WorldStream
+
+
+# ASN 13030 ("Init7").
+# %Listed, Google Malware Dashboard: 0.33%.
+# Updated: 2016.01.18 / Checked: 2016.05.21
+# Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
+
+2001:67c:1388::/48 Deny Generic
+2001:67c:2570::/48 Deny Generic
+2001:67c:2648::/48 Deny Generic
+2001:1620::/32 Deny Generic
+2a00:5640::/32 Deny Generic
+2a00:e020::/32 Deny Generic
+2a02:168::/32 Deny Generic
+2a02:16a0::/32 Deny Generic
+2a03:7520::/32 Deny Generic
+2a05:36c0::/29 Deny Generic
+Tag: Init7
+
+
+# ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
+# %Listed, Google Malware Dashboard: 2.67% (AS3491), 0% (AS6279), "ASN not found" (AS7262).
+# Updated: 2016.07.20
+
+2001:478:124::/48 Deny Spam
+2400:8800::/32 Deny Spam
+2600:1400:7::/48 Deny Spam
+2600:1407:8::/48 Deny Spam
+2602:ff95::/36 Deny Spam
+2a02:b48:4000::/34 Deny Spam
+2a02:13e0:2::/48 Deny Spam
+2a03:5400::/32 Deny Spam
+Tag: PCCW Global
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 37254 ("GREEN FLASH TRADING").
+# %Listed, Google Malware Dashboard: 0%.
+# Updated: 2016.05.12
+
+2c0f:f4a8::/32 Deny Spam
+Tag: GREEN FLASH TRADING
+
+
+# ASN 62454 ("Zyztm Research Division 10 B.V").
+# %Listed, Google Malware Dashboard: 0.42%.
+# Updated: 2016.04.23
+
+2a01:54c0::/32 Deny Generic
+Tag: Zyztm
+
+
+# ASN 201848 ("Trader soft LLC").
+# %Listed, Google Malware Dashboard: 5.01%.
+# Updated: 2016.04.25
+
+2a04:ac00:1::/48 Deny Generic
+Tag: Trader soft LLC
+
+
+# ASN 198068 ("FASTVPS EESTI OU").
+# %Listed, Google Malware Dashboard: 4.86%.
+# Updated: 2016.04.25
+
+2a03:f480:1::/48 Deny Generic
+Tag: FASTVPS EESTI OU
+
+
+# ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
+# Caught trying to DDoS SFS.
+# %Listed, Google Malware Dashboard: 1.82%.
+# Updated: 2016.05.13
+
+2402:1780:1::/48 Deny Generic
+2a04:4280:10::/48 Deny Generic
+2a04:4280:100::/47 Deny Generic
+2a05:b700::/29 Deny Generic
+2a05:bf00::/29 Deny Generic
+2a06:9140::/29 Deny Generic
+Tag: DGN TEKNOLOJI
+
+
+# ASN 42868 ("Niobe Bilisim Teknolojileri Yazilim San. Tic. Ltd. Sti").
+# Caught trying to DDoS SFS.
+# %Listed, Google Malware Dashboard: 2.70%.
+# Updated: 2016.05.13
+
+77.245.144.0/20 Deny Generic
+Tag: Niobe Bilisim
+
+
+# ASN 38731 ("Vietel - CHT Compamy Ltd").
+# %Listed, Google Malware Dashboard: 1.81%.
+# Updated: 2016.05.13
+
+2401:5f80::/36 Deny Generic
+2401:5f80:1001::/48 Deny Generic
+2401:5f80:2000::/35 Deny Generic
+2401:5f80:5000::/36 Deny Generic
+Tag: Vietel
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
+# %Listed, Google Malware Dashboard: 2.39%.
+# Updated: 2016.07.20
+
+2a04:2c00::/29 Deny Generic
+Tag: TeNeT
+
+
+# ASN 31252 ("STARNET S.R.L").
+# %Listed, Google Malware Dashboard: 2.48%.
+# Updated: 2016.07.24 / Checked: 2016.09.26
+
+2a00:9900::/29 Deny Generic
+2a01:320::/29 Deny Generic
+Tag: STARNET S.R.L
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
@@ -3281,13 +3433,6 @@ Tag: Idea Cellular
 ---
 recaptcha:
  enabled: true
-
-
-# ASNs 132412, 135511 ("CyberWorld Data Center").
-# Updated: 2016.09.06
-
-2404:b0:15::/48 Deny Cloud
-Tag: CyberWorld
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
@@ -3349,44 +3494,6 @@ Tag: MAROSNET
 Tag: Seznam.cz
 
 
-# ASNs 24931, 32911, 55369, 57669 ("DediPower Managed Hosting Limited").
-# %Listed, Google Malware Dashboard: 0.16% (AS24931), 0% (AS32911/AS55369/AS57669).
-# Updated: 2016.09.06
-
-2a01:ba20::/32 Deny Cloud
-2a02:16f8::/32 Deny Cloud
-Tag: DediPower
-
-
-# ASNs 12637, 20522 ("Seeweb S.r.l").
-# %Listed, Google Malware Dashboard: 1.19% (AS12637), 0% (AS20522).
-# Updated: 2016.09.06
-
-2001:4b78::/29 Deny Cloud
-2a04:2700::/29 Deny Cloud
-2a07:50c0::/29 Deny Cloud
-Tag: Seeweb S.r.l
-
-
-# ASN 30217 ("Desync Networks").
-# %Listed, Google Malware Dashboard: 0.92%.
-# Updated: 2016.09.06
-
-2607:f178::/32 Deny Cloud
-Tag: Desync Networks
-
-
-# ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# %Listed, Google Malware Dashboard: 0.25% (AS52048), 0% (AS60567/AS202920/AS203557).
-# Updated: 2016.09.06
-
-2a02:4840::/47 Deny Cloud
-2a02:4840:2::/48 Deny Cloud
-2a02:4840:201::/48 Deny Cloud
-2a02:4840:1000::/48 Deny Cloud
-Tag: DataClub S.A
-
-
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
 # %Listed, Google Malware Dashboard: 3.10% (AS7552), 2.87% (AS24086), 0% (AS37620/AS133606/AS262210/AS327799/AS327885).
 # %Listed, abuseat.org (CBL-Listed): 1.12% (AS7552), 1.52% (AS24086).
@@ -3400,15 +3507,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 30962 ("comtrance GmbH").
-# %Listed, Google Malware Dashboard: 1.52%.
-# Updated: 2016.09.09
-
-2001:67c:208::/48 Deny Cloud
-2a00:f70::/32 Deny Cloud
-Tag: comtrance GmbH
-
-
 # ASN 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
 # %Listed, Google Malware Dashboard: 0%.
 # Updated: 2016.09.09
@@ -3419,14 +3517,6 @@ Tag: Ufanet
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 132422 ("Hong Kong Telecom Global Data Centre").
-# %Listed, Google Malware Dashboard: 31.82%.
-# Updated: 2016.09.09
-
-2401:2c80::/32 Deny Cloud
-Tag: AS132422 Data Centre
 
 
 # ASN 9829 ("BSNL (Bharat Sanchar Nigam Ltd)").
@@ -3485,31 +3575,6 @@ Tag: BSNL
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 6724 ("Strato AG").
-# %Listed, Google Malware Dashboard: 0.11%.
-# Updated: 2016.09.10
-
-2a01:238::/32 Deny Cloud
-Tag: Strato AG
-
-
-# ASN 8001 ("Net Access Corporation").
-# %Listed, Google Malware Dashboard: 0.05%.
-# Updated: 2016.09.10
-
-2001:518::/32 Deny Cloud
-2620:4d:4002::/48 Deny Cloud
-Tag: Net Access Corp
-
-
-# ASN 201628 ("Internet Unie Services B.V").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.09.12
-
-2a00:1ac0:f1be::/48 Deny Cloud
-Tag: iu.nl
 
 
 # ASN 4134 ("China Telecom Backbone").
@@ -3690,56 +3755,9 @@ recaptcha:
  enabled: true
 
 
-# ASN 53850 ("GorillaServers, Inc").
-# %Listed, Google Malware Dashboard: 3.74%.
-# Updated: 2016.09.15
-
-2606:c700::/32 Deny Cloud
-Tag: GorillaServers, Inc
-
-
-# Announcing as: "Data Center", "Data Centre".
-# Various ASNs; Sourced from HE.
-# Updated: 2016.09.07
-
-2401:200::/32 Deny Cloud
-2401:8800::/40 Deny Cloud
-2401:8800:400::/40 Deny Cloud
-2401:8800:600::/40 Deny Cloud
-2401:8800:800::/40 Deny Cloud
-2401:8800:a00::/40 Deny Cloud
-2401:8800:c05::/48 Deny Cloud
-2401:9800::/32 Deny Cloud
-2402:7a00::/32 Deny Cloud
-2403:bc00:1::/48 Deny Cloud
-2403:bc00:7fff::/48 Deny Cloud
-2403:bc00:8000::/47 Deny Cloud
-2404:3d00:400::/40 Deny Cloud
-2404:6300::/32 Deny Cloud
-2404:d8::/32 Deny Cloud
-2406:fe00::/32 Deny Cloud
-2602:fff8::/36 Deny Cloud
-2605:3380::/32 Deny Cloud
-2605:9700::/32 Deny Cloud
-2605:bc00::/32 Deny Cloud
-2804:160::/32 Deny Cloud
-2804:888::/32 Deny Cloud
-2804:122c::/32 Deny Cloud
-2a00:7580:10::/48 Deny Cloud
-2a00:a300::/32 Deny Cloud
-2a02:118::/32 Deny Cloud
-2a02:1760::/32 Deny Cloud
-2a02:f48:2000::/48 Deny Cloud
-2a03:7580:1::/48 Deny Cloud
-2a04:a180::/32 Deny Cloud
-2a04:b2c0::/29 Deny Cloud
-2a07:6d40::/29 Deny Cloud
-Tag: Data Center
-
-
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.09.20
+# Updated: 2016.09.28
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -4652,8 +4670,6 @@ Tag: Data Center
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:254::/46 Deny Bogon
-2001:678:258::/45 Deny Bogon
 2001:678:260::/43 Deny Bogon
 2001:678:280::/41 Deny Bogon
 2001:678:300::/40 Deny Bogon
@@ -4671,7 +4687,8 @@ Tag: Data Center
 2001:67c:8000::/33 Deny Bogon
 2001:67d::/32 Deny Bogon
 2001:67e::/31 Deny Bogon
-2001:7f8:ac::/46 Deny Bogon
+2001:7f8:ad::/48 Deny Bogon
+2001:7f8:ae::/47 Deny Bogon
 2001:7f8:b0::/44 Deny Bogon
 2001:7f8:c0::/42 Deny Bogon
 2001:7f8:100::/40 Deny Bogon
@@ -11117,7 +11134,15 @@ Tag: Data Center
 2001:df5:2c40::/42 Deny Bogon
 2001:df5:2c80::/41 Deny Bogon
 2001:df5:2d00::/40 Deny Bogon
-2001:df5:2e00::/39 Deny Bogon
+2001:df5:2e01::/48 Deny Bogon
+2001:df5:2e02::/47 Deny Bogon
+2001:df5:2e04::/46 Deny Bogon
+2001:df5:2e08::/45 Deny Bogon
+2001:df5:2e10::/44 Deny Bogon
+2001:df5:2e20::/43 Deny Bogon
+2001:df5:2e40::/42 Deny Bogon
+2001:df5:2e80::/41 Deny Bogon
+2001:df5:2f00::/40 Deny Bogon
 2001:df5:3001::/48 Deny Bogon
 2001:df5:3002::/47 Deny Bogon
 2001:df5:3004::/46 Deny Bogon
@@ -11127,7 +11152,15 @@ Tag: Data Center
 2001:df5:3040::/42 Deny Bogon
 2001:df5:3080::/41 Deny Bogon
 2001:df5:3100::/40 Deny Bogon
-2001:df5:3200::/39 Deny Bogon
+2001:df5:3201::/48 Deny Bogon
+2001:df5:3202::/47 Deny Bogon
+2001:df5:3204::/46 Deny Bogon
+2001:df5:3208::/45 Deny Bogon
+2001:df5:3210::/44 Deny Bogon
+2001:df5:3220::/43 Deny Bogon
+2001:df5:3240::/42 Deny Bogon
+2001:df5:3280::/41 Deny Bogon
+2001:df5:3300::/40 Deny Bogon
 2001:df5:3401::/48 Deny Bogon
 2001:df5:3402::/47 Deny Bogon
 2001:df5:3404::/46 Deny Bogon
@@ -11137,7 +11170,15 @@ Tag: Data Center
 2001:df5:3440::/42 Deny Bogon
 2001:df5:3480::/41 Deny Bogon
 2001:df5:3500::/40 Deny Bogon
-2001:df5:3600::/39 Deny Bogon
+2001:df5:3601::/48 Deny Bogon
+2001:df5:3602::/47 Deny Bogon
+2001:df5:3604::/46 Deny Bogon
+2001:df5:3608::/45 Deny Bogon
+2001:df5:3610::/44 Deny Bogon
+2001:df5:3620::/43 Deny Bogon
+2001:df5:3640::/42 Deny Bogon
+2001:df5:3680::/41 Deny Bogon
+2001:df5:3700::/40 Deny Bogon
 2001:df5:3801::/48 Deny Bogon
 2001:df5:3802::/47 Deny Bogon
 2001:df5:3804::/46 Deny Bogon
@@ -11147,7 +11188,15 @@ Tag: Data Center
 2001:df5:3840::/42 Deny Bogon
 2001:df5:3880::/41 Deny Bogon
 2001:df5:3900::/40 Deny Bogon
-2001:df5:3a00::/39 Deny Bogon
+2001:df5:3a01::/48 Deny Bogon
+2001:df5:3a02::/47 Deny Bogon
+2001:df5:3a04::/46 Deny Bogon
+2001:df5:3a08::/45 Deny Bogon
+2001:df5:3a10::/44 Deny Bogon
+2001:df5:3a20::/43 Deny Bogon
+2001:df5:3a40::/42 Deny Bogon
+2001:df5:3a80::/41 Deny Bogon
+2001:df5:3b00::/40 Deny Bogon
 2001:df5:3c01::/48 Deny Bogon
 2001:df5:3c02::/47 Deny Bogon
 2001:df5:3c04::/46 Deny Bogon
@@ -11157,7 +11206,15 @@ Tag: Data Center
 2001:df5:3c40::/42 Deny Bogon
 2001:df5:3c80::/41 Deny Bogon
 2001:df5:3d00::/40 Deny Bogon
-2001:df5:3e00::/39 Deny Bogon
+2001:df5:3e01::/48 Deny Bogon
+2001:df5:3e02::/47 Deny Bogon
+2001:df5:3e04::/46 Deny Bogon
+2001:df5:3e08::/45 Deny Bogon
+2001:df5:3e10::/44 Deny Bogon
+2001:df5:3e20::/43 Deny Bogon
+2001:df5:3e40::/42 Deny Bogon
+2001:df5:3e80::/41 Deny Bogon
+2001:df5:3f00::/40 Deny Bogon
 2001:df5:4001::/48 Deny Bogon
 2001:df5:4002::/47 Deny Bogon
 2001:df5:4004::/46 Deny Bogon
@@ -11167,7 +11224,15 @@ Tag: Data Center
 2001:df5:4040::/42 Deny Bogon
 2001:df5:4080::/41 Deny Bogon
 2001:df5:4100::/40 Deny Bogon
-2001:df5:4200::/39 Deny Bogon
+2001:df5:4201::/48 Deny Bogon
+2001:df5:4202::/47 Deny Bogon
+2001:df5:4204::/46 Deny Bogon
+2001:df5:4208::/45 Deny Bogon
+2001:df5:4210::/44 Deny Bogon
+2001:df5:4220::/43 Deny Bogon
+2001:df5:4240::/42 Deny Bogon
+2001:df5:4280::/41 Deny Bogon
+2001:df5:4300::/40 Deny Bogon
 2001:df5:4401::/48 Deny Bogon
 2001:df5:4402::/47 Deny Bogon
 2001:df5:4404::/46 Deny Bogon
@@ -11177,7 +11242,15 @@ Tag: Data Center
 2001:df5:4440::/42 Deny Bogon
 2001:df5:4480::/41 Deny Bogon
 2001:df5:4500::/40 Deny Bogon
-2001:df5:4600::/39 Deny Bogon
+2001:df5:4601::/48 Deny Bogon
+2001:df5:4602::/47 Deny Bogon
+2001:df5:4604::/46 Deny Bogon
+2001:df5:4608::/45 Deny Bogon
+2001:df5:4610::/44 Deny Bogon
+2001:df5:4620::/43 Deny Bogon
+2001:df5:4640::/42 Deny Bogon
+2001:df5:4680::/41 Deny Bogon
+2001:df5:4700::/40 Deny Bogon
 2001:df5:4801::/48 Deny Bogon
 2001:df5:4802::/47 Deny Bogon
 2001:df5:4804::/46 Deny Bogon
@@ -11187,7 +11260,15 @@ Tag: Data Center
 2001:df5:4840::/42 Deny Bogon
 2001:df5:4880::/41 Deny Bogon
 2001:df5:4900::/40 Deny Bogon
-2001:df5:4a00::/39 Deny Bogon
+2001:df5:4a01::/48 Deny Bogon
+2001:df5:4a02::/47 Deny Bogon
+2001:df5:4a04::/46 Deny Bogon
+2001:df5:4a08::/45 Deny Bogon
+2001:df5:4a10::/44 Deny Bogon
+2001:df5:4a20::/43 Deny Bogon
+2001:df5:4a40::/42 Deny Bogon
+2001:df5:4a80::/41 Deny Bogon
+2001:df5:4b00::/40 Deny Bogon
 2001:df5:4c02::/47 Deny Bogon
 2001:df5:4c04::/46 Deny Bogon
 2001:df5:4c08::/45 Deny Bogon
@@ -11196,7 +11277,15 @@ Tag: Data Center
 2001:df5:4c40::/42 Deny Bogon
 2001:df5:4c80::/41 Deny Bogon
 2001:df5:4d00::/40 Deny Bogon
-2001:df5:4e00::/39 Deny Bogon
+2001:df5:4e01::/48 Deny Bogon
+2001:df5:4e02::/47 Deny Bogon
+2001:df5:4e04::/46 Deny Bogon
+2001:df5:4e08::/45 Deny Bogon
+2001:df5:4e10::/44 Deny Bogon
+2001:df5:4e20::/43 Deny Bogon
+2001:df5:4e40::/42 Deny Bogon
+2001:df5:4e80::/41 Deny Bogon
+2001:df5:4f00::/40 Deny Bogon
 2001:df5:5001::/48 Deny Bogon
 2001:df5:5002::/47 Deny Bogon
 2001:df5:5004::/46 Deny Bogon
@@ -11206,7 +11295,15 @@ Tag: Data Center
 2001:df5:5040::/42 Deny Bogon
 2001:df5:5080::/41 Deny Bogon
 2001:df5:5100::/40 Deny Bogon
-2001:df5:5200::/39 Deny Bogon
+2001:df5:5201::/48 Deny Bogon
+2001:df5:5202::/47 Deny Bogon
+2001:df5:5204::/46 Deny Bogon
+2001:df5:5208::/45 Deny Bogon
+2001:df5:5210::/44 Deny Bogon
+2001:df5:5220::/43 Deny Bogon
+2001:df5:5240::/42 Deny Bogon
+2001:df5:5280::/41 Deny Bogon
+2001:df5:5300::/40 Deny Bogon
 2001:df5:5401::/48 Deny Bogon
 2001:df5:5402::/47 Deny Bogon
 2001:df5:5404::/46 Deny Bogon
@@ -11216,7 +11313,15 @@ Tag: Data Center
 2001:df5:5440::/42 Deny Bogon
 2001:df5:5480::/41 Deny Bogon
 2001:df5:5500::/40 Deny Bogon
-2001:df5:5600::/39 Deny Bogon
+2001:df5:5601::/48 Deny Bogon
+2001:df5:5602::/47 Deny Bogon
+2001:df5:5604::/46 Deny Bogon
+2001:df5:5608::/45 Deny Bogon
+2001:df5:5610::/44 Deny Bogon
+2001:df5:5620::/43 Deny Bogon
+2001:df5:5640::/42 Deny Bogon
+2001:df5:5680::/41 Deny Bogon
+2001:df5:5700::/40 Deny Bogon
 2001:df5:5801::/48 Deny Bogon
 2001:df5:5802::/47 Deny Bogon
 2001:df5:5804::/46 Deny Bogon
@@ -11226,7 +11331,15 @@ Tag: Data Center
 2001:df5:5840::/42 Deny Bogon
 2001:df5:5880::/41 Deny Bogon
 2001:df5:5900::/40 Deny Bogon
-2001:df5:5a00::/39 Deny Bogon
+2001:df5:5a01::/48 Deny Bogon
+2001:df5:5a02::/47 Deny Bogon
+2001:df5:5a04::/46 Deny Bogon
+2001:df5:5a08::/45 Deny Bogon
+2001:df5:5a10::/44 Deny Bogon
+2001:df5:5a20::/43 Deny Bogon
+2001:df5:5a40::/42 Deny Bogon
+2001:df5:5a80::/41 Deny Bogon
+2001:df5:5b00::/40 Deny Bogon
 2001:df5:5c01::/48 Deny Bogon
 2001:df5:5c02::/47 Deny Bogon
 2001:df5:5c04::/46 Deny Bogon
@@ -11236,7 +11349,15 @@ Tag: Data Center
 2001:df5:5c40::/42 Deny Bogon
 2001:df5:5c80::/41 Deny Bogon
 2001:df5:5d00::/40 Deny Bogon
-2001:df5:5e00::/39 Deny Bogon
+2001:df5:5e01::/48 Deny Bogon
+2001:df5:5e02::/47 Deny Bogon
+2001:df5:5e04::/46 Deny Bogon
+2001:df5:5e08::/45 Deny Bogon
+2001:df5:5e10::/44 Deny Bogon
+2001:df5:5e20::/43 Deny Bogon
+2001:df5:5e40::/42 Deny Bogon
+2001:df5:5e80::/41 Deny Bogon
+2001:df5:5f00::/40 Deny Bogon
 2001:df5:6001::/48 Deny Bogon
 2001:df5:6002::/47 Deny Bogon
 2001:df5:6004::/46 Deny Bogon
@@ -11246,7 +11367,15 @@ Tag: Data Center
 2001:df5:6040::/42 Deny Bogon
 2001:df5:6080::/41 Deny Bogon
 2001:df5:6100::/40 Deny Bogon
-2001:df5:6200::/39 Deny Bogon
+2001:df5:6201::/48 Deny Bogon
+2001:df5:6202::/47 Deny Bogon
+2001:df5:6204::/46 Deny Bogon
+2001:df5:6208::/45 Deny Bogon
+2001:df5:6210::/44 Deny Bogon
+2001:df5:6220::/43 Deny Bogon
+2001:df5:6240::/42 Deny Bogon
+2001:df5:6280::/41 Deny Bogon
+2001:df5:6300::/40 Deny Bogon
 2001:df5:6401::/48 Deny Bogon
 2001:df5:6402::/47 Deny Bogon
 2001:df5:6404::/46 Deny Bogon
@@ -11256,7 +11385,15 @@ Tag: Data Center
 2001:df5:6440::/42 Deny Bogon
 2001:df5:6480::/41 Deny Bogon
 2001:df5:6500::/40 Deny Bogon
-2001:df5:6600::/39 Deny Bogon
+2001:df5:6601::/48 Deny Bogon
+2001:df5:6602::/47 Deny Bogon
+2001:df5:6604::/46 Deny Bogon
+2001:df5:6608::/45 Deny Bogon
+2001:df5:6610::/44 Deny Bogon
+2001:df5:6620::/43 Deny Bogon
+2001:df5:6640::/42 Deny Bogon
+2001:df5:6680::/41 Deny Bogon
+2001:df5:6700::/40 Deny Bogon
 2001:df5:6801::/48 Deny Bogon
 2001:df5:6802::/47 Deny Bogon
 2001:df5:6804::/46 Deny Bogon
@@ -11266,7 +11403,15 @@ Tag: Data Center
 2001:df5:6840::/42 Deny Bogon
 2001:df5:6880::/41 Deny Bogon
 2001:df5:6900::/40 Deny Bogon
-2001:df5:6a00::/39 Deny Bogon
+2001:df5:6a01::/48 Deny Bogon
+2001:df5:6a02::/47 Deny Bogon
+2001:df5:6a04::/46 Deny Bogon
+2001:df5:6a08::/45 Deny Bogon
+2001:df5:6a10::/44 Deny Bogon
+2001:df5:6a20::/43 Deny Bogon
+2001:df5:6a40::/42 Deny Bogon
+2001:df5:6a80::/41 Deny Bogon
+2001:df5:6b00::/40 Deny Bogon
 2001:df5:6c01::/48 Deny Bogon
 2001:df5:6c02::/47 Deny Bogon
 2001:df5:6c04::/46 Deny Bogon
@@ -11276,7 +11421,15 @@ Tag: Data Center
 2001:df5:6c40::/42 Deny Bogon
 2001:df5:6c80::/41 Deny Bogon
 2001:df5:6d00::/40 Deny Bogon
-2001:df5:6e00::/39 Deny Bogon
+2001:df5:6e01::/48 Deny Bogon
+2001:df5:6e02::/47 Deny Bogon
+2001:df5:6e04::/46 Deny Bogon
+2001:df5:6e08::/45 Deny Bogon
+2001:df5:6e10::/44 Deny Bogon
+2001:df5:6e20::/43 Deny Bogon
+2001:df5:6e40::/42 Deny Bogon
+2001:df5:6e80::/41 Deny Bogon
+2001:df5:6f00::/40 Deny Bogon
 2001:df5:7001::/48 Deny Bogon
 2001:df5:7002::/47 Deny Bogon
 2001:df5:7004::/46 Deny Bogon
@@ -38615,7 +38768,13 @@ Tag: Data Center
 2407:4f10::/28 Deny Bogon
 2407:4f20::/27 Deny Bogon
 2407:4f40::/26 Deny Bogon
-2407:4f80::/25 Deny Bogon
+2407:4f81::/32 Deny Bogon
+2407:4f82::/31 Deny Bogon
+2407:4f84::/30 Deny Bogon
+2407:4f88::/29 Deny Bogon
+2407:4f90::/28 Deny Bogon
+2407:4fa0::/27 Deny Bogon
+2407:4fc0::/26 Deny Bogon
 2407:5001::/32 Deny Bogon
 2407:5002::/31 Deny Bogon
 2407:5004::/30 Deny Bogon
@@ -38623,7 +38782,13 @@ Tag: Data Center
 2407:5010::/28 Deny Bogon
 2407:5020::/27 Deny Bogon
 2407:5040::/26 Deny Bogon
-2407:5080::/25 Deny Bogon
+2407:5081::/32 Deny Bogon
+2407:5082::/31 Deny Bogon
+2407:5084::/30 Deny Bogon
+2407:5088::/29 Deny Bogon
+2407:5090::/28 Deny Bogon
+2407:50a0::/27 Deny Bogon
+2407:50c0::/26 Deny Bogon
 2407:5101::/32 Deny Bogon
 2407:5102::/31 Deny Bogon
 2407:5104::/30 Deny Bogon
@@ -38631,7 +38796,13 @@ Tag: Data Center
 2407:5110::/28 Deny Bogon
 2407:5120::/27 Deny Bogon
 2407:5140::/26 Deny Bogon
-2407:5180::/25 Deny Bogon
+2407:5181::/32 Deny Bogon
+2407:5182::/31 Deny Bogon
+2407:5184::/30 Deny Bogon
+2407:5188::/29 Deny Bogon
+2407:5190::/28 Deny Bogon
+2407:51a0::/27 Deny Bogon
+2407:51c0::/26 Deny Bogon
 2407:5201::/32 Deny Bogon
 2407:5202::/31 Deny Bogon
 2407:5204::/30 Deny Bogon
@@ -38639,7 +38810,13 @@ Tag: Data Center
 2407:5210::/28 Deny Bogon
 2407:5220::/27 Deny Bogon
 2407:5240::/26 Deny Bogon
-2407:5280::/25 Deny Bogon
+2407:5281::/32 Deny Bogon
+2407:5282::/31 Deny Bogon
+2407:5284::/30 Deny Bogon
+2407:5288::/29 Deny Bogon
+2407:5290::/28 Deny Bogon
+2407:52a0::/27 Deny Bogon
+2407:52c0::/26 Deny Bogon
 2407:5301::/32 Deny Bogon
 2407:5302::/31 Deny Bogon
 2407:5304::/30 Deny Bogon
@@ -38647,7 +38824,13 @@ Tag: Data Center
 2407:5310::/28 Deny Bogon
 2407:5320::/27 Deny Bogon
 2407:5340::/26 Deny Bogon
-2407:5380::/25 Deny Bogon
+2407:5381::/32 Deny Bogon
+2407:5382::/31 Deny Bogon
+2407:5384::/30 Deny Bogon
+2407:5388::/29 Deny Bogon
+2407:5390::/28 Deny Bogon
+2407:53a0::/27 Deny Bogon
+2407:53c0::/26 Deny Bogon
 2407:5401::/32 Deny Bogon
 2407:5402::/31 Deny Bogon
 2407:5404::/30 Deny Bogon
@@ -38655,7 +38838,13 @@ Tag: Data Center
 2407:5410::/28 Deny Bogon
 2407:5420::/27 Deny Bogon
 2407:5440::/26 Deny Bogon
-2407:5480::/25 Deny Bogon
+2407:5481::/32 Deny Bogon
+2407:5482::/31 Deny Bogon
+2407:5484::/30 Deny Bogon
+2407:5488::/29 Deny Bogon
+2407:5490::/28 Deny Bogon
+2407:54a0::/27 Deny Bogon
+2407:54c0::/26 Deny Bogon
 2407:5501::/32 Deny Bogon
 2407:5502::/31 Deny Bogon
 2407:5504::/30 Deny Bogon
@@ -38663,7 +38852,13 @@ Tag: Data Center
 2407:5510::/28 Deny Bogon
 2407:5520::/27 Deny Bogon
 2407:5540::/26 Deny Bogon
-2407:5580::/25 Deny Bogon
+2407:5581::/32 Deny Bogon
+2407:5582::/31 Deny Bogon
+2407:5584::/30 Deny Bogon
+2407:5588::/29 Deny Bogon
+2407:5590::/28 Deny Bogon
+2407:55a0::/27 Deny Bogon
+2407:55c0::/26 Deny Bogon
 2407:5601::/32 Deny Bogon
 2407:5602::/31 Deny Bogon
 2407:5604::/30 Deny Bogon
@@ -38671,7 +38866,13 @@ Tag: Data Center
 2407:5610::/28 Deny Bogon
 2407:5620::/27 Deny Bogon
 2407:5640::/26 Deny Bogon
-2407:5680::/25 Deny Bogon
+2407:5681::/32 Deny Bogon
+2407:5682::/31 Deny Bogon
+2407:5684::/30 Deny Bogon
+2407:5688::/29 Deny Bogon
+2407:5690::/28 Deny Bogon
+2407:56a0::/27 Deny Bogon
+2407:56c0::/26 Deny Bogon
 2407:5701::/32 Deny Bogon
 2407:5702::/31 Deny Bogon
 2407:5704::/30 Deny Bogon
@@ -38679,7 +38880,13 @@ Tag: Data Center
 2407:5710::/28 Deny Bogon
 2407:5720::/27 Deny Bogon
 2407:5740::/26 Deny Bogon
-2407:5780::/25 Deny Bogon
+2407:5781::/32 Deny Bogon
+2407:5782::/31 Deny Bogon
+2407:5784::/30 Deny Bogon
+2407:5788::/29 Deny Bogon
+2407:5790::/28 Deny Bogon
+2407:57a0::/27 Deny Bogon
+2407:57c0::/26 Deny Bogon
 2407:5801::/32 Deny Bogon
 2407:5802::/31 Deny Bogon
 2407:5804::/30 Deny Bogon
@@ -38687,7 +38894,10 @@ Tag: Data Center
 2407:5810::/28 Deny Bogon
 2407:5820::/27 Deny Bogon
 2407:5840::/26 Deny Bogon
-2407:5880::/25 Deny Bogon
+2407:5888::/29 Deny Bogon
+2407:5890::/28 Deny Bogon
+2407:58a0::/27 Deny Bogon
+2407:58c0::/26 Deny Bogon
 2407:5901::/32 Deny Bogon
 2407:5902::/31 Deny Bogon
 2407:5904::/30 Deny Bogon
@@ -38695,7 +38905,13 @@ Tag: Data Center
 2407:5910::/28 Deny Bogon
 2407:5920::/27 Deny Bogon
 2407:5940::/26 Deny Bogon
-2407:5980::/25 Deny Bogon
+2407:5981::/32 Deny Bogon
+2407:5982::/31 Deny Bogon
+2407:5984::/30 Deny Bogon
+2407:5988::/29 Deny Bogon
+2407:5990::/28 Deny Bogon
+2407:59a0::/27 Deny Bogon
+2407:59c0::/26 Deny Bogon
 2407:5a01::/32 Deny Bogon
 2407:5a02::/31 Deny Bogon
 2407:5a04::/30 Deny Bogon
@@ -38703,7 +38919,13 @@ Tag: Data Center
 2407:5a10::/28 Deny Bogon
 2407:5a20::/27 Deny Bogon
 2407:5a40::/26 Deny Bogon
-2407:5a80::/25 Deny Bogon
+2407:5a81::/32 Deny Bogon
+2407:5a82::/31 Deny Bogon
+2407:5a84::/30 Deny Bogon
+2407:5a88::/29 Deny Bogon
+2407:5a90::/28 Deny Bogon
+2407:5aa0::/27 Deny Bogon
+2407:5ac0::/26 Deny Bogon
 2407:5b01::/32 Deny Bogon
 2407:5b02::/31 Deny Bogon
 2407:5b04::/30 Deny Bogon
@@ -38711,7 +38933,13 @@ Tag: Data Center
 2407:5b10::/28 Deny Bogon
 2407:5b20::/27 Deny Bogon
 2407:5b40::/26 Deny Bogon
-2407:5b80::/25 Deny Bogon
+2407:5b81::/32 Deny Bogon
+2407:5b82::/31 Deny Bogon
+2407:5b84::/30 Deny Bogon
+2407:5b88::/29 Deny Bogon
+2407:5b90::/28 Deny Bogon
+2407:5ba0::/27 Deny Bogon
+2407:5bc0::/26 Deny Bogon
 2407:5c01::/32 Deny Bogon
 2407:5c02::/31 Deny Bogon
 2407:5c04::/30 Deny Bogon
@@ -38719,7 +38947,13 @@ Tag: Data Center
 2407:5c10::/28 Deny Bogon
 2407:5c20::/27 Deny Bogon
 2407:5c40::/26 Deny Bogon
-2407:5c80::/25 Deny Bogon
+2407:5c81::/32 Deny Bogon
+2407:5c82::/31 Deny Bogon
+2407:5c84::/30 Deny Bogon
+2407:5c88::/29 Deny Bogon
+2407:5c90::/28 Deny Bogon
+2407:5ca0::/27 Deny Bogon
+2407:5cc0::/26 Deny Bogon
 2407:5d01::/32 Deny Bogon
 2407:5d02::/31 Deny Bogon
 2407:5d04::/30 Deny Bogon
@@ -38727,7 +38961,13 @@ Tag: Data Center
 2407:5d10::/28 Deny Bogon
 2407:5d20::/27 Deny Bogon
 2407:5d40::/26 Deny Bogon
-2407:5d80::/25 Deny Bogon
+2407:5d81::/32 Deny Bogon
+2407:5d82::/31 Deny Bogon
+2407:5d84::/30 Deny Bogon
+2407:5d88::/29 Deny Bogon
+2407:5d90::/28 Deny Bogon
+2407:5da0::/27 Deny Bogon
+2407:5dc0::/26 Deny Bogon
 2407:5e01::/32 Deny Bogon
 2407:5e02::/31 Deny Bogon
 2407:5e04::/30 Deny Bogon
@@ -38735,7 +38975,13 @@ Tag: Data Center
 2407:5e10::/28 Deny Bogon
 2407:5e20::/27 Deny Bogon
 2407:5e40::/26 Deny Bogon
-2407:5e80::/25 Deny Bogon
+2407:5e81::/32 Deny Bogon
+2407:5e82::/31 Deny Bogon
+2407:5e84::/30 Deny Bogon
+2407:5e88::/29 Deny Bogon
+2407:5e90::/28 Deny Bogon
+2407:5ea0::/27 Deny Bogon
+2407:5ec0::/26 Deny Bogon
 2407:5f01::/32 Deny Bogon
 2407:5f02::/31 Deny Bogon
 2407:5f04::/30 Deny Bogon
@@ -38743,7 +38989,13 @@ Tag: Data Center
 2407:5f10::/28 Deny Bogon
 2407:5f20::/27 Deny Bogon
 2407:5f40::/26 Deny Bogon
-2407:5f80::/25 Deny Bogon
+2407:5f81::/32 Deny Bogon
+2407:5f82::/31 Deny Bogon
+2407:5f84::/30 Deny Bogon
+2407:5f88::/29 Deny Bogon
+2407:5f90::/28 Deny Bogon
+2407:5fa0::/27 Deny Bogon
+2407:5fc0::/26 Deny Bogon
 2407:6001::/32 Deny Bogon
 2407:6002::/31 Deny Bogon
 2407:6004::/30 Deny Bogon
@@ -38751,7 +39003,13 @@ Tag: Data Center
 2407:6010::/28 Deny Bogon
 2407:6020::/27 Deny Bogon
 2407:6040::/26 Deny Bogon
-2407:6080::/25 Deny Bogon
+2407:6081::/32 Deny Bogon
+2407:6082::/31 Deny Bogon
+2407:6084::/30 Deny Bogon
+2407:6088::/29 Deny Bogon
+2407:6090::/28 Deny Bogon
+2407:60a0::/27 Deny Bogon
+2407:60c0::/26 Deny Bogon
 2407:6101::/32 Deny Bogon
 2407:6102::/31 Deny Bogon
 2407:6104::/30 Deny Bogon
@@ -38759,7 +39017,13 @@ Tag: Data Center
 2407:6110::/28 Deny Bogon
 2407:6120::/27 Deny Bogon
 2407:6140::/26 Deny Bogon
-2407:6180::/25 Deny Bogon
+2407:6181::/32 Deny Bogon
+2407:6182::/31 Deny Bogon
+2407:6184::/30 Deny Bogon
+2407:6188::/29 Deny Bogon
+2407:6190::/28 Deny Bogon
+2407:61a0::/27 Deny Bogon
+2407:61c0::/26 Deny Bogon
 2407:6201::/32 Deny Bogon
 2407:6202::/31 Deny Bogon
 2407:6204::/30 Deny Bogon
@@ -38767,7 +39031,13 @@ Tag: Data Center
 2407:6210::/28 Deny Bogon
 2407:6220::/27 Deny Bogon
 2407:6240::/26 Deny Bogon
-2407:6280::/25 Deny Bogon
+2407:6281::/32 Deny Bogon
+2407:6282::/31 Deny Bogon
+2407:6284::/30 Deny Bogon
+2407:6288::/29 Deny Bogon
+2407:6290::/28 Deny Bogon
+2407:62a0::/27 Deny Bogon
+2407:62c0::/26 Deny Bogon
 2407:6301::/32 Deny Bogon
 2407:6302::/31 Deny Bogon
 2407:6304::/30 Deny Bogon
@@ -38775,7 +39045,13 @@ Tag: Data Center
 2407:6310::/28 Deny Bogon
 2407:6320::/27 Deny Bogon
 2407:6340::/26 Deny Bogon
-2407:6380::/25 Deny Bogon
+2407:6381::/32 Deny Bogon
+2407:6382::/31 Deny Bogon
+2407:6384::/30 Deny Bogon
+2407:6388::/29 Deny Bogon
+2407:6390::/28 Deny Bogon
+2407:63a0::/27 Deny Bogon
+2407:63c0::/26 Deny Bogon
 2407:6401::/32 Deny Bogon
 2407:6402::/31 Deny Bogon
 2407:6404::/30 Deny Bogon
@@ -45895,7 +46171,9 @@ Tag: Data Center
 2607:a810::/28 Deny Bogon
 2607:a820::/27 Deny Bogon
 2607:a840::/26 Deny Bogon
-2607:a880::/25 Deny Bogon
+2607:a890::/28 Deny Bogon
+2607:a8a0::/27 Deny Bogon
+2607:a8c0::/26 Deny Bogon
 2607:a910::/28 Deny Bogon
 2607:a920::/27 Deny Bogon
 2607:a940::/26 Deny Bogon
@@ -46873,7 +47151,11 @@ Tag: Data Center
 2620:9:8400::/38 Deny Bogon
 2620:9:8800::/37 Deny Bogon
 2620:9:9000::/36 Deny Bogon
-2620:9:a000::/35 Deny Bogon
+2620:9:a100::/40 Deny Bogon
+2620:9:a200::/39 Deny Bogon
+2620:9:a400::/38 Deny Bogon
+2620:9:a800::/37 Deny Bogon
+2620:9:b000::/36 Deny Bogon
 2620:9:c010::/44 Deny Bogon
 2620:9:c020::/43 Deny Bogon
 2620:9:c040::/42 Deny Bogon
@@ -58151,7 +58433,11 @@ Tag: Data Center
 2620:12a:3200::/39 Deny Bogon
 2620:12a:3400::/38 Deny Bogon
 2620:12a:3800::/37 Deny Bogon
-2620:12a:4000::/34 Deny Bogon
+2620:12a:6100::/40 Deny Bogon
+2620:12a:6200::/39 Deny Bogon
+2620:12a:6400::/38 Deny Bogon
+2620:12a:6800::/37 Deny Bogon
+2620:12a:7000::/36 Deny Bogon
 2620:12a:8000::/33 Deny Bogon
 2620:12b::/32 Deny Bogon
 2620:12c::/30 Deny Bogon
@@ -58564,7 +58850,14 @@ Tag: Data Center
 2801:12:4200::/39 Deny Bogon
 2801:12:4400::/38 Deny Bogon
 2801:12:4800::/37 Deny Bogon
-2801:12:5000::/36 Deny Bogon
+2801:12:5010::/44 Deny Bogon
+2801:12:5020::/43 Deny Bogon
+2801:12:5040::/42 Deny Bogon
+2801:12:5080::/41 Deny Bogon
+2801:12:5100::/40 Deny Bogon
+2801:12:5200::/39 Deny Bogon
+2801:12:5400::/38 Deny Bogon
+2801:12:5800::/37 Deny Bogon
 2801:12:6010::/44 Deny Bogon
 2801:12:6020::/43 Deny Bogon
 2801:12:6040::/42 Deny Bogon
@@ -61582,7 +61875,9 @@ Tag: Data Center
 2803:1888::/29 Deny Bogon
 2803:1890::/28 Deny Bogon
 2803:18a0::/27 Deny Bogon
-2803:18c0::/26 Deny Bogon
+2803:18c8::/29 Deny Bogon
+2803:18d0::/28 Deny Bogon
+2803:18e0::/27 Deny Bogon
 2803:1910::/28 Deny Bogon
 2803:1920::/27 Deny Bogon
 2803:1950::/28 Deny Bogon
@@ -61938,7 +62233,8 @@ Tag: Data Center
 2803:4860::/27 Deny Bogon
 2803:4890::/28 Deny Bogon
 2803:48a0::/27 Deny Bogon
-2803:48c0::/26 Deny Bogon
+2803:48d0::/28 Deny Bogon
+2803:48e0::/27 Deny Bogon
 2803:4910::/28 Deny Bogon
 2803:4920::/27 Deny Bogon
 2803:4950::/28 Deny Bogon
@@ -62179,7 +62475,8 @@ Tag: Data Center
 2803:6860::/27 Deny Bogon
 2803:6890::/28 Deny Bogon
 2803:68a0::/27 Deny Bogon
-2803:68c0::/26 Deny Bogon
+2803:68d0::/28 Deny Bogon
+2803:68e0::/27 Deny Bogon
 2803:6910::/28 Deny Bogon
 2803:6920::/27 Deny Bogon
 2803:6950::/28 Deny Bogon
@@ -62660,7 +62957,8 @@ Tag: Data Center
 2803:a860::/27 Deny Bogon
 2803:a890::/28 Deny Bogon
 2803:a8a0::/27 Deny Bogon
-2803:a8c0::/26 Deny Bogon
+2803:a8d0::/28 Deny Bogon
+2803:a8e0::/27 Deny Bogon
 2803:a910::/28 Deny Bogon
 2803:a920::/27 Deny Bogon
 2803:a950::/28 Deny Bogon
@@ -63133,7 +63431,8 @@ Tag: Data Center
 2803:e860::/27 Deny Bogon
 2803:e890::/28 Deny Bogon
 2803:e8a0::/27 Deny Bogon
-2803:e8c0::/26 Deny Bogon
+2803:e8d0::/28 Deny Bogon
+2803:e8e0::/27 Deny Bogon
 2803:e901::/32 Deny Bogon
 2803:e902::/31 Deny Bogon
 2803:e904::/30 Deny Bogon
@@ -69932,8 +70231,35 @@ Tag: Data Center
 2804:34f6::/31 Deny Bogon
 2804:34f9::/32 Deny Bogon
 2804:34fa::/31 Deny Bogon
-2804:34fc::/30 Deny Bogon
-2804:3500::/24 Deny Bogon
+2804:34fd::/32 Deny Bogon
+2804:34fe::/31 Deny Bogon
+2804:3501::/32 Deny Bogon
+2804:3502::/31 Deny Bogon
+2804:3505::/32 Deny Bogon
+2804:3506::/31 Deny Bogon
+2804:3509::/32 Deny Bogon
+2804:350a::/31 Deny Bogon
+2804:350d::/32 Deny Bogon
+2804:350e::/31 Deny Bogon
+2804:3511::/32 Deny Bogon
+2804:3512::/31 Deny Bogon
+2804:3515::/32 Deny Bogon
+2804:3516::/31 Deny Bogon
+2804:3519::/32 Deny Bogon
+2804:351a::/31 Deny Bogon
+2804:351d::/32 Deny Bogon
+2804:351e::/31 Deny Bogon
+2804:3521::/32 Deny Bogon
+2804:3522::/31 Deny Bogon
+2804:3525::/32 Deny Bogon
+2804:3526::/31 Deny Bogon
+2804:3529::/32 Deny Bogon
+2804:352a::/31 Deny Bogon
+2804:352d::/32 Deny Bogon
+2804:352e::/31 Deny Bogon
+2804:3530::/28 Deny Bogon
+2804:3540::/26 Deny Bogon
+2804:3580::/25 Deny Bogon
 2804:3600::/23 Deny Bogon
 2804:3800::/21 Deny Bogon
 2804:4000::/18 Deny Bogon
@@ -71321,8 +71647,6 @@ Tag: Data Center
 2a00:9230::/28 Deny Bogon
 2a00:9248::/29 Deny Bogon
 2a00:9250::/28 Deny Bogon
-2a00:9268::/29 Deny Bogon
-2a00:9270::/28 Deny Bogon
 2a00:9288::/29 Deny Bogon
 2a00:9290::/28 Deny Bogon
 2a00:92e8::/29 Deny Bogon
@@ -71711,8 +72035,6 @@ Tag: Data Center
 2a00:abd0::/28 Deny Bogon
 2a00:abe8::/29 Deny Bogon
 2a00:abf0::/28 Deny Bogon
-2a00:ac08::/29 Deny Bogon
-2a00:ac10::/28 Deny Bogon
 2a00:ac28::/29 Deny Bogon
 2a00:ac30::/28 Deny Bogon
 2a00:ac48::/29 Deny Bogon
@@ -74903,8 +75225,6 @@ Tag: Data Center
 2a02:2dd0::/28 Deny Bogon
 2a02:2de8::/29 Deny Bogon
 2a02:2df0::/28 Deny Bogon
-2a02:2f88::/29 Deny Bogon
-2a02:2f90::/28 Deny Bogon
 2a02:2fa8::/29 Deny Bogon
 2a02:2fb0::/28 Deny Bogon
 2a02:2fe8::/29 Deny Bogon
@@ -77049,8 +77369,6 @@ Tag: Data Center
 2a03:4e10::/28 Deny Bogon
 2a03:4e28::/29 Deny Bogon
 2a03:4e30::/28 Deny Bogon
-2a03:4e48::/29 Deny Bogon
-2a03:4e50::/28 Deny Bogon
 2a03:4e68::/29 Deny Bogon
 2a03:4e70::/28 Deny Bogon
 2a03:4e88::/29 Deny Bogon
@@ -79467,115 +79785,152 @@ Tag: Data Center
 2a0a:1f80::/25 Deny Bogon
 2a0a:2040::/26 Deny Bogon
 2a0a:2080::/25 Deny Bogon
-2a0a:2100::/24 Deny Bogon
+2a0a:2140::/26 Deny Bogon
+2a0a:2180::/25 Deny Bogon
 2a0a:2240::/26 Deny Bogon
 2a0a:2280::/25 Deny Bogon
-2a0a:2300::/24 Deny Bogon
+2a0a:2340::/26 Deny Bogon
+2a0a:2380::/25 Deny Bogon
 2a0a:2440::/26 Deny Bogon
 2a0a:2480::/25 Deny Bogon
-2a0a:2500::/24 Deny Bogon
+2a0a:2540::/26 Deny Bogon
+2a0a:2580::/25 Deny Bogon
 2a0a:2640::/26 Deny Bogon
 2a0a:2680::/25 Deny Bogon
-2a0a:2700::/24 Deny Bogon
+2a0a:2740::/26 Deny Bogon
+2a0a:2780::/25 Deny Bogon
 2a0a:2840::/26 Deny Bogon
 2a0a:2880::/25 Deny Bogon
-2a0a:2900::/24 Deny Bogon
+2a0a:2940::/26 Deny Bogon
+2a0a:2980::/25 Deny Bogon
 2a0a:2a40::/26 Deny Bogon
 2a0a:2a80::/25 Deny Bogon
-2a0a:2b00::/24 Deny Bogon
+2a0a:2b40::/26 Deny Bogon
+2a0a:2b80::/25 Deny Bogon
 2a0a:2c40::/26 Deny Bogon
 2a0a:2c80::/25 Deny Bogon
-2a0a:2d00::/24 Deny Bogon
+2a0a:2d40::/26 Deny Bogon
+2a0a:2d80::/25 Deny Bogon
 2a0a:2e40::/26 Deny Bogon
 2a0a:2e80::/25 Deny Bogon
-2a0a:2f00::/24 Deny Bogon
+2a0a:2f40::/26 Deny Bogon
+2a0a:2f80::/25 Deny Bogon
 2a0a:3040::/26 Deny Bogon
 2a0a:3080::/25 Deny Bogon
-2a0a:3100::/24 Deny Bogon
+2a0a:3140::/26 Deny Bogon
+2a0a:3180::/25 Deny Bogon
 2a0a:3240::/26 Deny Bogon
 2a0a:3280::/25 Deny Bogon
-2a0a:3300::/24 Deny Bogon
+2a0a:3340::/26 Deny Bogon
+2a0a:3380::/25 Deny Bogon
 2a0a:3440::/26 Deny Bogon
 2a0a:3480::/25 Deny Bogon
-2a0a:3500::/24 Deny Bogon
+2a0a:3540::/26 Deny Bogon
+2a0a:3580::/25 Deny Bogon
 2a0a:3640::/26 Deny Bogon
 2a0a:3680::/25 Deny Bogon
-2a0a:3700::/24 Deny Bogon
+2a0a:3740::/26 Deny Bogon
+2a0a:3780::/25 Deny Bogon
 2a0a:3840::/26 Deny Bogon
 2a0a:3880::/25 Deny Bogon
-2a0a:3900::/24 Deny Bogon
+2a0a:3940::/26 Deny Bogon
+2a0a:3980::/25 Deny Bogon
 2a0a:3a40::/26 Deny Bogon
 2a0a:3a80::/25 Deny Bogon
-2a0a:3b00::/24 Deny Bogon
+2a0a:3b40::/26 Deny Bogon
+2a0a:3b80::/25 Deny Bogon
 2a0a:3c40::/26 Deny Bogon
 2a0a:3c80::/25 Deny Bogon
-2a0a:3d00::/24 Deny Bogon
+2a0a:3d40::/26 Deny Bogon
+2a0a:3d80::/25 Deny Bogon
 2a0a:3e40::/26 Deny Bogon
 2a0a:3e80::/25 Deny Bogon
-2a0a:3f00::/24 Deny Bogon
+2a0a:3f40::/26 Deny Bogon
+2a0a:3f80::/25 Deny Bogon
 2a0a:4040::/26 Deny Bogon
 2a0a:4080::/25 Deny Bogon
-2a0a:4100::/24 Deny Bogon
+2a0a:4140::/26 Deny Bogon
+2a0a:4180::/25 Deny Bogon
 2a0a:4240::/26 Deny Bogon
 2a0a:4280::/25 Deny Bogon
-2a0a:4300::/24 Deny Bogon
+2a0a:4340::/26 Deny Bogon
+2a0a:4380::/25 Deny Bogon
 2a0a:4440::/26 Deny Bogon
 2a0a:4480::/25 Deny Bogon
-2a0a:4500::/24 Deny Bogon
+2a0a:4540::/26 Deny Bogon
+2a0a:4580::/25 Deny Bogon
 2a0a:4640::/26 Deny Bogon
 2a0a:4680::/25 Deny Bogon
-2a0a:4700::/24 Deny Bogon
+2a0a:4740::/26 Deny Bogon
+2a0a:4780::/25 Deny Bogon
 2a0a:4840::/26 Deny Bogon
 2a0a:4880::/25 Deny Bogon
-2a0a:4900::/24 Deny Bogon
+2a0a:4940::/26 Deny Bogon
+2a0a:4980::/25 Deny Bogon
 2a0a:4a40::/26 Deny Bogon
 2a0a:4a80::/25 Deny Bogon
-2a0a:4b00::/24 Deny Bogon
+2a0a:4b40::/26 Deny Bogon
+2a0a:4b80::/25 Deny Bogon
 2a0a:4c40::/26 Deny Bogon
 2a0a:4c80::/25 Deny Bogon
-2a0a:4d00::/24 Deny Bogon
+2a0a:4d40::/26 Deny Bogon
+2a0a:4d80::/25 Deny Bogon
 2a0a:4e40::/26 Deny Bogon
 2a0a:4e80::/25 Deny Bogon
-2a0a:4f00::/24 Deny Bogon
+2a0a:4f40::/26 Deny Bogon
+2a0a:4f80::/25 Deny Bogon
 2a0a:5040::/26 Deny Bogon
 2a0a:5080::/25 Deny Bogon
-2a0a:5100::/24 Deny Bogon
+2a0a:5140::/26 Deny Bogon
+2a0a:5180::/25 Deny Bogon
 2a0a:5240::/26 Deny Bogon
 2a0a:5280::/25 Deny Bogon
-2a0a:5300::/24 Deny Bogon
+2a0a:5340::/26 Deny Bogon
+2a0a:5380::/25 Deny Bogon
 2a0a:5440::/26 Deny Bogon
 2a0a:5480::/25 Deny Bogon
-2a0a:5500::/24 Deny Bogon
+2a0a:5540::/26 Deny Bogon
+2a0a:5580::/25 Deny Bogon
 2a0a:5640::/26 Deny Bogon
 2a0a:5680::/25 Deny Bogon
-2a0a:5700::/24 Deny Bogon
+2a0a:5740::/26 Deny Bogon
+2a0a:5780::/25 Deny Bogon
 2a0a:5840::/26 Deny Bogon
 2a0a:5880::/25 Deny Bogon
-2a0a:5900::/24 Deny Bogon
+2a0a:5940::/26 Deny Bogon
+2a0a:5980::/25 Deny Bogon
 2a0a:5a40::/26 Deny Bogon
 2a0a:5a80::/25 Deny Bogon
-2a0a:5b00::/24 Deny Bogon
+2a0a:5b40::/26 Deny Bogon
+2a0a:5b80::/25 Deny Bogon
 2a0a:5c40::/26 Deny Bogon
 2a0a:5c80::/25 Deny Bogon
-2a0a:5d00::/24 Deny Bogon
+2a0a:5d40::/26 Deny Bogon
+2a0a:5d80::/25 Deny Bogon
 2a0a:5e40::/26 Deny Bogon
 2a0a:5e80::/25 Deny Bogon
-2a0a:5f00::/24 Deny Bogon
+2a0a:5f40::/26 Deny Bogon
+2a0a:5f80::/25 Deny Bogon
 2a0a:6040::/26 Deny Bogon
 2a0a:6080::/25 Deny Bogon
-2a0a:6100::/24 Deny Bogon
+2a0a:6140::/26 Deny Bogon
+2a0a:6180::/25 Deny Bogon
 2a0a:6240::/26 Deny Bogon
 2a0a:6280::/25 Deny Bogon
-2a0a:6300::/24 Deny Bogon
+2a0a:6340::/26 Deny Bogon
+2a0a:6380::/25 Deny Bogon
 2a0a:6440::/26 Deny Bogon
 2a0a:6480::/25 Deny Bogon
-2a0a:6500::/24 Deny Bogon
+2a0a:6540::/26 Deny Bogon
+2a0a:6580::/25 Deny Bogon
 2a0a:6640::/26 Deny Bogon
 2a0a:6680::/25 Deny Bogon
-2a0a:6700::/24 Deny Bogon
+2a0a:6740::/26 Deny Bogon
+2a0a:6780::/25 Deny Bogon
 2a0a:6840::/26 Deny Bogon
 2a0a:6880::/25 Deny Bogon
-2a0a:6900::/24 Deny Bogon
+2a0a:6940::/26 Deny Bogon
+2a0a:6980::/25 Deny Bogon
 2a0a:6a40::/26 Deny Bogon
 2a0a:6a80::/25 Deny Bogon
 2a0a:6b00::/24 Deny Bogon
@@ -80196,9 +80551,9 @@ Tag: Data Center
 2c0f:c000::/19 Deny Bogon
 2c0f:e000::/20 Deny Bogon
 2c0f:f000::/23 Deny Bogon
-2c0f:f328::/29 Deny Bogon
-2c0f:f330::/28 Deny Bogon
-2c0f:f340::/26 Deny Bogon
+2c0f:f348::/29 Deny Bogon
+2c0f:f350::/28 Deny Bogon
+2c0f:f360::/27 Deny Bogon
 2c0f:f380::/25 Deny Bogon
 2c0f:f790::/29 Deny Bogon
 2c0f:f868::/29 Deny Bogon

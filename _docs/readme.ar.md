@@ -68,7 +68,7 @@ CIDRAM should automatically block undesirable requests to your website without r
 
 Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files.
 
-If you encounter any false positives, please contact me to let me know about it.
+<div dir="rtl">إذا واجهت أي إيجابية خاطئة، يرجى رسالة لي أن اسمحوا لي أن أعرف عن ذلك.<br /><br /></div>
 
 ---
 
@@ -491,11 +491,11 @@ Ignore Section 1
 
 <div dir="rtl" style="display:inline;">Related outcomes when testing for a condition can be described using the terms "إيجابية صحيح"، "سلبي صحيح" and "سلبي خاطئة". "إيجابية صحيح" refers to when the results of the test and the actual state of the condition are both صحيح (or "إيجابية")، and a "سلبي صحيح" refers to when the results of the test and the actual state of the condition are both خاطئة (or "سلبي"); A "إيجابية صحيح" or a "سلبي صحيح" is considered to be a "الاستدلال الصحيح". The antithesis of a "إيجابية خاطئة" is a "سلبي خاطئة"; A "سلبي خاطئة" refers to when the results of the test are سلبي (أي، the condition is determined to be "سلبي"، أو "خاطئة")، but are expected to be (or should have been) إيجابية (أي، الحالة، في الواقع، هو "إيجابية"، أو "صحيح").<br /><br /></div>
 
-<div dir="rtl" style="display:inline;">In the context of CIDRAM، these terms refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad، outdated or incorrect signatures، but shouldn't have done so، أو when it does so for the wrong reasons، we refer to this event as a "إيجابية خاطئة". When CIDRAM fails to block an IP address that should have been blocked، due to unforeseen threats، missing signatures or shortfalls in its signatures، we refer to this event as a "افتقد" (هذا هو التناظرية من ا "سلبي خاطئة").<br /><br /></div>
+<div dir="rtl" style="display:inline;">في سياق CIDRAM، هذه المصطلحات تشير إلى التوقيعات CIDRAM و ما/منهم أنهم منع. عندما CIDRAM يمنع عنوان IP نظرا لتوقيع سيئة، قديمة أو غير صحيحة، ولكن لا ينبغي أن تفعل ذلك، أو عندما يفعل ذلك لأسباب خاطئة، نشير إلى هذا الحدث باعتباره "إيجابية خاطئة". عندما CIDRAM يفشل لمنع عنوان IP التي كان ينبغي أن سدت، بسبب تهديدات غير متوقعة، التوقيعات المفقودة أو أوجه القصور توقيع، نشير إلى هذا الحدث باعتباره "افتقد" (هذا هو التناظرية من ا "سلبي خاطئة").<br /><br /></div>
 
 <div dir="rtl">هذا يمكن تلخيصها حسب الجدول أدناه:<br /><br /></div>
 
-&nbsp; | <div dir="rtl" style="display:inline;">يجب CIDRAM عدم عرقلة عنوان IP | <div dir="rtl" style="display:inline;">CIDRAM يجب منع عنوان IP
+&nbsp; | <div dir="rtl" style="display:inline;">CIDRAM لا ينبغي منع عنوان IP | <div dir="rtl" style="display:inline;">CIDRAM يجب منع عنوان IP
 ---|---|---
 <div dir="rtl" style="display:inline;">CIDRAM لا يمنع عنوان IP | <div dir="rtl" style="display:inline;">سلبي صحيح (الاستدلال الصحيح) <div dir="rtl" style="display:inline;">| افتقد (التناظرية من سلبي خاطئة)
 <div dir="rtl" style="display:inline;">CIDRAM منع عنوان IP | <div dir="rtl" style="display:inline;">__إيجابية خاطئة__ | <div dir="rtl" style="display:inline;">إيجابية صحيح (الاستدلال الصحيح)
@@ -503,4 +503,4 @@ Ignore Section 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 27 سبتمبر 2016 (2016.09.27).</div>
+<div dir="rtl">آخر تحديث: 28 سبتمبر 2016 (2016.09.28).</div>

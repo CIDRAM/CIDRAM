@@ -338,6 +338,7 @@ Tag: Dattatec.com
 2a02:1330::/32 Deny Cloud
 2a02:2870:8000::/33 Deny Cloud
 2a02:2968::/29 Deny Cloud
+2a02:2ca0:3a::/48 Deny Cloud
 2a02:40c0::/36 Deny Cloud
 2a02:4600::/32 Deny Cloud
 2a03:f85:2::/48 Deny Cloud
@@ -496,6 +497,7 @@ Tag: GorillaServers, Inc
 2403:bc00:8000::/47 Deny Cloud
 2404:3d00:400::/40 Deny Cloud
 2404:6300::/32 Deny Cloud
+2404:a700::/32 Deny Cloud
 2404:d8::/32 Deny Cloud
 2406:fe00::/32 Deny Cloud
 2407:7200::/32 Deny Cloud
@@ -505,6 +507,7 @@ Tag: GorillaServers, Inc
 2605:bc00::/32 Deny Cloud
 2804:160::/32 Deny Cloud
 2804:888::/32 Deny Cloud
+2804:9c4::/32 Deny Cloud
 2804:122c::/32 Deny Cloud
 2a00:7580:10::/48 Deny Cloud
 2a00:a300::/32 Deny Cloud
@@ -617,7 +620,7 @@ Tag: Swiftway
 2604:6700::/48 Run rules_as6939.php
 2604:a100::/32 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
-2620:0:50c0::/48 Run rules_as6939.php
+2620::50c0::/48 Run rules_as6939.php
 2620:8d::/48 Run rules_as6939.php
 2620:ba:4000::/48 Run rules_as6939.php
 2620:10a:80fd::/48 Run rules_as6939.php
@@ -666,6 +669,7 @@ Tag: A2B IP B.V
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
 2403:cc00:3000::/36 Deny Cloud
+2607:bd00:100::/48 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a03:b201::/32 Deny Cloud
 2a03:ca80::/31 Deny Cloud
@@ -740,6 +744,7 @@ Tag: Tzulo Inc
 2401:f500:1::/48 Deny Cloud
 2602:ffe5:400::/40 Deny Cloud
 2607:fca8::/32 Deny Cloud
+2607:fca8:10::/44 Deny Cloud
 Tag: Corporate Colocation
 
 
@@ -819,8 +824,8 @@ Tag: ON-LINE Ltd
 
 
 # ASNs 10910, 10912, 10913, 11853, 11854, 11855, 12178, 12179, 12180, 12181, 12182, 13789, 13790, 13791, 13792, 14742,
-# ASNs 14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910,
-# "Internap Network Services Corporation", Updated: 2016.03.30
+#    14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910
+# ("Internap Network Services Corporation"). Updated: 2016.10.01
 
 2400:f800::/32 Deny Cloud
 2404:ca00::/32 Deny Cloud
@@ -840,10 +845,8 @@ Tag: ON-LINE Ltd
 2604:5b00::/32 Deny Cloud
 2604:6300::/32 Deny Cloud
 2604:b300:ad03::/48 Deny Cloud
+2606:fe80:20::/44 Deny Cloud
 2607:f080:300::/40 Deny Cloud
-2607:fd60:c934::/48 Deny Cloud
-2620:113:f000::/45 Deny Cloud
-2620:116:8000::/48 Deny Cloud
 2a02:b50::/33 Deny Cloud
 2a02:b50:8000::/34 Deny Cloud
 Tag: Internap Network
@@ -905,6 +908,7 @@ Tag: Black Lotus
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:3::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
+2605:8900:3000::/36 Deny Cloud
 2607:8700:102::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
@@ -1167,6 +1171,7 @@ Tag: UOL DIVEO S.A
 2604:2880::/48 Deny Cloud
 2604:4600:aa01::/48 Deny Cloud
 2604:8180::/32 Deny Cloud
+2605:8900:1000::/36 Deny Cloud
 2607:f7a0:1::/48 Deny Cloud
 2607:f7a0:3::/48 Deny Cloud
 2607:f7a0:6::/47 Deny Cloud
@@ -1190,9 +1195,14 @@ Tag: RAM Host
 # that aren't tied to any particular ASN (should aggregate these alongside those announced by the aforementioned ASNs).
 # Updated: 2016.09.28
 
+2001:830::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
+2001:2000:3080:551::/64 Deny Cloud
+2001:4d08::/32 Deny Cloud
+2a00:e10::/32 Deny Cloud
 2a00:1158::/32 Deny Cloud
 2a01:488::/32 Deny Cloud
+2a01:a740::/32 Deny Cloud
 2a02:4e8:1::/48 Deny Cloud
 2a02:4e8:4::/47 Deny Cloud
 2a02:4e8:a::/48 Deny Cloud
@@ -1200,6 +1210,9 @@ Tag: RAM Host
 2a02:4e8:14::/48 Deny Cloud
 2a02:4e8:de::/48 Deny Cloud
 2a02:cbf0::/29 Deny Cloud
+2a02:cbf2::/47 Deny Cloud
+2a02:e740::/29 Deny Cloud
+2a04:2f80::/29 Deny Cloud
 2a04:e540::/32 Deny Cloud
 Tag: Host Europe GmbH
 
@@ -1220,6 +1233,7 @@ Tag: K SERVERS LTD
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
+2605:f700:42::/48 Deny Cloud
 2605:f700:80::/44 Deny Cloud
 2605:f700:c0::/44 Deny Cloud
 2605:f700:100::/44 Deny Cloud
@@ -1360,6 +1374,7 @@ Tag: ONLINE S.A.S
 2001:49f0:d054::/47 Deny Cloud
 2602:ffb6::/36 Deny Cloud
 2a01:8640:4::/48 Deny Cloud
+2607:f298:a::/48 Deny Cloud
 2607:f700::/32 Deny Cloud
 Tag: Cogent
 
@@ -1414,6 +1429,7 @@ Tag: ESDS
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
+2a00:7143:101::/48 Deny Cloud
 Tag: AltusHost B.V
 
 
@@ -1692,6 +1708,9 @@ Tag: AltusHost B.V
 2600:1406:10::/48 Deny Cloud
 2600:1406:12::/47 Deny Cloud
 2600:1406:19::/48 Deny Cloud
+2600:1406:19:1::/64 Deny Cloud
+2600:1406:19:2::/63 Deny Cloud
+2600:1406:19:4::/64 Deny Cloud
 2600:1406:1a::/47 Deny Cloud
 2600:1406:1c::/46 Deny Cloud
 2600:1406:20::/46 Deny Cloud
@@ -1707,6 +1726,13 @@ Tag: AltusHost B.V
 2600:1406:3e::/47 Deny Cloud
 2600:1406:40::/48 Deny Cloud
 2600:1406:43::/48 Deny Cloud
+2600:1406:43:101::/64 Deny Cloud
+2600:1406:43:102::/63 Deny Cloud
+2600:1406:43:104::/62 Deny Cloud
+2600:1406:43:108::/63 Deny Cloud
+2600:1406:43:110::/61 Deny Cloud
+2600:1406:43:118::/63 Deny Cloud
+2600:1406:43:120::/64 Deny Cloud
 2600:1406:45::/48 Deny Cloud
 2600:1406:47::/48 Deny Cloud
 2600:1407:3::/48 Deny Cloud
@@ -2151,6 +2177,8 @@ Tag: OJSC RTComm.RU
 # %Listed, Google Malware Dashboard: 4.09%.
 # Updated: 2016.04.23
 
+2001:978:2305::/48 Deny Cloud
+2001:978:3400::/48 Deny Cloud
 2001:ac8::/32 Deny Cloud
 2a00:b320::/48 Deny Cloud
 2a01:300::/29 Deny Cloud
@@ -2169,6 +2197,14 @@ Tag: M247 Ltd
 2a03:6f00::/46 Deny Cloud
 2a03:6f00:4::/48 Deny Cloud
 Tag: OOO TimeWeb
+
+
+# ASN 10098 ("Henderson Data Centre Limited").
+# %Listed, Google Malware Dashboard: 3.17%.
+# Updated: 2016.04.23 / Checked: 2016.09.28
+
+2407:7200::/32 Deny Cloud
+Tag: Henderson
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
@@ -2209,25 +2245,65 @@ Tag: Query Foundry, LLC
 Tag: Sia Nano IT
 
 
-# ASNs 8987, 14618, 16509, 39111 ("Amazon.com, Inc").
-# %Listed, Google Malware Dashboard: 0% (AS8987), 1.13% (AS14618), 0.02% (AS16509), 0.14% (AS39111).
-# Updated: 2016.06.19
+# ASNs 7224, 8987, 14618, 16509, 38895, 39111, 62785 ("Amazon.com, Inc").
+# %Listed, Google Malware Dashboard: 0% (AS7224/AS8987), 0.13% (AS14618), 0.03% (AS16509), 0.05% (AS38895),
+#    0.14% (AS39111), "ASN not found" (AS62785).
+# Updated: 2016.10.01
 
 2400:6500::/32 Deny Cloud
 2400:6700::/32 Deny Cloud
 2403:b300::/32 Deny Cloud
 2406:da00::/32 Deny Cloud
+2406:da12::/36 Deny Cloud
+2406:da14::/36 Deny Cloud
+2406:da18::/36 Deny Cloud
+2406:da1c::/36 Deny Cloud
+2406:daa0:2040::/44 Deny Cloud
+2406:daa0:2080::/44 Deny Cloud
+2406:daa0:20c0::/44 Deny Cloud
+2406:daa0:4020::/44 Deny Cloud
+2406:daa0:4040::/44 Deny Cloud
+2406:daa0:4060::/44 Deny Cloud
+2406:daa0:4080::/44 Deny Cloud
+2406:daa0:40a0::/44 Deny Cloud
+2406:daa0:8020::/44 Deny Cloud
+2406:daa0:8080::/44 Deny Cloud
+2406:daa0:80c0::/44 Deny Cloud
+2406:daa0:a040::/44 Deny Cloud
+2406:daa0:a080::/44 Deny Cloud
+2406:daa0:a0c0::/44 Deny Cloud
+2406:daa0:c020::/44 Deny Cloud
+2406:daa0:c040::/44 Deny Cloud
+2406:daa0:c080::/44 Deny Cloud
+2406:daa0:c0c0::/44 Deny Cloud
+2600:1f00:1000::/40 Deny Cloud
+2600:1f00:6000::/40 Deny Cloud
 2600:1f10:8080::/48 Deny Cloud
-2600:1fa0:2040::/46 Deny Cloud
-2600:1fa0:2080::/46 Deny Cloud
-2600:1fa0:20c0::/46 Deny Cloud
+2600:1f11::/36 Deny Cloud
+2600:1f14::/36 Deny Cloud
+2600:1f16::/36 Deny Cloud
+2600:1f18::/36 Deny Cloud
+2600:1f1c::/36 Deny Cloud
+2600:1f1e::/36 Deny Cloud
+2600:1fa0:1040::/44 Deny Cloud
+2600:1fa0:1080::/44 Deny Cloud
+2600:1fa0:10c0::/44 Deny Cloud
+2600:1fa0:2040::/44 Deny Cloud
+2600:1fa0:2080::/44 Deny Cloud
+2600:1fa0:20c0::/44 Deny Cloud
 2600:1fa0:4040::/44 Deny Cloud
 2600:1fa0:4080::/44 Deny Cloud
 2600:1fa0:40c0::/44 Deny Cloud
+2600:1fa0:6040::/46 Deny Cloud
+2600:1fa0:6080::/46 Deny Cloud
+2600:1fa0:60c0::/46 Deny Cloud
 2600:1fa0:8010::/44 Deny Cloud
 2600:1fa0:8020::/44 Deny Cloud
-2600:1fa0:8080::/43 Deny Cloud
+2600:1fa0:8040::/44 Deny Cloud
+2600:1fa0:8080::/44 Deny Cloud
+2600:1fa0:8090::/44 Deny Cloud
 2600:1fa0:80a0::/44 Deny Cloud
+2600:1fa0:80c0::/44 Deny Cloud
 2600:1fa0:c020::/44 Deny Cloud
 2600:1fa0:c040::/44 Deny Cloud
 2600:1fa0:c0c0::/44 Deny Cloud
@@ -2238,33 +2314,70 @@ Tag: Sia Nano IT
 2600:9000:1001::/48 Deny Cloud
 2600:9000:1002::/47 Deny Cloud
 2600:9000:1004::/48 Deny Cloud
-2600:9000:1006::/48 Deny Cloud
+2600:9000:1006::/47 Deny Cloud
 2600:9000:1008::/47 Deny Cloud
-2600:9000:100c::/47 Deny Cloud
-2600:9000:100f::/48 Deny Cloud
+2600:9000:100a::/48 Deny Cloud
+2600:9000:100c::/46 Deny Cloud
 2600:9000:1011::/48 Deny Cloud
-2600:9000:1012::/48 Deny Cloud
-2600:9000:1018::/47 Deny Cloud
-2600:9000:101a::/47 Deny Cloud
-2600:9000:101c::/48 Deny Cloud
-2600:9000:101f::/48 Deny Cloud
+2600:9000:1012::/47 Deny Cloud
+2600:9000:1015::/48 Deny Cloud
+2600:9000:1018::/46 Deny Cloud
+2600:9000:101c::/46 Deny Cloud
 2600:9000:1020::/47 Deny Cloud
 2600:9000:1023::/48 Deny Cloud
 2600:9000:1024::/47 Deny Cloud
 2600:9000:1027::/48 Deny Cloud
-2600:9000:1028::/48 Deny Cloud
-2600:9000:1032::/48 Deny Cloud
+2600:9000:1028::/47 Deny Cloud
+2600:9000:102a::/48 Deny Cloud
+2600:9000:102d::/48 Deny Cloud
+2600:9000:102e::/47 Deny Cloud
+2600:9000:1030::/46 Deny Cloud
 2600:9000:1034::/48 Deny Cloud
-2600:9000:103b::/48 Deny Cloud
-2600:9000:103c::/47 Deny Cloud
-2600:9000:103e::/48 Deny Cloud
-2600:9000:203e::/48 Deny Cloud
+2600:9000:1038::/45 Deny Cloud
+2600:9000:1040::/45 Deny Cloud
+2600:9000:1049::/48 Deny Cloud
+2600:9000:2001::/48 Deny Cloud
+2600:9000:2002::/47 Deny Cloud
+2600:9000:2004::/48 Deny Cloud
+2600:9000:2008::/47 Deny Cloud
+2600:9000:200a::/48 Deny Cloud
+2600:9000:200c::/47 Deny Cloud
+2600:9000:200e::/48 Deny Cloud
+2600:9000:2011::/48 Deny Cloud
+2600:9000:2012::/47 Deny Cloud
+2600:9000:2015::/48 Deny Cloud
+2600:9000:2019::/48 Deny Cloud
+2600:9000:201a::/47 Deny Cloud
+2600:9000:201c::/47 Deny Cloud
+2600:9000:201f::/48 Deny Cloud
+2600:9000:2020::/47 Deny Cloud
+2600:9000:2023::/48 Deny Cloud
+2600:9000:2024::/47 Deny Cloud
+2600:9000:2027::/48 Deny Cloud
+2600:9000:2028::/47 Deny Cloud
+2600:9000:202a::/48 Deny Cloud
+2600:9000:202e::/47 Deny Cloud
+2600:9000:2030::/48 Deny Cloud
+2600:9000:2034::/48 Deny Cloud
+2600:9000:2038::/46 Deny Cloud
+2600:9000:203d::/48 Deny Cloud
+2600:9000:203e::/47 Deny Cloud
+2600:9000:2041::/48 Deny Cloud
+2600:9000:2042::/47 Deny Cloud
+2600:9000:2044::/48 Deny Cloud
 2600:9000:f110::/48 Deny Cloud
+2600:9000:f140::/48 Deny Cloud
+2600:9000:f530::/47 Deny Cloud
 2620:107:3000::/44 Deny Cloud
 2620:108:7000::/44 Deny Cloud
 2620:108:d000::/44 Deny Cloud
 2804:800::/32 Deny Cloud
 2a01:578::/32 Deny Cloud
+2a05:d000:c000::/40 Deny Cloud
+2a05:d014::/36 Deny Cloud
+2a05:d018::/36 Deny Cloud
+2a05:d018::/36 Deny Cloud
+2a05:d01c::/36 Deny Cloud
 2a05:d050:4040::/44 Deny Cloud
 2a05:d050:4080::/44 Deny Cloud
 2a05:d050:40c0::/44 Deny Cloud
@@ -2274,6 +2387,7 @@ Tag: Sia Nano IT
 2a05:d050:8080::/43 Deny Cloud
 2a05:d050:80a0::/44 Deny Cloud
 2a05:d050:80c0::/44 Deny Cloud
+2a05:d050:80e0::/44 Deny Cloud
 2a05:d050:c040::/44 Deny Cloud
 2a05:d050:c080::/44 Deny Cloud
 2a05:d050:c0c0::/44 Deny Cloud
@@ -2281,16 +2395,17 @@ Tag: Amazon.com, Inc
 
 
 # ASN 62282 ("UAB Rakrejus").
-# %Listed, Google Malware Dashboard: 2.18%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 3.56%.
+# Updated: 2016.10.01
 
 2a01:41a0::/32 Deny Cloud
+2a02:7b40::/32 Deny Cloud
 Tag: UAB Rakrejus
 
 
 # ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
-# %Listed, Google Malware Dashboard: 2.36%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 2.25%.
+# Updated: 2016.04.29 / Checked: 2016.10.01
 
 2400:8f80::/47 Deny Cloud
 2400:b800::/47 Deny Cloud
@@ -2336,6 +2451,11 @@ Tag: EVANZO GmbH
 2001:590:1405::/48 Deny Cloud
 2001:590:3c03::/48 Deny Cloud
 2001:590:4802::/48 Deny Cloud
+2607:f358:7::/48 Deny Cloud
+2607:f358:f::/48 Deny Cloud
+2607:f358:19::/48 Deny Cloud
+2607:f358:1f::/48 Deny Cloud
+2607:f358:2d::/48 Deny Cloud
 2a01:b840::/32 Deny Cloud
 2a03:4a80::/45 Deny Cloud
 2a03:4a80:8::/47 Deny Cloud
@@ -2450,6 +2570,8 @@ Tag: 23Media GmbH
 2605:7300::/31 Deny Cloud
 2606:d880::/32 Deny Cloud
 2a00:1630::/29 Deny Cloud
+2a00:1632::/31 Deny Cloud
+2a00:1634::/32 Deny Cloud
 2a00:1708::/32 Deny Cloud
 2a00:1d20::/32 Deny Cloud
 2a02:50e0::/32 Deny Cloud
@@ -2507,6 +2629,10 @@ Tag: Transip B.V
 # %Listed, Google Malware Dashboard: 0.71%.
 # Updated: 2016.09.28
 
+2a00:1ca8:17::/48 Deny Cloud
+2a00:1ca8:19::/48 Deny Cloud
+2a00:1ca8:37::/48 Deny Cloud
+2a06:4140::/29 Deny Cloud
 2a06:5b80::/32 Deny Cloud
 Tag: HostSlim BV
 
@@ -2808,20 +2934,21 @@ Tag: Data Room, Inc
 2001:2000:3080:d4c::/64 Deny Cloud
 2001:2000:3080:dfe::/64 Deny Cloud
 2001:49f0:d003::/48 Deny Cloud
-2003:0:1308:800d::/64 Deny Cloud
-2003:0:f000:801f::/64 Deny Cloud
+2003::1308:800d::/64 Deny Cloud
+2003::f000:801f::/64 Deny Cloud
 2003:3c0:1603:f::/64 Deny Cloud
 2400:8800:3f10:5::/64 Deny Cloud
 2400:8800:7f01:c::/64 Deny Cloud
 2604:9700:8000::/48 Deny Cloud
 2604:e500::/32 Deny Cloud
 2607:c200:1106::/48 Deny Cloud
-2620:0:50a0:821::/64 Deny Cloud
-2620:0:50a0:bf5::/64 Deny Cloud
+2620::50a0:821::/64 Deny Cloud
+2620::50a0:bf5::/64 Deny Cloud
 2620:bc:8000::/48 Deny Cloud
 2620:107:4008:73::/64 Deny Cloud
 2a00:16f8::/32 Deny Cloud
 2a00:f300:1::/48 Deny Cloud
+2a01:300:10:5::/64 Deny Cloud
 Tag: Zayo Bandwidth Inc
 
 
@@ -2837,6 +2964,7 @@ Tag: Bay Area IS
 # %Listed, Google Malware Dashboard: 1.07%.
 # Updated: 2016.07.20
 
+2001:828:900::/48 Deny Cloud
 2001:4d50::/32 Deny Cloud
 Tag: Link11 GmbH
 
@@ -2846,6 +2974,8 @@ Tag: Link11 GmbH
 # Updated: 2016.07.24
 
 2001:67c:1724::/48 Deny Cloud
+2001:16f8:15::/48 Deny Cloud
+2001:16f8:666::/48 Deny Cloud
 2a01:4d60::/32 Deny Cloud
 2a02:6460::/32 Deny Cloud
 2a06:4a80::/29 Deny Cloud
@@ -2857,6 +2987,8 @@ Tag: Trans-IX B.V
 # Updated: 2016.07.24
 
 2001:1b60::/29 Deny Cloud
+2001:1b60:8::/48 Deny Cloud
+2001:1b60:9::/48 Deny Cloud
 Tag: Keyweb AG
 
 
@@ -2867,6 +2999,14 @@ Tag: Keyweb AG
 2605:6f00:9000::/36 Deny Cloud
 2605:9000::/32 Deny Cloud
 Tag: Netelligent Hosting
+
+
+# ASN 9925 ("Powerbase DataCenter Services (HK) Ltd").
+# %Listed, Google Malware Dashboard: 0.25%.
+# Updated: 2016.08.19
+
+2401:9f00::/32 Deny Cloud
+Tag: Powerbase DataCenter
 
 
 # ASN 32392 ("Ecommerce Corporation").
@@ -3641,7 +3781,7 @@ recaptcha:
 # %Listed, abuseat.org (CBL-Listed): 1.37%.
 # Updated: 2016.09.14
 
-2001:b032:6::/47 Deny Generic
+2001:b032:7::/47 Deny Generic
 2001:b032:b::/48 Deny Generic
 2001:b032:c::/46 Deny Generic
 2001:b032:10::/47 Deny Generic
@@ -3765,7 +3905,7 @@ recaptcha:
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2016.09.28
+# Updated: 2016.10.01
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -4678,7 +4818,9 @@ recaptcha:
 2001:588::/29 Deny Bogon
 2001:5c0::/36 Deny Bogon
 2001:678::/48 Deny Bogon
-2001:678:260::/43 Deny Bogon
+2001:678:264::/46 Deny Bogon
+2001:678:268::/45 Deny Bogon
+2001:678:270::/44 Deny Bogon
 2001:678:280::/41 Deny Bogon
 2001:678:300::/40 Deny Bogon
 2001:678:400::/38 Deny Bogon
@@ -11447,7 +11589,15 @@ recaptcha:
 2001:df5:7040::/42 Deny Bogon
 2001:df5:7080::/41 Deny Bogon
 2001:df5:7100::/40 Deny Bogon
-2001:df5:7200::/39 Deny Bogon
+2001:df5:7201::/48 Deny Bogon
+2001:df5:7202::/47 Deny Bogon
+2001:df5:7204::/46 Deny Bogon
+2001:df5:7208::/45 Deny Bogon
+2001:df5:7210::/44 Deny Bogon
+2001:df5:7220::/43 Deny Bogon
+2001:df5:7240::/42 Deny Bogon
+2001:df5:7280::/41 Deny Bogon
+2001:df5:7300::/40 Deny Bogon
 2001:df5:7401::/48 Deny Bogon
 2001:df5:7402::/47 Deny Bogon
 2001:df5:7404::/46 Deny Bogon
@@ -11457,7 +11607,15 @@ recaptcha:
 2001:df5:7440::/42 Deny Bogon
 2001:df5:7480::/41 Deny Bogon
 2001:df5:7500::/40 Deny Bogon
-2001:df5:7600::/39 Deny Bogon
+2001:df5:7601::/48 Deny Bogon
+2001:df5:7602::/47 Deny Bogon
+2001:df5:7604::/46 Deny Bogon
+2001:df5:7608::/45 Deny Bogon
+2001:df5:7610::/44 Deny Bogon
+2001:df5:7620::/43 Deny Bogon
+2001:df5:7640::/42 Deny Bogon
+2001:df5:7680::/41 Deny Bogon
+2001:df5:7700::/40 Deny Bogon
 2001:df5:7801::/48 Deny Bogon
 2001:df5:7802::/47 Deny Bogon
 2001:df5:7804::/46 Deny Bogon
@@ -13484,6 +13642,7 @@ recaptcha:
 2001:43f8:f0::/44 Deny Bogon
 2001:43f8:170::/44 Deny Bogon
 2001:43f8:350::/44 Deny Bogon
+2001:43f8:3a0::/44 Deny Bogon
 2001:43f8:3f0::/44 Deny Bogon
 2001:43f8:500::/40 Deny Bogon
 2001:43f8:690::/44 Deny Bogon
@@ -34162,7 +34321,6 @@ recaptcha:
 2406:310::/28 Deny Bogon
 2406:320::/27 Deny Bogon
 2406:340::/26 Deny Bogon
-2406:381::/32 Deny Bogon
 2406:382::/31 Deny Bogon
 2406:384::/30 Deny Bogon
 2406:388::/29 Deny Bogon
@@ -39067,7 +39225,13 @@ recaptcha:
 2407:6410::/28 Deny Bogon
 2407:6420::/27 Deny Bogon
 2407:6440::/26 Deny Bogon
-2407:6480::/25 Deny Bogon
+2407:6481::/32 Deny Bogon
+2407:6482::/31 Deny Bogon
+2407:6484::/30 Deny Bogon
+2407:6488::/29 Deny Bogon
+2407:6490::/28 Deny Bogon
+2407:64a0::/27 Deny Bogon
+2407:64c0::/26 Deny Bogon
 2407:6501::/32 Deny Bogon
 2407:6502::/31 Deny Bogon
 2407:6504::/30 Deny Bogon
@@ -39075,7 +39239,13 @@ recaptcha:
 2407:6510::/28 Deny Bogon
 2407:6520::/27 Deny Bogon
 2407:6540::/26 Deny Bogon
-2407:6580::/25 Deny Bogon
+2407:6581::/32 Deny Bogon
+2407:6582::/31 Deny Bogon
+2407:6584::/30 Deny Bogon
+2407:6588::/29 Deny Bogon
+2407:6590::/28 Deny Bogon
+2407:65a0::/27 Deny Bogon
+2407:65c0::/26 Deny Bogon
 2407:6601::/32 Deny Bogon
 2407:6602::/31 Deny Bogon
 2407:6604::/30 Deny Bogon
@@ -39083,7 +39253,13 @@ recaptcha:
 2407:6610::/28 Deny Bogon
 2407:6620::/27 Deny Bogon
 2407:6640::/26 Deny Bogon
-2407:6680::/25 Deny Bogon
+2407:6681::/32 Deny Bogon
+2407:6682::/31 Deny Bogon
+2407:6684::/30 Deny Bogon
+2407:6688::/29 Deny Bogon
+2407:6690::/28 Deny Bogon
+2407:66a0::/27 Deny Bogon
+2407:66c0::/26 Deny Bogon
 2407:6701::/32 Deny Bogon
 2407:6702::/31 Deny Bogon
 2407:6704::/30 Deny Bogon
@@ -39091,7 +39267,13 @@ recaptcha:
 2407:6710::/28 Deny Bogon
 2407:6720::/27 Deny Bogon
 2407:6740::/26 Deny Bogon
-2407:6780::/25 Deny Bogon
+2407:6781::/32 Deny Bogon
+2407:6782::/31 Deny Bogon
+2407:6784::/30 Deny Bogon
+2407:6788::/29 Deny Bogon
+2407:6790::/28 Deny Bogon
+2407:67a0::/27 Deny Bogon
+2407:67c0::/26 Deny Bogon
 2407:6801::/32 Deny Bogon
 2407:6802::/31 Deny Bogon
 2407:6804::/30 Deny Bogon
@@ -39099,7 +39281,13 @@ recaptcha:
 2407:6810::/28 Deny Bogon
 2407:6820::/27 Deny Bogon
 2407:6840::/26 Deny Bogon
-2407:6880::/25 Deny Bogon
+2407:6881::/32 Deny Bogon
+2407:6882::/31 Deny Bogon
+2407:6884::/30 Deny Bogon
+2407:6888::/29 Deny Bogon
+2407:6890::/28 Deny Bogon
+2407:68a0::/27 Deny Bogon
+2407:68c0::/26 Deny Bogon
 2407:6901::/32 Deny Bogon
 2407:6902::/31 Deny Bogon
 2407:6904::/30 Deny Bogon
@@ -39107,7 +39295,13 @@ recaptcha:
 2407:6910::/28 Deny Bogon
 2407:6920::/27 Deny Bogon
 2407:6940::/26 Deny Bogon
-2407:6980::/25 Deny Bogon
+2407:6981::/32 Deny Bogon
+2407:6982::/31 Deny Bogon
+2407:6984::/30 Deny Bogon
+2407:6988::/29 Deny Bogon
+2407:6990::/28 Deny Bogon
+2407:69a0::/27 Deny Bogon
+2407:69c0::/26 Deny Bogon
 2407:6a01::/32 Deny Bogon
 2407:6a02::/31 Deny Bogon
 2407:6a04::/30 Deny Bogon
@@ -46185,11 +46379,15 @@ recaptcha:
 2607:a910::/28 Deny Bogon
 2607:a920::/27 Deny Bogon
 2607:a940::/26 Deny Bogon
-2607:a980::/25 Deny Bogon
+2607:a990::/28 Deny Bogon
+2607:a9a0::/27 Deny Bogon
+2607:a9c0::/26 Deny Bogon
 2607:aa10::/28 Deny Bogon
 2607:aa20::/27 Deny Bogon
 2607:aa40::/26 Deny Bogon
-2607:aa80::/25 Deny Bogon
+2607:aa90::/28 Deny Bogon
+2607:aaa0::/27 Deny Bogon
+2607:aac0::/26 Deny Bogon
 2607:ab10::/28 Deny Bogon
 2607:ab20::/27 Deny Bogon
 2607:ab40::/26 Deny Bogon
@@ -47173,7 +47371,15 @@ recaptcha:
 2620:9:c400::/38 Deny Bogon
 2620:9:c800::/37 Deny Bogon
 2620:9:d000::/36 Deny Bogon
-2620:9:e000::/35 Deny Bogon
+2620:9:e010::/44 Deny Bogon
+2620:9:e020::/43 Deny Bogon
+2620:9:e040::/42 Deny Bogon
+2620:9:e080::/41 Deny Bogon
+2620:9:e100::/40 Deny Bogon
+2620:9:e200::/39 Deny Bogon
+2620:9:e400::/38 Deny Bogon
+2620:9:e800::/37 Deny Bogon
+2620:9:f000::/36 Deny Bogon
 2620:a:10::/44 Deny Bogon
 2620:a:20::/43 Deny Bogon
 2620:a:40::/42 Deny Bogon
@@ -47183,7 +47389,15 @@ recaptcha:
 2620:a:400::/38 Deny Bogon
 2620:a:800::/37 Deny Bogon
 2620:a:1000::/36 Deny Bogon
-2620:a:2000::/35 Deny Bogon
+2620:a:2010::/44 Deny Bogon
+2620:a:2020::/43 Deny Bogon
+2620:a:2040::/42 Deny Bogon
+2620:a:2080::/41 Deny Bogon
+2620:a:2100::/40 Deny Bogon
+2620:a:2200::/39 Deny Bogon
+2620:a:2400::/38 Deny Bogon
+2620:a:2800::/37 Deny Bogon
+2620:a:3000::/36 Deny Bogon
 2620:a:4010::/44 Deny Bogon
 2620:a:4020::/43 Deny Bogon
 2620:a:4040::/42 Deny Bogon
@@ -58445,8 +58659,13 @@ recaptcha:
 2620:12a:6200::/39 Deny Bogon
 2620:12a:6400::/38 Deny Bogon
 2620:12a:6800::/37 Deny Bogon
-2620:12a:7000::/36 Deny Bogon
-2620:12a:8000::/33 Deny Bogon
+2620:12a:8100::/40 Deny Bogon
+2620:12a:8200::/39 Deny Bogon
+2620:12a:8400::/38 Deny Bogon
+2620:12a:8800::/37 Deny Bogon
+2620:12a:9000::/36 Deny Bogon
+2620:12a:a000::/35 Deny Bogon
+2620:12a:c000::/34 Deny Bogon
 2620:12b::/32 Deny Bogon
 2620:12c::/30 Deny Bogon
 2620:130::/28 Deny Bogon
@@ -62358,7 +62577,8 @@ recaptcha:
 2803:5860::/27 Deny Bogon
 2803:5890::/28 Deny Bogon
 2803:58a0::/27 Deny Bogon
-2803:58c0::/26 Deny Bogon
+2803:58d0::/28 Deny Bogon
+2803:58e0::/27 Deny Bogon
 2803:5910::/28 Deny Bogon
 2803:5920::/27 Deny Bogon
 2803:5950::/28 Deny Bogon
@@ -62836,7 +63056,8 @@ recaptcha:
 2803:9860::/27 Deny Bogon
 2803:9890::/28 Deny Bogon
 2803:98a0::/27 Deny Bogon
-2803:98c0::/26 Deny Bogon
+2803:98d0::/28 Deny Bogon
+2803:98e0::/27 Deny Bogon
 2803:9910::/28 Deny Bogon
 2803:9920::/27 Deny Bogon
 2803:9950::/28 Deny Bogon
@@ -63317,7 +63538,8 @@ recaptcha:
 2803:d860::/27 Deny Bogon
 2803:d890::/28 Deny Bogon
 2803:d8a0::/27 Deny Bogon
-2803:d8c0::/26 Deny Bogon
+2803:d8d0::/28 Deny Bogon
+2803:d8e0::/27 Deny Bogon
 2803:d910::/28 Deny Bogon
 2803:d920::/27 Deny Bogon
 2803:d950::/28 Deny Bogon
@@ -79723,7 +79945,6 @@ recaptcha:
 2a07:22c0::/26 Deny Bogon
 2a07:8ba0::/27 Deny Bogon
 2a07:cb80::/25 Deny Bogon
-2a07:cc00::/22 Deny Bogon
 2a07:d000::/20 Deny Bogon
 2a07:e000::/19 Deny Bogon
 2a09::/16 Deny Bogon
@@ -79941,94 +80162,124 @@ recaptcha:
 2a0a:6980::/25 Deny Bogon
 2a0a:6a40::/26 Deny Bogon
 2a0a:6a80::/25 Deny Bogon
-2a0a:6b00::/24 Deny Bogon
+2a0a:6b40::/26 Deny Bogon
+2a0a:6b80::/25 Deny Bogon
 2a0a:6c40::/26 Deny Bogon
 2a0a:6c80::/25 Deny Bogon
-2a0a:6d00::/24 Deny Bogon
+2a0a:6d40::/26 Deny Bogon
+2a0a:6d80::/25 Deny Bogon
 2a0a:6e40::/26 Deny Bogon
 2a0a:6e80::/25 Deny Bogon
-2a0a:6f00::/24 Deny Bogon
+2a0a:6f40::/26 Deny Bogon
+2a0a:6f80::/25 Deny Bogon
 2a0a:7040::/26 Deny Bogon
 2a0a:7080::/25 Deny Bogon
-2a0a:7100::/24 Deny Bogon
+2a0a:7140::/26 Deny Bogon
+2a0a:7180::/25 Deny Bogon
 2a0a:7240::/26 Deny Bogon
 2a0a:7280::/25 Deny Bogon
-2a0a:7300::/24 Deny Bogon
+2a0a:7340::/26 Deny Bogon
+2a0a:7380::/25 Deny Bogon
 2a0a:7440::/26 Deny Bogon
 2a0a:7480::/25 Deny Bogon
-2a0a:7500::/24 Deny Bogon
+2a0a:7540::/26 Deny Bogon
+2a0a:7580::/25 Deny Bogon
 2a0a:7640::/26 Deny Bogon
 2a0a:7680::/25 Deny Bogon
-2a0a:7700::/24 Deny Bogon
+2a0a:7740::/26 Deny Bogon
+2a0a:7780::/25 Deny Bogon
 2a0a:7840::/26 Deny Bogon
 2a0a:7880::/25 Deny Bogon
-2a0a:7900::/24 Deny Bogon
+2a0a:7940::/26 Deny Bogon
+2a0a:7980::/25 Deny Bogon
 2a0a:7a40::/26 Deny Bogon
 2a0a:7a80::/25 Deny Bogon
-2a0a:7b00::/24 Deny Bogon
+2a0a:7b40::/26 Deny Bogon
+2a0a:7b80::/25 Deny Bogon
 2a0a:7c40::/26 Deny Bogon
 2a0a:7c80::/25 Deny Bogon
-2a0a:7d00::/24 Deny Bogon
+2a0a:7d40::/26 Deny Bogon
+2a0a:7d80::/25 Deny Bogon
 2a0a:7e40::/26 Deny Bogon
 2a0a:7e80::/25 Deny Bogon
-2a0a:7f00::/24 Deny Bogon
+2a0a:7f40::/26 Deny Bogon
+2a0a:7f80::/25 Deny Bogon
 2a0a:8040::/26 Deny Bogon
 2a0a:8080::/25 Deny Bogon
-2a0a:8100::/24 Deny Bogon
+2a0a:8140::/26 Deny Bogon
+2a0a:8180::/25 Deny Bogon
 2a0a:8240::/26 Deny Bogon
 2a0a:8280::/25 Deny Bogon
-2a0a:8300::/24 Deny Bogon
+2a0a:8340::/26 Deny Bogon
+2a0a:8380::/25 Deny Bogon
 2a0a:8440::/26 Deny Bogon
 2a0a:8480::/25 Deny Bogon
-2a0a:8500::/24 Deny Bogon
+2a0a:8540::/26 Deny Bogon
+2a0a:8580::/25 Deny Bogon
 2a0a:8640::/26 Deny Bogon
 2a0a:8680::/25 Deny Bogon
-2a0a:8700::/24 Deny Bogon
+2a0a:8740::/26 Deny Bogon
+2a0a:8780::/25 Deny Bogon
 2a0a:8840::/26 Deny Bogon
 2a0a:8880::/25 Deny Bogon
-2a0a:8900::/24 Deny Bogon
+2a0a:8940::/26 Deny Bogon
+2a0a:8980::/25 Deny Bogon
 2a0a:8a40::/26 Deny Bogon
 2a0a:8a80::/25 Deny Bogon
-2a0a:8b00::/24 Deny Bogon
+2a0a:8b40::/26 Deny Bogon
+2a0a:8b80::/25 Deny Bogon
 2a0a:8c40::/26 Deny Bogon
 2a0a:8c80::/25 Deny Bogon
-2a0a:8d00::/24 Deny Bogon
+2a0a:8d40::/26 Deny Bogon
+2a0a:8d80::/25 Deny Bogon
 2a0a:8e40::/26 Deny Bogon
 2a0a:8e80::/25 Deny Bogon
-2a0a:8f00::/24 Deny Bogon
+2a0a:8f40::/26 Deny Bogon
+2a0a:8f80::/25 Deny Bogon
 2a0a:9040::/26 Deny Bogon
 2a0a:9080::/25 Deny Bogon
-2a0a:9100::/24 Deny Bogon
+2a0a:9140::/26 Deny Bogon
+2a0a:9180::/25 Deny Bogon
 2a0a:9240::/26 Deny Bogon
 2a0a:9280::/25 Deny Bogon
-2a0a:9300::/24 Deny Bogon
+2a0a:9340::/26 Deny Bogon
+2a0a:9380::/25 Deny Bogon
 2a0a:9440::/26 Deny Bogon
 2a0a:9480::/25 Deny Bogon
-2a0a:9500::/24 Deny Bogon
+2a0a:9540::/26 Deny Bogon
+2a0a:9580::/25 Deny Bogon
 2a0a:9640::/26 Deny Bogon
 2a0a:9680::/25 Deny Bogon
-2a0a:9700::/24 Deny Bogon
+2a0a:9740::/26 Deny Bogon
+2a0a:9780::/25 Deny Bogon
 2a0a:9840::/26 Deny Bogon
 2a0a:9880::/25 Deny Bogon
-2a0a:9900::/24 Deny Bogon
+2a0a:9940::/26 Deny Bogon
+2a0a:9980::/25 Deny Bogon
 2a0a:9a40::/26 Deny Bogon
 2a0a:9a80::/25 Deny Bogon
-2a0a:9b00::/24 Deny Bogon
+2a0a:9b40::/26 Deny Bogon
+2a0a:9b80::/25 Deny Bogon
 2a0a:9c40::/26 Deny Bogon
 2a0a:9c80::/25 Deny Bogon
-2a0a:9d00::/24 Deny Bogon
+2a0a:9d40::/26 Deny Bogon
+2a0a:9d80::/25 Deny Bogon
 2a0a:9e40::/26 Deny Bogon
 2a0a:9e80::/25 Deny Bogon
-2a0a:9f00::/24 Deny Bogon
+2a0a:9f40::/26 Deny Bogon
+2a0a:9f80::/25 Deny Bogon
 2a0a:a040::/26 Deny Bogon
 2a0a:a080::/25 Deny Bogon
-2a0a:a100::/24 Deny Bogon
+2a0a:a140::/26 Deny Bogon
+2a0a:a180::/25 Deny Bogon
 2a0a:a240::/26 Deny Bogon
 2a0a:a280::/25 Deny Bogon
-2a0a:a300::/24 Deny Bogon
+2a0a:a340::/26 Deny Bogon
+2a0a:a380::/25 Deny Bogon
 2a0a:a440::/26 Deny Bogon
 2a0a:a480::/25 Deny Bogon
-2a0a:a500::/24 Deny Bogon
+2a0a:a540::/26 Deny Bogon
+2a0a:a580::/25 Deny Bogon
 2a0a:a640::/26 Deny Bogon
 2a0a:a680::/25 Deny Bogon
 2a0a:a700::/24 Deny Bogon

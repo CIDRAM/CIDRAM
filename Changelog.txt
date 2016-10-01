@@ -9,6 +9,30 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 (none)
 
+=== Version/Release 0.5.1 ===
+PATCH RELEASE.
+
+No notable changes to the CIDRAM codebase have been made since the previously
+released version. This patch release exists due to numerous significant changes
+that've been made to the signature files of CIDRAM since the previously
+released version. Updating the working code of CIDRAM from the previously
+released version to this version release is not necessary, but updating all
+signature files is strongly recommended.
+
+In addition, it is strongly recommended for users updating to this release from
+the previous release, to carefully review the changes made to the "ignore.dat"
+file prior to doing so; There are some new instructions included in the
+"ignore.dat" as of this release which correspond mostly to some new signature
+sections introduced into the signature files as of this release, which may or
+may not be desired by users, depending on the needs of and the demographics
+targeted by the user (updating the signature files, and/or updating to this
+release from the previous release, without first reviewing the changes made to
+the "ignore.dat" file, may potentially risk an increase in the number of false
+positives encountered by the user).
+
+Caleb M / Maikuolan,
+1st October 2016.
+
 === Version/Release 0.5.0 ===
 MINOR RELEASE.
 

@@ -205,10 +205,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 署名（シグニチャ）の設定。
 
 "ipv4" （アイピーブイ４）
-- A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM.
+- IPv4のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。必要に応じて、項目を追加することができます。
 
 "ipv6" （アイピーブイ６）
-- A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM.
+- IPv6のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。必要に応じて、項目を追加することができます。
 
 "block_cloud" （ブロック・クラウド）
 - クラウドサービスからのCIDRをブロックする必要がありますか？ あなたのウェブサイトからのAPIサービスを操作する場合、または、あなたがウェブサイトツーサイト接続が予想される場合、これはfalseに設定する必要があります。ない場合は、これをtrueに設定する必要があります。
@@ -468,11 +468,11 @@ Ignore Section 1
 
 ####「偽陽性」とは何ですか？
 
-用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are 陽性（即ち、 the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、非常に簡単に説明し、一般化文脈で、is used when testing for a condition, to refer to the results of that test, when the results are 陽性（即ち、 the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" （wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling 「オオカミ、オオカミ」）、 or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
 
-Related outcomes when testing for a condition can be described using the 用語 「真陽性」, 「真陰性」 and 「偽陰性」. A 「真陽性」 refers to when the results of the test and the actual state of the condition are both 真 (or 「陽性」), and a 「真陰性」 refers to when the results of the test and the actual state of the condition are both 偽 (or 「陰性」); A 「真陽性」 or a 「真陰性」 is considered to be a 「正しい推論」. The antithesis of a 「偽陽性」 is a 「偽陰性」; A 「偽陰性」 refers to when the results of the test are 陰性 （即ち、 the condition is determined to be 「陰性」、または、「偽」), but are expected to be (or should have been) 陽性 （即ち、 the condition, in reality, is 「陽性」、または、「真」）。
+いくつかの関連する用語は、「真陽性」、「真陰性」、と「偽陰性」です。「真陽性」 refers to when the test results and the actual state of the condition are both 真 (or 「陽性」), and a 「真陰性」 refers to when the test results and the actual state of the condition are both 偽 (or 「陰性」); A 「真陽性」 or a 「真陰性」 is considered to be a 「正しい推論」. The antithesis of a 「偽陽性」 is a 「偽陰性」; A 「偽陰性」 refers to when the test results are 陰性 （即ち、 the condition is determined to be 「陰性」、または、「偽」), but are expected to be (or should have been) 陽性 （即ち、 the condition, in reality, is 「陽性」、または、「真」）。
 
-In the context of CIDRAM, these 用語 refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a 「偽陽性」. When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a 「不在検出」 (which is analogous to a 「偽陰性」）。
+In the context of CIDRAM, these 用語 refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, 我々はこのイベント「偽陽性」のを呼び出します。 When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, 我々はこのイベント「不在検出」のを呼び出します（「偽陰性」のアナログです）。
 
 これは、以下の表に要約することができます。
 
@@ -484,4 +484,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年9月27日。
+最終アップデート： 2016年10月1日。

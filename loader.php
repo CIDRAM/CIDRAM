@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.08.26).
+ * This file: The loader (last modified: 2016.10.01).
  */
 
 /**
@@ -23,7 +23,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.5.1-DEV';
+    $CIDRAM['ScriptVersion'] = '0.5.1';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];

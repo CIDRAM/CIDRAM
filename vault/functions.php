@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.08.28).
+ * This file: Functions file (last modified: 2016.10.06).
  */
 
 /**
@@ -960,4 +960,25 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
             }
         }
     }
+};
+
+/**
+ * Adds integer values; Returns zero if the sum total is negative or if any
+ * contained values aren't integers, and otherwise, returns the sum total.
+ */
+$CIDRAM['ZeroMin'] = function () {
+    $Values = func_get_args();
+    $Count = count($Values);
+    $Sum = 0;
+    for ($Index = 0; $Index < $Count; $Index++) {
+        $ThisValue = (int)$Values[$Index];
+        if ($ThisValue !== $Values[$Index]) {
+            return 0;
+        }
+        $Sum += $ThisValue;
+    }
+    if ($Sum < 0) {
+        return 0;
+    }
+    return $Sum;
 };

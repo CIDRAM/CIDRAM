@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.10.01).
+ * This file: The loader (last modified: 2016.10.06).
  */
 
 /**
@@ -23,7 +23,7 @@ if (!defined('CIDRAM')) {
     $CIDRAM = array();
 
     /** CIDRAM version number (SemVer). */
-    $CIDRAM['ScriptVersion'] = '0.5.1';
+    $CIDRAM['ScriptVersion'] = '0.6.0-DEV';
 
     /** CIDRAM version identifier (complete notation). */
     $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -118,6 +118,10 @@ if (!defined('CIDRAM')) {
     /** Fallback for missing "disable_cli" configuration directive. */
     if (!isset($CIDRAM['Config']['general']['disable_cli'])) {
         $CIDRAM['Config']['general']['disable_cli'] = false;
+    }
+    /** Fallback for missing "disable_frontend" configuration directive. */
+    if (!isset($CIDRAM['Config']['general']['disable_frontend'])) {
+        $CIDRAM['Config']['general']['disable_frontend'] = true;
     }
 
     /** Fallback for missing "signatures" configuration category. */
@@ -219,7 +223,16 @@ if (!defined('CIDRAM')) {
         )
     );
 
-    /** Check if the language handler exists; Kill the script if it doesn't. */
+    /**
+     * Before processing any includes, let's count them, to know whether we're
+     * running CIDRAM directly or via as a wrapper (ie, from a hook).
+     */
+    $CIDRAM['Direct'] = (count(get_included_files()) === 1);
+
+    /**
+     * Check whether the language handler exists; Kill the script if it
+     * doesn't.
+     */
     if (!file_exists($CIDRAM['Vault'] . 'lang.php')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Language handler missing! Please reinstall CIDRAM.');
@@ -227,7 +240,9 @@ if (!defined('CIDRAM')) {
     /** Load the language handler. */
     require $CIDRAM['Vault'] . 'lang.php';
 
-    /** Check if the functions file exists; Kill the script if it doesn't. */
+    /**
+     * Check whether the functions file exists; Kill the script if it doesn't.
+     */
     if (!file_exists($CIDRAM['Vault'] . 'functions.php')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Functions file missing! Please reinstall CIDRAM.');
@@ -238,6 +253,7 @@ if (!defined('CIDRAM')) {
     /** Fix incorrect typecasting for some configuration directives. */
     $CIDRAM['AutoType']($CIDRAM['Config']['general']['forbid_on_block']);
     $CIDRAM['AutoType']($CIDRAM['Config']['general']['disable_cli'], 'Bool');
+    $CIDRAM['AutoType']($CIDRAM['Config']['general']['disable_frontend'], 'Bool');
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_cloud'], 'Bool');
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_bogons'], 'Bool');
     $CIDRAM['AutoType']($CIDRAM['Config']['signatures']['block_generic'], 'Bool');
@@ -251,8 +267,8 @@ if (!defined('CIDRAM')) {
     if (!$CIDRAM['CIDRAM_sapi']) {
 
         /**
-         * Check if the output generator exists; Kill the script if it doesn't;
-         * Load it if it does. Skip this check if we're in CLI-mode.
+         * Check whether the output generator exists; Kill the script if it
+         * doesn't; Load it if it does. Skip this check if we're in CLI-mode.
          */
         if (!file_exists($CIDRAM['Vault'] . 'outgen.php')) {
             header('Content-Type: text/plain');
@@ -263,13 +279,27 @@ if (!defined('CIDRAM')) {
     } else {
 
         /**
-         * Check if the CLI handler exists; Load it if it does.
+         * Check whether the CLI handler exists; Load it if it does.
          * Skip this check if we're not in CLI-mode.
          */
         if (!$CIDRAM['Config']['general']['disable_cli'] && file_exists($CIDRAM['Vault'] . 'cli.php')) {
             require $CIDRAM['Vault'] . 'cli.php';
         }
 
+    }
+
+    /**
+     * Check whether the front-end handler and the front-end template file
+     * exist; If they do, load the front-end handler. Skip this check if
+     * front-end access is disabled.
+     */
+    if (
+        !$CIDRAM['Config']['general']['disable_frontend'] &&
+        file_exists($CIDRAM['Vault'] . 'frontend.php') &&
+        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
+        $CIDRAM['Direct']
+    ) {
+        require $CIDRAM['Vault'] . 'frontend.php';
     }
 
     /** Unset our working data so that we can exit cleanly. */

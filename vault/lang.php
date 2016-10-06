@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.04.12).
+ * This file: Language handler (last modified: 2016.10.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -26,8 +26,8 @@ $CIDRAM['lang'] = array();
 
 if ($CIDRAM['CIDRAM_sapi']) {
     /**
-     * Kill the script if the language data file corresponding to the language
-     * directive for CLI-mode (%CIDRAM%/vault/lang/lang.%%.cli.php) doesn't exist.
+     * Kill the script if the CLI-mode language data file corresponding to the
+     * language directive (%CIDRAM%/vault/lang/lang.%%.cli.php) doesn't exist.
      */
     if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.cli.php')) {
         header('Content-Type: text/plain');
@@ -46,4 +46,23 @@ if ($CIDRAM['CIDRAM_sapi']) {
     }
     /** Load the necessary language data. */
     require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.php';
+}
+
+/** Load front-end language data if necessary. */
+if (
+    !$CIDRAM['Config']['general']['disable_frontend'] &&
+    file_exists($CIDRAM['Vault'] . 'frontend.php') &&
+    file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
+    $CIDRAM['Direct']
+) {
+    /**
+     * Kill the script if the front-end language data file corresponding to the
+     * language directive (%CIDRAM%/vault/lang/lang.%%.fe.php) doesn't exist.
+     */
+    if (!file_exists($CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.fe.php')) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] Language undefined or incorrectly defined. Can\'t continue.');
+    }
+    /** Load the necessary language data. */
+    require $CIDRAM['Vault'] . 'lang/lang.' . $CIDRAM['Config']['general']['lang'] . '.fe.php';
 }

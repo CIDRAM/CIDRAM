@@ -26,10 +26,11 @@ $CIDRAM['FE'] = array(
     'Template' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.html'),
     'DateTime' => date('r', $CIDRAM['Now']),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
-    'UserList' => '',
-    'SessionList' => '',
+    'UserList' => "\n",
+    'SessionList' => "\n",
     'UserState' => 0,
     'UserRaw' => '',
+    'UserLevel' => 0,
     'state_msg' => ''
 );
 
@@ -38,7 +39,7 @@ if (file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
     $CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.dat');
     $CIDRAM['FE']['Rebuild'] = false;
 } else {
-    $CIDRAM['FE']['FrontEndData'] = 'USERS\n-----\nYWRtaW4=,\$2y\$10\$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK\n\nSESSIONS\n--------\n';
+    $CIDRAM['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=,\$2y\$10\$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK,1\n\nSESSIONS\n--------\n";
     $CIDRAM['FE']['Rebuild'] = true;
 }
 $CIDRAM['FE']['UserListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "USERS\n-----\n");
@@ -89,6 +90,8 @@ if (!empty($_POST['username']) && empty($_POST['password'])) {
             $CIDRAM['FE']['UserOffset'],
             strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserOffset']) - $CIDRAM['FE']['UserOffset']
         );
+        $CIDRAM['FE']['UserLevel'] = (int)substr($CIDRAM['FE']['Password'], -1);
+        $CIDRAM['FE']['Password'] = substr($CIDRAM['FE']['Password'], 0, -2);
         if (password_verify($_POST['password'], $CIDRAM['FE']['Password'])) {
             $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
             $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
@@ -100,6 +103,7 @@ if (!empty($_POST['username']) && empty($_POST['password'])) {
                 ($CIDRAM['Now'] + 604800) . "\n";
             $CIDRAM['FE']['Rebuild'] = true;
         } else {
+            $CIDRAM['FE']['UserLevel'] = 0;
             $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['error_login_invalid_password']);
         }
     } else {
@@ -143,7 +147,16 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                 ($CIDRAM['FE']['Expiry'] > $CIDRAM['Now']) &&
                 password_verify($CIDRAM['FE']['SessionKey'], $CIDRAM['FE']['UserHash'])
             ) {
-                $CIDRAM['FE']['UserState'] = 1;
+                $CIDRAM['FE']['UserPos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User'] . ',');
+                if ($CIDRAM['FE']['UserPos'] !== false) {
+                    $CIDRAM['FE']['UserOffset'] = $CIDRAM['FE']['UserPos'] + $CIDRAM['FE']['UserLen'] + 2;
+                    $CIDRAM['FE']['UserLevel'] = (int)substr(substr(
+                        $CIDRAM['FE']['UserList'],
+                        $CIDRAM['FE']['UserOffset'],
+                        strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserOffset']) - $CIDRAM['FE']['UserOffset']
+                    ), -1);
+                    $CIDRAM['FE']['UserState'] = 1;
+                }
                 break;
             }
         }
@@ -180,10 +193,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
         $CIDRAM['lang']['text_hello']
     );
 
-    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
-        $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_home.html')
-    );
+    if ($CIDRAM['FE']['UserLevel'] === 1) {
+
+        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'],
+            $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_home_admin.html')
+        );
+
+    } elseif ($CIDRAM['FE']['UserLevel'] === 2) {
+
+        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'],
+            $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_home_mod.html')
+        );
+
+    }
 
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 

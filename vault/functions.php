@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.06).
+ * This file: Functions file (last modified: 2016.10.07).
  */
 
 /**
@@ -947,7 +947,7 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
             $Begin = $End;
             if ($End = strpos($List, "\n", $Begin + 1)) {
                 $Line = substr($List, $Begin, $End - $Begin);
-                if ($Split = strpos($Line, ',')) {
+                if ($Split = strrpos($Line, ',')) {
                     $Expiry = (int)substr($Line, $Split + 1);
                     if ($Expiry < $CIDRAM['Now']) {
                         $List = str_replace($Line, '', $List);
@@ -981,4 +981,9 @@ $CIDRAM['ZeroMin'] = function () {
         return 0;
     }
     return $Sum;
+};
+
+/** Wrap state message for front-end. */
+$CIDRAM['WrapRedText'] = function($Err) {
+    return '<span class="textRed">' . $Err . '<br /><br /></span>';
 };

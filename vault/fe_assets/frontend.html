@@ -11,7 +11,7 @@
 body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-align:center;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
 code{font-family:monospace;background-color:#ddd}
-.generator,input{font-weight:700}
+.generator,input,.textRed{font-weight:700}
 .textBlack,.textRed,.DateTime{display:inline}
 .textRed{color:red}
 .textBlack{color:#000}
@@ -26,7 +26,7 @@ input{font-size:10pt;background-color:#ffe;border:1px solid #900;color:#033;marg
 
 <body>
 <div class="co"><br /><div class="ci">
-<strong>CIDRAM front-end is currently in <span class="textRed">ALPHA</span>! Until it moves to BETA, expect to encounter various missing parts, broken code, etc. <span class="textRed">DON'T</span> use it in production (yet)!</strong>
+<p>CIDRAM front-end is currently in <span class="textRed">ALPHA</span>! Until it moves to BETA, expect to encounter various missing parts, broken code, etc. <span class="textRed">DON'T</span> use it in production (yet)!<br />{FE_Tip}</p>
 {FE_Content}
 <hr />
 <div class="generator"><div class="DateTime">{DateTime}</div><div class="textBlack">{generated_by}</div> <div class="textRed">{ScriptIdent}</div></div>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.07).
+ * This file: Front-end handler (last modified: 2016.10.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -31,7 +31,10 @@ $CIDRAM['FE'] = array(
     'UserState' => 0,
     'UserRaw' => '',
     'UserLevel' => 0,
-    'state_msg' => ''
+    'state_msg' => '',
+    'ThisSession' => '',
+    'bNav' => '&nbsp;',
+    'FE_Title' => ''
 );
 
 /** Fetch user list and sessions list. */
@@ -97,10 +100,11 @@ if (!empty($_POST['username']) && empty($_POST['password'])) {
             $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
             setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
             $CIDRAM['FE']['UserState'] = 1;
-            $CIDRAM['FE']['SessionList'] .=
+            $CIDRAM['FE']['ThisSession'] =
                 $CIDRAM['FE']['User'] . ',' .
                 password_hash($CIDRAM['FE']['SessionKey'], PASSWORD_DEFAULT) . ',' .
                 ($CIDRAM['Now'] + 604800) . "\n";
+            $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
             $CIDRAM['FE']['Rebuild'] = true;
         } else {
             $CIDRAM['FE']['UserLevel'] = 0;
@@ -149,6 +153,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             ) {
                 $CIDRAM['FE']['UserPos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User'] . ',');
                 if ($CIDRAM['FE']['UserPos'] !== false) {
+                    $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . $CIDRAM['FE']['SessionEntry'] . "\n";
                     $CIDRAM['FE']['UserOffset'] = $CIDRAM['FE']['UserPos'] + $CIDRAM['FE']['UserLen'] + 2;
                     $CIDRAM['FE']['UserLevel'] = (int)substr(substr(
                         $CIDRAM['FE']['UserList'],
@@ -164,10 +169,33 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
 
 }
 
+/** Only execute this code block for users that are logged in. */
+if ($CIDRAM['FE']['UserState'] === 1) {
+    if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
+
+        /** Log out the user. */
+        $CIDRAM['FE']['SessionList'] = str_ireplace($CIDRAM['FE']['ThisSession'], '', $CIDRAM['FE']['SessionList']);
+        $CIDRAM['FE']['ThisSession'] = '';
+        $CIDRAM['FE']['Rebuild'] = true;
+        $CIDRAM['FE']['UserState'] = $CIDRAM['FE']['UserLevel'] = 0;
+        setcookie('CIDRAM-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+
+    } else {
+
+        /** Generate default tooltip for the user ("Hello, {username}"). */
+        $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+            array('username' => $CIDRAM['FE']['UserRaw']),
+            $CIDRAM['lang']['tip_hello']
+        );
+
+    }
+}
+
 /** The user hasn't logged in. Show them the login page. */
 if ($CIDRAM['FE']['UserState'] !== 1) {
 
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_login'];
+
     $CIDRAM['FE']['FE_Tip'] = $CIDRAM['lang']['tip_login'];
 
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -186,12 +214,8 @@ if ($CIDRAM['FE']['UserState'] !== 1) {
 elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
 
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_home'];
-    $CIDRAM['FE']['FE_Tip'] = '';
 
-    $CIDRAM['lang']['text_hello'] = $CIDRAM['ParseVars'](
-        array('username' => $CIDRAM['FE']['UserRaw']),
-        $CIDRAM['lang']['text_hello']
-    );
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_logout'];
 
     if ($CIDRAM['FE']['UserLevel'] === 1) {
 
@@ -208,79 +232,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
         );
 
     }
-
-    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
-
-}
-
-/** For local reading of the README documentation. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'docs') {
-
-    /** Don't like relying on externals.. We'll figure this out later. */
-    require __DIR__ . '/parsedown.php';
-
-    if (file_exists(__DIR__ . '/../_docs/readme.' . $CIDRAM['Config']['general']['lang'] . '.md')) {
-        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ReadFile'](__DIR__ . '/../_docs/readme.' . $CIDRAM['Config']['general']['lang'] . '.md');
-        $CIDRAM['FE']['FE_Lang'] = $CIDRAM['Config']['general']['lang'];
-    } elseif ($CIDRAM['Config']['general']['lang'] !== 'en' && file_exists(__DIR__ . '/../_docs/readme.en.md')) {
-        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ReadFile'](__DIR__ . '/../_docs/readme.en.md');
-        $CIDRAM['FE']['FE_Lang'] = 'en';
-    } else {
-        header('HTTP/1.0 302 Found');
-        header('HTTP/1.1 302 Found');
-        header('Status: 302 Found');
-        header('Location: http://maikuolan.github.io/CIDRAM/');
-        die;
-    }
-
-    $CIDRAM['FE']['FE_Title'] = preg_replace('/^[# ]*/', '',
-        substr($CIDRAM['FE']['FE_Content'], 0, strpos($CIDRAM['FE']['FE_Content'], "\n"))
-    );
-
-    $Parsedown = new Parsedown();
-    $CIDRAM['FE']['FE_Content'] = $Parsedown->text($CIDRAM['FE']['FE_Content']);
-
-/*        $CIDRAM['FE']['FE_Content'] = preg_replace(
-        array(
-            "\x01\n#{2} *([^# ].*)<br />\n\x01i",
-            "\x01\n#{3} *([^# ].*)<br />\n\x01i",
-            "\x01\n#{4} *([^# ].*)<br />\n\x01i",
-            "\x01\n#{5} *([^# ].*)<br />\n\x01i",
-            "\x01([ \n()\\/<>\.])\*([^ \n\*]+)\*([ \n()\\/<>\.])\x01i",
-            "\x01([ \n()\\/<>\.])__([^ \n_]+)__([ \n()\\/<>\.])\x01i",
-            "\x01([ \n()\\/<>\.\*])`([^ \n`]+)`([ \n()\\/<>\.\*])\x01i",
-            "\x01```<br />\n([^`]+)<br />\n```\x01i",
-            "\x01\[([^\[\]\n]+)\]\(([^()\n]+)\)\x01i",
-            "\x01<(https?\://[^\n>]+)>\x01i",
-            "\x01^(<br />\n|\n)*\x01i"
-        ),
-        array(
-            "\n<h1>$1</h1>\n",
-            "\n<h2>$1</h2>\n",
-            "\n<h3>$1</h3>\n",
-            "\n<h4>$1</h4>\n",
-            "$1<em>$2</em>$3",
-            "$1<strong>$2</strong>$3",
-            "$1<xmp>$2</xmp>$3",
-            "<xmp>$1</xmp>",
-            "<a href=\"$2\">$1</a>",
-            "<a href=\"$1\">$1</a>",
-            ''
-        ),
-        str_replace(
-            array(
-                "\r",
-                "\n---\n",
-                "\n"
-            ),
-            array(
-                '',
-                "\n<hr />\n",
-                "<br />\n"
-            ),
-            "\n" . $CIDRAM['FE']['FE_Content']
-        )
-    ); */
 
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 

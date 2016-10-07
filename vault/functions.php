@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.07).
+ * This file: Functions file (last modified: 2016.10.08).
  */
 
 /**
@@ -985,5 +985,5 @@ $CIDRAM['ZeroMin'] = function () {
 
 /** Wrap state message for front-end. */
 $CIDRAM['WrapRedText'] = function($Err) {
-    return '<span class="textRed">' . $Err . '<br /><br /></span>';
+    return '<div class="txtRd">' . $Err . '<br /><br /></div>';
 };

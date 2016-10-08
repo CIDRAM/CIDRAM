@@ -483,4 +483,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 25 September 2016 (2016.09.25).
+Laatste Bijgewerkt: 6 Oktober 2016 (2016.10.06).

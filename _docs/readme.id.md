@@ -483,4 +483,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 24 September 2016 (2016.09.24).
+Terakhir Diperbarui: 6 Oktober 2016 (2016.10.06).

@@ -483,4 +483,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 24 Septiembre 2016 (2016.09.24).
+Última Actualización: 6 Octubre 2016 (2016.10.06).

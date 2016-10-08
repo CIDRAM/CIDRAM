@@ -237,6 +237,122 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
 
 }
 
+/** Accounts. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['UserLevel'] === 1) {
+
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_accounts'];
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_accounts.html')
+    );
+
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** Configuration. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['UserLevel'] === 1) {
+
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_config'];
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_config.html')
+    );
+
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** Updates. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['UserLevel'] === 1) {
+
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_updates'];
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates.html')
+    );
+
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** Logs. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
+
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_logs'];
+
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['lang']['tip_logs'];
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_logs.html')
+    );
+
+    $CIDRAM['FE']['LogFiles'] = array(
+        'Files' => scandir($CIDRAM['Vault']),
+        'Types' => ',txt,log,',
+        'Out' => ''
+    );
+
+    if (empty($CIDRAM['QueryVars']['logfile'])) {
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_no_logfile_selected'];
+    } elseif (
+        file_exists($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']) &&
+        !preg_match("\x01(?:^\.|\.\.|[\x01-\x1f\[-`/\?\*\$])\x01i", $CIDRAM['QueryVars']['logfile']) &&
+        (strpos(
+            $CIDRAM['FE']['LogFiles']['Types'],
+            strtolower(substr($CIDRAM['QueryVars']['logfile'], -3))
+        ) !== false)
+    ) {
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
+        $CIDRAM['FE']['logfileData'] = str_replace(
+            array('<', '>', "\r", "\n"),
+            array('&lt;', '&gt;', '', "<br />\n"),
+            $CIDRAM['FE']['logfileData']
+        );
+    } else {
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_logfile_doesnt_exist'];
+    }
+
+    $CIDRAM['FE']['LogFiles']['Count'] = count($CIDRAM['FE']['LogFiles']['Files']);
+    for (
+        $CIDRAM['FE']['LogFiles']['Iterate'] = 0;
+        $CIDRAM['FE']['LogFiles']['Iterate'] < $CIDRAM['FE']['LogFiles']['Count'];
+        $CIDRAM['FE']['LogFiles']['Iterate']++
+    ) {
+        if (strpos(
+            $CIDRAM['FE']['LogFiles']['Types'],
+            strtolower(substr($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['FE']['LogFiles']['Iterate']], -3))
+        ) !== false) {
+            $CIDRAM['FE']['LogFiles']['This'] = $CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['FE']['LogFiles']['Iterate']];
+            $CIDRAM['FE']['LogFiles']['Filesize'] = filesize($CIDRAM['Vault'] . $CIDRAM['FE']['LogFiles']['This']);
+            $CIDRAM['FormatFilesize']($CIDRAM['FE']['LogFiles']['Filesize']);
+            $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
+                '            <a href="?cidram-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
+                $CIDRAM['FE']['LogFiles']['This'],
+                $CIDRAM['FE']['LogFiles']['Filesize']
+            ) . "\n";
+        }
+    }
+    if (!$CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out']) {
+        $CIDRAM['FE']['LogFiles'] = $CIDRAM['lang']['logs_no_logfiles_available'];
+    }
+
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
 if ($CIDRAM['FE']['Rebuild']) {
     $CIDRAM['FE']['FrontEndData'] = "USERS\n-----" . $CIDRAM['FE']['UserList'] . "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'];
     $CIDRAM['FE']['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'w');

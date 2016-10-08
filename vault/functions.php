@@ -987,3 +987,18 @@ $CIDRAM['ZeroMin'] = function () {
 $CIDRAM['WrapRedText'] = function($Err) {
     return '<div class="txtRd">' . $Err . '<br /><br /></div>';
 };
+
+/** Format filesize information. */
+$CIDRAM['FormatFilesize'] = function (&$Filesize) {
+    $Scale = array('bytes', 'KB', 'MB', 'GB', 'TB');
+    $Iterate = 0;
+    $Filesize = (int)$Filesize;
+    while ($Filesize > 1024) {
+        $Filesize = $Filesize / 1024;
+        $Iterate++;
+        if ($Iterate > 4) {
+            break;
+        }
+    }
+    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+};

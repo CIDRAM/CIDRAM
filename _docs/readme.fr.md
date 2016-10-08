@@ -483,4 +483,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Réactualisé: 24 Septembre 2016 (2016.09.24).
+Dernière Réactualisé: 6 Octobre 2016 (2016.10.06).

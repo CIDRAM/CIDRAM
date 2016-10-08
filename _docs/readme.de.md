@@ -485,4 +485,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 1. Oktober 2016 (2016.10.01).
+Zuletzt aktualisiert: 6. Oktober 2016 (2016.10.06).

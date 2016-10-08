@@ -483,4 +483,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 25 Settembre 2016 (2016.09.25).
+Ultimo Aggiornamento: 6 Ottobre 2016 (2016.10.06).

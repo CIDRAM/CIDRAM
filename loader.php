@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.10.06).
+ * This file: The loader (last modified: 2016.10.08).
  */
 
 /**
@@ -276,6 +276,20 @@ if (!defined('CIDRAM')) {
         }
         require $CIDRAM['Vault'] . 'outgen.php';
 
+        /**
+         * Check whether the front-end handler and the front-end template file
+         * exist; If they do, load the front-end handler. Skip this check if
+         * front-end access is disabled.
+         */
+        if (
+            !$CIDRAM['Config']['general']['disable_frontend'] &&
+            file_exists($CIDRAM['Vault'] . 'frontend.php') &&
+            file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
+            $CIDRAM['Direct']
+        ) {
+            require $CIDRAM['Vault'] . 'frontend.php';
+        }
+
     } else {
 
         /**
@@ -286,20 +300,6 @@ if (!defined('CIDRAM')) {
             require $CIDRAM['Vault'] . 'cli.php';
         }
 
-    }
-
-    /**
-     * Check whether the front-end handler and the front-end template file
-     * exist; If they do, load the front-end handler. Skip this check if
-     * front-end access is disabled.
-     */
-    if (
-        !$CIDRAM['Config']['general']['disable_frontend'] &&
-        file_exists($CIDRAM['Vault'] . 'frontend.php') &&
-        file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-        $CIDRAM['Direct']
-    ) {
-        require $CIDRAM['Vault'] . 'frontend.php';
     }
 
     /** Unset our working data so that we can exit cleanly. */

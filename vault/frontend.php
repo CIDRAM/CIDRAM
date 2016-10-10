@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.09).
+ * This file: Front-end handler (last modified: 2016.10.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -25,10 +25,12 @@ if (empty($CIDRAM['QueryVars']['cidram-page'])) {
 $CIDRAM['FE'] = array(
     'Template' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.html'),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
+    'FE_Lang' => $CIDRAM['Config']['general']['lang'],
     'DateTime' => date('r', $CIDRAM['Now']),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'UserList' => "\n",
     'SessionList' => "\n",
+    'Cache' => "\n",
     'UserState' => 0,
     'UserRaw' => '',
     'Permissions' => 0,
@@ -46,11 +48,12 @@ if (file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
     $CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.dat');
     $CIDRAM['FE']['Rebuild'] = false;
 } else {
-    $CIDRAM['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $CIDRAM['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n";
+    $CIDRAM['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $CIDRAM['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n\nCACHE\n-----\n";
     $CIDRAM['FE']['Rebuild'] = true;
 }
 $CIDRAM['FE']['UserListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "USERS\n-----\n");
 $CIDRAM['FE']['SessionListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "SESSIONS\n--------\n");
+$CIDRAM['FE']['CachePos'] = strpos($CIDRAM['FE']['FrontEndData'], "CACHE\n-----\n");
 if ($CIDRAM['FE']['UserListPos'] !== false) {
     $CIDRAM['FE']['UserList'] = substr(
         $CIDRAM['FE']['FrontEndData'],
@@ -61,12 +64,22 @@ if ($CIDRAM['FE']['UserListPos'] !== false) {
 if ($CIDRAM['FE']['SessionListPos'] !== false) {
     $CIDRAM['FE']['SessionList'] = substr(
         $CIDRAM['FE']['FrontEndData'],
-        $CIDRAM['FE']['SessionListPos'] + 17
+        $CIDRAM['FE']['SessionListPos'] + 17,
+        $CIDRAM['FE']['CachePos'] - $CIDRAM['FE']['SessionListPos'] - 18
+    );
+}
+if ($CIDRAM['FE']['CachePos'] !== false) {
+    $CIDRAM['FE']['Cache'] = substr(
+        $CIDRAM['FE']['FrontEndData'],
+        $CIDRAM['FE']['CachePos'] + 11
     );
 }
 
 /** Clear expired sessions. */
 $CIDRAM['ClearExpired']($CIDRAM['FE']['SessionList'], $CIDRAM['FE']['Rebuild']);
+
+/** Clear expired cache entries. */
+$CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
 
 /** A fix for correctly displaying LTR/RTL text. */
 if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
@@ -80,10 +93,10 @@ if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
 if ($CIDRAM['FE']['FormTarget'] === 'login') {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['error_login_password_field_empty']);
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_password_field_empty']);
     } elseif (empty($_POST['username']) && !empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['error_login_username_field_empty']);
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_username_field_empty']);
     } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
 
         $CIDRAM['FE']['UserState'] = -1;
@@ -113,10 +126,10 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
                 $CIDRAM['FE']['Rebuild'] = true;
             } else {
                 $CIDRAM['FE']['Permissions'] = 0;
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['error_login_invalid_password']);
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_invalid_password']);
             }
         } else {
-            $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['error_login_invalid_username']);
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_invalid_username']);
         }
 
     }
@@ -265,7 +278,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
             $CIDRAM['FE']['NewPerm'] = (int)$_POST['permissions'];
             $CIDRAM['FE']['NewUserB64'] = base64_encode($_POST['username']);
             if (strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['NewUserB64'] . ',') !== false) {
-                $CIDRAM['FE']['state_msg'] = 'An account with that username already exists!';
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_already_exists'];
             } else {
                 $CIDRAM['FE']['NewAccount'] =
                     $CIDRAM['FE']['NewUserB64'] . ',' .
@@ -294,7 +307,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                 $CIDRAM['FE']['UserList'] = "\n" . implode('', $CIDRAM['AccountsArray']['ByName']);
                 $CIDRAM['FE']['Rebuild'] = true;
                 unset($CIDRAM['AccountsArray']);
-                $CIDRAM['FE']['state_msg'] = 'Account successfully created!';
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_created'];
             }
         }
 
@@ -303,7 +316,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
             $CIDRAM['FE']['User64'] = base64_encode($_POST['username']);
             $CIDRAM['FE']['UserLinePos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User64'] . ',');
             if ($CIDRAM['FE']['UserLinePos'] === false) {
-                $CIDRAM['FE']['state_msg'] = 'That account doesn\'t exist.';
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_doesnt_exist'];
             } else {
                 $CIDRAM['FE']['UserLineEndPos'] = strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserLinePos'] + 1);
                 if ($CIDRAM['FE']['UserLineEndPos'] !== false) {
@@ -314,7 +327,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                     );
                     $CIDRAM['FE']['UserList'] = str_replace($CIDRAM['FE']['UserLine'], '', $CIDRAM['FE']['UserList']);
                     $CIDRAM['FE']['Rebuild'] = true;
-                    $CIDRAM['FE']['state_msg'] = 'Account successfully deleted!';
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_deleted'];
                 }
             }
             $CIDRAM['FE']['UserLinePos'] = strpos($CIDRAM['FE']['SessionList'], "\n" . $CIDRAM['FE']['User64'] . ',');
@@ -338,7 +351,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
             $CIDRAM['FE']['NewPass'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $CIDRAM['FE']['UserLinePos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User64'] . ',');
             if ($CIDRAM['FE']['UserLinePos'] === false) {
-                $CIDRAM['FE']['state_msg'] = 'That account doesn\'t exist.';
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_doesnt_exist'];
             } else {
                 $CIDRAM['FE']['UserLineEndPos'] = strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserLinePos'] + 1);
                 if ($CIDRAM['FE']['UserLineEndPos'] !== false) {
@@ -354,7 +367,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
                         $CIDRAM['FE']['UserPerm'] . "\n";
                     $CIDRAM['FE']['UserList'] = str_replace($CIDRAM['FE']['UserLine'], $CIDRAM['FE']['NewUserLine'], $CIDRAM['FE']['UserList']);
                     $CIDRAM['FE']['Rebuild'] = true;
-                    $CIDRAM['FE']['state_msg'] = 'Password successfully updated!';
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_password_updated'];
                 }
             }
         }
@@ -381,14 +394,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
         $CIDRAM['RowInfo'][3] = (strpos($CIDRAM['FE']['SessionList'], "\n" . $CIDRAM['RowInfo'][0] . ',') !== false);
         $CIDRAM['RowInfo'][0] = htmlentities(base64_decode($CIDRAM['RowInfo'][0]));
         if ($CIDRAM['RowInfo'][1] === $CIDRAM['FE']['DefaultPassword']) {
-            $CIDRAM['RowInfo'][1] = '<br /><div class="txtRd">' . 'Warning: Using default password!' . '</div>';
+            $CIDRAM['RowInfo'][1] = '<br /><div class="txtRd">' . $CIDRAM['lang']['state_default_password'] . '</div>';
         } elseif (strlen($CIDRAM['RowInfo'][1]) !== 60 || !preg_match('/^\$2.\$[0-9]{2}\$/', $CIDRAM['RowInfo'][1])) {
-            $CIDRAM['RowInfo'][1] = '<br /><div class="txtRd">' . 'Warning: This account is not using a valid password!' . '</div>';
+            $CIDRAM['RowInfo'][1] = '<br /><div class="txtRd">' . $CIDRAM['lang']['state_password_not_valid'] . '</div>';
         } else {
             $CIDRAM['RowInfo'][1] = '';
         }
         if ($CIDRAM['RowInfo'][3]) {
-            $CIDRAM['RowInfo'][1] .= '<br /><div class="txtGn">' . 'Logged in.' . '</div>';
+            $CIDRAM['RowInfo'][1] .= '<br /><div class="txtGn">' . $CIDRAM['lang']['state_logged_in'] . '</div>';
         }
         $CIDRAM['RowInfo'][2] = (int)$CIDRAM['RowInfo'][2];
         $CIDRAM['RowInfo'] = array(
@@ -437,6 +450,139 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_updates'];
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates_row.html');
+
+    /** A form has been submitted. */
+    if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
+        // @todo
+    }
+
+    $CIDRAM['FE']['Components'] = array(
+        'Files' => scandir($CIDRAM['Vault']),
+        'Types' => ',dat,',
+        'Out' => ''
+    );
+
+    $CIDRAM['FE']['Components']['Script'] = array(
+        'component_id' => 'cidram-core',
+        'component_name' => 'CIDRAM',
+        'component_version_latest_url' => 'https://raw.githubusercontent.com/Maikuolan/CIDRAM-Extras/master/hashes/scriptversion.dat',
+        'component_version_current' => $CIDRAM['ScriptVersion']
+    );
+    $CIDRAM['FE']['Components']['Script']['component_version_latest_data'] = $CIDRAM['FECacheGet'](
+        $CIDRAM['FE']['Cache'],
+        $CIDRAM['FE']['Components']['Script']['component_version_latest_url']
+    );
+    if (!$CIDRAM['FE']['Components']['Script']['component_version_latest_data']) {
+        $CIDRAM['FE']['Components']['Script']['component_version_latest_data'] =
+            $CIDRAM['Request']($CIDRAM['FE']['Components']['Script']['component_version_latest_url']);
+        $CIDRAM['FECacheAdd'](
+            $CIDRAM['FE']['Cache'],
+            $CIDRAM['FE']['Rebuild'],
+            $CIDRAM['FE']['Components']['Script']['component_version_latest_url'],
+            $CIDRAM['FE']['Components']['Script']['component_version_latest_data'],
+            $CIDRAM['Now'] + 3600
+        );
+    }
+    $CIDRAM['FE']['Components']['Script']['component_version_latest'] = htmlentities(substr(
+        $CIDRAM['FE']['Components']['Script']['component_version_latest_data'], 0, 32
+    ));
+    if (empty($CIDRAM['FE']['Components']['Script']['component_version_latest'])) {
+        $CIDRAM['FE']['Components']['Script']['component_version_latest'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
+        $CIDRAM['FE']['Components']['Script']['stat_class'] = 's';
+    } else {
+        if ($CIDRAM['FE']['Components']['Script']['component_version_latest'] == $CIDRAM['FE']['Components']['Script']['component_version_current']) {
+            $CIDRAM['FE']['Components']['Script']['stat_class'] = 'txtGn';
+            $CIDRAM['FE']['Components']['Script']['component_status_options'] = $CIDRAM['lang']['response_updates_already_up_to_date'];
+        } else {
+            $CIDRAM['FE']['Components']['Script']['stat_class'] = 'txtRd';
+            $CIDRAM['FE']['Components']['Script']['component_status_options'] = $CIDRAM['lang']['response_updates_outdated'];
+        }
+    }
+    $CIDRAM['FE']['Components']['Out'] .= $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE']['Components']['Script'],
+        $CIDRAM['FE']['UpdatesRow']
+    );
+
+    $CIDRAM['FE']['Components']['Count'] = count($CIDRAM['FE']['Components']['Files']);
+    for (
+        $CIDRAM['FE']['Components']['Iterate'] = 0;
+        $CIDRAM['FE']['Components']['Iterate'] < $CIDRAM['FE']['Components']['Count'];
+        $CIDRAM['FE']['Components']['Iterate']++
+    ) {
+        if (strpos(
+            $CIDRAM['FE']['Components']['Types'],
+            strtolower(substr($CIDRAM['FE']['Components']['Files'][$CIDRAM['FE']['Components']['Iterate']], -3))
+        ) !== false) {
+            $CIDRAM['FE']['Components']['This'] =
+                $CIDRAM['Vault'] . $CIDRAM['FE']['Components']['Files'][$CIDRAM['FE']['Components']['Iterate']];
+            $CIDRAM['FE']['Components']['Data'] = $CIDRAM['ReadFile']($CIDRAM['FE']['Components']['This']);
+            if (
+                substr($CIDRAM['FE']['Components']['Data'], 0, 10) === "---\nMeta:\n" &&
+                ($CIDRAM['FE']['Components']['EoYAML'] = strpos(
+                    $CIDRAM['FE']['Components']['Data'], "\n\n"
+                )) !== false
+            ) {
+                $CIDRAM['FE']['Components']['This'] =
+                    substr($CIDRAM['FE']['Components']['Data'], 4, $CIDRAM['FE']['Components']['EoYAML'] - 4);
+                $CIDRAM['FE']['Components']['Status'] = $CIDRAM['YAML']($CIDRAM['FE']['Components']['This']);
+                $CIDRAM['FE']['Components']['This'] = array(
+                    'component_id' => $CIDRAM['FE']['Components']['Files'][$CIDRAM['FE']['Components']['Iterate']],
+                    'component_name' => (empty($CIDRAM['Config']['Meta']['Name'])) ? '' : $CIDRAM['Config']['Meta']['Name'],
+                    'source_url' => (empty($CIDRAM['Config']['Meta']['Source'])) ? '' : $CIDRAM['Config']['Meta']['Source'],
+                    'component_version_latest_url' => (empty($CIDRAM['Config']['Meta']['Hash'])) ? '' : $CIDRAM['Config']['Meta']['Hash'],
+                    'component_version_current' => strlen($CIDRAM['FE']['Components']['Data']) . ':' . md5($CIDRAM['FE']['Components']['Data'])
+                );
+                $CIDRAM['FE']['Components']['This']['component_version_latest_data'] = $CIDRAM['FECacheGet'](
+                    $CIDRAM['FE']['Cache'],
+                    $CIDRAM['FE']['Components']['This']['component_version_latest_url']
+                );
+                if (!$CIDRAM['FE']['Components']['This']['component_version_latest_data']) {
+                    $CIDRAM['FE']['Components']['This']['component_version_latest_data'] =
+                        $CIDRAM['Request']($CIDRAM['FE']['Components']['This']['component_version_latest_url']);
+                    $CIDRAM['FECacheAdd'](
+                        $CIDRAM['FE']['Cache'],
+                        $CIDRAM['FE']['Rebuild'],
+                        $CIDRAM['FE']['Components']['This']['component_version_latest_url'],
+                        $CIDRAM['FE']['Components']['This']['component_version_latest_data'],
+                        $CIDRAM['Now'] + 3600
+                    );
+                }
+                $CIDRAM['FE']['Components']['This']['component_version_latest_url'] = preg_match(
+                    '/^([0-9]+\:[0-9a-f]{32})/i',
+                    $CIDRAM['FE']['Components']['This']['component_version_latest_data'],
+                    $CIDRAM['FE']['Components']['This']['component_version_latest_matches']
+                );
+                if (
+                    !$CIDRAM['FE']['Components']['This']['component_version_latest_data'] ||
+                    empty($CIDRAM['FE']['Components']['This']['component_version_latest_matches'][1])
+                ) {
+                    $CIDRAM['FE']['Components']['This']['component_version_latest'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
+                    $CIDRAM['FE']['Components']['This']['stat_class'] = 's';
+                } else {
+                    $CIDRAM['FE']['Components']['This']['component_version_latest'] = htmlentities(substr(
+                        $CIDRAM['FE']['Components']['This']['component_version_latest_matches'][1], 0, 64
+                    ));
+                    $CIDRAM['FE']['Components']['This']['component_version_latest_matches'] = '';
+                    if ($CIDRAM['FE']['Components']['This']['component_version_latest'] == $CIDRAM['FE']['Components']['This']['component_version_current']) {
+                        $CIDRAM['FE']['Components']['This']['stat_class'] = 'txtGn';
+                        $CIDRAM['FE']['Components']['This']['component_status_options'] = $CIDRAM['lang']['response_updates_already_up_to_date'];
+                    } else {
+                        $CIDRAM['FE']['Components']['This']['stat_class'] = 'txtRd';
+                        $CIDRAM['FE']['Components']['This']['component_status_options'] = $CIDRAM['lang']['response_updates_outdated'];
+                    }
+                }
+                $CIDRAM['FE']['Components']['Out'] .= $CIDRAM['ParseVars'](
+                    $CIDRAM['lang'] + $CIDRAM['FE']['Components']['This'],
+                    $CIDRAM['FE']['UpdatesRow']
+                );
+            }
+        }
+    }
+    if (!$CIDRAM['FE']['Components'] = $CIDRAM['FE']['Components']['Out']) {
+        $CIDRAM['FE']['Components'] = 'Nothing to update.'; // @todo fix message (default nothing to update)
+    }
 
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
@@ -516,7 +662,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 }
 
 if ($CIDRAM['FE']['Rebuild']) {
-    $CIDRAM['FE']['FrontEndData'] = "USERS\n-----" . $CIDRAM['FE']['UserList'] . "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'];
+    $CIDRAM['FE']['FrontEndData'] =
+        "USERS\n-----" . $CIDRAM['FE']['UserList'] .
+        "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'] .
+        "\nCACHE\n-----" . $CIDRAM['FE']['Cache'];
     $CIDRAM['FE']['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'w');
     fwrite($CIDRAM['FE']['Handle'], $CIDRAM['FE']['FrontEndData']);
     fclose($CIDRAM['FE']['Handle']);

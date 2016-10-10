@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.08).
+ * This file: Functions file (last modified: 2016.10.11).
  */
 
 /**
@@ -1001,4 +1001,40 @@ $CIDRAM['FormatFilesize'] = function (&$Filesize) {
         }
     }
     $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+};
+
+$CIDRAM['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
+    $Entry64 = base64_encode($Entry);
+    while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
+        $EoL = strpos($Source, "\n", $EntryPos + 1);
+        if ($EoL !== false) {
+            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
+            $Source = str_replace($Line, '', $Source);
+            $Rebuild = true;
+        }
+    }
+};
+
+$CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$CIDRAM) {
+    $CIDRAM['FECacheRemove']($Source, $Rebuild, $Entry);
+    $Expires = (int)$Expires;
+    $NewLine = base64_encode($Entry) . ',' . base64_encode($Data) . ',' . $Expires . "\n";
+    $Source .= $NewLine;
+    $Rebuild = true;
+};
+
+$CIDRAM['FECacheGet'] = function ($Source, $Entry) {
+    $Entry = base64_encode($Entry);
+    $EntryPos = strpos($Source, "\n" . $Entry . ',');
+    if ($EntryPos !== false) {
+        $EoL = strpos($Source, "\n", $EntryPos + 1);
+        if ($EoL !== false) {
+            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
+            $Entry = explode(',', $Line);
+            if (!empty($Entry[1])) {
+                return base64_decode($Entry[1]);
+            }
+        }
+    }
+    return false;
 };

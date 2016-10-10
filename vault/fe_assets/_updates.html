@@ -5,7 +5,16 @@
 {nav}
     </td>
     <td width="80%" class="right">
-        Updates (coming soon).
+        <div class="s">{state_msg}</div>
+        <br /><br />A work-in-progress (currently, you can view whether components are up-to-date or in need of being updated, but updating directly isn't *yet* possible. Give me a couple of days and hopefully I'll have it sorted.
+        <table width="100%">
+        <tr>
+            <td class="h2"><div class="s">{field_component}</div></td>
+            <td class="h2"><div class="s">{field_your_version}</div></td>
+            <td class="h2"><div class="s">{field_latest_version}</div></td>
+            <td class="h2"><div class="s">{field_status_options}</div></td>
+        </tr>{Components}
+        </table>
     </td>
 </tr>
 </table>

@@ -199,7 +199,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
 "disable_cli" （ディスエイブル・シーエルアイ）
-- CLIモードを無効にするか？CLIモードはデフォルトでは有効になっていますが、テストツール(PHPUnit等)やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。`false`（偽） = Enable CLIモード（CLIモード有効） 「Default（デフォルルト）」； `true`（真） = Disable CLIモード（CLI モード無効）。
+- CLIモードを無効にするか？CLIモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、テストツール（PHPUnit等）やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。 `false`（偽） = CLIモードを有効にします「Default（デフォルルト）」； `true`（真） = CLIモードを無効にします。
+
+"disable_frontend" （ディスエイブル・フロントエンド）
+- フロントエンドへのアクセスを無効にするか？フロントエンドへのアクセスは、CIDRAMをより管理しやすくすることができます。前記、それはまた、潜在的なセキュリティリスクになる可能性があります。バックエンドを経由して管理することをお勧めします、しかし、これが不可能な場合、フロントエンドへのアクセスが提供され。あなたがそれを必要としない限り、それを無効にします。 `false`（偽） = フロントエンドへのアクセスを有効にします； `true`（真） = フロントエンドへのアクセスを無効にします「Default（デフォルルト）」。
 
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
@@ -484,4 +487,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年10月6日。
+最終アップデート： 2016年10月11日。

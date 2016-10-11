@@ -200,6 +200,9 @@ Configuration générale pour CIDRAM.
 "disable_cli"
 - Désactiver le mode CLI? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut]; True = Désactiver le mode CLI.
 
+"disable_frontend"
+- Désactiver l'accès frontal? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal; True = Désactiver l'accès frontal [Défaut].
+
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 
@@ -483,4 +486,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Réactualisé: 6 Octobre 2016 (2016.10.06).
+Dernière Réactualisé: 11 Octobre 2016 (2016.10.11).

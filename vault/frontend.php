@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.11).
+ * This file: Front-end handler (last modified: 2016.10.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -28,6 +28,7 @@ $CIDRAM['FE'] = array(
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
     'DateTime' => date('r', $CIDRAM['Now']),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
+    'Traverse' => "\x01(?:^\.|\.\.|[\x01-\x1f\[-`/\?\*\$])\x01i",
     'UserList' => "\n",
     'SessionList' => "\n",
     'Cache' => "\n",
@@ -39,6 +40,24 @@ $CIDRAM['FE'] = array(
     'bNav' => '&nbsp;',
     'FE_Title' => ''
 );
+
+/** A fix for correctly displaying LTR/RTL text. */
+if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
+    $CIDRAM['lang']['textDir'] = 'ltr';
+    $CIDRAM['FE']['FE_Align'] = 'left';
+} else {
+    $CIDRAM['FE']['FE_Align'] = 'right';
+}
+
+/** A simple passthru for the front-end CSS. */
+if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
+    header('Content-Type: text/css');
+    echo $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.css')
+    );
+    die;
+}
 
 /** Set form target if not already set. */
 $CIDRAM['FE']['FormTarget'] = (empty($_POST['cidram-form-target'])) ? '' : $_POST['cidram-form-target'];
@@ -80,14 +99,6 @@ $CIDRAM['ClearExpired']($CIDRAM['FE']['SessionList'], $CIDRAM['FE']['Rebuild']);
 
 /** Clear expired cache entries. */
 $CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
-
-/** A fix for correctly displaying LTR/RTL text. */
-if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
-    $CIDRAM['lang']['textDir'] = 'ltr';
-    $CIDRAM['FE']['FE_Align'] = 'left';
-} else {
-    $CIDRAM['FE']['FE_Align'] = 'right';
-}
 
 /** Attempt to log in the user. */
 if ($CIDRAM['FE']['FormTarget'] === 'login') {
@@ -447,16 +458,27 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 /** Updates. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Permissions'] === 1) {
 
+    /** A form has been submitted. */
+    if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
+
+        /** Update a component. */
+        if ($_POST['do'] === 'update-component' && !empty($_POST['component_id'])) {
+            if (
+                !preg_match($CIDRAM['FE']['Traverse'], $_POST['component_id']) &&
+                file_exists($CIDRAM['Vault'] . $_POST['component_id'])
+            ) {
+            } else {
+                // Component doesn't exist (aaa temp aaa)
+            }
+        }
+
+    }
+
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_updates'];
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates_row.html');
-
-    /** A form has been submitted. */
-    if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
-        // @todo
-    }
 
     $CIDRAM['FE']['Components'] = array(
         'Files' => scandir($CIDRAM['Vault']),
@@ -530,6 +552,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['FE']['Components']['This'] = array(
                     'component_id' => $CIDRAM['FE']['Components']['Files'][$CIDRAM['FE']['Components']['Iterate']],
                     'component_name' => (empty($CIDRAM['Config']['Meta']['Name'])) ? '' : $CIDRAM['Config']['Meta']['Name'],
+                    'component_options' => '',
+                    'component_status_options' => '',
                     'source_url' => (empty($CIDRAM['Config']['Meta']['Source'])) ? '' : $CIDRAM['Config']['Meta']['Source'],
                     'component_version_latest_url' => (empty($CIDRAM['Config']['Meta']['Hash'])) ? '' : $CIDRAM['Config']['Meta']['Hash'],
                     'component_version_current' => strlen($CIDRAM['FE']['Components']['Data']) . ':' . md5($CIDRAM['FE']['Components']['Data'])
@@ -571,7 +595,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     } else {
                         $CIDRAM['FE']['Components']['This']['stat_class'] = 'txtRd';
                         $CIDRAM['FE']['Components']['This']['component_status_options'] = $CIDRAM['lang']['response_updates_outdated'];
+                        if (!empty($CIDRAM['FE']['Components']['This']['source_url'])) {
+                            $CIDRAM['FE']['Components']['This']['component_options'] .=
+                                '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
+                        }
                     }
+                }
+                if (!empty($CIDRAM['FE']['Components']['This']['component_options'])) {
+                    $CIDRAM['FE']['Components']['This']['component_status_options'] .=
+                        '<br /><select name="do" class="half">' .
+                        $CIDRAM['FE']['Components']['This']['component_options'] .
+                        '</select><input class="half" type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" />';
+                    $CIDRAM['FE']['Components']['This']['component_options'] = '';
                 }
                 $CIDRAM['FE']['Components']['Out'] .= $CIDRAM['ParseVars'](
                     $CIDRAM['lang'] + $CIDRAM['FE']['Components']['This'],
@@ -617,7 +652,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_no_logfile_selected'];
     } elseif (
         file_exists($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']) &&
-        !preg_match("\x01(?:^\.|\.\.|[\x01-\x1f\[-`/\?\*\$])\x01i", $CIDRAM['QueryVars']['logfile']) &&
+        !preg_match($CIDRAM['FE']['Traverse'], $CIDRAM['QueryVars']['logfile']) &&
         (strpos(
             $CIDRAM['FE']['LogFiles']['Types'],
             strtolower(substr($CIDRAM['QueryVars']['logfile'], -3))

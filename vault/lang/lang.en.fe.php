@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2016.10.11).
+ * This file: English language data for the front-end (last modified: 2016.10.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['field_password'] = 'Password';
 $CIDRAM['lang']['field_permissions'] = 'Permissions';
 $CIDRAM['lang']['field_set_new_password'] = 'Set New Password';
 $CIDRAM['lang']['field_status'] = 'Status';
+$CIDRAM['lang']['field_update'] = 'Update';
 $CIDRAM['lang']['field_username'] = 'Username';
 $CIDRAM['lang']['field_your_version'] = 'Your Version';
 $CIDRAM['lang']['header_login'] = 'Please log in to continue.';

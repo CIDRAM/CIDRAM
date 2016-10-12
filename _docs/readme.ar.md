@@ -221,6 +221,11 @@ Updating is done manually, and you can customise your configuration and customis
  <li>وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خطأ = تمكين وضع CLI [الافتراضي]. صحيح = وضع تعطيل CLI.</li>
 </ul></div>
 
+<div dir="rtl">"disable_frontend"<br /></div>
+<div dir="rtl"><ul>
+ <li>تعطيل وصول front-end؟ وصول front-end يستطيع جعل CIDRAM أكثر قابلية للإدارة، ولكن يمكن أيضا أن تكون مخاطر أمنية محتملة. من المستحسن لإدارة CIDRAM عبر back-end متى أمكن، لكن وصول front-end متوفر عندما لم يكن ممكنا. يبقيه المعوقين إلا إذا كنت في حاجة إليها. False = تمكين وصول front-end؛ True = تعطيل وصول front-end [الافتراضي].</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
@@ -509,4 +514,4 @@ Ignore Section 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 اكتوبر 2016 (2016.10.06).</div>
+<div dir="rtl">آخر تحديث: 11 اكتوبر 2016 (2016.10.11).</div>

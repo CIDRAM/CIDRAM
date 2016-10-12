@@ -2,7 +2,7 @@
             <form action="?cidram-page=updates" method="POST"><input name="cidram-form-target" type="hidden" value="updates" /><input name="component_id" type="hidden" value="{component_id}" />
                 <td class="h1"><div class="s">{component_name}</div></td>
                 <td class="h1"><div class="{stat_class}">{component_version_current}</div></td>
-                <td class="h1"><div class="{stat_class}">{component_version_latest}</div></td>
+                <td class="h1"><div class="{stat_class}"><input name="component_version_latest" type="hidden" value="{component_version_latest}" />{component_version_latest}</div></td>
                 <td class="h1"><div class="s">{component_status_options}</div></td>
             </form>
         </tr>

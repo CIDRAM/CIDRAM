@@ -462,14 +462,62 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
 
         /** Update a component. */
-        if ($_POST['do'] === 'update-component' && !empty($_POST['component_id'])) {
+        if ($_POST['do'] === 'update-component' && !empty($_POST['component_id']) && !empty($_POST['component_version_latest'])) {
+            $CIDRAM['UpdateComponent'] = array();
             if (
                 !preg_match($CIDRAM['FE']['Traverse'], $_POST['component_id']) &&
-                file_exists($CIDRAM['Vault'] . $_POST['component_id'])
+                file_exists($CIDRAM['Vault'] . $_POST['component_id']) &&
+                ($CIDRAM['UpdateComponent']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['component_id'])) &&
+                substr($CIDRAM['UpdateComponent']['Data'], 0, 10) === "---\nMeta:\n" &&
+                ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
+                    $CIDRAM['UpdateComponent']['Data'], "\n\n"
+                )) !== false &&
+                $CIDRAM['YAML'](substr(
+                    $CIDRAM['UpdateComponent']['Data'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
+                )) &&
+                !empty($CIDRAM['Config']['Meta']['Source']) &&
+                ($CIDRAM['UpdateComponent']['Name'] =
+                    empty($CIDRAM['Config']['Meta']['Name']) ? false : $CIDRAM['Config']['Meta']['Name']
+                )
             ) {
+                $CIDRAM['UpdateComponent']['NewData'] =
+                    $CIDRAM['Request']($CIDRAM['Config']['Meta']['Source']);
+                if (
+                    !empty($CIDRAM['UpdateComponent']['NewData']) &&
+                    substr($CIDRAM['UpdateComponent']['NewData'], 0, 10) === "---\nMeta:\n" &&
+                    ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
+                        $CIDRAM['UpdateComponent']['NewData'], "\n\n"
+                    )) !== false &&
+                    $CIDRAM['YAML'](substr(
+                        $CIDRAM['UpdateComponent']['NewData'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
+                    )) &&
+                    !empty($CIDRAM['Config']['Meta']['Name']) &&
+                    !empty($CIDRAM['Config']['Meta']['Hash']) &&
+                    $CIDRAM['UpdateComponent']['Name'] === $CIDRAM['Config']['Meta']['Name'] &&
+                    ($CIDRAM['UpdateComponent']['NewVer'] =
+                        strlen($CIDRAM['UpdateComponent']['NewData']) . ':' .
+                        md5($CIDRAM['UpdateComponent']['NewData'])
+                    ) &&
+                    $_POST['component_version_latest'] === $CIDRAM['UpdateComponent']['NewVer']
+                ) {
+                    $CIDRAM['UpdateComponent']['Handle'] = fopen($CIDRAM['Vault'] . $_POST['component_id'], 'w');
+                    fwrite($CIDRAM['UpdateComponent']['Handle'], $CIDRAM['UpdateComponent']['NewData']);
+                    fclose($CIDRAM['UpdateComponent']['Handle']);
+                    $CIDRAM['FECacheAdd'](
+                        $CIDRAM['FE']['Cache'],
+                        $CIDRAM['FE']['Rebuild'],
+                        $CIDRAM['Config']['Meta']['Hash'],
+                        $CIDRAM['UpdateComponent']['NewVer'] . "\n",
+                        $CIDRAM['Now'] + 3600
+                    );
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_updated'];
+                } else {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_update_error'];
+                }
             } else {
-                // Component doesn't exist (aaa temp aaa)
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_doesnt_exist'];
             }
+            unset($CIDRAM['UpdateComponent']);
         }
 
     }
@@ -482,7 +530,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
     $CIDRAM['FE']['Components'] = array(
         'Files' => scandir($CIDRAM['Vault']),
-        'Types' => ',dat,',
+        'Types' => ',dat,inc,',
         'Out' => ''
     );
 

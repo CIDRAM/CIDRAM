@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.11).
+ * This file: Functions file (last modified: 2016.10.15).
  */
 
 /**
@@ -489,7 +489,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
-                    $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)));
+                    $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
@@ -714,29 +714,35 @@ $CIDRAM['Time2Logfile'] = function ($time, $dir) use (&$CIDRAM) {
 };
 
 /**
- * Attempt to parse some YAML-like data into the current configuration.
+ * A simplified YAML-like parser.
  *
- * @param string $in The data to parse.
- * @param bool $vm Validator mode (if true, closure produces no effects).
+ * @param string $In The data to parse.
+ * @param array $Arr Where to save the results.
+ * @param bool $VM Validator Mode (if true, results won't be saved).
  * @return bool Returns false if errors are encountered, and true otherwise.
  */
-$CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
-    $in = explode("\n", $in);
-    $Lines = count($in);
+$CIDRAM['YAML'] = function ($In, &$Arr, $VM = false) {
+    if (!is_array($Arr)) {
+        $Arr = array();
+    }
+    $In = explode("\n", $In);
+    if (!$Lines = count($In)) {
+        return false;
+    }
     $Cat = $Dir = $DirVal = '';
     $Depth = $PrevTab = 0;
     for ($i = 0; $i < $Lines; $i++) {
-        if (empty($in[$i])) {
+        if (empty($In[$i])) {
             continue;
         }
         if ($Depth > 1) {
             return false;
         }
         $ThisTab = 0;
-        $Chr = substr($in[$i], $ThisTab, 1);
+        $Chr = substr($In[$i], $ThisTab, 1);
         while ($Chr === ' ' || $Chr === "\t") {
             $ThisTab++;
-            $Chr = substr($in[$i], $ThisTab, 1);
+            $Chr = substr($In[$i], $ThisTab, 1);
         }
         if ($ThisTab > $PrevTab) {
             $Depth++;
@@ -746,38 +752,42 @@ $CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
             $PrevTab = $ThisTab;
         }
         if (
-            ($Depth === 0 && ((!$DelPos = strpos($in[$i], ':')) || ((strlen($in[$i]) - 1) !== $DelPos))) ||
-            ($Depth === 1 && (!$DelPos = strpos($in[$i], ': ')))
+            ($Depth === 0 && ((!$DelPos = strpos($In[$i], ':')) || ((strlen($In[$i]) - 1) !== $DelPos))) ||
+            ($Depth === 1 && (!$DelPos = strpos($In[$i], ': ')))
         ) {
             return false;
         }
         if ($Depth === 0) {
-            $Cat = substr($in[$i], $ThisTab, ($DelPos - $ThisTab));
+            $Cat = substr($In[$i], $ThisTab, ($DelPos - $ThisTab));
             $CatLen = strlen($Cat);
-            if (substr($Cat, 0, 1) === '"' && substr($Cat, ($CatLen - 1)) === '"') {
+            if (substr($Cat, 0, 1) === '"' && substr($Cat, $CatLen - 1) === '"') {
                 $Cat = substr($Cat, 1, $CatLen - 2);
-            } elseif (substr($Cat, 0, 1) === '\'' && substr($Cat, ($CatLen - 1)) === '\'') {
+            } elseif (substr($Cat, 0, 1) === '\'' && substr($Cat, $CatLen - 1) === '\'') {
                 $Cat = substr($Cat, 1, $CatLen - 2);
             }
-            if (!$vm && !isset($CIDRAM['Config'][$Cat])) {
-                $CIDRAM['Config'][$Cat] = array();
+            if (!$VM && !isset($Arr[$Cat])) {
+                $Arr[$Cat] = array();
             }
         } elseif ($Depth === 1) {
-            $Dir = substr($in[$i], $ThisTab, ($DelPos - $ThisTab));
+            $Dir = substr($In[$i], $ThisTab, $DelPos - $ThisTab);
             $DirLen = strlen($Dir);
-            $DirVal = substr($in[$i], ($ThisTab + $DirLen) + 2);
-            if (substr($Dir, 0, 1) === '"' && substr($Dir, ($DirLen - 1)) === '"') {
-                $Dir = substr($Dir, 1, ($DirLen - 2));
-            } elseif (substr($Dir, 0, 1) === '\'' && substr($Dir, ($DirLen - 1)) === '\'') {
-                $Dir = substr($Dir, 1, ($DirLen - 2));
-            }
-            $DirValLen = strlen($DirVal);
-            if (substr($DirVal, 0, 1) === '"' && substr($DirVal, ($DirValLen - 1)) === '"') {
-                $DirVal = substr($DirVal, 1, ($DirValLen - 2));
-            } elseif (substr($DirVal, 0, 1) === '\'' && substr($DirVal, ($DirValLen - 1)) === '\'') {
-                $DirVal = substr($DirVal, 1, ($DirValLen - 2));
+            if (substr($Dir, 0, 1) === '"' && substr($Dir, $DirLen - 1) === '"') {
+                $Dir = substr($Dir, 1, $DirLen - 2);
+            } elseif (substr($Dir, 0, 1) === '\'' && substr($Dir, $DirLen - 1) === '\'') {
+                $Dir = substr($Dir, 1, $DirLen - 2);
             } else {
-                $DirValLen = strlen($DirVal);
+                $DirInt = (int)$Dir;
+                if (strlen($DirInt) === $DirLen && $Dir == $DirInt) {
+                    $Dir = $DirInt;
+                }
+            }
+            $DirVal = substr($In[$i], $ThisTab + $DirLen + 2);
+            $DirValLen = strlen($DirVal);
+            if (substr($DirVal, 0, 1) === '"' && substr($DirVal, $DirValLen - 1) === '"') {
+                $DirVal = substr($DirVal, 1, $DirValLen - 2);
+            } elseif (substr($DirVal, 0, 1) === '\'' && substr($DirVal, $DirValLen - 1) === '\'') {
+                $DirVal = substr($DirVal, 1, $DirValLen - 2);
+            } else {
                 $DirValInt = (int)$DirVal;
                 if (strlen($DirValInt) === $DirValLen && $DirVal == $DirValInt) {
                     $DirVal = $DirValInt;
@@ -789,8 +799,11 @@ $CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
             } elseif ($DirValLow === 'false') {
                 $DirVal = false;
             }
-            if (!$vm) {
-                $CIDRAM['Config'][$Cat][$Dir] = $DirVal;
+            if (!$Cat) {
+                return false;
+            }
+            if (!$VM) {
+                $Arr[$Cat][$Dir] = $DirVal;
             }
         }
     }

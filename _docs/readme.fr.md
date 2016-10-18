@@ -200,6 +200,9 @@ Configuration générale pour CIDRAM.
 "disable_cli"
 - Désactiver le mode CLI? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut]; True = Désactiver le mode CLI.
 
+"disable_frontend"
+- Désactiver l'accès frontal? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal; True = Désactiver l'accès frontal [Défaut].
+
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 
@@ -471,7 +474,7 @@ Le terme «faux positif» (*alternativement: «erreur faux positif»; «fausse a
 
 Résultats connexes lors de tester pour une condition peut être décrit en utilisant les termes «vrai positif», «vrai négatif» et «faux négatif». Un «vrai positif» se réfère à quand les résultats du test et l'état actuel de la condition sont tous deux vrai (or «positif»), and a «vrai négatif» se réfère à quand les résultats du test et l'état actuel de la condition sont tous deux faux (ou «négatif»); Un «vrai positif» ou «vrai négatif» est considéré comme une «inférence correcte». L'antithèse d'un «faux positif» est un «faux négatif»; Un «faux négatif» se réfère à quand les résultats du test are négatif (c'est à dire, la condition est déterminée comme étant «négatif», ou «faux»), mais ils devraient être (ou aurait dû être) positif (c'est à dire, la condition, en réalité, est «positif», ou «vrai»).
 
-Dans le contexte de CIDRAM, ces termes réfèrent à les signatures de CIDRAM et que/qui ils bloquer. Quand CIDRAM bloque une adresse IP en raison du mauvais, obsolète ou signatures incorrectes, mais ne devrait pas l'avoir fait, ou quand il le fait pour les mauvaises raisons, nous référons à cet événement comme un «faux positif». Quand CIDRAM ne parvient pas à bloquer une adresse IP qui aurait dû être bloqué, en raison de menaces imprévues, signatures manquantes ou déficits dans ses signatures, nous référons à cet événement comme un «détection manquée» ou «missed detection» (qui est analogue à un «faux négatif»).
+Dans le contexte de CIDRAM, ces termes réfèrent à les signatures de CIDRAM et que/qui ils bloquent. Quand CIDRAM bloque une adresse IP en raison du mauvais, obsolète ou signatures incorrectes, mais ne devrait pas l'avoir fait, ou quand il le fait pour les mauvaises raisons, nous référons à cet événement comme un «faux positif». Quand CIDRAM ne parvient pas à bloquer une adresse IP qui aurait dû être bloqué, en raison de menaces imprévues, signatures manquantes ou déficits dans ses signatures, nous référons à cet événement comme un «détection manquée» ou «missed detection» (qui est analogue à un «faux négatif»).
 
 Ceci peut être résumé par le tableau ci-dessous:
 
@@ -483,4 +486,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Réactualisé: 24 Septembre 2016 (2016.09.24).
+Dernière Réactualisé: 11 Octobre 2016 (2016.10.11).

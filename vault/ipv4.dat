@@ -1,11 +1,3 @@
----
-Meta:
- Name: IPv4 signatures file.
- Source: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv4.dat
- Hash: https://raw.githubusercontent.com/Maikuolan/CIDRAM-Extras/master/hashes/ipv4.dat
-
-
-# ---
 # Some additional useful resources:
 
 # http://bgp.he.net/
@@ -19788,7 +19780,7 @@ Tag: SFS Toxic CIDRs
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2016.10.01
+# Updated: 2016.10.18
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 2.56.0.0/14 Deny Bogon
@@ -19822,6 +19814,7 @@ Tag: SFS Toxic CIDRs
 37.221.64.0/18 Deny Bogon
 37.252.216.0/21 Deny Bogon
 41.84.160.0/19 Deny Bogon
+43.255.28.0/22 Deny Bogon
 45.8.0.0/13 Deny Bogon
 45.65.64.0/18 Deny Bogon
 45.66.0.0/15 Deny Bogon
@@ -20138,7 +20131,7 @@ Tag: SFS Toxic CIDRs
 91.212.142.0/24 Deny Bogon
 91.212.149.0/24 Deny Bogon
 91.212.153.0/24 Deny Bogon
-91.212.161.0/24 Deny Bogon
+91.212.160.0/23 Deny Bogon
 91.212.163.0/24 Deny Bogon
 91.212.226.0/24 Deny Bogon
 91.212.231.0/24 Deny Bogon
@@ -20150,6 +20143,7 @@ Tag: SFS Toxic CIDRs
 91.213.72.0/24 Deny Bogon
 91.213.74.0/23 Deny Bogon
 91.213.93.0/24 Deny Bogon
+91.213.94.0/24 Deny Bogon
 91.213.111.0/24 Deny Bogon
 91.213.117.0/24 Deny Bogon
 91.213.120.0/23 Deny Bogon
@@ -20169,6 +20163,7 @@ Tag: SFS Toxic CIDRs
 91.214.216.0/22 Deny Bogon
 91.216.11.0/24 Deny Bogon
 91.216.39.0/24 Deny Bogon
+91.216.73.0/24 Deny Bogon
 91.216.122.0/24 Deny Bogon
 91.216.169.0/24 Deny Bogon
 91.216.190.0/24 Deny Bogon
@@ -20177,6 +20172,7 @@ Tag: SFS Toxic CIDRs
 91.217.80.0/23 Deny Bogon
 91.217.120.0/23 Deny Bogon
 91.217.139.0/24 Deny Bogon
+91.217.162.0/24 Deny Bogon
 91.217.167.0/24 Deny Bogon
 91.217.200.0/24 Deny Bogon
 91.217.207.0/24 Deny Bogon
@@ -20263,6 +20259,7 @@ Tag: SFS Toxic CIDRs
 91.235.241.0/24 Deny Bogon
 91.236.115.0/24 Deny Bogon
 91.236.121.0/24 Deny Bogon
+91.237.153.0/24 Deny Bogon
 91.238.18.0/24 Deny Bogon
 91.238.83.0/24 Deny Bogon
 91.238.84.0/24 Deny Bogon
@@ -20320,14 +20317,34 @@ Tag: SFS Toxic CIDRs
 95.215.140.0/22 Deny Bogon
 100.64.0.0/10 Deny Bogon
 102.0.0.0/8 Deny Bogon
-103.76.124.0/22 Deny Bogon
-103.76.128.0/17 Deny Bogon
-103.77.0.0/16 Deny Bogon
+103.4.135.0/24 Deny Bogon
+103.12.180.0/22 Deny Bogon
+103.12.244.0/24 Deny Bogon
+103.13.204.0/22 Deny Bogon
+103.15.227.0/24 Deny Bogon
+103.51.129.0/24 Deny Bogon
+103.77.70.0/23 Deny Bogon
+103.77.76.0/22 Deny Bogon
+103.77.80.0/20 Deny Bogon
+103.77.96.0/19 Deny Bogon
+103.77.128.0/17 Deny Bogon
 103.78.0.0/15 Deny Bogon
 103.80.0.0/12 Deny Bogon
 103.96.0.0/11 Deny Bogon
 103.128.0.0/10 Deny Bogon
+103.196.176.0/22 Deny Bogon
+103.232.164.0/22 Deny Bogon
+103.235.160.0/22 Deny Bogon
+103.238.64.0/22 Deny Bogon
+103.238.112.0/22 Deny Bogon
+103.239.12.0/22 Deny Bogon
+103.239.20.0/22 Deny Bogon
+103.239.64.0/22 Deny Bogon
+103.239.88.0/22 Deny Bogon
 103.248.250.0/24 Deny Bogon
+103.250.96.0/21 Deny Bogon
+103.250.187.0/24 Deny Bogon
+103.251.8.0/22 Deny Bogon
 103.254.197.0/24 Deny Bogon
 109.71.72.0/21 Deny Bogon
 109.71.152.0/21 Deny Bogon
@@ -20379,20 +20396,14 @@ Tag: SFS Toxic CIDRs
 162.12.200.0/21 Deny Bogon
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
-164.160.148.0/22 Deny Bogon
-164.160.152.0/22 Deny Bogon
-165.16.0.0/17 Deny Bogon
 165.16.128.0/18 Deny Bogon
 165.16.192.0/21 Deny Bogon
 165.49.0.0/16 Deny Bogon
 165.73.0.0/16 Deny Bogon
-168.197.240.0/21 Deny Bogon
 169.254.0.0/16 Deny Bogon
 170.78.185.0/24 Deny Bogon
-170.78.186.0/23 Deny Bogon
-170.78.208.0/20 Deny Bogon
-170.78.224.0/19 Deny Bogon
-170.79.0.0/16 Deny Bogon
+170.79.220.0/22 Deny Bogon
+170.79.224.0/19 Deny Bogon
 170.80.0.0/14 Deny Bogon
 170.238.0.0/15 Deny Bogon
 170.244.0.0/14 Deny Bogon
@@ -20433,11 +20444,10 @@ Tag: SFS Toxic CIDRs
 185.1.88.0/21 Deny Bogon
 185.1.96.0/19 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.170.144.0/20 Deny Bogon
-185.170.160.0/19 Deny Bogon
-185.170.192.0/18 Deny Bogon
-185.171.0.0/16 Deny Bogon
-185.172.0.0/14 Deny Bogon
+185.173.116.0/22 Deny Bogon
+185.173.120.0/21 Deny Bogon
+185.173.128.0/17 Deny Bogon
+185.174.0.0/15 Deny Bogon
 185.176.0.0/12 Deny Bogon
 185.192.0.0/10 Deny Bogon
 188.64.208.0/21 Deny Bogon
@@ -21772,6 +21782,7 @@ Tag: SFS Toxic CIDRs
 193.218.222.0/24 Deny Bogon
 193.219.0.0/24 Deny Bogon
 193.219.7.0/24 Deny Bogon
+193.219.99.0/24 Deny Bogon
 193.219.101.0/24 Deny Bogon
 193.219.121.0/24 Deny Bogon
 193.221.93.0/24 Deny Bogon
@@ -23465,12 +23476,10 @@ Tag: SFS Toxic CIDRs
 196.6.229.0/24 Deny Bogon
 196.6.230.0/23 Deny Bogon
 196.11.103.0/24 Deny Bogon
-196.13.203.0/24 Deny Bogon
 196.41.88.0/22 Deny Bogon
-196.41.92.0/23 Deny Bogon
-196.61.16.0/20 Deny Bogon
 196.61.32.0/19 Deny Bogon
-196.61.64.0/19 Deny Bogon
+196.61.64.0/21 Deny Bogon
+196.61.72.0/22 Deny Bogon
 196.192.116.0/22 Deny Bogon
 196.192.120.0/22 Deny Bogon
 196.192.125.0/24 Deny Bogon
@@ -23483,12 +23492,14 @@ Tag: SFS Toxic CIDRs
 196.216.254.0/24 Deny Bogon
 196.223.11.0/24 Deny Bogon
 196.223.29.0/24 Deny Bogon
-196.223.248.0/22 Deny Bogon
 196.250.0.0/15 Deny Bogon
 198.18.0.0/15 Deny Bogon
 198.51.100.0/24 Deny Bogon
+200.192.107.0/24 Deny Bogon
+200.229.251.0/24 Deny Bogon
 202.52.157.0/24 Deny Bogon
 203.0.113.0/24 Deny Bogon
+207.248.80.0/24 Deny Bogon
 212.60.0.0/19 Deny Bogon
 212.80.192.0/19 Deny Bogon
 212.81.32.0/19 Deny Bogon
@@ -23504,6 +23515,7 @@ Tag: SFS Toxic CIDRs
 213.108.192.0/21 Deny Bogon
 213.108.240.0/21 Deny Bogon
 213.109.160.0/19 Deny Bogon
+213.138.216.0/22 Deny Bogon
 213.139.192.0/18 Deny Bogon
 213.167.224.0/22 Deny Bogon
 213.170.192.0/19 Deny Bogon

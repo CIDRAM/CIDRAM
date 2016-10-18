@@ -200,6 +200,9 @@ CIDRAM должен автоматически блокировать нежел
 "disable_cli"
 - Деактивировать ли CLI-модус? Обычно CLI-модус активирован. Однако иногда он может отрицательно влиять на определённые тестовые программы (например на PHPUnit) и другие приложения, базирующиеся на CLI. Если CLI-модус нельзя деактивировать, то эту команду нужно игнорировать. False = CLI-модус активирован [Стандарт]; True = CLI-модус деактивирован.
 
+"disable_frontend"
+- Деактивировать доступ к front-end? Доступ к front-end может сделать CIDRAM более управляемым, но также может быть потенциальный риск безопасности. Рекомендуется чтобы управлять CIDRAM через back-end когда возможно, но доступ к front-end предоставлен для того когда это не возможно. Держите его деактивирована за исключением того если вам это нужно. False = Активировать доступ к front-end; True = Деактивировать доступ к front-end [Стандарт].
+
 ####"signatures" (Категория)
 Конфигурация сигнатур.
 
@@ -291,7 +294,7 @@ All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] 
 - `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
 - `[Param]` represents whatever additional information may be required by `[Function]`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows` %0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
 
@@ -483,4 +486,4 @@ CIDRAM *ДЕЛАЕТ* блокирует IP-адрес | __Ложнополож�
 ---
 
 
-Последнее обновление: 1 Октября 2016 (2016.10.01).
+Последнее обновление: 11 Октябрь 2016 (2016.10.11).

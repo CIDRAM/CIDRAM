@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.08.28).
+ * This file: Functions file (last modified: 2016.10.18).
  */
 
 /**
@@ -489,7 +489,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
-                    $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)));
+                    $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
                 $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
@@ -714,84 +714,142 @@ $CIDRAM['Time2Logfile'] = function ($time, $dir) use (&$CIDRAM) {
 };
 
 /**
- * Attempt to parse some YAML-like data into the current configuration.
+ * Normalises values defined by the YAML closure.
  *
- * @param string $in The data to parse.
- * @param bool $vm Validator mode (if true, closure produces no effects).
+ * @param string|int|bool The value to be normalised.
+ * @param int The length of the value.
+ * @param string|int|bool The value to be normalised, lowercased.
+ */
+$CIDRAM['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
+    if (substr($Value, 0, 1) === '"' && substr($Value, $ValueLen - 1) === '"') {
+        $Value = substr($Value, 1, $ValueLen - 2);
+    } elseif (substr($Value, 0, 1) === '\'' && substr($Value, $ValueLen - 1) === '\'') {
+        $Value = substr($Value, 1, $ValueLen - 2);
+    } elseif ($ValueLow === 'true' || $ValueLow === 'y') {
+        $Value = true;
+    } elseif ($ValueLow === 'false' || $ValueLow === 'n') {
+        $Value = false;
+    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^a-f0-9]/i', $HexTest) && !($ValueLen % 2)) {
+        $Value = hex2bin($HexTest);
+    } else {
+        $ValueInt = (int)$Value;
+        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt) {
+            $Value = $ValueInt;
+        }
+    }
+    if (!$Value) {
+        $Value = false;
+    }
+};
+
+/**
+ * A simplified YAML-like parser. Note: This is intended to be adequately serve
+ * the needs of this package in a way that should feel familiar to users of
+ * YAML, but it isn't a true YAML implementation and it doesn't adhere to any
+ * specifications, official or otherwise.
+ *
+ * @param string $In The data to parse.
+ * @param array $Arr Where to save the results.
+ * @param bool $VM Validator Mode (if true, results won't be saved).
+ * @param int $Depth Tab depth (inherited through recursion; ignore it).
  * @return bool Returns false if errors are encountered, and true otherwise.
  */
-$CIDRAM['YAML'] = function ($in, $vm = false) use (&$CIDRAM) {
-    $in = explode("\n", $in);
-    $Lines = count($in);
-    $Cat = $Dir = $DirVal = '';
-    $Depth = $PrevTab = 0;
-    for ($i = 0; $i < $Lines; $i++) {
-        if (empty($in[$i])) {
+$CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) {
+    if (!is_array($Arr)) {
+        if ($VM) {
+            return false;
+        }
+        $Arr = array();
+    }
+    if (!substr_count($In, "\n")) {
+        return false;
+    }
+    $In = str_replace("\r", '', $In);
+    $Key = $Value = $SendTo = '';
+    $TabLen = $SoL = 0;
+    while ($SoL !== false) {
+        if  (($EoL = strpos($In, "\n", $SoL)) === false) {
+            $ThisLine = substr($In, $SoL);
+        } else {
+            $ThisLine = substr($In, $SoL, $EoL - $SoL);
+        }
+        $SoL = ($EoL === false) ? false : $EoL + 1;
+        $ThisLine = preg_replace(array("/#.*$/", "/\x20+$/"), '', $ThisLine);
+        if (empty($ThisLine) || $ThisLine === "\n") {
             continue;
         }
-        if ($Depth > 1) {
-            return false;
-        }
         $ThisTab = 0;
-        $Chr = substr($in[$i], $ThisTab, 1);
-        while ($Chr === ' ' || $Chr === "\t") {
+        while (($Chr = substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
             $ThisTab++;
-            $Chr = substr($in[$i], $ThisTab, 1);
         }
-        if ($ThisTab > $PrevTab) {
-            $Depth++;
-            $PrevTab = $ThisTab;
-        } elseif ($ThisTab < $PrevTab) {
-            $Depth--;
-            $PrevTab = $ThisTab;
-        }
-        if (
-            ($Depth === 0 && ((!$DelPos = strpos($in[$i], ':')) || ((strlen($in[$i]) - 1) !== $DelPos))) ||
-            ($Depth === 1 && (!$DelPos = strpos($in[$i], ': ')))
-        ) {
+        if ($ThisTab > $Depth) {
+            if ($TabLen === 0) {
+                $TabLen = $ThisTab;
+            }
+            $SendTo .= $ThisLine . "\n";
+            continue;
+        } elseif ($ThisTab < $Depth) {
             return false;
-        }
-        if ($Depth === 0) {
-            $Cat = substr($in[$i], $ThisTab, ($DelPos - $ThisTab));
-            $CatLen = strlen($Cat);
-            if (substr($Cat, 0, 1) === '"' && substr($Cat, ($CatLen - 1)) === '"') {
-                $Cat = substr($Cat, 1, $CatLen - 2);
-            } elseif (substr($Cat, 0, 1) === '\'' && substr($Cat, ($CatLen - 1)) === '\'') {
-                $Cat = substr($Cat, 1, $CatLen - 2);
+        } elseif (!empty($SendTo)) {
+            if (empty($Key)) {
+                return false;
             }
-            if (!$vm && !isset($CIDRAM['Config'][$Cat])) {
-                $CIDRAM['Config'][$Cat] = array();
-            }
-        } elseif ($Depth === 1) {
-            $Dir = substr($in[$i], $ThisTab, ($DelPos - $ThisTab));
-            $DirLen = strlen($Dir);
-            $DirVal = substr($in[$i], ($ThisTab + $DirLen) + 2);
-            if (substr($Dir, 0, 1) === '"' && substr($Dir, ($DirLen - 1)) === '"') {
-                $Dir = substr($Dir, 1, ($DirLen - 2));
-            } elseif (substr($Dir, 0, 1) === '\'' && substr($Dir, ($DirLen - 1)) === '\'') {
-                $Dir = substr($Dir, 1, ($DirLen - 2));
-            }
-            $DirValLen = strlen($DirVal);
-            if (substr($DirVal, 0, 1) === '"' && substr($DirVal, ($DirValLen - 1)) === '"') {
-                $DirVal = substr($DirVal, 1, ($DirValLen - 2));
-            } elseif (substr($DirVal, 0, 1) === '\'' && substr($DirVal, ($DirValLen - 1)) === '\'') {
-                $DirVal = substr($DirVal, 1, ($DirValLen - 2));
-            } else {
-                $DirValLen = strlen($DirVal);
-                $DirValInt = (int)$DirVal;
-                if (strlen($DirValInt) === $DirValLen && $DirVal == $DirValInt) {
-                    $DirVal = $DirValInt;
+            if (!isset($Arr[$Key])) {
+                if ($VM) {
+                    return false;
                 }
+                $Arr[$Key] = false;
             }
-            $DirValLow = strtolower($DirVal);
-            if ($DirValLow === 'true') {
-                $DirVal = true;
-            } elseif ($DirValLow === 'false') {
-                $DirVal = false;
+            if (!$CIDRAM['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
+                return false;
             }
-            if (!$vm) {
-                $CIDRAM['Config'][$Cat][$Dir] = $DirVal;
+            $SendTo = '';
+        }
+        if (substr($ThisLine, -1) === ':') {
+            $Key = substr($ThisLine, $ThisTab, -1);
+            $KeyLen = strlen($Key);
+            $KeyLow = strtolower($Key);
+            $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+            if (!isset($Arr[$Key])) {
+                if ($VM) {
+                    return false;
+                }
+                $Arr[$Key] = false;
             }
+        } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
+            $Value = substr($ThisLine, $ThisTab + 2);
+            $ValueLen = strlen($Value);
+            $ValueLow = strtolower($Value);
+            $CIDRAM['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
+            if (!$VM && $ValueLen > 0) {
+                $Arr[] = $Value;
+            }
+        } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
+            $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+            $KeyLen = strlen($Key);
+            $KeyLow = strtolower($Key);
+            $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+            if (!$Key) {
+                return false;
+            }
+            $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
+            $ValueLen = strlen($Value);
+            $ValueLow = strtolower($Value);
+            $CIDRAM['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
+            if (!$VM && $ValueLen > 0) {
+                $Arr[$Key] = $Value;
+            }
+        }
+    }
+    if (!empty($SendTo) && !empty($Key)) {
+        if (!isset($Arr[$Key])) {
+            if ($VM) {
+                return false;
+            }
+            $Arr[$Key] = array();
+        }
+        if (!$CIDRAM['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
+            return false;
         }
     }
     return true;
@@ -947,7 +1005,7 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
             $Begin = $End;
             if ($End = strpos($List, "\n", $Begin + 1)) {
                 $Line = substr($List, $Begin, $End - $Begin);
-                if ($Split = strpos($Line, ',')) {
+                if ($Split = strrpos($Line, ',')) {
                     $Expiry = (int)substr($Line, $Split + 1);
                     if ($Expiry < $CIDRAM['Now']) {
                         $List = str_replace($Line, '', $List);
@@ -960,4 +1018,152 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
             }
         }
     }
+};
+
+/**
+ * Adds integer values; Returns zero if the sum total is negative or if any
+ * contained values aren't integers, and otherwise, returns the sum total.
+ */
+$CIDRAM['ZeroMin'] = function () {
+    $Values = func_get_args();
+    $Count = count($Values);
+    $Sum = 0;
+    for ($Index = 0; $Index < $Count; $Index++) {
+        $ThisValue = (int)$Values[$Index];
+        if ($ThisValue !== $Values[$Index]) {
+            return 0;
+        }
+        $Sum += $ThisValue;
+    }
+    if ($Sum < 0) {
+        return 0;
+    }
+    return $Sum;
+};
+
+/** Wrap state message for front-end. */
+$CIDRAM['WrapRedText'] = function($Err) {
+    return '<div class="txtRd">' . $Err . '<br /><br /></div>';
+};
+
+/** Format filesize information. */
+$CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
+    $Scale = array(
+        $CIDRAM['lang']['field_size_bytes'],
+        $CIDRAM['lang']['field_size_KB'],
+        $CIDRAM['lang']['field_size_MB'],
+        $CIDRAM['lang']['field_size_GB'],
+        $CIDRAM['lang']['field_size_TB']
+    );
+    $Iterate = 0;
+    $Filesize = (int)$Filesize;
+    while ($Filesize > 1024) {
+        $Filesize = $Filesize / 1024;
+        $Iterate++;
+        if ($Iterate > 4) {
+            break;
+        }
+    }
+    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+};
+
+$CIDRAM['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
+    $Entry64 = base64_encode($Entry);
+    while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
+        $EoL = strpos($Source, "\n", $EntryPos + 1);
+        if ($EoL !== false) {
+            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
+            $Source = str_replace($Line, '', $Source);
+            $Rebuild = true;
+        }
+    }
+};
+
+$CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$CIDRAM) {
+    $CIDRAM['FECacheRemove']($Source, $Rebuild, $Entry);
+    $Expires = (int)$Expires;
+    $NewLine = base64_encode($Entry) . ',' . base64_encode($Data) . ',' . $Expires . "\n";
+    $Source .= $NewLine;
+    $Rebuild = true;
+};
+
+$CIDRAM['FECacheGet'] = function ($Source, $Entry) {
+    $Entry = base64_encode($Entry);
+    $EntryPos = strpos($Source, "\n" . $Entry . ',');
+    if ($EntryPos !== false) {
+        $EoL = strpos($Source, "\n", $EntryPos + 1);
+        if ($EoL !== false) {
+            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
+            $Entry = explode(',', $Line);
+            if (!empty($Entry[1])) {
+                return base64_decode($Entry[1]);
+            }
+        }
+    }
+    return false;
+};
+
+/**
+ * Compare two different CIDRAM versions to see which is newer.
+ *
+ * @param string $A The 1st version string.
+ * @param string $B The 2nd version string.
+ * return bool True if the 2nd version is newer than the 1st version, and false
+ *      otherwise (ie, if they're the same, or if the 1st version is newer).
+ */
+$CIDRAM['VersionCompare'] = function ($A, $B) {
+    $A = preg_match('/^([0-9]+)([.-][0-9]+)?([.-][0-9]+)?(-[0-9a-z]+)?/i', $A, $VA);
+    $A = array(
+        'Major' => (int)((isset($VA[1])) ? $VA[1] : 0),
+        'Minor' => (int)((isset($VA[2])) ? substr($VA[2], 1) : 0),
+        'Patch' => (int)((isset($VA[3])) ? substr($VA[3], 1) : 0),
+        'Build' => ((isset($VA[4])) ? strtolower(substr($VA[4], 1)) : 0)
+    );
+    $B = preg_match('/^([0-9]+)([.-][0-9]+)?([.-][0-9]+)?(-[0-9a-z]+)?/i', $B, $VB);
+    $B = array(
+        'Major' => (int)((isset($VB[1])) ? $VB[1] : 0),
+        'Minor' => (int)((isset($VB[2])) ? substr($VB[2], 1) : 0),
+        'Patch' => (int)((isset($VB[3])) ? substr($VB[3], 1) : 0),
+        'Build' => ((isset($VB[4])) ? strtolower(substr($VB[4], 1)) : 0)
+    );
+    if (empty($A['Build'])) {
+        $A['Build'] = 3;
+    } elseif ($A['Build'] === 'experimental' || $A['Build'] === 'alpha') {
+        $A['Build'] = 0;
+    } elseif ($A['Build'] === 'dev') {
+        $A['Build'] = 1;
+    } elseif ($A['Build'] === 'beta') {
+        $A['Build'] = 2;
+    } else {
+        $A['Build'] = -1;
+    }
+    if (empty($B['Build'])) {
+        $B['Build'] = 3;
+    } elseif ($B['Build'] === 'experimental' || $B['Build'] === 'alpha') {
+        $B['Build'] = 0;
+    } elseif ($B['Build'] === 'dev') {
+        $B['Build'] = 1;
+    } elseif ($B['Build'] === 'beta') {
+        $B['Build'] = 2;
+    } else {
+        $B['Build'] = -1;
+    }
+    if (
+        $B['Major'] > $A['Major'] || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] > $A['Minor']
+        ) || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] === $A['Minor'] &&
+            $B['Patch'] > $A['Patch']
+        ) || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] === $A['Minor'] &&
+            $B['Patch'] === $A['Patch'] &&
+            $B['Build'] > $A['Build']
+        )
+    ) {
+        return true;
+    }
+    return false;
 };

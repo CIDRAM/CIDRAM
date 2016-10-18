@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.17).
+ * This file: Functions file (last modified: 2016.10.18).
  */
 
 /**
@@ -1093,6 +1093,71 @@ $CIDRAM['FECacheGet'] = function ($Source, $Entry) {
                 return base64_decode($Entry[1]);
             }
         }
+    }
+    return false;
+};
+
+/**
+ * Compare two different CIDRAM versions to see which is newer.
+ *
+ * @param string $A The 1st version string.
+ * @param string $B The 2nd version string.
+ * return bool True if the 2nd version is newer than the 1st version, and false
+ *      otherwise (ie, if they're the same, or if the 1st version is newer).
+ */
+$CIDRAM['VersionCompare'] = function ($A, $B) {
+    $A = preg_match('/^([0-9]+)([.-][0-9]+)?([.-][0-9]+)?(-[0-9a-z]+)?/i', $A, $VA);
+    $A = array(
+        'Major' => (int)((isset($VA[1])) ? $VA[1] : 0),
+        'Minor' => (int)((isset($VA[2])) ? substr($VA[2], 1) : 0),
+        'Patch' => (int)((isset($VA[3])) ? substr($VA[3], 1) : 0),
+        'Build' => ((isset($VA[4])) ? strtolower(substr($VA[4], 1)) : 0)
+    );
+    $B = preg_match('/^([0-9]+)([.-][0-9]+)?([.-][0-9]+)?(-[0-9a-z]+)?/i', $B, $VB);
+    $B = array(
+        'Major' => (int)((isset($VB[1])) ? $VB[1] : 0),
+        'Minor' => (int)((isset($VB[2])) ? substr($VB[2], 1) : 0),
+        'Patch' => (int)((isset($VB[3])) ? substr($VB[3], 1) : 0),
+        'Build' => ((isset($VB[4])) ? strtolower(substr($VB[4], 1)) : 0)
+    );
+    if (empty($A['Build'])) {
+        $A['Build'] = 3;
+    } elseif ($A['Build'] === 'experimental' || $A['Build'] === 'alpha') {
+        $A['Build'] = 0;
+    } elseif ($A['Build'] === 'dev') {
+        $A['Build'] = 1;
+    } elseif ($A['Build'] === 'beta') {
+        $A['Build'] = 2;
+    } else {
+        $A['Build'] = -1;
+    }
+    if (empty($B['Build'])) {
+        $B['Build'] = 3;
+    } elseif ($B['Build'] === 'experimental' || $B['Build'] === 'alpha') {
+        $B['Build'] = 0;
+    } elseif ($B['Build'] === 'dev') {
+        $B['Build'] = 1;
+    } elseif ($B['Build'] === 'beta') {
+        $B['Build'] = 2;
+    } else {
+        $B['Build'] = -1;
+    }
+    if (
+        $B['Major'] > $A['Major'] || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] > $A['Minor']
+        ) || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] === $A['Minor'] &&
+            $B['Patch'] > $A['Patch']
+        ) || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] === $A['Minor'] &&
+            $B['Patch'] === $A['Patch'] &&
+            $B['Build'] > $A['Build']
+        )
+    ) {
+        return true;
     }
     return false;
 };

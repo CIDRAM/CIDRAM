@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.17).
+ * This file: Front-end handler (last modified: 2016.10.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -385,6 +385,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 
     }
 
+    /** Set page title and begin processing page output. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_accounts'];
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
@@ -442,6 +443,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 /** Configuration. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permissions'] === 1) {
 
+    /** Set page title and begin processing page output. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_config'];
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
@@ -458,84 +460,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 /** Updates. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    /** A form has been submitted. */
-    if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
-
-        /** Update a component. */
-        if ($_POST['do'] === 'update-component' && !empty($_POST['component_id']) && !empty($_POST['component_version_latest'])) {
-            $CIDRAM['UpdateComponent'] = array();
-            if (
-                !preg_match($CIDRAM['FE']['Traverse'], $_POST['component_id']) &&
-                file_exists($CIDRAM['Vault'] . $_POST['component_id']) &&
-                ($CIDRAM['UpdateComponent']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['component_id'])) &&
-                substr($CIDRAM['UpdateComponent']['Data'], 0, 10) === "---\nMeta:\n" &&
-                ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
-                    $CIDRAM['UpdateComponent']['Data'], "\n\n"
-                )) !== false &&
-                $CIDRAM['YAML'](substr(
-                    $CIDRAM['UpdateComponent']['Data'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
-                ), $CIDRAM['ComponentMeta'][$_POST['component_id']]) &&
-                !empty($CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Source']) &&
-                ($CIDRAM['UpdateComponent']['Name'] =
-                    empty($CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Name']) ?
-                    false :
-                    $CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Name']
-                )
-            ) {
-                $CIDRAM['UpdateComponent']['NewData'] =
-                    $CIDRAM['Request']($CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Source']);
-                if (
-                    !empty($CIDRAM['UpdateComponent']['NewData']) &&
-                    substr($CIDRAM['UpdateComponent']['NewData'], 0, 10) === "---\nMeta:\n" &&
-                    ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
-                        $CIDRAM['UpdateComponent']['NewData'], "\n\n"
-                    )) !== false &&
-                    $CIDRAM['YAML'](substr(
-                        $CIDRAM['UpdateComponent']['NewData'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
-                    ), $CIDRAM['ComponentMeta'][$_POST['component_id']]) &&
-                    !empty($CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Name']) &&
-                    !empty($CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Hash']) &&
-                    $CIDRAM['UpdateComponent']['Name'] === $CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Name'] &&
-                    ($CIDRAM['UpdateComponent']['NewVer'] =
-                        strlen($CIDRAM['UpdateComponent']['NewData']) . ':' .
-                        md5($CIDRAM['UpdateComponent']['NewData'])
-                    ) &&
-                    $_POST['component_version_latest'] === $CIDRAM['UpdateComponent']['NewVer']
-                ) {
-                    $CIDRAM['UpdateComponent']['Handle'] = fopen($CIDRAM['Vault'] . $_POST['component_id'], 'w');
-                    fwrite($CIDRAM['UpdateComponent']['Handle'], $CIDRAM['UpdateComponent']['NewData']);
-                    fclose($CIDRAM['UpdateComponent']['Handle']);
-                    $CIDRAM['FECacheAdd'](
-                        $CIDRAM['FE']['Cache'],
-                        $CIDRAM['FE']['Rebuild'],
-                        $CIDRAM['ComponentMeta'][$_POST['component_id']]['Meta']['Hash'],
-                        $CIDRAM['UpdateComponent']['NewVer'] . "\n",
-                        $CIDRAM['Now'] + 3600
-                    );
-                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_updated'];
-                } else {
-                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_update_error'];
-                }
-            } else {
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_doesnt_exist'];
-            }
-            unset($CIDRAM['UpdateComponent']);
-        }
-
-    }
-
-    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_updates'];
-
-    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
-
-    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates_row.html');
-
+    /** Prepare components metadata working array. */
     $CIDRAM['Components'] = array(
         'Files' => scandir($CIDRAM['Vault']),
         'Types' => ',dat,inc,yaml,',
         'Meta' => array()
     );
 
+    /** Count files; Prepare to search for components metadata. */
     $CIDRAM['Count'] = count($CIDRAM['Components']['Files']);
     for (
         $CIDRAM['Iterate'] = 0;
@@ -563,8 +495,82 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         }
     }
 
+    /** A form has been submitted. */
+    if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
+
+        /** Update a component. */
+        if ($_POST['do'] === 'update-component' && !empty($_POST['ID']) && !empty($_POST['Latest'])) {
+            $CIDRAM['UpdateComponent'] = array();
+            if (
+                !preg_match($CIDRAM['FE']['Traverse'], $_POST['ID']) &&
+                file_exists($CIDRAM['Vault'] . $_POST['ID']) &&
+                ($CIDRAM['UpdateComponent']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['ID'])) &&
+                substr($CIDRAM['UpdateComponent']['Data'], 0, 4) === "---\n" &&
+                ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
+                    $CIDRAM['UpdateComponent']['Data'], "\n\n"
+                )) !== false &&
+                $CIDRAM['YAML'](substr(
+                    $CIDRAM['UpdateComponent']['Data'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
+                ), $CIDRAM['ComponentMeta'][$_POST['ID']]) &&
+                !empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Source']) &&
+                ($CIDRAM['UpdateComponent']['Name'] =
+                    empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name']) ?
+                    false :
+                    $CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name']
+                )
+            ) {
+                $CIDRAM['UpdateComponent']['NewData'] =
+                    $CIDRAM['Request']($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Source']);
+                if (
+                    !empty($CIDRAM['UpdateComponent']['NewData']) &&
+                    substr($CIDRAM['UpdateComponent']['NewData'], 0, 10) === "---\nMeta:\n" &&
+                    ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
+                        $CIDRAM['UpdateComponent']['NewData'], "\n\n"
+                    )) !== false &&
+                    $CIDRAM['YAML'](substr(
+                        $CIDRAM['UpdateComponent']['NewData'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
+                    ), $CIDRAM['ComponentMeta'][$_POST['ID']]) &&
+                    !empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name']) &&
+                    !empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Hash']) &&
+                    $CIDRAM['UpdateComponent']['Name'] === $CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name'] &&
+                    ($CIDRAM['UpdateComponent']['NewVer'] =
+                        strlen($CIDRAM['UpdateComponent']['NewData']) . ':' .
+                        md5($CIDRAM['UpdateComponent']['NewData'])
+                    ) &&
+                    $_POST['Latest'] === $CIDRAM['UpdateComponent']['NewVer']
+                ) {
+                    $CIDRAM['UpdateComponent']['Handle'] = fopen($CIDRAM['Vault'] . $_POST['ID'], 'w');
+                    fwrite($CIDRAM['UpdateComponent']['Handle'], $CIDRAM['UpdateComponent']['NewData']);
+                    fclose($CIDRAM['UpdateComponent']['Handle']);
+                    $CIDRAM['FECacheAdd'](
+                        $CIDRAM['FE']['Cache'],
+                        $CIDRAM['FE']['Rebuild'],
+                        $CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Hash'],
+                        $CIDRAM['UpdateComponent']['NewVer'] . "\n",
+                        $CIDRAM['Now'] + 3600
+                    );
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_updated'];
+                } else {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_update_error'];
+                }
+            } else {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_doesnt_exist'];
+            }
+            unset($CIDRAM['UpdateComponent']);
+        }
+
+    }
+
+    /** Set page title and begin processing page output. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_updates'];
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates_row.html');
+
     $CIDRAM['Components'] = array(
         'Meta' => $CIDRAM['Components']['Meta'],
+        'RemoteMeta' => array(),
         'Out' => ''
     );
     reset($CIDRAM['Components']['Meta']);
@@ -603,61 +609,67 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['lang']['response_updates_unable_to_determine'];
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
         }
-        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'])) {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'] =
+        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote'])) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] =
                 $CIDRAM['lang']['response_updates_unable_to_determine'];
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
         } else {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'] = $CIDRAM['FECacheGet'](
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = $CIDRAM['FECacheGet'](
                 $CIDRAM['FE']['Cache'],
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote']
             );
-            if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion']) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'] =
-                    $CIDRAM['Request']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']);
-                if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'])) {
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'] =
-                        $CIDRAM['lang']['response_updates_unable_to_determine'];
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+            if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData']) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] =
+                    $CIDRAM['Request']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote']);
+                if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'])) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = '-';
                 }
                 $CIDRAM['FECacheAdd'](
                     $CIDRAM['FE']['Cache'],
                     $CIDRAM['FE']['Rebuild'],
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'],
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'],
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote'],
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'],
                     $CIDRAM['Now'] + 3600
                 );
             }
-            if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] = preg_replace(
-                    '/^([0-9]+[.-][0-9]+[.-][0-9])(-[0-9a-z]+)?(.*)$/i',
-                    '$1$2',
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion']
+            if (
+                substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 0, 4) === "---\n" &&
+                ($CIDRAM['Components']['EoYAML'] = strpos(
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], "\n\n"
+                )) !== false
+            ) {
+                $CIDRAM['YAML'](
+                    substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
+                    $CIDRAM['Components']['RemoteMeta']
                 );
-            }
-            if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'])) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestVersion'] =
+                if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'])) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
+                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'];
+                } else {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
+                        $CIDRAM['lang']['response_updates_unable_to_determine'];
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+                }
+            } else {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
                     $CIDRAM['lang']['response_updates_unable_to_determine'];
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
             }
-        }
-        if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
-            if (version_compare(
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'],
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'],
-                '>='
-            )) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtGn';
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
-                    $CIDRAM['lang']['response_updates_already_up_to_date'];
-            } else {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
-                    $CIDRAM['lang']['response_updates_outdated'];
-                /* if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['source_url'])) {
+            if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
+                if ($CIDRAM['VersionCompare'](
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'],
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']
+                )) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                        $CIDRAM['lang']['response_updates_outdated'];
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
                         '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
-                }*/
+                } else {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtGn';
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                        $CIDRAM['lang']['response_updates_already_up_to_date'];
+                }
             }
         }
         if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'])) {
@@ -753,6 +765,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 
 }
 
+/** Rebuild cache. */
 if ($CIDRAM['FE']['Rebuild']) {
     $CIDRAM['FE']['FrontEndData'] =
         "USERS\n-----" . $CIDRAM['FE']['UserList'] .

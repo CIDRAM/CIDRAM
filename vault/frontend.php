@@ -723,10 +723,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], "\n\n"
                 )) !== false
             ) {
-                $CIDRAM['YAML'](
-                    substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
-                    $CIDRAM['Components']['RemoteMeta']
-                );
+                if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
+                    $CIDRAM['YAML'](
+                        substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
+                        $CIDRAM['Components']['RemoteMeta']
+                    );
+                }
                 if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'])) {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'];

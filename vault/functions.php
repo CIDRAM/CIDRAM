@@ -1047,8 +1047,14 @@ $CIDRAM['WrapRedText'] = function($Err) {
 };
 
 /** Format filesize information. */
-$CIDRAM['FormatFilesize'] = function (&$Filesize) {
-    $Scale = array('bytes', 'KB', 'MB', 'GB', 'TB');
+$CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
+    $Scale = array(
+        $CIDRAM['lang']['field_size_bytes'],
+        $CIDRAM['lang']['field_size_KB'],
+        $CIDRAM['lang']['field_size_MB'],
+        $CIDRAM['lang']['field_size_GB'],
+        $CIDRAM['lang']['field_size_TB']
+    );
     $Iterate = 0;
     $Filesize = (int)$Filesize;
     while ($Filesize > 1024) {

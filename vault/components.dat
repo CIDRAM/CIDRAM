@@ -1,0 +1,256 @@
+---
+CIDRAM:
+ Name: CIDRAM
+ Extended Description:
+  en: The main package (minus the signatures, documentation, and configuration).
+ Version: 0.6.0-DEV
+ Minimum Required: 0.6.0
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/config.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_accounts.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_accounts_row.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_config.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_home.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_login.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_logs.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_nav_complete_access.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_nav_logs_access_only.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_updates.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_updates_row.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/frontend.css
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/frontend.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/frontend.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/functions.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ar.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ar.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.de.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.de.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.en.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.en.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.en.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.es.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.es.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.fr.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.fr.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.id.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.id.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.it.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.it.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ja.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ja.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ko.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ko.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.nl.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.nl.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.pt.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.pt.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ru.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ru.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.vi.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.vi.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.zh.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.zh.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.zh-tw.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.zh-tw.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/outgen.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/recaptcha.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/template.html
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/template_custom.html
+  To:
+   - .htaccess
+   - cli.php
+   - config.php
+   - fe_assets/_accounts.html
+   - fe_assets/_accounts_row.html
+   - fe_assets/_config.html
+   - fe_assets/_home.html
+   - fe_assets/_login.html
+   - fe_assets/_logs.html
+   - fe_assets/_nav_complete_access.html
+   - fe_assets/_nav_logs_access_only.html
+   - fe_assets/_updates.html
+   - fe_assets/_updates_row.html
+   - fe_assets/frontend.css
+   - fe_assets/frontend.html
+   - frontend.php
+   - functions.php
+   - lang.php
+   - lang/.htaccess
+   - lang/lang.ar.cli.php
+   - lang/lang.ar.php
+   - lang/lang.de.cli.php
+   - lang/lang.de.php
+   - lang/lang.en.cli.php
+   - lang/lang.en.fe.php
+   - lang/lang.en.php
+   - lang/lang.es.cli.php
+   - lang/lang.es.php
+   - lang/lang.fr.cli.php
+   - lang/lang.fr.php
+   - lang/lang.id.cli.php
+   - lang/lang.id.php
+   - lang/lang.it.cli.php
+   - lang/lang.it.php
+   - lang/lang.ja.cli.php
+   - lang/lang.ja.php
+   - lang/lang.ko.cli.php
+   - lang/lang.ko.php
+   - lang/lang.nl.cli.php
+   - lang/lang.nl.php
+   - lang/lang.pt.cli.php
+   - lang/lang.pt.php
+   - lang/lang.ru.cli.php
+   - lang/lang.ru.php
+   - lang/lang.vi.cli.php
+   - lang/lang.vi.php
+   - lang/lang.zh.cli.php
+   - lang/lang.zh.php
+   - lang/lang.zh-tw.cli.php
+   - lang/lang.zh-tw.php
+   - outgen.php
+   - recaptcha.php
+   - template.html
+   - template_custom.html
+  Checksum:
+   - 8e03209e7fc6641b45094e584340feff:83
+   - ccaa4cb3b447453c4e759862d42e4367:24011
+   - f6529deff6ba24d59a531a4b3113fb19:9141
+   - 14c8728c6e8463aea43400194a408bfe:1350
+   - 429746b5de7927ac08959fcbf7256f84:772
+   - 337569b9bdf6681e9e437c1587014b38:173
+   - 005373b9fbed140f8bba05d54f858e71:290
+   - ea499694381ff10a38c4225f4e7bc9d6:426
+   - 6ff9fb63b91538ee5b27969f002dedcf:194
+   - 3c20871facf9c0f0fef35336ad8a9f65:722
+   - a2abeb3e093353cc782a84f3446dd8ca:506
+   - 7a301cd9d67e6fa4e77013e3d636442c:569
+   - d2f2749835f3d6666520cda1447092be:666
+   - cb0d9f52aaa0c373f11089e78bfe4f1e:1947
+   - 29e947b3e86f19d8653c7215303e4036:845
+   - 4b11a4b403436014111c76a75122233b:47968
+   - c37e247b42fa844428d67963a5550d75:56521
+   - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 115c06c3ff512081622e9ecd06d08c2c:4317
+   - aa7e85f46e38fcd0f87074c2e203d345:3618
+   - 14491998aaee8837eb833b9600662959:4495
+   - fb002d68c0a17bf725d848d27a66f505:4070
+   - 10ebd10d026c244e80210d160f5f5505:4157
+   - 63e5350d04e053a4390d7d26e041366b:4537
+   - 54e69f219cee5979cea23b191d181734:3791
+   - b029d949ce43ab84c02e3e7e9a924790:4416
+   - f8744767aedafc8582e04b8f4748696b:4017
+   - 806666788d96ef329b73a3722c35d6a5:4446
+   - df79de79b4f44c140d18702ae53967bc:4154
+   - efaed7a0f277c29e052877b5162fa840:4297
+   - 48333c3701169022080f41242db40785:3919
+   - d4ac8f876d8ea002885dc841beafcbec:4331
+   - 0d457d3c74ca6aa851f7a286062434ff:4058
+   - 0b192405a6c75506f00f8672d4c724af:4657
+   - 6482e506a59c0a1b6f2bb4595b54293b:3700
+   - c94d36c1c296a3feef955393afd06552:4236
+   - d0ce0569b51eab116c845631302bf739:3406
+   - 99757f07d3eeebe9fda9ef80f1afd5d3:4394
+   - f3608c6b1566de4a8eb23ec1af38ddac:3934
+   - cfd6161777f7b09594193e59901098c1:4414
+   - b487b7ef95cd8bcdb0f11e2f1e85ee9c:3969
+   - eb9ccbc9fde9aed73bdbeb84d35d8a38:5850
+   - acf444fbff9cfe40b2ec8cb1cdaf2c67:5417
+   - b1c07aea2c985d415b6423a46a2954b6:5081
+   - 51cc9fc6af315c079fcd6c509b458032:4622
+   - 55213ebf26192d4d47b228144815a8a9:4015
+   - 935bb65d7fb589e0f168d870f0c0466f:3546
+   - 9ad86202847438817ddf1ab67993d045:4014
+   - 6168c5152652ec516c8b1119a5cdba25:3539
+   - 1ba6a1ffa4a263d3271e3ca827b7e3bb:14939
+   - 2f007322fe51be35be62b2931ac2ee93:11237
+   - 5dae391b87a361ca14df4e5b4e14eb5e:2721
+   - 62b0ddd9387072bf13d0cc03691a2746:2241
+ Reannotate: components.dat
+IPv4:
+ Name:
+  en: IPv4 signatures file.
+  ar: عناوين IPv4 ملف التوقيعات.
+  de: IPv4 Signaturdatei.
+  es: Archivo de firmas por IPv4.
+  fr: Fichier de signatures pour IPv4.
+  id: File tanda tangan IPv4.
+  it: File di firme per IPv4.
+  ja: IPv4のシグネチャファイル。
+  nl: IPv4 handtekeningen bestand.
+  pt: Arquivo de assinaturas para IPv4.
+  ru: IPv4 файла сигнатур.
+  vi: Tập tin chữ ký IPv4.
+  zh: IPv4签名文件。
+  zh-TW: IPv4簽名文件。
+ Extended Description:
+  en: The default signatures normally included with the main package.
+ Version: 2016.10.18
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv4.dat
+  To:
+   - ipv4.dat
+  Checksum:
+   - 4a672ab3279320862c67a687c066a72a:634146
+ Reannotate: components.dat
+IPv6:
+ Name:
+  en: IPv6 signatures file.
+  ar: عناوين IPv6 ملف التوقيعات.
+  de: IPv6 Signaturdatei.
+  es: Archivo de firmas por IPv6.
+  fr: Fichier de signatures pour IPv6.
+  id: File tanda tangan IPv6.
+  it: File di firme per IPv6.
+  ja: IPv6のシグネチャファイル。
+  nl: IPv6 handtekeningen bestand.
+  pt: Arquivo de assinaturas para IPv6.
+  ru: IPv6 файла сигнатур.
+  vi: Tập tin chữ ký IPv6.
+  zh: IPv6签名文件。
+  zh-TW: IPv6簽名文件。
+ Extended Description:
+  en: The default signatures normally included with the main package.
+ Version: 2016.10.18
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv6.dat
+  To:
+   - ipv6.dat
+  Checksum:
+   - 2894ddc5c1a56b8c60270ceadd9118b2:2192990
+ Reannotate: components.dat
+Bypasses:
+ Name:
+  en: Default signature bypasses.
+ Extended Description:
+  en: The default signature bypass files normally included with the main package.
+ Version: 2016.06.18
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/rules_as6939.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/rules_softlayer.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/rules_specific.php
+  To:
+   - rules_as6939.php
+   - rules_softlayer.php
+   - rules_specific.php
+  Checksum:
+   - 2b482b5eda25ff40f50d961c396e8c6f:1782
+   - 15904c62966774bb016edb22be687f2c:1985
+   - 934f3bd84ec9e48034df88e282fc6055:1558
+ Reannotate: components.dat
+

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2016.10.12).
+ * This file: English language data for the front-end (last modified: 2016.10.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -28,6 +28,12 @@ $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Password';
 $CIDRAM['lang']['field_permissions'] = 'Permissions';
 $CIDRAM['lang']['field_set_new_password'] = 'Set New Password';
+$CIDRAM['lang']['field_size'] = 'Total Size: ';
+$CIDRAM['lang']['field_size_bytes'] = 'bytes';
+$CIDRAM['lang']['field_size_GB'] = 'GB';
+$CIDRAM['lang']['field_size_KB'] = 'KB';
+$CIDRAM['lang']['field_size_MB'] = 'MB';
+$CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_update'] = 'Update';
 $CIDRAM['lang']['field_username'] = 'Username';
@@ -47,7 +53,6 @@ $CIDRAM['lang']['response_accounts_created'] = 'Account successfully created!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account successfully deleted!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'That account doesn\'t exist.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Password successfully updated!';
-$CIDRAM['lang']['response_component_doesnt_exist'] = 'The specified component doesn\'t exist or can\'t be updated automatically.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
 $CIDRAM['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Login failure! Invalid password!';
@@ -56,6 +61,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!'
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Username field empty!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
 $CIDRAM['lang']['response_updates_outdated'] = 'Outdated!';
+$CIDRAM['lang']['response_updates_outdated_manually'] = 'Outdated (please update manually)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
 $CIDRAM['lang']['state_complete_access'] = 'Complete access';
 $CIDRAM['lang']['state_default_password'] = 'Warning: Using default password!';

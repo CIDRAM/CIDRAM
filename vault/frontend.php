@@ -464,7 +464,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     $CIDRAM['Components'] = array(
         'Files' => scandir($CIDRAM['Vault']),
         'Types' => ',dat,inc,yaml,',
-        'Meta' => array()
+        'Meta' => array(),
+        'RemoteMeta' => array(),
     );
 
     /** Count files; Prepare to search for components metadata. */
@@ -499,64 +500,134 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
 
         /** Update a component. */
-        if ($_POST['do'] === 'update-component' && !empty($_POST['ID']) && !empty($_POST['Latest'])) {
-            $CIDRAM['UpdateComponent'] = array();
-            if (
-                !preg_match($CIDRAM['FE']['Traverse'], $_POST['ID']) &&
-                file_exists($CIDRAM['Vault'] . $_POST['ID']) &&
-                ($CIDRAM['UpdateComponent']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['ID'])) &&
-                substr($CIDRAM['UpdateComponent']['Data'], 0, 4) === "---\n" &&
-                ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
-                    $CIDRAM['UpdateComponent']['Data'], "\n\n"
-                )) !== false &&
-                $CIDRAM['YAML'](substr(
-                    $CIDRAM['UpdateComponent']['Data'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
-                ), $CIDRAM['ComponentMeta'][$_POST['ID']]) &&
-                !empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Source']) &&
-                ($CIDRAM['UpdateComponent']['Name'] =
-                    empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name']) ?
-                    false :
-                    $CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name']
-                )
-            ) {
-                $CIDRAM['UpdateComponent']['NewData'] =
-                    $CIDRAM['Request']($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Source']);
-                if (
-                    !empty($CIDRAM['UpdateComponent']['NewData']) &&
-                    substr($CIDRAM['UpdateComponent']['NewData'], 0, 10) === "---\nMeta:\n" &&
-                    ($CIDRAM['UpdateComponent']['EoYAML'] = strpos(
-                        $CIDRAM['UpdateComponent']['NewData'], "\n\n"
-                    )) !== false &&
-                    $CIDRAM['YAML'](substr(
-                        $CIDRAM['UpdateComponent']['NewData'], 4, $CIDRAM['UpdateComponent']['EoYAML'] - 4
-                    ), $CIDRAM['ComponentMeta'][$_POST['ID']]) &&
-                    !empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name']) &&
-                    !empty($CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Hash']) &&
-                    $CIDRAM['UpdateComponent']['Name'] === $CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Name'] &&
-                    ($CIDRAM['UpdateComponent']['NewVer'] =
-                        strlen($CIDRAM['UpdateComponent']['NewData']) . ':' .
-                        md5($CIDRAM['UpdateComponent']['NewData'])
-                    ) &&
-                    $_POST['Latest'] === $CIDRAM['UpdateComponent']['NewVer']
-                ) {
-                    $CIDRAM['UpdateComponent']['Handle'] = fopen($CIDRAM['Vault'] . $_POST['ID'], 'w');
-                    fwrite($CIDRAM['UpdateComponent']['Handle'], $CIDRAM['UpdateComponent']['NewData']);
-                    fclose($CIDRAM['UpdateComponent']['Handle']);
-                    $CIDRAM['FECacheAdd'](
-                        $CIDRAM['FE']['Cache'],
-                        $CIDRAM['FE']['Rebuild'],
-                        $CIDRAM['ComponentMeta'][$_POST['ID']]['Meta']['Hash'],
-                        $CIDRAM['UpdateComponent']['NewVer'] . "\n",
-                        $CIDRAM['Now'] + 3600
-                    );
-                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_updated'];
-                } else {
-                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_update_error'];
+        if (
+            $_POST['do'] === 'update-component' &&
+            !empty($_POST['ID']) &&
+            isset($CIDRAM['Components']['Meta'][$_POST['ID']]['Remote'])
+        ) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = $CIDRAM['FECacheGet'](
+                $CIDRAM['FE']['Cache'],
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote']
+            );
+            if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData']) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] =
+                    $CIDRAM['Request']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote']);
+                if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'])) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = '-';
                 }
-            } else {
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_doesnt_exist'];
+                $CIDRAM['FECacheAdd'](
+                    $CIDRAM['FE']['Cache'],
+                    $CIDRAM['FE']['Rebuild'],
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote'],
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'],
+                    $CIDRAM['Now'] + 3600
+                );
             }
-            unset($CIDRAM['UpdateComponent']);
+            if (
+                substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 0, 4) === "---\n" &&
+                ($CIDRAM['Components']['EoYAML'] = strpos(
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], "\n\n"
+                )) !== false &&
+                $CIDRAM['YAML'](
+                    substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
+                    $CIDRAM['Components']['RemoteMeta']
+                ) &&
+                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required']) &&
+                !$CIDRAM['VersionCompare'](
+                    $CIDRAM['ScriptVersion'],
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required']
+                ) &&
+                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From']) &&
+                is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From']) &&
+                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To']) &&
+                is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To']) &&
+                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Reannotate']) &&
+                !preg_match($CIDRAM['FE']['Traverse'], $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Reannotate']) &&
+                file_exists($CIDRAM['Vault'] . $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Reannotate']) &&
+                ($CIDRAM['Components']['OldMeta'] = $CIDRAM['ReadFile'](
+                    $CIDRAM['Vault'] . $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Reannotate']
+                )) &&
+                preg_match(
+                    "/(\n" . $CIDRAM['Components']['Key'] . ":)(\n [^\n]*)*\n/i",
+                    $CIDRAM['Components']['OldMeta'],
+                    $CIDRAM['Components']['OldMetaMatches']
+                ) &&
+                ($CIDRAM['Components']['OldMetaMatches'] = $CIDRAM['Components']['OldMetaMatches'][0]) &&
+                ($CIDRAM['Components']['NewMeta'] = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData']) &&
+                preg_match(
+                    "/(\n" . $CIDRAM['Components']['Key'] . ":)(\n [^\n]*)*\n/i",
+                    $CIDRAM['Components']['NewMeta'],
+                    $CIDRAM['Components']['NewMetaMatches']
+                ) &&
+                ($CIDRAM['Components']['NewMetaMatches'] = $CIDRAM['Components']['NewMetaMatches'][0])
+            ) {
+                $CIDRAM['Components']['NewMeta'] = str_replace(
+                    $CIDRAM['Components']['OldMetaMatches'],
+                    $CIDRAM['Components']['NewMetaMatches'],
+                    $CIDRAM['Components']['OldMeta']
+                );
+                $CIDRAM['Count'] = count($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From']);
+                $CIDRAM['RemoteFiles'] = array();
+                for (
+                    $CIDRAM['Iterate'] = 0;
+                    $CIDRAM['Iterate'] < $CIDRAM['Count'];
+                    $CIDRAM['Iterate']++
+                ) {
+                    if (
+                        (
+                            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
+                            !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['Iterate']]) && (
+                                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['Iterate']] ===
+                                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['Iterate']]
+                            )
+                        ) ||
+                        empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From'][$CIDRAM['Iterate']]) ||
+                        empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'][$CIDRAM['Iterate']]) ||
+                        !$CIDRAM['ThisFile'] = $CIDRAM['Request'](
+                            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['From'][$CIDRAM['Iterate']]
+                        ) || (
+                            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
+                                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['Iterate']] !==
+                                md5($CIDRAM['ThisFile']) . ':' . strlen($CIDRAM['ThisFile'])
+                        )
+                    ) {
+                        continue;
+                    }
+                    $CIDRAM['ThisFileName'] = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'][$CIDRAM['Iterate']];
+                    $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = true;
+                    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['ThisFileName'], 'w');
+                    fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
+                    fclose($CIDRAM['Handle']);
+                    $CIDRAM['ThisFile'] = '';
+                }
+                $CIDRAM['Count'] = count($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']);
+                for (
+                    $CIDRAM['Iterate'] = 0;
+                    $CIDRAM['Iterate'] < $CIDRAM['Count'];
+                    $CIDRAM['Iterate']++
+                ) {
+                    $CIDRAM['ThisFileName'] =
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'][$CIDRAM['Iterate']];
+                    if (isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']])) {
+                        continue;
+                    }
+                    if (
+                        file_exists($CIDRAM['Vault'] . $CIDRAM['ThisFileName']) &&
+                        !preg_match($CIDRAM['FE']['Traverse'], $CIDRAM['ThisFileName'])
+                    ) {
+                        unlink($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                    }
+                }
+                $CIDRAM['Handle'] =
+                    fopen($CIDRAM['Vault'] . $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Reannotate'], 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['Components']['NewMeta']);
+                fclose($CIDRAM['Handle']);
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']] =
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']];
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_updated'];
+            } else {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_update_error'];
+            }
         }
 
     }
@@ -570,7 +641,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
     $CIDRAM['Components'] = array(
         'Meta' => $CIDRAM['Components']['Meta'],
-        'RemoteMeta' => array(),
+        'RemoteMeta' => $CIDRAM['Components']['RemoteMeta'],
         'Out' => ''
     );
     reset($CIDRAM['Components']['Meta']);
@@ -598,6 +669,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     key($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Name']);
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Name'] =
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Name'][$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['NameKey']];
+            }
+        }
+        if (is_array($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
+            if (isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'][$CIDRAM['Config']['general']['lang']])) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'] =
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'][$CIDRAM['Config']['general']['lang']];
+            } elseif (isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description']['en'])) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'] =
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description']['en'];
+            } else {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['EDK'] =
+                    key($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description']);
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'] =
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'][$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['EDK']];
             }
         }
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['ID'] = $CIDRAM['Components']['Key'];
@@ -661,10 +746,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']
                 )) {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
-                        $CIDRAM['lang']['response_updates_outdated'];
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
-                        '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
+                    if (
+                        !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required']) &&
+                        $CIDRAM['VersionCompare'](
+                            $CIDRAM['ScriptVersion'],
+                            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required']
+                        )
+                    ) {
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                            $CIDRAM['lang']['response_updates_outdated_manually'];
+                    } else {
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                            $CIDRAM['lang']['response_updates_outdated'];
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                            '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
+                    }
                 } else {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtGn';
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
@@ -672,6 +768,54 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             }
         }
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] = 0;
+        if (
+            !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum']) &&
+            is_array($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum'])
+        ) {
+            $CIDRAM['Components']['FilesCount'] =
+                count($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum']);
+            for (
+                $CIDRAM['FilesIterate'] = 0;
+                $CIDRAM['FilesIterate'] < $CIDRAM['Components']['FilesCount'];
+                $CIDRAM['FilesIterate']++
+            ) {
+                if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['FilesIterate']])) {
+                    continue;
+                }
+                $CIDRAM['FilesThis'] =
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['FilesIterate']];
+                if (($CIDRAM['FilesDelimit'] = strpos($CIDRAM['FilesThis'], ':')) !== false) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] +=
+                        (int)substr($CIDRAM['FilesThis'], $CIDRAM['FilesDelimit'] + 1);
+                }
+            }
+        }
+        $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize']);
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'] = 0;
+        if (
+            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum']) &&
+            is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'])
+        ) {
+            $CIDRAM['Components']['FilesCount'] =
+                count($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum']);
+            for (
+                $CIDRAM['FilesIterate'] = 0;
+                $CIDRAM['FilesIterate'] < $CIDRAM['Components']['FilesCount'];
+                $CIDRAM['FilesIterate']++
+            ) {
+                if (empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['FilesIterate']])) {
+                    continue;
+                }
+                $CIDRAM['FilesThis'] =
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'][$CIDRAM['FilesIterate']];
+                if (($CIDRAM['FilesDelimit'] = strpos($CIDRAM['FilesThis'], ':')) !== false) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'] +=
+                        (int)substr($CIDRAM['FilesThis'], $CIDRAM['FilesDelimit'] + 1);
+                }
+            }
+        }
+        $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize']);
         if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'])) {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] .=
                 '<br /><select name="do" class="half">' .
@@ -771,9 +915,9 @@ if ($CIDRAM['FE']['Rebuild']) {
         "USERS\n-----" . $CIDRAM['FE']['UserList'] .
         "\nSESSIONS\n--------" . $CIDRAM['FE']['SessionList'] .
         "\nCACHE\n-----" . $CIDRAM['FE']['Cache'];
-    $CIDRAM['FE']['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'w');
-    fwrite($CIDRAM['FE']['Handle'], $CIDRAM['FE']['FrontEndData']);
-    fclose($CIDRAM['FE']['Handle']);
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat', 'w');
+    fwrite($CIDRAM['Handle'], $CIDRAM['FE']['FrontEndData']);
+    fclose($CIDRAM['Handle']);
 }
 
 die;

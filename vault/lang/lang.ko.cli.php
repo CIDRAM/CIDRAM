@@ -8,9 +8,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2016.08.03).
+ * This file: Korean language data (last modified: 2016.10.20).
  *
- * @todo (This is incomplete).
+ * @todo Most of these confirmed to be incorrect; Changes required and pending.
  */
 
 /** Prevents execution from outside of CIDRAM. */

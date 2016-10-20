@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.18).
+ * This file: Functions file (last modified: 2016.10.19).
  */
 
 /**
@@ -1126,29 +1126,7 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
         'Patch' => (int)((isset($VB[3])) ? substr($VB[3], 1) : 0),
         'Build' => ((isset($VB[4])) ? strtolower(substr($VB[4], 1)) : 0)
     );
-    if (empty($A['Build'])) {
-        $A['Build'] = 3;
-    } elseif ($A['Build'] === 'experimental' || $A['Build'] === 'alpha') {
-        $A['Build'] = 0;
-    } elseif ($A['Build'] === 'dev') {
-        $A['Build'] = 1;
-    } elseif ($A['Build'] === 'beta') {
-        $A['Build'] = 2;
-    } else {
-        $A['Build'] = -1;
-    }
-    if (empty($B['Build'])) {
-        $B['Build'] = 3;
-    } elseif ($B['Build'] === 'experimental' || $B['Build'] === 'alpha') {
-        $B['Build'] = 0;
-    } elseif ($B['Build'] === 'dev') {
-        $B['Build'] = 1;
-    } elseif ($B['Build'] === 'beta') {
-        $B['Build'] = 2;
-    } else {
-        $B['Build'] = -1;
-    }
-    if (
+    return (
         $B['Major'] > $A['Major'] || (
             $B['Major'] === $A['Major'] &&
             $B['Minor'] > $A['Minor']
@@ -1160,10 +1138,22 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
             $B['Major'] === $A['Major'] &&
             $B['Minor'] === $A['Minor'] &&
             $B['Patch'] === $A['Patch'] &&
-            $B['Build'] > $A['Build']
+            !empty($A['Build']) && (
+                empty($B['Build']) ||
+                $B['Build'] > $A['Build']
+            )
         )
-    ) {
-        return true;
-    }
-    return false;
+    );
+};
+
+/**
+ * Remove sub-arrays from an array.
+ *
+ * @param array $Arr An array.
+ * return array An array.
+ */
+$CIDRAM['ArrayFlatten'] = function ($Arr) {
+    return array_filter($Arr, function () {
+        return (!is_array(func_get_args()[0]));
+    });
 };

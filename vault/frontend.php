@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.18).
+ * This file: Front-end handler (last modified: 2016.10.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,9 @@ if (empty($CIDRAM['QueryVars']['cidram-page'])) {
 
 /** Populate common front-end variables. */
 $CIDRAM['FE'] = array(
+    'PIP_Left' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+ga6vJIEDh0UmzKQA7',
+    'PIP_Right' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+gmwvoUGBSSfOuKQA7',
+    'PIP_Key' => 'R0lGODlhBwAJAIABAJkAAP///yH5BAEKAAEALAAAAAAHAAkAAAINjH+gyaaAAkQrznRbKAA7',
     'Template' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.html'),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
@@ -45,8 +48,12 @@ $CIDRAM['FE'] = array(
 if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
     $CIDRAM['lang']['textDir'] = 'ltr';
     $CIDRAM['FE']['FE_Align'] = 'left';
+    $CIDRAM['FE']['FE_Align_Reverse'] = 'right';
+    $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Right'];
 } else {
     $CIDRAM['FE']['FE_Align'] = 'right';
+    $CIDRAM['FE']['FE_Align_Reverse'] = 'left';
+    $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Left'];
 }
 
 /** A simple passthru for the front-end CSS. */
@@ -548,14 +555,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Vault'] . $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Reannotate']
                 )) &&
                 preg_match(
-                    "/(\n" . $_POST['ID'] . ":)(\n [^\n]*)*\n/i",
+                    "\x01(\n" . preg_quote($_POST['ID']) . ":)(\n [^\n]*)*\n\x01i",
                     $CIDRAM['Components']['OldMeta'],
                     $CIDRAM['Components']['OldMetaMatches']
                 ) &&
                 ($CIDRAM['Components']['OldMetaMatches'] = $CIDRAM['Components']['OldMetaMatches'][0]) &&
                 ($CIDRAM['Components']['NewMeta'] = $CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData']) &&
                 preg_match(
-                    "/(\n" . $_POST['ID'] . ":)(\n [^\n]*)*\n/i",
+                    "\x01(\n" . preg_quote($_POST['ID']) . ":)(\n [^\n]*)*\n\x01i",
                     $CIDRAM['Components']['NewMeta'],
                     $CIDRAM['Components']['NewMetaMatches']
                 ) &&
@@ -630,6 +637,61 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             }
         }
 
+        /** Uninstall a component. */
+        if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
+            if (
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Uninstallable']) &&
+                ($CIDRAM['Components']['OldMeta'] = $CIDRAM['ReadFile'](
+                    $CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$_POST['ID']]['Reannotate']
+                )) &&
+                preg_match(
+                    "\x01(\n" . preg_quote($_POST['ID']) . ":)(\n [^\n]*)*\n\x01i",
+                    $CIDRAM['Components']['OldMeta'],
+                    $CIDRAM['Components']['OldMetaMatches']
+                ) &&
+                ($CIDRAM['Components']['OldMetaMatches'] = $CIDRAM['Components']['OldMetaMatches'][0])
+            ) {
+                $CIDRAM['Components']['NewMeta'] = str_replace(
+                    $CIDRAM['Components']['OldMetaMatches'],
+                    preg_replace(
+                        array(
+                            "/\n Files:(\n  [^\n]*)*\n/i",
+                            "/\n Version: [^\n]*\n/i",
+                        ),
+                        "\n",
+                        $CIDRAM['Components']['OldMetaMatches']
+                    ),
+                    $CIDRAM['Components']['OldMeta']
+                );
+                $CIDRAM['Count'] = count($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
+                for (
+                    $CIDRAM['Iterate'] = 0;
+                    $CIDRAM['Iterate'] < $CIDRAM['Count'];
+                    $CIDRAM['Iterate']++
+                ) {
+                    $CIDRAM['ThisFileName'] =
+                        $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']];
+                    if (
+                        !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']]) &&
+                        !preg_match($CIDRAM['FE']['Traverse'], $CIDRAM['ThisFileName']) &&
+                        file_exists($CIDRAM['Vault'] . $CIDRAM['ThisFileName'])
+                    ) {
+                        unlink($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                    }
+                }
+                $CIDRAM['Handle'] =
+                    fopen($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$_POST['ID']]['Reannotate'], 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['Components']['NewMeta']);
+                fclose($CIDRAM['Handle']);
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Version'] = false;
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files'] = false;
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_uninstalled'];
+            } else {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_uninstall_error'];
+            }
+        }
+
     }
 
     /** Set page title and begin processing page output. */
@@ -690,14 +752,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] = '';
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = '';
         if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'])) {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'] =
-                $CIDRAM['lang']['response_updates_unable_to_determine'];
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+            if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'] =
+                    $CIDRAM['lang']['response_updates_not_installed'];
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                    $CIDRAM['lang']['response_updates_not_installed'];
+            } else {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'] =
+                    $CIDRAM['lang']['response_updates_unable_to_determine'];
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+            }
         }
         if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote'])) {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] =
                 $CIDRAM['lang']['response_updates_unable_to_determine'];
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+            if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+            }
         } else {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = $CIDRAM['FECacheGet'](
                 $CIDRAM['FE']['Cache'],
@@ -733,20 +805,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'];
                 } else {
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
-                        $CIDRAM['lang']['response_updates_unable_to_determine'];
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+                    if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
+                    }
                 }
-            } else {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
-                    $CIDRAM['lang']['response_updates_unable_to_determine'];
+            } elseif (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
             }
             if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass']) {
-                if ($CIDRAM['VersionCompare'](
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'],
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']
-                )) {
+                if (
+                    !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']) &&
+                    $CIDRAM['VersionCompare'](
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'],
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']
+                    )
+                ) {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
                     if (
                         !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required']) &&
@@ -758,10 +831,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
                             $CIDRAM['lang']['response_updates_outdated_manually'];
                     } else {
-                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
-                            $CIDRAM['lang']['response_updates_outdated'];
-                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
-                            '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
+                        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])) {
+                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                                $CIDRAM['lang']['response_updates_not_installed'];
+                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                                '<option value="update-component">' . $CIDRAM['lang']['field_install'] . '</option>';
+                        } else {
+                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                                $CIDRAM['lang']['response_updates_outdated'];
+                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                                '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
+                        }
                     }
                 } else {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtGn';
@@ -769,6 +849,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         $CIDRAM['lang']['response_updates_already_up_to_date'];
                 }
             }
+            if (
+                !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Uninstallable']) &&
+                !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])
+            ) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                    '<option value="uninstall-component">' . $CIDRAM['lang']['field_uninstall'] . '</option>';
+            }
+        }
+        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'])) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
+                $CIDRAM['lang']['response_updates_unable_to_determine'];
         }
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] = 0;
         if (
@@ -826,7 +917,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] = '';
         }
         $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
-            $CIDRAM['lang'] + $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']],
+            $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]),
             $CIDRAM['FE']['UpdatesRow']
         );
         next($CIDRAM['Components']['Meta']);

@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for CLI (last modified: 2016.08.21).
- *
- * @todo (This is incomplete).
+ * This file: German language data for CLI (last modified: 2016.10.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */

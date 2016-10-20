@@ -8,7 +8,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2016.10.19).
+ * This file: Dutch language data for the front-end (last modified: 2016.10.20).
+ *
+ * @todo (This is incomplete).
  */
 
 /** Prevents execution from outside of CIDRAM. */

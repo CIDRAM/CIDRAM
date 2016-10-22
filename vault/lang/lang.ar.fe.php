@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.10.20).
+ * This file: Arabic language data for the front-end (last modified: 2016.10.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">خروج</a>';
-$CIDRAM['lang']['field_component'] = 'مكون';
+$CIDRAM['lang']['field_component'] = 'وحدة';
 $CIDRAM['lang']['field_create_new_account'] = 'خلق جديد حساب';
 $CIDRAM['lang']['field_delete_account'] = 'حذف حساب';
 $CIDRAM['lang']['field_install'] = 'تثبيت';
@@ -55,16 +55,17 @@ $CIDRAM['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!'
 $CIDRAM['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'حساب غير موجود.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'كلمه السر التحديث بنجاح!';
-$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'مكون إلغاء تثبيت بنجاح.';
-$CIDRAM['lang']['response_component_successfully_updated'] = 'مكون تم التحديث بنجاح.';
-$CIDRAM['lang']['response_component_uninstall_error'] = 'حدث خطأ أثناء محاولة إلغاء تثبيت المكون.';
-$CIDRAM['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث المكون.';
+$CIDRAM['lang']['response_component_successfully_installed'] = 'وحدة تم التثبيت بنجاح.';
+$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'وحدة إلغاء تثبيت بنجاح.';
+$CIDRAM['lang']['response_component_successfully_updated'] = 'وحدة تم التحديث بنجاح.';
+$CIDRAM['lang']['response_component_uninstall_error'] = 'حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة.';
+$CIDRAM['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث الوحدة.';
 $CIDRAM['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخول! غير صالحة كلمه السر!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
-$CIDRAM['lang']['response_updates_not_installed'] = 'مكون غير مثبت!';
+$CIDRAM['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
 $CIDRAM['lang']['response_updates_outdated'] = 'عفا عليها الزمن!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'عفا عليها الزمن (يرجى تحديث يدويا)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';

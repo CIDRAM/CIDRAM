@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.10.20).
- *
- * @todo (This is incomplete).
+ * This file: German language data for the front-end (last modified: 2016.10.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,69 +16,70 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>';
-$CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Log Out</a>';
-$CIDRAM['lang']['field_component'] = 'Component';
-$CIDRAM['lang']['field_create_new_account'] = 'Create New Account';
-$CIDRAM['lang']['field_delete_account'] = 'Delete Account';
-$CIDRAM['lang']['field_install'] = 'Install';
-$CIDRAM['lang']['field_latest_version'] = 'Latest Version';
-$CIDRAM['lang']['field_log_in'] = 'Log In';
+$CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startseite</a> | <a href="?cidram-page=logout">Ausloggen</a>';
+$CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Ausloggen</a>';
+$CIDRAM['lang']['field_component'] = 'Komponente';
+$CIDRAM['lang']['field_create_new_account'] = 'Neuen Konto erstellen';
+$CIDRAM['lang']['field_delete_account'] = 'Konto löschen';
+$CIDRAM['lang']['field_install'] = 'Installieren';
+$CIDRAM['lang']['field_latest_version'] = 'Letzte Version';
+$CIDRAM['lang']['field_log_in'] = 'Einloggen';
 $CIDRAM['lang']['field_ok'] = 'OK';
-$CIDRAM['lang']['field_options'] = 'Options';
-$CIDRAM['lang']['field_password'] = 'Password';
-$CIDRAM['lang']['field_permissions'] = 'Permissions';
-$CIDRAM['lang']['field_set_new_password'] = 'Set New Password';
-$CIDRAM['lang']['field_size'] = 'Total Size: ';
-$CIDRAM['lang']['field_size_bytes'] = 'bytes';
+$CIDRAM['lang']['field_options'] = 'Optionen';
+$CIDRAM['lang']['field_password'] = 'Passwort';
+$CIDRAM['lang']['field_permissions'] = 'Berechtigungen';
+$CIDRAM['lang']['field_set_new_password'] = 'Neues Passwort eingeben';
+$CIDRAM['lang']['field_size'] = 'Gesamtgröße: ';
+$CIDRAM['lang']['field_size_bytes'] = 'Byte';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
-$CIDRAM['lang']['field_uninstall'] = 'Uninstall';
-$CIDRAM['lang']['field_update'] = 'Update';
-$CIDRAM['lang']['field_username'] = 'Username';
-$CIDRAM['lang']['field_your_version'] = 'Your Version';
-$CIDRAM['lang']['header_login'] = 'Please log in to continue.';
-$CIDRAM['lang']['link_accounts'] = 'Accounts';
-$CIDRAM['lang']['link_config'] = 'Configuration';
-$CIDRAM['lang']['link_documentation'] = 'Documentation';
-$CIDRAM['lang']['link_home'] = 'Home';
-$CIDRAM['lang']['link_logs'] = 'Logs';
-$CIDRAM['lang']['link_updates'] = 'Updates';
-$CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!';
-$CIDRAM['lang']['logs_no_logfiles_available'] = 'No logfiles available.';
-$CIDRAM['lang']['logs_no_logfile_selected'] = 'No logfile selected.';
-$CIDRAM['lang']['response_accounts_already_exists'] = 'An account with that username already exists!';
-$CIDRAM['lang']['response_accounts_created'] = 'Account successfully created!';
-$CIDRAM['lang']['response_accounts_deleted'] = 'Account successfully deleted!';
-$CIDRAM['lang']['response_accounts_doesnt_exist'] = 'That account doesn\'t exist.';
-$CIDRAM['lang']['response_accounts_password_updated'] = 'Password successfully updated!';
-$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component successfully uninstalled.';
-$CIDRAM['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
-$CIDRAM['lang']['response_component_uninstall_error'] = 'An error occurred while attempting to uninstall the component.';
-$CIDRAM['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
-$CIDRAM['lang']['response_login_invalid_password'] = 'Login failure! Invalid password!';
-$CIDRAM['lang']['response_login_invalid_username'] = 'Login failure! Username doesn\'t exist!';
-$CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!';
-$CIDRAM['lang']['response_login_username_field_empty'] = 'Username field empty!';
-$CIDRAM['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
-$CIDRAM['lang']['response_updates_not_installed'] = 'Component not installed!';
-$CIDRAM['lang']['response_updates_outdated'] = 'Outdated!';
-$CIDRAM['lang']['response_updates_outdated_manually'] = 'Outdated (please update manually)!';
-$CIDRAM['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
-$CIDRAM['lang']['state_complete_access'] = 'Complete access';
-$CIDRAM['lang']['state_default_password'] = 'Warning: Using default password!';
-$CIDRAM['lang']['state_logged_in'] = 'Logged in';
-$CIDRAM['lang']['state_logs_access_only'] = 'Logs access only';
-$CIDRAM['lang']['state_password_not_valid'] = 'Warning: This account is not using a valid password!';
-$CIDRAM['lang']['tip_hello'] = 'Hello, {username}.';
-$CIDRAM['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
-$CIDRAM['lang']['tip_logs'] = 'Select a logfile from the list below to view the contents of that logfile.';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – Home';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – Logs';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';
+$CIDRAM['lang']['field_uninstall'] = 'Deinstallieren';
+$CIDRAM['lang']['field_update'] = 'Aktualisieren';
+$CIDRAM['lang']['field_username'] = 'Benutzername';
+$CIDRAM['lang']['field_your_version'] = 'Ihre Version';
+$CIDRAM['lang']['header_login'] = 'Bitte einloggen zum Fortfahren.';
+$CIDRAM['lang']['link_accounts'] = 'Konten';
+$CIDRAM['lang']['link_config'] = 'Konfiguration';
+$CIDRAM['lang']['link_documentation'] = 'Dokumentation';
+$CIDRAM['lang']['link_home'] = 'Startseite';
+$CIDRAM['lang']['link_logs'] = 'Protokolldateien';
+$CIDRAM['lang']['link_updates'] = 'Aktualisierungen';
+$CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei existiert nicht!';
+$CIDRAM['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';
+$CIDRAM['lang']['logs_no_logfile_selected'] = 'Keine Protokolldatei ausgewählt.';
+$CIDRAM['lang']['response_accounts_already_exists'] = 'Ein Konto mit diesem Benutzernamen ist bereits vorhanden!';
+$CIDRAM['lang']['response_accounts_created'] = 'Konto erfolgreich erstellt!';
+$CIDRAM['lang']['response_accounts_deleted'] = 'Konto erfolgreich gelöscht!';
+$CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Dieses Konto existiert nicht.';
+$CIDRAM['lang']['response_accounts_password_updated'] = 'Passwort erfolgreich aktualisiert!';
+$CIDRAM['lang']['response_component_successfully_installed'] = 'Komponente erfolgreich installiert.';
+$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponente erfolgreich deinstalliert.';
+$CIDRAM['lang']['response_component_successfully_updated'] = 'Komponente erfolgreich aktualisiert.';
+$CIDRAM['lang']['response_component_uninstall_error'] = 'Beim Deinstallieren der Komponente ist ein Fehler aufgetreten.';
+$CIDRAM['lang']['response_component_update_error'] = 'Beim Aktualisieren der Komponente ist ein Fehler aufgetreten.';
+$CIDRAM['lang']['response_login_invalid_password'] = 'Einloggen-Fehler! Ungültiges Passwort!';
+$CIDRAM['lang']['response_login_invalid_username'] = 'Einloggen-Fehler! Benutzername existiert nicht!';
+$CIDRAM['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
+$CIDRAM['lang']['response_login_username_field_empty'] = 'Benutzername-Feld leer!';
+$CIDRAM['lang']['response_updates_already_up_to_date'] = 'Schon aktuell.';
+$CIDRAM['lang']['response_updates_not_installed'] = 'Komponente nicht installiert!';
+$CIDRAM['lang']['response_updates_outdated'] = 'Veraltet!';
+$CIDRAM['lang']['response_updates_outdated_manually'] = 'Veraltet (bitte manuell aktualisieren)!';
+$CIDRAM['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermittelt werden.';
+$CIDRAM['lang']['state_complete_access'] = 'Vollständiger Zugriff';
+$CIDRAM['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
+$CIDRAM['lang']['state_logged_in'] = 'Eingeloggt';
+$CIDRAM['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolle';
+$CIDRAM['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
+$CIDRAM['lang']['tip_hello'] = 'Hallo, {username}.';
+$CIDRAM['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
+$CIDRAM['lang']['tip_logs'] = 'Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
+$CIDRAM['lang']['title_accounts'] = 'CIDRAM – Konten';
+$CIDRAM['lang']['title_config'] = 'CIDRAM – Konfiguration';
+$CIDRAM['lang']['title_home'] = 'CIDRAM – Startseite';
+$CIDRAM['lang']['title_login'] = 'CIDRAM – Einloggen';
+$CIDRAM['lang']['title_logs'] = 'CIDRAM – Protokolldateien';
+$CIDRAM['lang']['title_updates'] = 'CIDRAM – Aktualisierungen';

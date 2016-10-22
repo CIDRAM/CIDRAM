@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.19).
+ * This file: Functions file (last modified: 2016.10.22).
  */
 
 /**
@@ -733,7 +733,7 @@ $CIDRAM['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
         $Value = hex2bin($HexTest);
     } else {
         $ValueInt = (int)$Value;
-        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt) {
+        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt && $ValueLen > 1) {
             $Value = $ValueInt;
         }
     }
@@ -1104,7 +1104,8 @@ $CIDRAM['FECacheGet'] = function ($Source, $Entry) {
 };
 
 /**
- * Compare two different CIDRAM versions to see which is newer.
+ * Compare two different versions of CIDRAM, or two different verions of a
+ * component for CIDRAM, to see which is newer (used by the updater).
  *
  * @param string $A The 1st version string.
  * @param string $B The 2nd version string.
@@ -1112,20 +1113,31 @@ $CIDRAM['FECacheGet'] = function ($Source, $Entry) {
  *      otherwise (ie, if they're the same, or if the 1st version is newer).
  */
 $CIDRAM['VersionCompare'] = function ($A, $B) {
-    $A = preg_match('/^([0-9]+)([.-][0-9]+)?([.-][0-9]+)?(-[0-9a-z]+)?/i', $A, $VA);
-    $A = array(
-        'Major' => (int)((isset($VA[1])) ? $VA[1] : 0),
-        'Minor' => (int)((isset($VA[2])) ? substr($VA[2], 1) : 0),
-        'Patch' => (int)((isset($VA[3])) ? substr($VA[3], 1) : 0),
-        'Build' => ((isset($VA[4])) ? strtolower(substr($VA[4], 1)) : 0)
-    );
-    $B = preg_match('/^([0-9]+)([.-][0-9]+)?([.-][0-9]+)?(-[0-9a-z]+)?/i', $B, $VB);
-    $B = array(
-        'Major' => (int)((isset($VB[1])) ? $VB[1] : 0),
-        'Minor' => (int)((isset($VB[2])) ? substr($VB[2], 1) : 0),
-        'Patch' => (int)((isset($VB[3])) ? substr($VB[3], 1) : 0),
-        'Build' => ((isset($VB[4])) ? strtolower(substr($VB[4], 1)) : 0)
-    );
+    $Normalise = function (&$Ver) {
+        $Ver =
+            preg_match("\x01^v?([0-9]+)$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^v?([0-9]+)\.([0-9]+)$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^v?([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9a-z_+\\/]+)?$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^([0-9]{2}|[0-9]{4})[.-]([0-9]{1,2})[.-]([0-9]{2}|[0-9]{4})([.-][0-9a-z_+\\/]+)?$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$\x01i", $Ver, $Matches);
+        $Ver = array(
+            'Major' => isset($Matches[1]) ? $Matches[1] : 0,
+            'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
+            'Patch' => isset($Matches[3]) ? $Matches[3] : 0,
+            'Build' => isset($Matches[4]) ? substr($Matches[4], 1) : 0
+        );
+        $Ver = array_map(function () {
+            $Var = func_get_args()[0];
+            $VarInt = (int)$Var;
+            $VarLen = strlen($Var);
+            if ($Var == $VarInt && strlen($VarInt) === $VarLen && $VarLen > 1) {
+                return $VarInt;
+            }
+            return strtolower($Var);
+        }, $Ver);
+    };
+    $Normalise($A);
+    $Normalise($B);
     return (
         $B['Major'] > $A['Major'] || (
             $B['Major'] === $A['Major'] &&
@@ -1139,8 +1151,7 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
             $B['Minor'] === $A['Minor'] &&
             $B['Patch'] === $A['Patch'] &&
             !empty($A['Build']) && (
-                empty($B['Build']) ||
-                $B['Build'] > $A['Build']
+                empty($B['Build']) || $B['Build'] > $A['Build']
             )
         )
     );

@@ -55,6 +55,7 @@ $CIDRAM['lang']['response_accounts_created'] = 'Account successfully created!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account successfully deleted!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'That account doesn\'t exist.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Password successfully updated!';
+$CIDRAM['lang']['response_component_successfully_installed'] = 'Component successfully installed.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component successfully uninstalled.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'An error occurred while attempting to uninstall the component.';

@@ -629,9 +629,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     fopen($CIDRAM['Vault'] . $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Reannotate'], 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['Components']['NewMeta']);
                 fclose($CIDRAM['Handle']);
+                $CIDRAM['FE']['state_msg'] =
+                    (
+                        empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Version']) &&
+                        empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])
+                    ) ?
+                    $CIDRAM['lang']['response_component_successfully_installed'] :
+                    $CIDRAM['lang']['response_component_successfully_updated'];
                 $CIDRAM['Components']['Meta'][$_POST['ID']] =
                     $CIDRAM['Components']['RemoteMeta'][$_POST['ID']];
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_updated'];
             } else {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_update_error'];
             }
@@ -756,6 +762,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'] =
                     $CIDRAM['lang']['response_updates_not_installed'];
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                    '<option value="update-component">' . $CIDRAM['lang']['field_install'] . '</option>';
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
                     $CIDRAM['lang']['response_updates_not_installed'];
             } else {
@@ -831,17 +839,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
                             $CIDRAM['lang']['response_updates_outdated_manually'];
                     } else {
-                        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])) {
-                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
-                                $CIDRAM['lang']['response_updates_not_installed'];
-                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
-                                '<option value="update-component">' . $CIDRAM['lang']['field_install'] . '</option>';
-                        } else {
-                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
-                                $CIDRAM['lang']['response_updates_outdated'];
-                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
-                                '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
-                        }
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
+                            $CIDRAM['lang']['response_updates_outdated'];
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                            '<option value="update-component">' . $CIDRAM['lang']['field_update'] . '</option>';
                     }
                 } else {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtGn';

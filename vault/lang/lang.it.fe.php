@@ -76,7 +76,7 @@ $CIDRAM['lang']['state_logs_access_only'] = 'Accesso solo per i log';
 $CIDRAM['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non utilizzando una password valida!';
 $CIDRAM['lang']['tip_hello'] = 'Salve, {username}.';
 $CIDRAM['lang']['tip_login'] = 'Nome utente predefinito: <span class="txtRd">admin</span> – Password predefinita: <span class="txtRd">password</span>';
-$CIDRAM['lang']['tip_logs'] = 'Select a logfile from the list below to view the contents of that logfile.';
+$CIDRAM['lang']['tip_logs'] = 'Selezionare un file di log dall\'elenco sottostante per visualizzare il contenuto di tale file di log.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Utenti';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configurazione';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Pagina Principale';

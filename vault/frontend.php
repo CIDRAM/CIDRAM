@@ -616,7 +616,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['ThisFileName'] =
                         $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']];
                     if (
-                        isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']]) &&
+                        !isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']]) &&
                         file_exists($CIDRAM['Vault'] . $CIDRAM['ThisFileName']) &&
                         !preg_match($CIDRAM['FE']['Traverse'], $CIDRAM['ThisFileName'])
                     ) {

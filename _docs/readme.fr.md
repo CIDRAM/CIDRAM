@@ -64,7 +64,7 @@ Ou cette dans le `.htaccess` fichier:
 
 CIDRAM devrait bloquer automatiquement les demandes indésirables à votre website sans nécessitant aucune intervention manuelle, en dehors de son installation initiale.
 
-Réactualisant se fait manuellement, et vous pouvez personnaliser votre configuration et personnaliser les CIDRs sont bloqués par modifiant le fichier de configuration et/ou vos fichiers de signatures.
+La mise à jour se fait manuellement, et vous pouvez personnaliser votre configuration et personnaliser les CIDRs sont bloqués par modifiant le fichier de configuration et/ou vos fichiers de signatures.
 
 Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle moi de ça.
 
@@ -486,4 +486,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Réactualisé: 11 Octobre 2016 (2016.10.11).
+Dernière Mise à Jour: 11 Octobre 2016 (2016.10.11).

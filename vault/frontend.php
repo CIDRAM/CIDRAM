@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.20).
+ * This file: Front-end handler (last modified: 2016.10.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -580,6 +580,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Iterate'] < $CIDRAM['Count'];
                     $CIDRAM['Iterate']++
                 ) {
+                    $CIDRAM['ThisFileName'] = $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']];
+                    $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = true;
                     if (
                         (
                             !empty($CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
@@ -600,8 +602,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     ) {
                         continue;
                     }
-                    $CIDRAM['ThisFileName'] = $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']];
-                    $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = true;
                     $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['ThisFileName'], 'w');
                     fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
                     fclose($CIDRAM['Handle']);
@@ -615,10 +615,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 ) {
                     $CIDRAM['ThisFileName'] =
                         $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']];
-                    if (isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']])) {
-                        continue;
-                    }
                     if (
+                        isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']]) &&
                         file_exists($CIDRAM['Vault'] . $CIDRAM['ThisFileName']) &&
                         !preg_match($CIDRAM['FE']['Traverse'], $CIDRAM['ThisFileName'])
                     ) {

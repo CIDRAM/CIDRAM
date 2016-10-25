@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.08.18).
+ * This file: Output generator (last modified: 2016.10.25).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -46,6 +46,7 @@ $CIDRAM['BlockInfo'] = array(
     'DateTime' => date('r', $CIDRAM['Now']),
     'IPAddr' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
+    'favicon' => $CIDRAM['favicon'],
     'Query' => $CIDRAM['Query'],
     'Referrer' => (empty($_SERVER['HTTP_REFERER'])) ? '' : $_SERVER['HTTP_REFERER'],
     'UA' => (empty($_SERVER['HTTP_USER_AGENT'])) ? '' : $_SERVER['HTTP_USER_AGENT'],

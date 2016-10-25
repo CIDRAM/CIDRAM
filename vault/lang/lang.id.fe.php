@@ -8,9 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.10.21).
- *
- * @todo (This is incomplete).
+ * This file: Indonesian language data for the front-end (last modified: 2016.10.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */

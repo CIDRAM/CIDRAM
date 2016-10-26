@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.22).
+ * This file: Functions file (last modified: 2016.10.26).
  */
 
 /**
@@ -1167,4 +1167,16 @@ $CIDRAM['ArrayFlatten'] = function ($Arr) {
     return array_filter($Arr, function () {
         return (!is_array(func_get_args()[0]));
     });
+};
+
+/** Isolate a L10N array down to a single single relevant L10N string. */
+$CIDRAM['IsolateL10N'] = function (&$Arr, $Lang) {
+    if (isset($Arr[$Lang])) {
+        $Arr = $Arr[$Lang];
+    } elseif (isset($Arr['en'])) {
+        $Arr = $Arr['en'];
+    } else {
+        $Key = key($Arr);
+        $Arr = $Arr[$Key];
+    }
 };

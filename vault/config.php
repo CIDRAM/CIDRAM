@@ -35,7 +35,10 @@ $CIDRAM['CIDRAM_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 $CIDRAM['CIDRAM_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
 /** CIDRAM favicon. */
-$CIDRAM['favicon'] = 'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABAAAANBCLrcKjBK+eKQN76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyBwMkc0kIEp13nZYnGPLSAAAOw==';
+$CIDRAM['favicon'] =
+    'R0lGODlhEAAQAMIBAAAAAGYAAJkAAMz//2YAAGYAAGYAAGYAACH5BAEKAAQALAAAAAAQABA' .
+    'AAANBCLrcKjBK+eKQN76RIb+g0oGewAmiZZbZRppnC0y0BgR4rutK8OWfn2jgI3KKxeHvyB' .
+    'wMkc0kIEp13nZYnGPLSAAAOw==';
 
 /** Checks whether the CIDRAM configuration file is readable. */
 if (!is_readable($CIDRAM['Vault'] . 'config.ini')) {

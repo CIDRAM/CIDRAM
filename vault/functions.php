@@ -1169,7 +1169,7 @@ $CIDRAM['ArrayFlatten'] = function ($Arr) {
     });
 };
 
-/** Isolate a L10N array down to a single single relevant L10N string. */
+/** Isolate a L10N array down to a single relevant L10N string. */
 $CIDRAM['IsolateL10N'] = function (&$Arr, $Lang) {
     if (isset($Arr[$Lang])) {
         $Arr = $Arr[$Lang];

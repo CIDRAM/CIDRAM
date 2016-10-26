@@ -601,11 +601,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         empty($CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']]) ||
                         !($CIDRAM['ThisFile'] = $CIDRAM['Request'](
                             $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['From'][$CIDRAM['Iterate']]
-                        )) || (
-                            !empty($CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
-                                $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['Checksum'][$CIDRAM['Iterate']] !==
-                                md5($CIDRAM['ThisFile']) . ':' . strlen($CIDRAM['ThisFile'])
-                        )
+                        ))
+                    ) {
+                        continue;
+                    }
+                    if (
+                        strtolower(substr(
+                            $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['From'][$CIDRAM['Iterate']], -2
+                        )) === 'gz' &&
+                        strtolower(substr(
+                            $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$CIDRAM['Iterate']], -2
+                        )) !== 'gz' &&
+                        substr($CIDRAM['ThisFile'], 0, 2) === "\x1f\x8b"
+                    ) {
+                        $CIDRAM['ThisFile'] = gzdecode($CIDRAM['ThisFile']);
+                    }
+                    if (
+                        !empty($CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
+                            $CIDRAM['Components']['RemoteMeta'][$_POST['ID']]['Files']['Checksum'][$CIDRAM['Iterate']] !==
+                            md5($CIDRAM['ThisFile']) . ':' . strlen($CIDRAM['ThisFile'])
                     ) {
                         continue;
                     }

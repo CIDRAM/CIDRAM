@@ -77,13 +77,6 @@ La siguiente es una lista de todos los archivos que debería haberse incluido en
 
 Archivo | Descripción
 ----|----
-/.gitattributes | Un archivo de la Github proyecto (no se requiere para usar la script).
-/Changelog.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
-/composer.json | Composer/Packagist información (no se requiere para usar la script).
-/LICENSE.txt | Una copia de la GNU/GPLv2 licencia (no se requiere para usar la script).
-/loader.php | Cargador. Esto es lo que se supone debe enganchando (esencial)!
-/README.md | Sumario información del proyecto.
-/web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 /_docs/ | Documentación directorio (contiene varios archivos).
 /_docs/readme.ar.md | Documentación Árabe.
 /_docs/readme.de.md | Documentación Alemán.
@@ -100,11 +93,72 @@ Archivo | Descripción
 /_docs/readme.zh-TW.md | Documentación Chino (tradicional).
 /_docs/readme.zh.md | Documentación Chino (simplificado).
 /vault/ | Vault directorio (contiene varios archivos).
+/vault/fe_assets/ | Archivos de front-end.
+/vault/fe_assets/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/fe_assets/_accounts.html | Un archivo HTML para el front-end página de cuentas.
+/vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
+/vault/fe_assets/_config.html | Un archivo HTML para el front-end página de configuración.
+/vault/fe_assets/_home.html | Un archivo HTML para el front-end página principal.
+/vault/fe_assets/_login.html | Un archivo HTML para el front-end página de login.
+/vault/fe_assets/_logs.html | Un archivo HTML para el front-end página de los archivos de registro.
+/vault/fe_assets/_nav_complete_access.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso completo.
+/vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso de registros solamente.
+/vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
+/vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
+/vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
+/vault/fe_assets/frontend.dat | Base de datos para el front-end (contiene información de cuentas, información de sesiones, y la memoria caché; sólo se genera si el front-end está activado y utilizado).
+/vault/fe_assets/frontend.html | El archivo HTML principal para el front-end.
+/vault/lang/ | Contiene lingüísticos datos.
+/vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/lang/lang.ar.cli.php | Lingüísticos datos Árabe para CLI.
+/vault/lang/lang.ar.fe.php | Lingüísticos datos Árabe para el front-end.
+/vault/lang/lang.ar.php | Lingüísticos datos Árabe.
+/vault/lang/lang.de.cli.php | Lingüísticos datos Alemán para CLI.
+/vault/lang/lang.de.fe.php | Lingüísticos datos Alemán para el front-end.
+/vault/lang/lang.de.php | Lingüísticos datos Alemán.
+/vault/lang/lang.en.cli.php | Lingüísticos datos Inglés para CLI.
+/vault/lang/lang.en.fe.php | Lingüísticos datos Inglés para el front-end.
+/vault/lang/lang.en.php | Lingüísticos datos Inglés.
+/vault/lang/lang.es.cli.php | Lingüísticos datos Español para CLI.
+/vault/lang/lang.es.fe.php | Lingüísticos datos Español para el front-end.
+/vault/lang/lang.es.php | Lingüísticos datos Español.
+/vault/lang/lang.fr.cli.php | Lingüísticos datos Francés para CLI.
+/vault/lang/lang.fr.fe.php | Lingüísticos datos Francés para el front-end.
+/vault/lang/lang.fr.php | Lingüísticos datos Francés.
+/vault/lang/lang.id.cli.php | Lingüísticos datos Indonesio para CLI.
+/vault/lang/lang.id.fe.php | Lingüísticos datos Indonesio para el front-end.
+/vault/lang/lang.id.php | Lingüísticos datos Indonesio.
+/vault/lang/lang.it.cli.php | Lingüísticos datos Italiano para CLI.
+/vault/lang/lang.it.fe.php | Lingüísticos datos Italiano para el front-end.
+/vault/lang/lang.it.php | Lingüísticos datos Italiano.
+/vault/lang/lang.ja.cli.php | Lingüísticos datos Japonés para CLI.
+/vault/lang/lang.ja.fe.php | Lingüísticos datos Japonés para el front-end.
+/vault/lang/lang.ja.php | Lingüísticos datos Japonés.
+/vault/lang/lang.nl.cli.php | Lingüísticos datos Holandés para CLI.
+/vault/lang/lang.nl.fe.php | Lingüísticos datos Holandés para el front-end.
+/vault/lang/lang.nl.php | Lingüísticos datos Holandés.
+/vault/lang/lang.pt.cli.php | Lingüísticos datos Portugués para CLI.
+/vault/lang/lang.pt.fe.php | Lingüísticos datos Portugués para el front-end.
+/vault/lang/lang.pt.php | Lingüísticos datos Portugués.
+/vault/lang/lang.ru.cli.php | Lingüísticos datos Ruso para CLI.
+/vault/lang/lang.ru.fe.php | Lingüísticos datos Ruso para el front-end.
+/vault/lang/lang.ru.php | Lingüísticos datos Ruso.
+/vault/lang/lang.vi.cli.php | Lingüísticos datos Vietnamita para CLI.
+/vault/lang/lang.vi.fe.php | Lingüísticos datos Vietnamita para el front-end.
+/vault/lang/lang.vi.php | Lingüísticos datos Vietnamita.
+/vault/lang/lang.zh-tw.cli.php | Lingüísticos datos Chino (tradicional) para CLI.
+/vault/lang/lang.zh-tw.fe.php | Lingüísticos datos Chino (tradicional) para el front-end.
+/vault/lang/lang.zh-tw.php | Lingüísticos datos Chino (tradicional).
+/vault/lang/lang.zh.cli.php | Lingüísticos datos Chino (simplificado) para CLI.
+/vault/lang/lang.zh.fe.php | Lingüísticos datos Chino (simplificado) para el front-end.
+/vault/lang/lang.zh.php | Lingüísticos datos Chino (simplificado).
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache.dat | Cache data.
 /vault/cli.php | Módulo de la CLI.
+/vault/components.dat | Contiene información relativa a los diversos componentes de CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
+/vault/frontend.php | Módulo del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/hashes.dat | Contiene una lista de hashes aceptadas (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
 /vault/ignore.dat | Ignorar archivo (se utiliza para especificar qué secciones de firmas que CIDRAM debe ignorar).
@@ -114,36 +168,6 @@ Archivo | Descripción
 /vault/ipv6.dat | Archivo de firmas por IPv6.
 /vault/ipv6_custom.dat.RenameMe | Archivo de firmas por IPv6 personalizado (cambiar el nombre para activar).
 /vault/lang.php | Lingüísticos datos.
-/vault/lang/ | Contiene lingüísticos datos.
-/vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/lang/lang.ar.cli.php | Lingüísticos datos Árabe para CLI.
-/vault/lang/lang.ar.php | Lingüísticos datos Árabe.
-/vault/lang/lang.de.cli.php | Lingüísticos datos Alemán para CLI.
-/vault/lang/lang.de.php | Lingüísticos datos Alemán.
-/vault/lang/lang.en.cli.php | Lingüísticos datos Inglés para CLI.
-/vault/lang/lang.en.php | Lingüísticos datos Inglés.
-/vault/lang/lang.es.cli.php | Lingüísticos datos Español para CLI.
-/vault/lang/lang.es.php | Lingüísticos datos Español.
-/vault/lang/lang.fr.cli.php | Lingüísticos datos Francés para CLI.
-/vault/lang/lang.fr.php | Lingüísticos datos Francés.
-/vault/lang/lang.id.cli.php | Lingüísticos datos Indonesio para CLI.
-/vault/lang/lang.id.php | Lingüísticos datos Indonesio.
-/vault/lang/lang.it.cli.php | Lingüísticos datos Italiano para CLI.
-/vault/lang/lang.it.php | Lingüísticos datos Italiano.
-/vault/lang/lang.ja.cli.php | Lingüísticos datos Japonés para CLI.
-/vault/lang/lang.ja.php | Lingüísticos datos Japonés.
-/vault/lang/lang.nl.cli.php | Lingüísticos datos Holandés para CLI.
-/vault/lang/lang.nl.php | Lingüísticos datos Holandés.
-/vault/lang/lang.pt.cli.php | Lingüísticos datos Portugués para CLI.
-/vault/lang/lang.pt.php | Lingüísticos datos Portugués.
-/vault/lang/lang.ru.cli.php | Lingüísticos datos Ruso para CLI.
-/vault/lang/lang.ru.php | Lingüísticos datos Ruso.
-/vault/lang/lang.vi.cli.php | Lingüísticos datos Vietnamita para CLI.
-/vault/lang/lang.vi.php | Lingüísticos datos Vietnamita.
-/vault/lang/lang.zh-tw.cli.php | Lingüísticos datos Chino (tradicional) para CLI.
-/vault/lang/lang.zh-tw.php | Lingüísticos datos Chino (tradicional).
-/vault/lang/lang.zh.cli.php | Lingüísticos datos Chino (simplificado) para CLI.
-/vault/lang/lang.zh.php | Lingüísticos datos Chino (simplificado).
 /vault/outgen.php | Generador de salida.
 /vault/recaptcha.php | Módulo de reCAPTCHA.
 /vault/rules_as6939.php | Archivo de reglas personalizado para AS6939.
@@ -152,6 +176,13 @@ Archivo | Descripción
 /vault/salt.dat | Archivo de sal (utilizado por algunas funciones periférico; solamente generada si es necesario).
 /vault/template.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
+/.gitattributes | Un archivo de la Github proyecto (no se requiere para usar la script).
+/Changelog.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
+/composer.json | Composer/Packagist información (no se requiere para usar la script).
+/LICENSE.txt | Una copia de la GNU/GPLv2 licencia (no se requiere para usar la script).
+/loader.php | Cargador. Esto es lo que se supone debe enganchando (esencial)!
+/README.md | Sumario información del proyecto.
+/web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 
 ---
 
@@ -486,4 +517,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 11 Octubre 2016 (2016.10.11).
+Última Actualización: 28 Octubre 2016 (2016.10.28).

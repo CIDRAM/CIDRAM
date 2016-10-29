@@ -79,13 +79,6 @@ Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des 
 
 Datei | Beschreibung
 ----|----
-/.gitattributes | Ein Github Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
-/Changelog.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
-/composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
-/LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz (für die korrekte Funktion des Scripts nicht notwendig).
-/loader.php | Loader. Diese Datei wird in Ihr CMS eingebunden (notwendig)!
-/README.md | Projektübersicht.
-/web.config | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/ | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
 /_docs/readme.ar.md | Arabische Dokumentation.
 /_docs/readme.de.md | Deutsche Dokumentation.
@@ -102,11 +95,72 @@ Datei | Beschreibung
 /_docs/readme.zh-TW.md | Chinesische Dokumentation (traditionell).
 /_docs/readme.zh.md | Chinesische Dokumentation (vereinfacht).
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
+/vault/fe_assets/ | Front-End-Daten.
+/vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page. @TranslateMe@
+/vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page. @TranslateMe@
+/vault/fe_assets/_config.html | An HTML template for the front-end configuration page. @TranslateMe@
+/vault/fe_assets/_home.html | An HTML template for the front-end homepage. @TranslateMe@
+/vault/fe_assets/_login.html | An HTML template for the front-end login. @TranslateMe@
+/vault/fe_assets/_logs.html | An HTML template for the front-end logs page. @TranslateMe@
+/vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access. @TranslateMe@
+/vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only. @TranslateMe@
+/vault/fe_assets/_updates.html | An HTML template for the front-end updates page. @TranslateMe@
+/vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page. @TranslateMe@
+/vault/fe_assets/frontend.css | CSS style-sheet for the front-end. @TranslateMe@
+/vault/fe_assets/frontend.dat | Database for the front-end (contains account information, session information, and the cache; only generated if the front-end is enabled and used). @TranslateMe@
+/vault/fe_assets/frontend.html | The main HTML template file for the front-end. @TranslateMe@
+/vault/lang/ | Enthält Sprachdaten für CIDRAM. @TranslateMe@
+/vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
+/vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
+/vault/lang/lang.ar.php | Arabische Sprachdateien.
+/vault/lang/lang.de.cli.php | Deutsche Sprachdateien für CLI.
+/vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Front-End.
+/vault/lang/lang.de.php | Deutsche Sprachdateien.
+/vault/lang/lang.en.cli.php | Englische Sprachdateien für CLI.
+/vault/lang/lang.en.fe.php | Englische Sprachdateien für das Front-End.
+/vault/lang/lang.en.php | Englische Sprachdateien.
+/vault/lang/lang.es.cli.php | Spanische Sprachdateien für CLI.
+/vault/lang/lang.es.fe.php | Spanische Sprachdateien für das Front-End.
+/vault/lang/lang.es.php | Spanische Sprachdateien.
+/vault/lang/lang.fr.cli.php | Französische Sprachdateien für CLI.
+/vault/lang/lang.fr.fe.php | Französische Sprachdateien für das Front-End.
+/vault/lang/lang.fr.php | Französische Sprachdateien.
+/vault/lang/lang.id.cli.php | Indonesische Sprachdateien für CLI.
+/vault/lang/lang.id.fe.php | Indonesische Sprachdateien für das Front-End.
+/vault/lang/lang.id.php | Indonesische Sprachdateien.
+/vault/lang/lang.it.cli.php | Italienische Sprachdateien für CLI.
+/vault/lang/lang.it.fe.php | Italienische Sprachdateien für das Front-End.
+/vault/lang/lang.it.php | Italienische Sprachdateien.
+/vault/lang/lang.ja.cli.php | Japanische Sprachdateien für CLI.
+/vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Front-End.
+/vault/lang/lang.ja.php | Japanische Sprachdateien.
+/vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
+/vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Front-End.
+/vault/lang/lang.nl.php | Niederländische Sprachdateien.
+/vault/lang/lang.pt.cli.php | Portugiesische Sprachdateien für CLI.
+/vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Front-End.
+/vault/lang/lang.pt.php | Portugiesische Sprachdateien.
+/vault/lang/lang.ru.cli.php | Russische Sprachdateien für CLI.
+/vault/lang/lang.ru.fe.php | Russische Sprachdateien für das Front-End.
+/vault/lang/lang.ru.php | Russische Sprachdateien.
+/vault/lang/lang.vi.cli.php | Vietnamesische Sprachdateien für CLI.
+/vault/lang/lang.vi.fe.php | Vietnamesische Sprachdateien für das Front-End.
+/vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
+/vault/lang/lang.zh-tw.cli.php | Chinesische Sprachdateien (traditionell) für CLI.
+/vault/lang/lang.zh-tw.fe.php | Chinesische Sprachdateien (traditionell) für das Front-End.
+/vault/lang/lang.zh-tw.php | Chinesische Sprachdateien (traditionell).
+/vault/lang/lang.zh.cli.php | Chinesische Sprachdateien (vereinfacht) für CLI.
+/vault/lang/lang.zh.fe.php | Chinesische Sprachdateien (vereinfacht) für das Front-End.
+/vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cache.dat | Cache-Daten.
 /vault/cli.php | CLI-Handler.
+/vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end. @TranslateMe@
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
 /vault/config.php | Konfiguration-Handler.
+/vault/frontend.php | Front-end handler. @TranslateMe@
 /vault/functions.php | Funktionen-Datei.
 /vault/hashes.dat | Enthält eine Liste der akzeptierten Hashes (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
 /vault/ignore.dat | Ignoriert Datei (zu spezifizieren welche Signatur-Sektionen CIDRAM sollte ignorieren es ist benutzt).
@@ -116,36 +170,6 @@ Datei | Beschreibung
 /vault/ipv6.dat | IPv6 Signaturdatei.
 /vault/ipv6_custom.dat.RenameMe | IPv6 benutzerdefinierte Signaturdatei (umbenennen zu aktivieren).
 /vault/lang.php | Sprachdateien.
-/vault/lang/ | Enthält Sprachdaten für CIDRAM.
-/vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
-/vault/lang/lang.ar.php | Arabische Sprachdateien.
-/vault/lang/lang.de.cli.php | Deutsche Sprachdateien für CLI.
-/vault/lang/lang.de.php | Deutsche Sprachdateien.
-/vault/lang/lang.en.cli.php | Englische Sprachdateien für CLI.
-/vault/lang/lang.en.php | Englische Sprachdateien.
-/vault/lang/lang.es.cli.php | Spanische Sprachdateien für CLI.
-/vault/lang/lang.es.php | Spanische Sprachdateien.
-/vault/lang/lang.fr.cli.php | Französische Sprachdateien für CLI.
-/vault/lang/lang.fr.php | Französische Sprachdateien.
-/vault/lang/lang.id.cli.php | Indonesische Sprachdateien für CLI.
-/vault/lang/lang.id.php | Indonesische Sprachdateien.
-/vault/lang/lang.it.cli.php | Italienische Sprachdateien für CLI.
-/vault/lang/lang.it.php | Italienische Sprachdateien.
-/vault/lang/lang.ja.cli.php | Japanische Sprachdateien für CLI.
-/vault/lang/lang.ja.php | Japanische Sprachdateien.
-/vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
-/vault/lang/lang.nl.php | Niederländische Sprachdateien.
-/vault/lang/lang.pt.cli.php | Portugiesische Sprachdateien für CLI.
-/vault/lang/lang.pt.php | Portugiesische Sprachdateien.
-/vault/lang/lang.ru.cli.php | Russische Sprachdateien für CLI.
-/vault/lang/lang.ru.php | Russische Sprachdateien.
-/vault/lang/lang.vi.cli.php | Vietnamesische Sprachdateien für CLI.
-/vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
-/vault/lang/lang.zh-tw.cli.php | Chinesische Sprachdateien (traditionell) für CLI.
-/vault/lang/lang.zh-tw.php | Chinesische Sprachdateien (traditionell).
-/vault/lang/lang.zh.cli.php | Chinesische Sprachdateien (vereinfacht) für CLI.
-/vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/outgen.php | Ausgabe-Generator.
 /vault/recaptcha.php | reCAPTCHA-Modul.
 /vault/rules_as6939.php | Benutzerdefinierte Regeldatei für AS6939.
@@ -154,6 +178,13 @@ Datei | Beschreibung
 /vault/salt.dat | Salz-Datei (durch einigen periphere Funktionalität verwendet; nur dann erzeugt wenn erforderlich).
 /vault/template.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
+/.gitattributes | Ein Github Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
+/Changelog.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
+/composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
+/LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz (für die korrekte Funktion des Scripts nicht notwendig).
+/loader.php | Loader. Diese Datei wird in Ihr CMS eingebunden (notwendig)!
+/README.md | Projektübersicht.
+/web.config | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 
 ---
 
@@ -230,34 +261,34 @@ Konfiguration der Signaturen.
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true. @TranslateMe@
 
 ####"recaptcha" (Kategorie)
-Optionally, you can provide users with a way to bypass the "Zugriff verweigert" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with Falsch-Positivs in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+Optionally, you can provide users with a way to bypass the "Zugriff verweigert" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with Falsch-Positivs in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
 
-Due to the risks associated with providing a way for end-users to bypass the "Zugriff verweigert" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Due to the risks associated with providing a way for end-users to bypass the "Zugriff verweigert" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
 
-To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von reCAPTCHA erforderlich), bitte gehe zu: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
-- Defines how CIDRAM should use reCAPTCHA.
-- 0 = reCAPTCHA is completely disabled (default).
-- 1 = reCAPTCHA is enabled for all signatures.
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0).
+- Dies definiert wie CIDRAM sollte reCAPTCHA benutzen.
+- 0 = reCAPTCHA ist komplett deaktiviert (Standardeinstellung).
+- 1 = reCAPTCHA ist für alle Signaturen aktiviert.
+- 2 = reCAPTCHA ist aktiviert, nur für Signaturen die zu Abschnitten besonders markiert als reCAPTCHA-aktiviert in den Signaturdateien gehören.
+- (Jeder andere Wert wird auf die gleiche Weise behandelt wie 0).
 
 "lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
-- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (Standardeinstellung). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
+- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
 
 "lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
+- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (Standardeinstellung). @TranslateMe@
 
 "sitekey"
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- Dieser Wert sollte dem "site key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet.
 
 "secret"
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- Dieser Wert sollte dem "secret key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet.
 
 "expiry"
-- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
+- When "lockuser" is true (Standardeinstellung), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
 
 "logfile"
 - Protokollieren Sie alle reCAPTCHA versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
@@ -488,4 +519,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 11. Oktober 2016 (2016.10.11).
+Zuletzt aktualisiert: 28. Oktober 2016 (2016.10.28).

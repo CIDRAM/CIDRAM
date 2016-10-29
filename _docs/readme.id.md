@@ -77,13 +77,6 @@ Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres k
 
 Data | Deskripsi
 ----|----
-/.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/LICENSE.txt | Salinan lisensi GNU/GPLv2 (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/loader.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
-/README.md | Ringkasan informasi proyek.
-/web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
 /_docs/readme.ar.md | Dokumentasi Bahasa Arab.
 /_docs/readme.de.md | Dokumentasi Bahasa Jerman.
@@ -100,11 +93,72 @@ Data | Deskripsi
 /_docs/readme.zh-TW.md | Dokumentasi Cina tradisional.
 /_docs/readme.zh.md | Dokumentasi Cina sederhana.
 /vault/ | Direktori Vault (berisikan bermacam file).
-/vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/fe_assets/ | Data untuk akses bagian depan.
+/vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
+/vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
+/vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
+/vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
+/vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
+/vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
+/vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi akun, informasi sesi, dan cache; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
+/vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
+/vault/lang/ | Berisikan file bahasa.
+/vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/lang.ar.cli.php | File Bahasa Arab untuk CLI.
+/vault/lang/lang.ar.fe.php | File Bahasa Arab untuk front-end.
+/vault/lang/lang.ar.php | File Bahasa Arab.
+/vault/lang/lang.de.cli.php | File Bahasa Jerman untuk CLI.
+/vault/lang/lang.de.fe.php | File Bahasa Jerman untuk front-end.
+/vault/lang/lang.de.php | File Bahasa Jerman.
+/vault/lang/lang.en.cli.php | File Bahasa Inggris untuk CLI.
+/vault/lang/lang.en.fe.php | File Bahasa Inggris untuk front-end.
+/vault/lang/lang.en.php | File Bahasa Inggris.
+/vault/lang/lang.es.cli.php | File Bahasa Spanyol untuk CLI.
+/vault/lang/lang.es.fe.php | File Bahasa Spanyol untuk front-end.
+/vault/lang/lang.es.php | File Bahasa Spanyol.
+/vault/lang/lang.fr.cli.php | File Bahasa Perancis untuk CLI.
+/vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk front-end.
+/vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.id.cli.php | File Bahasa Indonesia untuk CLI.
+/vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk front-end.
+/vault/lang/lang.id.php | File Bahasa Indonesia.
+/vault/lang/lang.it.cli.php | File Bahasa Italia untuk CLI.
+/vault/lang/lang.it.fe.php | File Bahasa Italia untuk front-end.
+/vault/lang/lang.it.php | File Bahasa Italia.
+/vault/lang/lang.ja.cli.php | File Bahasa Jepang untuk CLI.
+/vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk front-end.
+/vault/lang/lang.ja.php | File Bahasa Jepang.
+/vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
+/vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk front-end.
+/vault/lang/lang.nl.php | File Bahasa Belanda.
+/vault/lang/lang.pt.cli.php | File Bahasa Portugis untuk CLI.
+/vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk front-end.
+/vault/lang/lang.pt.php | File Bahasa Portugis.
+/vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
+/vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk front-end.
+/vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.vi.cli.php | File Bahasa Vietnam untuk CLI.
+/vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk front-end.
+/vault/lang/lang.vi.php | File Bahasa Vietnam.
+/vault/lang/lang.zh-tw.cli.php | File Bahasa Cina tradisional untuk CLI.
+/vault/lang/lang.zh-tw.fe.php | File Bahasa Cina tradisional untuk front-end.
+/vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh.cli.php | File Bahasa Cina sederhana untuk CLI.
+/vault/lang/lang.zh.fe.php | File Bahasa Cina sederhana untuk front-end.
+/vault/lang/lang.zh.php | File Bahasa Cina sederhana.
+/vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache.dat | Cache data.
 /vault/cli.php | Modul CLI.
+/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
+/vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/hashes.dat | Berisi daftar hash diterima (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
 /vault/ignore.dat | File abaikan (digunakan untuk menentukan bagian tanda tangan CIDRAM harus mengabaikan).
@@ -114,36 +168,6 @@ Data | Deskripsi
 /vault/ipv6.dat | File tanda tangan IPv6.
 /vault/ipv6_custom.dat.RenameMe | File tanda tangan IPv6 disesuaikan (mengubah nama untuk mengaktifkan).
 /vault/lang.php | File bahasa.
-/vault/lang/ | Berisikan file bahasa.
-/vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/lang.ar.cli.php | File Bahasa untuk CLI.
-/vault/lang/lang.ar.php | File Bahasa Arab.
-/vault/lang/lang.de.cli.php | File Bahasa untuk CLI.
-/vault/lang/lang.de.php | File Bahasa Jerman.
-/vault/lang/lang.en.cli.php | File Bahasa Inggris untuk CLI.
-/vault/lang/lang.en.php | File Bahasa Inggris.
-/vault/lang/lang.es.cli.php | File Bahasa Spanyol untuk CLI.
-/vault/lang/lang.es.php | File Bahasa Spanyol.
-/vault/lang/lang.fr.cli.php | File Bahasa Perancis untuk CLI.
-/vault/lang/lang.fr.php | File Bahasa Perancis.
-/vault/lang/lang.id.cli.php | File Bahasa Indonesia untuk CLI.
-/vault/lang/lang.id.php | File Bahasa Indonesia.
-/vault/lang/lang.it.cli.php | File Bahasa Italia untuk CLI.
-/vault/lang/lang.it.php | File Bahasa Italia.
-/vault/lang/lang.ja.cli.php | File Bahasa Jepang untuk CLI.
-/vault/lang/lang.ja.php | File Bahasa Jepang.
-/vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
-/vault/lang/lang.nl.php | File Bahasa Belanda.
-/vault/lang/lang.pt.cli.php | File Bahasa Portugis untuk CLI.
-/vault/lang/lang.pt.php | File Bahasa Portugis.
-/vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
-/vault/lang/lang.ru.php | File Bahasa Rusia.
-/vault/lang/lang.vi.cli.php | File Bahasa Vietnam untuk CLI.
-/vault/lang/lang.vi.php | File Bahasa Vietnam.
-/vault/lang/lang.zh-tw.cli.php | File Bahasa Cina tradisional untuk CLI.
-/vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
-/vault/lang/lang.zh.cli.php | File Bahasa Cina sederhana untuk CLI.
-/vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/outgen.php | Output Generator.
 /vault/recaptcha.php | Modul reCAPTCHA.
 /vault/rules_as6939.php | File aturan disesuaikan untuk AS6939.
@@ -152,6 +176,13 @@ Data | Deskripsi
 /vault/salt.dat | File garam (digunakan oleh beberapa fungsi periferal; hanya dihasilkan jika diperlukan).
 /vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
+/.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/LICENSE.txt | Salinan lisensi GNU/GPLv2 (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/loader.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
+/README.md | Ringkasan informasi proyek.
+/web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 
 ---
 
@@ -486,4 +517,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 11 Oktober 2016 (2016.10.11).
+Terakhir Diperbarui: 28 Oktober 2016 (2016.10.28).

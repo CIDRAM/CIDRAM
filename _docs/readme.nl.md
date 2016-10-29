@@ -77,13 +77,6 @@ Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de g
 
 Bestand | Beschrijving
 ----|----
-/.gitattributes | Een Github project bestand (niet vereist voor een goede werking van het script).
-/Changelog.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
-/composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
-/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
-/loader.php | Lader. Dit is wat u zou moeten worden inhaken in (essentieel)!
-/README.md | Project beknopte informatie.
-/web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
 /_docs/readme.ar.md | Arabisch documentatie.
 /_docs/readme.de.md | Duitse documentatie.
@@ -100,11 +93,72 @@ Bestand | Beschrijving
 /_docs/readme.zh-TW.md | Chinees (traditioneel) documentatie.
 /_docs/readme.zh.md | Chinees (vereenvoudigd) documentatie.
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
+/vault/fe_assets/ | Frontend data/gegevens.
+/vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
+/vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
+/vault/fe_assets/_login.html | Een HTML sjabloon voor de frontend inlogpagina.
+/vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
+/vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
+/vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
+/vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
+/vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
+/vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
+/vault/fe_assets/frontend.dat | Database voor de frontend (bevat accounts informatie, sessies informatie, en de cache; alleen gegenereerd als de frontend geactiveerd en gebruikt).
+/vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
+/vault/lang/ | Bevat CIDRAM taaldata/taalgegevens.
+/vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.ar.cli.php | Arabisch taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ar.fe.php | Arabisch taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
+/vault/lang/lang.de.cli.php | Duitse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.de.fe.php | Duitse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
+/vault/lang/lang.en.cli.php | Engels taaldata/taalgegevens voor CLI.
+/vault/lang/lang.en.fe.php | Engels taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.en.php | Engels taaldata/taalgegevens.
+/vault/lang/lang.es.cli.php | Spaanse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.es.fe.php | Spaanse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
+/vault/lang/lang.fr.cli.php | Franse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.fr.fe.php | Franse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.id.cli.php | Indonesisch taaldata/taalgegevens voor CLI.
+/vault/lang/lang.id.fe.php | Indonesisch taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
+/vault/lang/lang.it.cli.php | Italiaanse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.it.fe.php | Italiaanse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.ja.cli.php | Japanse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ja.fe.php | Japanse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
+/vault/lang/lang.nl.cli.php | Nederlandse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.nl.fe.php | Nederlandse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
+/vault/lang/lang.pt.cli.php | Portugees taaldata/taalgegevens voor CLI.
+/vault/lang/lang.pt.fe.php | Portugees taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
+/vault/lang/lang.ru.cli.php | Russische taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ru.fe.php | Russische taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
+/vault/lang/lang.vi.cli.php | Vietnamees taaldata/taalgegevens voor CLI.
+/vault/lang/lang.vi.fe.php | Vietnamees taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
+/vault/lang/lang.zh-tw.cli.php | Chinees (traditioneel) taaldata/taalgegevens voor CLI.
+/vault/lang/lang.zh-tw.fe.php | Chinees (traditioneel) taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.cli.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor CLI.
+/vault/lang/lang.zh.fe.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache.dat | Cache data/gegevens.
 /vault/cli.php | CLI-handler.
+/vault/components.dat | Bevat informatie over de verschillende bestanddelen van CIDRAM; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie-handler.
+/vault/frontend.php | Frontend-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke handtekening secties CIDRAM moeten negeren).
@@ -114,36 +168,6 @@ Bestand | Beschrijving
 /vault/ipv6.dat | IPv6 handtekeningen bestand.
 /vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste handtekeningen bestand (hernoemen om te activeren).
 /vault/lang.php | Taal-handler.
-/vault/lang/ | Bevat CIDRAM taaldata/taalgegevens.
-/vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.ar.cli.php | Arabisch taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
-/vault/lang/lang.de.cli.php | Duitse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
-/vault/lang/lang.en.cli.php | Engels taaldata/taalgegevens voor CLI.
-/vault/lang/lang.en.php | Engels taaldata/taalgegevens.
-/vault/lang/lang.es.cli.php | Spaanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
-/vault/lang/lang.fr.cli.php | Franse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
-/vault/lang/lang.id.cli.php | Indonesisch taaldata/taalgegevens voor CLI.
-/vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
-/vault/lang/lang.it.cli.php | Italiaanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
-/vault/lang/lang.ja.cli.php | Japanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
-/vault/lang/lang.nl.cli.php | Nederlandse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
-/vault/lang/lang.pt.cli.php | Portugees taaldata/taalgegevens voor CLI.
-/vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
-/vault/lang/lang.ru.cli.php | Russische taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
-/vault/lang/lang.vi.cli.php | Vietnamees taaldata/taalgegevens voor CLI.
-/vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
-/vault/lang/lang.zh-tw.cli.php | Chinees (traditioneel) taaldata/taalgegevens voor CLI.
-/vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
-/vault/lang/lang.zh.cli.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor CLI.
-/vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
 /vault/outgen.php | Uitvoer generator.
 /vault/recaptcha.php | reCAPTCHA module.
 /vault/rules_as6939.php | Aangepaste regels bestand voor AS6939.
@@ -152,6 +176,13 @@ Bestand | Beschrijving
 /vault/salt.dat | Zout bestand (gebruikt door sommige perifere functionaliteit; alleen gegenereerd indien nodig).
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
+/.gitattributes | Een Github project bestand (niet vereist voor een goede werking van het script).
+/Changelog.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
+/composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
+/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
+/loader.php | Lader. Dit is wat u zou moeten worden inhaken in (essentieel)!
+/README.md | Project beknopte informatie.
+/web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 
 ---
 
@@ -486,4 +517,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 11 Oktober 2016 (2016.10.11).
+Laatste Bijgewerkt: 28 Oktober 2016 (2016.10.28).

@@ -78,13 +78,6 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 文件 | 说明
 ----|----
-/.gitattributes | Github文件（不需要为正确经营脚本）。
-/Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
-/composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
-/LICENSE.txt | GNU/GPLv2 执照文件（不需要为正确经营脚本）。
-/loader.php | 加载文件。这个是文件您应该｢钩子｣（必不可少）!
-/README.md | 项目概要信息。
-/web.config | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
 /_docs/ | 笔记文件夹（包含若干文件）。
 /_docs/readme.ar.md | 阿拉伯文自述文件。
 /_docs/readme.de.md | 德文自述文件。
@@ -101,11 +94,72 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /_docs/readme.zh-TW.md | 中文（传统）自述文件。
 /_docs/readme.zh.md | 中文（简体）自述文件。
 /vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
+/vault/fe_assets/ | 前端资产。
+/vault/fe_assets/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/fe_assets/_accounts.html | HTML模板为前端账户页面。
+/vault/fe_assets/_accounts_row.html | HTML模板为前端账户页面。
+/vault/fe_assets/_config.html | HTML模板为前端配置页面。
+/vault/fe_assets/_home.html | HTML模板为前端主页。
+/vault/fe_assets/_login.html | HTML模板为前端登录。
+/vault/fe_assets/_logs.html | HTML模板为前端日志页面。
+/vault/fe_assets/_nav_complete_access.html | HTML模板为前端导航链接，为那些与完全访问。
+/vault/fe_assets/_nav_logs_access_only.html | HTML模板为前端导航链接，为那些与仅日志访问。
+/vault/fe_assets/_updates.html | HTML模板为前端更新页面。
+/vault/fe_assets/_updates_row.html | HTML模板为前端更新页面。
+/vault/fe_assets/frontend.css | CSS样式表为前端。
+/vault/fe_assets/frontend.dat | 数据库为前端（包含账户信息，会话信息，和缓存；只生成如果前端是启用和使用）。
+/vault/fe_assets/frontend.html | 主要的HTML模板文件为前端。
+/vault/lang/ | 包含CIDRAM语言数据。
+/vault/lang/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/lang/lang.ar.cli.php | 阿拉伯文语言数据为CLI。
+/vault/lang/lang.ar.fe.php | 阿拉伯文语言数据为前端。
+/vault/lang/lang.ar.php | 阿拉伯文语言数据。
+/vault/lang/lang.de.cli.php | 德文语言数据为CLI。
+/vault/lang/lang.de.fe.php | 德文语言数据为前端。
+/vault/lang/lang.de.php | 德文语言数据。
+/vault/lang/lang.en.cli.php | 英文语言数据为CLI。
+/vault/lang/lang.en.fe.php | 英文语言数据为前端。
+/vault/lang/lang.en.php | 英文语言数据。
+/vault/lang/lang.es.cli.php | 西班牙文语言数据为CLI。
+/vault/lang/lang.es.fe.php | 西班牙文语言数据为前端。
+/vault/lang/lang.es.php | 西班牙文语言数据。
+/vault/lang/lang.fr.cli.php | 法文语言数据为CLI。
+/vault/lang/lang.fr.fe.php | 法文语言数据为前端。
+/vault/lang/lang.fr.php | 法文语言数据。
+/vault/lang/lang.id.cli.php | 印度尼西亚文语言数据为CLI。
+/vault/lang/lang.id.fe.php | 印度尼西亚文语言数据为前端。
+/vault/lang/lang.id.php | 印度尼西亚文语言数据。
+/vault/lang/lang.it.cli.php | 意大利文语言数据为CLI。
+/vault/lang/lang.it.fe.php | 意大利文语言数据为前端。
+/vault/lang/lang.it.php | 意大利文语言数据。
+/vault/lang/lang.ja.cli.php | 日文语言数据为CLI。
+/vault/lang/lang.ja.fe.php | 日文语言数据为前端。
+/vault/lang/lang.ja.php | 日文语言数据。
+/vault/lang/lang.nl.cli.php | 荷兰文语言数据为CLI。
+/vault/lang/lang.nl.fe.php | 荷兰文语言数据为前端。
+/vault/lang/lang.nl.php | 荷兰文语言数据。
+/vault/lang/lang.pt.cli.php | 葡萄牙文语言数据为CLI。
+/vault/lang/lang.pt.fe.php | 葡萄牙文语言数据为前端。
+/vault/lang/lang.pt.php | 葡萄牙文语言数据。
+/vault/lang/lang.ru.cli.php | 俄文语言数据为CLI。
+/vault/lang/lang.ru.fe.php | 俄文语言数据为前端。
+/vault/lang/lang.ru.php | 俄文语言数据。
+/vault/lang/lang.vi.cli.php | 越南文语言数据为CLI。
+/vault/lang/lang.vi.fe.php | 越南文语言数据为前端。
+/vault/lang/lang.vi.php | 越南文语言数据。
+/vault/lang/lang.zh-tw.cli.php | 中文（传统）语言数据为CLI。
+/vault/lang/lang.zh-tw.fe.php | 中文（传统）语言数据为前端。
+/vault/lang/lang.zh-tw.php | 中文（传统）语言数据。
+/vault/lang/lang.zh.cli.php | 中文（简体）语言数据为CLI。
+/vault/lang/lang.zh.fe.php | 中文（简体）语言数据为前端。
+/vault/lang/lang.zh.php | 中文（简体）语言数据。
 /vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/cache.dat | 缓存数据。
 /vault/cli.php | CLI处理文件。
+/vault/components.dat | 包含的相关信息关于CIDRAM的各种组件；它使用通过更新功能从前端。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令为CIDRAM，告诉它什么做和怎么正确地经营（重命名为激活）。
 /vault/config.php | 配置处理文件。
+/vault/frontend.php | 前端处理文件。
 /vault/functions.php | 功能处理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相关的reCAPTCHA功能；只有生成如果reCAPTCHA功能被启用）。
 /vault/ignore.dat | 忽略文件（用于指定其中章节签名CIDRAM应该忽略）。
@@ -115,36 +169,6 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/ipv6.dat | IPv6签名文件。
 /vault/ipv6_custom.dat.RenameMe | IPv6定制签名文件（重命名为激活）。
 /vault/lang.php | 语言数据。
-/vault/lang/ | 包含CIDRAM语言数据。
-/vault/lang/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/lang/lang.ar.cli.php | 阿拉伯文语言数据为CLI。
-/vault/lang/lang.ar.php | 阿拉伯文语言数据。
-/vault/lang/lang.de.cli.php | 德文语言数据为CLI。
-/vault/lang/lang.de.php | 德文语言数据。
-/vault/lang/lang.en.cli.php | 英文语言数据为CLI。
-/vault/lang/lang.en.php | 英文语言数据。
-/vault/lang/lang.es.cli.php | 西班牙文语言数据为CLI。
-/vault/lang/lang.es.php | 西班牙文语言数据。
-/vault/lang/lang.fr.cli.php | 法文语言数据为CLI。
-/vault/lang/lang.fr.php | 法文语言数据。
-/vault/lang/lang.id.cli.php | 印度尼西亚文语言数据为CLI。
-/vault/lang/lang.id.php | 印度尼西亚文语言数据。
-/vault/lang/lang.it.cli.php | 意大利文语言数据为CLI。
-/vault/lang/lang.it.php | 意大利文语言数据。
-/vault/lang/lang.ja.cli.php | 日文语言数据为CLI。
-/vault/lang/lang.ja.php | 日文语言数据。
-/vault/lang/lang.nl.cli.php | 荷兰文语言数据为CLI。
-/vault/lang/lang.nl.php | 荷兰文语言数据。
-/vault/lang/lang.pt.cli.php | 葡萄牙文语言数据为CLI。
-/vault/lang/lang.pt.php | 葡萄牙文语言数据。
-/vault/lang/lang.ru.cli.php | 俄文语言数据为CLI。
-/vault/lang/lang.ru.php | 俄文语言数据。
-/vault/lang/lang.vi.cli.php | 越南文语言数据为CLI。
-/vault/lang/lang.vi.php | 越南文语言数据。
-/vault/lang/lang.zh-tw.cli.php | 中文（传统）语言数据为CLI。
-/vault/lang/lang.zh-tw.php | 中文（传统）语言数据。
-/vault/lang/lang.zh.cli.php | 中文（简体）语言数据为CLI。
-/vault/lang/lang.zh.php | 中文（简体）语言数据。
 /vault/outgen.php | 输出发生器。
 /vault/recaptcha.php | reCAPTCHA模块。
 /vault/rules_as6939.php | 定制规则文件为 AS6939。
@@ -153,6 +177,13 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/salt.dat | 盐文件（使用由一些外围功能；只产生当必要）。
 /vault/template.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
+/.gitattributes | Github文件（不需要为正确经营脚本）。
+/Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
+/composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
+/LICENSE.txt | GNU/GPLv2 执照文件（不需要为正确经营脚本）。
+/loader.php | 加载文件。这个是文件您应该｢钩子｣（必不可少）!
+/README.md | 项目概要信息。
+/web.config | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
 
 ---
 
@@ -487,4 +518,4 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2016年10月11日。
+最后更新：2016年10月28日。

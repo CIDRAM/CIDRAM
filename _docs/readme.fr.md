@@ -77,13 +77,6 @@ Voici une liste de tous les fichiers inclus dans CIDRAM dans son natif état, to
 
 Fichier | Description
 ----|----
-/.gitattributes | Un fichier du Github projet (pas nécessaire pour le bon fonctionnement du script).
-/Changelog.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
-/composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
-/LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
-/loader.php | Chargeur/Loader. C'est ce que vous êtes censé être attacher dans à (essentiel)!
-/README.md | Sommaire de l'information du projet.
-/web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 /_docs/ | Documentation répertoire (contient divers fichiers).
 /_docs/readme.ar.md | Documentation en Arabe.
 /_docs/readme.de.md | Documentation en Allemand.
@@ -100,11 +93,72 @@ Fichier | Description
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
 /vault/ | Voûte répertoire (contient divers fichiers).
+/vault/fe_assets/ | Les fichiers de l'accès frontal.
+/vault/fe_assets/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
+/vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
+/vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
+/vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
+/vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
+/vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
+/vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
+/vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour le front-end navigation links, pour ceux qui ont accès aux fichiers journaux seulement.
+/vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
+/vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
+/vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
+/vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes, informations sur les sessions, et le cache; généré seulement si l'accès frontal est activé et utilisé).
+/vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
+/vault/lang/ | Contient linguistiques données.
+/vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/lang/lang.ar.cli.php | Linguistiques données en Arabe pour CLI.
+/vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour le front-end.
+/vault/lang/lang.ar.php | Linguistiques données en Arabe.
+/vault/lang/lang.de.cli.php | Linguistiques données en Allemand pour CLI.
+/vault/lang/lang.de.fe.php | Linguistiques données en Allemand pour le front-end.
+/vault/lang/lang.de.php | Linguistiques données en Allemand.
+/vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
+/vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour le front-end.
+/vault/lang/lang.en.php | Linguistiques données en Anglais.
+/vault/lang/lang.es.cli.php | Linguistiques données en Espagnol pour CLI.
+/vault/lang/lang.es.fe.php | Linguistiques données en Espagnol pour le front-end.
+/vault/lang/lang.es.php | Linguistiques données en Espagnol.
+/vault/lang/lang.fr.cli.php | Linguistiques données en Français pour CLI.
+/vault/lang/lang.fr.fe.php | Linguistiques données en Français pour le front-end.
+/vault/lang/lang.fr.php | Linguistiques données en Français.
+/vault/lang/lang.id.cli.php | Linguistiques données en Indonésien pour CLI.
+/vault/lang/lang.id.fe.php | Linguistiques données en Indonésien pour le front-end.
+/vault/lang/lang.id.php | Linguistiques données en Indonésien.
+/vault/lang/lang.it.cli.php | Linguistiques données en Italien pour CLI.
+/vault/lang/lang.it.fe.php | Linguistiques données en Italien pour le front-end.
+/vault/lang/lang.it.php | Linguistiques données en Italien.
+/vault/lang/lang.ja.cli.php | Linguistiques données en Japonais pour CLI.
+/vault/lang/lang.ja.fe.php | Linguistiques données en Japonais pour le front-end.
+/vault/lang/lang.ja.php | Linguistiques données en Japonais.
+/vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandais pour CLI.
+/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandais pour le front-end.
+/vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
+/vault/lang/lang.pt.cli.php | Linguistiques données en Portugais pour CLI.
+/vault/lang/lang.pt.fe.php | Linguistiques données en Portugais pour le front-end.
+/vault/lang/lang.pt.php | Linguistiques données en Portugais.
+/vault/lang/lang.ru.cli.php | Linguistiques données en Russe pour CLI.
+/vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour le front-end.
+/vault/lang/lang.ru.php | Linguistiques données en Russe.
+/vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamien pour CLI.
+/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamien pour le front-end.
+/vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
+/vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
+/vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour le front-end.
+/vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh.cli.php | Linguistiques données en Chinois (simplifié) pour CLI.
+/vault/lang/lang.zh.fe.php | Linguistiques données en Chinois (simplifié) pour le front-end.
+/vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache.dat | Données du cache.
 /vault/cli.php | Module de CLI.
+/vault/components.dat | Contient des informations relatives aux divers composants de CIDRAM; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour CIDRAM, pour comment fonctionner correctement (renommer pour activer).
 /vault/config.php | Module de configuration.
+/vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/hashes.dat | Contient une liste de hashes acceptées (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
 /vault/ignore.dat | Fichier de ignores (utilisé pour spécifier la signature sections CIDRAM devrait ignorer).
@@ -114,36 +168,6 @@ Fichier | Description
 /vault/ipv6.dat | Fichier de signatures pour IPv6.
 /vault/ipv6_custom.dat.RenameMe | Fichier de signatures pour IPv6 personnalisés (renommer pour activer).
 /vault/lang.php | Module de linguistiques.
-/vault/lang/ | Contient linguistiques données.
-/vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/lang/lang.ar.cli.php | Linguistiques données en Arabe pour CLI.
-/vault/lang/lang.ar.php | Linguistiques données en Arabe.
-/vault/lang/lang.de.cli.php | Linguistiques données en Allemand pour CLI.
-/vault/lang/lang.de.php | Linguistiques données en Allemand.
-/vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
-/vault/lang/lang.en.php | Linguistiques données en Anglais.
-/vault/lang/lang.es.cli.php | Linguistiques données en Espagnol pour CLI.
-/vault/lang/lang.es.php | Linguistiques données en Espagnol.
-/vault/lang/lang.fr.cli.php | Linguistiques données en Français pour CLI.
-/vault/lang/lang.fr.php | Linguistiques données en Français.
-/vault/lang/lang.id.cli.php | Linguistiques données en Indonésien pour CLI.
-/vault/lang/lang.id.php | Linguistiques données en Indonésien.
-/vault/lang/lang.it.cli.php | Linguistiques données en Italien pour CLI.
-/vault/lang/lang.it.php | Linguistiques données en Italien.
-/vault/lang/lang.ja.cli.php | Linguistiques données en Japonais pour CLI.
-/vault/lang/lang.ja.php | Linguistiques données en Japonais.
-/vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandais pour CLI.
-/vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
-/vault/lang/lang.pt.cli.php | Linguistiques données en Portugais pour CLI.
-/vault/lang/lang.pt.php | Linguistiques données en Portugais.
-/vault/lang/lang.ru.cli.php | Linguistiques données en Russe pour CLI.
-/vault/lang/lang.ru.php | Linguistiques données en Russe.
-/vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamien pour CLI.
-/vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
-/vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
-/vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
-/vault/lang/lang.zh.cli.php | Linguistiques données en Chinois (simplifié) pour CLI.
-/vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/outgen.php | Générateur de sortie.
 /vault/recaptcha.php | Module reCAPTCHA.
 /vault/rules_as6939.php | Fichier de règles personnalisés pour AS6939.
@@ -152,6 +176,13 @@ Fichier | Description
 /vault/salt.dat | Fichier de sel (utilisé par certaine fonctionnalité périphérique; seulement généré si nécessaire).
 /vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
+/.gitattributes | Un fichier du Github projet (pas nécessaire pour le bon fonctionnement du script).
+/Changelog.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
+/composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
+/LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
+/loader.php | Chargeur/Loader. C'est ce que vous êtes censé être attacher dans à (essentiel)!
+/README.md | Sommaire de l'information du projet.
+/web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 
 ---
 
@@ -486,4 +517,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 11 Octobre 2016 (2016.10.11).
+Dernière Mise à Jour: 28 Octobre 2016 (2016.10.28).

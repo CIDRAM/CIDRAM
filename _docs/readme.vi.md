@@ -77,13 +77,6 @@ Sau đây là một danh sách tất cả các tập tin mà cần phải có đ
 
 Tập tin | Chi tiết
 ----|----
-/.gitattributes | Tập tin dự án cho Github (không cần thiết cho chức năng phù hợp của kịch bản).
-/Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
-/composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
-/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
-/loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
-/README.md | Thông tin tóm tắt dự án.
-/web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 /_docs/ | Thư mực cho tài liệu.
 /_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
 /_docs/readme.de.md | Tài liệu tiếng Đức.
@@ -100,11 +93,72 @@ Tập tin | Chi tiết
 /_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (truyền thống).
 /_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (giản thể).
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
+/vault/fe_assets/ | Các tài sản front-end.
+/vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
+/vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
+/vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
+/vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
+/vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
+/vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
+/vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
+/vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
+/vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
+/vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
+/vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản, thông tin phiên, và bộ nhớ cache; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
+/vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
+/vault/lang/ | Chứa dữ liệu tiếng cho CIDRAM.
+/vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/lang/lang.ar.cli.php | Dữ liệu tiếng Ả Rập cho CLI.
+/vault/lang/lang.ar.fe.php | Dữ liệu tiếng Ả Rập cho các front-end.
+/vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
+/vault/lang/lang.de.cli.php | Dữ liệu tiếng Đức cho CLI.
+/vault/lang/lang.de.fe.php | Dữ liệu tiếng Đức cho các front-end.
+/vault/lang/lang.de.php | Dữ liệu tiếng Đức.
+/vault/lang/lang.en.cli.php | Dữ liệu tiếng Anh cho CLI.
+/vault/lang/lang.en.fe.php | Dữ liệu tiếng Anh cho các front-end.
+/vault/lang/lang.en.php | Dữ liệu tiếng Anh.
+/vault/lang/lang.es.cli.php | Dữ liệu tiếng Tây Ban Nha cho CLI.
+/vault/lang/lang.es.fe.php | Dữ liệu tiếng Tây Ban Nha cho các front-end.
+/vault/lang/lang.es.php | Dữ liệu tiếng Tây Ban Nha.
+/vault/lang/lang.fr.cli.php | Dữ liệu tiếng Pháp cho CLI.
+/vault/lang/lang.fr.fe.php | Dữ liệu tiếng Pháp cho các front-end.
+/vault/lang/lang.fr.php | Dữ liệu tiếng Pháp.
+/vault/lang/lang.id.cli.php | Dữ liệu tiếng Indonesia cho CLI.
+/vault/lang/lang.id.fe.php | Dữ liệu tiếng Indonesia cho các front-end.
+/vault/lang/lang.id.php | Dữ liệu tiếng Indonesia.
+/vault/lang/lang.it.cli.php | Dữ liệu tiếng Ý cho CLI.
+/vault/lang/lang.it.fe.php | Dữ liệu tiếng Ý cho các front-end.
+/vault/lang/lang.it.php | Dữ liệu tiếng Ý.
+/vault/lang/lang.ja.cli.php | Dữ liệu tiếng Nhật cho CLI.
+/vault/lang/lang.ja.fe.php | Dữ liệu tiếng Nhật cho các front-end.
+/vault/lang/lang.ja.php | Dữ liệu tiếng Nhật.
+/vault/lang/lang.nl.cli.php | Dữ liệu tiếng Hà Lan cho CLI.
+/vault/lang/lang.nl.fe.php | Dữ liệu tiếng Hà Lan cho các front-end.
+/vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
+/vault/lang/lang.pt.cli.php | Dữ liệu tiếng Bồ Đào Nha cho CLI.
+/vault/lang/lang.pt.fe.php | Dữ liệu tiếng Bồ Đào Nha cho các front-end.
+/vault/lang/lang.pt.php | Dữ liệu tiếng Bồ Đào Nha.
+/vault/lang/lang.ru.cli.php | Dữ liệu tiếng Nga cho CLI.
+/vault/lang/lang.ru.fe.php | Dữ liệu tiếng Nga cho các front-end.
+/vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
+/vault/lang/lang.vi.cli.php | Dữ liệu tiếng Việt cho CLI.
+/vault/lang/lang.vi.fe.php | Dữ liệu tiếng Việt cho các front-end.
+/vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
+/vault/lang/lang.zh-tw.cli.php | Dữ liệu tiếng Trung Quốc (truyền thống) cho CLI.
+/vault/lang/lang.zh-tw.fe.php | Dữ liệu tiếng Trung Quốc (truyền thống) cho các front-end.
+/vault/lang/lang.zh-tw.php | Dữ liệu tiếng Trung Quốc (truyền thống).
+/vault/lang/lang.zh.cli.php | Dữ liệu tiếng Trung Quốc (giản thể) cho CLI.
+/vault/lang/lang.zh.fe.php | Dữ liệu tiếng Trung Quốc (giản thể) cho các front-end.
+/vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
 /vault/cli.php | Tập tin cho xử lý CLI.
+/vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
+/vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/hashes.dat | Danh sách các giá trị băm được chấp nhận (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
 /vault/ignore.dat | Tập tin các bỏ qua (được sử dụng để xác định mà phần chữ ký CIDRAM nên bỏ qua).
@@ -114,36 +168,6 @@ Tập tin | Chi tiết
 /vault/ipv6.dat | Tập tin chữ ký IPv6.
 /vault/ipv6_custom.dat.RenameMe | Tập tin chữ ký IPv6 tùy chỉnh (đổi tên để kích hoạt).
 /vault/lang.php | Dữ liệu tiếng.
-/vault/lang/ | Chứa dữ liệu tiếng cho CIDRAM.
-/vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/lang/lang.ar.cli.php | Dữ liệu tiếng Ả Rập cho CLI.
-/vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
-/vault/lang/lang.de.cli.php | Dữ liệu tiếng Đức cho CLI.
-/vault/lang/lang.de.php | Dữ liệu tiếng Đức.
-/vault/lang/lang.en.cli.php | Dữ liệu tiếng Anh cho CLI.
-/vault/lang/lang.en.php | Dữ liệu tiếng Anh.
-/vault/lang/lang.es.cli.php | Dữ liệu tiếng Tây Ban Nha cho CLI.
-/vault/lang/lang.es.php | Dữ liệu tiếng Tây Ban Nha.
-/vault/lang/lang.fr.cli.php | Dữ liệu tiếng Pháp cho CLI.
-/vault/lang/lang.fr.php | Dữ liệu tiếng Pháp.
-/vault/lang/lang.id.cli.php | Dữ liệu tiếng Indonesia cho CLI.
-/vault/lang/lang.id.php | Dữ liệu tiếng Indonesia.
-/vault/lang/lang.it.cli.php | Dữ liệu tiếng Ý cho CLI.
-/vault/lang/lang.it.php | Dữ liệu tiếng Ý.
-/vault/lang/lang.ja.cli.php | Dữ liệu tiếng Nhật cho CLI.
-/vault/lang/lang.ja.php | Dữ liệu tiếng Nhật.
-/vault/lang/lang.nl.cli.php | Dữ liệu tiếng Hà Lan cho CLI.
-/vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
-/vault/lang/lang.pt.cli.php | Dữ liệu tiếng Bồ Đào Nha cho CLI.
-/vault/lang/lang.pt.php | Dữ liệu tiếng Bồ Đào Nha.
-/vault/lang/lang.ru.cli.php | Dữ liệu tiếng Nga cho CLI.
-/vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
-/vault/lang/lang.vi.cli.php | Dữ liệu tiếng Việt cho CLI.
-/vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
-/vault/lang/lang.zh-tw.cli.php | Dữ liệu tiếng Trung Quốc (truyền thống) cho CLI.
-/vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (truyền thống).
-/vault/lang/lang.zh.cli.php | Dữ liệu tiếng Trung Quốc (giản thể) cho CLI.
-/vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
 /vault/outgen.php | Máy phát đầu ra.
 /vault/recaptcha.php | reCAPTCHA mô-đun.
 /vault/rules_as6939.php | Tập tin quy tắc tùy chỉnh cho AS6939.
@@ -152,6 +176,13 @@ Tập tin | Chi tiết
 /vault/salt.dat | Tập tin muối (được sử dụng bởi một số chức năng ngoại vi; chỉ tạo ra nếu cần thiết).
 /vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
+/.gitattributes | Tập tin dự án cho Github (không cần thiết cho chức năng phù hợp của kịch bản).
+/Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
+/composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
+/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
+/loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
+/README.md | Thông tin tóm tắt dự án.
+/web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 
 ---
 
@@ -486,4 +517,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 11 Tháng Mười 2016 (2016.10.11).
+Lần cuối cập nhật: 28 Tháng Mười 2016 (2016.10.28).

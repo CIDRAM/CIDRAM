@@ -77,13 +77,6 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 ファイル | 説明
 ----|----
-/.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
-/Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
-/composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
-/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
-/loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
-/README.md | プロジェクト概要情報。
-/web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 /_docs/ | ドキュメンテーション用のディレクトリです（様々なファイルを含みます）。
 /_docs/readme.ar.md | アラビア語ドキュメンテーション。
 /_docs/readme.de.md | ドイツ語ドキュメンテーション。
@@ -100,11 +93,72 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /_docs/readme.zh-TW.md | 繁体字中国語ドキュメンテーション。
 /_docs/readme.zh.md | 簡体字中国語ドキュメンテーション。
 /vault/ | ヴォルト・ディレクトリ（様々なファイルを含んでいます）。
+/vault/fe_assets/ | フロントエンド資産。
+/vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page. @TranslateMe@
+/vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page. @TranslateMe@
+/vault/fe_assets/_config.html | An HTML template for the front-end configuration page. @TranslateMe@
+/vault/fe_assets/_home.html | An HTML template for the front-end homepage. @TranslateMe@
+/vault/fe_assets/_login.html | An HTML template for the front-end login. @TranslateMe@
+/vault/fe_assets/_logs.html | An HTML template for the front-end logs page. @TranslateMe@
+/vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access. @TranslateMe@
+/vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only. @TranslateMe@
+/vault/fe_assets/_updates.html | An HTML template for the front-end updates page. @TranslateMe@
+/vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page. @TranslateMe@
+/vault/fe_assets/frontend.css | CSS style-sheet for the front-end. @TranslateMe@
+/vault/fe_assets/frontend.dat | Database for the front-end (contains account information, session information, and the cache; only generated if the front-end is enabled and used). @TranslateMe@
+/vault/fe_assets/frontend.html | The main HTML template file for the front-end. @TranslateMe@
+/vault/lang/ | CIDRAMの言語データを含んでいます。
+/vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/lang/lang.ar.cli.php | CLIのアラビア語言語データ。
+/vault/lang/lang.ar.fe.php | フロントエンドのアラビア語言語データ。
+/vault/lang/lang.ar.php | アラビア語言語データ。
+/vault/lang/lang.de.cli.php | CLIのドイツ語言語データ。
+/vault/lang/lang.de.fe.php | フロントエンドのドイツ語言語データ。
+/vault/lang/lang.de.php | ドイツ語言語データ。
+/vault/lang/lang.en.cli.php | CLIの英語言語データ。
+/vault/lang/lang.en.fe.php | フロントエンドの英語言語データ。
+/vault/lang/lang.en.php | 英語言語データ。
+/vault/lang/lang.es.cli.php | CLIのスペイン語言語データ。
+/vault/lang/lang.es.fe.php | フロントエンドのスペイン語言語データ。
+/vault/lang/lang.es.php | スペイン語言語データ。
+/vault/lang/lang.fr.cli.php | CLIのフランス語言語データ。
+/vault/lang/lang.fr.fe.php | フロントエンドのフランス語言語データ。
+/vault/lang/lang.fr.php | フランス語言語データ。
+/vault/lang/lang.id.cli.php | CLIのインドネシア語言語データ。
+/vault/lang/lang.id.fe.php | フロントエンドのインドネシア語言語データ。
+/vault/lang/lang.id.php | インドネシア語言語データ。
+/vault/lang/lang.it.cli.php | CLIの伊語言語データ。
+/vault/lang/lang.it.fe.php | フロントエンドの伊語言語データ。
+/vault/lang/lang.it.php | 伊語言語データ。
+/vault/lang/lang.ja.cli.php | CLIの日本語言語データ。
+/vault/lang/lang.ja.fe.php | フロントエンドの日本語言語データ。
+/vault/lang/lang.ja.php | 日本語言語データ。
+/vault/lang/lang.nl.cli.php | CLIのオランダ語言語データ。
+/vault/lang/lang.nl.fe.php | フロントエンドのオランダ語言語データ。
+/vault/lang/lang.nl.php | オランダ語言語データ。
+/vault/lang/lang.pt.cli.php | CLIのポルトガル語言語データ。
+/vault/lang/lang.pt.fe.php | フロントエンドのポルトガル語言語データ。
+/vault/lang/lang.pt.php | ポルトガル語言語データ。
+/vault/lang/lang.ru.cli.php | CLIのロシア語言語データ。
+/vault/lang/lang.ru.fe.php | フロントエンドのロシア語言語データ。
+/vault/lang/lang.ru.php | ロシア語言語データ。
+/vault/lang/lang.vi.cli.php | CLIのベトナム語言語データ。
+/vault/lang/lang.vi.fe.php | フロントエンドのベトナム語言語データ。
+/vault/lang/lang.vi.php | ベトナム語言語データ。
+/vault/lang/lang.zh-tw.cli.php | CLIの繁体字中国語言語データ。
+/vault/lang/lang.zh-tw.fe.php | フロントエンドの繁体字中国語言語データ。
+/vault/lang/lang.zh-tw.php | 繁体字中国語言語データ。
+/vault/lang/lang.zh.cli.php | CLIの簡体字中国語言語データ。
+/vault/lang/lang.zh.fe.php | フロントエンドの簡体字中国語言語データ。
+/vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cache.dat | キャッシュ・データ。
 /vault/cli.php | CLIハンドラ。
+/vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end. @TranslateMe@
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
+/vault/frontend.php | フロントエンド・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/ignore.dat | 無視ファイル（これは署名セクション無視します）。
@@ -114,36 +168,6 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/ipv6.dat | IPv6のシグネチャファイル。
 /vault/ipv6_custom.dat.RenameMe | IPv6のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/lang.php | 言語・ハンドラ。
-/vault/lang/ | CIDRAMの言語データを含んでいます。
-/vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
-/vault/lang/lang.ar.cli.php | CLIのアラビア語言語データ。
-/vault/lang/lang.ar.php | アラビア語言語データ。
-/vault/lang/lang.de.cli.php | CLIのドイツ語言語データ。
-/vault/lang/lang.de.php | ドイツ語言語データ。
-/vault/lang/lang.en.cli.php | CLIの英語言語データ。
-/vault/lang/lang.en.php | 英語言語データ。
-/vault/lang/lang.es.cli.php | CLIのスペイン語言語データ。
-/vault/lang/lang.es.php | スペイン語言語データ。
-/vault/lang/lang.fr.cli.php | CLIのフランス語言語データ。
-/vault/lang/lang.fr.php | フランス語言語データ。
-/vault/lang/lang.id.cli.php | CLIのインドネシア語言語データ。
-/vault/lang/lang.id.php | インドネシア語言語データ。
-/vault/lang/lang.it.cli.php | CLIの伊語言語データ。
-/vault/lang/lang.it.php | 伊語言語データ。
-/vault/lang/lang.ja.cli.php | CLIの日本語言語データ。
-/vault/lang/lang.ja.php | 日本語言語データ。
-/vault/lang/lang.nl.cli.php | CLIのオランダ語言語データ。
-/vault/lang/lang.nl.php | オランダ語言語データ。
-/vault/lang/lang.pt.cli.php | CLIのポルトガル語言語データ。
-/vault/lang/lang.pt.php | ポルトガル語言語データ。
-/vault/lang/lang.ru.cli.php | CLIのロシア語言語データ。
-/vault/lang/lang.ru.php | ロシア語言語データ。
-/vault/lang/lang.vi.cli.php | CLIのベトナム語言語データ。
-/vault/lang/lang.vi.php | ベトナム語言語データ。
-/vault/lang/lang.zh-TW.cli.php | CLIの繁体字中国語言語データ。
-/vault/lang/lang.zh-TW.php | 繁体字中国語言語データ。
-/vault/lang/lang.zh.cli.php | CLIの簡体字中国語言語データ。
-/vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/outgen.php | 出力発生器。
 /vault/recaptcha.php | reCAPTCHAのモジュール。
 /vault/rules_as6939.php | カスタムルールは、AS6939のためのファイル。
@@ -152,6 +176,13 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/salt.dat | ソルトファイル（一部の周辺機能によって使用されます；必要な場合にのみ生成）。
 /vault/template.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_custom.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
+/Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
+/composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
+/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
+/loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
+/README.md | プロジェクト概要情報。
+/web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 
 ---
 
@@ -190,13 +221,13 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？ `false`（偽）/200 = 200 OK 「Default（デフォルルト）」； `true`（真） = 403 Forbidden （４０３禁止されている）； 503 = 503 Service unavailable （５０３サービス利用不可）。
 
 "silent_mode" （サイレント・モード）
-- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
+- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank. @TranslateMe@
 
 "lang" （ラング）
 - CIDRAMのデフォルト言語を設定します。
 
 "emailaddr" （Eメール・アドレス）
-- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
+- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses). @TranslateMe@
 
 "disable_cli" （ディスエイブル・シーエルアイ）
 - CLIモードを無効にするか？CLIモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、テストツール（PHPUnit等）やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。 `false`（偽） = CLIモードを有効にします「Default（デフォルルト）」； `true`（真） = CLIモードを無効にします。
@@ -229,25 +260,25 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。
 
 ####"recaptcha" （リーキャプチャ、カテゴリ）
-Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
+Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
 
-Due to the risks associated with providing a way for end-users to bypass the "アクセス拒否" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Due to the risks associated with providing a way for end-users to bypass the "アクセス拒否" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
 
 「site key」および「secret key」を得るために（reCAPTCHAのを使用するために必要）、このリンクをクリックしてください： [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode" （ユース・モード）
-- Defines how CIDRAM should use reCAPTCHA.
-- 0 = reCAPTCHA is completely disabled (default).
-- 1 = reCAPTCHA is enabled for all signatures.
+- How CIDRAM should use reCAPTCHA. @TranslateMe@
+- 0 = reCAPTCHAは、無効になっています「Default（デフォルルト）」。
+- 1 = reCAPTCHAは、すべてのために署名が有効になっています。
 - 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0).
+- (Any other value will be treated in the same way as 0). @TranslateMe@
 
 "lockip" （ロックIP）
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
-- 注意："lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
+- 注意："lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
 
 "lockuser" （ロック・ユーザー）
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
+- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
 
 "sitekey" （サイト・キー）
 - この値は、あなたのreCAPTCHAのための「site key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。
@@ -256,7 +287,7 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 - この値は、あなたのreCAPTCHAのための「secret key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。
 
 "expiry"
-- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
+- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
 
 "logfile" （ログ・ファイル）
 - reCAPTCHA試行の記録。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。
@@ -487,4 +518,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年10月11日。
+最終アップデート： 2016年10月28日。

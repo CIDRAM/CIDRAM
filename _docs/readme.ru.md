@@ -77,13 +77,6 @@ CIDRAM должен автоматически блокировать нежел
 
 Файл | Описание
 ----|----
-/.gitattributes | Файл из Github проекта (на эффективность данного руководства не влияет).
-/Changelog.txt | Перечень внесённых в руководство изменений и его различные версии (на эффективность данного руководства не влияет).
-/composer.json | Composer/Packagist информация (на эффективность данного руководства не влияет).
-/LICENSE.txt | Копия лицензии GNU/GPLv2 (на эффективность данного руководства не влияет).
-/loader.php | Загрузчик. Этот файл будет связан с Вашей системой управления содержимым (обязательно!).
-/README.md | Резюме информации о проекте.
-/web.config | Файл с ASP.NET-конфигурации. Этот файл необходим для защиты `/vault` регистров от неавторизованного доступа, когда руководство инсталлируется на один из серверов, базирующихся на ASP.NET-технологиях.
 /_docs/ | Регистр с документами (содержит различные файлы).
 /_docs/readme.ar.md | Документация на Арабском языке.
 /_docs/readme.de.md | Документация на Немецком языке.
@@ -99,12 +92,73 @@ CIDRAM должен автоматически блокировать нежел
 /_docs/readme.vi.md | Документация на Вьетнамском язык.
 /_docs/readme.zh-TW.md | Документация на Китайском традиционный.
 /_docs/readme.zh.md | Документация на Китайском упрощенный.
-/vault/ | Vault-регистр (содержит различные файлы)
+/vault/ | Vault-регистр (содержит различные файлы).
+/vault/fe_assets/ | Данные для фронтенд.
+/vault/fe_assets/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
+/vault/fe_assets/_accounts.html | Шаблон HTML для учетными записями страница в фронтенд.
+/vault/fe_assets/_accounts_row.html | Шаблон HTML для учетными записями страница в фронтенд.
+/vault/fe_assets/_config.html | Шаблон HTML для конфигурация страница в фронтенд.
+/vault/fe_assets/_home.html | Шаблон HTML для домашняя страница в фронтенд.
+/vault/fe_assets/_login.html | Шаблон HTML для войти страница в фронтенд.
+/vault/fe_assets/_logs.html | Шаблон HTML для лог-файлы страница в фронтенд.
+/vault/fe_assets/_nav_complete_access.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с полным доступом.
+/vault/fe_assets/_nav_logs_access_only.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с доступом только к лог-файлы.
+/vault/fe_assets/_updates.html | Шаблон HTML для обновления страница в фронтенд.
+/vault/fe_assets/_updates_row.html | Шаблон HTML для обновления страница в фронтенд.
+/vault/fe_assets/frontend.css | CSS стиль листов для фронтенд.
+/vault/fe_assets/frontend.dat | База данных для фронтенд (содержит информации об учетными записями, сессий, и кэш; генерируется только если фронтенд будет активирована и используется).
+/vault/fe_assets/frontend.html | Основной файл шаблона HTML для фронтенд.
+/vault/lang/ | Содержит CIDRAM файлы на разных языках.
+/vault/lang/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
+/vault/lang/lang.ar.cli.php | Арабском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.ar.fe.php | Арабском языковые файлы для фронтенд.
+/vault/lang/lang.ar.php | Арабском языковые файлы.
+/vault/lang/lang.de.cli.php | Немецком языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.de.fe.php | Немецком языковые файлы для фронтенд.
+/vault/lang/lang.de.php | Немецком языковые файлы.
+/vault/lang/lang.en.cli.php | Английском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.en.fe.php | Английском языковые файлы для фронтенд.
+/vault/lang/lang.en.php | Английском языковые файлы.
+/vault/lang/lang.es.cli.php | Испанском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.es.fe.php | Испанском языковые файлы для фронтенд.
+/vault/lang/lang.es.php | Испанском языковые файлы.
+/vault/lang/lang.fr.cli.php | Французском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.fr.fe.php | Французском языковые файлы для фронтенд.
+/vault/lang/lang.fr.php | Французском языковые файлы.
+/vault/lang/lang.id.cli.php | Индонезийском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.id.fe.php | Индонезийском языковые файлы для фронтенд.
+/vault/lang/lang.id.php | Индонезийском языковые файлы.
+/vault/lang/lang.it.cli.php | Итальянском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.it.fe.php | Итальянском языковые файлы для фронтенд.
+/vault/lang/lang.it.php | Итальянском языковые файлы.
+/vault/lang/lang.ja.cli.php | Японском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.ja.fe.php | Японском языковые файлы для фронтенд.
+/vault/lang/lang.ja.php | Японском языковые файлы.
+/vault/lang/lang.nl.cli.php | Нидерланском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.nl.fe.php | Нидерланском языковые файлы для фронтенд.
+/vault/lang/lang.nl.php | Нидерланском языковые файлы.
+/vault/lang/lang.pt.cli.php | Португальском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.pt.fe.php | Португальском языковые файлы для фронтенд.
+/vault/lang/lang.pt.php | Португальском языковые файлы.
+/vault/lang/lang.ru.cli.php | Русском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.ru.fe.php | Русском языковые файлы для фронтенд.
+/vault/lang/lang.ru.php | Русском языковые файлы.
+/vault/lang/lang.vi.cli.php | Вьетнамском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.vi.fe.php | Вьетнамском языковые файлы для фронтенд.
+/vault/lang/lang.vi.php | Вьетнамском языковые файлы.
+/vault/lang/lang.zh-cli.TW.php | Китайском традиционный языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.zh-tw.fe.php | Китайском традиционный языковые файлы для фронтенд.
+/vault/lang/lang.zh-tw.php | Китайском традиционный языковые файлы.
+/vault/lang/lang.zh.cli.php | Китайском упрощенный языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.zh.fe.php | Китайском упрощенный языковые файлы для фронтенд.
+/vault/lang/lang.zh.php | Китайском упрощенный языковые файлы.
 /vault/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
 /vault/cache.dat | Cache-данные.
 /vault/cli.php | Обработчик CLI (Способ Командных Строк).
+/vault/components.dat | Содержит информацию, относящуюся к различным компонентам CIDRAM; Используется из функцией Обновления, предоставленной из фронтенд.
 /vault/config.ini.RenameMe | Файл с конфигурации. Содержит всевозможные конфигурации CIDRAM (переименовать чтобы активировать).
 /vault/config.php | Обработчик конфигурации.
+/vault/frontend.php | Обработчик фронтенд.
 /vault/functions.php | Функции файла (обязательно).
 /vault/hashes.dat | Содержит список принятых хэшей (связана с функция reCAPTCHA; генерируется только если функция reCAPTCHA активирована).
 /vault/ignore.dat | Игнорируется файл (используется для указания сигнатур секций CIDRAM следует игнорировать).
@@ -114,36 +168,6 @@ CIDRAM должен автоматически блокировать нежел
 /vault/ipv6.dat | IPv6 файла сигнатур.
 /vault/ipv6_custom.dat.RenameMe | IPv6 пользовательские сигнатур файлы (переименовать чтобы активировать).
 /vault/lang.php | Язык обработчика.
-/vault/lang/ | Содержит CIDRAM файлы на разных языках.
-/vault/lang/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
-/vault/lang/lang.ar.cli.php | Арабском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.ar.php | Арабском языковые файлы.
-/vault/lang/lang.de.cli.php | Немецком языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.de.php | Немецком языковые файлы.
-/vault/lang/lang.en.cli.php | Английском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.en.php | Английском языковые файлы.
-/vault/lang/lang.es.cli.php | Испанском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.es.php | Испанском языковые файлы.
-/vault/lang/lang.fr.cli.php | Французском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.fr.php | Французском языковые файлы.
-/vault/lang/lang.id.cli.php | Индонезийском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.id.php | Индонезийском языковые файлы.
-/vault/lang/lang.it.cli.php | Итальянском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.it.php | Итальянском языковые файлы.
-/vault/lang/lang.ja.cli.php | Японском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.ja.php | Японском языковые файлы.
-/vault/lang/lang.nl.cli.php | Нидерланском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.nl.php | Нидерланском языковые файлы.
-/vault/lang/lang.pt.cli.php | Португальском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.pt.php | Португальском языковые файлы.
-/vault/lang/lang.ru.cli.php | Русском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.ru.php | Русском языковые файлы.
-/vault/lang/lang.vi.cli.php | Вьетнамском языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.vi.php | Вьетнамском языковые файлы.
-/vault/lang/lang.zh-cli.TW.php | Китайском традиционный языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.zh-TW.php | Китайском традиционный языковые файлы.
-/vault/lang/lang.zh.cli.php | Китайском упрощенный языковые файлы для CLI (Способ Командных Строк).
-/vault/lang/lang.zh.php | Китайском упрощенный языковые файлы.
 /vault/outgen.php | Выход генератора.
 /vault/recaptcha.php | Модуль reCAPTCHA.
 /vault/rules_as6939.php | Пользовательские правила файл для AS6939.
@@ -152,6 +176,13 @@ CIDRAM должен автоматически блокировать нежел
 /vault/salt.dat | Соль файл (используется некоторыми периферического функциональностью; генерируется только при необходимости).
 /vault/template.html | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована CIDRAM (сообщение, которое будет показано пользователю).
 /vault/template_custom.html | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована CIDRAM (сообщение, которое будет показано пользователю).
+/.gitattributes | Файл из Github проекта (на эффективность данного руководства не влияет).
+/Changelog.txt | Перечень внесённых в руководство изменений и его различные версии (на эффективность данного руководства не влияет).
+/composer.json | Composer/Packagist информация (на эффективность данного руководства не влияет).
+/LICENSE.txt | Копия лицензии GNU/GPLv2 (на эффективность данного руководства не влияет).
+/loader.php | Загрузчик. Этот файл будет связан с Вашей системой управления содержимым (обязательно!).
+/README.md | Резюме информации о проекте.
+/web.config | Файл с ASP.NET-конфигурации. Этот файл необходим для защиты `/vault` регистров от неавторизованного доступа, когда руководство инсталлируется на один из серверов, базирующихся на ASP.NET-технологиях.
 
 ---
 
@@ -201,7 +232,7 @@ CIDRAM должен автоматически блокировать нежел
 - Деактивировать ли CLI-модус? Обычно CLI-модус активирован. Однако иногда он может отрицательно влиять на определённые тестовые программы (например на PHPUnit) и другие приложения, базирующиеся на CLI. Если CLI-модус нельзя деактивировать, то эту команду нужно игнорировать. False = CLI-модус активирован [Стандарт]; True = CLI-модус деактивирован.
 
 "disable_frontend"
-- Деактивировать доступ к front-end? Доступ к front-end может сделать CIDRAM более управляемым, но также может быть потенциальный риск безопасности. Рекомендуется чтобы управлять CIDRAM через back-end когда возможно, но доступ к front-end предоставлен для того когда это не возможно. Держите его деактивирована за исключением того если вам это нужно. False = Активировать доступ к front-end; True = Деактивировать доступ к front-end [Стандарт].
+- Деактивировать доступ к фронтенд? Доступ к фронтенд может сделать CIDRAM более управляемым, но также может быть потенциальный риск безопасности. Рекомендуется чтобы управлять CIDRAM через back-end когда возможно, но доступ к фронтенд предоставлен для того когда это не возможно. Держите его деактивирована за исключением того если вам это нужно. False = Активировать доступ к фронтенд; True = Деактивировать доступ к фронтенд [Стандарт].
 
 ####"signatures" (Категория)
 Конфигурация сигнатур.
@@ -230,32 +261,32 @@ CIDRAM должен автоматически блокировать нежел
 ####"recaptcha" (Категория)
 Если ты хочешь, вы можете предоставить пользователям способ обхода страницы "Доступ Закрыт" путем завершения экземпляра reCAPTCHA. Это может помочь смягчить некоторые из рисков связанных с ложных-срабатываний в тех ситуациях когда мы не совсем уверены был ли запрос возник из машины или человека.
 
-Due to the risks associated with providing a way for end-users to bypass the "Доступ Закрыт" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al).
+Due to the risks associated with providing a way for end-users to bypass the "Доступ Закрыт" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
 
 To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
-- Defines how CIDRAM should use reCAPTCHA.
-- 0 = reCAPTCHA is completely disabled (default).
-- 1 = reCAPTCHA is enabled for all signatures.
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0).
+- Defines how CIDRAM should use reCAPTCHA. @TranslateMe@
+- 0 = reCAPTCHA is completely disabled (default). @TranslateMe@
+- 1 = reCAPTCHA is enabled for all signatures. @TranslateMe@
+- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files. @TranslateMe@
+- (Any other value will be treated in the same way as 0). @TranslateMe@
 
 "lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs).
-- Заметка: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value.
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
+- Заметка: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
 
 "lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default).
+- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
 
 "sitekey"
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard. @TranslateMe@
 
 "secret"
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.
+- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard. @TranslateMe@
 
 "expiry"
-- Когда "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month).
+- Когда "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
 
 "logfile"
 - Записывать все попытки reCAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым.
@@ -486,4 +517,4 @@ CIDRAM *ДЕЛАЕТ* блокирует IP-адрес | __Ложнополож�
 ---
 
 
-Последнее обновление: 11 Октябрь 2016 (2016.10.11).
+Последнее обновление: 28 Октябрь 2016 (2016.10.28).

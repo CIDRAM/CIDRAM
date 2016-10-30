@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.26).
+ * This file: Front-end handler (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -526,6 +526,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             if (!$CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData']) {
                 $CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData'] =
                     $CIDRAM['Request']($CIDRAM['Components']['Meta'][$_POST['ID']]['Remote']);
+                if (
+                    strtolower(substr($CIDRAM['Components']['Meta'][$_POST['ID']]['Remote'], -2)) === 'gz' &&
+                    substr($CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData'], 0, 2) === "\x1f\x8b"
+                ) {
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData'] =
+                        gzdecode($CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData']);
+                }
                 if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData'])) {
                     $CIDRAM['Components']['Meta'][$_POST['ID']]['RemoteData'] = '-';
                 }
@@ -813,6 +820,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData']) {
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] =
                     $CIDRAM['Request']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote']);
+                if (
+                    strtolower(substr(
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote'], -2
+                    )) === 'gz' &&
+                    substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'], 0, 2) === "\x1f\x8b"
+                ) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] =
+                        gzdecode($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData']);
+                }
                 if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'])) {
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = '-';
                 }
@@ -895,15 +911,27 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     }
                 }
             }
-            if (
-                !$CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['InUse'] &&
-                ($CIDRAM['Components']['Key'] !== 'l10n/' . $CIDRAM['Config']['general']['lang']) &&
-                ($CIDRAM['Components']['Key'] !== 'CIDRAM') &&
-                !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Uninstallable']) &&
-                !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])
-            ) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
-                    '<option value="uninstall-component">' . $CIDRAM['lang']['field_uninstall'] . '</option>';
+            if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])) {
+                if (
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['InUse'] ||
+                    ($CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang']) ||
+                    ($CIDRAM['Components']['Key'] === 'CIDRAM')
+                ) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] .=
+                        '<hr /><div class="txtGn">' . $CIDRAM['lang']['state_component_is_active'] . '</div>';
+                } else {
+                    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Uninstallable'])) {
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                            '<option value="uninstall-component">' . $CIDRAM['lang']['field_uninstall'] . '</option>';
+                    }
+                    if ($CIDRAM['Components']['Key'] === 'Bypasses') {
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] .=
+                            '<hr /><div class="txtOe">' . $CIDRAM['lang']['state_component_is_provisional'] . '</div>';
+                    } else {
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] .=
+                            '<hr /><div class="txtRd">' . $CIDRAM['lang']['state_component_is_inactive'] . '</div>';
+                    }
+                }
             }
         }
         if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'])) {
@@ -960,10 +988,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize']);
         if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'])) {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] .=
-                '<br /><select name="do" class="half">' .
+                '<hr /><select name="do" class="half">' .
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .
                 '</select><input class="half" type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" />';
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] = '';
+        }
+        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'])) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] = '';
+        } else {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] =
+                '<br /><a href="' . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] . '">Changelog</a>';
         }
         $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]),
@@ -1003,6 +1037,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         if (!$CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData']) {
             $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData'] =
                 $CIDRAM['Request']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Remote']);
+            if (
+                strtolower(substr(
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Remote'], -2
+                )) === 'gz' &&
+                substr($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData'], 0, 2) === "\x1f\x8b"
+            ) {
+                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData'] =
+                    gzdecode($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData']);
+            }
             if (empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData'])) {
                 $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['RemoteData'] = '-';
             }

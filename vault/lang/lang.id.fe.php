@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.10.24).
+ * This file: Indonesian language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,6 +70,9 @@ $CIDRAM['lang']['response_updates_outdated'] = 'Tidak yang terbaru!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (silahkan perbarui secara manual)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
 $CIDRAM['lang']['state_complete_access'] = 'Akses lengkap';
+$CIDRAM['lang']['state_component_is_active'] = 'Komponen ini aktif.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $CIDRAM['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
 $CIDRAM['lang']['state_logged_in'] = 'Pengguna yang online';
 $CIDRAM['lang']['state_logs_access_only'] = 'Akses ke log hanya';

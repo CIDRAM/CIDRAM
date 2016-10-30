@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2016.10.22).
+ * This file: Portuguese language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,6 +70,9 @@ $CIDRAM['lang']['response_updates_outdated'] = 'Desatualizado!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Desatualizado (por favor atualize manualmente)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Não foi possível determinar.';
 $CIDRAM['lang']['state_complete_access'] = 'Acesso completo';
+$CIDRAM['lang']['state_component_is_active'] = 'Componente está ativo.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Componente está inativo.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Componente está provisório.';
 $CIDRAM['lang']['state_default_password'] = 'Atenção: Usando senha padrão!';
 $CIDRAM['lang']['state_logged_in'] = 'Conectado';
 $CIDRAM['lang']['state_logs_access_only'] = 'Acesso aos arquivos de registro somente';

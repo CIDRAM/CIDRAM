@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.10.21).
+ * This file: French language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,9 +70,12 @@ $CIDRAM['lang']['response_updates_outdated'] = 'Dépassé!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vous plaît mettre à jour manuellement)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
 $CIDRAM['lang']['state_complete_access'] = 'Accès complet';
+$CIDRAM['lang']['state_component_is_active'] = 'Le composant est actif.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $CIDRAM['lang']['state_default_password'] = 'Attention: Utilisant le mot de passe défaut!';
 $CIDRAM['lang']['state_logged_in'] = 'Connecté';
-$CIDRAM['lang']['state_logs_access_only'] = 'Fichiers journaux accès seulement';
+$CIDRAM['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $CIDRAM['lang']['state_password_not_valid'] = 'Attention: Ce compte n\'utilise un mot de passe valide!';
 $CIDRAM['lang']['tip_hello'] = 'Bonjour, {username}.';
 $CIDRAM['lang']['tip_login'] = 'Nom d\'utilisateur défaut: <span class="txtRd">admin</span> – Mot de passe défaut: <span class="txtRd">password</span>';

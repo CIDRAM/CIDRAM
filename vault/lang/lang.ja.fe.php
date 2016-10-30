@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.10.23).
+ * This file: Japanese language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,6 +70,9 @@ $CIDRAM['lang']['response_updates_outdated'] = '時代遅れです！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '時代遅れです（手動でアップデートしてください）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '決定することができません。';
 $CIDRAM['lang']['state_complete_access'] = '完全なアクセス';
+$CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
+$CIDRAM['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
+$CIDRAM['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
 $CIDRAM['lang']['state_logged_in'] = 'ログインしています';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';

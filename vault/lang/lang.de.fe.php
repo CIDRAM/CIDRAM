@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.10.21).
+ * This file: German language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,6 +70,9 @@ $CIDRAM['lang']['response_updates_outdated'] = 'Veraltet!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Veraltet (bitte manuell aktualisieren)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermittelt werden.';
 $CIDRAM['lang']['state_complete_access'] = 'Vollständiger Zugriff';
+$CIDRAM['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $CIDRAM['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
 $CIDRAM['lang']['state_logged_in'] = 'Eingeloggt';
 $CIDRAM['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolle';

@@ -16,14 +16,16 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.6.0-DEV+20161026b
+ Version: 0.6.0-DEV+20161030
  Minimum Required: 0.6.0-DEV
+ Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Files:
   From:
    - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/.htaccess
    - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/cli.php
    - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/config.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/.htaccess
    - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_accounts.html
    - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_accounts_row.html
    - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/fe_assets/_config.html
@@ -48,6 +50,7 @@ CIDRAM:
    - .htaccess
    - cli.php
    - config.php
+   - fe_assets/.htaccess
    - fe_assets/_accounts.html
    - fe_assets/_accounts_row.html
    - fe_assets/_config.html
@@ -72,19 +75,20 @@ CIDRAM:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
    - b9ba2498e1e1d13acef414c490bd9d12:9380
+   - 8e03209e7fc6641b45094e584340feff:83
    - 14c8728c6e8463aea43400194a408bfe:1350
    - 429746b5de7927ac08959fcbf7256f84:772
-   - 337569b9bdf6681e9e437c1587014b38:173
+   - f49948358cb9a42ee7607a70d5506a4e:173
    - 005373b9fbed140f8bba05d54f858e71:290
    - ea499694381ff10a38c4225f4e7bc9d6:426
    - 6ff9fb63b91538ee5b27969f002dedcf:194
    - 3c20871facf9c0f0fef35336ad8a9f65:722
    - a2abeb3e093353cc782a84f3446dd8ca:506
    - 7a301cd9d67e6fa4e77013e3d636442c:569
-   - d2f2749835f3d6666520cda1447092be:666
-   - 7effe2203c576d9eac332ce5bd02ad60:1536
+   - 8a14e9162d0f866334fd11873651a87f:665
+   - 8d9b3aca92c015c06cfd702c0d1ef507:1569
    - edd6df95fc5a80c6ab7e50c59ec0feee:923
-   - a9498ea685e62ee19be4cd3550025bad:63191
+   - 7d6da964435105a1bcf609315545cc9d:66062
    - dd472544abc4e8281fafc42699f7701a:57006
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
@@ -232,7 +236,7 @@ l10n/en:
  Name: l10n/en
  Extended Description:
   en: English language data
- Version: 2016.10.21
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -247,14 +251,14 @@ l10n/en:
    - lang/lang.en.php
   Checksum:
    - 10ebd10d026c244e80210d160f5f5505:4157
-   - 7f11cfc8e884d06bc79d467da43e7968:5039
+   - 2abd638614f602e3768367fc8290d0c5:5266
    - 54e69f219cee5979cea23b191d181734:3791
  Reannotate: components.dat
 l10n/ar:
  Name: l10n/ar
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2016.10.26
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -269,14 +273,14 @@ l10n/ar:
    - lang/lang.ar.php
   Checksum:
    - 55e76e1bccfbd33dcfdadca6fa7fc3b5:4657
-   - e000a1b246b76852783354d6ac081ce0:5692
+   - d7a9d7f327a6991b182faee815de93a3:5937
    - aa7e85f46e38fcd0f87074c2e203d345:3618
  Reannotate: components.dat
 l10n/de:
  Name: l10n/de
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2016.10.21
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -291,14 +295,14 @@ l10n/de:
    - lang/lang.de.php
   Checksum:
    - c632a3176fe563d36568648946799ce5:4461
-   - 826a4b3f4c7667dce1ca2247b0be62f4:5303
+   - 298f55285f23bf0ce90d2d838db07f8e:5533
    - fb002d68c0a17bf725d848d27a66f505:4070
  Reannotate: components.dat
 l10n/es:
  Name: l10n/es
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2016.10.22
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -313,14 +317,14 @@ l10n/es:
    - lang/lang.es.php
   Checksum:
    - b029d949ce43ab84c02e3e7e9a924790:4416
-   - def3ac0bd3219e23e0af815e7c5c217e:5417
+   - d369088381363cde741977670cecbd10:5656
    - f8744767aedafc8582e04b8f4748696b:4017
  Reannotate: components.dat
 l10n/fr:
  Name: l10n/fr
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2016.10.21
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -335,14 +339,14 @@ l10n/fr:
    - lang/lang.fr.php
   Checksum:
    - 806666788d96ef329b73a3722c35d6a5:4446
-   - 93e086d2fc557fa21dc4b0f2023bda0a:5440
+   - 06f6d7f6f56539051986ae3cad7dacbb:5680
    - df79de79b4f44c140d18702ae53967bc:4154
  Reannotate: components.dat
 l10n/id:
  Name: l10n/id
  Extended Description:
   id: File Bahasa Indonesia
- Version: 2016.10.24
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -357,14 +361,14 @@ l10n/id:
    - lang/lang.id.php
   Checksum:
    - efaed7a0f277c29e052877b5162fa840:4297
-   - 8c9bc503d5e666e2c3b938f51de95877:5070
+   - 08b21b40e58b58a5ae268e3e7199d9b5:5305
    - 48333c3701169022080f41242db40785:3919
  Reannotate: components.dat
 l10n/it:
  Name: l10n/it
  Extended Description:
   it: Linguistici dati Italiana
- Version: 2016.10.22
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -379,14 +383,14 @@ l10n/it:
    - lang/lang.it.php
   Checksum:
    - d4ac8f876d8ea002885dc841beafcbec:4331
-   - 9f7d1c13b031fb5f0ee89011767b5ccc:5353
+   - b090fcd8df2d14478dee7102d2190164:5583
    - 0d457d3c74ca6aa851f7a286062434ff:4058
  Reannotate: components.dat
 l10n/ja:
  Name: l10n/ja
  Extended Description:
   ja: 日本語言語データ
- Version: 2016.10.23
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -401,7 +405,7 @@ l10n/ja:
    - lang/lang.ja.php
   Checksum:
    - 5899bcc92a12d134e8dab0b4a7b875c0:5138
-   - a606474ddc1cf82fb2c33c36e2ddf3f6:6027
+   - f9c68557b48cd5a8a54666ce6b81c5ea:6328
    - 6482e506a59c0a1b6f2bb4595b54293b:3700
  Reannotate: components.dat
 l10n/ko:
@@ -430,7 +434,7 @@ l10n/nl:
  Name: l10n/nl
  Extended Description:
   nl: Nederlandse taaldata/taalgegevens
- Version: 2016.10.24
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -445,14 +449,14 @@ l10n/nl:
    - lang/lang.nl.php
   Checksum:
    - 99757f07d3eeebe9fda9ef80f1afd5d3:4394
-   - cafd2922663212712c5b07e24069b50a:5265
+   - 3a244878153d271ea4d959c0ef6b4cf2:5496
    - f3608c6b1566de4a8eb23ec1af38ddac:3934
  Reannotate: components.dat
 l10n/pt:
  Name: l10n/pt
  Extended Description:
   pt: Linguagem dados Português
- Version: 2016.10.22
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -467,14 +471,14 @@ l10n/pt:
    - lang/lang.pt.php
   Checksum:
    - cfd6161777f7b09594193e59901098c1:4414
-   - 2e438d10a3c69677381099efd80b3d6e:5278
+   - 620a87ad4ba62e10a5f82f888072441b:5515
    - b487b7ef95cd8bcdb0f11e2f1e85ee9c:3969
  Reannotate: components.dat
 l10n/ru:
  Name: l10n/ru
  Extended Description:
   ru: Русском языковые файлы
- Version: 2016.10.24
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -489,14 +493,14 @@ l10n/ru:
    - lang/lang.ru.php
   Checksum:
    - eb9ccbc9fde9aed73bdbeb84d35d8a38:5850
-   - 3e09b1c1e4b97a3a22d79d1d26b6e11d:6356
+   - d3700374ce6c238912a5815d8f01d48d:6635
    - acf444fbff9cfe40b2ec8cb1cdaf2c67:5417
  Reannotate: components.dat
 l10n/vi:
  Name: l10n/vi
  Extended Description:
   vi: Dữ liệu tiếng Việt
- Version: 2016.10.23
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -511,14 +515,14 @@ l10n/vi:
    - lang/lang.vi.php
   Checksum:
    - b1c07aea2c985d415b6423a46a2954b6:5081
-   - 1d60928ccbd477f974df27f3f91296f8:5585
+   - 617ea22189b3c19cc8555c3a9c9eadfa:5862
    - 51cc9fc6af315c079fcd6c509b458032:4622
  Reannotate: components.dat
 l10n/zh:
  Name: l10n/zh
  Extended Description:
   zh: 中文（简体）语言数据
- Version: 2016.10.24
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -533,14 +537,14 @@ l10n/zh:
    - lang/lang.zh.php
   Checksum:
    - 9ad86202847438817ddf1ab67993d045:4014
-   - 65a0187e00993948a9f5d5f46b5e7735:4887
+   - af47e2e44e84d3c3e41ee38ee3d9db82:5110
    - 6168c5152652ec516c8b1119a5cdba25:3539
  Reannotate: components.dat
 l10n/zh-TW:
  Name: l10n/zh-TW
  Extended Description:
   zh-TW: 中文（傳統）語言數據
- Version: 2016.10.24
+ Version: 2016.10.30
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -555,7 +559,7 @@ l10n/zh-TW:
    - lang/lang.zh-tw.php
   Checksum:
    - 55213ebf26192d4d47b228144815a8a9:4015
-   - e49c2ca19bb0e6f97375dc5c1e57d7dc:4888
+   - 5e915a91825b30fbc3f6fabad5e0b6ac:5111
    - 935bb65d7fb589e0f168d870f0c0466f:3546
  Reannotate: components.dat
 

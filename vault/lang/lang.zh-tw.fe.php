@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.10.24).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,6 +70,9 @@ $CIDRAM['lang']['response_updates_outdated'] = '過時！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '過時（請更新手動）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '無法確定。';
 $CIDRAM['lang']['state_complete_access'] = '完全訪問';
+$CIDRAM['lang']['state_component_is_active'] = '組件是活性。';
+$CIDRAM['lang']['state_component_is_inactive'] = '組件是非活性。';
+$CIDRAM['lang']['state_component_is_provisional'] = '組件是有時活性。';
 $CIDRAM['lang']['state_default_password'] = '警告：它使用標準密碼！';
 $CIDRAM['lang']['state_logged_in'] = '目前在線';
 $CIDRAM['lang']['state_logs_access_only'] = '僅日誌訪問';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.10.23).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -70,6 +70,9 @@ $CIDRAM['lang']['response_updates_outdated'] = 'Hết hạn!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lòng cập nhật bằng tay)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
+$CIDRAM['lang']['state_component_is_active'] = 'Gói này đang hoạt động.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Gói này không đang hoạt động.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';

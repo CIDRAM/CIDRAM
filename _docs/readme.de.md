@@ -97,20 +97,20 @@ Datei | Beschreibung
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
 /vault/fe_assets/ | Front-End-Daten.
 /vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page. @TranslateMe@
-/vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page. @TranslateMe@
-/vault/fe_assets/_config.html | An HTML template for the front-end configuration page. @TranslateMe@
-/vault/fe_assets/_home.html | An HTML template for the front-end homepage. @TranslateMe@
-/vault/fe_assets/_login.html | An HTML template for the front-end login. @TranslateMe@
-/vault/fe_assets/_logs.html | An HTML template for the front-end logs page. @TranslateMe@
-/vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access. @TranslateMe@
-/vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only. @TranslateMe@
-/vault/fe_assets/_updates.html | An HTML template for the front-end updates page. @TranslateMe@
-/vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page. @TranslateMe@
-/vault/fe_assets/frontend.css | CSS style-sheet for the front-end. @TranslateMe@
-/vault/fe_assets/frontend.dat | Database for the front-end (contains account information, session information, and the cache; only generated if the front-end is enabled and used). @TranslateMe@
-/vault/fe_assets/frontend.html | The main HTML template file for the front-end. @TranslateMe@
-/vault/lang/ | Enthält Sprachdaten für CIDRAM. @TranslateMe@
+/vault/fe_assets/_accounts.html | Eine HTML-Template für das Front-End Konten-Seite.
+/vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
+/vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
+/vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
+/vault/fe_assets/_login.html | Eine HTML-Template für das Front-End Einloggen-Seite.
+/vault/fe_assets/_logs.html | Eine HTML-Template für das Front-End Protokolldateien-Seite.
+/vault/fe_assets/_nav_complete_access.html | Eine HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
+/vault/fe_assets/_nav_logs_access_only.html | Eine HTML-Template für das Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
+/vault/fe_assets/_updates.html | Eine HTML-Template für das Front-End Aktualisierungen-Seite.
+/vault/fe_assets/_updates_row.html | Eine HTML-Template für das Front-End Aktualisierungen-Seite.
+/vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
+/vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen, Sitzungsinformationen, und dem Cache; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
+/vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
+/vault/lang/ | Enthält Sprachdaten für CIDRAM.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
 /vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
@@ -157,10 +157,10 @@ Datei | Beschreibung
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cache.dat | Cache-Daten.
 /vault/cli.php | CLI-Handler.
-/vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end. @TranslateMe@
+/vault/components.dat | Enthält Informationen zu den verschiedenen Komponenten für CIDRAM; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
 /vault/config.php | Konfiguration-Handler.
-/vault/frontend.php | Front-end handler. @TranslateMe@
+/vault/frontend.php | Front-End-Handler.
 /vault/functions.php | Funktionen-Datei.
 /vault/hashes.dat | Enthält eine Liste der akzeptierten Hashes (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
 /vault/ignore.dat | Ignoriert Datei (zu spezifizieren welche Signatur-Sektionen CIDRAM sollte ignorieren es ist benutzt).
@@ -519,4 +519,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 28. Oktober 2016 (2016.10.28).
+Zuletzt aktualisiert: 31. Oktober 2016 (2016.10.31).

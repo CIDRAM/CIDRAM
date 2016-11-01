@@ -95,19 +95,19 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/ | ヴォルト・ディレクトリ（様々なファイルを含んでいます）。
 /vault/fe_assets/ | フロントエンド資産。
 /vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
-/vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page. @TranslateMe@
-/vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page. @TranslateMe@
-/vault/fe_assets/_config.html | An HTML template for the front-end configuration page. @TranslateMe@
-/vault/fe_assets/_home.html | An HTML template for the front-end homepage. @TranslateMe@
-/vault/fe_assets/_login.html | An HTML template for the front-end login. @TranslateMe@
-/vault/fe_assets/_logs.html | An HTML template for the front-end logs page. @TranslateMe@
-/vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access. @TranslateMe@
-/vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only. @TranslateMe@
-/vault/fe_assets/_updates.html | An HTML template for the front-end updates page. @TranslateMe@
-/vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page. @TranslateMe@
-/vault/fe_assets/frontend.css | CSS style-sheet for the front-end. @TranslateMe@
-/vault/fe_assets/frontend.dat | Database for the front-end (contains account information, session information, and the cache; only generated if the front-end is enabled and used). @TranslateMe@
-/vault/fe_assets/frontend.html | The main HTML template file for the front-end. @TranslateMe@
+/vault/fe_assets/_accounts.html | フロントエンドのアカウントページのHTMLテンプレート。
+/vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
+/vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
+/vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
+/vault/fe_assets/_login.html | フロントエンドのログインページのHTMLテンプレート。
+/vault/fe_assets/_logs.html | フロントエンドのロゴスページのHTMLテンプレート。
+/vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、は完全なアクセスのためのものです。
+/vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、はログのみにアクセスのためのものです。
+/vault/fe_assets/_updates.html | フロントエンドのアップデートページのHTMLテンプレート。
+/vault/fe_assets/_updates_row.html | フロントエンドのアップデートページのHTMLテンプレート。
+/vault/fe_assets/frontend.css | フロントエンドのCSSスタイルシート。
+/vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報とキャッシュが含まれています；フロントエンドが有効になっているときに作成）。
+/vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/lang/ | CIDRAMの言語データを含んでいます。
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/lang/lang.ar.cli.php | CLIのアラビア語言語データ。
@@ -155,7 +155,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cache.dat | キャッシュ・データ。
 /vault/cli.php | CLIハンドラ。
-/vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end. @TranslateMe@
+/vault/components.dat | CIDRAMのコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/frontend.php | フロントエンド・ハンドラ。
@@ -518,4 +518,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年10月28日。
+最終アップデート： 2016年10月31日。

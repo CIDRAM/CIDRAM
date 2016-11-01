@@ -18,7 +18,7 @@ CIDRAM/СИДРАМ (Бесклассовая Адресация Доступа 
 
 CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by Caleb M (Maikuolan).
 
-Это руководство находится в свободном доступе. Вы можете его передавать и/или модифицировать на условиях GNU General Public License, как публикует Фонд свободного программного обеспечения (Free Software Foundation); либо под второй версией лицензии, либо любой другой более поздней версией (по вашему выбору). Пособие публикуется не в целях увеличения прибыли или создания себе рекламы, а лишь в надежде принести пользу, правда, без всякой гарантии. Подробности вы можете узнать на странице GNU General Public License в разделе `LICENSE.txt`, а также на страницах:
+Это руководство находится в свободном доступе. Вы можете его передавать и/или модифицировать на условиях GNU General Public License, как публикует Фонд свободного программного обеспечения (Free Software Foundation); либо под второй версией лицензии, либо любой другой более поздней версией (по вашему выбору). Пособие публикуется не в целях увеличения прибыли или создания себе рекламы, а лишь в надежде принести пользу, правда, без всякой гарантии. Подробности Вы можете узнать на странице GNU General Public License в разделе `LICENSE.txt`, а также на страницах:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -31,13 +31,13 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 Уже ведутся работы по упрощению процесса инсталляции, но пока, чтобы установить CIDRAM на большинство используемых систем и систем управления содержимым (CMS), следуйте указаниям:
 
-1) Скачайте архив на свой компьютер и откройте его. На хост-компьютере или в системе управления содержимым (CMS) создайте регистр, куда вы хотите загрузить содержимое этого пакета. Такой регистр, как `/public_html/cidram/`, будет вполне достаточным, пока он отвечает вашим требованиям к защите или личным предпочтениям.
+1) Скачайте архив на свой компьютер и откройте его. На хост-компьютере или в системе управления содержимым (CMS) создайте регистр, куда Вы хотите загрузить содержимое этого пакета. Такой регистр, как `/public_html/cidram/`, будет вполне достаточным, пока он отвечает вашим требованиям к защите или личным предпочтениям.
 
-2) Переименовать `config.ini.RenameMe` в `config.ini` (расположенный внутри `vault`), и если вы хотите (рекомендуются для опытных пользователей, имеющих соответствующие знания), открой это (этот файл содержит все параметры конфигурации для CIDRAM; краткие комментарии описывают задачи каждой параметры). Измените величины в соответствии с Вашими потребностями. Сохраните файл и закройте.
+2) Переименовать `config.ini.RenameMe` в `config.ini` (расположенный внутри `vault`), и если Вы хотите (рекомендуются для опытных пользователей, имеющих соответствующие знания), открой это (этот файл содержит все параметры конфигурации для CIDRAM; краткие комментарии описывают задачи каждой параметры). Измените величины в соответствии с Вашими потребностями. Сохраните файл и закройте.
 
 3) Скачайте всё содержимое (CIDRAM и файлы) в указанный в пункте 1 регистр, кроме файлов `*.txt`/`*.md`.
 
-4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, вы можете попробовать «777»; это менее безопасно, хотя). Права доступа вышестоящего регистра, в котором находится содержание (регистр, в который вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ (Если уже случались проблемы с доступом, когда предварительная установка была, например, «755»).
+4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, Вы можете попробовать «777»; это менее безопасно, хотя). Права доступа вышестоящего регистра, в котором находится содержание (регистр, в который Вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ (Если уже случались проблемы с доступом, когда предварительная установка была, например, «755»).
 
 5) Скрепите CIDRAM с Вашей системой или с системой управления содержимым (CMS). Для этого есть много способов. Самым простым является способ, когда CIDRAM-руководство является началом главного файла, который будет загружаться всякий раз, когда будут заходить на ваш интернет-сайт. Этот файл нужно связать с Вашей системой или с системой управления содержимым (CMS) при помощи `require` или `include` команд. Обычно такой файл обозначается в регистре как `/includes`, `/assets` или `/functions`, и часто называется `init.php`, `common_functions.php`, `functions.php`. Вы должны найти тот файл, который соответствует Вашим требованиям. Если это трудно для Вас, то посетите страница вопросов CIDRAM на Github. Возможно я или кто-то другой уже имеет опыт работы с CMS, которую используете вы, и сможет дать Вам совет (обязательно сообщите, какой CMS Вы пользуетесь). Введите прямо в начало этого файла следующий код:
 
@@ -47,7 +47,7 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 -- АЛЬТЕРНАТИВА --
 
-Если у Вас Apache HTTP-сервер и доступ к нему в формате `php.ini` или похожем формате, вы можете воспользоваться `auto_prepend_file`-директивой, установя приоритет CIDRAM, когда последует PHP-запрос. Примерно так:
+Если у Вас Apache HTTP-сервер и доступ к нему в формате `php.ini` или похожем формате, Вы можете воспользоваться `auto_prepend_file`-директивой, установя приоритет CIDRAM, когда последует PHP-запрос. Примерно так:
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -64,9 +64,9 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 CIDRAM должен автоматически блокировать нежелательные запросы на свой веб-сайт, без необходимости ручного помощь, кроме его первоначальной установки.
 
-Обновление производится вручную, и вы можете настроить конфигурацию, и настроить какие CIDRs заблокированы, путем изменения файла конфигурации и/или ваши сигнатур файлы.
+Обновление производится вручную, и Вы можете настроить конфигурацию, и настроить какие CIDRs заблокированы, путем изменения файла конфигурации и/или ваши сигнатур файлы.
 
-Если вы обнаружили ложноположительный, пожалуйста, свяжитесь со мной чтобы сообщить мне об этом.
+Если Вы обнаружили ложноположительный, пожалуйста, свяжитесь со мной чтобы сообщить мне об этом.
 
 ---
 
@@ -146,7 +146,7 @@ CIDRAM должен автоматически блокировать нежел
 /vault/lang/lang.vi.cli.php | Вьетнамском языковые файлы для CLI (Способ Командных Строк).
 /vault/lang/lang.vi.fe.php | Вьетнамском языковые файлы для фронтенд.
 /vault/lang/lang.vi.php | Вьетнамском языковые файлы.
-/vault/lang/lang.zh-cli.TW.php | Китайском традиционный языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.zh-tw.cli.php | Китайском традиционный языковые файлы для CLI (Способ Командных Строк).
 /vault/lang/lang.zh-tw.fe.php | Китайском традиционный языковые файлы для фронтенд.
 /vault/lang/lang.zh-tw.php | Китайском традиционный языковые файлы.
 /vault/lang/lang.zh.cli.php | Китайском упрощенный языковые файлы для CLI (Способ Командных Строк).
@@ -202,7 +202,7 @@ CIDRAM должен автоматически блокировать нежел
 "logfileSerialized"
 - Сериализованная файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.
 
-*Полезный совет: Если ты хочешь, вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
+*Полезный совет: Если Вы хотите, Вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
 
 *Примеры:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -210,11 +210,11 @@ CIDRAM должен автоматически блокировать нежел
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "timeOffset"
-- Если ваш сервер времени не соответствует вашему местному времени, вы можете указать смещение здесь для корректировки информации о дате/времени генерируется от CIDRAM в соответствии с вашими потребностями. Обычно рекомендуется вместо того, чтобы настроить директиву о зоне времени в файле `php.ini`, но иногда (например, при работе с общими хостинг-провайдеров, которые ограничены) это не всегда возможно, и так, эта опция представлена здесь. Смещение описывается как минут.
+- Если ваш сервер времени не соответствует вашему местному времени, Вы можете указать смещение здесь для корректировки информации о дате/времени генерируется от CIDRAM в соответствии с вашими потребностями. Обычно рекомендуется вместо того, чтобы настроить директиву о зоне времени в файле `php.ini`, но иногда (например, при работе с общими хостинг-провайдеров, которые ограничены) это не всегда возможно, и так, эта опция представлена здесь. Смещение описывается как минут.
 - Пример (добавить один час): `timeOffset=60`
 
 "ipaddr"
-- Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. Внимание! Изменяйте это значение только в том случае, если вы уверены в своих действиях!
+- Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. Внимание! Изменяйте это значение только в том случае, если Вы уверены в своих действиях!
 
 "forbid_on_block"
 - Какой тип заголовка должен CIDRAM ответить при блокировке запросов? False/200 = 200 OK (Хорошо) [Стандарт]; True = 403 Forbidden (Запрещено); 503 = Service unavailable (Сервис недоступен).
@@ -226,7 +226,7 @@ CIDRAM должен автоматически блокировать нежел
 - Задаёт CIDRAM стандарт языка.
 
 "emailaddr"
-- Если вы хотите, вы можете предоставить адрес электронной почты здесь чтобы дать пользователям, когда они заблокированы, для их использования в качестве точки контакта за поддержку и/или помощь ибо в случае их блокирования по ошибке. ПРЕДУПРЕЖДЕНИЕ: Любой адрес электронной почты вы предоставляете здесь наверняка будет найдены по спамботами и скребки во время используется здесь, и так, это настоятельно рекомендуется, если вы решите добавить адрес электронной почты здесь, что вы убедитесь что адрес электронной почты что вы предоставляете здесь одноразовый адрес и/или адрес который вы не против чтобы быть спамом (другими словами, вы вероятно не хотите использовать ваши основные личные электронной почты или первичные бизнес электронной почты).
+- Если Вы хотите, Вы можете предоставить адрес электронной почты здесь чтобы дать пользователям, когда они заблокированы, для их использования в качестве точки контакта за поддержку и/или помощь ибо в случае их блокирования по ошибке. ПРЕДУПРЕЖДЕНИЕ: Любой адрес электронной почты Вы предоставляете здесь наверняка будет найдены по спамботами и скребки во время используется здесь, и так, это настоятельно рекомендуется, если Вы решите добавить адрес электронной почты здесь, что Вы убедитесь что адрес электронной почты что Вы предоставляете здесь одноразовый адрес и/или адрес который Вы не против чтобы быть спамом (другими словами, Вы вероятно не хотите использовать ваши основные личные электронной почты или первичные бизнес электронной почты).
 
 "disable_cli"
 - Деактивировать ли CLI-модус? Обычно CLI-модус активирован. Однако иногда он может отрицательно влиять на определённые тестовые программы (например на PHPUnit) и другие приложения, базирующиеся на CLI. Если CLI-модус нельзя деактивировать, то эту команду нужно игнорировать. False = CLI-модус активирован [Стандарт]; True = CLI-модус деактивирован.
@@ -238,16 +238,16 @@ CIDRAM должен автоматически блокировать нежел
 Конфигурация сигнатур.
 
 "ipv4"
-- Список сигнатур IPv4 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми. Вы можете добавлять записи здесь, если вы хотите, чтобы включить дополнительные IPv4 сигнатур файлы в CIDRAM.
+- Список сигнатур IPv4 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми. Вы можете добавлять записи здесь, если Вы хотите, чтобы включить дополнительные IPv4 сигнатур файлы в CIDRAM.
 
 "ipv6"
-- Список сигнатур IPv6 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми. Вы можете добавлять записи здесь, если вы хотите, чтобы включить дополнительные IPv6 сигнатур файлы в CIDRAM.
+- Список сигнатур IPv6 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми. Вы можете добавлять записи здесь, если Вы хотите, чтобы включить дополнительные IPv6 сигнатур файлы в CIDRAM.
 
 "block_cloud"
-- Блокировать CIDRs идентифицирован как принадлежащий услуг веб-хостинга / облачные сервисы? Если вы управляете службы API с вашего сайта, или если вы ожидать что другие веб-сайты чтобы подключиться к ваш веб-сайт, эта директива должна быть false. Если вы этого не сделаете, эта директива должна быть true.
+- Блокировать CIDRs идентифицирован как принадлежащий услуг веб-хостинга / облачные сервисы? Если Вы управляете службы API с вашего сайта, или если Вы ожидать что другие веб-сайты чтобы подключиться к ваш веб-сайт, эта директива должна быть false. Если Вы этого не сделаете, эта директива должна быть true.
 
 "block_bogons"
-- Блокировать марсианин/bogon CIDRs? Если вы ожидаете посетителей на свой веб-сайт из вашей локальной сети или из локальной сети, эта директива должна быть false. В противном случае, эта директива должна быть true.
+- Блокировать марсианин/bogon CIDRs? Если Вы ожидаете посетителей на свой веб-сайт из вашей локальной сети или из локальной сети, эта директива должна быть false. В противном случае, эта директива должна быть true.
 
 "block_generic"
 - Блокировать CIDRs рекомендуется для черных списков? Это охватывает любые сигнатур, которые не помечены как часть какой-либо из других более конкретных категорий сигнатур.
@@ -256,42 +256,42 @@ CIDRAM должен автоматически блокировать нежел
 - Блокировать CIDRs идентифицированы как принадлежащие к прокси-серверов? Если вам требуется, чтобы пользователи смогли получить доступ к вашему веб-сайт от анонимных прокси-серверов, эта директива должна быть false. В противном случае, если вам не нужны анонимных прокси-серверов, эта директива должна быть true как средство повышения безопасности.
 
 "block_spam"
-- Блокировать CIDRs которые были определены как высокого риска для спама? Если вы не испытываете проблем при этом, как правило, эта директива должна быть true.
+- Блокировать CIDRs которые были определены как высокого риска для спама? Если Вы не испытываете проблем при этом, как правило, эта директива должна быть true.
 
 ####"recaptcha" (Категория)
-Если ты хочешь, вы можете предоставить пользователям способ обхода страницы "Доступ Закрыт" путем завершения экземпляра reCAPTCHA. Это может помочь смягчить некоторые из рисков связанных с ложных-срабатываний в тех ситуациях когда мы не совсем уверены был ли запрос возник из машины или человека.
+Если Вы хотите, Вы можете предоставить пользователям способ обхода страницы "Доступ Закрыт" путем завершения экземпляра reCAPTCHA. Это может помочь смягчить некоторые из рисков связанных с ложных-срабатываний в тех ситуациях когда мы не совсем уверены был ли запрос возник из машины или человека.
 
-Due to the risks associated with providing a way for end-users to bypass the "Доступ Закрыт" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
+Из-за рисков связанные с обеспечением способ для конечных пользователей чтобы пропустить страницу "Доступ Закрыт", в общем, я бы посоветовал против включения этой функции если Вы чувствуете что это будет необходимо сделать так. Ситуации где это было бы необходимо: Если ваш сайт имеет клиентов/пользователям которые должны иметь доступ к вашему веб-сайт, и если это что-то что не может быть договорная, но если те клиентов/пользователям, случается, подключение от враждебной сети которые потенциально могли бы быть также проведение нежелательного трафика, и блокирование этого нежелательного трафика также не может быть договорная, в этих конкретных не-выигрышных ситуаций, функция reCAPTCHA может пригодиться как средство позволяет желаемых клиентов/пользователям, в то же время позволяет отказ от нежелательного трафика из той же самой сети. Тем не менее, учитывая что целевое назначение для CAPTCHA является различать людей и нелюдей, функция reCAPTCHA будет оказывать помощь только в этих не-выигрышных ситуаций если мы предположить что этот нежелательного трафика должен быть нелюдей (например, спамботы, скребки, хакерских утилит, автоматический трафик), в противоположность нежелательного трафика что должен быть людей (таких как человеческие спамеров, хакеры, и другие).
 
-To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please go to: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+Чтобы получить "site key" и "secret key" (требуется для использования reCAPTCHA), перейдите по ссылкам: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
-- Defines how CIDRAM should use reCAPTCHA. @TranslateMe@
-- 0 = reCAPTCHA is completely disabled (default). @TranslateMe@
-- 1 = reCAPTCHA is enabled for all signatures. @TranslateMe@
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files. @TranslateMe@
-- (Any other value will be treated in the same way as 0). @TranslateMe@
+- Определяет как CIDRAM должны использовать reCAPTCHA.
+- 0 = reCAPTCHA полностью отключена (стандарт).
+- 1 = reCAPTCHA позволила для всех сигнатуры.
+- 2 = reCAPTCHA позволила только для сигнатуры которые принадлежат к разделам специально обозначенных в reCAPTCHA-позволила в файлов сигнатур.
+- (Любое другое значение будет обрабатываться таким же образом как 0).
 
 "lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
-- Заметка: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
+- Определяет ли хэши должны быть привязаны к конкретным IP-адресов. False = Куки и хэши МОЖЕТ использоваться в нескольких IP-адресов (стандарт). True = Куки и хэши НЕ может использоваться в нескольких IP-адресов (куки/хэши привязаны к IP-адресов).
+- Заметка: Значение "lockip" игнорируется когда "lockuser" дезактивированный/false, благодаря тому что механизм для запоминания "users" различается в зависимости от этого значения.
 
 "lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
+- Определяет ли успешное завершение инстанция reCAPTCHA должны быть привязаны к конкретным пользователям. False = Успешное завершение инстанция reCAPTCHA будет предоставлять доступ ко всем запросам происходящих из того же IP который используемый пользователем что завершение инстанция reCAPTCHA; Куки и хэши не используются; Вместо, IP белый список будет использоваться. True = Успешное завершение инстанция reCAPTCHA будет только предоставлять доступ к пользователю что завершение инстанция reCAPTCHA; Куки и хэши используются чтобы помнить пользователю; IP белый список не используется.
 
 "sitekey"
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard. @TranslateMe@
+- Это значение должно соответствовать "site key" для вашего reCAPTCHA, которые можно найти в dashboard (панели управления) reCAPTCHA.
 
 "secret"
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard. @TranslateMe@
+- Это значение должно соответствовать "secret key" для вашего reCAPTCHA, которые можно найти в dashboard (панели управления) reCAPTCHA.
 
 "expiry"
-- Когда "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
+- Когда "lockuser" активированный/true (стандарт), для того чтобы вспомнить когда пользователь успешно завершил инстанция reCAPTCHA, для будущие запросы страниц, CIDRAM генерирует стандартный HTTP-куки содержащий хэш что соответствует внутренней записи содержащий тот же хэш; Будущие запросы страниц будут использовать эти соответствующие хэши для проверки что пользователь ранее уже завершил инстанция reCAPTCHA. Когда "lockuser" дезактивированный/false, IP белый список используется для определения ли запросы должны быть разрешены от IP входящих запросов; Записи добавляются в этот белый список когда инстанция reCAPTCHA успешно завершен. Сколько часов должны эти куки, хэши и белый список записей быть действительным? Стандарт = 720 (1 месяц).
 
 "logfile"
 - Записывать все попытки reCAPTCHA? Если да, указать имя использовать для файла журнала. Если нет, оставьте эту переменную пустым.
 
-*Полезный совет: Если ты хочешь, вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
+*Полезный совет: Если Вы хотите, Вы можете добавить информацию о дате/времени к именам файлов журналов путем включения их во имя: `{yyyy}` для полный год, `{yy}` для сокращенный год, `{mm}` для месяц, `{dd}` для день, `{hh}` для час.*
 
 *Примеры:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -299,7 +299,7 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 ####"template_data" (Категория)
 Директивы/Переменные для шаблоны и темы.
 
-Шаблонный данных относится к HTML-вывода, используемый для генерации "Доступ Закрыт" сообщения отображается для пользователей когда/на загрузки/уплоад файлов блокируются. Если вы используете персонализированные темы для CIDRAM, HTML-выход получены из `template_custom.html` файл, а в противном случае, HTML-выход получены из `template.html` файл. Переменные, записанные в этом разделе файл конфигурации обрабатываются на HTML-выход в виде заменой любой имена переменных в окружении фигурных скобках найденный в HTML-вывода с соответствующей переменных данных. Например, где `foo="bar"`, любое вхождение `<p>{foo}</p>` найденный в HTML-вывода станет `<p>bar</p>`.
+Шаблонный данных относится к HTML-вывода, используемый для генерации "Доступ Закрыт" сообщения отображается для пользователей когда/на загрузки/уплоад файлов блокируются. Если Вы используете персонализированные темы для CIDRAM, HTML-выход получены из `template_custom.html` файл, а в противном случае, HTML-выход получены из `template.html` файл. Переменные, записанные в этом разделе файл конфигурации обрабатываются на HTML-выход в виде заменой любой имена переменных в окружении фигурных скобках найденный в HTML-вывода с соответствующей переменных данных. Например, где `foo="bar"`, любое вхождение `<p>{foo}</p>` найденный в HTML-вывода станет `<p>bar</p>`.
 
 "css_url"
 - Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить CIDRAM использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя `css_url` переменная. Если оставить это переменная пустым, CIDRAM будет использовать шаблонный файл для стандарт тема.
@@ -311,51 +311,51 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 
 ####6.0 ОСНОВЫ
 
-A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
+Описание формата и структуры сигнатуры которые CIDRAM использует можно найти документированный в обычный текст в пользовательских файлов сигнатур. Пожалуйста, обратитесь к этой документации, чтобы узнать больше о формате и структуре относящийся к CIDRAM сигнатуры.
 
-All IPv4 signatures follow the format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
-- `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
-- `yy` represents the CIDR block size [1-32].
-- `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
-- `[Param]` represents whatever additional information may be required by `[Function]`.
+Все сигнатуры IPv4 придерживаться формат: `xxx.xxx.xxx.xxx/yy [Функция] [Параметр]`.
+- `xxx.xxx.xxx.xxx` представляет начало блока CIDR (октеты для первым IP-адреса в блока).
+- `yy` представляет размер блока CIDR [1-32].
+- `[Функция]` инструктирует скрипт что делать с сигнатур (как сигнатур должны быть обработаны).
+- `[Параметр]` представляет все что дополнительная информация что может потребоваться для `[Функция]`.
 
-All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
-- `yy` represents the CIDR block size [1-128].
-- `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
-- `[Param]` represents whatever additional information may be required by `[Function]`.
+Все сигнатуры IPv6 придерживаться формат: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Функция] [Параметр]`.
+- `xxxx:xxxx:xxxx:xxxx::xxxx` представляет начало блока CIDR (октеты для первым IP-адреса в блока). Полное обозначение и сокращенное обозначение являются приемлемыми (и каждый из них ДОЛЖЕН следовать соответствующим стандартам для обозначение IPv6, но с одним исключением: IPv6-адрес никогда не может начинаться с аббревиатуры когда использовании в сигнатуры для этого скрипт, из-за способа в котором они реконструируются посредством скрипт; Например, `::1/128` должны быть выражены, когда использовании в сигнатур, в виде `0::1/128`, и `::0/128` выражены в виде `0::/128`).
+- `yy` представляет размер блока CIDR [1-128].
+- `[Функция]` инструктирует скрипт что делать с сигнатур (как сигнатур должны быть обработаны).
+- `[Параметр]` представляет все что дополнительная информация что может потребоваться для `[Функция]`.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+CIDRAM сигнатурные файлы ДОЛЖЕН использовать разрыВы строк Unix-стиле (`%0A`, или `\n`)! Другие типы/стили разрыва строки (например, Windows `%0D%0A` или `\r\n` разрыВы строк, Mac `%0D` или `\r` разрыВы строк, итд) МОЖЕТ быть использовано, но НЕ являются предпочтительными. РазрыВы строк не-Unix-стиле будут нормализованы к разрыВы строк Unix-стиле посредством скрипт.
 
-Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
+Точное и правильное обозначение CIDR необходимо, в противном случае скрипт не будет признает сигнатур. Дополнительно, все сигнатуры CIDR для этого скрипт ДОЛЖНА начинаться с IP-адресом чья номер IP которого можно разделить равномерно в блок разделения представляющий от его размер блока CIDR (например, если Вы хотите чтобы заблокировать все IP-адреса из `10.128.0.0` к `11.127.255.255`, `10.128.0.0/8` НЕ будут признаны посредством скрипт, но `10.128.0.0/9` и `11.0.0.0/9` используется в сочетании, БУДУТ признаны посредством скрипт).
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
+Все что в сигнатуры файлы которые не признается как качестве сигнатур ни как относятся синтаксис посредством скрипт будут ПРОИГНОРИРОВАНЫ, поэтому это означает что Вы можете безопасно поставить любые данные несигнатурного что Вы хочешь в файлов сигнатур без разбивая их и без разбивая скрипт. Комментарии являются приемлемыми в файлов сигнатур, без какого-либо специального форматирования требуется. Shell-стиле хэширования для комментарии является предпочтительным, но не принудительная; Функционально, это не имеет никакого значения для сценария ли или не Вы выбираете использовать хэширование Shell-стиле для комментарии, но использовать хэширование Shell-стиле может помогает IDE и простые текстовые редакторы чтобы правильно выделить различные части файлов сигнатур (и так, Shell-стиле хэширования может помочь в качестве наглядного пособия при редактировании).
 
-The possible values of `[Function]` are as follows:
+В возможные значения для `[Функция]`:
 - Run
 - Whitelist
 - Greylist
 - Deny
 
-If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Param]` value (the working directory should be the "/vault/" directory of the script).
+If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Параметр]` value (the working directory should be the "/vault/" directory of the script).
 
 Примеры: `127.0.0.0/8 Run example.php`
 
 This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
 
-If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `[Param]` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `[Параметр]` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
 
 Примеры: `127.0.0.1/32 Whitelist`
 
-If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `[Param]` is ignored.
+If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `[Параметр]` is ignored.
 
 Примеры: `127.0.0.1/32 Greylist`
 
 If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
 
-The `[Param]` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
+The `[Параметр]` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
 
-The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Param]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Param]` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Параметр]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Параметр]` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
 
 The available shorthand words are:
 - Bogon
@@ -378,7 +378,7 @@ If you want to split your custom signatures into individual sections, you can id
 Tag: Section 1
 ```
 
-To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
+To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier в файлов сигнатур, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -413,9 +413,9 @@ Expires: 2016.12.31
 
 #####6.2.0 ОСНОВЫ YAML
 
-Упрощенная форма YAML разметки может быть использован в сигнатур файлы для целей определения поведения и установок специфичные для отдельных сигнатур секций. Это может быть полезно если вы хотите чтобы значение ваших директив конфигурации отличаться на основе индивидуальных сигнатур и сигнатур секций (например; если вы хотите чтобы предоставить адрес электронной почты для поддержки билетов для любых пользователей что заблокированных с помощью один специфична сигнатур, но не хотите чтобы предоставить адрес электронной почты для поддержки билетов для пользователей что заблокированных с помощью любых других сигнатур; если вы хотите чтобы некоторые специфический сигнатур чтобы вызвать страницу перенаправления; если вы хотите чтобы отметить секция сигнатур для использования с reCAPTCHA; если вы хотите чтобы войти блокировал попытки доступа к отдельным файлам на основе индивидуальных подписей и/или сигнатур секций).
+Упрощенная форма YAML разметки может быть использован в сигнатур файлы для целей определения поведения и установок специфичные для отдельных сигнатур секций. Это может быть полезно если Вы хотите чтобы значение ваших директив конфигурации отличаться на основе индивидуальных сигнатур и сигнатур секций (например; если Вы хотите чтобы предоставить адрес электронной почты для поддержки билетов для любых пользователей что заблокированных с помощью один специфична сигнатур, но не хотите чтобы предоставить адрес электронной почты для поддержки билетов для пользователей что заблокированных с помощью любых других сигнатур; если Вы хотите чтобы некоторые специфический сигнатур чтобы вызвать страницу перенаправления; если Вы хотите чтобы отметить секция сигнатур для использования с reCAPTCHA; если Вы хотите чтобы войти блокировал попытки доступа к отдельным файлам на основе индивидуальных подписей и/или сигнатур секций).
 
-Use of YAML markup in the signature files is entirely optional (то есть, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
+Use of YAML markup в файлов сигнатур is entirely optional (то есть, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
 
 Заметка: YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
 
@@ -486,7 +486,7 @@ recaptcha:
 
 ####6.3 ВСПОМОГАТЕЛЬНЫЙ
 
-К тому же, если вы хотите CIDRAM полностью игнорировать некоторые конкретные секций в любой из сигнатур файлы, вы можете использовать файл `ignore.dat` чтобы указать какие секций игнорировать. На новой линии, писать `Ignore`, а затем пробел, а затем название секций что вы хотите CIDRAM игнорировать (смотрите пример ниже).
+К тому же, если Вы хотите CIDRAM полностью игнорировать некоторые конкретные секций в любой из сигнатур файлы, Вы можете использовать файл `ignore.dat` чтобы указать какие секций игнорировать. На новой линии, писать `Ignore`, а затем пробел, а затем название секций что Вы хотите CIDRAM игнорировать (смотрите пример ниже).
 
 ```
 Ignore Section 1
@@ -517,4 +517,4 @@ CIDRAM *ДЕЛАЕТ* блокирует IP-адрес | __Ложнополож�
 ---
 
 
-Последнее обновление: 28 Октябрь 2016 (2016.10.28).
+Последнее обновление: 1 Ноябрь 2016 (2016.11.01).

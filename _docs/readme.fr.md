@@ -369,7 +369,7 @@ Les mots courts disponibles sont:
 Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant une "balise de section" immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures (voir l'exemple ci-dessous).
 
 ```
-# "Section 1."
+# Section 1.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
@@ -394,7 +394,7 @@ Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront balisés comme "IPv
 Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les balises de section, vous pouvez utiliser une "balise d'expiration" à spécifier quand les signatures doivent cesser d'être valide. Les balises d'expiration utilisent le format "AAAA.MM.JJ" (voir l'exemple ci-dessous).
 
 ```
-# "Section 1."
+# Section 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -403,9 +403,9 @@ Expires: 2016.12.31
 Les balises de section et les balises d'expiration peuvent être utilisés en conjonction, et les deux sont optionnel (voir l'exemple ci-dessous).
 
 ```
-# "Example Section."
+# Section Exemple.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: Section Exemple
 Expires: 2016.12.31
 ```
 
@@ -422,7 +422,7 @@ Note: L'implémentation de YAML dans CIDRAM est très simpliste et très limité
 Dans CIDRAM, segments YAML sont identifiés au script par trois tirets ("---"), et terminer aux côtés de leur contenant sections de signature par sauts de ligne double. Un segment YAML typique dans une section de signatures se compose de trois tirets sur une ligne immédiatement après la liste des CIDRs et des balises, suivi d'une liste de bidimensionnelle paires clé-valeur (première dimension, catégories de directives de configuration; deuxième dimension, directives de configuration) pour les directives de configuration que doivent être modifiés (et pour quelles valeurs) chaque fois qu'une signature dans cette section de signatures est déclenchée (voir les exemples ci-dessous).
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -443,7 +443,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -455,7 +455,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -473,7 +473,7 @@ Quand "usemode" est 0 ou 1, les sections de signature ne doivent pas être "spé
 Quand "usemode" est 2, à "spécialement marquer" les sections de signature pour l'utilisation avec reCAPTCHA, une entrée est incluse dans le segment de YAML pour cette section de signatures (voir l'exemple ci-dessous).
 
 ```
-# This section will use reCAPTCHA.
+# Cette section utilisera reCAPTCHA.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -517,4 +517,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 28 Octobre 2016 (2016.10.28).
+Dernière Mise à Jour: 2 Novembre 2016 (2016.11.02).

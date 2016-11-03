@@ -369,13 +369,13 @@ Kata-kata singkat yang tersedia adalah:
 Jika Anda ingin membagi tanda tangan kustom Anda ke bagian individual, Anda dapat mengidentifikasi bagian individual untuk skrip dengan menambahkan "tag bagian" segera setelah tanda tangan dari setiap bagian, bersama dengan nama bagian tanda tangan Anda (lihat contoh dibawah ini).
 
 ```
-# "Section 1."
+# Bagian 1.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: Bagian 1
 ```
 
 Untuk mematahkan tag bagian dan untuk memastikan bahwa tag tidak salah mengidentifikasi untuk bagian tanda tangan dari sebelumnya dalam file tanda tangan, hanya memastikan bahwa setidaknya ada dua jeda baris berturut-turut antara tag Anda dan bagian tanda tangan sebelumnya Anda. Apapun tanda tangan tidak di-tag akan default untuk "IPv4" atau "IPv6" (tergantung pada jenis tanda tangan yang dipicu).
@@ -386,15 +386,15 @@ Untuk mematahkan tag bagian dan untuk memastikan bahwa tag tidak salah mengident
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: Bagian 1
 ```
 
-Dalam contoh di atas `1.2.3.4/32` dan `2.3.4.5/32` akan di-tag sebagai "IPv4", sedangkan `4.5.6.7/32` dan `5.6.7.8/32` akan di-tag sebagai "Section 1".
+Dalam contoh di atas `1.2.3.4/32` dan `2.3.4.5/32` akan di-tag sebagai "IPv4", sedangkan `4.5.6.7/32` dan `5.6.7.8/32` akan di-tag sebagai "Bagian 1".
 
 Jika Anda ingin tanda tangan untuk berakhir setelah beberapa waktu, dengan cara yang sama untuk tag bagian, Anda dapat menggunakan "tag kadaluarsa" untuk menentukan kapan tanda tangan harus berhenti menjadi valid. Tag kadaluarsa menggunakan format "TTTT.BB.HH" (lihat contoh dibawah ini).
 
 ```
-# "Section 1."
+# Bagian 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -403,9 +403,9 @@ Expires: 2016.12.31
 Tag bagian dan tag kadaluarsa dapat digunakan bersama, dan mereka berdua opsional (lihat contoh dibawah ini).
 
 ```
-# "Example Section."
+# Contoh Bagian.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: Contoh Bagian
 Expires: 2016.12.31
 ```
 
@@ -422,7 +422,7 @@ Catat: Implementasi markup YAML di CIDRAM sangat sederhana dan sangat terbatas; 
 Dalam CIDRAM, segmen markup YAML diidentifikasi untuk script oleh tiga tanda hubung ("---"), dan mengakhiri dengan mengandung bagian tanda tangan mereka oleh dua jeda baris. Segmen markup YAML dalam bagian tanda tangan terdiri dari tiga tanda hubung pada baris segera setelah daftar CIDRs dan apapun tag, diikuti dengan daftar dua dimensi dari pasangan kunci-nilai (dimensi pertama, kategori direktif konfigurasi; dimensi kedua, direktif konfigurasi) untuk mana direktif konfigurasi yang harus dimodifikasi (dan yang nilai-nilai) setiap kali tanda tangan dalam yang bagian tanda tangan dipicu (lihat contoh dibawah ini).
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -443,7 +443,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -455,7 +455,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -473,7 +473,7 @@ Ketika "usemode" 0 atau 1, bagian tanda tangan tidak perlu "khusus ditandai" unt
 Ketika "usemode" 2, untuk "khusus menandai" bagian tanda tangan untuk digunakan dengan reCAPTCHA, entri termasuk dalam segmen YAML untuk bagian tanda tangan (lihat contoh dibawah ini).
 
 ```
-# This section will use reCAPTCHA.
+# Bagian ini akan menggunakan reCAPTCHA.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -489,7 +489,7 @@ Catat: Sebuah instansi reCAPTCHA akan HANYA ditawarkan kepada pengguna jika reCA
 Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian tertentu dalam salah satu file tanda tangan, Anda dapat menggunakan file `ignore.dat` untuk menentukan bagian untuk mengabaikan. Pada baris baru, menulis `Ignore`, diikuti dengan spasi, diikuti dengan nama bagian yang Anda ingin CIDRAM untuk mengabaikan (lihat contoh dibawah ini).
 
 ```
-Ignore Section 1
+Ignore Bagian 1
 ```
 
 Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
@@ -517,4 +517,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 28 Oktober 2016 (2016.10.28).
+Terakhir Diperbarui: 2 November 2016 (2016.11.02).

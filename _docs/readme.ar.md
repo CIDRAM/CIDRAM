@@ -399,13 +399,13 @@ The pre-prepared explanations have i18n support and can be translated by the scr
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (راجع الأمثلة أدناه).
 
 ```
-# "Section 1."
+# القسم 1.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: القسم 1
 ```
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
@@ -416,15 +416,15 @@ To break section tagging and to ensure that tags aren't incorrectly identified t
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: القسم 1
 ```
 
-In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "القسم 1".
 
 If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "YYYY.MM.DD" (راجع الأمثلة أدناه).
 
 ```
-# "Section 1."
+# القسم 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -433,9 +433,9 @@ Expires: 2016.12.31
 Section tags and expiry tags may be used in conjunction, and both are optional (راجع الأمثلة أدناه).
 
 ```
-# "Example Section."
+# القسم المثال.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: القسم المثال
 Expires: 2016.12.31
 ```
 
@@ -452,7 +452,7 @@ Note: YAML markup implementation in CIDRAM is very simplistic and very limited; 
 In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for which configuration directives should be modified (and to which values) whenever a signature within that signature section is triggered (راجع الأمثلة أدناه).
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -473,7 +473,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -485,7 +485,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -503,7 +503,7 @@ When "usemode" is 0 or 1, signature sections don't need to be "specially marked"
 When "usemode" is 2, to "specially mark" signature sections for use with reCAPTCHA, an entry is included in the YAML segment for that signature section (راجع الأمثلة أدناه).
 
 ```
-# This section will use reCAPTCHA.
+# وسيكون هذا القسم استخدام اختبار reCAPTCHA.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -519,7 +519,7 @@ Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enab
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (راجع الأمثلة أدناه).
 
 ```
-Ignore Section 1
+Ignore القسم 1
 ```
 
 <div dir="rtl">رؤية الملفات توقيع مخصص لمزيد من المعلومات.<br /><br /></div>
@@ -547,4 +547,4 @@ Ignore Section 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 31 اكتوبر 2016 (2016.10.31).</div>
+<div dir="rtl">آخر تحديث: 2 نوفمبر 2016 (2016.11.02).</div>

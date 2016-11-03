@@ -369,13 +369,13 @@ Những từ viết tắt có sẵn là:
 Nếu bạn muốn chia chữ ký tùy chỉnh của bạn để các phần riêng biệt, bạn có thể xác định những phần riêng lẻ cho các kịch bản bằng cách thêm một "gắn thẻ phần" ngay sau khi có chữ ký của từng phần, với tên của phần chữ ký của bạn (xem ví dụ dưới đây).
 
 ```
-# "Section 1."
+# Phần 1.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: Phần 1
 ```
 
 Để phá vỡ gắn thẻ phần và để đảm bảo rằng các gắn thẻ không được xác định không đúng để phần chữ ký từ trước đó trong các tập tin chữ ký, chỉ cần đảm bảo rằng có ít nhất hai ngắt dòng liên tiếp giữa các gắn thẻ và phần chữ ký trước đó của bạn. Bất kỳ chữ ký không được gắn thẻ sẽ mặc định để "IPv4" hoặc "IPv6" (tùy thuộc vào loại chữ ký đang được kích hoạt).
@@ -386,26 +386,26 @@ Tag: Section 1
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: Phần 1
 ```
 
-Trong ví dụ trên `1.2.3.4/32` và `2.3.4.5/32` sẽ được xác định như "IPv4", trong khi `4.5.6.7/32` và `5.6.7.8/32` sẽ được xác định như "Section 1".
+Trong ví dụ trên `1.2.3.4/32` và `2.3.4.5/32` sẽ được xác định như "IPv4", trong khi `4.5.6.7/32` và `5.6.7.8/32` sẽ được xác định như "Phần 1".
 
 Nếu bạn muốn chữ ký hết hạn sau một thời gian, trong một cách tương tự như gắn thẻ phần, bạn có thể sử dụng một "gắn thẻ hết hạn" để chỉ định khi chữ ký nên hết hiệu lực. Gắn thẻ hết hạn sử dụng định dạng "YYYY.MM.DD" (xem ví dụ dưới đây).
 
 ```
-# "Section 1."
+# Phần 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
 ```
 
-Gắn thẻ phần và gắn thẻ hết hạn có thể được sử dụng kết hợp, và cả hai đều là tùy chọn (xem ví dụ dưới đây).
+Các gắn thẻ phần và các gắn thẻ hết hạn có thể được sử dụng kết hợp, và cả hai đều là tùy chọn (xem ví dụ dưới đây).
 
 ```
-# "Example Section."
+# Phần Ví Dụ.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: Phần Ví Dụ
 Expires: 2016.12.31
 ```
 
@@ -422,7 +422,7 @@ Lưu ý: YAML của CIDRAM là rất đơn giản và rất hạn chế; Nó đ�
 Trong CIDRAM, phân khúc YAML được xác định để kịch bản bằng ba dấu gạch ngang ("---"), và chấm dứt cùng với phần chữ ký chứa của họ bởi hai ngắt dòng. Một phân khúc YAML điển hình trong phần chữ ký bao gồm ba dấu gạch ngang trên một dòng ngay sau khi danh sách các CIDRS và bất kỳ gắn thẻ, theo sau là một danh sách cặp khóa giá trị hai chiều (chiều đầu tiên, loại tùy chọn cấu hình; chiều thứ cấp, tùy chọn cấu hình) cho những tùy chọn cấu hình mà cần được sửa đổi (và những giá trị) bất cứ khi nào một chữ ký trong đó phần chữ ký được kích hoạt (xem các ví dụ dưới đây).
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -443,7 +443,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -455,7 +455,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -473,7 +473,7 @@ Khi "usemode" là 0 hay 1, phần chữ ký không cần phải được "đặc
 Khi "usemode" là 2, để "đặc biệt đánh dấu" phần chữ ký để sử dụng với reCAPTCHA, một mục được bao gồm trong phân khúc YAML cho rằng phần chữ ký (xem ví dụ dưới đây).
 
 ```
-# This section will use reCAPTCHA.
+# Phần này sẽ sử dụng reCAPTCHA.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -489,7 +489,7 @@ Lưu ý: Một trường hợp reCAPTCHA sẽ chỉ được cung cấp cho ngư
 Ngoài ra, nếu bạn muốn CIDRAM để hoàn toàn bỏ qua một số phần cụ thể trong bất kỳ tập tin chữ ký, bạn có thể sử dụng các tập tin `ignore.dat` để xác định những phần để bỏ qua. Trên một dòng mới, viết `Ignore`, theo sau là một không gian, theo sau là tên của phần mà bạn muốn CIDRAM để bỏ qua (xem ví dụ dưới đây).
 
 ```
-Ignore Section 1
+Ignore Phần 1
 ```
 
 Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
@@ -517,4 +517,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 28 Tháng Mười 2016 (2016.10.28).
+Lần cuối cập nhật: 2 Tháng Mười Một 2016 (2016.11.02).

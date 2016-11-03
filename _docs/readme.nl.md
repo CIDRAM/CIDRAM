@@ -369,13 +369,13 @@ De beschikbare korte woorden zijn:
 Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie (zie het onderstaande voorbeeld).
 
 ```
-# "Section 1."
+# Sectie 1.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: Sectie 1
 ```
 
 Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met handtekening secties uit eerder in de handtekening bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere handtekening secties. Een ongeëtiketteerd handtekeningen wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten handtekeningen worden geactiveerd).
@@ -386,15 +386,15 @@ Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdent
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: Sectie 1
 ```
 
-In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Section 1".
+In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Sectie 1".
 
 Als u wilt handtekeningen te vervallen na verloop van tijd, op soortgelijke wijze als sectie etiketten, u kan een "vervaltijd etiket" gebruikt om aan te geven wanneer handtekeningen moet niet meer geldig. Vervaltijd etiketten gebruiken het formaat "JJJJ.MM.DD" (zie het onderstaande voorbeeld).
 
 ```
-# "Section 1."
+# Sectie 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -403,9 +403,9 @@ Expires: 2016.12.31
 Sectie etiketten en vervaltijd etiketten kunnen worden gebruikt in combinatie, en beide zijn optioneel (zie het onderstaande voorbeeld).
 
 ```
-# "Example Section."
+# Voorbeeld Sectie.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: Voorbeeld Sectie.
 Expires: 2016.12.31
 ```
 
@@ -422,7 +422,7 @@ Notitie: YAML markup implementatie in CIDRAM is zeer simplistisch en zeer beperk
 In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende handtekening secties door dubbel-regeleinden. Een typische YAML markup segment binnen een handtekening sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDRs en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een handtekening in die handtekening sectie wordt geactiveerd (zie de onderstaande voorbeelden).
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -443,7 +443,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -455,7 +455,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -473,7 +473,7 @@ Als "usemode" is 0 of 1, handtekening secties hoeven niet voor gebruik met reCAP
 Als "usemode" is 2, om handtekening secties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat handtekening sectie (zie het onderstaande voorbeeld).
 
 ```
-# This section will use reCAPTCHA.
+# Deze sectie zal reCAPTCHA te gebruiken.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -489,7 +489,7 @@ Notitie: Een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker a
 Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de handtekening bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
 
 ```
-Ignore Section 1
+Ignore Sectie 1
 ```
 
 Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
@@ -517,4 +517,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 28 Oktober 2016 (2016.10.28).
+Laatste Bijgewerkt: 2 November 2016 (2016.11.02).

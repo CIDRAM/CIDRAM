@@ -355,7 +355,7 @@ If "Deny" is used, when the signature is triggered, assuming no whitelist signat
 
 The `[Параметр]` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
 
-The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Параметр]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Параметр]` values that don't use these shorthand words, however, don't have i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+The pre-prepared explanations have i18n support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Параметр]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Параметр]` values that don't use these shorthand words, however, don't have i18n support и поэтому WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
 
 The available shorthand words are:
 - Bogon
@@ -366,16 +366,16 @@ The available shorthand words are:
 
 ####6.1 ТЕГИ
 
-If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (смотрите пример ниже).
+Если Вы хотите разделить ваши собственные сигнатуры на отдельные секции, Вы можете идентифицировать эти отдельные секции к скрипт путем добавления "секция теги" сразу же после того как сигнатуры каждого секция, наряду с названием вашей сигнатур секция (смотрите пример ниже).
 
 ```
-# "Section 1."
+# Секция 1.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: Секция 1
 ```
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier в файлов сигнатур, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
@@ -386,26 +386,26 @@ To break section tagging and to ensure that tags aren't incorrectly identified t
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: Секция 1
 ```
 
-In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
+В приведенном выше примере, `1.2.3.4/32` и `2.3.4.5/32` будут помечены как "IPv4", в то время как `4.5.6.7/32` и `5.6.7.8/32` будут помечены как "Секция 1".
 
-If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "ГГГГ.ММ.ДД" (смотрите пример ниже).
+Если Вы хотите сигнатуры чтобы истекают через какое-то время, аналогичным способом к секция теги, Вы можете использовать "истечение теги" чтобы указать когда сигнатур должна перестать быть действительным. Истечение теги используют формат "ГГГГ.ММ.ДД" (смотрите пример ниже).
 
 ```
-# "Section 1."
+# Секция 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
 ```
 
-Section tags and expiry tags may be used in conjunction, and both are optional (смотрите пример ниже).
+Секция теги и истечение теги может быть использован в сочетании, и оба являются необязательный (смотрите пример ниже).
 
 ```
-# "Example Section."
+# Пример Секция.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: Пример Секция
 Expires: 2016.12.31
 ```
 
@@ -413,16 +413,16 @@ Expires: 2016.12.31
 
 #####6.2.0 ОСНОВЫ YAML
 
-Упрощенная форма YAML разметки может быть использован в сигнатур файлы для целей определения поведения и установок специфичные для отдельных сигнатур секций. Это может быть полезно если Вы хотите чтобы значение ваших директив конфигурации отличаться на основе индивидуальных сигнатур и сигнатур секций (например; если Вы хотите чтобы предоставить адрес электронной почты для поддержки билетов для любых пользователей что заблокированных с помощью один специфична сигнатур, но не хотите чтобы предоставить адрес электронной почты для поддержки билетов для пользователей что заблокированных с помощью любых других сигнатур; если Вы хотите чтобы некоторые специфический сигнатур чтобы вызвать страницу перенаправления; если Вы хотите чтобы отметить секция сигнатур для использования с reCAPTCHA; если Вы хотите чтобы войти блокировал попытки доступа к отдельным файлам на основе индивидуальных подписей и/или сигнатур секций).
+Упрощенная форма маркап YAML может быть использован в сигнатур файлы для целей определения поведения и установок специфичные для отдельных сигнатур секций. Это может быть полезно если Вы хотите чтобы значение ваших директив конфигурации отличаться на основе индивидуальных сигнатур и сигнатур секций (например; если Вы хотите чтобы предоставить адрес электронной почты для поддержки билетов для любых пользователей что заблокированных с помощью один специфична сигнатур, но не хотите чтобы предоставить адрес электронной почты для поддержки билетов для пользователей что заблокированных с помощью любых других сигнатур; если Вы хотите чтобы некоторые специфический сигнатур чтобы вызвать страницу перенаправления; если Вы хотите чтобы отметить секция сигнатур для использования с reCAPTCHA; если Вы хотите чтобы войти блокировал попытки доступа к отдельным файлам на основе индивидуальных подписей и/или сигнатур секций).
 
-Use of YAML markup в файлов сигнатур is entirely optional (то есть, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
+Применение маркап YAML в файлов сигнатур совершенно не обязательно (то есть, Вы можете использовать его, если Вы хотите сделать это, но Вы не обязаны делать это), и способен использовать большинство (но не все) директивы конфигурации.
 
-Заметка: YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
+Заметка: Имплементация в CIDRAM для маркап YAML очень упрощенно и очень ограничено; Это предназначен для выполнения требований конкретных для CIDRAM таким образом что имеет знакомство с маркап YAML, но не следует ни соответствует официальным спецификациям (и поэтому не будет вести себя так же как более тщательный имплементации в другом месте, и может не подходить для других проектов в другом месте).
 
-In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for which configuration directives should be modified (and to which values) whenever a signature within that signature section is triggered (см ниже примеры).
+В CIDRAM, сегменты маркап YAML определены для скрипт с тремя черточками ("---"), и заканчиваются вместе со содержащими сигнатур секций с разрывы строк двойной. Типичный сегмент маркап YAML в сигнатуры секция состоит из трех черточек на строка сразу же после того как список CIDR и любые теги, с последующим двухмерной списка пары ключ-значение (первое измерение, категории директива конфигурации; второе измерение, директива конфигурации) для которых директивы конфигурации должны быть изменены (и какие ценности) всякий раз когда сигнатуры в этом сигнатур секция срабатывании (см ниже примеры).
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -443,7 +443,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -455,7 +455,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -473,7 +473,7 @@ general:
 Когда "usemode" является 2, чтобы "специально отметить" сигнатур секций для использования с reCAPTCHA, запись включается в сегменте YAML для этого секция сигнатуры (смотрите пример ниже).
 
 ```
-# This section will use reCAPTCHA.
+# Эта секция будет использовать reCAPTCHA.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -486,10 +486,10 @@ recaptcha:
 
 ####6.3 ВСПОМОГАТЕЛЬНЫЙ
 
-К тому же, если Вы хотите CIDRAM полностью игнорировать некоторые конкретные секций в любой из сигнатур файлы, Вы можете использовать файл `ignore.dat` чтобы указать какие секций игнорировать. На новой линии, писать `Ignore`, а затем пробел, а затем название секций что Вы хотите CIDRAM игнорировать (смотрите пример ниже).
+К тому же, если Вы хотите CIDRAM полностью игнорировать некоторые конкретные секций в любой из сигнатур файлы, Вы можете использовать файл `ignore.dat` чтобы указать какие секций игнорировать. На новой строка, писать `Ignore`, а затем пробел, а затем название секций что Вы хотите CIDRAM игнорировать (смотрите пример ниже).
 
 ```
-Ignore Section 1
+Ignore Секция 1
 ```
 
 Смотрите пользовательские сигнатур файлы для получения дополнительной информации.
@@ -517,4 +517,4 @@ CIDRAM *ДЕЛАЕТ* блокирует IP-адрес | __Ложнополож�
 ---
 
 
-Последнее обновление: 1 Ноябрь 2016 (2016.11.01).
+Последнее обновление: 3 Ноябрь 2016 (2016.11.03).

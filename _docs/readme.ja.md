@@ -370,13 +370,13 @@ The pre-prepared explanations have i18n support and can be translated by the scr
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section （以下の例を参照してください）。
 
 ```
-# "Section 1."
+# セクション１.
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: セクション１
 ```
 
 To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
@@ -387,15 +387,15 @@ To break section tagging and to ensure that tags aren't incorrectly identified t
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: セクション１
 ```
 
-上記の例で、`1.2.3.4/32`と`2.3.4.5/32`は、「IPv4」でタグ付けされま；す一方、`4.5.6.7/32`と`5.6.7.8/32`は、「Section 1」でタグ付けされま。
+上記の例で、`1.2.3.4/32`と`2.3.4.5/32`は、「IPv4」でタグ付けされま；す一方、`4.5.6.7/32`と`5.6.7.8/32`は、「セクション１」でタグ付けされま。
 
 If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. 期限切れのタグがこの形式を使用します： 「年年年年.月月.日日」 （以下の例を参照してください）。
 
 ```
-# "Section 1."
+# セクション１.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -404,9 +404,9 @@ Expires: 2016.12.31
 セクションタグと期限切れタグを組み合わせて使用することができ；両方はオプションです（以下の例を参照してください）。
 
 ```
-# "Example Section."
+# 例セクション.
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: 例セクション
 Expires: 2016.12.31
 ```
 
@@ -423,7 +423,7 @@ Use of YAML markup in the signature files is entirely optional （即ち、 you 
 In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for which configuration directives should be modified (and to which values) whenever a signature within that signature section is triggered （以下の例を参照してください）。
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -444,7 +444,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -456,7 +456,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -474,7 +474,7 @@ When "usemode" is 0 or 1, signature sections don't need to be "specially marked"
 When "usemode" is 2, to "specially mark" signature sections for use with reCAPTCHA, an entry is included in the YAML segment for that signature section （以下の例を参照してください）。
 
 ```
-# This section will use reCAPTCHA.
+# このセクションでは、reCAPTCHAのを使用します。
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -490,7 +490,7 @@ recaptcha:
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore （以下の例を参照してください）。
 
 ```
-Ignore Section 1
+Ignore セクション１
 ```
 
 詳細については、カスタムシグネチャファイルを参照してください。
@@ -518,4 +518,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年10月31日。
+最終アップデート： 2016年11月2日。

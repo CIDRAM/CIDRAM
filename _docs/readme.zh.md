@@ -370,13 +370,13 @@ CIDRAM签名文件应该使用Unix的换行符（`%0A`，或`\n`）！其他换�
 如果要分割您的自定义签名成各个章节，您可以识别这些各个章节为脚本通过加入一个章节标签立即跟着每章节签名，伴随着章节签名名字（看下面的例子）。
 
 ```
-# "Section 1."
+# 部分一。
 1.2.3.4/32 Deny Bogon
 2.3.4.5/32 Deny Cloud
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
 6.7.8.9/32 Deny Proxy
-Tag: Section 1
+Tag: 部分一
 ```
 
 为了打破章节标签和以确保标签不是确定不正确的对于签名章节从较早的在签名文件，确保有至少有两个连续的换行符之间您的标签和您的较早的签名章节。任何未标记签名将默认为“IPv4”或“IPv6”（取决于签名类型被触发的）。
@@ -387,15 +387,15 @@ Tag: Section 1
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: Section 1
+Tag: 部分一
 ```
 
-在上面的例子`1.2.3.4/32`和`2.3.4.5/32`将标为“IPv4”，而`4.5.6.7/32`和`5.6.7.8/32`将标为“Section 1”.
+在上面的例子`1.2.3.4/32`和`2.3.4.5/32`将标为“IPv4”，而`4.5.6.7/32`和`5.6.7.8/32`将标为“部分一”.
 
 如果您想签名一段时间后过期，以类似的方式来章节标签，您可以使用一个“过期标签”来指定在签名应该不再有效。过期标签使用格式“年年年年.月月.日日”（看下面的例子）。
 
 ```
-# "Section 1."
+# 部分一。
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -404,9 +404,9 @@ Expires: 2016.12.31
 章节标签和过期标签可以结合使用，又都是可选（看下面的例子）。
 
 ```
-# "Example Section."
+# 示例部分。
 1.2.3.4/32 Deny Generic
-Tag: Example Section
+Tag: 示例部分
 Expires: 2016.12.31
 ```
 
@@ -423,7 +423,7 @@ Expires: 2016.12.31
 在CIDRAM，YAML标记段被识别到脚本通过使用三个连字符（“---”），和终止靠他们的签名章节通过双换行符。一个典型的YAML标记段在一个签名章节被组成的三个连字符在一行立马之后的CIDR列表和任何标签，接着是二维表为键值对（第一维，配置指令类别；第二维，配置指令）为哪些配置指令应修改（和哪些值）每当一个签名内那签名章节被触发（看下面的例子）。
 
 ```
-# "Foobar 1."
+# Foobar 1.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -444,7 +444,7 @@ recaptcha:
 template_data:
  css_url: http://domain.tld/cidram.css
 
-# "Foobar 2."
+# Foobar 2.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -456,7 +456,7 @@ general:
  logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
 
-# "Foobar 3."
+# Foobar 3.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 4.5.6.7/32 Deny Generic
@@ -474,7 +474,7 @@ general:
 当“usemode”是“2”，为“特别标记”签名章节为使用的reCAPTCHA，一个条目是包括在YAML段为了那个签名章节（看下面的例子）。
 
 ```
-# This section will use reCAPTCHA.
+# 本节将使用reCAPTCHA。
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -490,7 +490,7 @@ recaptcha:
 此外，如果您想CIDRAM完全忽略一些具体的章节内的任何签名文件，您可以使用`ignore.dat`文件为指定忽略哪些章节。在新行，写`Ignore`，空间，然后该名称的章节您希望CIDRAM忽略（看下面的例子）。
 
 ```
-Ignore Section 1
+Ignore 部分一
 ```
 
 参考定制签名文件了解更多信息。
@@ -518,4 +518,4 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2016年10月28日。
+最后更新：2016年11月2日。

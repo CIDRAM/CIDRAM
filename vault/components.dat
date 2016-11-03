@@ -16,7 +16,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.6.0-DEV+20161030
+ Version: 0.6.0-DEV+20161103
  Minimum Required: 0.6.0-DEV
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -89,7 +89,7 @@ CIDRAM:
    - 8d9b3aca92c015c06cfd702c0d1ef507:1569
    - edd6df95fc5a80c6ab7e50c59ec0feee:923
    - 7d6da964435105a1bcf609315545cc9d:66062
-   - dd472544abc4e8281fafc42699f7701a:57006
+   - ed94db27b1f0be9df9542b2804e88f8f:56994
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
    - 23cd21587ee19bad8b8222c533d49b4d:14976
@@ -128,7 +128,7 @@ IPv4:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv4签名通常包括在主包。
   zh-TW: 標準IPv4簽名通常包括在主包。
- Version: 2016.11.03
+ Version: 2016.11.03-1
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -138,7 +138,50 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 53809e99463235e030bfd8f9ad16c938:635412
+   - bba8c5e4122c7d1f5480c5a8b3e6bce4:534731
+ Reannotate: components.dat
+IPv4-Bogons:
+ Name:
+  en: IPv4 bogons signatures file.
+  ar: عناوين IPv4 bogon ملف التوقيعات.
+  de: IPv4-Bogons Signaturdatei.
+  es: Archivo de firmas por IPv4 bogons.
+  fr: Fichier de signatures pour IPv4 bogons.
+  id: File tanda tangan IPv4 bogon.
+  it: File di firme per IPv4 bogone.
+  ja: IPv4ぼごんのシグネチャファイル。
+  nl: IPv4-bogon handtekeningen bestand.
+  pt: Arquivo de assinaturas para IPv4 bogons.
+  ru: IPv4 bogon файла сигнатур.
+  vi: Tập tin chữ ký IPv4 bogon.
+  zh: IPv4 Bogon签名文件。
+  zh-TW: IPv4 Bogon簽名文件。
+ Extended Description:
+  en: The default IPv4 bogon signatures normally included with the main package.
+  ar: تواقيع القياسية IPv4 bogon وشملت عادة مع الحزمة.
+  de: Die Standard-IPv4-Bogon-Signaturen normalerweise mit dem Hauptpaket enthalten.
+  es: Las firmas estándar IPv4 bogon normalmente se incluyen con el paquete principal.
+  fr: Les signatures IPv4 standards bogons normalement inclus dans le paquet principal.
+  id: Tanda tangan IPv4 bogon standar biasanya disertakan dengan paket utama.
+  it: Le firme IPv4 bogone predefiniti normalmente inclusi nel pacchetto principale.
+  ja: デフォルトIPv4ぼごん署名、通常はメインパッケージに含まれています。
+  nl: De standaard IPv4-bogon handtekeningen normaal opgenomen met de primaire pakket.
+  pt: As assinaturas IPv4 bogons padrão normalmente incluído com o pacote principal.
+  ru: Стандартные подписи/сигнатуры IPv4 bogon, обычно включены в основной пакет.
+  vi: Các chữ ký IPv4 bogon mặc định thường bao gồm với gói thầu chính.
+  zh: 标准IPv4 Bogon签名通常包括在主包。
+  zh-TW: 標準IPv4 Bogon簽名通常包括在主包。
+ Version: 2016.11.03
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv4_bogons.dat
+  To:
+   - ipv4_bogons.dat
+  Checksum:
+   - 7d6d6085e74619426a82309fa5f70e65:101296
  Reannotate: components.dat
 IPv6:
  Name:
@@ -171,7 +214,7 @@ IPv6:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv6签名通常包括在主包。
   zh-TW: 標準IPv6簽名通常包括在主包。
- Version: 2016.11.03
+ Version: 2016.11.03-1
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -181,7 +224,50 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 16232e37bb8f4c25307d494322b59283:2214242
+   - 2555f5267113e5669331a090f8eb5fd8:107963
+ Reannotate: components.dat
+IPv6-Bogons:
+ Name:
+  en: IPv6 bogons signatures file.
+  ar: عناوين IPv6 bogon ملف التوقيعات.
+  de: IPv6-Bogons Signaturdatei.
+  es: Archivo de firmas por IPv6 bogons.
+  fr: Fichier de signatures pour IPv6 bogons.
+  id: File tanda tangan IPv6 bogon.
+  it: File di firme per IPv6 bogone.
+  ja: IPv6ぼごんのシグネチャファイル。
+  nl: IPv6-bogon handtekeningen bestand.
+  pt: Arquivo de assinaturas para IPv6 bogons.
+  ru: IPv6 bogon файла сигнатур.
+  vi: Tập tin chữ ký IPv6 bogon.
+  zh: IPv6 Bogon签名文件。
+  zh-TW: IPv6 Bogon簽名文件。
+ Extended Description:
+  en: The default IPv6 bogon signatures normally included with the main package.
+  ar: تواقيع القياسية IPv6 bogon وشملت عادة مع الحزمة.
+  de: Die Standard-IPv6-Bogon-Signaturen normalerweise mit dem Hauptpaket enthalten.
+  es: Las firmas estándar IPv6 bogon normalmente se incluyen con el paquete principal.
+  fr: Les signatures IPv6 standards bogons normalement inclus dans le paquet principal.
+  id: Tanda tangan IPv6 bogon standar biasanya disertakan dengan paket utama.
+  it: Le firme IPv6 bogone predefiniti normalmente inclusi nel pacchetto principale.
+  ja: デフォルトIPv6ぼごん署名、通常はメインパッケージに含まれています。
+  nl: De standaard IPv6-bogon handtekeningen normaal opgenomen met de primaire pakket.
+  pt: As assinaturas IPv6 bogons padrão normalmente incluído com o pacote principal.
+  ru: Стандартные подписи/сигнатуры IPv6 bogon, обычно включены в основной пакет.
+  vi: Các chữ ký IPv6 bogon mặc định thường bao gồm với gói thầu chính.
+  zh: 标准IPv6 Bogon签名通常包括在主包。
+  zh-TW: 標準IPv6 Bogon簽名通常包括在主包。
+ Version: 2016.11.03
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv6_bogons.dat
+  To:
+   - ipv6_bogons.dat
+  Checksum:
+   - 15257090f54d266894456f93d8a2776b:2106752
  Reannotate: components.dat
 Bypasses:
  Name:

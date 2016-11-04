@@ -106,13 +106,6 @@
 
 
 # ---
-# Some basic greylisting to avoid problems with the local network being blocked by some of the bogon CIDR signatures
-# that appear further down into the signature files.
-
-0::/8 Greylist
-
-
-# ---
 # ASN 46844 ("Sharktech").
 # %Listed, Google Malware Dashboard: 29.29%.
 # Updated: 2016.03.27 / Checked: 2016.05.20
@@ -973,7 +966,6 @@ Tag: Private Layer INC
 2602:ff96:9::/48 Deny Cloud
 2602:ff96:12::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
-2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
 2605:5200:c91a::/48 Deny Cloud
 2606:6680:2::/48 Deny Cloud
@@ -2061,17 +2053,28 @@ Tag: Media Temple, Inc
 
 
 # ASN 12586 ("GHOSTnet GmbH").
-# %Listed, Google Malware Dashboard: 1.76%.
-# Updated: 2016.04.19
+# %Listed, Google Malware Dashboard: 2.82%.
+# Updated: 2016.11.03
 
 2001:67c:2f84::/48 Deny Cloud
-2a00:12d8::/32 Deny Cloud
+2a00:12d8::/29 Deny Cloud
 2a00:1890::/29 Deny Cloud
 2a00:1910::/29 Deny Cloud
+2a00:19d0::/29 Deny Cloud
 2a00:cdc0::/32 Deny Cloud
-2a00:d1a0::/32 Deny Cloud
+2a01:bd40::/29 Deny Cloud
 2a02:2fc0::/29 Deny Cloud
 Tag: GHOSTnet GmbH
+
+
+# ASNs 21859, 62610 ("Zenlayer Inc").
+# %Listed, Google Malware Dashboard: 26.88% (AS21859), 0% (AS62610).
+# Updated: 2016.11.04
+
+2602:ffe4::/36 Deny Cloud
+2604:980::/32 Deny Cloud
+2607:a400::/32 Deny Cloud
+Tag: Zenlayer Inc
 
 
 # ASN 22923 ("Yesup Ecommerce Solutions Inc").
@@ -2083,24 +2086,22 @@ Tag: Yesup Ecommerce
 
 
 # ASN 30475 ("Handy Networks, LLC").
-# %Listed, Google Malware Dashboard: 0.74%.
-# Updated: 2016.04.19
+# %Listed, Google Malware Dashboard: 1.21%.
+# Updated: 2016.11.03
 
 2602:fff6:d::/48 Deny Cloud
+2606:6680:6::/48 Deny Cloud
 2607:fc88::/32 Deny Cloud
-Tag: Handy Networks, LLC
+Tag: Handy Networks
 
 
 # ASN 31863 ("Centrilogic, Inc").
-# %Listed, Google Malware Dashboard: 1.59%.
-# Updated: 2016.04.19
+# %Listed, Google Malware Dashboard: 1.66%.
+# Updated: 2016.11.03
 
 2602:ff96:3::/48 Deny Cloud
 2602:ff96:7::/48 Deny Cloud
-2606:1e80:dace::/48 Deny Cloud
 2607:5600::/32 Deny Cloud
-2a00:a700::/48 Deny Cloud
-2a00:a700:a::/48 Deny Cloud
 Tag: Centrilogic
 
 
@@ -2115,11 +2116,11 @@ Tag: VegasNAP, LLC
 
 
 # ASN 54290 ("Hostwinds LLC").
-# %Listed, Google Malware Dashboard: 1.97%.
-# Updated: 2016.04.19
+# %Listed, Google Malware Dashboard: 6.58%.
+# Updated: 2016.11.03
 
-2607:5500::/32 Deny Cloud
-2607:5501::/32 Deny Cloud
+2607:5500::/31 Deny Cloud
+2620:4c:8080::/48 Deny Cloud
 2a06:4700::/29 Deny Cloud
 Tag: Hostwinds LLC
 
@@ -3080,14 +3081,6 @@ Tag: Nexeon Technologies
 Tag: OOO IT-Grad
 
 
-# ASN 30475 ("Handy Networks, LLC").
-# %Listed, Google Malware Dashboard: 1.21%.
-# Updated: 2016.11.03
-
-2606:6680:6::/48 Deny Cloud
-Tag: Handy Networks
-
-
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
 # %Listed, Google Malware Dashboard: 21.05%.
@@ -3140,8 +3133,8 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 2.17%.
-# Updated: 2016.01.18 / Checked: 2016.04.18
+# %Listed, Google Malware Dashboard: 3.32%.
+# Updated: 2016.01.18 / Checked: 2016.11.03
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
@@ -3149,8 +3142,8 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 1.79%.
-# Updated: 2016.01.18 / Checked: 2016.04.18
+# %Listed, Google Malware Dashboard: 3.02%.
+# Updated: 2016.01.18 / Checked: 2016.11.03
 
 2a00:1a68::/32 Deny Generic
 Tag: World4You
@@ -3175,11 +3168,12 @@ Tag: AS12880
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 1.15% (AS24940), 1.39% (AS37153).
-# Updated: 2016.05.21
+# %Listed, Google Malware Dashboard: 1.31% (AS24940), 1.50% (AS37153).
+# Updated: 2016.11.04
 
 2a01:4f8::/29 Deny Generic
 2a06:be80::/29 Deny Generic
+2c0f:f300::/48 Deny Generic
 2c0f:fce8::/33 Deny Generic
 Tag: Hetzner Online GmbH
 

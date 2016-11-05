@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.03).
+ * This file: Functions file (last modified: 2016.11.05).
  */
 
 /**
@@ -838,6 +838,17 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
             $CIDRAM['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
             if (!$VM && $ValueLen > 0) {
                 $Arr[$Key] = $Value;
+            }
+        } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
+            $Key = $ThisLine;
+            $KeyLen = strlen($Key);
+            $KeyLow = strtolower($Key);
+            $CIDRAM['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+            if (!isset($Arr[$Key])) {
+                if ($VM) {
+                    return false;
+                }
+                $Arr[$Key] = false;
             }
         }
     }

@@ -355,7 +355,7 @@ Si "Deny" est utilisé, quand la signature est déclenchée, en supposant qu'auc
 
 La valeur de `[Param]` accepté par "Deny" seront traitées au la sortie de la page "Accès Refusé", fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple "Je ne veux tu pas sur mon site"), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
 
-Les explications pré-préparés avoir le soutien de i18n et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de "Deny" sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le soutien de i18n et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
+Les explications pré-préparés avoir le soutien de L10N et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de "Deny" sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le soutien de L10N et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
 
 Les mots courts disponibles sont:
 - Bogon
@@ -517,4 +517,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 2 Novembre 2016 (2016.11.02).
+Dernière Mise à Jour: 5 Novembre 2016 (2016.11.05).

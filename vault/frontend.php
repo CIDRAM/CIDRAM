@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.30).
+ * This file: Front-end handler (last modified: 2016.11.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -482,6 +482,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         'RemoteMeta' => array(),
     );
 
+    /** Bump main components file to the top of the list. */
+    if (file_exists($CIDRAM['Vault'] . 'components.dat')) {
+        array_unshift($CIDRAM['Components']['Files'], 'components.dat');
+        $CIDRAM['Components']['Files'] = array_unique($CIDRAM['Components']['Files']);
+    }
+
     /** Count files; Prepare to search for components metadata. */
     $CIDRAM['Count'] = count($CIDRAM['Components']['Files']);
     for (
@@ -796,8 +802,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'] =
                     $CIDRAM['lang']['response_updates_not_installed'];
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
-                    '<option value="update-component">' . $CIDRAM['lang']['field_install'] . '</option>';
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
                     $CIDRAM['lang']['response_updates_not_installed'];
             } else {
@@ -937,6 +941,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'])) {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest'] =
                 $CIDRAM['lang']['response_updates_unable_to_determine'];
+        } elseif (
+            empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']) &&
+            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files'])
+        ) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] .=
+                '<option value="update-component">' . $CIDRAM['lang']['field_install'] . '</option>';
         }
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] = 0;
         if (
@@ -961,7 +971,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             }
         }
-        $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize']);
+        if ($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] > 0) {
+            $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize']);
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] =
+                '<br />' . $CIDRAM['lang']['field_size'] .
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'];
+        } else {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['VersionSize'] = '';
+        }
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'] = 0;
         if (
             !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum']) &&
@@ -985,7 +1002,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             }
         }
-        $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize']);
+        if ($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'] > 0) {
+            $CIDRAM['FormatFilesize']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize']);
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'] =
+                '<br />' . $CIDRAM['lang']['field_size'] .
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'];
+        } else {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['LatestSize'] = '';
+        }
         if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'])) {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'] .=
                 '<hr /><select name="do" class="half">' .
@@ -1105,8 +1129,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'] =
             $CIDRAM['lang']['response_updates_not_installed'];
         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
-        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['VersionSize'] = 0;
-        $CIDRAM['FormatFilesize']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['VersionSize']);
+        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['VersionSize'] = '';
         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize'] = 0;
         if (
             !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum']) &&
@@ -1130,7 +1153,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             }
         }
-        $CIDRAM['FormatFilesize']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize']);
+        if ($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize'] > 0) {
+            $CIDRAM['FormatFilesize']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize']);
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize'] =
+                '<br />' . $CIDRAM['lang']['field_size'] .
+                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize'];
+        } else {
+            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['LatestSize'] = '';
+        }
         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['StatusOptions'] =
             $CIDRAM['lang']['response_updates_not_installed'] .
             '<br /><select name="do" class="half"><option value="update-component">' .

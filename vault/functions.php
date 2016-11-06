@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.05).
+ * This file: Functions file (last modified: 2016.11.06).
  */
 
 /**
@@ -1189,5 +1189,27 @@ $CIDRAM['IsolateL10N'] = function (&$Arr, $Lang) {
     } else {
         $Key = key($Arr);
         $Arr = $Arr[$Key];
+    }
+};
+
+/**
+ * Append one or two values to a string, depending on whether that string is
+ * empty prior to calling the closure (allows cleaner code in some areas).
+ *
+ * @param string $String The string to work with.
+ * @param string $Delimit Appended first, if the string is not empty.
+ * @param string $Append Appended second, and always (empty or otherwise).
+ */
+$CIDRAM['AppendToString'] = function (&$String, $Delimit = '', $Append = '') {
+    if (!empty($String)) {
+        $String .= $Delimit;
+    }
+    $String .= $Append;
+};
+
+/** Check whether input is an array, and if it isn't, make it so. */
+$CIDRAM['Arrayify'] = function (&$Input) {
+    if (!is_array($Input)) {
+        $Input = array($Input);
     }
 };

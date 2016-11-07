@@ -4,10 +4,13 @@
 - 1. [LỜI GIỚI THIỆU](#SECTION1)
 - 2. [CÁCH CÀI ĐẶT](#SECTION2)
 - 3. [CÁCH SỬ DỤNG](#SECTION3)
-- 4. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION4)
-- 5. [TÙY CHỌN CHO CẤU HÌNH](#SECTION5)
-- 6. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION6)
-- 7. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION7)
+- 4. [QUẢN LÝ FRONT-END](#SECTION4)
+- 5. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION5)
+- 6. [TÙY CHỌN CHO CẤU HÌNH](#SECTION6)
+- 7. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION7)
+- 8. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION8)
+
+*Lưu ý về bản dịch: Trong trường hợp có sai sót (ví dụ, sự khác biệt giữa bản dịch, lỗi chính tả, vv), phiên bản tiếng Anh của README được coi là phiên bản gốc và có thẩm quyền. Nếu bạn tìm thấy bất kỳ lỗi, giúp đỡ của bạn trong việc điều chỉnh họ sẽ được hoan nghênh.*
 
 ---
 
@@ -71,7 +74,14 @@ Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tô
 ---
 
 
-###4. <a name="SECTION4"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
+###4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
 
 Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
 
@@ -154,6 +164,7 @@ Tập tin | Chi tiết
 /vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
+/vault/cidramblocklists.dat | Chứa thông tin liên quan đến các danh sách chặn tùy chọn cho các quốc gia mà được cung cấp bởi Macmathan; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
@@ -187,7 +198,7 @@ Tập tin | Chi tiết
 ---
 
 
-###5. <a name="SECTION5"></a>TÙY CHỌN CHO CẤU HÌNH
+###6. <a name="SECTION6"></a>TÙY CHỌN CHO CẤU HÌNH
 Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho CIDRAM `config.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
 ####"general" (Thể loại)
@@ -307,9 +318,9 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 ---
 
 
-###6. <a name="SECTION6"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
+###7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
-####6.0 KHÁI NIỆM CƠ BẢN
+####7.0 KHÁI NIỆM CƠ BẢN
 
 Một mô tả của các định dạng và cấu trúc của chữ ký được sử dụng bởi CIDRAM có thể được tìm thấy trong văn bản thô trong bất kỳ tập tin chữ ký tùy chỉnh. Vui lòng tham khảo tài liệu hướng dẫn để tìm hiểu thêm về định dạng và cấu trúc của chữ ký của CIDRAM.
 
@@ -364,7 +375,7 @@ Những từ viết tắt có sẵn là:
 - Proxy
 - Spam
 
-####6.1 GẮN THẺ
+####7.1 GẮN THẺ
 
 Nếu bạn muốn chia chữ ký tùy chỉnh của bạn để các phần riêng biệt, bạn có thể xác định những phần riêng lẻ cho các kịch bản bằng cách thêm một "gắn thẻ phần" ngay sau khi có chữ ký của từng phần, với tên của phần chữ ký của bạn (xem ví dụ dưới đây).
 
@@ -409,9 +420,9 @@ Tag: Phần Ví Dụ
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML CƠ BẢN
+#####7.2.0 YAML CƠ BẢN
 
 Một hình thức đơn giản của YAML có thể được sử dụng trong các tập tin chữ ký cho mục đích xác định các hành vi và các thiết lập cụ thể để phần chữ ký cá nhân. Điều này có thể hữu ích nếu bạn muốn giá trị của chỉ thị cấu hình của bạn để khác biệt trên cơ sở chữ ký cá nhân và phần chữ ký (ví dụ; nếu bạn muốn cung cấp một địa chỉ email cho vé hỗ trợ cho bất kỳ người dùng bị chặn bởi một chữ ký đặc biệt, nhưng không muốn cung cấp một địa chỉ email cho vé hỗ trợ cho người dùng bị chặn bởi bất kỳ chữ ký khác; nếu bạn muốn có một số chữ ký cụ thể để kích hoạt một chuyển hướng trang; nếu bạn muốn đánh dấu một phần chữ ký để sử dụng với reCAPTCHA; nếu bạn muốn ghi lại cố gắng truy cập bị chặn vào các tập tin riêng biệt trên cơ sở chữ ký cá nhân hay phần chữ ký).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 LÀM THẾ NÀO ĐỂ "ĐẶC BIỆT ĐÁNH DẤU" PHẦN CHỮ KÝ ĐỂ SỬ DỤNG VỚI reCAPTCHA
+#####7.2.1 LÀM THẾ NÀO ĐỂ "ĐẶC BIỆT ĐÁNH DẤU" PHẦN CHỮ KÝ ĐỂ SỬ DỤNG VỚI reCAPTCHA
 
 Khi "usemode" là 0 hay 1, phần chữ ký không cần phải được "đặc biệt đánh dấu" để sử dụng với reCAPTCHA (bởi vì họ đã sẽ hoặc sẽ không sử dụng reCAPTCHA, tùy thuộc vào tùy chọn này).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Lưu ý: Một trường hợp reCAPTCHA sẽ chỉ được cung cấp cho người dùng nếu reCAPTCHA được kích hoạt (với "usemode" như 1, hay "usemode" như 2 với "enabled" như true), và nếu chính xác MỘT chữ ký đã được kích hoạt (không nhiều hơn, không ít hơn; nếu nhiều chữ ký được kích hoạt, một trường hợp reCAPTCHA sẽ KHÔNG được cung cấp).
 
-####6.3 PHỤ TRỢ
+####7.3 PHỤ TRỢ
 
 Ngoài ra, nếu bạn muốn CIDRAM để hoàn toàn bỏ qua một số phần cụ thể trong bất kỳ tập tin chữ ký, bạn có thể sử dụng các tập tin `ignore.dat` để xác định những phần để bỏ qua. Trên một dòng mới, viết `Ignore`, theo sau là một không gian, theo sau là tên của phần mà bạn muốn CIDRAM để bỏ qua (xem ví dụ dưới đây).
 
@@ -497,7 +508,7 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 ---
 
 
-###7. <a name="SECTION7"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
+###8. <a name="SECTION8"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
 ####"Sai tích cực" là gì?
 
@@ -517,4 +528,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Mười Một 2016 (2016.11.05).
+Lần cuối cập nhật: 7 Tháng Mười Một 2016 (2016.11.07).

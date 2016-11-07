@@ -5,11 +5,14 @@
  <li>1. <a href="#SECTION1">مقدمة</a></li>
  <li>2. <a href="#SECTION2">كيفية التحميل</a></li>
  <li>3. <a href="#SECTION3">كيفية الإستخدام</a></li>
- <li>4. <a href="#SECTION4">الملفاتالموجودةفيهذهالحزمة</a></li>
- <li>5. <a href="#SECTION5">خياراتالتكوين/التهيئة</a></li>
- <li>6. <a href="#SECTION6">شكل/تنسيق التوقيع</a></li>
- <li>7. <a href="#SECTION7">أسئلة وأجوبة (FAQ)</a></li>
+ <li>4. <a href="#SECTION4">إدارة FRONT-END</a></li>
+ <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة</a></li>
+ <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة</a></li>
+ <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع</a></li>
+ <li>8. <a href="#SECTION8">أسئلة وأجوبة (FAQ)</a></li>
 </ul></div>
+
+<div dir="rtl"><em>ملاحظة بخصوص ترجمة: في حالة الأخطاء (على سبيل المثال، التناقضات بين الترجمات، الأخطاء المطبعية، إلخ)، النسخة الإنجليزية من هذه الوثيقة هو تعتبر النسخة الأصلية وموثوق. إذا وجدت أي أخطاء، سيكون موضع ترحيب مساعدتكم في تصحيحها.</em></div>
 
 ---
 
@@ -73,7 +76,14 @@ Updating is done manually, and you can customise your configuration and customis
 ---
 
 
-### <div dir="rtl">4. <a name="SECTION4"></a>الملفاتالموجودةفيهذهالحزمة</div>
+### <div dir="rtl">4. <a name="SECTION4"></a>إدارة FRONT-END</div>
+
+@TODO@
+
+---
+
+
+### <div dir="rtl">5. <a name="SECTION5"></a>الملفاتالموجودةفيهذهالحزمة</div>
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
@@ -156,6 +166,7 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.php
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
 <div dir="rtl" style="display:inline;">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
+<div dir="rtl" style="display:inline;">يحتوي على معلومات تتعلق اختياري قائمة منع بلدان التي تقدمها Macmathan؛ المستخدمة من ميزة التحديثات التي تقدمها لCIDRAM.</div> | /vault/cidramblocklists.dat
 <div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
 <div dir="rtl" style="display:inline;">يحتوي على معلومات المتعلقة الوحدة المختلفة لCIDRAM؛ المستخدمة من ميزة التحديثات التي تقدمها لCIDRAM.</div> | /vault/components.dat
 <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
@@ -189,7 +200,7 @@ Updating is done manually, and you can customise your configuration and customis
 ---
 
 
-### <div dir="rtl">5. <a name="SECTION5"></a>خياراتالتكوين/التهيئة</div>
+### <div dir="rtl">6. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
 <div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين "config.ini"، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
@@ -333,9 +344,9 @@ Due to the risks associated with providing a way for end-users to bypass the "ت
 ---
 
 
-### <div dir="rtl">6. <a name="SECTION6"></a>شكل/تنسيق التوقيع</div>
+### <div dir="rtl">7. <a name="SECTION7"></a>شكل/تنسيق التوقيع</div>
 
-#### <div dir="rtl">6.0 مبادئ<br /><br /></div>
+#### <div dir="rtl">7.0 مبادئ<br /><br /></div>
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -394,7 +405,7 @@ The pre-prepared explanations have L10N support and can be translated by the scr
  <li>Spam</li>
 </ul></div>
 
-#### <div dir="rtl">6.1 علامات<br /><br /></div>
+#### <div dir="rtl">7.1 علامات<br /><br /></div>
 
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (راجع الأمثلة أدناه).
 
@@ -439,9 +450,9 @@ Tag: القسم المثال
 Expires: 2016.12.31
 ```
 
-#### <div dir="rtl">6.2 YAML<br /><br /></div>
+#### <div dir="rtl">7.2 YAML<br /><br /></div>
 
-#### <div dir="rtl">6.2.0 أساسيات YAML<br /><br /></div>
+#### <div dir="rtl">7.2.0 أساسيات YAML<br /><br /></div>
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
@@ -496,7 +507,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 HOW TO "SPECIALLY MARK" SIGNATURE SECTIONS FOR USE WITH reCAPTCHA
+##### <div dir="rtl">7.2.1 كيفية "تحمل علامة" أقسام توقيع للاستخدام مع reCAPTCHA<br /><br /></div>
 
 When "usemode" is 0 or 1, signature sections don't need to be "specially marked" for use with reCAPTCHA (because they already either will or won't use reCAPTCHA, depending on this setting).
 
@@ -514,7 +525,7 @@ recaptcha:
 
 Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
 
-#### <div dir="rtl">6.3 معلومات اضافية<br /><br /></div>
+#### <div dir="rtl">7.3 معلومات اضافية<br /><br /></div>
 
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (راجع الأمثلة أدناه).
 
@@ -527,7 +538,7 @@ Ignore القسم 1
 ---
 
 
-### <div dir="rtl">7. <a name="SECTION7"></a>أسئلة وأجوبة (FAQ)</div>
+### <div dir="rtl">8. <a name="SECTION8"></a>أسئلة وأجوبة (FAQ)</div>
 
 #### <div dir="rtl">ما هو "إيجابية خاطئة"؟<br /><br /></div>
 
@@ -547,4 +558,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 نوفمبر 2016 (2016.11.05).</div>
+<div dir="rtl">آخر تحديث: 7 نوفمبر 2016 (2016.11.07).</div>

@@ -4,10 +4,13 @@
 - 1. [VORWORT](#SECTION1)
 - 2. [INSTALLATION](#SECTION2)
 - 3. [BENUTZUNG](#SECTION3)
-- 4. [IM PAKET ENTHALTENE DATEIEN](#SECTION4)
-- 5. [EINSTELLUNGEN](#SECTION5)
-- 6. [SIGNATURENFORMAT](#SECTION6)
-- 7. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION7)
+- 4. [FRONT-END-MANAGEMENT](#SECTION4)
+- 5. [IM PAKET ENTHALTENE DATEIEN](#SECTION5)
+- 6. [EINSTELLUNGEN](#SECTION6)
+- 7. [SIGNATURENFORMAT](#SECTION7)
+- 8. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION8)
+
+*Hinweis für Übersetzungen: Im Falle von Fehlern (z.B, Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
 
 ---
 
@@ -73,7 +76,14 @@ Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren.
 ---
 
 
-###4. <a name="SECTION4"></a>IM PAKET ENTHALTENE DATEIEN
+###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>IM PAKET ENTHALTENE DATEIEN
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
@@ -156,6 +166,7 @@ Datei | Beschreibung
 /vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cache.dat | Cache-Daten.
+/vault/cidramblocklists.dat | Enthält Informationen zu den optionalen Länderblocklisten bereitgestellt von Macmathan; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/cli.php | CLI-Handler.
 /vault/components.dat | Enthält Informationen zu den verschiedenen Komponenten für CIDRAM; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
@@ -189,7 +200,7 @@ Datei | Beschreibung
 ---
 
 
-###5. <a name="SECTION5"></a>EINSTELLUNGEN
+###6. <a name="SECTION6"></a>EINSTELLUNGEN
 Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `config.ini` mit einer kurzen Beschreibung ihrer Funktionen.
 
 ####"general" (Kategorie)
@@ -240,25 +251,25 @@ Generelle Konfiguration von CIDRAM.
 Konfiguration der Signaturen.
 
 "ipv4"
-- A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv4 signature files into CIDRAM. @TranslateMe@
+- Eine Liste der IPv4-Signaturdateien dass CIDRAM zu verarbeiten soll, durch Kommas begrenzt. Hier können Sie Einträge hinzufügen wenn Sie zusätzliche IPv4-Signaturdateien in CIDRAM hinzufügen möchten.
 
 "ipv6"
-- A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas. You can add entries here if you want to include additional IPv6 signature files into CIDRAM. @TranslateMe@
+- Eine Liste der IPv6-Signaturdateien dass CIDRAM zu verarbeiten soll, durch Kommas begrenzt. Hier können Sie Einträge hinzufügen wenn Sie zusätzliche IPv6-Signaturdateien in CIDRAM hinzufügen möchten.
 
 "block_cloud"
-- Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true. @TranslateMe@
+- Blockieren Sie CIDRs identifiziert als zu Web-Hosting/Cloud-Services gehören? Wenn Sie einen API-Dienst von Ihrer Website aus betreiben, oder wenn Sie erwarten dass andere Websites eine Verbindung zu Ihrer Website herstellen, dies auf false sollte gesetzt werden. Wenn Sie nicht, dann, dies auf true sollte gesetzt werden.
 
 "block_bogons"
-- Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true. @TranslateMe@
+- Blockieren Sie Bogon/Martian CIDRs? Wenn Sie Verbindungen zu Ihrer Website von localhost, von Ihrem LAN, oder von innerhalb Ihres lokalen Netzwerks erwarten, diese Richtlinie auf false sollte gesetzt werden. Wenn Sie diese Verbindungen nicht erwarten, dies auf true sollte gesetzt werden.
 
 "block_generic"
-- Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories. @TranslateMe@
+- Blockieren Sie CIDRs allgemein empfohlen für eine schwarze Liste? Dies gilt für alle Signaturen, die nicht als Teil einer der anderen spezifischen Signaturkategorien markiert sind.
 
 "block_proxies"
-- Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security. @TranslateMe@
+- Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste gehören? Wenn Sie benötigen dass Benutzer auf Ihre Website von anonymen Proxy-Diensten zugreifen können, dies auf false sollte gesetzt werden. Andernfalls, Wenn Sie anonyme Proxies nicht benötigen, diese Richtlinie auf true sollte gesetzt werden, als Mittel zur Verbesserung der Sicherheit.
 
 "block_spam"
-- Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true. @TranslateMe@
+- Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein.
 
 ####"recaptcha" (Kategorie)
 Optionally, you can provide users with a way to bypass the "Zugriff verweigert" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with Falsch-Positivs in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
@@ -309,9 +320,9 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 ---
 
 
-###6. <a name="SECTION6"></a>SIGNATURENFORMAT
+###7. <a name="SECTION7"></a>SIGNATURENFORMAT
 
-####6.0 GRUNDLAGEN
+####7.0 GRUNDLAGEN
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -366,7 +377,7 @@ The available shorthand words are:
 - Proxy
 - Spam
 
-####6.1 TAGS
+####7.1 TAGS
 
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (siehe Beispiel unten).
 
@@ -411,9 +422,9 @@ Tag: Beispiel Sektion
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML GRUNDLAGEN
+#####7.2.0 YAML GRUNDLAGEN
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
@@ -468,7 +479,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 WIE MAN "SPEZIELL MARKIEREN" DEN SIGNATUR-SEKTIONEN FÜR DIE VERWENDUNG MIT reCAPTCHA
+#####7.2.1 WIE MAN "SPEZIELL MARKIEREN" DEN SIGNATUR-SEKTIONEN FÜR DIE VERWENDUNG MIT reCAPTCHA
 
 When "usemode" is 0 or 1, signature sections don't need to be "specially marked" for use with reCAPTCHA (because they already either will or won't use reCAPTCHA, depending on this setting).
 
@@ -486,7 +497,7 @@ recaptcha:
 
 Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
 
-####6.3 ZUSATZINFORMATION
+####7.3 ZUSATZINFORMATION
 
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (siehe Beispiel unten).
 
@@ -499,7 +510,7 @@ Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informat
 ---
 
 
-###7. <a name="SECTION7"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
+###8. <a name="SECTION8"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
 ####Was ist ein "Falsch-Positiv"?
 
@@ -519,4 +530,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 5. November 2016 (2016.11.05).
+Zuletzt aktualisiert: 7. November 2016 (2016.11.07).

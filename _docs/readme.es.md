@@ -4,10 +4,13 @@
 - 1. [PREÁMBULO](#SECTION1)
 - 2. [CÓMO INSTALAR](#SECTION2)
 - 3. [CÓMO USO](#SECTION3)
-- 4. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION4)
-- 5. [OPCIONES DE CONFIGURACIÓN](#SECTION5)
-- 6. [FORMATO DE FIRMAS](#SECTION6)
-- 7. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION7)
+- 4. [GESTIÓN DE FRONT-END](#SECTION4)
+- 5. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION5)
+- 6. [OPCIONES DE CONFIGURACIÓN](#SECTION6)
+- 7. [FORMATO DE FIRMAS](#SECTION7)
+- 8. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION8)
+
+*Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlos sería bienvenida.*
 
 ---
 
@@ -60,7 +63,7 @@ O esto en el `.htaccess` archivo:
 ---
 
 
-###3. <a name="SECTION3"></a>HOW TO USE
+###3. <a name="SECTION3"></a>CÓMO USO
 
 CIDRAM debe bloquear automáticamente las solicitudes indeseables a su website sin requiriendo intervención manual, aparte de sus instalación inicial.
 
@@ -71,7 +74,14 @@ Si tiene algún falsos positivos, por favor contacto conmigo para decirme.
 ---
 
 
-###4. <a name="SECTION4"></a>ARCHIVOS INCLUIDOS EN ESTE PAQUETE
+###4. <a name="SECTION4"></a>GESTIÓN DE FRONT-END
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>ARCHIVOS INCLUIDOS EN ESTE PAQUETE
 
 La siguiente es una lista de todos los archivos que debería haberse incluido en la copia de este script cuando descargado, todos los archivos que pueden ser potencialmente creados como resultado de su uso de este script, junto con una breve descripción de lo que todos estos archivos son para.
 
@@ -154,6 +164,7 @@ Archivo | Descripción
 /vault/lang/lang.zh.php | Lingüísticos datos Chino (simplificado).
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache.dat | Cache data.
+/vault/cidramblocklists.dat | Contiene información relativa a las listas opcionales para bloquear países proporcionado por Macmathan; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/cli.php | Módulo de la CLI.
 /vault/components.dat | Contiene información relativa a los diversos componentes de CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
@@ -187,7 +198,7 @@ Archivo | Descripción
 ---
 
 
-###5. <a name="SECTION5"></a>OPCIONES DE CONFIGURACIÓN
+###6. <a name="SECTION6"></a>OPCIONES DE CONFIGURACIÓN
 La siguiente es una lista de variables encuentran en la `config.ini` configuración archivo de CIDRAM, junto con una descripción de sus propósito y función.
 
 ####"general" (Categoría)
@@ -307,9 +318,9 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 ---
 
 
-###6. <a name="SECTION6"></a>FORMATO DE FIRMAS
+###7. <a name="SECTION7"></a>FORMATO DE FIRMAS
 
-####6.0 LOS FUNDAMENTOS
+####7.0 LOS FUNDAMENTOS
 
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
 
@@ -364,7 +375,7 @@ Las palabras abreviadas disponibles son:
 - Proxy
 - Spam
 
-####6.1 ETIQUETAS
+####7.1 ETIQUETAS
 
 Si desea dividir sus firmas personalizadas en secciones individuales, se puede identificar estas secciones individuales a la script mediante la adición de una "etiqueta de sección" inmediatamente después de las firmas de cada sección, junto con el nombre de su sección de firmas (vea el ejemplo siguiente).
 
@@ -409,9 +420,9 @@ Tag: Sección Ejemplo
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 LOS FUNDAMENTOS DE YAML
+#####7.2.0 LOS FUNDAMENTOS DE YAML
 
 Una forma simplificada de YAML markup se puede utilizar en los archivos de firmas con el propósito de definir los comportamientos y configuraciones específicas para las secciones de firmas individuales. Esto puede ser útil si desea que el valor de sus directivas de configuración diferir sobre la base de las firmas individuales y las secciones de firmas (por ejemplo; si desea proporcionar una dirección de email para los tickets de soporte para cualquier usuario bloqueadas por una firma particular, pero no desea proporcionar una dirección de email para tickets de soporte para usuarios bloqueados por cualquier otro firmas; si desea por algunas firmas específicas para desencadenar una redirección de página; si desea marcar una sección de firmas para usar con reCAPTCHA; si desea registrar los intentos de acceso bloqueados para archivos separados sobre la base de firmas individuales y/o secciones de firmas).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 CÓMO "ESPECIALMENTE MARCAR" SECCIONES DE FIRMAS PARA USAR CON reCAPTCHA
+#####7.2.1 CÓMO "ESPECIALMENTE MARCAR" SECCIONES DE FIRMAS PARA USAR CON reCAPTCHA
 
 Cuando "usemode" es 0 o 1, secciones de firmas no tienen que ser "especialmente marcado" para usar con reCAPTCHA (ya sea porque ya va utilizar o no va utilizar reCAPTCHA, dependiendo de esta directiva).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Nota: Un instancia de reCAPTCHA sólo se ofrecerán al usuario si reCAPTCHA está activado (ya sea con "usemode" como 1, o "usemode" como 2 con "enabled" como true), y si exactamente UNA firma se desencadena (ni mas, ni menos; si múltiples firmas se desencadena, una instancia de reCAPTCHA NO se ofrecerán).
 
-####6.3 AUXILIAR
+####7.3 AUXILIAR
 
 En adición, si quieres CIDRAM ignorar completamente algunas secciones específicas dentro de cualquiera de los archivos de firmas, puede utilizar el archivo `ignore.dat` para especificar qué secciones por ignorar. En una línea nueva, escribir `Ignore`, seguido de un espacio, seguido del nombre de la sección que desea CIDRAM ignorar (vea el ejemplo siguiente).
 
@@ -497,7 +508,7 @@ Consulte los archivos de firmas personalizadas para obtener más información.
 ---
 
 
-###7. <a name="SECTION7"></a>PREGUNTAS MÁS FRECUENTES (FAQ)
+###8. <a name="SECTION8"></a>PREGUNTAS MÁS FRECUENTES (FAQ)
 
 ####¿Qué es un "falso positivo"?
 
@@ -517,4 +528,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 5 Noviembre 2016 (2016.11.05).
+Última Actualización: 7 Noviembre 2016 (2016.11.07).

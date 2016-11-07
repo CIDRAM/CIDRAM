@@ -4,10 +4,13 @@
 - 1. [PREÂMBULO](#SECTION1)
 - 2. [COMO INSTALAR](#SECTION2)
 - 3. [COMO USAR](#SECTION3)
-- 4. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION4)
-- 5. [OPÇÕES DE CONFIGURAÇÃO](#SECTION5)
-- 6. [FORMATO DE ASSINATURAS](#SECTION6)
-- 7. [PERGUNTAS MAIS FREQUENTES (FAQ)](#SECTION7)
+- 4. [GESTÃO DE FRONT-END](#SECTION4)
+- 5. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION5)
+- 6. [OPÇÕES DE CONFIGURAÇÃO](#SECTION6)
+- 7. [FORMATO DE ASSINATURAS](#SECTION7)
+- 8. [PERGUNTAS MAIS FREQUENTES (FAQ)](#SECTION8)
+
+*Nota relativa às traduções: Em caso de erros (por exemplo, discrepâncias entre as traduções, erros de digitação, etc), a versão em inglês do README é considerada a versão original e autorizada. Se você encontrar algum erro, sua ajuda em corrigi-los seria bem-vinda.*
 
 ---
 
@@ -71,7 +74,14 @@ Se você encontrar quaisquer falsos positivos, entre em contato comigo para me i
 ---
 
 
-###4. <a name="SECTION4"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
+###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
 O seguinte está uma lista de todos os arquivos que deveria sido incluídos na arquivada cópia desse script quando você baixado-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são por.
 
@@ -154,6 +164,7 @@ Arquivo | Descrição
 /vault/lang/lang.zh.php | Linguagem dados Chinês (simplificado).
 /vault/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/cache.dat | Dados de cache.
+/vault/cidramblocklists.dat | Contém informações relativas às listas opcionais para bloqueando países fornecido por Macmathan; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/cli.php | Módulo de CLI.
 /vault/components.dat | Contém informações relativas aos vários componentes do CIDRAM; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para CIDRAM, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
@@ -187,7 +198,7 @@ Arquivo | Descrição
 ---
 
 
-###5. <a name="SECTION5"></a>OPÇÕES DE CONFIGURAÇÃO
+###6. <a name="SECTION6"></a>OPÇÕES DE CONFIGURAÇÃO
 O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de configuração para CIDRAM, juntamente com uma descrição de sua propósito e função.
 
 ####"general" (Categoria)
@@ -307,9 +318,9 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 ---
 
 
-###6. <a name="SECTION6"></a>FORMATO DE ASSINATURAS
+###7. <a name="SECTION7"></a>FORMATO DE ASSINATURAS
 
-####6.0 NOÇÕES BÁSICAS
+####7.0 NOÇÕES BÁSICAS
 
 A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode ser encontrada documentado em texto simples dentro de qualquer um dos dois arquivos de assinaturas personalizados. Por favor, consulte que a documentação para saber mais sobre o formato e estrutura das assinaturas de CIDRAM.
 
@@ -364,7 +375,7 @@ As palavras curtas disponíveis são:
 - Proxy
 - Spam
 
-####6.1 ETIQUETAS
+####7.1 ETIQUETAS
 
 Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas seções individuais para o script por adição de uma "etiqueta de secção" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
 
@@ -409,9 +420,9 @@ Tag: Seção Exemplo
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML BÁSICOS
+#####7.2.0 YAML BÁSICOS
 
 Uma forma simplificada de marcação YAML pode ser usado em arquivos de assinatura com a finalidade de definir comportamentos e configurações específicas para as seções de assinaturas individuais. Isto pode ser útil se você quiser que o valor de suas diretivas de configuração para diferir na base de assinaturas individuais e seções de assinatura (por exemplo; se você quiser fornecer um endereço de e-mail para tickets de suporte para quaisquer usuários bloqueados por uma assinatura específica, mas não quer fornecer um endereço de e-mail para tickets de suporte para usuários bloqueados por quaisquer outras assinaturas; se você quiser algumas assinaturas específicas para provocar um redirecionamento página; se você quiser marcar uma seção de assinaturas para uso com reCAPTCHA; Se você quiser registrar tentativas de acesso bloqueadas para separar arquivos na base de assinaturas individuais e/ou seções de assinatura).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 COMO "MARCAR ESPECIALMENTE" SEÇÕES DE ASSINATURA PARA USO COM RECAPTCHA
+#####7.2.1 COMO "MARCAR ESPECIALMENTE" SEÇÕES DE ASSINATURA PARA USO COM RECAPTCHA
 
 Quando "usemode" é 0 ou 1, seções de assinatura não precisa ser "marcado especialmente" para uso com reCAPTCHA (porque eles já vão usar ou não vão usar o reCAPTCHA, dependendo essa configuração).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Nota: Um instância de reCAPTCHA vai SOMENTE ser oferecido ao usuário se reCAPTCHA está habilitado (quer com "usemode" como 1, ou "usemode" como 2 com "enabled" como true), e se exatamente UMA assinatura foi desencadeada (nem mais, nem menos; se assinaturas múltiplas são desencadeadas, uma instância de reCAPTCHA NÃO será oferecida).
 
-####6.3 AUXILIAR
+####7.3 AUXILIAR
 
 Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos ficheiros de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
 
@@ -497,7 +508,7 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-###7. <a name="SECTION7"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
+###8. <a name="SECTION8"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
 
 ####O que é um "falso positivo"?
 
@@ -517,4 +528,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 5 Novembro 2016 (2016.11.05).
+Última Atualização: 7 Novembro 2016 (2016.11.07).

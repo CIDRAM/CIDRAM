@@ -4,10 +4,13 @@
 - 1. [PREAMBLE](#SECTION1)
 - 2. [HOW TO INSTALL](#SECTION2)
 - 3. [HOW TO USE](#SECTION3)
-- 4. [FILES INCLUDED IN THIS PACKAGE](#SECTION4)
-- 5. [CONFIGURATION OPTIONS](#SECTION5)
-- 6. [SIGNATURE FORMAT](#SECTION6)
-- 7. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION7)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [FILES INCLUDED IN THIS PACKAGE](#SECTION5)
+- 6. [CONFIGURATION OPTIONS](#SECTION6)
+- 7. [SIGNATURE FORMAT](#SECTION7)
+- 8. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION8)
+
+*Note regarding translations: In the event of errors (eg, discrepancies between translations, typos, etc), the English version of the README is considered the original and authoritative version. If you find any errors, your assistance in correcting them would be welcomed.*
 
 ---
 
@@ -71,7 +74,14 @@ If you encounter any false positives, please contact me to let me know about it.
 ---
 
 
-###4. <a name="SECTION4"></a>FILES INCLUDED IN THIS PACKAGE
+###4. <a name="SECTION4"></a>FRONT-END MANAGEMENT
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>FILES INCLUDED IN THIS PACKAGE
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, along with a short description of the purpose of these files.
 
@@ -154,6 +164,7 @@ File | Description
 /vault/lang/lang.zh.php | Chinese (simplified) language data.
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache.dat | Cache data.
+/vault/cidramblocklists.dat | Contains information relating to the optional country blocklists provided by Macmathan; Used by the updates feature provided by the front-end.
 /vault/cli.php | CLI handler.
 /vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
@@ -187,7 +198,7 @@ File | Description
 ---
 
 
-###5. <a name="SECTION5"></a>CONFIGURATION OPTIONS
+###6. <a name="SECTION6"></a>CONFIGURATION OPTIONS
 The following is a list of the directives available to CIDRAM in the `config.ini` configuration file, along with a description of the purpose of these directives.
 
 ####"general" (Category)
@@ -307,9 +318,9 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 ---
 
 
-###6. <a name="SECTION6"></a>SIGNATURE FORMAT
+###7. <a name="SECTION7"></a>SIGNATURE FORMAT
 
-####6.0 BASICS
+####7.0 BASICS
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -364,7 +375,7 @@ The available shorthand words are:
 - Proxy
 - Spam
 
-####6.1 TAGS
+####7.1 TAGS
 
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (see the example below).
 
@@ -409,9 +420,9 @@ Tag: Example Section
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML BASICS
+#####7.2.0 YAML BASICS
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 HOW TO "SPECIALLY MARK" SIGNATURE SECTIONS FOR USE WITH reCAPTCHA
+#####7.2.1 HOW TO "SPECIALLY MARK" SIGNATURE SECTIONS FOR USE WITH reCAPTCHA
 
 When "usemode" is 0 or 1, signature sections don't need to be "specially marked" for use with reCAPTCHA (because they already either will or won't use reCAPTCHA, depending on this setting).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
 
-####6.3 AUXILIARY
+####7.3 AUXILIARY
 
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (see the example below).
 
@@ -497,7 +508,7 @@ Refer to the custom signature files for more information.
 ---
 
 
-###7. <a name="SECTION7"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
+###8. <a name="SECTION8"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
 
 ####What is a "false positive"?
 
@@ -517,4 +528,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 5th November 2016 (2016.11.05).
+Last Updated: 7th November 2016 (2016.11.07).

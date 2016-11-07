@@ -4,10 +4,13 @@
 - 1. [SEPATAH KATA](#SECTION1)
 - 2. [BAGAIMANA CARA MENGINSTALL](#SECTION2)
 - 3. [BAGAIMANA CARA MENGGUNAKAN](#SECTION3)
-- 4. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION4)
-- 5. [OPSI KONFIGURASI](#SECTION5)
-- 6. [FORMAT TANDA TANGAN](#SECTION6)
-- 7. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION7)
+- 4. [MANAJEMEN BAGIAN DEPAN](#SECTION4)
+- 5. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION5)
+- 6. [OPSI KONFIGURASI](#SECTION6)
+- 7. [FORMAT TANDA TANGAN](#SECTION7)
+- 8. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION8)
+
+*Catatan tentang terjemahan: Dalam hal kesalahan (misalnya, perbedaan antara terjemahan, kesalahan cetak, dll), versi bahasa Inggris dari README dianggap versi asli dan berwibawa. Jika Anda menemukan kesalahan, bantuan Anda dalam mengoreksi mereka akan disambut.*
 
 ---
 
@@ -71,7 +74,14 @@ Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tah
 ---
 
 
-###4. <a name="SECTION4"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
+###4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
@@ -154,6 +164,7 @@ Data | Deskripsi
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache.dat | Cache data.
+/vault/cidramblocklists.dat | Berisi informasi yang berkaitan dengan daftar blok opsional untuk negara yang disediakan oleh Macmathan; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/cli.php | Modul CLI.
 /vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
@@ -187,7 +198,7 @@ Data | Deskripsi
 ---
 
 
-###5. <a name="SECTION5"></a>OPSI KONFIGURASI
+###6. <a name="SECTION6"></a>OPSI KONFIGURASI
 Berikut list variabel yang ditemukan pada file konfigurasi CIDRAM `config.ini`, dengan deskripsi dari tujuan dan fungsi.
 
 ####"general" (Kategori)
@@ -307,9 +318,9 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 ---
 
 
-###6. <a name="SECTION6"></a>FORMAT TANDA TANGAN
+###7. <a name="SECTION7"></a>FORMAT TANDA TANGAN
 
-####6.0 DASAR-DASAR
+####7.0 DASAR-DASAR
 
 Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silakan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
 
@@ -364,7 +375,7 @@ Kata-kata singkat yang tersedia adalah:
 - Proxy
 - Spam
 
-####6.1 TAG
+####7.1 TAG
 
 Jika Anda ingin membagi tanda tangan kustom Anda ke bagian individual, Anda dapat mengidentifikasi bagian individual untuk skrip dengan menambahkan "tag bagian" segera setelah tanda tangan dari setiap bagian, bersama dengan nama bagian tanda tangan Anda (lihat contoh dibawah ini).
 
@@ -409,9 +420,9 @@ Tag: Contoh Bagian
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 DASAR-DASAR YAML
+#####7.2.0 DASAR-DASAR YAML
 
 Sebuah bentuk sederhana YAML markup dapat digunakan dalam file tanda tangan untuk tujuan perilaku mendefinisikan dan direktif spesifik untuk bagian tanda tangan individu. Ini mungkin berguna jika Anda ingin nilai direktif konfigurasi berbeda atas dasar tanda tangan individu dan bagian tanda tangan (sebagai contoh; jika Anda ingin memberikan alamat email untuk tiket dukungan untuk setiap pengguna diblokir oleh satu tanda tangan tertentu, tapi tidak ingin memberikan alamat email untuk tiket dukungan untuk pengguna diblokir oleh tanda tangan lain; jika Anda ingin beberapa tanda tangan spesifik untuk memicu halaman redireksi; jika Anda ingin menandai bagian tanda tangan untuk digunakan dengan reCAPTCHA; jika Anda ingin merekam diblokir upaya akses untuk memisahkan file berdasarkan tanda tangan individu dan/atau bagian tanda tangan).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 BAGAIMANA "KHUSUS MENANDAI" BAGIAN TANDA TANGAN UNTUK DIGUNAKAN DENGAN reCAPTCHA
+#####7.2.1 BAGAIMANA "KHUSUS MENANDAI" BAGIAN TANDA TANGAN UNTUK DIGUNAKAN DENGAN reCAPTCHA
 
 Ketika "usemode" 0 atau 1, bagian tanda tangan tidak perlu "khusus ditandai" untuk digunakan dengan reCAPTCHA (karena mereka telah akan atau tidak akan menggunakan reCAPTCHA, tergantung pada pengaturan ini).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Catat: Sebuah instansi reCAPTCHA akan HANYA ditawarkan kepada pengguna jika reCAPTCHA diaktifkan (dengan "usemode" sebagai 1, atau "usemode" sebagai 2 dengan "enabled" sebagai true), dan jika tepat SATU tanda tangan dipicu (tidak lebih, tidak kurang; jika kelipatan tanda tangan dipicu, instansi reCAPTCHA TIDAK akan ditawarkan).
 
-####6.3 INFORMASI TAMBAHAN
+####7.3 INFORMASI TAMBAHAN
 
 Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian tertentu dalam salah satu file tanda tangan, Anda dapat menggunakan file `ignore.dat` untuk menentukan bagian untuk mengabaikan. Pada baris baru, menulis `Ignore`, diikuti dengan spasi, diikuti dengan nama bagian yang Anda ingin CIDRAM untuk mengabaikan (lihat contoh dibawah ini).
 
@@ -497,7 +508,7 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 ---
 
 
-###7. <a name="SECTION7"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
+###8. <a name="SECTION8"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
 
 ####Apa yang dimaksud dengan "positif palsu"?
 
@@ -517,4 +528,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 5 November 2016 (2016.11.05).
+Terakhir Diperbarui: 7 November 2016 (2016.11.07).

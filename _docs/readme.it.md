@@ -4,10 +4,13 @@
 - 1. [PREAMBOLO](#SECTION1)
 - 2. [COME INSTALLARE](#SECTION2)
 - 3. [COME USARE](#SECTION3)
-- 4. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION4)
-- 5. [OPZIONI DI CONFIGURAZIONE](#SECTION5)
-- 6. [FIRMA FORMATO](#SECTION6)
-- 7. [DOMANDE FREQUENTI (FAQ)](#SECTION7)
+- 4. [GESTIONE FRONT-END](#SECTION4)
+- 5. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION5)
+- 6. [OPZIONI DI CONFIGURAZIONE](#SECTION6)
+- 7. [FIRMA FORMATO](#SECTION7)
+- 8. [DOMANDE FREQUENTI (FAQ)](#SECTION8)
+
+*Nota per quanto riguarda le traduzioni: In caso di errori (per esempio, discrepanze tra le traduzioni, errori di battitura, ecc), la versione Inglese del README è considerata la versione originale e autorevole. Se trovate errori, il vostro aiuto a correggerli sarebbe il benvenuto.*
 
 ---
 
@@ -71,7 +74,14 @@ Se si incontrano qualsiasi falsi positivi, si prega di contattare me per farmi s
 ---
 
 
-###4. <a name="SECTION4"></a>FILE INCLUSI IN QUESTO PACCHETTO
+###4. <a name="SECTION4"></a>GESTIONE FRONT-END
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>FILE INCLUSI IN QUESTO PACCHETTO
 
 Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella archiviato copia di questo script quando si scaricalo, qualsiasi di file che potrebbero potenzialmente essere creato come risultato della vostra utilizzando questo script, insieme con una breve descrizione di ciò che tutti questi file sono per.
 
@@ -154,6 +164,7 @@ File | Descrizione
 /vault/lang/lang.zh.php | Linguistici dati Cinese (semplificata).
 /vault/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/cache.dat | Cache data.
+/vault/cidramblocklists.dat | Contiene informazioni relative agli elenchi dei blocchi opzionali per i paesi fornito da Macmathan; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/cli.php | Gestore di CLI.
 /vault/components.dat | Contiene informazioni relative ai vari componenti di CIDRAM; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/config.ini.RenameMe | File di configurazione; Contiene tutte l'opzioni di configurazione per CIDRAM, dicendogli cosa fare e come operare correttamente (rinomina per attivare).
@@ -187,7 +198,7 @@ File | Descrizione
 ---
 
 
-###5. <a name="SECTION5"></a>OPZIONI DI CONFIGURAZIONE
+###6. <a name="SECTION6"></a>OPZIONI DI CONFIGURAZIONE
 Il seguente è un elenco di variabili trovate nelle `config.ini` file di configurazione di CIDRAM, insieme con una descrizione del loro scopo e funzione.
 
 ####"general" (Categoria)
@@ -307,9 +318,9 @@ Si riferisce al HTML utilizzato per generare la pagina "Accesso Negato". Se stai
 ---
 
 
-###6. <a name="SECTION6"></a>FIRMA FORMATO
+###7. <a name="SECTION7"></a>FIRMA FORMATO
 
-####6.0 NOZIONI DI BASE
+####7.0 NOZIONI DI BASE
 
 Una descrizione del formato e la struttura delle firme utilizzate da CIDRAM può essere trovato documentato in testo semplice entro una delle due file di firma personalizzati. Si prega di fare riferimento a tale documentazione per saperne di più sul formato e la struttura delle firme di CIDRAM.
 
@@ -364,7 +375,7 @@ Le parole brevi disponibili sono:
 - Proxy
 - Spam
 
-####6.1 ETICHETTE
+####7.1 ETICHETTE
 
 Se si desidera dividere le vostre firme personalizzate in singole sezioni, è possibile identificare queste singole sezioni per lo script per aggiungendo un "etichetta sezione" subito dopo le firme di ogni sezione, insieme con il nome della sezione di firme (vedere l'esempio cui seguito).
 
@@ -409,9 +420,9 @@ Tag: Sezione Esempio
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML BASI
+#####7.2.0 YAML BASI
 
 Una forma semplificata di YAML markup può essere utilizzato in file di firma al fine di definire comportamenti e le impostazioni specifiche per singole sezioni di firma. Questo può essere utile se si desidera che il valore delle vostre direttive di configurazione di differire sulla base delle singole firme e sezioni di firma (per esempio; se si desidera fornire un indirizzo e-mail per i biglietti di supporto per tutti gli utenti bloccati da una firma particolare, ma non desidera fornire un indirizzo e-mail per i biglietti di supporto per utenti bloccati con qualsiasi altro firme; se si desidera che alcune firme specifiche per innescare una reindirizzamento di pagina; se si desidera contrassegnare una sezione di firma per l'utilizzo con reCAPTCHA; se si desidera registrare i tentativi di accesso bloccati in file separati sulla base delle singole firme e/o sezioni di firma).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 COME "APPOSITAMENTE CONTRASSEGNARE" SEZIONI DI FIRMA PER L'UTILIZZO CON reCAPTCHA
+#####7.2.1 COME "APPOSITAMENTE CONTRASSEGNARE" SEZIONI DI FIRMA PER L'UTILIZZO CON reCAPTCHA
 
 Quando "usemode" è 0 o 1, sezioni di firma non hanno bisogno di essere "appositamente contrassegnato" per l'utilizzo con reCAPTCHA (perché già userà o non userà reCAPTCHA, (dipende da questa impostazione).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Nota: Un istanza di reCAPTCHA sarà solo essere offerto all'utente se reCAPTCHA è attivato (sia con "usemode" come 1, o "usemode" come 2 con "enabled" come true), e se esattamente UN firma è stato attivato (né più, né meno; se più firme sono attivati, un'istanza di reCAPTCHA NON sarà offerto).
 
-####6.3 AUSILIARIO
+####7.3 AUSILIARIO
 
 In aggiunta, se si desidera CIDRAM di ignorare completamente alcune sezioni specifiche in qualsiasi una delle file di firma, è possibile utilizzare il file `ignore.dat` per specificare quali sezioni a ignorare. In una nuova riga, scivere `Ignore`, seguito da uno spazio, seguito dal nome della sezione che si desidera CIDRAM a ignorare (vedere l'esempio cui seguito).
 
@@ -497,7 +508,7 @@ Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 ---
 
 
-###7. <a name="SECTION7"></a>DOMANDE FREQUENTI (FAQ)
+###8. <a name="SECTION8"></a>DOMANDE FREQUENTI (FAQ)
 
 ####Che cosa è un "falso positivo"?
 
@@ -517,4 +528,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 5 Novembre 2016 (2016.11.05).
+Ultimo Aggiornamento: 7 Novembre 2016 (2016.11.07).

@@ -4,10 +4,13 @@
 - 1. [序文](#SECTION1)
 - 2. [インストール方法](#SECTION2)
 - 3. [使用方法](#SECTION3)
-- 4. [本パッケージに含まれるファイル](#SECTION4)
-- 5. [設定オプション](#SECTION5)
-- 6. [署名（シグニチャ）フォーマット](#SECTION6)
-- 7. [よくある質問（FAQ）](#SECTION7)
+- 4. [フロントエンドの管理](#SECTION4)
+- 5. [本パッケージに含まれるファイル](#SECTION5)
+- 6. [設定オプション](#SECTION6)
+- 7. [署名（シグニチャ）フォーマット](#SECTION7)
+- 8. [よくある質問（FAQ）](#SECTION8)
+
+*翻訳についての注意：エラーが発生した場合（例えば、翻訳の間の不一致、タイプミス、等等）、READMEの英語版が原本と権威のバージョンであると考えられます。誤りを見つけた場合は、それらを修正するにご協力を歓迎されるだろう。*
 
 ---
 
@@ -71,7 +74,14 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ---
 
 
-###4. <a name="SECTION4"></a>本パッケージに含まれるファイル
+###4. <a name="SECTION4"></a>フロントエンドの管理
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>本パッケージに含まれるファイル
 
 以下はアーカイブから一括ダウンロードされるファイルのリスト、ならびにスクリプト使用により作成されるファイルとこれらのファイルが何のためかという簡単な説明です。
 
@@ -154,6 +164,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cache.dat | キャッシュ・データ。
+/vault/cidramblocklists.dat | 国オプショナルブロックリスト情報が含まれています（国オプショナルブロックリストは、Macmathanからです）；アップデート機能で使用（フロントエンドが提供します）。
 /vault/cli.php | CLIハンドラ。
 /vault/components.dat | CIDRAMのコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
@@ -187,7 +198,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ---
 
 
-###5. <a name="SECTION5"></a>設定オプション
+###6. <a name="SECTION6"></a>設定オプション
 以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
 ####"general" （全般、カテゴリー）
@@ -308,9 +319,9 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 ---
 
 
-###6. <a name="SECTION6"></a>署名（シグニチャ）フォーマット
+###7. <a name="SECTION7"></a>署名（シグニチャ）フォーマット
 
-####6.0 基本原則
+####7.0 基本原則
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -365,7 +376,7 @@ The pre-prepared explanations have L10N support and can be translated by the scr
 - Proxy
 - Spam
 
-####6.1 タグ
+####7.1 タグ
 
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section （以下の例を参照してください）。
 
@@ -410,9 +421,9 @@ Tag: 例セクション
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML基本原則
+#####7.2.0 YAML基本原則
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
@@ -467,7 +478,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 HOW TO "SPECIALLY MARK" SIGNATURE SECTIONS FOR USE WITH reCAPTCHA
+#####7.2.1 HOW TO "SPECIALLY MARK" SIGNATURE SECTIONS FOR USE WITH reCAPTCHA
 
 When "usemode" is 0 or 1, signature sections don't need to be "specially marked" for use with reCAPTCHA (because they already either will or won't use reCAPTCHA, depending on this setting).
 
@@ -485,7 +496,7 @@ recaptcha:
 
 注意：A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
 
-####6.3 補助
+####7.3 補助
 
 In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore （以下の例を参照してください）。
 
@@ -498,7 +509,7 @@ Ignore セクション１
 ---
 
 
-###7. <a name="SECTION7"></a>よくある質問（FAQ）
+###8. <a name="SECTION8"></a>よくある質問（FAQ）
 
 ####「偽陽性」とは何ですか？
 
@@ -518,4 +529,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年11月5日。
+最終アップデート： 2016年11月7日。

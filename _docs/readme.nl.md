@@ -4,10 +4,13 @@
 - 1. [PREAMBULE](#SECTION1)
 - 2. [HOE TE INSTALLEREN](#SECTION2)
 - 3. [HOE TE GEBRUIKEN](#SECTION3)
-- 4. [BESTANDEN IN DIT PAKKET](#SECTION4)
-- 5. [CONFIGURATIEOPTIES](#SECTION5)
-- 6. [HANDTEKENINGFORMAAT](#SECTION6)
-- 7. [VEELGESTELDE VRAGEN (FAQ)](#SECTION7)
+- 4. [FRONTEND MANAGEMENT](#SECTION4)
+- 5. [BESTANDEN IN DIT PAKKET](#SECTION5)
+- 6. [CONFIGURATIEOPTIES](#SECTION6)
+- 7. [HANDTEKENINGFORMAAT](#SECTION7)
+- 8. [VEELGESTELDE VRAGEN (FAQ)](#SECTION8)
+
+*Opmerking over vertalingen: In geval van fouten (bv, verschillen tussen vertalingen, typefouten, ezv), de Engels versie van de README wordt beschouwd als het origineel en gezaghebbende versie. Als u vinden elke fouten, uw hulp bij het corrigeren van hen zou worden toegejuicht.*
 
 ---
 
@@ -71,7 +74,14 @@ Als u tegenkomen een valse positieven, neem dan contact met mij op om me te late
 ---
 
 
-###4. <a name="SECTION4"></a>BESTANDEN IN DIT PAKKET
+###4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
+
+@TODO@
+
+---
+
+
+###5. <a name="SECTION5"></a>BESTANDEN IN DIT PAKKET
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
@@ -154,6 +164,7 @@ Bestand | Beschrijving
 /vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache.dat | Cache data/gegevens.
+/vault/cidramblocklists.dat | Bevat informatie met betrekking tot de optionele land blocklists door Macmathan; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/cli.php | CLI-handler.
 /vault/components.dat | Bevat informatie over de verschillende bestanddelen van CIDRAM; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
@@ -187,7 +198,7 @@ Bestand | Beschrijving
 ---
 
 
-###5. <a name="SECTION5"></a>CONFIGURATIEOPTIES
+###6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van CIDRAM, samen met een beschrijving van hun doel en functie.
 
 ####"general" (Categorie)
@@ -307,9 +318,9 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 ---
 
 
-###6. <a name="SECTION6"></a>HANDTEKENINGFORMAAT
+###7. <a name="SECTION7"></a>HANDTEKENINGFORMAAT
 
-####6.0 BASICS
+####7.0 BASICS
 
 Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste handtekeningen bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de handtekeningen van CIDRAM.
 
@@ -364,7 +375,7 @@ De beschikbare korte woorden zijn:
 - Proxy
 - Spam
 
-####6.1 ETIKETTEN
+####7.1 ETIKETTEN
 
 Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie (zie het onderstaande voorbeeld).
 
@@ -409,9 +420,9 @@ Tag: Voorbeeld Sectie.
 Expires: 2016.12.31
 ```
 
-####6.2 YAML
+####7.2 YAML
 
-#####6.2.0 YAML BASICS
+#####7.2.0 YAML BASICS
 
 Een vereenvoudigde vorm van YAML markup kan worden gebruikt in handtekening bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke handtekening secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele handtekeningen en handtekening secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde handtekening, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere handtekeningen; als u wilt een specifieke handtekeningen te leiden tot een pagina redirect; als u wilt een handtekening sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele handtekeningen en/of handtekening secties).
 
@@ -466,7 +477,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####6.2.1 HOE OM HANDTEKENING SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
+#####7.2.1 HOE OM HANDTEKENING SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
 
 Als "usemode" is 0 of 1, handtekening secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
 
@@ -484,7 +495,7 @@ recaptcha:
 
 Notitie: Een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN handtekening is geactiveerd (niet meer, niet minder; als er meerdere handtekeningen worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden).
 
-####6.3 EXTRA INFORMATIE
+####7.3 EXTRA INFORMATIE
 
 Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de handtekening bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
 
@@ -497,7 +508,7 @@ Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
 ---
 
 
-###7. <a name="SECTION7"></a>VEELGESTELDE VRAGEN (FAQ)
+###8. <a name="SECTION8"></a>VEELGESTELDE VRAGEN (FAQ)
 
 ####Wat is een "vals positieve"?
 
@@ -517,4 +528,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 5 November 2016 (2016.11.05).
+Laatste Bijgewerkt: 7 November 2016 (2016.11.07).

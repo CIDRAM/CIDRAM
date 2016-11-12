@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.05).
+ * This file: Front-end handler (last modified: 2016.11.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,7 +76,7 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
 /** Set form target if not already set. */
 $CIDRAM['FE']['FormTarget'] = (empty($_POST['cidram-form-target'])) ? '' : $_POST['cidram-form-target'];
 
-/** Fetch user list and sessions list. */
+/** Fetch user list, sessions list and the front-end cache. */
 if (file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
     $CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.dat');
     $CIDRAM['FE']['Rebuild'] = false;
@@ -225,14 +225,6 @@ if ($CIDRAM['FE']['UserState'] === 1) {
         $CIDRAM['FE']['UserState'] = $CIDRAM['FE']['Permissions'] = 0;
         setcookie('CIDRAM-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
 
-    } else {
-
-        /** Generate default tooltip for the user ("Hello, {username}"). */
-        $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
-            array('username' => $CIDRAM['FE']['UserRaw']),
-            $CIDRAM['lang']['tip_hello']
-        );
-
     }
 
     /** If the user has complete access. */
@@ -255,18 +247,24 @@ if ($CIDRAM['FE']['UserState'] === 1) {
 
 }
 
+$CIDRAM['FE']['bNavBR'] = ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
+
 /** The user hasn't logged in. Show them the login page. */
 if ($CIDRAM['FE']['UserState'] !== 1) {
 
+    /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_login'];
 
+    /** Prepare page tooltip/description. */
     $CIDRAM['FE']['FE_Tip'] = $CIDRAM['lang']['tip_login'];
 
+    /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_login.html')
     );
 
+    /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
 }
@@ -277,15 +275,24 @@ if ($CIDRAM['FE']['UserState'] !== 1) {
  */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
 
+    /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_home'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_home']
+    );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_logout'];
 
+    /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_home.html')
     );
 
+    /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
 }
@@ -399,8 +406,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 
     }
 
-    /** Set page title and begin processing page output. */
+    /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_accounts'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_accounts']
+    );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -445,11 +458,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
     }
     unset($CIDRAM['RowInfo']);
 
+    /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_accounts.html')
     );
 
+    /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
 }
@@ -457,16 +472,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 /** Configuration. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    /** Set page title and begin processing page output. */
+    /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_config'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_config']
+    );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
+    /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_config.html')
     );
 
+    /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
 }
@@ -757,8 +780,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
     }
 
-    /** Set page title and begin processing page output. */
+    /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_updates'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_updates']
+    );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -1208,6 +1237,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     $CIDRAM['FE']['Components'] = $CIDRAM['Components']['Out'];
     unset($CIDRAM['Components'], $CIDRAM['Count'], $CIDRAM['Iterate']);
 
+    /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates.html')
@@ -1218,15 +1248,109 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
 }
 
-/** Logs. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
+/** IP Test. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_logs'];
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_ip_test'];
 
-    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['lang']['tip_logs'];
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_ip_test']
+    );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
+    /** Template for result rows. */
+    $CIDRAM['FE']['IPTestRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_test_row.html');
+
+    /** Initialise results data. */
+    $CIDRAM['FE']['IPTestResults'] = '';
+
+    /** IPs were submitted for testing. */
+    if (isset($_POST['ip-addr'])) {
+        $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
+        $_POST['ip-addr'] = array_unique(array_map(function () {
+            return preg_replace("\x01[^0-9a-f:./]\x01i", '', func_get_args()[0]);
+        }, explode("\n", $_POST['ip-addr'])));
+        natsort($_POST['ip-addr']);
+        $CIDRAM['Count'] = count($_POST['ip-addr']);
+        for ($CIDRAM['Iterate'] = 0; $CIDRAM['Iterate'] < $CIDRAM['Count']; $CIDRAM['Iterate']++) {
+            $CIDRAM['ThisIP'] = array('Key' => key($_POST['ip-addr']));
+            next($_POST['ip-addr']);
+            $CIDRAM['ThisIP']['IPAddress'] = $_POST['ip-addr'][$CIDRAM['ThisIP']['Key']];
+            if (empty($CIDRAM['ThisIP']['IPAddress'])) {
+                continue;
+            }
+            $CIDRAM['BlockInfo'] = array(
+                'IPAddr' => $CIDRAM['ThisIP']['IPAddress'],
+                'Query' => $CIDRAM['Query'],
+                'Referrer' => '',
+                'UA' => '',
+                'UALC' => '',
+                'ReasonMessage' => '',
+                'SignatureCount' => 0,
+                'Signatures' => '',
+                'WhyReason' => '',
+                'xmlLang' => $CIDRAM['Config']['general']['lang'],
+                'rURI' => 'FE'
+            );
+            try {
+                $CIDRAM['Caught'] = false;
+                $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['ThisIP']['IPAddress']);
+            } catch (\Exception $e) {
+                $CIDRAM['Caught'] = true;
+                $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
+                $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+            }
+            if (!$CIDRAM['Caught']) {
+                if (!$CIDRAM['TestResults']) {
+                    $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
+                    $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+                } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
+                    $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_yes'] . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
+                    $CIDRAM['ThisIP']['StatClass'] = 'txtRd';
+                } else {
+                    $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_no'];
+                    $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
+                }
+            }
+            $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
+                $CIDRAM['lang'] + $CIDRAM['ThisIP'],
+                $CIDRAM['FE']['IPTestRow']
+            );
+        }
+    } else {
+        $CIDRAM['FE']['ip-addr'] = '';
+    }
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_test.html')
+    );
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** Logs. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_logs'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_logs']
+    );
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_logs.html')
@@ -1282,6 +1406,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         $CIDRAM['FE']['LogFiles'] = $CIDRAM['lang']['logs_no_logfiles_available'];
     }
 
+    /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
 }

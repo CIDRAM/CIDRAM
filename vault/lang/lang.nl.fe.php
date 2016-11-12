@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.10.30).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,10 +18,12 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Uitloggen</a>';
+$CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_component'] = 'Bestanddeel';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $CIDRAM['lang']['field_delete_account'] = 'Account Verwijderen';
 $CIDRAM['lang']['field_install'] = 'Installeren';
+$CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
 $CIDRAM['lang']['field_latest_version'] = 'Laatste Versie';
 $CIDRAM['lang']['field_log_in'] = 'Inloggen';
 $CIDRAM['lang']['field_ok'] = 'OK';
@@ -45,6 +47,7 @@ $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_config'] = 'Configuratie';
 $CIDRAM['lang']['link_documentation'] = 'Documentatie';
 $CIDRAM['lang']['link_home'] = 'Startpagina';
+$CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_logs'] = 'Logbestanden';
 $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat niet!';
@@ -60,15 +63,18 @@ $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Bestanddeel su
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Bestanddeel succesvol gewijzigd.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te verwijderen.';
 $CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te bijwerken.';
+$CIDRAM['lang']['response_error'] = 'Fout';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig wachtwoord!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
+$CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Bestanddeel niet geïnstalleerd!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Verouderd!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmatig bijwerken)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
+$CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';
 $CIDRAM['lang']['state_component_is_active'] = 'Bestanddeel is actief.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Bestanddeel is inactief.';
@@ -77,12 +83,18 @@ $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
-$CIDRAM['lang']['tip_hello'] = 'Hallo, {username}.';
+$CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend.';
+$CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier IPs.';
+$CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
+$CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde handtekeningen worden geblokkeerd.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
-$CIDRAM['lang']['tip_logs'] = 'Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende onderdelen van CIDRAM te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Startpagina';
+$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Inloggen';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logbestanden';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';

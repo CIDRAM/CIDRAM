@@ -1,27 +1,30 @@
 *{vertical-align:text-top}
-body,input,select{font-size:10px}
+body,input,select,textarea{font-size:10px}
 body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;letter-spacing:1px;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
 code{font-family:monospace}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
-input,select{width:150px;background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
+input,select,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
+input,select{width:150px;background-repeat:no-repeat;background-position:top {FE_Align_Reverse}}
 input.half,select.half{width:90px}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
-.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,a,input,select{font-weight:700}
+textarea{height:150px}
+.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,a,input,select,textarea{font-weight:700}
 .bNav,.gen{text-align:right}
-.ci,.co,.gen{margin:auto}
-.ci,.co,.ng1,.ng2{width:98%}
+.ci,.co,.gen,.center{margin:auto}
+.ci,.co,.ng1,.ng2,textarea{width:98%}
 .ci{background-color:#fff;border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};padding:12px}
-.co,body{text-align:center}
+.co,body,.center{text-align:center}
 .co{padding:12}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
-.dt,.tip{float:left}
-.gen,input,select{font-family:Verdana,Arial,Helvetica,sans-serif}
+.dt,.tip{float:left;text-align:left}
+.gen,input,select,textarea{font-family:Verdana,Arial,Helvetica,sans-serif}
 .gen{font-size:8pt;letter-spacing:-1px;white-space:nowrap}
-.h1,.h2,.ng1,.ng2{margin:0;padding:4px;border-style:solid solid none none;border-width:1px;border-color:#999}
+.h1,.h2,.h3,.h4,.ng1,.ng2{margin:0;padding:4px;border-style:solid solid none none;border-width:1px;border-color:#999}
 .h1,.h2{width:25%}
-.h1,.ng1{background-color:#eee}
-.h2,.ng2,code{background-color:#ddd}
+.h1,.h3,.ng1{background-color:#eee}
+.h2,.h4,.ng2,code{background-color:#ddd}
+.h3,.h4{width:50%}
 .nav{font-size:12px}
 .right{padding:20px}
 .txtBl{color:#000}

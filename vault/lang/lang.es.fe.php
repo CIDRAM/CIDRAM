@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2016.10.30).
+ * This file: Spanish language data for the front-end (last modified: 2016.11.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,10 +18,12 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Cerrar Sesión</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Cerrar Sesión</a>';
+$CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crear Nueva Cuenta';
 $CIDRAM['lang']['field_delete_account'] = 'Eliminar Cuenta';
 $CIDRAM['lang']['field_install'] = 'Instalar';
+$CIDRAM['lang']['field_ip_address'] = 'Dirección IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versión';
 $CIDRAM['lang']['field_log_in'] = 'Iniciar Sesión';
 $CIDRAM['lang']['field_ok'] = 'OK';
@@ -45,6 +47,7 @@ $CIDRAM['lang']['link_accounts'] = 'Cuentas';
 $CIDRAM['lang']['link_config'] = 'Configuración';
 $CIDRAM['lang']['link_documentation'] = 'Documentación';
 $CIDRAM['lang']['link_home'] = 'Página Principal';
+$CIDRAM['lang']['link_ip_test'] = 'Prueba IP';
 $CIDRAM['lang']['link_logs'] = 'Archivos de Registro';
 $CIDRAM['lang']['link_updates'] = 'Actualizaciones';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '¡Archivo de registro seleccionado no existe!';
@@ -60,15 +63,18 @@ $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Componente des
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Componente actualizado con éxito.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Se ha producido un error al intentar desinstalar el componente.';
 $CIDRAM['lang']['response_component_update_error'] = 'Se ha producido un error al intentar actualizar el componente.';
+$CIDRAM['lang']['response_error'] = 'Error';
 $CIDRAM['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión - Contraseña invalida!';
 $CIDRAM['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión - El usuario no existe!';
 $CIDRAM['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $CIDRAM['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
+$CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Ya está actualizado.';
 $CIDRAM['lang']['response_updates_not_installed'] = '¡El componente no se instala!';
 $CIDRAM['lang']['response_updates_outdated'] = '¡Anticuado!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '¡Anticuado (por favor, actualizar manualmente)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapaz de determinar.';
+$CIDRAM['lang']['response_yes'] = 'Sí';
 $CIDRAM['lang']['state_complete_access'] = 'Acceso completo';
 $CIDRAM['lang']['state_component_is_active'] = 'Componente está activo.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Componente está inactivo.';
@@ -77,12 +83,18 @@ $CIDRAM['lang']['state_default_password'] = '¡Advertencia: Usando la contraseñ
 $CIDRAM['lang']['state_logged_in'] = 'Conectado';
 $CIDRAM['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
 $CIDRAM['lang']['state_password_not_valid'] = '¡Advertencia: Esta cuenta no está utilizando una contraseña válida!';
-$CIDRAM['lang']['tip_hello'] = 'Hola, {username}.';
+$CIDRAM['lang']['tip_accounts'] = 'Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al CIDRAM front-end.';
+$CIDRAM['lang']['tip_config'] = 'Hola, {username}.<br />La página de configuración permite modificar la configuración para CIDRAM desde el front-end.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'Ingrese IPs aquí.';
+$CIDRAM['lang']['tip_home'] = 'Hola, {username}.<br />Esta es la página principal para el front-end de CIDRAM. Seleccione un enlace en el menú de navegación de la izquierda para continuar.';
+$CIDRAM['lang']['tip_ip_test'] = 'Hola, {username}.<br />La página para prueba IP permite pruebar si las direcciones IP están bloqueadas por las firmas actualmente instaladas.';
 $CIDRAM['lang']['tip_login'] = 'El usuario estándar: <span class="txtRd">admin</span> – La contraseña estándar: <span class="txtRd">password</span>';
-$CIDRAM['lang']['tip_logs'] = 'Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro.';
+$CIDRAM['lang']['tip_logs'] = 'Hola, {username}.<br />Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro.';
+$CIDRAM['lang']['tip_updates'] = 'Hola, {username}.<br />La página de actualizaciones permite instalar, desinstalar y actualizar los diversos componentes de CIDRAM (el paquete básico, firmas, archivos de L10N, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Cuentas';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuración';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Página Principal';
+$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Prueba IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Archivos de Registro';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Actualizaciones';

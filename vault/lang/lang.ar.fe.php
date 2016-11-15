@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.11.11).
+ * This file: Arabic language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = 'تحذير: يستخدم الافت
 $CIDRAM['lang']['state_logged_in'] = 'حاليا على';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $CIDRAM['lang']['state_password_not_valid'] = 'تحذير: هذا الحساب لا يستخدم صالحة كلمه السر!';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستعمل';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'أدخل IPs هنا.';

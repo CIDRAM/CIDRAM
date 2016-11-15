@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.11).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパス�
 $CIDRAM['lang']['state_logged_in'] = 'ログインしています';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
 $CIDRAM['lang']['tip_accounts'] = 'こんにちは、{username}。<br />アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。';
 $CIDRAM['lang']['tip_config'] = 'こんにちは、{username}。<br />コンフィグレーション・ページは、フロントエンドからCIDRAMの設定を変更することができます。';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'ここにIPアドレスを入力してください。';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.11).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng m�
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
 $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM.';
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';

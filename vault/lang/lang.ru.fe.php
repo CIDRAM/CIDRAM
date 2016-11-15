@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.11.11).
+ * This file: Russian language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = 'Предупреждение: Ис�
 $CIDRAM['lang']['state_logged_in'] = 'В настоящее время вошли в систему';
 $CIDRAM['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $CIDRAM['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают не-устаревший';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не-устаревший';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-установлена';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = 'Скрывают не-установлена';
 $CIDRAM['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к CIDRAM фронтенд.';
 $CIDRAM['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для CIDRAM от фронтенд.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Введите IP-адреса здесь.';

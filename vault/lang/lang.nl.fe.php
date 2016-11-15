@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.11.11).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = 'De ongebruikte verbergen';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier IPs.';

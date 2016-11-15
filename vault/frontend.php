@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.11).
+ * This file: Front-end handler (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -497,6 +497,41 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 /** Updates. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Permissions'] === 1) {
 
+    $CIDRAM['FE']['UpdatesFormTarget'] = 'cidram-page=updates';
+    $CIDRAM['FE']['UpdatesFormTargetControls'] = '';
+    $CIDRAM['QueryTemp'] = array('Switched' => false);
+    foreach (array('hide-non-outdated', 'hide-unused') as $CIDRAM['QueryTemp']['Param']) {
+        $CIDRAM['QueryTemp']['Switch'] = (
+            !empty($_POST['updates-form-target-selecter']) &&
+            $_POST['updates-form-target-selecter'] === $CIDRAM['QueryTemp']['Param']
+        );
+        if (empty($CIDRAM['QueryVars'][$CIDRAM['QueryTemp']['Param']])) {
+            $CIDRAM['FE'][$CIDRAM['QueryTemp']['Param']] = false;
+        } else {
+            $CIDRAM['FE'][$CIDRAM['QueryTemp']['Param']] = (
+                ($CIDRAM['QueryVars'][$CIDRAM['QueryTemp']['Param']] === 'true' && !$CIDRAM['QueryTemp']['Switch']) ||
+                ($CIDRAM['QueryVars'][$CIDRAM['QueryTemp']['Param']] !== 'true' && $CIDRAM['QueryTemp']['Switch'])
+            );
+        }
+        if ($CIDRAM['QueryTemp']['Switch']) {
+            $CIDRAM['QueryTemp']['Switched'] = true;
+        }
+        if ($CIDRAM['FE'][$CIDRAM['QueryTemp']['Param']]) {
+            $CIDRAM['FE']['UpdatesFormTarget'] .= '&' . $CIDRAM['QueryTemp']['Param'] . '=true';
+            $CIDRAM['QueryTemp']['LangOpt'] = 'switch-' . $CIDRAM['QueryTemp']['Param'] . '-set-false';
+        } else {
+            $CIDRAM['FE']['UpdatesFormTarget'] .= '&' . $CIDRAM['QueryTemp']['Param'] . '=false';
+            $CIDRAM['QueryTemp']['LangOpt'] = 'switch-' . $CIDRAM['QueryTemp']['Param'] . '-set-true';
+        }
+        $CIDRAM['FE']['UpdatesFormTargetControls'] .=
+            '<option value="' . $CIDRAM['QueryTemp']['Param'] . '">' . $CIDRAM['lang'][$CIDRAM['QueryTemp']['LangOpt']] . '</option>';
+    }
+    if ($CIDRAM['QueryTemp']['Switched']) {
+        header('Location: ?' . $CIDRAM['FE']['UpdatesFormTarget']);
+        die;
+    }
+    unset($CIDRAM['QueryTemp']);
+
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = array(
         'Files' => scandir($CIDRAM['Vault']),
@@ -832,6 +867,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = '';
         if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'])) {
             if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files'])) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h2';
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Version'] =
                     $CIDRAM['lang']['response_updates_not_installed'];
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
@@ -908,6 +944,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Latest']
                     )
                 ) {
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Outdated'] = true;
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'r';
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 'txtRd';
                     if (
                         !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required']) &&
@@ -1060,6 +1098,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] =
                 '<br /><a href="' . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] . '">Changelog</a>';
         }
+        if (
+            ($CIDRAM['FE']['hide-non-outdated'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Outdated'])) ||
+            ($CIDRAM['FE']['hide-unused'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']))
+        ) {
+            continue;
+        }
+        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'])) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h1';
+        }
         $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]),
             $CIDRAM['FE']['UpdatesRow']
@@ -1204,6 +1251,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             $CIDRAM['lang']['field_install'] .
             '</option></select><input class="half" type="submit" value="' .
             $CIDRAM['lang']['field_ok'] . '" />';
+        if ($CIDRAM['FE']['hide-unused']) {
+            continue;
+        }
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h2';
         $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]),
             $CIDRAM['FE']['UpdatesRow']

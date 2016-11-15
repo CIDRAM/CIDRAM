@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.11).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = '警告：它使用标准密码！';
 $CIDRAM['lang']['state_logged_in'] = '目前在线';
 $CIDRAM['lang']['state_logs_access_only'] = '仅日志访问';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：此账户不​​使用有效的密码！';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
 $CIDRAM['lang']['tip_accounts'] = '你好，{username}。<br />账户页面允许您控制谁可以访问CIDRAM前端。';
 $CIDRAM['lang']['tip_config'] = '你好，{username}。<br />配置页面允许您修改CIDRAM配置从前端。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';

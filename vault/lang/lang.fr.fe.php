@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.11.11).
+ * This file: French language data for the front-end (last modified: 2016.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -83,6 +83,10 @@ $CIDRAM['lang']['state_default_password'] = 'Attention: Utilisant le mot de pass
 $CIDRAM['lang']['state_logged_in'] = 'Connecté';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $CIDRAM['lang']['state_password_not_valid'] = 'Attention: Ce compte n\'utilise un mot de passe valide!';
+$CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non dépassé';
+$CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Masquer non dépassé';
+$CIDRAM['lang']['switch-hide-unused-set-false'] = 'Ne masquer pas inutilisé';
+$CIDRAM['lang']['switch-hide-unused-set-true'] = 'Masquer inutilisé';
 $CIDRAM['lang']['tip_accounts'] = 'Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l\'accès frontal de CIDRAM.';
 $CIDRAM['lang']['tip_config'] = 'Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour CIDRAM à l\'accès frontal.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Entrez les adresses IP ici.';

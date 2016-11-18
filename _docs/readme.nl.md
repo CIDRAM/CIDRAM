@@ -109,6 +109,8 @@ Bestand | Beschrijving
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
+/vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.
+/vault/fe_assets/_ip_test_row.html | Een HTML sjabloon voor de IP test pagina.
 /vault/fe_assets/_login.html | Een HTML sjabloon voor de frontend inlogpagina.
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
@@ -168,6 +170,7 @@ Bestand | Beschrijving
 /vault/cli.php | CLI-handler.
 /vault/components.dat | Bevat informatie over de verschillende bestanddelen van CIDRAM; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
+/vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de CIDRAM configuratie.
 /vault/config.php | Configuratie-handler.
 /vault/frontend.php | Frontend-handler.
 /vault/functions.php | Functies bestand (essentieel).
@@ -228,7 +231,7 @@ Algemene configuratie voor CIDRAM.
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 "forbid_on_block"
-- Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken? False/200 = 200 OK [Standaard]; True = 403 Forbidden (Verboden); 503 = 503 Service unavailable (Service onbeschikbaar).
+- Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken? False/200 = 200 OK [Standaard]; True/403 = 403 Forbidden (Verboden); 503 = 503 Service unavailable (Service onbeschikbaar).
 
 "silent_mode"
 - Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.
@@ -528,4 +531,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 7 November 2016 (2016.11.07).
+Laatste Bijgewerkt: 18 November 2016 (2016.11.18).

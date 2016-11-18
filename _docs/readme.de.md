@@ -111,6 +111,8 @@ Datei | Beschreibung
 /vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
 /vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
+/vault/fe_assets/_ip_test.html | Eine HTML-Template für das IP-Test-Seite.
+/vault/fe_assets/_ip_test_row.html | Eine HTML-Template für das IP-Test-Seite.
 /vault/fe_assets/_login.html | Eine HTML-Template für das Front-End Einloggen-Seite.
 /vault/fe_assets/_logs.html | Eine HTML-Template für das Front-End Protokolldateien-Seite.
 /vault/fe_assets/_nav_complete_access.html | Eine HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
@@ -170,6 +172,7 @@ Datei | Beschreibung
 /vault/cli.php | CLI-Handler.
 /vault/components.dat | Enthält Informationen zu den verschiedenen Komponenten für CIDRAM; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
+/vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für CIDRAM.
 /vault/config.php | Konfiguration-Handler.
 /vault/frontend.php | Front-End-Handler.
 /vault/functions.php | Funktionen-Datei.
@@ -230,7 +233,7 @@ Generelle Konfiguration von CIDRAM.
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 "forbid_on_block"
-- Welche Header sollte CIDRAM reagieren mit, wenn Anfragen blockiert? False/200 = 200 OK [Standardeinstellung]; True = 403 Forbidden (Verboten); 503 = 503 Service unavailable (Service nicht verfügbar).
+- Welche Header sollte CIDRAM reagieren mit, wenn Anfragen blockiert? False/200 = 200 OK [Standardeinstellung]; True/403 = 403 Forbidden (Verboten); 503 = 503 Service unavailable (Service nicht verfügbar).
 
 "silent_mode"
 - Anstatt die "Zugriff verweigert", sollte CIDRAM leise blockiert Zugriffsversuche umleiten? Wenn ja, geben Sie den Speicherort auf den blockierten Zugriffsversuche umleiten. Wenn nein, diese Variable leer lassen.
@@ -239,7 +242,7 @@ Generelle Konfiguration von CIDRAM.
 - Gibt die Standardsprache für CIDRAM an.
 
 "emailaddr"
-- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses). @TranslateMe@
+- Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden).
 
 "disable_cli"
 - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
@@ -530,4 +533,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 7. November 2016 (2016.11.07).
+Zuletzt aktualisiert: 18. November 2016 (2016.11.18).

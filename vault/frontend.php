@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.15).
+ * This file: Front-end handler (last modified: 2016.11.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -482,6 +482,115 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_config_row.html');
+
+    /** Generate entries for display and regenerate configuration if any changes were submitted. */
+    reset($CIDRAM['Config']['Config Defaults']);
+    $CIDRAM['CountCats'] = count($CIDRAM['Config']['Config Defaults']);
+    $CIDRAM['FE']['ConfigFields'] = $CIDRAM['RegenerateConfig'] = '';
+    $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
+    for ($CIDRAM['IterateCats'] = 0; $CIDRAM['IterateCats'] < $CIDRAM['CountCats']; $CIDRAM['IterateCats']++) {
+        $CIDRAM['CatKey'] = key($CIDRAM['Config']['Config Defaults']);
+        next($CIDRAM['Config']['Config Defaults']);
+        if (!is_array($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']])) {
+            continue;
+        }
+        $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . "]\r\n\r\n";
+        reset($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']]);
+        $CIDRAM['CountDirs'] = count($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']]);
+        for ($CIDRAM['IterateDirs'] = 0; $CIDRAM['IterateDirs'] < $CIDRAM['CountDirs']; $CIDRAM['IterateDirs']++) {
+            unset($CIDRAM['ThisDir']);
+            $CIDRAM['ThisDir'] = array(
+                'DirKey' => key($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']]),
+                'FieldOut' => ''
+            );
+            next($CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']]);
+            $CIDRAM['DirDefault'] = $CIDRAM['Config']['Config Defaults'][$CIDRAM['CatKey']][$CIDRAM['ThisDir']['DirKey']];
+            if (empty($CIDRAM['DirDefault']['type']) || !isset($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['ThisDir']['DirKey']])) {
+                continue;
+            }
+            $CIDRAM['ThisDir']['Actual'] = &$CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['ThisDir']['DirKey']];
+            $CIDRAM['ThisDir']['DirLangKey'] = 'config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['ThisDir']['DirKey'];
+            $CIDRAM['ThisDir']['DirLang'] =
+                (!empty($CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']])) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
+            $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap($CIDRAM['ThisDir']['DirLang'], 77, "\r\n; ") . "\r\n";
+            if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
+                if ($CIDRAM['DirDefault']['type'] === 'string' || $CIDRAM['DirDefault']['type'] === 'int' || $CIDRAM['DirDefault']['type'] === 'bool') {
+                    $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirDefault']['type']);
+                } elseif ($CIDRAM['DirDefault']['type'] === 'bool|int') {
+                    $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']]);
+                }
+                if (
+                    !preg_match("/[\"'\x01-\x1f]/i", $_POST[$CIDRAM['ThisDir']['DirLangKey']]) && (
+                        !isset($CIDRAM['DirDefault']['choices']) || isset($CIDRAM['DirDefault']['choices'][$_POST[$CIDRAM['ThisDir']['DirLangKey']]])
+                    )
+                ) {
+                    $CIDRAM['ThisDir']['Actual'] = $_POST[$CIDRAM['ThisDir']['DirLangKey']];
+                    $CIDRAM['ConfigModified'] = true;
+                }
+            }
+            if ($CIDRAM['ThisDir']['Actual'] === true || ($CIDRAM['DirDefault']['type'] === 'bool|int' && $CIDRAM['ThisDir']['Actual'])) {
+                $CIDRAM['RegenerateConfig'] .= $CIDRAM['ThisDir']['DirKey'] . "=true\r\n\r\n";
+            } elseif ($CIDRAM['ThisDir']['Actual'] === false || ($CIDRAM['DirDefault']['type'] === 'bool|int' && !$CIDRAM['ThisDir']['Actual'])) {
+                $CIDRAM['RegenerateConfig'] .= $CIDRAM['ThisDir']['DirKey'] . "=false\r\n\r\n";
+            } elseif ($CIDRAM['DirDefault']['type'] === 'int') {
+                $CIDRAM['RegenerateConfig'] .= $CIDRAM['ThisDir']['DirKey'] . '=' . $CIDRAM['ThisDir']['Actual'] . "\r\n\r\n";
+            } else {
+                $CIDRAM['RegenerateConfig'] .= $CIDRAM['ThisDir']['DirKey'] . '=\'' . $CIDRAM['ThisDir']['Actual'] . "'\r\n\r\n";
+            }
+            if (isset($CIDRAM['DirDefault']['choices'])) {
+                $CIDRAM['ThisDir']['FieldOut'] = '<select name="'. $CIDRAM['ThisDir']['DirLangKey'] . '">';
+                reset($CIDRAM['DirDefault']['choices']);
+                $CIDRAM['CountChoices'] = count($CIDRAM['DirDefault']['choices']);
+                for ($CIDRAM['IterateChoices'] = 0; $CIDRAM['IterateChoices'] < $CIDRAM['CountChoices']; $CIDRAM['IterateChoices']++) {
+                    $CIDRAM['ChoiceKey'] = key($CIDRAM['DirDefault']['choices']);
+                    next($CIDRAM['DirDefault']['choices']);
+                    $CIDRAM['ThisDir']['FieldOut'] .= ($CIDRAM['ChoiceKey'] === $CIDRAM['ThisDir']['Actual']) ?
+                        '<option value="' . $CIDRAM['ChoiceKey'] . '" selected>' .
+                        $CIDRAM['DirDefault']['choices'][$CIDRAM['ChoiceKey']] . '</option>'
+                    :
+                        '<option value="' . $CIDRAM['ChoiceKey'] . '">' .
+                        $CIDRAM['DirDefault']['choices'][$CIDRAM['ChoiceKey']] . '</option>';
+                }
+                $CIDRAM['ThisDir']['FieldOut'] .= '</select>';
+            } elseif ($CIDRAM['DirDefault']['type'] === 'bool') {
+                if ($CIDRAM['ThisDir']['Actual']) {
+                    $CIDRAM['ThisDir']['FieldOut'] =
+                        '<select name="'. $CIDRAM['ThisDir']['DirLangKey'] . '">' .
+                        '<option value="true" selected>True</option><option value="false">False</option>' .
+                        '</select>';
+                } else {
+                    $CIDRAM['ThisDir']['FieldOut'] =
+                        '<select name="'. $CIDRAM['ThisDir']['DirLangKey'] . '">' .
+                        '<option value="true">True</option><option value="false" selected>False</option>' .
+                        '</select>';
+                }
+            } elseif ($CIDRAM['DirDefault']['type'] === 'int') {
+                $CIDRAM['ThisDir']['FieldOut'] = '<input type="number" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" value="' . $CIDRAM['ThisDir']['Actual'] . '" />';
+            } elseif ($CIDRAM['DirDefault']['type'] === 'string') {
+                $CIDRAM['ThisDir']['FieldOut'] = '<textarea class="half" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['ThisDir']['Actual'] . '</textarea>';
+            } else {
+                $CIDRAM['ThisDir']['FieldOut'] = '<input type="text" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" value="' . $CIDRAM['ThisDir']['Actual'] . '" />';
+            }
+            $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars'](
+                $CIDRAM['lang'] + $CIDRAM['ThisDir'], $CIDRAM['FE']['ConfigRow']
+            );
+        }
+        $CIDRAM['RegenerateConfig'] .= "\r\n";
+    }
+
+    /** Update the configuration file if any changes were made. */
+    if ($CIDRAM['ConfigModified']) {
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_configuration_updated'];
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'config.ini', 'w');
+        fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
+        fclose($CIDRAM['Handle']);
+        if (empty($CIDRAM['QueryVars']['updated'])) {
+            header('Location: ?cidram-page=config&updated=true');
+            die;
+        }
+    }
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
@@ -1092,25 +1201,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             );
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Options'] = '';
         }
-        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'])) {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] = '';
-        } else {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] =
-                '<br /><a href="' . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] . '">Changelog</a>';
-        }
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] =
+            (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'])) ? '' :
+            '<br /><a href="' . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] . '">Changelog</a>';
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Filename'] =
+            (count($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']) !== 1) ? '' :
+            '<br />' . $CIDRAM['lang']['field_filename'] . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'][0];
         if (
-            ($CIDRAM['FE']['hide-non-outdated'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Outdated'])) ||
-            ($CIDRAM['FE']['hide-unused'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']))
+            !($CIDRAM['FE']['hide-non-outdated'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Outdated'])) &&
+            !($CIDRAM['FE']['hide-unused'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']))
         ) {
-            continue;
+            if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'])) {
+                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h1';
+            }
+            $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
+                $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]),
+                $CIDRAM['FE']['UpdatesRow']
+            );
         }
-        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'])) {
-            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h1';
-        }
-        $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
-            $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]),
-            $CIDRAM['FE']['UpdatesRow']
-        );
         next($CIDRAM['Components']['Meta']);
     }
 
@@ -1251,14 +1359,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             $CIDRAM['lang']['field_install'] .
             '</option></select><input class="half" type="submit" value="' .
             $CIDRAM['lang']['field_ok'] . '" />';
-        if ($CIDRAM['FE']['hide-unused']) {
-            continue;
+        if (!$CIDRAM['FE']['hide-unused']) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h2';
+            $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
+                $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]),
+                $CIDRAM['FE']['UpdatesRow']
+            );
         }
-        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h2';
-        $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
-            $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]),
-            $CIDRAM['FE']['UpdatesRow']
-        );
     }
 
     reset($CIDRAM['Components']['Remotes']);

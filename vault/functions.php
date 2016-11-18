@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.06).
+ * This file: Functions file (last modified: 2016.11.18).
  */
 
 /**
@@ -871,16 +871,17 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
  * to strings instead of booleans or integers.
  */
 $CIDRAM['AutoType'] = function (&$Var, $Type = '') {
-    if ($Type === 'Bool') {
-        if ($Var === 'false' || !$Var) {
-            $Var = false;
-        } else {
-            $Var = true;
-        }
+    if ($Type === 'string') {
+        $Var = (string)$Var;
+    } elseif ($Type === 'int') {
+        $Var = (int)$Var;
+    } elseif ($Type === 'bool') {
+        $Var = (strtolower($Var) !== 'false' && $Var);
     } else {
-        if ($Var === 'true') {
+        $LVar = strtolower($Var);
+        if ($LVar === 'true') {
             $Var = true;
-        } elseif ($Var === 'false') {
+        } elseif ($LVar === 'false') {
             $Var = false;
         } elseif ($Var !== true && $Var !== false) {
             $Var = (int)$Var;

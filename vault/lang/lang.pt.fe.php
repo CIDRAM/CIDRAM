@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2016.11.15).
+ * This file: Portuguese language data for the front-end (last modified: 2016.11.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,10 +18,37 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Sair</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Sair</a>';
+$CIDRAM['lang']['config_general_disable_cli'] = 'Desativar o modo CLI?';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Desativar o acesso front-end?';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Endereço de e-mail para suporte.';
+$CIDRAM['lang']['config_general_forbid_on_block'] = 'Quais cabeçalhos deve CIDRAM responder com quando bloqueando solicitações?';
+$CIDRAM['lang']['config_general_ipaddr'] = 'Onde encontrar o IP endereço das solicitações?';
+$CIDRAM['lang']['config_general_lang'] = 'Especificar o padrão da linguagem por CIDRAM.';
+$CIDRAM['lang']['config_general_logfile'] = 'Um arquivo legível por humanos para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
+$CIDRAM['lang']['config_general_logfileApache'] = 'Um arquivo no estilo da Apache para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
+$CIDRAM['lang']['config_general_logfileSerialized'] = 'Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
+$CIDRAM['lang']['config_general_silent_mode'] = 'Deve CIDRAM silenciosamente redirecionar as tentativas de acesso bloqueadas em vez de exibir o "Acesso Negado" página? Se sim, especificar o local para redirecionar as tentativas de acesso bloqueadas para. Se não, deixe esta variável em branco.';
+$CIDRAM['lang']['config_general_timeOffset'] = 'Deslocamento do fuso horário em minutos.';
+$CIDRAM['lang']['config_recaptcha_expiry'] = 'Número de horas para lembrar instâncias reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_lockip'] = 'Ligar reCAPTCHA para IPs?';
+$CIDRAM['lang']['config_recaptcha_lockuser'] = 'Ligar reCAPTCHA para os usuários?';
+$CIDRAM['lang']['config_recaptcha_logfile'] = 'Registrar todas as tentativas de reCAPTCHA? Se sim, especificar o nome a ser usado para o arquivo de registro. Se não, deixe esta variável em branco.';
+$CIDRAM['lang']['config_recaptcha_secret'] = 'Este valor deve corresponder ao "secret key" para o seu reCAPTCHA, que pode ser encontrado dentro do painel de reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_sitekey'] = 'Este valor deve corresponder ao "site key" para o seu reCAPTCHA, que pode ser encontrado dentro do painel de reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_usemode'] = 'Define como CIDRAM deve usar reCAPTCHA (ver documentação).';
+$CIDRAM['lang']['config_signatures_block_bogons'] = 'Bloquear bogon/martian CIDRs? Se você espera conexões para o seu site de dentro de sua rede local, de localhost, ou de seu LAN, esta directiva deve ser definido como false. Se você não esperar que esses tais conexões, esta directiva deve ser definido como true.';
+$CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloquear CIDRs identificado como pertencente a webhosting e/ou serviços em nuvem? Se você operar um serviço de API a partir do seu site ou se você espera outros sites para se conectar para o seu site, este deve ser definido como false. Se não, este deve ser definido como true.';
+$CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquear CIDRs geralmente recomendado para a lista negra? Isso abrange todas as assinaturas que não são marcados como sendo parte de qualquer um dos outros mais categorias de assinaturas mais específica.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquear CIDRs identificado como pertencente a serviços de proxy? Se você precisar que os usuários poderão acessar seu site dos serviços de proxy anônimos, este deve ser definido como false. De outra forma, se você não precisa de proxies anônimos, este deve ser definido como true como um meio de melhorar a segurança.';
+$CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquear CIDRs identificado como sendo de alto risco para spam? A menos que você tiver problemas ao fazê-lo, geralmente, esta deve sempre ser definido como true.';
+$CIDRAM['lang']['config_signatures_ipv4'] = 'A lista dos arquivos de assinaturas IPv4 que CIDRAM deve tentar usar, delimitado por vírgulas.';
+$CIDRAM['lang']['config_signatures_ipv6'] = 'A lista dos arquivos de assinaturas IPv6 que CIDRAM deve tentar usar, delimitado por vírgulas.';
+$CIDRAM['lang']['config_template_data_css_url'] = 'URL de arquivo CSS para temas personalizados.';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Criar Nova Conta';
 $CIDRAM['lang']['field_delete_account'] = 'Deletar Conta';
+$CIDRAM['lang']['field_filename'] = 'Nome do arquivo: ';
 $CIDRAM['lang']['field_install'] = 'Instalar';
 $CIDRAM['lang']['field_ip_address'] = 'Endereço IP';
 $CIDRAM['lang']['field_latest_version'] = 'Última Versão';
@@ -63,6 +90,7 @@ $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Componente des
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Componente atualizado com sucesso.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Ocorreu um erro ao tentar desinstalar o componente.';
 $CIDRAM['lang']['response_component_update_error'] = 'Ocorreu um erro ao tentar atualizar o componente.';
+$CIDRAM['lang']['response_configuration_updated'] = 'Configuração atualizada com sucesso.';
 $CIDRAM['lang']['response_error'] = 'Erro';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Falha no login! Senha inválida!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Falha no login! Esse usuário não existe!';
@@ -94,6 +122,7 @@ $CIDRAM['lang']['tip_home'] = 'Olá, {username}.<br />Esta é a página principa
 $CIDRAM['lang']['tip_ip_test'] = 'Olá, {username}.<br />A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas.';
 $CIDRAM['lang']['tip_login'] = 'Nome de usuário padrão: <span class="txtRd">admin</span> – Senha padrão: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro.';
+$CIDRAM['lang']['tip_see_the_documentation'] = 'Consulte a <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.pt.md#SECTION6">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos.';
 $CIDRAM['lang']['tip_updates'] = 'Olá, {username}.<br />A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do CIDRAM (o pacote principal, assinaturas, arquivos de L10N, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Contas';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuração';

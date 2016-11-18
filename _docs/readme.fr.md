@@ -109,6 +109,8 @@ Fichier | Description
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
+/vault/fe_assets/_ip_test.html | Un modèle HTML pour la page pour tester IPs.
+/vault/fe_assets/_ip_test_row.html | Un modèle HTML pour la page pour tester IPs.
 /vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
@@ -168,6 +170,7 @@ Fichier | Description
 /vault/cli.php | Module de CLI.
 /vault/components.dat | Contient des informations relatives aux divers composants de CIDRAM; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour CIDRAM, pour comment fonctionner correctement (renommer pour activer).
+/vault/config.yaml | Fichier pour les valeurs par défaut de la configuration; Contient les valeurs par défaut de la configuration pour CIDRAM.
 /vault/config.php | Module de configuration.
 /vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
@@ -228,7 +231,7 @@ Configuration générale pour CIDRAM.
 - Où trouver l'adresse IP de demandes de connexion? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
 
 "forbid_on_block"
-- Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes? False/200 = 200 OK [Défaut]; True = 403 Forbidden (Interdit); 503 = 503 Service unavailable (Service indisponible).
+- Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes? False/200 = 200 OK [Défaut]; True/403 = 403 Forbidden (Interdit); 503 = 503 Service unavailable (Service indisponible).
 
 "silent_mode"
 - Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page "Accès Refusé"? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide.
@@ -528,4 +531,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 7 Novembre 2016 (2016.11.07).
+Dernière Mise à Jour: 18 Novembre 2016 (2016.11.18).

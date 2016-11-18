@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.15).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,10 +18,37 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
+$CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
+$CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
+$CIDRAM['lang']['config_general_emailaddr'] = '支持/援助电子邮件地址。';
+$CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
+$CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？';
+$CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
+$CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
+$CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
+$CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
+$CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。';
+$CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
+$CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';
+$CIDRAM['lang']['config_recaptcha_lockip'] = '应该reCAPTCHA锁定到IP？';
+$CIDRAM['lang']['config_recaptcha_lockuser'] = '应该reCAPTCHA锁定到用户？';
+$CIDRAM['lang']['config_recaptcha_logfile'] = '记录所有的reCAPTCHA的尝试？要做到这一点，指定一个文件名到使用。如果不，离开这个变量为空白。';
+$CIDRAM['lang']['config_recaptcha_secret'] = '该值应该对应于“secret key”为您的reCAPTCHA，该可以发现在reCAPTCHA的仪表板。';
+$CIDRAM['lang']['config_recaptcha_sitekey'] = '该值应该对应于“site key”为您的reCAPTCHA，该可以发现在reCAPTCHA的仪表板。';
+$CIDRAM['lang']['config_recaptcha_usemode'] = '它定义了如何CIDRAM应该使用reCAPTCHA（请参阅文档）。';
+$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR吗？如果您希望连接到您的网站从您的本地网络/本地主机/localhost/LAN/等等，这应该被设置为“false”（假）。如果不，这应该被设置为“true”（真）。';
+$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR认定为属于虚拟主机或云服务吗？如果您操作一个API服务从您的网站或如果您预计其他网站连接到您的网站，这应该被设置为“false”（假）。如果不，这应该被设置为“true”（真）。';
+$CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建议对于黑名单吗？这包括签名不标记为的一章节任何其他更具体签名类别。';
+$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR认定为属于代理服务吗？如果您需要该用户可以访问您的网站从匿名代理服务，这应该被设置为“false”（假）。除此以外，如果您不需要匿名代理服务，这应该被设置为“true”（真）作为一个方式以提高安全性。';
+$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高风险垃圾邮件CIDR吗？除非您遇到问题当这样做，通常，这应该被设置为“true”（真）。';
+$CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4签名文件，CIDRAM应该尝试使用，用逗号分隔。';
+$CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，CIDRAM应该尝试使用，用逗号分隔。';
+$CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_component'] = '组件';
 $CIDRAM['lang']['field_create_new_account'] = '创建新账户';
 $CIDRAM['lang']['field_delete_account'] = '删除账户';
+$CIDRAM['lang']['field_filename'] = '文件名：';
 $CIDRAM['lang']['field_install'] = '安装';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';
 $CIDRAM['lang']['field_latest_version'] = '最新版本';
@@ -63,6 +90,7 @@ $CIDRAM['lang']['response_component_successfully_uninstalled'] = '组件成功�
 $CIDRAM['lang']['response_component_successfully_updated'] = '组件成功更新。';
 $CIDRAM['lang']['response_component_uninstall_error'] = '一个错误发生当尝试卸载组件。';
 $CIDRAM['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
+$CIDRAM['lang']['response_configuration_updated'] = '配置成功更新。';
 $CIDRAM['lang']['response_error'] = '错误';
 $CIDRAM['lang']['response_login_invalid_password'] = '登录失败！密码无效！';
 $CIDRAM['lang']['response_login_invalid_username'] = '登录失败！用户名不存在！';
@@ -94,6 +122,7 @@ $CIDRAM['lang']['tip_home'] = '你好，{username}。<br />这是CIDRAM的前端
 $CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
 $CIDRAM['lang']['tip_login'] = '标准用户名： <span class="txtRd">admin</span> – 标准密码： <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，{username}。<br />选择一个日志从下面的列表以查看那个日志的内容。';
+$CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
 $CIDRAM['lang']['tip_updates'] = '你好，{username}。<br />更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包，签名，L10N文件，等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 账户';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';

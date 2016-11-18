@@ -110,6 +110,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/fe_assets/_accounts_row.html | HTML模板為前端賬戶頁面。
 /vault/fe_assets/_config.html | HTML模板為前端配置頁面。
 /vault/fe_assets/_home.html | HTML模板為前端主頁。
+/vault/fe_assets/_ip_test.html | HTML模板為IP測試頁面。
+/vault/fe_assets/_ip_test_row.html | HTML模板為IP測試頁面。
 /vault/fe_assets/_login.html | HTML模板為前端登錄。
 /vault/fe_assets/_logs.html | HTML模板為前端日誌頁面。
 /vault/fe_assets/_nav_complete_access.html | HTML模板為前端導航鏈接，為那些與完全訪問。
@@ -169,6 +171,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/cli.php | CLI處理文件。
 /vault/components.dat | 包含的相關信息關於CIDRAM的各種組件；它使用通過更新功能從前端。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，告訴它什麼做和怎麼正確地經營（重命名為激活）。
+/vault/config.yaml | 配置默認文件；包含CIDRAM的默認配置值。
 /vault/config.php | 配置處理文件。
 /vault/frontend.php | 前端處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
@@ -229,10 +232,10 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 - 在哪裡可以找到連接請求IP地址？（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。警告！不要修改此除非您知道什麼您做著！
 
 “forbid_on_block”
-- 什麼頭CIDRAM應該應對當申請是拒絕？ False/200 = 200 OK 【標準】； True = 403 Forbidden （被禁止）； 503 = 503 Service unavailable （服務暫停）。
+- 什麼頭CIDRAM應該應對當申請是拒絕？ False/200 = 200 OK 【標準】； True/403 = 403 Forbidden （被禁止）； 503 = 503 Service unavailable （服務暫停）。
 
 “silent_mode”
-- CIDRAM 應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。
+- CIDRAM應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。
 
 “lang”
 - 指定標準CIDRAM語言。
@@ -529,4 +532,4 @@ CIDRAM會阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2016年11月7日。
+最後更新：2016年11月18日。

@@ -109,6 +109,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
+/vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
+/vault/fe_assets/_ip_test_row.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
 /vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
 /vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
 /vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
@@ -168,6 +170,7 @@ Tập tin | Chi tiết
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
+/vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho CIDRAM.
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
@@ -228,7 +231,7 @@ Cấu hình chung cho CIDRAM.
 - Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như CloudFlare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 "forbid_on_block"
-- Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn? False/200 = 200 OK [Mặc định]; True = 403 Forbidden (Cấm); 503 = 503 Service unavailable (Dịch vụ không có sẵn).
+- Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn? False/200 = 200 OK [Mặc định]; True/403 = 403 Forbidden (Cấm); 503 = 503 Service unavailable (Dịch vụ không có sẵn).
 
 "silent_mode"
 - CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
@@ -528,4 +531,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Mười Một 2016 (2016.11.07).
+Lần cuối cập nhật: 18 Tháng Mười Một 2016 (2016.11.18).

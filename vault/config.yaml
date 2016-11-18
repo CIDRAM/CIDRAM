@@ -1,0 +1,103 @@
+Config Defaults:
+ general:
+  logfile:
+   type: string
+   default: ""
+  logfileApache:
+   type: string
+   default: ""
+  logfileSerialized:
+   type: string
+   default: ""
+  timeOffset:
+   type: int
+   default: 0
+  ipaddr:
+   type: string
+   default: "REMOTE_ADDR"
+  forbid_on_block:
+   type: int
+   default: false
+   choices:
+    200: 200 OK
+    403: 403 Forbidden
+    503: 503 Service Unavailable
+  silent_mode:
+   type: string
+   default: ""
+  lang:
+   type: string
+   default: "en"
+   choices:
+    en: English
+    ar: العربية
+    de: Deutsch
+    es: Español
+    fr: Français
+    id: Bahasa Indonesia
+    it: Italiano
+    ja: 日本語
+    nl: Nederlandse
+    pt: Português
+    ru: Русский
+    vi: Tiếng Việt
+    zh: 中文（简体）
+    zh-tw: 中文（傳統）
+  emailaddr:
+   type: string
+   default: ""
+  disable_cli:
+   type: bool
+   default: false
+  disable_frontend:
+   type: bool
+   default: true
+ signatures:
+  ipv4:
+   type: string
+   default: "ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat"
+  ipv6:
+   type: string
+   default: "ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat"
+  block_cloud:
+   type: bool
+   default: true
+  block_bogons:
+   type: bool
+   default: false
+  block_generic:
+   type: bool
+   default: true
+  block_proxies:
+   type: bool
+   default: false
+  block_spam:
+   type: bool
+   default: true
+ recaptcha:
+  usemode:
+   type: int
+   default: 0
+  lockip:
+   type: bool
+   default: false
+  lockuser:
+   type: bool
+   default: true
+  sitekey:
+   type: string
+   default: ""
+  secret:
+   type: string
+   default: ""
+  expiry:
+   type: int
+   default: 720
+  logfile:
+   type: string
+   default: ""
+ template_data:
+  css_url:
+   type: string
+   default: ""
+

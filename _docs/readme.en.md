@@ -109,6 +109,8 @@ File | Description
 /vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_config.html | An HTML template for the front-end configuration page.
 /vault/fe_assets/_home.html | An HTML template for the front-end homepage.
+/vault/fe_assets/_ip_test.html | An HTML template for the IP test page.
+/vault/fe_assets/_ip_test_row.html | An HTML template for the IP test page.
 /vault/fe_assets/_login.html | An HTML template for the front-end login.
 /vault/fe_assets/_logs.html | An HTML template for the front-end logs page.
 /vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access.
@@ -168,6 +170,7 @@ File | Description
 /vault/cli.php | CLI handler.
 /vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
+/vault/config.yaml | Configuration defaults file; Contains default configuration values for CIDRAM.
 /vault/config.php | Configuration handler.
 /vault/frontend.php | Front-end handler.
 /vault/functions.php | Functions file (essential).
@@ -228,7 +231,7 @@ General CIDRAM configuration.
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
-- Which headers should CIDRAM respond with when blocking requests? False/200 = 200 OK [Default]; True = 403 Forbidden; 503 = 503 Service unavailable.
+- Which headers should CIDRAM respond with when blocking requests? False/200 = 200 OK [Default]; True/403 = 403 Forbidden; 503 = 503 Service unavailable.
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -528,4 +531,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 7th November 2016 (2016.11.07).
+Last Updated: 18th November 2016 (2016.11.18).

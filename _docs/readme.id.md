@@ -109,6 +109,8 @@ Data | Deskripsi
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
+/vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.
+/vault/fe_assets/_ip_test_row.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
 /vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
 /vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
@@ -168,6 +170,7 @@ Data | Deskripsi
 /vault/cli.php | Modul CLI.
 /vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
+/vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk CIDRAM.
 /vault/config.php | Modul konfigurasi.
 /vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
@@ -228,7 +231,7 @@ Konfigurasi umum dari CIDRAM.
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
 "forbid_on_block"
-- Apa header harus CIDRAM merespon dengan ketika memblokir permintaan? False/200 = 200 OK (Baik) [Default]; True = 403 Forbidden (Terlarang); 503 = 503 Service unavailable (Layanan tidak tersedia).
+- Apa header harus CIDRAM merespon dengan ketika memblokir permintaan? False/200 = 200 OK (Baik) [Default]; True/403 = 403 Forbidden (Terlarang); 503 = 503 Service unavailable (Layanan tidak tersedia).
 
 "silent_mode"
 - Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.
@@ -528,4 +531,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 7 November 2016 (2016.11.07).
+Terakhir Diperbarui: 18 November 2016 (2016.11.18).

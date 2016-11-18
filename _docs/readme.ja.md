@@ -109,6 +109,8 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
 /vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
+/vault/fe_assets/_ip_test.html | IPテストページのHTMLテンプレート。
+/vault/fe_assets/_ip_test_row.html | IPテストページのHTMLテンプレート。
 /vault/fe_assets/_login.html | フロントエンドのログインページのHTMLテンプレート。
 /vault/fe_assets/_logs.html | フロントエンドのロゴスページのHTMLテンプレート。
 /vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、は完全なアクセスのためのものです。
@@ -168,6 +170,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/cli.php | CLIハンドラ。
 /vault/components.dat | CIDRAMのコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
+/vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/frontend.php | フロントエンド・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
@@ -229,10 +232,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - 注意：変更には最新の注意が必要です。
 
 "forbid_on_block" （フォービッド・オン・ブロック）
-- 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？ `false`（偽）/200 = 200 OK 「Default（デフォルルト）」； `true`（真） = 403 Forbidden （４０３禁止されている）； 503 = 503 Service unavailable （５０３サービス利用不可）。
+- 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？ `false`（偽）/200 = 200 OK 「Default（デフォルルト）」； `true`（真）/403 = 403 Forbidden （４０３禁止されている）； 503 = 503 Service unavailable （５０３サービス利用不可）。
 
 "silent_mode" （サイレント・モード）
-- Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank. @TranslateMe@
+- 「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。
 
 "lang" （ラング）
 - CIDRAMのデフォルト言語を設定します。
@@ -278,18 +281,18 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 「site key」および「secret key」を得るために（reCAPTCHAのを使用するために必要）、このリンクをクリックしてください： [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode" （ユース・モード）
-- How CIDRAM should use reCAPTCHA. @TranslateMe@
+- reCAPTCHAをCIDRAMで使用する方法。
 - 0 = reCAPTCHAは、無効になっています「Default（デフォルルト）」。
 - 1 = reCAPTCHAは、すべてのために署名が有効になっています。
 - 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
 - (Any other value will be treated in the same way as 0). @TranslateMe@
 
 "lockip" （ロックIP）
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
+- reCAPTCHAをIPにロックしますか？ False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
 - 注意："lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
 
 "lockuser" （ロック・ユーザー）
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
+- reCAPTCHAをユーザーにロックしますか？ False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
 
 "sitekey" （サイト・キー）
 - この値は、あなたのreCAPTCHAのための「site key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。
@@ -529,4 +532,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年11月7日。
+最終アップデート： 2016年11月18日。

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.15).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,10 +18,37 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
+$CIDRAM['lang']['config_general_disable_cli'] = 'CLIモードを無効にするか？';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
+$CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのEメールアドレス。';
+$CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
+$CIDRAM['lang']['config_general_ipaddr'] = '接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。';
+$CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設定します。';
+$CIDRAM['lang']['config_general_logfile'] = 'アクセス試行阻止の記録、人間によって読み取り可能。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
+$CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の記録、Apacheスタイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
+$CIDRAM['lang']['config_general_logfileSerialized'] = 'アクセス試行阻止の記録、シリアル化されました。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
+$CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。';
+$CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
+$CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';
+$CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをIPにロックしますか？';
+$CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHAをユーザーにロックしますか？';
+$CIDRAM['lang']['config_recaptcha_logfile'] = 'reCAPTCHA試行の記録。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
+$CIDRAM['lang']['config_recaptcha_secret'] = 'この値は、あなたのreCAPTCHAのための「secret key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。';
+$CIDRAM['lang']['config_recaptcha_sitekey'] = 'この値は、あなたのreCAPTCHAのための「site key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。';
+$CIDRAM['lang']['config_recaptcha_usemode'] = 'reCAPTCHAをCIDRAMで使用する方法（ドキュメントを参照してください）。';
+$CIDRAM['lang']['config_signatures_block_bogons'] = '火星の\ぼごんからのCIDRをブロックする必要がありますか？ あなたがローカルホストから、またはお使いのLANから、ローカルネットワーク内からの接続を受信した場合、これはfalseに設定する必要があります。ない場合は、これをtrueに設定する必要があります。';
+$CIDRAM['lang']['config_signatures_block_cloud'] = 'クラウドサービスからのCIDRをブロックする必要がありますか？ あなたのウェブサイトからのAPIサービスを操作する場合、または、あなたがウェブサイトツーサイト接続が予想される場合、これはfalseに設定する必要があります。ない場合は、これをtrueに設定する必要があります。';
+$CIDRAM['lang']['config_signatures_block_generic'] = '一般的なCIDRをブロックする必要がありますか？ （他のオプションに固有ではないもの）。';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービスからのCIDRをブロックする必要がありますか？ 匿名プロキシサービスが必要な場合は、これをfalseに設定する必要があります。ない場合は、セキュリティを向上させるために、これをtrueに設定する必要があります。';
+$CIDRAM['lang']['config_signatures_block_spam'] = 'スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。';
+$CIDRAM['lang']['config_signatures_ipv4'] = 'IPv4のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
+$CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
+$CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのCSSファイルURL。';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
 $CIDRAM['lang']['field_create_new_account'] = '新しいアカウントを作成する';
 $CIDRAM['lang']['field_delete_account'] = 'アカウントを削除する';
+$CIDRAM['lang']['field_filename'] = 'ファイル名： ';
 $CIDRAM['lang']['field_install'] = 'インストール';
 $CIDRAM['lang']['field_ip_address'] = 'IPアドレス';
 $CIDRAM['lang']['field_latest_version'] = '最新バージョン';
@@ -63,6 +90,7 @@ $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'コンポー�
 $CIDRAM['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
 $CIDRAM['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
+$CIDRAM['lang']['response_configuration_updated'] = 'コンフィギュレーションの更新が成功しました。';
 $CIDRAM['lang']['response_error'] = 'エラー';
 $CIDRAM['lang']['response_login_invalid_password'] = 'ログイン失敗！無効なパスワード！';
 $CIDRAM['lang']['response_login_invalid_username'] = 'ログイン失敗！ユーザー名は存在しません！';
@@ -94,6 +122,7 @@ $CIDRAM['lang']['tip_home'] = 'こんにちは、{username}。<br />これはCID
 $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、{username}。<br />IPテスト・ページは、IPアドレスがブロックされているかどうかをテストできます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザ名： <span class="txtRd">admin</span> – デフォルト・パスワード： <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'こんにちは、{username}。<br />そのログの内容を表示するために、次のリストからログを選択します。';
+$CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';
 $CIDRAM['lang']['tip_updates'] = 'こんにちは、{username}。<br />アップデート・ページは、CIDRAMのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、署名、L10Nファイル、等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – アカウント';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – コンフィギュレーション';

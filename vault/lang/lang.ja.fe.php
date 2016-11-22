@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.18).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
 $CIDRAM['lang']['tip_accounts'] = 'こんにちは、{username}。<br />アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。';
 $CIDRAM['lang']['tip_config'] = 'こんにちは、{username}。<br />コンフィグレーション・ページは、フロントエンドからCIDRAMの設定を変更することができます。';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAMは無料で提供されています、しかし、あなたがしたい場合、寄付ボタンをクリックすると、プロジェクトに寄付することができます。';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'ここにIPアドレスを入力してください。';
 $CIDRAM['lang']['tip_home'] = 'こんにちは、{username}。<br />これはCIDRAMフロントエンドのホームページです。続行するには、左側のナビゲーションメニューからリンクを選択します。';
 $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、{username}。<br />IPテスト・ページは、IPアドレスがブロックされているかどうかをテストできます。';
@@ -131,3 +132,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IPテスト';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – ログイン';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';
+
+$CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – CIDRAMの問題ページ（サポート、援助、など）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAMのディスカッションフォーラム（サポート、援助、など）。</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAMのWordpressプラグイン。</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学習リソースとディスカッション。</li>
+        </ul>';

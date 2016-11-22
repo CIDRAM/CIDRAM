@@ -110,6 +110,7 @@ Datei | Beschreibung
 /vault/fe_assets/_accounts.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
+/vault/fe_assets/_config_row.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
 /vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
 /vault/fe_assets/_ip_test.html | Eine HTML-Template für das IP-Test-Seite.
 /vault/fe_assets/_ip_test_row.html | Eine HTML-Template für das IP-Test-Seite.
@@ -275,9 +276,9 @@ Konfiguration der Signaturen.
 - Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein.
 
 ####"recaptcha" (Kategorie)
-Optionally, you can provide users with a way to bypass the "Zugriff verweigert" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with Falsch-Positivs in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
+Wenn du willst, können Sie Benutzern bieten eine Möglichkeit zur umgehen der Seite "Zugriff verweigert" durch Abschluß einer reCAPTCHA-Instanz. Dies kann helfen, einige der Risiken im Zusammenhang mit Falsch-Positivs zu mildern, in diesen Fällen wodurch wir nicht ganz sicher sind ob eine Anfrage von einer Maschine oder einem Menschen stammt.
 
-Due to the risks associated with providing a way for end-users to bypass the "Zugriff verweigert" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
+Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Wegs um der Seite "Zugriff verweigert" zur umgehen, im Algemeinen, Ich würde raten dies zu nicht ermöglichen es sei denn, Sie empfinden es als notwendig dies zu tun. Situationen wo es notwendig könnte sein: Wenn Ihre Website hat Kunden/Benutzer, die Zugriff auf Ihre Website haben müssen, und wenn dies etwas ist das nicht ausgehandelt werden kann, aber wenn diese Kunden/Benutzer von einem feindlichen Netzwerk zu verbinden, das möglicherweise auch unerwünschten Verkehr führen könnte, und die Blockierung dieser unerwünschten Verkehr ist auch etwas das nicht ausgehandelt werden kann, in diesen Situationen, könnte das reCAPTCHA-Feature nützlich sein um die wünschenswerten Kunden/Benutzer zu ermöglichen, während der unerwünschten Verkehr aus demselben Netzwerk ausgeschlossen ist. Das sagte aber, da der beabsichtigte Zweck einer CAPTCHA ist, zwischen Menschen und Nicht-Menschen zu unterscheiden, das reCAPTCHA-Feature würde nur in diesen Situationen ohne Gewinner zu helfen, wenn wir annehmen dass dieser unerwünschten Verkehr nicht menschlich ist (z.B, Spambots, Scrapers, Hacktools, automatisierten Datenverkehr), im Gegensatz zu unerwünschtem menschlichen Verkehr (wie menschliche Spammer, Hacker, und derartige).
 
 Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von reCAPTCHA erforderlich), bitte gehe zu: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
@@ -289,11 +290,11 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 - (Jeder andere Wert wird auf die gleiche Weise behandelt wie 0).
 
 "lockip"
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (Standardeinstellung). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
-- Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
+- Gibt an ob Hashes an bestimmte IPs gebunden werden sollen. False = Cookies und Hashes KÖNNEN über mehrere IPs verwendet werden (Standardeinstellung). True = Cookies und Hashes können NICHT über mehrere IPs verwendet werden (Cookies/Hashes sind an IPs gebunden).
+- Beachten: Der Wert für "lockip" wird ignoriert, wenn "lockuser" false ist, aufgrund der Tatsache dass der Mechanismus zum Erinnern "Benutzer" unterscheidet sich je nach diesem Wert.
 
 "lockuser"
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (Standardeinstellung). @TranslateMe@
+- Gibt an ob der erfolgreiche Abschluss eines reCAPTCHA-Instanz an bestimmte Benutzer gebunden werden sollen. False = Der erfolgreiche Abschluss eines reCAPTCHA-Instanz @@FROM HERE@@ will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA-Instanz; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA-Instanz will only grant access to the user completing the reCAPTCHA-Instanz; Cookies and hashes are used to remember the user; An IP whitelist is not used (Standardeinstellung). @TranslateMe@
 
 "sitekey"
 - Dieser Wert sollte dem "site key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet.
@@ -302,7 +303,7 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 - Dieser Wert sollte dem "secret key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet.
 
 "expiry"
-- When "lockuser" is true (Standardeinstellung), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
+- When "lockuser" is true (Standardeinstellung), in order to remember when a user has successfully passed a reCAPTCHA-Instanz, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA-Instanz. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA-Instanz is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
 
 "logfile"
 - Protokollieren Sie alle reCAPTCHA versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
@@ -498,7 +499,7 @@ recaptcha:
  enabled: true
 ```
 
-Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
+Note: A reCAPTCHA-Instanz will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA-Instanz will NOT be offered).
 
 ####7.3 ZUSATZINFORMATION
 
@@ -533,4 +534,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 18. November 2016 (2016.11.18).
+Zuletzt aktualisiert: 21. November 2016 (2016.11.21).

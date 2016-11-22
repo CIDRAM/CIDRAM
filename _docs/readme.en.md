@@ -108,6 +108,7 @@ File | Description
 /vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_config.html | An HTML template for the front-end configuration page.
+/vault/fe_assets/_config_row.html | An HTML template for the front-end configuration page.
 /vault/fe_assets/_home.html | An HTML template for the front-end homepage.
 /vault/fe_assets/_ip_test.html | An HTML template for the IP test page.
 /vault/fe_assets/_ip_test_row.html | An HTML template for the IP test page.
@@ -531,4 +532,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 18th November 2016 (2016.11.18).
+Last Updated: 21st November 2016 (2016.11.21).

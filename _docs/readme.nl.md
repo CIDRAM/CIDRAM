@@ -108,6 +108,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
+/vault/fe_assets/_config_row.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.
 /vault/fe_assets/_ip_test_row.html | Een HTML sjabloon voor de IP test pagina.
@@ -531,4 +532,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 18 November 2016 (2016.11.18).
+Laatste Bijgewerkt: 21 November 2016 (2016.11.21).

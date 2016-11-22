@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.11.18).
+ * This file: French language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -131,3 +131,14 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Connexion';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Fichiers Journaux';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Mises à Jour';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM est offert gratuitement, mais si vous voulez faire un don au projet, vous pouvez le faire en cliquant sur le bouton don.';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Page de problèmes pour CIDRAM (soutien, assistance, etc).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Forum de discussion pour CIDRAM (soutien, assistance, etc).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin pour CIDRAM.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Contient des blocs de gamme en option qui peuvent être ajoutés au CIDRAM pour bloquer les pays indésirables d\'accéder à votre site Web.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Ressources d\'apprentissage PHP et discussion.</li>
+        </ul>';

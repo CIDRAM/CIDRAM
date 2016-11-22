@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.18).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
 $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM.';
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $CIDRAM['lang']['tip_ip_test'] = 'Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn kiểm tra nếu địa chỉ IP bị chặn bằng các chữ ký hiện đang được cài đặt.';
@@ -131,3 +132,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Bản Ghi';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Cập Nhật';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Diễn đàn thảo luận cho CIDRAM (hỗ trợ, vv).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Plugin Wordpress cho CIDRAM.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Chứa các danh sách chặn tùy chọn mà có thể được thêm vào CIDRAM để chặn bất kỳ quốc gia không mong muốn từ truy cập vào trang web của bạn.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP tài nguyên học tập và thảo luận.</li>
+        </ul>';

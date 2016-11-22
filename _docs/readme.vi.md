@@ -108,6 +108,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
+/vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
 /vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
 /vault/fe_assets/_ip_test_row.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
@@ -531,4 +532,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Mười Một 2016 (2016.11.18).
+Lần cuối cập nhật: 21 Tháng Mười Một 2016 (2016.11.21).

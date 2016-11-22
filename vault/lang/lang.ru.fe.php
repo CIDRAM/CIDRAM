@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.11.18).
+ * This file: Russian language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-у
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Скрывают не-установлена';
 $CIDRAM['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к CIDRAM фронтенд.';
 $CIDRAM['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для CIDRAM от фронтенд.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Введите IP-адреса здесь.';
 $CIDRAM['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для CIDRAM фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $CIDRAM['lang']['tip_ip_test'] = 'Привет, {username}.<br />Тест IP страница позволяет проверить если IP-адреса заблокированы по установленных сигнатуры.';
@@ -131,3 +132,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Тест IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Войти';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Лог-Файлы';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Обновления';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Дискуссионный форум для CIDRAM (поддержка, помощь, и т.д.).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress плагин для CIDRAM.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP учебных ресурсов и обсуждение.</li>
+        </ul>';

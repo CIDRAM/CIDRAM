@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.11.18).
+ * This file: Indonesian language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digu
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunakan';
 $CIDRAM['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM.';
 $CIDRAM['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk CIDRAM dari bagian depan.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_test'] = 'Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk mengetes apakah alamat IP yang diblokir dengan tanda tangan yang saat ini diinstal.';
@@ -131,3 +132,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Log';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Pembaruan';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Forum diskusi untuk CIDRAM (dukungan, bantuan, dll).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Plugin Wordpress untuk CIDRAM.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Berisi berbagai blok opsional yang dapat ditambahkan ke CIDRAM untuk memblokir setiap negara yang tidak diinginkan dari mengakses situs Anda.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Sumber belajar dan diskusi PHP.</li>
+        </ul>';

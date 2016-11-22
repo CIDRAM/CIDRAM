@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.18).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
 $CIDRAM['lang']['tip_accounts'] = '你好，{username}。<br />账户页面允许您控制谁可以访问CIDRAM前端。';
 $CIDRAM['lang']['tip_config'] = '你好，{username}。<br />配置页面允许您修改CIDRAM配置从前端。';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，但如果您想捐赠给项目，您可以通过点击捐赠按钮这样做。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_home'] = '你好，{username}。<br />这是CIDRAM的前端主页。从左侧的导航菜单中选择一个链接以继续。';
 $CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
@@ -131,3 +132,14 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP测试';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登录';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日志';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
+
+$CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – CIDRAM问题页面（支持，协助，等等）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM讨论论坛（支持，协助，等等）。</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAM Wordpress插件。</li>
+            <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – 包含可选阻止名单，可以添加的在CIDRAM，用于阻止任何不需要的国家访问您的网站。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学习资源和讨论。</li>
+        </ul>';

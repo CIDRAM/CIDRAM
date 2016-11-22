@@ -109,6 +109,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/fe_assets/_accounts.html | HTML模板为前端账户页面。
 /vault/fe_assets/_accounts_row.html | HTML模板为前端账户页面。
 /vault/fe_assets/_config.html | HTML模板为前端配置页面。
+/vault/fe_assets/_config_row.html | HTML模板为前端配置页面。
 /vault/fe_assets/_home.html | HTML模板为前端主页。
 /vault/fe_assets/_ip_test.html | HTML模板为IP测试页面。
 /vault/fe_assets/_ip_test_row.html | HTML模板为IP测试页面。
@@ -532,4 +533,4 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2016年11月18日。
+最后更新：2016年11月21日。

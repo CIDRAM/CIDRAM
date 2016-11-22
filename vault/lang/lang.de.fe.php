@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.11.18).
+ * This file: German language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Verstecken unbenutzt';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Front-End haben.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für CIDRAM von der Front-End.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM wird kostenlos angeboten, aber wenn Sie Spende für das Projekt wollen, können Sie dies tun indem Klicken Sie auf die Spenden-Schaltfläche.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Geben Sie hier IPs.';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der CIDRAM Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />Das IP-Test-Seite macht es möglich zu prüfen ob IP-Adressen blockiert durch die aktuell installierten Signaturen sind.';
@@ -131,3 +132,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP-Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Einloggen';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Protokolldateien';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Aktualisierungen';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Problemseite für CIDRAM (Unterstützung, u.s.w.).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Diskussionsforum für CIDRAM (Unterstützung, u.s.w.).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress Plugin für CIDRAM.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Eine Sammlung von einfachen Webmaster-Tools, um Websites zu sichern.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Enthält optionale Bereichsblöcke, die dem CIDRAM hinzugefügt werden können, um unerwünschte Länder von dem Zugriff auf Ihre Website zu blockieren.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP Lernressourcen und Diskussion.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP Lernressourcen und Diskussion.</li>
+        </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2016.11.18).
+ * This file: Korean language data for the front-end (last modified: 2016.11.22).
  *
  * @todo (This is incomplete).
  */
@@ -119,6 +119,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Don\'t hide unused';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Hide unused';
 $CIDRAM['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page allows you to control who can access the CIDRAM front-end.';
 $CIDRAM['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for CIDRAM from the front-end.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM is offered free of charge, but if you want donate to the project, you can do so by clicking the donate button.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Enter IPs here.';
 $CIDRAM['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hello, {username}.<br />The IP test page allows you to test whether IP addresses are blocked by the currently installed signatures.';
@@ -133,3 +134,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logs';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues page for CIDRAM (support, assistance, etc).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Discussion forum for CIDRAM (support, assistance, etc).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin for CIDRAM.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – A collection of simple webmaster tools to secure websites.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Contains optional range blocks that can be added to CIDRAM to block any unwanted countries from accessing your website.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP learning resources and discussion.</li>
+        </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.11.18).
+ * This file: Arabic language data for the front-end (last modified: 2016.11.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,15 +32,15 @@ $CIDRAM['lang']['config_general_timeOffset'] = 'المنطقة الزمنية ت
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'عدد الساعات لنتذكر حالات اختبار reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'القفل reCAPTCHA إلى IP؟';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'القفل reCAPTCHA إلى المستخدمين؟';
-$CIDRAM['lang']['config_recaptcha_logfile'] = 'Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. If no, leave this variable blank.'; // @TranslateMe@
-$CIDRAM['lang']['config_recaptcha_secret'] = 'This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.'; // @TranslateMe@
-$CIDRAM['lang']['config_recaptcha_sitekey'] = 'This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard.'; // @TranslateMe@
-$CIDRAM['lang']['config_recaptcha_usemode'] = 'Defines how CIDRAM should use reCAPTCHA (see documentation).'; // @TranslateMe@
-$CIDRAM['lang']['config_signatures_block_bogons'] = 'Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don\'t expect these such connections, this directive should be set to true.'; // @TranslateMe@
-$CIDRAM['lang']['config_signatures_block_cloud'] = 'Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don\'t, then, this directive should be set to true.'; // @TranslateMe@
-$CIDRAM['lang']['config_signatures_block_generic'] = 'Block CIDRs generally recommended for blacklisting? This covers any signatures that aren\'t marked as being part of any of the other more specific signature categories.'; // @TranslateMe@
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don\'t require anonymous proxies, this directive should be set to true as a means of improving security.'; // @TranslateMe@
-$CIDRAM['lang']['config_signatures_block_spam'] = 'Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.'; // @TranslateMe@
+$CIDRAM['lang']['config_recaptcha_logfile'] = 'تسجيل جميع محاولات اختبار reCAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا.';
+$CIDRAM['lang']['config_recaptcha_secret'] = 'يجب أن تتطابق هذه القيمة إلى "secret key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_sitekey'] = 'يجب أن تتطابق هذه القيمة إلى "site key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_usemode'] = 'هذا ويعرف كيفية CIDRAM يجب استخدام اختبار reCAPTCHA (راجع وثائق).';
+$CIDRAM['lang']['config_signatures_block_bogons'] = 'منع CIDRs المريخ/bogon؟ إذا كنت تتوقع اتصالات إلى موقع الويب الخاص بك من خلال الشبكة المحلية، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب أن يتم تعيين إلى true.';
+$CIDRAM['lang']['config_signatures_block_cloud'] = 'منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات سحابية/الاستضافة؟ إذا كنت تعمل على خدمة API من موقع الويب الخاص بك، أو إذا كنت تتوقع مواقع أخرى للاتصال موقع الويب الخاص بك، هذا يجب أن يتم تعيين إلى false. إذا لم تقم بذلك، ثم، فإنه يجب تعيين إلى true.';
+$CIDRAM['lang']['config_signatures_block_generic'] = 'منع CIDRs الموصى بها عموما للالقائمة السوداء؟ وهذا يشمل أي التوقيعات التي ليست جزءا من الفئات الأخرى.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات وكيل؟ إذا كنت تحتاج إلى أن يكون المستخدمون قادرين على الوصول إلى موقع الويب الخاص بك من خدمات بروكسي مجهول، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب تعيين إلى true كوسيلة لتحسين الأمن.';
+$CIDRAM['lang']['config_signatures_block_spam'] = 'منع CIDRs التي تم تحديدها على أنها مخاطر البريد المزعج؟ عندما يكون ذلك ممكنا، عموما، وهذا ينبغي دائما أن يتم تعيين إلى true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'وهناك قائمة من الملفات توقيع عناوين IPv4 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'وهناك قائمة من الملفات توقيع عناوين IPv6 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
@@ -117,6 +117,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مست
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستعمل';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'أدخل IPs هنا.';
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $CIDRAM['lang']['tip_ip_test'] = 'مرحبا، {username}.<br />الصفحة اختبار IP يسمح لك لاختبار سواء عناوين IP مسدودة من التوقيعات المثبتة حاليا.';
@@ -131,3 +132,13 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – سجلات';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – التحديثات';
+
+$CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61" dir="ltr">CIDRAM @ Spambot Security</a> – منتدى للنقاش ل CIDRAM (الدعم والمساعدة، الخ).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ Wordpress.org</a> – Wordpress البرنامج المساعد ل CIDRAM.</li>
+            <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks" dir="ltr">MacMathan.info</a> – يحتوي على كتل مجموعة اختيارية التي يمكن أن تضاف إلى CIDRAM لمنع أي بلد غير المرغوب فيها من الوصول إلى موقع الويب الخاص بك.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">International PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
+            <li><a href="https://wwphp-fb.github.io/" dir="ltr">International PHP Group @ GitHub</a> – PHP مصادر التعلم والمناقشة.</li>
+        </ul>';

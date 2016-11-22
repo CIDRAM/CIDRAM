@@ -108,6 +108,7 @@ File | Descrizione
 /vault/fe_assets/_accounts.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_accounts_row.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_config.html | Un modello HTML per il front-end pagina di configurazione.
+/vault/fe_assets/_config_row.html | Un modello HTML per il front-end pagina di configurazione.
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
 /vault/fe_assets/_ip_test.html | Un modello HTML per la pagina per il test IP.
 /vault/fe_assets/_ip_test_row.html | Un modello HTML per la pagina per il test IP.
@@ -531,4 +532,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 18 Novembre 2016 (2016.11.18).
+Ultimo Aggiornamento: 21 Novembre 2016 (2016.11.21).

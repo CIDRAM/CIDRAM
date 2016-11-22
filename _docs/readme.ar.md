@@ -110,6 +110,7 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts.html
 <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts_row.html
 <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config.html
+<div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التكوين.</div> | /vault/fe_assets/_config_row.html
 <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الرئيسية.</div> | /vault/fe_assets/_home.html
 <div dir="rtl" style="display:inline;">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test.html
 <div dir="rtl" style="display:inline;">ملف قالب HTML لصفحة الاختبار IP.</div> | /vault/fe_assets/_ip_test_row.html
@@ -261,7 +262,9 @@ Updating is done manually, and you can customise your configuration and customis
 </ul></div>
 
 <div dir="rtl">"emailaddr"<br /></div>
-- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses). @TranslateMe@
+<div dir="rtl"><ul>
+ <li>لو كنت تريد، يمكنك توفير عنوان البريد الإلكتروني هنا أن تعطى للمستخدمين عند أنها ممنوعة، بالنسبة لهم لاستخدامها كنقطة اتصال للحصول على الدعم والمساعدة لفي حال منهم سدت طريق الخطأ أو في ضلال. تحذير: أي عنوان البريد الإلكتروني الذي تزويد هنا وبالتأكيد سيتم شراؤها من قبل المتطفلين و برامج التطفل وكاشطات خلال المستخدمة هنا، و حينئذ، انها المستحسن أن إذا اخترت توفير عنوان البريد الإلكتروني هنا، يمكنك التأكد من أن عنوان البريد الإلكتروني الذي نورد هنا يمكن التخلص منها و/أو عنوان أنك لا تمانع في أن محتوى غير مرغوب فيه (بعبارات أخرى، وربما كنت لا تريد استخدام الرئيسية عناوين البريد الإلكتروني التجارية أو العناوين الشخصية الرئيسية الخاصة بك).</li>
+</ul></div>
 
 <div dir="rtl">"disable_cli"<br /></div>
 <div dir="rtl"><ul>
@@ -287,19 +290,29 @@ Updating is done manually, and you can customise your configuration and customis
 </ul></div>
 
 <div dir="rtl">"block_cloud"<br /></div>
-- Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don't, then, this directive should be set to true. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات سحابية/الاستضافة؟ إذا كنت تعمل على خدمة API من موقع الويب الخاص بك، أو إذا كنت تتوقع مواقع أخرى للاتصال موقع الويب الخاص بك، هذا يجب أن يتم تعيين إلى false. إذا لم تقم بذلك، ثم، فإنه يجب تعيين إلى true.</li>
+</ul></div>
 
 <div dir="rtl">"block_bogons"<br /></div>
-- Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don't expect these such connections, this directive should be set to true. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>منع CIDRs المريخ/bogon؟ إذا كنت تتوقع اتصالات إلى موقع الويب الخاص بك من خلال الشبكة المحلية، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب أن يتم تعيين إلى true.
+</ul></div>
 
 <div dir="rtl">"block_generic"<br /></div>
-- Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>منع CIDRs الموصى بها عموما للالقائمة السوداء؟ وهذا يشمل أي التوقيعات التي ليست جزءا من الفئات الأخرى.</li>
+</ul></div>
 
 <div dir="rtl">"block_proxies"<br /></div>
-- Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات وكيل؟ إذا كنت تحتاج إلى أن يكون المستخدمون قادرين على الوصول إلى موقع الويب الخاص بك من خدمات بروكسي مجهول، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب تعيين إلى true كوسيلة لتحسين الأمن.</li>
+</ul></div>
 
 <div dir="rtl">"block_spam"<br /></div>
-- Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>منع CIDRs التي تم تحديدها على أنها مخاطر البريد المزعج؟ عندما يكون ذلك ممكنا، عموما، وهذا ينبغي دائما أن يتم تعيين إلى true.</li>
+</ul></div>
 
 #### <div dir="rtl">"recaptcha" (التصنيف)<br /></div>
 Optionally, you can provide users with a way to bypass the "تم رفض الوصول!" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
@@ -309,30 +322,38 @@ Due to the risks associated with providing a way for end-users to bypass the "ت
 للحصول على "site key" و "secret key" (مطلوب لاستخدام اختبار reCAPTCHA)، الرجاء الذهاب إلى: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 <div dir="rtl">"usemode"<br /></div>
-- Defines how CIDRAM should use reCAPTCHA. @TranslateMe@
-- 0 = reCAPTCHA is completely disabled (default). @TranslateMe@
-- 1 = reCAPTCHA is enabled for all signatures. @TranslateMe@
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files. @TranslateMe@
-- (Any other value will be treated in the same way as 0). @TranslateMe@
+<div dir="rtl"><ul>
+ <li>هذا ويعرف كيفية CIDRAM يجب استخدام اختبار reCAPTCHA.</li>
+ <li>0 = reCAPTCHA لم يتم تمكين (الافتراضي).</li>
+ <li>1 = اختبار reCAPTCHA يتم تمكين لجميع التوقيعات.</li>
+ <li>2 = اختبار reCAPTCHA يتم تمكين فقط للتوقيعات ملحوظة.</li>
+ <li>(سيتم التعامل مع أي قيمة أخرى بالطريقة نفسها ك 0).</li>
+</ul></div>
 
 <div dir="rtl">"lockip"<br /></div>
-- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
+- Specifies whether hashes should be locked to specific IPs. False = Cookies and hashes CAN be used across multiple IPs (الافتراضي). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
 - Note: "lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
 
 <div dir="rtl">"lockuser"<br /></div>
-- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
+- Specifies whether successful completion of a reCAPTCHA instance should be locked to specific users. False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (الافتراضي). @TranslateMe@
 
 <div dir="rtl">"sitekey"<br /></div>
-- This value should correspond to the "site key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>يجب أن تتطابق هذه القيمة إلى "site key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.</li>
+</ul></div>
 
 <div dir="rtl">"secret"<br /></div>
-- This value should correspond to the "secret key" for your reCAPTCHA, which can be found within the reCAPTCHA dashboard. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>يجب أن تتطابق هذه القيمة إلى "secret key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.</li>
+</ul></div>
 
 <div dir="rtl">"expiry"<br /></div>
-- When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
+- When "lockuser" is true (الافتراضي), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
 
 <div dir="rtl">"logfile"<br /></div>
-- Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile. ان لم، ترك هذا الحقل فارغا. @TranslateMe@
+<div dir="rtl"><ul>
+ <li>تسجيل جميع محاولات اختبار reCAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا.</li>
+</ul></div>
 
 <div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: "{yyyy}" لمدة عام كامل، "{yy}" لمدة عام يختصر، "{mm}" لمدة شهر، "{dd}" ليوم واحد، "{hh}" لمدة ساعة (راجع الأمثلة أدناه).</em><br /><br /></div>
 
@@ -565,4 +586,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 18 نوفمبر 2016 (2016.11.18).</div>
+<div dir="rtl">آخر تحديث: 21 نوفمبر 2016 (2016.11.21).</div>

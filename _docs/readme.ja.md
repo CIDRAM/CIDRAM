@@ -108,6 +108,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/_accounts.html | フロントエンドのアカウントページのHTMLテンプレート。
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
 /vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
+/vault/fe_assets/_config_row.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
 /vault/fe_assets/_ip_test.html | IPテストページのHTMLテンプレート。
 /vault/fe_assets/_ip_test_row.html | IPテストページのHTMLテンプレート。
@@ -532,4 +533,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年11月18日。
+最終アップデート： 2016年11月21日。

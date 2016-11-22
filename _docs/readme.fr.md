@@ -108,6 +108,7 @@ Fichier | Description
 /vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
+/vault/fe_assets/_config_row.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_ip_test.html | Un modèle HTML pour la page pour tester IPs.
 /vault/fe_assets/_ip_test_row.html | Un modèle HTML pour la page pour tester IPs.
@@ -531,4 +532,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 18 Novembre 2016 (2016.11.18).
+Dernière Mise à Jour: 21 Novembre 2016 (2016.11.21).

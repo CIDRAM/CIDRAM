@@ -108,6 +108,7 @@ Data | Deskripsi
 /vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
 /vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_ip_test_row.html | Template HTML untuk halaman test IP.
@@ -531,4 +532,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 18 November 2016 (2016.11.18).
+Terakhir Diperbarui: 21 November 2016 (2016.11.21).

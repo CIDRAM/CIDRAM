@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2016.11.22).
+ * This file: Italian language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'Bloccato';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crea un nuovo account';
 $CIDRAM['lang']['field_delete_account'] = 'Elimina un account';
+$CIDRAM['lang']['field_delete_file'] = 'Eliminare';
+$CIDRAM['lang']['field_download_file'] = 'Scaricare';
+$CIDRAM['lang']['field_edit_file'] = 'Modificare';
+$CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Nome del file: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'Elenco';
+$CIDRAM['lang']['field_filetype_info'] = '{EXT} File';
+$CIDRAM['lang']['field_filetype_unknown'] = 'Sconosciuto';
 $CIDRAM['lang']['field_install'] = 'Installarlo';
 $CIDRAM['lang']['field_ip_address'] = 'Indirizzo IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versione';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opzioni';
 $CIDRAM['lang']['field_password'] = 'Password';
 $CIDRAM['lang']['field_permissions'] = 'Permessi';
+$CIDRAM['lang']['field_reset'] = 'Azzerare';
 $CIDRAM['lang']['field_set_new_password'] = 'Imposta una nuova password';
 $CIDRAM['lang']['field_size'] = 'Dimensione Totale: ';
 $CIDRAM['lang']['field_size_bytes'] = 'byte';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_uninstall'] = 'Disinstallarlo';
 $CIDRAM['lang']['field_update'] = 'Aggiornarlo';
+$CIDRAM['lang']['field_upload_file'] = 'Carica Nuovo File';
 $CIDRAM['lang']['field_username'] = 'Nome Utente';
 $CIDRAM['lang']['field_your_version'] = 'La Vostra Versione';
 $CIDRAM['lang']['header_login'] = 'Per favore accedi per continuare.';
 $CIDRAM['lang']['link_accounts'] = 'Utenti';
 $CIDRAM['lang']['link_config'] = 'Configurazione';
 $CIDRAM['lang']['link_documentation'] = 'Documentazione';
+$CIDRAM['lang']['link_file_manager'] = 'File Manager';
 $CIDRAM['lang']['link_home'] = 'Pagina Principale';
 $CIDRAM['lang']['link_ip_test'] = 'Test di IP';
 $CIDRAM['lang']['link_logs'] = 'File di Log';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'C\'è stato un errore d
 $CIDRAM['lang']['response_component_update_error'] = 'C\'è stato un errore durante il tentativo di aggiornare il componente.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configurazione aggiornato con successo.';
 $CIDRAM['lang']['response_error'] = 'Errore';
+$CIDRAM['lang']['response_file_deleted'] = 'File eliminato con successo!';
+$CIDRAM['lang']['response_file_edited'] = 'File modificato con successo!';
+$CIDRAM['lang']['response_file_uploaded'] = 'File caricato con successo!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Accedi non riuscito! Password non valida!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Accedi non riuscito! Nome utente non esiste!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'L\'input password era vuoto!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'Salve, {username}.<br />La pagina di conti pe
 $CIDRAM['lang']['tip_config'] = 'Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM è offerto gratuitamente, ma se si vuole donare al progetto, è possibile farlo facendo clic sul pulsante donare.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Inserisci IP qui.';
+$CIDRAM['lang']['tip_file_manager'] = 'Salve, {username}.<br />Il file manager consente di eliminare, modificare, caricare e scaricare file. Usare con cautela (si potrebbe rompere l\'installazione di questo).';
 $CIDRAM['lang']['tip_home'] = 'Salve, {username}.<br />Questa è la pagina principale per il front-end di CIDRAM. Selezionare un collegamento dal menu di navigazione a sinistra per continuare.';
 $CIDRAM['lang']['tip_ip_test'] = 'Salve, {username}.<br />La pagina di per il test di IP permette di testare se gli indirizzi IP sono bloccati dalle firme attualmente installati.';
 $CIDRAM['lang']['tip_login'] = 'Nome utente predefinito: <span class="txtRd">admin</span> – Password predefinita: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Vedere la <a href="https://githu
 $CIDRAM['lang']['tip_updates'] = 'Salve, {username}.<br />La pagina degli aggiornamenti permette di installare, disinstallare e aggiornare i vari componenti di CIDRAM (il pacchetto di base, le firme, file per L10N, ecc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Utenti';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configurazione';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Pagina Principale';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Test di IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Accedi';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Alcuni link utili:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Pagina dei problemi per CIDRAM (supporto, assistenza, ecc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Forum di discussione per CIDRAM (supporto, assistenza, ecc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Plugin per Wordpress per CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Una scarica specchio alternativa per CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una collezione di semplici strumenti per i webmaster per sicurezza del sito Web.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Contiene blocchi raggio opzionali che possono essere aggiunti a CIDRAM per bloccare qualsiasi paesi indesiderati di accedere al sito web.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Contiene blocchi raggio opzionali che possono essere aggiunti a CIDRAM per bloccare qualsiasi paesi indesiderati di accedere al sito web.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Risorse di apprendimento e discussione per PHP.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Risorse di apprendimento e discussione per PHP.</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum di discussione utile circa l\'arresto di forum spam.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Strumento di aggregazione utile per IPv4 IPs.</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Un servizio fantastico e preciso per la generazione di firme per i paesi.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione da malware per ASN.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
         </ul>';

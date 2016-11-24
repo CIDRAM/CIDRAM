@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2016.11.22).
+ * This file: English language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'Blocked';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Create New Account';
 $CIDRAM['lang']['field_delete_account'] = 'Delete Account';
+$CIDRAM['lang']['field_delete_file'] = 'Delete';
+$CIDRAM['lang']['field_download_file'] = 'Download';
+$CIDRAM['lang']['field_edit_file'] = 'Edit';
+$CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Filename: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'Directory';
+$CIDRAM['lang']['field_filetype_info'] = '{EXT} File';
+$CIDRAM['lang']['field_filetype_unknown'] = 'Unknown';
 $CIDRAM['lang']['field_install'] = 'Install';
 $CIDRAM['lang']['field_ip_address'] = 'IP Address';
 $CIDRAM['lang']['field_latest_version'] = 'Latest Version';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Password';
 $CIDRAM['lang']['field_permissions'] = 'Permissions';
+$CIDRAM['lang']['field_reset'] = 'Reset';
 $CIDRAM['lang']['field_set_new_password'] = 'Set New Password';
 $CIDRAM['lang']['field_size'] = 'Total Size: ';
 $CIDRAM['lang']['field_size_bytes'] = 'bytes';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstall';
 $CIDRAM['lang']['field_update'] = 'Update';
+$CIDRAM['lang']['field_upload_file'] = 'Upload New File';
 $CIDRAM['lang']['field_username'] = 'Username';
 $CIDRAM['lang']['field_your_version'] = 'Your Version';
 $CIDRAM['lang']['header_login'] = 'Please log in to continue.';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_config'] = 'Configuration';
 $CIDRAM['lang']['link_documentation'] = 'Documentation';
+$CIDRAM['lang']['link_file_manager'] = 'File Manager';
 $CIDRAM['lang']['link_home'] = 'Home';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_logs'] = 'Logs';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'An error occurred while
 $CIDRAM['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuration successfully updated.';
 $CIDRAM['lang']['response_error'] = 'Error';
+$CIDRAM['lang']['response_file_deleted'] = 'File successfully deleted!';
+$CIDRAM['lang']['response_file_edited'] = 'File successfully modified!';
+$CIDRAM['lang']['response_file_uploaded'] = 'File successfully uploaded!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Login failure! Invalid password!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Login failure! Username doesn\'t exist!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page all
 $CIDRAM['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for CIDRAM from the front-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM is offered free of charge, but if you want donate to the project, you can do so by clicking the donate button.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Enter IPs here.';
+$CIDRAM['lang']['tip_file_manager'] = 'Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this).';
 $CIDRAM['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hello, {username}.<br />The IP test page allows you to test whether IP addresses are blocked by the currently installed signatures.';
 $CIDRAM['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.
 $CIDRAM['lang']['tip_updates'] = 'Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Home';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues page for CIDRAM (support, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Discussion forum for CIDRAM (support, assistance, etc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin for CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – A collection of simple webmaster tools to secure websites.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Contains optional range blocks that can be added to CIDRAM to block any unwanted countries from accessing your website.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Contains optional range blocks that can be added to CIDRAM to block any unwanted countries from accessing your website.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP learning resources and discussion.</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Useful discussion forum about stopping forum spam.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Useful aggregation tool for IPv4 IPs.</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – A fantastic and accurate service for generating country-wide signatures.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Displays reports regarding malware infection rates for ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Displays reports regarding botnet infection rates for ASNs.</li>
         </ul>';

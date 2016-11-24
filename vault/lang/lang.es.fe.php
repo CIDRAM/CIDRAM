@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2016.11.22).
+ * This file: Spanish language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crear Nueva Cuenta';
 $CIDRAM['lang']['field_delete_account'] = 'Eliminar Cuenta';
+$CIDRAM['lang']['field_delete_file'] = 'Borrar';
+$CIDRAM['lang']['field_download_file'] = 'Descargar';
+$CIDRAM['lang']['field_edit_file'] = 'Editar';
+$CIDRAM['lang']['field_file'] = 'Archivo';
 $CIDRAM['lang']['field_filename'] = 'Nombre del archivo: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'Directorio';
+$CIDRAM['lang']['field_filetype_info'] = '{EXT} Archivo';
+$CIDRAM['lang']['field_filetype_unknown'] = 'Desconocido';
 $CIDRAM['lang']['field_install'] = 'Instalar';
 $CIDRAM['lang']['field_ip_address'] = 'Dirección IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versión';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opciones';
 $CIDRAM['lang']['field_password'] = 'Contraseña';
 $CIDRAM['lang']['field_permissions'] = 'Permisos';
+$CIDRAM['lang']['field_reset'] = 'Reiniciar';
 $CIDRAM['lang']['field_set_new_password'] = 'Crear Nueva Contraseña';
 $CIDRAM['lang']['field_size'] = 'Tamaño Total: ';
 $CIDRAM['lang']['field_size_bytes'] = 'bytes';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Estado';
 $CIDRAM['lang']['field_uninstall'] = 'Desinstalar';
 $CIDRAM['lang']['field_update'] = 'Actualizar';
+$CIDRAM['lang']['field_upload_file'] = 'Subir un nuevo archivo';
 $CIDRAM['lang']['field_username'] = 'Usuario';
 $CIDRAM['lang']['field_your_version'] = 'Tu Versión';
 $CIDRAM['lang']['header_login'] = 'Por favor iniciar sesión para continuar.';
 $CIDRAM['lang']['link_accounts'] = 'Cuentas';
 $CIDRAM['lang']['link_config'] = 'Configuración';
 $CIDRAM['lang']['link_documentation'] = 'Documentación';
+$CIDRAM['lang']['link_file_manager'] = 'Administración de Archivos';
 $CIDRAM['lang']['link_home'] = 'Página Principal';
 $CIDRAM['lang']['link_ip_test'] = 'Prueba IP';
 $CIDRAM['lang']['link_logs'] = 'Archivos de Registro';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'Se ha producido un erro
 $CIDRAM['lang']['response_component_update_error'] = 'Se ha producido un error al intentar actualizar el componente.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuración actualizado con éxito.';
 $CIDRAM['lang']['response_error'] = 'Error';
+$CIDRAM['lang']['response_file_deleted'] = '¡Archivo eliminado con éxito!';
+$CIDRAM['lang']['response_file_edited'] = '¡Archivo modificado con éxito!';
+$CIDRAM['lang']['response_file_uploaded'] = '¡Archivo subido con éxito!';
 $CIDRAM['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión - Contraseña invalida!';
 $CIDRAM['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión - El usuario no existe!';
 $CIDRAM['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'Hola, {username}.<br />La página de cuentas 
 $CIDRAM['lang']['tip_config'] = 'Hola, {username}.<br />La página de configuración permite modificar la configuración para CIDRAM desde el front-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM se ofrece de forma gratuita, pero si quieres donar al proyecto, puede hacerlo haciendo clic en el botón donar.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Ingrese IPs aquí.';
+$CIDRAM['lang']['tip_file_manager'] = 'Hola, {username}.<br />El administración de archivos permite eliminar, editar, subir y descargar de archivos. Utilizar con precaución (podría romper su instalación con esto).';
 $CIDRAM['lang']['tip_home'] = 'Hola, {username}.<br />Esta es la página principal para el front-end de CIDRAM. Seleccione un enlace en el menú de navegación de la izquierda para continuar.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hola, {username}.<br />La página para prueba IP permite pruebar si las direcciones IP están bloqueadas por las firmas actualmente instaladas.';
 $CIDRAM['lang']['tip_login'] = 'El usuario estándar: <span class="txtRd">admin</span> – La contraseña estándar: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Ver la <a href="https://github.c
 $CIDRAM['lang']['tip_updates'] = 'Hola, {username}.<br />La página de actualizaciones permite instalar, desinstalar y actualizar los diversos componentes de CIDRAM (el paquete básico, firmas, archivos de L10N, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Cuentas';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuración';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Administración de Archivos';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Página Principal';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Prueba IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Página de problemas para CIDRAM (apoyo, asistencia, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Foro de discusión para CIDRAM (apoyo, asistencia, etc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin para CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una colección de sencillas herramientas de webmaster para proteger sitios web.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Contiene bloques de rangos opcionales que se pueden agregar a CIDRAM para bloquear cualquier país no deseado de acceder a su sitio web.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Contiene bloques de rangos opcionales que se pueden agregar a CIDRAM para bloquear cualquier país no deseado de acceder a su sitio web.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP recursos de aprendizaje y discusión.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP recursos de aprendizaje y discusión.</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Obtener CIDRs de ASNs, Determinar las relaciones de las ASNs, Descubre los ASNs basados en nombres de redes, etc.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Útil foro de discusión sobre detener spam de foro.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Útil herramienta de agregación para IPs IPv4.</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Útil herramienta para comprobar la conectividad de los ASNs así como para otras informaciones sobre los ASNs.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Un servicio fantástico y preciso para generar firmas a nivel nacional.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Muestra informes sobre las tasas de infección de malware para los ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
         </ul>';

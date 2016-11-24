@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.11.22).
+ * This file: Russian language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'Блокированный';
 $CIDRAM['lang']['field_component'] = 'Компонент';
 $CIDRAM['lang']['field_create_new_account'] = 'Создать Новый Аккаунт';
 $CIDRAM['lang']['field_delete_account'] = 'Удалить Аккаунт';
+$CIDRAM['lang']['field_delete_file'] = 'Удалить';
+$CIDRAM['lang']['field_download_file'] = 'Скачать';
+$CIDRAM['lang']['field_edit_file'] = 'Редактировать';
+$CIDRAM['lang']['field_file'] = 'Файл';
 $CIDRAM['lang']['field_filename'] = 'Имя файла: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'Каталог';
+$CIDRAM['lang']['field_filetype_info'] = 'Файл {EXT}';
+$CIDRAM['lang']['field_filetype_unknown'] = 'Неизвестный';
 $CIDRAM['lang']['field_install'] = 'Устанавливать';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Адрес';
 $CIDRAM['lang']['field_latest_version'] = 'Последняя Версия';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'ОК';
 $CIDRAM['lang']['field_options'] = 'Опции';
 $CIDRAM['lang']['field_password'] = 'Пароль';
 $CIDRAM['lang']['field_permissions'] = 'Разрешения';
+$CIDRAM['lang']['field_reset'] = 'Сбросить';
 $CIDRAM['lang']['field_set_new_password'] = 'Установить Новый Пароль';
 $CIDRAM['lang']['field_size'] = 'Общий Размер: ';
 $CIDRAM['lang']['field_size_bytes'] = 'байтов';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'ТБ';
 $CIDRAM['lang']['field_status'] = 'Статус';
 $CIDRAM['lang']['field_uninstall'] = 'Удалить';
 $CIDRAM['lang']['field_update'] = 'Обновить';
+$CIDRAM['lang']['field_upload_file'] = 'Загрузить Новый Файл';
 $CIDRAM['lang']['field_username'] = 'Имя Пользователя';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $CIDRAM['lang']['link_accounts'] = 'Учетными Записями';
 $CIDRAM['lang']['link_config'] = 'Конфигурация';
 $CIDRAM['lang']['link_documentation'] = 'Документация';
+$CIDRAM['lang']['link_file_manager'] = 'Файловый Менеджер';
 $CIDRAM['lang']['link_home'] = 'Домашняя Страница';
 $CIDRAM['lang']['link_ip_test'] = 'Тест IP';
 $CIDRAM['lang']['link_logs'] = 'Лог-Файлы';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'Произошла ош
 $CIDRAM['lang']['response_component_update_error'] = 'Произошла ошибка при попытке обновить компонент.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Конфигурация успешно обновлено.';
 $CIDRAM['lang']['response_error'] = 'Ошибка';
+$CIDRAM['lang']['response_file_deleted'] = 'Файл успешно удален!';
+$CIDRAM['lang']['response_file_edited'] = 'Файл успешно изменен!';
+$CIDRAM['lang']['response_file_uploaded'] = 'Файл успешно загружен!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Войти провал! Неверный пароль!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Войти провал! Имя пользователя не существует!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Пароль пусто!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетным
 $CIDRAM['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для CIDRAM от фронтенд.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Введите IP-адреса здесь.';
+$CIDRAM['lang']['tip_file_manager'] = 'Привет, {username}.<br />Файловый менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим).';
 $CIDRAM['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для CIDRAM фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $CIDRAM['lang']['tip_ip_test'] = 'Привет, {username}.<br />Тест IP страница позволяет проверить если IP-адреса заблокированы по установленных сигнатуры.';
 $CIDRAM['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="
 $CIDRAM['lang']['tip_updates'] = 'Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов CIDRAM (пакет ядра, сигнатуры, L10N файлы, итд).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Учетными Записями';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Конфигурация';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Файловый Менеджер';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Домашняя Страница';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Тест IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Войти';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Дискуссионный форум для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress плагин для CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP учебных ресурсов и обсуждение.</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Полезный инструмент для агрегации IPv4 IP-адресов.</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Фантастический и точный сервис для создания сигнатуры в масштабах всей страны.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
         </ul>';

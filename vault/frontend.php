@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.18).
+ * This file: Front-end handler (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -295,6 +295,45 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
+}
+
+/** A simple passthru for the file manager icons. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    if (
+        !empty($CIDRAM['QueryVars']['file']) &&
+        $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['file']) &&
+        file_exists($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file']) &&
+        is_readable($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file'])
+    ) {
+        header('Content-Type: image/x-icon');
+        echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['file']);
+    }
+
+    elseif (!empty($CIDRAM['QueryVars']['icon'])) {
+
+        /** Fetch file manager icons data. */
+        if (file_exists($CIDRAM['Vault'] . 'icons.php') && is_readable($CIDRAM['Vault'] . 'icons.php')) {
+            require $CIDRAM['Vault'] . 'icons.php';
+        }
+
+        header('Content-Type: image/gif');
+        if (!empty($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']])) {
+            echo gzinflate(base64_decode($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']]));
+        } else {
+            echo gzinflate(base64_decode($CIDRAM['Icons']['unknown']));
+        }
+    }
+
+    die;
+
+}
+
+/** A simple passthru for the file manager icons. */
+if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
+    header('Content-Type: image/gif');
+    echo base64_decode($CIDRAM['favicon']);
+    die;
 }
 
 /** Accounts. */
@@ -1406,6 +1445,154 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
 }
 
+/** File Manager. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_file_manager'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_file_manager']
+    );
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Upload a new file. */
+    if (
+        isset($_POST['do']) &&
+        $_POST['do'] === 'upload-file' &&
+        isset($_FILES['upload-file']['name']) &&
+        basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
+        $CIDRAM['FileManager-PathSecurityCheck']($_FILES['upload-file']['name']) &&
+        isset($_FILES['upload-file']['tmp_name']) &&
+        isset($_FILES['upload-file']['error']) &&
+        $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
+        is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
+        !is_link($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
+    ) {
+
+        /** If the filename already exists, delete the old file before moving the new file. */
+        if (
+            file_exists($CIDRAM['Vault'] . $_FILES['upload-file']['name']) &&
+            is_readable($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
+        ) {
+            if (is_dir($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
+                rmdir($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
+            } else {
+                unlink($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
+            }
+        }
+
+        /** Move the newly uploaded file to the designated location. */
+        rename($_FILES['upload-file']['tmp_name'], $CIDRAM['Vault'] . $_FILES['upload-file']['name']);
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_uploaded'];
+
+    }
+
+    /** A form was submitted. */
+    elseif (
+        isset($_POST['filename']) &&
+        isset($_POST['do']) &&
+        file_exists($CIDRAM['Vault'] . $_POST['filename']) &&
+        is_readable($CIDRAM['Vault'] . $_POST['filename']) &&
+        $CIDRAM['FileManager-PathSecurityCheck']($_POST['filename'])
+    ) {
+
+        /** Delete a file. */
+        if ($_POST['do'] === 'delete-file') {
+
+            if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
+                rmdir($CIDRAM['Vault'] . $_POST['filename']);
+            } else {
+                unlink($CIDRAM['Vault'] . $_POST['filename']);
+            }
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_deleted'];
+
+        /** Edit a file. */
+        } elseif ($_POST['do'] === 'edit-file') {
+
+            if (isset($_POST['content'])) {
+
+                $_POST['content'] = str_replace("\r", '', $_POST['content']);
+                $CIDRAM['OldData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']);
+                if (substr_count($CIDRAM['OldData'], "\r\n") && !substr_count($CIDRAM['OldData'], "\n\n")) {
+                    $_POST['content'] = str_replace("\n", "\r\n", $_POST['content']);
+                }
+
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $_POST['filename'], 'w');
+                fwrite($CIDRAM['Handle'], $_POST['content']);
+                fclose($CIDRAM['Handle']);
+
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_edited'];
+
+            } else {
+
+                $CIDRAM['FE']['FE_Title'] .= ' – ' . $_POST['filename'];
+                $CIDRAM['FE']['filename'] = $_POST['filename'];
+                $CIDRAM['FE']['content'] = htmlentities($CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']));
+
+                /** Parse output. */
+                $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+                    $CIDRAM['lang'] + $CIDRAM['FE'],
+                    $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files_edit.html')
+                );
+
+                /** Send output. */
+                echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+                die;
+
+            }
+
+        /** Download a file. */
+        } elseif ($_POST['do'] === 'download-file') {
+
+            header('Content-Type: application/octet-stream');
+            header('Content-Transfer-Encoding: Binary');
+            header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');
+            echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']);
+            die;
+
+        }
+
+    }
+
+    /** Template for file rows. */
+    $CIDRAM['FE']['FilesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files_row.html');
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files.html')
+    );
+
+    /** Initialise files data variable. */
+    $CIDRAM['FE']['FilesData'] = '';
+
+    /** Fetch files data. */
+    $CIDRAM['FilesArray'] = $CIDRAM['FileManager-RecursiveList']($CIDRAM['Vault']);
+
+    /** Process files data. */
+    array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
+        $ThisFile['ThisOptions'] = '<option value="delete-file">' . $CIDRAM['lang']['field_delete_file'] . '</option>';
+        if ($ThisFile['CanEdit']) {
+            $ThisFile['ThisOptions'] .= '<option value="edit-file">' . $CIDRAM['lang']['field_edit_file'] . '</option>';
+        }
+        if (!$ThisFile['Directory']) {
+            $ThisFile['ThisOptions'] .= '<option value="download-file">' . $CIDRAM['lang']['field_download_file'] . '</option>';
+        }
+        $CIDRAM['FE']['FilesData'] .= $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'] + $ThisFile, $CIDRAM['FE']['FilesRow']
+        );
+    });
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
 /** IP Test. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Permissions'] === 1) {
 
@@ -1429,8 +1616,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {
         $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
-        $_POST['ip-addr'] = array_unique(array_map(function () {
-            return preg_replace("\x01[^0-9a-f:./]\x01i", '', func_get_args()[0]);
+        $_POST['ip-addr'] = array_unique(array_map(function ($IP) {
+            return preg_replace("\x01[^0-9a-f:./]\x01i", '', $IP);
         }, explode("\n", $_POST['ip-addr'])));
         natsort($_POST['ip-addr']);
         $CIDRAM['Count'] = count($_POST['ip-addr']);
@@ -1514,6 +1701,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_logs.html')
     );
 
+    /** Initialise array for fetching logs data. */
     $CIDRAM['FE']['LogFiles'] = array(
         'Files' => scandir($CIDRAM['Vault']),
         'Types' => ',txt,log,',

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.11.22).
+ * This file: Arabic language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_component'] = 'وحدة';
 $CIDRAM['lang']['field_create_new_account'] = 'خلق جديد حساب';
 $CIDRAM['lang']['field_delete_account'] = 'حذف حساب';
+$CIDRAM['lang']['field_delete_file'] = 'حذف';
+$CIDRAM['lang']['field_download_file'] = 'تحميل';
+$CIDRAM['lang']['field_edit_file'] = 'تحرير';
+$CIDRAM['lang']['field_file'] = 'ملف';
 $CIDRAM['lang']['field_filename'] = 'اسم الملف: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'مجلد';
+$CIDRAM['lang']['field_filetype_info'] = 'ملف {EXT}';
+$CIDRAM['lang']['field_filetype_unknown'] = 'غير معروف';
 $CIDRAM['lang']['field_install'] = 'تثبيت';
 $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';
 $CIDRAM['lang']['field_latest_version'] = 'احدث اصدار';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'حسنا';
 $CIDRAM['lang']['field_options'] = 'خيارات';
 $CIDRAM['lang']['field_password'] = 'كلمه السر';
 $CIDRAM['lang']['field_permissions'] = 'أذونات';
+$CIDRAM['lang']['field_reset'] = 'إعادة تعيين';
 $CIDRAM['lang']['field_set_new_password'] = 'تحديد جديد كلمه السر';
 $CIDRAM['lang']['field_size'] = 'الحجم الإجمالي: ';
 $CIDRAM['lang']['field_size_bytes'] = 'بايت';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'الحالة';
 $CIDRAM['lang']['field_uninstall'] = 'الغاء التثبيت';
 $CIDRAM['lang']['field_update'] = 'تحديث';
+$CIDRAM['lang']['field_upload_file'] = 'تحميل ملف جديد';
 $CIDRAM['lang']['field_username'] = 'اسم المستخدم';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
 $CIDRAM['lang']['link_config'] = 'التكوين';
 $CIDRAM['lang']['link_documentation'] = 'توثيق';
+$CIDRAM['lang']['link_file_manager'] = 'مدير الملفات';
 $CIDRAM['lang']['link_home'] = 'الرئيسية';
 $CIDRAM['lang']['link_ip_test'] = 'اختبار IP';
 $CIDRAM['lang']['link_logs'] = 'سجلات';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'حدث خطأ أثنا�
 $CIDRAM['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث الوحدة.';
 $CIDRAM['lang']['response_configuration_updated'] = 'التكوين تحديثها بنجاح.';
 $CIDRAM['lang']['response_error'] = 'خطأ';
+$CIDRAM['lang']['response_file_deleted'] = 'ملف حذف بنجاح!';
+$CIDRAM['lang']['response_file_edited'] = 'ملف تعديل بنجاح!';
+$CIDRAM['lang']['response_file_uploaded'] = 'ملف تحميلها بنجاح!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخول! غير صالحة كلمه السر!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة ح
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'أدخل IPs هنا.';
+$CIDRAM['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا).';
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $CIDRAM['lang']['tip_ip_test'] = 'مرحبا، {username}.<br />الصفحة اختبار IP يسمح لك لاختبار سواء عناوين IP مسدودة من التوقيعات المثبتة حاليا.';
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github
 $CIDRAM['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – حسابات';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – مدير الملفات';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – الرئيسية';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيد�
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61" dir="ltr">CIDRAM @ Spambot Security</a> – منتدى للنقاش ل CIDRAM (الدعم والمساعدة، الخ).</li>
             <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ Wordpress.org</a> – Wordpress البرنامج المساعد ل CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/" dir="ltr">CIDRAM @ SourceForge</a> – بديلة حمل مرآة للCIDRAM.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks" dir="ltr">MacMathan.info</a> – يحتوي على كتل مجموعة اختيارية التي يمكن أن تضاف إلى CIDRAM لمنع أي بلد غير المرغوب فيها من الوصول إلى موقع الويب الخاص بك.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks" dir="ltr">MacMathan.info Range Blocks</a> – يحتوي على كتل مجموعة اختيارية التي يمكن أن تضاف إلى CIDRAM لمنع أي بلد غير المرغوب فيها من الوصول إلى موقع الويب الخاص بك.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">International PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
             <li><a href="https://wwphp-fb.github.io/" dir="ltr">International PHP Group @ GitHub</a> – PHP مصادر التعلم والمناقشة.</li>
+            <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
+            <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – منتدى للنقاش مفيد حول وقف منتدى المزعج.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate" dir="ltr">IP Aggregator @ Stop Forum Spam</a> – أداة مفيدة لتجميع عناوين IPv4.</li>
+            <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – أداة مفيدة للتحقق من الاتصال من ل ASNs فضلا عن العديد من المعلومات الأخرى حول ل ASNs.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – خدمة لتوليد التواقيع في جميع أنحاء البلاد.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – تقارير يعرض بخصوص معدلات الإصابة الخبيثة أجل ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" dir="ltr">The Spamhaus Project</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
+            <li><a href="http://www.abuseat.org/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
         </ul>';

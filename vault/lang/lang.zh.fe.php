@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.22).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_component'] = '组件';
 $CIDRAM['lang']['field_create_new_account'] = '创建新账户';
 $CIDRAM['lang']['field_delete_account'] = '删除账户';
+$CIDRAM['lang']['field_delete_file'] = '删除';
+$CIDRAM['lang']['field_download_file'] = '下载';
+$CIDRAM['lang']['field_edit_file'] = '编辑';
+$CIDRAM['lang']['field_file'] = '文件';
 $CIDRAM['lang']['field_filename'] = '文件名：';
+$CIDRAM['lang']['field_filetype_directory'] = '目录';
+$CIDRAM['lang']['field_filetype_info'] = '{EXT}文件';
+$CIDRAM['lang']['field_filetype_unknown'] = '未知';
 $CIDRAM['lang']['field_install'] = '安装';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';
 $CIDRAM['lang']['field_latest_version'] = '最新版本';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = '选项';
 $CIDRAM['lang']['field_password'] = '密码';
 $CIDRAM['lang']['field_permissions'] = '权限';
+$CIDRAM['lang']['field_reset'] = '重启';
 $CIDRAM['lang']['field_set_new_password'] = '保存新密码';
 $CIDRAM['lang']['field_size'] = '总大小：';
 $CIDRAM['lang']['field_size_bytes'] = '字节';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = '状态';
 $CIDRAM['lang']['field_uninstall'] = '卸载';
 $CIDRAM['lang']['field_update'] = '更新';
+$CIDRAM['lang']['field_upload_file'] = '上传新文件';
 $CIDRAM['lang']['field_username'] = '用户名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['link_accounts'] = '账户';
 $CIDRAM['lang']['link_config'] = '配置';
 $CIDRAM['lang']['link_documentation'] = '文档';
+$CIDRAM['lang']['link_file_manager'] = '文件管理器';
 $CIDRAM['lang']['link_home'] = '主页';
 $CIDRAM['lang']['link_ip_test'] = 'IP测试';
 $CIDRAM['lang']['link_logs'] = '日志';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = '一个错误发生当�
 $CIDRAM['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
 $CIDRAM['lang']['response_configuration_updated'] = '配置成功更新。';
 $CIDRAM['lang']['response_error'] = '错误';
+$CIDRAM['lang']['response_file_deleted'] = '文件成功删除！';
+$CIDRAM['lang']['response_file_edited'] = '文件成功改性！';
+$CIDRAM['lang']['response_file_uploaded'] = '文件成功上传！';
 $CIDRAM['lang']['response_login_invalid_password'] = '登录失败！密码无效！';
 $CIDRAM['lang']['response_login_invalid_username'] = '登录失败！用户名不存在！';
 $CIDRAM['lang']['response_login_password_field_empty'] = '密码输入是空的！';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = '你好，{username}。<br />账户页面允�
 $CIDRAM['lang']['tip_config'] = '你好，{username}。<br />配置页面允许您修改CIDRAM配置从前端。';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，但如果您想捐赠给项目，您可以通过点击捐赠按钮这样做。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
+$CIDRAM['lang']['tip_file_manager'] = '你好，{username}。<br />文件管理器允许您删除，编辑，上传和下载文件。小心使用（您可以用这个破坏您的安装）。';
 $CIDRAM['lang']['tip_home'] = '你好，{username}。<br />这是CIDRAM的前端主页。从左侧的导航菜单中选择一个链接以继续。';
 $CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
 $CIDRAM['lang']['tip_login'] = '标准用户名： <span class="txtRd">admin</span> – 标准密码： <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github
 $CIDRAM['lang']['tip_updates'] = '你好，{username}。<br />更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包，签名，L10N文件，等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 账户';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 文件管理器';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – 主页';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP测试';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登录';
@@ -138,8 +153,17 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM讨论论坛（支持，协助，等等）。</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAM Wordpress插件。</li>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM替代下载镜像。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – 包含可选阻止名单，可以添加的在CIDRAM，用于阻止任何不需要的国家访问您的网站。</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – 包含可选阻止名单，可以添加的在CIDRAM，用于阻止任何不需要的国家访问您的网站。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学习资源和讨论。</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学习资源和讨论。</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，确定ASN关系，基于网络名称发现ASN，等等。</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – 有用的讨论论坛关于停止论坛垃圾邮件。</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – 有用的IPv4聚合工具。</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – 检查ASN连接的有用工具，以及关于ASN的各种其他信息。</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – 一个梦幻般和准确的服务，产生国家的签名。</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 显示有关ASN恶意软件感染率的报告。</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – 显示有关ASN僵尸网络感染率的报告。</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – 显示有关ASN僵尸网络感染率的报告。</li>
         </ul>';

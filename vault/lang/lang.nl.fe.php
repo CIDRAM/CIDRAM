@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.11.22).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_component'] = 'Bestanddeel';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $CIDRAM['lang']['field_delete_account'] = 'Account Verwijderen';
+$CIDRAM['lang']['field_delete_file'] = 'Verwijder';
+$CIDRAM['lang']['field_download_file'] = 'Download';
+$CIDRAM['lang']['field_edit_file'] = 'Bewerk';
+$CIDRAM['lang']['field_file'] = 'Bestand';
 $CIDRAM['lang']['field_filename'] = 'Bestandsnaam: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'Bestandsmap';
+$CIDRAM['lang']['field_filetype_info'] = '{EXT}-Bestand';
+$CIDRAM['lang']['field_filetype_unknown'] = 'Onbekend';
 $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
 $CIDRAM['lang']['field_latest_version'] = 'Laatste Versie';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opties';
 $CIDRAM['lang']['field_password'] = 'Wachtwoord';
 $CIDRAM['lang']['field_permissions'] = 'Machtigingen';
+$CIDRAM['lang']['field_reset'] = 'Resetten';
 $CIDRAM['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
 $CIDRAM['lang']['field_size'] = 'Totale Grootte: ';
 $CIDRAM['lang']['field_size_bytes'] = 'bytes';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Toestand';
 $CIDRAM['lang']['field_uninstall'] = 'Verwijderen';
 $CIDRAM['lang']['field_update'] = 'Bijwerken';
+$CIDRAM['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
 $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_config'] = 'Configuratie';
 $CIDRAM['lang']['link_documentation'] = 'Documentatie';
+$CIDRAM['lang']['link_file_manager'] = 'Bestandsbeheer';
 $CIDRAM['lang']['link_home'] = 'Startpagina';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_logs'] = 'Logbestanden';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetred
 $CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te bijwerken.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuratie succesvol gewijzigd.';
 $CIDRAM['lang']['response_error'] = 'Fout';
+$CIDRAM['lang']['response_file_deleted'] = 'Bestand succesvol verwijderd!';
+$CIDRAM['lang']['response_file_edited'] = 'Bestand succesvol gewijzigd!';
+$CIDRAM['lang']['response_file_uploaded'] = 'Bestand succesvol uploadet!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig wachtwoord!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina st
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM wordt gratis aangeboden, maar als u wilt doneren aan het project, kan u dit doen door te klikken op de knop doneren.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier IPs.';
+$CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde handtekeningen worden geblokkeerd.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.c
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende onderdelen van CIDRAM te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Bestandsbeheer';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Startpagina';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Inloggen';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Kwesties pagina voor CIDRAM (steun, hulp, ezv).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Discussieforum voor CIDRAM (steun, hulp, ezv).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin voor CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Een alternatieve download-spiegel voor CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Een verzameling van eenvoudige webmaster tools waarmee websites te beveiligen.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Bevat optionele range blokken die naar CIDRAM kunnen worden toegevoegd om de toegang van ongewenste landen tot uw website te blokkeren.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Bevat optionele range blokken die naar CIDRAM kunnen worden toegevoegd om de toegang van ongewenste landen tot uw website te blokkeren.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP leermiddelen en discussie.</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDRs van ASN, bepalen ASN relaties, ontdek ASN\'s op basis van netwerknamen, ezv.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Nuttig aggregatie tool voor IPv4 IPs.</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN\'s en ook voor diverse andere informatie over ASN\'s.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Een fantastische en accurate service voor het genereren van de handtekeningen voor landen.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
         </ul>';

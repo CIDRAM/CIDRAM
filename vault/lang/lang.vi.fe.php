@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.22).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,14 @@ $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
 $CIDRAM['lang']['field_component'] = 'Gói';
 $CIDRAM['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $CIDRAM['lang']['field_delete_account'] = 'Xóa tài khoản';
+$CIDRAM['lang']['field_delete_file'] = 'Xóa Bỏ';
+$CIDRAM['lang']['field_download_file'] = 'Tải Về';
+$CIDRAM['lang']['field_edit_file'] = 'Chỉnh Sửa';
+$CIDRAM['lang']['field_file'] = 'Tập Tin';
 $CIDRAM['lang']['field_filename'] = 'Tên tập tin: ';
+$CIDRAM['lang']['field_filetype_directory'] = 'Thư Mục';
+$CIDRAM['lang']['field_filetype_info'] = 'Tập Tin {EXT}';
+$CIDRAM['lang']['field_filetype_unknown'] = 'Không Xác Định';
 $CIDRAM['lang']['field_install'] = 'Cài Đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';
 $CIDRAM['lang']['field_latest_version'] = 'Phiên bản mới nhất';
@@ -57,6 +64,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Tùy Chọn';
 $CIDRAM['lang']['field_password'] = 'Mật Khẩu';
 $CIDRAM['lang']['field_permissions'] = 'Quyền';
+$CIDRAM['lang']['field_reset'] = 'Thiết Lập Lại';
 $CIDRAM['lang']['field_set_new_password'] = 'Đặt mật khẩu mới';
 $CIDRAM['lang']['field_size'] = 'Kích thước tổng: ';
 $CIDRAM['lang']['field_size_bytes'] = 'byte';
@@ -67,12 +75,14 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Tình Trạng';
 $CIDRAM['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
 $CIDRAM['lang']['field_update'] = 'Cập Nhật';
+$CIDRAM['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';
 $CIDRAM['lang']['link_config'] = 'Cấu Hình';
 $CIDRAM['lang']['link_documentation'] = 'Tài Liệu';
+$CIDRAM['lang']['link_file_manager'] = 'Quản Lý Tập Tin';
 $CIDRAM['lang']['link_home'] = 'Trang Chủ';
 $CIDRAM['lang']['link_ip_test'] = 'Kiểm Tra IP';
 $CIDRAM['lang']['link_logs'] = 'Bản Ghi';
@@ -92,6 +102,9 @@ $CIDRAM['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra tron
 $CIDRAM['lang']['response_component_update_error'] = 'Có lỗi xảy ra trong khi cố gắng để cập nhật các gói.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
 $CIDRAM['lang']['response_error'] = 'Lỗi';
+$CIDRAM['lang']['response_file_deleted'] = 'Tập tin xóa thành công!';
+$CIDRAM['lang']['response_file_edited'] = 'Tập tin sửa đổi thành công!';
+$CIDRAM['lang']['response_file_uploaded'] = 'Tập tin tải lên thành công!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Thất bại đăng nhập! Mật khẩu không hợp lệ!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Thất bại đăng nhập! Tên người dùng không tồn tại!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
@@ -119,6 +132,7 @@ $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoả
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
+$CIDRAM['lang']['tip_file_manager'] = 'Hello, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này).';
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $CIDRAM['lang']['tip_ip_test'] = 'Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn kiểm tra nếu địa chỉ IP bị chặn bằng các chữ ký hiện đang được cài đặt.';
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
@@ -127,6 +141,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/
 $CIDRAM['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Tài Khoản';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Cấu Hình';
+$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Quản Lý Tập Tin';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Trang Chủ';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';
@@ -137,8 +152,17 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Diễn đàn thảo luận cho CIDRAM (hỗ trợ, vv).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Plugin Wordpress cho CIDRAM.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Tải về gương thay thế cho CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info</a> – Chứa các danh sách chặn tùy chọn mà có thể được thêm vào CIDRAM để chặn bất kỳ quốc gia không mong muốn từ truy cập vào trang web của bạn.</li>
+            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Chứa các danh sách chặn tùy chọn mà có thể được thêm vào CIDRAM để chặn bất kỳ quốc gia không mong muốn từ truy cập vào trang web của bạn.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP tài nguyên học tập và thảo luận.</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Công cụ hữu ích cho kết hợp các IP IPv4.</li>
+            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Một dịch vụ tuyệt vời và chính xác để tạo ra chữ ký cho các nước.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
         </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.25).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -53,17 +53,19 @@ $CIDRAM['lang']['field_download_file'] = '下載';
 $CIDRAM['lang']['field_edit_file'] = '編輯';
 $CIDRAM['lang']['field_file'] = '文件';
 $CIDRAM['lang']['field_filename'] = '文件名：';
-$CIDRAM['lang']['field_filetype_directory'] = '目錄';
+$CIDRAM['lang']['field_filetype_directory'] = '文件夾';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}文件';
 $CIDRAM['lang']['field_filetype_unknown'] = '未知';
 $CIDRAM['lang']['field_install'] = '安裝';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';
 $CIDRAM['lang']['field_latest_version'] = '最新版本';
 $CIDRAM['lang']['field_log_in'] = '登錄';
+$CIDRAM['lang']['field_new_name'] = '新名稱：';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = '選項';
 $CIDRAM['lang']['field_password'] = '密碼';
 $CIDRAM['lang']['field_permissions'] = '權限';
+$CIDRAM['lang']['field_rename_file'] = '改名';
 $CIDRAM['lang']['field_reset'] = '重啟';
 $CIDRAM['lang']['field_set_new_password'] = '保存新密碼';
 $CIDRAM['lang']['field_size'] = '總大小：';
@@ -101,20 +103,26 @@ $CIDRAM['lang']['response_component_successfully_updated'] = '組件成功更新
 $CIDRAM['lang']['response_component_uninstall_error'] = '一個錯誤發生當嘗試卸載組件。';
 $CIDRAM['lang']['response_component_update_error'] = '一個錯誤發生當嘗試更新組件。';
 $CIDRAM['lang']['response_configuration_updated'] = '配置成功更新。';
+$CIDRAM['lang']['response_delete_error'] = '無法刪除！';
+$CIDRAM['lang']['response_directory_deleted'] = '文件夾成功刪除！';
+$CIDRAM['lang']['response_directory_renamed'] = '文件夾成功改名！';
 $CIDRAM['lang']['response_error'] = '錯誤';
 $CIDRAM['lang']['response_file_deleted'] = '文件成功刪除！';
 $CIDRAM['lang']['response_file_edited'] = '文件成功改性！';
+$CIDRAM['lang']['response_file_renamed'] = '文件成功改名！';
 $CIDRAM['lang']['response_file_uploaded'] = '文件成功上傳！';
 $CIDRAM['lang']['response_login_invalid_password'] = '登錄失敗！密碼無效！';
 $CIDRAM['lang']['response_login_invalid_username'] = '登錄失敗！用戶名不存在！';
 $CIDRAM['lang']['response_login_password_field_empty'] = '密碼輸入是空的！';
 $CIDRAM['lang']['response_login_username_field_empty'] = '用戶名輸入是空的！';
 $CIDRAM['lang']['response_no'] = '不是';
+$CIDRAM['lang']['response_rename_error'] = '無法改名！';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $CIDRAM['lang']['response_updates_not_installed'] = '組件不安裝！';
 $CIDRAM['lang']['response_updates_outdated'] = '過時！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '過時（請更新手動）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '無法確定。';
+$CIDRAM['lang']['response_upload_error'] = '無法上傳！';
 $CIDRAM['lang']['response_yes'] = '是';
 $CIDRAM['lang']['state_complete_access'] = '完全訪問';
 $CIDRAM['lang']['state_component_is_active'] = '組件是活性。';

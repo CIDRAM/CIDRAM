@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.11.25).
+ * This file: Indonesian language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,10 +60,12 @@ $CIDRAM['lang']['field_install'] = 'Instal';
 $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';
 $CIDRAM['lang']['field_latest_version'] = 'Versi Terbaru';
 $CIDRAM['lang']['field_log_in'] = 'Masuk';
+$CIDRAM['lang']['field_new_name'] = 'Nama baru:';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opsi';
 $CIDRAM['lang']['field_password'] = 'Kata Sandi';
 $CIDRAM['lang']['field_permissions'] = 'Izin';
+$CIDRAM['lang']['field_rename_file'] = 'Memodifikasi nama';
 $CIDRAM['lang']['field_reset'] = 'Mengatur Kembali';
 $CIDRAM['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
 $CIDRAM['lang']['field_size'] = 'Ukuran Total: ';
@@ -101,20 +103,26 @@ $CIDRAM['lang']['response_component_successfully_updated'] = 'Komponen berhasil 
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Terjadi kesalahan saat mencoba untuk menguninstal komponen ini.';
 $CIDRAM['lang']['response_component_update_error'] = 'Terjadi kesalahan saat mencoba untuk memperbarui komponen ini.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Konfigurasi berhasil diperbarui.';
+$CIDRAM['lang']['response_delete_error'] = 'Gagal menghapus!';
+$CIDRAM['lang']['response_directory_deleted'] = 'Direktori berhasil dihapus!';
+$CIDRAM['lang']['response_directory_renamed'] = 'Nama direktori berhasil dimodifikasi!';
 $CIDRAM['lang']['response_error'] = 'Kesalahan';
 $CIDRAM['lang']['response_file_deleted'] = 'File berhasil dihapus!';
 $CIDRAM['lang']['response_file_edited'] = 'File berhasil diubah!';
+$CIDRAM['lang']['response_file_renamed'] = 'Nama file berhasil dimodifikasi!';
 $CIDRAM['lang']['response_file_uploaded'] = 'File berhasil diupload!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Kegagalan masuk! Kata sandi salah!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama pengguna tidak ada!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
 $CIDRAM['lang']['response_no'] = 'Tidak';
+$CIDRAM['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Tidak yang terbaru!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (silahkan perbarui secara manual)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
+$CIDRAM['lang']['response_upload_error'] = 'Gagal mengupload!';
 $CIDRAM['lang']['response_yes'] = 'Ya';
 $CIDRAM['lang']['state_complete_access'] = 'Akses lengkap';
 $CIDRAM['lang']['state_component_is_active'] = 'Komponen ini aktif.';

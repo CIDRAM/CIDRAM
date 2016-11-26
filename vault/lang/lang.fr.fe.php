@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.11.25).
+ * This file: French language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,10 +60,12 @@ $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'Adresse IP';
 $CIDRAM['lang']['field_latest_version'] = 'Dernière Version';
 $CIDRAM['lang']['field_log_in'] = 'Connecter';
+$CIDRAM['lang']['field_new_name'] = 'Nouveau nom:';
 $CIDRAM['lang']['field_ok'] = 'D\'accord';
 $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Mot de Passe';
 $CIDRAM['lang']['field_permissions'] = 'Autorisations';
+$CIDRAM['lang']['field_rename_file'] = 'Renommer';
 $CIDRAM['lang']['field_reset'] = 'Réinitialiser';
 $CIDRAM['lang']['field_set_new_password'] = 'Définir nouveau mot de passe';
 $CIDRAM['lang']['field_size'] = 'Taille totale: ';
@@ -101,20 +103,26 @@ $CIDRAM['lang']['response_component_successfully_updated'] = 'Composant mise à 
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Une erreur est survenue lors de la désinstallation du composant.';
 $CIDRAM['lang']['response_component_update_error'] = 'Une erreur est survenue lors de la mise à jour du composant.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuration mis à jour avec succès.';
+$CIDRAM['lang']['response_delete_error'] = 'Échec du suppriment!';
+$CIDRAM['lang']['response_directory_deleted'] = 'Répertoire supprimé avec succès!';
+$CIDRAM['lang']['response_directory_renamed'] = 'Répertoire renommé avec succès!';
 $CIDRAM['lang']['response_error'] = 'Erreur';
 $CIDRAM['lang']['response_file_deleted'] = 'Fichier supprimé avec succès!';
 $CIDRAM['lang']['response_file_edited'] = 'Fichier modifié avec succès!';
+$CIDRAM['lang']['response_file_renamed'] = 'Fichier renommé avec succès!';
 $CIDRAM['lang']['response_file_uploaded'] = 'Fichier téléchargé avec succès!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Erreur de connexion! Mot de passe incorrect!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Erreur de connexion! Nom d\'utilisateur n\'existe pas!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Mot de passe entrée était vide!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nom d\'utilisateur entrée était vide!';
 $CIDRAM['lang']['response_no'] = 'Non';
+$CIDRAM['lang']['response_rename_error'] = 'Échec du renomment!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Déjà mise à jour.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Composant pas installé!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Dépassé!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vous plaît mettre à jour manuellement)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
+$CIDRAM['lang']['response_upload_error'] = 'Échec du téléchargement!';
 $CIDRAM['lang']['response_yes'] = 'Oui';
 $CIDRAM['lang']['state_complete_access'] = 'Accès complet';
 $CIDRAM['lang']['state_component_is_active'] = 'Le composant est actif.';

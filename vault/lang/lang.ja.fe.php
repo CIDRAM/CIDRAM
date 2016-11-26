@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.25).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,10 +60,12 @@ $CIDRAM['lang']['field_install'] = 'インストール';
 $CIDRAM['lang']['field_ip_address'] = 'IPアドレス';
 $CIDRAM['lang']['field_latest_version'] = '最新バージョン';
 $CIDRAM['lang']['field_log_in'] = 'ログイン';
+$CIDRAM['lang']['field_new_name'] = '新しい名前：';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'オプション';
 $CIDRAM['lang']['field_password'] = 'パスワード';
 $CIDRAM['lang']['field_permissions'] = 'パーミッション';
+$CIDRAM['lang']['field_rename_file'] = '名前を変更する';
 $CIDRAM['lang']['field_reset'] = 'リセット';
 $CIDRAM['lang']['field_set_new_password'] = '新しいパスワードを設定します';
 $CIDRAM['lang']['field_size'] = '合計サイズ： ';
@@ -101,20 +103,26 @@ $CIDRAM['lang']['response_component_successfully_updated'] = 'コンポーネン
 $CIDRAM['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
 $CIDRAM['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
 $CIDRAM['lang']['response_configuration_updated'] = 'コンフィギュレーションの更新が成功しました。';
+$CIDRAM['lang']['response_delete_error'] = '削除に失敗しました！';
+$CIDRAM['lang']['response_directory_deleted'] = 'ディレクトリが正常に削除されました！';
+$CIDRAM['lang']['response_directory_renamed'] = 'ディレクトリの名前が変更されました！';
 $CIDRAM['lang']['response_error'] = 'エラー';
 $CIDRAM['lang']['response_file_deleted'] = 'ファイルを削除が成功しました！';
 $CIDRAM['lang']['response_file_edited'] = 'ファイルは正常に変更されました！';
+$CIDRAM['lang']['response_file_renamed'] = 'ファイルの名前が変更されました！';
 $CIDRAM['lang']['response_file_uploaded'] = 'ファイルは正常にアップロードされました！';
 $CIDRAM['lang']['response_login_invalid_password'] = 'ログイン失敗！無効なパスワード！';
 $CIDRAM['lang']['response_login_invalid_username'] = 'ログイン失敗！ユーザー名は存在しません！';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
 $CIDRAM['lang']['response_no'] = 'いいえ';
+$CIDRAM['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $CIDRAM['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
 $CIDRAM['lang']['response_updates_outdated'] = '時代遅れです！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '時代遅れです（手動でアップデートしてください）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '決定することができません。';
+$CIDRAM['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $CIDRAM['lang']['response_yes'] = 'はい';
 $CIDRAM['lang']['state_complete_access'] = '完全なアクセス';
 $CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';

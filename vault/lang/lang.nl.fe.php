@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.11.25).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,10 +60,12 @@ $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
 $CIDRAM['lang']['field_latest_version'] = 'Laatste Versie';
 $CIDRAM['lang']['field_log_in'] = 'Inloggen';
+$CIDRAM['lang']['field_new_name'] = 'Nieuwe naam:';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opties';
 $CIDRAM['lang']['field_password'] = 'Wachtwoord';
 $CIDRAM['lang']['field_permissions'] = 'Machtigingen';
+$CIDRAM['lang']['field_rename_file'] = 'Naam veranderen';
 $CIDRAM['lang']['field_reset'] = 'Resetten';
 $CIDRAM['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
 $CIDRAM['lang']['field_size'] = 'Totale Grootte: ';
@@ -101,20 +103,26 @@ $CIDRAM['lang']['response_component_successfully_updated'] = 'Bestanddeel succes
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te verwijderen.';
 $CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te bijwerken.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuratie succesvol gewijzigd.';
+$CIDRAM['lang']['response_delete_error'] = 'Mislukt om te verwijderen!';
+$CIDRAM['lang']['response_directory_deleted'] = 'Bestandsmap succesvol verwijderd!';
+$CIDRAM['lang']['response_directory_renamed'] = 'De naam van de bestandsmap met succes veranderd!';
 $CIDRAM['lang']['response_error'] = 'Fout';
 $CIDRAM['lang']['response_file_deleted'] = 'Bestand succesvol verwijderd!';
 $CIDRAM['lang']['response_file_edited'] = 'Bestand succesvol gewijzigd!';
+$CIDRAM['lang']['response_file_renamed'] = 'De naam van de bestand met succes veranderd!';
 $CIDRAM['lang']['response_file_uploaded'] = 'Bestand succesvol uploadet!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig wachtwoord!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
 $CIDRAM['lang']['response_no'] = 'Nee';
+$CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Bestanddeel niet geïnstalleerd!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Verouderd!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmatig bijwerken)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
+$CIDRAM['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';
 $CIDRAM['lang']['state_component_is_active'] = 'Bestanddeel is actief.';

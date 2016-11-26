@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.25).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -60,10 +60,12 @@ $CIDRAM['lang']['field_install'] = 'Cài Đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';
 $CIDRAM['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $CIDRAM['lang']['field_log_in'] = 'Đăng Nhập';
+$CIDRAM['lang']['field_new_name'] = 'Tên mới:';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Tùy Chọn';
 $CIDRAM['lang']['field_password'] = 'Mật Khẩu';
 $CIDRAM['lang']['field_permissions'] = 'Quyền';
+$CIDRAM['lang']['field_rename_file'] = 'Đổi tên';
 $CIDRAM['lang']['field_reset'] = 'Thiết Lập Lại';
 $CIDRAM['lang']['field_set_new_password'] = 'Đặt mật khẩu mới';
 $CIDRAM['lang']['field_size'] = 'Kích thước tổng: ';
@@ -101,20 +103,26 @@ $CIDRAM['lang']['response_component_successfully_updated'] = 'Gói cập nhật 
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
 $CIDRAM['lang']['response_component_update_error'] = 'Có lỗi xảy ra trong khi cố gắng để cập nhật các gói.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
+$CIDRAM['lang']['response_delete_error'] = 'Không thể xóa!';
+$CIDRAM['lang']['response_directory_deleted'] = 'Thư mục xóa thành công!';
+$CIDRAM['lang']['response_directory_renamed'] = 'Đổi tên thư mục thành công!';
 $CIDRAM['lang']['response_error'] = 'Lỗi';
 $CIDRAM['lang']['response_file_deleted'] = 'Tập tin xóa thành công!';
 $CIDRAM['lang']['response_file_edited'] = 'Tập tin sửa đổi thành công!';
+$CIDRAM['lang']['response_file_renamed'] = 'Đổi tên tập tin thành công!';
 $CIDRAM['lang']['response_file_uploaded'] = 'Tập tin tải lên thành công!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Thất bại đăng nhập! Mật khẩu không hợp lệ!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Thất bại đăng nhập! Tên người dùng không tồn tại!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
 $CIDRAM['lang']['response_no'] = 'Không';
+$CIDRAM['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Hết hạn!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lòng cập nhật bằng tay)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
+$CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $CIDRAM['lang']['state_component_is_active'] = 'Gói này đang hoạt động.';

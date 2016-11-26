@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.25).
+ * This file: Front-end handler (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -327,13 +327,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
 
     die;
 
-}
-
-/** A simple passthru for the file manager icons. */
-if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
-    header('Content-Type: image/gif');
-    echo base64_decode($CIDRAM['favicon']);
-    die;
 }
 
 /** Accounts. */
@@ -1460,34 +1453,43 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     /** Upload a new file. */
-    if (
-        isset($_POST['do']) &&
-        $_POST['do'] === 'upload-file' &&
-        isset($_FILES['upload-file']['name']) &&
-        basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
-        $CIDRAM['FileManager-PathSecurityCheck']($_FILES['upload-file']['name']) &&
-        isset($_FILES['upload-file']['tmp_name']) &&
-        isset($_FILES['upload-file']['error']) &&
-        $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
-        is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
-        !is_link($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
-    ) {
+    if (isset($_POST['do']) && $_POST['do'] === 'upload-file' && isset($_FILES['upload-file']['name'])) {
+
+        /** Check whether safe. */
+        $CIDRAM['SafeToContinue'] = (
+            basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
+            $CIDRAM['FileManager-PathSecurityCheck']($_FILES['upload-file']['name']) &&
+            isset($_FILES['upload-file']['tmp_name']) &&
+            isset($_FILES['upload-file']['error']) &&
+            $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
+            is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
+            !is_link($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
+        );
 
         /** If the filename already exists, delete the old file before moving the new file. */
         if (
+            $CIDRAM['SafeToContinue'] &&
             file_exists($CIDRAM['Vault'] . $_FILES['upload-file']['name']) &&
             is_readable($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
         ) {
             if (is_dir($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
-                rmdir($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
+                if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
+                    rmdir($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
+                } else {
+                    $CIDRAM['SafeToContinue'] = false;
+                }
             } else {
                 unlink($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
             }
         }
 
         /** Move the newly uploaded file to the designated location. */
-        rename($_FILES['upload-file']['tmp_name'], $CIDRAM['Vault'] . $_FILES['upload-file']['name']);
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_uploaded'];
+        if ($CIDRAM['SafeToContinue']) {
+            rename($_FILES['upload-file']['tmp_name'], $CIDRAM['Vault'] . $_FILES['upload-file']['name']);
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_uploaded'];
+        } else {
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_upload_error'];
+        }
 
     }
 
@@ -1504,11 +1506,119 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         if ($_POST['do'] === 'delete-file') {
 
             if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
-                rmdir($CIDRAM['Vault'] . $_POST['filename']);
+                if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])) {
+                    rmdir($CIDRAM['Vault'] . $_POST['filename']);
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_directory_deleted'];
+                } else {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_delete_error'];
+                }
             } else {
                 unlink($CIDRAM['Vault'] . $_POST['filename']);
+
+                /** Remove empty directories. */
+                while (strrpos($_POST['filename'], '/') !== false || strrpos($_POST['filename'], "\\") !== false) {
+                    $CIDRAM['Separator'] = (strrpos($_POST['filename'], '/') !== false) ? '/' : "\\";
+                    $_POST['filename'] = substr($_POST['filename'], 0, strrpos($_POST['filename'], $CIDRAM['Separator']));
+                    if (
+                        is_dir($CIDRAM['Vault'] . $_POST['filename']) &&
+                        $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])
+                    ) {
+                        rmdir($CIDRAM['Vault'] . $_POST['filename']);
+                    } else {
+                        break;
+                    }
+                }
+
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_deleted'];
             }
-            $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_deleted'];
+
+        /** Rename a file. */
+        } elseif ($_POST['do'] === 'rename-file' && isset($_POST['filename'])) {
+
+            if (isset($_POST['filename_new'])) {
+
+                /** Check whether safe. */
+                $CIDRAM['SafeToContinue'] = (
+                    $CIDRAM['FileManager-PathSecurityCheck']($_POST['filename']) &&
+                    $CIDRAM['FileManager-PathSecurityCheck']($_POST['filename_new'])
+                );
+
+                /** If the destination already exists, delete it before renaming the new file. */
+                if (
+                    $CIDRAM['SafeToContinue'] &&
+                    file_exists($CIDRAM['Vault'] . $_POST['filename_new']) &&
+                    is_readable($CIDRAM['Vault'] . $_POST['filename_new'])
+                ) {
+                    if (is_dir($CIDRAM['Vault'] . $_POST['filename_new'])) {
+                        if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new'])) {
+                            rmdir($CIDRAM['Vault'] . $_POST['filename_new']);
+                        } else {
+                            $CIDRAM['SafeToContinue'] = false;
+                        }
+                    } else {
+                        unlink($CIDRAM['Vault'] . $_POST['filename_new']);
+                    }
+                }
+
+                /** Rename the file. */
+                if ($CIDRAM['SafeToContinue']) {
+
+                    $CIDRAM['ThisName'] = $_POST['filename_new'];
+                    $CIDRAM['ThisPath'] = $CIDRAM['Vault'];
+
+                    /** Add parent directories. */
+                    while (strpos($CIDRAM['ThisName'], '/') !== false || strpos($CIDRAM['ThisName'], "\\") !== false) {
+                        $CIDRAM['Separator'] = (strpos($CIDRAM['ThisName'], '/') !== false) ? '/' : "\\";
+                        $CIDRAM['ThisDir'] = substr($CIDRAM['ThisName'], 0, strpos($CIDRAM['ThisName'], $CIDRAM['Separator']));
+                        $CIDRAM['ThisPath'] .= $CIDRAM['ThisDir'] . '/';
+                        $CIDRAM['ThisName'] = substr($CIDRAM['ThisName'], strlen($CIDRAM['ThisDir']) + 1);
+                        if (!file_exists($CIDRAM['ThisPath']) || !is_dir($CIDRAM['ThisPath'])) {
+                            mkdir($CIDRAM['ThisPath']);
+                        }
+                    }
+
+                    if (rename($CIDRAM['Vault'] . $_POST['filename'], $CIDRAM['Vault'] . $_POST['filename_new'])) {
+
+                        /** Remove empty directories. */
+                        while (strrpos($_POST['filename'], '/') !== false || strrpos($_POST['filename'], "\\") !== false) {
+                            $CIDRAM['Separator'] = (strrpos($_POST['filename'], '/') !== false) ? '/' : "\\";
+                            $_POST['filename'] = substr($_POST['filename'], 0, strrpos($_POST['filename'], $CIDRAM['Separator']));
+                            if (
+                                is_dir($CIDRAM['Vault'] . $_POST['filename']) &&
+                                $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])
+                            ) {
+                                rmdir($CIDRAM['Vault'] . $_POST['filename']);
+                            } else {
+                                break;
+                            }
+                        }
+
+                        $CIDRAM['FE']['state_msg'] = (is_dir($CIDRAM['Vault'] . $_POST['filename_new'])) ?
+                            $CIDRAM['lang']['response_directory_renamed'] : $CIDRAM['lang']['response_file_renamed'];
+
+                    }
+
+                } elseif (!$CIDRAM['FE']['state_msg']) {
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_rename_error'];
+                }
+
+            } else {
+
+                $CIDRAM['FE']['FE_Title'] .= ' – ' . $CIDRAM['lang']['field_rename_file'] . ' – ' . $_POST['filename'];
+                $CIDRAM['FE']['filename'] = $_POST['filename'];
+
+                /** Parse output. */
+                $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+                    $CIDRAM['lang'] + $CIDRAM['FE'],
+                    $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files_rename.html')
+                );
+
+                /** Send output. */
+                echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+                die;
+
+            }
 
         /** Edit a file. */
         } elseif ($_POST['do'] === 'edit-file') {
@@ -1576,12 +1686,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
-        $ThisFile['ThisOptions'] = '<option value="delete-file">' . $CIDRAM['lang']['field_delete_file'] . '</option>';
+        $ThisFile['ThisOptions'] = '';
+        if (!$ThisFile['Directory'] || $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
+            $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $CIDRAM['lang']['field_delete_file'] . '</option>';
+            $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $CIDRAM['lang']['field_rename_file'] . '</option>';
+        }
         if ($ThisFile['CanEdit']) {
             $ThisFile['ThisOptions'] .= '<option value="edit-file">' . $CIDRAM['lang']['field_edit_file'] . '</option>';
         }
         if (!$ThisFile['Directory']) {
             $ThisFile['ThisOptions'] .= '<option value="download-file">' . $CIDRAM['lang']['field_download_file'] . '</option>';
+        }
+        if ($ThisFile['ThisOptions']) {
+            $ThisFile['ThisOptions'] =
+                '<select name="do">' . $ThisFile['ThisOptions'] . '</select>' .
+                '<input class="half" type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" />';
         }
         $CIDRAM['FE']['FilesData'] .= $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['FE'] + $ThisFile, $CIDRAM['FE']['FilesRow']

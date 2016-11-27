@@ -109,6 +109,9 @@ Bestand | Beschrijving
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_config_row.html | Een HTML sjabloon voor de frontend configuratie pagina.
+/vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_files_edit.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_files_row.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.
 /vault/fe_assets/_ip_test_row.html | Een HTML sjabloon voor de IP test pagina.
@@ -176,6 +179,7 @@ Bestand | Beschrijving
 /vault/frontend.php | Frontend-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
+/vault/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke handtekening secties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ipv4.dat | IPv4 handtekeningen bestand.
@@ -248,6 +252,9 @@ Algemene configuratie voor CIDRAM.
 
 "disable_frontend"
 - Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].
+
+"max_login_attempts"
+- Maximum aantal inlogpogingen (frontend). Standaard = 5.
 
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
@@ -532,4 +539,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 21 November 2016 (2016.11.21).
+Laatste Bijgewerkt: 28 November 2016 (2016.11.28).

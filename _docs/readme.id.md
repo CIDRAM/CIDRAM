@@ -109,6 +109,9 @@ Data | Deskripsi
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_files.html | Template HTML untuk file manager.
+/vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
+/vault/fe_assets/_files_row.html | Template HTML untuk file manager.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
 /vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_ip_test_row.html | Template HTML untuk halaman test IP.
@@ -176,6 +179,7 @@ Data | Deskripsi
 /vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/hashes.dat | Berisi daftar hash diterima (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
+/vault/icons.php | Modul ikon (digunakan oleh file manager bagian depan).
 /vault/ignore.dat | File abaikan (digunakan untuk menentukan bagian tanda tangan CIDRAM harus mengabaikan).
 /vault/ipbypass.dat | Berisi daftar bypass IP (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
 /vault/ipv4.dat | File tanda tangan IPv4.
@@ -248,6 +252,9 @@ Konfigurasi umum dari CIDRAM.
 
 "disable_frontend"
 - Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default].
+
+"max_login_attempts"
+- Jumlah maksimum upaya untuk memasukkan (bagian depan). Default = 5.
 
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
@@ -532,4 +539,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 21 November 2016 (2016.11.21).
+Terakhir Diperbarui: 28 November 2016 (2016.11.28).

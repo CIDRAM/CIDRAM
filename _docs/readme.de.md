@@ -111,6 +111,9 @@ Datei | Beschreibung
 /vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
 /vault/fe_assets/_config_row.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
+/vault/fe_assets/_files.html | Eine HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_edit.html | Eine HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_row.html | Eine HTML-Template für den Dateimanager.
 /vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
 /vault/fe_assets/_ip_test.html | Eine HTML-Template für das IP-Test-Seite.
 /vault/fe_assets/_ip_test_row.html | Eine HTML-Template für das IP-Test-Seite.
@@ -178,6 +181,7 @@ Datei | Beschreibung
 /vault/frontend.php | Front-End-Handler.
 /vault/functions.php | Funktionen-Datei.
 /vault/hashes.dat | Enthält eine Liste der akzeptierten Hashes (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
+/vault/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
 /vault/ignore.dat | Ignoriert Datei (zu spezifizieren welche Signatur-Sektionen CIDRAM sollte ignorieren es ist benutzt).
 /vault/ipbypass.dat | Enthält eine Liste von IP-Bypässe (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
 /vault/ipv4.dat | IPv4 Signaturdatei.
@@ -251,6 +255,9 @@ Generelle Konfiguration von CIDRAM.
 "disable_frontend"
 - Front-End-Access deaktivieren? Front-End-Access kann machen CIDRAM einfacher zu handhaben, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, CIDRAM über die Back-End-Access zu verwalten, aber Front-End-Access vorgesehen ist, für wenn es nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].
 
+"max_login_attempts"
+- Maximale Anzahl der Versucht zu einloggen (Front-End). Standardeinstellung = 5.
+
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -294,7 +301,7 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 - Beachten: Der Wert für "lockip" wird ignoriert, wenn "lockuser" false ist, aufgrund der Tatsache dass der Mechanismus zum Erinnern "Benutzer" unterscheidet sich je nach diesem Wert.
 
 "lockuser"
-- Gibt an ob der erfolgreiche Abschluss eines reCAPTCHA-Instanz an bestimmte Benutzer gebunden werden sollen. False = Der erfolgreiche Abschluss eines reCAPTCHA-Instanz @@FROM HERE@@ will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA-Instanz; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA-Instanz will only grant access to the user completing the reCAPTCHA-Instanz; Cookies and hashes are used to remember the user; An IP whitelist is not used (Standardeinstellung). @TranslateMe@
+- Gibt an ob der erfolgreiche Abschluss eines reCAPTCHA-Instanz an bestimmte Benutzer gebunden werden sollen. False = Der erfolgreiche Abschluss eines reCAPTCHA-Instanz, auf alle Anfragen die von derselben IP stammen die von dem Benutzer die die reCAPTCHA-Instanz ausfüllt wird Zugriff gewährt; Cookies und Hashes werden nicht verwendet; Stattdessen wird eine IP-Whitelist verwendet. True = Der erfolgreiche Abschluss eines reCAPTCHA-Instanz nur dem Benutzer dass die reCAPTCHA-Instanz ausfüllt wird Zugriff gewährt; Cookies und Hashes werden verwendet, um den Benutzer zu merken; Eine IP-Whitelist wird nicht verwendet (Standardeinstellung).
 
 "sitekey"
 - Dieser Wert sollte dem "site key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet.
@@ -534,4 +541,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 21. November 2016 (2016.11.21).
+Zuletzt aktualisiert: 28. November 2016 (2016.11.28).

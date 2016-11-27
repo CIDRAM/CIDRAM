@@ -109,6 +109,9 @@ File | Descrizione
 /vault/fe_assets/_accounts_row.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_config.html | Un modello HTML per il front-end pagina di configurazione.
 /vault/fe_assets/_config_row.html | Un modello HTML per il front-end pagina di configurazione.
+/vault/fe_assets/_files.html | Un modello HTML per il file manager.
+/vault/fe_assets/_files_edit.html | Un modello HTML per il file manager.
+/vault/fe_assets/_files_row.html | Un modello HTML per il file manager.
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
 /vault/fe_assets/_ip_test.html | Un modello HTML per la pagina per il test IP.
 /vault/fe_assets/_ip_test_row.html | Un modello HTML per la pagina per il test IP.
@@ -176,6 +179,7 @@ File | Descrizione
 /vault/frontend.php | Gestore del front-end.
 /vault/functions.php | File di funzioni.
 /vault/hashes.dat | Contiene una lista di hash accettati (pertinente alla funzione di reCAPTCHA; solo generato se la funzione di reCAPTCHA è abilitato).
+/vault/icons.php | Gestore dell'icone (utilizzata dal file manager del front-end).
 /vault/ignore.dat | File ignorati (utilizzato per specificare quali sezioni firma CIDRAM dovrebbe ignorare).
 /vault/ipbypass.dat | Contiene un elenco di bypass IP (pertinente alla funzione di reCAPTCHA; solo generato se la funzione di reCAPTCHA è abilitato).
 /vault/ipv4.dat | File di firme per IPv4.
@@ -248,6 +252,9 @@ Generale configurazione per CIDRAM.
 
 "disable_frontend"
 - Disabilita l'accesso front-end? L'accesso front-end può rendere CIDRAM più gestibile, ma può anche essere un potenziale rischio per la sicurezza. Si consiglia di gestire CIDRAM attraverso il back-end, quando possibile, ma l'accesso front-end è previsto per quando non è possibile. Mantenerlo disabilitato tranne se hai bisogno. False = Abilita l'accesso front-end; True = Disabilita l'accesso front-end [Predefinito].
+
+"max_login_attempts"
+- Numero massimo di tentativi di accesso (front-end). Predefinito = 5.
 
 ####"signatures" (Categoria)
 Configurazione per firme.
@@ -532,4 +539,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 21 Novembre 2016 (2016.11.21).
+Ultimo Aggiornamento: 28 Novembre 2016 (2016.11.28).

@@ -106,65 +106,68 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
 /vault/fe_assets/ | 前端资产。
 /vault/fe_assets/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/fe_assets/_accounts.html | HTML模板为前端账户页面。
-/vault/fe_assets/_accounts_row.html | HTML模板为前端账户页面。
-/vault/fe_assets/_config.html | HTML模板为前端配置页面。
-/vault/fe_assets/_config_row.html | HTML模板为前端配置页面。
-/vault/fe_assets/_home.html | HTML模板为前端主页。
-/vault/fe_assets/_ip_test.html | HTML模板为IP测试页面。
-/vault/fe_assets/_ip_test_row.html | HTML模板为IP测试页面。
-/vault/fe_assets/_login.html | HTML模板为前端登录。
-/vault/fe_assets/_logs.html | HTML模板为前端日志页面。
-/vault/fe_assets/_nav_complete_access.html | HTML模板为前端导航链接，为那些与完全访问。
-/vault/fe_assets/_nav_logs_access_only.html | HTML模板为前端导航链接，为那些与仅日志访问。
-/vault/fe_assets/_updates.html | HTML模板为前端更新页面。
-/vault/fe_assets/_updates_row.html | HTML模板为前端更新页面。
-/vault/fe_assets/frontend.css | CSS样式表为前端。
-/vault/fe_assets/frontend.dat | 数据库为前端（包含账户信息，会话信息，和缓存；只生成如果前端是启用和使用）。
-/vault/fe_assets/frontend.html | 主要的HTML模板文件为前端。
+/vault/fe_assets/_accounts.html | 前端账户页面的HTML模板。
+/vault/fe_assets/_accounts_row.html | 前端账户页面的HTML模板。
+/vault/fe_assets/_config.html | 前端配置页面的HTML模板。
+/vault/fe_assets/_config_row.html | 前端配置页面的HTML模板。
+/vault/fe_assets/_files.html | 文件管理器的HTML模板。
+/vault/fe_assets/_files_edit.html | 文件管理器的HTML模板。
+/vault/fe_assets/_files_row.html | 文件管理器的HTML模板。
+/vault/fe_assets/_home.html | 端主页的HTML模板。
+/vault/fe_assets/_ip_test.html | IP测试页面的HTML模板。
+/vault/fe_assets/_ip_test_row.html | IP测试页面的HTML模板。
+/vault/fe_assets/_login.html | 前端登录的HTML模板。
+/vault/fe_assets/_logs.html | 前端日志页面的HTML模板。
+/vault/fe_assets/_nav_complete_access.html | 前端导航链接的HTML模板，由那些与完全访问使用。
+/vault/fe_assets/_nav_logs_access_only.html | 前端导航链接的HTML模板，由那些与仅日志访问使用。
+/vault/fe_assets/_updates.html | 前端更新页面的HTML模板。
+/vault/fe_assets/_updates_row.html | 前端更新页面的HTML模板。
+/vault/fe_assets/frontend.css | 前端CSS样式表。
+/vault/fe_assets/frontend.dat | 前端数据库（包含账户信息，会话信息，和缓存；只生成如果前端是启用和使用）。
+/vault/fe_assets/frontend.html | 前端的主HTML模板文件。
 /vault/lang/ | 包含CIDRAM语言数据。
 /vault/lang/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/lang/lang.ar.cli.php | 阿拉伯文语言数据为CLI。
-/vault/lang/lang.ar.fe.php | 阿拉伯文语言数据为前端。
+/vault/lang/lang.ar.cli.php | 阿拉伯文CLI语言数据。
+/vault/lang/lang.ar.fe.php | 阿拉伯文前端语言数据。
 /vault/lang/lang.ar.php | 阿拉伯文语言数据。
-/vault/lang/lang.de.cli.php | 德文语言数据为CLI。
-/vault/lang/lang.de.fe.php | 德文语言数据为前端。
+/vault/lang/lang.de.cli.php | 德文CLI语言数据。
+/vault/lang/lang.de.fe.php | 德文前端语言数据。
 /vault/lang/lang.de.php | 德文语言数据。
-/vault/lang/lang.en.cli.php | 英文语言数据为CLI。
-/vault/lang/lang.en.fe.php | 英文语言数据为前端。
+/vault/lang/lang.en.cli.php | 英文CLI语言数据。
+/vault/lang/lang.en.fe.php | 英文前端语言数据。
 /vault/lang/lang.en.php | 英文语言数据。
-/vault/lang/lang.es.cli.php | 西班牙文语言数据为CLI。
-/vault/lang/lang.es.fe.php | 西班牙文语言数据为前端。
+/vault/lang/lang.es.cli.php | 西班牙文CLI语言数据。
+/vault/lang/lang.es.fe.php | 西班牙文前端语言数据。
 /vault/lang/lang.es.php | 西班牙文语言数据。
-/vault/lang/lang.fr.cli.php | 法文语言数据为CLI。
-/vault/lang/lang.fr.fe.php | 法文语言数据为前端。
+/vault/lang/lang.fr.cli.php | 法文CLI语言数据。
+/vault/lang/lang.fr.fe.php | 法文前端语言数据。
 /vault/lang/lang.fr.php | 法文语言数据。
-/vault/lang/lang.id.cli.php | 印度尼西亚文语言数据为CLI。
-/vault/lang/lang.id.fe.php | 印度尼西亚文语言数据为前端。
+/vault/lang/lang.id.cli.php | 印度尼西亚文CLI语言数据。
+/vault/lang/lang.id.fe.php | 印度尼西亚文前端语言数据。
 /vault/lang/lang.id.php | 印度尼西亚文语言数据。
-/vault/lang/lang.it.cli.php | 意大利文语言数据为CLI。
-/vault/lang/lang.it.fe.php | 意大利文语言数据为前端。
+/vault/lang/lang.it.cli.php | 意大利文CLI语言数据。
+/vault/lang/lang.it.fe.php | 意大利文前端语言数据。
 /vault/lang/lang.it.php | 意大利文语言数据。
-/vault/lang/lang.ja.cli.php | 日文语言数据为CLI。
-/vault/lang/lang.ja.fe.php | 日文语言数据为前端。
+/vault/lang/lang.ja.cli.php | 日文CLI语言数据。
+/vault/lang/lang.ja.fe.php | 日文前端语言数据。
 /vault/lang/lang.ja.php | 日文语言数据。
-/vault/lang/lang.nl.cli.php | 荷兰文语言数据为CLI。
-/vault/lang/lang.nl.fe.php | 荷兰文语言数据为前端。
+/vault/lang/lang.nl.cli.php | 荷兰文CLI语言数据。
+/vault/lang/lang.nl.fe.php | 荷兰文前端语言数据。
 /vault/lang/lang.nl.php | 荷兰文语言数据。
-/vault/lang/lang.pt.cli.php | 葡萄牙文语言数据为CLI。
-/vault/lang/lang.pt.fe.php | 葡萄牙文语言数据为前端。
+/vault/lang/lang.pt.cli.php | 葡萄牙文CLI语言数据。
+/vault/lang/lang.pt.fe.php | 葡萄牙文前端语言数据。
 /vault/lang/lang.pt.php | 葡萄牙文语言数据。
-/vault/lang/lang.ru.cli.php | 俄文语言数据为CLI。
-/vault/lang/lang.ru.fe.php | 俄文语言数据为前端。
+/vault/lang/lang.ru.cli.php | 俄文CLI语言数据。
+/vault/lang/lang.ru.fe.php | 俄文前端语言数据。
 /vault/lang/lang.ru.php | 俄文语言数据。
-/vault/lang/lang.vi.cli.php | 越南文语言数据为CLI。
-/vault/lang/lang.vi.fe.php | 越南文语言数据为前端。
+/vault/lang/lang.vi.cli.php | 越南文CLI语言数据。
+/vault/lang/lang.vi.fe.php | 越南文前端语言数据。
 /vault/lang/lang.vi.php | 越南文语言数据。
-/vault/lang/lang.zh-tw.cli.php | 中文（传统）语言数据为CLI。
-/vault/lang/lang.zh-tw.fe.php | 中文（传统）语言数据为前端。
+/vault/lang/lang.zh-tw.cli.php | 中文（传统）CLI语言数据。
+/vault/lang/lang.zh-tw.fe.php | 中文（传统）前端语言数据。
 /vault/lang/lang.zh-tw.php | 中文（传统）语言数据。
-/vault/lang/lang.zh.cli.php | 中文（简体）语言数据为CLI。
-/vault/lang/lang.zh.fe.php | 中文（简体）语言数据为前端。
+/vault/lang/lang.zh.cli.php | 中文（简体）CLI语言数据。
+/vault/lang/lang.zh.fe.php | 中文（简体）前端语言数据。
 /vault/lang/lang.zh.php | 中文（简体）语言数据。
 /vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/cache.dat | 缓存数据。
@@ -177,6 +180,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/frontend.php | 前端处理文件。
 /vault/functions.php | 功能处理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相关的reCAPTCHA功能；只有生成如果reCAPTCHA功能被启用）。
+/vault/icons.php | 图标处理文件（由前端文件管理器使用）。
 /vault/ignore.dat | 忽略文件（用于指定其中章节签名CIDRAM应该忽略）。
 /vault/ipbypass.dat | 包含列表IP旁路（相关的reCAPTCHA功能；只有生成如果reCAPTCHA功能被启用）。
 /vault/ipv4.dat | IPv4签名文件。
@@ -249,6 +253,9 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 “disable_frontend”
 - 关闭前端访问吗？前端访问可以使CIDRAM更易于管理，但也可能是潜在的安全风险。建议管理CIDRAM通过后端只要有可能，但前端访问提供当不可能。保持关闭除非您需要它。 False = 激活前端访问； True = 关闭前端访问【标准】。
+
+“max_login_attempts”
+- 最大登录尝试次数（前端）。 标准 = 5。
 
 ####“signatures” （类别）
 签名配置。
@@ -533,4 +540,4 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2016年11月21日。
+最后更新：2016年11月28日。

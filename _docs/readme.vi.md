@@ -109,6 +109,9 @@ Tập tin | Chi tiết
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
+/vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
+/vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
+/vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
 /vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
 /vault/fe_assets/_ip_test_row.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
@@ -176,6 +179,7 @@ Tập tin | Chi tiết
 /vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/hashes.dat | Danh sách các giá trị băm được chấp nhận (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
+/vault/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
 /vault/ignore.dat | Tập tin các bỏ qua (được sử dụng để xác định mà phần chữ ký CIDRAM nên bỏ qua).
 /vault/ipbypass.dat | Danh sách các đường tránh IP (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
 /vault/ipv4.dat | Tập tin chữ ký IPv4.
@@ -248,6 +252,9 @@ Cấu hình chung cho CIDRAM.
 
 "disable_frontend"
 - Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho CIDRAM dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý CIDRAM từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định].
+
+"max_login_attempts"
+- Số lượng tối đa cố gắng đăng nhập (front-end). Mặc định = 5.
 
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -532,4 +539,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 21 Tháng Mười Một 2016 (2016.11.21).
+Lần cuối cập nhật: 28 Tháng Mười Một 2016 (2016.11.28).

@@ -109,6 +109,9 @@ Arquivo | Descrição
 /vault/fe_assets/_accounts_row.html | Um modelo HTML para o front-end página de contas.
 /vault/fe_assets/_config.html | Um modelo HTML para o front-end página de configuração.
 /vault/fe_assets/_config_row.html | Um modelo HTML para o front-end página de configuração.
+/vault/fe_assets/_files.html | Um modelo HTML para o gerenciador de arquivos.
+/vault/fe_assets/_files_edit.html | Um modelo HTML para o gerenciador de arquivos.
+/vault/fe_assets/_files_row.html | Um modelo HTML para o gerenciador de arquivos.
 /vault/fe_assets/_home.html | Um modelo HTML para o front-end página principal.
 /vault/fe_assets/_ip_test.html | Um modelo HTML para a página para testar IPs.
 /vault/fe_assets/_ip_test_row.html | An HTML template for the IP test page.
@@ -176,6 +179,7 @@ Arquivo | Descrição
 /vault/frontend.php | Módulo do front-end.
 /vault/functions.php | Arquivo de funções.
 /vault/hashes.dat | Contém uma lista de hashes aceitos (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
+/vault/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
 /vault/ignore.dat | Arquivo de ignorados (usado para especificar quais seções de assinaturas CIDRAM deve ignorar).
 /vault/ipbypass.dat | Contém uma lista de bypasses IP (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
 /vault/ipv4.dat | Arquivo de assinaturas para IPv4.
@@ -248,6 +252,9 @@ Configuração geral por CIDRAM.
 
 "disable_frontend"
 - Desativar o acesso front-end? Acesso front-end pode fazer CIDRAM mais manejável, mas também pode ser um risco de segurança potencial, também. É recomendado para gerenciar CIDRAM através do back-end, sempre que possível, mas o acesso front-end é proporcionada para quando não é possível. Mantê-lo desativado, a menos que você precisar. False = Ativar o acesso front-end; True = Desativar o acesso front-end [Padrão].
+
+"max_login_attempts"
+- Número máximo de tentativas de login (front-end). Padrão = 5.
 
 ####"signatures" (Categoria)
 Configuração por assinaturas.
@@ -532,4 +539,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 21 Novembro 2016 (2016.11.21).
+Última Atualização: 28 Novembro 2016 (2016.11.28).

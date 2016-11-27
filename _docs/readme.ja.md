@@ -109,6 +109,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
 /vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_config_row.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
+/vault/fe_assets/_files.html | ファイル・マネージャのHTMLテンプレート。
+/vault/fe_assets/_files_edit.html | ファイル・マネージャのHTMLテンプレート。
+/vault/fe_assets/_files_row.html | ファイル・マネージャのHTMLテンプレート。
 /vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
 /vault/fe_assets/_ip_test.html | IPテストページのHTMLテンプレート。
 /vault/fe_assets/_ip_test_row.html | IPテストページのHTMLテンプレート。
@@ -176,6 +179,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/frontend.php | フロントエンド・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
+/vault/icons.php | アイコン・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
 /vault/ignore.dat | 無視ファイル（これは署名セクション無視します）。
 /vault/ipbypass.dat | IPバイパスの一覧（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/ipv4.dat | IPv4のシグネチャファイル。
@@ -249,6 +253,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 "disable_frontend" （ディスエイブル・フロントエンド）
 - フロントエンドへのアクセスを無効にするか？フロントエンドへのアクセスは、CIDRAMをより管理しやすくすることができます。前記、それはまた、潜在的なセキュリティリスクになる可能性があります。バックエンドを経由して管理することをお勧めします、しかし、これが不可能な場合、フロントエンドへのアクセスが提供され。あなたがそれを必要としない限り、それを無効にします。 `false`（偽） = フロントエンドへのアクセスを有効にします； `true`（真） = フロントエンドへのアクセスを無効にします「Default（デフォルルト）」。
+
+"max_login_attempts" （マクス・ログイン・アテンプト）
+- ログイン試行の最大回数（フロントエンド）。 Default（デフォルト設定） = ５。
 
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
@@ -533,4 +540,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年11月21日。
+最終アップデート： 2016年11月28日。

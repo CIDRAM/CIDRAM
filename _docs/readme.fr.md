@@ -109,6 +109,9 @@ Fichier | Description
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_config_row.html | Un modèle HTML pour la page de configuration de l'accès frontal.
+/vault/fe_assets/_files.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_files_edit.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_files_row.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_ip_test.html | Un modèle HTML pour la page pour tester IPs.
 /vault/fe_assets/_ip_test_row.html | Un modèle HTML pour la page pour tester IPs.
@@ -176,6 +179,7 @@ Fichier | Description
 /vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/hashes.dat | Contient une liste de hashes acceptées (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
+/vault/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/ignore.dat | Fichier de ignores (utilisé pour spécifier la signature sections CIDRAM devrait ignorer).
 /vault/ipbypass.dat | Contient une liste de contournements IP (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
 /vault/ipv4.dat | Fichier de signatures pour IPv4.
@@ -248,6 +252,9 @@ Configuration générale pour CIDRAM.
 
 "disable_frontend"
 - Désactiver l'accès frontal? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal; True = Désactiver l'accès frontal [Défaut].
+
+"max_login_attempts"
+- Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5.
 
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
@@ -532,4 +539,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 21 Novembre 2016 (2016.11.21).
+Dernière Mise à Jour: 28 Novembre 2016 (2016.11.28).

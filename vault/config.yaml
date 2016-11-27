@@ -52,6 +52,9 @@ Config Defaults:
   disable_frontend:
    type: bool
    default: true
+  max_login_attempts:
+   type: int
+   default: 5
  signatures:
   ipv4:
    type: string

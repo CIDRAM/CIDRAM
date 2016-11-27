@@ -109,6 +109,9 @@ Archivo | Descripción
 /vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_config.html | Un archivo HTML para el front-end página de configuración.
 /vault/fe_assets/_config_row.html | Un archivo HTML para el front-end página de configuración.
+/vault/fe_assets/_files.html | Un archivo HTML para el administración de archivos.
+/vault/fe_assets/_files_edit.html | Un archivo HTML para el administración de archivos.
+/vault/fe_assets/_files_row.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_home.html | Un archivo HTML para el front-end página principal.
 /vault/fe_assets/_ip_test.html | Un archivo HTML para la página para pruebas de IPs.
 /vault/fe_assets/_ip_test_row.html | Un archivo HTML para la página para pruebas de IPs.
@@ -176,6 +179,7 @@ Archivo | Descripción
 /vault/frontend.php | Módulo del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/hashes.dat | Contiene una lista de hashes aceptadas (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
+/vault/icons.php | Archivo de iconos (utilizado por el administración de archivos del front-end).
 /vault/ignore.dat | Ignorar archivo (se utiliza para especificar qué secciones de firmas que CIDRAM debe ignorar).
 /vault/ipbypass.dat | Contiene una lista de bypasses IP (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
 /vault/ipv4.dat | Archivo de firmas por IPv4.
@@ -248,6 +252,9 @@ General configuración para CIDRAM.
 
 "disable_frontend"
 - Desactivar el acceso front-end? El acceso front-end puede hacer CIDRAM más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar CIDRAM a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].
+
+"max_login_attempts"
+- Número máximo de intentos de login (front-end). Predefinido = 5.
 
 ####"signatures" (Categoría)
 Configuración de firmas.
@@ -532,4 +539,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 21 Noviembre 2016 (2016.11.21).
+Última Actualización: 28 Noviembre 2016 (2016.11.28).

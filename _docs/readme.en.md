@@ -109,6 +109,9 @@ File | Description
 /vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_config.html | An HTML template for the front-end configuration page.
 /vault/fe_assets/_config_row.html | An HTML template for the front-end configuration page.
+/vault/fe_assets/_files.html | An HTML template for the file manager.
+/vault/fe_assets/_files_edit.html | An HTML template for the file manager.
+/vault/fe_assets/_files_row.html | An HTML template for the file manager.
 /vault/fe_assets/_home.html | An HTML template for the front-end homepage.
 /vault/fe_assets/_ip_test.html | An HTML template for the IP test page.
 /vault/fe_assets/_ip_test_row.html | An HTML template for the IP test page.
@@ -176,6 +179,7 @@ File | Description
 /vault/frontend.php | Front-end handler.
 /vault/functions.php | Functions file (essential).
 /vault/hashes.dat | Contains a list of accepted hashes (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
+/vault/icons.php | Icons handler (used by the front-end file manager).
 /vault/ignore.dat | Ignores file (used to specify which signature sections CIDRAM should ignore).
 /vault/ipbypass.dat | Contains a list of IP bypasses (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
 /vault/ipv4.dat | IPv4 signatures file.
@@ -248,6 +252,9 @@ General CIDRAM configuration.
 
 "disable_frontend"
 - Disable front-end access? Front-end access can make CIDRAM more manageable, but can also be a potential security risk, too. It's recommended to manage CIDRAM via the back-end whenever possible, but front-end access is provided for when it isn't possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default].
+
+"max_login_attempts"
+- Maximum number of login attempts (front-end). Default = 5.
 
 ####"signatures" (Category)
 Signatures configuration.
@@ -532,4 +539,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 21st November 2016 (2016.11.21).
+Last Updated: 28th November 2016 (2016.11.28).

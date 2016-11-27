@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.26).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設�
 $CIDRAM['lang']['config_general_logfile'] = 'アクセス試行阻止の記録、人間によって読み取り可能。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の記録、Apacheスタイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'アクセス試行阻止の記録、シリアル化されました。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
+$CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数。';
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。';
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';
@@ -92,6 +93,7 @@ $CIDRAM['lang']['link_updates'] = 'アップデート';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
+$CIDRAM['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $CIDRAM['lang']['response_accounts_created'] = 'アカウントを作成に成功しました！';
 $CIDRAM['lang']['response_accounts_deleted'] = 'アカウントを削除が成功しました！';

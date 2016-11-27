@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.26).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['config_general_lang'] = '指定標準CIDRAM語言。';
 $CIDRAM['lang']['config_general_logfile'] = '人類可讀文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache風格文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '連載的文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
+$CIDRAM['lang']['config_general_max_login_attempts'] = '最大登錄嘗試次數。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。';
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '記得reCAPTCHA多少小時？';
@@ -92,6 +93,7 @@ $CIDRAM['lang']['link_updates'] = '更新';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '沒有日誌可用。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '沒有選擇的日誌。';
+$CIDRAM['lang']['max_login_attempts_exceeded'] = '最大登錄嘗試次數已經超過；拒絕訪問。';
 $CIDRAM['lang']['response_accounts_already_exists'] = '一個賬戶與那個用戶名已經存在！';
 $CIDRAM['lang']['response_accounts_created'] = '帳戶成功創建！';
 $CIDRAM['lang']['response_accounts_deleted'] = '帳戶成功刪除！';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.26).
+ * This file: Front-end handler (last modified: 2016.11.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -114,6 +114,14 @@ $CIDRAM['ClearExpired']($CIDRAM['FE']['SessionList'], $CIDRAM['FE']['Rebuild']);
 /** Clear expired cache entries. */
 $CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
 
+/** Brute-force security check. */
+if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
+    $CIDRAM['FE']['Cache'], 'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+)) && ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
+    header('Content-Type: text/plain');
+    die('[CIDRAM] ' . $CIDRAM['lang']['max_login_attempts_exceeded']);
+}
+
 /** Attempt to log in the user. */
 if ($CIDRAM['FE']['FormTarget'] === 'login') {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
@@ -139,6 +147,9 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
             $CIDRAM['FE']['Permissions'] = (int)substr($CIDRAM['FE']['Password'], -1);
             $CIDRAM['FE']['Password'] = substr($CIDRAM['FE']['Password'], 0, -2);
             if (password_verify($_POST['password'], $CIDRAM['FE']['Password'])) {
+                $CIDRAM['FECacheRemove'](
+                    $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                );
                 $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
                 $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
                 setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
@@ -157,6 +168,18 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
             $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_invalid_username']);
         }
 
+    }
+
+    if ($CIDRAM['FE']['state_msg']) {
+        $CIDRAM['LoginAttempts']++;
+        $CIDRAM['TimeToAdd'] = ($CIDRAM['LoginAttempts'] > 4) ? ($CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
+        $CIDRAM['FECacheAdd'](
+            $CIDRAM['FE']['Cache'],
+            $CIDRAM['FE']['Rebuild'],
+            'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
+            $CIDRAM['LoginAttempts'],
+            $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
+        );
     }
 }
 

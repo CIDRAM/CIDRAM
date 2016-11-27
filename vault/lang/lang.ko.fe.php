@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2016.11.26).
+ * This file: Korean language data for the front-end (last modified: 2016.11.27).
  *
  * @todo (This is incomplete).
  */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['config_general_lang'] = 'Specify the default language for CIDRA
 $CIDRAM['lang']['config_general_logfile'] = 'Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
+$CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum number of login attempts.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';
@@ -94,6 +95,7 @@ $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'No logfiles available.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'No logfile selected.';
+$CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maximum number of login attempts exceeded; Access denied.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'An account with that username already exists!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account successfully created!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account successfully deleted!';

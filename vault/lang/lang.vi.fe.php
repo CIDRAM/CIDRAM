@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.27).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Địa chỉ email cho hỗ trợ.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn?';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Nơi để tìm địa chỉ IP của các yêu cầu kết nối?';
 $CIDRAM['lang']['config_general_lang'] = 'Xác định tiếng mặc định cho CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Gói này đang hoạt động.'
 $CIDRAM['lang']['state_component_is_inactive'] = 'Gói này không đang hoạt động.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
-$CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập';
+$CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';

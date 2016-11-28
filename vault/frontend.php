@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.27).
+ * This file: Front-end handler (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,10 @@ if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
 if ($CIDRAM['FE']['FormTarget'] === 'login') {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_password_field_empty']);
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_password_field_empty'];
     } elseif (empty($_POST['username']) && !empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_username_field_empty']);
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_username_field_empty'];
     } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
 
         $CIDRAM['FE']['UserState'] = -1;
@@ -162,14 +162,20 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
                 $CIDRAM['FE']['Rebuild'] = true;
             } else {
                 $CIDRAM['FE']['Permissions'] = 0;
-                $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_invalid_password']);
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_invalid_password'];
             }
         } else {
-            $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['lang']['response_login_invalid_username']);
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_invalid_username'];
         }
 
     }
 
+    if ($CIDRAM['Config']['general']['FrontEndLog']) {
+        $CIDRAM['FrontEndLog'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']);
+        $CIDRAM['FrontEndLog'] .=
+            $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
+        $CIDRAM['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
+    }
     if ($CIDRAM['FE']['state_msg']) {
         $CIDRAM['LoginAttempts']++;
         $CIDRAM['TimeToAdd'] = ($CIDRAM['LoginAttempts'] > 4) ? ($CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
@@ -180,6 +186,18 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
             $CIDRAM['LoginAttempts'],
             $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
         );
+        if ($CIDRAM['Config']['general']['FrontEndLog']) {
+            $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['FE']['state_msg'] . "\n";
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['WrapRedText']($CIDRAM['FE']['state_msg']);
+        }
+    } elseif ($CIDRAM['Config']['general']['FrontEndLog']) {
+        $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['lang']['state_logged_in'] . "\n";
+    }
+    if ($CIDRAM['Config']['general']['FrontEndLog']) {
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], 'w');
+        fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
+        fclose($CIDRAM['Handle']);
+        unset($CIDRAM['FrontEndLog']);
     }
 }
 

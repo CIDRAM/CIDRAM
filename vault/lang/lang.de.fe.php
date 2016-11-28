@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.11.27).
+ * This file: German language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'CLI-Modus deaktivieren?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Front-End-Access deaktivieren?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'E-Mail-Adresse für die Unterstützung.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welche Header sollte CIDRAM reagieren mit, wenn Anfragen blockiert?';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services).';
 $CIDRAM['lang']['config_general_lang'] = 'Gibt die Standardsprache für CIDRAM an.';
 $CIDRAM['lang']['config_general_logfile'] = 'Name einer Datei für Menschen lesbar zu protokollieren alle blockierten Zugriffsversuche. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $CIDRAM['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
-$CIDRAM['lang']['state_logged_in'] = 'Eingeloggt';
+$CIDRAM['lang']['state_logged_in'] = 'Eingeloggt.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';

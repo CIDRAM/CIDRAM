@@ -256,6 +256,9 @@ General CIDRAM configuration.
 "max_login_attempts"
 - Maximum number of login attempts (front-end). Default = 5.
 
+"FrontEndLog"
+- File for logging front-end login attempts. Specify a filename, or leave blank to disable.
+
 ####"signatures" (Category)
 Signatures configuration.
 

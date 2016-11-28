@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.11.27).
+ * This file: French language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Adresse e-mail pour le support.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes?';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de demandes de connexion?';
 $CIDRAM['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'Un fichier lisible par l\'homme pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Le composant est actif.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $CIDRAM['lang']['state_default_password'] = 'Attention: Utilisant le mot de passe défaut!';
-$CIDRAM['lang']['state_logged_in'] = 'Connecté';
+$CIDRAM['lang']['state_logged_in'] = 'Connecté.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $CIDRAM['lang']['state_password_not_valid'] = 'Attention: Ce compte n\'utilise un mot de passe valide!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non dépassé';

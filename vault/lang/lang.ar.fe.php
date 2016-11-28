@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.11.27).
+ * This file: Arabic language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'وضع تعطيل CLI؟';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'تعطيل وصول front-end؟';
 $CIDRAM['lang']['config_general_emailaddr'] = 'عنوان البريد الإلكتروني للحصول على الدعم.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'أين يمكن العثور على عنوان IP لربط الطلبات؟';
 $CIDRAM['lang']['config_general_lang'] = 'تحديد اللغة الافتراضية الخاصة بـ CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'ملف يمكن قراءته بالعين لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'وحدة هو نشطا.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'وحدة هو غير نشط.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'وحدة هو جزئيا نشطا.';
 $CIDRAM['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
-$CIDRAM['lang']['state_logged_in'] = 'حاليا على';
+$CIDRAM['lang']['state_logged_in'] = 'حاليا على.';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $CIDRAM['lang']['state_password_not_valid'] = 'تحذير: هذا الحساب لا يستخدم صالحة كلمه السر!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.11.27).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'E-mailadres voor ondersteuning.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken?';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'Bestand om de front-end login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Waar het IP-adres van het aansluiten verzoek te vinden?';
 $CIDRAM['lang']['config_general_lang'] = 'Geef de standaardtaal voor CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Bestanddeel is actief.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Bestanddeel is inactief.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Bestanddeel is voorlopig.';
 $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
-$CIDRAM['lang']['state_logged_in'] = 'Ingelogd';
+$CIDRAM['lang']['state_logged_in'] = 'Ingelogd.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';

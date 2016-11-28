@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2016.11.27).
+ * This file: Korean language data for the front-end (last modified: 2016.11.28).
  *
  * @todo (This is incomplete).
  */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'Disable CLI mode?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disable front-end access?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Email address for support.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Which headers should CIDRAM respond with when blocking requests?';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'File for logging front-end login attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Where to find the IP address of connecting requests?';
 $CIDRAM['lang']['config_general_lang'] = 'Specify the default language for CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
@@ -133,7 +134,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Component is active.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactive.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Component is provisional.';
 $CIDRAM['lang']['state_default_password'] = 'Warning: Using default password!';
-$CIDRAM['lang']['state_logged_in'] = 'Logged in';
+$CIDRAM['lang']['state_logged_in'] = 'Logged in.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logs access only';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warning: This account is not using a valid password!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Don\'t hide non-outdated';

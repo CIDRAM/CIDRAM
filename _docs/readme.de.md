@@ -258,6 +258,9 @@ Generelle Konfiguration von CIDRAM.
 "max_login_attempts"
 - Maximale Anzahl der Versucht zu einloggen (Front-End). Standardeinstellung = 5.
 
+"FrontEndLog"
+- Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 

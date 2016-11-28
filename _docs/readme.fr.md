@@ -256,6 +256,9 @@ Configuration générale pour CIDRAM.
 "max_login_attempts"
 - Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5.
 
+"FrontEndLog"
+- Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.
+
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 

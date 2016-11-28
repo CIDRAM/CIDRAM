@@ -256,6 +256,9 @@ Cấu hình chung cho CIDRAM.
 "max_login_attempts"
 - Số lượng tối đa cố gắng đăng nhập (front-end). Mặc định = 5.
 
+"FrontEndLog"
+- Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
+
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
 

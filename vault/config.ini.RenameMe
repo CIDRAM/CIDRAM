@@ -38,6 +38,13 @@ disable_cli=false
 ; Disable front-end access?
 disable_frontend=true
 
+; Maximum number of login attempts.
+max_login_attempts=5
+
+; File for logging front-end login attempts. Specify a filename, or leave blank
+; to disable.
+FrontEndLog=''
+
 
 [signatures]
 

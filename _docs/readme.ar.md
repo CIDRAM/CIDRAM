@@ -285,6 +285,11 @@ Updating is done manually, and you can customise your configuration and customis
  <li>الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5.</li>
 </ul></div>
 
+<div dir="rtl">"FrontEndLog"<br /></div>
+<div dir="rtl"><ul>
+ <li>ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 

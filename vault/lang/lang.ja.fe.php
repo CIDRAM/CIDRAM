@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.27).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'CLIモードを無効にする�
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
 $CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのEメールアドレス。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_ipaddr'] = '接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設定します。';
 $CIDRAM['lang']['config_general_logfile'] = 'アクセス試行阻止の記録、人間によって読み取り可能。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアク�
 $CIDRAM['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $CIDRAM['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
-$CIDRAM['lang']['state_logged_in'] = 'ログインしています';
+$CIDRAM['lang']['state_logged_in'] = 'ログインしています。';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';

@@ -256,6 +256,9 @@ Algemene configuratie voor CIDRAM.
 "max_login_attempts"
 - Maximum aantal inlogpogingen (frontend). Standaard = 5.
 
+"FrontEndLog"
+- Bestand om de front-end login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
+
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
 

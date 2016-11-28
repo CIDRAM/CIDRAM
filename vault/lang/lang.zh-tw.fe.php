@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.27).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = '關閉CLI模式嗎？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '關閉前端訪問嗎？';
 $CIDRAM['lang']['config_general_emailaddr'] = '支持/援助電子郵件地址。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什麼頭CIDRAM應該應對當申請是拒絕？';
+$CIDRAM['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。指定一個文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪裡可以找到連接請求IP地址？';
 $CIDRAM['lang']['config_general_lang'] = '指定標準CIDRAM語言。';
 $CIDRAM['lang']['config_general_logfile'] = '人類可讀文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = '組件是活性。';
 $CIDRAM['lang']['state_component_is_inactive'] = '組件是非活性。';
 $CIDRAM['lang']['state_component_is_provisional'] = '組件是有時活性。';
 $CIDRAM['lang']['state_default_password'] = '警告：它使用標準密碼！';
-$CIDRAM['lang']['state_logged_in'] = '目前在線';
+$CIDRAM['lang']['state_logged_in'] = '目前在線。';
 $CIDRAM['lang']['state_logs_access_only'] = '僅日誌訪問';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：此帳戶不​​使用有效的密碼！';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隱藏非過時';

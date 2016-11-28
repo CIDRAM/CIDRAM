@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.11.27).
+ * This file: Indonesian language data for the front-end (last modified: 2016.11.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_disable_cli'] = 'Menonaktifkan modus CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian depan?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Alamat email untuk dukungan.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Apa header harus CIDRAM merespon dengan ketika memblokir permintaan?';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat?';
 $CIDRAM['lang']['config_general_lang'] = 'Tentukan bahasa default untuk CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'File yang dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
@@ -131,7 +132,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $CIDRAM['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
-$CIDRAM['lang']['state_logged_in'] = 'Pengguna yang online';
+$CIDRAM['lang']['state_logged_in'] = 'Pengguna yang online.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $CIDRAM['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';

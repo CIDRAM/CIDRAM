@@ -256,6 +256,9 @@ Konfigurasi umum dari CIDRAM.
 "max_login_attempts"
 - Jumlah maksimum upaya untuk memasukkan (bagian depan). Default = 5.
 
+"FrontEndLog"
+- File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 

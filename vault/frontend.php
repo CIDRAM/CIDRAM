@@ -1271,7 +1271,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h1';
             }
             $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]),
+                $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
         }
@@ -1418,7 +1418,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         if (!$CIDRAM['FE']['hide-unused']) {
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h2';
             $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]),
+                $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
         }

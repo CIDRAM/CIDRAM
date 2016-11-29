@@ -644,18 +644,18 @@ Tag: A2B IP B.V
 
 
 # ASNs 20860, 21130 ("IOMart").
-# Crimeware friendly ISP; Warnings about them at the hpHosts Blog.
-# %Listed, Google Malware Dashboard: 0.91% (AS20860), 0% (AS21130).
-# Updated: 2016.04.25
+# %Listed, Google Malware Dashboard: 1.74% (AS20860), 0% (AS21130).
+# Updated: 2016.11.29
 
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
 2403:cc00:3000::/36 Deny Cloud
+2a00:5d80::/32 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a03:b201::/32 Deny Cloud
-2a03:ca80::/31 Deny Cloud
+2a03:ca80::/32 Deny Cloud
+2a03:ca81::/32 Deny Cloud
 2a04:de40::/32 Deny Cloud
-2a07:4840::/48 Deny Cloud
 Tag: IOMart
 
 
@@ -2176,6 +2176,14 @@ Tag: Nazwa.pl
 Tag: WebNX, Inc
 
 
+# ASN 198068 ("FASTVPS EESTI OU").
+# %Listed, Google Malware Dashboard: 1.14%.
+# Updated: 2016.11.29
+
+2a03:f480:1::/48 Deny Cloud
+Tag: FASTVPS EESTI OU
+
+
 # ASN 62638 ("Query Foundry, LLC").
 # %Listed, Google Malware Dashboard: 10.82%.
 # Updated: 2016.04.25 / Checked: 2016.11.25
@@ -2373,24 +2381,24 @@ Tag: Shenzhen Tencent
 
 
 # ASN 44112 ("SpaceWeb Ltd").
-# %Listed, Google Malware Dashboard: 1.73%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 1.68%.
+# Updated: 2016.04.29 / Checked: 2016.11.29
 
 2a02:408:7722::/48 Deny Cloud
 Tag: SpaceWeb Ltd
 
 
 # ASN 43391 ("Netdirekt A.S").
-# %Listed, Google Malware Dashboard: 2.46%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 2.83%.
+# Updated: 2016.04.29 / Checked: 2016.11.29
 
 2a01:aac0::/32 Deny Cloud
 Tag: Netdirekt A.S
 
 
 # ASN 42730 ("EVANZO e-commerce GmbH").
-# %Listed, Google Malware Dashboard: 2.23%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 4.64%.
+# Updated: 2016.04.29 / Checked: 2016.11.29
 
 2a00:6800::/32 Deny Cloud
 Tag: EVANZO GmbH
@@ -2411,7 +2419,7 @@ Tag: Areti/Alentus
 
 # ASN 31251 ("Falco Networks B.V").
 # %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.04.30
+# Updated: 2016.04.30 / Checked: 2016.11.29
 
 2a02:a10::/32 Deny Cloud
 2a03:60c0::/32 Deny Cloud
@@ -3119,6 +3127,28 @@ Tag: REGION40 LLC
 
 2604:d680::/32 Deny Cloud
 Tag: Webline Services Inc
+
+
+# ASN 34549 ("meerfarbig GmbH & Co. KG").
+# %Listed, Google Malware Dashboard: 1.25%.
+# Updated: 2016.11.29
+
+2001:67c:75c::/48 Deny Cloud
+2a00:f820::/29 Deny Cloud
+2a01:360::/29 Deny Cloud
+2a01:4740:a19::/48 Deny Cloud
+2a06:1287:3000::/44 Deny Cloud
+2a06:46c0:cf::/48 Deny Cloud
+2a06:5001:310::/48 Deny Cloud
+2a06:5002:1f::/48 Deny Cloud
+2a06:5003:a100::/48 Deny Cloud
+2a06:5004:2c::/48 Deny Cloud
+2a06:5005:2cfd::/48 Deny Cloud
+2a06:5006:119a::/48 Deny Cloud
+2a06:5007:d1d1::/48 Deny Cloud
+2a07:ba00::/29 Deny Cloud
+2a0b:ad00::/29 Deny Cloud
+Tag: meerfarbig
 
 
 # ---

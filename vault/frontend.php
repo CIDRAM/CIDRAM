@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.28).
+ * This file: Front-end handler (last modified: 2016.11.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -729,32 +729,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     }
 
     /** Count files; Prepare to search for components metadata. */
-    $CIDRAM['Count'] = count($CIDRAM['Components']['Files']);
-    for (
-        $CIDRAM['Iterate'] = 0;
-        $CIDRAM['Iterate'] < $CIDRAM['Count'];
-        $CIDRAM['Iterate']++
-    ) {
-        if (strpos(
-            $CIDRAM['Components']['Types'],
-            strtolower(substr($CIDRAM['Components']['Files'][$CIDRAM['Iterate']], -3))
-        ) !== false) {
-            $CIDRAM['Components']['This'] =
-                $CIDRAM['Vault'] . $CIDRAM['Components']['Files'][$CIDRAM['Iterate']];
-            $CIDRAM['Components']['Data'] = $CIDRAM['ReadFile']($CIDRAM['Components']['This']);
-            if (
-                substr($CIDRAM['Components']['Data'], 0, 4) === "---\n" &&
-                ($CIDRAM['Components']['EoYAML'] = strpos(
-                    $CIDRAM['Components']['Data'], "\n\n"
-                )) !== false
-            ) {
-                $CIDRAM['YAML'](
-                    substr($CIDRAM['Components']['Data'], 4, $CIDRAM['Components']['EoYAML'] - 4),
-                    $CIDRAM['Components']['Meta']
-                );
+    array_walk($CIDRAM['Components']['Files'], function ($ThisFile) use (&$CIDRAM) {
+        if (!empty($ThisFile) && strpos($CIDRAM['Components']['Types'], strtolower(substr($ThisFile, -3))) !== false) {
+            $ThisData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile);
+            if (substr($ThisData, 0, 4) === "---\n" && ($EoYAML = strpos($ThisData, "\n\n")) !== false) {
+                $CIDRAM['YAML'](substr($ThisData, 4, $EoYAML - 4), $CIDRAM['Components']['Meta']);
             }
         }
-    }
+    });
 
     /** A form has been submitted. */
     if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
@@ -1277,9 +1259,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] =
             (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'])) ? '' :
             '<br /><a href="' . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Changelog'] . '">Changelog</a>';
-        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Filename'] =
-            (count($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']) !== 1) ? '' :
-            '<br />' . $CIDRAM['lang']['field_filename'] . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'][0];
+        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Filename'] = (
+            empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']) ||
+            count($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']) !== 1
+        ) ? '' : '<br />' . $CIDRAM['lang']['field_filename'] . $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'][0];
         if (
             !($CIDRAM['FE']['hide-non-outdated'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Outdated'])) &&
             !($CIDRAM['FE']['hide-unused'] && empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']))

@@ -7,7 +7,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2016.11.29; Bug-fix; Maikuolan]: Some notices occasionally generated to the
+  error logs by undefined indexes when accessing the updater; Fixed.
 
 === Version/Release 0.6.0 ===
 MINOR RELEASE.
@@ -23,7 +24,7 @@ MINOR RELEASE.
   batches of IP addresses directly from your browser, to confirm whether
   they're blocked by whichever signature files you have installed at any given
   time; And you can update the CIDRAM configuration directly from your browser,
-  too. Front-end access is disabled by default for security reasons, but you 
+  too. Front-end access is disabled by default for security reasons, but you
   can enable it via the relevant newly created configuration directives
   pertaining to it.
 
@@ -33,7 +34,7 @@ MINOR RELEASE.
   available.
 
 - [2016.11.03; Signatures; Maikuolan]: Split signature files, to keep the bogon
-  signatures ti their own separate signature files (this may help to improve
+  signatures to their own separate signature files (this may help to improve
   performance for any users that don't want to block bogons).
 
 - [2016.10.18; Minor code change; Maikuolan]: Created a "configuration handler"

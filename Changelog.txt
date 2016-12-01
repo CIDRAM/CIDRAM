@@ -10,8 +10,30 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.11.29; Bug-fix; Maikuolan]: Some notices occasionally generated to the
   error logs by undefined indexes when accessing the updater; Fixed.
 
+- [2016.12.02; Sub-minor code change; Maikuolan]: Added some polyfills to
+  extend compatibility with CIDRAM to PHP 5.4.x (the newly introduced front-end
+  feature for CIDRAM makes use of the password_hash and password_verify
+  functions, of which are only available natively to PHP versions 5.5.0 and
+  above).
+
 === Version/Release 0.6.0 ===
 MINOR RELEASE.
+
+- [2016.10.18; Minor code change; Maikuolan]: Created a "configuration handler"
+  file so as to move everything away from the loader (this'll be important for
+  being able to self-update in the future). Slightly improved the YAML closure.
+  Fallbacks no longer hardcoded with PHP at the time of loading the
+  configuration file; Fallbacks now determined via a separate configuration
+  defaults file written using YAML.
+
+- [2016.11.03; Signatures; Maikuolan]: Split signature files, to keep the bogon
+  signatures to their own separate signature files (this may help to improve
+  performance for any users that don't want to block bogons).
+
+- [2016.11.05; Documentation; Maikuolan]: Completed translation for the CIDRAM
+  README documentation into Russian (fuzzy and quite likely erroneous, though).
+  This totals 11 different language versions of the README documentation now
+  available.
 
 - [2016.11.28; NEW FEATURE; Maikuolan]: Finished building the CIDRAM front-end!
   Using the CIDRAM front-end, you can update CIDRAM directly from your browser,
@@ -27,22 +49,6 @@ MINOR RELEASE.
   too. Front-end access is disabled by default for security reasons, but you
   can enable it via the relevant newly created configuration directives
   pertaining to it.
-
-- [2016.11.05; Documentation; Maikuolan]: Completed translation for the CIDRAM
-  README documentation into Russian (fuzzy and quite likely erroneous, though).
-  This totals 11 different language versions of the README documentation now
-  available.
-
-- [2016.11.03; Signatures; Maikuolan]: Split signature files, to keep the bogon
-  signatures to their own separate signature files (this may help to improve
-  performance for any users that don't want to block bogons).
-
-- [2016.10.18; Minor code change; Maikuolan]: Created a "configuration handler"
-  file so as to move everything away from the loader (this'll be important for
-  being able to self-update in the future). Slightly improved the YAML closure.
-  Fallbacks no longer hardcoded with PHP at the time of loading the
-  configuration file; Fallbacks now determined via a separate configuration
-  defaults file written using YAML.
 
 Caleb M / Maikuolan,
 28th November 2016.

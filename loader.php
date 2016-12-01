@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.10.15).
+ * This file: The loader (last modified: 2016.12.02).
  */
 
 /**
@@ -18,6 +18,11 @@
  */
 if (!defined('CIDRAM')) {
     define('CIDRAM', true);
+
+    if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] Not compatible with PHP versions below 5.4.0; Please update PHP in order to use CIDRAM.');
+    }
 
     /** Create an array for our working data. */
     $CIDRAM = array();

@@ -44,7 +44,7 @@ $CIDRAM['FE'] = array(
 );
 
 /** Traversal detection. */
-$CIDRAM['Traverse'] = function($Path) {
+$CIDRAM['Traverse'] = function ($Path) {
     return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-`?*$])' . "\x01i", str_replace("\\", '/', $Path));
 };
 

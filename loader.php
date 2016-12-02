@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.12.02).
+ * This file: The loader (last modified: 2016.12.03).
  */
 
 /**
@@ -40,11 +40,12 @@ if (!defined('CIDRAM')) {
         );
     }
 
-    /**
-     * Before processing any includes, let's count them, to know whether we're
-     * running CIDRAM directly or via as a wrapper (ie, from a hook).
-     */
-    $CIDRAM['Direct'] = (count(get_included_files()) === 1);
+    /** Checks whether we're calling CIDRAM directly or through a hook. */
+    $CIDRAM['Direct'] = function () {
+        $Base = str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME']));
+        $This = str_replace("\\", '/', strtolower(__FILE__));
+        return ($Base === $This);
+    };
 
     /**
      * Check whether the functions file exists; Kill the script if it doesn't.
@@ -99,7 +100,7 @@ if (!defined('CIDRAM')) {
             !$CIDRAM['Config']['general']['disable_frontend'] &&
             file_exists($CIDRAM['Vault'] . 'frontend.php') &&
             file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-            $CIDRAM['Direct']
+            $CIDRAM['Direct']()
         ) {
             require $CIDRAM['Vault'] . 'frontend.php';
         }

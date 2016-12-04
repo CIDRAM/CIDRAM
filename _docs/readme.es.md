@@ -188,6 +188,7 @@ Archivo | Descripción
 /vault/ipv6_custom.dat.RenameMe | Archivo de firmas por IPv6 personalizado (cambiar el nombre para activar).
 /vault/lang.php | Lingüísticos datos.
 /vault/outgen.php | Generador de salida.
+/vault/php5.4.x.php | Polyfills para PHP 5.4.X (necesario para la retrocompatibilidad de PHP 5.4.X; seguro para eliminar por versiones más recientes de PHP).
 /vault/recaptcha.php | Módulo de reCAPTCHA.
 /vault/rules_as6939.php | Archivo de reglas personalizado para AS6939.
 /vault/rules_softlayer.php | Archivo de reglas personalizado para Soft Layer.
@@ -542,4 +543,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 28 Noviembre 2016 (2016.11.28).
+Última Actualización: 4 Diciembre 2016 (2016.12.04).

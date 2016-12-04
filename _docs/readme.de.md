@@ -190,6 +190,7 @@ Datei | Beschreibung
 /vault/ipv6_custom.dat.RenameMe | IPv6 benutzerdefinierte Signaturdatei (umbenennen zu aktivieren).
 /vault/lang.php | Sprachdateien.
 /vault/outgen.php | Ausgabe-Generator.
+/vault/php5.4.x.php | Polyfills für PHP 5.4.X (erforderlich für Abwärtskompatibilität mit PHP 5.4.X; sicher zu löschen für neuere PHP-Versionen).
 /vault/recaptcha.php | reCAPTCHA-Modul.
 /vault/rules_as6939.php | Benutzerdefinierte Regeldatei für AS6939.
 /vault/rules_softlayer.php | Benutzerdefinierte Regeldatei für Soft Layer.
@@ -544,4 +545,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 28. November 2016 (2016.11.28).
+Zuletzt aktualisiert: 4. Dezember 2016 (2016.12.04).

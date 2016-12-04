@@ -188,6 +188,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/ipv6_custom.dat.RenameMe | IPv6のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/lang.php | 言語・ハンドラ。
 /vault/outgen.php | 出力発生器。
+/vault/php5.4.x.php | PHP 5.4.X ポリフィル （PHP 5.4.X の下位互換性のために必要です； より新しいPHPバージョンのために、削除しても安全です）。
 /vault/recaptcha.php | reCAPTCHAのモジュール。
 /vault/rules_as6939.php | カスタムルールは、AS6939のためのファイル。
 /vault/rules_softlayer.php | カスタムルールは、Soft Layerのためのファイル。
@@ -543,4 +544,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年11月28日。
+最終アップデート： 2016年12月4日。

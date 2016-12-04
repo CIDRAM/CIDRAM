@@ -189,6 +189,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/ipv6_custom.dat.RenameMe | IPv6定制簽名文件（重命名為激活）。
 /vault/lang.php | 語音數據。
 /vault/outgen.php | 輸出發生器。
+/vault/php5.4.x.php | Polyfill對於PHP 5.4.X （PHP 5.4.X 向下兼容需要它； 較新的版本可以刪除它）。
 /vault/recaptcha.php | reCAPTCHA模塊。
 /vault/rules_as6939.php | 定制規則文件為 AS6939。
 /vault/rules_softlayer.php | 定制規則文件為 Soft Layer。
@@ -543,4 +544,4 @@ CIDRAM會阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2016年11月28日。
+最後更新：2016年12月4日。

@@ -190,6 +190,7 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv6_custom.dat.RenameMe
 <div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
 <div dir="rtl" style="display:inline;">الناتج معالج.</div> | /vault/outgen.php
+<div dir="rtl" style="display:inline;">Polyfills لPHP 5.4.X (اللازمة لالتوافق PHP 5.4.X؛ لإصدارات أحدث PHP، آمنة للحذف).</div> | /vault/php5.4.x.php
 <div dir="rtl" style="display:inline;">وحدة reCAPTCHA.</div> | /vault/recaptcha.php
 <div dir="rtl" style="display:inline;">ملف قواعد العرف لAS6939.</div> | /vault/rules_as6939.php
 <div dir="rtl" style="display:inline;">ملف قواعد العرف لSoft Layer.</div> | /vault/rules_softlayer.php
@@ -600,4 +601,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 28 نوفمبر 2016 (2016.11.28).</div>
+<div dir="rtl">آخر تحديث: 4 ديسمبر 2016 (2016.12.04).</div>

@@ -188,6 +188,7 @@ Data | Deskripsi
 /vault/ipv6_custom.dat.RenameMe | File tanda tangan IPv6 disesuaikan (mengubah nama untuk mengaktifkan).
 /vault/lang.php | File bahasa.
 /vault/outgen.php | Output Generator.
+/vault/php5.4.x.php | Polyfill untuk PHP 5.4.X (diperlukan untuk kompatibilitas mundur PHP 5.4.X; aman untuk menghapus selama versi PHP yang lebih baru).
 /vault/recaptcha.php | Modul reCAPTCHA.
 /vault/rules_as6939.php | File aturan disesuaikan untuk AS6939.
 /vault/rules_softlayer.php | File aturan disesuaikan untuk Soft Layer.
@@ -542,4 +543,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 28 November 2016 (2016.11.28).
+Terakhir Diperbarui: 4 Desember 2016 (2016.12.04).

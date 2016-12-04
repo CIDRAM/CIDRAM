@@ -188,6 +188,7 @@ Tập tin | Chi tiết
 /vault/ipv6_custom.dat.RenameMe | Tập tin chữ ký IPv6 tùy chỉnh (đổi tên để kích hoạt).
 /vault/lang.php | Dữ liệu tiếng.
 /vault/outgen.php | Máy phát đầu ra.
+/vault/php5.4.x.php | Polyfills cho PHP 5.4.X (cần cho khả năng tương thích ngược PHP 5.4.X; an toàn để xóa cho các phiên bản PHP mới hơn).
 /vault/recaptcha.php | reCAPTCHA mô-đun.
 /vault/rules_as6939.php | Tập tin quy tắc tùy chỉnh cho AS6939.
 /vault/rules_softlayer.php | Tập tin quy tắc tùy chỉnh cho Soft Layer.
@@ -542,4 +543,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 28 Tháng Mười Một 2016 (2016.11.28).
+Lần cuối cập nhật: 4 Tháng Mười Hai 2016 (2016.12.04).

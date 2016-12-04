@@ -188,6 +188,7 @@ File | Description
 /vault/ipv6_custom.dat.RenameMe | IPv6 custom signatures file (rename to activate).
 /vault/lang.php | Language handler.
 /vault/outgen.php | Output generator.
+/vault/php5.4.x.php | Polyfills for PHP 5.4.X (required for PHP 5.4.X backwards compatibility; safe to delete for newer PHP versions).
 /vault/recaptcha.php | reCAPTCHA module.
 /vault/rules_as6939.php | Custom rules file for AS6939.
 /vault/rules_softlayer.php | Custom rules file for Soft Layer.
@@ -542,4 +543,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 28th November 2016 (2016.11.28).
+Last Updated: 4th December 2016 (2016.12.04).

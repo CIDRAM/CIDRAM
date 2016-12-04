@@ -188,6 +188,7 @@ Bestand | Beschrijving
 /vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste handtekeningen bestand (hernoemen om te activeren).
 /vault/lang.php | Taal-handler.
 /vault/outgen.php | Uitvoer generator.
+/vault/php5.4.x.php | Polyfills voor PHP 5.4.X (nodig voor PHP 5.4.X achterwaartse compatibiliteit; veilig te verwijderen voor nieuwere PHP-versies).
 /vault/recaptcha.php | reCAPTCHA module.
 /vault/rules_as6939.php | Aangepaste regels bestand voor AS6939.
 /vault/rules_softlayer.php | Aangepaste regels bestand voor Soft Layer.
@@ -542,4 +543,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 28 November 2016 (2016.11.28).
+Laatste Bijgewerkt: 4 December 2016 (2016.12.04).

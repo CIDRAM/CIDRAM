@@ -17,7 +17,7 @@
 
 ###1. <a name="SECTION1"></a>序文
 
-CIDRAM（シドラム、クラスレス・ドメイン間・ルーティング 「Classless Inter-Domain Routing Access Manager」）は、PHPスクリプトです。ウェブサイトを保護するように設計されて、IPアドレス（望ましくないトラフィックのあるソースとみなします）から、発信要求をブロックすることによって（ヒト以外のアクセスエンドポイント、クラウドサービス、スパムロボット、スクレーパー、等）。IPアドレスの可能CIDRを計算することにより、CIDRは、その署名ファイルと比較することができます（これらの署名ファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）；一致が見つかった場合、要求はブロックされます。
+CIDRAM（シドラム、クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 「Classless Inter-Domain Routing Access Manager」）は、PHPスクリプトです。ウェブサイトを保護するように設計されて、IPアドレス（望ましくないトラフィックのあるソースとみなします）から、発信要求をブロックすることによって（ヒト以外のアクセスエンドポイント、クラウドサービス、スパムロボット、スクレーパー、等）。IPアドレスの可能CIDRを計算することにより、CIDRは、その署名ファイルと比較することができます（これらの署名ファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）；一致が見つかった場合、要求はブロックされます。
 
 CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利について： Caleb M (Maikuolan)著。
 
@@ -105,12 +105,13 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/ | ヴォルト・ディレクトリ（様々なファイルを含んでいます）。
 /vault/fe_assets/ | フロントエンド資産。
 /vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
-/vault/fe_assets/_accounts.html | フロントエンドのアカウントページのHTMLテンプレート。
-/vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
+/vault/fe_assets/_accounts.html | フロントエンドのアカウント・ページのHTMLテンプレート。
+/vault/fe_assets/_accounts_row.html | フロントエンドのアカウント・ページのHTMLテンプレート。
 /vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_config_row.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_files.html | ファイル・マネージャのHTMLテンプレート。
 /vault/fe_assets/_files_edit.html | ファイル・マネージャのHTMLテンプレート。
+/vault/fe_assets/_files_rename.html | ファイル・マネージャのHTMLテンプレート。
 /vault/fe_assets/_files_row.html | ファイル・マネージャのHTMLテンプレート。
 /vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
 /vault/fe_assets/_ip_test.html | IPテストページのHTMLテンプレート。
@@ -119,8 +120,8 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/_logs.html | フロントエンドのロゴスページのHTMLテンプレート。
 /vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、は完全なアクセスのためのものです。
 /vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、はログのみにアクセスのためのものです。
-/vault/fe_assets/_updates.html | フロントエンドのアップデートページのHTMLテンプレート。
-/vault/fe_assets/_updates_row.html | フロントエンドのアップデートページのHTMLテンプレート。
+/vault/fe_assets/_updates.html | フロントエンドのアップデート・ページのHTMLテンプレート。
+/vault/fe_assets/_updates_row.html | フロントエンドのアップデート・ページのHTMLテンプレート。
 /vault/fe_assets/frontend.css | フロントエンドのCSSスタイルシート。
 /vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報とキャッシュが含まれています；フロントエンドが有効になっているときに作成）。
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。

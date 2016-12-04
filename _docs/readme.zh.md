@@ -112,6 +112,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/fe_assets/_config_row.html | 前端配置页面的HTML模板。
 /vault/fe_assets/_files.html | 文件管理器的HTML模板。
 /vault/fe_assets/_files_edit.html | 文件管理器的HTML模板。
+/vault/fe_assets/_files_rename.html | 文件管理器的HTML模板。
 /vault/fe_assets/_files_row.html | 文件管理器的HTML模板。
 /vault/fe_assets/_home.html | 端主页的HTML模板。
 /vault/fe_assets/_ip_test.html | IP测试页面的HTML模板。

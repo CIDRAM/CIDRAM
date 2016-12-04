@@ -111,6 +111,7 @@ CIDRAM должен автоматически блокировать нежел
 /vault/fe_assets/_config_row.html | Шаблон HTML для конфигурация страница в фронтенд.
 /vault/fe_assets/_files.html | Шаблон HTML для файл менеджер.
 /vault/fe_assets/_files_edit.html | Шаблон HTML для файл менеджер.
+/vault/fe_assets/_files_rename.html | Шаблон HTML для файл менеджер.
 /vault/fe_assets/_files_row.html | Шаблон HTML для файл менеджер.
 /vault/fe_assets/_home.html | Шаблон HTML для домашняя страница в фронтенд.
 /vault/fe_assets/_ip_test.html | Шаблон HTML для страница тест IP.

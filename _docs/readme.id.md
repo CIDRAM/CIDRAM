@@ -111,6 +111,7 @@ Data | Deskripsi
 /vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
+/vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_row.html | Template HTML untuk file manager.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
 /vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.

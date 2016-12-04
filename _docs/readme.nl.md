@@ -111,6 +111,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_config_row.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_edit.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_files_rename.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_row.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.

@@ -111,6 +111,7 @@ Fichier | Description
 /vault/fe_assets/_config_row.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_files.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_edit.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_files_rename.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_row.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_ip_test.html | Un modèle HTML pour la page pour tester IPs.

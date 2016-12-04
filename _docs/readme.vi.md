@@ -111,6 +111,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
+/vault/fe_assets/_files_rename.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
 /vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.

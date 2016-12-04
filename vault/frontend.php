@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.30).
+ * This file: Front-end handler (last modified: 2016.12.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1081,6 +1081,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatClass'] = 's';
             }
         } else {
+            $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']);
+            $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['From']);
+            if (isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum'])) {
+                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['Checksum']);
+            }
             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RemoteData'] = $CIDRAM['FECacheGet'](
                 $CIDRAM['FE']['Cache'],
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Remote']

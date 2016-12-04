@@ -113,6 +113,7 @@ Datei | Beschreibung
 /vault/fe_assets/_config_row.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
 /vault/fe_assets/_files.html | Eine HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_edit.html | Eine HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_rename.html | Eine HTML-Template für den Dateimanager.
 /vault/fe_assets/_files_row.html | Eine HTML-Template für den Dateimanager.
 /vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
 /vault/fe_assets/_ip_test.html | Eine HTML-Template für das IP-Test-Seite.
@@ -287,7 +288,7 @@ Konfiguration der Signaturen.
 - Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein.
 
 ####"recaptcha" (Kategorie)
-Wenn du willst, können Sie Benutzern bieten eine Möglichkeit zur umgehen der Seite "Zugriff verweigert" durch Abschluß einer reCAPTCHA-Instanz. Dies kann helfen, einige der Risiken im Zusammenhang mit Falsch-Positivs zu mildern, in diesen Fällen wodurch wir nicht ganz sicher sind ob eine Anfrage von einer Maschine oder einem Menschen stammt.
+Wenn du willst, können Sie Benutzern bieten eine Möglichkeit zur umgehen der Seite "Zugriff verweigert" durch Abschluss einer reCAPTCHA-Instanz. Dies kann helfen, einige der Risiken im Zusammenhang mit Falsch-Positivs zu mildern, in diesen Fällen wodurch wir nicht ganz sicher sind ob eine Anfrage von einer Maschine oder einem Menschen stammt.
 
 Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Wegs um der Seite "Zugriff verweigert" zur umgehen, im Algemeinen, Ich würde raten dies zu nicht ermöglichen es sei denn, Sie empfinden es als notwendig dies zu tun. Situationen wo es notwendig könnte sein: Wenn Ihre Website hat Kunden/Benutzer, die Zugriff auf Ihre Website haben müssen, und wenn dies etwas ist das nicht ausgehandelt werden kann, aber wenn diese Kunden/Benutzer von einem feindlichen Netzwerk zu verbinden, das möglicherweise auch unerwünschten Verkehr führen könnte, und die Blockierung dieser unerwünschten Verkehr ist auch etwas das nicht ausgehandelt werden kann, in diesen Situationen, könnte das reCAPTCHA-Feature nützlich sein um die wünschenswerten Kunden/Benutzer zu ermöglichen, während der unerwünschten Verkehr aus demselben Netzwerk ausgeschlossen ist. Das sagte aber, da der beabsichtigte Zweck einer CAPTCHA ist, zwischen Menschen und Nicht-Menschen zu unterscheiden, das reCAPTCHA-Feature würde nur in diesen Situationen ohne Gewinner zu helfen, wenn wir annehmen dass dieser unerwünschten Verkehr nicht menschlich ist (z.B, Spambots, Scrapers, Hacktools, automatisierten Datenverkehr), im Gegensatz zu unerwünschtem menschlichen Verkehr (wie menschliche Spammer, Hacker, und derartige).
 
@@ -314,7 +315,7 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 - Dieser Wert sollte dem "secret key" für Ihre reCAPTCHA entsprechen, sich innerhalb des reCAPTCHA Dashboard befindet.
 
 "expiry"
-- When "lockuser" is true (Standardeinstellung), in order to remember when a user has successfully passed a reCAPTCHA-Instanz, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA-Instanz. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA-Instanz is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
+- Wenn "lockuser" true ist (Standardeinstellung), um sich zu erinnern wann ein Benutzer eine reCAPTCHA-Instanz erfolgreich bestanden hat, für zukünftige Seite-Anfragen, generiert CIDRAM ein Standard-HTTP-Cookie, dass einen Hash enthält, entsprechend einem internen Datensatz, dass der denselben Hash enthält; Zukünftige Seite-Anfragen werden diese entsprechenden Hashes verwenden, zu authentifizieren dass ein Benutzer zuvor bereits eine reCAPTCHA-Instanz erfolgreich bestanden hat. Wenn "lockuser" false ist, wird eine IP-Whitelist verwendet, um festzustellen ob Anfragen aus der IP von eingehenden Anfragen, zugelassen werden sollen; Einträge werden zu dieser Whitelist hinzugefügt wenn die reCAPTCHA-Instanz erfolgreich bestanden ist. Für wie viele Stunden sollten diese Cookies, Hashes und Whitelist-Einträge gültig bleiben? Standardeinstellung = 720 (1 Monat).
 
 "logfile"
 - Protokollieren Sie alle reCAPTCHA versucht? Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.

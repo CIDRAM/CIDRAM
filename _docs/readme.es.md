@@ -111,6 +111,7 @@ Archivo | Descripción
 /vault/fe_assets/_config_row.html | Un archivo HTML para el front-end página de configuración.
 /vault/fe_assets/_files.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_edit.html | Un archivo HTML para el administración de archivos.
+/vault/fe_assets/_files_rename.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_row.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_home.html | Un archivo HTML para el front-end página principal.
 /vault/fe_assets/_ip_test.html | Un archivo HTML para la página para pruebas de IPs.

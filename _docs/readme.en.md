@@ -111,6 +111,7 @@ File | Description
 /vault/fe_assets/_config_row.html | An HTML template for the front-end configuration page.
 /vault/fe_assets/_files.html | An HTML template for the file manager.
 /vault/fe_assets/_files_edit.html | An HTML template for the file manager.
+/vault/fe_assets/_files_rename.html | An HTML template for the file manager.
 /vault/fe_assets/_files_row.html | An HTML template for the file manager.
 /vault/fe_assets/_home.html | An HTML template for the front-end homepage.
 /vault/fe_assets/_ip_test.html | An HTML template for the IP test page.

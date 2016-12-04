@@ -111,6 +111,7 @@ File | Descrizione
 /vault/fe_assets/_config_row.html | Un modello HTML per il front-end pagina di configurazione.
 /vault/fe_assets/_files.html | Un modello HTML per il file manager.
 /vault/fe_assets/_files_edit.html | Un modello HTML per il file manager.
+/vault/fe_assets/_files_rename.html | Un modello HTML per il file manager.
 /vault/fe_assets/_files_row.html | Un modello HTML per il file manager.
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
 /vault/fe_assets/_ip_test.html | Un modello HTML per la pagina per il test IP.

@@ -3067,20 +3067,21 @@ Tag: Bytemark Limited
 Tag: PlusServer AG
 
 
-# ASNs 14061, 46652, 62567, 65040, 133165, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc").
-# %Listed, Google Malware Dashboard: 0.54% (AS14061), 0.74% (AS46652), 1.39% (AS62567),
-#   "ASN not found" (AS65040), 1.06% (AS133165), 3.23% (AS200130), 5.88% (AS201229), 2.28% (AS202018),
-#   1.82% (AS202109), 0.69% (AS393406), 1.62% (AS394362).
-# Updated: 2016.04.25
+# ASNs 14061, 62567, 65040, 133165, 135340, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc").
+# %Listed, Google Malware Dashboard: 0.98% (AS14061), 1.53% (AS62567), 2.56% (AS133165), 0.93% (AS135340),
+#   1.72% (AS200130), 1.31% (AS201229), 1.96% (AS202018), 2.93% (AS202109), 0.92% (AS393406), 1.61% (AS394362).
+# Updated: 2016.12.04
 
-5.101.96.0/21 Deny Cloud
-5.101.104.0/22 Deny Cloud
-5.101.109.0/24 Deny Cloud
-5.101.110.0/23 Deny Cloud
+5.101.96.0/20 Deny Cloud
 37.139.0.0/19 Deny Cloud
-45.55.0.0/16 Deny Cloud
+45.55.0.0/18 Deny Cloud
+45.55.64.0/19 Deny Cloud
+45.55.96.0/21 Deny Cloud
+45.55.108.0/22 Deny Cloud
+45.55.112.0/20 Deny Cloud
+45.55.128.0/17 Deny Cloud
 46.101.0.0/16 Deny Cloud
-69.55.48.0/20 Deny Cloud
+67.207.68.0/22 Deny Cloud
 80.240.128.0/20 Deny Cloud
 82.196.0.0/20 Deny Cloud
 95.85.0.0/18 Deny Cloud
@@ -3091,15 +3092,35 @@ Tag: PlusServer AG
 128.199.32.0/19 Deny Cloud
 128.199.64.0/18 Deny Cloud
 128.199.128.0/17 Deny Cloud
-138.68.0.0/20 Deny Cloud
+138.68.0.0/19 Deny Cloud
 138.68.32.0/24 Deny Cloud
-138.68.192.0/22 Deny Cloud
-139.59.128.0/20 Deny Cloud
-139.59.160.0/19 Deny Cloud
-139.59.192.0/21 Deny Cloud
-139.59.204.0/22 Deny Cloud
+138.68.36.0/22 Deny Cloud
+138.68.40.0/21 Deny Cloud
+138.68.48.0/20 Deny Cloud
+138.68.64.0/19 Deny Cloud
+138.68.96.0/20 Deny Cloud
+138.68.112.0/22 Deny Cloud
+138.68.120.0/21 Deny Cloud
+138.68.128.0/19 Deny Cloud
+138.68.160.0/20 Deny Cloud
+138.68.192.0/21 Deny Cloud
+138.68.208.0/20 Deny Cloud
+138.197.0.0/19 Deny Cloud
+138.197.32.0/20 Deny Cloud
+138.197.56.0/21 Deny Cloud
+138.197.128.0/19 Deny Cloud
+138.197.192.0/19 Deny Cloud
+138.197.232.0/22 Deny Cloud
+138.197.252.0/22 Deny Cloud
+139.59.0.0/18 Deny Cloud
+139.59.96.0/20 Deny Cloud
+139.59.128.0/18 Deny Cloud
+139.59.192.0/20 Deny Cloud
+139.59.208.0/21 Deny Cloud
+139.59.216.0/22 Deny Cloud
 139.59.224.0/19 Deny Cloud
-141.0.168.0/21 Deny Cloud
+141.0.169.0/24 Deny Cloud
+141.0.170.0/24 Deny Cloud
 146.185.128.0/18 Deny Cloud
 159.203.0.0/17 Deny Cloud
 159.203.128.0/20 Deny Cloud
@@ -3107,25 +3128,25 @@ Tag: PlusServer AG
 159.203.152.0/22 Deny Cloud
 159.203.160.0/20 Deny Cloud
 159.203.192.0/18 Deny Cloud
-162.243.0.0/16 Deny Cloud
+162.243.0.0/17 Deny Cloud
+162.243.128.0/19 Deny Cloud
+162.243.176.0/20 Deny Cloud
+162.243.192.0/18 Deny Cloud
 163.47.8.0/22 Deny Cloud
 178.62.0.0/16 Deny Cloud
 185.14.184.0/22 Deny Cloud
-185.88.180.0/22 Deny Cloud
-188.166.0.0/17 Deny Cloud
-188.166.128.0/18 Deny Cloud
-188.166.192.0/22 Deny Cloud
-188.166.200.0/21 Deny Cloud
-188.166.208.0/20 Deny Cloud
-188.166.224.0/19 Deny Cloud
+188.166.0.0/16 Deny Cloud
 188.226.128.0/17 Deny Cloud
-192.34.56.0/21 Deny Cloud
-192.81.208.0/20 Deny Cloud
-192.241.128.0/17 Deny Cloud
-198.199.64.0/18 Deny Cloud
-198.211.96.0/19 Deny Cloud
-208.68.36.0/22 Deny Cloud
-218.208.39.0/24 Deny Cloud
+192.81.220.0/22 Deny Cloud
+192.241.160.0/19 Deny Cloud
+192.241.192.0/18 Deny Cloud
+198.199.92.0/22 Deny Cloud
+198.199.96.0/20 Deny Cloud
+198.199.112.0/21 Deny Cloud
+198.199.124.0/22 Deny Cloud
+198.211.118.0/23 Deny Cloud
+198.211.120.0/21 Deny Cloud
+207.154.192.0/20 Deny Cloud
 Tag: Digital Ocean, Inc
 
 
@@ -14419,8 +14440,8 @@ Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Updated: 2016.04.27
+# %Listed, Google Malware Dashboard: 0.15%.
+# Updated: 2016.12.04
 
 31.192.104.0/22 Deny Spam
 31.192.108.0/24 Deny Spam
@@ -14432,10 +14453,9 @@ Tag: INFOBOX
 91.210.104.0/22 Deny Spam
 91.218.112.0/22 Deny Spam
 91.218.244.0/22 Deny Spam
-91.237.249.0/24 Deny Spam
 94.177.123.0/24 Deny Spam
-111.90.159.0/24 Deny Spam
 141.105.64.0/21 Deny Spam
+155.254.166.0/23 Deny Spam
 158.255.0.0/21 Deny Spam
 185.42.100.0/24 Deny Spam
 185.42.102.0/23 Deny Spam
@@ -14863,7 +14883,7 @@ Tag: Xirra GmbH
 
 # ASN 35804 ("PP SKS-LUGAN").
 # %Listed, Google Malware Dashboard: 1.03%.
-# Updated: 2016.03.30 / Checked: 2016.06.09
+# Updated: 2016.03.30 / Checked: 2016.12.04
 
 91.200.12.0/22 Deny Generic
 91.202.212.0/22 Deny Generic
@@ -15095,16 +15115,17 @@ Tag: Zyztm
 
 
 # ASN 201848 ("Trader soft LLC").
-# %Listed, Google Malware Dashboard: 5.01%.
-# Updated: 2016.04.25
+# %Listed, Google Malware Dashboard: 2.52%.
+# Updated: 2016.12.04
 
 85.143.208.0/20 Deny Generic
+89.223.24.0/21 Deny Generic
 Tag: Trader soft LLC
 
 
 # ASN 197712 ("10dencehispahard, S.L").
-# %Listed, Google Malware Dashboard: 3.23%.
-# Updated: 2016.04.25
+# %Listed, Google Malware Dashboard: 8.14%.
+# Updated: 2016.04.25 / Checked: 2016.12.04
 
 46.16.56.0/21 Deny Generic
 134.0.8.0/21 Deny Generic

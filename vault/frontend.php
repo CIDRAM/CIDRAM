@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.12.04).
+ * This file: Front-end handler (last modified: 2016.12.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -939,8 +939,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 ) {
                     $CIDRAM['FilesThis'] = $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'][$CIDRAM['FilesIterate']];
                     if (
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', $CIDRAM['FilesThis']) !== false ||
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', $CIDRAM['FilesThis']) !== false
+                        strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false ||
+                        strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false
                     ) {
                         $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = true;
                         break;
@@ -1178,8 +1178,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 ) {
                     $CIDRAM['FilesThis'] = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'][$CIDRAM['FilesIterate']];
                     if (
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', $CIDRAM['FilesThis']) !== false ||
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', $CIDRAM['FilesThis']) !== false
+                        strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false ||
+                        strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false
                     ) {
                         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['InUse'] = true;
                         break;

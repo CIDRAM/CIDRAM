@@ -2343,22 +2343,19 @@ Tag: myLoc
 Tag: Nobis/Ubiquity
 
 
-# ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
-# %Listed, Google Malware Dashboard: 0% (AS10532), 0.57% (AS15395), 1.27% (AS19994),
-#   "ASN not found" (AS22720), 0.59% (AS27357), 1.24% (AS33070), 0% (AS44716), 0.81% (AS45187), 2.63% (AS47715),
-#   0.51% (AS58683).
-# Updated: 2016.04.27
+# ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 54636, 58683 ("Rackspace Hosting").
+# %Listed, Google Malware Dashboard: 0% (AS10532), 0.72% (AS15395), 1.66% (AS19994),
+#   "ASN not found" (AS22720), 0.66% (AS27357), 1.80% (AS33070), 4.62% (AS44716), 1.73% (AS45187), 4.05% (AS47715),
+#   0% (AS54636), 0.94% (AS58683).
+# Updated: 2016.12.05
 
 5.79.0.0/18 Deny Cloud
-5.152.187.0/24 Deny Cloud
 23.253.0.0/16 Deny Cloud
-27.126.144.0/21 Deny Cloud
 31.222.128.0/18 Deny Cloud
 37.188.96.0/19 Deny Cloud
 46.38.160.0/19 Deny Cloud
 50.28.192.0/19 Deny Cloud
-50.28.224.0/21 Deny Cloud
-50.28.232.0/22 Deny Cloud
+50.28.224.0/20 Deny Cloud
 50.56.0.0/15 Deny Cloud
 64.39.0.0/19 Deny Cloud
 64.49.192.0/18 Deny Cloud
@@ -2368,6 +2365,10 @@ Tag: Nobis/Ubiquity
 67.23.32.0/20 Deny Cloud
 67.192.0.0/16 Deny Cloud
 67.207.128.0/19 Deny Cloud
+67.216.224.0/21 Deny Cloud
+67.216.232.0/23 Deny Cloud
+67.216.234.0/24 Deny Cloud
+67.216.239.0/24 Deny Cloud
 69.20.0.0/17 Deny Cloud
 72.3.128.0/17 Deny Cloud
 72.4.112.0/20 Deny Cloud
@@ -2383,8 +2384,9 @@ Tag: Nobis/Ubiquity
 94.236.0.0/17 Deny Cloud
 95.138.128.0/18 Deny Cloud
 98.129.0.0/16 Deny Cloud
-103.28.40.0/22 Deny Cloud
+103.204.13.0/24 Deny Cloud
 104.130.0.0/16 Deny Cloud
+104.222.0.0/20 Deny Cloud
 104.239.128.0/17 Deny Cloud
 108.166.0.0/17 Deny Cloud
 108.171.160.0/19 Deny Cloud
@@ -2397,13 +2399,10 @@ Tag: Nobis/Ubiquity
 142.0.184.0/22 Deny Cloud
 142.54.40.0/24 Deny Cloud
 146.20.0.0/16 Deny Cloud
-146.88.18.0/24 Deny Cloud
-146.88.28.0/24 Deny Cloud
 146.177.0.0/16 Deny Cloud
 148.62.0.0/16 Deny Cloud
 156.43.59.0/24 Deny Cloud
-159.127.178.0/23 Deny Cloud
-161.47.0.0/18 Deny Cloud
+161.47.0.0/17 Deny Cloud
 162.13.0.0/16 Run rules_specific.php
 162.209.0.0/17 Deny Cloud
 162.220.0.0/24 Deny Cloud
@@ -2421,13 +2420,16 @@ Tag: Nobis/Ubiquity
 184.106.0.0/16 Deny Cloud
 185.28.196.0/24 Deny Cloud
 185.36.144.0/22 Deny Cloud
-185.37.202.0/24 Deny Cloud
 185.51.76.0/22 Deny Cloud
 185.64.72.0/24 Deny Cloud
 185.75.60.0/22 Deny Cloud
 185.118.172.0/22 Deny Cloud
+185.144.228.0/22 Deny Cloud
 192.40.168.0/21 Deny Cloud
-192.233.7.0/24 Deny Cloud
+192.155.42.0/23 Deny Cloud
+192.155.44.0/24 Deny Cloud
+192.155.52.0/23 Deny Cloud
+192.155.54.0/24 Deny Cloud
 192.237.128.0/17 Deny Cloud
 193.142.244.0/24 Deny Cloud
 195.190.31.0/24 Deny Cloud
@@ -2436,19 +2438,18 @@ Tag: Nobis/Ubiquity
 198.210.16.0/21 Deny Cloud
 198.254.64.0/20 Deny Cloud
 199.166.36.0/23 Deny Cloud
+199.182.60.0/22 Deny Cloud
 201.131.3.0/24 Deny Cloud
-203.55.21.0/24 Deny Cloud
-203.55.138.0/24 Deny Cloud
 203.60.0.0/17 Deny Cloud
 204.63.38.0/23 Deny Cloud
-204.75.142.0/24 Deny Cloud
 204.232.128.0/17 Deny Cloud
-205.166.177.0/24 Deny Cloud
 207.97.192.0/18 Deny Cloud
+207.189.184.0/24 Deny Cloud
 208.78.96.0/21 Deny Cloud
 209.0.201.0/24 Deny Cloud
 209.20.64.0/19 Deny Cloud
 209.61.128.0/18 Deny Cloud
+209.87.184.0/22 Deny Cloud
 209.114.32.0/19 Deny Cloud
 209.133.224.0/19 Deny Cloud
 209.163.232.0/21 Deny Cloud
@@ -2458,6 +2459,7 @@ Tag: Nobis/Ubiquity
 212.64.128.0/19 Deny Cloud
 212.100.224.0/19 Deny Cloud
 216.18.148.0/22 Deny Cloud
+216.54.194.0/24 Deny Cloud
 216.110.32.0/20 Deny Cloud
 216.239.98.0/24 Deny Cloud
 216.239.100.0/24 Deny Cloud
@@ -7047,7 +7049,6 @@ Tag: SECURED SERVERS LLC
 198.176.57.0/24 Deny Cloud
 198.176.58.0/23 Deny Cloud
 198.176.60.0/22 Deny Cloud
-199.83.51.0/24 Deny Cloud
 199.91.72.0/22 Deny Cloud
 199.190.44.0/23 Deny Cloud
 199.245.59.0/24 Deny Cloud
@@ -8195,8 +8196,8 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# %Listed, Google Malware Dashboard: 5.70%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 2.75%.
+# Updated: 2016.12.05
 
 23.226.64.0/20 Deny Cloud
 104.161.0.0/16 Deny Cloud
@@ -8209,6 +8210,7 @@ Tag: InMotion Hosting, Inc
 184.164.64.0/19 Deny Cloud
 192.30.136.0/22 Deny Cloud
 192.110.160.0/21 Deny Cloud
+194.71.170.0/24 Deny Cloud
 199.30.48.0/21 Deny Cloud
 199.167.132.0/22 Deny Cloud
 199.231.84.0/22 Deny Cloud
@@ -8242,14 +8244,17 @@ Tag: SYNERGY WHOLESALE
 
 
 # ASN 45538 ("Online data services").
-# %Listed, Google Malware Dashboard: 2.17%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 3.77%.
+# Updated: 2016.12.05
 
 43.239.224.0/22 Deny Cloud
 45.117.164.0/22 Deny Cloud
 45.125.236.0/24 Deny Cloud
+45.125.239.0/24 Deny Cloud
 103.15.48.0/22 Deny Cloud
 103.56.164.0/23 Deny Cloud
+103.56.167.0/24 Deny Cloud
+103.68.80.0/22 Deny Cloud
 103.200.20.0/23 Deny Cloud
 103.234.36.0/22 Deny Cloud
 103.235.212.0/22 Deny Cloud
@@ -8262,14 +8267,29 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 1.87%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 4.12%.
+# Updated: 2016.12.05
 
+47.52.0.0/16 Deny Cloud
+47.56.0.0/15 Deny Cloud
+47.74.0.0/15 Deny Cloud
+47.76.0.0/14 Deny Cloud
 47.88.0.0/16 Deny Cloud
 47.89.0.0/18 Deny Cloud
+47.89.71.0/24 Deny Cloud
+47.89.73.0/24 Deny Cloud
+47.89.96.0/22 Deny Cloud
 47.89.128.0/17 Deny Cloud
-47.90.0.0/16 Deny Cloud
-47.91.99.0/24 Deny Cloud
+47.90.0.0/15 Deny Cloud
+47.235.0.0/16 Deny Cloud
+47.236.0.0/14 Deny Cloud
+47.240.0.0/14 Deny Cloud
+47.244.0.0/15 Deny Cloud
+47.246.0.0/16 Deny Cloud
+47.250.0.0/15 Deny Cloud
+47.252.0.0/15 Deny Cloud
+47.254.0.0/16 Deny Cloud
+110.76.23.0/24 Deny Cloud
 116.251.64.0/18 Deny Cloud
 140.205.122.0/24 Deny Cloud
 198.11.128.0/18 Deny Cloud
@@ -8373,31 +8393,28 @@ Tag: EVANZO GmbH
 
 
 # ASN 40065 ("CNSERVERS LLC").
-# %Listed, Google Malware Dashboard: 4.74%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 1.59%.
+# Updated: 2016.12.05
 
 38.103.161.0/24 Deny Cloud
 45.43.6.0/24 Deny Cloud
 45.43.9.0/24 Deny Cloud
 45.43.23.0/24 Deny Cloud
-104.37.29.0/24 Deny Cloud
-104.143.94.0/24 Deny Cloud
-104.194.206.0/24 Deny Cloud
 104.194.212.0/24 Deny Cloud
-107.161.32.0/24 Deny Cloud
-107.191.112.0/24 Deny Cloud
 162.212.252.0/22 Deny Cloud
+162.218.28.0/23 Deny Cloud
+162.218.30.0/24 Deny Cloud
 162.218.48.0/21 Deny Cloud
 162.252.8.0/22 Deny Cloud
 162.253.66.0/23 Deny Cloud
 172.81.150.0/24 Deny Cloud
 174.127.195.0/24 Deny Cloud
-192.133.80.0/23 Deny Cloud
+192.133.81.0/24 Deny Cloud
+192.151.193.0/24 Deny Cloud
 198.12.12.0/22 Deny Cloud
 198.47.121.0/24 Deny Cloud
 198.57.47.0/24 Deny Cloud
-199.83.48.0/23 Deny Cloud
-199.83.50.0/24 Deny Cloud
+199.83.48.0/22 Deny Cloud
 208.81.164.0/22 Deny Cloud
 Tag: CNSERVERS LLC
 
@@ -10243,8 +10260,8 @@ Tag: Netelligent Hosting
 
 
 # ASN 9925 ("Powerbase DataCenter Services (HK) Ltd").
-# %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.08.19 / Checked: 2016.10.02
+# %Listed, Google Malware Dashboard: 0.13%.
+# Updated: 2016.08.19 / Checked: 2016.12.04
 
 202.60.228.0/22 Deny Cloud
 202.60.232.0/21 Deny Cloud
@@ -11453,6 +11470,48 @@ Tag: meerfarbig
 195.93.182.0/23 Deny Cloud
 195.182.58.0/24 Deny Cloud
 Tag: velia.net
+
+
+# ASN 38719 ("Dreamscape Networks Pty Ltd").
+# %Listed, Google Malware Dashboard: 2.08%.
+# Updated: 2016.12.04
+
+27.54.80.0/20 Deny Cloud
+27.123.24.0/21 Deny Cloud
+27.124.112.0/20 Deny Cloud
+43.243.116.0/22 Deny Cloud
+43.250.248.0/22 Deny Cloud
+103.226.220.0/22 Deny Cloud
+103.250.212.0/22 Deny Cloud
+103.254.136.0/22 Deny Cloud
+163.47.72.0/22 Deny Cloud
+176.74.24.0/21 Deny Cloud
+203.170.80.0/21 Deny Cloud
+Tag: Dreamscape Networks
+
+
+# ASN 43829 ("Irish Domains Ltd").
+# %Listed, Google Malware Dashboard: 2.67%.
+# Updated: 2016.12.04
+
+79.170.244.0/22 Deny Cloud
+Tag: Irish Domains Ltd
+
+
+# ASN 203625 ("Europe Domains LTD").
+# %Listed, Google Malware Dashboard: 16.67%.
+# Updated: 2016.12.04
+
+185.129.24.0/22 Deny Cloud
+Tag: Europe Domains LTD
+
+
+# ASN 199029 ("World Registry of Internet Domains LTD").
+# %Listed, Google Malware Dashboard 8.26%.
+# Updated: 2016.12.04
+
+91.241.64.0/22 Deny Cloud
+Tag: AS199029
 
 
 # ---
@@ -15144,46 +15203,41 @@ Tag: Drake Holdings LLC
 
 
 # ASN 45753 ("Unit 1205-1207").
-# %Listed, Google Malware Dashboard: 2.95%.
-# Updated: 2016.04.29
+# %Listed, Google Malware Dashboard: 4.15%.
+# Updated: 2016.12.05
 
 43.225.196.0/22 Deny Generic
-45.121.104.0/22 Deny Generic
-45.125.4.0/22 Deny Generic
+45.121.140.0/22 Deny Generic
 69.176.88.0/21 Deny Generic
 96.43.96.0/24 Deny Generic
 103.1.224.0/22 Deny Generic
 103.31.8.0/22 Deny Generic
 103.42.104.0/22 Deny Generic
 103.44.160.0/22 Deny Generic
-103.57.108.0/22 Deny Generic
-103.61.184.0/22 Deny Generic
 103.61.240.0/22 Deny Generic
-103.193.132.0/22 Deny Generic
+103.70.76.0/23 Deny Generic
+103.71.252.0/23 Deny Generic
+103.194.184.0/22 Deny Generic
 103.199.104.0/22 Deny Generic
 103.203.48.0/22 Deny Generic
 103.212.96.0/22 Deny Generic
-103.249.196.0/22 Deny Generic
+103.240.40.0/22 Deny Generic
 106.3.86.0/24 Deny Generic
 110.173.48.0/20 Deny Generic
 111.68.0.0/20 Deny Generic
 112.121.160.0/19 Deny Generic
 116.213.36.0/22 Deny Generic
+118.91.240.0/20 Deny Generic
 119.42.144.0/21 Deny Generic
 137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
 175.41.16.0/20 Deny Generic
-180.87.114.0/24 Deny Generic
 180.178.32.0/19 Deny Generic
-182.16.0.0/18 Deny Generic
-182.16.64.0/21 Deny Generic
-182.16.72.0/22 Deny Generic
-182.16.76.0/24 Deny Generic
-182.16.96.0/24 Deny Generic
-182.16.120.0/24 Deny Generic
+182.16.0.0/17 Deny Generic
+183.182.12.0/22 Deny Generic
 216.83.40.0/21 Deny Generic
 216.83.56.0/21 Deny Generic
-Tag: AS45753
+Tag: Unit 1205-1207
 
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").

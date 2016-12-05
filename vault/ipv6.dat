@@ -558,18 +558,19 @@ Tag: myLoc
 Tag: HOSTKEY B.V
 
 
-# ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 58683 ("Rackspace Hosting").
-# %Listed, Google Malware Dashboard: 0% (AS10532), 0.57% (AS15395), 1.27% (AS19994),
-#   "ASN not found" (AS22720), 0.59% (AS27357), 1.24% (AS33070), 0% (AS44716), 0.81% (AS45187), 2.63% (AS47715),
-#   0.51% (AS58683).
-# Updated: 2016.03.28 / Checked: 2016.04.27
+# ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 54636, 58683 ("Rackspace Hosting").
+# %Listed, Google Malware Dashboard: 0% (AS10532), 0.72% (AS15395), 1.66% (AS19994),
+#   "ASN not found" (AS22720), 0.66% (AS27357), 1.80% (AS33070), 4.62% (AS44716), 1.73% (AS45187), 4.05% (AS47715),
+#   0% (AS54636), 0.94% (AS58683).
+# Updated: 2016.12.05
 
 2001:bf0::/29 Deny Cloud
 2001:4800::/31 Deny Cloud
 2001:4802::/32 Deny Cloud
 2001:4807:2::/48 Deny Cloud
 2401:1800::/31 Deny Cloud
-2404:de00::/32 Deny Cloud
+2620:103:1::/48 Deny Cloud
+2620:103:2::/48 Deny Cloud
 2a00:1a48::/32 Deny Cloud
 2a06:9380::/29 Deny Cloud
 Tag: Rackspace Hosting
@@ -2371,6 +2372,14 @@ Tag: UAB Rakrejus
 Tag: SYNERGY WHOLESALE
 
 
+# ASN 45538 ("Online data services").
+# %Listed, Google Malware Dashboard: 3.77%.
+# Updated: 2016.12.05
+
+2405:9d80::/32 Deny Cloud
+Tag: AS45538
+
+
 # ASN 45090 ("Shenzhen Tencent Computer Systems Company Limited").
 # %Listed, Google Malware Dashboard: 4.07%.
 # Updated: 2016.11.25
@@ -3150,6 +3159,24 @@ Tag: Webline Services Inc
 Tag: meerfarbig
 
 
+# ASN 38719 ("Dreamscape Networks Pty Ltd").
+# %Listed, Google Malware Dashboard: 2.08%.
+# Updated: 2016.12.04
+
+2400:6d80::/32 Deny Cloud Deny Cloud
+2407:4c00::/32 Deny Cloud Deny Cloud
+2a00:fd80::/32 Deny Cloud Deny Cloud
+Tag: Dreamscape Networks
+
+
+# ASN 203625 ("Europe Domains LTD").
+# %Listed, Google Malware Dashboard: 16.67%.
+# Updated: 2016.12.04
+
+2a06:d2c0::/29 Deny Cloud
+Tag: Europe Domains LTD
+
+
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
 # %Listed, Google Malware Dashboard: 21.05%.
@@ -3534,6 +3561,14 @@ Tag: Zyztm
 2a04:ac00:1::/48 Deny Generic
 2a04:ac00:4::/48 Deny Generic
 Tag: Trader soft LLC
+
+
+# ASN 45753 ("Unit 1205-1207").
+# %Listed, Google Malware Dashboard: 4.15%.
+# Updated: 2016.12.05
+
+2401:4c00::/32 Deny Generic
+Tag: Unit 1205-1207
 
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").

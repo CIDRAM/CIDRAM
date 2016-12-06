@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.02).
+ * This file: Functions file (last modified: 2016.12.06).
  */
 
 /**
@@ -1215,11 +1215,12 @@ $CIDRAM['AppendToString'] = function (&$String, $Delimit = '', $Append = '') {
     $String .= $Append;
 };
 
-/** Check whether input is an array, and if it isn't, make it so. */
+/** If input isn't an array, make it so. Remove empty elements. */
 $CIDRAM['Arrayify'] = function (&$Input) {
     if (!is_array($Input)) {
         $Input = array($Input);
     }
+    $Input = array_filter($Input);
 };
 
 /** @todo@ docBlock */

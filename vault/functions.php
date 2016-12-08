@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.06).
+ * This file: Functions file (last modified: 2016.12.08).
  */
 
 /**
@@ -1346,4 +1346,26 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
 /** @todo@ docBlock */
 $CIDRAM['FileManager-IsDirEmpty'] = function ($Directory) {
     return !((new \FilesystemIterator($Directory))->valid());
+};
+
+/** @todo@ docBlock */
+$CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
+    $Arr = array();
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    foreach($List as $Item => $List){
+        if (
+            preg_match("\x01" . '^(?:/\.\.|./\.|\.{3})$' . "\x01", str_replace("\\", '/', substr($Item, -3))) ||
+            !preg_match("\x01" . '(?:logfile|\.(txt|log)$)' . "\x01i", $Item) ||
+            !file_exists($Item) ||
+            is_dir($Item) ||
+            !is_file($Item) ||
+            !is_readable($Item)
+        ) {
+            continue;
+        }
+        $ThisName = substr($Item, strlen($Base));
+        $Arr[$ThisName] = array('Filename' => $ThisName, 'Filesize' => filesize($Item));
+        $CIDRAM['FormatFilesize']($Arr[$ThisName]['Filesize']);
+    }
+    return $Arr;
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.12.06).
+ * This file: Front-end handler (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1874,51 +1874,30 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 
     /** Initialise array for fetching logs data. */
     $CIDRAM['FE']['LogFiles'] = array(
-        'Files' => scandir($CIDRAM['Vault']),
-        'Types' => ',txt,log,',
+        'Files' => $CIDRAM['Logs-RecursiveList']($CIDRAM['Vault']),
         'Out' => ''
     );
 
     if (empty($CIDRAM['QueryVars']['logfile'])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_no_logfile_selected'];
-    } elseif (
-        file_exists($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']) &&
-        $CIDRAM['Traverse']($CIDRAM['QueryVars']['logfile']) &&
-        (strpos(
-            $CIDRAM['FE']['LogFiles']['Types'],
-            strtolower(substr($CIDRAM['QueryVars']['logfile'], -3))
-        ) !== false)
-    ) {
-        $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
+    } elseif (empty($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_logfile_doesnt_exist'];
+    } else {
         $CIDRAM['FE']['logfileData'] = str_replace(
             array('<', '>', "\r", "\n"),
             array('&lt;', '&gt;', '', "<br />\n"),
-            $CIDRAM['FE']['logfileData']
+            $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile'])
         );
-    } else {
-        $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_logfile_doesnt_exist'];
     }
 
-    $CIDRAM['FE']['LogFiles']['Count'] = count($CIDRAM['FE']['LogFiles']['Files']);
-    for (
-        $CIDRAM['FE']['LogFiles']['Iterate'] = 0;
-        $CIDRAM['FE']['LogFiles']['Iterate'] < $CIDRAM['FE']['LogFiles']['Count'];
-        $CIDRAM['FE']['LogFiles']['Iterate']++
-    ) {
-        if (strpos(
-            $CIDRAM['FE']['LogFiles']['Types'],
-            strtolower(substr($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['FE']['LogFiles']['Iterate']], -3))
-        ) !== false) {
-            $CIDRAM['FE']['LogFiles']['This'] = $CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['FE']['LogFiles']['Iterate']];
-            $CIDRAM['FE']['LogFiles']['Filesize'] = filesize($CIDRAM['Vault'] . $CIDRAM['FE']['LogFiles']['This']);
-            $CIDRAM['FormatFilesize']($CIDRAM['FE']['LogFiles']['Filesize']);
-            $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
-                '            <a href="?cidram-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
-                $CIDRAM['FE']['LogFiles']['This'],
-                $CIDRAM['FE']['LogFiles']['Filesize']
-            ) . "\n";
-        }
-    }
+    array_walk($CIDRAM['FE']['LogFiles']['Files'], function ($Arr) use (&$CIDRAM) {
+        $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
+            '            <a href="?cidram-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
+            $Arr['Filename'],
+            $Arr['Filesize']
+        ) . "\n";
+    });
+
     if (!$CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out']) {
         $CIDRAM['FE']['LogFiles'] = $CIDRAM['lang']['logs_no_logfiles_available'];
     }

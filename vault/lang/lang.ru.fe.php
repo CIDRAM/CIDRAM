@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.11.28).
+ * This file: Russian language data for the front-end (last modified: 2016.12.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -176,4 +176,5 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Поддерживает списки известных спамеров; Полезно для проверки спама деятельности IP/ASN.</li>
         </ul>';

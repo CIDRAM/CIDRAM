@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.11.28).
+ * This file: French language data for the front-end (last modified: 2016.12.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -176,4 +176,5 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Affiche les rapports concernant les taux d\'infection par les logiciels malveillants pour les ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Affiche les rapports concernant les taux d\'infection par botnet pour les ASN.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Affiche les rapports concernant les taux d\'infection par botnet pour les ASN.</li>
+            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Conserve les listes des spammeurs connus; Utile pour vérifier les activités de spam des IPs/ASNs.</li>
         </ul>';

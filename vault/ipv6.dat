@@ -613,12 +613,12 @@ Tag: Hurricane Electric
 
 
 # ASNs 30693, 49532, 62904 ("Eonix Corporation").
-# %Listed, Google Malware Dashboard: 2.11% (AS30693), 0% (AS49532), 0.57% (AS62904).
-# Updated: 2016.04.30
+# %Listed, Google Malware Dashboard: 0.89% (AS30693), 0% (AS49532), 0.61% (AS62904).
+# Updated: 2016.04.30 / Checked: 2016.12.10
 
 2605:f680::/32 Deny Cloud
-2607:ff28::/32 Deny Cloud
 2a07:440::/32 Deny Cloud
+2607:ff28::/32 Deny Cloud
 Tag: Eonix Corporation
 
 
@@ -2412,16 +2412,24 @@ Tag: Netdirekt A.S
 Tag: EVANZO GmbH
 
 
-# ASN 21321 ("Areti Internet Ltd"), ASNs 25745, 4250 ("Alentus Corporation").
-# %Listed, Google Malware Dashboard: 0% (AS21321), 0.87% (AS25745) 2.36% (AS4250).
-# Updated: 2016.04.30
+# ASN 21321 ("Areti Internet Ltd"), ASNs 4250, 25745 ("Alentus Corporation").
+# %Listed, Google Malware Dashboard: 0% (AS21321), 4.36% (AS4250), 1.74% (AS25745).
+# Updated: 2016.12.10
 
 2001:590:1405::/48 Deny Cloud
 2001:590:3c03::/48 Deny Cloud
 2001:590:4802::/48 Deny Cloud
+2606:f180:1::/48 Deny Cloud
+2606:f180:2::/47 Deny Cloud
+2606:f180:4::/46 Deny Cloud
 2a01:b840::/32 Deny Cloud
 2a03:4a80::/45 Deny Cloud
 2a03:4a80:8::/47 Deny Cloud
+2a07:23c0::/48 Deny Cloud
+2a07:23c0:2::/47 Deny Cloud
+2a07:23c0:4::/47 Deny Cloud
+2a07:23c0:6::/48 Deny Cloud
+2a07:23c0:8::/47 Deny Cloud
 Tag: Areti/Alentus
 
 
@@ -2435,8 +2443,8 @@ Tag: Falco Networks B.V
 
 
 # ASN 38478 ("SunnyVision Limited").
-# %Listed, Google Malware Dashboard: 4.89%.
-# Updated: 2016.05.01
+# %Listed, Google Malware Dashboard: 5.18%.
+# Updated: 2016.05.01 / Checked: 2016.12.10
 
 2400:f100::/47 Deny Cloud
 2400:f100:2::/48 Deny Cloud
@@ -2444,32 +2452,33 @@ Tag: SunnyVision Limited
 
 
 # ASN 37943 ("ZhengZhou GIANT Computer Network Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 4.75%.
-# Updated: 2016.05.01
+# %Listed, Google Malware Dashboard: 5.77%.
+# Updated: 2016.05.01 / Checked: 2016.12.10
 
 2400:a480::/32 Deny Cloud
 Tag: ZhengZhou GIANT
 
 
 # ASN 34233 ("Superior B.V").
-# %Listed, Google Malware Dashboard: 2.40%.
-# Updated: 2016.05.01
+# %Listed, Google Malware Dashboard: 7.21%.
+# Updated: 2016.12.10
 
 2a00:a0c0::/32 Deny Cloud
+2a06:f700::/29 Deny Cloud
 Tag: Superior B.V
 
 
 # ASN 27715 ("Locaweb Serviços de Internet").
-# %Listed, Google Malware Dashboard: 1.97%.
-# Updated: 2016.05.01
+# %Listed, Google Malware Dashboard: 2.66%.
+# Updated: 2016.05.01 / Checked: 2016.12.10
 
 2804:218::/32 Deny Cloud
 Tag: Locaweb Serviços
 
 
 # ASN 24446 ("NetRegistry Pty Ltd").
-# %Listed, Google Malware Dashboard: 2.00%.
-# Updated: 2016.05.01
+# %Listed, Google Malware Dashboard: 2.89%.
+# Updated: 2016.05.01 / Checked: 2016.12.10
 
 2403:1400::/32 Deny Cloud
 Tag: NetRegistry Pty Ltd
@@ -2485,10 +2494,11 @@ Tag: eSited Solutions
 
 
 # ASN 21155 ("ProServe B.V").
-# %Listed, Google Malware Dashboard: 2.00%.
-# Updated: 2016.05.01
+# %Listed, Google Malware Dashboard: 2.20%.
+# Updated: 2016.12.10
 
 2001:67c:20c::/48 Deny Cloud
+2001:67c:2d0::/48 Deny Cloud
 2001:67c:2390::/48 Deny Cloud
 2001:67c:23c4::/48 Deny Cloud
 2001:828::/32 Deny Cloud
@@ -2498,55 +2508,48 @@ Tag: ProServe B.V
 
 
 # ASN 39326 ("HighSpeed Office Limited").
-# %Listed, Google Malware Dashboard: 1.12%.
-# Updated: 2016.05.05
+# %Listed, Google Malware Dashboard: 1.20%.
+# Updated: 2016.12.10
 
 2001:a08::/32 Deny Cloud
 2a01:348::/32 Deny Cloud
-2a01:5820::/32 Deny Cloud
 2a03:f80:44::/48 Deny Cloud
 2a03:94c0::/40 Deny Cloud
-2a04:7fc0::/29 Deny Cloud
-2a06:1740::/29 Deny Cloud
 Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# %Listed, Google Malware Dashboard: 0.20%.
-# Updated: 2016.05.05
+# %Listed, Google Malware Dashboard: 0.25%.
+# Updated: 2016.12.10
 
 2a00:f48::/32 Deny Cloud
 2a02:2da0::/32 Deny Cloud
+2a03:401::/32 Deny Cloud
 2a05:3c80::/29 Deny Cloud
 2a05:cc00::/29 Deny Cloud
-2a06:8781::/32 Deny Cloud
+2a06:8781::/48 Deny Cloud
 Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# %Listed, Google Malware Dashboard: 0.95%.
-# Updated: 2016.05.05
+# %Listed, Google Malware Dashboard: 2.04%.
+# Updated: 2016.12.10
 
-2001:67c:2f88::/48 Deny Cloud
-2001:913:1000::/36 Deny Cloud
+2001:678:198::/48 Deny Cloud
 2402:c080::/31 Deny Cloud
 2605:7300::/31 Deny Cloud
 2606:d880::/32 Deny Cloud
 2a00:1630::/29 Deny Cloud
 2a00:1708::/32 Deny Cloud
 2a00:1d20::/32 Deny Cloud
-2a02:50e0::/32 Deny Cloud
 2a03:3a60::/32 Deny Cloud
 2a03:59c0::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
-2a05:1500:100::/40 Deny Cloud
 2a05:6440::/29 Deny Cloud
 2a05:b0c6:5e4::/48 Deny Cloud
-2a06:50c0::/29 Deny Cloud
 2a06:7240:5::/48 Deny Cloud
 2a06:7240:6::/48 Deny Cloud
 2a06:7a00::/48 Deny Cloud
-2a06:c280::/29 Deny Cloud
 2a07:3980::/29 Deny Cloud
 Tag: i3d B.V
 
@@ -3177,6 +3180,14 @@ Tag: Dreamscape Networks
 Tag: Europe Domains LTD
 
 
+# ASN 22458 ("NetSource Communications, Inc").
+# %Listed, Google Malware Dashboard: 1.02%.
+# Updated: 2016.12.10
+
+2604:f80::/32 Deny Cloud
+Tag: NetSource
+
+
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
 # %Listed, Google Malware Dashboard: 21.05%.
@@ -3419,11 +3430,24 @@ Tag: Trend Micro
 
 
 # ASN 8551 ("Bezeq International-Ltd").
-# %Listed, Google Malware Dashboard: 1.55%.
-# Updated: 2016.01.20 / Checked: 2016.09.20
+# %Listed, Google Malware Dashboard: 1.68%.
+# Updated: 2016.12.10
 
 2001:4cd0::/32 Deny Generic
+2a02:26f0:8000::/48 Deny Generic
 Tag: Bezeq International
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 5486, 9116 ("012 Smile Communications LTD").
+# Spam emitters; Subsidiary of Bezeq International.
+# %Listed, Google Malware Dashboard: 0% (AS5486), 1.86% (AS9116).
+# Updated: 2016.12.10
+
+2001:40a8::/32 Deny Spam
+Tag: 012 Smile
 ---
 recaptcha:
  enabled: true

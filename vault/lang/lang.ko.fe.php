@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2016.12.07).
+ * This file: Korean language data for the front-end (last modified: 2016.12.11).
  *
  * @todo (This is incomplete).
  */
@@ -143,7 +143,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Don\'t hide unused';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Hide unused';
 $CIDRAM['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page allows you to control who can access the CIDRAM front-end.';
 $CIDRAM['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for CIDRAM from the front-end.';
-$CIDRAM['lang']['tip_donate'] = 'CIDRAM is offered free of charge, but if you want donate to the project, you can do so by clicking the donate button.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM is offered free of charge, but if you want to donate to the project, you can do so by clicking the donate button.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Enter IPs here.';
 $CIDRAM['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hello, {username}.<br />The IP test page allows you to test whether IP addresses are blocked by the currently installed signatures.';

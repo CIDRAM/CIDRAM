@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.6.1 ===
+PATCH RELEASE.
+
 - [2016.11.29; Bug-fix; Maikuolan]: Some notices occasionally generated to the
   error logs by undefined indexes when accessing the updater; Fixed.
 
@@ -31,6 +36,19 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2016.12.08; Sub-minor code change; Maikuolan]: Improved mechanism for
   accessing logfiles via the front-end.
+
+- [2016.12.11; Sub-minor code change; Maikuolan]: Removed "matchElement" (never
+  used; redundant; better to use "in_array" instead anyway). Improved some of
+  the docBlock comments. Did some subtle refactoring. Slightly tweaked some of
+  the front-end aesthetics.
+
+- [2016.11.12; Documentation; Maikuolan]: Completed translation for the CIDRAM
+  README documentation into German (fuzzy and quite likely erroneous, though).
+  This totals 12 different language versions of the README documentation now
+  available.
+
+Caleb M / Maikuolan,
+12th December 2016.
 
 === Version/Release 0.6.0 ===
 MINOR RELEASE.

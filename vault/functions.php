@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.08).
+ * This file: Functions file (last modified: 2016.12.12).
  */
 
 /**
@@ -52,34 +52,6 @@ $CIDRAM['ReadFile'] = function ($f) {
 };
 
 /**
- * Takes two parameters; The first parameter must be an array. The function
- * iterates through the array, comparing each array element against the second
- * parameter. If the array element exactly matches the second parameter, the
- * function returns true. Otherwise, after finishing iterating through the
- * array, the function returns false.
- *
- * @param array $arr The input array.
- * @param string|int|bool $e The second parameter (can be a string, an integer,
- *      a boolean, etc).
- * @return bool The results of the comparison.
- */
-$CIDRAM['matchElement'] = function ($arr, $e) {
-    if (!is_array($arr)) {
-        return false;
-    }
-    reset($arr);
-    $c = count($arr);
-    for ($i = 0; $i < $c; $i++) {
-        $k = key($arr);
-        if ($arr[$k] === $e) {
-            return true;
-        }
-        next($arr);
-    }
-    return false;
-};
-
-/**
  * This is a specialised search-and-replace function, designed to replace
  * encapsulated substrings within a given input string based upon the elements
  * of a given input array. The function accepts two input parameters: The
@@ -102,13 +74,9 @@ $CIDRAM['ParseVars'] = function ($Needle, $Haystack) {
     if (!is_array($Needle) || empty($Haystack)) {
         return '';
     }
-    $c = count($Needle);
-    reset($Needle);
-    for ($i = 0; $i < $c; $i++) {
-        $k = key($Needle);
-        $Haystack = str_replace('{' . $k . '}', $Needle[$k], $Haystack);
-        next($Needle);
-    }
+    array_walk($Needle, function($Value, $Key) use (&$Haystack) {
+        $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+    });
     return $Haystack;
 };
 
@@ -712,11 +680,9 @@ $CIDRAM['Time2Logfile'] = function ($time, $dir) use (&$CIDRAM) {
         'hh' => substr($time, 8, 2)
     );
     if (is_array($dir)) {
-        $c = count($dir);
-        for ($i = 0; $i < $c; $i++) {
-            $dir[$i] = $CIDRAM['ParseVars']($values, $dir[$i]);
-        }
-        return $dir;
+        return array_map(function ($Item) use (&$values, &$CIDRAM) {
+            return $CIDRAM['ParseVars']($values, $Item);
+        }, $dir);
     }
     return $CIDRAM['ParseVars']($values, $dir);
 };
@@ -1223,7 +1189,13 @@ $CIDRAM['Arrayify'] = function (&$Input) {
     $Input = array_filter($Input);
 };
 
-/** @todo@ docBlock */
+/**
+ * Used by the File Manager to generate a list of the files contained in a
+ * working directory (normally, the vault).
+ *
+ * @param string $Base The path to the working directory.
+ * @return array A list of the files contained in the working directory.
+ */
 $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = array();
     $Key = -1;
@@ -1324,7 +1296,14 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     return $Arr;
 };
 
-/** @todo@ docBlock */
+/**
+ * Checks paths for directory traversal and ensures that they only contain
+ * expected characters.
+ *
+ * @param string $Path The path to check.
+ * @return bool False when directory traversals and/or unexpected characters
+ *      are detected, and true otherwise.
+ */
 $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = str_replace("\\", '/', $Path);
     if (
@@ -1343,12 +1322,23 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     return $Valid;
 };
 
-/** @todo@ docBlock */
+/**
+ * Checks whether the specified directory is empty.
+ *
+ * @param string $Directory The directory to check.
+ * @return bool True if empty; False if not empty.
+ */
 $CIDRAM['FileManager-IsDirEmpty'] = function ($Directory) {
     return !((new \FilesystemIterator($Directory))->valid());
 };
 
-/** @todo@ docBlock */
+/**
+ * Used by the logs viewer to generate a list of the logfiles contained in a
+ * working directory (normally, the vault).
+ *
+ * @param string $Base The path to the working directory.
+ * @return array A list of the logfiles contained in the working directory.
+ */
 $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = array();
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);

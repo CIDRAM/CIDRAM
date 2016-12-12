@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2016.12.07).
+ * This file: Portuguese language data for the front-end (last modified: 2016.12.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -141,7 +141,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Não ocultar não utilizado';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ocultar não utilizado';
 $CIDRAM['lang']['tip_accounts'] = 'Olá, {username}.<br />A página de contas permite que você controle quem pode acessar o CIDRAM front-end.';
 $CIDRAM['lang']['tip_config'] = 'Olá, {username}.<br />A página de configuração permite que você modifique a configuração do CIDRAM a partir do front-end.';
-$CIDRAM['lang']['tip_donate'] = 'CIDRAM é oferecido gratuitamente, Mas se você quiser doar para o projeto, você pode fazê-lo clicando no botão doar.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM é oferecido gratuitamente, mas se você quiser doar para o projeto, você pode fazê-lo clicando no botão doar.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Insira os IPs aqui.';
 $CIDRAM['lang']['tip_file_manager'] = 'Olá, {username}.<br />O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este).';
 $CIDRAM['lang']['tip_home'] = 'Olá, {username}.<br />Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar.';

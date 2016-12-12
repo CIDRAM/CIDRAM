@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.12.07).
+ * This file: German language data for the front-end (last modified: 2016.12.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -141,7 +141,7 @@ $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Verstecken unbenutzt';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Front-End haben.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für CIDRAM von der Front-End.';
-$CIDRAM['lang']['tip_donate'] = 'CIDRAM wird kostenlos angeboten, aber wenn Sie Spende für das Projekt wollen, können Sie dies tun indem Klicken Sie auf die Spenden-Schaltfläche.';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM wird kostenlos angeboten, aber wenn Sie für das Projekt spenden möchten, können Sie dies tun indem Klicken Sie auf die Spenden-Schaltfläche.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Geben Sie hier IPs.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (Können Sie Ihre Installation mit diesem brechen).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der CIDRAM Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';

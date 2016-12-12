@@ -529,7 +529,7 @@ Ignore セクション１
 
 ####「偽陽性」とは何ですか？
 
-用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、非常に簡単に説明し、一般化文脈で、is used when testing for a condition, to refer to the results of that test, when the results are 陽性（即ち、 the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" （wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling 「オオカミ、オオカミ」）、 or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、非常に簡単に説明し、一般化文脈で、は条件のテストするときに使用されます、結果の結果を参照するために、結果が「陽性」の場合（即ち、the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" （wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling 「オオカミ、オオカミ」）、 or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
 
 いくつかの関連する用語は、「真陽性」、「真陰性」、と「偽陰性」です。「真陽性」 refers to when the test results and the actual state of the condition are both 真 (or 「陽性」), and a 「真陰性」 refers to when the test results and the actual state of the condition are both 偽 (or 「陰性」); A 「真陽性」 or a 「真陰性」 is considered to be a 「正しい推論」. The antithesis of a 「偽陽性」 is a 「偽陰性」; A 「偽陰性」 refers to when the test results are 陰性 （即ち、 the condition is determined to be 「陰性」、または、「偽」), but are expected to be (or should have been) 陽性 （即ち、 the condition, in reality, is 「陽性」、または、「真」）。
 
@@ -545,4 +545,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年12月4日。
+最終アップデート： 2016年12月12日。

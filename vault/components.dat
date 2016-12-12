@@ -16,7 +16,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.6.1-DEV+20161208
+ Version: 0.6.1
  Minimum Required: 0.6.0-DEV
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -94,30 +94,30 @@ CIDRAM:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
-   - b2a8fe23cc203a3e5d9fc832c7cb22ea:6483
+   - 2fd854874b9cf99119c51e3fcc13d7d6:6479
    - 0a213d6ca305df62046b1130676adfb6:1789
    - 8e03209e7fc6641b45094e584340feff:83
-   - f228e4596a20c1e5298f9fcb66b84394:1351
-   - 429746b5de7927ac08959fcbf7256f84:772
+   - 51e57efba1d36775387fd7ab755d17aa:1353
+   - be5a74f434f3fdbf14cc9f490a5ad32f:773
    - a231e681edd3ce071e054059c8e3e1c6:696
    - d15ddfad486b6faf805a59edbc100948:139
-   - f5572e2c950cf3a51a2d2c8f7506e52b:922
+   - 5680c5305d10271e0c0b0d7f6aa388bd:923
    - dc2bd3ec4b1b7ca433bc78e321f03224:840
    - 25af9694dcdc4b29b4394f6bbfc510ac:740
-   - 226df5763277cae8c98c7401ffcb5716:481
+   - 23fa938978004ef045733b07b366793c:482
    - 7062622062c2cef8db4e0e02ee1e04e2:765
-   - e4b70df1c79967978698daf4ed177aeb:720
-   - 186385262cc2464276f14bd5017e00e3:163
+   - 8a7ebf4784bfdcc6a01a1c7cb022c80d:722
+   - 26a57d8db2fcf87ccddb64d04fe6ae4c:164
    - 0f3af6426fe5ae61d285f72da1cf270d:2180
    - 6ff9fb63b91538ee5b27969f002dedcf:194
    - 2b367e2ab5b705d53c4c66f6c790ba3d:876
    - a2abeb3e093353cc782a84f3446dd8ca:506
-   - 2409efa3cd4ed38b06bfb11512e16cde:989
-   - d20a38733bc9968dab42267007c153a2:671
-   - 2514b90c3514558ca7f681a2b76e6b6b:1885
+   - 6dcf64ef315493b521b4d679b37d3316:990
+   - 205e715a996e26aa632b137515120a74:672
+   - ca4d53f3b38dbecbf636b5c67594ac74:2102
    - f02846bee1e737178f55f8e67d312d53:931
    - a74b0bab7f55fd5639613e2392bd7e3e:100472
-   - 54933eb6835f56c0f67f9f6521297352:65177
+   - 9916fbacc06ed90257fafa4b994816dc:65110
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
@@ -352,7 +352,7 @@ l10n/en:
  Name: L10N: English
  Extended Description:
   en: English language data
- Version: 2016.12.08
+ Version: 2016.12.11
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -367,7 +367,7 @@ l10n/en:
    - lang/lang.en.php
   Checksum:
    - 10ebd10d026c244e80210d160f5f5505:4157
-   - c8e4d81e8a4ca7b9472f3b1e09af80ff:15997
+   - e0e10620c7c41255ac5339d1c6591446:16000
    - 54e69f219cee5979cea23b191d181734:3791
  Reannotate: components.dat
 l10n/ar:
@@ -396,7 +396,7 @@ l10n/de:
  Name: L10N: Deutsche
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2016.12.08
+ Version: 2016.12.11
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -411,7 +411,7 @@ l10n/de:
    - lang/lang.de.php
   Checksum:
    - c632a3176fe563d36568648946799ce5:4461
-   - ef36840d833ccd80113eed6d053dd3e8:17299
+   - dabf723167130b5ece860d6ff2bdf4d4:17302
    - fb002d68c0a17bf725d848d27a66f505:4070
  Reannotate: components.dat
 l10n/es:
@@ -528,7 +528,7 @@ l10n/ko:
  Name: L10N: 한글
  Extended Description:
   ko: 한글 데이터 (<div class="txtRd">Note: W.I.P.; incomplete; unreliable; inaccurate!</div>)
- Version: 2016.12.08-WIP
+ Version: 2016.12.11-WIP
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -543,7 +543,7 @@ l10n/ko:
    - lang/lang.ko.php
   Checksum:
    - b1cdb268e945deda7d98ea143cd58fbe:4285
-   - 113f7e36896b34d1796c2343e7b01f24:15735
+   - 0e3ee8b87cefb578d63627baedb8bdd0:15738
    - d0ce0569b51eab116c845631302bf739:3406
  Reannotate: components.dat
 l10n/nl:
@@ -572,7 +572,7 @@ l10n/pt:
  Name: L10N: Português
  Extended Description:
   pt: Linguagem dados Português
- Version: 2016.12.08
+ Version: 2016.12.11
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -587,7 +587,7 @@ l10n/pt:
    - lang/lang.pt.php
   Checksum:
    - cfd6161777f7b09594193e59901098c1:4414
-   - 8657b6b10b597a368c751b20e7e25e8c:17102
+   - 8f26c170fa2441c8884ac70a7f00f99a:17102
    - b487b7ef95cd8bcdb0f11e2f1e85ee9c:3969
  Reannotate: components.dat
 l10n/ru:

@@ -298,7 +298,7 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 - Dies definiert wie CIDRAM sollte reCAPTCHA benutzen.
 - 0 = reCAPTCHA ist komplett deaktiviert (Standardeinstellung).
 - 1 = reCAPTCHA ist für alle Signaturen aktiviert.
-- 2 = reCAPTCHA ist aktiviert, nur für Signaturen die zu Abschnitten besonders markiert als reCAPTCHA-aktiviert in den Signaturdateien gehören.
+- 2 = reCAPTCHA ist aktiviert, nur für Signaturen in Sektionen markiert als reCAPTCHA-aktiviert in den Signaturdateien.
 - (Jeder andere Wert wird auf die gleiche Weise behandelt wie 0).
 
 "lockip"
@@ -340,53 +340,53 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 
 ####7.0 GRUNDLAGEN
 
-A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
+Eine Beschreibung das Formats und die Struktur der Signaturen benutzt von CIDRAM kann gefunden im Klartext dokumentiert werden in der benutzerdefinierten Signaturdateien. Bitte beachten Sie zu dieser Dokumentation, um mehr über das Format und die Struktur der Signaturen für CIDRAM zu erfahren.
 
-Alle IPv4 Signaturen folgen dem Format: `xxx.xxx.xxx.xxx/yy [Funktion] [Param]`.
-- `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
-- `yy` represents the CIDR block size [1-32].
-- `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
-- `[Param]` represents whatever additional information may be required by `[Function]`.
+Alle IPv4-Signaturen folgen dem Format: `xxx.xxx.xxx.xxx/yy [Funktion] [Param]`.
+- `xxx.xxx.xxx.xxx` ist der Anfang des CIDR-Block (die Oktette vom der ursprünglichen IP-Adresse in dem Block).
+- `yy` ist der CIDR-Block-Größe [1-32].
+- `[Funktion]` weist das Skript an, was mit der Signatur zu tun ist (wie der Signatur zu betrachten).
+- `[Param]` ist für jeder zusätzliche Informationen dass für `[Funktion]` erforderlich sein können.
 
-Alle IPv6 Signaturen folgen dem Format: `xxx.xxx.xxx.xxx/yy [Funktion] [Param]`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
-- `yy` represents the CIDR block size [1-128].
-- `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
-- `[Param]` represents whatever additional information may be required by `[Function]`.
+Alle IPv6-Signaturen folgen dem Format: `xxx.xxx.xxx.xxx/yy [Funktion] [Param]`.
+- `xxxx:xxxx:xxxx:xxxx::xxxx` ist der Anfang des CIDR-Block (die Oktette vom der ursprünglichen IP-Adresse in dem Block). Komplette Notation und abgekürzt Notation sind beide akzeptabel (und jeder MUSS den entsprechenden und relevanten Standards für IPv6-Notation folgen, aber mit einer Ausnahme: Eine IPv6-Adresse darf nie mit einer Abkürzung beginnen wenn es in einer Signatur für dieses Skript verwendet wird, aufgrund der Art und Weise wie CIDRs rekonstruiert werden durch das Skript; Beispielsweise, `::1/128` ausgedrückt sollte sein, wenn sie in einer Signatur verwendet werden, als `0::1/128`, und `::0/128` ausgedrückt als `0::/128`).
+- `yy` ist der CIDR-Block-Größe [1-128].
+- `[Funktion]` weist das Skript an, was mit der Signatur zu tun ist (wie der Signatur zu betrachten).
+- `[Param]` ist für jeder zusätzliche Informationen dass für `[Funktion]` erforderlich sein können.
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+Die Signaturdateien für CIDRAM SOLLTEN Unix-Stil-Zeilenumbrüche verwenden (`%0A`, oder `\n`)! Andere Arten/Stile von Zeilenumbrüchen (z.B, Windows `%0D%0A` oder `\r\n` Zeilenumbrüche, Mac `%0D` oder `\r` Zeilenumbrüche, u.s.w.) KANN verwendet werden, sind jedoch NICHT bevorzugt. Nicht-Unix-Stil-Zeilenumbrüche wird auf Unix-Stil-Zeilenumbrüche normalisiert durch das Skript.
 
-Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
+Präzise und korrekte CIDR-Notation ist erforderlich, andernfalls das Skript wird erkennen die Signaturen NICHT. Zusätzlich, alle CIDR-Signaturen dieses Skript MUSS mit einer IP-Adresse beginnen deren IP-Nummer gleichmäßig geteilt in die Blockteilung dargestellt durch ihre CIDR-Blockgröße werden kann (z.B, wenn Sie alle IPs blockieren von `10.128.0.0` nach `11.127.255.255` wollten, `10.128.0.0/8` wurde erkennen durch das Skript NICHT, aber `10.128.0.0/9` und `11.0.0.0/9` verwendet in Verbindung, WURDE erkennen durch das Skript).
 
-Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
+Alles in den Signaturdateien nicht als Signatur noch Signatur-bezogene Syntax anerkannt durch das Skript wird IGNORIERT, also Bedeutung, können Sie sicher alle Nicht-Signatur-Daten dass du willst in den Signaturdateien ohne sie oder das Skript zu brechen. Kommentare sind in den Signaturdateien akzeptabel, und keine spezielle Formatierung für sie erforderlich ist. Shell-Stil Hashing für Kommentare wird bevorzugt, aber ist durchgesetzt nicht; In Bezug auf Funktionalität, es macht keinen Unterschied zum Skript ob oder nicht wählen Sie Shell-Stil Hashing für Kommentare, aber Shell-Stil Hashing hilft IDEs und Plain-Text-Editoren richtig zu markieren die verschiedenen Teile der Signaturdateien (und so, Shell-Stil Hashing kann als visuelle Hilfe während der Bearbeitung helfen).
 
-Die möglichen Werte von `[Funktion]` sind wie folgt:
+Die möglichen Werte für `[Funktion]` sind wie folgt:
 - Run
 - Whitelist
 - Greylist
 - Deny
 
-If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Param]` value (the working directory should be the "/vault/" directory of the script).
+Wenn "Run" verwendet wird, wenn die Signatur ausgelöst wird, das Skript wird (mit einer `require_once` statement) ein externes PHP-Skript ausführen, durch den `[Param]` Wert angegeben (das Arbeitsverzeichnis sollte das "/vault/"-Verzeichnis von das Skript sein).
 
 Beispiel: `127.0.0.0/8 Run example.php`
 
-This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
+Das kann nützlich sein wenn Sie einige spezifisch PHP-Code ausführen möchten für einige spezifische IPs und/oder CIDRs.
 
-If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `[Param]` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+Wenn "Whitelist" verwendet wird, wenn die Signatur ausgelöst wird, das Skript wird alle Erkennungen zurücksetzen (wenn es irgendwelche Entdeckungen gab) und brechen Sie die Testfunktion. `[Param]` ist ignoriert. Diese Funktion entspricht dem Whitelisting einer bestimmten IP oder CIDR so dass es wird nicht erkannt werden.
 
 Beispiel: `127.0.0.1/32 Whitelist`
 
-If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `[Param]` is ignored.
+Wenn "Greylist" verwendet wird, wenn die Signatur ausgelöst wird, das Skript wird alle Erkennungen zurücksetzen (wenn es irgendwelche Entdeckungen gab) und springen Sie zur nächsten Signaturdatei, um die Verarbeitung fortzusetzen. `[Param]` ist ignoriert.
 
 Beispiel: `127.0.0.1/32 Greylist`
 
-If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
+Wenn "Deny" verwendet wird, wenn die Signatur ausgelöst wird, vorausgesetzt dass keine Whitelist-Signatur für die angegebene IP-Adresse und/oder angegebene CIDR ausgelöst wurde, Zugriff auf die geschützte Seite wird verweigert werden. "Deny" ist was Sie verwenden möchten, um tatsächlich eine IP-Adresse und/oder CIDR zu blockieren. Wenn jeder Signaturen dass "Deny" verwenden ausgelöst werden, der "Zugriff verweigert" Seite von das Skript wird generiert und die Anforderung an die geschützte Seite getötet.
 
-The `[Param]` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
+Der `[Param]`-Wert akzeptiert von "Deny" wird verarbeitet werden auf der "Zugriff verweigert" Seite, dem Kunden/Benutzer zur Verfügung gestellt als der angegebene Grund für den Zugriff auf die angeforderte Seite verweigert wurde. Es kann ein kurzer und einfacher Satz sein zu erklären, warum Sie sie zu blockieren gewählt haben (alles sollte genügen, sogar eine einfache "Ich will dich nicht auf meiner Website"), oder einer von eine kleine Handvoll von Kurzwörter von das Skript zur Verfügung gestellt dass, wenn verwendet, wird durch das Skript ersetzt werden mit einer vorbereiteten Erklärung für warum der Kunde/Benutzer blockiert wurde.
 
-The pre-prepared explanations have L10N support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Param]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Param]` values that don't use these shorthand words, however, don't have L10N support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+Die vorbereiteten Erklärungen haben L10N-Unterstützung und kann durch das Skript übersetzt werden Basierend auf der Sprache dass Sie in der `lang` Richtlinie von der Skript-Konfiguration angeben. Zusätzlich, können Sie auf das Skript anweisen für "Deny" Signaturen zu ignorieren, basierend auf ihrem `[Param]`-Wert (wenn sie diese Kurzwörter verwenden) über die Richtlinien spezifiziert durch der Skript-Konfiguration (jedes Kurzwort hat eine entsprechende Richtlinie für die entsprechenden Signaturen zu verarbeiten oder zu ignorieren). `[Param]`-Werte dass diese Kurzwörter nicht verwenden, jedoch, haben L10N-Unterstützung nicht, und deshalb wird NICHT durch das Skript übersetzt werden, und zusätzlich, sind nicht direkt steuerbar durch die Skript-Konfiguration.
 
-The available shorthand words are:
+Die verfügbaren Kurzwörter sind:
 - Bogon
 - Cloud
 - Generic
@@ -395,7 +395,7 @@ The available shorthand words are:
 
 ####7.1 TAGS
 
-If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (siehe Beispiel unten).
+Wenn Sie Ihre benutzerdefinierten Signaturen in einzelne Sektionen aufteilen möchten, können Sie diese einzelne Sektionen zu dem Skript identifizieren durch Hinzufügen eine "Sektion-Tag" unmittelbar nach den Signaturen von jeder Sektion, zusammen mit dem Namen Ihres Signatur-Sektion (siehe Beispiel unten).
 
 ```
 # Sektion 1.
@@ -407,7 +407,7 @@ If you want to split your custom signatures into individual sections, you can id
 Tag: Sektion 1
 ```
 
-To break section tagging and to ensure that tags aren't incorrectly identified to signature sections from earlier in the signature files, simply ensure that there are at least two consecutive linebreaks between your tag and your earlier signature sections. Any untagged signatures will default to either "IPv4" or "IPv6" (depending on which types of signatures are being triggered).
+Um Sektion-Tags zu brechen und sicherzustellen dass Tags von früher in den Signaturdateien wird nicht falsch identifiziert zu Signatur-Sektionen werden, sicherstellen dass es mindestens zwei aufeinanderfolgende Zeilenumbrüche gibt, zwischen Ihrem Tag und Ihren früheren Signatur-Sektionen. Alle nicht-getaggt Signaturen wird standardmäßigen auf "IPv4" oder "IPv6" (je nachdem welche Arten von Signaturen sind ausgelöst werden).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -418,9 +418,9 @@ To break section tagging and to ensure that tags aren't incorrectly identified t
 Tag: Sektion 1
 ```
 
-In dem obigen Beispiel `1.2.3.4/32` und `2.3.4.5/32` wird markiert als "IPv4", wohingegen `4.5.6.7/32` und `5.6.7.8/32` wird markiert als "Sektion 1".
+In dem obigen Beispiel, `1.2.3.4/32` und `2.3.4.5/32` wird als "IPv4" markiert werden, wohingegen `4.5.6.7/32` und `5.6.7.8/32` wird als "Sektion 1" markiert werden.
 
-If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "JJJJ.MM.TT" (siehe Beispiel unten).
+Wenn Sie möchten dass Signaturen nach einiger Zeit wird ablaufen, in einer Weise ähnlicher wie Sektion-Tags, können Sie ein "Ablauf-Tag" verwenden um anzugeben wann Signaturen nicht mehr gültig sind. Ablauf-Tags verwenden das Format "JJJJ.MM.TT" (siehe Beispiel unten).
 
 ```
 # Sektion 1.
@@ -442,13 +442,13 @@ Expires: 2016.12.31
 
 #####7.2.0 YAML GRUNDLAGEN
 
-A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
+Eine vereinfachte Form von YAML-Markup kann in Signaturdateien verwendet werden, um Verhalten und Einstellungen spezifisch für einzelne Signatur-Sektionen zu definieren. Dies kann nützlich sein wenn Sie der Wert von Ihrer Konfiguration-Richtlinien möchten zu variieren auf der Grundlage von individuell Signaturen und Signatur-Sektionen (beispielsweise; wenn Sie eine E-Mail-Adresse zu bieten für Support-Tickets möchten, für irgendein Benutzer dass durch eine spezifische Signatur blockiert, aber Sie eine E-Mail-Adresse zu bieten für Support-Tickets möchten nicht für Benutzer durch andere Signaturen blockiert; wenn Sie möchten dass bestimmte spezifisch Signaturen eine Seitenumleitung zu auslösen; wenn Sie einen Signatur-Sektion zu markieren für Verwendung mit reCAPTCHA möchten; wenn Sie um blockierte Zugriffsversuche zu protokollieren in einzelne Dateien auf der Grundlage von einzelnen Signaturen und/oder Signatur-Sektionen möchten).
 
-Use of YAML markup in the signature files is entirely optional (dh, you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
+Die Verwendung von YAML-Markup in den Signaturdateien ist völlig optional (dh, Sie können es verwenden, wenn Sie dies möchten, aber Sie sind nicht verpflichtet dies zu tun), Und ist in der Lage die meisten (aber nicht alles) Konfiguration-Richtlinien zu nutzen.
 
-Note: YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
+Beachten: YAML-Markup-Implementierung in CIDRAM ist sehr einfach und sehr begrenzt; Es ist beabsichtigt um Anforderungen zu erfüllen dass spezifisch für CIDRAM sind, in einer Weise dass die Vertrautheit mit YAML-Markup hat, aber weder folgt noch mit den offiziellen Spezifikationen entspricht (und wird sich daher nicht in der gleichen Weise als gründlichere Implementierungen anderswo verhalten, und möglicherweise nicht für andere Projekte anderswo geeignet werden).
 
-In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for which configuration directives should be modified (and to which values) whenever a signature within that signature section is triggered (see the examples below).
+In CIDRAM, YAML-Markup-Segmente dem Skript identifiziert werden durch drei Bindestriche ("---"), und neben ihren enthaltenden Signatur-Sektionen enden durch doppelte Zeilenumbrüche. Ein typisches YAML-Markup-Segment innerhalb eine Signatur-Sektion besteht aus drei Bindestrichen auf einer Linie sofort nach der Liste der CIDRs und alle Tags, gefolgt von einer zweidimensionalen Liste von Schlüssel-Wert-Paaren (erste Dimension, Konfigurations-Richtlinie-Kategorien; zweite Dimension, Konfigurations-Richtlinien) für die Konfigurations-Richtlinien dass geändert werden sollen (und auf welche Werte) wenn eine Signatur innerhalb dass Signatur-Sektion ausgelöst wird (siehe nachfolgende Beispiele).
 
 ```
 # Foobar 1.
@@ -497,12 +497,12 @@ general:
 
 #####7.2.1 WIE MAN "SPEZIELL MARKIEREN" DEN SIGNATUR-SEKTIONEN FÜR DIE VERWENDUNG MIT reCAPTCHA
 
-When "usemode" is 0 or 1, signature sections don't need to be "specially marked" for use with reCAPTCHA (because they already either will or won't use reCAPTCHA, depending on this setting).
+Wenn "usemode" ist 0 oder 1, Signatur-Sektionen brauchen nicht zu "besonders markiert" werden für Verwendung mit reCAPTCHA (weil um reCAPTCHA sie bereits entweder wird oder wird nicht zu verwenden, abhängig von dieser Einstellung).
 
-When "usemode" is 2, to "specially mark" signature sections for use with reCAPTCHA, an entry is included in the YAML segment for that signature section (see the example below).
+Wenn "usemode" ist 2, um Signatur-Sektionen zu "besonders markiert" für Verwendung mit reCAPTCHA, ein Eintrag in der YAML-Segment für diese Signatur-Sektion enthalten ist (siehe Beispiel unten).
 
 ```
-# In diesem Abschnitt wird reCAPTCHA verwendet.
+# In diese Sektion wird reCAPTCHA verwendet werden.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Tag: reCAPTCHA-Enabled
@@ -511,11 +511,11 @@ recaptcha:
  enabled: true
 ```
 
-Note: A reCAPTCHA-Instanz will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA-Instanz will NOT be offered).
+Beachten: Eine reCAPTCHA-Instanz wird NUR dem Benutzer angeboten wenn reCAPTCHA aktiviert ist (entweder mit "usemode" als 1, oder "usemode" als 2 mit "enabled" als true), und wenn genau EINE Signatur ausgelöst wurde (nicht mehr und nicht weniger; wenn mehrere Signaturen ausgelöst werden, eine reCAPTCHA-Instanz wird NICHT angeboten werden).
 
 ####7.3 ZUSATZINFORMATION
 
-In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (siehe Beispiel unten).
+In Ergänzung, wenn Sie möchten dass CIDRAM wird bestimmte Sektionen innerhalb irgendein der Signaturdateien vollständig ignoriert, können Sie die Datei `ignore.dat` verwenden, um festzulegen welche Sektionen zu ignorieren. Auf einer neuen Linie, schreiben `Ignore`, gefolgt von einem Leerzeichen, gefolgt durch dem Namen das Sektion welche Sie möchten für CIDRAM zu ignorieren (siehe Beispiel unten).
 
 ```
 Ignore Sektion 1
@@ -546,4 +546,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 4. Dezember 2016 (2016.12.04).
+Zuletzt aktualisiert: 12. Dezember 2016 (2016.12.12).

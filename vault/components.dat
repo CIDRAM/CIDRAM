@@ -16,7 +16,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.6.1
+ Version: 0.6.2-DEV+161219
  Minimum Required: 0.6.0-DEV
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -94,7 +94,7 @@ CIDRAM:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
-   - 2fd854874b9cf99119c51e3fcc13d7d6:6479
+   - e11ae25ed76276983db1383c282a7e4c:6483
    - 0a213d6ca305df62046b1130676adfb6:1789
    - 8e03209e7fc6641b45094e584340feff:83
    - 51e57efba1d36775387fd7ab755d17aa:1353
@@ -116,7 +116,7 @@ CIDRAM:
    - 205e715a996e26aa632b137515120a74:672
    - ca4d53f3b38dbecbf636b5c67594ac74:2102
    - f02846bee1e737178f55f8e67d312d53:931
-   - a74b0bab7f55fd5639613e2392bd7e3e:100472
+   - 0c820251bde4fb8145d5f09cf283ed66:100691
    - 9916fbacc06ed90257fafa4b994816dc:65110
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
@@ -201,7 +201,7 @@ IPv4-Bogons:
   vi: Các chữ ký IPv4 bogon mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv4 Bogon签名通常包括在主包。
   zh-tw: 標準IPv4 Bogon簽名通常包括在主包。
- Version: 2016.12.04
+ Version: 2016.12.19
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -211,7 +211,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - 673cbb141c5e01b226eb07421ecdf4b0:101757
+   - 3ad28e5a6c8f518c59f3112dc5a12684:101872
  Reannotate: components.dat
 IPv6:
  Name:
@@ -287,7 +287,7 @@ IPv6-Bogons:
   vi: Các chữ ký IPv6 bogon mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv6 Bogon签名通常包括在主包。
   zh-tw: 標準IPv6 Bogon簽名通常包括在主包。
- Version: 2016.12.04
+ Version: 2016.12.19
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -297,7 +297,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - 22bba98e35c1f81d58d2e5d2f3f61933:2155214
+   - 1d412e3199d9c67e17415e4f3b3bc22a:2175197
  Reannotate: components.dat
 Bypasses:
  Name:

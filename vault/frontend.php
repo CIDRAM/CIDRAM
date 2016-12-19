@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.12.08).
+ * This file: Front-end handler (last modified: 2016.12.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,7 +45,7 @@ $CIDRAM['FE'] = array(
 
 /** Traversal detection. */
 $CIDRAM['Traverse'] = function ($Path) {
-    return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-`?*$])' . "\x01i", str_replace("\\", '/', $Path));
+    return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-^`?*$])' . "\x01i", str_replace("\\", '/', $Path));
 };
 
 /** A fix for correctly displaying LTR/RTL text. */
@@ -1051,6 +1051,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Name'],
                 $CIDRAM['Config']['general']['lang']
             );
+        }
+        if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'] = '';
         }
         if (is_array($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
             $CIDRAM['IsolateL10N'](

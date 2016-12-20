@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.12).
+ * This file: Functions file (last modified: 2016.12.20).
  */
 
 /**
@@ -414,18 +414,72 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
         'Factors' => count($Factors)
     );
     for ($FileIndex = 0; $FileIndex < $Counts['Files']; $FileIndex++) {
-        if ($Counts['Factors'] === 32) {
-            $DefTag = 'IPv4';
-        } elseif ($Counts['Factors'] === 128) {
-            $DefTag = 'IPv6';
-        } else {
-            $DefTag = $Files[$FileIndex];
-        }
-        $Files[$FileIndex] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex]);
         if (!$Files[$FileIndex]) {
             continue;
         }
-        if (strpos($Files[$FileIndex], "\r")) {
+        if ($Counts['Factors'] === 32) {
+            $DefTag = $Files[$FileIndex] . '-IPv4';
+        } elseif ($Counts['Factors'] === 128) {
+            $DefTag = $Files[$FileIndex] . '-IPv6';
+        } else {
+            $DefTag = $Files[$FileIndex] . '-Unknown';
+        }
+        $FileExtension = strtolower(substr($Files[$FileIndex], -4));
+        if (!$Files[$FileIndex] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex])) {
+            continue;
+        }
+        if (
+            $FileExtension === '.csv' &&
+            strpos($Files[$FileIndex], "\n") === false &&
+            strpos($Files[$FileIndex], "\r") === false &&
+            strpos($Files[$FileIndex], ",") !== false
+        ) {
+            $Files[$FileIndex] = ',' . $Files[$FileIndex] . ',';
+            $SigFormat = 'CSV';
+        } else {
+            $SigFormat = 'DAT';
+        }
+        if ($Counts['Factors'] === 32) {
+            if ($SigFormat === 'CSV') {
+                $NoCIDR = ',' . substr($Factors[31], 0, -3) . ',';
+                $LastCIDR = ',' . $Factors[31] . ',';
+            } else {
+                $NoCIDR = "\n" . substr($Factors[31], 0, -3) . ' ';
+                $LastCIDR = "\n" . $Factors[31] . ' ';
+            }
+        } elseif ($Counts['Factors'] === 128) {
+            if ($SigFormat === 'CSV') {
+                $NoCIDR = ',' . substr($Factors[127], 0, -4) . ',';
+                $LastCIDR = ',' . $Factors[127] . ',';
+            } else {
+                $NoCIDR = "\n" . substr($Factors[127], 0, -4) . ' ';
+                $LastCIDR = "\n" . $Factors[127] . ' ';
+            }
+        }
+        if (strpos($Files[$FileIndex], $NoCIDR) !== false) {
+            $Files[$FileIndex] = str_replace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
+        }
+        if ($SigFormat === 'CSV') {
+            $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
+            for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
+                if ($Infractions = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
+                    if (!$CIDRAM['CIDRAM_sapi']) {
+                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
+                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+                        }
+                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
+                    }
+                    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+                        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+                    }
+                    $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
+                    $CIDRAM['BlockInfo']['SignatureCount'] += $Infractions;
+                }
+            }
+            continue;
+        }
+        if (strpos($Files[$FileIndex], "\r") !== false) {
             $Files[$FileIndex] =
                 (strpos($Files[$FileIndex], "\r\n")) ?
                 str_replace("\r", '', $Files[$FileIndex]) :
@@ -570,7 +624,7 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
     if ($IPv4Factors = $CIDRAM['ExpandIPv4']($Addr)) {
         if (empty($CIDRAM['Config']['signatures']['ipv4'])) {
             $IPv4Files = array();
-        } elseif (strpos($CIDRAM['Config']['signatures']['ipv4'], ',')) {
+        } elseif (strpos($CIDRAM['Config']['signatures']['ipv4'], ',') !== false) {
             $IPv4Files = explode(',', $CIDRAM['Config']['signatures']['ipv4']);
         } else {
             $IPv4Files = array($CIDRAM['Config']['signatures']['ipv4']);
@@ -586,7 +640,7 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
     if ($IPv6Factors = $CIDRAM['ExpandIPv6']($Addr)) {
         if (empty($CIDRAM['Config']['signatures']['ipv6'])) {
             $IPv6Files = array();
-        } elseif (strpos($CIDRAM['Config']['signatures']['ipv6'], ',')) {
+        } elseif (strpos($CIDRAM['Config']['signatures']['ipv6'], ',') !== false) {
             $IPv6Files = explode(',', $CIDRAM['Config']['signatures']['ipv6']);
         } else {
             $IPv6Files = array($CIDRAM['Config']['signatures']['ipv6']);

@@ -10,6 +10,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.12.15; Bug-fix; Maikuolan]: Files containing underscores weren't
   deleting when uninstalling components; Fixed.
 
+- [2016.12.20; NEW FEATURE; Maikuolan]: Added support for simple CSV signature
+  files (integrated directly into the already existing functionality for
+  processing signature files; CIDRAM should be able to automatically detect
+  whether a signature file uses the normal, default format, or CSV format).
+  Additionally, added support for using single IPs in signature files directly,
+  without the need for them to use complete CIDR notation (IPs that don't
+  include a range will be interpreted seamlessly as 32's for in the case of
+  IPv4 signature files and as 128's for in the case of IPv6 signature files).
+
 === Version/Release 0.6.1 ===
 PATCH RELEASE.
 

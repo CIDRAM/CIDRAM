@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.12.11).
+ * This file: German language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockieren Sie CIDRs ident
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Eine Liste der IPv4-Signaturdateien dass CIDRAM zu verarbeiten soll, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Eine Liste der IPv6-Signaturdateien dass CIDRAM zu verarbeiten soll, durch Kommas begrenzt.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-Datei URL für benutzerdefinierte Themen.';
 $CIDRAM['lang']['field_blocked'] = 'Blockiert';
 $CIDRAM['lang']['field_component'] = 'Komponente';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'Nein';
 $CIDRAM['lang']['response_rename_error'] = 'Umbenennung-Fehler!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Schon aktuell.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponente nicht installiert!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponente nicht installiert (erfordert PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Veraltet!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Veraltet (bitte manuell aktualisieren)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Veraltet (erfordert PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Kann nicht ermittelt werden.';
 $CIDRAM['lang']['response_upload_error'] = 'Hochladen-Fehler!';
 $CIDRAM['lang']['response_yes'] = 'Ja';

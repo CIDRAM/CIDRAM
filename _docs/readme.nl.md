@@ -285,6 +285,9 @@ Configuratie voor handtekeningen.
 "block_spam"
 - Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
 
+"modules"
+- Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.
+
 ####"recaptcha" (Categorie)
 Optioneel, u kan uw gebruikers te voorzien van een manier om de "Toegang Geweigerd" pagina te omzeilen, door middel van het invullen van een reCAPTCHA instantie, als u wilt om dit te doen. Dit kan helpen om een aantal van de risico's die samenhangen met valse positieven te beperken, in die situaties waar we niet helemaal zeker of er een verzoek is voortgekomen uit een machine of een mens.
 
@@ -544,4 +547,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 4 December 2016 (2016.12.04).
+Laatste Bijgewerkt: 31 December 2016 (2016.12.31).

@@ -285,6 +285,9 @@ Signatures configuration.
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
 
+"modules"
+- A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.
+
 ####"recaptcha" (Category)
 Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
 
@@ -544,4 +547,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 4th December 2016 (2016.12.04).
+Last Updated: 31st December 2016 (2016.12.31).

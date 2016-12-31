@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.12.07).
+ * This file: Japanese language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービス�
 $CIDRAM['lang']['config_signatures_block_spam'] = 'スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'IPv4のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
+$CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6署名をチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのCSSファイルURL。';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'いいえ';
 $CIDRAM['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $CIDRAM['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'コンポーネントのインストールされていません（PHP {V}が必要です）！';
 $CIDRAM['lang']['response_updates_outdated'] = '時代遅れです！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '時代遅れです（手動でアップデートしてください）！';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = '時代遅れです（PHP {V}が必要です）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '決定することができません。';
 $CIDRAM['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $CIDRAM['lang']['response_yes'] = 'はい';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.12.07).
+ * This file: Indonesian language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Memblokir CIDR yang diiden
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Daftar file tanda tangan IPv4 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
 $CIDRAM['lang']['field_component'] = 'Komponen';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'Tidak';
 $CIDRAM['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponen tidak diinstal (membutuhkan PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Tidak yang terbaru!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (silahkan perbarui secara manual)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Tidak yang terbaru (membutuhkan PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
 $CIDRAM['lang']['response_upload_error'] = 'Gagal mengupload!';
 $CIDRAM['lang']['response_yes'] = 'Ya';

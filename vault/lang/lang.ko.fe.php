@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2016.12.11).
+ * This file: Korean language data for the front-end (last modified: 2016.12.31).
  *
  * @todo (This is incomplete).
  */
@@ -47,6 +47,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Block CIDRs identified as 
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas.';
+$CIDRAM['lang']['config_signatures_modules'] = 'A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS file URL for custom themes.';
 $CIDRAM['lang']['field_blocked'] = 'Blocked';
 $CIDRAM['lang']['field_component'] = 'Component';
@@ -124,8 +125,10 @@ $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = 'Failed to rename!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Component not installed!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Component not installed (requires PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Outdated!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Outdated (please update manually)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Outdated (requires PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
 $CIDRAM['lang']['response_upload_error'] = 'Failed to upload!';
 $CIDRAM['lang']['response_yes'] = 'Yes';

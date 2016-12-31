@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2016.12.07).
+ * This file: Spanish language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquear CIDRs identificad
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Una lista de los archivos de firmas IPv4 que CIDRAM debe tratar de utilizar, delimitado por comas.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Una lista de los archivos de firmas IPv6 que CIDRAM debe tratar de utilizar, delimitado por comas.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL del archivo CSS para temas personalizados.';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_component'] = 'Componente';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Ya está actualizado.';
 $CIDRAM['lang']['response_updates_not_installed'] = '¡El componente no se instala!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = '¡El componente no se instala (requiere PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = '¡Anticuado!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '¡Anticuado (por favor, actualizar manualmente)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = '¡Anticuado (requiere PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapaz de determinar.';
 $CIDRAM['lang']['response_upload_error'] = '¡No se pudo subir!';
 $CIDRAM['lang']['response_yes'] = 'Sí';

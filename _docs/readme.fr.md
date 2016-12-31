@@ -285,6 +285,9 @@ Configuration pour les signatures.
 "block_spam"
 - Bloquer CIDRs identifié comme étant risque élevé pour le spam? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.
 
+"modules"
+- Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.
+
 ####"recaptcha" (Catégorie)
 Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de «Accès Refusé» par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une demande est à l'origine d'une machine ou d'un être humain.
 
@@ -544,4 +547,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 4 Décembre 2016 (2016.12.04).
+Dernière Mise à Jour: 31 Décembre 2016 (2016.12.31).

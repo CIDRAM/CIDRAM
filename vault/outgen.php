@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.10.25).
+ * This file: Output generator (last modified: 2016.12.31).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -110,6 +110,16 @@ if (
     } else {
         $CIDRAM['Salt'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'salt.dat');
     }
+}
+
+/** Load any modules that have been registered with the configuration. */
+if (!empty($CIDRAM['Config']['signatures']['modules'])) {
+    $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
+    array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
+        if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
+            require $CIDRAM['Vault'] . $Module;
+        }
+    });
 }
 
 /** This code block only executed if signatures were triggered. */

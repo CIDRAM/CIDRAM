@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.12.07).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Chặn CIDR xác định l
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Chặn CIDR xác định như có nguy cơ cao đối được thư rác? Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Một danh sách các tập tin chữ ký IPv4 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
 $CIDRAM['lang']['field_component'] = 'Gói';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'Không';
 $CIDRAM['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Gói không được cài đặt (đòi hỏi PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Hết hạn!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lòng cập nhật bằng tay)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Hết hạn (đòi hỏi PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
 $CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
 $CIDRAM['lang']['response_yes'] = 'Vâng';

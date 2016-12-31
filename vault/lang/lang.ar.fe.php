@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.12.07).
+ * This file: Arabic language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'منع CIDRs التي تم
 $CIDRAM['lang']['config_signatures_block_spam'] = 'منع CIDRs التي تم تحديدها على أنها مخاطر البريد المزعج؟ عندما يكون ذلك ممكنا، عموما، وهذا ينبغي دائما أن يتم تعيين إلى true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'وهناك قائمة من الملفات توقيع عناوين IPv4 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'وهناك قائمة من الملفات توقيع عناوين IPv6 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل.';
+$CIDRAM['lang']['config_signatures_modules'] = 'قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_component'] = 'وحدة';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'لا';
 $CIDRAM['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'وحدة غير مثبت (يتطلب PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'عفا عليها الزمن!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'عفا عليها الزمن (يرجى تحديث يدويا)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'عفا عليها الزمن (يتطلب PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';
 $CIDRAM['lang']['response_upload_error'] = 'فشل لتحميل!';
 $CIDRAM['lang']['response_yes'] = 'نعم';

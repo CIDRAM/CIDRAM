@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.20).
+ * This file: Functions file (last modified: 2016.12.25).
  */
 
 /**
@@ -1315,7 +1315,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=swf';
                 } elseif (preg_match(
-                    '/^(?:BM[2P]|GIF|J(P2|PE?G?2?|XR)|P(DD|GM|IC|PM|SD|NG)|SV[AG]|TGA|W(BMP?|EBP|MP)|XCF)$/'
+                    '/^(?:BM[2P]|C(D5|GM)|D(IB|W[FG]|XF)|ECW|FITS|GIF|IMG|J(F?IF?|P[2S]|PE?G?2?|XR)|P(BM|CX|DD|GM|IC|N[GMS]|PM|S[DP])|S(ID|V[AG])|TGA|W(BMP?|EBP|MP)|X(CF|BMP))$/'
                 , $Ext)) {
                     $Arr[$Key]['CanEdit'] = false;
                     $Arr[$Key]['Icon'] = 'icon=image';

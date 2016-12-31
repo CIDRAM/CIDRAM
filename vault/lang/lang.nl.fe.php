@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.12.07).
+ * This file: Dutch language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokkeren CIDRs geïdentif
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_component'] = 'Bestanddeel';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Bestanddeel niet geïnstalleerd!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Bestanddeel niet geïnstalleerd (heeft nodig PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Verouderd!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmatig bijwerken)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Verouderd (heeft nodig PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $CIDRAM['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $CIDRAM['lang']['response_yes'] = 'Ja';

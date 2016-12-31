@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2016.12.11).
+ * This file: Portuguese language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -43,8 +43,9 @@ $CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloquear CIDRs identificado 
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquear CIDRs geralmente recomendado para a lista negra? Isso abrange todas as assinaturas que não são marcados como sendo parte de qualquer um dos outros mais categorias de assinaturas mais específica.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquear CIDRs identificado como pertencente a serviços de proxy? Se você precisar que os usuários poderão acessar seu site dos serviços de proxy anônimos, este deve ser definido como false. De outra forma, se você não precisa de proxies anônimos, este deve ser definido como true como um meio de melhorar a segurança.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquear CIDRs identificado como sendo de alto risco para spam? A menos que você tiver problemas ao fazê-lo, geralmente, esta deve sempre ser definido como true.';
-$CIDRAM['lang']['config_signatures_ipv4'] = 'A lista dos arquivos de assinaturas IPv4 que CIDRAM deve tentar usar, delimitado por vírgulas.';
-$CIDRAM['lang']['config_signatures_ipv6'] = 'A lista dos arquivos de assinaturas IPv6 que CIDRAM deve tentar usar, delimitado por vírgulas.';
+$CIDRAM['lang']['config_signatures_ipv4'] = 'Uma lista dos arquivos de assinaturas IPv4 que CIDRAM deve tentar usar, delimitado por vírgulas.';
+$CIDRAM['lang']['config_signatures_ipv6'] = 'Uma lista dos arquivos de assinaturas IPv6 que CIDRAM deve tentar usar, delimitado por vírgulas.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Uma lista de arquivos módulo a carregar depois de processamento as assinaturas IPv4/IPv6, delimitado por vírgulas.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de arquivo CSS para temas personalizados.';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_component'] = 'Componente';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'Não';
 $CIDRAM['lang']['response_rename_error'] = 'Falha ao renomear!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Já atualizado.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Componente não instalado!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Componente não instalado (requer PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Desatualizado!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Desatualizado (por favor atualize manualmente)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Desatualizado (requer PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Não foi possível determinar.';
 $CIDRAM['lang']['response_upload_error'] = 'Falha ao carregar!';
 $CIDRAM['lang']['response_yes'] = 'Sim';

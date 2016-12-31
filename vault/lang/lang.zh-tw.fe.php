@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.12.07).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於�
 $CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。';
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
+$CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定義主題的CSS文件URL。';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_component'] = '組件';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = '不是';
 $CIDRAM['lang']['response_rename_error'] = '無法改名！';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $CIDRAM['lang']['response_updates_not_installed'] = '組件不安裝！';
+$CIDRAM['lang']['response_updates_not_installed_php'] = '組件不安裝（它需要PHP {V}）！';
 $CIDRAM['lang']['response_updates_outdated'] = '過時！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '過時（請更新手動）！';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = '過時（它需要PHP {V}）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '無法確定。';
 $CIDRAM['lang']['response_upload_error'] = '無法上傳！';
 $CIDRAM['lang']['response_yes'] = '是';

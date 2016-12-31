@@ -286,6 +286,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "block_spam" （ブロック・スパム）
 - スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。
 
+"modules" （モジュールス）
+- IPv4/IPv6署名をチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。
+
 ####"recaptcha" （リーキャプチャ、カテゴリ）
 Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
 
@@ -545,4 +548,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年12月12日。
+最終アップデート： 2016年12月31日。

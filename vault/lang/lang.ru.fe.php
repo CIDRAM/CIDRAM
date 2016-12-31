@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.12.07).
+ * This file: Russian language data for the front-end (last modified: 2016.12.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,6 +45,7 @@ $CIDRAM['lang']['config_signatures_block_proxies'] = 'Блокировать CID
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Блокировать CIDRs которые были определены как высокого риска для спама? Если Вы не испытываете проблем при этом, как правило, эта директива должна быть true.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Список сигнатур IPv4 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Список сигнатур IPv6 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для пользовательских тем.';
 $CIDRAM['lang']['field_blocked'] = 'Блокированный';
 $CIDRAM['lang']['field_component'] = 'Компонент';
@@ -122,8 +123,10 @@ $CIDRAM['lang']['response_no'] = 'Нет';
 $CIDRAM['lang']['response_rename_error'] = 'Не удалось переименовать!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Уже обновлено.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Компонент не установлен!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Компонент не установлен (требует PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Устаревший!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Устаревший (пожалуйста обновить вручную)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Устаревший (требует PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Невозможно определить.';
 $CIDRAM['lang']['response_upload_error'] = 'Не удалось загрузить!';
 $CIDRAM['lang']['response_yes'] = 'Да';

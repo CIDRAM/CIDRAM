@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.25).
+ * This file: Functions file (last modified: 2017.01.01).
  */
 
 /**
@@ -1412,4 +1412,23 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
         $CIDRAM['FormatFilesize']($Arr[$ThisName]['Filesize']);
     }
     return $Arr;
+};
+
+/**
+ * Checks whether a component is in use (front-end closure).
+ *
+ * @param array $Files The list of files to be checked.
+ * @return bool Returns true (in use) or false (not in use).
+ */
+$CIDRAM['IsInUse'] = function ($Files) use (&$CIDRAM) {
+    foreach ($Files as $File) {
+        if (
+            strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $File . ',') !== false ||
+            strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $File . ',') !== false ||
+            strpos(',' . $CIDRAM['Config']['signatures']['modules'] . ',', ',' . $File . ',') !== false
+        ) {
+            return true;
+        }
+    }
+    return false;
 };

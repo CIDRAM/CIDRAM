@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.12.31).
+ * This file: Front-end handler (last modified: 2017.01.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -933,28 +933,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
         /** Uninstall a component. */
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
-            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'])) {
+            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
                 $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
                 $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = false;
-                $CIDRAM['FilesCount'] = count($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                for (
-                    $CIDRAM['FilesIterate'] = 0;
-                    $CIDRAM['FilesIterate'] < $CIDRAM['FilesCount'];
-                    $CIDRAM['FilesIterate']++
-                ) {
-                    $CIDRAM['FilesThis'] = $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'][$CIDRAM['FilesIterate']];
-                    if (
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false ||
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false
-                    ) {
-                        $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = true;
-                        break;
-                    }
-                }
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
+                    $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
             }
             if (
-                empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
+                !$CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] &&
                 ($_POST['ID'] !== 'l10n/' . $CIDRAM['Config']['general']['lang']) &&
                 ($_POST['ID'] !== 'CIDRAM') &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
@@ -1187,26 +1174,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             }
             if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'])) {
-                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['InUse'] = false;
-                $CIDRAM['FilesCount'] = count($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To']);
-                for (
-                    $CIDRAM['FilesIterate'] = 0;
-                    $CIDRAM['FilesIterate'] < $CIDRAM['FilesCount'];
-                    $CIDRAM['FilesIterate']++
-                ) {
-                    $CIDRAM['FilesThis'] = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'][$CIDRAM['FilesIterate']];
-                    if (
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false ||
-                        strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $CIDRAM['FilesThis'] . ',') !== false
-                    ) {
-                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['InUse'] = true;
-                        break;
-                    }
-                }
                 if (
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['InUse'] ||
                     ($CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang']) ||
-                    ($CIDRAM['Components']['Key'] === 'CIDRAM')
+                    ($CIDRAM['Components']['Key'] === 'CIDRAM') ||
+                    $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['Files']['To'])
                 ) {
                     $CIDRAM['AppendToString']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $CIDRAM['lang']['state_component_is_active'] . '</div>'

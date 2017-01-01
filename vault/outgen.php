@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2016.12.31).
+ * This file: Output generator (last modified: 2017.01.01).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -280,9 +280,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
 
     /** Determining date/time information for logfile names. */
     if (
-        substr_count($CIDRAM['Config']['general']['logfile'], '{') ||
-        substr_count($CIDRAM['Config']['general']['logfileApache'], '{') ||
-        substr_count($CIDRAM['Config']['general']['logfileSerialized'], '{')
+        strpos($CIDRAM['Config']['general']['logfile'], '{') !== false ||
+        strpos($CIDRAM['Config']['general']['logfileApache'], '{') !== false ||
+        strpos($CIDRAM['Config']['general']['logfileSerialized'], '{') !== false
     ) {
         list(
             $CIDRAM['Config']['general']['logfile'],

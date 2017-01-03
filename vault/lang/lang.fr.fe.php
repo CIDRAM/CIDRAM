@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.12.31).
+ * This file: French language data for the front-end (last modified: 2017.01.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -43,6 +43,7 @@ $CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloquer CIDRs identifié com
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquer CIDRs recommandé en généralement pour les listes noires? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l\'autre plus spécifique catégories de signatures.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquer CIDRs identifié comme appartenant à services de proxy? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n\'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d\'améliorer la sécurité.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquer CIDRs identifié comme étant risque élevé pour le spam? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.';
+$CIDRAM['lang']['config_signatures_default_tracktime'] = 'Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.';
@@ -168,7 +169,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin pour CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Contient des blocs de gamme en option qui peuvent être ajoutés au CIDRAM pour bloquer les pays indésirables d\'accéder à votre site Web.</li>
+            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Contient des blocs de gamme en option qui peuvent être ajoutés au CIDRAM pour bloquer les pays indésirables d\'accéder à votre site Web.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Ressources d\'apprentissage PHP et discussion.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>

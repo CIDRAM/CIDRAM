@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2016.08.16).
+ * This file: Portuguese language data (last modified: 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -34,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = 'Razão Bloqueada: ';
 $CIDRAM['lang']['generated_by'] = 'Gerado por';
 $CIDRAM['lang']['preamble'] = '-- Fim de preâmbulo. Adicionar suas perguntas ou comentários após esta linha. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'O seu acesso a esta página foi negado porque você tentou acessar a página usando um endereço IP inválido.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'O seu acesso a esta página foi negado devido ao mau comportamento anterior do seu endereço IP.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como um endereço bogon, e conectando a partir de bogons a este site não é permitido pelo dono do site.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'O seu acesso a esta página foi negado porque seu endereço IP é reconhecida como pertencente a um serviço de nuvem, e conectando a partir de serviços em nuvem a este site não é permitido pelo dono do site.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'O seu acesso a esta página foi negado porque seu endereço IP pertence a uma rede listados em uma lista negra usada por este site.';
@@ -47,6 +48,7 @@ $CIDRAM['lang']['recaptcha_message'] = 'A fim de recuperar o acesso a esta pági
 $CIDRAM['lang']['recaptcha_passed'] = 'Sucesso!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Enviar';
 $CIDRAM['lang']['Short_BadIP'] = 'IP inválido!';
+$CIDRAM['lang']['Short_Banned'] = 'Banido';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Serviço de nuvem';
 $CIDRAM['lang']['Short_Generic'] = 'Genérico';

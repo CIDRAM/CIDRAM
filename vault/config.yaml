@@ -37,6 +37,7 @@ Config Defaults:
     id: Bahasa Indonesia
     it: Italiano
     ja: 日本語
+    ko: 한국어
     nl: Nederlandse
     pt: Português
     ru: Русский
@@ -83,6 +84,9 @@ Config Defaults:
   modules:
    type: string
    default: ""
+  default_tracktime:
+   type: int
+   default: 604800
  recaptcha:
   usemode:
    type: int

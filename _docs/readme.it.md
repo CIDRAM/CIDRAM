@@ -288,6 +288,9 @@ Configurazione per firme.
 "modules"
 - Un elenco di file moduli da caricare dopo l\'esecuzione delle firme IPv4/IPv6, delimitati da virgole.
 
+"default_tracktime"
+- Quanti secondi per monitorare IP vietati dai moduli. Predefinito = 604800 (1 settimana).
+
 ####"recaptcha" (Categoria)
 Se vuoi, è possibile fornire agli utenti un modo per bypassare la pagina di "Accesso Negato" attraverso il completamento di un'istanza di reCAPTCHA. Questo può aiutare a mitigare alcuni dei rischi associati con i falsi positivi in quelle situazioni in cui non siamo del tutto sicuri se una richiesta ha avuto origine da una macchina o di un essere umano.
 
@@ -547,4 +550,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 31 Dicembre 2016 (2016.12.31).
+Ultimo Aggiornamento: 3 Gennaio 2016 (2017.01.03).

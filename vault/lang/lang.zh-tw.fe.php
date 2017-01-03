@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.12.31).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.01.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -43,6 +43,7 @@ $CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR認定為屬於虛
 $CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建議對於黑名單嗎？這包括簽名不標記為的一章節任何其他更具體簽名類別。';
 $CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於代理服務嗎？如果您需要該用戶可以訪問您的網站從匿名代理服務，這應該被設置為“false”（假）。除此以外，如果您不需要匿名代理服務，這應該被設置為“true”（真）作為一個方式以提高安全性。';
 $CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。';
+$CIDRAM['lang']['config_signatures_default_tracktime'] = '多少秒鐘來跟踪模塊禁止的IP。 標準 = 604800 （1週）。';
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';
@@ -169,7 +170,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM頁面託管在開源中國社區。</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM替代下載鏡像。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 簡單網站管理員工具集合為保護網站。</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – 包含可選阻止名單，可以添加的在CIDRAM，用於阻止任何不需要的國家訪問您的網站。</li>
+            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – 包含可選阻止名單，可以添加的在CIDRAM，用於阻止任何不需要的國家訪問您的網站。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP學習資源和討論。</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP學習資源和討論。</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，確定ASN關係，基於網絡名稱發現ASN，等等。</li>

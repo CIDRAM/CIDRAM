@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified： 2016.08.16).
+ * This file: Japanese language data (last modified： 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -34,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = 'なぜブロックされましたか： ';
 $CIDRAM['lang']['generated_by'] = '作成者';
 $CIDRAM['lang']['preamble'] = '-- プリアンブルの終わり。この行の後にあなたの質問やコメントを追加します。 --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'なぜブロックされましたか： 無効なIP。';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'なぜブロックされましたか： あなたのIPアドレスからの望ましくない動作。';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'なぜブロックされましたか： Bogon/火星のIP。';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'なぜブロックされましたか： クラウドサービス接続。';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'なぜブロックされましたか： IPがブラックリストに掲載されています/危険なネットワーク。';
@@ -47,6 +48,7 @@ $CIDRAM['lang']['recaptcha_message'] = 'このページへのアクセスを回�
 $CIDRAM['lang']['recaptcha_passed'] = '合格！';
 $CIDRAM['lang']['recaptcha_submit'] = '送信';
 $CIDRAM['lang']['Short_BadIP'] = '無効なIP';
+$CIDRAM['lang']['Short_Banned'] = '禁止された';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/火星のIP';
 $CIDRAM['lang']['Short_Cloud'] = 'クラウドサービス';
 $CIDRAM['lang']['Short_Generic'] = 'ジェネリック';

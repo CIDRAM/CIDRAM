@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.12.31).
+ * This file: Dutch language data for the front-end (last modified: 2017.01.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -43,6 +43,7 @@ $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blokkeren CIDRs geïdentific
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle handtekeningen die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke handtekening categorieën.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokkeren CIDRs geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.';
+$CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.';
@@ -168,7 +169,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin voor CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Een alternatieve download-spiegel voor CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Een verzameling van eenvoudige webmaster tools waarmee websites te beveiligen.</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – Bevat optionele range blokken die naar CIDRAM kunnen worden toegevoegd om de toegang van ongewenste landen tot uw website te blokkeren.</li>
+            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Bevat optionele range blokken die naar CIDRAM kunnen worden toegevoegd om de toegang van ongewenste landen tot uw website te blokkeren.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP leermiddelen en discussie.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDRs van ASN, bepalen ASN relaties, ontdek ASN\'s op basis van netwerknamen, ezv.</li>

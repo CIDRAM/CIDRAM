@@ -288,6 +288,9 @@ Configuración de firmas.
 "modules"
 - Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas.
 
+"default_tracktime"
+- ¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinida = 604800 (1 semana).
+
 ####"recaptcha" (Categoría)
 Opcionalmente, puede proporcionar a los usuarios una manera de evitar la página "Acceso Denegado" a modo de completar una instancia de reCAPTCHA, si desea hacerlo. Esto puede ayudar a mitigar algunos de los riesgos asociados con los falsos positivos en aquellas situaciones por donde no estamos del todo seguro de si una solicitud ha originado a partir de una máquina o un ser humano.
 
@@ -547,4 +550,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 31 Diciembre 2016 (2016.12.31).
+Última Actualización: 3 Enero 2016 (2017.01.03).

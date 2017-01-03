@@ -288,6 +288,9 @@ Signatures configuration.
 "modules"
 - A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.
 
+"default_tracktime"
+- How many seconds to track IPs banned by modules. Default = 604800 (1 week).
+
 ####"recaptcha" (Category)
 Optionally, you can provide users with a way to bypass the "Access Denied" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human.
 
@@ -547,4 +550,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 31st December 2016 (2016.12.31).
+Last Updated: 3rd January 2016 (2017.01.03).

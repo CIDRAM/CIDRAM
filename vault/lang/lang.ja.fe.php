@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.12.31).
+ * This file: Japanese language data for the front-end (last modified: 2017.01.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -43,6 +43,7 @@ $CIDRAM['lang']['config_signatures_block_cloud'] = 'クラウドサービスか�
 $CIDRAM['lang']['config_signatures_block_generic'] = '一般的なCIDRをブロックする必要がありますか？ （他のオプションに固有ではないもの）。';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービスからのCIDRをブロックする必要がありますか？ 匿名プロキシサービスが必要な場合は、これをfalseに設定する必要があります。ない場合は、セキュリティを向上させるために、これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。';
+$CIDRAM['lang']['config_signatures_default_tracktime'] = 'モジュールによって禁止されているIPを追跡する秒数。 Default（デフォルト設定） = ６０４８００（１週間）。';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'IPv4のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6署名をチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。';
@@ -168,7 +169,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAMのWordpressプラグイン。</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
-            <li><a href="https://macmathan.info/zbblock-range-blocks">MacMathan.info Range Blocks</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
+            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASNからCIDRを取得する、ASN関係を決定する、ネットワーク名に基づいてASNを検出する、等。</li>

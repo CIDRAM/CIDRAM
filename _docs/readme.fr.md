@@ -288,6 +288,9 @@ Configuration pour les signatures.
 "modules"
 - Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.
 
+"default_tracktime"
+- Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).
+
 ####"recaptcha" (Catégorie)
 Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de «Accès Refusé» par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une demande est à l'origine d'une machine ou d'un être humain.
 
@@ -547,4 +550,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 31 Décembre 2016 (2016.12.31).
+Dernière Mise à Jour: 3 Janvier 2016 (2017.01.03).

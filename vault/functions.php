@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.01).
+ * This file: Functions file (last modified: 2017.01.02).
  */
 
 /**
@@ -1255,7 +1255,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Key = -1;
     $Offset = strlen($Base);
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
-    foreach($List as $Item => $List){
+    foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
         if (preg_match("\x01" . '^(?:/\.\.|./\.|\.{3})$' . "\x01", str_replace("\\", '/', substr($Item, -3)))) {
@@ -1396,7 +1396,7 @@ $CIDRAM['FileManager-IsDirEmpty'] = function ($Directory) {
 $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = array();
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
-    foreach($List as $Item => $List){
+    foreach ($List as $Item => $List) {
         if (
             preg_match("\x01" . '^(?:/\.\.|./\.|\.{3})$' . "\x01", str_replace("\\", '/', substr($Item, -3))) ||
             !preg_match("\x01" . '(?:logfile|\.(txt|log)$)' . "\x01i", $Item) ||

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.08.16).
+ * This file: German language data (last modified: 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -34,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = 'Warum blockierte: ';
 $CIDRAM['lang']['generated_by'] = 'Generiert von';
 $CIDRAM['lang']['preamble'] = '-- Ende der Präambel. Fügen Sie Ihre Fragen oder Kommentare nach dieser Zeile. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Sie versuchen auf diese Website mit eine ungültige IP-Adresse zu verbinden.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'Ihr Zugriff auf diese Seite wurde verweigert aufgrund der vorherigen schlechten Verhalten von Ihrer IP-Adresse.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse wird als Bogon Adresse erkannt, und Verbindungen von Bogon-Adressen auf dieser Website ist nicht vom Besitzer der Website gestattet.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einer Cloud-Service, und Verbindungen von einer Cloud-Service auf dieser Website ist nicht vom Besitzer der Website gestattet.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einem Netzwerk aufgelistet auf eine Schwarzliste benutzten mit dieser Website.';
@@ -47,6 +48,7 @@ $CIDRAM['lang']['recaptcha_message'] = 'Um den Zugang zu dieser Seite wieder zu 
 $CIDRAM['lang']['recaptcha_passed'] = 'Gelungen!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Absenden';
 $CIDRAM['lang']['Short_BadIP'] = 'Ungültige IP!';
+$CIDRAM['lang']['Short_Banned'] = 'Verboten';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon-IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Cloud-Service';
 $CIDRAM['lang']['Short_Generic'] = 'Generisches';

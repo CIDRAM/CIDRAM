@@ -290,6 +290,9 @@ Konfiguration der Signaturen.
 "modules"
 - Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt.
 
+"default_tracktime"
+- Wie viele Sekunden, um IPs von Modulen verboten zu verfolgen. Standardeinstellung = 604800 (1 Woche).
+
 ####"recaptcha" (Kategorie)
 Wenn du willst, können Sie Benutzern bieten eine Möglichkeit zur umgehen der Seite "Zugriff verweigert" durch Abschluss einer reCAPTCHA-Instanz. Dies kann helfen, einige der Risiken im Zusammenhang mit Falsch-Positivs zu mildern, in diesen Fällen wodurch wir nicht ganz sicher sind ob eine Anfrage von einer Maschine oder einem Menschen stammt.
 
@@ -549,4 +552,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 31. Dezember 2016 (2016.12.31).
+Zuletzt aktualisiert: 3. Januar 2016 (2017.01.03).

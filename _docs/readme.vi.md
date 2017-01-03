@@ -288,6 +288,9 @@ Cấu hình cho chữ ký.
 "modules"
 - Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.
 
+"default_tracktime"
+- Có bao nhiêu giây để theo dõi các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).
+
 ####"recaptcha" (Thể loại)
 Nếu bạn muốn, bạn có thể cung cấp cho người dùng một cách để vượt qua các trang "Truy cập bị từ chối" bằng cách hoàn thành một reCAPTCHA. Điều này có thể giúp giảm thiểu một số rủi ro kết hợp với sai tích cực trong những tình huống theo đó chúng tôi không hoàn toàn chắc chắn liệu một yêu cầu bắt nguồn từ một máy tính hay một con người.
 
@@ -547,4 +550,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Mười Hai 2016 (2016.12.31).
+Lần cuối cập nhật: 3 Tháng Giêng 2017 (2017.01.03).

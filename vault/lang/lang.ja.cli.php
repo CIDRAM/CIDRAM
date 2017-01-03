@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for CLI (last modified: 2016.10.23).
+ * This file: Japanese language data for CLI (last modified: 2017.01.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -61,14 +61,14 @@ $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s： 有効期限タグは、有効な日�
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s： 「%s」は、有効なIPv4/IPv6アドレスではありません！';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s： 行の長さが１２０バイト以上です；最適な読みやすさのために、行の長さは１２０バイトに制限されるべきです。';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%sとL%sは同じです、そのため、はマージすることができます。';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s： 「Function」は存在しません；署名は不完全であることが表示されます。';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s： "%s" 「%s」は、活性化することはできません！ベースと範囲の始まりは一致していません！「%s」とそれを交換してみてください。';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s： 「機能」は存在しません；署名は不完全であることが表示されます。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s： 「%s」は、活性化することはできません！ベースと範囲の始まりは一致していません！「%s」とそれを交換してみてください。';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s： 「%s」は、活性化することはできません！「%s」は有効な範囲ではありません！';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s： 「%s」は「%s」（これはすでに存在します）に従属します。';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s： 「%s」は「%s」（これはすでに存在します）にスーパーセットです。';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s： 文法的に正確ではありません。';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s： タブが検出されました；最適な読みやすさのために、スペースが好ましいです。';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'L%s： セクションタグが２０バイト以上です；セクションタグは、明確かつ簡潔でなければなりません。';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s： 「Function」が認識されません；署名が壊れている可能性があります。';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s： 「機能」が認識されません；署名が壊れている可能性があります。';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s： 末尾の空白が、この回線で検出されました。';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'L%s： YAMLのようなデータが検出されたが、それを処理できませんでした。';

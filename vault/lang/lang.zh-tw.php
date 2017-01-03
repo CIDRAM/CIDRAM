@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2016.08.16).
+ * This file: Chinese (traditional) language data (last modified: 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -34,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = '為何受阻：';
 $CIDRAM['lang']['generated_by'] = '所產生通過';
 $CIDRAM['lang']['preamble'] = '-- 結束序言。添加您的問題或意見該行之後。 --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = '您的訪問這個頁面被拒絕因為您試圖訪問該頁面使用一個無效的IP地址。';
+$CIDRAM['lang']['ReasonMessage_Banned'] = '您的訪問這個頁面被拒絕因由於您的IP地址以前的錯誤行為。';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = '您的訪問這個頁面被拒絕因為您的IP地址被識別作為火星IP地址，和來自這些IP連接不是由網站所有者允許。';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = '您的訪問這個頁面被拒絕因為您的IP地址被識別為屬於雲服務，和來自這些IP連接不是由網站所有者允許。';
 $CIDRAM['lang']['ReasonMessage_Generic'] = '您的訪問這個頁面被拒絕因為您的IP地址屬於一個網絡在黑名單中所列使用本網站。';
@@ -47,6 +48,7 @@ $CIDRAM['lang']['recaptcha_message'] = '為了重新進入此頁面，請填寫�
 $CIDRAM['lang']['recaptcha_passed'] = '成功！';
 $CIDRAM['lang']['recaptcha_submit'] = '提交';
 $CIDRAM['lang']['Short_BadIP'] = '無效的IP！';
+$CIDRAM['lang']['Short_Banned'] = '禁止';
 $CIDRAM['lang']['Short_Bogon'] = '火星IP';
 $CIDRAM['lang']['Short_Cloud'] = '雲服務';
 $CIDRAM['lang']['Short_Generic'] = '通用';

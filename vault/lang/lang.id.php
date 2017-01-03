@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.08.16).
+ * This file: Indonesian language data (last modified: 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -34,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = 'Mengapa Diblokir: ';
 $CIDRAM['lang']['generated_by'] = 'Dihasilkan oleh';
 $CIDRAM['lang']['preamble'] = '-- Akhir pembukaan. Tambah pertanyaan atau komentar setelah baris ini. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Akses Anda ke halaman ini ditolak karena Anda mencoba untuk mengakses halaman ini menggunakan alamat IP yang tidak valid.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'Akses Anda ke halaman ini ditolak karena perilaku buruk sebelumnya dari alamat IP Anda.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai alamat bogon, dan menghubungkan dari bogon ke situs ini tidak diizinkan oleh pemilik situs.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai milik dari layanan komputasi awan, dan menghubungkan dari layanan komputasi awan ke situs ini tidak diizinkan oleh pemilik situs.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan terdaftar pada daftar hitam yang digunakan oleh situs ini.';
@@ -47,6 +48,7 @@ $CIDRAM['lang']['recaptcha_message'] = 'Dalam rangka untuk mendapatkan kembali a
 $CIDRAM['lang']['recaptcha_passed'] = 'Lulus!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Mengirim';
 $CIDRAM['lang']['Short_BadIP'] = 'IP tidak valid!';
+$CIDRAM['lang']['Short_Banned'] = 'Dilarang';
 $CIDRAM['lang']['Short_Bogon'] = 'IP yang bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'Layanan komputasi awan';
 $CIDRAM['lang']['Short_Generic'] = 'Umum';

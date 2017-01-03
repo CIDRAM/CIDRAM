@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.08.16).
+ * This file: Arabic language data (last modified: 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,7 +16,6 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['textDir'] = 'rtl';
 $CIDRAM['lang']['click_here'] = 'أنقر هنا';
 $CIDRAM['lang']['denied'] = 'تم رفض الوصول!';
 $CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات';
@@ -35,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = 'سبب الحظر: ';
 $CIDRAM['lang']['generated_by'] = 'الناتج';
 $CIDRAM['lang']['preamble'] = '-- نهاية الديباجة. إضافة أسئلة أو تعليقات بعد هذا الخط. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'عنوان ال IP غير صالح.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'تم حجب الوصول من قبل صاحب الموقع.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'تم حجب الوصول من قبل صاحب الموقع.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'الموقع لا يسمح بالخدمات السحابية.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'تم رفض الوصول، عنوان ال IP الخاص بك مدرج بالقائمة السوداء للموقع.';
@@ -48,9 +48,11 @@ $CIDRAM['lang']['recaptcha_message'] = 'من أجل استعادة الوصول 
 $CIDRAM['lang']['recaptcha_passed'] = 'نجحت!';
 $CIDRAM['lang']['recaptcha_submit'] = 'الإرسال';
 $CIDRAM['lang']['Short_BadIP'] = 'IP غير صالح';
+$CIDRAM['lang']['Short_Banned'] = 'حظر';
 $CIDRAM['lang']['Short_Bogon'] = 'المريخ IP';
 $CIDRAM['lang']['Short_Cloud'] = 'الخدمات السحابية';
 $CIDRAM['lang']['Short_Generic'] = 'عام';
 $CIDRAM['lang']['Short_Proxy'] = 'خدمة بروكسي';
 $CIDRAM['lang']['Short_Spam'] = 'خطر البريد المزعج';
 $CIDRAM['lang']['Support_Email'] = 'لطلب المساعدة أو لأي إستفسار يمكنك التواصل معنا عبر البريد الإلكتروني ({ClickHereLink}).';
+$CIDRAM['lang']['textDir'] = 'rtl';

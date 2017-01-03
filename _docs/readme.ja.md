@@ -178,7 +178,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/frontend.php | フロントエンド・ハンドラ。
-/vault/functions.php | 関数ファイル（本質的ファイル）。
+/vault/functions.php | 機能ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/icons.php | アイコン・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
 /vault/ignore.dat | 無視ファイル（これは署名セクション無視します）。
@@ -289,6 +289,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "modules" （モジュールス）
 - IPv4/IPv6署名をチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。
 
+"default_tracktime"
+- モジュールによって禁止されているIPを追跡する秒数。 Default（デフォルト設定） = ６０４８００（１週間）。
+
 ####"recaptcha" （リーキャプチャ、カテゴリ）
 Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
 
@@ -344,17 +347,17 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
-All IPv4 signatures follow the format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
+すべてのIPv4署名はこの形式に従います： `xxx.xxx.xxx.xxx/yy 「機能」 「パラメータ」`
 - `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
-- `yy` represents the CIDR block size [1-32].
-- `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
-- `[Param]` represents whatever additional information may be required by `[Function]`.
+- `yy`は、ブロックサイズを表します（１ー３２）。
+- `「機能」`は、スクリプトに署名の処理方法を指示します。
+- `「パラメータ」`は、`「機能」`で必要、な追加情報を表します。
 
-All IPv6 signatures follow the format: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
+すべてのIPv6署名はこの形式に従います： `xxxx:xxxx:xxxx:xxxx::xxxx/yy 「機能」 「パラメータ」`
 - `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
-- `yy` represents the CIDR block size [1-128].
-- `[Function]` instructs the script what to do with the signature (how the signature should be regarded).
-- `[Param]` represents whatever additional information may be required by `[Function]`.
+- `yy`は、ブロックサイズを表します（１ー１２８）。
+- `「機能」`は、スクリプトに署名の処理方法を指示します。
+- `「パラメータ」`は、`「機能」`で必要、な追加情報を表します。
 
 The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
@@ -362,31 +365,31 @@ Precise and correct CIDR notation is required, otherwise the script will NOT rec
 
 Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
-「Function」の可能な値：
+「機能」の可能な値：
 - Run
 - Whitelist
 - Greylist
 - Deny
 
-If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `[Param]` value (the working directory should be the "/vault/" directory of the script).
+If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `「パラメータ」` value (the working directory should be the "/vault/" directory of the script).
 
-例：`127.0.0.0/8 Run example.php`
+例： `127.0.0.0/8 Run example.php`
 
 This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
 
-If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `[Param]` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `「パラメータ」` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
 
-例：`127.0.0.1/32 Whitelist`
+例： `127.0.0.1/32 Whitelist`
 
-If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `[Param]` is ignored.
+If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `「パラメータ」` is ignored.
 
-例：`127.0.0.1/32 Greylist`
+例： `127.0.0.1/32 Greylist`
 
 If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
 
-The `[Param]` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
+The `「パラメータ」` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
 
-The pre-prepared explanations have L10N support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `[Param]` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `[Param]` values that don't use these shorthand words, however, don't have L10N support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
+The pre-prepared explanations have L10N support and can be translated by the script based upon the language you specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore "Deny" signatures based upon their `「パラメータ」` value (if they're using these shorthand words) via the directives specified by the script configuration (each shorthand word has a corresponding directive to either process the corresponding signatures or to ignore them). `「パラメータ」` values that don't use these shorthand words, however, don't have L10N support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the script configuration.
 
 略語：
 - Bogon
@@ -548,4 +551,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年12月31日。
+最終アップデート： 2017年1月3日。

@@ -288,6 +288,9 @@ Configuração por assinaturas.
 "modules"
 - Uma lista de arquivos módulo a carregar depois de processamento as assinaturas IPv4/IPv6, delimitado por vírgulas.
 
+"default_tracktime"
+- Quantos segundos para rastrear IPs banidos por módulos. Padrão = 604800 (1 semana).
+
 ####"recaptcha" (Categoria)
 Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
 
@@ -547,4 +550,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 31 Dezembro 2016 (2016.12.31).
+Última Atualização: 3 Janeiro 2016 (2017.01.03).

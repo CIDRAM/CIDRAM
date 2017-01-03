@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.08.16).
+ * This file: Vietnamese language data (last modified: 2017.01.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -34,6 +34,7 @@ $CIDRAM['lang']['field_whyreason'] = 'Tại sao bị chặn: ';
 $CIDRAM['lang']['generated_by'] = 'Tạo ra bởi';
 $CIDRAM['lang']['preamble'] = '-- Kết thúc của lời nói đầu. Thêm câu hỏi hoặc ý kiến của bạn sau khi dòng này. --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì bạn đã cố gắng truy cập trang này sử dụng một địa chỉ IP không hợp lệ.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'Truy cập của bạn vào trang này bị từ chối do hành vi xấu trước đó từ địa chỉ IP của bạn.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như một địa chỉ bogon, và kết nối từ bogon đến trang web này không được phép bởi chủ sở hữu trang web.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ điện toán đám mây, và kết nối đến trang web này từ dịch vụ điện toán đám mây không được phép bởi chủ sở hữu trang web.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một mạng lưới được liệt kê vào danh sách đen được sử dụng bởi trang web này.';
@@ -47,6 +48,7 @@ $CIDRAM['lang']['recaptcha_message'] = 'Để lấy lại truy cập trang này,
 $CIDRAM['lang']['recaptcha_passed'] = 'Thành công!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Gửi';
 $CIDRAM['lang']['Short_BadIP'] = 'IP không hợp lệ';
+$CIDRAM['lang']['Short_Banned'] = 'Bị cấm';
 $CIDRAM['lang']['Short_Bogon'] = 'IP bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'Dịch vụ điện toán đám mây';
 $CIDRAM['lang']['Short_Generic'] = 'Chủng loại';

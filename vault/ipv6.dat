@@ -197,9 +197,8 @@ Tag: Hostinger Int
 
 
 # ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc").
-# %Listed, Google Malware Dashboard: 1.58% (AS13335), 0% (AS132892), "ASN not found" (AS203898),
-#   0% (AS394536).
-# Updated: 2016.05.15
+# %Listed, Google Malware Dashboard: 1.56% (AS13335), 0% (AS132892/AS203898/AS394536).
+# Updated: 2017.01.05
 
 2400:cb00::/48 Deny Cloud
 2400:cb00:4::/48 Deny Cloud
@@ -207,11 +206,9 @@ Tag: Hostinger Int
 2400:cb00:12::/48 Deny Cloud
 2400:cb00:14::/46 Deny Cloud
 2400:cb00:19::/48 Deny Cloud
-2400:cb00:20::/46 Deny Cloud
-2400:cb00:25::/48 Deny Cloud
-2400:cb00:26::/47 Deny Cloud
-2400:cb00:28::/47 Deny Cloud
-2400:cb00:30::/47 Deny Cloud
+2400:cb00:20::/45 Deny Cloud
+2400:cb00:29::/48 Deny Cloud
+2400:cb00:31::/48 Deny Cloud
 2400:cb00:32::/48 Deny Cloud
 2400:cb00:34::/47 Deny Cloud
 2400:cb00:36::/48 Deny Cloud
@@ -224,17 +221,32 @@ Tag: Hostinger Int
 2400:cb00:68::/47 Deny Cloud
 2400:cb00:70::/46 Deny Cloud
 2400:cb00:74::/47 Deny Cloud
-2400:cb00:78::/48 Deny Cloud
-2400:cb00:80::/48 Deny Cloud
-2400:cb00:82::/47 Deny Cloud
-2400:cb00:84::/48 Deny Cloud
-2400:cb00:86::/47 Deny Cloud
-2400:cb00:97::/48 Deny Cloud
+2400:cb00:77::/48 Deny Cloud
+2400:cb00:78::/47 Deny Cloud
+2400:cb00:80::/45 Deny Cloud
+2400:cb00:88::/47 Deny Cloud
+2400:cb00:90::/48 Deny Cloud
+2400:cb00:94::/48 Deny Cloud
+2400:cb00:96::/47 Deny Cloud
+2400:cb00:98::/48 Deny Cloud
+2400:cb00:100::/48 Deny Cloud
+2400:cb00:102::/47 Deny Cloud
+2400:cb00:104::/46 Deny Cloud
+2400:cb00:114::/47 Deny Cloud
+2400:cb00:117::/48 Deny Cloud
+2400:cb00:121::/48 Deny Cloud
+2400:cb00:122::/48 Deny Cloud
+2400:cb00:125::/48 Deny Cloud
+2400:cb00:504::/48 Deny Cloud
+2400:cb00:569::/48 Deny Cloud
 2400:cb00:2048::/47 Deny Cloud
 2400:cb00:beef::/48 Deny Cloud
-2405:8100:8003::/48 Deny Cloud
-2606:4700:1000::/48 Deny Cloud
+2405:8100:8004::/47 Deny Cloud
+2606:4700::/42 Deny Cloud
+2606:4700:50::/44 Deny Cloud
+2606:4700:ff01::/48 Deny Cloud
 2a06:98c0:1000::/48 Deny Cloud
+2a06:98c0:3600::/48 Deny Cloud
 Tag: CloudFlare, Inc
 
 
@@ -3184,6 +3196,14 @@ Tag: Europe Domains LTD
 Tag: NetSource
 
 
+# ASN 197226 ('"SPRINT" S.A.').
+# %Listed, Google Malware Dashboard: 5.00%.
+# Updated: 2017.01.05
+
+2a03:7940::/32 Deny Cloud
+Tag: SPRINT
+
+
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
 # %Listed, Google Malware Dashboard: 21.05%.
@@ -3228,8 +3248,8 @@ Tag: ISPsystem
 
 
 # ASN 34619 ("Çizgi Telekomünikasyon").
-# %Listed, Google Malware Dashboard: 5.10%.
-# Updated: 2016.01.18 / Checked: 2016.05.20
+# %Listed, Google Malware Dashboard: 5.61%.
+# Updated: 2016.01.18 / Checked: 2017.01.05
 
 2a02:2020::/32 Deny Generic
 Tag: CIZGI TELEKOM
@@ -3310,7 +3330,7 @@ recaptcha:
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # %Listed, Google Malware Dashboard: 0%.
-# Updated: 2016.03.02 / Checked: 2016.05.15
+# Updated: 2016.03.02 / Checked: 2017.01.05
 
 2400:9800::/32 Deny Spam
 Tag: PT Excelcomindo
@@ -3328,8 +3348,8 @@ Tag: Excite Japan
 
 
 # ASN 31080 ("o2 Sp. Z.o.o").
-# %Listed, Google Malware Dashboard: 0.27%.
-# Updated: 2016.01.18 / Checked: 2016.05.15
+# %Listed, Google Malware Dashboard: 0.50%.
+# Updated: 2016.01.18 / Checked: 2017.01.05
 
 2001:67c:25c4::/48 Deny Generic
 Tag: AS31080
@@ -3359,8 +3379,8 @@ Tag: Voxility LLC
 
 
 # ASN 30968 ("INFOBOX").
-# %Listed, Google Malware Dashboard: 2.23%.
-# Updated: 2016.01.18 / Checked: 2016.05.15
+# %Listed, Google Malware Dashboard: 2.74%.
+# Updated: 2016.01.18 / Checked: 2017.01.05
 
 2a02:440::/32 Deny Generic
 Tag: INFOBOX

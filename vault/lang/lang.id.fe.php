@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.01.03).
+ * This file: Indonesian language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Memblokir CIDR umumnya dir
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy anonymous, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Berapa banyak detik untuk melacak IP dilarang oleh modul. Default = 604800 (1 seminggu).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Daftar file tanda tangan IPv4 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';

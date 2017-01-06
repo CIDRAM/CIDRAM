@@ -289,8 +289,11 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "modules" （モジュールス）
 - IPv4/IPv6署名をチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。
 
-"default_tracktime"
+"default_tracktime" （デフォルト・トラックタイム）
 - モジュールによって禁止されているIPを追跡する秒数。 Default（デフォルト設定） = ６０４８００（１週間）。
+
+"infraction_limit" （インフラクション・リミット）
+- IPがIPトラッキングによって禁止される前に発生することが、許される違反の最大数。 Default（デフォルト設定） = １０。
 
 ####"recaptcha" （リーキャプチャ、カテゴリ）
 Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
@@ -551,4 +554,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月3日。
+最終アップデート： 2017年1月5日。

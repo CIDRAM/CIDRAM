@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.01.03).
+ * This file: German language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Blockieren Sie CIDRs allge
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste gehören? Wenn Sie benötigen dass Benutzer auf Ihre Website von anonymen Proxy-Diensten zugreifen können, dies auf false sollte gesetzt werden. Andernfalls, Wenn Sie anonyme Proxies nicht benötigen, diese Richtlinie auf true sollte gesetzt werden, als Mittel zur Verbesserung der Sicherheit.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Wie viele Sekunden, um IPs von Modulen verboten zu verfolgen. Standardeinstellung = 604800 (1 Woche).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximale Anzahl von Verletzungen, die eine IP zulassen darf, bevor sie durch IP-Tracking verboten ist. Standardeinstellung = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Eine Liste der IPv4-Signaturdateien dass CIDRAM zu verarbeiten soll, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Eine Liste der IPv6-Signaturdateien dass CIDRAM zu verarbeiten soll, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt.';

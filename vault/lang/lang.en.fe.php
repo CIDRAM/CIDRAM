@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.01.03).
+ * This file: English language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Block CIDRs generally reco
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don\'t require anonymous proxies, this directive should be set to true as a means of improving security.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'How many seconds to track IPs banned by modules. Default = 604800 (1 week).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas.';
 $CIDRAM['lang']['config_signatures_modules'] = 'A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.';

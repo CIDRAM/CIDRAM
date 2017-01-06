@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.01.01).
+ * This file: Front-end handler (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -589,6 +589,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             }
             $CIDRAM['ThisDir']['Actual'] = &$CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['ThisDir']['DirKey']];
             $CIDRAM['ThisDir']['DirLangKey'] = 'config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['ThisDir']['DirKey'];
+            $CIDRAM['ThisDir']['DirName'] = $CIDRAM['CatKey'] . '->' . $CIDRAM['ThisDir']['DirKey'];
             $CIDRAM['ThisDir']['DirLang'] =
                 (!empty($CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']])) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
             $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap($CIDRAM['ThisDir']['DirLang'], 77, "\r\n; ") . "\r\n";

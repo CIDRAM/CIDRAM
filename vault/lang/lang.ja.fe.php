@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.01.03).
+ * This file: Japanese language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = '一般的なCIDRをブロ�
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービスからのCIDRをブロックする必要がありますか？ 匿名プロキシサービスが必要な場合は、これをfalseに設定する必要があります。ない場合は、セキュリティを向上させるために、これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'スパムのため、CIDRをブロックする必要がありますか？ 問題がある場合を除き、一般的には、これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'モジュールによって禁止されているIPを追跡する秒数。 Default（デフォルト設定） = ６０４８００（１週間）。';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'IPがIPトラッキングによって禁止される前に発生することが、許される違反の最大数。 Default（デフォルト設定） = １０。';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'IPv4のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6のシグネチャファイルのリスト（CIDRAMは、これを使用します）。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6署名をチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。';

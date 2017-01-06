@@ -291,6 +291,9 @@ Configuração por assinaturas.
 "default_tracktime"
 - Quantos segundos para rastrear IPs banidos por módulos. Padrão = 604800 (1 semana).
 
+"infraction_limit"
+- Número máximo de infrações que um IP pode incorrer antes de ser banido por rastreamento IP. Padrão = 10.
+
 ####"recaptcha" (Categoria)
 Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
 
@@ -550,4 +553,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 3 Janeiro 2016 (2017.01.03).
+Última Atualização: 5 Janeiro 2016 (2017.01.05).

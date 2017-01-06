@@ -291,6 +291,9 @@ Konfigurasi untuk tanda tangan.
 "default_tracktime"
 - Berapa banyak detik untuk melacak IP dilarang oleh modul. Default = 604800 (1 seminggu).
 
+"infraction_limit"
+- Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10.
+
 ####"recaptcha" (Kategori)
 Jika Anda ingin, Anda dapat memberikan pengguna dengan cara untuk memotong halaman "Akses Ditolak" dengan cara menyelesaikan instansi reCAPTCHA. Ini dapat membantu untuk mengurangi beberapa risiko terkait dengan positif palsu dalam situasi dimana kita tidak sepenuhnya yakin apakah permintaan telah berasal dari mesin atau manusia.
 
@@ -550,4 +553,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 3 Januari 2016 (2017.01.03).
+Terakhir Diperbarui: 5 Januari 2016 (2017.01.05).

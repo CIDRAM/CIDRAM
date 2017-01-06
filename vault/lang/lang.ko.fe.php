@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.01.03).
+ * This file: Korean language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = '일반적인 CIDR 차단�
 $CIDRAM['lang']['config_signatures_block_proxies'] = '프록시 서비스에서 CIDR 차단해야합니까? 익명 프록시 서비스가 필요한 경우는 false로 설정해야합니다. 없는 경우에는 보안을 향상시키기 위해이를 true로 설정해야합니다.';
 $CIDRAM['lang']['config_signatures_block_spam'] = '스팸 때문에 CIDR 차단해야합니까? 문제가있는 경우를 제외하고 일반적으로이를 true로 설정해야합니다.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = '모듈에 의해 금지 된 IP를 추적하는 초. Default (기본값) = 604800 (1 주).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'IP가 IP 추적에 의해 금지되기 전에 발생하는 것이 허용된다 위반의 최대 수. Default (기본값) = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'IPv4의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다.';
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다.';

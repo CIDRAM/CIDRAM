@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.03).
+ * This file: Output generator (last modified: 2017.01.05).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -95,7 +95,8 @@ if (!$CIDRAM['TestResults']) {
 
 /** Check whether we're tracking the IP being checked due to bad behaviour. */
 elseif (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
-    if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] > 9) {
+    if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+        $CIDRAM['Banned'] = true;
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Banned'];
         $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['lang']['Short_Banned'];
         $CIDRAM['BlockInfo']['SignatureCount']++;
@@ -114,7 +115,7 @@ if (
     $CIDRAM['BlockInfo']['SignatureCount'] === 1 && (
         $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
             $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
-            $CIDRAM['Config']['recaptcha']['enabled'] === true
+            !empty($CIDRAM['Config']['recaptcha']['enabled'])
         )
     ) &&
     $CIDRAM['Config']['recaptcha']['lockuser'] === true
@@ -134,10 +135,12 @@ if (
     }
 }
 
+/** Define whether to track inbound IP. */
+$CIDRAM['Trackable'] = false;
+
 /** Load any modules that have been registered with the configuration. */
 if (!empty($CIDRAM['Config']['signatures']['modules'])) {
     $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
-    $CIDRAM['Trackable'] = false;
     array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
         if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
@@ -145,23 +148,29 @@ if (!empty($CIDRAM['Config']['signatures']['modules'])) {
             $CIDRAM['Trackable'] = $CIDRAM['Trackable'] ?: ($CIDRAM['BlockInfo']['SignatureCount'] - $Infractions) > 0;
         }
     });
-    if ($CIDRAM['TestResults'] && $CIDRAM['Trackable']) {
-        if (!isset($CIDRAM['Cache']['Tracking'])) {
-            $CIDRAM['Cache']['Tracking'] = array();
-        }
-        $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
-            !empty($CIDRAM['Config']['Options']['TrackTime']) ? $CIDRAM['Config']['Options']['TrackTime'] : $CIDRAM['Config']['signatures']['default_tracktime']
-        );
-        $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
-        if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
-            $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] += $CIDRAM['TrackCount'];
-            $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
-        } else {
-            $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
-        }
-        $CIDRAM['CacheModified'] = true;
+    unset($CIDRAM['Modules']);
+}
+
+/** Process tracking information for the inbound IP. */
+if ($CIDRAM['TestResults'] && $CIDRAM['Trackable']) {
+    if (!isset($CIDRAM['Cache']['Tracking'])) {
+        $CIDRAM['Cache']['Tracking'] = array();
     }
-    unset($CIDRAM['TrackCount'], $CIDRAM['TrackTime'], $CIDRAM['Trackable'], $CIDRAM['Modules']);
+    $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
+        !empty($CIDRAM['Config']['Options']['TrackTime']) ? $CIDRAM['Config']['Options']['TrackTime'] : $CIDRAM['Config']['signatures']['default_tracktime']
+    );
+    $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
+    if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
+        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] += $CIDRAM['TrackCount'];
+        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
+    } else {
+        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
+    }
+    $CIDRAM['CacheModified'] = true;
+    if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+        $CIDRAM['Banned'] = true;
+    }
+    unset($CIDRAM['TrackCount'], $CIDRAM['TrackTime']);
 }
 
 /** This code block only executed if signatures were triggered. */
@@ -174,11 +183,12 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
     if (
         !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
+        empty($CIDRAM['Banned']) &&
         file_exists($CIDRAM['Vault'] . 'recaptcha.php') &&
         $CIDRAM['BlockInfo']['SignatureCount'] === 1 && (
             $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
                 $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
-                $CIDRAM['Config']['recaptcha']['enabled'] === true
+                !empty($CIDRAM['Config']['recaptcha']['enabled'])
             )
         )
     ) {

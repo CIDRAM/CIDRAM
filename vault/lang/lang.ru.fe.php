@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.01.03).
+ * This file: Russian language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Блокировать CID
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Блокировать CIDRs идентифицированы как принадлежащие к прокси-серверов? Если вам требуется, чтобы пользователи смогли получить доступ к вашему веб-сайт от анонимных прокси-серверов, эта директива должна быть false. В противном случае, если вам не нужны анонимных прокси-серверов, эта директива должна быть true как средство повышения безопасности.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Блокировать CIDRs которые были определены как высокого риска для спама? Если Вы не испытываете проблем при этом, как правило, эта директива должна быть true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Сколько секунд чтобы отслеживать IP-адреса, запрещенные модулями. Стандарт = 604800 (1 неделя).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Максимальное число нарушений IP-разрешено брать на себя, прежде чем она запрещена отслеживание IP. Стандарт = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Список сигнатур IPv4 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Список сигнатур IPv6 файлы, которые CIDRAM должен попытаться обработать, разделенных запятыми.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.01.03).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Chặn CIDR thường đư
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Chặn CIDR xác định là thuộc về các dịch vụ proxy? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy ẩn danh, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu proxy vô danh, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Chặn CIDR xác định như có nguy cơ cao đối được thư rác? Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Có bao nhiêu giây để theo dõi các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các theo dõi IP. Mặc định = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Một danh sách các tập tin chữ ký IPv4 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.';

@@ -340,6 +340,11 @@ Updating is done manually, and you can customise your configuration and customis
  <li>كم ثانية لتعقب IP حظرت من قبل وحدات. افتراضي = 604800 (1 أسبوع).</li>
 </ul></div>
 
+<div dir="rtl">"infraction_limit"<br /></div>
+<div dir="rtl"><ul>
+ <li>يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10.</li>
+</ul></div>
+
 #### <div dir="rtl">"recaptcha" (التصنيف)<br /></div>
 Optionally, you can provide users with a way to bypass the "تم رفض الوصول!" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
 
@@ -612,4 +617,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 3 يناير 2016 (2017.01.03).</div>
+<div dir="rtl">آخر تحديث: 5 يناير 2016 (2017.01.05).</div>

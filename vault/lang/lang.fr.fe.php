@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.01.03).
+ * This file: French language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquer CIDRs recommandé 
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquer CIDRs identifié comme appartenant à services de proxy? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n\'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d\'améliorer la sécurité.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquer CIDRs identifié comme étant risque élevé pour le spam? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Nombre maximal d\'infractions qu\'une IP est autorisée à engager avant d\'être interdite par le suivi des IPs. Défaut = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.';

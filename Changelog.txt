@@ -25,6 +25,20 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.01.02; Minor code change; Maikuolan]: Added the ability to track and to
   temporarily ban IP addresses blocked by modules.
 
+- [2017.01.05; Bug-fix; Maikuolan]: Fixed a bug related to the dislay of
+  reCAPTCHA instances which could arise in some specific situations when some
+  specific configurations are used in combination with specially marked
+  sections.
+
+- [2017.01.05; Minor code change; Maikuolan]: Added a new directive to control
+  the maximum number of infractions an IP is allowed to incur before it is
+  banned by IP tracking ("infraction_limit"). Improved the readability of the
+  front-end configuration page by including directive names alongside their
+  descriptions and formatting accordingly. Rewrote the "Direct" closure in the
+  loader (nothing was broken, changed functionality, and patching not required;
+  just changed due to that a code quality checking tool I sometimes use was
+  complaining about the way it was written before).
+
 === Version/Release 0.6.1 ===
 PATCH RELEASE.
 

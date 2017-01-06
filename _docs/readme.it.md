@@ -291,6 +291,9 @@ Configurazione per firme.
 "default_tracktime"
 - Quanti secondi per monitorare IP vietati dai moduli. Predefinito = 604800 (1 settimana).
 
+"infraction_limit"
+- Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dal monitoraggio IP. Predefinito = 10.
+
 ####"recaptcha" (Categoria)
 Se vuoi, è possibile fornire agli utenti un modo per bypassare la pagina di "Accesso Negato" attraverso il completamento di un'istanza di reCAPTCHA. Questo può aiutare a mitigare alcuni dei rischi associati con i falsi positivi in quelle situazioni in cui non siamo del tutto sicuri se una richiesta ha avuto origine da una macchina o di un essere umano.
 
@@ -550,4 +553,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 3 Gennaio 2016 (2017.01.03).
+Ultimo Aggiornamento: 5 Gennaio 2016 (2017.01.05).

@@ -291,6 +291,9 @@ Configuration pour les signatures.
 "default_tracktime"
 - Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).
 
+"infraction_limit"
+- Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par le suivi des IPs. Défaut = 10.
+
 ####"recaptcha" (Catégorie)
 Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de «Accès Refusé» par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une demande est à l'origine d'une machine ou d'un être humain.
 
@@ -550,4 +553,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 3 Janvier 2016 (2017.01.03).
+Dernière Mise à Jour: 5 Janvier 2016 (2017.01.05).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.01.03).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建議對�
 $CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於代理服務嗎？如果您需要該用戶可以訪問您的網站從匿名代理服務，這應該被設置為“false”（假）。除此以外，如果您不需要匿名代理服務，這應該被設置為“true”（真）作為一個方式以提高安全性。';
 $CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = '多少秒鐘來跟踪模塊禁止的IP。 標準 = 604800 （1週）。';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = '從IP最大允許違規數量之前它被禁止。 標準 = 10。';
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';

@@ -291,6 +291,9 @@ Configuratie voor handtekeningen.
 "default_tracktime"
 - Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).
 
+"infraction_limit"
+- Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verboden door IP-tracking. Standaard = 10.
+
 ####"recaptcha" (Categorie)
 Optioneel, u kan uw gebruikers te voorzien van een manier om de "Toegang Geweigerd" pagina te omzeilen, door middel van het invullen van een reCAPTCHA instantie, als u wilt om dit te doen. Dit kan helpen om een aantal van de risico's die samenhangen met valse positieven te beperken, in die situaties waar we niet helemaal zeker of er een verzoek is voortgekomen uit een machine of een mens.
 
@@ -550,4 +553,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 3 Januari 2016 (2017.01.03).
+Laatste Bijgewerkt: 5 Januari 2016 (2017.01.05).

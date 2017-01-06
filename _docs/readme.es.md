@@ -291,6 +291,9 @@ Configuración de firmas.
 "default_tracktime"
 - ¿Cuántos segundos para realizar el seguimiento de las IP prohibidas por los módulos? Predefinida = 604800 (1 semana).
 
+"infraction_limit"
+- Número máximo de infracciones a las que un IP puede incurrir antes de ser prohibido por el seguimiento de IP. Predefinida = 10.
+
 ####"recaptcha" (Categoría)
 Opcionalmente, puede proporcionar a los usuarios una manera de evitar la página "Acceso Denegado" a modo de completar una instancia de reCAPTCHA, si desea hacerlo. Esto puede ayudar a mitigar algunos de los riesgos asociados con los falsos positivos en aquellas situaciones por donde no estamos del todo seguro de si una solicitud ha originado a partir de una máquina o un ser humano.
 
@@ -550,4 +553,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 3 Enero 2016 (2017.01.03).
+Última Actualización: 5 Enero 2016 (2017.01.05).

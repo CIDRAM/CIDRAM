@@ -291,6 +291,9 @@ Cấu hình cho chữ ký.
 "default_tracktime"
 - Có bao nhiêu giây để theo dõi các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).
 
+"infraction_limit"
+- Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các theo dõi IP. Mặc định = 10.
+
 ####"recaptcha" (Thể loại)
 Nếu bạn muốn, bạn có thể cung cấp cho người dùng một cách để vượt qua các trang "Truy cập bị từ chối" bằng cách hoàn thành một reCAPTCHA. Điều này có thể giúp giảm thiểu một số rủi ro kết hợp với sai tích cực trong những tình huống theo đó chúng tôi không hoàn toàn chắc chắn liệu một yêu cầu bắt nguồn từ một máy tính hay một con người.
 
@@ -550,4 +553,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 3 Tháng Giêng 2017 (2017.01.03).
+Lần cuối cập nhật: 5 Tháng Giêng 2017 (2017.01.05).

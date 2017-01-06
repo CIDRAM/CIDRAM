@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.01.03).
+ * This file: Dutch language data for the front-end (last modified: 2017.01.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -44,6 +44,7 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Blokkeren CIDRs algemeen a
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokkeren CIDRs geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verboden door IP-tracking. Standaard = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.';

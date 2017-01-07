@@ -1,3 +1,5 @@
+[![Join the chat at https://gitter.im/CIDRAM/Lobby](https://badges.gitter.im/CIDRAM/Lobby.svg)](https://gitter.im/CIDRAM/Lobby)
+
 ## **What is CIDRAM?**
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed to protect websites by blocking requests originating from IP addresses regarded as being sources of undesirable traffic, including (but not limited to) traffic from non-human access endpoints, cloud services, spambots, scrapers, etc. It does this by calculating the possible CIDRs of the IP addresses supplied from inbound requests and then attempting to match these possible CIDRs against its signature files (these signature files contain lists of CIDRs of IP addresses regarded as being sources of undesirable traffic); If matches are found, the requests are blocked.
@@ -36,4 +38,4 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 ---
 
-*This file, "README.md", last edited: 12th December 2016 (2016.12.12).*
+*This file, "README.md", last edited: 7th January 2017 (2017.01.07).*

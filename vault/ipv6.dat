@@ -107,11 +107,17 @@
 
 # ---
 # ASN 46844 ("Sharktech").
-# %Listed, Google Malware Dashboard: 29.29%.
-# Updated: 2016.03.27 / Checked: 2016.05.20
+# %Listed, Google Malware Dashboard: 2.34%.
+# Updated: 2017.01.09
 
 2001:67c:2f08::/48 Deny Cloud
-2610:150::/32 Deny Cloud
+2610:150::/34 Deny Cloud
+2610:150:8000::/33 Deny Cloud
+2a00:c2c0:ffff::/48 Deny Cloud
+2a05:2d01:9000::/48 Deny Cloud
+2a05:2d01:ffff::/48 Deny Cloud
+2a05:2d02::/48 Deny Cloud
+2a05:2d06::/48 Deny Cloud
 Tag: Sharktech
 
 
@@ -124,17 +130,9 @@ Tag: Sharktech
 Tag: Multacom Corp
 
 
-# ASN 16138 ("INTERIA.PL Sp z.o.o").
-# %Listed, Google Malware Dashboard: 2.94%.
-# Updated: 2016.03.17 / Checked: 2016.05.20
-
-2a00:1308::/32 Deny Cloud
-Tag: INTERIA
-
-
 # ASN 7497 ("Computer Network Information Center").
-# %Listed, Google Malware Dashboard: 10.03%.
-# Updated: 2016.03.20 / Checked: 2016.05.20
+# %Listed, Google Malware Dashboard: 0.64%.
+# Updated: 2016.03.20 / Checked: 2017.01.09
 
 2400:dd00::/28 Deny Cloud
 2401:de00::/32 Deny Cloud
@@ -142,8 +140,8 @@ Tag: CST-NET
 
 
 # ASN 46573 ("Global Frag Networks").
-# %Listed, Google Malware Dashboard: 10.77%.
-# Updated: 2016.03.20 / Checked: 2016.05.20
+# %Listed, Google Malware Dashboard: 9.55%.
+# Updated: 2016.03.20 / Checked: 2017.01.09
 
 2604:d180::/32 Deny Cloud
 Tag: Global Frag Networks
@@ -278,8 +276,8 @@ Tag: GoDaddy.com, LLC
 
 
 # ASN 8560 ("1&1 Internet SE").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Updated: 2016.03.17 / Checked: 2016.05.20
+# %Listed, Google Malware Dashboard: 1.60%.
+# Updated: 2016.03.17 / Checked: 2017.01.09
 
 2001:8d8::/32 Deny Cloud
 2001:ba0::/32 Deny Cloud
@@ -433,8 +431,8 @@ Tag: eServer.ru
 
 
 # ASN 35415 ("Webzilla B.V").
-# %Listed, Google Malware Dashboard: 1.16%.
-# Updated: 2016.09.27
+# %Listed, Google Malware Dashboard: 0.32%.
+# Updated: 2016.09.27 / Checked: 2017.01.09
 
 2803:8700:5::/48 Deny Cloud
 2803:8700:45::/48 Deny Cloud
@@ -3302,8 +3300,8 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# %Listed, Google Malware Dashboard: 2.43%.
-# Updated: 2016.02.27 / Checked: 2016.05.21
+# %Listed, Google Malware Dashboard: 2.47%.
+# Updated: 2016.02.27 / Checked: 2017.01.09
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 
 2a03:2100::/32 Deny Generic
@@ -3532,19 +3530,20 @@ recaptcha:
 
 
 # ASN 49981 ("WorldStream").
-# %Listed, Google Malware Dashboard: 1.89%.
-# Updated: 2016.03.20 / Checked: 2016.05.21
+# %Listed, Google Malware Dashboard: 9.04%.
+# Updated: 2017.01.09
 
 2001:16c0:fefe::/48 Deny Generic
 2a00:7c80::/32 Deny Generic
+2a04:92c7:16::/48 Deny Generic
 2a06:3880::/29 Deny Generic
 2a06:d641::/32 Deny Generic
 Tag: WorldStream
 
 
 # ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Updated: 2016.01.18 / Checked: 2016.05.21
+# %Listed, Google Malware Dashboard: 1.14%.
+# Updated: 2017.01.09
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 
 2001:67c:1388::/48 Deny Generic
@@ -3556,8 +3555,17 @@ Tag: WorldStream
 2a02:168::/32 Deny Generic
 2a02:16a0::/32 Deny Generic
 2a03:7520::/32 Deny Generic
-2a05:36c0::/29 Deny Generic
+2a07:600::/29 Deny Generic
+2a0b:5400:1::/48 Deny Generic
 Tag: Init7
+
+
+# ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
+# Updated: 2017.01.09
+
+2a03:6540::/32 Deny Generic
+2a0b:da00::/29 Deny Generic
+Tag: Yes Networks
 
 
 # ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").

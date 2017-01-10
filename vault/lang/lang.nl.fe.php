@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.01.05).
+ * This file: Dutch language data for the front-end (last modified: 2017.01.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Uitloggen</a>';
+$CIDRAM['lang']['config_general_ban_override'] = 'Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]; 403 = Overrijden met "403 Forbidden"; 503 = Overrijden met "503 Service unavailable".';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'E-mailadres voor ondersteuning.';
@@ -28,6 +29,7 @@ $CIDRAM['lang']['config_general_lang'] = 'Geef de standaardtaal voor CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-stijl bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum aantal inlogpogingen.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
@@ -48,6 +50,7 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum aantal overtred
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.';
+$CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet inbreuken worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_component'] = 'Bestanddeel';
@@ -181,5 +184,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IPs; Biedt een API voor het controleren en rapporteren van IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Onderhoudt lijsten van bekende spammers; Handig voor het controleren van IP/ASN spam activiteiten.</li>
         </ul>';

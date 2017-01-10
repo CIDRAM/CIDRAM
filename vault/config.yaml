@@ -59,6 +59,16 @@ Config Defaults:
   FrontEndLog:
    type: string
    default: ""
+  ban_override:
+   type: int
+   default: 200
+   choices:
+    200: 200
+    403: 403
+    503: 503
+  log_banned_ips:
+   type: bool
+   default: true
  signatures:
   ipv4:
    type: string
@@ -90,6 +100,9 @@ Config Defaults:
   infraction_limit:
    type: int
    default: 10
+  track_mode:
+   type: bool
+   default: false
  recaptcha:
   usemode:
    type: int

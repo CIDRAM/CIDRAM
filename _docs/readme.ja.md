@@ -248,7 +248,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - CIDRAMのデフォルト言語を設定します。
 
 "emailaddr" （Eメール・アドレス）
-- If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses). @TranslateMe@
+- ここにEメールアドレスを入力して、ユーザーがブロックされているときにユーザーに送信することができます。 これはサポートと支援に使用できます（誤ってブロックされた場合、等）。 警告： ここに入力された電子Eメールアドレスは、おそらくスパムロボットによって取得されます。 ここで提供される電子Eメールアドレスは、すべて使い捨てにすることを強く推奨します（例えば、プライマリ個人アドレスまたはビジネスアドレスを使用しない、等）。
 
 "disable_cli" （ディスエイブル・シーエルアイ）
 - CLIモードを無効にするか？CLIモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、テストツール（PHPUnit等）やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。 `false`（偽） = CLIモードを有効にします「Default（デフォルルト）」； `true`（真） = CLIモードを無効にします。
@@ -261,6 +261,12 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 "FrontEndLog" （フロントエンド・ログ）
 - フロントエンド・ログインの試みを記録するためのファイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。
+
+"ban_override" （バン・オーバーライド）
+- 「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？ 上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。 ２００ = 上書きしない「Default（デフォルルト）」； ４０３ = 「403 Forbidden」で上書きする； ５０３ = 「503 Service unavailable」で上書きする。
+
+"log_banned_ips"
+- 禁止されたIPからブロックされた要求をログファイルに含めますか？ True = はい 「Default（デフォルルト）」； False = いいえ。
 
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
@@ -294,6 +300,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 "infraction_limit" （インフラクション・リミット）
 - IPがIPトラッキングによって禁止される前に発生することが、許される違反の最大数。 Default（デフォルト設定） = １０。
+
+"track_mode" （トラック・モード）
+- 違反はいつカウントされるべきですか？ False = IPがモジュールによってブロックされている場合。 True = なんでもの理由でIPがブロックされた場合。
 
 ####"recaptcha" （リーキャプチャ、カテゴリ）
 Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
@@ -428,7 +437,7 @@ Tag: セクション１
 
 上記の例で、`1.2.3.4/32`と`2.3.4.5/32`は、「IPv4」でタグ付けされま；す一方、`4.5.6.7/32`と`5.6.7.8/32`は、「セクション１」でタグ付けされま。
 
-If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. 期限切れのタグがこの形式を使用します： 「年年年年.月月.日日」 （以下の例を参照してください）。
+「期限のタグ」を使用して、署名の有効期限を指定することができます。 期限切れのタグがこの形式を使用します： 「年年年年.月月.日日」 （以下の例を参照してください）。
 
 ```
 # セクション１.
@@ -554,4 +563,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月5日。
+最終アップデート： 2017年1月10日。

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.01.05).
+ * This file: English language data for the front-end (last modified: 2017.01.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Log Out</a>';
+$CIDRAM['lang']['config_general_ban_override'] = 'Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren\'t used). 200 = Don\'t override [Default]; 403 = Override with "403 Forbidden"; 503 = Override with "503 Service unavailable".';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Disable CLI mode?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disable front-end access?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Email address for support.';
@@ -28,6 +29,7 @@ $CIDRAM['lang']['config_general_lang'] = 'Specify the default language for CIDRA
 $CIDRAM['lang']['config_general_logfile'] = 'Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum number of login attempts.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
@@ -48,6 +50,7 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum number of infra
 $CIDRAM['lang']['config_signatures_ipv4'] = 'A list of the IPv4 signature files that CIDRAM should attempt to parse, delimited by commas.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'A list of the IPv6 signature files that CIDRAM should attempt to parse, delimited by commas.';
 $CIDRAM['lang']['config_signatures_modules'] = 'A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.';
+$CIDRAM['lang']['config_signatures_track_mode'] = 'When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS file URL for custom themes.';
 $CIDRAM['lang']['field_blocked'] = 'Blocked';
 $CIDRAM['lang']['field_component'] = 'Component';
@@ -181,5 +184,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Displays reports regarding malware infection rates for ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Displays reports regarding botnet infection rates for ASNs.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Displays reports regarding botnet infection rates for ASNs.</li>
+            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Maintains listings of known spammers; Useful for checking IP/ASN spam activities.</li>
         </ul>';

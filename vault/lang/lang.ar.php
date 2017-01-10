@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['textDir'] = 'rtl';
 $CIDRAM['lang']['click_here'] = 'أنقر هنا';
 $CIDRAM['lang']['denied'] = 'تم رفض الوصول!';
 $CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات';
@@ -55,4 +56,3 @@ $CIDRAM['lang']['Short_Generic'] = 'عام';
 $CIDRAM['lang']['Short_Proxy'] = 'خدمة بروكسي';
 $CIDRAM['lang']['Short_Spam'] = 'خطر البريد المزعج';
 $CIDRAM['lang']['Support_Email'] = 'لطلب المساعدة أو لأي إستفسار يمكنك التواصل معنا عبر البريد الإلكتروني ({ClickHereLink}).';
-$CIDRAM['lang']['textDir'] = 'rtl';

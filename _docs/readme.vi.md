@@ -261,6 +261,12 @@ Cấu hình chung cho CIDRAM.
 "FrontEndLog"
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
+"ban_override"
+- Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]; 403 = Ghi đè với "403 Forbidden"; 503 = Ghi đè với "503 Service unavailable".
+
+"log_banned_ips"
+- Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.
+
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -293,6 +299,9 @@ Cấu hình cho chữ ký.
 
 "infraction_limit"
 - Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các theo dõi IP. Mặc định = 10.
+
+"track_mode"
+- Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.
 
 ####"recaptcha" (Thể loại)
 Nếu bạn muốn, bạn có thể cung cấp cho người dùng một cách để vượt qua các trang "Truy cập bị từ chối" bằng cách hoàn thành một reCAPTCHA. Điều này có thể giúp giảm thiểu một số rủi ro kết hợp với sai tích cực trong những tình huống theo đó chúng tôi không hoàn toàn chắc chắn liệu một yêu cầu bắt nguồn từ một máy tính hay một con người.
@@ -553,4 +562,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Giêng 2017 (2017.01.05).
+Lần cuối cập nhật: 10 Tháng Giêng 2017 (2017.01.10).

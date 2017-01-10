@@ -261,6 +261,12 @@ Generale configurazione per CIDRAM.
 "FrontEndLog"
 - File per la registrazione di l'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.
 
+"ban_override"
+- Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]; 403 = Sostituire con "403 Forbidden"; 503 = Sostituire con "503 Service unavailable".
+
+"log_banned_ips"
+- Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.
+
 ####"signatures" (Categoria)
 Configurazione per firme.
 
@@ -293,6 +299,9 @@ Configurazione per firme.
 
 "infraction_limit"
 - Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dal monitoraggio IP. Predefinito = 10.
+
+"track_mode"
+- Quando devono infrazioni essere contati? False = Quando IP sono bloccati da moduli. True = Quando IP sono bloccati per qualsiasi motivo.
 
 ####"recaptcha" (Categoria)
 Se vuoi, è possibile fornire agli utenti un modo per bypassare la pagina di "Accesso Negato" attraverso il completamento di un'istanza di reCAPTCHA. Questo può aiutare a mitigare alcuni dei rischi associati con i falsi positivi in quelle situazioni in cui non siamo del tutto sicuri se una richiesta ha avuto origine da una macchina o di un essere umano.
@@ -553,4 +562,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 5 Gennaio 2016 (2017.01.05).
+Ultimo Aggiornamento: 10 Gennaio 2016 (2017.01.10).

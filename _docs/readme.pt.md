@@ -115,7 +115,7 @@ Arquivo | Descrição
 /vault/fe_assets/_files_row.html | Um modelo HTML para o gerenciador de arquivos.
 /vault/fe_assets/_home.html | Um modelo HTML para o front-end página principal.
 /vault/fe_assets/_ip_test.html | Um modelo HTML para a página para testar IPs.
-/vault/fe_assets/_ip_test_row.html | An HTML template for the IP test page.
+/vault/fe_assets/_ip_test_row.html | Um modelo HTML para a página para testar IPs.
 /vault/fe_assets/_login.html | Um modelo HTML para o front-end página login.
 /vault/fe_assets/_logs.html | Um modelo HTML para o front-end página para os arquivos de registro.
 /vault/fe_assets/_nav_complete_access.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso completo.
@@ -261,6 +261,12 @@ Configuração geral por CIDRAM.
 "FrontEndLog"
 - Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.
 
+"ban_override"
+- Sobrepor "forbid_on_block" quando "infraction_limit" é excedido? Quando sobrepõe: As solicitações bloqueadas retornam uma página em branco (os arquivos de modelo não são usados). 200 = Não sobrepor [Padrão]; 403 = Sobrepor com "403 Forbidden"; 503 = Sobrepor com "503 Service unavailable".
+
+"log_banned_ips"
+- Incluir solicitações bloqueadas de IPs proibidos nos arquivos de log? True = Sim [Padrão]; False = Não.
+
 ####"signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -293,6 +299,9 @@ Configuração por assinaturas.
 
 "infraction_limit"
 - Número máximo de infrações que um IP pode incorrer antes de ser banido por rastreamento IP. Padrão = 10.
+
+"track_mode"
+- Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo.
 
 ####"recaptcha" (Categoria)
 Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
@@ -553,4 +562,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 5 Janeiro 2016 (2017.01.05).
+Última Atualização: 10 Janeiro 2016 (2017.01.10).

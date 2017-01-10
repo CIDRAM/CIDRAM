@@ -10,13 +10,14 @@ CIDRAM:
   id: Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).
   it: Il pacchetto principale (senza le firme, la documentazione, e la configurazione).
   ja: メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。
+  ko: 메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).
   nl: De primaire pakket (zonder de handtekeningen, documentatie en configuratie).
   pt: O pacote principal (menos as assinaturas, documentação e configuração).
   ru: Основной пакет (минус подписи/сигнатуры, документация, и конфигурация).
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.7.0-DEV+170105
+ Version: 0.7.0-DEV+170110
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -96,7 +97,7 @@ CIDRAM:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
    - c84da1575ce20ac2bd6bf6ab50b10b1c:6483
-   - fb3af5dd942a499c42e24607593d1041:1950
+   - 461e41bde77d1f60b31c55404cb17daf:2141
    - 8e03209e7fc6641b45094e584340feff:83
    - 51e57efba1d36775387fd7ab755d17aa:1353
    - be5a74f434f3fdbf14cc9f490a5ad32f:773
@@ -122,7 +123,7 @@ CIDRAM:
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
-   - 040cbc331915b7b28a30eb14aee71d60:18048
+   - 448065b2b441b6a456e3f18458dd2b74:19196
    - 10a8f11f9c09873ab71e50e128940503:1729
    - 2f007322fe51be35be62b2931ac2ee93:11237
    - c6dbda70eb05f08e2dd0ca41fe57661a:2810
@@ -138,6 +139,7 @@ IPv4:
   id: File tanda tangan IPv4.
   it: File di firme per IPv4.
   ja: IPv4のシグネチャファイル。
+  ko: IPv4의 서명 파일.
   nl: IPv4 handtekeningen bestand.
   pt: Arquivo de assinaturas para IPv4.
   ru: IPv4 файла сигнатур.
@@ -153,6 +155,7 @@ IPv4:
   id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama.
   it: Le firme IPv4 predefiniti normalmente inclusi nel pacchetto principale.
   ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。
+  ko: 기본 IPv4 서명 일반적으로 기본 패키지에 포함되어 있습니다.
   nl: De standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket.
   pt: As assinaturas IPv4 padrão normalmente incluído com o pacote principal.
   ru: Стандартные подписи/сигнатуры IPv4, обычно включены в основной пакет.
@@ -181,6 +184,7 @@ IPv4-Bogons:
   id: File tanda tangan IPv4 bogon.
   it: File di firme per IPv4 bogone.
   ja: IPv4ぼごんのシグネチャファイル。
+  ko: IPv4 보곤의 서명 파일.
   nl: IPv4-bogon handtekeningen bestand.
   pt: Arquivo de assinaturas para IPv4 bogons.
   ru: IPv4 bogon файла сигнатур.
@@ -196,6 +200,7 @@ IPv4-Bogons:
   id: Tanda tangan IPv4 bogon standar biasanya disertakan dengan paket utama.
   it: Le firme IPv4 bogone predefiniti normalmente inclusi nel pacchetto principale.
   ja: デフォルトIPv4ぼごん署名、通常はメインパッケージに含まれています。
+  ko: 기본 IPv4 보곤 서명 일반적으로 기본 패키지에 포함되어 있습니다.
   nl: De standaard IPv4-bogon handtekeningen normaal opgenomen met de primaire pakket.
   pt: As assinaturas IPv4 bogons padrão normalmente incluído com o pacote principal.
   ru: Стандартные подписи/сигнатуры IPv4 bogon, обычно включены в основной пакет.
@@ -224,6 +229,7 @@ IPv6:
   id: File tanda tangan IPv6.
   it: File di firme per IPv6.
   ja: IPv6のシグネチャファイル。
+  ko: IPv6의 서명 파일.
   nl: IPv6 handtekeningen bestand.
   pt: Arquivo de assinaturas para IPv6.
   ru: IPv6 файла сигнатур.
@@ -239,6 +245,7 @@ IPv6:
   id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama.
   it: Le firme IPv6 predefiniti normalmente inclusi nel pacchetto principale.
   ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。
+  ko: 기본 IPv6 서명 일반적으로 기본 패키지에 포함되어 있습니다.
   nl: De standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket.
   pt: As assinaturas IPv6 padrão normalmente incluído com o pacote principal.
   ru: Стандартные подписи/сигнатуры IPv6, обычно включены в основной пакет.
@@ -267,6 +274,7 @@ IPv6-Bogons:
   id: File tanda tangan IPv6 bogon.
   it: File di firme per IPv6 bogone.
   ja: IPv6ぼごんのシグネチャファイル。
+  ko: IPv6 보곤의 서명 파일.
   nl: IPv6-bogon handtekeningen bestand.
   pt: Arquivo de assinaturas para IPv6 bogons.
   ru: IPv6 bogon файла сигнатур.
@@ -282,6 +290,7 @@ IPv6-Bogons:
   id: Tanda tangan IPv6 bogon standar biasanya disertakan dengan paket utama.
   it: Le firme IPv6 bogone predefiniti normalmente inclusi nel pacchetto principale.
   ja: デフォルトIPv6ぼごん署名、通常はメインパッケージに含まれています。
+  ko: 기본 IPv6 보곤 서명 일반적으로 기본 패키지에 포함되어 있습니다.
   nl: De standaard IPv6-bogon handtekeningen normaal opgenomen met de primaire pakket.
   pt: As assinaturas IPv6 bogons padrão normalmente incluído com o pacote principal.
   ru: Стандартные подписи/сигнатуры IPv6 bogon, обычно включены в основной пакет.
@@ -310,6 +319,7 @@ Bypasses:
   id: Bypass tanda tangan standar.
   it: Firma predefinita bypassa.
   ja: デフォルト署名バイパス。
+  ko: 기본 서명 우회.
   nl: Standaard handtekening rondwegen.
   pt: Bypasses das assinaturas padrão.
   ru: Стандартная подписи/сигнатуры байпасы.
@@ -325,6 +335,7 @@ Bypasses:
   id: File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama.
   it: I file per bypass le firme predefinite normalmente inclusi nel pacchetto principale.
   ja: デフォルト署名バイパス、通常はメインパッケージに含まれています。
+  ko: 기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다.
   nl: De standaard handtekening rondwegen normaal opgenomen met de primaire pakket.
   pt: Os arquivos para bypass das assinaturas padrão normalmente incluído com o pacote principal.
   ru: Стандартная подписи/сигнатуры байпасы, обычно включены в основной пакет.
@@ -354,7 +365,7 @@ l10n/en:
  Name: L10N: English
  Extended Description:
   en: English language data
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -369,14 +380,14 @@ l10n/en:
    - lang/lang.en.php
   Checksum:
    - 10ebd10d026c244e80210d160f5f5505:4157
-   - 1927c96be994a17547cd0aceadc030ef:16628
+   - fdbce6120f7b0134a2e9ea415e1df792:17429
    - 30a11542a39a2980fd4e11f90a92f870:3968
  Reannotate: components.dat
 l10n/ar:
  Name: L10N: العربية
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -391,14 +402,14 @@ l10n/ar:
    - lang/lang.ar.php
   Checksum:
    - 55e76e1bccfbd33dcfdadca6fa7fc3b5:4657
-   - a3c96daa75a299e1659971cb4c5d91b1:20160
+   - 628af24a2f90900720833927b5d5c5b0:21159
    - 8a4926d8de4becef12f9d10283f10a87:3767
  Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -413,14 +424,14 @@ l10n/de:
    - lang/lang.de.php
   Checksum:
    - c632a3176fe563d36568648946799ce5:4461
-   - e22e9c8b061d17ae287ca9e6c2308fb0:17997
+   - 68879b2d12ef31bd6107a9734bbcdc1f:18946
    - e397473a556389fe71a2d1755c494714:4273
  Reannotate: components.dat
 l10n/es:
  Name: L10N: Español
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -435,14 +446,14 @@ l10n/es:
    - lang/lang.es.php
   Checksum:
    - b029d949ce43ab84c02e3e7e9a924790:4416
-   - cf9297bc9fe53786559569d98f6ff28b:18221
+   - 4d2a51947e1ab5d10e99b16462b77c9c:19129
    - 282bd495bbf9836e84cc6144cbac5fde:4201
  Reannotate: components.dat
 l10n/fr:
  Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -457,14 +468,14 @@ l10n/fr:
    - lang/lang.fr.php
   Checksum:
    - 806666788d96ef329b73a3722c35d6a5:4446
-   - 9a9c0b3d18d2365676baf25c263204e6:18369
+   - 44f0d03cda037c4d3d78b04bc479cde5:19313
    - ef8b66acd75dd4b50b8e48d70ad24c7e:4356
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description:
   id: File Bahasa Indonesia
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -479,14 +490,14 @@ l10n/id:
    - lang/lang.id.php
   Checksum:
    - efaed7a0f277c29e052877b5162fa840:4297
-   - ebccae92c726b8146ec68dfc1f3bc35a:17360
+   - 471eea8675285fcf6251e664a54a8dec:18249
    - d72e6e13d01fc3bf19b4dff78fd18fe6:4098
  Reannotate: components.dat
 l10n/it:
  Name: L10N: Italiana
  Extended Description:
   it: Linguistici dati Italiana
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -501,14 +512,14 @@ l10n/it:
    - lang/lang.it.php
   Checksum:
    - d4ac8f876d8ea002885dc841beafcbec:4331
-   - 0755c51178d80b9e414483390be0a51e:17948
+   - f923a50f68fed3a7232976f2b5d412d5:18830
    - 21567f554f05c90c52ab9e783b08cefb:4260
  Reannotate: components.dat
 l10n/ja:
  Name: L10N: 日本語
  Extended Description:
   ja: 日本語言語データ
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -523,14 +534,14 @@ l10n/ja:
    - lang/lang.ja.php
   Checksum:
    - ef07daeaee5c1867a163b6af380c6481:5129
-   - d1602c693ff21c3f270d945cab4c6b64:20504
+   - 8ca89b36a7f5f1610a91396e377dbe49:21676
    - b04ad492c62ab4554318a7e4afab1a1e:3901
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
  Extended Description:
   ko: 한국어 언어 데이터
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -545,14 +556,14 @@ l10n/ko:
    - lang/lang.ko.php
   Checksum:
    - f8305fa1a60d76d6c4ba90cccb925501:4600
-   - ef8802fb5f4a39a826d80afe7ede6841:18126
+   - 35d2ca89a70e6c1875e8dc4cd2e72d1a:19094
    - 6c26ac3e1490b7e9831c85afb589c7d8:3478
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description:
   nl: Nederlandse taaldata/taalgegevens
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -567,14 +578,14 @@ l10n/nl:
    - lang/lang.nl.php
   Checksum:
    - 99757f07d3eeebe9fda9ef80f1afd5d3:4394
-   - 2b18f868fe9923e3964fa96524e1647a:17591
+   - dbf8a988cf13853a3a1d232ed9739766:18507
    - 73d12ec4e37185119a9aa8fd079dc5fc:4120
  Reannotate: components.dat
 l10n/pt:
  Name: L10N: Português
  Extended Description:
   pt: Linguagem dados Português
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -589,14 +600,14 @@ l10n/pt:
    - lang/lang.pt.php
   Checksum:
    - cfd6161777f7b09594193e59901098c1:4414
-   - 52bc2aded190b0d7adf5bf8fc17cae32:17775
+   - 831545f82433476bb6d1cfaa6c7e10dc:18624
    - 5cea2c005259d7e54c1e00dd81b4e880:4155
  Reannotate: components.dat
 l10n/ru:
  Name: L10N: Русский
  Extended Description:
   ru: Русском языковые файлы
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -611,14 +622,14 @@ l10n/ru:
    - lang/lang.ru.php
   Checksum:
    - eb9ccbc9fde9aed73bdbeb84d35d8a38:5850
-   - aa3ab4317c9dcf6bd737b10dfa67b978:23511
+   - d89c9c06c3a6286d7903ce3497e82ccf:24841
    - 835b3294f8031843f6d5a0d36b60cd08:5697
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description:
   vi: Dữ liệu tiếng Việt
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -633,14 +644,14 @@ l10n/vi:
    - lang/lang.vi.php
   Checksum:
    - b1c07aea2c985d415b6423a46a2954b6:5081
-   - e7f5bcae4ce08731ad7db1fdb4d7996b:19427
+   - c18587bbb99b02e950a2db62841cdfe2:20391
    - b91d16990771bccd8b2ec55386f7e700:4837
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description:
   zh: 中文（简体）语言数据
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -655,14 +666,14 @@ l10n/zh:
    - lang/lang.zh.php
   Checksum:
    - 9ad86202847438817ddf1ab67993d045:4014
-   - f281e2090bbf4d61fdb0bfce4754a2a7:16017
+   - b088ccc05e013cc323ff2bb46ad7bab5:16826
    - 1097d560132a4f3959e5bfebfe8f1d12:3709
  Reannotate: components.dat
 l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description:
   zh-tw: 中文（傳統）語言數據
- Version: 2017.01.05
+ Version: 2017.01.10
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -677,7 +688,7 @@ l10n/zh-TW:
    - lang/lang.zh-tw.php
   Checksum:
    - 55213ebf26192d4d47b228144815a8a9:4015
-   - f374a8015a3904cfc993f90a77702ff8:16039
+   - 9753f895134f204a670102dfdb770d02:16848
    - 7b07574e786dc57ec55e51f60cbb1b8d:3716
  Reannotate: components.dat
 

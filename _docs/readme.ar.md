@@ -292,6 +292,16 @@ Updating is done manually, and you can customise your configuration and customis
  <li>ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
 
+<div dir="rtl">"ban_override"<br /></div>
+<div dir="rtl"><ul>
+ <li>تجاوز "forbid_on_block" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]؛ 403 = تجاوز مع "403 Forbidden"; 503 = تجاوز مع "503 Service unavailable".</li>
+</ul></div>
+
+<div dir="rtl">"log_banned_ips"<br /></div>
+<div dir="rtl"><ul>
+ <li>من IP المحظورة في ملفات السجل؟ True = نعم [افتراضي]; False = لا.</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
@@ -343,6 +353,11 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl">"infraction_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10.</li>
+</ul></div>
+
+<div dir="rtl">"track_mode"<br /></div>
+<div dir="rtl"><ul>
+ <li>متى يجب أن تحسب المخالفات؟ False = عندما IP تم حظره من قبل وحدات. True = عندما IP يتم حظر لأي سبب من الأسباب.</li>
 </ul></div>
 
 #### <div dir="rtl">"recaptcha" (التصنيف)<br /></div>
@@ -617,4 +632,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 يناير 2016 (2017.01.05).</div>
+<div dir="rtl">آخر تحديث: 10 يناير 2016 (2017.01.10).</div>

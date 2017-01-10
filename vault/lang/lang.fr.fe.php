@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.01.05).
+ * This file: French language data for the front-end (last modified: 2017.01.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?cidram-page=logout">Déconnecter</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Déconnecter</a>';
+$CIDRAM['lang']['config_general_ban_override'] = 'Remplacer "forbid_on_block" lorsque "infraction_limit" est dépassé? En cas de remplacement: Les demandes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]; 403 = Remplacer par "403 Forbidden"; 503 = Remplacer par "503 Service unavailable".';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Adresse e-mail pour le support.';
@@ -28,6 +29,7 @@ $CIDRAM['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour CIDR
 $CIDRAM['lang']['config_general_logfile'] = 'Un fichier lisible par l\'homme pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Un fichier dans le style d\'Apache pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un fichier sérialisé pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Inclure les demandes bloquées provenant d\'IP interdites dans les fichiers journaux? True = Oui [Défaut]; False = Non.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentatives de connexion.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page "Accès Refusé"? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
@@ -48,6 +50,7 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Nombre maximal d\'infra
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.';
+$CIDRAM['lang']['config_signatures_track_mode'] = 'Quand faut-il compter les infractions? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de fichier CSS pour les thèmes personnalisés.';
 $CIDRAM['lang']['field_blocked'] = 'Bloqué';
 $CIDRAM['lang']['field_component'] = 'Composant';
@@ -181,5 +184,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Affiche les rapports concernant les taux d\'infection par les logiciels malveillants pour les ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Affiche les rapports concernant les taux d\'infection par botnet pour les ASN.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Affiche les rapports concernant les taux d\'infection par botnet pour les ASN.</li>
-            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Conserve les listes des spammeurs connus; Utile pour vérifier les activités de spam des IPs/ASNs.</li>
+            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Maintient une base de données des IPs abusives connues; Fournit une API pour vérifier et signaler les IPs.</li>
+            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Maintient les listes des spammeurs connus; Utile pour vérifier les activités de spam des IPs/ASNs.</li>
         </ul>';

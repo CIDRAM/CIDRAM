@@ -45,6 +45,16 @@ max_login_attempts=5
 ; to disable.
 FrontEndLog=''
 
+; Override "forbid_on_block" when "infraction_limit" is exceeded? When
+; overriding: Blocked requests return a blank page (template files aren't
+; used). 200 = Don't override [Default]; 403 = Override with "403 Forbidden";
+; 503 = Override with "503 Service unavailable".
+ban_override=200
+
+; Include blocked requests from banned IPs in the logfiles? True = Yes
+; [Default]; False = No.
+log_banned_ips=true
+
 
 [signatures]
 
@@ -89,6 +99,14 @@ modules=''
 
 ; How many seconds to track IPs banned by modules. Default = 604800 (1 week).
 default_tracktime=604800
+
+; Maximum number of infractions an IP is allowed to incur before it is banned
+; by IP tracking. Default = 10.
+infraction_limit=10
+
+; When should infractions be counted? False = When IPs are blocked by modules.
+; True = When IPs are blocked for any reason.
+track_mode=false
 
 
 [recaptcha]

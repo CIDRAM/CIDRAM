@@ -261,6 +261,12 @@ Konfigurasi umum dari CIDRAM.
 "FrontEndLog"
 - File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
+"ban_override"
+- Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]; 403 = Mengesampingkan dengan "403 Forbidden"; 503 = Mengesampingkan dengan "503 Service unavailable".
+
+"log_banned_ips"
+- Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.
+
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -293,6 +299,9 @@ Konfigurasi untuk tanda tangan.
 
 "infraction_limit"
 - Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10.
+
+"track_mode"
+- Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun.
 
 ####"recaptcha" (Kategori)
 Jika Anda ingin, Anda dapat memberikan pengguna dengan cara untuk memotong halaman "Akses Ditolak" dengan cara menyelesaikan instansi reCAPTCHA. Ini dapat membantu untuk mengurangi beberapa risiko terkait dengan positif palsu dalam situasi dimana kita tidak sepenuhnya yakin apakah permintaan telah berasal dari mesin atau manusia.
@@ -553,4 +562,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 5 Januari 2016 (2017.01.05).
+Terakhir Diperbarui: 10 Januari 2016 (2017.01.10).

@@ -39,6 +39,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   just changed due to that a code quality checking tool I sometimes use was
   complaining about the way it was written before).
 
+- [2017.01.10; Minor code change; Maikuolan]: Added several new directives:
+  "ban_override", which allows overriding the value for "forbid_on_block" when
+  requests from banned IPs are blocked, and allows skipping processing for the
+  template files when processing blocked requests from banned IPs;
+  "log_banned_ips", which allows specifying whether to include blocked requests
+  from banned IPs in the logfiles; and "track_mode", which allows specifying
+  whether to only track IPs blocked by modules, or to track IPs blocked for any
+  reasons (eg, via the standard signature files as well as via the modules).
+
 === Version/Release 0.6.1 ===
 PATCH RELEASE.
 

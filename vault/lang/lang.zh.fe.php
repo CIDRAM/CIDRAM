@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.01.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.01.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
+$CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？ 当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。 200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
 $CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
 $CIDRAM['lang']['config_general_emailaddr'] = '支持/援助电子邮件地址。';
@@ -28,6 +29,7 @@ $CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
 $CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？ True = 是【标准】； False = 不是。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。';
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
@@ -48,6 +50,7 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = '从IP最大允许违规
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4签名文件，CIDRAM应该尝试使用，用逗号分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，CIDRAM应该尝试使用，用逗号分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模块文件要加载的列表以后检查签名IPv4/IPv6，用逗号分隔。';
+$CIDRAM['lang']['config_signatures_track_mode'] = '什么时候应该对违规行为进行计数？ False = 当IP被模块阻塞时。 True = 当IP由于任何原因阻塞时。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_component'] = '组件';
@@ -182,5 +185,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 显示有关ASN恶意软件感染率的报告。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – 显示有关ASN僵尸网络感染率的报告。</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – 显示有关ASN僵尸网络感染率的报告。</li>
+            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 维护已知的滥用IP数据库；它为IP检查和报告提供了一个API。</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 维护已知垃圾邮件发送者的列表；有用为检查IP/ASN垃圾邮件活动。</li>
         </ul>';

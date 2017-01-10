@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.05).
+ * This file: Output generator (last modified: 2017.01.10).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -136,7 +136,7 @@ if (
 }
 
 /** Define whether to track inbound IP. */
-$CIDRAM['Trackable'] = false;
+$CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
 
 /** Load any modules that have been registered with the configuration. */
 if (!empty($CIDRAM['Config']['signatures']['modules'])) {
@@ -152,7 +152,7 @@ if (!empty($CIDRAM['Config']['signatures']['modules'])) {
 }
 
 /** Process tracking information for the inbound IP. */
-if ($CIDRAM['TestResults'] && $CIDRAM['Trackable']) {
+if ($CIDRAM['TestResults'] && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
     if (!isset($CIDRAM['Cache']['Tracking'])) {
         $CIDRAM['Cache']['Tracking'] = array();
     }
@@ -203,7 +203,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         $CIDRAM['Config']['template_data']['recaptcha_div_include'] = '';
     }
 
-    if (!$CIDRAM['reCAPTCHA']['Bypass']) {
+    if (empty($CIDRAM['reCAPTCHA']['Bypass']) && empty($CIDRAM['Banned'])) {
 
         /** If logging is enabled, increment the counter. */
         if (
@@ -277,7 +277,23 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
     /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
 
-    if (!$CIDRAM['Config']['general']['silent_mode']) {
+    if ($CIDRAM['Config']['general']['ban_override'] === 403) {
+
+        $CIDRAM['errCode'] = 403;
+        header('HTTP/1.0 403 Forbidden');
+        header('HTTP/1.1 403 Forbidden');
+        header('Status: 403 Forbidden');
+        $CIDRAM['html'] = '';
+
+    } elseif ($CIDRAM['Config']['general']['ban_override'] === 503) {
+
+        $CIDRAM['errCode'] = 503;
+        header('HTTP/1.0 503 Service Unavailable');
+        header('HTTP/1.1 503 Service Unavailable');
+        header('Status: 503 Service Unavailable');
+        $CIDRAM['html'] = '';
+
+    } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
 
         if ($CIDRAM['Config']['general']['forbid_on_block'] === 503) {
             $CIDRAM['errCode'] = 503;
@@ -322,83 +338,93 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         }
 
     } else {
+
         $CIDRAM['errCode'] = 301;
         header('HTTP/1.0 301 Moved Permanently');
         header('HTTP/1.1 301 Moved Permanently');
         header('Status: 301 Moved Permanently');
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
         $CIDRAM['html'] = '';
+
     }
 
-    /** Determining date/time information for logfile names. */
-    if (
-        strpos($CIDRAM['Config']['general']['logfile'], '{') !== false ||
-        strpos($CIDRAM['Config']['general']['logfileApache'], '{') !== false ||
-        strpos($CIDRAM['Config']['general']['logfileSerialized'], '{') !== false
-    ) {
-        list(
-            $CIDRAM['Config']['general']['logfile'],
-            $CIDRAM['Config']['general']['logfileApache'],
-            $CIDRAM['Config']['general']['logfileSerialized']
-        ) = $CIDRAM['Time2Logfile']($CIDRAM['Now'], array(
-            $CIDRAM['Config']['general']['logfile'],
-            $CIDRAM['Config']['general']['logfileApache'],
-            $CIDRAM['Config']['general']['logfileSerialized']
-        ));
-    }
+    /**
+     * Skip this section if the IP has been banned and logging banned IPs has
+     * been disabled.
+     */
+    if ($CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])) {
 
-    /** Writing to the standard logfile. */
-    if ($CIDRAM['Config']['general']['logfile']) {
-        $CIDRAM['logfileData'] = array('d' =>
-            (!file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'])) ?
-            "\x3c\x3fphp die; \x3f\x3e\n\n" :
-            ''
-        );
-        $CIDRAM['logfileData']['d'] .= $CIDRAM['ParseVars']($CIDRAM['Parsables'],
-            "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
-            "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
-            "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
-            "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n" .
-            "{field_reCAPTCHA_state}{reCAPTCHA}\n\n"
-        );
-        $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], 'a');
-        fwrite($CIDRAM['logfileData']['f'], $CIDRAM['logfileData']['d']);
-        fclose($CIDRAM['logfileData']['f']);
-        unset($CIDRAM['logfileData']);
-    }
-
-    /** Writing to the Apache-style logfile. */
-    if ($CIDRAM['Config']['general']['logfileApache']) {
-        $CIDRAM['logfileApacheData'] = array('d' => sprintf(
-            "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
-            $CIDRAM['BlockInfo']['IPAddr'],
-            $CIDRAM['BlockInfo']['DateTime'],
-            (empty($_SERVER['REQUEST_METHOD'])) ? 'UNKNOWN' : $_SERVER['REQUEST_METHOD'],
-            (empty($_SERVER['REQUEST_URI'])) ? '/' : $_SERVER['REQUEST_URI'],
-            (empty($_SERVER['SERVER_PROTOCOL'])) ? 'UNKNOWN/x.x' : $_SERVER['SERVER_PROTOCOL'],
-            $CIDRAM['errCode'],
-            strlen($CIDRAM['html']),
-            (empty($CIDRAM['BlockInfo']['Referrer'])) ? '-' : $CIDRAM['BlockInfo']['Referrer'],
-            (empty($CIDRAM['BlockInfo']['UA'])) ? '-' : $CIDRAM['BlockInfo']['UA']
-        ));
-        $CIDRAM['logfileApacheData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache'], 'a');
-        fwrite($CIDRAM['logfileApacheData']['f'], $CIDRAM['logfileApacheData']['d']);
-        fclose($CIDRAM['logfileApacheData']['f']);
-        unset($CIDRAM['logfileApacheData']);
-    }
-
-    /** Writing to the serialised logfile. */
-    if ($CIDRAM['Config']['general']['logfileSerialized']) {
-        if (isset($CIDRAM['BlockInfo']['EmailAddr'])) {
-            unset($CIDRAM['BlockInfo']['EmailAddr']);
+        /** Determining date/time information for logfile names. */
+        if (
+            strpos($CIDRAM['Config']['general']['logfile'], '{') !== false ||
+            strpos($CIDRAM['Config']['general']['logfileApache'], '{') !== false ||
+            strpos($CIDRAM['Config']['general']['logfileSerialized'], '{') !== false
+        ) {
+            list(
+                $CIDRAM['Config']['general']['logfile'],
+                $CIDRAM['Config']['general']['logfileApache'],
+                $CIDRAM['Config']['general']['logfileSerialized']
+            ) = $CIDRAM['Time2Logfile']($CIDRAM['Now'], array(
+                $CIDRAM['Config']['general']['logfile'],
+                $CIDRAM['Config']['general']['logfileApache'],
+                $CIDRAM['Config']['general']['logfileSerialized']
+            ));
         }
-        if (isset($CIDRAM['BlockInfo']['UALC'])) {
-            unset($CIDRAM['BlockInfo']['UALC']);
+
+        /** Writing to the standard logfile. */
+        if ($CIDRAM['Config']['general']['logfile']) {
+            $CIDRAM['logfileData'] = array('d' =>
+                (!file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'])) ?
+                "\x3c\x3fphp die; \x3f\x3e\n\n" :
+                ''
+            );
+            $CIDRAM['logfileData']['d'] .= $CIDRAM['ParseVars']($CIDRAM['Parsables'],
+                "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
+                "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
+                "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
+                "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n" .
+                "{field_reCAPTCHA_state}{reCAPTCHA}\n\n"
+            );
+            $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], 'a');
+            fwrite($CIDRAM['logfileData']['f'], $CIDRAM['logfileData']['d']);
+            fclose($CIDRAM['logfileData']['f']);
+            unset($CIDRAM['logfileData']);
         }
-        $CIDRAM['logfileSerialData'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized'], 'a');
-        fwrite($CIDRAM['logfileSerialData'], serialize($CIDRAM['BlockInfo']) . "\n");
-        fclose($CIDRAM['logfileSerialData']);
-        unset($CIDRAM['logfileSerialData']);
+
+        /** Writing to the Apache-style logfile. */
+        if ($CIDRAM['Config']['general']['logfileApache']) {
+            $CIDRAM['logfileApacheData'] = array('d' => sprintf(
+                "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
+                $CIDRAM['BlockInfo']['IPAddr'],
+                $CIDRAM['BlockInfo']['DateTime'],
+                (empty($_SERVER['REQUEST_METHOD'])) ? 'UNKNOWN' : $_SERVER['REQUEST_METHOD'],
+                (empty($_SERVER['REQUEST_URI'])) ? '/' : $_SERVER['REQUEST_URI'],
+                (empty($_SERVER['SERVER_PROTOCOL'])) ? 'UNKNOWN/x.x' : $_SERVER['SERVER_PROTOCOL'],
+                $CIDRAM['errCode'],
+                strlen($CIDRAM['html']),
+                (empty($CIDRAM['BlockInfo']['Referrer'])) ? '-' : $CIDRAM['BlockInfo']['Referrer'],
+                (empty($CIDRAM['BlockInfo']['UA'])) ? '-' : $CIDRAM['BlockInfo']['UA']
+            ));
+            $CIDRAM['logfileApacheData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache'], 'a');
+            fwrite($CIDRAM['logfileApacheData']['f'], $CIDRAM['logfileApacheData']['d']);
+            fclose($CIDRAM['logfileApacheData']['f']);
+            unset($CIDRAM['logfileApacheData']);
+        }
+
+        /** Writing to the serialised logfile. */
+        if ($CIDRAM['Config']['general']['logfileSerialized']) {
+            if (isset($CIDRAM['BlockInfo']['EmailAddr'])) {
+                unset($CIDRAM['BlockInfo']['EmailAddr']);
+            }
+            if (isset($CIDRAM['BlockInfo']['UALC'])) {
+                unset($CIDRAM['BlockInfo']['UALC']);
+            }
+            $CIDRAM['logfileSerialData'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized'], 'a');
+            fwrite($CIDRAM['logfileSerialData'], serialize($CIDRAM['BlockInfo']) . "\n");
+            fclose($CIDRAM['logfileSerialData']);
+            unset($CIDRAM['logfileSerialData']);
+        }
+
     }
 
     /** All necessary processing and logging has completed; Now we die. */

@@ -235,7 +235,7 @@ Cấu hình chung cho CIDRAM.
 - Ví dụ (để thêm một giờ): `timeOffset=60`
 
 "ipaddr"
-- Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như CloudFlare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
+- Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như CloudFlare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 "forbid_on_block"
 - Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn? False/200 = 200 OK [Mặc định]; True/403 = 403 Forbidden (Cấm); 503 = 503 Service unavailable (Dịch vụ không có sẵn).
@@ -266,6 +266,9 @@ Cấu hình chung cho CIDRAM.
 
 "log_banned_ips"
 - Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.
+
+"default_dns"
+- Máy chủ DNS mặc định để sử dụng cho tra cứu tên máy. Mặc định = 8.8.8.8 (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -562,4 +565,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 10 Tháng Giêng 2017 (2017.01.10).
+Lần cuối cập nhật: 12 Tháng Giêng 2017 (2017.01.12).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.01.10).
+ * This file: French language data for the front-end (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,12 +19,13 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?cidram-page=logout">Déconnecter</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Déconnecter</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Remplacer "forbid_on_block" lorsque "infraction_limit" est dépassé? En cas de remplacement: Les demandes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]; 403 = Remplacer par "403 Forbidden"; 503 = Remplacer par "503 Service unavailable".';
+$CIDRAM['lang']['config_general_default_dns'] = 'Serveur DNS par défaut à utiliser pour les recherches de nom d\'hôte. Par Défaut = 8.8.8.8 (Google DNS). AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Adresse e-mail pour le support.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
-$CIDRAM['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de demandes de connexion?';
+$CIDRAM['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de demandes de connexion? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!';
 $CIDRAM['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour CIDRAM.';
 $CIDRAM['lang']['config_general_logfile'] = 'Un fichier lisible par l\'homme pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Un fichier dans le style d\'Apache pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.01.03).
+ * This file: Korean language data (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['click_here'] = '여기를 클릭';
 $CIDRAM['lang']['denied'] = '액세스 거부!';
 $CIDRAM['lang']['Error_WriteCache'] = '캐시는 쓰기 불가입니다! 당신의 CHMOD를 확인하십시오!';
+$CIDRAM['lang']['fake_ua'] = '가짜 {ua}';
 $CIDRAM['lang']['field_datetime'] = '일/월/년/시간: ';
 $CIDRAM['lang']['field_id'] = '신분증: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP 주소: ';

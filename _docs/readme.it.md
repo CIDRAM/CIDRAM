@@ -235,7 +235,7 @@ Generale configurazione per CIDRAM.
 - Esempio (per aggiungere un'ora): `timeOffset=60`
 
 "ipaddr"
-- Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
+- Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 "forbid_on_block"
 - Quale intestazioni dovrebbe CIDRAM rispondere con quando bloccano le richieste? False/200 = 200 OK [Predefinito]; True/403 = 403 Forbidden (Proibito); 503 = 503 Service unavailable (Servizio non disponibile).
@@ -266,6 +266,9 @@ Generale configurazione per CIDRAM.
 
 "log_banned_ips"
 - Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.
+
+"default_dns"
+- Server DNS predefinito utilizzato per la ricerca del nome host. Predefinito = 8.8.8.8 (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 ####"signatures" (Categoria)
 Configurazione per firme.
@@ -562,4 +565,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 10 Gennaio 2016 (2017.01.10).
+Ultimo Aggiornamento: 12 Gennaio 2016 (2017.01.12).

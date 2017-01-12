@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.01.10).
+ * This file: Japanese language data for the front-end (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,12 +19,13 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？ 上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。 ２００ = 上書きしない「Default（デフォルルト）」； ４０３ = 「403 Forbidden」で上書きする； ５０３ = 「503 Service unavailable」で上書きする。';
+$CIDRAM['lang']['config_general_default_dns'] = 'ホスト名ルックアップに使用される、デフォルトのDNS（ドメイン・ネーム・システム）サーバー。 Default（デフォルルト） = 8.8.8.8 「Google DNS」。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLIモードを無効にするか？';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
 $CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのEメールアドレス。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
-$CIDRAM['lang']['config_general_ipaddr'] = '接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。';
+$CIDRAM['lang']['config_general_ipaddr'] = '接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設定します。';
 $CIDRAM['lang']['config_general_logfile'] = 'アクセス試行阻止の記録、人間によって読み取り可能。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の記録、Apacheスタイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';

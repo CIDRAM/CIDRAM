@@ -249,7 +249,7 @@ Updating is done manually, and you can customise your configuration and customis
 
 <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
- <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
+ <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
 
 <div dir="rtl">"forbid_on_block"<br /></div>
@@ -301,6 +301,14 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl"><ul>
  <li>من IP المحظورة في ملفات السجل؟ True = نعم [افتراضي]; False = لا.</li>
 </ul></div>
+
+<div dir="rtl">"default_dns"<br /></div>
+<div dir="rtl"><ul>
+ <li>ملقم DNS الافتراضي لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = 8.8.8.8 (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
+</ul></div>
+
+"default_dns"
+- Default DNS server to use for hostname lookups. Default = 8.8.8.8 (Google DNS). WARNING: Don't change this unless you know what you're doing!
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
@@ -632,4 +640,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 10 يناير 2016 (2017.01.10).</div>
+<div dir="rtl">آخر تحديث: 12 يناير 2016 (2017.01.12).</div>

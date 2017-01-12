@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.01.10).
+ * This file: Russian language data for the front-end (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,12 +19,13 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине.';
+$CIDRAM['lang']['config_general_default_dns'] = 'Стандарт сервер DNS использовать для имени хоста поиска. Стандарт = 8.8.8.8 (Google DNS). ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Деактивировать ли CLI-модус?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Деактивировать доступ к фронтенд?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Адрес емайл для поддержки.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Какой тип заголовка должен CIDRAM ответить при блокировке запросов?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Файл для запись всех попыток входа в фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
-$CIDRAM['lang']['config_general_ipaddr'] = 'Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса).';
+$CIDRAM['lang']['config_general_ipaddr'] = 'Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
 $CIDRAM['lang']['config_general_lang'] = 'Задаёт CIDRAM стандарт языка.';
 $CIDRAM['lang']['config_general_logfile'] = 'Файл разборчивыми для людей, для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-стиль файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';

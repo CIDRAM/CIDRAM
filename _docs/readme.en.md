@@ -235,7 +235,7 @@ General CIDRAM configuration.
 - Example (to add one hour): `timeOffset=60`
 
 "ipaddr"
-- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
 - Which headers should CIDRAM respond with when blocking requests? False/200 = 200 OK [Default]; True/403 = 403 Forbidden; 503 = 503 Service unavailable.
@@ -266,6 +266,9 @@ General CIDRAM configuration.
 
 "log_banned_ips"
 - Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.
+
+"default_dns"
+- Default DNS server to use for hostname lookups. Default = 8.8.8.8 (Google DNS). WARNING: Don't change this unless you know what you're doing!
 
 ####"signatures" (Category)
 Signatures configuration.
@@ -562,4 +565,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 10 January 2016 (2017.01.10).
+Last Updated: 12 January 2016 (2017.01.12).

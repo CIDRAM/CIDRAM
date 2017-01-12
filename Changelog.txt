@@ -48,6 +48,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   whether to only track IPs blocked by modules, or to track IPs blocked for any
   reasons (eg, via the standard signature files as well as via the modules).
 
+- [2017.01.12; NEW FEATURE; Maikuolan]: Added the ability to distinguish
+  between bots masquerading as popular search engines (eg, Googlebot, Bingbot,
+  Yahoo! Slurp) and their real, legitimate counterparts. From herein, these
+  fake search engine bots will be blocked by default upon detection, whereas
+  their legitimate counterparts will have IP tracking disabled by default upon
+  detection, therefore rendering them unbannable. Added the ability to perform
+  timed DNS lookups, both forward and reverse, along with the ability to cache
+  the results of these lookups. Added a new directive: "default_dns".
+
 === Version/Release 0.6.1 ===
 PATCH RELEASE.
 

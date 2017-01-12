@@ -236,7 +236,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 - 例子（添加1小时）： `timeOffset=60`
 
 “ipaddr”
-- 在哪里可以找到连接请求IP地址？（可以使用为服务例如Cloudflare和类似）标准是`REMOTE_ADDR`。警告！不要修改此除非您知道什么您做着！
+- 在哪里可以找到连接请求IP地址？ （可以使用为服务例如Cloudflare和类似）。 标准 = REMOTE_ADDR。 警告： 不要修改此除非您知道什么您做着！
 
 “forbid_on_block”
 - 什么头CIDRAM应该应对当申请是拒绝？ False/200 = 200 OK 【标准】； True/403 = 403 Forbidden （被禁止）； 503 = 503 Service unavailable （服务暂停）。
@@ -267,6 +267,9 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 
 “log_banned_ips”
 - 包括IP禁止从阻止请求在日志文件吗？ True = 是【标准】； False = 不是。
+
+“default_dns”
+- 主机名查找的默认DNS服务器。 标准 = 8.8.8.8 (Google DNS)。 警告： 不要修改此除非您知道什么您做着！
 
 ####“signatures” （类别）
 签名配置。
@@ -563,4 +566,4 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2017年1月10日。
+最后更新：2017年1月12日。

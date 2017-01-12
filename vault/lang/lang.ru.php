@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.01.02).
+ * This file: Russian language data (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['click_here'] = 'кликните сюда';
 $CIDRAM['lang']['denied'] = 'Доступ Закрыт!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Невозможно записать в кэш! Пожалуйста проверьте ваш CHMOD!';
+$CIDRAM['lang']['fake_ua'] = 'Поддельный {ua}';
 $CIDRAM['lang']['field_datetime'] = 'Дата/Время: ';
 $CIDRAM['lang']['field_id'] = 'ИД: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP Адрес: ';

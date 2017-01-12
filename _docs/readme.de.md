@@ -237,7 +237,7 @@ Generelle Konfiguration von CIDRAM.
 - Beispiel (eine Stunde hinzufügen): `timeOffset=60`
 
 "ipaddr"
-- Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
+- Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 "forbid_on_block"
 - Welche Header sollte CIDRAM reagieren mit, wenn Anfragen blockiert? False/200 = 200 OK [Standardeinstellung]; True/403 = 403 Forbidden (Verboten); 503 = 503 Service unavailable (Service nicht verfügbar).
@@ -268,6 +268,9 @@ Generelle Konfiguration von CIDRAM.
 
 "log_banned_ips"
 - Enthalten Sie blockierte Anfragen von verbotenen IPs in die Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.
+
+"default_dns"
+- Standard-DNS-Server für Hostnamen-Lookups zu verwenden. Standardeinstellung = 8.8.8.8 (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
@@ -564,4 +567,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 10 Januar 2016 (2017.01.10).
+Zuletzt aktualisiert: 12 Januar 2016 (2017.01.12).

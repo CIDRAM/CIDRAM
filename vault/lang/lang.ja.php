@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified： 2017.01.02).
+ * This file: Japanese language data (last modified： 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['click_here'] = 'こちらをクリック';
 $CIDRAM['lang']['denied'] = 'アクセス拒否！';
 $CIDRAM['lang']['Error_WriteCache'] = 'キャッシュは書き込み不可です！あなたのCHMODをチェックしてください！';
+$CIDRAM['lang']['fake_ua'] = '偽の{ua}';
 $CIDRAM['lang']['field_datetime'] = '日/月/年/時刻： ';
 $CIDRAM['lang']['field_id'] = 'ID： ';
 $CIDRAM['lang']['field_ipaddr'] = 'IPアドレス： ';

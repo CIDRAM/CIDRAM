@@ -267,6 +267,9 @@ Konfigurasi umum dari CIDRAM.
 "log_banned_ips"
 - Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.
 
+"default_dns"
+- DNS Server default digunakan untuk pencarian nama host. Default = 8.8.8.8 (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
+
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -562,4 +565,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 10 Januari 2016 (2017.01.10).
+Terakhir Diperbarui: 12 Januari 2016 (2017.01.12).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2017.01.02).
+ * This file: Portuguese language data (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['click_here'] = 'clique aqui';
 $CIDRAM['lang']['denied'] = 'Acesso Negado!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Não é possível gravar para o cache! Por favor verifique suas permissões CHMOD!';
+$CIDRAM['lang']['fake_ua'] = '{ua} falso';
 $CIDRAM['lang']['field_datetime'] = 'Data/Hora: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'Endereço IP: ';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.02).
+ * This file: Functions file (last modified: 2017.01.12).
  */
 
 /**
@@ -123,13 +123,11 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
  * @return bool|array Refer to the description above.
  */
 $CIDRAM['ExpandIPv4'] = function ($Addr) use (&$CIDRAM) {
-    if (
-        !preg_match(
-            '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4' .
-            '][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[' .
-            '0-9]{1,2}|2[0-4][0-9]|25[0-5])$/i', $Addr, $Octets
-        )
-    ) {
+    if (!preg_match(
+        '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-' .
+        '9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2' .
+        '}|2[0-4][0-9]|25[0-5])$/i',
+    $Addr, $Octets)) {
         return false;
     }
     $CIDRs = array(0 => ($Octets[1] < 128) ? '0.0.0.0/1' : '128.0.0.0/1');
@@ -195,8 +193,8 @@ $CIDRAM['ExpandIPv6'] = function ($Addr) use (&$CIDRAM) {
         ')|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b).){3}(\b((25[0-5])|(1\d{2})|(2[0' .
         '-4]\d)|(\d{1,2}))\b))|([0-9a-f]{1,4}\:\:([0-9a-f]{1,4}\:){0,5}[0-9a' .
         '-f]{1,4})|(\:\:([0-9a-f]{1,4}\:){0,6}[0-9a-f]{1,4})|(([0-9a-f]{1,4}' .
-        '\:){1,7}\:)$/i', $Addr
-    )) {
+        '\:){1,7}\:)$/i',
+    $Addr)) {
         return false;
     }
     $NAddr = $Addr;
@@ -923,9 +921,14 @@ $CIDRAM['AutoType'] = function (&$Var, $Type = '') {
  * @param string $URI The resource to request.
  * @param array $Params (Optional) An associative array of key-value pairs to
  *      to send along with the request.
+ * @param string $Timeout An optional timeout limit (defaults to 12 seconds).
  * @return string The results of the request.
  */
-$CIDRAM['Request'] = function ($URI, $Params = '') use (&$CIDRAM) {
+$CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM) {
+    if (!$Timeout) {
+        $Timeout = $CIDRAM['Timeout'];
+    }
+
     /** Initialise the cURL session. */
     $Request = curl_init($URI);
 
@@ -945,7 +948,7 @@ $CIDRAM['Request'] = function ($URI, $Params = '') use (&$CIDRAM) {
         curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
     }
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($Request, CURLOPT_TIMEOUT, $CIDRAM['Timeout']);
+    curl_setopt($Request, CURLOPT_TIMEOUT, $Timeout);
     curl_setopt($Request, CURLOPT_USERAGENT, $CIDRAM['ScriptUA']);
 
     /** Execute and get the response. */
@@ -956,6 +959,157 @@ $CIDRAM['Request'] = function ($URI, $Params = '') use (&$CIDRAM) {
 
     /** Return the results of the request. */
     return $Response;
+};
+
+/**
+ * Performs reverse DNS lookups for IPv4 IP addresses, to resolve their
+ * hostnames. This is functionally equivalent to the in-built PHP function
+ * "gethostbyaddr", but with the added benefits of being able to specify which
+ * DNS server to use for lookups and of being able to enforce timeout limits,
+ * which should help to avoid some of the problems normally associated with
+ * using "gethostbyaddr".
+ *
+ * @param string $Addr The IPv4 IP address to look up.
+ * @param string $DNS The DNS server to use (optional; defaults to 8.8.8.8).
+ * @param string $Timeout The timeout limit (optional; defaults to 3 seconds).
+ * @return string The hostname on success, or the IP address on failure.
+ */
+$CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 3) use (&$CIDRAM) {
+    if (isset($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'])) {
+        return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'];
+    }
+    if (!isset($CIDRAM['Cache']['DNS-Reverses'])) {
+        $CIDRAM['Cache']['DNS-Reverses'] = array();
+    }
+    $CIDRAM['Cache']['DNS-Reverses'][$Addr] = array('Host' => '', 'Time' => $CIDRAM['Now'] + 21600);
+    $CIDRAM['CacheModified'] = true;
+
+    if (!$DNS) {
+        $DNS = $CIDRAM['Config']['general']['default_dns'];
+    }
+
+    $LeftPad = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
+    if (preg_match(
+        '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-' .
+        '9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2' .
+        '}|2[0-4][0-9]|25[0-5])$/i',
+    $Addr, $Octets)) {
+        $Lookup =
+            chr(strlen($Octets[4])) . $Octets[4] .
+            chr(strlen($Octets[3])) . $Octets[3] .
+            chr(strlen($Octets[2])) . $Octets[2] .
+            chr(strlen($Octets[1])) . $Octets[1] .
+            "\7in-addr\4arpa\0\0\x0c\0\1";
+    } else {
+        return '';
+    }
+    $Handle = fsockopen('udp://' . $DNS, 53);
+    $WriteSize = fwrite($Handle, $LeftPad . $Lookup);
+    stream_set_timeout($Handle, $Timeout);
+    $Response = fread($Handle, 1024);
+    fclose($Handle);
+    if (empty($Response)) {
+        return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = $Addr;
+    }
+    $Host = '';
+    if (($Pos = strpos($Response, $Lookup)) !== false) {
+        $Pos += strlen($Lookup) + 12;
+        while (($Byte = substr($Response, $Pos, 1)) && $Byte !== "\0") {
+            if ($Host) {
+                $Host .= '.';
+            }
+            $Len = hexdec(bin2hex($Byte));
+            $Host .= substr($Response, $Pos + 1, $Len);
+            $Pos += 1 + $Len;
+        }
+    }
+    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^0-9a-z._~-]/i', '', $Host) ?: $Addr;
+};
+
+/**
+ * Performs forward DNS lookups for hostnames, to resolve their IP address.
+ * This is functionally equivalent to the in-built PHP function
+ * "gethostbyname", but with the added benefits of having IPv6 support and of
+ * being able to enforce timeout limits, which should help to avoid some of the
+ * problems normally associated with using "gethostbyname").
+ *
+ * @param string $Host The hostname to look up.
+ * @param string $Timeout The timeout limit (optional; defaults to 3 seconds).
+ * @return string The IP address on success, or an empty string on failure.
+ */
+$CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 3) use (&$CIDRAM) {
+    if (isset($CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'])) {
+        return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'];
+    }
+    if (!isset($CIDRAM['Cache']['DNS-Forwards'])) {
+        $CIDRAM['Cache']['DNS-Forwards'] = array();
+    }
+    $CIDRAM['Cache']['DNS-Forwards'][$Host] = array('IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600);
+    $CIDRAM['CacheModified'] = true;
+
+    static $Valid = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
+    $Host = urlencode($Host);
+    if (($HostLen = strlen($Host)) > 253) {
+        return '';
+    }
+    $URI = 'https://dns.google.com/resolve?name=' . urlencode($Host) . '&random_padding=';
+    $PadLen = 204 - $HostLen;
+    if ($PadLen < 1) {
+        $PadLen = 972 - $HostLen;
+    }
+    while (--$PadLen) {
+        $URI .= str_shuffle($Valid)[0];
+    }
+
+    if (!$Results = json_decode($CIDRAM['Request']($URI, '', $Timeout), true)) {
+        return '';
+    }
+    return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'] =
+        empty($Results['Answer'][0]['data']) ? '' : preg_replace('/[^0-9a-f.:]/i', '', $Results['Answer'][0]['data']);
+};
+
+/**
+ * Distinguishes between bots masquerading as popular search engines and real,
+ * legitimate search engines. Tracking is disabled for real, legitimate search
+ * engines, and those masquerading as them are blocked. Has no return value.
+ *
+ * @param string|array $Domains Accepted domain/hostname partials.
+ * @param string $Friendly A friendly name to use in logfiles.
+ */
+$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly) use (&$CIDRAM) {
+    if (empty($CIDRAM['Hostname'])) {
+        /** Fetch the hostname. */
+        $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse-IPv4']($CIDRAM['BlockInfo']['IPAddr']);
+    }
+    $CIDRAM['Arrayify']($Domains);
+    $Pass = false;
+    /** Compare the hostname against the accepted domain/hostname partials. */
+    while (($Domain = each($Domains)) !== false) {
+        $Len = strlen($Domain[1]) * -1;
+        if (substr($CIDRAM['Hostname'], $Len) === $Domain[1]) {
+            $Pass = true;
+            break;
+        }
+    }
+    /** Resolve the hostname to the original IP address. */
+    if ($Pass && $CIDRAM['DNS-Resolve']($CIDRAM['Hostname']) === $CIDRAM['BlockInfo']['IPAddr']) {
+        /** It's the real deal; Disable tracking. */
+        $CIDRAM['Trackable'] = false;
+    } else {
+        /** It's a fake; Block it. */
+        $Reason = $CIDRAM['ParseVars'](array('ua' => $Friendly), $CIDRAM['lang']['fake_ua']);
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
+        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+        }
+        $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
+        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+        }
+        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+        $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
+        $CIDRAM['BlockInfo']['SignatureCount']++;
+    }
 };
 
 /**
@@ -1033,6 +1187,25 @@ $CIDRAM['Meld'] = function () {
     }
     $Meld = $Lt;
     return $Meld;
+};
+
+/**
+ * Clears expired entries from sections of the "cache.dat" file and clears
+ * empty sections.
+ */
+$CIDRAM['ClearFromCache'] = function ($Section) use (&$CIDRAM) {
+    if (isset($CIDRAM['Cache'][$Section])) {
+        foreach ($CIDRAM['Cache'][$Section] as $Key => $Value) {
+            if ($Value['Time'] < $CIDRAM['Now']) {
+                unset($CIDRAM['Cache'][$Section][$Key]);
+                $CIDRAM['CacheModified'] = true;
+            }
+        }
+        if (!count($CIDRAM['Cache'][$Section])) {
+            unset($CIDRAM['Cache'][$Section]);
+            $CIDRAM['CacheModified'] = true;
+        }
+    }
 };
 
 /**

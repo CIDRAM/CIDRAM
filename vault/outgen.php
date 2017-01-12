@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.10).
+ * This file: Output generator (last modified: 2017.01.12).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -32,18 +32,13 @@ if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
 }
 
 /** Clear outdated IP tracking. */
-if (isset($CIDRAM['Cache']['Tracking'])) {
-    foreach ($CIDRAM['Cache']['Tracking'] as $CIDRAM['ThisIP'] => $CIDRAM['ThisIPData']) {
-        if ($CIDRAM['ThisIPData']['Time'] < $CIDRAM['Now']) {
-            unset($CIDRAM['Cache']['Tracking'][$CIDRAM['ThisIP']]);
-            $CIDRAM['CacheModified'] = true;
-        }
-    }
-    if (!count($CIDRAM['Cache']['Tracking'])) {
-        unset($CIDRAM['Cache']['Tracking']);
-        $CIDRAM['CacheModified'] = true;
-    }
-}
+$CIDRAM['ClearFromCache']('Tracking');
+
+/** Clear outdated DNS forward lookups. */
+$CIDRAM['ClearFromCache']('DNS-Forwards');
+
+/** Clear outdated DNS reverse lookups. */
+$CIDRAM['ClearFromCache']('DNS-Reverses');
 
 /** Fallback for missing $_SERVER superglobal. */
 if (!isset($_SERVER)) {
@@ -149,6 +144,35 @@ if (!empty($CIDRAM['Config']['signatures']['modules'])) {
         }
     });
     unset($CIDRAM['Modules']);
+}
+
+/**
+ * Block bots masquerading as popular search engines and disable tracking for
+ * real, legitimate search engines.
+ */
+if ($CIDRAM['TestResults'] && $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))) {
+    /**
+     * Checks for Googlebot.
+     * Reference: https://support.google.com/webmasters/answer/80553?hl=en
+     */
+    if (strpos($CIDRAM['UA-Clean'], 'googlebot') !== false) {
+        $CIDRAM['DNS-Reverse-Forward'](array('.googlebot.com', '.google.com'), 'Googlebot');
+    }
+    /**
+     * Checks for Bingbot.
+     * Reference: http://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
+     */
+    if (strpos($CIDRAM['UA-Clean'], 'bingbot') !== false || strpos($CIDRAM['UA-Clean'], 'msnbot') !== false) {
+        $CIDRAM['DNS-Reverse-Forward']('.search.msn.com', 'Bingbot');
+    }
+    /**
+     * Checks for Yahoo! Slurp.
+     * Reference: http://www.ysearchblog.com/2007/06/05/yahoo-search-crawler-slurp-has-a-new-address-and-signature-card/
+     */
+    if (strpos($CIDRAM['UA-Clean'], 'slurp') !== false) {
+        $CIDRAM['DNS-Reverse-Forward']('.crawl.yahoo.net', 'Yahoo! Slurp');
+    }
+    unset($CIDRAM['UA-Clean']);
 }
 
 /** Process tracking information for the inbound IP. */

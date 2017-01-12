@@ -10,7 +10,7 @@
 - 7. [署名（シグニチャ）フォーマット](#SECTION7)
 - 8. [よくある質問（FAQ）](#SECTION8)
 
-*翻訳についての注意：エラーが発生した場合（例えば、翻訳の間の不一致、タイプミス、等等）、READMEの英語版が原本と権威のバージョンであると考えられます。誤りを見つけた場合は、それらを修正するにご協力を歓迎されるだろう。*
+*翻訳についての注意： エラーが発生した場合（例えば、翻訳の間の不一致、タイプミス、等等）、READMEの英語版が原本と権威のバージョンであると考えられます。 誤りを見つけた場合は、それらを修正するにご協力を歓迎されるだろう。*
 
 ---
 
@@ -235,8 +235,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - 例（１時間を追加します）：`timeOffset=60`
 
 "ipaddr" （アイピーアドレス）
-- 接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。
-- 注意：変更には最新の注意が必要です。
+- 接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。
 
 "forbid_on_block" （フォービッド・オン・ブロック）
 - 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？ `false`（偽）/200 = 200 OK 「Default（デフォルルト）」； `true`（真）/403 = 403 Forbidden （４０３禁止されている）； 503 = 503 Service unavailable （５０３サービス利用不可）。
@@ -265,8 +264,11 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "ban_override" （バン・オーバーライド）
 - 「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？ 上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。 ２００ = 上書きしない「Default（デフォルルト）」； ４０３ = 「403 Forbidden」で上書きする； ５０３ = 「503 Service unavailable」で上書きする。
 
-"log_banned_ips"
+"log_banned_ips" （ログ・バンド・アイピーズ）
 - 禁止されたIPからブロックされた要求をログファイルに含めますか？ True = はい 「Default（デフォルルト）」； False = いいえ。
+
+"default_dns" （ディフォールト・ディーエンエス）
+- ホスト名ルックアップに使用される、デフォルトのDNS（ドメイン・ネーム・システム）サーバー。 Default（デフォルルト） = 8.8.8.8 「Google DNS」。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。
 
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
@@ -463,7 +465,7 @@ A simplified form of YAML markup may be used in signature files for the purpose 
 
 Use of YAML markup in the signature files is entirely optional （即ち、 you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
 
-注意：YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
+注意： YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
 
 In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for which configuration directives should be modified (and to which values) whenever a signature within that signature section is triggered （以下の例を参照してください）。
 
@@ -528,7 +530,7 @@ recaptcha:
  enabled: true
 ```
 
-注意：A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
+注意： A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
 
 ####7.3 補助
 
@@ -563,4 +565,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月10日。
+最終アップデート： 2017年1月12日。

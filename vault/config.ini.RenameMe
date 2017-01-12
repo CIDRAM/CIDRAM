@@ -15,7 +15,9 @@ logfileSerialized=''
 ; Timezone offset in minutes.
 timeOffset=0
 
-; Where to find the IP address of connecting requests?
+; Where to find the IP address of connecting requests? (Useful for services
+; such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't
+; change this unless you know what you're doing!
 ipaddr='REMOTE_ADDR'
 
 ; Which headers should CIDRAM respond with when blocking requests?
@@ -54,6 +56,10 @@ ban_override=200
 ; Include blocked requests from banned IPs in the logfiles? True = Yes
 ; [Default]; False = No.
 log_banned_ips=true
+
+; Default DNS server to use for hostname lookups. Default = 8.8.8.8 (Google
+; DNS). WARNING: Don't change this unless you know what you're doing!
+default_dns='8.8.8.8'
 
 
 [signatures]

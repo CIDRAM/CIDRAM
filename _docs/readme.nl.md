@@ -235,7 +235,7 @@ Algemene configuratie voor CIDRAM.
 - Voorbeeld (een uur toe te voegen): `timeOffset=60`
 
 "ipaddr"
-- Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
+- Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 "forbid_on_block"
 - Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken? False/200 = 200 OK [Standaard]; True/403 = 403 Forbidden (Verboden); 503 = 503 Service unavailable (Service onbeschikbaar).
@@ -266,6 +266,9 @@ Algemene configuratie voor CIDRAM.
 
 "log_banned_ips"
 - Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.
+
+"default_dns"
+- Standaard DNS-server voor de hostnaam lookups te gebruiken. Standaard = 8.8.8.8 (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
@@ -562,4 +565,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 10 Januari 2016 (2017.01.10).
+Laatste Bijgewerkt: 12 Januari 2016 (2017.01.12).

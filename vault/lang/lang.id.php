@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.01.02).
+ * This file: Indonesian language data (last modified: 2017.01.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['click_here'] = 'klik disini';
 $CIDRAM['lang']['denied'] = 'Akses Ditolak!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Tidak dapat menulis ke cache! Silakan periksa hak akses file CHMOD Anda!';
+$CIDRAM['lang']['fake_ua'] = '{ua} palsu';
 $CIDRAM['lang']['field_datetime'] = 'Tanggal/Waktu: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'Alamat IP: ';

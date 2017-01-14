@@ -17,7 +17,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.7.0-DEV+170112
+ Version: 0.7.0-DEV+170113
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -119,11 +119,11 @@ CIDRAM:
    - ca4d53f3b38dbecbf636b5c67594ac74:2102
    - f02846bee1e737178f55f8e67d312d53:931
    - 21ae679406c71bf78296fce4a8ce7509:100112
-   - 9bce10d27813cb5988d1813ffc53d192:75683
+   - df7d672465298c59c2fe5c75688c4fb5:79296
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
-   - fc35cf7f3cb29633e5d2c2f0ef7b8741:20123
+   - dbb1a60c7239f849740c87be0233db6f:21342
    - 10a8f11f9c09873ab71e50e128940503:1729
    - 2f007322fe51be35be62b2931ac2ee93:11237
    - c6dbda70eb05f08e2dd0ca41fe57661a:2810
@@ -162,7 +162,7 @@ IPv4:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv4签名通常包括在主包。
   zh-tw: 標準IPv4簽名通常包括在主包。
- Version: 2017.01.09
+ Version: 2017.01.13
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -172,7 +172,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - d6f6e484d78060fa4cad30f86571b92a:545117
+   - ec135f376ee0e8c45b02dcb889593176:544876
  Reannotate: components.dat
 IPv4-Bogons:
  Name:
@@ -207,7 +207,7 @@ IPv4-Bogons:
   vi: Các chữ ký IPv4 bogon mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv4 Bogon签名通常包括在主包。
   zh-tw: 標準IPv4 Bogon簽名通常包括在主包。
- Version: 2017.01.05
+ Version: 2017.01.13
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -217,7 +217,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - 15b779b536d4b97cd6e0567cc7ccdaf3:101959
+   - 4f15d227a1c0ae1961c674a916200643:101932
  Reannotate: components.dat
 IPv6:
  Name:
@@ -252,7 +252,7 @@ IPv6:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv6签名通常包括在主包。
   zh-tw: 標準IPv6簽名通常包括在主包。
- Version: 2017.01.09
+ Version: 2017.01.13
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -262,7 +262,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 178fd1d066353afaab2b9a55a20f3d90:111171
+   - d7880c40feab7d53f259870191bb2bae:111305
  Reannotate: components.dat
 IPv6-Bogons:
  Name:
@@ -297,7 +297,7 @@ IPv6-Bogons:
   vi: Các chữ ký IPv6 bogon mặc định thường bao gồm với gói thầu chính.
   zh: 标准IPv6 Bogon签名通常包括在主包。
   zh-tw: 標準IPv6 Bogon簽名通常包括在主包。
- Version: 2017.01.05
+ Version: 2017.01.13
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -307,7 +307,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - c87ac9612bf893afe15031381373fc7c:2185805
+   - fc3c0404c43dc079b26b37e5c927f962:2195128
  Reannotate: components.dat
 Bypasses:
  Name:

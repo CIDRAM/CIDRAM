@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.12).
+ * This file: Functions file (last modified: 2017.01.13).
  */
 
 /**
@@ -22,33 +22,34 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
 /**
  * Reads and returns the contents of files.
  *
- * @param string $f Path and filename of the file to read.
+ * @param string $File Path and filename of the file to read.
  * @return string|bool Content of the file returned by the function (or false
  *      on failure).
  */
-$CIDRAM['ReadFile'] = function ($f) {
-    if (!is_file($f)) {
+$CIDRAM['ReadFile'] = function ($File) {
+    if (!is_file($File) || !is_readable($File)) {
         return false;
     }
     /**
-     * $bsize represents the size of each block to be read from the target
+     * $Blocksize represents the size of each block to be read from the target
      * file. 131072 = 128KB. Decreasing this value will increase stability but
      * decrease performance, whereas increasing this value will increase
      * performance but decrease stability.
      */
-    $bsize = 131072;
-    $s = @ceil(filesize($f) / $bsize);
-    $d = '';
-    if ($s > 0) {
-        $fh = fopen($f, 'rb');
+    $Blocksize = 131072;
+    $Filesize = filesize($File);
+    $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
+    $Data = '';
+    if ($Size > 0) {
+        $Handle = fopen($File, 'rb');
         $r = 0;
-        while ($r < $s) {
-            $d .= fread($fh, $bsize);
+        while ($r < $Size) {
+            $Data .= fread($Handle, $Blocksize);
             $r++;
         }
-        fclose($fh);
+        fclose($Handle);
     }
-    return $d ?: false;
+    return $Data ?: false;
 };
 
 /**
@@ -1004,7 +1005,7 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 3) use (&$C
         return '';
     }
     $Handle = fsockopen('udp://' . $DNS, 53);
-    $WriteSize = fwrite($Handle, $LeftPad . $Lookup);
+    fwrite($Handle, $LeftPad . $Lookup);
     stream_set_timeout($Handle, $Timeout);
     $Response = fread($Handle, 1024);
     fclose($Handle);
@@ -1110,6 +1111,81 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly) use (&$CIDRAM) {
         $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
         $CIDRAM['BlockInfo']['SignatureCount']++;
     }
+};
+
+/**
+ * Checks whether an IP is expected. If so, tracking is disabled for the IP
+ * being checked, and if not, the request is blocked. Has no return value.
+ *
+ * @param string|array $Expected IPs expected.
+ * @param string $Friendly A friendly name to use in logfiles.
+ */
+$CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly) use (&$CIDRAM) {
+    $CIDRAM['Arrayify']($Expected);
+    /** Compare the actual IP of the request against the expected IPs. */
+    if (in_array($CIDRAM['BlockInfo']['IPAddr'], $Expected)) {
+        /** Disable tracking. */
+        $CIDRAM['Trackable'] = false;
+    } else {
+        /** Block it. */
+        $Reason = $CIDRAM['ParseVars'](array('ua' => $Friendly), $CIDRAM['lang']['fake_ua']);
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
+        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+        }
+        $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
+        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+        }
+        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+        $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
+        $CIDRAM['BlockInfo']['SignatureCount']++;
+    }
+};
+
+/**
+ * A default closure for handling signature triggers within module files.
+ *
+ * @param bool $Condition Include any variable or PHP code which can be
+ *      evaluated for truthiness. Truthiness is evaluated, and if true, the
+ *      signature is "triggered". If false, the signature is *not* "triggered".
+ * @param string $ReasonShort Cited in the "Why Blocked" field when the
+ *      signature is triggered and thus included within logfile entries.
+ * @param string $ReasonLong Message displayed to the user/client when blocked,
+ *      to explain why they've been blocked. Optional. Defaults to the standard
+ *      "Access Denied!" message.
+ * @param array $DefineOptions An optional array containing key/value pairs,
+ *      used to define configuration options specific to the request instance.
+ *      Configuration options will be applied when the signature is triggered.
+ * @return bool Returns true if the signature was triggered, and false if it
+ *      wasn't. Should correspond to the truthiness of $Condition.
+ */
+$CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', $DefineOptions = array()) use (&$CIDRAM) {
+    if (!$Condition) {
+        return false;
+    }
+    if (!$ReasonLong) {
+        $ReasonLong = $CIDRAM['lang']['denied'];
+    }
+    if (is_array($DefineOptions) && !empty($DefineOptions)) {
+        while (($Cat = each($DefineOptions)) !== false) {
+            while (($Option = each($Cat[1])) !== false) {
+                $CIDRAM['Config'][$Cat[0]][$Option[0]] = $Option[1];
+            }
+        }
+    }
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $ReasonLong;
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $ReasonShort;
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+    }
+    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+    $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
+    return true;
 };
 
 /**

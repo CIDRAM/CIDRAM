@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.15).
+ * This file: Functions file (last modified: 2017.01.16).
  */
 
 /**
@@ -53,23 +53,13 @@ $CIDRAM['ReadFile'] = function ($File) {
 };
 
 /**
- * This is a specialised search-and-replace function, designed to replace
- * encapsulated substrings within a given input string based upon the elements
- * of a given input array. The function accepts two input parameters: The
- * first, the input array, and the second, the input string. The function
- * searches for any instances of each array key, encapsulated by curly
- * brackets, as substrings within the input string, and replaces any instances
- * found with the array element content corresponding to the array key
- * associated with each instance found.
+ * Replaces encapsulated substrings within an input string with the value of
+ * elements within an input array, whose keys correspond to the substrings.
+ * Accepts two input parameters: An input array (1), and an input string (2).
  *
- * This function is used extensively throughout CIDRAM, to parse its language
- * data and to parse any messages related to any detections found during the
- * scan process and any other related processes.
- *
- * @param array $Needle The input array (what we're looking *for*).
- * @param string $Haystack The input string (what we're looking *in*).
- * @return string The results of the function are returned directly to the
- *      calling scope as a string.
+ * @param array $Needle The input array (the needle[/s]).
+ * @param string $Haystack The input string (the haystack).
+ * @return string The resultant string.
  */
 $CIDRAM['ParseVars'] = function ($Needle, $Haystack) {
     if (!is_array($Needle) || empty($Haystack)) {
@@ -1079,10 +1069,11 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
  *
  * @param string|array $Domains Accepted domain/hostname partials.
  * @param string $Friendly A friendly name to use in logfiles.
+ * @param bool $ReverseOnly Skips forward lookups if true.
  * @return bool Returns true when a determination is successfully made, and
  *      false when a determination isn't able to be made.
  */
-$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly) use (&$CIDRAM) {
+$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = false) use (&$CIDRAM) {
     if (empty($CIDRAM['Hostname'])) {
         /** Fetch the hostname. */
         $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse-IPv4']($CIDRAM['BlockInfo']['IPAddr']);
@@ -1102,8 +1093,13 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly) use (&$CIDRAM) {
             break;
         }
     }
-    /** Resolve the hostname to the original IP address. */
-    if ($Pass && $CIDRAM['DNS-Resolve']($CIDRAM['Hostname']) === $CIDRAM['BlockInfo']['IPAddr']) {
+    /**
+     * Resolve the hostname to the original IP address (if $ReverseOnly is
+     * false); Act according to the results and return.
+     */
+    if ($Pass && (
+        $ReverseOnly || $CIDRAM['DNS-Resolve']($CIDRAM['Hostname']) === $CIDRAM['BlockInfo']['IPAddr'])
+    ) {
         /** It's the real deal; Disable tracking. */
         $CIDRAM['Trackable'] = false;
     } else {
@@ -1196,6 +1192,45 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', $Defi
     $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
     $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
     $CIDRAM['BlockInfo']['SignatureCount']++;
+    return true;
+};
+
+/**
+ * A default closure for handling signature bypasses within module files.
+ *
+ * @param bool $Condition Include any variable or PHP code which can be
+ *      evaluated for truthiness. Truthiness is evaluated, and if true, the
+ *      bypass is "triggered". If false, the bypass is *not* "triggered".
+ * @param string $ReasonShort Cited in the "Why Blocked" field when the
+ *      bypass is triggered (included within logfile entries if there are still
+ *      other preexisting signatures which have otherwise been triggered).
+ * @param array $DefineOptions An optional array containing key/value pairs,
+ *      used to define configuration options specific to the request instance.
+ *      Configuration options will be applied when the bypass is triggered.
+ * @return bool Returns true if the bypass was triggered, and false if it
+ *      wasn't. Should correspond to the truthiness of $Condition.
+ */
+$CIDRAM['Bypass'] = function ($Condition, $ReasonShort, $DefineOptions = array()) use (&$CIDRAM) {
+    if (!$Condition) {
+        return false;
+    }
+    if (is_array($DefineOptions) && !empty($DefineOptions)) {
+        while (($Cat = each($DefineOptions)) !== false) {
+            while (($Option = each($Cat[1])) !== false) {
+                $CIDRAM['Config'][$Cat[0]][$Option[0]] = $Option[1];
+            }
+        }
+    }
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $ReasonShort;
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+    }
+    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+    $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
+    $CIDRAM['BlockInfo']['SignatureCount']--;
     return true;
 };
 

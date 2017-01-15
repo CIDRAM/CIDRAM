@@ -1068,7 +1068,7 @@ Tag: Dattatec.com
 
 # ASNs 7203, 16265, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 394380 ("Leaseweb Network").
 # %Listed, Google Malware Dashboard: 0.66% (AS7203), 0.80% (AS16265), 1.07% (AS28753), 0.16% (AS30633),
-#    0.56% (AS30633), 0.43% (AS38930), 2.45% (AS59253), 0% (AS60626), 1.24% (AS60781), 0% (AS133752/AS394380).
+#   0.56% (AS30633), 0.43% (AS38930), 2.45% (AS59253), 0% (AS60626), 1.24% (AS60781), 0% (AS133752/AS394380).
 # Updated: 2016.09.28
 
 5.44.144.0/22 Deny Cloud
@@ -2981,7 +2981,7 @@ Tag: PlusServer AG
 # ASNs 14061, 46652, 62567, 133165, 135340, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc").
 # %Listed, Google Malware Dashboard: 1.02% (AS14061), 0.43% (AS46652), 1.48% (AS62567), 2.63% (AS133165),
 #   1.00% (AS135340), 1.65% (AS200130), 1.26% (AS201229), 1.96% (AS202018), 2.78% (AS202109), 0.95% (AS393406),
-#    1.55% (AS394362).
+#   1.55% (AS394362).
 # Updated: 2017.01.13
 
 5.101.96.0/20 Deny Cloud
@@ -3116,6 +3116,8 @@ Tag: ColoGuys
 154.16.97.0/24 Deny Cloud
 154.16.98.0/23 Deny Cloud
 154.16.100.0/22 Deny Cloud
+154.16.105.0/24 Deny Cloud
+154.16.106.0/24 Deny Cloud
 161.213.205.0/24 Deny Cloud
 161.213.207.0/24 Deny Cloud
 161.213.209.0/24 Deny Cloud
@@ -3328,14 +3330,13 @@ Tag: WholeSale Internet
 
 # ASN 33387 ("DataShack, LC").
 # %Listed, Google Malware Dashboard: 15.31%.
-# Updated: 2016.03.29 / Checked: 2016.05.21
+# Updated: 2017.01.15
 
 63.141.224.0/19 Deny Cloud
 74.91.16.0/20 Deny Cloud
 103.25.63.0/24 Deny Cloud
 107.150.32.0/19 Deny Cloud
 142.54.160.0/19 Deny Cloud
-153.89.0.0/16 Deny Cloud
 179.0.32.0/19 Deny Cloud
 179.0.64.0/18 Deny Cloud
 190.113.32.0/19 Deny Cloud
@@ -3384,7 +3385,7 @@ Tag: ON-LINE Ltd
 
 
 # ASNs 10910, 10912, 10913, 11853, 11854, 11855, 12178, 12179, 12180, 12181, 12182, 13789, 13790, 13791, 13792, 14742,
-#    14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910
+#   14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910
 # ("Internap Network Services Corporation"). Updated: 2016.10.01
 
 5.104.242.0/24 Deny Cloud
@@ -3859,6 +3860,7 @@ Tag: Black Lotus
 138.128.220.0/22 Deny Cloud
 146.71.32.0/20 Deny Cloud
 146.148.160.0/21 Deny Cloud
+154.16.108.0/22 Deny Cloud
 155.94.128.0/17 Deny Cloud
 155.254.38.0/24 Deny Cloud
 160.202.168.0/22 Deny Cloud
@@ -4509,6 +4511,7 @@ Tag: Private Layer INC
 185.121.163.0/24 Deny Cloud
 185.147.34.0/23 Deny Cloud
 191.96.215.0/24 Deny Cloud
+191.96.220.0/24 Deny Cloud
 191.96.224.0/24 Deny Cloud
 191.96.230.0/24 Deny Cloud
 192.81.248.0/23 Deny Cloud
@@ -4887,7 +4890,7 @@ Tag: RAM Host
 
 # ASNs 8972, 20738, 20773, 25074, 31100, 34011, 44497, 50932, 61157 ("Host Europe GmbH").
 # %Listed, Google Malware Dashboard: 1.90% (AS8972), 2.08% (AS20738), 1.68% (AS20773), 2.11% (AS25074), 0% (AS31100),
-#    1.63% (AS34011), 4.15% (AS44497), 100% (AS50932), 0% (AS61157).
+#   1.63% (AS34011), 4.15% (AS44497), 100% (AS50932), 0% (AS61157).
 # Note: When updating, check for both "Host Europe" and "HostEurope" (no space). There are some additional CIDRs in use
 # that aren't tied to any particular ASN (should aggregate these alongside those announced by the aforementioned ASNs).
 # Updated: 2016.12.24
@@ -5329,6 +5332,7 @@ Tag: ONLINE S.A.S
 104.254.214.0/24 Deny Cloud
 154.16.133.0/24 Deny Cloud
 154.16.134.0/23 Deny Cloud
+154.16.136.0/24 Deny Cloud
 154.16.140.0/22 Deny Cloud
 154.16.144.0/21 Deny Cloud
 162.244.8.0/21 Deny Cloud
@@ -5674,6 +5678,7 @@ Tag: ESDS
 172.94.30.0/24 Deny Cloud
 172.94.50.0/23 Deny Cloud
 172.94.52.0/22 Deny Cloud
+172.94.56.0/23 Deny Cloud
 172.111.154.0/24 Deny Cloud
 185.2.28.0/22 Deny Cloud
 185.10.56.0/22 Deny Cloud
@@ -6620,6 +6625,7 @@ Tag: Nine Internet
 185.18.204.0/22 Deny Cloud
 185.37.148.0/22 Deny Cloud
 185.170.56.0/22 Deny Cloud
+191.96.216.0/22 Deny Cloud
 193.182.144.0/23 Deny Cloud
 217.22.28.0/22 Deny Cloud
 Tag: AS61102
@@ -7535,7 +7541,7 @@ Tag: Sia Nano IT
 
 # ASNs 7224, 8987, 14618, 16509, 38895, 39111, 62785 ("Amazon.com, Inc").
 # %Listed, Google Malware Dashboard: 0% (AS7224/AS8987), 0.13% (AS14618), 0.03% (AS16509), 0.05% (AS38895),
-#    0.14% (AS39111), "ASN not found" (AS62785).
+#   0.14% (AS39111), "ASN not found" (AS62785).
 # Updated: 2016.10.01
 
 8.18.144.0/23 Deny Cloud
@@ -9570,20 +9576,31 @@ Tag: Host Sailor Ltd
 
 
 # ASN 61440 ("Digital Energy Technologies Chile SpA").
-# %Listed, Google Malware Dashboard: 1.17%.
-# Updated: 2016.06.09
+# %Listed, Google Malware Dashboard: 1.58%.
+# Updated: 2017.01.15
 
 104.243.241.0/24 Deny Cloud
 138.99.120.0/22 Deny Cloud
-154.16.104.0/21 Deny Cloud
+154.16.27.0/24 Deny Cloud
+154.16.33.0/24 Deny Cloud
+154.16.39.0/24 Deny Cloud
+154.16.43.0/24 Deny Cloud
+154.16.45.0/24 Deny Cloud
+154.16.47.0/24 Deny Cloud
+154.16.53.0/24 Deny Cloud
+154.16.55.0/24 Deny Cloud
+154.16.61.0/24 Deny Cloud
+154.16.69.0/24 Deny Cloud
+154.16.85.0/24 Deny Cloud
+154.16.87.0/24 Deny Cloud
+154.16.89.0/24 Deny Cloud
+154.16.91.0/24 Deny Cloud
 154.16.120.0/21 Deny Cloud
-154.16.136.0/23 Deny Cloud
-154.16.152.0/22 Deny Cloud
 154.16.160.0/19 Deny Cloud
 154.16.192.0/18 Deny Cloud
 154.127.48.0/24 Deny Cloud
 154.127.52.0/24 Deny Cloud
-172.94.56.0/21 Deny Cloud
+172.94.62.0/23 Deny Cloud
 172.94.117.0/24 Deny Cloud
 172.111.131.0/24 Deny Cloud
 172.111.132.0/24 Deny Cloud
@@ -9595,7 +9612,6 @@ Tag: Host Sailor Ltd
 179.61.212.0/22 Deny Cloud
 179.61.220.0/23 Deny Cloud
 179.61.222.0/24 Deny Cloud
-179.61.236.0/24 Deny Cloud
 179.61.241.0/24 Deny Cloud
 179.61.243.0/24 Deny Cloud
 179.61.244.0/22 Deny Cloud
@@ -9605,7 +9621,10 @@ Tag: Host Sailor Ltd
 181.41.194.0/23 Deny Cloud
 181.41.196.0/22 Deny Cloud
 181.41.200.0/21 Deny Cloud
-181.41.208.0/20 Deny Cloud
+181.41.208.0/23 Deny Cloud
+181.41.210.0/24 Deny Cloud
+181.41.212.0/22 Deny Cloud
+181.41.216.0/21 Deny Cloud
 181.214.0.0/19 Deny Cloud
 181.214.32.0/24 Deny Cloud
 181.214.34.0/24 Deny Cloud
@@ -9617,14 +9636,15 @@ Tag: Host Sailor Ltd
 181.214.60.0/22 Deny Cloud
 181.214.64.0/22 Deny Cloud
 181.214.68.0/23 Deny Cloud
+181.214.160.0/19 Deny Cloud
+181.214.200.0/22 Deny Cloud
 181.214.248.0/21 Deny Cloud
 181.215.0.0/18 Deny Cloud
-181.215.88.0/21 Deny Cloud
+181.215.80.0/20 Deny Cloud
 181.215.96.0/19 Deny Cloud
 181.215.128.0/19 Deny Cloud
 181.215.160.0/20 Deny Cloud
 181.215.192.0/20 Deny Cloud
-181.215.240.0/22 Deny Cloud
 181.215.252.0/22 Deny Cloud
 191.96.0.0/21 Deny Cloud
 191.96.8.0/22 Deny Cloud
@@ -9633,13 +9653,14 @@ Tag: Host Sailor Ltd
 191.96.16.0/22 Deny Cloud
 191.96.20.0/24 Deny Cloud
 191.96.22.0/23 Deny Cloud
-191.96.24.0/23 Deny Cloud
+191.96.24.0/24 Deny Cloud
 191.96.26.0/24 Deny Cloud
 191.96.28.0/22 Deny Cloud
 191.96.32.0/22 Deny Cloud
 191.96.62.0/23 Deny Cloud
 191.96.64.0/23 Deny Cloud
 191.96.68.0/22 Deny Cloud
+191.96.80.0/21 Deny Cloud
 191.96.92.0/22 Deny Cloud
 191.96.98.0/23 Deny Cloud
 191.96.112.0/22 Deny Cloud
@@ -9647,7 +9668,6 @@ Tag: Host Sailor Ltd
 191.96.128.0/18 Deny Cloud
 191.96.192.0/20 Deny Cloud
 191.96.208.0/22 Deny Cloud
-191.96.216.0/21 Deny Cloud
 191.96.228.0/23 Deny Cloud
 191.96.232.0/21 Deny Cloud
 191.96.244.0/22 Deny Cloud
@@ -11483,6 +11503,89 @@ Tag: NetSource
 193.42.147.0/24 Deny Cloud
 195.22.126.0/23 Deny Cloud
 Tag: SPRINT
+
+
+# ASN 55286 ("B2 Net Solutions Inc").
+# %Listed, Google Malware Dashboard: 2.17%.
+# Updated: 2017.01.15
+
+23.229.0.0/18 Deny Cloud
+23.229.64.0/19 Deny Cloud
+23.236.128.0/19 Deny Cloud
+23.236.160.0/20 Deny Cloud
+23.236.176.0/22 Deny Cloud
+23.236.184.0/21 Deny Cloud
+23.236.192.0/19 Deny Cloud
+23.236.224.0/20 Deny Cloud
+23.250.0.0/18 Deny Cloud
+23.250.64.0/19 Deny Cloud
+23.250.96.0/20 Deny Cloud
+23.254.0.0/18 Deny Cloud
+23.254.64.0/20 Deny Cloud
+23.254.80.0/21 Deny Cloud
+23.254.110.0/24 Deny Cloud
+43.245.197.0/24 Deny Cloud
+45.57.128.0/18 Deny Cloud
+45.57.192.0/19 Deny Cloud
+45.57.224.0/20 Deny Cloud
+45.72.0.0/17 Deny Cloud
+45.249.52.0/24 Deny Cloud
+69.4.80.0/20 Deny Cloud
+69.58.0.0/20 Deny Cloud
+104.144.0.0/16 Deny Cloud
+104.227.0.0/17 Deny Cloud
+104.227.128.0/19 Deny Cloud
+104.227.160.0/21 Deny Cloud
+104.227.168.0/22 Deny Cloud
+104.227.176.0/20 Deny Cloud
+104.243.250.0/24 Deny Cloud
+107.152.128.0/17 Deny Cloud
+138.128.0.0/18 Deny Cloud
+138.128.64.0/19 Deny Cloud
+138.128.96.0/20 Deny Cloud
+144.168.128.0/17 Deny Cloud
+149.114.4.0/22 Deny Cloud
+149.114.8.0/21 Deny Cloud
+149.114.16.0/20 Deny Cloud
+149.114.32.0/19 Deny Cloud
+149.114.64.0/18 Deny Cloud
+149.114.128.0/17 Deny Cloud
+162.246.187.0/24 Deny Cloud
+172.245.48.0/23 Deny Cloud
+172.245.164.0/23 Deny Cloud
+172.245.166.0/24 Deny Cloud
+172.245.172.0/24 Deny Cloud
+172.245.175.0/24 Deny Cloud
+172.245.188.0/24 Deny Cloud
+172.245.192.0/24 Deny Cloud
+172.245.198.0/23 Deny Cloud
+172.245.200.0/21 Deny Cloud
+185.121.153.0/24 Deny Cloud
+192.3.65.0/24 Deny Cloud
+192.3.66.0/24 Deny Cloud
+192.3.69.0/24 Deny Cloud
+192.3.71.0/24 Deny Cloud
+192.3.74.0/23 Deny Cloud
+192.3.78.0/23 Deny Cloud
+192.157.48.0/21 Deny Cloud
+192.157.56.0/22 Deny Cloud
+192.186.128.0/18 Deny Cloud
+192.198.96.0/19 Deny Cloud
+192.210.224.0/23 Deny Cloud
+192.227.150.0/23 Deny Cloud
+192.227.156.0/23 Deny Cloud
+192.227.159.0/24 Deny Cloud
+192.241.64.0/18 Deny Cloud
+196.52.52.0/23 Deny Cloud
+198.20.160.0/19 Deny Cloud
+198.23.162.0/23 Deny Cloud
+198.46.164.0/24 Deny Cloud
+198.154.80.0/20 Deny Cloud
+198.245.64.0/21 Deny Cloud
+198.245.72.0/23 Deny Cloud
+198.245.75.0/24 Deny Cloud
+198.245.76.0/22 Deny Cloud
+Tag: B2 Net Solutions
 
 
 # ---

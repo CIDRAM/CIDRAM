@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.13).
+ * This file: Output generator (last modified: 2017.01.15).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -250,7 +250,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         $CIDRAM['Config']['template_data']['recaptcha_div_include'] = '';
     }
 
-    if (empty($CIDRAM['reCAPTCHA']['Bypass']) && empty($CIDRAM['Banned'])) {
+    if (empty($CIDRAM['reCAPTCHA']['Bypass']) && (
+        $CIDRAM['Config']['general']['log_banned_ips'] || empty($CIDRAM['Banned'])
+    )) {
 
         /** If logging is enabled, increment the counter. */
         if (

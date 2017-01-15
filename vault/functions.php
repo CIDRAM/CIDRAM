@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.13).
+ * This file: Functions file (last modified: 2017.01.15).
  */
 
 /**
@@ -972,10 +972,10 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
  *
  * @param string $Addr The IPv4 IP address to look up.
  * @param string $DNS The DNS server to use (optional; defaults to 8.8.8.8).
- * @param string $Timeout The timeout limit (optional; defaults to 3 seconds).
+ * @param string $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The hostname on success, or the IP address on failure.
  */
-$CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 3) use (&$CIDRAM) {
+$CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
     if (isset($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'])) {
         return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'];
     }
@@ -1035,10 +1035,10 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 3) use (&$C
  * problems normally associated with using "gethostbyname").
  *
  * @param string $Host The hostname to look up.
- * @param string $Timeout The timeout limit (optional; defaults to 3 seconds).
+ * @param string $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The IP address on success, or an empty string on failure.
  */
-$CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 3) use (&$CIDRAM) {
+$CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
     if (isset($CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'])) {
         return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'];
     }
@@ -1072,17 +1072,27 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 3) use (&$CIDRAM) {
 /**
  * Distinguishes between bots masquerading as popular search engines and real,
  * legitimate search engines. Tracking is disabled for real, legitimate search
- * engines, and those masquerading as them are blocked. Has no return value.
+ * engines, and those masquerading as them are blocked. If DNS is unresolvable
+ * and/or if it can't be determined whether a request has originated from a
+ * fake or a legitimate source, it takes no action (ie, doesn't mess with
+ * tracking and doesn't block anything).
  *
  * @param string|array $Domains Accepted domain/hostname partials.
  * @param string $Friendly A friendly name to use in logfiles.
+ * @return bool Returns true when a determination is successfully made, and
+ *      false when a determination isn't able to be made.
  */
 $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly) use (&$CIDRAM) {
     if (empty($CIDRAM['Hostname'])) {
         /** Fetch the hostname. */
         $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse-IPv4']($CIDRAM['BlockInfo']['IPAddr']);
     }
+    /** Force domains to be an array. */
     $CIDRAM['Arrayify']($Domains);
+    /** Do nothing more if we weren't able to resolve the DNS hostname. */
+    if (!$CIDRAM['Hostname'] || $CIDRAM['Hostname'] === $CIDRAM['BlockInfo']['IPAddr']) {
+        return false;
+    }
     $Pass = false;
     /** Compare the hostname against the accepted domain/hostname partials. */
     while (($Domain = each($Domains)) !== false) {
@@ -1111,6 +1121,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly) use (&$CIDRAM) {
         $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
         $CIDRAM['BlockInfo']['SignatureCount']++;
     }
+    return true;
 };
 
 /**

@@ -16,10 +16,14 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+/** Fetch temporary hotfixes file raw data. */
 $CIDRAM['ThisFile'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'hotfixes.php');
 
-/** Hotfix for "cidramblocklists.dat" missing file and changed remote path. */
-if (true) { // switch 170117
+/** Flag for updating switches. */
+$CIDRAM['Hotfixed'] = false;
+
+/** Hotfix for missing "cidramblocklists.dat" file and changed remote path. */
+if (true) { // switch 170117-1
     $CIDRAM['HotfixData'] = '';
 
     if (file_exists($CIDRAM['Vault'] . 'cidramblocklists.dat')) {
@@ -40,12 +44,39 @@ if (true) { // switch 170117
 
     /** Update switch. */
     $CIDRAM['ThisFile'] = str_replace(
-        "\nif (true) { // switch 170117\n",
+        "\nif (true) { // switch 170117-1\n",
         "\nif (false) {\n",
         $CIDRAM['ThisFile']
     );
+    $CIDRAM['Hotfixed'] = true;
 }
 
-$CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'hotfixes.php', 'w');
-fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
-fclose($CIDRAM['Handle']);
+/** Hotfix for missing "modules.dat" file. */
+if (true) { // switch 170117-2
+    $CIDRAM['HotfixData'] = '';
+
+    if (!file_exists($CIDRAM['Vault'] . 'modules.dat')) {
+        if ($CIDRAM['HotfixData'] = $CIDRAM['Request'](
+            'https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/modules.dat'
+        )) {
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'modules.dat', 'w');
+            fwrite($CIDRAM['Handle'], $CIDRAM['HotfixData']);
+            fclose($CIDRAM['Handle']);
+        }
+    }
+
+    /** Update switch. */
+    $CIDRAM['ThisFile'] = str_replace(
+        "\nif (true) { // switch 170117-2\n",
+        "\nif (false) {\n",
+        $CIDRAM['ThisFile']
+    );
+    $CIDRAM['Hotfixed'] = true;
+}
+
+/** Update temporary hotfixes file switches. */
+if ($CIDRAM['Hotfixed']) {
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'hotfixes.php', 'w');
+    fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
+    fclose($CIDRAM['Handle']);
+}

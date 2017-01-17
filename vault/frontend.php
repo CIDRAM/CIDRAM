@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.01.05).
+ * This file: Front-end handler (last modified: 2017.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -288,6 +288,11 @@ if ($CIDRAM['FE']['UserState'] === 1) {
             $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_nav_logs_access_only.html')
         );
 
+    }
+
+    /** Execute hotfixes. */
+    if (file_exists($CIDRAM['Vault'] . 'hotfixes.php')) {
+        require $CIDRAM['Vault'] . 'hotfixes.php';
     }
 
 }

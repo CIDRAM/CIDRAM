@@ -151,6 +151,9 @@ Data | Deskripsi
 /vault/lang/lang.ja.cli.php | File Bahasa Jepang untuk CLI.
 /vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk front-end.
 /vault/lang/lang.ja.php | File Bahasa Jepang.
+/vault/lang/lang.ko.cli.php | File Bahasa Korea untuk CLI.
+/vault/lang/lang.ko.fe.php | File Bahasa Korea untuk front-end.
+/vault/lang/lang.ko.php | File Bahasa Korea.
 /vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
 /vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk front-end.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
@@ -173,10 +176,10 @@ Data | Deskripsi
 /vault/cache.dat | Cache data.
 /vault/cidramblocklists.dat | Berisi informasi yang berkaitan dengan daftar blok opsional untuk negara yang disediakan oleh Macmathan; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/cli.php | Modul CLI.
-/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen untuk CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
-/vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk CIDRAM.
 /vault/config.php | Modul konfigurasi.
+/vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk CIDRAM.
 /vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/hashes.dat | Berisi daftar hash diterima (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
@@ -188,6 +191,7 @@ Data | Deskripsi
 /vault/ipv6.dat | File tanda tangan IPv6.
 /vault/ipv6_custom.dat.RenameMe | File tanda tangan IPv6 disesuaikan (mengubah nama untuk mengaktifkan).
 /vault/lang.php | File bahasa.
+/vault/modules.dat | Berisi informasi yang berkaitan dengan berbagai modul untuk CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/outgen.php | Output Generator.
 /vault/php5.4.x.php | Polyfill untuk PHP 5.4.X (diperlukan untuk kompatibilitas mundur PHP 5.4.X; aman untuk menghapus selama versi PHP yang lebih baru).
 /vault/recaptcha.php | Modul reCAPTCHA.
@@ -565,4 +569,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 12 Januari 2016 (2017.01.12).
+Terakhir Diperbarui: 18 Januari 2016 (2017.01.18).

@@ -152,6 +152,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/lang/lang.ja.cli.php | 日文CLI語言數據。
 /vault/lang/lang.ja.fe.php | 日文前端語言數據。
 /vault/lang/lang.ja.php | 日文語言數據。
+/vault/lang/lang.ko.cli.php | 韓文CLI語言數據。
+/vault/lang/lang.ko.fe.php | 韓文前端語言數據。
+/vault/lang/lang.ko.php | 韓文語言數據。
 /vault/lang/lang.nl.cli.php | 荷蘭文CLI語言數據。
 /vault/lang/lang.nl.fe.php | 荷蘭文前端語言數據。
 /vault/lang/lang.nl.php | 荷蘭文語言數據。
@@ -176,8 +179,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/cli.php | CLI處理文件。
 /vault/components.dat | 包含的相關信息關於CIDRAM的各種組件；它使用通過更新功能從前端。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，告訴它什麼做和怎麼正確地經營（重命名為激活）。
-/vault/config.yaml | 配置默認文件；包含CIDRAM的默認配置值。
 /vault/config.php | 配置處理文件。
+/vault/config.yaml | 配置默認文件；包含CIDRAM的默認配置值。
 /vault/frontend.php | 前端處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
@@ -189,6 +192,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/ipv6.dat | IPv6簽名文件。
 /vault/ipv6_custom.dat.RenameMe | IPv6定制簽名文件（重命名為激活）。
 /vault/lang.php | 語音數據。
+/vault/modules.dat | 包含的相關信息關於CIDRAM的模塊；它使用通過更新功能從前端。
 /vault/outgen.php | 輸出發生器。
 /vault/php5.4.x.php | Polyfill對於PHP 5.4.X （PHP 5.4.X 向下兼容需要它； 較新的版本可以刪除它）。
 /vault/recaptcha.php | reCAPTCHA模塊。
@@ -566,4 +570,4 @@ CIDRAM會阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2017年1月12日。
+最後更新：2017年1月18日。

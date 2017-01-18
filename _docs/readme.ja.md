@@ -151,6 +151,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.ja.cli.php | CLIの日本語言語データ。
 /vault/lang/lang.ja.fe.php | フロントエンドの日本語言語データ。
 /vault/lang/lang.ja.php | 日本語言語データ。
+/vault/lang/lang.ko.cli.php | CLIの韓国語言語データ。
+/vault/lang/lang.ko.fe.php | フロントエンドの韓国語言語データ。
+/vault/lang/lang.ko.php | 韓国語言語データ。
 /vault/lang/lang.nl.cli.php | CLIのオランダ語言語データ。
 /vault/lang/lang.nl.fe.php | フロントエンドのオランダ語言語データ。
 /vault/lang/lang.nl.php | オランダ語言語データ。
@@ -173,10 +176,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/cache.dat | キャッシュ・データ。
 /vault/cidramblocklists.dat | 国オプショナルブロックリスト情報が含まれています（国オプショナルブロックリストは、Macmathanからです）；アップデート機能で使用（フロントエンドが提供します）。
 /vault/cli.php | CLIハンドラ。
-/vault/components.dat | CIDRAMのコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
+/vault/components.dat | CIDRAMのコンポーネント情報が含まれています； アップデート機能で使用（フロントエンドが提供します）。
 /vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
-/vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/config.php | コンフィギュレーション・ハンドラ。
+/vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/frontend.php | フロントエンド・ハンドラ。
 /vault/functions.php | 機能ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
@@ -188,6 +191,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/ipv6.dat | IPv6のシグネチャファイル。
 /vault/ipv6_custom.dat.RenameMe | IPv6のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/lang.php | 言語・ハンドラ。
+/vault/modules.dat | CIDRAMのモジュール情報が含まれています； アップデート機能で使用（フロントエンドが提供します）。
 /vault/outgen.php | 出力発生器。
 /vault/php5.4.x.php | PHP 5.4.X ポリフィル （PHP 5.4.X の下位互換性のために必要です； より新しいPHPバージョンのために、削除しても安全です）。
 /vault/recaptcha.php | reCAPTCHAのモジュール。
@@ -307,7 +311,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - 違反はいつカウントされるべきですか？ False = IPがモジュールによってブロックされている場合。 True = なんでもの理由でIPがブロックされた場合。
 
 ####"recaptcha" （リーキャプチャ、カテゴリ）
-Optionally, you can provide users with a way to bypass the "アクセス拒否" page by way of completing a reCAPTCHA instance, if you want to do so. This can help to mitigate some of the risks associated with false positives in those situations where we're not entirely sure whether a request has originated from a machine or a human. @TranslateMe@
+ユーザーにとって、reCAPTCHAインスタンスを完成させることによって、「アクセス拒否」ページをバイパスする方法を提供することができます。 これは、偽陽性に関連するいくつかのリスクを緩和するのに役立ちます （要求が機械または人間から、生じたものであるかどうかは不明である場合）。
 
 Due to the risks associated with providing a way for end-users to bypass the "アクセス拒否" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
 
@@ -328,10 +332,10 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 - reCAPTCHAをユーザーにロックしますか？ False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
 
 "sitekey" （サイト・キー）
-- この値は、あなたのreCAPTCHAのための「site key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。
+- この値は、あなたのreCAPTCHAのための「site key」に対応している必要があり； これは、reCAPTCHAのダッシュボードの中に見つけることができます。
 
 "secret" （シークレット）
-- この値は、あなたのreCAPTCHAのための「secret key」に対応している必要があり；これは、reCAPTCHAのダッシュボードの中に見つけることができます。
+- この値は、あなたのreCAPTCHAのための「secret key」に対応している必要があり； これは、reCAPTCHAのダッシュボードの中に見つけることができます。
 
 "expiry"
 - When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
@@ -362,13 +366,13 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
 すべてのIPv4署名はこの形式に従います： `xxx.xxx.xxx.xxx/yy 「機能」 「パラメータ」`
-- `xxx.xxx.xxx.xxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block).
+- `xxx.xxx.xxx.xxx`は、CIDRブロックの先頭を表します（ブロックの最初のIPアドレスのオクテット）。
 - `yy`は、ブロックサイズを表します（１ー３２）。
 - `「機能」`は、スクリプトに署名の処理方法を指示します。
 - `「パラメータ」`は、`「機能」`で必要、な追加情報を表します。
 
 すべてのIPv6署名はこの形式に従います： `xxxx:xxxx:xxxx:xxxx::xxxx/yy 「機能」 「パラメータ」`
-- `xxxx:xxxx:xxxx:xxxx::xxxx` represents the beginning of the CIDR block (the octets of the initial IP address in the block). Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
+- `xxxx:xxxx:xxxx:xxxx::xxxx`は、CIDRブロックの先頭を表します（ブロックの最初のIPアドレスのオクテット）。 Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
 - `yy`は、ブロックサイズを表します（１ー１２８）。
 - `「機能」`は、スクリプトに署名の処理方法を指示します。
 - `「パラメータ」`は、`「機能」`で必要、な追加情報を表します。
@@ -549,11 +553,11 @@ Ignore セクション１
 
 ####「偽陽性」とは何ですか？
 
-用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、非常に簡単に説明し、一般化文脈で、は条件のテストするときに使用されます、結果の結果を参照するために、結果が「陽性」の場合（即ち、the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" （wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling 「オオカミ、オオカミ」）、 or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+一般化された文脈で簡単に説明、条件の状態をテストするときに、結果を参照する目的で、用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）の意味は、結果は「陽性」のようです、しかし結果は間違いです（即ち、真の条件は「陽性/真」とみなされます、しかしそれは本当に「陰性/偽」です）。 「偽陽性」は「泣く狼」に類似していると考えることができます（その状態は群の近くに狼がいるかどうかである、真の条件は「偽/陰性」です、群れの近くに狼がないからです、しかし条件は「真/陽性」として報告されます、羊飼いが「狼！狼！」を叫んだからです）、または、医療検査に類似、患者が誤って診断されたとき。
 
-いくつかの関連する用語は、「真陽性」、「真陰性」、と「偽陰性」です。「真陽性」 refers to when the test results and the actual state of the condition are both 真 (or 「陽性」), and a 「真陰性」 refers to when the test results and the actual state of the condition are both 偽 (or 「陰性」); A 「真陽性」 or a 「真陰性」 is considered to be a 「正しい推論」. The antithesis of a 「偽陽性」 is a 「偽陰性」; A 「偽陰性」 refers to when the test results are 陰性 （即ち、 the condition is determined to be 「陰性」、または、「偽」), but are expected to be (or should have been) 陽性 （即ち、 the condition, in reality, is 「陽性」、または、「真」）。
+いくつかの関連する用語は、「真陽性」、「真陰性」、と「偽陰性」です。 これらの用語が示す意味： 「真陽性」の意味は、テスト結果と真の条件が真です（即ち、「陽性」です）。 「真陰性」の意味は、テスト結果と真の条件が偽です（即ち、「陰性」です）。 「真陽性」と「真陰性」は「正しい推論」とみなされます。 「偽陽性」の反対は「偽陰性」です。 「偽陰性」の意味は、テスト結果が偽です（即ち、「陰性」です）、しかし、真の条件が本当に真です（即ち、「陽性」です）； 両方テスト結果と真の条件、が「真/陽性」すべきであるはずです。
 
-In the context of CIDRAM, these 用語 refer to the signatures of CIDRAM and what/whom they block. When CIDRAM blocks an IP address due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, 我々はこのイベント「偽陽性」のを呼び出します。 When CIDRAM fails to block an IP address that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, 我々はこのイベント「不在検出」のを呼び出します（「偽陰性」のアナログです）。
+CIDRAMの文脈で、これらの用語は、CIDRAMのシグネチャ（署名）とそれらがブロックするものを指します。 CIDRAMが誤ってIPアドレスをブロックすると（例えば、不正確な署名、時代遅れの署名などによる）、我々はこのイベント「偽陽性」のを呼び出します。 CIDRAMがIPアドレスをブロックできなかった場合（例えば、予期せぬ脅威、署名の欠落などによる）、我々はこのイベント「不在検出」のを呼び出します（「偽陰性」のアナログです）。
 
 これは、以下の表に要約することができます。
 
@@ -565,4 +569,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月12日。
+最終アップデート： 2017年1月18日。

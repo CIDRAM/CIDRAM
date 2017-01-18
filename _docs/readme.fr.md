@@ -89,17 +89,17 @@ Fichier | Description
 ----|----
 /_docs/ | Documentation répertoire (contient divers fichiers).
 /_docs/readme.ar.md | Documentation en Arabe.
-/_docs/readme.de.md | Documentation en Allemand.
+/_docs/readme.de.md | Documentation en Allemande.
 /_docs/readme.en.md | Documentation en Anglais.
 /_docs/readme.es.md | Documentation en Espagnol.
 /_docs/readme.fr.md | Documentation en Français.
-/_docs/readme.id.md | Documentation en Indonésien.
-/_docs/readme.it.md | Documentation en Italien.
+/_docs/readme.id.md | Documentation en Indonésienne.
+/_docs/readme.it.md | Documentation en Italienne.
 /_docs/readme.ja.md | Documentation en Japonaise.
-/_docs/readme.nl.md | Documentation en Néerlandais.
-/_docs/readme.pt.md | Documentation en Portugais.
+/_docs/readme.nl.md | Documentation en Néerlandaise.
+/_docs/readme.pt.md | Documentation en Portugaise.
 /_docs/readme.ru.md | Documentation en Russe.
-/_docs/readme.vi.md | Documentation en Vietnamien.
+/_docs/readme.vi.md | Documentation en Vietnamienne.
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
 /vault/ | Voûte répertoire (contient divers fichiers).
@@ -130,9 +130,9 @@ Fichier | Description
 /vault/lang/lang.ar.cli.php | Linguistiques données en Arabe pour CLI.
 /vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour le front-end.
 /vault/lang/lang.ar.php | Linguistiques données en Arabe.
-/vault/lang/lang.de.cli.php | Linguistiques données en Allemand pour CLI.
-/vault/lang/lang.de.fe.php | Linguistiques données en Allemand pour le front-end.
-/vault/lang/lang.de.php | Linguistiques données en Allemand.
+/vault/lang/lang.de.cli.php | Linguistiques données en Allemande pour CLI.
+/vault/lang/lang.de.fe.php | Linguistiques données en Allemande pour le front-end.
+/vault/lang/lang.de.php | Linguistiques données en Allemande.
 /vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
 /vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour le front-end.
 /vault/lang/lang.en.php | Linguistiques données en Anglais.
@@ -142,27 +142,30 @@ Fichier | Description
 /vault/lang/lang.fr.cli.php | Linguistiques données en Français pour CLI.
 /vault/lang/lang.fr.fe.php | Linguistiques données en Français pour le front-end.
 /vault/lang/lang.fr.php | Linguistiques données en Français.
-/vault/lang/lang.id.cli.php | Linguistiques données en Indonésien pour CLI.
-/vault/lang/lang.id.fe.php | Linguistiques données en Indonésien pour le front-end.
-/vault/lang/lang.id.php | Linguistiques données en Indonésien.
-/vault/lang/lang.it.cli.php | Linguistiques données en Italien pour CLI.
-/vault/lang/lang.it.fe.php | Linguistiques données en Italien pour le front-end.
-/vault/lang/lang.it.php | Linguistiques données en Italien.
-/vault/lang/lang.ja.cli.php | Linguistiques données en Japonais pour CLI.
-/vault/lang/lang.ja.fe.php | Linguistiques données en Japonais pour le front-end.
-/vault/lang/lang.ja.php | Linguistiques données en Japonais.
-/vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandais pour CLI.
-/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandais pour le front-end.
-/vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
-/vault/lang/lang.pt.cli.php | Linguistiques données en Portugais pour CLI.
-/vault/lang/lang.pt.fe.php | Linguistiques données en Portugais pour le front-end.
-/vault/lang/lang.pt.php | Linguistiques données en Portugais.
+/vault/lang/lang.id.cli.php | Linguistiques données en Indonésienne pour CLI.
+/vault/lang/lang.id.fe.php | Linguistiques données en Indonésienne pour le front-end.
+/vault/lang/lang.id.php | Linguistiques données en Indonésienne.
+/vault/lang/lang.it.cli.php | Linguistiques données en Italienne pour CLI.
+/vault/lang/lang.it.fe.php | Linguistiques données en Italienne pour le front-end.
+/vault/lang/lang.it.php | Linguistiques données en Italienne.
+/vault/lang/lang.ja.cli.php | Linguistiques données en Japonaise pour CLI.
+/vault/lang/lang.ja.fe.php | Linguistiques données en Japonaise pour le front-end.
+/vault/lang/lang.ja.php | Linguistiques données en Japonaise.
+/vault/lang/lang.ko.cli.php | Linguistiques données en Coréenne pour CLI.
+/vault/lang/lang.ko.fe.php | Linguistiques données en Coréenne pour le front-end.
+/vault/lang/lang.ko.php | Linguistiques données en Coréenne.
+/vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandaise pour CLI.
+/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandaise pour le front-end.
+/vault/lang/lang.nl.php | Linguistiques données en Néerlandaise.
+/vault/lang/lang.pt.cli.php | Linguistiques données en Portugaise pour CLI.
+/vault/lang/lang.pt.fe.php | Linguistiques données en Portugaise pour le front-end.
+/vault/lang/lang.pt.php | Linguistiques données en Portugaise.
 /vault/lang/lang.ru.cli.php | Linguistiques données en Russe pour CLI.
 /vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour le front-end.
 /vault/lang/lang.ru.php | Linguistiques données en Russe.
-/vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamien pour CLI.
-/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamien pour le front-end.
-/vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
+/vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamienne pour CLI.
+/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamienne pour le front-end.
+/vault/lang/lang.vi.php | Linguistiques données en Vietnamienne.
 /vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
 /vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour le front-end.
 /vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
@@ -175,8 +178,8 @@ Fichier | Description
 /vault/cli.php | Module de CLI.
 /vault/components.dat | Contient des informations relatives aux divers composants de CIDRAM; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour CIDRAM, pour comment fonctionner correctement (renommer pour activer).
-/vault/config.yaml | Fichier pour les valeurs par défaut de la configuration; Contient les valeurs par défaut de la configuration pour CIDRAM.
 /vault/config.php | Module de configuration.
+/vault/config.yaml | Fichier pour les valeurs par défaut de la configuration; Contient les valeurs par défaut de la configuration pour CIDRAM.
 /vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/hashes.dat | Contient une liste de hashes acceptées (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
@@ -188,6 +191,7 @@ Fichier | Description
 /vault/ipv6.dat | Fichier de signatures pour IPv6.
 /vault/ipv6_custom.dat.RenameMe | Fichier de signatures pour IPv6 personnalisés (renommer pour activer).
 /vault/lang.php | Module de linguistiques.
+/vault/modules.dat | Contient des informations relatives aux modules de CIDRAM; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/outgen.php | Générateur de sortie.
 /vault/php5.4.x.php | Polyfills pour PHP 5.4.X (Requis pour la compatibilité descendante de PHP 5.4.X; safe à supprimer pour les versions plus récentes de PHP).
 /vault/recaptcha.php | Module reCAPTCHA.
@@ -565,4 +569,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 12 Janvier 2016 (2017.01.12).
+Dernière Mise à Jour: 18 Janvier 2016 (2017.01.18).

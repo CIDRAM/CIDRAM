@@ -153,6 +153,9 @@ Datei | Beschreibung
 /vault/lang/lang.ja.cli.php | Japanische Sprachdateien für CLI.
 /vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Front-End.
 /vault/lang/lang.ja.php | Japanische Sprachdateien.
+/vault/lang/lang.ko.cli.php | Koreanische Sprachdateien für CLI.
+/vault/lang/lang.ko.fe.php | Koreanische Sprachdateien für das Front-End.
+/vault/lang/lang.ko.php | Koreanische Sprachdateien.
 /vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
 /vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Front-End.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
@@ -177,8 +180,8 @@ Datei | Beschreibung
 /vault/cli.php | CLI-Handler.
 /vault/components.dat | Enthält Informationen zu den verschiedenen Komponenten für CIDRAM; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von CIDRAM (umbenennen zu aktivieren).
-/vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für CIDRAM.
 /vault/config.php | Konfiguration-Handler.
+/vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für CIDRAM.
 /vault/frontend.php | Front-End-Handler.
 /vault/functions.php | Funktionen-Datei.
 /vault/hashes.dat | Enthält eine Liste der akzeptierten Hashes (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
@@ -190,6 +193,7 @@ Datei | Beschreibung
 /vault/ipv6.dat | IPv6 Signaturdatei.
 /vault/ipv6_custom.dat.RenameMe | IPv6 benutzerdefinierte Signaturdatei (umbenennen zu aktivieren).
 /vault/lang.php | Sprachdateien.
+/vault/modules.dat | Enthält Informationen zu den verschiedene Module für CIDRAM; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/outgen.php | Ausgabe-Generator.
 /vault/php5.4.x.php | Polyfills für PHP 5.4.X (erforderlich für Abwärtskompatibilität mit PHP 5.4.X; sicher zu löschen für neuere PHP-Versionen).
 /vault/recaptcha.php | reCAPTCHA-Modul.
@@ -567,4 +571,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 12 Januar 2016 (2017.01.12).
+Zuletzt aktualisiert: 18 Januar 2016 (2017.01.18).

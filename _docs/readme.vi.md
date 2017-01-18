@@ -151,6 +151,9 @@ Tập tin | Chi tiết
 /vault/lang/lang.ja.cli.php | Dữ liệu tiếng Nhật cho CLI.
 /vault/lang/lang.ja.fe.php | Dữ liệu tiếng Nhật cho các front-end.
 /vault/lang/lang.ja.php | Dữ liệu tiếng Nhật.
+/vault/lang/lang.ko.cli.php | Dữ liệu tiếng Hàn cho CLI.
+/vault/lang/lang.ko.fe.php | Dữ liệu tiếng Hàn cho các front-end.
+/vault/lang/lang.ko.php | Dữ liệu tiếng Hàn.
 /vault/lang/lang.nl.cli.php | Dữ liệu tiếng Hà Lan cho CLI.
 /vault/lang/lang.nl.fe.php | Dữ liệu tiếng Hà Lan cho các front-end.
 /vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
@@ -175,8 +178,8 @@ Tập tin | Chi tiết
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
-/vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho CIDRAM.
 /vault/config.php | Tập tin cho xử lý cấu hình.
+/vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho CIDRAM.
 /vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/hashes.dat | Danh sách các giá trị băm được chấp nhận (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
@@ -188,6 +191,7 @@ Tập tin | Chi tiết
 /vault/ipv6.dat | Tập tin chữ ký IPv6.
 /vault/ipv6_custom.dat.RenameMe | Tập tin chữ ký IPv6 tùy chỉnh (đổi tên để kích hoạt).
 /vault/lang.php | Dữ liệu tiếng.
+/vault/modules.dat | Chứa thông tin liên quan đến các mô-đun khác nhau cho CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/outgen.php | Máy phát đầu ra.
 /vault/php5.4.x.php | Polyfills cho PHP 5.4.X (cần cho khả năng tương thích ngược PHP 5.4.X; an toàn để xóa cho các phiên bản PHP mới hơn).
 /vault/recaptcha.php | reCAPTCHA mô-đun.
@@ -565,4 +569,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 12 Tháng Giêng 2017 (2017.01.12).
+Lần cuối cập nhật: 18 Tháng Giêng 2017 (2017.01.18).

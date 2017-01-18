@@ -151,6 +151,9 @@ File | Description
 /vault/lang/lang.ja.cli.php | Japanese language data for CLI.
 /vault/lang/lang.ja.fe.php | Japanese language data for the front-end.
 /vault/lang/lang.ja.php | Japanese language data.
+/vault/lang/lang.ko.cli.php | Korean language data for CLI.
+/vault/lang/lang.ko.fe.php | Korean language data for the front-end.
+/vault/lang/lang.ko.php | Korean language data.
 /vault/lang/lang.nl.cli.php | Dutch language data for CLI.
 /vault/lang/lang.nl.fe.php | Dutch language data for the front-end.
 /vault/lang/lang.nl.php | Dutch language data.
@@ -175,8 +178,8 @@ File | Description
 /vault/cli.php | CLI handler.
 /vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
-/vault/config.yaml | Configuration defaults file; Contains default configuration values for CIDRAM.
 /vault/config.php | Configuration handler.
+/vault/config.yaml | Configuration defaults file; Contains default configuration values for CIDRAM.
 /vault/frontend.php | Front-end handler.
 /vault/functions.php | Functions file (essential).
 /vault/hashes.dat | Contains a list of accepted hashes (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
@@ -188,6 +191,7 @@ File | Description
 /vault/ipv6.dat | IPv6 signatures file.
 /vault/ipv6_custom.dat.RenameMe | IPv6 custom signatures file (rename to activate).
 /vault/lang.php | Language handler.
+/vault/modules.dat | Contains information relating to the CIDRAM modules; Used by the updates feature provided by the front-end.
 /vault/outgen.php | Output generator.
 /vault/php5.4.x.php | Polyfills for PHP 5.4.X (required for PHP 5.4.X backwards compatibility; safe to delete for newer PHP versions).
 /vault/recaptcha.php | reCAPTCHA module.
@@ -565,4 +569,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 12 January 2016 (2017.01.12).
+Last Updated: 18 January 2016 (2017.01.18).

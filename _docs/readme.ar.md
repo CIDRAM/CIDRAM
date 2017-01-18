@@ -153,6 +153,9 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl" style="display:inline;">ملفات اللغة اليابانية لCLI.</div> | /vault/lang/lang.ja.cli.php
 <div dir="rtl" style="display:inline;">ملفات اللغة اليابانية لfront-end.</div> | /vault/lang/lang.ja.fe.php
 <div dir="rtl" style="display:inline;">ملفات اللغة اليابانية.</div> | /vault/lang/lang.ja.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الكورية لCLI.</div> | /vault/lang/lang.ko.cli.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الكورية لfront-end.</div> | /vault/lang/lang.ko.fe.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الكورية.</div> | /vault/lang/lang.ko.php
 <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لCLI.</div> | /vault/lang/lang.nl.cli.php
 <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لfront-end.</div> | /vault/lang/lang.nl.fe.php
 <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.php
@@ -175,10 +178,10 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl" style="display:inline;">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
 <div dir="rtl" style="display:inline;">يحتوي على معلومات تتعلق اختياري قائمة منع بلدان التي تقدمها Macmathan؛ المستخدمة من ميزة التحديثات التي تقدمها لCIDRAM.</div> | /vault/cidramblocklists.dat
 <div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
-<div dir="rtl" style="display:inline;">يحتوي على معلومات المتعلقة الوحدة المختلفة لCIDRAM؛ المستخدمة من ميزة التحديثات التي تقدمها لCIDRAM.</div> | /vault/components.dat
+<div dir="rtl" style="display:inline;">يحتوي على معلومات تتعلق حدات CIDRAM؛ المستخدمة من ميزة التحديثات التي تقدمها لCIDRAM.</div> | /vault/components.dat
 <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة CIDRAM، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
-<div dir="rtl" style="display:inline;">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لCIDRAM.</div> | /vault/config.yaml
 <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
+<div dir="rtl" style="display:inline;">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لCIDRAM.</div> | /vault/config.yaml
 <div dir="rtl" style="display:inline;">معالج front-end.</div> | /vault/frontend.php
 <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
 <div dir="rtl" style="display:inline;">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
@@ -190,6 +193,7 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات.</div> | /vault/ipv6.dat
 <div dir="rtl" style="display:inline;">عناوين IPv6 ملف التوقيعات المخصصة (إعادة تسمية لتفعيل).</div> | /vault/ipv6_custom.dat.RenameMe
 <div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
+<div dir="rtl" style="display:inline;">يحتوي على معلومات تتعلق حدات CIDRAM؛ المستخدمة من ميزة التحديثات التي تقدمها لCIDRAM.</div> | /vault/modules.dat
 <div dir="rtl" style="display:inline;">الناتج معالج.</div> | /vault/outgen.php
 <div dir="rtl" style="display:inline;">Polyfills لPHP 5.4.X (اللازمة لالتوافق PHP 5.4.X؛ لإصدارات أحدث PHP، آمنة للحذف).</div> | /vault/php5.4.x.php
 <div dir="rtl" style="display:inline;">وحدة reCAPTCHA.</div> | /vault/recaptcha.php
@@ -306,9 +310,6 @@ Updating is done manually, and you can customise your configuration and customis
 <div dir="rtl"><ul>
  <li>ملقم DNS الافتراضي لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = 8.8.8.8 (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
-
-"default_dns"
-- Default DNS server to use for hostname lookups. Default = 8.8.8.8 (Google DNS). WARNING: Don't change this unless you know what you're doing!
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
@@ -640,4 +641,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 12 يناير 2016 (2017.01.12).</div>
+<div dir="rtl">آخر تحديث: 18 يناير 2016 (2017.01.18).</div>

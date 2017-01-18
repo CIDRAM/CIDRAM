@@ -151,6 +151,9 @@ Arquivo | Descrição
 /vault/lang/lang.ja.cli.php | Linguagem dados Japonês para CLI.
 /vault/lang/lang.ja.fe.php | Linguagem dados Japonês para o front-end.
 /vault/lang/lang.ja.php | Linguagem dados Japonês.
+/vault/lang/lang.ko.cli.php | Linguagem dados Coreano para CLI.
+/vault/lang/lang.ko.fe.php | Linguagem dados Coreano para o front-end.
+/vault/lang/lang.ko.php | Linguagem dados Coreano.
 /vault/lang/lang.nl.cli.php | Linguagem dados Holandês para CLI.
 /vault/lang/lang.nl.fe.php | Linguagem dados Holandês para o front-end.
 /vault/lang/lang.nl.php | Linguagem dados Holandês.
@@ -173,10 +176,10 @@ Arquivo | Descrição
 /vault/cache.dat | Dados de cache.
 /vault/cidramblocklists.dat | Contém informações relativas às listas opcionais para bloqueando países fornecido por Macmathan; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/cli.php | Módulo de CLI.
-/vault/components.dat | Contém informações relativas aos vários componentes do CIDRAM; Usado pelo recurso atualizações fornecidas pelo front-end.
+/vault/components.dat | Contém informações relativas aos vários componentes de CIDRAM; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para CIDRAM, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
-/vault/config.yaml | Arquivo de valores padrão para a configuração; Contém valores padrão para a configuração de CIDRAM.
 /vault/config.php | Módulo de configuração.
+/vault/config.yaml | Arquivo de valores padrão para a configuração; Contém valores padrão para a configuração de CIDRAM.
 /vault/frontend.php | Módulo do front-end.
 /vault/functions.php | Arquivo de funções.
 /vault/hashes.dat | Contém uma lista de hashes aceitos (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
@@ -188,6 +191,7 @@ Arquivo | Descrição
 /vault/ipv6.dat | Arquivo de assinaturas para IPv6.
 /vault/ipv6_custom.dat.RenameMe | Arquivo de assinaturas personalizadas para IPv6 (renomear para ativar).
 /vault/lang.php | Linguagem dados.
+/vault/modules.dat | Contém informações relativas os vários módulos para CIDRAM; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/outgen.php | Gerador de saída.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necessário para compatibilidade reversa com PHP 5.4.X; seguro para deletar por versões de PHP mais recentes).
 /vault/recaptcha.php | Módulo reCAPTCHA.
@@ -565,4 +569,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 12 Janeiro 2016 (2017.01.12).
+Última Atualização: 18 Janeiro 2016 (2017.01.18).

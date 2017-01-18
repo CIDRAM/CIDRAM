@@ -151,6 +151,9 @@ Bestand | Beschrijving
 /vault/lang/lang.ja.cli.php | Japanse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.ja.fe.php | Japanse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
+/vault/lang/lang.ko.cli.php | Koreaanse taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ko.fe.php | Koreaanse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.ko.php | Koreaanse taaldata/taalgegevens.
 /vault/lang/lang.nl.cli.php | Nederlandse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.nl.fe.php | Nederlandse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
@@ -173,10 +176,10 @@ Bestand | Beschrijving
 /vault/cache.dat | Cache data/gegevens.
 /vault/cidramblocklists.dat | Bevat informatie met betrekking tot de optionele land blocklists door Macmathan; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/cli.php | CLI-handler.
-/vault/components.dat | Bevat informatie over de verschillende bestanddelen van CIDRAM; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/components.dat | Bevat informatie met betrekking tot de verschillende CIDRAM componenten; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
-/vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de CIDRAM configuratie.
 /vault/config.php | Configuratie-handler.
+/vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de CIDRAM configuratie.
 /vault/frontend.php | Frontend-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
@@ -188,6 +191,7 @@ Bestand | Beschrijving
 /vault/ipv6.dat | IPv6 handtekeningen bestand.
 /vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste handtekeningen bestand (hernoemen om te activeren).
 /vault/lang.php | Taal-handler.
+/vault/modules.dat | Bevat informatie met betrekking tot de CIDRAM modules; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/outgen.php | Uitvoer generator.
 /vault/php5.4.x.php | Polyfills voor PHP 5.4.X (nodig voor PHP 5.4.X achterwaartse compatibiliteit; veilig te verwijderen voor nieuwere PHP-versies).
 /vault/recaptcha.php | reCAPTCHA module.
@@ -565,4 +569,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 12 Januari 2016 (2017.01.12).
+Laatste Bijgewerkt: 18 Januari 2016 (2017.01.18).

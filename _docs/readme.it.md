@@ -151,6 +151,9 @@ File | Descrizione
 /vault/lang/lang.ja.cli.php | Linguistici dati Giapponese per CLI.
 /vault/lang/lang.ja.fe.php | Linguistici dati Giapponese per il front-end.
 /vault/lang/lang.ja.php | Linguistici dati Giapponese.
+/vault/lang/lang.ko.cli.php | Linguistici dati Coreana per CLI.
+/vault/lang/lang.ko.fe.php | Linguistici dati Coreana per il front-end.
+/vault/lang/lang.ko.php | Linguistici dati Coreana.
 /vault/lang/lang.nl.cli.php | Linguistici dati Olandese per CLI.
 /vault/lang/lang.nl.fe.php | Linguistici dati Olandese per il front-end.
 /vault/lang/lang.nl.php | Linguistici dati Olandese.
@@ -175,8 +178,8 @@ File | Descrizione
 /vault/cli.php | Gestore di CLI.
 /vault/components.dat | Contiene informazioni relative ai vari componenti di CIDRAM; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/config.ini.RenameMe | File di configurazione; Contiene tutte l'opzioni di configurazione per CIDRAM, dicendogli cosa fare e come operare correttamente (rinomina per attivare).
-/vault/config.yaml | File di valori predefiniti per la configurazione; Contiene valori predefiniti per la configurazione di CIDRAM.
 /vault/config.php | Gestore di configurazione.
+/vault/config.yaml | File di valori predefiniti per la configurazione; Contiene valori predefiniti per la configurazione di CIDRAM.
 /vault/frontend.php | Gestore del front-end.
 /vault/functions.php | File di funzioni.
 /vault/hashes.dat | Contiene una lista di hash accettati (pertinente alla funzione di reCAPTCHA; solo generato se la funzione di reCAPTCHA è abilitato).
@@ -188,6 +191,7 @@ File | Descrizione
 /vault/ipv6.dat | File di firme per IPv6.
 /vault/ipv6_custom.dat.RenameMe | File di firme per IPv6 personalizzato (rinomina per attivare).
 /vault/lang.php | Linguistici dati.
+/vault/modules.dat | Contiene informazioni relative ai vari moduli per CIDRAM; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/outgen.php | Generatore di output.
 /vault/php5.4.x.php | Polyfills per PHP 5.4.X (necessaria per la retrocompatibilità di PHP 5.4.X; è sicuro di cancellare per le versioni più recenti di PHP).
 /vault/recaptcha.php | Modulo reCAPTCHA.
@@ -565,4 +569,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 12 Gennaio 2016 (2017.01.12).
+Ultimo Aggiornamento: 18 Gennaio 2016 (2017.01.18).

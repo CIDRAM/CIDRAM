@@ -151,6 +151,9 @@ Archivo | Descripción
 /vault/lang/lang.ja.cli.php | Lingüísticos datos Japonés para CLI.
 /vault/lang/lang.ja.fe.php | Lingüísticos datos Japonés para el front-end.
 /vault/lang/lang.ja.php | Lingüísticos datos Japonés.
+/vault/lang/lang.ko.cli.php | Lingüísticos datos Koreano para CLI.
+/vault/lang/lang.ko.fe.php | Lingüísticos datos Koreano para el front-end.
+/vault/lang/lang.ko.php | Lingüísticos datos Koreano.
 /vault/lang/lang.nl.cli.php | Lingüísticos datos Holandés para CLI.
 /vault/lang/lang.nl.fe.php | Lingüísticos datos Holandés para el front-end.
 /vault/lang/lang.nl.php | Lingüísticos datos Holandés.
@@ -175,8 +178,8 @@ Archivo | Descripción
 /vault/cli.php | Módulo de la CLI.
 /vault/components.dat | Contiene información relativa a los diversos componentes de CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
-/vault/config.yaml | Archivo de valores predefinidos para la configuración; Contiene valores predefinidos para la configuración de CIDRAM.
 /vault/config.php | Módulo de configuración.
+/vault/config.yaml | Archivo de valores predefinidos para la configuración; Contiene valores predefinidos para la configuración de CIDRAM.
 /vault/frontend.php | Módulo del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/hashes.dat | Contiene una lista de hashes aceptadas (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
@@ -188,6 +191,7 @@ Archivo | Descripción
 /vault/ipv6.dat | Archivo de firmas por IPv6.
 /vault/ipv6_custom.dat.RenameMe | Archivo de firmas por IPv6 personalizado (cambiar el nombre para activar).
 /vault/lang.php | Lingüísticos datos.
+/vault/modules.dat | Contiene información relativa a los diversos módulos para CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/outgen.php | Generador de salida.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necesario para la retrocompatibilidad de PHP 5.4.X; seguro para eliminar por versiones más recientes de PHP).
 /vault/recaptcha.php | Módulo de reCAPTCHA.
@@ -565,4 +569,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 12 Enero 2016 (2017.01.12).
+Última Actualización: 18 Enero 2016 (2017.01.18).

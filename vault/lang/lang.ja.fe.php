@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.01.12).
+ * This file: Japanese language data for the front-end (last modified: 2017.01.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？ 上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。 ２００ = 上書きしない「Default（デフォルルト）」； ４０３ = 「403 Forbidden」で上書きする； ５０３ = 「503 Service unavailable」で上書きする。';
-$CIDRAM['lang']['config_general_default_dns'] = 'ホスト名ルックアップに使用される、デフォルトのDNS（ドメイン・ネーム・システム）サーバー。 Default（デフォルルト） = 8.8.8.8 「Google DNS」。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
+$CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、DNS（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。 Default（デフォルルト） = "8.8.8.8,8.8.4.4" 「Google DNS」。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLIモードを無効にするか？';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
 $CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのEメールアドレス。';

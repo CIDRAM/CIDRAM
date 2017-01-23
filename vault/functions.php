@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.16).
+ * This file: Functions file (last modified: 2017.01.23).
  */
 
 /**
@@ -956,12 +956,12 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
  * Performs reverse DNS lookups for IPv4 IP addresses, to resolve their
  * hostnames. This is functionally equivalent to the in-built PHP function
  * "gethostbyaddr", but with the added benefits of being able to specify which
- * DNS server to use for lookups and of being able to enforce timeout limits,
+ * DNS servers to use for lookups, and of being able to enforce timeout limits,
  * which should help to avoid some of the problems normally associated with
  * using "gethostbyaddr".
  *
  * @param string $Addr The IPv4 IP address to look up.
- * @param string $DNS The DNS server to use (optional; defaults to 8.8.8.8).
+ * @param string $DNS An optional, comma delimited list of DNS servers to use.
  * @param string $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The hostname on success, or the IP address on failure.
  */
@@ -978,6 +978,7 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
     if (!$DNS) {
         $DNS = $CIDRAM['Config']['general']['default_dns'];
     }
+    $DNS = explode(',', $DNS);
 
     $LeftPad = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
     if (preg_match(
@@ -994,11 +995,13 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
     } else {
         return '';
     }
-    $Handle = fsockopen('udp://' . $DNS, 53);
-    fwrite($Handle, $LeftPad . $Lookup);
-    stream_set_timeout($Handle, $Timeout);
-    $Response = fread($Handle, 1024);
-    fclose($Handle);
+    while (empty($Response) && ($Server = each($DNS)) !== false) {
+        $Handle = fsockopen('udp://' . $Server[1], 53);
+        fwrite($Handle, $LeftPad . $Lookup);
+        stream_set_timeout($Handle, $Timeout);
+        $Response = fread($Handle, 1024);
+        fclose($Handle);
+    }
     if (empty($Response)) {
         return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = $Addr;
     }

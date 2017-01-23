@@ -308,7 +308,7 @@ Updating is done manually, and you can customise your configuration and customis
 
 <div dir="rtl">"default_dns"<br /></div>
 <div dir="rtl"><ul>
- <li>ملقم DNS الافتراضي لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = 8.8.8.8 (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
+ <li>قائمة بفواصل من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = "8.8.8.8,8.8.4.4" (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
@@ -641,4 +641,4 @@ Ignore القسم 1
 ---
 
 
-<div dir="rtl">آخر تحديث: 18 يناير 2016 (2017.01.18).</div>
+<div dir="rtl">آخر تحديث: 23 يناير 2016 (2017.01.23).</div>

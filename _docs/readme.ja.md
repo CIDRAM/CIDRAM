@@ -30,7 +30,7 @@ CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利につ�
 ---
 
 
-###2A. <a name="SECTION2A"></a>インストール方法（ウェブサーバー編）
+###2. <a name="SECTION2"></a>インストール方法
 
 近い将来にはインストーラーを作成しインストールの簡素化を図りたいと考えていますが、現状では以下のインストラクションに従ってCIDRAMをインストールして下さい。少数の例外はあるものの、大多数*のシステムおよびCMSで機能します。
 
@@ -272,7 +272,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - 禁止されたIPからブロックされた要求をログファイルに含めますか？ True = はい 「Default（デフォルルト）」； False = いいえ。
 
 "default_dns" （ディフォールト・ディーエンエス）
-- ホスト名ルックアップに使用される、デフォルトのDNS（ドメイン・ネーム・システム）サーバー。 Default（デフォルルト） = 8.8.8.8 「Google DNS」。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。
+- ホスト名検索に使用する、DNS（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。 Default（デフォルルト） = "8.8.8.8,8.8.4.4" 「Google DNS」。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。
 
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
@@ -313,23 +313,23 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ####"recaptcha" （リーキャプチャ、カテゴリ）
 ユーザーにとって、reCAPTCHAインスタンスを完成させることによって、「アクセス拒否」ページをバイパスする方法を提供することができます。 これは、偽陽性に関連するいくつかのリスクを緩和するのに役立ちます （要求が機械または人間から、生じたものであるかどうかは不明である場合）。
 
-Due to the risks associated with providing a way for end-users to bypass the "アクセス拒否" page, generally, I would advise against enabling this feature unless you feel it to be necessary to do so. Situations where it could be necessary: If your website has customers/users that need to have access to your website, and if this is something that can't be compromised on, but if those customers/users happen to be connecting from a hostile network that could potentially also be carrying undesirable traffic, and blocking this undesirable traffic is also something that can't be compromised on, in those particular no-win situations, the reCAPTCHA feature could come in handy as a means of allowing the desirable customers/users, while keeping out the undesirable traffic from the same network. That said though, given that the intended purpose of a CAPTCHA is to distinguish between humans and non-humans, the reCAPTCHA feature would only assist in these no-win situations if we're to assume that this undesirable traffic is non-human (eg, spambots, scrapers, hacktools, automated traffic), as opposed to being undesirable human traffic (such as human spammers, hackers, et al). @TranslateMe@
+「アクセス拒否」ページをバイパスすることに伴うリスクがあります。 このため、一般的に、必要な場合を除いて、この機能を有効にすることはお勧めしません。 それが必要な状況： ユーザーはあなたのウェブサイトにアクセスする必要があります、しかし、彼らは敵対的なネットワークから接続しています、そして、これは交渉できません； ユーザーはアクセスが必要です、敵対的なネットワークを拒絶する必要がある（何をすべきか？！）。。 このような状況では、reCAPTCHA機能が役立つ可能性があります： ユーザーはアクセス権を持つことができます； 不要なトラフィックをフィルタリングすることができます（一般的に）。 人間以外のトラフィックに対しても有効です（例えば、スパムロボット、スクレーパー、ハックツール、自動交通、など）、しかし、人間のトラフィックにあまり役に立たない（例えば、人間のスパマー、ハッカー、その他）。
 
 「site key」および「secret key」を得るために（reCAPTCHAのを使用するために必要）、このリンクをクリックしてください： [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode" （ユース・モード）
 - reCAPTCHAをCIDRAMで使用する方法。
-- 0 = reCAPTCHAは、無効になっています「Default（デフォルルト）」。
-- 1 = reCAPTCHAは、すべてのために署名が有効になっています。
-- 2 = reCAPTCHA is enabled only for signatures belonging to sections specially marked as reCAPTCHA-enabled within the signature files.
-- (Any other value will be treated in the same way as 0). @TranslateMe@
+- ０ = reCAPTCHAは、無効になっています「Default（デフォルルト）」。
+- １ = reCAPTCHAは、すべてのために署名が有効になっています。
+- ２ = 特別にマークされたセクションの場合のみ、reCAPTCHAが有効になります。
+- （それ以外の値は０と等価です）。
 
 "lockip" （ロックIP）
-- reCAPTCHAをIPにロックしますか？ False = Cookies and hashes CAN be used across multiple IPs (default). True = Cookies and hashes CAN'T be used across multiple IPs (cookies/hashes are locked to IPs). @TranslateMe@
-- 注意："lockip" value is ignored when "lockuser" is false, due to that the mechanism for remembering "users" differs depending on this value. @TranslateMe@
+- reCAPTCHAをIPにロックしますか？ False = クッキーとハッシュは複数のIPで使用できます「Default（デフォルルト）」。 True = クッキーとハッシュは複数のIPで使用できません（クッキーとハッシュはIPにロックされています）。
+- 注意： 「lockuser」が「false」の場合、「lockip」の値は無視されます。 これは、ユーザーを覚えておくメカニズムがこの値に依存するためです。
 
 "lockuser" （ロック・ユーザー）
-- reCAPTCHAをユーザーにロックしますか？ False = Successful completion of a reCAPTCHA instance will grant access to all requests originating from the same IP as that used by the user completing the reCAPTCHA instance; Cookies and hashes aren't used; Instead, an IP whitelist will be used. True = Successful completion of a reCAPTCHA instance will only grant access to the user completing the reCAPTCHA instance; Cookies and hashes are used to remember the user; An IP whitelist is not used (default). @TranslateMe@
+- reCAPTCHAをユーザーにロックしますか？ False = reCAPTCHAの完了により、責任あるIP（注：ユーザーではない）から発信されたすべてのリクエストへのアクセスが許可されます； クッキーとハッシュは使用されていません； IPホワイトリストが使用されます。 True = reCAPTCHAの完了により、責任あるユーザー（注：IPではない）から発信されたすべてのリクエストへのアクセスが許可されます； クッキーとハッシュはユーザーを思い出すために使用されます； IPホワイトリストは使用されません「Default（デフォルルト）」。
 
 "sitekey" （サイト・キー）
 - この値は、あなたのreCAPTCHAのための「site key」に対応している必要があり； これは、reCAPTCHAのダッシュボードの中に見つけることができます。
@@ -337,7 +337,7 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 "secret" （シークレット）
 - この値は、あなたのreCAPTCHAのための「secret key」に対応している必要があり； これは、reCAPTCHAのダッシュボードの中に見つけることができます。
 
-"expiry"
+"expiry" （シークレット）
 - When "lockuser" is true (default), in order to remember when a user has successfully passed a reCAPTCHA instance, for future page requests, CIDRAM generates a standard HTTP cookie containing a hash which corresponds to an internal record containing that same hash; Future page requests will use these corresponding hashes to authenticate that a user has previously already passed a reCAPTCHA instance. When "lockuser" is false, an IP whitelist is used to determine whether requests should be permitted from the IP of inbound requests; Entries are added to this whitelist when the reCAPTCHA instance is successfully passed. For how many hours should these cookies, hashes and whitelist entries remain valid? Default = 720 (1 month). @TranslateMe@
 
 "logfile" （ログ・ファイル）
@@ -363,7 +363,7 @@ Due to the risks associated with providing a way for end-users to bypass the "�
 
 ####7.0 基本原則
 
-A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
+CIDRAMで使用されるシグネチャ（署名）の形式と構造の説明は、カスタム・シグネチャ・ファイル内に記載されています。 詳細については、ドキュメントを参照してください。
 
 すべてのIPv4署名はこの形式に従います： `xxx.xxx.xxx.xxx/yy 「機能」 「パラメータ」`
 - `xxx.xxx.xxx.xxx`は、CIDRブロックの先頭を表します（ブロックの最初のIPアドレスのオクテット）。
@@ -372,14 +372,14 @@ A description of the format and structure of the signatures used by CIDRAM can b
 - `「パラメータ」`は、`「機能」`で必要、な追加情報を表します。
 
 すべてのIPv6署名はこの形式に従います： `xxxx:xxxx:xxxx:xxxx::xxxx/yy 「機能」 「パラメータ」`
-- `xxxx:xxxx:xxxx:xxxx::xxxx`は、CIDRブロックの先頭を表します（ブロックの最初のIPアドレスのオクテット）。 Complete notation and abbreviated notation are both acceptable (and each MUST follow the appropriate and relevant standards of IPv6 notation, but with one exception: an IPv6 address can never begin with an abbreviation when used in a signature for this script, due to the way in which CIDRs are reconstructed by the script; For example, `::1/128` should be expressed, when used in a signature, as `0::1/128`, and `::0/128` expressed as `0::/128`).
+- `xxxx:xxxx:xxxx:xxxx::xxxx`は、CIDRブロックの先頭を表します（ブロックの最初のIPアドレスのオクテット）。 完全表記と省略表記の両方が可能です。 彼らはIPv6仕様に準拠する必要があります、1つの例外を除いて： CIDRAMでは、IPv6アドレスは省略で始めることはできません。 例えば： `::1/128`は`0::1/128`、そして`::0/128`は`0::/128`と表す必要があります。
 - `yy`は、ブロックサイズを表します（１ー１２８）。
 - `「機能」`は、スクリプトに署名の処理方法を指示します。
 - `「パラメータ」`は、`「機能」`で必要、な追加情報を表します。
 
-The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks (eg, Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
+署名ファイルの改行はUnix標準を使用すべきです （`%0A`、`\n`）。 他の標準も使用できますが、推奨されません （例えば、Windowsの`%0D%0A`、`\r\n`、Macの`%0D`、`\r`、等）。 非UNIX改行は正規化されます。
 
-Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally, all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block division represented by its CIDR block size (eg, if you wanted to block all IPs from `10.128.0.0` to `11.127.255.255`, `10.128.0.0/8` would NOT be recognised by the script, but `10.128.0.0/9` and `11.0.0.0/9` used in conjunction, WOULD be recognised by the script).
+正確で正しいCIDR表記が必要です。 スクリプトは、不正確な表記（または、不正確な表記を伴う署名）を認識しません。 さらに、すべてのCIDRは、均等に割り切れる必要があります（例えば、`10.128.0.0`から`11.127.255.255`までのすべてをブロックしたい場合、`10.128.0.0/8`はスクリプトによって認識されません、しかし、`10.128.0.0/9`と`11.0.0.0/9`を組み合わせて使用するとは、スクリプトによって認識されます）。
 
 Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
@@ -389,21 +389,21 @@ Anything in the signature files not recognised as a signature nor as signature-r
 - Greylist
 - Deny
 
-If "Run" is used, when the signature is triggered, the script will attempt to execute (using a `require_once` statement) an external PHP script, specified by the `「パラメータ」` value (the working directory should be the "/vault/" directory of the script).
+「Run」を使用すると、署名がトリガーされると、スクリプトは`require_once`ステートメントによって（`「パラメータ」`値で指定されます）外部のPHPスクリプトの実行を試みます。 作業ディレクトリは「`/vault/`」ディレクトリです。
 
 例： `127.0.0.0/8 Run example.php`
 
 This can be useful if you want to execute some specific PHP code for some specific IPs and/or CIDRs.
 
-If "Whitelist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and break the test function. `「パラメータ」` is ignored. This function is the equivalent of whitelisting a particular IP or CIDR from being detected.
+「Whitelist」を使用すると、署名がトリガーされると、スクリプトはすべての検出をリセットします（何かの検出があった場合）、テスト機能を終了します。 `「パラメータ」`は無視されます。 これは、IPまたはCIDRをホワイトリストに登録するのと同じです。
 
 例： `127.0.0.1/32 Whitelist`
 
-If "Greylist" is used, when the signature is triggered, the script will reset all detections (if there's been any detections) and skip to the next signature file to continue processing. `「パラメータ」` is ignored.
+「Greylist」を使用すると、署名がトリガーされると、スクリプトはすべての検出をリセットします（何かの検出があった場合）、処理を続行するために次の署名ファイルにスキップする。 `「パラメータ」`は無視されます。
 
 例： `127.0.0.1/32 Greylist`
 
-If "Deny" is used, when the signature is triggered, assuming no whitelist signature has been triggered for the given IP address and/or given CIDR, access to the protected page will be denied. "Deny" is what you'll want to use to actually block an IP address and/or CIDR range. When any signatures are triggered that make use of "Deny", the "Access Denied" page of the script will be generated and the request to the protected page killed.
+「Deny」を使用すると、署名がトリガーされると、保護されたページへのアクセスは拒否されます（IP/CIDRがホワイトリストに登録されていない場合）。 「Deny」は、実際にIPアドレスとCIDRの範囲をブロックするために使用するものです。 「Deny」を使用する署名がトリガーされると、「アクセス拒否」ページが生成され、保護されたページへのリクエストが終了します。
 
 The `「パラメータ」` value accepted by "Deny" will be parsed to the "Access Denied" page output, supplied to the client/user as the cited reason for their access to the requested page being denied. It can be either a short and simple sentence, explaining why you've chosen to block them (anything should suffice, even a simple "I don't want you on my website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the script with a pre-prepared explanation of why the client/user has been blocked.
 
@@ -569,4 +569,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月18日。
+最終アップデート： 2017年1月23日。

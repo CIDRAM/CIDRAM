@@ -272,7 +272,7 @@ Cấu hình chung cho CIDRAM.
 - Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.
 
 "default_dns"
-- Máy chủ DNS mặc định để sử dụng cho tra cứu tên máy. Mặc định = 8.8.8.8 (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
+- Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -569,4 +569,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Giêng 2017 (2017.01.18).
+Lần cuối cập nhật: 23 Tháng Giêng 2017 (2017.01.23).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.01.12).
+ * This file: Dutch language data for the front-end (last modified: 2017.01.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]; 403 = Overrijden met "403 Forbidden"; 503 = Overrijden met "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_dns'] = 'Standaard DNS-server voor de hostnaam lookups te gebruiken. Standaard = 8.8.8.8 (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
+$CIDRAM['lang']['config_general_default_dns'] = 'Een door komma\'s gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'E-mailadres voor ondersteuning.';
@@ -54,7 +54,7 @@ $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden t
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet inbreuken worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
-$CIDRAM['lang']['field_component'] = 'Bestanddeel';
+$CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $CIDRAM['lang']['field_delete_account'] = 'Account Verwijderen';
 $CIDRAM['lang']['field_delete_file'] = 'Verwijder';
@@ -107,11 +107,11 @@ $CIDRAM['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Die account bestaat niet.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Wachtwoord succesvol gewijzigd!';
-$CIDRAM['lang']['response_component_successfully_installed'] = 'Bestanddeel succesvol geïnstalleerd.';
-$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Bestanddeel succesvol verwijderd.';
-$CIDRAM['lang']['response_component_successfully_updated'] = 'Bestanddeel succesvol gewijzigd.';
-$CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te verwijderen.';
-$CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te bijwerken.';
+$CIDRAM['lang']['response_component_successfully_installed'] = 'Component succesvol geïnstalleerd.';
+$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component succesvol verwijderd.';
+$CIDRAM['lang']['response_component_successfully_updated'] = 'Component succesvol gewijzigd.';
+$CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om de component te verwijderen.';
+$CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om de component te bijwerken.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuratie succesvol gewijzigd.';
 $CIDRAM['lang']['response_delete_error'] = 'Mislukt om te verwijderen!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Bestandsmap succesvol verwijderd!';
@@ -128,8 +128,8 @@ $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld le
 $CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
-$CIDRAM['lang']['response_updates_not_installed'] = 'Bestanddeel niet geïnstalleerd!';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'Bestanddeel niet geïnstalleerd (heeft nodig PHP {V})!';
+$CIDRAM['lang']['response_updates_not_installed'] = 'Component niet geïnstalleerd!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Component niet geïnstalleerd (heeft nodig PHP {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Verouderd!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmatig bijwerken)!';
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Verouderd (heeft nodig PHP {V})!';
@@ -137,9 +137,9 @@ $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $CIDRAM['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';
-$CIDRAM['lang']['state_component_is_active'] = 'Bestanddeel is actief.';
-$CIDRAM['lang']['state_component_is_inactive'] = 'Bestanddeel is inactief.';
-$CIDRAM['lang']['state_component_is_provisional'] = 'Bestanddeel is voorlopig.';
+$CIDRAM['lang']['state_component_is_active'] = 'Component is actief.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactief.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
@@ -158,7 +158,7 @@ $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stel
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.nl.md#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
-$CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende onderdelen van CIDRAM te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, L10N bestanden, ezv).';
+$CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Bestandsbeheer';

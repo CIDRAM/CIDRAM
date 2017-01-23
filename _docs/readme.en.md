@@ -272,7 +272,7 @@ General CIDRAM configuration.
 - Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.
 
 "default_dns"
-- Default DNS server to use for hostname lookups. Default = 8.8.8.8 (Google DNS). WARNING: Don't change this unless you know what you're doing!
+- A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know what you're doing!
 
 ####"signatures" (Category)
 Signatures configuration.
@@ -569,4 +569,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 18 January 2016 (2017.01.18).
+Last Updated: 23 January 2016 (2017.01.23).

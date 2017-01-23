@@ -272,7 +272,7 @@ General configuración para CIDRAM.
 - ¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No.
 
 "default_dns"
-- Servidor DNS predefinido que se utiliza para las búsquedas de nombres del host. Predefinido = 8.8.8.8 (Google DNS). AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+- Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 ####"signatures" (Categoría)
 Configuración de firmas.
@@ -569,4 +569,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 18 Enero 2016 (2017.01.18).
+Última Actualización: 23 Enero 2016 (2017.01.23).

@@ -272,7 +272,7 @@ Algemene configuratie voor CIDRAM.
 - Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.
 
 "default_dns"
-- Standaard DNS-server voor de hostnaam lookups te gebruiken. Standaard = 8.8.8.8 (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
+- Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
@@ -569,4 +569,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 18 Januari 2016 (2017.01.18).
+Laatste Bijgewerkt: 23 Januari 2016 (2017.01.23).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.01.12).
+ * This file: German language data for the front-end (last modified: 2017.01.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startseite</a> | <a href="?cidram-page=logout">Ausloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Ausloggen</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockiert Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]; 403 = Überschreiben mit "403 Forbidden"; 503 = Überschreiben mit "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_dns'] = 'Standard-DNS-Server für Hostnamen-Lookups zu verwenden. Standardeinstellung = 8.8.8.8 (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!';
+$CIDRAM['lang']['config_general_default_dns'] = 'Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI-Modus deaktivieren?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Front-End-Access deaktivieren?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'E-Mail-Adresse für die Unterstützung.';

@@ -272,7 +272,7 @@ Konfigurasi umum dari CIDRAM.
 - Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.
 
 "default_dns"
-- DNS Server default digunakan untuk pencarian nama host. Default = 8.8.8.8 (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
+- Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
@@ -569,4 +569,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 18 Januari 2016 (2017.01.18).
+Terakhir Diperbarui: 23 Januari 2016 (2017.01.23).

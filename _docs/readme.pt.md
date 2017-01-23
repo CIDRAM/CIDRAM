@@ -272,7 +272,7 @@ Configuração geral por CIDRAM.
 - Incluir solicitações bloqueadas de IPs proibidos nos arquivos de log? True = Sim [Padrão]; False = Não.
 
 "default_dns"
-- Servidor DNS padrão a ser usado para pesquisas de nomes de host. Padrão = 8.8.8.8 (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
+- Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
 ####"signatures" (Categoria)
 Configuração por assinaturas.
@@ -569,4 +569,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 18 Janeiro 2016 (2017.01.18).
+Última Atualização: 23 Janeiro 2016 (2017.01.23).

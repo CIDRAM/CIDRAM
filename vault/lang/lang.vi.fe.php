@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.01.12).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.01.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]; 403 = Ghi đè với "403 Forbidden"; 503 = Ghi đè với "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_dns'] = 'Máy chủ DNS mặc định để sử dụng cho tra cứu tên máy. Mặc định = 8.8.8.8 (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
+$CIDRAM['lang']['config_general_default_dns'] = 'Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end?';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Địa chỉ email cho hỗ trợ.';

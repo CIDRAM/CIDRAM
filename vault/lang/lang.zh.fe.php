@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.01.12).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.01.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？ 当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。 200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
-$CIDRAM['lang']['config_general_default_dns'] = '主机名查找的默认DNS服务器。 标准 = 8.8.8.8 (Google DNS)。 警告： 不要修改此除非您知道什么您做着！';
+$CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器列表，用于主机名查找。 标准 = “8.8.8.8,8.8.4.4” (Google DNS)。 警告： 不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
 $CIDRAM['lang']['config_general_emailaddr'] = '支持/援助电子邮件地址。';

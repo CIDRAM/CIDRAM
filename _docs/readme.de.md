@@ -274,7 +274,7 @@ Generelle Konfiguration von CIDRAM.
 - Enthalten Sie blockierte Anfragen von verbotenen IPs in die Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.
 
 "default_dns"
-- Standard-DNS-Server für Hostnamen-Lookups zu verwenden. Standardeinstellung = 8.8.8.8 (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
+- Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
@@ -571,4 +571,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 18 Januar 2016 (2017.01.18).
+Zuletzt aktualisiert: 23 Januar 2016 (2017.01.23).

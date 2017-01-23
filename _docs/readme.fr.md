@@ -272,7 +272,7 @@ Configuration générale pour CIDRAM.
 - Inclure les demandes bloquées provenant d'IP interdites dans les fichiers journaux? True = Oui [Défaut]; False = Non.
 
 "default_dns"
-- Serveur DNS par défaut à utiliser pour les recherches de nom d'hôte. Par Défaut = 8.8.8.8 (Google DNS). AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
+- Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = "8.8.8.8,8.8.4.4" (Google DNS). AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
 
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
@@ -569,4 +569,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 18 Janvier 2016 (2017.01.18).
+Dernière Mise à Jour: 23 Janvier 2016 (2017.01.23).

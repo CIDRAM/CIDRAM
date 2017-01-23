@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.01.12).
+ * This file: Korean language data for the front-end (last modified: 2017.01.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값); 403 = "403 Forbidden"로 덮어; 503 = "503 Service unavailable"로 덮어한다.';
-$CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 조회에 사용되는 기본 DNS (도메인 이름 시스템) 서버. Default (기본 설정) = 8.8.8.8 (Google DNS). 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
+$CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가?';
 $CIDRAM['lang']['config_general_disable_frontend'] = '프런트 엔드에 대한 액세스를 비활성화하거나?';
 $CIDRAM['lang']['config_general_emailaddr'] = '지원을위한 이메일 주소입니다.';

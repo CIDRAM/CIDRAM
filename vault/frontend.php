@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.01.17).
+ * This file: Front-end handler (last modified: 2017.01.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -727,20 +727,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = array(
         'Files' => scandir($CIDRAM['Vault']),
-        'Types' => ',dat,inc,yaml,',
         'Meta' => array(),
         'RemoteMeta' => array(),
     );
 
-    /** Bump main components file to the top of the list. */
-    if (file_exists($CIDRAM['Vault'] . 'components.dat')) {
-        array_unshift($CIDRAM['Components']['Files'], 'components.dat');
-        $CIDRAM['Components']['Files'] = array_unique($CIDRAM['Components']['Files']);
-    }
-
     /** Count files; Prepare to search for components metadata. */
     array_walk($CIDRAM['Components']['Files'], function ($ThisFile) use (&$CIDRAM) {
-        if (!empty($ThisFile) && strpos($CIDRAM['Components']['Types'], strtolower(substr($ThisFile, -3))) !== false) {
+        if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|yaml)$/i', $ThisFile)) {
             $ThisData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile);
             if (substr($ThisData, 0, 4) === "---\n" && ($EoYAML = strpos($ThisData, "\n\n")) !== false) {
                 $CIDRAM['YAML'](substr($ThisData, 4, $EoYAML - 4), $CIDRAM['Components']['Meta']);
@@ -1026,7 +1019,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         'Meta' => $CIDRAM['Components']['Meta'],
         'RemoteMeta' => $CIDRAM['Components']['RemoteMeta'],
         'Remotes' => array(),
-        'Out' => ''
+        'Out' => array()
     );
 
     reset($CIDRAM['Components']['Meta']);
@@ -1287,7 +1280,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'])) {
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]['RowClass'] = 'h1';
             }
-            $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
+            $CIDRAM['Components']['Out'][$CIDRAM['Components']['Key']] = $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['Key']]) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
@@ -1444,7 +1437,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             '<br /><a href="' . $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Changelog'] . '">Changelog</a>';
         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Filename'] = '';
         if (!$CIDRAM['FE']['hide-unused']) {
-            $CIDRAM['Components']['Out'] .= $CIDRAM['ParseVars'](
+            $CIDRAM['Components']['Out'][$CIDRAM['Components']['Key']] = $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
             );
@@ -1462,7 +1455,24 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     });
 
     /** Finalise output and unset working data. */
-    $CIDRAM['FE']['Components'] = $CIDRAM['Components']['Out'];
+    uksort($CIDRAM['Components']['Out'], function ($A, $B) {
+        $CheckA = preg_match('/^(?:CIDRAM$|IPv[46]|l10n)/i', $A);
+        $CheckB = preg_match('/^(?:CIDRAM$|IPv[46]|l10n)/i', $B);
+        if ($CheckA && !$CheckB) {
+            return -1;
+        }
+        if ($CheckB && !$CheckA) {
+            return 1;
+        }
+        if ($A < $B) {
+            return -1;
+        }
+        if ($A > $B) {
+            return 1;
+        }
+        return 0;
+    });
+    $CIDRAM['FE']['Components'] = implode('', $CIDRAM['Components']['Out']);
     unset($CIDRAM['Components'], $CIDRAM['Count'], $CIDRAM['Iterate']);
 
     /** Parse output. */

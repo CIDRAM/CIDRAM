@@ -186,10 +186,16 @@ Tập tin | Chi tiết
 /vault/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
 /vault/ignore.dat | Tập tin các bỏ qua (được sử dụng để xác định mà phần chữ ký CIDRAM nên bỏ qua).
 /vault/ipbypass.dat | Danh sách các đường tránh IP (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
-/vault/ipv4.dat | Tập tin chữ ký IPv4.
+/vault/ipv4.dat | Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).
+/vault/ipv4_bogons.dat | Tập tin chữ ký IPv4 (CIDR bogon/martian).
 /vault/ipv4_custom.dat.RenameMe | Tập tin chữ ký IPv4 tùy chỉnh (đổi tên để kích hoạt).
-/vault/ipv6.dat | Tập tin chữ ký IPv6.
+/vault/ipv4_isps.dat | Tập tin chữ ký IPv4 (ISP nguy hiểm và gửi thư rác).
+/vault/ipv4_other.dat | Tập tin chữ ký IPv4 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).
+/vault/ipv6.dat | Tập tin chữ ký IPv6 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).
+/vault/ipv6_bogons.dat | Tập tin chữ ký IPv6 (CIDR bogon/martian).
 /vault/ipv6_custom.dat.RenameMe | Tập tin chữ ký IPv6 tùy chỉnh (đổi tên để kích hoạt).
+/vault/ipv6_isps.dat | Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).
+/vault/ipv6_other.dat | Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).
 /vault/lang.php | Dữ liệu tiếng.
 /vault/modules.dat | Chứa thông tin liên quan đến các mô-đun khác nhau cho CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/outgen.php | Máy phát đầu ra.
@@ -569,4 +575,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 23 Tháng Giêng 2017 (2017.01.23).
+Lần cuối cập nhật: 24 Tháng Giêng 2017 (2017.01.24).

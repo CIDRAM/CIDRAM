@@ -186,10 +186,16 @@ Bestand | Beschrijving
 /vault/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke handtekening secties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
-/vault/ipv4.dat | IPv4 handtekeningen bestand.
+/vault/ipv4.dat | IPv4 handtekeningen bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
+/vault/ipv4_bogons.dat | IPv4 handtekeningen bestand (bogon/martian CIDRs).
 /vault/ipv4_custom.dat.RenameMe | IPv4 aangepaste handtekeningen bestand (hernoemen om te activeren).
-/vault/ipv6.dat | IPv6 handtekeningen bestand.
+/vault/ipv4_isps.dat | IPv4 handtekeningen bestand (gevaarlijk en spammy ISPs).
+/vault/ipv4_other.dat | IPv4 handtekeningen bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+/vault/ipv6.dat | IPv6 handtekeningen bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
+/vault/ipv6_bogons.dat | IPv6 handtekeningen bestand (bogon/martian CIDRs).
 /vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste handtekeningen bestand (hernoemen om te activeren).
+/vault/ipv6_isps.dat | IPv6 handtekeningen bestand (gevaarlijk en spammy ISPs).
+/vault/ipv6_other.dat | IPv6 handtekeningen bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
 /vault/lang.php | Taal-handler.
 /vault/modules.dat | Bevat informatie met betrekking tot de CIDRAM modules; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/outgen.php | Uitvoer generator.
@@ -569,4 +575,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 23 Januari 2016 (2017.01.23).
+Laatste Bijgewerkt: 24 Januari 2016 (2017.01.24).

@@ -57,20 +57,21 @@ ban_override=200
 ; [Default]; False = No.
 log_banned_ips=true
 
-; Default DNS server to use for hostname lookups. Default = 8.8.8.8 (Google
-; DNS). WARNING: Don't change this unless you know what you're doing!
-default_dns='8.8.8.8'
+; A comma delimited list of DNS servers to use for hostname lookups. Default =
+; "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know
+; what you're doing!
+default_dns='8.8.8.8,8.8.4.4'
 
 
 [signatures]
 
 ; A list of the IPv4 signature files that CIDRAM should attempt to parse,
 ; delimited by commas.
-ipv4='ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat'
+ipv4='ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_other.dat'
 
 ; A list of the IPv6 signature files that CIDRAM should attempt to parse,
 ; delimited by commas.
-ipv6='ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat'
+ipv6='ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_other.dat'
 
 ; Block CIDRs identified as belonging to webhosting/cloud services? If you
 ; operate an API service from your website or if you expect other websites to

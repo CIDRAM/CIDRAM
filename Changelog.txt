@@ -68,6 +68,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.01.23; Sub-minor code change; Maikuolan]: "default_dns" can now be a
   comma delimited list, allowing fallback servers to be used for DNS lookups.
 
+- [2017.01.24; Signatures; Maikuolan]: Further split the signature files, to
+  keep signatures for cloud services, signatures for dangerous and spammy ISPs,
+  and other signatures separate from each other, and to further improve
+  modularisation.
+
 === Version/Release 0.6.1 ===
 PATCH RELEASE.
 

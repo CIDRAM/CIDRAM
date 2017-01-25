@@ -186,10 +186,16 @@ File | Description
 /vault/icons.php | Icons handler (used by the front-end file manager).
 /vault/ignore.dat | Ignores file (used to specify which signature sections CIDRAM should ignore).
 /vault/ipbypass.dat | Contains a list of IP bypasses (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
-/vault/ipv4.dat | IPv4 signatures file.
+/vault/ipv4.dat | IPv4 signatures file (unwanted cloud services and non-human endpoints).
+/vault/ipv4_bogons.dat | IPv4 signatures file (bogon/martian CIDRs).
 /vault/ipv4_custom.dat.RenameMe | IPv4 custom signatures file (rename to activate).
-/vault/ipv6.dat | IPv6 signatures file.
+/vault/ipv4_isps.dat | IPv4 signatures file (dangerous and spammy ISPs).
+/vault/ipv4_other.dat | IPv4 signatures file (CIDRs for proxies, VPNs, and other miscellaneous unwanted services).
+/vault/ipv6.dat | IPv6 signatures file (unwanted cloud services and non-human endpoints).
+/vault/ipv6_bogons.dat | IPv6 signatures file (bogon/martian CIDRs).
 /vault/ipv6_custom.dat.RenameMe | IPv6 custom signatures file (rename to activate).
+/vault/ipv6_isps.dat | IPv6 signatures file (dangerous and spammy ISPs).
+/vault/ipv6_other.dat | IPv6 signatures file (CIDRs for proxies, VPNs, and other miscellaneous unwanted services).
 /vault/lang.php | Language handler.
 /vault/modules.dat | Contains information relating to the CIDRAM modules; Used by the updates feature provided by the front-end.
 /vault/outgen.php | Output generator.
@@ -569,4 +575,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 23 January 2016 (2017.01.23).
+Last Updated: 24 January 2016 (2017.01.24).

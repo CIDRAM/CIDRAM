@@ -186,10 +186,16 @@ Fichier | Description
 /vault/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/ignore.dat | Fichier de ignores (utilisé pour spécifier la signature sections CIDRAM devrait ignorer).
 /vault/ipbypass.dat | Contient une liste de contournements IP (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
-/vault/ipv4.dat | Fichier de signatures pour IPv4.
+/vault/ipv4.dat | Fichier de signatures pour IPv4 (les services cloud indésirables et les noeuds finaux non humains).
+/vault/ipv4_bogons.dat | Fichier de signatures pour IPv4 (bogon/martien CIDRs).
 /vault/ipv4_custom.dat.RenameMe | Fichier de signatures pour IPv4 personnalisés (renommer pour activer).
-/vault/ipv6.dat | Fichier de signatures pour IPv6.
+/vault/ipv4_isps.dat | Fichier de signatures pour IPv4 (ISPs dangereux et sujets au spam).
+/vault/ipv4_other.dat | Fichier de signatures pour IPv4 (CIDRs pour les proxies, VPN et autres services indésirables).
+/vault/ipv6.dat | Fichier de signatures pour IPv6 (les services cloud indésirables et les noeuds finaux non humains).
+/vault/ipv6_bogons.dat | Fichier de signatures pour IPv6 (bogon/martien CIDRs).
 /vault/ipv6_custom.dat.RenameMe | Fichier de signatures pour IPv6 personnalisés (renommer pour activer).
+/vault/ipv6_isps.dat | Fichier de signatures pour IPv6 (ISPs dangereux et sujets au spam).
+/vault/ipv6_other.dat | Fichier de signatures pour IPv6 (CIDRs pour les proxies, VPN et autres services indésirables).
 /vault/lang.php | Module de linguistiques.
 /vault/modules.dat | Contient des informations relatives aux modules de CIDRAM; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/outgen.php | Générateur de sortie.
@@ -569,4 +575,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 23 Janvier 2016 (2017.01.23).
+Dernière Mise à Jour: 24 Janvier 2016 (2017.01.24).

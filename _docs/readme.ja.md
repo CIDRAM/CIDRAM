@@ -186,10 +186,16 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/icons.php | アイコン・ハンドラ（フロント・エンド・ファイル・マネージャによって使用される）。
 /vault/ignore.dat | 無視ファイル（これは署名セクション無視します）。
 /vault/ipbypass.dat | IPバイパスの一覧（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
-/vault/ipv4.dat | IPv4のシグネチャファイル。
+/vault/ipv4.dat | IPv4のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
+/vault/ipv4_bogons.dat | IPv4のシグネチャファイル （ボゴン/火星CIDRs）。
 /vault/ipv4_custom.dat.RenameMe | IPv4のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
-/vault/ipv6.dat | IPv6のシグネチャファイル。
+/vault/ipv4_isps.dat | IPv4のシグネチャファイル （スパマーを持つ危険なISP）。
+/vault/ipv4_other.dat | IPv4のシグネチャファイル （プロキシ、VPN、およびその他の不要なサービスのCIDR）。
+/vault/ipv6.dat | IPv6のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
+/vault/ipv6_bogons.dat | IPv6のシグネチャファイル （ボゴン/火星CIDRs）。
 /vault/ipv6_custom.dat.RenameMe | IPv6のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
+/vault/ipv6_isps.dat | IPv6のシグネチャファイル （スパマーを持つ危険なISP）。
+/vault/ipv6_other.dat | IPv6のシグネチャファイル （プロキシ、VPN、およびその他の不要なサービスのCIDR）。
 /vault/lang.php | 言語・ハンドラ。
 /vault/modules.dat | CIDRAMのモジュール情報が含まれています； アップデート機能で使用（フロントエンドが提供します）。
 /vault/outgen.php | 出力発生器。
@@ -569,4 +575,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月23日。
+最終アップデート： 2017年1月24日。

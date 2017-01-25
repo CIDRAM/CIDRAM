@@ -187,10 +187,16 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/icons.php | 图标处理文件（由前端文件管理器使用）。
 /vault/ignore.dat | 忽略文件（用于指定其中章节签名CIDRAM应该忽略）。
 /vault/ipbypass.dat | 包含列表IP旁路（相关的reCAPTCHA功能；只有生成如果reCAPTCHA功能被启用）。
-/vault/ipv4.dat | IPv4签名文件。
+/vault/ipv4.dat | IPv4签名文件（不想要的云服务和非人终端）。
+/vault/ipv4_bogons.dat | IPv4签名文件（bogon/火星CIDR）。
 /vault/ipv4_custom.dat.RenameMe | IPv4定制签名文件（重命名为激活）。
-/vault/ipv6.dat | IPv6签名文件。
+/vault/ipv4_isps.dat | IPv4签名文件（危险和垃圾容易ISP）。
+/vault/ipv4_other.dat | IPv4签名文件（CIDR从代理，VPN和其他不需要服务）。
+/vault/ipv6.dat | IPv6签名文件（不想要的云服务和非人终端）。
+/vault/ipv6_bogons.dat | IPv6签名文件（bogon/火星CIDR）。
 /vault/ipv6_custom.dat.RenameMe | IPv6定制签名文件（重命名为激活）。
+/vault/ipv6_isps.dat | IPv6签名文件（危险和垃圾容易ISP）。
+/vault/ipv6_other.dat | IPv6签名文件（CIDR从代理，VPN和其他不需要服务）。
 /vault/lang.php | 语言数据。
 /vault/modules.dat | 包含的相关信息关于CIDRAM的模块；它使用通过更新功能从前端。
 /vault/outgen.php | 输出发生器。
@@ -570,4 +576,4 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2017年1月23日。
+最后更新：2017年1月24日。

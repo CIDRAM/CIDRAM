@@ -186,10 +186,16 @@ Data | Deskripsi
 /vault/icons.php | Modul ikon (digunakan oleh file manager bagian depan).
 /vault/ignore.dat | File abaikan (digunakan untuk menentukan bagian tanda tangan CIDRAM harus mengabaikan).
 /vault/ipbypass.dat | Berisi daftar bypass IP (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
-/vault/ipv4.dat | File tanda tangan IPv4.
+/vault/ipv4.dat | File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
+/vault/ipv4_bogons.dat | File tanda tangan IPv4 (CIDR bogon/martian).
 /vault/ipv4_custom.dat.RenameMe | File tanda tangan IPv4 disesuaikan (mengubah nama untuk mengaktifkan).
-/vault/ipv6.dat | File tanda tangan IPv6.
+/vault/ipv4_isps.dat | File tanda tangan IPv4 (ISP berbahaya dan spam rawan).
+/vault/ipv4_other.dat | File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
+/vault/ipv6.dat | File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
+/vault/ipv6_bogons.dat | File tanda tangan IPv6 (CIDR bogon/martian).
 /vault/ipv6_custom.dat.RenameMe | File tanda tangan IPv6 disesuaikan (mengubah nama untuk mengaktifkan).
+/vault/ipv6_isps.dat | File tanda tangan IPv6 (ISP berbahaya dan spam rawan).
+/vault/ipv6_other.dat | File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
 /vault/lang.php | File bahasa.
 /vault/modules.dat | Berisi informasi yang berkaitan dengan berbagai modul untuk CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/outgen.php | Output Generator.
@@ -569,4 +575,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 23 Januari 2016 (2017.01.23).
+Terakhir Diperbarui: 24 Januari 2016 (2017.01.24).

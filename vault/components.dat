@@ -17,7 +17,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.7.0-DEV+170123
+ Version: 0.7.0-DEV+170124
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -99,7 +99,7 @@ CIDRAM:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
    - c84da1575ce20ac2bd6bf6ab50b10b1c:6483
-   - d4af1d5d8b0464cd8de36ad9a9f9978e:2202
+   - 2d70fb06fc748c49bb8a46161c680df0:2260
    - 8e03209e7fc6641b45094e584340feff:83
    - 51e57efba1d36775387fd7ab755d17aa:1353
    - be5a74f434f3fdbf14cc9f490a5ad32f:773
@@ -134,37 +134,37 @@ CIDRAM:
  Reannotate: components.dat
 IPv4:
  Name:
-  en: IPv4 signatures file.
-  ar: عناوين IPv4 ملف التوقيعات.
-  de: IPv4 Signaturdatei.
-  es: Archivo de firmas por IPv4.
-  fr: Fichier de signatures pour IPv4.
-  id: File tanda tangan IPv4.
-  it: File di firme per IPv4.
-  ja: IPv4のシグネチャファイル。
-  ko: IPv4의 서명 파일.
-  nl: IPv4 handtekeningen bestand.
-  pt: Arquivo de assinaturas para IPv4.
-  ru: IPv4 файла сигнатур.
-  vi: Tập tin chữ ký IPv4.
-  zh: IPv4签名文件。
-  zh-tw: IPv4簽名文件。
+  en: IPv4 signatures file (unwanted cloud services and non-human endpoints).
+  ar: عناوين IPv4 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).
+  de: IPv4 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).
+  es: Archivo de firmas por IPv4 (servicios en la nube no deseados y puntos finales no humanos).
+  fr: Fichier de signatures pour IPv4 (les services cloud indésirables et les noeuds finaux non humains).
+  id: File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
+  it: File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).
+  ja: IPv4のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
+  ko: IPv4의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).
+  nl: IPv4 handtekeningen bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
+  pt: Arquivo de assinaturas para IPv4 (serviços em nuvem indesejados e pontos de extremidade não-humanos).
+  ru: IPv4 файла сигнатур (нежелательные облачные сервисы и нечеловеческие конечные точки).
+  vi: Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).
+  zh: IPv4签名文件（不想要的云服务和非人终端）。
+  zh-tw: IPv4簽名文件（不想要的雲服務和非人終端）。
  Extended Description:
-  en: The default IPv4 signatures normally included with the main package.<br /><em>Used with: <code>signatures-&gt;ipv4</code>.</em>
-  ar: تواقيع القياسية IPv4 وشملت عادة مع الحزمة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv4</code>.</em>
-  de: Die Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.</em>
-  es: Las firmas estándar IPv4 normalmente se incluyen con el paquete principal.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.</em>
-  fr: Les signatures IPv4 standards normalement inclus dans le paquet principal.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.</em>
-  id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.</em>
-  it: Le firme IPv4 predefiniti normalmente inclusi nel pacchetto principale.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.</em>
-  ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.</em>
-  ko: 기본 IPv4 서명 일반적으로 기본 패키지에 포함되어 있습니다.<br /><em>옵션: <code>signatures-&gt;ipv4</code>.</em>
-  nl: De standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.</em>
-  pt: As assinaturas IPv4 padrão normalmente incluído com o pacote principal.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.</em>
-  ru: Стандартные подписи/сигнатуры IPv4, обычно включены в основной пакет.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.</em>
-  vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
-  zh: 标准IPv4签名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
-  zh-tw: 標準IPv4簽名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+  en: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.<br /><em>Used with: <code>signatures-&gt;ipv4</code>.</em>
+  ar: تواقيع القياسية IPv4 وشملت عادة مع الحزمة. بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها.<br /><em>استخدامها مع: <code>signatures-&gt;ipv4</code>.</em>
+  de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert unerwünschte Cloud-Services und nicht-menschliche Endpunkte.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.</em>
+  es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea los servicios en la nube no deseados y puntos finales no humanos.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.</em>
+  fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque les services cloud indésirables et les noeuds finaux non humains.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.</em>
+  id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.</em>
+  it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca servizi cloud indesiderate e punti finali non umani.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.</em>
+  ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 不要なクラウドサービスと非人のエンドポイントをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.</em>
+  ko: 기본 IPv4 서명 일반적으로 기본 패키지에 포함되어 있습니다. 불필요한 클라우드 서비스와 非人의 끝점을 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv4</code>.</em>
+  nl: Standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.</em>
+  pt: Assinaturas IPv4 padrão normalmente incluído com o pacote principal. Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv4, обычно включены в основной пакет. Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.</em>
+  vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
+  zh: 标准IPv4签名通常包括在主包。 阻止不想要的云服务和非人终端。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+  zh-tw: 標準IPv4簽名通常包括在主包。 阻止不想要的雲服務和非人終端。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
  Version: 2017.01.15
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -179,38 +179,38 @@ IPv4:
  Reannotate: components.dat
 IPv4-Bogons:
  Name:
-  en: IPv4 bogons signatures file.
-  ar: عناوين IPv4 bogon ملف التوقيعات.
-  de: IPv4-Bogons Signaturdatei.
-  es: Archivo de firmas por IPv4 bogons.
-  fr: Fichier de signatures pour IPv4 bogons.
-  id: File tanda tangan IPv4 bogon.
-  it: File di firme per IPv4 bogone.
-  ja: IPv4ぼごんのシグネチャファイル。
-  ko: IPv4 보곤의 서명 파일.
-  nl: IPv4-bogon handtekeningen bestand.
-  pt: Arquivo de assinaturas para IPv4 bogons.
-  ru: IPv4 bogon файла сигнатур.
-  vi: Tập tin chữ ký IPv4 bogon.
-  zh: IPv4 Bogon签名文件。
-  zh-tw: IPv4 Bogon簽名文件。
+  en: IPv4 signatures file (bogon/martian CIDRs).
+  ar: عناوين IPv4 ملف التوقيعات (bogon/المريخ CIDRs).
+  de: IPv4 Signaturdatei (Bogon/Marsmensch CIDRs).
+  es: Archivo de firmas por IPv4 (bogon/marciano CIDRs).
+  fr: Fichier de signatures pour IPv4 (bogon/martien CIDRs).
+  id: File tanda tangan IPv4 (CIDR bogon/martian).
+  it: File di firme per IPv4 (bogon/marziano CIDRs).
+  ja: IPv4のシグネチャファイル （ボゴン/火星CIDRs）。
+  ko: IPv4의 서명 파일 (보곤/화성 CIDRs).
+  nl: IPv4 handtekeningen bestand (bogon/martian CIDRs).
+  pt: Arquivo de assinaturas para IPv4 (bogon/marciano CIDRs).
+  ru: IPv4 файла сигнатур (bogon/марсианин CIDRs).
+  vi: Tập tin chữ ký IPv4 (CIDR bogon/martian).
+  zh: IPv4签名文件（bogon/火星CIDR）。
+  zh-tw: IPv4簽名文件（bogon/火星CIDR）。
  Extended Description:
-  en: The default IPv4 bogon signatures normally included with the main package.<br /><em>Used with: <code>signatures-&gt;ipv4</code>.</em>
-  ar: تواقيع القياسية IPv4 bogon وشملت عادة مع الحزمة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv4</code>.</em>
-  de: Die Standard-IPv4-Bogon-Signaturen normalerweise mit dem Hauptpaket enthalten.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.</em>
-  es: Las firmas estándar IPv4 bogon normalmente se incluyen con el paquete principal.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.</em>
-  fr: Les signatures IPv4 standards bogons normalement inclus dans le paquet principal.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.</em>
-  id: Tanda tangan IPv4 bogon standar biasanya disertakan dengan paket utama.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.</em>
-  it: Le firme IPv4 bogone predefiniti normalmente inclusi nel pacchetto principale.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.</em>
-  ja: デフォルトIPv4ぼごん署名、通常はメインパッケージに含まれています。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.</em>
-  ko: 기본 IPv4 보곤 서명 일반적으로 기본 패키지에 포함되어 있습니다.<br /><em>옵션: <code>signatures-&gt;ipv4</code>.</em>
-  nl: De standaard IPv4-bogon handtekeningen normaal opgenomen met de primaire pakket.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.</em>
-  pt: As assinaturas IPv4 bogons padrão normalmente incluído com o pacote principal.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.</em>
-  ru: Стандартные подписи/сигнатуры IPv4 bogon, обычно включены в основной пакет.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.</em>
-  vi: Các chữ ký IPv4 bogon mặc định thường bao gồm với gói thầu chính.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
-  zh: 标准IPv4 Bogon签名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
-  zh-tw: 標準IPv4 Bogon簽名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
- Version: 2017.01.13
+  en: Default IPv4 signatures normally included with the main package. Blocks bogon/martian CIDRs.<br /><em>Used with: <code>signatures-&gt;ipv4</code>.</em>
+  ar: تواقيع القياسية IPv4 وشملت عادة مع الحزمة. بحجبه bogon/المريخ CIDRs.<br /><em>استخدامها مع: <code>signatures-&gt;ipv4</code>.</em>
+  de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert Bogon/Marsmensch CIDRs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.</em>
+  es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea bogon/marciano CIDRs.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.</em>
+  fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque bogon/martien CIDRs.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.</em>
+  id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir CIDR bogon/martian.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.</em>
+  it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca bogon/marziano CIDRs.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.</em>
+  ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 ボゴン/火星CIDRsをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.</em>
+  ko: 기본 IPv4 서명 일반적으로 기본 패키지에 포함되어 있습니다. 보곤/화성 CIDRs을 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv4</code>.</em>
+  nl: Standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert bogon/martian CIDRs.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.</em>
+  pt: Assinaturas IPv4 padrão normalmente incluído com o pacote principal. Bloqueia bogon/marciano CIDRs.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv4, обычно включены в основной пакет. Блокирует bogon/марсианин CIDRs.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.</em>
+  vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR bogon/martian.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
+  zh: 标准IPv4签名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+  zh-tw: 標準IPv4簽名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+ Version: 2017.01.15
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -222,39 +222,129 @@ IPv4-Bogons:
   Checksum:
    - 4f15d227a1c0ae1961c674a916200643:101932
  Reannotate: components.dat
+IPv4-ISPs:
+ Name:
+  en: IPv4 signatures file (dangerous and spammy ISPs).
+  ar: عناوين IPv4 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).
+  de: IPv4 Signaturdatei (gefährliche und spam-anfällig ISPs).
+  es: Archivo de firmas por IPv4 (ISPs peligroso y propenso a spam).
+  fr: Fichier de signatures pour IPv4 (ISPs dangereux et sujets au spam).
+  id: File tanda tangan IPv4 (ISP berbahaya dan spam rawan).
+  it: File di firme per IPv4 (ISP pericolosi e spam incline).
+  ja: IPv4のシグネチャファイル （スパマーを持つ危険なISP）。
+  ko: IPv4의 서명 파일 (스패머을 가진 위험한 ISP).
+  nl: IPv4 handtekeningen bestand (gevaarlijk en spammy ISPs).
+  pt: Arquivo de assinaturas para IPv4 (ISPs perigosos e propensos a spam).
+  ru: IPv4 файла сигнатур (опасно и спам-склонным интернет-провайдеры).
+  vi: Tập tin chữ ký IPv4 (ISP nguy hiểm và gửi thư rác).
+  zh: IPv4签名文件（危险和垃圾容易ISP）。
+  zh-tw: IPv4簽名文件（危險和垃圾容易ISP）。
+ Extended Description:
+  en: Default IPv4 signatures normally included with the main package. Blocks dangerous and spammy ISPs.<br /><em>Used with: <code>signatures-&gt;ipv4</code>.</em>
+  ar: تواقيع القياسية IPv4 وشملت عادة مع الحزمة. بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv4</code>.</em>
+  de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert gefährliche und spam-anfällig ISPs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.</em>
+  es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea ISPs peligroso y propenso a spam.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.</em>
+  fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque les ISPs dangereux et sujets au spam.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.</em>
+  id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir ISP berbahaya dan spam rawan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.</em>
+  it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca ISP pericolosi e spam incline.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.</em>
+  ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 スパマーを持つ危険なISPをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.</em>
+  ko: 기본 IPv4 서명 일반적으로 기본 패키지에 포함되어 있습니다. 스패머을 가진 위험한 ISP를 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv4</code>.</em>
+  nl: Standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert gevaarlijk en spammy ISPs.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.</em>
+  pt: Assinaturas IPv4 padrão normalmente incluído com o pacote principal. Bloqueia ISPs perigosos e propensos a spam.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv4, обычно включены в основной пакет. Блокирует опасно и спам-склонным интернет-провайдеры.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.</em>
+  vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn ISP nguy hiểm và gửi thư rác.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
+  zh: 标准IPv4签名通常包括在主包。 阻止危险和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+  zh-tw: 標準IPv4簽名通常包括在主包。 阻止危險和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+ Version: 2017.01.15
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv4_isps.dat
+  To:
+   - ipv4_isps.dat
+  Checksum:
+   - d075a8c7469f86f1bd59e05222a7e792:547538
+ Reannotate: components.dat
+IPv4-Other:
+ Name:
+  en: IPv4 signatures file (CIDRs for proxies, VPNs, and other miscellaneous unwanted services).
+  ar: عناوين IPv4 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).
+  de: IPv4 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).
+  es: Archivo de firmas por IPv4 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).
+  fr: Fichier de signatures pour IPv4 (CIDRs pour les proxies, VPN et autres services indésirables).
+  id: File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
+  it: File di firme per IPv4 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).
+  ja: IPv4のシグネチャファイル （プロキシ、VPN、およびその他の不要なサービスのCIDR）。
+  ko: IPv4의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).
+  nl: IPv4 handtekeningen bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+  pt: Arquivo de assinaturas para IPv4 (CIDRs para proxies, VPNs e outros diversos serviços indesejados).
+  ru: IPv4 файла сигнатур (CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг).
+  vi: Tập tin chữ ký IPv4 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).
+  zh: IPv4签名文件（CIDR从代理，VPN和其他不需要服务）。
+  zh-tw: IPv4簽名文件（CIDR從代理，VPN和其他不需要服務）。
+ Extended Description:
+  en: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.<br /><em>Used with: <code>signatures-&gt;ipv4</code>.</em>
+  ar: تواقيع القياسية IPv4 وشملت عادة مع الحزمة. بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv4</code>.</em>
+  de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.</em>
+  es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea CIDRs para proxies, VPNs y otros servicios misceláneos no deseados.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.</em>
+  fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque CIDRs pour les proxies, VPN et autres services indésirables.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.</em>
+  id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.</em>
+  it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.</em>
+  ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 プロキシ、VPN、およびその他の不要なサービスのCIDRをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.</em>
+  ko: 기본 IPv4 서명 일반적으로 기본 패키지에 포함되어 있습니다. 프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv4</code>.</em>
+  nl: Standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.</em>
+  pt: Assinaturas IPv4 padrão normalmente incluído com o pacote principal. Bloqueia CIDRs para proxies, VPNs e outros diversos serviços indesejados.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv4, обычно включены в основной пакет. Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.</em>
+  vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
+  zh: 标准IPv4签名通常包括在主包。 阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+  zh-tw: 標準IPv4簽名通常包括在主包。 阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
+ Version: 2017.01.15
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv4_other.dat
+  To:
+   - ipv4_other.dat
+  Checksum:
+   - d075a8c7469f86f1bd59e05222a7e792:547538
+ Reannotate: components.dat
 IPv6:
  Name:
-  en: IPv6 signatures file.
-  ar: عناوين IPv6 ملف التوقيعات.
-  de: IPv6 Signaturdatei.
-  es: Archivo de firmas por IPv6.
-  fr: Fichier de signatures pour IPv6.
-  id: File tanda tangan IPv6.
-  it: File di firme per IPv6.
-  ja: IPv6のシグネチャファイル。
-  ko: IPv6의 서명 파일.
-  nl: IPv6 handtekeningen bestand.
-  pt: Arquivo de assinaturas para IPv6.
-  ru: IPv6 файла сигнатур.
-  vi: Tập tin chữ ký IPv6.
-  zh: IPv6签名文件。
-  zh-tw: IPv6簽名文件。
+  en: IPv6 signatures file (unwanted cloud services and non-human endpoints).
+  ar: عناوين IPv6 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).
+  de: IPv6 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).
+  es: Archivo de firmas por IPv6 (servicios en la nube no deseados y puntos finales no humanos).
+  fr: Fichier de signatures pour IPv6 (les services cloud indésirables et les noeuds finaux non humains).
+  id: File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
+  it: File di firme per IPv6 (servizi cloud indesiderate e punti finali non umani).
+  ja: IPv6のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
+  ko: IPv6의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).
+  nl: IPv6 handtekeningen bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
+  pt: Arquivo de assinaturas para IPv6 (serviços em nuvem indesejados e pontos de extremidade não-humanos).
+  ru: IPv6 файла сигнатур (нежелательные облачные сервисы и нечеловеческие конечные точки).
+  vi: Tập tin chữ ký IPv6 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).
+  zh: IPv6签名文件（不想要的云服务和非人终端）。
+  zh-tw: IPv6簽名文件（不想要的雲服務和非人終端）。
  Extended Description:
-  en: The default IPv6 signatures normally included with the main package.<br /><em>Used with: <code>signatures-&gt;ipv6</code>.</em>
-  ar: تواقيع القياسية IPv6 وشملت عادة مع الحزمة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv6</code>.</em>
-  de: Die Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.</em>
-  es: Las firmas estándar IPv6 normalmente se incluyen con el paquete principal.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.</em>
-  fr: Les signatures IPv6 standards normalement inclus dans le paquet principal.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.</em>
-  id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.</em>
-  it: Le firme IPv6 predefiniti normalmente inclusi nel pacchetto principale.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.</em>
-  ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.</em>
-  ko: 기본 IPv6 서명 일반적으로 기본 패키지에 포함되어 있습니다.<br /><em>옵션: <code>signatures-&gt;ipv6</code>.</em>
-  nl: De standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.</em>
-  pt: As assinaturas IPv6 padrão normalmente incluído com o pacote principal.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.</em>
-  ru: Стандартные подписи/сигнатуры IPv6, обычно включены в основной пакет.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.</em>
-  vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
-  zh: 标准IPv6签名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
-  zh-tw: 標準IPv6簽名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+  en: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.<br /><em>Used with: <code>signatures-&gt;ipv6</code>.</em>
+  ar: تواقيع القياسية IPv6 وشملت عادة مع الحزمة. بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها.<br /><em>استخدامها مع: <code>signatures-&gt;ipv6</code>.</em>
+  de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert unerwünschte Cloud-Services und nicht-menschliche Endpunkte.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.</em>
+  es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea los servicios en la nube no deseados y puntos finales no humanos.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.</em>
+  fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque les services cloud indésirables et les noeuds finaux non humains.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.</em>
+  id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.</em>
+  it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca servizi cloud indesiderate e punti finali non umani.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.</em>
+  ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 不要なクラウドサービスと非人のエンドポイントをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.</em>
+  ko: 기본 IPv6 서명 일반적으로 기본 패키지에 포함되어 있습니다. 불필요한 클라우드 서비스와 非人의 끝점을 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv6</code>.</em>
+  nl: Standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert ongewenste cloud-diensten en niet-menselijke eindpunten.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.</em>
+  pt: Assinaturas IPv6 padrão normalmente incluído com o pacote principal. Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv6, обычно включены в основной пакет. Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.</em>
+  vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
+  zh: 标准IPv6签名通常包括在主包。 阻止不想要的云服务和非人终端。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+  zh-tw: 標準IPv6簽名通常包括在主包。 阻止不想要的雲服務和非人終端。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
  Version: 2017.01.15
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -265,42 +355,42 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 88a09a82e49c4d6e7072dab698b1af07:111326
+   - d075a8c7469f86f1bd59e05222a7e792:547538
  Reannotate: components.dat
 IPv6-Bogons:
  Name:
-  en: IPv6 bogons signatures file.
-  ar: عناوين IPv6 bogon ملف التوقيعات.
-  de: IPv6-Bogons Signaturdatei.
-  es: Archivo de firmas por IPv6 bogons.
-  fr: Fichier de signatures pour IPv6 bogons.
-  id: File tanda tangan IPv6 bogon.
-  it: File di firme per IPv6 bogone.
-  ja: IPv6ぼごんのシグネチャファイル。
-  ko: IPv6 보곤의 서명 파일.
-  nl: IPv6-bogon handtekeningen bestand.
-  pt: Arquivo de assinaturas para IPv6 bogons.
-  ru: IPv6 bogon файла сигнатур.
-  vi: Tập tin chữ ký IPv6 bogon.
-  zh: IPv6 Bogon签名文件。
-  zh-tw: IPv6 Bogon簽名文件。
+  en: IPv6 signatures file (bogon/martian CIDRs).
+  ar: عناوين IPv6 ملف التوقيعات (bogon/المريخ CIDRs).
+  de: IPv6 Signaturdatei (Bogon/Marsmensch CIDRs).
+  es: Archivo de firmas por IPv6 (bogon/marciano CIDRs).
+  fr: Fichier de signatures pour IPv6 (bogon/martien CIDRs).
+  id: File tanda tangan IPv6 (CIDR bogon/martian).
+  it: File di firme per IPv6 (bogon/marziano CIDRs).
+  ja: IPv6のシグネチャファイル （ボゴン/火星CIDRs）。
+  ko: IPv6의 서명 파일 (보곤/화성 CIDRs).
+  nl: IPv6 handtekeningen bestand (bogon/martian CIDRs).
+  pt: Arquivo de assinaturas para IPv6 (bogon/marciano CIDRs).
+  ru: IPv6 файла сигнатур (bogon/марсианин CIDRs).
+  vi: Tập tin chữ ký IPv6 (CIDR bogon/martian).
+  zh: IPv6签名文件（bogon/火星CIDR）。
+  zh-tw: IPv6簽名文件（bogon/火星CIDR）。
  Extended Description:
-  en: The default IPv6 bogon signatures normally included with the main package.<br /><em>Used with: <code>signatures-&gt;ipv6</code>.</em>
-  ar: تواقيع القياسية IPv6 bogon وشملت عادة مع الحزمة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv6</code>.</em>
-  de: Die Standard-IPv6-Bogon-Signaturen normalerweise mit dem Hauptpaket enthalten.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.</em>
-  es: Las firmas estándar IPv6 bogon normalmente se incluyen con el paquete principal.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.</em>
-  fr: Les signatures IPv6 standards bogons normalement inclus dans le paquet principal.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.</em>
-  id: Tanda tangan IPv6 bogon standar biasanya disertakan dengan paket utama.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.</em>
-  it: Le firme IPv6 bogone predefiniti normalmente inclusi nel pacchetto principale.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.</em>
-  ja: デフォルトIPv6ぼごん署名、通常はメインパッケージに含まれています。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.</em>
-  ko: 기본 IPv6 보곤 서명 일반적으로 기본 패키지에 포함되어 있습니다.<br /><em>옵션: <code>signatures-&gt;ipv6</code>.</em>
-  nl: De standaard IPv6-bogon handtekeningen normaal opgenomen met de primaire pakket.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.</em>
-  pt: As assinaturas IPv6 bogons padrão normalmente incluído com o pacote principal.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.</em>
-  ru: Стандартные подписи/сигнатуры IPv6 bogon, обычно включены в основной пакет.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.</em>
-  vi: Các chữ ký IPv6 bogon mặc định thường bao gồm với gói thầu chính.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
-  zh: 标准IPv6 Bogon签名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
-  zh-tw: 標準IPv6 Bogon簽名通常包括在主包。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
- Version: 2017.01.13
+  en: Default IPv6 signatures normally included with the main package. Blocks bogon/martian CIDRs.<br /><em>Used with: <code>signatures-&gt;ipv6</code>.</em>
+  ar: تواقيع القياسية IPv6 وشملت عادة مع الحزمة. بحجبه bogon/المريخ CIDRs.<br /><em>استخدامها مع: <code>signatures-&gt;ipv6</code>.</em>
+  de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert Bogon/Marsmensch CIDRs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.</em>
+  es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea bogon/marciano CIDRs.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.</em>
+  fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque bogon/martien CIDRs.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.</em>
+  id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir CIDR bogon/martian.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.</em>
+  it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca bogon/marziano CIDRs.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.</em>
+  ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 ボゴン/火星CIDRsをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.</em>
+  ko: 기본 IPv6 서명 일반적으로 기본 패키지에 포함되어 있습니다. 보곤/화성 CIDRs을 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv6</code>.</em>
+  nl: Standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert bogon/martian CIDRs.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.</em>
+  pt: Assinaturas IPv6 padrão normalmente incluído com o pacote principal. Bloqueia bogon/marciano CIDRs.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv6, обычно включены в основной пакет. Блокирует bogon/марсианин CIDRs.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.</em>
+  vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR bogon/martian.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
+  zh: 标准IPv6签名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+  zh-tw: 標準IPv6簽名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+ Version: 2017.01.15
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -310,7 +400,97 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - fc3c0404c43dc079b26b37e5c927f962:2195128
+   - 4f15d227a1c0ae1961c674a916200643:101932
+ Reannotate: components.dat
+IPv6-ISPs:
+ Name:
+  en: IPv6 signatures file (dangerous and spammy ISPs).
+  ar: عناوين IPv6 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).
+  de: IPv6 Signaturdatei (gefährliche und spam-anfällig ISPs).
+  es: Archivo de firmas por IPv6 (ISPs peligroso y propenso a spam).
+  fr: Fichier de signatures pour IPv6 (ISPs dangereux et sujets au spam).
+  id: File tanda tangan IPv6 (ISP berbahaya dan spam rawan).
+  it: File di firme per IPv6 (ISP pericolosi e spam incline).
+  ja: IPv6のシグネチャファイル （スパマーを持つ危険なISP）。
+  ko: IPv6의 서명 파일 (스패머을 가진 위험한 ISP).
+  nl: IPv6 handtekeningen bestand (gevaarlijk en spammy ISPs).
+  pt: Arquivo de assinaturas para IPv6 (ISPs perigosos e propensos a spam).
+  ru: IPv6 файла сигнатур (опасно и спам-склонным интернет-провайдеры).
+  vi: Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).
+  zh: IPv6签名文件（危险和垃圾容易ISP）。
+  zh-tw: IPv6簽名文件（危險和垃圾容易ISP）。
+ Extended Description:
+  en: Default IPv6 signatures normally included with the main package. Blocks dangerous and spammy ISPs.<br /><em>Used with: <code>signatures-&gt;ipv6</code>.</em>
+  ar: تواقيع القياسية IPv6 وشملت عادة مع الحزمة. بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv6</code>.</em>
+  de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert gefährliche und spam-anfällig ISPs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.</em>
+  es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea ISPs peligroso y propenso a spam.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.</em>
+  fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque les ISPs dangereux et sujets au spam.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.</em>
+  id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir ISP berbahaya dan spam rawan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.</em>
+  it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca ISP pericolosi e spam incline.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.</em>
+  ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 スパマーを持つ危険なISPをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.</em>
+  ko: 기본 IPv6 서명 일반적으로 기본 패키지에 포함되어 있습니다. 스패머을 가진 위험한 ISP를 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv6</code>.</em>
+  nl: Standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert gevaarlijk en spammy ISPs.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.</em>
+  pt: Assinaturas IPv6 padrão normalmente incluído com o pacote principal. Bloqueia ISPs perigosos e propensos a spam.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv6, обычно включены в основной пакет. Блокирует опасно и спам-склонным интернет-провайдеры.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.</em>
+  vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn ISP nguy hiểm và gửi thư rác.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
+  zh: 标准IPv6签名通常包括在主包。 阻止危险和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+  zh-tw: 標準IPv6簽名通常包括在主包。 阻止危險和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+ Version: 2017.01.15
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv6_isps.dat
+  To:
+   - ipv6_isps.dat
+  Checksum:
+   - d075a8c7469f86f1bd59e05222a7e792:547538
+ Reannotate: components.dat
+IPv6-Other:
+ Name:
+  en: IPv6 signatures file (CIDRs for proxies, VPNs, and other miscellaneous unwanted services).
+  ar: عناوين IPv6 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).
+  de: IPv6 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).
+  es: Archivo de firmas por IPv6 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).
+  fr: Fichier de signatures pour IPv6 (CIDRs pour les proxies, VPN et autres services indésirables).
+  id: File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
+  it: File di firme per IPv6 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).
+  ja: IPv6のシグネチャファイル （プロキシ、VPN、およびその他の不要なサービスのCIDR）。
+  ko: IPv6의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).
+  nl: IPv6 handtekeningen bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+  pt: Arquivo de assinaturas para IPv6 (CIDRs para proxies, VPNs e outros diversos serviços indesejados).
+  ru: IPv6 файла сигнатур (CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг).
+  vi: Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).
+  zh: IPv6签名文件（CIDR从代理，VPN和其他不需要服务）。
+  zh-tw: IPv6簽名文件（CIDR從代理，VPN和其他不需要服務）。
+ Extended Description:
+  en: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.<br /><em>Used with: <code>signatures-&gt;ipv6</code>.</em>
+  ar: تواقيع القياسية IPv6 وشملت عادة مع الحزمة. بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة.<br /><em>استخدامها مع: <code>signatures-&gt;ipv6</code>.</em>
+  de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.</em>
+  es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea CIDRs para proxies, VPNs y otros servicios misceláneos no deseados.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.</em>
+  fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque CIDRs pour les proxies, VPN et autres services indésirables.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.</em>
+  id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.</em>
+  it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.</em>
+  ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 プロキシ、VPN、およびその他の不要なサービスのCIDRをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.</em>
+  ko: 기본 IPv6 서명 일반적으로 기본 패키지에 포함되어 있습니다. 프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다.<br /><em>옵션: <code>signatures-&gt;ipv6</code>.</em>
+  nl: Standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.</em>
+  pt: Assinaturas IPv6 padrão normalmente incluído com o pacote principal. Bloqueia CIDRs para proxies, VPNs e outros diversos serviços indesejados.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.</em>
+  ru: Стандартные подписи/сигнатуры IPv6, обычно включены в основной пакет. Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.</em>
+  vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
+  zh: 标准IPv6签名通常包括在主包。 阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+  zh-tw: 標準IPv6簽名通常包括在主包。 阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
+ Version: 2017.01.15
+ Minimum Required: 0.6.0-DEV
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/ipv6_other.dat
+  To:
+   - ipv6_other.dat
+  Checksum:
+   - d075a8c7469f86f1bd59e05222a7e792:547538
  Reannotate: components.dat
 Bypasses:
  Name:

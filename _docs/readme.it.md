@@ -186,10 +186,16 @@ File | Descrizione
 /vault/icons.php | Gestore dell'icone (utilizzata dal file manager del front-end).
 /vault/ignore.dat | File ignorati (utilizzato per specificare quali sezioni firma CIDRAM dovrebbe ignorare).
 /vault/ipbypass.dat | Contiene un elenco di bypass IP (pertinente alla funzione di reCAPTCHA; solo generato se la funzione di reCAPTCHA è abilitato).
-/vault/ipv4.dat | File di firme per IPv4.
+/vault/ipv4.dat | File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).
+/vault/ipv4_bogons.dat | File di firme per IPv4 (bogon/marziano CIDRs).
 /vault/ipv4_custom.dat.RenameMe | File di firme per IPv4 personalizzato (rinomina per attivare).
-/vault/ipv6.dat | File di firme per IPv6.
+/vault/ipv4_isps.dat | File di firme per IPv4 (ISP pericolosi e spam incline).
+/vault/ipv4_other.dat | File di firme per IPv4 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).
+/vault/ipv6.dat | File di firme per IPv6 (servizi cloud indesiderate e punti finali non umani).
+/vault/ipv6_bogons.dat | File di firme per IPv6 (bogon/marziano CIDRs).
 /vault/ipv6_custom.dat.RenameMe | File di firme per IPv6 personalizzato (rinomina per attivare).
+/vault/ipv6_isps.dat | File di firme per IPv6 (ISP pericolosi e spam incline).
+/vault/ipv6_other.dat | File di firme per IPv6 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).
 /vault/lang.php | Linguistici dati.
 /vault/modules.dat | Contiene informazioni relative ai vari moduli per CIDRAM; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/outgen.php | Generatore di output.
@@ -569,4 +575,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 23 Gennaio 2016 (2017.01.23).
+Ultimo Aggiornamento: 24 Gennaio 2016 (2017.01.24).

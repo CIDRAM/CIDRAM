@@ -186,10 +186,16 @@ Arquivo | Descrição
 /vault/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
 /vault/ignore.dat | Arquivo de ignorados (usado para especificar quais seções de assinaturas CIDRAM deve ignorar).
 /vault/ipbypass.dat | Contém uma lista de bypasses IP (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
-/vault/ipv4.dat | Arquivo de assinaturas para IPv4.
+/vault/ipv4.dat | Arquivo de assinaturas para IPv4 (serviços em nuvem indesejados e pontos de extremidade não-humanos).
+/vault/ipv4_bogons.dat | Arquivo de assinaturas para IPv4 (bogon/marciano CIDRs).
 /vault/ipv4_custom.dat.RenameMe | Arquivo de assinaturas personalizadas para IPv4 (renomear para ativar).
-/vault/ipv6.dat | Arquivo de assinaturas para IPv6.
+/vault/ipv4_isps.dat | Arquivo de assinaturas para IPv4 (ISPs perigosos e propensos a spam).
+/vault/ipv4_other.dat | Arquivo de assinaturas para IPv4 (CIDRs para proxies, VPNs e outros diversos serviços indesejados).
+/vault/ipv6.dat | Arquivo de assinaturas para IPv6 (serviços em nuvem indesejados e pontos de extremidade não-humanos).
+/vault/ipv6_bogons.dat | Arquivo de assinaturas para IPv6 (bogon/marciano CIDRs).
 /vault/ipv6_custom.dat.RenameMe | Arquivo de assinaturas personalizadas para IPv6 (renomear para ativar).
+/vault/ipv6_isps.dat | Arquivo de assinaturas para IPv6 (ISPs perigosos e propensos a spam).
+/vault/ipv6_other.dat | Arquivo de assinaturas para IPv6 (CIDRs para proxies, VPNs e outros diversos serviços indesejados).
 /vault/lang.php | Linguagem dados.
 /vault/modules.dat | Contém informações relativas os vários módulos para CIDRAM; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/outgen.php | Gerador de saída.
@@ -569,4 +575,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 23 Janeiro 2016 (2017.01.23).
+Última Atualização: 24 Janeiro 2016 (2017.01.24).

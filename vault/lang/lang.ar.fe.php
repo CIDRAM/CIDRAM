@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.01.23).
+ * This file: Arabic language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = 'حسنا';
 $CIDRAM['lang']['field_options'] = 'خيارات';
 $CIDRAM['lang']['field_password'] = 'كلمه السر';
 $CIDRAM['lang']['field_permissions'] = 'أذونات';
+$CIDRAM['lang']['field_range'] = 'نطاق (الأول – الاخير)';
 $CIDRAM['lang']['field_rename_file'] = 'إعادة تسمية';
 $CIDRAM['lang']['field_reset'] = 'إعادة تعيين';
 $CIDRAM['lang']['field_set_new_password'] = 'تحديد جديد كلمه السر';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = 'اسم المستخدم';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
+$CIDRAM['lang']['link_cidr_calc'] = 'CIDR حاسبة';
 $CIDRAM['lang']['link_config'] = 'التكوين';
 $CIDRAM['lang']['link_documentation'] = 'توثيق';
 $CIDRAM['lang']['link_file_manager'] = 'مدير الملفات';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستعمل';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
+$CIDRAM['lang']['tip_cidr_calc'] = 'مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل.';
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'أدخل IPs هنا.';
+$CIDRAM['lang']['tip_enter_ip_here'] = 'أدخل IP هنا.';
 $CIDRAM['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا).';
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $CIDRAM['lang']['tip_ip_test'] = 'مرحبا، {username}.<br />الصفحة اختبار IP يسمح لك لاختبار سواء عناوين IP مسدودة من التوقيعات المثبتة حاليا.';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلا
 $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ar.md#SECTION6">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
 $CIDRAM['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – حسابات';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR حاسبة';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – مدير الملفات';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – الرئيسية';

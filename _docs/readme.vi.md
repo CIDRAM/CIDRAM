@@ -107,6 +107,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
+/vault/fe_assets/_cidr_calc.html | Một tập tin mẫu HTML cho các máy tính CIDR.
+/vault/fe_assets/_cidr_calc_row.html | Một tập tin mẫu HTML cho các máy tính CIDR.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
@@ -575,4 +577,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 24 Tháng Giêng 2017 (2017.01.24).
+Lần cuối cập nhật: 26 Tháng Giêng 2017 (2017.01.26).

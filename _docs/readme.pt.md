@@ -107,6 +107,8 @@ Arquivo | Descrição
 /vault/fe_assets/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/fe_assets/_accounts.html | Um modelo HTML para o front-end página de contas.
 /vault/fe_assets/_accounts_row.html | Um modelo HTML para o front-end página de contas.
+/vault/fe_assets/_cidr_calc.html | Um modelo HTML para a calculadora CIDR.
+/vault/fe_assets/_cidr_calc_row.html | Um modelo HTML para a calculadora CIDR.
 /vault/fe_assets/_config.html | Um modelo HTML para o front-end página de configuração.
 /vault/fe_assets/_config_row.html | Um modelo HTML para o front-end página de configuração.
 /vault/fe_assets/_files.html | Um modelo HTML para o gerenciador de arquivos.
@@ -575,4 +577,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 24 Janeiro 2016 (2017.01.24).
+Última Atualização: 26 Janeiro 2016 (2017.01.26).

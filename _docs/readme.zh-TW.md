@@ -108,6 +108,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/_accounts.html | 前端賬戶頁面的HTML模板。
 /vault/fe_assets/_accounts_row.html | 前端賬戶頁面的HTML模板。
+/vault/fe_assets/_cidr_calc.html | CIDR計算器的HTML模板。
+/vault/fe_assets/_cidr_calc_row.html | CIDR計算器的HTML模板。
 /vault/fe_assets/_config.html | 前端配置頁面的HTML模板。
 /vault/fe_assets/_config_row.html | 前端配置頁面的HTML模板。
 /vault/fe_assets/_files.html | 文件管理器的HTML模板。
@@ -576,4 +578,4 @@ CIDRAM會阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2017年1月24日。
+最後更新：2017年1月26日。

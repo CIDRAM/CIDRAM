@@ -1848,6 +1848,66 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
 }
 
+/** CIDR Calculator. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_cidr_calc'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_cidr_calc']
+    );
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Template for result rows. */
+    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_cidr_calc_row.html');
+
+    /** Initialise results data. */
+    $CIDRAM['FE']['Ranges'] = '';
+
+    /** IPs were submitted for testing. */
+    if (isset($_POST['cidr'])) {
+        $CIDRAM['FE']['cidr'] = $_POST['cidr'];
+        if ($_POST['cidr'] = preg_replace("\x01[^0-9a-f:./]\x01i", '', $_POST['cidr'])) {
+            if (!$CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv4']($_POST['cidr'])) {
+                $CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv6']($_POST['cidr']);
+            }
+        }
+    } else {
+        $CIDRAM['FE']['cidr'] = '';
+    }
+
+    /** Process CIDRs. */
+    if (!empty($CIDRAM['CIDRs'])) {
+        $CIDRAM['Factors'] = count($CIDRAM['CIDRs']);
+        array_walk($CIDRAM['CIDRs'], function ($CIDR, $Key) use (&$CIDRAM) {
+            $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
+            if ($CIDRAM['Factors'] === 32) {
+                $Last = $CIDRAM['IPv4GetLast']($First, $Key + 1);
+            } elseif ($CIDRAM['Factors'] === 128) {
+                $Last = $CIDRAM['IPv6GetLast']($First, $Key + 1);
+            } else {
+                $Last = $CIDRAM['lang']['response_error'];
+            }
+            $Arr = array('CIDR' => $CIDR, 'Range' => $First . ' – ' . $Last);
+            $CIDRAM['FE']['Ranges'] .= $CIDRAM['ParseVars']($Arr, $CIDRAM['FE']['CalcRow']);
+        });
+    }
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_cidr_calc.html')
+    );
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
 /** Logs. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.01.23).
+ * This file: Dutch language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opties';
 $CIDRAM['lang']['field_password'] = 'Wachtwoord';
 $CIDRAM['lang']['field_permissions'] = 'Machtigingen';
+$CIDRAM['lang']['field_range'] = 'Bereik (Eerste – Laatste)';
 $CIDRAM['lang']['field_rename_file'] = 'Naam veranderen';
 $CIDRAM['lang']['field_reset'] = 'Resetten';
 $CIDRAM['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
+$CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
 $CIDRAM['lang']['link_config'] = 'Configuratie';
 $CIDRAM['lang']['link_documentation'] = 'Documentatie';
 $CIDRAM['lang']['link_file_manager'] = 'Bestandsbeheer';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verberg
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'De ongebruikte verbergen';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend.';
+$CIDRAM['lang']['tip_cidr_calc'] = 'Hallo, {username}.<br />De CIDR calculator stelt u in staat om te berekenen welke CIDRs een IP-adres is een factor.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM wordt gratis aangeboden, maar als u wilt doneren aan het project, kan u dit doen door te klikken op de knop doneren.';
-$CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier IPs.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier de IP\'s.';
+$CIDRAM['lang']['tip_enter_ip_here'] = 'Vul hier een IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde handtekeningen worden geblokkeerd.';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand 
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.nl.md#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Bestandsbeheer';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Startpagina';

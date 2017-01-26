@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.01.23).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = '选项';
 $CIDRAM['lang']['field_password'] = '密码';
 $CIDRAM['lang']['field_permissions'] = '权限';
+$CIDRAM['lang']['field_range'] = '范围 （初始 – 最后）';
 $CIDRAM['lang']['field_rename_file'] = '改名';
 $CIDRAM['lang']['field_reset'] = '重启';
 $CIDRAM['lang']['field_set_new_password'] = '保存新密码';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = '用户名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['link_accounts'] = '账户';
+$CIDRAM['lang']['link_cidr_calc'] = 'CIDR计算器';
 $CIDRAM['lang']['link_config'] = '配置';
 $CIDRAM['lang']['link_documentation'] = '文档';
 $CIDRAM['lang']['link_file_manager'] = '文件管理器';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
 $CIDRAM['lang']['tip_accounts'] = '你好，{username}。<br />账户页面允许您控制谁可以访问CIDRAM前端。';
+$CIDRAM['lang']['tip_cidr_calc'] = '你好，{username}。<br />CIDR计算器允许您计算IP地址属于哪个CIDR。';
 $CIDRAM['lang']['tip_config'] = '你好，{username}。<br />配置页面允许您修改CIDRAM配置从前端。';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，但如果您想捐赠给项目，您可以通过点击捐赠按钮这样做。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
+$CIDRAM['lang']['tip_enter_ip_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_file_manager'] = '你好，{username}。<br />文件管理器允许您删除，编辑，上传和下载文件。小心使用（您可以用这个破坏您的安装）。';
 $CIDRAM['lang']['tip_home'] = '你好，{username}。<br />这是CIDRAM的前端主页。从左侧的导航菜单中选择一个链接以继续。';
 $CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = '你好，{username}。<br />选择一个日志从
 $CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
 $CIDRAM['lang']['tip_updates'] = '你好，{username}。<br />更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包，签名，L10N文件，等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 账户';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR计算器';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 文件管理器';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – 主页';

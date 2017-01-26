@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.01.23).
+ * This file: Japanese language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'オプション';
 $CIDRAM['lang']['field_password'] = 'パスワード';
 $CIDRAM['lang']['field_permissions'] = 'パーミッション';
+$CIDRAM['lang']['field_range'] = '範囲 （最初 – 最後）';
 $CIDRAM['lang']['field_rename_file'] = '名前を変更する';
 $CIDRAM['lang']['field_reset'] = 'リセット';
 $CIDRAM['lang']['field_set_new_password'] = '新しいパスワードを設定します';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = 'ユーザー名';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、ログインしてください。';
 $CIDRAM['lang']['link_accounts'] = 'アカウント';
+$CIDRAM['lang']['link_cidr_calc'] = 'CIDR計算機';
 $CIDRAM['lang']['link_config'] = 'コンフィギュレーション';
 $CIDRAM['lang']['link_documentation'] = 'ドキュメンテーション';
 $CIDRAM['lang']['link_file_manager'] = 'ファイル・マネージャー';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
 $CIDRAM['lang']['tip_accounts'] = 'こんにちは、{username}。<br />アカウント・ページは、CIDRAMフロントエンドにアクセスできるユーザーを制御できます。';
+$CIDRAM['lang']['tip_cidr_calc'] = 'こんにちは、{username}。<br />CIDR計算機では、IPアドレスがどのCIDRに属しているかを計算できます。';
 $CIDRAM['lang']['tip_config'] = 'こんにちは、{username}。<br />コンフィグレーション・ページは、フロントエンドからCIDRAMの設定を変更することができます。';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAMは無料で提供されています、しかし、あなたがしたい場合、寄付ボタンをクリックすると、プロジェクトに寄付することができます。';
-$CIDRAM['lang']['tip_enter_ips_here'] = 'ここにIPアドレスを入力してください。';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'ここにIPを入力してください。';
+$CIDRAM['lang']['tip_enter_ip_here'] = 'ここにIPを入力してください。';
 $CIDRAM['lang']['tip_file_manager'] = 'こんにちは、{username}。<br />ファイル・マネージャを使用する、ファイルを削除、編集、アップロード、ダウンロードができます。慎重に使用する（これを使って、インストールを壊すことができます）。';
 $CIDRAM['lang']['tip_home'] = 'こんにちは、{username}。<br />これはCIDRAMフロントエンドのホームページです。続行するには、左側のナビゲーションメニューからリンクを選択します。';
 $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、{username}。<br />IPテスト・ページは、IPアドレスがブロックされているかどうかをテストできます。';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = 'こんにちは、{username}。<br />そのログ
 $CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';
 $CIDRAM['lang']['tip_updates'] = 'こんにちは、{username}。<br />アップデート・ページは、CIDRAMのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、署名、L10Nファイル、等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – アカウント';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR計算機';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – コンフィギュレーション';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – ファイル・マネージャー';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – ホーム';

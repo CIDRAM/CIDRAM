@@ -1,0 +1,23 @@
+<table width="100%">
+<tr>
+    <td width="20%" class="nav">
+
+{nav}
+    </td>
+    <td width="80%" class="right">
+        <table width="100%">
+        <tr><form action="?cidram-page=cidr-calc" method="POST">
+            <td class="h3">
+                <div class="center"><input type="text" name="cidr" value="{cidr}" placeholder="{tip_enter_ip_here}" /></div>
+            </td>
+            <td class="h3f"><div class="center"><input type="submit" value="{field_ok}" /></div></td>
+        </form></tr>
+        <tr>
+            <td class="h2"><div class="s">CIDR</div></td>
+            <td class="h2f"><div class="s">{field_range}</div></td>
+        </tr>
+{Ranges}
+        </table>
+    </td>
+</tr>
+</table>

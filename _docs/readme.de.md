@@ -109,6 +109,8 @@ Datei | Beschreibung
 /vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/fe_assets/_accounts.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
+/vault/fe_assets/_cidr_calc.html | Eine HTML-Template für den CIDR-Rechner.
+/vault/fe_assets/_cidr_calc_row.html | Eine HTML-Template für den CIDR-Rechner.
 /vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
 /vault/fe_assets/_config_row.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
 /vault/fe_assets/_files.html | Eine HTML-Template für den Dateimanager.
@@ -577,4 +579,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 24 Januar 2016 (2017.01.24).
+Zuletzt aktualisiert: 26 Januar 2016 (2017.01.26).

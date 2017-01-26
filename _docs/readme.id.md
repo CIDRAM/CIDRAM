@@ -107,6 +107,8 @@ Data | Deskripsi
 /vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_cidr_calc.html | Template HTML untuk kalkulator CIDR.
+/vault/fe_assets/_cidr_calc_row.html | Template HTML untuk kalkulator CIDR.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
@@ -575,4 +577,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 24 Januari 2016 (2017.01.24).
+Terakhir Diperbarui: 26 Januari 2016 (2017.01.26).

@@ -107,6 +107,8 @@ Bestand | Beschrijving
 /vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_cidr_calc.html | Een HTML sjabloon voor de CIDR calculator.
+/vault/fe_assets/_cidr_calc_row.html | Een HTML sjabloon voor de CIDR calculator.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_config_row.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
@@ -575,4 +577,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 24 Januari 2016 (2017.01.24).
+Laatste Bijgewerkt: 26 Januari 2016 (2017.01.26).

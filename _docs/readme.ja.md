@@ -107,6 +107,8 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/fe_assets/_accounts.html | フロントエンドのアカウント・ページのHTMLテンプレート。
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウント・ページのHTMLテンプレート。
+/vault/fe_assets/_cidr_calc.html | CIDR計算機のHTMLテンプレート。
+/vault/fe_assets/_cidr_calc_row.html | CIDR計算機のHTMLテンプレート。
 /vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_config_row.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
 /vault/fe_assets/_files.html | ファイル・マネージャのHTMLテンプレート。
@@ -575,4 +577,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月24日。
+最終アップデート： 2017年1月26日。

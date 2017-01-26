@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.23).
+ * This file: Functions file (last modified: 2017.01.26).
  */
 
 /**
@@ -369,16 +369,16 @@ $CIDRAM['ExpandIPv6'] = function ($Addr) use (&$CIDRAM) {
     $NAddr[7] = dechex($NAddr[7]);
     $CIDRs[127] = $NAddr[0] . ':' . $NAddr[1] . ':' . $NAddr[2] . ':' . $NAddr[3] . ':' . $NAddr[4] . ':' . $NAddr[5] . ':' . $NAddr[6] . ':' . $NAddr[7] . '/128';
     for ($i = 0; $i < 128; $i++) {
-        if (substr_count($CIDRs[$i], '::')) {
+        if (strpos($CIDRs[$i], '::') !== false) {
             $CIDRs[$i] = preg_replace('/(\:0)*\:\:(0\:)*/i', '::', $CIDRs[$i], 1);
             $CIDRs[$i] = str_replace('::0/', '::/', $CIDRs[$i]);
             continue;
         }
-        if (substr_count($CIDRs[$i], ':0:0/')) {
+        if (strpos($CIDRs[$i], ':0:0/') !== false) {
             $CIDRs[$i] = preg_replace('/(\:0){2,}\//i', '::/', $CIDRs[$i], 1);
             continue;
         }
-        if (substr_count($CIDRs[$i], ':0:0:')) {
+        if (strpos($CIDRs[$i], ':0:0:') !== false) {
             $CIDRs[$i] = preg_replace('/(\:0)+\:(0\:)+/i', '::', $CIDRs[$i], 1);
             $CIDRs[$i] = str_replace('::0/', '::/', $CIDRs[$i]);
             continue;
@@ -1051,7 +1051,8 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
     if ($PadLen < 1) {
         $PadLen = 972 - $HostLen;
     }
-    while (--$PadLen) {
+    while ($PadLen > 0) {
+        $PadLen--;
         $URI .= str_shuffle($Valid)[0];
     }
 
@@ -1729,4 +1730,80 @@ $CIDRAM['IsInUse'] = function ($Files) use (&$CIDRAM) {
         }
     }
     return false;
+};
+
+/**
+ * Determine the final IP address covered by an IPv4 CIDR. This closure is used
+ * by the CIDR Calculator.
+ *
+ * @param string $First The first IP address.
+ * @param int $Factor The range number (or CIDR factor number).
+ * @return string The final IP address.
+ */
+$CIDRAM['IPv4GetLast'] = function ($First, $Factor) {
+    $Octets = explode('.', $First);
+    $Split = $Bracket = $Factor / 8;
+    $Split -= floor($Split);
+    $Split = (int)(8 - ($Split * 8));
+    $Octet = floor($Bracket);
+    if ($Octet < 4) {
+        $Octets[$Octet] += pow(2, $Split) - 1;
+    }
+    while ($Octet < 3) {
+        $Octets[$Octet + 1] = 255;
+        $Octet++;
+    }
+    return implode('.', $Octets);
+};
+
+/**
+ * Determine the final IP address covered by an IPv6 CIDR. This closure is used
+ * by the CIDR Calculator.
+ *
+ * @param string $First The first IP address.
+ * @param int $Factor The range number (or CIDR factor number).
+ * @return string The final IP address.
+ */
+$CIDRAM['IPv6GetLast'] = function ($First, $Factor) {
+    if (substr_count($First, '::')) {
+        $Abr = 7 - substr_count($First, ':');
+        $Arr = array(
+            ':0:',
+            ':0:0:',
+            ':0:0:0:',
+            ':0:0:0:0:',
+            ':0:0:0:0:0:',
+            ':0:0:0:0:0:0:'
+        );
+        $First = str_replace('::', $Arr[$Abr], $First);
+    }
+    $Octets = explode(':', $First);
+    $Octet = 8;
+    while ($Octet > 0) {
+        $Octet--;
+        $Octets[$Octet] = hexdec($Octets[$Octet]);
+    }
+    $Split = $Bracket = $Factor / 16;
+    $Split -= floor($Split);
+    $Split = (int)(16 - ($Split * 16));
+    $Octet = floor($Bracket);
+    if ($Octet < 8) {
+        $Octets[$Octet] += pow(2, $Split) - 1;
+    }
+    while ($Octet < 7) {
+        $Octets[$Octet + 1] = 65535;
+        $Octet++;
+    }
+    $Octet = 8;
+    while ($Octet > 0) {
+        $Octet--;
+        $Octets[$Octet] = dechex($Octets[$Octet]);
+    }
+    $Last = implode(':', $Octets);
+    if (strpos($Last . '/', ':0:0/') !== false) {
+        $Last = preg_replace('/(\:0){2,}$/i', '::', $Last, 1);
+    } elseif (strpos($Last, ':0:0:') !== false) {
+        $Last = preg_replace('/(?:(\:0)+\:(0\:)+|\:\:0$)/i', '::', $Last, 1);
+    }
+    return $Last;
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.01.23).
+ * This file: Korean language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -25,7 +25,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = '프런트 엔드에 대한
 $CIDRAM['lang']['config_general_emailaddr'] = '지원을위한 이메일 주소입니다.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '무엇 헤더 사용해야합니까 (요청을 차단했을 때)?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
-$CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR。 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
+$CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM의 기본 언어를 설정합니다.';
 $CIDRAM['lang']['config_general_logfile'] = '액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_logfileApache'] = '액세스 시도 저지를 기록, Apache 스타일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = '승인';
 $CIDRAM['lang']['field_options'] = '옵션';
 $CIDRAM['lang']['field_password'] = '비밀번호';
 $CIDRAM['lang']['field_permissions'] = '권한';
+$CIDRAM['lang']['field_range'] = '범위 (처음 – 마지막)';
 $CIDRAM['lang']['field_rename_file'] = '이름을 변경하려면';
 $CIDRAM['lang']['field_reset'] = '재설정';
 $CIDRAM['lang']['field_set_new_password'] = '새 암호를 설정합니다';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = '사용자 이름';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['link_accounts'] = '계정';
+$CIDRAM['lang']['link_cidr_calc'] = 'CIDR 계산기';
 $CIDRAM['lang']['link_config'] = '구성';
 $CIDRAM['lang']['link_documentation'] = '문서';
 $CIDRAM['lang']['link_file_manager'] = '파일 관리자';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '미사용을 숨기지 않고';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '미사용 숨기기';
 $CIDRAM['lang']['tip_accounts'] = '안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프런트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다.';
+$CIDRAM['lang']['tip_cidr_calc'] = '안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다.';
 $CIDRAM['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이지는 프런트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM는 무료로 제공되고 있습니다, 하지만 당신이 원한다면 기부 버튼을 클릭하면 프로젝트에 기부 할 수 있습니다.';
-$CIDRAM['lang']['tip_enter_ips_here'] = '여기에 IP 주소를 입력하십시오.';
+$CIDRAM['lang']['tip_enter_ips_here'] = '여기에 IP를 입력하십시오.';
+$CIDRAM['lang']['tip_enter_ip_here'] = '여기에 IP를 입력하십시오.';
 $CIDRAM['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다).';
 $CIDRAM['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $CIDRAM['lang']['tip_ip_test'] = '안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주소가 차단되어 있는지를 테스트 할 수 있습니다.';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내�
 $CIDRAM['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">문서를</a> 참조하십시오.';
 $CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치, 제거, 업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일 등).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 계정';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 구성';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 파일 관리자';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – 홈';

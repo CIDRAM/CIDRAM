@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.01.23).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Tùy Chọn';
 $CIDRAM['lang']['field_password'] = 'Mật Khẩu';
 $CIDRAM['lang']['field_permissions'] = 'Quyền';
+$CIDRAM['lang']['field_range'] = 'Phạm vi (Đầu tiên – Cuối cùng)';
 $CIDRAM['lang']['field_rename_file'] = 'Đổi tên';
 $CIDRAM['lang']['field_reset'] = 'Thiết Lập Lại';
 $CIDRAM['lang']['field_set_new_password'] = 'Đặt mật khẩu mới';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';
+$CIDRAM['lang']['link_cidr_calc'] = 'Máy Tính CIDR';
 $CIDRAM['lang']['link_config'] = 'Cấu Hình';
 $CIDRAM['lang']['link_documentation'] = 'Tài Liệu';
 $CIDRAM['lang']['link_file_manager'] = 'Quản Lý Tập Tin';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết h
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
 $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM.';
+$CIDRAM['lang']['tip_cidr_calc'] = 'Xin chào, {username}.<br />Máy tính CIDR cho phép bạn để tính toán mà các CIDR một địa chỉ IP thuộc về.';
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
+$CIDRAM['lang']['tip_enter_ip_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hello, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này).';
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $CIDRAM['lang']['tip_ip_test'] = 'Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn kiểm tra nếu địa chỉ IP bị chặn bằng các chữ ký hiện đang được cài đặt.';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản gh
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.vi.md#SECTION6">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
 $CIDRAM['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Tài Khoản';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Máy Tính CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Cấu Hình';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Quản Lý Tập Tin';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Trang Chủ';

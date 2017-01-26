@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.01.23).
+ * This file: Indonesian language data for the front-end (last modified: 2017.01.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,6 +74,7 @@ $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opsi';
 $CIDRAM['lang']['field_password'] = 'Kata Sandi';
 $CIDRAM['lang']['field_permissions'] = 'Izin';
+$CIDRAM['lang']['field_range'] = 'Jangkauan (Pertama – Terakhir)';
 $CIDRAM['lang']['field_rename_file'] = 'Memodifikasi nama';
 $CIDRAM['lang']['field_reset'] = 'Mengatur Kembali';
 $CIDRAM['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
@@ -91,6 +92,7 @@ $CIDRAM['lang']['field_username'] = 'Nama Pengguna';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['link_accounts'] = 'Akun';
+$CIDRAM['lang']['link_cidr_calc'] = 'Kalkulator CIDR';
 $CIDRAM['lang']['link_config'] = 'Konfigurasi';
 $CIDRAM['lang']['link_documentation'] = 'Dokumentasi';
 $CIDRAM['lang']['link_file_manager'] = 'File Manager';
@@ -149,9 +151,11 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunakan';
 $CIDRAM['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM.';
+$CIDRAM['lang']['tip_cidr_calc'] = 'Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor.';
 $CIDRAM['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk CIDRAM dari bagian depan.';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
+$CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_test'] = 'Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk mengetes apakah alamat IP yang diblokir dengan tanda tangan yang saat ini diinstal.';
@@ -160,6 +164,7 @@ $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dib
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.id.md#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $CIDRAM['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Akun';
+$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Kalkulator CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfigurasi';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Halaman Utama';

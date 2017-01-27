@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.16).
+ * This file: Output generator (last modified: 2017.01.27).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -57,8 +57,8 @@ $CIDRAM['BlockInfo'] = array(
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
     'Query' => $CIDRAM['Query'],
-    'Referrer' => (empty($_SERVER['HTTP_REFERER'])) ? '' : $_SERVER['HTTP_REFERER'],
-    'UA' => (empty($_SERVER['HTTP_USER_AGENT'])) ? '' : $_SERVER['HTTP_USER_AGENT'],
+    'Referrer' => empty($_SERVER['HTTP_REFERER']) ? '' : $_SERVER['HTTP_REFERER'],
+    'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
     'ReasonMessage' => '',
     'SignatureCount' => 0,
     'Signatures' => '',
@@ -326,7 +326,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
     /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
 
-    if ($CIDRAM['Config']['general']['ban_override'] === 403) {
+    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] === 403) {
 
         $CIDRAM['errCode'] = 403;
         header('HTTP/1.0 403 Forbidden');
@@ -334,7 +334,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
         header('Status: 403 Forbidden');
         $CIDRAM['html'] = '';
 
-    } elseif ($CIDRAM['Config']['general']['ban_override'] === 503) {
+    } elseif (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] === 503) {
 
         $CIDRAM['errCode'] = 503;
         header('HTTP/1.0 503 Service Unavailable');

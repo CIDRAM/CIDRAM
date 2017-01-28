@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified： 2017.01.12).
+ * This file: Japanese language data (last modified： 2017.01.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -28,8 +28,8 @@ $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHAのステータス： ';
 $CIDRAM['lang']['field_referrer'] = 'リファラー： ';
 $CIDRAM['lang']['field_rURI'] = 'URI再構築された： ';
 $CIDRAM['lang']['field_scriptversion'] = 'スクリプトのバージョン： ';
-$CIDRAM['lang']['field_sigcount'] = '署名数： ';
-$CIDRAM['lang']['field_sigref'] = '署名リファレンス： ';
+$CIDRAM['lang']['field_sigcount'] = 'シグネチャの数： ';
+$CIDRAM['lang']['field_sigref'] = 'シグネチャリファレンス： ';
 $CIDRAM['lang']['field_ua'] = 'ユーザーエージェント： ';
 $CIDRAM['lang']['field_whyreason'] = 'なぜブロックされましたか： ';
 $CIDRAM['lang']['generated_by'] = '作成者';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2017.01.12).
+ * This file: Dutch language data (last modified: 2017.01.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -28,8 +28,8 @@ $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA State: ';
 $CIDRAM['lang']['field_referrer'] = 'Verwijzer: ';
 $CIDRAM['lang']['field_rURI'] = 'Gereconstrueerde URI: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Script Versie: ';
-$CIDRAM['lang']['field_sigcount'] = 'Handtekeningen Tellen: ';
-$CIDRAM['lang']['field_sigref'] = 'Handtekeningen Verwijzing: ';
+$CIDRAM['lang']['field_sigcount'] = 'Signatures Tellen: ';
+$CIDRAM['lang']['field_sigref'] = 'Signatures Verwijzing: ';
 $CIDRAM['lang']['field_ua'] = 'User Agent: ';
 $CIDRAM['lang']['field_whyreason'] = 'Waarom Geblokkeerd: ';
 $CIDRAM['lang']['generated_by'] = 'Gegenereerd door';

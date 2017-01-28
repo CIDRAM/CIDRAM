@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.01.26).
+ * This file: Dutch language data for the front-end (last modified: 2017.01.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -43,14 +43,14 @@ $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Deze waarde moet overeenkomen met
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Bepaalt hoe CIDRAM reCAPTCHA moet gebruiken (raadpleeg de documentatie).';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blokkeren bogon/martian CIDRs? Als u verwacht aansluitingen om uw website vanuit uw lokale netwerk, vanuit localhost, of vanuit uw LAN, dit richtlijn moet worden ingesteld op false. Als u niet verwacht deze aansluitingen, dit richtlijn moet worden ingesteld op true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blokkeren CIDRs geïdentificeerd als behorend tot webhosting/cloud-diensten? Als u een api te bedienen vanaf uw website of als u verwacht dat andere websites aan te sluiten op uw website, dit richtlijn moet worden ingesteld op false. Als u niet, dan, dit richtlijn moet worden ingesteld op true.';
-$CIDRAM['lang']['config_signatures_block_generic'] = 'Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle handtekeningen die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke handtekening categorieën.';
+$CIDRAM['lang']['config_signatures_block_generic'] = 'Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle signatures die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke signature categorieën.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokkeren CIDRs geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verboden door IP-tracking. Standaard = 10.';
-$CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
-$CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
-$CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.';
+$CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
+$CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
+$CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet inbreuken worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
@@ -158,11 +158,11 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier de IP\'s.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Vul hier een IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
-$CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde handtekeningen worden geblokkeerd.';
+$CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde signatures worden geblokkeerd.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.nl.md#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
-$CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, L10N bestanden, ezv).';
+$CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
@@ -186,7 +186,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
             <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Nuttig aggregatie tool voor IPv4 IPs.</li>
             <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN\'s en ook voor diverse andere informatie over ASN\'s.</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Een fantastische en accurate service voor het genereren van de handtekeningen voor landen.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>

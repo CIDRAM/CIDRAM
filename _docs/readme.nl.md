@@ -7,7 +7,7 @@
 - 4. [FRONTEND MANAGEMENT](#SECTION4)
 - 5. [BESTANDEN IN DIT PAKKET](#SECTION5)
 - 6. [CONFIGURATIEOPTIES](#SECTION6)
-- 7. [HANDTEKENINGFORMAAT](#SECTION7)
+- 7. [SIGNATURE FORMAAT](#SECTION7)
 - 8. [VEELGESTELDE VRAGEN (FAQ)](#SECTION8)
 
 *Opmerking over vertalingen: In geval van fouten (bv, verschillen tussen vertalingen, typefouten, ezv), de Engels versie van de README wordt beschouwd als het origineel en gezaghebbende versie. Als u vinden elke fouten, uw hulp bij het corrigeren van hen zou worden toegejuicht.*
@@ -17,7 +17,7 @@
 
 ###1. <a name="SECTION1"></a>PREAMBULE
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) is een PHP-script ontworpen om websites te beschermen door het blokkeren van verzoeken afkomstig van IP-adressen beschouwd als bronnen van ongewenste verkeer, inclusief (maar niet gelimiteerd tot) het verkeer van niet-menselijke toegang eindpunten, cloud-diensten, spambots, schrapers/scrapers, ezv. Het doet dit door het berekenen van de mogelijke CIDRs van de IP-adressen geleverde van binnenkomende verzoeken en dan het vergelijken van deze mogelijke CIDRs tegen zijn handtekening bestanden (deze handtekening bestanden bevatten lijsten van CIDRs van IP-adressen beschouwd als bronnen van ongewenste verkeer); Als overeenkomsten worden gevonden, de verzoeken worden geblokkeerd.
+CIDRAM (Classless Inter-Domain Routing Access Manager) is een PHP-script ontworpen om websites te beschermen door het blokkeren van verzoeken afkomstig van IP-adressen beschouwd als bronnen van ongewenste verkeer, inclusief (maar niet gelimiteerd tot) het verkeer van niet-menselijke toegang eindpunten, cloud-diensten, spambots, schrapers/scrapers, ezv. Het doet dit door het berekenen van de mogelijke CIDRs van de IP-adressen geleverde van binnenkomende verzoeken en dan het vergelijken van deze mogelijke CIDRs tegen zijn signature bestanden (deze signature bestanden bevatten lijsten van CIDRs van IP-adressen beschouwd als bronnen van ongewenste verkeer); Als overeenkomsten worden gevonden, de verzoeken worden geblokkeerd.
 
 CIDRAM COPYRIGHT 2016 en verder GNU/GPLv2 van Caleb M (Maikuolan).
 
@@ -67,7 +67,7 @@ Of dit in het `.htaccess` bestand:
 
 CIDRAM moet blokkeren ongewenste verzoeken naar uw website automatisch zonder enige handmatige hulp, afgezien van de eerste installatie.
 
-Updaten gebeurt met de hand, en u kunt aanpassen uw configuratie en aanpassen de CIDRs dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw handtekening bestanden.
+Updaten gebeurt met de hand, en u kunt aanpassen uw configuratie en aanpassen de CIDRs dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw signature bestanden.
 
 Als u tegenkomen een valse positieven, neem dan contact met mij op om me te laten weten.
 
@@ -186,18 +186,18 @@ Bestand | Beschrijving
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
-/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke handtekening secties CIDRAM moeten negeren).
+/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke signature secties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
-/vault/ipv4.dat | IPv4 handtekeningen bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
-/vault/ipv4_bogons.dat | IPv4 handtekeningen bestand (bogon/martian CIDRs).
-/vault/ipv4_custom.dat.RenameMe | IPv4 aangepaste handtekeningen bestand (hernoemen om te activeren).
-/vault/ipv4_isps.dat | IPv4 handtekeningen bestand (gevaarlijk en spammy ISPs).
-/vault/ipv4_other.dat | IPv4 handtekeningen bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
-/vault/ipv6.dat | IPv6 handtekeningen bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
-/vault/ipv6_bogons.dat | IPv6 handtekeningen bestand (bogon/martian CIDRs).
-/vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste handtekeningen bestand (hernoemen om te activeren).
-/vault/ipv6_isps.dat | IPv6 handtekeningen bestand (gevaarlijk en spammy ISPs).
-/vault/ipv6_other.dat | IPv6 handtekeningen bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+/vault/ipv4.dat | IPv4 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
+/vault/ipv4_bogons.dat | IPv4 signatures bestand (bogon/martian CIDRs).
+/vault/ipv4_custom.dat.RenameMe | IPv4 aangepaste signatures bestand (hernoemen om te activeren).
+/vault/ipv4_isps.dat | IPv4 signatures bestand (gevaarlijk en spammy ISPs).
+/vault/ipv4_other.dat | IPv4 signatures bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+/vault/ipv6.dat | IPv6 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
+/vault/ipv6_bogons.dat | IPv6 signatures bestand (bogon/martian CIDRs).
+/vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste signatures bestand (hernoemen om te activeren).
+/vault/ipv6_isps.dat | IPv6 signatures bestand (gevaarlijk en spammy ISPs).
+/vault/ipv6_other.dat | IPv6 signatures bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
 /vault/lang.php | Taal-handler.
 /vault/modules.dat | Bevat informatie met betrekking tot de CIDRAM modules; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/outgen.php | Uitvoer generator.
@@ -283,13 +283,13 @@ Algemene configuratie voor CIDRAM.
 - Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 ####"signatures" (Categorie)
-Configuratie voor handtekeningen.
+Configuratie voor signatures.
 
 "ipv4"
-- Een lijst van de IPv4 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv4 signature files in CIDRAM bevatten.
+- Een lijst van de IPv4 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv4 signature files in CIDRAM bevatten.
 
 "ipv6"
-- Een lijst van de IPv6 handtekening bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv6 signature files in CIDRAM bevatten.
+- Een lijst van de IPv6 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv6 signature files in CIDRAM bevatten.
 
 "block_cloud"
 - Blokkeren CIDRs geïdentificeerd als behorend tot webhosting/cloud-diensten? Als u een api te bedienen vanaf uw website of als u verwacht dat andere websites aan te sluiten op uw website, dit richtlijn moet worden ingesteld op false. Als u niet, dan, dit richtlijn moet worden ingesteld op true.
@@ -298,7 +298,7 @@ Configuratie voor handtekeningen.
 - Blokkeren bogon/martian CIDRs? Als u verwacht aansluitingen om uw website vanuit uw lokale netwerk, vanuit localhost, of vanuit uw LAN, dit richtlijn moet worden ingesteld op false. Als u niet verwacht deze aansluitingen, dit richtlijn moet worden ingesteld op true.
 
 "block_generic"
-- Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle handtekeningen die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke handtekening categorieën.
+- Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle signatures die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke signature categorieën.
 
 "block_proxies"
 - Blokkeren CIDRs geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
@@ -307,7 +307,7 @@ Configuratie voor handtekeningen.
 - Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
 
 "modules"
-- Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 handtekeningen, afgebakend door komma\'s.
+- Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.
 
 "default_tracktime"
 - Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).
@@ -328,8 +328,8 @@ Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik va
 "usemode"
 - Bepaalt hoe CIDRAM reCAPTCHA moet gebruiken.
 - 0 = reCAPTCHA is volledig uitgeschakeld (standaard).
-- 1 = reCAPTCHA is ingeschakeld voor alle handtekeningen.
-- 2 = reCAPTCHA is ingeschakeld alleen voor handtekeningen die behoren tot secties speciaal gemarkeerde binnen de handtekening bestanden.
+- 1 = reCAPTCHA is ingeschakeld voor alle signatures.
+- 2 = reCAPTCHA is ingeschakeld alleen voor signatures die behoren tot secties speciaal gemarkeerde binnen de signature bestanden.
 - (Een andere waarde wordt op dezelfde wijze als 0 behandeld).
 
 "lockip"
@@ -367,29 +367,29 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 ---
 
 
-###7. <a name="SECTION7"></a>HANDTEKENINGFORMAAT
+###7. <a name="SECTION7"></a>SIGNATURE FORMAAT
 
 ####7.0 BASICS
 
-Een beschrijving van het formaat en de structuur van de handtekeningen gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste handtekeningen bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de handtekeningen van CIDRAM.
+Een beschrijving van het formaat en de structuur van de signatures gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste signatures bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de signatures van CIDRAM.
 
-Alle IPv4 handtekeningen volgt het formaat: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
+Alle IPv4 signatures volgt het formaat: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok).
 - `yy` vertegenwoordigt het CIDR blokgrootte [1-32].
-- `[Function]` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
+- `[Function]` instrueert het script wat te doen met de signature (hoe de signature moet worden beschouwd).
 - `[Param]` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `[Function]`.
 
-Alle IPv6 handtekeningen volgt het formaat: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok). Compleet notatie en verkorte notatie zijn beide aanvaardbaar (en ieder moet volg de juiste en relevante normen van IPv6-notatie, maar met één uitzondering: een IPv6-adres kan nooit beginnen met een afkorting wanneer het wordt gebruikt in een handtekening voor dit script, vanwege de manier waarop CIDRs door het script zijn gereconstrueerd; Bijvoorbeeld, `::1/128` moet worden uitgedrukt, bij gebruik in een handtekening, als `0::1/128`, en `::0/128` uitgedrukt als `0::/128`).
+Alle IPv6 signatures volgt het formaat: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
+- `xxxx:xxxx:xxxx:xxxx::xxxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok). Compleet notatie en verkorte notatie zijn beide aanvaardbaar (en ieder moet volg de juiste en relevante normen van IPv6-notatie, maar met één uitzondering: een IPv6-adres kan nooit beginnen met een afkorting wanneer het wordt gebruikt in een signature voor dit script, vanwege de manier waarop CIDRs door het script zijn gereconstrueerd; Bijvoorbeeld, `::1/128` moet worden uitgedrukt, bij gebruik in een signature, als `0::1/128`, en `::0/128` uitgedrukt als `0::/128`).
 - `yy` vertegenwoordigt het CIDR blokgrootte [1-128].
-- `[Function]` instrueert het script wat te doen met de handtekening (hoe de handtekening moet worden beschouwd).
+- `[Function]` instrueert het script wat te doen met de signature (hoe de signature moet worden beschouwd).
 - `[Param]` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `[Function]`.
 
-De handtekening bestanden voor CIDRAM MOET gebruiken Unix-stijl regeleinden (`%0A`, or `\n`)! Andere soorten/stijlen van regeleinden (bv, Windows `%0D%0A` of `\r\n` regeleinden, Mac `%0D` of `\r` regeleinden, ezv) KAN worden gebruikt, maar zijn NIET voorkeur. Non-Unix-stijl regeleinden wordt genormaliseerd naar Unix-stijl regeleinden door het script.
+De signature bestanden voor CIDRAM MOET gebruiken Unix-stijl regeleinden (`%0A`, or `\n`)! Andere soorten/stijlen van regeleinden (bv, Windows `%0D%0A` of `\r\n` regeleinden, Mac `%0D` of `\r` regeleinden, ezv) KAN worden gebruikt, maar zijn NIET voorkeur. Non-Unix-stijl regeleinden wordt genormaliseerd naar Unix-stijl regeleinden door het script.
 
-Nauwkeurig en correct CIDR-notatie is vereist, anders zal het script NIET de handtekeningen herkennen. Tevens, alle CIDR handtekeningen van dit script MOET beginnen met een IP-adres waarvan het IP-nummer kan gelijkmatig in het blok divisie vertegenwoordigd door haar CIDR blokgrootte verdelen (bv, als u wilde alle IP-adressen van `10.128.0.0` naar `11.127.255.255` te blokkeren, `10.128.0.0/8` zou door het script NIET worden herkend, maar `10.128.0.0/9` en `11.0.0.0/9` in combinatie, ZOU door het script worden herkend).
+Nauwkeurig en correct CIDR-notatie is vereist, anders zal het script NIET de signatures herkennen. Tevens, alle CIDR signatures van dit script MOET beginnen met een IP-adres waarvan het IP-nummer kan gelijkmatig in het blok divisie vertegenwoordigd door haar CIDR blokgrootte verdelen (bv, als u wilde alle IP-adressen van `10.128.0.0` naar `11.127.255.255` te blokkeren, `10.128.0.0/8` zou door het script NIET worden herkend, maar `10.128.0.0/9` en `11.0.0.0/9` in combinatie, ZOU door het script worden herkend).
 
-Alles wat in de handtekening bestanden niet herkend als een handtekening noch als handtekening-gerelateerde syntaxis door het script worden GENEGEERD, daarom dit betekent dat om veilig alle niet-handtekening gegevens die u wilt in de handtekening bestanden u kunnen zetten zonder verbreking van de handtekening bestanden of de script. Reacties zijn in de handtekening bestanden aanvaardbare, en geen speciale opmaak of formaat is vereist voor hen. Shell-stijl hashing voor commentaar heeft de voorkeur, maar is niet afgedwongen; Functioneel, het maakt geen verschil voor het script ongeacht of u kiest voor Shell-stijl hashing om commentaar te gebruiken, maar gebruik van Shell-stijl hashing helpt IDE's en platte tekst editors om correct te markeren de verschillende delen van de handtekening bestanden (en dus, Shell-stijl hashing kan helpen als een visueel hulpmiddel tijdens het bewerken).
+Alles wat in de signature bestanden niet herkend als een signature noch als signature-gerelateerde syntaxis door het script worden GENEGEERD, daarom dit betekent dat om veilig alle niet-signature gegevens die u wilt in de signature bestanden u kunnen zetten zonder verbreking van de signature bestanden of de script. Reacties zijn in de signature bestanden aanvaardbare, en geen speciale opmaak of formaat is vereist voor hen. Shell-stijl hashing voor commentaar heeft de voorkeur, maar is niet afgedwongen; Functioneel, het maakt geen verschil voor het script ongeacht of u kiest voor Shell-stijl hashing om commentaar te gebruiken, maar gebruik van Shell-stijl hashing helpt IDE's en platte tekst editors om correct te markeren de verschillende delen van de signature bestanden (en dus, Shell-stijl hashing kan helpen als een visueel hulpmiddel tijdens het bewerken).
 
 Mogelijke waarden van `[Function]` zijn als volgt:
 - Run
@@ -397,25 +397,25 @@ Mogelijke waarden van `[Function]` zijn als volgt:
 - Greylist
 - Deny
 
-Als "Run" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `[Param]` waarde (de werkmap moet worden de "/vault/" map van het script).
+Als "Run" wordt gebruikt, als de signature wordt geactiveerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `[Param]` waarde (de werkmap moet worden de "/vault/" map van het script).
 
 Voorbeeld: `127.0.0.0/8 Run example.php`
 
 Dit kan handig zijn als u wilt, voor enige specifieke IPs en/of CIDRs, om specifieke PHP-code uit te voeren.
 
-Als "Whitelist" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
+Als "Whitelist" wordt gebruikt, als de signature wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
 
 Voorbeeld: `127.0.0.1/32 Whitelist`
 
-Als "Greylist" wordt gebruikt, als de handtekening wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en doorgaan naar de volgende handtekening bestand te gaan met verwerken. `[Param]` worden genegeerd.
+Als "Greylist" wordt gebruikt, als de signature wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en doorgaan naar de volgende signature bestand te gaan met verwerken. `[Param]` worden genegeerd.
 
 Voorbeeld: `127.0.0.1/32 Greylist`
 
-Als "Deny" wordt gebruikt, als de handtekening wordt geactiveerd, veronderstelling dat er geen whitelist handtekening is geactiveerd voor het opgegeven IP-adres en/of opgegeven CIDR, toegang tot de beveiligde pagina wordt ontzegd. "Deny" is wat u wilt gebruiken om een IP-adres en/of CIDR range te daadwerkelijk blokkeren. Wanneer enige handtekeningen zijn geactiveerd er dat gebruik "Deny", de "Toegang Geweigerd" pagina van het script zal worden gegenereerd en het verzoek naar de beveiligde pagina wordt gedood.
+Als "Deny" wordt gebruikt, als de signature wordt geactiveerd, veronderstelling dat er geen whitelist signature is geactiveerd voor het opgegeven IP-adres en/of opgegeven CIDR, toegang tot de beveiligde pagina wordt ontzegd. "Deny" is wat u wilt gebruiken om een IP-adres en/of CIDR range te daadwerkelijk blokkeren. Wanneer enige signatures zijn geactiveerd er dat gebruik "Deny", de "Toegang Geweigerd" pagina van het script zal worden gegenereerd en het verzoek naar de beveiligde pagina wordt gedood.
 
 De `[Param]` waarde geaccepteerd door "Deny" zal worden parsed aan de "Toegang Geweigerd" pagina-uitgang, geleverd aan de klant/gebruiker als de genoemde reden voor hun toegang tot de gevraagde pagina worden geweigerd. Het kan een korte en eenvoudige zin zijn, uit te leggen waarom u hebt gekozen om ze te blokkeren (iets moeten volstaan, zelfs een simpele "Ik wil je niet op mijn website"), of een van het handjevol korte woorden geleverd door het script, dat als gebruikt, wordt vervangen door het script met een voorbereide toelichting waarom de klant/gebruiker is geblokkeerd.
 
-De voorbereide toelichtingen hebben L10N ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script configuratie. Tevens, u kunt het script instrueren om "Deny" handtekeningen te negeren op basis van hun `[Param]` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende handtekeningen of te negeren hen). `[Param]` waarden dat niet gebruiken deze korte woorden, echter, hebben geen L10N ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script configuratie.
+De voorbereide toelichtingen hebben L10N ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script configuratie. Tevens, u kunt het script instrueren om "Deny" signatures te negeren op basis van hun `[Param]` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende signatures of te negeren hen). `[Param]` waarden dat niet gebruiken deze korte woorden, echter, hebben geen L10N ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script configuratie.
 
 De beschikbare korte woorden zijn:
 - Bogon
@@ -426,7 +426,7 @@ De beschikbare korte woorden zijn:
 
 ####7.1 ETIKETTEN
 
-Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de handtekeningen van elke sectie, samen met de naam van uw handtekening sectie (zie het onderstaande voorbeeld).
+Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de signatures van elke sectie, samen met de naam van uw signature sectie (zie het onderstaande voorbeeld).
 
 ```
 # Sectie 1.
@@ -438,7 +438,7 @@ Als u wilt uw aangepaste handtekeningen te splitsen in afzonderlijke secties, u 
 Tag: Sectie 1
 ```
 
-Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met handtekening secties uit eerder in de handtekening bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere handtekening secties. Een ongeëtiketteerd handtekeningen wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten handtekeningen worden geactiveerd).
+Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met signature secties uit eerder in de signature bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere signature secties. Een ongeëtiketteerd signatures wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten signatures worden geactiveerd).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -451,7 +451,7 @@ Tag: Sectie 1
 
 In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Sectie 1".
 
-Als u wilt handtekeningen te vervallen na verloop van tijd, op soortgelijke wijze als sectie etiketten, u kan een "vervaltijd etiket" gebruikt om aan te geven wanneer handtekeningen moet niet meer geldig. Vervaltijd etiketten gebruiken het formaat "JJJJ.MM.DD" (zie het onderstaande voorbeeld).
+Als u wilt signatures te vervallen na verloop van tijd, op soortgelijke wijze als sectie etiketten, u kan een "vervaltijd etiket" gebruikt om aan te geven wanneer signatures moet niet meer geldig. Vervaltijd etiketten gebruiken het formaat "JJJJ.MM.DD" (zie het onderstaande voorbeeld).
 
 ```
 # Sectie 1.
@@ -473,13 +473,13 @@ Expires: 2016.12.31
 
 #####7.2.0 YAML BASICS
 
-Een vereenvoudigde vorm van YAML markup kan worden gebruikt in handtekening bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke handtekening secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele handtekeningen en handtekening secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde handtekening, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere handtekeningen; als u wilt een specifieke handtekeningen te leiden tot een pagina redirect; als u wilt een handtekening sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele handtekeningen en/of handtekening secties).
+Een vereenvoudigde vorm van YAML markup kan worden gebruikt in signature bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke signature secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele signatures en signature secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde signature, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere signatures; als u wilt een specifieke signatures te leiden tot een pagina redirect; als u wilt een signature sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele signatures en/of signature secties).
 
-Het gebruik van YAML markup in de handtekening bestanden is volledig optioneel (d.w.z., u kan het gebruiken als u wenst te doen, maar u bent niet verplicht om dit te doen), en is in staat om de meeste (maar niet alle) configuratie richtlijnen hefboomeffect.
+Het gebruik van YAML markup in de signature bestanden is volledig optioneel (d.w.z., u kan het gebruiken als u wenst te doen, maar u bent niet verplicht om dit te doen), en is in staat om de meeste (maar niet alle) configuratie richtlijnen hefboomeffect.
 
 Notitie: YAML markup implementatie in CIDRAM is zeer simplistisch en zeer beperkt; Het is bedoeld om de specifieke eisen van CIDRAM te voldoen op een manier dat heeft de vertrouwdheid van YAML markup, maar noch volgt noch voldoet aan de officiële specificaties (en zal daarom niet zich op dezelfde wijze als grondiger implementaties elders, en is misschien niet geschikt voor alle andere projecten elders).
 
-In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende handtekening secties door dubbel-regeleinden. Een typische YAML markup segment binnen een handtekening sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDRs en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een handtekening in die handtekening sectie wordt geactiveerd (zie de onderstaande voorbeelden).
+In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signature secties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDRs en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature sectie wordt geactiveerd (zie de onderstaande voorbeelden).
 
 ```
 # Foobar 1.
@@ -526,11 +526,11 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####7.2.1 HOE OM HANDTEKENING SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
+#####7.2.1 HOE OM SIGNATURE SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
 
-Als "usemode" is 0 of 1, handtekening secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
+Als "usemode" is 0 of 1, signature secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
 
-Als "usemode" is 2, om handtekening secties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat handtekening sectie (zie het onderstaande voorbeeld).
+Als "usemode" is 2, om signature secties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat signature sectie (zie het onderstaande voorbeeld).
 
 ```
 # Deze sectie zal reCAPTCHA te gebruiken.
@@ -542,17 +542,17 @@ recaptcha:
  enabled: true
 ```
 
-Notitie: Een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN handtekening is geactiveerd (niet meer, niet minder; als er meerdere handtekeningen worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden).
+Notitie: Een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN signature is geactiveerd (niet meer, niet minder; als er meerdere signatures worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden).
 
 ####7.3 EXTRA INFORMATIE
 
-Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de handtekening bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
+Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de signature bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
 
 ```
 Ignore Sectie 1
 ```
 
-Raadpleeg de aangepaste handtekening bestanden voor meer informatie.
+Raadpleeg de aangepaste signature bestanden voor meer informatie.
 
 ---
 
@@ -565,7 +565,7 @@ De term "vals positieve" (*alternatief: "vals positieve fout"; "vals alarm"*; En
 
 Enkele andere termen die worden gebruikt zijn "waar positieve", "waar negatieve" en "vals negatieve". Een "waar positieve" verwijst naar wanneer de resultaten van de test en de huidige staat van de toestand zijn beide waar (of "positief"), and a "waar negatieve" verwijst naar wanneer de resultaten van de test en de huidige staat van de toestand zijn beide vals (of "negatief"); En "waar positieve" of en "waar negatieve" wordt beschouwd als een "correcte gevolgtrekking" zijn. De antithese van een "vals positieve" is een "vals negatieve"; Een "vals negatieve" verwijst naar wanneer de resultaten van de test is negatief (d.w.z, de aandoening wordt vastgesteld als "negatief"), maar wordt verwacht "positief" te zijn (d.w.z, de toestand in werkelijkheid is "positief").
 
-In de context van CIDRAM, deze termen verwijzen naar de handtekeningen van CIDRAM en wat/wie ze blokkeren. Wanneer CIDRAM blokkeert een IP-adres, als gevolg van slechte, verouderde of onjuiste handtekening, maar moet niet hebben gedaan, of wanneer het doet om de verkeerde redenen, we verwijzen naar deze gebeurtenis als een "vals positieve". Wanneer CIDRAM niet in slaagt te blokkeren om een IP-adres dat had moeten worden geblokkeerd, als gevolg van onvoorziene bedreigingen, ontbrekende handtekeningen of tekorten in zijn handtekeningen, we verwijzen naar deze gebeurtenis als een "gemiste detectie" (dat is analoog aan een "vals negatieve").
+In de context van CIDRAM, deze termen verwijzen naar de signatures van CIDRAM en wat/wie ze blokkeren. Wanneer CIDRAM blokkeert een IP-adres, als gevolg van slechte, verouderde of onjuiste signature, maar moet niet hebben gedaan, of wanneer het doet om de verkeerde redenen, we verwijzen naar deze gebeurtenis als een "vals positieve". Wanneer CIDRAM niet in slaagt te blokkeren om een IP-adres dat had moeten worden geblokkeerd, als gevolg van onvoorziene bedreigingen, ontbrekende signatures of tekorten in zijn signatures, we verwijzen naar deze gebeurtenis als een "gemiste detectie" (dat is analoog aan een "vals negatieve").
 
 Dit kan worden samengevat in de onderstaande tabel:
 
@@ -577,4 +577,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 26 Januari 2016 (2017.01.26).
+Laatste Bijgewerkt: 28 Januari 2016 (2017.01.28).

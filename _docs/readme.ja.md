@@ -258,8 +258,8 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "lang" （ラング）
 - CIDRAMのデフォルト言語を設定します。
 
-"emailaddr" （Eメール・アドレス）
-- ここにEメールアドレスを入力して、ユーザーがブロックされているときにユーザーに送信することができます。 これはサポートと支援に使用できます（誤ってブロックされた場合、等）。 警告： ここに入力された電子Eメールアドレスは、おそらくスパムロボットによって取得されます。 ここで提供される電子Eメールアドレスは、すべて使い捨てにすることを強く推奨します（例えば、プライマリ個人アドレスまたはビジネスアドレスを使用しない、等）。
+"emailaddr" （Ｅメール・アドレス）
+- ここにＥメールアドレスを入力して、ユーザーがブロックされているときにユーザーに送信することができます。 これはサポートと支援に使用できます（誤ってブロックされた場合、等）。 警告： ここに入力された電子Ｅメールアドレスは、おそらくスパムロボットによって取得されます。 ここで提供される電子Ｅメールアドレスは、すべて使い捨てにすることを強く推奨します（例えば、プライマリ個人アドレスまたはビジネスアドレスを使用しない、等）。
 
 "disable_cli" （ディスエイブル・シーエルアイ）
 - CLIモードを無効にするか？CLIモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、テストツール（PHPUnit等）やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。 `false`（偽） = CLIモードを有効にします（Default/デフォルルト）； `true`（真） = CLIモードを無効にします。
@@ -473,13 +473,14 @@ Expires: 2016.12.31
 
 #####7.2.0 YAML基本原則
 
-A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
+セクション固有の設定を定義するために、シンプルな形式のYAMLマークアップをシグネチャファイルで使用することができます。 これは、異なるシグネチャセクションに対して異なる設定を行う場合に便利です （例えば： サポートチケットのＥメールアドレスを指定したい場合は、しかし特定のセクションのみ； 特定のシグネチャでページリダイレクトをトリガーしたい場合は； reCAPTCHAで使用するために署名セクションをマークしたい場合は
+； 個々のシグネチャに基づいて、そして/または、シグネチャセクションに基づいて、ブロックされたアクセス試行を別々のファイルに記録したい場合は）。
 
-Use of YAML markup in the signature files is entirely optional （即ち、 you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
+シグネチャファイルでのYAMLマークアップの使用はオプションです（即ち、あなたが望むならそれを使うことができますが、そうする必要はありません）。 大部分の（しかしすべてではない）構成ディレクティブを活用することができます。
 
-注意： YAML markup implementation in CIDRAM is very simplistic and very limited; It is intended to fulfill requirements specific to CIDRAM in a manner that has the familiarity of YAML markup, but neither follows nor complies with official specifications (and therefore won't behave in the same way as more thorough implementations elsewhere, and may not be appropriate for other projects elsewhere).
+注意： CIDRAMにおけるYAMLマークアップの実装は非常に単純化されており、非常に制限されています。 これは、YAMLマークアップに精通した方法で、しかし公式仕様書に従ったり準拠したりすることはない、CIDRAMに固有の要件を満たすことを意図しています（他の実装と同じように動作しない可能性があり、そして他のプロジェクトには適していない可能性があります）。
 
-In CIDRAM, YAML markup segments are identified to the script by three dashes ("---"), and terminate alongside their containing signature sections by double-linebreaks. A typical YAML markup segment within a signature section consists of three dashes on a line immediately after the list of CIDRS and any tags, followed by a two dimensional list of key-value pairs (first dimension, configuration directive categories; second dimension, configuration directives) for which configuration directives should be modified (and to which values) whenever a signature within that signature section is triggered （以下の例を参照してください）。
+CIDRAMでは、YAMLマークアップセグメントはスクリプトに対して３つのダッシュで（「---」）識別されます。 YAMLマークアップセグメントは、二重改行によってシグネチャセクションと一緒に終了します。 典型的なセグメントは、CIDRとタグのリストの直後の行に３つのダッシュで構成され、続いて２次元のキーと値のペアのリストが続きます。 （１番目のディメンションは、設定ディレクティブのカテゴリです；２番目のディメンションは、設定ディレクティブです）。 以下の例を参照してください。
 
 ```
 # Foobar 1.
@@ -577,4 +578,4 @@ CIDRAMは、IPアドレスをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年1月28日。
+最終アップデート： 2017年1月30日。

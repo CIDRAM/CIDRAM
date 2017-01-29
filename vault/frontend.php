@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.01.25).
+ * This file: Front-end handler (last modified: 2017.01.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1365,10 +1365,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         ) !== "---\n") {
             continue;
         }
-        $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']] =
-            substr(
-                $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']], 0, -2
-            ) . $CIDRAM['Components']['RemoteDataThis'] . "\n";
+        $CIDRAM['ThisOffset'] = array(0 => array());
+        $CIDRAM['ThisOffset'][1] = preg_match(
+            '/(\n+)$/',
+            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']],
+            $CIDRAM['ThisOffset'][0]
+        );
+        $CIDRAM['ThisOffset'] = strlen($CIDRAM['ThisOffset'][0][0]) * -1;
+        $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']] = substr(
+            $CIDRAM['Components']['Remotes'][$CIDRAM['Components']['ReannotateThis']], 0, $CIDRAM['ThisOffset']
+        ) . $CIDRAM['Components']['RemoteDataThis'] . "\n";
         if (is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'])) {
             $CIDRAM['IsolateL10N'](
                 $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'],

@@ -83,6 +83,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   time any block occurred, instead of only when the infraction limit had been
   exceeded; Fixed.
 
+- [2017.01.29; Bug-fix; Maikuolan]: Some versions of the DAT files used by the
+  front-end updater for updating various components, signature files, modules,
+  blocklists, etc, would sometimes glitch out and save several dozen duplicates
+  of the same component entries when newly released components were detected as
+  available for download, when those DAT files contained terminating markers at
+  unexpected points in the file, when they contained too many terminating
+  markers, and/or when they contained inappropriate formatting; Fixed.
+
 === Version/Release 0.6.1 ===
 PATCH RELEASE.
 

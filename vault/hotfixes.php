@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary hotfixes file (last modified: 2017.01.17).
+ * This file: Temporary hotfixes file (last modified: 2017.01.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -68,6 +68,38 @@ if (true) { // switch 170117-2
     /** Update switch. */
     $CIDRAM['ThisFile'] = str_replace(
         "\nif (true) { // switch 170117-2\n",
+        "\nif (false) {\n",
+        $CIDRAM['ThisFile']
+    );
+    $CIDRAM['Hotfixed'] = true;
+}
+
+/** Temporary hotfix for duplicated component entries. */
+if (true) { // switch 170129
+    /** An array listing our DAT files. */
+    $CIDRAM['DATs'] = array('components.dat', 'cidramblocklists.dat', 'modules.dat');
+
+    /** Iterate and fix. */
+    array_walk($CIDRAM['DATs'], function ($DAT) use (&$CIDRAM) {
+        if (
+            is_readable($CIDRAM['Vault'] . $DAT) &&
+            ($Data = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $DAT))
+        ) {
+            if (($DLN = strpos($Data, "\n\n")) === false) {
+                $NewData = $Data . "\n\n";
+            } else {
+                $NewData = substr($Data, 0, $DLN) . "\n\n";
+            }
+            if (($NewData !== $Data) && ($CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $DAT, 'w'))) {
+                fwrite($CIDRAM['Handle'], $NewData);
+                fclose($CIDRAM['Handle']);
+            }
+        }
+    });
+
+    /** Update switch. */
+    $CIDRAM['ThisFile'] = str_replace(
+        "\nif (true) { // switch 170129\n",
         "\nif (false) {\n",
         $CIDRAM['ThisFile']
     );

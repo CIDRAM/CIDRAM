@@ -17,7 +17,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.7.0-DEV+170127
+ Version: 0.7.0-DEV+170129
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -126,9 +126,9 @@ CIDRAM:
    - 205e715a996e26aa632b137515120a74:672
    - ca4d53f3b38dbecbf636b5c67594ac74:2102
    - f02846bee1e737178f55f8e67d312d53:931
-   - 71e226c6547533f5f9a1961beaf1fecd:102694
+   - 6e251977dec1e87879c16aac59b546f8:103026
    - bdbdb2c83bf9f6d641b8d6467c889886:83683
-   - 5e21d41018baa9faf6a4de45f419975d:2751
+   - 42e163a950eebd5e75527c52bae22396:3840
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
@@ -171,7 +171,7 @@ IPv4:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止不想要的云服务和非人终端。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止不想要的雲服務和非人終端。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
- Version: 2017.01.24
+ Version: 2017.01.29
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -181,7 +181,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 6f7959717d2c7f34f72790fb07865dcb:388593
+   - 0323f76276030f2e3957fd79fe1b39f0:384781
  Reannotate: components.dat
 IPv4-Bogons:
  Name:
@@ -216,7 +216,7 @@ IPv4-Bogons:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR bogon/martian.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
- Version: 2017.01.24
+ Version: 2017.01.28
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -226,7 +226,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - 4fd6f6eaef7211278927059f71f5b4cc:102051
+   - 9cf093f449075529f0b4e209cb2cddc4:102329
  Reannotate: components.dat
 IPv4-ISPs:
  Name:
@@ -306,7 +306,7 @@ IPv4-Other:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
- Version: 2017.01.24
+ Version: 2017.01.28
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -316,7 +316,7 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - cc2ee47af4aea641224e17b721e05e6a:34694
+   - a0832aee68c213342b973b651bdd210b:33666
  Reannotate: components.dat
 IPv6:
  Name:
@@ -351,7 +351,7 @@ IPv6:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止不想要的云服务和非人终端。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止不想要的雲服務和非人終端。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
- Version: 2017.01.24
+ Version: 2017.01.29
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -361,7 +361,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - b309c3bddbb82d70e73699391d289a14:86501
+   - 7c697a30c2c8ccd434c677bbf7c28c4f:82603
  Reannotate: components.dat
 IPv6-Bogons:
  Name:
@@ -396,7 +396,7 @@ IPv6-Bogons:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR bogon/martian.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv6</code>.</em>
- Version: 2017.01.24
+ Version: 2017.01.28
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -406,7 +406,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - 0752e94d7b5c0807cdb97167218f4272:2203629
+   - 06b87aba64be5b744992080bdbc227e0:2209620
  Reannotate: components.dat
 IPv6-ISPs:
  Name:

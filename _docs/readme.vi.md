@@ -282,6 +282,9 @@ Cấu hình chung cho CIDRAM.
 "default_dns"
 - Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
+"protect_frontend"
+- Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.
+
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -577,4 +580,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 26 Tháng Giêng 2017 (2017.01.26).
+Lần cuối cập nhật: 31 Tháng Giêng 2017 (2017.01.31).

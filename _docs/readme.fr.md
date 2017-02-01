@@ -4,7 +4,7 @@
 - 1. [PRÉAMBULE](#SECTION1)
 - 2. [COMMENT INSTALLER](#SECTION2)
 - 3. [COMMENT UTILISER](#SECTION3)
-- 4. [GESTION FRONT-END](#SECTION4)
+- 4. [GESTION L'ACCÈS FRONTAL](#SECTION4)
 - 5. [FICHIERS INCLUS DANS CETTE PAQUET](#SECTION5)
 - 6. [OPTIONS DE CONFIGURATION](#SECTION6)
 - 7. [FORMATS DE SIGNATURES](#SECTION7)
@@ -74,7 +74,7 @@ Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle m
 ---
 
 
-###4. <a name="SECTION4"></a>GESTION FRONT-END
+###4. <a name="SECTION4"></a>GESTION L'ACCÈS FRONTAL
 
 @TODO@
 
@@ -121,7 +121,7 @@ Fichier | Description
 /vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
-/vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour le front-end navigation links, pour ceux qui ont accès aux fichiers journaux seulement.
+/vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès aux fichiers journaux seulement.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
@@ -130,49 +130,49 @@ Fichier | Description
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.ar.cli.php | Linguistiques données en Arabe pour CLI.
-/vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour le front-end.
+/vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour l'accès frontal.
 /vault/lang/lang.ar.php | Linguistiques données en Arabe.
 /vault/lang/lang.de.cli.php | Linguistiques données en Allemande pour CLI.
-/vault/lang/lang.de.fe.php | Linguistiques données en Allemande pour le front-end.
+/vault/lang/lang.de.fe.php | Linguistiques données en Allemande pour l'accès frontal.
 /vault/lang/lang.de.php | Linguistiques données en Allemande.
 /vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
-/vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour le front-end.
+/vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour l'accès frontal.
 /vault/lang/lang.en.php | Linguistiques données en Anglais.
 /vault/lang/lang.es.cli.php | Linguistiques données en Espagnol pour CLI.
-/vault/lang/lang.es.fe.php | Linguistiques données en Espagnol pour le front-end.
+/vault/lang/lang.es.fe.php | Linguistiques données en Espagnol pour l'accès frontal.
 /vault/lang/lang.es.php | Linguistiques données en Espagnol.
 /vault/lang/lang.fr.cli.php | Linguistiques données en Français pour CLI.
-/vault/lang/lang.fr.fe.php | Linguistiques données en Français pour le front-end.
+/vault/lang/lang.fr.fe.php | Linguistiques données en Français pour l'accès frontal.
 /vault/lang/lang.fr.php | Linguistiques données en Français.
 /vault/lang/lang.id.cli.php | Linguistiques données en Indonésienne pour CLI.
-/vault/lang/lang.id.fe.php | Linguistiques données en Indonésienne pour le front-end.
+/vault/lang/lang.id.fe.php | Linguistiques données en Indonésienne pour l'accès frontal.
 /vault/lang/lang.id.php | Linguistiques données en Indonésienne.
 /vault/lang/lang.it.cli.php | Linguistiques données en Italienne pour CLI.
-/vault/lang/lang.it.fe.php | Linguistiques données en Italienne pour le front-end.
+/vault/lang/lang.it.fe.php | Linguistiques données en Italienne pour l'accès frontal.
 /vault/lang/lang.it.php | Linguistiques données en Italienne.
 /vault/lang/lang.ja.cli.php | Linguistiques données en Japonaise pour CLI.
-/vault/lang/lang.ja.fe.php | Linguistiques données en Japonaise pour le front-end.
+/vault/lang/lang.ja.fe.php | Linguistiques données en Japonaise pour l'accès frontal.
 /vault/lang/lang.ja.php | Linguistiques données en Japonaise.
 /vault/lang/lang.ko.cli.php | Linguistiques données en Coréenne pour CLI.
-/vault/lang/lang.ko.fe.php | Linguistiques données en Coréenne pour le front-end.
+/vault/lang/lang.ko.fe.php | Linguistiques données en Coréenne pour l'accès frontal.
 /vault/lang/lang.ko.php | Linguistiques données en Coréenne.
 /vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandaise pour CLI.
-/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandaise pour le front-end.
+/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandaise pour l'accès frontal.
 /vault/lang/lang.nl.php | Linguistiques données en Néerlandaise.
 /vault/lang/lang.pt.cli.php | Linguistiques données en Portugaise pour CLI.
-/vault/lang/lang.pt.fe.php | Linguistiques données en Portugaise pour le front-end.
+/vault/lang/lang.pt.fe.php | Linguistiques données en Portugaise pour l'accès frontal.
 /vault/lang/lang.pt.php | Linguistiques données en Portugaise.
 /vault/lang/lang.ru.cli.php | Linguistiques données en Russe pour CLI.
-/vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour le front-end.
+/vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour l'accès frontal.
 /vault/lang/lang.ru.php | Linguistiques données en Russe.
 /vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamienne pour CLI.
-/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamienne pour le front-end.
+/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamienne pour l'accès frontal.
 /vault/lang/lang.vi.php | Linguistiques données en Vietnamienne.
 /vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
-/vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour le front-end.
+/vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour l'accès frontal.
 /vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
 /vault/lang/lang.zh.cli.php | Linguistiques données en Chinois (simplifié) pour CLI.
-/vault/lang/lang.zh.fe.php | Linguistiques données en Chinois (simplifié) pour le front-end.
+/vault/lang/lang.zh.fe.php | Linguistiques données en Chinois (simplifié) pour l'accès frontal.
 /vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache.dat | Données du cache.
@@ -281,6 +281,9 @@ Configuration générale pour CIDRAM.
 
 "default_dns"
 - Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = "8.8.8.8,8.8.4.4" (Google DNS). AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
+
+"protect_frontend"
+- Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut]; False = Non.
 
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
@@ -577,4 +580,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 26 Janvier 2016 (2017.01.26).
+Dernière Mise à Jour: 31 Janvier 2016 (2017.01.31).

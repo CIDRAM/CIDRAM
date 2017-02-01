@@ -282,6 +282,9 @@ Configuração geral por CIDRAM.
 "default_dns"
 - Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
+"protect_frontend"
+- Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não.
+
 ####"signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -577,4 +580,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 26 Janeiro 2016 (2017.01.26).
+Última Atualização: 31 Janeiro 2016 (2017.01.31).

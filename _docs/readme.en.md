@@ -282,6 +282,9 @@ General CIDRAM configuration.
 "default_dns"
 - A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know what you're doing!
 
+"protect_frontend"
+- Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.
+
 ####"signatures" (Category)
 Signatures configuration.
 
@@ -577,4 +580,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 26 January 2016 (2017.01.26).
+Last Updated: 31 January 2016 (2017.01.31).

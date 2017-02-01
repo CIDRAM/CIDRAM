@@ -284,6 +284,9 @@ Generelle Konfiguration von CIDRAM.
 "default_dns"
 - Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
+"protect_frontend"
+- Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.
+
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -579,4 +582,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 26 Januar 2016 (2017.01.26).
+Zuletzt aktualisiert: 31 Januar 2016 (2017.01.31).

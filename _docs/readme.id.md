@@ -282,6 +282,9 @@ Konfigurasi umum dari CIDRAM.
 "default_dns"
 - Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
+"protect_frontend"
+- Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada front-end. True = Ya [Default]; False = Tidak.
+
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -577,4 +580,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 26 Januari 2016 (2017.01.26).
+Terakhir Diperbarui: 31 Januari 2016 (2017.01.31).

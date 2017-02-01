@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.27).
+ * This file: Output generator (last modified: 2017.01.31).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -50,6 +50,16 @@ if (!isset($_SERVER[$CIDRAM['Config']['general']['ipaddr']])) {
     $_SERVER[$CIDRAM['Config']['general']['ipaddr']] = '';
 }
 
+/**
+ * Determine whether the front-end is being accessed, and whether the normal
+ * blocking procedures should occur for this request.
+ */
+$CIDRAM['Protect'] = (
+    $CIDRAM['Config']['general']['protect_frontend'] ||
+    $CIDRAM['Config']['general']['disable_frontend'] ||
+    !$CIDRAM['Direct']()
+);
+
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = array(
     'DateTime' => date('r', $CIDRAM['Now']),
@@ -74,28 +84,39 @@ $CIDRAM['BlockInfo']['rURI'] = (
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : 'Unknown.Host';
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
 
-/** Run all IPv4/IPv6 tests. */
-try {
-    $CIDRAM['TestResults'] = $CIDRAM['RunTests']($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
-} catch (\Exception $e) {
-    die($e->getMessage());
-}
+/** The normal blocking procedures should occur. */
+if ($CIDRAM['Protect']) {
 
-/** If all tests fail, report an invalid IP address and kill the request. */
-if (!$CIDRAM['TestResults']) {
-    $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_BadIP'];
-    $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['lang']['Short_BadIP'];
-    $CIDRAM['BlockInfo']['SignatureCount']++;
-}
+    /** Run all IPv4/IPv6 tests. */
+    try {
+        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($_SERVER[$CIDRAM['Config']['general']['ipaddr']]);
+    } catch (\Exception $e) {
+        die($e->getMessage());
+    }
 
-/** Check whether we're tracking the IP being checked due to bad behaviour. */
-elseif (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
-    if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+    /**
+     * If all tests fail, report an invalid IP address and kill the request.
+     */
+    if (!$CIDRAM['TestResults']) {
+        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_BadIP'];
+        $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['lang']['Short_BadIP'];
+        $CIDRAM['BlockInfo']['SignatureCount']++;
+    }
+
+    /**
+     * Check whether we're tracking the IP being checked due to previous
+     * instances of bad behaviour.
+     */
+    elseif (
+        isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]) &&
+        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
+    ) {
         $CIDRAM['Banned'] = true;
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Banned'];
         $CIDRAM['BlockInfo']['WhyReason'] = $CIDRAM['lang']['Short_Banned'];
         $CIDRAM['BlockInfo']['SignatureCount']++;
     }
+
 }
 
 /**
@@ -134,7 +155,7 @@ if (
 $CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
 
 /** Load any modules that have been registered with the configuration. */
-if (!empty($CIDRAM['Config']['signatures']['modules'])) {
+if ($CIDRAM['Protect'] && !empty($CIDRAM['Config']['signatures']['modules'])) {
     $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
     array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
         if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
@@ -150,7 +171,7 @@ if (!empty($CIDRAM['Config']['signatures']['modules'])) {
  * Block bots masquerading as popular search engines and disable tracking for
  * real, legitimate search engines.
  */
-if ($CIDRAM['TestResults'] && $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))) {
+if (!empty($CIDRAM['TestResults']) && $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))) {
     /**
      * Verify Googlebot.
      * Reference: https://support.google.com/webmasters/answer/80553?hl=en
@@ -199,7 +220,7 @@ if ($CIDRAM['TestResults'] && $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM
 }
 
 /** Process tracking information for the inbound IP. */
-if ($CIDRAM['TestResults'] && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
+if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
     if (!isset($CIDRAM['Cache']['Tracking'])) {
         $CIDRAM['Cache']['Tracking'] = array();
     }

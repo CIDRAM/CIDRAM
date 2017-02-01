@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.7.0 ===
+MINOR RELEASE.
+
 - [2016.12.15; Bug-fix; Maikuolan]: Files containing underscores weren't
   deleting when uninstalling components; Fixed.
 
@@ -94,6 +99,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.01.30; Documentation; Maikuolan]: Completed translation for the CIDRAM
   README documentation into Japanese (fuzzy). This totals 13 different language
   versions of the README documentation now available.
+
+- [2017.01.31; Minor code change; Maikuolan]: Added a new directive to control
+  whether the protections normally provided by CIDRAM are applied to the
+  front-end ("protect_frontend"). Possibly useful in cases where users may be
+  at risk of blocking themselves due to experimenting with new signatures, new
+  modules, etc.
+
+Caleb M / Maikuolan,
+1st February 2017.
 
 === Version/Release 0.6.1 ===
 PATCH RELEASE.

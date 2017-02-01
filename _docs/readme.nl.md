@@ -282,6 +282,9 @@ Algemene configuratie voor CIDRAM.
 "default_dns"
 - Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
+"protect_frontend"
+- Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de front-end. True = Ja [Standaard]; False = Nee.
+
 ####"signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -577,4 +580,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 28 Januari 2016 (2017.01.28).
+Laatste Bijgewerkt: 31 Januari 2016 (2017.01.31).

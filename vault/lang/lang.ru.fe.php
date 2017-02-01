@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.01.26).
+ * This file: Russian language data for the front-end (last modified: 2017.01.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-стиль файл д
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Сериализованная файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Включить заблокированные запросы от запрещенных IP-адресов в лог-файлы? True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Максимальное количество попыток входа в систему.';
+$CIDRAM['lang']['config_general_protect_frontend'] = 'Определяет, будут ли средства защиты как правило предоставляемые CIDRAM должны быть применены к фронтенд. True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Должен CIDRAM молча перенаправить заблокированные попытки доступа вместо отображения страницы "Доступ Закрыт"? Если да, указать местоположение для перенаправления блокировал попытки доступа. Если нет, оставить эту переменную пустым.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Смещение часового пояса в минут.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Количество часов, чтобы вспомнить инстанция reCAPTCHA.';

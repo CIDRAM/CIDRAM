@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.01.28).
+ * This file: Japanese language data for the front-end (last modified: 2017.01.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,7 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超�
 $CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、DNS（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。 Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLIモードを無効にするか？';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
-$CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのEメールアドレス。';
+$CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのＥメールアドレス。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_ipaddr'] = '接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
@@ -32,6 +32,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の�
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'アクセス試行阻止の記録、シリアル化されました。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '禁止されたIPからブロックされた要求をログファイルに含めますか？ True = はい （Default/デフォルルト）； False = いいえ。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数。';
+$CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。 True = はい （Default/デフォルルト）； False = いいえ。';
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。';
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';

@@ -2,14 +2,14 @@
 
 ### <div dir="rtl">المحتويات:</div>
 <div dir="rtl"><ul>
- <li>1. <a href="#SECTION1">مقدمة</a></li>
- <li>2. <a href="#SECTION2">كيفية التحميل</a></li>
- <li>3. <a href="#SECTION3">كيفية الإستخدام</a></li>
- <li>4. <a href="#SECTION4">إدارة FRONT-END</a></li>
- <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة</a></li>
- <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة</a></li>
- <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع</a></li>
- <li>8. <a href="#SECTION8">أسئلة وأجوبة (FAQ)</a></li>
+ <li>١. <a href="#SECTION1">مقدمة</a></li>
+ <li>٢. <a href="#SECTION2">كيفية التحميل</a></li>
+ <li>٣. <a href="#SECTION3">كيفية الإستخدام</a></li>
+ <li>٤. <a href="#SECTION4">إدارة FRONT-END</a></li>
+ <li>٥. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة</a></li>
+ <li>٦. <a href="#SECTION6">خياراتالتكوين/التهيئة</a></li>
+ <li>٧. <a href="#SECTION7">شكل/تنسيق التوقيع</a></li>
+ <li>٨. <a href="#SECTION8">أسئلة وأجوبة (FAQ)</a></li>
 </ul></div>
 
 <div dir="rtl"><em>ملاحظة بخصوص ترجمة: في حالة الأخطاء (على سبيل المثال، التناقضات بين الترجمات، الأخطاء المطبعية، إلخ)، النسخة الإنجليزية من هذه الوثيقة هو تعتبر النسخة الأصلية وموثوق. إذا وجدت أي أخطاء، سيكون موضع ترحيب مساعدتكم في تصحيحها.</em></div>
@@ -17,11 +17,11 @@
 ---
 
 
-### <div dir="rtl">1. <a name="SECTION1"></a>مقدمة</div>
+### <div dir="rtl">١. <a name="SECTION1"></a>مقدمة</div>
 
 <div dir="rtl">CIDRAM (توجيه بين المجالات لافئويا وصول مدير) هو السيناريو PHP، المصممة لحماية المواقع من طلبات الحجب تنشأ من عناوين IP تعتبر مصادر من حركة المرور غير مرغوب فيه، بما في ذلك (ولكن ليس على سبيل الحصر) حركة المرور من نقاط النهاية الوصول غير البشرية، خدمات سحابية، المتطفلين و برامج التطفل، كاشطات الموقع، إلخ. وهي تفعل ذلك عن طريق حساب CIDRs ممكن من عناوين IP الموردة من طلبات واردة وبعد ذلك محاولة لتتناسب مع هذه ضد الملفات توقيعه (هذه الملفات توقيع تحتوي CIDRs من عناوين IP تعتبر مصادر من حركة المرور غير مرغوب فيه)؛ إذا تم العثور على المباريات، يتم حظر الطلبات.<br /><br /></div>
 
-<div dir="rtl">حقوق النشر محفوظة ل CIDRAM لعام 2016 وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
+<div dir="rtl">حقوق النشر محفوظة ل CIDRAM لعام ٢٠١٦ وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
 
 <div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU. نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف "LICENSE.txt" وللمزيد من المعلومات:</div>
 - <http://www.gnu.org/licenses/>.
@@ -32,19 +32,19 @@
 ---
 
 
-### <div dir="rtl">2. <a name="SECTION2"></a>كيفية التحميل</div>
+### <div dir="rtl">٢. <a name="SECTION2"></a>كيفية التحميل</div>
 
 <div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS:<br /><br /></div>
 
-<div dir="rtl">1. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل `/public_html/cidram/` أو ما شابه سيكون كاف.<br /><br /></div>
+<div dir="rtl">١. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل `/public_html/cidram/` أو ما شابه سيكون كاف.<br /><br /></div>
 
-<div dir="rtl">2. إعادة تسمية "config.ini.RenameMe" إلى "config.ini" (تقع داخل "vault")، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
+<div dir="rtl">٢. إعادة تسمية "config.ini.RenameMe" إلى "config.ini" (تقع داخل "vault")، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
 
-<div dir="rtl">3. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "*.txt/*.md" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
+<div dir="rtl">٣. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "*.txt/*.md" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
-<div dir="rtl">4. غير التصريح لمجلد vault للتصريح "755" (إذا كان هناك مشاكل، يمكنك محاولة "777"، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
+<div dir="rtl">٤. غير التصريح لمجلد vault للتصريح "755" (إذا كان هناك مشاكل، يمكنك محاولة "777"، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
 
-<div dir="rtl">5. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل "require" أو "include"، بالعادة سيتم التخزين في "/includes"، "/assets" أو "/functions"، وسيتم تسميته بالغالب مثل: "init.php"، "common_functions.php"، "functions.php" أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام "require" أو "include" قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار "loader.php" لديك.<br /><br /></div>
+<div dir="rtl">٥. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل "require" أو "include"، بالعادة سيتم التخزين في "/includes"، "/assets" أو "/functions"، وسيتم تسميته بالغالب مثل: "init.php"، "common_functions.php"، "functions.php" أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام "require" أو "include" قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار "loader.php" لديك.<br /><br /></div>
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -60,30 +60,30 @@
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
-<div dir="rtl">6. هذا كل شئ. :-)<br /><br /></div>
+<div dir="rtl">٦. هذا كل شئ. 😄<br /><br /></div>
 
 ---
 
 
-### <div dir="rtl">3. <a name="SECTION3"></a>كيفية الإستخدام</div>
+### <div dir="rtl">٣. <a name="SECTION3"></a>كيفية الإستخدام</div>
 
-CIDRAM should automatically block undesirable requests to your website without requiring any manual assistance, aside from its initial installation.
+<div dir="rtl">CIDRAM يجب منع تلقائيا طلبات غير مرغوب فيها إلى موقع الويب الخاص بك، دون الحاجة إلى أي مساعدة اليدوية، جانبا من التثبيت.<br /><br /></div>
 
-Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files.
+<div dir="rtl">يتم تحديثها يدويا، ويمكنك تخصيص التكوين الخاص بك وتخصيص التي CIDRs مسدودة عن طريق تعديل التكوين الخاص بك و ملفات توقيعك.<br /><br /></div>
 
 <div dir="rtl">إذا واجهت أي إيجابية خاطئة، يرجى رسالة لي أن اسمحوا لي أن أعرف عن ذلك.<br /><br /></div>
 
 ---
 
 
-### <div dir="rtl">4. <a name="SECTION4"></a>إدارة FRONT-END</div>
+### <div dir="rtl">٤. <a name="SECTION4"></a>إدارة FRONT-END</div>
 
 @TODO@
 
 ---
 
 
-### <div dir="rtl">5. <a name="SECTION5"></a>الملفاتالموجودةفيهذهالحزمة</div>
+### <div dir="rtl">٥. <a name="SECTION5"></a>الملفاتالموجودةفيهذهالحزمة</div>
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
@@ -222,7 +222,7 @@ Updating is done manually, and you can customise your configuration and customis
 ---
 
 
-### <div dir="rtl">6. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
+### <div dir="rtl">٦. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
 <div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين "config.ini"، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
@@ -421,7 +421,7 @@ Updating is done manually, and you can customise your configuration and customis
 
 <div dir="rtl">"expiry"<br /></div>
 <div dir="rtl"><ul>
- <li>عندما "lockuser" هو true (الافتراضي)، من أجل أن نتذكر عند اكتمال المستخدم اختبار reCAPTCHA، لطلبات الصفحة المستقبلية، CIDRAM سوف إنشاء ملف تعريف ارتباط HTTP القياسية التي تتضمن تجزئة، والتي تتطابق مع السجل الداخلي، والذي يحتوي على نفس التجزئة؛ سوف طلبات الصفحة في المستقبل استخدام هذه لمصادقة المستخدم. عندما "lockuser" هو false، تم استخدام القائمة البيضاء IP لتحديد ما إذا كان ينبغي السماح الطلبات؛ وأضاف إدخالات إلى هذا البيضاء عند اكتمال اختبار reCAPTCHA. عدد الساعات يجب أن تبقى هذه صالحة؟ الافتراضي = 720 (1 شهر).</li>
+ <li>عندما "lockuser" هو true (الافتراضي)، من أجل أن نتذكر عند اكتمال المستخدم اختبار reCAPTCHA، لطلبات الصفحة المستقبلية، CIDRAM سوف إنشاء ملف تعريف ارتباط HTTP القياسية التي تتضمن تجزئة، والتي تتطابق مع السجل الداخلي، والذي يحتوي على نفس التجزئة؛ سوف طلبات الصفحة في المستقبل استخدام هذه لمصادقة المستخدم. عندما "lockuser" هو false، تم استخدام القائمة البيضاء IP لتحديد ما إذا كان ينبغي السماح الطلبات؛ وأضاف إدخالات إلى هذا البيضاء عند اكتمال اختبار reCAPTCHA. عدد الساعات يجب أن تبقى هذه صالحة؟ الافتراضي = 720 (١ شهر).</li>
 </ul></div>
 
 <div dir="rtl">"logfile"<br /></div>
@@ -446,9 +446,9 @@ Updating is done manually, and you can customise your configuration and customis
 ---
 
 
-### <div dir="rtl">7. <a name="SECTION7"></a>شكل/تنسيق التوقيع</div>
+### <div dir="rtl">٧. <a name="SECTION7"></a>شكل/تنسيق التوقيع</div>
 
-#### <div dir="rtl">7.0 مبادئ<br /><br /></div>
+#### <div dir="rtl">٧.٠ مبادئ<br /><br /></div>
 
 <div dir="rtl">يوصف شكل وهيكل للتوقيعات في ملفات التوقيعات المخصصة. يمكنك الرجوع إليه من أجل معرفة المزيد عن شكل وهيكل من التوقيعات.<br /><br /></div>
 
@@ -474,7 +474,7 @@ Precise and correct CIDR notation is required, otherwise the script will NOT rec
 
 Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so, Shell-style hashing can assist as a visual aid while editing).
 
-<div dir="rtl">القيم الممكنة من "Function" هي كما يلي:<br /></div>
+<div dir="rtl">القيم الممكنة من "[وظيفة]" هي كما يلي:<br /></div>
 <div dir="rtl"><ul>
  <li>Run</li>
  <li>Whitelist</li>
@@ -511,7 +511,7 @@ The pre-prepared explanations have L10N support and can be translated by the scr
  <li>Spam</li>
 </ul></div>
 
-#### <div dir="rtl">7.1 علامات<br /><br /></div>
+#### <div dir="rtl">٧.١ علامات<br /><br /></div>
 
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (راجع الأمثلة أدناه).
 
@@ -533,7 +533,7 @@ To break section tagging and to ensure that tags aren't incorrectly identified t
 
 4.5.6.7/32 Deny Generic
 5.6.7.8/32 Deny Spam
-Tag: القسم 1
+Tag: القسم ١
 ```
 
 In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "القسم 1".
@@ -541,7 +541,7 @@ In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whe
 If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "YYYY.MM.DD" (راجع الأمثلة أدناه).
 
 ```
-# القسم 1.
+# القسم ١.
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
@@ -556,9 +556,9 @@ Tag: القسم المثال
 Expires: 2016.12.31
 ```
 
-#### <div dir="rtl">7.2 YAML<br /><br /></div>
+#### <div dir="rtl">٧.٢ YAML<br /><br /></div>
 
-#### <div dir="rtl">7.2.0 أساسيات YAML<br /><br /></div>
+#### <div dir="rtl">٧.٢.٠ أساسيات YAML<br /><br /></div>
 
 A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
@@ -613,7 +613,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-##### <div dir="rtl">7.2.1 كيفية "تحمل علامة" أقسام توقيع للاستخدام مع reCAPTCHA<br /><br /></div>
+##### <div dir="rtl">٧.٢.١ كيفية "تحمل علامة" أقسام توقيع للاستخدام مع reCAPTCHA<br /><br /></div>
 
 When "usemode" is 0 or 1, signature sections don't need to be "specially marked" for use with reCAPTCHA (because they already either will or won't use reCAPTCHA, depending on this setting).
 
@@ -629,14 +629,14 @@ recaptcha:
  enabled: true
 ```
 
-Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
+<div dir="rtl">ملحوظة: سيتم فقط عرض على اختبار reCAPTCHA إذا تم تمكين اختبار reCAPTCHA (مع "usemode" ك 1، أو "usemode" ك 2 مع "enabled" ك true)، و إذا بالضبط واحد يتم تشغيل توقيع (لا أكثر ولا أقل؛ إذا يتم تشغيلها توقيعات متعددة، لن يتم عرض على اختبار reCAPTCHA).<br /><br /></div>
 
-#### <div dir="rtl">7.3 معلومات اضافية<br /><br /></div>
+#### <div dir="rtl">٧.٣ معلومات اضافية<br /><br /></div>
 
-In addition, if you want CIDRAM to completely ignore some specific sections within any of the signature files, you can use the `ignore.dat` file to specify which sections to ignore. On a new line, write `Ignore`, followed by a space, followed by the name of the section that you want CIDRAM to ignore (راجع الأمثلة أدناه).
+<div dir="rtl">إذا كنت تريد CIDRAM تجاهل تماما بعض المقاطع، يمكنك استخدام ملف "ignore.dat" لتحديد المقاطع التي ليمكن تجاهلها. على سطر جديد، اكتب "Ignore"، متبوعا بمسافة، يليه اسم المقطع ليمكن تجاهله (راجع الأمثلة أدناه).<br /><br /></div>
 
 ```
-Ignore القسم 1
+Ignore القسم ١
 ```
 
 <div dir="rtl">رؤية الملفات توقيع مخصص لمزيد من المعلومات.<br /><br /></div>
@@ -644,7 +644,7 @@ Ignore القسم 1
 ---
 
 
-### <div dir="rtl">8. <a name="SECTION8"></a>أسئلة وأجوبة (FAQ)</div>
+### <div dir="rtl">٨. <a name="SECTION8"></a>أسئلة وأجوبة (FAQ)</div>
 
 #### <div dir="rtl">ما هو "إيجابية خاطئة"؟<br /><br /></div>
 

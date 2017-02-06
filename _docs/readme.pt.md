@@ -96,6 +96,7 @@ Arquivo | Descrição
 /_docs/readme.id.md | Documentação Indonésio.
 /_docs/readme.it.md | Documentação Italiano.
 /_docs/readme.ja.md | Documentação Japonesa.
+/_docs/readme.ko.md | Documentação Coreana.
 /_docs/readme.nl.md | Documentação Holandês.
 /_docs/readme.pt.md | Documentação Português.
 /_docs/readme.ru.md | Documentação Russo.
@@ -580,4 +581,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 31 Janeiro 2016 (2017.01.31).
+Última Atualização: 6 Fevereiro 2016 (2017.02.06).

@@ -96,6 +96,7 @@ Bestand | Beschrijving
 /_docs/readme.id.md | Indonesisch documentatie.
 /_docs/readme.it.md | Italiaanse documentatie.
 /_docs/readme.ja.md | Japanse documentatie.
+/_docs/readme.ko.md | Koreaanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
 /_docs/readme.ru.md | Russische documentatie.
@@ -580,4 +581,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 31 Januari 2016 (2017.01.31).
+Laatste Bijgewerkt: 6 Februari 2016 (2017.02.06).

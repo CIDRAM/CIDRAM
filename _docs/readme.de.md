@@ -98,6 +98,7 @@ Datei | Beschreibung
 /_docs/readme.id.md | Indonesische Dokumentation.
 /_docs/readme.it.md | Italienische Dokumentation.
 /_docs/readme.ja.md | Japanische Dokumentation.
+/_docs/readme.ko.md | Koreanische Dokumentation.
 /_docs/readme.nl.md | Niederländische Dokumentation.
 /_docs/readme.pt.md | Portugiesische Dokumentation.
 /_docs/readme.ru.md | Russische Dokumentation.
@@ -582,4 +583,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 31 Januar 2016 (2017.01.31).
+Zuletzt aktualisiert: 6 Februar 2016 (2017.02.06).

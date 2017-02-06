@@ -97,13 +97,14 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /_docs/readme.id.md | 印度尼西亞文自述文件。
 /_docs/readme.it.md | 意大利文自述文件。
 /_docs/readme.ja.md | 日文自述文件。
+/_docs/readme.ko.md | 韓文自述文件。
 /_docs/readme.nl.md | 荷蘭文自述文件。
 /_docs/readme.pt.md | 葡萄牙文自述文件。
 /_docs/readme.ru.md | 俄文自述文件。
 /_docs/readme.vi.md | 越南文自述文件。
 /_docs/readme.zh-TW.md | 中文（簡體）自述文件。
 /_docs/readme.zh.md | 中文（簡體）自述文件。
-/vault/ | 安全／保險庫｢Vault｣文件夾（包含若干文件）。
+/vault/ | 安全/保險庫｢Vault｣文件夾（包含若干文件）。
 /vault/fe_assets/ | 前端資產。
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/_accounts.html | 前端賬戶頁面的HTML模板。
@@ -581,4 +582,4 @@ CIDRAM會阻止IP地址 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2017年1月31日。
+最後更新：2017年2月6日。

@@ -96,6 +96,7 @@ Tập tin | Chi tiết
 /_docs/readme.id.md | Tài liệu tiếng Indonesia.
 /_docs/readme.it.md | Tài liệu tiếng Ý.
 /_docs/readme.ja.md | Tài liệu tiếng Nhật.
+/_docs/readme.ko.md | Tài liệu tiếng Hàn.
 /_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
 /_docs/readme.ru.md | Tài liệu tiếng Nga.
@@ -580,4 +581,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Giêng 2017 (2017.01.31).
+Lần cuối cập nhật: 6 Tháng Hai 2017 (2017.02.06).

@@ -96,6 +96,7 @@ Data | Deskripsi
 /_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
 /_docs/readme.ja.md | Dokumentasi Bahasa Jepang.
+/_docs/readme.ko.md | Dokumentasi Bahasa Korea.
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
@@ -580,4 +581,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 31 Januari 2016 (2017.01.31).
+Terakhir Diperbarui: 6 Februari 2016 (2017.02.06).

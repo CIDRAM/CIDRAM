@@ -505,8 +505,9 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Updated: 2016.06.09
+# %Listed, Google Malware Dashboard: 1.45%.
+# %Listed, CleanTalk.org: 44.51%.
+# Updated: 2017.02.06
 
 # Note for when updating: "2002::/16" appears in the announces; This is a "6to4" block, and should never be included as
 # a default signature. When seen, just delete it from the list (so that it'll effectively be greylisted). If a user
@@ -517,17 +518,14 @@ Tag: Swiftway
 2001:49e8::/32 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
 2403:ce00:c0da::/48 Run rules_as6939.php
-2600:3c00:3c00::/48 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
-2604:6700::/48 Run rules_as6939.php
 2604:a100::/32 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
-2620::50c0::/48 Run rules_as6939.php
+2620:0:50c0::/48 Run rules_as6939.php
 2620:8d::/48 Run rules_as6939.php
 2620:ba:4000::/48 Run rules_as6939.php
 2620:10a:80fd::/48 Run rules_as6939.php
 2620:10a:80fe::/47 Run rules_as6939.php
-2a00:15d0::/32 Run rules_as6939.php
 2a06:1c80::/32 Run rules_as6939.php
 Tag: Hurricane Electric
 
@@ -565,8 +563,9 @@ Tag: A2B IP B.V
 
 
 # ASNs 20860, 21130 ("IOMart").
-# %Listed, Google Malware Dashboard: 1.74% (AS20860), 0% (AS21130).
-# Updated: 2016.11.29
+# %Listed, Google Malware Dashboard: 1.71% (AS20860), 0% (AS21130).
+# %Listed, CleanTalk.org: 31.40% (AS20860), 0% (AS21130).
+# Updated: 2017.02.06
 
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
@@ -575,10 +574,8 @@ Tag: A2B IP B.V
 2a00:5d80::/32 Deny Cloud
 2a00:e120::/32 Deny Cloud
 2a03:b201::/32 Deny Cloud
-2a03:ca80::/32 Deny Cloud
-2a03:ca81::/32 Deny Cloud
+2a03:ca80::/31 Deny Cloud
 2a04:de40::/32 Deny Cloud
-2a04:de40::/48 Deny Cloud
 Tag: IOMart
 
 
@@ -1125,8 +1122,9 @@ Tag: K SERVERS LTD
 
 
 # ASN 18978 ("Enzu Inc").
-# %Listed, Google Malware Dashboard: 30.86%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 31.80%.
+# %Listed, CleanTalk.org: 81.97%.
+# Updated: 2017.02.03
 
 2602:ffc5:cd4::/47 Deny Cloud
 2605:f700:10::/48 Deny Cloud
@@ -1160,8 +1158,9 @@ Tag: HEG US Inc
 
 # ASN 12876 ("ONLINE S.A.S").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 1.98%.
-# Updated: 2016.09.28
+# %Listed, Google Malware Dashboard: 2.56%.
+# %Listed, CleanTalk.org: 65.13%.
+# Updated: 2016.09.28 / Checked: 2017.02.03
 
 2001:bc8::/32 Deny Cloud
 Tag: ONLINE S.A.S
@@ -1307,12 +1306,13 @@ Tag: ONLINE S.A.S
 Tag: Cogent
 
 
-# ASN 59711 ("HZ Hosting Ltd").
-# %Listed, Google Malware Dashboard: 1.46%.
-# Updated: 2016.02.10 / Checked: 2016.11.02
+# ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
+# %Listed, Google Malware Dashboard: 0.34% (AS59711), 0% (AS61046), 0.38% (AS201525), 0% (AS202015).
+# %Listed, CleanTalk.org: 29.41% (AS59711), 66.67% (AS61046), 70.00% (AS201525), 66.67% (AS202015).
+# Updated: 2017.02.06
 
-2a01:8640::/48 Deny Cloud
-2a01:8640:2::/48 Deny Cloud
+2a01:8640::/46 Deny Cloud
+2a01:8640:5::/48 Deny Cloud
 Tag: HZ Hosting Ltd
 
 
@@ -1974,8 +1974,9 @@ Tag: Centrilogic
 
 
 # ASN 53340 ("VegasNAP, LLC").
-# %Listed, Google Malware Dashboard: 2.29%.
-# Updated: 2016.12.24
+# %Listed, Google Malware Dashboard: 2.07%.
+# %Listed, CleanTalk.org: 86.53%.
+# Updated: 2016.12.24 / Checked: 2017.02.06
 
 2604:2280:4100::/40 Deny Cloud
 2604:2280:ff00::/40 Deny Cloud
@@ -2523,11 +2524,13 @@ Tag: NewMedia Express
 Tag: RamNode LLC
 
 
-# ASN 198203 ("RouteLabel V.O.F").
-# %Listed, Google Malware Dashboard: 1.71%.
-# Updated: 2017.01.24
+# ASNs 198203, 202645 ("RouteLabel V.O.F").
+# %Listed, Google Malware Dashboard: 1.74% (AS198203), 3.41% (AS198203).
+# %Listed, CleanTalk.org: 56.16% (AS198203), 0.00% (AS198203).
+# Updated: 2017.02.03
 
 2a00:d880::/32 Deny Cloud
+2a02:50e0::/32 Deny Cloud
 2a03:afe0::/29 Deny Cloud
 Tag: RouteLabel V.O.F
 
@@ -3208,3 +3211,12 @@ Tag: INTERNET CZ, a.s
 2a04:bc40:2dc1::/48 Deny Cloud
 2a04:bc40:2dc2::/47 Deny Cloud
 Tag: LLHost Inc
+
+
+# ASN 37692 ("NetStack Ltd").
+# %Listed, Google Malware Dashboard: 0.29%.
+# %Listed, CleanTalk.org: 67.47%.
+# Updated: 2017.02.03
+
+2c0f:f738::/32 Deny Cloud
+Tag: NetStack Ltd

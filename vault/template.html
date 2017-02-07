@@ -1,69 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="{xmlLang}" xml:lang="{xmlLang}" dir="{textDir}">
+<!doctype html>
+<html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{textDir}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
     <title>CIDRAM</title>{recaptcha_api_include}
+    <style>
+    #wrapper{border-style:solid;border-color:#999;width:98%;margin:auto;padding:2px}
+    body,#wrapper{text-align:center}
+    hr,#wrapper{border-width:1px}
+    input,#wrapper{background-color:#fff}
+    #wrapper_inner{width:96%;margin:auto;padding:2px}
+    #denied,#footer_inner,#detected,#textBlock,input{font-weight:700}
+    #denied,#ScriptIdent,input{color:red}
+    #denied{font-size:20px}
+    #footer_inner,input{font-family:Verdana,Arial,Helvetica,sans-serif}
+    #footer_inner{font-size:8pt;letter-spacing:-1px;white-space:nowrap;text-align:right}
+    #generated_by{color:#000}
+    #textBlock{{textBlockAlign}}
+    #generated_by,#ScriptIdent{display:inline}
+    .textLabel{{textBlockFloat}color:#466;white-space:pre}
+    body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-decoration:none;border-style:none;white-space:normal;background-color:#ccc;color:#033}
+    hr{border-style:solid none none;margin:5px 2px 0;padding:2px;color:#900}
+    input{font-size:10pt;border:1px solid red}
+    #results{margin:10px;padding:2px}
+    </style>
 </head>
 
-<style>
-.denied,.generator,.textStrong,.textBlock,input{font-weight:700}
-body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-align:center;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
-hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
-.textBlock{{textBlockAlign}}
-.denied,.textRed,input{color:red}
-.textBlack{color:#000}
-.textLabel{{textBlockFloat}color:#466;white-space:pre}
-.denied{font-size:20px}
-.generator,input{font-family:Verdana,Arial,Helvetica,sans-serif}
-.generator{font-size:8pt;letter-spacing:-1px;white-space:nowrap}
-input{font-size:10pt;background-color:#fff;border:1px solid red}
-</style>
-
 <body>
-<center>
-
-<table style="border-style:solid;border-width:1px;border-color:#c7ced3;background-color:#fff;width:98%;text-align:center;">
-<tr>
-<td align="center">
-<table style="width:96%;text-align:left;">
-<tr>
-<td>
-<center>
-    <hr />
-    <p class="denied">{denied}</p>
-    <p class="textStrong">{ReasonMessage}</p>{EmailAddr}{recaptcha_div_include}
-    <hr />
-</center>
-<p class="textBlock">
-    <span class="textLabel">{field_id}</span>{Counter}<br />
-    <span class="textLabel">{field_scriptversion}</span>{ScriptIdent}<br />
-    <span class="textLabel">{field_datetime}</span>{DateTime}<br />
-    <span class="textLabel">{field_ipaddr}</span>{IPAddr}<br />
-    <span class="textLabel">{field_query}</span>{Query}<br />
-    <span class="textLabel">{field_referrer}</span>{Referrer}<br />
-    <span class="textLabel">{field_sigcount}</span>{SignatureCount}<br />
-    <span class="textLabel">{field_sigref}</span>{Signatures}<br />
-    <span class="textLabel">{field_whyreason}</span>{WhyReason}!<br />
-    <span class="textLabel">{field_ua}</span>{UA}<br />
-    <span class="textLabel">{field_rURI}</span>{rURI}<br />
-    <span class="textLabel">{field_reCAPTCHA_state}</span>{reCAPTCHA}<br />
-</p>
-<center><hr /></center>
-</td>
-</tr>
-
-<tr>
-<td align="right" style="width:100%;"><span class="generator"><span class="textBlack">{generated_by}</span> <span class="textRed">{ScriptIdent}</span></span></td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-
-</center>
+    <div id="wrapper">
+        <div id="wrapper_inner">
+            <hr />
+            <div id="results">
+                <div id="denied">{denied}</div>
+            </div>
+            <div id="detected">{ReasonMessage}</div>
+            <div id="mailsupport">{EmailAddr}</div>{recaptcha_div_include}
+            <hr />
+            <div id="textBlock">
+                <span class="textLabel">{field_id}</span>{Counter}<br />
+                <span class="textLabel">{field_scriptversion}</span>{ScriptIdent}<br />
+                <span class="textLabel">{field_datetime}</span>{DateTime}<br />
+                <span class="textLabel">{field_ipaddr}</span>{IPAddr}<br />
+                <span class="textLabel">{field_query}</span>{Query}<br />
+                <span class="textLabel">{field_referrer}</span>{Referrer}<br />
+                <span class="textLabel">{field_sigcount}</span>{SignatureCount}<br />
+                <span class="textLabel">{field_sigref}</span>{Signatures}<br />
+                <span class="textLabel">{field_whyreason}</span>{WhyReason}!<br />
+                <span class="textLabel">{field_ua}</span>{UA}<br />
+                <span class="textLabel">{field_rURI}</span>{rURI}<br />
+                <span class="textLabel">{field_reCAPTCHA_state}</span>{reCAPTCHA}<br />
+            </div>
+            <hr />
+            <div id="footer">
+                <div id="footer_inner">
+                    <div id="generated_by">{generated_by} </div>
+                    <div id="ScriptIdent">{ScriptIdent}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

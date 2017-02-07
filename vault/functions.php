@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.26).
+ * This file: Functions file (last modified: 2017.02.06).
  */
 
 /**
@@ -197,16 +197,12 @@ $CIDRAM['ExpandIPv6'] = function ($Addr) use (&$CIDRAM) {
     }
     if (substr_count($NAddr, '::')) {
         $c = 7 - substr_count($Addr, ':');
-        $arr = array(
-            ':0:',
-            ':0:0:',
-            ':0:0:0:',
-            ':0:0:0:0:',
-            ':0:0:0:0:0:',
-            ':0:0:0:0:0:0:'
-        );
-        $NAddr = str_replace('::', $arr[$c], $Addr);
-        unset($arr);
+        $Arr = array(':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:');
+        if (!isset($Arr[$c])) {
+            return false;
+        }
+        $NAddr = str_replace('::', $Arr[$c], $Addr);
+        unset($Arr);
     }
     $NAddr = explode(':', $NAddr);
     if (count($NAddr) !== 8) {
@@ -1767,14 +1763,7 @@ $CIDRAM['IPv4GetLast'] = function ($First, $Factor) {
 $CIDRAM['IPv6GetLast'] = function ($First, $Factor) {
     if (substr_count($First, '::')) {
         $Abr = 7 - substr_count($First, ':');
-        $Arr = array(
-            ':0:',
-            ':0:0:',
-            ':0:0:0:',
-            ':0:0:0:0:',
-            ':0:0:0:0:0:',
-            ':0:0:0:0:0:0:'
-        );
+        $Arr = array(':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:');
         $First = str_replace('::', $Arr[$Abr], $First);
     }
     $Octets = explode(':', $First);

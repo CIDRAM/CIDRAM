@@ -76,7 +76,13 @@ If you encounter any false positives, please contact me to let me know about it.
 
 ###4. <a name="SECTION4"></a>FRONT-END MANAGEMENT
 
-@TODO@
+1) Enable frontend inside config.ini, set directive disable_frontend to true (default is false).
+
+2) Visit loader.php from your browser (e.g. url http://localhost/cidram/loader.php).
+
+3) Login with default username and password: admin/password
+
+( TODO )
 
 ---
 

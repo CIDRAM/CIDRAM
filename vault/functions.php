@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.06).
+ * This file: Functions file (last modified: 2017.02.11).
  */
 
 /**
@@ -991,8 +991,11 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
     } else {
         return '';
     }
-    while (empty($Response) && ($Server = each($DNS)) !== false) {
-        $Handle = fsockopen('udp://' . $Server[1], 53);
+    foreach ($DNS as $Server) {
+        if (!empty($Response)) {
+            break;
+        }
+        $Handle = fsockopen('udp://' . $Server, 53);
         fwrite($Handle, $LeftPad . $Lookup);
         stream_set_timeout($Handle, $Timeout);
         $Response = fread($Handle, 1024);
@@ -1086,9 +1089,9 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
     }
     $Pass = false;
     /** Compare the hostname against the accepted domain/hostname partials. */
-    while (($Domain = each($Domains)) !== false) {
-        $Len = strlen($Domain[1]) * -1;
-        if (substr($CIDRAM['Hostname'], $Len) === $Domain[1]) {
+    foreach ($Domains as $Domain) {
+        $Len = strlen($Domain) * -1;
+        if (substr($CIDRAM['Hostname'], $Len) === $Domain) {
             $Pass = true;
             break;
         }
@@ -1175,9 +1178,11 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', $Defi
         $ReasonLong = $CIDRAM['lang']['denied'];
     }
     if (is_array($DefineOptions) && !empty($DefineOptions)) {
-        while (($Cat = each($DefineOptions)) !== false) {
-            while (($Option = each($Cat[1])) !== false) {
-                $CIDRAM['Config'][$Cat[0]][$Option[0]] = $Option[1];
+        foreach ($DefineOptions as $CatKey => $CatValue) {
+            if (is_array($CatValue) && !empty($CatValue)) {
+                foreach ($CatValue as $OptionKey => $OptionValue) {
+                    $CIDRAM['Config'][$CatKey][$OptionKey] = $OptionValue;
+                }
             }
         }
     }
@@ -1215,9 +1220,11 @@ $CIDRAM['Bypass'] = function ($Condition, $ReasonShort, $DefineOptions = array()
         return false;
     }
     if (is_array($DefineOptions) && !empty($DefineOptions)) {
-        while (($Cat = each($DefineOptions)) !== false) {
-            while (($Option = each($Cat[1])) !== false) {
-                $CIDRAM['Config'][$Cat[0]][$Option[0]] = $Option[1];
+        foreach ($DefineOptions as $CatKey => $CatValue) {
+            if (is_array($CatValue) && !empty($CatValue)) {
+                foreach ($CatValue as $OptionKey => $OptionValue) {
+                    $CIDRAM['Config'][$CatKey][$OptionKey] = $OptionValue;
+                }
             }
         }
     }

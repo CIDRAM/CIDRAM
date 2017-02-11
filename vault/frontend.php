@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.01.29).
+ * This file: Front-end handler (last modified: 2017.02.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -156,7 +156,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
                 );
                 $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
                 $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
-                setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+                setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
                 $CIDRAM['FE']['UserState'] = 1;
                 $CIDRAM['FE']['ThisSession'] =
                     $CIDRAM['FE']['User'] . ',' .
@@ -198,6 +198,12 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
         $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['lang']['state_logged_in'] . "\n";
     }
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
+        if (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) {
+            $CIDRAM['Config']['general']['FrontEndLog'] = $CIDRAM['Time2Logfile'](
+                $CIDRAM['Now'],
+                $CIDRAM['Config']['general']['FrontEndLog']
+            );
+        }
         $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], 'w');
         fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
         fclose($CIDRAM['Handle']);
@@ -268,7 +274,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
         $CIDRAM['FE']['ThisSession'] = '';
         $CIDRAM['FE']['Rebuild'] = true;
         $CIDRAM['FE']['UserState'] = $CIDRAM['FE']['Permissions'] = 0;
-        setcookie('CIDRAM-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+        setcookie('CIDRAM-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
 
     }
 

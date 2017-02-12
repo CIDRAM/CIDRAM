@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.02.07).
+ * This file: Configuration handler (last modified: 2017.02.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -71,30 +71,27 @@ if (empty($CIDRAM['Config']['Config Defaults'])) {
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */
-$CIDRAM['Config']['Temp'] = array('CountCat' => count($CIDRAM['Config']['Config Defaults']));
-for ($CIDRAM['Config']['Temp']['IterateCat'] = 0; $CIDRAM['Config']['Temp']['IterateCat'] < $CIDRAM['Config']['Temp']['CountCat']; $CIDRAM['Config']['Temp']['IterateCat']++) {
-    $CIDRAM['Config']['Temp']['KeyCat'] = key($CIDRAM['Config']['Config Defaults']);
-    next($CIDRAM['Config']['Config Defaults']);
+$CIDRAM['Config']['Temp'] = array();
+foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyCat'] => $CIDRAM['Config']['Temp']['DCat']) {
     if (!isset($CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']])) {
         $CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']] = array();
     }
-    unset($CIDRAM['Config']['Temp']['DCat'], $CIDRAM['Config']['Temp']['Cat']);
+    if (isset($CIDRAM['Config']['Temp']['Cat'])) {
+        unset($CIDRAM['Config']['Temp']['Cat']);
+    }
     $CIDRAM['Config']['Temp']['Cat'] = &$CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']];
-    $CIDRAM['Config']['Temp']['DCat'] = &$CIDRAM['Config']['Config Defaults'][$CIDRAM['Config']['Temp']['KeyCat']];
     if (!is_array($CIDRAM['Config']['Temp']['DCat'])) {
         continue;
     }
-    $CIDRAM['Config']['Temp']['CountDir'] = count($CIDRAM['Config']['Temp']['DCat']);
-    for ($CIDRAM['Config']['Temp']['IterateDir'] = 0; $CIDRAM['Config']['Temp']['IterateDir'] < $CIDRAM['Config']['Temp']['CountDir']; $CIDRAM['Config']['Temp']['IterateDir']++) {
-        $CIDRAM['Config']['Temp']['KeyDir'] = key($CIDRAM['Config']['Temp']['DCat']);
-        next($CIDRAM['Config']['Temp']['DCat']);
-        unset($CIDRAM['Config']['Temp']['DDir'], $CIDRAM['Config']['Temp']['Dir']);
-        $CIDRAM['Config']['Temp']['DDir'] = &$CIDRAM['Config']['Temp']['DCat'][$CIDRAM['Config']['Temp']['KeyDir']];
+    foreach ($CIDRAM['Config']['Temp']['DCat'] as $CIDRAM['Config']['Temp']['KeyDir'] => $CIDRAM['Config']['Temp']['DDir']) {
         if (
             !isset($CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']]) &&
             isset($CIDRAM['Config']['Temp']['DDir']['default'])
         ) {
             $CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']] = $CIDRAM['Config']['Temp']['DDir']['default'];
+        }
+        if (isset($CIDRAM['Config']['Temp']['Dir'])) {
+            unset($CIDRAM['Config']['Temp']['Dir']);
         }
         $CIDRAM['Config']['Temp']['Dir'] = &$CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']];
         if (isset($CIDRAM['Config']['Temp']['DDir']['type'])) {
@@ -104,12 +101,9 @@ for ($CIDRAM['Config']['Temp']['IterateCat'] = 0; $CIDRAM['Config']['Temp']['Ite
                 $CIDRAM['Config']['Temp']['DDir']['type'] === 'bool'
             ) {
                 $CIDRAM['AutoType']($CIDRAM['Config']['Temp']['Dir'], $CIDRAM['Config']['Temp']['DDir']['type']);
-            } elseif ($CIDRAM['Config']['Temp']['DDir']['type'] === 'bool|int') {
-                $CIDRAM['AutoType']($CIDRAM['Config']['Temp']['Dir']);
             }
         }
     }
-    reset($CIDRAM['Config']['Temp']['DCat']);
 }
 reset($CIDRAM['Config']['Config Defaults']);
 unset($CIDRAM['Config']['Temp']);

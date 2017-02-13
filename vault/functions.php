@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.11).
+ * This file: Functions file (last modified: 2017.02.13).
  */
 
 /**
@@ -1802,4 +1802,31 @@ $CIDRAM['IPv6GetLast'] = function ($First, $Factor) {
         $Last = preg_replace('/(?:(\:0)+\:(0\:)+|\:\:0$)/i', '::', $Last, 1);
     }
     return $Last;
+};
+
+/** Fetch remote data (only to be called from the front-end updates page). */
+$CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
+    $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['FECacheGet'](
+        $CIDRAM['FE']['Cache'],
+        $CIDRAM['Components']['ThisComponent']['Remote']
+    );
+    if (!$CIDRAM['Components']['ThisComponent']['RemoteData']) {
+        $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['Request']($CIDRAM['Components']['ThisComponent']['Remote']);
+        if (
+            strtolower(substr($CIDRAM['Components']['ThisComponent']['Remote'], -2)) === 'gz' &&
+            substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
+        ) {
+            $CIDRAM['Components']['ThisComponent']['RemoteData'] = gzdecode($CIDRAM['Components']['ThisComponent']['RemoteData']);
+        }
+        if (empty($CIDRAM['Components']['ThisComponent']['RemoteData'])) {
+            $CIDRAM['Components']['ThisComponent']['RemoteData'] = '-';
+        }
+        $CIDRAM['FECacheAdd'](
+            $CIDRAM['FE']['Cache'],
+            $CIDRAM['FE']['Rebuild'],
+            $CIDRAM['Components']['ThisComponent']['Remote'],
+            $CIDRAM['Components']['ThisComponent']['RemoteData'],
+            $CIDRAM['Now'] + 3600
+        );
+    }
 };

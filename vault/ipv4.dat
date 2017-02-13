@@ -2935,10 +2935,7 @@ Tag: Bytemark Limited
 
 
 # ASNs 14061, 46652, 62567, 133165, 135340, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc").
-# %Listed, Google Malware Dashboard: 1.02% (AS14061), 0.43% (AS46652), 1.48% (AS62567), 2.63% (AS133165),
-#   1.00% (AS135340), 1.65% (AS200130), 1.26% (AS201229), 1.96% (AS202018), 2.78% (AS202109), 0.95% (AS393406),
-#   1.55% (AS394362).
-# Updated: 2017.01.13
+# Updated: 2017.02.14
 
 5.101.96.0/20 Deny Cloud
 37.139.0.0/19 Deny Cloud
@@ -2971,18 +2968,20 @@ Tag: Bytemark Limited
 138.68.160.0/20 Deny Cloud
 138.68.192.0/21 Deny Cloud
 138.68.208.0/20 Deny Cloud
-138.68.224.0/20 Deny Cloud
+138.68.224.0/19 Deny Cloud
 138.197.0.0/19 Deny Cloud
 138.197.32.0/20 Deny Cloud
 138.197.48.0/22 Deny Cloud
 138.197.56.0/21 Deny Cloud
-138.197.64.0/19 Deny Cloud
+138.197.64.0/18 Deny Cloud
 138.197.128.0/19 Deny Cloud
+138.197.160.0/20 Deny Cloud
 138.197.192.0/19 Deny Cloud
-138.197.224.0/22 Deny Cloud
+138.197.224.0/21 Deny Cloud
 138.197.232.0/22 Deny Cloud
 138.197.252.0/22 Deny Cloud
 139.59.0.0/18 Deny Cloud
+139.59.64.0/20 Deny Cloud
 139.59.96.0/20 Deny Cloud
 139.59.128.0/18 Deny Cloud
 139.59.192.0/20 Deny Cloud
@@ -2994,6 +2993,8 @@ Tag: Bytemark Limited
 159.203.0.0/16 Deny Cloud
 162.243.0.0/16 Deny Cloud
 163.47.8.0/22 Deny Cloud
+174.138.64.0/20 Deny Cloud
+174.138.96.0/22 Deny Cloud
 178.62.0.0/16 Deny Cloud
 185.14.184.0/22 Deny Cloud
 185.88.180.0/22 Deny Cloud
@@ -3005,6 +3006,7 @@ Tag: Bytemark Limited
 198.199.64.0/18 Deny Cloud
 198.211.96.0/19 Deny Cloud
 207.154.192.0/19 Deny Cloud
+207.154.224.0/20 Deny Cloud
 208.68.36.0/22 Deny Cloud
 Tag: Digital Ocean, Inc
 
@@ -7097,41 +7099,49 @@ Tag: Media Temple, Inc
 Tag: ahbr company
 
 
-# ASN 12586 ("GHOSTnet GmbH").
-# %Listed, Google Malware Dashboard: 2.82%.
-# Updated: 2016.11.03
+# ASNs 12586, 31530, 48039, 197549 ("GHOSTnet GmbH").
+# %Listed, Google Malware Dashboard: 2.35% (AS12586), 0% (AS31530/AS48039/AS197549).
+# %Listed, CleanTalk.org: 82.38% (AS12586), 0% (AS31530), 50.00% (AS48039), 0% (AS197549).
+# Updated: 2017.02.14
 
 5.83.128.0/20 Deny Cloud
-5.83.151.0/24 Deny Cloud
+5.83.144.0/22 Deny Cloud
+5.83.149.0/24 Deny Cloud
+5.83.150.0/23 Deny Cloud
+5.83.152.0/21 Deny Cloud
 5.175.128.0/17 Deny Cloud
 5.230.0.0/15 Deny Cloud
 37.114.57.0/24 Deny Cloud
 37.114.59.0/24 Deny Cloud
 37.114.60.0/22 Deny Cloud
+77.90.0.0/18 Deny Cloud
 78.111.224.0/20 Deny Cloud
+83.243.80.0/21 Deny Cloud
 85.93.0.0/19 Deny Cloud
 87.239.128.0/21 Deny Cloud
+89.106.64.0/19 Deny Cloud
 89.144.0.0/18 Deny Cloud
 91.199.8.0/24 Deny Cloud
 91.209.52.0/24 Deny Cloud
+91.228.190.0/24 Deny Cloud
 91.237.100.0/23 Deny Cloud
 91.238.180.0/23 Deny Cloud
 91.241.44.0/24 Deny Cloud
 93.157.48.0/21 Deny Cloud
 93.186.160.0/22 Deny Cloud
 93.186.172.0/22 Deny Cloud
+94.103.160.0/20 Deny Cloud
 94.249.128.0/17 Deny Cloud
 95.215.32.0/22 Deny Cloud
 109.205.176.0/21 Deny Cloud
 110.93.255.0/24 Deny Cloud
-178.18.151.0/24 Deny Cloud
+178.18.146.0/23 Deny Cloud
+178.18.148.0/22 Deny Cloud
+178.18.156.0/22 Deny Cloud
 178.238.95.0/24 Deny Cloud
-185.2.200.0/22 Deny Cloud
 185.13.156.0/22 Deny Cloud
 185.47.140.0/22 Deny Cloud
-185.121.68.0/23 Deny Cloud
-185.121.70.0/24 Deny Cloud
-185.129.84.0/22 Deny Cloud
+185.186.24.0/24 Deny Cloud
 193.24.208.0/22 Deny Cloud
 193.26.24.0/24 Deny Cloud
 193.28.251.0/24 Deny Cloud
@@ -7142,6 +7152,7 @@ Tag: ahbr company
 193.228.144.0/24 Deny Cloud
 193.238.124.0/22 Deny Cloud
 194.60.68.0/24 Deny Cloud
+195.95.219.0/24 Deny Cloud
 195.110.14.0/23 Deny Cloud
 195.162.4.0/23 Deny Cloud
 195.184.92.0/23 Deny Cloud
@@ -7321,8 +7332,9 @@ Tag: SECURED SERVERS LLC
 
 
 # ASNs 21859, 62610 ("Zenlayer Inc").
-# %Listed, Google Malware Dashboard: 26.88% (AS21859), 0% (AS62610).
-# Updated: 2016.11.04
+# %Listed, Google Malware Dashboard: 29.00% (AS21859), 0.52% (AS62610).
+# %Listed, CleanTalk.org: 29.23% (AS21859), ??.??% (AS62610).
+# Updated: 2017.02.10
 
 8.23.192.0/23 Deny Cloud
 23.91.102.0/23 Deny Cloud
@@ -7336,10 +7348,6 @@ Tag: SECURED SERVERS LLC
 23.236.112.0/20 Deny Cloud
 23.248.160.0/19 Deny Cloud
 23.251.96.0/19 Deny Cloud
-45.40.48.0/20 Deny Cloud
-45.43.32.0/19 Deny Cloud
-45.117.100.0/22 Deny Cloud
-45.124.112.0/22 Deny Cloud
 45.124.252.0/22 Deny Cloud
 45.249.91.0/24 Deny Cloud
 58.68.168.0/21 Deny Cloud
@@ -7348,37 +7356,35 @@ Tag: SECURED SERVERS LLC
 65.255.32.0/20 Deny Cloud
 69.28.48.0/20 Deny Cloud
 103.71.152.0/24 Deny Cloud
-103.76.104.0/22 Deny Cloud
+103.76.107.0/24 Deny Cloud
 103.206.20.0/22 Deny Cloud
 103.211.164.0/24 Deny Cloud
 103.211.166.0/24 Deny Cloud
 103.212.228.0/23 Deny Cloud
 103.219.194.0/24 Deny Cloud
 103.230.236.0/22 Deny Cloud
-104.143.35.0/24 Deny Cloud
+104.143.32.0/24 Deny Cloud
+104.143.34.0/23 Deny Cloud
 104.143.44.0/23 Deny Cloud
 104.143.46.0/24 Deny Cloud
-104.218.160.0/21 Deny Cloud
-104.245.8.0/21 Deny Cloud
 104.251.238.0/24 Deny Cloud
 107.150.96.0/20 Deny Cloud
 107.151.128.0/18 Deny Cloud
 107.155.0.0/18 Deny Cloud
+113.20.156.0/24 Deny Cloud
+128.1.0.0/16 Deny Cloud
+128.14.0.0/16 Deny Cloud
 162.209.240.0/20 Deny Cloud
 162.221.4.0/22 Deny Cloud
 162.221.192.0/21 Deny Cloud
 172.81.96.0/24 Deny Cloud
+172.81.98.0/24 Deny Cloud
+172.81.103.0/24 Deny Cloud
 172.81.110.0/24 Deny Cloud
-172.81.120.0/21 Deny Cloud
 172.81.151.0/24 Deny Cloud
 172.87.24.0/21 Deny Cloud
-172.96.114.0/23 Deny Cloud
-172.96.116.0/22 Deny Cloud
-172.96.120.0/22 Deny Cloud
-172.96.124.0/23 Deny Cloud
 172.247.32.0/21 Deny Cloud
 180.210.224.0/22 Deny Cloud
-180.210.235.0/24 Deny Cloud
 180.210.240.0/20 Deny Cloud
 182.161.36.0/22 Deny Cloud
 192.254.80.0/20 Deny Cloud
@@ -7388,11 +7394,10 @@ Tag: SECURED SERVERS LLC
 198.176.57.0/24 Deny Cloud
 198.176.58.0/23 Deny Cloud
 198.176.60.0/22 Deny Cloud
-199.83.51.0/24 Deny Cloud
 199.91.72.0/22 Deny Cloud
-199.190.44.0/23 Deny Cloud
-199.245.59.0/24 Deny Cloud
-199.245.61.0/24 Deny Cloud
+199.190.44.0/24 Deny Cloud
+199.245.56.0/22 Deny Cloud
+199.245.60.0/23 Deny Cloud
 199.245.62.0/24 Deny Cloud
 208.81.200.0/22 Deny Cloud
 209.177.80.0/20 Deny Cloud
@@ -7457,18 +7462,19 @@ Tag: Handy Networks
 
 
 # ASN 31863 ("Centrilogic, Inc").
-# %Listed, Google Malware Dashboard: 1.66%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 1.76%.
+# %Listed, CleanTalk.org: 51.53%.
+# Updated: 2017.02.10
 
 23.92.62.0/23 Deny Cloud
 23.92.208.0/20 Deny Cloud
 45.33.159.0/24 Deny Cloud
 45.43.8.0/24 Deny Cloud
-64.57.133.0/24 Deny Cloud
 67.220.236.0/24 Deny Cloud
 67.220.246.0/23 Deny Cloud
 67.220.250.0/23 Deny Cloud
 85.190.228.0/24 Deny Cloud
+103.83.192.0/22 Deny Cloud
 103.250.80.0/23 Deny Cloud
 103.250.83.0/24 Deny Cloud
 104.152.184.0/21 Deny Cloud
@@ -7485,9 +7491,9 @@ Tag: Handy Networks
 104.192.103.0/24 Deny Cloud
 104.200.64.0/24 Deny Cloud
 104.244.158.0/24 Deny Cloud
+146.71.84.0/24 Deny Cloud
 150.107.224.0/23 Deny Cloud
 150.107.226.0/24 Deny Cloud
-154.16.167.0/24 Deny Cloud
 162.248.240.0/21 Deny Cloud
 172.97.65.0/24 Deny Cloud
 172.98.165.0/24 Deny Cloud
@@ -7502,8 +7508,7 @@ Tag: Handy Networks
 177.172.76.0/22 Deny Cloud
 179.0.96.0/20 Deny Cloud
 179.63.96.0/20 Deny Cloud
-185.106.232.0/24 Deny Cloud
-185.106.234.0/24 Deny Cloud
+185.174.40.0/22 Deny Cloud
 191.96.8.0/24 Deny Cloud
 191.101.52.0/24 Deny Cloud
 192.111.144.0/20 Deny Cloud
@@ -8708,13 +8713,11 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 4.12%.
-# Updated: 2016.12.05
+# %Listed, Google Malware Dashboard: 3.74%.
+# %Listed, CleanTalk.org: 53.49%.
+# Updated: 2017.02.10
 
 47.52.0.0/16 Deny Cloud
-47.56.0.0/15 Deny Cloud
-47.74.0.0/15 Deny Cloud
-47.76.0.0/14 Deny Cloud
 47.88.0.0/16 Deny Cloud
 47.89.0.0/18 Deny Cloud
 47.89.71.0/24 Deny Cloud
@@ -8722,14 +8725,6 @@ Tag: AS45538
 47.89.96.0/22 Deny Cloud
 47.89.128.0/17 Deny Cloud
 47.90.0.0/15 Deny Cloud
-47.235.0.0/16 Deny Cloud
-47.236.0.0/14 Deny Cloud
-47.240.0.0/14 Deny Cloud
-47.244.0.0/15 Deny Cloud
-47.246.0.0/16 Deny Cloud
-47.250.0.0/15 Deny Cloud
-47.252.0.0/15 Deny Cloud
-47.254.0.0/16 Deny Cloud
 110.76.23.0/24 Deny Cloud
 116.251.64.0/18 Deny Cloud
 140.205.122.0/24 Deny Cloud
@@ -9279,8 +9274,9 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# %Listed, Google Malware Dashboard: 0.25%.
-# Updated: 2016.05.05 / Checked: 2016.12.10
+# %Listed, Google Malware Dashboard: 0.28%.
+# %Listed, CleanTalk.org: 25.77%.
+# Updated: 2016.05.05 / Checked: 2017.02.08
 
 5.62.16.0/22 Deny Cloud
 37.247.119.0/24 Deny Cloud
@@ -12616,7 +12612,7 @@ Tag: Mainstream doo
 # ASN 37692 ("NetStack Ltd").
 # %Listed, Google Malware Dashboard: 0.29%.
 # %Listed, CleanTalk.org: 67.47%.
-# Updated: 2017.02.03
+# Updated: 2017.02.03 / Checked: 2017.02.08
 
 45.221.70.0/23 Deny Cloud
 154.16.93.0/24 Deny Cloud
@@ -12642,6 +12638,72 @@ Tag: NetStack Ltd
 66.17.0.0/18 Deny Cloud
 69.84.192.0/20 Deny Cloud
 Tag: Arrival Communication
+
+
+# ASN 13354 ("EBL Global Networks, Inc").
+# %Listed, Google Malware Dashboard: 1.92%.
+# %Listed, CleanTalk.org: 45.77%.
+# Updated: 2017.02.08
+
+64.26.230.0/24 Deny Cloud
+67.211.32.0/19 Deny Cloud
+74.117.152.0/21 Deny Cloud
+74.124.0.0/19 Deny Cloud
+96.47.35.0/24 Deny Cloud
+96.47.36.0/23 Deny Cloud
+96.47.38.0/24 Deny Cloud
+96.47.40.0/22 Deny Cloud
+96.47.44.0/24 Deny Cloud
+103.194.47.0/24 Deny Cloud
+104.255.96.0/21 Deny Cloud
+108.60.192.0/19 Deny Cloud
+108.166.160.0/19 Deny Cloud
+162.252.168.0/24 Deny Cloud
+184.75.248.0/21 Deny Cloud
+192.126.90.0/23 Deny Cloud
+192.126.92.0/22 Deny Cloud
+198.154.96.0/19 Deny Cloud
+199.73.124.0/23 Deny Cloud
+199.119.176.0/22 Deny Cloud
+204.117.64.0/24 Deny Cloud
+208.78.216.0/21 Deny Cloud
+208.83.128.0/23 Deny Cloud
+209.105.224.0/19 Deny Cloud
+216.172.96.0/20 Deny Cloud
+Tag: EBL Global Networks
+
+
+# ASN 61138 ("Zappie Host LLC").
+# %Listed, CleanTalk.org: 44.44%.
+# Updated: 2017.02.10
+
+27.0.235.0/24 Deny Cloud
+103.208.86.0/23 Deny Cloud
+103.214.71.0/24 Deny Cloud
+144.48.80.0/23 Deny Cloud
+169.239.128.0/22 Deny Cloud
+185.90.62.0/24 Deny Cloud
+185.99.132.0/23 Deny Cloud
+185.121.160.0/22 Deny Cloud
+185.121.168.0/23 Deny Cloud
+185.121.178.0/24 Deny Cloud
+185.147.35.0/24 Deny Cloud
+Tag: Zappie Host LLC
+
+
+# ASN 58923 ("InterCloud ltd").
+# %Listed, CleanTalk.org: 45.00%.
+# Updated: 2017.02.14
+
+103.23.40.0/22 Deny Cloud
+103.248.12.0/22 Deny Cloud
+118.67.208.0/23 Deny Cloud
+118.67.210.0/24 Deny Cloud
+118.67.219.0/24 Deny Cloud
+118.67.220.0/22 Deny Cloud
+163.53.149.0/24 Deny Cloud
+163.53.150.0/23 Deny Cloud
+Tag: InterCloud ltd
 
 
 # ---

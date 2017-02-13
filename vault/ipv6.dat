@@ -589,10 +589,7 @@ Tag: Bytemark Limited
 
 
 # ASNs 14061, 46652, 62567, 133165, 135340, 200130, 201229, 202018, 202109, 393406, 394362 ("Digital Ocean, Inc").
-# %Listed, Google Malware Dashboard: 1.02% (AS14061), 0.43% (AS46652), 1.48% (AS62567), 2.63% (AS133165),
-#   1.00% (AS135340), 1.65% (AS200130), 1.26% (AS201229), 1.96% (AS202018), 2.78% (AS202109), 0.95% (AS393406),
-#   1.55% (AS394362).
-# Updated: 2017.01.13
+# Updated: 2017.01.13 / Checked: 2017.02.14
 
 2400:6180::/48 Deny Cloud
 2400:6180:100::/40 Deny Cloud
@@ -1917,24 +1914,32 @@ Tag: Krypt Technologies
 Tag: Media Temple, Inc
 
 
-# ASN 12586 ("GHOSTnet GmbH").
-# %Listed, Google Malware Dashboard: 2.82%.
-# Updated: 2016.11.03
+# ASNs 12586, 31530, 48039, 197549 ("GHOSTnet GmbH").
+# %Listed, Google Malware Dashboard: 2.35% (AS12586), 0% (AS31530/AS48039/AS197549).
+# %Listed, CleanTalk.org: 82.38% (AS12586), 0% (AS31530), 50.00% (AS48039), 0% (AS197549).
+# Updated: 2017.02.14
 
+2001:67c:18e8::/48 Deny Cloud
 2001:67c:2f84::/48 Deny Cloud
 2a00:12d8::/29 Deny Cloud
+2a00:12d8:6000::/36 Deny Cloud
 2a00:1890::/29 Deny Cloud
 2a00:1910::/29 Deny Cloud
 2a00:19d0::/29 Deny Cloud
+2a00:1b28::/32 Deny Cloud
 2a00:cdc0::/32 Deny Cloud
+2a01:78:2000::/35 Deny Cloud
 2a01:bd40::/29 Deny Cloud
+2a02:7a0::/32 Deny Cloud
 2a02:2fc0::/29 Deny Cloud
+2a0b:6c80::/32 Deny Cloud
 Tag: GHOSTnet GmbH
 
 
 # ASNs 21859, 62610 ("Zenlayer Inc").
-# %Listed, Google Malware Dashboard: 26.88% (AS21859), 0% (AS62610).
-# Updated: 2016.11.04
+# %Listed, Google Malware Dashboard: 29.00% (AS21859), 0.52% (AS62610).
+# %Listed, CleanTalk.org: 29.23% (AS21859), ??.??% (AS62610).
+# Updated: 2016.11.04 / Checked: 2017.02.10
 
 2602:ffe4::/36 Deny Cloud
 2604:980::/32 Deny Cloud
@@ -1964,8 +1969,9 @@ Tag: Handy Networks
 
 
 # ASN 31863 ("Centrilogic, Inc").
-# %Listed, Google Malware Dashboard: 1.66%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 1.76%.
+# %Listed, CleanTalk.org: 51.53%.
+# Updated: 2016.11.03 / Checked: 2017.02.10
 
 2602:ff96:3::/48 Deny Cloud
 2602:ff96:7::/48 Deny Cloud
@@ -2405,8 +2411,9 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# %Listed, Google Malware Dashboard: 0.25%.
-# Updated: 2016.12.10
+# %Listed, Google Malware Dashboard: 0.28%.
+# %Listed, CleanTalk.org: 25.77%.
+# Updated: 2017.02.08
 
 2a00:f48::/32 Deny Cloud
 2a02:2da0::/32 Deny Cloud
@@ -2414,6 +2421,7 @@ Tag: HighSpeed Office Ltd
 2a05:3c80::/29 Deny Cloud
 2a05:cc00::/29 Deny Cloud
 2a06:8781::/48 Deny Cloud
+2a07:a347::/32 Deny Cloud
 Tag: 23Media GmbH
 
 
@@ -3220,3 +3228,36 @@ Tag: LLHost Inc
 
 2c0f:f738::/32 Deny Cloud
 Tag: NetStack Ltd
+
+
+# ASN 13354 ("EBL Global Networks, Inc").
+# %Listed, Google Malware Dashboard: 1.92%.
+# %Listed, CleanTalk.org: 45.77%.
+# Updated: 2017.02.08
+
+2606:fe80:10::/44 Deny Cloud
+2607:1400::/48 Deny Cloud
+2607:f348::/32 Deny Cloud
+2620:110:6001::/48 Deny Cloud
+Tag: EBL Global Networks
+
+
+# ASN 61138 ("Zappie Host LLC").
+# %Listed, CleanTalk.org: 44.44%.
+# Updated: 2017.02.10
+
+2404:3d80:8000::/34 Deny Cloud
+2a05:dfc0:1ee3::/48 Deny Cloud
+2a06:1280::/32 Deny Cloud
+2a06:9f40::/29 Deny Cloud
+2c0f:f530::/44 Deny Cloud
+2c0f:f530:20::/44 Deny Cloud
+Tag: Zappie Host LLC
+
+
+# ASN 58923 ("InterCloud ltd").
+# %Listed, CleanTalk.org: 45.00%.
+# Updated: 2017.02.14
+
+2406:f100::/32 Deny Cloud
+Tag: InterCloud ltd

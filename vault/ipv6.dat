@@ -92,8 +92,9 @@ Tag: Hostinger Int
 
 
 # ASNs 13335, 132892, 203898, 394536 ("CloudFlare, Inc").
-# %Listed, Google Malware Dashboard: 1.56% (AS13335), 0% (AS132892/AS203898/AS394536).
-# Updated: 2017.01.05
+# %Listed, Google Malware Dashboard: 1.44% (AS13335), 0% (AS132892/AS203898/AS394536).
+# %Listed, CleanTalk.org: 33.95% (AS13335), 4.40% (AS132892), ??.??% (AS203898), 95.26% (AS394536).
+# Updated: 2017.02.15
 
 2400:cb00::/48 Deny Cloud
 2400:cb00:4::/48 Deny Cloud
@@ -101,8 +102,10 @@ Tag: Hostinger Int
 2400:cb00:12::/48 Deny Cloud
 2400:cb00:14::/46 Deny Cloud
 2400:cb00:19::/48 Deny Cloud
-2400:cb00:20::/45 Deny Cloud
-2400:cb00:29::/48 Deny Cloud
+2400:cb00:20::/46 Deny Cloud
+2400:cb00:25::/48 Deny Cloud
+2400:cb00:26::/47 Deny Cloud
+2400:cb00:28::/47 Deny Cloud
 2400:cb00:31::/48 Deny Cloud
 2400:cb00:32::/48 Deny Cloud
 2400:cb00:34::/47 Deny Cloud
@@ -121,27 +124,31 @@ Tag: Hostinger Int
 2400:cb00:80::/45 Deny Cloud
 2400:cb00:88::/47 Deny Cloud
 2400:cb00:90::/48 Deny Cloud
-2400:cb00:94::/48 Deny Cloud
-2400:cb00:96::/47 Deny Cloud
+2400:cb00:94::/46 Deny Cloud
 2400:cb00:98::/48 Deny Cloud
 2400:cb00:100::/48 Deny Cloud
 2400:cb00:102::/47 Deny Cloud
 2400:cb00:104::/46 Deny Cloud
+2400:cb00:108::/48 Deny Cloud
 2400:cb00:114::/47 Deny Cloud
 2400:cb00:117::/48 Deny Cloud
 2400:cb00:121::/48 Deny Cloud
 2400:cb00:122::/48 Deny Cloud
 2400:cb00:125::/48 Deny Cloud
+2400:cb00:126::/48 Deny Cloud
+2400:cb00:128::/48 Deny Cloud
 2400:cb00:504::/48 Deny Cloud
 2400:cb00:569::/48 Deny Cloud
 2400:cb00:2048::/47 Deny Cloud
 2400:cb00:beef::/48 Deny Cloud
+2400:cb00:f00d::/48 Deny Cloud
 2405:8100:8004::/47 Deny Cloud
 2606:4700::/42 Deny Cloud
 2606:4700:50::/44 Deny Cloud
+2606:4700:2001::/48 Deny Cloud
 2606:4700:ff01::/48 Deny Cloud
-2a06:98c0:1000::/48 Deny Cloud
 2a06:98c0:3600::/48 Deny Cloud
+2a06:98c0:1000::/48 Deny Cloud
 Tag: CloudFlare, Inc
 
 
@@ -623,7 +630,7 @@ Tag: Root SA
 Tag: Tzulo Inc
 
 
-# ASN 17139 ("Corporate Colocation Inc")
+# ASN 17139 ("Corporate Colocation Inc").
 # %Listed, Google Malware Dashboard: 16.42%.
 # Updated: 2016.08.26
 
@@ -634,7 +641,7 @@ Tag: Tzulo Inc
 Tag: Corporate Colocation
 
 
-# ASN 32613 ("iWeb Technologies Inc")
+# ASN 32613 ("iWeb Technologies Inc").
 # %Listed, Google Malware Dashboard: 2.11%.
 # Updated: 2016.01.20 / Checked: 2016.09.28
 
@@ -2297,37 +2304,51 @@ Tag: Netdirekt A.S
 Tag: EVANZO GmbH
 
 
-# ASN 21321 ("Areti Internet Ltd"), ASNs 4250, 25745 ("Alentus Corporation").
-# %Listed, Google Malware Dashboard: 0% (AS21321), 4.36% (AS4250), 1.74% (AS25745).
-# Updated: 2016.12.10
+# ASN 21321 ("Areti Internet Ltd").
+# %Listed, CleanTalk.org: 40.85%.
+# Updated: 2017.02.15
 
 2001:590:1405::/48 Deny Cloud
 2001:590:3c03::/48 Deny Cloud
-2001:590:4802::/48 Deny Cloud
 2606:f180:1::/48 Deny Cloud
-2606:f180:2::/47 Deny Cloud
-2606:f180:4::/46 Deny Cloud
+2606:f180:3::/48 Deny Cloud
+2606:f180:5::/48 Deny Cloud
+2606:f180:6::/47 Deny Cloud
 2607:f358:7::/48 Deny Cloud
 2607:f358:f::/48 Deny Cloud
-2607:f358:19::/48 Deny Cloud
 2607:f358:1f::/48 Deny Cloud
-2607:f358:22::/48 Deny Cloud
-2607:f358:2d::/48 Deny Cloud
 2607:f358:2e::/48 Deny Cloud
 2607:f358:35::/48 Deny Cloud
 2a01:b840::/32 Deny Cloud
 2a03:4a80::/45 Deny Cloud
 2a03:4a80:8::/47 Deny Cloud
-2a07:23c0::/48 Deny Cloud
-2a07:23c0:2::/47 Deny Cloud
-2a07:23c0:4::/47 Deny Cloud
-2a07:23c0:6::/48 Deny Cloud
+2a07:23c0:2::/48 Deny Cloud
+2a07:23c0:4::/48 Deny Cloud
 2a07:23c0:8::/47 Deny Cloud
-Tag: Areti/Alentus
+Tag: Areti Internet Ltd
+
+
+# ASNs 4250, 25745 ("Alentus Corporation").
+# %Listed, Google Malware Dashboard: 4.33% (AS4250), 1.85% (AS25745).
+# %Listed, CleanTalk.org: 31.20% (AS4250), 13.64% (AS25745).
+# Updated: 2017.02.15
+
+2001:590:4802::/48 Deny Cloud
+2606:f180:2::/48 Deny Cloud
+2606:f180:4::/48 Deny Cloud
+2607:f358:19::/48 Deny Cloud
+2607:f358:22::/48 Deny Cloud
+2607:f358:2d::/48 Deny Cloud
+2a07:23c0::/48 Deny Cloud
+2a07:23c0:3::/48 Deny Cloud
+2a07:23c0:5::/48 Deny Cloud
+2a07:23c0:6::/48 Deny Cloud
+Tag: Alentus Corp
 
 
 # ASN 31251 ("Falco Networks B.V").
-# Updated: 2016.04.30 / Checked: 2016.11.29
+# %Listed, CleanTalk.org: 6.98%.
+# Updated: 2016.04.30 / Checked: 2017.02.15
 
 2a02:a10::/32 Deny Cloud
 2a03:60c0::/32 Deny Cloud
@@ -2464,7 +2485,7 @@ Tag: i3d B.V
 Tag: Serverius Holding
 
 
-# ASN 20857 ("Transip B.V")
+# ASN 20857 ("Transip B.V").
 # %Listed, Google Malware Dashboard: 2.07%.
 # Updated: 2016.05.09 / Checked 2016.12.24
 
@@ -2473,19 +2494,22 @@ Tag: Serverius Holding
 Tag: Transip B.V
 
 
-# ASN 200429 ("HostSlim BV")
-# %Listed, Google Malware Dashboard: 0.71%.
-# Updated: 2016.09.28
+# ASN 200429 ("HostSlim BV").
+# %Listed, Google Malware Dashboard: 0.49%.
+# %Listed, CleanTalk.org: 97.75%.
+# Updated: 2017.02.15
 
 2a00:1ca8:17::/48 Deny Cloud
 2a00:1ca8:19::/48 Deny Cloud
 2a00:1ca8:37::/48 Deny Cloud
 2a06:4140::/29 Deny Cloud
 2a06:5b80::/32 Deny Cloud
+2a06:a006:f3::/48 Deny Cloud
+2a0a:4300::/29 Deny Cloud
 Tag: HostSlim BV
 
 
-# ASN 43350 ("NForce Entertainment B.V")
+# ASN 43350 ("NForce Entertainment B.V").
 # %Listed, Google Malware Dashboard: 1.06%.
 # Updated: 2016.12.24
 
@@ -3261,3 +3285,43 @@ Tag: Zappie Host LLC
 
 2406:f100::/32 Deny Cloud
 Tag: InterCloud ltd
+
+
+# ASN 197540 ("netcup GmbH").
+# %Listed, Google Malware Dashboard: 1.24%.
+# %Listed, CleanTalk.org: 52.86%.
+# Updated: 2017.02.15
+
+2a03:4000::/31 Deny Cloud
+2a04:b500::/32 Deny Cloud
+Tag: netcup GmbH
+
+
+# ASNs 19531, 43737, 43755 ("Nodes Direct").
+# %Listed, Google Malware Dashboard: 1.59% (AS19531), "ASN not found" (AS43737/AS43755).
+# %Listed, CleanTalk.org: 86.82% (AS19531), ??.??% (AS43737/AS43755).
+# Updated: 2017.02.15
+
+2604:4600::/32 Deny Cloud
+2605:d100:b000::/36 Deny Cloud
+2607:8700:104::/48 Deny Cloud
+Tag: Nodes Direct
+
+
+# ASN 23352 ("Server Central Network").
+# %Listed, Google Malware Dashboard: 1.83%.
+# %Listed, CleanTalk.org: 29.45%.
+# Updated: 2017.02.15
+
+2001:1838::/32 Deny Cloud
+2620:7d::/48 Deny Cloud
+Tag: Server Central Network
+
+
+# ASN 63119 ("netirons").
+# %Listed, Google Malware Dashboard: 0.30%.
+# %Listed, CleanTalk.org: 92.03%.
+# Updated: 2017.02.15
+
+2a02:5740::/32 Deny Cloud
+Tag: netirons

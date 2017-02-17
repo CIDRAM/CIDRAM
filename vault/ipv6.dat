@@ -651,14 +651,15 @@ Tag: iWeb
 
 
 # ASNs 13926, 22781, 29713, 54203, 62651, 63128 ("Reliable Hosting Services").
-# %Listed, Google Malware Dashboard:
-#   0% (AS13926/AS54203/AS62651/AS63128), 3.37% (AS22781), 4.48% (AS29713).
-# Updated: 2016.05.09 / Checked: 2016.06.09
+# %Listed, Google Malware Dashboard: 0% (AS13926/AS54203/AS62651/AS63128), 5.22% (AS22781), 2.88% (AS29713).
+# %Listed, CleanTalk.org: 26.27% (AS13926), 16.40% (AS22781), 46.94% (AS29713), 25.89% (AS54203), 29.63% (AS62651), 67.65% (AS63128).
+# Updated: 2017.02.18
 
+2602:ff62:120::/48 Deny Cloud
 2604:4100::/36 Deny Cloud
+2604:fc80::/32 Deny Cloud
 2604:c980::/32 Deny Cloud
 2604:ea80::/32 Deny Cloud
-2604:fc80::/32 Deny Cloud
 2606:b300::/32 Deny Cloud
 2607:fb50::/32 Deny Cloud
 Tag: Reliable Hosting
@@ -790,22 +791,28 @@ Tag: Black Lotus
 
 
 # ASNs 8100, 29761, 62639 ("QuadraNet, Inc").
-# %Listed, Google Malware Dashboard: 3.49% (AS8100), 0% (AS29761), 6.86% (AS62639).
-# Updated: 2016.06.09
+# %Listed, Google Malware Dashboard: 2.91% (AS8100), 0% (AS29761), 7.27% (AS62639).
+# %Listed, CleanTalk.org: 83.90% (AS8100), 88.85% (AS29761), 64.62% (AS62639).
+# Updated: 2017.02.18
 
 2602:ff75::/36 Deny Cloud
 2602:ff96:2::/48 Deny Cloud
 2602:ff96:4::/48 Deny Cloud
-2602:ffea::/35 Deny Cloud
+2602:ff96:11::/48 Deny Cloud
+2602:ffea::/36 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:3::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
+2604:bc0::/47 Deny Cloud
 2605:8900:3000::/36 Deny Cloud
 2607:8700:102::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
 2a05:4240::/29 Deny Cloud
 2a05:b0c6:300::/40 Deny Cloud
+2a06:e800::/29 Deny Cloud
+2a07:9944:1a::/48 Deny Cloud
+2a07:9944:1b::/48 Deny Cloud
 Tag: QuadraNet, Inc
 
 
@@ -3209,12 +3216,23 @@ Tag: NetSource
 Tag: SPRINT
 
 
-# ASNs 202791, 202792 ("CloudSRV Limited").
-# Updated: 2017.01.19
+# ASNs 24669, 202791, 202792 ("CloudSRV Limited").
+# %Listed, CleanTalk.org: 8.33% (AS24669), ??.??% (AS202791/AS202792).
+# Updated: 2017.02.18
 
 2405:3580::/48 Deny Cloud
 2a07:7ec2::/31 Deny Cloud
 Tag: CloudSRV Limited
+
+
+# ASN 61337 ("Electronic Communities Ltd").
+# %Listed, Google Malware Dashboard: 1.17%.
+# %Listed, CleanTalk.org: 58.06%.
+# Updated: 2017.02.18
+
+2001:67c:504::/48 Deny Cloud
+2001:67c:72c::/48 Deny Cloud
+Tag: ECOM-AS
 
 
 # ASN 44812 ("IT Expert LLC").

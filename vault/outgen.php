@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.01.31).
+ * This file: Output generator (last modified: 2017.02.17).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -151,11 +151,14 @@ if (
     }
 }
 
-/** Define whether to track inbound IP. */
+/** Define whether to track the IP of the current request. */
 $CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
 
-/** Load any modules that have been registered with the configuration. */
-if ($CIDRAM['Protect'] && !empty($CIDRAM['Config']['signatures']['modules'])) {
+/**
+ * If the request hasn't originated from a whitelisted IP/CIDR, and if any modules have been registered with the
+ * configuration, load them.
+ */
+if ($CIDRAM['Protect'] && !empty($CIDRAM['Config']['signatures']['modules']) && empty($CIDRAM['Whitelisted'])) {
     $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
     array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
         if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
@@ -396,7 +399,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
                         "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
                     )) . '">' . $CIDRAM['lang']['click_here'] . '</a>';
                 $CIDRAM['BlockInfo']['EmailAddr'] =
-                    "\n    <p class=\"textStrong\">" . $CIDRAM['ParseVars'](array(
+                    "\n    <p class=\"detected\">" . $CIDRAM['ParseVars'](array(
                         'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
                     ), $CIDRAM['lang']['Support_Email']) . '</p>';
             }

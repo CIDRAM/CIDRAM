@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2016.08.18).
+ * This file: reCAPTCHA module (last modified: 2017.02.16).
  */
 
 /**
@@ -128,8 +128,8 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             $CIDRAM['Config']['template_data']['recaptcha_api_include'] =
                 "\n<script src='https://www.google.com/recaptcha/api.js'></script>";
             $CIDRAM['Config']['template_data']['recaptcha_div_include'] =
-                "\n<hr />\n<p class=\"textStrong\">{recaptcha_message}<br />{recaptcha_cookie_warning}" .
-                "<br /><br /></p>\n<form method=\"POST\" action=\"\"><div class=\"g-recaptcha\" data-sitekey=\"" .
+                "\n<hr />\n<p class=\"detected\">{recaptcha_message}<br />{recaptcha_cookie_warning}<br /><br /></p>" .
+                "\n<form method=\"POST\" action=\"\" class=\"center\"><div class=\"g-recaptcha\" data-sitekey=\"" .
                 $CIDRAM['Config']['recaptcha']['sitekey'] . "\"></div><br /><br />" .
                 "<input type=\"submit\" value=\"{recaptcha_submit}\" /></form>";
         }
@@ -194,7 +194,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
             $CIDRAM['Config']['template_data']['recaptcha_api_include'] =
                 "\n<script src='https://www.google.com/recaptcha/api.js'></script>";
             $CIDRAM['Config']['template_data']['recaptcha_div_include'] =
-                "\n<hr />\n<p class=\"textStrong\">{recaptcha_message}<br /><br /></p>\n" .
+                "\n<hr />\n<p class=\"detected\">{recaptcha_message}<br /><br /></p>\n" .
                 "<form method=\"POST\" action=\"\"><div class=\"g-recaptcha\" data-sitekey=\"" .
                 $CIDRAM['Config']['recaptcha']['sitekey'] . "\"></div><br /><br />" .
                 "<input type=\"submit\" value=\"{recaptcha_submit}\" /></form>";

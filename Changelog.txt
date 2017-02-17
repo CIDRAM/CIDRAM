@@ -27,6 +27,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2017.02.12-13; Sub-minor code change; Maikuolan]: Some subtle refactoring.
 
+- [2017.02.17; Bug-fix; Maikuolan]: Whitelisting IPs/CIDRs via IPv4/IPv6
+  signature files wasn't resulting in those IPs/CIDRs being whitelisted against
+  being blocked by module files; Fixed.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=4076
+
+- [2017.02.17; Sub-minor code change; Maikuolan]: Slightly relaxed some of the
+  restrictions enforced for which filenames can be worked with via the
+  front-end. Added a "hotfix" to automatically detect and update the plugin
+  version cited in the plugins dashboard for when CIDRAM is running as a
+  WordPress plugin.
+
 === Version/Release 0.7.0 ===
 MINOR RELEASE.
 

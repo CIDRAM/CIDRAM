@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.13).
+ * This file: Functions file (last modified: 2017.02.17).
  */
 
 /**
@@ -525,6 +525,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 } elseif ($Category === 'Whitelist') {
                     $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
                     $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                    $CIDRAM['Whitelisted'] = true;
                     break 3;
                 } elseif ($Category === 'Greylist') {
                     $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
@@ -606,6 +607,7 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
         return false;
     }
     $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
+    $CIDRAM['Whitelisted'] = false;
     if ($IPv4Factors = $CIDRAM['ExpandIPv4']($Addr)) {
         if (empty($CIDRAM['Config']['signatures']['ipv4'])) {
             $IPv4Files = array();
@@ -638,10 +640,7 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
     } else {
         $IPv6Test = false;
     }
-    if (!$IPv4Test && !$IPv6Test) {
-        return false;
-    }
-    return true;
+    return ($IPv4Test || $IPv6Test);
 };
 
 /**
@@ -1671,7 +1670,7 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
     array_walk($Path, function($Segment) use (&$Valid) {
-        if (empty($Segment) || preg_match('/(?:[^!0-9a-z\x20\._-{}()]+|^\.+$)/i', $Segment)) {
+        if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
     });

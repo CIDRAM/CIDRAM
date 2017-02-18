@@ -76,7 +76,24 @@ Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle m
 
 ###4. <a name="SECTION4"></a>GESTION L'ACCÈS FRONTAL
 
-@TODO@
+####4.0 CE QUI EST L'ACCÈS FRONTAL.
+
+@todo@
+
+####4.1 COMMENT ACTIVER L'ACCÈS FRONTAL.
+
+1) Localiser la directive `disable_frontend` à l'intérieur de `config.ini`, et réglez-le sur true (il sera false par défaut).
+
+2) Accéder `loader.php` à partir de votre navigateur (par exemple, `http://localhost/cidram/loader.php`).
+
+3) Connectez-vous avec le nom d'utilisateur et le mot de passe défaut (admin/password).
+
+Remarque: Après vous être connecté pour la première fois, afin d'empêcher l'accès frontal non autorisé, vous devez immédiatement changer votre nom d'utilisateur et votre mot de passe!
+
+####4.2 COMMENT UTILISER L'ACCÈS FRONTAL.
+
+Des instructions sont fournies sur chaque page de l'accès frontal, pour expliquer la manière correcte de l'utiliser et son but. Si vous avez besoin d'autres explications ou d'une assistance spéciale, veuillez contacter le support technique. Alternativement, il ya quelques vidéos disponibles sur YouTube qui pourraient aider par voie de démonstration.
+
 
 ---
 
@@ -581,4 +598,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 6 Février 2016 (2017.02.06).
+Dernière Mise à Jour: 18 Février 2016 (2017.02.18).

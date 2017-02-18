@@ -4,7 +4,7 @@
 - 1. [PREÁMBULO](#SECTION1)
 - 2. [CÓMO INSTALAR](#SECTION2)
 - 3. [CÓMO USO](#SECTION3)
-- 4. [GESTIÓN DE FRONT-END](#SECTION4)
+- 4. [GESTIÓN DEL FRONT-END](#SECTION4)
 - 5. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION5)
 - 6. [OPCIONES DE CONFIGURACIÓN](#SECTION6)
 - 7. [FORMATO DE FIRMAS](#SECTION7)
@@ -74,9 +74,26 @@ Si tiene algún falsos positivos, por favor contacto conmigo para decirme.
 ---
 
 
-###4. <a name="SECTION4"></a>GESTIÓN DE FRONT-END
+###4. <a name="SECTION4"></a>GESTIÓN DEL FRONT-END
 
-@TODO@
+####4.0 CUÁL ES EL FRONT-END.
+
+@todo@
+
+####4.1 CÓMO HABILITAR EL FRONT-END.
+
+1) Localizar la directiva `disable_frontend` dentro `config.ini`, y establézcalo en true (será predefinido como false).
+
+2) Accesar `loader.php` desde tu navegador (p.ej., `http://localhost/cidram/loader.php`).
+
+3) Inicie sesión con el nombre del usuario y la contraseña predeterminados (admin/password).
+
+Nota: Después de iniciar la sesión por primera vez, con el fin de impedir el acceso no autorizado al front-end, usted debe cambiar inmediatamente su nombre de usuario y su contraseña!
+
+####4.2 CÓMO UTILIZAR EL FRONT-END.
+
+Las instrucciones se proporcionan en cada página del front-end, para explicar la manera correcta de usarlo y su propósito. Si necesita más explicaciones o cualquier ayuda especial, póngase en contacto con el soporte. Alternativamente, hay algunos videos disponibles en YouTube que podrían ayudar a modo de demostración.
+
 
 ---
 
@@ -104,7 +121,7 @@ Archivo | Descripción
 /_docs/readme.zh-TW.md | Documentación Chino (tradicional).
 /_docs/readme.zh.md | Documentación Chino (simplificado).
 /vault/ | Vault directorio (contiene varios archivos).
-/vault/fe_assets/ | Archivos de front-end.
+/vault/fe_assets/ | Archivos del front-end.
 /vault/fe_assets/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/fe_assets/_accounts.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
@@ -121,8 +138,8 @@ Archivo | Descripción
 /vault/fe_assets/_ip_test_row.html | Un archivo HTML para la página para pruebas de IPs.
 /vault/fe_assets/_login.html | Un archivo HTML para el front-end página de login.
 /vault/fe_assets/_logs.html | Un archivo HTML para el front-end página de los archivos de registro.
-/vault/fe_assets/_nav_complete_access.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso completo.
-/vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso de registros solamente.
+/vault/fe_assets/_nav_complete_access.html | Un archivo HTML para el menú de navegación del front-end, para aquellos con acceso completo.
+/vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación del front-end, para aquellos con acceso de registros solamente.
 /vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
@@ -581,4 +598,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 6 Febrero 2016 (2017.02.06).
+Última Actualización: 18 Febrero 2016 (2017.02.18).

@@ -76,7 +76,24 @@ Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tô
 
 ###4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
 
-@TODO@
+####4.0 FRONT-END LÀ GÌ.
+
+@todo@
+
+####4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
+
+1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào true (nó sẽ là false bởi mặc định).
+
+2) Truy cập `loader.php` từ trình duyệt của bạn (ví dụ, `http://localhost/cidram/loader.php`).
+
+3) Đăng nhập với tên người dùng và mật khẩu mặc định (admin/password).
+
+Chú thích: Sau khi bạn đã đăng nhập lần đầu tiên, để ngăn chặn truy cập trái phép vào các front-end, bạn phải ngay lập tức thay đổi tên người dùng và mật khẩu của bạn!
+
+####4.2 LÀM THẾ NÀO ĐỂ SỬ DỤNG FRONT-END.
+
+Các hướng dẫn được cung cấp trên mỗi trang của front-end, để giải thích một cách chính xác để sử dụng nó và mục đích của nó. Nếu bạn cần giải thích thêm hay bất kỳ sự hỗ trợ đặc biệt, vui lòng liên hệ hỗ trợ. Cũng thế, có một số video trên YouTube có thể giúp bằng cách viện trợ trực quan.
+
 
 ---
 
@@ -581,4 +598,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Hai 2017 (2017.02.06).
+Lần cuối cập nhật: 18 Tháng Hai 2017 (2017.02.18).

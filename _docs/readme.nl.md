@@ -76,7 +76,24 @@ Als u tegenkomen een valse positieven, neem dan contact met mij op om me te late
 
 ###4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
 
-@TODO@
+####4.0 WAT IS DE FRONT-END.
+
+@todo@
+
+####4.1 HOE DE FRONTEND TE INSCHAKELEN.
+
+1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het true (deze is false door standaard).
+
+2) Toegang tot `loader.php` vanuit uw browser (bijv., `http://localhost/cidram/loader.php`).
+
+3) Inloggen u aan met de standaard gebruikersnaam en wachtwoord (admin/password).
+
+Notitie: Nadat u hebt ingelogd voor de eerste keer, om onbevoegde toegang tot de frontend te voorkomen, moet u onmiddellijk veranderen uw gebruikersnaam en wachtwoord!
+
+####4.2 HOE DE FRONTEND GEBRUIKEN.
+
+Instructies worden op elke pagina van de frontend, om uit te leggen hoe het te gebruiken en het beoogde doel. Als u meer uitleg of een speciale hulp nodig hebben, neem dan contact op met ondersteuning. Als alternatief, zijn er een aantal video's op YouTube die zouden kunnen helpen door middel van een demonstratie.
+
 
 ---
 
@@ -272,7 +289,7 @@ Algemene configuratie voor CIDRAM.
 - Maximum aantal inlogpogingen (frontend). Standaard = 5.
 
 "FrontEndLog"
-- Bestand om de front-end login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
+- Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
 "ban_override"
 - Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]; 403 = Overrijden met "403 Forbidden"; 503 = Overrijden met "503 Service unavailable".
@@ -284,7 +301,7 @@ Algemene configuratie voor CIDRAM.
 - Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 "protect_frontend"
-- Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de front-end. True = Ja [Standaard]; False = Nee.
+- Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
 
 ####"signatures" (Categorie)
 Configuratie voor signatures.
@@ -581,4 +598,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 6 Februari 2016 (2017.02.06).
+Laatste Bijgewerkt: 18 Februari 2016 (2017.02.18).

@@ -76,7 +76,24 @@ Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tah
 
 ###4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
 
-@TODO@
+####4.0 APA YANG MANAJEMEN BAGIAN DEPAN.
+
+@todo@
+
+####4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
+
+1) Menemukan direktif `disable_frontend` dalam `config.ini`, dan mengaturnya untuk true (akan menjadi false secara default).
+
+2) Mengakses `loader.php` dari browser Anda (misalnya, `http://localhost/cidram/loader.php`).
+
+3) Masuk dengan nama pengguna dan kata sandi default (admin/password).
+
+Catat: Setelah Anda dimasukkan untuk pertama kalinya, untuk mencegah akses tidak sah ke manajemen bagian depan, Anda harus segera mengubah nama pengguna dan kata sandi Anda!
+
+####4.2 BAGAIMANA CARA MENGGUNAKAN MANAJEMEN BAGIAN DEPAN.
+
+Instruksi disediakan pada setiap halaman dari manajemen bagian depan, untuk menjelaskan cara yang benar untuk menggunakannya dan tujuan yang telah ditetapkan. Jika Anda membutuhkan penjelasan lebih lanjut atau bantuan khusus, silahkan hubungi dukungan, atau sebagai pilihan lain, ada beberapa video yang tersedia di YouTube yang dapat membantu dengan cara demonstrasi.
+
 
 ---
 
@@ -581,4 +598,4 @@ CIDRAM memblokir alamat IP | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 6 Februari 2016 (2017.02.06).
+Terakhir Diperbarui: 18 Februari 2016 (2017.02.18).

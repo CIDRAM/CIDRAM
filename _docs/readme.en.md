@@ -76,13 +76,24 @@ If you encounter any false positives, please contact me to let me know about it.
 
 ###4. <a name="SECTION4"></a>FRONT-END MANAGEMENT
 
-1) Enable frontend inside config.ini, set directive disable_frontend to true (default is false).
+####4.0 WHAT IS THE FRONT-END.
 
-2) Visit loader.php from your browser (e.g. url http://localhost/cidram/loader.php).
+@todo@
 
-3) Login with default username and password: admin/password
+####4.1 HOW TO ENABLE THE FRONT-END.
 
-( TODO )
+1) Locate the `disable_frontend` directive inside `config.ini`, and set it to true (it will be false by default).
+
+2) Access `loader.php` from your browser (e.g., `http://localhost/cidram/loader.php`).
+
+3) Log in with the default username and password (admin/password).
+
+Note: After you've logged in for the first time, in order to prevent unauthorised access to the front-end, you should immediately change your username and password!
+
+####4.2 HOW TO USE THE FRONT-END.
+
+Instructions are provided on each page of the front-end, to explain the correct way to use it and its intended purpose. If you need further explanation or any special assistance, please contact support. Alternatively, there are some videos available on YouTube which could help by way of demonstration.
+
 
 ---
 
@@ -587,4 +598,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 6 February 2016 (2017.02.06).
+Last Updated: 18 February 2016 (2017.02.18).

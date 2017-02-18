@@ -76,7 +76,24 @@ Se você encontrar quaisquer falsos positivos, entre em contato comigo para me i
 
 ###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
 
-@TODO@
+####4.0 O QUE É O FRONT-END.
+
+@todo@
+
+####4.1 COMO HABILITAR O FRONT-END.
+
+1) Localize a directiva `disable_frontend` dentro `config.ini`, e defini-lo como true (ele será false por padrão).
+
+2) Acesse o `loader.php` do seu navegador (p.e., `http://localhost/cidram/loader.php`).
+
+3) Faça login com o nome de usuário e a senha padrão (admin/password).
+
+Nota: Depois de efetuar login pela primeira vez, a fim de impedir o acesso não autorizado ao front-end, você deve imediatamente alterar seu nome de usuário e senha!
+
+####4.2 COMO USAR O FRONT-END.
+
+As instruções são fornecidas em cada página do front-end, para explicar a maneira correta de usá-lo e sua finalidade pretendida. Se precisar de mais explicações ou qualquer assistência especial, entre em contato com o suporte. Alternativamente, existem alguns vídeos disponíveis no YouTube que podem ajudar por meio de demonstração.
+
 
 ---
 
@@ -581,4 +598,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 6 Fevereiro 2016 (2017.02.06).
+Última Atualização: 18 Fevereiro 2016 (2017.02.18).

@@ -78,7 +78,24 @@ Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren.
 
 ###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
 
-@TODO@
+####4.0 WAS IST DAS FRONT-END.
+
+@todo@
+
+####4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
+
+1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf true (wird es standardmäßig false sein).
+
+2) Greifen Sie `loader.php` aus Ihrem Browser (z.B., `http://localhost/cidram/loader.php`).
+
+3) Einloggen Sie sich mit dem standardmäßig Benutzernamen und Passwort an (admin/password).
+
+Note: Nachdem Sie sich eingeloggt haben, um einen unbefugten Zugriff auf das Front-End zu verhindern, sollten Sie sofort Ihren Benutzernamen und Ihr Passwort ändern!
+
+####4.2 WIE MAN DAS FRONT-END BENUTZT.
+
+Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnte.
+
 
 ---
 
@@ -583,4 +600,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 6 Februar 2016 (2017.02.06).
+Zuletzt aktualisiert: 18 Februar 2016 (2017.02.18).

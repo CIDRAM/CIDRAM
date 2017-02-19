@@ -78,7 +78,9 @@ Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tah
 
 ####4.0 APA YANG MANAJEMEN BAGIAN DEPAN.
 
-@todo@
+Manajemen bagian depan menyediakan cara yang nyaman dan mudah untuk mempertahankan, mengelola, dan memperbarui instalasi CIDRAM Anda. Anda dapat melihat, berbagi, dan download file log melalui halaman log, Anda dapat mengubah konfigurasi melalui halaman konfigurasi, Anda dapat instal dan uninstal/hapus komponen melalui halaman pembaruan, dan Anda dapat upload, download, dan memodifikasi file dalam vault Anda melalui file manager.
+
+Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak sah (akses yang tidak sah bisa memiliki konsekuensi yang signifikan untuk website Anda dan keamanannya). Instruksi untuk mengaktifkannya termasuk di bawah paragraf ini.
 
 ####4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
 
@@ -88,7 +90,7 @@ Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tah
 
 3) Masuk dengan nama pengguna dan kata sandi default (admin/password).
 
-Catat: Setelah Anda dimasukkan untuk pertama kalinya, untuk mencegah akses tidak sah ke manajemen bagian depan, Anda harus segera mengubah nama pengguna dan kata sandi Anda!
+Catat: Setelah Anda dimasukkan untuk pertama kalinya, untuk mencegah akses tidak sah ke manajemen bagian depan, Anda harus segera mengubah nama pengguna dan kata sandi Anda! Ini sangat penting, karena itu mungkin untuk meng-upload kode PHP sewenang-wenang untuk situs web Anda melalui bagian depan.
 
 ####4.2 BAGAIMANA CARA MENGGUNAKAN MANAJEMEN BAGIAN DEPAN.
 
@@ -148,49 +150,49 @@ Data | Deskripsi
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/lang.ar.cli.php | File Bahasa Arab untuk CLI.
-/vault/lang/lang.ar.fe.php | File Bahasa Arab untuk front-end.
+/vault/lang/lang.ar.fe.php | File Bahasa Arab untuk bagian depan.
 /vault/lang/lang.ar.php | File Bahasa Arab.
 /vault/lang/lang.de.cli.php | File Bahasa Jerman untuk CLI.
-/vault/lang/lang.de.fe.php | File Bahasa Jerman untuk front-end.
+/vault/lang/lang.de.fe.php | File Bahasa Jerman untuk bagian depan.
 /vault/lang/lang.de.php | File Bahasa Jerman.
 /vault/lang/lang.en.cli.php | File Bahasa Inggris untuk CLI.
-/vault/lang/lang.en.fe.php | File Bahasa Inggris untuk front-end.
+/vault/lang/lang.en.fe.php | File Bahasa Inggris untuk bagian depan.
 /vault/lang/lang.en.php | File Bahasa Inggris.
 /vault/lang/lang.es.cli.php | File Bahasa Spanyol untuk CLI.
-/vault/lang/lang.es.fe.php | File Bahasa Spanyol untuk front-end.
+/vault/lang/lang.es.fe.php | File Bahasa Spanyol untuk bagian depan.
 /vault/lang/lang.es.php | File Bahasa Spanyol.
 /vault/lang/lang.fr.cli.php | File Bahasa Perancis untuk CLI.
-/vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk front-end.
+/vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk bagian depan.
 /vault/lang/lang.fr.php | File Bahasa Perancis.
 /vault/lang/lang.id.cli.php | File Bahasa Indonesia untuk CLI.
-/vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk front-end.
+/vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk bagian depan.
 /vault/lang/lang.id.php | File Bahasa Indonesia.
 /vault/lang/lang.it.cli.php | File Bahasa Italia untuk CLI.
-/vault/lang/lang.it.fe.php | File Bahasa Italia untuk front-end.
+/vault/lang/lang.it.fe.php | File Bahasa Italia untuk bagian depan.
 /vault/lang/lang.it.php | File Bahasa Italia.
 /vault/lang/lang.ja.cli.php | File Bahasa Jepang untuk CLI.
-/vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk front-end.
+/vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk bagian depan.
 /vault/lang/lang.ja.php | File Bahasa Jepang.
 /vault/lang/lang.ko.cli.php | File Bahasa Korea untuk CLI.
-/vault/lang/lang.ko.fe.php | File Bahasa Korea untuk front-end.
+/vault/lang/lang.ko.fe.php | File Bahasa Korea untuk bagian depan.
 /vault/lang/lang.ko.php | File Bahasa Korea.
 /vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
-/vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk front-end.
+/vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk bagian depan.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
 /vault/lang/lang.pt.cli.php | File Bahasa Portugis untuk CLI.
-/vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk front-end.
+/vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk bagian depan.
 /vault/lang/lang.pt.php | File Bahasa Portugis.
 /vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
-/vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk front-end.
+/vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk bagian depan.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
 /vault/lang/lang.vi.cli.php | File Bahasa Vietnam untuk CLI.
-/vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk front-end.
+/vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk bagian depan.
 /vault/lang/lang.vi.php | File Bahasa Vietnam.
 /vault/lang/lang.zh-tw.cli.php | File Bahasa Cina tradisional untuk CLI.
-/vault/lang/lang.zh-tw.fe.php | File Bahasa Cina tradisional untuk front-end.
+/vault/lang/lang.zh-tw.fe.php | File Bahasa Cina tradisional untuk bagian depan.
 /vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
 /vault/lang/lang.zh.cli.php | File Bahasa Cina sederhana untuk CLI.
-/vault/lang/lang.zh.fe.php | File Bahasa Cina sederhana untuk front-end.
+/vault/lang/lang.zh.fe.php | File Bahasa Cina sederhana untuk bagian depan.
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache.dat | Cache data.
@@ -301,7 +303,7 @@ Konfigurasi umum dari CIDRAM.
 - Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
 "protect_frontend"
-- Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada front-end. True = Ya [Default]; False = Tidak.
+- Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak.
 
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.

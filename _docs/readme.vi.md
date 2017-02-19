@@ -78,7 +78,9 @@ Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tô
 
 ####4.0 FRONT-END LÀ GÌ.
 
-@todo@
+Các front-end cung cấp một cách thuận tiện và dễ dàng để duy trì, quản lý và cập nhật cài đặt CIDRAM của bạn. Bạn có thể xem, chia sẻ và tải về các tập tin bản ghi thông qua các trang bản ghi, bạn có thể sửa đổi cấu hình thông qua các trang cấu hình, bạn có thể cài đặt và gỡ bỏ cài đặt các thành phần thông qua các trang cập nhật, và bạn có thể tải lên, tải về, và sửa đổi các tập tin trong vault của bạn thông qua các quản lý tập tin.
+
+Các front-end được tắt theo mặc định để ngăn chặn truy cập trái phép (truy cập trái phép có thể có hậu quả đáng kể cho trang web của bạn và an ninh của mình). Hướng dẫn cho phép nó được bao gồm bên dưới đoạn này.
 
 ####4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
 
@@ -88,7 +90,7 @@ Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tô
 
 3) Đăng nhập với tên người dùng và mật khẩu mặc định (admin/password).
 
-Chú thích: Sau khi bạn đã đăng nhập lần đầu tiên, để ngăn chặn truy cập trái phép vào các front-end, bạn phải ngay lập tức thay đổi tên người dùng và mật khẩu của bạn!
+Chú thích: Sau khi bạn đã đăng nhập lần đầu tiên, để ngăn chặn truy cập trái phép vào các front-end, bạn phải ngay lập tức thay đổi tên người dùng và mật khẩu của bạn! Điều này là rất quan trọng, bởi vì nó có thể tải lên các mã PHP tùy ý để trang web của bạn thông qua các front-end.
 
 ####4.2 LÀM THẾ NÀO ĐỂ SỬ DỤNG FRONT-END.
 

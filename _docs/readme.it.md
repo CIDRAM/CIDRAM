@@ -78,7 +78,9 @@ Se si incontrano qualsiasi falsi positivi, si prega di contattare me per farmi s
 
 ####4.0 QUAL È IL FRONT-END.
 
-@todo@
+Il front-end fornisce un modo conveniente e facile da mantenere, gestire e aggiornare l'installazione CIDRAM. È possibile visualizzare, condividere e scaricare file di log attraverso la pagina di log, è possibile modificare la configurazione attraverso la pagina di configurazione, è possibile installare e disinstallare i componenti attraverso la pagina degli aggiornamenti, e si può caricare, scaricare e modificare i file nel vault tramite il file manager.
+
+Il front-end è disabilitato per impostazione predefinita al fine di prevenire l'accesso non autorizzato (l'accesso non autorizzato potrebbe avere conseguenze significative per il vostro sito e la sua sicurezza). Istruzioni per l'abilitazione si sono compresi sotto di questo paragrafo.
 
 ####4.1 COME ATTIVARE IL FRONT-END.
 
@@ -88,7 +90,7 @@ Se si incontrano qualsiasi falsi positivi, si prega di contattare me per farmi s
 
 3) Accedi con il nome utente e la password predefinita (admin/password).
 
-Nota: Dopo aver effettuato l'accesso per la prima volta, al fine di impedire l'accesso non autorizzato al front-end, si dovrebbe cambiare immediatamente il nome utente e la password!
+Nota: Dopo aver effettuato l'accesso per la prima volta, al fine di impedire l'accesso non autorizzato al front-end, si dovrebbe cambiare immediatamente il nome utente e la password! Questo è molto importante, perché è possibile caricare codice PHP arbitrario al suo sito web attraverso il front-end.
 
 ####4.2 COME UTILIZZARE IL FRONT-END.
 

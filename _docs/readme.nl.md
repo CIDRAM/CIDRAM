@@ -78,7 +78,9 @@ Als u tegenkomen een valse positieven, neem dan contact met mij op om me te late
 
 ####4.0 WAT IS DE FRONT-END.
 
-@todo@
+De front-end biedt een gemakkelijke en eenvoudige manier te onderhouden, beheren en updaten van uw CIDRAM installatie. U kunt bekijken, delen en downloaden log bestanden via de pagina logs, u kunt de configuratie wijzigen via de configuratiepagina, u kunt installeren en verwijderen/desinstalleren van componenten via de pagina updates, en u kunt uploaden, downloaden en wijzigen bestanden in uw vault via de bestandsbeheer.
+
+De front-end is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen (ongeautoriseerde toegang kan belangrijke gevolgen hebben voor uw website en de beveiliging hebben). Instructies voor het inschakelen van deze zijn hieronder deze paragraaf opgenomen.
 
 ####4.1 HOE DE FRONTEND TE INSCHAKELEN.
 
@@ -88,7 +90,7 @@ Als u tegenkomen een valse positieven, neem dan contact met mij op om me te late
 
 3) Inloggen u aan met de standaard gebruikersnaam en wachtwoord (admin/password).
 
-Notitie: Nadat u hebt ingelogd voor de eerste keer, om onbevoegde toegang tot de frontend te voorkomen, moet u onmiddellijk veranderen uw gebruikersnaam en wachtwoord!
+Notitie: Nadat u hebt ingelogd voor de eerste keer, om ongeautoriseerde toegang tot de frontend te voorkomen, moet u onmiddellijk veranderen uw gebruikersnaam en wachtwoord! Dit is zeer belangrijk, want het is mogelijk om willekeurige PHP-code te uploaden naar uw website via de front-end.
 
 ####4.2 HOE DE FRONTEND GEBRUIKEN.
 

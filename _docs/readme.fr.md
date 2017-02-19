@@ -78,7 +78,9 @@ Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle m
 
 ####4.0 CE QUI EST L'ACCÈS FRONTAL.
 
-@todo@
+L'accès frontal fournit un moyen pratique et facile de gérer, de maintenir et de mettre à jour votre installation de CIDRAM. Vous pouvez afficher, partager et télécharger des fichiers journaux via la page des journaux, vous pouvez modifier la configuration via la page de configuration, vous pouvez installer et désinstaller des composants via la page des mises à jour, et vous pouvez télécharger et modifier des fichiers dans votre vault via le gestionnaire de fichiers.
+
+L'accès frontal est désactivée par défaut afin d'empêcher tout accès non autorisé (l'accès non autorisé pourrait avoir des conséquences importantes pour votre site web et sa sécurité). Les instructions pour l'activer sont incluses ci-dessous.
 
 ####4.1 COMMENT ACTIVER L'ACCÈS FRONTAL.
 
@@ -88,7 +90,7 @@ Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle m
 
 3) Connectez-vous avec le nom d'utilisateur et le mot de passe défaut (admin/password).
 
-Remarque: Après vous être connecté pour la première fois, afin d'empêcher l'accès frontal non autorisé, vous devez immédiatement changer votre nom d'utilisateur et votre mot de passe!
+Remarque: Après vous être connecté pour la première fois, afin d'empêcher l'accès frontal non autorisé, vous devez immédiatement changer votre nom d'utilisateur et votre mot de passe! C'est très important, car il est possible de télécharger du code PHP arbitraire à votre site Web via l'accès frontal.
 
 ####4.2 COMMENT UTILISER L'ACCÈS FRONTAL.
 

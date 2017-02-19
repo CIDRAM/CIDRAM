@@ -80,7 +80,9 @@
 
 #### <div dir="rtl">٤.٠ ما هو FRONT-END.<br /><br /></div>
 
-@todo@
+<div dir="rtl">Front-end يوفر وسيلة سهلة للحفاظ على، وإدارة، وتحديث CIDRAM. يمكنك عرض، حصة، وتحميل ملفات الدخول، يمكنك تعديل تكوين، يمكنك تثبيت وإلغاء تثبيت مكونات، ويمكنك تحميل وتنزيل وتعديل الملفات.<br /><br /></div>
+
+<div dir="rtl">Front-end معطل في البداية، لمنع الوصول غير المصرح به (الدخول غير المصرح به قد يكون له عواقب أمنية كبيرة). تعليمات لتمكينه أدناه.<br /><br /></div>
 
 #### <div dir="rtl">٤.١ كيفية تمكين FRONT-END.<br /><br /></div>
 
@@ -90,11 +92,11 @@
 
 <div dir="rtl">٣. تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الافتراضية (admin/password).<br /><br /></div>
 
-<div dir="rtl">Note: After you've logged in for the first time, in order to prevent unauthorised access to the front-end, you should immediately change your username and password! @TranslateMe@<br /><br /></div>
+<div dir="rtl">ملحوظة: تغيير اسم المستخدم وكلمة المرور الخاصة بك بعد تسجيل الدخول للمرة الأولى، من أجل منع الوصول غير المصرح به (هذا مهم جدا)!<br /><br /></div>
 
 #### <div dir="rtl">٤.٢ كيفية استخدام FRONT-END.<br /><br /></div>
 
-<div dir="rtl">Instructions are provided on each page of the front-end, to explain the correct way to use it and its intended purpose. If you need further explanation or any special assistance, please contact support. Alternatively, there are some videos available on YouTube which could help by way of demonstration. @TranslateMe@<br /><br /></div>
+<div dir="rtl">في كل صفحة، ويفسر ذلك كيفية استخدامها. إذا كنت بحاجة إلى أي مساعدة، يرجى الاتصال بالدعم. وهناك أيضا بعض مقاطع الفيديو المفيدة المتاحة على موقع يوتيوب.<br /><br /></div>
 
 ---
 

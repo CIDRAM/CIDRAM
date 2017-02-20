@@ -138,6 +138,8 @@ Arquivo | Descrição
 /vault/fe_assets/_home.html | Um modelo HTML para o front-end página principal.
 /vault/fe_assets/_ip_test.html | Um modelo HTML para a página para testar IPs.
 /vault/fe_assets/_ip_test_row.html | Um modelo HTML para a página para testar IPs.
+/vault/fe_assets/_ip_tracking.html | Um modelo HTML para a página de monitoração IP.
+/vault/fe_assets/_ip_tracking_row.html | Um modelo HTML para a página de monitoração IP.
 /vault/fe_assets/_login.html | Um modelo HTML para o front-end página login.
 /vault/fe_assets/_logs.html | Um modelo HTML para o front-end página para os arquivos de registro.
 /vault/fe_assets/_nav_complete_access.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso completo.
@@ -336,7 +338,7 @@ Configuração por assinaturas.
 - Quantos segundos para rastrear IPs banidos por módulos. Padrão = 604800 (1 semana).
 
 "infraction_limit"
-- Número máximo de infrações que um IP pode incorrer antes de ser banido por rastreamento IP. Padrão = 10.
+- Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10.
 
 "track_mode"
 - Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo.
@@ -600,4 +602,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 18 Fevereiro 2016 (2017.02.18).
+Última Atualização: 20 Fevereiro 2016 (2017.02.20).

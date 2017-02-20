@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.01.31).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,18 +54,22 @@ $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM�
 $CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '什麼時候應該對違規行為進行計數？ False = 當IP被模塊阻塞時。 True = 當IP由於任何原因阻塞時。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定義主題的CSS文件URL。';
+$CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
+$CIDRAM['lang']['field_clear'] = '撤消';
 $CIDRAM['lang']['field_component'] = '組件';
 $CIDRAM['lang']['field_create_new_account'] = '創建新賬戶';
 $CIDRAM['lang']['field_delete_account'] = '刪除賬戶';
 $CIDRAM['lang']['field_delete_file'] = '刪除';
 $CIDRAM['lang']['field_download_file'] = '下載';
 $CIDRAM['lang']['field_edit_file'] = '編輯';
+$CIDRAM['lang']['field_expiry'] = '到期';
 $CIDRAM['lang']['field_file'] = '文件';
 $CIDRAM['lang']['field_filename'] = '文件名：';
 $CIDRAM['lang']['field_filetype_directory'] = '文件夾';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}文件';
 $CIDRAM['lang']['field_filetype_unknown'] = '未知';
+$CIDRAM['lang']['field_infractions'] = '違規';
 $CIDRAM['lang']['field_install'] = '安裝';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';
 $CIDRAM['lang']['field_latest_version'] = '最新版本';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = '狀態';
+$CIDRAM['lang']['field_tracking'] = '跟踪';
 $CIDRAM['lang']['field_uninstall'] = '卸載';
 $CIDRAM['lang']['field_update'] = '更新';
 $CIDRAM['lang']['field_upload_file'] = '上傳新文件';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = '文檔';
 $CIDRAM['lang']['link_file_manager'] = '文件管理器';
 $CIDRAM['lang']['link_home'] = '主頁';
 $CIDRAM['lang']['link_ip_test'] = 'IP測試';
+$CIDRAM['lang']['link_ip_tracking'] = 'IP跟踪';
 $CIDRAM['lang']['link_logs'] = '日誌';
 $CIDRAM['lang']['link_updates'] = '更新';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = '密碼輸入是空的�
 $CIDRAM['lang']['response_login_username_field_empty'] = '用戶名輸入是空的！';
 $CIDRAM['lang']['response_no'] = '不是';
 $CIDRAM['lang']['response_rename_error'] = '無法改名！';
+$CIDRAM['lang']['response_tracking_cleared'] = '已撤消跟踪。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $CIDRAM['lang']['response_updates_not_installed'] = '組件不安裝！';
 $CIDRAM['lang']['response_updates_not_installed_php'] = '組件不安裝（它需要PHP {V}）！';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = '在這裡輸入IP。';
 $CIDRAM['lang']['tip_file_manager'] = '你好，{username}。<br />文件管理器允許您刪除，編輯，上傳和下載文件。小心使用（您可以用這個破壞您的安裝）。';
 $CIDRAM['lang']['tip_home'] = '你好，{username}。<br />這是CIDRAM的前端主頁。從左側的導航菜單中選擇一個鏈接以繼續。';
 $CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP測試頁面允許您測試是否IP地址被阻止通過當前安裝的簽名。';
+$CIDRAM['lang']['tip_ip_tracking'] = '你好，{username}。<br />IP跟踪頁面允許您檢查IP地址跟踪狀態，檢查哪些IP已被禁止，而如果您想這樣做，對撤消他們的跟踪。';
 $CIDRAM['lang']['tip_login'] = '標準用戶名： <span class="txtRd">admin</span> – 標準密碼： <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，{username}。<br />選擇一個日誌從下面的列表以查看那個日誌的內容。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh-TW.md#SECTION6">文檔</a>以獲取有關各種配置指令的信息和他們的目的。';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 文件管理器';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – 主頁';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP測試';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登錄';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日誌';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';

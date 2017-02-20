@@ -138,6 +138,8 @@ Archivo | Descripción
 /vault/fe_assets/_home.html | Un archivo HTML para el front-end página principal.
 /vault/fe_assets/_ip_test.html | Un archivo HTML para la página para pruebas de IPs.
 /vault/fe_assets/_ip_test_row.html | Un archivo HTML para la página para pruebas de IPs.
+/vault/fe_assets/_ip_tracking.html | Un archivo HTML para la página de seguimiento de IP.
+/vault/fe_assets/_ip_tracking_row.html | Un archivo HTML para la página de seguimiento de IP.
 /vault/fe_assets/_login.html | Un archivo HTML para el front-end página de login.
 /vault/fe_assets/_logs.html | Un archivo HTML para el front-end página de los archivos de registro.
 /vault/fe_assets/_nav_complete_access.html | Un archivo HTML para el menú de navegación del front-end, para aquellos con acceso completo.
@@ -600,4 +602,4 @@ CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positi
 ---
 
 
-Última Actualización: 18 Febrero 2016 (2017.02.18).
+Última Actualización: 20 Febrero 2016 (2017.02.20).

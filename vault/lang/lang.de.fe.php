@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.01.31).
+ * This file: German language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,18 +54,22 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Eine Liste der IPv6-Signaturdateien
 $CIDRAM['lang']['config_signatures_modules'] = 'Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wann sollten Verstöße gezählt werden? False = Wenn IPs von Modulen blockiert werden. True = Wenn IPs von irgendeinem Grund blockiert werden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-Datei URL für benutzerdefinierte Themen.';
+$CIDRAM['lang']['field_banned'] = 'Verboten';
 $CIDRAM['lang']['field_blocked'] = 'Blockiert';
+$CIDRAM['lang']['field_clear'] = 'Löschen';
 $CIDRAM['lang']['field_component'] = 'Komponente';
 $CIDRAM['lang']['field_create_new_account'] = 'Neuen Konto erstellen';
 $CIDRAM['lang']['field_delete_account'] = 'Konto löschen';
 $CIDRAM['lang']['field_delete_file'] = 'Löschen';
 $CIDRAM['lang']['field_download_file'] = 'Herunterladen';
 $CIDRAM['lang']['field_edit_file'] = 'Bearbeiten';
+$CIDRAM['lang']['field_expiry'] = 'Endzeit';
 $CIDRAM['lang']['field_file'] = 'Datei';
 $CIDRAM['lang']['field_filename'] = 'Dateiname: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Verzeichnis';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Datei';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Unbekannt';
+$CIDRAM['lang']['field_infractions'] = 'Verstöße';
 $CIDRAM['lang']['field_install'] = 'Installieren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adresse';
 $CIDRAM['lang']['field_latest_version'] = 'Letzte Version';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
+$CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_uninstall'] = 'Deinstallieren';
 $CIDRAM['lang']['field_update'] = 'Aktualisieren';
 $CIDRAM['lang']['field_upload_file'] = 'Neue Datei hochladen';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'Dokumentation';
 $CIDRAM['lang']['link_file_manager'] = 'Dateimanager';
 $CIDRAM['lang']['link_home'] = 'Startseite';
 $CIDRAM['lang']['link_ip_test'] = 'IP-Test';
+$CIDRAM['lang']['link_ip_tracking'] = 'IP-Tracking';
 $CIDRAM['lang']['link_logs'] = 'Protokolldateien';
 $CIDRAM['lang']['link_updates'] = 'Aktualisierungen';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei existiert nicht!';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Benutzername-Feld leer!';
 $CIDRAM['lang']['response_no'] = 'Nein';
 $CIDRAM['lang']['response_rename_error'] = 'Umbenennung-Fehler!';
+$CIDRAM['lang']['response_tracking_cleared'] = 'Tracking gelöscht.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Schon aktuell.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponente nicht installiert!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponente nicht installiert (erfordert PHP {V})!';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'Geben Sie hier eine IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (Können Sie Ihre Installation mit diesem brechen).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der CIDRAM Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />Das IP-Test-Seite macht es möglich zu prüfen ob IP-Adressen blockiert durch die aktuell installierten Signaturen sind.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Auf der Seite IP-Tracking können Sie den Tracking-Status für IP-Adressen überprüfen, welche von ihnen verboten wurden, und Sie können das Tracking für sie widerrufen, wenn Sie dies tun möchten.';
 $CIDRAM['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Siehe die <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.de.md#SECTION6">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken.';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfiguration';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Dateimanager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Startseite';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP-Test';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Einloggen';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Protokolldateien';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Aktualisierungen';

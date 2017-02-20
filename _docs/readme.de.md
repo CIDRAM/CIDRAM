@@ -140,6 +140,8 @@ Datei | Beschreibung
 /vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
 /vault/fe_assets/_ip_test.html | Eine HTML-Template für das IP-Test-Seite.
 /vault/fe_assets/_ip_test_row.html | Eine HTML-Template für das IP-Test-Seite.
+/vault/fe_assets/_ip_tracking.html | Eine HTML-Template für das IP-Tracking-Seite.
+/vault/fe_assets/_ip_tracking_row.html | Eine HTML-Template für das IP-Tracking-Seite.
 /vault/fe_assets/_login.html | Eine HTML-Template für das Front-End Einloggen-Seite.
 /vault/fe_assets/_logs.html | Eine HTML-Template für das Front-End Protokolldateien-Seite.
 /vault/fe_assets/_nav_complete_access.html | Eine HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
@@ -602,4 +604,4 @@ CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korr
 ---
 
 
-Zuletzt aktualisiert: 18 Februar 2016 (2017.02.18).
+Zuletzt aktualisiert: 20 Februar 2016 (2017.02.20).

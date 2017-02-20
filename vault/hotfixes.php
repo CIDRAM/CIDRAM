@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary hotfixes file (last modified: 2017.02.17).
+ * This file: Temporary hotfixes file (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -110,7 +110,7 @@ if (true) { // switch 170129
  * Update plugin version cited in the WordPress plugins dashboard, if this copy
  * of CIDRAM is running as a WordPress plugin.
  */
-if (true) { // switch 170217
+if (true) { // switch WP-0.8.0-DEV
     if (
         file_exists($CIDRAM['Vault'] . '../cidram.php') &&
         is_readable($CIDRAM['Vault'] . '../cidram.php') &&
@@ -128,7 +128,7 @@ if (true) { // switch 170217
 
     /** Update switch. */
     $CIDRAM['ThisFile'] = str_replace(
-        "\nif (true) { // switch 170217\n",
+        "\nif (true) { // switch WP-0.8.0-DEV\n",
         "\nif (false) {\n",
         $CIDRAM['ThisFile']
     );

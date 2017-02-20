@@ -138,6 +138,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
 /vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
 /vault/fe_assets/_ip_test_row.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
+/vault/fe_assets/_ip_tracking.html | Một tập tin mẫu HTML cho trang giám sát IP.
+/vault/fe_assets/_ip_tracking_row.html | Một tập tin mẫu HTML cho trang giám sát IP.
 /vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
 /vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
 /vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
@@ -333,10 +335,10 @@ Cấu hình cho chữ ký.
 - Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.
 
 "default_tracktime"
-- Có bao nhiêu giây để theo dõi các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).
+- Có bao nhiêu giây để giám sát các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).
 
 "infraction_limit"
-- Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các theo dõi IP. Mặc định = 10.
+- Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các giám sát IP. Mặc định = 10.
 
 "track_mode"
 - Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.
@@ -600,4 +602,4 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Hai 2017 (2017.02.18).
+Lần cuối cập nhật: 20 Tháng Hai 2017 (2017.02.20).

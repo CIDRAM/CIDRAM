@@ -138,6 +138,8 @@ File | Descrizione
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
 /vault/fe_assets/_ip_test.html | Un modello HTML per la pagina per il test IP.
 /vault/fe_assets/_ip_test_row.html | Un modello HTML per la pagina per il test IP.
+/vault/fe_assets/_ip_tracking.html | Un modello HTML per la pagina di monitoraggio IP.
+/vault/fe_assets/_ip_tracking_row.html | Un modello HTML per la pagina di monitoraggio IP.
 /vault/fe_assets/_login.html | Un modello HTML per il front-end pagina di accedi.
 /vault/fe_assets/_logs.html | Un modello HTML per il front-end pagina per i file di log.
 /vault/fe_assets/_nav_complete_access.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso completo.
@@ -600,4 +602,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 18 Febbraio 2016 (2017.02.18).
+Ultimo Aggiornamento: 20 Febbraio 2016 (2017.02.20).

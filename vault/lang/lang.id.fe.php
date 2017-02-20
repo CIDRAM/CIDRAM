@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.01.31).
+ * This file: Indonesian language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,18 +54,22 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang 
 $CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
+$CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
+$CIDRAM['lang']['field_clear'] = 'Cabut';
 $CIDRAM['lang']['field_component'] = 'Komponen';
 $CIDRAM['lang']['field_create_new_account'] = 'Buat Akun Baru';
 $CIDRAM['lang']['field_delete_account'] = 'Hapus Akun';
 $CIDRAM['lang']['field_delete_file'] = 'Menghapus';
 $CIDRAM['lang']['field_download_file'] = 'Mendownload';
 $CIDRAM['lang']['field_edit_file'] = 'Mengedit';
+$CIDRAM['lang']['field_expiry'] = 'Kadaluarsa';
 $CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Nama file: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Direktori';
 $CIDRAM['lang']['field_filetype_info'] = 'File {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Tidak Diketahui';
+$CIDRAM['lang']['field_infractions'] = 'Pelanggaran';
 $CIDRAM['lang']['field_install'] = 'Instal';
 $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';
 $CIDRAM['lang']['field_latest_version'] = 'Versi Terbaru';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
+$CIDRAM['lang']['field_tracking'] = 'Pelacakan';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstal';
 $CIDRAM['lang']['field_update'] = 'Perbarui';
 $CIDRAM['lang']['field_upload_file'] = 'Mengupload file baru';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'Dokumentasi';
 $CIDRAM['lang']['link_file_manager'] = 'File Manager';
 $CIDRAM['lang']['link_home'] = 'Halaman Utama';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
+$CIDRAM['lang']['link_ip_tracking'] = 'Pelacakan IP';
 $CIDRAM['lang']['link_logs'] = 'Log';
 $CIDRAM['lang']['link_updates'] = 'Pembaruan';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
 $CIDRAM['lang']['response_no'] = 'Tidak';
 $CIDRAM['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
+$CIDRAM['lang']['response_tracking_cleared'] = 'Pelacakan dicabut.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponen tidak diinstal (membutuhkan PHP {V})!';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_test'] = 'Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk mengetes apakah alamat IP yang diblokir dengan tanda tangan yang saat ini diinstal.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan.';
 $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.id.md#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfigurasi';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Halaman Utama';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Pelacakan IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Log';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Pembaruan';

@@ -138,6 +138,8 @@ Bestand | Beschrijving
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.
 /vault/fe_assets/_ip_test_row.html | Een HTML sjabloon voor de IP test pagina.
+/vault/fe_assets/_ip_tracking.html | Een HTML sjabloon voor de IP-Tracking pagina.
+/vault/fe_assets/_ip_tracking_row.html | Een HTML sjabloon voor de IP-Tracking pagina.
 /vault/fe_assets/_login.html | Een HTML sjabloon voor de frontend inlogpagina.
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
@@ -339,7 +341,7 @@ Configuratie voor signatures.
 - Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verboden door IP-tracking. Standaard = 10.
 
 "track_mode"
-- Wanneer moet inbreuken worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.
+- Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.
 
 ####"recaptcha" (Categorie)
 Optioneel, u kan uw gebruikers te voorzien van een manier om de "Toegang Geweigerd" pagina te omzeilen, door middel van het invullen van een reCAPTCHA instantie, als u wilt om dit te doen. Dit kan helpen om een aantal van de risico's die samenhangen met valse positieven te beperken, in die situaties waar we niet helemaal zeker of er een verzoek is voortgekomen uit een machine of een mens.
@@ -600,4 +602,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 18 Februari 2016 (2017.02.18).
+Laatste Bijgewerkt: 20 Februari 2016 (2017.02.20).

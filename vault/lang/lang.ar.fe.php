@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.01.31).
+ * This file: Arabic language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,18 +54,22 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'وهناك قائمة من المل
 $CIDRAM['lang']['config_signatures_modules'] = 'قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'متى يجب أن تحسب المخالفات؟ False = عندما IP تم حظره من قبل وحدات. True = عندما IP يتم حظر لأي سبب من الأسباب.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
+$CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
+$CIDRAM['lang']['field_clear'] = 'إلغاء';
 $CIDRAM['lang']['field_component'] = 'وحدة';
 $CIDRAM['lang']['field_create_new_account'] = 'خلق جديد حساب';
 $CIDRAM['lang']['field_delete_account'] = 'حذف حساب';
 $CIDRAM['lang']['field_delete_file'] = 'حذف';
 $CIDRAM['lang']['field_download_file'] = 'تحميل';
 $CIDRAM['lang']['field_edit_file'] = 'تحرير';
+$CIDRAM['lang']['field_expiry'] = 'انقضاء';
 $CIDRAM['lang']['field_file'] = 'ملف';
 $CIDRAM['lang']['field_filename'] = 'اسم الملف: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'مجلد';
 $CIDRAM['lang']['field_filetype_info'] = 'ملف {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'غير معروف';
+$CIDRAM['lang']['field_infractions'] = 'مخالفات';
 $CIDRAM['lang']['field_install'] = 'تثبيت';
 $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';
 $CIDRAM['lang']['field_latest_version'] = 'احدث اصدار';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'الحالة';
+$CIDRAM['lang']['field_tracking'] = 'التتبع';
 $CIDRAM['lang']['field_uninstall'] = 'الغاء التثبيت';
 $CIDRAM['lang']['field_update'] = 'تحديث';
 $CIDRAM['lang']['field_upload_file'] = 'تحميل ملف جديد';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'توثيق';
 $CIDRAM['lang']['link_file_manager'] = 'مدير الملفات';
 $CIDRAM['lang']['link_home'] = 'الرئيسية';
 $CIDRAM['lang']['link_ip_test'] = 'اختبار IP';
+$CIDRAM['lang']['link_ip_tracking'] = 'التتبع IP';
 $CIDRAM['lang']['link_logs'] = 'سجلات';
 $CIDRAM['lang']['link_updates'] = 'التحديثات';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حق
 $CIDRAM['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $CIDRAM['lang']['response_no'] = 'لا';
 $CIDRAM['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
+$CIDRAM['lang']['response_tracking_cleared'] = 'التتبع ألغيت.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'وحدة غير مثبت (يتطلب PHP {V})!';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'أدخل IP هنا.';
 $CIDRAM['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا).';
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $CIDRAM['lang']['tip_ip_test'] = 'مرحبا، {username}.<br />الصفحة اختبار IP يسمح لك لاختبار سواء عناوين IP مسدودة من التوقيعات المثبتة حاليا.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'مرحبا، {username}.<br />التتبع IP يسمح لك للتحقق من حالة تتبع عناوين IP، تحقق محظورة، و إلغاء تتبع إذا كنت تريد أن تفعل ذلك.';
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ar.md#SECTION6">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – مدير الملفات';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – الرئيسية';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – التتبع IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – سجلات';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – التحديثات';

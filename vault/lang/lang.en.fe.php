@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.01.31).
+ * This file: English language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,18 +54,22 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'A list of the IPv6 signature files 
 $CIDRAM['lang']['config_signatures_modules'] = 'A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS file URL for custom themes.';
+$CIDRAM['lang']['field_banned'] = 'Banned';
 $CIDRAM['lang']['field_blocked'] = 'Blocked';
+$CIDRAM['lang']['field_clear'] = 'Clear';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Create New Account';
 $CIDRAM['lang']['field_delete_account'] = 'Delete Account';
 $CIDRAM['lang']['field_delete_file'] = 'Delete';
 $CIDRAM['lang']['field_download_file'] = 'Download';
 $CIDRAM['lang']['field_edit_file'] = 'Edit';
+$CIDRAM['lang']['field_expiry'] = 'Expiry';
 $CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Filename: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Directory';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} File';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Unknown';
+$CIDRAM['lang']['field_infractions'] = 'Infractions';
 $CIDRAM['lang']['field_install'] = 'Install';
 $CIDRAM['lang']['field_ip_address'] = 'IP Address';
 $CIDRAM['lang']['field_latest_version'] = 'Latest Version';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
+$CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstall';
 $CIDRAM['lang']['field_update'] = 'Update';
 $CIDRAM['lang']['field_upload_file'] = 'Upload New File';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'Documentation';
 $CIDRAM['lang']['link_file_manager'] = 'File Manager';
 $CIDRAM['lang']['link_home'] = 'Home';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
+$CIDRAM['lang']['link_ip_tracking'] = 'IP Tracking';
 $CIDRAM['lang']['link_logs'] = 'Logs';
 $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!'
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Username field empty!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = 'Failed to rename!';
+$CIDRAM['lang']['response_tracking_cleared'] = 'Tracking cleared.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Component not installed!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'Component not installed (requires PHP {V})!';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'Enter IP here.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hello, {username}.<br />The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this).';
 $CIDRAM['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hello, {username}.<br />The IP test page allows you to test whether IP addresses are blocked by the currently installed signatures.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so.';
 $CIDRAM['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">documentation</a> for information about the various configuration directives and their purposes.';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Home';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logs';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';

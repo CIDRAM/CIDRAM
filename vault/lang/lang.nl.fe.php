@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.01.31).
+ * This file: Dutch language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -52,20 +52,24 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum aantal overtred
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Een lijst van de IPv4 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.';
-$CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet inbreuken worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
+$CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
+$CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
+$CIDRAM['lang']['field_clear'] = 'Annuleer';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $CIDRAM['lang']['field_delete_account'] = 'Account Verwijderen';
 $CIDRAM['lang']['field_delete_file'] = 'Verwijder';
 $CIDRAM['lang']['field_download_file'] = 'Download';
 $CIDRAM['lang']['field_edit_file'] = 'Bewerk';
+$CIDRAM['lang']['field_expiry'] = 'Vervaltijd';
 $CIDRAM['lang']['field_file'] = 'Bestand';
 $CIDRAM['lang']['field_filename'] = 'Bestandsnaam: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Bestandsmap';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Bestand';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Onbekend';
+$CIDRAM['lang']['field_infractions'] = 'Overtredingen';
 $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
 $CIDRAM['lang']['field_latest_version'] = 'Laatste Versie';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Toestand';
+$CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_uninstall'] = 'Verwijderen';
 $CIDRAM['lang']['field_update'] = 'Bijwerken';
 $CIDRAM['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'Documentatie';
 $CIDRAM['lang']['link_file_manager'] = 'Bestandsbeheer';
 $CIDRAM['lang']['link_home'] = 'Startpagina';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
+$CIDRAM['lang']['link_ip_tracking'] = 'IP-Tracking';
 $CIDRAM['lang']['link_logs'] = 'Logbestanden';
 $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat niet!';
@@ -126,10 +132,11 @@ $CIDRAM['lang']['response_file_renamed'] = 'De naam van de bestand met succes ve
 $CIDRAM['lang']['response_file_uploaded'] = 'Bestand succesvol uploadet!';
 $CIDRAM['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig wachtwoord!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
-$CIDRAM['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
+$CIDRAM['lang']['response_login_password_field_empty'] = 'Wachtwoord veld leeg!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
 $CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
+$CIDRAM['lang']['response_tracking_cleared'] = 'Tracking geannuleerd.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Component niet geïnstalleerd!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'Component niet geïnstalleerd (heeft nodig PHP {V})!';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'Vul hier een IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde signatures worden geblokkeerd.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Met het IP-Tracking pagina, is het mogelijk om de tracking status van IP-adressen te controleren, en u kunt zien welke zijn verboden, en om te annuleren de tracking van hen als u wilt doen.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.nl.md#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Bestandsbeheer';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Startpagina';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Inloggen';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logbestanden';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';

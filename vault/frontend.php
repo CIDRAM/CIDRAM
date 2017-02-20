@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.02.13).
+ * This file: Front-end handler (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1757,6 +1757,84 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_test.html')
+    );
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** IP Tracking. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_ip_tracking'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_ip_tracking']
+    );
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Template for result rows. */
+    $CIDRAM['FE']['TrackingRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_tracking_row.html');
+
+    /** Initialise variables. */
+    $CIDRAM['FE']['TrackingData'] = '';
+    $CIDRAM['ThisTracking'] = array();
+
+    /** Fetch cache.dat data. */
+    $CIDRAM['Cache'] = (file_exists($CIDRAM['Vault'] . 'cache.dat')) ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : array();
+
+    /** Clear/revoke IP tracking for an IP address. */
+    if (isset($_POST['IPAddr']) && isset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']])) {
+        unset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']]);
+        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_tracking_cleared'];
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+        fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
+        fclose($CIDRAM['Handle']);
+    }
+
+    /** Process IP tracking data. */
+    if (!empty($CIDRAM['Cache']['Tracking']) && is_array($CIDRAM['Cache']['Tracking'])) {
+        uasort($CIDRAM['Cache']['Tracking'], function ($A, $B) {
+            if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
+                return 0;
+            }
+            return ($A['Time'] < $B['Time']) ? -1 : 1;
+        });
+        foreach ($CIDRAM['Cache']['Tracking'] as $CIDRAM['ThisTracking']['IPAddr'] => $CIDRAM['ThisTrackingArr']) {
+            if (!isset($CIDRAM['ThisTrackingArr']['Time']) || !isset($CIDRAM['ThisTrackingArr']['Count'])) {
+                continue;
+            }
+            $CIDRAM['ThisTracking']['Expiry'] = date('r', $CIDRAM['ThisTrackingArr']['Time']);
+            if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+                $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
+                $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_banned'];
+            } elseif ($CIDRAM['ThisTrackingArr']['Count'] > ($CIDRAM['Config']['signatures']['infraction_limit'] / 2)) {
+                $CIDRAM['ThisTracking']['StatClass'] = 'txtOe';
+                $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_tracking'];
+            } else {
+                $CIDRAM['ThisTracking']['StatClass'] = 's';
+                $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_tracking'];
+            }
+            $CIDRAM['ThisTracking']['Status'] .= ' – ' . number_format($CIDRAM['ThisTrackingArr']['Count']);
+            $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
+                $CIDRAM['lang'] + $CIDRAM['ThisTracking'],
+                $CIDRAM['FE']['TrackingRow']
+            );
+        }
+    }
+
+    /** Cleanup. */
+    unset($CIDRAM['Cache'], $CIDRAM['ThisTracking']);
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_tracking.html')
     );
 
     /** Send output. */

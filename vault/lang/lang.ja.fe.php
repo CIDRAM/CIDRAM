@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.01.31).
+ * This file: Japanese language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,18 +54,22 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6のシグネチャファイル�
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6シグネチャをチェックした後にロードするモジュールファイルのリスト。これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '違反はいつカウントされるべきですか？ False = IPがモジュールによってブロックされている場合。 True = なんでもの理由でIPがブロックされた場合。';
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのCSSファイルURL。';
+$CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
+$CIDRAM['lang']['field_clear'] = 'キャンセル';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
 $CIDRAM['lang']['field_create_new_account'] = '新しいアカウントを作成する';
 $CIDRAM['lang']['field_delete_account'] = 'アカウントを削除する';
 $CIDRAM['lang']['field_delete_file'] = '削除';
 $CIDRAM['lang']['field_download_file'] = 'ダウンロード';
 $CIDRAM['lang']['field_edit_file'] = '編集';
+$CIDRAM['lang']['field_expiry'] = '満了';
 $CIDRAM['lang']['field_file'] = 'ファイル';
 $CIDRAM['lang']['field_filename'] = 'ファイル名： ';
 $CIDRAM['lang']['field_filetype_directory'] = 'ディレクトリ';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}ファイル';
 $CIDRAM['lang']['field_filetype_unknown'] = '不明です';
+$CIDRAM['lang']['field_infractions'] = '違反';
 $CIDRAM['lang']['field_install'] = 'インストール';
 $CIDRAM['lang']['field_ip_address'] = 'IPアドレス';
 $CIDRAM['lang']['field_latest_version'] = '最新バージョン';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = '状態';
+$CIDRAM['lang']['field_tracking'] = 'トラッキング';
 $CIDRAM['lang']['field_uninstall'] = 'アンインストール';
 $CIDRAM['lang']['field_update'] = 'アップデート';
 $CIDRAM['lang']['field_upload_file'] = '新しいファイルをアップロードする';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'ドキュメンテーション';
 $CIDRAM['lang']['link_file_manager'] = 'ファイル・マネージャー';
 $CIDRAM['lang']['link_home'] = 'ホーム';
 $CIDRAM['lang']['link_ip_test'] = 'IPテスト';
+$CIDRAM['lang']['link_ip_tracking'] = 'IPトラッキング';
 $CIDRAM['lang']['link_logs'] = 'ロゴス';
 $CIDRAM['lang']['link_updates'] = 'アップデート';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'パスワード入力�
 $CIDRAM['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
 $CIDRAM['lang']['response_no'] = 'いいえ';
 $CIDRAM['lang']['response_rename_error'] = '名前を変更できませんでした！';
+$CIDRAM['lang']['response_tracking_cleared'] = 'トラッキングがキャンセルされました。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $CIDRAM['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'コンポーネントのインストールされていません（PHP {V}が必要です）！';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'ここにIPを入力してください�
 $CIDRAM['lang']['tip_file_manager'] = 'こんにちは、{username}。<br />ファイル・マネージャを使用する、ファイルを削除、編集、アップロード、ダウンロードができます。慎重に使用する（これを使って、インストールを壊すことができます）。';
 $CIDRAM['lang']['tip_home'] = 'こんにちは、{username}。<br />これはCIDRAMフロントエンドのホームページです。続行するには、左側のナビゲーションメニューからリンクを選択します。';
 $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、{username}。<br />IPテスト・ページは、IPアドレスがブロックされているかどうかをテストできます。';
+$CIDRAM['lang']['tip_ip_tracking'] = 'こんにちは、{username}。<br />IPトラッキング・ページでは、IPアドレスのトラッキングステータスを確認できます。 あなたは禁止されているものを確認することができ、望むならばあなたはトラッキングをキャンセルことができます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザ名： <span class="txtRd">admin</span> – デフォルト・パスワード： <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'こんにちは、{username}。<br />そのログの内容を表示するために、次のリストからログを選択します。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – コンフィギュレーション'
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – ファイル・マネージャー';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – ホーム';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IPテスト';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IPトラッキング';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – ログイン';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.01.31).
+ * This file: French language data for the front-end (last modified: 2017.02.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,24 +48,28 @@ $CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquer CIDRs recommandé 
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquer CIDRs identifié comme appartenant à services de proxy? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n\'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d\'améliorer la sécurité.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquer CIDRs identifié comme étant risque élevé pour le spam? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).';
-$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Nombre maximal d\'infractions qu\'une IP est autorisée à engager avant d\'être interdite par le suivi des IPs. Défaut = 10.';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Nombre maximal d\'infractions qu\'une IP est autorisée à engager avant d\'être interdite par la surveillance des IPs. Défaut = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d\'utiliser, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Quand faut-il compter les infractions? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de fichier CSS pour les thèmes personnalisés.';
+$CIDRAM['lang']['field_banned'] = 'Interdit';
 $CIDRAM['lang']['field_blocked'] = 'Bloqué';
+$CIDRAM['lang']['field_clear'] = 'Annuler';
 $CIDRAM['lang']['field_component'] = 'Composant';
 $CIDRAM['lang']['field_create_new_account'] = 'Créer un nouveau compte';
 $CIDRAM['lang']['field_delete_account'] = 'Supprimer le compte';
 $CIDRAM['lang']['field_delete_file'] = 'Supprimer';
 $CIDRAM['lang']['field_download_file'] = 'Télécharger';
 $CIDRAM['lang']['field_edit_file'] = 'Modifier';
+$CIDRAM['lang']['field_expiry'] = 'Expiration';
 $CIDRAM['lang']['field_file'] = 'Fichier';
 $CIDRAM['lang']['field_filename'] = 'Nom de fichier: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Répertoire';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Fichier';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Inconnu';
+$CIDRAM['lang']['field_infractions'] = 'Infractions';
 $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'Adresse IP';
 $CIDRAM['lang']['field_latest_version'] = 'Dernière Version';
@@ -86,6 +90,7 @@ $CIDRAM['lang']['field_size_KB'] = 'Ko';
 $CIDRAM['lang']['field_size_MB'] = 'Mo';
 $CIDRAM['lang']['field_size_TB'] = 'To';
 $CIDRAM['lang']['field_status'] = 'Statut';
+$CIDRAM['lang']['field_tracking'] = 'Surveillance';
 $CIDRAM['lang']['field_uninstall'] = 'Désinstaller';
 $CIDRAM['lang']['field_update'] = 'Mettre à Jour';
 $CIDRAM['lang']['field_upload_file'] = 'Télécharger un nouveau fichier';
@@ -99,6 +104,7 @@ $CIDRAM['lang']['link_documentation'] = 'Documentation';
 $CIDRAM['lang']['link_file_manager'] = 'Gestionnaire de Fichiers';
 $CIDRAM['lang']['link_home'] = 'Page d\'Accueil';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
+$CIDRAM['lang']['link_ip_tracking'] = 'Surveillance IP';
 $CIDRAM['lang']['link_logs'] = 'Fichiers Journaux';
 $CIDRAM['lang']['link_updates'] = 'Mises à Jour';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Le fichier journal sélectionné n\'existe pas!';
@@ -130,6 +136,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Mot de passe entrée �
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nom d\'utilisateur entrée était vide!';
 $CIDRAM['lang']['response_no'] = 'Non';
 $CIDRAM['lang']['response_rename_error'] = 'Échec du renomment!';
+$CIDRAM['lang']['response_tracking_cleared'] = 'Surveillance annulée.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Déjà mise à jour.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Composant pas installé!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'Composant pas installé (il nécessite PHP {V})!';
@@ -160,6 +167,7 @@ $CIDRAM['lang']['tip_enter_ip_here'] = 'Entrez ici l\'adresse IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci).';
 $CIDRAM['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $CIDRAM['lang']['tip_ip_test'] = 'Bonjour, {username}.<br />La page des tests IP vous permet de tester si les adresses IP sont bloquées par les signatures actuellement installées.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Bonjour, {username}.<br />La page de surveillance IP vous permet de vérifier l\'état de surveillance des adresses IP, pour vérifier lesquels d\'entre eux ont été interdits, et d\'annuler la surveillance si vous voulez le faire.';
 $CIDRAM['lang']['tip_login'] = 'Nom d\'utilisateur défaut: <span class="txtRd">admin</span> – Mot de passe défaut: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Voir la <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.fr.md#SECTION6">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs.';
@@ -170,6 +178,7 @@ $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Gestionnaire de Fichiers';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Page d\'Accueil';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Surveillance IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Connexion';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Fichiers Journaux';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Mises à Jour';

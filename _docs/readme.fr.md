@@ -138,6 +138,8 @@ Fichier | Description
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_ip_test.html | Un modèle HTML pour la page pour tester IPs.
 /vault/fe_assets/_ip_test_row.html | Un modèle HTML pour la page pour tester IPs.
+/vault/fe_assets/_ip_tracking.html | Un modèle HTML pour la page de surveillance IP.
+/vault/fe_assets/_ip_tracking_row.html | Un modèle HTML pour la page de surveillance IP.
 /vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
@@ -336,7 +338,7 @@ Configuration pour les signatures.
 - Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).
 
 "infraction_limit"
-- Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par le suivi des IPs. Défaut = 10.
+- Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10.
 
 "track_mode"
 - Quand faut-il compter les infractions? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.
@@ -600,4 +602,4 @@ CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence corre
 ---
 
 
-Dernière Mise à Jour: 18 Février 2016 (2017.02.18).
+Dernière Mise à Jour: 20 Février 2016 (2017.02.20).

@@ -138,6 +138,8 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/fe_assets/_home.html | 프론트 엔드의 홈페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_test.html | IP 테스트 페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_test_row.html | IP 테스트 페이지의 HTML 템플릿.
+/vault/fe_assets/_ip_tracking.html | IP 추적 페이지의 HTML 템플릿.
+/vault/fe_assets/_ip_tracking_row.html | IP 추적 페이지의 HTML 템플릿.
 /vault/fe_assets/_login.html | 프런트 엔드 로그인 페이지의 HTML 템플릿.
 /vault/fe_assets/_logs.html | 프런트 엔드 로고스 페이지의 HTML 템플릿.
 /vault/fe_assets/_nav_complete_access.html | 프론트 엔드의 탐색 링크의 HTML 템플릿, 완전한 액세스를위한 것입니다.
@@ -600,4 +602,4 @@ IP 주소를 CIDRAM 차단합니다 | __거짓 양성__ | 진실 양성 (올바�
 ---
 
 
-최종 업데이트: 2017 년 2 월 6 일.
+최종 업데이트: 2017 년 2 월 20 일.

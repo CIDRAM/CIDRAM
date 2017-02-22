@@ -43,6 +43,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.02.20; NEW FEATURE; Maikuolan]: Added a new page to the front-end to
   allow users to check and revoke bans via IP tracking.
 
+- [2017.02.21; NEW FEATURE; Maikuolan]: Added the ability to attach webhooks to
+  signatures and siganture sections.
+
+- [2017.02.21; Bug-fix; Maikuolan]: Fixed a bug whereby extended expiry dates
+  for bans via IP tracking could be reduced to the default tracktime under some
+  circumstances.
+
+- [2017.02.21; Sub-minor code change; Maikuolan]: Added a safeguard to the
+  DNS-Reverse-IPv4 closure to accomodate for allow_url_fopen or fsockopen being
+  disabled by the PHP configuration.
+
 === Version/Release 0.7.0 ===
 MINOR RELEASE.
 

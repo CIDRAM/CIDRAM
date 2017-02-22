@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.17).
+ * This file: Functions file (last modified: 2017.02.21).
  */
 
 /**
@@ -961,6 +961,13 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
  * @return string The hostname on success, or the IP address on failure.
  */
 $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
+    if (!isset($CIDRAM['_allow_url_fopen'])) {
+        $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
+        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] == 'Off');
+    }
+    if (!function_exists('fsockopen') || !$CIDRAM['_allow_url_fopen']) {
+        return $Addr;
+    }
     if (isset($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'])) {
         return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'];
     }

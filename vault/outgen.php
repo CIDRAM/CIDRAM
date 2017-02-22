@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.02.17).
+ * This file: Output generator (last modified: 2017.02.21).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -227,13 +227,20 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     if (!isset($CIDRAM['Cache']['Tracking'])) {
         $CIDRAM['Cache']['Tracking'] = array();
     }
+    /** Set tracking expiry. */
     $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
         !empty($CIDRAM['Config']['Options']['TrackTime']) ? $CIDRAM['Config']['Options']['TrackTime'] : $CIDRAM['Config']['signatures']['default_tracktime']
     );
+    /** Number of infractions to append. */
     $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
-    if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
+    if (
+        isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count']) &&
+        isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'])
+    ) {
         $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] += $CIDRAM['TrackCount'];
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
+        if ($CIDRAM['TrackTime'] > $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time']) {
+            $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
+        }
     } else {
         $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
     }
@@ -241,6 +248,7 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
         $CIDRAM['Banned'] = true;
     }
+    /** Cleanup. */
     unset($CIDRAM['TrackCount'], $CIDRAM['TrackTime']);
 }
 
@@ -302,6 +310,44 @@ if ($CIDRAM['CacheModified']) {
     $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
     fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
     fclose($CIDRAM['Handle']);
+}
+
+/** Process webhooks. */
+if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
+    /** Fetch data for sending with the request. */
+    $CIDRAM['ParsedToWebhook'] = $CIDRAM['BlockInfo'];
+    /** Prepare data for sending with the request. */
+    foreach ($CIDRAM['ParsedToWebhook'] as &$CIDRAM['WebhookVar']) {
+        $CIDRAM['WebhookVar'] = urlencode($CIDRAM['WebhookVar']);
+    }
+    unset($CIDRAM['WebhookVar']);
+    /** Set timeout. */
+    if (empty($CIDRAM['Config']['Webhook']['Timeout'])) {
+        $CIDRAM['Config']['Webhook']['Timeout'] = $CIDRAM['Timeout'];
+    }
+    /** Set params. */
+    if (empty($CIDRAM['Config']['Webhook']['Params'])) {
+        $CIDRAM['Config']['Webhook']['Params'] = '';
+    } else {
+        /** Parse any relevant block information to our webhook params. */
+        $CIDRAM['Config']['Webhook']['Params'] = $CIDRAM['ParseVars'](
+            $CIDRAM['ParsedToWebhook'],
+            $CIDRAM['Config']['Webhook']['Params']
+        );
+    }
+    /** Parse any relevant block information to our webhook URL. */
+    $CIDRAM['Config']['Webhook']['URL'] = $CIDRAM['ParseVars'](
+        $CIDRAM['ParsedToWebhook'],
+        $CIDRAM['Config']['Webhook']['URL']
+    );
+    /** Perform request. */
+    $CIDRAM['WebhookResults'] = $CIDRAM['Request'](
+        $CIDRAM['Config']['Webhook']['URL'],
+        $CIDRAM['Config']['Webhook']['Params'],
+        $CIDRAM['Config']['Webhook']['Timeout']
+    );
+    /** Cleanup. */
+    unset($CIDRAM['WebhookResults'], $CIDRAM['ParsedToWebhook'], $CIDRAM['Config']['Webhook']);
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */

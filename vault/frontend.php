@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.02.20).
+ * This file: Front-end handler (last modified: 2017.02.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -175,9 +175,13 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
     }
 
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
-        $CIDRAM['FrontEndLog'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']);
-        $CIDRAM['FrontEndLog'] .=
-            $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
+        if (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) {
+            $CIDRAM['Config']['general']['FrontEndLog'] = $CIDRAM['Time2Logfile'](
+                $CIDRAM['Now'],
+                $CIDRAM['Config']['general']['FrontEndLog']
+            );
+        }
+        $CIDRAM['FrontEndLog'] = $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
         $CIDRAM['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
     }
     if ($CIDRAM['FE']['state_msg']) {
@@ -198,13 +202,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
         $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['lang']['state_logged_in'] . "\n";
     }
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
-        if (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) {
-            $CIDRAM['Config']['general']['FrontEndLog'] = $CIDRAM['Time2Logfile'](
-                $CIDRAM['Now'],
-                $CIDRAM['Config']['general']['FrontEndLog']
-            );
-        }
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], 'w');
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], 'a');
         fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
         fclose($CIDRAM['Handle']);
         unset($CIDRAM['FrontEndLog']);

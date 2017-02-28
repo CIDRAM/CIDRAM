@@ -17,7 +17,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.8.0-DEV+170224
+ Version: 0.8.0
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -106,7 +106,7 @@ CIDRAM:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
-   - e3334d6d8afd69b70e6299ef0ea1430c:5595
+   - f4259f3394e341a5fa6bdef93543630c:5591
    - 4d326e6040e307a94d3c4d7d25b72626:2311
    - 8e03209e7fc6641b45094e584340feff:83
    - 51e57efba1d36775387fd7ab755d17aa:1353
@@ -133,12 +133,12 @@ CIDRAM:
    - ca4d53f3b38dbecbf636b5c67594ac74:2102
    - d3084bfb5ce7a56a573a80ef0a6ebef8:788
    - 5e220be9b76d88779aec33825a21fdbc:98101
-   - a63b18c7b6655293fb7ecdf3b4d00528:85461
-   - 19f76f2d1a28a07c144f20237043fbf1:5016
+   - 81eae3f88b53e99caf9c88c13c25892e:85490
+   - dc5f332073474f36d7cdd37a51510d37:5008
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
-   - e40c772cd59676e7eb8650881a28d328:23977
+   - 11f95f60b05f63e4c98f4231c729bffc:23840
    - 10a8f11f9c09873ab71e50e128940503:1729
    - f49f65f39294189112ee3ed198d159db:11250
    - 8730ffeb0caef849a0d19e622a9ed94a:3163
@@ -312,7 +312,7 @@ IPv4-Other:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用： <code>signatures-&gt;ipv4</code>.</em>
- Version: 2017.02.02
+ Version: 2017.02.28
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -322,7 +322,7 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 2159b10816c7c10f1cabcea4493782c3:50217
+   - d31d5c0a694197b3180fee749f13b5c7:37037
  Reannotate: components.dat
 IPv6:
  Name:

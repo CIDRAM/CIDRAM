@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.02.21).
+ * This file: Output generator (last modified: 2017.02.22).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -532,12 +532,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount']) {
 
         /** Writing to the serialised logfile. */
         if ($CIDRAM['Config']['general']['logfileSerialized']) {
-            if (isset($CIDRAM['BlockInfo']['EmailAddr'])) {
-                unset($CIDRAM['BlockInfo']['EmailAddr']);
-            }
-            if (isset($CIDRAM['BlockInfo']['UALC'])) {
-                unset($CIDRAM['BlockInfo']['UALC']);
-            }
+            unset($CIDRAM['BlockInfo']['EmailAddr'], $CIDRAM['BlockInfo']['UALC'], $CIDRAM['BlockInfo']['favicon']);
             $CIDRAM['logfileSerialData'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized'], 'a');
             fwrite($CIDRAM['logfileSerialData'], serialize($CIDRAM['BlockInfo']) . "\n");
             fclose($CIDRAM['logfileSerialData']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.21).
+ * This file: Functions file (last modified: 2017.02.28).
  */
 
 /**
@@ -977,8 +977,8 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
     $CIDRAM['Cache']['DNS-Reverses'][$Addr] = array('Host' => '', 'Time' => $CIDRAM['Now'] + 21600);
     $CIDRAM['CacheModified'] = true;
 
-    if (!$DNS) {
-        $DNS = $CIDRAM['Config']['general']['default_dns'];
+    if (!$DNS && !$DNS = $CIDRAM['Config']['general']['default_dns']) {
+        return $Addr;
     }
     $DNS = explode(',', $DNS);
 
@@ -998,7 +998,7 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
         return '';
     }
     foreach ($DNS as $Server) {
-        if (!empty($Response)) {
+        if (!empty($Response) || !$Server) {
             break;
         }
         $Handle = fsockopen('udp://' . $Server, 53);

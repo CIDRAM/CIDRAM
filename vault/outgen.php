@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.02.22).
+ * This file: Output generator (last modified: 2017.03.01).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -253,7 +253,7 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
 }
 
 /** This code block only executed if signatures were triggered. */
-if ($CIDRAM['BlockInfo']['SignatureCount']) {
+if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Define reCAPTCHA working data. */
     $CIDRAM['reCAPTCHA'] = array('Bypass' => false, 'Loggable' => false, 'Expiry' => ($CIDRAM['Config']['recaptcha']['expiry'] * 3600));
@@ -351,7 +351,7 @@ if (!empty($CIDRAM['Config']['Webhook']['URL'])) {
 }
 
 /** If any signatures were triggered, log it, generate output, then die. */
-if ($CIDRAM['BlockInfo']['SignatureCount']) {
+if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Set status for reCAPTCHA block information. */
     if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {

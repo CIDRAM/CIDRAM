@@ -364,15 +364,18 @@ Tag: Webzilla B.V
 
 
 # ASN 53225 ("IPGLOBE DATACENTER").
-# Updated: 2016.05.15 / Checked: 2016.07.02
+# %Listed, Google Malware Dashboard: 1.75%.
+# %Listed, CleanTalk.org: 12.50%.
+# Updated: 2016.05.15 / Checked: 2017.03.02
 
 2804:644::/32 Deny Cloud
 Tag: IPGLOBE DATACENTER
 
 
 # ASN 28271 ("DataCorpore Servios e Representaes").
-# %Listed, Google Malware Dashboard: 0.20%.
-# Updated: 2016.07.02
+# %Listed, Google Malware Dashboard: 1.00%.
+# %Listed, CleanTalk.org: 23.94%.
+# Updated: 2016.07.02 / Checked: 2017.03.02
 
 2804:4c4::/32 Deny Cloud
 2804:cc0::/32 Deny Cloud
@@ -441,10 +444,11 @@ Tag: H88 S.A
 
 
 # ASN 46475 ("Limestone Networks, Inc").
-# %Listed, Google Malware Dashboard: 3.62%.
-# Updated: 2016.07.09
+# %Listed, Google Malware Dashboard: 2.74%.
+# %Listed, CleanTalk.org: 25.85%.
+# Updated: 2017.03.02
 
-2400:ed00::/64 Deny Cloud
+2400:ed00::/48 Deny Cloud
 2607:ff68::/32 Deny Cloud
 Tag: Limestone Networks
 
@@ -685,8 +689,9 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# %Listed, Google Malware Dashboard: 29.45%.
-# Updated: 2016.01.20 / Checked: 2016.11.03
+# %Listed, Google Malware Dashboard: 28.29%.
+# %Listed, CleanTalk.org: 42.89%.
+# Updated: 2016.01.20 / Checked: 2017.03.02
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
@@ -881,8 +886,9 @@ Tag: Private Layer INC
 
 
 # ASN 40676 ("Psychz Networks").
-# %Listed, Google Malware Dashboard: 11.67%.
-# Updated: 2016.07.02
+# %Listed, Google Malware Dashboard: 12.64%.
+# %Listed, CleanTalk.org: 44.89%.
+# Updated: 2017.03.02
 
 2001:df2:c600::/48 Deny Cloud
 2602:ff62:fff::/48 Deny Cloud
@@ -890,17 +896,22 @@ Tag: Private Layer INC
 2602:ff96:9::/48 Deny Cloud
 2602:ff96:12::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
+2602:ffc5:40::/44 Deny Cloud
+2602:ffc5:110::/44 Deny Cloud
+2602:ffc5:120::/43 Deny Cloud
 2604:980:1::/48 Deny Cloud
 2604:6600::/32 Deny Cloud
 2605:5200:c91a::/48 Deny Cloud
+2605:6c80:6::/48 Deny Cloud
+2605:e280:c65a::/48 Deny Cloud
 2606:6680:2::/48 Deny Cloud
 2606:6680:4::/48 Deny Cloud
-2606:f280::/32 Deny Cloud
+2606:6680:7::/48 Deny Cloud
 2a05:b0c6:1300::/44 Deny Cloud
-2a06:a006:c4::/48 Deny Cloud
-2a06:a006:c5::/48 Deny Cloud
+2a06:a006:c4::/47 Deny Cloud
 2a06:a006:f0::/47 Deny Cloud
-2a06:e881:100::/48 Deny Cloud
+2a07:640::/29 Deny Cloud
+2a07:9944:1c::/48 Deny Cloud
 Tag: Psychz Networks
 
 
@@ -1263,8 +1274,9 @@ Tag: Continuum
 
 
 # ASN 51167 ("Contabo GmbH").
-# %Listed, Google Malware Dashboard: 1.77%.
-# Updated: 2016.07.09
+# %Listed, Google Malware Dashboard: 1.32%.
+# %Listed, CleanTalk.org: 59.23%.
+# Updated: 2016.07.09 / Checked: 2017.03.02
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
@@ -1281,12 +1293,13 @@ Tag: ESDS
 
 
 # ASN 51430 ("AltusHost B.V").
-# %Listed, Google Malware Dashboard: 1.72%.
-# Updated: 2016.07.02
+# %Listed, Google Malware Dashboard: 2.27%.
+# %Listed, CleanTalk.org: 0.44%.
+# Updated: 2017.03.02
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
-2a00:7143:101::/48 Deny Cloud
+2a00:7144::/32 Deny Cloud
 Tag: AltusHost B.V
 
 
@@ -2020,6 +2033,8 @@ Tag: Sia Nano IT
 # ASNs 7224, 8987, 14618, 16509, 38895, 39111, 62785 ("Amazon.com, Inc").
 # %Listed, Google Malware Dashboard: 0% (AS7224/AS8987), 0.13% (AS14618), 0.03% (AS16509), 0.05% (AS38895),
 #   0.14% (AS39111), "ASN not found" (AS62785).
+# A more up-to-date version of this section is available via the Amazon optional blocklist provided by
+# Macmathan. It can be installed via the front-end.
 # Updated: 2016.10.01
 
 2400:6500::/32 Deny Cloud
@@ -2721,8 +2736,9 @@ Tag: Endurance Int
 
 
 # ASN 17819 ("Equinix Asia Pacific").
-# %Listed, Google Malware Dashboard: 0.44%.
-# Updated: 2016.07.02
+# %Listed, Google Malware Dashboard: 0.29%.
+# %Listed, CleanTalk.org: 25.00%.
+# Updated: 2016.07.02 / Checked: 2017.03.02
 
 2400:7600::/32 Deny Cloud
 2404:4f00::/32 Deny Cloud
@@ -2733,8 +2749,9 @@ Tag: Endurance Int
 
 
 # ASN 6364 ("Atlantic.net, Inc").
-# %Listed, Google Malware Dashboard: 0.47%.
-# Updated: 2016.07.02
+# %Listed, Google Malware Dashboard: 1.30%.
+# %Listed, CleanTalk.org: 40.41%.
+# Updated: 2016.07.02 / Checked: 2017.03.02
 
 2607:f170::/32 Deny Cloud
 Tag: Atlantic.net, Inc
@@ -3147,9 +3164,9 @@ Tag: CloudSRV Limited
 
 
 # ASN 61337 ("Electronic Communities Ltd").
-# %Listed, Google Malware Dashboard: 1.17%.
-# %Listed, CleanTalk.org: 58.06%.
-# Updated: 2017.02.18
+# %Listed, Google Malware Dashboard: 1.13%.
+# %Listed, CleanTalk.org: 57.53%.
+# Updated: 2017.02.18 / Checked: 2017.03.02
 
 2001:67c:504::/48 Deny Cloud
 2001:67c:72c::/48 Deny Cloud
@@ -3264,3 +3281,18 @@ Tag: Server Central Network
 
 2a02:5740::/32 Deny Cloud
 Tag: netirons
+
+
+# ASNs 30496, 36024 ("Colo4, LLC").
+# %Listed, Google Malware Dashboard: 1.24% (AS30496), 3.61% (AS36024).
+# %Listed, CleanTalk.org: 34.27% (AS30496), 29.18% (AS36024).
+# Updated: 2017.03.02
+
+2602:ffc4:1::/48 Deny Cloud
+2602:ffc4:6::/47 Deny Cloud
+2605:7700::/47 Deny Cloud
+2606:4300::/48 Deny Cloud
+2606:db00::/32 Deny Cloud
+2607:f198::/32 Deny Cloud
+2607:fdb8::/32 Deny Cloud
+Tag: Colo4, LLC

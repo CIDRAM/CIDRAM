@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.02.20).
+ * This file: German language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'Name einer Datei zu proto
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Enthalten Sie blockierte Anfragen von verbotenen IPs in die Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximale Anzahl der Versucht zu einloggen.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Überprüfung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Überprüfung aktiviert ist). True = Suchmaschinen-Überprüfung aktivieren [Standardeinstellung]; False = Suchmaschinen-Überprüfung deaktivieren.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Anstatt die "Zugriff verweigert", sollte CIDRAM leise blockiert Zugriffsversuche umleiten? Wenn ja, geben Sie den Speicherort auf den blockierten Zugriffsversuche umleiten. Wenn nein, diese Variable leer lassen.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Zeitzonenversatz in Minuten.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Anzahl der Stunden an die sich reCAPTCHA-Instanzen erinnern sollten.';

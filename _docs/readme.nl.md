@@ -304,6 +304,9 @@ Algemene configuratie voor CIDRAM.
 "default_dns"
 - Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
+"search_engine_verification"
+- Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.
+
 "protect_frontend"
 - Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
 
@@ -602,4 +605,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 20 Februari 2016 (2017.02.20).
+Laatste Bijgewerkt: 3 Maart 2016 (2017.03.03).

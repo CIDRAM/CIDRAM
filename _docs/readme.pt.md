@@ -304,6 +304,9 @@ Configuração geral por CIDRAM.
 "default_dns"
 - Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
+"search_engine_verification"
+- Tentativa de verificar pedidos dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos pedidos de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais pedidos serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca.
+
 "protect_frontend"
 - Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não.
 
@@ -602,4 +605,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 20 Fevereiro 2016 (2017.02.20).
+Última Atualização: 3 Março 2016 (2017.03.03).

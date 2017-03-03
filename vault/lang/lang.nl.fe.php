@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.02.20).
+ * This file: Dutch language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'Geserialiseerd bestand om
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum aantal inlogpogingen.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de front-end. True = Ja [Standaard]; False = Nee.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Aantal uren om reCAPTCHA instanties herinneren.';

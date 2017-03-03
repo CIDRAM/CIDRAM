@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.02.20).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = '連載的文件用於記�
 $CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止從阻止請求在日誌文件嗎？ True = 是【標準】； False = 不是。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登錄嘗試次數。';
 $CIDRAM['lang']['config_general_protect_frontend'] = '指定是否應將CIDRAM通常提供的保護應用於前端。 True = 是【標準】； False = 不是。';
+$CIDRAM['lang']['config_general_search_engine_verification'] = '嘗試驗證來自搜索引擎的請求？ 驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，SEO，等等）。 當被驗證，搜索引擎可以被阻止，但不會被禁止。 當不被驗證，他們可以由於超過違規限製而被禁止。 另外，搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，這些請求將被阻止）。 True = 搜索引擎驗證是啟用【標準】； False = 搜索引擎驗證是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。';
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '記得reCAPTCHA多少小時？';
@@ -52,7 +53,7 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = '從IP最大允許違規
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';
-$CIDRAM['lang']['config_signatures_track_mode'] = '什麼時候應該對違規行為進行計數？ False = 當IP被模塊阻塞時。 True = 當IP由於任何原因阻塞時。';
+$CIDRAM['lang']['config_signatures_track_mode'] = '什麼時候應該對違規行為進行計數？ False = 當IP被模塊阻止時。 True = 當IP由於任何原因阻止時。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定義主題的CSS文件URL。';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';

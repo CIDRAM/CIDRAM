@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.02.20).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'Tập tin tuần tự cho
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Số lượng tối đa cố gắng đăng nhập.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Số giờ để nhớ reCAPTCHA.';

@@ -304,6 +304,9 @@ General CIDRAM configuration.
 "default_dns"
 - A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know what you're doing!
 
+"search_engine_verification"
+- Attempt to verify requests from search engines? Verifying search engines ensures that they won't be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won't be banned. When not verified, it's possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.
+
 "protect_frontend"
 - Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.
 
@@ -602,4 +605,4 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 ---
 
 
-Last Updated: 20 February 2016 (2017.02.20).
+Last Updated: 3 March 2016 (2017.03.03).

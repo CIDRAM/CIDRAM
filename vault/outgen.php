@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.03.01).
+ * This file: Output generator (last modified: 2017.03.03).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -174,7 +174,11 @@ if ($CIDRAM['Protect'] && !empty($CIDRAM['Config']['signatures']['modules']) && 
  * Block bots masquerading as popular search engines and disable tracking for
  * real, legitimate search engines.
  */
-if (!empty($CIDRAM['TestResults']) && $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))) {
+if (
+    !empty($CIDRAM['TestResults']) &&
+    $CIDRAM['Config']['general']['search_engine_verification'] &&
+    $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))
+) {
     /**
      * Verify Googlebot.
      * Reference: https://support.google.com/webmasters/answer/80553?hl=en

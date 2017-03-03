@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.02.20).
+ * This file: Korean language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = '액세스 시도 저지�
 $CIDRAM['lang']['config_general_log_banned_ips'] = '금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '로그인 시도 최대 횟수입니다.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAM 의해 보통 제공되는 보호를 프런트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본값); False = 아니오.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = '검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default/기본 설정); False = 검색 엔진의 검증을 무효로한다.';
 $CIDRAM['lang']['config_general_silent_mode'] = '"액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다.';
 $CIDRAM['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA 인스턴스를 기억 시간.';

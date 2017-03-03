@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.02.20).
+ * This file: Italian language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un file serializzato per 
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Numero massimo di tentativi di accesso.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Tentativo di verificare le richieste dai motori di ricerca? Verifica motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Fuso orario offset in minuti.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Numero di ore per ricordare le istanze reCAPTCHA.';

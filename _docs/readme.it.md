@@ -304,6 +304,9 @@ Generale configurazione per CIDRAM.
 "default_dns"
 - Un elenco delimitato con virgole di server DNS da utilizzare per le ricerche dei nomi di host. Predefinito = "8.8.8.8,8.8.4.4" (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!
 
+"search_engine_verification"
+- Tentativo di verificare le richieste dai motori di ricerca? Verifica motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.
+
 "protect_frontend"
 - Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.
 
@@ -602,4 +605,4 @@ CIDRAM *FA* bloccare un indirizzo IP | __Falso positivo__ | Vero positivo (infer
 ---
 
 
-Ultimo Aggiornamento: 20 Febbraio 2016 (2017.02.20).
+Ultimo Aggiornamento: 3 Marzo 2016 (2017.03.03).

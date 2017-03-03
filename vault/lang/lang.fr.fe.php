@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.02.20).
+ * This file: French language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un fichier sérialisé po
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inclure les demandes bloquées provenant d\'IP interdites dans les fichiers journaux? True = Oui [Défaut]; False = Non.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentatives de connexion.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l\'accès frontal. True = Oui [Défaut]; False = Non.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Essayez de vérifier les moteurs de recherche? Vérification des moteurs de recherche assure qu\'ils ne seront pas interdits en raison de dépassement de la limite d\'infraction (l\'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu\'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d\'habitude, mais ne seront pas interdits. Lorsqu\'ils ne sont pas vérifiés, il est possible qu\'ils soient interdits en raison du dépassement de la limite d\'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses demandes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut]; False = Désactiver la vérification du moteurs de recherche.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page "Accès Refusé"? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Nombre d\'heures à retenir des instances reCAPTCHA.';

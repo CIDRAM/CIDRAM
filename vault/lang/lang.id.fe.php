@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.02.20).
+ * This file: Indonesian language data for the front-end (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'File serial untuk mencata
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Jumlah maksimum upaya untuk memasukkan.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada front-end. True = Ya [Default]; False = Tidak.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Mencoba untuk memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tetapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Offset zona waktu dalam hitungan menit.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Jumlah jam untuk mengingat instansi reCAPTCHA.';

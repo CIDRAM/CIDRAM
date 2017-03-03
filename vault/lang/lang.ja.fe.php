@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？ 上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。 ２００ = 上書きしない（Default/デフォルルト）； ４０３ = 「403 Forbidden」で上書きする； ５０３ = 「503 Service unavailable」で上書きする。';
-$CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、ＡＰＩ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。 Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
+$CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。 Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
 $CIDRAM['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
 $CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのＥメールアドレス。';
@@ -76,7 +76,7 @@ $CIDRAM['lang']['field_ip_address'] = 'ＩＰアドレス';
 $CIDRAM['lang']['field_latest_version'] = '最新バージョン';
 $CIDRAM['lang']['field_log_in'] = 'ログイン';
 $CIDRAM['lang']['field_new_name'] = '新しい名前：';
-$CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_ok'] = 'ＯＫ';
 $CIDRAM['lang']['field_options'] = 'オプション';
 $CIDRAM['lang']['field_password'] = 'パスワード';
 $CIDRAM['lang']['field_permissions'] = 'パーミッション';
@@ -193,7 +193,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学習リソースとディスカッション。</li>
-            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ＡＳＮからCIDRを取得する、ＡＳＮ関係を決定する、ネットワーク名に基づいてＡＳＮを検出する、等。</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、ＡＳＮ関係を決定する、ネットワーク名に基づいてＡＳＮを検出する、等。</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
             <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – ＩＰｖ４・ＩＰのための有用な集約ツール。</li>
             <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ＡＳＮの接続性をチェックするのに便利なツール； ＡＳＮに関するその他の様々な情報。</li>

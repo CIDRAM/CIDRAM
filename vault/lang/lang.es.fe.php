@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.03.03).
+ * This file: Spanish language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Una lista de los archivos de firmas
 $CIDRAM['lang']['config_signatures_modules'] = 'Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas.';
 $CIDRAM['lang']['config_signatures_track_mode'] = '¿Cuándo se deben contar las infracciones? False = Cuando los IPs están bloqueados por módulos. True = Cuando los IP están bloqueados por cualquier razón.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL del archivo CSS para temas personalizados.';
+$CIDRAM['lang']['field_activate'] = 'Activar';
 $CIDRAM['lang']['field_banned'] = 'Prohibido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_clear'] = 'Anular';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crear Nueva Cuenta';
+$CIDRAM['lang']['field_deactivate'] = 'Desactivar';
 $CIDRAM['lang']['field_delete_account'] = 'Eliminar Cuenta';
 $CIDRAM['lang']['field_delete_file'] = 'Borrar';
 $CIDRAM['lang']['field_download_file'] = 'Descargar';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = '¡Cuenta creada con éxito!';
 $CIDRAM['lang']['response_accounts_deleted'] = '¡Cuenta eliminada con éxito!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Esa cuenta no existe.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Contraseña actualizado con éxito!';
+$CIDRAM['lang']['response_activated'] = 'Se ha activado correctamente.';
+$CIDRAM['lang']['response_activation_failed'] = '¡No se pudo activar!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Componente instalado con éxito.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Componente desinstalado con éxito.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Componente actualizado con éxito.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Se ha producido un error al intentar desinstalar el componente.';
 $CIDRAM['lang']['response_component_update_error'] = 'Se ha producido un error al intentar actualizar el componente.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuración actualizado con éxito.';
+$CIDRAM['lang']['response_deactivated'] = 'Se ha desactivado correctamente.';
+$CIDRAM['lang']['response_deactivation_failed'] = '¡No se pudo desactivar!';
 $CIDRAM['lang']['response_delete_error'] = '¡No se pudo eliminar!';
 $CIDRAM['lang']['response_directory_deleted'] = '¡Directorio eliminado con éxito!';
 $CIDRAM['lang']['response_directory_renamed'] = '¡El nombre del directorio cambiado con éxito!';

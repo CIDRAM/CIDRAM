@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.03.03).
+ * This file: Korean language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6의 서명 파일 목록 (CIDRA
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다.';
 $CIDRAM['lang']['config_signatures_track_mode'] = '위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우.';
 $CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
+$CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
 $CIDRAM['lang']['field_clear'] = '취소';
 $CIDRAM['lang']['field_component'] = '구성 요소';
 $CIDRAM['lang']['field_create_new_account'] = '새로운 계정 만들기';
+$CIDRAM['lang']['field_deactivate'] = '비활성화';
 $CIDRAM['lang']['field_delete_account'] = '계정 삭제';
 $CIDRAM['lang']['field_delete_file'] = '삭제';
 $CIDRAM['lang']['field_download_file'] = '다운로드';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = '계정 만들기에 성공했습
 $CIDRAM['lang']['response_accounts_deleted'] = '계정 삭제가 성공했습니다!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = '계정이 존재하지 않습니다.';
 $CIDRAM['lang']['response_accounts_password_updated'] = '암호 업데이트가 성공했습니다!';
+$CIDRAM['lang']['response_activated'] = '활성화했습니다.';
+$CIDRAM['lang']['response_activation_failed'] = '활성화에 실패했습니다!';
 $CIDRAM['lang']['response_component_successfully_installed'] = '구성 요소의 설치에 성공했습니다.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '구성 요소의 제거는 성공했습니다.';
 $CIDRAM['lang']['response_component_successfully_updated'] = '구성 요소의 업데이트에 성공했습니다!';
 $CIDRAM['lang']['response_component_uninstall_error'] = '구성 요소 제거하는 동안 오류가 발생했습니다.';
 $CIDRAM['lang']['response_component_update_error'] = '구성 요소를 업데이트하는 동안 오류가 발생했습니다.';
 $CIDRAM['lang']['response_configuration_updated'] = '구성 업데이트가 성공했습니다.';
+$CIDRAM['lang']['response_deactivated'] = '비활성화했습니다.';
+$CIDRAM['lang']['response_deactivation_failed'] = '비활성화에 실패했습니다!';
 $CIDRAM['lang']['response_delete_error'] = '삭제에 실패했습니다!';
 $CIDRAM['lang']['response_directory_deleted'] = '디렉토리가 성공적으로 삭제되었습니다!';
 $CIDRAM['lang']['response_directory_renamed'] = '디렉토리의 이름이 변경되었습니다!';

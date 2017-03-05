@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.03.03).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM�
 $CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '什麼時候應該對違規行為進行計數？ False = 當IP被模塊阻止時。 True = 當IP由於任何原因阻止時。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定義主題的CSS文件URL。';
+$CIDRAM['lang']['field_activate'] = '啟用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_clear'] = '撤消';
 $CIDRAM['lang']['field_component'] = '組件';
 $CIDRAM['lang']['field_create_new_account'] = '創建新賬戶';
+$CIDRAM['lang']['field_deactivate'] = '停用';
 $CIDRAM['lang']['field_delete_account'] = '刪除賬戶';
 $CIDRAM['lang']['field_delete_file'] = '刪除';
 $CIDRAM['lang']['field_download_file'] = '下載';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = '帳戶成功創建！';
 $CIDRAM['lang']['response_accounts_deleted'] = '帳戶成功刪除！';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = '那個帳戶不存在。';
 $CIDRAM['lang']['response_accounts_password_updated'] = '密碼成功更新！';
+$CIDRAM['lang']['response_activated'] = '已成功啟用。';
+$CIDRAM['lang']['response_activation_failed'] = '無法啟用！';
 $CIDRAM['lang']['response_component_successfully_installed'] = '組件成功安裝。';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '組件成功卸載。';
 $CIDRAM['lang']['response_component_successfully_updated'] = '組件成功更新。';
 $CIDRAM['lang']['response_component_uninstall_error'] = '一個錯誤發生當嘗試卸載組件。';
 $CIDRAM['lang']['response_component_update_error'] = '一個錯誤發生當嘗試更新組件。';
 $CIDRAM['lang']['response_configuration_updated'] = '配置成功更新。';
+$CIDRAM['lang']['response_deactivated'] = '已成功停用。';
+$CIDRAM['lang']['response_deactivation_failed'] = '無法停用！';
 $CIDRAM['lang']['response_delete_error'] = '無法刪除！';
 $CIDRAM['lang']['response_directory_deleted'] = '文件夾成功刪除！';
 $CIDRAM['lang']['response_directory_renamed'] = '文件夾成功改名！';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.03.03).
+ * This file: Indonesian language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang 
 $CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
+$CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
 $CIDRAM['lang']['field_clear'] = 'Cabut';
 $CIDRAM['lang']['field_component'] = 'Komponen';
 $CIDRAM['lang']['field_create_new_account'] = 'Buat Akun Baru';
+$CIDRAM['lang']['field_deactivate'] = 'Menonaktifkan';
 $CIDRAM['lang']['field_delete_account'] = 'Hapus Akun';
 $CIDRAM['lang']['field_delete_file'] = 'Menghapus';
 $CIDRAM['lang']['field_download_file'] = 'Mendownload';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Akun ini tidak ada.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Kata sandi berhasil diperbarui!';
+$CIDRAM['lang']['response_activated'] = 'Berhasil diaktifkan.';
+$CIDRAM['lang']['response_activation_failed'] = 'Kegagalan pengaktifan!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Komponen berhasil diinstal.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponen berhasil diuninstal.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Komponen berhasil diperbarui.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Terjadi kesalahan saat mencoba untuk menguninstal komponen ini.';
 $CIDRAM['lang']['response_component_update_error'] = 'Terjadi kesalahan saat mencoba untuk memperbarui komponen ini.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Konfigurasi berhasil diperbarui.';
+$CIDRAM['lang']['response_deactivated'] = 'Berhasil dinonaktifkan.';
+$CIDRAM['lang']['response_deactivation_failed'] = 'Kegagalan penonaktifan!';
 $CIDRAM['lang']['response_delete_error'] = 'Gagal menghapus!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Direktori berhasil dihapus!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Nama direktori berhasil dimodifikasi!';

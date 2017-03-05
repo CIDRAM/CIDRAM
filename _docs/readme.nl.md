@@ -605,4 +605,4 @@ CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (
 ---
 
 
-Laatste Bijgewerkt: 3 Maart 2016 (2017.03.03).
+Laatste Bijgewerkt: 3 Maart 2017 (2017.03.03).

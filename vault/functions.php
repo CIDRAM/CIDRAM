@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.28).
+ * This file: Functions file (last modified: 2017.03.05).
  */
 
 /**
@@ -1726,15 +1726,30 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
  * Checks whether a component is in use (front-end closure).
  *
  * @param array $Files The list of files to be checked.
+ * @param array $Files The component extended description (used to determine
+ *      which type of component it is).
  * @return bool Returns true (in use) or false (not in use).
  */
-$CIDRAM['IsInUse'] = function ($Files) use (&$CIDRAM) {
+$CIDRAM['IsInUse'] = function ($Files, $Description) use (&$CIDRAM) {
     foreach ($Files as $File) {
-        if (
-            strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $File . ',') !== false ||
-            strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $File . ',') !== false ||
+        if ((
+            strpos($Description, 'signatures-&gt;ipv4') !== false &&
+            strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $File . ',') !== false
+        ) || (
+            strpos($Description, 'signatures-&gt;ipv6') !== false &&
+            strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $File . ',') !== false
+        ) || (
+            strpos($Description, 'signatures-&gt;modules') !== false &&
             strpos(',' . $CIDRAM['Config']['signatures']['modules'] . ',', ',' . $File . ',') !== false
-        ) {
+        ) || (
+            strpos($Description, 'signatures-&gt;ipv4') === false &&
+            strpos($Description, 'signatures-&gt;ipv6') === false &&
+            strpos($Description, 'signatures-&gt;modules') === false && (
+                strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $File . ',') !== false ||
+                strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $File . ',') !== false ||
+                strpos(',' . $CIDRAM['Config']['signatures']['modules'] . ',', ',' . $File . ',') !== false
+            )
+        )) {
             return true;
         }
     }
@@ -1834,5 +1849,53 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
             $CIDRAM['Components']['ThisComponent']['RemoteData'],
             $CIDRAM['Now'] + 3600
         );
+    }
+};
+
+/** Activate component (only to be called from the front-end updates page). */
+$CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
+    $CIDRAM['Activation'][$Type] = array_unique(array_filter(
+        explode(',', $CIDRAM['Activation'][$Type]),
+        function ($Component) use (&$CIDRAM) {
+            return ($Component && file_exists($CIDRAM['Vault'] . $Component));
+        }
+    ));
+    foreach ($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'] as $CIDRAM['Activation']['ThisFile']) {
+        if (
+            !empty($CIDRAM['Activation']['ThisFile']) &&
+            file_exists($CIDRAM['Vault'] . $CIDRAM['Activation']['ThisFile']) &&
+            $CIDRAM['Traverse']($CIDRAM['Activation']['ThisFile'])
+        ) {
+            $CIDRAM['Activation'][$Type][] = $CIDRAM['Activation']['ThisFile'];
+        }
+    }
+    if (count($CIDRAM['Activation'][$Type])) {
+        sort($CIDRAM['Activation'][$Type]);
+    }
+    $CIDRAM['Activation'][$Type] = implode(',', $CIDRAM['Activation'][$Type]);
+    if ($CIDRAM['Activation'][$Type] !== $CIDRAM['Config']['signatures'][$Type]) {
+        $CIDRAM['Activation']['modified'] = true;
+    }
+};
+
+/** Deactivate component (only to be called from the front-end updates page). */
+$CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
+    $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
+        explode(',', $CIDRAM['Deactivation'][$Type]),
+        function ($Component) use (&$CIDRAM) {
+            return ($Component && file_exists($CIDRAM['Vault'] . $Component));
+        }
+    ));
+    if (count($CIDRAM['Deactivation'][$Type])) {
+        sort($CIDRAM['Deactivation'][$Type]);
+    }
+    $CIDRAM['Deactivation'][$Type] = ',' . implode(',', $CIDRAM['Deactivation'][$Type]) . ',';
+    foreach ($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'] as $CIDRAM['Deactivation']['ThisFile']) {
+        $CIDRAM['Deactivation'][$Type] =
+            str_replace(',' . $CIDRAM['Deactivation']['ThisFile'] . ',', ',', $CIDRAM['Deactivation'][$Type]);
+    }
+    $CIDRAM['Deactivation'][$Type] = substr($CIDRAM['Deactivation'][$Type], 1, -1);
+    if ($CIDRAM['Deactivation'][$Type] !== $CIDRAM['Config']['signatures'][$Type]) {
+        $CIDRAM['Deactivation']['modified'] = true;
     }
 };

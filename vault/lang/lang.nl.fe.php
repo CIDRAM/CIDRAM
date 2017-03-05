@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.03.03).
+ * This file: Dutch language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 signature bes
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
+$CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_clear'] = 'Annuleer';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
+$CIDRAM['lang']['field_deactivate'] = 'Deactiveren';
 $CIDRAM['lang']['field_delete_account'] = 'Account Verwijderen';
 $CIDRAM['lang']['field_delete_file'] = 'Verwijder';
 $CIDRAM['lang']['field_download_file'] = 'Download';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Die account bestaat niet.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Wachtwoord succesvol gewijzigd!';
+$CIDRAM['lang']['response_activated'] = 'Succesvol geactiveerd.';
+$CIDRAM['lang']['response_activation_failed'] = 'Mislukt om te activeren!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Component succesvol geïnstalleerd.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component succesvol verwijderd.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Component succesvol gewijzigd.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om de component te verwijderen.';
 $CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om de component te bijwerken.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuratie succesvol gewijzigd.';
+$CIDRAM['lang']['response_deactivated'] = 'Succesvol gedeactiveerd.';
+$CIDRAM['lang']['response_deactivation_failed'] = 'Mislukt om te deactiveren!';
 $CIDRAM['lang']['response_delete_error'] = 'Mislukt om te verwijderen!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Bestandsmap succesvol verwijderd!';
 $CIDRAM['lang']['response_directory_renamed'] = 'De naam van de bestandsmap met succes veranderd!';

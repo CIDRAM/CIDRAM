@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.02.24).
+ * This file: Front-end handler (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -589,13 +589,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['ThisDir']['DirName'] = $CIDRAM['CatKey'] . '->' . $CIDRAM['DirKey'];
             $CIDRAM['ThisDir']['DirLang'] =
                 !empty($CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']]) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
-            $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap($CIDRAM['ThisDir']['DirLang'], 77, "\r\n; ") . "\r\n";
+            $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($CIDRAM['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
                 if ($CIDRAM['DirValue']['type'] === 'string' || $CIDRAM['DirValue']['type'] === 'int' || $CIDRAM['DirValue']['type'] === 'bool') {
                     $CIDRAM['AutoType']($_POST[$CIDRAM['ThisDir']['DirLangKey']], $CIDRAM['DirValue']['type']);
                 }
                 if (
-                    !preg_match("/[\"'\x01-\x1f]/i", $_POST[$CIDRAM['ThisDir']['DirLangKey']]) && (
+                    !preg_match('/[^\x20-\xff"\']/', $_POST[$CIDRAM['ThisDir']['DirLangKey']]) && (
                         !isset($CIDRAM['DirValue']['choices']) || isset($CIDRAM['DirValue']['choices'][$_POST[$CIDRAM['ThisDir']['DirLangKey']]])
                     )
                 ) {
@@ -919,14 +919,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         /** Uninstall a component. */
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
             if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
+                if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'] = '';
+                }
+                if (is_array($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
+                    $CIDRAM['IsolateL10N'](
+                        $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'],
+                        $CIDRAM['Config']['general']['lang']
+                    );
+                }
                 $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
                 $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
-                    $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = $CIDRAM['IsInUse'](
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'],
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description']
+                );
             }
             if (
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
-                !$CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] &&
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 ($_POST['ID'] !== 'l10n/' . $CIDRAM['Config']['general']['lang']) &&
                 ($_POST['ID'] !== 'CIDRAM') &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
@@ -984,6 +995,122 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             } else {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_uninstall_error'];
             }
+        }
+
+        /** Activate a component. */
+        if ($_POST['do'] === 'activate-component' && !empty($_POST['ID'])) {
+            $CIDRAM['Activation'] = array(
+                'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.ini'),
+                'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
+                'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
+                'modules' => $CIDRAM['Config']['signatures']['modules'],
+                'modified' => false
+            );
+            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
+                if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'] = '';
+                }
+                if (is_array($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
+                    $CIDRAM['IsolateL10N'](
+                        $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'],
+                        $CIDRAM['Config']['general']['lang']
+                    );
+                }
+                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
+                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = $CIDRAM['IsInUse'](
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'],
+                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description']
+                );
+            }
+            if (
+                empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])
+            ) {
+                if (strpos($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'], 'signatures-&gt;ipv4') !== false) {
+                    $CIDRAM['ActivateComponent']('ipv4');
+                }
+                if (strpos($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'], 'signatures-&gt;ipv6') !== false) {
+                    $CIDRAM['ActivateComponent']('ipv6');
+                }
+                if (strpos($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'], 'signatures-&gt;modules') !== false) {
+                    $CIDRAM['ActivateComponent']('modules');
+                }
+            }
+            if (!$CIDRAM['Activation']['modified'] || !$CIDRAM['Activation']['Config']) {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_activation_failed'];
+            } else {
+                $CIDRAM['Activation']['Config'] = str_replace(
+                    array(
+                        "\r\nipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'\r\n",
+                        "\r\nipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'\r\n",
+                        "\r\nmodules='" . $CIDRAM['Config']['signatures']['modules'] . "'\r\n"
+                    ), array(
+                        "\r\nipv4='" . $CIDRAM['Activation']['ipv4'] . "'\r\n",
+                        "\r\nipv6='" . $CIDRAM['Activation']['ipv6'] . "'\r\n",
+                        "\r\nmodules='" . $CIDRAM['Activation']['modules'] . "'\r\n"
+                    ),
+                    $CIDRAM['Activation']['Config']
+                );
+                $CIDRAM['Config']['signatures']['ipv4'] = $CIDRAM['Activation']['ipv4'];
+                $CIDRAM['Config']['signatures']['ipv6'] = $CIDRAM['Activation']['ipv6'];
+                $CIDRAM['Config']['signatures']['modules'] = $CIDRAM['Activation']['modules'];
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'config.ini', 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['Activation']['Config']);
+                fclose($CIDRAM['Handle']);
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_activated'];
+            }
+            unset($CIDRAM['Activation']);
+        }
+
+        /** Deactivate a component. */
+        if ($_POST['do'] === 'deactivate-component' && !empty($_POST['ID'])) {
+            $CIDRAM['Deactivation'] = array(
+                'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.ini'),
+                'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
+                'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
+                'modules' => $CIDRAM['Config']['signatures']['modules'],
+                'modified' => false
+            );
+            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
+                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
+                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
+                    $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'], '');
+            }
+            if (
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
+                !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'])
+            ) {
+                $CIDRAM['DeactivateComponent']('ipv4');
+                $CIDRAM['DeactivateComponent']('ipv6');
+                $CIDRAM['DeactivateComponent']('modules');
+            }
+            if (!$CIDRAM['Deactivation']['modified'] || !$CIDRAM['Deactivation']['Config']) {
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_deactivation_failed'];
+            } else {
+                $CIDRAM['Deactivation']['Config'] = str_replace(
+                    array(
+                        "\r\nipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'\r\n",
+                        "\r\nipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'\r\n",
+                        "\r\nmodules='" . $CIDRAM['Config']['signatures']['modules'] . "'\r\n"
+                    ), array(
+                        "\r\nipv4='" . $CIDRAM['Deactivation']['ipv4'] . "'\r\n",
+                        "\r\nipv6='" . $CIDRAM['Deactivation']['ipv6'] . "'\r\n",
+                        "\r\nmodules='" . $CIDRAM['Deactivation']['modules'] . "'\r\n"
+                    ),
+                    $CIDRAM['Deactivation']['Config']
+                );
+                $CIDRAM['Config']['signatures']['ipv4'] = $CIDRAM['Deactivation']['ipv4'];
+                $CIDRAM['Config']['signatures']['ipv6'] = $CIDRAM['Deactivation']['ipv6'];
+                $CIDRAM['Config']['signatures']['modules'] = $CIDRAM['Deactivation']['modules'];
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'config.ini', 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['Deactivation']['Config']);
+                fclose($CIDRAM['Handle']);
+                $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_deactivated'];
+            }
+            unset($CIDRAM['Deactivation']);
         }
 
     }
@@ -1126,15 +1253,31 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             }
             if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
+                $CIDRAM['Activable'] = (
+                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv4') !== false ||
+                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv6') !== false ||
+                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;modules') !== false
+                );
                 if (
                     ($CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang']) ||
                     ($CIDRAM['Components']['Key'] === 'CIDRAM') ||
-                    $CIDRAM['IsInUse']($CIDRAM['Components']['ThisComponent']['Files']['To'])
+                    $CIDRAM['IsInUse'](
+                        $CIDRAM['Components']['ThisComponent']['Files']['To'],
+                        $CIDRAM['Components']['ThisComponent']['Extended Description']
+                    )
                 ) {
                     $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $CIDRAM['lang']['state_component_is_active'] . '</div>'
                     );
+                    if ($CIDRAM['Activable']) {
+                        $CIDRAM['Components']['ThisComponent']['Options'] .=
+                            '<option value="deactivate-component">' . $CIDRAM['lang']['field_deactivate'] . '</option>';
+                    }
                 } else {
+                    if ($CIDRAM['Activable']) {
+                        $CIDRAM['Components']['ThisComponent']['Options'] .=
+                            '<option value="activate-component">' . $CIDRAM['lang']['field_activate'] . '</option>';
+                    }
                     if (!empty($CIDRAM['Components']['ThisComponent']['Uninstallable'])) {
                         $CIDRAM['Components']['ThisComponent']['Options'] .=
                             '<option value="uninstall-component">' . $CIDRAM['lang']['field_uninstall'] . '</option>';
@@ -1298,6 +1441,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['ThisComponent']['Name'],
                 $CIDRAM['Config']['general']['lang']
             );
+        }
+        if (empty($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
+            $CIDRAM['Components']['ThisComponent']['Extended Description'] = '';
         }
         if (is_array($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
             $CIDRAM['IsolateL10N'](

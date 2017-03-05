@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.03.03).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Một danh sách các tập tin ch�
 $CIDRAM['lang']['config_signatures_modules'] = 'Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
+$CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
 $CIDRAM['lang']['field_clear'] = 'Hủy bỏ';
 $CIDRAM['lang']['field_component'] = 'Gói';
 $CIDRAM['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
+$CIDRAM['lang']['field_deactivate'] = 'Vô hiệu hóa';
 $CIDRAM['lang']['field_delete_account'] = 'Xóa tài khoản';
 $CIDRAM['lang']['field_delete_file'] = 'Xóa Bỏ';
 $CIDRAM['lang']['field_download_file'] = 'Tải Về';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành cô
 $CIDRAM['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Tài khoản này không tồn tại.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Mật khẩu cập nhật thành công!';
+$CIDRAM['lang']['response_activated'] = 'Kích hoạt thành công.';
+$CIDRAM['lang']['response_activation_failed'] = 'Không thể kích hoạt!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Gói cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ bỏ cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
 $CIDRAM['lang']['response_component_update_error'] = 'Có lỗi xảy ra trong khi cố gắng để cập nhật các gói.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
+$CIDRAM['lang']['response_deactivated'] = 'Vô hiệu hóa thành công.';
+$CIDRAM['lang']['response_deactivation_failed'] = 'Không thể vô hiệu hóa!';
 $CIDRAM['lang']['response_delete_error'] = 'Không thể xóa!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Thư mục xóa thành công!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Đổi tên thư mục thành công!';
@@ -148,8 +154,8 @@ $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Không thể xác đ�
 $CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
-$CIDRAM['lang']['state_component_is_active'] = 'Gói này đang hoạt động.';
-$CIDRAM['lang']['state_component_is_inactive'] = 'Gói này không đang hoạt động.';
+$CIDRAM['lang']['state_component_is_active'] = 'Gói này đang kích hoạt.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Gói này đang vô hiệu hóa.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';

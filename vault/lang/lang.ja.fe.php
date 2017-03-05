@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.03.03).
+ * This file: Japanese language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'ＩＰｖ６のシグネチャフ�
 $CIDRAM['lang']['config_signatures_modules'] = 'ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。 これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '違反はいつカウントされるべきですか？ False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。';
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣＳＳファイルＵＲＬ。';
+$CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
 $CIDRAM['lang']['field_clear'] = 'キャンセル';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
 $CIDRAM['lang']['field_create_new_account'] = '新しいアカウントを作成する';
+$CIDRAM['lang']['field_deactivate'] = '非アクティブにする';
 $CIDRAM['lang']['field_delete_account'] = 'アカウントを削除する';
 $CIDRAM['lang']['field_delete_file'] = '削除';
 $CIDRAM['lang']['field_download_file'] = 'ダウンロード';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = 'アカウントを作成に成�
 $CIDRAM['lang']['response_accounts_deleted'] = 'アカウントを削除が成功しました！';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'そのアカウントは存在しません。';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'パスワードの更新が成功しました！';
+$CIDRAM['lang']['response_activated'] = 'アクティブにしました。';
+$CIDRAM['lang']['response_activation_failed'] = 'アクティブ化に失敗しました！';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'コンポーネントのインストールに成功しました。';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'コンポーネントのアンインストールは成功しました。';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
 $CIDRAM['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
 $CIDRAM['lang']['response_configuration_updated'] = 'コンフィギュレーションの更新が成功しました。';
+$CIDRAM['lang']['response_deactivated'] = '非アクティブにしました。';
+$CIDRAM['lang']['response_deactivation_failed'] = '非アクティブ化に失敗しました！';
 $CIDRAM['lang']['response_delete_error'] = '削除に失敗しました！';
 $CIDRAM['lang']['response_directory_deleted'] = 'ディレクトリが正常に削除されました！';
 $CIDRAM['lang']['response_directory_renamed'] = 'ディレクトリの名前が変更されました！';

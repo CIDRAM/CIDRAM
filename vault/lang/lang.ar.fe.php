@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.03.03).
+ * This file: Arabic language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'وهناك قائمة من المل
 $CIDRAM['lang']['config_signatures_modules'] = 'قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'متى يجب أن تحسب المخالفات؟ False = عندما IP تم حظره من قبل وحدات. True = عندما IP يتم حظر لأي سبب من الأسباب.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
+$CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_clear'] = 'إلغاء';
 $CIDRAM['lang']['field_component'] = 'وحدة';
 $CIDRAM['lang']['field_create_new_account'] = 'خلق جديد حساب';
+$CIDRAM['lang']['field_deactivate'] = 'جعلها غير نشطة';
 $CIDRAM['lang']['field_delete_account'] = 'حذف حساب';
 $CIDRAM['lang']['field_delete_file'] = 'حذف';
 $CIDRAM['lang']['field_download_file'] = 'تحميل';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!'
 $CIDRAM['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'حساب غير موجود.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'كلمه السر التحديث بنجاح!';
+$CIDRAM['lang']['response_activated'] = 'نجحت في جعل نشطة';
+$CIDRAM['lang']['response_activation_failed'] = 'فشلت في جعله نشطة!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'وحدة تم التثبيت بنجاح.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'وحدة إلغاء تثبيت بنجاح.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'وحدة تم التحديث بنجاح.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة.';
 $CIDRAM['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث الوحدة.';
 $CIDRAM['lang']['response_configuration_updated'] = 'التكوين تحديثها بنجاح.';
+$CIDRAM['lang']['response_deactivated'] = 'نجحت في جعل غير نشطة';
+$CIDRAM['lang']['response_deactivation_failed'] = 'فشلت في جعله غير نشطة!';
 $CIDRAM['lang']['response_delete_error'] = 'فشلت في حذف!';
 $CIDRAM['lang']['response_directory_deleted'] = 'دليل حذف بنجاح!';
 $CIDRAM['lang']['response_directory_renamed'] = 'الدليل إعادة تسمية بنجاح!';

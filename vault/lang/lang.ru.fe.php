@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.03.03).
+ * This file: Russian language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,11 +55,13 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Список сигнатур IPv6 
 $CIDRAM['lang']['config_signatures_modules'] = 'Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для пользовательских тем.';
+$CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';
 $CIDRAM['lang']['field_blocked'] = 'Блокированный';
 $CIDRAM['lang']['field_clear'] = 'Отмена';
 $CIDRAM['lang']['field_component'] = 'Компонент';
 $CIDRAM['lang']['field_create_new_account'] = 'Создать Новый Аккаунт';
+$CIDRAM['lang']['field_deactivate'] = 'Дезактивировать';
 $CIDRAM['lang']['field_delete_account'] = 'Удалить Аккаунт';
 $CIDRAM['lang']['field_delete_file'] = 'Удалить';
 $CIDRAM['lang']['field_download_file'] = 'Скачать';
@@ -117,12 +119,16 @@ $CIDRAM['lang']['response_accounts_created'] = 'Аккаунт успешно с
 $CIDRAM['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Эта аккаунт не существует.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Пароль успешно обновлено!';
+$CIDRAM['lang']['response_activated'] = 'Успешно активирован.';
+$CIDRAM['lang']['response_activation_failed'] = 'Не удалось активировать!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Компонент успешно установлен.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Компонент успешно удален.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Произошла ошибка при попытке удалить компонент.';
 $CIDRAM['lang']['response_component_update_error'] = 'Произошла ошибка при попытке обновить компонент.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Конфигурация успешно обновлено.';
+$CIDRAM['lang']['response_deactivated'] = 'Успешно деактивирован.';
+$CIDRAM['lang']['response_deactivation_failed'] = 'Не удалось дезактивировать!';
 $CIDRAM['lang']['response_delete_error'] = 'Не удалось удалить!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Каталог успешно удален!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Каталог успешно переименован!';

@@ -605,4 +605,4 @@ CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo
 ---
 
 
-Última Atualização: 3 Março 2016 (2017.03.03).
+Última Atualização: 3 Março 2017 (2017.03.03).

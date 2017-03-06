@@ -918,23 +918,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
         /** Uninstall a component. */
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
-            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
-                if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
-                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'] = '';
-                }
-                if (is_array($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
-                    $CIDRAM['IsolateL10N'](
-                        $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'],
-                        $CIDRAM['Config']['general']['lang']
-                    );
-                }
-                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
-                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = $CIDRAM['IsInUse'](
-                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'],
-                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description']
-                );
-            }
+            $CIDRAM['ComponentFunctionUpdatePrep']();
             if (
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
@@ -1006,23 +990,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 'modules' => $CIDRAM['Config']['signatures']['modules'],
                 'modified' => false
             );
-            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
-                if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
-                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'] = '';
-                }
-                if (is_array($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
-                    $CIDRAM['IsolateL10N'](
-                        $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'],
-                        $CIDRAM['Config']['general']['lang']
-                    );
-                }
-                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
-                $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = $CIDRAM['IsInUse'](
-                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'],
-                    $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description']
-                );
-            }
+            $CIDRAM['ComponentFunctionUpdatePrep']();
             if (
                 empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&

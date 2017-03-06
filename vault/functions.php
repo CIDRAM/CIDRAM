@@ -1825,7 +1825,7 @@ $CIDRAM['IPv6GetLast'] = function ($First, $Factor) {
     return $Last;
 };
 
-/** Fetch remote data (only to be called from the front-end updates page). */
+/** Fetch remote data (front-end updates page). */
 $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
     $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['FECacheGet'](
         $CIDRAM['FE']['Cache'],
@@ -1852,7 +1852,7 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
     }
 };
 
-/** Activate component (only to be called from the front-end updates page). */
+/** Activate component (front-end updates page). */
 $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
@@ -1878,7 +1878,7 @@ $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
     }
 };
 
-/** Deactivate component (only to be called from the front-end updates page). */
+/** Deactivate component (front-end updates page). */
 $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
@@ -1897,5 +1897,26 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = substr($CIDRAM['Deactivation'][$Type], 1, -1);
     if ($CIDRAM['Deactivation'][$Type] !== $CIDRAM['Config']['signatures'][$Type]) {
         $CIDRAM['Deactivation']['modified'] = true;
+    }
+};
+
+/** Duplication avoidance (front-end updates page). */
+$CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
+    if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
+        if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
+            $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'] = '';
+        }
+        if (is_array($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
+            $CIDRAM['IsolateL10N'](
+                $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'],
+                $CIDRAM['Config']['general']['lang']
+            );
+        }
+        $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
+        $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
+        $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = $CIDRAM['IsInUse'](
+            $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'],
+            $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description']
+        );
     }
 };

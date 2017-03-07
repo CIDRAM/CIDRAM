@@ -4,23 +4,24 @@
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# %Listed, Google Malware Dashboard: 21.05%.
-# Updated: 2016.07.31
+# %Listed, Google Malware Dashboard: 2.54%.
+# %Listed, CleanTalk.org: 40.80%.
+# Updated: 2017.03.07
 
 14.192.4.0/22 Deny Generic
-23.224.224.0/24 Deny Generic
-23.226.48.0/22 Deny Generic
-23.226.52.0/23 Deny Generic
-23.226.55.0/24 Deny Generic
-23.226.56.0/24 Deny Generic
-23.226.58.0/23 Deny Generic
-23.226.60.0/22 Deny Generic
-23.226.176.0/20 Deny Generic
-23.234.44.0/22 Deny Generic
+23.226.48.0/20 Deny Generic
+23.226.176.0/22 Deny Generic
+23.226.180.0/24 Deny Generic
+23.226.185.0/24 Deny Generic
+23.226.186.0/23 Deny Generic
+23.226.188.0/22 Deny Generic
+23.234.44.0/24 Deny Generic
 23.235.128.0/19 Deny Generic
+23.235.164.0/22 Deny Generic
+23.235.168.0/23 Deny Generic
+23.235.171.0/24 Deny Generic
 23.235.172.0/22 Deny Generic
-23.235.176.0/21 Deny Generic
-23.235.184.0/22 Deny Generic
+23.235.176.0/20 Deny Generic
 27.0.192.0/22 Deny Generic
 43.224.140.0/22 Deny Generic
 43.224.224.0/22 Deny Generic
@@ -28,7 +29,8 @@
 43.225.124.0/22 Deny Generic
 43.226.16.0/21 Deny Generic
 43.229.112.0/22 Deny Generic
-43.229.120.0/22 Deny Generic
+43.229.120.0/23 Deny Generic
+43.229.122.0/24 Deny Generic
 43.229.212.0/22 Deny Generic
 43.230.168.0/22 Deny Generic
 43.240.36.0/22 Deny Generic
@@ -36,8 +38,6 @@
 43.240.236.0/22 Deny Generic
 43.241.45.0/24 Deny Generic
 43.241.46.0/23 Deny Generic
-43.241.157.0/24 Deny Generic
-43.241.159.0/24 Deny Generic
 43.242.200.0/22 Deny Generic
 43.243.28.0/22 Deny Generic
 43.243.32.0/22 Deny Generic
@@ -47,7 +47,7 @@
 43.243.108.0/22 Deny Generic
 43.243.188.0/22 Deny Generic
 43.243.220.0/22 Deny Generic
-43.246.212.0/22 Deny Generic
+43.246.213.0/24 Deny Generic
 43.248.8.0/22 Deny Generic
 43.248.172.0/22 Deny Generic
 43.249.24.0/22 Deny Generic
@@ -58,13 +58,12 @@
 45.64.52.0/22 Deny Generic
 45.64.108.0/22 Deny Generic
 45.113.0.0/22 Deny Generic
-45.113.108.0/22 Deny Generic
+45.113.108.0/24 Deny Generic
+45.113.110.0/23 Deny Generic
 45.113.160.0/22 Deny Generic
 45.114.104.0/22 Deny Generic
 45.114.168.0/22 Deny Generic
-45.114.205.0/24 Deny Generic
-45.114.206.0/23 Deny Generic
-45.115.40.0/22 Deny Generic
+45.115.42.0/23 Deny Generic
 45.115.124.0/22 Deny Generic
 45.116.212.0/22 Deny Generic
 45.117.40.0/22 Deny Generic
@@ -80,7 +79,6 @@
 45.250.196.0/22 Deny Generic
 103.1.40.0/24 Deny Generic
 103.1.42.0/23 Deny Generic
-103.9.252.0/22 Deny Generic
 103.12.68.0/22 Deny Generic
 103.12.92.0/22 Deny Generic
 103.12.148.0/22 Deny Generic
@@ -89,12 +87,10 @@
 103.19.188.0/22 Deny Generic
 103.24.204.0/22 Deny Generic
 103.26.124.0/22 Deny Generic
-103.35.200.0/22 Deny Generic
+103.35.200.0/23 Deny Generic
 103.36.20.0/22 Deny Generic
 103.37.0.0/22 Deny Generic
 103.37.40.0/22 Deny Generic
-103.37.85.0/24 Deny Generic
-103.37.87.0/24 Deny Generic
 103.38.80.0/22 Deny Generic
 103.39.16.0/22 Deny Generic
 103.39.76.0/22 Deny Generic
@@ -109,7 +105,6 @@
 103.44.20.0/22 Deny Generic
 103.44.88.0/22 Deny Generic
 103.45.64.0/21 Deny Generic
-103.48.20.0/22 Deny Generic
 103.48.132.0/22 Deny Generic
 103.48.144.0/22 Deny Generic
 103.49.8.0/22 Deny Generic
@@ -119,13 +114,22 @@
 103.53.6.0/24 Deny Generic
 103.54.60.0/22 Deny Generic
 103.54.124.0/22 Deny Generic
-103.54.176.0/22 Deny Generic
 103.55.28.0/22 Deny Generic
 103.55.128.0/22 Deny Generic
 103.57.24.0/22 Deny Generic
 103.57.228.0/22 Deny Generic
+103.59.229.0/24 Deny Generic
 103.60.148.0/22 Deny Generic
 103.61.0.0/22 Deny Generic
+103.75.12.0/22 Deny Generic
+103.75.44.0/22 Deny Generic
+103.79.184.0/22 Deny Generic
+103.80.16.0/23 Deny Generic
+103.80.18.0/24 Deny Generic
+103.80.124.0/22 Deny Generic
+103.82.168.0/22 Deny Generic
+103.85.72.0/22 Deny Generic
+103.85.188.0/22 Deny Generic
 103.193.144.0/22 Deny Generic
 103.193.150.0/24 Deny Generic
 103.193.240.0/22 Deny Generic
@@ -137,11 +141,11 @@
 103.203.52.0/22 Deny Generic
 103.203.148.0/22 Deny Generic
 103.204.76.0/22 Deny Generic
-103.205.4.0/22 Deny Generic
 103.205.240.0/22 Deny Generic
 103.206.36.0/22 Deny Generic
 103.206.108.0/22 Deny Generic
 103.208.32.0/22 Deny Generic
+103.209.232.0/22 Deny Generic
 103.211.68.0/22 Deny Generic
 103.211.124.0/22 Deny Generic
 103.212.104.0/22 Deny Generic
@@ -149,7 +153,6 @@
 103.214.172.0/22 Deny Generic
 103.214.224.0/22 Deny Generic
 103.215.4.0/22 Deny Generic
-103.215.8.0/22 Deny Generic
 103.215.76.0/22 Deny Generic
 103.215.212.0/22 Deny Generic
 103.219.104.0/22 Deny Generic
@@ -158,34 +161,64 @@
 103.230.228.0/22 Deny Generic
 103.230.240.0/22 Deny Generic
 103.231.28.0/22 Deny Generic
-103.231.104.0/22 Deny Generic
+103.231.104.0/24 Deny Generic
+103.231.106.0/23 Deny Generic
 103.231.164.0/22 Deny Generic
 103.231.185.0/24 Deny Generic
-103.231.186.0/23 Deny Generic
+103.231.187.0/24 Deny Generic
 103.233.184.0/22 Deny Generic
 103.233.248.0/22 Deny Generic
+103.234.52.0/22 Deny Generic
 103.241.72.0/22 Deny Generic
-103.248.36.0/22 Deny Generic
+103.248.36.0/24 Deny Generic
+103.248.38.0/23 Deny Generic
 103.253.140.0/22 Deny Generic
 103.254.108.0/22 Deny Generic
-107.151.64.0/18 Deny Generic
+107.151.64.0/20 Deny Generic
+107.151.80.0/21 Deny Generic
+107.151.89.0/24 Deny Generic
+107.151.90.0/23 Deny Generic
+107.151.92.0/22 Deny Generic
+107.151.96.0/19 Deny Generic
 112.213.96.0/19 Deny Generic
 115.42.60.0/22 Deny Generic
 116.193.164.0/22 Deny Generic
 116.213.40.0/22 Deny Generic
 117.18.0.0/20 Deny Generic
+117.120.60.0/22 Deny Generic
 121.54.160.0/22 Deny Generic
 121.54.168.0/21 Deny Generic
 121.127.224.0/19 Deny Generic
-122.9.64.0/18 Deny Generic
-122.9.128.0/21 Deny Generic
-122.9.136.0/22 Deny Generic
-122.9.140.0/23 Deny Generic
-122.9.142.0/24 Deny Generic
-122.9.144.0/20 Deny Generic
+122.9.64.0/22 Deny Generic
+122.9.68.0/23 Deny Generic
+122.9.71.0/24 Deny Generic
+122.9.72.0/23 Deny Generic
+122.9.75.0/24 Deny Generic
+122.9.76.0/23 Deny Generic
+122.9.78.0/24 Deny Generic
+122.9.80.0/21 Deny Generic
+122.9.89.0/24 Deny Generic
+122.9.90.0/23 Deny Generic
+122.9.92.0/22 Deny Generic
+122.9.96.0/24 Deny Generic
+122.9.98.0/23 Deny Generic
+122.9.100.0/24 Deny Generic
+122.9.102.0/23 Deny Generic
+122.9.104.0/22 Deny Generic
+122.9.108.0/23 Deny Generic
+122.9.111.0/24 Deny Generic
+122.9.114.0/23 Deny Generic
+122.9.119.0/24 Deny Generic
+122.9.120.0/22 Deny Generic
+122.9.124.0/24 Deny Generic
+122.9.126.0/23 Deny Generic
+122.9.148.0/23 Deny Generic
+122.9.150.0/24 Deny Generic
+122.9.153.0/24 Deny Generic
+122.9.155.0/24 Deny Generic
+122.9.156.0/22 Deny Generic
 122.9.160.0/22 Deny Generic
-122.9.165.0/24 Deny Generic
-122.9.166.0/23 Deny Generic
+122.9.167.0/24 Deny Generic
 122.9.168.0/21 Deny Generic
 122.9.176.0/20 Deny Generic
 122.9.192.0/18 Deny Generic
@@ -204,8 +237,7 @@
 122.10.32.0/21 Deny Generic
 122.10.40.0/23 Deny Generic
 122.10.43.0/24 Deny Generic
-122.10.44.0/23 Deny Generic
-122.10.47.0/24 Deny Generic
+122.10.44.0/22 Deny Generic
 122.10.48.0/22 Deny Generic
 122.10.52.0/23 Deny Generic
 122.10.54.0/24 Deny Generic
@@ -213,19 +245,33 @@
 122.10.59.0/24 Deny Generic
 122.10.61.0/24 Deny Generic
 122.10.62.0/24 Deny Generic
-122.10.68.0/22 Deny Generic
-122.10.72.0/21 Deny Generic
-123.60.0.0/19 Deny Generic
-123.60.32.0/20 Deny Generic
-123.60.48.0/23 Deny Generic
+122.10.68.0/23 Deny Generic
+122.10.70.0/24 Deny Generic
+122.10.72.0/24 Deny Generic
+122.10.77.0/24 Deny Generic
+123.60.0.0/20 Deny Generic
+123.60.16.0/21 Deny Generic
+123.60.24.0/22 Deny Generic
+123.60.28.0/23 Deny Generic
+123.60.30.0/24 Deny Generic
+123.60.37.0/24 Deny Generic
+123.60.43.0/24 Deny Generic
+123.60.44.0/22 Deny Generic
+123.60.48.0/24 Deny Generic
 123.60.50.0/24 Deny Generic
-123.60.52.0/22 Deny Generic
-123.60.56.0/21 Deny Generic
+123.60.52.0/24 Deny Generic
+123.60.55.0/24 Deny Generic
+123.60.59.0/24 Deny Generic
+123.60.60.0/23 Deny Generic
+123.60.62.0/24 Deny Generic
 123.60.64.0/21 Deny Generic
 123.60.72.0/23 Deny Generic
 123.60.74.0/24 Deny Generic
 123.60.76.0/22 Deny Generic
-123.60.80.0/20 Deny Generic
+123.60.80.0/21 Deny Generic
+123.60.89.0/24 Deny Generic
+123.60.90.0/23 Deny Generic
+123.60.92.0/22 Deny Generic
 123.60.96.0/21 Deny Generic
 123.60.104.0/22 Deny Generic
 123.60.108.0/23 Deny Generic
@@ -240,7 +286,20 @@
 123.60.150.0/23 Deny Generic
 123.60.152.0/21 Deny Generic
 123.60.160.0/19 Deny Generic
-123.60.192.0/18 Deny Generic
+123.60.192.0/20 Deny Generic
+123.60.208.0/24 Deny Generic
+123.60.210.0/23 Deny Generic
+123.60.213.0/24 Deny Generic
+123.60.214.0/23 Deny Generic
+123.60.216.0/21 Deny Generic
+123.60.224.0/20 Deny Generic
+123.60.240.0/23 Deny Generic
+123.60.242.0/24 Deny Generic
+123.60.245.0/24 Deny Generic
+123.60.246.0/23 Deny Generic
+123.60.248.0/23 Deny Generic
+123.60.251.0/24 Deny Generic
+123.60.252.0/22 Deny Generic
 139.5.208.0/22 Deny Generic
 144.48.124.0/22 Deny Generic
 144.48.172.0/22 Deny Generic
@@ -261,7 +320,7 @@
 172.247.248.0/21 Deny Generic
 175.176.180.0/22 Deny Generic
 182.161.60.0/22 Deny Generic
-192.61.80.0/23 Deny Generic
+182.255.44.0/22 Deny Generic
 192.151.226.0/23 Deny Generic
 192.151.228.0/23 Deny Generic
 192.151.232.0/22 Deny Generic
@@ -270,10 +329,7 @@
 192.151.248.0/21 Deny Generic
 192.249.84.0/23 Deny Generic
 192.249.87.0/24 Deny Generic
-198.44.240.0/23 Deny Generic
-198.44.242.0/24 Deny Generic
 198.44.244.0/22 Deny Generic
-202.40.160.0/23 Deny Generic
 202.89.0.0/22 Deny Generic
 202.146.216.0/21 Deny Generic
 202.165.120.0/22 Deny Generic
@@ -1019,16 +1075,21 @@ recaptcha:
  enabled: true
 
 
-# ASN 45727 ("PT Hutchison CP Telecommunications").
-# %Listed, Google Malware Dashboard: 1.12%.
-# Updated: 2016.07.20
+# ASN 45727 ("Hutchison CP Telecommunications, PT").
+# %Listed, Google Malware Dashboard: 0.85.
+# %Listed, CleanTalk.org: 35.10%.
+# Updated: 2017.03.07
 
 23.0.166.0/23 Deny Spam
 23.3.76.0/22 Deny Spam
 23.5.192.0/20 Deny Spam
 23.13.0.0/20 Deny Spam
-45.121.217.0/24 Deny Spam
 103.10.64.0/22 Deny Spam
+114.142.168.0/21 Deny Spam
+116.206.8.0/21 Deny Spam
+116.206.28.0/22 Deny Spam
+116.206.32.0/21 Deny Spam
+116.206.40.0/22 Deny Spam
 124.153.32.0/23 Deny Spam
 180.214.232.0/23 Deny Spam
 180.214.234.0/24 Deny Spam
@@ -1204,8 +1265,7 @@ Tag: OBEC
 
 
 # ASN 45682 ("Excite Japan Co., Ltd").
-# %Listed, Google Malware Dashboard: 0.01%.
-# Updated: 2016.01.18 / Checked: 2016.07.20
+# Updated: 2016.01.18 / Checked: 2017.03.07
 
 180.235.96.0/21 Deny Generic
 Tag: Excite Japan
@@ -1417,7 +1477,7 @@ recaptcha:
 
 # Kintiskton LLC; Mark Manager copyright check bot (abusive history).
 # Seen split inconsistently over multiple ASNs (need to be careful when updating).
-# Updated: 2016.04.13 / Checked: 2017.01.25
+# Updated: 2016.04.13 / Checked: 2017.03.02
 
 63.110.187.0/24 Deny Generic
 Tag: Kintiskton LLC
@@ -1956,8 +2016,9 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# %Listed, Google Malware Dashboard: 2.67% (AS3491), 0% (AS6279), "ASN not found" (AS7262).
-# Updated: 2016.07.20
+# %Listed, Google Malware Dashboard: 1.99% (AS3491), 0% (AS6279/AS7262).
+# %Listed, CleanTalk.org: 11.36% (AS3491), 0% (AS6279/AS7262).
+# Updated: 2017.03.07
 
 23.32.176.0/20 Deny Spam
 23.33.44.0/22 Deny Spam
@@ -1974,8 +2035,10 @@ Tag: Yes Networks
 65.72.0.0/18 Deny Spam
 65.72.64.0/20 Deny Spam
 69.1.80.0/24 Deny Spam
-69.1.86.0/23 Deny Spam
+69.1.86.0/24 Deny Spam
 69.1.88.0/24 Deny Spam
+75.96.165.0/24 Deny Spam
+103.17.28.0/22 Deny Spam
 103.20.192.0/22 Deny Spam
 104.95.20.0/22 Deny Spam
 104.95.24.0/21 Deny Spam
@@ -2230,11 +2293,11 @@ recaptcha:
  enabled: true
 
 
-# ASN 203912 ('"SICRES" S.R.L').
+# ASN 203912 ("Sicres SRL").
 # Caught distributing ransomware (188.0.236.7:443).
-# %Listed, Google Malware Dashboard: 2.46%.
-# %Listed, CleanTalk.org: 11.11%.
-# Updated: 2017.01.25
+# %Listed, Google Malware Dashboard: 10.53%.
+# %Listed, CleanTalk.org: 7.14%.
+# Updated: 2017.01.25 / Checked: 2017.03.07
 
 185.162.84.0/22 Deny Generic
 185.169.48.0/22 Deny Generic
@@ -2245,8 +2308,9 @@ Tag: SICRES SRL
 
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 2.39%.
-# Updated: 2016.07.20
+# %Listed, Google Malware Dashboard: 1.38%.
+# %Listed, CleanTalk.org: 23.73%.
+# Updated: 2017.03.07
 
 31.31.96.0/19 Deny Generic
 37.203.0.0/19 Deny Generic
@@ -2259,6 +2323,9 @@ Tag: SICRES SRL
 176.119.64.0/18 Deny Generic
 185.23.104.0/22 Deny Generic
 185.145.104.0/22 Deny Generic
+185.166.220.0/22 Deny Generic
+185.177.240.0/22 Deny Generic
+185.184.168.0/22 Deny Generic
 188.115.128.0/18 Deny Generic
 195.138.64.0/19 Deny Generic
 212.178.0.0/19 Deny Generic
@@ -2287,7 +2354,8 @@ Tag: STARNET S.R.L
 
 
 # ASN 31423 ("Przedsiebiorstwo "PROMAX" Spolka Jawna Zofia Formanek-Mroczkowska Wieslaw Okroj").
-# Updated: 2016.07.24
+# %Listed, CleanTalk.org: 17.91%.
+# Updated: 2016.07.24 / Checked: 2017.03.07
 
 77.89.64.0/18 Deny Generic
 87.248.64.0/19 Deny Generic

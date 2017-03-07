@@ -4,9 +4,11 @@
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# %Listed, Google Malware Dashboard: 21.05%.
-# Updated: 2016.07.31
+# %Listed, Google Malware Dashboard: 2.54%.
+# %Listed, CleanTalk.org: 40.80%.
+# Updated: 2017.03.07
 
+2001:7fa:0:1::/64 Deny Generic
 2400:1c80::/48 Deny Generic
 2403:ea00::/32 Deny Generic
 Tag: Sun Network HK
@@ -110,15 +112,19 @@ Tag: Hetzner Online GmbH
 Tag: AS51559
 
 
-# ASN 45727 ("PT Hutchison CP Telecommunications").
-# %Listed, Google Malware Dashboard: 1.12%.
-# Updated: 2016.07.20
+# ASN 45727 ("Hutchison CP Telecommunications, PT").
+# %Listed, Google Malware Dashboard: 0.85.
+# %Listed, CleanTalk.org: 35.10%.
+# Updated: 2017.03.07
 
 2400:8b00:1000:1::/64 Deny Spam
 2400:8b00:1000:2::/64 Deny Spam
-2400:8b00:1000:4::/64 Deny Spam
-2400:8b00:a000::/47 Deny Spam
-2400:8b00:a400::/64 Deny Spam
+2400:8b00:1000:4::/63 Deny Spam
+2400:8b00:1000:7::/64 Deny Spam
+2400:8b00:1000:8::/64 Deny Spam
+2400:8b00:1100:1::/64 Deny Spam
+2400:8b00:a000::/48 Deny Spam
+2400:8b00:a001::/48 Deny Spam
 Tag: PT Hutchison
 ---
 recaptcha:
@@ -136,8 +142,7 @@ recaptcha:
 
 
 # ASN 45682 ("Excite Japan Co., Ltd").
-# %Listed, Google Malware Dashboard: 0.01%.
-# Updated: 2016.01.18 / Checked: 2016.07.20
+# Updated: 2016.01.18 / Checked: 2017.03.07
 
 2402:dc00::/32 Deny Generic
 Tag: Excite Japan
@@ -366,16 +371,14 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# %Listed, Google Malware Dashboard: 2.67% (AS3491), 0% (AS6279), "ASN not found" (AS7262).
-# Updated: 2016.07.20
+# %Listed, Google Malware Dashboard: 1.99% (AS3491), 0% (AS6279/AS7262).
+# %Listed, CleanTalk.org: 11.36% (AS3491), 0% (AS6279/AS7262).
+# Updated: 2017.03.07
 
-2001:478:124::/48 Deny Spam
 2400:8800::/32 Deny Spam
 2600:1400:7::/48 Deny Spam
 2600:1407:8::/48 Deny Spam
-2602:ff95::/36 Deny Spam
 2a02:b48:4000::/34 Deny Spam
-2a02:13e0:2::/48 Deny Spam
 2a03:5400::/32 Deny Spam
 Tag: PCCW Global
 ---
@@ -444,8 +447,9 @@ recaptcha:
 
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 2.39%.
-# Updated: 2016.07.20
+# %Listed, Google Malware Dashboard: 1.38%.
+# %Listed, CleanTalk.org: 23.73%.
+# Updated: 2016.07.20 / Checked: 2017.03.07
 
 2a04:2c00::/29 Deny Generic
 Tag: TeNeT

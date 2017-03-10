@@ -198,7 +198,7 @@ Fichier | Description
 /vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache.dat | Données du cache.
-/vault/cidramblocklists.dat | Contient des informations relatives aux listes facultatives pour les pays bloquants fourni par Macmathan; Utilisé par la page des mises à jour fournies par de l'accès frontal.
+/vault/cidramblocklists.dat | Contient des informations relatives aux listes facultatives pour les pays bloquants fournies par Macmathan; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/cli.php | Module de CLI.
 /vault/components.dat | Contient des informations relatives aux divers composants de CIDRAM; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour CIDRAM, pour comment fonctionner correctement (renommer pour activer).
@@ -281,7 +281,7 @@ Configuration générale pour CIDRAM.
 - Spécifiez la langue défaut pour CIDRAM.
 
 "emailaddr"
-- Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour soutien et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire).
+- Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire).
 
 "disable_cli"
 - Désactiver le mode CLI? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut]; True = Désactiver le mode CLI.
@@ -443,7 +443,7 @@ Si "Deny" est utilisé, quand la signature est déclenchée, en supposant qu'auc
 
 La valeur de `[Param]` accepté par "Deny" seront traitées au la sortie de la page "Accès Refusé", fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple "Je ne veux tu pas sur mon site"), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
 
-Les explications pré-préparés avoir le soutien de L10N et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de "Deny" sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le soutien de L10N et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
+Les explications pré-préparés avoir le support de L10N et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de "Deny" sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le support de L10N et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
 
 Les mots courts disponibles sont:
 - Bogon
@@ -602,7 +602,31 @@ Ceci peut être résumé par le tableau ci-dessous:
 CIDRAM ne bloque *PAS* une adresse IP | Vrai négatif (inférence correcte) | Détection manquée (analogue à faux négatif)
 CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence correcte)
 
+####CIDRAM peut-il bloquer des pays entiers?
+
+Oui. La meilleure façon d'y parvenir serait d'installer certaines des listes facultatives pour les pays bloquants fournies par Macmathan. Cela peut être fait avec quelques clics simples directement à partir de la page des mises à jour de l'accès frontal, ou, si vous préférez que l'accès frontal reste désactivé, en les téléchargeant directement depuis la **[page de téléchargement des listes facultatives pour les pays bloquants](https://macmathan.info/blocklists)**, en les téléchargeant dans le vault, et en citant leurs noms dans les directives de configuration appropriées.
+
+####À quelle fréquence les signatures sont-elles mises à jour?
+
+La fréquence de mise à jour varie selon les fichiers de signature en question. Tous les mainteneurs des fichiers de signature pour CIDRAM tentent généralement de conserver leurs signatures aussi à jour que possible, mais comme nous avons tous divers autres engagements, nos vies en dehors du projet, et comme aucun de nous n'est rémunéré financièrement (ou payé) pour nos efforts sur le projet, un planning de mise à jour précis ne peut être garanti. Généralement, les signatures sont mises à jour chaque fois qu'il y a suffisamment de temps pour les mettre à jour, et généralement, les mainteneurs tentent de prioriser basé sur la nécessité et la fréquence à laquelle des changements se produisent entre les gammes. L'assistance est toujours appréciée si vous êtes prêt à en offrir.
+
+####J'ai rencontré un problème lors de l'utilisation de CIDRAM et je ne sais pas quoi faire à ce sujet! Aidez-moi!
+
+- Utilisez-vous la dernière version du logiciel? Utilisez-vous les dernières versions de vos fichiers de signature? Si la réponse à l'une ou l'autre de ces deux est non, essayez de tout mettre à jour tout d'abord, et vérifier si le problème persiste. Si elle persiste, continuez à lire.
+- Avez-vous vérifié toute la documentation? Si non, veuillez le faire. Si le problème ne peut être résolu en utilisant la documentation, continuez à lire.
+- Avez-vous vérifié la **[page des problèmes](https://github.com/Maikuolan/CIDRAM/issues)**, pour voir si le problème a été mentionné avant? Si on l'a mentionné avant, vérifier si des suggestions, des idées et/ou des solutions ont été fournies, et suivez comme nécessaire pour essayer de résoudre le problème.
+- Avez-vous vérifié le **[forum de support pour CIDRAM fourni par Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, pour voir si le problème a été mentionné avant? Si on l'a mentionné avant, vérifier si des suggestions, des idées et/ou des solutions ont été fournies, et suivez comme nécessaire pour essayer de résoudre le problème.
+- Si le problème persiste, veuillez nous en informer en créant un nouveau discussion sur la page des problèmes ou en le forum de support.
+
+####J'ai été bloqué par CIDRAM d'un site Web que je veux visiter! Aidez-moi!
+
+CIDRAM fournit un moyen pour les propriétaires de sites Web de bloquer le trafic indésirable, mais c'est la responsabilité des propriétaires de sites Web de décider eux-mêmes comment ils veulent utiliser CIDRAM. Dans le cas des faux positifs relatifs aux fichiers de signature normalement inclus dans CIDRAM, des corrections peuvent être apportées, mais en ce qui concerne d'être débloqué à partir de sites Web spécifiques, vous devrez contacter les propriétaires des sites Web en question. Dans les cas où des corrections sont apportées, à tout le moins, ils devront mettre à jour leurs fichiers de signature et/ou d'installation, et dans d'autres cas (tels que, par exemple, où ils ont modifié leur installation, créé leurs propres signatures personnalisées, etc), la responsabilité de résoudre votre problème est entièrement à eux, et est entièrement hors de notre contrôle.
+
+####Je veux utiliser CIDRAM avec une version PHP plus ancienne que 5.4.0; Pouvez-vous m'aider?
+
+Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 2014, et le support étendu en matière de sécurité a pris fin en 2015. À la date d'écriture, il est 2017, et PHP 7.1.0 est déjà disponible. À l'heure actuelle, le support est fourni pour l'utilisation de CIDRAM avec PHP 5.4.0 et toutes les nouvelles versions PHP disponibles, mais si vous essayez d'utiliser CIDRAM avec les anciennes versions PHP, le support ne sera pas fourni.
+
 ---
 
 
-Dernière Mise à Jour: 3 Mars 2017 (2017.03.03).
+Dernière Mise à Jour: 10 Mars 2017 (2017.03.10).

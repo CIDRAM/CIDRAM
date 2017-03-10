@@ -198,7 +198,7 @@ Archivo | Descripción
 /vault/lang/lang.zh.php | Lingüísticos datos Chino (simplificado).
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache.dat | Cache data.
-/vault/cidramblocklists.dat | Contiene información relativa a las listas opcionales para bloquear países proporcionado por Macmathan; Utilizado por la página de actualizaciones proporcionada por el front-end.
+/vault/cidramblocklists.dat | Contiene información relativa a las listas opcionales para bloquear países proporcionadas por Macmathan; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/cli.php | Módulo de la CLI.
 /vault/components.dat | Contiene información relativa a los diversos componentes de CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
@@ -602,7 +602,31 @@ Esto se puede resumir en la siguiente tabla:
 CIDRAM *NO* hace bloquear una dirección IP | Verdadero negativo (inferencia correcta) | Detección perdida (análogo a un falso negativo)
 CIDRAM *HACE* bloquear una dirección IP | __Falso positivo__ | Verdadero positivo (inferencia correcta)
 
+####¿Puede CIDRAM bloquear países enteros?
+
+Sí. La forma más fácil de lograr esto sería instalar algunas de las listas opcionales para bloquear países proporcionadas por Macmathan. Esto se puede hacer con unos simples clics directamente desde la página de actualizaciones del front-end, o, si prefiere que el front-end permanezca desactivado, con descargándolas directamente desde la **[página de descargar las listas opcionales para bloquear países](https://macmathan.info/blocklists)**, subirlos a la vault, y citando sus nombres en las directivas de configuración pertinentes.
+
+####¿Con qué frecuencia se actualizan las firmas?
+
+La frecuencia de actualización varía dependiendo de los archivos de firma en cuestión. Todos los mantenedores de los archivos de firma para CIDRAM generalmente tratan de mantener sus firmas tan actualizadas como sea posible, pero como todos nosotros tenemos varios otros compromisos, nuestras vidas fuera del proyecto, y como ninguno de nosotros es financieramente compensado (o pagado) por nuestros esfuerzos en el proyecto, no se puede garantizar un calendario de actualización preciso. Generalmente, las firmas se actualizan siempre que haya suficiente tiempo para actualizarlas, y generalmente, los mantenedores tratan de priorizar basándose en la necesidad y en la frecuencia con la que ocurren cambios entre rangos. La ayuda siempre es apreciada si usted está dispuesto a ofrecer cualquiera.
+
+####¡He encontrado un problema mientras uso CIDRAM y no sé qué hacer al respecto! ¡Por favor ayuda!
+
+- ¿Está utilizando la última versión del software? ¿Está utilizando las últimas versiones de sus archivos de firma? Si la respuesta a cualquiera de estas dos preguntas es no, intente actualizar todo primero, y compruebe si el problema persiste. Si persiste, continúe leyendo.
+- ¿Ha revisado toda la documentación? Si no, por favor, hágalo. Si el problema no puede resolverse utilizando la documentación, continúe leyendo.
+- ¿Ha revisado la **[página de problemas](https://github.com/Maikuolan/CIDRAM/issues)**, para ver si el problema ha sido mencionado antes? Si se ha mencionado antes, compruebe si se han proporcionado sugerencias, ideas y/o soluciones, y siga según sea necesario para tratar de resolver el problema.
+- ¿Ha consultado el **[foro de soporte para CIDRAM proporcionado por Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, para ver si el problema ha sido mencionado antes? Si se ha mencionado antes, compruebe si se han proporcionado sugerencias, ideas y/o soluciones, y siga según sea necesario para tratar de resolver el problema.
+- Si el problema persiste, comuníquenoslo creando un nuevo discusión en la página de problemas o en el foro de soporte.
+
+####¡He sido bloqueado por CIDRAM desde un sitio web que quiero visitar! ¡Por favor ayuda!
+
+CIDRAM proporciona un medio para que los propietarios de sitios web bloqueen tráfico indeseable, pero es responsabilidad de los propietarios de sitios web decidir por sí mismos cómo quieren usar CIDRAM. En el caso de los falsos positivos relativos a los archivos de firma normalmente incluidos en CIDRAM, correcciones pueden hacerse, Pero en lo que respecta a ser desbloqueado de sitios web específicos, usted tendrá que tomar eso con los propietarios de los sitios web en cuestión. En los casos en que se realizan correcciones, por lo menos, tendrán que actualizar sus archivos de firma y/o instalación, y en otros casos (tales como, por ejemplo, donde han modificado su instalación, crearon sus propias firmas personalizadas, etc), la responsabilidad de resolver su problema es enteramente suya, y está totalmente fuera de nuestro control.
+
+####Quiero usar CIDRAM con una versión de PHP más vieja que 5.4.0; ¿Puede usted ayudar?
+
+No. PHP 5.4.0 llegó a EoL oficial ("End of Life", o fin de la vida) en 2014, y el soporte extendido de la seguridad fue terminado en 2015. Al escribir esto, es 2017, y PHP 7.1.0 ya está disponible. En este momento, se proporciona soporte para el uso de CIDRAM con PHP 5.4.0 y todas las nuevas versiones PHP disponibles, pero si intenta usar CIDRAM con versiones anteriores de PHP, no se proporcionará soporte.
+
 ---
 
 
-Última Actualización: 3 Marzo 2017 (2017.03.03).
+Última Actualización: 10 Marzo 2017 (2017.03.10).

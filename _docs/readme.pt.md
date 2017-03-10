@@ -42,7 +42,7 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 4) CHMOD o `vault` diretório para "755" (se houver problemas, você pode tentar "777"; isto é menos seguro, embora). O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
 
-5) Seguida, você vai precisar "enganchar" CIDRAM ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como CIDRAM ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas/issues CIDRAM no Github. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `loader.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
+5) Seguida, você vai precisar "enganchar" CIDRAM ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como CIDRAM ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas CIDRAM no Github. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `loader.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -574,7 +574,7 @@ Nota: Um instância de reCAPTCHA vai SOMENTE ser oferecido ao usuário se reCAPT
 
 ####7.3 AUXILIAR
 
-Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos ficheiros de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
+Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos arquivos de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
 
 ```
 Ignore Seção 1
@@ -602,7 +602,31 @@ Isto pode ser resumido pela seguinte tabela:
 CIDRAM *NÃO* bloquear um endereço IP | Verdadeiro negativo (inferência correcta) | Detecção em falta (análogo a um falso negativo)
 CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo (inferência correcta)
 
+####CIDRAM pode bloquear países inteiros?
+
+Sim. A maneira mais fácil de conseguir isso seria instalar algumas das listas opcionais para bloqueando países fornecido por Macmathan. Isso pode ser feito com alguns cliques simples diretamente do front-end página de atualizações, ou, se você preferir o front-end para permanecer desativado, através da baixando-os diretamente da **[página para baixar as listas opcionais para bloqueando países](https://macmathan.info/blocklists)**, carregá-los para o vault, e citando seus nomes nas diretivas de configuração relevantes.
+
+####Com que freqüência as assinaturas são atualizadas?
+
+A freqüência das atualizações varia de acordo com os arquivos de assinatura em questão. Todos os mantenedores dos arquivos de assinatura de CIDRAM geralmente tentam manter suas assinaturas atualizadas como é possível, mas devido a que todos nós temos vários outros compromissos, nossas vidas fora do projeto, e devido a que nenhum de nós é financeiramente compensado (ou pago) para nossos esforços no projeto, um cronograma de atualização preciso não pode ser garantido. Geralmente, as assinaturas são atualizadas sempre que há tempo suficiente para atualizá-las, e geralmente, os mantenedores tentam priorizar com base na necessidade e na freqüência com que as mudanças ocorrem entre gamas. Assistência é sempre apreciada se você estiver disposto a oferecer qualquer.
+
+####Eu encontrei um problema ao usar CIDRAM e eu não sei o que fazer sobre isso! Ajude-me!
+
+- Você está usando a versão mais recente do software? Você está usando as versões mais recentes de seus arquivos de assinatura? Se a resposta a qualquer destas duas perguntas é não, tente atualizar tudo primeiro, e verifique se o problema persiste. Se persistir, continue lendo.
+- Você já examinou toda a documentação? Se não, por favor, faça isso. Se o problema não puder ser resolvido usando a documentação, continue lendo.
+- Você já examinou a **[página de problemas](https://github.com/Maikuolan/CIDRAM/issues)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
+- Você já examinou a **[fórum de suporte do CIDRAM fornecido pela Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
+- Se o problema ainda persistir, informe-nos através da iniciando uma nova discussão na página de problemas ou no fórum de suporte.
+
+####Eu fui bloqueado pelo CIDRAM de um site que eu quero visitar! Ajude-me!
+
+CIDRAM fornece um meio para proprietários de sites para bloquear tráfego indesejável, mas é da responsabilidade dos proprietários do site decidir por si mesmos como eles querem usar CIDRAM. No caso dos falsos positivos relativos aos arquivos de assinatura normalmente incluídos no CIDRAM, correções podem ser feitas, mas no que diz respeito a ser desbloqueado a partir de sites específicos, você precisará tomar isso com os proprietários dos sites em questão. Nos casos em que são feitas correções, pelo menos, eles precisarão atualizar seus arquivos de assinatura e/ou instalação, e em outros casos (tais como, por exemplo, onde eles modificaram sua instalação, criaram suas próprias assinaturas personalizadas, etc), a responsabilidade de resolver o seu problema é inteiramente deles, e está inteiramente fora de nosso controle.
+
+####Eu quero usar CIDRAM com uma versão PHP mais velha do que 5.4.0; Você pode ajudar?
+
+Não. PHP 5.4.0 chegou ao EoL ("End of Life", ou Fim da Vida) oficial em 2014, e suporte de segurança estendido foi terminado em 2015. Como de escrever isso, é 2017, e PHP 7.1.0 já está disponível. Neste momento, suporte é oferecido para o uso do CIDRAM com PHP 5.4.0 e todas as versões PHP mais recentes disponíveis, mas se você tentar usar o CIDRAM com versões mais antigas do PHP, o suporte não será fornecido.
+
 ---
 
 
-Última Atualização: 3 Março 2017 (2017.03.03).
+Última Atualização: 10 Março 2017 (2017.03.10).

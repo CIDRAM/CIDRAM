@@ -1485,7 +1485,7 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2016.03.13 / Checked: 2016.08.15
+# Updated: 2016.03.13 / Checked: 2017.03.12
 
 159.53.0.0/16 Deny Generic
 199.253.243.0/24 Deny Generic
@@ -1494,9 +1494,10 @@ Tag: CH-NET S.R.L
 Tag: JPMorgan Chase & Co
 
 
-# ASN 42708 ("Portlane Networks AB").
-# %Listed, Google Malware Dashboard: 0.10%.
-# Updated: 2016.08.26
+# ASN 42708 ("Portlane AB").
+# %Listed, Google Malware Dashboard: 0.08%.
+# %Listed, CleanTalk.org: 43.88%.
+# Updated: 2017.03.12
 
 5.198.248.0/21 Deny Spam
 5.249.160.0/21 Deny Spam
@@ -1509,8 +1510,9 @@ Tag: JPMorgan Chase & Co
 91.236.116.0/24 Deny Spam
 109.230.199.0/24 Deny Spam
 141.138.208.0/21 Deny Spam
-159.253.28.0/24 Deny Spam
+159.253.28.0/23 Deny Spam
 172.94.0.0/24 Deny Spam
+176.126.65.0/24 Deny Spam
 178.73.192.0/18 Deny Spam
 185.5.44.0/24 Deny Spam
 185.9.3.0/24 Deny Spam
@@ -1692,8 +1694,8 @@ recaptcha:
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
-# %Listed, Google Malware Dashboard: 0% (AS16880 + AS36421).
-# Updated: 2016.08.09
+# %Listed, CleanTalk.org: 28.95% (AS16880), 0% (AS36421).
+# Updated: 2016.08.09 / Checked: 2017.03.12
 
 8.30.172.0/24 Deny Generic
 66.180.80.0/20 Deny Generic
@@ -1868,14 +1870,17 @@ Tag: Xirra GmbH
 Tag: PP SKS-LUGAN
 
 
-# ASN 131222 ("Sistema Shyam Teleservices Ltd").
-# Updated: 2016.08.09
+# ASN 131222 ("MTS India").
+# %Listed, Google Malware Dashboard: 1.02%.
+# %Listed, CleanTalk.org: 4.03%.
+# %Listed, abuseat.org (CBL-Listed): 3.53%.
+# Updated: 2017.03.12
 
 103.18.64.0/22 Deny Spam
+103.239.125.0/24 Deny Spam
 116.202.0.0/19 Deny Spam
 116.202.32.0/20 Deny Spam
 116.202.48.0/21 Deny Spam
-116.202.60.0/22 Deny Spam
 116.202.64.0/18 Deny Spam
 116.202.128.0/17 Deny Spam
 116.203.0.0/16 Deny Spam

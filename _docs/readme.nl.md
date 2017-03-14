@@ -629,4 +629,4 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 ---
 
 
-Laatste Bijgewerkt: 10 Maart 2017 (2017.03.13).
+Laatste Bijgewerkt: 13 Maart 2017 (2017.03.13).

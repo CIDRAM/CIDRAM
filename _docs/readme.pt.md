@@ -15,7 +15,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>PREÂMBULO
+### 1. <a name="SECTION1"></a>PREÂMBULO
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) é um script PHP projetados para proteger sites por bloqueando solicitações provenientes de endereços IP considerado como sendo fontes de tráfego indesejável, incluindo (mas não limitado a) o tráfego dos pontos de acesso não-humanos, serviços em nuvem, spambots, raspadores/scrapers, etc. Ele faz isso via calculando as possíveis CIDRs dos endereços IP fornecida a partir de solicitações de entrada e em seguida tentando comparar estas possíveis CIDRs contra os seus arquivos de assinaturas (estas arquivos de assinaturas contêm listas de CIDRs de endereços IP considerado como sendo fontes de tráfego indesejável); Se forem encontradas correspondências, os solicitações estão bloqueadas.
 
@@ -30,7 +30,7 @@ Este documento e seu associado pacote pode ser baixado gratuitamente de [Github]
 ---
 
 
-###2. <a name="SECTION2"></a>COMO INSTALAR
+### 2. <a name="SECTION2"></a>COMO INSTALAR
 
 Espero para agilizar este processo via fazendo um instalado em algum momento no não muito distante futuro, mas até então, siga estas instruções para trabalhar CIDRAM na maioria dos sistemas e CMS:
 
@@ -63,7 +63,7 @@ Ou isso no `.htaccess` arquivo:
 ---
 
 
-###3. <a name="SECTION3"></a>COMO USAR
+### 3. <a name="SECTION3"></a>COMO USAR
 
 CIDRAM deve bloquear automaticamente as solicitações indesejáveis para o seu site sem necessidade de qualquer assistência manual, Além de sua instalação inicial.
 
@@ -74,15 +74,15 @@ Se você encontrar quaisquer falsos positivos, entre em contato comigo para me i
 ---
 
 
-###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
+### 4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
 
-####4.0 O QUE É O FRONT-END.
+#### 4.0 O QUE É O FRONT-END.
 
 O front-end fornece uma maneira conveniente e fácil de manter, gerenciar e atualizar sua instalação CIDRAM. Você pode visualizar, compartilhar e baixar arquivos de log através da página de logs, você pode modificar a configuração através da página de configuração, você pode instalar e desinstalar componentes através da página de atualizações, e você pode carregar, baixar e modificar arquivos no seu vault através do gerenciador de arquivos.
 
 O front-end é desativado por padrão para evitar acesso não autorizado (acesso não autorizado pode ter consequências significativas para o seu site e para a sua segurança). Instruções para habilitá-lo estão incluídas abaixo deste parágrafo.
 
-####4.1 COMO HABILITAR O FRONT-END.
+#### 4.1 COMO HABILITAR O FRONT-END.
 
 1) Localize a directiva `disable_frontend` dentro `config.ini`, e defini-lo como true (ele será false por padrão).
 
@@ -92,7 +92,7 @@ O front-end é desativado por padrão para evitar acesso não autorizado (acesso
 
 Nota: Depois de efetuar login pela primeira vez, a fim de impedir o acesso não autorizado ao front-end, você deve imediatamente alterar seu nome de usuário e senha! Isto é muito importante, porque é possível fazer upload de código PHP arbitrário para o seu site através do front-end.
 
-####4.2 COMO USAR O FRONT-END.
+#### 4.2 COMO USAR O FRONT-END.
 
 As instruções são fornecidas em cada página do front-end, para explicar a maneira correta de usá-lo e sua finalidade pretendida. Se precisar de mais explicações ou qualquer assistência especial, entre em contato com o suporte. Alternativamente, existem alguns vídeos disponíveis no YouTube que podem ajudar por meio de demonstração.
 
@@ -100,7 +100,7 @@ As instruções são fornecidas em cada página do front-end, para explicar a ma
 ---
 
 
-###5. <a name="SECTION5"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
+### 5. <a name="SECTION5"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
 O seguinte está uma lista de todos os arquivos que deveria sido incluídos na arquivada cópia desse script quando você baixado-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são por.
 
@@ -242,10 +242,10 @@ Arquivo | Descrição
 ---
 
 
-###6. <a name="SECTION6"></a>OPÇÕES DE CONFIGURAÇÃO
+### 6. <a name="SECTION6"></a>OPÇÕES DE CONFIGURAÇÃO
 O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de configuração para CIDRAM, juntamente com uma descrição de sua propósito e função.
 
-####"general" (Categoria)
+#### "general" (Categoria)
 Configuração geral por CIDRAM.
 
 "logfile"
@@ -310,7 +310,7 @@ Configuração geral por CIDRAM.
 "protect_frontend"
 - Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não.
 
-####"signatures" (Categoria)
+#### "signatures" (Categoria)
 Configuração por assinaturas.
 
 "ipv4"
@@ -346,7 +346,7 @@ Configuração por assinaturas.
 "track_mode"
 - Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo.
 
-####"recaptcha" (Categoria)
+#### "recaptcha" (Categoria)
 Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
 
 Devido aos riscos associados com fornecimento de uma maneira para os usuários a ignorar a página de "Acesso Negado", geralmente, gostaria de aconselhar contra habilitação deste recurso a menos que você sente que isso é necessário para fazê-lo. Situações em que poderia ser necessário: Se seu site tem clientes/usuários que precisam ter acesso ao seu site, e se essa é algo que não pode ser comprometida em, mas se os clientes/usuários acontecer a ser conectando a partir de uma rede hostil que poderiam ser também carregando de tráfego indesejável, e bloqueando este tráfego indesejável também é algo que não pode ser comprometida em, nessas situações particulares sem vitória, o recurso reCAPTCHA poderia ser útil como um meio de permitir que os clientes/usuários desejáveis, enquanto mantendo fora o tráfego indesejável a partir da mesma rede. Dito isto, considerando que o propósito de um CAPTCHA é distinguir entre humanos e não-humanos, o recurso reCAPTCHA só iria ajudar nestas situações sem vitória se fosse para supor que este tráfego indesejável é não-humano (por exemplo, spambots, raspadores, ferramentas de hackers, tráfego automatizado), ao contrário de ser tráfego humano indesejável (tais como spammer humanos, hackers, et ai).
@@ -384,7 +384,7 @@ Para obter uma "site key" e uma "secret key" (necessário para usando reCAPTCHA)
 *Exemplos:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-####"template_data" (Categoria)
+#### "template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
 
 Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se você estiver usando temas personalizados para CIDRAM, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
@@ -395,9 +395,9 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 ---
 
 
-###7. <a name="SECTION7"></a>FORMATO DE ASSINATURAS
+### 7. <a name="SECTION7"></a>FORMATO DE ASSINATURAS
 
-####7.0 NOÇÕES BÁSICAS
+#### 7.0 NOÇÕES BÁSICAS
 
 A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode ser encontrada documentado em texto simples dentro de qualquer um dos dois arquivos de assinaturas personalizados. Por favor, consulte que a documentação para saber mais sobre o formato e estrutura das assinaturas de CIDRAM.
 
@@ -452,7 +452,7 @@ As palavras curtas disponíveis são:
 - Proxy
 - Spam
 
-####7.1 ETIQUETAS
+#### 7.1 ETIQUETAS
 
 Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas seções individuais para o script por adição de uma "etiqueta de secção" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
 
@@ -497,9 +497,9 @@ Tag: Seção Exemplo
 Expires: 2016.12.31
 ```
 
-####7.2 YAML
+#### 7.2 YAML
 
-#####7.2.0 YAML BÁSICOS
+##### 7.2.0 YAML BÁSICOS
 
 Uma forma simplificada de marcação YAML pode ser usado em arquivos de assinatura com a finalidade de definir comportamentos e configurações específicas para as seções de assinaturas individuais. Isto pode ser útil se você quiser que o valor de suas diretivas de configuração para diferir na base de assinaturas individuais e seções de assinatura (por exemplo; se você quiser fornecer um endereço de e-mail para tickets de suporte para quaisquer usuários bloqueados por uma assinatura específica, mas não quer fornecer um endereço de e-mail para tickets de suporte para usuários bloqueados por quaisquer outras assinaturas; se você quiser algumas assinaturas específicas para provocar um redirecionamento página; se você quiser marcar uma seção de assinaturas para uso com reCAPTCHA; Se você quiser registrar tentativas de acesso bloqueadas para separar arquivos na base de assinaturas individuais e/ou seções de assinatura).
 
@@ -554,7 +554,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####7.2.1 COMO "MARCAR ESPECIALMENTE" SEÇÕES DE ASSINATURA PARA USO COM RECAPTCHA
+##### 7.2.1 COMO "MARCAR ESPECIALMENTE" SEÇÕES DE ASSINATURA PARA USO COM RECAPTCHA
 
 Quando "usemode" é 0 ou 1, seções de assinatura não precisa ser "marcado especialmente" para uso com reCAPTCHA (porque eles já vão usar ou não vão usar o reCAPTCHA, dependendo essa configuração).
 
@@ -572,7 +572,7 @@ recaptcha:
 
 Nota: Um instância de reCAPTCHA vai SOMENTE ser oferecido ao usuário se reCAPTCHA está habilitado (quer com "usemode" como 1, ou "usemode" como 2 com "enabled" como true), e se exatamente UMA assinatura foi desencadeada (nem mais, nem menos; se assinaturas múltiplas são desencadeadas, uma instância de reCAPTCHA NÃO será oferecida).
 
-####7.3 AUXILIAR
+#### 7.3 AUXILIAR
 
 Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos arquivos de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
 
@@ -585,9 +585,9 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 ---
 
 
-###8. <a name="SECTION8"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
+### 8. <a name="SECTION8"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
 
-####O que é um "falso positivo"?
+#### O que é um "falso positivo"?
 
 O termo "falso positivo" (*alternativamente: "erro de falso positivo"; "alarme falso"*; Inglês: *false positive*; *false positive error*; *false alarm*), descrita de maneira muito simples, e num contexto generalizado, são usadas quando testando para uma condição, para se referir aos resultados desse teste, quando os resultados são positivos (isto é, a condição é determinada para ser "positivo", ou "verdadeiro"), mas espera-se que seja (ou deveria ter sido) negativo (isto é, a condição, na realidade, é "negativo", ou "falso"). Um "falso positivo" pode ser considerado análogo ao "chorando lobo" (em que a condição que está sendo testada é se existe um lobo perto do rebanho, a condição é "falso" em que não há nenhum lobo perto do rebanho, ea condição é relatada como "positivo" pelo pastor por meio de gritando "lobo, lobo"), ou análoga a situações em exames médicos em que um paciente é diagnosticado como tendo alguma doença quando, na realidade, eles não têm essa doença.
 
@@ -602,15 +602,15 @@ Isto pode ser resumido pela seguinte tabela:
 CIDRAM *NÃO* bloquear um endereço IP | Verdadeiro negativo (inferência correcta) | Detecção em falta (análogo a um falso negativo)
 CIDRAM *FAZ* bloquear um endereço IP | __Falso positivo__ | Verdadeiro positivo (inferência correcta)
 
-####CIDRAM pode bloquear países inteiros?
+#### CIDRAM pode bloquear países inteiros?
 
 Sim. A maneira mais fácil de conseguir isso seria instalar algumas das listas opcionais para bloqueando países fornecido por Macmathan. Isso pode ser feito com alguns cliques simples diretamente do front-end página de atualizações, ou, se você preferir o front-end para permanecer desativado, através da baixando-os diretamente da **[página para baixar as listas opcionais para bloqueando países](https://macmathan.info/blocklists)**, carregá-los para o vault, e citando seus nomes nas diretivas de configuração relevantes.
 
-####Com que freqüência as assinaturas são atualizadas?
+#### Com que freqüência as assinaturas são atualizadas?
 
 A freqüência das atualizações varia de acordo com os arquivos de assinatura em questão. Todos os mantenedores dos arquivos de assinatura de CIDRAM geralmente tentam manter suas assinaturas atualizadas como é possível, mas devido a que todos nós temos vários outros compromissos, nossas vidas fora do projeto, e devido a que nenhum de nós é financeiramente compensado (ou pago) para nossos esforços no projeto, um cronograma de atualização preciso não pode ser garantido. Geralmente, as assinaturas são atualizadas sempre que há tempo suficiente para atualizá-las, e geralmente, os mantenedores tentam priorizar com base na necessidade e na freqüência com que as mudanças ocorrem entre gamas. Assistência é sempre apreciada se você estiver disposto a oferecer qualquer.
 
-####Eu encontrei um problema ao usar CIDRAM e eu não sei o que fazer sobre isso! Ajude-me!
+#### Eu encontrei um problema ao usar CIDRAM e eu não sei o que fazer sobre isso! Ajude-me!
 
 - Você está usando a versão mais recente do software? Você está usando as versões mais recentes de seus arquivos de assinatura? Se a resposta a qualquer destas duas perguntas é não, tente atualizar tudo primeiro, e verifique se o problema persiste. Se persistir, continue lendo.
 - Você já examinou toda a documentação? Se não, por favor, faça isso. Se o problema não puder ser resolvido usando a documentação, continue lendo.
@@ -618,15 +618,15 @@ A freqüência das atualizações varia de acordo com os arquivos de assinatura 
 - Você já examinou a **[fórum de suporte do CIDRAM fornecido pela Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
 - Se o problema ainda persistir, informe-nos através da iniciando uma nova discussão na página de problemas ou no fórum de suporte.
 
-####Eu fui bloqueado pelo CIDRAM de um site que eu quero visitar! Ajude-me!
+#### Eu fui bloqueado pelo CIDRAM de um site que eu quero visitar! Ajude-me!
 
 CIDRAM fornece um meio para proprietários de sites para bloquear tráfego indesejável, mas é da responsabilidade dos proprietários do site decidir por si mesmos como eles querem usar CIDRAM. No caso dos falsos positivos relativos aos arquivos de assinatura normalmente incluídos no CIDRAM, correções podem ser feitas, mas no que diz respeito a ser desbloqueado a partir de sites específicos, você precisará tomar isso com os proprietários dos sites em questão. Nos casos em que são feitas correções, pelo menos, eles precisarão atualizar seus arquivos de assinatura e/ou instalação, e em outros casos (tais como, por exemplo, onde eles modificaram sua instalação, criaram suas próprias assinaturas personalizadas, etc), a responsabilidade de resolver o seu problema é inteiramente deles, e está inteiramente fora de nosso controle.
 
-####Eu quero usar CIDRAM com uma versão PHP mais velha do que 5.4.0; Você pode ajudar?
+#### Eu quero usar CIDRAM com uma versão PHP mais velha do que 5.4.0; Você pode ajudar?
 
 Não. PHP 5.4.0 chegou ao EoL ("End of Life", ou Fim da Vida) oficial em 2014, e suporte de segurança estendido foi terminado em 2015. Como de escrever isso, é 2017, e PHP 7.1.0 já está disponível. Neste momento, suporte é oferecido para o uso do CIDRAM com PHP 5.4.0 e todas as versões PHP mais recentes disponíveis, mas se você tentar usar o CIDRAM com versões mais antigas do PHP, o suporte não será fornecido.
 
 ---
 
 
-Última Atualização: 10 Março 2017 (2017.03.10).
+Última Atualização: 14 Março 2017 (2017.03.14).

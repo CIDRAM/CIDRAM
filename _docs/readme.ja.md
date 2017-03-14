@@ -15,7 +15,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>序文
+### 1. <a name="SECTION1"></a>序文
 
 CIDRAM（シドラム、クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 『Classless Inter-Domain Routing Access Manager』）は、PHPスクリプトです。 ウェブサイトを保護するように設計されて、ＩＰアドレス（望ましくないトラフィックのあるソースとみなします）から、発信要求をブロックすることによって（ヒト以外のアクセスエンドポイント、クラウドサービス、スパムロボット、スクレーパー、等）。 ＩＰアドレスの可能ＣＩＤＲを計算することにより、ＣＩＤＲは、そのシグネチャファイルと比較することができます（これらのシグネチャファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）； 一致が見つかった場合、要求はブロックされます。
 
@@ -30,7 +30,7 @@ CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利につ�
 ---
 
 
-###2. <a name="SECTION2"></a>インストール方法
+### 2. <a name="SECTION2"></a>インストール方法
 
 近い将来にはインストーラーを作成しインストールの簡素化を図りたいと考えていますが、現状では以下のインストラクションに従ってCIDRAMをインストールして下さい。少数の例外はあるものの、大多数*のシステムおよびCMSで機能します。
 
@@ -63,7 +63,7 @@ Apacheウェブサーバーを利用していて、かつ`php.ini`を編集で�
 ---
 
 
-###3. <a name="SECTION3"></a>使用方法
+### 3. <a name="SECTION3"></a>使用方法
 
 CIDRAMは自動的に望ましくない要求をブロックする必要があります；支援が必要とされていません（インストールを除きます）。
 
@@ -74,15 +74,15 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ---
 
 
-###4. <a name="SECTION4"></a>フロントエンドの管理
+### 4. <a name="SECTION4"></a>フロントエンドの管理
 
-####4.0 フロントエンドは何です。
+#### 4.0 フロントエンドは何です。
 
 フロントエンドは、CIDRAMのインストールを維持、管理、更新するための便利で簡単な方法を提供します。 ログページを使用してログファイルを表示、共有、ダウンロードすることができます、コンフィギュレーションページでコンフィギュレーションを変更できます、アップデートページを使用してコンポーネントをインストールおよびアンインストールできます、そして、ファイル・マネージャーを使用してvault「ボールト」内のファイルをアップロード、ダウンロード、および変更することができます。
 
 不正アクセスを防止するため、フロントエンドはデフォルトで無効になっています （不正アクセスがウェブサイトとそのセキュリティに重大な影響を与える可能性があります）。 それを可能にするための指示は、このパラグラフの下に含まれています。
 
-####4.1 フロントエンドを有効にする方法。
+#### 4.1 フロントエンドを有効にする方法。
 
 1) `config.ini`の中にある`disable_frontend`ディレクティブを探します、それを「true」に設定します （デフォルトでは「false」です）。
 
@@ -92,7 +92,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 注意： あなたが初めてログインした後、フロントエンドへの不正アクセスを防ぐために、あなたはすぐにユーザー名とパスワードを変更する必要があります！ これは非常に重要です、なぜなら、フロントエンドから任意のPHPコードをあなたのウェブサイトにアップロードすることができるからです。
 
-####4.2 フロントエンドの使い方。
+#### 4.2 フロントエンドの使い方。
 
 フロントエンドの各ページには、目的の説明とその使用方法の説明があります。 詳しい説明や特別な支援が必要な場合は、サポートにお問い合わせください。 また、デモを提供するYouTube上で利用可能な動画もあります。
 
@@ -100,7 +100,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ---
 
 
-###5. <a name="SECTION5"></a>本パッケージに含まれるファイル
+### 5. <a name="SECTION5"></a>本パッケージに含まれるファイル
 
 以下はアーカイブから一括ダウンロードされるファイルのリスト、ならびにスクリプト使用により作成されるファイルとこれらのファイルが何のためかという簡単な説明です。
 
@@ -242,10 +242,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ---
 
 
-###6. <a name="SECTION6"></a>設定オプション
+### 6. <a name="SECTION6"></a>設定オプション
 以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
-####"general" （全般、カテゴリー）
+#### "general" （全般、カテゴリー）
 全般的な設定。
 
 "logfile" （ログ・ファイル）
@@ -310,7 +310,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "protect_frontend" （プロテクト・フロントエンド）
 - CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。 True = はい （Default/デフォルルト）； False = いいえ。
 
-####"signatures" （シグネチャーズ、カテゴリ）
+#### "signatures" （シグネチャーズ、カテゴリ）
 シグネチャの設定。
 
 "ipv4" （アイピーブイ４）
@@ -346,7 +346,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 "track_mode" （トラック・モード）
 - 違反はいつカウントされるべきですか？ False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。
 
-####"recaptcha" （リーキャプチャ、カテゴリ）
+#### "recaptcha" （リーキャプチャ、カテゴリ）
 ユーザーにとって、reCAPTCHAインスタンスを完成させることによって、「アクセス拒否」ページをバイパスする方法を提供することができます。 これは、偽陽性に関連するいくつかのリスクを緩和するのに役立ちます （要求が機械または人間から、生じたものであるかどうかは不明である場合）。
 
 「アクセス拒否」ページをバイパスすることに伴うリスクがあります。 このため、一般的に、必要な場合を除いて、この機能を有効にすることはお勧めしません。 それが必要な状況： ユーザーはあなたのウェブサイトにアクセスする必要があります、しかし、彼らは敵対的なネットワークから接続しています、そして、これは交渉できません； ユーザーはアクセスが必要です、敵対的なネットワークを拒絶する必要がある（何をすべきか？！）。。 このような状況では、reCAPTCHA機能が役立つ可能性があります： ユーザーはアクセス権を持つことができます； 不要なトラフィックをフィルタリングすることができます（一般的に）。 人間以外のトラフィックに対しても有効です（例えば、スパムロボット、スクレーパー、ハックツール、自動交通、など）、しかし、人間のトラフィックにあまり役に立たない（例えば、人間のスパマー、ハッカー、その他）。
@@ -384,7 +384,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 *例:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-####"template_data" （テンプレート・データ、カテゴリ）
+#### "template_data" （テンプレート・データ、カテゴリ）
 テンプレートとテーマ用のディレクティブと変数。
 
 テンプレートのデータは、ユーザーに向けてアクセス拒否のメッセージをＨＴＭＬ形式でアウトプットする際に使用されます。 カスタムテーマを使っている場合は`template_custom.html`を使用して、そうでない場合は`template.html`を使用してＨＴＭＬアウトプットが生成されます。 設定ファイル内にあるこのセクション用の変数は、ＨＴＭＬアウトプットのために解析され、で囲まれた変数名は対応する変数データに置き換えられます。 例えば`foo="bar"`とすると、ＨＴＭＬアウトプット内の`<p>{foo}</p>`は`<p>bar</p>`となります。
@@ -395,9 +395,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 ---
 
 
-###7. <a name="SECTION7"></a>シグネチャ（署名）フォーマット
+### 7. <a name="SECTION7"></a>シグネチャ（署名）フォーマット
 
-####7.0 基本原則
+#### 7.0 基本原則
 
 CIDRAMで使用されるシグネチャの形式と構造の説明は、カスタム・シグネチャ・ファイル内に記載されています。 詳細については、ドキュメントを参照してください。
 
@@ -452,7 +452,7 @@ CIDRAMで使用されるシグネチャの形式と構造の説明は、カス�
 - Proxy
 - Spam
 
-####7.1 タグ
+#### 7.1 タグ
 
 セクション名と「セクションタグ」を追加することにより、スクリプトに対する個々のセクションを識別することができます（以下の例を参照してください）。
 
@@ -497,9 +497,9 @@ Tag: 例セクション
 Expires: 2016.12.31
 ```
 
-####7.2 YAML
+#### 7.2 YAML
 
-#####7.2.0 YAML基本原則
+##### 7.2.0 YAML基本原則
 
 セクション固有の設定を定義するために、シンプルな形式のYAMLマークアップをシグネチャファイルで使用することができます。 これは、異なるシグネチャセクションに対して異なる設定を行う場合に便利です （例えば： サポートチケットのＥメールアドレスを指定したい場合は、しかし特定のセクションのみ； 特定のシグネチャでページリダイレクトをトリガーしたい場合は； reCAPTCHAで使用するために署名セクションをマークしたい場合は； 個々のシグネチャに基づいて、そして/または、シグネチャセクションに基づいて、ブロックされたアクセス試行を別々のファイルに記録したい場合は）。
 
@@ -554,7 +554,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####7.2.1 reCAPTCHAで使用するためにシグネチャセクションをマークする方法。
+##### 7.2.1 reCAPTCHAで使用するためにシグネチャセクションをマークする方法。
 
 「usemode」が０または１の場合、reCAPTCHAで使用するために、シグネチャセクションをマークする必要はありません（reCAPTCHAを使用するかどうかは既に決定されているためです）。
 
@@ -572,7 +572,7 @@ recaptcha:
 
 注意： reCAPTCHAインスタンスは、reCAPTCHAが有効な場合にのみユーザーに提供されます（「usemode」が１のとき、または、「usemode」が２と「enabled」が「true」のとき）、そして、厳密に１つのシグネチャがトリガされた場合（より大きい数ない、より小さい数ない；複数のシグネチャがトリガーされた場合、reCAPTCHAインスタンスは提供されません）。
 
-####7.3 補助
+#### 7.3 補助
 
 さらに、CIDRAMに特定のシグネチャセクションを完全に無視させたい場合、「`ignore.dat`」ファイルを使用して、無視するセクションを指定することができます。 新しい行に`Ignore`と書いてください、次に、スペース、次に、CIDRAMが無視するセクションの名前（以下の例を参照してください）。
 
@@ -585,9 +585,9 @@ Ignore セクション１
 ---
 
 
-###8. <a name="SECTION8"></a>よくある質問（FAQ）
+### 8. <a name="SECTION8"></a>よくある質問（FAQ）
 
-####「偽陽性」とは何ですか？
+#### 「偽陽性」とは何ですか？
 
 一般化された文脈で簡単に説明、条件の状態をテストするときに、結果を参照する目的で、用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）の意味は、結果は「陽性」のようです、しかし結果は間違いです（即ち、真の条件は「陽性/真」とみなされます、しかしそれは本当に「陰性/偽」です）。 「偽陽性」は「泣く狼」に類似していると考えることができます（その状態は群の近くに狼がいるかどうかである、真の条件は「偽/陰性」です、群れの近くに狼がないからです、しかし条件は「真/陽性」として報告されます、羊飼いが「狼！狼！」を叫んだからです）、または、医療検査に類似、患者が誤って診断されたとき。
 
@@ -602,7 +602,31 @@ CIDRAMの文脈で、これらの用語は、CIDRAMのシグネチャとそれ�
 CIDRAMは、ＩＰアドレスをブロックしません | 真陰性（正しい推論） | 不在検出 (それは「偽陰性」と同じです)
 CIDRAMは、ＩＰアドレスをブロックします | __偽陽性__ | 真陽性（正しい推論）
 
+#### CIDRAMは国全体をブロックできますか？
+
+はい。 The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://macmathan.info/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
+
+#### シグネチャはどれくらいの頻度で更新されますか？
+
+Update frequency varies depending on the signature files in question. All maintainers for CIDRAM signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
+
+#### CIDRAMを使用しているときに問題が発生しましたが、何をすべきかわかりません！ 助けてください！
+
+- Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
+- Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
+- Have you checked the **[issues page](https://github.com/Maikuolan/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- Have you checked the **[CIDRAM support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
+
+#### 私はCIDRAMによってウェブサイトからブロックされています！ 助けてください！
+
+CIDRAM provides a means for website owners to block undesirable traffic, but it's the responsibility of website owners to decide for themselves how they want to use CIDRAM. In case of the false positives relating to the signature files normally included with CIDRAM, corrections can be made, but in regards to being unblocked from specific websites, you'll need to take that up with the owners of the websites in question. In cases where corrections are made, at the very least, they'll need to update their signature files and/or installation, and in other cases (such as, for example, where they've modified their installation, created their own custom signatures, etc), the responsibility to solve your problem is entirely theirs, and is entirely outside our control.
+
+#### 5.4.0より古いPHPバージョンでCIDRAMを使用したいと思います； 手伝ってくれますか？
+
+いいえ。 PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using CIDRAM with PHP 5.4.0 and all available newer PHP versions, but if you try to use CIDRAM with any older PHP versions, support won't be provided.
+
 ---
 
 
-最終アップデート： 2017年3月3日。
+最終アップデート： 2017年3月14日。

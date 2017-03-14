@@ -15,7 +15,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>서문
+### 1. <a name="SECTION1"></a>서문
 
 CIDRAM (시도라무 클래스없는 도메인 간 라우팅 액세스 매니저; "Classless Inter-Domain Routing Access Manager")는 PHP 스크립트입니다. 웹 사이트를 보호하도록 설계되어 IP 주소 (원치 않는 트래픽이있는 소스로 간주합니다)에서 전송 요청을 차단하여 (인간 이외의 액세스 엔드 포인트 클라우드 서비스 스팸봇 스크레이퍼 등). IP 주소의 수 CIDR을 계산하여 CIDR은 시그니처 파일과 비교할 수 있습니다 (이 서명 파일은 불필요한 IP 주소에 해당하는 CIDR의 목록이 포함되어 있습니다); 일치가 발견되면 요청이 차단됩니다.
 
@@ -30,7 +30,7 @@ CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 ---
 
 
-###2. <a name="SECTION2"></a>설치 방법
+### 2. <a name="SECTION2"></a>설치 방법
 
 가까운 장래에 설치를 만들고 설치의 간소화를 도모하고자하지만, 현재 아래의 지침에 따라 CIDRAM를 설치하십시오. 몇몇 예외는 있지만, *대다수의* 시스템 및 CMS에서 작동합니다.
 
@@ -63,7 +63,7 @@ Apache 웹 서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있�
 ---
 
 
-###3. <a name="SECTION3"></a>사용 방법
+### 3. <a name="SECTION3"></a>사용 방법
 
 CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 필요하지 않습니다 (설치 제외).
 
@@ -74,15 +74,15 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 ---
 
 
-###4. <a name="SECTION4"></a>프런트 엔드 관리
+### 4. <a name="SECTION4"></a>프런트 엔드 관리
 
-####4.0 프론트 엔드는 무엇입니다.
+#### 4.0 프론트 엔드는 무엇입니다.
 
 프론트 엔드는 CIDRAM 설치 유지 관리 업데이트하기위한 편리하고 쉬운 방법을 제공합니다. 로그 페이지를 사용하여 로그 파일을 공유, 다운로드 할 수있는 구성 페이지에서 구성을 변경할 수 있습니다, 업데이트 페이지를 사용하여 구성 요소를 설치 및 제거 할 수 있습니다, 그리고 파일 관리자를 사용하여 vault에 파일을 업로드, 다운로드 및 변경할 수 있습니다.
 
 무단 액세스를 방지하기 위해 프런트 엔드는 기본적으로 비활성화되어 있습니다 (무단 액세스가 웹 사이트와 보안에 중대한 영향을 미칠 수 있습니다). 그것을 가능하게하기위한 지침이 절 아래에 포함되어 있습니다.
 
-####4.1 프론트 엔드를 사용하는 방법.
+#### 4.1 프론트 엔드를 사용하는 방법.
 
 1) `config.ini` 안에있는 `disable_frontend` 지시문을 찾습니다 그것을 "true"로 설정합니다 (기본값은 "false"입니다).
 
@@ -92,7 +92,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 
 주의: 당신이 처음 로그인 한 후 프런트 엔드에 대한 무단 액세스를 방지하기 위해 신속하게 사용자 이름과 암호를 변경해야합니다! 이것은 매우 중요합니다, 왜냐하면 프런트 엔드에서 임의의 PHP 코드를 당신의 웹 사이트에 업로드 할 수 있기 때문입니다.
 
-####4.2 프런트 엔드 사용.
+#### 4.2 프런트 엔드 사용.
 
 프론트 엔드의 각 페이지에는 목적에 대한 설명과 사용 방법에 대한 설명이 있습니다. 전체 설명이나 특별한 지원이 필요한 경우 지원에 문의하십시오. 또한 데모를 제공 할 YouTube에서 사용 가능한 동영상도 있습니다.
 
@@ -100,7 +100,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 ---
 
 
-###5. <a name="SECTION5"></a>본 패키지에 포함 된 파일
+### 5. <a name="SECTION5"></a>본 패키지에 포함 된 파일
 
 다음은 아카이브에서 일괄 다운로드되는 파일의 목록 및 스크립트 사용에 의해 생성되는 파일과이 파일이 무엇 때문인지는 간단한 설명입니다.
 
@@ -242,10 +242,10 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 ---
 
 
-###6. <a name="SECTION6"></a>설정 옵션
+### 6. <a name="SECTION6"></a>설정 옵션
 다음은 `config.ini`설정 파일에있는 변수 및 그 목적과 기능의 목록입니다.
 
-####"general" (일반, カテゴリー)
+#### "general" (일반, カテゴリー)
 일반 설정.
 
 "logfile"
@@ -310,7 +310,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 "protect_frontend"
 - CIDRAM 의해 보통 제공되는 보호를 프런트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default/기본 설정); False = 아니오.
 
-####"signatures"
+#### "signatures"
 서명 설정.
 
 "ipv4"
@@ -346,7 +346,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 "track_mode"
 - 위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우.
 
-####"recaptcha"
+#### "recaptcha"
 사용자에게 reCAPTCHA 인스턴스를 완성하여 "액세스 거부"페이지를 우회하는 방법을 제공 할 수 있습니다. 이것은 잘못된 반응과 관련된 몇 가지 위험을 완화하는 데 도움이됩니다 (요청 기계 또는 인간에서 발생한 것인지 여부는 알 수없는 경우).
 
 "액세스 거부"페이지를 우회 할 위험성이 있습니다. 따라서 일반적으로 필요한 경우를 제외하고는이 기능을 사용하는 것은 권장하지 않습니다. 그것이 필요한 상황: 사용자는 당신의 웹 사이트에 액세스 할 수 있습니다,하지만 그들은 적대적인 네트워크에서 연결하고 있습니다 그리고 이것은 협상 할 수 없습니다; 사용자는 액세스가 필요합니다 적대적인 네트워크를 거절 할 필요가있다 (무엇을해야합니까?!).. 이러한 상황에서는 reCAPTCHA 기능이 도움이 될 수 있습니다: 사용자는 권한을 가질 수 있습니다; 불필요한 트래픽을 필터링 할 수 있습니다 (일반적으로). 인간 이외의 트래픽에 대해서만 유효합니다 (예를 들어, 스팸 로봇, 스크레이퍼, 해킹 툴, 자동 교통 등)하지만, 인간의 트래픽에별로 도움이되지 않는다 (예를 들어, 인간의 스패머, 해커, 기타).
@@ -384,7 +384,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 *예:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-####"template_data"
+#### "template_data"
 템플릿과 테마 지시어와 변수.
 
 템플릿의 데이터는 사용자를위한 액세스 거부 메시지를 HTML 형식으로 출력 할 때 사용됩니다. 사용자 지정 테마를 사용하는 경우는`template_custom.html`를 사용하고, 그렇지 않은 경우는`template.html`를 사용하여 HTML 출력이 생성됩니다. 설정 파일에서이 섹션의 변수는 HTML 출력에 대한 해석되어로 둘러싸인 변수 이름은 해당 변수 데이터로 대체합니다. 예를 들어`foo="bar"`하면 HTML 출력의`<p>{foo}</p>`는`<p>bar</p>`입니다.
@@ -395,9 +395,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 ---
 
 
-###7. <a name="SECTION7"></a>서명 포맷
+### 7. <a name="SECTION7"></a>서명 포맷
 
-####7.0 기초
+#### 7.0 기초
 
 CIDRAM에서 사용되는 서명의 형식과 구조에 대한 설명은 사용자 정의 시그니처 파일에 기재되어 있습니다. 자세한 내용은 문서를 참조하십시오.
 
@@ -452,7 +452,7 @@ CIDRAM에서 사용되는 서명의 형식과 구조에 대한 설명은 사용�
 - Proxy
 - Spam
 
-####7.1 태그
+#### 7.1 태그
 
 섹션 이름 "섹션 태그"를 추가하여 스크립트에 대한 개별 섹션을 식별 할 수 있습니다 (아래의 예를 참조하십시오).
 
@@ -497,9 +497,9 @@ Tag: 예 섹션
 Expires: 2016.12.31
 ```
 
-####7.2 YAML
+#### 7.2 YAML
 
-#####7.2.0 YAML 기초
+##### 7.2.0 YAML 기초
 
 섹션 별 설정을 정의하기 위해 간단한 형식의 YAML 마크 업을 서명 파일로 사용할 수 있습니다. 이것은 다른 서명 섹션에 대해 다른 설정을 할 때 유용합니다 (예를 들면: 지원 티켓의 E 메일 주소를 지정하려면하지만 특정 섹션 만; 특정 서명으로 페이지 리디렉션을 트리거하려면; reCAPTCHA에서 사용하기 위해 서명 섹션을 표시하려면; 개별 서명에 따라 그리고/또는 서명 섹션에 따라 차단 된 액세스 시도를 별도의 파일에 기록하려면).
 
@@ -554,7 +554,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####7.2.1 reCAPTCHA에서 사용하기 위해 서명 섹션을 표시하는 방법.
+##### 7.2.1 reCAPTCHA에서 사용하기 위해 서명 섹션을 표시하는 방법.
 
 "usemode"가 0 또는 1의 경우 reCAPTCHA에서 사용하기 위해 서명 섹션을 표시 할 필요가 없습니다 (reCAPTCHA를 사용할지 여부는 이미 결정되어 있기 때문입니다).
 
@@ -572,7 +572,7 @@ recaptcha:
 
 주의: reCAPTCHA 인스턴스는 reCAPTCHA가 유효한 경우에만 사용자에게 제공됩니다 ("usemode"가 1 일 때, 또는 "usemode"가 2 "enabled"이 "true"인 경우), 그리고, 정확히 하나의 서명이 트리거 된 경우 (큰 수없는 작은 수 없다; 여러 서명이 트리거 된 경우 reCAPTCHA 인스턴스는 제공되지 않습니다).
 
-####7.3 보조
+#### 7.3 보조
 
 또한 CIDRAM 특정 서명 섹션을 완전히 무시하려는 경우 `ignore.dat`파일을 사용하여 무시하는 섹션을 지정할 수 있습니다. 새로운 행에`Ignore`과 써주세요 다음, 공간, 그런 CIDRAM 무시하는 섹션의 이름 (다음의 예를 참조하십시오).
 
@@ -585,9 +585,9 @@ Ignore 섹션 1
 ---
 
 
-###8. <a name="SECTION8"></a>자주 묻는 질문 (FAQ)
+### 8. <a name="SECTION8"></a>자주 묻는 질문 (FAQ)
 
-####"거짓 양성"는 무엇입니까?
+#### "거짓 양성"는 무엇입니까?
 
 일반화 된 상황에서 쉽게 설명 조건의 상태를 테스트 할 때 결과를 참조 할 목적으로 용어 "거짓 양성"의 (*또는: 위양성의 오류, 허위 보도;* 영어: *false positive*; *false positive error*; *false alarm*) 의미는 결과는 "양성"의 것, 그러나 결과는 실수 (즉, 진실의 조건은 "양성/진실"로 간주됩니다, 그러나 정말 "음성/거짓"입니다). "거짓 양성"는 "우는 늑대"와 유사하다고 생각할 수 있습니다 (그 상태는 군 근처에 늑대가 있는지 여부이다, 진실 조건은 "거짓/음성"입니다 무리의 가까이에 늑대가 없기 때문입니다하지만 조건은 "진실/양성"로보고됩니다 목자가 "늑대! 늑대!"를 외쳤다 때문입니다) 또는 의료 검사와 유사 환자가 잘못 진단 된 경우.
 
@@ -595,14 +595,38 @@ Ignore 섹션 1
 
 CIDRAM의 맥락에서 이러한 용어는 CIDRAM 서명과 그들이 차단하는 것을 말합니다. CIDRAM가 잘못 IP 주소를 차단하면 (예를 들어, 부정확 한 서명 구식의 서명 등에 의한), 우리는이 이벤트 "거짓 양성"를 호출합니다. CIDRAM가 IP 주소를 차단할 수없는 경우 (예를 들어, 예상치 못한 위협 서명 누락 등으로 인한), 우리는이 이벤트 "부재 감지"를 호출합니다 ("거짓 음성" 아날로그입니다).
 
-これは、以下の表に要約することができます。
+이것은 다음 표에 요약 할 수 있습니다.
 
 &nbsp; | IP 주소를 차단 필요가 CIDRAM 없습니다 | IP 주소를 CIDRAM 차단해야합니다
 ---|---|---
 IP 주소를 CIDRAM 차단하지 않습니다 | 진실 음성 (올바른 추론) | 놓친 (그것은 "거짓 음성"와 같습니다)
 IP 주소를 CIDRAM 차단합니다 | __거짓 양성__ | 진실 양성 (올바른 추론)
 
+#### CIDRAM는 나라 전체를 차단할 수 있습니까?
+
+Yes. The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://macmathan.info/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
+
+#### 서명은 얼마나 자주 업데이트됩니까?
+
+Update frequency varies depending on the signature files in question. All maintainers for CIDRAM signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
+
+#### CIDRAM을 사용하는 데 문제가 발생했지만 무엇을 해야할지 모르겠어요! 도와주세요!
+
+- Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
+- Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
+- Have you checked the **[issues page](https://github.com/Maikuolan/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- Have you checked the **[CIDRAM support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
+
+#### 나는 CIDRAM 의해 웹 사이트에서 차단되어 있습니다! 도와주세요!
+
+CIDRAM provides a means for website owners to block undesirable traffic, but it's the responsibility of website owners to decide for themselves how they want to use CIDRAM. In case of the false positives relating to the signature files normally included with CIDRAM, corrections can be made, but in regards to being unblocked from specific websites, you'll need to take that up with the owners of the websites in question. In cases where corrections are made, at the very least, they'll need to update their signature files and/or installation, and in other cases (such as, for example, where they've modified their installation, created their own custom signatures, etc), the responsibility to solve your problem is entirely theirs, and is entirely outside our control.
+
+#### 5.4.0보다 오래된 PHP 버전에서 CIDRAM을 사용하고 싶습니다; 도울 수 있니?
+
+No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using CIDRAM with PHP 5.4.0 and all available newer PHP versions, but if you try to use CIDRAM with any older PHP versions, support won't be provided.
+
 ---
 
 
-최종 업데이트: 2017 년 3 월 3 일.
+최종 업데이트: 2017 년 3 월 14 일.

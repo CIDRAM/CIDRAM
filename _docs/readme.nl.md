@@ -15,7 +15,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>PREAMBULE
+### 1. <a name="SECTION1"></a>PREAMBULE
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) is een PHP-script ontworpen om websites te beschermen door het blokkeren van verzoeken afkomstig van IP-adressen beschouwd als bronnen van ongewenste verkeer, inclusief (maar niet gelimiteerd tot) het verkeer van niet-menselijke toegang eindpunten, cloud-diensten, spambots, schrapers/scrapers, ezv. Het doet dit door het berekenen van de mogelijke CIDRs van de IP-adressen geleverde van binnenkomende verzoeken en dan het vergelijken van deze mogelijke CIDRs tegen zijn signature bestanden (deze signature bestanden bevatten lijsten van CIDRs van IP-adressen beschouwd als bronnen van ongewenste verkeer); Als overeenkomsten worden gevonden, de verzoeken worden geblokkeerd.
 
@@ -30,7 +30,7 @@ Dit document en de bijbehorende pakket kunt gedownload gratis zijn van [Github](
 ---
 
 
-###2. <a name="SECTION2"></a>HOE TE INSTALLEREN
+### 2. <a name="SECTION2"></a>HOE TE INSTALLEREN
 
 Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald punt in de niet al te verre toekomst, maar tot die tijd, volg deze instructies te werken CIDRAM om meeste systemen en CMS:
 
@@ -63,7 +63,7 @@ Of dit in het `.htaccess` bestand:
 ---
 
 
-###3. <a name="SECTION3"></a>HOE TE GEBRUIKEN
+### 3. <a name="SECTION3"></a>HOE TE GEBRUIKEN
 
 CIDRAM moet blokkeren ongewenste verzoeken naar uw website automatisch zonder enige handmatige hulp, afgezien van de eerste installatie.
 
@@ -74,15 +74,15 @@ Als u tegenkomen een valse positieven, neem dan contact met mij op om me te late
 ---
 
 
-###4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
+### 4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
 
-####4.0 WAT IS DE FRONT-END.
+#### 4.0 WAT IS DE FRONT-END.
 
 De front-end biedt een gemakkelijke en eenvoudige manier te onderhouden, beheren en updaten van uw CIDRAM installatie. U kunt bekijken, delen en downloaden log bestanden via de pagina logs, u kunt de configuratie wijzigen via de configuratiepagina, u kunt installeren en verwijderen/desinstalleren van componenten via de pagina updates, en u kunt uploaden, downloaden en wijzigen bestanden in uw vault via de bestandsbeheer.
 
 De front-end is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen (ongeautoriseerde toegang kan belangrijke gevolgen hebben voor uw website en de beveiliging hebben). Instructies voor het inschakelen van deze zijn hieronder deze paragraaf opgenomen.
 
-####4.1 HOE DE FRONTEND TE INSCHAKELEN.
+#### 4.1 HOE DE FRONTEND TE INSCHAKELEN.
 
 1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het true (deze is false door standaard).
 
@@ -92,7 +92,7 @@ De front-end is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen
 
 Notitie: Nadat u hebt ingelogd voor de eerste keer, om ongeautoriseerde toegang tot de frontend te voorkomen, moet u onmiddellijk veranderen uw gebruikersnaam en wachtwoord! Dit is zeer belangrijk, want het is mogelijk om willekeurige PHP-code te uploaden naar uw website via de front-end.
 
-####4.2 HOE DE FRONTEND GEBRUIKEN.
+#### 4.2 HOE DE FRONTEND GEBRUIKEN.
 
 Instructies worden op elke pagina van de frontend, om uit te leggen hoe het te gebruiken en het beoogde doel. Als u meer uitleg of een speciale hulp nodig hebben, neem dan contact op met ondersteuning. Als alternatief, zijn er een aantal video's op YouTube die zouden kunnen helpen door middel van een demonstratie.
 
@@ -100,7 +100,7 @@ Instructies worden op elke pagina van de frontend, om uit te leggen hoe het te g
 ---
 
 
-###5. <a name="SECTION5"></a>BESTANDEN IN DIT PAKKET
+### 5. <a name="SECTION5"></a>BESTANDEN IN DIT PAKKET
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
@@ -242,10 +242,10 @@ Bestand | Beschrijving
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
+### 6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van CIDRAM, samen met een beschrijving van hun doel en functie.
 
-####"general" (Categorie)
+#### "general" (Categorie)
 Algemene configuratie voor CIDRAM.
 
 "logfile"
@@ -310,7 +310,7 @@ Algemene configuratie voor CIDRAM.
 "protect_frontend"
 - Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
 
-####"signatures" (Categorie)
+#### "signatures" (Categorie)
 Configuratie voor signatures.
 
 "ipv4"
@@ -346,7 +346,7 @@ Configuratie voor signatures.
 "track_mode"
 - Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.
 
-####"recaptcha" (Categorie)
+#### "recaptcha" (Categorie)
 Optioneel, u kan uw gebruikers te voorzien van een manier om de "Toegang Geweigerd" pagina te omzeilen, door middel van het invullen van een reCAPTCHA instantie, als u wilt om dit te doen. Dit kan helpen om een aantal van de risico's die samenhangen met valse positieven te beperken, in die situaties waar we niet helemaal zeker of er een verzoek is voortgekomen uit een machine of een mens.
 
 Vanwege de risico's die samenhangen met het verstrekken van een manier voor eindgebruikers om de "Toegang Geweigerd" pagina te omzeilen, algemeen, ik zou adviseren tegen het inschakelen van deze functie tenzij u voelt het om nodig om dit te doen. Situaties waarin het nodig zou zijn: Als uw website heeft klanten/gebruikers die moeten toegang hebben tot uw website, en als dit is iets dat niet kan worden gecompromitteerd, maar als deze klanten/gebruikers deze verbinding maakt vanuit een vijandig netwerk dat mogelijk ook zou kunnen dragen ongewenste verkeer, en het blokkeren van deze ongewenste verkeer is ook iets dat niet kan worden gecompromitteerd, in deze bijzondere no-win situaties, de functie reCAPTCHA kan van pas komen als een middel van het toestaan van de wenselijke klanten/gebruikers, terwijl het vermijden van het het ongewenste verkeer vanaf hetzelfde netwerk. Dat gezegd hebbende hoewel, gezien het feit dat de bestemming van een CAPTCHA is om onderscheid te maken tussen mensen en niet-mensen, de functie reCAPTCHA zou alleen helpen in deze no-win situaties als zou veronderstellen dat deze ongewenste verkeer is niet-humaan (b.v., spambots, schrapers, hack gereedschappen, geautomatiseerde verkeer), in tegenstelling tot ongewenst menselijk verkeer (zoals menselijke spammers, hackers, c.s.).
@@ -384,7 +384,7 @@ Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik va
 *Voorbeelden:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-####"template_data" (Categorie)
+#### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
 
 Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. Als u gebruik aangepaste thema's voor CIDRAM, HTML-uitvoer is afkomstig van de `template_custom.html` bestand, en alternatief, HTML-uitvoer is afkomstig van de `template.html` bestand. Variabelen geschreven om dit sectie van het configuratiebestand worden geïnterpreteerd aan de HTML-uitvoer door middel van het vervangen van variabelennamen omringd door accolades gevonden binnen de HTML-uitvoer met de bijbehorende variabele gegevens. Bijvoorbeeld, waar `foo="bar"`, elk geval van `<p>{foo}</p>` gevonden binnen de HTML-uitvoer `<p>bar</p>` zal worden.
@@ -395,9 +395,9 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 ---
 
 
-###7. <a name="SECTION7"></a>SIGNATURE FORMAAT
+### 7. <a name="SECTION7"></a>SIGNATURE FORMAAT
 
-####7.0 BASICS
+#### 7.0 BASICS
 
 Een beschrijving van het formaat en de structuur van de signatures gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste signatures bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de signatures van CIDRAM.
 
@@ -452,7 +452,7 @@ De beschikbare korte woorden zijn:
 - Proxy
 - Spam
 
-####7.1 ETIKETTEN
+#### 7.1 ETIKETTEN
 
 Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de signatures van elke sectie, samen met de naam van uw signature sectie (zie het onderstaande voorbeeld).
 
@@ -497,9 +497,9 @@ Tag: Voorbeeld Sectie.
 Expires: 2016.12.31
 ```
 
-####7.2 YAML
+#### 7.2 YAML
 
-#####7.2.0 YAML BASICS
+##### 7.2.0 YAML BASICS
 
 Een vereenvoudigde vorm van YAML markup kan worden gebruikt in signature bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke signature secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele signatures en signature secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde signature, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere signatures; als u wilt een specifieke signatures te leiden tot een pagina redirect; als u wilt een signature sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele signatures en/of signature secties).
 
@@ -554,7 +554,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####7.2.1 HOE OM SIGNATURE SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
+##### 7.2.1 HOE OM SIGNATURE SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
 
 Als "usemode" is 0 of 1, signature secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
 
@@ -572,7 +572,7 @@ recaptcha:
 
 Notitie: Een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN signature is geactiveerd (niet meer, niet minder; als er meerdere signatures worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden).
 
-####7.3 EXTRA INFORMATIE
+#### 7.3 EXTRA INFORMATIE
 
 Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de signature bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
 
@@ -585,9 +585,9 @@ Raadpleeg de aangepaste signature bestanden voor meer informatie.
 ---
 
 
-###8. <a name="SECTION8"></a>VEELGESTELDE VRAGEN (FAQ)
+### 8. <a name="SECTION8"></a>VEELGESTELDE VRAGEN (FAQ)
 
-####Wat is een "vals positieve"?
+#### Wat is een "vals positieve"?
 
 De term "vals positieve" (*alternatief: "vals positieve fout"; "vals alarm"*; Engels: *false positive*; *false positive error*; *false alarm*), zeer eenvoudig beschreven, en een algemene context, wordt gebruikt bij het testen voor een toestand, om verwijst naar om de resultaten van die test, wanneer de resultaten positief zijn (d.w.z, de toestand wordt vastgesteld als "positief"), maar wordt verwacht "negatief" te zijn (d.w.z, de toestand in werkelijkheid is "negatief"). Een "vals positieve" analoog aan "huilende wolf" kan worden beschouwd (waarin de toestand wordt getest, is of er een wolf in de buurt van de kudde, de toestand is "vals" in dat er geen wolf in de buurt van de kudde, en de toestand wordt gerapporteerd als "positief" door de herder door middel van schreeuwen "wolf, wolf"), of analoog aan situaties in medische testen waarin een patiënt gediagnosticeerd als met een ziekte of aandoening, terwijl het in werkelijkheid, hebben ze geen ziekte of aandoening.
 
@@ -602,15 +602,15 @@ Dit kan worden samengevat in de onderstaande tabel:
 CIDRAM *NIET* doet blokkeren van een IP-adres | Waar negatieve (correcte gevolgtrekking) | Gemiste detectie (analoog aan vals negatieve)
 CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (correcte gevolgtrekking)
 
-####Kan CIDRAM blok hele landen?
+#### Kan CIDRAM blok hele landen?
 
 Ja. De eenvoudigste manier om dit te bereiken zou zijn om sommige van de optionele land blocklists door Macmathan te installeren. Dit kan gedaan worden met een paar simpele muisklikken direct vanaf de frontend updates pagina, of, als u liever voor de frontend te blijven uitgeschakeld, door ze rechtstreeks downloaden van de **[optionele land blocklists downloads pagina](https://macmathan.info/blocklists)**, uploaden van hen om de vault, en citeren van hun namen in de desbetreffende configuratie richtlijnen.
 
-####Hoe vaak worden signatures bijgewerkt?
+#### Hoe vaak worden signatures bijgewerkt?
 
 Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor CIDRMA signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen, en in het algemeen, onderhouders proberen om prioriteiten te stellen op basis van noodzaak en van hoe vaak veranderingen optreden tussen ranges. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
 
-####Ik heb een fout tegengekomen tijdens het gebruik van CIDRAM en ik weet niet wat te doen! Help alstublieft!
+#### Ik heb een fout tegengekomen tijdens het gebruik van CIDRAM en ik weet niet wat te doen! Help alstublieft!
 
 - Gebruikt u de nieuwste versie van de software? Gebruikt u de nieuwste versies van uw signature bestanden? Indien het antwoord op een van deze twee vragen is nee, probeer eerst om alles te bijwerken, en controleer of het probleem zich blijft voordoen. Als dit aanhoudt, lees verder.
 - Hebt u door alle documentatie gecontroleerd? Zo niet, doe dat dan. Als het probleem niet kan worden opgelost met behulp van de documentatie, lees verder.
@@ -618,15 +618,15 @@ Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. All
 - Hebt u de **[CIDRAM support forum van Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
 - Als het probleem blijft bestaan, laat het ons dan weten door het creëren van een nieuwe vraag op de kwesties pagina of door het starten van een nieuwe discussie over het support forum.
 
-####Ik ben geblokkeerd door CIDRAM van een website die ik wil bezoeken! Help alstublieft!
+#### Ik ben geblokkeerd door CIDRAM van een website die ik wil bezoeken! Help alstublieft!
 
 CIDRAM biedt een manier voor website-eigenaren om ongewenst verkeer te blokkeren, maar het is de verantwoordelijkheid van de website-eigenaren om zelf te beslissen hoe ze willen CIDRAM gebruiken. In het geval van de valse positieven met betrekking tot de signature bestanden normaal meegeleverd met CIDRAM, correcties kunnen worden gemaakt, maar met betrekking tot het wordt gedeblokkeerd van specifieke websites, u nodig hebt om te communiceren met de eigenaren van de websites in kwestie. In gevallen waarin correcties worden gemaakt, op zijn minst, zullen ze nodig hebben om hun signature bestanden en/of installatie bij te werken, en in andere gevallen (zoals bijvoorbeeld, waarin ze hun installatie hebt gewijzigd, creëerden hun eigen aangepaste signatures, ezv), het is hun verantwoordelijkheid om uw probleem op te lossen, en is geheel buiten onze controle.
 
-####Ik wil CIDRAM gebruiken met een PHP-versie ouder dan 5.4.0; Kan u helpen?
+#### Ik wil CIDRAM gebruiken met een PHP-versie ouder dan 5.4.0; Kan u helpen?
 
 Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in 2014, en verlengd veiligheid ondersteuning werd beëindigd in 2015. Met ingang van het schrijven van dit, het is 2017, en PHP 7.1.0 is al beschikbaar. Momenteel, ondersteuning wordt verleend voor het gebruik van CIDRAM met PHP 5.4.0 en alle beschikbare nieuwere PHP-versies, maar als u probeert te CIDRAM gebruiken met een oudere PHP-versies, steun zal niet worden verstrekt.
 
 ---
 
 
-Laatste Bijgewerkt: 13 Maart 2017 (2017.03.13).
+Laatste Bijgewerkt: 14 Maart 2017 (2017.03.14).

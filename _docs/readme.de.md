@@ -15,7 +15,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>VORWORT
+### 1. <a name="SECTION1"></a>VORWORT
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) ist ein PHP-Skript gestaltete für Websites zu schützen, durch das Blockieren von IP-Adressen als Quellen von unerwünschten Verkehr angesehen, einschließlich (aber nicht beschränkt auf) Datenverkehr von nicht-menschlichen Zugang Endpunkte, Cloud-Services, spambots, Website Schaber, usw. Es tut dies durch die möglichen CIDRs von IP-Adressen zu berechnen, von eingehenden Anfragen geliefert, und dann versuchen, diese gegen ihre Signaturdateien zu entsprechen (Diese Signaturdateien enthalten Listen von CIDRs von IP-Adressen als Ursachen für unerwünschte Verkehrs angesehen); Wenn Übereinstimmungen gefunden werden, die Anfragen ist blockiert.
 
@@ -32,7 +32,7 @@ Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos her
 ---
 
 
-###2. <a name="SECTION2"></a>INSTALLATION
+### 2. <a name="SECTION2"></a>INSTALLATION
 
 Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um CIDRAM auf den *meisten Systemen und CMS zu installieren:
 
@@ -65,7 +65,7 @@ Oder das in der `.htaccess` Datei:
 ---
 
 
-###3. <a name="SECTION3"></a>BENUTZUNG
+### 3. <a name="SECTION3"></a>BENUTZUNG
 
 CIDRAM sollte automatisch unerwünschte Zugriffe auf Ihre Website blockieren, ohne manuelle Unterstützung erforderlich, abgesehen von seiner Erstinstallation.
 
@@ -76,15 +76,15 @@ Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren.
 ---
 
 
-###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
+### 4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
 
-####4.0 WAS IST DAS FRONT-END.
+#### 4.0 WAS IST DAS FRONT-END.
 
 Das Front-End bietet eine bequeme und einfache Möglichkeit, für Ihre CIDRAM-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Updates-Seite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
 
 Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
 
-####4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
+#### 4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
 
 1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf true (wird es standardmäßig false sein).
 
@@ -94,7 +94,7 @@ Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhi
 
 Note: Nachdem Sie sich eingeloggt haben, um einen unautorisiert Zugriff auf das Front-End zu verhindern, sollten Sie sofort Ihren Benutzernamen und Ihr Passwort ändern! Dies ist sehr wichtig, weil es möglich ist, beliebigen PHP-Code auf Ihre Website über das Front-End zu hochladen.
 
-####4.2 WIE MAN DAS FRONT-END BENUTZT.
+#### 4.2 WIE MAN DAS FRONT-END BENUTZT.
 
 Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnte.
 
@@ -102,7 +102,7 @@ Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwe
 ---
 
 
-###5. <a name="SECTION5"></a>IM PAKET ENTHALTENE DATEIEN
+### 5. <a name="SECTION5"></a>IM PAKET ENTHALTENE DATEIEN
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
@@ -244,10 +244,10 @@ Datei | Beschreibung
 ---
 
 
-###6. <a name="SECTION6"></a>EINSTELLUNGEN
+### 6. <a name="SECTION6"></a>EINSTELLUNGEN
 Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `config.ini` mit einer kurzen Beschreibung ihrer Funktionen.
 
-####"general" (Kategorie)
+#### "general" (Kategorie)
 Generelle Konfiguration von CIDRAM.
 
 "logfile"
@@ -312,7 +312,7 @@ Generelle Konfiguration von CIDRAM.
 "protect_frontend"
 - Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.
 
-####"signatures" (Kategorie)
+#### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
 "ipv4"
@@ -348,7 +348,7 @@ Konfiguration der Signaturen.
 "track_mode"
 - Wann sollten Verstöße gezählt werden? False = Wenn IPs von Modulen blockiert werden. True = Wenn IPs von irgendeinem Grund blockiert werden.
 
-####"recaptcha" (Kategorie)
+#### "recaptcha" (Kategorie)
 Wenn du willst, können Sie Benutzern bieten eine Möglichkeit zur umgehen der Seite "Zugriff verweigert" durch Abschluss einer reCAPTCHA-Instanz. Dies kann helfen, einige der Risiken im Zusammenhang mit Falsch-Positivs zu mildern, in diesen Fällen wodurch wir nicht ganz sicher sind ob eine Anfrage von einer Maschine oder einem Menschen stammt.
 
 Aufgrund der Risiken im Zusammenhang mit der Bereitstellung eines Wegs um der Seite "Zugriff verweigert" zur umgehen, im Algemeinen, Ich würde raten dies zu nicht ermöglichen es sei denn, Sie empfinden es als notwendig dies zu tun. Situationen wo es notwendig könnte sein: Wenn Ihre Website hat Kunden/Benutzer, die Zugriff auf Ihre Website haben müssen, und wenn dies etwas ist das nicht ausgehandelt werden kann, aber wenn diese Kunden/Benutzer von einem feindlichen Netzwerk zu verbinden, das möglicherweise auch unerwünschten Verkehr führen könnte, und die Blockierung dieser unerwünschten Verkehr ist auch etwas das nicht ausgehandelt werden kann, in diesen Situationen, könnte das reCAPTCHA-Feature nützlich sein um die wünschenswerten Kunden/Benutzer zu ermöglichen, während der unerwünschten Verkehr aus demselben Netzwerk ausgeschlossen ist. Das sagte aber, da der beabsichtigte Zweck einer CAPTCHA ist, zwischen Menschen und Nicht-Menschen zu unterscheiden, das reCAPTCHA-Feature würde nur in diesen Situationen ohne Gewinner zu helfen, wenn wir annehmen dass dieser unerwünschten Verkehr nicht menschlich ist (z.B, Spambots, Scrapers, Hacktools, automatisierten Datenverkehr), im Gegensatz zu unerwünschtem menschlichen Verkehr (wie menschliche Spammer, Hacker, und derartige).
@@ -386,7 +386,7 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 *Beispielen:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-####"template_data" (Kategorie)
+#### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
 
 Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zugriff verweigert"-Nachricht Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie benutzerdefinierte Themes für CIDRAM verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`.
@@ -397,9 +397,9 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 ---
 
 
-###7. <a name="SECTION7"></a>SIGNATURENFORMAT
+### 7. <a name="SECTION7"></a>SIGNATURENFORMAT
 
-####7.0 GRUNDLAGEN
+#### 7.0 GRUNDLAGEN
 
 Eine Beschreibung das Formats und die Struktur der Signaturen benutzt von CIDRAM kann gefunden im Klartext dokumentiert werden in der benutzerdefinierten Signaturdateien. Bitte beachten Sie zu dieser Dokumentation, um mehr über das Format und die Struktur der Signaturen für CIDRAM zu erfahren.
 
@@ -454,7 +454,7 @@ Die verfügbaren Kurzwörter sind:
 - Proxy
 - Spam
 
-####7.1 TAGS
+#### 7.1 TAGS
 
 Wenn Sie Ihre benutzerdefinierten Signaturen in einzelne Sektionen aufteilen möchten, können Sie diese einzelne Sektionen zu dem Skript identifizieren durch Hinzufügen eine "Sektion-Tag" unmittelbar nach den Signaturen von jeder Sektion, zusammen mit dem Namen Ihres Signatur-Sektion (siehe Beispiel unten).
 
@@ -499,9 +499,9 @@ Tag: Beispiel Sektion
 Expires: 2016.12.31
 ```
 
-####7.2 YAML
+#### 7.2 YAML
 
-#####7.2.0 YAML GRUNDLAGEN
+##### 7.2.0 YAML GRUNDLAGEN
 
 Eine vereinfachte Form von YAML-Markup kann in Signaturdateien verwendet werden, um Verhalten und Einstellungen spezifisch für einzelne Signatur-Sektionen zu definieren. Dies kann nützlich sein wenn Sie der Wert von Ihrer Konfiguration-Richtlinien möchten zu variieren auf der Grundlage von individuell Signaturen und Signatur-Sektionen (beispielsweise; wenn Sie eine E-Mail-Adresse zu bieten für Support-Tickets möchten, für irgendein Benutzer dass durch eine spezifische Signatur blockiert, aber Sie eine E-Mail-Adresse zu bieten für Support-Tickets möchten nicht für Benutzer durch andere Signaturen blockiert; wenn Sie möchten dass bestimmte spezifisch Signaturen eine Seitenumleitung zu auslösen; wenn Sie einen Signatur-Sektion zu markieren für Verwendung mit reCAPTCHA möchten; wenn Sie um blockierte Zugriffsversuche zu protokollieren in einzelne Dateien auf der Grundlage von einzelnen Signaturen und/oder Signatur-Sektionen möchten).
 
@@ -556,7 +556,7 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-#####7.2.1 WIE MAN "SPEZIELL MARKIEREN" DEN SIGNATUR-SEKTIONEN FÜR DIE VERWENDUNG MIT reCAPTCHA
+##### 7.2.1 WIE MAN "SPEZIELL MARKIEREN" DEN SIGNATUR-SEKTIONEN FÜR DIE VERWENDUNG MIT reCAPTCHA
 
 Wenn "usemode" ist 0 oder 1, Signatur-Sektionen brauchen nicht zu "besonders markiert" werden für Verwendung mit reCAPTCHA (weil um reCAPTCHA sie bereits entweder wird oder wird nicht zu verwenden, abhängig von dieser Einstellung).
 
@@ -574,7 +574,7 @@ recaptcha:
 
 Beachten: Eine reCAPTCHA-Instanz wird NUR dem Benutzer angeboten wenn reCAPTCHA aktiviert ist (entweder mit "usemode" als 1, oder "usemode" als 2 mit "enabled" als true), und wenn genau EINE Signatur ausgelöst wurde (nicht mehr und nicht weniger; wenn mehrere Signaturen ausgelöst werden, eine reCAPTCHA-Instanz wird NICHT angeboten werden).
 
-####7.3 ZUSATZINFORMATION
+#### 7.3 ZUSATZINFORMATION
 
 In Ergänzung, wenn Sie möchten dass CIDRAM wird bestimmte Sektionen innerhalb irgendein der Signaturdateien vollständig ignoriert, können Sie die Datei `ignore.dat` verwenden, um festzulegen welche Sektionen zu ignorieren. Auf einer neuen Linie, schreiben `Ignore`, gefolgt von einem Leerzeichen, gefolgt durch dem Namen das Sektion welche Sie möchten für CIDRAM zu ignorieren (siehe Beispiel unten).
 
@@ -587,9 +587,9 @@ Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informat
 ---
 
 
-###8. <a name="SECTION8"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
+### 8. <a name="SECTION8"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
-####Was ist ein "Falsch-Positiv"?
+#### Was ist ein "Falsch-Positiv"?
 
 Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, verwendet wird, wenn eine Bedingung zu testen und wenn die Ergebnisse positiv sind, um die Ergebnisse dieser Tests zu entnehmen (dh, die Bedingung bestimmt wird positiv oder wahr), aber sind zu erwarten sein (oder sollte gewesen) negativ (dh, der Zustand, in Wirklichkeit, ist negativ oder falsch). Eine "Falsch-Positiv" könnte analog zu "weinen Wolf" betrachtet (wobei die Bedingung geprüft wird, ob es ein Wolf in der Nähe der Herde ist, die Bedingung "falsch" ist in dass es keinen Wolf in der Nähe der Herde, und die Bedingung wird als "positiv" berichtet durch die Schäfer durch Aufruf "Wolf, Wolf"), oder analog zu Situationen in medizinischen Tests, wobei ein Patient als mit eine Krankheit diagnostiziert, wenn sie in Wirklichkeit haben sie keine solche Krankheit.
 
@@ -604,15 +604,15 @@ Dies kann durch die folgende Tabelle zusammengefasst werden:
 CIDRAM tut blockiert eine IP-Adresse *NICHT* | Wahr-Negativ (korrekte Folgerung) | Verpasste Erkennung (analog zu Falsch-Negativ)
 CIDRAM *TUT* blockiert eine IP-Adresse | __Falsch-Positiv__ | True-Positiv (korrekte Folgerung)
 
-####Kann CIDRAM ganze Länder blockieren?
+#### Kann CIDRAM ganze Länder blockieren?
 
 Ja. Der einfachste Weg für dies zu erreichen wäre einige der optionalen Landblocklisten bereitgestellt von Macmathan zu installieren. Dies kann mit einigen einfachen Klicks direkt aus der Aktualisierungsseite der Front-End erfolgen, oder, wenn du es vorziehe dass der Front-End deaktiviert bleiben, indem Sie sie direkt aus der **[optionalen Blocklisten-Download-Seite](https://macmathan.info/blocklists)** herunterladen, zum vault hochladen, und zitieren ihre Namen in den entsprechenden Konfigurations-Richtlinien.
 
-####Wie häufig werden Signaturen aktualisiert?
+#### Wie häufig werden Signaturen aktualisiert?
 
 Die Aktualisierungshäufigkeit hängt von den betreffenden Signaturdateien ab. In der Regel, alle Betreuer für CIDRAM Signaturdateien versuchen ihre Signaturen so aktuell wie möglich zu halten, aber da haben wir alle anderen Verpflichtungen, unser Leben außerhalb des Projekts, und da für unsere Bemühungen um das Projekt, keiner von uns wird finanziell entschädigt (d.h., bezahlt), ein genauer Aktualisierungs-Zeitplan kann nicht garantiert werden. In der Regel, Signaturen werden aktualisiert, wann immer es genügend Zeit gibt sie zu aktualisieren, und Betreuer versuchen auf der Grundlage der Notwendigkeit und auf der Grundlage wie häufig Veränderungen unter den Bereichen auftreten zu priorisieren. Hilfe wird immer geschätzt, wenn Sie bereit bist, irgendwelche anzubieten.
 
-####Ich habe ein Problem bei der Verwendung von CIDRAM und ich weiß nicht was ich tun soll! Bitte helfen Sie!
+#### Ich habe ein Problem bei der Verwendung von CIDRAM und ich weiß nicht was ich tun soll! Bitte helfen Sie!
 
 - Verwenden Sie die neueste Version der Software? Verwenden Sie die neuesten Versionen Ihrer Signaturdateien? Wenn die Antwort auf eine dieser beiden Fragen nein ist, Versuchen alles zuerst zu aktualisieren, und überprüfen Sie ob das Problem weiterhin besteht. Wenn es weiterhin besteht, lesen Sie weiter.
 - Haben Sie alle der Dokumentation überprüft? Wenn nicht, bitte tun Sie dies. Wenn das Problem nicht mit der Dokumentation gelöst werden kann, lesen Sie weiter.
@@ -620,15 +620,15 @@ Die Aktualisierungshäufigkeit hängt von den betreffenden Signaturdateien ab. I
 - Haben Sie das **[CIDRAM Support-Forum von Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)** überprüft, ob das Problem vorher erwähnt wurde? Wenn es vorher erwähnt wurde, überprüfen Sie ob irgendwelche Vorschläge, Ideen und/oder Lösungen zur Verfügung gestellt wurden, und folge wie nötig um das Problem zu lösen.
 - Wenn das Problem weiterhin besteht, informieren Sie uns bitte darüber, indem Sie eine neue Diskussion auf der Frage-Seite erstellen oder eine neue Diskussion über das Support-Forum starten.
 
-####CIDRAM hat mich von einer Website blockiert die ich besuchen möchte! Bitte helfen Sie!
+#### CIDRAM hat mich von einer Website blockiert die ich besuchen möchte! Bitte helfen Sie!
 
 CIDRAM bietet ein Mittel für Website-Besitzer, um unerwünschten Verkehr zu blockieren, aber es liegt in der Verantwortung der Website-Besitzer, selbst zu entscheiden, wie sie CIDRAM nutzen wollen. Im Falle der falschen-Positiven in Bezug auf der Signaturdateien die normalerweise mit CIDRAM enthalten sind, Korrekturen können vorgenommen werden, aber in Bezug auf unblockiert von bestimmten Websites werden, Sie müssen mit den Besitzern der betreffenden Webseiten sprechen. In Fällen in denen Korrekturen vorgenommen werden, zumindest müssen sie ihre Signaturdateien und/oder Installation aktualisieren, und in anderen Fällen (wie zum Beispiel, wo sie ihre Installation geändert haben, wo sie ihre eigenen benutzerdefinierten Signaturen erstellt haben, usw), Verantwortung für Ihr Problem zu lösen ist ganz ihre, und ist ganz außerhalb unserer Kontrolle.
 
-####Ich möchte CIDRAM mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?
+#### Ich möchte CIDRAM mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?
 
 Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) im Jahr 2014, und Sicherheits-Unterstützung wurde im Jahr 2015 beendet. Zum Zeitpunkt des Schreibens dieses, es ist 2017 und PHP 7.1.0 ist bereits vorhanden. An dieser Zeitpunkt, Unterstützung wird für die Verwendung von CIDRAM mit PHP 5.4.0 und allen verfügbaren neueren PHP Versionen zur Verfügung, aber wenn Sie versuchen CIDRAM mit älteren PHP Versionen zu verwenden, Unterstützung wird zur Verfügung nicht.
 
 ---
 
 
-Zuletzt aktualisiert: 10 März 2017 (2017.03.10).
+Zuletzt aktualisiert: 14 März 2017 (2017.03.14).

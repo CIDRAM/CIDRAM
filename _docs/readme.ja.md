@@ -198,10 +198,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cache.dat | キャッシュ・データ。
-/vault/cidramblocklists.dat | 国オプショナルブロックリスト情報が含まれています（国オプショナルブロックリストは、Macmathanからです）；アップデート機能で使用（フロントエンドが提供します）。
+/vault/cidramblocklists.dat | Macmathanが提供する国オプショナルブロックリスト。 アップデート機能で使用（フロントエンドが提供します）。
 /vault/cli.php | CLIハンドラ。
-/vault/components.dat | CIDRAMのコンポーネント情報が含まれています； アップデート機能で使用（フロントエンドが提供します）。
-/vault/config.ini.RenameMe | CIDRAM設定ファイル；CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
+/vault/components.dat | CIDRAMのコンポーネント情報が含まれています。 アップデート機能で使用（フロントエンドが提供します）。
+/vault/config.ini.RenameMe | CIDRAM設定ファイル； CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/frontend.php | フロントエンド・ハンドラ。
@@ -604,7 +604,7 @@ CIDRAMは、ＩＰアドレスをブロックします | __偽陽性__ | 真陽�
 
 #### CIDRAMは国全体をブロックできますか？
 
-はい。 The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://macmathan.info/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
+はい。 これを達成する最も簡単な方法は、Macmathanが提供する国オプショナルブロックリストのいくつかをインストールします。 これはフロントエンドのアップデート・ページから直接行うことができます。 あるいは、フロントエンドを無効のままにしたい場合は、**[国オプショナルブロックリストのダウンロードページ](https://macmathan.info/blocklists)**からダウンロードできます。 ダウンロード後、それらをvaultにアップロードする, 関連する設定ディレクティブで名前を挙げてください。
 
 #### シグネチャはどれくらいの頻度で更新されますか？
 

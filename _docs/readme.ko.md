@@ -198,9 +198,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/lang/lang.zh.php | 중국어 간체 언어 데이터.
 /vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/cache.dat | 캐시 데이터.
-/vault/cidramblocklists.dat | 국가 선택적 차단 목록 정보가 포함되어 있습니다 (국가 선택적 차단 목록은 Macmathan에서입니다); 업데이트 기능 사용 (프론트 엔드를 제공합니다).
+/vault/cidramblocklists.dat | Macmathan 제공하는 국가 선택적 차단 목록. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
 /vault/cli.php | CLI 핸들러.
-/vault/components.dat | CIDRAM 구성 요소 정보가 포함되어 있습니다; 업데이트 기능 사용 (프론트 엔드를 제공합니다).
+/vault/components.dat | CIDRAM 구성 요소 정보가 포함되어 있습니다. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
 /vault/config.ini.RenameMe | CIDRAM 설정 파일; CIDRAM 모든 옵션 설정을 포함하고 있습니다. 각 옵션의 기능과 작동 방법에 대한 설명입니다 (활성화하기 위해 이름을 변경합니다).
 /vault/config.php | 구성 핸들러.
 /vault/config.yaml | 설정 기본값 스 파일; CIDRAM의 기본 설정이 포함되어 있습니다.
@@ -604,7 +604,7 @@ IP 주소를 CIDRAM 차단합니다 | __거짓 양성__ | 진실 양성 (올바�
 
 #### CIDRAM는 나라 전체를 차단할 수 있습니까?
 
-Yes. The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://macmathan.info/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
+예. 이것을 달성하는 가장 쉬운 방법은 Macmathan 제공하는 국가 선택적 차단 목록의 일부를 설치합니다. 이것은 프런트 엔드 업데이트 페이지에서 직접 할 수 있습니다. 또는, 프런트 엔드를 계속 사용 중지하려는 경우, **[국가 선택적 차단 목록의 다운로드 페이지](https://macmathan.info/blocklists)** 에서 다운로드 할 수 있습니다. 다운로드 후, 그들을 vault에 업로드, 관련 지시에 의해 지명하십시오.
 
 #### 서명은 얼마나 자주 업데이트됩니까?
 

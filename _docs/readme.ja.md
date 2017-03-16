@@ -620,11 +620,11 @@ CIDRAMは、ＩＰアドレスをブロックします | __偽陽性__ | 真陽�
 
 #### 私はCIDRAMによってウェブサイトからブロックされています！ 助けてください！
 
-CIDRAM provides a means for website owners to block undesirable traffic, but it's the responsibility of website owners to decide for themselves how they want to use CIDRAM. In case of the false positives relating to the signature files normally included with CIDRAM, corrections can be made, but in regards to being unblocked from specific websites, you'll need to take that up with the owners of the websites in question. In cases where corrections are made, at the very least, they'll need to update their signature files and/or installation, and in other cases (such as, for example, where they've modified their installation, created their own custom signatures, etc), the responsibility to solve your problem is entirely theirs, and is entirely outside our control.
+CIDRAMは、ウェブサイト所有者が望ましくないトラフィックをブロックする手段を提供します、しかし、ウェブサイト所有者は、その使用方法を決定する必要があります。 シグネチャファイルに誤検出がある場合、訂正を行うことができる、しかし、 特定のウェブサイトからブロック解除されていることに関して、あなたはウェブサイト所有者に連絡する必要があります。 修正が行われると、更新が必要になります。 それ以外の場合は、問題を解決するのは彼らの責任です。 カスタム化と個人的な選択は、私たちのコントロールを完全に超えています。
 
 #### 5.4.0より古いPHPバージョンでCIDRAMを使用したいと思います； 手伝ってくれますか？
 
-いいえ。 PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using CIDRAM with PHP 5.4.0 and all available newer PHP versions, but if you try to use CIDRAM with any older PHP versions, support won't be provided.
+いいえ。 PHP 5.4.0は2014年に公式EoL（「End of Life」/人生の終わり）に達しました。 長期的なセキュリティサポートは2015年に終了しました。 現在、それは2017であり、PHP 7.1.0はすでに利用可能です。 現在、PHP 5.4.0およびすべてのより新しいPHPバージョンでCIDRAMを使用するためのサポートが提供されています。 より古いPHPバージョンのサポートは提供されていません。
 
 ---
 

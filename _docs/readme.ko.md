@@ -620,11 +620,11 @@ IP 주소를 CIDRAM 차단합니다 | __거짓 양성__ | 진실 양성 (올바�
 
 #### 나는 CIDRAM 의해 웹 사이트에서 차단되어 있습니다! 도와주세요!
 
-CIDRAM provides a means for website owners to block undesirable traffic, but it's the responsibility of website owners to decide for themselves how they want to use CIDRAM. In case of the false positives relating to the signature files normally included with CIDRAM, corrections can be made, but in regards to being unblocked from specific websites, you'll need to take that up with the owners of the websites in question. In cases where corrections are made, at the very least, they'll need to update their signature files and/or installation, and in other cases (such as, for example, where they've modified their installation, created their own custom signatures, etc), the responsibility to solve your problem is entirely theirs, and is entirely outside our control.
+CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 수단을 제공합니다, 하지만 웹 사이트 소유자는 그 사용 방법을 결정해야합니다. 서명 파일에 오류 검출이있는 경우, 정정을 할 수, 그러나 특정 웹 사이트에서 차단 해제되어 관해서, 당신은 웹 사이트 소유자에게 문의해야합니다. 수정이 이루어지면 업데이트가 필요합니다. 그렇지 않으면 문제를 해결하는 것은 그들의 책임입니다. 맞춤화와 개인 선택은 전적으로 우리가 통제 할 수없는 것입니다.
 
 #### 5.4.0보다 오래된 PHP 버전에서 CIDRAM을 사용하고 싶습니다; 도울 수 있니?
 
-No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using CIDRAM with PHP 5.4.0 and all available newer PHP versions, but if you try to use CIDRAM with any older PHP versions, support won't be provided.
+아니오. PHP 5.4.0은 2014 년 공식 EoL에 ("End of Life" / 삶의 끝) 도달했습니다. 2015 년에 연장 된 보안 지원이 종료되었습니다. 현재는 2017이며 PHP 7.1.0을 이미 사용할 수 있습니다. 현재, PHP 5.4.0 및 모든 더 최신 PHP 버전 CIDRAM를 사용하기위한 지원이 제공되고 있습니다. 더 오래된 PHP 버전에 대한 지원은 제공하지 않습니다.
 
 ---
 

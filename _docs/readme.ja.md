@@ -501,7 +501,7 @@ Expires: 2016.12.31
 
 ##### 7.2.0 YAML基本原則
 
-セクション固有の設定を定義するために、シンプルな形式のYAMLマークアップをシグネチャファイルで使用することができます。 これは、異なるシグネチャセクションに対して異なる設定を行う場合に便利です （例えば： サポートチケットのＥメールアドレスを指定したい場合は、しかし特定のセクションのみ； 特定のシグネチャでページリダイレクトをトリガーしたい場合は； reCAPTCHAで使用するために署名セクションをマークしたい場合は； 個々のシグネチャに基づいて、そして/または、シグネチャセクションに基づいて、ブロックされたアクセス試行を別々のファイルに記録したい場合は）。
+セクション固有の設定を定義するために、シンプルな形式のYAMLマークアップをシグネチャファイルで使用することができます。 これは、異なるシグネチャセクションに対して異なる設定を行う場合に便利です （例えば： サポートチケットのＥメールアドレスを指定したい場合は、しかし特定のセクションのみ； 特定のシグネチャでページリダイレクトをトリガーしたい場合は； reCAPTCHAで使用するためにシグネチャセクションをマークしたい場合は； 個々のシグネチャに基づいて、そして/または、シグネチャセクションに基づいて、ブロックされたアクセス試行を別々のファイルに記録したい場合は）。
 
 シグネチャファイルでのYAMLマークアップの使用はオプションです（即ち、あなたが望むならそれを使うことができますが、そうする必要はありません）。 大部分の（しかしすべてではない）構成ディレクティブを活用することができます。
 
@@ -604,19 +604,19 @@ CIDRAMは、ＩＰアドレスをブロックします | __偽陽性__ | 真陽�
 
 #### CIDRAMは国全体をブロックできますか？
 
-はい。 これを達成する最も簡単な方法は、Macmathanが提供する国オプショナルブロックリストのいくつかをインストールします。 これはフロントエンドのアップデート・ページから直接行うことができます。 あるいは、フロントエンドを無効のままにしたい場合は、**[国オプショナルブロックリストのダウンロードページ](https://macmathan.info/blocklists)**からダウンロードできます。 ダウンロード後、それらをvaultにアップロードする, 関連する設定ディレクティブで名前を挙げてください。
+はい。 これを達成する最も簡単な方法は、Macmathanが提供する国オプショナルブロックリストのいくつかをインストールします。 これはフロントエンドのアップデート・ページから直接行うことができます。 あるいは、フロントエンドを無効のままにしたい場合は、 **[国オプショナルブロックリストのダウンロードページ](https://macmathan.info/blocklists)** からダウンロードできます。 ダウンロード後、それらをvaultにアップロードする, 関連する設定ディレクティブで名前を挙げてください。
 
-#### シグネチャはどれくらいの頻度で更新されますか？
+#### シグネチャはどれくらいの頻度でアップデイトされますか？
 
-Update frequency varies depending on the signature files in question. All maintainers for CIDRAM signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
+アップデイト頻度は、署名ファイルによって異なります。 CIDRAMのシグネチャファイルのすべてのメンテナーが頻繁にアップデイトを試みる、しかし、私たちの皆様には、他にもさまざまなコミットメントがあり、私たちはプロジェクトの外で生活しており、と誰も財政的に補償されていない、したがって、正確なアップデイトスケジュールは保証されません。 一般に、十分な時間があればシグネチャがアップデイトされます。 メンテナーは必要性と範囲間の変化の頻度に基づいて優先順位をつけようとする。 あなたが何かを提供できるのであれば、援助は常に高く評価されます。
 
 #### CIDRAMを使用しているときに問題が発生しましたが、何をすべきかわかりません！ 助けてください！
 
-- Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
-- Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
-- Have you checked the **[issues page](https://github.com/Maikuolan/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- Have you checked the **[CIDRAM support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
+- あなたは最新のソフトウェアバージョンを使用していますか？ あなたは最新のシグネチャファイルバージョンを使用していますか？ そうでない場合は、まずすべてをアップデイトしてください。 問題が解決しないかどうかをチェックしてください。 それが続く場合は、読んでください。
+- あなたはドキュメンテーションをチェックしましたか？ もしそうでなければ、そうしてください。 ドキュメンテーションを使用して問題を解決できない場合は、引き続き読んでください。
+- **[イシュー・ページ](https://github.com/Maikuolan/CIDRAM/issues)** をチェックしましたか？ 問題が以前に言及されているかどうかをチェックしてください。 提案、アイデア、ソリューションが提供されたかどうかをチェックしてください。
+- **[Spambot Securityが提供するCIDRAMサポート・フォーラム](http://www.spambotsecurity.com/forum/viewforum.php?f=61)** をチェックしましたか？ 問題が以前に言及されているかどうかをチェックしてください。 提案、アイデア、ソリューションが提供されたかどうかをチェックしてください。
+- 問題が解決しない場合は、教えてください。 イシュー・ページまたはサポート・フォーラムに関する新しいディスカッションを作成する。
 
 #### 私はCIDRAMによってウェブサイトからブロックされています！ 助けてください！
 
@@ -629,4 +629,4 @@ CIDRAM provides a means for website owners to block undesirable traffic, but it'
 ---
 
 
-最終アップデート： 2017年3月14日。
+最終アップデート： 2017年3月16日。

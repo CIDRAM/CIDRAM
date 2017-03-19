@@ -720,23 +720,36 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 3.92%.
-# %Listed, abuseat.org (CBL-Listed): 10.29%.
-# Updated: 2016.09.12
+# %Listed, Google Malware Dashboard: 4.37%.
+# %Listed, CleanTalk.org: 13.14%.
+# %Listed, abuseat.org (CBL-Listed): 3.26%.
+# Updated: 2017.03.19
 
+2001:de8:4::/64 Deny Generic
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
 2001:df3:5c00::/48 Deny Generic
 2001:ee0::/47 Deny Generic
+2001:ee0:100::/40 Deny Generic
 2001:ee0:300::/47 Deny Generic
 2001:ee0:304::/47 Deny Generic
 2001:ee0:37f::/48 Deny Generic
-2001:ee0:3c0::/43 Deny Generic
+2001:ee0:1000::/48 Deny Generic
+2001:ee0:1006::/48 Deny Generic
 2001:ee0:1080::/48 Deny Generic
-2001:ee0:2f00::/48 Deny Generic
+2001:ee0:2f00::/43 Deny Generic
+2001:ee0:3200::/46 Deny Generic
 2001:ee0:3209::/48 Deny Generic
-2001:ee0:3e00:1::/64 Deny Generic
+2001:ee0:3220::/47 Deny Generic
+2001:ee0:3222::/48 Deny Generic
+2001:ee0:3240::/47 Deny Generic
+2001:ee0:324a::/48 Deny Generic
+2001:ee0:3280::/48 Deny Generic
+2001:ee0:4000::/40 Deny Generic
+2001:ee0:4b00::/40 Deny Generic
+2001:ee0:7880::/42 Deny Generic
 2001:ef0:1:1b::/64 Deny Generic
+2405:f980::/48 Deny Generic
 Tag: VNPT Corp
 ---
 recaptcha:
@@ -754,9 +767,10 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 3.92%.
-# %Listed, abuseat.org (CBL-Listed): 10.29%.
-# Updated: 2016.09.12
+# %Listed, Google Malware Dashboard: 2.78%.
+# %Listed, CleanTalk.org: 15.86%.
+# %Listed, abuseat.org (CBL-Listed): 2.24%.
+# Updated: 2016.09.12 / Checked: 2017.03.19
 
 2405:4800::/32 Deny Generic
 Tag: CFPT

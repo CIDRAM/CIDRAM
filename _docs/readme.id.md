@@ -234,6 +234,7 @@ Data | Deskripsi
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
 /LICENSE.txt | Salinan lisensi GNU/GPLv2 (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /loader.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
 /README.md | Ringkasan informasi proyek.
@@ -629,4 +630,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 14 Maret 2017 (2017.03.14).
+Terakhir Diperbarui: 25 Maret 2017 (2017.03.25).

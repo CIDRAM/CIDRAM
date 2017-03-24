@@ -234,6 +234,7 @@ Arquivo | Descrição
 /.gitattributes | Um arquivo do Github projeto (não é necessário para o correto funcionamento do script).
 /Changelog.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
+/CONTRIBUTING.md | Informações sobre como contribuir para o projeto.
 /LICENSE.txt | Uma cópia da GNU/GPLv2 licença (não é necessário para o correto funcionamento do script).
 /loader.php | Carregador/Loader. Isto é o que você deveria ser enganchando em (essencial)!
 /README.md | Informações do projeto em sumário.
@@ -629,4 +630,4 @@ Não. PHP 5.4.0 chegou ao EoL ("End of Life", ou Fim da Vida) oficial em 2014, e
 ---
 
 
-Última Atualização: 14 Março 2017 (2017.03.14).
+Última Atualização: 25 Março 2017 (2017.03.25).

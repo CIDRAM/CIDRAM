@@ -126,7 +126,7 @@ Datei | Beschreibung
 /_docs/readme.zh.md | Chinesische Dokumentation (vereinfacht).
 /vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
 /vault/fe_assets/ | Front-End-Daten.
-/vault/fe_assets/.htaccess | Eine Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/fe_assets/_accounts.html | Ein HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_cidr_calc.html | Ein HTML-Template für den CIDR-Rechner.
@@ -152,7 +152,7 @@ Datei | Beschreibung
 /vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen, Sitzungsinformationen, und dem Cache; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
 /vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
 /vault/lang/ | Enthält Sprachdaten für CIDRAM.
-/vault/lang/.htaccess | Eine Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
 /vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
 /vault/lang/lang.ar.php | Arabische Sprachdateien.
@@ -236,6 +236,7 @@ Datei | Beschreibung
 /.gitattributes | Ein Github Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /Changelog.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
+/CONTRIBUTING.md | Wie Sie dazu beitragen für das Projekt.
 /LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz (für die korrekte Funktion des Scripts nicht notwendig).
 /loader.php | Loader. Diese Datei wird in Ihr CMS eingebunden (notwendig)!
 /README.md | Projektübersicht.
@@ -631,4 +632,4 @@ Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) i
 ---
 
 
-Zuletzt aktualisiert: 14 März 2017 (2017.03.14).
+Zuletzt aktualisiert: 25 März 2017 (2017.03.25).

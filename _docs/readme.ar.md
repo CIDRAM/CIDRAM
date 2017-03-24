@@ -235,6 +235,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">أ ملف المشروع Github (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
 &nbsp; <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog.txt
 &nbsp; <div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
+&nbsp; <div dir="rtl" style="display:inline;">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
 &nbsp; <div dir="rtl" style="display:inline;">نسخة من GNU/GPLv2 رخصة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /LICENSE.txt
 &nbsp; <div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و، إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /loader.php
 &nbsp; <div dir="rtl" style="display:inline;">معلومات موجزة المشروع.</div> | /README.md
@@ -705,4 +706,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 16 مارس 2017 (2017.03.16).</div>
+<div dir="rtl">آخر تحديث: 25 مارس 2017 (2017.03.25).</div>

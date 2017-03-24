@@ -234,6 +234,7 @@ Tập tin | Chi tiết
 /.gitattributes | Tập tin dự án cho Github (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
+/CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
 /LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
 /loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
 /README.md | Thông tin tóm tắt dự án.
@@ -629,4 +630,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Ba 2017 (2017.03.14).
+Lần cuối cập nhật: 25 Tháng Ba 2017 (2017.03.25).

@@ -235,6 +235,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /.gitattributes | Github文件（不需要为正确经营脚本）。
 /Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
+/CONTRIBUTING.md | 相关信息如何有助于该项目。
 /LICENSE.txt | GNU/GPLv2 执照文件（不需要为正确经营脚本）。
 /loader.php | 加载文件。这个是文件您应该｢钩子｣（必不可少）!
 /README.md | 项目概要信息。
@@ -630,4 +631,4 @@ CIDRAM使网站所有者能够阻止不良流量，但网站所有者有责任�
 ---
 
 
-最后更新：2017年3月14日。
+最后更新：2017年3月25日。

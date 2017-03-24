@@ -146,8 +146,8 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、はログのみにアクセスのためのものです。
 /vault/fe_assets/_updates.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates_row.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
-/vault/fe_assets/frontend.css | フロントエンドのCSSスタイルシート。
-/vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報とキャッシュが含まれています；フロントエンドが有効になっているときに作成）。
+/vault/fe_assets/frontend.css | フロントエンドのＣＳＳスタイルシート。
+/vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報とキャッシュが含まれています； フロントエンドが有効になっているときに作成）。
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/lang/ | CIDRAMの言語データを含んでいます。
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
@@ -201,7 +201,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/cidramblocklists.dat | Macmathanが提供する国オプショナルブロックリスト。 アップデート機能で使用（フロントエンドが提供します）。
 /vault/cli.php | CLIハンドラ。
 /vault/components.dat | CIDRAMのコンポーネント情報が含まれています。 アップデート機能で使用（フロントエンドが提供します）。
-/vault/config.ini.RenameMe | CIDRAM設定ファイル； CIDRAMの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
+/vault/config.ini.RenameMe | CIDRAM設定ファイル； CIDRAMの全オプション設定を記載しています。 それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/frontend.php | フロントエンド・ハンドラ。
@@ -234,6 +234,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
+/CONTRIBUTING.md | プロジェクトに貢献する方法について。
 /LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
 /loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
 /README.md | プロジェクト概要情報。
@@ -629,4 +630,4 @@ CIDRAMは、ウェブサイト所有者が望ましくないトラフィック�
 ---
 
 
-最終アップデート： 2017年3月16日。
+最終アップデート： 2017年3月25日。

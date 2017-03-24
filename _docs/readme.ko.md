@@ -4,7 +4,7 @@
 - 1. [서문](#SECTION1)
 - 2. [설치 방법](#SECTION2)
 - 3. [사용 방법](#SECTION3)
-- 4. [프런트 엔드 관리](#SECTION4)
+- 4. [프론트 엔드 관리](#SECTION4)
 - 5. [본 패키지에 포함 된 파일](#SECTION5)
 - 6. [설정 옵션](#SECTION6)
 - 7. [서명 포맷](#SECTION7)
@@ -50,7 +50,7 @@ CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 -- 다른 방법 --
 
-Apache 웹 서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도록한다면, `auto_prepend_file` 지시어를 사용하여 PHP 요청이있을 경우에는 항상 CIDRAM을 앞에 추가하도록 할 있습니다. 예를 들면 다음과 같습니다.
+Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도록한다면, `auto_prepend_file` 지시어를 사용하여 PHP 요청이있을 경우에는 항상 CIDRAM을 앞에 추가하도록 할 있습니다. 예를 들면 다음과 같습니다.
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -74,13 +74,13 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 ---
 
 
-### 4. <a name="SECTION4"></a>프런트 엔드 관리
+### 4. <a name="SECTION4"></a>프론트 엔드 관리
 
 #### 4.0 프론트 엔드는 무엇입니다.
 
 프론트 엔드는 CIDRAM 설치 유지 관리 업데이트하기위한 편리하고 쉬운 방법을 제공합니다. 로그 페이지를 사용하여 로그 파일을 공유, 다운로드 할 수있는 구성 페이지에서 구성을 변경할 수 있습니다, 업데이트 페이지를 사용하여 구성 요소를 설치 및 제거 할 수 있습니다, 그리고 파일 관리자를 사용하여 vault에 파일을 업로드, 다운로드 및 변경할 수 있습니다.
 
-무단 액세스를 방지하기 위해 프런트 엔드는 기본적으로 비활성화되어 있습니다 (무단 액세스가 웹 사이트와 보안에 중대한 영향을 미칠 수 있습니다). 그것을 가능하게하기위한 지침이 절 아래에 포함되어 있습니다.
+무단 액세스를 방지하기 위해 프론트 엔드는 기본적으로 비활성화되어 있습니다 (무단 액세스가 웹 사이트와 보안에 중대한 영향을 미칠 수 있습니다). 그것을 가능하게하기위한 지침이 절 아래에 포함되어 있습니다.
 
 #### 4.1 프론트 엔드를 사용하는 방법.
 
@@ -90,9 +90,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 
 3) 기본 사용자 이름과 암호로 로그인 (admin/password).
 
-주의: 당신이 처음 로그인 한 후 프런트 엔드에 대한 무단 액세스를 방지하기 위해 신속하게 사용자 이름과 암호를 변경해야합니다! 이것은 매우 중요합니다, 왜냐하면 프런트 엔드에서 임의의 PHP 코드를 당신의 웹 사이트에 업로드 할 수 있기 때문입니다.
+주의: 당신이 처음 로그인 한 후 프론트 엔드에 대한 무단 액세스를 방지하기 위해 신속하게 사용자 이름과 암호를 변경해야합니다! 이것은 매우 중요합니다, 왜냐하면 프론트 엔드에서 임의의 PHP 코드를 당신의 웹 사이트에 업로드 할 수 있기 때문입니다.
 
-#### 4.2 프런트 엔드 사용.
+#### 4.2 프론트 엔드 사용.
 
 프론트 엔드의 각 페이지에는 목적에 대한 설명과 사용 방법에 대한 설명이 있습니다. 전체 설명이나 특별한 지원이 필요한 경우 지원에 문의하십시오. 또한 데모를 제공 할 YouTube에서 사용 가능한 동영상도 있습니다.
 
@@ -123,14 +123,14 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /_docs/readme.zh-TW.md | 중국어 번체 문서.
 /_docs/readme.zh.md | 중국어 간체 문서.
 /vault/ | 보루 토 디렉토리 (다양한 파일을 포함합니다).
-/vault/fe_assets/ | 프런트 엔드 자산.
+/vault/fe_assets/ | 프론트 엔드 자산.
 /vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_cidr_calc.html | CIDR 계산기 HTML 템플릿.
 /vault/fe_assets/_cidr_calc_row.html | CIDR 계산기 HTML 템플릿.
-/vault/fe_assets/_config.html | 프런트 엔드 구성 페이지의 HTML 템플릿.
-/vault/fe_assets/_config_row.html | 프런트 엔드 구성 페이지의 HTML 템플릿.
+/vault/fe_assets/_config.html | 프론트 엔드 구성 페이지의 HTML 템플릿.
+/vault/fe_assets/_config_row.html | 프론트 엔드 구성 페이지의 HTML 템플릿.
 /vault/fe_assets/_files.html | 파일 관리자의 HTML 템플릿.
 /vault/fe_assets/_files_edit.html | 파일 관리자의 HTML 템플릿.
 /vault/fe_assets/_files_rename.html | 파일 관리자의 HTML 템플릿.
@@ -140,61 +140,61 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/fe_assets/_ip_test_row.html | IP 테스트 페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_tracking.html | IP 추적 페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_tracking_row.html | IP 추적 페이지의 HTML 템플릿.
-/vault/fe_assets/_login.html | 프런트 엔드 로그인 페이지의 HTML 템플릿.
-/vault/fe_assets/_logs.html | 프런트 엔드 로고스 페이지의 HTML 템플릿.
+/vault/fe_assets/_login.html | 프론트 엔드 로그인 페이지의 HTML 템플릿.
+/vault/fe_assets/_logs.html | 프론트 엔드 로고스 페이지의 HTML 템플릿.
 /vault/fe_assets/_nav_complete_access.html | 프론트 엔드의 탐색 링크의 HTML 템플릿, 완전한 액세스를위한 것입니다.
 /vault/fe_assets/_nav_logs_access_only.html | 프론트 엔드의 탐색 링크의 HTML 템플릿은 로그에만 액세스를위한 것입니다.
-/vault/fe_assets/_updates.html | 프런트 엔드 업데이트 페이지의 HTML 템플릿.
-/vault/fe_assets/_updates_row.html | 프런트 엔드 업데이트 페이지의 HTML 템플릿.
-/vault/fe_assets/frontend.css | 프런트 엔드 CSS 스타일 시트.
-/vault/fe_assets/frontend.dat | 프런트 엔드 데이터베이스 (계정 정보와 세션 정보 및 캐시가 포함되어 있습니다; 프런트 엔드가 활성화되어있을 때 생성).
-/vault/fe_assets/frontend.html | 프런트 엔드 메인 템플릿 파일.
+/vault/fe_assets/_updates.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
+/vault/fe_assets/_updates_row.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
+/vault/fe_assets/frontend.css | 프론트 엔드 CSS 스타일 시트.
+/vault/fe_assets/frontend.dat | 프론트 엔드 데이터베이스 (계정 정보와 세션 정보 및 캐시가 포함되어 있습니다; 프론트 엔드가 활성화되어있을 때 생성).
+/vault/fe_assets/frontend.html | 프론트 엔드 메인 템플릿 파일.
 /vault/lang/ | CIDRAM 언어 데이터가 포함되어 있습니다.
 /vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/lang/lang.ar.cli.php | CLI 아랍어 언어 데이터.
-/vault/lang/lang.ar.fe.php | 프런트 엔드 아랍어 언어 데이터.
+/vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
 /vault/lang/lang.ar.php | 아랍어 언어 데이터.
 /vault/lang/lang.de.cli.php | CLI 독일어 언어 데이터.
-/vault/lang/lang.de.fe.php | 프런트 엔드 독일어 언어 데이터.
+/vault/lang/lang.de.fe.php | 프론트 엔드 독일어 언어 데이터.
 /vault/lang/lang.de.php | 독일어 언어 데이터.
 /vault/lang/lang.en.cli.php | CLI 영어 언어 데이터.
-/vault/lang/lang.en.fe.php | 프런트 엔드 영어 데이터.
+/vault/lang/lang.en.fe.php | 프론트 엔드 영어 데이터.
 /vault/lang/lang.en.php | 영어 데이터.
 /vault/lang/lang.es.cli.php | CLI 스페인어 언어 데이터.
-/vault/lang/lang.es.fe.php | 프런트 엔드 스페인어 언어 데이터.
+/vault/lang/lang.es.fe.php | 프론트 엔드 스페인어 언어 데이터.
 /vault/lang/lang.es.php | 스페인어 언어 데이터.
 /vault/lang/lang.fr.cli.php | CLI 프랑스어 언어 데이터.
-/vault/lang/lang.fr.fe.php | 프런트 엔드 프랑스어 언어 데이터.
+/vault/lang/lang.fr.fe.php | 프론트 엔드 프랑스어 언어 데이터.
 /vault/lang/lang.fr.php | 프랑스어 언어 데이터.
 /vault/lang/lang.id.cli.php | CLI 인도네시아어 언어 데이터.
-/vault/lang/lang.id.fe.php | 프런트 엔드 인도네시아어 언어 데이터.
+/vault/lang/lang.id.fe.php | 프론트 엔드 인도네시아어 언어 데이터.
 /vault/lang/lang.id.php | 인도네시아어 언어 데이터.
 /vault/lang/lang.it.cli.php | CLI의 이탈리아 언어 데이터.
-/vault/lang/lang.it.fe.php | 프런트 엔드 이탈리아 언어 데이터.
+/vault/lang/lang.it.fe.php | 프론트 엔드 이탈리아 언어 데이터.
 /vault/lang/lang.it.php | 이탈리아 언어 데이터.
 /vault/lang/lang.ja.cli.php | CLI는 일본어 언어 데이터.
-/vault/lang/lang.ja.fe.php | 프런트 엔드 일본어 언어 데이터.
+/vault/lang/lang.ja.fe.php | 프론트 엔드 일본어 언어 데이터.
 /vault/lang/lang.ja.php | 일본어 언어 데이터.
 /vault/lang/lang.ko.cli.php | CLI 한국어 언어 데이터.
 /vault/lang/lang.ko.fe.php | 프론트 엔드의 한국어 언어 데이터.
 /vault/lang/lang.ko.php | 한국어 언어 데이터.
 /vault/lang/lang.nl.cli.php | CLI 네덜란드어 언어 데이터.
-/vault/lang/lang.nl.fe.php | 프런트 엔드 네덜란드어 언어 데이터.
+/vault/lang/lang.nl.fe.php | 프론트 엔드 네덜란드어 언어 데이터.
 /vault/lang/lang.nl.php | 네덜란드어 언어 데이터.
 /vault/lang/lang.pt.cli.php | CLI 포르투갈어 언어 데이터.
-/vault/lang/lang.pt.fe.php | 프런트 엔드 포르투갈어 언어 데이터.
+/vault/lang/lang.pt.fe.php | 프론트 엔드 포르투갈어 언어 데이터.
 /vault/lang/lang.pt.php | 포르투갈어 언어 데이터.
 /vault/lang/lang.ru.cli.php | CLI 러시아어 언어 데이터.
-/vault/lang/lang.ru.fe.php | 프런트 엔드 러시아어 언어 데이터.
+/vault/lang/lang.ru.fe.php | 프론트 엔드 러시아어 언어 데이터.
 /vault/lang/lang.ru.php | 러시아어 언어 데이터.
 /vault/lang/lang.vi.cli.php | CLI 베트남어 언어 데이터.
-/vault/lang/lang.vi.fe.php | 프런트 엔드 베트남어 언어 데이터.
+/vault/lang/lang.vi.fe.php | 프론트 엔드 베트남어 언어 데이터.
 /vault/lang/lang.vi.php | 베트남어 언어 데이터.
 /vault/lang/lang.zh-tw.cli.php | CLI 중국어 번체 언어 데이터.
-/vault/lang/lang.zh-tw.fe.php | 프런트 엔드 중국어 번체 언어 데이터.
+/vault/lang/lang.zh-tw.fe.php | 프론트 엔드 중국어 번체 언어 데이터.
 /vault/lang/lang.zh-tw.php | 중국어 번체 언어 데이터.
 /vault/lang/lang.zh.cli.php | CLI 중국어 간체 언어 데이터.
-/vault/lang/lang.zh.fe.php | 프런트 엔드 중국어 간체 언어 데이터.
+/vault/lang/lang.zh.fe.php | 프론트 엔드 중국어 간체 언어 데이터.
 /vault/lang/lang.zh.php | 중국어 간체 언어 데이터.
 /vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/cache.dat | 캐시 데이터.
@@ -234,6 +234,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /.gitattributes | Github 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).
+/CONTRIBUTING.md | 프로젝트에 기여하는 방법.
 /LICENSE.txt | GNU/GPLv2 라이센스 사본 (기능에 관계없는 파일입니다).
 /loader.php | 로더 파일입니다. 주요 스크립트로드, 업로드 등을 실시합니다. 훅하는 것은 바로 이것입니다 (본질적 파일)!
 /README.md | 프로젝트 개요 정보.
@@ -272,7 +273,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 - 연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.
 
 "forbid_on_block"
-- 무엇 헤더 사용해야합니까 (요청을 차단했을 때)? `false`(그릇된)/200 = 200 OK (Default/기본 설정); `true`(참된)/403 = 403 Forbidden (403 금지되어있다); 503 = 503 Service unavailable (503 서비스 이용 불가).
+- 무엇 헤더 사용해야합니까 (요청을 차단했을 때)? `false`(그릇된)/200 = 200 OK (Default / 기본 설정); `true`(참된)/403 = 403 Forbidden (403 금지되어있다); 503 = 503 Service unavailable (503 서비스 이용 불가).
 
 "silent_mode"
 - "액세스 거부"페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다.
@@ -284,31 +285,31 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 - 여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고: 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등).
 
 "disable_cli"
-- CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. `false`(그릇된) = CLI 모드를 활성화합니다 (Default/기본 설정); `true`(참된) = CLI 모드를 해제합니다.
+- CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. `false`(그릇된) = CLI 모드를 활성화합니다 (Default / 기본 설정); `true`(참된) = CLI 모드를 해제합니다.
 
 "disable_frontend"
-- 프런트 엔드에 대한 액세스를 비활성화하거나? 프런트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프런트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. `false`(그릇된) = 프런트 엔드에 대한 액세스를 활성화합니다; `true`(참된) = 프런트 엔드에 대한 액세스를 비활성화합니다 (Default/기본 설정).
+- 프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. `false`(그릇된) = 프론트 엔드에 대한 액세스를 활성화합니다; `true`(참된) = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정).
 
 "max_login_attempts"
-- 로그인 시도 횟수 (프런트 엔드). Default (기본 설정) = 5.
+- 로그인 시도 횟수 (프론트 엔드). Default (기본 설정) = 5.
 
 "FrontEndLog"
 - 프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.
 
 "ban_override"
-- "infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default/기본 설정); 403 = "403 Forbidden"로 덮어한다; 503 = "503 Service unavailable"로 덮어한다.
+- "infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본 설정); 403 = "403 Forbidden"로 덮어한다; 503 = "503 Service unavailable"로 덮어한다.
 
 "log_banned_ips"
-- 금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default/기본 설정); False = 아니오.
+- 금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본 설정); False = 아니오.
 
 "default_dns"
 - 호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.
 
 "search_engine_verification"
-- 검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default/기본 설정); False = 검색 엔진의 검증을 무효로한다.
+- 검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default / 기본 설정); False = 검색 엔진의 검증을 무효로한다.
 
 "protect_frontend"
-- CIDRAM 의해 보통 제공되는 보호를 프런트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default/기본 설정); False = 아니오.
+- CIDRAM 의해 보통 제공되는 보호를 프론트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본 설정); False = 아니오.
 
 #### "signatures"
 서명 설정.
@@ -355,17 +356,17 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 
 "usemode"
 - reCAPTCHA를 CIDRAM에서 사용하는 방법.
-- 0 = reCAPTCHA는 비활성화되어 있습니다 (Default/기본 설정).
+- 0 = reCAPTCHA는 비활성화되어 있습니다 (Default / 기본 설정).
 - 1 = reCAPTCHA는 모두를 위해 서명이 활성화되어 있습니다.
 - 2 = 특별히 표시된 섹션의 경우에만 reCAPTCHA가 활성화됩니다.
 - (그렇지 값은 0과 같습니다).
 
 "lockip"
-- reCAPTCHA를 IP로 잠금 하시겠습니까? False = 쿠키와 해시는 여러 IP에서 사용할 수 있습니다 (Default/기본 설정). True = 쿠키와 해시는 여러 IP에서 사용할 수 없습니다 (쿠키와 해시는 IP에 잠겨 있습니다).
+- reCAPTCHA를 IP로 잠금 하시겠습니까? False = 쿠키와 해시는 여러 IP에서 사용할 수 있습니다 (Default / 기본 설정). True = 쿠키와 해시는 여러 IP에서 사용할 수 없습니다 (쿠키와 해시는 IP에 잠겨 있습니다).
 - 주의: "lockuser"이 "false"인 경우 "lockip"값은 무시됩니다. 이것은 사용자를 기억 메커니즘이 값에 의존하기 때문입니다.
 
 "lockuser"
-- reCAPTCHA를 사용자에 잠금 하시겠습니까? False = reCAPTCHA 완료하여 책임있는 IP (참고: 사용자가 아닌) 에서 발생 된 모든 요청에 대한 액세스가 허용됩니다; 쿠키와 해시는 사용되지 않습니다; IP 허용 목록이 사용됩니다. True = reCAPTCHA 완료하여 책임있는 사용자 (참고: IP가 아닌) 에서 발생 된 모든 요청에 대한 액세스가 허용됩니다; 쿠키와 해시는 고객을 기억하기 위해 사용됩니다; IP 화이트리스트는 사용되지 않습니다 (Default/기본 설정).
+- reCAPTCHA를 사용자에 잠금 하시겠습니까? False = reCAPTCHA 완료하여 책임있는 IP (참고: 사용자가 아닌) 에서 발생 된 모든 요청에 대한 액세스가 허용됩니다; 쿠키와 해시는 사용되지 않습니다; IP 허용 목록이 사용됩니다. True = reCAPTCHA 완료하여 책임있는 사용자 (참고: IP가 아닌) 에서 발생 된 모든 요청에 대한 액세스가 허용됩니다; 쿠키와 해시는 고객을 기억하기 위해 사용됩니다; IP 화이트리스트는 사용되지 않습니다 (Default / 기본 설정).
 
 "sitekey"
 - 이 값은 당신의 reCAPTCHA에 대한 "site key"에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다.
@@ -374,7 +375,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 - 이 값은 당신의 reCAPTCHA에 대한 "secret key"에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다.
 
 "expiry"
-- "lockuser"이 "true"때(Default/기본 설정), reCAPTCHA 인스턴스의 합격/불합격 상태를 기억하고 미래의 페이지 요청 용 CIDRAM 해시를 포함한 표준 HTTP Cookie를 생성합니다; 이 해시는 동일한 해시를 포함한 내부 레코드에 해당합니다; 미래의 페이지 요청은 해당 해시를 사용하여 합격/불합격 상태를 인증합니다. "lockuser"이 "false"때 요청을 허용 할 필요가 있는지 여부를 판단하기 위해 IP 허용 목록이 사용됩니다; reCAPTCHA 인스턴스가 성공적으로 전달되면이 화이트리스트에 항목이 추가됩니다. 이러한 쿠키 해시 화이트리스트 항목은 몇 시간 유효해야하나요? Default (기본 설정) = 720 (1 개월).
+- "lockuser"이 "true"때(Default / 기본 설정), reCAPTCHA 인스턴스의 합격/불합격 상태를 기억하고 미래의 페이지 요청 용 CIDRAM 해시를 포함한 표준 HTTP Cookie를 생성합니다; 이 해시는 동일한 해시를 포함한 내부 레코드에 해당합니다; 미래의 페이지 요청은 해당 해시를 사용하여 합격/불합격 상태를 인증합니다. "lockuser"이 "false"때 요청을 허용 할 필요가 있는지 여부를 판단하기 위해 IP 허용 목록이 사용됩니다; reCAPTCHA 인스턴스가 성공적으로 전달되면이 화이트리스트에 항목이 추가됩니다. 이러한 쿠키 해시 화이트리스트 항목은 몇 시간 유효해야하나요? Default (기본 설정) = 720 (1 개월).
 
 "logfile"
 - reCAPTCHA 시도 기록. 파일 이름 지정하거나 해제하려면 비워하십시오.
@@ -604,7 +605,7 @@ IP 주소를 CIDRAM 차단합니다 | __거짓 양성__ | 진실 양성 (올바�
 
 #### CIDRAM는 나라 전체를 차단할 수 있습니까?
 
-예. 이것을 달성하는 가장 쉬운 방법은 Macmathan 제공하는 국가 선택적 차단 목록의 일부를 설치합니다. 이것은 프런트 엔드 업데이트 페이지에서 직접 할 수 있습니다. 또는, 프런트 엔드를 계속 사용 중지하려는 경우, **[국가 선택적 차단 목록의 다운로드 페이지](https://macmathan.info/blocklists)** 에서 다운로드 할 수 있습니다. 다운로드 후, 그들을 vault에 업로드, 관련 지시에 의해 지명하십시오.
+예. 이것을 달성하는 가장 쉬운 방법은 Macmathan 제공하는 국가 선택적 차단 목록의 일부를 설치합니다. 이것은 프론트 엔드 업데이트 페이지에서 직접 할 수 있습니다. 또는, 프론트 엔드를 계속 사용 중지하려는 경우, **[국가 선택적 차단 목록의 다운로드 페이지](https://macmathan.info/blocklists)** 에서 다운로드 할 수 있습니다. 다운로드 후, 그들을 vault에 업로드, 관련 지시에 의해 지명하십시오.
 
 #### 서명은 얼마나 자주 업데이트됩니까?
 
@@ -629,4 +630,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트: 2017 년 3 월 16 일.
+최종 업데이트: 2017 년 3 월 25 일.

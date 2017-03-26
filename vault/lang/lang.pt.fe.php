@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.03.05).
+ * This file: Portuguese language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = 'Sobrepor "forbid_on_block" qua
 $CIDRAM['lang']['config_general_default_dns'] = 'Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Desativar o modo CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Desativar o acesso front-end?';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Desativar webfonts? True = Sim; False = Não [Padrão].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Endereço de e-mail para suporte.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quais cabeçalhos deve CIDRAM responder com quando bloqueando solicitações?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';

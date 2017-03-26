@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.03.05).
+ * This file: Japanese language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超�
 $CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。 Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。';
 $CIDRAM['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？ True = はい； False = いいえ （Default/デフォルルト）。';
 $CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのＥメールアドレス。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';

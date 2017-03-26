@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当
 $CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器列表，用于主机名查找。 标准 = “8.8.8.8,8.8.4.4” (Google DNS)。 警告： 不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
+$CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？ True = 关闭； False = 不关闭【标准】。';
 $CIDRAM['lang']['config_general_emailaddr'] = '支持/援助电子邮件地址。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。指定一个文件名，或留空以禁用。';

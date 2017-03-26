@@ -311,6 +311,9 @@ Algemene configuratie voor CIDRAM.
 "protect_frontend"
 - Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
 
+"disable_webfonts"
+- Uitschakelen webfonts? True = Ja; False = Nee [Standaard].
+
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -630,4 +633,4 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 ---
 
 
-Laatste Bijgewerkt: 25 Maart 2017 (2017.03.25).
+Laatste Bijgewerkt: 27 Maart 2017 (2017.03.27).

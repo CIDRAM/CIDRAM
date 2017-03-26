@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.26).
+ * This file: Front-end handler (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -30,6 +30,7 @@ $CIDRAM['FE'] = array(
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
     'DateTime' => date('r', $CIDRAM['Now']),
+    'WebFontsLink' => $CIDRAM['WebFontsLink'],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'UserList' => "\n",
     'SessionList' => "\n",

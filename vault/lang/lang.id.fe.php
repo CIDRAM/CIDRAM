@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.03.05).
+ * This file: Indonesian language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = 'Mengesampingkan "forbid_on_blo
 $CIDRAM['lang']['config_general_default_dns'] = 'Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Menonaktifkan modus CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian depan?';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya; False = Tidak [Default].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Alamat email untuk dukungan.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Apa header harus CIDRAM merespon dengan ketika memblokir permintaan?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';

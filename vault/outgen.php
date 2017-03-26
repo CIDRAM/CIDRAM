@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.03.03).
+ * This file: Output generator (last modified: 2017.03.27).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -396,6 +396,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
         $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
     }
+
+    /** Webfonts link. */
+    $CIDRAM['Config']['template_data']['WebFontsLink'] = $CIDRAM['WebFontsLink'];
 
     /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];

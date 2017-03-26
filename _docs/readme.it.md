@@ -311,6 +311,9 @@ Generale configurazione per CIDRAM.
 "protect_frontend"
 - Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.
 
+"disable_webfonts"
+- Disabilita webfonts? True = Sì; False = No [Predefinito].
+
 #### "signatures" (Categoria)
 Configurazione per firme.
 
@@ -630,4 +633,4 @@ No. PHP 5.4.0 raggiunto EoL ("End of Life", o fine della vita) ufficiale nel 201
 ---
 
 
-Ultimo Aggiornamento: 25 Marzo 2017 (2017.03.25).
+Ultimo Aggiornamento: 27 Marzo 2017 (2017.03.27).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.03.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = 'Ghi đè "forbid_on_block" khi
 $CIDRAM['lang']['config_general_default_dns'] = 'Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end?';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Địa chỉ email cho hỗ trợ.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';

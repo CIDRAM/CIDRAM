@@ -311,6 +311,9 @@ Cấu hình chung cho CIDRAM.
 "protect_frontend"
 - Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.
 
+"disable_webfonts"
+- Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -630,4 +633,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 25 Tháng Ba 2017 (2017.03.25).
+Lần cuối cập nhật: 27 Tháng Ba 2017 (2017.03.27).

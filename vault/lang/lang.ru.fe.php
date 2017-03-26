@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.03.05).
+ * This file: Russian language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,6 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = 'Переопределить "
 $CIDRAM['lang']['config_general_default_dns'] = 'Разделенный запятыми список DNS-серверов, чтобы использовать для имен хостов поиска. Стандарт = "8.8.8.8,8.8.4.4" (Google DNS). ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Деактивировать ли CLI-модус?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Деактивировать доступ к фронтенд?';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Отключить веб-шрифты? True = Да; False = Нет [Стандарт].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Адрес емайл для поддержки.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Какой тип заголовка должен CIDRAM ответить при блокировке запросов?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Файл для запись всех попыток входа в фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';

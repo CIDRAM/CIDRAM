@@ -333,7 +333,7 @@
 
 <div dir="rtl">"log_banned_ips"<br /></div>
 <div dir="rtl"><ul>
- <li>من IP المحظورة في ملفات السجل؟ True = نعم [افتراضي]; False = لا.</li>
+ <li>من IP المحظورة في ملفات السجل؟ True = نعم [افتراضي]؛ False = لا.</li>
 </ul></div>
 
 <div dir="rtl">"default_dns"<br /></div>
@@ -348,7 +348,12 @@
 
 <div dir="rtl">"protect_frontend"<br /></div>
 <div dir="rtl"><ul>
- <li>يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. True = نعم [افتراضي]; False = لا.</li>
+ <li>يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. True = نعم [افتراضي]؛ False = لا.</li>
+</ul></div>
+
+<div dir="rtl">"disable_webfonts"<br /></div>
+<div dir="rtl"><ul>
+ <li>هل تريد تعطيل ويبفونتس؟ True = نعم؛ False = لا [افتراضي].</li>
 </ul></div>
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
@@ -706,4 +711,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 25 مارس 2017 (2017.03.25).</div>
+<div dir="rtl">آخر تحديث: 27 مارس 2017 (2017.03.27).</div>

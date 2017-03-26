@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.05).
+ * This file: Front-end handler (last modified: 2017.03.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -636,7 +636,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             } elseif ($CIDRAM['DirValue']['type'] === 'int') {
                 $CIDRAM['ThisDir']['FieldOut'] = '<input type="number" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" value="' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '" />';
             } elseif ($CIDRAM['DirValue']['type'] === 'string') {
-                $CIDRAM['ThisDir']['FieldOut'] = '<textarea class="half" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '</textarea>';
+                $CIDRAM['ThisDir']['FieldOut'] = '<textarea name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" class="half">' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '</textarea>';
             } else {
                 $CIDRAM['ThisDir']['FieldOut'] = '<input type="text" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" value="' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '" />';
             }
@@ -1324,9 +1324,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         }
         if (!empty($CIDRAM['Components']['ThisComponent']['Options'])) {
             $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
-                '<select name="do" class="half">' .
-                $CIDRAM['Components']['ThisComponent']['Options'] .
-                '</select><input class="half" type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" />'
+                '<select name="do" class="auto">' . $CIDRAM['Components']['ThisComponent']['Options'] .
+                '</select><input type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" class="auto" />'
             );
             $CIDRAM['Components']['ThisComponent']['Options'] = '';
         }
@@ -1458,10 +1457,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             $CIDRAM['lang']['response_updates_not_installed_php']
         ) :
             $CIDRAM['lang']['response_updates_not_installed'] .
-            '<br /><select name="do" class="half"><option value="update-component">' .
-            $CIDRAM['lang']['field_install'] .
-            '</option></select><input class="half" type="submit" value="' .
-            $CIDRAM['lang']['field_ok'] . '" />';
+            '<br /><select name="do" class="auto"><option value="update-component">' .
+            $CIDRAM['lang']['field_install'] . '</option></select><input type="submit" value="' .
+            $CIDRAM['lang']['field_ok'] . '" class="auto" />';
         $CIDRAM['Components']['ThisComponent']['Changelog'] =
             empty($CIDRAM['Components']['ThisComponent']['Changelog']) ? '' :
             '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
@@ -1779,7 +1777,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         if ($ThisFile['ThisOptions']) {
             $ThisFile['ThisOptions'] =
                 '<select name="do">' . $ThisFile['ThisOptions'] . '</select>' .
-                '<input class="half" type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" />';
+                '<input type="submit" value="' . $CIDRAM['lang']['field_ok'] . '" class="auto" />';
         }
         $CIDRAM['FE']['FilesData'] .= $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['FE'] + $ThisFile, $CIDRAM['FE']['FilesRow']

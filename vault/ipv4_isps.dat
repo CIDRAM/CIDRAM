@@ -1431,13 +1431,6 @@ recaptcha:
 Tag: Kintiskton LLC
 
 
-# These CIDRs caught spoofing localhost.
-# Updated: 2016.04.17 / Checked: 2016.08.19
-
-203.160.0.0/23 Deny Generic
-Tag: Localhost Spoofers
-
-
 # ASN 41011 ("CH-NET S.R.L").
 # %Listed, Google Malware Dashboard: 1.47%.
 # Updated: 2016.03.04 / Checked: 2017.01.05
@@ -1780,7 +1773,7 @@ recaptcha:
 
 
 # ASN 7914 ("Church of Scientology International").
-# Updated: 2016.01.20 / Checked: 2016.08.26
+# Updated: 2016.01.20 / Checked: 2017.03.28
 
 12.9.239.0/24 Deny Generic
 192.216.201.0/24 Deny Generic
@@ -1794,7 +1787,9 @@ Tag: CoS International
 
 
 # ASN 36923 ("Swift Networks Limited").
-# Updated: 2016.01.21 / Checked: 2016.08.26
+# %Listed, CleanTalk.org: 2.49%.
+# Stop Forum Spam (SFS) listings: 23.
+# Updated: 2016.01.21 / Checked: 2017.03.28
 
 41.58.0.0/16 Deny Generic
 41.189.0.0/19 Deny Generic
@@ -1805,10 +1800,13 @@ Tag: Swift Networks
 
 
 # ASN 51013 ("Websupport s.r.o").
-# %Listed, Google Malware Dashboard: 4.38%.
-# Updated: 2016.01.21 / Checked: 2016.08.26
+# %Listed, Google Malware Dashboard: 6.24%.
+# %Listed, CleanTalk.org: 56.79%.
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2017.03.28
 
 37.9.168.0/21 Deny Generic
+185.87.12.0/22 Deny Generic
 185.111.88.0/22 Deny Generic
 195.210.28.0/23 Deny Generic
 Tag: Websupport s.r.o

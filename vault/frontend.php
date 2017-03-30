@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.28).
+ * This file: Front-end handler (last modified: 2017.03.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -572,6 +572,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
     $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_config_row.html');
 
+    /** Indexes. */
+    $CIDRAM['FE']['Indexes'] = '            ';
+
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
     reset($CIDRAM['Config']['Config Defaults']);
     $CIDRAM['FE']['ConfigFields'] = $CIDRAM['RegenerateConfig'] = '';
@@ -588,6 +591,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             }
             $CIDRAM['ThisDir']['DirLangKey'] = 'config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['DirKey'];
             $CIDRAM['ThisDir']['DirName'] = $CIDRAM['CatKey'] . '->' . $CIDRAM['DirKey'];
+            $CIDRAM['FE']['Indexes'] .= '<a href="#' . $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['ThisDir']['DirName'] . "</a><br /><br />\n            ";
             $CIDRAM['ThisDir']['DirLang'] =
                 !empty($CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']]) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
             $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($CIDRAM['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
@@ -727,6 +731,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
     /** Search cleanup. */
     unset($CIDRAM['EoYAML'], $CIDRAM['ThisData'], $CIDRAM['ThisFile'], $CIDRAM['Components']['Files']);
+
+    /** Indexes. */
+    $CIDRAM['FE']['Indexes'] = array();
 
     /** A form has been submitted. */
     if ($CIDRAM['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
@@ -1344,6 +1351,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             if (empty($CIDRAM['Components']['ThisComponent']['RowClass'])) {
                 $CIDRAM['Components']['ThisComponent']['RowClass'] = 'h1';
             }
+            $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['ID']] =
+                '<a href="#' . $CIDRAM['Components']['ThisComponent']['ID'] . '">' . $CIDRAM['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
             $CIDRAM['Components']['Out'][$CIDRAM['Components']['Key']] = $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['ThisComponent']) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
@@ -1466,6 +1475,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             '<br /><a href="' . $CIDRAM['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
         $CIDRAM['Components']['ThisComponent']['Filename'] = '';
         if (!$CIDRAM['FE']['hide-unused']) {
+            $CIDRAM['FE']['Indexes'][$CIDRAM['Components']['ThisComponent']['ID']] =
+                '<a href="#' . $CIDRAM['Components']['ThisComponent']['ID'] . '">' . $CIDRAM['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
             $CIDRAM['Components']['Out'][$CIDRAM['Components']['Key']] = $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ArrayFlatten']($CIDRAM['Components']['ThisComponent']) + $CIDRAM['ArrayFlatten']($CIDRAM['FE']),
                 $CIDRAM['FE']['UpdatesRow']
@@ -1485,7 +1496,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     });
 
     /** Finalise output and unset working data. */
-    uksort($CIDRAM['Components']['Out'], function ($A, $B) {
+    $CIDRAM['UpdatesSortFunc'] = function ($A, $B) {
         $CheckA = preg_match('/^(?:CIDRAM$|IPv[46]|l10n)/i', $A);
         $CheckB = preg_match('/^(?:CIDRAM$|IPv[46]|l10n)/i', $B);
         if ($CheckA && !$CheckB) {
@@ -1501,9 +1512,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             return 1;
         }
         return 0;
-    });
+    };
+    uksort($CIDRAM['FE']['Indexes'], $CIDRAM['UpdatesSortFunc']);
+    $CIDRAM['FE']['Indexes'] = implode('', $CIDRAM['FE']['Indexes']);
+    uksort($CIDRAM['Components']['Out'], $CIDRAM['UpdatesSortFunc']);
     $CIDRAM['FE']['Components'] = implode('', $CIDRAM['Components']['Out']);
-    unset($CIDRAM['Components'], $CIDRAM['Count'], $CIDRAM['Iterate']);
+    unset($CIDRAM['UpdatesSortFunc'], $CIDRAM['Components'], $CIDRAM['Count'], $CIDRAM['Iterate']);
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

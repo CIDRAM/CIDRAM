@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.03.27).
+ * This file: Output generator (last modified: 2017.03.30).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -383,9 +383,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         array($CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason'])
     );
 
-    /** Determine which template file to use. */
-    $CIDRAM['template_file'] =
-        (!$CIDRAM['Config']['template_data']['css_url']) ? 'template.html' : 'template_custom.html';
+    /** Determine which template file to use, if this hasn't already been determined. */
+    if (!isset($CIDRAM['template_file'])) {
+        $CIDRAM['template_file'] =
+            !$CIDRAM['Config']['template_data']['css_url'] ? 'template.html' : 'template_custom.html';
+    }
 
     /** A fix for correctly displaying LTR/RTL text. */
     if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {

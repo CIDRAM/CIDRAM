@@ -32,7 +32,7 @@ This document and its associated package can be downloaded for free from [Github
 
 ### 2. <a name="SECTION2"></a>HOW TO INSTALL
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get CIDRAM working on *most systems and CMS:
+#### 2.0 INSTALLING MANUALLY
 
 1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/cidram/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
 
@@ -59,6 +59,16 @@ Or this in the `.htaccess` file:
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) That's everything! :-)
+
+#### 2.1 INSTALLING WITH COMPOSER
+
+[CIDRAM is registered with Packagist](https://packagist.org/packages/maikuolan/cidram), and so, if you're familiar with Composer, you can use Composer to install CIDRAM (you'll still need to prepare the configuration and hooks though; see "installing manually" steps 2 and 5).
+
+`composer require maikuolan/cidram`
+
+#### 2.2 INSTALLING FOR WORDPRESS
+
+If you want to use CIDRAM with WordPress, you can ignore all the instructions above. [CIDRAM is registered as a plugin with WordPress plugins database](https://wordpress.org/plugins/cidram/), and you can install CIDRAM directly from the plugins dashboard. You can install it in the same manner as any other plugin, and no addition steps are required. Just as with the other installation methods, you can customise your installation by modifying the contents of the `config.ini` file or by using the front-end configuration page. If you enable the CIDRAM front-end and update CIDRAM using the front-end updates page, this will automatically sync with the plugin version information displayed in the plugins dashboard.
 
 ---
 
@@ -633,4 +643,4 @@ No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended securit
 ---
 
 
-Last Updated: 27 March 2017 (2017.03.27).
+Last Updated: 31 March 2017 (2017.03.31).

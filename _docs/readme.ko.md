@@ -32,7 +32,7 @@ CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 ### 2. <a name="SECTION2"></a>설치 방법
 
-가까운 장래에 설치를 만들고 설치의 간소화를 도모하고자하지만, 현재 아래의 지침에 따라 CIDRAM를 설치하십시오. 몇몇 예외는 있지만, *대다수의* 시스템 및 CMS에서 작동합니다.
+#### 2.0 수동 설치
 
 1) 이 항목을 읽고 있다는 점에서 아카이브 스크립트의 로컬 컴퓨터에 다운로드 및 압축 해제는 종료하고 있다고 생각합니다. 호스트 또는 CMS에 `/public_html/cidram/`와 같은 디렉토리를 만들고 로컬 컴퓨터에서 거기에 콘텐츠를 업로드하는 것이 다음 단계입니다. 파일 저장 디렉토리 이름과 위치는 안전하고 만 있으면 물론 제약 등은 없기 때문에 자유롭게 결정 해주세요.
 
@@ -59,6 +59,16 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) 설치가 완료되었습니다. :-)
+
+#### 2.1 COMPOSER를 사용하여 설치한다
+
+[CIDRAM는 Packagist에 등록되어 있습니다](https://packagist.org/packages/maikuolan/cidram). Composer를 익숙한 경우 Composer를 사용하여 CIDRAM를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치"의 2 단계와 5 단계를 참조하십시오).
+
+`composer require maikuolan/cidram`
+
+#### 2.2 WORDPRESS 위해 설치한다
+
+WordPress에 CIDRAM를 사용하려면 위의 단계를 모두 무시 할 수 있습니다. [CIDRAM은 WordPress 플러그인 데이터베이스에 플러그인으로 등록되어 있습니다](https://WordPress.org/plugins/cidram/). 플러그인 대시 보드에서 CIDRAM를 직접 설치할 수 있습니다. 다른 플러그인과 같은 방법으로 설치할 수 (추가 절차는 필요하지 않습니다). 다른 설치 방법과 마찬가지로, `config.ini` 파일의 내용을 변경 또는 프런트 엔드 구성 페이지를 사용하여 설치를 사용자 정의 할 수 있습니다. 프런트 엔드 업데이트 페이지에서 CIDRAM를 업데이트하면, 플러그인 버전 정보가 WordPress에 자동으로 동기화됩니다.
 
 ---
 
@@ -633,4 +643,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트: 2017 년 3 월 27 일.
+최종 업데이트: 2017 년 3 월 31 일.

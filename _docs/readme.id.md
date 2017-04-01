@@ -2,7 +2,7 @@
 
 ### Isi
 - 1. [SEPATAH KATA](#SECTION1)
-- 2. [BAGAIMANA CARA MENGINSTALL](#SECTION2)
+- 2. [BAGAIMANA CARA MENGINSTAL](#SECTION2)
 - 3. [BAGAIMANA CARA MENGGUNAKAN](#SECTION3)
 - 4. [MANAJEMEN BAGIAN DEPAN](#SECTION4)
 - 5. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION5)
@@ -30,9 +30,9 @@ Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari [G
 ---
 
 
-### 2. <a name="SECTION2"></a>BAGAIMANA CARA MENGINSTALL
+### 2. <a name="SECTION2"></a>BAGAIMANA CARA MENGINSTAL
 
-Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer pada beberapa point di dalam masa depan yang tidak terlalu jauh, tapi kemudian, ikuti instruksi-instruksi ini untuk mendapatkan CIDRAM bekerja pada *banyak sistem dan CMS:
+#### 2.0 MENGINSTAL SECARA MANUAL
 
 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh dan menyimpan copy dari skrip, membuka data terkompres dan isinya dan Anda meletakkannya pada mesin komputer lokal Anda. Dari sini, Anda akan latihan dimana di host Anda atau CMS Anda untuk meletakkan isi data terkompres nya. Sebuah direktori seperti `/public_html/cidram/` atau yang lain (walaupun tidak masalah Anda memilih direktori apa, selama dia aman dan dimana pun yang Anda senangi) akan mencukupi. *Sebelum Anda mulai upload, mohon baca dulu..*
 
@@ -59,6 +59,16 @@ Atau ini di file `.htaccess`:
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) Itu semuanya! :-)
+
+#### 2.1 MENGINSTAL DENGAN COMPOSER
+
+[CIDRAM terdaftar dengan Packagist](https://packagist.org/packages/maikuolan/cidram). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal CIDRAM (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual" langkah 2 dan 5).
+
+`composer require maikuolan/cidram`
+
+#### 2.2 MENGINSTAL UNTUK WORDPRESS
+
+Jika Anda ingin menggunakan CIDRAM dengan WordPress, Anda dapat mengabaikan semua petunjuk di atas. [CIDRAM terdaftar sebagai plugin dengan database plugin WordPress](https://wordpress.org/plugins/cidram/), dan Anda dapat menginstal CIDRAM langsung dari plugin dashboard. Anda dapat menginstalnya dengan cara yang sama seperti plugin lainnya, dan tidak ada langkah-langkah selain diperlukan. Sama seperti dengan metode instalasi lain, Anda dapat menyesuaikan instalasi Anda dengan memodifikasi isi file `config.ini` atau dengan menggunakan akses bagian depan halaman konfigurasi. Jika Anda mengaktifkan bagian depan CIDRAM dan memperbarui CIDRAM menggunakan akses bagian depan halaman pembaruan, ini secara otomatis akan sinkron dengan informasi versi plugin ditampilkan di plugin dashboard.
 
 ---
 
@@ -633,4 +643,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 27 Maret 2017 (2017.03.27).
+Terakhir Diperbarui: 31 Maret 2017 (2017.03.31).

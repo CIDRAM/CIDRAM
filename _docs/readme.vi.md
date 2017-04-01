@@ -32,7 +32,7 @@ Tài liệu này và các gói liên quan của nó có thể được tải v�
 
 ### 2. <a name="SECTION2"></a>CÁCH CÀI ĐẶT
 
-Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho CIDRAM làm việc trên hầu hết các hệ thống và CMS:
+#### 2.0 CÀI ĐẶT THỦ CÔNG
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao kho lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Từ đây, bạn sẽ muốn đặt nội dung ở một nơi trên máy chủ hoặc CMS của bạn. Một thư mục chẳng hạn như `/public_html/cidram/` hay tương tự (mặc dù sự lựa chọn của bạn không quan trọng, miễn là nó an toàn và bạn hài lòng với sự lựa chọn) sẽ đủ.. *Trước khi bạn bắt đầu tải lên, hảy tiếp tục đọc..*
 
@@ -59,6 +59,16 @@ Hoạc cái này trong tập tin `.htaccess`:
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) Đó là tất cả mọi thứ! :-)
+
+#### 2.1 CÀI ĐẶT VỚI COMPOSER
+
+[CIDRAM được đăng ký với Packagist](https://packagist.org/packages/maikuolan/cidram), và như vậy, nếu bạn đã quen với Composer, bạn có thể sử dụng Composer để cài đặt CIDRAM (bạn vẫn cần phải chuẩn bị cấu hình và kết nối; xem "cài đặt thủ công" bước 2 và 5).
+
+`composer require maikuolan/cidram`
+
+#### 2.2 CÀI ĐẶT CHO WORDPRESS
+
+Nếu bạn muốn sử dụng CIDRAM với WordPress, bạn có thể bỏ qua tất cả các hướng dẫn ở trên. [CIDRAM được đăng ký như một plugin với cơ sở dữ liệu plugin của WordPress](https://WordPress.org/plugins/cidram/), và bạn có thể cài đặt CIDRAM trực tiếp từ các bảng điều khiển plugin. Bạn có thể cài đặt nó theo cách tương tự như các plugin khác, và không có bước bổ sung được yêu cầu. Giống như với các phương pháp cài đặt khác, bạn có thể tùy chỉnh cài đặt của bạn bằng cách sửa đổi nội dung của tập tin `config.ini` hay bằng cách sử dụng trang cấu hình của front-end. Nếu bạn kích hoạt front-end của CIDRAM và cập nhật CIDRAM bằng cách sử dụng trang cập nhật của front-end, điều này sẽ tự động đồng bộ các thông tin phiên bản plugin với thông tin được hiển thị trong các bảng điều khiển plugin.
 
 ---
 
@@ -633,4 +643,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Ba 2017 (2017.03.27).
+Lần cuối cập nhật: 31 Tháng Ba 2017 (2017.03.31).

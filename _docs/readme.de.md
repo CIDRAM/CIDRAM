@@ -34,7 +34,7 @@ Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos her
 
 ### 2. <a name="SECTION2"></a>INSTALLATION
 
-Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um CIDRAM auf den *meisten Systemen und CMS zu installieren:
+#### 2.0 MANUELL INSTALLIEREN
 
 1) Entpacken Sie das heruntergeladene Archiv auf Ihren lokalen PC. Erstellen Sie ein Verzeichnis, wohin Sie den Inhalt dieses Paketes auf Ihrem Host oder CMS installieren möchten. Ein Verzeichnis wie `/public_html/cidram/` o.ä. genügt, solange es Ihren Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
 
@@ -61,6 +61,16 @@ Oder das in der `.htaccess` Datei:
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
 6) Das ist alles! :-)
+
+#### 2.1 INSTALLATION MIT COMPOSER
+
+[CIDRAM ist bei Packagist registriert](https://packagist.org/packages/maikuolan/cidram), und so, wenn Sie mit Composer vertraut sind, können Sie Composer verwenden, um CIDRAM zu installieren (musst Sie dennoch die Konfiguration und Hooks aber vorbereiten; Siehe "manuell installieren" der Schritte 2 und 5).
+
+`composer require maikuolan/cidram`
+
+#### 2.2 FÜR WORDPRESS INSTALLIEREN
+
+Wenn Sie CIDRAM mit WordPress verwenden möchten, können Sie alle Anweisungen oben ignorieren. [CIDRAM ist als Plugin mit der WordPress Plugin Datenbank registriert](https://wordpress.org/plugins/cidram/), und Sie kannst CIDRAM direkt aus dem Plugins-Dashboard installieren. Sie können es in der gleichen Weise wie jedes andere Plugin installieren, und es sind keine zusätzlichen Schritte erforderlich. Genauso wie bei den anderen Installationsmethoden, Sie können Ihre Installation anpassen, indem Sie den Inhalt der `config.ini`-Datei, oder indem Sie die Front-End-Konfigurationsseite verwenden. Wenn Sie das Front-End für CIDRAM aktivieren und CIDRAM mit der Front-End-Aktualisierungen-Seite aktualisieren, dies wird automatisch mit den Plugin-Versionsinformationen synchronisiert, die im Plugins-Dashboard angezeigt werden.
 
 ---
 
@@ -635,4 +645,4 @@ Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) i
 ---
 
 
-Zuletzt aktualisiert: 27 März 2017 (2017.03.27).
+Zuletzt aktualisiert: 31 März 2017 (2017.03.31).

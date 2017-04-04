@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.30).
+ * This file: Front-end handler (last modified: 2017.04.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,10 +55,14 @@ if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
     $CIDRAM['FE']['FE_Align'] = 'left';
     $CIDRAM['FE']['FE_Align_Reverse'] = 'right';
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Right'];
+    $CIDRAM['FE']['Gradient_Degree'] = 90;
+    $CIDRAM['FE']['Half_Border'] = 'solid solid none none';
 } else {
     $CIDRAM['FE']['FE_Align'] = 'right';
     $CIDRAM['FE']['FE_Align_Reverse'] = 'left';
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Left'];
+    $CIDRAM['FE']['Gradient_Degree'] = 270;
+    $CIDRAM['FE']['Half_Border'] = 'solid none none solid';
 }
 
 /** A simple passthru for the front-end CSS. */

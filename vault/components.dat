@@ -17,7 +17,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 0.9.0-DEV+17088636
+ Version: 0.9.0-DEV+17093811
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -107,7 +107,7 @@ CIDRAM:
    - 8e03209e7fc6641b45094e584340feff:83
    - ccaa4cb3b447453c4e759862d42e4367:24011
    - 56426898f6e7691b2829ff563287d203:5878
-   - 94e233009b01b49c0cad55fcccb49df8:2424
+   - 083fdb461d31d012cc322b15645cb461:2447
    - 8e03209e7fc6641b45094e584340feff:83
    - 51e57efba1d36775387fd7ab755d17aa:1353
    - a6a6c3f2e727a6717854b017a62cac5d:773
@@ -130,15 +130,15 @@ CIDRAM:
    - a2abeb3e093353cc782a84f3446dd8ca:506
    - 109c460a0a2f2df1806c93e869bd64ef:1117
    - 8eadb07a0189d4e31917beba43a0ab54:691
-   - 0603b734f992e454a4d85d68020beb09:2247
+   - abd6a5411e3b277dc8870012c1829e68:2284
    - bbd483ebdafe0985f068f9e1e0347e90:802
-   - 37664338240e4ec40986067de16b02be:106057
+   - 195209b9982c551e3c73ec1b8db2c29f:106264
    - be13765b01c7f7c87d8a7646c07bdb39:89721
    - dc5f332073474f36d7cdd37a51510d37:5008
    - 90f4e2597e0dfa411b65c4a1e8849c13:17575
    - 5b6bbb6c353196a5cf2fe336fde2dc5a:2750
    - 8e03209e7fc6641b45094e584340feff:83
-   - d81f8c9b19c9c6f720450748effc4235:24129
+   - b21d9032ef4de6abe44257bea8c5447a:24158
    - 10a8f11f9c09873ab71e50e128940503:1729
    - f49f65f39294189112ee3ed198d159db:11250
    - 94c2012540675e0df4548b5a1e64264f:3223
@@ -584,7 +584,7 @@ l10n/ar:
  Name: L10N: العربية
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2017.84.851
+ Version: 2017.93.794
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -600,7 +600,7 @@ l10n/ar:
    - lang/lang.ar.php
   Checksum:
    - 55e76e1bccfbd33dcfdadca6fa7fc3b5:4657
-   - a8545d05f88c2b845a3bbf619e4cc457:24661
+   - e7d2cd13242f7a32f6428b1c002e708d:24661
    - 5dac3a3c325d8043fc76bb7e8773ca3f:3813
  Reannotate: components.dat
 l10n/de:
@@ -630,7 +630,7 @@ l10n/es:
  Name: L10N: Español
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2017.84.851
+ Version: 2017.93.794
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -646,7 +646,7 @@ l10n/es:
    - lang/lang.es.php
   Checksum:
    - b029d949ce43ab84c02e3e7e9a924790:4416
-   - 4e1167ab644316a60b0c84dff16dfd2c:22471
+   - 831204452457283c0982684275e54267:22475
    - 370aa97d6fb00ee963ff9e8a09af75fd:4244
  Reannotate: components.dat
 l10n/fr:
@@ -832,6 +832,29 @@ l10n/ru:
    - eb9ccbc9fde9aed73bdbeb84d35d8a38:5850
    - f75441782fa38a871b4e38160fdbbb09:29450
    - a3a456884264152df5118987b957e14f:5755
+ Reannotate: components.dat
+l10n/ur:
+ Name: L10N: ‏اردو‏
+ Extended Description:
+  ur: ‏اردو‏ زبان فائلوں
+ Version: 2017.93.794
+ Minimum Required: 0.9.0-DEV
+ Minimum Required PHP: 5.4.0
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ur.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ur.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.ur.php
+  To:
+   - lang/lang.ur.cli.php
+   - lang/lang.ur.fe.php
+   - lang/lang.ur.php
+  Checksum:
+   - 89f539ab5f6e7a7a3a9480ded0317900:5644
+   - ddd7baeba4de9fc71d979658a1ba7fe5:28439
+   - 2eb748d8a2fce9c1ad33d388dcd31e4c:5659
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt

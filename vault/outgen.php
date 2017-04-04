@@ -437,7 +437,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             $CIDRAM['errCode'] = 200;
         }
 
-        if (!file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
+        if (!$CIDRAM['template_file'] || !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
             header('Content-Type: text/plain');
             $CIDRAM['html'] = '[CIDRAM] ' . $CIDRAM['lang']['denied'];
         } else {

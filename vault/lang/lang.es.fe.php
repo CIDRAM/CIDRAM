@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.03.27).
+ * This file: Spanish language data for the front-end (last modified: 2017.04.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -138,8 +138,8 @@ $CIDRAM['lang']['response_file_deleted'] = '¡Archivo eliminado con éxito!';
 $CIDRAM['lang']['response_file_edited'] = '¡Archivo modificado con éxito!';
 $CIDRAM['lang']['response_file_renamed'] = '¡El nombre del archivo cambiado con éxito!';
 $CIDRAM['lang']['response_file_uploaded'] = '¡Archivo subido con éxito!';
-$CIDRAM['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión - Contraseña invalida!';
-$CIDRAM['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión - El usuario no existe!';
+$CIDRAM['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión – Contraseña invalida!';
+$CIDRAM['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión – El usuario no existe!';
 $CIDRAM['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $CIDRAM['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
 $CIDRAM['lang']['response_no'] = 'No';

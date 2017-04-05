@@ -11,6 +11,8 @@
  * This file: The simple installer (last modified: 2017.04.05) by Naveen {@link https://github.com/naveen17797} */
 require 'vault/_installer.html';
 
+if (!empty($_GET['mode'])) {
+
 if ($_GET['mode'] == "install") {
 /*
 * Make rename function
@@ -32,6 +34,7 @@ unlink("index.php");
 
 }
 
+}
 
 
 ?>

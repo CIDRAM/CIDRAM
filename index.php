@@ -9,7 +9,7 @@
  * @see LICENSE.txt
  *
  * This file: The simple installer (last modified: 2017.04.05) by Naveen {@link https://github.com/naveen17797} */
-require 'vault/fe_assets/_installer.html';
+require 'vault/_installer.html';
 
 if ($_GET['mode'] == "install") {
 /*

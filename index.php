@@ -31,6 +31,10 @@ chmod("vault", 755);
 */
 unlink("index.php");
 
+/*
+* redirect to loader
+*/
+header("loader.php");
 
 }
 

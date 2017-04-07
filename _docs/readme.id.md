@@ -197,6 +197,9 @@ Data | Deskripsi
 /vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
 /vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk bagian depan.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.ur.cli.php | File Bahasa Urdu untuk CLI.
+/vault/lang/lang.ur.fe.php | File Bahasa Urdu untuk bagian depan.
+/vault/lang/lang.ur.php | File Bahasa Urdu.
 /vault/lang/lang.vi.cli.php | File Bahasa Vietnam untuk CLI.
 /vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk bagian depan.
 /vault/lang/lang.vi.php | File Bahasa Vietnam.
@@ -643,4 +646,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 31 Maret 2017 (2017.03.31).
+Terakhir Diperbarui: 7 April 2017 (2017.04.07).

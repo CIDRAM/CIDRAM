@@ -197,6 +197,9 @@ Archivo | Descripción
 /vault/lang/lang.ru.cli.php | Lingüísticos datos Ruso para CLI.
 /vault/lang/lang.ru.fe.php | Lingüísticos datos Ruso para el front-end.
 /vault/lang/lang.ru.php | Lingüísticos datos Ruso.
+/vault/lang/lang.ur.cli.php | Lingüísticos datos Urdu para CLI.
+/vault/lang/lang.ur.fe.php | Lingüísticos datos Urdi para el front-end.
+/vault/lang/lang.ur.php | Lingüísticos datos Urdu.
 /vault/lang/lang.vi.cli.php | Lingüísticos datos Vietnamita para CLI.
 /vault/lang/lang.vi.fe.php | Lingüísticos datos Vietnamita para el front-end.
 /vault/lang/lang.vi.php | Lingüísticos datos Vietnamita.
@@ -643,4 +646,4 @@ No. PHP 5.4.0 llegó a EoL oficial ("End of Life", o fin de la vida) en 2014, y 
 ---
 
 
-Última Actualización: 31 Marzo 2017 (2017.03.31).
+Última Actualización: 7 Abril 2017 (2017.04.07).

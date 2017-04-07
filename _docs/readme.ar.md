@@ -198,6 +198,9 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية لCLI.</div> | /vault/lang/lang.ru.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية لfront-end.</div> | /vault/lang/lang.ru.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الأردية لCLI.</div> | /vault/lang/lang.ur.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الأردية لfront-end.</div> | /vault/lang/lang.ur.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الأردية.</div> | /vault/lang/lang.ur.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية لCLI.</div> | /vault/lang/lang.vi.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية لfront-end.</div> | /vault/lang/lang.vi.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.php
@@ -721,4 +724,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 31 مارس 2017 (2017.03.31).</div>
+<div dir="rtl">آخر تحديث: 7 أبريل 2017 (2017.04.07).</div>

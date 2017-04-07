@@ -197,6 +197,9 @@ Bestand | Beschrijving
 /vault/lang/lang.ru.cli.php | Russische taaldata/taalgegevens voor CLI.
 /vault/lang/lang.ru.fe.php | Russische taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
+/vault/lang/lang.ur.cli.php | Urdu taaldata/taalgegevens voor CLI.
+/vault/lang/lang.ur.fe.php | Urdu taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.ur.php | Urdu taaldata/taalgegevens.
 /vault/lang/lang.vi.cli.php | Vietnamees taaldata/taalgegevens voor CLI.
 /vault/lang/lang.vi.fe.php | Vietnamees taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
@@ -643,4 +646,4 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 ---
 
 
-Laatste Bijgewerkt: 31 Maart 2017 (2017.03.31).
+Laatste Bijgewerkt: 7 April 2017 (2017.04.07).

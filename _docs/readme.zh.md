@@ -198,6 +198,9 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/lang/lang.ru.cli.php | 俄文CLI语言数据。
 /vault/lang/lang.ru.fe.php | 俄文前端语言数据。
 /vault/lang/lang.ru.php | 俄文语言数据。
+/vault/lang/lang.ur.cli.php | 乌尔都文CLI语言数据。
+/vault/lang/lang.ur.fe.php | 乌尔都文前端语言数据。
+/vault/lang/lang.ur.php | 乌尔都文语言数据。
 /vault/lang/lang.vi.cli.php | 越南文CLI语言数据。
 /vault/lang/lang.vi.fe.php | 越南文前端语言数据。
 /vault/lang/lang.vi.php | 越南文语言数据。
@@ -644,4 +647,4 @@ CIDRAM使网站所有者能够阻止不良流量，但网站所有者有责任�
 ---
 
 
-最后更新：2017年3月31日。
+最后更新：2017年4月7日。

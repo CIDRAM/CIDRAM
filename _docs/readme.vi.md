@@ -197,6 +197,9 @@ Tập tin | Chi tiết
 /vault/lang/lang.ru.cli.php | Dữ liệu tiếng Nga cho CLI.
 /vault/lang/lang.ru.fe.php | Dữ liệu tiếng Nga cho các front-end.
 /vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
+/vault/lang/lang.ur.cli.php | Dữ liệu tiếng Urdu cho CLI.
+/vault/lang/lang.ur.fe.php | Dữ liệu tiếng Urdu cho các front-end.
+/vault/lang/lang.ur.php | Dữ liệu tiếng Urdu.
 /vault/lang/lang.vi.cli.php | Dữ liệu tiếng Việt cho CLI.
 /vault/lang/lang.vi.fe.php | Dữ liệu tiếng Việt cho các front-end.
 /vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
@@ -643,4 +646,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Ba 2017 (2017.03.31).
+Lần cuối cập nhật: 7 Tháng Tư 2017 (2017.04.07).

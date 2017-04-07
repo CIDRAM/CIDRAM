@@ -161,49 +161,52 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/lang/ | CIDRAMの言語データを含んでいます。
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
-/vault/lang/lang.ar.cli.php | CLIのアラビア語言語データ。
+/vault/lang/lang.ar.cli.php | ＣＬＩのアラビア語言語データ。
 /vault/lang/lang.ar.fe.php | フロントエンドのアラビア語言語データ。
 /vault/lang/lang.ar.php | アラビア語言語データ。
-/vault/lang/lang.de.cli.php | CLIのドイツ語言語データ。
+/vault/lang/lang.de.cli.php | ＣＬＩのドイツ語言語データ。
 /vault/lang/lang.de.fe.php | フロントエンドのドイツ語言語データ。
 /vault/lang/lang.de.php | ドイツ語言語データ。
-/vault/lang/lang.en.cli.php | CLIの英語言語データ。
+/vault/lang/lang.en.cli.php | ＣＬＩの英語言語データ。
 /vault/lang/lang.en.fe.php | フロントエンドの英語言語データ。
 /vault/lang/lang.en.php | 英語言語データ。
-/vault/lang/lang.es.cli.php | CLIのスペイン語言語データ。
+/vault/lang/lang.es.cli.php | ＣＬＩのスペイン語言語データ。
 /vault/lang/lang.es.fe.php | フロントエンドのスペイン語言語データ。
 /vault/lang/lang.es.php | スペイン語言語データ。
-/vault/lang/lang.fr.cli.php | CLIのフランス語言語データ。
+/vault/lang/lang.fr.cli.php | ＣＬＩのフランス語言語データ。
 /vault/lang/lang.fr.fe.php | フロントエンドのフランス語言語データ。
 /vault/lang/lang.fr.php | フランス語言語データ。
-/vault/lang/lang.id.cli.php | CLIのインドネシア語言語データ。
+/vault/lang/lang.id.cli.php | ＣＬＩのインドネシア語言語データ。
 /vault/lang/lang.id.fe.php | フロントエンドのインドネシア語言語データ。
 /vault/lang/lang.id.php | インドネシア語言語データ。
-/vault/lang/lang.it.cli.php | CLIの伊語言語データ。
+/vault/lang/lang.it.cli.php | ＣＬＩの伊語言語データ。
 /vault/lang/lang.it.fe.php | フロントエンドの伊語言語データ。
 /vault/lang/lang.it.php | 伊語言語データ。
-/vault/lang/lang.ja.cli.php | CLIの日本語言語データ。
+/vault/lang/lang.ja.cli.php | ＣＬＩの日本語言語データ。
 /vault/lang/lang.ja.fe.php | フロントエンドの日本語言語データ。
 /vault/lang/lang.ja.php | 日本語言語データ。
-/vault/lang/lang.ko.cli.php | CLIの韓国語言語データ。
+/vault/lang/lang.ko.cli.php | ＣＬＩの韓国語言語データ。
 /vault/lang/lang.ko.fe.php | フロントエンドの韓国語言語データ。
 /vault/lang/lang.ko.php | 韓国語言語データ。
-/vault/lang/lang.nl.cli.php | CLIのオランダ語言語データ。
+/vault/lang/lang.nl.cli.php | ＣＬＩのオランダ語言語データ。
 /vault/lang/lang.nl.fe.php | フロントエンドのオランダ語言語データ。
 /vault/lang/lang.nl.php | オランダ語言語データ。
-/vault/lang/lang.pt.cli.php | CLIのポルトガル語言語データ。
+/vault/lang/lang.pt.cli.php | ＣＬＩのポルトガル語言語データ。
 /vault/lang/lang.pt.fe.php | フロントエンドのポルトガル語言語データ。
 /vault/lang/lang.pt.php | ポルトガル語言語データ。
-/vault/lang/lang.ru.cli.php | CLIのロシア語言語データ。
+/vault/lang/lang.ru.cli.php | ＣＬＩのロシア語言語データ。
 /vault/lang/lang.ru.fe.php | フロントエンドのロシア語言語データ。
 /vault/lang/lang.ru.php | ロシア語言語データ。
-/vault/lang/lang.vi.cli.php | CLIのベトナム語言語データ。
+/vault/lang/lang.ur.cli.php | ＣＬＩのウルドゥー語言語データ。
+/vault/lang/lang.ur.fe.php | フロントエンドのウルドゥー語言語データ。
+/vault/lang/lang.ur.php | ウルドゥー語言語データ。
+/vault/lang/lang.vi.cli.php | ＣＬＩのベトナム語言語データ。
 /vault/lang/lang.vi.fe.php | フロントエンドのベトナム語言語データ。
 /vault/lang/lang.vi.php | ベトナム語言語データ。
-/vault/lang/lang.zh-tw.cli.php | CLIの繁体字中国語言語データ。
+/vault/lang/lang.zh-tw.cli.php | ＣＬＩの繁体字中国語言語データ。
 /vault/lang/lang.zh-tw.fe.php | フロントエンドの繁体字中国語言語データ。
 /vault/lang/lang.zh-tw.php | 繁体字中国語言語データ。
-/vault/lang/lang.zh.cli.php | CLIの簡体字中国語言語データ。
+/vault/lang/lang.zh.cli.php | ＣＬＩの簡体字中国語言語データ。
 /vault/lang/lang.zh.fe.php | フロントエンドの簡体字中国語言語データ。
 /vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
@@ -239,8 +242,8 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/rules_softlayer.php | カスタムルールは、Soft Layerのためのファイル。
 /vault/rules_specific.php | カスタムルールは、いくつかの特定のＣＩＤＲのためのファイル。
 /vault/salt.dat | ソルトファイル（一部の周辺機能によって使用されます；必要な場合にのみ生成）。
-/vault/template.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
-/vault/template_custom.html | CIDRAMテンプレートファイル；CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template.html | CIDRAMテンプレートファイル； CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template_custom.html | CIDRAMテンプレートファイル； CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
 /.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
@@ -643,4 +646,4 @@ CIDRAMは、ウェブサイト所有者が望ましくないトラフィック�
 ---
 
 
-最終アップデート： 2017年3月31日。
+最終アップデート： 2017年4月7日。

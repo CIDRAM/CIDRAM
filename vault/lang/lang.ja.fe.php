@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.03.27).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,6 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。 True = はい （Default/デフォルルト）； False = いいえ。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '検索エンジンからのリクエストを確認する必要がありますか？ 検索エンジンを確認することで、違反の最大数を超えたために検索エンジンが禁止されないことが保証されます （検索エンジンを禁止することは、通常、検索エンジンランキング、ＳＥＯなどに悪影響を及ぼします）。 確認されると、検索エンジンがブロックされることがありますが、しかしは禁止されません。 検証されていない場合は、違反の最大を超えた結果、禁止される可能性があります。 さらに、検索エンジンの検証は、詐称された検索エンジンから保護します （これらのリクエストはブロックされます）。 True = 検索エンジンの検証を有効にする （Default/デフォルルト）； False = 検索エンジンの検証を無効にする。';
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？ はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。';
+$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAMで使用される日付表記形式。 下のリストからオプションを選択してください。 追加のオプションがリクエストに応じて追加される場合があります。';
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをＩＰにロックしますか？';
@@ -97,6 +98,7 @@ $CIDRAM['lang']['field_status'] = '状態';
 $CIDRAM['lang']['field_tracking'] = 'トラッキング';
 $CIDRAM['lang']['field_uninstall'] = 'アンインストール';
 $CIDRAM['lang']['field_update'] = 'アップデート';
+$CIDRAM['lang']['field_update_all'] = 'すべてアップデートする';
 $CIDRAM['lang']['field_upload_file'] = '新しいファイルをアップロードする';
 $CIDRAM['lang']['field_username'] = 'ユーザー名';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';

@@ -282,6 +282,9 @@ Konfigurasi umum dari CIDRAM.
 - Jika waktu server Anda tidak cocok waktu lokal Anda, Anda dapat menentukan offset sini untuk menyesuaikan informasi tanggal/waktu dihasilkan oleh CIDRAM sesuai dengan kebutuhan Anda. Ini umumnya direkomendasikan sebagai gantinya untuk menyesuaikan direktif zona waktu dalam file `php.ini` Anda, tapi terkadang (seperti ketika bekerja dengan terbatas penyedia shared hosting) ini tidak selalu mungkin untuk melakukan, dan demikian, opsi ini disediakan disini. Offset adalah dalam menit.
 - Contoh (untuk menambahkan satu jam): `timeOffset=60`
 
+"timeFormat"
+- Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Default = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
+
 "ipaddr"
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
@@ -646,4 +649,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 7 April 2017 (2017.04.07).
+Terakhir Diperbarui: 11 April 2017 (2017.04.11).

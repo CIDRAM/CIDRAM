@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.03.27).
+ * This file: French language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,6 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentat
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l\'accès frontal. True = Oui [Défaut]; False = Non.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Essayez de vérifier les moteurs de recherche? Vérification des moteurs de recherche assure qu\'ils ne seront pas interdits en raison de dépassement de la limite d\'infraction (l\'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu\'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d\'habitude, mais ne seront pas interdits. Lorsqu\'ils ne sont pas vérifiés, il est possible qu\'ils soient interdits en raison du dépassement de la limite d\'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses demandes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut]; False = Désactiver la vérification du moteurs de recherche.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page "Accès Refusé"? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par CIDRAM. Sélectionnez une option dans la liste ci-dessous. Des options supplémentaires peuvent être ajoutées sur demande.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Nombre d\'heures à retenir des instances reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Verrouiller reCAPTCHA aux adresses IP?';
@@ -97,6 +98,7 @@ $CIDRAM['lang']['field_status'] = 'Statut';
 $CIDRAM['lang']['field_tracking'] = 'Surveillance';
 $CIDRAM['lang']['field_uninstall'] = 'Désinstaller';
 $CIDRAM['lang']['field_update'] = 'Mettre à Jour';
+$CIDRAM['lang']['field_update_all'] = 'Tout mettre à jour';
 $CIDRAM['lang']['field_upload_file'] = 'Télécharger un nouveau fichier';
 $CIDRAM['lang']['field_username'] = 'Nom d\'Utilisateur';
 $CIDRAM['lang']['field_your_version'] = 'Votre Version';

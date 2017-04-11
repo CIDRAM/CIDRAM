@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.03.27).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,6 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Số lượng tối đa 
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử dụng bởi CIDRAM. Chọn một tùy chọn từ danh sách bên dưới. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Số giờ để nhớ reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Khóa reCAPTCHA để IP?';
@@ -97,6 +98,7 @@ $CIDRAM['lang']['field_status'] = 'Tình Trạng';
 $CIDRAM['lang']['field_tracking'] = 'Giám sát';
 $CIDRAM['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
 $CIDRAM['lang']['field_update'] = 'Cập Nhật';
+$CIDRAM['lang']['field_update_all'] = 'Cập Nhật Tất Cả';
 $CIDRAM['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';

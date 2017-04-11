@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.03.27).
+ * This file: German language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,6 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximale Anzahl der Vers
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Überprüfung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Überprüfung aktiviert ist). True = Suchmaschinen-Überprüfung aktivieren [Standardeinstellung]; False = Suchmaschinen-Überprüfung deaktivieren.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Anstatt die "Zugriff verweigert", sollte CIDRAM leise blockiert Zugriffsversuche umleiten? Wenn ja, geben Sie den Speicherort auf den blockierten Zugriffsversuche umleiten. Wenn nein, diese Variable leer lassen.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'Das Datumsformat verwendet von CIDRAM. Wählen Sie eine Option aus der folgenden Liste. Zusätzliche Optionen können auf Anfrage hinzugefügt werden.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Zeitzonenversatz in Minuten.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Anzahl der Stunden an die sich reCAPTCHA-Instanzen erinnern sollten.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Sperren Sie reCAPTCHA auf IPs?';
@@ -97,6 +98,7 @@ $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_uninstall'] = 'Deinstallieren';
 $CIDRAM['lang']['field_update'] = 'Aktualisieren';
+$CIDRAM['lang']['field_update_all'] = 'Alle aktualisieren';
 $CIDRAM['lang']['field_upload_file'] = 'Neue Datei hochladen';
 $CIDRAM['lang']['field_username'] = 'Benutzername';
 $CIDRAM['lang']['field_your_version'] = 'Ihre Version';

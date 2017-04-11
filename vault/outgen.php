@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.03.30).
+ * This file: Output generator (last modified: 2017.04.11).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -62,7 +62,7 @@ $CIDRAM['Protect'] = (
 
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = array(
-    'DateTime' => date('r', $CIDRAM['Now']),
+    'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'IPAddr' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
@@ -492,7 +492,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 $CIDRAM['Config']['general']['logfile'],
                 $CIDRAM['Config']['general']['logfileApache'],
                 $CIDRAM['Config']['general']['logfileSerialized']
-            ) = $CIDRAM['Time2Logfile']($CIDRAM['Now'], array(
+            ) = $CIDRAM['TimeFormat']($CIDRAM['Now'], array(
                 $CIDRAM['Config']['general']['logfile'],
                 $CIDRAM['Config']['general']['logfileApache'],
                 $CIDRAM['Config']['general']['logfileSerialized']

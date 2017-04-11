@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.10.15).
+ * This file: CLI handler (last modified: 2017.04.11).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -77,7 +77,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     /** Validates signature files. */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Started'], date('r')));
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Started'], $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat'])));
     if (empty($FileToValidate)) {
         die($CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n");
     }
@@ -231,12 +231,12 @@ if ($CIDRAM['argv'][1] === '-h') {
             }
         }
     }
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Finished'], date('r'))) . "\n";
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_V_Finished'], $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']))) . "\n";
 } elseif ($CIDRAM['argv'][1] === '-f') {
     /** Attempts to automatically fix signature files. */
     echo "\n";
     $FileToValidate = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['argv'][2]);
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Started'], date('r')));
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Started'], $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat'])));
     if (empty($FileToValidate)) {
         die($CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_3'], $CIDRAM['lang']['CLI_VF_Empty']) . "\n");
     }
@@ -417,5 +417,5 @@ if ($CIDRAM['argv'][1] === '-h') {
         fwrite($Handle, $FileToValidate);
         fclose($Handle);
     }
-    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Finished'], $Changes, $Operations, date('r'))) . "\n";
+    echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_0'], sprintf($CIDRAM['lang']['CLI_F_Finished'], $Changes, $Operations, $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']))) . "\n";
 }

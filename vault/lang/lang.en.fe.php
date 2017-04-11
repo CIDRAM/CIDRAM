@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.03.27).
+ * This file: English language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,6 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum number of login 
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Attempt to verify requests from search engines? Verifying search engines ensures that they won\'t be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won\'t be banned. When not verified, it\'s possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format used by CIDRAM. Select an option from the list below. Additional options may be added upon request.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lock reCAPTCHA to IPs?';
@@ -97,6 +98,7 @@ $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstall';
 $CIDRAM['lang']['field_update'] = 'Update';
+$CIDRAM['lang']['field_update_all'] = 'Update All';
 $CIDRAM['lang']['field_upload_file'] = 'Upload New File';
 $CIDRAM['lang']['field_username'] = 'Username';
 $CIDRAM['lang']['field_your_version'] = 'Your Version';

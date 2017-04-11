@@ -294,6 +294,13 @@
 
 `timeOffset=60`
 
+<div dir="rtl">"timeFormat"<br /></div>
+<div dir="rtl"><ul>
+ <li>شكل التواريخ المستخدم من قبل CIDRAM. الافتراضي:</li>
+</ul></div>
+
+`{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`
+
 <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
  <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
@@ -724,4 +731,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 7 أبريل 2017 (2017.04.07).</div>
+<div dir="rtl">آخر تحديث: 11 أبريل 2017 (2017.04.11).</div>

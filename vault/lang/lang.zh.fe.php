@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.27).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,6 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数
 $CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。 True = 是【标准】； False = 不是。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？ 验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，SEO，等等）。 当被验证，搜索引擎可以被阻止，但不会被禁止。 当不被验证，他们可以由于超过违规限制而被禁止。 另外，搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，这些请求将被阻止）。 True = 搜索引擎验证是启用【标准】； False = 搜索引擎验证是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。';
+$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。从下面的列表中选择一个选项。可根据要求增加附加选项。';
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '应该reCAPTCHA锁定到IP？';
@@ -97,6 +98,7 @@ $CIDRAM['lang']['field_status'] = '状态';
 $CIDRAM['lang']['field_tracking'] = '跟踪';
 $CIDRAM['lang']['field_uninstall'] = '卸载';
 $CIDRAM['lang']['field_update'] = '更新';
+$CIDRAM['lang']['field_update_all'] = '更新一切';
 $CIDRAM['lang']['field_upload_file'] = '上传新文件';
 $CIDRAM['lang']['field_username'] = '用户名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';

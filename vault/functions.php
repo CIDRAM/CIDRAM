@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.03.05).
+ * This file: Functions file (last modified: 2017.04.11).
  */
 
 /**
@@ -701,28 +701,36 @@ $CIDRAM['FetchExpires'] = function ($in) {
 };
 
 /**
- * A simple closure for replacing date/time placeholders in the logfile
- * directives with corresponding date/time information.
+ * A simple closure for replacing date/time placeholders with corresponding
+ * date/time information. Used by the logfiles and some timestamps.
  *
- * @param int $time A unix timestamp.
- * @param string|array $dir A directive entry or an array of directive entries.
- * @return string|array The adjusted directive entry or entries.
+ * @param int $Time A unix timestamp.
+ * @param string|array $In An input or an array of inputs to manipulate.
+ * @return string|array The adjusted input(/s).
  */
-$CIDRAM['Time2Logfile'] = function ($time, $dir) use (&$CIDRAM) {
-    $time = date('dmYH', $time);
+$CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
+    $Time = date('dmYHisDMP', $Time);
     $values = array(
-        'dd' => substr($time, 0, 2),
-        'mm' => substr($time, 2, 2),
-        'yyyy' => substr($time, 4, 4),
-        'yy' => substr($time, 6, 2),
-        'hh' => substr($time, 8, 2)
+        'dd' => substr($Time, 0, 2),
+        'mm' => substr($Time, 2, 2),
+        'yyyy' => substr($Time, 4, 4),
+        'yy' => substr($Time, 6, 2),
+        'hh' => substr($Time, 8, 2),
+        'ii' => substr($Time, 10, 2),
+        'ss' => substr($Time, 12, 2),
+        'Day' => substr($Time, 14, 3),
+        'Mon' => substr($Time, 17, 3),
+        'tz' => substr($Time, 20, 3) . substr($Time, 24, 2),
+        't:z' => substr($Time, 20, 6)
     );
-    if (is_array($dir)) {
+    $values['d'] = (int)$values['dd'];
+    $values['m'] = (int)$values['mm'];
+    if (is_array($In)) {
         return array_map(function ($Item) use (&$values, &$CIDRAM) {
             return $CIDRAM['ParseVars']($values, $Item);
-        }, $dir);
+        }, $In);
     }
-    return $CIDRAM['ParseVars']($values, $dir);
+    return $CIDRAM['ParseVars']($values, $In);
 };
 
 /**

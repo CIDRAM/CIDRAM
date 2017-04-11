@@ -15,6 +15,10 @@ logfileSerialized=''
 ; Timezone offset in minutes.
 timeOffset=0
 
+; The date/time notation format used by CIDRAM. Select an option from the list
+; below. Additional options may be added upon request.
+timeFormat='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
+
 ; Where to find the IP address of connecting requests? (Useful for services
 ; such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't
 ; change this unless you know what you're doing!

@@ -282,6 +282,9 @@ Configuration générale pour CIDRAM.
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par CIDRAM selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
 - Exemple (à ajouter une heure): `timeOffset=60`
 
+"timeFormat"
+- Le format de notation de la date/heure utilisé par CIDRAM. Défaut = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
+
 "ipaddr"
 - Où trouver l'adresse IP de demandes de connexion? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
 
@@ -646,4 +649,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 7 Avril 2017 (2017.04.07).
+Dernière Mise à Jour: 11 Avril 2017 (2017.04.11).

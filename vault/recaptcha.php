@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2017.02.16).
+ * This file: reCAPTCHA module (last modified: 2017.04.11).
  */
 
 /**
@@ -216,7 +216,7 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
     /** Determining date/time information for the logfile name. */
     if (substr_count($CIDRAM['Config']['recaptcha']['logfile'], '{')) {
         $CIDRAM['Config']['recaptcha']['logfile'] =
-            $CIDRAM['Time2Logfile']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']);
+            $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']);
     }
     $CIDRAM['reCAPTCHA']['LogfileData'] =
         $CIDRAM['lang']['field_ipaddr'] . $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' .

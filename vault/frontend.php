@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.04).
+ * This file: Front-end handler (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,7 +29,7 @@ $CIDRAM['FE'] = array(
     'Template' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.html'),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
-    'DateTime' => date('r', $CIDRAM['Now']),
+    'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'WebFontsLink' => $CIDRAM['WebFontsLink'],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'UserList' => "\n",
@@ -181,7 +181,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
 
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
         if (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) {
-            $CIDRAM['Config']['general']['FrontEndLog'] = $CIDRAM['Time2Logfile'](
+            $CIDRAM['Config']['general']['FrontEndLog'] = $CIDRAM['TimeFormat'](
                 $CIDRAM['Now'],
                 $CIDRAM['Config']['general']['FrontEndLog']
             );
@@ -624,6 +624,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (isset($CIDRAM['DirValue']['choices'])) {
                 $CIDRAM['ThisDir']['FieldOut'] = '<select name="'. $CIDRAM['ThisDir']['DirLangKey'] . '">';
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
+                    if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
+                        $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
+                    }
                     $CIDRAM['ThisDir']['FieldOut'] .= ($CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) ?
                         '<option value="' . $CIDRAM['ChoiceKey'] . '" selected>' . $CIDRAM['ChoiceValue'] . '</option>'
                     :
@@ -1938,7 +1941,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             if (!isset($CIDRAM['ThisTrackingArr']['Time']) || !isset($CIDRAM['ThisTrackingArr']['Count'])) {
                 continue;
             }
-            $CIDRAM['ThisTracking']['Expiry'] = date('r', $CIDRAM['ThisTrackingArr']['Time']);
+            $CIDRAM['ThisTracking']['Expiry'] =
+                $CIDRAM['TimeFormat']($CIDRAM['ThisTrackingArr']['Time'], $CIDRAM['Config']['general']['timeFormat']);
             if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
                 $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_banned'];

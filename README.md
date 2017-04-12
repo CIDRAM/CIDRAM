@@ -37,8 +37,6 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 
 [\[CONTRIBUTING.md\] **Want to help?**](https://github.com/Maikuolan/CIDRAM/blob/master/CONTRIBUTING.md)
 
-[\[maikuolan.github.io/CIDRAM\] **Want to donate?**](http://maikuolan.github.io/CIDRAM/)
-
 ---
 
-*Last modified: 6 February 2017 (2017.02.06).*
+*Last modified: 12 April 2017 (2017.04.12).*

@@ -5,7 +5,7 @@
  <li>١. <a href="#SECTION1">تمہید</a></li>
  <li>٢. <a href="#SECTION2">انسٹال کرنے کا طریقہ</a></li>
  <li>٣. <a href="#SECTION3">کس طرح استعمال</a></li>
- <li>٤. <a href="#SECTION4">سامنے کے آخر میں مینجمنٹ</a></li>
+ <li>٤. <a href="#SECTION4">سامنے کے آخر میں انتظام</a></li>
  <li>٥. <a href="#SECTION5">فائل اس پیکیج میں شامل</a></li>
  <li>٦. <a href="#SECTION6">ترتیب کے اختیارات</a></li>
  <li>٧. <a href="#SECTION7">دستخط فارمیٹ</a></li>
@@ -21,7 +21,7 @@
 
 <div dir="rtl">CIDRAM (غیر طبقاتی انٹر ڈومین روٹنگ رسائی مینیجر) بشمول (لیکن تک محدود نہیں) غیر انسانی رسائی endpoints کے، کلاؤڈ سروسز سے ٹریفک ناپسندیدہ ٹریفک کے ہونے کی وجہ سے ذرائع، کے طور پر شمار IP پتوں سے شروع کی درخواستوں کو مسدود کرنے کی طرف سے ویب سائٹس کی حفاظت کے لئے ڈیزائن کیا ایک پی ایچ پی کی سکرپٹ ہے ، اسپیم بوٹس، سکراپارس، وغیرہ یہ باؤنڈ درخواستوں سے فراہم IP پتوں کی ممکنہ CIDRs کو شمار کرتے ہیں اور پھر (ان کے دستخط فائلوں ہونے کے ذرائع کے طور پر شمار IP پتوں کی CIDRs کی فہرستوں پر مشتمل اس کے دستخط فائلوں کے خلاف ان ممکن CIDRs سے ملنے کے لئے کی کوشش کر کے اس کرتا ہے ناپسندیدہ ٹریفک کے)؛ موازنہ نہیں ملا رہے ہیں تو، درخواستوں مسدود ہیں.<br /><br /></div>
 
-<div dir="rtl">CIDRAM کاپی رائٹ 2016 اور کالب M کی طرف GNU / GPLv2 اجازت (Maikuolan) سے آگے.<br /><br /></div>
+<div dir="rtl">CIDRAM کاپی رائٹ 2016 اور کالب M کی طرف GNU/GPLv2 اجازت (Maikuolan) سے آگے.<br /><br /></div>
 
 <div dir="rtl">یہ سکرپٹ مفت سافٹ ویئر ہے. آپ اسے دوبارہ تقسیم اور / یا کے طور پر مفت سافٹ ویئر فاؤنڈیشن کی جانب سے شائع GNU جنرل پبلک لائسنس کی شرائط کے تحت اس پر نظر ثانی کر سکتے ہیں؛ یا تو لائسنس کے ورژن 2، یا (آپ کے اختیارات پر) کسی بھی جدید ورژن. یہ سکرپٹ یہ مفید ہو جائے گا، لیکن کسی بھی وارنٹی کے بغیر امید میں تقسیم کیا جاتا ہے؛ کسی خاص مقصد کے لئے قابل فروختگی یا فٹنس کی بھی تقاضا وارنٹی کے بغیر. مزید تفصیلات کے لئے GNU جنرل پبلک لائسنس، `LICENSE.txt` فائل اور سے بھی دستیاب میں واقع دیکھیں:</div>
 - <http://www.gnu.org/licenses/>.
@@ -70,7 +70,7 @@
 
 #### <div dir="rtl">٢.٢ ورڈپریس کے لئے نصب</div>
 
-<div dir="rtl">اگر آپ ورڈپریس کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں تو، آپ کو مندرجہ بالا تمام ہدایات کو نظر انداز کر سکتے ہیں. (https://wordpress.org/plugins/cidram/) [CIDRAM ورڈپریس پلگ ان کے ڈیٹا بیس کے ساتھ ایک پلگ ان کے طور پر رجسٹرڈ ہے]، اور آپ کو پلگ ان ڈیش بورڈ سے براہ راست CIDRAM انسٹال کر سکتے ہیں. آپ کسی بھی دیگر پلگ ان کے طور پر اسی انداز میں اسے انسٹال کر سکتے ہیں، اور کوئی اس کے علاوہ اقدامات کی ضرورت ہے. بس دوسرے کی تنصیب کے طریقوں کے ساتھ کے طور پر، آپ `config.ini` فائل کے مواد میں تبدیلی کرنے کی طرف سے یا سامنے کے آخر میں ترتیب صفحے کا استعمال کرتے ہوئے کی طرف سے آپ کی تنصیب کے اپنی مرضی کے مطابق کر سکتے ہیں. آپ کو سامنے کے آخر میں اپ ڈیٹس صفحے کا استعمال کرتے ہوئے CIDRAM سامنے کے آخر میں اور اپ ڈیٹ CIDRAM فعال کرتے ہیں تو یہ خود کار طریقے سے پلگ ان ڈیش بورڈ میں ظاہر پلگ ان ورژن کی معلومات کے ساتھ مطابقت پذیر ہو گی<br /><br /></div>
+<div dir="rtl">اگر آپ ورڈپریس کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں تو، آپ کو مندرجہ بالا تمام ہدایات کو نظر انداز کر سکتے ہیں. (https://wordpress.org/plugins/cidram/) [CIDRAM ورڈپریس پلگ ان کے ڈیٹا بیس کے ساتھ ایک پلگ ان کے طور پر رجسٹرڈ ہے]، اور آپ کو پلگ ان ڈیش بورڈ سے براہ راست CIDRAM انسٹال کر سکتے ہیں. آپ کسی بھی دیگر پلگ ان کے طور پر اسی انداز میں اسے انسٹال کر سکتے ہیں، اور کوئی اس کے علاوہ اقدامات کی ضرورت ہے. بس دوسرے کی تنصیب کے طریقوں کے ساتھ کے طور پر، آپ "config.ini" فائل کے مواد میں تبدیلی کرنے کی طرف سے یا سامنے کے آخر میں ترتیب صفحے کا استعمال کرتے ہوئے کی طرف سے آپ کی تنصیب کے اپنی مرضی کے مطابق کر سکتے ہیں. آپ کو سامنے کے آخر میں اپ ڈیٹس صفحے کا استعمال کرتے ہوئے CIDRAM سامنے کے آخر میں اور اپ ڈیٹ CIDRAM فعال کرتے ہیں تو یہ خود کار طریقے سے پلگ ان ڈیش بورڈ میں ظاہر پلگ ان ورژن کی معلومات کے ساتھ مطابقت پذیر ہو گی<br /><br /></div>
 
 ---
 
@@ -86,343 +86,469 @@
 ---
 
 
-### 4. <a name="SECTION4"></a>سامنے کے آخر میں انتظام
+### <div dir="rtl">٤. <a name="SECTION4"></a>سامنے کے آخر میں انتظام</div>
 
-#### 4.0 سامنے کے آخر کیا ہے.
+#### <div dir="rtl">٤.٠ سامنے کے آخر کیا ہے.<br /><br /></div>
 
-سامنے کے آخر میں، برقرار رکھنے کا انتظام، اور آپ CIDRAM تنصیب کو اپ ڈیٹ کرنے کے لئے ایک آسان اور آسان طریقہ فراہم کرتا ہے. آپ صرف مسودہ دیکھ سکتے ہیں، اشتراک، اور نوشتہ صفحے کے ذریعے لاگ مسلیں لوڈ، آپ کی ترتیب کے صفحے کے ذریعے کی ترتیب تبدیل کر سکتے ہیں، آپ کو انسٹال کر سکتے ہیں اور اپ ڈیٹس صفحے کے ذریعے انسٹال اجزاء، اور آپ کو اپ لوڈ کر سکتے ہیں، ڈاؤن لوڈ، اتارنا، اور فائل کے ذریعے آپ کے والٹ میں فائلوں پر نظر ثانی مینیجر.
+<div dir="rtl">سامنے کے آخر میں، برقرار رکھنے کا انتظام، اور آپ CIDRAM تنصیب کو اپ ڈیٹ کرنے کے لئے ایک آسان اور آسان طریقہ فراہم کرتا ہے. آپ صرف مسودہ دیکھ سکتے ہیں، اشتراک، اور نوشتہ صفحے کے ذریعے لاگ مسلیں لوڈ، آپ کی ترتیب کے صفحے کے ذریعے کی ترتیب تبدیل کر سکتے ہیں، آپ کو انسٹال کر سکتے ہیں اور اپ ڈیٹس صفحے کے ذریعے انسٹال اجزاء، اور آپ کو اپ لوڈ کر سکتے ہیں، ڈاؤن لوڈ، اتارنا، اور فائل کے ذریعے آپ کے والٹ میں فائلوں پر نظر ثانی مینیجر.<br /><br /></div>
 
-سامنے کے آخر میں (آپ کی ویب سائٹ اور اس کی سیکیورٹی کے لئے اہم نتائج ہو سکتے ہیں غیر مجاز رسائی) غیر مجاز رسائی کو روکنے کے لئے پہلے سے طے شدہ کی طرف سے غیر فعال ہے. اس کو چالو کرنے کے لئے ہدایات اس پیراگراف ذیل میں شامل ہیں.
-#### 4.1 سامنے کے آخر میں فعال کرنے کا طریقہ.
+<div dir="rtl">سامنے کے آخر میں (آپ کی ویب سائٹ اور اس کی سیکیورٹی کے لئے اہم نتائج ہو سکتے ہیں غیر مجاز رسائی) غیر مجاز رسائی کو روکنے کے لئے پہلے سے طے شدہ کی طرف سے غیر فعال ہے. اس کو چالو کرنے کے لئے ہدایات اس پیراگراف ذیل میں شامل ہیں.<br /><br /></div>
 
-1)  اندر config.ini` disable_frontend` ہدایت کو تلاش کریں، اور سچ کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے جھوٹے ہو جائے گا).
+#### <div dir="rtl">٤.١ سامنے کے آخر میں فعال کرنے کا طریقہ.<br /><br /></div>
 
-2) رسائی `اپنے براؤزر سے loader.php` (e.g., `http://localhost/cidram/loader.php`).
+<div dir="rtl">١. اندر "config.ini" "disable_frontend" ہدایت کو تلاش کریں، اور سچ کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے جھوٹے ہو جائے گا).<br /><br /></div>
 
-3)پہلے سے طے شدہ صارف کا نام اور پاس ورڈ کے ساتھ لاگ ان کریں (منتظم / پاس ورڈ).
+<div dir="rtl">٢. رسائی `اپنے براؤزر سے "loader.php" (جیسے، "http://localhost/cidram/loader.php").<br /><br /></div>
 
-نوٹ: اگر آپ کو پہلی بار کے لئے لاگ ان کرنے کے بعد، سامنے کے آخر تک غیر مجاز رسائی کو روکنے کے لئے، آپ کو فوری طور پر آپ کا صارف نام اور پاس ورڈ کو تبدیل کرنا چاہئے! یہ بہت اہم ہے، یہ سامنے کے آخر میں کے ذریعے آپ کی ویب سائٹ پر من مانی پی ایچ پی کوڈ کو اپ لوڈ کرنا ممکن ہے کیونکہ.
-#### 4.2 سامنے کے آخر میں کس طرح استعمال.
+<div dir="rtl">٣. پہلے سے طے شدہ صارف کا نام اور پاس ورڈ کے ساتھ لاگ ان کریں (admin/password).<br /><br /></div>
 
-ہدایات یہ اور اس مقصد کو استعمال کرنے کا صحیح طریقہ کی وضاحت کے لئے سامنے کے آخر میں کے ہر صفحے پر فراہم کی جاتی ہیں. اگر آپ کو مزید وضاحت یا کوئی خاص مدد کی ضرورت ہے، کی مدد سے رابطہ کریں. متبادل طور پر، یو ٹیوب پر دستیاب کچھ ویڈیوز مظاہرے کی راہ کی طرف مدد کر سکتا ہے جس میں موجود ہیں.
+<div dir="rtl">نوٹ: اگر آپ کو پہلی بار کے لئے لاگ ان کرنے کے بعد، سامنے کے آخر تک غیر مجاز رسائی کو روکنے کے لئے، آپ کو فوری طور پر آپ کا صارف نام اور پاس ورڈ کو تبدیل کرنا چاہئے! یہ بہت اہم ہے، یہ سامنے کے آخر میں کے ذریعے آپ کی ویب سائٹ پر من مانی پی ایچ پی کوڈ کو اپ لوڈ کرنا ممکن ہے کیونکہ.<br /><br /></div>
+
+#### <div dir="rtl">٤.٢ سامنے کے آخر میں کس طرح استعمال.<br /><br /></div>
+
+<div dir="rtl">ہدایات یہ اور اس مقصد کو استعمال کرنے کا صحیح طریقہ کی وضاحت کے لئے سامنے کے آخر میں کے ہر صفحے پر فراہم کی جاتی ہیں. اگر آپ کو مزید وضاحت یا کوئی خاص مدد کی ضرورت ہے، کی مدد سے رابطہ کریں. متبادل طور پر، یو ٹیوب پر دستیاب کچھ ویڈیوز مظاہرے کی راہ کی طرف مدد کر سکتا ہے جس میں موجود ہیں.<br /><br /></div>
 
 ---
 
 
-### 5. <a name="SECTION5"></a>فائل اس پیکیج میں شامل
+### <div dir="rtl">٥. <a name="SECTION5"></a>فائل اس پیکیج میں شامل</div>
 
-مندرجہ ذیل اس سکرپٹ کے ذخیرہ کردہ کاپی میں شامل کیا گیا ہے کہ آپ ان فائلوں کے مقصد کی ایک مختصر وضاحت کے ساتھ ساتھ، یہ ڈاؤن لوڈ، جب تمام فائلوں کی ایک فہرست ہے.
-File | تفصیل
+<div dir="rtl">مندرجہ ذیل اس سکرپٹ کے ذخیرہ کردہ کاپی میں شامل کیا گیا ہے کہ آپ ان فائلوں کے مقصد کی ایک مختصر وضاحت کے ساتھ ساتھ، یہ ڈاؤن لوڈ، جب تمام فائلوں کی ایک فہرست ہے.<br /><br /></div>
+
+&nbsp; <div dir="rtl" style="display:inline;">تفصیل</div> | <div dir="rtl" style="display:inline;">فائل</div>
 ----|----
-/_docs/ | دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).
-/_docs/readme.ar.md | عربی دستاویزات.
-/_docs/readme.de.md | جرمن دستاویزات.
-/_docs/readme.en.md | انگریزی دستاویزات.
-/_docs/readme.es.md | ہسپانوی دستاویزات.
-/_docs/readme.fr.md | فرانسیسی دستاویزات.
-/_docs/readme.id.md | انڈونیشیا دستاویزات.
-/_docs/readme.it.md | اطالوی دستاویزات.
-/_docs/readme.ja.md | جاپانی دستاویزات.
-/_docs/readme.ko.md | کوریا دستاویزات.
-/_docs/readme.nl.md | ڈچ دستاویزات.
-/_docs/readme.pt.md | پرتگالی دستاویزات.
-/_docs/readme.ru.md | روسی دستاویزات.
-/_docs/readme.ur.md | اردو دستاویزات.
-/_docs/readme.vi.md | ویتنامی دستاویزات.
-/_docs/readme.zh-TW.md | چینی (روایتی) دستاویزات.
-/_docs/readme.zh.md | چینی (آسان کردہ) دستاویزات.
-/vault/ | والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).
-/vault/fe_assets/ | سامنے کے آخر میں کے اثاثے.
-/vault/fe_assets/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
-/vault/fe_assets/_accounts.html | سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.
-/vault/fe_assets/_accounts_row.html | سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.
-/vault/fe_assets/_cidr_calc.html | CIDR کیلکولیٹر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_cidr_calc_row.html | CIDR کیلکولیٹر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_config.html | سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_config_row.html | سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files_edit.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files_rename.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files_row.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_home.html | سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.
-/vault/fe_assets/_ip_test.html | IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_ip_test_row.html | IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_ip_tracking.html | IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_ip_tracking_row.html | IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_login.html | سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.
-/vault/fe_assets/_logs.html | سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_nav_complete_access.html | مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے،.
-/vault/fe_assets/_nav_logs_access_only.html |لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.
-/vault/fe_assets/_updates.html | سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_updates_row.html | سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/frontend.css | سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.
-/vault/fe_assets/frontend.dat | سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).
-/vault/fe_assets/frontend.html | سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.
-/vault/lang/ | CIDRAM زبان کے اعداد و شمار پر مشتمل ہے.
-/vault/lang/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
-/vault/lang/lang.ar.cli.php | CLI کے لئے عربی زبان کے اعداد و شمار.
-/vault/lang/lang.ar.fe.php | سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.
-/vault/lang/lang.ar.php |عربی زبان کے اعداد و شمار.
-/vault/lang/lang.de.cli.php | CLI کے لئے جرمن زبان کے اعداد و شمار.
-/vault/lang/lang.de.fe.php | سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.
-/vault/lang/lang.de.php | جرمن زبان کے اعداد و شمار.
-/vault/lang/lang.en.cli.php | CLI کے لئے انگریزی زبان کے اعداد و شمار.
-/vault/lang/lang.en.fe.php | سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.
-/vault/lang/lang.en.php | انگریزی زبان کے اعداد و شمار.
-/vault/lang/lang.es.cli.php | CLI کے لئے ہسپانوی زبان کے اعداد و شمار.
-/vault/lang/lang.es.fe.php | سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.
-/vault/lang/lang.es.php | ہسپانوی زبان کے اعداد و شمار.
-/vault/lang/lang.fr.cli.php | CLI کے لئے فرانسیسی زبان کے اعداد و شمار.
-/vault/lang/lang.fr.fe.php | سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.
-/vault/lang/lang.fr.php |فرانسیسی زبان کے اعداد و شمار.
-/vault/lang/lang.id.cli.php | CLI لئے انڈونیشی زبان کے اعداد و شمار.
-/vault/lang/lang.id.fe.php | سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.
-/vault/lang/lang.id.php | انڈونیشی زبان کے اعداد و شمار.
-/vault/lang/lang.it.cli.php | CLI کے لئے اطالوی زبان کے اعداد و شمار.
-/vault/lang/lang.it.fe.php | سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.
-/vault/lang/lang.it.php | اطالوی زبان کے اعداد و شمار.
-/vault/lang/lang.ja.cli.php | CLI کے لئے جاپانی زبان کے اعداد و شمار.
-/vault/lang/lang.ja.fe.php | سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.
-/vault/lang/lang.ja.php | جاپانی زبان کے اعداد و شمار.
-/vault/lang/lang.ko.cli.php | CLI لیے کوریائی زبان کے اعداد و شمار.
-/vault/lang/lang.ko.fe.php | سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.
-/vault/lang/lang.ko.php | کورین زبان کے اعداد و شمار.
-/vault/lang/lang.nl.cli.php | CLI کے لئے ڈچ زبان کے اعداد و شمار.
-/vault/lang/lang.nl.fe.php | سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.
-/vault/lang/lang.nl.php | ڈچ زبان کے اعداد و شمار.
-/vault/lang/lang.pt.cli.php | CLI کے لئے پرتگالی زبان کے اعداد و شمار.
-/vault/lang/lang.pt.fe.php | سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.
-/vault/lang/lang.pt.php | پرتگالی زبان کے اعداد و شمار.
-/vault/lang/lang.ru.cli.php | CLI کے لئے روسی زبان کے اعداد و شمار.
-/vault/lang/lang.ru.fe.php | سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.
-/vault/lang/lang.ru.php | روسی زبان کے اعداد و شمار.
-/vault/lang/lang.th.cli.php | CLI کے لئے تھائی زبان کے اعداد و شمار.
-/vault/lang/lang.th.fe.php | سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.
-/vault/lang/lang.th.php | تھائی زبان کے اعداد و شمار.
-/vault/lang/lang.ur.cli.php | CLI کے لئے اردو زبان کے اعداد و شمار.
-/vault/lang/lang.ur.fe.php | سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.
-/vault/lang/lang.ur.php | اردو زبان کے اعداد و شمار.
-/vault/lang/lang.vi.cli.php | CLI لئے ویتنامی زبان کے اعداد و شمار.
-/vault/lang/lang.vi.fe.php | سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.
-/vault/lang/lang.vi.php | ویتنامی زبان کے اعداد و شمار.
-/vault/lang/lang.zh-tw.cli.php |CLI کے لئے چینی (روایتی) زبان کے اعداد و شمار.
-/vault/lang/lang.zh-tw.fe.php | سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.
-/vault/lang/lang.zh-tw.php | چینی (روایتی) زبان کے اعداد و شمار.
-/vault/lang/lang.zh.cli.php | چینی (آسان کردہ) CLI کے لئے زبان کو ڈیٹا کے.
-/vault/lang/lang.zh.fe.php | چینی کے سامنے کے آخر کے لئے (Simplified) زبان کے اعداد و شمار.
-/vault/lang/lang.zh.php | چینی (آسان کردہ) زبان کے اعداد و شمار.
-/vault/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
-/vault/cache.dat | کیشے کے اعداد و شمار.
-/vault/cidramblocklists.dat | Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.
-/vault/cli.php | CLI ہینڈلر.
-/vault/components.dat | CIDRAM کے مختلف اجزاء سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.
-/vault/config.ini.RenameMe | کنفگریشن فائل؛ CIDRAM کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور صحیح طریقے سے کام کرنے کے طریقے پر مشتمل ہے (چالو کرنے کا نام تبدیل).
-/vault/config.php | کنفگریشن ہینڈلر.
-/vault/config.yaml | کنفگریشن ڈیفالٹس فائل؛ CIDRAM لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.
-/vault/frontend.php | سامنے کے آخر میں ہینڈلر.
-/vault/functions.php | افعال فائل (ضروری).
-/vault/hashes.dat | قبول کر لیا hashes کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).
-/vault/icons.php | Icons کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).
-/vault/ignore.dat | ائل (CIDRAM کی پروا نہ کرے جس کے دستخط حصوں کی وضاحت کرنے کے لئے استعمال) کو نظر انداز.
-/vault/ipbypass.dat | IP بائ پاس کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).
-/vault/ipv4.dat | IPv4 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).
-/vault/ipv4_bogons.dat | IPv4 کی دستخط فائل (bogon / Martian کی CIDRs).
-/vault/ipv4_custom.dat.RenameMe | IPv4 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).
-/vault/ipv4_isps.dat | IPv4 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).
-/vault/ipv4_other.dat | IPv4 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDRs).
-/vault/ipv6.dat | IPv6 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).
-/vault/ipv6_bogons.dat | IPv6 کی دستخط فائل (bogon / Martian کی CIDRs).
-/vault/ipv6_custom.dat.RenameMe | IPv6 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).
-/vault/ipv6_isps.dat | IPv6 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).
-/vault/ipv6_other.dat | IPv6 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDRs).
-/vault/lang.php | زبان ہینڈلر.
-/vault/modules.dat | CIDRAM ماڈیولز سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.
-/vault/outgen.php | آؤٹ پٹ جنریٹر.
-/vault/php5.4.x.php | PHP 5.4.X کے لئے Polyfills (PHP 5.4.X پیچھے کی طرف مطابقت کے لئے ضروری؛ محفوظ نئے پی ایچ پی ورژن کے لئے حذف کرنا).
-/vault/recaptcha.php | reCAPTCHA کے ماڈیول.
-/vault/rules_as6939.php | اپنی مرضی کے قوانین AS6939 لئے دائر.
-/vault/rules_softlayer.php | اپنی مرضی کے قوانین نرم پرت کے لئے دائر.
-/vault/rules_specific.php | اپنی مرضی کے قوانین میں کچھ مخصوص CIDRs لئے دائر.
-/vault/salt.dat | سالٹ فائل (کچھ پردیی فعالیت کی طرف سے استعمال کیا جاتا؛ صرف ضرورت پڑنے پر پیدا).
-/vault/template.html | سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.
-/vault/template_custom.html | سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.
-/.gitattributes | A Github کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).
-/Changelog.txt | مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).
-/composer.json | کمپوزر / Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).
-/CONTRIBUTING.md | اس منصوبے میں شراکت کے لئے کس طرح کے بارے میں معلومات.
-/LICENSE.txt |GNU / GPLv2 اجازت نامے کی ایک نقل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).
-/loader.php | لوڈر. اس سے آپ میں hooking ہونا چاہیے رہے ہیں کیا ہوتا ہے (ضروری)!
-/README.md | پروجیکٹ کے خلاصے کی معلومات.
-/web.config | ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے `/ vault` ڈائریکٹری کی حفاظت کے لئے).
+&nbsp; <div dir="rtl" style="display:inline;">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
+&nbsp; <div dir="rtl" style="display:inline;">عربی دستاویزات.</div> | /_docs/readme.ar.md
+&nbsp; <div dir="rtl" style="display:inline;">جرمن دستاویزات.</div> | /_docs/readme.de.md
+&nbsp; <div dir="rtl" style="display:inline;">انگریزی دستاویزات.</div> | /_docs/readme.en.md
+&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی دستاویزات.</div> | /_docs/readme.es.md
+&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی دستاویزات.</div> | /_docs/readme.fr.md
+&nbsp; <div dir="rtl" style="display:inline;">انڈونیشیا دستاویزات.</div> | /_docs/readme.id.md
+&nbsp; <div dir="rtl" style="display:inline;">اطالوی دستاویزات.</div> | /_docs/readme.it.md
+&nbsp; <div dir="rtl" style="display:inline;">جاپانی دستاویزات.</div> | /_docs/readme.ja.md
+&nbsp; <div dir="rtl" style="display:inline;">کوریا دستاویزات.</div> | /_docs/readme.ko.md
+&nbsp; <div dir="rtl" style="display:inline;">ڈچ دستاویزات.</div> | /_docs/readme.nl.md
+&nbsp; <div dir="rtl" style="display:inline;">پرتگالی دستاویزات.</div> | /_docs/readme.pt.md
+&nbsp; <div dir="rtl" style="display:inline;">روسی دستاویزات.</div> | /_docs/readme.ru.md
+&nbsp; <div dir="rtl" style="display:inline;">اردو دستاویزات.</div> | /_docs/readme.ur.md
+&nbsp; <div dir="rtl" style="display:inline;">ویتنامی دستاویزات.</div> | /_docs/readme.vi.md
+&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) دستاویزات.</div> | /_docs/readme.zh-TW.md
+&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) دستاویزات.</div> | /_docs/readme.zh.md
+&nbsp; <div dir="rtl" style="display:inline;">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے اثاثے.</div> | /vault/fe_assets/
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline;">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc.html
+&nbsp; <div dir="rtl" style="display:inline;">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
+&nbsp; <div dir="rtl" style="display:inline;">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test.html
+&nbsp; <div dir="rtl" style="display:inline;">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test_row.html
+&nbsp; <div dir="rtl" style="display:inline;">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking.html
+&nbsp; <div dir="rtl" style="display:inline;">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_login.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
+&nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
+&nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline;">CIDRAM زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI لیے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">کورین زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) CLI کے لئے زبان کو ڈیٹا کے.</div> | /vault/lang/lang.zh.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
+&nbsp; <div dir="rtl" style="display:inline;">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/cidramblocklists.dat
+&nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر.</div> | /vault/cli.php
+&nbsp; <div dir="rtl" style="display:inline;">CIDRAM کے مختلف اجزاء سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/components.dat
+&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن فائل؛ CIDRAM کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور صحیح طریقے سے کام کرنے کے طریقے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
+&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ہینڈلر.</div> | /vault/config.php
+&nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ڈیفالٹس فائل؛ CIDRAM لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline;">افعال فائل (ضروری).</div> | /vault/functions.php
+&nbsp; <div dir="rtl" style="display:inline;">قبول کر لیا hashes کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/hashes.dat
+&nbsp; <div dir="rtl" style="display:inline;">Icons کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/icons.php
+&nbsp; <div dir="rtl" style="display:inline;">ائل (CIDRAM کی پروا نہ کرے جس کے دستخط حصوں کی وضاحت کرنے کے لئے استعمال) کو نظر انداز.</div> | /vault/ignore.dat
+&nbsp; <div dir="rtl" style="display:inline;">IP بائ پاس کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/ipbypass.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv4.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (bogon/martian کی CIDRs).</div> | /vault/ipv4_bogons.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).</div> | /vault/ipv4_custom.dat.RenameMe
+&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).</div> | /vault/ipv4_isps.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDRs).</div> | /vault/ipv4_other.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv6.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (bogon/martian کی CIDRs).</div> | /vault/ipv6_bogons.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی اپنی مرضی کے دستخط فائل (چالو کرنے کا نام تبدیل).</div> | /vault/ipv6_custom.dat.RenameMe
+&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (خطرناک اور سپام آئی ایس پیز).</div> | /vault/ipv6_isps.dat
+&nbsp; <div dir="rtl" style="display:inline;">IPv6 کی دستخط فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDRs).</div> | /vault/ipv6_other.dat
+&nbsp; <div dir="rtl" style="display:inline;">زبان ہینڈلر.</div> | /vault/lang.php
+&nbsp; <div dir="rtl" style="display:inline;">CIDRAM ماڈیولز سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/modules.dat
+&nbsp; <div dir="rtl" style="display:inline;">آؤٹ پٹ جنریٹر.</div> | /vault/outgen.php
+&nbsp; <div dir="rtl" style="display:inline;">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X پیچھے کی طرف مطابقت کے لئے ضروری؛ محفوظ نئے پی ایچ پی ورژن کے لئے حذف کرنا).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline;">reCAPTCHA کے ماڈیول.</div> | /vault/recaptcha.php
+&nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین AS6939 لئے دائر.</div> | /vault/rules_as6939.php
+&nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین نرم پرت کے لئے دائر.</div> | /vault/rules_softlayer.php
+&nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین میں کچھ مخصوص CIDRs لئے دائر.</div> | /vault/rules_specific.php
+&nbsp; <div dir="rtl" style="display:inline;">سالٹ فائل (کچھ پردیی فعالیت کی طرف سے استعمال کیا جاتا؛ صرف ضرورت پڑنے پر پیدا).</div> | /vault/salt.dat
+&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template.html
+&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
+&nbsp; <div dir="rtl" style="display:inline;">A Github کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
+&nbsp; <div dir="rtl" style="display:inline;">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog.txt
+&nbsp; <div dir="rtl" style="display:inline;">کمپوزر / Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
+&nbsp; <div dir="rtl" style="display:inline;">اس منصوبے میں شراکت کے لئے کس طرح کے بارے میں معلومات.</div> | /CONTRIBUTING.md
+&nbsp; <div dir="rtl" style="display:inline;">GNU/GPLv2 اجازت نامے کی ایک نقل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /LICENSE.txt
+&nbsp; <div dir="rtl" style="display:inline;">لوڈر. اس سے آپ میں hooking ہونا چاہیے رہے ہیں کیا ہوتا ہے (ضروری)!</div> | /loader.php
+&nbsp; <div dir="rtl" style="display:inline;">پروجیکٹ کے خلاصے کی معلومات.</div> | /README.md
+&nbsp; <div dir="rtl" style="display:inline;">ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے "/vault" ڈائریکٹری کی حفاظت کے لئے).</div> | /web.config
 ---
 
 
-### 6. <a name="SECTION6"></a>ترتیب کے اختیارات
-ندرجہ ذیل ان ہدایات کے مقصد کی وضاحت کے ساتھ ساتھ، `config.ini` ترتیب فائل میں CIDRAM کو دستیاب ہدایات کی ایک فہرست ہے.
-#### "جنرل"(قسم)
-جنرل CIDRAM کنفیگریشن.
+### <div dir="rtl">٦. <a name="SECTION6"></a>ترتیب کے اختیارات</div>
+<div dir="rtl">ندرجہ ذیل ان ہدایات کے مقصد کی وضاحت کے ساتھ ساتھ، "config.ini" ترتیب فائل میں CIDRAM کو دستیاب ہدایات کی ایک فہرست ہے.<br /><br /></div>
 
-"logfile"
-- تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے انسانی قابل مطالعہ فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے خالی چھوڑ دیں.
+#### <div dir="rtl">"general" (قسم)<br /></div>
+<div dir="rtl">جنرل CIDRAM کنفیگریشن.<br /><br /></div>
 
-"logfileApache"
-- تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے اپاچی طرز فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.
+<div dir="rtl">"logfile"<br /></div>
+<div dir="rtl"><ul>
+ <li>تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے انسانی قابل مطالعہ فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے خالی چھوڑ دیں.</li>
+</ul></div>
 
-"logfileSerialized"
-- تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے serialized کی فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.
+<div dir="rtl">"logfileApache"<br /></div>
+<div dir="rtl"><ul>
+ <li>تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے اپاچی طرز فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
+</ul></div>
 
-*مفید ٹپ: `{YYYY}` مکمل سال کے لئے، `{YY}` مختصر سال کے لئے، `{میٹر}`: اگر آپ چاہتے ہیں تو آپ کے نام میں ان کو شامل کرکے آپ لاگ مسلیں کے ناموں کو تاریخ / وقت کی معلومات شامل کر سکتے ہیں مہینے کے لئے، `` دن کے لئے، `{HH}` گھنٹے کیلئے {DD} *
-*Examples:*
-- *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
-- *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
-- *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+<div dir="rtl">"logfileSerialized"<br /></div>
+<div dir="rtl"><ul>
+ <li>تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے serialized کی فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
+</ul></div>
 
-"timeOffset"
-- آپ کے سرور کے وقت آپ کے مقامی وقت کے مماثل نہیں ہے تو، آپ کو آپ کی ضروریات کے مطابق CIDRAM طرف سے پیدا تاریخ / وقت کی معلومات کو ایڈجسٹ کرنے کے لئے یہاں آفسیٹ ایک وضاحت کر سکتے ہیں. یہ عام طور پر یہ کرنا ہمیشہ ممکن نہیں ہے، اور تو، اس اختیار کو یہاں فراہم کی جاتی ہے (جیسا محدود مشترکہ ہوسٹنگ فراہم کرنے والے کے ساتھ کام کرتے وقت کے طور پر) آپ `php.ini` فائل میں ٹائم زون ہدایت کو ایڈجسٹ کرنے کی بجائے سفارش، لیکن کبھی کبھی رہا ہے. آف سیٹ منٹ میں ہے.
-- مثال (ایک گھنٹے کا اضافہ کرنے کے لئے): `timeOffset = 60
-"ipaddr"
-- کہاں درخواستوں منسلک کرنے کے IP ایڈریس کو تلاش کرنے کے لئے؟ (جیسا CloudFlare کے اور پسند کرتا ہے کے طور پر خدمات کے لئے مفید). پہلے سے طے شدہ = REMOTE_ADDR. انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!
-"forbid_on_block"
-- کون ہیڈرز CIDRAM درخواستوں کو مسدود کرنے میں، جب کے ساتھ جواب دینا چاہئے؟ جھوٹی / 200 = 200 OK [ڈیفالٹ]؛ سچے / 403 = 403 حرام؛ 503 = 503 سروس دستیاب نہیں ہے
+<div dir="rtl"><em>مفید ٹپ: "{yyyy}" مکمل سال کے لئے، "{yy}" مختصر سال کے لئے، "{mm}": اگر آپ چاہتے ہیں تو آپ کے نام میں ان کو شامل کرکے آپ لاگ مسلیں کے ناموں کو تاریخ / وقت کی معلومات شامل کر سکتے ہیں مہینے کے لئے، دن کے لئے، "{hh}" گھنٹے کیلئے "{dd}" (ذیل کی مثالیں دیکھ).</em><br /><br /></div>
 
-"silent_mode"
--خاموشی CIDRAM چاہئے "رسائی نہیں ہوئی" کے صفحے کی نمائش سے بلاک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے بجائے؟ ہاں تو، کو بلاک کر تک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے محل وقوع کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں.
-"lang"
-- CIDRAM لئے پہلے سے طے شدہ زبان کی وضاحت.
+```
+ logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'
+ logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'
+ logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'
+```
 
-"emailaddr"
-- اگر آپ چاہیں تو آپ کو یہاں ایک ای میل ایڈریس فراہم کر سکتے ہیں انہیں ان کی صورت میں کے لئے حمایت اور / یا مدد کے لئے رابطہ کے ایک مرکز کے طور پر استعمال کرنے کے لئے غلطی سے یا غلطی سے بند کیا جا رہا ہے، صارفین کو دی جائے کرنے کے لئے جب وہ بلاک کر رہے ہیں. انتباہ: جو بھی ای میل پتہ آپ کو یہاں کی فراہمی سب سے زیادہ یقینی طور پر اس کو یہاں استعمال کیا جا رہا کے دوران اسپیم بوٹس اور scrapers کی طرف سے حاصل کیا جائے گا، اور تو، یہ ہے کہ آپ کو یہاں ایک ای میل ایڈریس فراہم کرنے کے لئے انتخاب کرتے ہیں تو آپ کو یقینی بنانے کے کہ سفارش کی سختی سے ایسا ای میل ایڈریس آپ یہاں فراہمی ایک ڈسپوزایبل ایڈریس اور / یا آپ کو (دوسرے الفاظ میں، آپ کو شاید نہیں آپ کے بنیادی ذاتی یا بنیادی کاروبار کے ای میل پتوں کا استعمال کرنا چاہتے ہیں) کو spammed ہونے میں کوئی اعتراض نہیں ہے کہ ایک ایڈریس ہے
-"disable_cli"
-- CLI موڈ کو غیر فعال کریں؟ CLI موڈ ڈیفالٹ کی طرف سے چالو حالت میں ہے، لیکن کبھی کبھی بعض جانچ کے آلات (جیسے PHPUnit کے طور پر، مثال کے طور پر) اور دیگر CLI کی بنیاد پر ایپلی کیشنز کے ساتھ مداخلت کر سکتے ہیں. آپ CLI موڈ کو غیر فعال کرنے کی ضرورت نہیں ہے تو، آپ کو اس ہدایت کو نظر انداز کرنا چاہئے. جھوٹی = CLI موڈ [طے شدہ] فعال؛ سچا = غیر فعال CLI موڈ.
-"disable_frontend"
-- سامنے کے آخر تک رسائی کو غیر فعال کریں؟ سامنے کے آخر میں رسائی CIDRAM زیادہ انتظام بنا سکتے ہیں، لیکن یہ بھی بہت ہے، ایک زبردست حفاظتی خطرہ ہو سکتا ہے. یہ جب بھی ممکن ہو واپس کے آخر کے ذریعے CIDRAM منظم کرنے کی سفارش کی جاتی ہے، لیکن سامنے کے آخر میں رسائی ممکن نہیں ہے جب کے لئے فراہم کی جاتی ہے. تمہیں اس کی ضرورت ہے جب تک کہ اس کو معذور رکھیں. جھوٹی = سامنے کے آخر میں رسائی کو فعال کریں؛ سچا = غیر فعال سامنے کے آخر میں رسائی [ڈیفالٹ].
-"max_login_attempts"
-- لاگ ان کوششوں کی زیادہ سے زیادہ تعداد (سامنے کے آخر میں). پہلے سے طے شدہ = 5.
+<div dir="rtl">"timeOffset"<br /></div>
+<div dir="rtl"><ul>
+ <li>آپ کے سرور کے وقت آپ کے مقامی وقت کے مماثل نہیں ہے تو، آپ کو آپ کی ضروریات کے مطابق CIDRAM طرف سے پیدا تاریخ / وقت کی معلومات کو ایڈجسٹ کرنے کے لئے یہاں آفسیٹ ایک وضاحت کر سکتے ہیں. یہ عام طور پر یہ کرنا ہمیشہ ممکن نہیں ہے، اور تو، اس اختیار کو یہاں فراہم کی جاتی ہے (جیسا محدود مشترکہ ہوسٹنگ فراہم کرنے والے کے ساتھ کام کرتے وقت کے طور پر) آپ `php.ini` فائل میں ٹائم زون ہدایت کو ایڈجسٹ کرنے کی بجائے سفارش، لیکن کبھی کبھی رہا ہے. آف سیٹ منٹ میں ہے.<br /></li>
+ <li>مثال (ایک گھنٹے کا اضافہ کرنے کے لئے):</li>
+</ul></div>
 
-"FrontEndLog"
-- سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.
+`timeOffset=60`
 
-"ban_override"
-- "forbid_on_block" کی جگہ لے لے، جب "infraction_limit" حد سے تجاوز کر رہا ہے؟ زیرکر کب: التواء درخواستوں ایک خالی صفحہ (سانچے فائلوں کا استعمال نہیں کر رہے ہیں) واپس جائیں. 200 = جگہ لے لے نہیں ہے [طے شدہ]؛ کے ساتھ "403 حرام" 403 = جگہ لے لے؛ کے ساتھ "503 سروس دستیاب نہیں" 503 = جگہ لے لے.
-"log_banned_ips"
-- لاگ مسلیں میں کالعدم آئی پی ایس سے مسدود درخواستوں شامل کریں؟ سچا = جی ہاں [ڈیفالٹ]؛ جھوٹی = نمبر
-"default_dns"
-- میزبان نام لک اپ کے لئے استعمال کرنے کے لئے DNS سرورز کی کوما ختم ہونے والی فہرست. پہلے سے طے شدہ = "8.8.8.8،8.8.4.4" (گوگل DNS). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!
-"search_engine_verification"
-- تلاش کے انجن کی طرف سے درخواستوں کی تصدیق کرنے کی کوشش؟ تلاش کے انجن کی توثیق کرنے سے کہ وہ خلاف ورزی کی حد (ویب سائٹ سے تلاش کے انجن پر پابندی عائد عام طور پر آپ کی تلاش کے انجن کی درجہ بندی، SEO، وغیرہ پر منفی اثر پڑے گا) تجاوز کا ایک نتیجہ کے طور پر پابندی عائد نہیں کیا جائے گا یقینی بناتا ہے. تصدیق کی جب، تلاش کے انجن معمول فی کے طور پر بلاک کیا جا سکتا ہے، لیکن پابندی عائد نہیں کی گئی. کی توثیق نہیں کی ہے، تو یہ ان کے لئے خلاف ورزی کی حد سے تجاوز کرنے کے نتیجے کے طور پر پابندی عائد کی جائے کرنے کے لئے ممکن ہے. اس کے علاوہ، تلاش کے انجن کی توثیق کی جعلی تلاش کے انجن کی درخواستوں کے خلاف اور (اس طرح کی درخواستوں کی تلاش کے انجن کی توثیق فعال ہے جب بلاک کر دیا جائے گا) سرچ انجن کے طور پر ویش ممکنہ طور پر بدنیتی پر مبنی اداروں کے خلاف تحفظ فراہم کرتا ہے. سچا = سرچ انجن توثیق [ڈیفالٹ] فعال؛ جھوٹی = غیر فعال تلاش کے انجن کی توثیق کی.
-"protect_frontend"
-- متعین کرتا ہے جو عام طور پر CIDRAM طرف سے فراہم کردہ تحفظات سامنے کے آخر پر لاگو کیا جانا چاہئے یا نہیں. سچا = جی ہاں [ڈیفالٹ]؛ جھوٹی = کوئی.
+<div dir="rtl">"timeFormat"<br /></div>
+<div dir="rtl"><ul>
+ <li>تاریخ کی شکل CIDRAM طرف سے استعمال کیا. پہلے سے طے شدہ:</li>
+</ul></div>
 
-"disable_webfonts"
-- webfonts کے غیر فعال کریں؟ سچا = جی ہاں؛ جھوٹی = کوئی [طے شدہ].
+`{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`
 
-#### "signatures" (Category)
-دستخط کی ترتیب.
+<div dir="rtl">"ipaddr"<br /></div>
+<div dir="rtl"><ul>
+ <li>کہاں درخواستوں منسلک کرنے کے IP ایڈریس کو تلاش کرنے کے لئے؟ (جیسا CloudFlare کے اور پسند کرتا ہے کے طور پر خدمات کے لئے مفید). پہلے سے طے شدہ = REMOTE_ADDR. انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!</li>
+</ul></div>
 
-"ipv4"
-- IPv4 کی دستخط کی ایک فہرست فائلوں کہ CIDRAM، کا تجزیہ کرنے کی کوشش کرنا چاہئے کوما سے ختم ہونے والی. آپ یہاں اندراجات کا اضافہ آپ CIDRAM میں اضافی IPv4 کی دستخط کی فائلوں کو شامل کرنے کے لئے چاہتے ہیں تو کر سکتے ہیں.
-"ipv6"
-- IPv6 کی دستخط کی ایک فہرست فائلوں کہ CIDRAM، کا تجزیہ کرنے کی کوشش کرنا چاہئے کوما سے ختم ہونے والی. آپ یہاں اندراجات کا اضافہ آپ CIDRAM میں اضافی IPv6 کی دستخط کی فائلوں کو شامل کرنے کے لئے چاہتے ہیں تو کر سکتے ہیں.
-"block_cloud"
-- بلاک CIDRs webhosting کے / کلاؤڈ سروسز سے تعلق رکھنے والے کے طور پر شناخت؟ آپ کو آپ کی ویب سائٹ سے ایک API سروس آپریٹ یا اگر آپ دوسری ویب سائٹس کو اپنی ویب سائٹ سے رابطہ قائم کرنے کی توقع ہے تو، تو اس جھوٹے کے لئے مقرر کیا جانا چاہئے. آپ ایسا نہیں کرتے، تو پھر، اس ہدایت صحیح پر سیٹ کیا جانا چاہئے.
-"block_bogons"
-- بلاک bogon / Martian کی CIDRs؟ آپ لوکل ہوسٹ سے، یا اپنے LAN سے اپنے مقامی نیٹ ورک کے اندر سے اپنی ویب سائٹ پر کنکشن، توقع ہے، اس ہدایت کے جھوٹے پر مقرر کیا جائے چاہئے. اگر آپ ان میں ایسے کنکشنوں کی توقع نہیں ہے، تو اس ہدایت صحیح پر سیٹ کیا جانا چاہئے.
-"block_generic"
-- بلاک CIDRs عام طور پر کی blacklisting لئے سفارش؟ یہ دیگر زیادہ مخصوص دستخط کی اقسام میں سے کسی کا حصہ ہونے کے طور پر نشان نہیں ہیں کہ کسی بھی دستخطوں پر محیط ہے.
-"block_proxies"
-- بلاک CIDRs پراکسی خدمات سے تعلق رکھنے والے کے طور پر شناخت؟ آپ صارفین گمنام پراکسی خدمات سے آپ کی ویب سائٹ تک رسائی حاصل کرنے کے قابل ہو جائے کی ضرورت ہوتی ہے تو، اس کے جھوٹے پر مقرر کیا جائے چاہئے. دوسری صورت میں، آپ کو گمنام پراکسی جنگ لڑ کی ضرورت نہیں ہے تو، اس ہدایت صحیح پر تحفظ کو بہتر بنانے کا ایک ذریعہ کے طور پر مقرر کیا جانا چاہئے.
-"block_spam"
-- بلاک CIDRs سپیم کے لئے اعلی خطرے ہونے کے طور پر شناخت کیا؟ ایسا کرنے جب آپ کو مسائل کا سامنا ہوتا ہے جب تک، عام طور پر، یہ ہمیشہ سچ کے لئے مقرر کیا جانا چاہئے.
-"modules"
-- ماڈیول فائلوں کی ایک فہرست کوما سے ختم ہونے والی، IPv4 کی / IPv6 دستخط جانچ پڑتال کے بعد لوڈ کرنے کے لئے.
+<div dir="rtl">"forbid_on_block"<br /></div>
+<div dir="rtl"><ul>
+ <li>کون ہیڈرز CIDRAM درخواستوں کو مسدود کرنے میں، جب کے ساتھ جواب دینا چاہئے؟ جھوٹی / 200 = 200 OK [ڈیفالٹ]؛ سچے / 403 = 403 حرام؛ 503 = 503 سروس دستیاب نہیں ہے</li>
+</ul></div>
 
-"default_tracktime"
-- ماڈیولز کی طرف سے پابندی لگا دی آئی پی ایس کے ٹریک کرنے سیکنڈ کتنے. پہلے سے طے شدہ = 604800 (1 ہفتہ).
+<div dir="rtl">"silent_mode"<br /></div>
+<div dir="rtl"><ul>
+ <li>خاموشی CIDRAM چاہئے "رسائی نہیں ہوئی" کے صفحے کی نمائش سے بلاک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے بجائے؟ ہاں تو، کو بلاک کر تک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے محل وقوع کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں.</li>
+</ul></div>
 
-"infraction_limit"
-- انحرافات کی زیادہ سے زیادہ تعداد ایک IP اس سے پہلے کیا جاتا ہے IP باخبر رہنے کے کی طرف سے پابندی کا اطلاق کرنے کی اجازت ہے. پہلے سے طے شدہ = 10.
+<div dir="rtl">"lang"<br /></div>
+<div dir="rtl"><ul>
+ <li>CIDRAM لئے پہلے سے طے شدہ زبان کی وضاحت.</li>
+</ul></div>
 
-"track_mode"
-- انحرافات شمار کب کیا جانا چاہئے؟ جھوٹی = آئی پی ایس کے ماڈیول کی طرف سے بلاک کر رہے ہیں جب. سچا = آئی پی ایس کے کسی بھی وجہ سے بلاک کر رہے ہیں جب.
+<div dir="rtl">"emailaddr"<br /></div>
+<div dir="rtl"><ul>
+ <li>اگر آپ چاہیں تو آپ کو یہاں ایک ای میل ایڈریس فراہم کر سکتے ہیں انہیں ان کی صورت میں کے لئے حمایت اور / یا مدد کے لئے رابطہ کے ایک مرکز کے طور پر استعمال کرنے کے لئے غلطی سے یا غلطی سے بند کیا جا رہا ہے، صارفین کو دی جائے کرنے کے لئے جب وہ بلاک کر رہے ہیں. انتباہ: جو بھی ای میل پتہ آپ کو یہاں کی فراہمی سب سے زیادہ یقینی طور پر اس کو یہاں استعمال کیا جا رہا کے دوران اسپیم بوٹس اور scrapers کی طرف سے حاصل کیا جائے گا، اور تو، یہ ہے کہ آپ کو یہاں ایک ای میل ایڈریس فراہم کرنے کے لئے انتخاب کرتے ہیں تو آپ کو یقینی بنانے کے کہ سفارش کی سختی سے ایسا ای میل ایڈریس آپ یہاں فراہمی ایک ڈسپوزایبل ایڈریس اور / یا آپ کو (دوسرے الفاظ میں، آپ کو شاید نہیں آپ کے بنیادی ذاتی یا بنیادی کاروبار کے ای میل پتوں کا استعمال کرنا چاہتے ہیں) کو spammed ہونے میں کوئی اعتراض نہیں ہے کہ ایک ایڈریس ہے</li>
+</ul></div>
 
-#### "recaptcha" (Category)
-اختیاری، آپ، ایک reCAPTCHA مثال کو مکمل اگر آپ ایسا کرنا چاہتے ہیں تو کی راہ کی طرف سے "رسائی نہیں ہوئی" کے صفحے کو نظرانداز کرنے کا ایک طریقہ کے ساتھ صارفین کو فراہم کر سکتے ہیں. یہ ان حالات میں جہاں ہم مکمل طور پر یقین ہے کہ ایک درخواست میں ایک مشین یا ایک انسان سے شروع ہوا ہے یا نہیں نہیں ہو میں جھوٹے مثبت کے ساتھ منسلک خطرات میں سے کچھ کم کرنے میں مدد کر سکتے ہیں.
-آخر میں صارفین کو نظرانداز کرنے کے لئے "رسائی نہیں ہوئی" کے لئے ایک راستہ فراہم کرنے کے ساتھ منسلک خطرات کی وجہ سے صفحہ، عام طور پر، میں اس خصوصیت کو چالو کرنے کے خلاف مشورہ آپ محسوس کرتے ہیں جب تک کہ ایسا کرنا ضروری ہو گا. صورت حال یہ ضروری ہو سکتا ہے جہاں: آپ کی ویب سائٹ آپ کی ویب سائٹ تک رسائی حاصل کرنے کی ضرورت ہے کہ گاہکوں / صارفین ہیں تو، اور اس پر سمجھوتہ نہیں کیا جا سکتا کہ کچھ ہے، لیکن اگر ان گاہکوں / صارفین ہوا ایک دشمن نیٹ ورک سے منسلک کرنے جا کرنے کے لئے ہے تو کہ ممکنہ طور پر بھی ناپسندیدہ ٹریفک لے جانے، اور اس ناپسندیدہ ٹریفک مسدود ہو سکتا ہے یہ بھی ان لوگوں کو خاص طور پر جیت نہیں حالات میں، پر سمجھوتہ نہیں کیا جا سکتا کہ کچھ ہے، reCAPTCHA کے خصوصیت ضروری گاہکوں / صارفین کی اجازت دی ہے کے ایک ذریعہ کے طور پر ہاتھ میں آ سکتا ، ایک ہی نیٹ ورک سے ناپسندیدہ ٹریفک باہر رکھتے ہوئے. یہ ہے کہ، اگرچہ کہا دیا ایک کیپچا کے مطلوبہ مقصد انسانوں اور غیر انسانوں کے درمیان تمیز کرنے کے لئے ہے کہ، reCAPTCHA کے خصوصیت ہم اس ناپسندیدہ ٹریفک غیر انسانی ہے کہ فرض کرنا ہو تو ان کی کوئی جیت حالات میں صرف کی مدد کرے گا (مثال کے طور ، اسپیم بوٹس، سکراپارس، hacktools، خود کار ٹریفک)، ہونے ناپسندیدہ انسانی ٹریفک کی مخالفت کے طور (جیسے انسانی spammers کو، ہیکروں، اسی ET رحمہ اللہ تعالی).
-ایک "سائٹ کلید" اور ایک "خفیہ کلید" (reCAPTCHA استعمال کرتے ہوئے کے لئے ضروری) حاصل کرنے کے لئے، براہ مہربانی پر جائیں: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha /)
-"usemode"
-- وضاحت کرتا CIDRAM reCAPTCHA کے استعمال کرنا چاہئے کہ کس طرح.
-- 0 = reCAPTCHA کے مکمل طور پر غیر فعال کر دیا (پہلے سے مقررشدہ) ہے.
-- 1 = reCAPTCHA کے تمام دستخطوں کیلئے فعال ہے.
-- 2 = reCAPTCHA کے طور دستخطی فائلوں کے اندر اندر reCAPTCHA کے فعال خاص نشان لگا حصوں سے تعلق رکھنے والے دستخطوں کے لیے آپ کو چالو حالت میں ہے.
-- (کسی اور قدر 0 کے طور پر اسی طرح میں علاج کیا جائے گا).
+<div dir="rtl">"disable_cli"<br /></div>
+<div dir="rtl"><ul>
+ <li>CLI موڈ کو غیر فعال کریں؟ CLI موڈ ڈیفالٹ کی طرف سے چالو حالت میں ہے، لیکن کبھی کبھی بعض جانچ کے آلات (جیسے PHPUnit کے طور پر، مثال کے طور پر) اور دیگر CLI کی بنیاد پر ایپلی کیشنز کے ساتھ مداخلت کر سکتے ہیں. آپ CLI موڈ کو غیر فعال کرنے کی ضرورت نہیں ہے تو، آپ کو اس ہدایت کو نظر انداز کرنا چاہئے. جھوٹی = CLI موڈ [طے شدہ] فعال؛ سچا = غیر فعال CLI موڈ.</li>
+</ul></div>
 
-"lockip"
-- متعین کرتا ہیشز مخصوص آئی پی ایس کو بند کر دیا جانا چاہئے یا نہیں. جھوٹی = کوکیز اور ہیشز ایک سے زیادہ آئی پی ایس (پہلے سے مقررشدہ) بھر میں استعمال کیا جا سکتا. سچا = کوکیز اور ہیشز ایک سے زیادہ آئی پی ایس کے اس پار نہیں کیا جا سکتا (کوکیز / ہیشز آئی پی ایس کو بند کر دیا جاتا).
-- نوٹ: یاد "صارفین" اس قیمت کے لحاظ سے مختلف ہے کے لئے اس طریقہ کار کی وجہ سے "lockip" قدر نظر انداز کر دیا جاتا ہے جب "lockuser" جھوٹی ہے.
+<div dir="rtl">"disable_frontend"<br /></div>
+<div dir="rtl"><ul>
+ <li>سامنے کے آخر تک رسائی کو غیر فعال کریں؟ سامنے کے آخر میں رسائی CIDRAM زیادہ انتظام بنا سکتے ہیں، لیکن یہ بھی بہت ہے، ایک زبردست حفاظتی خطرہ ہو سکتا ہے. یہ جب بھی ممکن ہو واپس کے آخر کے ذریعے CIDRAM منظم کرنے کی سفارش کی جاتی ہے، لیکن سامنے کے آخر میں رسائی ممکن نہیں ہے جب کے لئے فراہم کی جاتی ہے. تمہیں اس کی ضرورت ہے جب تک کہ اس کو معذور رکھیں. جھوٹی = سامنے کے آخر میں رسائی کو فعال کریں؛ سچا = غیر فعال سامنے کے آخر میں رسائی [ڈیفالٹ].</li>
+</ul></div>
 
-"lockuser"
-- ایک reCAPTCHA مثال کی کامیاب تکمیل کے مخصوص صارفین کے لئے بند کر دیا جانا چاہئے کہ آیا تعین کرتی ہے. جھوٹی = ایک reCAPTCHA مثال کی کامیاب تکمیل reCAPTCHA کے مثال کو مکمل صارف کی طرف سے استعمال کیا جاتا ہے کہ کے طور پر ایک ہی IP سے شروع ہونے والے تمام درخواستوں کو رسائی فراہم کرے گا؛ کوکیز اور ہیشز نہیں استعمال کیا جاتا ہے؛ اس کے بجائے، ایک IP وائٹ لسٹ کا استعمال کیا جائے گا. سچا = ایک reCAPTCHA مثال صرف reCAPTCHA کے مثال کو مکمل صارف تک رسائی کی اجازت دے گا کی کامیاب تکمیل؛ کوکیز اور ہیشز صارف کو یاد کرنے کے لئے استعمال کر رہے ہیں؛ ایک IP وائٹ لسٹ نہیں استعمال کیا جاتا ہے (ڈیفالٹ).
-"sitekey"
-- یہ قدر آپ ہیتی، جس reCAPTCHA کے ڈیش بورڈ کے اندر اندر پایا جا سکتا ہے کے لئے "سائٹ کلید" کے مطابق کرنا چاہئے.
-"secret"
-- یہ قدر آپ ہیتی، جس reCAPTCHA کے ڈیش بورڈ کے اندر اندر پایا جا سکتا ہے کے لئے "خفیہ کلید" کے مطابق کرنا چاہئے.
+<div dir="rtl">"max_login_attempts"<br /></div>
+<div dir="rtl"><ul>
+ <li>لاگ ان کوششوں کی زیادہ سے زیادہ تعداد (سامنے کے آخر میں). پہلے سے طے شدہ = 5.</li>
+</ul></div>
 
-"expiry"
-- جب "lockuser" سچ (ڈیفالٹ) ہے، ایک صارف کو کامیابی کے مستقبل صفحے درخواستوں کے لئے، ایک reCAPTCHA مثال گزر چکی ہے جب یاد کرنے کے لئے ہے، CIDRAM اسی ہیش کہ استعمال کے ایک داخلی ریکارڈ سے میل جو ایک ہیش پر مشتمل ایک معیاری HTTP کوکی نکالتا؛ مستقبل صفحے درخواستوں کسی صارف نے پہلے پہلے سے ہی ایک reCAPTCHA مثال گزر چکی ہے کہ توثیق کرنے کے لئے ان کے لئے اسی ہیشز استعمال کریں گے. جب "lockuser" جھوٹی ہے، ایک IP وائٹ لسٹ درخواستوں باؤنڈ درخواستوں کی آئی پی سے اجازت کی جانی چاہئے یا نہیں کا تعین کرنے کے لئے استعمال کیا جاتا ہے؛ جب reCAPTCHA کے مثال کامیابی سے منظور کیا جاتا لکھے اس وائٹ لسٹ میں شامل کر رہے ہیں. کتنے گھنٹے کے لئے ان کوکیز، hashes اور وائٹ لسٹ اندراجات درست رہنا چاہئے؟ پہلے سے طے شدہ = 720 (1 ماہ).
-"logfile"
-- تمام reCAPTCHA کے کوششوں لاگ؟ اگر ہاں، logfile پر کے لئے استعمال کرنے کا نام کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں.
-*مفید ٹپ: `{YYYY}` مکمل سال کے لئے، `{YY}` مختصر سال کے لئے، `{میٹر}`: اگر آپ چاہتے ہیں تو آپ کے نام میں ان کو شامل کرکے آپ لاگ مسلیں کے ناموں کو تاریخ / وقت کی معلومات شامل کر سکتے ہیں مہینے کے لئے، `` دن کے لئے، `{HH}` گھنٹے کیلئے {DD} *
-*Examples:*
-- *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+<div dir="rtl">"FrontEndLog"<br /></div>
+<div dir="rtl"><ul>
+ <li>سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
+</ul></div>
 
-#### "template_data" (زمرہ)
-سانچوں اور موضوعات کے لئے ہدایات / متغیر.
+<div dir="rtl">"ban_override"<br /></div>
+<div dir="rtl"><ul>
+ <li>"forbid_on_block" کی جگہ لے لے، جب "infraction_limit" حد سے تجاوز کر رہا ہے؟ زیرکر کب: التواء درخواستوں ایک خالی صفحہ (سانچے فائلوں کا استعمال نہیں کر رہے ہیں) واپس جائیں. 200 = جگہ لے لے نہیں ہے [طے شدہ]؛ کے ساتھ "403 حرام" 403 = جگہ لے لے؛ کے ساتھ "503 سروس دستیاب نہیں" 503 = جگہ لے لے.</li>
+</ul></div>
 
-"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ CIDRAM لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار `template_custom.html` فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار` template.html` فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں `FOO کو =" بار "` کے کسی بھی مثال `<P> {FOO کو} </ P>` HTML پیداوار کے اندر اندر پایا بن جائے گا `<P> بار </ P>`.
-"css_url"
-- ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے CIDRAM ہدایت کرنے کے لئے، `css_url` متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، CIDRAM ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے
+<div dir="rtl">"log_banned_ips"<br /></div>
+<div dir="rtl"><ul>
+ <li>لاگ مسلیں میں کالعدم آئی پی ایس سے مسدود درخواستوں شامل کریں؟ سچا = جی ہاں [ڈیفالٹ]؛ جھوٹی = نمبر.</li>
+</ul></div>
+
+<div dir="rtl">"default_dns"<br /></div>
+<div dir="rtl"><ul>
+ <li>میزبان نام لک اپ کے لئے استعمال کرنے کے لئے DNS سرورز کی کوما ختم ہونے والی فہرست. پہلے سے طے شدہ = "8.8.8.8,8.8.4.4" (گوگل DNS). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!</li>
+</ul></div>
+
+<div dir="rtl">"search_engine_verification"<br /></div>
+<div dir="rtl"><ul>
+ <li>تلاش کے انجن کی طرف سے درخواستوں کی تصدیق کرنے کی کوشش؟ تلاش کے انجن کی توثیق کرنے سے کہ وہ خلاف ورزی کی حد (ویب سائٹ سے تلاش کے انجن پر پابندی عائد عام طور پر آپ کی تلاش کے انجن کی درجہ بندی، SEO، وغیرہ پر منفی اثر پڑے گا) تجاوز کا ایک نتیجہ کے طور پر پابندی عائد نہیں کیا جائے گا یقینی بناتا ہے. تصدیق کی جب، تلاش کے انجن معمول فی کے طور پر بلاک کیا جا سکتا ہے، لیکن پابندی عائد نہیں کی گئی. کی توثیق نہیں کی ہے، تو یہ ان کے لئے خلاف ورزی کی حد سے تجاوز کرنے کے نتیجے کے طور پر پابندی عائد کی جائے کرنے کے لئے ممکن ہے. اس کے علاوہ، تلاش کے انجن کی توثیق کی جعلی تلاش کے انجن کی درخواستوں کے خلاف اور (اس طرح کی درخواستوں کی تلاش کے انجن کی توثیق فعال ہے جب بلاک کر دیا جائے گا) سرچ انجن کے طور پر ویش ممکنہ طور پر بدنیتی پر مبنی اداروں کے خلاف تحفظ فراہم کرتا ہے. سچا = سرچ انجن توثیق [ڈیفالٹ] فعال؛ جھوٹی = غیر فعال تلاش کے انجن کی توثیق کی.</li>
+</ul></div>
+
+<div dir="rtl">"protect_frontend"<br /></div>
+<div dir="rtl"><ul>
+ <li>متعین کرتا ہے جو عام طور پر CIDRAM طرف سے فراہم کردہ تحفظات سامنے کے آخر پر لاگو کیا جانا چاہئے یا نہیں. سچا = جی ہاں [ڈیفالٹ]؛ جھوٹی = کوئی.</li>
+</ul></div>
+
+<div dir="rtl">"disable_webfonts"<br /></div>
+<div dir="rtl"><ul>
+ <li>webfonts کے غیر فعال کریں؟ سچا = جی ہاں؛ جھوٹی = کوئی [طے شدہ].</li>
+</ul></div>
+
+#### <div dir="rtl">"signatures" (قسم)<br /></div>
+<div dir="rtl">دستخط کی ترتیب.<br /><br /></div>
+
+<div dir="rtl">"ipv4"<br /></div>
+<div dir="rtl"><ul>
+ <li>IPv4 کی دستخط کی ایک فہرست فائلوں کہ CIDRAM، کا تجزیہ کرنے کی کوشش کرنا چاہئے کوما سے ختم ہونے والی. آپ یہاں اندراجات کا اضافہ آپ CIDRAM میں اضافی IPv4 کی دستخط کی فائلوں کو شامل کرنے کے لئے چاہتے ہیں تو کر سکتے ہیں.</li>
+</ul></div>
+
+<div dir="rtl">"ipv6"<br /></div>
+<div dir="rtl"><ul>
+ <li>IPv6 کی دستخط کی ایک فہرست فائلوں کہ CIDRAM، کا تجزیہ کرنے کی کوشش کرنا چاہئے کوما سے ختم ہونے والی. آپ یہاں اندراجات کا اضافہ آپ CIDRAM میں اضافی IPv6 کی دستخط کی فائلوں کو شامل کرنے کے لئے چاہتے ہیں تو کر سکتے ہیں.</li>
+</ul></div>
+
+<div dir="rtl">"block_cloud"<br /></div>
+<div dir="rtl"><ul>
+ <li>بلاک CIDRs webhosting کے / کلاؤڈ سروسز سے تعلق رکھنے والے کے طور پر شناخت؟ آپ کو آپ کی ویب سائٹ سے ایک API سروس آپریٹ یا اگر آپ دوسری ویب سائٹس کو اپنی ویب سائٹ سے رابطہ قائم کرنے کی توقع ہے تو، تو اس جھوٹے کے لئے مقرر کیا جانا چاہئے. آپ ایسا نہیں کرتے، تو پھر، اس ہدایت صحیح پر سیٹ کیا جانا چاہئے.</li>
+</ul></div>
+
+<div dir="rtl">"block_bogons"<br /></div>
+<div dir="rtl"><ul>
+ <li>بلاک bogon/martian کی CIDRs؟ آپ لوکل ہوسٹ سے، یا اپنے LAN سے اپنے مقامی نیٹ ورک کے اندر سے اپنی ویب سائٹ پر کنکشن، توقع ہے، اس ہدایت کے جھوٹے پر مقرر کیا جائے چاہئے. اگر آپ ان میں ایسے کنکشنوں کی توقع نہیں ہے، تو اس ہدایت صحیح پر سیٹ کیا جانا چاہئے.</li>
+</ul></div>
+
+<div dir="rtl">"block_generic"<br /></div>
+<div dir="rtl"><ul>
+ <li>بلاک CIDRs عام طور پر کی blacklisting لئے سفارش؟ یہ دیگر زیادہ مخصوص دستخط کی اقسام میں سے کسی کا حصہ ہونے کے طور پر نشان نہیں ہیں کہ کسی بھی دستخطوں پر محیط ہے.</li>
+</ul></div>
+
+<div dir="rtl">"block_proxies"<br /></div>
+<div dir="rtl"><ul>
+ <li>بلاک CIDRs پراکسی خدمات سے تعلق رکھنے والے کے طور پر شناخت؟ آپ صارفین گمنام پراکسی خدمات سے آپ کی ویب سائٹ تک رسائی حاصل کرنے کے قابل ہو جائے کی ضرورت ہوتی ہے تو، اس کے جھوٹے پر مقرر کیا جائے چاہئے. دوسری صورت میں، آپ کو گمنام پراکسی جنگ لڑ کی ضرورت نہیں ہے تو، اس ہدایت صحیح پر تحفظ کو بہتر بنانے کا ایک ذریعہ کے طور پر مقرر کیا جانا چاہئے.</li>
+</ul></div>
+
+<div dir="rtl">"block_spam"<br /></div>
+<div dir="rtl"><ul>
+ <li>بلاک CIDRs سپیم کے لئے اعلی خطرے ہونے کے طور پر شناخت کیا؟ ایسا کرنے جب آپ کو مسائل کا سامنا ہوتا ہے جب تک، عام طور پر، یہ ہمیشہ سچ کے لئے مقرر کیا جانا چاہئے.</li>
+</ul></div>
+
+<div dir="rtl">"modules"<br /></div>
+<div dir="rtl"><ul>
+ <li>ماڈیول فائلوں کی ایک فہرست کوما سے ختم ہونے والی، IPv4 کی / IPv6 دستخط جانچ پڑتال کے بعد لوڈ کرنے کے لئے.</li>
+</ul></div>
+
+<div dir="rtl">"default_tracktime"<br /></div>
+<div dir="rtl"><ul>
+ <li>ماڈیولز کی طرف سے پابندی لگا دی آئی پی ایس کے ٹریک کرنے سیکنڈ کتنے. پہلے سے طے شدہ = 604800 (1 ہفتہ).</li>
+</ul></div>
+
+<div dir="rtl">"infraction_limit"<br /></div>
+<div dir="rtl"><ul>
+ <li>انحرافات کی زیادہ سے زیادہ تعداد ایک IP اس سے پہلے کیا جاتا ہے IP باخبر رہنے کے کی طرف سے پابندی کا اطلاق کرنے کی اجازت ہے. پہلے سے طے شدہ = 10.</li>
+</ul></div>
+
+<div dir="rtl">"track_mode"<br /></div>
+<div dir="rtl"><ul>
+ <li>انحرافات شمار کب کیا جانا چاہئے؟ جھوٹی = آئی پی ایس کے ماڈیول کی طرف سے بلاک کر رہے ہیں جب. سچا = آئی پی ایس کے کسی بھی وجہ سے بلاک کر رہے ہیں جب.</li>
+</ul></div>
+
+#### <div dir="rtl">"recaptcha" (قسم)<br /></div>
+<div dir="rtl">اختیاری، آپ، ایک reCAPTCHA مثال کو مکمل اگر آپ ایسا کرنا چاہتے ہیں تو کی راہ کی طرف سے "رسائی نہیں ہوئی" کے صفحے کو نظرانداز کرنے کا ایک طریقہ کے ساتھ صارفین کو فراہم کر سکتے ہیں. یہ ان حالات میں جہاں ہم مکمل طور پر یقین ہے کہ ایک درخواست میں ایک مشین یا ایک انسان سے شروع ہوا ہے یا نہیں نہیں ہو میں جھوٹے مثبت کے ساتھ منسلک خطرات میں سے کچھ کم کرنے میں مدد کر سکتے ہیں.<br /><br /></div>
+
+<div dir="rtl">آخر میں صارفین کو نظرانداز کرنے کے لئے "رسائی نہیں ہوئی" کے لئے ایک راستہ فراہم کرنے کے ساتھ منسلک خطرات کی وجہ سے صفحہ، عام طور پر، میں اس خصوصیت کو چالو کرنے کے خلاف مشورہ آپ محسوس کرتے ہیں جب تک کہ ایسا کرنا ضروری ہو گا. صورت حال یہ ضروری ہو سکتا ہے جہاں: آپ کی ویب سائٹ آپ کی ویب سائٹ تک رسائی حاصل کرنے کی ضرورت ہے کہ گاہکوں / صارفین ہیں تو، اور اس پر سمجھوتہ نہیں کیا جا سکتا کہ کچھ ہے، لیکن اگر ان گاہکوں / صارفین ہوا ایک دشمن نیٹ ورک سے منسلک کرنے جا کرنے کے لئے ہے تو کہ ممکنہ طور پر بھی ناپسندیدہ ٹریفک لے جانے، اور اس ناپسندیدہ ٹریفک مسدود ہو سکتا ہے یہ بھی ان لوگوں کو خاص طور پر جیت نہیں حالات میں، پر سمجھوتہ نہیں کیا جا سکتا کہ کچھ ہے، reCAPTCHA کے خصوصیت ضروری گاہکوں / صارفین کی اجازت دی ہے کے ایک ذریعہ کے طور پر ہاتھ میں آ سکتا ، ایک ہی نیٹ ورک سے ناپسندیدہ ٹریفک باہر رکھتے ہوئے. یہ ہے کہ، اگرچہ کہا دیا ایک کیپچا کے مطلوبہ مقصد انسانوں اور غیر انسانوں کے درمیان تمیز کرنے کے لئے ہے کہ، reCAPTCHA کے خصوصیت ہم اس ناپسندیدہ ٹریفک غیر انسانی ہے کہ فرض کرنا ہو تو ان کی کوئی جیت حالات میں صرف کی مدد کرے گا (مثال کے طور ، اسپیم بوٹس، سکراپارس، hacktools، خود کار ٹریفک)، ہونے ناپسندیدہ انسانی ٹریفک کی مخالفت کے طور (جیسے انسانی spammers کو، ہیکروں، اسی ET رحمہ اللہ تعالی).<br /><br /></div>
+
+<div dir="rtl">ایک "سائٹ کلید" اور ایک "خفیہ کلید" (reCAPTCHA استعمال کرتے ہوئے کے لئے ضروری) حاصل کرنے کے لئے، براہ مہربانی پر جائیں: <a href="https://developers.google.com/recaptcha/">https://developers.google.com/recaptcha/</a><br /><br /></div>
+
+<div dir="rtl">"usemode"<br /></div>
+<div dir="rtl"><ul>
+ <li>وضاحت کرتا CIDRAM reCAPTCHA کے استعمال کرنا چاہئے کہ کس طرح.</li>
+ <li>0 = reCAPTCHA کے مکمل طور پر غیر فعال کر دیا (پہلے سے مقررشدہ) ہے.</li>
+ <li>1 = reCAPTCHA کے تمام دستخطوں کیلئے فعال ہے.</li>
+ <li>2 = reCAPTCHA کے طور دستخطی فائلوں کے اندر اندر reCAPTCHA کے فعال خاص نشان لگا حصوں سے تعلق رکھنے والے دستخطوں کے لیے آپ کو چالو حالت میں ہے.</li>
+ <li>(کسی اور قدر 0 کے طور پر اسی طرح میں علاج کیا جائے گا).</li>
+</ul></div>
+
+<div dir="rtl">"lockip"<br /></div>
+<div dir="rtl"><ul>
+ <li>متعین کرتا ہیشز مخصوص آئی پی ایس کو بند کر دیا جانا چاہئے یا نہیں. جھوٹی = کوکیز اور ہیشز ایک سے زیادہ آئی پی ایس (پہلے سے مقررشدہ) بھر میں استعمال کیا جا سکتا. سچا = کوکیز اور ہیشز ایک سے زیادہ آئی پی ایس کے اس پار نہیں کیا جا سکتا (کوکیز / ہیشز آئی پی ایس کو بند کر دیا جاتا).</li>
+ <li>نوٹ: یاد "صارفین" اس قیمت کے لحاظ سے مختلف ہے کے لئے اس طریقہ کار کی وجہ سے "lockip" قدر نظر انداز کر دیا جاتا ہے جب "lockuser" جھوٹی ہے.</li>
+</ul></div>
+
+<div dir="rtl">"lockuser"<br /></div>
+<div dir="rtl"><ul>
+ <li>ایک reCAPTCHA مثال کی کامیاب تکمیل کے مخصوص صارفین کے لئے بند کر دیا جانا چاہئے کہ آیا تعین کرتی ہے. جھوٹی = ایک reCAPTCHA مثال کی کامیاب تکمیل reCAPTCHA کے مثال کو مکمل صارف کی طرف سے استعمال کیا جاتا ہے کہ کے طور پر ایک ہی IP سے شروع ہونے والے تمام درخواستوں کو رسائی فراہم کرے گا؛ کوکیز اور ہیشز نہیں استعمال کیا جاتا ہے؛ اس کے بجائے، ایک IP وائٹ لسٹ کا استعمال کیا جائے گا. سچا = ایک reCAPTCHA مثال صرف reCAPTCHA کے مثال کو مکمل صارف تک رسائی کی اجازت دے گا کی کامیاب تکمیل؛ کوکیز اور ہیشز صارف کو یاد کرنے کے لئے استعمال کر رہے ہیں؛ ایک IP وائٹ لسٹ نہیں استعمال کیا جاتا ہے (ڈیفالٹ).</li>
+</ul></div>
+
+<div dir="rtl">"sitekey"<br /></div>
+<div dir="rtl"><ul>
+ <li>یہ قدر آپ ہیتی، جس reCAPTCHA کے ڈیش بورڈ کے اندر اندر پایا جا سکتا ہے کے لئے "سائٹ کلید" کے مطابق کرنا چاہئے.</li>
+</ul></div>
+
+<div dir="rtl">"secret"<br /></div>
+<div dir="rtl"><ul>
+ <li>یہ قدر آپ ہیتی، جس reCAPTCHA کے ڈیش بورڈ کے اندر اندر پایا جا سکتا ہے کے لئے "خفیہ کلید" کے مطابق کرنا چاہئے. <li>يجب أن تتطابق هذه القيمة إلى "secret key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.</li>
+</ul></div>
+<div dir="rtl">"expiry"<br /></div>
+<div dir="rtl"><ul>
+ <li>جب "lockuser" سچ (ڈیفالٹ) ہے، ایک صارف کو کامیابی کے مستقبل صفحے درخواستوں کے لئے، ایک reCAPTCHA مثال گزر چکی ہے جب یاد کرنے کے لئے ہے، CIDRAM اسی ہیش کہ استعمال کے ایک داخلی ریکارڈ سے میل جو ایک ہیش پر مشتمل ایک معیاری HTTP کوکی نکالتا؛ مستقبل صفحے درخواستوں کسی صارف نے پہلے پہلے سے ہی ایک reCAPTCHA مثال گزر چکی ہے کہ توثیق کرنے کے لئے ان کے لئے اسی ہیشز استعمال کریں گے. جب "lockuser" جھوٹی ہے، ایک IP وائٹ لسٹ درخواستوں باؤنڈ درخواستوں کی آئی پی سے اجازت کی جانی چاہئے یا نہیں کا تعین کرنے کے لئے استعمال کیا جاتا ہے؛ جب reCAPTCHA کے مثال کامیابی سے منظور کیا جاتا لکھے اس وائٹ لسٹ میں شامل کر رہے ہیں. کتنے گھنٹے کے لئے ان کوکیز، hashes اور وائٹ لسٹ اندراجات درست رہنا چاہئے؟ پہلے سے طے شدہ = 720 (1 ماہ).</li>
+</ul></div>
+
+<div dir="rtl">"logfile"<br /></div>
+<div dir="rtl"><ul>
+ <li>تمام reCAPTCHA کے کوششوں لاگ؟ اگر ہاں، logfile پر کے لئے استعمال کرنے کا نام کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں.</li>
+</ul></div>
+
+<div dir="rtl"><em>مفید ٹپ: "{yyyy}" مکمل سال کے لئے، "{yy}" مختصر سال کے لئے، "{mm}": اگر آپ چاہتے ہیں تو آپ کے نام میں ان کو شامل کرکے آپ لاگ مسلیں کے ناموں کو تاریخ / وقت کی معلومات شامل کر سکتے ہیں مہینے کے لئے، دن کے لئے، "{hh}" گھنٹے کیلئے "{dd}" (ذیل کی مثالیں دیکھ).</em><br /><br /></div>
+
+`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt`
+
+#### <div dir="rtl">"template_data" (قسم)<br /></div>
+<div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات / متغیر.<br /><br /></div>
+
+<div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ CIDRAM لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار `template_custom.html` فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار` template.html` فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں `FOO کو =" بار "` کے کسی بھی مثال `<P> {FOO کو} </ P>` HTML پیداوار کے اندر اندر پایا بن جائے گا `<P> بار </ P>`.<br /><br /></div>
+
+<div dir="rtl">"css_url"<br /></div>
+<div dir="rtl"><ul>
+ <li>ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے CIDRAM ہدایت کرنے کے لئے، `css_url` متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، CIDRAM ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے</li>
+</ul></div>
+
 ---
 
 
-### 7. <a name="SECTION7"></a>SIGNATURE FORMAT
+### <div dir="rtl">٧. <a name="SECTION7"></a>دستخط فارمیٹ</div>
 
-#### 7.0 BASICS
+#### <div dir="rtl">٧.٠ مبادیات<br /><br /></div>
 
-CIDRAM طرف سے استعمال دستخط کی شکل اور ساخت کی ایک وضاحت دو اپنی مرضی کے دستخط فائلوں کے دونوں کے اندر سادہ ٹیکسٹ میں دستاویزی پایا جا سکتا ہے. CIDRAM کے دستخط کی شکل اور ساخت کے بارے میں مزید جاننے کے لئے کہ دستاویزات سے رجوع کریں.
-`xxx.xxx.xxx.xxx/yy [فنکشن] [پرم]`: تمام IPv4 کی دستخط کی شکل کی پیروی.
-- `xxx.xxx.xxx.xxx` CIDR بلاک (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) کے آغاز کی نمائندگی کرتا ہے.
-- `yy` CIDR بلاک سائز [1-32] نمائندگی کرتا ہے.
-- `(فنکشن)` سکرپٹ سگنیچر (دستخط شمار کیا جانا چاہئے کہ کس طرح) کے ساتھ کیا کیا ہدایات.
-- `[پرم]` کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات `طرف (فنکشن) کی ضرورت ہوسکتی ہے`.
+<div dir="rtl">CIDRAM طرف سے استعمال دستخط کی شکل اور ساخت کی ایک وضاحت دو اپنی مرضی کے دستخط فائلوں کے دونوں کے اندر سادہ ٹیکسٹ میں دستاویزی پایا جا سکتا ہے. CIDRAM کے دستخط کی شکل اور ساخت کے بارے میں مزید جاننے کے لئے کہ دستاویزات سے رجوع کریں.<br /><br /></div>
 
-`XXXX: XXXX: XXXX: XXXX :: XXXX / سال [فنکشن] [پرم]` تمام IPv6 کی دستخط کی شکل کی پیروی.
-- `XXXX: XXXX: XXXX: XXXX :: xxxx` CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی `0 :: 1 / 128` طور مثلا،` ایک دستخط میں استعمال کیا جاتا ہے جب :: 1 / 128` کا اظہار کیا جانا چاہئے، اور `:: 0 / 128`` 0 کے طور پر اظہار، جس CIDRs سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں :: / 128`).
-- `yy` CIDR بلاک سائز [1-128] نمائندگی کرتا ہے.
-- `(فنکشن)` سکرپٹ سگنیچر (دستخط شمار کیا جانا چاہئے کہ کس طرح) کے ساتھ کیا کیا ہدایات.
-- `[پرم]` کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات `طرف (فنکشن) کی ضرورت ہوسکتی ہے`.
+<div dir="rtl">`xxx.xxx.xxx.xxx/yy [فنکشن] [پرم]`: تمام IPv4 کی دستخط کی شکل کی پیروی.<br /></div>
+<div dir="rtl"><ul>
+ <li>"xxx.xxx.xxx.xxx" CIDR بلاک (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) کے آغاز کی نمائندگی کرتا ہے.</li>
+ <li>"yy" CIDR بلاک سائز [١-٣٢] نمائندگی کرتا ہے.</li>
+ <li>"[فنکشن]" سکرپٹ سگنیچر (دستخط شمار کیا جانا چاہئے کہ کس طرح) کے ساتھ کیا کیا ہدایات.</li>
+ <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
+</ul></div>
 
-Tہ دستخط کے CIDRAM یونیکس طرز linebreaks ( `٪ 0A`، یا` \ n`) کا استعمال کرنا چاہئے کے لئے فائلوں! دوسری قسم / linebreaks کے سٹائل (جیسے ونڈوز `٪ 0D٪ 0A` یا` \ R \ linebreaks n`، میک `٪ 0D` یا` \ r` linebreaks، وغیرہ) استعمال کیا جا سکتا ہے، لیکن ترجیح نہیں ہیں. غیر یونیکس طرز linebreaks سکرپٹ طرف یونیکس طرز linebreaks کو معمول کی جائے گی.
+<div dir="rtl">"xxxx:xxxx:xxxx:xxxx::xxxx/yy [فنکشن] [پرم]" تمام IPv6 کی دستخط کی شکل کی پیروی.<br /></div>
+<div dir="rtl"><ul>
+ <li>"xxxx:xxxx:xxxx:xxxx::xxxx" CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی "0 :: 1 / 128" طور مثلا،" ایک دستخط میں استعمال کیا جاتا ہے جب :: 1 / 128" کا اظہار کیا جانا چاہئے، اور ":: 0 / 128"" 0 کے طور پر اظہار، جس CIDRs سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں :: / 128").</li>
+ <li>"yy" CIDR بلاک سائز [1-128] نمائندگی کرتا ہے.</li>
+ <li>"(فنکشن)" سکرپٹ سگنیچر (دستخط شمار کیا جانا چاہئے کہ کس طرح) کے ساتھ کیا کیا ہدایات.</li>
+ <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
+</ul></div>
 
-عین مطابق اور درست CIDR سنکیتن کی ضرورت ہے، دوسری صورت سکرپٹ دستخط کو تسلیم نہیں کریں گے. مزید برآں، اس سکرپٹ کی تمام CIDR دستخط ایک IP ایڈریس جن IP نمبر، اس کی CIDR بلاک سائز (مثلا طرف سے نمائندگی آپ `11،127 کرنا` 10.128.0.0` سے تمام آئی پی ایس کو بلاک کرنا چاہتے تھے تو بلاک ڈویژن میں یکساں طور پر تقسیم کر سکتے ہیں کے ساتھ شروع ہونا چاہئے .255.255`، `10.128.0.0 / 8` سکرپٹ کی طرف سے تسلیم نہیں کیا جائے گا، لیکن` 10.128.0.0 / 9` اور `11.0.0.0 / 9` مل کر میں استعمال کیا جاتا ہے، سکرپٹ کی طرف سے تسلیم کیا جائے گا).
+<div dir="rtl">ہ دستخط کے CIDRAM یونیکس طرز linebreaks ( "%0A"، یا" \n") کا استعمال کرنا چاہئے کے لئے فائلوں! دوسری قسم / linebreaks کے سٹائل (جیسے ونڈوز "٪ 0D%0A" یا" \ R \ linebreaks n"، میک "٪ 0D" یا" \ r" linebreaks، وغیرہ) استعمال کیا جا سکتا ہے، لیکن ترجیح نہیں ہیں. غیر یونیکس طرز linebreaks سکرپٹ طرف یونیکس طرز linebreaks کو معمول کی جائے گی.<br /><br /></div>
 
-دستخط میں کوئی بھی چیز اس وجہ سے جس کا مطلب آپ کو محفوظ طریقے سے ان کو توڑنے کے بغیر اور اسکرپٹ کو توڑنے کے بغیر آپ کے دستخط فائلوں میں چاہتا ہوں کہ کسی بھی غیر دستخط کے اعداد و شمار کو ڈال کر سکتے ہیں، کو نظر انداز کر دیا جائے گا ایک دستخط کے طور پر اور نہ ہی سکرپٹ کی طرف سے دستخط کے متعلق نحو کے طور پر تسلیم نہیں فائلوں . تبصرے کے دستخط فائلوں میں قابل قبول ہیں، اور کوئی خاص فارمیٹنگ ان کے لئے کی ضرورت ہے. تبصرے کے لئے شیل طرز hashing کے ترجیح دی جاتی ہے، لیکن نافذ نہیں؛ مکمل طور پر قابل، یہ آپ کے تبصرے کے لئے شیل طرز hashing کے استعمال کرنے کا انتخاب کرتے ہیں یا نہیں اسکرپٹ کو کوئی فرق نہیں پڑتا، لیکن شیل طرز hashing کے استعمال کر IDEs کے اور سادہ ٹیکسٹ ایڈیٹرز صحیح دستخط کی فائلوں کے مختلف حصوں کو اجاگر کرنے میں مدد ملتی ہے (اور اس طرح، شیل طرز میں ترمیم کرتے ہوئے hashing کے ایک بصری امداد کے طور پر مدد کر سکتے ہیں).
+<div dir="rtl">عین مطابق اور درست CIDR سنکیتن کی ضرورت ہے، دوسری صورت سکرپٹ دستخط کو تسلیم نہیں کریں گے. مزید برآں، اس سکرپٹ کی تمام CIDR دستخط ایک IP ایڈریس جن IP نمبر، اس کی CIDR بلاک سائز (مثلا طرف سے نمائندگی آپ `11،127 کرنا` 10.128.0.0` سے تمام آئی پی ایس کو بلاک کرنا چاہتے تھے تو بلاک ڈویژن میں یکساں طور پر تقسیم کر سکتے ہیں کے ساتھ شروع ہونا چاہئے .255.255`، `10.128.0.0 / 8` سکرپٹ کی طرف سے تسلیم نہیں کیا جائے گا، لیکن` 10.128.0.0 / 9` اور `11.0.0.0 / 9` مل کر میں استعمال کیا جاتا ہے، سکرپٹ کی طرف سے تسلیم کیا جائے گا).<br /><br /></div>
 
-`(فنکشن)` کی ممکنہ اقدار مندرجہ ذیل ہیں:
-- رن
-- وائٹ لسٹ
-- گرے فہرست
-- انکار
+<div dir="rtl">دستخط میں کوئی بھی چیز اس وجہ سے جس کا مطلب آپ کو محفوظ طریقے سے ان کو توڑنے کے بغیر اور اسکرپٹ کو توڑنے کے بغیر آپ کے دستخط فائلوں میں چاہتا ہوں کہ کسی بھی غیر دستخط کے اعداد و شمار کو ڈال کر سکتے ہیں، کو نظر انداز کر دیا جائے گا ایک دستخط کے طور پر اور نہ ہی سکرپٹ کی طرف سے دستخط کے متعلق نحو کے طور پر تسلیم نہیں فائلوں . تبصرے کے دستخط فائلوں میں قابل قبول ہیں، اور کوئی خاص فارمیٹنگ ان کے لئے کی ضرورت ہے. تبصرے کے لئے شیل طرز hashing کے ترجیح دی جاتی ہے، لیکن نافذ نہیں؛ مکمل طور پر قابل، یہ آپ کے تبصرے کے لئے شیل طرز hashing کے استعمال کرنے کا انتخاب کرتے ہیں یا نہیں اسکرپٹ کو کوئی فرق نہیں پڑتا، لیکن شیل طرز hashing کے استعمال کر IDEs کے اور سادہ ٹیکسٹ ایڈیٹرز صحیح دستخط کی فائلوں کے مختلف حصوں کو اجاگر کرنے میں مدد ملتی ہے (اور اس طرح، شیل طرز میں ترمیم کرتے ہوئے hashing کے ایک بصری امداد کے طور پر مدد کر سکتے ہیں).<br /><br /></div>
 
-تو "چلائیں" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب، سکرپٹ پھانسی کے لئے ایک بیرونی پی ایچ پی اسکرپٹ، کی طرف سے مخصوص ہے (ایک `require_once` بیان کرتے ہوئے) کی کوشش کریں گے` [پرم] `قدر (کام کر ڈائرکٹری ہونا چاہئے" /vault/ "اسکرپٹ کی ڈائریکٹری).
+<div dir="rtl">"(فنکشن)" کی ممکنہ اقدار مندرجہ ذیل ہیں:<br /></div>
+<div dir="rtl"><ul>
+ <li>Run</li>
+ <li>Whitelist</li>
+ <li>Greylist</li>
+ <li>Deny</li>
+</ul></div>
 
-مثال: `127.0.0.0/8 چلائیں example.php`
+<div dir="rtl">تو "چلائیں" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب، سکرپٹ پھانسی کے لئے ایک بیرونی پی ایچ پی اسکرپٹ، کی طرف سے مخصوص ہے (ایک `require_once` بیان کرتے ہوئے) کی کوشش کریں گے` [پرم] `قدر (کام کر ڈائرکٹری ہونا چاہئے" /vault/ "اسکرپٹ کی ڈائریکٹری؛ ذیل کی مثالیں ملاحظہ کریں).<br /><br /></div>
 
-آپ کو کچھ مخصوص آئی پی ایس اور / یا CIDRs لئے کچھ مخصوص پی ایچ پی کوڈ پھانسی کرنا چاہتے ہیں تو یہ مفید ہو سکتا ہے.
+`127.0.0.0/8 Run example.php`
 
-تو "وائٹ لسٹ" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب اسکرپٹ تمام detections کر (کسی detections کر ہوئی ہے تو) دوبارہ ترتیب دے گا اور ٹیسٹ کی تقریب کو توڑنے. `[پرم]` نظر انداز کر دیا جاتا ہے. اس تقریب کا پتہ چلا جا رہا ہے سے ایک مخصوص IP یا CIDR وائٹ لسٹ کے برابر ہے.
-Example: `127.0.0.1/32 وائٹ فہرست`
+<div dir="rtl">آپ کو کچھ مخصوص آئی پی ایس اور / یا CIDRs لئے کچھ مخصوص پی ایچ پی کوڈ پھانسی کرنا چاہتے ہیں تو یہ مفید ہو سکتا ہے (ذیل کی مثالیں ملاحظہ کریں).<br /><br /></div>
 
-تو "Greylist" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب اسکرپٹ تمام detections کر (کسی detections کر ہوئی ہے تو) دوبارہ ترتیب دے گا اور پروسیسنگ جاری رکھنے کے لئے اگلے کے دستخط کی فائل کو چھوڑ دیں. `[پرم]` نظر انداز کر دیا جاتا ہے.
+`127.0.0.1/32 Whitelist`
+
+<div dir="rtl">تو "وائٹ لسٹ" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب اسکرپٹ تمام detections کر (کسی detections کر ہوئی ہے تو) دوبارہ ترتیب دے گا اور ٹیسٹ کی تقریب کو توڑنے. `[پرم]` نظر انداز کر دیا جاتا ہے. اس تقریب کا پتہ چلا جا رہا ہے سے ایک مخصوص IP یا CIDR وائٹ لسٹ کے برابر ہے.<br /><br /></div>
+
+`127.0.0.1/32 Greylist`
+
+<div dir="rtl">تو "Greylist" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب اسکرپٹ تمام detections کر (کسی detections کر ہوئی ہے تو) دوبارہ ترتیب دے گا اور پروسیسنگ جاری رکھنے کے لئے اگلے کے دستخط کی فائل کو چھوڑ دیں. `[پرم]` نظر انداز کر دیا جاتا ہے.
 
 مثال: `127.0.0.1/32 Greylist`
 
@@ -441,7 +567,7 @@ Example: `127.0.0.1/32 وائٹ فہرست`
 
 آپ کو انفرادی حصوں میں آپ اپنی مرضی کے دستخط کو تقسیم کرنا چاہتے ہیں تو، آپ کو آپ کے دستخط کے سیکشن کے نام کے ساتھ ساتھ فوری طور پر ہر سیکشن کے دستخط کے بعد ایک "سیکشن ٹیگ" انہوں نے مزید کہا کی طرف سے سکرپٹ کے لئے ان کے انفرادی حصوں کی شناخت کر سکتے ہیں (ذیل کی مثال ملاحظہ کریں) .
 
-`` `
+```
 #SECTION 1.
 Bogon انکار 1.2.3.4/32
 کلاؤڈ انکار 2.3.4.5/32
@@ -453,7 +579,7 @@ Bogon انکار 1.2.3.4/32
 
 سیکشن ٹیگنگ توڑنے اور یقینی بنانے کے لئے ٹیگز غلط طریقے سے دستخط کی فائلوں میں پہلے سے دستخط کے حصوں کو شناخت نہیں کر رہے ہیں کہ، صرف آپ کے ٹیگ اور آپ کے شروع کے دستخط حصوں کے درمیان کم از کم دو مسلسل linebreaks سے ہیں اس بات کا یقین. کوئی غیر ٹیگ شدہ دستخط "IPv4 کی" یا "IPv6 کی" (دستخط کی اقسام کو متحرک کیا جا رہا ہے جس پر منحصر ہے) خواہ کو فطری گا.
 
-`` `
+```
 Bogon انکار 1.2.3.4/32
 کلاؤڈ انکار 2.3.4.5/32
 
@@ -470,22 +596,22 @@ Bogon انکار 1.2.3.4/32
 1.2.3.4/32 کلی انکار
 2.3.4.5/32 کلی انکار
 ختم ہوجاتا ہے: 2016.12.31
-`` `
+```
 
 دفعہ ٹیگ اور ختم ہونے ٹیگز مل کر میں استعمال کیا جا سکتا ہے، اور دونوں (ذیل مثال دیکھیں) اختیاری ہیں.
 
-`` `
+```
 # مثال دفعہ.
 1.2.3.4/32 کلی انکار
 ٹیگ: مثال کے سیکشن
 ختم ہوجاتا ہے: 2016.12.31
-`` `
+```
 
 #### 7.2 YAML
 
 ##### 7.2.0 YAML BASICS
 
-A simplified form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
+A آسان کردہ form of YAML markup may be used in signature files for the purpose of defining behaviours and settings specific to individual signature sections. This may be useful if you want the value of your configuration directives to differ on the basis of individual signatures and signature sections (for example; if you want to supply an email address for support tickets for any users blocked by one particular signature, but don't want to supply an email address for support tickets for users blocked by any other signatures; if you want some specific signatures to trigger a page redirect; if you want to mark a signature section for use with reCAPTCHA; if you want to log blocked access attempts to separate files on the basis of individual signatures and/or signature sections).
 
 Use of YAML markup in the signature files is entirely optional (i.e., you may use it if you wish to do so, but you are not required to do so), and is able to leverage most (but not all) configuration directives.
 
@@ -495,47 +621,48 @@ In CIDRAM, YAML markup segments are identified to the script by three dashes ("-
 
 ```
 # Foobar 1.
-1.2.3.4/32 کلی انکار
-2.3.4.5/32 کلی انکار
-4.5.6.7/32 کلی انکار
-ٹیگ: FOOBAR 1
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 1
 ---
-جنرل:
- . logfile پر: logfile پر {YYYY} - {میٹر} - {DD} TXT کی
- . logfileApache: رسائی {YYYY} - {میٹر} - {DD} TXT کی
- . logfileSerialized: سیریل {YYYY} - {میٹر} - {DD} TXT کی
- forbid_on_block: جھوٹے
+general:
+ logfile: logfile.{yyyy}-{mm}-{dd}.txt
+ logfileApache: access.{yyyy}-{mm}-{dd}.txt
+ logfileSerialized: serial.{yyyy}-{mm}-{dd}.txt
+ forbid_on_block: false
  emailaddr: username@domain.tld
-ہیتی:
- lockip: جھوٹے
- lockuser: سچ
- ختم ہونے: 720
- . logfile پر: reCaptcha کے {YYYY} - {میٹر} - {DD} TXT کی
- چالو حالت: حقیقی
+recaptcha:
+ lockip: false
+ lockuser: true
+ expiry: 720
+ logfile: recaptcha.{yyyy}-{mm}-{dd}.txt
+ enabled: true
 template_data:
- css_url: HTTP: //domain.tld/cidram.css
+ css_url: http://domain.tld/cidram.css
 
-# FOOBAR 2.
-1.2.3.4/32 کلی انکار
-2.3.4.5/32 کلی انکار
-4.5.6.7/32 کلی انکار
-ٹیگ: FOOBAR 2
+# Foobar 2.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 2
 ---
-جنرل:
- logfile پر: "logfile.Foobar2 {YYYY} - {میٹر} - {DD} TXT کی."
- logfileApache: "access.Foobar2 {YYYY} - {میٹر} - {DD} TXT کی"
- logfileSerialized: "serial.Foobar2 {YYYY} - {میٹر} - {DD} TXT کی"
+general:
+ logfile: "logfile.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileApache: "access.Foobar2.{yyyy}-{mm}-{dd}.txt"
+ logfileSerialized: "serial.Foobar2.{yyyy}-{mm}-{dd}.txt"
  forbid_on_block: 503
-# FOOBAR 3.
-1.2.3.4/32 کلی انکار
-2.3.4.5/32 کلی انکار
-4.5.6.7/32 کلی انکار
-ٹیگ: FOOBAR 3
+
+# Foobar 3.
+1.2.3.4/32 Deny Generic
+2.3.4.5/32 Deny Generic
+4.5.6.7/32 Deny Generic
+Tag: Foobar 3
 ---
-جنرل:
+general:
  forbid_on_block: 403
  silent_mode: "http://127.0.0.1/"
-`` `
+```
 
 ##### 7.2.1 کس طرح "خاص نشان" reCAPTCHA کے ساتھ استعمال کریں کے لئے دستخط قسموں
 
@@ -550,7 +677,7 @@ template_data:
 ---
 ہیتی:
  چالو حالت: حقیقی
-`` `
+```
 
 نوٹ: ایک reCAPTCHA مثال صرف (یا تو کے ساتھ 2 کے طور پر "usemode" کے طور پر 1، یا "usemode" "چالو حالت میں" کے طور پر سچ کے ساتھ) تو reCAPTCHA کے چالو حالت میں ہے صارف کو پیش کیا جائے گا، اور بالکل ایک دستخطی متحرک کیا گیا ہے (کوئی زیادہ ، کم نہیں؛ ایک سے زیادہ دستخط متحرک کر رہے ہیں تو، ایک reCAPTCHA مثال پیش کیا جائے نہیں کرے گا).
 
@@ -559,7 +686,7 @@ template_data:
 کے علاوہ، آپ CIDRAM مکمل طور پر دستخط کی فائلوں میں سے کسی کے اندر کچھ مخصوص حصوں کو نظر انداز کرنا چاہتے ہیں تو، آپ `ignore.dat` فائل ہے جس میں حصوں کو نظر انداز کرنے کی وضاحت کرنے کے لئے استعمال کر سکتے ہیں. ایک نئی لائن پر، لکھنا `Ignore`، ایک کی جگہ کے بعد، آپ کو CIDRAM نظر انداز کرنا (ذیل کی مثال ملاحظہ کریں) چاہتے ہیں کہ سیکشن کے نام کے بعد
 ```
 سیکشن 1 نظرانداز کریں
-`` `
+```
 
 مزید معلومات کے لئے اپنی مرضی کے دستخط فائلوں کا حوالہ لیں.
 

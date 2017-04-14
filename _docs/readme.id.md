@@ -129,6 +129,7 @@ Data | Deskripsi
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
+/_docs/readme.ur.md | Dokumentasi Bahasa Urdu.
 /_docs/readme.vi.md | Dokumentasi Bahasa Vietnam.
 /_docs/readme.zh-TW.md | Dokumentasi Cina tradisional.
 /_docs/readme.zh.md | Dokumentasi Cina sederhana.
@@ -197,6 +198,9 @@ Data | Deskripsi
 /vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
 /vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk bagian depan.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.th.cli.php | File Bahasa Thailand untuk CLI.
+/vault/lang/lang.th.fe.php | File Bahasa Thailand untuk bagian depan.
+/vault/lang/lang.th.php | File Bahasa Thailand.
 /vault/lang/lang.ur.cli.php | File Bahasa Urdu untuk CLI.
 /vault/lang/lang.ur.fe.php | File Bahasa Urdu untuk bagian depan.
 /vault/lang/lang.ur.php | File Bahasa Urdu.
@@ -649,4 +653,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 11 April 2017 (2017.04.11).
+Terakhir Diperbarui: 14 April 2017 (2017.04.14).

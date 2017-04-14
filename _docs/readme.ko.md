@@ -129,6 +129,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /_docs/readme.nl.md | 네덜란드어 문서.
 /_docs/readme.pt.md | 포르투갈어 문서.
 /_docs/readme.ru.md | 러시아어 문서.
+/_docs/readme.ur.md | 우르두어 문서.
 /_docs/readme.vi.md | 베트남어 문서.
 /_docs/readme.zh-TW.md | 중국어 번체 문서.
 /_docs/readme.zh.md | 중국어 간체 문서.
@@ -197,6 +198,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/lang/lang.ru.cli.php | CLI 러시아어 언어 데이터.
 /vault/lang/lang.ru.fe.php | 프론트 엔드 러시아어 언어 데이터.
 /vault/lang/lang.ru.php | 러시아어 언어 데이터.
+/vault/lang/lang.th.cli.php | CLI 태국어 언어 데이터.
+/vault/lang/lang.th.fe.php | 프론트 엔드 태국어 언어 데이터.
+/vault/lang/lang.th.php | 태국어 언어 데이터.
 /vault/lang/lang.ur.cli.php | CLI 우르두어 언어 데이터.
 /vault/lang/lang.ur.fe.php | 프론트 엔드 우르두어 언어 데이터.
 /vault/lang/lang.ur.php | 우르두어 언어 데이터.
@@ -649,4 +653,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트: 2017년 4월 11일.
+최종 업데이트: 2017년 4월 14일.

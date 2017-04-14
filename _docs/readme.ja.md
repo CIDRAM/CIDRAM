@@ -129,6 +129,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /_docs/readme.nl.md | オランダ語ドキュメンテーション。
 /_docs/readme.pt.md | ポルトガル語ドキュメンテーション。
 /_docs/readme.ru.md | ロシア語ドキュメンテーション。
+/_docs/readme.ur.md | ウルドゥー語ドキュメンテーション。
 /_docs/readme.vi.md | ベトナム語ドキュメンテーション。
 /_docs/readme.zh-TW.md | 繁体字中国語ドキュメンテーション。
 /_docs/readme.zh.md | 簡体字中国語ドキュメンテーション。
@@ -197,6 +198,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.ru.cli.php | ＣＬＩのロシア語言語データ。
 /vault/lang/lang.ru.fe.php | フロントエンドのロシア語言語データ。
 /vault/lang/lang.ru.php | ロシア語言語データ。
+/vault/lang/lang.th.cli.php | ＣＬＩのタイ語言語データ。
+/vault/lang/lang.th.fe.php | フロントエンドのタイ語言語データ。
+/vault/lang/lang.th.php | タイ語言語データ。
 /vault/lang/lang.ur.cli.php | ＣＬＩのウルドゥー語言語データ。
 /vault/lang/lang.ur.fe.php | フロントエンドのウルドゥー語言語データ。
 /vault/lang/lang.ur.php | ウルドゥー語言語データ。
@@ -649,4 +653,4 @@ CIDRAMは、ウェブサイト所有者が望ましくないトラフィック�
 ---
 
 
-最終アップデート： 2017年4月11日。
+最終アップデート： 2017年4月14日。

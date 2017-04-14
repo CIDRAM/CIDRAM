@@ -129,6 +129,7 @@ Tập tin | Chi tiết
 /_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
 /_docs/readme.ru.md | Tài liệu tiếng Nga.
+/_docs/readme.ur.md | Tài liệu tiếng Urdu.
 /_docs/readme.vi.md | Tài liệu tiếng Việt.
 /_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (truyền thống).
 /_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (giản thể).
@@ -197,6 +198,9 @@ Tập tin | Chi tiết
 /vault/lang/lang.ru.cli.php | Dữ liệu tiếng Nga cho CLI.
 /vault/lang/lang.ru.fe.php | Dữ liệu tiếng Nga cho các front-end.
 /vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
+/vault/lang/lang.th.cli.php | Dữ liệu tiếng Thái Lan cho CLI.
+/vault/lang/lang.th.fe.php | Dữ liệu tiếng Thái Lan cho các front-end.
+/vault/lang/lang.th.php | Dữ liệu tiếng Thái Lan.
 /vault/lang/lang.ur.cli.php | Dữ liệu tiếng Urdu cho CLI.
 /vault/lang/lang.ur.fe.php | Dữ liệu tiếng Urdu cho các front-end.
 /vault/lang/lang.ur.php | Dữ liệu tiếng Urdu.
@@ -649,4 +653,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 11 Tháng Tư 2017 (2017.04.11).
+Lần cuối cập nhật: 14 Tháng Tư 2017 (2017.04.14).

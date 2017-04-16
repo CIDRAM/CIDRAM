@@ -25,7 +25,7 @@ Ce script est un logiciel libre; vous pouvez redistribuer et/ou le modifier selo
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de [Github](https://github.com/Maikuolan/CIDRAM/).
+Ce document et son associé paquet peuvent être téléchargé gratuitement à sans frais à partir de [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -42,7 +42,7 @@ Ce document et son associé paquet peuvent être téléchargé gratuitement à s
 
 4) CHMOD la `vault` répertoire à "755" (s'il y a des problèmes, vous pouvez essayer "777", mais c'est moins sûr). Le principal répertoire qui est stocker le contenu (celui que vous avez choisi plus tôt), généralement, peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu problèmes d'autorisations dans le passé sur votre système (par défaut, devrait être quelque chose comme "755").
 
-5) Suivant, vous aurez besoin de l'attacher CIDRAM à votre système ou CMS. Il est plusieurs façons vous pouvez attacher CIDRAM à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés pour la détermination de ce par vous-même, à l'aide, visitez la page des problèmes/issues pour CIDRAM à Github. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `loader.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
+5) Suivant, vous aurez besoin de l'attacher CIDRAM à votre système ou CMS. Il est plusieurs façons vous pouvez attacher CIDRAM à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés pour la détermination de ce par vous-même, à l'aide, visitez la page des problèmes/issues pour CIDRAM à GitHub. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `loader.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -248,7 +248,7 @@ Fichier | Description
 /vault/salt.dat | Fichier de sel (utilisé par certaine fonctionnalité périphérique; seulement généré si nécessaire).
 /vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
-/.gitattributes | Un fichier du Github projet (pas nécessaire pour le bon fonctionnement du script).
+/.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
 /Changelog.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
 /CONTRIBUTING.md | Informations sur la façon de contribuer au projet.

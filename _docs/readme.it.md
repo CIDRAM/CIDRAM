@@ -25,7 +25,7 @@ Questo script è un software "libero"; è possibile ridistribuirlo e/o modificar
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Questo documento ed il pacchetto associato ad esso possono essere scaricati liberamente da [Github](https://github.com/Maikuolan/CIDRAM/).
+Questo documento ed il pacchetto associato ad esso possono essere scaricati liberamente da [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -248,7 +248,7 @@ File | Descrizione
 /vault/salt.dat | File di salt (usato da alcune funzionalità periferica; solo generato se richiesto).
 /vault/template.html | File di modello; Modello per l'output HTML prodotto dal generatore di output per CIDRAM.
 /vault/template_custom.html | File di modello; Modello per l'output HTML prodotto dal generatore di output per CIDRAM.
-/.gitattributes | Un file del Github progetto (non richiesto per il corretto funzionamento dello script).
+/.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
 /Changelog.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
 /CONTRIBUTING.md | Informazioni su come contribuire al progetto.

@@ -25,7 +25,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-現在CIDRAM的代碼文件和關聯包可以從以下地址免費下載[Github](https://github.com/Maikuolan/CIDRAM/)。
+現在CIDRAM的代碼文件和關聯包可以從以下地址免費下載[GitHub](https://github.com/Maikuolan/CIDRAM/)。
 
 ---
 
@@ -42,7 +42,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 修改的`vault`文件夾權限為“755”（如果有問題，您可以試試“777”，但是這是不太安全）。注意，主文件夾也應該是該權限，如果遇上其他權限問題，請修改對應文件夾和文件的權限。
 
-5） 接下來，您需要為您的系統或CMS設定啟動CIDRAM的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，參觀Github上的CIDRAM問題頁面；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`loader.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。
+5） 接下來，您需要為您的系統或CMS設定啟動CIDRAM的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，參觀GitHub上的CIDRAM問題頁面；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`loader.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -249,7 +249,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/salt.dat | 鹽文件（使用由一些外圍功能；只產生當必要）。
 /vault/template.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
 /vault/template_custom.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
-/.gitattributes | Github文件（不需要為正確經營腳本）。
+/.gitattributes | GitHub文件（不需要為正確經營腳本）。
 /Changelog.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
 /CONTRIBUTING.md | 相關信息如何有助於該項目。

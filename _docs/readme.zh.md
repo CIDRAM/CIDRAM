@@ -25,7 +25,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-现在CIDRAM的代码文件和关联包可以从以下地址免费下载[Github](https://github.com/Maikuolan/CIDRAM/)。
+现在CIDRAM的代码文件和关联包可以从以下地址免费下载[GitHub](https://github.com/Maikuolan/CIDRAM/)。
 
 ---
 
@@ -42,7 +42,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 修改的`vault`文件夹权限为“755”（如果有问题，您可以试试“777”，但是这是不太安全）。注意，主文件夹也应该是该权限，如果遇上其他权限问题，请修改对应文件夹和文件的权限。
 
-5） 接下来，您需要为您的系统或CMS设定启动CIDRAM的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，参观Github上的CIDRAM问题页面；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。
+5） 接下来，您需要为您的系统或CMS设定启动CIDRAM的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，参观GitHub上的CIDRAM问题页面；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -249,7 +249,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/salt.dat | 盐文件（使用由一些外围功能；只产生当必要）。
 /vault/template.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
-/.gitattributes | Github文件（不需要为正确经营脚本）。
+/.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
 /CONTRIBUTING.md | 相关信息如何有助于该项目。

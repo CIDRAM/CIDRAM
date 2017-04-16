@@ -25,7 +25,7 @@ Este script é livre software; você pode redistribuí-lo e/ou modificá-lo de a
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Este documento e seu associado pacote pode ser baixado gratuitamente de [Github](https://github.com/Maikuolan/CIDRAM/).
+Este documento e seu associado pacote pode ser baixado gratuitamente de [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -42,7 +42,7 @@ Este documento e seu associado pacote pode ser baixado gratuitamente de [Github]
 
 4) CHMOD o `vault` diretório para "755" (se houver problemas, você pode tentar "777"; isto é menos seguro, embora). O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
 
-5) Seguida, você vai precisar "enganchar" CIDRAM ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como CIDRAM ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas CIDRAM no Github. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `loader.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
+5) Seguida, você vai precisar "enganchar" CIDRAM ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como CIDRAM ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas CIDRAM no GitHub. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `loader.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -248,7 +248,7 @@ Arquivo | Descrição
 /vault/salt.dat | Arquivo de sal (utilizada por algumas funcionalidades periférica; gerado apenas se necessário).
 /vault/template.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
-/.gitattributes | Um arquivo do Github projeto (não é necessário para o correto funcionamento do script).
+/.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
 /Changelog.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
 /CONTRIBUTING.md | Informações sobre como contribuir para o projeto.

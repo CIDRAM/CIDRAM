@@ -25,7 +25,7 @@ This script is free software; you can redistribute it and/or modify it under the
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-This document and its associated package can be downloaded for free from [Github](https://github.com/Maikuolan/CIDRAM/).
+This document and its associated package can be downloaded for free from [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -42,7 +42,7 @@ This document and its associated package can be downloaded for free from [Github
 
 4) CHMOD the `vault` directory to "755" (if there are problems, you can try "777"; this is less secure, though). The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
 
-5) Next, you'll need to "hook" CIDRAM to your system or CMS. There are several different ways you can "hook" scripts such as CIDRAM to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the CIDRAM issues page on Github. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+5) Next, you'll need to "hook" CIDRAM to your system or CMS. There are several different ways you can "hook" scripts such as CIDRAM to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the CIDRAM issues page on GitHub. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -248,7 +248,7 @@ File | Description
 /vault/salt.dat | Salt file (used by some peripheral functionality; only generated if required).
 /vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/.gitattributes | A Github project file (not required for proper function of the script).
+/.gitattributes | A GitHub project file (not required for proper function of the script).
 /Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
 /composer.json | Composer/Packagist information (not required for proper function of the script).
 /CONTRIBUTING.md | Information about how to contribute to the project.

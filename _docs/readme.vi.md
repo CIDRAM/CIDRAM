@@ -25,7 +25,7 @@ Bản này là chương trình miễn phí; bạn có thể phân phối lại h
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ [Github](https://github.com/Maikuolan/CIDRAM/).
+Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
 
@@ -248,7 +248,7 @@ Tập tin | Chi tiết
 /vault/salt.dat | Tập tin muối (được sử dụng bởi một số chức năng ngoại vi; chỉ tạo ra nếu cần thiết).
 /vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
-/.gitattributes | Tập tin dự án cho Github (không cần thiết cho chức năng phù hợp của kịch bản).
+/.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
 /CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.

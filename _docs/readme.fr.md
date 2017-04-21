@@ -19,6 +19,8 @@
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) est un script PHP conçu pour la protection des websites par bloquant les demandes de page produit à partir de adresses IP considéré comme étant sources de trafic indésirable, comprenant (mais pas limité a) le trafic de terminaux d'accès non humains, services de cloud computing, spambots, scrapers, etc. Elle le fait en calculant les CIDRs possibles des adresses IP fournie par les demandes entrantes puis essayant pour correspondre à ces CIDRs possibles contre ses fichiers de signatures (ces fichiers de signatures contenir des listes de CIDRs d'adresses IP considéré comme étant sources de trafic indésirable); Si des correspondances sont trouvées, les demandes sont bloquées.
 
+*(Voir: [Qu'est-ce qu'un «CIDR»?](#WHAT_IS_A_CIDR)).*
+
 CIDRAM COPYRIGHT 2016 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
 Ce script est un logiciel libre; vous pouvez redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation; soit la version 2 de la Licence, ou (à votre choix) toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE, sans même la implicite garantie de COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General Public License pour plus de détails, situé dans le `LICENSE.txt` fichier et disponible également à partir de:
@@ -160,59 +162,59 @@ Fichier | Description
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes, informations sur les sessions, et le cache; généré seulement si l'accès frontal est activé et utilisé).
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
-/vault/lang/ | Contient linguistiques données.
+/vault/lang/ | Contient données linguistiques.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/lang/lang.ar.cli.php | Linguistiques données en Arabe pour CLI.
-/vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour l'accès frontal.
-/vault/lang/lang.ar.php | Linguistiques données en Arabe.
-/vault/lang/lang.de.cli.php | Linguistiques données en Allemande pour CLI.
-/vault/lang/lang.de.fe.php | Linguistiques données en Allemande pour l'accès frontal.
-/vault/lang/lang.de.php | Linguistiques données en Allemande.
-/vault/lang/lang.en.cli.php | Linguistiques données en Anglais pour CLI.
-/vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour l'accès frontal.
-/vault/lang/lang.en.php | Linguistiques données en Anglais.
-/vault/lang/lang.es.cli.php | Linguistiques données en Espagnol pour CLI.
-/vault/lang/lang.es.fe.php | Linguistiques données en Espagnol pour l'accès frontal.
-/vault/lang/lang.es.php | Linguistiques données en Espagnol.
-/vault/lang/lang.fr.cli.php | Linguistiques données en Français pour CLI.
-/vault/lang/lang.fr.fe.php | Linguistiques données en Français pour l'accès frontal.
-/vault/lang/lang.fr.php | Linguistiques données en Français.
-/vault/lang/lang.id.cli.php | Linguistiques données en Indonésienne pour CLI.
-/vault/lang/lang.id.fe.php | Linguistiques données en Indonésienne pour l'accès frontal.
-/vault/lang/lang.id.php | Linguistiques données en Indonésienne.
-/vault/lang/lang.it.cli.php | Linguistiques données en Italienne pour CLI.
-/vault/lang/lang.it.fe.php | Linguistiques données en Italienne pour l'accès frontal.
-/vault/lang/lang.it.php | Linguistiques données en Italienne.
-/vault/lang/lang.ja.cli.php | Linguistiques données en Japonaise pour CLI.
-/vault/lang/lang.ja.fe.php | Linguistiques données en Japonaise pour l'accès frontal.
-/vault/lang/lang.ja.php | Linguistiques données en Japonaise.
-/vault/lang/lang.ko.cli.php | Linguistiques données en Coréenne pour CLI.
-/vault/lang/lang.ko.fe.php | Linguistiques données en Coréenne pour l'accès frontal.
-/vault/lang/lang.ko.php | Linguistiques données en Coréenne.
-/vault/lang/lang.nl.cli.php | Linguistiques données en Néerlandaise pour CLI.
-/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandaise pour l'accès frontal.
-/vault/lang/lang.nl.php | Linguistiques données en Néerlandaise.
-/vault/lang/lang.pt.cli.php | Linguistiques données en Portugaise pour CLI.
-/vault/lang/lang.pt.fe.php | Linguistiques données en Portugaise pour l'accès frontal.
-/vault/lang/lang.pt.php | Linguistiques données en Portugaise.
-/vault/lang/lang.ru.cli.php | Linguistiques données en Russe pour CLI.
-/vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour l'accès frontal.
-/vault/lang/lang.ru.php | Linguistiques données en Russe.
-/vault/lang/lang.th.cli.php | Linguistiques données en Thai pour CLI.
-/vault/lang/lang.th.fe.php | Linguistiques données en Thai pour l'accès frontal.
-/vault/lang/lang.th.php | Linguistiques données en Thai.
-/vault/lang/lang.ur.cli.php | Linguistiques données en Urdu pour CLI.
-/vault/lang/lang.ur.fe.php | Linguistiques données en Urdu pour l'accès frontal.
-/vault/lang/lang.ur.php | Linguistiques données en Urdu.
-/vault/lang/lang.vi.cli.php | Linguistiques données en Vietnamienne pour CLI.
-/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamienne pour l'accès frontal.
-/vault/lang/lang.vi.php | Linguistiques données en Vietnamienne.
-/vault/lang/lang.zh-tw.cli.php | Linguistiques données en Chinois (traditionnel) pour CLI.
-/vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour l'accès frontal.
-/vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
-/vault/lang/lang.zh.cli.php | Linguistiques données en Chinois (simplifié) pour CLI.
-/vault/lang/lang.zh.fe.php | Linguistiques données en Chinois (simplifié) pour l'accès frontal.
-/vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
+/vault/lang/lang.ar.cli.php | Données linguistiques en Arabe pour CLI.
+/vault/lang/lang.ar.fe.php | Données linguistiques en Arabe pour l'accès frontal.
+/vault/lang/lang.ar.php | Données linguistiques en Arabe.
+/vault/lang/lang.de.cli.php | Données linguistiques en Allemande pour CLI.
+/vault/lang/lang.de.fe.php | Données linguistiques en Allemande pour l'accès frontal.
+/vault/lang/lang.de.php | Données linguistiques en Allemande.
+/vault/lang/lang.en.cli.php | Données linguistiques en Anglais pour CLI.
+/vault/lang/lang.en.fe.php | Données linguistiques en Anglais pour l'accès frontal.
+/vault/lang/lang.en.php | Données linguistiques en Anglais.
+/vault/lang/lang.es.cli.php | Données linguistiques en Espagnol pour CLI.
+/vault/lang/lang.es.fe.php | Données linguistiques en Espagnol pour l'accès frontal.
+/vault/lang/lang.es.php | Données linguistiques en Espagnol.
+/vault/lang/lang.fr.cli.php | Données linguistiques en Français pour CLI.
+/vault/lang/lang.fr.fe.php | Données linguistiques en Français pour l'accès frontal.
+/vault/lang/lang.fr.php | Données linguistiques en Français.
+/vault/lang/lang.id.cli.php | Données linguistiques en Indonésienne pour CLI.
+/vault/lang/lang.id.fe.php | Données linguistiques en Indonésienne pour l'accès frontal.
+/vault/lang/lang.id.php | Données linguistiques en Indonésienne.
+/vault/lang/lang.it.cli.php | Données linguistiques en Italienne pour CLI.
+/vault/lang/lang.it.fe.php | Données linguistiques en Italienne pour l'accès frontal.
+/vault/lang/lang.it.php | Données linguistiques en Italienne.
+/vault/lang/lang.ja.cli.php | Données linguistiques en Japonaise pour CLI.
+/vault/lang/lang.ja.fe.php | Données linguistiques en Japonaise pour l'accès frontal.
+/vault/lang/lang.ja.php | Données linguistiques en Japonaise.
+/vault/lang/lang.ko.cli.php | Données linguistiques en Coréenne pour CLI.
+/vault/lang/lang.ko.fe.php | Données linguistiques en Coréenne pour l'accès frontal.
+/vault/lang/lang.ko.php | Données linguistiques en Coréenne.
+/vault/lang/lang.nl.cli.php | Données linguistiques en Néerlandaise pour CLI.
+/vault/lang/lang.nl.fe.php | Données linguistiques en Néerlandaise pour l'accès frontal.
+/vault/lang/lang.nl.php | Données linguistiques en Néerlandaise.
+/vault/lang/lang.pt.cli.php | Données linguistiques en Portugaise pour CLI.
+/vault/lang/lang.pt.fe.php | Données linguistiques en Portugaise pour l'accès frontal.
+/vault/lang/lang.pt.php | Données linguistiques en Portugaise.
+/vault/lang/lang.ru.cli.php | Données linguistiques en Russe pour CLI.
+/vault/lang/lang.ru.fe.php | Données linguistiques en Russe pour l'accès frontal.
+/vault/lang/lang.ru.php | Données linguistiques en Russe.
+/vault/lang/lang.th.cli.php | Données linguistiques en Thai pour CLI.
+/vault/lang/lang.th.fe.php | Données linguistiques en Thai pour l'accès frontal.
+/vault/lang/lang.th.php | Données linguistiques en Thai.
+/vault/lang/lang.ur.cli.php | Données linguistiques en Urdu pour CLI.
+/vault/lang/lang.ur.fe.php | Données linguistiques en Urdu pour l'accès frontal.
+/vault/lang/lang.ur.php | Données linguistiques en Urdu.
+/vault/lang/lang.vi.cli.php | Données linguistiques en Vietnamienne pour CLI.
+/vault/lang/lang.vi.fe.php | Données linguistiques en Vietnamienne pour l'accès frontal.
+/vault/lang/lang.vi.php | Données linguistiques en Vietnamienne.
+/vault/lang/lang.zh-tw.cli.php | Données linguistiques en Chinois (traditionnel) pour CLI.
+/vault/lang/lang.zh-tw.fe.php | Données linguistiques en Chinois (traditionnel) pour l'accès frontal.
+/vault/lang/lang.zh-tw.php | Données linguistiques en Chinois (traditionnel).
+/vault/lang/lang.zh.cli.php | Données linguistiques en Chinois (simplifié) pour CLI.
+/vault/lang/lang.zh.fe.php | Données linguistiques en Chinois (simplifié) pour l'accès frontal.
+/vault/lang/lang.zh.php | Données linguistiques en Chinois (simplifié).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache.dat | Données du cache.
 /vault/cidramblocklists.dat | Contient des informations relatives aux listes facultatives pour les pays bloquants fournies par Macmathan; Utilisé par la page des mises à jour fournies par de l'accès frontal.
@@ -611,6 +613,22 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 
 ### 8. <a name="SECTION8"></a>QUESTIONS FRÉQUEMMENT POSÉES (FAQ)
 
+#### Qu'est-ce qu'une «signature»?
+
+Dans le contexte du CIDRAM, une «signature» désigne les données qui servent d'indicateur ou d'identifiant pour quelque chose de spécifique que nous chercher, habituellement une adresse IP ou CIDR, et inclures des instructions pour CIDRAM, indiquant la meilleure façon de répondre quand il rencontre ce que nous chercher. Une signature typique pour CIDRAM ressemble à ceci:
+
+`1.2.3.4/32 Deny Generic`
+
+Souvent (mais pas toujours), les signatures seront regroupées en groupes, formant des "sections de signatures", souvent accompagné de commentaires, de balisage et/ou de métadonnées connexes qui peuvent être utilisées pour fournir un contexte supplémentaire pour les signatures et/ou d'autres instructions.
+
+#### <a name="WHAT_IS_A_CIDR"></a>Qu'est-ce qu'un «CIDR»?
+
+"CIDR" est un acronyme pour "Classless Inter-Domain Routing" *[[1](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, et c'est l'acronyme utilisé dans le nom de ce paquet, "CIDRAM", qui est un acronyme pour "Classless Inter-Domain Routing Access Manager".
+
+Toutefois, dans le contexte du CIDRAM (tel que, au sein de cette documentation, dans les discussions relatives au CIDRAM, ou dans les données linguistiques para CIDRAM), chaque fois qu'un "CIDR" (singulier) ou "CIDRs" (pluriel) est mentionné (et ainsi, par lequel nous utilisons ces mots comme noms dans leur propre droit, par opposition aux acronymes), ce que l'on veut dire signifie un sous-réseau (ou sous-réseaux), exprimé en utilisant la notation CIDR. La raison pour laquelle CIDR (ou CIDRs) est utilisé à la place du sous-réseau (ou sous-réseaux) est de préciser qu'il s'agit spécifiquement de sous-réseaux exprimés à l'aide de la notation CIDR à laquelle on se réfère (parce que la notation CIDR n'est qu'une des différentes façons dont les sous-réseaux peuvent être exprimés). CIDRAM pourrait donc être considéré comme un "gestionnaire d'accès au sous-réseaux".
+
+Bien que cette double signification de "CIDR" puisse présenter une certaine ambiguïté dans certains cas, cette explication, accompagné par le contexte fourni, devrait aider à résoudre une telle ambiguïté.
+
 #### Qu'est-ce qu'un «faux positif»?
 
 Le terme «faux positif» (*alternativement: «erreur faux positif»; «fausse alarme»*; Anglais: *false positive*; *false positive error*; *false alarm*), décrit très simplement, et dans un contexte généralisé, est utilisé lors de tester pour une condition, de se référer aux résultats de ce test, lorsque les résultats sont positifs (c'est à dire, lorsque la condition est déterminée comme étant «positif», ou «vrai»), mais ils devraient être (ou aurait dû être) négatif (c'est à dire, lorsque la condition, en réalité, est «négatif», ou «faux»). Un «faux positif» pourrait être considérée comme analogue à «crier au loup» (où la condition testée est de savoir s'il y a un loup près du troupeau, la condition est «faux» en ce que il n'y a pas de loup près du troupeau, et la condition est signalé comme «positif» par le berger par voie de crier "loup, loup"), ou analogues à des situations dans des tests médicaux dans lequel un patient est diagnostiqué comme ayant une maladie, alors qu'en réalité, ils ont pas une telle maladie.
@@ -653,4 +671,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 14 Avril 2017 (2017.04.14).
+Dernière Mise à Jour: 21 Avril 2017 (2017.04.21).

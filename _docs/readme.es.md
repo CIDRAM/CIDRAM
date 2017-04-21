@@ -19,6 +19,8 @@
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) es un script PHP diseñado para proteger sitios web por bloqueando solicitudes desde direcciones IP considerado como siendo fuentes de tráfico no deseado, incluso (pero no limitado a) tráfico desde no humano punto de acceso, servicios en la nube, spambots, raspadores/scrapers, etc. Esto se hace por calculando la posible CIDRs de las direcciones IP suministrada desde solicitudes entrantes e intentando para coincida estos CIDRs posibles en contra de sus archivos de firmas (estos archivos de firmas contener listas de CIDRs de direcciones IP considerado como siendo fuentes de tráfico no deseado); Si coincidencias se encuentran, las solicitudes están bloqueados.
 
+*(Ver: [¿Qué es un "CIDR"?](#WHAT_IS_A_CIDR)).*
+
 CIDRAM COPYRIGHT 2016 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 
 Este script es gratis software; puede redistribuirlo y/o modificarlo según los términos de la GNU General Pública Licencia como publicada por la Free Software Foundation; versión 2 de la licencia, o cualquier posterior versión. Este script se distribuye con la esperanza de que será útil, pero SIN NINGUNA GARANTÍA; también, sin ninguna implícita garantía de COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Pública Licencia para más detalles, ubicado en el `LICENSE.txt` archivo y disponible también de:
@@ -611,6 +613,22 @@ Consulte los archivos de firmas personalizadas para obtener más información.
 
 ### 8. <a name="SECTION8"></a>PREGUNTAS MÁS FRECUENTES (FAQ)
 
+#### ¿Qué es una "firma"?
+
+En el contexto de CIDRAM, una "firma" se refiere a datos que actúan como un indicador/identificador para algo específico que estamos buscando, normalmente una dirección IP o CIDR, e incluye algunas instrucciones para CIDRAM, diciéndole la mejor manera de responder cuando encuentra lo que estamos buscando. Una firma típica para CIDRAM se parece a esto:
+
+`1.2.3.4/32 Deny Generic`
+
+A menudo (pero no siempre), las firmas se agruparán en grupos, formando "secciones de firmas", a menudo acompañado de comentarios, markup, y/o metadatos relacionados que se pueden utilizar para proporcionar contexto adicional para las firmas y/o instrucción adicional.
+
+#### <a name="WHAT_IS_A_CIDR"></a>¿Qué es un "CIDR"?
+
+"CIDR" es un acrónimo para "Classless Inter-Domain Routing" (o "enrutamiento entre dominios sin clases") *[[1](https://es.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, y es este acrónimo que se utiliza como parte del nombre de este paquete, "CIDRAM", que es un acrónimo de "Classless Inter-Domain Routing Access Manager".
+
+Aunque, en el contexto de CIDRAM (tal como, dentro de esta documentación, dentro de los discusiones relacionados con CIDRAM, o dentro de los lingüísticos datos para CIDRAM), en cualquier momento que un "CIDR" (singular) o "CIDRs" (plural) se menciona o se hace referencia a (y por lo tanto, mediante el cual utilizamos estas palabras como sustantivos por derecho propio, en contraposición a como acrónimos), lo que se pretende y quiere decir con esto es una subred (o subredes), expresado usando la notación CIDR. La razón por la que CIDR (o CIDRs) se utiliza en lugar de subred (o subredes) es dejar claro que se trata específicamente de subredes expresadas mediante la notación CIDR a la que se hace referencia (porque la notación CIDR es sólo una de varias maneras diferentes que las subredes se pueden expresar). Por lo tanto, CIDRAM podría considerarse un "gestor de acceso para subredes".
+
+Aunque este doble significado de "CIDR" puede presentar alguna ambigüedad en algunos casos, esta explicacion, junto con el contexto proporcionado, debe ayudar a resolver esa ambigüedad.
+
 #### ¿Qué es un "falso positivo"?
 
 El término "falso positivo" (*alternativamente: "error falso positivo"; "falsa alarma"*; Inglés: *false positive*; *false positive error*; *false alarm*), descrito muy simplemente, y en un contexto generalizado, se utiliza cuando se prueba para una condición, para referirse a los resultados de esa prueba, cuando los resultados son positivos (es decir, la condición se determina como "positivo", o "verdadero"), pero se espera que sean (o debería haber sido) negativo (es decir, la condición, en realidad, es "negativo", o "falso"). Un "falso positivo" podría considerarse análoga a "llorando lobo" (donde la condición que se está probando es si hay un lobo cerca de la manada, la condición es "falso" en el que no hay lobo cerca de la manada, y la condición se reporta como "positiva" por el pastor a modo de llamando "lobo, lobo"), o análogos a situaciones en las pruebas médicas donde un paciente es diagnosticado con alguna enfermedad o dolencia, cuando en realidad, no tienen tal enfermedad o dolencia.
@@ -653,4 +671,4 @@ No. PHP 5.4.0 llegó a EoL oficial ("End of Life", o fin de la vida) en 2014, y 
 ---
 
 
-Última Actualización: 14 Abril 2017 (2017.04.14).
+Última Actualización: 21 Abril 2017 (2017.04.21).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.07).
+ * This file: Configuration handler (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -95,13 +95,7 @@ foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyC
         }
         $CIDRAM['Config']['Temp']['Dir'] = &$CIDRAM['Config']['Temp']['Cat'][$CIDRAM['Config']['Temp']['KeyDir']];
         if (isset($CIDRAM['Config']['Temp']['DDir']['type'])) {
-            if (
-                $CIDRAM['Config']['Temp']['DDir']['type'] === 'string' ||
-                $CIDRAM['Config']['Temp']['DDir']['type'] === 'int' ||
-                $CIDRAM['Config']['Temp']['DDir']['type'] === 'bool'
-            ) {
-                $CIDRAM['AutoType']($CIDRAM['Config']['Temp']['Dir'], $CIDRAM['Config']['Temp']['DDir']['type']);
-            }
+            $CIDRAM['AutoType']($CIDRAM['Config']['Temp']['Dir'], $CIDRAM['Config']['Temp']['DDir']['type']);
         }
     }
 }

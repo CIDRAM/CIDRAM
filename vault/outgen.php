@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.04.11).
+ * This file: Output generator (last modified: 2017.04.20).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -247,6 +247,20 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
         }
     } else {
         $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
+    }
+    /** Implement double-banning (required by some specific custom modules; not a standard feature). */
+    if (isset($CIDRAM['Config']['Options']['DoubleBan'])) {
+        if (
+            isset($CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']]['Count']) &&
+            isset($CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']]['Time'])
+        ) {
+            $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']]['Count'] += $CIDRAM['TrackCount'];
+            if ($CIDRAM['TrackTime'] > $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']]['Time']) {
+                $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']]['Time'] = $CIDRAM['TrackTime'];
+            }
+        } else {
+            $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
+        }
     }
     $CIDRAM['CacheModified'] = true;
     if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {

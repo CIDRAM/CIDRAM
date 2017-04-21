@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.11).
+ * This file: Functions file (last modified: 2017.04.21).
  */
 
 /**
@@ -893,9 +893,11 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
 $CIDRAM['AutoType'] = function (&$Var, $Type = '') {
     if ($Type === 'string') {
         $Var = (string)$Var;
-    } elseif ($Type === 'int') {
+    } elseif ($Type === 'int' || $Type === 'integer') {
         $Var = (int)$Var;
-    } elseif ($Type === 'bool') {
+    } elseif ($Type === 'real' || $Type === 'double' || $Type === 'float') {
+        $Var = (real)$Var;
+    } elseif ($Type === 'bool' || $Type === 'boolean') {
         $Var = (strtolower($Var) !== 'false' && $Var);
     } else {
         $LVar = strtolower($Var);

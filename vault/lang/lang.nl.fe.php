@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.11).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,7 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum aantal inlogpogi
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de front-end. True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
-$CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door CIDRAM. Selecteer een optie uit de onderstaande lijst. Extra opties kunnen worden toegevoegd op aanvraag.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Aantal uren om reCAPTCHA instanties herinneren.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Binden reCAPTCHA om IPs?';
@@ -103,6 +103,11 @@ $CIDRAM['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
 $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
+$CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
+$CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
+$CIDRAM['lang']['label_php'] = 'PHP versie gebruikt:';
+$CIDRAM['lang']['label_sapi'] = 'SAPI gebruikt:';
+$CIDRAM['lang']['label_sysinfo'] = 'Systeem informatie:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
 $CIDRAM['lang']['link_config'] = 'Configuratie';
@@ -196,7 +201,7 @@ $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';
 $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Kwesties pagina voor CIDRAM (steun, hulp, ezv).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Discussieforum voor CIDRAM (steun, hulp, ezv).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin voor CIDRAM.</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin voor CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Een alternatieve download-spiegel voor CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Een verzameling van eenvoudige webmaster tools waarmee websites te beveiligen.</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Bevat optionele range blokken die naar CIDRAM kunnen worden toegevoegd om de toegang van ongewenste landen tot uw website te blokkeren.</li>

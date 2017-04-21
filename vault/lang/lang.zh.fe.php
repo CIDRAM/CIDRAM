@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.11).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,7 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数
 $CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。 True = 是【标准】； False = 不是。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？ 验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，SEO，等等）。 当被验证，搜索引擎可以被阻止，但不会被禁止。 当不被验证，他们可以由于超过违规限制而被禁止。 另外，搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，这些请求将被阻止）。 True = 搜索引擎验证是启用【标准】； False = 搜索引擎验证是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。';
-$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。从下面的列表中选择一个选项。可根据要求增加附加选项。';
+$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。可根据要求增加附加选项。';
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '应该reCAPTCHA锁定到IP？';
@@ -103,6 +103,11 @@ $CIDRAM['lang']['field_upload_file'] = '上传新文件';
 $CIDRAM['lang']['field_username'] = '用户名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
+$CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
+$CIDRAM['lang']['label_os'] = '目前使用操作系统：';
+$CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
+$CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
+$CIDRAM['lang']['label_sysinfo'] = '系统信息：';
 $CIDRAM['lang']['link_accounts'] = '账户';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR计算器';
 $CIDRAM['lang']['link_config'] = '配置';
@@ -196,7 +201,7 @@ $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
 $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – CIDRAM问题页面（支持，协助，等等）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM讨论论坛（支持，协助，等等）。</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAM Wordpress插件。</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM WordPress插件。</li>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM替代下载镜像。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。</li>

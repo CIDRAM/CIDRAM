@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.04.11).
+ * This file: French language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,7 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentat
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l\'accès frontal. True = Oui [Défaut]; False = Non.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Essayez de vérifier les moteurs de recherche? Vérification des moteurs de recherche assure qu\'ils ne seront pas interdits en raison de dépassement de la limite d\'infraction (l\'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu\'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d\'habitude, mais ne seront pas interdits. Lorsqu\'ils ne sont pas vérifiés, il est possible qu\'ils soient interdits en raison du dépassement de la limite d\'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses demandes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut]; False = Désactiver la vérification du moteurs de recherche.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page "Accès Refusé"? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
-$CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par CIDRAM. Sélectionnez une option dans la liste ci-dessous. Des options supplémentaires peuvent être ajoutées sur demande.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur demande.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Nombre d\'heures à retenir des instances reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Verrouiller reCAPTCHA aux adresses IP?';
@@ -103,6 +103,11 @@ $CIDRAM['lang']['field_upload_file'] = 'Télécharger un nouveau fichier';
 $CIDRAM['lang']['field_username'] = 'Nom d\'Utilisateur';
 $CIDRAM['lang']['field_your_version'] = 'Votre Version';
 $CIDRAM['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
+$CIDRAM['lang']['label_cidram'] = 'Version CIDRAM utilisée:';
+$CIDRAM['lang']['label_os'] = 'Système opérateur utilisée:';
+$CIDRAM['lang']['label_php'] = 'Version PHP utilisée:';
+$CIDRAM['lang']['label_sapi'] = 'SAPI utilisée:';
+$CIDRAM['lang']['label_sysinfo'] = 'Informations sur le système:';
 $CIDRAM['lang']['link_accounts'] = 'Comptes';
 $CIDRAM['lang']['link_cidr_calc'] = 'Calculatrice CIDR';
 $CIDRAM['lang']['link_config'] = 'Configuration';
@@ -196,7 +201,7 @@ $CIDRAM['lang']['title_updates'] = 'CIDRAM – Mises à Jour';
 $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Page de problèmes pour CIDRAM (soutien, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Forum de discussion pour CIDRAM (soutien, assistance, etc).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress plugin pour CIDRAM.</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin pour CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Contient des blocs de gamme en option qui peuvent être ajoutés au CIDRAM pour bloquer les pays indésirables d\'accéder à votre site Web.</li>

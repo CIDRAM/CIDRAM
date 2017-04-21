@@ -337,6 +337,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_home'];
 
+    /** CIDRAM version used. */
+    $CIDRAM['FE']['ScriptVersion'] = $CIDRAM['ScriptVersion'];
+
+    /** PHP version used. */
+    $CIDRAM['FE']['info_php'] = PHP_VERSION;
+
+    /** SAPI used. */
+    $CIDRAM['FE']['info_sapi'] = php_sapi_name();
+
+    /** Operating system used. */
+    $CIDRAM['FE']['info_os'] = php_uname();
+
     /** Prepare page tooltip/description. */
     $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
         array('username' => $CIDRAM['FE']['UserRaw']),
@@ -1945,6 +1957,28 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             /** Skip banned IPs (required by some specific custom modules; not a standard feature). */
             if (!empty($CIDRAM['Cache']['Subnets']) && is_array($CIDRAM['Cache']['Subnets'])) {
                 if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+                    continue;
+                }
+                $CIDRAM['BlockInfo'] = array(
+                    'IPAddr' => $CIDRAM['ThisTracking']['IPAddr'],
+                    'Query' => $CIDRAM['Query'],
+                    'Referrer' => '',
+                    'UA' => '',
+                    'UALC' => '',
+                    'ReasonMessage' => '',
+                    'SignatureCount' => 0,
+                    'Signatures' => '',
+                    'WhyReason' => '',
+                    'xmlLang' => $CIDRAM['Config']['general']['lang'],
+                    'rURI' => 'FE'
+                );
+                try {
+                    $CIDRAM['Caught'] = false;
+                    $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['ThisTracking']['IPAddr']);
+                } catch (\Exception $e) {
+                    $CIDRAM['Caught'] = true;
+                }
+                if ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']) {
                     continue;
                 }
             }

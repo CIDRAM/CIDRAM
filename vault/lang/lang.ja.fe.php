@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.11).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,7 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。 True = はい （Default/デフォルルト）； False = いいえ。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '検索エンジンからのリクエストを確認する必要がありますか？ 検索エンジンを確認することで、違反の最大数を超えたために検索エンジンが禁止されないことが保証されます （検索エンジンを禁止することは、通常、検索エンジンランキング、ＳＥＯなどに悪影響を及ぼします）。 確認されると、検索エンジンがブロックされることがありますが、しかしは禁止されません。 検証されていない場合は、違反の最大を超えた結果、禁止される可能性があります。 さらに、検索エンジンの検証は、詐称された検索エンジンから保護します （これらのリクエストはブロックされます）。 True = 検索エンジンの検証を有効にする （Default/デフォルルト）； False = 検索エンジンの検証を無効にする。';
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？ はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。';
-$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAMで使用される日付表記形式。 下のリストからオプションを選択してください。 追加のオプションがリクエストに応じて追加される場合があります。';
+$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAMで使用される日付表記形式。 追加のオプションがリクエストに応じて追加される場合があります。';
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをＩＰにロックしますか？';
@@ -103,6 +103,11 @@ $CIDRAM['lang']['field_upload_file'] = '新しいファイルをアップロー�
 $CIDRAM['lang']['field_username'] = 'ユーザー名';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、ログインしてください。';
+$CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
+$CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
+$CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';
+$CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
+$CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $CIDRAM['lang']['link_accounts'] = 'アカウント';
 $CIDRAM['lang']['link_cidr_calc'] = 'ＣＩＤＲ計算機';
 $CIDRAM['lang']['link_config'] = 'コンフィギュレーション';
@@ -196,7 +201,7 @@ $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';
 $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – CIDRAMの問題ページ（サポート、援助、など）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAMのディスカッションフォーラム（サポート、援助、など）。</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAMのWordpressプラグイン。</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>

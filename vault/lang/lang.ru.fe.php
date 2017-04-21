@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.04.11).
+ * This file: Russian language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,7 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Максимальное
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Определяет, будут ли средства защиты как правило предоставляемые CIDRAM должны быть применены к фронтенд. True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Попытка проверить запросы от поисковых систем? Верификация поисковых систем гарантирует, что они не будут запрещены в результате превышения предела нарушение (запрет на поисковые системы с вашего сайта, как правило, оказывают негативное влияние на вашей поисковой системы рейтинга, SEO, и т.д.). Когда проверяется, поисковые системы могут быть заблокированы, но не запрещено. Когда не проверяется, это возможно для них должны быть запрещены в результате превышения лимита нарушений. Дополнительно, верификация поисковых систем обеспечивает защиту от подделки запросов поисковой системы и вредоносные источники маскируются как поисковые системы (такие запросы будут заблокированы при проверке поисковой активируется). True = Активировать верификация поисковых систем [Стандарт]; False = Деактивировать верификация поисковых систем.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Должен CIDRAM молча перенаправить заблокированные попытки доступа вместо отображения страницы "Доступ Закрыт"? Если да, указать местоположение для перенаправления блокировал попытки доступа. Если нет, оставить эту переменную пустым.';
-$CIDRAM['lang']['config_general_timeFormat'] = 'Формат нотации даты, используемый CIDRAM. Выберите нужный опция из списка ниже. Дополнительные опции могут быть добавлены по запросу.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'Формат нотации даты, используемый CIDRAM. Дополнительные опции могут быть добавлены по запросу.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Смещение часового пояса в минут.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Количество часов, чтобы вспомнить инстанция reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Свяжите reCAPTCHA к IP-адреса?';
@@ -103,6 +103,11 @@ $CIDRAM['lang']['field_upload_file'] = 'Загрузить Новый Файл';
 $CIDRAM['lang']['field_username'] = 'Имя Пользователя';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
+$CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
+$CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
+$CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';
+$CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
+$CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
 $CIDRAM['lang']['link_accounts'] = 'Учетными Записями';
 $CIDRAM['lang']['link_cidr_calc'] = 'Калькулятор CIDR';
 $CIDRAM['lang']['link_config'] = 'Конфигурация';
@@ -196,7 +201,7 @@ $CIDRAM['lang']['title_updates'] = 'CIDRAM – Обновления';
 $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Дискуссионный форум для CIDRAM (поддержка, помощь, и т.д.).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – Wordpress плагин для CIDRAM.</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.04.11).
+ * This file: Urdu language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,7 +36,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'لاگ ان کوششوں
 $CIDRAM['lang']['config_general_protect_frontend'] = 'متعین کرتا ہے جو عام طور پر CIDRAM طرف سے فراہم کردہ تحفظات سامنے کے آخر پر لاگو کیا جانا چاہئے کہ آیا. سچے = جی ہاں [پہلے سے طے شدہ]; جھوٹی = نہیں.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'تلاش کے انجن کی طرف سے درخواستوں کی تصدیق کرنے کی کوشش؟ تلاش کے انجن کی توثیق کرنے سے کہ وہ خلاف ورزی کی حد (ویب سائٹ سے تلاش کے انجن پر پابندی عائد عام طور پر آپ کی تلاش کے انجن کی درجہ بندی، SEO، وغیرہ پر منفی اثر پڑے گا) تجاوز کا ایک نتیجہ کے طور پر پابندی عائد نہیں کیا جائے گا یقینی بناتا ہے. تصدیق کی جب، تلاش کے انجن معمول فی کے طور پر بلاک کیا جا سکتا ہے، لیکن پابندی عائد نہیں کی جائے گی. کی توثیق نہیں کی ہے، تو یہ ان کے لئے خلاف ورزی کی حد سے تجاوز کرنے کے نتیجے کے طور پر پابندی عائد کی جائے کرنے کے لئے ممکن ہے. اس کے علاوہ، تلاش کے انجن کی توثیق کی جعلی تلاش کے انجن کی درخواستوں کے خلاف اور (اس طرح کی درخواستوں کی تلاش کے انجن کی توثیق فعال ہے جب بلاک کر دیا جائے گا) سرچ انجن کے طور پر ویش ممکنہ طور پر بدنیتی پر مبنی اداروں کے خلاف تحفظ فراہم کرتا ہے. سچے = تلاش کے انجن کی توثیق فعال [پہلے سے طے شدہ]; جھوٹی = غیر فعال تلاش کے انجن کی توثیق کی.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'خاموشی CIDRAM چاہئے "رسائی نہیں ہوئی" کے صفحے کی نمائش سے بلاک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے بجائے؟ ہاں تو، کو بلاک کر تک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے محل وقوع کی وضاحت. کوئی تو اس متغیر خالی چھوڑ.';
-$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استعمال کی تاریخوں کا فارم. ذیل کی فہرست سے ایک اختیار کو منتخب کریں. اضافی اختیارات درخواست پر شامل کیا جا سکتا ہے.';
+$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استعمال کی تاریخوں کا فارم. اضافی اختیارات درخواست پر شامل کیا جا سکتا ہے.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'گھنٹوں کی تعداد reCAPTCHA کے واقعات کو یاد کرنے.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'ئی پی ایس کے لئے ہیتی لاک؟';
@@ -103,6 +103,11 @@ $CIDRAM['lang']['field_upload_file'] = 'نئی فائل اپ لوڈ کریں';
 $CIDRAM['lang']['field_username'] = 'صارف کا نام';
 $CIDRAM['lang']['field_your_version'] = 'آپ کے ورژن';
 $CIDRAM['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
+$CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
+$CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
+$CIDRAM['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
+$CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
+$CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR کیلکولیٹر';
 $CIDRAM['lang']['link_config'] = 'کنفگریشن';
@@ -196,7 +201,7 @@ $CIDRAM['lang']['title_updates'] = 'CIDRAM – تازہ ترین معلومات 
 $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM مسائل @ GitHub کے</a> – CIDRAM لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot سیکورٹی</a> – CIDRAM لئے فورم (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ Wordpress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – متبادل ڈاؤن آئینے CIDRAM لئے.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>

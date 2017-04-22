@@ -19,6 +19,8 @@
 
 CIDRAM （無類別域間路由訪問管理器）是一個PHP腳本，旨在保護網站途經阻止請求該從始發IP地址視為不良的流量來源，包括（但不限於）流量該從非人類的訪問端點，雲服務，垃圾郵件發送者，網站鏟運機，等等。它通過計算CIDR的提供的IP地址從入站請求和試圖匹配這些CIDR反對它的簽名文件（這些簽名文件包含CIDR的IP地址視為不良的流量來源）；如果找到匹配，請求被阻止。
 
+*(看到： [什麼是“CIDR”？](#WHAT_IS_A_CIDR))。*
+
 CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 本腳本是基於GNU通用許可V2.0版許可協議發布的，您可以在許可協議的允許範圍內自行修改和發布，但請遵守GNU通用許可協議。使用腳本的過程中，作者不提供任何擔保和任何隱含擔保。更多的細節請參見GNU通用公共許可證，下的`LICENSE.txt`文件也可從訪問：
@@ -68,7 +70,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 #### 2.2 為WORDPRESS安裝
 
-如果要使用CIDRAM與WordPress，您可以忽略上述所有說明。[CIDRAM在WordPress插件數據庫中註冊](https://WordPress.org/plugins/cidram/)，您可以直接從插件儀表板安裝CIDRAM。您可以像其他插件一樣安裝，不需要添加步驟。與其他安裝方法相同，您可以通過修改`config.ini`來或通過使用前端配置頁面自定義您的安裝。更新CIDRAM通過前端更新頁面時，插件版本信息將自動與Wordpress同步。
+如果要使用CIDRAM與WordPress，您可以忽略上述所有說明。[CIDRAM在WordPress插件數據庫中註冊](https://wordpress.org/plugins/cidram/)，您可以直接從插件儀表板安裝CIDRAM。您可以像其他插件一樣安裝，不需要添加步驟。與其他安裝方法相同，您可以通過修改`config.ini`來或通過使用前端配置頁面自定義您的安裝。更新CIDRAM通過前端更新頁面時，插件版本信息將自動與WordPress同步。
 
 ---
 
@@ -282,6 +284,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+“truncate”
+- 截斷日誌文件當他們達到一定的大小嗎？ 值是在KB，是日誌文件允許的最大大小直到它被截斷。 默認值為“0”將禁用截斷（日誌文件可以無限成長）。 注意：適用於單個日誌文件！日誌文件大小不被算集體的。
 
 “timeOffset”
 - 如果您的服務器時間不符合您的本地時間，您可以在這裡指定的偏移調整日期/時間信息該產生通過CIDRAM根據您的需要。它一般建議，而不是，調整時區指令的文件`php.ini`，但是有時（例如，當利用有限的共享主機提供商）這並不總是可能做到，所以，此選項在這裡是提供。偏移量是在分鐘。
@@ -612,6 +617,22 @@ Ignore 部分一
 
 ### 8. <a name="SECTION8"></a>常見問題（FAQ）
 
+#### What is a "signature"?
+
+In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+
+`1.2.3.4/32 Deny Generic`
+
+Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+
+#### <a name="WHAT_IS_A_CIDR"></a>什麼是“CIDR”？
+
+"CIDR" is an acronym for "Classless Inter-Domain Routing" （“無類別域間路由”） *[[1](https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+
+However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+
+Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+
 #### 什麼是“假陽性”？
 
 術語“假陽性”（*或者：“假陽性錯誤”；“虛驚”*；英語：*false positive*; *false positive error*; *false alarm*），很簡單地描述，和在一個廣義上下文，被用來當測試一個因子，作為參考的測試結果，當結果是陽性（即：因子被確定為“陽性”，或“真”），但預計將為（或者應該是）陰性（即：因子，在現實中，是“陰性”，或“假”）。一個“假陽性”可被認為是同樣的“哭狼” (其中，因子被測試是是否有狼靠近牛群，因子是“假”由於該有沒有狼靠近牛群，和因子是報告為“陽性”由牧羊人通過叫喊“狼，狼”），或類似在醫學檢測情況，當患者被診斷有一些疾病，當在現實中，他們沒有疾病。
@@ -654,4 +675,4 @@ CIDRAM使網站所有者能夠阻止不良流量，但網站所有者有責任�
 ---
 
 
-最後更新：2017年4月14日。
+最後更新：2017年4月22日。

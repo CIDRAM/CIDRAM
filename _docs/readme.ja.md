@@ -19,6 +19,8 @@
 
 CIDRAM（シドラム、クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 『Classless Inter-Domain Routing Access Manager』）は、PHPスクリプトです。 ウェブサイトを保護するように設計されて、ＩＰアドレス（望ましくないトラフィックのあるソースとみなします）から、発信要求をブロックすることによって（ヒト以外のアクセスエンドポイント、クラウドサービス、スパムロボット、スクレーパー、等）。 ＩＰアドレスの可能ＣＩＤＲを計算することにより、ＣＩＤＲは、そのシグネチャファイルと比較することができます（これらのシグネチャファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）； 一致が見つかった場合、要求はブロックされます。
 
+*(参照する： [「ＣＩＤＲ」とは何ですか？](#WHAT_IS_A_CIDR)).*
+
 CIDRAM著作権2016とGNU一般公衆ライセンスv2を超える権利について： Caleb M (Maikuolan)著。
 
 本スクリプトはフリーウェアです。フリーソフトウェア財団発行のGNU一般公衆ライセンス・バージョン２（またはそれ以降のバージョン）に従い、再配布ならびに加工が可能です。 配布の目的は、役に立つことを願ってのものですが、『保証はなく、また商品性や特定の目的に適合するのを示唆するものでもありません』。 『LICENSE.txt』にある『GNU General Public License』（一般ライセンス）を参照して下さい。 以下のURLからも閲覧できます：
@@ -68,7 +70,7 @@ Apacheウェブサーバーを利用していて、かつ`php.ini`を編集で�
 
 #### 2.2 WORDPRESSためにインストールする
 
-WordPressでCIDRAMを使用する場合は、上記の手順をすべて無視することができます。 [CIDRAMは、WordPressプラグインデータベースにプラグインとして登録されています](https://WordPress.org/plugins/cidram/)。 プラグインダッシュボードからCIDRAMを直接インストールできます。 他のプラグインと同じ方法でインストールでき、追加手順は不要です。 他のインストール方法と同じように、`config.ini`ファイルの内容を変更してまたはフロントエンドのコンフィギュレーションページを使用してインストールをカスタマイズすることができます。 フロントエンドのアップデート・ページでCIDRAMを更新すると、プラグインバージョン情報がWordPressに自動的に同期されます。
+WordPressでCIDRAMを使用する場合は、上記の手順をすべて無視することができます。 [CIDRAMは、WordPressプラグインデータベースにプラグインとして登録されています](https://wordpress.org/plugins/cidram/)。 プラグインダッシュボードからCIDRAMを直接インストールできます。 他のプラグインと同じ方法でインストールでき、追加手順は不要です。 他のインストール方法と同じように、`config.ini`ファイルの内容を変更してまたはフロントエンドのコンフィギュレーションページを使用してインストールをカスタマイズすることができます。 フロントエンドのアップデート・ページでCIDRAMを更新すると、プラグインバージョン情報がWordPressに自動的に同期されます。
 
 ---
 
@@ -281,6 +283,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+"truncate" （トランケート）
+- ログファイルが一定のサイズに達したら切り詰めますか？ 値は、ログファイルが切り捨てられる前に大きくなる可能性があるＫＢ単位の最大サイズです。 デフォルト値の「0」は切り捨てを無効にします （ログファイルは無期限に拡張できます）。 注：個々のログファイルに適用されます。 ログファイルのサイズは一括して考慮されません。
 
 "timeOffset" （タイム・オフセット）
 - お使いのサーバの時刻は、ローカル時刻と一致しない場合、あなたのニーズに応じて、時間を調整するために、あなたはここにオフセットを指定することができます。 しかし、その代わりに、一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、でも時々（といった、限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、したがって、このオプションは、ここで提供されています。 オフセット分であります。
@@ -611,6 +616,22 @@ Ignore セクション１
 
 ### 8. <a name="SECTION8"></a>よくある質問（FAQ）
 
+#### 「シグネチャ」とは何ですか？
+
+In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+
+`1.2.3.4/32 Deny Generic`
+
+Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+
+#### <a name="WHAT_IS_A_CIDR"></a>「ＣＩＤＲ」とは何ですか？
+
+"CIDR" is an acronym for "Classless Inter-Domain Routing" *[[1](https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+
+However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+
+Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+
 #### 「偽陽性」とは何ですか？
 
 一般化された文脈で簡単に説明、条件の状態をテストするときに、結果を参照する目的で、用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）の意味は、結果は「陽性」のようです、しかし結果は間違いです（即ち、真の条件は「陽性/真」とみなされます、しかしそれは本当に「陰性/偽」です）。 「偽陽性」は「泣く狼」に類似していると考えることができます（その状態は群の近くに狼がいるかどうかである、真の条件は「偽/陰性」です、群れの近くに狼がないからです、しかし条件は「真/陽性」として報告されます、羊飼いが「狼！狼！」を叫んだからです）、または、医療検査に類似、患者が誤って診断されたとき。
@@ -632,7 +653,7 @@ CIDRAMは、ＩＰアドレスをブロックします | __偽陽性__ | 真陽�
 
 #### シグネチャはどれくらいの頻度でアップデイトされますか？
 
-アップデイト頻度は、署名ファイルによって異なります。 CIDRAMのシグネチャファイルのすべてのメンテナーが頻繁にアップデイトを試みる、しかし、私たちの皆様には、他にもさまざまなコミットメントがあり、私たちはプロジェクトの外で生活しており、と誰も財政的に補償されていない、したがって、正確なアップデイトスケジュールは保証されません。 一般に、十分な時間があればシグネチャがアップデイトされます。 メンテナーは必要性と範囲間の変化の頻度に基づいて優先順位をつけようとする。 あなたが何かを提供できるのであれば、援助は常に高く評価されます。
+アップデイト頻度は、シグネチャファイルによって異なります。 CIDRAMのシグネチャファイルのすべてのメンテナーが頻繁にアップデイトを試みる、しかし、私たちの皆様には、他にもさまざまなコミットメントがあり、私たちはプロジェクトの外で生活しており、と誰も財政的に補償されていない、したがって、正確なアップデイトスケジュールは保証されません。 一般に、十分な時間があればシグネチャがアップデイトされます。 メンテナーは必要性と範囲間の変化の頻度に基づいて優先順位をつけようとする。 あなたが何かを提供できるのであれば、援助は常に高く評価されます。
 
 #### CIDRAMを使用しているときに問題が発生しましたが、何をすべきかわかりません！ 助けてください！
 
@@ -653,4 +674,4 @@ CIDRAMは、ウェブサイト所有者が望ましくないトラフィック�
 ---
 
 
-最終アップデート： 2017年4月14日。
+最終アップデート： 2017年4月22日。

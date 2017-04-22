@@ -207,10 +207,16 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
         $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['lang']['state_logged_in'] . "\n";
     }
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], 'a');
+        $CIDRAM['WriteMode'] = (
+            !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']) || (
+                $CIDRAM['Config']['general']['truncate'] &&
+                filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
+            )
+        ) ? 'w' : 'a';
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], $CIDRAM['WriteMode']);
         fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
         fclose($CIDRAM['Handle']);
-        unset($CIDRAM['FrontEndLog']);
+        unset($CIDRAM['WriteMode'], $CIDRAM['FrontEndLog']);
     }
 }
 

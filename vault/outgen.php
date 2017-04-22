@@ -523,7 +523,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                     )
                 ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '')
             );
-            $CIDRAM['logfileData']['mode'] = empty($CIDRAM['logfileData']['d']) ? 'w' : 'a';
+            $CIDRAM['logfileData']['Mode'] = !empty($CIDRAM['logfileData']['d']) ? 'w' : 'a';
             $CIDRAM['logfileData']['d'] .= $CIDRAM['ParseVars']($CIDRAM['Parsables'],
                 "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
                 "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
@@ -531,7 +531,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n" .
                 "{field_reCAPTCHA_state}{reCAPTCHA}\n\n"
             );
-            $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], $CIDRAM['logfileData']['mode']);
+            $CIDRAM['logfileData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile'], $CIDRAM['logfileData']['Mode']);
             fwrite($CIDRAM['logfileData']['f'], $CIDRAM['logfileData']['d']);
             fclose($CIDRAM['logfileData']['f']);
             unset($CIDRAM['logfileData']);
@@ -543,20 +543,20 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
                 $CIDRAM['BlockInfo']['IPAddr'],
                 $CIDRAM['BlockInfo']['DateTime'],
-                (empty($_SERVER['REQUEST_METHOD'])) ? 'UNKNOWN' : $_SERVER['REQUEST_METHOD'],
-                (empty($_SERVER['REQUEST_URI'])) ? '/' : $_SERVER['REQUEST_URI'],
-                (empty($_SERVER['SERVER_PROTOCOL'])) ? 'UNKNOWN/x.x' : $_SERVER['SERVER_PROTOCOL'],
+                (empty($_SERVER['REQUEST_METHOD']) ? 'UNKNOWN' : $_SERVER['REQUEST_METHOD']),
+                (empty($_SERVER['REQUEST_URI']) ? '/' : $_SERVER['REQUEST_URI']),
+                (empty($_SERVER['SERVER_PROTOCOL']) ? 'UNKNOWN/x.x' : $_SERVER['SERVER_PROTOCOL']),
                 $CIDRAM['errCode'],
                 strlen($CIDRAM['html']),
-                (empty($CIDRAM['BlockInfo']['Referrer'])) ? '-' : $CIDRAM['BlockInfo']['Referrer'],
-                (empty($CIDRAM['BlockInfo']['UA'])) ? '-' : $CIDRAM['BlockInfo']['UA']
-            ), 'mode' => ((
+                (empty($CIDRAM['BlockInfo']['Referrer']) ? '-' : $CIDRAM['BlockInfo']['Referrer']),
+                (empty($CIDRAM['BlockInfo']['UA']) ? '-' : $CIDRAM['BlockInfo']['UA'])
+            ), 'Mode' => ((
                 !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) || (
                     $CIDRAM['Config']['general']['truncate'] &&
                     filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
                 )
             ) ? 'w' : 'a'));
-            $CIDRAM['logfileApacheData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache'], $CIDRAM['logfileData']['mode']);
+            $CIDRAM['logfileApacheData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache'], $CIDRAM['logfileApacheData']['Mode']);
             fwrite($CIDRAM['logfileApacheData']['f'], $CIDRAM['logfileApacheData']['d']);
             fclose($CIDRAM['logfileApacheData']['f']);
             unset($CIDRAM['logfileApacheData']);

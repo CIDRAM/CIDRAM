@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.21).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = '検索エンジ�
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？ はいの場合は、リダイレクトの場所を指定します。いいえの場合は、この変数を空白のままにします。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAMで使用される日付表記形式。 追加のオプションがリクエストに応じて追加される場合があります。';
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
+$CIDRAM['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？ 値は、ログファイルが切り捨てられる前に大きくなる可能性があるＫＢ単位の最大サイズです。 デフォルト値の「0」は切り捨てを無効にします （ログファイルは無期限に拡張できます）。 注：個々のログファイルに適用されます。 ログファイルのサイズは一括して考慮されません。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHAインスタンスを覚えておく時間数。';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをＩＰにロックしますか？';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHAをユーザーにロックしますか？';

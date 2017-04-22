@@ -12,6 +12,12 @@ logfileApache=''
 ; or leave blank to disable.
 logfileSerialized=''
 
+; Truncate logfiles when they reach a certain size? Value is the maximum size
+; in KB that a logfile may grow to before being truncated. The default value of
+; 0 disables truncation (logfiles can grow indefinitely). Note: Applies to
+; individual logfiles! The size of logfiles is not considered collectively.
+truncate=0
+
 ; Timezone offset in minutes.
 timeOffset=0
 

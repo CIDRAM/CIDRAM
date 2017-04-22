@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.21).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = '嘗試驗證來�
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符號格式。可根據要求增加附加選項。';
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
+$CIDRAM['lang']['config_general_truncate'] = '截斷日誌文件當他們達到一定的大小嗎？ 值是在KB，是日誌文件允許的最大大小直到它被截斷。 默認值為“0”將禁用截斷（日誌文件可以無限成長）。 注意：適用於單個日誌文件！日誌文件大小不被算集體的。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '記得reCAPTCHA多少小時？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '應該reCAPTCHA鎖定到IP？';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = '應該reCAPTCHA鎖定到用戶？';

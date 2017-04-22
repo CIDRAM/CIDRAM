@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.21).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om verzoe
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
 $CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
+$CIDRAM['lang']['config_general_truncate'] = 'Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in KB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0 schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Aantal uren om reCAPTCHA instanties herinneren.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Binden reCAPTCHA om IPs?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Binden reCAPTCHA om gebruikers?';

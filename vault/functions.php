@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.21).
+ * This file: Functions file (last modified: 2017.04.22).
  */
 
 /**
@@ -1928,5 +1928,28 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
             $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'],
             $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description']
         );
+    }
+};
+
+/** Duplication avoidance (front-end IP test page and IP tracking page). */
+$CIDRAM['SimulateBlockEvent'] = function ($Addr) use (&$CIDRAM) {
+    $CIDRAM['BlockInfo'] = array(
+        'IPAddr' => $Addr,
+        'Query' => 'SimulateBlockEvent',
+        'Referrer' => '',
+        'UA' => '',
+        'UALC' => '',
+        'ReasonMessage' => '',
+        'SignatureCount' => 0,
+        'Signatures' => '',
+        'WhyReason' => '',
+        'xmlLang' => $CIDRAM['Config']['general']['lang'],
+        'rURI' => 'SimulateBlockEvent'
+    );
+    try {
+        $CIDRAM['Caught'] = false;
+        $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr);
+    } catch (\Exception $e) {
+        $CIDRAM['Caught'] = true;
     }
 };

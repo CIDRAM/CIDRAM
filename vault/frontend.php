@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.21).
+ * This file: Front-end handler (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1856,28 +1856,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             if (!$CIDRAM['ThisIP']['IPAddress']) {
                 continue;
             }
-            $CIDRAM['BlockInfo'] = array(
-                'IPAddr' => $CIDRAM['ThisIP']['IPAddress'],
-                'Query' => $CIDRAM['Query'],
-                'Referrer' => '',
-                'UA' => '',
-                'UALC' => '',
-                'ReasonMessage' => '',
-                'SignatureCount' => 0,
-                'Signatures' => '',
-                'WhyReason' => '',
-                'xmlLang' => $CIDRAM['Config']['general']['lang'],
-                'rURI' => 'FE'
-            );
-            try {
-                $CIDRAM['Caught'] = false;
-                $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['ThisIP']['IPAddress']);
-            } catch (\Exception $e) {
-                $CIDRAM['Caught'] = true;
+            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress']);
+            if ($CIDRAM['Caught']) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
-            }
-            if (!$CIDRAM['Caught']) {
+            } else {
                 if (!$CIDRAM['TestResults']) {
                     $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
                     $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
@@ -1959,25 +1942,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
                     continue;
                 }
-                $CIDRAM['BlockInfo'] = array(
-                    'IPAddr' => $CIDRAM['ThisTracking']['IPAddr'],
-                    'Query' => $CIDRAM['Query'],
-                    'Referrer' => '',
-                    'UA' => '',
-                    'UALC' => '',
-                    'ReasonMessage' => '',
-                    'SignatureCount' => 0,
-                    'Signatures' => '',
-                    'WhyReason' => '',
-                    'xmlLang' => $CIDRAM['Config']['general']['lang'],
-                    'rURI' => 'FE'
-                );
-                try {
-                    $CIDRAM['Caught'] = false;
-                    $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['ThisTracking']['IPAddr']);
-                } catch (\Exception $e) {
-                    $CIDRAM['Caught'] = true;
-                }
+                $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr']);
                 if ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']) {
                     continue;
                 }

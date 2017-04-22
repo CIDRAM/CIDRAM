@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2017.04.11).
+ * This file: reCAPTCHA module (last modified: 2017.04.22).
  */
 
 /**
@@ -218,11 +218,17 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
         $CIDRAM['Config']['recaptcha']['logfile'] =
             $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['recaptcha']['logfile']);
     }
+    $CIDRAM['reCAPTCHA']['WriteMode'] = (
+        !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']) || (
+            $CIDRAM['Config']['general']['truncate'] &&
+            filesize($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
+        )
+    ) ? 'w' : 'a';
     $CIDRAM['reCAPTCHA']['LogfileData'] =
         $CIDRAM['lang']['field_ipaddr'] . $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' .
         $CIDRAM['lang']['field_datetime'] . $CIDRAM['BlockInfo']['DateTime'] . ' - ' .
         $CIDRAM['lang']['field_reCAPTCHA_state'] . $CIDRAM['BlockInfo']['reCAPTCHA'] . "\n";
-    $CIDRAM['reCAPTCHA']['LogfileHandle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile'], 'a');
+    $CIDRAM['reCAPTCHA']['LogfileHandle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile'], $CIDRAM['reCAPTCHA']['WriteMode']);
     fwrite($CIDRAM['reCAPTCHA']['LogfileHandle'], $CIDRAM['reCAPTCHA']['LogfileData']);
     fclose($CIDRAM['reCAPTCHA']['LogfileHandle']);
 }

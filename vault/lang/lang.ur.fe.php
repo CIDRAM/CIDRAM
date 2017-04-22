@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.04.21).
+ * This file: Urdu language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = 'تلاش کے ا
 $CIDRAM['lang']['config_general_silent_mode'] = 'خاموشی CIDRAM چاہئے "رسائی نہیں ہوئی" کے صفحے کی نمائش سے بلاک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے بجائے؟ ہاں تو، کو بلاک کر تک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے محل وقوع کی وضاحت. کوئی تو اس متغیر خالی چھوڑ.';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استعمال کی تاریخوں کا فارم. اضافی اختیارات درخواست پر شامل کیا جا سکتا ہے.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
+$CIDRAM['lang']['config_general_truncate'] = 'وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں KB زیادہ سے زیادہ سائز ہے. جب 0، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'گھنٹوں کی تعداد reCAPTCHA کے واقعات کو یاد کرنے.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'ئی پی ایس کے لئے ہیتی لاک؟';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'صارفین کے لئے ہیتی لاک؟';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.04.21).
+ * This file: French language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = 'Essayez de véri
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page "Accès Refusé"? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur demande.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
+$CIDRAM['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille? La valeur est la taille maximale en KB qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0 désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque: S\'applique aux fichiers journaux individuels! La taille des fichiers journaux n\'est pas considérée collectivement.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Nombre d\'heures à retenir des instances reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Verrouiller reCAPTCHA aux adresses IP?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Verrouiller reCAPTCHA aux les utilisateurs?';

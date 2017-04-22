@@ -1475,8 +1475,8 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
         $Ver =
             preg_match("\x01" . '^v?([0-9]+)$' . "\x01i", $Ver, $Matches) ?:
             preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)$' . "\x01i", $Ver, $Matches) ?:
-            preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
-            preg_match("\x01" . '^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})([.+-][0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})(RC[0-9]{1,2}|[.+-][0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
             preg_match("\x01" . '^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$' . "\x01i", $Ver, $Matches);
         $Ver = array(
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,

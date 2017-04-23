@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.04.22).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không t�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập bị từ chối.';
+$CIDRAM['lang']['previewer_days'] = 'Ngày';
+$CIDRAM['lang']['previewer_hours'] = 'Giờ';
+$CIDRAM['lang']['previewer_minutes'] = 'Phút';
+$CIDRAM['lang']['previewer_months'] = 'Tháng';
+$CIDRAM['lang']['previewer_seconds'] = 'Giây';
+$CIDRAM['lang']['previewer_weeks'] = 'Tuần';
+$CIDRAM['lang']['previewer_years'] = 'Năm';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $CIDRAM['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';

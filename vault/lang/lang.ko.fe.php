@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.22).
+ * This file: Korean language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지
 $CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '로그가 선택되어 있지 않습니다.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = '로그인 시도 횟수를 초과했습니다; 액세스 거부.';
+$CIDRAM['lang']['previewer_days'] = '일';
+$CIDRAM['lang']['previewer_hours'] = '시간';
+$CIDRAM['lang']['previewer_minutes'] = '의사록';
+$CIDRAM['lang']['previewer_months'] = '개월';
+$CIDRAM['lang']['previewer_seconds'] = '초';
+$CIDRAM['lang']['previewer_weeks'] = '주';
+$CIDRAM['lang']['previewer_years'] = '연령';
 $CIDRAM['lang']['response_accounts_already_exists'] = '계정이 이미 존재합니다!';
 $CIDRAM['lang']['response_accounts_created'] = '계정 만들기에 성공했습니다!';
 $CIDRAM['lang']['response_accounts_deleted'] = '계정 삭제가 성공했습니다!';

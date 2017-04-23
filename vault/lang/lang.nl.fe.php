@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.22).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Geen logbestand geselecteerd.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maximum aantal inlogpogingen overschreden; Toegang geweigerd.';
+$CIDRAM['lang']['previewer_days'] = 'Dagen';
+$CIDRAM['lang']['previewer_hours'] = 'Uur';
+$CIDRAM['lang']['previewer_minutes'] = 'Minuten';
+$CIDRAM['lang']['previewer_months'] = 'Maanden';
+$CIDRAM['lang']['previewer_seconds'] = 'Seconden';
+$CIDRAM['lang']['previewer_weeks'] = 'Weken';
+$CIDRAM['lang']['previewer_years'] = 'Jaren';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Een account bij die gebruikersnaam bestaat al!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for CLI (last modified: 2016.04.10).
+ * This file: Thai language data for CLI (last modified: 2016.04.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,7 +27,7 @@ $CIDRAM['lang']['CLI_H'] = "
     -c  ตรวจสอบว่าที่อยู่ IP ถูกบล็อกโดยไฟล์ลายเซ็นของ CIDRAM.
     -g  สร้าง CIDR จากที่อยู่ IP.
 
- ใส่ข้อมูล: มันอาจจะใดที่อยู่ IP ถูกต้อง IPv4 หรือ IPv6.
+ ใส่ข้อมูล: มันอาจจะใด ๆ ที่อยู่ IP ถูกต้อง IPv4 หรือ IPv6.
 
  ตัวอย่าง:
         -c  192.168.0.0/16

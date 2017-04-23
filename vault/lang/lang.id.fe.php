@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.04.22).
+ * This file: Indonesian language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Tidak ada log dipilih.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak.';
+$CIDRAM['lang']['previewer_days'] = 'Hari';
+$CIDRAM['lang']['previewer_hours'] = 'Jam';
+$CIDRAM['lang']['previewer_minutes'] = 'Menit';
+$CIDRAM['lang']['previewer_months'] = 'Bulan';
+$CIDRAM['lang']['previewer_seconds'] = 'Detik';
+$CIDRAM['lang']['previewer_weeks'] = 'Minggu';
+$CIDRAM['lang']['previewer_years'] = 'Tahun';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $CIDRAM['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';

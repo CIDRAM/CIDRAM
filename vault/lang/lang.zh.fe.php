@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.22).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '选择的日志不存在！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '没有日志可用。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '没有选择的日志。';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = '最大登录尝试次数已经超过；拒绝访问。';
+$CIDRAM['lang']['previewer_days'] = '天';
+$CIDRAM['lang']['previewer_hours'] = '小时';
+$CIDRAM['lang']['previewer_minutes'] = '分';
+$CIDRAM['lang']['previewer_months'] = '月';
+$CIDRAM['lang']['previewer_seconds'] = '秒';
+$CIDRAM['lang']['previewer_weeks'] = '周';
+$CIDRAM['lang']['previewer_years'] = '年';
 $CIDRAM['lang']['response_accounts_already_exists'] = '一个账户与那个用户名已经存在！';
 $CIDRAM['lang']['response_accounts_created'] = '账户成功创建！';
 $CIDRAM['lang']['response_accounts_deleted'] = '账户成功删除！';

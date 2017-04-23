@@ -12,9 +12,11 @@ Config Defaults:
   truncate:
    type: int
    default: 0
+   preview: kb
   timeOffset:
    type: int
    default: 0
+   preview: minutes
   timeFormat:
    type: string
    default: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
@@ -189,6 +191,7 @@ Config Defaults:
   default_tracktime:
    type: int
    default: 604800
+   preview: seconds
   infraction_limit:
    type: int
    default: 10
@@ -215,6 +218,7 @@ Config Defaults:
    type: real
    step: any
    default: 720
+   preview: hours
   logfile:
    type: string
    default: ""

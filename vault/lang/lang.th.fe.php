@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.04.22).
+ * This file: Thai language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'ไฟล์บันทึก�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'ไม่มีไฟล์บันทึกใช้ได้.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'ไม่มีไฟล์บันทึกเลือก.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'จำนวนสูงสุดความพยายามเข้าสู่ระบบเกิน; ปฏิเสธการเข้าใช้.';
+$CIDRAM['lang']['previewer_days'] = 'วัน';
+$CIDRAM['lang']['previewer_hours'] = 'ชั่วโมง';
+$CIDRAM['lang']['previewer_minutes'] = 'นาที';
+$CIDRAM['lang']['previewer_months'] = 'เดือน';
+$CIDRAM['lang']['previewer_seconds'] = 'วินาที';
+$CIDRAM['lang']['previewer_weeks'] = 'สัปดาห์';
+$CIDRAM['lang']['previewer_years'] = 'ปี';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'บัญชีด้วยนั่นเองชื่อผู้ใช้มีอยู่แล้ว!';
 $CIDRAM['lang']['response_accounts_created'] = 'บัญชีสำเร็จแล้วสร้าง!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'บัญชีสำเร็จแล้วลบ!';

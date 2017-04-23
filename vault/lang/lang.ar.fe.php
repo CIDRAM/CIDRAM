@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.04.22).
+ * This file: Arabic language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'لا سجلات متاح.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'لا سجلات مختار.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول.';
+$CIDRAM['lang']['previewer_days'] = 'أيام';
+$CIDRAM['lang']['previewer_hours'] = 'ساعات';
+$CIDRAM['lang']['previewer_minutes'] = 'الدقائق';
+$CIDRAM['lang']['previewer_months'] = 'الشهور';
+$CIDRAM['lang']['previewer_seconds'] = 'ثواني';
+$CIDRAM['lang']['previewer_weeks'] = 'أسابيع';
+$CIDRAM['lang']['previewer_years'] = 'سنوات';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'حساب اسم المستخدم موجود بالفعل!';
 $CIDRAM['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';

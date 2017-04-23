@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.04.22).
+ * This file: English language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'No logfiles available.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'No logfile selected.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maximum number of login attempts exceeded; Access denied.';
+$CIDRAM['lang']['previewer_days'] = 'Days';
+$CIDRAM['lang']['previewer_hours'] = 'Hours';
+$CIDRAM['lang']['previewer_minutes'] = 'Minutes';
+$CIDRAM['lang']['previewer_months'] = 'Months';
+$CIDRAM['lang']['previewer_seconds'] = 'Seconds';
+$CIDRAM['lang']['previewer_weeks'] = 'Weeks';
+$CIDRAM['lang']['previewer_years'] = 'Years';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'An account with that username already exists!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account successfully created!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account successfully deleted!';

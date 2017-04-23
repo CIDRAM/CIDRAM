@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.22).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在し�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
+$CIDRAM['lang']['previewer_days'] = '日';
+$CIDRAM['lang']['previewer_hours'] = '時';
+$CIDRAM['lang']['previewer_minutes'] = '分';
+$CIDRAM['lang']['previewer_months'] = '月';
+$CIDRAM['lang']['previewer_seconds'] = '秒';
+$CIDRAM['lang']['previewer_weeks'] = '週';
+$CIDRAM['lang']['previewer_years'] = '年';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $CIDRAM['lang']['response_accounts_created'] = 'アカウントを作成に成功しました！';
 $CIDRAM['lang']['response_accounts_deleted'] = 'アカウントを削除が成功しました！';

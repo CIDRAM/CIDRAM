@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.04.22).
+ * This file: Russian language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Выбранный лог-фай
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Не лог-файлы доступны.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Не лог-файлы Выбранный.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Максимальное количество попыток входа в систему был превышен; Доступ закрыт.';
+$CIDRAM['lang']['previewer_days'] = 'Дни';
+$CIDRAM['lang']['previewer_hours'] = 'Часы';
+$CIDRAM['lang']['previewer_minutes'] = 'Минуты';
+$CIDRAM['lang']['previewer_months'] = 'Месяцы';
+$CIDRAM['lang']['previewer_seconds'] = 'Секунды';
+$CIDRAM['lang']['previewer_weeks'] = 'Недели';
+$CIDRAM['lang']['previewer_years'] = 'Лет';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Аккаунт с таким именем уже существует!';
 $CIDRAM['lang']['response_accounts_created'] = 'Аккаунт успешно создан!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';

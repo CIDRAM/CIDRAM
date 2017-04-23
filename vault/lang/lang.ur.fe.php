@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.04.22).
+ * This file: Urdu language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'منتخب شدہ لاگ فائ�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'کوئی لاگ مسلیں دستیاب.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'کوئی لاگ فائل کو منتخب کیا.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'لاگ ان کوششوں کی زیادہ سے زیادہ تعداد سے تجاوز کر گئی. رسائی مسترد کر دی.';
+$CIDRAM['lang']['previewer_days'] = 'دن';
+$CIDRAM['lang']['previewer_hours'] = 'گھنٹے';
+$CIDRAM['lang']['previewer_minutes'] = 'منٹس';
+$CIDRAM['lang']['previewer_months'] = 'مہینے';
+$CIDRAM['lang']['previewer_seconds'] = 'سیکنڈ';
+$CIDRAM['lang']['previewer_weeks'] = 'ہفتے';
+$CIDRAM['lang']['previewer_years'] = 'سال';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'وہ صارف نام کے ساتھ ایک اکاؤنٹ پہلے سے موجود ہے!';
 $CIDRAM['lang']['response_accounts_created'] = 'کاؤنٹ کامیابی سے تشکیل!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'اکاؤنٹ کامیابی سے خارج!';

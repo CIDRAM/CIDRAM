@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.04.22).
+ * This file: German language data for the front-end (last modified: 2017.04.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,6 +123,13 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei exis
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Keine Protokolldatei ausgewählt.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert.';
+$CIDRAM['lang']['previewer_days'] = 'Tage';
+$CIDRAM['lang']['previewer_hours'] = 'Stunden';
+$CIDRAM['lang']['previewer_minutes'] = 'Minuten';
+$CIDRAM['lang']['previewer_months'] = 'Monate';
+$CIDRAM['lang']['previewer_seconds'] = 'Sekunden';
+$CIDRAM['lang']['previewer_weeks'] = 'Wochen';
+$CIDRAM['lang']['previewer_years'] = 'Jahre';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Ein Konto mit diesem Benutzernamen ist bereits vorhanden!';
 $CIDRAM['lang']['response_accounts_created'] = 'Konto erfolgreich erstellt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Konto erfolgreich gelöscht!';

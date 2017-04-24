@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2017.04.22).
+ * This file: reCAPTCHA module (last modified: 2017.04.24).
  */
 
 /**
@@ -220,8 +220,8 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
     }
     $CIDRAM['reCAPTCHA']['WriteMode'] = (
         !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']) || (
-            $CIDRAM['Config']['general']['truncate'] &&
-            filesize($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
+            $CIDRAM['Config']['general']['truncate'] > 0 &&
+            filesize($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
         )
     ) ? 'w' : 'a';
     $CIDRAM['reCAPTCHA']['LogfileData'] =

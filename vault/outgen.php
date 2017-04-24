@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.04.22).
+ * This file: Output generator (last modified: 2017.04.24).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -518,8 +518,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             $CIDRAM['logfileData'] = array('d' =>
                 ((
                     !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']) || (
-                        $CIDRAM['Config']['general']['truncate'] &&
-                        filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
+                        $CIDRAM['Config']['general']['truncate'] > 0 &&
+                        filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
                     )
                 ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '')
             );
@@ -552,8 +552,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 (empty($CIDRAM['BlockInfo']['UA']) ? '-' : $CIDRAM['BlockInfo']['UA'])
             ), 'Mode' => ((
                 !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) || (
-                    $CIDRAM['Config']['general']['truncate'] &&
-                    filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
+                    $CIDRAM['Config']['general']['truncate'] > 0 &&
+                    filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
                 )
             ) ? 'w' : 'a'));
             $CIDRAM['logfileApacheData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache'], $CIDRAM['logfileApacheData']['Mode']);
@@ -567,8 +567,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             unset($CIDRAM['BlockInfo']['EmailAddr'], $CIDRAM['BlockInfo']['UALC'], $CIDRAM['BlockInfo']['favicon']);
             $CIDRAM['WriteMode'] = (
                 !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized']) || (
-                    $CIDRAM['Config']['general']['truncate'] &&
-                    filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized']) >= ($CIDRAM['Config']['general']['truncate'] * 1024)
+                    $CIDRAM['Config']['general']['truncate'] > 0 &&
+                    filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
                 )
             ) ? 'w' : 'a';
             $CIDRAM['logfileSerialData'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileSerialized'], $CIDRAM['WriteMode']);

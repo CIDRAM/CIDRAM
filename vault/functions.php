@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.22).
+ * This file: Functions file (last modified: 2017.04.24).
  */
 
 /**
@@ -890,8 +890,8 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
  * Fix incorrect typecasting for some for some variables that sometimes default
  * to strings instead of booleans or integers.
  */
-$CIDRAM['AutoType'] = function (&$Var, $Type = '') {
-    if ($Type === 'string') {
+$CIDRAM['AutoType'] = function (&$Var, $Type = '') use (&$CIDRAM) {
+    if ($Type === 'string' || $Type === 'timezone') {
         $Var = (string)$Var;
     } elseif ($Type === 'int' || $Type === 'integer') {
         $Var = (int)$Var;
@@ -899,6 +899,8 @@ $CIDRAM['AutoType'] = function (&$Var, $Type = '') {
         $Var = (real)$Var;
     } elseif ($Type === 'bool' || $Type === 'boolean') {
         $Var = (strtolower($Var) !== 'false' && $Var);
+    } elseif ($Type === 'kb') {
+        $Var = $CIDRAM['ReadBytes']($Var, 1);
     } else {
         $LVar = strtolower($Var);
         if ($LVar === 'true') {
@@ -1952,4 +1954,27 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr) use (&$CIDRAM) {
     } catch (\Exception $e) {
         $CIDRAM['Caught'] = true;
     }
+};
+
+/**
+ * Read byte value configuration directives as byte values.
+ *
+ * @param string $In Input.
+ * @param int $Mode Operating mode. 0 for true byte values, 1 for validating.
+ *      Default is 0.
+ * @return string|int Output (depends on operating mode).
+ */
+$CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
+    if (preg_match('/[KMGT][oB]$/i', $In)) {
+        $Unit = substr($In, -2, 1);
+    } elseif (preg_match('/[KMGToB]$/i', $In)) {
+        $Unit = substr($In, -1);
+    }
+    $Unit = isset($Unit) ? strtoupper($Unit) : 'K';
+    $In = (real)$In;
+    if ($Mode === 1) {
+        return $Unit === 'B' || $Unit === 'o' ? $In . 'B' : $In . $Unit . 'B';
+    }
+    $Multiply = array('K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776);
+    return (int)floor($In * (isset($Multiply[$Unit]) ? $Multiply[$Unit] : 1));
 };

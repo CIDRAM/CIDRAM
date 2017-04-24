@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.21).
+ * This file: Configuration handler (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -109,6 +109,11 @@ if ($CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
+
+/** Set timezone. */
+if (!empty($CIDRAM['Config']['general']['timezone']) && $CIDRAM['Config']['general']['timezone'] !== 'SYSTEM') {
+    date_default_timezone_set($CIDRAM['Config']['general']['timezone']);
+}
 
 /** Determine whether operating in CLI-mode. */
 $CIDRAM['CIDRAM_sapi'] = (

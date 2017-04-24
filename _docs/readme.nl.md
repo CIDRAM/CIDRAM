@@ -285,7 +285,7 @@ Algemene configuratie voor CIDRAM.
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "truncate"
-- Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in KB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0 schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.
+- Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.
 
 "timeOffset"
 - Als uw server tijd niet overeenkomt met uw lokale tijd, u kunt opgeven hier een offset om de datum/tijd informatie gegenereerd door CIDRAM aan te passen volgens uw behoeften. Het is in het algemeen in plaats aanbevolen de tijdzone richtlijn in uw bestand `php.ini` aan te passen, maar somtijds (zoals bij het werken met beperkte shared hosting providers) dit is niet altijd mogelijk om te voldoen, en dus, Dit optie is hier voorzien. Offset is in een minuten.
@@ -364,7 +364,7 @@ Configuratie voor signatures.
 - Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
 
 "modules"
-- Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.
+- Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma's.
 
 "default_tracktime"
 - Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).
@@ -674,4 +674,4 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 ---
 
 
-Laatste Bijgewerkt: 22 April 2017 (2017.04.22).
+Laatste Bijgewerkt: 24 April 2017 (2017.04.24).

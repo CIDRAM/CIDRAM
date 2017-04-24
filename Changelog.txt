@@ -37,6 +37,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   front-end configuration page in order to make it easier for users to handle
   configuration directives that deal with time and byte measurements.
 
+- [2017.04.22; NEW FEATURE; Maikuolan]: Added a new configuration directive
+  allowing users to override the default timezone set by PHP. Changed the way
+  that configuration directives dealing with byte measurements are handled as
+  such that the unit now may be specified alongside the directive value (i.e.,
+  byte measurements are no longer locked to predefined units); These byte
+  measurements will default to kilobytes when no unit has been specified.
+
 === Version/Release 0.9.0 ===
 MINOR RELEASE.
 

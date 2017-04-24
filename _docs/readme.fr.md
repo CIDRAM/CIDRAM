@@ -285,7 +285,7 @@ Configuration générale pour CIDRAM.
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "truncate"
-- Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille? La valeur est la taille maximale en KB qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0 désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque: S\'applique aux fichiers journaux individuels! La taille des fichiers journaux n\'est pas considérée collectivement.
+- Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque: S'applique aux fichiers journaux individuels! La taille des fichiers journaux n'est pas considérée collectivement.
 
 "timeOffset"
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par CIDRAM selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
@@ -674,4 +674,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 22 Avril 2017 (2017.04.22).
+Dernière Mise à Jour: 24 Avril 2017 (2017.04.24).

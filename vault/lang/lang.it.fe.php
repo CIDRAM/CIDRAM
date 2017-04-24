@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.04.23).
+ * This file: Italian language data for the front-end (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,7 +38,8 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = 'Tentativo di ver
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto.';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Fuso orario offset in minuti.';
-$CIDRAM['lang']['config_general_truncate'] = 'Troncare i file di log quando raggiungono una determinata dimensione? Il valore è la dimensione massima in KB che un file di log può crescere prima di essere troncato. Il valore predefinito di 0 disattiva il troncamento (i file di log possono crescere indefinitamente). Nota: Si applica ai singoli file di log! La dimensione dei file di log non viene considerata collettivamente.';
+$CIDRAM['lang']['config_general_timezone'] = 'Il vostro fuso orario.';
+$CIDRAM['lang']['config_general_truncate'] = 'Troncare i file di log quando raggiungono una determinata dimensione? Il valore è la dimensione massima in B/KB/MB/GB/TB che un file di log può crescere prima di essere troncato. Il valore predefinito di 0KB disattiva il troncamento (i file di log possono crescere indefinitamente). Nota: Si applica ai singoli file di log! La dimensione dei file di log non viene considerata collettivamente.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Numero di ore per ricordare le istanze reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Legare reCAPTCHA per IP?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Legare reCAPTCHA per gli utenti?';
@@ -96,6 +97,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
+$CIDRAM['lang']['field_system_timezone'] = 'Utilizza il fuso orario predefinito del sistema.';
 $CIDRAM['lang']['field_tracking'] = 'Monitoraggio';
 $CIDRAM['lang']['field_uninstall'] = 'Disinstallarlo';
 $CIDRAM['lang']['field_update'] = 'Aggiornarlo';

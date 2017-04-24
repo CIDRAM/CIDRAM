@@ -10,9 +10,12 @@ Config Defaults:
    type: string
    default: ""
   truncate:
-   type: int
-   default: 0
+   type: kb
+   default: "0KB"
    preview: kb
+  timezone:
+   type: timezone
+   default: "SYSTEM"
   timeOffset:
    type: int
    default: 0

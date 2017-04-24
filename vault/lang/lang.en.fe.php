@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.04.23).
+ * This file: English language data for the front-end (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,7 +38,8 @@ $CIDRAM['lang']['config_general_search_engine_verification'] = 'Attempt to verif
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
 $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format used by CIDRAM. Additional options may be added upon request.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
-$CIDRAM['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in KB that a logfile may grow to before being truncated. The default value of 0 disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
+$CIDRAM['lang']['config_general_timezone'] = 'Your timezone.';
+$CIDRAM['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lock reCAPTCHA to IPs?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Lock reCAPTCHA to users?';
@@ -96,6 +97,7 @@ $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
+$CIDRAM['lang']['field_system_timezone'] = 'Use system default timezone.';
 $CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstall';
 $CIDRAM['lang']['field_update'] = 'Update';

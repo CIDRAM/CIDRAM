@@ -82,9 +82,11 @@ Tag: AS48159
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 1.23%.
-# %Listed, abuseat.org (CBL-Listed): 1.71%.
-# Updated: 2016.09.09
+# %Listed, Google Malware Dashboard: 1.37%.
+# %Listed, CleanTalk.org: 13.98%.
+# %Listed, abuseat.org (CBL-Listed): 1.44%.
+# Stop Forum Spam (SFS) listings: 1,235.
+# Updated: 2016.09.09 / Checked: 2017.04.26
 
 2001:4188::/32 Deny Generic
 Tag: AS12880
@@ -275,8 +277,10 @@ recaptcha:
 
 
 # ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 3.23%.
-# Updated: 2016.01.21 / Checked: 2016.09.28
+# %Listed, Google Malware Dashboard: 4.41%.
+# %Listed, CleanTalk.org: 33.63%.
+# Stop Forum Spam (SFS) listings: 1,549.
+# Updated: 2016.01.21 / Checked: 2017.04.26
 
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
@@ -483,10 +487,11 @@ recaptcha:
 
 
 # ASN 45271 ("Idea Cellular Limited").
-# %Listed, abuseat.org (CBL-Listed): 19.97%.
-# Updated: 2016.09.04
+# %Listed, CleanTalk.org: 0.25%.
+# %Listed, abuseat.org (CBL-Listed): 9.39%.
+# Stop Forum Spam (SFS) listings: 242.
+# Updated: 2017.04.26
 
-2400:c700::/32 Deny Spam
 2402:8100::/48 Deny Spam
 2402:8100:2::/48 Deny Spam
 2402:8100:5::/48 Deny Spam
@@ -496,7 +501,7 @@ recaptcha:
 2402:8100:3010::/45 Deny Spam
 2402:8100:3020::/45 Deny Spam
 2402:8100:38c0::/42 Deny Spam
-2402:8100:3900::/42 Deny Spam
+2402:8100:3940::/42 Deny Spam
 Tag: Idea Cellular
 ---
 recaptcha:
@@ -504,8 +509,11 @@ recaptcha:
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
-# %Listed, Google Malware Dashboard: 1.58% (AS12530), 0.79% (AS15895), 0% (AS35081).
-# Updated: 2016.09.06
+# %Listed, Google Malware Dashboard: 7.67% (AS12530), 1.11% (AS15895), 0% (AS35081).
+# %Listed, CleanTalk.org: 13.27% (AS12530), 35.38% (AS15895), 0% (AS35081).
+# %Listed, abuseat.org (CBL-Listed): N/A (AS12530), 0.72% (AS15895), N/A (AS35081).
+# Stop Forum Spam (SFS) listings: 3,227 (AS12530), 5,878,827 (AS15895), 0 (AS35081).
+# Updated: 2016.09.06 / Checked: 2017.04.26
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -513,21 +521,25 @@ Tag: Kyivstar
 
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD").
-# %Listed, Google Malware Dashboard: 1.81%.
-# Updated: 2016.09.06
+# %Listed, Google Malware Dashboard: 1.86%.
+# %Listed, CleanTalk.org: 16.63%.
+# Stop Forum Spam (SFS) listings: 303,205.
+# Updated: 2017.04.26
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
 2a03:7380:600::/41 Deny Spam
+2a03:7380:700::/42 Deny Spam
 2a03:7380:1e00::/42 Deny Spam
 2a03:7380:1e80::/42 Deny Spam
 2a03:7380:1f40::/42 Deny Spam
 2a03:7380:1f80::/42 Deny Spam
-2a03:7380:2000::/41 Deny Spam
-2a03:7380:2080::/42 Deny Spam
+2a03:7380:2000::/40 Deny Spam
 2a03:7380:2100::/40 Deny Spam
-2a03:7380:2200::/39 Deny Spam
-2a03:7380:2400::/39 Deny Spam
+2a03:7380:2200::/40 Deny Spam
+2a03:7380:2300::/40 Deny Spam
+2a03:7380:2400::/40 Deny Spam
+2a03:7380:2500::/42 Deny Spam
 2a03:7380:2fc0::/42 Deny Spam
 2a03:7380:3000::/42 Deny Spam
 2a03:7380:30c0::/42 Deny Spam
@@ -535,19 +547,18 @@ Tag: Kyivstar
 2a03:7380:3800::/40 Deny Spam
 2a03:7380:4000::/41 Deny Spam
 2a03:7380:4080::/42 Deny Spam
-2a03:7380:5400::/41 Deny Spam
-2a03:7380:5480::/42 Deny Spam
 2a03:7380:5840::/42 Deny Spam
 2a03:7380:5c00::/42 Deny Spam
 2a03:7380:5c80::/42 Deny Spam
 2a03:7380:6000::/41 Deny Spam
-2a03:7380:6400::/42 Deny Spam
 Tag: AS13188-CDN-LTD
 
 
 # ASN 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.19%.
-# Updated: 2016.09.06
+# %Listed, Google Malware Dashboard: 0.16%.
+# %Listed, CleanTalk.org: 42.04%.
+# Stop Forum Spam (SFS) listings: 75,397.
+# Updated: 2016.09.06 / Checked: 2017.04.26
 
 2a02:f680::/29 Deny Spam
 Tag: MAROSNET
@@ -555,7 +566,8 @@ Tag: MAROSNET
 
 # ASNs 43037, 200600 ("Seznam.cz").
 # %Listed, Google Malware Dashboard: 1.45% (AS43037), 0% (AS200600).
-# Updated: 2016.09.06
+# %Listed, CleanTalk.org: 76.12% (AS43037), 0% (AS200600).
+# Updated: 2016.09.06 / Checked: 2017.04.26
 
 2a02:598::/32 Deny Spam
 2a06:2140::/29 Deny Spam
@@ -563,11 +575,10 @@ Tag: Seznam.cz
 
 
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
-# %Listed, Google Malware Dashboard: 3.10% (AS7552), 2.87% (AS24086), 0% (AS37620/AS133606/AS262210/AS327799/AS327885).
-# %Listed, abuseat.org (CBL-Listed): 1.12% (AS7552), 1.52% (AS24086).
-# Updated: 2016.09.06
+# Legit/real human endpoint ISP with high levels of spam/abuse reports listed at various DBs. List in the "Ignores.dat"
+# file if the signature section causes any problems.
+# Updated: 2017.04.26
 
-2401:800:63ff:1::/64 Deny Spam
 2402:800::/32 Deny Spam
 Tag: Viettel Corporation
 ---
@@ -576,7 +587,9 @@ recaptcha:
 
 
 # ASN 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# Updated: 2016.09.09
+# %Listed, CleanTalk.org: 11.20%.
+# Stop Forum Spam (SFS) listings: 48,827.
+# Updated: 2016.09.09 / Checked: 2017.04.26
 
 2a02:1c8:7::/48 Deny Spam
 2a02:1c8:700::/40 Deny Spam
@@ -592,9 +605,11 @@ recaptcha:
 # I think it would be unwise to not block this AS. However, I'm marking it for use with reCAPTCHA, and those CIDRAM
 # users that don't want to block it can drop this section's tag into the ignore list as a means of ignoring this
 # listing if they want to do so. May remove this section in the future if the AS cleans up their act.
-# %Listed, Google Malware Dashboard: 1.34%.
-# %Listed, abuseat.org (CBL-Listed): 16.55%.
-# Updated: 2016.09.09
+# %Listed, Google Malware Dashboard: 1.24%.
+# %Listed, CleanTalk.org: 6.84%.
+# %Listed, abuseat.org (CBL-Listed): 7.54%.
+# Stop Forum Spam (SFS) listings: 9,536.
+# Updated: 2017.04.26
 
 2001:4490:3ffc::/46 Deny Spam
 2001:4490:7000::/46 Deny Spam
@@ -614,9 +629,10 @@ recaptcha:
 2001:4490:d380::/46 Deny Spam
 2001:4490:d4c0::/46 Deny Spam
 2001:4490:d500::/46 Deny Spam
-2001:4490:d660::/46 Deny Spam
+2001:4490:d660::/45 Deny Spam
 2001:4490:d700::/46 Deny Spam
 2001:4490:d760::/46 Deny Spam
+2001:4490:d780::/46 Deny Spam
 2001:4490:d7a0::/46 Deny Spam
 2001:4490:d800::/46 Deny Spam
 2001:4490:d820::/46 Deny Spam
@@ -629,14 +645,17 @@ recaptcha:
 2001:4490:db40::/46 Deny Spam
 2001:4490:dbf0::/46 Deny Spam
 2001:4490:dc4c::/46 Deny Spam
+2001:4490:dda8::/45 Deny Spam
+2001:4490:ddb0::/46 Deny Spam
 2001:4490:de18::/46 Deny Spam
 2001:4490:de24::/46 Deny Spam
+2001:4490:dfa8::/46 Deny Spam
 2001:4490:e000::/46 Deny Spam
-2001:4490:eff8::/46 Deny Spam
-2001:4490:effc::/46 Deny Spam
+2001:4490:efe4::/46 Deny Spam
+2001:4490:efe8::/45 Deny Spam
+2001:4490:eff0::/44 Deny Spam
 2001:4490:f020::/46 Deny Spam
 2001:4490:fffc::/46 Deny Spam
-2600:1417:50::/48 Deny Spam
 2600:1417:62::/48 Deny Spam
 Tag: BSNL
 ---
@@ -650,13 +669,15 @@ recaptcha:
 # events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
 # tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
 # that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
-# false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
-# traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
-# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
-# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 6.37%.
-# %Listed, abuseat.org (CBL-Listed): 0.42%.
-# Updated: 2016.09.12
+# false positives, and I would encourage any CIDRAM users expecting to receive any traffic from China, to list this
+# section in their "Ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
+# approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
+# to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 3.53%.
+# %Listed, CleanTalk.org: 37.78%.
+# %Listed, abuseat.org (CBL-Listed): 0.61%.
+# Stop Forum Spam (SFS) listings: 629,550.
+# Updated: 2016.09.12 / Checked: 2017.04.26
 
 2406:8500::/32 Deny Generic
 240e::/24 Deny Generic
@@ -672,13 +693,15 @@ recaptcha:
 # events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
 # tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
 # that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
-# false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
-# traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
-# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
-# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.58%.
-# %Listed, abuseat.org (CBL-Listed): 0.25%.
-# Updated: 2016.09.14
+# false positives, and I would encourage any CIDRAM users expecting to receive any traffic from China, to list this
+# section in their "Ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
+# approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
+# to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 2.33%.
+# %Listed, CleanTalk.org: 25.25%.
+# %Listed, abuseat.org (CBL-Listed): 0.36%.
+# Stop Forum Spam (SFS) listings: 81,548.
+# Updated: 2016.09.14 / Checked: 2017.04.26
 
 2408:8000::/24 Deny Generic
 Tag: China Backbone 4837
@@ -692,15 +715,18 @@ recaptcha:
 # risk of false positives, but the numerous records of spamming events seen originating from across a wide range of
 # CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
 # considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
-# the risk of false positives, and I would encourage any Taiwanese CIDRAM users, and any CIDRAM users expecting to
-# receive any traffic from Taiwan, to list this section in their ignore file as a means of minimising the potential
-# impact of false positives. A balanced approach for those that may expect some such traffic, but not a lot of it,
-# would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 1.09%.
-# %Listed, abuseat.org (CBL-Listed): 1.37%.
-# Updated: 2016.09.14
+# the risk of false positives, and I would encourage any CIDRAM users expecting to receive any traffic from Taiwan, to
+# list this section in their "Ignore.dat" file as a means of minimising the potential impact of false positives. A
+# balanced approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this
+# section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 0.98%.
+# %Listed, CleanTalk.org: 26.67%.
+# %Listed, abuseat.org (CBL-Listed): 0.51%.
+# Stop Forum Spam (SFS) listings: 18,337.
+# Updated: 2017.04.26
 
-2001:b032:7::/47 Deny Generic
+2001:b032:7::/48 Deny Generic
+2001:b032:8::/48 Deny Generic
 2001:b032:b::/48 Deny Generic
 2001:b032:c::/46 Deny Generic
 2001:b032:10::/47 Deny Generic
@@ -794,28 +820,49 @@ recaptcha:
  enabled: true
 
 
-# ASNs 9498, 24560, 45514, 45609 ("Bharti Airtel").
+# ASNs 9498, 9730, 24560, 45514, 45517, 45609, 132045 ("Bharti Airtel").
 # Interlaces with numerous providers and contains a large portion of Indian human access endpoints; Would rather not
 # be including this section here due to the high risk of false positives, but the significant number of spamming events
-# originating from CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists,
-# are not considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA
-# due to the risk of false positives, and I would encourage any Indian CIDRAM users, and any CIDRAM users expecting to
-# receive any traffic from India, to list this section in their ignore file as a means of minimising the potential
-# impact of false positives. A balanced approach for those that may expect some such traffic, but not a lot of it,
-# would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 1.49% (AS9498), 1.82% (AS24560), 0% (AS45514/AS45609).
-# %Listed, abuseat.org (CBL-Listed): 9.74% (AS24560), 3.05% (AS45609).
-# Updated: 2016.09.12
+# originating from CIDRs tied these ASNs, plus the presence of these ASNs in numerous worst offenders lists and
+# blacklists, are not considerations that can be easily ignored at this point in time. The section is marked for use
+# with reCAPTCHA due to the risk of false positives, and I would encourage any CIDRAM users expecting to receive any
+# traffic from India, to list this section in their "Ignore.dat" file as a means of minimising the potential impact of
+# false positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to
+# not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# Updated: 2017.04.26
 
+2400:ff00::/32 Deny Spam
 2401:4900:808::/45 Deny Spam
 2401:4900:810::/44 Deny Spam
 2401:4900:840::/44 Deny Spam
-2401:4900:880::/45 Deny Spam
-2401:4900:900::/45 Deny Spam
+2401:4900:880::/44 Deny Spam
 2401:4900:940::/45 Deny Spam
-2401:4900:980::/45 Deny Spam
+2401:4900:980::/41 Deny Spam
+2401:4900:a00::/40 Deny Spam
+2401:4900:b00::/41 Deny Spam
+2401:4900:c80::/41 Deny Spam
+2401:4900:d00::/41 Deny Spam
+2401:4900:1000::/41 Deny Spam
 2401:4900:1100::/41 Deny Spam
+2401:4900:1800::/40 Deny Spam
+2401:4900:1900::/41 Deny Spam
+2401:4900:1980::/44 Deny Spam
+2401:4900:1990::/44 Deny Spam
+2401:4900:19a0::/44 Deny Spam
+2401:4900:19b0::/44 Deny Spam
+2401:4900:19c0::/44 Deny Spam
+2401:4900:19d0::/44 Deny Spam
+2401:4900:19e0::/44 Deny Spam
+2401:4900:19f0::/44 Deny Spam
+2401:4900:2000::/48 Deny Spam
+2401:4900:2080::/48 Deny Spam
+2401:4900:2100::/48 Deny Spam
+2401:4900:2180::/41 Deny Spam
+2401:4900:2280::/48 Deny Spam
+2401:4900:2300::/48 Deny Spam
+2401:4900:2340::/48 Deny Spam
 2404:a800::/32 Deny Spam
+2405:a700:14::/47 Deny Spam
 2407:7400::/48 Deny Spam
 2600:140f:b::/48 Deny Spam
 2600:140f:d::/48 Deny Spam
@@ -824,6 +871,7 @@ recaptcha:
 2600:1417:20::/48 Deny Spam
 2600:1417:2c::/48 Deny Spam
 2600:1417:53::/48 Deny Spam
+2600:1417:55::/48 Deny Spam
 2600:1417:56::/48 Deny Spam
 2600:1417:6a::/47 Deny Spam
 2600:1417:6d::/48 Deny Spam

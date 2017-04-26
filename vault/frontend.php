@@ -2053,7 +2053,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             /** Alternate between operating modes. */
             if (!empty($CIDRAM['Cache']['Subnets']) && is_array($CIDRAM['Cache']['Subnets'])) {
                 /** Skip banned/blocked IPs (required by some specific custom modules; not a standard feature). */
-                if ($CIDRAM['ThisTracking']['Blocked']) {
+                if ($CIDRAM['ThisTracking']['Blocked'] || $CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
                     continue;
                 }
                 $CIDRAM['ThisTrackingArr']['TimeCheck'] = $CIDRAM['ThisTrackingArr']['Time'] - $CIDRAM['Config']['signatures']['default_tracktime'];

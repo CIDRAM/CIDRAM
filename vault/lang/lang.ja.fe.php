@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.24).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'ファイル名： ';
 $CIDRAM['lang']['field_filetype_directory'] = 'ディレクトリ';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}ファイル';
 $CIDRAM['lang']['field_filetype_unknown'] = '不明です';
+$CIDRAM['lang']['field_first_seen'] = '最初に見たとき';
 $CIDRAM['lang']['field_infractions'] = '違反';
 $CIDRAM['lang']['field_install'] = 'インストール';
 $CIDRAM['lang']['field_ip_address'] = 'ＩＰアドレス';

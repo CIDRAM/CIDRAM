@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.04.24).
+ * This file: Thai language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'ชื่อไฟล์: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'ไดเรกทอรี';
 $CIDRAM['lang']['field_filetype_info'] = 'ไฟล์ {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'ไม่รู้จัก';
+$CIDRAM['lang']['field_first_seen'] = 'เมื่อเห็นครั้งแรก';
 $CIDRAM['lang']['field_infractions'] = 'การละเมิด';
 $CIDRAM['lang']['field_install'] = 'ติดตั้ง';
 $CIDRAM['lang']['field_ip_address'] = 'ที่อยู่ IP';

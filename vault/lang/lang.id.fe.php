@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.04.24).
+ * This file: Indonesian language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'Nama file: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Direktori';
 $CIDRAM['lang']['field_filetype_info'] = 'File {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Tidak Diketahui';
+$CIDRAM['lang']['field_first_seen'] = 'Pertama Dilihat';
 $CIDRAM['lang']['field_infractions'] = 'Pelanggaran';
 $CIDRAM['lang']['field_install'] = 'Instal';
 $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.04.24).
+ * This file: Arabic language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'اسم الملف: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'مجلد';
 $CIDRAM['lang']['field_filetype_info'] = 'ملف {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'غير معروف';
+$CIDRAM['lang']['field_first_seen'] = 'الروية الأولى';
 $CIDRAM['lang']['field_infractions'] = 'مخالفات';
 $CIDRAM['lang']['field_install'] = 'تثبيت';
 $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';

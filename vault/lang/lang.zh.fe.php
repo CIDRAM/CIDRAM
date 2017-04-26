@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.24).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = '文件名：';
 $CIDRAM['lang']['field_filetype_directory'] = '文件夹';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}文件';
 $CIDRAM['lang']['field_filetype_unknown'] = '未知';
+$CIDRAM['lang']['field_first_seen'] = '当第一次遇到';
 $CIDRAM['lang']['field_infractions'] = '违规';
 $CIDRAM['lang']['field_install'] = '安装';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';

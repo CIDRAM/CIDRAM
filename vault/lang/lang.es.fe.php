@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.04.24).
+ * This file: Spanish language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'Nombre del archivo: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Directorio';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Archivo';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Desconocido';
+$CIDRAM['lang']['field_first_seen'] = 'Cuando se vio por primera vez';
 $CIDRAM['lang']['field_infractions'] = 'Infracciones';
 $CIDRAM['lang']['field_install'] = 'Instalar';
 $CIDRAM['lang']['field_ip_address'] = 'Dirección IP';

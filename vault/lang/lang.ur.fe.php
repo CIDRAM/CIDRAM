@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.04.24).
+ * This file: Urdu language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'فائل کا نام: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'ڈائریکٹری';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} فائل';
 $CIDRAM['lang']['field_filetype_unknown'] = 'نامعلوم';
+$CIDRAM['lang']['field_first_seen'] = 'سب سے پہلے دیکھا';
 $CIDRAM['lang']['field_infractions'] = 'انحرافات';
 $CIDRAM['lang']['field_install'] = 'انسٹال کریں';
 $CIDRAM['lang']['field_ip_address'] = 'IP پتہ';
@@ -215,8 +216,8 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – متبادل ڈاؤن آئینے CIDRAM لئے.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">انٹرنیشنل PHP گروپ @ فیس بک</a> – پی ایچ پی سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="https://wwphp-fb.github.io/">انٹرنیشنل PHP گروپ @ GitHub کے</a> – پی ایچ پی سیکھنے کے وسائل اور بحث.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">انٹرنیشنل PHP گروپ @ فیس بک</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+            <li><a href="https://wwphp-fb.github.io/">انٹرنیشنل PHP گروپ @ GitHub کے</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="http://bgp.he.net/">سمندری طوفان کے لئے الیکٹرک BGP ٹول کٹ</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
             <li><a href="https://www.stopforumspam.com/forum/">فورم @ سٹاپ فورم اسپیم</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
             <li><a href="https://www.stopforumspam.com/aggregate">IP ایگریگیٹر @ سٹاپ فورم سپیم کے لئے – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>

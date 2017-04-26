@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.24).
+ * This file: Front-end handler (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2047,31 +2047,40 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
             if (!isset($CIDRAM['ThisTrackingArr']['Time']) || !isset($CIDRAM['ThisTrackingArr']['Count'])) {
                 continue;
             }
-            /** Skip banned IPs (required by some specific custom modules; not a standard feature). */
+            /** Check whether normally blocked by signature files. */
+            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr']);
+            $CIDRAM['ThisTracking']['Blocked'] = ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']);
+            /** Alternate between operating modes. */
             if (!empty($CIDRAM['Cache']['Subnets']) && is_array($CIDRAM['Cache']['Subnets'])) {
-                if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
+                /** Skip banned/blocked IPs (required by some specific custom modules; not a standard feature). */
+                if ($CIDRAM['ThisTracking']['Blocked']) {
                     continue;
                 }
-                $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr']);
-                if ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']) {
-                    continue;
-                }
+                $CIDRAM['ThisTrackingArr']['TimeCheck'] = $CIDRAM['ThisTrackingArr']['Time'] - $CIDRAM['Config']['signatures']['default_tracktime'];
+                $CIDRAM['ThisTracking']['Options'] = ($CIDRAM['ThisTrackingArr']['TimeCheck'] < $CIDRAM['Now']) ? $CIDRAM['TimeFormat'](
+                    $CIDRAM['ThisTrackingArr']['Time'] - $CIDRAM['Config']['signatures']['default_tracktime'],
+                    $CIDRAM['Config']['general']['timeFormat']
+                ) : $CIDRAM['lang']['field_filetype_unknown'];
+            } else {
+                /** Set clearing option. */
+                $CIDRAM['ThisTracking']['Options'] = ($CIDRAM['ThisTrackingArr']['Count'] > 0) ?
+                    '<input type="submit" value="' . $CIDRAM['lang']['field_clear'] . '" class="auto" />' : '';
             }
             $CIDRAM['ThisTracking']['Expiry'] =
                 $CIDRAM['TimeFormat']($CIDRAM['ThisTrackingArr']['Time'], $CIDRAM['Config']['general']['timeFormat']);
             if ($CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
                 $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_banned'];
-            } elseif ($CIDRAM['ThisTrackingArr']['Count'] > ($CIDRAM['Config']['signatures']['infraction_limit'] / 2)) {
+            } elseif ($CIDRAM['ThisTrackingArr']['Count'] >= ($CIDRAM['Config']['signatures']['infraction_limit'] / 2)) {
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtOe';
                 $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_tracking'];
             } else {
                 $CIDRAM['ThisTracking']['StatClass'] = 's';
                 $CIDRAM['ThisTracking']['Status'] = $CIDRAM['lang']['field_tracking'];
             }
-            $CIDRAM['ThisTracking']['Options'] = '';
-            if ($CIDRAM['ThisTrackingArr']['Count'] > 0) {
-                $CIDRAM['ThisTracking']['Options'] .= '<input type="submit" value="' . $CIDRAM['lang']['field_clear'] . '" class="auto" />';
+            if ($CIDRAM['ThisTracking']['Blocked']) {
+                $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
+                $CIDRAM['ThisTracking']['Status'] .= '/' . $CIDRAM['lang']['field_blocked'];
             }
             $CIDRAM['ThisTracking']['Status'] .= ' – ' . number_format($CIDRAM['ThisTrackingArr']['Count']);
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
@@ -2083,6 +2092,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     /** Cleanup. */
     unset($CIDRAM['Cache'], $CIDRAM['ThisTracking']);
+
+    /** Set options label. */
+    $CIDRAM['FE']['OptionsLabel'] = (
+        !empty($CIDRAM['Cache']['Subnets']) && is_array($CIDRAM['Cache']['Subnets']) ? $CIDRAM['lang']['field_first_seen'] : $CIDRAM['lang']['field_options']
+    );
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

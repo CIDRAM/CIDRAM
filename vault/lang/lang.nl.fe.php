@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.24).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'Bestandsnaam: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Bestandsmap';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Bestand';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Onbekend';
+$CIDRAM['lang']['field_first_seen'] = 'Eerst Gezien';
 $CIDRAM['lang']['field_infractions'] = 'Overtredingen';
 $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';

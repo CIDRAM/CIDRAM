@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.04.24).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = 'Tên tập tin: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Thư Mục';
 $CIDRAM['lang']['field_filetype_info'] = 'Tập Tin {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Không Xác Định';
+$CIDRAM['lang']['field_first_seen'] = 'Lần đầu tiên nhìn thấy';
 $CIDRAM['lang']['field_infractions'] = 'Vi phạm';
 $CIDRAM['lang']['field_install'] = 'Cài Đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';

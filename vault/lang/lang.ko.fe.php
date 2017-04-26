@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.24).
+ * This file: Korean language data for the front-end (last modified: 2017.04.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -76,6 +76,7 @@ $CIDRAM['lang']['field_filename'] = '파일 이름: ';
 $CIDRAM['lang']['field_filetype_directory'] = '디렉토리';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} 파일';
 $CIDRAM['lang']['field_filetype_unknown'] = '알 수없는';
+$CIDRAM['lang']['field_first_seen'] = '처음 보았을 때';
 $CIDRAM['lang']['field_infractions'] = '위반';
 $CIDRAM['lang']['field_install'] = '설치';
 $CIDRAM['lang']['field_ip_address'] = 'IP 주소';

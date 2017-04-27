@@ -162,59 +162,59 @@ Arquivo | Descrição
 /vault/fe_assets/frontend.css | Folha de estilo CSS para o front-end.
 /vault/fe_assets/frontend.dat | Banco de dados para o front-end (contém informações de contas, informações de sessões, eo cache; gerado só se o front-end está habilitado e usado).
 /vault/fe_assets/frontend.html | O arquivo modelo HTML principal para o front-end.
-/vault/lang/ | Contém linguagem dados.
+/vault/lang/ | Contém dados lingüísticos.
 /vault/lang/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
-/vault/lang/lang.ar.cli.php | Linguagem dados Árabe para CLI.
-/vault/lang/lang.ar.fe.php | Linguagem dados Árabe para o front-end.
-/vault/lang/lang.ar.php | Linguagem dados Árabe.
-/vault/lang/lang.de.cli.php | Linguagem dados Alemão para CLI.
-/vault/lang/lang.de.fe.php | Linguagem dados Alemão para o front-end.
-/vault/lang/lang.de.php | Linguagem dados Alemão.
-/vault/lang/lang.en.cli.php | Linguagem dados Inglês para CLI.
-/vault/lang/lang.en.fe.php | Linguagem dados Inglês para o front-end.
-/vault/lang/lang.en.php | Linguagem dados Inglês.
-/vault/lang/lang.es.cli.php | Linguagem dados Espanhol para CLI.
-/vault/lang/lang.es.fe.php | Linguagem dados Espanhol para o front-end.
-/vault/lang/lang.es.php | Linguagem dados Espanhol.
-/vault/lang/lang.fr.cli.php | Linguagem dados Francesa para CLI.
-/vault/lang/lang.fr.fe.php | Linguagem dados Francesa para o front-end.
-/vault/lang/lang.fr.php | Linguagem dados Francesa.
-/vault/lang/lang.id.cli.php | Linguagem dados Indonésio para CLI.
-/vault/lang/lang.id.fe.php | Linguagem dados Indonésio para o front-end.
-/vault/lang/lang.id.php | Linguagem dados Indonésio.
-/vault/lang/lang.it.cli.php | Linguagem dados Italiano para CLI.
-/vault/lang/lang.it.fe.php | Linguagem dados Italiano para o front-end.
-/vault/lang/lang.it.php | Linguagem dados Italiano.
-/vault/lang/lang.ja.cli.php | Linguagem dados Japonês para CLI.
-/vault/lang/lang.ja.fe.php | Linguagem dados Japonês para o front-end.
-/vault/lang/lang.ja.php | Linguagem dados Japonês.
-/vault/lang/lang.ko.cli.php | Linguagem dados Coreano para CLI.
-/vault/lang/lang.ko.fe.php | Linguagem dados Coreano para o front-end.
-/vault/lang/lang.ko.php | Linguagem dados Coreano.
-/vault/lang/lang.nl.cli.php | Linguagem dados Holandês para CLI.
-/vault/lang/lang.nl.fe.php | Linguagem dados Holandês para o front-end.
-/vault/lang/lang.nl.php | Linguagem dados Holandês.
-/vault/lang/lang.pt.cli.php | Linguagem dados Português para CLI.
-/vault/lang/lang.pt.fe.php | Linguagem dados Português para o front-end.
-/vault/lang/lang.pt.php | Linguagem dados Português.
-/vault/lang/lang.ru.cli.php | Linguagem dados Russo para CLI.
-/vault/lang/lang.ru.fe.php | Linguagem dados Russo para o front-end.
-/vault/lang/lang.ru.php | Linguagem dados Russo.
-/vault/lang/lang.th.cli.php | Linguagem dados Tailandês para CLI.
-/vault/lang/lang.th.fe.php | Linguagem dados Tailandês para o front-end.
-/vault/lang/lang.th.php | Linguagem dados Tailandês.
-/vault/lang/lang.ur.cli.php | Linguagem dados Urdu para CLI.
-/vault/lang/lang.ur.fe.php | Linguagem dados Urdu para o front-end.
-/vault/lang/lang.ur.php | Linguagem dados Urdu.
-/vault/lang/lang.vi.cli.php | Linguagem dados Vietnamita para CLI.
-/vault/lang/lang.vi.fe.php | Linguagem dados Vietnamita para o front-end.
-/vault/lang/lang.vi.php | Linguagem dados Vietnamita.
-/vault/lang/lang.zh-tw.cli.php | Linguagem dados Chinês (tradicional) para CLI.
-/vault/lang/lang.zh-tw.fe.php | Linguagem dados Chinês (tradicional) para o front-end.
-/vault/lang/lang.zh-tw.php | Linguagem dados Chinês (tradicional).
-/vault/lang/lang.zh.cli.php | Linguagem dados Chinês (simplificado) para CLI.
-/vault/lang/lang.zh.fe.php | Linguagem dados Chinês (simplificado) para o front-end.
-/vault/lang/lang.zh.php | Linguagem dados Chinês (simplificado).
+/vault/lang/lang.ar.cli.php | Dados lingüísticos Árabe para CLI.
+/vault/lang/lang.ar.fe.php | Dados lingüísticos Árabe para o front-end.
+/vault/lang/lang.ar.php | Dados lingüísticos Árabe.
+/vault/lang/lang.de.cli.php | Dados lingüísticos Alemão para CLI.
+/vault/lang/lang.de.fe.php | Dados lingüísticos Alemão para o front-end.
+/vault/lang/lang.de.php | Dados lingüísticos Alemão.
+/vault/lang/lang.en.cli.php | Dados lingüísticos Inglês para CLI.
+/vault/lang/lang.en.fe.php | Dados lingüísticos Inglês para o front-end.
+/vault/lang/lang.en.php | Dados lingüísticos Inglês.
+/vault/lang/lang.es.cli.php | Dados lingüísticos Espanhol para CLI.
+/vault/lang/lang.es.fe.php | Dados lingüísticos Espanhol para o front-end.
+/vault/lang/lang.es.php | Dados lingüísticos Espanhol.
+/vault/lang/lang.fr.cli.php | Dados lingüísticos Francesa para CLI.
+/vault/lang/lang.fr.fe.php | Dados lingüísticos Francesa para o front-end.
+/vault/lang/lang.fr.php | Dados lingüísticos Francesa.
+/vault/lang/lang.id.cli.php | Dados lingüísticos Indonésio para CLI.
+/vault/lang/lang.id.fe.php | Dados lingüísticos Indonésio para o front-end.
+/vault/lang/lang.id.php | Dados lingüísticos Indonésio.
+/vault/lang/lang.it.cli.php | Dados lingüísticos Italiano para CLI.
+/vault/lang/lang.it.fe.php | Dados lingüísticos Italiano para o front-end.
+/vault/lang/lang.it.php | Dados lingüísticos Italiano.
+/vault/lang/lang.ja.cli.php | Dados lingüísticos Japonês para CLI.
+/vault/lang/lang.ja.fe.php | Dados lingüísticos Japonês para o front-end.
+/vault/lang/lang.ja.php | Dados lingüísticos Japonês.
+/vault/lang/lang.ko.cli.php | Dados lingüísticos Coreano para CLI.
+/vault/lang/lang.ko.fe.php | Dados lingüísticos Coreano para o front-end.
+/vault/lang/lang.ko.php | Dados lingüísticos Coreano.
+/vault/lang/lang.nl.cli.php | Dados lingüísticos Holandês para CLI.
+/vault/lang/lang.nl.fe.php | Dados lingüísticos Holandês para o front-end.
+/vault/lang/lang.nl.php | Dados lingüísticos Holandês.
+/vault/lang/lang.pt.cli.php | Dados lingüísticos Português para CLI.
+/vault/lang/lang.pt.fe.php | Dados lingüísticos Português para o front-end.
+/vault/lang/lang.pt.php | Dados lingüísticos Português.
+/vault/lang/lang.ru.cli.php | Dados lingüísticos Russo para CLI.
+/vault/lang/lang.ru.fe.php | Dados lingüísticos Russo para o front-end.
+/vault/lang/lang.ru.php | Dados lingüísticos Russo.
+/vault/lang/lang.th.cli.php | Dados lingüísticos Tailandês para CLI.
+/vault/lang/lang.th.fe.php | Dados lingüísticos Tailandês para o front-end.
+/vault/lang/lang.th.php | Dados lingüísticos Tailandês.
+/vault/lang/lang.ur.cli.php | Dados lingüísticos Urdu para CLI.
+/vault/lang/lang.ur.fe.php | Dados lingüísticos Urdu para o front-end.
+/vault/lang/lang.ur.php | Dados lingüísticos Urdu.
+/vault/lang/lang.vi.cli.php | Dados lingüísticos Vietnamita para CLI.
+/vault/lang/lang.vi.fe.php | Dados lingüísticos Vietnamita para o front-end.
+/vault/lang/lang.vi.php | Dados lingüísticos Vietnamita.
+/vault/lang/lang.zh-tw.cli.php | Dados lingüísticos Chinês (tradicional) para CLI.
+/vault/lang/lang.zh-tw.fe.php | Dados lingüísticos Chinês (tradicional) para o front-end.
+/vault/lang/lang.zh-tw.php | Dados lingüísticos Chinês (tradicional).
+/vault/lang/lang.zh.cli.php | Dados lingüísticos Chinês (simplificado) para CLI.
+/vault/lang/lang.zh.fe.php | Dados lingüísticos Chinês (simplificado) para o front-end.
+/vault/lang/lang.zh.php | Dados lingüísticos Chinês (simplificado).
 /vault/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/cache.dat | Dados de cache.
 /vault/cidramblocklists.dat | Contém informações relativas às listas opcionais para bloqueando países fornecido por Macmathan; Usado pelo recurso atualizações fornecidas pelo front-end.
@@ -239,7 +239,7 @@ Arquivo | Descrição
 /vault/ipv6_custom.dat.RenameMe | Arquivo de assinaturas personalizadas para IPv6 (renomear para ativar).
 /vault/ipv6_isps.dat | Arquivo de assinaturas para IPv6 (ISPs perigosos e propensos a spam).
 /vault/ipv6_other.dat | Arquivo de assinaturas para IPv6 (CIDRs para proxies, VPNs e outros diversos serviços indesejados).
-/vault/lang.php | Linguagem dados.
+/vault/lang.php | Dados lingüísticos.
 /vault/modules.dat | Contém informações relativas os vários módulos para CIDRAM; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/outgen.php | Gerador de saída.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necessário para compatibilidade reversa com PHP 5.4.X; seguro para deletar por versões de PHP mais recentes).
@@ -618,19 +618,19 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 
 #### O que é uma "assinatura"?
 
-In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+No contexto do CIDRAM, uma "assinatura" refere-se a dados que actuam como um indicador/identificador para algo específico que estamos procurando, geralmente um endereço IP ou CIDR, e inclui algumas instruções para CIDRAM, dizendo-lhe a melhor maneira de responder quando encontrar o que estamos procurando. Uma assinatura típica para o CIDRAM é algo como isto:
 
 `1.2.3.4/32 Deny Generic`
 
-Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+Muitas vezes (mas nem sempre), as assinaturas serão agrupadas em grupos, formando "seções de assinaturas", freqüentemente acompanhado de comentários, marcação e/ou metadados relacionados que podem ser usados para fornecer contexto adicional para as assinaturas e/ou instrução adicional.
 
 #### <a name="WHAT_IS_A_CIDR"></a>O que é um "CIDR"?
 
-"CIDR" is an acronym for "Classless Inter-Domain Routing" *[[1](https://pt.wikipedia.org/wiki/CIDR), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+"CIDR" é um acrônimo para "Classless Inter-Domain Routing" *[[1](https://pt.wikipedia.org/wiki/CIDR), [2](http://whatismyipaddress.com/cidr)]*, e é este acrônimo que é usado como parte do nome para este pacote, "CIDRAM", que é um acrônimo para "Classless Inter-Domain Routing Access Manager".
 
-However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+No entanto, no contexto do CIDRAM (tal como, dentro desta documentação, dentro das discussões relativas ao CIDRAM, ou dentro dos dados lingüísticos para CIDRAM), sempre que um "CIDR" (singular) ou "CIDRs" (plural) seja mencionado ou referido (e assim por meio do qual usamos essas palavras como substantivos em seu próprio direito, ao contrário de como acrônimos), o que é pretendido e significado por isto é uma sub-rede (ou sub-redes), expresso usando a notação CIDR. A razão que CIDR (ou CIDRs) é usado em vez de sub-rede (ou sub-redes) é deixar claro que é especificamente sub-redes expressas usando a notação CIDR que está sendo referida (pois a notação CIDR é apenas uma das várias maneiras pelas quais as sub-redes podem ser expressas). O CIDRAM poderia, portanto, ser considerado um "gerenciador de acesso para sub-redes".
 
-Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+Embora este duplo significado de "CIDR" possa apresentar alguma ambigüidade em alguns casos, esta explicação, juntamente com o contexto, deve ajudar a resolver essa ambiguidade.
 
 #### O que é um "falso positivo"?
 

@@ -2024,7 +2024,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['ThisTracking'] = array();
 
     /** Fetch cache.dat data. */
-    $CIDRAM['Cache'] = (file_exists($CIDRAM['Vault'] . 'cache.dat')) ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : array();
+    $CIDRAM['Cache'] = file_exists($CIDRAM['Vault'] . 'cache.dat') ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : array();
 
     /** Clear/revoke IP tracking for an IP address. */
     if (isset($_POST['IPAddr']) && isset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']])) {
@@ -2090,13 +2090,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
         }
     }
 
-    /** Cleanup. */
-    unset($CIDRAM['Cache'], $CIDRAM['ThisTracking']);
-
     /** Set options label. */
     $CIDRAM['FE']['OptionsLabel'] = (
         !empty($CIDRAM['Cache']['Subnets']) && is_array($CIDRAM['Cache']['Subnets']) ? $CIDRAM['lang']['field_first_seen'] : $CIDRAM['lang']['field_options']
     );
+
+    /** Cleanup. */
+    unset($CIDRAM['Cache'], $CIDRAM['ThisTracking']);
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

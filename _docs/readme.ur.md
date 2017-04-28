@@ -205,6 +205,9 @@
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ترکی زبان کے اعداد و شمار.</div> | /vault/lang/lang.tr.php
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
@@ -759,7 +762,11 @@ Although this dual meaning of "CIDR" may present some ambiguity in some cases, t
 
 <div dir="rtl">نمبر PHP 5.4.0 2014 میں سرکاری EOL ( "زندگی کے اختتام") تک پہنچ گئی، اور توسیع کی سیکورٹی کی حمایت کی اس تحریر کی وجہ 2015. میں ختم کیا گیا تھا، یہ 2017 ہے اور PHP 7.1.0 پہلے سے ہی دستیاب ہے. اس وقت، حمایت PHP 5.4.0 اور تمام دستیاب جدید تر پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کے لئے فراہم کی جاتی ہے، لیکن آپ کو کسی بھی بڑی عمر کے پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کی کوشش کرتے ہیں، مدد فراہم نہیں کی جائے گی.<br /><br /></div>
 
+<div dir="rtl">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد CIDRAM تنصیب کا استعمال کر سکتا ہوں؟<br /><br /></div>
+
+<div dir="rtl">Yes. CIDRAM installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to CIDRAM installations protecting only one domain as "single-domain installations", and we refer to CIDRAM installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need CIDRAM to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), CIDRAM will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to CIDRAM, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.<br /><br /></div>
+
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 24 اپریل 2017 (2017.04.24).</div>
+<div dir="rtl">آخری تازہ کاری: 28 اپریل 2017 (2017.04.28).</div>

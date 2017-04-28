@@ -203,6 +203,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/lang/lang.th.cli.php | CLI 태국어 언어 데이터.
 /vault/lang/lang.th.fe.php | 프론트 엔드 태국어 언어 데이터.
 /vault/lang/lang.th.php | 태국어 언어 데이터.
+/vault/lang/lang.tr.cli.php | CLI 터키어 언어 데이터.
+/vault/lang/lang.tr.fe.php | 프론트 엔드 터키어 언어 데이터.
+/vault/lang/lang.tr.php | 터키어 언어 데이터.
 /vault/lang/lang.ur.cli.php | CLI 우르두어 언어 데이터.
 /vault/lang/lang.ur.fe.php | 프론트 엔드 우르두어 언어 데이터.
 /vault/lang/lang.ur.php | 우르두어 언어 데이터.
@@ -671,7 +674,11 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 
 아니오. PHP 5.4.0은 2014 년 공식 EoL에 ("End of Life" / 삶의 끝) 도달했습니다. 2015 년에 연장 된 보안 지원이 종료되었습니다. 현재는 2017이며 PHP 7.1.0을 이미 사용할 수 있습니다. 현재, PHP 5.4.0 및 모든 더 최신 PHP 버전 CIDRAM를 사용하기위한 지원이 제공되고 있습니다. 더 오래된 PHP 버전에 대한 지원은 제공하지 않습니다.
 
+#### 단일 CIDRAM 설치를 사용하여 여러 도메인을 보호 할 수 있습니까?
+
+Yes. CIDRAM installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to CIDRAM installations protecting only one domain as "single-domain installations", and we refer to CIDRAM installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need CIDRAM to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), CIDRAM will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to CIDRAM, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.
+
 ---
 
 
-최종 업데이트: 2017년 4월 24일.
+최종 업데이트: 2017년 4월 28일.

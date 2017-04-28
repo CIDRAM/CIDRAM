@@ -203,6 +203,9 @@ Bestand | Beschrijving
 /vault/lang/lang.th.cli.php | Thaise taaldata/taalgegevens voor CLI.
 /vault/lang/lang.th.fe.php | Thaise taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.th.php | Thaise taaldata/taalgegevens.
+/vault/lang/lang.tr.cli.php | Turks taaldata/taalgegevens voor CLI.
+/vault/lang/lang.tr.fe.php | Turks taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.tr.php | Turks taaldata/taalgegevens.
 /vault/lang/lang.ur.cli.php | Urdu taaldata/taalgegevens voor CLI.
 /vault/lang/lang.ur.fe.php | Urdu taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ur.php | Urdu taaldata/taalgegevens.
@@ -671,7 +674,11 @@ CIDRAM biedt een manier voor website-eigenaren om ongewenst verkeer te blokkeren
 
 Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in 2014, en verlengd veiligheid ondersteuning werd beëindigd in 2015. Met ingang van het schrijven van dit, het is 2017, en PHP 7.1.0 is al beschikbaar. Momenteel, ondersteuning wordt verleend voor het gebruik van CIDRAM met PHP 5.4.0 en alle beschikbare nieuwere PHP-versies, maar als u probeert te CIDRAM gebruiken met een oudere PHP-versies, steun zal niet worden verstrekt.
 
+#### Kan ik een enkele CIDRAM-installatie gebruiken om meerdere domeinen te beschermen?
+
+Yes. CIDRAM installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to CIDRAM installations protecting only one domain as "single-domain installations", and we refer to CIDRAM installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need CIDRAM to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), CIDRAM will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to CIDRAM, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.
+
 ---
 
 
-Laatste Bijgewerkt: 24 April 2017 (2017.04.24).
+Laatste Bijgewerkt: 28 April 2017 (2017.04.28).

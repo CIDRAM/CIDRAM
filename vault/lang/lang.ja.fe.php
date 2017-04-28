@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.26).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -210,22 +210,22 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';
 
 $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – CIDRAMの問題ページ（サポート、援助、など）。</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAMのディスカッションフォーラム（サポート、援助、など）。</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAMの問題 ＠ GitHub</a> – CIDRAMの問題ページ（サポート、援助、など）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAMのディスカッションフォーラム（サポート、援助、など）。</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM ＠ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM ＠ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学習リソースとディスカッション。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://macmathan.info/blocklists">MacMathan.infoのレンジ・ブロック</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group の Facebook</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group の GitHub</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、ＡＳＮ関係を決定する、ネットワーク名に基づいてＡＳＮを検出する、等。</li>
-            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – ＩＰｖ４・ＩＰのための有用な集約ツール。</li>
-            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ＡＳＮの接続性をチェックするのに便利なツール； ＡＳＮに関するその他の様々な情報。</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – 国全体のシグネチャを生成するための素晴らしい、正確なサービス。</li>
+            <li><a href="https://www.stopforumspam.com/forum/">フォーラム の Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">ＩＰアグリゲータ の Stop Forum Spam</a> – ＩＰｖ４・ＩＰのための有用な集約ツール。</li>
+            <li><a href="https://radar.qrator.net/">QratorのRadar</a> – ＡＳＮの接続性をチェックするのに便利なツール； ＡＳＮに関するその他の様々な情報。</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IPdenyのＩＰカントリー・ブロック</a> – 国全体のシグネチャを生成するための素晴らしい、正確なサービス。</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ＡＳＮのマルウェア感染率に関するレポートを表示します。</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 既知危険なＩＰアドレスのデータベースを維持します； ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 既知のスパマーリストを維持する； ＩＰ/ＡＳＮスパム活動のチェックに役立ちます。</li>
         </ul>';

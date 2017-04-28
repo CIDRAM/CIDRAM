@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.04.26).
+ * This file: Thai language data for the front-end (last modified: 2017.04.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -210,22 +210,22 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – บันทึก';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – อัปเดต';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">ปัญหา CIDRAM @ GitHub</a> – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – ฟอรั่มการอภิปรายสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – ปลั๊กอิน WordPress สำหรับ CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – สถานที่ดาวน์โหลดอื่นสำหรับ CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – คอลเลกชันเครื่องมือเว็บมาสเตอร์ง่ายสำหรับการรักษาความปลอดภัยเว็บไซต์.</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – มีบล็อคช่วงที่ไม่จำเป็นซึ่งสามารถเพิ่มลงใน CIDRAM เพื่อบล็อกประเทศที่ไม่ต้องการจากการเข้าถึงเว็บไซต์ของคุณ.</li>
+            <li><a href="https://macmathan.info/blocklists">ช่วงบล็อก @ MacMathan.info</a> – มีบล็อคช่วงที่ไม่จำเป็นซึ่งสามารถเพิ่มลงใน CIDRAM เพื่อบล็อกประเทศที่ไม่ต้องการจากการเข้าถึงเว็บไซต์ของคุณ.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – รับ CIDR จาก ASN, ยืนยันความสัมพันธ์ ASN, ค้นพบ ASN ตามชื่อเครือข่าย, ฯลฯ.</li>
-            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – ฟอรั่มการอภิปรายมีประโยชน์เกี่ยวกับหยุดสแปมในฟอรัม.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – เครื่องมือการรวบรวมมีประโยชน์สำหรับที่อยู่ IP IPv4.</li>
-            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – เครื่องมือมีประโยชน์สำหรับตรวจสอบการเชื่อมต่อ ASN รวมทั้งข้อมูลอื่น ๆ เกี่ยวกับ ASN.</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – บริการที่ยอดเยี่ยมและถูกต้องสำหรับการสร้างลายเซ็นสำหรับประเทศ.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">ฟอรัม @ Stop Forum Spam</a> – ฟอรั่มการอภิปรายมีประโยชน์เกี่ยวกับหยุดสแปมในฟอรัม.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">ตัวรวบรวม IP @ Stop Forum Spam</a> – เครื่องมือการรวบรวมมีประโยชน์สำหรับที่อยู่ IP IPv4.</li>
+            <li><a href="https://radar.qrator.net/">Radar โดย Qrator</a> – เครื่องมือมีประโยชน์สำหรับตรวจสอบการเชื่อมต่อ ASN รวมทั้งข้อมูลอื่น ๆ เกี่ยวกับ ASN.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">บล็อกประเทศ IP @ IPdeny</a> – บริการที่ยอดเยี่ยมและถูกต้องสำหรับการสร้างลายเซ็นสำหรับประเทศ.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของมัลแวร์ใน ASN.</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของ botnet ใน ASN.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของ botnet ใน ASN.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">โครงการ Spamhaus</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของ botnet ใน ASN.</li>
+            <li><a href="http://www.abuseat.org/asn.html">รายการการปิดกั้นแบบคอมโพสิต @ Abuseat.org</a> – แสดงรายงานเกี่ยวกับอัตราการติดเชื้อของ botnet ใน ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – รักษาฐานข้อมูล IP เป็นอันตราย; จัดเตรียม API สำหรับตรวจสอบและรายงาน IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – เก็บรายชื่อผู้ส่งสแปมที่รู้จัก; มีประโยชน์สำหรับตรวจสอบกิจกรรมสแปม IP/ASN.</li>
         </ul>';

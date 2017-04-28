@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.27).
+ * This file: Configuration handler (last modified: 2017.04.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -61,8 +61,12 @@ if ($CIDRAM['Config'] === false) {
     die('[CIDRAM] Configuration file is corrupt! Please reconfigure CIDRAM.');
 }
 
-/** Checks for the existence of HTTP_HOST configuration overrides file. */
-if (!preg_match('/[^.0-9a-z-]/', $_SERVER['HTTP_HOST']) && is_readable($CIDRAM['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini')) {
+/** Checks for the existence of the HTTP_HOST configuration overrides file. */
+if (
+    !empty($_SERVER['HTTP_HOST']) &&
+    !preg_match('/[^.0-9a-z-]/', $_SERVER['HTTP_HOST']) &&
+    is_readable($CIDRAM['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini')
+) {
     /** Attempts to parse the configuration overrides file. */
     if ($CIDRAM['Overrides'] = parse_ini_file($CIDRAM['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini', true)) {
         array_walk($CIDRAM['Overrides'], function ($Keys, $Category) use (&$CIDRAM) {

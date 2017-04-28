@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.04.26).
+ * This file: Russian language data for the front-end (last modified: 2017.04.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -210,22 +210,22 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – Лог-Файлы';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Обновления';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Дискуссионный форум для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>
+            <li><a href="https://macmathan.info/blocklists">Диапазонные блоки @ MacMathan.info</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
-            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Полезный инструмент для агрегации IPv4 IP-адресов.</li>
-            <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – Фантастический и точный сервис для создания сигнатуры в масштабах всей страны.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">Форум @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">Агрегатор IP @ Stop Forum Spam</a> – Полезный инструмент для агрегации IPv4 IP-адресов.</li>
+            <li><a href="https://radar.qrator.net/">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">Страновые блоки IP @ IPdeny</a> – Фантастический и точный сервис для создания сигнатуры в масштабах всей страны.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">The Spamhaus Project</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org\'s Composite Blocking List</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+            <li><a href="http://www.abuseat.org/asn.html">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Поддерживает списки известных спамеров; Полезно для проверки спама деятельности IP/ASN.</li>
         </ul>';

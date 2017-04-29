@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.04.28).
+ * This file: Spanish language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = 'Subir un nuevo archivo';
 $CIDRAM['lang']['field_username'] = 'Usuario';
 $CIDRAM['lang']['field_your_version'] = 'Tu Versión';
 $CIDRAM['lang']['header_login'] = 'Por favor iniciar sesión para continuar.';
+$CIDRAM['lang']['label_active_config_file'] = 'Archivo de configuración activo: ';
 $CIDRAM['lang']['label_cidram'] = 'Versión CIDRAM utilizada:';
 $CIDRAM['lang']['label_os'] = 'Sistema operativo utilizada:';
 $CIDRAM['lang']['label_php'] = 'Versión PHP utilizada:';

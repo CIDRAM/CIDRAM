@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.28).
+ * This file: Configuration handler (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,11 +64,12 @@ if ($CIDRAM['Config'] === false) {
 /** Checks for the existence of the HTTP_HOST configuration overrides file. */
 if (
     !empty($_SERVER['HTTP_HOST']) &&
-    !preg_match('/[^.0-9a-z-]/', $_SERVER['HTTP_HOST']) &&
-    is_readable($CIDRAM['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini')
+    ($CIDRAM['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&
+    !preg_match('/[^.0-9a-z-]/', $CIDRAM['Domain']) &&
+    is_readable($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini')
 ) {
     /** Attempts to parse the configuration overrides file. */
-    if ($CIDRAM['Overrides'] = parse_ini_file($CIDRAM['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini', true)) {
+    if ($CIDRAM['Overrides'] = parse_ini_file($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini', true)) {
         array_walk($CIDRAM['Overrides'], function ($Keys, $Category) use (&$CIDRAM) {
             foreach ($Keys as $Directive => $Value) {
                 $CIDRAM['Config'][$Category][$Directive] = $Value;

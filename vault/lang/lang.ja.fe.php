@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.28).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = '新しいファイルをアップロー�
 $CIDRAM['lang']['field_username'] = 'ユーザー名';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、ログインしてください。';
+$CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル： ';
 $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';

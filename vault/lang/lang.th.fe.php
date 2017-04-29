@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.04.28).
+ * This file: Thai language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = 'อัปโหลดไฟล์ให�
 $CIDRAM['lang']['field_username'] = 'ชื่อผู้ใช้';
 $CIDRAM['lang']['field_your_version'] = 'เวอร์ชั่นของคุณ';
 $CIDRAM['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
+$CIDRAM['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
 $CIDRAM['lang']['label_cidram'] = 'รุ่น CIDRAM ในการใช้งาน:';
 $CIDRAM['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $CIDRAM['lang']['label_php'] = 'รุ่น PHP ในการใช้งาน:';

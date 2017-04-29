@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.24).
+ * This file: Functions file (last modified: 2017.04.29).
  */
 
 /**
@@ -1977,4 +1977,16 @@ $CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
     }
     $Multiply = array('K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776);
     return (int)floor($In * (isset($Multiply[$Unit]) ? $Multiply[$Unit] : 1));
+};
+
+/**
+ * Filter the available language options provided by the configuration page on
+ * the basis of the availability of the corresponding language files.
+ *
+ * @param string $ChoiceKey Language code.
+ * @return bool Valid/Invalid.
+ */
+$CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
+    $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
+    return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
 };

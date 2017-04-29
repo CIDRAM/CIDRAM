@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.26).
+ * This file: Front-end handler (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -597,6 +597,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     /** Indexes. */
     $CIDRAM['FE']['Indexes'] = '            ';
 
+    /** Define active configuration file. */
+    $CIDRAM['FE']['ActiveConfigFile'] = $CIDRAM['Overrides'] ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini';
+
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
     reset($CIDRAM['Config']['Config Defaults']);
     $CIDRAM['FE']['ConfigFields'] = $CIDRAM['RegenerateConfig'] = '';
@@ -745,6 +748,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (isset($CIDRAM['DirValue']['choices'])) {
                 $CIDRAM['ThisDir']['FieldOut'] = '<select class="auto" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" id="'. $CIDRAM['ThisDir']['DirLangKey'] . '_field"' . $CIDRAM['ThisDir']['Trigger'] . '>';
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
+                    if (isset($CIDRAM['DirValue']['choice_filter']) && isset($CIDRAM[$CIDRAM['DirValue']['choice_filter']])) {
+                        if (!$CIDRAM[$CIDRAM['DirValue']['choice_filter']]($CIDRAM['ChoiceKey'], $CIDRAM['ChoiceValue'])) {
+                            continue;
+                        }
+                    }
                     if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
                         $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
                     }

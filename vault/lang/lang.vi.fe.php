@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.04.28).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
+$CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';

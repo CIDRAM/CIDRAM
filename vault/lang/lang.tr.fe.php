@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.04.28).
+ * This file: Turkish language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = 'Yeni Dosya Yükle';
 $CIDRAM['lang']['field_username'] = 'Kullanıcı adı';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
+$CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_php'] = 'Kullanılan PHP sürümü:';

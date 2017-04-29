@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.28).
+ * This file: Korean language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = '새로운 파일을 업로드하기';
 $CIDRAM['lang']['field_username'] = '사용자 이름';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
+$CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일: ';
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전:';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제:';
 $CIDRAM['lang']['label_php'] = '사용 된 PHP 버전:';

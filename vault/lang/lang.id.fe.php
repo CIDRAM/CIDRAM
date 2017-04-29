@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.04.28).
+ * This file: Indonesian language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = 'Mengupload file baru';
 $CIDRAM['lang']['field_username'] = 'Nama Pengguna';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
+$CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_php'] = 'Versi PHP digunakan:';

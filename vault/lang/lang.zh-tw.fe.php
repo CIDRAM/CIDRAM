@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.28).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = '上傳新文件';
 $CIDRAM['lang']['field_username'] = '用戶名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '請登錄以繼續。';
+$CIDRAM['lang']['label_active_config_file'] = '活動配置文件：';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_os'] = '目前使用操作系統：';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.04.28).
+ * This file: Russian language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -107,6 +107,7 @@ $CIDRAM['lang']['field_upload_file'] = 'Загрузить Новый Файл';
 $CIDRAM['lang']['field_username'] = 'Имя Пользователя';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
+$CIDRAM['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
 $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';

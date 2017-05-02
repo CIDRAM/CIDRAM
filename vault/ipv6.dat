@@ -66,13 +66,16 @@ Tag: New Dream Network
 
 
 # ASNs 33182, 53055 ("HostDime.com, Inc").
-# %Listed, Google Malware Dashboard: 1.72% (AS33182), 1.24% (AS53055).
-# Updated: 2016.09.06
+# %Listed, Google Malware Dashboard: 1.41% (AS33182), 1.40% (AS53055).
+# %Listed, CleanTalk.org: 63.83% (AS33182), 27.62% (AS53055).
+# Stop Forum Spam (SFS) listings: 820 (AS33182), 8 (AS53055).
+# Updated: 2017.05.02
 
 2404:a700::/32 Deny Cloud
 2605:2080::/33 Deny Cloud
 2607:fcd8::/43 Deny Cloud
 2607:fcd8:20::/44 Deny Cloud
+2803:c40::/32 Deny Cloud
 2804:9c4::/32 Deny Cloud
 2804:cf8:8000::/48 Deny Cloud
 2806:213::/32 Deny Cloud
@@ -395,15 +398,22 @@ Tag: GorillaServers, Inc
 
 # Announcing as: "Data Center", "Data Centre".
 # Various ASNs; Sourced from HE.
-# Updated: 2016.09.07
+# Updated: 2017.05.02
 
+2001:67c:33c::/48 Deny Cloud
+2001:b20::/32 Deny Cloud
+2001:1440::/32 Deny Cloud
+2001:4c48:10::/48 Deny Cloud
+2001:4c48:e::/48 Deny Cloud
+2400:9c00::/32 Deny Cloud
 2401:200::/32 Deny Cloud
 2401:8800::/40 Deny Cloud
+2401:8800:200::/40 Deny Cloud
 2401:8800:400::/40 Deny Cloud
 2401:8800:600::/40 Deny Cloud
 2401:8800:800::/40 Deny Cloud
 2401:8800:a00::/40 Deny Cloud
-2401:8800:c05::/48 Deny Cloud
+2401:8800:c00::/40 Deny Cloud
 2401:9800::/32 Deny Cloud
 2401:9f00::/32 Deny Cloud
 2402:7a00::/32 Deny Cloud
@@ -412,27 +422,70 @@ Tag: GorillaServers, Inc
 2403:bc00:8000::/47 Deny Cloud
 2404:3d00:400::/40 Deny Cloud
 2404:6300::/32 Deny Cloud
+2404:7e80:1000::/36 Deny Cloud
+2404:7e80:2000::/36 Deny Cloud
 2404:a700::/32 Deny Cloud
 2404:d8::/32 Deny Cloud
+2405:2500:50::/48 Deny Cloud
 2406:fe00::/32 Deny Cloud
+2407:500::/47 Deny Cloud
+2407:500:4::/47 Deny Cloud
+2407:500:100::/47 Deny Cloud
+2407:500:106::/48 Deny Cloud
+2407:500:167::/48 Deny Cloud
+2407:500:500::/48 Deny Cloud
+2407:500:502::/47 Deny Cloud
+2407:500:1000::/48 Deny Cloud
 2407:7200::/32 Deny Cloud
 2602:fff8::/36 Deny Cloud
+2604:5800::/32 Deny Cloud
 2605:3380::/32 Deny Cloud
 2605:9700::/32 Deny Cloud
 2605:bc00::/32 Deny Cloud
+2606:db00::/32 Deny Cloud
+2607:fd60:c930::/48 Deny Cloud
+2607:fd60:c938::/48 Deny Cloud
+2801:190::/44 Deny Cloud
 2804:160::/32 Deny Cloud
-2804:888::/32 Deny Cloud
-2804:9c4::/32 Deny Cloud
+2804:1208::/32 Deny Cloud
 2804:122c::/32 Deny Cloud
+2804:1d40::/32 Deny Cloud
+2804:2a18::/32 Deny Cloud
+2804:644::/32 Deny Cloud
+2804:6e8::/32 Deny Cloud
+2804:888::/32 Deny Cloud
+2a00:1df0::/32 Deny Cloud
 2a00:7580:10::/48 Deny Cloud
 2a00:a300::/32 Deny Cloud
+2a00:f5c0::/32 Deny Cloud
+2a01:8d20::/32 Deny Cloud
+2a01:9b40::/32 Deny Cloud
+2a01:a4c0::/32 Deny Cloud
 2a02:118::/32 Deny Cloud
 2a02:1760::/32 Deny Cloud
+2a02:4e8:4::/47 Deny Cloud
+2a02:5b0::/32 Deny Cloud
 2a02:f48:2000::/48 Deny Cloud
+2a03:3180:f::/48 Deny Cloud
+2a03:7480::/44 Deny Cloud
 2a03:7580:1::/48 Deny Cloud
+2a03:7720::/48 Deny Cloud
+2a03:ad40:120::/48 Deny Cloud
+2a03:ad40:130::/48 Deny Cloud
+2a03:ad40:140::/48 Deny Cloud
+2a03:ad40:420::/48 Deny Cloud
+2a03:ad40:430::/48 Deny Cloud
+2a04:6540::/32 Deny Cloud
 2a04:a180::/32 Deny Cloud
 2a04:b2c0::/29 Deny Cloud
+2a04:cac0::/32 Deny Cloud
+2a04:cac3::/32 Deny Cloud
+2a04:d500::/32 Deny Cloud
+2a05:dfc7:31::/48 Deny Cloud
+2a06:9fc0::/29 Deny Cloud
 2a07:6d40::/29 Deny Cloud
+2a0a:8ec0::/29 Deny Cloud
+2c0f:f598:1::/48 Deny Cloud
 Tag: Data Center
 
 
@@ -485,8 +538,10 @@ Tag: myLoc
 
 
 # ASN 57043 ("HOSTKEY B.V").
-# %Listed, Google Malware Dashboard: 1.05%.
-# Updated: 2016.09.04
+# %Listed, Google Malware Dashboard: 0.76%.
+# %Listed, CleanTalk.org: 48.08%.
+# Stop Forum Spam (SFS) listings: 1,515.
+# Updated: 2016.09.04 / Checked: 2017.05.02
 
 2a05:b40::/29 Deny Cloud
 Tag: HOSTKEY B.V
@@ -2559,12 +2614,9 @@ Tag: Query Foundry, LLC
 Tag: Sia Nano IT
 
 
-# ASNs 7224, 8987, 14618, 16509, 38895, 39111, 62785 ("Amazon.com, Inc").
-# %Listed, Google Malware Dashboard: 0% (AS7224/AS8987), 0.13% (AS14618), 0.03% (AS16509), 0.05% (AS38895),
-#   0.14% (AS39111), "ASN not found" (AS62785).
-# A more up-to-date version of this section is available via the Amazon optional blocklist provided by
-# Macmathan. It can be installed via the front-end.
-# Updated: 2016.10.01
+# ASNs 7224, 14618, 16509, 38895 ("Amazon.com, Inc").
+# Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
+# Updated: 2017.05.02
 
 2400:6500::/32 Deny Cloud
 2400:6700::/32 Deny Cloud
@@ -2573,15 +2625,15 @@ Tag: Sia Nano IT
 2406:da12::/36 Deny Cloud
 2406:da14::/36 Deny Cloud
 2406:da18::/36 Deny Cloud
+2406:da1a::/36 Deny Cloud
 2406:da1c::/36 Deny Cloud
 2406:daa0:2040::/44 Deny Cloud
 2406:daa0:2080::/44 Deny Cloud
 2406:daa0:20c0::/44 Deny Cloud
 2406:daa0:4020::/44 Deny Cloud
-2406:daa0:4040::/44 Deny Cloud
+2406:daa0:4040::/46 Deny Cloud
 2406:daa0:4060::/44 Deny Cloud
 2406:daa0:4080::/44 Deny Cloud
-2406:daa0:40a0::/44 Deny Cloud
 2406:daa0:8020::/44 Deny Cloud
 2406:daa0:8080::/44 Deny Cloud
 2406:daa0:80c0::/44 Deny Cloud
@@ -2594,19 +2646,15 @@ Tag: Sia Nano IT
 2406:daa0:c0c0::/44 Deny Cloud
 2600:1f00:1000::/40 Deny Cloud
 2600:1f00:6000::/40 Deny Cloud
-2600:1f10:8080::/48 Deny Cloud
 2600:1f11::/36 Deny Cloud
-2600:1f14::/36 Deny Cloud
+2600:1f14::/35 Deny Cloud
 2600:1f16::/36 Deny Cloud
-2600:1f18::/36 Deny Cloud
+2600:1f18::/33 Deny Cloud
 2600:1f1c::/36 Deny Cloud
 2600:1f1e::/36 Deny Cloud
 2600:1fa0:1040::/44 Deny Cloud
 2600:1fa0:1080::/44 Deny Cloud
 2600:1fa0:10c0::/44 Deny Cloud
-2600:1fa0:2040::/44 Deny Cloud
-2600:1fa0:2080::/44 Deny Cloud
-2600:1fa0:20c0::/44 Deny Cloud
 2600:1fa0:4040::/44 Deny Cloud
 2600:1fa0:4080::/44 Deny Cloud
 2600:1fa0:40c0::/44 Deny Cloud
@@ -2616,10 +2664,13 @@ Tag: Sia Nano IT
 2600:1fa0:8010::/44 Deny Cloud
 2600:1fa0:8020::/44 Deny Cloud
 2600:1fa0:8040::/44 Deny Cloud
+2600:1fa0:8050::/44 Deny Cloud
+2600:1fa0:8060::/44 Deny Cloud
 2600:1fa0:8080::/44 Deny Cloud
 2600:1fa0:8090::/44 Deny Cloud
 2600:1fa0:80a0::/44 Deny Cloud
 2600:1fa0:80c0::/44 Deny Cloud
+2600:1fa0:80e0::/44 Deny Cloud
 2600:1fa0:c020::/44 Deny Cloud
 2600:1fa0:c040::/44 Deny Cloud
 2600:1fa0:c0c0::/44 Deny Cloud
@@ -2631,69 +2682,87 @@ Tag: Sia Nano IT
 2600:9000:1002::/47 Deny Cloud
 2600:9000:1004::/48 Deny Cloud
 2600:9000:1006::/47 Deny Cloud
-2600:9000:1008::/47 Deny Cloud
-2600:9000:100a::/48 Deny Cloud
-2600:9000:100c::/46 Deny Cloud
+2600:9000:1008::/45 Deny Cloud
 2600:9000:1011::/48 Deny Cloud
 2600:9000:1012::/47 Deny Cloud
 2600:9000:1015::/48 Deny Cloud
-2600:9000:1018::/46 Deny Cloud
-2600:9000:101c::/46 Deny Cloud
+2600:9000:1016::/47 Deny Cloud
+2600:9000:1018::/45 Deny Cloud
 2600:9000:1020::/47 Deny Cloud
 2600:9000:1023::/48 Deny Cloud
 2600:9000:1024::/47 Deny Cloud
 2600:9000:1027::/48 Deny Cloud
-2600:9000:1028::/47 Deny Cloud
-2600:9000:102a::/48 Deny Cloud
+2600:9000:1028::/46 Deny Cloud
 2600:9000:102d::/48 Deny Cloud
 2600:9000:102e::/47 Deny Cloud
-2600:9000:1030::/46 Deny Cloud
-2600:9000:1034::/48 Deny Cloud
+2600:9000:1030::/47 Deny Cloud
+2600:9000:1033::/48 Deny Cloud
+2600:9000:1034::/47 Deny Cloud
+2600:9000:1036::/48 Deny Cloud
 2600:9000:1038::/45 Deny Cloud
 2600:9000:1040::/45 Deny Cloud
-2600:9000:1049::/48 Deny Cloud
-2600:9000:2001::/48 Deny Cloud
-2600:9000:2002::/47 Deny Cloud
-2600:9000:2004::/48 Deny Cloud
+2600:9000:1048::/46 Deny Cloud
+2600:9000:104c::/47 Deny Cloud
+2600:9000:104e::/48 Deny Cloud
+2600:9000:1077::/48 Deny Cloud
+2600:9000:1079::/48 Deny Cloud
+2600:9000:107b::/48 Deny Cloud
+2600:9000:107d::/48 Deny Cloud
+2600:9000:2000::/46 Deny Cloud
+2600:9000:2006::/47 Deny Cloud
 2600:9000:2008::/47 Deny Cloud
 2600:9000:200a::/48 Deny Cloud
-2600:9000:200c::/47 Deny Cloud
-2600:9000:200e::/48 Deny Cloud
+2600:9000:200c::/46 Deny Cloud
 2600:9000:2011::/48 Deny Cloud
 2600:9000:2012::/47 Deny Cloud
 2600:9000:2015::/48 Deny Cloud
-2600:9000:2019::/48 Deny Cloud
-2600:9000:201a::/47 Deny Cloud
-2600:9000:201c::/47 Deny Cloud
-2600:9000:201f::/48 Deny Cloud
+2600:9000:2016::/47 Deny Cloud
+2600:9000:2018::/45 Deny Cloud
 2600:9000:2020::/47 Deny Cloud
 2600:9000:2023::/48 Deny Cloud
-2600:9000:2024::/47 Deny Cloud
+2600:9000:2024::/48 Deny Cloud
 2600:9000:2027::/48 Deny Cloud
-2600:9000:2028::/47 Deny Cloud
-2600:9000:202a::/48 Deny Cloud
+2600:9000:2028::/46 Deny Cloud
+2600:9000:202d::/48 Deny Cloud
 2600:9000:202e::/47 Deny Cloud
-2600:9000:2030::/48 Deny Cloud
+2600:9000:2030::/47 Deny Cloud
+2600:9000:2033::/48 Deny Cloud
 2600:9000:2034::/48 Deny Cloud
-2600:9000:2038::/46 Deny Cloud
-2600:9000:203d::/48 Deny Cloud
-2600:9000:203e::/47 Deny Cloud
+2600:9000:2038::/45 Deny Cloud
 2600:9000:2041::/48 Deny Cloud
 2600:9000:2042::/47 Deny Cloud
-2600:9000:2044::/48 Deny Cloud
+2600:9000:2044::/46 Deny Cloud
+2600:9000:2048::/48 Deny Cloud
+2600:9000:204b::/48 Deny Cloud
+2600:9000:204d::/48 Deny Cloud
+2600:9000:2097::/48 Deny Cloud
+2600:9000:2098::/46 Deny Cloud
+2600:9000:20ac::/47 Deny Cloud
+2600:9000:20be::/48 Deny Cloud
+2600:9000:2181::/48 Deny Cloud
+2600:9000:2182::/48 Deny Cloud
+2600:9000:5300::/47 Deny Cloud
+2600:9000:5302::/47 Deny Cloud
+2600:9000:5304::/47 Deny Cloud
+2600:9000:5306::/47 Deny Cloud
 2600:9000:f110::/48 Deny Cloud
 2600:9000:f140::/48 Deny Cloud
+2600:9000:f150::/48 Deny Cloud
 2600:9000:f530::/47 Deny Cloud
 2620:107:3000::/44 Deny Cloud
 2620:108:7000::/44 Deny Cloud
-2620:108:d000::/44 Deny Cloud
 2804:800::/32 Deny Cloud
 2a01:578::/32 Deny Cloud
+2a05:d000:a000::/40 Deny Cloud
 2a05:d000:c000::/40 Deny Cloud
+2a05:d012::/36 Deny Cloud
 2a05:d014::/36 Deny Cloud
 2a05:d018::/36 Deny Cloud
-2a05:d018::/36 Deny Cloud
+2a05:d01a::/36 Deny Cloud
 2a05:d01c::/36 Deny Cloud
+2a05:d050:2040::/44 Deny Cloud
+2a05:d050:2080::/44 Deny Cloud
+2a05:d050:20c0::/44 Deny Cloud
 2a05:d050:4040::/44 Deny Cloud
 2a05:d050:4080::/44 Deny Cloud
 2a05:d050:40c0::/44 Deny Cloud
@@ -2704,10 +2773,43 @@ Tag: Sia Nano IT
 2a05:d050:80a0::/44 Deny Cloud
 2a05:d050:80c0::/44 Deny Cloud
 2a05:d050:80e0::/44 Deny Cloud
+2a05:d050:a040::/44 Deny Cloud
+2a05:d050:a080::/44 Deny Cloud
+2a05:d050:a0c0::/44 Deny Cloud
 2a05:d050:c040::/44 Deny Cloud
 2a05:d050:c080::/44 Deny Cloud
 2a05:d050:c0c0::/44 Deny Cloud
 Tag: Amazon.com, Inc
+
+
+# ASNs 8987, 38895, 62785, 395343 ("Amazon Data Services").
+# Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
+# Updated: 2017.05.02
+
+2400:6500::/32 Deny Cloud
+2406:da00:a000::/40 Deny Cloud
+2406:da18::/36 Deny Cloud
+2406:da1a::/36 Deny Cloud
+2406:daa0:8020::/44 Deny Cloud
+2406:daa0:8080::/44 Deny Cloud
+2406:daa0:80c0::/44 Deny Cloud
+2406:daa0:a040::/44 Deny Cloud
+2406:daa0:a080::/44 Deny Cloud
+2406:daa0:a0c0::/44 Deny Cloud
+2600:1f12::/36 Deny Cloud
+2600:1fa0:2040::/44 Deny Cloud
+2600:1fa0:2080::/44 Deny Cloud
+2600:1fa0:20c0::/44 Deny Cloud
+2600:9000:1030::/47 Deny Cloud
+2600:9000:1046::/48 Deny Cloud
+2600:9000:1049::/48 Deny Cloud
+2600:9000:2030::/47 Deny Cloud
+2600:9000:2046::/48 Deny Cloud
+2600:9000:2098::/48 Deny Cloud
+2600:9000:5304::/47 Deny Cloud
+2600:9000:5306::/47 Deny Cloud
+2620:108:d000::/44 Deny Cloud
+Tag: Amazon Data Services
 
 
 # ASN 62282 ("UAB Rakrejus").
@@ -3414,24 +3516,27 @@ Tag: Ecommerce Corporation
 
 
 # ASNs 132412, 135511 ("CyberWorld Data Center").
-# Updated: 2016.09.06
+# Updated: 2017.05.02
 
-2404:b0:15::/48 Deny Cloud
+2405:2500:50::/48 Deny Cloud
+2405:2500:55::/48 Deny Cloud
 Tag: CyberWorld
 
 
 # ASNs 24931, 32911, 55369, 57669 ("DediPower Managed Hosting Limited").
-# %Listed, Google Malware Dashboard: 0.16% (AS24931), 0% (AS32911/AS55369/AS57669).
-# Updated: 2016.09.06
+# Updated: 2017.05.02
 
 2a01:ba20::/32 Deny Cloud
 2a02:16f8::/32 Deny Cloud
+2a0b:a380::/48 Deny Cloud
 Tag: DediPower
 
 
 # ASNs 12637, 20522 ("Seeweb S.r.l").
-# %Listed, Google Malware Dashboard: 1.19% (AS12637), 0% (AS20522).
-# Updated: 2016.09.06
+# %Listed, Google Malware Dashboard: 1.24% (AS12637), 3.03% (AS20522).
+# %Listed, CleanTalk.org: 4.03% (AS12637), 0% (AS20522).
+# Stop Forum Spam (SFS) listings: 42 (AS12637), 0 (AS20522).
+# Updated: 2016.09.06 / Checked: 2017.05.02
 
 2001:4b78::/29 Deny Cloud
 2a04:2700::/29 Deny Cloud
@@ -3440,16 +3545,21 @@ Tag: Seeweb S.r.l
 
 
 # ASN 30217 ("Desync Networks").
-# %Listed, Google Malware Dashboard: 0.92%.
-# Updated: 2016.09.06
+# %Listed, Google Malware Dashboard: 6.24%.
+# %Listed, CleanTalk.org: 0.55%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2017.05.02
 
-2607:f178::/32 Deny Cloud
+2407:2080::/32 Deny Cloud
+2606:7e00:ff00::/40 Deny Cloud
+2607:f178::/48 Deny Cloud
+2607:f178:4::/48 Deny Cloud
+2607:f178:10::/48 Deny Cloud
 Tag: Desync Networks
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# %Listed, Google Malware Dashboard: 0.25% (AS52048), 0% (AS60567/AS202920/AS203557).
-# Updated: 2016.09.06
+# Updated: 2016.09.06 / Checked: 2017.05.02
 
 2a02:4840::/47 Deny Cloud
 2a02:4840:2::/48 Deny Cloud
@@ -3459,8 +3569,10 @@ Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# %Listed, Google Malware Dashboard: 1.52%.
-# Updated: 2016.09.09
+# %Listed, Google Malware Dashboard: 1.80%.
+# %Listed, CleanTalk.org: 49.18%.
+# Stop Forum Spam (SFS) listings: 22,167.
+# Updated: 2016.09.09 / Checked: 2017.05.02
 
 2001:67c:208::/48 Deny Cloud
 2a00:f70::/32 Deny Cloud

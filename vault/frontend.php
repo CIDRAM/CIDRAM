@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.29).
+ * This file: Front-end handler (last modified: 2017.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -26,6 +26,7 @@ $CIDRAM['FE'] = array(
     'PIP_Left' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+ga6vJIEDh0UmzKQA7',
     'PIP_Right' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+gmwvoUGBSSfOuKQA7',
     'PIP_Key' => 'R0lGODlhBwAJAIABAJkAAP///yH5BAEKAAEALAAAAAAHAAkAAAINjH+gyaaAAkQrznRbKAA7',
+    'PIP_Key2' => 'R0lGODlhCAAFAIABAJkAAP///yH5BAEKAAEALAAAAAAIAAUAAAILDIJ5l2YAo1uItQIAOw==',
     'Template' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.html'),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
@@ -83,7 +84,7 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
 }
 
 /** Set form target if not already set. */
-$CIDRAM['FE']['FormTarget'] = (empty($_POST['cidram-form-target'])) ? '' : $_POST['cidram-form-target'];
+$CIDRAM['FE']['FormTarget'] = empty($_POST['cidram-form-target']) ? '' : $_POST['cidram-form-target'];
 
 /** Fetch user list, sessions list and the front-end cache. */
 if (file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
@@ -409,6 +410,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
 /** Accounts. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Permissions'] === 1) {
 
+    /** $_POST overrides for mobile display. */
+    if (!empty($_POST['username']) && !empty($_POST['do_mob']) && (!empty($_POST['password_mob']) || $_POST['do_mob'] == 'delete-account')) {
+        $_POST['do'] = $_POST['do_mob'];
+    }
+    if (empty($_POST['username']) && !empty($_POST['username_mob'])) {
+        $_POST['username'] = $_POST['username_mob'];
+    }
+    if (empty($_POST['permissions']) && !empty($_POST['permissions_mob'])) {
+        $_POST['permissions'] = $_POST['permissions_mob'];
+    }
+    if (empty($_POST['password']) && !empty($_POST['password_mob'])) {
+        $_POST['password'] = $_POST['password_mob'];
+    }
+
     /** A form has been submitted. */
     if ($CIDRAM['FE']['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
 
@@ -598,7 +613,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     $CIDRAM['FE']['Indexes'] = '            ';
 
     /** Define active configuration file. */
-    $CIDRAM['FE']['ActiveConfigFile'] = $CIDRAM['Overrides'] ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini';
+    $CIDRAM['FE']['ActiveConfigFile'] = !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
     reset($CIDRAM['Config']['Config Defaults']);
@@ -2213,6 +2228,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
             array('&lt;', '&gt;', '', "<br />\n"),
             $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile'])
         );
+        $CIDRAM['FE']['mod_class_nav'] = ' big';
+        $CIDRAM['FE']['mod_class_right'] = ' extend';
+    }
+    if (empty($CIDRAM['FE']['mod_class_nav'])) {
+        $CIDRAM['FE']['mod_class_nav'] = ' extend';
+        $CIDRAM['FE']['mod_class_right'] = ' big';
     }
 
     array_walk($CIDRAM['FE']['LogFiles']['Files'], function ($Arr) use (&$CIDRAM) {

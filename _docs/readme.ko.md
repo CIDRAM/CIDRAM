@@ -96,7 +96,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 
 #### 4.1 프론트 엔드를 사용하는 방법.
 
-1) `config.ini` 안에있는 `disable_frontend` 지시문을 찾습니다 그것을 "true"로 설정합니다 (기본값은 "false"입니다).
+1) `config.ini` 안에있는 `disable_frontend` 지시문을 찾습니다 그것을 "`false`"로 설정합니다 (기본값은 "`true`"입니다).
 
 2) 브라우저에서 `loader.php`에 액세스하십시오 (예, `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-최종 업데이트: 2017년 4월 28일.
+최종 업데이트: 2017년 5월 2일.

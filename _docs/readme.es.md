@@ -96,7 +96,7 @@ El front-end está desactivado de forma predeterminada para evitar el acceso no 
 
 #### 4.1 CÓMO HABILITAR EL FRONT-END.
 
-1) Localizar la directiva `disable_frontend` dentro `config.ini`, y establézcalo en true (será predefinido como false).
+1) Localizar la directiva `disable_frontend` dentro `config.ini`, y establézcalo en `false` (será predefinido como `true`).
 
 2) Accesar `loader.php` desde tu navegador (p.ej., `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Sí. Las instalaciones de CIDRAM no están ligados naturalmente en dominios espe
 ---
 
 
-Última Actualización: 28 Abril 2017 (2017.04.28).
+Última Actualización: 2 Mayo 2017 (2017.05.02).

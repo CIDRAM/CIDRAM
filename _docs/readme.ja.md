@@ -96,7 +96,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 #### 4.1 フロントエンドを有効にする方法。
 
-1) `config.ini`の中にある`disable_frontend`ディレクティブを探します、それを「true」に設定します （デフォルトでは「false」です）。
+1) `config.ini`の中にある`disable_frontend`ディレクティブを探します、それを「`false`」に設定します （デフォルトでは「`true`」です）。
 
 2) ブラウザから`loader.php`にアクセスしてください （例えば、`http://localhost/cidram/loader.php`）。
 
@@ -681,4 +681,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-最終アップデート： 2017年4月28日。
+最終アップデート： 2017年5月2日。

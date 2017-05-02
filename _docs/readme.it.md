@@ -96,7 +96,7 @@ Il front-end è disabilitato per impostazione predefinita al fine di prevenire l
 
 #### 4.1 COME ATTIVARE IL FRONT-END.
 
-1) Trova la direttiva `disable_frontend` dentro `config.ini`, e impostarlo su true (sarà false per impostazione predefinita).
+1) Trova la direttiva `disable_frontend` dentro `config.ini`, e impostarlo su `false` (sarà `true` per impostazione predefinita).
 
 2) Accedi `loader.php` dal browser (per esempio, `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Sì. Le installazioni di CIDRAM non sono naturalmente legato a domini specifici,
 ---
 
 
-Ultimo Aggiornamento: 28 Aprile 2017 (2017.04.28).
+Ultimo Aggiornamento: 2 Maggio 2017 (2017.05.02).

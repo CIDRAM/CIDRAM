@@ -96,7 +96,7 @@ Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhi
 
 #### 4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
 
-1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf true (wird es standardmäßig false sein).
+1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf `false` (wird es standardmäßig `true` sein).
 
 2) Greifen Sie `loader.php` aus Ihrem Browser (z.B., `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Ja. CIDRAM-Installationen sind natürlich nicht auf bestimmte Domains gesperrt, 
 ---
 
 
-Zuletzt aktualisiert: 28 April 2017 (2017.04.28).
+Zuletzt aktualisiert: 2 Mai 2017 (2017.05.02).

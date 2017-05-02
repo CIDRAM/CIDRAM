@@ -96,7 +96,7 @@ The front-end is disabled by default in order to prevent unauthorised access (un
 
 #### 4.1 HOW TO ENABLE THE FRONT-END.
 
-1) Locate the `disable_frontend` directive inside `config.ini`, and set it to true (it will be false by default).
+1) Locate the `disable_frontend` directive inside `config.ini`, and set it to `false` (it will be `true` by default).
 
 2) Access `loader.php` from your browser (e.g., `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-Last Updated: 28 April 2017 (2017.04.28).
+Last Updated: 2 May 2017 (2017.05.02).

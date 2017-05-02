@@ -96,7 +96,7 @@ De front-end is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen
 
 #### 4.1 HOE DE FRONTEND TE INSCHAKELEN.
 
-1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het true (deze is false door standaard).
+1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het `false` (deze is `true` door standaard).
 
 2) Toegang tot `loader.php` vanuit uw browser (bijv., `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Ja. CIDRAM-installaties zijn niet van nature gebonden naar specifieke domeinen, 
 ---
 
 
-Laatste Bijgewerkt: 28 April 2017 (2017.04.28).
+Laatste Bijgewerkt: 2 Mei 2017 (2017.05.02).

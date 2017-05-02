@@ -96,7 +96,7 @@ Các front-end được tắt theo mặc định để ngăn chặn truy cập t
 
 #### 4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
 
-1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào true (nó sẽ là false bởi mặc định).
+1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào `false` (nó sẽ là `true` bởi mặc định).
 
 2) Truy cập `loader.php` từ trình duyệt của bạn (ví dụ, `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-Lần cuối cập nhật: 28 Tháng Tư 2017 (2017.04.28).
+Lần cuối cập nhật: 2 Tháng Năm 2017 (2017.05.02).

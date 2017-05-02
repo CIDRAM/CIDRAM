@@ -96,7 +96,7 @@ CIDRAM должен автоматически блокировать нежел
 
 #### 4.1 КАК ВКЛЮЧИТЬ ФРОНТЕНД.
 
-1) Найдите директиву `disable_frontend` внутри `config.ini`, и установить его на true (это будет false по умолчанию).
+1) Найдите директиву `disable_frontend` внутри `config.ini`, и установить его на `false` (это будет `true` по умолчанию).
 
 2) Перейти на `loader.php` из вашего браузера (например, `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-Последнее обновление: 28 Апрель 2017 (2017.04.28).
+Последнее обновление: 2 Мая 2017 (2017.05.02).

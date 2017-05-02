@@ -96,7 +96,7 @@ L'accès frontal est désactivée par défaut afin d'empêcher tout accès non a
 
 #### 4.1 COMMENT ACTIVER L'ACCÈS FRONTAL.
 
-1) Localiser la directive `disable_frontend` à l'intérieur de `config.ini`, et réglez-le sur true (il sera false par défaut).
+1) Localiser la directive `disable_frontend` à l'intérieur de `config.ini`, et réglez-le sur `false` (il sera `true` par défaut).
 
 2) Accéder `loader.php` à partir de votre navigateur (par exemple, `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des d
 ---
 
 
-Dernière Mise à Jour: 28 Avril 2017 (2017.04.28).
+Dernière Mise à Jour: 2 Mai 2017 (2017.05.02).

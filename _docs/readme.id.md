@@ -96,7 +96,7 @@ Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak
 
 #### 4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
 
-1) Menemukan direktif `disable_frontend` dalam `config.ini`, dan mengaturnya untuk true (akan menjadi false secara default).
+1) Menemukan direktif `disable_frontend` dalam `config.ini`, dan mengaturnya untuk `false` (akan menjadi `true` secara default).
 
 2) Mengakses `loader.php` dari browser Anda (misalnya, `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Ya. Instalasi CIDRAM tidak secara alami terkunci pada domain tertentu, dan denga
 ---
 
 
-Terakhir Diperbarui: 28 April 2017 (2017.04.28).
+Terakhir Diperbarui: 2 Mei 2017 (2017.05.02).

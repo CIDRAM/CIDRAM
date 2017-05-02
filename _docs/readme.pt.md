@@ -96,7 +96,7 @@ O front-end é desativado por padrão para evitar acesso não autorizado (acesso
 
 #### 4.1 COMO HABILITAR O FRONT-END.
 
-1) Localize a directiva `disable_frontend` dentro `config.ini`, e defini-lo como true (ele será false por padrão).
+1) Localize a directiva `disable_frontend` dentro `config.ini`, e defini-lo como `false` (ele será `true` por padrão).
 
 2) Acesse o `loader.php` do seu navegador (p.e., `http://localhost/cidram/loader.php`).
 
@@ -681,4 +681,4 @@ Sim. As instalações do CIDRAM não estão naturalmente atado com domínios esp
 ---
 
 
-Última Atualização: 28 Abril 2017 (2017.04.28).
+Última Atualização: 2 Maio 2017 (2017.05.02).

@@ -99,7 +99,7 @@
 
 #### <div dir="rtl">٤.١ سامنے کے آخر میں فعال کرنے کا طریقہ.<br /><br /></div>
 
-<div dir="rtl">١. اندر "config.ini" "disable_frontend" ہدایت کو تلاش کریں، اور سچ کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے جھوٹے ہو جائے گا).<br /><br /></div>
+<div dir="rtl">١. اندر "config.ini", "disable_frontend" ہدایت کو تلاش کریں اور "false" کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے "true" ہو جائے گا).<br /><br /></div>
 
 <div dir="rtl">٢. رسائی اپنے براؤزر سے "loader.php" (جیسے، "http://localhost/cidram/loader.php").<br /><br /></div>
 
@@ -769,4 +769,4 @@ Although this dual meaning of "CIDR" may present some ambiguity in some cases, t
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 28 اپریل 2017 (2017.04.28).</div>
+<div dir="rtl">آخری تازہ کاری: 2 مئی 2017 (2017.05.02).</div>

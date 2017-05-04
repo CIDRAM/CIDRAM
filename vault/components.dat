@@ -7,6 +7,7 @@ CIDRAM:
   de: Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration).
   es: El paquete principal (menos las firmas, la documentación, y la configuración).
   fr: Le paquet principal (moins les signatures, la documentation et la configuration).
+  hi: मुख्य पैकेज (हस्ताक्षर, डॉक्यूमेंटेशन, और कॉन्फ़िगरेशन के बिना)।
   id: Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).
   it: Il pacchetto principale (senza le firme, la documentazione, e la configurazione).
   ja: メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。
@@ -20,7 +21,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+17121189
+ Version: 1.0.0-DEV+17123373
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/Changelog.txt
@@ -110,7 +111,7 @@ CIDRAM:
    - 8e03209e7fc6641b45094e584340feff:83
    - b6b98fdde00d2c99e80a82effa1f7385:24299
    - 825bd785bdd596feeb2b6832c5eb2b46:6906
-   - 8444d37eb6b64e46232bd20d43e44854:7633
+   - 810542575a78f1ddda175cf707bc9fe0:7657
    - 8e03209e7fc6641b45094e584340feff:83
    - ba7be93aa19c88d92f1bdf11b6bdd392:2019
    - 23b2d690178dcd23f32f96a89e0520f1:1384
@@ -154,6 +155,7 @@ IPv4:
   de: IPv4 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).
   es: Archivo de firmas por IPv4 (servicios en la nube no deseados y puntos finales no humanos).
   fr: Fichier de signatures pour IPv4 (les services cloud indésirables et les noeuds finaux non humains).
+  hi: IPv4 हस्ताक्षर फ़ाइल (अवांछित क्लाउड सेवाओं और गैर-मानव समापन बिंदुएं)।
   id: File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
   it: File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).
   ja: IPv4のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
@@ -173,6 +175,7 @@ IPv4:
   de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert unerwünschte Cloud-Services und nicht-menschliche Endpunkte.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.<br />Falsch-Positive Risiko: <span class="txtGn">Niedriges</span>.</em>
   es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea los servicios en la nube no deseados y puntos finales no humanos.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.<br />Riesgo de falsos positivos: <span class="txtGn">Bajo</span>.</em>
   fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque les services cloud indésirables et les noeuds finaux non humains.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.<br />Risque de faux positifs: <span class="txtGn">Faible</span>.</em>
+  hi: डिफ़ॉल्ट IPv4 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। अवांछित क्लाउड सेवाओं और गैर-मानव समापन बिंदुओं को ब्लॉक करता है।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv4</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtGn">कम</span>।</em>
   id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.<br />Risiko positif palsu: <span class="txtGn">Rendah</span>.</em>
   it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca servizi cloud indesiderate e punti finali non umani.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.<br />Rischio di falsi positivi: <span class="txtGn">A basso</span>.</em>
   ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 不要なクラウドサービスと非人のエンドポイントをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.<br />偽陽性のリスク： <span class="txtGn">低い</span>。</em>
@@ -205,6 +208,7 @@ IPv4-Bogons:
   de: IPv4 Signaturdatei (Bogon/Marsmensch CIDRs).
   es: Archivo de firmas por IPv4 (bogon/marciano CIDRs).
   fr: Fichier de signatures pour IPv4 (bogon/martien CIDRs).
+  hi: IPv4 हस्ताक्षर फ़ाइल (बोगोन/मार्टिन CIDR)।
   id: File tanda tangan IPv4 (CIDR bogon/martian).
   it: File di firme per IPv4 (bogon/marziano CIDRs).
   ja: IPv4のシグネチャファイル （ボゴン/火星CIDRs）。
@@ -224,6 +228,7 @@ IPv4-Bogons:
   de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert Bogon/Marsmensch CIDRs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.<br />Falsch-Positive Risiko: <span class="txtGn">Niedriges</span>.</em>
   es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea bogon/marciano CIDRs.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.<br />Riesgo de falsos positivos: <span class="txtGn">Bajo</span>.</em>
   fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque bogon/martien CIDRs.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.<br />Risque de faux positifs: <span class="txtGn">Faible</span>.</em>
+  hi: डिफ़ॉल्ट IPv4 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। ब्लॉक बोगोन/मार्टिन CIDR।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv4</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtGn">कम</span>।</em>
   id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir CIDR bogon/martian.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.<br />Risiko positif palsu: <span class="txtGn">Rendah</span>.</em>
   it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca bogon/marziano CIDRs.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.<br />Rischio di falsi positivi: <span class="txtGn">A basso</span>.</em>
   ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 ボゴン/火星CIDRsをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.<br />偽陽性のリスク： <span class="txtGn">低い</span>。</em>
@@ -256,6 +261,7 @@ IPv4-ISPs:
   de: IPv4 Signaturdatei (gefährliche und spam-anfällig ISPs).
   es: Archivo de firmas por IPv4 (ISPs peligroso y propenso a spam).
   fr: Fichier de signatures pour IPv4 (ISPs dangereux et sujets au spam).
+  hi: IPv4 हस्ताक्षर फ़ाइल (खतरनाक और स्पैम आईएसपी)।
   id: File tanda tangan IPv4 (ISP berbahaya dan spam rawan).
   it: File di firme per IPv4 (ISP pericolosi e spam incline).
   ja: IPv4のシグネチャファイル （スパマーを持つ危険なISP）。
@@ -275,6 +281,7 @@ IPv4-ISPs:
   de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert gefährliche und spam-anfällig ISPs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.<br />Falsch-Positive Risiko: <span class="txtOe">Mittleres</span>.</em>
   es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea ISPs peligroso y propenso a spam.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.<br />Riesgo de falsos positivos: <span class="txtOe">Medio</span>.</em>
   fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque les ISPs dangereux et sujets au spam.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.<br />Risque de faux positifs: <span class="txtOe">Moyen</span>.</em>
+  hi: डिफ़ॉल्ट IPv4 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। खतरनाक और स्पैम आईएसपी ब्लॉक करता है।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv4</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtOe">मध्यम</span>।</em>
   id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir ISP berbahaya dan spam rawan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.<br />Risiko positif palsu: <span class="txtOe">Menengah</span>.</em>
   it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca ISP pericolosi e spam incline.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.<br />Rischio di falsi positivi: <span class="txtOe">Medio</span>.</em>
   ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 スパマーを持つ危険なISPをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.<br />偽陽性のリスク： <span class="txtOe">中程度</span>。</em>
@@ -282,9 +289,9 @@ IPv4-ISPs:
   nl: Standaard IPv4 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert gevaarlijk en spammy ISPs.<br /><em>Gebruikt met: <code>signatures-&gt;ipv4</code>.<br />Vals positieve risico: <span class="txtOe">Middelgroot</span>.</em>
   pt: Assinaturas IPv4 padrão normalmente incluído com o pacote principal. Bloqueia ISPs perigosos e propensos a spam.<br /><em>Usado com: <code>signatures-&gt;ipv4</code>.<br />Risco de falsos positivos: <span class="txtOe">Médio</span>.</em>
   ru: Стандартные сигнатуры IPv4, обычно включены в основной пакет. Блокирует опасно и спам-склонным интернет-провайдеры.<br /><em>Используется с: <code>signatures-&gt;ipv4</code>.<br />Риск ложноположительный: <span class="txtOe">Средний</span>.</em>
-  th: ลายเซ็น IPv4 เริ่มต้นที่รวมอยู่ในแพคเกจหลัก. บล็อกผู้ให้บริการอินเทอร์เน็ตที่เป็นอันตรายและสแปม.<br /><em>ใช้กับ: <code>signatures-&gt;ipv4</code>.<br />ความเสี่ยงสำหรับการบวกเท็จ: <span class="txtGn">ปานกลาง</span>.</em>
-  tr: Normal olarak ana paketle birlikte verilen varsayılan IPv4 imzaları. Tehlikeli ve spam yapan ISS'leri engeller.<br /><em>Ile kullanılan: <code>signatures-&gt;ipv4</code>.<br />Yalancı pozitif risk: <span class="txtGn">Orta</span>.</em>
-  ur: پہلے سے طے شدہ IPv4 کی دستخط عام طور پر بنیادی پیکیج کے ساتھ شامل تھے. خطرناک بلاکس اور سپام ISP.<br /><em>کے ساتھ استعمال کیا: <code>signatures-&gt;ipv4</code>.<br />غلط مثبت خطرہ: <span class="txtGn">درمیانہ</span>.</em>
+  th: ลายเซ็น IPv4 เริ่มต้นที่รวมอยู่ในแพคเกจหลัก. บล็อกผู้ให้บริการอินเทอร์เน็ตที่เป็นอันตรายและสแปม.<br /><em>ใช้กับ: <code>signatures-&gt;ipv4</code>.<br />ความเสี่ยงสำหรับการบวกเท็จ: <span class="txtOe">ปานกลาง</span>.</em>
+  tr: Normal olarak ana paketle birlikte verilen varsayılan IPv4 imzaları. Tehlikeli ve spam yapan ISS'leri engeller.<br /><em>Ile kullanılan: <code>signatures-&gt;ipv4</code>.<br />Yalancı pozitif risk: <span class="txtOe">Orta</span>.</em>
+  ur: پہلے سے طے شدہ IPv4 کی دستخط عام طور پر بنیادی پیکیج کے ساتھ شامل تھے. خطرناک بلاکس اور سپام ISP.<br /><em>کے ساتھ استعمال کیا: <code>signatures-&gt;ipv4</code>.<br />غلط مثبت خطرہ: <span class="txtOe">درمیانہ</span>.</em>
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn ISP nguy hiểm và gửi thư rác.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.<br />Nguy cơ sai tích cực: <span class="txtOe">Trung bình</span>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止危险和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假阳性风险：<span class="txtOe">中等</span>。</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止危險和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假陽性風險：<span class="txtOe">中等</span>。</em>
@@ -307,6 +314,7 @@ IPv4-Other:
   de: IPv4 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).
   es: Archivo de firmas por IPv4 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).
   fr: Fichier de signatures pour IPv4 (CIDRs pour les proxies, VPN et autres services indésirables).
+  hi: IPv4 हस्ताक्षर फ़ाइल (प्रॉक्सी, वीपीएन और अन्य विविध अवांछित सेवाओं के लिए CIDR)।
   id: File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
   it: File di firme per IPv4 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).
   ja: IPv4のシグネチャファイル （プロキシ、VPN、およびその他の不要なサービスのCIDR）。
@@ -326,6 +334,7 @@ IPv4-Other:
   de: Standard-IPv4-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste.<br /><em>Benutzt mit: <code>signatures-&gt;ipv4</code>.<br />Falsch-Positive Risiko: <span class="txtOe">Mittleres</span>.</em>
   es: Firmas estándar IPv4 normalmente se incluyen con el paquete principal. Bloquea CIDRs para proxies, VPNs y otros servicios misceláneos no deseados.<br /><em>Usado con: <code>signatures-&gt;ipv4</code>.<br />Riesgo de falsos positivos: <span class="txtOe">Medio</span>.</em>
   fr: Signatures IPv4 standards normalement inclus dans le paquet principal. Bloque CIDRs pour les proxies, VPN et autres services indésirables.<br /><em>Utilisé avec: <code>signatures-&gt;ipv4</code>.<br />Risque de faux positifs: <span class="txtOe">Moyen</span>.</em>
+  hi: डिफ़ॉल्ट IPv4 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। प्रॉक्सी, वीपीएन और अन्य विविध अवांछित सेवाओं के लिए सीआईडीआर ब्लॉक करता है।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv4</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtOe">मध्यम</span>।</em>
   id: Tanda tangan IPv4 standar biasanya disertakan dengan paket utama. Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv4</code>.<br />Risiko positif palsu: <span class="txtOe">Menengah</span>.</em>
   it: Firme IPv4 predefiniti normalmente inclusi nel pacchetto principale. Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati.<br /><em>Utilizzato con: <code>signatures-&gt;ipv4</code>.<br />Rischio di falsi positivi: <span class="txtOe">Medio</span>.</em>
   ja: デフォルトIPv4署名、通常はメインパッケージに含まれています。 プロキシ、VPN、およびその他の不要なサービスのCIDRをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv4</code>.<br />偽陽性のリスク： <span class="txtOe">中程度</span>。</em>
@@ -358,6 +367,7 @@ IPv6:
   de: IPv6 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).
   es: Archivo de firmas por IPv6 (servicios en la nube no deseados y puntos finales no humanos).
   fr: Fichier de signatures pour IPv6 (les services cloud indésirables et les noeuds finaux non humains).
+  hi: IPv6 हस्ताक्षर फ़ाइल (अवांछित क्लाउड सेवाओं और गैर-मानव समापन बिंदुएं)।
   id: File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
   it: File di firme per IPv6 (servizi cloud indesiderate e punti finali non umani).
   ja: IPv6のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
@@ -377,6 +387,7 @@ IPv6:
   de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert unerwünschte Cloud-Services und nicht-menschliche Endpunkte.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.<br />Falsch-Positive Risiko: <span class="txtGn">Niedriges</span>.</em>
   es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea los servicios en la nube no deseados y puntos finales no humanos.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.<br />Riesgo de falsos positivos: <span class="txtGn">Bajo</span>.</em>
   fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque les services cloud indésirables et les noeuds finaux non humains.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.<br />Risque de faux positifs: <span class="txtGn">Faible</span>.</em>
+  hi: डिफ़ॉल्ट IPv6 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। अवांछित क्लाउड सेवाओं और गैर-मानव समापन बिंदुओं को ब्लॉक करता है।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv6</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtGn">कम</span>।</em>
   id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.<br />Risiko positif palsu: <span class="txtGn">Rendah</span>.</em>
   it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca servizi cloud indesiderate e punti finali non umani.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.<br />Rischio di falsi positivi: <span class="txtGn">A basso</span>.</em>
   ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 不要なクラウドサービスと非人のエンドポイントをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.<br />偽陽性のリスク： <span class="txtGn">低い</span>。</em>
@@ -409,6 +420,7 @@ IPv6-Bogons:
   de: IPv6 Signaturdatei (Bogon/Marsmensch CIDRs).
   es: Archivo de firmas por IPv6 (bogon/marciano CIDRs).
   fr: Fichier de signatures pour IPv6 (bogon/martien CIDRs).
+  hi: IPv6 हस्ताक्षर फ़ाइल (बोगोन/मार्टिन CIDR)।
   id: File tanda tangan IPv6 (CIDR bogon/martian).
   it: File di firme per IPv6 (bogon/marziano CIDRs).
   ja: IPv6のシグネチャファイル （ボゴン/火星CIDRs）。
@@ -428,6 +440,7 @@ IPv6-Bogons:
   de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert Bogon/Marsmensch CIDRs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.<br />Falsch-Positive Risiko: <span class="txtGn">Niedriges</span>.</em>
   es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea bogon/marciano CIDRs.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.<br />Riesgo de falsos positivos: <span class="txtGn">Bajo</span>.</em>
   fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque bogon/martien CIDRs.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.<br />Risque de faux positifs: <span class="txtGn">Faible</span>.</em>
+  hi: डिफ़ॉल्ट IPv6 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। ब्लॉक बोगोन/मार्टिन CIDR।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv6</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtGn">कम</span>।</em>
   id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir CIDR bogon/martian.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.<br />Risiko positif palsu: <span class="txtGn">Rendah</span>.</em>
   it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca bogon/marziano CIDRs.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.<br />Rischio di falsi positivi: <span class="txtGn">A basso</span>.</em>
   ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 ボゴン/火星CIDRsをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.<br />偽陽性のリスク： <span class="txtGn">低い</span>。</em>
@@ -460,6 +473,7 @@ IPv6-ISPs:
   de: IPv6 Signaturdatei (gefährliche und spam-anfällig ISPs).
   es: Archivo de firmas por IPv6 (ISPs peligroso y propenso a spam).
   fr: Fichier de signatures pour IPv6 (ISPs dangereux et sujets au spam).
+  hi: IPv6 हस्ताक्षर फ़ाइल (खतरनाक और स्पैम आईएसपी)।
   id: File tanda tangan IPv6 (ISP berbahaya dan spam rawan).
   it: File di firme per IPv6 (ISP pericolosi e spam incline).
   ja: IPv6のシグネチャファイル （スパマーを持つ危険なISP）。
@@ -479,6 +493,7 @@ IPv6-ISPs:
   de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert gefährliche und spam-anfällig ISPs.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.<br />Falsch-Positive Risiko: <span class="txtOe">Mittleres</span>.</em>
   es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea ISPs peligroso y propenso a spam.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.<br />Riesgo de falsos positivos: <span class="txtOe">Medio</span>.</em>
   fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque les ISPs dangereux et sujets au spam.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.<br />Risque de faux positifs: <span class="txtOe">Moyen</span>.</em>
+  hi: डिफ़ॉल्ट IPv6 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। खतरनाक और स्पैम आईएसपी ब्लॉक करता है।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv6</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtOe">मध्यम</span>।</em>
   id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir ISP berbahaya dan spam rawan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.<br />Risiko positif palsu: <span class="txtOe">Menengah</span>.</em>
   it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca ISP pericolosi e spam incline.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.<br />Rischio di falsi positivi: <span class="txtOe">Medio</span>.</em>
   ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 スパマーを持つ危険なISPをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.<br />偽陽性のリスク： <span class="txtOe">中程度</span>。</em>
@@ -486,9 +501,9 @@ IPv6-ISPs:
   nl: Standaard IPv6 handtekeningen normaal opgenomen met de primaire pakket. Blokkeert gevaarlijk en spammy ISPs.<br /><em>Gebruikt met: <code>signatures-&gt;ipv6</code>.<br />Vals positieve risico: <span class="txtOe">Middelgroot</span>.</em>
   pt: Assinaturas IPv6 padrão normalmente incluído com o pacote principal. Bloqueia ISPs perigosos e propensos a spam.<br /><em>Usado com: <code>signatures-&gt;ipv6</code>.<br />Risco de falsos positivos: <span class="txtOe">Médio</span>.</em>
   ru: Стандартные сигнатуры IPv6, обычно включены в основной пакет. Блокирует опасно и спам-склонным интернет-провайдеры.<br /><em>Используется с: <code>signatures-&gt;ipv6</code>.<br />Риск ложноположительный: <span class="txtOe">Средний</span>.</em>
-  th: ลายเซ็น IPv6 เริ่มต้นที่รวมอยู่ในแพคเกจหลัก. บล็อกผู้ให้บริการอินเทอร์เน็ตที่เป็นอันตรายและสแปม.<br /><em>ใช้กับ: <code>signatures-&gt;ipv6</code>.<br />ความเสี่ยงสำหรับการบวกเท็จ: <span class="txtGn">ปานกลาง</span>.</em>
-  tr: Normal olarak ana paketle birlikte verilen varsayılan IPv6 imzaları. Tehlikeli ve spam yapan ISS'leri engeller.<br /><em>Ile kullanılan: <code>signatures-&gt;ipv6</code>.<br />Yalancı pozitif risk: <span class="txtGn">Orta</span>.</em>
-  ur: پہلے سے طے شدہ IPv6 کی دستخط عام طور پر بنیادی پیکیج کے ساتھ شامل تھے. خطرناک بلاکس اور سپام ISP.<br /><em>کے ساتھ استعمال کیا: <code>signatures-&gt;ipv6</code>.<br />غلط مثبت خطرہ: <span class="txtGn">درمیانہ</span>.</em>
+  th: ลายเซ็น IPv6 เริ่มต้นที่รวมอยู่ในแพคเกจหลัก. บล็อกผู้ให้บริการอินเทอร์เน็ตที่เป็นอันตรายและสแปม.<br /><em>ใช้กับ: <code>signatures-&gt;ipv6</code>.<br />ความเสี่ยงสำหรับการบวกเท็จ: <span class="txtOe">ปานกลาง</span>.</em>
+  tr: Normal olarak ana paketle birlikte verilen varsayılan IPv6 imzaları. Tehlikeli ve spam yapan ISS'leri engeller.<br /><em>Ile kullanılan: <code>signatures-&gt;ipv6</code>.<br />Yalancı pozitif risk: <span class="txtOe">Orta</span>.</em>
+  ur: پہلے سے طے شدہ IPv6 کی دستخط عام طور پر بنیادی پیکیج کے ساتھ شامل تھے. خطرناک بلاکس اور سپام ISP.<br /><em>کے ساتھ استعمال کیا: <code>signatures-&gt;ipv6</code>.<br />غلط مثبت خطرہ: <span class="txtOe">درمیانہ</span>.</em>
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn ISP nguy hiểm và gửi thư rác.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.<br />Nguy cơ sai tích cực: <span class="txtOe">Trung bình</span>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止危险和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假阳性风险：<span class="txtOe">中等</span>。</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止危險和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假陽性風險：<span class="txtOe">中等</span>。</em>
@@ -511,6 +526,7 @@ IPv6-Other:
   de: IPv6 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).
   es: Archivo de firmas por IPv6 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).
   fr: Fichier de signatures pour IPv6 (CIDRs pour les proxies, VPN et autres services indésirables).
+  hi: IPv6 हस्ताक्षर फ़ाइल (प्रॉक्सी, वीपीएन और अन्य विविध अवांछित सेवाओं के लिए CIDR)।
   id: File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
   it: File di firme per IPv6 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).
   ja: IPv6のシグネチャファイル （プロキシ、VPN、およびその他の不要なサービスのCIDR）。
@@ -530,6 +546,7 @@ IPv6-Other:
   de: Standard-IPv6-Signaturen normalerweise mit dem Hauptpaket enthalten. Blockiert CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste.<br /><em>Benutzt mit: <code>signatures-&gt;ipv6</code>.<br />Falsch-Positive Risiko: <span class="txtGn">Niedriges</span>.</em>
   es: Firmas estándar IPv6 normalmente se incluyen con el paquete principal. Bloquea CIDRs para proxies, VPNs y otros servicios misceláneos no deseados.<br /><em>Usado con: <code>signatures-&gt;ipv6</code>.<br />Riesgo de falsos positivos: <span class="txtGn">Bajo</span>.</em>
   fr: Signatures IPv6 standards normalement inclus dans le paquet principal. Bloque CIDRs pour les proxies, VPN et autres services indésirables.<br /><em>Utilisé avec: <code>signatures-&gt;ipv6</code>.<br />Risque de faux positifs: <span class="txtGn">Faible</span>.</em>
+  hi: डिफ़ॉल्ट IPv6 हस्ताक्षर आमतौर पर मुख्य पैकेज के साथ शामिल थे। प्रॉक्सी, वीपीएन और अन्य विविध अवांछित सेवाओं के लिए सीआईडीआर ब्लॉक करता है।<br /><em>साथ उपयोग करना: <code>signatures-&gt;ipv6</code>.<br />झूठी सकारात्मक जोखिम: <span class="txtGn">कम</span>।</em>
   id: Tanda tangan IPv6 standar biasanya disertakan dengan paket utama. Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan.<br /><em>Digunakan dengan: <code>signatures-&gt;ipv6</code>.<br />Risiko positif palsu: <span class="txtGn">Rendah</span>.</em>
   it: Firme IPv6 predefiniti normalmente inclusi nel pacchetto principale. Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati.<br /><em>Utilizzato con: <code>signatures-&gt;ipv6</code>.<br />Rischio di falsi positivi: <span class="txtGn">A basso</span>.</em>
   ja: デフォルトIPv6署名、通常はメインパッケージに含まれています。 プロキシ、VPN、およびその他の不要なサービスのCIDRをブロックします。<br /><em>オプション： <code>signatures-&gt;ipv6</code>.<br />偽陽性のリスク： <span class="txtGn">低い</span>。</em>
@@ -728,6 +745,29 @@ l10n/fr:
    - 806666788d96ef329b73a3722c35d6a5:4446
    - a3d9aaec4648e45e661bb8de03a40bab:24357
    - fbf0bc62860cea288a9334ff738bbfe8:4398
+ Reannotate: components.dat
+l10n/hi:
+ Name: L10N: हिंदी
+ Extended Description:
+  hi: हिंदी भाषा डाटा
+ Version: 2017.123.373
+ Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
+ Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.hi.cli.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.hi.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/lang/lang.hi.php
+  To:
+   - lang/lang.hi.cli.php
+   - lang/lang.hi.fe.php
+   - lang/lang.hi.php
+  Checksum:
+   - 5e3deaaf04784e96aa6c79ef0cd4b0ac:7418
+   - 191c0eaf897962412cae93013a173d26:37681
+   - f3b9175455474dc7dc3176609a8e99e4:6617
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
@@ -940,7 +980,7 @@ l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description:
   ur: ‏اردو‏ زبان فائلوں
- Version: 2017.119.884
+ Version: 2017.123.373
  Minimum Required: 0.9.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/components.dat
@@ -956,7 +996,7 @@ l10n/ur:
    - lang/lang.ur.php
   Checksum:
    - 80ef1a99cc39402c3a2c25abede93f38:5618
-   - 948dd88f0acb8480935e1937c7567126:30195
+   - 761953fc56041bd5c92beaa758f9d936:30080
    - 2eb748d8a2fce9c1ad33d388dcd31e4c:5659
  Reannotate: components.dat
 l10n/vi:

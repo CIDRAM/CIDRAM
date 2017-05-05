@@ -231,7 +231,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
 /vault/icons.php | 圖標處理文件（由前端文件管理器使用）。
-/vault/ignore.dat | 忽略文件（用於指定其中章節簽名CIDRAM應該忽略）。
+/vault/ignore.dat | 忽略文件（用於指定其中簽名章節CIDRAM應該忽略）。
 /vault/ipbypass.dat | 包含列表IP旁路（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
 /vault/ipv4.dat | IPv4簽名文件（不想要的雲服務和非人終端）。
 /vault/ipv4_bogons.dat | IPv4簽名文件（bogon/火星CIDR）。
@@ -487,7 +487,7 @@ CIDRAM簽名文件應該使用Unix的換行符（`%0A`，或`\n`）！其他換�
 
 #### 7.1 標籤
 
-如果要分割您的自定義簽名成各個章節，您可以識別這些各個章節為腳本通過加入一個章節標籤立即跟著每章節簽名，伴隨著章節簽名名字（看下面的例子）。
+如果要分割您的自定義簽名成各個章節，您可以識別這些各個章節為腳本通過加入一個章節標籤立即跟著每簽名章節，伴隨著簽名章節名字（看下面的例子）。
 
 ```
 # 部分一。
@@ -622,19 +622,19 @@ Ignore 部分一
 
 #### 什麼是“簽名”？
 
-In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+在CIDRAM的上下文中，“簽名”是一些數據，它表示/識別我們正在尋找的東西，通常是IP地址或CIDR，並包含一些說明，告訴CIDRAM最好的回應方法當它遇到我們正在尋找的。 CIDRAM的典型簽名如下所示：
 
 `1.2.3.4/32 Deny Generic`
 
-Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+經常（但不總是），簽名是捆綁在一起，形成“簽名章節”，經常伴隨評論，標記，和/或相關元數據。 這可以用於為簽名提供附加上下文和/或附加說明。
 
 #### <a name="WHAT_IS_A_CIDR"></a>什麼是“CIDR”？
 
-"CIDR" is an acronym for "Classless Inter-Domain Routing" （“無類別域間路由”） *[[1](https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+“CIDR” 是 “Classless Inter-Domain Routing” 的首字母縮寫 （“無類別域間路由”） *【[1](https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1), [2](http://whatismyipaddress.com/cidr)】*。 這個首字母縮寫用於這個包的名稱， “CIDRAM”， 是 “Classless Inter-Domain Routing Access Manager” 的首字母縮寫 （“無類別域間路由訪問管理器”）。
 
-However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+然而，在CIDRAM的上下文中（如，在本文檔中，在CIDRAM的討論中，或在CIDRAM語言數據中），當“CIDR”（單數）或“CIDRs”（複數）被提及時（因此當我們用這些詞作為名詞在自己的權利，而不作為首字母縮寫），我們的意圖是一個子網，用CIDR表示法表示。 使用CIDR/CIDRs而不是子網的原因是澄清它是用CIDR表示法表示的子網是我們的意思 （因為子網可以用幾種不同的方式表達）。 因此，CIDRAM可以被認為是“子網訪問管理器”。
 
-Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+這個雙重含義可能看起來很歧義，但這個解釋並提供上下文應該有助於解決這個歧義。
 
 #### 什麼是“假陽性”？
 
@@ -677,7 +677,7 @@ CIDRAM使網站所有者能夠阻止不良流量，但網站所有者有責任�
 
 #### 我可以使用單個CIDRAM安裝來保護多個域嗎？
 
-Yes. CIDRAM installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to CIDRAM installations protecting only one domain as "single-domain installations", and we refer to CIDRAM installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need CIDRAM to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), CIDRAM will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to CIDRAM, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.
+可以。CIDRAM安裝未綁定到特定域，因此可以用來保護多個域。通常，當CIDRAM安裝保護只一個域，我們稱之為“單域安裝”，和當CIDRAM安裝保護多個域和/或子域，我們稱之為“多域安裝”。如果您進行多域安裝並需要使用不同的簽名文件為不同的域，或需要不同配置CIDRAM為不同的域，這可以做到。加載配置文件後（`config.ini`），CIDRAM將尋找“配置覆蓋文件”特定於所請求的域（`xn--cjs74vvlieukn40a.tld.config.ini`），並如果發現，由配置覆蓋文件定義的任何配置值將用於執行實例而不是由配置文件定義的配置值。配置覆蓋文件與配置文件相同，並通過您的決定，可能包含CIDRAM可用的所有配置指令，或任何必需的部分當需要。配置覆蓋文件根據它們旨在的域來命名（所以，例如，如果您需要一個配置覆蓋文件為域，`http://www.some-domain.tld/`，它的配置覆蓋文件應該被命名`some-domain.tld.config.ini`，和它應該放置在`vault`與配置文件，`config.ini`）。域名是從標題`HTTP_HOST`派生的；“www”被忽略。
 
 ---
 

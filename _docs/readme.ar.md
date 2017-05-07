@@ -181,6 +181,9 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية لCLI.</div> | /vault/lang/lang.fr.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية لfront-end.</div> | /vault/lang/lang.fr.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهندية لCLI.</div> | /vault/lang/lang.hi.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهندية لfront-end.</div> | /vault/lang/lang.hi.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهندية.</div> | /vault/lang/lang.hi.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية لCLI.</div> | /vault/lang/lang.id.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية لfront-end.</div> | /vault/lang/lang.id.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية.</div> | /vault/lang/lang.id.php
@@ -770,4 +773,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 2 مايو 2017 (2017.05.02).</div>
+<div dir="rtl">آخر تحديث: 7 مايو 2017 (2017.05.07).</div>

@@ -179,6 +179,9 @@ Data | Deskripsi
 /vault/lang/lang.fr.cli.php | File Bahasa Perancis untuk CLI.
 /vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk bagian depan.
 /vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.hi.cli.php | File Bahasa Hindi untuk CLI.
+/vault/lang/lang.hi.fe.php | File Bahasa Hindi untuk bagian depan.
+/vault/lang/lang.hi.php | File Bahasa Hindi.
 /vault/lang/lang.id.cli.php | File Bahasa Indonesia untuk CLI.
 /vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk bagian depan.
 /vault/lang/lang.id.php | File Bahasa Indonesia.
@@ -681,4 +684,4 @@ Ya. Instalasi CIDRAM tidak secara alami terkunci pada domain tertentu, dan denga
 ---
 
 
-Terakhir Diperbarui: 2 Mei 2017 (2017.05.02).
+Terakhir Diperbarui: 7 Mei 2017 (2017.05.07).

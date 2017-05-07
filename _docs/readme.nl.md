@@ -179,6 +179,9 @@ Bestand | Beschrijving
 /vault/lang/lang.fr.cli.php | Franse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.fr.fe.php | Franse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.hi.cli.php | Hindi taaldata/taalgegevens voor CLI.
+/vault/lang/lang.hi.fe.php | Hindi taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.hi.php | Hindi taaldata/taalgegevens.
 /vault/lang/lang.id.cli.php | Indonesisch taaldata/taalgegevens voor CLI.
 /vault/lang/lang.id.fe.php | Indonesisch taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
@@ -681,4 +684,4 @@ Ja. CIDRAM-installaties zijn niet van nature gebonden naar specifieke domeinen, 
 ---
 
 
-Laatste Bijgewerkt: 2 Mei 2017 (2017.05.02).
+Laatste Bijgewerkt: 7 Mei 2017 (2017.05.07).

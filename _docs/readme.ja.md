@@ -179,6 +179,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.fr.cli.php | ＣＬＩのフランス語言語データ。
 /vault/lang/lang.fr.fe.php | フロントエンドのフランス語言語データ。
 /vault/lang/lang.fr.php | フランス語言語データ。
+/vault/lang/lang.hi.cli.php | ＣＬＩのヒンディー語言語データ。
+/vault/lang/lang.hi.fe.php | フロントエンドのヒンディー語言語データ。
+/vault/lang/lang.hi.php | ヒンディー語言語データ。
 /vault/lang/lang.id.cli.php | ＣＬＩのインドネシア語言語データ。
 /vault/lang/lang.id.fe.php | フロントエンドのインドネシア語言語データ。
 /vault/lang/lang.id.php | インドネシア語言語データ。
@@ -621,17 +624,17 @@ Ignore セクション１
 
 #### 「シグネチャ」とは何ですか？
 
-In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+CIDRAMの文脈では、「シグネチャ」とは、インジケータ/識別子として機能するデータである。 私たちはそれを使って、探しているものを見つけます（通常はＩＰアドレスまたはＣＩＤＲです）。 しばしば、それはCIDRAMのための何らかの命令を含む（応答する最善の方法、等）。 CIDRAMの典型的なシグネチャは、次のようになります。
 
 `1.2.3.4/32 Deny Generic`
 
-Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+しばしば（しかし、常にではない）、シグネチャは一緒に束ねられて「シグネチャセクション」を形成します。 コメント、マークアップ、および関連するメタデータが付いていることがよくあります（これは、追加の文脈およびさらなる指示を提供するために使用することができる）。
 
 #### <a name="WHAT_IS_A_CIDR"></a>「ＣＩＤＲ」とは何ですか？
 
 "CIDR" is an acronym for "Classless Inter-Domain Routing" *[[1](https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
 
-However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+しかし、CIDRAMの文脈では (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
 
 Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
 
@@ -681,4 +684,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-最終アップデート： 2017年5月2日。
+最終アップデート： 2017年5月7日。

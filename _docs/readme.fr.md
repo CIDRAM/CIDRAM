@@ -179,6 +179,9 @@ Fichier | Description
 /vault/lang/lang.fr.cli.php | Données linguistiques en Français pour CLI.
 /vault/lang/lang.fr.fe.php | Données linguistiques en Français pour l'accès frontal.
 /vault/lang/lang.fr.php | Données linguistiques en Français.
+/vault/lang/lang.hi.cli.php | Données linguistiques en Hindi pour CLI.
+/vault/lang/lang.hi.fe.php | Données linguistiques en Hindi pour l'accès frontal.
+/vault/lang/lang.hi.php | Données linguistiques en Hindi.
 /vault/lang/lang.id.cli.php | Données linguistiques en Indonésienne pour CLI.
 /vault/lang/lang.id.fe.php | Données linguistiques en Indonésienne pour l'accès frontal.
 /vault/lang/lang.id.php | Données linguistiques en Indonésienne.
@@ -681,4 +684,4 @@ Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des d
 ---
 
 
-Dernière Mise à Jour: 2 Mai 2017 (2017.05.02).
+Dernière Mise à Jour: 7 Mai 2017 (2017.05.07).

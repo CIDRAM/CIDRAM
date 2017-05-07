@@ -179,6 +179,9 @@ File | Description
 /vault/lang/lang.fr.cli.php | French language data for CLI.
 /vault/lang/lang.fr.fe.php | French language data for the front-end.
 /vault/lang/lang.fr.php | French language data.
+/vault/lang/lang.hi.cli.php | Hindi language data for CLI.
+/vault/lang/lang.hi.fe.php | Hindi language data for the front-end.
+/vault/lang/lang.hi.php | Hindi language data.
 /vault/lang/lang.id.cli.php | Indonesian language data for CLI.
 /vault/lang/lang.id.fe.php | Indonesian language data for the front-end.
 /vault/lang/lang.id.php | Indonesian language data.
@@ -681,4 +684,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-Last Updated: 2 May 2017 (2017.05.02).
+Last Updated: 7 May 2017 (2017.05.07).

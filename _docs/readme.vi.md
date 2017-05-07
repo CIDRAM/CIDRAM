@@ -179,6 +179,9 @@ Tập tin | Chi tiết
 /vault/lang/lang.fr.cli.php | Dữ liệu tiếng Pháp cho CLI.
 /vault/lang/lang.fr.fe.php | Dữ liệu tiếng Pháp cho các front-end.
 /vault/lang/lang.fr.php | Dữ liệu tiếng Pháp.
+/vault/lang/lang.hi.cli.php | Dữ liệu tiếng Hindi cho CLI.
+/vault/lang/lang.hi.fe.php | Dữ liệu tiếng Hindi cho các front-end.
+/vault/lang/lang.hi.php | Dữ liệu tiếng Hindi.
 /vault/lang/lang.id.cli.php | Dữ liệu tiếng Indonesia cho CLI.
 /vault/lang/lang.id.fe.php | Dữ liệu tiếng Indonesia cho các front-end.
 /vault/lang/lang.id.php | Dữ liệu tiếng Indonesia.
@@ -681,4 +684,4 @@ Vâng. Cài đặt CIDRAM không bị khóa vào các tên miền cụ thể, v�
 ---
 
 
-Lần cuối cập nhật: 2 Tháng Năm 2017 (2017.05.02).
+Lần cuối cập nhật: 7 Tháng Năm 2017 (2017.05.07).

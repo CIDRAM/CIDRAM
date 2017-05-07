@@ -179,6 +179,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/lang/lang.fr.cli.php | CLI 프랑스어 언어 데이터.
 /vault/lang/lang.fr.fe.php | 프론트 엔드 프랑스어 언어 데이터.
 /vault/lang/lang.fr.php | 프랑스어 언어 데이터.
+/vault/lang/lang.hi.cli.php | CLI 힌디어 언어 데이터.
+/vault/lang/lang.hi.fe.php | 프론트 엔드 힌디어 언어 데이터.
+/vault/lang/lang.hi.php | 힌디어 언어 데이터.
 /vault/lang/lang.id.cli.php | CLI 인도네시아어 언어 데이터.
 /vault/lang/lang.id.fe.php | 프론트 엔드 인도네시아어 언어 데이터.
 /vault/lang/lang.id.php | 인도네시아어 언어 데이터.
@@ -621,11 +624,11 @@ Ignore 섹션 1
 
 #### "서명"이란 무엇입니까?
 
-In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+CIDRAM의 맥락에서 "서명"이라 함은 지표/식별자 역할을하는 데이터이다. 우리는 그것을 사용하여 원하는 정보를 찾습니다 (일반적으로 IP 주소 또는 CIDR입니다). 종종 그것은 CIDRAM위한 어떤 명령을 포함 (응답하는 최선의 방법 등). CIDRAM의 전형적인 서명은 다음과 같습니다.
 
 `1.2.3.4/32 Deny Generic`
 
-Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+종종 (그러나 항상은 아니지만) 서명은 함께 묶어 "서명 섹션"을 형성합니다. 코멘트, 마크 업 및 관련 메타 데이터를 가진 경우가 종종 있습니다 (이것은 추가 문맥 및 추가 지침을 제공하는 데 사용할 수있다).
 
 #### <a name="WHAT_IS_A_CIDR"></a>"CIDR"이란 무엇입니까?
 
@@ -681,4 +684,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-최종 업데이트: 2017년 5월 2일.
+최종 업데이트: 2017년 5월 7일.

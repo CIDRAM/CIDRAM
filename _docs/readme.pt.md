@@ -179,6 +179,9 @@ Arquivo | Descrição
 /vault/lang/lang.fr.cli.php | Dados lingüísticos Francesa para CLI.
 /vault/lang/lang.fr.fe.php | Dados lingüísticos Francesa para o front-end.
 /vault/lang/lang.fr.php | Dados lingüísticos Francesa.
+/vault/lang/lang.hi.cli.php | Dados lingüísticos Hindi para CLI.
+/vault/lang/lang.hi.fe.php | Dados lingüísticos Hindi para o front-end.
+/vault/lang/lang.hi.php | Dados lingüísticos Hindi.
 /vault/lang/lang.id.cli.php | Dados lingüísticos Indonésio para CLI.
 /vault/lang/lang.id.fe.php | Dados lingüísticos Indonésio para o front-end.
 /vault/lang/lang.id.php | Dados lingüísticos Indonésio.
@@ -681,4 +684,4 @@ Sim. As instalações do CIDRAM não estão naturalmente atado com domínios esp
 ---
 
 
-Última Atualização: 2 Maio 2017 (2017.05.02).
+Última Atualização: 7 Maio 2017 (2017.05.07).

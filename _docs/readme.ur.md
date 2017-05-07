@@ -181,6 +181,9 @@
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ہندی زبان کے اعداد و شمار.</div> | /vault/lang/lang.hi.php
 &nbsp; <div dir="rtl" style="display:inline;">CLI لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
@@ -477,12 +480,12 @@
 
 <div dir="rtl">"sitekey"<br /></div>
 <div dir="rtl"><ul>
- <li>یہ قدر آپ ہیتی، جس reCAPTCHA کے ڈیش بورڈ کے اندر اندر پایا جا سکتا ہے کے لئے "site key" کے مطابق کرنا چاہئے.</li>
+ <li>"site key" کے طور پر ایک ہی ہونا چاہئے. یہ reCAPTCHA ڈیش بورڈ میں پایا جا سکتا ہے.</li>
 </ul></div>
 
 <div dir="rtl">"secret"<br /></div>
 <div dir="rtl"><ul>
- <li>یہ قدر آپ ہیتی، جس reCAPTCHA کے ڈیش بورڈ کے اندر اندر پایا جا سکتا ہے کے لئے "secret key" کے مطابق کرنا چاہئے. <li>يجب أن تتطابق هذه القيمة إلى "secret key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.</li>
+ <li>"secret key" کے طور پر ایک ہی ہونا چاہئے. یہ reCAPTCHA ڈیش بورڈ میں پایا جا سکتا ہے.</li>
 </ul></div>
 
 <div dir="rtl">"expiry"<br /></div>
@@ -708,7 +711,7 @@ Ignore سیکشن 1
 
 #### <div dir="rtl">ایک "دستخط" کیا ہے؟<br /><br /></div>
 
-In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
+<div dir="rtl">CIDRAM کے تناظر میں، اعداد و شمار کے مخصوص کچھ ہم کے لئے تلاش کر رہے ہیں اس کی شناخت کے لئے استعمال کیا جاتا ہے کے لئے ایک "دستخط" مراد، عام طور پر ایک IP ایڈریس یا CIDR، CIDRAM لئے کچھ ہدایات کے ساتھ (یہ مقابلوں جب ہم کے لئے تلاش کر رہے ہیں کیا جواب دینے کا بہترین طریقہ، وغیرہ). CIDRAM لئے ایک مخصوص دستخط کی کچھ اس طرح دکھائی دیتی ہے:<br /><br /></div>
 
 `1.2.3.4/32 Deny Generic`
 
@@ -760,7 +763,7 @@ Although this dual meaning of "CIDR" may present some ambiguity in some cases, t
 
 <div dir="rtl">میں 5.4.0 سے زیادہ پرانے ایک پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
 
-<div dir="rtl">نمبر PHP 5.4.0 2014 میں سرکاری EOL ( "زندگی کے اختتام") تک پہنچ گئی، اور توسیع کی سیکورٹی کی حمایت کی اس تحریر کی وجہ 2015. میں ختم کیا گیا تھا، یہ 2017 ہے اور PHP 7.1.0 پہلے سے ہی دستیاب ہے. اس وقت، حمایت PHP 5.4.0 اور تمام دستیاب جدید تر پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کے لئے فراہم کی جاتی ہے، لیکن آپ کو کسی بھی بڑی عمر کے پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کی کوشش کرتے ہیں، مدد فراہم نہیں کی جائے گی.<br /><br /></div>
+<div dir="rtl">نمبر PHP 5.4.0 2014 میں سرکاری EOL ("زندگی کے اختتام") تک پہنچ گئی، اور توسیع کی سیکورٹی کی حمایت کی اس تحریر کی وجہ 2015. میں ختم کیا گیا تھا، یہ 2017 ہے اور PHP 7.1.0 پہلے سے ہی دستیاب ہے. اس وقت، حمایت PHP 5.4.0 اور تمام دستیاب جدید تر پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کے لئے فراہم کی جاتی ہے، لیکن آپ کو کسی بھی بڑی عمر کے پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کی کوشش کرتے ہیں، مدد فراہم نہیں کی جائے گی.<br /><br /></div>
 
 <div dir="rtl">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد CIDRAM تنصیب کا استعمال کر سکتا ہوں؟<br /><br /></div>
 
@@ -769,4 +772,4 @@ Although this dual meaning of "CIDR" may present some ambiguity in some cases, t
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 2 مئی 2017 (2017.05.02).</div>
+<div dir="rtl">آخری تازہ کاری: 7 مئی 2017 (2017.05.07).</div>

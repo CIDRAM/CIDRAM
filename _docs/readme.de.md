@@ -179,6 +179,9 @@ Datei | Beschreibung
 /vault/lang/lang.fr.cli.php | Französische Sprachdateien für CLI.
 /vault/lang/lang.fr.fe.php | Französische Sprachdateien für das Front-End.
 /vault/lang/lang.fr.php | Französische Sprachdateien.
+/vault/lang/lang.hi.cli.php | Hindi Sprachdateien für CLI.
+/vault/lang/lang.hi.fe.php | Hindi Sprachdateien für das Front-End.
+/vault/lang/lang.hi.php | Hindi Sprachdateien.
 /vault/lang/lang.id.cli.php | Indonesische Sprachdateien für CLI.
 /vault/lang/lang.id.fe.php | Indonesische Sprachdateien für das Front-End.
 /vault/lang/lang.id.php | Indonesische Sprachdateien.
@@ -681,4 +684,4 @@ Ja. CIDRAM-Installationen sind natürlich nicht auf bestimmte Domains gesperrt, 
 ---
 
 
-Zuletzt aktualisiert: 2 Mai 2017 (2017.05.02).
+Zuletzt aktualisiert: 7 Mai 2017 (2017.05.07).

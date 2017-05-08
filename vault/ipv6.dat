@@ -53,8 +53,10 @@ Tag: PEG TECH INC
 
 
 # ASN 26347 ("New Dream Network, LLC").
-# %Listed, Google Malware Dashboard: 1.52%.
-# Updated: 2016.09.28
+# %Listed, Google Malware Dashboard: 1.98%.
+# %Listed, CleanTalk.org: 29.97%.
+# Stop Forum Spam (SFS) listings: 131.
+# Updated: 2016.09.28 / Checked: 2017.05.08
 
 2607:f298:1::/48 Deny Cloud
 2607:f298:4::/47 Deny Cloud
@@ -216,14 +218,13 @@ Tag: OVH Systems
 Tag: Dattatec.com
 
 
-# ASNs 7203, 16265, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 394380 ("Leaseweb Network").
-# %Listed, Google Malware Dashboard: 0.66% (AS7203), 0.80% (AS16265), 1.07% (AS28753), 0.16% (AS30633),
-#   0.56% (AS30633), 0.43% (AS38930), 2.45% (AS59253), 0% (AS60626), 1.24% (AS60781), 0% (AS133752/AS394380).
-# Updated: 2016.09.28
+# ASNs 7203, 16265, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 394380, 395954 ("Leaseweb Network").
+# Updated: 2017.05.08
 
-2001:67c:28d4::/48 Deny Cloud
 2001:df1:800::/47 Deny Cloud
 2001:1af8::/32 Deny Cloud
+2402:5980::/40 Deny Cloud
+2402:9e80:2402::/48 Deny Cloud
 2604:9a00::/32 Deny Cloud
 2605:fe80::/32 Deny Cloud
 2606:9880::/32 Deny Cloud
@@ -237,12 +238,12 @@ Tag: Dattatec.com
 2a00:9d20:53::/48 Deny Cloud
 2a00:9d20:5353::/48 Deny Cloud
 2a00:c6c0:1::/48 Deny Cloud
-2a01:9260::/32 Deny Cloud
 2a01:9400::/32 Deny Cloud
+2a01:9260::/32 Deny Cloud
 2a01:b2e0::/29 Deny Cloud
+2a02:1330::/32 Deny Cloud
 2a02:bc0::/32 Deny Cloud
 2a02:cc8::/32 Deny Cloud
-2a02:1330::/32 Deny Cloud
 2a02:2870:8000::/33 Deny Cloud
 2a02:2968::/29 Deny Cloud
 2a02:2ca0:3a::/48 Deny Cloud
@@ -250,10 +251,10 @@ Tag: Dattatec.com
 2a02:4600::/32 Deny Cloud
 2a03:f85:2::/48 Deny Cloud
 2a03:2280::/32 Deny Cloud
-2a03:ce40::/47 Deny Cloud
 2a03:38a0::/32 Deny Cloud
 2a03:7480::/44 Deny Cloud
 2a03:e280::/32 Deny Cloud
+2a03:ce40::/47 Deny Cloud
 2a04:1880:1111::/48 Deny Cloud
 2a04:88c0::/36 Deny Cloud
 2a05:3a40::/29 Deny Cloud
@@ -263,14 +264,20 @@ Tag: Dattatec.com
 2a06:6ec0::/29 Deny Cloud
 2a06:6f80::/29 Deny Cloud
 2a06:a5c0::/29 Deny Cloud
+2a06:ab00::/32 Deny Cloud
 2a06:b5c0::/29 Deny Cloud
 2a07:2c00::/29 Deny Cloud
 2a07:95c0::/29 Deny Cloud
 2a07:a300::/29 Deny Cloud
 2a0a:1400::/29 Deny Cloud
+2a0a:2340::/29 Deny Cloud
+2a0a:2640::/29 Deny Cloud
 2a0a:2d00::/29 Deny Cloud
 2a0a:3200::/29 Deny Cloud
+2a0a:3480::/29 Deny Cloud
 2a0a:3600::/29 Deny Cloud
+2a0a:4980::/29 Deny Cloud
+2a0a:8580::/29 Deny Cloud
 2a0a:b400::/29 Deny Cloud
 Tag: Leaseweb
 
@@ -335,6 +342,16 @@ Tag: Agava Ltd
 2a03:8180:1400::/39 Run rules_softlayer.php
 2a03:8180:1600::/40 Run rules_softlayer.php
 Tag: SoftLayer
+
+
+# ASN 54444 ("Avesta Networks LLC").
+# %Listed, Google Malware Dashboard: 1.51%.
+# %Listed, CleanTalk.org: 38.09%.
+# Stop Forum Spam (SFS) listings: 103.
+# Updated: 2017.05.08
+
+2604:d780::/38 Deny Cloud
+Tag: Avesta Networks LLC
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
@@ -494,9 +511,9 @@ Tag: GorillaServers, Inc
 Tag: Data Center
 
 
-# ASNs 34360, 41079, 48760 ("H88 S.A").
-# %Listed, Google Malware Dashboard: 2.18% (AS34360), 9.49% (AS41079), 0% (AS48760).
-# Updated: 2016.01.18 / Checked: 2016.09.28
+# ASNs 34360, 41079, 48760, 198414 ("H88 S.A").
+# Webhosting company based in Poland.
+# Updated: 2016.01.18 / Checked: 2017.05.08
 
 2a01:4660::/32 Deny Cloud
 2a02:1778::/32 Deny Cloud
@@ -843,8 +860,8 @@ Tag: Wowrack.com
 
 
 # ASN 197746 ("HyperHosting - Cloud Infrastructure").
-# %Listed, Google Malware Dashboard: 6.39%.
-# Updated: 2016.01.21 / Checked: 2016.09.28
+# %Listed, Google Malware Dashboard: 5.82%.
+# Updated: 2016.01.21 / Checked: 2017.05.08
 
 2a00:6620:2000::/48 Deny Cloud
 Tag: HyperHosting
@@ -868,8 +885,7 @@ Tag: CoreSpace, Inc
 
 
 # ASNs 26458, 32421 ("Black Lotus Communications").
-# %Listed, Google Malware Dashboard: 0.80% (26458), 0.87% (32421).
-# Updated: 2016.04.03 / Checked: 2016.10.02
+# Updated: 2016.04.03 / Checked: 2017.05.08
 
 2604:8300::/32 Deny Cloud
 2a04:d440::/29 Deny Cloud
@@ -2219,8 +2235,10 @@ Tag: Akamai Technologies
 
 
 # ASN 5693 ("Latisys-Irvine, LLC").
-# %Listed, Google Malware Dashboard: 1.99%.
-# Updated: 2016.04.03 / Checked: 2016.10.02
+# %Listed, Google Malware Dashboard: 0.08%.
+# %Listed, CleanTalk.org: 5.80%.
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2016.04.03 / Checked: 2017.05.08
 
 2001:1990::/32 Deny Cloud
 Tag: Latisys-Irvine, LLC
@@ -2571,8 +2589,10 @@ Tag: OOO TimeWeb
 
 
 # ASN 10098 ("Henderson Data Centre Limited").
-# %Listed, Google Malware Dashboard: 3.17%.
-# Updated: 2016.04.23 / Checked: 2016.09.28
+# %Listed, Google Malware Dashboard: 3.29%.
+# %Listed, CleanTalk.org: 68.61%.
+# Stop Forum Spam (SFS) listings: 393.
+# Updated: 2016.04.23 / Checked: 2017.05.08
 
 2407:7200::/32 Deny Cloud
 Tag: Henderson
@@ -2824,8 +2844,10 @@ Tag: Amazon Data Services
 
 
 # ASN 62282 ("UAB Rakrejus").
-# %Listed, Google Malware Dashboard: 3.56%.
-# Updated: 2016.10.01
+# %Listed, Google Malware Dashboard: 3.08%.
+# %Listed, CleanTalk.org: 32.20%.
+# Stop Forum Spam (SFS) listings: 122.
+# Updated: 2016.10.01 / Checked: 2017.05.08
 
 2a01:41a0::/32 Deny Cloud
 2a02:7b40::/32 Deny Cloud
@@ -2833,11 +2855,13 @@ Tag: UAB Rakrejus
 
 
 # ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
-# %Listed, Google Malware Dashboard: 2.25%.
-# Updated: 2016.04.29 / Checked: 2016.10.01
+# %Listed, Google Malware Dashboard: 0.51%.
+# %Listed, CleanTalk.org: 16.67%.
+# Updated: 2017.05.08
 
 2400:8f80::/47 Deny Cloud
 2400:b800::/47 Deny Cloud
+2400:b800:2::/48 Deny Cloud
 Tag: SYNERGY WHOLESALE
 
 
@@ -3658,7 +3682,13 @@ Tag: iu.nl
 
 
 # ASN 7991 ("SAVVIS COMMUNICATIONS").
-# Updated: 2016.10.02
+# 2016.10.02: 6.24% malware infection rate reported by Google, listed at CleanTalk.org, abuseat.org (CBL-Listed), and
+# had listings on SFS. 2017.05.08: 0% malware infection rate and can't finding any listings for this ASN anywhere. By
+# all accounts, seems to have gone from really bad, to really good. Keeping this section here for the moment, just in
+# case it gets bad again, but if everything still looks good by the next time I get around to checking it, I'll remove
+# this section and all contained signatures (no reason to block a clean ASN). May remove this section earlier if there
+# are any requests specifically to do so.
+# Updated: 2016.10.02 / Checked: 2017.05.08
 
 2001:460:70::/46 Deny Cloud
 2001:460:78::/46 Deny Cloud

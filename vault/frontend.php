@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.05.01).
+ * This file: Front-end handler (last modified: 2017.05.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -865,6 +865,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         die;
     }
     unset($CIDRAM['QueryTemp']);
+    // $CIDRAM['FE']['UpdatesFormTargetControls'] .= '<option value="switch-update-all">' . $CIDRAM['lang']['field_update_all'] . '</option>';
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = array('Meta' => array(), 'RemoteMeta' => array());
@@ -1340,6 +1341,26 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 }
             } elseif (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
+            }
+            if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'])) {
+                $CIDRAM['Components']['ThisComponent']['Name'] =
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Name'];
+                if (is_array($CIDRAM['Components']['ThisComponent']['Name'])) {
+                    $CIDRAM['IsolateL10N'](
+                        $CIDRAM['Components']['ThisComponent']['Name'],
+                        $CIDRAM['Config']['general']['lang']
+                    );
+                }
+            }
+            if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
+                $CIDRAM['Components']['ThisComponent']['Extended Description'] =
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'];
+                if (is_array($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
+                    $CIDRAM['IsolateL10N'](
+                        $CIDRAM['Components']['ThisComponent']['Extended Description'],
+                        $CIDRAM['Config']['general']['lang']
+                    );
+                }
             }
             if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
                 if (
@@ -2218,6 +2239,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         'Out' => ''
     );
 
+    /** Define log data. */
     if (empty($CIDRAM['QueryVars']['logfile'])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_no_logfile_selected'];
     } elseif (empty($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
@@ -2236,6 +2258,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         $CIDRAM['FE']['mod_class_right'] = ' big';
     }
 
+    /** Attempt to perform some simple formatting for the log data. */
+    $CIDRAM['Formatter']($CIDRAM['FE']['logfileData']);
+
+    /** Define logfile list. */
     array_walk($CIDRAM['FE']['LogFiles']['Files'], function ($Arr) use (&$CIDRAM) {
         $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
             '            <a href="?cidram-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',

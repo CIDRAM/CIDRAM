@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.29).
+ * This file: Functions file (last modified: 2017.05.11).
  */
 
 /**
@@ -1989,4 +1989,25 @@ $CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
 $CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
     $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
+};
+
+/** Attempt to perform some simple formatting for the log data. */
+$CIDRAM['Formatter'] = function (&$In) {
+    preg_match_all('~(&lt;\?.*\?&gt;|<\?.*\?>|\{.*\})~i', $In, $Parts);
+    foreach ($Parts[0] as $ThisPart) {
+        if (strlen($ThisPart) > 512 || strpos($ThisPart, "\n") !== false) {
+            continue;
+        }
+        $In = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $In);
+    }
+    if (strpos($In, "<br />\n<br />\n") !== false) {
+        preg_match_all('~\n([^\n:]+): [^\n]+~i', $In, $Parts);
+        foreach ($Parts[1] as $ThisPart) {
+            $In = str_replace("\n" . $ThisPart . ': ', "\n<span class=\"textLabel\">" . $ThisPart . '</span>: ', $In);
+        }
+        preg_match_all('~\n([^\n:]+): [^\n]+~i', $In, $Parts);
+        foreach ($Parts[0] as $ThisPart) {
+            $In = str_replace("\n" . substr($ThisPart, 1) . "\n", "\n<span class=\"s\">" . substr($ThisPart, 1) . "</span>\n", $In);
+        }
+    }
 };

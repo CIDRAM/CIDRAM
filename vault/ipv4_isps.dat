@@ -6045,14 +6045,14 @@ recaptcha:
 
 
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
-# 2016.10.01: Caught mass-spamming/flooding the SFS support forums. Spamming seems limited to the one CIDR currently;
-# Will escalate this section to cover the entire ASN in a future update if the problems worsens; May eventually remove
-# if spamming activity decreases.
-# 2017.05.08: Not much change (activity from 130.105.160.0/22 continues). Partial escalation (two new CIDRs added:
-# 182.18.212.0/22 and 182.18.248.0/22), but still not yet blocking the entire ASN.
-# %Listed, CleanTalk.org: 5.29%.
-# Stop Forum Spam (SFS) listings: 345.
-# Updated: 2017.05.08
+
+# 2016.10.01:
+#   Caught mass-spamming/flooding the SFS support forums. Spamming seems limited to the one CIDR currently; Will
+#   escalate this section to cover the entire ASN in a future update if the problems worsens; May eventually remove if
+#   spamming activity decreases.
+# 2017.05.08:
+#   Not much change (activity from 130.105.160.0/22 continues). Partial escalation (two new CIDRs added:
+#   182.18.212.0/22 and 182.18.248.0/22), but still not yet blocking the entire ASN.
 
 130.105.160.0/22 Deny Spam
 182.18.212.0/22 Deny Spam
@@ -6228,11 +6228,44 @@ recaptcha:
  enabled: true
 
 
-# ASN 25092 ("PE Tetyana Mysyk").
-# Huge number of entries with Stop Forum Spam !! Records of hack attempts at various blacklists !!
-# %Listed, CleanTalk.org: 85.79%.
-# Stop Forum Spam (SFS) listings: 106,241.
-# Updated: 2017.05.02
+# ASN 24812 ("NPK Home-Net Ltd").
+# %Listed, CleanTalk.org: 4.21%.
+# Stop Forum Spam (SFS) listings: 5,327.
+# Updated: 2017.05.12
 
-193.201.224.0/22 Deny Spam
-Tag: PE Tetyana Mysyk
+176.105.200.0/21 Deny Spam
+176.105.208.0/21 Deny Spam
+176.105.220.0/22 Deny Spam
+Tag: NPK Home-Net Ltd
+
+
+# "PJSC Rostelecom".
+# Known ASNs: 3239, 5573, 6828, 6863, 8382, 8443, 8557, 8568, 8570, 8594, 8675, 8828, 8997, 12332, 12380, 12389, 12389,
+#   12683, 12705, 12730, 12846, 13056, 13118, 15468, 15759, 16054, 16287, 16301, 20519, 21017, 21378, 21479, 21487,
+#   24665, 24699, 24783, 24789, 24810, 24810, 24873, 25436, 25490, 25515, 28719, 28860, 29456, 30749, 31094, 31185,
+#   31353, 31496, 33887, 33934, 34137, 34168, 34205, 34267, 34584, 34875, 34974, 35125, 35154, 35177, 35389, 35400,
+#   35516, 35531, 38951, 38985, 39054, 39229, 39407, 41134, 42091, 42362, 42548, 42610, 43053, 43132, 43574, 44237,
+#   44412, 44467, 47460, 56341, 56350, 196747.
+# Very large amount of spam originating from this provider, which we could prevent by blocking the CIDRs associated
+# with it. Unfortunately, it also happens to be the #1 largest ISP in Russia, and blocking it entirely would
+# effectively be blocking the majority of human visitors to access protected websites visiting from within Russia,
+# which we don't want to be doing by default (although, for those that don't mind this idea, the optional blocklist
+# provided by MacMathan for blocking Russian would be highly recommended as a means to do so). Aggregating such a large
+# number of different ASNs into the one same section generally isn't a good idea either, due to increased
+# maintainability costs. As a compromise, I propose including a section here for PJSC Rostelecom, but we'll only
+# include CIDRs that we can explicitly identify as being significant sources of spam, as being significantly "toxic",
+# etc (i.e., identify the section by its provider, but populate it specifically by CIDRs identified as being
+# problematic, treating CIDRs on a case-by-case basis and effectively ignoring the announces aggregate). As an
+# additional safety measure to minimise false positives, the section is marked for use with reCAPTCHA. If this strategy
+# fails, we may upgrade this section to eventually include the entire announces aggregate anyhow, and just include an
+# entry in ours ignores file to ignore by default, until commented out or removed.
+
+# 2017.05.12:
+#   Section added; 2 CIDRs included (37.20.0.0/14, 82.140.192.0/18).
+
+37.20.0.0/14 Deny Spam
+82.140.192.0/18 Deny Spam
+Tag: PJSC Rostelecom
+---
+recaptcha:
+ enabled: true

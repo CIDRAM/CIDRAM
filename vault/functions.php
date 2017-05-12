@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.05.11).
+ * This file: Functions file (last modified: 2017.05.12).
  */
 
 /**
@@ -1993,6 +1993,9 @@ $CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
 
 /** Attempt to perform some simple formatting for the log data. */
 $CIDRAM['Formatter'] = function (&$In) {
+    if (strlen($In) > ini_get('pcre.backtrack_limit') || substr_count($In, "\n") > (ini_get('pcre.recursion_limit') / 2)) {
+        return;
+    }
     preg_match_all('~(&lt;\?.*\?&gt;|<\?.*\?>|\{.*\})~i', $In, $Parts);
     foreach ($Parts[0] as $ThisPart) {
         if (strlen($ThisPart) > 512 || strpos($ThisPart, "\n") !== false) {

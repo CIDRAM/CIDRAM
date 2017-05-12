@@ -19,7 +19,7 @@
 
 ### <div dir="rtl">١. <a name="SECTION1"></a>تمہید</div>
 
-<div dir="rtl">CIDRAM (غیر طبقاتی انٹر ڈومین روٹنگ رسائی مینیجر) بشمول (لیکن تک محدود نہیں) غیر انسانی رسائی endpoints کے، کلاؤڈ سروسز سے ٹریفک ناپسندیدہ ٹریفک کے ہونے کی وجہ سے ذرائع، کے طور پر شمار IP پتوں سے شروع کی درخواستوں کو مسدود کرنے کی طرف سے ویب سائٹس کی حفاظت کے لئے ڈیزائن کیا ایک پی ایچ پی کی سکرپٹ ہے ، اسپیم بوٹس، سکراپارس، وغیرہ یہ باؤنڈ درخواستوں سے فراہم IP پتوں کی ممکنہ CIDRs کو شمار کرتے ہیں اور پھر (ان کے دستخط فائلوں ہونے کے ذرائع کے طور پر شمار IP پتوں کی CIDRs کی فہرستوں پر مشتمل اس کے دستخط فائلوں کے خلاف ان ممکن CIDRs سے ملنے کے لئے کی کوشش کر کے اس کرتا ہے ناپسندیدہ ٹریفک کے)؛ موازنہ نہیں ملا رہے ہیں تو، درخواستوں مسدود ہیں.<br /><br /></div>
+<div dir="rtl">CIDRAM (غیر طبقاتی انٹر ڈومین روٹنگ رسائی مینیجر) بشمول (لیکن تک محدود نہیں) غیر انسانی رسائی endpoints کے، کلاؤڈ سروسز سے ٹریفک ناپسندیدہ ٹریفک کے ہونے کی وجہ سے ذرائع، کے طور پر شمار IP پتوں سے شروع کی درخواستوں کو مسدود کرنے کی طرف سے ویب سائٹس کی حفاظت کے لئے ڈیزائن کیا ایک PHP کی سکرپٹ ہے ، اسپیم بوٹس، سکراپارس، وغیرہ یہ باؤنڈ درخواستوں سے فراہم IP پتوں کی ممکنہ CIDRs کو شمار کرتے ہیں اور پھر (ان کے دستخط فائلوں ہونے کے ذرائع کے طور پر شمار IP پتوں کی CIDRs کی فہرستوں پر مشتمل اس کے دستخط فائلوں کے خلاف ان ممکن CIDRs سے ملنے کے لئے کی کوشش کر کے اس کرتا ہے ناپسندیدہ ٹریفک کے)؛ موازنہ نہیں ملا رہے ہیں تو، درخواستوں مسدود ہیں.<br /><br /></div>
 
 <div dir="rtl"><em>(دیکھیں: <a href="#WHAT_IS_A_CIDR">ایک "CIDR" کیا ہے؟</a>).</em><br /><br /></div>
 
@@ -55,7 +55,7 @@
 
 <div dir="rtl">-- یا متبادل --<br /><br /></div>
 
-<div dir="rtl">آپ ایک اپاچی ویب سرور استعمال کر رہے ہیں اور آپ کو "php.ini" تک رسائی ہے تو، تو آپ جب بھی کسی بھی پی ایچ پی کی درخواست کی جاتی ہے CIDRAM prepend کے کو "auto_prepend_file" ہدایت کو استعمال کر سکتے ہیں. کی طرح کچھ:<br /><br /></div>
+<div dir="rtl">آپ ایک اپاچی ویب سرور استعمال کر رہے ہیں اور آپ کو "php.ini" تک رسائی ہے تو، تو آپ جب بھی کسی بھی PHP کی درخواست کی جاتی ہے CIDRAM prepend کے کو "auto_prepend_file" ہدایت کو استعمال کر سکتے ہیں. کی طرح کچھ:<br /><br /></div>
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -105,7 +105,7 @@
 
 <div dir="rtl">٣. پہلے سے طے شدہ صارف کا نام اور پاس ورڈ کے ساتھ لاگ ان کریں (admin/password).<br /><br /></div>
 
-<div dir="rtl">نوٹ: اگر آپ کو پہلی بار کے لئے لاگ ان کرنے کے بعد، سامنے کے آخر تک غیر مجاز رسائی کو روکنے کے لئے، آپ کو فوری طور پر آپ کا صارف نام اور پاس ورڈ کو تبدیل کرنا چاہئے! یہ بہت اہم ہے، یہ سامنے کے آخر میں کے ذریعے آپ کی ویب سائٹ پر من مانی پی ایچ پی کوڈ کو اپ لوڈ کرنا ممکن ہے کیونکہ.<br /><br /></div>
+<div dir="rtl">نوٹ: اگر آپ کو پہلی بار کے لئے لاگ ان کرنے کے بعد، سامنے کے آخر تک غیر مجاز رسائی کو روکنے کے لئے، آپ کو فوری طور پر آپ کا صارف نام اور پاس ورڈ کو تبدیل کرنا چاہئے! یہ بہت اہم ہے، یہ سامنے کے آخر میں کے ذریعے آپ کی ویب سائٹ پر من مانی PHP کوڈ کو اپ لوڈ کرنا ممکن ہے کیونکہ.<br /><br /></div>
 
 #### <div dir="rtl">٤.٢ سامنے کے آخر میں کس طرح استعمال.<br /><br /></div>
 
@@ -250,7 +250,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">زبان ہینڈلر.</div> | /vault/lang.php
 &nbsp; <div dir="rtl" style="display:inline;">CIDRAM ماڈیولز سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/modules.dat
 &nbsp; <div dir="rtl" style="display:inline;">آؤٹ پٹ جنریٹر.</div> | /vault/outgen.php
-&nbsp; <div dir="rtl" style="display:inline;">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X پیچھے کی طرف مطابقت کے لئے ضروری؛ محفوظ نئے پی ایچ پی ورژن کے لئے حذف کرنا).</div> | /vault/php5.4.x.php
+&nbsp; <div dir="rtl" style="display:inline;">PHP 5.4.X کے لئے Polyfills (PHP 5.4.X پیچھے کی طرف مطابقت کے لئے ضروری؛ محفوظ نئے PHP ورژن کے لئے حذف کرنا).</div> | /vault/php5.4.x.php
 &nbsp; <div dir="rtl" style="display:inline;">reCAPTCHA کے ماڈیول.</div> | /vault/recaptcha.php
 &nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین AS6939 لئے دائر.</div> | /vault/rules_as6939.php
 &nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین نرم پرت کے لئے دائر.</div> | /vault/rules_softlayer.php
@@ -301,7 +301,8 @@
 
 <div dir="rtl">"truncate"<br /></div>
 <div dir="rtl"><ul>
- <li>وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.</ul></div>
+ <li>وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.</li>
+</ul></div>
 
 <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
@@ -551,7 +552,7 @@
  <li>Deny</li>
 </ul></div>
 
-<div dir="rtl">تو "Run" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب، سکرپٹ پھانسی کے لئے ایک بیرونی پی ایچ پی اسکرپٹ، کی طرف سے مخصوص ہے (ایک "require_once" بیان کرتے ہوئے) کی کوشش کریں گے" [پرم] "قدر (کام کر ڈائرکٹری ہونا چاہئے" /vault/ "اسکرپٹ کی ڈائریکٹری؛ ذیل کی مثالیں ملاحظہ کریں).<br /><br /></div>
+<div dir="rtl">تو "Run" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب، سکرپٹ پھانسی کے لئے ایک بیرونی PHP اسکرپٹ، کی طرف سے مخصوص ہے (ایک "require_once" بیان کرتے ہوئے) کی کوشش کریں گے" [پرم] "قدر (کام کر ڈائرکٹری ہونا چاہئے" /vault/ "اسکرپٹ کی ڈائریکٹری؛ ذیل کی مثالیں ملاحظہ کریں).<br /><br /></div>
 
 `127.0.0.0/8 Run example.php`
 
@@ -715,15 +716,15 @@ Ignore سیکشن 1
 
 `1.2.3.4/32 Deny Generic`
 
-Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
+<div dir="rtl">اکثر ایسا ہوتا ہے (لیکن ہمیشہ نہیں)، دستخط "کے دستخط حصوں" میں بنڈل گا، اکثر تبصرے، مارک اپ، اور متعلقہ میٹا ڈیٹا کے ساتھ شامل تھے. یہ دستخط اور مزید ہدایات کے لئے اضافی سیاق و سباق فراہم کر سکتے ہیں.<br /><br /></div>
 
 #### <div dir="rtl"><a name="WHAT_IS_A_CIDR"></a>ایک "CIDR" کیا ہے؟<br /><br /></div>
 
-"CIDR" is an acronym for "Classless Inter-Domain Routing" *[[1](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+<div dir="rtl">"CIDR" "Classless Inter-Domain Routing" کے لئے مخفف ہے. ("غیر طبقاتی انٹر ڈومین روٹنگ") *[[1](https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%AC%D9%8A%D9%87_%D8%A8%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84%D8%A7%D8%AA_%D9%84%D8%A7%D9%81%D8%A6%D9%88%D9%8A%D8%A7), [2](http://whatismyipaddress.com/cidr)]*. یہ مخفف اس پیکج، "CIDRAM" کے لئے نام کا حصہ کے طور پر استعمال کیا جاتا ہے. یہ "Classless Inter-Domain Routing Access Manager" (غیر طبقاتی انٹر ڈومین روٹنگ رسائی مینیجر) کے لئے مخفف ہے.<br /><br /></div>
 
-However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+<div dir="rtl">تاہم، CIDRAM کے تناظر میں (جیسا کہ، یہ دستاویزات کے اندر اندر، متعلقہ مباحث میں، یا زبان کے اعداد و شمار کے اندر اندر)، ایک "CIDR" (واحد) یا "CIDRs" (جمع) کا ذکر کیا جاتا ہے جب، ہمارے ارادہ معنی ذیلی نیٹ ہے، CIDR سنکیتن کا استعمال کرتے ہوئے اظہار کیا. ذیلی نیٹ کو مختلف مختلف طریقوں سے اظہار کیا جا سکتا ہے کیونکہ اس کی وجہ ہے. CIDRAM، لہذا، ایک "نیٹ رسائی مینیجر" سمجھا جا سکتا ہے.<br /><br /></div>
 
-Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+<div dir="rtl">یہ وضاحت، اور فراہم تناظر، کسی بھی ابہام حل کرنے کے لئے مدد کرنی چاہئے.<br /><br /></div>
 
 #### <div dir="rtl">ایک "جھوٹی مثبت" سے کیا مراد ہے؟<br /><br /></div>
 
@@ -761,9 +762,9 @@ Although this dual meaning of "CIDR" may present some ambiguity in some cases, t
 
 <div dir="rtl">CIDRAM ویب سائٹ کے مالکان ناپسندیدہ ٹریفک کو بلاک کرنے کے لئے ایک ذریعہ فراہم کرتا ہے، لیکن یہ وہ CIDRAM استعمال کرنا چاہتے ہیں کہ کس طرح اپنے لئے فیصلہ کرنے کے لئے ویب سائٹ کے مالکان کی ذمہ داری ہے. کے دستخط سے متعلق جھوٹی مثبت عام طور CIDRAM ساتھ شامل فائلوں کی صورت میں، تصحیح بنایا جا سکتا ہے، لیکن مخصوص ویب سائٹس سے غیر مسدود ہونے کے حوالے میں، آپ کے سوال میں ویب سائٹس کے مالکان کے ساتھ کہ اپ لینے کی ضرورت پڑے گی. مقدمات جہاں تصحیح کم سے کم، بنائے جاتے ہیں میں، وہ مثال ہے، وہ ان کی تنصیب ترمیم شدہ گئے ہیں جہاں کے لئے، اس طرح کے طور پر ان کے دستخط فائلوں اور / یا تنصیب، اور دیگر مقدمات میں (اپ ڈیٹ کرنے کی ضرورت ہو گی، ان کی اپنی مرضی کے دستخط پیدا ، وغیرہ)، کو حل کرنے کی ذمہ داری آپ کا مسئلہ مکمل طور پر ان کی ہے، اور ہمارے قابو سے باہر مکمل طور پر ہے.<br /><br /></div>
 
-<div dir="rtl">میں 5.4.0 سے زیادہ پرانے ایک پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
+<div dir="rtl">میں 5.4.0 سے زیادہ پرانے ایک PHP ورژن کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
 
-<div dir="rtl">نمبر PHP 5.4.0 2014 میں سرکاری EOL ("زندگی کے اختتام") تک پہنچ گئی، اور توسیع کی سیکورٹی کی حمایت کی اس تحریر کی وجہ 2015. میں ختم کیا گیا تھا، یہ 2017 ہے اور PHP 7.1.0 پہلے سے ہی دستیاب ہے. اس وقت، حمایت PHP 5.4.0 اور تمام دستیاب جدید تر پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کے لئے فراہم کی جاتی ہے، لیکن آپ کو کسی بھی بڑی عمر کے پی ایچ پی ورژن کے ساتھ CIDRAM استعمال کرنے کی کوشش کرتے ہیں، مدد فراہم نہیں کی جائے گی.<br /><br /></div>
+<div dir="rtl">نمبر PHP 5.4.0 2014 میں سرکاری EOL ("زندگی کے اختتام") تک پہنچ گئی، اور توسیع کی سیکورٹی کی حمایت کی اس تحریر کی وجہ 2015. میں ختم کیا گیا تھا، یہ 2017 ہے اور PHP 7.1.0 پہلے سے ہی دستیاب ہے. اس وقت، حمایت PHP 5.4.0 اور تمام دستیاب جدید تر PHP ورژن کے ساتھ CIDRAM استعمال کرنے کے لئے فراہم کی جاتی ہے، لیکن آپ کو کسی بھی بڑی عمر کے PHP ورژن کے ساتھ CIDRAM استعمال کرنے کی کوشش کرتے ہیں، مدد فراہم نہیں کی جائے گی.<br /><br /></div>
 
 <div dir="rtl">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد CIDRAM تنصیب کا استعمال کر سکتا ہوں؟<br /><br /></div>
 

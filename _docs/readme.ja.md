@@ -632,11 +632,11 @@ CIDRAMの文脈では、「シグネチャ」とは、インジケータ/識別�
 
 #### <a name="WHAT_IS_A_CIDR"></a>「ＣＩＤＲ」とは何ですか？
 
-"CIDR" is an acronym for "Classless Inter-Domain Routing" *[[1](https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+「ＣＩＤＲ」は「Classless Inter-Domain Routing」（クラスレス・ドメイン間・ルーティング）の略語です *「[１](https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing)、[２](http://whatismyipaddress.com/cidr)」*。 この略語は、このパッケージの名前の一部、「CIDRAM」、として使用されます。 「CIDRAM」は「Classless Inter-Domain Routing Access Manager」（クラスレス・ドメイン間・ルーティング・アクセス・マネージャー）の略語です。
 
-しかし、CIDRAMの文脈では (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+しかし、CIDRAMの文脈では（例えば、このドキュメント内、CIDRAMに関する議論の中で、CIDRAM言語データ内）、「CIDR」が言及されるたびに、私たちの意図する意味は、CIDR表記を使って表現されたサブネットです。 これは、意味を明確にするためです（サブネットは複数の方法で表現できるため）。 したがって、CIDRAMは「サブネット・アクセス・マネージャ」と見なすことができます。
 
-Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+この説明は、提供された文脈とともに、あいまいさを解決するのに役立つはずです。
 
 #### 「偽陽性」とは何ですか？
 

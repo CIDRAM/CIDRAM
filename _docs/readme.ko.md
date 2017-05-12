@@ -632,11 +632,11 @@ CIDRAM의 맥락에서 "서명"이라 함은 지표/식별자 역할을하는 �
 
 #### <a name="WHAT_IS_A_CIDR"></a>"CIDR"이란 무엇입니까?
 
-"CIDR" is an acronym for "Classless Inter-Domain Routing" *[[1](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%EB%8D%94_(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9)), [2](http://whatismyipaddress.com/cidr)]*, and it's this acronym that's used as part of the name for this package, "CIDRAM", which is an acronym for "Classless Inter-Domain Routing Access Manager".
+"CIDR"은 "Classless Inter-Domain Routing"의 두문자어 입니다 *[[1](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%EB%8D%94_(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9)), [2](http://whatismyipaddress.com/cidr)]*. 이 두문자어 패키지의 이름의 일부로 사용됩니다 (CIDRAM). "CIDRAM"은 "Classless Inter-Domain Routing Access Manager"의 두문자어 입니다.
 
-However, in the context of CIDRAM (such as, within this documentation, within discussions relating to CIDRAM, or within the CIDRAM language data), whenever a "CIDR" (singular) or "CIDRs" (plural) is mentioned or referred to (and thus whereby we use these words as nouns in their own right, as opposed to as acronyms), what's intended and meant by this is a subnet (or subnets), expressed using CIDR notation. The reason that CIDR (or CIDRs) is used instead of subnet (or subnets) is to make it clear that it's specifically subnets expressed using CIDR notation that's being referred to (because CIDR notation is just one of several different ways that subnets can be expressed). CIDRAM could, therefore, be considered a "subnet access manager".
+그러나 CIDRAM의 맥락에서 (예를 들어, 이 문서, CIDRAM 관한 논의에서, CIDRAM 언어 데이터에), "CIDR"또는 "CIDRs"이 언급 될 때마다, 우리가 의도 한 의미는 CIDR 표기법을 사용하여 표현 된 서브넷입니다. 이 목적은 우리의 의미를 분명히하기위한 것입니다 (서브넷이 여러 가지 방법으로 표현 될 수 있기 때문에). 따라서 CIDRAM은 "서브넷 액세스 관리자"로 간주 될 수 있습니다.
 
-Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
+이 설명은 제공된 컨텍스트와 함께 모호성을 해결하는 데 도움이됩니다.
 
 #### "거짓 양성"는 무엇입니까?
 

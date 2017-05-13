@@ -562,7 +562,7 @@
 
 `127.0.0.1/32 Whitelist`
 
-<div dir="rtl">تو "Greylist" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب اسکرپٹ تمام detections کر (کسی detections کر ہوئی ہے تو) دوبارہ ترتیب دے گا اور پروسیسنگ جاری رکھنے کے لئے اگلے کے دستخط کی فائل کو چھوڑ دیں. "[پرم]" نظر انداز کر دیا جاتا ہے.
+<div dir="rtl">تو "Greylist" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب اسکرپٹ تمام detections کر (کسی detections کر ہوئی ہے تو) دوبارہ ترتیب دے گا اور پروسیسنگ جاری رکھنے کے لئے اگلے کے دستخط کی فائل کو چھوڑ دیں. "[پرم]" نظر انداز کر دیا جاتا ہے.<br /><br /></div>
 
 `127.0.0.1/32 Greylist`
 
@@ -720,7 +720,7 @@ Ignore سیکشن 1
 
 #### <div dir="rtl"><a name="WHAT_IS_A_CIDR"></a>ایک "CIDR" کیا ہے؟<br /><br /></div>
 
-<div dir="rtl">"CIDR" "Classless Inter-Domain Routing" کے لئے مخفف ہے. ("غیر طبقاتی انٹر ڈومین روٹنگ") *[[1](https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%AC%D9%8A%D9%87_%D8%A8%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84%D8%A7%D8%AA_%D9%84%D8%A7%D9%81%D8%A6%D9%88%D9%8A%D8%A7), [2](http://whatismyipaddress.com/cidr)]*. یہ مخفف اس پیکج، "CIDRAM" کے لئے نام کا حصہ کے طور پر استعمال کیا جاتا ہے. یہ "Classless Inter-Domain Routing Access Manager" (غیر طبقاتی انٹر ڈومین روٹنگ رسائی مینیجر) کے لئے مخفف ہے.<br /><br /></div>
+<div dir="rtl">"CIDR" "Classless Inter-Domain Routing" ("غیر طبقاتی انٹر ڈومین روٹنگ") کے لئے مخفف ہے <em>[<a href="https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%AC%D9%8A%D9%87_%D8%A8%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%84%D8%A7%D8%AA_%D9%84%D8%A7%D9%81%D8%A6%D9%88%D9%8A%D8%A7">١</a>، <a href="http://whatismyipaddress.com/cidr">٢</a>]</em>. یہ مخفف اس پیکج، "CIDRAM" کے لئے نام کا حصہ کے طور پر استعمال کیا جاتا ہے. یہ "Classless Inter-Domain Routing Access Manager" (غیر طبقاتی انٹر ڈومین روٹنگ رسائی مینیجر) کے لئے مخفف ہے.<br /><br /></div>
 
 <div dir="rtl">تاہم، CIDRAM کے تناظر میں (جیسا کہ، یہ دستاویزات کے اندر اندر، متعلقہ مباحث میں، یا زبان کے اعداد و شمار کے اندر اندر)، ایک "CIDR" (واحد) یا "CIDRs" (جمع) کا ذکر کیا جاتا ہے جب، ہمارے ارادہ معنی ذیلی نیٹ ہے، CIDR سنکیتن کا استعمال کرتے ہوئے اظہار کیا. ذیلی نیٹ کو مختلف مختلف طریقوں سے اظہار کیا جا سکتا ہے کیونکہ اس کی وجہ ہے. CIDRAM، لہذا، ایک "نیٹ رسائی مینیجر" سمجھا جا سکتا ہے.<br /><br /></div>
 
@@ -728,7 +728,7 @@ Ignore سیکشن 1
 
 #### <div dir="rtl">ایک "جھوٹی مثبت" سے کیا مراد ہے؟<br /><br /></div>
 
-<div dir="rtl">اصطلاح "جھوٹی مثبت" (* متبادل کے طور پر: "جھوٹی مثبت غلطی"؛ "جھوٹے الارم" *)، بیان بہت صرف، اور ایک عام سیاق و سباق میں، ایک کی حالت کے لئے جانچ جب، استعمال کیا جاتا ہے کہ ٹیسٹ کے نتائج کا حوالہ دیتے ہیں کے لئے، نتائج مثبت ہیں جب (یعنی حالت "مثبت" یا "سچ" ہونے کا تعین کیا جاتا ہے)، لیکن بننے کی توقع کی جاتی ہے (یا ہونا چاہیئے) منفی (یعنی حالت، حقیقت میں، "منفی"، یا "جھوٹے"). A "جھوٹی مثبت" مثل غور کیا جا سکتا کے لئے "رونا بھیڑیا" (جس حالت تجربہ کیا جا رہا، حالت "جھوٹے" کہ میں ریوڑ کے قریب کوئی بھیڑیا ہے، اور شرط کے طور پر رپورٹ کیا جاتا ہے ریوڑ کے قریب ایک بھیڑیا ہے کہ آیا ہے "بھیڑیا، بھیڑیا" بلا کی راہ کی طرف چرواہا کی طرف سے "مثبت")، یا طبی جانچ میں حالات جس میں ایک مریض، کچھ بیماری یا مرض ہونے حقیقت میں، وہ ایسی کوئی بیماری یا مرض ہے جب کے طور پر تشخیص کی جاتی ہے کے مطابق.<br /><br /></div>
+<div dir="rtl">اصطلاح "جھوٹی مثبت" (<em>متبادل کے طور پر: "جھوٹی مثبت غلطی"؛ "جھوٹے الارم"</em>)، بیان بہت صرف، اور ایک عام سیاق و سباق میں، ایک کی حالت کے لئے جانچ جب، استعمال کیا جاتا ہے کہ ٹیسٹ کے نتائج کا حوالہ دیتے ہیں کے لئے، نتائج مثبت ہیں جب (یعنی حالت "مثبت" یا "سچ" ہونے کا تعین کیا جاتا ہے)، لیکن بننے کی توقع کی جاتی ہے (یا ہونا چاہیئے) منفی (یعنی حالت، حقیقت میں، "منفی"، یا "جھوٹے"). "جھوٹی مثبت" مثل غور کیا جا سکتا کے لئے "رونا بھیڑیا" (جس حالت تجربہ کیا جا رہا، حالت "جھوٹے" کہ میں ریوڑ کے قریب کوئی بھیڑیا ہے، اور شرط کے طور پر رپورٹ کیا جاتا ہے ریوڑ کے قریب ایک بھیڑیا ہے کہ آیا ہے "بھیڑیا، بھیڑیا" بلا کی راہ کی طرف چرواہا کی طرف سے "مثبت")، یا طبی جانچ میں حالات جس میں ایک مریض، کچھ بیماری یا مرض ہونے حقیقت میں، وہ ایسی کوئی بیماری یا مرض ہے جب کے طور پر تشخیص کی جاتی ہے کے مطابق.<br /><br /></div>
 
 <div dir="rtl">ایک شرط کے لئے جانچ جب متعلقہ نتائج "سچ مثبت" کی اصطلاحات کا استعمال کرتے ہوئے، "سچ منفی" اور "جھوٹے منفی" بیان کیا جا سکتا ہے. A "سچ مثبت" جب ٹیسٹ کے نتائج اور حالت کی اصل ریاست دونوں حقیقی (یا "مثبت")، اور ایک "حقیقی منفی" ہیں سے مراد ہے سے مراد ہے جب ٹیسٹ کے نتائج اور کی اصل ریاست شرط ہیں دونوں جھوٹے ہیں (یا "منفی")؛ A "سچ مثبت" یا "سچ منفی" ایک "صحیح اندازہ" سمجھا جاتا ہے. ایک "جھوٹی مثبت" کے برعکس ایک "جھوٹے منفی" ہے؛ A "جھوٹے منفی" سے ٹیسٹ کے نتائج منفی ہیں، جب (یعنی حالت "منفی"، یا "جھوٹے" ہونے کا تعین کیا جاتا ہے)، لیکن بننے کی توقع کی جاتی ہے (یا ہونا چاہیئے) مراد مثبت (یعنی، حالت، حقیقت میں، "مثبت" یا "سچ") ہے.<br /><br /></div>
 
@@ -768,7 +768,7 @@ Ignore سیکشن 1
 
 <div dir="rtl">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد CIDRAM تنصیب کا استعمال کر سکتا ہوں؟<br /><br /></div>
 
-<div dir="rtl">Yes. CIDRAM installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to CIDRAM installations protecting only one domain as "single-domain installations", and we refer to CIDRAM installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need CIDRAM to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), CIDRAM will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to CIDRAM, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.<br /><br /></div>
+<div dir="rtl">جی ہاں. CIDRAM ایک سے زیادہ ڈومینز کی حفاظت کے لئے استعمال کیا جا سکتا ہے. ضرورت کی ترتیب مختلف ہے تو، ایسا کرنے کے لئے تحفظ کی ضرورت ہوتی ڈومینز کے مطابق نامی نئی ترتیب فائل، تخلیق کرتے ہیں. CIDRAM یہ ڈومین کیلئے کام کرنا چاہئے کہ کس طرح اس بات کا تعین کرنے کے لئے ان فائلوں کو استعمال کریں گے. سوف تستخدم CIDRAM هذه الملفات لتحديد كيفية تشغيلها للنطاق. ایک مثال کے طور، کے لئے "http://www.some-domain.tld/"، اس کا نام ہے "some-domain.tld.config.ini". ڈومین نام "HTTP_HOST" سے آتا ہے. "www" نظر انداز کر دیا جاتا ہے.<br /><br /></div>
 
 ---
 

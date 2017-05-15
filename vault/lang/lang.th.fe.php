@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.04.29).
+ * This file: Thai language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -217,8 +217,8 @@ $CIDRAM['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็�
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – สถานที่ดาวน์โหลดอื่นสำหรับ CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – คอลเลกชันเครื่องมือเว็บมาสเตอร์ง่ายสำหรับการรักษาความปลอดภัยเว็บไซต์.</li>
             <li><a href="https://macmathan.info/blocklists">ช่วงบล็อก @ MacMathan.info</a> – มีบล็อคช่วงที่ไม่จำเป็นซึ่งสามารถเพิ่มลงใน CIDRAM เพื่อบล็อกประเทศที่ไม่ต้องการจากการเข้าถึงเว็บไซต์ของคุณ.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – รับ CIDR จาก ASN, ยืนยันความสัมพันธ์ ASN, ค้นพบ ASN ตามชื่อเครือข่าย, ฯลฯ.</li>
             <li><a href="https://www.stopforumspam.com/forum/">ฟอรัม @ Stop Forum Spam</a> – ฟอรั่มการอภิปรายมีประโยชน์เกี่ยวกับหยุดสแปมในฟอรัม.</li>
             <li><a href="https://www.stopforumspam.com/aggregate">ตัวรวบรวม IP @ Stop Forum Spam</a> – เครื่องมือการรวบรวมมีประโยชน์สำหรับที่อยู่ IP IPv4.</li>

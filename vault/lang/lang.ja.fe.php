@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.29).
+ * This file: Japanese language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -217,8 +217,8 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM ＠ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.infoのレンジ・ブロック</a> – 不要な国があなたのウェブサイトにアクセスするのをブロックのために、CIDRAMに追加できるオプションの範囲ブロックが含まれています。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group の Facebook</a> – PHP学習リソースとディスカッション。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group の GitHub</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group の Facebook</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ＡＳＮからＣＩＤＲを取得する、ＡＳＮ関係を決定する、ネットワーク名に基づいてＡＳＮを検出する、等。</li>
             <li><a href="https://www.stopforumspam.com/forum/">フォーラム の Stop Forum Spam</a> – フォーラムスパムの停止に関する便利なディスカッションフォーラム。</li>
             <li><a href="https://www.stopforumspam.com/aggregate">ＩＰアグリゲータ の Stop Forum Spam</a> – ＩＰｖ４・ＩＰのための有用な集約ツール。</li>

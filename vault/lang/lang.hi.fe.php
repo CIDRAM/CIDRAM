@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.05.03).
+ * This file: Hindi language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -217,8 +217,8 @@ $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लि
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM के लिए वैकल्पिक डाउनलोड आईना।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – वेबसाइटों को सुरक्षित करने के लिए सरल वेबमास्टर उपकरण का एक संग्रह।</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info से श्रेणी ब्लाकों</a> – इसमें वैकल्पिक ब्लॉकलिस्ट शामिल हैं जिन्हें CIDRAM में जोड़ा जा सकता है। अनचाहे देशों को अपनी वेबसाइट तक पहुंचने से रोकने के लिए ये उपयोगी हो सकते हैं।</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">अंतर्राष्ट्रीय PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
-            <li><a href="https://wwphp-fb.github.io/">अंतर्राष्ट्रीय PHP समूह @ GitHub</a> – PHP सीखने संसाधन और चर्चा।</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>
             <li><a href="https://www.stopforumspam.com/forum/">मंच @ Stop Forum Spam</a> – मंच स्पैम को रोकने के बारे में उपयोगी चर्चा मंच।</li>
             <li><a href="https://www.stopforumspam.com/aggregate">आईपी एग्रीगेटर @ Stop Forum Spam</a> – IPv4 आईपी के लिए उपयोगी एकत्रीकरण उपकरण।</li>

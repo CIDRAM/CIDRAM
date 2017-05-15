@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.29).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -218,8 +218,8 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM＠SourceForge</a> – CIDRAM替代下載鏡像。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 簡單網站管理員工具集合為保護網站。</li>
             <li><a href="https://macmathan.info/blocklists">範圍阻止名單＠MacMathan.info</a> – 包含可選阻止名單，可以添加的在CIDRAM，用於阻止任何不需要的國家訪問您的網站。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group ＠ GitHub</a> – PHP學習資源和討論。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，確定ASN關係，基於網絡名稱發現ASN，等等。</li>
             <li><a href="https://www.stopforumspam.com/forum/">論壇 ＠ Stop Forum Spam</a> – 有用的討論論壇關於停止論壇垃圾郵件。</li>
             <li><a href="https://www.stopforumspam.com/aggregate">IP聚合器 ＠ Stop Forum Spam</a> – 有用的IPv4聚合工具。</li>

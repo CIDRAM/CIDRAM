@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.29).
+ * This file: Korean language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -217,8 +217,8 @@ $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크:<ul>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>
             <li><a href="https://macmathan.info/blocklists">MacMathan.info 범위 블록</a> – 불필요한 국가가 당신의 웹 사이트에 액세스하는 것을 차단하기 위해 CIDRAM에 추가 할 수있는 옵션의 범위 블록이 포함되어 있습니다.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP 학습 자원과 토론.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP 학습 자원과 토론.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
             <li><a href="https://www.stopforumspam.com/forum/">메세지 보드 @ Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
             <li><a href="https://www.stopforumspam.com/aggregate">IP 애그리 게이터 @ Stop Forum Spam</a> – IPv4 IP에 대한 유용한 통합 도구.</li>

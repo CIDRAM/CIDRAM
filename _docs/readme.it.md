@@ -34,17 +34,17 @@ Questo documento ed il pacchetto associato ad esso possono essere scaricati libe
 
 ### 2. <a name="SECTION2"></a>COME INSTALLARE
 
-#### 2.0 INSTALLAZIONE MANUALMENTE
+#### 2.0 INSTALLAZIONE MANUALE
 
 1) Continuando la lettura, si suppone che hai già scaricato una copia dello script, decompresso il contenuto e lo hai collocato da qualche parte sul tuo terminale. Da qui, ti consigliamo di determinare dove sulla macchina o CMS si desidera inserire quei contenuti. Una cartella come `/public_html/cidram/` o simile (sebbene, non è importante quale si sceglie, purché sia qualcosa di sicuro e che ti soddisfi) sarà sufficiente. *Prima di iniziare il caricamento, continua a leggere..*
 
-2) Rinomina `config.ini.RenameMe` a `config.ini` (situato della `vault`), e facoltativamente (fortemente consigliata per gli avanzati utenti, ma non è consigliata per i principianti o per gli inesperti), aprirlo (questo file contiene tutte le direttive disponibili per CIDRAM; sopra ogni opzione dovrebbe essere un breve commento che descrive ciò che fa e ciò che è per). Regolare queste opzioni come meglio credi, come per ciò che è appropriato per la vostre particolare configurazione. Salvare il file, chiudere.
+2) Rinomina `config.ini.RenameMe` in `config.ini` (situato nella cartella `vault`), e facoltativamente (fortemente consigliata per gli utenti avanzati, ma non è consigliata per i principianti o per gli inesperti) aprirlo e impostare le opzioni come meglio si crede, in qualsiasi modo risulti appropriato per la vostra particolare configurazione (questo file contiene tutte le direttive disponibili per CIDRAM; sopra ogni opzione dovrebbe esserci un breve commento di documentazione che descrive ciò che fa e ciò a cui serve). Salvare il file, chiudere.
 
-3) Carica i contenuti (CIDRAM e le sue file) nella cartella che ci deciso in precedenza (non è necessario includere i `*.txt`/`*.md` file, ma altrimenti, si dovrebbe caricare tutto).
+3) Carica i contenuti (CIDRAM e i suoi file) nella cartella che avete scelto in precedenza (non è necessario includere i file `*.txt`/`*.md`, ma in generale, si dovrebbe caricare tutto).
 
-4) CHMOD la cartella `vault` a "755" (se ci sono problemi, si può provare "777", ma questo è meno sicura). La principale cartella che memorizzare il contenuti (quello scelto in precedenza), solitamente, può essere lasciato solo, ma lo CHMOD stato dovrebbe essere controllato se hai avuto problemi di autorizzazioni in passato sul vostro sistema (per predefinita, dovrebbe essere qualcosa simile a "755").
+4) Impostate i permessi (CHMOD) della cartella `vault` a "755" (se ci sono problemi si può provare "777", ma questo è meno sicuro). La cartella principale che comprende i contenuti (quella scelta in precedenza), solitamente, può essere lasciato solo, ma lo stato CHMOD dovrebbe essere controllato se hai avuto problemi di autorizzazioni in passato sul vostro sistema (di default, dovrebbe essere qualcosa simile a "755").
 
-5) Successivamente, sarà necessario collegare CIDRAM al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come CIDRAM al vostre sistema o CMS, ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, per assistenza, visitare la pagina di problemi/issues per CIDRAM. Per fare questo [utilizzare `require` o `include`], inserire la seguente riga di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto del file `loader.php` (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
+5) Successivamente, sarà necessario "collegare" CIDRAM al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come CIDRAM al vostro sistema o CMS, ma il più semplice è di inserire lo script all'inizio di un file del vostro sistema o CMS (quello che generalmente sarà caricato ogni volta che qualcuno accede a una pagina attraverso il vostro sito) utilizzando un comando `require` o `include`. Solitamente, questo file è memorizzato in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso può essere chiamato come `init.php`, `common_functions.php`, `functions.php` o simili. Scegliete accuratamente questo file tra quelli che compongono il vostro sistema o CMS; nel caso in cui trovate difficoltà nel determinare questo file, visitate la pagina di problemi/issues di CIDRAM per ricevere assistenza. Per fare ciò [utilizzare `require` o `include`], inserire la seguente riga di codice in cima al core file identificato in precedenza, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto del file `loader.php` (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
 `<?php require '/user_name/public_html/cidram/loader.php'; ?>`
 
@@ -52,7 +52,7 @@ Salvare il file, chiudere, caricare di nuovo.
 
 -- IN ALTERNATIVA --
 
-Se stai usando un Apache web server e se si ha accesso a `php.ini`, è possibile utilizzare il `auto_prepend_file` direttiva per precarico CIDRAM ogni volta che qualsiasi richiesta di PHP è fatto. Qualcosa come:
+Se stai usando un web server Apache e se si ha accesso al file `php.ini`, è possibile utilizzare la direttiva `auto_prepend_file` per pre-caricare CIDRAM ogni volta che viene effettuata una qualsiasi richiesta PHP. Qualcosa come:
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -62,26 +62,26 @@ O questo nel `.htaccess` file:
 
 6) Questo è tutto! :-)
 
-#### 2.1 INSTALLARE CON IL COMPOSER
+#### 2.1 INSTALLARE CON COMPOSER
 
-[CIDRAM è quotata a Packagist](https://packagist.org/packages/maikuolan/cidram), e così, se si ha familiarità con Composer, è possibile utilizzare Composer per l'installazione di CIDRAM (è comunque necessario per preparare la configurazione e connessioni però; vedere "installazione manualmente" passi 2 e 5).
+[CIDRAM è registrata con Packagist](https://packagist.org/packages/maikuolan/cidram), e così, se si ha familiarità con Composer, è possibile utilizzare Composer per l'installazione di CIDRAM (è comunque necessario intervenire sul file di configurazione e includere `loader.php`; vedere "Installazione manuale" passi 2 e 5).
 
 `composer require maikuolan/cidram`
 
-#### 2.2 INSTALLARE PER IL WORDPRESS
+#### 2.2 INSTALLARE PER WORDPRESS
 
-Se si desidera utilizzare CIDRAM con WordPress, è possibile ignorare tutte le istruzioni di cui sopra. [CIDRAM è registrato come un plugin con il database dei plugin di WordPress](https://wordpress.org/plugins/cidram/), ed è possibile installare CIDRAM direttamente dal plugin cruscotto. È possibile installare nello stesso modo di qualsiasi altro plugin, e non sono necessari passi da aggiungere. Proprio come con gli altri metodi di installazione, è possibile personalizzare l'installazione da modificando il contenuto del file `config.ini` o da utilizzando la pagina di configurazione del front-end. Se si attiva il front-end per CIDRAM e aggiornare CIDRAM utilizzando la pagina degli aggiornamenti, questo si sincronizza automaticamente con le informazioni sulla versioni del plugin visualizzate nel plugin cruscotto.
+Se si desidera utilizzare CIDRAM con WordPress, è possibile ignorare tutte le istruzioni di cui sopra. [CIDRAM è registrato come un plugin con il database dei plugin di WordPress](https://wordpress.org/plugins/cidram/), ed è possibile installare CIDRAM direttamente dalla pagina dei Plugin. È possibile installarlo nello stesso modo di qualsiasi altro plugin, e non sono necessari altri interventi. Proprio come con gli altri metodi di installazione, è possibile personalizzare l'installazione modificando il contenuto del file `config.ini` o utilizzando la pagina di configurazione del front-end. Se si attiva il front-end per CIDRAM e si aggiorna CIDRAM utilizzando la pagina degli aggiornamenti, questo si sincronizza automaticamente con le informazioni sulla versione del plugin visualizzate nella pagina dei Plugin.
 
 ---
 
 
 ### 3. <a name="SECTION3"></a>COME USARE
 
-CIDRAM dovrebbe bloccare automaticamente le richieste indesiderate al suo sito senza richiedendo alcun assistenza manuale, a parte la sua installazione iniziale.
+CIDRAM dovrebbe bloccare automaticamente le richieste indesiderate al suo sito senza richiedere alcuna assistenza manuale, a parte la sua installazione iniziale.
 
-L'aggiornamento avviene manualmente, ed è possibile personalizzare il suo configurazione e personalizzare i quali CIDR sono bloccati da modificando il suo file di configurazione e/o file di firme.
+L'aggiornamento avviene manualmente, ed è possibile personalizzare la sua configurazione e quali CIDR devono essere bloccati,  modificando il vostro file di configurazione e/o file di firme.
 
-Se si incontrano qualsiasi falsi positivi, si prega di contattare me per farmi sapere su di esso.
+Se si incontrano dei falsi positivi, per favore, contattatemi e fatemelo sapere.
 
 ---
 

@@ -818,13 +818,13 @@ Tag: Ready Server
 Tag: ON-LINE Ltd
 
 
-# ASNs 10910, 10912, 10913, 11853, 11854, 11855, 12178, 12179, 12180, 12181, 12182, 13789, 13790, 13791, 13792, 14742,
-#   14743, 14744, 14745, 15421, 15570, 17675, 19024, 22132, 22211, 24245, 24246, 24247, 24295, 30282, 30636, 48910
-# ("Internap Network Services Corporation"). Updated: 2016.10.01
+# "Internap Network Services Corporation". Various ASNs. Updated: 2017.05.17
 
 2400:f800::/32 Deny Cloud
 2404:ca00::/32 Deny Cloud
 2405:5a00::/36 Deny Cloud
+2405:c400:195::/48 Deny Cloud
+2405:c400:196::/48 Deny Cloud
 2405:d800::/32 Deny Cloud
 2405:e800::/32 Deny Cloud
 2406:3800::/32 Deny Cloud
@@ -842,6 +842,7 @@ Tag: ON-LINE Ltd
 2604:b300:ad03::/48 Deny Cloud
 2606:fe80:20::/44 Deny Cloud
 2607:f080:300::/40 Deny Cloud
+2803:8080::/32 Deny Cloud
 2a02:b50::/33 Deny Cloud
 2a02:b50:8000::/34 Deny Cloud
 Tag: Internap Network
@@ -877,8 +878,10 @@ Tag: Cyberverse, Inc
 
 
 # ASN 54489 ("CoreSpace, Inc").
-# %Listed, Google Malware Dashboard: 0.98%.
-# Updated: 2016.01.22 / Checked: 2016.10.02
+# %Listed, Google Malware Dashboard: 0.79%.
+# %Listed, CleanTalk.org: 89.09%.
+# Stop Forum Spam (SFS) listings: 1,375.
+# Updated: 2016.01.22 / Checked: 2017.05.17
 
 2604:7780::/32 Deny Cloud
 Tag: CoreSpace, Inc
@@ -4104,3 +4107,14 @@ Tag: Oy Creanova Hosting
 
 2a00:ab00::/32 Deny Cloud
 Tag: Selectel Ltd
+
+
+# ASN 18068 ("Dream Wave Shizuoka Co. Ltd").
+# Caught probing for SQL dumps.
+# %Listed, Google Malware Dashboard: 0.47%.
+# %Listed, CleanTalk.org: 42.06%.
+# Stop Forum Spam (SFS) listings: 24.
+# Updated: 2017.05.16
+
+2403:9c00::/32 Deny Cloud
+Tag: Dream Wave

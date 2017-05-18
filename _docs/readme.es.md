@@ -1,15 +1,19 @@
 ## Documentación para CIDRAM (Español).
+
 ### Contenidos
 - 1. [PREÁMBULO](#SECTION1)
 - 2. [CÓMO INSTALAR](#SECTION2)
 - 3. [CÓMO USAR](#SECTION3)
-- 4. [GESTIÓN DEL FRONT-END](#SECTION4)- 5. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION5)- 6. [OPCIONES DE CONFIGURACIÓN](#SECTION6)
+- 4. [GESTIÓN DEL FRONT-END](#SECTION4)
+- 5. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION5)
+- 6. [OPCIONES DE CONFIGURACIÓN](#SECTION6)
 - 7. [FORMATO DE FIRMAS](#SECTION7)
 - 8. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION8)
 
 *Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlo sera bienvenida.
 
 ---
+
 
 ### 1. <a name="SECTION1"></a>PREÁMBULO
 
@@ -22,7 +26,7 @@ CIDRAM COPYRIGHT 2016 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 Este script es un software gratuito; puede redistribuirlo y/o modificarlo según los términos de la GNU General Public Licencse, publicada por la Free Software Foundation; tanto la versión 2 de la licencia como cualquier versión posterior. Este script es distribuido con la esperanza de que será útil, pero SIN NINGUNA GARANTÍA; también, sin ninguna garantía implícita de COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Public Licencse para más detalles, ubicada en el `LICENSE.txt` archivo también disponible en:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
-o
+
 Este documento y su paquete asociado puede ser descargado de forma gratuita desde [GitHub](https://github.com/Maikuolan/CIDRAM/).
 
 ---
@@ -175,6 +179,9 @@ Archivo | Descripción
 /vault/lang/lang.fr.cli.php | Lingüísticos datos Francés para CLI.
 /vault/lang/lang.fr.fe.php | Lingüísticos datos Francés para el front-end.
 /vault/lang/lang.fr.php | Lingüísticos datos Francés.
+/vault/lang/lang.hi.cli.php | Lingüísticos datos Hindi para CLI.
+/vault/lang/lang.hi.fe.php | Lingüísticos datos Hindi para el front-end.
+/vault/lang/lang.hi.php | Lingüísticos datos Hindi.
 /vault/lang/lang.id.cli.php | Lingüísticos datos Indonesio para CLI.
 /vault/lang/lang.id.fe.php | Lingüísticos datos Indonesio para el front-end.
 /vault/lang/lang.id.php | Lingüísticos datos Indonesio.

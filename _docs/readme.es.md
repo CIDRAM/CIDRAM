@@ -10,7 +10,7 @@
 - 7. [FORMATO DE FIRMAS](#SECTION7)
 - 8. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION8)
 
-*Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlo sera bienvenida.
+*Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlo sera bienvenida.*
 
 ---
 

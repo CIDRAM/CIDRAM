@@ -220,14 +220,14 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://macmathan.info/blocklists" dir="ltr">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="http://bgp.he.net/">سمندری طوفان کے لئے الیکٹرک BGP ٹول کٹ</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
-            <li><a href="https://www.stopforumspam.com/forum/">فورم @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP ایگریگیٹر @ Stop Forum Spam</a> – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
-            <li><a href="https://radar.qrator.net/">Qrator طرف ریڈار</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ملک کے بلاکس</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
-            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">گوگل میلویئر ڈیش بورڈ</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus پروجیکٹ</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org کی جامع مسدود کی فہرست</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+            <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
+            <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate" dir="ltr">IP Aggregator @ Stop Forum Spam</a> – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
+            <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" dir="ltr">The Spamhaus Project</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+            <li><a href="http://www.abuseat.org/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
             <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – نام سے جانا توہین آمیز آئی پی ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ آئی پی ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
             <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ آئی پی / ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
         </ul>';

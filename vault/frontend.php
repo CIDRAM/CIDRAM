@@ -1100,6 +1100,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
                 ($_POST['ID'] !== 'l10n/' . $CIDRAM['Config']['general']['lang']) &&
+                ($_POST['ID'] !== 'theme/' . $CIDRAM['Config']['template_data']['theme']) &&
                 ($_POST['ID'] !== 'CIDRAM') &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Uninstallable']) &&
@@ -1425,6 +1426,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 );
                 if (
                     ($CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang']) ||
+                    ($CIDRAM['Components']['Key'] === 'theme/' . $CIDRAM['Config']['template_data']['theme']) ||
                     ($CIDRAM['Components']['Key'] === 'CIDRAM') ||
                     $CIDRAM['IsInUse'](
                         $CIDRAM['Components']['ThisComponent']['Files']['To'],

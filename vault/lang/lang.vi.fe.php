@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.05.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Một danh sách các tập tin ch�
 $CIDRAM['lang']['config_signatures_modules'] = 'Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
+$CIDRAM['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';

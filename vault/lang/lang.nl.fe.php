@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.05.15).
+ * This file: Dutch language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 signature bes
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
+$CIDRAM['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';

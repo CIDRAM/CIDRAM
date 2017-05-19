@@ -162,6 +162,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
 /vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản, thông tin phiên, và bộ nhớ cache; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
+/vault/fe_assets/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
+/vault/fe_assets/pips.php | Tập tin cho các pip (được sử dụng bởi các quản lý tập tin front-end).
 /vault/lang/ | Chứa dữ liệu tiếng cho CIDRAM.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.cli.php | Dữ liệu tiếng Ả Rập cho CLI.
@@ -232,7 +234,6 @@ Tập tin | Chi tiết
 /vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/hashes.dat | Danh sách các giá trị băm được chấp nhận (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
-/vault/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
 /vault/ignore.dat | Tập tin các bỏ qua (được sử dụng để xác định mà phần chữ ký CIDRAM nên bỏ qua).
 /vault/ipbypass.dat | Danh sách các đường tránh IP (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
 /vault/ipv4.dat | Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).
@@ -254,8 +255,8 @@ Tập tin | Chi tiết
 /vault/rules_softlayer.php | Tập tin quy tắc tùy chỉnh cho Soft Layer.
 /vault/rules_specific.php | Tập tin quy tắc tùy chỉnh cho một số CIDR cụ thể.
 /vault/salt.dat | Tập tin muối (được sử dụng bởi một số chức năng ngoại vi; chỉ tạo ra nếu cần thiết).
-/vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
+/vault/template_default.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
@@ -423,6 +424,9 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 Cấu hình cho mẫu thiết kế và chủ đề.
 
 Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy cập bị từ chối". Nếu bạn đang sử dụng chủ đề tùy chỉnh cho CIDRAM, đầu ra HTML có nguồn gốc từ tập tin `template_custom.html`, và nếu không thì, đầu ra HTML có nguồn gốc từ tập tin `template.html`. Biến bằng văn bản cho phần này của tập tin cấu hình được xử lý để đầu ra HTML bằng cách thay thế bất kỳ tên biến được bao quanh bởi các dấu ngoặc nhọn tìm thấy trong đầu ra HTML với các dữ liệu biến tương ứng. Ví dụ, ở đâu `foo="bar"`, bất kỳ trường hợp `<p>{foo}</p>` tìm thấy trong đầu ra HTML sẽ trở thành `<p>bar</p>`.
+
+"theme"
+- Chủ đề mặc định để sử dụng cho CIDRAM.
 
 "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn CIDRAM để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, CIDRAM sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
@@ -684,4 +688,4 @@ Vâng. Cài đặt CIDRAM không bị khóa vào các tên miền cụ thể, v�
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Năm 2017 (2017.05.07).
+Lần cuối cập nhật: 19 Tháng Năm 2017 (2017.05.19).

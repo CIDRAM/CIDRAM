@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.05.12).
+ * This file: Functions file (last modified: 2017.05.19).
  */
 
 /**
@@ -1991,6 +1991,21 @@ $CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
     return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
 };
 
+/**
+ * Filter the available theme options provided by the configuration page on
+ * the basis of their availability.
+ *
+ * @param string $ChoiceKey Theme ID.
+ * @return bool Valid/Invalid.
+ */
+$CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
+    if ($ChoiceKey === 'default') {
+        return true;
+    }
+    $Path = $CIDRAM['Vault'] . 'fe_assets/' . $ChoiceKey . '/';
+    return (file_exists($Path . 'frontend.css') || file_exists($CIDRAM['Vault'] . 'template_' . $ChoiceKey . '.html'));
+};
+
 /** Attempt to perform some simple formatting for the log data. */
 $CIDRAM['Formatter'] = function (&$In) {
     if (strlen($In) > ini_get('pcre.backtrack_limit') || substr_count($In, "\n") > (ini_get('pcre.recursion_limit') / 2)) {
@@ -2013,4 +2028,23 @@ $CIDRAM['Formatter'] = function (&$In) {
             $In = str_replace("\n" . substr($ThisPart, 1) . "\n", "\n<span class=\"s\">" . substr($ThisPart, 1) . "</span>\n", $In);
         }
     }
+};
+
+/**
+ * Get the appropriate path for a specified asset as per the defined theme.
+ *
+ * @param string $Asset The asset filename.
+ * @return string The asset path.
+ */
+$CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
+    if (
+        $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
+        file_exists($CIDRAM['Vault'] . 'fe_assets/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset)
+    ) {
+        return $CIDRAM['Vault'] . 'fe_assets/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset;
+    }
+    if (file_exists($CIDRAM['Vault'] . 'fe_assets/' . $Asset)) {
+        return $CIDRAM['Vault'] . 'fe_assets/' . $Asset;
+    }
+    throw new \Exception('Asset not found');
 };

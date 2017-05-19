@@ -100,7 +100,7 @@ Config Defaults:
    default: "REMOTE_ADDR"
   forbid_on_block:
    type: int
-   default: false
+   default: 200
    choices:
     200: 200 OK
     403: 403 Forbidden
@@ -229,6 +229,13 @@ Config Defaults:
    type: string
    default: ""
  template_data:
+  theme:
+   type: string
+   default: "default"
+   choices:
+    default: "Default (Maikuolan)"
+    rbi: "Red-Blue Inverted (Maikuolan)"
+   choice_filter: "FilterTheme"
   css_url:
    type: string
    default: ""

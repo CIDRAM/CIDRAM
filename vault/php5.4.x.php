@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Polyfills for PHP 5.4.X (last modified: 2016.12.02).
+ * This file: Polyfills for PHP 5.4.X (last modified: 2017.05.17).
  */
 
 if (!defined('PASSWORD_BCRYPT')) {
@@ -30,7 +30,8 @@ if (!function_exists('password_hash')) {
                 $CostLen = strlen($Cost);
                 if ($Cost < 4) {
                     $Cost = 4;
-                } if ($Cost < 4 || $Cost > 31 || $CostLen > 2) {
+                }
+                if ($Cost > 31 || $CostLen > 2) {
                     $Cost = 31;
                 } elseif ($CostLen < 2) {
                     $Cost = '0' . $Cost;

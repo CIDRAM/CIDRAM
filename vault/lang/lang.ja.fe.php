@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.05.15).
+ * This file: Japanese language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'ＩＰｖ６のシグネチャフ�
 $CIDRAM['lang']['config_signatures_modules'] = 'ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。 これは、カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '違反はいつカウントされるべきですか？ False = ＩＰがモジュールによってブロックされている場合。 True = なんでもの理由でＩＰがブロックされた場合。';
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣＳＳファイルＵＲＬ。';
+$CIDRAM['lang']['config_template_data_theme'] = 'CIDRAMに使用するデフォルトテーマ。';
 $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';

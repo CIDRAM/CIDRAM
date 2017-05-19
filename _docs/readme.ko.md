@@ -162,6 +162,8 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/fe_assets/frontend.css | 프론트 엔드 CSS 스타일 시트.
 /vault/fe_assets/frontend.dat | 프론트 엔드 데이터베이스 (계정 정보와 세션 정보 및 캐시가 포함되어 있습니다; 프론트 엔드가 활성화되어있을 때 생성).
 /vault/fe_assets/frontend.html | 프론트 엔드 메인 템플릿 파일.
+/vault/fe_assets/icons.php | 아이콘 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
+/vault/fe_assets/pips.php | 핍 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/lang/ | CIDRAM 언어 데이터가 포함되어 있습니다.
 /vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/lang/lang.ar.cli.php | CLI 아랍어 언어 데이터.
@@ -232,7 +234,6 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/frontend.php | 프론트 엔드 핸들러.
 /vault/functions.php | 기능 파일 (기본적으로 파일).
 /vault/hashes.dat | 허용되는 해시 목록 (reCAPTCHA의 기능에 관련합니다; 만 reCAPTCHA 기능이 활성화되어있는 경우에 생성).
-/vault/icons.php | 아이콘 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/ignore.dat | 무시 파일 (이것은 서명 섹션 무시합니다).
 /vault/ipbypass.dat | IP 우회 목록 (reCAPTCHA의 기능에 관련합니다; 만 reCAPTCHA 기능이 활성화되어있는 경우에 생성).
 /vault/ipv4.dat | IPv4의 서명 파일 (불필요한 클라우드 서비스와 非人 엔드 포인트).
@@ -254,8 +255,8 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/rules_softlayer.php | 사용자 정의 규칙은 Soft Layer위한 파일.
 /vault/rules_specific.php | 사용자 정의 규칙은 일부 특정 CIDR위한 파일.
 /vault/salt.dat | 솔트 파일 (일부 주변 기능에 의해 사용됩니다; 필요한 경우에만 생성).
-/vault/template.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_custom.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
+/vault/template_default.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).
@@ -423,6 +424,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 템플릿과 테마 지시어와 변수.
 
 템플릿의 데이터는 사용자를위한 액세스 거부 메시지를 HTML 형식으로 출력 할 때 사용됩니다. 사용자 지정 테마를 사용하는 경우는`template_custom.html`를 사용하고, 그렇지 않은 경우는`template.html`를 사용하여 HTML 출력이 생성됩니다. 설정 파일에서이 섹션의 변수는 HTML 출력에 대한 해석되어로 둘러싸인 변수 이름은 해당 변수 데이터로 대체합니다. 예를 들어`foo="bar"`하면 HTML 출력의`<p>{foo}</p>`는`<p>bar</p>`입니다.
+
+"theme"
+- CIDRAM에 사용할 기본 테마.
 
 "css_url"
 - 사용자 정의 테마 템플릿 파일은 외부 CSS 속성을 사용합니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다.
@@ -684,4 +688,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트: 2017년 5월 7일.
+최종 업데이트: 2017년 5월 19일.

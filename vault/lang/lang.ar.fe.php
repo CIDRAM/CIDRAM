@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.05.15).
+ * This file: Arabic language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'وهناك قائمة من المل
 $CIDRAM['lang']['config_signatures_modules'] = 'قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'متى يجب أن تحسب المخالفات؟ False = عندما IP تم حظره من قبل وحدات. True = عندما IP يتم حظر لأي سبب من الأسباب.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
+$CIDRAM['lang']['config_template_data_theme'] = 'الموضوع الافتراضي لاستخدام CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';

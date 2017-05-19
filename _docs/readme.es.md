@@ -162,6 +162,8 @@ Archivo | Descripción
 /vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
 /vault/fe_assets/frontend.dat | Base de datos para el front-end (contiene información de cuentas, información de sesiones, y la memoria caché; sólo se genera si el front-end está activado y utilizado).
 /vault/fe_assets/frontend.html | El archivo HTML principal para el front-end.
+/vault/fe_assets/icons.php | Archivo de iconos (utilizado por el administración de archivos del front-end).
+/vault/fe_assets/pips.php | Archivo de pips (utilizado por el administración de archivos del front-end).
 /vault/lang/ | Contiene lingüísticos datos.
 /vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/lang/lang.ar.cli.php | Lingüísticos datos Árabe para CLI.
@@ -232,7 +234,6 @@ Archivo | Descripción
 /vault/frontend.php | Módulo del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/hashes.dat | Contiene una lista de hashes aceptadas (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
-/vault/icons.php | Archivo de iconos (utilizado por el administración de archivos del front-end).
 /vault/ignore.dat | Ignorar archivo (se utiliza para especificar qué secciones de firmas que CIDRAM debe ignorar).
 /vault/ipbypass.dat | Contiene una lista de bypasses IP (pertinente a la función de reCAPTCHA; sólo se genera si la función de reCAPTCHA está habilitada).
 /vault/ipv4.dat | Archivo de firmas por IPv4 (servicios en la nube no deseados y puntos finales no humanos).
@@ -254,8 +255,8 @@ Archivo | Descripción
 /vault/rules_softlayer.php | Archivo de reglas personalizado para Soft Layer.
 /vault/rules_specific.php | Archivo de reglas personalizado para algunos CIDRs específicos.
 /vault/salt.dat | Archivo de sal (utilizado por algunas funciones periférico; solamente generada si es necesario).
-/vault/template.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
+/vault/template_default.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
 /.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
 /Changelog.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /composer.json | Composer/Packagist información (no se requiere para usar la script).
@@ -423,6 +424,9 @@ Para obtener una "site key" y una "secret key" (requerida para utilizar reCAPTCH
 Directivas/Variables para las plantillas y temas.
 
 Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si utiliza temas personalizados para CIDRAM, HTML se obtiene a partir del `template_custom.html` archivo, y para de otra manera, HTML se obtiene a partir del `template.html` archivo. Variables escritas a esta sección de la configuración archivo se procesado para el HTML a través de la sustitución de los nombres de variables circunfijo por llaves que se encuentran dentro del HTML con el variable datos correspondiente. Por ejemplo, dónde `foo="bar"`, cualquier instancias de `<p>{foo}</p>` que se encuentran dentro del HTML se convertirá `<p>bar</p>`.
+
+"theme"
+- Tema predefinido a utilizar para CIDRAM.
 
 "css_url"
 - El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir CIDRAM de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, CIDRAM utilizará el plantilla archivo para el predefinida tema.
@@ -684,4 +688,4 @@ Sí. Las instalaciones de CIDRAM no están ligados naturalmente en dominios espe
 ---
 
 
-Última Actualización: 2 Mayo 2017 (2017.05.02).
+Última Actualización: 19 Mayo 2017 (2017.05.19).

@@ -162,6 +162,8 @@ File | Description
 /vault/fe_assets/frontend.css | CSS style-sheet for the front-end.
 /vault/fe_assets/frontend.dat | Database for the front-end (contains account information, session information, and the cache; only generated if the front-end is enabled and used).
 /vault/fe_assets/frontend.html | The main HTML template file for the front-end.
+/vault/fe_assets/icons.php | Icons handler (used by the front-end file manager).
+/vault/fe_assets/pips.php | Pips handler (used by the front-end file manager).
 /vault/lang/ | Contains CIDRAM language data.
 /vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/lang.ar.cli.php | Arabic language data for CLI.
@@ -232,7 +234,6 @@ File | Description
 /vault/frontend.php | Front-end handler.
 /vault/functions.php | Functions file (essential).
 /vault/hashes.dat | Contains a list of accepted hashes (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
-/vault/icons.php | Icons handler (used by the front-end file manager).
 /vault/ignore.dat | Ignores file (used to specify which signature sections CIDRAM should ignore).
 /vault/ipbypass.dat | Contains a list of IP bypasses (pertinent to the reCAPTCHA feature; only generated if the reCAPTCHA feature is enabled).
 /vault/ipv4.dat | IPv4 signatures file (unwanted cloud services and non-human endpoints).
@@ -254,8 +255,8 @@ File | Description
 /vault/rules_softlayer.php | Custom rules file for Soft Layer.
 /vault/rules_specific.php | Custom rules file for some specific CIDRs.
 /vault/salt.dat | Salt file (used by some peripheral functionality; only generated if required).
-/vault/template.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
+/vault/template_default.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /.gitattributes | A GitHub project file (not required for proper function of the script).
 /Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
 /composer.json | Composer/Packagist information (not required for proper function of the script).
@@ -423,6 +424,9 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 Directives/Variables for templates and themes.
 
 Relates to the HTML output used to generate the "Access Denied" page. If you're using custom themes for CIDRAM, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+
+"theme"
+- Default theme to use for CIDRAM.
 
 "css_url"
 - The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct CIDRAM to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, CIDRAM will use the template file for the default theme.
@@ -684,4 +688,4 @@ Yes. CIDRAM installations are not naturally locked to specific domains, and can 
 ---
 
 
-Last Updated: 7 May 2017 (2017.05.07).
+Last Updated: 19 May 2017 (2017.05.19).

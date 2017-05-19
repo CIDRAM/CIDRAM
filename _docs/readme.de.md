@@ -162,6 +162,8 @@ Datei | Beschreibung
 /vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
 /vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen, Sitzungsinformationen, und dem Cache; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
 /vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
+/vault/fe_assets/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
+/vault/fe_assets/pips.php | Pips-Handler (die vom Front-End-Dateimanager verwendet wird).
 /vault/lang/ | Enthält Sprachdaten für CIDRAM.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
@@ -232,7 +234,6 @@ Datei | Beschreibung
 /vault/frontend.php | Front-End-Handler.
 /vault/functions.php | Funktionen-Datei.
 /vault/hashes.dat | Enthält eine Liste der akzeptierten Hashes (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
-/vault/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
 /vault/ignore.dat | Ignoriert Datei (zu spezifizieren welche Signatur-Sektionen CIDRAM sollte ignorieren es ist benutzt).
 /vault/ipbypass.dat | Enthält eine Liste von IP-Bypässe (relevant für die reCAPTCHA-Funktion; nur dann erzeugt wird, wenn die reCAPTCHA-Funktion aktiviert ist).
 /vault/ipv4.dat | IPv4 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).
@@ -254,8 +255,8 @@ Datei | Beschreibung
 /vault/rules_softlayer.php | Benutzerdefinierte Regeldatei für Soft Layer.
 /vault/rules_specific.php | Benutzerdefinierte Regeldatei für einige spezifische CIDRs.
 /vault/salt.dat | Salz-Datei (durch einigen periphere Funktionalität verwendet; nur dann erzeugt wenn erforderlich).
-/vault/template.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
+/vault/template_default.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /Changelog.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
@@ -423,6 +424,9 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 Anweisungen/Variablen für Templates und Themes.
 
 Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zugriff verweigert"-Nachricht Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie benutzerdefinierte Themes für CIDRAM verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`.
+
+"theme"
+- Standard-Thema für CIDRAM verwenden.
 
 "css_url"
 - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um CIDRAM anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird CIDRAM die Template-Datei für das normale Theme verwenden.
@@ -684,4 +688,4 @@ Ja. CIDRAM-Installationen sind natürlich nicht auf bestimmte Domains gesperrt, 
 ---
 
 
-Zuletzt aktualisiert: 7 Mai 2017 (2017.05.07).
+Zuletzt aktualisiert: 19 Mai 2017 (2017.05.19).

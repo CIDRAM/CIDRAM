@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.05.15).
+ * This file: Indonesian language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang 
 $CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
+$CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';

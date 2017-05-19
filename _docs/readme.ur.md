@@ -164,6 +164,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline;">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
+&nbsp; <div dir="rtl" style="display:inline;">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
 &nbsp; <div dir="rtl" style="display:inline;">CIDRAM زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.cli.php
@@ -234,7 +236,6 @@
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
 &nbsp; <div dir="rtl" style="display:inline;">افعال فائل (ضروری).</div> | /vault/functions.php
 &nbsp; <div dir="rtl" style="display:inline;">قبول کر لیا hashes کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/hashes.dat
-&nbsp; <div dir="rtl" style="display:inline;">Icons کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/icons.php
 &nbsp; <div dir="rtl" style="display:inline;">ائل (CIDRAM کی پروا نہ کرے جس کے دستخط حصوں کی وضاحت کرنے کے لئے استعمال) کو نظر انداز.</div> | /vault/ignore.dat
 &nbsp; <div dir="rtl" style="display:inline;">IP بائ پاس کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/ipbypass.dat
 &nbsp; <div dir="rtl" style="display:inline;">IPv4 کی دستخط فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی endpoints کے).</div> | /vault/ipv4.dat
@@ -256,8 +257,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین نرم پرت کے لئے دائر.</div> | /vault/rules_softlayer.php
 &nbsp; <div dir="rtl" style="display:inline;">اپنی مرضی کے قوانین میں کچھ مخصوص CIDRs لئے دائر.</div> | /vault/rules_specific.php
 &nbsp; <div dir="rtl" style="display:inline;">سالٹ فائل (کچھ پردیی فعالیت کی طرف سے استعمال کیا جاتا؛ صرف ضرورت پڑنے پر پیدا).</div> | /vault/salt.dat
-&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template.html
 &nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
+&nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
 &nbsp; <div dir="rtl" style="display:inline;">A GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
 &nbsp; <div dir="rtl" style="display:inline;">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog.txt
 &nbsp; <div dir="rtl" style="display:inline;">کمپوزر / Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
@@ -501,12 +502,17 @@
 
 <div dir="rtl"><em>مفید ٹپ: "{yyyy}" مکمل سال کے لئے، "{yy}" مختصر سال کے لئے، "{mm}": اگر آپ چاہتے ہیں تو آپ کے نام میں ان کو شامل کرکے آپ لاگ مسلیں کے ناموں کو تاریخ / وقت کی معلومات شامل کر سکتے ہیں مہینے کے لئے، دن کے لئے، "{hh}" گھنٹے کیلئے "{dd}" (ذیل کی مثالیں دیکھ).</em><br /><br /></div>
 
-`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt`
+`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`
 
 #### <div dir="rtl">"template_data" (قسم)<br /></div>
 <div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات / متغیر.<br /><br /></div>
 
 <div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ CIDRAM لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار "template_custom.html" فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار "template.html" فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں foo="bar" بار کے کسی بھی مثال &lt;p&gt;{foo}&lt;/p&gt; HTML پیداوار کے اندر اندر پایا بن جائے گا &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
+
+<div dir="rtl">"theme"<br /></div>
+<div dir="rtl"><ul>
+ <li>CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.</li>
+</ul></div>
 
 <div dir="rtl">"css_url"<br /></div>
 <div dir="rtl"><ul>
@@ -773,4 +779,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 7 مئی 2017 (2017.05.07).</div>
+<div dir="rtl">آخری تازہ کاری: 19 مئی 2017 (2017.05.19).</div>

@@ -162,6 +162,8 @@ Fichier | Description
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes, informations sur les sessions, et le cache; généré seulement si l'accès frontal est activé et utilisé).
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
+/vault/fe_assets/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
+/vault/fe_assets/pips.php | Gestionnaire de pips (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/lang/ | Contient données linguistiques.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.ar.cli.php | Données linguistiques en Arabe pour CLI.
@@ -232,7 +234,6 @@ Fichier | Description
 /vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/hashes.dat | Contient une liste de hashes acceptées (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
-/vault/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/ignore.dat | Fichier de ignores (utilisé pour spécifier la signature sections CIDRAM devrait ignorer).
 /vault/ipbypass.dat | Contient une liste de contournements IP (pertinentes pour la fonction reCAPTCHA; seulement généré si la fonction reCAPTCHA est activée).
 /vault/ipv4.dat | Fichier de signatures pour IPv4 (les services cloud indésirables et les noeuds finaux non humains).
@@ -254,8 +255,8 @@ Fichier | Description
 /vault/rules_softlayer.php | Fichier de règles personnalisés pour Soft Layer.
 /vault/rules_specific.php | Fichier de règles personnalisés pour certains CIDRs spécifiques.
 /vault/salt.dat | Fichier de sel (utilisé par certaine fonctionnalité périphérique; seulement généré si nécessaire).
-/vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
+/vault/template_default.html | Modèle fichier; Modèle pour l'HTML sortie produit par CIDRAM pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
 /Changelog.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
@@ -423,6 +424,9 @@ Pour obtenir une "site key" et une "secret key" (nécessaires à l'utilisation d
 Directives/Variables pour les modèles et thèmes.
 
 Correspond à la sortie HTML utilisé pour générer la page "Accès Refusé". Si vous utilisez des thèmes personnalisés pour CIDRAM, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
+
+"theme"
+- Le thème à utiliser par défaut pour CIDRAM.
 
 "css_url"
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire CIDRAM d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, CIDRAM va utiliser le modèle fichier pour le défaut thème.
@@ -684,4 +688,4 @@ Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des d
 ---
 
 
-Dernière Mise à Jour: 7 Mai 2017 (2017.05.07).
+Dernière Mise à Jour: 19 Mai 2017 (2017.05.19).

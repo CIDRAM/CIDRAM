@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.15).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,7 +22,7 @@ $CIDRAM['lang']['config_general_ban_override'] = '覆蓋“forbid_on_block”當
 $CIDRAM['lang']['config_general_default_dns'] = '以逗號分隔的DNS服務器列表，用於主機名查找。 標準 = “8.8.8.8,8.8.4.4” (Google DNS)。 警告： 不要修改此除非您知道什麼您做著！';
 $CIDRAM['lang']['config_general_disable_cli'] = '關閉CLI模式嗎？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '關閉前端訪問嗎？';
-$CIDRAM['lang']['config_general_disable_webfonts'] = '關閉網絡字體嗎？ True = 關閉； False = 不關閉【標準】。';
+$CIDRAM['lang']['config_general_disable_webfonts'] = '關閉網絡字體嗎？ True（真） = 關閉； False（假） = 不關閉【標準】。';
 $CIDRAM['lang']['config_general_emailaddr'] = '支持/援助電子郵件地址。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什麼頭CIDRAM應該應對當申請是拒絕？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。指定一個文件名，或留空以禁用。';
@@ -31,10 +31,10 @@ $CIDRAM['lang']['config_general_lang'] = '指定標準CIDRAM語言。';
 $CIDRAM['lang']['config_general_logfile'] = '人類可讀文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache風格文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '連載的文件用於記錄所有被攔截的訪問。指定一個文件名，或留空以禁用。';
-$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止從阻止請求在日誌文件嗎？ True = 是【標準】； False = 不是。';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止從阻止請求在日誌文件嗎？ True（真） = 是【標準】； False（假） = 不是。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登錄嘗試次數。';
-$CIDRAM['lang']['config_general_protect_frontend'] = '指定是否應將CIDRAM通常提供的保護應用於前端。 True = 是【標準】； False = 不是。';
-$CIDRAM['lang']['config_general_search_engine_verification'] = '嘗試驗證來自搜索引擎的請求？ 驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，SEO，等等）。 當被驗證，搜索引擎可以被阻止，但不會被禁止。 當不被驗證，他們可以由於超過違規限製而被禁止。 另外，搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，這些請求將被阻止）。 True = 搜索引擎驗證是啟用【標準】； False = 搜索引擎驗證是禁用。';
+$CIDRAM['lang']['config_general_protect_frontend'] = '指定是否應將CIDRAM通常提供的保護應用於前端。 True（真） = 是【標準】； False（假） = 不是。';
+$CIDRAM['lang']['config_general_search_engine_verification'] = '嘗試驗證來自搜索引擎的請求？ 驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，SEO，等等）。 當被驗證，搜索引擎可以被阻止，但不會被禁止。 當不被驗證，他們可以由於超過違規限製而被禁止。 另外，搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，這些請求將被阻止）。 True（真） = 搜索引擎驗證是啟用【標準】； False（假） = 搜索引擎驗證是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM應該默默重定向被攔截的訪問而不是顯示該“拒絕訪問”頁嗎？指定位置至重定向被攔截的訪問，或讓它空將其禁用。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符號格式。可根據要求增加附加選項。';
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
@@ -47,18 +47,19 @@ $CIDRAM['lang']['config_recaptcha_logfile'] = '記錄所有的reCAPTCHA的嘗試
 $CIDRAM['lang']['config_recaptcha_secret'] = '該值應該對應於“secret key”為您的reCAPTCHA，該可以發現在reCAPTCHA的儀表板。';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = '該值應該對應於“site key”為您的reCAPTCHA，該可以發現在reCAPTCHA的儀表板。';
 $CIDRAM['lang']['config_recaptcha_usemode'] = '它定義瞭如何CIDRAM應該使用reCAPTCHA（請參閱文檔）。';
-$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR嗎？如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，這應該被設置為“false”（假）。如果不，這應該被設置為“true”（真）。';
-$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR認定為屬於虛擬主機或云服務嗎？如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，這應該被設置為“false”（假）。如果不，這應該被設置為“true”（真）。';
+$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR嗎？如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，這應該被設置為False（假）。如果不，這應該被設置為True（真）。';
+$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR認定為屬於虛擬主機或云服務嗎？如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，這應該被設置為False（假）。如果不，這應該被設置為True（真）。';
 $CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建議對於黑名單嗎？這包括簽名不標記為的一章節任何其他更具體簽名類別。';
-$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於代理服務嗎？如果您需要該用戶可以訪問您的網站從匿名代理服務，這應該被設置為“false”（假）。除此以外，如果您不需要匿名代理服務，這應該被設置為“true”（真）作為一個方式以提高安全性。';
-$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為“true”（真）。';
+$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於代理服務嗎？如果您需要該用戶可以訪問您的網站從匿名代理服務，這應該被設置為False（假）。除此以外，如果您不需要匿名代理服務，這應該被設置為True（真）作為一個方式以提高安全性。';
+$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？除非您遇到問題當這樣做，通常，這應該被設置為True（真）。';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = '多少秒鐘來跟踪模塊禁止的IP。 標準 = 604800 （1週）。';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = '從IP最大允許違規數量之前它被禁止。 標準 = 10。';
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6簽名文件，CIDRAM應該嘗試使用，用逗號分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模塊文件要加載的列表以後檢查簽名IPv4/IPv6，用逗號分隔。';
-$CIDRAM['lang']['config_signatures_track_mode'] = '什麼時候應該對違規行為進行計數？ False = 當IP被模塊阻止時。 True = 當IP由於任何原因阻止時。';
+$CIDRAM['lang']['config_signatures_track_mode'] = '什麼時候應該對違規行為進行計數？ False（假） = 當IP被模塊阻止時。 True（真） = 當IP由於任何原因阻止時。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定義主題的CSS文件URL。';
+$CIDRAM['lang']['config_template_data_theme'] = '用於CIDRAM的默認主題。';
 $CIDRAM['lang']['field_activate'] = '啟用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';

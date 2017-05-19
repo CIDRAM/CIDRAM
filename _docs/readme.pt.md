@@ -162,6 +162,8 @@ Arquivo | Descrição
 /vault/fe_assets/frontend.css | Folha de estilo CSS para o front-end.
 /vault/fe_assets/frontend.dat | Banco de dados para o front-end (contém informações de contas, informações de sessões, eo cache; gerado só se o front-end está habilitado e usado).
 /vault/fe_assets/frontend.html | O arquivo modelo HTML principal para o front-end.
+/vault/fe_assets/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
+/vault/fe_assets/pips.php | Módulo de pips (usado pelo gerenciador de arquivos do front-end).
 /vault/lang/ | Contém dados lingüísticos.
 /vault/lang/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/lang/lang.ar.cli.php | Dados lingüísticos Árabe para CLI.
@@ -232,7 +234,6 @@ Arquivo | Descrição
 /vault/frontend.php | Módulo do front-end.
 /vault/functions.php | Arquivo de funções.
 /vault/hashes.dat | Contém uma lista de hashes aceitos (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
-/vault/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
 /vault/ignore.dat | Arquivo de ignorados (usado para especificar quais seções de assinaturas CIDRAM deve ignorar).
 /vault/ipbypass.dat | Contém uma lista de bypasses IP (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
 /vault/ipv4.dat | Arquivo de assinaturas para IPv4 (serviços em nuvem indesejados e pontos de extremidade não-humanos).
@@ -254,8 +255,8 @@ Arquivo | Descrição
 /vault/rules_softlayer.php | Arquivo de regras personalizadas para Soft Layer.
 /vault/rules_specific.php | Arquivo de regras personalizadas alguns CIDRs específicos.
 /vault/salt.dat | Arquivo de sal (utilizada por algumas funcionalidades periférica; gerado apenas se necessário).
-/vault/template.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
+/vault/template_default.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
 /Changelog.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
@@ -423,6 +424,9 @@ Para obter uma "site key" e uma "secret key" (necessário para usando reCAPTCHA)
 Directivas/Variáveis para modelos e temas.
 
 Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se você estiver usando temas personalizados para CIDRAM, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
+
+"theme"
+- Tema padrão a ser usado para CIDRAM.
 
 "css_url"
 - O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir CIDRAM para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, CIDRAM usará o template arquivo para o padrão tema.
@@ -684,4 +688,4 @@ Sim. As instalações do CIDRAM não estão naturalmente atado com domínios esp
 ---
 
 
-Última Atualização: 7 Maio 2017 (2017.05.07).
+Última Atualização: 19 Maio 2017 (2017.05.19).

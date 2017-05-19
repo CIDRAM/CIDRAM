@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.05.11).
+ * This file: Front-end handler (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,15 +23,10 @@ if (empty($CIDRAM['QueryVars']['cidram-page'])) {
 
 /** Populate common front-end variables. */
 $CIDRAM['FE'] = array(
-    'PIP_Left' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+ga6vJIEDh0UmzKQA7',
-    'PIP_Right' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+gmwvoUGBSSfOuKQA7',
-    'PIP_Key' => 'R0lGODlhBwAJAIABAJkAAP///yH5BAEKAAEALAAAAAAHAAkAAAINjH+gyaaAAkQrznRbKAA7',
-    'PIP_Key2' => 'R0lGODlhCAAFAIABAJkAAP///yH5BAEKAAEALAAAAAAIAAUAAAILDIJ5l2YAo1uItQIAOw==',
-    'Template' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.html'),
+    'Template' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.html')),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
-    'WebFontsLink' => $CIDRAM['WebFontsLink'],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'UserList' => "\n",
     'SessionList' => "\n",
@@ -44,6 +39,25 @@ $CIDRAM['FE'] = array(
     'bNav' => '&nbsp;',
     'FE_Title' => ''
 );
+
+/** Fetch pips data. */
+$CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.php');
+if (is_readable($CIDRAM['Pips_Path'])) {
+    require $CIDRAM['Pips_Path'];
+}
+
+/** Handle webfonts. */
+if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
+    $CIDRAM['FE']['Template'] = str_replace(array('<!-- WebFont Begin -->', '<!-- WebFont End -->'), '', $CIDRAM['FE']['Template']);
+} else {
+    $CIDRAM['WebFontPos'] = array(
+        'Begin' => strpos($CIDRAM['FE']['Template'], '<!-- WebFont Begin -->'),
+        'End' => strpos($CIDRAM['FE']['Template'], '<!-- WebFont End -->')
+    );
+    $CIDRAM['FE']['Template'] =
+        substr($CIDRAM['FE']['Template'], 0, $CIDRAM['WebFontPos']['Begin']) . substr($CIDRAM['FE']['Template'], $CIDRAM['WebFontPos']['End'] + 20);
+    unset($CIDRAM['WebFontPos']);
+}
 
 /** Traversal detection. */
 $CIDRAM['Traverse'] = function ($Path) {
@@ -71,7 +85,7 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
     header('Content-Type: text/css');
     echo $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.css')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.css'))
     );
     die;
 }
@@ -293,7 +307,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
 
         $CIDRAM['FE']['nav'] = $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['FE'],
-            $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_nav_complete_access.html')
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_complete_access.html'))
         );
 
     /** If the user has logs access only. */
@@ -301,7 +315,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
 
         $CIDRAM['FE']['nav'] = $CIDRAM['ParseVars'](
             $CIDRAM['lang'] + $CIDRAM['FE'],
-            $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_nav_logs_access_only.html')
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_nav_logs_access_only.html'))
         );
 
     }
@@ -327,7 +341,7 @@ if ($CIDRAM['FE']['UserState'] !== 1) {
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_login.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_login.html'))
     );
 
     /** Send output. */
@@ -367,7 +381,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_home.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_home.html'))
     );
 
     /** Send output. */
@@ -391,14 +405,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
     elseif (!empty($CIDRAM['QueryVars']['icon'])) {
 
         /** Fetch file manager icons data. */
-        if (file_exists($CIDRAM['Vault'] . 'icons.php') && is_readable($CIDRAM['Vault'] . 'icons.php')) {
-            require $CIDRAM['Vault'] . 'icons.php';
+        $CIDRAM['Icons_Handler_Path'] = $CIDRAM['GetAssetPath']('icons.php');
+        if (is_readable($CIDRAM['Icons_Handler_Path'])) {
+            require $CIDRAM['Icons_Handler_Path'];
         }
 
         header('Content-Type: image/gif');
         if (!empty($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']])) {
             echo gzinflate(base64_decode($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']]));
-        } else {
+        } elseif (!empty($CIDRAM['Icons']['unknown'])) {
             echo gzinflate(base64_decode($CIDRAM['Icons']['unknown']));
         }
     }
@@ -541,7 +556,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
-    $CIDRAM['FE']['AccountsRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_accounts_row.html');
+    $CIDRAM['FE']['AccountsRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_accounts_row.html'));
     $CIDRAM['FE']['Accounts'] = '';
     $CIDRAM['FE']['NewLineOffset'] = 0;
 
@@ -585,7 +600,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_accounts.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_accounts.html'))
     );
 
     /** Send output. */
@@ -607,7 +622,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
-    $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_config_row.html');
+    $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config_row.html'));
 
     /** Indexes. */
     $CIDRAM['FE']['Indexes'] = '            ';
@@ -820,7 +835,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_config.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config.html'))
     );
 
     /** Send output. */
@@ -1256,7 +1271,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
-    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates_row.html');
+    $CIDRAM['FE']['UpdatesRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_updates_row.html'));
 
     $CIDRAM['Components'] = array(
         'Meta' => $CIDRAM['Components']['Meta'],
@@ -1696,7 +1711,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_updates.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_updates.html'))
     );
 
     /** Send output. */
@@ -1876,7 +1891,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 /** Parse output. */
                 $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
                     $CIDRAM['lang'] + $CIDRAM['FE'],
-                    $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files_rename.html')
+                    $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_files_rename.html'))
                 );
 
                 /** Send output. */
@@ -1912,7 +1927,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 /** Parse output. */
                 $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
                     $CIDRAM['lang'] + $CIDRAM['FE'],
-                    $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files_edit.html')
+                    $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_files_edit.html'))
                 );
 
                 /** Send output. */
@@ -1936,12 +1951,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     }
 
     /** Template for file rows. */
-    $CIDRAM['FE']['FilesRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files_row.html');
+    $CIDRAM['FE']['FilesRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_files_row.html'));
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_files.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_files.html'))
     );
 
     /** Initialise files data variable. */
@@ -1993,7 +2008,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     /** Template for result rows. */
-    $CIDRAM['FE']['IPTestRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_test_row.html');
+    $CIDRAM['FE']['IPTestRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_test_row.html'));
 
     /** Initialise results data. */
     $CIDRAM['FE']['IPTestResults'] = '';
@@ -2038,7 +2053,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_test.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_test.html'))
     );
 
     /** Send output. */
@@ -2061,7 +2076,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     /** Template for result rows. */
-    $CIDRAM['FE']['TrackingRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_tracking_row.html');
+    $CIDRAM['FE']['TrackingRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_tracking_row.html'));
 
     /** Initialise variables. */
     $CIDRAM['FE']['TrackingData'] = '';
@@ -2145,7 +2160,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_ip_tracking.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_tracking.html'))
     );
 
     /** Send output. */
@@ -2168,7 +2183,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     /** Template for result rows. */
-    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_cidr_calc_row.html');
+    $CIDRAM['FE']['CalcRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cidr_calc_row.html'));
 
     /** Initialise results data. */
     $CIDRAM['FE']['Ranges'] = '';
@@ -2205,7 +2220,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_cidr_calc.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_cidr_calc.html'))
     );
 
     /** Send output. */
@@ -2230,7 +2245,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/_logs.html')
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_logs.html'))
     );
 
     /** Initialise array for fetching logs data. */

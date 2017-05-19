@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.29).
+ * This file: Configuration handler (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -151,10 +151,6 @@ $CIDRAM['CIDRAM_sapi'] = (
         $_SERVER['argc'] > 0
     )
 );
-
-/** If the feature is enabled, define the webfonts CSS link. */
-$CIDRAM['WebFontsLink'] = empty($CIDRAM['Config']['general']['disable_webfonts']) ?
-    "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono\" />" : '';
 
 /**
  * Process the request query and query variables (if any exist); These may be

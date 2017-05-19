@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.05.15).
+ * This file: Hindi language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6 हस्ताक्षर �
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6 हस्ताक्षर की जाँच के बाद लोड करने के लिए मॉड्यूल फाइलें, कॉमा द्वारा अलग।';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'मिथकों गिनती कब किया जाना चाहिए? False(झूठी) = आईपीएस मॉड्यूल द्वारा अवरुद्ध कर रहे हैं जब। सच्चा = आईपीएस किसी भी कारण से अवरुद्ध कर रहे हैं जब।';
 $CIDRAM['lang']['config_template_data_css_url'] = 'कस्टम थीम के लिए CSS फाइल URL.';
+$CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM के इस्तेमाल के लिए डिफ़ॉल्ट थीम।';
 $CIDRAM['lang']['field_activate'] = 'सक्रिय करें';
 $CIDRAM['lang']['field_banned'] = 'प्रतिबंधित';
 $CIDRAM['lang']['field_blocked'] = 'अवरोधित';

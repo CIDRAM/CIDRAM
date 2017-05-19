@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.05.15).
+ * This file: French language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Une liste des fichiers du signature
 $CIDRAM['lang']['config_signatures_modules'] = 'Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Quand faut-il compter les infractions? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de fichier CSS pour les thèmes personnalisés.';
+$CIDRAM['lang']['config_template_data_theme'] = 'Le thème à utiliser par défaut pour CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Activer';
 $CIDRAM['lang']['field_banned'] = 'Interdit';
 $CIDRAM['lang']['field_blocked'] = 'Bloqué';

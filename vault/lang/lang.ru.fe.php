@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.05.15).
+ * This file: Russian language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Список сигнатур IPv6 
 $CIDRAM['lang']['config_signatures_modules'] = 'Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для пользовательских тем.';
+$CIDRAM['lang']['config_template_data_theme'] = 'Стандартная тема для CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';
 $CIDRAM['lang']['field_blocked'] = 'Блокированный';

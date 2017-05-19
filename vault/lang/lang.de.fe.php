@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.05.15).
+ * This file: German language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Eine Liste der IPv6-Signaturdateien
 $CIDRAM['lang']['config_signatures_modules'] = 'Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wann sollten Verstöße gezählt werden? False = Wenn IPs von Modulen blockiert werden. True = Wenn IPs von irgendeinem Grund blockiert werden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-Datei URL für benutzerdefinierte Themen.';
+$CIDRAM['lang']['config_template_data_theme'] = 'Standard-Thema für CIDRAM verwenden.';
 $CIDRAM['lang']['field_activate'] = 'Aktivieren';
 $CIDRAM['lang']['field_banned'] = 'Verboten';
 $CIDRAM['lang']['field_blocked'] = 'Blockiert';

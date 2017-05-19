@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.04.24).
+ * This file: Output generator (last modified: 2017.05.19).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -399,8 +399,17 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Determine which template file to use, if this hasn't already been determined. */
     if (!isset($CIDRAM['template_file'])) {
-        $CIDRAM['template_file'] =
-            !$CIDRAM['Config']['template_data']['css_url'] ? 'template.html' : 'template_custom.html';
+        $CIDRAM['template_file'] = !$CIDRAM['Config']['template_data']['css_url'] ?
+            'template_' . $CIDRAM['Config']['template_data']['theme'] . '.html' : 'template_custom.html';
+    }
+
+    /** Fallback for themes without default template files. */
+    if (
+        $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
+        !$CIDRAM['Config']['template_data']['css_url'] &&
+        !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])
+    ) {
+        $CIDRAM['template_file'] = 'template_default.html';
     }
 
     /** A fix for correctly displaying LTR/RTL text. */
@@ -413,9 +422,6 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
     }
 
-    /** Webfonts link. */
-    $CIDRAM['Config']['template_data']['WebFontsLink'] = $CIDRAM['WebFontsLink'];
-
     /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
 
@@ -425,7 +431,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('HTTP/1.0 403 Forbidden');
         header('HTTP/1.1 403 Forbidden');
         header('Status: 403 Forbidden');
-        $CIDRAM['html'] = '';
+        $CIDRAM['HTML'] = '';
 
     } elseif (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] === 503) {
 
@@ -433,7 +439,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('HTTP/1.0 503 Service Unavailable');
         header('HTTP/1.1 503 Service Unavailable');
         header('Status: 503 Service Unavailable');
-        $CIDRAM['html'] = '';
+        $CIDRAM['HTML'] = '';
 
     } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
 
@@ -453,7 +459,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
         if (!$CIDRAM['template_file'] || !file_exists($CIDRAM['Vault'] . $CIDRAM['template_file'])) {
             header('Content-Type: text/plain');
-            $CIDRAM['html'] = '[CIDRAM] ' . $CIDRAM['lang']['denied'];
+            $CIDRAM['HTML'] = '[CIDRAM] ' . $CIDRAM['lang']['denied'];
         } else {
             if (!$CIDRAM['Config']['general']['emailaddr']) {
                 $CIDRAM['BlockInfo']['EmailAddr'] = '';
@@ -472,11 +478,22 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                         'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
                     ), $CIDRAM['lang']['Support_Email']) . '</p>';
             }
-            $CIDRAM['html'] = $CIDRAM['ParseVars'](array(
+            $CIDRAM['HTML'] = $CIDRAM['ParseVars'](array(
                 'EmailAddr' => $CIDRAM['BlockInfo']['EmailAddr']
             ), $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['ReadFile'](
                 $CIDRAM['Vault'] . $CIDRAM['template_file']
             )));
+            if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
+                $CIDRAM['HTML'] = str_replace(array('<!-- WebFont Begin -->', '<!-- WebFont End -->'), '', $CIDRAM['HTML']);
+            } else {
+                $CIDRAM['WebFontPos'] = array(
+                    'Begin' => strpos($CIDRAM['HTML'], '<!-- WebFont Begin -->'),
+                    'End' => strpos($CIDRAM['HTML'], '<!-- WebFont End -->')
+                );
+                $CIDRAM['HTML'] =
+                    substr($CIDRAM['HTML'], 0, $CIDRAM['WebFontPos']['Begin']) . substr($CIDRAM['HTML'], $CIDRAM['WebFontPos']['End'] + 20);
+                unset($CIDRAM['WebFontPos']);
+            }
         }
 
     } else {
@@ -486,7 +503,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         header('HTTP/1.1 301 Moved Permanently');
         header('Status: 301 Moved Permanently');
         header('Location: ' . $CIDRAM['Config']['general']['silent_mode']);
-        $CIDRAM['html'] = '';
+        $CIDRAM['HTML'] = '';
 
     }
 
@@ -547,7 +564,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 (empty($_SERVER['REQUEST_URI']) ? '/' : $_SERVER['REQUEST_URI']),
                 (empty($_SERVER['SERVER_PROTOCOL']) ? 'UNKNOWN/x.x' : $_SERVER['SERVER_PROTOCOL']),
                 $CIDRAM['errCode'],
-                strlen($CIDRAM['html']),
+                strlen($CIDRAM['HTML']),
                 (empty($CIDRAM['BlockInfo']['Referrer']) ? '-' : $CIDRAM['BlockInfo']['Referrer']),
                 (empty($CIDRAM['BlockInfo']['UA']) ? '-' : $CIDRAM['BlockInfo']['UA'])
             ), 'Mode' => ((
@@ -579,7 +596,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     }
 
-    /** All necessary processing and logging has completed; Now we die. */
-    die($CIDRAM['html']);
+    /** All necessary processing and logging has completed; Now we send html output die. */
+    die($CIDRAM['HTML']);
 
 }

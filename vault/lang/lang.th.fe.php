@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.05.15).
+ * This file: Thai language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'รายการคั่นด�
 $CIDRAM['lang']['config_signatures_modules'] = 'รายการคั่นด้วยจุลภาคของไฟล์โมดูลให้โหลดหลังจากตรวจแยกวิเคราะห์ลายเซ็น IPv4/IPv6.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'เมื่อควรการละเมิดจะนับนับ? False = เมื่อ IP ถูกบล็อกโดยโมดูล. True = เมื่อ IP ถูกบล็อกด้วยเหตุผลใด.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ไฟล์ CSS สำหรับธีมที่กำหนดเอง.';
+$CIDRAM['lang']['config_template_data_theme'] = 'ธีมเริ่มต้นที่จะใช้สำหรับ CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'เปิดใช้งาน';
 $CIDRAM['lang']['field_banned'] = 'ถูกห้าม';
 $CIDRAM['lang']['field_blocked'] = 'ถูกบล็อก';

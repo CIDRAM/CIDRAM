@@ -163,6 +163,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/fe_assets/frontend.css | 前端CSS樣式表。
 /vault/fe_assets/frontend.dat | 前端數據庫（包含賬戶信息，會話信息，和緩存；只生成如果前端是啟用和使用）。
 /vault/fe_assets/frontend.html | 前端的主HTML模板文件。
+/vault/fe_assets/icons.php | 圖標處理文件（由前端文件管理器使用）。
+/vault/fe_assets/pips.php | 點數處理文件（由前端文件管理器使用）。
 /vault/lang/ | 包含CIDRAM語言數據。
 /vault/lang/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/lang/lang.ar.cli.php | 阿拉伯文CLI語言數據。
@@ -233,7 +235,6 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/frontend.php | 前端處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
-/vault/icons.php | 圖標處理文件（由前端文件管理器使用）。
 /vault/ignore.dat | 忽略文件（用於指定其中簽名章節CIDRAM應該忽略）。
 /vault/ipbypass.dat | 包含列表IP旁路（相關的reCAPTCHA功能；只有生成如果reCAPTCHA功能被啟用）。
 /vault/ipv4.dat | IPv4簽名文件（不想要的雲服務和非人終端）。
@@ -255,8 +256,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/rules_softlayer.php | 定制規則文件為 Soft Layer。
 /vault/rules_specific.php | 定制規則文件為一些特定的CIDR。
 /vault/salt.dat | 鹽文件（使用由一些外圍功能；只產生當必要）。
-/vault/template.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
 /vault/template_custom.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
+/vault/template_default.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
 /.gitattributes | GitHub文件（不需要為正確經營腳本）。
 /Changelog.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
@@ -424,6 +425,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 指令和變量為模板和主題。
 
 涉及的HTML輸出用於生成該“拒絕訪問”頁面。如果您使用個性化主題為CIDRAM，HTML產量資源是從`template_custom.html`文件，和否則，HTML產量資源是從`template.html`文件。變量書面在這個配置文件章节是餵在HTML產量通過更換任何變量名包圍在大括號發現在HTML產量使用相應變量數據。為例子，哪里`foo="bar"`，任何發生的`<p>{foo}</p>`發現在HTML產量將成為`<p>bar</p>`。
+
+“theme”
+- 用於CIDRAM的默認主題。
 
 “css_url”
 - 模板文件為個性化主題使用外部CSS屬性，而模板文件為t標準主題使用內部CSS屬性。以指令CIDRAM使用模板文件為個性化主題，指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。如果您離開這個變量空白，CIDRAM將使用模板文件為默認主題。
@@ -685,4 +689,4 @@ CIDRAM使網站所有者能夠阻止不良流量，但網站所有者有責任�
 ---
 
 
-最後更新：2017年5月7日。
+最後更新：2017年5月19日。

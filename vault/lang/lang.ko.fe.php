@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.05.15).
+ * This file: Korean language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6의 서명 파일 목록 (CIDRA
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다.';
 $CIDRAM['lang']['config_signatures_track_mode'] = '위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우.';
 $CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
+$CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테마.';
 $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';

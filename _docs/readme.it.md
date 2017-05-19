@@ -162,6 +162,8 @@ File | Descrizione
 /vault/fe_assets/frontend.css | Foglio di stile CSS per il front-end.
 /vault/fe_assets/frontend.dat | Database per il front-end (contiene informazioni utenti, informazioni sessioni, e la cache; generato solo se il front-end è attivata e utilizzata).
 /vault/fe_assets/frontend.html | Il file modello HTML principale per il front-end.
+/vault/fe_assets/icons.php | Gestore dell'icone (utilizzata dal file manager del front-end).
+/vault/fe_assets/pips.php | Gestore delle pips (utilizzata dal file manager del front-end).
 /vault/lang/ | Contiene dati linguistici.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/lang.ar.cli.php | Dati linguistici Araba per CLI.
@@ -232,7 +234,6 @@ File | Descrizione
 /vault/frontend.php | Gestore del front-end.
 /vault/functions.php | File di funzioni.
 /vault/hashes.dat | Contiene una lista di hash accettati (pertinente alla funzione di reCAPTCHA; solo generato se la funzione di reCAPTCHA è abilitato).
-/vault/icons.php | Gestore dell'icone (utilizzata dal file manager del front-end).
 /vault/ignore.dat | File ignorati (utilizzato per specificare quali sezioni firma CIDRAM dovrebbe ignorare).
 /vault/ipbypass.dat | Contiene un elenco di bypass IP (pertinente alla funzione di reCAPTCHA; solo generato se la funzione di reCAPTCHA è abilitato).
 /vault/ipv4.dat | File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).
@@ -254,8 +255,8 @@ File | Descrizione
 /vault/rules_softlayer.php | File di regole personalizzate per Soft Layer.
 /vault/rules_specific.php | File di regole personalizzate per alcune CIDR specifiche.
 /vault/salt.dat | File di salt (usato da alcune funzionalità periferica; solo generato se richiesto).
-/vault/template.html | File di modello; Modello per l'output HTML prodotto dal generatore di output per CIDRAM.
 /vault/template_custom.html | File di modello; Modello per l'output HTML prodotto dal generatore di output per CIDRAM.
+/vault/template_default.html | File di modello; Modello per l'output HTML prodotto dal generatore di output per CIDRAM.
 /.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
 /Changelog.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
@@ -423,6 +424,9 @@ Per ottenere una "site key" e una "secret key" (necessaria per l'utilizzo di reC
 Direttive/Variabili per modelli e temi.
 
 Si riferisce al HTML utilizzato per generare la pagina "Accesso Negato". Se stai usando temi personalizzati per CIDRAM, prodotti HTML è provenienti da file `template_custom.html`, e altrimenti, prodotti HTML è provenienti da file `template.html`. Variabili scritte a questa sezione del file di configurazione sono parsato per il prodotti HTML per mezzo di sostituendo tutti i nomi di variabili circondati da parentesi graffe trovato all'interno il prodotti HTML con la corrispondente dati di quelli variabili. Per esempio, dove `foo="bar"`, qualsiasi istanza di `<p>{foo}</p>` trovato all'interno il prodotti HTML diventerà `<p>bar</p>`.
+
+"theme"
+- Tema predefinito da utilizzare per CIDRAM.
 
 "css_url"
 - Il modello file per i temi personalizzati utilizzi esterni CSS proprietà, mentre il modello file per i temi personalizzati utilizzi interni CSS proprietà. Per istruire CIDRAM di utilizzare il modello file per i temi personalizzati, specificare l'indirizzo pubblico HTTP dei CSS file dei suoi tema personalizzato utilizzando la variabile `css_url`. Se si lascia questo variabile come vuoto, CIDRAM utilizzerà il modello file per il predefinito tema.
@@ -684,4 +688,4 @@ Sì. Le installazioni di CIDRAM non sono naturalmente legato a domini specifici,
 ---
 
 
-Ultimo Aggiornamento: 7 Maggio 2017 (2017.05.07).
+Ultimo Aggiornamento: 19 Maggio 2017 (2017.05.19).

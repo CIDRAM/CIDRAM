@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.05.15).
+ * This file: Urdu language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,6 +59,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6 کی دستخط کی ایک ف
 $CIDRAM['lang']['config_signatures_modules'] = 'ماڈیول فائلوں کی ایک فہرست کوما سے ختم ہونے والی، IPv4/IPv6 دستخط جانچ پڑتال کے بعد لوڈ کرنے کے لئے.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'انحرافات شمار کب کیا جانا چاہئے؟ جھوٹی = آئی پی ایس کے ماڈیول کی طرف سے بلاک کر رہے ہیں جب. سچا = آئی پی ایس کے کسی بھی وجہ سے بلاک کر رہے ہیں جب.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'اپنی مرضی کے موضوعات کے لئے سی ایس ایس فائل URL.';
+$CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.';
 $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
@@ -197,7 +198,7 @@ $CIDRAM['lang']['tip_ip_test'] = 'ہیلو، {username}.<br />IP ٹیسٹ کے �
 $CIDRAM['lang']['tip_ip_tracking'] = 'ہیلو، {username}.<br />IP باخبر رہنے کے صفحے آپ / ان میں سے جو پابندی عائد کی گئی ہے کو چیک کرنے کے، اور پابندی ہٹانے کی، IP پتوں میں سے باخبر رہنے کے کی حیثیت کی جانچ کرنا اگر آپ ایسا کرنا چاہتے ہیں تو انہیں untrack کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
-$CIDRAM['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">documentation</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
+$CIDRAM['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ur.md#SECTION6">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
 $CIDRAM['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو نصب کی اجازت دیتا ہے کے لئے، انسٹال، اور CIDRAM (بنیادی پیکج، دستخط، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – اکاؤنٹس';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR کیلکولیٹر';
@@ -211,22 +212,22 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – لاگز';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – تازہ ترین معلومات کے';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM مسائل @ GitHub کے</a> – CIDRAM لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot سیکورٹی</a> – CIDRAM لئے فورم (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – متبادل ڈاؤن آئینے CIDRAM لئے.</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+            <li><a href="https://github.com/Maikuolan/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – CIDRAM لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61" dir="ltr">CIDRAM @ Spambot Security</a> – CIDRAM لئے فورم (کی حمایت، مدد، وغیرہ).</li>
+            <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ WordPress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
+            <li><a href="https://sourceforge.net/projects/cidram/" dir="ltr">CIDRAM @ SourceForge</a> – متبادل ڈاؤن آئینے CIDRAM لئے.</li>
+            <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
+            <li><a href="https://macmathan.info/blocklists" dir="ltr">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+            <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="http://bgp.he.net/">سمندری طوفان کے لئے الیکٹرک BGP ٹول کٹ</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
-            <li><a href="https://www.stopforumspam.com/forum/">فورم @ سٹاپ فورم اسپیم</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP ایگریگیٹر @ سٹاپ فورم سپیم کے لئے – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
+            <li><a href="https://www.stopforumspam.com/forum/">فورم @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP ایگریگیٹر @ Stop Forum Spam</a> – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
             <li><a href="https://radar.qrator.net/">Qrator طرف ریڈار</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ملک کے بلاکس</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">گوگل میلویئر ڈیش بورڈ</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus پروجیکٹ</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
             <li><a href="http://www.abuseat.org/asn.html">Abuseat.org کی جامع مسدود کی فہرست</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – نام سے جانا توہین آمیز آئی پی ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ آئی پی ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
-            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ آئی پی / ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
+            <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – نام سے جانا توہین آمیز آئی پی ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ آئی پی ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
+            <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ آئی پی / ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
         </ul>';

@@ -162,6 +162,8 @@ Data | Deskripsi
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
 /vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi akun, informasi sesi, dan cache; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
+/vault/fe_assets/icons.php | File ikon (digunakan oleh file manager bagian depan).
+/vault/fe_assets/pips.php | File pip (digunakan oleh file manager bagian depan).
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/lang.ar.cli.php | File Bahasa Arab untuk CLI.
@@ -232,7 +234,6 @@ Data | Deskripsi
 /vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/hashes.dat | Berisi daftar hash diterima (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
-/vault/icons.php | Modul ikon (digunakan oleh file manager bagian depan).
 /vault/ignore.dat | File abaikan (digunakan untuk menentukan bagian tanda tangan CIDRAM harus mengabaikan).
 /vault/ipbypass.dat | Berisi daftar bypass IP (berkaitan dengan fitur reCAPTCHA; hanya dihasilkan jika fitur reCAPTCHA diaktifkan).
 /vault/ipv4.dat | File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).
@@ -254,8 +255,8 @@ Data | Deskripsi
 /vault/rules_softlayer.php | File aturan disesuaikan untuk Soft Layer.
 /vault/rules_specific.php | File aturan disesuaikan untuk beberapa CIDR spesifik.
 /vault/salt.dat | File garam (digunakan oleh beberapa fungsi periferal; hanya dihasilkan jika diperlukan).
-/vault/template.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
+/vault/template_default.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
@@ -423,6 +424,9 @@ Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCA
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
 Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika Anda menggunakan tema kustom untuk CIDRAM, HTML diproduksi yang bersumber dari file `template_custom.html`, dan sebaliknya, HTML diproduksi yang bersumber dari file `template.html`. Variabel ditulis untuk file konfigurasi bagian ini yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan file variabel sesuai. Sebagai contoh, dimana `foo="bar"`, setiap terjadinya `<p>{foo}</p>` ditemukan dalam HTML diproduksi akan menjadi `<p>bar</p>`.
+
+"theme"
+- Tema default untuk CIDRAM.
 
 "css_url"
 - File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan CIDRAM menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable `css_url`. Jika Anda biarkan kosong variabel ini, CIDRAM akan menggunakan file template untuk tema default.
@@ -684,4 +688,4 @@ Ya. Instalasi CIDRAM tidak secara alami terkunci pada domain tertentu, dan denga
 ---
 
 
-Terakhir Diperbarui: 7 Mei 2017 (2017.05.07).
+Terakhir Diperbarui: 19 Mei 2017 (2017.05.19).

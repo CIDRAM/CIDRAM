@@ -257,6 +257,7 @@ File | Description
 /vault/salt.dat | Salt file (used by some peripheral functionality; only generated if required).
 /vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/template_default.html | Template file; Template for HTML output produced by the CIDRAM output generator.
+/vault/themes.dat | Themes file; Used by the updates feature provided by the front-end.
 /.gitattributes | A GitHub project file (not required for proper function of the script).
 /Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
 /composer.json | Composer/Packagist information (not required for proper function of the script).

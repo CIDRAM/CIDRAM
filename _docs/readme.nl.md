@@ -257,6 +257,7 @@ Bestand | Beschrijving
 /vault/salt.dat | Zout bestand (gebruikt door sommige perifere functionaliteit; alleen gegenereerd indien nodig).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
+/vault/themes.dat | Thema bestand; Gebruikt door de updates functie verzorgd door de frontend.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /Changelog.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).

@@ -258,6 +258,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，没有任何需求除了�
 /vault/salt.dat | 盐文件（使用由一些外围功能；只产生当必要）。
 /vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/template_default.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
+/vault/themes.dat | 主题文件；它使用通过更新功能从前端。
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。

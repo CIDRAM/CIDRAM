@@ -258,6 +258,7 @@ CIDRAM 應自動阻止不良的請求至您的網站，沒有任何需求除了�
 /vault/salt.dat | 鹽文件（使用由一些外圍功能；只產生當必要）。
 /vault/template_custom.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
 /vault/template_default.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
+/vault/themes.dat | 主題文件；它使用通過更新功能從前端。
 /.gitattributes | GitHub文件（不需要為正確經營腳本）。
 /Changelog.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。

@@ -257,6 +257,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/salt.dat | ソルトファイル（一部の周辺機能によって使用されます；必要な場合にのみ生成）。
 /vault/template_custom.html | CIDRAMテンプレートファイル； CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_default.html | CIDRAMテンプレートファイル； CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/themes.dat | テーマ・ファイル。 アップデート機能で使用（フロントエンドが提供します）。
 /.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。

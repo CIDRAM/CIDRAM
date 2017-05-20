@@ -257,6 +257,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/salt.dat | 솔트 파일 (일부 주변 기능에 의해 사용됩니다; 필요한 경우에만 생성).
 /vault/template_custom.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_default.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
+/vault/themes.dat | 테마 파일. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).

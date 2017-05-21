@@ -34,14 +34,16 @@ Tag: Aruba S.p.A
 
 
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.08%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 0.04%.
+# %Listed, CleanTalk.org: 56.76%.
+# %Listed, abuseat.org (CBL-Listed): 3.53%.
+# Stop Forum Spam (SFS) listings: 1,598.
+# Updated: 2017.05.21
 
 2a01:230::/48 Deny Generic
-2a01:230:2::/48 Deny Generic
-2a06:2dc0::/29 Deny Generic
+2a01:230:2::/47 Deny Generic
 2a06:dc40::/29 Deny Generic
-2a07:bdc0::/29 Deny Generic
+2a0a:b386::/32 Deny Generic
 Tag: ISPsystem
 
 
@@ -54,8 +56,10 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 3.32%.
-# Updated: 2016.01.18 / Checked: 2016.11.03
+# %Listed, Google Malware Dashboard: 3.44%.
+# %Listed, CleanTalk.org: 36.96%.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2016.01.18 / Checked: 2017.05.21
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
@@ -93,9 +97,12 @@ Tag: AS12880
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 1.31% (AS24940), 1.50% (AS37153).
-# Updated: 2016.11.04
+# %Listed, Google Malware Dashboard: 1.12% (AS24940), 0.97% (AS37153).
+# %Listed, CleanTalk.org: 33.97% (AS24940), 31.63% (AS37153).
+# Stop Forum Spam (SFS) listings: 11,886 (AS24940), 165 (AS37153).
+# Updated: 2017.05.21
 
+2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
 2a06:be80::/29 Deny Generic
 2c0f:f300::/48 Deny Generic
@@ -153,24 +160,24 @@ Tag: AS31080
 
 
 # ASN 6870 ("H1 LLC").
-# %Listed, Google Malware Dashboard: 2.92%.
-# Updated: 2016.01.18 / Checked: 2016.11.18
+# %Listed, Google Malware Dashboard: 2.44%.
+# %Listed, CleanTalk.org: 67.50%.
+# Stop Forum Spam (SFS) listings: 1,299.
+# Updated: 2016.01.18 / Checked: 2017.05.21
 
 2a00:1f70::/32 Deny Generic
 Tag: H1 LLC
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 2.48%.
-# Updated: 2016.12.24
+# %Listed, Google Malware Dashboard: 1.80%.
+# %Listed, CleanTalk.org: 41.56%.
+# Stop Forum Spam (SFS) listings: 13,740.
+# Updated: 2017.05.21
 
-2001:67c:1334::/61 Deny Generic
-2001:67c:1334:8::/63 Deny Generic
 2602:ff84:8::/48 Deny Generic
 2a03:5180::/46 Deny Generic
 2a03:5180:4::/47 Deny Generic
-2a03:5180:6:3::/64 Deny Generic
-2a03:5180:6:4::/64 Deny Generic
 2a06:b380::/29 Deny Generic
 Tag: Voxility LLC
 
@@ -575,7 +582,7 @@ Tag: Seznam.cz
 
 
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
-# Legit/real human endpoint ISP with high levels of spam/abuse reports listed at various DBs. List in the "Ignores.dat"
+# Legit/real human endpoint ISP with high levels of spam/abuse reports listed at various DBs. List in the "ignore.dat"
 # file if the signature section causes any problems.
 # Updated: 2017.04.26
 
@@ -670,7 +677,7 @@ recaptcha:
 # tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
 # that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
 # false positives, and I would encourage any CIDRAM users expecting to receive any traffic from China, to list this
-# section in their "Ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
+# section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
 # %Listed, Google Malware Dashboard: 3.53%.
@@ -694,7 +701,7 @@ recaptcha:
 # tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
 # that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
 # false positives, and I would encourage any CIDRAM users expecting to receive any traffic from China, to list this
-# section in their "Ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
+# section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
 # %Listed, Google Malware Dashboard: 2.33%.
@@ -716,7 +723,7 @@ recaptcha:
 # CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
 # considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
 # the risk of false positives, and I would encourage any CIDRAM users expecting to receive any traffic from Taiwan, to
-# list this section in their "Ignore.dat" file as a means of minimising the potential impact of false positives. A
+# list this section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A
 # balanced approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this
 # section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
 # %Listed, Google Malware Dashboard: 0.98%.
@@ -826,7 +833,7 @@ recaptcha:
 # originating from CIDRs tied these ASNs, plus the presence of these ASNs in numerous worst offenders lists and
 # blacklists, are not considerations that can be easily ignored at this point in time. The section is marked for use
 # with reCAPTCHA due to the risk of false positives, and I would encourage any CIDRAM users expecting to receive any
-# traffic from India, to list this section in their "Ignore.dat" file as a means of minimising the potential impact of
+# traffic from India, to list this section in their "ignore.dat" file as a means of minimising the potential impact of
 # false positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to
 # not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
 # Updated: 2017.04.26

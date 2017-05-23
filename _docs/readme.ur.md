@@ -777,6 +777,37 @@ Ignore سیکشن 1
 
 <div dir="rtl">جی ہاں. CIDRAM ایک سے زیادہ ڈومینز کی حفاظت کے لئے استعمال کیا جا سکتا ہے. ضرورت کی ترتیب مختلف ہے تو، ایسا کرنے کے لئے تحفظ کی ضرورت ہوتی ڈومینز کے مطابق نامی نئی ترتیب فائل، تخلیق کرتے ہیں. CIDRAM یہ ڈومین کیلئے کام کرنا چاہئے کہ کس طرح اس بات کا تعین کرنے کے لئے ان فائلوں کو استعمال کریں گے. سوف تستخدم CIDRAM هذه الملفات لتحديد كيفية تشغيلها للنطاق. ایک مثال کے طور، کے لئے "http://www.some-domain.tld/"، اس کا نام ہے "some-domain.tld.config.ini". ڈومین نام "HTTP_HOST" سے آتا ہے. "www" نظر انداز کر دیا جاتا ہے.<br /><br /></div>
 
+<div dir="rtl">میں نے اس پر وقت خرچ نہیں کرنا چاہتا (اسے انسٹال، اس کے قیام، وغیرہ)؛ میں نے آپ کو ایسا کرنے کے لئے ادا کر سکتے ہیں؟<br /><br /></div>
+
+<div dir="rtl">شاید. یہ معاملہ در معاملہ کی بنیاد پر کیا جاتا ہے. کی آپ کو ضرورت ہے ہمیں بتائیں. ہمیں بتائیں کہ آپ کی پیشکش کر رہے ہیں. ہم آپ کو بتا دیں گے ہم مدد کر سکتے ہیں.<br /><br /></div>
+
+<div dir="rtl">میں ذاتی کام کے لئے آپ کی خدمات حاصل کر سکتے ہیں؟<br /><br /></div>
+
+<div dir="rtl"><em>اوپر ملاحظہ کریں.</em><br /><br /></div>
+
+<div dir="rtl">مجھے خصوصی ترمیم کی ضرورت؛ کیا آپ مدد کر سکتے ہیں؟<br /><br /></div>
+
+<div dir="rtl"><em>اوپر ملاحظہ کریں.</em><br /><br /></div>
+
+<div dir="rtl">میں نے ایک ڈویلپر، ویب سائٹ ڈیزائنر، یا پروگرامر ہوں. میں اس منصوبے سے متعلق کام کر سکتے ہیں؟<br /><br /></div>
+
+<div dir="rtl">جی ہاں. ہمارے لائسنس اس کی ممانعت نہیں کرتا.<br /><br /></div>
+
+<div dir="rtl">میں نے اس منصوبے میں شراکت کے لئے چاہتے ہیں؛ میں یہ کر سکتا ہوں؟<br /><br /></div>
+
+<div dir="rtl">جی ہاں. اس کا خیر مقدم کیا جاتا ہے. "CONTRIBUTING.md" ملاحظہ کریں مزید معلومات کے لئے.<br /><br /></div>
+
+<div dir="rtl">"ipaddr" کے لئے سفارش کی اقدار.<br /><br /></div>
+
+&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی)
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی)
+`CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو)
+`X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/)
+&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
+
 ---
 
 

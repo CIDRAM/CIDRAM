@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.05.19).
+ * This file: Front-end handler (last modified: 2017.05.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -61,7 +61,7 @@ if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
 
 /** Traversal detection. */
 $CIDRAM['Traverse'] = function ($Path) {
-    return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-^`?*$])' . "\x01i", str_replace("\\", '/', $Path));
+    return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
 };
 
 /** A fix for correctly displaying LTR/RTL text. */
@@ -78,6 +78,46 @@ if (empty($CIDRAM['lang']['textDir']) || $CIDRAM['lang']['textDir'] !== 'rtl') {
     $CIDRAM['FE']['PIP_Input'] = $CIDRAM['FE']['PIP_Left'];
     $CIDRAM['FE']['Gradient_Degree'] = 270;
     $CIDRAM['FE']['Half_Border'] = 'solid none none solid';
+}
+
+/** A simple passthru for non-private theme images and related data. */
+if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
+
+    $CIDRAM['Success'] = false;
+
+    if (
+        $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['cidram-asset']) &&
+        !preg_match('~[^0-9a-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
+    ) {
+        try {
+            $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset']);
+        } catch (\Exception $e) {
+            $CIDRAM['ThisAsset'] = false;
+        }
+        if (
+            $CIDRAM['ThisAsset'] &&
+            is_readable($CIDRAM['ThisAsset']) &&
+            ($CIDRAM['ThisAssetDel'] = strrpos($CIDRAM['ThisAsset'], '.')) !== false
+        ) {
+            $CIDRAM['ThisAssetType'] = strtolower(substr($CIDRAM['ThisAsset'], $CIDRAM['ThisAssetDel'] + 1));
+            if ($CIDRAM['ThisAssetType'] === 'jpg' || $CIDRAM['ThisAssetType'] === 'jpeg') {
+                header('Content-Type: image/jpeg');
+                echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
+                $CIDRAM['Success'] = true;
+            } elseif ($CIDRAM['ThisAssetType'] === 'gif' || $CIDRAM['ThisAssetType'] === 'png' || $CIDRAM['ThisAssetType'] === 'webp') {
+                header('Content-Type: image/' . $CIDRAM['ThisAssetType']);
+                echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
+                $CIDRAM['Success'] = true;
+            }
+        }
+    }
+
+    if ($CIDRAM['Success']) {
+        die;
+    } else {
+        unset($CIDRAM['ThisAssetType'], $CIDRAM['ThisAssetDel'], $CIDRAM['ThisAsset'], $CIDRAM['Success']);
+    }
+
 }
 
 /** A simple passthru for the front-end CSS. */

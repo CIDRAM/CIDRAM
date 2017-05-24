@@ -28,6 +28,7 @@ $CIDRAM['FE'] = array(
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
+    'theme' => $CIDRAM['Config']['template_data']['theme'],
     'UserList' => "\n",
     'SessionList' => "\n",
     'Cache' => "\n",
@@ -100,12 +101,17 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
             ($CIDRAM['ThisAssetDel'] = strrpos($CIDRAM['ThisAsset'], '.')) !== false
         ) {
             $CIDRAM['ThisAssetType'] = strtolower(substr($CIDRAM['ThisAsset'], $CIDRAM['ThisAssetDel'] + 1));
-            if ($CIDRAM['ThisAssetType'] === 'jpg' || $CIDRAM['ThisAssetType'] === 'jpeg') {
-                header('Content-Type: image/jpeg');
-                echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
-                $CIDRAM['Success'] = true;
-            } elseif ($CIDRAM['ThisAssetType'] === 'gif' || $CIDRAM['ThisAssetType'] === 'png' || $CIDRAM['ThisAssetType'] === 'webp') {
+            if ($CIDRAM['ThisAssetType'] === 'jpeg') {
+                $CIDRAM['ThisAssetType'] = 'jpg';
+            }
+            if (preg_match('/^(gif|jpg|png|webp)$/', $CIDRAM['ThisAssetType'])) {
+                /* Set asset mime-type. */
                 header('Content-Type: image/' . $CIDRAM['ThisAssetType']);
+                if (!empty($CIDRAM['QueryVars']['theme'])) {
+                    /* Prevents needlessly reloading static assets. */
+                    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['ThisAsset'])));
+                }
+                /* Send asset data. */
                 echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
                 $CIDRAM['Success'] = true;
             }
@@ -122,11 +128,15 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
 
 /** A simple passthru for the front-end CSS. */
 if ($CIDRAM['QueryVars']['cidram-page'] === 'css') {
+    $CIDRAM['AssetPath'] = $CIDRAM['GetAssetPath']('frontend.css');
+    /* Sets mime-type. */
     header('Content-Type: text/css');
-    echo $CIDRAM['ParseVars'](
-        $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.css'))
-    );
+    if (!empty($CIDRAM['QueryVars']['theme'])) {
+        /* Prevents needlessly reloading static assets. */
+        header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['AssetPath'])));
+    }
+    /* Sends asset data. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['ReadFile']($CIDRAM['AssetPath']));
     die;
 }
 
@@ -444,18 +454,29 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
 
     elseif (!empty($CIDRAM['QueryVars']['icon'])) {
 
-        /** Fetch file manager icons data. */
         $CIDRAM['Icons_Handler_Path'] = $CIDRAM['GetAssetPath']('icons.php');
         if (is_readable($CIDRAM['Icons_Handler_Path'])) {
+
+            /** Fetch file manager icons data. */
             require $CIDRAM['Icons_Handler_Path'];
+
+            /* Set mime-type. */
+            header('Content-Type: image/gif');
+
+            /* Prevents needlessly reloading static assets. */
+            if (!empty($CIDRAM['QueryVars']['theme'])) {
+                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Icons_Handler_Path'])));
+            }
+
+            /* Send icon data. */
+            if (!empty($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']])) {
+                echo gzinflate(base64_decode($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']]));
+            } elseif (!empty($CIDRAM['Icons']['unknown'])) {
+                echo gzinflate(base64_decode($CIDRAM['Icons']['unknown']));
+            }
+
         }
 
-        header('Content-Type: image/gif');
-        if (!empty($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']])) {
-            echo gzinflate(base64_decode($CIDRAM['Icons'][$CIDRAM['QueryVars']['icon']]));
-        } elseif (!empty($CIDRAM['Icons']['unknown'])) {
-            echo gzinflate(base64_decode($CIDRAM['Icons']['unknown']));
-        }
     }
 
     die;

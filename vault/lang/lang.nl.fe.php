@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.05.19).
+ * This file: Dutch language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Die account bestaat niet.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Wachtwoord succesvol gewijzigd!';
 $CIDRAM['lang']['response_activated'] = 'Succesvol geactiveerd.';
 $CIDRAM['lang']['response_activation_failed'] = 'Mislukt om te activeren!';
+$CIDRAM['lang']['response_checksum_error'] = 'Checksum error! Bestand afgewezen!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Component succesvol geïnstalleerd.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component succesvol verwijderd.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Component succesvol gewijzigd.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.05.19).
+ * This file: Indonesian language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Akun ini tidak ada.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Kata sandi berhasil diperbarui!';
 $CIDRAM['lang']['response_activated'] = 'Berhasil diaktifkan.';
 $CIDRAM['lang']['response_activation_failed'] = 'Kegagalan pengaktifan!';
+$CIDRAM['lang']['response_checksum_error'] = 'Kesalahan checksum! File ditolak!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Komponen berhasil diinstal.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponen berhasil diuninstal.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Komponen berhasil diperbarui.';

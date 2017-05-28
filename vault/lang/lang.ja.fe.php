@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.05.19).
+ * This file: Japanese language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'そのアカウントは存
 $CIDRAM['lang']['response_accounts_password_updated'] = 'パスワードの更新が成功しました！';
 $CIDRAM['lang']['response_activated'] = 'アクティブにしました。';
 $CIDRAM['lang']['response_activation_failed'] = 'アクティブ化に失敗しました！';
+$CIDRAM['lang']['response_checksum_error'] = 'チェックサム・エラー！ ファイルが拒否されました！';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'コンポーネントのインストールに成功しました。';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'コンポーネントのアンインストールは成功しました。';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';

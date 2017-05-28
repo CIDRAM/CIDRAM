@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.05.19).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Tài khoản này không t�
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Mật khẩu cập nhật thành công!';
 $CIDRAM['lang']['response_activated'] = 'Kích hoạt thành công.';
 $CIDRAM['lang']['response_activation_failed'] = 'Không thể kích hoạt!';
+$CIDRAM['lang']['response_checksum_error'] = 'Kiểm tra lỗi! Tập tin bị từ chối!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Gói cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ bỏ cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';

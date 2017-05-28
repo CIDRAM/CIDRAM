@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.05.19).
+ * This file: Thai language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'บัญชีไม่ม
 $CIDRAM['lang']['response_accounts_password_updated'] = 'รหัสผ่านสำเร็จแล้วอัปเดต!';
 $CIDRAM['lang']['response_activated'] = 'สำเร็จแล้วเปิดใช้งาน.';
 $CIDRAM['lang']['response_activation_failed'] = 'ล้มเหลวเปิดใช้งาน!';
+$CIDRAM['lang']['response_checksum_error'] = 'ข้อผิดพลาด checksum! ไฟล์ถูกปฏิเสธ!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'คอมโพเนนต์สำเร็จแล้วในการติดตั้ง.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'คอมโพเนนต์สำเร็จแล้วอัปเดต.';

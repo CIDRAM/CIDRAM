@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.05.19).
+ * This file: Portuguese language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Essa conta não existe.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Senha atualizada com sucesso!';
 $CIDRAM['lang']['response_activated'] = 'Ativado com sucesso.';
 $CIDRAM['lang']['response_activation_failed'] = 'Falha ao ativar!';
+$CIDRAM['lang']['response_checksum_error'] = 'Erro de checksum! Arquivo rejeitado!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Componente instalado com sucesso.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Componente desinstalado com sucesso.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Componente atualizado com sucesso.';

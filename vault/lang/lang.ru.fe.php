@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.05.19).
+ * This file: Russian language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Эта аккаунт не 
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Пароль успешно обновлено!';
 $CIDRAM['lang']['response_activated'] = 'Успешно активирован.';
 $CIDRAM['lang']['response_activation_failed'] = 'Не удалось активировать!';
+$CIDRAM['lang']['response_checksum_error'] = 'Ошибка контрольной суммы! Файл отклонен!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Компонент успешно установлен.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Компонент успешно удален.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';

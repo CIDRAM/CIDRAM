@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.19).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = '那個帳戶不存在。';
 $CIDRAM['lang']['response_accounts_password_updated'] = '密碼成功更新！';
 $CIDRAM['lang']['response_activated'] = '已成功啟用。';
 $CIDRAM['lang']['response_activation_failed'] = '無法啟用！';
+$CIDRAM['lang']['response_checksum_error'] = '校驗和錯誤！文件拒絕！';
 $CIDRAM['lang']['response_component_successfully_installed'] = '組件成功安裝。';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '組件成功卸載。';
 $CIDRAM['lang']['response_component_successfully_updated'] = '組件成功更新。';

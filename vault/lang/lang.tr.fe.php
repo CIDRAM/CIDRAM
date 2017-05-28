@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.05.19).
+ * This file: Turkish language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Bu hesap mevcut değil.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Şifre başarıyla güncellendi!';
 $CIDRAM['lang']['response_activated'] = 'Başarıyla etkinleştirildi.';
 $CIDRAM['lang']['response_activation_failed'] = 'Etkinleştirilemedi!';
+$CIDRAM['lang']['response_checksum_error'] = 'Checksum hatası! Dosya reddedildi!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Bileşen başarıyla yüklendi.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Bileşen başarıyla kaldırıldı.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Bileşen başarıyla güncellendi.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.05.19).
+ * This file: Urdu language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'اس اکاؤنٹ کا کو
 $CIDRAM['lang']['response_accounts_password_updated'] = 'پاس ورڈ کامیابی سے اپ ڈیٹ!';
 $CIDRAM['lang']['response_activated'] = 'کامیابی کے ساتھ فعال.';
 $CIDRAM['lang']['response_activation_failed'] = 'چالو کرنے میں ناکام!';
+$CIDRAM['lang']['response_checksum_error'] = 'حیض کی خرابی! فائل کو مسترد کر دیا!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'اجزاء کامیابی سے نصب.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'اجزاء کامیابی سے ان انسٹال.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'اجزاء کامیابی سے اپ ڈیٹ.';

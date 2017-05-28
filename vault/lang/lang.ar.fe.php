@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.05.19).
+ * This file: Arabic language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -142,6 +142,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'حساب غير موجود.
 $CIDRAM['lang']['response_accounts_password_updated'] = 'كلمه السر التحديث بنجاح!';
 $CIDRAM['lang']['response_activated'] = 'نجحت في جعل نشطة';
 $CIDRAM['lang']['response_activation_failed'] = 'فشلت في جعله نشطة!';
+$CIDRAM['lang']['response_checksum_error'] = 'خطأ أختباري! تم رفض الملف!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'وحدة تم التثبيت بنجاح.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'وحدة إلغاء تثبيت بنجاح.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'وحدة تم التحديث بنجاح.';

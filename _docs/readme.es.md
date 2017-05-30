@@ -23,7 +23,7 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) es un script PHP diseñad
 
 CIDRAM COPYRIGHT 2016 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 
-Este script es un software gratuito; puede redistribuirlo y/o modificarlo según los términos de la GNU General Public Licencse, publicada por la Free Software Foundation; tanto la versión 2 de la licencia como cualquier versión posterior. Este script es distribuido con la esperanza de que será útil, pero SIN NINGUNA GARANTÍA; también, sin ninguna garantía implícita de COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Public Licencse para más detalles, ubicada en el `LICENSE.txt` archivo también disponible en:
+Este script es un software gratuito; puede redistribuirlo y/o modificarlo según los términos de la GNU General Public License, publicada por la Free Software Foundation; tanto la versión 2 de la licencia como cualquier versión posterior. Este script es distribuido con la esperanza de que será útil, pero SIN NINGUNA GARANTÍA; también, sin ninguna implícita garantía de COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Public License para más detalles, ubicada en el `LICENSE.txt` archivo también disponible en:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -64,7 +64,7 @@ O esto en el archivo `.htaccess`:
 
 #### 2.1 INSTALACIÓN CON COMPOSER
 
-[CIDRAM está registrado con Packagist](https://packagist.org/packages/maikuolan/cidram), y por lo tanto, si está familiarizado con Composer, puede utilizar Composer para instalar CIDRAM (sin embargo, usted todavía necesitará preparar la configuración y los ganchos; consulte "instalación manual" pasos 2 y 5).
+[CIDRAM está registrado con Packagist](https://packagist.org/packages/maikuolan/cidram), y por lo tanto, si está familiarizado con Composer, puede utilizar Composer para instalar CIDRAM (sin embargo, usted todavía necesitará preparar la configuración y los ganchos; consulte "INSTALACIÓN MANUAL" pasos 2 y 5).
 
 `composer require maikuolan/cidram`
 
@@ -75,7 +75,7 @@ Si desea utilizar CIDRAM con WordPress, puede ignorar todas las instrucciones an
 ---
 
 
-### 3. <a name="SECTION3"></a>CÓMO USO
+### 3. <a name="SECTION3"></a>CÓMO USAR
 
 CIDRAM debe bloquear automáticamente las solicitudes indeseables a su website sin requiriendo intervención manual, aparte de sus instalación inicial.
 

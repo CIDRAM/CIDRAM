@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.05.28).
+ * This file: French language data for the front-end (last modified: 2017.05.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -47,8 +47,8 @@ $CIDRAM['lang']['config_recaptcha_logfile'] = 'Enregistrez toutes les tentatives
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Cette valeur devrait correspondre à la "secret key" pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Cette valeur devrait correspondre à la "site key" pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Définit comment CIDRAM doit utiliser reCAPTCHA (voir documentation).';
-$CIDRAM['lang']['config_signatures_block_bogons'] = 'Bloquer CIDRs bogon/martian? Si vous attendre connexions à votre website à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true.';
-$CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloquer CIDRs identifié comme appartenant à hébergement/cloud services? Si vous utilisez un service d\'API à partir de votre website ou si vous attendez d\'autres sites à connecter avec votre website, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true.';
+$CIDRAM['lang']['config_signatures_block_bogons'] = 'Bloquer CIDRs bogon/martian? Si vous attendre connexions à votre site web à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true.';
+$CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloquer CIDRs identifié comme appartenant à hébergement/cloud services? Si vous utilisez un service d\'API à partir de votre site web ou si vous attendez d\'autres sites à connecter avec votre site web, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquer CIDRs recommandé en généralement pour les listes noires? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l\'autre plus spécifique catégories de signatures.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquer CIDRs identifié comme appartenant à services de proxy? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n\'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d\'améliorer la sécurité.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquer CIDRs identifié comme étant risque élevé pour le spam? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.';

@@ -30,7 +30,7 @@
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-<div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من <a href="https://github.com/Maikuolan/CIDRAM/">GitHub</a>.</div>
+<div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من <a href="https://cidram.github.io/">GitHub</a>.</div>
 
 ---
 
@@ -67,9 +67,9 @@
 
 #### <div dir="rtl">٢.١ تثبيت مع COMPOSER</div>
 
-<div dir="rtl"><a href="https://packagist.org/packages/maikuolan/cidram">يتم تسجيل CIDRAM مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت CIDRAM (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا" الخطوتين ٢ و ٥).<br /><br /></div>
+<div dir="rtl"><a href="https://packagist.org/packages/cidram/cidram">يتم تسجيل CIDRAM مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت CIDRAM (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا" الخطوتين ٢ و ٥).<br /><br /></div>
 
-`composer require maikuolan/cidram`
+`composer require cidram/cidram`
 
 #### <div dir="rtl">٢.٢ تثبيت ل ووردبريس</div>
 
@@ -760,7 +760,7 @@ Ignore القسم ١
 <div dir="rtl"><ul>
  <li>تحقق مما إذا كنت تستخدم أحدث إصدار من البرنامج والتوقيع الملفات.</li>
  <li>قراءة الوثائق. قد تكون هناك إجابات هناك.</li>
- <li>قراءة <strong><a href="https://github.com/Maikuolan/CIDRAM/issues">صفحة المشكلات</a></strong>. قد تكون هناك إجابات هناك.</li>
+ <li>قراءة <strong><a href="https://github.com/CIDRAM/CIDRAM/issues">صفحة المشكلات</a></strong>. قد تكون هناك إجابات هناك.</li>
  <li>قراءة <strong><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">منتدى الدعم</a></strong>. قد تكون هناك إجابات هناك.</li>
  <li>لا يوجد حتى الآن إجابات؟ اخبرنا عنها. إنشاء مناقشة جديدة مع واحدة من أعلاه.</li>
 </ul></div>
@@ -811,4 +811,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 19 مايو 2017 (2017.05.19).</div>
+<div dir="rtl">آخر تحديث: 4 يونيو 2017 (2017.06.04).</div>

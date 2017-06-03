@@ -27,7 +27,7 @@ This script is free software; you can redistribute it and/or modify it under the
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-This document and its associated package can be downloaded for free from [GitHub](https://github.com/Maikuolan/CIDRAM/).
+This document and its associated package can be downloaded for free from [GitHub](https://cidram.github.io/).
 
 ---
 
@@ -64,9 +64,9 @@ Or this in the `.htaccess` file:
 
 #### 2.1 INSTALLING WITH COMPOSER
 
-[CIDRAM is registered with Packagist](https://packagist.org/packages/maikuolan/cidram), and so, if you're familiar with Composer, you can use Composer to install CIDRAM (you'll still need to prepare the configuration and hooks though; see "installing manually" steps 2 and 5).
+[CIDRAM is registered with Packagist](https://packagist.org/packages/cidram/cidram), and so, if you're familiar with Composer, you can use Composer to install CIDRAM (you'll still need to prepare the configuration and hooks though; see "installing manually" steps 2 and 5).
 
-`composer require maikuolan/cidram`
+`composer require cidram/cidram`
 
 #### 2.2 INSTALLING FOR WORDPRESS
 
@@ -670,7 +670,7 @@ Update frequency varies depending on the signature files in question. All mainta
 
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
-- Have you checked the **[issues page](https://github.com/Maikuolan/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- Have you checked the **[issues page](https://github.com/CIDRAM/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
 - Have you checked the **[CIDRAM support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
 - If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
 
@@ -720,4 +720,4 @@ Value | Using
 ---
 
 
-Last Updated: 19 May 2017 (2017.05.19).
+Last Updated: 4 June 2017 (2017.06.04).

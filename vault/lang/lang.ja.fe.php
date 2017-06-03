@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.05.28).
+ * This file: Japanese language data for the front-end (last modified: 2017.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -199,7 +199,7 @@ $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、{username}。<br />ＩＰテ
 $CIDRAM['lang']['tip_ip_tracking'] = 'こんにちは、{username}。<br />ＩＰトラッキング・ページでは、ＩＰアドレスのトラッキングステータスを確認できます。 あなたは禁止されているものを確認することができ、望むならばあなたはトラッキングをキャンセルことができます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザ名： <span class="txtRd">admin</span> – デフォルト・パスワード： <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'こんにちは、{username}。<br />そのログの内容を表示するために、次のリストからログを選択します。';
-$CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';
+$CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';
 $CIDRAM['lang']['tip_updates'] = 'こんにちは、{username}。<br />アップデート・ページは、CIDRAMのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、シグネチャ、Ｌ１０Ｎファイル、等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – アカウント';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – ＣＩＤＲ計算機';
@@ -213,7 +213,7 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';
 
 $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAMの問題 ＠ GitHub</a> – CIDRAMの問題ページ（サポート、援助、など）。</li>
+            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAMの問題 ＠ GitHub</a> – CIDRAMの問題ページ（サポート、援助、など）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAMのディスカッションフォーラム（サポート、援助、など）。</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM ＠ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM ＠ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>

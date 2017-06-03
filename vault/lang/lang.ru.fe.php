@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.05.28).
+ * This file: Russian language data for the front-end (last modified: 2017.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -199,7 +199,7 @@ $CIDRAM['lang']['tip_ip_test'] = 'Привет, {username}.<br />Тест IP с�
 $CIDRAM['lang']['tip_ip_tracking'] = 'Привет, {username}.<br />Страница отслеживания IP позволяет проверять состояние отслеживание IP-адресов, чтобы проверить какие из них были запрещены, и отменить отслеживание за ними, если вы хотите чтобы сделать это.';
 $CIDRAM['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл.';
-$CIDRAM['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ru.md#SECTION6">документации</a> для получения информации о различных директив конфигурации и их целей.';
+$CIDRAM['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ru.md#SECTION6">документации</a> для получения информации о различных директив конфигурации и их целей.';
 $CIDRAM['lang']['tip_updates'] = 'Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов CIDRAM (пакет ядра, сигнатуры, L10N файлы, итд).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Учетными Записями';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Калькулятор CIDR';
@@ -213,7 +213,7 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – Лог-Файлы';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Обновления';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
+            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Дискуссионный форум для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>

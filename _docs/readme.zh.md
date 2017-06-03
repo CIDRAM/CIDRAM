@@ -27,7 +27,7 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-现在CIDRAM的代码文件和关联包可以从以下地址免费下载[GitHub](https://github.com/Maikuolan/CIDRAM/)。
+现在CIDRAM的代码文件和关联包可以从以下地址免费下载[GitHub](https://cidram.github.io/)。
 
 ---
 
@@ -64,9 +64,9 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 #### 2.1 与COMPOSER安装
 
-[CIDRAM是在Packagist上](https://packagist.org/packages/maikuolan/cidram)，所以，如果您熟悉Composer，您可以使用Composer安装CIDRAM（您仍然需要准备配置和钩子；参考“安装手工”步骤2和5）。
+[CIDRAM是在Packagist上](https://packagist.org/packages/cidram/cidram)，所以，如果您熟悉Composer，您可以使用Composer安装CIDRAM（您仍然需要准备配置和钩子；参考“安装手工”步骤2和5）。
 
-`composer require maikuolan/cidram`
+`composer require cidram/cidram`
 
 #### 2.2 为WORDPRESS安装
 
@@ -671,7 +671,7 @@ CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 
 - 您使用软件的最新版本吗？您使用签名文件的最新版本吗？如果这两个问题的答案是不，尝试首先更新一切，然后检查问题是否仍然存在。如果它仍然存在，继续阅读。
 - 您检查过所有的文档吗？如果没有做，请这样做。如果文档不能解决问题，继续阅读。
-- 您检查过 **[问题页面](https://github.com/Maikuolan/CIDRAM/issues)** 吗？ 检查是否已经提到了问题。如果已经提到了，请检查是否提供了任何建议，想法或解决方案。按照需要尝试解决问题。
+- 您检查过 **[问题页面](https://github.com/CIDRAM/CIDRAM/issues)** 吗？ 检查是否已经提到了问题。如果已经提到了，请检查是否提供了任何建议，想法或解决方案。按照需要尝试解决问题。
 - 您检查过 **[由Spambot Security提供的CIDRAM支持论坛](http://www.spambotsecurity.com/forum/viewforum.php?f=61)** 吗？ 检查是否已经提到了问题。如果已经提到了，请检查是否提供了任何建议，想法或解决方案。按照需要尝试解决问题。
 - 如果问题仍然存在，请让我们知道；在问题页面或支持论坛上开始新的讨论。
 
@@ -721,4 +721,4 @@ CIDRAM使网站所有者能够阻止不良流量，但网站所有者有责任�
 ---
 
 
-最后更新：2017年5月19日。
+最后更新：2017年6月4日。

@@ -7,7 +7,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2017.06.03]: Repository migrated from "Maikuolan/CIDRAM" to "CIDRAM/CIDRAM".
+  All files, documentation, etc, updated accordingly. No disruptions are
+  anticipated as a result of this migration, but if you encounter any, please
+  let us know.
 
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS COMPATIBLE).
@@ -54,7 +57,7 @@ MAJOR RELEASE (BACKWARDS COMPATIBLE).
   should be useful for users running multi-domains installations as a way of
   enforcing different values for different configuration directives for
   different domains and sub-domains when necessary.
-  Refer github.com/Maikuolan/CIDRAM/issues/15
+  Refer github.com/CIDRAM/CIDRAM/issues/15
 
 - [2017.04.28; Sub-minor code change; Tolga Koçyıldır]: Added internal language
   support for Turkish (18 language localisations now completed and available).
@@ -476,7 +479,7 @@ MINOR RELEASE.
   data (note: not a true YAML implementation) to be read from signature files,
   which can used to specify and modify the values of configuration directives
   for separate signature sections.
-  Refer github.com/Maikuolan/CIDRAM/issues/6
+  Refer github.com/CIDRAM/CIDRAM/issues/6
 
 - [2016.07.30; Bug-fix; Maikuolan]: Fixed a bug whereby some configuration
   directives (in particular, "forbid_on_block") would sometimes be incorrectly
@@ -566,7 +569,7 @@ MINOR RELEASE.
 
 - [2016.03.18; Minor code change; Maikuolan]: Renamed all "INC" files to "PHP"
   files and changed all references to them accordingly.
-  Refer github.com/Maikuolan/CIDRAM/issues/3
+  Refer github.com/CIDRAM/CIDRAM/issues/3
 
 - [2016.03.19; Sub-minor code change; Maikuolan]: Changed the default value of
   the "block_bogons" directive from true to false. Added a new directive,
@@ -579,7 +582,7 @@ MINOR RELEASE.
   could sometimes be blocked in certain circumstances, and this shouldn't
   happen normally, thus qualifying this problem as a bug; this improvement
   corrects this problem).
-  Refer github.com/Maikuolan/CIDRAM/issues/4
+  Refer github.com/CIDRAM/CIDRAM/issues/4
 
 - [2016.03.25; Sub-minor code change; Maikuolan]: Removed references to the
   "package" tag from all phpDoc page blocks in the package (we don't need
@@ -593,7 +596,7 @@ MINOR RELEASE.
   as so that it can now correctly interpret more than just Unix-style
   linebreaks.
   Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
-  Refer github.com/Maikuolan/CIDRAM/issues/3
+  Refer github.com/CIDRAM/CIDRAM/issues/3
 
 - [2016.03.28; Minor code change; Maikuolan]: Added support for section tags!
   It's now possible to uniquely identify specific signature sections from the
@@ -602,7 +605,7 @@ MINOR RELEASE.
   tagged sections are triggered and will appear alongside debug information
   for the user whenever they're blocked.
   Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
-  Refer github.com/Maikuolan/CIDRAM/issues/3
+  Refer github.com/CIDRAM/CIDRAM/issues/3
 
 - [2016.03.31; Signatures; Maikuolan]: Renamed "ipv4_custom.dat" to
   "ipv4_custom.dat.RenameMe" and renamed "ipv6_custom.dat" to
@@ -618,7 +621,7 @@ MINOR RELEASE.
   merit of blocking or not blocking some particular ASNs. Numerous new
   signature sections added to both the IPv4 and IPv6 signature files.
   Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
-  Refer github.com/Maikuolan/CIDRAM/issues/3
+  Refer github.com/CIDRAM/CIDRAM/issues/3
 
 - [2016.04.01; Minor code change; Maikuolan]: Renamed "config.ini" to
   "config.ini.RenameMe". The reason here is the same as the reason for having
@@ -631,13 +634,13 @@ MINOR RELEASE.
   determine which resource was being requested at the time of a user/client
   being blocked.
   Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
-  Refer github.com/Maikuolan/CIDRAM/issues/3
+  Refer github.com/CIDRAM/CIDRAM/issues/3
 
 - [2016.04.02; Bug-fix; Maikuolan]: A bug was found by GaffNet whereby custom
   whitelist signatures were ignored by the script as of the latest version of
   the codebase due to the way that whitelist signatures were handled; This has
   been fixed.
-  Refer github.com/Maikuolan/CIDRAM/issues/7
+  Refer github.com/CIDRAM/CIDRAM/issues/7
 
 - [2016.04.03; Minor code change; Maikuolan]: Added support for Apache-style
   logging and for serialised logging (this could help any users wanting to
@@ -647,7 +650,7 @@ MINOR RELEASE.
   to silently redirect blocked access attempts instead of displaying the usual
   "Access Denied" page. Did some more minor code refactoring.
   Refer spambotsecurity.com/forum/viewtopic.php?f=61&t=3819
-  Refer github.com/Maikuolan/CIDRAM/issues/3
+  Refer github.com/CIDRAM/CIDRAM/issues/3
 
 - [2016.04.04; Minor code change; Maikuolan]: Added support for custom themes;
   A new directive has been added to the configuration file allowing users to
@@ -657,7 +660,7 @@ MINOR RELEASE.
   and fixing signature files; Currently a work-in-progress and a BETA, but
   seems to function correctly and as intended; Currently only available in CLI,
   but will be available via other means after work has been completed.
-  Refer github.com/Maikuolan/CIDRAM/issues/9
+  Refer github.com/CIDRAM/CIDRAM/issues/9
 
 - [2016.04.10; Minor code change; Maikuolan]: Added support for section expiry!
   It's now possible to mark signature sections with an expiry date, to ensure
@@ -696,7 +699,7 @@ PATCH RELEASE.
 - [2016.03.14; Bug-fix; Maikuolan]: A bug was found within the IPv6Test closure
   function (used for calculating IPv6 CIDRs), caused by some excess spaces in
   the code that existed where they shouldn't have existed; Fixed.
-  Refer github.com/Maikuolan/CIDRAM/issues/2
+  Refer github.com/CIDRAM/CIDRAM/issues/2
 
 Caleb M / Maikuolan,
 14th March 2016.

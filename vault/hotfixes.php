@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary hotfixes file (last modified: 2017.05.31).
+ * This file: Temporary hotfixes file (last modified: 2017.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ if (true) { // switch 170117-1
     } else {
         $CIDRAM['OriginalData'] = '';
         $CIDRAM['HotfixData'] = $CIDRAM['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/cidramblocklists.dat'
+            'https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/cidramblocklists.dat'
         );
     }
 
@@ -51,46 +51,87 @@ if (true) { // switch 170117-1
     $CIDRAM['Hotfixed'] = true;
 }
 
-/** Hotfix for missing "modules.dat" file. */
-if (true) { // switch 170117-2
+/** Hotfix for missing "components.dat" file and changed remote path. */
+if (true) { // switch 170603-1
     $CIDRAM['HotfixData'] = '';
 
-    if (!file_exists($CIDRAM['Vault'] . 'modules.dat')) {
-        if ($CIDRAM['HotfixData'] = $CIDRAM['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/modules.dat'
-        )) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'modules.dat', 'w');
-            fwrite($CIDRAM['Handle'], $CIDRAM['HotfixData']);
-            fclose($CIDRAM['Handle']);
-        }
+    if (file_exists($CIDRAM['Vault'] . 'components.dat')) {
+        $CIDRAM['OriginalData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'components.dat');
+        $CIDRAM['HotfixData'] = str_ireplace('Maikuolan/CIDRAM', 'CIDRAM/CIDRAM', $CIDRAM['OriginalData']);
+    } else {
+        $CIDRAM['OriginalData'] = '';
+        $CIDRAM['HotfixData'] = $CIDRAM['Request'](
+            'https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat'
+        );
+    }
+
+    if ($CIDRAM['HotfixData'] && $CIDRAM['HotfixData'] !== $CIDRAM['OriginalData']) {
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'components.dat', 'w');
+        fwrite($CIDRAM['Handle'], $CIDRAM['HotfixData']);
+        fclose($CIDRAM['Handle']);
     }
 
     /** Update switch. */
     $CIDRAM['ThisFile'] = str_replace(
-        "\nif (true) { // switch 170117-2\n",
+        "\nif (true) { // switch 170603-1\n",
         "\nif (false) {\n",
         $CIDRAM['ThisFile']
     );
     $CIDRAM['Hotfixed'] = true;
 }
 
-/** Hotfix for missing "themes.dat" file. */
-if (true) { // switch 170519
+/** Hotfix for missing "modules.dat" file and changed remote path. */
+if (true) { // switch 170603-2
     $CIDRAM['HotfixData'] = '';
 
-    if (!file_exists($CIDRAM['Vault'] . 'themes.dat')) {
-        if ($CIDRAM['HotfixData'] = $CIDRAM['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/CIDRAM/master/vault/themes.dat'
-        )) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'themes.dat', 'w');
-            fwrite($CIDRAM['Handle'], $CIDRAM['HotfixData']);
-            fclose($CIDRAM['Handle']);
-        }
+    if (file_exists($CIDRAM['Vault'] . 'modules.dat')) {
+        $CIDRAM['OriginalData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'modules.dat');
+        $CIDRAM['HotfixData'] = str_ireplace('Maikuolan/CIDRAM-Extras', 'CIDRAM/CIDRAM-Extras', $CIDRAM['OriginalData']);
+    } else {
+        $CIDRAM['OriginalData'] = '';
+        $CIDRAM['HotfixData'] = $CIDRAM['Request'](
+            'https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/modules.dat'
+        );
+    }
+
+    if ($CIDRAM['HotfixData'] && $CIDRAM['HotfixData'] !== $CIDRAM['OriginalData']) {
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'modules.dat', 'w');
+        fwrite($CIDRAM['Handle'], $CIDRAM['HotfixData']);
+        fclose($CIDRAM['Handle']);
     }
 
     /** Update switch. */
     $CIDRAM['ThisFile'] = str_replace(
-        "\nif (true) { // switch 170519\n",
+        "\nif (true) { // switch 170603-2\n",
+        "\nif (false) {\n",
+        $CIDRAM['ThisFile']
+    );
+    $CIDRAM['Hotfixed'] = true;
+}
+
+/** Hotfix for missing "themes.dat" file and changed remote path. */
+if (true) { // switch 170603-3
+    $CIDRAM['HotfixData'] = '';
+
+    if (file_exists($CIDRAM['Vault'] . 'themes.dat')) {
+        $CIDRAM['OriginalData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'themes.dat');
+        $CIDRAM['HotfixData'] = str_ireplace('Maikuolan/CIDRAM-Extras', 'CIDRAM/CIDRAM-Extras', $CIDRAM['OriginalData']);
+    } else {
+        $CIDRAM['OriginalData'] = '';
+        $CIDRAM['HotfixData'] = $CIDRAM['Request'](
+            'https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/themes.dat'
+        );
+    }
+
+    if ($CIDRAM['HotfixData'] && $CIDRAM['HotfixData'] !== $CIDRAM['OriginalData']) {
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'themes.dat', 'w');
+        fwrite($CIDRAM['Handle'], $CIDRAM['HotfixData']);
+        fclose($CIDRAM['Handle']);
+    }
+
+    /** Update switch. */
+    $CIDRAM['ThisFile'] = str_replace(
+        "\nif (true) { // switch 170603-3\n",
         "\nif (false) {\n",
         $CIDRAM['ThisFile']
     );

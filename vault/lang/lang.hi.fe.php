@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.05.28).
+ * This file: Hindi language data for the front-end (last modified: 2017.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -199,7 +199,7 @@ $CIDRAM['lang']['tip_ip_test'] = 'हैलो, {username}।<br />आईपी 
 $CIDRAM['lang']['tip_ip_tracking'] = 'हैलो, {username}।<br />आईपी ट्रैकिंग पृष्ठ आपको आईपी पते की ट्रैकिंग स्थिति की जांच करने की अनुमति देता है। आप जांच सकते हैं कि किस पर प्रतिबंध लगा दिया गया है, और जब आवश्यक हो, आप प्रतिबंधों को रद्द कर सकते हैं।';
 $CIDRAM['lang']['tip_login'] = 'डिफ़ॉल्ट उपयोगकर्ता नाम: <span class="txtRd">admin</span> – डिफ़ॉल्ट पासवर्ड: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'हैलो, {username}।<br />इसकी सामग्री देखने के लिए नीचे दी गई सूची से एक लॉग फाइल चुनें।';
-$CIDRAM['lang']['tip_see_the_documentation'] = 'विभिन्न विन्यास निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">डॉक्यूमेंटेशन</a> देखें।';
+$CIDRAM['lang']['tip_see_the_documentation'] = 'विभिन्न विन्यास निर्देशों और उनके उद्देश्यों के बारे में जानकारी के लिए <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">डॉक्यूमेंटेशन</a> देखें।';
 $CIDRAM['lang']['tip_updates'] = 'हैलो, {username}।<br />अपडेट पेज आपको CIDRAM के विभिन्न घटकों को इंस्टॉल, अनइंस्टॉल और अद्यतन करने की अनुमति देता है (मुख्य पैकेज, हस्ताक्षर, स्थानीयकरण फाइलें, आदि)।';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – खातों';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR कैलक्यूलेटर';
@@ -213,7 +213,7 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – लॉग फाइलें';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – अपडेट';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लिंक:<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
+            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM के लिए चर्चा मंच (सहायता के लिए, आदि)।</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM के लिए WordPress प्लगइन।</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM के लिए वैकल्पिक डाउनलोड आईना।</li>

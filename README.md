@@ -7,7 +7,7 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 ### Features:
-- Licensed as [GNU General Public License version 2.0](https://github.com/Maikuolan/CIDRAM/blob/master/LICENSE.txt) (GPLv2).
+- Licensed as [GNU General Public License version 2.0](https://github.com/CIDRAM/CIDRAM/blob/master/LICENSE.txt) (GPLv2).
 - Easy to install, easy to customise, easy to use.
 - Works for any system with PHP+PCRE installed, regardless of OS (PHP+PCRE required).
 - Fully configurable based on your needs.
@@ -19,25 +19,25 @@ CIDRAM (Classless Inter-Domain Routing Access Manager) is a PHP script designed 
 ---
 
 ### Documentation:
-- **[English](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md)**
-- **[العربية](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ar.md)**
-- **[Deutsch](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.de.md)**
-- **[Español](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.es.md)**
-- **[Français](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.fr.md)**
-- **[Bahasa Indonesia](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.id.md)**
-- **[Italiano](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.it.md)**
-- **[日本語](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ja.md)**
-- **[한국어](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ko.md)**
-- **[Nederlandse](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.nl.md)**
-- **[Português](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.pt.md)**
-- **[Русский](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ru.md)**
-- **[اردو](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.ur.md)**
-- **[Tiếng Việt](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.vi.md)**
-- **[中文（简体）](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh.md)**
-- **[中文（傳統）](https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh-TW.md)**
+- **[English](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md)**
+- **[العربية](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ar.md)**
+- **[Deutsch](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.de.md)**
+- **[Español](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.es.md)**
+- **[Français](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.fr.md)**
+- **[Bahasa Indonesia](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.id.md)**
+- **[Italiano](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.it.md)**
+- **[日本語](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ja.md)**
+- **[한국어](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ko.md)**
+- **[Nederlandse](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.nl.md)**
+- **[Português](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.pt.md)**
+- **[Русский](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ru.md)**
+- **[اردو](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ur.md)**
+- **[Tiếng Việt](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.vi.md)**
+- **[中文（简体）](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh.md)**
+- **[中文（傳統）](https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh-TW.md)**
 
-[\[CONTRIBUTING.md\] **Want to help?**](https://github.com/Maikuolan/CIDRAM/blob/master/CONTRIBUTING.md)
+[\[CONTRIBUTING.md\] **Want to help?**](https://github.com/CIDRAM/CIDRAM/blob/master/CONTRIBUTING.md)
 
 ---
 
-*Last modified: 14 April 2017 (2017.04.14).*
+*Last modified: 3 June 2017 (2017.06.03).*

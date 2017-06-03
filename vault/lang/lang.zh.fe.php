@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.05.28).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -199,7 +199,7 @@ $CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP测试页面允�
 $CIDRAM['lang']['tip_ip_tracking'] = '你好，{username}。<br />IP跟踪页面允许您检查IP地址跟踪状态，检查哪些IP已被禁止，而如果您想这样做，对撤消他们的跟踪。';
 $CIDRAM['lang']['tip_login'] = '标准用户名： <span class="txtRd">admin</span> – 标准密码： <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，{username}。<br />选择一个日志从下面的列表以查看那个日志的内容。';
-$CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
+$CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
 $CIDRAM['lang']['tip_updates'] = '你好，{username}。<br />更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包，签名，L10N文件，等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 账户';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR计算器';
@@ -213,7 +213,7 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日志';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
 
 $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">CIDRAM问题＠GitHub</a> – CIDRAM问题页面（支持，协助，等等）。</li>
+            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM问题＠GitHub</a> – CIDRAM问题页面（支持，协助，等等）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAM讨论论坛（支持，协助，等等）。</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。</li>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>

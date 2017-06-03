@@ -27,7 +27,7 @@ Skrip ini adalah perangkat lunak gratis; Anda dapat mendistribusikan kembali dan
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari [GitHub](https://cidram.github.io/).
 
 ---
 
@@ -64,9 +64,9 @@ Atau ini di file `.htaccess`:
 
 #### 2.1 MENGINSTAL DENGAN COMPOSER
 
-[CIDRAM terdaftar dengan Packagist](https://packagist.org/packages/maikuolan/cidram). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal CIDRAM (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual" langkah 2 dan 5).
+[CIDRAM terdaftar dengan Packagist](https://packagist.org/packages/cidram/cidram). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal CIDRAM (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual" langkah 2 dan 5).
 
-`composer require maikuolan/cidram`
+`composer require cidram/cidram`
 
 #### 2.2 MENGINSTAL UNTUK WORDPRESS
 
@@ -670,7 +670,7 @@ Frekuensi pembaruan bervariasi tergantung pada file tanda tangan. Semua penulis 
 
 - Apakah Anda menggunakan versi terbaru bagi perangkat lunak? Apakah Anda menggunakan versi terbaru bagi file tanda tangan Anda? Jika jawaban untuk salah satu dari dua pertanyaan ini adalah tidak, mencoba untuk memperbarui segala sesuatu pertama, dan memeriksa apakah masalah terus berlanjut. Jika terus berlanjut, lanjutkan membaca.
 - Apakah Anda memeriksa semua dokumentasi? Jika tidak, silahkan melakukannya. Jika masalah tidak dapat diselesaikan dengan menggunakan dokumentasi, lanjutkan membaca.
-- Apakah Anda memeriksa **[halaman isu-isu](https://github.com/Maikuolan/CIDRAM/issues)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
+- Apakah Anda memeriksa **[halaman isu-isu](https://github.com/CIDRAM/CIDRAM/issues)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
 - Apakah Anda memeriksa **[forum dukungan bagi CIDRAM yang disediakan oleh Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
 - Jika masalah masih berlanjut, silahkan beritahu kami dengan membuat isu baru di halaman isu-isu atau dengan memulai diskusi baru di forum dukungan.
 
@@ -720,4 +720,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 19 Mei 2017 (2017.05.19).
+Terakhir Diperbarui: 4 Juni 2017 (2017.06.04).

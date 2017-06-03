@@ -27,7 +27,7 @@ Este script é livre software; você pode redistribuí-lo e/ou modificá-lo de a
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Este documento e seu associado pacote pode ser baixado gratuitamente de [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Este documento e seu associado pacote pode ser baixado gratuitamente de [GitHub](https://cidram.github.io/).
 
 ---
 
@@ -64,9 +64,9 @@ Ou isso no `.htaccess` arquivo:
 
 #### 2.1 INSTALANDO COM COMPOSER
 
-[CIDRAM está registrado no Packagist](https://packagist.org/packages/maikuolan/cidram), e entao, se você estiver familiarizado com o Composer, poderá usar o Composer para instalar o CIDRAM (você ainda precisará preparar a configuração e ganchos embora; consulte "instalando manualmente" as etapas 2 e 5).
+[CIDRAM está registrado no Packagist](https://packagist.org/packages/cidram/cidram), e entao, se você estiver familiarizado com o Composer, poderá usar o Composer para instalar o CIDRAM (você ainda precisará preparar a configuração e ganchos embora; consulte "instalando manualmente" as etapas 2 e 5).
 
-`composer require maikuolan/cidram`
+`composer require cidram/cidram`
 
 #### 2.2 INSTALANDO PARA WORDPRESS
 
@@ -670,7 +670,7 @@ A frequência das atualizações varia de acordo com os arquivos de assinatura e
 
 - Você está usando a versão mais recente do software? Você está usando as versões mais recentes de seus arquivos de assinatura? Se a resposta a qualquer destas duas perguntas é não, tente atualizar tudo primeiro, e verifique se o problema persiste. Se persistir, continue lendo.
 - Você já examinou toda a documentação? Se não, por favor, faça isso. Se o problema não puder ser resolvido usando a documentação, continue lendo.
-- Você já examinou a **[página de problemas](https://github.com/Maikuolan/CIDRAM/issues)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
+- Você já examinou a **[página de problemas](https://github.com/CIDRAM/CIDRAM/issues)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
 - Você já examinou a **[fórum de suporte do CIDRAM fornecido pela Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
 - Se o problema ainda persistir, informe-nos através da iniciando uma nova discussão na página de problemas ou no fórum de suporte.
 
@@ -720,4 +720,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 19 Maio 2017 (2017.05.19).
+Última Atualização: 4 Junho 2017 (2017.06.04).

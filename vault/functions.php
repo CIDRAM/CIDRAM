@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.05.24).
+ * This file: Functions file (last modified: 2017.06.03).
  */
 
 /**
@@ -945,6 +945,8 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
         curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
         curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
     }
+    curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($Request, CURLOPT_TIMEOUT, $Timeout);
     curl_setopt($Request, CURLOPT_USERAGENT, $CIDRAM['ScriptUA']);

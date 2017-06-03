@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is a part of the CIDRAM package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/CIDRAM/ GitHub}.
+ * This file is a part of the CIDRAM package.
+ * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.05.28).
+ * This file: Thai language data for the front-end (last modified: 2017.06.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -199,7 +199,7 @@ $CIDRAM['lang']['tip_ip_test'] = 'สวัสดี, {username}.<br />หน้
 $CIDRAM['lang']['tip_ip_tracking'] = 'สวัสดี, {username}.<br />หน้าการติดตาม IPช่วยให้คุณสามารถตรวจสอบสถานะการติดตามของที่อยู่ IP, เพื่อตรวจสอบว่าพวกเขาถูกห้ามหรือไม่, และลบล้างถูกห้าม/การติดตามถ้าคุณต้องการทำเช่นนั้น.';
 $CIDRAM['lang']['tip_login'] = 'ค่าเริ่มต้นชื่อผู้ใช้: <span class="txtRd">admin</span> – ค่าเริ่มต้นรหัสผ่าน: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'สวัสดี, {username}.<br />เลือกไฟล์บันทึกจากรายการด้านล่างเพื่อดูเนื้อหาของไฟล์บันทึกนั้น.';
-$CIDRAM['lang']['tip_see_the_documentation'] = 'ดูที่<a href="https://github.com/Maikuolan/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา.';
+$CIDRAM['lang']['tip_see_the_documentation'] = 'ดูที่<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">เอกสาร</a>สำหรับข้อมูลเกี่ยวกับคำสั่งการกำหนดค่าต่างๆและวัตถุประสงค์ของพวกเขา.';
 $CIDRAM['lang']['tip_updates'] = 'สวัสดี, {username}.<br />หน้าอัปเดตช่วยให้คุณสามารถติดตั้ง, ถอนการติดตั้ง, และอัปเดตคอมโพเนนต์ต่างๆของ CIDRAM (แพคเกจหลัก, ลายเซ็น, ไฟล์การแปล, ฯลฯ).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – บัญชี';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – เครื่องคิดเลข CIDR';
@@ -213,7 +213,7 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – บันทึก';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – อัปเดต';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
-            <li><a href="https://github.com/Maikuolan/CIDRAM/issues">ปัญหา CIDRAM @ GitHub</a> – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
+            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">ปัญหา CIDRAM @ GitHub</a> – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – ฟอรั่มการอภิปรายสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – ปลั๊กอิน WordPress สำหรับ CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – สถานที่ดาวน์โหลดอื่นสำหรับ CIDRAM.</li>

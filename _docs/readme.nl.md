@@ -27,7 +27,7 @@ Dit script is gratis software; u kunt, onder de voorwaarden van de GNU General P
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Dit document en de bijbehorende pakket kunt gedownload gratis zijn van [GitHub](https://github.com/Maikuolan/CIDRAM/).
+Dit document en de bijbehorende pakket kunt gedownload gratis zijn van [GitHub](https://cidram.github.io/).
 
 ---
 
@@ -64,9 +64,9 @@ Of dit in het `.htaccess` bestand:
 
 #### 2.1 INSTALLEREN MET COMPOSER
 
-[CIDRAM is geregistreerd bij Packagist](https://packagist.org/packages/maikuolan/cidram), en dus, als u bekend bent met Composer, kunt u Composer gebruiken om CIDRAM installeren (u zult nog steeds nodig om de configuratie en haken te bereiden niettemin; zie "handmatig installeren" stappen 2 en 5).
+[CIDRAM is geregistreerd bij Packagist](https://packagist.org/packages/cidram/cidram), en dus, als u bekend bent met Composer, kunt u Composer gebruiken om CIDRAM installeren (u zult nog steeds nodig om de configuratie en haken te bereiden niettemin; zie "handmatig installeren" stappen 2 en 5).
 
-`composer require maikuolan/cidram`
+`composer require cidram/cidram`
 
 #### 2.2 INSTALLEREN VOOR WORDPRESS
 
@@ -670,7 +670,7 @@ Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. All
 
 - Gebruikt u de nieuwste versie van de software? Gebruikt u de nieuwste versies van uw signature bestanden? Indien het antwoord op een van deze twee vragen is nee, probeer eerst om alles te bijwerken, en controleer of het probleem zich blijft voordoen. Als dit aanhoudt, lees verder.
 - Hebt u door alle documentatie gecontroleerd? Zo niet, doe dat dan. Als het probleem niet kan worden opgelost met behulp van de documentatie, lees verder.
-- Hebt u de **[kwesties pagina](https://github.com/Maikuolan/CIDRAM/issues)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
+- Hebt u de **[kwesties pagina](https://github.com/CIDRAM/CIDRAM/issues)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
 - Hebt u de **[CIDRAM support forum van Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
 - Als het probleem blijft bestaan, laat het ons dan weten door het creëren van een nieuwe vraag op de kwesties pagina of door het starten van een nieuwe discussie over het support forum.
 
@@ -720,4 +720,4 @@ Waarde | Gebruik makend van
 ---
 
 
-Laatste Bijgewerkt: 19 Mei 2017 (2017.05.19).
+Laatste Bijgewerkt: 4 Juni 2017 (2017.06.04).

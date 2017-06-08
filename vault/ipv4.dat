@@ -5720,22 +5720,20 @@ Tag: HEG US Inc
 Tag: ONLINE S.A.S
 
 
-# ASN 174 ("Cogent Communications"): "DME Hosting LLC", "EGIHosting", "FDCservers.net", "High Point Host", "LogicWeb",
-# "Lunanode Hosting", "Netstack Cloud Services", "New Dream Network", "Pleasant Hosting", "Power Up Hosting",
+# ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
+# "High Point Host", "LogicWeb", "Lunanode Hosting", "MasterBase LLC", "Pleasant Hosting", "Power Up Hosting",
 # "Rica Costa Hosting RCH", "Sovremennie Techologii Biznesa" (this list of names may change as time passes, and may
-# need continual adjustments in the future). Updated: 2016.11.02
-
-# %Listed, Google Malware Dashboard: 1.29%.
+# need continual adjustments in the future). Updated: 2017.06.08
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
-# traffic, usually, should definitely be blocked, but unfortunately, their ASN is very widely-encompassing and
-# interlaces significantly with with a number of benign, innocent ISPs, human endpoint connections (DSL and ADSL
-# connections, etc), as well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be
-# blocking. As a compromise for this situation, I'm including a section in this signature file for their CIDRs, but,
-# rather than simply including the entire ASN, I'm making a point of only including those CIDRs that I can confirm
-# don't belong the human endpoint connections and those CIDRs that appear to be cloud services (ie, if they announce in
-# a way that makes them appear to be a hosting service, server leaser, colocation service, etc).
+# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
+# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
+# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
+# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking. As a
+# compromise for this situation, I'm including a section in this signature file for their CIDRs, but rather than simply
+# including the entire ASN, I'm making a point of only including those CIDRs that I can confirm don't belong the human
+# endpoints, and those CIDRs that appear to be cloud services (i.e., if they announce in a way that makes them appear
+# to be a hosting service, server leaser, colocation service, etc).
 
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
@@ -5744,77 +5742,13 @@ Tag: ONLINE S.A.S
 # Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 
-23.27.15.0/24 Deny Cloud
-23.237.0.0/19 Deny Cloud
-23.237.32.0/21 Deny Cloud
-23.237.255.0/24 Deny Cloud
-50.7.0.0/18 Deny Cloud
-50.7.64.0/19 Deny Cloud
-50.7.96.0/20 Deny Cloud
-50.7.113.0/24 Deny Cloud
-50.7.114.0/23 Deny Cloud
-50.7.120.0/21 Deny Cloud
-50.7.128.0/20 Deny Cloud
-50.7.144.0/21 Deny Cloud
-50.7.152.0/22 Deny Cloud
-50.7.160.0/20 Deny Cloud
-50.7.176.0/21 Deny Cloud
-50.7.184.0/24 Deny Cloud
-50.7.186.0/23 Deny Cloud
-50.7.188.0/22 Deny Cloud
-66.90.64.0/20 Deny Cloud
-66.90.80.0/23 Deny Cloud
-66.90.82.0/24 Deny Cloud
-66.90.84.0/24 Deny Cloud
-66.90.91.0/24 Deny Cloud
-66.90.92.0/22 Deny Cloud
-66.90.96.0/24 Deny Cloud
-66.90.98.0/23 Deny Cloud
-66.90.100.0/22 Deny Cloud
-66.90.104.0/23 Deny Cloud
-66.90.108.0/24 Deny Cloud
-66.90.110.0/24 Deny Cloud
-66.90.112.0/23 Deny Cloud
-66.90.119.0/24 Deny Cloud
-66.90.120.0/23 Deny Cloud
-66.90.122.0/24 Deny Cloud
-66.90.124.0/22 Deny Cloud
-67.159.0.0/21 Deny Cloud
-67.159.8.0/22 Deny Cloud
-67.159.12.0/23 Deny Cloud
-67.159.16.0/24 Deny Cloud
-67.159.19.0/24 Deny Cloud
-67.159.20.0/22 Deny Cloud
-67.159.24.0/21 Deny Cloud
-67.159.32.0/22 Deny Cloud
-67.159.36.0/23 Deny Cloud
-67.159.39.0/24 Deny Cloud
-67.159.40.0/21 Deny Cloud
-67.159.48.0/21 Deny Cloud
-67.159.56.0/22 Deny Cloud
-67.159.60.0/23 Deny Cloud
-67.159.62.0/24 Deny Cloud
+23.237.0.0/16 Deny Cloud
+50.7.0.0/16 Deny Cloud
+66.90.64.0/18 Deny Cloud
+67.159.0.0/18 Deny Cloud
 69.1.227.0/24 Deny Cloud
 69.1.228.0/24 Deny Cloud
-74.63.64.0/21 Deny Cloud
-74.63.72.0/23 Deny Cloud
-74.63.75.0/24 Deny Cloud
-74.63.76.0/23 Deny Cloud
-74.63.79.0/24 Deny Cloud
-74.63.80.0/21 Deny Cloud
-74.63.88.0/22 Deny Cloud
-74.63.92.0/23 Deny Cloud
-74.63.95.0/24 Deny Cloud
-74.63.97.0/24 Deny Cloud
-74.63.99.0/24 Deny Cloud
-74.63.101.0/24 Deny Cloud
-74.63.103.0/24 Deny Cloud
-74.63.104.0/23 Deny Cloud
-74.63.108.0/22 Deny Cloud
-74.63.112.0/23 Deny Cloud
-74.63.116.0/22 Deny Cloud
-74.63.120.0/22 Deny Cloud
-74.63.124.0/24 Deny Cloud
+74.63.64.0/18 Deny Cloud
 74.221.210.0/23 Deny Cloud
 74.221.212.0/22 Deny Cloud
 74.221.217.0/24 Deny Cloud
@@ -5826,58 +5760,26 @@ Tag: ONLINE S.A.S
 104.37.56.0/24 Deny Cloud
 104.254.212.0/23 Deny Cloud
 104.254.214.0/24 Deny Cloud
-154.16.133.0/24 Deny Cloud
-154.16.134.0/23 Deny Cloud
-154.16.136.0/24 Deny Cloud
-154.16.140.0/22 Deny Cloud
-154.16.144.0/21 Deny Cloud
+107.176.0.0/15 Deny Cloud
+108.175.96.0/23 Deny Cloud
+108.175.99.0/24 Deny Cloud
+108.175.110.0/24 Deny Cloud
+108.179.64.0/18 Deny Cloud
 162.244.8.0/21 Deny Cloud
 170.75.160.0/20 Deny Cloud
 172.81.176.0/21 Deny Cloud
+172.94.128.0/17 Deny Cloud
 179.51.192.0/20 Deny Cloud
+185.130.200.0/24 Deny Cloud
 192.240.96.0/19 Deny Cloud
 196.52.16.0/20 Deny Cloud
-198.16.64.0/20 Deny Cloud
-198.16.80.0/21 Deny Cloud
-198.16.88.0/23 Deny Cloud
-198.16.92.0/22 Deny Cloud
-198.16.98.0/24 Deny Cloud
-198.16.100.0/22 Deny Cloud
-198.16.104.0/23 Deny Cloud
-198.16.121.0/24 Deny Cloud
-198.16.122.0/23 Deny Cloud
-198.16.124.0/22 Deny Cloud
-198.255.0.0/18 Deny Cloud
-198.255.64.0/21 Deny Cloud
-198.255.74.0/23 Deny Cloud
-198.255.76.0/22 Deny Cloud
-198.255.80.0/20 Deny Cloud
-198.255.96.0/19 Deny Cloud
+198.16.64.0/18 Deny Cloud
+198.255.0.0/17 Deny Cloud
 204.45.0.0/16 Deny Cloud
-208.53.128.0/22 Deny Cloud
-208.53.133.0/24 Deny Cloud
-208.53.136.0/23 Deny Cloud
-208.53.138.0/24 Deny Cloud
-208.53.143.0/24 Deny Cloud
-208.53.147.0/24 Deny Cloud
-208.53.149.0/24 Deny Cloud
-208.53.152.0/23 Deny Cloud
-208.53.154.0/24 Deny Cloud
-208.53.156.0/22 Deny Cloud
-208.53.160.0/23 Deny Cloud
-208.53.164.0/24 Deny Cloud
-208.53.166.0/24 Deny Cloud
-208.53.168.0/24 Deny Cloud
-208.53.174.0/24 Deny Cloud
-208.53.177.0/24 Deny Cloud
-208.53.178.0/23 Deny Cloud
-208.53.180.0/24 Deny Cloud
-208.53.183.0/24 Deny Cloud
-208.53.184.0/24 Deny Cloud
-208.53.190.0/24 Deny Cloud
+208.53.128.0/18 Deny Cloud
 209.73.140.0/24 Deny Cloud
-216.227.128.0/21 Deny Cloud
-216.227.136.0/23 Deny Cloud
+216.128.69.0/24 Deny Cloud
+216.227.128.0/18 Deny Cloud
 Tag: Cogent
 
 
@@ -7685,8 +7587,10 @@ Tag: Astutium Limited
 
 
 # ASN 31815 ("Media Temple, Inc").
-# %Listed, Google Malware Dashboard: 5.92%.
-# Updated: 2016.04.17 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 4.86%.
+# %Listed, CleanTalk.org: 19.60%.
+# Stop Forum Spam (SFS) listings: 105.
+# Updated: 2016.04.17 / Checked: 2017.06.08
 
 64.13.192.0/18 Deny Cloud
 64.207.128.0/18 Deny Cloud
@@ -7699,8 +7603,10 @@ Tag: Media Temple, Inc
 
 
 # ASN 30938 ("ahbr company limited").
-# %Listed, Google Malware Dashboard: 2.38%.
-# Updated: 2016.11.02
+# %Listed, Google Malware Dashboard: 2.04%.
+# %Listed, CleanTalk.org: 86.93%.
+# Stop Forum Spam (SFS) listings: 56.
+# Updated: 2016.11.02 / Checked: 2017.06.08
 
 5.39.248.0/21 Deny Cloud
 5.144.176.0/21 Deny Cloud
@@ -8053,11 +7959,19 @@ Tag: Yesup Ecommerce
 
 
 # ASN 30475 ("Handy Networks, LLC").
-# %Listed, Google Malware Dashboard: 1.21%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 1.32%.
+# %Listed, CleanTalk.org: 70.51%.
+# Stop Forum Spam (SFS) listings: 1,962.
+# Updated: 2017.06.08
 
 5.8.63.0/24 Deny Cloud
-23.239.192.0/19 Deny Cloud
+23.239.192.0/20 Deny Cloud
+23.239.208.0/22 Deny Cloud
+23.239.212.0/23 Deny Cloud
+23.239.215.0/24 Deny Cloud
+23.239.216.0/21 Deny Cloud
+45.73.174.0/23 Deny Cloud
+45.73.190.0/23 Deny Cloud
 64.27.48.0/20 Deny Cloud
 66.11.121.0/24 Deny Cloud
 68.71.128.0/19 Deny Cloud
@@ -8068,8 +7982,10 @@ Tag: Yesup Ecommerce
 162.244.253.0/24 Deny Cloud
 162.244.254.0/24 Deny Cloud
 173.248.128.0/18 Deny Cloud
+184.174.0.0/23 Deny Cloud
 192.82.248.0/21 Deny Cloud
 192.199.240.0/20 Deny Cloud
+192.241.8.0/22 Deny Cloud
 198.20.128.0/22 Deny Cloud
 198.20.140.0/22 Deny Cloud
 198.57.46.0/24 Deny Cloud
@@ -8329,18 +8245,19 @@ Tag: Braveway LLC
 
 
 # ASN 54290 ("Hostwinds LLC").
-# %Listed, Google Malware Dashboard: 6.58%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 5.75%.
+# %Listed, CleanTalk.org: 40.72%.
+# Stop Forum Spam (SFS) listings: 11,959.
+# Updated: 2017.06.08
 
 23.135.0.0/24 Deny Cloud
 23.238.0.0/17 Deny Cloud
-23.249.212.0/23 Deny Cloud
 23.254.128.0/17 Deny Cloud
 104.168.128.0/17 Deny Cloud
-107.150.208.0/23 Deny Cloud
 108.174.192.0/20 Deny Cloud
 142.11.192.0/18 Deny Cloud
 162.211.220.0/22 Deny Cloud
+185.145.96.0/22 Deny Cloud
 192.119.64.0/18 Deny Cloud
 192.129.128.0/17 Deny Cloud
 192.154.200.0/21 Deny Cloud
@@ -13295,44 +13212,33 @@ Tag: Ficolo Oy
 
 
 # ASNs 25484, 31400 ("Accelerated IT Services GmbH").
-# (Careful when updating; Some non-cloud endpoints possibly mixed in with these ASNs).
-# %Listed, Google Malware Dashboard: 0% (AS25484), 2.44% (AS31400).
-# Updated: 2016.11.02
+# Careful when updating! There are some non-cloud endpoints mixed in with these ASNs!
+# %Listed, Google Malware Dashboard: 0% (AS25484), 2.04% (AS31400).
+# %Listed, CleanTalk.org: ??.??% (AS25484), 88.57% (AS31400).
+# Stop Forum Spam (SFS) listings: 0 (AS25484), 7,108 (AS31400).
+# Updated: 2017.06.08
 
 5.132.158.0/24 Deny Cloud
+37.114.96.0/24 Deny Cloud
 37.114.105.0/24 Deny Cloud
 37.114.109.0/24 Deny Cloud
+46.251.251.0/24 Deny Cloud
 82.211.0.0/18 Deny Cloud
 84.38.64.0/20 Deny Cloud
 84.200.0.0/16 Deny Cloud
 84.201.0.0/18 Deny Cloud
 91.199.225.0/24 Deny Cloud
 91.204.28.0/22 Deny Cloud
-91.209.231.0/24 Deny Cloud
 91.216.245.0/24 Deny Cloud
 91.247.253.0/24 Deny Cloud
 109.73.48.0/20 Deny Cloud
+109.230.219.0/24 Deny Cloud
+134.255.244.0/24 Deny Cloud
 185.17.255.0/24 Deny Cloud
 185.55.241.0/24 Deny Cloud
+185.96.56.0/22 Deny Cloud
 185.153.148.0/24 Deny Cloud
-185.159.32.0/22 Deny Cloud
 185.159.120.0/23 Deny Cloud
-185.171.204.0/22 Deny Cloud
-193.22.164.0/24 Deny Cloud
-193.39.68.0/24 Deny Cloud
-193.107.120.0/22 Deny Cloud
-193.151.4.0/22 Deny Cloud
-193.238.104.0/22 Deny Cloud
-194.24.160.0/23 Deny Cloud
-194.24.172.0/23 Deny Cloud
-194.126.196.0/24 Deny Cloud
-194.143.134.0/23 Deny Cloud
-194.187.164.0/22 Deny Cloud
-195.3.216.0/22 Deny Cloud
-195.28.12.0/23 Deny Cloud
-195.42.114.0/23 Deny Cloud
-195.190.9.0/24 Deny Cloud
-209.206.58.0/24 Deny Cloud
 Tag: Accelerated IT
 
 

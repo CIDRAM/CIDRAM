@@ -1859,12 +1859,13 @@ Tag: Websupport s.r.o
 Tag: Xirra GmbH
 
 
-# ASN 35804 ("PP SKS-LUGAN").
-# %Listed, Google Malware Dashboard: 0.67%.
-# %Listed, CleanTalk.org: 31.16%.
-# Stop Forum Spam (SFS) listings: 2,143,002.
-# Updated: 2017.06.04
+# ASNs 35804, 43765 ("PP SKS-LUGAN").
+# %Listed, Google Malware Dashboard: 0.69% (AS35804), 0% (AS35804).
+# %Listed, CleanTalk.org: 31.09% (AS35804), 100.00% (AS35804).
+# Stop Forum Spam (SFS) listings: 2,137,952 (AS35804), 1,308,214 (AS35804).
+# Updated: 2017.06.08
 
+91.200.12.0/22 Deny Generic
 91.202.212.0/22 Deny Generic
 91.210.31.0/24 Deny Generic
 193.110.144.0/24 Deny Generic
@@ -6299,6 +6300,36 @@ Tag: NPK Home-Net Ltd
 37.20.0.0/14 Deny Spam
 82.140.192.0/18 Deny Spam
 Tag: PJSC Rostelecom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8402 ("OJSC Vimpelcom"). Note: Not "PJSC Vimpelcom" (just dealing with the one ASN at the moment).
+# %Listed, Google Malware Dashboard: 0.64%.
+# %Listed, CleanTalk.org: 15.96%.
+# %Listed, abuseat.org (CBL-Listed): 0.18%.
+# Stop Forum Spam (SFS) listings: 38,203.
+# Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
+# we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
+# Updated: 2017.06.08
+
+2.92.0.0/14 Deny Generic
+37.144.0.0/14 Deny Generic
+62.205.160.0/19 Deny Generic
+78.106.0.0/15 Deny Generic
+83.102.128.0/17 Deny Generic
+85.21.0.0/16 Deny Generic
+89.178.0.0/15 Deny Generic
+93.80.0.0/15 Deny Generic
+95.24.0.0/13 Deny Generic
+128.68.0.0/14 Deny Generic
+128.72.0.0/14 Deny Generic
+176.14.0.0/15 Deny Generic
+195.14.32.0/19 Deny Generic
+195.46.168.0/24 Deny Generic
+213.234.192.0/18 Deny Generic
+Tag: OJSC Vimpelcom
 ---
 recaptcha:
  enabled: true

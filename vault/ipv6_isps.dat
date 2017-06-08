@@ -302,11 +302,11 @@ recaptcha:
 Tag: Xirra GmbH
 
 
-# ASN 35804 ("PP SKS-LUGAN").
-# %Listed, Google Malware Dashboard: 0.67%.
-# %Listed, CleanTalk.org: 31.16%.
-# Stop Forum Spam (SFS) listings: 2,143,002.
-# Updated: 2016.03.30 / Checked: 2017.06.04
+# ASNs 35804, 43765 ("PP SKS-LUGAN").
+# %Listed, Google Malware Dashboard: 0.69% (AS35804), 0% (AS35804).
+# %Listed, CleanTalk.org: 31.09% (AS35804), 100.00% (AS35804).
+# Stop Forum Spam (SFS) listings: 2,137,952 (AS35804), 1,308,214 (AS35804).
+# Updated: 2016.03.30 / Checked: 2017.06.08
 
 2a00:ede0::/32 Deny Generic
 Tag: PP SKS-LUGAN
@@ -918,6 +918,22 @@ recaptcha:
 
 2401:4100::/32 Deny Spam
 Tag: AUGERE-Pakistan
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8402 ("OJSC Vimpelcom"). Note: Not "PJSC Vimpelcom" (just dealing with the one ASN at the moment).
+# %Listed, Google Malware Dashboard: 0.64%.
+# %Listed, CleanTalk.org: 15.96%.
+# %Listed, abuseat.org (CBL-Listed): 0.18%.
+# Stop Forum Spam (SFS) listings: 38,203.
+# Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
+# we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
+# Updated: 2017.06.08
+
+2a00:18c0::/32 Deny Generic
+Tag: OJSC Vimpelcom
 ---
 recaptcha:
  enabled: true

@@ -1236,22 +1236,20 @@ Tag: HEG US Inc
 Tag: ONLINE S.A.S
 
 
-# ASN 174 ("Cogent Communications"): "DME Hosting LLC", "EGIHosting", "FDCservers.net", "High Point Host", "LogicWeb",
-# "Lunanode Hosting", "Netstack Cloud Services", "New Dream Network", "Pleasant Hosting", "Power Up Hosting",
+# ASN 174 ("Cogent Communications"): "Big Hosting Plus", "DME Hosting LLC", "EGIHosting", "FDCservers.net",
+# "High Point Host", "LogicWeb", "Lunanode Hosting", "MasterBase LLC", "Pleasant Hosting", "Power Up Hosting",
 # "Rica Costa Hosting RCH", "Sovremennie Techologii Biznesa" (this list of names may change as time passes, and may
-# need continual adjustments in the future). Updated: 2016.11.02
-
-# %Listed, Google Malware Dashboard: 1.29%.
+# need continual adjustments in the future). Updated: 2017.06.08
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
-# attempts, spamming, scraping, various forms of general malicious activity, etc), and IPs sending out this type of
-# traffic, usually, should definitely be blocked, but unfortunately, their ASN is very widely-encompassing and
-# interlaces significantly with with a number of benign, innocent ISPs, human endpoint connections (DSL and ADSL
-# connections, etc), as well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be
-# blocking. As a compromise for this situation, I'm including a section in this signature file for their CIDRs, but,
-# rather than simply including the entire ASN, I'm making a point of only including those CIDRs that I can confirm
-# don't belong the human endpoint connections and those CIDRs that appear to be cloud services (ie, if they announce in
-# a way that makes them appear to be a hosting service, server leaser, colocation service, etc).
+# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
+# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
+# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
+# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking. As a
+# compromise for this situation, I'm including a section in this signature file for their CIDRs, but rather than simply
+# including the entire ASN, I'm making a point of only including those CIDRs that I can confirm don't belong the human
+# endpoints, and those CIDRs that appear to be cloud services (i.e., if they announce in a way that makes them appear
+# to be a hosting service, server leaser, colocation service, etc).
 
 # Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
@@ -1260,6 +1258,7 @@ Tag: ONLINE S.A.S
 # Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 
+2001:978:2309::/48 Deny Cloud
 2001:49f0::/47 Deny Cloud
 2001:49f0:a::/48 Deny Cloud
 2001:49f0:100d::/48 Deny Cloud
@@ -1270,37 +1269,28 @@ Tag: ONLINE S.A.S
 2001:49f0:1024::/47 Deny Cloud
 2001:49f0:2001::/48 Deny Cloud
 2001:49f0:2002::/47 Deny Cloud
-2001:49f0:2004::/47 Deny Cloud
-2001:49f0:2008::/47 Deny Cloud
-2001:49f0:200a::/48 Deny Cloud
-2001:49f0:200c::/46 Deny Cloud
-2001:49f0:2010::/47 Deny Cloud
-2001:49f0:2012::/48 Deny Cloud
-2001:49f0:2014::/46 Deny Cloud
+2001:49f0:2004::/46 Deny Cloud
+2001:49f0:2008::/45 Deny Cloud
+2001:49f0:2010::/45 Deny Cloud
 2001:49f0:2018::/46 Deny Cloud
 2001:49f0:201c::/47 Deny Cloud
 2001:49f0:201f::/48 Deny Cloud
 2001:49f0:2020::/46 Deny Cloud
 2001:49f0:2024::/47 Deny Cloud
-2001:49f0:2028::/46 Deny Cloud
-2001:49f0:202d::/48 Deny Cloud
-2001:49f0:202e::/47 Deny Cloud
+2001:49f0:2028::/45 Deny Cloud
 2001:49f0:2031::/48 Deny Cloud
 2001:49f0:2032::/47 Deny Cloud
-2001:49f0:2034::/48 Deny Cloud
+2001:49f0:2034::/47 Deny Cloud
 2001:49f0:2036::/48 Deny Cloud
+2001:49f0:2039::/48 Deny Cloud
 2001:49f0:203a::/47 Deny Cloud
 2001:49f0:203c::/46 Deny Cloud
-2001:49f0:2040::/47 Deny Cloud
-2001:49f0:2043::/48 Deny Cloud
-2001:49f0:2044::/46 Deny Cloud
-2001:49f0:2048::/46 Deny Cloud
-2001:49f0:204c::/47 Deny Cloud
-2001:49f0:204e::/48 Deny Cloud
+2001:49f0:2040::/44 Deny Cloud
 2001:49f0:2920::/48 Deny Cloud
 2001:49f0:3000::/45 Deny Cloud
 2001:49f0:30a0::/48 Deny Cloud
 2001:49f0:4000::/48 Deny Cloud
+2001:49f0:4002::/48 Deny Cloud
 2001:49f0:4021::/48 Deny Cloud
 2001:49f0:5000::/48 Deny Cloud
 2001:49f0:6000::/46 Deny Cloud
@@ -1328,7 +1318,7 @@ Tag: ONLINE S.A.S
 2001:49f0:a034::/47 Deny Cloud
 2001:49f0:a036::/48 Deny Cloud
 2001:49f0:a039::/48 Deny Cloud
-2001:49f0:a03b::/48 Deny Cloud
+2001:49f0:a03a::/47 Deny Cloud
 2001:49f0:a03c::/48 Deny Cloud
 2001:49f0:a040::/46 Deny Cloud
 2001:49f0:a044::/47 Deny Cloud
@@ -1349,14 +1339,13 @@ Tag: ONLINE S.A.S
 2001:49f0:a06b::/48 Deny Cloud
 2001:49f0:a070::/48 Deny Cloud
 2001:49f0:d000::/47 Deny Cloud
-2001:49f0:d002::/48 Deny Cloud
+2001:49f0:d003::/48 Deny Cloud
 2001:49f0:d004::/46 Deny Cloud
 2001:49f0:d008::/45 Deny Cloud
 2001:49f0:d010::/45 Deny Cloud
 2001:49f0:d018::/48 Deny Cloud
 2001:49f0:d01a::/48 Deny Cloud
-2001:49f0:d01d::/48 Deny Cloud
-2001:49f0:d01e::/47 Deny Cloud
+2001:49f0:d01c::/46 Deny Cloud
 2001:49f0:d020::/44 Deny Cloud
 2001:49f0:d030::/46 Deny Cloud
 2001:49f0:d036::/47 Deny Cloud
@@ -1366,13 +1355,20 @@ Tag: ONLINE S.A.S
 2001:49f0:d046::/48 Deny Cloud
 2001:49f0:d04b::/48 Deny Cloud
 2001:49f0:d04c::/47 Deny Cloud
-2001:49f0:d050::/44 Deny Cloud
+2001:49f0:d050::/47 Deny Cloud
+2001:49f0:d052::/48 Deny Cloud
+2001:49f0:d055::/48 Deny Cloud
+2001:49f0:d057::/48 Deny Cloud
+2001:49f0:d058::/45 Deny Cloud
 2001:49f0:d060::/44 Deny Cloud
 2001:49f0:d070::/45 Deny Cloud
 2001:49f0:d079::/48 Deny Cloud
-2001:49f0:d07b::/48 Deny Cloud
+2001:49f0:d07a::/47 Deny Cloud
+2001:49f0:d07c::/48 Deny Cloud
+2001:49f0:d07e::/48 Deny Cloud
+2001:49f0:d080::/48 Deny Cloud
+2001:49f0:d082::/47 Deny Cloud
 2602:ffb6::/36 Deny Cloud
-2607:f700::/32 Deny Cloud
 Tag: Cogent
 
 
@@ -2477,11 +2473,13 @@ Tag: Krypt Technologies
 
 
 # ASN 31815 ("Media Temple, Inc").
-# %Listed, Google Malware Dashboard: 5.92%.
-# Updated: 2016.04.17 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 4.86%.
+# %Listed, CleanTalk.org: 19.60%.
+# Stop Forum Spam (SFS) listings: 105.
+# Updated: 2017.06.08
 
-2606:2300::/32 Deny Cloud
-2607:f211:1::/48 Deny Cloud
+2606:2300:18::/48 Deny Cloud
+2606:2300:8000::/48 Deny Cloud
 Tag: Media Temple, Inc
 
 
@@ -2533,8 +2531,10 @@ Tag: Yesup Ecommerce
 
 
 # ASN 30475 ("Handy Networks, LLC").
-# %Listed, Google Malware Dashboard: 1.21%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 1.32%.
+# %Listed, CleanTalk.org: 70.51%.
+# Stop Forum Spam (SFS) listings: 1,962.
+# Updated: 2016.11.03 / Checked: 2017.06.08
 
 2602:fff6:d::/48 Deny Cloud
 2606:6680:6::/48 Deny Cloud
@@ -2566,11 +2566,12 @@ Tag: VegasNAP, LLC
 
 
 # ASN 54290 ("Hostwinds LLC").
-# %Listed, Google Malware Dashboard: 6.58%.
-# Updated: 2016.11.03
+# %Listed, Google Malware Dashboard: 5.75%.
+# %Listed, CleanTalk.org: 40.72%.
+# Stop Forum Spam (SFS) listings: 11,959.
+# Updated: 2017.06.08
 
 2607:5500::/31 Deny Cloud
-2620:4c:8080::/48 Deny Cloud
 2a06:4700::/29 Deny Cloud
 Tag: Hostwinds LLC
 
@@ -3753,9 +3754,11 @@ Tag: Ficolo Oy
 
 
 # ASNs 25484, 31400 ("Accelerated IT Services GmbH").
-# (Careful when updating; Some non-cloud endpoints possibly mixed in with these ASNs).
-# %Listed, Google Malware Dashboard: 0% (AS25484), 2.44% (AS31400).
-# Updated: 2016.11.02
+# Careful when updating! There are some non-cloud endpoints mixed in with these ASNs!
+# %Listed, Google Malware Dashboard: 0% (AS25484), 2.04% (AS31400).
+# %Listed, CleanTalk.org: ??.??% (AS25484), 88.57% (AS31400).
+# Stop Forum Spam (SFS) listings: 0 (AS25484), 7,108 (AS31400).
+# Updated: 2017.06.08
 
 2001:67c:2c58::/48 Deny Cloud
 2001:1608::/32 Deny Cloud
@@ -3763,6 +3766,8 @@ Tag: Ficolo Oy
 2a00:5080::/32 Deny Cloud
 2a03:2902::/32 Deny Cloud
 2a03:ebc0:1000::/36 Deny Cloud
+2a05:ff01::/32 Deny Cloud
+2a0a:51c0::/29 Deny Cloud
 Tag: Accelerated IT
 
 

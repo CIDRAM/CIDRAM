@@ -192,7 +192,7 @@ IPv4:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止不想要的云服务和非人终端。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假阳性风险：<span class="txtGn">低</span>。</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止不想要的雲服務和非人終端。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假陽性風險：<span class="txtGn">低</span>。</em>
- Version: 2017.158.351
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -202,7 +202,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 4fcb25d4bde5d9ccc32386b8a4f2ac3c:456685
+   - b468958d0c36a4f5ba6cb9fc5824c635:457469
  Reannotate: components.dat
 IPv4-Bogons:
  Name:
@@ -245,7 +245,7 @@ IPv4-Bogons:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR bogon/martian.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假阳性风险：<span class="txtGn">低</span>。</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假陽性風險：<span class="txtGn">低</span>。</em>
- Version: 2017.153.874
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -255,7 +255,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - 352f44f368d2bb9e6c28811a456dcc5c:102358
+   - 836ae7f38d4d4937ab917da9277ef564:102263
  Reannotate: components.dat
 IPv4-ISPs:
  Name:
@@ -298,7 +298,7 @@ IPv4-ISPs:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn ISP nguy hiểm và gửi thư rác.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.<br />Nguy cơ sai tích cực: <span class="txtOe">Trung bình</span>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止危险和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假阳性风险：<span class="txtOe">中等</span>。</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止危險和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假陽性風險：<span class="txtOe">中等</span>。</em>
- Version: 2017.158.351
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -308,7 +308,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - e5a5a5267229b306c940545b821f9d8c:176851
+   - 292c9b7bbf01d170d6739b9cacf05891:177734
  Reannotate: components.dat
 IPv4-Other:
  Name:
@@ -351,7 +351,7 @@ IPv4-Other:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.<br />Nguy cơ sai tích cực: <span class="txtOe">Trung bình</span>.</em>
   zh: 标准IPv4签名通常包括在主包。 阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假阳性风险：<span class="txtOe">中等</span>。</em>
   zh-tw: 標準IPv4簽名通常包括在主包。 阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用： <code>signatures-&gt;ipv4</code>.<br />假陽性風險：<span class="txtOe">中等</span>。</em>
- Version: 2017.153.874
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -361,7 +361,7 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 2562d70e1335b6c3731f0ffd03f5b4d7:47055
+   - 9f4e6058a66c36e8f5f78a2627c87a87:46711
  Reannotate: components.dat
 IPv6:
  Name:
@@ -404,7 +404,7 @@ IPv6:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止不想要的云服务和非人终端。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假阳性风险：<span class="txtGn">低</span>。</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止不想要的雲服務和非人終端。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假陽性風險：<span class="txtGn">低</span>。</em>
- Version: 2017.158.351
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -414,7 +414,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - d07912d10c7af3f91aa9fe33a010660a:111930
+   - 93d403d5aca639773b13dbc163d5464c:112879
  Reannotate: components.dat
 IPv6-Bogons:
  Name:
@@ -457,7 +457,7 @@ IPv6-Bogons:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR bogon/martian.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假阳性风险：<span class="txtGn">低</span>。</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止bogon/火星CIDR。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假陽性風險：<span class="txtGn">低</span>。</em>
- Version: 2017.153.874
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -467,7 +467,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - 2df82b55be27fbc811886039224e379f:2305989
+   - 73652d53c010201e514994786fcec0bc:2323228
  Reannotate: components.dat
 IPv6-ISPs:
  Name:
@@ -510,7 +510,7 @@ IPv6-ISPs:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn ISP nguy hiểm và gửi thư rác.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.<br />Nguy cơ sai tích cực: <span class="txtOe">Trung bình</span>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止危险和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假阳性风险：<span class="txtOe">中等</span>。</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止危險和垃圾容易ISP。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假陽性風險：<span class="txtOe">中等</span>。</em>
- Version: 2017.158.351
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -520,7 +520,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 7d36d8262f8c25eedefe1b0c28e2b7a9:29307
+   - 8f974113ead8fe0fe5d16dfdeec2df0b:29874
  Reannotate: components.dat
 IPv6-Other:
  Name:
@@ -563,7 +563,7 @@ IPv6-Other:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv6签名通常包括在主包。 阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假阳性风险：<span class="txtGn">低</span>。</em>
   zh-tw: 標準IPv6簽名通常包括在主包。 阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用： <code>signatures-&gt;ipv6</code>.<br />假陽性風險：<span class="txtGn">低</span>。</em>
- Version: 2017.153.874
+ Version: 2017.162.028
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -573,7 +573,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 4300b4e2948f4c71002a43fdf91e690e:222
+   - 2657cde9d70ceae4f947b72a4937a093:219
  Reannotate: components.dat
 Bypasses:
  Name:

@@ -585,18 +585,15 @@ Tag: myLoc
 Tag: HOSTKEY B.V
 
 
-# ASNs 10532, 15395, 19994, 22720, 27357, 33070, 44716, 45187, 47715, 54636, 58683 ("Rackspace Hosting").
-# %Listed, Google Malware Dashboard: 0% (AS10532), 0.72% (AS15395), 1.66% (AS19994),
-#   "ASN not found" (AS22720), 0.66% (AS27357), 1.80% (AS33070), 4.62% (AS44716), 1.73% (AS45187), 4.05% (AS47715),
-#   0% (AS54636), 0.94% (AS58683).
-# Updated: 2016.12.05
+# "Rackspace Hosting".
+# Known ASNs: 10532, 15395, 19994, 22720, 27357, 33070, 39921, 44716, 45187, 54636, 58683.
+# Updated: 2017.06.12
 
 2001:bf0::/29 Deny Cloud
 2001:4800::/31 Deny Cloud
 2001:4802::/32 Deny Cloud
-2001:4807:2::/48 Deny Cloud
 2401:1800::/31 Deny Cloud
-2620:103:1::/48 Deny Cloud
+2620:103::/47 Deny Cloud
 2620:103:2::/48 Deny Cloud
 2a00:1a48::/32 Deny Cloud
 2a06:9380::/29 Deny Cloud
@@ -2325,50 +2322,67 @@ Tag: CariNet, Inc
 
 
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
-# %Listed, Google Malware Dashboard: 2.61%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 5.98%.
+# %Listed, CleanTalk.org: 64.86%.
+# Stop Forum Spam (SFS) listings: 135.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2a02:e00::/32 Deny Cloud
 Tag: Bradler & Krantz
 
 
 # ASN 39234 ("Stone Internet Services bvba").
-# %Listed, Google Malware Dashboard: 2.34%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 0.97%.
+# %Listed, CleanTalk.org: 44.44%.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2a00:7000::/32 Deny Cloud
 Tag: Stone Internet
 
 
 # ASN 39020 ("Comvive Servidores S.L").
-# %Listed, Google Malware Dashboard: 2.51%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 2.09%.
+# %Listed, CleanTalk.org: 41.22%.
+# Stop Forum Spam (SFS) listings: 443.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2a00:1d70::/32 Deny Cloud
 Tag: Comvive Servidores
 
 
 # ASN 34971 ("Prometeus di Daniela Agro").
-# %Listed, Google Malware Dashboard: 1.03%.
-# Updated: 2016.11.02
+# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, CleanTalk.org: 19.89%.
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2017.06.12
 
 2a00:dcc0::/32 Deny Cloud
+2a00:dcc7:1a00::/40 Deny Cloud
 2a00:dcc7:d000::/38 Deny Cloud
 2a06:fdc0::/32 Deny Cloud
 Tag: Daniela Agro
 
 
-# ASN 52173 ("Makonix SIA").
-# %Listed, Google Malware Dashboard: 5.53%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# ASNs 48496, 52173 ("Makonix SIA").
+# %Listed, Google Malware Dashboard: 2.63% (AS48496), 4.63% (AS48496).
+# %Listed, CleanTalk.org: 33.33% (AS48496), 57.03% (AS48496).
+# Stop Forum Spam (SFS) listings: 0 (AS48496), 134 (AS48496).
+# Updated: 2017.06.12
 
-2a02:7aa0::/34 Deny Cloud
+2a02:7aa0:1::/48 Deny Cloud
+2a02:7aa0:43::/48 Deny Cloud
+2a02:7aa0:48::/48 Deny Cloud
+2a02:7aa0:724::/48 Deny Cloud
+2a02:7aa0:1201::/48 Deny Cloud
+2a02:7aa0:1619::/48 Deny Cloud
 Tag: Makonix SIA
 
 
 # ASN 57169 ("EDIS GmbH").
-# %Listed, Google Malware Dashboard: 3.04%.
-# Updated: 2016.11.02
+# %Listed, Google Malware Dashboard: 2.37%.
+# %Listed, CleanTalk.org: 47.94%.
+# Stop Forum Spam (SFS) listings: 650.
+# Updated: 2016.11.02 / Checked: 2017.06.12
 
 2a03:f80:852::/48 Deny Cloud
 2a03:f80:ad15::/48 Deny Cloud
@@ -2381,9 +2395,11 @@ Tag: Makonix SIA
 Tag: EDIS GmbH
 
 
-# ASN 8426 ("ClaraNET LTD").
-# %Listed, Google Malware Dashboard: 1.36%.
-# Updated: 2016.11.02
+# ASNs 8272, 8426, 34948 ("ClaraNET LTD").
+# %Listed, Google Malware Dashboard: 0% (AS8272), 1.44% (AS8426), 0.34% (AS34948).
+# %Listed, CleanTalk.org: ?.??% (AS8272), 11.73% (AS8426), 0% (AS34948).
+# Stop Forum Spam (SFS) listings: 0 (AS8272), 194 (AS8426), 0 (AS34948).
+# Updated: 2017.06.12
 
 2001:67c:1088::/47 Deny Cloud
 2001:67c:27dc::/48 Deny Cloud
@@ -2396,18 +2412,19 @@ Tag: EDIS GmbH
 2a01:7b8::/32 Deny Cloud
 2a02:a0::/32 Deny Cloud
 2a02:830::/32 Deny Cloud
+2a02:2328::/32 Deny Cloud
 2a03:6420::/32 Deny Cloud
 2a03:73c0::/48 Deny Cloud
 2a03:8bc0:33::/48 Deny Cloud
 2a03:9c80::/32 Deny Cloud
-2a06:79c0::/29 Deny Cloud
 2a07:4f40::/29 Deny Cloud
 Tag: ClaraNET LTD
 
 
 # ASN 43289 ("Trabia-Network S.R.L").
-# %Listed, Google Malware Dashboard: 0.01%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, CleanTalk.org: 65.55%.
+# Stop Forum Spam (SFS) listings: 3,201.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2403:280::/32 Deny Cloud
 2a00:1dc0::/29 Deny Cloud
@@ -2415,8 +2432,10 @@ Tag: Trabia-Network
 
 
 # ASN 29691 ("Nine Internet Solutions AG").
-# %Listed, Google Malware Dashboard: 0.44%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 0.38%.
+# %Listed, CleanTalk.org: 48.89%.
+# Stop Forum Spam (SFS) listings: 380.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2a02:418::/29 Deny Cloud
 2a05:9a80::/29 Deny Cloud
@@ -2424,8 +2443,10 @@ Tag: Nine Internet
 
 
 # ASN 61102 ("Interhost Communication Solutions Ltd").
-# %Listed, Google Malware Dashboard: 0.48%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 0.29%.
+# %Listed, CleanTalk.org: 61.54%.
+# Stop Forum Spam (SFS) listings: 336.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2a03:f80:972::/48 Deny Cloud
 2a03:ff40::/32 Deny Cloud
@@ -2433,8 +2454,10 @@ Tag: AS61102
 
 
 # ASN 14442 ("Media-Hosts Inc").
-# %Listed, Google Malware Dashboard: 0.29%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 0.83%.
+# %Listed, CleanTalk.org: 75.00%.
+# Stop Forum Spam (SFS) listings: 2
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2605:2100::/36 Deny Cloud
 Tag: Media-Hosts Inc
@@ -2454,8 +2477,8 @@ Tag: FranTech Solutions
 
 
 # ASN 29527 ("Astutium Limited").
-# %Listed, Google Malware Dashboard: 0.60%.
-# Updated: 2016.04.10 / Checked: 2016.11.02
+# %Listed, Google Malware Dashboard: 1.14%.
+# Updated: 2016.04.10 / Checked: 2017.06.12
 
 2001:4bf0:1::/48 Deny Cloud
 Tag: Astutium Limited
@@ -2908,8 +2931,10 @@ Tag: Alibaba Advertising
 
 
 # ASN 45090 ("Shenzhen Tencent Computer Systems Company Limited").
-# %Listed, Google Malware Dashboard: 4.07%.
-# Updated: 2016.11.25
+# %Listed, Google Malware Dashboard: 5.36%.
+# %Listed, CleanTalk.org: 49.42%.
+# Stop Forum Spam (SFS) listings: 1,419.
+# Updated: 2016.11.25 / Checked: 2017.06.12
 
 2402:4e00::/32 Deny Cloud
 Tag: Shenzhen Tencent

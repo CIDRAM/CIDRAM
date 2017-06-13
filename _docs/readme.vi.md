@@ -72,6 +72,8 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 Nếu bạn muốn sử dụng CIDRAM với WordPress, bạn có thể bỏ qua tất cả các hướng dẫn ở trên. [CIDRAM được đăng ký như một plugin với cơ sở dữ liệu plugin của WordPress](https://wordpress.org/plugins/cidram/), và bạn có thể cài đặt CIDRAM trực tiếp từ các bảng điều khiển plugin. Bạn có thể cài đặt nó theo cách tương tự như các plugin khác, và không có bước bổ sung được yêu cầu. Giống như với các phương pháp cài đặt khác, bạn có thể tùy chỉnh cài đặt của bạn bằng cách sửa đổi nội dung của tập tin `config.ini` hay bằng cách sử dụng trang cấu hình của front-end. Nếu bạn kích hoạt front-end của CIDRAM và cập nhật CIDRAM bằng cách sử dụng trang cập nhật của front-end, điều này sẽ tự động đồng bộ các thông tin phiên bản plugin với thông tin được hiển thị trong các bảng điều khiển plugin.
 
+*Cảnh báo: Đang nhật CIDRAM qua bảng điều khiển plugin kết quả trong một cài đặt sạch sẽ! Nếu bạn đã tùy chỉnh cài đặt (thay đổi cấu hình của bạn, cài đặt các mô-đun, vv), những tuỳ chỉnh này sẽ bị mất khi đang nhật thông qua bảng điều khiển plugin! Các tập tin đăng nhập cũng sẽ bị mất khi đang nhật thông qua bảng điều khiển plugin! Để bảo vệ các tập tin đăng nhập và tùy chỉnh, đang nhật thông qua trang đang nhật front-end CIDRAM.*
+
 ---
 
 
@@ -720,4 +722,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Sáu 2017 (2017.06.04).
+Lần cuối cập nhật: 13 Tháng Sáu 2017 (2017.06.13).

@@ -72,6 +72,8 @@ Of dit in het `.htaccess` bestand:
 
 Als u wilt CIDRAM gebruiken met WordPress, u kunt alle bovenstaande instructies negeren. [CIDRAM is geregistreerd als een plugin met de WordPress plugins databank](https://wordpress.org/plugins/cidram/), en u kunt CIDRAM direct vanaf het plugin-dashboard installeren. U kunt het op dezelfde manier installeren als elke andere plugin, en geen toevoeging stappen nodig zijn. Net als bij de andere installatiemethoden, u kunt uw installatie aanpassen door het wijzigen van de inhoud van de `config.ini` bestand of door de frontend configuratie pagina. Als u de CIDRAM frontend activeren en bijwerken met behulp van de frontend updates pagina, dit zal automatisch synchroniseren met de plugin versie-informatie wordt weergegeven in het plugin-dashboard.
 
+*Waarschuwing: Het bijwerken van CIDRAM via het plugin-dashboard resulteert in een schone installatie! Als u uw installatie hebt aangepast (verander uw configuratie, geïnstalleerde modules, enz), deze aanpassingen worden verloren bij het updaten via het plugin-dashboard! Logbestanden worden ook verloren bij het updaten via het plugin-dashboard! Om de logbestanden en aanpassingen te bewaren, bijwerken via de CIDRAM frontend updates pagina.*
+
 ---
 
 
@@ -720,4 +722,4 @@ Waarde | Gebruik makend van
 ---
 
 
-Laatste Bijgewerkt: 4 Juni 2017 (2017.06.04).
+Laatste Bijgewerkt: 13 Juni 2017 (2017.06.13).

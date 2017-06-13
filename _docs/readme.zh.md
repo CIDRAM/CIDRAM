@@ -72,6 +72,8 @@ CIDRAM COPYRIGHT 2016 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 如果要使用CIDRAM与WordPress，您可以忽略上述所有说明。[CIDRAM在WordPress插件数据库中注册](https://wordpress.org/plugins/cidram/)，您可以直接从插件仪表板安装CIDRAM。您可以像其他插件一样安装，不需要添加步骤。与其他安装方法相同，您可以通过修改`config.ini`来或通过使用前端配置页面自定义您的安装。更新CIDRAM通过前端更新页面时，插件版本信息将自动与WordPress同步。
 
+*警告：在插件仪表板里更新CIDRAM会导致干净的安装！如果您已经自定义了您的安装（更改了您的配置，安装的模块等），在插件仪表板里进行更新时，这些定制将会丢失！日志文件也将丢失！要保留日志文件和自定义，请通过CIDRAM前端更新页面进行更新。*
+
 ---
 
 
@@ -721,4 +723,4 @@ CIDRAM使网站所有者能够阻止不良流量，但网站所有者有责任�
 ---
 
 
-最后更新：2017年6月4日。
+最后更新：2017年6月13日。

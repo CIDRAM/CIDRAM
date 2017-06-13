@@ -72,6 +72,8 @@ Oder das in der `.htaccess` Datei:
 
 Wenn Sie CIDRAM mit WordPress verwenden möchten, können Sie alle Anweisungen oben ignorieren. [CIDRAM ist als Plugin mit der WordPress Plugin Datenbank registriert](https://wordpress.org/plugins/cidram/), und Sie kannst CIDRAM direkt aus dem Plugins-Dashboard installieren. Sie können es in der gleichen Weise wie jedes andere Plugin installieren, und es sind keine zusätzlichen Schritte erforderlich. Genauso wie bei den anderen Installationsmethoden, Sie können Ihre Installation anpassen, indem Sie den Inhalt der `config.ini`-Datei, oder indem Sie die Front-End-Konfigurationsseite verwenden. Wenn Sie das Front-End für CIDRAM aktivieren und CIDRAM mit der Front-End-Aktualisierungen-Seite aktualisieren, dies wird automatisch mit den Plugin-Versionsinformationen synchronisiert, die im Plugins-Dashboard angezeigt werden.
 
+*Warnung: Die Aktualisierung von CIDRAM über das Plugins-Dashboard führt zu einer sauberen Installation! Wenn Sie Ihre Installation angepasst haben (änderte deine Konfiguration, installierte Module, usw), diese Anpassungen werden bei wenn der Aktualisierung über das Plugins-Dashboard verloren! Protokolldateien werden auch bei wenn der Aktualisierung über das Plugins-Dashboard verloren! Um Protokolldateien und Anpassungen zu bewahren, aktualisieren Sie über die CIDRAM-Front-End-Aktualisierungen-Seite.*
+
 ---
 
 
@@ -720,4 +722,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 4 Juni 2017 (2017.06.04).
+Zuletzt aktualisiert: 13 Juni 2017 (2017.06.13).

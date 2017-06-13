@@ -70,7 +70,9 @@ O questo nel `.htaccess` file:
 
 #### 2.2 INSTALLARE PER WORDPRESS
 
-Se si desidera utilizzare CIDRAM con WordPress, è possibile ignorare tutte le istruzioni di cui sopra. [CIDRAM è registrato come un plugin con il database dei plugin di WordPress](https://wordpress.org/plugins/cidram/), ed è possibile installare CIDRAM direttamente dalla pagina dei Plugin. È possibile installarlo nello stesso modo di qualsiasi altro plugin, e non sono necessari altri interventi. Proprio come con gli altri metodi di installazione, è possibile personalizzare l'installazione modificando il contenuto del file `config.ini` o utilizzando la pagina di configurazione del front-end. Se si attiva il front-end per CIDRAM e si aggiorna CIDRAM utilizzando la pagina degli aggiornamenti, questo si sincronizza automaticamente con le informazioni sulla versione del plugin visualizzate nella pagina dei Plugin.
+Se si desidera utilizzare CIDRAM con WordPress, è possibile ignorare tutte le istruzioni di cui sopra. [CIDRAM è registrato come un plugin con il database dei plugin di WordPress](https://wordpress.org/plugins/cidram/), ed è possibile installare CIDRAM direttamente dalla pagina dei Plugin. È possibile installarlo nello stesso modo di qualsiasi altro plugin, e non sono necessari altri interventi. Proprio come con gli altri metodi di installazione, è possibile personalizzare l'installazione modificando il contenuto del file `config.ini` o utilizzando la pagina di configurazione del front-end. Se si attiva il front-end per CIDRAM e si aggiorna CIDRAM utilizzando la pagina degli aggiornamenti, questo si sincronizza automaticamente con le informazioni sulla versione del plugin visualizzate nella pagina dei plugin.
+
+*Avvertimento: L'aggiornamento di CIDRAM tramite il dashboard dei plugin provoca un'installazione pulita! Se hai personalizzato l'installazione (cambiato la tua configurazione, installati i moduli, ecc), queste personalizzazioni verranno perse quando si aggiorna tramite la pagina dei plugin! I file di registro verranno persi anche quando vengono aggiornati tramite la pagina dei plugin! Per preservare i file di registro e le personalizzazioni, aggiorna tramite la pagina di aggiornamenti del front-end per CIDRAM.*
 
 ---
 
@@ -720,4 +722,4 @@ Valore | Utilizzando
 ---
 
 
-Ultimo Aggiornamento: 4 Giugno 2017 (2017.06.04).
+Ultimo Aggiornamento: 13 Giugno 2017 (2017.06.13).

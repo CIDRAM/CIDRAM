@@ -72,6 +72,8 @@ Atau ini di file `.htaccess`:
 
 Jika Anda ingin menggunakan CIDRAM dengan WordPress, Anda dapat mengabaikan semua petunjuk di atas. [CIDRAM terdaftar sebagai plugin dengan database plugin WordPress](https://wordpress.org/plugins/cidram/), dan Anda dapat menginstal CIDRAM langsung dari plugin dashboard. Anda dapat menginstalnya dengan cara yang sama seperti plugin lainnya, dan tidak ada langkah-langkah selain diperlukan. Sama seperti dengan metode instalasi lain, Anda dapat menyesuaikan instalasi Anda dengan memodifikasi isi file `config.ini` atau dengan menggunakan akses bagian depan halaman konfigurasi. Jika Anda mengaktifkan bagian depan CIDRAM dan memperbarui CIDRAM menggunakan akses bagian depan halaman pembaruan, ini secara otomatis akan sinkron dengan informasi versi plugin ditampilkan di plugin dashboard.
 
+*Peringatan: Memperbarui CIDRAM melalui dashboard plugin menghasilkan instalasi yang bersih! Jika Anda telah menyesuaikan instalasi Anda (mengubah konfigurasi, modul terinstal, dll), kustomisasi ini akan hilang saat memperbarui melalui dashboard plugin! File log juga akan hilang saat memperbarui melalui dashboard plugin! Untuk menyimpan file log dan kustomisasi, perbarui melalui halaman pembaruan bagian depan CIDRAM.*
+
 ---
 
 
@@ -720,4 +722,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 4 Juni 2017 (2017.06.04).
+Terakhir Diperbarui: 13 Juni 2017 (2017.06.13).

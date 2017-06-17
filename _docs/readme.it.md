@@ -715,6 +715,7 @@ Valore | Utilizzando
 `HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula
 `HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare
 `CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; se il precedente non funziona)
+`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric
 `X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/)
 *Definito dalla configurazione del server.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Nessun proxy inverso (valore predefinito).
@@ -722,4 +723,4 @@ Valore | Utilizzando
 ---
 
 
-Ultimo Aggiornamento: 13 Giugno 2017 (2017.06.13).
+Ultimo Aggiornamento: 18 Giugno 2017 (2017.06.18).

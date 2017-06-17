@@ -806,6 +806,7 @@ Ignore سیکشن 1
 `HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی)
 `HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی)
 `CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو)
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی)
 `X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/)
 &nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
@@ -813,4 +814,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 13 جون 2017 (2017.06.13).</div>
+<div dir="rtl">آخری تازہ کاری: 18 جون 2017 (2017.06.18).</div>

@@ -716,6 +716,7 @@ CIDRAM使网站所有者能够阻止不良流量，但网站所有者有责任�
 `HTTP_INCAP_CLIENT_IP` | Incapsula反向代理
 `HTTP_CF_CONNECTING_IP` | Cloudflare反向代理
 `CF-Connecting-IP` | Cloudflare反向代理（替代；如果另一个不工作）
+`HTTP_X_FORWARDED_FOR` | Cloudbric反向代理
 `X-Forwarded-For` | [Squid反向代理](http://www.squid-cache.org/Doc/config/forwarded_for/)
 *由服务器配置定义。* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | 没有反向代理（默认值）。
@@ -723,4 +724,4 @@ CIDRAM使网站所有者能够阻止不良流量，但网站所有者有责任�
 ---
 
 
-最后更新：2017年6月13日。
+最后更新：2017年6月18日。

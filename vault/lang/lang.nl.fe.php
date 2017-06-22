@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.06.03).
+ * This file: Dutch language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'Maanden';
 $CIDRAM['lang']['previewer_seconds'] = 'Seconden';
 $CIDRAM['lang']['previewer_weeks'] = 'Weken';
 $CIDRAM['lang']['previewer_years'] = 'Jaren';
+$CIDRAM['lang']['punct_decimals'] = ',';
+$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Een account bij die gebruikersnaam bestaat al!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';

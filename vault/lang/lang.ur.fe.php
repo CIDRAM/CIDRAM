@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.06.03).
+ * This file: Urdu language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'مہینے';
 $CIDRAM['lang']['previewer_seconds'] = 'سیکنڈ';
 $CIDRAM['lang']['previewer_weeks'] = 'ہفتے';
 $CIDRAM['lang']['previewer_years'] = 'سال';
+$CIDRAM['lang']['punct_decimals'] = '.';
+$CIDRAM['lang']['punct_thousand'] = '،';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'وہ صارف نام کے ساتھ ایک اکاؤنٹ پہلے سے موجود ہے!';
 $CIDRAM['lang']['response_accounts_created'] = 'کاؤنٹ کامیابی سے تشکیل!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'اکاؤنٹ کامیابی سے خارج!';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.06.03).
+ * This file: Russian language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'Месяцы';
 $CIDRAM['lang']['previewer_seconds'] = 'Секунды';
 $CIDRAM['lang']['previewer_weeks'] = 'Недели';
 $CIDRAM['lang']['previewer_years'] = 'Лет';
+$CIDRAM['lang']['punct_decimals'] = ',';
+$CIDRAM['lang']['punct_thousand'] = ' ';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Аккаунт с таким именем уже существует!';
 $CIDRAM['lang']['response_accounts_created'] = 'Аккаунт успешно создан!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';

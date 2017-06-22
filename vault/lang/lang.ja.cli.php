@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for CLI (last modified: 2017.06.03).
+ * This file: Japanese language data for CLI (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,10 +24,10 @@ $CIDRAM['lang']['CLI_H'] = "
 
  フラグ：
     -h  このヘルプ情報を表示します。
-    -c  IPアドレスを確認してください、かどうかはCIDRAMによってブロックされています。
+    -c  IPアドレスを確認してください、​かどうかはCIDRAMによってブロックされています。
     -g  IPアドレスからCIDRを生成します。
 
- 入力： 任意の有効なアドレス（IPv4/IPv6）を指定できます。
+ 入力：​任意の有効なアドレス（IPv4/IPv6）を指定できます。
 
  例：
         -c  192.168.0.0/16
@@ -37,9 +37,9 @@ $CIDRAM['lang']['CLI_H'] = "
 
 ";
 
-$CIDRAM['lang']['CLI_Bad_IP'] = ' 「{IP}」は、有効なIPv4/IPv6アドレスではありません！';
-$CIDRAM['lang']['CLI_IP_Blocked'] = ' 「{IP}」には、シグネチャファイルによってブロックされています。';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' 「{IP}」には、シグネチャファイルによってブロックされていません。';
+$CIDRAM['lang']['CLI_Bad_IP'] = ' 「{IP}」は、​有効なIPv4/IPv6アドレスではありません！';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' 「{IP}」には、​シグネチャファイルによってブロックされています。';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' 「{IP}」には、​シグネチャファイルによってブロックされていません。';
 
 $CIDRAM['lang']['CLI_F_Finished'] = 'シグネチャフィクサーが完了しました；変更：%s；オペレーション：%s（%s）。';
 $CIDRAM['lang']['CLI_F_Started'] = 'シグネチャフィクサーが始まりました（%s）。';
@@ -49,26 +49,26 @@ $CIDRAM['lang']['CLI_VF_Level_1'] = '警告';
 $CIDRAM['lang']['CLI_VF_Level_2'] = 'エラー';
 $CIDRAM['lang']['CLI_VF_Level_3'] = '致命的なエラー';
 
-$CIDRAM['lang']['CLI_V_CRLF'] = 'シグネチャファイルで、「CR/CRLF」は検出されました；これは大丈夫です、しかし、「LF」は好ましいです。';
-$CIDRAM['lang']['CLI_V_Finished'] = 'シグネチャバリデータが完了しました（%s）。何の警告やエラーが現れなかった場合は、あなたのシグネチャファイルは、おそらく大丈夫です。';
+$CIDRAM['lang']['CLI_V_CRLF'] = 'シグネチャファイルで、​「CR/CRLF」は検出されました；これは大丈夫です、​しかし、​「LF」は好ましいです。';
+$CIDRAM['lang']['CLI_V_Finished'] = 'シグネチャバリデータが完了しました（%s）。​何の警告やエラーが現れなかった場合は、​あなたのシグネチャファイルは、​おそらく大丈夫です。';
 $CIDRAM['lang']['CLI_V_LineByLine'] = 'ライン・バイ・ラインの検証が始まりました。';
 $CIDRAM['lang']['CLI_V_Started'] = 'シグネチャバリデータが始まりました（%s）。';
-$CIDRAM['lang']['CLI_V_Terminal_LF'] = '「LF」によって、シグネチャファイルが終了する必要があります。';
+$CIDRAM['lang']['CLI_V_Terminal_LF'] = '「LF」によって、​シグネチャファイルが終了する必要があります。';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'L%s： 制御文字が検出されました；破損している可能性があり；調査が必要です。';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s： シグネチャ「%s」は重複しています（%s回）！';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s： 有効期限タグは、有効な日時（ＩＳＯ８６０１）が含まれていません！';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s： 「%s」は、有効なIPv4/IPv6アドレスではありません！';
-$CIDRAM['lang']['CLI_VL_L120'] = 'L%s： 行の長さが１２０バイト以上です；最適な読みやすさのために、行の長さは１２０バイトに制限されるべきです。';
-$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%sとL%sは同じです、そのため、はマージすることができます。';
-$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s： 「機能」は存在しません；シグネチャは不完全であることが表示されます。';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s： 「%s」は、活性化することはできません！ベースと範囲の始まりは一致していません！「%s」とそれを交換してみてください。';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s： 「%s」は、活性化することはできません！「%s」は有効な範囲ではありません！';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s： 「%s」は「%s」（これはすでに存在します）に従属します。';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s： 「%s」は「%s」（これはすでに存在します）にスーパーセットです。';
-$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s： 文法的に正確ではありません。';
-$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s： タブが検出されました；最適な読みやすさのために、スペースが好ましいです。';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s： セクションタグが２０バイト以上です；セクションタグは、明確かつ簡潔でなければなりません。';
-$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s： 「機能」が認識されません；シグネチャが壊れている可能性があります。';
-$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s： 末尾の空白が、この回線で検出されました。';
-$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s： YAMLのようなデータが検出されたが、それを処理できませんでした。';
+$CIDRAM['lang']['CLI_VL_CC'] = 'L%s：​制御文字が検出されました；破損している可能性があり；調査が必要です。';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s：​シグネチャ「%s」は重複しています（%s回）！';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s：​有効期限タグは、​有効な日時（ＩＳＯ８６０１）が含まれていません！';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s：​「%s」は、​有効なIPv4/IPv6アドレスではありません！';
+$CIDRAM['lang']['CLI_VL_L120'] = 'L%s：​行の長さが１２０バイト以上です；最適な読みやすさのために、​行の長さは１２０バイトに制限されるべきです。';
+$CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%sとL%sは同じです、​そのため、​はマージすることができます。';
+$CIDRAM['lang']['CLI_VL_Missing'] = 'L%s：​「機能」は存在しません；シグネチャは不完全であることが表示されます。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s：​「%s」は、​活性化することはできません！​ベースと範囲の始まりは一致していません！​「%s」とそれを交換してみてください。';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s：​「%s」は、​活性化することはできません！​「%s」は有効な範囲ではありません！';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s：​「%s」は「%s」（これはすでに存在します）に従属します。';
+$CIDRAM['lang']['CLI_VL_Superset'] = 'L%s：​「%s」は「%s」（これはすでに存在します）にスーパーセットです。';
+$CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s：​文法的に正確ではありません。';
+$CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s：​タブが検出されました；最適な読みやすさのために、​スペースが好ましいです。';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s：​セクションタグが２０バイト以上です；セクションタグは、​明確かつ簡潔でなければなりません。';
+$CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s：​「機能」が認識されません；シグネチャが壊れている可能性があります。';
+$CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s：​末尾の空白が、​この回線で検出されました。';
+$CIDRAM['lang']['CLI_VL_YAML'] = 'L%s：​YAMLのようなデータが検出されたが、​それを処理できませんでした。';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.06.03).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'Tháng';
 $CIDRAM['lang']['previewer_seconds'] = 'Giây';
 $CIDRAM['lang']['previewer_weeks'] = 'Tuần';
 $CIDRAM['lang']['previewer_years'] = 'Năm';
+$CIDRAM['lang']['punct_decimals'] = ',';
+$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $CIDRAM['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';

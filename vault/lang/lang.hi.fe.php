@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.06.03).
+ * This file: Hindi language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'महीने';
 $CIDRAM['lang']['previewer_seconds'] = 'सेकंड';
 $CIDRAM['lang']['previewer_weeks'] = 'सप्ताह';
 $CIDRAM['lang']['previewer_years'] = 'वर्षों';
+$CIDRAM['lang']['punct_decimals'] = '.';
+$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'उस उपयोगकर्ता नाम के साथ एक खाता पहले से मौजूद है!';
 $CIDRAM['lang']['response_accounts_created'] = 'खाता सफलतापूर्वक बनाया गया!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'खाता सफलतापूर्वक हटाया गया!';

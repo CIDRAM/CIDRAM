@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.06.03).
+ * This file: Arabic language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'الشهور';
 $CIDRAM['lang']['previewer_seconds'] = 'ثواني';
 $CIDRAM['lang']['previewer_weeks'] = 'أسابيع';
 $CIDRAM['lang']['previewer_years'] = 'سنوات';
+$CIDRAM['lang']['punct_decimals'] = '٫';
+$CIDRAM['lang']['punct_thousand'] = '٬';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'حساب اسم المستخدم موجود بالفعل!';
 $CIDRAM['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';

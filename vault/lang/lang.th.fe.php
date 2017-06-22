@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.06.03).
+ * This file: Thai language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'เดือน';
 $CIDRAM['lang']['previewer_seconds'] = 'วินาที';
 $CIDRAM['lang']['previewer_weeks'] = 'สัปดาห์';
 $CIDRAM['lang']['previewer_years'] = 'ปี';
+$CIDRAM['lang']['punct_decimals'] = '.';
+$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'บัญชีด้วยนั่นเองชื่อผู้ใช้มีอยู่แล้ว!';
 $CIDRAM['lang']['response_accounts_created'] = 'บัญชีสำเร็จแล้วสร้าง!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'บัญชีสำเร็จแล้วลบ!';

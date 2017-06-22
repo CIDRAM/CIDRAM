@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.06.03).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,46 +18,46 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
-$CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？ 当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。 200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
-$CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器列表，用于主机名查找。 标准 = “8.8.8.8,8.8.4.4” (Google DNS)。 警告： 不要修改此除非您知道什么您做着！';
+$CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
+$CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器列表，​用于主机名查找。​标准 = “8.8.8.8,8.8.4.4” (Google DNS)。​警告：不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
-$CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？ True（真） = 关闭； False（假） = 不关闭【标准】。';
+$CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？​True（真）=关闭； False（假）=不关闭【标准】。';
 $CIDRAM['lang']['config_general_emailaddr'] = '支持/援助电子邮件地址。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
-$CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。指定一个文件名，或留空以禁用。';
-$CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？ （可以使用为服务例如Cloudflare和类似）。 标准 = REMOTE_ADDR。 警告： 不要修改此除非您知道什么您做着！';
+$CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
+$CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
-$CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
-$CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
-$CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。指定一个文件名，或留空以禁用。';
-$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？ True（真） = 是【标准】； False（假） = 不是。';
+$CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
+$CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
+$CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数。';
-$CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。 True（真） = 是【标准】； False（假） = 不是。';
-$CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？ 验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，SEO，等等）。 当被验证，搜索引擎可以被阻止，但不会被禁止。 当不被验证，他们可以由于超过违规限制而被禁止。 另外，搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，这些请求将被阻止）。 True（真） = 搜索引擎验证是启用【标准】； False（假） = 搜索引擎验证是禁用。';
-$CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？指定位置至重定向被拦截的访问，或让它空将其禁用。';
-$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。可根据要求增加附加选项。';
+$CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】； False（假）=不是。';
+$CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】； False（假）=搜索引擎验证是禁用。';
+$CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。';
+$CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。​可根据要求增加附加选项。';
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
 $CIDRAM['lang']['config_general_timezone'] = '您的时区。';
-$CIDRAM['lang']['config_general_truncate'] = '截断日志文件当他们达到一定的大小吗？ 值是在B/KB/MB/GB/TB，是日志文件允许的最大大小直到它被截断。 默认值为“0KB”将禁用截断（日志文件可以无限成长）。 注意：适用于单个日志文件！日志文件大小不被算集体的。';
+$CIDRAM['lang']['config_general_truncate'] = '截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '应该reCAPTCHA锁定到IP？';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = '应该reCAPTCHA锁定到用户？';
-$CIDRAM['lang']['config_recaptcha_logfile'] = '记录所有的reCAPTCHA的尝试？要做到这一点，指定一个文件名到使用。如果不，离开这个变量为空白。';
-$CIDRAM['lang']['config_recaptcha_secret'] = '该值应该对应于“secret key”为您的reCAPTCHA，该可以发现在reCAPTCHA的仪表板。';
-$CIDRAM['lang']['config_recaptcha_sitekey'] = '该值应该对应于“site key”为您的reCAPTCHA，该可以发现在reCAPTCHA的仪表板。';
+$CIDRAM['lang']['config_recaptcha_logfile'] = '记录所有的reCAPTCHA的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。';
+$CIDRAM['lang']['config_recaptcha_secret'] = '该值应该对应于“secret key”为您的reCAPTCHA，​该可以发现在reCAPTCHA的仪表板。';
+$CIDRAM['lang']['config_recaptcha_sitekey'] = '该值应该对应于“site key”为您的reCAPTCHA，​该可以发现在reCAPTCHA的仪表板。';
 $CIDRAM['lang']['config_recaptcha_usemode'] = '它定义了如何CIDRAM应该使用reCAPTCHA（请参阅文档）。';
-$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR吗？如果您希望连接到您的网站从您的本地网络/本地主机/localhost/LAN/等等，这应该被设置为False（假）。如果不，这应该被设置为True（真）。';
-$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR认定为属于虚拟主机或云服务吗？如果您操作一个API服务从您的网站或如果您预计其他网站连接到您的网站，这应该被设置为False（假）。如果不，这应该被设置为True（真）。';
-$CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建议对于黑名单吗？这包括签名不标记为的一章节任何其他更具体签名类别。';
-$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR认定为属于代理服务吗？如果您需要该用户可以访问您的网站从匿名代理服务，这应该被设置为False（假）。除此以外，如果您不需要匿名代理服务，这应该被设置为True（真）作为一个方式以提高安全性。';
-$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高风险垃圾邮件CIDR吗？除非您遇到问题当这样做，通常，这应该被设置为True（真）。';
-$CIDRAM['lang']['config_signatures_default_tracktime'] = '多少秒钟来跟踪模块禁止的IP。 标准 = 604800 （1周）。';
-$CIDRAM['lang']['config_signatures_infraction_limit'] = '从IP最大允许违规数量之前它被禁止。 标准 = 10。';
-$CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4签名文件，CIDRAM应该尝试使用，用逗号分隔。';
-$CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，CIDRAM应该尝试使用，用逗号分隔。';
-$CIDRAM['lang']['config_signatures_modules'] = '模块文件要加载的列表以后检查签名IPv4/IPv6，用逗号分隔。';
-$CIDRAM['lang']['config_signatures_track_mode'] = '什么时候应该对违规行为进行计数？ False（假） = 当IP被模块阻止时。 True（真） = 当IP由于任何原因阻止时。';
+$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(“ㄅㄡㄍㄛㄋ”)/martian（“火星”）CIDR吗？​如果您希望连接到您的网站从您的本地网络/本地主机/localhost/LAN/等等，​这应该被设置为False（假）。​如果不，​这应该被设置为True（真）。';
+$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR认定为属于虚拟主机或云服务吗？​如果您操作一个API服务从您的网站或如果您预计其他网站连接到您的网站，​这应该被设置为False（假）。​如果不，​这应该被设置为True（真）。';
+$CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建议对于黑名单吗？​这包括签名不标记为的一章节任何其他更具体签名类别。';
+$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR认定为属于代理服务吗？​如果您需要该用户可以访问您的网站从匿名代理服务，​这应该被设置为False（假）。​除此以外，​如果您不需要匿名代理服务，​这应该被设置为True（真）作为一个方式以提高安全性。';
+$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高风险垃圾邮件CIDR吗？​除非您遇到问题当这样做，​通常，​这应该被设置为True（真）。';
+$CIDRAM['lang']['config_signatures_default_tracktime'] = '多少秒钟来跟踪模块禁止的IP。​标准 = 604800 （1周）。';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = '从IP最大允许违规数量之前它被禁止。​标准=10。';
+$CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4签名文件，​CIDRAM应该尝试使用，​用逗号分隔。';
+$CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，​CIDRAM应该尝试使用，​用逗号分隔。';
+$CIDRAM['lang']['config_signatures_modules'] = '模块文件要加载的列表以后检查签名IPv4/IPv6，​用逗号分隔。';
+$CIDRAM['lang']['config_signatures_track_mode'] = '什么时候应该对违规行为进行计数？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';
 $CIDRAM['lang']['field_activate'] = '启用';
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = '月';
 $CIDRAM['lang']['previewer_seconds'] = '秒';
 $CIDRAM['lang']['previewer_weeks'] = '周';
 $CIDRAM['lang']['previewer_years'] = '年';
+$CIDRAM['lang']['punct_decimals'] = '.';
+$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = '一个账户与那个用户名已经存在！';
 $CIDRAM['lang']['response_accounts_created'] = '账户成功创建！';
 $CIDRAM['lang']['response_accounts_deleted'] = '账户成功删除！';
@@ -142,7 +144,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = '那个账户不存在。';
 $CIDRAM['lang']['response_accounts_password_updated'] = '密码成功更新！';
 $CIDRAM['lang']['response_activated'] = '已成功启用。';
 $CIDRAM['lang']['response_activation_failed'] = '无法启用！';
-$CIDRAM['lang']['response_checksum_error'] = '校验和错误！文件拒绝！';
+$CIDRAM['lang']['response_checksum_error'] = '校验和错误！​文件拒绝！';
 $CIDRAM['lang']['response_component_successfully_installed'] = '组件成功安装。';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '组件成功卸载。';
 $CIDRAM['lang']['response_component_successfully_updated'] = '组件成功更新。';
@@ -159,8 +161,8 @@ $CIDRAM['lang']['response_file_deleted'] = '文件成功删除！';
 $CIDRAM['lang']['response_file_edited'] = '文件成功改性！';
 $CIDRAM['lang']['response_file_renamed'] = '文件成功改名！';
 $CIDRAM['lang']['response_file_uploaded'] = '文件成功上传！';
-$CIDRAM['lang']['response_login_invalid_password'] = '登录失败！密码无效！';
-$CIDRAM['lang']['response_login_invalid_username'] = '登录失败！用户名不存在！';
+$CIDRAM['lang']['response_login_invalid_password'] = '登录失败！​密码无效！';
+$CIDRAM['lang']['response_login_invalid_username'] = '登录失败！​用户名不存在！';
 $CIDRAM['lang']['response_login_password_field_empty'] = '密码输入是空的！';
 $CIDRAM['lang']['response_login_username_field_empty'] = '用户名输入是空的！';
 $CIDRAM['lang']['response_no'] = '不是';
@@ -182,25 +184,25 @@ $CIDRAM['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $CIDRAM['lang']['state_default_password'] = '警告：它使用标准密码！';
 $CIDRAM['lang']['state_logged_in'] = '目前在线。';
 $CIDRAM['lang']['state_logs_access_only'] = '仅日志访问';
-$CIDRAM['lang']['state_password_not_valid'] = '警告：此账户不​​使用有效的密码！';
+$CIDRAM['lang']['state_password_not_valid'] = '警告：此账户不​使用有效的密码！';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
-$CIDRAM['lang']['tip_accounts'] = '你好，{username}。<br />账户页面允许您控制谁可以访问CIDRAM前端。';
-$CIDRAM['lang']['tip_cidr_calc'] = '你好，{username}。<br />CIDR计算器允许您计算IP地址属于哪个CIDR。';
-$CIDRAM['lang']['tip_config'] = '你好，{username}。<br />配置页面允许您修改CIDRAM配置从前端。';
-$CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，但如果您想捐赠给项目，您可以通过点击捐赠按钮这样做。';
+$CIDRAM['lang']['tip_accounts'] = '你好，​{username}。​<br />账户页面允许您控制谁可以访问CIDRAM前端。';
+$CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR计算器允许您计算IP地址属于哪个CIDR。';
+$CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置页面允许您修改CIDRAM配置从前端。';
+$CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，​但如果您想捐赠给项目，​您可以通过点击捐赠按钮这样做。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_enter_ip_here'] = '在这里输入IP。';
-$CIDRAM['lang']['tip_file_manager'] = '你好，{username}。<br />文件管理器允许您删除，编辑，上传和下载文件。小心使用（您可以用这个破坏您的安装）。';
-$CIDRAM['lang']['tip_home'] = '你好，{username}。<br />这是CIDRAM的前端主页。从左侧的导航菜单中选择一个链接以继续。';
-$CIDRAM['lang']['tip_ip_test'] = '你好，{username}。<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
-$CIDRAM['lang']['tip_ip_tracking'] = '你好，{username}。<br />IP跟踪页面允许您检查IP地址跟踪状态，检查哪些IP已被禁止，而如果您想这样做，对撤消他们的跟踪。';
-$CIDRAM['lang']['tip_login'] = '标准用户名： <span class="txtRd">admin</span> – 标准密码： <span class="txtRd">password</span>';
-$CIDRAM['lang']['tip_logs'] = '你好，{username}。<br />选择一个日志从下面的列表以查看那个日志的内容。';
+$CIDRAM['lang']['tip_file_manager'] = '你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。';
+$CIDRAM['lang']['tip_home'] = '你好，​{username}。​<br />这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。';
+$CIDRAM['lang']['tip_ip_test'] = '你好，​{username}。​<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
+$CIDRAM['lang']['tip_ip_tracking'] = '你好，​{username}。​<br />IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。';
+$CIDRAM['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';
+$CIDRAM['lang']['tip_logs'] = '你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
-$CIDRAM['lang']['tip_updates'] = '你好，{username}。<br />更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包，签名，L10N文件，等等）。';
+$CIDRAM['lang']['tip_updates'] = '你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新CIDRAM的各种组件（核心包，​签名，​L10N文件，​等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 账户';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR计算器';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
@@ -213,23 +215,23 @@ $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日志';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
 
 $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM问题＠GitHub</a> – CIDRAM问题页面（支持，协助，等等）。</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAM讨论论坛（支持，协助，等等）。</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。</li>
-            <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM＠SourceForge</a> – CIDRAM替代下载镜像。</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。</li>
-            <li><a href="https://macmathan.info/blocklists">范围阻止名单＠MacMathan.info</a> – 包含可选阻止名单，可以添加的在CIDRAM，用于阻止任何不需要的国家访问您的网站。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学习资源和讨论。</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP学习资源和讨论。</li>
-            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，确定ASN关系，基于网络名称发现ASN，等等。</li>
-            <li><a href="https://www.stopforumspam.com/forum/">论坛 ＠ Stop Forum Spam</a> – 有用的讨论论坛关于停止论坛垃圾邮件。</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP聚合器 ＠ Stop Forum Spam</a> – 有用的IPv4聚合工具。</li>
-            <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 检查ASN连接的有用工具，以及关于ASN的各种其他信息。</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IP国家阻止＠IPdeny</a> – 一个梦幻般和准确的服务，产生国家的签名。</li>
-            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 显示有关ASN恶意软件感染率的报告。</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org的复合阻止列表</a> – 显示有关ASN僵尸网络感染率的报告。</li>
-            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 维护已知的滥用IP数据库；它为IP检查和报告提供了一个API。</li>
-            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 维护已知垃圾邮件发送者的列表；有用为检查IP/ASN垃圾邮件活动。</li>
+            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM问题＠GitHub</a> – CIDRAM问题页面（支持，​协助，​等等）。​</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAM讨论论坛（支持，​协助，​等等）。​</li>
+            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。​</li>
+            <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。​</li>
+            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM＠SourceForge</a> – CIDRAM替代下载镜像。​</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。​</li>
+            <li><a href="https://macmathan.info/blocklists">范围阻止名单＠MacMathan.info</a> – 包含可选阻止名单，​可以添加的在CIDRAM，​用于阻止任何不需要的国家访问您的网站。​</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学习资源和讨论。​</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP学习资源和讨论。​</li>
+            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。​</li>
+            <li><a href="https://www.stopforumspam.com/forum/">论坛 ＠ Stop Forum Spam</a> – 有用的讨论论坛关于停止论坛垃圾邮件。​</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP聚合器 ＠ Stop Forum Spam</a> – 有用的IPv4聚合工具。​</li>
+            <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。​</li>
+            <li><a href="http://www.ipdeny.com/ipblocks/">IP国家阻止＠IPdeny</a> – 一个梦幻般和准确的服务，​产生国家的签名。​</li>
+            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 显示有关ASN恶意软件感染率的报告。​</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。​</li>
+            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org的复合阻止列表</a> – 显示有关ASN僵尸网络感染率的报告。​</li>
+            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 维护已知的滥用IP数据库；它为IP检查和报告提供了一个API。​</li>
+            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 维护已知垃圾邮件发送者的列表；有用为检查IP/ASN垃圾邮件活动。​</li>
         </ul>';

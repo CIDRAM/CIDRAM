@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.03).
+ * This file: Functions file (last modified: 2017.06.21).
  */
 
 /**
@@ -1426,7 +1426,9 @@ $CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
             break;
         }
     }
-    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+    $Decimals = !empty($CIDRAM['lang']['punct_decimals']) ? $CIDRAM['lang']['punct_decimals'] : '.';
+    $Thousand = !empty($CIDRAM['lang']['punct_thousand']) ? $CIDRAM['lang']['punct_thousand'] : ',';
+    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2, $Decimals, $Thousand) . ' ' . $Scale[$Iterate];
 };
 
 $CIDRAM['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {

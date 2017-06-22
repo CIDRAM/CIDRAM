@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.06.03).
+ * This file: Korean language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,15 +18,15 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
-$CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때: 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값); 403 = "403 Forbidden"로 덮어; 503 = "503 Service unavailable"로 덮어한다.';
-$CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
+$CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값); 403 = "403 Forbidden"로 덮어; 503 = "503 Service unavailable"로 덮어한다.';
+$CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가?';
 $CIDRAM['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_general_emailaddr'] = '지원을위한 이메일 주소입니다.';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '무엇 헤더 사용해야합니까 (요청을 차단했을 때)?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
-$CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의: 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
+$CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM의 기본 언어를 설정합니다.';
 $CIDRAM['lang']['config_general_logfile'] = '액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_logfileApache'] = '액세스 시도 저지를 기록, Apache 스타일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
@@ -39,7 +39,7 @@ $CIDRAM['lang']['config_general_silent_mode'] = '"액세스 거부" 페이지를
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
 $CIDRAM['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $CIDRAM['lang']['config_general_timezone'] = '귀하의 시간대.';
-$CIDRAM['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고: 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
+$CIDRAM['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA 인스턴스를 기억 시간.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA를 IP로 잠금 하시겠습니까?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHA를 사용자에 잠금 하시겠습니까?';
@@ -73,7 +73,7 @@ $CIDRAM['lang']['field_download_file'] = '다운로드';
 $CIDRAM['lang']['field_edit_file'] = '편집';
 $CIDRAM['lang']['field_expiry'] = '만료';
 $CIDRAM['lang']['field_file'] = '파일';
-$CIDRAM['lang']['field_filename'] = '파일 이름: ';
+$CIDRAM['lang']['field_filename'] = '파일 이름 : ';
 $CIDRAM['lang']['field_filetype_directory'] = '디렉토리';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} 파일';
 $CIDRAM['lang']['field_filetype_unknown'] = '알 수없는';
@@ -92,7 +92,7 @@ $CIDRAM['lang']['field_range'] = '범위 (처음 – 마지막)';
 $CIDRAM['lang']['field_rename_file'] = '이름을 변경하려면';
 $CIDRAM['lang']['field_reset'] = '재설정';
 $CIDRAM['lang']['field_set_new_password'] = '새 암호를 설정합니다';
-$CIDRAM['lang']['field_size'] = '전체 크기: ';
+$CIDRAM['lang']['field_size'] = '전체 크기 : ';
 $CIDRAM['lang']['field_size_bytes'] = '바이트';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
@@ -108,7 +108,7 @@ $CIDRAM['lang']['field_upload_file'] = '새로운 파일을 업로드하기';
 $CIDRAM['lang']['field_username'] = '사용자 이름';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
-$CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일: ';
+$CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전:';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제:';
 $CIDRAM['lang']['label_php'] = '사용 된 PHP 버전:';
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = '개월';
 $CIDRAM['lang']['previewer_seconds'] = '초';
 $CIDRAM['lang']['previewer_weeks'] = '주';
 $CIDRAM['lang']['previewer_years'] = '연령';
+$CIDRAM['lang']['punct_decimals'] = '.';
+$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = '계정이 이미 존재합니다!';
 $CIDRAM['lang']['response_accounts_created'] = '계정 만들기에 성공했습니다!';
 $CIDRAM['lang']['response_accounts_deleted'] = '계정 삭제가 성공했습니다!';
@@ -179,10 +181,10 @@ $CIDRAM['lang']['state_complete_access'] = '전체 액세스';
 $CIDRAM['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';
 $CIDRAM['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
 $CIDRAM['lang']['state_component_is_provisional'] = '구성 요소가 잠정입니다.';
-$CIDRAM['lang']['state_default_password'] = '경고: 기본 암호를 사용하여!';
+$CIDRAM['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
 $CIDRAM['lang']['state_logged_in'] = '로그인 있습니다.';
 $CIDRAM['lang']['state_logs_access_only'] = '로그에만 액세스';
-$CIDRAM['lang']['state_password_not_valid'] = '경고: 이 계정은 올바른 암호를 사용하지 않습니다!';
+$CIDRAM['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지 않고';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '미사용을 숨기지 않고';
@@ -197,10 +199,10 @@ $CIDRAM['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파일 
 $CIDRAM['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $CIDRAM['lang']['tip_ip_test'] = '안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주소가 차단되어 있는지를 테스트 할 수 있습니다.';
 $CIDRAM['lang']['tip_ip_tracking'] = '안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다.';
-$CIDRAM['lang']['tip_login'] = '기본 사용자 이름: <span class="txtRd">admin</span> – 기본 암호: <span class="txtRd">password</span>';
+$CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
 $CIDRAM['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ko.md#SECTION6">문서를</a> 참조하십시오.';
-$CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치, 제거, 업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일 등).';
+$CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 계정';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 구성';

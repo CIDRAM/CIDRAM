@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.06.03).
+ * This file: Indonesian language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'Bulan';
 $CIDRAM['lang']['previewer_seconds'] = 'Detik';
 $CIDRAM['lang']['previewer_weeks'] = 'Minggu';
 $CIDRAM['lang']['previewer_years'] = 'Tahun';
+$CIDRAM['lang']['punct_decimals'] = ',';
+$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $CIDRAM['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';

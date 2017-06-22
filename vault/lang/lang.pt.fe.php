@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.06.03).
+ * This file: Portuguese language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'Meses';
 $CIDRAM['lang']['previewer_seconds'] = 'Segundos';
 $CIDRAM['lang']['previewer_weeks'] = 'Semanas';
 $CIDRAM['lang']['previewer_years'] = 'Anos';
+$CIDRAM['lang']['punct_decimals'] = ',';
+$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Uma conta com esse nome já existe!';
 $CIDRAM['lang']['response_accounts_created'] = 'Conta criada com sucesso!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Conta deletada com sucesso!';

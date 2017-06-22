@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.06.03).
+ * This file: Turkish language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -39,7 +39,7 @@ $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM, "Erişim Reddedildi" sa
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Dakika cinsinden zaman dilimi farkı.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zaman diliminiz.';
-$CIDRAM['lang']['config_general_truncate'] = 'Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB /GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz.';
+$CIDRAM['lang']['config_general_truncate'] = 'Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA örneklerini hatırlamak için saat sayısı.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA\'yı IP\'lere kilitle?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHA kullanıcılara kilitle?';
@@ -135,6 +135,8 @@ $CIDRAM['lang']['previewer_months'] = 'Aylar';
 $CIDRAM['lang']['previewer_seconds'] = 'Saniyeler';
 $CIDRAM['lang']['previewer_weeks'] = 'Haftalar';
 $CIDRAM['lang']['previewer_years'] = 'Yıllar';
+$CIDRAM['lang']['punct_decimals'] = ',';
+$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Bu kullanıcı adıyla bir hesap zaten var!';
 $CIDRAM['lang']['response_accounts_created'] = 'Hesap başarıyla oluşturuldu!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Hesap başarıyla silindi!';

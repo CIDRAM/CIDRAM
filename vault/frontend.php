@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.06.03).
+ * This file: Front-end handler (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2269,7 +2269,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
                 $CIDRAM['ThisTracking']['Status'] .= '/' . $CIDRAM['lang']['field_blocked'];
             }
-            $CIDRAM['ThisTracking']['Status'] .= ' – ' . number_format($CIDRAM['ThisTrackingArr']['Count']);
+            $CIDRAM['ThisTracking']['Status'] .= ' – ' . number_format($CIDRAM['ThisTrackingArr']['Count'], 0, '',
+                !empty($CIDRAM['lang']['punct_thousand']) ? $CIDRAM['lang']['punct_thousand'] : ','
+            );
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ThisTracking'],
                 $CIDRAM['FE']['TrackingRow']

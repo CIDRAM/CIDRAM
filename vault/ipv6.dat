@@ -3118,8 +3118,10 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# %Listed, Google Malware Dashboard: 2.04%.
-# Updated: 2016.12.10
+# %Listed, Google Malware Dashboard: 1.97%.
+# %Listed, CleanTalk.org: 52.27%.
+# Stop Forum Spam (SFS) listings: 69.
+# Updated: 2017.06.22
 
 2001:678:198::/48 Deny Cloud
 2402:c080::/31 Deny Cloud
@@ -3129,14 +3131,15 @@ Tag: 23Media GmbH
 2a00:1708::/32 Deny Cloud
 2a00:1d20::/32 Deny Cloud
 2a03:3a60::/32 Deny Cloud
-2a03:59c0::/32 Deny Cloud
 2a04:c600::/29 Deny Cloud
 2a05:6440::/29 Deny Cloud
 2a05:b0c6:5e4::/48 Deny Cloud
 2a06:7240:5::/48 Deny Cloud
 2a06:7240:6::/48 Deny Cloud
 2a06:7a00::/48 Deny Cloud
-2a07:3980::/29 Deny Cloud
+2a0a:5980::/29 Deny Cloud
+2a0b:1b00::/29 Deny Cloud
+2a0b:f380::/48 Deny Cloud
 Tag: i3d B.V
 
 
@@ -3797,8 +3800,10 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# %Listed, Google Malware Dashboard: 3.99%.
-# Updated: 2016.11.02 / Checked: 2016.11.18
+# %Listed, Google Malware Dashboard: 3.09%.
+# %Listed, CleanTalk.org: 80.50%.
+# Stop Forum Spam (SFS) listings: 3,273.
+# Updated: 2016.11.02 / Checked: 2017.06.22
 
 2401:f500:4::/48 Deny Cloud
 2602:ffc8::/32 Deny Cloud
@@ -3905,28 +3910,35 @@ Tag: velia.net
 
 
 # ASN 38719 ("Dreamscape Networks Pty Ltd").
-# %Listed, Google Malware Dashboard: 2.08%.
-# Updated: 2016.12.04
+# %Listed, Google Malware Dashboard: 1.71%.
+# %Listed, CleanTalk.org: 28.81%.
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2017.06.22
 
-2400:6d80::/32 Deny Cloud Deny Cloud
-2407:4c00::/32 Deny Cloud Deny Cloud
-2a00:fd80::/32 Deny Cloud Deny Cloud
+2400:6d80::/32 Deny Cloud
+2400:8240::/32 Deny Cloud
+2404:8280::/32 Deny Cloud
+2405:df80::/32 Deny Cloud
+2407:4c00::/32 Deny Cloud
+2a00:fd80::/32 Deny Cloud
 Tag: Dreamscape Networks
 
 
 # ASN 203625 ("Europe Domains LTD").
-# %Listed, Google Malware Dashboard: 16.67%.
-# Updated: 2016.12.04
+# %Listed, Google Malware Dashboard: 3.33%.
+# Updated: 2016.12.04 / Checked: 2017.06.22
 
 2a06:d2c0::/29 Deny Cloud
 Tag: Europe Domains LTD
 
 
 # ASN 22458 ("NetSource Communications, Inc").
-# %Listed, Google Malware Dashboard: 1.02%.
-# Updated: 2016.12.10
+# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, CleanTalk.org: 14.63%.
+# Updated: 2017.06.22
 
 2604:f80::/32 Deny Cloud
+2a0b:1900::/44 Deny Cloud
 Tag: NetSource
 
 
@@ -4220,3 +4232,16 @@ Tag: Gransy s.r.o.
 2a00:1238::/32 Deny Cloud
 2a0b:640::/30 Deny Cloud
 Tag: 2 connect a.s.
+
+
+# ASNs 42570, 200584, 201365, 207161 ("Nagravision SA", A.K.A. "Kudelski Group").
+# Caught hitting protected honeypot pages for unknown purposes. No problems otherwise. Provides digital cable and
+# satellite television; Not expected to carry standard HTTP traffic from human endpoints normally. May remove if
+# problems emerge, but adding them here for now as a precaution. Not currently listed on other known blacklists.
+# Updated: 2017.06.21
+
+2a04:5c80::/32 Deny Generic
+2a04:5c84::/31 Deny Generic
+2a04:5c86::/48 Deny Generic
+2a04:5c87::/32 Deny Generic
+Tag: Nagravision SA

@@ -19,7 +19,7 @@
 
 CIDRAM (Classless Inter-Domain Routing Access Manager) est un script PHP conçu pour la protection des sites web par bloquant les demandes de page produit à partir d'adresses IP considéré comme étant sources de trafic indésirable, comprenant (mais pas limité a) le trafic de terminaux d'accès non humains, services de cloud computing, spambots, scrapers, etc. Elle le fait en calculant les CIDRs possibles des adresses IP fournie par les demandes entrantes puis essayant pour correspondre à ces CIDRs possibles contre ses fichiers de signatures (ces fichiers de signatures contenir des listes de CIDRs d'adresses IP considéré comme étant sources de trafic indésirable) ; Si des correspondances sont trouvées, les demandes sont bloquées.
 
-*(Voir : [Qu'est-ce qu'un « CIDR » ?](#WHAT_IS_A_CIDR)).*
+*(Voir : [Qu'est-ce qu'un « CIDR » ?](#WHAT_IS_A_CIDR)).*
 
 CIDRAM COPYRIGHT 2016 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
@@ -42,7 +42,7 @@ Ce document et son associé paquet peuvent être téléchargé gratuitement à s
 
 3) Télécharger les contenus (CIDRAM et ses fichiers) à le répertoire vous aviez décidé plus tôt (vous n'avez pas besoin les `*.txt`/`*.md` fichiers, mais surtout, vous devriez télécharger tous les fichiers sur le serveur).
 
-4) CHMOD la `vault` répertoire à « 755 » (s'il y a des problèmes, vous pouvez essayer « 777 », mais c'est moins sûr). Le principal répertoire qui est stocker le contenu (celui que vous avez choisi plus tôt), généralement, peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu problèmes d'autorisations dans le passé sur votre système (par défaut, devrait être quelque chose comme « 755 »).
+4) CHMOD la `vault` répertoire à « 755 » (s'il y a des problèmes, vous pouvez essayer « 777 », mais c'est moins sûr). Le principal répertoire qui est stocker le contenu (celui que vous avez choisi plus tôt), généralement, peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu problèmes d'autorisations dans le passé sur votre système (par défaut, devrait être quelque chose comme « 755 »).
 
 5) Suivant, vous aurez besoin de l'attacher CIDRAM à votre système ou CMS. Il est plusieurs façons vous pouvez attacher CIDRAM à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre site web) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation ; Si vous rencontrez des difficultés pour la détermination de ce par vous-même, à l'aide, visitez la page des problèmes/issues pour CIDRAM à GitHub. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `loader.php` (l'adresse locale, pas l'adresse HTTP ; il ressemblera l'adresse de `vault` mentionné précédemment).
 
@@ -64,7 +64,7 @@ Ou cette dans le `.htaccess` fichier:
 
 #### 2.1 INSTALLATION AVEC COMPOSER
 
-[CIDRAM est enregistré avec Packagist](https://packagist.org/packages/cidram/cidram), et donc, si vous êtes familier avec Composer, vous pouvez utiliser Composer pour installer CIDRAM (vous devrez néanmoins préparer la configuration et les attaches ; voir « installation manuelle » les étapes 2 et 5).
+[CIDRAM est enregistré avec Packagist](https://packagist.org/packages/cidram/cidram), et donc, si vous êtes familier avec Composer, vous pouvez utiliser Composer pour installer CIDRAM (vous devrez néanmoins préparer la configuration et les attaches ; voir « installation manuelle » les étapes 2 et 5).
 
 `composer require cidram/cidram`
 
@@ -275,16 +275,16 @@ Fichier | Description
 ### 6. <a name="SECTION6"></a>OPTIONS DE CONFIGURATION
 Ce qui suit est une liste des directives disponibles pour CIDRAM dans le `config.ini` fichier de configuration, avec une description de leur objectif et leur fonction.
 
-#### « general » (Catégorie)
+#### « general » (Catégorie)
 Configuration générale pour CIDRAM.
 
-« logfile »
+« logfile »
 - Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.
 
-« logfileApache »
+« logfileApache »
 - Un fichier dans le style d'Apache pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.
 
-« logfileSerialized »
+« logfileSerialized »
 - Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
@@ -294,128 +294,128 @@ Configuration générale pour CIDRAM.
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-« truncate »
+« truncate »
 - Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S'applique aux fichiers journaux individuels ! La taille des fichiers journaux n'est pas considérée collectivement.
 
-« timeOffset »
+« timeOffset »
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par CIDRAM selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
 - Exemple (à ajouter une heure) : `timeOffset=60`
 
-« timeFormat »
+« timeFormat »
 - Le format de notation de la date/heure utilisé par CIDRAM. Défaut = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
-« ipaddr »
+« ipaddr »
 - Où trouver l'adresse IP de demandes de connexion ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
-« forbid_on_block »
+« forbid_on_block »
 - Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes ? False/200 = 200 OK [Défaut] ; True/403 = 403 Forbidden (Interdit) ; 503 = 503 Service unavailable (Service indisponible).
 
-« silent_mode »
-- Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page « Accès Refusé » ? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide.
+« silent_mode »
+- Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page « Accès Refusé » ? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide.
 
-« lang »
+« lang »
 - Spécifiez la langue défaut pour CIDRAM.
 
-« emailaddr »
+« emailaddr »
 - Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT : Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire).
 
-« disable_cli »
+« disable_cli »
 - Désactiver le mode CLI ? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut] ; True = Désactiver le mode CLI.
 
-« disable_frontend »
+« disable_frontend »
 - Désactiver l'accès frontal ? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal ; True = Désactiver l'accès frontal [Défaut].
 
-« max_login_attempts »
+« max_login_attempts »
 - Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5.
 
-« FrontEndLog »
+« FrontEndLog »
 - Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.
 
-« ban_override »
-- Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les demandes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut] ; 403 = Remplacer par « 403 Forbidden » ; 503 = Remplacer par « 503 Service unavailable ».
+« ban_override »
+- Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les demandes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut] ; 403 = Remplacer par « 403 Forbidden » ; 503 = Remplacer par « 503 Service unavailable ».
 
-« log_banned_ips »
+« log_banned_ips »
 - Inclure les demandes bloquées provenant d'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.
 
-« default_dns »
-- Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
+« default_dns »
+- Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
-« search_engine_verification »
+« search_engine_verification »
 - Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses demandes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.
 
-« protect_frontend »
+« protect_frontend »
 - Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non.
 
-« disable_webfonts »
+« disable_webfonts »
 - Désactiver les webfonts ? True = Oui ; False = Non [Défaut].
 
-#### « signatures » (Catégorie)
+#### « signatures » (Catégorie)
 Configuration pour les signatures.
 
-« ipv4 »
+« ipv4 »
 - Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d'utiliser, délimité par des virgules. Vous pouvez ajouter des entrées ici si vous voulez inclure des fichiers supplémentaires dans CIDRAM.
 
-« ipv6 »
+« ipv6 »
 - Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d'utiliser, délimité par des virgules. Vous pouvez ajouter des entrées ici si vous voulez inclure des fichiers supplémentaires dans CIDRAM.
 
-« block_cloud »
+« block_cloud »
 - Bloquer CIDRs identifié comme appartenant à hébergement/cloud services ? Si vous utilisez un service d'API à partir de votre site web ou si vous attendez d'autres sites à connecter avec votre site web, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true.
 
-« block_bogons »
+« block_bogons »
 - Bloquer CIDRs bogon/martian ? Si vous attendre connexions à votre site web à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true.
 
-« block_generic »
+« block_generic »
 - Bloquer CIDRs recommandé en généralement pour les listes noires ? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l'autre plus spécifique catégories de signatures.
 
-« block_proxies »
+« block_proxies »
 - Bloquer CIDRs identifié comme appartenant à services de proxy ? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d'améliorer la sécurité.
 
-« block_spam »
+« block_spam »
 - Bloquer CIDRs identifié comme étant risque élevé pour le spam ? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.
 
-« modules »
+« modules »
 - Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.
 
-« default_tracktime »
+« default_tracktime »
 - Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).
 
-« infraction_limit »
+« infraction_limit »
 - Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10.
 
-« track_mode »
+« track_mode »
 - Quand faut-il compter les infractions ? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.
 
-#### « recaptcha » (Catégorie)
-Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de « Accès Refusé » par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une demande est à l'origine d'une machine ou d'un être humain.
+#### « recaptcha » (Catégorie)
+Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de « Accès Refusé » par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une demande est à l'origine d'une machine ou d'un être humain.
 
-En raison des risques associés à la fourniture d'une façon pour les utilisateurs pour contourner la page « Accès Refusé », généralement, je déconseille d'activer cette fonctionnalité à moins que vous sentez qu'il soit nécessaire de le faire. Situations dans lesquelles il serait nécessaire : Si vous avez des clients/utilisateurs pour votre site web qui ont besoin d'avoir accès, et si cela est quelque chose qui ne peut être pas compromise, mais si elles se connectant à partir d'un réseau hostile qui pourrait potentiellement être aussi transporter le trafic indésirable, et le blocage de ce trafic indésirable est aussi quelque chose qui ne peut pas être compromise, dans ces situations sans victoire, la fonctionnalité reCAPTCHA pourrait être utile un moyen de permettre aux clients/utilisateurs désirables, et en même temps tenir à l'écart le trafic indésirable à partir du même réseau. Cela dit, étant donné que l'objectif d'un CAPTCHA est pour la distinction entre les humains et les nonhumains, la fonctionnalité reCAPTCHA serait seulement aider dans ces situations sans victoire si nous voulons supposer que ce trafic indésirable est nonhumain (par exemple, spambots, scrapers, outils de piratage, trafic automatisé), plutôt d'être le trafic indésirable des humains (tels que les spammeurs humains, hackers, et al).
+En raison des risques associés à la fourniture d'une façon pour les utilisateurs pour contourner la page « Accès Refusé », généralement, je déconseille d'activer cette fonctionnalité à moins que vous sentez qu'il soit nécessaire de le faire. Situations dans lesquelles il serait nécessaire : Si vous avez des clients/utilisateurs pour votre site web qui ont besoin d'avoir accès, et si cela est quelque chose qui ne peut être pas compromise, mais si elles se connectant à partir d'un réseau hostile qui pourrait potentiellement être aussi transporter le trafic indésirable, et le blocage de ce trafic indésirable est aussi quelque chose qui ne peut pas être compromise, dans ces situations sans victoire, la fonctionnalité reCAPTCHA pourrait être utile un moyen de permettre aux clients/utilisateurs désirables, et en même temps tenir à l'écart le trafic indésirable à partir du même réseau. Cela dit, étant donné que l'objectif d'un CAPTCHA est pour la distinction entre les humains et les nonhumains, la fonctionnalité reCAPTCHA serait seulement aider dans ces situations sans victoire si nous voulons supposer que ce trafic indésirable est nonhumain (par exemple, spambots, scrapers, outils de piratage, trafic automatisé), plutôt d'être le trafic indésirable des humains (tels que les spammeurs humains, hackers, et al).
 
-Pour obtenir une « site key » et une « secret key » (nécessaires à l'utilisation de reCAPTCHA), s'il vous plaît allez à : [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+Pour obtenir une « site key » et une « secret key » (nécessaires à l'utilisation de reCAPTCHA), s'il vous plaît allez à : [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-« usemode »
+« usemode »
 - Définit comment CIDRAM doit utiliser reCAPTCHA.
 - 0 = reCAPTCHA est complètement désactivé (défaut).
 - 1 = reCAPTCHA est activé pour toutes les signatures.
 - 2 = reCAPTCHA est activé seulement pour les signatures appartenant à des sections spécialement marquées dans les fichiers de signatures.
 - (Toute autre valeur sera traitée de la même manière que 0).
 
-« lockip »
+« lockip »
 - Indique si hachages devrait être verrouillé à des IPs spécifiques. False = Cookies et hachages PEUVENT être utilisés sur plusieurs IPs (défaut). True = Cookies et hachages NE PEUVENT PAS être utilisés sur plusieurs IPs (cookies/hachages sont verrouillés à IPs).
-- Note : La valeur de « lockip » est ignoré lorsque « lockuser » est false, en raison de ce que le mécanisme pour se souvenir de « utilisateurs » varie en fonction de cette valeur.
+- Note : La valeur de « lockip » est ignoré lorsque « lockuser » est false, en raison de ce que le mécanisme pour se souvenir de « utilisateurs » varie en fonction de cette valeur.
 
-« lockuser »
+« lockuser »
 - Indique si le succès d'une instance de reCAPTCHA devrait être verrouillé à des utilisateurs spécifiques. False = Le succès d'une instance de reCAPTCHA donnera accès à toutes les demandes provenant de la même adresse IP que celui utilisé par l'utilisateur de remplir l'instance du reCAPTCHA ; Cookies et hachages ne sont pas utilisés ; Au lieu, une liste blanche IP sera utilisé. True = Le succès d'une instance de reCAPTCHA donnera accès seulement à l'utilisateur remplissant l'instance du reCAPTCHA ; Cookies et hachages sont utilisés pour mémoriser l'utilisateur ; Une liste blanche IP n'est pas utilisé (défaut).
 
-« sitekey »
-- Cette valeur devrait correspondre à la « site key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
+« sitekey »
+- Cette valeur devrait correspondre à la « site key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
 
-« secret »
-- Cette valeur devrait correspondre à la « secret key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
+« secret »
+- Cette valeur devrait correspondre à la « secret key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
 
-« expiry »
-- Quand « lockuser » est true (défaut), afin de se souvenir quand un utilisateur a passé avec succès une instance de reCAPTCHA, pour les futures demandes de page, CIDRAM génère un cookie HTTP standard contenant un hachage qui correspond à un enregistrement interne contenant ce même hachage ; Les futures demandes de page utilisera ces hachage correspondant pour authentifier qu'un utilisateur a préalablement déjà passé une instance de reCAPTCHA. Quand « lockuser » est false, une liste blanche IP est utilisé pour déterminer si les demandes devraient être autorisée à partir de l'adresse IP de demandes entrantes ; Les entrées sont ajoutées à cette liste blanche lorsque l'instance de reCAPTCHA est passé avec succès. Pour combien d'heures devrait ces cookies, hachages et les entrées du liste blanche rester valables ? Défaut = 720 (1 mois).
+« expiry »
+- Quand « lockuser » est true (défaut), afin de se souvenir quand un utilisateur a passé avec succès une instance de reCAPTCHA, pour les futures demandes de page, CIDRAM génère un cookie HTTP standard contenant un hachage qui correspond à un enregistrement interne contenant ce même hachage ; Les futures demandes de page utilisera ces hachage correspondant pour authentifier qu'un utilisateur a préalablement déjà passé une instance de reCAPTCHA. Quand « lockuser » est false, une liste blanche IP est utilisé pour déterminer si les demandes devraient être autorisée à partir de l'adresse IP de demandes entrantes ; Les entrées sont ajoutées à cette liste blanche lorsque l'instance de reCAPTCHA est passé avec succès. Pour combien d'heures devrait ces cookies, hachages et les entrées du liste blanche rester valables ? Défaut = 720 (1 mois).
 
-« logfile »
+« logfile »
 - Enregistrez toutes les tentatives du reCAPTCHA ? Si oui, indiquez le nom à utiliser pour le fichier d'enregistrement. Si non, laisser vide ce variable.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
@@ -423,15 +423,15 @@ Pour obtenir une « site key » et une « secret key » (nécessaires à l'utili
 *Exemples :*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-#### « template_data » (Catégorie)
+#### « template_data » (Catégorie)
 Directives/Variables pour les modèles et thèmes.
 
-Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé ». Si vous utilisez des thèmes personnalisés pour CIDRAM, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
+Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé ». Si vous utilisez des thèmes personnalisés pour CIDRAM, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
 
-« theme »
+« theme »
 - Le thème à utiliser par défaut pour CIDRAM.
 
-« css_url »
+« css_url »
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire CIDRAM d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, CIDRAM va utiliser le modèle fichier pour le défaut thème.
 
 ---
@@ -467,25 +467,25 @@ Les valeurs possibles de `[Function]` sont les suivants:
 - Greylist
 - Deny
 
-Si « Run » est utilisé, quand la signature est déclenchée, le script tentera d'exécuter (utilisant un statement `require_once`) un script PHP externe, spécifié par la valeur de `[Param]` (le répertoire de travail devrait être le répertoire « /vault/ » du script).
+Si « Run » est utilisé, quand la signature est déclenchée, le script tentera d'exécuter (utilisant un statement `require_once`) un script PHP externe, spécifié par la valeur de `[Param]` (le répertoire de travail devrait être le répertoire « /vault/ » du script).
 
 Exemple : `127.0.0.0/8 Run example.php`
 
 Cela peut être utile si vous voulez exécuter du code PHP spécifique pour certaines adresses IP et/ou CIDRs spécifiques.
 
-Si « Whitelist » est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et de briser la fonction du test. `[Param]` est ignorée. Cette fonction est l'équivalent de mettre une adresse IP ou CIDR particulière sur un whitelist pour empêcher la détection.
+Si « Whitelist » est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et de briser la fonction du test. `[Param]` est ignorée. Cette fonction est l'équivalent de mettre une adresse IP ou CIDR particulière sur un whitelist pour empêcher la détection.
 
 Exemple : `127.0.0.1/32 Whitelist`
 
-Si « Greylist » est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et passer au fichier de signatures suivant pour continuer le traitement. `[Param]` est ignorée.
+Si « Greylist » est utilisé, quand la signature est déclenchée, le script réinitialise toutes les détections (s'il y a eu des détections) et passer au fichier de signatures suivant pour continuer le traitement. `[Param]` est ignorée.
 
 Exemple : `127.0.0.1/32 Greylist`
 
-Si « Deny » est utilisé, quand la signature est déclenchée, en supposant qu'aucune signature whitelist a été déclenchée pour l'adresse IP donnée et/ou CIDR donnée, accès à la page protégée sera refusée. « Deny » est ce que vous aurez envie d'utiliser d'effectivement bloquer une adresse IP et/ou CIDR. Quand quelconque les signatures sont déclenchées que faire usage de « Deny », la page « Access Denied » du script seront générés et la demande à la page protégée tué.
+Si « Deny » est utilisé, quand la signature est déclenchée, en supposant qu'aucune signature whitelist a été déclenchée pour l'adresse IP donnée et/ou CIDR donnée, accès à la page protégée sera refusée. « Deny » est ce que vous aurez envie d'utiliser d'effectivement bloquer une adresse IP et/ou CIDR. Quand quelconque les signatures sont déclenchées que faire usage de « Deny », la page « Access Denied » du script seront générés et la demande à la page protégée tué.
 
-La valeur de `[Param]` accepté par « Deny » seront traitées au la sortie de la page « Accès Refusé », fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple « Je ne veux tu pas sur mon site »), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
+La valeur de `[Param]` accepté par « Deny » seront traitées au la sortie de la page « Accès Refusé », fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple « Je ne veux tu pas sur mon site »), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
 
-Les explications pré-préparés avoir le support de L10N et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de « Deny » sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le support de L10N et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
+Les explications pré-préparés avoir le support de L10N et peut être traduit par le script sur la base de la langue que vous spécifiez à la directive `lang` de la configuration du script. En outre, vous pouvez demander le script d'ignorer signatures de « Deny » sur la base de leur valeur de `[Param]` (s'ils utilisent ces mots courts) par les directives indiquées par la configuration du script (chaque mot court a une directive correspondante à traiter les signatures correspondant ou d'ignorer les). Les valeurs de `[Param]` qui ne pas utiliser ces mots courts, toutefois, n'avoir pas le support de L10N et donc ne seront PAS traduits par le script, et en outre, ne sont pas directement contrôlables par la configuration du script.
 
 Les mots courts disponibles sont:
 - Bogon
@@ -496,7 +496,7 @@ Les mots courts disponibles sont:
 
 #### 7.1 BALISES
 
-Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant une « balise de section » immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures (voir l'exemple ci-dessous).
+Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant une « balise de section » immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures (voir l'exemple ci-dessous).
 
 ```
 # Section 1.
@@ -508,7 +508,7 @@ Si vous voulez partager vos signatures personnalisées en sections individuelles
 Tag: Section 1
 ```
 
-Pour briser les balises de section et assurer que les balises ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre balise et vos sections précédent. Toutes les signatures non balisé sera par défaut soit « IPv4 » ou « IPv6 » (en fonction de quels types de signatures sont déclenchés).
+Pour briser les balises de section et assurer que les balises ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre balise et vos sections précédent. Toutes les signatures non balisé sera par défaut soit « IPv4 » ou « IPv6 » (en fonction de quels types de signatures sont déclenchés).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -519,9 +519,9 @@ Pour briser les balises de section et assurer que les balises ne sont pas identi
 Tag: Section 1
 ```
 
-Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront balisés comme « IPv4 », tandis que `4.5.6.7/32` et `5.6.7.8/32` seront balisés comme « Section 1 ».
+Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront balisés comme « IPv4 », tandis que `4.5.6.7/32` et `5.6.7.8/32` seront balisés comme « Section 1 ».
 
-Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les balises de section, vous pouvez utiliser une « balise d'expiration » à spécifier quand les signatures doivent cesser d'être valide. Les balises d'expiration utilisent le format « AAAA.MM.JJ » (voir l'exemple ci-dessous).
+Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les balises de section, vous pouvez utiliser une « balise d'expiration » à spécifier quand les signatures doivent cesser d'être valide. Les balises d'expiration utilisent le format « AAAA.MM.JJ » (voir l'exemple ci-dessous).
 
 ```
 # Section 1.
@@ -549,7 +549,7 @@ L'utilisation de YAML dans les fichiers de signature est entièrement facultativ
 
 Note : L'implémentation de YAML dans CIDRAM est très simpliste et très limitée ; L'intention est de satisfaire aux exigences spécifiques à CIDRAM d'une manière qui a la familiarité de YAML, mais ne suit pas et ne sont pas conformes aux spécifications officielles (et ne sera donc pas se comporter de la même manière que des implémentations plus approfondies ailleurs, et peuvent ne pas convenir à d'autres projets ailleurs).
 
-Dans CIDRAM, segments YAML sont identifiés au script par trois tirets (« --- »), et terminer aux côtés de leur contenant sections de signature par sauts de ligne double. Un segment YAML typique dans une section de signatures se compose de trois tirets sur une ligne immédiatement après la liste des CIDRs et des balises, suivi d'une liste de bidimensionnelle paires clé-valeur (première dimension, catégories de directives de configuration ; deuxième dimension, directives de configuration) pour les directives de configuration que doivent être modifiés (et pour quelles valeurs) chaque fois qu'une signature dans cette section de signatures est déclenchée (voir les exemples ci-dessous).
+Dans CIDRAM, segments YAML sont identifiés au script par trois tirets (« --- »), et terminer aux côtés de leur contenant sections de signature par sauts de ligne double. Un segment YAML typique dans une section de signatures se compose de trois tirets sur une ligne immédiatement après la liste des CIDRs et des balises, suivi d'une liste de bidimensionnelle paires clé-valeur (première dimension, catégories de directives de configuration ; deuxième dimension, directives de configuration) pour les directives de configuration que doivent être modifiés (et pour quelles valeurs) chaque fois qu'une signature dans cette section de signatures est déclenchée (voir les exemples ci-dessous).
 
 ```
 # Foobar 1.
@@ -596,11 +596,11 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-##### 7.2.1 COMMENT « SPÉCIALEMENT MARQUER » LES SECTIONS DE SIGNATURE POUR L'UTILISATION AVEC reCAPTCHA
+##### 7.2.1 COMMENT « SPÉCIALEMENT MARQUER » LES SECTIONS DE SIGNATURE POUR L'UTILISATION AVEC reCAPTCHA
 
-Quand « usemode » est 0 ou 1, les sections de signature ne doivent pas être « spécialement marqué » pour l'utilisation avec reCAPTCHA (parce qu'ils déjà seront ou non utiliser reCAPTCHA, en fonction de ce paramètre).
+Quand « usemode » est 0 ou 1, les sections de signature ne doivent pas être « spécialement marqué » pour l'utilisation avec reCAPTCHA (parce qu'ils déjà seront ou non utiliser reCAPTCHA, en fonction de ce paramètre).
 
-Quand « usemode » est 2, à « spécialement marquer » les sections de signature pour l'utilisation avec reCAPTCHA, une entrée est incluse dans le segment de YAML pour cette section de signatures (voir l'exemple ci-dessous).
+Quand « usemode » est 2, à « spécialement marquer » les sections de signature pour l'utilisation avec reCAPTCHA, une entrée est incluse dans le segment de YAML pour cette section de signatures (voir l'exemple ci-dessous).
 
 ```
 # Cette section utilisera reCAPTCHA.
@@ -612,7 +612,7 @@ recaptcha:
  enabled: true
 ```
 
-Note : Une instance de reCAPTCHA sera SEULEMENT présenté à l'utilisateur si reCAPTCHA est activé (soit avec « usemode » comme 1, ou « usemode » comme 2 avec « enabled » comme true), et si exactement UNE signature a été déclenchée (ni plus ni moins ; si plusieurs signatures sont déclenchées, une instance de reCAPTCHA NE SERA PAS présenté).
+Note : Une instance de reCAPTCHA sera SEULEMENT présenté à l'utilisateur si reCAPTCHA est activé (soit avec « usemode » comme 1, ou « usemode » comme 2 avec « enabled » comme true), et si exactement UNE signature a été déclenchée (ni plus ni moins ; si plusieurs signatures sont déclenchées, une instance de reCAPTCHA NE SERA PAS présenté).
 
 #### 7.3 AUXILIAIRE
 
@@ -629,29 +629,29 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 
 ### 8. <a name="SECTION8"></a>QUESTIONS FRÉQUEMMENT POSÉES (FAQ)
 
-#### Qu'est-ce qu'une « signature » ?
+#### Qu'est-ce qu'une « signature » ?
 
-Dans le contexte du CIDRAM, une « signature » désigne les données qui servent d'indicateur ou d'identifiant pour quelque chose de spécifique que nous chercher, habituellement une adresse IP ou CIDR, et inclures des instructions pour CIDRAM, indiquant la meilleure façon de répondre quand il rencontre ce que nous chercher. Une signature typique pour CIDRAM ressemble à ceci :
+Dans le contexte du CIDRAM, une « signature » désigne les données qui servent d'indicateur ou d'identifiant pour quelque chose de spécifique que nous chercher, habituellement une adresse IP ou CIDR, et inclures des instructions pour CIDRAM, indiquant la meilleure façon de répondre quand il rencontre ce que nous chercher. Une signature typique pour CIDRAM ressemble à ceci :
 
 `1.2.3.4/32 Deny Generic`
 
-Souvent (mais pas toujours), les signatures seront regroupées en groupes, formant des « sections de signatures », souvent accompagné de commentaires, de balisage et/ou de métadonnées connexes qui peuvent être utilisées pour fournir un contexte supplémentaire pour les signatures et/ou d'autres instructions.
+Souvent (mais pas toujours), les signatures seront regroupées en groupes, formant des « sections de signatures », souvent accompagné de commentaires, de balisage et/ou de métadonnées connexes qui peuvent être utilisées pour fournir un contexte supplémentaire pour les signatures et/ou d'autres instructions.
 
-#### <a name="WHAT_IS_A_CIDR"></a>Qu'est-ce qu'un « CIDR » ?
+#### <a name="WHAT_IS_A_CIDR"></a>Qu'est-ce qu'un « CIDR » ?
 
-« CIDR » est un acronyme pour « Classless Inter-Domain Routing » *[[1](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, et c'est l'acronyme utilisé dans le nom de ce paquet, « CIDRAM », qui est un acronyme pour « Classless Inter-Domain Routing Access Manager ».
+« CIDR » est un acronyme pour « Classless Inter-Domain Routing » *[[1](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, et c'est l'acronyme utilisé dans le nom de ce paquet, « CIDRAM », qui est un acronyme pour « Classless Inter-Domain Routing Access Manager ».
 
-Toutefois, dans le contexte du CIDRAM (tel que, au sein de cette documentation, dans les discussions relatives au CIDRAM, ou dans les données linguistiques para CIDRAM), chaque fois qu'un « CIDR » (singulier) ou « CIDRs » (pluriel) est mentionné (et ainsi, par lequel nous utilisons ces mots comme noms dans leur propre droit, par opposition aux acronymes), ce que l'on veut dire signifie un sous-réseau (ou sous-réseaux), exprimé en utilisant la notation CIDR. La raison pour laquelle CIDR (ou CIDRs) est utilisé à la place du sous-réseau (ou sous-réseaux) est de préciser qu'il s'agit spécifiquement de sous-réseaux exprimés à l'aide de la notation CIDR à laquelle on se réfère (parce que la notation CIDR n'est qu'une des différentes façons dont les sous-réseaux peuvent être exprimés). CIDRAM pourrait donc être considéré comme un « gestionnaire d'accès au sous-réseaux ».
+Toutefois, dans le contexte du CIDRAM (tel que, au sein de cette documentation, dans les discussions relatives au CIDRAM, ou dans les données linguistiques para CIDRAM), chaque fois qu'un « CIDR » (singulier) ou « CIDRs » (pluriel) est mentionné (et ainsi, par lequel nous utilisons ces mots comme noms dans leur propre droit, par opposition aux acronymes), ce que l'on veut dire signifie un sous-réseau (ou sous-réseaux), exprimé en utilisant la notation CIDR. La raison pour laquelle CIDR (ou CIDRs) est utilisé à la place du sous-réseau (ou sous-réseaux) est de préciser qu'il s'agit spécifiquement de sous-réseaux exprimés à l'aide de la notation CIDR à laquelle on se réfère (parce que la notation CIDR n'est qu'une des différentes façons dont les sous-réseaux peuvent être exprimés). CIDRAM pourrait donc être considéré comme un « gestionnaire d'accès au sous-réseaux ».
 
-Bien que cette double signification de « CIDR » puisse présenter une certaine ambiguïté dans certains cas, cette explication, accompagné par le contexte fourni, devrait aider à résoudre une telle ambiguïté.
+Bien que cette double signification de « CIDR » puisse présenter une certaine ambiguïté dans certains cas, cette explication, accompagné par le contexte fourni, devrait aider à résoudre une telle ambiguïté.
 
-#### Qu'est-ce qu'un « faux positif » ?
+#### Qu'est-ce qu'un « faux positif » ?
 
-Le terme « faux positif » (*alternativement : « erreur faux positif » ; « fausse alarme »* ; Anglais : *false positive* ; *false positive error* ; *false alarm*), décrit très simplement, et dans un contexte généralisé, est utilisé lors de tester pour une condition, de se référer aux résultats de ce test, lorsque les résultats sont positifs (c'est à dire, lorsque la condition est déterminée comme étant « positif », ou « vrai »), mais ils devraient être (ou aurait dû être) négatif (c'est à dire, lorsque la condition, en réalité, est « négatif », ou « faux »). Un « faux positif » pourrait être considérée comme analogue à « crier au loup » (où la condition testée est de savoir s'il y a un loup près du troupeau, la condition est « faux » en ce que il n'y a pas de loup près du troupeau, et la condition est signalé comme « positif » par le berger par voie de crier « loup ! loup ! »), ou analogues à des situations dans des tests médicaux dans lequel un patient est diagnostiqué comme ayant une maladie, alors qu'en réalité, ils ont pas une telle maladie.
+Le terme « faux positif » (*alternativement : « erreur faux positif » ; « fausse alarme »* ; Anglais : *false positive* ; *false positive error* ; *false alarm*), décrit très simplement, et dans un contexte généralisé, est utilisé lors de tester pour une condition, de se référer aux résultats de ce test, lorsque les résultats sont positifs (c'est à dire, lorsque la condition est déterminée comme étant « positif », ou « vrai »), mais ils devraient être (ou aurait dû être) négatif (c'est à dire, lorsque la condition, en réalité, est « négatif », ou « faux »). Un « faux positif » pourrait être considérée comme analogue à « crier au loup » (où la condition testée est de savoir s'il y a un loup près du troupeau, la condition est « faux » en ce que il n'y a pas de loup près du troupeau, et la condition est signalé comme « positif » par le berger par voie de crier « loup ! loup ! »), ou analogues à des situations dans des tests médicaux dans lequel un patient est diagnostiqué comme ayant une maladie, alors qu'en réalité, ils ont pas une telle maladie.
 
-Résultats connexes lors de tester pour une condition peut être décrit en utilisant les termes « vrai positif », « vrai négatif » et « faux négatif ». Un « vrai positif » se réfère à quand les résultats du test et l'état actuel de la condition sont tous deux vrai (ou « positif »), and a « vrai négatif » se réfère à quand les résultats du test et l'état actuel de la condition sont tous deux faux (ou « négatif »); Un « vrai positif » ou « vrai négatif » est considéré comme une « inférence correcte ». L'antithèse d'un « faux positif » est un « faux négatif » ; Un « faux négatif » se réfère à quand les résultats du test are négatif (c'est à dire, la condition est déterminée comme étant « négatif », ou « faux »), mais ils devraient être (ou aurait dû être) positif (c'est à dire, la condition, en réalité, est « positif », ou « vrai »).
+Résultats connexes lors de tester pour une condition peut être décrit en utilisant les termes « vrai positif », « vrai négatif » et « faux négatif ». Un « vrai positif » se réfère à quand les résultats du test et l'état actuel de la condition sont tous deux vrai (ou « positif »), and a « vrai négatif » se réfère à quand les résultats du test et l'état actuel de la condition sont tous deux faux (ou « négatif »); Un « vrai positif » ou « vrai négatif » est considéré comme une « inférence correcte ». L'antithèse d'un « faux positif » est un « faux négatif » ; Un « faux négatif » se réfère à quand les résultats du test are négatif (c'est à dire, la condition est déterminée comme étant « négatif », ou « faux »), mais ils devraient être (ou aurait dû être) positif (c'est à dire, la condition, en réalité, est « positif », ou « vrai »).
 
-Dans le contexte de CIDRAM, ces termes réfèrent à les signatures de CIDRAM et que/qui ils bloquent. Quand CIDRAM bloque une adresse IP en raison du mauvais, obsolète ou signatures incorrectes, mais ne devrait pas l'avoir fait, ou quand il le fait pour les mauvaises raisons, nous référons à cet événement comme un « faux positif ». Quand CIDRAM ne parvient pas à bloquer une adresse IP qui aurait dû être bloqué, en raison de menaces imprévues, signatures manquantes ou déficits dans ses signatures, nous référons à cet événement comme un « détection manquée » ou « missed detection » (qui est analogue à un « faux négatif »).
+Dans le contexte de CIDRAM, ces termes réfèrent à les signatures de CIDRAM et que/qui ils bloquent. Quand CIDRAM bloque une adresse IP en raison du mauvais, obsolète ou signatures incorrectes, mais ne devrait pas l'avoir fait, ou quand il le fait pour les mauvaises raisons, nous référons à cet événement comme un « faux positif ». Quand CIDRAM ne parvient pas à bloquer une adresse IP qui aurait dû être bloqué, en raison de menaces imprévues, signatures manquantes ou déficits dans ses signatures, nous référons à cet événement comme un « détection manquée » ou « missed detection » (qui est analogue à un « faux négatif »).
 
 Ceci peut être résumé par le tableau ci-dessous :
 
@@ -682,11 +682,11 @@ CIDRAM fournit un moyen pour les propriétaires de sites Web de bloquer le trafi
 
 #### Je veux utiliser CIDRAM avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?
 
-Non. PHP 5.4.0 a atteint officiellement l'EoL (« End of Life », ou fin de vie) en 2014, et le support étendu en matière de sécurité a pris fin en 2015. À la date d'écriture, il est 2017, et PHP 7.1.0 est déjà disponible. À l'heure actuelle, le support est fourni pour l'utilisation de CIDRAM avec PHP 5.4.0 et toutes les nouvelles versions PHP disponibles, mais si vous essayez d'utiliser CIDRAM avec les anciennes versions PHP, le support ne sera pas fourni.
+Non. PHP 5.4.0 a atteint officiellement l'EoL (« End of Life », ou fin de vie) en 2014, et le support étendu en matière de sécurité a pris fin en 2015. À la date d'écriture, il est 2017, et PHP 7.1.0 est déjà disponible. À l'heure actuelle, le support est fourni pour l'utilisation de CIDRAM avec PHP 5.4.0 et toutes les nouvelles versions PHP disponibles, mais si vous essayez d'utiliser CIDRAM avec les anciennes versions PHP, le support ne sera pas fourni.
 
 #### Puis-je utiliser une seule installation de CIDRAM pour protéger plusieurs domaines ?
 
-Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations CIDRAM protégeant un seul domaine comme « installations à un seul domaine » (« single-domain installations »), et nous référons aux installations CIDRAM protégeant plusieurs domaines et/ou sous-domaines comme « installations multi-domaines » (« multi-domain installations »). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de CIDRAM pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), CIDRAM vérifiera l'existence d'un « fichier de substitution de configuration » spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour CIDRAM, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la demande ; « www » est ignoré.
+Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations CIDRAM protégeant un seul domaine comme « installations à un seul domaine » (« single-domain installations »), et nous référons aux installations CIDRAM protégeant plusieurs domaines et/ou sous-domaines comme « installations multi-domaines » (« multi-domain installations »). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de CIDRAM pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), CIDRAM vérifiera l'existence d'un « fichier de substitution de configuration » spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour CIDRAM, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la demande ; « www » est ignoré.
 
 #### Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site ; Puis-je vous payer pour tout faire pour moi ?
 
@@ -706,9 +706,9 @@ Oui. Notre licence ne l'interdit pas.
 
 #### Je veux contribuer au projet ; Puis-je faire cela ?
 
-Oui. Les contributions au projet sont les bienvenues. Voir « CONTRIBUTING.md » pour plus d'informations.
+Oui. Les contributions au projet sont les bienvenues. Voir « CONTRIBUTING.md » pour plus d'informations.
 
-#### Valeurs recommandées pour « ipaddr ».
+#### Valeurs recommandées pour « ipaddr ».
 
 Valeur | En utilisant
 ---|---

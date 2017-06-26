@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.06.03).
+ * This file: Configuration handler (last modified: 2017.06.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,7 +123,6 @@ foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyC
         }
     }
 }
-reset($CIDRAM['Config']['Config Defaults']);
 unset($CIDRAM['Config']['Temp']);
 
 /** Failsafe for weird ipaddr configuration. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.06.21).
+ * This file: Front-end handler (last modified: 2017.06.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -692,7 +692,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     $CIDRAM['FE']['ActiveConfigFile'] = !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
-    reset($CIDRAM['Config']['Config Defaults']);
     $CIDRAM['FE']['ConfigFields'] = $CIDRAM['RegenerateConfig'] = '';
     $CIDRAM['ConfigModified'] = (!empty($CIDRAM['QueryVars']['updated']) && $CIDRAM['QueryVars']['updated'] === 'true');
     foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['CatKey'] => $CIDRAM['CatValue']) {
@@ -1372,7 +1371,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         'Out' => array()
     );
 
-    reset($CIDRAM['Components']['Meta']);
     /** Prepare installed component metadata and options for display. */
     foreach ($CIDRAM['Components']['Meta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {
         if (empty($CIDRAM['Components']['ThisComponent']['Name'])) {
@@ -1649,7 +1647,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         }
     }
 
-    reset($CIDRAM['Components']['RemoteMeta']);
     /** Prepare newly found component metadata and options for display. */
     foreach ($CIDRAM['Components']['RemoteMeta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {
         if (

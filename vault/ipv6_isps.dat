@@ -144,7 +144,9 @@ recaptcha:
 
 
 # ASN 24203 ("PT Excelcomindo Pratama").
-# Updated: 2016.03.02 / Checked: 2017.01.05
+# %Listed, CleanTalk.org: 6.54%.
+# Stop Forum Spam (SFS) listings: 174.
+# Updated: 2016.03.02 / Checked: 2017.07.06
 
 2400:9800::/32 Deny Spam
 Tag: PT Excelcomindo
@@ -154,11 +156,14 @@ recaptcha:
 
 
 # ASN 31080 ("o2 Sp. Z.o.o").
-# %Listed, Google Malware Dashboard: 0.50%.
-# Updated: 2016.01.18 / Checked: 2017.01.05
+# %Listed, Google Malware Dashboard: 0.38%.
+# Updated: 2016.01.18 / Checked: 2017.07.06
 
 2001:67c:25c4::/48 Deny Generic
 Tag: AS31080
+---
+recaptcha:
+ enabled: true
 
 
 # ASN 6870 ("H1 LLC").
@@ -952,13 +957,13 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom"). Note: Not "PJSC Vimpelcom" (just dealing with the one ASN at the moment).
-# %Listed, Google Malware Dashboard: 0.64%.
-# %Listed, CleanTalk.org: 15.96%.
-# %Listed, abuseat.org (CBL-Listed): 0.18%.
-# Stop Forum Spam (SFS) listings: 38,203.
+# %Listed, Google Malware Dashboard: 0.48%.
+# %Listed, CleanTalk.org: 15.70%.
+# %Listed, abuseat.org (CBL-Listed): 0.19%.
+# Stop Forum Spam (SFS) listings: 37,405.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.06.08
+# Updated: 2017.06.08 / Checked: 2017.07.06
 
 2a00:18c0::/32 Deny Generic
 Tag: OJSC Vimpelcom

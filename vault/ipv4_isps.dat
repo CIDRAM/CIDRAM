@@ -345,8 +345,10 @@ recaptcha:
 
 
 # ASN 26658 ("HT").
-# %Listed, Google Malware Dashboard: 11.77%.
-# Updated: 2017.01.09
+# %Listed, Google Malware Dashboard: 12.76%.
+# %Listed, CleanTalk.org: 64.75%.
+# Stop Forum Spam (SFS) listings: 558.
+# Updated: 2017.07.08
 
 14.192.20.0/22 Deny Generic
 27.0.156.0/22 Deny Generic
@@ -369,6 +371,7 @@ recaptcha:
 103.4.20.0/22 Deny Generic
 103.4.24.0/22 Deny Generic
 103.10.172.0/22 Deny Generic
+103.12.48.0/22 Deny Generic
 103.21.8.0/22 Deny Generic
 103.35.76.0/22 Deny Generic
 103.35.184.0/22 Deny Generic
@@ -399,12 +402,17 @@ recaptcha:
 103.212.72.0/22 Deny Generic
 103.219.80.0/22 Deny Generic
 103.236.216.0/22 Deny Generic
+104.128.112.0/20 Deny Generic
 104.232.64.0/20 Deny Generic
 104.232.96.0/20 Deny Generic
 104.243.128.0/20 Deny Generic
+107.178.144.0/20 Deny Generic
+107.178.160.0/19 Deny Generic
 111.92.184.0/22 Deny Generic
+116.206.52.0/22 Deny Generic
 121.46.80.0/22 Deny Generic
 139.5.180.0/22 Deny Generic
+146.148.128.0/19 Deny Generic
 172.87.192.0/19 Deny Generic
 175.158.100.0/22 Deny Generic
 198.180.198.0/24 Deny Generic
@@ -428,8 +436,8 @@ recaptcha:
 
 
 # ASN 133618 ("Trellian Pty. Limited").
-# %Listed, Google Malware Dashboard: 8.25%.
-# Updated: 2016.03.16 / Checked: 2017.01.09
+# %Listed, Google Malware Dashboard: 2.77%.
+# Updated: 2016.03.16 / Checked: 2017.07.08
 
 103.224.182.0/23 Deny Generic
 103.224.212.0/23 Deny Generic
@@ -1008,17 +1016,25 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# %Listed, Google Malware Dashboard: 2.47%.
-# Updated: 2017.01.09
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
+# %Listed, Google Malware Dashboard: 1.26%.
+# %Listed, CleanTalk.org: 35.65%.
+# Stop Forum Spam (SFS) listings: 203.
+# Updated: 2017.07.08
 
 31.192.208.0/21 Deny Generic
 89.43.28.0/22 Deny Generic
 89.43.64.0/22 Deny Generic
+89.252.160.0/20 Deny Generic
+89.252.176.0/22 Deny Generic
+89.252.180.0/24 Deny Generic
+89.252.188.0/22 Deny Generic
 91.227.4.0/23 Deny Generic
 91.227.6.0/24 Deny Generic
 91.229.35.0/24 Deny Generic
 91.229.44.0/23 Deny Generic
+93.113.60.0/22 Deny Generic
+93.115.76.0/24 Deny Generic
 94.102.0.0/20 Deny Generic
 95.173.160.0/19 Deny Generic
 159.253.32.0/20 Deny Generic
@@ -1026,8 +1042,13 @@ Tag: Hetzner Online GmbH
 185.95.84.0/22 Deny Generic
 185.106.208.0/22 Deny Generic
 185.126.216.0/22 Deny Generic
+185.137.180.0/24 Deny Generic
 185.146.88.0/22 Deny Generic
 185.149.100.0/22 Deny Generic
+185.174.28.0/22 Deny Generic
+185.195.76.0/22 Deny Generic
+185.210.92.0/23 Deny Generic
+185.210.94.0/24 Deny Generic
 Tag: AS51559
 
 
@@ -1936,12 +1957,22 @@ recaptcha:
 
 
 # ASN 49981 ("WorldStream").
-# %Listed, Google Malware Dashboard: 9.04%.
-# Updated: 2017.01.09
+# %Listed, Google Malware Dashboard: 4.56%.
+# %Listed, CleanTalk.org: 43.41%.
+# %Listed, abuseat.org (CBL-Listed): 3.53%.
+# Stop Forum Spam (SFS) listings: 6,925.
+# Updated: 2017.07.08
 
+5.188.76.0/22 Deny Generic
+5.188.80.0/21 Deny Generic
+5.188.88.0/22 Deny Generic
+5.188.165.0/24 Deny Generic
+5.188.166.0/23 Deny Generic
 5.188.232.0/24 Deny Generic
 62.112.8.0/22 Deny Generic
 86.105.18.0/24 Deny Generic
+89.38.96.0/22 Deny Generic
+89.39.104.0/22 Deny Generic
 89.42.212.0/24 Deny Generic
 91.191.184.0/24 Deny Generic
 91.193.75.0/24 Deny Generic
@@ -1952,18 +1983,33 @@ recaptcha:
 91.229.23.0/24 Deny Generic
 91.232.105.0/24 Deny Generic
 92.63.195.0/24 Deny Generic
+93.88.74.0/24 Deny Generic
 93.119.123.0/24 Deny Generic
 93.170.77.0/24 Deny Generic
 93.190.136.0/21 Deny Generic
 94.177.12.0/24 Deny Generic
 95.156.251.0/24 Deny Generic
-103.44.75.0/24 Deny Generic
 109.236.80.0/20 Deny Generic
 154.16.17.0/24 Deny Generic
 154.16.37.0/24 Deny Generic
+154.16.104.0/24 Deny Generic
+154.16.106.0/24 Deny Generic
 154.16.195.0/24 Deny Generic
 176.61.129.0/24 Deny Generic
+178.132.0.0/21 Deny Generic
+178.171.32.0/22 Deny Generic
+178.171.36.0/23 Deny Generic
+178.171.38.0/24 Deny Generic
+178.171.40.0/21 Deny Generic
+178.171.76.0/22 Deny Generic
+178.171.80.0/22 Deny Generic
+178.171.92.0/23 Deny Generic
+178.171.94.0/24 Deny Generic
+178.171.100.0/22 Deny Generic
+178.171.104.0/21 Deny Generic
+178.171.112.0/20 Deny Generic
 185.2.80.0/22 Deny Generic
+185.11.217.0/24 Deny Generic
 185.21.60.0/22 Deny Generic
 185.28.38.0/24 Deny Generic
 185.73.112.0/24 Deny Generic
@@ -1972,11 +2018,16 @@ recaptcha:
 185.105.192.0/22 Deny Generic
 185.145.45.0/24 Deny Generic
 185.162.9.0/24 Deny Generic
+185.162.11.0/24 Deny Generic
 185.169.235.0/24 Deny Generic
-191.101.243.0/24 Deny Generic
+185.191.0.0/22 Deny Generic
+188.208.142.0/24 Deny Generic
+191.96.185.0/24 Deny Generic
 191.101.250.0/23 Deny Generic
 192.71.151.0/24 Deny Generic
 193.200.164.0/24 Deny Generic
+193.233.160.0/24 Deny Generic
+194.88.104.0/22 Deny Generic
 195.128.184.0/23 Deny Generic
 198.105.117.0/24 Deny Generic
 217.23.0.0/20 Deny Generic
@@ -1993,9 +2044,11 @@ Tag: INFOKOM Ltd
 
 
 # ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 1.14%.
-# Updated: 2017.01.09
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
+# %Listed, Google Malware Dashboard: 0.85%.
+# %Listed, CleanTalk.org: 18.03%.
+# Stop Forum Spam (SFS) listings: 414.
+# Updated: 2017.07.08
 
 37.17.232.0/21 Deny Generic
 77.109.128.0/18 Deny Generic
@@ -2016,7 +2069,10 @@ Tag: INFOKOM Ltd
 185.85.248.0/22 Deny Generic
 185.137.172.0/22 Deny Generic
 185.164.184.0/24 Deny Generic
-193.47.153.0/24 Deny Generic
+185.182.24.0/24 Deny Generic
+185.185.200.0/22 Deny Generic
+185.198.204.0/23 Deny Generic
+185.203.112.0/22 Deny Generic
 193.202.106.0/24 Deny Generic
 193.222.255.0/24 Deny Generic
 193.223.80.0/20 Deny Generic
@@ -2030,7 +2086,8 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2017.01.09
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3672
+# Updated: 2017.01.09 / Checked: 2017.07.08
 
 46.174.190.0/23 Deny Generic
 185.10.208.0/22 Deny Generic
@@ -2171,7 +2228,8 @@ Tag: 10dencehispahard
 
 
 # ASN 62540 ("Drake Holdings LLC").
-# Updated: 2016.04.25 / Checked: 2017.01.09
+# %Listed, CleanTalk.org: 95.53%.
+# Updated: 2016.04.25 / Checked: 2017.07.08
 
 192.92.196.0/24 Deny Generic
 204.79.180.0/24 Deny Generic
@@ -3043,12 +3101,30 @@ recaptcha:
 Tag: ALEXHOST SRL
 
 
-# ASN 202619 ("PHOENIX LLC").
-# Scans for vulnerable routers for exploitation.
-# Updated: 2017.01.30
+# ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
+# Updated: 2017.07.08
 
-185.159.36.0/22 Deny Generic
-Tag: PHOENIX LLC
+23.235.232.0/21 Deny Generic
+37.140.232.0/21 Deny Generic
+45.59.24.0/24 Deny Generic
+63.246.124.0/23 Deny Generic
+64.38.214.0/23 Deny Generic
+66.78.18.0/23 Deny Generic
+67.220.249.0/24 Deny Generic
+67.220.253.0/24 Deny Generic
+67.220.254.0/24 Deny Generic
+103.44.108.0/24 Deny Generic
+107.150.220.0/23 Deny Generic
+131.153.16.0/21 Deny Generic
+131.153.40.0/23 Deny Generic
+172.98.169.0/24 Deny Generic
+172.98.179.0/24 Deny Generic
+185.28.188.0/22 Deny Generic
+185.52.52.0/22 Deny Generic
+185.56.136.0/22 Deny Generic
+185.62.36.0/22 Deny Generic
+209.182.105.0/24 Deny Generic
+Tag: PHOENIX NAP, LLC
 
 
 # ASN 34300 ("JSC Internet-Cosmos").
@@ -6382,6 +6458,95 @@ recaptcha:
 195.46.168.0/24 Deny Generic
 213.234.192.0/18 Deny Generic
 Tag: OJSC Vimpelcom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 3255: State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
+#   Institute for Condensed Matter Physics of the National Academy of Science of Ukraine (UARNet).
+# %Listed, Google Malware Dashboard: 1.36%.
+# %Listed, CleanTalk.org: 22.12%.
+# Stop Forum Spam (SFS) listings: 367.
+# Updated: 2017.07.08
+
+69.168.237.0/24 Deny Spam
+69.168.239.0/24 Deny Spam
+91.226.5.0/24 Deny Spam
+91.237.241.0/24 Deny Spam
+91.237.242.0/24 Deny Spam
+176.125.32.0/19 Deny Spam
+185.17.124.0/23 Deny Spam
+185.17.126.0/24 Deny Spam
+193.41.184.0/22 Deny Spam
+193.232.65.0/24 Deny Spam
+194.44.0.0/16 Deny Spam
+213.174.0.0/23 Deny Spam
+213.174.2.0/24 Deny Spam
+213.174.4.0/22 Deny Spam
+213.174.8.0/21 Deny Spam
+213.174.20.0/23 Deny Spam
+213.174.22.0/24 Deny Spam
+217.65.248.0/24 Deny Spam
+217.65.255.0/24 Deny Spam
+Tag: UARNet
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 44493 ("Chelyabinsk-Signal").
+# %Listed, Google Malware Dashboard: 0.35%.
+# %Listed, CleanTalk.org: 37.35%.
+# Stop Forum Spam (SFS) listings: 131.
+# Updated: 2017.07.08
+
+176.105.200.0/21 Deny Spam
+176.105.208.0/21 Deny Spam
+176.105.220.0/22 Deny Spam
+Tag: Chelyabinsk-Signal
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 44775 ("Closed Joint Stock Company TransTeleCom").
+# %Listed, CleanTalk.org: 5.36%.
+# Stop Forum Spam (SFS) listings: 1,392.
+# Updated: 2017.07.08
+
+5.149.144.0/21 Deny Spam
+86.110.168.0/22 Deny Spam
+86.110.173.0/24 Deny Spam
+86.110.174.0/23 Deny Spam
+86.110.178.0/24 Deny Spam
+86.110.180.0/22 Deny Spam
+86.110.184.0/21 Deny Spam
+93.189.12.0/22 Deny Spam
+178.76.192.0/18 Deny Spam
+185.52.132.0/22 Deny Spam
+213.138.64.0/19 Deny Spam
+Tag: TransTeleCom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 51570 ('JSC "ER-Telecom Holding"').
+# %Listed, CleanTalk.org: 14.94%.
+# Stop Forum Spam (SFS) listings: 1,193.
+# Updated: 2017.07.08
+
+5.16.64.0/19 Deny Spam
+5.16.96.0/21 Deny Spam
+5.164.64.0/18 Deny Spam
+5.166.128.0/19 Deny Spam
+5.167.176.0/20 Deny Spam
+94.181.48.0/21 Deny Spam
+109.195.80.0/20 Deny Spam
+188.187.0.0/17 Deny Spam
+188.187.234.0/24 Deny Spam
+Tag: ER-Telecom Holding
 ---
 recaptcha:
  enabled: true

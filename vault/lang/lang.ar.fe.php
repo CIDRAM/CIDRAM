@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.06.21).
+ * This file: Arabic language data for the front-end (last modified: 2017.07.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,7 +65,7 @@ $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_clear'] = 'إلغاء';
 $CIDRAM['lang']['field_component'] = 'وحدة';
-$CIDRAM['lang']['field_create_new_account'] = 'خلق جديد حساب';
+$CIDRAM['lang']['field_create_new_account'] = 'إنشاء حساب جديد';
 $CIDRAM['lang']['field_deactivate'] = 'جعلها غير نشطة';
 $CIDRAM['lang']['field_delete_account'] = 'حذف حساب';
 $CIDRAM['lang']['field_delete_file'] = 'حذف';
@@ -137,31 +137,31 @@ $CIDRAM['lang']['previewer_weeks'] = 'أسابيع';
 $CIDRAM['lang']['previewer_years'] = 'سنوات';
 $CIDRAM['lang']['punct_decimals'] = '٫';
 $CIDRAM['lang']['punct_thousand'] = '٬';
-$CIDRAM['lang']['response_accounts_already_exists'] = 'حساب اسم المستخدم موجود بالفعل!';
-$CIDRAM['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!';
-$CIDRAM['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';
+$CIDRAM['lang']['response_accounts_already_exists'] = 'اسم المستخدم موجود بالفعل!';
+$CIDRAM['lang']['response_accounts_created'] = 'تم انشاء الحساب بنجاح!';
+$CIDRAM['lang']['response_accounts_deleted'] = 'تم حذف الحساب بنجاح!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'حساب غير موجود.';
-$CIDRAM['lang']['response_accounts_password_updated'] = 'كلمه السر التحديث بنجاح!';
+$CIDRAM['lang']['response_accounts_password_updated'] = 'تم تحديث كلمه السر بنجاح!';
 $CIDRAM['lang']['response_activated'] = 'نجحت في جعل نشطة';
 $CIDRAM['lang']['response_activation_failed'] = 'فشلت في جعله نشطة!';
 $CIDRAM['lang']['response_checksum_error'] = 'خطأ أختباري! تم رفض الملف!';
-$CIDRAM['lang']['response_component_successfully_installed'] = 'وحدة تم التثبيت بنجاح.';
-$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'وحدة إلغاء تثبيت بنجاح.';
-$CIDRAM['lang']['response_component_successfully_updated'] = 'وحدة تم التحديث بنجاح.';
+$CIDRAM['lang']['response_component_successfully_installed'] = 'تم تثبيت الوحدة بنجاح';
+$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'تم الغاء تثبيت الوحدة بنجاح';
+$CIDRAM['lang']['response_component_successfully_updated'] = 'تم تحديث الوحدة بنجاح';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة.';
 $CIDRAM['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث الوحدة.';
-$CIDRAM['lang']['response_configuration_updated'] = 'التكوين تحديثها بنجاح.';
+$CIDRAM['lang']['response_configuration_updated'] = 'تم تحديث التكوين بنجاح';
 $CIDRAM['lang']['response_deactivated'] = 'نجحت في جعل غير نشطة';
 $CIDRAM['lang']['response_deactivation_failed'] = 'فشلت في جعله غير نشطة!';
 $CIDRAM['lang']['response_delete_error'] = 'فشلت في حذف!';
-$CIDRAM['lang']['response_directory_deleted'] = 'دليل حذف بنجاح!';
-$CIDRAM['lang']['response_directory_renamed'] = 'الدليل إعادة تسمية بنجاح!';
+$CIDRAM['lang']['response_directory_deleted'] = 'تم حذف الدليل بنجاح!';
+$CIDRAM['lang']['response_directory_renamed'] = 'تم اعادة تسمية الدليل بنجاح!';
 $CIDRAM['lang']['response_error'] = 'خطأ';
 $CIDRAM['lang']['response_file_deleted'] = 'ملف حذف بنجاح!';
 $CIDRAM['lang']['response_file_edited'] = 'ملف تعديل بنجاح!';
 $CIDRAM['lang']['response_file_renamed'] = 'ملف إعادة تسمية بنجاح!';
 $CIDRAM['lang']['response_file_uploaded'] = 'ملف تحميلها بنجاح!';
-$CIDRAM['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخول! غير صالحة كلمه السر!';
+$CIDRAM['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخول! كلمة السر غير صالحة!';
 $CIDRAM['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
@@ -178,13 +178,13 @@ $CIDRAM['lang']['response_updates_unable_to_determine'] = 'غير قادر عل�
 $CIDRAM['lang']['response_upload_error'] = 'فشل لتحميل!';
 $CIDRAM['lang']['response_yes'] = 'نعم';
 $CIDRAM['lang']['state_complete_access'] = 'الوصول كامل';
-$CIDRAM['lang']['state_component_is_active'] = 'وحدة هو نشطا.';
-$CIDRAM['lang']['state_component_is_inactive'] = 'وحدة هو غير نشط.';
-$CIDRAM['lang']['state_component_is_provisional'] = 'وحدة هو جزئيا نشطا.';
+$CIDRAM['lang']['state_component_is_active'] = 'وحدة نشطة.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $CIDRAM['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
 $CIDRAM['lang']['state_logged_in'] = 'حاليا على.';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
-$CIDRAM['lang']['state_password_not_valid'] = 'تحذير: هذا الحساب لا يستخدم صالحة كلمه السر!';
+$CIDRAM['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة !';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';

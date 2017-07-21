@@ -226,6 +226,8 @@ Fichier | Description
 /vault/lang/lang.zh.fe.php | Données linguistiques en Chinois (simplifié) pour l'accès frontal.
 /vault/lang/lang.zh.php | Données linguistiques en Chinois (simplifié).
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/.travis.php | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
+/vault/.travis.yml | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
 /vault/cache.dat | Données du cache.
 /vault/cidramblocklists.dat | Contient des informations relatives aux listes facultatives pour les pays bloquants fournies par Macmathan ; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/cli.php | Module de CLI.
@@ -725,4 +727,4 @@ Valeur | En utilisant
 ---
 
 
-Dernière mise à jour : 6 Juillet 2017 (2017.07.06).
+Dernière mise à jour : 22 Juillet 2017 (2017.07.22).

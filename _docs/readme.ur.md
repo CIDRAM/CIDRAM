@@ -228,6 +228,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
+&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
 &nbsp; <div dir="rtl" style="display:inline;">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/cidramblocklists.dat
 &nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر.</div> | /vault/cli.php
@@ -816,4 +818,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 6 جولائی 2017 (2017.07.06).</div>
+<div dir="rtl">آخری تازہ کاری: 22 جولائی 2017 (2017.07.22).</div>

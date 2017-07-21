@@ -226,6 +226,8 @@ Tập tin | Chi tiết
 /vault/lang/lang.zh.fe.php | Dữ liệu tiếng Trung Quốc (giản thể) cho các front-end.
 /vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/.travis.php | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
+/vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
 /vault/cidramblocklists.dat | Chứa thông tin liên quan đến các danh sách chặn quốc gia tùy chọn được cung cấp bởi Macmathan; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/cli.php | Tập tin cho xử lý CLI.
@@ -725,4 +727,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Bảy 2017 (2017.07.06).
+Lần cuối cập nhật: 22 Tháng Bảy 2017 (2017.07.22).

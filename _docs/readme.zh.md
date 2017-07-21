@@ -227,6 +227,8 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 /vault/lang/lang.zh.fe.php | 中文（简体）前端语言数据。
 /vault/lang/lang.zh.php | 中文（简体）语言数据。
 /vault/.htaccess | 超文本访问文件（在这种情况，​以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/.travis.php | 由Travis CI用于测试（不需要为正确经营脚本）。
+/vault/.travis.yml | 由Travis CI用于测试（不需要为正确经营脚本）。
 /vault/cache.dat | 缓存数据。
 /vault/cidramblocklists.dat | 包含的相关信息关于由Macmathan提供的可选的国家阻止列表；由更新功能使用由前端提供。
 /vault/cli.php | CLI处理文件。
@@ -726,4 +728,4 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 ---
 
 
-最后更新：2017年7月6日。
+最后更新：2017年7月22日。

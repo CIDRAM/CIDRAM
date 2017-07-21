@@ -2349,8 +2349,10 @@ Tag: MBA DATACENTERS S.L
 
 
 # ASN 10439 ("CariNet, Inc").
-# %Listed, Google Malware Dashboard: 1.05%.
-# Updated: 2016.04.08 / Checked: 2017.01.24
+# %Listed, Google Malware Dashboard: 1.56%.
+# %Listed, CleanTalk.org: 14.38%.
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2016.04.08 / Checked: 2017.07.21
 
 2607:ff10::/32 Deny Cloud
 Tag: CariNet, Inc
@@ -2734,7 +2736,7 @@ Tag: Sia Nano IT
 
 # ASNs 7224, 14618, 16509, 38895 ("Amazon.com, Inc").
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2017.05.02
+# Updated: 2017.07.21
 
 2400:6500::/32 Deny Cloud
 2400:6700::/32 Deny Cloud
@@ -2759,17 +2761,40 @@ Tag: Sia Nano IT
 2406:daa0:a080::/44 Deny Cloud
 2406:daa0:a0c0::/44 Deny Cloud
 2406:daa0:c020::/44 Deny Cloud
-2406:daa0:c040::/44 Deny Cloud
-2406:daa0:c080::/44 Deny Cloud
-2406:daa0:c0c0::/44 Deny Cloud
+2600:9000:1022::/48 Deny Cloud
+2600:9000:1029::/48 Deny Cloud
+2600:9000:102a::/47 Deny Cloud
+2600:9000:1030::/47 Deny Cloud
+2600:9000:1040::/48 Deny Cloud
+2600:9000:1046::/48 Deny Cloud
+2600:9000:1049::/48 Deny Cloud
+2600:9000:107d::/48 Deny Cloud
+2600:9000:107e::/48 Deny Cloud
+2600:9000:2022::/48 Deny Cloud
+2600:9000:2029::/48 Deny Cloud
+2600:9000:202a::/47 Deny Cloud
+2600:9000:2030::/47 Deny Cloud
+2600:9000:2046::/48 Deny Cloud
+2600:9000:208a::/48 Deny Cloud
+2600:9000:208b::/48 Deny Cloud
+2600:9000:2097::/48 Deny Cloud
+2600:9000:2098::/48 Deny Cloud
+2600:9000:20a0::/48 Deny Cloud
+2600:9000:20b2::/48 Deny Cloud
+2600:9000:20fa::/48 Deny Cloud
+2600:9000:2115::/48 Deny Cloud
+2600:9000:2158::/48 Deny Cloud
+2600:9000:2161::/48 Deny Cloud
+2600:9000:2181::/48 Deny Cloud
+2600:9000:5304::/47 Deny Cloud
+2600:9000:5306::/47 Deny Cloud
 2600:1f00:1000::/40 Deny Cloud
 2600:1f00:6000::/40 Deny Cloud
+2600:1f10:8080::/48 Deny Cloud
 2600:1f11::/36 Deny Cloud
 2600:1f14::/35 Deny Cloud
 2600:1f16::/36 Deny Cloud
 2600:1f18::/33 Deny Cloud
-2600:1f1c::/36 Deny Cloud
-2600:1f1e::/36 Deny Cloud
 2600:1fa0:1040::/44 Deny Cloud
 2600:1fa0:1080::/44 Deny Cloud
 2600:1fa0:10c0::/44 Deny Cloud
@@ -2781,11 +2806,9 @@ Tag: Sia Nano IT
 2600:1fa0:60c0::/46 Deny Cloud
 2600:1fa0:8010::/44 Deny Cloud
 2600:1fa0:8020::/44 Deny Cloud
-2600:1fa0:8040::/44 Deny Cloud
-2600:1fa0:8050::/44 Deny Cloud
+2600:1fa0:8040::/43 Deny Cloud
 2600:1fa0:8060::/44 Deny Cloud
-2600:1fa0:8080::/44 Deny Cloud
-2600:1fa0:8090::/44 Deny Cloud
+2600:1fa0:8080::/43 Deny Cloud
 2600:1fa0:80a0::/44 Deny Cloud
 2600:1fa0:80c0::/44 Deny Cloud
 2600:1fa0:80e0::/44 Deny Cloud
@@ -2806,8 +2829,7 @@ Tag: Sia Nano IT
 2600:9000:1015::/48 Deny Cloud
 2600:9000:1016::/47 Deny Cloud
 2600:9000:1018::/45 Deny Cloud
-2600:9000:1020::/47 Deny Cloud
-2600:9000:1023::/48 Deny Cloud
+2600:9000:1020::/46 Deny Cloud
 2600:9000:1024::/47 Deny Cloud
 2600:9000:1027::/48 Deny Cloud
 2600:9000:1028::/46 Deny Cloud
@@ -2818,15 +2840,13 @@ Tag: Sia Nano IT
 2600:9000:1034::/47 Deny Cloud
 2600:9000:1036::/48 Deny Cloud
 2600:9000:1038::/45 Deny Cloud
-2600:9000:1040::/45 Deny Cloud
-2600:9000:1048::/46 Deny Cloud
-2600:9000:104c::/47 Deny Cloud
-2600:9000:104e::/48 Deny Cloud
+2600:9000:1040::/44 Deny Cloud
 2600:9000:1077::/48 Deny Cloud
-2600:9000:1079::/48 Deny Cloud
-2600:9000:107b::/48 Deny Cloud
-2600:9000:107d::/48 Deny Cloud
+2600:9000:1078::/45 Deny Cloud
+2600:9000:108a::/48 Deny Cloud
+2600:9000:108d::/48 Deny Cloud
 2600:9000:2000::/46 Deny Cloud
+2600:9000:2004::/48 Deny Cloud
 2600:9000:2006::/47 Deny Cloud
 2600:9000:2008::/47 Deny Cloud
 2600:9000:200a::/48 Deny Cloud
@@ -2836,29 +2856,75 @@ Tag: Sia Nano IT
 2600:9000:2015::/48 Deny Cloud
 2600:9000:2016::/47 Deny Cloud
 2600:9000:2018::/45 Deny Cloud
-2600:9000:2020::/47 Deny Cloud
-2600:9000:2023::/48 Deny Cloud
-2600:9000:2024::/48 Deny Cloud
+2600:9000:2020::/46 Deny Cloud
+2600:9000:2024::/47 Deny Cloud
 2600:9000:2027::/48 Deny Cloud
 2600:9000:2028::/46 Deny Cloud
 2600:9000:202d::/48 Deny Cloud
 2600:9000:202e::/47 Deny Cloud
-2600:9000:2030::/47 Deny Cloud
-2600:9000:2033::/48 Deny Cloud
-2600:9000:2034::/48 Deny Cloud
-2600:9000:2038::/45 Deny Cloud
+2600:9000:2030::/44 Deny Cloud
 2600:9000:2041::/48 Deny Cloud
 2600:9000:2042::/47 Deny Cloud
 2600:9000:2044::/46 Deny Cloud
 2600:9000:2048::/48 Deny Cloud
-2600:9000:204b::/48 Deny Cloud
+2600:9000:204a::/47 Deny Cloud
 2600:9000:204d::/48 Deny Cloud
+2600:9000:2050::/48 Deny Cloud
+2600:9000:2054::/47 Deny Cloud
+2600:9000:2056::/48 Deny Cloud
+2600:9000:2062::/47 Deny Cloud
+2600:9000:206e::/47 Deny Cloud
+2600:9000:2070::/47 Deny Cloud
+2600:9000:208a::/47 Deny Cloud
+2600:9000:2090::/46 Deny Cloud
 2600:9000:2097::/48 Deny Cloud
 2600:9000:2098::/46 Deny Cloud
+2600:9000:209e::/47 Deny Cloud
+2600:9000:20a0::/48 Deny Cloud
+2600:9000:20ab::/48 Deny Cloud
 2600:9000:20ac::/47 Deny Cloud
+2600:9000:20b2::/47 Deny Cloud
+2600:9000:20b4::/48 Deny Cloud
+2600:9000:20bc::/48 Deny Cloud
 2600:9000:20be::/48 Deny Cloud
+2600:9000:20c6::/47 Deny Cloud
+2600:9000:20de::/47 Deny Cloud
+2600:9000:20f9::/48 Deny Cloud
+2600:9000:20fa::/48 Deny Cloud
+2600:9000:20fe::/48 Deny Cloud
+2600:9000:2101::/48 Deny Cloud
+2600:9000:2102::/47 Deny Cloud
+2600:9000:2104::/47 Deny Cloud
+2600:9000:2109::/48 Deny Cloud
+2600:9000:210a::/47 Deny Cloud
+2600:9000:210c::/48 Deny Cloud
+2600:9000:2110::/48 Deny Cloud
+2600:9000:2114::/47 Deny Cloud
+2600:9000:211a::/48 Deny Cloud
+2600:9000:2121::/48 Deny Cloud
+2600:9000:2122::/47 Deny Cloud
+2600:9000:2124::/46 Deny Cloud
+2600:9000:212b::/48 Deny Cloud
+2600:9000:212c::/47 Deny Cloud
+2600:9000:213f::/48 Deny Cloud
+2600:9000:2143::/48 Deny Cloud
+2600:9000:2144::/47 Deny Cloud
+2600:9000:2146::/48 Deny Cloud
+2600:9000:214a::/47 Deny Cloud
+2600:9000:214c::/47 Deny Cloud
+2600:9000:2152::/47 Deny Cloud
+2600:9000:2158::/47 Deny Cloud
+2600:9000:215a::/48 Deny Cloud
+2600:9000:215e::/47 Deny Cloud
+2600:9000:2160::/47 Deny Cloud
+2600:9000:2165::/48 Deny Cloud
+2600:9000:2167::/48 Deny Cloud
+2600:9000:2173::/48 Deny Cloud
+2600:9000:2174::/47 Deny Cloud
+2600:9000:2176::/48 Deny Cloud
 2600:9000:2181::/48 Deny Cloud
 2600:9000:2182::/48 Deny Cloud
+2600:9000:304a::/48 Deny Cloud
 2600:9000:5300::/47 Deny Cloud
 2600:9000:5302::/47 Deny Cloud
 2600:9000:5304::/47 Deny Cloud
@@ -2868,15 +2934,17 @@ Tag: Sia Nano IT
 2600:9000:f150::/48 Deny Cloud
 2600:9000:f530::/47 Deny Cloud
 2620:107:3000::/44 Deny Cloud
+2620:107:300f::/48 Deny Cloud
 2620:108:7000::/44 Deny Cloud
 2804:800::/32 Deny Cloud
 2a01:578::/32 Deny Cloud
+2a05:d000:2000::/40 Deny Cloud
 2a05:d000:a000::/40 Deny Cloud
 2a05:d000:c000::/40 Deny Cloud
 2a05:d012::/36 Deny Cloud
 2a05:d014::/36 Deny Cloud
 2a05:d018::/36 Deny Cloud
-2a05:d01a::/36 Deny Cloud
+2a05:d01a::/38 Deny Cloud
 2a05:d01c::/36 Deny Cloud
 2a05:d050:2040::/44 Deny Cloud
 2a05:d050:2080::/44 Deny Cloud
@@ -3290,8 +3358,10 @@ Tag: NewMedia Express
 
 
 # ASN 3842 ("RamNode LLC").
-# %Listed, Google Malware Dashboard: 1.57%.
-# Updated: 2016.05.24 / Checked: 2017.01.24
+# %Listed, Google Malware Dashboard: 1.36%.
+# %Listed, CleanTalk.org: 67.17%.
+# Stop Forum Spam (SFS) listings: 569.
+# Updated: 2016.05.24 / Checked: 2017.07.21
 
 2604:180::/46 Deny Cloud
 2604:180:a::/47 Deny Cloud
@@ -3310,8 +3380,10 @@ Tag: RouteLabel V.O.F
 
 
 # ASN 42632 ("MnogoByte LLC").
-# %Listed, Google Malware Dashboard: 0.63%.
-# Updated: 2017.01.24
+# %Listed, Google Malware Dashboard: 0.07%.
+# %Listed, CleanTalk.org: 69.70%.
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2017.01.24 / Checked: 2017.07.21
 
 2a02:878:1::/48 Deny Cloud
 2a02:878:2::/48 Deny Cloud
@@ -3335,10 +3407,14 @@ Tag: ScaleUp Technologies
 
 
 # ASN 7363 ("Lightstream Transmission and Telecom Inc").
-# %Listed, Google Malware Dashboard: 0.97%.
-# Updated: 2016.05.27 / Checked: 2017.01.24
+# %Listed, Google Malware Dashboard: 0.54%.
+# %Listed, CleanTalk.org: 53.85%.
+# Stop Forum Spam (SFS) listings: 504.
+# Updated: 2017.07.21
 
+2403:c880::/31 Deny Cloud
 2605:980::/32 Deny Cloud
+2a06:93c0::/29 Deny Cloud
 Tag: Lightstream
 
 
@@ -4332,3 +4408,18 @@ Tag: Nagravision SA
 2403:4f00:6000::/36 Deny Cloud
 2406:180:8000::/40 Deny Cloud
 Tag: Colocation Australia
+
+
+# ASN 20021 ("HostMySite").
+# 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
+# "InternetSeer.com". Users of this service should probably set an Ignore rule for this signature section.
+# %Listed, Google Malware Dashboard: 0.80%.
+# %Listed, CleanTalk.org: 24.86%.
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2017.07.21
+
+2600:1300::/32 Deny Cloud
+2600:1304::/32 Deny Cloud
+2600:1308::/32 Deny Cloud
+2600:130c::/32 Deny Cloud
+Tag: HostMySite

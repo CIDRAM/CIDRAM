@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.06.21).
+ * This file: Thai language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – การติดตาม I
 $CIDRAM['lang']['title_login'] = 'CIDRAM – เข้าสู่ระบบ';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – บันทึก';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – อัปเดต';
+$CIDRAM['lang']['warning'] = 'คำเตือน:';
+$CIDRAM['lang']['warning_php_1'] = 'เวอร์ชัน PHP ของคุณไม่ได้รับการสนับสนุนอีกต่อไป! ปรับปรุงขอแนะนำ!';
+$CIDRAM['lang']['warning_php_2'] = 'เวอร์ชัน PHP ของคุณมีความเสี่ยงสูง! ปรับปรุงขอแนะนำ!';
+$CIDRAM['lang']['warning_signatures_1'] = 'ไม่มีไฟล์ลายเซ็นที่ใช้งานอยู่!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">ปัญหา CIDRAM @ GitHub</a> – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>

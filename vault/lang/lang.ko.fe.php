@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.06.21).
+ * This file: Korean language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP 추적';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 로그인';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 로고스';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 업데이트';
+$CIDRAM['lang']['warning'] = '경고 :';
+$CIDRAM['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극적으로 지원되지 않습니다! 업데이트하는 것이 좋습니다!';
+$CIDRAM['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취약합니다! 업데이트하는 것이 좋습니다!';
+$CIDRAM['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있지 않습니다!';
 
 $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM 문제 @ GitHub</a> – CIDRAM 문제 페이지 (지원, 원조 등).</li>

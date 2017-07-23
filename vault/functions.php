@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.21).
+ * This file: Functions file (last modified: 2017.07.23).
  */
 
 /**
@@ -106,7 +106,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
 
 /**
  * Tests whether $Addr is an IPv4 address, and if it is, expands its potential
- * factors (ie, constructs an array containing the CIDRs that contain $Addr).
+ * factors (i.e., constructs an array containing the CIDRs that contain $Addr).
  * Returns false if $Addr is *not* an IPv4 address, and otherwise, returns the
  * contructed array.
  *
@@ -158,7 +158,7 @@ $CIDRAM['ExpandIPv4'] = function ($Addr) use (&$CIDRAM) {
 
 /**
  * Tests whether $Addr is an IPv6 address, and if it is, expands its potential
- * factors (ie, constructs an array containing the CIDRs that contain $Addr).
+ * factors (i.e., constructs an array containing the CIDRs that contain $Addr).
  * Returns false if $Addr is *not* an IPv6 address, and otherwise, returns the
  * contructed array.
  *
@@ -1087,7 +1087,7 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
  * legitimate search engines. Tracking is disabled for real, legitimate search
  * engines, and those masquerading as them are blocked. If DNS is unresolvable
  * and/or if it can't be determined whether a request has originated from a
- * fake or a legitimate source, it takes no action (ie, doesn't mess with
+ * fake or a legitimate source, it takes no action (i.e., doesn't mess with
  * tracking and doesn't block anything).
  *
  * @param string|array $Domains Accepted domain/hostname partials.
@@ -1469,12 +1469,12 @@ $CIDRAM['FECacheGet'] = function ($Source, $Entry) {
 
 /**
  * Compare two different versions of CIDRAM, or two different versions of a
- * component for CIDRAM, to see which is newer (used by the updater).
+ * component for CIDRAM, to see which is newer (mostly used by the updater).
  *
  * @param string $A The 1st version string.
  * @param string $B The 2nd version string.
  * return bool True if the 2nd version is newer than the 1st version, and false
- *      otherwise (ie, if they're the same, or if the 1st version is newer).
+ *      otherwise (i.e., if they're the same, or if the 1st version is newer).
  */
 $CIDRAM['VersionCompare'] = function ($A, $B) {
     $Normalise = function (&$Ver) {
@@ -2051,4 +2051,39 @@ $CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
         return $CIDRAM['Vault'] . 'fe_assets/' . $Asset;
     }
     throw new \Exception('Asset not found');
+};
+
+/**
+ * Determines whether to display warnings about the PHP version used (based
+ * upon what we know at the time that the package was last updated; information
+ * herein is likely to become stale very quickly when not updated frequently).
+ *
+ * References:
+ * - secure.php.net/releases/
+ * - secure.php.net/supported-versions.php
+ * - cvedetails.com/vendor/74/PHP.html
+ * - maikuolan.github.io/Compatibility-Charts/
+ *
+ * @param string $Version The PHP version used (defaults to PHP_VERSION).
+ * return int Warning level.
+ */
+$CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
+    $Date = date('Y.n.j', $CIDRAM['Now']);
+    $Level = 0;
+    if (
+        $CIDRAM['VersionCompare']($Version, '5.4.43') ||
+        (!$CIDRAM['VersionCompare']($Version, '5.5.0') && $CIDRAM['VersionCompare']($Version, '5.5.32')) ||
+        (!$CIDRAM['VersionCompare']($Version, '5.6.0') && $CIDRAM['VersionCompare']($Version, '5.6.18')) ||
+        (!$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.3'))
+    ) {
+        $Level += 2;
+    }
+    if (
+        $CIDRAM['VersionCompare']($Version, '7.0.0') ||
+        (!$CIDRAM['VersionCompare']($Date, '2017.12.3') && $CIDRAM['VersionCompare']($Version, '7.1.0')) ||
+        (!$CIDRAM['VersionCompare']($Date, '2018.12.1') && $CIDRAM['VersionCompare']($Version, '7.2.0'))
+    ) {
+        $Level += 1;
+    }
+    return $Level;
 };

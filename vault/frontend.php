@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.06.26).
+ * This file: Front-end handler (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -427,6 +427,28 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_logout'];
+
+    /** Process warnings. */
+    $CIDRAM['FE']['Warnings'] = '';
+    if (($CIDRAM['FE']['VersionWarning'] = $CIDRAM['VersionWarning']()) > 0) {
+        if ($CIDRAM['FE']['VersionWarning'] >= 2) {
+            $CIDRAM['FE']['VersionWarning'] = $CIDRAM['FE']['VersionWarning'] % 2;
+            $CIDRAM['FE']['Warnings'] .= '<li><a href="https://www.cvedetails.com/version-list/74/128/1/PHP-PHP.html">' . $CIDRAM['lang']['warning_php_2'] . '</a></li>';
+        }
+        if ($CIDRAM['FE']['VersionWarning'] >= 1) {
+            $CIDRAM['FE']['Warnings'] .= '<li><a href="https://secure.php.net/supported-versions.php">' . $CIDRAM['lang']['warning_php_1'] . '</a></li>';
+        }
+    }
+    if (
+        empty($CIDRAM['Config']['signatures']['ipv4']) &&
+        empty($CIDRAM['Config']['signatures']['ipv6']) &&
+        empty($CIDRAM['Config']['signatures']['modules'])
+    ) {
+        $CIDRAM['FE']['Warnings'] .= '<li>' . $CIDRAM['lang']['warning_signatures_1'] . '</li>';
+    }
+    if ($CIDRAM['FE']['Warnings']) {
+        $CIDRAM['FE']['Warnings'] = '<hr />' . $CIDRAM['lang']['warning'] . '<br /><div class="txtRd"><ul>' . $CIDRAM['FE']['Warnings'] . '</ul></div>';
+    }
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.06.22).
+ * This file: French language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Surveillance IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Connexion';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Fichiers Journaux';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Mises à Jour';
+$CIDRAM['lang']['warning'] = 'Avertissements :';
+$CIDRAM['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
+$CIDRAM['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
+$CIDRAM['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problèmes de CIDRAM @ GitHub</a> – Page de problèmes pour CIDRAM (soutien, assistance, etc).</li>

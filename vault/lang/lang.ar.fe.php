@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.07.12).
+ * This file: Arabic language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – التتبع IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – سجلات';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – التحديثات';
+$CIDRAM['lang']['warning'] = 'تحذيرات:';
+$CIDRAM['lang']['warning_php_1'] = 'لم يتم دعم إصدار PHP الخاص بك بشكل نشط بعد الآن! يوصى بالتحديث!';
+$CIDRAM['lang']['warning_php_2'] = 'إصدار PHP الخاص بك معرض للخطر بشدة! ينصح بشدة تحديث!';
+$CIDRAM['lang']['warning_signatures_1'] = 'لا ملفات التوقيع نشطة!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>

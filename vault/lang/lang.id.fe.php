@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.06.21).
+ * This file: Indonesian language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Pelacakan IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Log';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Pembaruan';
+$CIDRAM['lang']['warning'] = 'Peringatan:';
+$CIDRAM['lang']['warning_php_1'] = 'Versi PHP Anda tidak aktif didukung lagi! Memperbarui dianjurkan!';
+$CIDRAM['lang']['warning_php_2'] = 'Versi PHP Anda sangat rentan! Memperbarui sangat dianjurkan!';
+$CIDRAM['lang']['warning_signatures_1'] = 'Tidak ada file tanda tangan yang aktif!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Masalah CIDRAM @ GitHub</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>

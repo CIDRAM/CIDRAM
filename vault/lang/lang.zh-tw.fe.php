@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.06.21).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登錄';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日誌';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
+$CIDRAM['lang']['warning'] = '警告：';
+$CIDRAM['lang']['warning_php_1'] = '您的PHP版本不再被積極支持！​推薦更新！';
+$CIDRAM['lang']['warning_php_2'] = '您的PHP版本非常脆弱！​強烈推薦更新！';
+$CIDRAM['lang']['warning_signatures_1'] = '沒有簽名文件是活動的！';
 
 $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM問題＠GitHub</a> – CIDRAM問題頁面（支持，​協助，​等等）。​</li>

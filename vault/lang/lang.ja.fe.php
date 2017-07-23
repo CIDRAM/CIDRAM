@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.06.21).
+ * This file: Japanese language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – ＩＰトラッキング';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – ログイン';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';
+$CIDRAM['lang']['warning'] = '警告：';
+$CIDRAM['lang']['warning_php_1'] = 'あなたのＰＨＰバージョンはもはや積極的にサポートされていません！​​アップデートおすすめします！';
+$CIDRAM['lang']['warning_php_2'] = 'あなたのＰＨＰバージョンは深刻な脆弱性を持っています！​​アップデートを強くおすすめします！';
+$CIDRAM['lang']['warning_signatures_1'] = 'アクティブ・シグネチャ・ファイルはありません！';
 
 $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAMの問題 ＠ GitHub</a> – CIDRAMの問題ページ（サポート、​援助、​など）。</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.06.21).
+ * This file: Turkish language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP İzleme';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Giriş';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Kayıtlar';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Güncellemeler';
+$CIDRAM['lang']['warning'] = 'Uyarılar:';
+$CIDRAM['lang']['warning_php_1'] = 'PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!';
+$CIDRAM['lang']['warning_php_2'] = 'PHP sürümünüz ağır savunmasız! Güncelleme önerilir!';
+$CIDRAM['lang']['warning_signatures_1'] = 'Hiçbir imza dosyası aktif değil!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Sorunları @ GitHub</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb.).</li>

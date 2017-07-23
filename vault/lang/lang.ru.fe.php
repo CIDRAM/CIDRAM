@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.06.21).
+ * This file: Russian language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -213,6 +213,10 @@ $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Отслеживания IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Войти';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Лог-Файлы';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Обновления';
+$CIDRAM['lang']['warning'] = 'Предупреждения:';
+$CIDRAM['lang']['warning_php_1'] = 'Ваша версия PHP больше не поддерживается! Рекомендуется обновление!';
+$CIDRAM['lang']['warning_php_2'] = 'Ваша версия PHP сильно уязвима! Настоятельно рекомендуется обновление!';
+$CIDRAM['lang']['warning_signatures_1'] = 'Активные файлы сигнатуры не активны!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>

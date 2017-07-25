@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.07.23).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
             <li><a href="http://www.ipdeny.com/ipblocks/">Chặn quốc gia IP @ IPdeny</a> – Một dịch vụ tuyệt vời và chính xác để tạo ra chữ ký cho các nước.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Dự án Spamhaus</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Danh sách chặn hỗn hợp @ Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Danh sách chặn hỗn hợp @ Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Duy trì danh sách các spammer được biết; Hữu ích cho việc kiểm tra các hoạt động thư rác từ các IP/ASN.</li>
         </ul>';

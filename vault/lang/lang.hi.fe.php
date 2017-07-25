@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.07.23).
+ * This file: Hindi language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लि
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – देशव्यापी हस्ताक्षर बनाने के लिए एक शानदार और सटीक सेवा।</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google मैलवेयर डैशबोर्ड</a> – ASN मैलवेयर संक्रमण दर के बारे में रिपोर्ट प्रदर्शित करता है।</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus प्रोजेक्ट</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org की समग्र ब्लॉकिंग सूची</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org की समग्र ब्लॉकिंग सूची</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – ज्ञात अपमानजनक आईपी के डेटाबेस बनाए रखता है; आईपी जांच और रिपोर्ट करने के लिए API प्रदान करता है।</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – ज्ञात स्पैमर की सूची बनाए रखता है; आईपी/ASN स्पैम गतिविधियों को देखने के लिए उपयोगी।</li>
         </ul>';

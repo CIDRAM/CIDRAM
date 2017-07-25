@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.07.23).
+ * This file: Arabic language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيد�
             <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – خدمة لتوليد التواقيع في جميع أنحاء البلاد.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – تقارير يعرض بخصوص معدلات الإصابة الخبيثة أجل ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" dir="ltr">The Spamhaus Project</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
-            <li><a href="http://www.abuseat.org/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – تقارير يعرض بخصوص معدلات الإصابة الروبوتات أجل ASNs.</li>
             <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – تحتفظ بقاعدة بيانات من عناوين IP المسيئة المعروفة؛ يوفر API لفحص والإبلاغ عناوين IP.</li>
             <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – يحافظ المعروضة من الاطر المعروفة؛ مفيدة لفحص أنشطة ASN/IP البريد المزعج.</li>
         </ul>';

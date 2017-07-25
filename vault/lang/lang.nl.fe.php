@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.07.23).
+ * This file: Dutch language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP-landblokken</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Het Spamhaus Project</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IPs; Biedt een API voor het controleren en rapporteren van IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Onderhoudt lijsten van bekende spammers; Handig voor het controleren van IP/ASN spam activiteiten.</li>
         </ul>';

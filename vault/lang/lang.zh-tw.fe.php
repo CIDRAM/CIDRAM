@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.07.23).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -235,7 +235,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="http://www.ipdeny.com/ipblocks/">IP國家阻止＠IPdeny</a> – 一個夢幻般和準確的服務，​產生國家的簽名。​</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 顯示有​關ASN惡意軟件感染率的報告。​</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。​</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。​</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。​</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 維護已知的濫用IP數據庫；它為IP檢查和報告提供了一個API。​</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 維護已知垃圾郵件發送者的列表；有用為檢查IP/ASN垃圾郵件活動。​</li>
         </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.07.23).
+ * This file: Urdu language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" dir="ltr">The Spamhaus Project</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="http://www.abuseat.org/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
             <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – نام سے جانا توہین آمیز آئی پی ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ آئی پی ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
             <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ آئی پی / ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
         </ul>';

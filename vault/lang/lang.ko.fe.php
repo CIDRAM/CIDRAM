@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.07.23).
+ * This file: Korean language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크:<ul>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP 국가 블록</a> – 국가 전체의 서명을 생성하기위한 훌륭한 정확한 서비스.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN의 악성 코드 감염률에 대한 보고서를 표시합니다.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.org의 복합 차단 목록</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org의 복합 차단 목록</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 알려진 스패머 목록을 유지하는; IP/ASN 스팸 활동의 확인에 도움이됩니다.</li>
         </ul>';

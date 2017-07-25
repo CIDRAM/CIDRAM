@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.07.23).
+ * This file: Spanish language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
             <li><a href="http://www.ipdeny.com/ipblocks/">Bloques de países @ IPdeny IP</a> – Un servicio fantástico y preciso para generar firmas a nivel nacional.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Muestra informes sobre las tasas de infección de malware para los ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">El Proyecto Spamhaus</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Lista de bloqueo compuesto @ Abuseat.org</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Lista de bloqueo compuesto @ Abuseat.org</a> – Muestra informes sobre las tasas de infección por botnets para los ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mantiene una base de datos de IPs abusivos conocidos; Proporciona una API para comprobar e informar IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mantiene listados de spammers conocidos; Útil para comprobar las actividades de spam por IP/ASN.</li>
         </ul>';

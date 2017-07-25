@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.07.23).
+ * This file: Russian language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="http://www.ipdeny.com/ipblocks/">Страновые блоки IP @ IPdeny</a> – Фантастический и точный сервис для создания сигнатуры в масштабах всей страны.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
-            <li><a href="http://www.abuseat.org/asn.html">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Поддерживает списки известных спамеров; Полезно для проверки спама деятельности IP/ASN.</li>
         </ul>';

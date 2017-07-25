@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.07.23).
+ * This file: Japanese language data for the front-end (last modified: 2017.07.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -234,7 +234,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdenyのＩＰカントリー・ブロック</a> – 国全体のシグネチャを生成するための素晴らしい、​正確なサービス。</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ＡＳＮのマルウェア感染率に関するレポートを表示します。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausプロジェクト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
-            <li><a href="http://www.abuseat.org/asn.html">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
+            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 既知のスパマーリストを維持する；​ＩＰ/ＡＳＮスパム活動のチェックに役立ちます。</li>
         </ul>';

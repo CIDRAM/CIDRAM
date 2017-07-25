@@ -10,7 +10,7 @@
 
 # ---
 # IPv6 Bogons List.
-# Updated: 2017.07.23
+# Updated: 2017.07.25
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 
 100::/8 Deny Bogon
@@ -5521,7 +5521,14 @@
 2001:df1:fe20::/43 Deny Bogon
 2001:df1:fe40::/42 Deny Bogon
 2001:df1:fe80::/41 Deny Bogon
-2001:df1:ff00::/40 Deny Bogon
+2001:df1:ff01::/48 Deny Bogon
+2001:df1:ff02::/47 Deny Bogon
+2001:df1:ff04::/46 Deny Bogon
+2001:df1:ff08::/45 Deny Bogon
+2001:df1:ff10::/44 Deny Bogon
+2001:df1:ff20::/43 Deny Bogon
+2001:df1:ff40::/42 Deny Bogon
+2001:df1:ff80::/41 Deny Bogon
 2001:df2:1::/48 Deny Bogon
 2001:df2:2::/47 Deny Bogon
 2001:df2:4::/46 Deny Bogon
@@ -21067,14 +21074,24 @@
 2401:8a88::/29 Deny Bogon
 2401:8a90::/28 Deny Bogon
 2401:8aa0::/27 Deny Bogon
-2401:8ac0::/26 Deny Bogon
+2401:8ac1::/32 Deny Bogon
+2401:8ac2::/31 Deny Bogon
+2401:8ac4::/30 Deny Bogon
+2401:8ac8::/29 Deny Bogon
+2401:8ad0::/28 Deny Bogon
+2401:8ae0::/27 Deny Bogon
 2401:8b01::/32 Deny Bogon
 2401:8b02::/31 Deny Bogon
 2401:8b04::/30 Deny Bogon
 2401:8b08::/29 Deny Bogon
 2401:8b10::/28 Deny Bogon
 2401:8b20::/27 Deny Bogon
-2401:8b40::/26 Deny Bogon
+2401:8b41::/32 Deny Bogon
+2401:8b42::/31 Deny Bogon
+2401:8b44::/30 Deny Bogon
+2401:8b48::/29 Deny Bogon
+2401:8b50::/28 Deny Bogon
+2401:8b60::/27 Deny Bogon
 2401:8b81::/32 Deny Bogon
 2401:8b82::/31 Deny Bogon
 2401:8b84::/30 Deny Bogon
@@ -77663,8 +77680,19 @@
 2804:40f2::/31 Deny Bogon
 2804:40f5::/32 Deny Bogon
 2804:40f6::/31 Deny Bogon
-2804:40f8::/29 Deny Bogon
-2804:4100::/24 Deny Bogon
+2804:40f9::/32 Deny Bogon
+2804:40fa::/31 Deny Bogon
+2804:40fd::/32 Deny Bogon
+2804:40fe::/31 Deny Bogon
+2804:4101::/32 Deny Bogon
+2804:4102::/31 Deny Bogon
+2804:4105::/32 Deny Bogon
+2804:4106::/31 Deny Bogon
+2804:4108::/29 Deny Bogon
+2804:4110::/28 Deny Bogon
+2804:4120::/27 Deny Bogon
+2804:4140::/26 Deny Bogon
+2804:4180::/25 Deny Bogon
 2804:4200::/23 Deny Bogon
 2804:4400::/22 Deny Bogon
 2804:4800::/21 Deny Bogon
@@ -82475,6 +82503,7 @@
 2a02:1a0::/29 Deny Bogon
 2a02:1b0::/29 Deny Bogon
 2a02:2d0::/29 Deny Bogon
+2a02:318::/29 Deny Bogon
 2a02:378::/29 Deny Bogon
 2a02:4c0::/29 Deny Bogon
 2a02:510::/29 Deny Bogon
@@ -83509,8 +83538,6 @@
 2a03:30::/28 Deny Bogon
 2a03:48::/29 Deny Bogon
 2a03:50::/28 Deny Bogon
-2a03:68::/29 Deny Bogon
-2a03:70::/28 Deny Bogon
 2a03:88::/29 Deny Bogon
 2a03:90::/28 Deny Bogon
 2a03:a8::/29 Deny Bogon
@@ -87006,9 +87033,6 @@
 2a07:d800::/21 Deny Bogon
 2a07:e000::/19 Deny Bogon
 2a09::/16 Deny Bogon
-2a0b:9540::/26 Deny Bogon
-2a0b:95c0::/26 Deny Bogon
-2a0b:9640::/26 Deny Bogon
 2a0b:96c0::/26 Deny Bogon
 2a0b:9740::/26 Deny Bogon
 2a0b:97c0::/26 Deny Bogon

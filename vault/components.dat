@@ -21,7 +21,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。​
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。​
- Version: 1.0.1-DEV+17203461
+ Version: 1.0.1
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -112,7 +112,7 @@ CIDRAM:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - 4e6592302514d2fe51de218a3a02574e:24246
-   - e41fe5f9e2a915bfc4bb6a45d7311842:6516
+   - 793fd307df32330d10863a5179981db9:6512
    - 53d407a7696b1b3d8e40ac09982e20b0:7911
    - 8e03209e7fc6641b45094e584340feff:83
    - ba7be93aa19c88d92f1bdf11b6bdd392:2019
@@ -192,7 +192,7 @@ IPv4:
   vi: Các chữ ký IPv4 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv4</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv4签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv4</code>。<br />假阳性风险：<span class="txtGn">低</span>。​</em>
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv4</code>。<br />假陽性風險：<span class="txtGn">低</span>。​</em>
- Version: 2017.205.406
+ Version: 2017.207.761
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -202,7 +202,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 1c39d3764d2e6b4248161510dc8bbbb1:480955
+   - db1143cfefdb4b2e47ae34fe4f9cacd6:481565
  Reannotate: components.dat
 IPv4-Bogons:
  Name:
@@ -404,7 +404,7 @@ IPv6:
   vi: Các chữ ký IPv6 mặc định thường bao gồm với gói thầu chính. Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.<br /><em>Được sử dụng với: <code>signatures-&gt;ipv6</code>.<br />Nguy cơ sai tích cực: <span class="txtGn">Thấp</span>.</em>
   zh: 标准IPv6签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv6</code>。<br />假阳性风险：<span class="txtGn">低</span>。​</em>
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv6</code>。<br />假陽性風險：<span class="txtGn">低</span>。​</em>
- Version: 2017.205.406
+ Version: 2017.207.761
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -414,7 +414,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 45a94e19ddb6be0d9f9f398760108fc9:120622
+   - 744adfc07719c489b418f352bc8797f5:121010
  Reannotate: components.dat
 IPv6-Bogons:
  Name:

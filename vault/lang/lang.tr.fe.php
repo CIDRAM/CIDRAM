@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.07.25).
+ * This file: Turkish language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Engellenen tüm erişim giri�
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Yasaklanmış IP\'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maksimum giriş denemesi sayısı.';
+$CIDRAM['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Arama motorlarından gelen istekleri doğrulamaya çalışın? Arama motorlarını doğrulamak, ihlal sınırını aşmanın bir sonucu olarak yasaklanmamasını sağlar (sitenizdeki arama motorlarını yasaklamak genellikle arama motoru sıralaması, SEO, vb. üzerinde olumsuz bir etki yapar). Doğrulandığı zaman, arama motorları normal olarak engellenebilir, ancak yasaklanmaz. Doğrulanmadığı zaman ise, ihlal sınırının aşılmasının bir sonucu olarak yasaklanmaları mümkündür. Buna ek olarak, arama motoru doğrulaması, sahte arama motoru isteklerine ve arama motorları kılığına bürünen potansiyel olarak kötü amaçlı varlıklara karşı koruma sağlar (arama motoru doğrulama etkinleştirildiğinde bu tür istekler engellenir). Doğru/True = Arama motoru doğrulamasını etkinleştir [Varsayılan]; Yanlış/False = Arama motoru doğrulamasını devre dışı bırakın.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Virgülle sınırlı, CIDRAM\'ın a
 $CIDRAM['lang']['config_signatures_modules'] = 'Virgülle sınırlı, IPv4/IPv6 imzalarını kontrol ettikten sonra yüklenecek modül dosyalarının bir listesi.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'İhlaller ne zaman sayılmalıdır? Yanlış/False = IP\'ler modüller tarafından engellendiğinde. Doğru/True = Herhangi bir nedenle IP\'ler engellendiğinde.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Yazı tipi büyütme. Varsayılan = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM için kullanılacak varsayılan tema.';
 $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Kullanıcı adı';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$CIDRAM['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
+$CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
+$CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Hesaplayıcı';
 $CIDRAM['lang']['link_config'] = 'Yapılandırma';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Aylar';
 $CIDRAM['lang']['previewer_seconds'] = 'Saniyeler';
 $CIDRAM['lang']['previewer_weeks'] = 'Haftalar';
 $CIDRAM['lang']['previewer_years'] = 'Yıllar';
-$CIDRAM['lang']['punct_decimals'] = ',';
-$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Bu kullanıcı adıyla bir hesap zaten var!';
 $CIDRAM['lang']['response_accounts_created'] = 'Hesap başarıyla oluşturuldu!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Hesap başarıyla silindi!';

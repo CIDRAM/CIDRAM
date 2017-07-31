@@ -709,9 +709,10 @@ Tag: A2B IP B.V
 
 
 # ASNs 20860, 21130 ("IOMart").
-# %Listed, Google Malware Dashboard: 1.71% (AS20860), 0% (AS21130).
-# %Listed, CleanTalk.org: 31.40% (AS20860), 0% (AS21130).
-# Updated: 2017.02.06
+# %Listed, Google Malware Dashboard: 1.05% (AS20860), 0% (AS21130).
+# %Listed, CleanTalk.org: 28.59% (AS20860), 0% (AS21130).
+# Stop Forum Spam (SFS) listings: 2,652 (AS20860), 0 (AS21130).
+# Updated: 2017.07.29
 
 2001:67c:2e84::/48 Deny Cloud
 2001:1b40::/32 Deny Cloud
@@ -719,9 +720,14 @@ Tag: A2B IP B.V
 2607:bd00:100::/48 Deny Cloud
 2a00:5d80::/32 Deny Cloud
 2a00:e120::/32 Deny Cloud
-2a03:b201::/32 Deny Cloud
+2a01:61c0::/40 Deny Cloud
+2a01:b040::/32 Deny Cloud
+2a02:8c8::/32 Deny Cloud
+2a03:b200::/29 Deny Cloud
 2a03:ca80::/31 Deny Cloud
+2a03:f2c0::/32 Deny Cloud
 2a04:de40::/32 Deny Cloud
+2a0b:4580::/32 Deny Cloud
 Tag: IOMart
 
 
@@ -1412,12 +1418,13 @@ Tag: Cogent
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
-# %Listed, Google Malware Dashboard: 0.34% (AS59711), 0% (AS61046), 0.38% (AS201525), 0% (AS202015).
-# %Listed, CleanTalk.org: 29.41% (AS59711), 66.67% (AS61046), 70.00% (AS201525), 66.67% (AS202015).
-# Updated: 2017.02.06
+# %Listed, CleanTalk.org: 32.26% (AS59711), 57.14% (AS61046), 66.67% (AS201525), 100.00% (AS202015).
+# Stop Forum Spam (SFS) listings: 256 (AS59711), 9 (AS61046), 84 (AS201525), 30 (AS202015).
+# Updated: 2017.07.29
 
 2a01:8640::/46 Deny Cloud
 2a01:8640:5::/48 Deny Cloud
+2a0a:e2c5::/32 Deny Cloud
 Tag: HZ Hosting Ltd
 
 
@@ -2633,13 +2640,15 @@ Tag: Handy Networks
 
 
 # ASN 31863 ("Centrilogic, Inc").
-# %Listed, Google Malware Dashboard: 1.76%.
-# %Listed, CleanTalk.org: 51.53%.
-# Updated: 2016.11.03 / Checked: 2017.02.10
+# %Listed, Google Malware Dashboard: 1.95%.
+# %Listed, CleanTalk.org: 48.74%.
+# Stop Forum Spam (SFS) listings: 582.
+# Updated: 2017.07.29
 
 2602:ff96:3::/48 Deny Cloud
 2602:ff96:7::/48 Deny Cloud
 2607:5600::/32 Deny Cloud
+2607:6980:2730::/44 Deny Cloud
 Tag: Centrilogic
 
 
@@ -3401,9 +3410,10 @@ Tag: RamNode LLC
 
 
 # ASNs 198203, 202645 ("RouteLabel V.O.F").
-# %Listed, Google Malware Dashboard: 1.74% (AS198203), 3.41% (AS198203).
-# %Listed, CleanTalk.org: 56.16% (AS198203), 0.00% (AS198203).
-# Updated: 2017.02.03
+# %Listed, Google Malware Dashboard: 0.99% (AS198203), 3.10% (AS198203).
+# %Listed, CleanTalk.org: 75.34% (AS198203), 25.00% (AS198203).
+# Stop Forum Spam (SFS) listings: 487 (AS198203), 0 (AS198203).
+# Updated: 2017.02.03 / Checked: 2017.07.29
 
 2a00:d880::/32 Deny Cloud
 2a02:50e0::/32 Deny Cloud
@@ -4208,8 +4218,9 @@ Tag: EBL Global Networks
 
 
 # ASN 61138 ("Zappie Host LLC").
-# %Listed, CleanTalk.org: 44.44%.
-# Updated: 2017.02.10
+# %Listed, CleanTalk.org: 45.45% (AS61138), 0% (AS206122).
+# Stop Forum Spam (SFS) listings: 21 (AS61138), 0 (AS206122).
+# Updated: 2017.02.10 / Checked: 2017.07.29
 
 2404:3d80:8000::/34 Deny Cloud
 2a05:dfc0:1ee3::/48 Deny Cloud
@@ -4459,3 +4470,19 @@ Tag: Colocation Australia
 2600:1308::/32 Deny Cloud
 2600:130c::/32 Deny Cloud
 Tag: HostMySite
+
+
+# ASN 200039 ("Hydra Communications Ltd").
+# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, CleanTalk.org: 81.31%.
+# Stop Forum Spam (SFS) listings: 11,659.
+# Updated: 2017.07.29
+
+2602:ff71:1::/48 Deny Cloud
+2a01:4020::/32 Deny Cloud
+2a05:6200:72::/48 Deny Cloud
+2a06:8dc6::/44 Deny Cloud
+2a06:8dc7::/48 Deny Cloud
+2a06:8ec4::/43 Deny Cloud
+2a0a:ebc0::/29 Deny Cloud
+Tag: Hydra Communications Ltd

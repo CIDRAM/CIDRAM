@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.07.25).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记�
 $CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数。';
+$CIDRAM['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';
 $CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】； False（假）=不是。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】； False（假）=搜索引擎验证是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，​CIDR
 $CIDRAM['lang']['config_signatures_modules'] = '模块文件要加载的列表以后检查签名IPv4/IPv6，​用逗号分隔。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '什么时候应该对违规行为进行计数？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
+$CIDRAM['lang']['config_template_data_Magnification'] = '字体放大。​标准 = 1。';
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';
 $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_banned'] = '禁止';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = '用户名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
+$CIDRAM['lang']['label_branch'] = '分支最新稳定：';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_os'] = '目前使用操作系统：';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
+$CIDRAM['lang']['label_stable'] = '最新稳定：';
 $CIDRAM['lang']['label_sysinfo'] = '系统信息：';
+$CIDRAM['lang']['label_unstable'] = '最新不稳定：';
 $CIDRAM['lang']['link_accounts'] = '账户';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR计算器';
 $CIDRAM['lang']['link_config'] = '配置';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = '月';
 $CIDRAM['lang']['previewer_seconds'] = '秒';
 $CIDRAM['lang']['previewer_weeks'] = '周';
 $CIDRAM['lang']['previewer_years'] = '年';
-$CIDRAM['lang']['punct_decimals'] = '.';
-$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = '一个账户与那个用户名已经存在！';
 $CIDRAM['lang']['response_accounts_created'] = '账户成功创建！';
 $CIDRAM['lang']['response_accounts_deleted'] = '账户成功删除！';

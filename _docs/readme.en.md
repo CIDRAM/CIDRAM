@@ -318,6 +318,9 @@ General CIDRAM configuration.
 "lang"
 - Specify the default language for CIDRAM.
 
+"numbers"
+- Specifies how to display numbers.
+
 "emailaddr"
 - If you wish, you can supply an email address here to be given to users when they're blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it's strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don't mind being spammed (in other words, you probably don't want to use your primary personal or primary business email addresses).
 
@@ -432,6 +435,9 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 
 "theme"
 - Default theme to use for CIDRAM.
+
+"Magnification"
+- Font magnification. Default = 1.
 
 "css_url"
 - The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct CIDRAM to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, CIDRAM will use the template file for the default theme.
@@ -727,4 +733,4 @@ Value | Using
 ---
 
 
-Last Updated: 22 July 2017 (2017.07.22).
+Last Updated: 29 July 2017 (2017.07.29).

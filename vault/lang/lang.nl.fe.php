@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.07.25).
+ * This file: Dutch language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-stijl bestand om alle 
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum aantal inlogpogingen.';
+$CIDRAM['lang']['config_general_numbers'] = 'Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de front-end. True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Een lijst van de IPv6 signature bes
 $CIDRAM['lang']['config_signatures_modules'] = 'Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma\'s.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Lettergrootte vergroting. Standaard = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $CIDRAM['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
+$CIDRAM['lang']['label_branch'] = 'Branch laatste stabiele:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $CIDRAM['lang']['label_php'] = 'PHP versie gebruikt:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI gebruikt:';
+$CIDRAM['lang']['label_stable'] = 'Laatste stabiele:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeem informatie:';
+$CIDRAM['lang']['label_unstable'] = 'Laatste onstabiele:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
 $CIDRAM['lang']['link_config'] = 'Configuratie';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Maanden';
 $CIDRAM['lang']['previewer_seconds'] = 'Seconden';
 $CIDRAM['lang']['previewer_weeks'] = 'Weken';
 $CIDRAM['lang']['previewer_years'] = 'Jaren';
-$CIDRAM['lang']['punct_decimals'] = ',';
-$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Een account bij die gebruikersnaam bestaat al!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';

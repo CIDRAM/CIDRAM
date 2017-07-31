@@ -318,6 +318,9 @@ Configuration générale pour CIDRAM.
 « lang »
 - Spécifiez la langue défaut pour CIDRAM.
 
+« numbers »
+- Spécifie comment afficher les nombres.
+
 « emailaddr »
 - Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT : Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire).
 
@@ -432,6 +435,9 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 
 « theme »
 - Le thème à utiliser par défaut pour CIDRAM.
+
+« Magnification »
+- Grossissement des fontes. Défaut = 1.
 
 « css_url »
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire CIDRAM d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, CIDRAM va utiliser le modèle fichier pour le défaut thème.
@@ -727,4 +733,4 @@ Valeur | En utilisant
 ---
 
 
-Dernière mise à jour : 22 Juillet 2017 (2017.07.22).
+Dernière mise à jour : 29 Juillet 2017 (2017.07.29).

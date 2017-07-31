@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.07.23).
+ * This file: Front-end handler (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -26,6 +26,8 @@ $CIDRAM['FE'] = array(
     'Template' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.html')),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
+    'Magnification' => $CIDRAM['Config']['template_data']['Magnification'],
+    'Number_L10N_JS' => $CIDRAM['Number_L10N_JS'](),
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'theme' => $CIDRAM['Config']['template_data']['theme'],
@@ -427,6 +429,96 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     );
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_logout'];
+
+    /** Where to find remote version information? */
+    $CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
+
+    /** Fetch remote CIDRAM version information and cache it if necessary. */
+    if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'cidram-ver.yaml')) === false) {
+        $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', false, 8);
+        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 604800);
+    }
+
+    /** Process remote CIDRAM version information. */
+    if (empty($CIDRAM['Remote-YAML-CIDRAM'])) {
+
+        /** CIDRAM latest stable. */
+        $CIDRAM['FE']['info_cidram_stable'] = $CIDRAM['lang']['response_error'];
+        /** CIDRAM latest unstable. */
+        $CIDRAM['FE']['info_cidram_unstable'] = $CIDRAM['lang']['response_error'];
+        /** CIDRAM branch latest stable. */
+        $CIDRAM['FE']['info_cidram_branch'] = $CIDRAM['lang']['response_error'];
+
+    } else {
+
+        $CIDRAM['Remote-YAML-CIDRAM-Array'] = array();
+        $CIDRAM['YAML']($CIDRAM['Remote-YAML-CIDRAM'], $CIDRAM['Remote-YAML-CIDRAM-Array']);
+
+        /** CIDRAM latest stable. */
+        $CIDRAM['FE']['info_cidram_stable'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Stable']) ?
+            $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-CIDRAM-Array']['Stable'];
+        /** CIDRAM latest unstable. */
+        $CIDRAM['FE']['info_cidram_unstable'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable']) ?
+            $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-CIDRAM-Array']['Unstable'];
+        /** CIDRAM branch latest stable. */
+        if ($CIDRAM['ThisBranch'] = substr($CIDRAM['FE']['ScriptVersion'], 0, strpos($CIDRAM['FE']['ScriptVersion'], '.') ?: 0)) {
+            $CIDRAM['ThisBranch'] = 'v' . ($CIDRAM['ThisBranch'] ?: 1);
+            $CIDRAM['FE']['info_cidram_branch'] = empty($CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
+                $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-CIDRAM-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
+        } else {
+            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['lang']['response_error'];
+        }
+
+    }
+
+    /** Cleanup. */
+    unset($CIDRAM['Remote-YAML-CIDRAM-Array'], $CIDRAM['Remote-YAML-CIDRAM']);
+
+    /** Fetch remote PHP version information and cache it if necessary. */
+    if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'php-ver.yaml')) === false) {
+        $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', false, 8);
+        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 604800);
+    }
+
+    /** Process remote PHP version information. */
+    if (empty($CIDRAM['Remote-YAML-PHP'])) {
+
+        /** PHP latest stable. */
+        $CIDRAM['FE']['info_php_stable'] = $CIDRAM['lang']['response_error'];
+        /** PHP latest unstable. */
+        $CIDRAM['FE']['info_php_unstable'] = $CIDRAM['lang']['response_error'];
+        /** PHP branch latest stable. */
+        $CIDRAM['FE']['info_php_branch'] = $CIDRAM['lang']['response_error'];
+
+    } else {
+
+        $CIDRAM['Remote-YAML-PHP-Array'] = array();
+        $CIDRAM['YAML']($CIDRAM['Remote-YAML-PHP'], $CIDRAM['Remote-YAML-PHP-Array']);
+
+        /** PHP latest stable. */
+        $CIDRAM['FE']['info_php_stable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Stable']) ?
+            $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-PHP-Array']['Stable'];
+        /** PHP latest unstable. */
+        $CIDRAM['FE']['info_php_unstable'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Unstable']) ?
+            $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-PHP-Array']['Unstable'];
+        /** PHP branch latest stable. */
+        if ($CIDRAM['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
+            $CIDRAM['ThisBranch'] .= substr(PHP_VERSION, strlen($CIDRAM['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($CIDRAM['ThisBranch'])) ?: 0);
+            $CIDRAM['ThisBranch'] = 'php' . $CIDRAM['ThisBranch'];
+            $CIDRAM['FE']['info_php_branch'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
+                $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
+            $CIDRAM['ForceVersionWarning'] = (!empty($CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin']) && (
+                $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'] === '*' ||
+                $phpMussel['VersionCompare'](PHP_VERSION, $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'])
+            ));
+        } else {
+            $CIDRAM['FE']['info_php_branch'] = $CIDRAM['lang']['response_error'];
+        }
+
+    }
+
+    /** Cleanup. */
+    unset($CIDRAM['Remote-YAML-PHP-Array'], $CIDRAM['Remote-YAML-PHP'], $CIDRAM['ThisBranch'], $CIDRAM['RemoteVerPath']);
 
     /** Process warnings. */
     $CIDRAM['FE']['Warnings'] = '';
@@ -1122,6 +1214,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                 '<code>' . $CIDRAM['ThisFileName'] . '</code> – ' .
                                 $CIDRAM['lang']['response_checksum_error'] . '<br />';
                             continue;
+                            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['On Checksum Error'])) {
+                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['On Checksum Error']);
+                            }
                         }
                         $CIDRAM['ThisName'] = $CIDRAM['ThisFileName'];
                         $CIDRAM['ThisPath'] = $CIDRAM['Vault'];
@@ -1169,18 +1264,38 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     }
                     $CIDRAM['FileData'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['NewMeta'];
                     $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
-                    $CIDRAM['FE']['state_msg'] .= (
+                    if (
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
-                    ) ?
-                        $CIDRAM['lang']['response_component_successfully_installed'] :
-                        $CIDRAM['lang']['response_component_successfully_updated'];
+                    ) {
+                        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_installed'];
+                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Succeeds'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Succeeds']);
+                        }
+                    } else {
+                        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_updated'];
+                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Succeeds'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Succeeds']);
+                        }
+                    }
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']] =
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']];
                 } else {
                     $CIDRAM['FE']['state_msg'] .=
                         '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
                         $CIDRAM['lang']['response_component_update_error'];
+                    if (
+                        empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
+                        empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
+                    ) {
+                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Fails'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Fails']);
+                        }
+                    } else {
+                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Fails'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Fails']);
+                        }
+                    }
                 }
                 $CIDRAM['FE']['state_msg'] .= '<br />';
             }
@@ -1264,8 +1379,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Components']['Meta'][$_POST['ID']]['Version'] = false;
                 $CIDRAM['Components']['Meta'][$_POST['ID']]['Files'] = false;
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_successfully_uninstalled'];
+                if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Uninstall Succeeds'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Uninstall Succeeds']);
+                }
             } else {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_component_uninstall_error'];
+                if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Uninstall Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Uninstall Fails']);
+                }
             }
         }
 
@@ -1296,6 +1417,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             }
             if (!$CIDRAM['Activation']['modified'] || !$CIDRAM['Activation']['Config']) {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_activation_failed'];
+                if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Activation Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Activation Fails']);
+                }
             } else {
                 $CIDRAM['Activation']['Config'] = str_replace(
                     array(
@@ -1316,6 +1440,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 fwrite($CIDRAM['Handle'], $CIDRAM['Activation']['Config']);
                 fclose($CIDRAM['Handle']);
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_activated'];
+                if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Activation Succeeds'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Activation Succeeds']);
+                }
             }
             unset($CIDRAM['Activation']);
         }
@@ -1345,6 +1472,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             }
             if (!$CIDRAM['Deactivation']['modified'] || !$CIDRAM['Deactivation']['Config']) {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_deactivation_failed'];
+                if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Deactivation Fails'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Deactivation Fails']);
+                }
             } else {
                 $CIDRAM['Deactivation']['Config'] = str_replace(
                     array(
@@ -1365,6 +1495,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 fwrite($CIDRAM['Handle'], $CIDRAM['Deactivation']['Config']);
                 fclose($CIDRAM['Handle']);
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_deactivated'];
+                if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Deactivation Succeeds'])) {
+                    $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Deactivation Succeeds']);
+                }
             }
             unset($CIDRAM['Deactivation']);
         }
@@ -2288,9 +2421,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 $CIDRAM['ThisTracking']['StatClass'] = 'txtRd';
                 $CIDRAM['ThisTracking']['Status'] .= '/' . $CIDRAM['lang']['field_blocked'];
             }
-            $CIDRAM['ThisTracking']['Status'] .= ' – ' . number_format($CIDRAM['ThisTrackingArr']['Count'], 0, '',
-                !empty($CIDRAM['lang']['punct_thousand']) ? $CIDRAM['lang']['punct_thousand'] : ','
-            );
+            $CIDRAM['ThisTracking']['Status'] .= ' – ' . $CIDRAM['Number_L10N']($CIDRAM['ThisTrackingArr']['Count'], 0);
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ThisTracking'],
                 $CIDRAM['FE']['TrackingRow']

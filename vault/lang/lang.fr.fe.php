@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.07.25).
+ * This file: French language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Un fichier dans le style d\'A
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un fichier sérialisé pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inclure les demandes bloquées provenant d\'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentatives de connexion.';
+$CIDRAM['lang']['config_general_numbers'] = 'Comment préférez-vous que les nombres soient affichés ? Sélectionnez l\'exemple qui vous paraît le plus approprié.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l\'accès frontal. True = Oui [Défaut] ; False = Non.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu\'ils ne seront pas interdits en raison de dépassement de la limite d\'infraction (l\'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu\'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d\'habitude, mais ne seront pas interdits. Lorsqu\'ils ne sont pas vérifiés, il est possible qu\'ils soient interdits en raison du dépassement de la limite d\'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses demandes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page « Accès Refusé » ? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Une liste des fichiers du signature
 $CIDRAM['lang']['config_signatures_modules'] = 'Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Quand faut-il compter les infractions ? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de fichier CSS pour les thèmes personnalisés.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Grossissement des fontes. Défaut = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Le thème à utiliser par défaut pour CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Activer';
 $CIDRAM['lang']['field_banned'] = 'Interdit';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Nom d\'Utilisateur';
 $CIDRAM['lang']['field_your_version'] = 'Votre Version';
 $CIDRAM['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $CIDRAM['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
+$CIDRAM['lang']['label_branch'] = 'Dernier stable de branche :';
 $CIDRAM['lang']['label_cidram'] = 'Version CIDRAM utilisée :';
 $CIDRAM['lang']['label_os'] = 'Système opérateur utilisée :';
 $CIDRAM['lang']['label_php'] = 'Version PHP utilisée :';
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilisée :';
+$CIDRAM['lang']['label_stable'] = 'Dernier stable :';
 $CIDRAM['lang']['label_sysinfo'] = 'Informations sur le système :';
+$CIDRAM['lang']['label_unstable'] = 'Dernier instable :';
 $CIDRAM['lang']['link_accounts'] = 'Comptes';
 $CIDRAM['lang']['link_cidr_calc'] = 'Calculatrice CIDR';
 $CIDRAM['lang']['link_config'] = 'Configuration';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Mois';
 $CIDRAM['lang']['previewer_seconds'] = 'Secondes';
 $CIDRAM['lang']['previewer_weeks'] = 'Semaines';
 $CIDRAM['lang']['previewer_years'] = 'Années';
-$CIDRAM['lang']['punct_decimals'] = ',';
-$CIDRAM['lang']['punct_thousand'] = ' ';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Un compte avec ce nom d\'utilisateur existe déjà !';
 $CIDRAM['lang']['response_accounts_created'] = 'Compte créé avec succès !';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Compte supprimé avec succès !';

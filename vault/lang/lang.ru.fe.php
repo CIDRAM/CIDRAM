@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.07.25).
+ * This file: Russian language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-стиль файл д
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Сериализованная файл для регистрации всех заблокированных попыток несанкционированного доступа. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Включить заблокированные запросы от запрещенных IP-адресов в лог-файлы? True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Максимальное количество попыток входа в систему.';
+$CIDRAM['lang']['config_general_numbers'] = 'Как Вы предпочитаете номера для отображения? Выберите пример, который выглядит наиболее правильным для вас.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Определяет, будут ли средства защиты как правило предоставляемые CIDRAM должны быть применены к фронтенд. True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Попытка проверить запросы от поисковых систем? Верификация поисковых систем гарантирует, что они не будут запрещены в результате превышения предела нарушение (запрет на поисковые системы с вашего сайта, как правило, оказывают негативное влияние на вашей поисковой системы рейтинга, SEO, и т.д.). Когда проверяется, поисковые системы могут быть заблокированы, но не запрещено. Когда не проверяется, это возможно для них должны быть запрещены в результате превышения лимита нарушений. Дополнительно, верификация поисковых систем обеспечивает защиту от подделки запросов поисковой системы и вредоносные источники маскируются как поисковые системы (такие запросы будут заблокированы при проверке поисковой активируется). True = Активировать верификация поисковых систем [Стандарт]; False = Деактивировать верификация поисковых систем.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Должен CIDRAM молча перенаправить заблокированные попытки доступа вместо отображения страницы "Доступ Закрыт"? Если да, указать местоположение для перенаправления блокировал попытки доступа. Если нет, оставить эту переменную пустым.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Список сигнатур IPv6 
 $CIDRAM['lang']['config_signatures_modules'] = 'Список модуль файлы для загрузки после обработки сигнатуры IPv4/IPv6, разделенных запятыми.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Когда следует учитывать нарушения? False = Когда IP-адреса блокируются из модулями. True = Когда IP-адреса блокируются по какой-либо причине.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для пользовательских тем.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Увеличение шрифта. Стандарт = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Стандартная тема для CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Имя Пользователя';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $CIDRAM['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
+$CIDRAM['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
+$CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
+$CIDRAM['lang']['label_unstable'] = 'Последние нестабильный:';
 $CIDRAM['lang']['link_accounts'] = 'Учетными Записями';
 $CIDRAM['lang']['link_cidr_calc'] = 'Калькулятор CIDR';
 $CIDRAM['lang']['link_config'] = 'Конфигурация';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Месяцы';
 $CIDRAM['lang']['previewer_seconds'] = 'Секунды';
 $CIDRAM['lang']['previewer_weeks'] = 'Недели';
 $CIDRAM['lang']['previewer_years'] = 'Лет';
-$CIDRAM['lang']['punct_decimals'] = ',';
-$CIDRAM['lang']['punct_thousand'] = ' ';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Аккаунт с таким именем уже существует!';
 $CIDRAM['lang']['response_accounts_created'] = 'Аккаунт успешно создан!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';

@@ -318,6 +318,9 @@ General configuración para CIDRAM.
 "lang"
 - Especifique la predefinido del lenguaje para CIDRAM.
 
+"numbers"
+- Especifica cómo mostrar números.
+
 "emailaddr"
 - Si deseado, usted puede suministrar una dirección de email aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de email que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de email aquí, que se asegura de que la dirección de email usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal).
 
@@ -432,6 +435,9 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 
 "theme"
 - Tema predefinido a utilizar para CIDRAM.
+
+"Magnification"
+- Ampliación de fuente. Predefinido = 1.
 
 "css_url"
 - El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir CIDRAM de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, CIDRAM utilizará el plantilla archivo para el predefinida tema.
@@ -727,4 +733,4 @@ Valor | Utilizando
 ---
 
 
-Última Actualización: 22 Julio 2017 (2017.07.22).
+Última Actualización: 29 Julio 2017 (2017.07.29).

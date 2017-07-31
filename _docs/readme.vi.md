@@ -318,6 +318,9 @@ Cấu hình chung cho CIDRAM.
 "lang"
 - Xác định tiếng mặc định cho CIDRAM.
 
+"numbers"
+- Chỉ định cách hiển thị số.
+
 "emailaddr"
 - Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email).
 
@@ -432,6 +435,9 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 
 "theme"
 - Chủ đề mặc định để sử dụng cho CIDRAM.
+
+"Magnification"
+- Phóng to chữ. Mặc định = 1.
 
 "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn CIDRAM để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, CIDRAM sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
@@ -727,4 +733,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 22 Tháng Bảy 2017 (2017.07.22).
+Lần cuối cập nhật: 29 Tháng Bảy 2017 (2017.07.29).

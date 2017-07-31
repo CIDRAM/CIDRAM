@@ -318,6 +318,9 @@ Configuração geral por CIDRAM.
 "lang"
 - Especificar o padrão da linguagem por CIDRAM.
 
+"numbers"
+- Especifica como exibir números.
+
 "emailaddr"
 - Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail).
 
@@ -432,6 +435,9 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 
 "theme"
 - Tema padrão a ser usado para CIDRAM.
+
+"Magnification"
+- Ampliação de fonte. Padrão = 1.
 
 "css_url"
 - O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir CIDRAM para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, CIDRAM usará o template arquivo para o padrão tema.
@@ -727,4 +733,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 22 Julho 2017 (2017.07.22).
+Última Atualização: 29 Julho 2017 (2017.07.29).

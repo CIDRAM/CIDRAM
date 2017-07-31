@@ -318,6 +318,9 @@ Generelle Konfiguration von CIDRAM.
 "lang"
 - Gibt die Standardsprache für CIDRAM an.
 
+"numbers"
+- Gibt an, wie die Nummern angezeigt werden sollen.
+
 "emailaddr"
 - Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden).
 
@@ -432,6 +435,9 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 
 "theme"
 - Standard-Thema für CIDRAM verwenden.
+
+"Magnification"
+- Schriftvergrößerung. Standardeinstellung = 1.
 
 "css_url"
 - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um CIDRAM anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird CIDRAM die Template-Datei für das normale Theme verwenden.
@@ -727,4 +733,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 22 Juli 2017 (2017.07.22).
+Zuletzt aktualisiert: 29 Juli 2017 (2017.07.29).

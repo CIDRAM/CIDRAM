@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.07.25).
+ * This file: German language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Name einer Apache-Stil-Datei 
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Enthalten Sie blockierte Anfragen von verbotenen IPs in die Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximale Anzahl der Versucht zu einloggen.';
+$CIDRAM['lang']['config_general_numbers'] = 'Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Überprüfung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Überprüfung aktiviert ist). True = Suchmaschinen-Überprüfung aktivieren [Standardeinstellung]; False = Suchmaschinen-Überprüfung deaktivieren.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Anstatt die "Zugriff verweigert", sollte CIDRAM leise blockiert Zugriffsversuche umleiten? Wenn ja, geben Sie den Speicherort auf den blockierten Zugriffsversuche umleiten. Wenn nein, diese Variable leer lassen.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Eine Liste der IPv6-Signaturdateien
 $CIDRAM['lang']['config_signatures_modules'] = 'Eine Liste der Moduldateien zu laden nach der Prüfung der IPv4/IPv6-Signaturen, durch Kommas begrenzt.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Wann sollten Verstöße gezählt werden? False = Wenn IPs von Modulen blockiert werden. True = Wenn IPs von irgendeinem Grund blockiert werden.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-Datei URL für benutzerdefinierte Themen.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Schriftvergrößerung. Standardeinstellung = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standard-Thema für CIDRAM verwenden.';
 $CIDRAM['lang']['field_activate'] = 'Aktivieren';
 $CIDRAM['lang']['field_banned'] = 'Verboten';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Benutzername';
 $CIDRAM['lang']['field_your_version'] = 'Ihre Version';
 $CIDRAM['lang']['header_login'] = 'Bitte einloggen zum Fortfahren.';
 $CIDRAM['lang']['label_active_config_file'] = 'Aktive Konfigurationsdatei: ';
+$CIDRAM['lang']['label_branch'] = 'Branch neueste stabil:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-Version verwendet:';
 $CIDRAM['lang']['label_os'] = 'Betriebssystem verwendet:';
 $CIDRAM['lang']['label_php'] = 'PHP-Version verwendet:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI verwendet:';
+$CIDRAM['lang']['label_stable'] = 'Neueste stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'System Information:';
+$CIDRAM['lang']['label_unstable'] = 'Neueste instabil:';
 $CIDRAM['lang']['link_accounts'] = 'Konten';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Rechner';
 $CIDRAM['lang']['link_config'] = 'Konfiguration';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Monate';
 $CIDRAM['lang']['previewer_seconds'] = 'Sekunden';
 $CIDRAM['lang']['previewer_weeks'] = 'Wochen';
 $CIDRAM['lang']['previewer_years'] = 'Jahre';
-$CIDRAM['lang']['punct_decimals'] = ',';
-$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Ein Konto mit diesem Benutzernamen ist bereits vorhanden!';
 $CIDRAM['lang']['response_accounts_created'] = 'Konto erfolgreich erstellt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Konto erfolgreich gelöscht!';

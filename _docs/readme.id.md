@@ -318,6 +318,9 @@ Konfigurasi umum dari CIDRAM.
 "lang"
 - Tentukan bahasa default untuk CIDRAM.
 
+"numbers"
+- Menentukan bagaimana menampilkan nomor-nomor.
+
 "emailaddr"
 - Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).
 
@@ -432,6 +435,9 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 
 "theme"
 - Tema default untuk CIDRAM.
+
+"Magnification"
+- Perbesaran font. Default = 1.
 
 "css_url"
 - File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan CIDRAM menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable `css_url`. Jika Anda biarkan kosong variabel ini, CIDRAM akan menggunakan file template untuk tema default.
@@ -727,4 +733,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 22 Juli 2017 (2017.07.22).
+Terakhir Diperbarui: 29 Juli 2017 (2017.07.29).

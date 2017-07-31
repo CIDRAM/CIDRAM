@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.07.25).
+ * This file: Japanese language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の�
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '禁止されたＩＰからブロックされた要求をログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。';
+$CIDRAM['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。​True = はい（Default/デフォルルト）；​False = いいえ。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します （これらのリクエストはブロックされます）。​True = 検索エンジンの検証を有効にする（Default/デフォルルト）；​False = 検索エンジンの検証を無効にする。';
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、​CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？​はいの場合は、​リダイレクトの場所を指定します。​いいえの場合は、​この変数を空白のままにします。';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'ＩＰｖ６のシグネチャフ�
 $CIDRAM['lang']['config_signatures_modules'] = 'ＩＰｖ４/ＩＰｖ６シグネチャをチェックした後にロードするモジュールファイルのリスト。​これは、​カンマで区切られています。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。​True = なんでもの理由でＩＰがブロックされた場合。';
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣＳＳファイルＵＲＬ。';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'フォントの倍率。​Default/デフォルルト = １。';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAMに使用するデフォルトテーマ。';
 $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'ユーザー名';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、​ログインしてください。';
 $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$CIDRAM['lang']['label_branch'] = 'ブランチ最新安定：';
 $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';
 $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
+$CIDRAM['lang']['label_stable'] = '最新安定：';
 $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
+$CIDRAM['lang']['label_unstable'] = '最新不安定：';
 $CIDRAM['lang']['link_accounts'] = 'アカウント';
 $CIDRAM['lang']['link_cidr_calc'] = 'ＣＩＤＲ計算機';
 $CIDRAM['lang']['link_config'] = 'コンフィギュレーション';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = '月';
 $CIDRAM['lang']['previewer_seconds'] = '秒';
 $CIDRAM['lang']['previewer_weeks'] = '週';
 $CIDRAM['lang']['previewer_years'] = '年';
-$CIDRAM['lang']['punct_decimals'] = '.';
-$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $CIDRAM['lang']['response_accounts_created'] = 'アカウントを作成に成功しました！';
 $CIDRAM['lang']['response_accounts_deleted'] = 'アカウントを削除が成功しました！';

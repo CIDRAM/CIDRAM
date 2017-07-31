@@ -318,6 +318,9 @@ Algemene configuratie voor CIDRAM.
 "lang"
 - Geef de standaardtaal voor CIDRAM.
 
+"numbers"
+- Specificeert hoe u nummers wilt weergeven.
+
 "emailaddr"
 - Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).
 
@@ -432,6 +435,9 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 
 "theme"
 - Standaard thema om te gebruiken voor CIDRAM.
+
+"Magnification"
+- Lettergrootte vergroting. Standaard = 1.
 
 "css_url"
 - De sjabloonbestand voor aangepaste thema's maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om CIDRAM instrueren om de sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema's CSS-bestanden via de `css_url` variabele. Als u dit variabele leeg laat, CIDRAM zal de sjabloonbestand voor de standaardthema te gebruiken.
@@ -727,4 +733,4 @@ Waarde | Gebruik makend van
 ---
 
 
-Laatste Bijgewerkt: 22 Juli 2017 (2017.07.22).
+Laatste Bijgewerkt: 29 Juli 2017 (2017.07.29).

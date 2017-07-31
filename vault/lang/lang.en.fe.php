@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.07.25).
+ * This file: English language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-style file for logging
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum number of login attempts.';
+$CIDRAM['lang']['config_general_numbers'] = 'How do you prefer numbers to be displayed? Select the example that looks the most correct to you.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Attempt to verify requests from search engines? Verifying search engines ensures that they won\'t be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won\'t be banned. When not verified, it\'s possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'A list of the IPv6 signature files 
 $CIDRAM['lang']['config_signatures_modules'] = 'A list of module files to load after checking the IPv4/IPv6 signatures, delimited by commas.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'When should infractions be counted? False = When IPs are blocked by modules. True = When IPs are blocked for any reason.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS file URL for custom themes.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Font magnification. Default = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Default theme to use for CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Activate';
 $CIDRAM['lang']['field_banned'] = 'Banned';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Username';
 $CIDRAM['lang']['field_your_version'] = 'Your Version';
 $CIDRAM['lang']['header_login'] = 'Please log in to continue.';
 $CIDRAM['lang']['label_active_config_file'] = 'Active configuration file: ';
+$CIDRAM['lang']['label_branch'] = 'Branch latest stable:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM version used:';
 $CIDRAM['lang']['label_os'] = 'Operating system used:';
 $CIDRAM['lang']['label_php'] = 'PHP version used:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI used:';
+$CIDRAM['lang']['label_stable'] = 'Latest stable:';
 $CIDRAM['lang']['label_sysinfo'] = 'System information:';
+$CIDRAM['lang']['label_unstable'] = 'Latest unstable:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
 $CIDRAM['lang']['link_config'] = 'Configuration';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Months';
 $CIDRAM['lang']['previewer_seconds'] = 'Seconds';
 $CIDRAM['lang']['previewer_weeks'] = 'Weeks';
 $CIDRAM['lang']['previewer_years'] = 'Years';
-$CIDRAM['lang']['punct_decimals'] = '.';
-$CIDRAM['lang']['punct_thousand'] = ',';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'An account with that username already exists!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account successfully created!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account successfully deleted!';

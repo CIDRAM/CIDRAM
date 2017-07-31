@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary hotfixes file (last modified: 2017.06.03).
+ * This file: Temporary hotfixes file (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -164,35 +164,6 @@ if (true) { // switch 170129
     /** Update switch. */
     $CIDRAM['ThisFile'] = str_replace(
         "\nif (true) { // switch 170129\n",
-        "\nif (false) {\n",
-        $CIDRAM['ThisFile']
-    );
-    $CIDRAM['Hotfixed'] = true;
-}
-
-/**
- * Update plugin version cited in the WordPress plugins dashboard, if this copy
- * of CIDRAM is running as a WordPress plugin.
- */
-if (true) { // switch WP-1.0.0
-    if (
-        file_exists($CIDRAM['Vault'] . '../cidram.php') &&
-        is_readable($CIDRAM['Vault'] . '../cidram.php') &&
-        ($CIDRAM['ThisData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . '../cidram.php'))
-    ) {
-        $CIDRAM['PlugHead'] = "\x3c\x3fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
-        if (substr($CIDRAM['ThisData'], 0, 45) === $CIDRAM['PlugHead']) {
-            $CIDRAM['PlugHeadEnd'] = strpos($CIDRAM['ThisData'], "\n", 45);
-            $CIDRAM['ThisData'] = $CIDRAM['PlugHead'] . $CIDRAM['ScriptVersion'] . substr($CIDRAM['ThisData'], $CIDRAM['PlugHeadEnd']);
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . '../cidram.php', 'w');
-            fwrite($CIDRAM['Handle'], $CIDRAM['ThisData']);
-            fclose($CIDRAM['Handle']);
-        }
-    }
-
-    /** Update switch. */
-    $CIDRAM['ThisFile'] = str_replace(
-        "\nif (true) { // switch WP-1.0.0\n",
         "\nif (false) {\n",
         $CIDRAM['ThisFile']
     );

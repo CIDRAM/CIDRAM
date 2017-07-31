@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.07.25).
+ * This file: Indonesian language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'File yang dalam gaya Apache u
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Jumlah maksimum upaya untuk memasukkan.';
+$CIDRAM['lang']['config_general_numbers'] = 'Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada front-end. True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Mencoba untuk memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tetapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang 
 $CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'Perbesaran font. Default = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'Nama Pengguna';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
+$CIDRAM['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_php'] = 'Versi PHP digunakan:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
+$CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
+$CIDRAM['lang']['label_unstable'] = 'Terbaru tidak stabil:';
 $CIDRAM['lang']['link_accounts'] = 'Akun';
 $CIDRAM['lang']['link_cidr_calc'] = 'Kalkulator CIDR';
 $CIDRAM['lang']['link_config'] = 'Konfigurasi';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'Bulan';
 $CIDRAM['lang']['previewer_seconds'] = 'Detik';
 $CIDRAM['lang']['previewer_weeks'] = 'Minggu';
 $CIDRAM['lang']['previewer_years'] = 'Tahun';
-$CIDRAM['lang']['punct_decimals'] = ',';
-$CIDRAM['lang']['punct_thousand'] = '.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $CIDRAM['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';

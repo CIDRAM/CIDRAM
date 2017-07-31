@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.07.25).
+ * This file: Arabic language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,6 +33,7 @@ $CIDRAM['lang']['config_general_logfileApache'] = 'ملف على غرار أبا
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'ملف تسلسل لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'من IP المحظورة في ملفات السجل؟ True = نعم [افتراضي]؛ False = لا.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'الحد الأقصى لعدد محاولات تسجيل الدخول.';
+$CIDRAM['lang']['config_general_numbers'] = 'كيف تفضل الأرقام ليتم عرضها؟ حدد المثال الذي يبدو أكثر صحيح لك.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. True = نعم [افتراضي]؛ False = لا.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'محاولة للتحقق من طلبات من محركات البحث؟ التحقق من محركات البحث يضمن أنها لن تكون محظورة نتيجة لتجاوز الحد مخالفة (منع محركات البحث من موقع الويب الخاص بك عادة ما يكون لها تأثير سلبي على محرك البحث الترتيب، كبار المسئولين الاقتصاديين، إلخ). عند تمكين التحقق، محركات البحث يمكن أن يكون قد تم حظره، ولكن ليس محظورة. عند تعطيل التحقق، أنها يمكن أن تكون محظورة إذا تجاوزت الحد مخالفة. بالإضافة إلى، التحقق محرك البحث يحمي ضد الكيانات الخبيثة يتنكر في محركات البحث (سيتم حجب هذه الطلبات). True = تمكين التحقق محرك البحث [افتراضي]؛ False = تعطيل التحقق محرك البحث.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا.';
@@ -59,6 +60,7 @@ $CIDRAM['lang']['config_signatures_ipv6'] = 'وهناك قائمة من المل
 $CIDRAM['lang']['config_signatures_modules'] = 'قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'متى يجب أن تحسب المخالفات؟ False = عندما IP تم حظره من قبل وحدات. True = عندما IP يتم حظر لأي سبب من الأسباب.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
+$CIDRAM['lang']['config_template_data_Magnification'] = 'تكبير الخط. افتراضي = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'الموضوع الافتراضي لاستخدام CIDRAM.';
 $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
@@ -109,11 +111,14 @@ $CIDRAM['lang']['field_username'] = 'اسم المستخدم';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$CIDRAM['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $CIDRAM['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
+$CIDRAM['lang']['label_stable'] = 'أحدث مستقرة:';
 $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
+$CIDRAM['lang']['label_unstable'] = 'أحدث غير مستقرة:';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR حاسبة';
 $CIDRAM['lang']['link_config'] = 'التكوين';
@@ -135,8 +140,6 @@ $CIDRAM['lang']['previewer_months'] = 'الشهور';
 $CIDRAM['lang']['previewer_seconds'] = 'ثواني';
 $CIDRAM['lang']['previewer_weeks'] = 'أسابيع';
 $CIDRAM['lang']['previewer_years'] = 'سنوات';
-$CIDRAM['lang']['punct_decimals'] = '٫';
-$CIDRAM['lang']['punct_thousand'] = '٬';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'اسم المستخدم موجود بالفعل!';
 $CIDRAM['lang']['response_accounts_created'] = 'تم انشاء الحساب بنجاح!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'تم حذف الحساب بنجاح!';

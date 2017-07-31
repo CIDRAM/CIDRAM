@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.07.29).
+ * This file: Front-end handler (last modified: 2017.07.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -509,7 +509,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
                 $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
             $CIDRAM['ForceVersionWarning'] = (!empty($CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin']) && (
                 $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'] === '*' ||
-                $phpMussel['VersionCompare'](PHP_VERSION, $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'])
+                $CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'])
             ));
         } else {
             $CIDRAM['FE']['info_php_branch'] = $CIDRAM['lang']['response_error'];
@@ -1213,10 +1213,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                 '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
                                 '<code>' . $CIDRAM['ThisFileName'] . '</code> – ' .
                                 $CIDRAM['lang']['response_checksum_error'] . '<br />';
-                            continue;
                             if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['On Checksum Error'])) {
                                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['On Checksum Error']);
                             }
+                            continue;
                         }
                         $CIDRAM['ThisName'] = $CIDRAM['ThisFileName'];
                         $CIDRAM['ThisPath'] = $CIDRAM['Vault'];

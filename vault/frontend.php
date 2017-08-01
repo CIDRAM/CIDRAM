@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.07.31).
+ * This file: Front-end handler (last modified: 2017.08.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1213,8 +1213,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                 '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
                                 '<code>' . $CIDRAM['ThisFileName'] . '</code> – ' .
                                 $CIDRAM['lang']['response_checksum_error'] . '<br />';
-                            if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['On Checksum Error'])) {
-                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['On Checksum Error']);
+                            if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error'])) {
+                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error']);
                             }
                             continue;
                         }
@@ -1269,13 +1269,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
                     ) {
                         $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_installed'];
-                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Succeeds'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Succeeds']);
+                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds']);
                         }
                     } else {
                         $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_updated'];
-                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Succeeds'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Succeeds']);
+                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds']);
                         }
                     }
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']] =
@@ -1288,12 +1288,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
                     ) {
-                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Fails'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Install Fails']);
+                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails']);
                         }
                     } else {
-                        if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Fails'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Update Fails']);
+                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails']);
                         }
                     }
                 }

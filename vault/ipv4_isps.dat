@@ -3701,11 +3701,10 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 3.53%.
-# %Listed, CleanTalk.org: 37.78%.
-# %Listed, abuseat.org (CBL-Listed): 0.61%.
-# Stop Forum Spam (SFS) listings: 629,550.
-# Updated: 2017.04.26
+# %Listed, Google Malware Dashboard: 3.36%.
+# %Listed, CleanTalk.org: 36.22%.
+# Stop Forum Spam (SFS) listings: 378,105.
+# Updated: 2017.08.02
 
 1.1.8.0/24 Deny Generic
 1.48.0.0/15 Deny Generic
@@ -3820,6 +3819,9 @@ recaptcha:
 103.15.200.0/22 Deny Generic
 103.26.156.0/22 Deny Generic
 103.30.228.0/22 Deny Generic
+103.40.192.0/22 Deny Generic
+103.60.164.0/22 Deny Generic
+103.239.244.0/23 Deny Generic
 106.0.4.0/22 Deny Generic
 106.4.0.0/14 Deny Generic
 106.8.0.0/15 Deny Generic
@@ -3882,6 +3884,7 @@ recaptcha:
 114.67.0.0/18 Deny Generic
 114.96.0.0/13 Deny Generic
 114.104.0.0/14 Deny Generic
+114.111.0.0/19 Deny Generic
 114.114.112.0/21 Deny Generic
 114.135.0.0/16 Deny Generic
 114.138.0.0/15 Deny Generic
@@ -3898,13 +3901,11 @@ recaptcha:
 116.16.0.0/12 Deny Generic
 116.52.0.0/14 Deny Generic
 116.69.0.0/16 Deny Generic
-116.198.128.0/17 Deny Generic
 116.204.0.0/15 Deny Generic
 116.207.0.0/16 Deny Generic
 116.208.0.0/14 Deny Generic
 116.248.0.0/15 Deny Generic
 116.252.0.0/15 Deny Generic
-116.254.128.0/17 Deny Generic
 117.21.0.0/16 Deny Generic
 117.22.0.0/15 Deny Generic
 117.24.0.0/13 Deny Generic
@@ -3915,9 +3916,10 @@ recaptcha:
 117.60.0.0/14 Deny Generic
 117.64.0.0/13 Deny Generic
 117.80.0.0/12 Deny Generic
-117.120.128.0/17 Deny Generic
 118.30.0.0/16 Deny Generic
 118.84.0.0/15 Deny Generic
+118.88.64.0/18 Deny Generic
+118.88.128.0/17 Deny Generic
 118.103.244.0/22 Deny Generic
 118.112.0.0/13 Deny Generic
 118.120.0.0/14 Deny Generic
@@ -3933,7 +3935,6 @@ recaptcha:
 119.8.0.0/16 Deny Generic
 119.19.0.0/16 Deny Generic
 119.20.0.0/15 Deny Generic
-119.27.192.0/18 Deny Generic
 119.37.192.0/21 Deny Generic
 119.41.0.0/16 Deny Generic
 119.60.0.0/16 Deny Generic
@@ -3967,18 +3968,13 @@ recaptcha:
 122.4.0.0/14 Deny Generic
 122.9.0.0/16 Deny Generic
 122.10.0.0/17 Deny Generic
-122.11.0.0/19 Deny Generic
 122.48.0.0/18 Deny Generic
 122.48.64.0/19 Deny Generic
 122.48.128.0/18 Deny Generic
-122.48.192.0/20 Deny Generic
 122.49.0.0/18 Deny Generic
-122.51.64.0/18 Deny Generic
-122.51.128.0/17 Deny Generic
 122.98.128.0/17 Deny Generic
-122.102.64.0/21 Deny Generic
 122.102.94.0/23 Deny Generic
-122.198.0.0/17 Deny Generic
+122.198.64.0/18 Deny Generic
 122.198.128.0/21 Deny Generic
 122.224.0.0/12 Deny Generic
 122.240.0.0/13 Deny Generic
@@ -3995,23 +3991,18 @@ recaptcha:
 123.180.0.0/14 Deny Generic
 123.184.0.0/14 Deny Generic
 123.196.0.0/17 Deny Generic
-123.196.192.0/18 Deny Generic
 123.197.0.0/17 Deny Generic
-123.242.0.0/17 Deny Generic
 123.244.0.0/14 Deny Generic
 123.249.0.0/16 Deny Generic
-124.21.0.0/16 Deny Generic
 124.29.0.0/17 Deny Generic
 124.31.0.0/16 Deny Generic
 124.72.0.0/13 Deny Generic
 124.112.0.0/13 Deny Generic
 124.147.128.0/17 Deny Generic
-124.156.0.0/16 Deny Generic
 124.172.0.0/15 Deny Generic
 124.192.0.0/15 Deny Generic
 124.224.0.0/12 Deny Generic
 124.248.32.0/19 Deny Generic
-124.248.64.0/18 Deny Generic
 125.58.128.0/17 Deny Generic
 125.64.0.0/11 Deny Generic
 125.96.0.0/14 Deny Generic
@@ -4070,8 +4061,9 @@ recaptcha:
 183.91.56.0/24 Deny Generic
 183.128.0.0/11 Deny Generic
 183.160.0.0/13 Deny Generic
-199.114.224.0/22 Deny Generic
 202.43.144.0/20 Deny Generic
+202.60.132.0/22 Deny Generic
+202.62.112.0/22 Deny Generic
 202.75.216.0/21 Deny Generic
 202.80.192.0/22 Deny Generic
 202.90.0.0/21 Deny Generic
@@ -4081,6 +4073,7 @@ recaptcha:
 202.96.96.0/19 Deny Generic
 202.96.128.0/18 Deny Generic
 202.97.0.0/18 Deny Generic
+202.97.80.0/20 Deny Generic
 202.97.96.0/19 Deny Generic
 202.98.32.0/19 Deny Generic
 202.98.64.0/18 Deny Generic
@@ -4102,24 +4095,19 @@ recaptcha:
 202.111.220.0/23 Deny Generic
 202.111.224.0/19 Deny Generic
 202.125.176.0/20 Deny Generic
-202.127.112.0/20 Deny Generic
 202.130.248.0/21 Deny Generic
 202.141.160.0/20 Deny Generic
 202.149.224.0/19 Deny Generic
-202.153.48.0/20 Deny Generic
 202.173.224.0/19 Deny Generic
 202.181.112.0/20 Deny Generic
 203.86.0.0/19 Deny Generic
 203.88.192.0/19 Deny Generic
 203.90.128.0/19 Deny Generic
-203.90.160.0/20 Deny Generic
 203.119.113.0/24 Deny Generic
 203.128.96.0/19 Deny Generic
-203.135.96.0/20 Deny Generic
 203.161.192.0/19 Deny Generic
 203.175.192.0/18 Deny Generic
 203.187.160.0/19 Deny Generic
-203.190.96.0/20 Deny Generic
 203.191.144.0/21 Deny Generic
 203.207.200.0/22 Deny Generic
 203.215.232.0/23 Deny Generic
@@ -4130,7 +4118,6 @@ recaptcha:
 210.73.192.0/19 Deny Generic
 210.74.224.0/19 Deny Generic
 210.75.0.0/18 Deny Generic
-210.75.128.0/20 Deny Generic
 210.76.64.0/19 Deny Generic
 210.77.160.0/20 Deny Generic
 210.185.192.0/18 Deny Generic
@@ -4145,15 +4132,13 @@ recaptcha:
 211.154.48.0/20 Deny Generic
 211.154.128.0/19 Deny Generic
 211.155.16.0/20 Deny Generic
-211.155.96.0/19 Deny Generic
 211.155.224.0/21 Deny Generic
-211.156.80.0/20 Deny Generic
 211.156.112.0/20 Deny Generic
 211.156.176.0/20 Deny Generic
 211.156.240.0/20 Deny Generic
 211.158.32.0/19 Deny Generic
 211.158.64.0/18 Deny Generic
-211.159.0.0/18 Deny Generic
+211.159.16.0/21 Deny Generic
 211.159.64.0/20 Deny Generic
 211.167.0.0/19 Deny Generic
 218.0.0.0/16 Deny Generic
@@ -4178,11 +4163,10 @@ recaptcha:
 218.84.0.0/14 Deny Generic
 218.88.0.0/13 Deny Generic
 218.97.0.0/23 Deny Generic
-218.240.0.0/17 Deny Generic
+218.240.0.0/18 Deny Generic
 218.240.160.0/19 Deny Generic
 218.240.192.0/19 Deny Generic
 218.243.0.0/19 Deny Generic
-218.244.208.0/20 Deny Generic
 219.128.0.0/13 Deny Generic
 219.136.0.0/14 Deny Generic
 219.140.0.0/16 Deny Generic

@@ -756,14 +756,30 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 3.53%.
-# %Listed, CleanTalk.org: 37.78%.
-# %Listed, abuseat.org (CBL-Listed): 0.61%.
-# Stop Forum Spam (SFS) listings: 629,550.
-# Updated: 2016.09.12 / Checked: 2017.04.26
+# %Listed, Google Malware Dashboard: 3.36%.
+# %Listed, CleanTalk.org: 36.22%.
+# Stop Forum Spam (SFS) listings: 378,105.
+# Updated: 2017.08.02
 
+2400:9380:8000::/47 Deny Generic
+2400:9380:8020::/47 Deny Generic
+2400:9380:8030::/48 Deny Generic
+2400:9380:8200::/47 Deny Generic
+2400:9380:8221::/48 Deny Generic
 2406:8500::/32 Deny Generic
 240e::/24 Deny Generic
+2605:9d80:8001::/48 Deny Generic
+2605:9d80:8011::/48 Deny Generic
+2605:9d80:8031::/48 Deny Generic
+2605:9d80:8041::/48 Deny Generic
+2a04:f580:8000::/48 Deny Generic
+2a04:f580:8010::/47 Deny Generic
+2a04:f580:8090::/48 Deny Generic
+2a04:f580:8200::/48 Deny Generic
+2a04:f580:8210::/47 Deny Generic
+2a04:f580:8290::/48 Deny Generic
+2c0f:f7a8:8010::/47 Deny Generic
+2c0f:f7a8:8210::/47 Deny Generic
 Tag: China Backbone 4134
 ---
 recaptcha:

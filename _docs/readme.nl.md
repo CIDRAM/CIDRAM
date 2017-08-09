@@ -83,7 +83,7 @@ CIDRAM moet blokkeren ongewenste verzoeken naar uw website automatisch zonder en
 
 Updaten gebeurt met de hand, en u kunt aanpassen uw configuratie en aanpassen de CIDRs dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw signature bestanden.
 
-Als u tegenkomen een valse positieven, neem dan contact met mij op om me te laten weten.
+Als u tegenkomen een valse positieven, neem dan contact met mij op om me te laten weten. *(Zien: [Wat is een "vals positieve"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 
 ### 7. <a name="SECTION7"></a>SIGNATURE FORMAAT
 
+*Zie ook:*
+- *[Wat is een "signature"?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 BASICS
 
 Een beschrijving van het formaat en de structuur van de signatures gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste signatures bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de signatures van CIDRAM.
@@ -637,7 +640,7 @@ Raadpleeg de aangepaste signature bestanden voor meer informatie.
 
 ### 8. <a name="SECTION8"></a>VEELGESTELDE VRAGEN (FAQ)
 
-#### Wat is een "signature"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
 In het context van CIDRAM, een "signature" verwijst naar gegevens die als een indicator/identifier werken, voor iets specifiek waarnaar we op zoek zijn, gewoonlijk een IP-adres of CIDR, en bevat een aantal instructies voor CIDRAM, vertelt het de beste manier om wanneer het ontmoet waar we naar op zoek zijn te reageren. Een typische signature voor CIDRAM ziet er als volgt uit:
 
@@ -653,7 +656,7 @@ Echter, in het context van CIDRAM (zoals, binnen deze documentatie, binnen discu
 
 Hoewel deze dubbele betekenis van "CIDR" in sommige gevallen dubbelzinnig kan zijn, deze uitleg, samen met de context die wordt verstrekt, zou moeten helpen om dubbelzinnigheid te heffen.
 
-#### Wat is een "vals positieve"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Wat is een "vals positieve"?
 
 De term "vals positieve" (*alternatief: "vals positieve fout"; "vals alarm"*; Engels: *false positive*; *false positive error*; *false alarm*), zeer eenvoudig beschreven, en een algemene context, wordt gebruikt bij het testen voor een toestand, om verwijst naar om de resultaten van die test, wanneer de resultaten positief zijn (d.w.z, de toestand wordt vastgesteld als "positief"), maar wordt verwacht "negatief" te zijn (d.w.z, de toestand in werkelijkheid is "negatief"). Een "vals positieve" analoog aan "huilende wolf" kan worden beschouwd (waarin de toestand wordt getest, is of er een wolf in de buurt van de kudde, de toestand is "vals" in dat er geen wolf in de buurt van de kudde, en de toestand wordt gerapporteerd als "positief" door de herder door middel van schreeuwen "wolf, wolf"), of analoog aan situaties in medische testen waarin een patiënt gediagnosticeerd als met een ziekte of aandoening, terwijl het in werkelijkheid, hebben ze geen ziekte of aandoening.
 
@@ -733,4 +736,4 @@ Waarde | Gebruik makend van
 ---
 
 
-Laatste Bijgewerkt: 29 Juli 2017 (2017.07.29).
+Laatste Bijgewerkt: 9 Augustus 2017 (2017.08.09).

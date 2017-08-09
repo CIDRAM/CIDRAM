@@ -83,7 +83,7 @@ CIDRAM debe bloquear automáticamente las solicitudes indeseables a su website s
 
 Actualización se realiza manual, y usted puede personalizar su configuración y personalizar cuál de los CIDRs son bloqueados por modificando su archivo de configuración y/o su archivos de firmas.
 
-Si tiene algún falsos positivos, por favor contacto conmigo para decirme.
+Si tiene algún falsos positivos, por favor contacto conmigo para decirme. *(Ver: [¿Qué es un "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 
 ### 7. <a name="SECTION7"></a>FORMATO DE FIRMAS
 
+*Ver también:*
+- *[¿Qué es una "firma"?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 LOS FUNDAMENTOS
 
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
@@ -637,7 +640,7 @@ Consulte los archivos de firmas personalizadas para obtener más información.
 
 ### 8. <a name="SECTION8"></a>PREGUNTAS MÁS FRECUENTES (FAQ)
 
-#### ¿Qué es una "firma"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>¿Qué es una "firma"?
 
 En el contexto de CIDRAM, una "firma" se refiere a datos que actúan como un indicador/identificador para algo específico que estamos buscando, normalmente una dirección IP o CIDR, e incluye algunas instrucciones para CIDRAM, diciéndole la mejor manera de responder cuando encuentra lo que estamos buscando. Una firma típica para CIDRAM se parece a esto:
 
@@ -653,7 +656,7 @@ Aunque, en el contexto de CIDRAM (tal como, dentro de esta documentación, dentr
 
 Aunque este doble significado de "CIDR" puede presentar alguna ambigüedad en algunos casos, esta explicacion, junto con el contexto proporcionado, debe ayudar a resolver esa ambigüedad.
 
-#### ¿Qué es un "falso positivo"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>¿Qué es un "falso positivo"?
 
 El término "falso positivo" (*alternativamente: "error falso positivo"; "falsa alarma"*; Inglés: *false positive*; *false positive error*; *false alarm*), descrito muy simplemente, y en un contexto generalizado, se utiliza cuando se prueba para una condición, para referirse a los resultados de esa prueba, cuando los resultados son positivos (es decir, la condición se determina como "positivo", o "verdadero"), pero se espera que sean (o debería haber sido) negativo (es decir, la condición, en realidad, es "negativo", o "falso"). Un "falso positivo" podría considerarse análoga a "llorando lobo" (donde la condición que se está probando es si hay un lobo cerca de la manada, la condición es "falso" en el que no hay lobo cerca de la manada, y la condición se reporta como "positiva" por el pastor a modo de llamando "lobo, lobo"), o análogos a situaciones en las pruebas médicas donde un paciente es diagnosticado con alguna enfermedad o dolencia, cuando en realidad, no tienen tal enfermedad o dolencia.
 
@@ -733,4 +736,4 @@ Valor | Utilizando
 ---
 
 
-Última Actualización: 29 Julio 2017 (2017.07.29).
+Última Actualización: 9 Agosto 2017 (2017.08.09).

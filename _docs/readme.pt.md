@@ -83,7 +83,7 @@ CIDRAM deve bloquear automaticamente as solicitações indesejáveis para o seu 
 
 A atualização é feita manualmente, e você pode personalizar a sua configuração e personalizar quais CIDRs são bloqueados por modificando seu arquivo de configuração e/ou seus arquivos de assinaturas.
 
-Se você encontrar quaisquer falsos positivos, entre em contato comigo para me informar sobre isso.
+Se você encontrar quaisquer falsos positivos, entre em contato comigo para me informar sobre isso. *(Vejo: [O que é um "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 
 ### 7. <a name="SECTION7"></a>FORMATO DE ASSINATURAS
 
+*Veja também:*
+- *[O que é uma "assinatura"?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 NOÇÕES BÁSICAS
 
 A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode ser encontrada documentado em texto simples dentro de qualquer um dos dois arquivos de assinaturas personalizados. Por favor, consulte que a documentação para saber mais sobre o formato e estrutura das assinaturas de CIDRAM.
@@ -637,7 +640,7 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 
 ### 8. <a name="SECTION8"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
 
-#### O que é uma "assinatura"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>O que é uma "assinatura"?
 
 No contexto do CIDRAM, uma "assinatura" refere-se a dados que actuam como um indicador/identificador para algo específico que estamos procurando, geralmente um endereço IP ou CIDR, e inclui algumas instruções para CIDRAM, dizendo-lhe a melhor maneira de responder quando encontrar o que estamos procurando. Uma assinatura típica para o CIDRAM é algo como isto:
 
@@ -653,7 +656,7 @@ No entanto, no contexto do CIDRAM (tal como, dentro desta documentação, dentro
 
 Embora este duplo significado de "CIDR" possa apresentar alguma ambigüidade em alguns casos, esta explicação, juntamente com o contexto, deve ajudar a resolver essa ambiguidade.
 
-#### O que é um "falso positivo"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>O que é um "falso positivo"?
 
 O termo "falso positivo" (*alternativamente: "erro de falso positivo"; "alarme falso"*; Inglês: *false positive*; *false positive error*; *false alarm*), descrita de maneira muito simples, e num contexto generalizado, são usadas quando testando para uma condição, para se referir aos resultados desse teste, quando os resultados são positivos (isto é, a condição é determinada para ser "positivo", ou "verdadeiro"), mas espera-se que seja (ou deveria ter sido) negativo (isto é, a condição, na realidade, é "negativo", ou "falso"). Um "falso positivo" pode ser considerado análogo ao "chorando lobo" (em que a condição que está sendo testada é se existe um lobo perto do rebanho, a condição é "falso" em que não há nenhum lobo perto do rebanho, ea condição é relatada como "positivo" pelo pastor por meio de gritando "lobo, lobo"), ou análoga a situações em exames médicos em que um paciente é diagnosticado como tendo alguma doença quando, na realidade, eles não têm essa doença.
 
@@ -733,4 +736,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 29 Julho 2017 (2017.07.29).
+Última Atualização: 9 Agosto 2017 (2017.08.09).

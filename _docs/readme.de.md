@@ -83,7 +83,7 @@ CIDRAM sollte automatisch unerwünschte Zugriffe auf Ihre Website blockieren, oh
 
 Die Aktualisierung erfolgt manuell, und Sie können Ihre Konfiguration anpassen, und Sie können welche CIDRs blockiert festlegen, durch Sie Ihre Konfigurationsdatei und/oder Signaturdateien Modifizieren.
 
-Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren.
+Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren. *(Beziehen auf: [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 
 ### 7. <a name="SECTION7"></a>SIGNATURENFORMAT
 
+*Siehe auch:*
+- *[Was ist eine "Signatur"?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 GRUNDLAGEN
 
 Eine Beschreibung das Formats und die Struktur der Signaturen benutzt von CIDRAM kann gefunden im Klartext dokumentiert werden in der benutzerdefinierten Signaturdateien. Bitte beachten Sie zu dieser Dokumentation, um mehr über das Format und die Struktur der Signaturen für CIDRAM zu erfahren.
@@ -637,7 +640,7 @@ Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informat
 
 ### 8. <a name="SECTION8"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
-#### Was ist eine "Signatur"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
 Im Kontext von CIDRAM, eine "Signatur" bezieht sich auf Daten, die als Indikator/Identifikator fungieren, für etwas Bestimmtes dass wir suchen (normalerweise eine IP-Adresse oder CIDR), und enthält einige Anweisungen für CIDRAM, erzählen es der beste Weg zu reagieren, wenn es begegnet was wir suchen. Eine typische Signatur für CIDRAM sieht so aus:
 
@@ -653,7 +656,7 @@ Aber, im Kontext von CIDRAM (sowie, in dieser Dokumentation, in Diskussionen üb
 
 Obwohl diese doppelte Bedeutung von "CIDR" in einigen Fällen mehrdeutig werden kann, diese erklärung, zusammen mit dem Kontext zur Verfügung gestellt, sollte helfen diese Mehrdeutigkeit zu lösen.
 
-#### Was ist ein "Falsch-Positiv"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Was ist ein "Falsch-Positiv"?
 
 Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, verwendet wird, wenn eine Bedingung zu testen und wenn die Ergebnisse positiv sind, um die Ergebnisse dieser Tests zu entnehmen (dh, die Bedingung bestimmt wird positiv oder wahr), aber sind zu erwarten sein (oder sollte gewesen) negativ (dh, der Zustand, in Wirklichkeit, ist negativ oder falsch). Eine "Falsch-Positiv" könnte analog zu "weinen Wolf" betrachtet (wobei die Bedingung geprüft wird, ob es ein Wolf in der Nähe der Herde ist, die Bedingung "falsch" ist in dass es keinen Wolf in der Nähe der Herde, und die Bedingung wird als "positiv" berichtet durch die Schäfer durch Aufruf "Wolf, Wolf"), oder analog zu Situationen in medizinischen Tests, wobei ein Patient als mit eine Krankheit diagnostiziert, wenn sie in Wirklichkeit haben sie keine solche Krankheit.
 
@@ -733,4 +736,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 29 Juli 2017 (2017.07.29).
+Zuletzt aktualisiert: 9 August 2017 (2017.08.09).

@@ -83,7 +83,7 @@ CIDRAM harus secara otomatis memblokir permintaan yang tidak diinginkan ke websi
 
 Update dilakukan manual, dan Anda dapat menyesuaikan konfigurasi Anda dan menyesuaikan apa CIDRs diblokir oleh memodifikasi file konfigurasi Anda dan/atau file tanda tangan Anda.
 
-Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tahu tentang hal itu.
+Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tahu tentang hal itu. *(Lihat: [Apa yang dimaksud dengan "positif palsu"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 
 ### 7. <a name="SECTION7"></a>FORMAT TANDA TANGAN
 
+*Lihat juga:*
+- *[Apa yang "tanda tangan"?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 DASAR-DASAR
 
 Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silakan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
@@ -637,7 +640,7 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 
 ### 8. <a name="SECTION8"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
 
-#### Apa yang "tanda tangan"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Apa yang "tanda tangan"?
 
 Dalam konteks CIDRAM, "tanda tangan" mengacu pada data yang bertindak sebagai indikator/pengenal untuk sesuatu spesifik yang kita mencari, biasanya alamat IP atau CIDR, dan termasuk beberapa instruksi untuk CIDRAM, mengatakannya cara terbaik untuk menanggapi saat menemukan apa yang kita mencari. Tanda tangan khas untuk CIDRAM terlihat seperti ini:
 
@@ -653,7 +656,7 @@ Namun, dalam konteks CIDRAM (seperti, dalam dokumentasi ini, dalam diskusi yang 
 
 Meskipun arti ganda ini untuk "CIDR" mungkin menghadirkan beberapa ambiguitas dalam beberapa kasus, penjelasan ini, bersama dengan konteks yang disediakan, harus membantu menyelesaikan ambiguitas ini.
 
-#### Apa yang dimaksud dengan "positif palsu"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Apa yang dimaksud dengan "positif palsu"?
 
 Istilah "positif palsu" (*alternatif: "kesalahan positif palsu"; "alarm palsu"*; Bahasa Inggris: *false positive*; *false positive error*; *false alarm*), dijelaskan dengan sangat sederhana, dan dalam konteks umum, digunakan saat pengujian untuk kondisi, untuk merujuk pada hasil tes, ketika hasilnya positif (yaitu, kondisi adalah dianggap untuk menjadi "positif", atau "benar"), namun diharapkan (atau seharusnya) menjadi negatif (yaitu, kondisi ini, pada kenyataannya, adalah "negatif", atau "palsu"). Sebuah "positif palsu" bisa dianggap analog dengan "menangis serigala" (dimana kondisi dites adalah apakah ada serigala di dekat kawanan, kondisi adalah "palsu" di bahwa tidak ada serigala di dekat kawanan, dan kondisi ini dilaporkan sebagai "positif" oleh gembala dengan cara memanggil "serigala, serigala"), atau analog dengan situasi dalam pengujian medis dimana seorang pasien didiagnosis sebagai memiliki beberapa penyakit, ketika pada kenyataannya, mereka tidak memiliki penyakit tersebut.
 
@@ -733,4 +736,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 29 Juli 2017 (2017.07.29).
+Terakhir Diperbarui: 9 Agustus 2017 (2017.08.09).

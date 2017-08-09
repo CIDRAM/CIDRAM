@@ -83,7 +83,7 @@ CIDRAM nên tự động chặn các yêu cầu không mong muốn để trang m
 
 Đang cập nhật được thực hiện bằng tay, và bạn có thể tùy chỉnh cấu hình của bạn và tùy chỉnh mà CIDR bị chặn bằng cách sửa đổi tập tin cấu hình hay tập tin chữ ký của bạn.
 
-Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tôi để cho tôi biết về nó.
+Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tôi để cho tôi biết về nó. *(Xem: ["Sai tích cực" là gì?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 
 ### 7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
+*Xem thêm:*
+- *["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 KHÁI NIỆM CƠ BẢN
 
 Một mô tả của các định dạng và cấu trúc của chữ ký được sử dụng bởi CIDRAM có thể được tìm thấy trong văn bản thô trong bất kỳ tập tin chữ ký tùy chỉnh. Vui lòng tham khảo tài liệu hướng dẫn để tìm hiểu thêm về định dạng và cấu trúc của chữ ký của CIDRAM.
@@ -637,7 +640,7 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 
 ### 8. <a name="SECTION8"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
-#### "Chữ ký" là gì?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
 Trong bối cảnh của CIDRAM, "chữ ký" đề cập đến dữ liệu hoạt động như một định danh cho một cái gì đó cụ thể mà chúng tôi đang tìm kiếm, thường là một địa chỉ IP hoặc CIDR, và bao gồm một số chỉ dẫn cho CIDRAM, nói với nó cách trả lời khi nó gặp những gì chúng ta đang tìm kiếm. Một chữ ký CIDRAM điển hình trông giống như thế này:
 
@@ -653,7 +656,7 @@ Tuy nhiên, trong bối cảnh của CIDRAM (như là, trong tài liệu này, t
 
 Mặc dù ý nghĩa kép của "CIDR" có thể đưa ra một số sự mơ hồ trong một số trường hợp, giải thích này, cùng với bối cảnh được cung cấp, sẽ giúp giải quyết sự mơ hồ đó.
 
-#### "Sai tích cực" là gì?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>"Sai tích cực" là gì?
 
 Nghĩa của "sai tích cực" (*hay: "lỗi sai tích cực"; "báo động giả"*; Tiếng Anh: *false positive*; *false positive error*; *false alarm*), mô tả rất đơn giản, và trong một bối cảnh tổng quát, được sử dụng khi kiểm tra cho một điều kiện, để tham khảo các kết quả của bài kiểm tra, khi kết quả là tích cực (hay, điều kiện được xác định là "tích cực", hay "đúng"), nhưng dự kiến sẽ được (hay cần phải có được) tiêu cực (hay, điều kiện, thực tế, là "tiêu cực", hay "sai"). "Sai tích cực" có thể được coi là điều tương tự như "khóc sói" (theo đó các điều kiện đang được kiểm tra là liệu có con sói gần đàn, điều kiện là "sai" bởi vì không có con sói gần đàn, và điều kiện được báo cáo là "tích cực" bởi các người chăn bằng cách gọi "sói, sói"), hay tương tự như tình huống trong thử nghiệm y tế theo đó một bệnh nhân được chẩn đoán là có một số bệnh, trong khi thực tế, họ không có bất kỳ số bệnh.
 
@@ -733,4 +736,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 29 Tháng Bảy 2017 (2017.07.29).
+Lần cuối cập nhật: 9 Tháng Tám 2017 (2017.08.09).

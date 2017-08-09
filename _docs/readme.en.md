@@ -83,7 +83,7 @@ CIDRAM should automatically block undesirable requests to your website without r
 
 Updating is done manually, and you can customise your configuration and customise which CIDRs are blocked by modifying your configuration file and/or your signature files.
 
-If you encounter any false positives, please contact me to let me know about it.
+If you encounter any false positives, please contact me to let me know about it. *(See: [What is a "false positive"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 
 ### 7. <a name="SECTION7"></a>SIGNATURE FORMAT
 
+*See also:*
+- *[What is a "signature"?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 BASICS
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
@@ -637,7 +640,7 @@ Refer to the custom signature files for more information.
 
 ### 8. <a name="SECTION8"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
 
-#### What is a "signature"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
 In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
 
@@ -653,7 +656,7 @@ However, in the context of CIDRAM (such as, within this documentation, within di
 
 Although this dual meaning of "CIDR" may present some ambiguity in some cases, this explanation, along with the context provided, should help to resolve such ambiguity.
 
-#### What is a "false positive"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>What is a "false positive"?
 
 The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (i.e., the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (i.e., the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
 
@@ -733,4 +736,4 @@ Value | Using
 ---
 
 
-Last Updated: 29 July 2017 (2017.07.29).
+Last Updated: 9 August 2017 (2017.08.09).

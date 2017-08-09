@@ -83,7 +83,7 @@ CIDRAM devrait bloquer automatiquement les demandes indésirables à votre site 
 
 La mise à jour se fait manuellement, et vous pouvez personnaliser votre configuration et personnaliser les CIDRs sont bloqués par modifiant le fichier de configuration et/ou vos fichiers de signatures.
 
-Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle moi de ça.
+Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle moi de ça. *(Voir : [Qu'est-ce qu'un « faux positif »?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 ---
 
@@ -447,6 +447,9 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 
 ### 7. <a name="SECTION7"></a>FORMATS DE SIGNATURES
 
+*Voir également :*
+- *[Qu'est-ce qu'une « signature »?](#WHAT_IS_A_SIGNATURE))*
+
 #### 7.0 BASES
 
 Une description du format et de la structure du signatures utilisé par CIDRAM peut être trouvée documentée en plain-text dans les deux fichiers de signatures personnalisées. S'il vous plaît référez à cette documentation pour apprendre plus sur le format et la structure du signatures de CIDRAM.
@@ -637,7 +640,7 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 
 ### 8. <a name="SECTION8"></a>QUESTIONS FRÉQUEMMENT POSÉES (FAQ)
 
-#### Qu'est-ce qu'une « signature » ?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Qu'est-ce qu'une « signature » ?
 
 Dans le contexte du CIDRAM, une « signature » désigne les données qui servent d'indicateur ou d'identifiant pour quelque chose de spécifique que nous chercher, habituellement une adresse IP ou CIDR, et inclures des instructions pour CIDRAM, indiquant la meilleure façon de répondre quand il rencontre ce que nous chercher. Une signature typique pour CIDRAM ressemble à ceci :
 
@@ -653,7 +656,7 @@ Toutefois, dans le contexte du CIDRAM (tel que, au sein de cette documentation, 
 
 Bien que cette double signification de « CIDR » puisse présenter une certaine ambiguïté dans certains cas, cette explication, accompagné par le contexte fourni, devrait aider à résoudre une telle ambiguïté.
 
-#### Qu'est-ce qu'un « faux positif » ?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Qu'est-ce qu'un « faux positif » ?
 
 Le terme « faux positif » (*alternativement : « erreur faux positif » ; « fausse alarme »* ; Anglais : *false positive* ; *false positive error* ; *false alarm*), décrit très simplement, et dans un contexte généralisé, est utilisé lors de tester pour une condition, de se référer aux résultats de ce test, lorsque les résultats sont positifs (c'est à dire, lorsque la condition est déterminée comme étant « positif », ou « vrai »), mais ils devraient être (ou aurait dû être) négatif (c'est à dire, lorsque la condition, en réalité, est « négatif », ou « faux »). Un « faux positif » pourrait être considérée comme analogue à « crier au loup » (où la condition testée est de savoir s'il y a un loup près du troupeau, la condition est « faux » en ce que il n'y a pas de loup près du troupeau, et la condition est signalé comme « positif » par le berger par voie de crier « loup ! loup ! »), ou analogues à des situations dans des tests médicaux dans lequel un patient est diagnostiqué comme ayant une maladie, alors qu'en réalité, ils ont pas une telle maladie.
 
@@ -733,4 +736,4 @@ Valeur | En utilisant
 ---
 
 
-Dernière mise à jour : 29 Juillet 2017 (2017.07.29).
+Dernière mise à jour : 9 Août 2017 (2017.08.09).

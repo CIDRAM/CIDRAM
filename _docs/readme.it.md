@@ -448,7 +448,7 @@ Si riferisce al HTML utilizzato per generare la pagina "Accesso Negato". Se stai
 ### 7. <a name="SECTION7"></a>FIRMA FORMATO
 
 *Guarda anche:*
-- *[Che cosa è una "firma"?](#WHAT_IS_A_SIGNATURE))*
+- *[Che cosa è una "firma"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 NOZIONI DI BASE
 

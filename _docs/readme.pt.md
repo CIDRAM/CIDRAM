@@ -448,7 +448,7 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 ### 7. <a name="SECTION7"></a>FORMATO DE ASSINATURAS
 
 *Veja também:*
-- *[O que é uma "assinatura"?](#WHAT_IS_A_SIGNATURE))*
+- *[O que é uma "assinatura"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 NOÇÕES BÁSICAS
 

@@ -448,7 +448,7 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 ### 7. <a name="SECTION7"></a>SIGNATURE FORMAT
 
 *See also:*
-- *[What is a "signature"?](#WHAT_IS_A_SIGNATURE))*
+- *[What is a "signature"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 BASICS
 

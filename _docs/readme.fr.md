@@ -448,7 +448,7 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 ### 7. <a name="SECTION7"></a>FORMATS DE SIGNATURES
 
 *Voir également :*
-- *[Qu'est-ce qu'une « signature »?](#WHAT_IS_A_SIGNATURE))*
+- *[Qu'est-ce qu'une « signature »?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 BASES
 

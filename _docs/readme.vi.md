@@ -448,7 +448,7 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 ### 7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
 *Xem thêm:*
-- *["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE))*
+- *["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 KHÁI NIỆM CƠ BẢN
 

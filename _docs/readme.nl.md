@@ -448,7 +448,7 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 ### 7. <a name="SECTION7"></a>SIGNATURE FORMAAT
 
 *Zie ook:*
-- *[Wat is een "signature"?](#WHAT_IS_A_SIGNATURE))*
+- *[Wat is een "signature"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 BASICS
 

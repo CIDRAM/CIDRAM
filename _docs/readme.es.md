@@ -448,7 +448,7 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 ### 7. <a name="SECTION7"></a>FORMATO DE FIRMAS
 
 *Ver también:*
-- *[¿Qué es una "firma"?](#WHAT_IS_A_SIGNATURE))*
+- *[¿Qué es una "firma"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 LOS FUNDAMENTOS
 

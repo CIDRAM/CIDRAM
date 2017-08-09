@@ -448,7 +448,7 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 ### 7. <a name="SECTION7"></a>SIGNATURENFORMAT
 
 *Siehe auch:*
-- *[Was ist eine "Signatur"?](#WHAT_IS_A_SIGNATURE))*
+- *[Was ist eine "Signatur"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 GRUNDLAGEN
 

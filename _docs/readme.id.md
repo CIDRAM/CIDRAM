@@ -448,7 +448,7 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 ### 7. <a name="SECTION7"></a>FORMAT TANDA TANGAN
 
 *Lihat juga:*
-- *[Apa yang "tanda tangan"?](#WHAT_IS_A_SIGNATURE))*
+- *[Apa yang "tanda tangan"?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 DASAR-DASAR
 

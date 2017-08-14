@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.05).
+ * This file: Functions file (last modified: 2017.08.14).
  */
 
 /**
@@ -398,6 +398,9 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
         'Files' => count($Files),
         'Factors' => count($Factors)
     );
+    if (!isset($CIDRAM['FileCache'])) {
+        $CIDRAM['FileCache'] = array();
+    }
     for ($FileIndex = 0; $FileIndex < $Counts['Files']; $FileIndex++) {
         if (!$Files[$FileIndex]) {
             continue;
@@ -410,7 +413,9 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
             $DefTag = $Files[$FileIndex] . '-Unknown';
         }
         $FileExtension = strtolower(substr($Files[$FileIndex], -4));
-        if (!$Files[$FileIndex] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex])) {
+        if (isset($CIDRAM['FileCache'][$Files[$FileIndex]])) {
+            $Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]];
+        } elseif (!$Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex])) {
             continue;
         }
         if (
@@ -2232,4 +2237,16 @@ $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM) {
         return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
     }
     return sprintf($Base, $Sets['Latin-1'][0], $Sets['Latin-1'][1], $Sets['Latin-1'][2], $Sets['Latin-1'][3], $Sets['Latin-1'][4]);
+};
+
+/**
+ * Swaps for the values of two variables entered as parameters.
+ * Note: For PHP >= 7, we can use "[$First, $Second] = [$Second, $First];" and
+ * do away with this closure entirely, but we'll need it for now, at least,
+ * until we up the minimum package requirements.
+ */
+$CIDRAM['Swap'] = function(&$First, &$Second) {
+    $Working = $First;
+    $First = $Second;
+    $Second = $Working;
 };

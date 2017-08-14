@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.07.29).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,9 +185,11 @@ $CIDRAM['lang']['state_component_is_active'] = 'Gói này đang kích hoạt.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Gói này đang vô hiệu hóa.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
+$CIDRAM['lang']['state_loadtime'] = 'Yêu cầu trang hoàn thành trong <span class="txtRd">%s</span> giây.';
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
+$CIDRAM['lang']['state_tracking'] = 'Hiện đang giám sát <span class="txtRd">%s</span> IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.07.29).
+ * This file: English language data for the front-end (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,9 +185,11 @@ $CIDRAM['lang']['state_component_is_active'] = 'Component is active.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactive.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Component is provisional.';
 $CIDRAM['lang']['state_default_password'] = 'Warning: Using default password!';
+$CIDRAM['lang']['state_loadtime'] = 'Page request completed in <span class="txtRd">%s</span> seconds.';
 $CIDRAM['lang']['state_logged_in'] = 'Logged in.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logs access only';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warning: This account is not using a valid password!';
+$CIDRAM['lang']['state_tracking'] = 'Currently tracking <span class="txtRd">%s</span> IPs.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Don\'t hide non-outdated';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Hide non-outdated';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Don\'t hide unused';

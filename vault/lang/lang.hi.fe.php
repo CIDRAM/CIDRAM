@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.07.29).
+ * This file: Hindi language data for the front-end (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,9 +185,11 @@ $CIDRAM['lang']['state_component_is_active'] = 'घटक सक्रिय ह
 $CIDRAM['lang']['state_component_is_inactive'] = 'घटक निष्क्रिय है।';
 $CIDRAM['lang']['state_component_is_provisional'] = 'घटक अस्थायी है।';
 $CIDRAM['lang']['state_default_password'] = 'चेतावनी: डिफ़ॉल्ट पासवर्ड का उपयोग करना!';
+$CIDRAM['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।';
 $CIDRAM['lang']['state_logged_in'] = 'लॉग इन किया है।';
 $CIDRAM['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
 $CIDRAM['lang']['state_password_not_valid'] = 'चेतावनी: यह खाता किसी मान्य पासवर्ड का उपयोग नहीं कर रहा है!';
+$CIDRAM['lang']['state_tracking'] = 'वर्तमान में <span class="txtRd">%s</span> आईपी ट्रैकिंग।';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'गैर पदावनत को छुपाएं न करें';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'गैर पदावनत को छिपाना';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'अप्रयुक्त को छुपाएं न करें';

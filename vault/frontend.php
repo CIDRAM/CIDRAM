@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.01).
+ * This file: Front-end handler (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2360,6 +2360,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     /** Initialise variables. */
     $CIDRAM['FE']['TrackingData'] = '';
+    $CIDRAM['FE']['TrackingCount'] = '';
     $CIDRAM['ThisTracking'] = array();
 
     /** Fetch cache.dat data. */
@@ -2376,6 +2377,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     /** Process IP tracking data. */
     if (!empty($CIDRAM['Cache']['Tracking']) && is_array($CIDRAM['Cache']['Tracking'])) {
+        $CIDRAM['FE']['TrackingCount'] = sprintf($CIDRAM['lang']['state_tracking'], $CIDRAM['Number_L10N'](count($CIDRAM['Cache']['Tracking'])));
+        if ($CIDRAM['FE']['state_msg']) {
+            $CIDRAM['FE']['state_msg'] .= '<br />';
+        }
         uasort($CIDRAM['Cache']['Tracking'], function ($A, $B) {
             if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
                 return 0;

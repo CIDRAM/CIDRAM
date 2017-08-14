@@ -413,9 +413,10 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
             $DefTag = $Files[$FileIndex] . '-Unknown';
         }
         $FileExtension = strtolower(substr($Files[$FileIndex], -4));
-        if (isset($CIDRAM['FileCache'][$Files[$FileIndex]])) {
-            $Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]];
-        } elseif (!$Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex])) {
+        if (!isset($CIDRAM['FileCache'][$Files[$FileIndex]])) {
+            $CIDRAM['FileCache'][$Files[$FileIndex]] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $Files[$FileIndex]);
+        }
+        if (!$Files[$FileIndex] = $CIDRAM['FileCache'][$Files[$FileIndex]]) {
             continue;
         }
         if (

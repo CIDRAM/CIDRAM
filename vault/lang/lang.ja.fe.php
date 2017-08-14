@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.07.29).
+ * This file: Japanese language data for the front-end (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,9 +185,11 @@ $CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアク�
 $CIDRAM['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $CIDRAM['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
+$CIDRAM['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</span>秒後に完了しました。';
 $CIDRAM['lang']['state_logged_in'] = 'ログインしています。';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
+$CIDRAM['lang']['state_tracking'] = '現在、<span class="txtRd">%s</span>個のIPをトラッキングしています。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';

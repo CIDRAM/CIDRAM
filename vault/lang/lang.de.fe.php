@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.07.29).
+ * This file: German language data for the front-end (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,9 +185,11 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $CIDRAM['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
+$CIDRAM['lang']['state_loadtime'] = 'Seite-Anfrage in <span class="txtRd">%s</span> Sekunden abgeschlossen.';
 $CIDRAM['lang']['state_logged_in'] = 'Eingeloggt.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
+$CIDRAM['lang']['state_tracking'] = 'Tracking von <span class="txtRd">%s</span> IP-Adressen in diesem Moment.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';

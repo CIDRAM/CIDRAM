@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for CLI (last modified: 2016.08.03).
+ * This file: Russian language data for CLI (last modified: 2017.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -36,9 +36,9 @@ $CIDRAM['lang']['CLI_H'] = "
 
 ";
 
-$CIDRAM['lang']['CLI_Bad_IP'] = ' Указанный IP-адрес, "{IP}", не является допустимым IP-адрес!';
-$CIDRAM['lang']['CLI_IP_Blocked'] = ' Указанный IP-адрес, "{IP}", заблокирован одним или несколькими из CIDRAM файлы сигнатур.';
-$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Указанный IP-адрес, "{IP}", *НЕ* заблокирован одним или несколькими из CIDRAM файлы сигнатур.';
+$CIDRAM['lang']['CLI_Bad_IP'] = ' Указанный IP-адрес, «{IP}», не является допустимым IP-адрес!';
+$CIDRAM['lang']['CLI_IP_Blocked'] = ' Указанный IP-адрес, «{IP}», заблокирован одним или несколькими из CIDRAM файлы сигнатур.';
+$CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' Указанный IP-адрес, «{IP}», *НЕ* заблокирован одним или несколькими из CIDRAM файлы сигнатур.';
 
 $CIDRAM['lang']['CLI_F_Finished'] = 'Сигнатур закрепитель закончил, с %s изменения, сделанные в течение %s операций (%s).';
 $CIDRAM['lang']['CLI_F_Started'] = 'Сигнатур закрепитель начал (%s).';
@@ -55,16 +55,16 @@ $CIDRAM['lang']['CLI_V_Started'] = 'Проверка подписи начала
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Подпись файлы должны завершаться с LF(ПТ) разрыв строки.';
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'Л%s: Управляющие символы обнаружены; Это может свидетельствовать о коррупции и должны быть исследованы.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'Л%s: Подпись "%s" дублируется (%s счетчики)!';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'Л%s: Подпись «%s» дублируется (%s счетчики)!';
 $CIDRAM['lang']['CLI_VL_Expiry'] = 'Л%s: Истекло тег не содержит действительный ISO 8601 дата/время!';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'Л%s: "%s" НЕ является допустимым IPv4 или IPv6 IP-адрес!';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'Л%s: «%s» НЕ является допустимым IPv4 или IPv6 IP-адрес!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'Л%s: Длина линии превышает 120 байт; Длина линии должна быть ограничена до 120 байт для оптимальной читаемости.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'Л%s и Л%s идентичны, и поэтому, объединяемы.';
 $CIDRAM['lang']['CLI_VL_Missing'] = 'Л%s: Отсутствует [Функция]; Подпись, как представляется, будет неполным.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'Л%s: "%s" не может быть активирован! Его база не соответствует началу своего диапазона! Попробуйте заменить его с "%s".';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'Л%s: "%s" не может быть активирован! "%s" не допустимый диапазон!';
-$CIDRAM['lang']['CLI_VL_Subordinate'] = 'Л%s: "%s" подчиняется уже существующей подписи "%s".';
-$CIDRAM['lang']['CLI_VL_Superset'] = 'Л%s: "%s" является надстройкой к уже существующей подписи "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'Л%s: «%s» не может быть активирован! Его база не соответствует началу своего диапазона! Попробуйте заменить его с «%s».';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'Л%s: «%s» не может быть активирован! «%s» не допустимый диапазон!';
+$CIDRAM['lang']['CLI_VL_Subordinate'] = 'Л%s: «%s» подчиняется уже существующей подписи «%s».';
+$CIDRAM['lang']['CLI_VL_Superset'] = 'Л%s: «%s» является надстройкой к уже существующей подписи «%s».';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'Л%s: Не синтаксически точно.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'Л%s: Вкладки обнаружены; Пробелы предпочтительнее Вкладки для оптимальной читаемости.';
 $CIDRAM['lang']['CLI_VL_Tags'] = 'Л%s: Секция тег больше 20 байт; Секция теги должны быть четкими и краткими.';

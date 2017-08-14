@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for CLI (last modified: 2017.07.11).
+ * This file: Arabic language data for CLI (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,7 +54,7 @@ $CIDRAM['lang']['CLI_V_LineByLine'] = 'لقد بدأ التأكد من صحه س
 $CIDRAM['lang']['CLI_V_Started'] = 'لقد بدأت أداة التأكد من صحة التوقيع (%s).';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'ملفات التوقيعات يجب ان تنتهي ب LF .';
 
-$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Control characters detected; This could indicate corruption and should be investigated.';
+$CIDRAM['lang']['CLI_VL_CC'] = 'L%s: تم اكتشاف أحرف التحكم. وهذا يمكن أن يشير إلى الفساد وينبغي التحقيق فيه.';
 $CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: "%s" توقيعات مكرره ( %s مرات ) !';
 $CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: وسم الانتهاء لا يحتوي علي ترميز ISO 8601 تاريخ / وقت صالح';
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" ليس عنوان IPv4 أو IPv6 صالح !';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.07.29).
+ * This file: Urdu language data for the front-end (last modified: 2017.08.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -185,9 +185,11 @@ $CIDRAM['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'اجزاء عارضی ہے.';
 $CIDRAM['lang']['state_default_password'] = 'انتباہ: ڈیفالٹ پاس ورڈ کو استعمال کرتے ہوئے!';
+$CIDRAM['lang']['state_loadtime'] = '<span class="txtRd">%s</span> سیکنڈ میں مکمل ہونے والی درخواست کی درخواست.';
 $CIDRAM['lang']['state_logged_in'] = 'لاگ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $CIDRAM['lang']['state_password_not_valid'] = 'انتباہ: یہ اکاؤنٹ ایک درست پاس ورڈ کا استعمال نہیں کر رہا ہے!';
+$CIDRAM['lang']['state_tracking'] = 'فی الحال <span class="txtRd">%s</span> IP ٹریکنگ.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ مت چھپاو';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شدہ مت چھپاو';

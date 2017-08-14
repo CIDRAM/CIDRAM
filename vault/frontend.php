@@ -2377,10 +2377,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     /** Process IP tracking data. */
     if (!empty($CIDRAM['Cache']['Tracking']) && is_array($CIDRAM['Cache']['Tracking'])) {
+
+        /** Count currently tracked IPs. */
         $CIDRAM['FE']['TrackingCount'] = sprintf($CIDRAM['lang']['state_tracking'], $CIDRAM['Number_L10N'](count($CIDRAM['Cache']['Tracking'])));
         if ($CIDRAM['FE']['state_msg']) {
             $CIDRAM['FE']['state_msg'] .= '<br />';
         }
+
         uasort($CIDRAM['Cache']['Tracking'], function ($A, $B) {
             if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
                 return 0;
@@ -2441,6 +2444,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     /** Cleanup. */
     unset($CIDRAM['Cache'], $CIDRAM['ThisTracking']);
+
+    if ($CIDRAM['FE']['TrackingCount']) {
+        $CIDRAM['FE']['TrackingCount'] .= ' ';
+    }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['TrackingCount'] .= sprintf($CIDRAM['lang']['state_loadtime'], $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3));
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

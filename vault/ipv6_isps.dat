@@ -17,8 +17,8 @@ recaptcha:
  enabled: true
 
 
-# ASNs 30548, 31034, 199653, 200185, 394189 ("Aruba S.p.A" / "Aruba SAS").
-# Updated: 2016.07.02 / Checked: 2017.02.26
+# ASNs 30548, 31034, 199653, 200185 ("Aruba S.p.A" / "Aruba SAS").
+# Updated: 2016.07.02 / Checked: 2017.08.15
 
 2620:11d:6000::/42 Deny Generic
 2a00:6d40::/31 Deny Generic
@@ -78,10 +78,11 @@ Tag: World4You
 
 
 # ASN 48159 ("Telecommunication Infrastructure Company").
-# %Listed, Google Malware Dashboard: 0.48%.
-# %Listed, CleanTalk.org: 10.09%.
-# %Listed, abuseat.org (CBL-Listed): 3.76%.
-# Updated: 2016.07.13 / Checked: 2017.03.11
+# %Listed, Google Malware Dashboard: 0.46%.
+# %Listed, CleanTalk.org: 10.39%.
+# %Listed, abuseat.org (CBL-Listed): 5.21%.
+# Stop Forum Spam (SFS) listings: 278.
+# Updated: 2016.07.13 / Checked: 2017.08.15
 
 2a03:57c0::/32 Deny Generic
 Tag: AS48159
@@ -128,18 +129,15 @@ Tag: AS51559
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
-# %Listed, Google Malware Dashboard: 0.85.
-# %Listed, CleanTalk.org: 35.10%.
-# Updated: 2017.03.07
+# %Listed, CleanTalk.org: 32.56%.
+# Stop Forum Spam (SFS) listings: 338.
+# Updated: 2017.08.15
 
-2400:8b00:1000:1::/64 Deny Spam
 2400:8b00:1000:2::/64 Deny Spam
-2400:8b00:1000:4::/63 Deny Spam
 2400:8b00:1000:7::/64 Deny Spam
-2400:8b00:1000:8::/64 Deny Spam
+2400:8b00:1000:8::/62 Deny Spam
 2400:8b00:1100:1::/64 Deny Spam
-2400:8b00:a000::/48 Deny Spam
-2400:8b00:a001::/48 Deny Spam
+2400:8b00:a000::/47 Deny Spam
 Tag: PT Hutchison
 ---
 recaptcha:

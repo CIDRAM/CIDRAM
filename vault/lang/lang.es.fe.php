@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.08.14).
+ * This file: Spanish language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Una lista delimitada por comas 
 $CIDRAM['lang']['config_general_disable_cli'] = '¿Desactivar CLI modo?';
 $CIDRAM['lang']['config_general_disable_frontend'] = '¿Desactivar el acceso front-end?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '¿Desactivar webfonts? True = Sí; False = No [Predefinido].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Dirección email para soporte.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Si deseado, usted puede suministrar una dirección de email aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de email que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de email aquí, que se asegura de que la dirección de email usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = '¿Cómo prefieres que la dirección de email sea presentada a los usuarios?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cual cabeceras debe CIDRAM responder con cuando bloquear acceso?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Activar';
 $CIDRAM['lang']['field_banned'] = 'Prohibido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_clear'] = 'Anular';
+$CIDRAM['lang']['field_clickable_link'] = 'Enlace que se puede hacer clic';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crear Nueva Cuenta';
 $CIDRAM['lang']['field_deactivate'] = 'Desactivar';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Borrar';
 $CIDRAM['lang']['field_download_file'] = 'Descargar';
 $CIDRAM['lang']['field_edit_file'] = 'Editar';
 $CIDRAM['lang']['field_expiry'] = 'Expiración';
+$CIDRAM['lang']['field_false'] = 'False (Falso)';
 $CIDRAM['lang']['field_file'] = 'Archivo';
 $CIDRAM['lang']['field_filename'] = 'Nombre del archivo: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Directorio';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'Dirección IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versión';
 $CIDRAM['lang']['field_log_in'] = 'Iniciar Sesión';
 $CIDRAM['lang']['field_new_name'] = 'Nuevo nombre:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Texto que no se puede hacer clic';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opciones';
 $CIDRAM['lang']['field_password'] = 'Contraseña';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Estado';
 $CIDRAM['lang']['field_system_timezone'] = 'Usar la zona horaria predeterminada del sistema.';
 $CIDRAM['lang']['field_tracking'] = 'Seguimiento';
+$CIDRAM['lang']['field_true'] = 'True (Verdadero)';
 $CIDRAM['lang']['field_uninstall'] = 'Desinstalar';
 $CIDRAM['lang']['field_update'] = 'Actualizar';
 $CIDRAM['lang']['field_update_all'] = 'Actualizar Todo';

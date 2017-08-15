@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.08.14).
+ * This file: French language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Une liste délimitée par des v
 $CIDRAM['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI ?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal ?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Désactiver les webfonts ? True = Oui ; False = Non [Défaut].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Adresse e-mail pour le support.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu\'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d\'eux étant bloqué par erreur. AVERTISSEMENT : Tout de l\'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l\'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d\'être spammé (en d\'autres termes, vous ne voulez probablement pas d\'utiliser votre adresses e-mail personnel primaire ou d\'affaires primaire).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Comment préférez-vous que l\'adresse électronique soit présentée aux utilisateurs ?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes ?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de demandes de connexion ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Activer';
 $CIDRAM['lang']['field_banned'] = 'Interdit';
 $CIDRAM['lang']['field_blocked'] = 'Bloqué';
 $CIDRAM['lang']['field_clear'] = 'Annuler';
+$CIDRAM['lang']['field_clickable_link'] = 'Lien cliquable';
 $CIDRAM['lang']['field_component'] = 'Composant';
 $CIDRAM['lang']['field_create_new_account'] = 'Créer un nouveau compte';
 $CIDRAM['lang']['field_deactivate'] = 'Désactiver';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Supprimer';
 $CIDRAM['lang']['field_download_file'] = 'Télécharger';
 $CIDRAM['lang']['field_edit_file'] = 'Modifier';
 $CIDRAM['lang']['field_expiry'] = 'Expiration';
+$CIDRAM['lang']['field_false'] = 'False (Faux)';
 $CIDRAM['lang']['field_file'] = 'Fichier';
 $CIDRAM['lang']['field_filename'] = 'Nom de fichier : ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Répertoire';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'Adresse IP';
 $CIDRAM['lang']['field_latest_version'] = 'Dernière Version';
 $CIDRAM['lang']['field_log_in'] = 'Connecter';
 $CIDRAM['lang']['field_new_name'] = 'Nouveau nom :';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Texte non-cliquable';
 $CIDRAM['lang']['field_ok'] = 'D\'accord';
 $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Mot de Passe';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'To';
 $CIDRAM['lang']['field_status'] = 'Statut';
 $CIDRAM['lang']['field_system_timezone'] = 'Utilisez le fuseau horaire par défaut du système.';
 $CIDRAM['lang']['field_tracking'] = 'Surveillance';
+$CIDRAM['lang']['field_true'] = 'True (Vrai)';
 $CIDRAM['lang']['field_uninstall'] = 'Désinstaller';
 $CIDRAM['lang']['field_update'] = 'Mettre à Jour';
 $CIDRAM['lang']['field_update_all'] = 'Tout mettre à jour';

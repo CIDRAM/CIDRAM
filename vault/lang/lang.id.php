@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.06.03).
+ * This file: Indonesian language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = 'Umum';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Risiko spam';
 $CIDRAM['lang']['Support_Email'] = 'Jika Anda yakin ini adalah kesalahan, atau untuk mencari bantuan, {ClickHereLink} untuk mengirim tiket dukungan email ke webmaster dari situs ini (silahkan jangan mengubah pembukaan atau baris subjek email).';
+$CIDRAM['lang']['Support_Email_2'] = 'Jika Anda yakin ini adalah kesalahan, kirim email ke {EmailAddr} untuk meminta bantuan.';

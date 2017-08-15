@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.08.14).
+ * This file: Korean language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사�
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가?';
 $CIDRAM['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
-$CIDRAM['lang']['config_general_emailaddr'] = '지원을위한 이메일 주소입니다.';
+$CIDRAM['lang']['config_general_emailaddr'] = '여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고 : 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = '사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '무엇 헤더 사용해야합니까 (요청을 차단했을 때)?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
 $CIDRAM['lang']['field_clear'] = '취소';
+$CIDRAM['lang']['field_clickable_link'] = '클릭 가능한 링크';
 $CIDRAM['lang']['field_component'] = '구성 요소';
 $CIDRAM['lang']['field_create_new_account'] = '새로운 계정 만들기';
 $CIDRAM['lang']['field_deactivate'] = '비활성화';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = '삭제';
 $CIDRAM['lang']['field_download_file'] = '다운로드';
 $CIDRAM['lang']['field_edit_file'] = '편집';
 $CIDRAM['lang']['field_expiry'] = '만료';
+$CIDRAM['lang']['field_false'] = 'False (거짓)';
 $CIDRAM['lang']['field_file'] = '파일';
 $CIDRAM['lang']['field_filename'] = '파일 이름 : ';
 $CIDRAM['lang']['field_filetype_directory'] = '디렉토리';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'IP 주소';
 $CIDRAM['lang']['field_latest_version'] = '최신 버전';
 $CIDRAM['lang']['field_log_in'] = '로그인';
 $CIDRAM['lang']['field_new_name'] = '새 이름:';
+$CIDRAM['lang']['field_nonclickable_text'] = '클릭 할 수없는 텍스트';
 $CIDRAM['lang']['field_ok'] = '승인';
 $CIDRAM['lang']['field_options'] = '옵션';
 $CIDRAM['lang']['field_password'] = '비밀번호';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = '상태';
 $CIDRAM['lang']['field_system_timezone'] = '시스템 기본 시간대를 사용하십시오.';
 $CIDRAM['lang']['field_tracking'] = '추적';
+$CIDRAM['lang']['field_true'] = 'True (참된)';
 $CIDRAM['lang']['field_uninstall'] = '제거';
 $CIDRAM['lang']['field_update'] = '업데이트';
 $CIDRAM['lang']['field_update_all'] = '모두 업데이트';

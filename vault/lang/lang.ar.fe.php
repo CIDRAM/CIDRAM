@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.08.14).
+ * This file: Arabic language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'قائمة بفواصل من خ
 $CIDRAM['lang']['config_general_disable_cli'] = 'وضع تعطيل CLI؟';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'تعطيل وصول front-end؟';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'هل تريد تعطيل ويبفونتس؟ True = نعم؛ False = لا [افتراضي].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'عنوان البريد الإلكتروني للحصول على الدعم.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'لو كنت تريد، يمكنك توفير عنوان البريد الإلكتروني هنا أن تعطى للمستخدمين عند أنها ممنوعة، بالنسبة لهم لاستخدامها كنقطة اتصال للحصول على الدعم والمساعدة لفي حال منهم سدت طريق الخطأ أو في ضلال. تحذير: أي عنوان البريد الإلكتروني الذي تزويد هنا وبالتأكيد سيتم شراؤها من قبل المتطفلين و برامج التطفل وكاشطات خلال المستخدمة هنا، و حينئذ، انها المستحسن أن إذا اخترت توفير عنوان البريد الإلكتروني هنا، يمكنك التأكد من أن عنوان البريد الإلكتروني الذي نورد هنا يمكن التخلص منها و/أو عنوان أنك لا تمانع في أن محتوى غير مرغوب فيه (بعبارات أخرى، وربما كنت لا تريد استخدام الرئيسية عناوين البريد الإلكتروني التجارية أو العناوين الشخصية الرئيسية الخاصة بك).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'كيف تفضل أن يتم تقديم عنوان البريد الإلكتروني إلى المستخدمين؟';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_clear'] = 'إلغاء';
+$CIDRAM['lang']['field_clickable_link'] = 'رابط قابل للنقر';
 $CIDRAM['lang']['field_component'] = 'وحدة';
 $CIDRAM['lang']['field_create_new_account'] = 'إنشاء حساب جديد';
 $CIDRAM['lang']['field_deactivate'] = 'جعلها غير نشطة';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'حذف';
 $CIDRAM['lang']['field_download_file'] = 'تحميل';
 $CIDRAM['lang']['field_edit_file'] = 'تحرير';
 $CIDRAM['lang']['field_expiry'] = 'انقضاء';
+$CIDRAM['lang']['field_false'] = 'False (خاطئة)';
 $CIDRAM['lang']['field_file'] = 'ملف';
 $CIDRAM['lang']['field_filename'] = 'اسم الملف: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'مجلد';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';
 $CIDRAM['lang']['field_latest_version'] = 'احدث اصدار';
 $CIDRAM['lang']['field_log_in'] = 'تسجيل الدخول';
 $CIDRAM['lang']['field_new_name'] = 'اسم جديد:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'نص غير قابل للنقر';
 $CIDRAM['lang']['field_ok'] = 'حسنا';
 $CIDRAM['lang']['field_options'] = 'خيارات';
 $CIDRAM['lang']['field_password'] = 'كلمه السر';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'الحالة';
 $CIDRAM['lang']['field_system_timezone'] = 'استخدام المنطقة الزمنية الافتراضية للنظام.';
 $CIDRAM['lang']['field_tracking'] = 'التتبع';
+$CIDRAM['lang']['field_true'] = 'True (صحيح)';
 $CIDRAM['lang']['field_uninstall'] = 'الغاء التثبيت';
 $CIDRAM['lang']['field_update'] = 'تحديث';
 $CIDRAM['lang']['field_update_all'] = 'تحديث الجميع';

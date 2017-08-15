@@ -324,6 +324,9 @@ Generale configurazione per CIDRAM.
 "emailaddr"
 - Se si desidera, è possibile fornire un indirizzo email qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l'indirizzo email si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo email qui, che si assicurare che l'indirizzo email si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi email).
 
+"emailaddr_display_style"
+- Come preferisci che l'indirizzo email venga presentato agli utenti? "default" = Link cliccabile. "noclick" = Testo non cliccabile.
+
 "disable_cli"
 - Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.
 
@@ -736,4 +739,4 @@ Valore | Utilizzando
 ---
 
 
-Ultimo Aggiornamento: 9 Agosto 2017 (2017.08.09).
+Ultimo Aggiornamento: 15 Agosto 2017 (2017.08.15).

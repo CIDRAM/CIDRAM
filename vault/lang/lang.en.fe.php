@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.08.14).
+ * This file: English language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'A comma delimited list of DNS s
 $CIDRAM['lang']['config_general_disable_cli'] = 'Disable CLI mode?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disable front-end access?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Disable webfonts? True = Yes; False = No [Default].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Email address for support.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'If you wish, you can supply an email address here to be given to users when they\'re blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it\'s strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don\'t mind being spammed (in other words, you probably don\'t want to use your primary personal or primary business email addresses).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'How would you prefer the email address to be presented to users?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Which headers should CIDRAM respond with when blocking requests?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File for logging front-end login attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don\'t change this unless you know what you\'re doing!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Activate';
 $CIDRAM['lang']['field_banned'] = 'Banned';
 $CIDRAM['lang']['field_blocked'] = 'Blocked';
 $CIDRAM['lang']['field_clear'] = 'Clear';
+$CIDRAM['lang']['field_clickable_link'] = 'Clickable link';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Create New Account';
 $CIDRAM['lang']['field_deactivate'] = 'Deactivate';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Delete';
 $CIDRAM['lang']['field_download_file'] = 'Download';
 $CIDRAM['lang']['field_edit_file'] = 'Edit';
 $CIDRAM['lang']['field_expiry'] = 'Expiry';
+$CIDRAM['lang']['field_false'] = 'False';
 $CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Filename: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Directory';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'IP Address';
 $CIDRAM['lang']['field_latest_version'] = 'Latest Version';
 $CIDRAM['lang']['field_log_in'] = 'Log In';
 $CIDRAM['lang']['field_new_name'] = 'New name:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Non-clickable text';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Password';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Use system default timezone.';
 $CIDRAM['lang']['field_tracking'] = 'Tracking';
+$CIDRAM['lang']['field_true'] = 'True';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstall';
 $CIDRAM['lang']['field_update'] = 'Update';
 $CIDRAM['lang']['field_update_all'] = 'Update All';

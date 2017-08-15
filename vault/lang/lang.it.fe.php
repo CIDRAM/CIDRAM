@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.08.14).
+ * This file: Italian language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Un elenco delimitato con virgol
 $CIDRAM['lang']['config_general_disable_cli'] = 'Disabilita CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disabilita l\'accesso front-end?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Disabilita webfonts? True = Sì; False = No [Predefinito].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Indirizzo e-mail per il supporto.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Se si desidera, è possibile fornire un indirizzo email qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l\'indirizzo email si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo email qui, che si assicurare che l\'indirizzo email si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi email).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Come preferisci che l\'indirizzo email venga presentato agli utenti?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quale intestazioni dovrebbe CIDRAM rispondere con quando bloccano le richieste?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File per la registrazione di l\'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dove trovare l\'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_banned'] = 'Vietato';
 $CIDRAM['lang']['field_blocked'] = 'Bloccato';
 $CIDRAM['lang']['field_clear'] = 'Revocarlo';
+$CIDRAM['lang']['field_clickable_link'] = 'Link cliccabile';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crea un nuovo account';
 $CIDRAM['lang']['field_deactivate'] = 'Disattivarlo';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Eliminare';
 $CIDRAM['lang']['field_download_file'] = 'Scaricare';
 $CIDRAM['lang']['field_edit_file'] = 'Modificare';
 $CIDRAM['lang']['field_expiry'] = 'Scadenza';
+$CIDRAM['lang']['field_false'] = 'False (Falso)';
 $CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Nome del file: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Elenco';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'Indirizzo IP';
 $CIDRAM['lang']['field_latest_version'] = 'Ultima Versione';
 $CIDRAM['lang']['field_log_in'] = 'Accedi';
 $CIDRAM['lang']['field_new_name'] = 'Nuovo nome:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Testo non cliccabile';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opzioni';
 $CIDRAM['lang']['field_password'] = 'Password';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Utilizza il fuso orario predefinito del sistema.';
 $CIDRAM['lang']['field_tracking'] = 'Monitoraggio';
+$CIDRAM['lang']['field_true'] = 'True (Vero)';
 $CIDRAM['lang']['field_uninstall'] = 'Disinstallarlo';
 $CIDRAM['lang']['field_update'] = 'Aggiornarlo';
 $CIDRAM['lang']['field_update_all'] = 'Aggiorna Tutto';

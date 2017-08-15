@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.08.14).
+ * This file: Dutch language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Een door komma\'s gescheiden li
 $CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Uitschakelen webfonts? True = Ja; False = Nee [Standaard].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'E-mailadres voor ondersteuning.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hoe zou u het e-mailadres voor gebruikers willen aanbieden?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_clear'] = 'Annuleer';
+$CIDRAM['lang']['field_clickable_link'] = 'Klikbare link';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
 $CIDRAM['lang']['field_deactivate'] = 'Deactiveren';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Verwijder';
 $CIDRAM['lang']['field_download_file'] = 'Download';
 $CIDRAM['lang']['field_edit_file'] = 'Bewerk';
 $CIDRAM['lang']['field_expiry'] = 'Vervaltijd';
+$CIDRAM['lang']['field_false'] = 'False (Vals)';
 $CIDRAM['lang']['field_file'] = 'Bestand';
 $CIDRAM['lang']['field_filename'] = 'Bestandsnaam: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Bestandsmap';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
 $CIDRAM['lang']['field_latest_version'] = 'Laatste Versie';
 $CIDRAM['lang']['field_log_in'] = 'Inloggen';
 $CIDRAM['lang']['field_new_name'] = 'Nieuwe naam:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Niet-klikbare tekst';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opties';
 $CIDRAM['lang']['field_password'] = 'Wachtwoord';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Toestand';
 $CIDRAM['lang']['field_system_timezone'] = 'Gebruik de systeem standaard tijdzone.';
 $CIDRAM['lang']['field_tracking'] = 'Tracking';
+$CIDRAM['lang']['field_true'] = 'True (Waar)';
 $CIDRAM['lang']['field_uninstall'] = 'Verwijderen';
 $CIDRAM['lang']['field_update'] = 'Bijwerken';
 $CIDRAM['lang']['field_update_all'] = 'Bijwerken Alles';

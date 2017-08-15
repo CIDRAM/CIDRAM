@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.08.14).
+ * This file: Turkish language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Ana makine adı aramalarda kull
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI modunu devre dışı bırak?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre dışı bırak?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Destek için e-posta adresi.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'İsterseniz, kullanıcıları engellediğinde verilecek bir e-posta adresi sağlayabilirsiniz, yanlışlıkla engellendikleri zaman destek için sizinle iletişim kurabilmeleri için. UYARI: Burada tedarik ettiğiniz e-posta adresiniz kesinlikle spambotlar ve sıyırıcılar tarafından edinilecektir. Bu nedenle, tek kullanımlık veya önemsiz bir e-posta adresini seçmeniz kesinlikle önerilir (diğer bir deyişle, büyük olasılıkla birincil kişisel veya birincil iş e-posta adreslerinizi kullanmak istemiyorsunuzdur).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'İstekleri engellerken CIDRAM hangi üstbilgilerle karşılık vermeli?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
 $CIDRAM['lang']['field_clear'] = 'Temiz';
+$CIDRAM['lang']['field_clickable_link'] = 'Tıklanabilir bağlantı';
 $CIDRAM['lang']['field_component'] = 'Bileşen';
 $CIDRAM['lang']['field_create_new_account'] = 'Yeni Hesap Oluştur';
 $CIDRAM['lang']['field_deactivate'] = 'Devre dışı bırak';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Sil';
 $CIDRAM['lang']['field_download_file'] = 'İndir';
 $CIDRAM['lang']['field_edit_file'] = 'Düzenle';
 $CIDRAM['lang']['field_expiry'] = 'Bitim süresi';
+$CIDRAM['lang']['field_false'] = 'False (Yanlış)';
 $CIDRAM['lang']['field_file'] = 'Dosya';
 $CIDRAM['lang']['field_filename'] = 'Dosya adı: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Rehber';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'İP Adresi';
 $CIDRAM['lang']['field_latest_version'] = 'En son sürüm';
 $CIDRAM['lang']['field_log_in'] = 'Oturum Aç';
 $CIDRAM['lang']['field_new_name'] = 'Yeni isim:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Tıklanmayan metin';
 $CIDRAM['lang']['field_ok'] = 'Tamam';
 $CIDRAM['lang']['field_options'] = 'Seçenekler';
 $CIDRAM['lang']['field_password'] = 'Parola';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Durum';
 $CIDRAM['lang']['field_system_timezone'] = 'Sistem varsayılan saat dilimini kullanın.';
 $CIDRAM['lang']['field_tracking'] = 'İzleme';
+$CIDRAM['lang']['field_true'] = 'True (Doğru)';
 $CIDRAM['lang']['field_uninstall'] = 'Kaldır';
 $CIDRAM['lang']['field_update'] = 'Güncelle';
 $CIDRAM['lang']['field_update_all'] = 'Tümünü Güncelle';

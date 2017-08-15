@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.06.03).
+ * This file: Turkish language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = 'Genel';
 $CIDRAM['lang']['Short_Proxy'] = 'Aracı site (proxy)';
 $CIDRAM['lang']['Short_Spam'] = 'İstenmeyen eposta riski';
 $CIDRAM['lang']['Support_Email'] = 'Bunun yanlış olduğuna inanıyorsanız veya yardım almak için, bu sitesinin yöneticisine bir e-posta destek bileti göndermek için {ClickHereLink} (e-postanın önsözünü veya başlama ekini değiştirmeyin).';
+$CIDRAM['lang']['Support_Email_2'] = 'Bunun yanlış olduğuna inanıyorsanız, yardım istemek için {EmailAddr} ya bir e-posta gönderin.';

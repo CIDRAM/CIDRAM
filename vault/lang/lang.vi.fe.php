@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.08.14).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Một dấu phẩy phân cách 
 $CIDRAM['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Địa chỉ email cho hỗ trợ.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như CloudFlare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
 $CIDRAM['lang']['field_clear'] = 'Hủy bỏ';
+$CIDRAM['lang']['field_clickable_link'] = 'Liên kết có thể nhấp';
 $CIDRAM['lang']['field_component'] = 'Gói';
 $CIDRAM['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $CIDRAM['lang']['field_deactivate'] = 'Vô hiệu hóa';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Xóa Bỏ';
 $CIDRAM['lang']['field_download_file'] = 'Tải Về';
 $CIDRAM['lang']['field_edit_file'] = 'Chỉnh Sửa';
 $CIDRAM['lang']['field_expiry'] = 'Hết hạn';
+$CIDRAM['lang']['field_false'] = 'False (Sai)';
 $CIDRAM['lang']['field_file'] = 'Tập Tin';
 $CIDRAM['lang']['field_filename'] = 'Tên tập tin: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Thư Mục';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';
 $CIDRAM['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $CIDRAM['lang']['field_log_in'] = 'Đăng Nhập';
 $CIDRAM['lang']['field_new_name'] = 'Tên mới:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Văn bản không thể nhấp';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Tùy Chọn';
 $CIDRAM['lang']['field_password'] = 'Mật Khẩu';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Tình Trạng';
 $CIDRAM['lang']['field_system_timezone'] = 'Sử dụng múi giờ mặc định của hệ thống.';
 $CIDRAM['lang']['field_tracking'] = 'Giám sát';
+$CIDRAM['lang']['field_true'] = 'True (Đúng)';
 $CIDRAM['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
 $CIDRAM['lang']['field_update'] = 'Cập Nhật';
 $CIDRAM['lang']['field_update_all'] = 'Cập Nhật Tất Cả';

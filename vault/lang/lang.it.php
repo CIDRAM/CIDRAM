@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2017.06.03).
+ * This file: Italian language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = 'Generico';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Rischio per lo spam';
 $CIDRAM['lang']['Support_Email'] = 'Se credi che questo è in errore, o per cercare assistenza, {ClickHereLink} per inviare una richiesta di assistenza via e-mail per il webmaster di questo sito (si prega di non modificare il preambolo o linea oggetto dell\'e-mail).';
+$CIDRAM['lang']['Support_Email_2'] = 'Se credi che questo è in errore, invia una e-mail a {EmailAddr} per richiedere assistenza.';

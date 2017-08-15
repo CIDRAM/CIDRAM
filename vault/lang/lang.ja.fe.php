@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.08.14).
+ * This file: Japanese language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用す�
 $CIDRAM['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
-$CIDRAM['lang']['config_general_emailaddr'] = 'サポートのためのＥメールアドレス。';
+$CIDRAM['lang']['config_general_emailaddr'] = 'ここにＥメールアドレスを入力して、​ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、​等）。​警告：​ここに入力された電子Ｅメールアドレスは、​おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、​すべて使い捨てにすることを強く推奨します（例えば、​プライマリ個人アドレスまたはビジネスアドレスを使用しない、​等）。';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
 $CIDRAM['lang']['field_clear'] = 'キャンセル';
+$CIDRAM['lang']['field_clickable_link'] = 'クリック可能なリンク';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
 $CIDRAM['lang']['field_create_new_account'] = '新しいアカウントを作成する';
 $CIDRAM['lang']['field_deactivate'] = '非アクティブにする';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = '削除';
 $CIDRAM['lang']['field_download_file'] = 'ダウンロード';
 $CIDRAM['lang']['field_edit_file'] = '編集';
 $CIDRAM['lang']['field_expiry'] = '満了';
+$CIDRAM['lang']['field_false'] = 'False （偽）';
 $CIDRAM['lang']['field_file'] = 'ファイル';
 $CIDRAM['lang']['field_filename'] = 'ファイル名：';
 $CIDRAM['lang']['field_filetype_directory'] = 'ディレクトリ';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'ＩＰアドレス';
 $CIDRAM['lang']['field_latest_version'] = '最新バージョン';
 $CIDRAM['lang']['field_log_in'] = 'ログイン';
 $CIDRAM['lang']['field_new_name'] = '新しい名前：';
+$CIDRAM['lang']['field_nonclickable_text'] = 'クリックできないテキスト';
 $CIDRAM['lang']['field_ok'] = 'ＯＫ';
 $CIDRAM['lang']['field_options'] = 'オプション';
 $CIDRAM['lang']['field_password'] = 'パスワード';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = '状態';
 $CIDRAM['lang']['field_system_timezone'] = 'システムのデフォルトタイムゾーンを使用します。';
 $CIDRAM['lang']['field_tracking'] = 'トラッキング';
+$CIDRAM['lang']['field_true'] = 'True （真）';
 $CIDRAM['lang']['field_uninstall'] = 'アンインストール';
 $CIDRAM['lang']['field_update'] = 'アップデート';
 $CIDRAM['lang']['field_update_all'] = 'すべてアップデートする';

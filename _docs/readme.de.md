@@ -324,6 +324,9 @@ Generelle Konfiguration von CIDRAM.
 "emailaddr"
 - Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden).
 
+"emailaddr_display_style"
+- Wie möchten Sie die E-Mail-Adresse für die Nutzer vorstellen? "default" = Klickbarer Link. "noclick" = Nicht klickbarer Text.
+
 "disable_cli"
 - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
 
@@ -736,4 +739,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 9 August 2017 (2017.08.09).
+Zuletzt aktualisiert: 15 August 2017 (2017.08.15).

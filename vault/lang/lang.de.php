@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2017.06.03).
+ * This file: German language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = 'Generisches';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy-Service';
 $CIDRAM['lang']['Short_Spam'] = 'Spam Risiko';
 $CIDRAM['lang']['Support_Email'] = 'Wenn Sie glauben dies in Fehler, oder zu suchen Hilfe, {ClickHereLink} eine E-Mail Support-Ticket zu schicken an den Webmaster dieser Website (Sie ändern nicht der Präambel oder Betreffzeile der E-Mail).';
+$CIDRAM['lang']['Support_Email_2'] = 'Wenn Sie glauben dies in Fehler, schicke eine E-Mail an {EmailAddr}, um Hilfe zu suchen.';

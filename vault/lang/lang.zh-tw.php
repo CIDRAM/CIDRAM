@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2017.06.21).
+ * This file: Chinese (traditional) language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = '通用';
 $CIDRAM['lang']['Short_Proxy'] = '代理';
 $CIDRAM['lang']['Short_Spam'] = '垃圾郵件的風險';
 $CIDRAM['lang']['Support_Email'] = '如果您認為這是錯誤的，​或尋求援助，​{ClickHereLink}發送電子郵件支持票本網站的網站管理員（請不要改變序言或主題行）。';
+$CIDRAM['lang']['Support_Email_2'] = '如果您認為這是錯誤的，​發送電子郵件至{EmailAddr}尋求幫助。';

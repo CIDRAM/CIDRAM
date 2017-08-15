@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.06.03).
+ * This file: Output generator (last modified: 2017.08.15).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -461,22 +461,29 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             header('Content-Type: text/plain');
             $CIDRAM['HTML'] = '[CIDRAM] ' . $CIDRAM['lang']['denied'];
         } else {
-            if (!$CIDRAM['Config']['general']['emailaddr']) {
-                $CIDRAM['BlockInfo']['EmailAddr'] = '';
-            } else {
-                $CIDRAM['BlockInfo']['EmailAddr'] =
-                    '<a href="mailto:' . $CIDRAM['Config']['general']['emailaddr'] .
-                    '?subject=CIDRAM%20Event&body=' .
-                    urlencode($CIDRAM['ParseVars']($CIDRAM['Parsables'],
-                        "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
-                        "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
-                        "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
-                        "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
-                    )) . '">' . $CIDRAM['lang']['click_here'] . '</a>';
-                $CIDRAM['BlockInfo']['EmailAddr'] =
-                    "\n    <p class=\"detected\">" . $CIDRAM['ParseVars'](array(
+            $CIDRAM['BlockInfo']['EmailAddr'] = '';
+            if ($CIDRAM['Config']['general']['emailaddr']) {
+                if ($CIDRAM['Config']['general']['emailaddr_display_style'] === 'default') {
+                    $CIDRAM['BlockInfo']['EmailAddr'] =
+                        '<a href="mailto:' . $CIDRAM['Config']['general']['emailaddr'] .
+                        '?subject=CIDRAM%20Event&body=' . urlencode($CIDRAM['ParseVars']($CIDRAM['Parsables'],
+                            "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
+                            "}{DateTime}\n{field_ipaddr}{IPAddr}\n{field_query}{Query}\n{field_referr" .
+                            "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
+                            "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
+                        )) . '"><strong>' . $CIDRAM['lang']['click_here'] . '</strong></a>';
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars'](array(
                         'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
                     ), $CIDRAM['lang']['Support_Email']) . '</p>';
+                } elseif ($CIDRAM['Config']['general']['emailaddr_display_style'] === 'noclick') {
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars'](array(
+                        'EmailAddr' => str_replace(
+                            '@',
+                            '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',
+                            '<strong>' . $CIDRAM['Config']['general']['emailaddr'] . '</strong>'
+                        )
+                    ), $CIDRAM['lang']['Support_Email_2']) . '</p>';
+                }
             }
             $CIDRAM['HTML'] = $CIDRAM['ParseVars'](array(
                 'EmailAddr' => $CIDRAM['BlockInfo']['EmailAddr']

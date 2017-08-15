@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.06.21).
+ * This file: Japanese language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = 'ジェネリック';
 $CIDRAM['lang']['Short_Proxy'] = 'プロキシ';
 $CIDRAM['lang']['Short_Spam'] = 'スパムリスク';
 $CIDRAM['lang']['Support_Email'] = 'Ｅメールサポートチケットを送信については、​または、​支援については、​{ClickHereLink}してください（プリアンブルを変更しないでください）。';
+$CIDRAM['lang']['Support_Email_2'] = 'これが間違っていると思われる場合は、{EmailAddr}に電子Ｅメールを送信して支援を求めてください。';

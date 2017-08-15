@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.06.03).
+ * This file: Vietnamese language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,3 +56,4 @@ $CIDRAM['lang']['Short_Generic'] = 'Chủng loại';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Nguy cơ rác';
 $CIDRAM['lang']['Support_Email'] = 'Nếu bạn tin chắc đây là lỗi, hoặc để tìm sự giúp đỡ, {ClickHereLink} để gửi một vé hỗ trợ email cho webmaster của trang web này (xin không thay đổi lời nói đầu hoặc dòng tiêu đề của email).';
+$CIDRAM['lang']['Support_Email_2'] = 'Nếu bạn tin chắc đây là lỗi, gửi email đến {EmailAddr} để tìm kiếm sự trợ giúp.';

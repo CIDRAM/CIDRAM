@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.08.14).
+ * This file: Indonesian language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Sebuah daftar dipisahkan dengan
 $CIDRAM['lang']['config_general_disable_cli'] = 'Menonaktifkan modus CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian depan?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya; False = Tidak [Default].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Alamat email untuk dukungan.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Apa header harus CIDRAM merespon dengan ketika memblokir permintaan?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
 $CIDRAM['lang']['field_clear'] = 'Cabut';
+$CIDRAM['lang']['field_clickable_link'] = 'Link yang dapat diklik';
 $CIDRAM['lang']['field_component'] = 'Komponen';
 $CIDRAM['lang']['field_create_new_account'] = 'Buat Akun Baru';
 $CIDRAM['lang']['field_deactivate'] = 'Menonaktifkan';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Menghapus';
 $CIDRAM['lang']['field_download_file'] = 'Mendownload';
 $CIDRAM['lang']['field_edit_file'] = 'Mengedit';
 $CIDRAM['lang']['field_expiry'] = 'Kadaluarsa';
+$CIDRAM['lang']['field_false'] = 'False (Palsu)';
 $CIDRAM['lang']['field_file'] = 'File';
 $CIDRAM['lang']['field_filename'] = 'Nama file: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Direktori';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';
 $CIDRAM['lang']['field_latest_version'] = 'Versi Terbaru';
 $CIDRAM['lang']['field_log_in'] = 'Masuk';
 $CIDRAM['lang']['field_new_name'] = 'Nama baru:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Teks yang tidak dapat diklik';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opsi';
 $CIDRAM['lang']['field_password'] = 'Kata Sandi';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Gunakan zona waktu default sistem.';
 $CIDRAM['lang']['field_tracking'] = 'Pelacakan';
+$CIDRAM['lang']['field_true'] = 'True (Benar)';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstal';
 $CIDRAM['lang']['field_update'] = 'Perbarui';
 $CIDRAM['lang']['field_update_all'] = 'Memperbarui Semua';

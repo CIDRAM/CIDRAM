@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.08.14).
+ * This file: Portuguese language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Uma lista delimitada por vírgu
 $CIDRAM['lang']['config_general_disable_cli'] = 'Desativar o modo CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Desativar o acesso front-end?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Desativar webfonts? True = Sim; False = Não [Padrão].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Endereço de e-mail para suporte.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Como você prefere que o endereço de e-mail seja apresentado aos usuários?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quais cabeçalhos deve CIDRAM responder com quando bloqueando solicitações?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'Ativar';
 $CIDRAM['lang']['field_banned'] = 'Banido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_clear'] = 'Cancelar';
+$CIDRAM['lang']['field_clickable_link'] = 'Link clicável';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Criar Nova Conta';
 $CIDRAM['lang']['field_deactivate'] = 'Desativar';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'Deletar';
 $CIDRAM['lang']['field_download_file'] = 'Descarregar';
 $CIDRAM['lang']['field_edit_file'] = 'Editar';
 $CIDRAM['lang']['field_expiry'] = 'Expiração';
+$CIDRAM['lang']['field_false'] = 'False (Falso)';
 $CIDRAM['lang']['field_file'] = 'Arquivo';
 $CIDRAM['lang']['field_filename'] = 'Nome do arquivo: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Diretório';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'Endereço IP';
 $CIDRAM['lang']['field_latest_version'] = 'Última Versão';
 $CIDRAM['lang']['field_log_in'] = 'Entrar';
 $CIDRAM['lang']['field_new_name'] = 'Novo nome:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'Texto não-clicável';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'Opções';
 $CIDRAM['lang']['field_password'] = 'Senha';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'Estado';
 $CIDRAM['lang']['field_system_timezone'] = 'Usar o fuso horário padrão do sistema.';
 $CIDRAM['lang']['field_tracking'] = 'Monitoração';
+$CIDRAM['lang']['field_true'] = 'True (Verdadeiro)';
 $CIDRAM['lang']['field_uninstall'] = 'Desinstalar';
 $CIDRAM['lang']['field_update'] = 'Atualizar';
 $CIDRAM['lang']['field_update_all'] = 'Atualize Tudo';

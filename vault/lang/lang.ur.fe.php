@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.08.14).
+ * This file: Urdu language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'میزبان نام لک اپ �
 $CIDRAM['lang']['config_general_disable_cli'] = 'غیر فعال کریں CLI موڈ?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'سامنے کے آخر تک رسائی کو غیر فعال کریں?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'غیر فعال ویب فونٹس? سچے = جی ہاں; جھوٹی = نہیں [پہلے سے طے شدہ].';
-$CIDRAM['lang']['config_general_emailaddr'] = 'کی حمایت کے لئے ای میل ایڈریس.';
+$CIDRAM['lang']['config_general_emailaddr'] = 'اگر آپ چاہتے ہیں، تو آپ صارفین کو جب انہیں بلاک کر رہے ہیں تو دینے کے لئے ای میل ایڈریس کی فراہمی کر سکتے ہیں.وہ اسے استعمال آپ سے رابطہ کرنے کے لئے کر سکتے ہیں اگر وہ غلطی سے بلاک کر رہے ہیں. انتباہ: آپ جو بھی ای میل ایڈریس پر فراہمی کرتے ہیں، وہ یقینی طور پر سپےمبٹس اور کھرچنی کی طرف سے حاصل کئے جائیں گے. اس کی وجہ سے، اس کی سختی سے سفارش کی جاتی ہے کہ آپ ایک ای میل ایڈریس انتخاب کرتے ہیں جو ڈسپوزایبل یا غیر اہم ہے (یعنی.، آپ کی ذاتی یا کاروباری ای میل ایڈریس کا استعمال نہ کریں).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'آپ کو ای میل ایڈریس کو کس طرح صارفین کو پیش کرنا پسند ہے؟';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'کون ہیڈرز جب مسدود کرنے کی درخواستوں کے ساتھ جواب CIDRAM چاہئے?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'کہاں درخواستوں منسلک کرنے کے IP ایڈریس کو تلاش کرنے کے لئے؟ (جیسا CloudFlare کے طور پر خدمات اور پسند کرتا ہے کے لئے مفید). پہلے سے طے شدہ = REMOTE_ADDR. WARNING: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
 $CIDRAM['lang']['field_clear'] = 'صاف';
+$CIDRAM['lang']['field_clickable_link'] = 'کلک کرنے والے لنک';
 $CIDRAM['lang']['field_component'] = 'اجزاء';
 $CIDRAM['lang']['field_create_new_account'] = 'نیا اکاؤنٹ بنانے';
 $CIDRAM['lang']['field_deactivate'] = 'بے عمل';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = 'حذف کریں';
 $CIDRAM['lang']['field_download_file'] = 'لوڈ';
 $CIDRAM['lang']['field_edit_file'] = 'میں ترمیم کریں';
 $CIDRAM['lang']['field_expiry'] = 'ختم ہونے';
+$CIDRAM['lang']['field_false'] = 'False (غلط)';
 $CIDRAM['lang']['field_file'] = 'فائل';
 $CIDRAM['lang']['field_filename'] = 'فائل کا نام: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'ڈائریکٹری';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'IP پتہ';
 $CIDRAM['lang']['field_latest_version'] = 'تازہ ترین ورژن';
 $CIDRAM['lang']['field_log_in'] = 'لاگ ان';
 $CIDRAM['lang']['field_new_name'] = 'نیا نام:';
+$CIDRAM['lang']['field_nonclickable_text'] = 'متن جو کلک نہیں کیا جا سکتا';
 $CIDRAM['lang']['field_ok'] = 'ٹھیک ہے';
 $CIDRAM['lang']['field_options'] = 'اختیارات';
 $CIDRAM['lang']['field_password'] = 'پاس ورڈ';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = 'سٹیٹس';
 $CIDRAM['lang']['field_system_timezone'] = 'نظام کو پہلے سے طے شدہ ٹائم زون کا استعمال کریں.';
 $CIDRAM['lang']['field_tracking'] = 'ٹریکنگ';
+$CIDRAM['lang']['field_true'] = 'True (سچ)';
 $CIDRAM['lang']['field_uninstall'] = 'اانسٹال نہیں';
 $CIDRAM['lang']['field_update'] = 'اپ ڈیٹ';
 $CIDRAM['lang']['field_update_all'] = 'تمام تجدید کریں';

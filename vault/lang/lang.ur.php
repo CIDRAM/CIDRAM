@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.06.03).
+ * This file: Urdu language data (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -57,3 +57,4 @@ $CIDRAM['lang']['Short_Generic'] = 'جنرک';
 $CIDRAM['lang']['Short_Proxy'] = 'پراکسی';
 $CIDRAM['lang']['Short_Spam'] = 'سپیم خطرے';
 $CIDRAM['lang']['Support_Email'] = 'آپ کو یقین ہے کہ یہ غلطی سے ہے، یا مدد حاصل کرنے کے لئے تو، {ClickHereLink} اس ویب سائٹ کی ویب ماسٹر کو ایک ای میل کی حمایت کے ٹکٹ بھیجنے کے لئے (ای میل کی تمہید یا عنوان کی سطر کو تبدیل نہ کریں).';
+$CIDRAM['lang']['Support_Email_2'] = 'آپ کو یقین ہے کہ یہ غلطی سے ہے، مدد تلاش کرنے کے لئے {EmailAddr} میں ایک ای میل بھیجیں.';

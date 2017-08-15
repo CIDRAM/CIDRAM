@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.08.14).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,8 @@ $CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器�
 $CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
 $CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？​True（真）=关闭； False（假）=不关闭【标准】。';
-$CIDRAM['lang']['config_general_emailaddr'] = '支持/援助电子邮件地址。';
+$CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何将电子邮件地址呈现给用户？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！';
@@ -66,6 +67,7 @@ $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_clear'] = '撤消';
+$CIDRAM['lang']['field_clickable_link'] = '可点击的链接';
 $CIDRAM['lang']['field_component'] = '组件';
 $CIDRAM['lang']['field_create_new_account'] = '创建新账户';
 $CIDRAM['lang']['field_deactivate'] = '停用';
@@ -74,6 +76,7 @@ $CIDRAM['lang']['field_delete_file'] = '删除';
 $CIDRAM['lang']['field_download_file'] = '下载';
 $CIDRAM['lang']['field_edit_file'] = '编辑';
 $CIDRAM['lang']['field_expiry'] = '到期';
+$CIDRAM['lang']['field_false'] = 'False（假）';
 $CIDRAM['lang']['field_file'] = '文件';
 $CIDRAM['lang']['field_filename'] = '文件名：';
 $CIDRAM['lang']['field_filetype_directory'] = '文件夹';
@@ -86,6 +89,7 @@ $CIDRAM['lang']['field_ip_address'] = 'IP地址';
 $CIDRAM['lang']['field_latest_version'] = '最新版本';
 $CIDRAM['lang']['field_log_in'] = '登录';
 $CIDRAM['lang']['field_new_name'] = '新名称：';
+$CIDRAM['lang']['field_nonclickable_text'] = '不可点击的文字';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = '选项';
 $CIDRAM['lang']['field_password'] = '密码';
@@ -103,6 +107,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_status'] = '状态';
 $CIDRAM['lang']['field_system_timezone'] = '使用系统默认时区。';
 $CIDRAM['lang']['field_tracking'] = '跟踪';
+$CIDRAM['lang']['field_true'] = 'True（真）';
 $CIDRAM['lang']['field_uninstall'] = '卸载';
 $CIDRAM['lang']['field_update'] = '更新';
 $CIDRAM['lang']['field_update_all'] = '更新一切';

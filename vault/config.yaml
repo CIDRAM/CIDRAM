@@ -152,6 +152,12 @@ Config Defaults:
   emailaddr:
    type: string
    default: ""
+  emailaddr_display_style:
+   type: string
+   default: default
+   choices:
+    default: {field_clickable_link}
+    noclick: {field_nonclickable_text}
   disable_cli:
    type: bool
    default: false

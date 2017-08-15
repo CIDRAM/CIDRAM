@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.14).
+ * This file: Front-end handler (last modified: 2017.08.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -959,6 +959,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                     }
                     if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
                         $CIDRAM['ChoiceValue'] = $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['ChoiceValue']);
+                        if (strpos($CIDRAM['ChoiceValue'], '{') !== false) {
+                            $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ChoiceValue']);
+                        }
                     }
                     $CIDRAM['ThisDir']['FieldOut'] .= ($CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) ?
                         '<option value="' . $CIDRAM['ChoiceKey'] . '" selected>' . $CIDRAM['ChoiceValue'] . '</option>'
@@ -970,12 +973,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 if ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) {
                     $CIDRAM['ThisDir']['FieldOut'] =
                         '<select class="auto" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" id="'. $CIDRAM['ThisDir']['DirLangKey'] . '_field"' . $CIDRAM['ThisDir']['Trigger'] . '>' .
-                        '<option value="true" selected>True</option><option value="false">False</option>' .
+                        '<option value="true" selected>' . $CIDRAM['lang']['field_true'] . '</option><option value="false">' . $CIDRAM['lang']['field_false'] . '</option>' .
                         '</select>';
                 } else {
                     $CIDRAM['ThisDir']['FieldOut'] =
                         '<select class="auto" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" id="'. $CIDRAM['ThisDir']['DirLangKey'] . '_field"' . $CIDRAM['ThisDir']['Trigger'] . '>' .
-                        '<option value="true">True</option><option value="false" selected>False</option>' .
+                        '<option value="true">' . $CIDRAM['lang']['field_true'] . '</option><option value="false" selected>' . $CIDRAM['lang']['field_false'] . '</option>' .
                         '</select>';
                 }
             } elseif ($CIDRAM['DirValue']['type'] === 'int' || $CIDRAM['DirValue']['type'] === 'real') {

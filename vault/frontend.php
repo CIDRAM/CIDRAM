@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.15).
+ * This file: Front-end handler (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1541,15 +1541,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Config']['general']['lang']
             );
         }
-        if (empty($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
-            $CIDRAM['Components']['ThisComponent']['Extended Description'] = '';
-        }
-        if (is_array($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
-            $CIDRAM['IsolateL10N'](
-                $CIDRAM['Components']['ThisComponent']['Extended Description'],
-                $CIDRAM['Config']['general']['lang']
-            );
-        }
+        $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent']);
         $CIDRAM['Components']['ThisComponent']['ID'] = $CIDRAM['Components']['Key'];
         $CIDRAM['Components']['ThisComponent']['Options'] = '';
         $CIDRAM['Components']['ThisComponent']['StatusOptions'] = '';
@@ -1557,20 +1549,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         if (empty($CIDRAM['Components']['ThisComponent']['Version'])) {
             if (empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
                 $CIDRAM['Components']['ThisComponent']['RowClass'] = 'h2';
-                $CIDRAM['Components']['ThisComponent']['Version'] =
-                    $CIDRAM['lang']['response_updates_not_installed'];
+                $CIDRAM['Components']['ThisComponent']['Version'] = $CIDRAM['lang']['response_updates_not_installed'];
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                $CIDRAM['Components']['ThisComponent']['StatusOptions'] =
-                    $CIDRAM['lang']['response_updates_not_installed'];
+                $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['lang']['response_updates_not_installed'];
             } else {
-                $CIDRAM['Components']['ThisComponent']['Version'] =
-                    $CIDRAM['lang']['response_updates_unable_to_determine'];
+                $CIDRAM['Components']['ThisComponent']['Version'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
             }
         }
         if (empty($CIDRAM['Components']['ThisComponent']['Remote'])) {
-            $CIDRAM['Components']['ThisComponent']['RemoteData'] =
-                $CIDRAM['lang']['response_updates_unable_to_determine'];
+            $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
             if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
             }
@@ -1716,8 +1704,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             }
         }
         if (empty($CIDRAM['Components']['ThisComponent']['Latest'])) {
-            $CIDRAM['Components']['ThisComponent']['Latest'] =
-                $CIDRAM['lang']['response_updates_unable_to_determine'];
+            $CIDRAM['Components']['ThisComponent']['Latest'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
         } elseif (
             empty($CIDRAM['Components']['ThisComponent']['Files']['To']) &&
             !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['To'])
@@ -1863,20 +1850,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Config']['general']['lang']
             );
         }
-        if (empty($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
-            $CIDRAM['Components']['ThisComponent']['Extended Description'] = '';
-        }
-        if (is_array($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
-            $CIDRAM['IsolateL10N'](
-                $CIDRAM['Components']['ThisComponent']['Extended Description'],
-                $CIDRAM['Config']['general']['lang']
-            );
-        }
+        $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent']);
         $CIDRAM['Components']['ThisComponent']['ID'] = $CIDRAM['Components']['Key'];
-        $CIDRAM['Components']['ThisComponent']['Latest'] =
-            $CIDRAM['Components']['ThisComponent']['Version'];
-        $CIDRAM['Components']['ThisComponent']['Version'] =
-            $CIDRAM['lang']['response_updates_not_installed'];
+        $CIDRAM['Components']['ThisComponent']['Latest'] = $CIDRAM['Components']['ThisComponent']['Version'];
+        $CIDRAM['Components']['ThisComponent']['Version'] = $CIDRAM['lang']['response_updates_not_installed'];
         $CIDRAM['Components']['ThisComponent']['StatClass'] = 'txtRd';
         $CIDRAM['Components']['ThisComponent']['RowClass'] = 'h2';
         $CIDRAM['Components']['ThisComponent']['VersionSize'] = '';

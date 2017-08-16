@@ -27,6 +27,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.08.15; NEW FEATURE; Maikuolan]: Added a new directive for specifying
   how email addresses should be displayed to users ("emailaddr_display_style").
 
+- [2017.08.16; Sub-minor code change; Maikuolan]: Front-end updates page
+  components false positives risk label now determined by a new, separate entry
+  in the YAML files, which should make it easier in the future to create new
+  components due to not needing to translate these entries in the extended
+  description anymore, and should help to reduce the size of these files.
+
 === Version/Release 1.0.1 ===
 PATCH RELEASE.
 

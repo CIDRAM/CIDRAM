@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.14).
+ * This file: Functions file (last modified: 2017.08.16).
  */
 
 /**
@@ -1945,17 +1945,36 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
 };
 
 /** Duplication avoidance (front-end updates page). */
+$CIDRAM['PrepareExtendedDescription'] = function (&$Arr) use (&$CIDRAM) {
+    if (empty($Arr['Extended Description'])) {
+        $Arr['Extended Description'] = '';
+    }
+    if (is_array($Arr['Extended Description'])) {
+        $CIDRAM['IsolateL10N']($Arr['Extended Description'], $CIDRAM['Config']['general']['lang']);
+    }
+    if (!empty($Arr['False Positive Risk'])) {
+        if ($Arr['False Positive Risk'] === 'Low') {
+            $State = $CIDRAM['lang']['state_risk_low'];
+            $Class = 'txtGn';
+        } elseif ($Arr['False Positive Risk'] === 'Medium') {
+            $State = $CIDRAM['lang']['state_risk_medium'];
+            $Class = 'txtOe';
+        } elseif ($Arr['False Positive Risk'] === 'High') {
+            $State = $CIDRAM['lang']['state_risk_high'];
+            $Class = 'txtRd';
+        } else {
+            return;
+        }
+        $Arr['Extended Description'] .=
+            '<br /><em>' . $CIDRAM['lang']['label_false_positive_risk'] .
+            '<span class="' . $Class . '">' . $State . '</span></em>';
+    }
+};
+
+/** Duplication avoidance (front-end updates page). */
 $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
     if (!empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files'])) {
-        if (empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
-            $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'] = '';
-        }
-        if (is_array($CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'])) {
-            $CIDRAM['IsolateL10N'](
-                $CIDRAM['Components']['Meta'][$_POST['ID']]['Extended Description'],
-                $CIDRAM['Config']['general']['lang']
-            );
-        }
+        $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['Meta'][$_POST['ID']]);
         $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']);
         $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']);
         $CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse'] = $CIDRAM['IsInUse'](

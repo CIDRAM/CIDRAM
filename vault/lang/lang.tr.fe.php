@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.08.15).
+ * This file: Turkish language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
 $CIDRAM['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'Sayfa isteği <span class="txtRd">%s</span>
 $CIDRAM['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';
 $CIDRAM['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şifre kullanmıyor!';
+$CIDRAM['lang']['state_risk_high'] = 'Yüksek';
+$CIDRAM['lang']['state_risk_low'] = 'Düşük';
+$CIDRAM['lang']['state_risk_medium'] = 'Orta';
 $CIDRAM['lang']['state_tracking'] = 'Şu anda <span class="txtRd">%s</span> IP izleme.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları gizleme';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';

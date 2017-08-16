@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.08.15).
+ * This file: Spanish language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'Por favor iniciar sesión para continuar.';
 $CIDRAM['lang']['label_active_config_file'] = 'Archivo de configuración activo: ';
 $CIDRAM['lang']['label_branch'] = 'Branch más nuevo estable:';
 $CIDRAM['lang']['label_cidram'] = 'Versión CIDRAM utilizada:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'Riesgo de falsos positivos: ';
 $CIDRAM['lang']['label_os'] = 'Sistema operativo utilizada:';
 $CIDRAM['lang']['label_php'] = 'Versión PHP utilizada:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilizada:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'Solicitud de página completada en <span cl
 $CIDRAM['lang']['state_logged_in'] = 'Conectado.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
 $CIDRAM['lang']['state_password_not_valid'] = '¡Advertencia: Esta cuenta no está utilizando una contraseña válida!';
+$CIDRAM['lang']['state_risk_high'] = 'Alto';
+$CIDRAM['lang']['state_risk_low'] = 'Bajo';
+$CIDRAM['lang']['state_risk_medium'] = 'Medio';
 $CIDRAM['lang']['state_tracking'] = 'Actualmente siguiendo <span class="txtRd">%s</span> IPs.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'No ocultar no anticuado';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ocultar no anticuado';

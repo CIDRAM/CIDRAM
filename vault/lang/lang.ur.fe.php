@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.08.15).
+ * This file: Urdu language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان �
 $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $CIDRAM['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = '<span class="txtRd">%s</span> سیکنڈ م
 $CIDRAM['lang']['state_logged_in'] = 'لاگ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $CIDRAM['lang']['state_password_not_valid'] = 'انتباہ: یہ اکاؤنٹ ایک درست پاس ورڈ کا استعمال نہیں کر رہا ہے!';
+$CIDRAM['lang']['state_risk_high'] = 'اعلی';
+$CIDRAM['lang']['state_risk_low'] = 'کم';
+$CIDRAM['lang']['state_risk_medium'] = 'درمیانہ';
 $CIDRAM['lang']['state_tracking'] = 'فی الحال <span class="txtRd">%s</span> IP ٹریکنگ.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ مت چھپاو';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';

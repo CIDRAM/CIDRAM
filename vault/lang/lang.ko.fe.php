@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.08.15).
+ * This file: Korean language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $CIDRAM['lang']['label_branch'] = '분기 최신 안정 :';
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전:';
+$CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제:';
 $CIDRAM['lang']['label_php'] = '사용 된 PHP 버전:';
 $CIDRAM['lang']['label_sapi'] = '사용 된 SAPI:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = '페이지 요청이 <span class="txtRd">%s<
 $CIDRAM['lang']['state_logged_in'] = '로그인 있습니다.';
 $CIDRAM['lang']['state_logs_access_only'] = '로그에만 액세스';
 $CIDRAM['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';
+$CIDRAM['lang']['state_risk_high'] = '높은';
+$CIDRAM['lang']['state_risk_low'] = '낮은';
+$CIDRAM['lang']['state_risk_medium'] = '중간';
 $CIDRAM['lang']['state_tracking'] = '현재 <span class="txtRd">%s</span> 개의 IP를 추적 중입니다.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지 않고';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';

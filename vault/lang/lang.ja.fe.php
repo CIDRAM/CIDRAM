@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.08.15).
+ * This file: Japanese language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = '継続するには、​ログインしてく
 $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
 $CIDRAM['lang']['label_branch'] = 'ブランチ最新安定：';
 $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
+$CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';
 $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</s
 $CIDRAM['lang']['state_logged_in'] = 'ログインしています。';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
+$CIDRAM['lang']['state_risk_high'] = '高い';
+$CIDRAM['lang']['state_risk_low'] = '低い';
+$CIDRAM['lang']['state_risk_medium'] = '中程度';
 $CIDRAM['lang']['state_tracking'] = '現在、<span class="txtRd">%s</span>個のIPをトラッキングしています。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';

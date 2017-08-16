@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.08.15).
+ * This file: Thai language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'เข้าสู่ระบบเพื่
 $CIDRAM['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
 $CIDRAM['lang']['label_branch'] = 'สาขาเสถียรล่าสุด:';
 $CIDRAM['lang']['label_cidram'] = 'รุ่น CIDRAM ในการใช้งาน:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'ความเสี่ยงสำหรับการบวกเท็จ: ';
 $CIDRAM['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $CIDRAM['lang']['label_php'] = 'รุ่น PHP ในการใช้งาน:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'คำขอหน้าเสร็จส�
 $CIDRAM['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';
 $CIDRAM['lang']['state_password_not_valid'] = 'คำเตือน: บัญชีนี้ไม่ได้ใช้รหัสผ่านถูกต้อง!';
+$CIDRAM['lang']['state_risk_high'] = 'สูง';
+$CIDRAM['lang']['state_risk_low'] = 'ต่ำ';
+$CIDRAM['lang']['state_risk_medium'] = 'ปานกลาง';
 $CIDRAM['lang']['state_tracking'] = 'ขณะนี้กำลังติดตาม <span class="txtRd">%s</span> IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'อย่าซ่อนไม่ใช่ล้าสมัย';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'ซ่อนไม่ใช่ล้าสมัย';

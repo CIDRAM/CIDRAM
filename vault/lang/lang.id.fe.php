@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.08.15).
+ * This file: Indonesian language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $CIDRAM['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'Risiko positif palsu: ';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_php'] = 'Versi PHP digunakan:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'Permintaan halaman selesai dalam <span clas
 $CIDRAM['lang']['state_logged_in'] = 'Pengguna yang online.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $CIDRAM['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
+$CIDRAM['lang']['state_risk_high'] = 'Tinggi';
+$CIDRAM['lang']['state_risk_low'] = 'Rendah';
+$CIDRAM['lang']['state_risk_medium'] = 'Menengah';
 $CIDRAM['lang']['state_tracking'] = 'Saat ini melacak <span class="txtRd">%s</span> IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';

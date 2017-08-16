@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.08.15).
+ * This file: Russian language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтоб�
 $CIDRAM['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
 $CIDRAM['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'Риск ложноположительный: ';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'Запрос страницы заверш�
 $CIDRAM['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $CIDRAM['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';
+$CIDRAM['lang']['state_risk_high'] = 'Высокий';
+$CIDRAM['lang']['state_risk_low'] = 'Низкий';
+$CIDRAM['lang']['state_risk_medium'] = 'Средний';
 $CIDRAM['lang']['state_tracking'] = 'В настоящее время отслеживание <span class="txtRd">%s</span> IP-адресов.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают не-устаревший';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не-устаревший';

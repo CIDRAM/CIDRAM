@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.08.15).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = '請登錄以繼續。';
 $CIDRAM['lang']['label_active_config_file'] = '活動配置文件：';
 $CIDRAM['lang']['label_branch'] = '分支最新穩定：';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
+$CIDRAM['lang']['label_false_positive_risk'] = '假陽性風險：';
 $CIDRAM['lang']['label_os'] = '目前使用操作系統：';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = '頁面請求在<span class="txtRd">%s</span
 $CIDRAM['lang']['state_logged_in'] = '目前在線。';
 $CIDRAM['lang']['state_logs_access_only'] = '僅日誌訪問';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：此帳戶不​使用有效的密碼！';
+$CIDRAM['lang']['state_risk_high'] = '高';
+$CIDRAM['lang']['state_risk_low'] = '低';
+$CIDRAM['lang']['state_risk_medium'] = '中等';
 $CIDRAM['lang']['state_tracking'] = '目前正在跟踪<span class="txtRd">%s</span>個IP。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隱藏非過時';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隱藏非過時';

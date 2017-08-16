@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.08.15).
+ * This file: Hindi language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'जारी रखने के लिए �
 $CIDRAM['lang']['label_active_config_file'] = 'सक्रिय कॉन्फ़िगरेशन फाइल: ';
 $CIDRAM['lang']['label_branch'] = 'शाखा नवीनतम स्थिर:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM संस्करण का उपयोग:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'झूठी सकारात्मक जोखिम: ';
 $CIDRAM['lang']['label_os'] = 'ऑपरेटिंग सिस्टम का इस्तेमाल किया:';
 $CIDRAM['lang']['label_php'] = 'PHP संस्करण का इस्तेमाल किया:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI का इस्तेमाल किया:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span cl
 $CIDRAM['lang']['state_logged_in'] = 'लॉग इन किया है।';
 $CIDRAM['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
 $CIDRAM['lang']['state_password_not_valid'] = 'चेतावनी: यह खाता किसी मान्य पासवर्ड का उपयोग नहीं कर रहा है!';
+$CIDRAM['lang']['state_risk_high'] = 'भारी';
+$CIDRAM['lang']['state_risk_low'] = 'कम';
+$CIDRAM['lang']['state_risk_medium'] = 'मध्यम';
 $CIDRAM['lang']['state_tracking'] = 'वर्तमान में <span class="txtRd">%s</span> आईपी ट्रैकिंग।';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'गैर पदावनत को छुपाएं न करें';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'गैर पदावनत को छिपाना';

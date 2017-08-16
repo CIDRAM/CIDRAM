@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.08.15).
+ * This file: Dutch language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $CIDRAM['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
 $CIDRAM['lang']['label_branch'] = 'Branch laatste stabiele:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $CIDRAM['lang']['label_php'] = 'PHP versie gebruikt:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI gebruikt:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'Paginaverzoek voltooid in <span class="txtR
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
+$CIDRAM['lang']['state_risk_high'] = 'Hoog';
+$CIDRAM['lang']['state_risk_low'] = 'Laag';
+$CIDRAM['lang']['state_risk_medium'] = 'Middelgroot';
 $CIDRAM['lang']['state_tracking'] = 'Momenteel controleren <span class="txtRd">%s</span> IPs.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';

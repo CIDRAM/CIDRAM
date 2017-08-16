@@ -1606,12 +1606,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
                 $CIDRAM['Components']['ThisComponent']['Extended Description'] =
                     $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'];
-                if (is_array($CIDRAM['Components']['ThisComponent']['Extended Description'])) {
-                    $CIDRAM['IsolateL10N'](
-                        $CIDRAM['Components']['ThisComponent']['Extended Description'],
-                        $CIDRAM['Config']['general']['lang']
-                    );
-                }
+                $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent']);
             }
             if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
                 if (

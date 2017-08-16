@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.08.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
 $CIDRAM['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'Yêu cầu trang hoàn thành trong <span c
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
+$CIDRAM['lang']['state_risk_high'] = 'Cao';
+$CIDRAM['lang']['state_risk_low'] = 'Thấp';
+$CIDRAM['lang']['state_risk_medium'] = 'Trung bình';
 $CIDRAM['lang']['state_tracking'] = 'Hiện đang giám sát <span class="txtRd">%s</span> IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';

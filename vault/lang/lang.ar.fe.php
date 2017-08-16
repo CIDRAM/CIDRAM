@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.08.15).
+ * This file: Arabic language data for the front-end (last modified: 2017.08.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -118,6 +118,7 @@ $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمت
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
 $CIDRAM['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
+$CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة: ';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $CIDRAM['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
@@ -194,6 +195,9 @@ $CIDRAM['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال <sp
 $CIDRAM['lang']['state_logged_in'] = 'حاليا على.';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $CIDRAM['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة !';
+$CIDRAM['lang']['state_risk_high'] = 'عالية';
+$CIDRAM['lang']['state_risk_low'] = 'قليل';
+$CIDRAM['lang']['state_risk_medium'] = 'متوسطة';
 $CIDRAM['lang']['state_tracking'] = 'تتبع حاليا <span class="txtRd">%s</span> عناوين IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';

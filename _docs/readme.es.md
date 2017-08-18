@@ -358,7 +358,7 @@ General configuración para CIDRAM.
 - ¿Desactivar webfonts? True = Sí; False = No [Predefinido].
 
 "maintenance_mode"
-- ¿Habilitar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc.
+- ¿Activar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc.
 
 #### "signatures" (Categoría)
 Configuración de firmas.

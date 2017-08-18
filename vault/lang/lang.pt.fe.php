@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.08.17).
+ * This file: Portuguese language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = 'Atenção: Usando senha padrão!';
 $CIDRAM['lang']['state_loadtime'] = 'Pedido de página concluído em <span class="txtRd">%s</span> segundos.';
 $CIDRAM['lang']['state_logged_in'] = 'Conectado.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Acesso aos arquivos de registro somente';
+$CIDRAM['lang']['state_maintenance_mode'] = 'Atenção: O modo de manutenção está ativado!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Atenção: Esta conta não está usando uma senha válida!';
 $CIDRAM['lang']['state_risk_high'] = 'Alto';
 $CIDRAM['lang']['state_risk_low'] = 'Baixo';

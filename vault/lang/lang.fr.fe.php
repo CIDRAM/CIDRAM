@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.08.17).
+ * This file: French language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = 'Attention : Utilisant le mot de pa
 $CIDRAM['lang']['state_loadtime'] = 'Demande de page complétée en <span class="txtRd">%s</span> secondes.';
 $CIDRAM['lang']['state_logged_in'] = 'Connecté.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
+$CIDRAM['lang']['state_maintenance_mode'] = 'Avertissement : Le mode de maintenance est activé !';
 $CIDRAM['lang']['state_password_not_valid'] = 'Attention : Ce compte n\'utilise un mot de passe valide !';
 $CIDRAM['lang']['state_risk_high'] = 'Élevé';
 $CIDRAM['lang']['state_risk_low'] = 'Faible';
@@ -233,7 +234,7 @@ $CIDRAM['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement pri
 $CIDRAM['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
 $CIDRAM['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';
 
-$CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
+$CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problèmes de CIDRAM @ GitHub</a> – Page de problèmes pour CIDRAM (soutien, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Forum de discussion pour CIDRAM (soutien, assistance, etc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin pour CIDRAM.</li>

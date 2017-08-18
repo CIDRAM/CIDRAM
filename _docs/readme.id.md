@@ -358,7 +358,7 @@ Konfigurasi umum dari CIDRAM.
 - Menonaktifkan webfonts? True = Ya; False = Tidak [Default].
 
 "maintenance_mode"
-- Aktifkan mode perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
+- Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
 
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.

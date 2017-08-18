@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.08.17).
+ * This file: German language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Pas
 $CIDRAM['lang']['state_loadtime'] = 'Seite-Anfrage in <span class="txtRd">%s</span> Sekunden abgeschlossen.';
 $CIDRAM['lang']['state_logged_in'] = 'Eingeloggt.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
+$CIDRAM['lang']['state_maintenance_mode'] = 'Warnung: Wartungsmodus ist aktiviert!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
 $CIDRAM['lang']['state_risk_high'] = 'Hohes';
 $CIDRAM['lang']['state_risk_low'] = 'Niedriges';

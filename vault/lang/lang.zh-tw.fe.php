@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.08.17).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = '警告：它使用標準密碼！';
 $CIDRAM['lang']['state_loadtime'] = '頁面請求在<span class="txtRd">%s</span>秒內完成。';
 $CIDRAM['lang']['state_logged_in'] = '目前在線。';
 $CIDRAM['lang']['state_logs_access_only'] = '僅日誌訪問';
+$CIDRAM['lang']['state_maintenance_mode'] = '警告：維護模式是啟用！';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：此帳戶不​使用有效的密碼！';
 $CIDRAM['lang']['state_risk_high'] = '高';
 $CIDRAM['lang']['state_risk_low'] = '低';

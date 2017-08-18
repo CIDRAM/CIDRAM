@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.08.17).
+ * This file: Korean language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,7 @@ $CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사�
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가?';
 $CIDRAM['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나?';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
-$CIDRAM['lang']['config_general_emailaddr'] = '여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고 : 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등).';
+$CIDRAM['lang']['config_general_emailaddr'] = '여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고 : 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '무엇 헤더 사용해야합니까 (요청을 차단했을 때)?';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = '경고 : 기본 암호를 사용�
 $CIDRAM['lang']['state_loadtime'] = '페이지 요청이 <span class="txtRd">%s</span> 초 후에 완료되었습니다.';
 $CIDRAM['lang']['state_logged_in'] = '로그인 있습니다.';
 $CIDRAM['lang']['state_logs_access_only'] = '로그에만 액세스';
+$CIDRAM['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';
 $CIDRAM['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';
 $CIDRAM['lang']['state_risk_high'] = '높은';
 $CIDRAM['lang']['state_risk_low'] = '낮은';
@@ -233,7 +234,7 @@ $CIDRAM['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극적
 $CIDRAM['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취약합니다! 업데이트하는 것이 좋습니다!';
 $CIDRAM['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있지 않습니다!';
 
-$CIDRAM['lang']['info_some_useful_links'] = '유용한 링크:<ul>
+$CIDRAM['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM 문제 @ GitHub</a> – CIDRAM 문제 페이지 (지원, 원조 등).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM 토론 포럼 (지원, 원조 등).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM 자료 WordPress 플러그인.</li>

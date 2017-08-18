@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.08.17).
+ * This file: Hindi language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = 'चेतावनी: डिफ़
 $CIDRAM['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।';
 $CIDRAM['lang']['state_logged_in'] = 'लॉग इन किया है।';
 $CIDRAM['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
+$CIDRAM['lang']['state_maintenance_mode'] = 'चेतावनी: रखरखाव मोड सक्षम है!';
 $CIDRAM['lang']['state_password_not_valid'] = 'चेतावनी: यह खाता किसी मान्य पासवर्ड का उपयोग नहीं कर रहा है!';
 $CIDRAM['lang']['state_risk_high'] = 'भारी';
 $CIDRAM['lang']['state_risk_low'] = 'कम';

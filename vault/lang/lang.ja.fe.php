@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.08.17).
+ * This file: Japanese language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -195,6 +195,7 @@ $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパス�
 $CIDRAM['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</span>秒後に完了しました。';
 $CIDRAM['lang']['state_logged_in'] = 'ログインしています。';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';
+$CIDRAM['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
 $CIDRAM['lang']['state_risk_high'] = '高い';
 $CIDRAM['lang']['state_risk_low'] = '低い';

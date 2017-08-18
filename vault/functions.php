@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.16).
+ * This file: Functions file (last modified: 2017.08.18).
  */
 
 /**
@@ -2147,6 +2147,12 @@ $CIDRAM['FE_Executor'] = function ($Closures) use (&$CIDRAM) {
     foreach ($Closures as $Closure) {
         if (isset($CIDRAM[$Closure]) && is_object($CIDRAM[$Closure])) {
             $CIDRAM[$Closure]();
+        } elseif (($Pos = strpos($Closure, ' ')) !== false) {
+            $Params = substr($Closure, $Pos + 1);
+            $Closure = substr($Closure, 0, $Pos);
+            if (isset($CIDRAM[$Closure]) && is_object($CIDRAM[$Closure])) {
+                $CIDRAM[$Closure]($Params);
+            }
         }
     }
 };

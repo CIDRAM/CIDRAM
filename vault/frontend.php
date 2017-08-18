@@ -1603,6 +1603,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     );
                 }
             }
+            if (
+                empty($CIDRAM['Components']['ThisComponent']['False Positive Risk']) &&
+                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'])
+            ) {
+                $CIDRAM['Components']['ThisComponent']['False Positive Risk'] =
+                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'];
+            }
             if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
                 $CIDRAM['Components']['ThisComponent']['Extended Description'] =
                     $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'];

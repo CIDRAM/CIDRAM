@@ -357,6 +357,9 @@ Cấu hình chung cho CIDRAM.
 "disable_webfonts"
 - Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].
 
+"maintenance_mode"
+- Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -739,4 +742,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 15 Tháng Tám 2017 (2017.08.15).
+Lần cuối cập nhật: 17 Tháng Tám 2017 (2017.08.17).

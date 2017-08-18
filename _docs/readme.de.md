@@ -357,6 +357,9 @@ Generelle Konfiguration von CIDRAM.
 "disable_webfonts"
 - Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].
 
+"maintenance_mode"
+- Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -739,4 +742,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 15 August 2017 (2017.08.15).
+Zuletzt aktualisiert: 17 August 2017 (2017.08.17).

@@ -357,6 +357,9 @@ General CIDRAM configuration.
 "disable_webfonts"
 - Disable webfonts? True = Yes; False = No [Default].
 
+"maintenance_mode"
+- Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc.
+
 #### "signatures" (Category)
 Signatures configuration.
 
@@ -739,4 +742,4 @@ Value | Using
 ---
 
 
-Last Updated: 15 August 2017 (2017.08.15).
+Last Updated: 17 August 2017 (2017.08.17).

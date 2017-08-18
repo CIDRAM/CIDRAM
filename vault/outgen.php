@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.08.15).
+ * This file: Output generator (last modified: 2017.08.17).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -85,7 +85,7 @@ $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP
 $CIDRAM['BlockInfo']['rURI'] .= (!empty($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '/';
 
 /** The normal blocking procedures should occur. */
-if ($CIDRAM['Protect']) {
+if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode']) {
 
     /** Run all IPv4/IPv6 tests. */
     try {
@@ -158,7 +158,12 @@ $CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
  * If the request hasn't originated from a whitelisted IP/CIDR, and if any modules have been registered with the
  * configuration, load them.
  */
-if ($CIDRAM['Protect'] && !empty($CIDRAM['Config']['signatures']['modules']) && empty($CIDRAM['Whitelisted'])) {
+if (
+    $CIDRAM['Protect'] &&
+    !$CIDRAM['Config']['general']['maintenance_mode'] &&
+    !empty($CIDRAM['Config']['signatures']['modules']) &&
+    empty($CIDRAM['Whitelisted'])
+) {
     $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
     array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
         if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
@@ -176,6 +181,7 @@ if ($CIDRAM['Protect'] && !empty($CIDRAM['Config']['signatures']['modules']) && 
  */
 if (
     !empty($CIDRAM['TestResults']) &&
+    !$CIDRAM['Config']['general']['maintenance_mode'] &&
     $CIDRAM['Config']['general']['search_engine_verification'] &&
     $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))
 ) {

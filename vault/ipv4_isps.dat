@@ -607,9 +607,9 @@ Tag: Vautron Rech. AG
 
 
 # ASN 38955 ("World4You Internet Services").
-# %Listed, Google Malware Dashboard: 3.24%.
-# %Listed, CleanTalk.org: 35.71%.
-# Updated: 2016.11.03 / Checked: 2017.02.26
+# %Listed, Google Malware Dashboard: 2.09%.
+# %Listed, CleanTalk.org: 31.25%.
+# Updated: 2016.11.03 / Checked: 2017.08.25
 
 81.19.144.0/20 Deny Generic
 178.23.80.0/21 Deny Generic
@@ -619,12 +619,15 @@ Tag: World4You
 
 
 # ASN 29073 ("Quasi Networks LTD", formerly "Ecatel Network").
-# %Listed, Google Malware Dashboard: 0.44%.
-# %Listed, CleanTalk.org: 45.27%.
-# Updated: 2017.02.26
+# %Listed, Google Malware Dashboard: 0.35%.
+# %Listed, CleanTalk.org: 67.18%.
+# Stop Forum Spam (SFS) listings: 9,582.
+# Updated: 2017.08.25
 
+5.8.18.0/24 Deny Generic
 46.243.146.0/24 Deny Generic
 46.243.148.0/24 Deny Generic
+77.72.83.0/24 Deny Generic
 80.82.64.0/22 Deny Generic
 80.82.68.0/23 Deny Generic
 80.82.70.0/24 Deny Generic
@@ -635,9 +638,11 @@ Tag: World4You
 89.248.174.0/24 Deny Generic
 93.174.88.0/21 Deny Generic
 94.102.48.0/20 Deny Generic
+145.249.104.0/22 Deny Generic
 188.72.103.0/24 Deny Generic
 188.72.106.0/24 Deny Generic
 188.72.117.0/24 Deny Generic
+196.16.0.0/14 Deny Generic
 213.184.105.0/24 Deny Generic
 213.184.113.0/24 Deny Generic
 213.184.115.0/24 Deny Generic
@@ -1415,11 +1420,13 @@ Tag: Voxility LLC
 
 
 # ASN 41665 ("Tehnologii Budushego LLC").
-# %Listed, Google Malware Dashboard: 3.52%.
-# %Listed, CleanTalk.org: 59.61%.
-# Updated: 2016.01.18 / Checked: 2017.02.26
+# %Listed, Google Malware Dashboard: 1.78%.
+# %Listed, CleanTalk.org: 57.05%.
+# Stop Forum Spam (SFS) listings: 4,442.
+# Updated: 2017.08.25
 
 78.109.16.0/20 Deny Generic
+185.207.136.0/22 Deny Generic
 194.54.88.0/22 Deny Generic
 213.155.0.0/19 Deny Generic
 Tag: Tehnologii Budushego
@@ -1648,13 +1655,18 @@ recaptcha:
 
 
 # ASN 44050 ("Petersburg Internet Network ltd").
-# %Listed, Google Malware Dashboard: 5.56%.
-# %Listed, CleanTalk.org: 54.89%.
-# Updated: 2017.02.26
+# %Listed, Google Malware Dashboard: 7.91%.
+# %Listed, CleanTalk.org: 67.56%.
+# Stop Forum Spam (SFS) listings: 1,427,625.
+# Updated: 2017.08.25
 
-5.8.8.0/22 Deny Generic
+5.8.8.0/21 Deny Generic
+5.8.16.0/24 Deny Generic
+5.8.19.0/24 Deny Generic
+5.8.20.0/22 Deny Generic
 5.8.48.0/21 Deny Generic
-5.8.56.0/22 Deny Generic
+5.8.56.0/23 Deny Generic
+5.8.59.0/24 Deny Generic
 5.8.61.0/24 Deny Generic
 5.8.62.0/24 Deny Generic
 5.8.65.0/24 Deny Generic
@@ -1662,29 +1674,39 @@ recaptcha:
 5.8.72.0/21 Deny Generic
 5.8.92.0/22 Deny Generic
 5.101.0.0/21 Deny Generic
+5.101.41.0/24 Deny Generic
+5.101.42.0/23 Deny Generic
 5.101.52.0/22 Deny Generic
 5.101.56.0/22 Deny Generic
-5.101.63.0/24 Deny Generic
 5.101.64.0/21 Deny Generic
 5.101.80.0/21 Deny Generic
 5.101.88.0/23 Deny Generic
 5.101.92.0/22 Deny Generic
 5.188.0.0/17 Deny Generic
-5.188.128.0/19 Deny Generic
-5.188.164.0/22 Deny Generic
+5.188.132.0/22 Deny Generic
+5.188.138.0/23 Deny Generic
+5.188.148.0/22 Deny Generic
+5.188.165.0/24 Deny Generic
+5.188.166.0/24 Deny Generic
 5.188.168.0/22 Deny Generic
 5.188.184.0/22 Deny Generic
-5.188.192.0/21 Deny Generic
+5.188.202.0/24 Deny Generic
+5.188.204.0/22 Deny Generic
 5.188.210.0/23 Deny Generic
+5.188.213.0/24 Deny Generic
 5.188.236.0/22 Deny Generic
 5.188.240.0/20 Deny Generic
+5.189.249.0/24 Deny Generic
+5.189.250.0/23 Deny Generic
 31.44.184.0/23 Deny Generic
 31.184.192.0/19 Deny Generic
 31.184.228.0/23 Deny Generic
+31.184.234.0/24 Deny Generic
 31.184.237.0/24 Deny Generic
 31.184.238.0/23 Deny Generic
 31.184.240.0/23 Deny Generic
 31.184.242.0/24 Deny Generic
+37.9.32.0/21 Deny Generic
 37.9.48.0/24 Deny Generic
 37.9.50.0/24 Deny Generic
 37.9.53.0/24 Deny Generic
@@ -1696,28 +1718,46 @@ recaptcha:
 46.161.4.0/22 Deny Generic
 46.161.8.0/22 Deny Generic
 46.161.14.0/23 Deny Generic
-46.161.16.0/22 Deny Generic
+46.161.16.0/21 Deny Generic
 46.161.24.0/23 Deny Generic
+46.161.26.0/24 Deny Generic
 46.161.28.0/23 Deny Generic
 46.161.30.0/24 Deny Generic
 46.161.32.0/21 Deny Generic
 46.161.44.0/23 Deny Generic
 46.161.48.0/22 Deny Generic
-91.220.131.0/24 Deny Generic
+91.142.138.0/24 Deny Generic
+91.193.110.0/23 Deny Generic
+91.231.8.0/24 Deny Generic
+91.231.136.0/23 Deny Generic
+91.234.11.0/24 Deny Generic
+91.237.180.0/23 Deny Generic
+91.238.96.0/22 Deny Generic
+91.238.224.0/24 Deny Generic
+91.238.249.0/24 Deny Generic
+91.241.46.0/23 Deny Generic
 91.243.32.0/22 Deny Generic
-91.243.56.0/22 Deny Generic
 91.243.60.0/23 Deny Generic
 95.215.0.0/22 Deny Generic
+109.248.223.0/24 Deny Generic
+146.185.192.0/21 Deny Generic
 146.185.223.0/24 Deny Generic
 146.185.224.0/21 Deny Generic
 146.185.234.0/24 Deny Generic
 146.185.237.0/24 Deny Generic
-146.185.240.0/23 Deny Generic
-146.185.243.0/24 Deny Generic
+146.185.240.0/22 Deny Generic
 146.185.244.0/23 Deny Generic
 146.185.250.0/23 Deny Generic
 146.185.252.0/24 Deny Generic
+185.162.233.0/24 Deny Generic
+185.204.108.0/22 Deny Generic
+185.209.12.0/22 Deny Generic
 188.143.128.0/17 Deny Generic
+193.93.60.0/23 Deny Generic
+193.105.93.0/24 Deny Generic
+193.105.135.0/24 Deny Generic
+194.28.208.0/22 Deny Generic
+194.242.124.0/22 Deny Generic
 195.2.240.0/23 Deny Generic
 195.211.124.0/22 Deny Generic
 Tag: PIN-AS
@@ -2020,8 +2060,8 @@ Tag: WorldStream
 
 
 # ASN 48226 ("INFOKOM Ltd").
-# %Listed, CleanTalk.org: 22.99%.
-# Updated: 2016.03.10 / Checked: 2017.02.26
+# %Listed, CleanTalk.org: 17.54%.
+# Updated: 2016.03.10 / Checked: 2017.08.25
 
 81.161.32.0/20 Deny Generic
 91.241.68.0/23 Deny Generic

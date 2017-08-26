@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.18).
+ * This file: Front-end handler (last modified: 2017.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -232,10 +232,9 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
                 $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
                 setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
                 $CIDRAM['FE']['UserState'] = 1;
-                $CIDRAM['FE']['ThisSession'] =
-                    $CIDRAM['FE']['User'] . ',' .
-                    password_hash($CIDRAM['FE']['SessionKey'], PASSWORD_DEFAULT) . ',' .
-                    ($CIDRAM['Now'] + 604800) . "\n";
+                $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
+                    $CIDRAM['FE']['SessionKey'], PASSWORD_DEFAULT
+                ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
                 $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
                 $CIDRAM['FE']['Rebuild'] = true;
             } else {
@@ -438,7 +437,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     /** Fetch remote CIDRAM version information and cache it if necessary. */
     if (($CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'cidram-ver.yaml')) === false) {
         $CIDRAM['Remote-YAML-CIDRAM'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'cidram-ver.yaml', false, 8);
-        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 604800);
+        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'cidram-ver.yaml', $CIDRAM['Remote-YAML-CIDRAM'] ?: '-', $CIDRAM['Now'] + 86400);
     }
 
     /** Process remote CIDRAM version information. */
@@ -479,7 +478,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
     /** Fetch remote PHP version information and cache it if necessary. */
     if (($CIDRAM['Remote-YAML-PHP'] = $CIDRAM['FECacheGet']($CIDRAM['FE']['Cache'], 'php-ver.yaml')) === false) {
         $CIDRAM['Remote-YAML-PHP'] = $CIDRAM['Request']($CIDRAM['RemoteVerPath'] . 'php-ver.yaml', false, 8);
-        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 604800);
+        $CIDRAM['FECacheAdd']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'php-ver.yaml', $CIDRAM['Remote-YAML-PHP'] ?: '-', $CIDRAM['Now'] + 86400);
     }
 
     /** Process remote PHP version information. */
@@ -1094,6 +1093,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 if (!isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'])) {
                     continue;
                 }
+                $CIDRAM['Components']['BytesAdded'] = 0;
+                $CIDRAM['Components']['BytesRemoved'] = 0;
+                $CIDRAM['Components']['TimeRequired'] = microtime(true);
                 $CIDRAM['Components']['RemoteMeta'] = array();
                 $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = $CIDRAM['FECacheGet'](
                     $CIDRAM['FE']['Cache'],
@@ -1234,6 +1236,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                 mkdir($CIDRAM['ThisPath']);
                             }
                         }
+                        if (is_readable($CIDRAM['Vault'] . $CIDRAM['ThisFileName'])) {
+                            $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                        }
+                        $CIDRAM['Components']['BytesAdded'] += strlen($CIDRAM['ThisFile']);
                         $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['ThisFileName'], 'w');
                         fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
                         fclose($CIDRAM['Handle']);
@@ -1251,6 +1257,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                 file_exists($CIDRAM['Vault'] . $ThisFile) &&
                                 $CIDRAM['Traverse']($ThisFile)
                             ) {
+                                $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
                                 unlink($CIDRAM['Vault'] . $ThisFile);
                                 while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
                                     $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
@@ -1302,7 +1309,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         }
                     }
                 }
-                $CIDRAM['FE']['state_msg'] .= '<br />';
+                $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesAdded']);
+                $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesRemoved']);
+                $CIDRAM['FE']['state_msg'] .= sprintf(
+                    ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+                    $CIDRAM['Components']['BytesAdded'],
+                    $CIDRAM['Components']['BytesRemoved'],
+                    $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
+                );
             }
             /** Update annotations. */
             foreach ($CIDRAM['FileData'] as $CIDRAM['ThisKey'] => $CIDRAM['ThisFile']) {
@@ -1326,6 +1340,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         /** Uninstall a component. */
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
             $CIDRAM['ComponentFunctionUpdatePrep']();
+            $CIDRAM['Components']['BytesRemoved'] = 0;
+            $CIDRAM['Components']['TimeRequired'] = microtime(true);
             if (
                 empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 !empty($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
@@ -1362,6 +1378,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         file_exists($CIDRAM['Vault'] . $ThisFile) &&
                         $CIDRAM['Traverse']($ThisFile)
                     ) {
+                        $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
                         unlink($CIDRAM['Vault'] . $ThisFile);
                         while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
                             $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
@@ -1393,6 +1410,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$_POST['ID']]['When Uninstall Fails']);
                 }
             }
+            $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesRemoved']);
+            $CIDRAM['FE']['state_msg'] .= sprintf(
+                ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
+                $CIDRAM['Components']['BytesRemoved'],
+                $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
+            );
         }
 
         /** Activate a component. */

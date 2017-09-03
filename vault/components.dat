@@ -21,7 +21,7 @@ CIDRAM:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。​
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。​
- Version: 1.1.1-DEV+17237673
+ Version: 1.1.1-DEV+17245713
  Minimum Required: 0.6.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -143,7 +143,7 @@ CIDRAM:
    - f82b848ae0f532ee63cff24c69bdf07b:17536
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 8eb8480441818b7254dab9ef0b33b360:141776
-   - c3b9c4d6bb24f5604ce593058d42d7de:104589
+   - 2f5a5b0b5eeb2d589051fb3e6258ea2a:104469
    - c80746b9374cc178b95d2a8ecd470195:6299
    - 733f33977c1eba6be3d4b403e5a2f7e9:2697
    - 8e03209e7fc6641b45094e584340feff:83
@@ -195,7 +195,7 @@ IPv4:
   zh: 标准IPv4签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2017.242.466
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -205,7 +205,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 358cc025161aeac6481165dc144b0600:492164
+   - 7170d8ff452fce6973c3dab73ac56679:492703
  Reannotate: components.dat
 IPv4-Bogons:
  Name:
@@ -249,7 +249,7 @@ IPv4-Bogons:
   zh: 标准IPv4签名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2017.236.749
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -259,7 +259,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - c17b561e0201a03f9aecdfb2672fd137:103580
+   - e4dd3ecbd0dd8f13d65ffe3c7de62d6d:103603
  Reannotate: components.dat
 IPv4-ISPs:
  Name:
@@ -303,7 +303,7 @@ IPv4-ISPs:
   zh: 标准IPv4签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2017.236.749
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -313,7 +313,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 76a6b9f8812165af62d8cfbfea936313:184005
+   - 3d3be37672a38f935a3138cef03abd11:180925
  Reannotate: components.dat
 IPv4-Other:
  Name:
@@ -357,7 +357,7 @@ IPv4-Other:
   zh: 标准IPv4签名通常包括在主包。​阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2017.225.707
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -367,7 +367,7 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - aae04f2a559605e77fd6b8e21948f313:63988
+   - 7413c278564595f1898cea9ef5ab0e72:69176
  Reannotate: components.dat
 IPv6:
  Name:
@@ -411,7 +411,7 @@ IPv6:
   zh: 标准IPv6签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2017.242.466
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -421,7 +421,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 8ac269ffbd27150ecb61a27a8095a031:124424
+   - f8af763b1e6eea2342e0214ec781998c:124446
  Reannotate: components.dat
 IPv6-Bogons:
  Name:
@@ -465,7 +465,7 @@ IPv6-Bogons:
   zh: 标准IPv6签名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2017.236.749
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -475,7 +475,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - d371916b85871e1f3dd9f7f1e6c96474:2383903
+   - cf80772a20e1656a9d3063cfa350e109:2390310
  Reannotate: components.dat
 IPv6-ISPs:
  Name:
@@ -519,7 +519,7 @@ IPv6-ISPs:
   zh: 标准IPv6签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Medium
- Version: 2017.236.749
+ Version: 2017.245.713
  Minimum Required: 0.6.0-DEV
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -529,7 +529,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - fbeb0e9e8509e48bf6c00257dc97f7cb:32749
+   - 5ced6a60f7c153795896277f8679bbe7:32501
  Reannotate: components.dat
 IPv6-Other:
  Name:

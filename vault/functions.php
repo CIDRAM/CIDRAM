@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.18).
+ * This file: Functions file (last modified: 2017.09.01).
  */
 
 /**
@@ -2117,20 +2117,18 @@ $CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Date = date('Y.n.j', $CIDRAM['Now']);
     $Level = 0;
-    if (
-        !empty($CIDRAM['ForceVersionWarning']) ||
-        $CIDRAM['VersionCompare']($Version, '5.4.43') ||
-        (!$CIDRAM['VersionCompare']($Version, '5.5.0') && $CIDRAM['VersionCompare']($Version, '5.5.32')) ||
-        (!$CIDRAM['VersionCompare']($Version, '5.6.0') && $CIDRAM['VersionCompare']($Version, '5.6.18')) ||
-        (!$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.3'))
-    ) {
+    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.31') || (
+        !$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.17')
+    ) || (
+        !$CIDRAM['VersionCompare']($Version, '7.1.0') && $CIDRAM['VersionCompare']($Version, '7.1.3')
+    )) {
         $Level += 2;
     }
-    if (
-        $CIDRAM['VersionCompare']($Version, '7.0.0') ||
-        (!$CIDRAM['VersionCompare']($Date, '2017.12.3') && $CIDRAM['VersionCompare']($Version, '7.1.0')) ||
-        (!$CIDRAM['VersionCompare']($Date, '2018.12.1') && $CIDRAM['VersionCompare']($Version, '7.2.0'))
-    ) {
+    if ($CIDRAM['VersionCompare']($Version, '7.0.0') || (
+        !$CIDRAM['VersionCompare']($Date, '2017.12.3') && $CIDRAM['VersionCompare']($Version, '7.1.0')
+    ) || (
+        !$CIDRAM['VersionCompare']($Date, '2018.12.1') && $CIDRAM['VersionCompare']($Version, '7.2.0')
+    )) {
         $Level += 1;
     }
     $CIDRAM['ForceVersionWarning'] = false;

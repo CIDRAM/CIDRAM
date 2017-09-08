@@ -360,6 +360,9 @@ Cấu hình chung cho CIDRAM.
 "maintenance_mode"
 - Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
 
+"default_algo"
+- Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP >= 7.2.0).
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -742,4 +745,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 17 Tháng Tám 2017 (2017.08.17).
+Lần cuối cập nhật: 8 Tháng Chín 2017 (2017.09.08).

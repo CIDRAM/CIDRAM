@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.08.18).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">होमपेज</a> | <a href="?cidram-page=logout">लोग आउट</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">लोग आउट</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'विलोपन "forbid_on_block" कब "infraction_limit" पार कर रहा है? अधिभावी कब: विचाराधीन अनुरोध एक खाली पेज वापस (टेम्पलेट फाइलों का उपयोग नहीं कर रहे हैं)। 200 = ओवरराइड न करें [डिफ़ॉल्ट]; 403 = "403 Forbidden" के साथ ओवरराइड करें (मना किया हुआ); 503 = "503 Service unavailable" के साथ ओवरराइड करें (सेवा उप्लब्ध् नहीं है)।';
+$CIDRAM['lang']['config_general_default_algo'] = 'परिभाषित करता है कि भविष्य के सभी पासवर्ड और सत्रों के लिए किस एल्गोरिथम का उपयोग करना है। विकल्प: PASSWORD_DEFAULT (डिफ़ॉल्ट), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 की आवश्यकता है).';
 $CIDRAM['lang']['config_general_default_dns'] = 'होस्ट नाम लुकअप के लिए उपयोग करने के लिए DNS सर्वर की अल्पविराम सीमांकित सूची। डिफ़ॉल्ट = "8.8.8.8,8.8.4.4" (Google DNS)। चेतावनी: जब तक कि आप को पता है तुम क्या कर रहे हो उसे बदल नहीं!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'अक्षम CLI मोड?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'सामने के अंत तक पहुँच अक्षम?';

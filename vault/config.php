@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.08.26).
+ * This file: Configuration handler (last modified: 2017.09.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '1.1.1-DEV';
+$CIDRAM['ScriptVersion'] = '1.2.0-DEV';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -161,3 +161,8 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $CIDRAM['Query'] = '';
     $CIDRAM['QueryVars'] = array();
 }
+
+/** Set default hashing algorithm. */
+$CIDRAM['DefaultAlgo'] = (
+    !empty($CIDRAM['Config']['general']['default_algo']) && defined($CIDRAM['Config']['general']['default_algo'])
+) ? constant($CIDRAM['Config']['general']['default_algo']) : 1;

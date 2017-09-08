@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.01).
+ * This file: Functions file (last modified: 2017.09.08).
  */
 
 /**
@@ -2040,6 +2040,17 @@ $CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
 $CIDRAM['FilterLang'] = function ($ChoiceKey) use (&$CIDRAM) {
     $Path = $CIDRAM['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
+};
+
+/**
+ * Filter the available hash algorithms provided by the configuration page on
+ * the basis of their availability.
+ *
+ * @param string $ChoiceKey Hash algorithm.
+ * @return bool Valid/Invalid.
+ */
+$CIDRAM['FilterAlgo'] = function ($ChoiceKey) use (&$CIDRAM) {
+    return ($ChoiceKey === 'PASSWORD_ARGON2I') ? !$CIDRAM['VersionCompare'](PHP_VERSION, '7.2.0RC1') : true;
 };
 
 /**

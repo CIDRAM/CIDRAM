@@ -361,6 +361,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，​沒有任何需求除�
 『maintenance_mode』
 - 啟用維護模式？​True（真）=關閉；​False（假）=不關閉【標準】。​它停用一切以外前端。​有時候在更新CMS，框架，等時有用。
 
+『default_algo』
+- 定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
+
 #### 『signatures』 （類別）
 簽名配置。
 
@@ -743,4 +746,4 @@ CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責�
 ---
 
 
-最後更新：2017年8月17日。
+最後更新：2017年9月8日。

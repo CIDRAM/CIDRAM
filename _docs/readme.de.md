@@ -360,6 +360,9 @@ Generelle Konfiguration von CIDRAM.
 "maintenance_mode"
 - Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.
 
+"default_algo"
+- Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP >= 7.2.0).
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -742,4 +745,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 17 August 2017 (2017.08.17).
+Zuletzt aktualisiert: 8 September 2017 (2017.09.08).

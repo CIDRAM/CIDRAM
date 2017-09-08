@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.08.18).
+ * This file: Russian language data for the front-end (last modified: 2017.09.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Переопределить «forbid_on_block» когда «infraction_limit» превысило? Когда переопределении: Блокированные запросы возвращают пустую страницу (файлы шаблонов не используются). 200 = Не переопределить [Стандарт]; 403 = Переопределить с «403 Forbidden»; 503 = Переопределить с «503 Service unavailable».';
+$CIDRAM['lang']['config_general_default_algo'] = 'Определяет, какой алгоритм использовать для всех будущих паролей и сеансов. Опции: PASSWORD_DEFAULT (стандарт), PASSWORD_BCRYPT, PASSWORD_ARGON2I (требует PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Разделенный запятыми список DNS-серверов, чтобы использовать для имен хостов поиска. Стандарт = «8.8.8.8,8.8.4.4» (Google DNS). ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Деактивировать ли CLI-модус?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Деактивировать доступ к фронтенд?';

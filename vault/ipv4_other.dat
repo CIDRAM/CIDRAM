@@ -3,8 +3,43 @@
 
 
 # ---
-# Dangerous IPs/CIDRs infected by malware, whose ASNs can't be reliably blocked due to false positives and such.
+# ASN 174 ("Cogent Communications").
+
+# Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
+# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
+# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
+# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
+# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking.
+
+# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we wan't to block, as
+# opposed to just listing their ASN in entirety. Sections will be split across ipv[46].dat + ipv[46]_isps.dat +
+# ipv[46]_other.dat accordingly.
+
+# Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
+# Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+# Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
+
+# Cogent VPNs+Proxies (Proxy Technologies Inc, proXPN Direct LLC, AzireVPN, OVPN, PRIVAX LTD, etc).
+# Updated: 2017.09.09
+5.158.83.0/24 Deny Proxy
+62.73.7.0/24 Deny Proxy
+62.73.8.0/23 Deny Proxy
+62.73.10.0/24 Deny Proxy
+104.37.57.0/24 Deny Proxy
+173.0.0.0/20 Deny Proxy
+185.157.163.0/24 Deny Proxy
+204.56.112.0/21 Deny Proxy
+204.56.122.0/23 Deny Proxy
+204.56.124.0/22 Deny Proxy
+Tag: Cogent VPNs+Proxies
+
+
 # ---
+# Dangerous IPs/CIDRs infected by malware, whose ASNs can't be reliably blocked due to false positives and such.
+
 # "Trojan.Win32.Injector.cdgy" virus threat via domain "associationlachaloupe.com". Also caught attempting remote SQLi
 # to other websites. See: threatminer.org/av.php?q=Trojan.Win32.Injector.cdgy%20(v)
 # Updated: 2017.07.12

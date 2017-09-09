@@ -6479,3 +6479,119 @@ Tag: Ultra-Telecom LLC
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 174 ("Cogent Communications").
+
+# Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
+# attempts, spamming, scraping, various forms of general malicious activity, etc), and generally, IPs sending out this
+# type of traffic should be blocked, but unfortunately, their ASN is very widely-encompassing and interlaces
+# significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
+# well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking.
+
+# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we wan't to block, as
+# opposed to just listing their ASN in entirety. Sections will be split across ipv[46].dat + ipv[46]_isps.dat +
+# ipv[46]_other.dat accordingly.
+
+# Wikipedia page about Cogent Communications: en.wikipedia.org/wiki/Cogent_Communications
+# Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
+# Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
+# Refer research.dyn.com/2013/11/mitm-internet-hijacking/
+# Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
+# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
+
+# "PSINet, Inc."
+# Cheap human endpoint ISP with ranges known to be used by hackers and spammers, but also contains benign ranges+users.
+# Updated: 2017.09.09
+38.0.0.0/8 Deny Generic
+128.145.0.0/16 Deny Generic
+130.117.0.0/16 Deny Generic
+148.254.0.0/16 Deny Generic
+149.2.0.0/16 Deny Generic
+149.5.0.0/16 Deny Generic
+149.6.127.0/24 Deny Generic
+149.6.194.0/23 Deny Generic
+149.6.196.0/24 Deny Generic
+149.6.206.0/23 Deny Generic
+149.7.1.0/24 Deny Generic
+149.7.16.0/23 Deny Generic
+149.7.39.0/24 Deny Generic
+149.7.61.0/24 Deny Generic
+149.7.99.0/24 Deny Generic
+149.7.105.0/24 Deny Generic
+149.7.114.0/23 Deny Generic
+149.7.210.0/23 Deny Generic
+149.7.212.0/23 Deny Generic
+149.7.218.0/23 Deny Generic
+149.7.225.0/24 Deny Generic
+149.11.0.0/16 Deny Generic
+149.12.67.0/24 Deny Generic
+149.12.68.0/23 Deny Generic
+149.12.96.0/24 Deny Generic
+149.12.164.0/22 Deny Generic
+149.12.177.0/24 Deny Generic
+149.12.179.0/24 Deny Generic
+149.12.182.0/24 Deny Generic
+149.12.195.0/24 Deny Generic
+149.12.210.0/23 Deny Generic
+149.12.216.0/22 Deny Generic
+149.12.222.0/23 Deny Generic
+149.13.18.0/23 Deny Generic
+149.13.20.0/22 Deny Generic
+149.13.28.0/24 Deny Generic
+149.13.31.0/24 Deny Generic
+149.13.71.0/24 Deny Generic
+149.13.78.0/23 Deny Generic
+149.13.80.0/21 Deny Generic
+149.13.89.0/24 Deny Generic
+149.13.91.0/24 Deny Generic
+149.13.114.0/23 Deny Generic
+149.13.121.0/24 Deny Generic
+149.13.145.0/24 Deny Generic
+149.13.180.0/22 Deny Generic
+149.14.0.0/16 Deny Generic
+149.29.0.0/16 Deny Generic
+149.30.0.0/16 Deny Generic
+149.33.0.0/16 Deny Generic
+149.36.0.0/16 Deny Generic
+149.38.0.0/16 Deny Generic
+149.40.0.0/16 Deny Generic
+149.46.0.0/16 Deny Generic
+149.57.0.0/16 Deny Generic
+149.67.0.0/16 Deny Generic
+149.71.0.0/16 Deny Generic
+149.86.112.0/20 Deny Generic
+149.91.0.0/16 Deny Generic
+149.100.0.0/16 Deny Generic
+149.102.16.0/20 Deny Generic
+149.104.0.0/16 Deny Generic
+149.107.0.0/16 Deny Generic
+149.108.0.0/16 Deny Generic
+149.110.0.0/16 Deny Generic
+149.113.0.0/16 Deny Generic
+149.120.0.0/16 Deny Generic
+149.127.0.0/16 Deny Generic
+192.77.171.0/24 Deny Generic
+192.77.224.0/21 Deny Generic
+192.246.0.0/16 Deny Generic
+198.242.0.0/16 Deny Generic
+199.29.0.0/16 Deny Generic
+199.97.0.0/16 Deny Generic
+199.98.0.0/15 Deny Generic
+199.100.0.0/16 Deny Generic
+204.4.0.0/14 Deny Generic
+204.217.0.0/16 Deny Generic
+204.240.0.0/14 Deny Generic
+206.0.0.0/15 Deny Generic
+206.2.0.0/16 Deny Generic
+206.3.32.0/19 Deny Generic
+206.3.64.0/18 Deny Generic
+206.3.128.0/17 Deny Generic
+206.4.0.0/14 Deny Generic
+206.232.0.0/14 Deny Generic
+206.236.0.0/15 Deny Generic
+206.238.0.0/16 Deny Generic
+Tag: PSINet, Inc
+---
+recaptcha:
+ enabled: true

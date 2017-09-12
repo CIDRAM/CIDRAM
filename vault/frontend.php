@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.08).
+ * This file: Front-end handler (last modified: 2017.09.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,9 +124,8 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
 
     if ($CIDRAM['Success']) {
         die;
-    } else {
-        unset($CIDRAM['ThisAssetType'], $CIDRAM['ThisAssetDel'], $CIDRAM['ThisAsset'], $CIDRAM['Success']);
     }
+    unset($CIDRAM['ThisAssetType'], $CIDRAM['ThisAssetDel'], $CIDRAM['ThisAsset'], $CIDRAM['Success']);
 
 }
 
@@ -1259,18 +1258,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                             ) {
                                 $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
                                 unlink($CIDRAM['Vault'] . $ThisFile);
-                                while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
-                                    $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
-                                    $ThisFile = substr($ThisFile, 0, strrpos($ThisFile, $Separator));
-                                    if (
-                                        is_dir($CIDRAM['Vault'] . $ThisFile) &&
-                                        $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $ThisFile)
-                                    ) {
-                                        rmdir($CIDRAM['Vault'] . $ThisFile);
-                                    } else {
-                                        break;
-                                    }
-                                }
+                                $CIDRAM['DeleteDirectory']($ThisFile);
                             }
                         });
                     }
@@ -1380,18 +1368,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     ) {
                         $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
                         unlink($CIDRAM['Vault'] . $ThisFile);
-                        while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
-                            $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
-                            $ThisFile = substr($ThisFile, 0, strrpos($ThisFile, $Separator));
-                            if (
-                                is_dir($CIDRAM['Vault'] . $ThisFile) &&
-                                $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $ThisFile)
-                            ) {
-                                rmdir($CIDRAM['Vault'] . $ThisFile);
-                            } else {
-                                break;
-                            }
-                        }
+                        $CIDRAM['DeleteDirectory']($ThisFile);
                     }
                 });
                 $CIDRAM['Handle'] =
@@ -2035,11 +2012,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         );
 
         /** If the filename already exists, delete the old file before moving the new file. */
-        if (
-            $CIDRAM['SafeToContinue'] &&
-            file_exists($CIDRAM['Vault'] . $_FILES['upload-file']['name']) &&
-            is_readable($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
-        ) {
+        if ($CIDRAM['SafeToContinue'] && is_readable($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
             if (is_dir($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
                 if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
                     rmdir($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
@@ -2084,18 +2057,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                 unlink($CIDRAM['Vault'] . $_POST['filename']);
 
                 /** Remove empty directories. */
-                while (strrpos($_POST['filename'], '/') !== false || strrpos($_POST['filename'], "\\") !== false) {
-                    $CIDRAM['Separator'] = (strrpos($_POST['filename'], '/') !== false) ? '/' : "\\";
-                    $_POST['filename'] = substr($_POST['filename'], 0, strrpos($_POST['filename'], $CIDRAM['Separator']));
-                    if (
-                        is_dir($CIDRAM['Vault'] . $_POST['filename']) &&
-                        $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])
-                    ) {
-                        rmdir($CIDRAM['Vault'] . $_POST['filename']);
-                    } else {
-                        break;
-                    }
-                }
+                $CIDRAM['DeleteDirectory']($_POST['filename']);
 
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_file_deleted'];
             }
@@ -2148,18 +2110,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                     if (rename($CIDRAM['Vault'] . $_POST['filename'], $CIDRAM['Vault'] . $_POST['filename_new'])) {
 
                         /** Remove empty directories. */
-                        while (strrpos($_POST['filename'], '/') !== false || strrpos($_POST['filename'], "\\") !== false) {
-                            $CIDRAM['Separator'] = (strrpos($_POST['filename'], '/') !== false) ? '/' : "\\";
-                            $_POST['filename'] = substr($_POST['filename'], 0, strrpos($_POST['filename'], $CIDRAM['Separator']));
-                            if (
-                                is_dir($CIDRAM['Vault'] . $_POST['filename']) &&
-                                $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])
-                            ) {
-                                rmdir($CIDRAM['Vault'] . $_POST['filename']);
-                            } else {
-                                break;
-                            }
-                        }
+                        $CIDRAM['DeleteDirectory']($_POST['filename']);
 
                         $CIDRAM['FE']['state_msg'] = (is_dir($CIDRAM['Vault'] . $_POST['filename_new'])) ?
                             $CIDRAM['lang']['response_directory_renamed'] : $CIDRAM['lang']['response_file_renamed'];

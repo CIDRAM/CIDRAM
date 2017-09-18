@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.08).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
 $CIDRAM['lang']['field_clear'] = 'Annuleer';
+$CIDRAM['lang']['field_clear_all'] = 'Annuleer alles';
 $CIDRAM['lang']['field_clickable_link'] = 'Klikbare link';
 $CIDRAM['lang']['field_component'] = 'Component';
 $CIDRAM['lang']['field_create_new_account'] = 'Nieuw Account Creëren';
@@ -112,8 +113,8 @@ $CIDRAM['lang']['field_tracking'] = 'Tracking';
 $CIDRAM['lang']['field_true'] = 'True (Waar)';
 $CIDRAM['lang']['field_uninstall'] = 'Verwijderen';
 $CIDRAM['lang']['field_update'] = 'Bijwerken';
-$CIDRAM['lang']['field_update_all'] = 'Bijwerken Alles';
-$CIDRAM['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
+$CIDRAM['lang']['field_update_all'] = 'Bijwerken alles';
+$CIDRAM['lang']['field_upload_file'] = 'Nieuw bestand uploaden';
 $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet v
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'De ongebruikte verbergen';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Controleer niet tegen signature bestanden';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Controleer tegen signature bestanden';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Verberg verboden/geblokkeerde IP\'s niet';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Verberg verboden/geblokkeerde IP\'s';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallo, {username}.<br />De CIDR calculator stelt u in staat om te berekenen welke CIDRs een IP-adres is een factor.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend.';

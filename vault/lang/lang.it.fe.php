@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.09.08).
+ * This file: Italian language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_banned'] = 'Vietato';
 $CIDRAM['lang']['field_blocked'] = 'Bloccato';
 $CIDRAM['lang']['field_clear'] = 'Revocarlo';
+$CIDRAM['lang']['field_clear_all'] = 'Revoca tutto';
 $CIDRAM['lang']['field_clickable_link'] = 'Link cliccabile';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Crea un nuovo account';
@@ -112,8 +113,8 @@ $CIDRAM['lang']['field_tracking'] = 'Monitoraggio';
 $CIDRAM['lang']['field_true'] = 'True (Vero)';
 $CIDRAM['lang']['field_uninstall'] = 'Disinstallarlo';
 $CIDRAM['lang']['field_update'] = 'Aggiornarlo';
-$CIDRAM['lang']['field_update_all'] = 'Aggiorna Tutto';
-$CIDRAM['lang']['field_upload_file'] = 'Carica Nuovo File';
+$CIDRAM['lang']['field_update_all'] = 'Aggiorna tutto';
+$CIDRAM['lang']['field_upload_file'] = 'Carica nuovo file';
 $CIDRAM['lang']['field_username'] = 'Nome Utente';
 $CIDRAM['lang']['field_your_version'] = 'La Vostra Versione';
 $CIDRAM['lang']['header_login'] = 'Per favore accedi per continuare.';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Non nascondere l\'aggio
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Non nascondere il inutilizzato';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Nascondere il inutilizzato';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Non controllare i file di firme';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Controllare i file di firme';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Non nascondere gli IP vietati/bloccati';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Nascondere gli IP vietati/bloccati';
 $CIDRAM['lang']['tip_accounts'] = 'Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salve, {username}.<br />La calcolatrice CIDR permette di calcolare che cosa CIDR un indirizzo IP appartiene.';
 $CIDRAM['lang']['tip_config'] = 'Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.08).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
 $CIDRAM['lang']['field_clear'] = 'صاف';
+$CIDRAM['lang']['field_clear_all'] = 'تمام کو صاف کریں';
 $CIDRAM['lang']['field_clickable_link'] = 'کلک کرنے والے لنک';
 $CIDRAM['lang']['field_component'] = 'اجزاء';
 $CIDRAM['lang']['field_create_new_account'] = 'نیا اکاؤنٹ بنانے';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ م�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شدہ مت چھپاو';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'غیر استعمال شدہ چھپائیں';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'دستخط فائلوں کے خلاف چیک نہ کریں';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'دستخط فائلوں کے خلاف چیک کریں';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'ممنوعہ/بلاک شدہ IP کو چھپانا مت چھوڑیں';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'ممنوعہ/بلاک شدہ IP چھپائیں';
 $CIDRAM['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ CIDRAM سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'ہیلو، {username}.<br />CIDR کیلکولیٹر آپ کو ایک IP ایڈریس CIDRs جس کا حساب کرنے کی اجازت دیتا ہے کا ایک عنصر ہے.';
 $CIDRAM['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے صفحے آپ کو سامنے کے آخر میں سے CIDRAM لئے ترتیب میں ترمیم کی اجازت دیتا ہے.';

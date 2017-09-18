@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.09.08).
+ * This file: German language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Aktivieren';
 $CIDRAM['lang']['field_banned'] = 'Verboten';
 $CIDRAM['lang']['field_blocked'] = 'Blockiert';
 $CIDRAM['lang']['field_clear'] = 'Löschen';
+$CIDRAM['lang']['field_clear_all'] = 'Alles löschen';
 $CIDRAM['lang']['field_clickable_link'] = 'Klickbarer Link';
 $CIDRAM['lang']['field_component'] = 'Komponente';
 $CIDRAM['lang']['field_create_new_account'] = 'Neuen Konto erstellen';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht 
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Verstecken unbenutzt';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Nicht gegen Signaturdateien überprüfen';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Gegen Signaturdateien überprüfen';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Verbergen Sie nicht verbotene/blockiert IP-Adressen';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Verbergen Sie verbotene/blockiert IP-Adressen';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der CIDRAM Front-End haben.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallo, {username}.<br />Mit dem CIDR-Rechner können Sie berechnen, zu welchen CIDRs eine IP-Adresse gehört.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für CIDRAM von der Front-End.';

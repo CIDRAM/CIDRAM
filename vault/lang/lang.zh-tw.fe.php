@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.08).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -68,7 +68,8 @@ $CIDRAM['lang']['config_template_data_theme'] = '用於CIDRAM的默認主題。'
 $CIDRAM['lang']['field_activate'] = '啟用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
-$CIDRAM['lang']['field_clear'] = '撤消';
+$CIDRAM['lang']['field_clear'] = '撤銷';
+$CIDRAM['lang']['field_clear_all'] = '撤銷所有';
 $CIDRAM['lang']['field_clickable_link'] = '可點擊的鏈接';
 $CIDRAM['lang']['field_component'] = '組件';
 $CIDRAM['lang']['field_create_new_account'] = '創建新賬戶';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隱藏非過時';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隱藏非過時';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隱藏非用過';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '隱藏非用過';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = '不要檢查簽名文件';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '檢查簽名文件';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '不要隱藏被禁止/阻止的IP';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '隱藏被禁止/阻止的IP';
 $CIDRAM['lang']['tip_accounts'] = '你好，​{username}。​<br />賬戶頁面允許您控制誰可以訪問CIDRAM前端。';
 $CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR計算器允許您計算IP地址屬於哪個CIDR。';
 $CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置頁面允許您修改CIDRAM配置從前端。';

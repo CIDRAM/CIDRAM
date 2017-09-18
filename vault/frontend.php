@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.12).
+ * This file: Front-end handler (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -626,14 +626,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
             if (strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['NewUserB64'] . ',') !== false) {
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_accounts_already_exists'];
             } else {
-                $CIDRAM['FE']['NewAccount'] =
-                    $CIDRAM['FE']['NewUserB64'] . ',' .
-                    $CIDRAM['FE']['NewPass'] . ',' .
-                    $CIDRAM['FE']['NewPerm'] . "\n";
                 $CIDRAM['AccountsArray'] = array(
                     'Iterate' => 0,
                     'Count' => 1,
-                    'ByName' => array($CIDRAM['FE']['NewUser'] => $CIDRAM['FE']['NewAccount'])
+                    'ByName' => array(
+                        $CIDRAM['FE']['NewUser'] =>
+                            $CIDRAM['FE']['NewUserB64'] . ',' .
+                            $CIDRAM['FE']['NewPass'] . ',' .
+                            $CIDRAM['FE']['NewPerm'] . "\n"
+                    )
                 );
                 $CIDRAM['FE']['NewLineOffset'] = 0;
                 while (($CIDRAM['FE']['NewLinePos'] = strpos(
@@ -1025,38 +1026,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
 
     $CIDRAM['FE']['UpdatesFormTarget'] = 'cidram-page=updates';
     $CIDRAM['FE']['UpdatesFormTargetControls'] = '';
-    $CIDRAM['QueryTemp'] = array('Switched' => false);
-    foreach (array('hide-non-outdated', 'hide-unused') as $CIDRAM['QueryTemp']['Param']) {
-        $CIDRAM['QueryTemp']['Switch'] = (
-            !empty($_POST['updates-form-target-selecter']) &&
-            $_POST['updates-form-target-selecter'] === $CIDRAM['QueryTemp']['Param']
-        );
-        if (empty($CIDRAM['QueryVars'][$CIDRAM['QueryTemp']['Param']])) {
-            $CIDRAM['FE'][$CIDRAM['QueryTemp']['Param']] = false;
-        } else {
-            $CIDRAM['FE'][$CIDRAM['QueryTemp']['Param']] = (
-                ($CIDRAM['QueryVars'][$CIDRAM['QueryTemp']['Param']] === 'true' && !$CIDRAM['QueryTemp']['Switch']) ||
-                ($CIDRAM['QueryVars'][$CIDRAM['QueryTemp']['Param']] !== 'true' && $CIDRAM['QueryTemp']['Switch'])
-            );
-        }
-        if ($CIDRAM['QueryTemp']['Switch']) {
-            $CIDRAM['QueryTemp']['Switched'] = true;
-        }
-        if ($CIDRAM['FE'][$CIDRAM['QueryTemp']['Param']]) {
-            $CIDRAM['FE']['UpdatesFormTarget'] .= '&' . $CIDRAM['QueryTemp']['Param'] . '=true';
-            $CIDRAM['QueryTemp']['LangOpt'] = 'switch-' . $CIDRAM['QueryTemp']['Param'] . '-set-false';
-        } else {
-            $CIDRAM['FE']['UpdatesFormTarget'] .= '&' . $CIDRAM['QueryTemp']['Param'] . '=false';
-            $CIDRAM['QueryTemp']['LangOpt'] = 'switch-' . $CIDRAM['QueryTemp']['Param'] . '-set-true';
-        }
-        $CIDRAM['FE']['UpdatesFormTargetControls'] .=
-            '<option value="' . $CIDRAM['QueryTemp']['Param'] . '">' . $CIDRAM['lang'][$CIDRAM['QueryTemp']['LangOpt']] . '</option>';
-    }
-    if ($CIDRAM['QueryTemp']['Switched']) {
+    $CIDRAM['StateModified'] = false;
+    $CIDRAM['FilterSwitch'](
+        array('hide-non-outdated', 'hide-unused'),
+        isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
+        $CIDRAM['StateModified'],
+        $CIDRAM['FE']['UpdatesFormTarget'],
+        $CIDRAM['FE']['UpdatesFormTargetControls']
+    );
+    if ($CIDRAM['StateModified']) {
         header('Location: ?' . $CIDRAM['FE']['UpdatesFormTarget']);
         die;
     }
-    unset($CIDRAM['QueryTemp']);
+    unset($CIDRAM['StateModified']);
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = array('Meta' => array(), 'RemoteMeta' => array());
@@ -2302,6 +2284,22 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 /** IP Tracking. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['Permissions'] === 1) {
 
+    $CIDRAM['FE']['TrackingFilter'] = 'cidram-page=ip-tracking';
+    $CIDRAM['FE']['TrackingFilterControls'] = '';
+    $CIDRAM['StateModified'] = false;
+    $CIDRAM['FilterSwitch'](
+        array('tracking-blocked-already', 'tracking-hide-banned-blocked'),
+        isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
+        $CIDRAM['StateModified'],
+        $CIDRAM['FE']['TrackingFilter'],
+        $CIDRAM['FE']['TrackingFilterControls']
+    );
+    if ($CIDRAM['StateModified']) {
+        header('Location: ?' . $CIDRAM['FE']['TrackingFilter']);
+        die;
+    }
+    unset($CIDRAM['StateModified']);
+
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_ip_tracking'];
 
@@ -2325,12 +2323,21 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['Cache'] = file_exists($CIDRAM['Vault'] . 'cache.dat') ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : array();
 
     /** Clear/revoke IP tracking for an IP address. */
-    if (isset($_POST['IPAddr']) && isset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']])) {
-        unset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']]);
-        $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_tracking_cleared'];
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-        fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
-        fclose($CIDRAM['Handle']);
+    if (isset($_POST['IPAddr'])) {
+        if ($_POST['IPAddr'] === '*') {
+            unset($CIDRAM['Cache']['Tracking']);
+            $CIDRAM['Cleared'] = true;
+        } elseif (isset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']])) {
+            unset($CIDRAM['Cache']['Tracking'][$_POST['IPAddr']]);
+            $CIDRAM['Cleared'] = true;
+        }
+        if (!empty($CIDRAM['Cleared'])) {
+            $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_tracking_cleared'];
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+            fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
+            fclose($CIDRAM['Handle']);
+            unset($CIDRAM['Cleared']);
+        }
     }
 
     /** Process IP tracking data. */
@@ -2338,9 +2345,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
         /** Count currently tracked IPs. */
         $CIDRAM['FE']['TrackingCount'] = sprintf($CIDRAM['lang']['state_tracking'], $CIDRAM['Number_L10N'](count($CIDRAM['Cache']['Tracking'])));
-        if ($CIDRAM['FE']['state_msg']) {
-            $CIDRAM['FE']['state_msg'] .= '<br />';
-        }
 
         uasort($CIDRAM['Cache']['Tracking'], function ($A, $B) {
             if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {
@@ -2353,14 +2357,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 continue;
             }
             /** Check whether normally blocked by signature files. */
-            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr']);
-            $CIDRAM['ThisTracking']['Blocked'] = ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']);
+            if ($CIDRAM['FE']['tracking-blocked-already']) {
+                $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisTracking']['IPAddr']);
+                $CIDRAM['ThisTracking']['Blocked'] = ($CIDRAM['Caught'] || $CIDRAM['BlockInfo']['SignatureCount']);
+            } else {
+                $CIDRAM['ThisTracking']['Blocked'] = false;
+            }
+            /** Hide banned/blocked IPs. */
+            if ($CIDRAM['FE']['tracking-hide-banned-blocked'] && (
+                $CIDRAM['ThisTracking']['Blocked'] || $CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']
+            )) {
+                continue;
+            }
             /** Alternate between operating modes. */
             if (!empty($CIDRAM['Cache']['Subnets']) && is_array($CIDRAM['Cache']['Subnets'])) {
-                /** Skip banned/blocked IPs (required by some specific custom modules; not a standard feature). */
-                if ($CIDRAM['ThisTracking']['Blocked'] || $CIDRAM['ThisTrackingArr']['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
-                    continue;
-                }
                 $CIDRAM['ThisTrackingArr']['TimeCheck'] = $CIDRAM['ThisTrackingArr']['Time'] - $CIDRAM['Config']['signatures']['default_tracktime'];
                 $CIDRAM['ThisTracking']['Options'] = ($CIDRAM['ThisTrackingArr']['TimeCheck'] < $CIDRAM['Now']) ? $CIDRAM['TimeFormat'](
                     $CIDRAM['ThisTrackingArr']['Time'] - $CIDRAM['Config']['signatures']['default_tracktime'],
@@ -2388,6 +2398,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
                 $CIDRAM['ThisTracking']['Status'] .= '/' . $CIDRAM['lang']['field_blocked'];
             }
             $CIDRAM['ThisTracking']['Status'] .= ' – ' . $CIDRAM['Number_L10N']($CIDRAM['ThisTrackingArr']['Count'], 0);
+            $CIDRAM['ThisTracking']['TrackingFilter'] = $CIDRAM['FE']['TrackingFilter'];
             $CIDRAM['FE']['TrackingData'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ThisTracking'],
                 $CIDRAM['FE']['TrackingRow']
@@ -2402,6 +2413,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 
     /** Cleanup. */
     unset($CIDRAM['Cache'], $CIDRAM['ThisTracking']);
+
+    /** Fix status display. */
+    if ($CIDRAM['FE']['state_msg']) {
+        $CIDRAM['FE']['state_msg'] .= '<br />';
+    }
 
     if ($CIDRAM['FE']['TrackingCount']) {
         $CIDRAM['FE']['TrackingCount'] .= ' ';

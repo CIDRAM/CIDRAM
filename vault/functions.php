@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.12).
+ * This file: Functions file (last modified: 2017.09.17).
  */
 
 /**
@@ -2155,6 +2155,7 @@ $CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
  * - secure.php.net/supported-versions.php
  * - cvedetails.com/vendor/74/PHP.html
  * - maikuolan.github.io/Compatibility-Charts/
+ * - maikuolan.github.io/Vulnerability-Charts/php.html
  *
  * @param string $Version The PHP version used (defaults to PHP_VERSION).
  * return int Warning level.
@@ -2162,7 +2163,7 @@ $CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Date = date('Y.n.j', $CIDRAM['Now']);
     $Level = 0;
-    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.31') || (
+    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.32') || (
         !$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.17')
     ) || (
         !$CIDRAM['VersionCompare']($Version, '7.1.0') && $CIDRAM['VersionCompare']($Version, '7.1.3')
@@ -2320,4 +2321,39 @@ $CIDRAM['Swap'] = function(&$First, &$Second) {
     $Working = $First;
     $First = $Second;
     $Second = $Working;
+};
+
+/**
+ * Switch control for front-end page filters.
+ *
+ * @param array $Switches Names of available switches.
+ * @param string $Selector Switch selector variable.
+ * @param bool $StateModified Determines whether the filter state has been modified.
+ * @param string $Redirect Reconstructed path to redirect to when the state changes.
+ * @param string $Options Recontructed filter controls.
+ */
+$CIDRAM['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
+    foreach ($Switches as $Switch) {
+        $State = (!empty($Selector) && $Selector === $Switch);
+        if (empty($CIDRAM['QueryVars'][$Switch])) {
+            $CIDRAM['FE'][$Switch] = false;
+        } else {
+            $CIDRAM['FE'][$Switch] = (
+                ($CIDRAM['QueryVars'][$Switch] === 'true' && !$State) ||
+                ($CIDRAM['QueryVars'][$Switch] !== 'true' && $State)
+            );
+        }
+        if ($State) {
+            $StateModified = true;
+        }
+        if ($CIDRAM['FE'][$Switch]) {
+            $Redirect .= '&' . $Switch . '=true';
+            $LangItem = 'switch-' . $Switch . '-set-false';
+        } else {
+            $Redirect .= '&' . $Switch . '=false';
+            $LangItem = 'switch-' . $Switch . '-set-true';
+        }
+        $Label = isset($CIDRAM['lang'][$LangItem]) ? $CIDRAM['lang'][$LangItem] : $LangItem;
+        $Options .= '<option value="' . $Switch . '">' . $Label . '</option>';
+    }
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.09.08).
+ * This file: Portuguese language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Ativar';
 $CIDRAM['lang']['field_banned'] = 'Banido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
 $CIDRAM['lang']['field_clear'] = 'Cancelar';
+$CIDRAM['lang']['field_clear_all'] = 'Cancelar tudo';
 $CIDRAM['lang']['field_clickable_link'] = 'Link clicável';
 $CIDRAM['lang']['field_component'] = 'Componente';
 $CIDRAM['lang']['field_create_new_account'] = 'Criar Nova Conta';
@@ -112,7 +113,7 @@ $CIDRAM['lang']['field_tracking'] = 'Monitoração';
 $CIDRAM['lang']['field_true'] = 'True (Verdadeiro)';
 $CIDRAM['lang']['field_uninstall'] = 'Desinstalar';
 $CIDRAM['lang']['field_update'] = 'Atualizar';
-$CIDRAM['lang']['field_update_all'] = 'Atualize Tudo';
+$CIDRAM['lang']['field_update_all'] = 'Atualize tudo';
 $CIDRAM['lang']['field_upload_file'] = 'Carregar um novo ficheiro';
 $CIDRAM['lang']['field_username'] = 'Nome de Usuário';
 $CIDRAM['lang']['field_your_version'] = 'Sua Versão';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Não ocultar não desat
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ocultar não desatualizado';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Não ocultar não utilizado';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ocultar não utilizado';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Não verifique contra arquivos de assinatura';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Verifique contra arquivos de assinatura';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Não ocultar IPs banidos/bloqueados';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Ocultar IPs banidos/bloqueados';
 $CIDRAM['lang']['tip_accounts'] = 'Olá, {username}.<br />A página de contas permite que você controle quem pode acessar o CIDRAM front-end.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Olá, {username}.<br />A calculadora CIDR permite calcular quais CIDRs um endereço IP pertence.';
 $CIDRAM['lang']['tip_config'] = 'Olá, {username}.<br />A página de configuração permite que você modifique a configuração do CIDRAM a partir do front-end.';

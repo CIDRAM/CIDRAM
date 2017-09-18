@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.08).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
 $CIDRAM['lang']['field_clear'] = 'Temiz';
+$CIDRAM['lang']['field_clear_all'] = 'Hepsini temizle';
 $CIDRAM['lang']['field_clickable_link'] = 'Tıklanabilir bağlantı';
 $CIDRAM['lang']['field_component'] = 'Bileşen';
 $CIDRAM['lang']['field_create_new_account'] = 'Yeni Hesap Oluştur';
@@ -112,8 +113,8 @@ $CIDRAM['lang']['field_tracking'] = 'İzleme';
 $CIDRAM['lang']['field_true'] = 'True (Doğru)';
 $CIDRAM['lang']['field_uninstall'] = 'Kaldır';
 $CIDRAM['lang']['field_update'] = 'Güncelle';
-$CIDRAM['lang']['field_update_all'] = 'Tümünü Güncelle';
-$CIDRAM['lang']['field_upload_file'] = 'Yeni Dosya Yükle';
+$CIDRAM['lang']['field_update_all'] = 'Tümünü güncelle';
+$CIDRAM['lang']['field_upload_file'] = 'Yeni dosya yükle';
 $CIDRAM['lang']['field_username'] = 'Kullanıcı adı';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları g
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Kullanılmayanları gizleme';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Kullanılmayanları gizle';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'İmza dosyalarına karşı kontrol etmeyin';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'İmza dosyalarına karşı kontrol edin';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Yasaklanmış/engellenen IP\'leri gizleme';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Yasaklanmış/engellenen IP\'leri gizle';
 $CIDRAM['lang']['tip_accounts'] = 'Merhaba, {username}.<br />Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR\'lerin olduğunu hesaplamanızı mümkün kılar.';
 $CIDRAM['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.08).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_clear'] = 'إلغاء';
+$CIDRAM['lang']['field_clear_all'] = 'امسح الكل';
 $CIDRAM['lang']['field_clickable_link'] = 'رابط قابل للنقر';
 $CIDRAM['lang']['field_component'] = 'وحدة';
 $CIDRAM['lang']['field_create_new_account'] = 'إنشاء حساب جديد';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير 
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'لا يخفون غير مستعمل';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'يخفون غير مستعمل';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'لا تحقق من ملفات التوقيع';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'تحقق من ملفات التوقيع';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'لا تخفي عناوين IP المحظورة';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'تخفي عناوين IP المحظورة';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل.';
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';

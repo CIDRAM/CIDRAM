@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.08).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
 $CIDRAM['lang']['field_clear'] = 'Hủy bỏ';
+$CIDRAM['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
 $CIDRAM['lang']['field_clickable_link'] = 'Liên kết có thể nhấp';
 $CIDRAM['lang']['field_component'] = 'Gói';
 $CIDRAM['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
@@ -86,7 +87,7 @@ $CIDRAM['lang']['field_filetype_info'] = 'Tập Tin {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Không Xác Định';
 $CIDRAM['lang']['field_first_seen'] = 'Lần đầu tiên nhìn thấy';
 $CIDRAM['lang']['field_infractions'] = 'Vi phạm';
-$CIDRAM['lang']['field_install'] = 'Cài Đặt';
+$CIDRAM['lang']['field_install'] = 'Cài đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';
 $CIDRAM['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $CIDRAM['lang']['field_log_in'] = 'Đăng Nhập';
@@ -110,9 +111,9 @@ $CIDRAM['lang']['field_status'] = 'Tình Trạng';
 $CIDRAM['lang']['field_system_timezone'] = 'Sử dụng múi giờ mặc định của hệ thống.';
 $CIDRAM['lang']['field_tracking'] = 'Giám sát';
 $CIDRAM['lang']['field_true'] = 'True (Đúng)';
-$CIDRAM['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
-$CIDRAM['lang']['field_update'] = 'Cập Nhật';
-$CIDRAM['lang']['field_update_all'] = 'Cập Nhật Tất Cả';
+$CIDRAM['lang']['field_uninstall'] = 'Gỡ bỏ cài đặt';
+$CIDRAM['lang']['field_update'] = 'Cập nhật';
+$CIDRAM['lang']['field_update_all'] = 'Cập nhật tất cả';
 $CIDRAM['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các khôn
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Đừng ẩn các không cài đặt';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Ẩn các không cài đặt';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Không kiểm tra đối với tập tin chữ ký';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kiểm tra đối với tập tin chữ ký';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Không ẩn các IP bị cấm/chặn';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Ẩn các IP bị cấm/chặn';
 $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Xin chào, {username}.<br />Máy tính CIDR cho phép bạn để tính toán mà các CIDR một địa chỉ IP thuộc về.';
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';

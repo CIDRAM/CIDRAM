@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.08).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
 $CIDRAM['lang']['field_clear'] = 'Cabut';
+$CIDRAM['lang']['field_clear_all'] = 'Cabut semua';
 $CIDRAM['lang']['field_clickable_link'] = 'Link yang dapat diklik';
 $CIDRAM['lang']['field_component'] = 'Komponen';
 $CIDRAM['lang']['field_create_new_account'] = 'Buat Akun Baru';
@@ -112,7 +113,7 @@ $CIDRAM['lang']['field_tracking'] = 'Pelacakan';
 $CIDRAM['lang']['field_true'] = 'True (Benar)';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstal';
 $CIDRAM['lang']['field_update'] = 'Perbarui';
-$CIDRAM['lang']['field_update_all'] = 'Memperbarui Semua';
+$CIDRAM['lang']['field_update_all'] = 'Memperbarui semua';
 $CIDRAM['lang']['field_upload_file'] = 'Mengupload file baru';
 $CIDRAM['lang']['field_username'] = 'Nama Pengguna';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan te
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Menyembunyikan non-digunakan';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Jangan cek terhadap file tanda tangan';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Cek terhadap file tanda tangan';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Jangan sembunyikan IP yang dilarang/diblokir';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Sembunyikan IP yang dilarang/diblokir';
 $CIDRAM['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor.';
 $CIDRAM['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk CIDRAM dari bagian depan.';

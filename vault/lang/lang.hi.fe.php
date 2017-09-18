@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.09.08).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'सक्रिय करें';
 $CIDRAM['lang']['field_banned'] = 'प्रतिबंधित';
 $CIDRAM['lang']['field_blocked'] = 'अवरोधित';
 $CIDRAM['lang']['field_clear'] = 'साफ करो';
+$CIDRAM['lang']['field_clear_all'] = 'सभी साफ करें';
 $CIDRAM['lang']['field_clickable_link'] = 'क्लिक करने योग्य लिंक';
 $CIDRAM['lang']['field_component'] = 'घटक';
 $CIDRAM['lang']['field_create_new_account'] = 'नया खाता बनाएँ';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'गैर पदाव�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'गैर पदावनत को छिपाना';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'अप्रयुक्त को छुपाएं न करें';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'अप्रयुक्त को छिपाना';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'हस्ताक्षर फ़ाइलों के खिलाफ जांच न करें';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'हस्ताक्षर फ़ाइलों के खिलाफ जांचें';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'प्रतिबंधित/अवरुद्ध IP छिपाएं नहीं';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'प्रतिबंधित/अवरुद्ध IP छिपाएं';
 $CIDRAM['lang']['tip_accounts'] = 'हैलो, {username}।<br />खाता पृष्ठ आपको यह नियंत्रित करने की अनुमति देता है कि कौन CIDRAM सामने के अंत तक पहुंच सकता है।';
 $CIDRAM['lang']['tip_cidr_calc'] = 'हैलो, {username}।<br />CIDR कैलकुलेटर आपको यह निर्धारित करने की अनुमति देता है कि कौन सी CIDR आईपी पता का कारक है।';
 $CIDRAM['lang']['tip_config'] = 'हैलो, {username}।<br />कॉन्फ़िगरेशन पेज आपको सामने के अंत से CIDRAM के लिए कॉन्फ़िगरेशन को संशोधित करने की अनुमति देता है।';

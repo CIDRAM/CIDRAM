@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.08).
+ * This file: Russian language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -68,7 +68,8 @@ $CIDRAM['lang']['config_template_data_theme'] = 'Стандартная тема
 $CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';
 $CIDRAM['lang']['field_blocked'] = 'Блокированный';
-$CIDRAM['lang']['field_clear'] = 'Отмена';
+$CIDRAM['lang']['field_clear'] = 'Очистить';
+$CIDRAM['lang']['field_clear_all'] = 'Очистить все';
 $CIDRAM['lang']['field_clickable_link'] = 'Ссылки кликабельны';
 $CIDRAM['lang']['field_component'] = 'Компонент';
 $CIDRAM['lang']['field_create_new_account'] = 'Создать Новый Аккаунт';
@@ -112,8 +113,8 @@ $CIDRAM['lang']['field_tracking'] = 'Отслеживания';
 $CIDRAM['lang']['field_true'] = 'True (Правда)';
 $CIDRAM['lang']['field_uninstall'] = 'Удалить';
 $CIDRAM['lang']['field_update'] = 'Обновить';
-$CIDRAM['lang']['field_update_all'] = 'Обновить Все';
-$CIDRAM['lang']['field_upload_file'] = 'Загрузить Новый Файл';
+$CIDRAM['lang']['field_update_all'] = 'Обновить все';
+$CIDRAM['lang']['field_upload_file'] = 'Загрузить новый файл';
 $CIDRAM['lang']['field_username'] = 'Имя Пользователя';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают �
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не-устаревший';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-установлена';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'Скрывают не-установлена';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Не проверять файлы сигнатуры';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Проверять файлы сигнатуры';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Не скрывайте запрещенные/заблокированные IP-адреса';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Скрывайте запрещенные/заблокированные IP-адреса';
 $CIDRAM['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к CIDRAM фронтенд.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Привет, {username}.<br />Калькулятор CIDR позволяет рассчитать которые CIDRs IP-адрес принадлежит.';
 $CIDRAM['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для CIDRAM от фронтенд.';

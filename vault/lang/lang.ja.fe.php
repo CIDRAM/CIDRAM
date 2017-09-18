@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.08).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
 $CIDRAM['lang']['field_clear'] = 'キャンセル';
+$CIDRAM['lang']['field_clear_all'] = 'すべてキャンセル';
 $CIDRAM['lang']['field_clickable_link'] = 'クリック可能なリンク';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
 $CIDRAM['lang']['field_create_new_account'] = '新しいアカウントを作成する';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '未使用を隠さないで';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = '未使用を隠す';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'シグネチャ・ファイルをチェックしない';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'シグネチャ・ファイルをチェックする';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '禁止/ブロックされたＩＰを隠さないでください';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '禁止/ブロックされたＩＰを隠す';
 $CIDRAM['lang']['tip_accounts'] = 'こんにちは、​{username}。​<br />アカウント・ページは、​CIDRAMフロントエンドにアクセスできるユーザーを制御できます。';
 $CIDRAM['lang']['tip_cidr_calc'] = 'こんにちは、​{username}。​<br />ＣＩＤＲ計算機では、​ＩＰアドレスがどのＣＩＤＲに属しているかを計算できます。';
 $CIDRAM['lang']['tip_config'] = 'こんにちは、​{username}。​<br />コンフィグレーション・ページは、​フロントエンドからCIDRAMの設定を変更することができます。';

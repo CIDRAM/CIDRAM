@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.09.08).
+ * This file: Thai language data for the front-end (last modified: 2017.09.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -69,6 +69,7 @@ $CIDRAM['lang']['field_activate'] = 'เปิดใช้งาน';
 $CIDRAM['lang']['field_banned'] = 'ถูกห้าม';
 $CIDRAM['lang']['field_blocked'] = 'ถูกบล็อก';
 $CIDRAM['lang']['field_clear'] = 'ล้าง';
+$CIDRAM['lang']['field_clear_all'] = 'ล้างทั้งหมด';
 $CIDRAM['lang']['field_clickable_link'] = 'ลิงก์คลิกได้';
 $CIDRAM['lang']['field_component'] = 'คอมโพเนนต์';
 $CIDRAM['lang']['field_create_new_account'] = 'สร้างบัญชีใหม่';
@@ -206,6 +207,10 @@ $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'อย่าซ่อ�
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'ซ่อนไม่ใช่ล้าสมัย';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'อย่าซ่อนไม่ได้ใช้';
 $CIDRAM['lang']['switch-hide-unused-set-true'] = 'ซ่อนไม่ได้ใช้';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'อย่าตรวจสอบกับไฟล์ลายเซ็น';
+$CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'ตรวจสอบกับไฟล์ลายเซ็น';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'อย่าซ่อน IP ที่ถูกแบน/ถูกบล็อก';
+$CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'ซ่อน IP ที่ถูกแบน/ถูกบล็อก';
 $CIDRAM['lang']['tip_accounts'] = 'สวัสดี, {username}.<br />หน้าบัญชีช่วยให้คุณสามารถควบคุมผู้ที่สามารถเข้าถึง front-end ของ CIDRAM.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'สวัสดี, {username}.<br />เครื่องคิดเลข CIDR ช่วยให้คุณสามารถคำนวณค่า CIDR ของที่อยู่ IP.';
 $CIDRAM['lang']['tip_config'] = 'สวัสดี, {username}.<br />หน้าการกำหนดค่าช่วยให้คุณสามารถแก้ไขการกำหนดค่าสำหรับ CIDRAM จาก front-end.';

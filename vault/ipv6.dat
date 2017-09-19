@@ -910,14 +910,19 @@ Tag: Internap Network
 
 
 # ASN 23033 ("Wowrack.com").
-# %Listed, Google Malware Dashboard: 14.77%.
-# %Listed, CleanTalk.org: 78.22%.
-# Updated: 2017.03.11
+# %Listed, Google Malware Dashboard: 10.45%.
+# %Listed, CleanTalk.org: 77.66%.
+# Stop Forum Spam (SFS) listings: 12,123.
+# Updated: 2017.09.19
 
 2001:df6:6c00::/48 Deny Cloud
+2402:6680::/32 Deny Cloud
+2602:febc::/36 Deny Cloud
 2604:c00::/32 Deny Cloud
 2605:fe00::/36 Deny Cloud
 2607:f8f8::/32 Deny Cloud
+2a07:1c44:1821::/48 Deny Cloud
+2a07:9944:1d::/48 Deny Cloud
 Tag: Wowrack.com
 
 
@@ -2664,7 +2669,8 @@ Tag: AS45538
 # ASN 37963 ("Hangzhou Alibaba Advertising Co.,Ltd.").
 # %Listed, Google Malware Dashboard: 1.30%.
 # %Listed, CleanTalk.org: 62.98%.
-# Updated: 2017.03.12
+# Stop Forum Spam (SFS) listings: 9,837.
+# Updated: 2017.03.12 / Checked: 2017.09.19
 
 2401:2e00::/32 Deny Cloud
 Tag: Alibaba Advertising
@@ -3309,17 +3315,20 @@ Tag: Atlantic.net, Inc
 
 
 # ASN 43333 ("NEPHAX Spolka jawna Arkadiusz Kawalec Michal Podsiadly").
-# %Listed, Google Malware Dashboard: 8.42%.
-# %Listed, CleanTalk.org: 40.78%.
-# Updated: 2016.07.10 / Checked: 2017.03.07
+# %Listed, Google Malware Dashboard: 2.65%.
+# %Listed, CleanTalk.org: 40.29%.
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2016.07.10 / Checked: 2017.09.19
 
 2a02:ee0::/32 Deny Cloud
 Tag: NEPHAX
 
 
 # ASN 52284 ("Panamaserver.com").
-# %Listed, CleanTalk.org: 72.41%.
-# Updated: 2016.07.10 / Checked: 2017.03.07
+# %Listed, Google Malware Dashboard: 0.62%.
+# %Listed, CleanTalk.org: 70.97%.
+# Stop Forum Spam (SFS) listings: 19.
+# Updated: 2016.07.10 / Checked: 2017.09.19
 
 2803:200::/32 Deny Cloud
 Tag: Panamaserver.com
@@ -3909,15 +3918,12 @@ Tag: Colo4, LLC
 
 # ASNs 15626, 21100, 50979, 59729 ("ITL Company").
 # FRIENDHOSTING L.P., ON-LINE DATA LTD, various data centers, etc.
-# %Listed, Google Malware Dashboard: 0.19% (AS15626), 0.06% (AS21100), 0.50% (AS50979), 1.30% (AS59729).
-# %Listed, CleanTalk.org: 42.20% (AS15626), 53.54% (AS21100), 58.62% (AS50979), 34.48% (AS59729).
-# Updated: 2017.03.07
+# Updated: 2017.09.19
 
 2001:67c:2f4c::/48 Deny Cloud
 2001:67c:2f5c::/48 Deny Cloud
 2001:67c:2f6c::/48 Deny Cloud
-2a02:27a8::/32 Deny Cloud
-2a02:27aa::/31 Deny Cloud
+2a02:27a8::/30 Deny Cloud
 2a02:27ac::/32 Deny Cloud
 Tag: ITL Company
 

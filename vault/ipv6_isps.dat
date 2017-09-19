@@ -197,10 +197,11 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# %Listed, Google Malware Dashboard: 0.34%.
-# %Listed, CleanTalk.org: 13.65%.
-# %Listed, abuseat.org (CBL-Listed): 0.92%.
-# Updated: 2017.03.22
+# %Listed, Google Malware Dashboard: 0.51%.
+# %Listed, CleanTalk.org: 12.33%.
+# %Listed, abuseat.org (CBL-Listed): 0.57%.
+# Stop Forum Spam (SFS) listings: 75,608.
+# Updated: 2017.03.22 / Checked: 2017.09.19
 
 2404:7000::/32 Deny Spam
 Tag: Pakistan Telecom
@@ -210,7 +211,7 @@ recaptcha:
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2016.03.13 / Checked: 2017.03.12
+# Updated: 2016.03.13 / Checked: 2017.09.19
 
 2620:11::/40 Deny Generic
 Tag: JPMorgan Chase & Co
@@ -229,16 +230,16 @@ Tag: CH-NET S.R.L
 
 
 # ASN 42708 ("Portlane AB").
-# %Listed, Google Malware Dashboard: 0.08%.
-# %Listed, CleanTalk.org: 43.88%.
-# Updated: 2017.03.12
+# %Listed, Google Malware Dashboard: 0.05%.
+# %Listed, CleanTalk.org: 49.35%.
+# Stop Forum Spam (SFS) listings: 5,670.
+# Updated: 2017.09.19
 
 2a00:1a28::/32 Deny Spam
 2a01:6f0:ffff::/48 Deny Spam
 2a01:8640:6::/48 Deny Spam
 2a02:7ac0::/32 Deny Spam
 2a02:d507:ffff::/48 Deny Spam
-2a03:4bc0:2931::/48 Deny Spam
 Tag: Portlane Networks AB
 ---
 recaptcha:
@@ -259,16 +260,15 @@ Tag: PIN-AS
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
-# %Listed, CleanTalk.org: 28.95% (AS16880), 0% (AS36421).
-# Updated: 2016.08.09 / Checked: 2017.03.12
+# %Listed, CleanTalk.org: 28.57% (AS16880), 0% (AS36421).
+# Updated: 2017.09.19
 
-2001:450:2045::/48 Deny Generic
 2620:101:402c::/47 Deny Generic
-2620:101:4030::/48 Deny Generic
-2620:101:4032::/48 Deny Generic
-2620:101:4034::/46 Deny Generic
+2620:101:4034::/47 Deny Generic
+2620:101:4036::/48 Deny Generic
 2620:101:403a::/48 Deny Generic
 2620:101:403c::/48 Deny Generic
+2620:101:403f::/48 Deny Generic
 Tag: Trend Micro
 
 
@@ -328,10 +328,11 @@ Tag: PP SKS-LUGAN
 
 
 # ASN 131222 ("MTS India").
-# %Listed, Google Malware Dashboard: 1.02%.
-# %Listed, CleanTalk.org: 4.03%.
-# %Listed, abuseat.org (CBL-Listed): 3.53%.
-# Updated: 2017.03.12
+# %Listed, Google Malware Dashboard: 1.59%.
+# %Listed, CleanTalk.org: 3.69%.
+# %Listed, abuseat.org (CBL-Listed): 3.49%.
+# Stop Forum Spam (SFS) listings: 1,295.
+# Updated: 2017.09.19
 
 2406:5600:9::/48 Deny Spam
 2406:5600:a::/48 Deny Spam
@@ -348,15 +349,19 @@ Tag: PP SKS-LUGAN
 2406:5600:73::/48 Deny Spam
 2406:5600:74::/46 Deny Spam
 2406:5600:78::/45 Deny Spam
-2406:5600:80::/44 Deny Spam
+2406:5600:80::/45 Deny Spam
+2406:5600:88::/48 Deny Spam
+2406:5600:8a::/47 Deny Spam
+2406:5600:8c::/46 Deny Spam
 2406:5600:90::/48 Deny Spam
 2406:5600:93::/48 Deny Spam
 2406:5600:94::/46 Deny Spam
 2406:5600:98::/45 Deny Spam
-2406:5600:a0::/46 Deny Spam
+2406:5600:a0::/47 Deny Spam
+2406:5600:a2::/48 Deny Spam
+2406:5600:b3::/48 Deny Spam
 2406:5600:b4::/47 Deny Spam
-2406:5600:b9::/48 Deny Spam
-2406:5600:ba::/47 Deny Spam
+2406:5600:bb::/48 Deny Spam
 2406:5600:bc::/47 Deny Spam
 2406:5600:be::/48 Deny Spam
 2406:5600:d2::/47 Deny Spam
@@ -421,13 +426,12 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# %Listed, Google Malware Dashboard: 1.99% (AS3491), 0% (AS6279/AS7262).
-# %Listed, CleanTalk.org: 11.36% (AS3491), 0% (AS6279/AS7262).
-# Updated: 2017.03.07
+# %Listed, Google Malware Dashboard: 0.14% (AS3491), 0% (AS6279/AS7262).
+# %Listed, CleanTalk.org: 11.67% (AS3491), 0% (AS6279/AS7262).
+# Updated: 2017.09.19
 
 2400:8800::/32 Deny Spam
 2600:1400:7::/48 Deny Spam
-2600:1407:8::/48 Deny Spam
 2a02:b48:4000::/34 Deny Spam
 2a03:5400::/32 Deny Spam
 Tag: PCCW Global
@@ -526,9 +530,10 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# %Listed, Google Malware Dashboard: 2.47%.
-# %Listed, CleanTalk.org: 20.36%.
-# Updated: 2017.03.11
+# %Listed, Google Malware Dashboard: 2.22%.
+# %Listed, CleanTalk.org: 17.27%.
+# Stop Forum Spam (SFS) listings: 96,944.
+# Updated: 2017.03.11 / Checked: 2017.09.19
 
 2a00:9900::/29 Deny Generic
 2a01:320::/29 Deny Generic
@@ -537,10 +542,11 @@ Tag: STARNET S.R.L
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# %Listed, Google Malware Dashboard: 1.08%.
-# %Listed, CleanTalk.org: 7.17%.
-# %Listed, abuseat.org (CBL-Listed): 19.53%.
-# Updated: 2016.09.04 / Checked: 2017.03.22
+# %Listed, Google Malware Dashboard: 3.96%.
+# %Listed, CleanTalk.org: 6.19%.
+# %Listed, abuseat.org (CBL-Listed): 16.48%.
+# Stop Forum Spam (SFS) listings: 586.
+# Updated: 2016.09.04 / Checked: 2017.09.19
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
@@ -744,10 +750,10 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 3.36%.
+# %Listed, Google Malware Dashboard: 3.04%.
 # %Listed, CleanTalk.org: 36.22%.
-# Stop Forum Spam (SFS) listings: 378,105.
-# Updated: 2017.08.02
+# Stop Forum Spam (SFS) listings: 302,999.
+# Updated: 2017.08.02 / Checked: 2017.09.19
 
 2400:9380:8000::/47 Deny Generic
 2400:9380:8020::/47 Deny Generic
@@ -848,17 +854,19 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 4.37%.
-# %Listed, CleanTalk.org: 13.14%.
-# %Listed, abuseat.org (CBL-Listed): 3.26%.
-# Updated: 2017.03.19
+# %Listed, Google Malware Dashboard: 2.38%.
+# %Listed, CleanTalk.org: 14.37%.
+# %Listed, abuseat.org (CBL-Listed): 3.41%.
+# Stop Forum Spam (SFS) listings: 10,339.
+# Updated: 2017.09.19
 
+2001:504:0:3::/64 Deny Generic
 2001:de8:4::/64 Deny Generic
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
-2001:df3:5c00::/48 Deny Generic
 2001:ee0::/47 Deny Generic
 2001:ee0:100::/40 Deny Generic
+2001:ee0:200::/40 Deny Generic
 2001:ee0:300::/47 Deny Generic
 2001:ee0:304::/47 Deny Generic
 2001:ee0:37f::/48 Deny Generic
@@ -866,7 +874,7 @@ recaptcha:
 2001:ee0:1006::/48 Deny Generic
 2001:ee0:1080::/48 Deny Generic
 2001:ee0:2f00::/43 Deny Generic
-2001:ee0:3200::/46 Deny Generic
+2001:ee0:3200::/45 Deny Generic
 2001:ee0:3209::/48 Deny Generic
 2001:ee0:3220::/47 Deny Generic
 2001:ee0:3222::/48 Deny Generic
@@ -874,9 +882,42 @@ recaptcha:
 2001:ee0:324a::/48 Deny Generic
 2001:ee0:3280::/48 Deny Generic
 2001:ee0:4000::/40 Deny Generic
+2001:ee0:4100::/41 Deny Generic
+2001:ee0:4180::/42 Deny Generic
+2001:ee0:4280::/42 Deny Generic
+2001:ee0:4380::/42 Deny Generic
+2001:ee0:44c0::/42 Deny Generic
+2001:ee0:4500::/42 Deny Generic
+2001:ee0:4580::/41 Deny Generic
+2001:ee0:4640::/42 Deny Generic
+2001:ee0:4700::/42 Deny Generic
+2001:ee0:47c0::/42 Deny Generic
+2001:ee0:4840::/42 Deny Generic
+2001:ee0:4880::/42 Deny Generic
+2001:ee0:49c0::/42 Deny Generic
 2001:ee0:4b00::/40 Deny Generic
+2001:ee0:5100::/42 Deny Generic
+2001:ee0:51c0::/42 Deny Generic
+2001:ee0:5300::/42 Deny Generic
+2001:ee0:5380::/42 Deny Generic
+2001:ee0:5400::/42 Deny Generic
+2001:ee0:5480::/42 Deny Generic
+2001:ee0:5500::/42 Deny Generic
+2001:ee0:5580::/42 Deny Generic
+2001:ee0:5640::/42 Deny Generic
+2001:ee0:7280::/42 Deny Generic
+2001:ee0:73c0::/42 Deny Generic
+2001:ee0:74c0::/42 Deny Generic
+2001:ee0:7500::/42 Deny Generic
+2001:ee0:7580::/41 Deny Generic
+2001:ee0:7640::/42 Deny Generic
+2001:ee0:7700::/42 Deny Generic
+2001:ee0:77c0::/42 Deny Generic
+2001:ee0:7840::/42 Deny Generic
 2001:ee0:7880::/42 Deny Generic
+2001:ee0:79c0::/42 Deny Generic
 2001:ef0:1:1b::/64 Deny Generic
+2400:8800:7f02:36::/64 Deny Generic
 2405:f980::/48 Deny Generic
 Tag: VNPT Corp
 ---
@@ -972,9 +1013,10 @@ recaptcha:
 
 
 # ASN 9387 ("AUGERE-Pakistan").
-# %Listed, CleanTalk.org: 12.33%.
-# %Listed, abuseat.org (CBL-Listed): 10.86%.
-# Updated: 2017.03.22
+# %Listed, CleanTalk.org: 11.07%.
+# %Listed, abuseat.org (CBL-Listed): 9.04%.
+# Stop Forum Spam (SFS) listings: 83.
+# Updated: 2017.03.22 / Checked: 2017.09.19
 
 2401:4100::/32 Deny Spam
 Tag: AUGERE-Pakistan

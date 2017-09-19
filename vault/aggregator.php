@@ -34,7 +34,7 @@ class Aggregator
     }
 
     /** Aggregate it! */
-    public function aggregate(string $In)
+    public function aggregate($In)
     {
         $this->Input = $In;
         $this->Output = $In;
@@ -45,7 +45,7 @@ class Aggregator
     }
 
     /** Strips invalid characters from lines and sorts entries. */
-    private function stripInvalidCharactersAndSort(string &$In)
+    private function stripInvalidCharactersAndSort(&$In)
     {
         $In = explode("\n", strtolower(trim(str_replace("\r", '', $In))));
         if (isset($this->CIDRAM['Results'])) {
@@ -55,7 +55,7 @@ class Aggregator
             $Line = preg_replace(array('~^[^0-9a-f:./]*~i', '~[ \t].*$~', '~[^0-9a-f:./]*$~i'), '', $Line);
             return (!$Line || !preg_match('~[0-9a-f:./]+~i', $Line) || preg_match('~[^0-9a-f:./]+~i', $Line)) ? '' : $Line;
         }, $In)));
-        usort($In, function (string $A, string $B) {
+        usort($In, function ($A, $B) {
             if (($Pos = strpos($A, '/')) !== false) {
                 $ASize = (int)substr($A, $Pos + 1);
                 $A = substr($A, 0, $Pos);
@@ -96,7 +96,7 @@ class Aggregator
     }
 
     /** Strips invalid ranges and subordinates. */
-    private function stripInvalidRangesAndSubs(string &$In)
+    private function stripInvalidRangesAndSubs(&$In)
     {
         $In = $Out = "\n" . $In . "\n";
         $Offset = 0;
@@ -146,7 +146,7 @@ class Aggregator
     }
 
     /** Merges ranges. */
-    private function mergeRanges(string &$In)
+    private function mergeRanges(&$In)
     {
         while (true) {
             $Step = $In;

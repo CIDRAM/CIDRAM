@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.17).
+ * This file: Korean language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -93,7 +93,7 @@ $CIDRAM['lang']['field_latest_version'] = '최신 버전';
 $CIDRAM['lang']['field_log_in'] = '로그인';
 $CIDRAM['lang']['field_new_name'] = '새 이름:';
 $CIDRAM['lang']['field_nonclickable_text'] = '클릭 할 수없는 텍스트';
-$CIDRAM['lang']['field_ok'] = '승인';
+$CIDRAM['lang']['field_ok'] = '확인';
 $CIDRAM['lang']['field_options'] = '옵션';
 $CIDRAM['lang']['field_password'] = '비밀번호';
 $CIDRAM['lang']['field_permissions'] = '권한';
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전:';
 $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제:';
 $CIDRAM['lang']['label_php'] = '사용 된 PHP 버전:';
+$CIDRAM['lang']['label_results'] = '결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된) :';
 $CIDRAM['lang']['label_sapi'] = '사용 된 SAPI:';
 $CIDRAM['lang']['label_stable'] = '최신 안정 :';
 $CIDRAM['lang']['label_sysinfo'] = '시스템 정보:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = '구성';
 $CIDRAM['lang']['link_documentation'] = '문서';
 $CIDRAM['lang']['link_file_manager'] = '파일 관리자';
 $CIDRAM['lang']['link_home'] = '홈';
+$CIDRAM['lang']['link_ip_aggregator'] = 'IP 애그리게이터';
 $CIDRAM['lang']['link_ip_test'] = 'IP 테스트';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP 추적';
 $CIDRAM['lang']['link_logs'] = '로고스';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = '여기에 IP를 입력하십시오.';
 $CIDRAM['lang']['tip_enter_ip_here'] = '여기에 IP를 입력하십시오.';
 $CIDRAM['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다).';
 $CIDRAM['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
+$CIDRAM['lang']['tip_ip_aggregator'] = '안녕하세요, {username}.<br />IP 애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR을 표현할 수있게합니다. 집계 할 데이터를 입력하고 "확인"을 누릅니다.';
 $CIDRAM['lang']['tip_ip_test'] = '안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주소가 차단되어 있는지를 테스트 할 수 있습니다.';
 $CIDRAM['lang']['tip_ip_tracking'] = '안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다.';
 $CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 구성';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 파일 관리자';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – 홈';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP 애그리게이터';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP 테스트';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP 추적';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 로그인';

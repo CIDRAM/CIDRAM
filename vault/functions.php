@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.17).
+ * This file: Functions file (last modified: 2017.09.19).
  */
 
 /**
@@ -111,15 +111,19 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
  * contructed array.
  *
  * @param string $Addr Refer to the description above.
+ * @param bool $ValidateOnly If true, just checks if the IP is valid only.
  * @return bool|array Refer to the description above.
  */
-$CIDRAM['ExpandIPv4'] = function ($Addr) use (&$CIDRAM) {
+$CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false) use (&$CIDRAM) {
     if (!preg_match(
         '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-' .
         '9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2' .
         '}|2[0-4][0-9]|25[0-5])$/i',
     $Addr, $Octets)) {
         return false;
+    }
+    if ($ValidateOnly) {
+        return true;
     }
     $CIDRs = array(0 => ($Octets[1] < 128) ? '0.0.0.0/1' : '128.0.0.0/1');
     $CIDRs[1] = (floor($Octets[1] / 64) * 64) . '.0.0.0/2';
@@ -163,9 +167,10 @@ $CIDRAM['ExpandIPv4'] = function ($Addr) use (&$CIDRAM) {
  * contructed array.
  *
  * @param string $Addr Refer to the description above.
+ * @param bool $ValidateOnly If true, just checks if the IP is valid only.
  * @return bool|array Refer to the description above.
  */
-$CIDRAM['ExpandIPv6'] = function ($Addr) use (&$CIDRAM) {
+$CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false) use (&$CIDRAM) {
     /**
      * The REGEX pattern used by this `preg_match` call was adapted from the
      * IPv6 REGEX pattern that can be found at
@@ -187,6 +192,9 @@ $CIDRAM['ExpandIPv6'] = function ($Addr) use (&$CIDRAM) {
         '\:){1,7}\:)$/i',
     $Addr)) {
         return false;
+    }
+    if ($ValidateOnly) {
+        return true;
     }
     $NAddr = $Addr;
     if (preg_match('/^\:\:/i', $NAddr)) {

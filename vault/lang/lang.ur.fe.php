@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.17).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $CIDRAM['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
+$CIDRAM['lang']['label_results'] = 'نتائج (%s ان پٹ – %s مسترد – %s قبول – %s مل گیا – %s پیداوار):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $CIDRAM['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'کنفگریشن';
 $CIDRAM['lang']['link_documentation'] = 'دستاویزی';
 $CIDRAM['lang']['link_file_manager'] = 'فائل منیجر';
 $CIDRAM['lang']['link_home'] = 'ہوم';
+$CIDRAM['lang']['link_ip_aggregator'] = 'IP مجموعی طور پر';
 $CIDRAM['lang']['link_ip_test'] = 'IP ٹیسٹ';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP ٹریکنگ';
 $CIDRAM['lang']['link_logs'] = 'لاگز';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'یہاں آئی پی ایس کے درج
 $CIDRAM['lang']['tip_enter_ip_here'] = 'یہاں IP درج.';
 $CIDRAM['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل مینیجر آپ کو، کو حذف ترمیم کریں، اپ لوڈ، اور فائلوں کو ڈاؤن لوڈ کرنے کی اجازت دیتا ہے. احتیاط کے ساتھ استعمال کریں (آپ کو اس کے ساتھ آپ کی تنصیب توڑ سکتا ہے).';
 $CIDRAM['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ CIDRAM سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'ہیلو، {username}.<br />IP مجموعی طور پر آپ کو کم سے کم ممکنہ طریقے سے IP اور CIDR کا اظہار کرنے کی اجازت دیتا ہے. جمع کرنے کے لئے اعداد و شمار درج کریں اور "ٹھیک ہے" دبائیں.';
 $CIDRAM['lang']['tip_ip_test'] = 'ہیلو، {username}.<br />IP ٹیسٹ کے صفحے آپ کو ٹیسٹ کرنے IP پتوں موجودہ میں انسٹال دستخط کی طرف سے بلاک کر رہے ہیں کہ آیا کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'ہیلو، {username}.<br />IP باخبر رہنے کے صفحے آپ / ان میں سے جو پابندی عائد کی گئی ہے کو چیک کرنے کے، اور پابندی ہٹانے کی، IP پتوں میں سے باخبر رہنے کے کی حیثیت کی جانچ کرنا اگر آپ ایسا کرنا چاہتے ہیں تو انہیں untrack کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR کیلکولیٹر';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – کنفگریشن';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – فائل مینیجر';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – ہوم';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP مجموعی طور پر';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP ٹیسٹ';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP ٹریکنگ';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – لاگ ان';
@@ -251,7 +255,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
             <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate" dir="ltr">IP Aggregator @ Stop Forum Spam</a> – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate" dir="ltr">IP مجموعی طور پر @ Stop Forum Spam</a> – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
             <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.17).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
 $CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';
+$CIDRAM['lang']['label_results'] = '結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）：';
 $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
 $CIDRAM['lang']['label_stable'] = '最新安定：';
 $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'コンフィギュレーション';
 $CIDRAM['lang']['link_documentation'] = 'ドキュメンテーション';
 $CIDRAM['lang']['link_file_manager'] = 'ファイル・マネージャー';
 $CIDRAM['lang']['link_home'] = 'ホーム';
+$CIDRAM['lang']['link_ip_aggregator'] = 'ＩＰアグリゲータ';
 $CIDRAM['lang']['link_ip_test'] = 'ＩＰテスト';
 $CIDRAM['lang']['link_ip_tracking'] = 'ＩＰトラッキング';
 $CIDRAM['lang']['link_logs'] = 'ロゴス';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'ここにＩＰを入力してくださ
 $CIDRAM['lang']['tip_enter_ip_here'] = 'ここにＩＰを入力してください。';
 $CIDRAM['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。';
 $CIDRAM['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはCIDRAMフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'こんにちは、​{username}。​<br />ＩＰアグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲを表現できます。​集計するデータを入力し、「ＯＫ」を押します。';
 $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、​{username}。​<br />ＩＰテスト・ページは、​ＩＰアドレスがブロックされているかどうかをテストできます。';
 $CIDRAM['lang']['tip_ip_tracking'] = 'こんにちは、​{username}。​<br />ＩＰトラッキング・ページでは、​ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、​望むならばあなたはトラッキングをキャンセルことができます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – ＣＩＤＲ計算機';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – コンフィギュレーション';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – ファイル・マネージャー';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – ホーム';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – ＩＰアグリゲータ';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – ＩＰテスト';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – ＩＰトラッキング';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – ログイン';

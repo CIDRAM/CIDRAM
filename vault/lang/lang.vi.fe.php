@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.17).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
+$CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'Cấu Hình';
 $CIDRAM['lang']['link_documentation'] = 'Tài Liệu';
 $CIDRAM['lang']['link_file_manager'] = 'Quản Lý Tập Tin';
 $CIDRAM['lang']['link_home'] = 'Trang Chủ';
+$CIDRAM['lang']['link_ip_aggregator'] = 'Tập Hợp IP';
 $CIDRAM['lang']['link_ip_test'] = 'Kiểm Tra IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Giám sát IP';
 $CIDRAM['lang']['link_logs'] = 'Bản Ghi';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này).';
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'Xin chào, {username}.<br />Tập hợp IP cho phép bạn thể hiện các IP và CIDR theo cách nhỏ nhất có thể. Nhập dữ liệu được tập hợp và nhấn "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn kiểm tra nếu địa chỉ IP bị chặn bằng các chữ ký hiện đang được cài đặt.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy.';
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Máy Tính CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Cấu Hình';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Quản Lý Tập Tin';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Trang Chủ';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Tập Hợp IP';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Giám sát IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';

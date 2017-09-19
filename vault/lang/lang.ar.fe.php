@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.17).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة: ';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $CIDRAM['lang']['label_php'] = 'النسخة PHP المستخدمة:';
+$CIDRAM['lang']['label_results'] = 'النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $CIDRAM['lang']['label_stable'] = 'أحدث مستقرة:';
 $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'التكوين';
 $CIDRAM['lang']['link_documentation'] = 'توثيق';
 $CIDRAM['lang']['link_file_manager'] = 'مدير الملفات';
 $CIDRAM['lang']['link_home'] = 'الرئيسية';
+$CIDRAM['lang']['link_ip_aggregator'] = 'IP Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'اختبار IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'التتبع IP';
 $CIDRAM['lang']['link_logs'] = 'سجلات';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'أدخل IPs هنا.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'أدخل IP هنا.';
 $CIDRAM['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا).';
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليمين للمتابعة.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'مرحبا، {username}.<br />IP aggregator يسمح لك للتعبير عن IP و CIDR في أصغر طريقة ممكنة. أدخل البيانات التي سيتم تجميعها واضغط على "حسنا".';
 $CIDRAM['lang']['tip_ip_test'] = 'مرحبا، {username}.<br />الصفحة اختبار IP يسمح لك لاختبار سواء عناوين IP مسدودة من التوقيعات المثبتة حاليا.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'مرحبا، {username}.<br />التتبع IP يسمح لك للتحقق من حالة تتبع عناوين IP، تحقق محظورة، و إلغاء تتبع إذا كنت تريد أن تفعل ذلك.';
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR حاسبة';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – مدير الملفات';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – الرئيسية';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP Aggregator';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – التتبع IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';

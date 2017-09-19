@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.17).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_false_positive_risk'] = '假阳性风险：';
 $CIDRAM['lang']['label_os'] = '目前使用操作系统：';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
+$CIDRAM['lang']['label_results'] = '结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_stable'] = '最新稳定：';
 $CIDRAM['lang']['label_sysinfo'] = '系统信息：';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = '配置';
 $CIDRAM['lang']['link_documentation'] = '文档';
 $CIDRAM['lang']['link_file_manager'] = '文件管理器';
 $CIDRAM['lang']['link_home'] = '主页';
+$CIDRAM['lang']['link_ip_aggregator'] = 'IP聚合器';
 $CIDRAM['lang']['link_ip_test'] = 'IP测试';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP跟踪';
 $CIDRAM['lang']['link_logs'] = '日志';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_enter_ip_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_file_manager'] = '你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。';
 $CIDRAM['lang']['tip_home'] = '你好，​{username}。​<br />这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。';
+$CIDRAM['lang']['tip_ip_aggregator'] = '你好，​{username}。​<br />IP聚合器允许您以最小的可能方式表达IP和CIDR。​输入要聚合的数据，然后按“OK”。';
 $CIDRAM['lang']['tip_ip_test'] = '你好，​{username}。​<br />IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。';
 $CIDRAM['lang']['tip_ip_tracking'] = '你好，​{username}。​<br />IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。';
 $CIDRAM['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR计算器';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 文件管理器';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – 主页';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP聚合器';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP测试';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登录';

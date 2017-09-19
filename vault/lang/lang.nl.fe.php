@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.17).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $CIDRAM['lang']['label_php'] = 'PHP versie gebruikt:';
+$CIDRAM['lang']['label_results'] = 'Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI gebruikt:';
 $CIDRAM['lang']['label_stable'] = 'Laatste stabiele:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeem informatie:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'Configuratie';
 $CIDRAM['lang']['link_documentation'] = 'Documentatie';
 $CIDRAM['lang']['link_file_manager'] = 'Bestandsbeheer';
 $CIDRAM['lang']['link_home'] = 'Startpagina';
+$CIDRAM['lang']['link_ip_aggregator'] = 'IP-Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Tracking';
 $CIDRAM['lang']['link_logs'] = 'Logbestanden';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'Voer hier de IP\'s.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Vul hier een IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeheer stelt u in staat om te verwijderen, bewerken, uploaden en downloaden van bestanden. Gebruik met voorzichtigheid (kon u uw installatie breken met deze).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'Hallo, {username}.<br />Met de IP-aggregator kunt u IP\'s en CIDR\'s zo de kleinste mogelijke weg uitdrukken. Voer de gegevens in die moeten worden geaggregeerd en druk op "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde signatures worden geblokkeerd.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Met het IP-Tracking pagina, is het mogelijk om de tracking status van IP-adressen te controleren, en u kunt zien welke zijn verboden, en om te annuleren de tracking van hen als u wilt doen.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Bestandsbeheer';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Startpagina';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP-Aggregator';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Inloggen';
@@ -251,7 +255,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDRs van ASN, bepalen ASN relaties, ontdek ASN\'s op basis van netwerknamen, ezv.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Nuttig aggregatie tool voor IPv4 IPs.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP-Aggregator @ Stop Forum Spam</a> – Nuttig aggregatie tool voor IPv4 IPs.</li>
             <li><a href="https://radar.qrator.net/">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN\'s en ook voor diverse andere informatie over ASN\'s.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP-landblokken</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>

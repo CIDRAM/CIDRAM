@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.17).
+ * This file: Front-end handler (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2207,6 +2207,70 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $CIDRAM['lang'] + $CIDRAM['FE'] + $ThisFile, $CIDRAM['FE']['FilesRow']
         );
     });
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** IP Aggregator. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_ip_aggregator'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_ip_aggregator']
+    );
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Results counts. */
+    $CIDRAM['Results'] = array('In' => 0, 'Rejected' => 0, 'Accepted' => 0, 'Merged' => 0, 'Out' => 0);
+
+    /** Data was submitted for aggregation. */
+    if (isset($_POST['input'])) {
+        $CIDRAM['FE']['input'] = $_POST['input'];
+        require $CIDRAM['Vault'] . 'aggregator.php';
+        $CIDRAM['Aggregator'] = new Aggregator($CIDRAM);
+        $CIDRAM['FE']['output'] = $CIDRAM['Aggregator']->aggregate($_POST['input']);
+        unset($CIDRAM['Aggregator']);
+        $CIDRAM['FE']['ResultLine'] = sprintf(
+            $CIDRAM['lang']['label_results'],
+            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['In']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Rejected']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Accepted']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Merged']) . '</span>',
+            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['Results']['Out']) . '</span>'
+        );
+    } else {
+        $CIDRAM['FE']['output'] = $CIDRAM['FE']['input'] = '';
+    }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['state_msg'] .= sprintf($CIDRAM['lang']['state_loadtime'], $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3));
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_aggregator.html'))
+    );
+
+    /** Strip output row if input doesn't exist. */
+    if (isset($_POST['input'])) {
+        $CIDRAM['FE']['FE_Content'] = str_replace(array('<!-- Output Begin -->', '<!-- Output End -->'), '', $CIDRAM['FE']['FE_Content']);
+    } else {
+        $CIDRAM['Markers'] = array(
+            'Begin' => strpos($CIDRAM['FE']['FE_Content'], '<!-- Output Begin -->'),
+            'End' => strpos($CIDRAM['FE']['FE_Content'], '<!-- Output End -->')
+        );
+        $CIDRAM['FE']['FE_Content'] =
+            substr($CIDRAM['FE']['FE_Content'], 0, $CIDRAM['Markers']['Begin']) .
+            substr($CIDRAM['FE']['FE_Content'], $CIDRAM['Markers']['End'] + 19);
+        unset($CIDRAM['Markers']);
+    }
 
     /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.17).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_php'] = 'Kullanılan PHP sürümü:';
+$CIDRAM['lang']['label_results'] = 'Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'Yapılandırma';
 $CIDRAM['lang']['link_documentation'] = 'Belgeler';
 $CIDRAM['lang']['link_file_manager'] = 'Dosya Yöneticisi';
 $CIDRAM['lang']['link_home'] = 'Ana Sayfa';
+$CIDRAM['lang']['link_ip_aggregator'] = 'IP Toplayıcı';
 $CIDRAM['lang']['link_ip_test'] = 'IP Testi';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP İzleme';
 $CIDRAM['lang']['link_logs'] = 'Kayıtlar';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'IP\'leri buraya girin.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'IP\'yi buraya girin.';
 $CIDRAM['lang']['tip_file_manager'] = 'Merhaba, {username}.<br />Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz).';
 $CIDRAM['lang']['tip_home'] = 'Merhaba, {username}.<br />Bu, CIDRAM ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'Merhaba, {username}.<br />IP toplayıcı IP\'leri ve CIDR\'leri olabildiğince az şekilde ifade etmenizi sağlar. Birleştirilecek verileri girin ve "Tamam" düğmesine basın.';
 $CIDRAM['lang']['tip_ip_test'] = 'Merhaba, {username}.<br />IP test sayfası, şu anda yüklü olan imzalarla IP adreslerinin engellenip engellenmediğini test etmenizi sağlar.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar.';
 $CIDRAM['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Hesaplayıcı';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Yapılandırma';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Dosya Yöneticisi';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Ana Sayfa';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP Toplayıcı';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Testi';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP İzleme';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Giriş';
@@ -251,7 +255,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<
             <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN\'lerden CIDR\'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN\'leri keşfedin.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – IPv4 IP\'ler için yararlı toplama aracı.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">IP Toplayıcı @ Stop Forum Spam</a> – IPv4 IP\'ler için yararlı toplama aracı.</li>
             <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ASN\'lerin bağlantısını kontrol etmek için yararlı araç ve ASN\'ler hakkında çeşitli diğer bilgiler.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ülke blokları</a> – Ülke çapında imzalar üretmek için harika ve tam bir hizmet.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN\'ler için kötü amaçlı yazılım enfeksiyonu oranları ile ilgili raporları görüntüler.</li>

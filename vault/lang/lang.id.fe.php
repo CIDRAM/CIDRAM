@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.17).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Risiko positif palsu: ';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_php'] = 'Versi PHP digunakan:';
+$CIDRAM['lang']['label_results'] = 'Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
 $CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'Konfigurasi';
 $CIDRAM['lang']['link_documentation'] = 'Dokumentasi';
 $CIDRAM['lang']['link_file_manager'] = 'File Manager';
 $CIDRAM['lang']['link_home'] = 'Halaman Utama';
+$CIDRAM['lang']['link_ip_aggregator'] = 'Agregator IP';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'Pelacakan IP';
 $CIDRAM['lang']['link_logs'] = 'Log';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'Salam, {username}.<br />Agregator IP memungkinkan Anda untuk mengekspresikan IP dan CIDR dengan cara sekecil mungkin. Masukkan data yang akan digabungkan dan tekan "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk mengetes apakah alamat IP yang diblokir dengan tanda tangan yang saat ini diinstal.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan.';
 $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Kalkulator CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfigurasi';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Halaman Utama';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Agregator IP';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Pelacakan IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
@@ -251,7 +255,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Alat agregasi berguna untuk IP IPv4.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">Agregator IP @ Stop Forum Spam</a> – Alat agregasi berguna untuk IP IPv4.</li>
             <li><a href="https://radar.qrator.net/">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">Blok negara IP dari IPdeny</a> – Sebuah layanan yang fantastis dan akurat untuk menghasilkan tanda tangan negara-lebar.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Menampilkan laporan tentang tingkat infeksi malware untuk ASN.</li>

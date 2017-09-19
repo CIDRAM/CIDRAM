@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.09.17).
+ * This file: French language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'Version CIDRAM utilisée :';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Risque de faux positifs : ';
 $CIDRAM['lang']['label_os'] = 'Système opérateur utilisée :';
 $CIDRAM['lang']['label_php'] = 'Version PHP utilisée :';
+$CIDRAM['lang']['label_results'] = 'Résultats (%s entré – %s rejeté – %s accepté – %s fusionné – %s sortie) :';
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilisée :';
 $CIDRAM['lang']['label_stable'] = 'Dernier stable :';
 $CIDRAM['lang']['label_sysinfo'] = 'Informations sur le système :';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'Configuration';
 $CIDRAM['lang']['link_documentation'] = 'Documentation';
 $CIDRAM['lang']['link_file_manager'] = 'Gestionnaire de Fichiers';
 $CIDRAM['lang']['link_home'] = 'Page d\'Accueil';
+$CIDRAM['lang']['link_ip_aggregator'] = 'Agrégateur IP';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'Surveillance IP';
 $CIDRAM['lang']['link_logs'] = 'Fichiers Journaux';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'Entrez les adresses IP ici.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Entrez ici l\'adresse IP.';
 $CIDRAM['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci).';
 $CIDRAM['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'Bonjour, {username}.<br />L\'agrégateur IP vous permet d\'exprimer les adresses IP et les CIDR de la manière la plus petite possible. Entrez les données à agréger et appuyez sur "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Bonjour, {username}.<br />La page des tests IP vous permet de tester si les adresses IP sont bloquées par les signatures actuellement installées.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Bonjour, {username}.<br />La page de surveillance IP vous permet de vérifier l\'état de surveillance des adresses IP, pour vérifier lesquels d\'entre eux ont été interdits, et d\'annuler la surveillance si vous voulez le faire.';
 $CIDRAM['lang']['tip_login'] = 'Nom d\'utilisateur défaut : <span class="txtRd">admin</span> – Mot de passe défaut : <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Calculatrice CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Gestionnaire de Fichiers';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Page d\'Accueil';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Agrégateur IP';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Surveillance IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Connexion';
@@ -251,7 +255,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – Ressources d\'apprentissage PHP et discussion.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Obtenir les CIDR des ASNs, Déterminer les relations entre ASNs, découvrez les ASN basés sur les noms de réseaux, etc.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum de discussion utile sur l\'arrêt de spam forum.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Outil d\'agrégation utile pour IPs IPv4.</li>
+            <li><a href="https://www.stopforumspam.com/aggregate">Agrégateur IP @ Stop Forum Spam</a> – Outil d\'agrégation utile pour IPs IPv4.</li>
             <li><a href="https://radar.qrator.net/">Radar par Qrator</a> – Outil utile pour vérifier la connectivité des ASN ainsi pour diverses autres informations sur les ASNs.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">Blocs de pays IP @ IPdeny</a> – Un service fantastique et précis pour générer des signatures à l\'échelle du pays.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Affiche les rapports concernant les taux d\'infection par les logiciels malveillants pour les ASNs.</li>

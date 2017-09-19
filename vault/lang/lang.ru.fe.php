@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.17).
+ * This file: Russian language data for the front-end (last modified: 2017.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -124,6 +124,7 @@ $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:
 $CIDRAM['lang']['label_false_positive_risk'] = 'Риск ложноположительный: ';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';
+$CIDRAM['lang']['label_results'] = 'Результаты (%s вход – %s отвергнуто – %s принято – %s слиты – %s вывод):';
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
 $CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
@@ -134,6 +135,7 @@ $CIDRAM['lang']['link_config'] = 'Конфигурация';
 $CIDRAM['lang']['link_documentation'] = 'Документация';
 $CIDRAM['lang']['link_file_manager'] = 'Файл Менеджер';
 $CIDRAM['lang']['link_home'] = 'Домашняя Страница';
+$CIDRAM['lang']['link_ip_aggregator'] = 'Агрегатор IP';
 $CIDRAM['lang']['link_ip_test'] = 'Тест IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Отслеживания IP';
 $CIDRAM['lang']['link_logs'] = 'Лог-Файлы';
@@ -219,6 +221,7 @@ $CIDRAM['lang']['tip_enter_ips_here'] = 'Введите IP-адреса здес
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Введите IP здесь.';
 $CIDRAM['lang']['tip_file_manager'] = 'Привет, {username}.<br />Файл менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим).';
 $CIDRAM['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для CIDRAM фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
+$CIDRAM['lang']['tip_ip_aggregator'] = 'Привет, {username}.<br />Агрегатор IP позволяет вам выражать IP-адреса и CIDR как можно меньше. Введите данные для агрегирования и нажмите «ОК».';
 $CIDRAM['lang']['tip_ip_test'] = 'Привет, {username}.<br />Тест IP страница позволяет проверить если IP-адреса заблокированы по установленных сигнатуры.';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Привет, {username}.<br />Страница отслеживания IP позволяет проверять состояние отслеживание IP-адресов, чтобы проверить какие из них были запрещены, и отменить отслеживание за ними, если вы хотите чтобы сделать это.';
 $CIDRAM['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
@@ -230,6 +233,7 @@ $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Калькулятор CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Конфигурация';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Файл Менеджер';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Домашняя Страница';
+$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Агрегатор IP';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Тест IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Отслеживания IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Войти';

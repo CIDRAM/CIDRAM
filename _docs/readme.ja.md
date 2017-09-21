@@ -151,6 +151,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/fe_assets/_files_rename.html | ファイル・マネージャのＨＴＭＬテンプレート。
 /vault/fe_assets/_files_row.html | ファイル・マネージャのＨＴＭＬテンプレート。
 /vault/fe_assets/_home.html | フロントエンドのホームページのＨＴＭＬテンプレート。
+/vault/fe_assets/_ip_aggregator.html | ＩＰアグリゲータのＨＴＭＬテンプレート。
 /vault/fe_assets/_ip_test.html | ＩＰテストページのＨＴＭＬテンプレート。
 /vault/fe_assets/_ip_test_row.html | ＩＰテストページのＨＴＭＬテンプレート。
 /vault/fe_assets/_ip_tracking.html | ＩＰトラッキング・ページのＨＴＭＬテンプレート。
@@ -228,6 +229,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/.travis.php | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/.travis.yml | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
+/vault/aggregator.php | ＩＰアグリゲータ。
 /vault/cache.dat | キャッシュ・データ。
 /vault/cidramblocklists.dat | Macmathanが提供する国オプショナルブロックリスト。​アップデート機能で使用（フロントエンドが提供します）。
 /vault/cli.php | ＣＬＩハンドラ。
@@ -745,4 +747,4 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ---
 
 
-最終アップデート：2017年9月8日。
+最終アップデート：2017年9月21日。

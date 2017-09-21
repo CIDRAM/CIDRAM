@@ -151,6 +151,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/fe_assets/_files_rename.html | 파일 관리자의 HTML 템플릿.
 /vault/fe_assets/_files_row.html | 파일 관리자의 HTML 템플릿.
 /vault/fe_assets/_home.html | 프론트 엔드의 홈페이지의 HTML 템플릿.
+/vault/fe_assets/_ip_aggregator.html | IP 애그리게이터 HTML 템플릿.
 /vault/fe_assets/_ip_test.html | IP 테스트 페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_test_row.html | IP 테스트 페이지의 HTML 템플릿.
 /vault/fe_assets/_ip_tracking.html | IP 추적 페이지의 HTML 템플릿.
@@ -228,6 +229,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/.travis.php | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
+/vault/aggregator.php | IP 애그리게이터.
 /vault/cache.dat | 캐시 데이터.
 /vault/cidramblocklists.dat | Macmathan 제공하는 국가 선택적 차단 목록. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
 /vault/cli.php | CLI 핸들러.
@@ -745,4 +747,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2017년 9월 8일.
+최종 업데이트 : 2017년 9월 21일.

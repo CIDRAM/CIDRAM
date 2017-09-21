@@ -151,6 +151,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_files_rename.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_row.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
+/vault/fe_assets/_ip_aggregator.html | Een HTML sjabloon voor de IP-aggregator.
 /vault/fe_assets/_ip_test.html | Een HTML sjabloon voor de IP test pagina.
 /vault/fe_assets/_ip_test_row.html | Een HTML sjabloon voor de IP test pagina.
 /vault/fe_assets/_ip_tracking.html | Een HTML sjabloon voor de IP-Tracking pagina.
@@ -228,6 +229,7 @@ Bestand | Beschrijving
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/.travis.php | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
+/vault/aggregator.php | IP-aggregator.
 /vault/cache.dat | Cache data/gegevens.
 /vault/cidramblocklists.dat | Bevat informatie met betrekking tot de optionele land blocklists door Macmathan; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/cli.php | CLI-handler.
@@ -745,4 +747,4 @@ Waarde | Gebruik makend van
 ---
 
 
-Laatste Bijgewerkt: 8 September 2017 (2017.09.08).
+Laatste Bijgewerkt: 21 September 2017 (2017.09.21).

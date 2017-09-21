@@ -151,6 +151,7 @@ Data | Deskripsi
 /vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_row.html | Template HTML untuk file manager.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
+/vault/fe_assets/_ip_aggregator.html | Template HTML untuk agregator IP.
 /vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_ip_test_row.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_ip_tracking.html | Template HTML untuk halaman pelacakan IP.
@@ -228,6 +229,7 @@ Data | Deskripsi
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/.travis.php | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/vault/aggregator.php | Agregator IP.
 /vault/cache.dat | Cache data.
 /vault/cidramblocklists.dat | Berisi informasi yang berkaitan dengan daftar blokir negara opsional disediakan oleh Macmathan; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/cli.php | Modul CLI.
@@ -745,4 +747,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 8 September 2017 (2017.09.08).
+Terakhir Diperbarui: 21 September 2017 (2017.09.21).

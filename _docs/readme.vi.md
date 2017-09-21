@@ -151,6 +151,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_files_rename.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
+/vault/fe_assets/_ip_aggregator.html | Một tập tin mẫu HTML cho các tập hợp IP.
 /vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
 /vault/fe_assets/_ip_test_row.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
 /vault/fe_assets/_ip_tracking.html | Một tập tin mẫu HTML cho trang giám sát IP.
@@ -228,6 +229,7 @@ Tập tin | Chi tiết
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/.travis.php | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
+/vault/aggregator.php | Tập hợp IP.
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
 /vault/cidramblocklists.dat | Chứa thông tin liên quan đến các danh sách chặn quốc gia tùy chọn được cung cấp bởi Macmathan; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/cli.php | Tập tin cho xử lý CLI.
@@ -745,4 +747,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 8 Tháng Chín 2017 (2017.09.08).
+Lần cuối cập nhật: 21 Tháng Chín 2017 (2017.09.21).

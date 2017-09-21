@@ -153,6 +153,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
 &nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
+&nbsp; <div dir="rtl" style="display:inline;">IP مجموعی طور پر کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_aggregator.html
 &nbsp; <div dir="rtl" style="display:inline;">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test.html
 &nbsp; <div dir="rtl" style="display:inline;">IP ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_test_row.html
 &nbsp; <div dir="rtl" style="display:inline;">IP باخبر رہنے کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_ip_tracking.html
@@ -230,6 +231,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
 &nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
+&nbsp; <div dir="rtl" style="display:inline;">IP مجموعی طور پر.</div> | /vault/aggregator.php
 &nbsp; <div dir="rtl" style="display:inline;">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
 &nbsp; <div dir="rtl" style="display:inline;">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ اپ ڈیٹ کی طرف سے استعمال کیا جاتا ہے سامنے کے آخر کی طرف سے فراہم کی خاصیت.</div> | /vault/cidramblocklists.dat
 &nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر.</div> | /vault/cli.php
@@ -573,7 +575,7 @@
 
 <div dir="rtl">"xxxx:xxxx:xxxx:xxxx::xxxx/yy [فنکشن] [پرم]" تمام IPv6 کی دستخط کی شکل کی پیروی.<br /></div>
 <div dir="rtl"><ul>
- <li>"xxxx:xxxx:xxxx:xxxx::xxxx" CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی "0 :: 8 / 128" طور مثلا،" ایک دستخط میں استعمال کیا جاتا ہے جب :: 8 / 128" کا اظہار کیا جانا چاہئے، اور ":: 0 / 128"" 0 کے طور پر اظہار، جس CIDRs سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں :: / 128").</li>
+ <li>"xxxx:xxxx:xxxx:xxxx::xxxx" CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی "<code>0::1/128</code>" طور مثلا، ایک دستخط میں استعمال کیا جاتا ہے جب "<code>::1/128</code>" کا اظہار کیا جانا چاہئے، اور "<code>0::/128</code>" کے طور پر اظہار، جس CIDR سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں "<code>::0/128</code>").</li>
  <li>"yy" CIDR بلاک سائز [1-128] نمائندگی کرتا ہے.</li>
  <li>"(فنکشن)" سکرپٹ سگنیچر (دستخط شمار کیا جانا چاہئے کہ کس طرح) کے ساتھ کیا کیا ہدایات.</li>
  <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
@@ -593,7 +595,7 @@
  <li>Deny</li>
 </ul></div>
 
-<div dir="rtl">تو "Run" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب، سکرپٹ پھانسی کے لئے ایک بیرونی PHP اسکرپٹ، کی طرف سے مخصوص ہے (ایک "require_once" بیان کرتے ہوئے) کی کوشش کریں گے" [پرم] "قدر (کام کر ڈائرکٹری ہونا چاہئے" /vault/ "اسکرپٹ کی ڈائریکٹری؛ ذیل کی مثالیں ملاحظہ کریں).<br /><br /></div>
+<div dir="rtl">تو "Run" استعمال کیا جاتا ہے، دستخط شروع ہوجاتا ہے جب، سکرپٹ پھانسی کے لئے ایک بیرونی PHP اسکرپٹ، کی طرف سے مخصوص ہے (ایک "require_once" بیان کرتے ہوئے) کی کوشش کریں گے" [پرم] "قدر (کام کر ڈائرکٹری ہونا چاہئے "/vault/" اسکرپٹ کی ڈائریکٹری؛ ذیل کی مثالیں ملاحظہ کریں).<br /><br /></div>
 
 `127.0.0.0/8 Run example.php`
 
@@ -848,4 +850,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 8 ستمبر 2017 (2017.09.08).</div>
+<div dir="rtl">آخری تازہ کاری: 21 ستمبر 2017 (2017.09.21).</div>

@@ -151,6 +151,7 @@ File | Descrizione
 /vault/fe_assets/_files_rename.html | Un modello HTML per il file manager.
 /vault/fe_assets/_files_row.html | Un modello HTML per il file manager.
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
+/vault/fe_assets/_ip_aggregator.html | Un modello HTML per l'aggregatore IP.
 /vault/fe_assets/_ip_test.html | Un modello HTML per la pagina per il test IP.
 /vault/fe_assets/_ip_test_row.html | Un modello HTML per la pagina per il test IP.
 /vault/fe_assets/_ip_tracking.html | Un modello HTML per la pagina di monitoraggio IP.
@@ -228,6 +229,7 @@ File | Descrizione
 /vault/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/.travis.php | Utilizzato da Travis CI per il test (non richiesto per il corretto funzionamento dello script).
 /vault/.travis.yml | Utilizzato da Travis CI per il test (non richiesto per il corretto funzionamento dello script).
+/vault/aggregator.php | Aggregatore IP.
 /vault/cache.dat | Cache data.
 /vault/cidramblocklists.dat | Contiene informazioni relative alle liste opzionali per il bloccando di paesi forniti da Macmathan; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/cli.php | Gestore di CLI.
@@ -745,4 +747,4 @@ Valore | Utilizzando
 ---
 
 
-Ultimo Aggiornamento: 8 Settembre 2017 (2017.09.08).
+Ultimo Aggiornamento: 21 Settembre 2017 (2017.09.21).

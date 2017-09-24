@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.19).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'Không thể xóa!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Thư mục xóa thành công!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Đổi tên thư mục thành công!';
 $CIDRAM['lang']['response_error'] = 'Lỗi';
+$CIDRAM['lang']['response_failed_to_install'] = 'Cài đặt không thành công!';
+$CIDRAM['lang']['response_failed_to_update'] = 'Cập nhật không thành công!';
 $CIDRAM['lang']['response_file_deleted'] = 'Tập tin xóa thành công!';
 $CIDRAM['lang']['response_file_edited'] = 'Tập tin sửa đổi thành công!';
 $CIDRAM['lang']['response_file_renamed'] = 'Đổi tên tập tin thành công!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
             <li><a href="https://php.earth/">PHP.earth</a> – PHP tài nguyên học tập và thảo luận.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Nhận các CIDR từ các ASN, xác định các mối quan hệ các ASN, khám phá vùng các ASN dựa trên các tên mạng, vv.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Diễn đàn @ Stop Forum Spam</a> – Diễn đàn thảo luận hữu ích về việc ngưng diễn đàn thư rác.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">Tập hợp IP @ Stop Forum Spam</a> – Công cụ hữu ích cho kết hợp các IP IPv4.</li>
             <li><a href="https://radar.qrator.net/">Radar bởi Qrator</a> – Công cụ hữu ích để kiểm tra kết nối ASN cũng như cho nhiều thông tin khác về ASN.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">Chặn quốc gia IP @ IPdeny</a> – Một dịch vụ tuyệt vời và chính xác để tạo ra chữ ký cho các nước.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm phần mềm độc hại cho các ASN.</li>

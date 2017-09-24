@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.19).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'Gagal menghapus!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Direktori berhasil dihapus!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Nama direktori berhasil dimodifikasi!';
 $CIDRAM['lang']['response_error'] = 'Kesalahan';
+$CIDRAM['lang']['response_failed_to_install'] = 'Gagal menginstal!';
+$CIDRAM['lang']['response_failed_to_update'] = 'Gagal memperbarui!';
 $CIDRAM['lang']['response_file_deleted'] = 'File berhasil dihapus!';
 $CIDRAM['lang']['response_file_edited'] = 'File berhasil diubah!';
 $CIDRAM['lang']['response_file_renamed'] = 'Nama file berhasil dimodifikasi!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum diskusi yang berguna tentang menghentikan spam forum.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">Agregator IP @ Stop Forum Spam</a> – Alat agregasi berguna untuk IP IPv4.</li>
             <li><a href="https://radar.qrator.net/">Radar oleh Qrator</a> – Alat yang berguna untuk memeriksa konektivitas ASN serta berbagai informasi lainnya tentang ASN.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">Blok negara IP dari IPdeny</a> – Sebuah layanan yang fantastis dan akurat untuk menghasilkan tanda tangan negara-lebar.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Menampilkan laporan tentang tingkat infeksi malware untuk ASN.</li>

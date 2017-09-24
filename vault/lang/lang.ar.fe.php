@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.19).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'فشلت في حذف!';
 $CIDRAM['lang']['response_directory_deleted'] = 'تم حذف الدليل بنجاح!';
 $CIDRAM['lang']['response_directory_renamed'] = 'تم اعادة تسمية الدليل بنجاح!';
 $CIDRAM['lang']['response_error'] = 'خطأ';
+$CIDRAM['lang']['response_failed_to_install'] = 'فشل التثبيت!';
+$CIDRAM['lang']['response_failed_to_update'] = 'فشل التحديث!';
 $CIDRAM['lang']['response_file_deleted'] = 'ملف حذف بنجاح!';
 $CIDRAM['lang']['response_file_edited'] = 'ملف تعديل بنجاح!';
 $CIDRAM['lang']['response_file_renamed'] = 'ملف إعادة تسمية بنجاح!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيد�
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
             <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>
             <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – منتدى للنقاش مفيد حول وقف منتدى المزعج.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate" dir="ltr">IP Aggregator @ Stop Forum Spam</a> – أداة مفيدة لتجميع عناوين IPv4.</li>
             <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – أداة مفيدة للتحقق من الاتصال من ل ASNs فضلا عن العديد من المعلومات الأخرى حول ل ASNs.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – خدمة لتوليد التواقيع في جميع أنحاء البلاد.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – تقارير يعرض بخصوص معدلات الإصابة الخبيثة أجل ASNs.</li>

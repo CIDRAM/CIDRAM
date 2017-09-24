@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.09.19).
+ * This file: English language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'Failed to delete!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Directory successfully deleted!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Directory successfully renamed!';
 $CIDRAM['lang']['response_error'] = 'Error';
+$CIDRAM['lang']['response_failed_to_install'] = 'Failed to install!';
+$CIDRAM['lang']['response_failed_to_update'] = 'Failed to update!';
 $CIDRAM['lang']['response_file_deleted'] = 'File successfully deleted!';
 $CIDRAM['lang']['response_file_edited'] = 'File successfully modified!';
 $CIDRAM['lang']['response_file_renamed'] = 'File successfully renamed!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP learning resources and discussion.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Useful discussion forum about stopping forum spam.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Aggregator @ Stop Forum Spam</a> – Useful aggregation tool for IPv4 IPs.</li>
             <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – Useful tool for checking the connectivity of ASNs as well as for various other information about ASNs.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – A fantastic and accurate service for generating country-wide signatures.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Displays reports regarding malware infection rates for ASNs.</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.19).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'Mislukt om te verwijderen!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Bestandsmap succesvol verwijderd!';
 $CIDRAM['lang']['response_directory_renamed'] = 'De naam van de bestandsmap met succes veranderd!';
 $CIDRAM['lang']['response_error'] = 'Fout';
+$CIDRAM['lang']['response_failed_to_install'] = 'Installatie mislukt!';
+$CIDRAM['lang']['response_failed_to_update'] = 'Update mislukt!';
 $CIDRAM['lang']['response_file_deleted'] = 'Bestand succesvol verwijderd!';
 $CIDRAM['lang']['response_file_edited'] = 'Bestand succesvol gewijzigd!';
 $CIDRAM['lang']['response_file_renamed'] = 'De naam van de bestand met succes veranderd!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP leermiddelen en discussie.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Krijg CIDRs van ASN, bepalen ASN relaties, ontdek ASN\'s op basis van netwerknamen, ezv.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Nuttig discussieforum over het stoppen forum spam.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP-Aggregator @ Stop Forum Spam</a> – Nuttig aggregatie tool voor IPv4 IPs.</li>
             <li><a href="https://radar.qrator.net/">Radar van Qrator</a> – Handig hulpmiddel voor het controleren van de connectiviteit van ASN\'s en ook voor diverse andere informatie over ASN\'s.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP-landblokken</a> – Een fantastische en accurate service voor het genereren van de signatures voor landen.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Geeft rapporten over malware-infectie tarieven voor ASN.</li>

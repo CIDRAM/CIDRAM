@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.19).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = '无法删除！';
 $CIDRAM['lang']['response_directory_deleted'] = '文件夹成功删除！';
 $CIDRAM['lang']['response_directory_renamed'] = '文件夹成功改名！';
 $CIDRAM['lang']['response_error'] = '错误';
+$CIDRAM['lang']['response_failed_to_install'] = '无法安装！';
+$CIDRAM['lang']['response_failed_to_update'] = '无法更新！';
 $CIDRAM['lang']['response_file_deleted'] = '文件成功删除！';
 $CIDRAM['lang']['response_file_edited'] = '文件成功改性！';
 $CIDRAM['lang']['response_file_renamed'] = '文件成功改名！';
@@ -256,7 +258,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP学习资源和讨论。​</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR，​确定ASN关系，​基于网络名称发现ASN，​等等。​</li>
             <li><a href="https://www.stopforumspam.com/forum/">论坛 ＠ Stop Forum Spam</a> – 有用的讨论论坛关于停止论坛垃圾邮件。​</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP聚合器 ＠ Stop Forum Spam</a> – 有用的IPv4聚合工具。​</li>
             <li><a href="https://radar.qrator.net/">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。​</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IP国家阻止＠IPdeny</a> – 一个梦幻般和准确的服务，​产生国家的签名。​</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – 显示有关ASN恶意软件感染率的报告。​</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.19).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'حذف کرنے میں ناکام!';
 $CIDRAM['lang']['response_directory_deleted'] = 'ڈائریکٹری کامیابی سے خارج!';
 $CIDRAM['lang']['response_directory_renamed'] = 'ڈائریکٹری کامیابی سے نام تبدیل کر دیا!';
 $CIDRAM['lang']['response_error'] = 'خرابی';
+$CIDRAM['lang']['response_failed_to_install'] = 'انسٹال کرنے میں ناکام';
+$CIDRAM['lang']['response_failed_to_update'] = 'اپ ڈیٹ کرنے میں ناکام';
 $CIDRAM['lang']['response_file_deleted'] = 'کامیابی خارج کر دیا فائل!';
 $CIDRAM['lang']['response_file_edited'] = 'کامیابی نظر ثانی شدہ فائل!';
 $CIDRAM['lang']['response_file_renamed'] = 'کامیابی کا نام دے دیا فائل!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
             <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate" dir="ltr">IP مجموعی طور پر @ Stop Forum Spam</a> – IPv4 کی آئی پی ایس کے لئے مفید یکتریقرن آلے.</li>
             <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>

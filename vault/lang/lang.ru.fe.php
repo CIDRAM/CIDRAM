@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.19).
+ * This file: Russian language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -100,7 +100,7 @@ $CIDRAM['lang']['field_permissions'] = 'Разрешения';
 $CIDRAM['lang']['field_range'] = 'Диапазон (Первый – Последний)';
 $CIDRAM['lang']['field_rename_file'] = 'Переименовывать';
 $CIDRAM['lang']['field_reset'] = 'Сбросить';
-$CIDRAM['lang']['field_set_new_password'] = 'Установить Новый Пароль';
+$CIDRAM['lang']['field_set_new_password'] = 'Установить новый пароль';
 $CIDRAM['lang']['field_size'] = 'Общий Размер: ';
 $CIDRAM['lang']['field_size_bytes'] = 'байтов';
 $CIDRAM['lang']['field_size_GB'] = 'ГБ';
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'Не удалось удалить!'
 $CIDRAM['lang']['response_directory_deleted'] = 'Каталог успешно удален!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Каталог успешно переименован!';
 $CIDRAM['lang']['response_error'] = 'Ошибка';
+$CIDRAM['lang']['response_failed_to_install'] = 'Не удалось установить!';
+$CIDRAM['lang']['response_failed_to_update'] = 'Не удалось обновить!';
 $CIDRAM['lang']['response_file_deleted'] = 'Файл успешно удален!';
 $CIDRAM['lang']['response_file_edited'] = 'Файл успешно изменен!';
 $CIDRAM['lang']['response_file_renamed'] = 'Файл успешно переименован!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="https://php.earth/">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Форум @ Stop Forum Spam</a> – Полезное Форум о останавливая форум спам.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">Агрегатор IP @ Stop Forum Spam</a> – Полезный инструмент для агрегации IPv4 IP-адресов.</li>
             <li><a href="https://radar.qrator.net/">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">Страновые блоки IP @ IPdeny</a> – Фантастический и точный сервис для создания сигнатуры в масштабах всей страны.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Отображает отчеты о вредоносных программ уровень инфицирования для ASNs.</li>

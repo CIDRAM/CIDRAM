@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.19).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -171,6 +171,8 @@ $CIDRAM['lang']['response_delete_error'] = 'Silinemedi!';
 $CIDRAM['lang']['response_directory_deleted'] = 'Dizin başarıyla silindi!';
 $CIDRAM['lang']['response_directory_renamed'] = 'Dizin başarıyla yeniden adlandırıldı!';
 $CIDRAM['lang']['response_error'] = 'Hata';
+$CIDRAM['lang']['response_failed_to_install'] = 'Yükleme başarısız!';
+$CIDRAM['lang']['response_failed_to_update'] = 'Güncelleme başarısız!';
 $CIDRAM['lang']['response_file_deleted'] = 'Dosya başarıyla silindi!';
 $CIDRAM['lang']['response_file_edited'] = 'Dosya başarıyla değiştirildi!';
 $CIDRAM['lang']['response_file_renamed'] = 'Dosya başarıyla yeniden adlandırıldı!';
@@ -255,7 +257,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<
             <li><a href="https://php.earth/">PHP.earth</a> – PHP öğrenme kaynakları ve tartışmalar.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN\'lerden CIDR\'ler alın, ASN ilişkilerini belirleyin, ağ adlarına dayalı ASN\'leri keşfedin.</li>
             <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Forum spamını durdurmayla ilgili faydalı forum.</li>
-            <li><a href="https://www.stopforumspam.com/aggregate">IP Toplayıcı @ Stop Forum Spam</a> – IPv4 IP\'ler için yararlı toplama aracı.</li>
             <li><a href="https://radar.qrator.net/">Radar by Qrator</a> – ASN\'lerin bağlantısını kontrol etmek için yararlı araç ve ASN\'ler hakkında çeşitli diğer bilgiler.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP ülke blokları</a> – Ülke çapında imzalar üretmek için harika ve tam bir hizmet.</li>
             <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – ASN\'ler için kötü amaçlı yazılım enfeksiyonu oranları ile ilgili raporları görüntüler.</li>

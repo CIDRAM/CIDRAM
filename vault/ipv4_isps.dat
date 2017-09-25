@@ -4892,11 +4892,11 @@ recaptcha:
 # list this section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A
 # balanced approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this
 # section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 0.98%.
-# %Listed, CleanTalk.org: 26.67%.
-# %Listed, abuseat.org (CBL-Listed): 0.51%.
-# Stop Forum Spam (SFS) listings: 18,337.
-# Updated: 2017.04.26
+# %Listed, Google Malware Dashboard: 0.60%.
+# %Listed, CleanTalk.org: 26.42%.
+# %Listed, abuseat.org (CBL-Listed): 0.71%.
+# Stop Forum Spam (SFS) listings: 11,898.
+# Updated: 2017.09.25
 
 1.34.0.0/15 Deny Generic
 1.160.0.0/12 Deny Generic
@@ -4927,6 +4927,8 @@ recaptcha:
 108.59.224.0/24 Deny Generic
 111.240.0.0/12 Deny Generic
 114.24.0.0/14 Deny Generic
+114.30.33.0/24 Deny Generic
+114.30.44.0/24 Deny Generic
 114.32.0.0/12 Deny Generic
 118.160.0.0/13 Deny Generic
 118.168.0.0/14 Deny Generic
@@ -4936,6 +4938,11 @@ recaptcha:
 125.224.0.0/13 Deny Generic
 125.232.0.0/15 Deny Generic
 128.1.32.0/24 Deny Generic
+128.1.37.0/24 Deny Generic
+128.1.45.0/24 Deny Generic
+128.1.50.0/24 Deny Generic
+128.1.63.0/24 Deny Generic
+128.1.101.0/24 Deny Generic
 163.244.185.0/24 Deny Generic
 168.95.0.0/16 Deny Generic
 180.210.230.0/23 Deny Generic
@@ -4975,6 +4982,7 @@ recaptcha:
 220.128.77.0/24 Deny Generic
 220.128.79.0/24 Deny Generic
 220.128.80.0/24 Deny Generic
+220.128.82.0/23 Deny Generic
 220.128.87.0/24 Deny Generic
 220.128.96.0/19 Deny Generic
 220.128.128.0/17 Deny Generic

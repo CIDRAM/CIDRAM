@@ -174,6 +174,9 @@
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">بنگلا زبان کے اعداد و شمار.</div> | /vault/lang/lang.bn.php
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php

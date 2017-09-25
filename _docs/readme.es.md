@@ -172,6 +172,9 @@ Archivo | Descripción
 /vault/lang/lang.ar.cli.php | Lingüísticos datos Árabe para CLI.
 /vault/lang/lang.ar.fe.php | Lingüísticos datos Árabe para el front-end.
 /vault/lang/lang.ar.php | Lingüísticos datos Árabe.
+/vault/lang/lang.bn.cli.php | Lingüísticos datos Bangla para CLI.
+/vault/lang/lang.bn.fe.php | Lingüísticos datos Bangla para el front-end.
+/vault/lang/lang.bn.php | Lingüísticos datos Bangla.
 /vault/lang/lang.de.cli.php | Lingüísticos datos Alemán para CLI.
 /vault/lang/lang.de.fe.php | Lingüísticos datos Alemán para el front-end.
 /vault/lang/lang.de.php | Lingüísticos datos Alemán.

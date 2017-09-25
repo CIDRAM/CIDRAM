@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.24).
+ * This file: Dutch language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
 $CIDRAM['lang']['label_branch'] = 'Branch laatste stabiele:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-schijfgebruik: ';
+$CIDRAM['lang']['label_fmgr_free_space'] = 'Vrije schijfruimte: ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $CIDRAM['lang']['label_php'] = 'PHP versie gebruikt:';
 $CIDRAM['lang']['label_results'] = 'Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'Component succes
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component succesvol verwijderd.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Component succesvol gewijzigd.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om de component te verwijderen.';
-$CIDRAM['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om de component te bijwerken.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuratie succesvol gewijzigd.';
 $CIDRAM['lang']['response_deactivated'] = 'Succesvol gedeactiveerd.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'Mislukt om te deactiveren!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Composite Blocking List @ Abuseat.org</a> – Geeft rapporten over botnet infectie tarieven voor ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Onderhoudt een database van bekende beledigend IPs; Biedt een API voor het controleren en rapporteren van IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Onderhoudt lijsten van bekende spammers; Handig voor het controleren van IP/ASN spam activiteiten.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Kwetsbaarheidstabellen</a> – Hiermee worden veilige/onveilige versies van verschillende pakketten weergegeven (PHP, HHVM, ezv).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibiliteitstabellen</a> – Hiermee worden informatie over compatibiliteit voor verschillende pakketten weergegeven (CIDRAM, phpMussel, ezv).</li>
         </ul>';

@@ -172,6 +172,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.ar.cli.php | ＣＬＩのアラビア語言語データ。
 /vault/lang/lang.ar.fe.php | フロントエンドのアラビア語言語データ。
 /vault/lang/lang.ar.php | アラビア語言語データ。
+/vault/lang/lang.bn.cli.php | ＣＬＩのベンガル語言語データ。
+/vault/lang/lang.bn.fe.php | フロントエンドのベンガル語言語データ。
+/vault/lang/lang.bn.php | ベンガル語言語データ。
 /vault/lang/lang.de.cli.php | ＣＬＩのドイツ語言語データ。
 /vault/lang/lang.de.fe.php | フロントエンドのドイツ語言語データ。
 /vault/lang/lang.de.php | ドイツ語言語データ。

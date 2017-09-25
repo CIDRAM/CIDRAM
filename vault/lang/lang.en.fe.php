@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.09.24).
+ * This file: English language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'Active configuration file: ';
 $CIDRAM['lang']['label_branch'] = 'Branch latest stable:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM version used:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'False positive risk: ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk usage: ';
+$CIDRAM['lang']['label_fmgr_free_space'] = 'Free disk space: ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'Total disk space: ';
 $CIDRAM['lang']['label_os'] = 'Operating system used:';
 $CIDRAM['lang']['label_php'] = 'PHP version used:';
 $CIDRAM['lang']['label_results'] = 'Results (%s in – %s rejected – %s accepted – %s merged – %s out):';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'Component succes
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Component successfully uninstalled.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'An error occurred while attempting to uninstall the component.';
-$CIDRAM['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Configuration successfully updated.';
 $CIDRAM['lang']['response_deactivated'] = 'Successfully deactivated.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'Failed to deactivate!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org\'s Composite Blocking List</a> – Displays reports regarding botnet infection rates for ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Maintains listings of known spammers; Useful for checking IP/ASN spam activities.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
         </ul>';

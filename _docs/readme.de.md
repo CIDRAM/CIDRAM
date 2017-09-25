@@ -172,6 +172,9 @@ Datei | Beschreibung
 /vault/lang/lang.ar.cli.php | Arabische Sprachdateien für CLI.
 /vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
 /vault/lang/lang.ar.php | Arabische Sprachdateien.
+/vault/lang/lang.bn.cli.php | Bangla Sprachdateien für CLI.
+/vault/lang/lang.bn.fe.php | Bangla Sprachdateien für das Front-End.
+/vault/lang/lang.bn.php | Bangla Sprachdateien.
 /vault/lang/lang.de.cli.php | Deutsche Sprachdateien für CLI.
 /vault/lang/lang.de.fe.php | Deutsche Sprachdateien für das Front-End.
 /vault/lang/lang.de.php | Deutsche Sprachdateien.

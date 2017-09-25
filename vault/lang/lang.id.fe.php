@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.24).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $CIDRAM['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Risiko positif palsu: ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk CIDRAM: ';
+$CIDRAM['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_php'] = 'Versi PHP digunakan:';
 $CIDRAM['lang']['label_results'] = 'Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'Komponen berhasi
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponen berhasil diuninstal.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Komponen berhasil diperbarui.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Terjadi kesalahan saat mencoba untuk menguninstal komponen ini.';
-$CIDRAM['lang']['response_component_update_error'] = 'Terjadi kesalahan saat mencoba untuk memperbarui komponen ini.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Konfigurasi berhasil diperbarui.';
 $CIDRAM['lang']['response_deactivated'] = 'Berhasil dinonaktifkan.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'Kegagalan penonaktifan!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Daftar Pemblokiran Komposit dari Abuseat.org</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mempertahankan daftar spammer dikenal; Berguna untuk memeriksa aktivitas spam dari IP/ASN.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
         </ul>';

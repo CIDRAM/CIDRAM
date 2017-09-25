@@ -172,6 +172,9 @@ Bestand | Beschrijving
 /vault/lang/lang.ar.cli.php | Arabisch taaldata/taalgegevens voor CLI.
 /vault/lang/lang.ar.fe.php | Arabisch taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
+/vault/lang/lang.bn.cli.php | Bengalees taaldata/taalgegevens voor CLI.
+/vault/lang/lang.bn.fe.php | Bengalees taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.bn.php | Bengalees taaldata/taalgegevens.
 /vault/lang/lang.de.cli.php | Duitse taaldata/taalgegevens voor CLI.
 /vault/lang/lang.de.fe.php | Duitse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.de.php | Duitse taaldata/taalgegevens.

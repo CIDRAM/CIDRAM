@@ -172,6 +172,9 @@ Tập tin | Chi tiết
 /vault/lang/lang.ar.cli.php | Dữ liệu tiếng Ả Rập cho CLI.
 /vault/lang/lang.ar.fe.php | Dữ liệu tiếng Ả Rập cho các front-end.
 /vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
+/vault/lang/lang.bn.cli.php | Dữ liệu tiếng Bengal cho CLI.
+/vault/lang/lang.bn.fe.php | Dữ liệu tiếng Bengal cho các front-end.
+/vault/lang/lang.bn.php | Dữ liệu tiếng Bengal.
 /vault/lang/lang.de.cli.php | Dữ liệu tiếng Đức cho CLI.
 /vault/lang/lang.de.fe.php | Dữ liệu tiếng Đức cho các front-end.
 /vault/lang/lang.de.php | Dữ liệu tiếng Đức.

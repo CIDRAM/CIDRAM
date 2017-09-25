@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.24).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạ
 $CIDRAM['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi CIDRAM: ';
+$CIDRAM['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'Gói cài đặt
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ bỏ cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
-$CIDRAM['lang']['response_component_update_error'] = 'Có lỗi xảy ra trong khi cố gắng để cập nhật các gói.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
 $CIDRAM['lang']['response_deactivated'] = 'Vô hiệu hóa thành công.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'Không thể vô hiệu hóa!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
             <li><a href="https://www.abuseat.org/public/asn.html">Danh sách chặn hỗn hợp @ Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Duy trì danh sách các spammer được biết; Hữu ích cho việc kiểm tra các hoạt động thư rác từ các IP/ASN.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
         </ul>';

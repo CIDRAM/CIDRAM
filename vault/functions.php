@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.23).
+ * This file: Functions file (last modified: 2017.09.25).
  */
 
 /**
@@ -114,7 +114,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
  * @param bool $ValidateOnly If true, just checks if the IP is valid only.
  * @return bool|array Refer to the description above.
  */
-$CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false) use (&$CIDRAM) {
+$CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false) {
     if (!preg_match(
         '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-' .
         '9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2' .
@@ -170,7 +170,7 @@ $CIDRAM['ExpandIPv4'] = function ($Addr, $ValidateOnly = false) use (&$CIDRAM) {
  * @param bool $ValidateOnly If true, just checks if the IP is valid only.
  * @return bool|array Refer to the description above.
  */
-$CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false) use (&$CIDRAM) {
+$CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false) {
     /**
      * The REGEX pattern used by this `preg_match` call was adapted from the
      * IPv6 REGEX pattern that can be found at
@@ -1666,6 +1666,9 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
             $Arr[$Key]['CanEdit'] = true;
             $Arr[$Key]['Directory'] = false;
             $Arr[$Key]['Filesize'] = filesize($Item);
+            if (isset($CIDRAM['FE']['TotalSize'])) {
+                $CIDRAM['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
+            }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
                 if (!$Ext) {

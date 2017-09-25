@@ -172,6 +172,9 @@ File | Descrizione
 /vault/lang/lang.ar.cli.php | Dati linguistici Araba per CLI.
 /vault/lang/lang.ar.fe.php | Dati linguistici Araba per il front-end.
 /vault/lang/lang.ar.php | Dati linguistici Araba.
+/vault/lang/lang.bn.cli.php | Dati linguistici Bengalese per CLI.
+/vault/lang/lang.bn.fe.php | Dati linguistici Bengalese per il front-end.
+/vault/lang/lang.bn.php | Dati linguistici Bengalese.
 /vault/lang/lang.de.cli.php | Dati linguistici Tedesca per CLI.
 /vault/lang/lang.de.fe.php | Dati linguistici Tedesca per il front-end.
 /vault/lang/lang.de.php | Dati linguistici Tedesca.

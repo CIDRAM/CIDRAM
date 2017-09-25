@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.24).
+ * This file: Russian language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'Активный файл кон�
 $CIDRAM['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Риск ложноположительный: ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM Использование диска: ';
+$CIDRAM['lang']['label_fmgr_free_space'] = 'Свободное место на диске: ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Все использование диска: ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';
 $CIDRAM['lang']['label_results'] = 'Результаты (%s вход – %s отвергнуто – %s принято – %s слиты – %s вывод):';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'Компонен
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Компонент успешно удален.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'Произошла ошибка при попытке удалить компонент.';
-$CIDRAM['lang']['response_component_update_error'] = 'Произошла ошибка при попытке обновить компонент.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Конфигурация успешно обновлено.';
 $CIDRAM['lang']['response_deactivated'] = 'Успешно деактивирован.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'Не удалось дезактивировать!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="https://www.abuseat.org/public/asn.html">Список составных блокировок @ Abuseat.org</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Поддерживает списки известных спамеров; Полезно для проверки спама деятельности IP/ASN.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Таблицы Уязвимостей</a> – Список безопасных/небезопасных версий различных пакетов (PHP, HHVM, и т.д.).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Таблицы Совместимости</a> – Перечисляет информацию о совместимости для различных пакетов (CIDRAM, phpMussel, и т.д.).</li>
         </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.24).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグ
 $CIDRAM['lang']['label_branch'] = 'ブランチ最新安定：';
 $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
 $CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAMディスク使用量： ';
+$CIDRAM['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';
 $CIDRAM['lang']['label_results'] = '結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）：';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'コンポーネ�
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'コンポーネントのアンインストールは成功しました。';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
-$CIDRAM['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
 $CIDRAM['lang']['response_configuration_updated'] = 'コンフィギュレーションの更新が成功しました。';
 $CIDRAM['lang']['response_deactivated'] = '非アクティブにしました。';
 $CIDRAM['lang']['response_deactivation_failed'] = '非アクティブ化に失敗しました！';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 既知のスパマーリストを維持する；​ＩＰ/ＡＳＮスパム活動のチェックに役立ちます。</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
         </ul>';

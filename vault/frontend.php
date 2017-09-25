@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.19).
+ * This file: Front-end handler (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1161,13 +1161,28 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     );
                     $CIDRAM['Count'] = count($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']);
                     $CIDRAM['RemoteFiles'] = array();
+                    $CIDRAM['Rollback'] = false;
                     /** Write new and updated files and directories. */
                     for ($CIDRAM['Iterate'] = 0; $CIDRAM['Iterate'] < $CIDRAM['Count']; $CIDRAM['Iterate']++) {
                         if (empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'][$CIDRAM['Iterate']])) {
                             continue;
                         }
                         $CIDRAM['ThisFileName'] = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'][$CIDRAM['Iterate']];
-                        $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = true;
+                        /** Rolls back to previous version or uninstalls if an update/install fails. */
+                        if ($CIDRAM['Rollback']) {
+                            if (
+                                isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']]) &&
+                                is_readable($CIDRAM['Vault'] . $CIDRAM['ThisFileName'])
+                            ) {
+                                $CIDRAM['Components']['BytesAdded'] -= filesize($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                                unlink($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                                if (is_readable($CIDRAM['Vault'] . $CIDRAM['ThisFileName'] . '.rollback')) {
+                                    $CIDRAM['Components']['BytesRemoved'] -= filesize($CIDRAM['Vault'] . $CIDRAM['ThisFileName'] . '.rollback');
+                                    rename($CIDRAM['Vault'] . $CIDRAM['ThisFileName'] . '.rollback', $CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                                }
+                            }
+                            continue;
+                        }
                         if (
                             (
                                 !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
@@ -1181,6 +1196,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                 $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From'][$CIDRAM['Iterate']]
                             ))
                         ) {
+                            $CIDRAM['Iterate'] = 0;
+                            $CIDRAM['Rollback'] = true;
                             continue;
                         }
                         if (
@@ -1204,8 +1221,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                             if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error'])) {
                                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error']);
                             }
+                            $CIDRAM['Iterate'] = 0;
+                            $CIDRAM['Rollback'] = true;
                             continue;
                         }
+                        $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = true;
                         $CIDRAM['ThisName'] = $CIDRAM['ThisFileName'];
                         $CIDRAM['ThisPath'] = $CIDRAM['Vault'];
                         while (strpos($CIDRAM['ThisName'], '/') !== false || strpos($CIDRAM['ThisName'], "\\") !== false) {
@@ -1219,6 +1239,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         }
                         if (is_readable($CIDRAM['Vault'] . $CIDRAM['ThisFileName'])) {
                             $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
+                            rename($CIDRAM['Vault'] . $CIDRAM['ThisFileName'], $CIDRAM['Vault'] . $CIDRAM['ThisFileName'] . '.rollback');
                         }
                         $CIDRAM['Components']['BytesAdded'] += strlen($CIDRAM['ThisFile']);
                         $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['ThisFileName'], 'w');
@@ -1226,54 +1247,83 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         fclose($CIDRAM['Handle']);
                         $CIDRAM['ThisFile'] = '';
                     }
-                    /** Prune unwanted files and directories. */
-                    if (
-                        !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To']) &&
-                        is_array($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'])
-                    ) {
-                        array_walk($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
-                            if (
-                                !empty($ThisFile) &&
-                                !isset($CIDRAM['RemoteFiles'][$ThisFile]) &&
-                                file_exists($CIDRAM['Vault'] . $ThisFile) &&
-                                $CIDRAM['Traverse']($ThisFile)
-                            ) {
-                                $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
-                                unlink($CIDRAM['Vault'] . $ThisFile);
-                                $CIDRAM['DeleteDirectory']($ThisFile);
+                    if ($CIDRAM['Rollback']) {
+                        /** Prune unwanted empty directories (update/install rollback). */
+                        if (
+                            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To']) &&
+                            is_array($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'])
+                        ) {
+                            array_walk($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
+                                if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
+                                    $CIDRAM['DeleteDirectory']($ThisFile);
+                                }
+                            });
+                        }
+                        $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
+                        if (
+                            empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
+                            empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
+                        ) {
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_failed_to_install'];
+                            if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails'])) {
+                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails']);
                             }
-                        });
+                        } else {
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_failed_to_update'];
+                            if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails'])) {
+                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails']);
+                            }
+                        }
+                    } else {
+                        /** Prune unwanted files and directories (update/install success). */
+                        if (
+                            !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To']) &&
+                            is_array($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'])
+                        ) {
+                            array_walk($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
+                                if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
+                                    if (file_exists($CIDRAM['Vault'] . $ThisFile . '.rollback')) {
+                                        unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
+                                    }
+                                    if (!isset($CIDRAM['RemoteFiles'][$ThisFile]) && file_exists($CIDRAM['Vault'] . $ThisFile)) {
+                                        $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
+                                        unlink($CIDRAM['Vault'] . $ThisFile);
+                                        $CIDRAM['DeleteDirectory']($ThisFile);
+                                    }
+                                }
+                            });
+                        }
+                        $CIDRAM['FileData'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['NewMeta'];
+                        $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
+                        if (
+                            empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
+                            empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
+                        ) {
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_installed'];
+                            if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds'])) {
+                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds']);
+                            }
+                        } else {
+                            $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_updated'];
+                            if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds'])) {
+                                $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds']);
+                            }
+                        }
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']] =
+                            $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']];
                     }
-                    $CIDRAM['FileData'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['NewMeta'];
+                } else {
                     $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
                     if (
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
                         empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
                     ) {
-                        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_installed'];
-                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Succeeds']);
-                        }
-                    } else {
-                        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_component_successfully_updated'];
-                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds'])) {
-                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Succeeds']);
-                        }
-                    }
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']] =
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']];
-                } else {
-                    $CIDRAM['FE']['state_msg'] .=
-                        '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
-                        $CIDRAM['lang']['response_component_update_error'];
-                    if (
-                        empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
-                        empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files'])
-                    ) {
+                        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_failed_to_install'];
                         if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails'])) {
                             $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Install Fails']);
                         }
                     } else {
+                        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_failed_to_update'];
                         if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails'])) {
                             $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['When Update Fails']);
                         }
@@ -1302,6 +1352,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['ThisFile'],
                 $CIDRAM['FileData'],
                 $CIDRAM['ThisFileName'],
+                $CIDRAM['Rollback'],
                 $CIDRAM['RemoteFiles'],
                 $CIDRAM['ThisReannotate']
             );
@@ -2182,6 +2233,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     /** Initialise files data variable. */
     $CIDRAM['FE']['FilesData'] = '';
 
+    /** Total size. */
+    $CIDRAM['FE']['TotalSize'] = 0;
+
     /** Fetch files data. */
     $CIDRAM['FilesArray'] = $CIDRAM['FileManager-RecursiveList']($CIDRAM['Vault']);
 
@@ -2207,6 +2261,22 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $CIDRAM['lang'] + $CIDRAM['FE'] + $ThisFile, $CIDRAM['FE']['FilesRow']
         );
     });
+
+    /** Total size. */
+    $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalSize']);
+
+    /** Disk free space. */
+    $CIDRAM['FE']['FreeSpace'] = disk_free_space(__DIR__);
+
+    /** Disk total space. */
+    $CIDRAM['FE']['TotalSpace'] = disk_total_space(__DIR__);
+
+    /** Disk total usage. */
+    $CIDRAM['FE']['TotalUsage'] = $CIDRAM['FE']['TotalSpace'] - $CIDRAM['FE']['FreeSpace'];
+
+    $CIDRAM['FormatFilesize']($CIDRAM['FE']['FreeSpace']);
+    $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalSpace']);
+    $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalUsage']);
 
     /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);

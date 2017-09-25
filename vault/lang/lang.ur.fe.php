@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.24).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فا�
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ڈسک استعمال: ';
+$CIDRAM['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
+$CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $CIDRAM['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
 $CIDRAM['lang']['label_results'] = 'نتائج (%s ان پٹ – %s مسترد – %s قبول – %s مل گیا – %s پیداوار):';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = 'اجزاء کا�
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'اجزاء کامیابی سے ان انسٹال.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'اجزاء کامیابی سے اپ ڈیٹ.';
 $CIDRAM['lang']['response_component_uninstall_error'] = 'جزو انسٹال کرنے کی کوشش کرتے ہوئے ایک خرابی واقع ہوئی.';
-$CIDRAM['lang']['response_component_update_error'] = 'جزو کو اپ ڈیٹ کرنے کی کوشش کرتے ہوئے ایک خرابی واقع ہوئی.';
 $CIDRAM['lang']['response_configuration_updated'] = 'کنفگریشن کامیابی سے اپ ڈیٹ.';
 $CIDRAM['lang']['response_deactivated'] = 'کامیابی کے ساتھ غیر فعال.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'غیر فعال کرنے میں ناکام ہو گیا!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
             <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – نام سے جانا توہین آمیز آئی پی ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ آئی پی ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
             <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ آئی پی / ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (PHP، HHVM، وغیرہ).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
         </ul>';

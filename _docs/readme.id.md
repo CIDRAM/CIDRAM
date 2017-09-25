@@ -172,6 +172,9 @@ Data | Deskripsi
 /vault/lang/lang.ar.cli.php | File Bahasa Arab untuk CLI.
 /vault/lang/lang.ar.fe.php | File Bahasa Arab untuk bagian depan.
 /vault/lang/lang.ar.php | File Bahasa Arab.
+/vault/lang/lang.bn.cli.php | File Bahasa Benggala untuk CLI.
+/vault/lang/lang.bn.fe.php | File Bahasa Benggala untuk bagian depan.
+/vault/lang/lang.bn.php | File Bahasa Benggala.
 /vault/lang/lang.de.cli.php | File Bahasa Jerman untuk CLI.
 /vault/lang/lang.de.fe.php | File Bahasa Jerman untuk bagian depan.
 /vault/lang/lang.de.php | File Bahasa Jerman.

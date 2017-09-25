@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.24).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
 $CIDRAM['lang']['label_branch'] = '分支最新稳定：';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_false_positive_risk'] = '假阳性风险：';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM使用的磁盘空间： ';
+$CIDRAM['lang']['label_fmgr_free_space'] = '可用磁盘空间： ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间： ';
+$CIDRAM['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
 $CIDRAM['lang']['label_os'] = '目前使用操作系统：';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
 $CIDRAM['lang']['label_results'] = '结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）：';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = '组件成功安�
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '组件成功卸载。';
 $CIDRAM['lang']['response_component_successfully_updated'] = '组件成功更新。';
 $CIDRAM['lang']['response_component_uninstall_error'] = '一个错误发生当尝试卸载组件。';
-$CIDRAM['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
 $CIDRAM['lang']['response_configuration_updated'] = '配置成功更新。';
 $CIDRAM['lang']['response_deactivated'] = '已成功停用。';
 $CIDRAM['lang']['response_deactivation_failed'] = '无法停用！';
@@ -265,4 +268,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org的复合阻止列表</a> – 显示有关ASN僵尸网络感染率的报告。​</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 维护已知的滥用IP数据库；它为IP检查和报告提供了一个API。​</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 维护已知垃圾邮件发送者的列表；有用为检查IP/ASN垃圾邮件活动。​</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';

@@ -172,6 +172,9 @@ CIDRAM должен автоматически блокировать нежел
 /vault/lang/lang.ar.cli.php | Арабском языковые файлы для CLI (Способ Командных Строк).
 /vault/lang/lang.ar.fe.php | Арабском языковые файлы для фронтенд.
 /vault/lang/lang.ar.php | Арабском языковые файлы.
+/vault/lang/lang.bn.cli.php | Бенгальском языковые файлы для CLI (Способ Командных Строк).
+/vault/lang/lang.bn.fe.php | Бенгальском языковые файлы для фронтенд.
+/vault/lang/lang.bn.php | Бенгальском языковые файлы.
 /vault/lang/lang.de.cli.php | Немецком языковые файлы для CLI (Способ Командных Строк).
 /vault/lang/lang.de.fe.php | Немецком языковые файлы для фронтенд.
 /vault/lang/lang.de.php | Немецком языковые файлы.

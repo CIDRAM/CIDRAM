@@ -172,6 +172,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/lang/lang.ar.cli.php | CLI 아랍어 언어 데이터.
 /vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
 /vault/lang/lang.ar.php | 아랍어 언어 데이터.
+/vault/lang/lang.bn.cli.php | CLI 벵골어 언어 데이터.
+/vault/lang/lang.bn.fe.php | 프론트 엔드 벵골어 언어 데이터.
+/vault/lang/lang.bn.php | CLI 벵골어 언어 데이터.
 /vault/lang/lang.de.cli.php | CLI 독일어 언어 데이터.
 /vault/lang/lang.de.fe.php | 프론트 엔드 독일어 언어 데이터.
 /vault/lang/lang.de.php | 독일어 언어 데이터.

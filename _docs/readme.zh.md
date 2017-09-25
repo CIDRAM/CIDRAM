@@ -173,6 +173,9 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 /vault/lang/lang.ar.cli.php | 阿拉伯文CLI语言数据。
 /vault/lang/lang.ar.fe.php | 阿拉伯文前端语言数据。
 /vault/lang/lang.ar.php | 阿拉伯文语言数据。
+/vault/lang/lang.bn.cli.php | 孟加拉文CLI语言数据。
+/vault/lang/lang.bn.fe.php | 孟加拉文前端语言数据。
+/vault/lang/lang.bn.php | 孟加拉文语言数据。
 /vault/lang/lang.de.cli.php | 德文CLI语言数据。
 /vault/lang/lang.de.fe.php | 德文前端语言数据。
 /vault/lang/lang.de.php | 德文语言数据。

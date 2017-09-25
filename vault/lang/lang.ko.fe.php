@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.24).
+ * This file: Korean language data for the front-end (last modified: 2017.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -122,6 +122,10 @@ $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $CIDRAM['lang']['label_branch'] = '분기 최신 안정 :';
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전:';
 $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
+$CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM 디스크 사용 : ';
+$CIDRAM['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
+$CIDRAM['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
+$CIDRAM['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제:';
 $CIDRAM['lang']['label_php'] = '사용 된 PHP 버전:';
 $CIDRAM['lang']['label_results'] = '결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된) :';
@@ -163,7 +167,6 @@ $CIDRAM['lang']['response_component_successfully_installed'] = '구성 요소의
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '구성 요소의 제거는 성공했습니다.';
 $CIDRAM['lang']['response_component_successfully_updated'] = '구성 요소의 업데이트에 성공했습니다!';
 $CIDRAM['lang']['response_component_uninstall_error'] = '구성 요소 제거하는 동안 오류가 발생했습니다.';
-$CIDRAM['lang']['response_component_update_error'] = '구성 요소를 업데이트하는 동안 오류가 발생했습니다.';
 $CIDRAM['lang']['response_configuration_updated'] = '구성 업데이트가 성공했습니다.';
 $CIDRAM['lang']['response_deactivated'] = '비활성화했습니다.';
 $CIDRAM['lang']['response_deactivation_failed'] = '비활성화에 실패했습니다!';
@@ -264,4 +267,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org의 복합 차단 목록</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 알려진 스패머 목록을 유지하는; IP/ASN 스팸 활동의 확인에 도움이됩니다.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (PHP, HHVM, 기타).</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
         </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.25).
+ * This file: Turkish language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
+$CIDRAM['lang']['label_hide'] = 'Saklamak';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $CIDRAM['lang']['label_results'] = 'Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
+$CIDRAM['lang']['label_show'] = 'Göstermek';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
 $CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';

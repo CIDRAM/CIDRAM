@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.09.25).
+ * This file: Russian language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM Использование д
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Свободное место на диске: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Все использование диска: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
+$CIDRAM['lang']['label_hide'] = 'Скрывать';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_php'] = 'Используемая версия PHP:';
 $CIDRAM['lang']['label_results'] = 'Результаты (%s вход – %s отвергнуто – %s принято – %s слиты – %s вывод):';
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
+$CIDRAM['lang']['label_show'] = 'Показать';
 $CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
 $CIDRAM['lang']['label_unstable'] = 'Последние нестабильный:';

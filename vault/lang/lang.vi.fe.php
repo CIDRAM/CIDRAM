@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.25).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bở
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
+$CIDRAM['lang']['label_hide'] = 'Che giấu';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
+$CIDRAM['lang']['label_show'] = 'Hiển thị';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $CIDRAM['lang']['label_unstable'] = 'Không ổn định mới nhất:';

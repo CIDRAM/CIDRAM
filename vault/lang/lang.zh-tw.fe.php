@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.25).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM使用的磁盤空間： ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '可用磁盤空間： ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間： ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
+$CIDRAM['lang']['label_hide'] = '隱藏';
 $CIDRAM['lang']['label_os'] = '目前使用操作系統：';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
 $CIDRAM['lang']['label_results'] = '結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
+$CIDRAM['lang']['label_show'] = '顯示';
 $CIDRAM['lang']['label_stable'] = '最新穩定：';
 $CIDRAM['lang']['label_sysinfo'] = '系統信息：';
 $CIDRAM['lang']['label_unstable'] = '最新不穩定：';

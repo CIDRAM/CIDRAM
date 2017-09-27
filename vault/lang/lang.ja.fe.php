@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.09.25).
+ * This file: Japanese language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAMディスク使用量： ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
+$CIDRAM['lang']['label_hide'] = '隠す';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_php'] = '使用されたPHPバージョン：';
 $CIDRAM['lang']['label_results'] = '結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）：';
 $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
+$CIDRAM['lang']['label_show'] = '表示する';
 $CIDRAM['lang']['label_stable'] = '最新安定：';
 $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $CIDRAM['lang']['label_unstable'] = '最新不安定：';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.09.25).
+ * This file: Indonesian language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Penggunaan disk CIDRAM: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Ruang disk kosong: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
+$CIDRAM['lang']['label_hide'] = 'Menyembunyikan';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_php'] = 'Versi PHP digunakan:';
 $CIDRAM['lang']['label_results'] = 'Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
+$CIDRAM['lang']['label_show'] = 'Menunjukkan';
 $CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
 $CIDRAM['lang']['label_unstable'] = 'Terbaru tidak stabil:';

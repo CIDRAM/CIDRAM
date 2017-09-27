@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.25).
+ * This file: Functions file (last modified: 2017.09.27).
  */
 
 /**
@@ -1638,7 +1638,7 @@ $CIDRAM['Arrayify'] = function (&$Input) {
 };
 
 /**
- * Used by the File Manager to generate a list of the files contained in a
+ * Used by the file manager to generate a list of the files contained in a
  * working directory (normally, the vault).
  *
  * @param string $Base The path to the working directory.
@@ -1668,6 +1668,35 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
             $Arr[$Key]['Filesize'] = filesize($Item);
             if (isset($CIDRAM['FE']['TotalSize'])) {
                 $CIDRAM['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
+            }
+            if (isset($CIDRAM['Components']['Components'])) {
+                $ThisNameFixed = str_replace("\\", '/', $ThisName);
+                if (isset($CIDRAM['Components']['Files'][$ThisNameFixed])) {
+                    if (!empty($CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]])) {
+                        $Component = $CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]];
+                        if (is_array($Component)) {
+                            $CIDRAM['IsolateL10N']($Component, $CIDRAM['Config']['general']['lang']);
+                        }
+                    } else {
+                        $Component = $CIDRAM['Components']['Files'][$ThisNameFixed];
+                    }
+                    $Component = $CIDRAM['lang']['field_component'] . ' – ' . $Component;
+                } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
+                    $Component = $CIDRAM['lang']['link_config'];
+                } else {
+                    $LastFour = strtolower(substr($ThisNameFixed, -4));
+                    if ($LastFour === '.log' || $LastFour === '.txt') {
+                        $Component = $CIDRAM['lang']['link_logs'];
+                    } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
+                        $Component = $CIDRAM['ParseVars'](array('EXT' => 'YAML/DAT'), $CIDRAM['lang']['field_filetype_info']);
+                    } else {
+                        $Component = $CIDRAM['lang']['field_filetype_unknown'];
+                    }
+                }
+                if (!isset($CIDRAM['Components']['Components'][$Component])) {
+                    $CIDRAM['Components']['Components'][$Component] = 0;
+                }
+                $CIDRAM['Components']['Components'][$Component] += $Arr[$Key]['Filesize'];
             }
             if (($ExtDel = strrpos($Item, '.')) !== false) {
                 $Ext = strtoupper(substr($Item, $ExtDel + 1));
@@ -1745,6 +1774,24 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
         }
     }
     return $Arr;
+};
+
+/**
+ * Used by the file manager and the updates pages to fetch the components list.
+ *
+ * @param string $Base The path to the working directory.
+ * @param array $Arr The array to use for rendering components file YAML data.
+ */
+$CIDRAM['FetchComponentsLists'] = function ($Base, &$Arr) use (&$CIDRAM) {
+    $Files = new DirectoryIterator($Base);
+    foreach ($Files as $ThisFile) {
+        if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|ya?ml)$/i', $ThisFile)) {
+            $Data = $CIDRAM['ReadFile']($Base . $ThisFile);
+            if (substr($Data, 0, 4) === "---\n" && ($EoYAML = strpos($Data, "\n\n")) !== false) {
+                $CIDRAM['YAML'](substr($Data, 4, $EoYAML - 4), $Arr);
+            }
+        }
+    }
 };
 
 /**

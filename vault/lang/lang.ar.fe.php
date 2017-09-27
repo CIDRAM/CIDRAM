@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.25).
+ * This file: Arabic language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM إستخدام القرص: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
+$CIDRAM['lang']['label_hide'] = 'إخفائه';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $CIDRAM['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $CIDRAM['lang']['label_results'] = 'النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
+$CIDRAM['lang']['label_show'] = 'اظهره';
 $CIDRAM['lang']['label_stable'] = 'أحدث مستقرة:';
 $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
 $CIDRAM['lang']['label_unstable'] = 'أحدث غير مستقرة:';

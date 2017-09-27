@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.09.25).
+ * This file: German language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM Speicherplatz verwendet: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Speicherplatz verfügbar: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Speicherplatz verwendet insgesamt: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Speicherplatz insgesamt: ';
+$CIDRAM['lang']['label_hide'] = 'Verstecke';
 $CIDRAM['lang']['label_os'] = 'Betriebssystem verwendet:';
 $CIDRAM['lang']['label_php'] = 'PHP-Version verwendet:';
 $CIDRAM['lang']['label_results'] = 'Ergebnisse (%s eingegeben – %s abgelehnt – %s akzeptiert – %s fusionierte – %s ausgegeben):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI verwendet:';
+$CIDRAM['lang']['label_show'] = 'Zeig';
 $CIDRAM['lang']['label_stable'] = 'Neueste stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'System Information:';
 $CIDRAM['lang']['label_unstable'] = 'Neueste instabil:';

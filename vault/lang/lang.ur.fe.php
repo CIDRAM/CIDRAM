@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.25).
+ * This file: Urdu language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
+$CIDRAM['lang']['label_hide'] = 'چھپائیں';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $CIDRAM['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
 $CIDRAM['lang']['label_results'] = 'نتائج (%s ان پٹ – %s مسترد – %s قبول – %s مل گیا – %s پیداوار):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
+$CIDRAM['lang']['label_show'] = 'دکھائیں';
 $CIDRAM['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
 $CIDRAM['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';

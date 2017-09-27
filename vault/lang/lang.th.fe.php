@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.09.25).
+ * This file: Thai language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'เนื้อที่ดิสก
 $CIDRAM['lang']['label_fmgr_free_space'] = 'พื้นที่ว่างในดิสก์: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ดิสก์ที่ใช้ทั้งหมด: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
+$CIDRAM['lang']['label_hide'] = 'ปิดบัง';
 $CIDRAM['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $CIDRAM['lang']['label_php'] = 'รุ่น PHP ในการใช้งาน:';
 $CIDRAM['lang']['label_results'] = 'ผล (%s ใน – %s ปฏิเสธ – %s ได้รับการยอมรับ – %s รวม – %s ออก):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
+$CIDRAM['lang']['label_show'] = 'แสดง';
 $CIDRAM['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $CIDRAM['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
 $CIDRAM['lang']['label_unstable'] = 'ไม่เสถียรล่าสุด:';

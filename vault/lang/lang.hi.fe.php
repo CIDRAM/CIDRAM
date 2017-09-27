@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.09.25).
+ * This file: Hindi language data for the front-end (last modified: 2017.09.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,10 +126,12 @@ $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM डिस्क उपयो�
 $CIDRAM['lang']['label_fmgr_free_space'] = 'खाली डिस्क स्पेस: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'कुल डिस्क उपयोग: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'कुल डिस्क स्पेस: ';
+$CIDRAM['lang']['label_hide'] = 'छिपाना';
 $CIDRAM['lang']['label_os'] = 'ऑपरेटिंग सिस्टम का इस्तेमाल किया:';
 $CIDRAM['lang']['label_php'] = 'PHP संस्करण का इस्तेमाल किया:';
 $CIDRAM['lang']['label_results'] = 'परिणाम (%s में प्रवेश किया – %s अस्वीकृत – %s स्वीकृत – %s मर्ज किए गए – %s आउटपुट किया):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI का इस्तेमाल किया:';
+$CIDRAM['lang']['label_show'] = 'दिखाना';
 $CIDRAM['lang']['label_stable'] = 'नवीनतम स्थिर:';
 $CIDRAM['lang']['label_sysinfo'] = 'प्रणाली की जानकारी:';
 $CIDRAM['lang']['label_unstable'] = 'नवीनतम अस्थिर:';

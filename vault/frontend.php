@@ -1152,6 +1152,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     );
                     $CIDRAM['Count'] = count($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']);
                     $CIDRAM['RemoteFiles'] = array();
+                    $CIDRAM['IgnoredFiles'] = array();
                     $CIDRAM['Rollback'] = false;
                     /** Write new and updated files and directories. */
                     for ($CIDRAM['Iterate'] = 0; $CIDRAM['Iterate'] < $CIDRAM['Count']; $CIDRAM['Iterate']++) {
@@ -1163,6 +1164,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         if ($CIDRAM['Rollback']) {
                             if (
                                 isset($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']]) &&
+                                !isset($CIDRAM['IgnoredFiles'][$CIDRAM['ThisFileName']]) &&
                                 is_readable($CIDRAM['Vault'] . $CIDRAM['ThisFileName'])
                             ) {
                                 $CIDRAM['Components']['BytesAdded'] -= filesize($CIDRAM['Vault'] . $CIDRAM['ThisFileName']);
@@ -1175,13 +1177,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                             continue;
                         }
                         if (
-                            (
-                                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
-                                !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]) && (
-                                    $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']] ===
-                                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]
-                                )
-                            ) ||
+                            !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]) &&
+                            !empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]) && (
+                                $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']] ===
+                                $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$CIDRAM['Iterate']]
+                            )
+                        ) {
+                            $CIDRAM['IgnoredFiles'][$CIDRAM['ThisFileName']] = true;
+                            continue;
+                        }
+                        if (
                             empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From'][$CIDRAM['Iterate']]) ||
                             !($CIDRAM['ThisFile'] = $CIDRAM['Request'](
                                 $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From'][$CIDRAM['Iterate']]
@@ -1216,7 +1221,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                             $CIDRAM['Rollback'] = true;
                             continue;
                         }
-                        $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = true;
                         $CIDRAM['ThisName'] = $CIDRAM['ThisFileName'];
                         $CIDRAM['ThisPath'] = $CIDRAM['Vault'];
                         while (strpos($CIDRAM['ThisName'], '/') !== false || strpos($CIDRAM['ThisName'], "\\") !== false) {
@@ -1237,7 +1241,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         }
                         $CIDRAM['Components']['BytesAdded'] += strlen($CIDRAM['ThisFile']);
                         $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['ThisFileName'], 'w');
-                        fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
+                        $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
+                        $CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] = ($CIDRAM['RemoteFiles'][$CIDRAM['ThisFileName']] !== false);
                         fclose($CIDRAM['Handle']);
                         $CIDRAM['ThisFile'] = '';
                     }
@@ -1264,7 +1269,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                                     if (file_exists($CIDRAM['Vault'] . $ThisFile . '.rollback')) {
                                         unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
                                     }
-                                    if (!isset($CIDRAM['RemoteFiles'][$ThisFile]) && file_exists($CIDRAM['Vault'] . $ThisFile)) {
+                                    if (
+                                        !isset($CIDRAM['RemoteFiles'][$ThisFile]) &&
+                                        !isset($CIDRAM['IgnoredFiles'][$ThisFile]) &&
+                                        file_exists($CIDRAM['Vault'] . $ThisFile)
+                                    ) {
                                         $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
                                         unlink($CIDRAM['Vault'] . $ThisFile);
                                         $CIDRAM['DeleteDirectory']($ThisFile);
@@ -1336,6 +1345,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['FileData'],
                 $CIDRAM['ThisFileName'],
                 $CIDRAM['Rollback'],
+                $CIDRAM['IgnoredFiles'],
                 $CIDRAM['RemoteFiles'],
                 $CIDRAM['ThisReannotate']
             );

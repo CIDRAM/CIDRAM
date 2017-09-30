@@ -566,21 +566,23 @@ recaptcha:
 
 
 # ASN 45271 ("Idea Cellular Limited").
-# %Listed, CleanTalk.org: 0.25%.
-# %Listed, abuseat.org (CBL-Listed): 9.39%.
-# Stop Forum Spam (SFS) listings: 242.
-# Updated: 2017.04.26
+# %Listed, CleanTalk.org: 0.19%.
+# %Listed, abuseat.org (CBL-Listed): 22.14%.
+# Stop Forum Spam (SFS) listings: 200.
+# Updated: 2017.09.30
 
-2402:8100::/48 Deny Spam
 2402:8100:2::/48 Deny Spam
 2402:8100:5::/48 Deny Spam
-2402:8100:6::/47 Deny Spam
-2402:8100:2000::/42 Deny Spam
-2402:8100:2800::/42 Deny Spam
-2402:8100:3010::/45 Deny Spam
-2402:8100:3020::/45 Deny Spam
+2402:8100:b::/48 Deny Spam
+2402:8100:2000::/41 Deny Spam
+2402:8100:2080::/42 Deny Spam
+2402:8100:2800::/41 Deny Spam
+2402:8100:3010::/44 Deny Spam
+2402:8100:3020::/44 Deny Spam
+2402:8100:3848::/45 Deny Spam
+2402:8100:3850::/45 Deny Spam
 2402:8100:38c0::/42 Deny Spam
-2402:8100:3940::/42 Deny Spam
+2402:8100:3900::/41 Deny Spam
 Tag: Idea Cellular
 ---
 recaptcha:
@@ -799,11 +801,11 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.33%.
-# %Listed, CleanTalk.org: 25.25%.
-# %Listed, abuseat.org (CBL-Listed): 0.36%.
-# Stop Forum Spam (SFS) listings: 81,548.
-# Updated: 2016.09.14 / Checked: 2017.04.26
+# %Listed, Google Malware Dashboard: 1.98%.
+# %Listed, CleanTalk.org: 24.97%.
+# %Listed, abuseat.org (CBL-Listed): 0.27%.
+# Stop Forum Spam (SFS) listings: 56,910.
+# Updated: 2016.09.14 / Checked: 2017.09.30
 
 2408:8000::/24 Deny Generic
 Tag: China Backbone 4837
@@ -1037,17 +1039,89 @@ recaptcha:
  enabled: true
 
 
-# ASN 8402 ("OJSC Vimpelcom"). Note: Not "PJSC Vimpelcom" (just dealing with the one ASN at the moment).
-# %Listed, Google Malware Dashboard: 0.48%.
-# %Listed, CleanTalk.org: 15.70%.
-# %Listed, abuseat.org (CBL-Listed): 0.19%.
-# Stop Forum Spam (SFS) listings: 37,405.
+# "PJSC Rostelecom".
+# Known ASNs: 3239, 5573, 6828, 6863, 8382, 8443, 8557, 8568, 8570, 8594, 8675, 8828, 8997, 12332, 12380, 12389,
+#   12683, 12705, 12730, 12846, 13056, 13118, 15468, 15759, 16054, 16287, 16301, 20519, 21017, 21378, 21479, 21487,
+#   24665, 24699, 24783, 24789, 24810, 24810, 24873, 25436, 25490, 25515, 28719, 28860, 29456, 30749, 31094, 31185,
+#   31353, 31496, 33887, 33934, 34137, 34168, 34205, 34267, 34584, 34875, 34974, 35125, 35154, 35177, 35389, 35400,
+#   35516, 35531, 38951, 38985, 39054, 39229, 39407, 41134, 42091, 42362, 42548, 42610, 43053, 43132, 43574, 44237,
+#   44412, 44467, 47460, 56341, 56350, 196747.
+# Very large amount of spam originating from this provider, which we could prevent by blocking the CIDRs associated
+# with it. Unfortunately, it also happens to be the #1 largest ISP in Russia, and blocking it entirely would
+# effectively be blocking the majority of human visitors to access protected websites visiting from within Russia,
+# which we don't want to be doing by default (although, for those that don't mind this idea, the optional blocklist
+# provided by MacMathan for blocking Russia would be highly recommended as a means to do so). Aggregating such a large
+# number of different ASNs into the one same section generally isn't a good idea either, due to increased
+# maintainability costs. As a compromise, I propose including a section here for PJSC Rostelecom, but we'll only
+# include those ASNs/CIDRs that we can clearly identify as being significant sources of spam, significantly "toxic",
+# etc. As an additional safety measure to minimise false positives, the section is marked for use with reCAPTCHA. If
+# this strategy fails, we may upgrade this section to eventually include the entire announces aggregate anyhow, and
+# just include an entry in ours ignores file to ignore by default, until commented out or removed.
+
+# ASN 12389 ("PJSC Rostelecom").
+# Careful about "2002::/16" listing: Never include this in the aggregated list!
+# %Listed, Google Malware Dashboard: 1.02%.
+# %Listed, CleanTalk.org: 10.87%.
+# %Listed, abuseat.org (CBL-Listed): 1.61%.
+# Stop Forum Spam (SFS) listings: 256,861.
+# Updated: 2017.09.30
+
+2a00:1e88::/32 Deny Spam
+2a01:540:2000::/36 Deny Spam
+2a01:540:4000::/36 Deny Spam
+2a01:540:6000::/36 Deny Spam
+2a01:540:8000::/36 Deny Spam
+2a01:540:a000::/36 Deny Spam
+2a01:540:c000::/36 Deny Spam
+2a01:620::/32 Deny Spam
+Tag: PJSC Rostelecom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8402 ("OJSC Vimpelcom").
+# %Listed, Google Malware Dashboard: 0.41%.
+# %Listed, CleanTalk.org: 15.69%.
+# %Listed, abuseat.org (CBL-Listed): 0.13%.
+# Stop Forum Spam (SFS) listings: 38,466.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.06.08 / Checked: 2017.07.06
+# Updated: 2017.06.08 / Checked: 2017.09.30
 
 2a00:18c0::/32 Deny Generic
 Tag: OJSC Vimpelcom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 3216 ("PJSC Vimpelcom").
+# %Listed, Google Malware Dashboard: 2.57%.
+# %Listed, CleanTalk.org: 11.36%.
+# Stop Forum Spam (SFS) listings: 3,208.
+# Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
+# we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
+# Updated: 2017.09.30
+
+2a00:1248::/32 Deny Generic
+Tag: PJSC Vimpelcom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 31200 ("Novotelecom Ltd").
+# %Listed, Google Malware Dashboard: 2.41%.
+# %Listed, CleanTalk.org: 12.11%.
+# Stop Forum Spam (SFS) listings: 5,296.
+# Similarly to with the Rostelecom CIDRs, blocking the entirety of all the "Novotelecom" ASNs could be problematic.
+# Instead, we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events,
+# etc).
+# Updated: 2017.09.30
+
+2a00:7700::/32 Deny Generic
+Tag: Novotelecom Ltd
 ---
 recaptcha:
  enabled: true

@@ -368,6 +368,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 "default_algo"
 - 향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 가 필요합니다).
 
+"statistics"
+- CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).
+
 #### "signatures" (카테고리)
 서명 설정.
 
@@ -750,4 +753,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2017년 9월 21일.
+최종 업데이트 : 2017년 10월 3일.

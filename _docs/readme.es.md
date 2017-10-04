@@ -368,6 +368,9 @@ General configuración para CIDRAM.
 "default_algo"
 - Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP >= 7.2.0).
 
+"statistics"
+- ¿Seguir las estadísticas de uso de CIDRAM? True = Sí; False = No [Predefinido].
+
 #### "signatures" (Categoría)
 Configuración de firmas.
 
@@ -750,4 +753,4 @@ Valor | Utilizando
 ---
 
 
-Última Actualización: 21 Septiembre 2017 (2017.09.21).
+Última Actualización: 3 Octubre 2017 (2017.10.03).

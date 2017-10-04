@@ -369,6 +369,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，​沒有任何需求除�
 『default_algo』
 - 定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
 
+『statistics』
+- 跟踪CIDRAM使用情況統計？​True（真）=跟踪； False（假）=不跟踪【標準】。
+
 #### 『signatures』 （類別）
 簽名配置。
 
@@ -751,4 +754,4 @@ CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責�
 ---
 
 
-最後更新：2017年9月21日。
+最後更新：2017年10月3日。

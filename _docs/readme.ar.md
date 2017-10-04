@@ -425,6 +425,11 @@
  <li>يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP >= 7.2.0).</li>
 </ul></div>
 
+<div dir="rtl">"statistics"<br /></div>
+<div dir="rtl"><ul>
+ <li>هل تريد تتبع إحصاءات استخدام CIDRAM؟ True = نعم؛ False = لا [افتراضي].</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
@@ -853,4 +858,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 21 سبتمبر 2017 (2017.09.21).</div>
+<div dir="rtl">آخر تحديث: 3 اكتوبر 2017 (2017.10.03).</div>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.09.27).
+ * This file: English language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'How do you prefer numbers to be dis
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Attempt to verify requests from search engines? Verifying search engines ensures that they won\'t be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won\'t be banned. When not verified, it\'s possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
+$CIDRAM['lang']['config_general_statistics'] = 'Track CIDRAM usage statistics? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format used by CIDRAM. Additional options may be added upon request.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Your timezone.';
@@ -72,9 +73,9 @@ $CIDRAM['lang']['field_clear'] = 'Clear';
 $CIDRAM['lang']['field_clear_all'] = 'Clear all';
 $CIDRAM['lang']['field_clickable_link'] = 'Clickable link';
 $CIDRAM['lang']['field_component'] = 'Component';
-$CIDRAM['lang']['field_create_new_account'] = 'Create New Account';
+$CIDRAM['lang']['field_create_new_account'] = 'Create new account';
 $CIDRAM['lang']['field_deactivate'] = 'Deactivate';
-$CIDRAM['lang']['field_delete_account'] = 'Delete Account';
+$CIDRAM['lang']['field_delete_account'] = 'Delete account';
 $CIDRAM['lang']['field_delete_file'] = 'Delete';
 $CIDRAM['lang']['field_download_file'] = 'Download';
 $CIDRAM['lang']['field_edit_file'] = 'Edit';
@@ -100,7 +101,7 @@ $CIDRAM['lang']['field_permissions'] = 'Permissions';
 $CIDRAM['lang']['field_range'] = 'Range (First – Last)';
 $CIDRAM['lang']['field_rename_file'] = 'Rename';
 $CIDRAM['lang']['field_reset'] = 'Reset';
-$CIDRAM['lang']['field_set_new_password'] = 'Set New Password';
+$CIDRAM['lang']['field_set_new_password'] = 'Set new password';
 $CIDRAM['lang']['field_size'] = 'Total Size: ';
 $CIDRAM['lang']['field_size_bytes'] = 'bytes';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'Username';
 $CIDRAM['lang']['field_your_version'] = 'Your Version';
 $CIDRAM['lang']['header_login'] = 'Please log in to continue.';
 $CIDRAM['lang']['label_active_config_file'] = 'Active configuration file: ';
+$CIDRAM['lang']['label_banned'] = 'Requests banned';
+$CIDRAM['lang']['label_blocked'] = 'Requests blocked';
 $CIDRAM['lang']['label_branch'] = 'Branch latest stable:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM version used:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'False positive risk: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data and temporary files';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk usage: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Free disk space: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Total disk space: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $CIDRAM['lang']['label_hide'] = 'Hide';
 $CIDRAM['lang']['label_os'] = 'Operating system used:';
+$CIDRAM['lang']['label_other'] = 'Other';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'Active IPv4 signature files';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'Active IPv6 signature files';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'Active modules';
+$CIDRAM['lang']['label_other-Since'] = 'Start date';
 $CIDRAM['lang']['label_php'] = 'PHP version used:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA attempts';
 $CIDRAM['lang']['label_results'] = 'Results (%s in – %s rejected – %s accepted – %s merged – %s out):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI used:';
 $CIDRAM['lang']['label_show'] = 'Show';
 $CIDRAM['lang']['label_stable'] = 'Latest stable:';
 $CIDRAM['lang']['label_sysinfo'] = 'System information:';
+$CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Latest unstable:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP Tracking';
 $CIDRAM['lang']['link_logs'] = 'Logs';
+$CIDRAM['lang']['link_statistics'] = 'Statistics';
+$CIDRAM['lang']['link_textmode'] = 'Text formatting: <a href="%1$sfalse">Simple</a> – <a href="%1$strue">Fancy</a>';
 $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'No logfiles available.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!'
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Username field empty!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = 'Failed to rename!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'Statistics cleared.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracking cleared.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Component not installed!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'Hello, {username}.<br />The IP tracking pa
 $CIDRAM['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">documentation</a> for information about the various configuration directives and their purposes.';
+$CIDRAM['lang']['tip_statistics'] = 'Hello, {username}.<br />This page shows some basic usage statistics regarding your CIDRAM installation.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Note: Statistics tracking is currently disabled, but can be enabled via the configuration page.';
 $CIDRAM['lang']['tip_updates'] = 'Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logs';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistics';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';
 $CIDRAM['lang']['warning'] = 'Warnings:';
 $CIDRAM['lang']['warning_php_1'] = 'Your PHP version is not actively supported anymore! Updating is recommended!';

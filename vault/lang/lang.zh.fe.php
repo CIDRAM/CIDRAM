@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.09.27).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = '您如何喜欢显示数字？​�
 $CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】； False（假）=不是。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】； False（假）=搜索引擎验证是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。';
+$CIDRAM['lang']['config_general_statistics'] = '跟踪CIDRAM使用情况统计？​True（真）=跟踪； False（假）=不跟踪【标准】。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。​可根据要求增加附加选项。';
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
 $CIDRAM['lang']['config_general_timezone'] = '您的时区。';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = '用户名';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
+$CIDRAM['lang']['label_banned'] = '请求已禁止';
+$CIDRAM['lang']['label_blocked'] = '请求已阻止';
 $CIDRAM['lang']['label_branch'] = '分支最新稳定：';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_false_positive_risk'] = '假阳性风险：';
+$CIDRAM['lang']['label_fmgr_cache_data'] = '缓存数据和临时文件';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM使用的磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '可用磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = '组件更新元数据';
 $CIDRAM['lang']['label_hide'] = '隐藏';
 $CIDRAM['lang']['label_os'] = '目前使用操作系统：';
+$CIDRAM['lang']['label_other'] = '其他';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = '活动IPv4签名文件';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = '活动IPv6签名文件';
+$CIDRAM['lang']['label_other-ActiveModules'] = '活动模块';
+$CIDRAM['lang']['label_other-Since'] = '开始日期';
 $CIDRAM['lang']['label_php'] = '目前使用PHP版本：';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA尝试';
 $CIDRAM['lang']['label_results'] = '结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_show'] = '显示';
 $CIDRAM['lang']['label_stable'] = '最新稳定：';
 $CIDRAM['lang']['label_sysinfo'] = '系统信息：';
+$CIDRAM['lang']['label_total'] = '总';
 $CIDRAM['lang']['label_unstable'] = '最新不稳定：';
 $CIDRAM['lang']['link_accounts'] = '账户';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR计算器';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP聚合器';
 $CIDRAM['lang']['link_ip_test'] = 'IP测试';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP跟踪';
 $CIDRAM['lang']['link_logs'] = '日志';
+$CIDRAM['lang']['link_statistics'] = '统计';
+$CIDRAM['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">简单</a> – <a href="%1$strue">漂亮</a>';
 $CIDRAM['lang']['link_updates'] = '更新';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '选择的日志不存在！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '没有日志可用。';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = '密码输入是空的�
 $CIDRAM['lang']['response_login_username_field_empty'] = '用户名输入是空的！';
 $CIDRAM['lang']['response_no'] = '不是';
 $CIDRAM['lang']['response_rename_error'] = '无法改名！';
+$CIDRAM['lang']['response_statistics_cleared'] = '统计删除。';
 $CIDRAM['lang']['response_tracking_cleared'] = '已撤消跟踪。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '已经更新。';
 $CIDRAM['lang']['response_updates_not_installed'] = '组件不安装！';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = '你好，​{username}。​<br />IP跟踪
 $CIDRAM['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
+$CIDRAM['lang']['tip_statistics'] = '你好，​{username}。​<br />此页面显示了有关CIDRAM安装的一些基本使用统计信息。';
+$CIDRAM['lang']['tip_statistics_disabled'] = '注意：统计跟踪目前已被禁用，但可以通过配置页面启用。';
 $CIDRAM['lang']['tip_updates'] = '你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新CIDRAM的各种组件（核心包，​签名，​L10N文件，​等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 账户';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR计算器';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP测试';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登录';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日志';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – 统计';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
 $CIDRAM['lang']['warning'] = '警告：';
 $CIDRAM['lang']['warning_php_1'] = '您的PHP版本不再被积极支持！​推荐更新！';

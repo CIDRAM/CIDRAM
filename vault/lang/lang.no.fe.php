@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.09.29).
+ * This file: Norwegian language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Hvordan foretrekker du at tall vise
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Angir om beskyttelsen som normalt leveres av CIDRAM, skal brukes på frontenden. True = Ja [Standardverdi]; False = Nei.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Forsøk å bekrefte forespørsler fra søkemotorer? Verifiserende søkemotorer sikrer at de ikke vil bli utestengt som et resultat av å overskride infraksjonsgrensen (utestenging mot søkemotorer fra nettstedet ditt vil vanligvis ha en negativ effekt på søkemotorrangeringen din, SEO, osv). Når verifisert, kan søkemotorer bli blokkert som normalt, men vil ikke bli utestengt. Når det ikke er verifisert, er det mulig for dem å bli utestengt som et resultat av å overskride infraksjonsgrensen. Dess, søkemotor verifisering gir beskyttelse mot falske søkemotor forespørsler og mot potensielt skadelige enheter som later til å være søkemotorer (slike forespørsler vil bli blokkert når søkemotor verifisering er aktivert). True = Aktiver søkemotor verifisering [Standardverdi]; False = Deaktiver søkemotor verifisering.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom.';
+$CIDRAM['lang']['config_general_statistics'] = 'Spor CIDRAM bruksstatistikk? True = Ja; False = Nei [Standardverdi].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidssone forskjøvet i minutter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidssone.';
@@ -119,19 +120,30 @@ $CIDRAM['lang']['field_username'] = 'Brukernavn';
 $CIDRAM['lang']['field_your_version'] = 'Din Versjon';
 $CIDRAM['lang']['header_login'] = 'Vennligst logg inn for å fortsette.';
 $CIDRAM['lang']['label_active_config_file'] = 'Aktiv konfigurasjonsfil: ';
+$CIDRAM['lang']['label_banned'] = 'Forespørsler utestengt';
+$CIDRAM['lang']['label_blocked'] = 'Forespørsler blokkert';
 $CIDRAM['lang']['label_branch'] = 'Branch siste stabile:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versjon brukt:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risiko: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data og midlertidige filer';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM diskbruk: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Ledig diskplass: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskbruk: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskplass: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentoppdateringsmetadata';
 $CIDRAM['lang']['label_os'] = 'Operativsystem brukt:';
+$CIDRAM['lang']['label_other'] = 'Annen';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'Aktive IPv4 signaturfiler';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'Aktive IPv6 signaturfiler';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'Aktive moduler';
+$CIDRAM['lang']['label_other-Since'] = 'Startdato';
 $CIDRAM['lang']['label_php'] = 'PHP versjon brukt:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA forsøk';
 $CIDRAM['lang']['label_results'] = 'Resultater (%s i – %s avvist – %s akseptert – %s sammensmeltet – %s ut):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI brukt:';
 $CIDRAM['lang']['label_stable'] = 'Siste stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformasjon:';
+$CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Siste ustabil:';
 $CIDRAM['lang']['link_accounts'] = 'Kontoer';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Kalkulator';
@@ -143,6 +155,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP-Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'IP-Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Sporing';
 $CIDRAM['lang']['link_logs'] = 'Logger';
+$CIDRAM['lang']['link_statistics'] = 'Statistikk';
+$CIDRAM['lang']['link_textmode'] = 'Tekstformatering: <a href="%1$sfalse">Enkel</a> – <a href="%1$strue">Fancy</a>';
 $CIDRAM['lang']['link_updates'] = 'Oppdateringer';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Utvalgte loggfilen finnes ikke!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Ingen loggfiler tilgjengelig.';
@@ -186,6 +200,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Passord-felt tomt!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Brukernavn-felt tomt!';
 $CIDRAM['lang']['response_no'] = 'Nei';
 $CIDRAM['lang']['response_rename_error'] = 'Omdøpe mislyktes!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'Statistikk fjernet.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Sporing fjernet.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Allerede oppdatert.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponent ikke installert!';
@@ -232,6 +247,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />IP-sporing-siden l
 $CIDRAM['lang']['tip_login'] = 'Standard brukernavn: <span class="txtRd">admin</span> – Standard passord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Se <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål.';
+$CIDRAM['lang']['tip_statistics'] = 'Hallo, {username}.<br />Denne siden viser noen grunnleggende bruksstatistikk angående CIDRAM-installasjonen.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Merk: Statistikksporing er for øyeblikket deaktivert, men kan aktiveres via konfigurasjonssiden.';
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />Oppdateringssiden lar deg installere, avinstallere og oppdatere de forskjellige komponentene i CIDRAM (kjernepakken, signaturer, L10N filer, osv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Kontoer';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR-Kalkulator';
@@ -243,6 +260,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP-Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Sporing';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Innloggingssiden';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logger';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistikk';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Oppdateringer';
 $CIDRAM['lang']['warning'] = 'Advarsler:';
 $CIDRAM['lang']['warning_php_1'] = 'Din PHP-versjon støttes ikke lenger lenger! Oppdatering anbefales!';

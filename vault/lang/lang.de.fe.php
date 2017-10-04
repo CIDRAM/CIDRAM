@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.09.27).
+ * This file: German language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Wie willst du Nummern anzeigen? Wä
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Überprüfung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Überprüfung aktiviert ist). True = Suchmaschinen-Überprüfung aktivieren [Standardeinstellung]; False = Suchmaschinen-Überprüfung deaktivieren.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Anstatt die "Zugriff verweigert", sollte CIDRAM leise blockiert Zugriffsversuche umleiten? Wenn ja, geben Sie den Speicherort auf den blockierten Zugriffsversuche umleiten. Wenn nein, diese Variable leer lassen.';
+$CIDRAM['lang']['config_general_statistics'] = 'CIDRAM-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Das Datumsformat verwendet von CIDRAM. Zusätzliche Optionen können auf Anfrage hinzugefügt werden.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Zeitzonenversatz in Minuten.';
 $CIDRAM['lang']['config_general_timezone'] = 'Ihre Zeitzone.';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'Benutzername';
 $CIDRAM['lang']['field_your_version'] = 'Ihre Version';
 $CIDRAM['lang']['header_login'] = 'Bitte einloggen zum Fortfahren.';
 $CIDRAM['lang']['label_active_config_file'] = 'Aktive Konfigurationsdatei: ';
+$CIDRAM['lang']['label_banned'] = 'Anfragen verboten';
+$CIDRAM['lang']['label_blocked'] = 'Anfragen blockiert';
 $CIDRAM['lang']['label_branch'] = 'Branch neueste stabil:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-Version verwendet:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsch-Positive Risiko: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache-Daten und temporäre Dateien';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM Speicherplatz verwendet: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Speicherplatz verfügbar: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Speicherplatz verwendet insgesamt: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Speicherplatz insgesamt: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponente aktualisiert Metadaten';
 $CIDRAM['lang']['label_hide'] = 'Verstecke';
 $CIDRAM['lang']['label_os'] = 'Betriebssystem verwendet:';
+$CIDRAM['lang']['label_other'] = 'Andere';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'Aktive IPv4 Signaturdateien';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'Aktive IPv6 Signaturdateien';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'Aktive Module';
+$CIDRAM['lang']['label_other-Since'] = 'Anfangsdatum';
 $CIDRAM['lang']['label_php'] = 'PHP-Version verwendet:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA versucht';
 $CIDRAM['lang']['label_results'] = 'Ergebnisse (%s eingegeben – %s abgelehnt – %s akzeptiert – %s fusionierte – %s ausgegeben):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI verwendet:';
 $CIDRAM['lang']['label_show'] = 'Zeig';
 $CIDRAM['lang']['label_stable'] = 'Neueste stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'System Information:';
+$CIDRAM['lang']['label_total'] = 'Gesamt';
 $CIDRAM['lang']['label_unstable'] = 'Neueste instabil:';
 $CIDRAM['lang']['link_accounts'] = 'Konten';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Rechner';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP-Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'IP-Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Tracking';
 $CIDRAM['lang']['link_logs'] = 'Protokolldateien';
+$CIDRAM['lang']['link_statistics'] = 'Statistiken';
+$CIDRAM['lang']['link_textmode'] = 'Textformatierung: <a href="%1$sfalse">Einfach</a> – <a href="%1$strue">Schick</a>';
 $CIDRAM['lang']['link_updates'] = 'Aktualisierungen';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei existiert nicht!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Benutzername-Feld leer!';
 $CIDRAM['lang']['response_no'] = 'Nein';
 $CIDRAM['lang']['response_rename_error'] = 'Umbenennung-Fehler!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'Statistiken gelöscht.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracking gelöscht.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Schon aktuell.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponente nicht installiert!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Auf der Seite IP-T
 $CIDRAM['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Siehe die <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.de.md#SECTION6">Dokumentation</a> für Informationen über den verschiedenen Konfigurationseinstellungen und ihren Zwecken.';
+$CIDRAM['lang']['tip_statistics'] = 'Hallo, {username}.<br />Diese Seite zeigt einige grundlegende Nutzungsstatistiken zu Ihrer CIDRAM-Installation.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Hinweis: Die Statistikverfolgung ist derzeit deaktiviert, aber kann über die Konfigurationsseite aktiviert werden.';
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von CIDRAM (das Kernpaket, Signaturen, L10N-Dateien, u.s.w.).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Konten';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR-Rechner';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP-Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Einloggen';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Protokolldateien';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistiken';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Aktualisierungen';
 $CIDRAM['lang']['warning'] = 'Warnungen:';
 $CIDRAM['lang']['warning_php_1'] = 'Ihre PHP-Version wird nicht mehr aktiv unterstützt! Aktualisierung wird empfohlen!';

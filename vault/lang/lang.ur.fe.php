@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.09.27).
+ * This file: Urdu language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'اس بات کی وضاحت ک
 $CIDRAM['lang']['config_general_default_dns'] = 'میزبان نام لک اپ کے لئے استعمال کرنے کے لئے DNS سرورز کی کوما ختم ہونے والی فہرست. پہلے سے طے شدہ = "8.8.8.8,8.8.4.4" (Google DNS). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'غیر فعال کریں CLI موڈ?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'سامنے کے آخر تک رسائی کو غیر فعال کریں?';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'غیر فعال ویب فونٹس? True (سچے) = جی ہاں; False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'غیر فعال ویب فونٹس? True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'اگر آپ چاہتے ہیں، تو آپ صارفین کو جب انہیں بلاک کر رہے ہیں تو دینے کے لئے ای میل ایڈریس کی فراہمی کر سکتے ہیں.وہ اسے استعمال آپ سے رابطہ کرنے کے لئے کر سکتے ہیں اگر وہ غلطی سے بلاک کر رہے ہیں. انتباہ: آپ جو بھی ای میل ایڈریس پر فراہمی کرتے ہیں، وہ یقینی طور پر سپےمبٹس اور کھرچنی کی طرف سے حاصل کئے جائیں گے. اس کی وجہ سے، اس کی سختی سے سفارش کی جاتی ہے کہ آپ ایک ای میل ایڈریس انتخاب کرتے ہیں جو ڈسپوزایبل یا غیر اہم ہے (یعنی.، آپ کی ذاتی یا کاروباری ای میل ایڈریس کا استعمال نہ کریں).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'آپ کو ای میل ایڈریس کو کس طرح صارفین کو پیش کرنا پسند ہے؟';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'کون ہیڈرز جب مسدود کرنے کی درخواستوں کے ساتھ جواب CIDRAM چاہئے?';
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'آپ کس طرح تعداد میں 
 $CIDRAM['lang']['config_general_protect_frontend'] = 'متعین کرتا ہے جو عام طور پر CIDRAM طرف سے فراہم کردہ تحفظات سامنے کے آخر پر لاگو کیا جانا چاہئے کہ آیا. True (سچے) = جی ہاں [پہلے سے طے شدہ]; False (جھوٹی) = نہیں.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'تلاش کے انجن کی طرف سے درخواستوں کی تصدیق کرنے کی کوشش؟ تلاش کے انجن کی توثیق کرنے سے کہ وہ خلاف ورزی کی حد (ویب سائٹ سے تلاش کے انجن پر پابندی عائد عام طور پر آپ کی تلاش کے انجن کی درجہ بندی، SEO، وغیرہ پر منفی اثر پڑے گا) تجاوز کا ایک نتیجہ کے طور پر پابندی عائد نہیں کیا جائے گا یقینی بناتا ہے. تصدیق کی جب، تلاش کے انجن معمول فی کے طور پر بلاک کیا جا سکتا ہے، لیکن پابندی عائد نہیں کی جائے گی. کی توثیق نہیں کی ہے، تو یہ ان کے لئے خلاف ورزی کی حد سے تجاوز کرنے کے نتیجے کے طور پر پابندی عائد کی جائے کرنے کے لئے ممکن ہے. اس کے علاوہ، تلاش کے انجن کی توثیق کی جعلی تلاش کے انجن کی درخواستوں کے خلاف اور (اس طرح کی درخواستوں کی تلاش کے انجن کی توثیق فعال ہے جب بلاک کر دیا جائے گا) سرچ انجن کے طور پر ویش ممکنہ طور پر بدنیتی پر مبنی اداروں کے خلاف تحفظ فراہم کرتا ہے. True (سچے) = تلاش کے انجن کی توثیق فعال [پہلے سے طے شدہ]; False (جھوٹی) = غیر فعال تلاش کے انجن کی توثیق کی.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'خاموشی CIDRAM چاہئے "رسائی نہیں ہوئی" کے صفحے کی نمائش سے بلاک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے بجائے؟ ہاں تو، کو بلاک کر تک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے محل وقوع کی وضاحت. کوئی تو اس متغیر خالی چھوڑ.';
+$CIDRAM['lang']['config_general_statistics'] = 'CIDRAM استعمال کے اعداد و شمار کو ٹریک کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استعمال کی تاریخوں کا فارم. اضافی اختیارات درخواست پر شامل کیا جا سکتا ہے.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
 $CIDRAM['lang']['config_general_timezone'] = 'آپ کے ٹائم زون.';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'صارف کا نام';
 $CIDRAM['lang']['field_your_version'] = 'آپ کے ورژن';
 $CIDRAM['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
+$CIDRAM['lang']['label_banned'] = 'کی درخواستیں کالعدم';
+$CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'مفت ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $CIDRAM['lang']['label_hide'] = 'چھپائیں';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
+$CIDRAM['lang']['label_other'] = 'دیگر';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'فعال IPv4 دستخط فائلیں';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'فعال IPv6 دستخط فائلیں';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'فعال ماڈیولز';
+$CIDRAM['lang']['label_other-Since'] = 'شروع کرنے کی تاریخ';
 $CIDRAM['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'کوششیں reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'نتائج (%s ان پٹ – %s مسترد – %s قبول – %s مل گیا – %s پیداوار):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $CIDRAM['lang']['label_show'] = 'دکھائیں';
 $CIDRAM['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
+$CIDRAM['lang']['label_total'] = 'تمام';
 $CIDRAM['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR کیلکولیٹر';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP مجموعی طور پر';
 $CIDRAM['lang']['link_ip_test'] = 'IP ٹیسٹ';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP ٹریکنگ';
 $CIDRAM['lang']['link_logs'] = 'لاگز';
+$CIDRAM['lang']['link_statistics'] = 'اعداد و شمار';
+$CIDRAM['lang']['link_textmode'] = 'ٹیکسٹ فارمیٹنگ: <a href="%1$sfalse">سادہ</a> – <a href="%1$strue">خوبصورت</a>';
 $CIDRAM['lang']['link_updates'] = 'تازہ ترین معلومات کے';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'منتخب شدہ لاگ فائل موجود نہیں ہے!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'کوئی لاگ مسلیں دستیاب.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدا
 $CIDRAM['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
 $CIDRAM['lang']['response_no'] = 'نہیں';
 $CIDRAM['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'صاف کر دیا ٹریکنگ.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'پہلے سے اپ ڈیٹ.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'اجزاء انسٹال نہیں!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'ہیلو، {username}.<br />IP باخبر 
 $CIDRAM['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ur.md#SECTION6">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
+$CIDRAM['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفحہ آپ کے CIDRAM کی تنصیب کے لئے کچھ استعمال کے اعداد و شمار ظاہر کرتا ہے.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $CIDRAM['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو نصب کی اجازت دیتا ہے کے لئے، انسٹال، اور CIDRAM (بنیادی پیکج، دستخط، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – اکاؤنٹس';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR کیلکولیٹر';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP ٹیسٹ';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP ٹریکنگ';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – لاگ ان';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – لاگز';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – اعداد و شمار';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – تازہ ترین معلومات کے';
 $CIDRAM['lang']['warning'] = 'انتباہ:';
 $CIDRAM['lang']['warning_php_1'] = 'آپ کے PHP ورژن اب فعال طور پر معاون نہیں ہے! اپ ڈیٹ کرنے کی سفارش کی گئی ہے!';

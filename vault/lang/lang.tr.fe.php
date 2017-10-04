@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.09.27).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini na
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Arama motorlarından gelen istekleri doğrulamaya çalışın? Arama motorlarını doğrulamak, ihlal sınırını aşmanın bir sonucu olarak yasaklanmamasını sağlar (sitenizdeki arama motorlarını yasaklamak genellikle arama motoru sıralaması, SEO, vb. üzerinde olumsuz bir etki yapar). Doğrulandığı zaman, arama motorları normal olarak engellenebilir, ancak yasaklanmaz. Doğrulanmadığı zaman ise, ihlal sınırının aşılmasının bir sonucu olarak yasaklanmaları mümkündür. Buna ek olarak, arama motoru doğrulaması, sahte arama motoru isteklerine ve arama motorları kılığına bürünen potansiyel olarak kötü amaçlı varlıklara karşı koruma sağlar (arama motoru doğrulama etkinleştirildiğinde bu tür istekler engellenir). Doğru/True = Arama motoru doğrulamasını etkinleştir [Varsayılan]; Yanlış/False = Arama motoru doğrulamasını devre dışı bırakın.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın.';
+$CIDRAM['lang']['config_general_statistics'] = 'CIDRAM kullanım istatistiklerini takip et? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Dakika cinsinden zaman dilimi farkı.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zaman diliminiz.';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'Kullanıcı adı';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$CIDRAM['lang']['label_banned'] = 'Yasaklı talepler';
+$CIDRAM['lang']['label_blocked'] = 'Engellenen talepler';
 $CIDRAM['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Boş disk alanı: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $CIDRAM['lang']['label_hide'] = 'Saklamak';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
+$CIDRAM['lang']['label_other'] = 'Diğer';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'Etkin IPv4 imza dosyaları';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'Etkin IPv6 imza dosyaları';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'Aktif modüller';
+$CIDRAM['lang']['label_other-Since'] = 'Başlangıç tarihi';
 $CIDRAM['lang']['label_php'] = 'Kullanılan PHP sürümü:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA denemeler';
 $CIDRAM['lang']['label_results'] = 'Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $CIDRAM['lang']['label_show'] = 'Göstermek';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
+$CIDRAM['lang']['label_total'] = 'Toplam';
 $CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Hesaplayıcı';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP Toplayıcı';
 $CIDRAM['lang']['link_ip_test'] = 'IP Testi';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP İzleme';
 $CIDRAM['lang']['link_logs'] = 'Kayıtlar';
+$CIDRAM['lang']['link_statistics'] = 'İstatistik';
+$CIDRAM['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse">Basit</a> – <a href="%1$strue">Süslü</a>';
 $CIDRAM['lang']['link_updates'] = 'Güncellemeler';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Seçilen günlük dosyası yok!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Parola alanı boş!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Kullanıcı adı alanı boş!';
 $CIDRAM['lang']['response_no'] = 'Hayır';
 $CIDRAM['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'İstatistikler temizlendi.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'İzleme temizlendi.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Zaten güncel.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Bileşen yüklü değil!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'Merhaba, {username}.<br />IP izleme sayfas
 $CIDRAM['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">belgelere</a> bakın.';
+$CIDRAM['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $CIDRAM['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Hesaplar';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Hesaplayıcı';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Testi';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP İzleme';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Giriş';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Kayıtlar';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – İstatistik';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Güncellemeler';
 $CIDRAM['lang']['warning'] = 'Uyarılar:';
 $CIDRAM['lang']['warning_php_1'] = 'PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.09.27).
+ * This file: Korean language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = '어떻게 숫자를 표시하는 �
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAM 의해 보통 제공되는 보호를 프론트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본값); False = 아니오.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default/기본 설정); False = 검색 엔진의 검증을 무효로한다.';
 $CIDRAM['lang']['config_general_silent_mode'] = '"액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다.';
+$CIDRAM['lang']['config_general_statistics'] = 'CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
 $CIDRAM['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $CIDRAM['lang']['config_general_timezone'] = '귀하의 시간대.';
@@ -91,7 +92,7 @@ $CIDRAM['lang']['field_install'] = '설치';
 $CIDRAM['lang']['field_ip_address'] = 'IP 주소';
 $CIDRAM['lang']['field_latest_version'] = '최신 버전';
 $CIDRAM['lang']['field_log_in'] = '로그인';
-$CIDRAM['lang']['field_new_name'] = '새 이름:';
+$CIDRAM['lang']['field_new_name'] = '새 이름 :';
 $CIDRAM['lang']['field_nonclickable_text'] = '클릭 할 수없는 텍스트';
 $CIDRAM['lang']['field_ok'] = '확인';
 $CIDRAM['lang']['field_options'] = '옵션';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = '사용자 이름';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
+$CIDRAM['lang']['label_banned'] = '금지 된 요청';
+$CIDRAM['lang']['label_blocked'] = '차단 된 요청';
 $CIDRAM['lang']['label_branch'] = '분기 최신 안정 :';
-$CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전:';
+$CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전 :';
 $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_free_space'] = '사용 가능한 디스크 공간 : ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $CIDRAM['lang']['label_hide'] = '숨기다';
-$CIDRAM['lang']['label_os'] = '사용 된 운영 체제:';
-$CIDRAM['lang']['label_php'] = '사용 된 PHP 버전:';
+$CIDRAM['lang']['label_os'] = '사용 된 운영 체제 :';
+$CIDRAM['lang']['label_other'] = '다른';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = '활성 IPv4 서명 파일';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = '활성 IPv6 서명 파일';
+$CIDRAM['lang']['label_other-ActiveModules'] = '활성 모듈';
+$CIDRAM['lang']['label_other-Since'] = '시작일';
+$CIDRAM['lang']['label_php'] = '사용 된 PHP 버전 :';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA 완료 시도';
 $CIDRAM['lang']['label_results'] = '결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된) :';
-$CIDRAM['lang']['label_sapi'] = '사용 된 SAPI:';
+$CIDRAM['lang']['label_sapi'] = '사용 된 SAPI :';
 $CIDRAM['lang']['label_show'] = '보여';
 $CIDRAM['lang']['label_stable'] = '최신 안정 :';
-$CIDRAM['lang']['label_sysinfo'] = '시스템 정보:';
+$CIDRAM['lang']['label_sysinfo'] = '시스템 정보 :';
+$CIDRAM['lang']['label_total'] = '합계';
 $CIDRAM['lang']['label_unstable'] = '최신 불안정 :';
 $CIDRAM['lang']['link_accounts'] = '계정';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR 계산기';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP 애그리게이터';
 $CIDRAM['lang']['link_ip_test'] = 'IP 테스트';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP 추적';
 $CIDRAM['lang']['link_logs'] = '로고스';
+$CIDRAM['lang']['link_statistics'] = '통계';
+$CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
 $CIDRAM['lang']['link_updates'] = '업데이트';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지 않습니다!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = '암호가 비어 있�
 $CIDRAM['lang']['response_login_username_field_empty'] = '사용자 이름 입력이 비어 있습니다!';
 $CIDRAM['lang']['response_no'] = '아니오';
 $CIDRAM['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
+$CIDRAM['lang']['response_statistics_cleared'] = '통계가 삭제되었습니다.';
 $CIDRAM['lang']['response_tracking_cleared'] = '추적이 취소되었습니다.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '이미 최신 상태입니다.';
 $CIDRAM['lang']['response_updates_not_installed'] = '구성 요소 설치되어 있지 않습니다!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = '안녕하세요, {username}.<br />IP 추�
 $CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
 $CIDRAM['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ko.md#SECTION6">문서를</a> 참조하십시오.';
+$CIDRAM['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다.';
+$CIDRAM['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 계정';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP 테스트';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP 추적';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 로그인';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 로고스';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – 통계';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 업데이트';
 $CIDRAM['lang']['warning'] = '경고 :';
 $CIDRAM['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극적으로 지원되지 않습니다! 업데이트하는 것이 좋습니다!';

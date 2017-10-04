@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.09.27).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'كيف تفضل الأرقام لي
 $CIDRAM['lang']['config_general_protect_frontend'] = 'يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. True = نعم [افتراضي]؛ False = لا.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'محاولة للتحقق من طلبات من محركات البحث؟ التحقق من محركات البحث يضمن أنها لن تكون محظورة نتيجة لتجاوز الحد مخالفة (منع محركات البحث من موقع الويب الخاص بك عادة ما يكون لها تأثير سلبي على محرك البحث الترتيب، كبار المسئولين الاقتصاديين، إلخ). عند تمكين التحقق، محركات البحث يمكن أن يكون قد تم حظره، ولكن ليس محظورة. عند تعطيل التحقق، أنها يمكن أن تكون محظورة إذا تجاوزت الحد مخالفة. بالإضافة إلى، التحقق محرك البحث يحمي ضد الكيانات الخبيثة يتنكر في محركات البحث (سيتم حجب هذه الطلبات). True = تمكين التحقق محرك البحث [افتراضي]؛ False = تعطيل التحقق محرك البحث.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا.';
+$CIDRAM['lang']['config_general_statistics'] = 'هل تريد تتبع إحصاءات استخدام CIDRAM؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'شكل التواريخ المستخدم من قبل CIDRAM. ويمكن إضافة خيارات إضافية عند الطلب.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'المنطقة الزمنية تعويض في غضون دقائق.';
 $CIDRAM['lang']['config_general_timezone'] = 'المنطقة الزمنية.';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'اسم المستخدم';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$CIDRAM['lang']['label_banned'] = 'طلبات محظورة ';
+$CIDRAM['lang']['label_blocked'] = 'الطلبات المحظورة';
 $CIDRAM['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM إستخدام القرص: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'مساحة حرة: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام القرص: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $CIDRAM['lang']['label_hide'] = 'إخفائه';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
+$CIDRAM['lang']['label_other'] = 'آخر';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'ملفات التوقيع IPv4 النشطة';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'ملفات التوقيع IPv6 النشطة';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'وحدات نشطة';
+$CIDRAM['lang']['label_other-Since'] = 'تاريخ البدء';
 $CIDRAM['lang']['label_php'] = 'النسخة PHP المستخدمة:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'محاولات reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $CIDRAM['lang']['label_show'] = 'اظهره';
 $CIDRAM['lang']['label_stable'] = 'أحدث مستقرة:';
 $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
+$CIDRAM['lang']['label_total'] = 'مجموع';
 $CIDRAM['lang']['label_unstable'] = 'أحدث غير مستقرة:';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR حاسبة';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'اختبار IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'التتبع IP';
 $CIDRAM['lang']['link_logs'] = 'سجلات';
+$CIDRAM['lang']['link_statistics'] = 'الإحصاء';
+$CIDRAM['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse">بسيط</a> – <a href="%1$strue">تهيئتها</a>';
 $CIDRAM['lang']['link_updates'] = 'التحديثات';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'لا سجلات متاح.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حق
 $CIDRAM['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $CIDRAM['lang']['response_no'] = 'لا';
 $CIDRAM['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'التتبع ألغيت.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'مرحبا، {username}.<br />التتبع
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ar.md#SECTION6">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
+$CIDRAM['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت CIDRAM.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $CIDRAM['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – حسابات';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR حاسبة';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – التتبع IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – سجلات';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – الإحصاء';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – التحديثات';
 $CIDRAM['lang']['warning'] = 'تحذيرات:';
 $CIDRAM['lang']['warning_php_1'] = 'لم يتم دعم إصدار PHP الخاص بك بشكل نشط بعد الآن! يوصى بالتحديث!';

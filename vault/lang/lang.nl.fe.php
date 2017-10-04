@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.09.27).
+ * This file: Dutch language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Hoe verkiest u nummers die worden w
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
+$CIDRAM['lang']['config_general_statistics'] = 'Track CIDRAM gebruiksstatistieken? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
 $CIDRAM['lang']['config_general_timezone'] = 'Uw tijdzone.';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $CIDRAM['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
+$CIDRAM['lang']['label_banned'] = 'Verzoeken verboden';
+$CIDRAM['lang']['label_blocked'] = 'Verzoeken geblokkeerd';
 $CIDRAM['lang']['label_branch'] = 'Branch laatste stabiele:';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-schijfgebruik: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Vrije schijfruimte: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $CIDRAM['lang']['label_hide'] = 'Verbergen';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
+$CIDRAM['lang']['label_other'] = 'Anders';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'Actieve IPv4 signature bestanden';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'Actieve IPv6 signature bestanden';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'Actieve modules';
+$CIDRAM['lang']['label_other-Since'] = 'Begin datum';
 $CIDRAM['lang']['label_php'] = 'PHP versie gebruikt:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA pogingen';
 $CIDRAM['lang']['label_results'] = 'Resultaten (%s in – %s verworpen – %s aanvaard – %s samengevoegd – %s uit):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI gebruikt:';
 $CIDRAM['lang']['label_show'] = 'Zien';
 $CIDRAM['lang']['label_stable'] = 'Laatste stabiele:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeem informatie:';
+$CIDRAM['lang']['label_total'] = 'Totaal';
 $CIDRAM['lang']['label_unstable'] = 'Laatste onstabiele:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP-Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Tracking';
 $CIDRAM['lang']['link_logs'] = 'Logbestanden';
+$CIDRAM['lang']['link_statistics'] = 'Statistieken';
+$CIDRAM['lang']['link_textmode'] = 'Tekstformaat: <a href="%1$sfalse">Eenvoudig</a> – <a href="%1$strue">Geformatteerde</a>';
 $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat niet!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Wachtwoord veld leeg!'
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
 $CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'Statistieken geannuleerd.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracking geannuleerd.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Component niet geïnstalleerd!';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Met het IP-Trackin
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Zie de <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.nl.md#SECTION6">documentatie</a> voor informatie over de verschillende configuratie richtlijnen en hun doeleinden.';
+$CIDRAM['lang']['tip_statistics'] = 'Hallo, {username}.<br />Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Tracking';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Inloggen';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logbestanden';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistieken';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Updates';
 $CIDRAM['lang']['warning'] = 'Waarschuwingen:';
 $CIDRAM['lang']['warning_php_1'] = 'Uw PHP versie wordt niet meer actief ondersteund! Het bijwerken is aanbevolen!';

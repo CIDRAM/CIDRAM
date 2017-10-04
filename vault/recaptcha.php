@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2017.09.08).
+ * This file: reCAPTCHA module (last modified: 2017.10.03).
  */
 
 /**
@@ -23,8 +23,7 @@ $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
     ));
     $Offset = strpos($CIDRAM['reCAPTCHA']['Results'], '"success": ');
     $CIDRAM['reCAPTCHA']['Bypass'] = (
-        ($Offset !== false) &&
-        (substr($CIDRAM['reCAPTCHA']['Results'], $Offset + 11, 4) === 'true')
+        $Offset !== false && substr($CIDRAM['reCAPTCHA']['Results'], $Offset + 11, 4) === 'true'
     );
 };
 
@@ -119,9 +118,19 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 $CIDRAM['reCAPTCHA']['HashListMod'] = true;
                 /** Set status for reCAPTCHA block information. */
                 $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_passed'];
+                /** Append to reCAPTCHA statistics if necessary. */
+                if ($CIDRAM['Config']['general']['statistics']) {
+                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
+                    $CIDRAM['CacheModified'] = true;
+                }
             } else {
                 /** Set status for reCAPTCHA block information. */
                 $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
+                /** Append to reCAPTCHA statistics if necessary. */
+                if ($CIDRAM['Config']['general']['statistics']) {
+                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
+                    $CIDRAM['CacheModified'] = true;
+                }
             }
         }
         if (!$CIDRAM['reCAPTCHA']['Bypass']) {
@@ -185,9 +194,19 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 $CIDRAM['reCAPTCHA']['BypassListMod'] = true;
                 /** Set status for reCAPTCHA block information. */
                 $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_passed'];
+                /** Append to reCAPTCHA statistics if necessary. */
+                if ($CIDRAM['Config']['general']['statistics']) {
+                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
+                    $CIDRAM['CacheModified'] = true;
+                }
             } else {
                 /** Set status for reCAPTCHA block information. */
                 $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
+                /** Append to reCAPTCHA statistics if necessary. */
+                if ($CIDRAM['Config']['general']['statistics']) {
+                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
+                    $CIDRAM['CacheModified'] = true;
+                }
             }
         }
         if (!$CIDRAM['reCAPTCHA']['Bypass']) {

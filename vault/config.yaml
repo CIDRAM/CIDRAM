@@ -208,6 +208,9 @@ Config Defaults:
     PASSWORD_BCRYPT: PASSWORD_BCRYPT
     PASSWORD_ARGON2I: PASSWORD_ARGON2I (PHP >= 7.2.0)
    choice_filter: "FilterAlgo"
+  statistics:
+   type: bool
+   default: false
  signatures:
   ipv4:
    type: string

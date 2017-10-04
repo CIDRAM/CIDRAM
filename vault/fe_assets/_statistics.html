@@ -1,0 +1,77 @@
+<table>
+<tr>
+    <td class="nav big">
+{nav}    </td>
+    <td class="right extend">
+        <div class="s">{state_msg}</div>
+        <table><tr><td class="spanner">
+            <form action="?cidram-page=statistics" method="POST">
+                <input name="ClearStats" type="hidden" value="1" />
+                <input type="submit" value="{field_clear_all}" class="auto" />
+            </form>
+        </td></tr></table>
+        <table>
+            <tr><td class="center h4f" colspan="2"><div class="s">{label_blocked}</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">IPv4</div></td>
+                <td class="h3f">{Blocked-IPv4}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">IPv6</div></td>
+                <td class="h3f">{Blocked-IPv6}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other}</div></td>
+                <td class="h3f">{Blocked-Other}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_total}</div></td>
+                <td class="h3f">{Blocked-Total}</td>
+            </tr>
+            <tr><td class="center h4f" colspan="2"><div class="s">{label_banned}</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">IPv4</div></td>
+                <td class="h3f">{Banned-IPv4}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">IPv6</div></td>
+                <td class="h3f">{Banned-IPv6}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_total}</div></td>
+                <td class="h3f">{Banned-Total}</td>
+            </tr>
+            <tr><td class="center h4f" colspan="2"><div class="s">{label_reCAPTCHA}</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">{recaptcha_failed}</div></td>
+                <td class="h3f">{reCAPTCHA-Failed}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{recaptcha_passed}</div></td>
+                <td class="h3f">{reCAPTCHA-Passed}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_total}</div></td>
+                <td class="h3f">{reCAPTCHA-Total}</td>
+            </tr>
+            <tr><td class="center h4f" colspan="2"><div class="s">{label_other}</div></td></tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other-Since}</div></td>
+                <td class="h3f">{Other-Since}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other-ActiveIPv4}</div></td>
+                <td class="h3f">{Other-ActiveIPv4}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other-ActiveIPv6}</div></td>
+                <td class="h3f">{Other-ActiveIPv6}</td>
+            </tr>
+            <tr>
+                <td class="h3"><div class="s">{label_other-ActiveModules}</div></td>
+                <td class="h3f">{Other-ActiveModules}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>

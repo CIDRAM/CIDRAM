@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.08.17).
+ * This file: Output generator (last modified: 2017.10.03).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -39,6 +39,21 @@ $CIDRAM['ClearFromCache']('DNS-Forwards');
 
 /** Clear outdated DNS reverse lookups. */
 $CIDRAM['ClearFromCache']('DNS-Reverses');
+
+/** Initialise statistics if necessary. */
+if ($CIDRAM['Config']['general']['statistics'] && empty($CIDRAM['Cache']['Statistics'])) {
+    $CIDRAM['Cache']['Statistics'] = array(
+        'Other-Since' => $CIDRAM['Now'],
+        'Blocked-IPv4' => 0,
+        'Blocked-IPv6' => 0,
+        'Blocked-Other' => 0,
+        'Banned-IPv4' => 0,
+        'Banned-IPv6' => 0,
+        'reCAPTCHA-Failed' => 0,
+        'reCAPTCHA-Passed' => 0
+    );
+    $CIDRAM['CacheModified'] = true;
+}
 
 /** Fallback for missing $_SERVER superglobal. */
 if (!isset($_SERVER)) {
@@ -237,10 +252,12 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     if (!isset($CIDRAM['Cache']['Tracking'])) {
         $CIDRAM['Cache']['Tracking'] = array();
     }
+
     /** Set tracking expiry. */
     $CIDRAM['TrackTime'] = $CIDRAM['Now'] + (
         !empty($CIDRAM['Config']['Options']['TrackTime']) ? $CIDRAM['Config']['Options']['TrackTime'] : $CIDRAM['Config']['signatures']['default_tracktime']
     );
+
     /** Number of infractions to append. */
     $CIDRAM['TrackCount'] = !empty($CIDRAM['Config']['Options']['TrackCount']) ? $CIDRAM['Config']['Options']['TrackCount'] : 1;
     if (
@@ -254,6 +271,7 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
     } else {
         $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
     }
+
     /** Implement double-banning (required by some specific custom modules; not a standard feature). */
     if (isset($CIDRAM['Config']['Options']['DoubleBan'])) {
         if (
@@ -268,10 +286,12 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
             $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
         }
     }
+
     $CIDRAM['CacheModified'] = true;
     if ($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Count'] >= $CIDRAM['Config']['signatures']['infraction_limit']) {
         $CIDRAM['Banned'] = true;
     }
+
     /** Cleanup. */
     unset($CIDRAM['TrackCount'], $CIDRAM['TrackTime']);
 }
@@ -327,6 +347,26 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Unset our reCAPTCHA working data cleanly. */
     unset($CIDRAM['reCAPTCHA']);
 
+}
+
+/** Update statistics if necessary. */
+if ($CIDRAM['Config']['general']['statistics'] && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+    if (!empty($CIDRAM['Banned'])) {
+        if ($CIDRAM['LastTestIP'] === 4) {
+            $CIDRAM['Cache']['Statistics']['Banned-IPv4']++;
+        } elseif ($CIDRAM['LastTestIP'] === 6) {
+            $CIDRAM['Cache']['Statistics']['Banned-IPv6']++;
+        }
+    } else {
+        if ($CIDRAM['LastTestIP'] === 4) {
+            $CIDRAM['Cache']['Statistics']['Blocked-IPv4']++;
+        } elseif ($CIDRAM['LastTestIP'] === 6) {
+            $CIDRAM['Cache']['Statistics']['Blocked-IPv6']++;
+        } else {
+            $CIDRAM['Cache']['Statistics']['Blocked-Other']++;
+        }
+    }
+    $CIDRAM['CacheModified'] = true;
 }
 
 /** Update the cache. */

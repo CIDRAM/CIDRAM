@@ -160,6 +160,7 @@ Fichier | Description
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
 /vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès aux fichiers journaux seulement.
+/vault/fe_assets/_statistics.html | Un modèle HTML pour la page de statistiques de l'accès frontal.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
@@ -367,6 +368,9 @@ Configuration générale pour CIDRAM.
 
 « default_algo »
 - Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP >= 7.2.0).
+
+« statistics »
+- Suivre les statistiques d'utilisation pour CIDRAM ? True = Oui ; False = Non [Défaut].
 
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
@@ -750,4 +754,4 @@ Valeur | En utilisant
 ---
 
 
-Dernière mise à jour : 21 Septembre 2017 (2017.09.21).
+Dernière mise à jour : 5 Octobre 2017 (2017.10.05).

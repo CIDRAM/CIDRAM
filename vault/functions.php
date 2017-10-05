@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.09.27).
+ * This file: Functions file (last modified: 2017.10.05).
  */
 
 /**
@@ -622,6 +622,7 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
     }
     $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
     $CIDRAM['Whitelisted'] = false;
+    $CIDRAM['LastTestIP'] = 0;
     if ($IPv4Factors = $CIDRAM['ExpandIPv4']($Addr)) {
         if (empty($CIDRAM['Config']['signatures']['ipv4'])) {
             $IPv4Files = array();
@@ -634,6 +635,9 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
             $IPv4Test = $CIDRAM['CheckFactors']($IPv4Files, $IPv4Factors);
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
+        }
+        if ($IPv4Test) {
+            $CIDRAM['LastTestIP'] = 4;
         }
     } else {
         $IPv4Test = false;
@@ -650,6 +654,9 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
             $IPv6Test = $CIDRAM['CheckFactors']($IPv6Files, $IPv6Factors);
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
+        }
+        if ($IPv6Test) {
+            $CIDRAM['LastTestIP'] = 6;
         }
     } else {
         $IPv6Test = false;
@@ -1670,6 +1677,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                 $CIDRAM['FE']['TotalSize'] += $Arr[$Key]['Filesize'];
             }
             if (isset($CIDRAM['Components']['Components'])) {
+                $Component = $CIDRAM['lang']['field_filetype_unknown'];
                 $ThisNameFixed = str_replace("\\", '/', $ThisName);
                 if (isset($CIDRAM['Components']['Files'][$ThisNameFixed])) {
                     if (!empty($CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]])) {
@@ -1680,17 +1688,24 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     } else {
                         $Component = $CIDRAM['Components']['Files'][$ThisNameFixed];
                     }
-                    $Component = $CIDRAM['lang']['field_component'] . ' – ' . $Component;
+                    if ($Component === 'CIDRAM') {
+                        $Component .= ' (' . $CIDRAM['lang']['field_component'] . ')';
+                    }
                 } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
                     $Component = $CIDRAM['lang']['link_config'];
                 } else {
                     $LastFour = strtolower(substr($ThisNameFixed, -4));
-                    if ($LastFour === '.log' || $LastFour === '.txt') {
+                    if (
+                        $LastFour === '.tmp' ||
+                        $ThisNameFixed === 'cache.dat' ||
+                        $ThisNameFixed === 'fe_assets/frontend.dat' ||
+                        substr($ThisNameFixed, -9) === '.rollback'
+                    ) {
+                        $Component = $CIDRAM['lang']['label_fmgr_cache_data'];
+                    } elseif ($LastFour === '.log' || $LastFour === '.txt') {
                         $Component = $CIDRAM['lang']['link_logs'];
                     } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
-                        $Component = $CIDRAM['ParseVars'](array('EXT' => 'YAML/DAT'), $CIDRAM['lang']['field_filetype_info']);
-                    } else {
-                        $Component = $CIDRAM['lang']['field_filetype_unknown'];
+                        $Component = $CIDRAM['lang']['label_fmgr_updates_metadata'];
                     }
                 }
                 if (!isset($CIDRAM['Components']['Components'][$Component])) {
@@ -2162,7 +2177,8 @@ $CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
 
 /** Attempt to perform some simple formatting for the log data. */
 $CIDRAM['Formatter'] = function (&$In) {
-    if (strlen($In) > ini_get('pcre.backtrack_limit') || substr_count($In, "\n") > (ini_get('pcre.recursion_limit') / 2)) {
+    $Len = strlen($In);
+    if ($Len > 65536 || $Len > ini_get('pcre.backtrack_limit')) {
         return;
     }
     preg_match_all('~(&lt;\?.*\?&gt;|<\?.*\?>|\{.*\})~i', $In, $Parts);
@@ -2188,9 +2204,10 @@ $CIDRAM['Formatter'] = function (&$In) {
  * Get the appropriate path for a specified asset as per the defined theme.
  *
  * @param string $Asset The asset filename.
+ * @param bool $CanFail Is failure acceptable? (Default: False)
  * @return string The asset path.
  */
-$CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
+$CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
     if (
         $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
         file_exists($CIDRAM['Vault'] . 'fe_assets/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset)
@@ -2199,6 +2216,9 @@ $CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
     }
     if (file_exists($CIDRAM['Vault'] . 'fe_assets/' . $Asset)) {
         return $CIDRAM['Vault'] . 'fe_assets/' . $Asset;
+    }
+    if ($CanFail) {
+        return '';
     }
     throw new \Exception('Asset not found');
 };

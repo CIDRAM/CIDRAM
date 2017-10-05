@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.09.27).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,7 +23,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Xác định thuật toán nà
 $CIDRAM['lang']['config_general_default_dns'] = 'Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI?';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end?';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn?';
@@ -40,6 +40,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Làm thế nào để bạn thích 
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.';
+$CIDRAM['lang']['config_general_statistics'] = 'Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';
 $CIDRAM['lang']['config_general_timezone'] = 'Múi giờ của bạn.';
@@ -71,7 +72,7 @@ $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
 $CIDRAM['lang']['field_clear'] = 'Hủy bỏ';
 $CIDRAM['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
 $CIDRAM['lang']['field_clickable_link'] = 'Liên kết có thể nhấp';
-$CIDRAM['lang']['field_component'] = 'Gói';
+$CIDRAM['lang']['field_component'] = 'Thành phần';
 $CIDRAM['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $CIDRAM['lang']['field_deactivate'] = 'Vô hiệu hóa';
 $CIDRAM['lang']['field_delete_account'] = 'Xóa tài khoản';
@@ -119,21 +120,32 @@ $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$CIDRAM['lang']['label_banned'] = 'Yêu cầu bị cấm';
+$CIDRAM['lang']['label_blocked'] = 'Yêu cầu bị chặn';
 $CIDRAM['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
+$CIDRAM['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi CIDRAM: ';
 $CIDRAM['lang']['label_fmgr_free_space'] = 'Không gian đĩa có sẵn: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
+$CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $CIDRAM['lang']['label_hide'] = 'Che giấu';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
+$CIDRAM['lang']['label_other'] = 'Khác';
+$CIDRAM['lang']['label_other-ActiveIPv4'] = 'Tập tin chữ ký IPv4 kích hoạt';
+$CIDRAM['lang']['label_other-ActiveIPv6'] = 'Tập tin chữ ký IPv6 kích hoạt';
+$CIDRAM['lang']['label_other-ActiveModules'] = 'Mô-đun kích hoạt';
+$CIDRAM['lang']['label_other-Since'] = 'Ngày bắt đầu';
 $CIDRAM['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
+$CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA nỗ lực';
 $CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $CIDRAM['lang']['label_show'] = 'Hiển thị';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
+$CIDRAM['lang']['label_total'] = 'Toàn bộ';
 $CIDRAM['lang']['label_unstable'] = 'Không ổn định mới nhất:';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';
 $CIDRAM['lang']['link_cidr_calc'] = 'Máy Tính CIDR';
@@ -145,6 +157,8 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Tập Hợp IP';
 $CIDRAM['lang']['link_ip_test'] = 'Kiểm Tra IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Giám sát IP';
 $CIDRAM['lang']['link_logs'] = 'Bản Ghi';
+$CIDRAM['lang']['link_statistics'] = 'Số liệu thống kê';
+$CIDRAM['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse">Đơn giản</a> – <a href="%1$strue">Đẹp</a>';
 $CIDRAM['lang']['link_updates'] = 'Cập Nhật';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
@@ -165,10 +179,10 @@ $CIDRAM['lang']['response_accounts_password_updated'] = 'Mật khẩu cập nh�
 $CIDRAM['lang']['response_activated'] = 'Kích hoạt thành công.';
 $CIDRAM['lang']['response_activation_failed'] = 'Không thể kích hoạt!';
 $CIDRAM['lang']['response_checksum_error'] = 'Kiểm tra lỗi! Tập tin bị từ chối!';
-$CIDRAM['lang']['response_component_successfully_installed'] = 'Gói cài đặt thành công.';
-$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ bỏ cài đặt thành công.';
-$CIDRAM['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';
-$CIDRAM['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
+$CIDRAM['lang']['response_component_successfully_installed'] = 'Thành phần cài đặt thành công.';
+$CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Thành phần gỡ bỏ cài đặt thành công.';
+$CIDRAM['lang']['response_component_successfully_updated'] = 'Thành phần cập nhật thành công.';
+$CIDRAM['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt thành phần.';
 $CIDRAM['lang']['response_configuration_updated'] = 'Cấu hình cập nhật thành công.';
 $CIDRAM['lang']['response_deactivated'] = 'Vô hiệu hóa thành công.';
 $CIDRAM['lang']['response_deactivation_failed'] = 'Không thể vô hiệu hóa!';
@@ -188,6 +202,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Mật khẩu là trố
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
 $CIDRAM['lang']['response_no'] = 'Không';
 $CIDRAM['lang']['response_rename_error'] = 'Không thể đổi tên!';
+$CIDRAM['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Giám sát được hủy bỏ.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';
@@ -199,9 +214,9 @@ $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Không thể xác đ�
 $CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
-$CIDRAM['lang']['state_component_is_active'] = 'Gói này đang kích hoạt.';
-$CIDRAM['lang']['state_component_is_inactive'] = 'Gói này đang vô hiệu hóa.';
-$CIDRAM['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
+$CIDRAM['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
+$CIDRAM['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
+$CIDRAM['lang']['state_component_is_provisional'] = 'Thành phần này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $CIDRAM['lang']['state_loadtime'] = 'Yêu cầu trang hoàn thành trong <span class="txtRd">%s</span> giây.';
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';
@@ -234,6 +249,8 @@ $CIDRAM['lang']['tip_ip_tracking'] = 'Xin chào, {username}.<br />Các trang cho
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.vi.md#SECTION6">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
+$CIDRAM['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $CIDRAM['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Tài Khoản';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Máy Tính CIDR';
@@ -245,6 +262,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Giám sát IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Bản Ghi';
+$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Số liệu thống kê';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Cập Nhật';
 $CIDRAM['lang']['warning'] = 'Cảnh báo:';
 $CIDRAM['lang']['warning_php_1'] = 'Phiên bản PHP của bạn không được hỗ trợ tích cực nữa! Đang cập nhật được khuyến khích!';

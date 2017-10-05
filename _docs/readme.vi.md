@@ -160,6 +160,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
 /vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
 /vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_statistics.html | Một tập tin mẫu HTML cho các trang thống kê của front-end.
 /vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
 /vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
@@ -360,13 +361,16 @@ Cấu hình chung cho CIDRAM.
 - Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.
 
 "disable_webfonts"
-- Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].
+- Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].
 
 "maintenance_mode"
 - Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
 
 "default_algo"
 - Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP >= 7.2.0).
+
+"statistics"
+- Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định].
 
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -750,4 +754,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 21 Tháng Chín 2017 (2017.09.21).
+Lần cuối cập nhật: 5 Tháng Mười 2017 (2017.10.05).

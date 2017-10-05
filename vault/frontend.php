@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.09.27).
+ * This file: Front-end handler (last modified: 2017.10.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -94,11 +94,7 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['cidram-asset']) &&
         !preg_match('~[^0-9a-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
     ) {
-        try {
-            $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset']);
-        } catch (\Exception $e) {
-            $CIDRAM['ThisAsset'] = false;
-        }
+        $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset'], true);
         if (
             $CIDRAM['ThisAsset'] &&
             is_readable($CIDRAM['ThisAsset']) &&
@@ -109,15 +105,21 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
                 $CIDRAM['ThisAssetType'] = 'jpg';
             }
             if (preg_match('/^(gif|jpg|png|webp)$/', $CIDRAM['ThisAssetType'])) {
-                /** Set asset mime-type. */
+                /** Set asset mime-type (images). */
                 header('Content-Type: image/' . $CIDRAM['ThisAssetType']);
+                $CIDRAM['Success'] = true;
+            } elseif ($CIDRAM['ThisAssetType'] === 'js') {
+                /** Set asset mime-type (JavaScript). */
+                header('Content-Type: text/javascript');
+                $CIDRAM['Success'] = true;
+            }
+            if ($CIDRAM['Success']) {
                 if (!empty($CIDRAM['QueryVars']['theme'])) {
                     /** Prevents needlessly reloading static assets. */
                     header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['ThisAsset'])));
                 }
                 /** Send asset data. */
                 echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
-                $CIDRAM['Success'] = true;
             }
         }
     }
@@ -2024,7 +2026,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     /** Load pie chart template file upon request. */
-    $CIDRAM['PieFile'] = empty($CIDRAM['QueryVars']['show']) ? '' : $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_piechart.html'));
+    if (empty($CIDRAM['QueryVars']['show'])) {
+        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['PieFile'] = $CIDRAM['PiePath'] = '';
+    } else {
+        if ($CIDRAM['PiePath'] = $CIDRAM['GetAssetPath']('_chartjs.html', true)) {
+            $CIDRAM['PieFile'] = $CIDRAM['ReadFile']($CIDRAM['PiePath']);
+        } else {
+            $CIDRAM['PieFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{PieChartHTML}</div></td></tr>';
+        }
+        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['GetAssetPath']('Chart.min.js', true) ? '?cidram-asset=Chart.min.js&theme=default' : '';
+    }
+
+    /** Set vault path for pie chart display. */
+    $CIDRAM['FE']['VaultPath'] = str_replace("\\", '/', $CIDRAM['Vault']) . '*';
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = array('Files', 'Components', 'Names');
@@ -2277,8 +2291,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         /** Sort pie chart values. */
         arsort($CIDRAM['Components']['Components']);
 
-        /** Prepare pie chart string. */
-        $CIDRAM['FE']['PieChartValues'] = '';
+        /** Initialise pie chart values. */
+        $CIDRAM['FE']['PieChartValues'] = array();
+
+        /** Initialise pie chart labels. */
+        $CIDRAM['FE']['PieChartLabels'] = array();
+
+        /** Initialise pie chart colours. */
+        $CIDRAM['FE']['PieChartColours'] = array();
+
+        /** Initialise pie chart legend. */
+        $CIDRAM['FE']['PieChartHTML'] = '';
 
         /** Building pie chart values. */
         foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => $CIDRAM['Components']['ThisData']) {
@@ -2288,23 +2311,42 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $CIDRAM['Components']['ThisSize'] = $CIDRAM['Components']['ThisData'];
             $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisSize']);
             $CIDRAM['Components']['ThisName'] .= ' – ' . $CIDRAM['Components']['ThisSize'];
-            $CIDRAM['FE']['PieChartValues'] .= sprintf(
-                "                        ['%s', %s],\n",
-                $CIDRAM['Components']['ThisName'],
-                $CIDRAM['Components']['ThisData']
-            );
+            $CIDRAM['FE']['PieChartValues'][] = $CIDRAM['Components']['ThisData'];
+            $CIDRAM['FE']['PieChartLabels'][] = $CIDRAM['Components']['ThisName'];
+            if ($CIDRAM['PiePath']) {
+                $CIDRAM['Components']['ThisColour'] = substr(md5($CIDRAM['Components']['ThisName']), 0, 6);
+                $CIDRAM['Components']['RGB'] =
+                    hexdec(substr($CIDRAM['Components']['ThisColour'], 0, 2)) . ',' .
+                    hexdec(substr($CIDRAM['Components']['ThisColour'], 2, 2)) . ',' .
+                    hexdec(substr($CIDRAM['Components']['ThisColour'], 4, 2));
+                $CIDRAM['FE']['PieChartColours'][] = '#' . $CIDRAM['Components']['ThisColour'];
+                $CIDRAM['FE']['PieChartHTML'] .=
+                    '<span style="background:linear-gradient(90deg,rgba(' .
+                    $CIDRAM['Components']['RGB'] . ',0.3),rgba(' .
+                    $CIDRAM['Components']['RGB'] . ',0))"><span style="color:#' .
+                    $CIDRAM['Components']['ThisColour'] . '">➖</span> ' .
+                    $CIDRAM['Components']['ThisName'] . "</span><br />\n";
+            } else {
+                $CIDRAM['FE']['PieChartHTML'] .= '➖ ' . $CIDRAM['Components']['ThisName'] . "<br />\n";
+            }
         }
 
-        /** Finalising pie chart string. */
-        $CIDRAM['FE']['PieChartValues'] = substr($CIDRAM['FE']['PieChartValues'], 0, -2) . "\n";
+        /** Finalise pie chart values. */
+        $CIDRAM['FE']['PieChartValues'] = '[' . implode(', ', $CIDRAM['FE']['PieChartValues']) . ']';
 
-        /** Finalising pie chart. */
+        /** Finalise pie chart labels. */
+        $CIDRAM['FE']['PieChartLabels'] = '["' . implode('", "', $CIDRAM['FE']['PieChartLabels']) . '"]';
+
+        /** Finalise pie chart colours. */
+        $CIDRAM['FE']['PieChartColours'] = '["' . implode('", "', $CIDRAM['FE']['PieChartColours']) . '"]';
+
+        /** Finalise pie chart. */
         $CIDRAM['FE']['PieChart'] = $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['PieFile']);
 
     }
 
     /** Cleanup. */
-    unset($CIDRAM['PieFile'], $CIDRAM['Components']);
+    unset($CIDRAM['PieFile'], $CIDRAM['PiePath'], $CIDRAM['Components']);
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
@@ -2698,6 +2740,119 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
 
 }
 
+/** Statistics. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics') {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_statistics'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        array('username' => $CIDRAM['FE']['UserRaw']),
+        $CIDRAM['lang']['tip_statistics']
+    );
+
+    /** Display how to enable statistics if currently disabled. */
+    if (!$CIDRAM['Config']['general']['statistics']) {
+        $CIDRAM['FE']['state_msg'] .= '<span class="txtRd">' . $CIDRAM['lang']['tip_statistics_disabled'] . '</span><br />';
+    }
+
+    /** Fetch cache.dat data. */
+    $CIDRAM['Cache'] = file_exists($CIDRAM['Vault'] . 'cache.dat') ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : array();
+
+    /** Clear statistics. */
+    if (!empty($_POST['ClearStats'])) {
+        if (isset($CIDRAM['Cache']['Statistics'])) {
+            unset($CIDRAM['Cache']['Statistics']);
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+            fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
+            fclose($CIDRAM['Handle']);
+            unset($CIDRAM['Handle']);
+        }
+        $CIDRAM['FE']['state_msg'] .= $CIDRAM['lang']['response_statistics_cleared'] . '<br />';
+    }
+
+    /** Statistics have been counted since... */
+    if (empty($CIDRAM['Cache']['Statistics']['Other-Since'])) {
+        $CIDRAM['FE']['Other-Since'] = '<span class="s">-</span>';
+    } else {
+        $CIDRAM['FE']['Other-Since'] = '<span class="s">' . $CIDRAM['TimeFormat'](
+            $CIDRAM['Cache']['Statistics']['Other-Since'],
+            $CIDRAM['Config']['general']['timeFormat']
+        ) . '</span>';
+    }
+
+    /** Fetch and process various statistics. */
+    foreach (array(
+        array('Blocked-IPv4', 'Blocked-Total'),
+        array('Blocked-IPv6', 'Blocked-Total'),
+        array('Blocked-Other', 'Blocked-Total'),
+        array('Banned-IPv4', 'Banned-Total'),
+        array('Banned-IPv6', 'Banned-Total'),
+        array('reCAPTCHA-Failed', 'reCAPTCHA-Total'),
+        array('reCAPTCHA-Passed', 'reCAPTCHA-Total')
+    ) as $CIDRAM['TheseStats']) {
+        $CIDRAM['FE'][$CIDRAM['TheseStats'][0]] = '<span class="s">' . $CIDRAM['Number_L10N'](
+            empty($CIDRAM['Cache']['Statistics'][$CIDRAM['TheseStats'][0]]) ? 0 : $CIDRAM['Cache']['Statistics'][$CIDRAM['TheseStats'][0]]
+        ) . '</span>';
+        if (!isset($CIDRAM['FE'][$CIDRAM['TheseStats'][1]])) {
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
+        }
+        $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] += empty(
+            $CIDRAM['Cache']['Statistics'][$CIDRAM['TheseStats'][0]]
+        ) ? 0 : $CIDRAM['Cache']['Statistics'][$CIDRAM['TheseStats'][0]];
+    }
+
+    /** Fetch and process totals. */
+    foreach (array(
+        'Blocked-Total',
+        'Banned-Total',
+        'reCAPTCHA-Total'
+    ) as $CIDRAM['TheseStats']) {
+        $CIDRAM['FE'][$CIDRAM['TheseStats']] = '<span class="s">' . $CIDRAM['Number_L10N'](
+            $CIDRAM['FE'][$CIDRAM['TheseStats']]
+        ) . '</span>';
+    }
+
+    /** Active signature files. */
+    foreach (array(
+        array('ipv4', 'Other-ActiveIPv4'),
+        array('ipv6', 'Other-ActiveIPv6'),
+        array('modules', 'Other-ActiveModules')
+    ) as $CIDRAM['TheseStats']) {
+        if (empty($CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]])) {
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="txtRd">' . $CIDRAM['Number_L10N'](0) . '</span>';
+        } else {
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = 0;
+            $CIDRAM['StatWorking'] = explode(',', $CIDRAM['Config']['signatures'][$CIDRAM['TheseStats'][0]]);
+            array_walk($CIDRAM['StatWorking'], function ($SigFile) use (&$CIDRAM) {
+                if (!empty($SigFile) && is_readable($CIDRAM['Vault'] . $SigFile)) {
+                    $CIDRAM['FE'][$CIDRAM['TheseStats'][1]]++;
+                }
+            });
+            $CIDRAM['StatColour'] = $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] ? 'txtGn' : 'txtRd';
+            $CIDRAM['FE'][$CIDRAM['TheseStats'][1]] = '<span class="' . $CIDRAM['StatColour'] . '">' . $CIDRAM['Number_L10N'](
+                $CIDRAM['FE'][$CIDRAM['TheseStats'][1]]
+            ) . '</span>';
+        }
+    }
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_statistics.html'))
+    );
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+    /** Cleanup. */
+    unset($CIDRAM['StatColour'], $CIDRAM['StatWorking'], $CIDRAM['TheseStats'], $CIDRAM['Cache']);
+
+}
+
 /** Logs. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 
@@ -2724,16 +2879,30 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         'Out' => ''
     );
 
+    /** Text mode switch link base. */
+    $CIDRAM['FE']['TextModeSwitchLink'] = '';
+
+    /** How to display the log data? */
+    if (empty($CIDRAM['QueryVars']['text-mode']) || $CIDRAM['QueryVars']['text-mode'] === 'false') {
+        $CIDRAM['FE']['TextModeLinks'] = 'false';
+        $CIDRAM['FE']['TextMode'] = false;
+    } else {
+        $CIDRAM['FE']['TextModeLinks'] = 'true';
+        $CIDRAM['FE']['TextMode'] = true;
+    }
+
     /** Define log data. */
     if (empty($CIDRAM['QueryVars']['logfile'])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_no_logfile_selected'];
     } elseif (empty($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_logfile_doesnt_exist'];
     } else {
-        $CIDRAM['FE']['logfileData'] = str_replace(
-            array('<', '>', "\r", "\n"),
-            array('&lt;', '&gt;', '', "<br />\n"),
-            $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile'])
+        $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&logfile=' . $CIDRAM['QueryVars']['logfile'] . '&text-mode=';
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['TextMode'] ? str_replace(
+            array('<', '>', "\r", "\n"), array('&lt;', '&gt;', '', "<br />\n"), $CIDRAM['FE']['logfileData']
+        ) : str_replace(
+            array('<', '>', "\r"), array('&lt;', '&gt;', ''), $CIDRAM['FE']['logfileData']
         );
         $CIDRAM['FE']['mod_class_nav'] = ' big';
         $CIDRAM['FE']['mod_class_right'] = ' extend';
@@ -2742,16 +2911,30 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         $CIDRAM['FE']['mod_class_nav'] = ' extend';
         $CIDRAM['FE']['mod_class_right'] = ' big';
     }
+    if (empty($CIDRAM['FE']['TextModeSwitchLink'])) {
+        $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&text-mode=';
+    }
 
-    /** Attempt to perform some simple formatting for the log data. */
-    $CIDRAM['Formatter']($CIDRAM['FE']['logfileData']);
+    /** Text mode switch link formatted. */
+    $CIDRAM['FE']['TextModeSwitchLink'] = sprintf(
+        $CIDRAM['lang']['link_textmode'],
+        $CIDRAM['FE']['TextModeSwitchLink']
+    );
+
+    /** Prepare log data formatting. */
+    if ($CIDRAM['FE']['TextMode']) {
+        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData']);
+    } else {
+        $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . $CIDRAM['FE']['logfileData'] . '</textarea>';
+    }
 
     /** Define logfile list. */
     array_walk($CIDRAM['FE']['LogFiles']['Files'], function ($Arr) use (&$CIDRAM) {
         $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
-            '            <a href="?cidram-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
+            '            <a href="?cidram-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
             $Arr['Filename'],
-            $Arr['Filesize']
+            $Arr['Filesize'],
+            $CIDRAM['FE']['TextModeLinks']
         ) . "\n";
     });
 

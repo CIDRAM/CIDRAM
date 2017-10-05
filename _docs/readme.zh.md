@@ -161,6 +161,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 /vault/fe_assets/_logs.html | 前端日志页面的HTML模板。
 /vault/fe_assets/_nav_complete_access.html | 前端导航链接的HTML模板，​由那些与完全访问使用。
 /vault/fe_assets/_nav_logs_access_only.html | 前端导航链接的HTML模板，​由那些与仅日志访问使用。
+/vault/fe_assets/_statistics.html | 前端统计页面的HTML模板。
 /vault/fe_assets/_updates.html | 前端更新页面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新页面的HTML模板。
 /vault/fe_assets/frontend.css | 前端CSS样式表。
@@ -368,6 +369,9 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 
 “default_algo”
 - 定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
+
+“statistics”
+- 跟踪CIDRAM使用情况统计？​True（真）=跟踪； False（假）=不跟踪【标准】。
 
 #### “signatures” （类别）
 签名配置。
@@ -751,4 +755,4 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 ---
 
 
-最后更新：2017年9月21日。
+最后更新：2017年10月5日。

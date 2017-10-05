@@ -160,6 +160,7 @@ Arquivo | Descrição
 /vault/fe_assets/_logs.html | Um modelo HTML para o front-end página para os arquivos de registro.
 /vault/fe_assets/_nav_complete_access.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso completo.
 /vault/fe_assets/_nav_logs_access_only.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso aos arquivos de registro somente.
+/vault/fe_assets/_statistics.html | Um modelo HTML para o front-end página de estatísticas.
 /vault/fe_assets/_updates.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/_updates_row.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/frontend.css | Folha de estilo CSS para o front-end.
@@ -348,7 +349,7 @@ Configuração geral por CIDRAM.
 - Sobrepor "forbid_on_block" quando "infraction_limit" é excedido? Quando sobrepõe: As solicitações bloqueadas retornam uma página em branco (os arquivos de modelo não são usados). 200 = Não sobrepor [Padrão]; 403 = Sobrepor com "403 Forbidden"; 503 = Sobrepor com "503 Service unavailable".
 
 "log_banned_ips"
-- Incluir solicitações bloqueadas de IPs proibidos nos arquivos de log? True = Sim [Padrão]; False = Não.
+- Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não.
 
 "default_dns"
 - Uma lista delimitada por vírgulas de servidores DNS a serem usados para pesquisas de nomes de host. Padrão = "8.8.8.8,8.8.4.4" (Google DNS). ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
@@ -367,6 +368,9 @@ Configuração geral por CIDRAM.
 
 "default_algo"
 - Define qual algoritmo usar para todas as futuras senhas e sessões. Opções: PASSWORD_DEFAULT (padrão), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requer PHP >= 7.2.0).
+
+"statistics"
+- Monitorar as estatísticas de uso do CIDRAM? True = Sim; False = Não [Padrão].
 
 #### "signatures" (Categoria)
 Configuração por assinaturas.
@@ -750,4 +754,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 21 Setembro 2017 (2017.09.21).
+Última Atualização: 5 Outubro 2017 (2017.10.05).

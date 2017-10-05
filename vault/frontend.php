@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.03).
+ * This file: Front-end handler (last modified: 2017.10.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -94,11 +94,7 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['cidram-asset']) &&
         !preg_match('~[^0-9a-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
     ) {
-        try {
-            $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset']);
-        } catch (\Exception $e) {
-            $CIDRAM['ThisAsset'] = false;
-        }
+        $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset'], true);
         if (
             $CIDRAM['ThisAsset'] &&
             is_readable($CIDRAM['ThisAsset']) &&
@@ -109,15 +105,21 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
                 $CIDRAM['ThisAssetType'] = 'jpg';
             }
             if (preg_match('/^(gif|jpg|png|webp)$/', $CIDRAM['ThisAssetType'])) {
-                /** Set asset mime-type. */
+                /** Set asset mime-type (images). */
                 header('Content-Type: image/' . $CIDRAM['ThisAssetType']);
+                $CIDRAM['Success'] = true;
+            } elseif ($CIDRAM['ThisAssetType'] === 'js') {
+                /** Set asset mime-type (JavaScript). */
+                header('Content-Type: text/javascript');
+                $CIDRAM['Success'] = true;
+            }
+            if ($CIDRAM['Success']) {
                 if (!empty($CIDRAM['QueryVars']['theme'])) {
                     /** Prevents needlessly reloading static assets. */
                     header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['ThisAsset'])));
                 }
                 /** Send asset data. */
                 echo $CIDRAM['ReadFile']($CIDRAM['ThisAsset']);
-                $CIDRAM['Success'] = true;
             }
         }
     }
@@ -2024,7 +2026,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
     /** Load pie chart template file upon request. */
-    $CIDRAM['PieFile'] = empty($CIDRAM['QueryVars']['show']) ? '' : $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_piechart.html'));
+    if (empty($CIDRAM['QueryVars']['show'])) {
+        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['PieFile'] = $CIDRAM['PiePath'] = '';
+    } else {
+        if ($CIDRAM['PiePath'] = $CIDRAM['GetAssetPath']('_chartjs.html', true)) {
+            $CIDRAM['PieFile'] = $CIDRAM['ReadFile']($CIDRAM['PiePath']);
+        } else {
+            $CIDRAM['PieFile'] = '<tr><td class="h4f" colspan="2"><div class="s">{PieChartHTML}</div></td></tr>';
+        }
+        $CIDRAM['FE']['ChartJSPath'] = $CIDRAM['GetAssetPath']('Chart.min.js', true) ? '?cidram-asset=Chart.min.js&theme=default' : '';
+    }
 
     /** Set vault path for pie chart display. */
     $CIDRAM['FE']['VaultPath'] = str_replace("\\", '/', $CIDRAM['Vault']) . '*';
@@ -2280,8 +2291,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         /** Sort pie chart values. */
         arsort($CIDRAM['Components']['Components']);
 
-        /** Prepare pie chart string. */
-        $CIDRAM['FE']['PieChartValues'] = '';
+        /** Initialise pie chart values. */
+        $CIDRAM['FE']['PieChartValues'] = array();
+
+        /** Initialise pie chart labels. */
+        $CIDRAM['FE']['PieChartLabels'] = array();
+
+        /** Initialise pie chart colours. */
+        $CIDRAM['FE']['PieChartColours'] = array();
+
+        /** Initialise pie chart legend. */
+        $CIDRAM['FE']['PieChartHTML'] = '';
 
         /** Building pie chart values. */
         foreach ($CIDRAM['Components']['Components'] as $CIDRAM['Components']['ThisName'] => $CIDRAM['Components']['ThisData']) {
@@ -2291,23 +2311,42 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
             $CIDRAM['Components']['ThisSize'] = $CIDRAM['Components']['ThisData'];
             $CIDRAM['FormatFilesize']($CIDRAM['Components']['ThisSize']);
             $CIDRAM['Components']['ThisName'] .= ' – ' . $CIDRAM['Components']['ThisSize'];
-            $CIDRAM['FE']['PieChartValues'] .= sprintf(
-                "                        ['%s', %s],\n",
-                $CIDRAM['Components']['ThisName'],
-                $CIDRAM['Components']['ThisData']
-            );
+            $CIDRAM['FE']['PieChartValues'][] = $CIDRAM['Components']['ThisData'];
+            $CIDRAM['FE']['PieChartLabels'][] = $CIDRAM['Components']['ThisName'];
+            if ($CIDRAM['PiePath']) {
+                $CIDRAM['Components']['ThisColour'] = substr(md5($CIDRAM['Components']['ThisName']), 0, 6);
+                $CIDRAM['Components']['RGB'] =
+                    hexdec(substr($CIDRAM['Components']['ThisColour'], 0, 2)) . ',' .
+                    hexdec(substr($CIDRAM['Components']['ThisColour'], 2, 2)) . ',' .
+                    hexdec(substr($CIDRAM['Components']['ThisColour'], 4, 2));
+                $CIDRAM['FE']['PieChartColours'][] = '#' . $CIDRAM['Components']['ThisColour'];
+                $CIDRAM['FE']['PieChartHTML'] .=
+                    '<span style="background:linear-gradient(90deg,rgba(' .
+                    $CIDRAM['Components']['RGB'] . ',0.3),rgba(' .
+                    $CIDRAM['Components']['RGB'] . ',0))"><span style="color:#' .
+                    $CIDRAM['Components']['ThisColour'] . '">➖</span> ' .
+                    $CIDRAM['Components']['ThisName'] . "</span><br />\n";
+            } else {
+                $CIDRAM['FE']['PieChartHTML'] .= '➖ ' . $CIDRAM['Components']['ThisName'] . "<br />\n";
+            }
         }
 
-        /** Finalising pie chart string. */
-        $CIDRAM['FE']['PieChartValues'] = substr($CIDRAM['FE']['PieChartValues'], 0, -2) . "\n";
+        /** Finalise pie chart values. */
+        $CIDRAM['FE']['PieChartValues'] = '[' . implode(', ', $CIDRAM['FE']['PieChartValues']) . ']';
 
-        /** Finalising pie chart. */
+        /** Finalise pie chart labels. */
+        $CIDRAM['FE']['PieChartLabels'] = '["' . implode('", "', $CIDRAM['FE']['PieChartLabels']) . '"]';
+
+        /** Finalise pie chart colours. */
+        $CIDRAM['FE']['PieChartColours'] = '["' . implode('", "', $CIDRAM['FE']['PieChartColours']) . '"]';
+
+        /** Finalise pie chart. */
         $CIDRAM['FE']['PieChart'] = $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['PieFile']);
 
     }
 
     /** Cleanup. */
-    unset($CIDRAM['PieFile'], $CIDRAM['Components']);
+    unset($CIDRAM['PieFile'], $CIDRAM['PiePath'], $CIDRAM['Components']);
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.04).
+ * This file: Functions file (last modified: 2017.10.05).
  */
 
 /**
@@ -1688,7 +1688,9 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     } else {
                         $Component = $CIDRAM['Components']['Files'][$ThisNameFixed];
                     }
-                    $Component = $CIDRAM['lang']['field_component'] . ' – ' . $Component;
+                    if ($Component === 'CIDRAM') {
+                        $Component .= ' (' . $CIDRAM['lang']['field_component'] . ')';
+                    }
                 } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
                     $Component = $CIDRAM['lang']['link_config'];
                 } else {
@@ -2202,9 +2204,10 @@ $CIDRAM['Formatter'] = function (&$In) {
  * Get the appropriate path for a specified asset as per the defined theme.
  *
  * @param string $Asset The asset filename.
+ * @param bool $CanFail Is failure acceptable? (Default: False)
  * @return string The asset path.
  */
-$CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
+$CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
     if (
         $CIDRAM['Config']['template_data']['theme'] !== 'default' &&
         file_exists($CIDRAM['Vault'] . 'fe_assets/' . $CIDRAM['Config']['template_data']['theme'] . '/' . $Asset)
@@ -2213,6 +2216,9 @@ $CIDRAM['GetAssetPath'] = function ($Asset) use (&$CIDRAM) {
     }
     if (file_exists($CIDRAM['Vault'] . 'fe_assets/' . $Asset)) {
         return $CIDRAM['Vault'] . 'fe_assets/' . $Asset;
+    }
+    if ($CanFail) {
+        return '';
     }
     throw new \Exception('Asset not found');
 };

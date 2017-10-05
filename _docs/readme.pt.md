@@ -160,6 +160,7 @@ Arquivo | Descrição
 /vault/fe_assets/_logs.html | Um modelo HTML para o front-end página para os arquivos de registro.
 /vault/fe_assets/_nav_complete_access.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso completo.
 /vault/fe_assets/_nav_logs_access_only.html | Um modelo HTML para os links de navegação para o front-end, para aqueles com acesso aos arquivos de registro somente.
+/vault/fe_assets/_statistics.html | Um modelo HTML para o front-end página de estatísticas.
 /vault/fe_assets/_updates.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/_updates_row.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/frontend.css | Folha de estilo CSS para o front-end.
@@ -753,4 +754,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 3 Outubro 2017 (2017.10.03).
+Última Atualização: 5 Outubro 2017 (2017.10.05).

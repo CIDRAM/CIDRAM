@@ -160,6 +160,7 @@ File | Description
 /vault/fe_assets/_logs.html | An HTML template for the front-end logs page.
 /vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access.
 /vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only.
+/vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_updates.html | An HTML template for the front-end updates page.
 /vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page.
 /vault/fe_assets/frontend.css | CSS style-sheet for the front-end.
@@ -753,4 +754,4 @@ Value | Using
 ---
 
 
-Last Updated: 3 October 2017 (2017.10.03).
+Last Updated: 5 October 2017 (2017.10.05).

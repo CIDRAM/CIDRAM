@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.05).
+ * This file: Front-end handler (last modified: 2017.10.07).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1062,8 +1062,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             $CIDRAM['Components']['Target'] = $_POST['ID'];
             $CIDRAM['Arrayify']($CIDRAM['Components']['Target']);
             $CIDRAM['FileData'] = array();
+            $CIDRAM['Annotations'] = array();
             foreach ($CIDRAM['Components']['Target'] as $CIDRAM['Components']['ThisTarget']) {
-                if (!isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'])) {
+                if (
+                    !isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']) ||
+                    !isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Reannotate'])
+                ) {
                     continue;
                 }
                 $CIDRAM['Components']['BytesAdded'] = 0;
@@ -1075,14 +1079,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']
                 );
                 if (!$CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData']) {
-                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] =
-                        $CIDRAM['Request']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']);
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = $CIDRAM['Request'](
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']
+                    );
                     if (
                         strtolower(substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'], -2)) === 'gz' &&
                         substr($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'], 0, 2) === "\x1f\x8b"
                     ) {
-                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] =
-                            gzdecode($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData']);
+                        $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = gzdecode(
+                            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData']
+                        );
                     }
                     if (empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'])) {
                         $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'] = '-';
@@ -1124,8 +1130,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                         !empty($CIDRAM['FileData'][$CIDRAM['ThisReannotate']]) &&
                         $CIDRAM['Components']['OldMeta'] = $CIDRAM['FileData'][$CIDRAM['ThisReannotate']]
                     ) || (
-                        $CIDRAM['FileData'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['OldMeta'] =
-                            $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['ThisReannotate'])
+                        $CIDRAM['FileData'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['OldMeta'] = $CIDRAM['ReadFile'](
+                            $CIDRAM['Vault'] . $CIDRAM['ThisReannotate']
+                        )
                     )) &&
                     preg_match(
                         "\x01(\n" . preg_quote($CIDRAM['Components']['ThisTarget']) . ":?)(\n [^\n]*)*\n\x01i",
@@ -1284,7 +1291,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                             });
                             unset($CIDRAM['ThisArr']);
                         }
+                        /** Assign updated component annotation. */
                         $CIDRAM['FileData'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['NewMeta'];
+                        if (!isset($CIDRAM['Annotations'][$CIDRAM['ThisReannotate']])) {
+                            $CIDRAM['Annotations'][$CIDRAM['ThisReannotate']] = $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['RemoteData'];
+                        }
                         $CIDRAM['FE']['state_msg'] .= '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ';
                         if (
                             empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Version']) &&
@@ -1334,6 +1345,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             }
             /** Update annotations. */
             foreach ($CIDRAM['FileData'] as $CIDRAM['ThisKey'] => $CIDRAM['ThisFile']) {
+                /** Remove superfluous metadata. */
+                if (!empty($CIDRAM['Annotations'][$CIDRAM['ThisKey']])) {
+                    $CIDRAM['ThisFile'] = $CIDRAM['Congruency']($CIDRAM['ThisFile'], $CIDRAM['Annotations'][$CIDRAM['ThisKey']]);
+                }
                 $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['ThisKey'], 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['ThisFile']);
                 fclose($CIDRAM['Handle']);
@@ -1344,6 +1359,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['ThisName'],
                 $CIDRAM['ThisKey'],
                 $CIDRAM['ThisFile'],
+                $CIDRAM['Annotations'],
                 $CIDRAM['FileData'],
                 $CIDRAM['ThisFileName'],
                 $CIDRAM['Rollback'],
@@ -1389,13 +1405,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                     $CIDRAM['Components']['OldMeta']
                 );
                 array_walk($CIDRAM['Components']['Meta'][$_POST['ID']]['Files']['To'], function ($ThisFile) use (&$CIDRAM) {
-                    if (
-                        !empty($ThisFile) &&
-                        file_exists($CIDRAM['Vault'] . $ThisFile) &&
-                        $CIDRAM['Traverse']($ThisFile)
-                    ) {
-                        $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
-                        unlink($CIDRAM['Vault'] . $ThisFile);
+                    if (!empty($ThisFile) && $CIDRAM['Traverse']($ThisFile)) {
+                        if (file_exists($CIDRAM['Vault'] . $ThisFile)) {
+                            $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
+                            unlink($CIDRAM['Vault'] . $ThisFile);
+                        }
+                        if (file_exists($CIDRAM['Vault'] . $ThisFile . '.rollback')) {
+                            $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile . '.rollback');
+                            unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
+                        }
                         $CIDRAM['DeleteDirectory']($ThisFile);
                     }
                 });

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2017.09.19).
+ * This file: IP aggregator (last modified: 2017.10.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -163,8 +163,8 @@ class Aggregator
                 $RangeSep = strpos($Line, '/');
                 $Size = (int)substr($Line, $RangeSep + 1);
                 $CIDR = substr($Line, 0, $RangeSep);
-                if (!$CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR)) {
-                    $CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR);
+                if (!$CIDRs = $this->CIDRAM['ExpandIPv4']($CIDR, false, $Size - 1)) {
+                    $CIDRs = $this->CIDRAM['ExpandIPv6']($CIDR, false, $Size - 1);
                 }
                 if (
                     !empty($CIDRs[$Size - 1]) &&

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.03).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = '什么时候应该对违规�
 $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_Magnification'] = '字体放大。​标准 = 1。';
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';
+$CIDRAM['lang']['Extended Description: Bypasses'] = '标准签名旁路文件通常包括在主包。​';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（没有签名文件，文档，和配置）。​';
 $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '选择的日志不存在！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '没有日志可用。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '没有选择的日志。';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = '最大登录尝试次数已经超过；拒绝访问。';
+$CIDRAM['lang']['Name: Bypasses'] = '标准签名旁路。​';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4签名文件（不想要的云服务和非人终端）。​';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4签名文件（bogon/火星CIDR）。​';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4签名文件（危险和垃圾容易ISP）。​';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4签名文件（CIDR从代理，VPN和其他不需要服务）。​';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6签名文件（不想要的云服务和非人终端）。​';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6签名文件（bogon/火星CIDR）。​';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6签名文件（危险和垃圾容易ISP）。​';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6签名文件（CIDR从代理，VPN和其他不需要服务）。​';
 $CIDRAM['lang']['previewer_days'] = '天';
 $CIDRAM['lang']['previewer_hours'] = '小时';
 $CIDRAM['lang']['previewer_minutes'] = '分';

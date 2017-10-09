@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.03).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = '違反はいつカウント�
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣＳＳファイルＵＲＬ。';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'フォントの倍率。​Default/デフォルルト = １。';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAMに使用するデフォルトテーマ。';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'デフォルト署名バイパス、​通常はメインパッケージに含まれています。​';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'メインパッケージ​（署名、​ドキュメンテーション、​コンフィギュレーション、​は含まれません）。​';
 $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在し�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
+$CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。​';
+$CIDRAM['lang']['Name: IPv4'] = 'ＩＰｖ４のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。​';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'ＩＰｖ４のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。​';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'ＩＰｖ４のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。​';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'ＩＰｖ４のシグネチャファイル​（プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ）。';
+$CIDRAM['lang']['Name: IPv6'] = 'ＩＰｖ６のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。​';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'ＩＰｖ６のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。​';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'ＩＰｖ６のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。​';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'ＩＰｖ６のシグネチャファイル​（プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ）。';
 $CIDRAM['lang']['previewer_days'] = '日';
 $CIDRAM['lang']['previewer_hours'] = '時';
 $CIDRAM['lang']['previewer_minutes'] = '分';

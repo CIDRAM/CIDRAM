@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.08).
+ * This file: Functions file (last modified: 2017.10.09).
  */
 
 /**
@@ -1286,26 +1286,23 @@ $CIDRAM['ClearFromCache'] = function ($Section) use (&$CIDRAM) {
     }
 };
 
-/**
- * Clears expired entries from a list.
- */
+/** Clears expired entries from a list. */
 $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
     if ($List) {
         $End = 0;
         while (true) {
             $Begin = $End;
-            if ($End = strpos($List, "\n", $Begin + 1)) {
-                $Line = substr($List, $Begin, $End - $Begin);
-                if ($Split = strrpos($Line, ',')) {
-                    $Expiry = (int)substr($Line, $Split + 1);
-                    if ($Expiry < $CIDRAM['Now']) {
-                        $List = str_replace($Line, '', $List);
-                        $End = 0;
-                        $Check = true;
-                    }
-                }
-            } else {
+            if (!$End = strpos($List, "\n", $Begin + 1)) {
                 break;
+            }
+            $Line = substr($List, $Begin, $End - $Begin);
+            if ($Split = strrpos($Line, ',')) {
+                $Expiry = (int)substr($Line, $Split + 1);
+                if ($Expiry < $CIDRAM['Now']) {
+                    $List = str_replace($Line, '', $List);
+                    $End = 0;
+                    $Check = true;
+                }
             }
         }
     }
@@ -1316,20 +1313,15 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
  * contained values aren't integers, and otherwise, returns the sum total.
  */
 $CIDRAM['ZeroMin'] = function () {
-    $Values = func_get_args();
-    $Count = count($Values);
     $Sum = 0;
-    for ($Index = 0; $Index < $Count; $Index++) {
-        $ThisValue = (int)$Values[$Index];
-        if ($ThisValue !== $Values[$Index]) {
+    foreach (func_get_args() as $Value) {
+        $IntValue = (int)$Value;
+        if ($IntValue !== $Value) {
             return 0;
         }
-        $Sum += $ThisValue;
+        $Sum += $IntValue;
     }
-    if ($Sum < 0) {
-        return 0;
-    }
-    return $Sum;
+    return $Sum < 0 ? 0 : $Sum;
 };
 
 /** Wrap state message for front-end. */
@@ -1556,9 +1548,6 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                 if (isset($CIDRAM['Components']['Files'][$ThisNameFixed])) {
                     if (!empty($CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]])) {
                         $Component = $CIDRAM['Components']['Names'][$CIDRAM['Components']['Files'][$ThisNameFixed]];
-                        if (is_array($Component)) {
-                            $CIDRAM['IsolateL10N']($Component, $CIDRAM['Config']['general']['lang']);
-                        }
                     } else {
                         $Component = $CIDRAM['Components']['Files'][$ThisNameFixed];
                     }
@@ -1925,9 +1914,12 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
     }
 };
 
-/** Duplication avoidance (front-end updates page). */
-$CIDRAM['PrepareExtendedDescription'] = function (&$Arr) use (&$CIDRAM) {
-    if (empty($Arr['Extended Description'])) {
+/** Prepares component extended description (front-end updates page). */
+$CIDRAM['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$CIDRAM) {
+    $Key = 'Extended Description: ' . $Key;
+    if (isset($CIDRAM['lang'][$Key])) {
+        $Arr['Extended Description'] = $CIDRAM['lang'][$Key];
+    } elseif (empty($Arr['Extended Description'])) {
         $Arr['Extended Description'] = '';
     }
     if (is_array($Arr['Extended Description'])) {
@@ -1949,6 +1941,19 @@ $CIDRAM['PrepareExtendedDescription'] = function (&$Arr) use (&$CIDRAM) {
         $Arr['Extended Description'] .=
             '<br /><em>' . $CIDRAM['lang']['label_false_positive_risk'] .
             '<span class="' . $Class . '">' . $State . '</span></em>';
+    }
+};
+
+/** Prepares component name (front-end updates page). */
+$CIDRAM['PrepareName'] = function (&$Arr, $Key = '') use (&$CIDRAM) {
+    $Key = 'Name: ' . $Key;
+    if (isset($CIDRAM['lang'][$Key])) {
+        $Arr['Name'] = $CIDRAM['lang'][$Key];
+    } elseif (empty($Arr['Name'])) {
+        $Arr['Name'] = '';
+    }
+    if (is_array($Arr['Name'])) {
+        $CIDRAM['IsolateL10N']($Arr['Name'], $CIDRAM['Config']['general']['lang']);
     }
 };
 
@@ -2287,14 +2292,10 @@ $CIDRAM['Swap'] = function(&$First, &$Second) {
 $CIDRAM['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
-        if (empty($CIDRAM['QueryVars'][$Switch])) {
-            $CIDRAM['FE'][$Switch] = false;
-        } else {
-            $CIDRAM['FE'][$Switch] = (
-                ($CIDRAM['QueryVars'][$Switch] === 'true' && !$State) ||
-                ($CIDRAM['QueryVars'][$Switch] !== 'true' && $State)
-            );
-        }
+        $CIDRAM['FE'][$Switch] = empty($CIDRAM['QueryVars'][$Switch]) ? false : (
+            ($CIDRAM['QueryVars'][$Switch] === 'true' && !$State) ||
+            ($CIDRAM['QueryVars'][$Switch] !== 'true' && $State)
+        );
         if ($State) {
             $StateModified = true;
         }

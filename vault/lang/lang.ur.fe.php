@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.10.03).
+ * This file: Urdu language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'انحرافات شمار ک�
 $CIDRAM['lang']['config_template_data_css_url'] = 'اپنی مرضی کے موضوعات کے لئے سی ایس ایس فائل URL.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'فونٹ اضافہ. پہلے سے طے شدہ = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'مرکزی پیکیج (بغیر دستخط، دستاویزات، اور ترتیب).';
 $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'منتخب شدہ لاگ فائ�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'کوئی لاگ مسلیں دستیاب.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'کوئی لاگ فائل کو منتخب کیا.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'لاگ ان کوششوں کی زیادہ سے زیادہ تعداد سے تجاوز کر گئی. رسائی مسترد کر دی.';
+$CIDRAM['lang']['Name: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائ پاس.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4 کی دستخط کی فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 کی دستخط کی فائل (bogon/martian CIDRs).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 کی دستخط کی فائل (خطرناک اور سپام ISP).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 کی دستخط کی فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6 کی دستخط کی فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 کی دستخط کی فائل (bogon/martian CIDRs).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 کی دستخط کی فائل (خطرناک اور سپام ISP).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 کی دستخط کی فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).';
 $CIDRAM['lang']['previewer_days'] = 'دن';
 $CIDRAM['lang']['previewer_hours'] = 'گھنٹے';
 $CIDRAM['lang']['previewer_minutes'] = 'منٹس';

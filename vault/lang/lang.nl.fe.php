@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.10.03).
+ * This file: Dutch language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Wanneer moet overtredingen wo
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Lettergrootte vergroting. Standaard = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor CIDRAM.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'De standaard signature rondwegen normaal opgenomen met de primaire pakket.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'De primaire pakket (zonder de signatures, documentatie en configuratie).';
 $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Geen logbestand geselecteerd.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maximum aantal inlogpogingen overschreden; Toegang geweigerd.';
+$CIDRAM['lang']['Name: Bypasses'] = 'Standaard signature rondwegen.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 signatures bestand (bogon/martian CIDRs).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 signatures bestand (gevaarlijk en spammy ISPs).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 signatures bestand (CIDRs voor proxies, VPN\'s, en diverse andere ongewenste diensten).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 signatures bestand (bogon/martian CIDRs).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 signatures bestand (gevaarlijk en spammy ISPs).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 signatures bestand (CIDRs voor proxies, VPN\'s, en diverse andere ongewenste diensten).';
 $CIDRAM['lang']['previewer_days'] = 'Dagen';
 $CIDRAM['lang']['previewer_hours'] = 'Uur';
 $CIDRAM['lang']['previewer_minutes'] = 'Minuten';

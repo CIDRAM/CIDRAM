@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.10.03).
+ * This file: German language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Wann sollten Verstöße gezä
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-Datei URL für benutzerdefinierte Themen.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Schriftvergrößerung. Standardeinstellung = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standard-Thema für CIDRAM verwenden.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration).';
 $CIDRAM['lang']['field_activate'] = 'Aktivieren';
 $CIDRAM['lang']['field_banned'] = 'Verboten';
 $CIDRAM['lang']['field_blocked'] = 'Blockiert';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei exis
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Keine Protokolldatei ausgewählt.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert.';
+$CIDRAM['lang']['Name: Bypasses'] = 'Standard-Signatur-Bypässe.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 Signaturdatei (Bogon/Marsmensch CIDRs).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 Signaturdatei (gefährliche und spam-anfällig ISPs).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6 Signaturdatei (unerwünschte Cloud-Services und nicht-menschliche Endpunkte).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 Signaturdatei (Bogon/Marsmensch CIDRs).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 Signaturdatei (gefährliche und spam-anfällig ISPs).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 Signaturdatei (CIDRs für Proxies, VPNs und andere verschiedene unerwünschte Dienste).';
 $CIDRAM['lang']['previewer_days'] = 'Tage';
 $CIDRAM['lang']['previewer_hours'] = 'Stunden';
 $CIDRAM['lang']['previewer_minutes'] = 'Minuten';

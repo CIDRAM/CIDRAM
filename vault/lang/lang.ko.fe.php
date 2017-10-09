@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.10.03).
+ * This file: Korean language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = '위반은 언제 계산해야
 $CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
 $CIDRAM['lang']['config_template_data_Magnification'] = '글꼴 배율. Default (기본 설정) = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테마.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = '기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = '메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).';
 $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지
 $CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '로그가 선택되어 있지 않습니다.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = '로그인 시도 횟수를 초과했습니다; 액세스 거부.';
+$CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4의 서명 파일 (보곤/화성 CIDR).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4의 서명 파일 (스패머을 가진 위험한 ISP).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6의 서명 파일 (보곤/화성 CIDR).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6의 서명 파일 (스패머을 가진 위험한 ISP).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
 $CIDRAM['lang']['previewer_days'] = '일';
 $CIDRAM['lang']['previewer_hours'] = '시간';
 $CIDRAM['lang']['previewer_minutes'] = '의사록';

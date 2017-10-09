@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.10.03).
+ * This file: Norwegian language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Når skal infraksjoner regnes
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL for CSS-fil for tilpassede temaer.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Font forstørrelse. Standardverdi = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standard tema som skal brukes til CIDRAM.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Standard-signatur-bypass-filene som normalt følger med hovedpakken.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Hovedpakken (minus signaturene, dokumentasjonen og konfigurasjonen).';
 $CIDRAM['lang']['field_activate'] = 'Aktiver';
 $CIDRAM['lang']['field_banned'] = 'Utestengt';
 $CIDRAM['lang']['field_blocked'] = 'Blokkert';
@@ -131,6 +133,7 @@ $CIDRAM['lang']['label_fmgr_free_space'] = 'Ledig diskplass: ';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskbruk: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskplass: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentoppdateringsmetadata';
+$CIDRAM['lang']['label_hide'] = 'Gjem';
 $CIDRAM['lang']['label_os'] = 'Operativsystem brukt:';
 $CIDRAM['lang']['label_other'] = 'Annen';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Aktive IPv4 signaturfiler';
@@ -141,6 +144,7 @@ $CIDRAM['lang']['label_php'] = 'PHP versjon brukt:';
 $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA forsøk';
 $CIDRAM['lang']['label_results'] = 'Resultater (%s i – %s avvist – %s akseptert – %s sammensmeltet – %s ut):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI brukt:';
+$CIDRAM['lang']['label_show'] = 'Vis';
 $CIDRAM['lang']['label_stable'] = 'Siste stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformasjon:';
 $CIDRAM['lang']['label_total'] = 'Total';
@@ -162,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Utvalgte loggfilen finnes ikke!'
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Ingen loggfiler tilgjengelig.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Ingen loggfil valgt.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maks antall påloggingsforsøk er overskredet; Tilgang nektet.';
+$CIDRAM['lang']['Name: Bypasses'] = 'Standard signatur bypasses.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4 signaturfil (uønskede sky-tjenester og ikke-menneskelige endepunkter).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 signaturfil (bogon/martian CIDRer).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 signaturfil (farlige og spam-fylte ISPer).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 signaturfil (CIDRer for proxyer, VPN og andre uønskede tjenester).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6 signaturfil (uønskede sky-tjenester og ikke-menneskelige endepunkter).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 signaturfil (bogon/martian CIDRer).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 signaturfil (farlige og spam-fylte ISPer).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 signaturfil (CIDRer for proxyer, VPN og andre uønskede tjenester).';
 $CIDRAM['lang']['previewer_days'] = 'Dager';
 $CIDRAM['lang']['previewer_hours'] = 'Timer';
 $CIDRAM['lang']['previewer_minutes'] = 'Minutter';

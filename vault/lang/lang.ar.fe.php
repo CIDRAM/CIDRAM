@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.10.03).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'متى يجب أن تحسب �
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'تكبير الخط. افتراضي = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'الموضوع الافتراضي لاستخدام CIDRAM.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين).';
 $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'لا سجلات متاح.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'لا سجلات مختار.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول.';
+$CIDRAM['lang']['Name: Bypasses'] = 'يتجاوز توقيع قياسي.';
+$CIDRAM['lang']['Name: IPv4'] = 'عناوين IPv4 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'عناوين IPv4 ملف التوقيعات (bogon/المريخ CIDRs).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'عناوين IPv4 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'عناوين IPv4 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).';
+$CIDRAM['lang']['Name: IPv6'] = 'عناوين IPv6 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'عناوين IPv6 ملف التوقيعات (bogon/المريخ CIDRs).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'عناوين IPv6 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'عناوين IPv6 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).';
 $CIDRAM['lang']['previewer_days'] = 'أيام';
 $CIDRAM['lang']['previewer_hours'] = 'ساعات';
 $CIDRAM['lang']['previewer_minutes'] = 'الدقائق';

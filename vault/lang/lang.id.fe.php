@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.03).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran d
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Perbesaran font. Default = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Tidak ada log dipilih.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak.';
+$CIDRAM['lang']['Name: Bypasses'] = 'Bypass tanda tangan standar.';
+$CIDRAM['lang']['Name: IPv4'] = 'File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File tanda tangan IPv4 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File tanda tangan IPv4 (ISP berbahaya dan spam rawan).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
+$CIDRAM['lang']['Name: IPv6'] = 'File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File tanda tangan IPv6 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File tanda tangan IPv6 (ISP berbahaya dan spam rawan).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
 $CIDRAM['lang']['previewer_days'] = 'Hari';
 $CIDRAM['lang']['previewer_hours'] = 'Jam';
 $CIDRAM['lang']['previewer_minutes'] = 'Menit';

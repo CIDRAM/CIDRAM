@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.03).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'İhlaller ne zaman sayılmal�
 $CIDRAM['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Yazı tipi büyütme. Varsayılan = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM için kullanılacak varsayılan tema.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Varsayılan imza bypass\'lar, normalde ana paketle birlikte verilir.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Seçilen günlük dosyası yok!'
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Hiçbir günlük dosyası seçilmedi.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maksimum giriş denemesi aşıldı; Erişim reddedildi.';
+$CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan uç noktaları).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan uç noktaları).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
 $CIDRAM['lang']['previewer_days'] = 'Günler';
 $CIDRAM['lang']['previewer_hours'] = 'Saatler';
 $CIDRAM['lang']['previewer_minutes'] = 'Dakikalar';

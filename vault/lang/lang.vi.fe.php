@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.10.03).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Khi vi phạm cần được 
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Phóng to chữ. Mặc định = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho CIDRAM.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
 $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không t�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập bị từ chối.';
+$CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
+$CIDRAM['lang']['Name: IPv4'] = 'Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'Tập tin chữ ký IPv4 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'Tập tin chữ ký IPv4 (ISP nguy hiểm và gửi thư rác).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'Tập tin chữ ký IPv4 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
+$CIDRAM['lang']['Name: IPv6'] = 'Tập tin chữ ký IPv6 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'Tập tin chữ ký IPv6 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
 $CIDRAM['lang']['previewer_days'] = 'Ngày';
 $CIDRAM['lang']['previewer_hours'] = 'Giờ';
 $CIDRAM['lang']['previewer_minutes'] = 'Phút';

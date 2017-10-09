@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.10.03).
+ * This file: Italian language data for the front-end (last modified: 2017.10.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -66,6 +66,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Quando devono infrazioni esse
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL del file CSS per i temi personalizzati.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Ingrandimento del carattere. Predefinito = 1.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema predefinito da utilizzare per CIDRAM.';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Il pacchetto principale (senza le firme, la documentazione, e la configurazione).';
 $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_banned'] = 'Vietato';
 $CIDRAM['lang']['field_blocked'] = 'Bloccato';
@@ -164,6 +166,15 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log selezionato non esiste!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Nessun file di log disponibili.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Nessun file di log selezionato.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Numero massimo di tentativi di accesso superato; Accesso negato.';
+$CIDRAM['lang']['Name: Bypasses'] = 'I firme predefinite bypass.';
+$CIDRAM['lang']['Name: IPv4'] = 'File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File di firme per IPv4 (bogon/marziano CIDRs).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File di firme per IPv4 (ISP pericolosi e spam incline).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'File di firme per IPv4 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).';
+$CIDRAM['lang']['Name: IPv6'] = 'File di firme per IPv6 (servizi cloud indesiderate e punti finali non umani).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File di firme per IPv6 (bogon/marziano CIDRs).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File di firme per IPv6 (ISP pericolosi e spam incline).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'File di firme per IPv6 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).';
 $CIDRAM['lang']['previewer_days'] = 'Giorni';
 $CIDRAM['lang']['previewer_hours'] = 'Ore';
 $CIDRAM['lang']['previewer_minutes'] = 'Minuti';

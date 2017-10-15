@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.10.09).
+ * This file: Italian language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Disconnettersi</
 $CIDRAM['lang']['config_general_ban_override'] = 'Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]; 403 = Sostituire con "403 Forbidden"; 503 = Sostituire con "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro. Opzioni: PASSWORD_DEFAULT (predefinito), PASSWORD_BCRYPT, PASSWORD_ARGON2I (richiede PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Un elenco delimitato con virgole di server DNS da utilizzare per le ricerche dei nomi di host. Predefinito = "8.8.8.8,8.8.4.4" (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'Disabilita CLI?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Disabilita l\'accesso front-end?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Disabilita l\'accesso front-end? L\'accesso front-end può rendere CIDRAM più gestibile, ma può anche essere un potenziale rischio per la sicurezza. Si consiglia di gestire CIDRAM attraverso il back-end, quando possibile, ma l\'accesso front-end è previsto per quando non è possibile. Mantenerlo disabilitato tranne se hai bisogno. False = Abilita l\'accesso front-end; True = Disabilita l\'accesso front-end [Predefinito].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Disabilita webfonts? True = Sì; False = No [Predefinito].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Se si desidera, è possibile fornire un indirizzo email qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l\'indirizzo email si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo email qui, che si assicurare che l\'indirizzo email si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi email).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Come preferisci che l\'indirizzo email venga presentato agli utenti?';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non 
 $CIDRAM['lang']['state_risk_high'] = 'Alto';
 $CIDRAM['lang']['state_risk_low'] = 'A basso';
 $CIDRAM['lang']['state_risk_medium'] = 'Medio';
-$CIDRAM['lang']['state_tracking'] = 'Attualmente monitoraggio di <span class="txtRd">%s</span> IP.';
+$CIDRAM['lang']['state_tracking'] = 'Attualmente monitoraggio di %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Non nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Non nascondere il inutilizzato';

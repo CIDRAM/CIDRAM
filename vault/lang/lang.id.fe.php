@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.09).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]; 403 = Mengesampingkan dengan "403 Forbidden"; 503 = Mengesampingkan dengan "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'Menonaktifkan modus CLI?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian depan?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya; False = Tidak [Default].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggu
 $CIDRAM['lang']['state_risk_high'] = 'Tinggi';
 $CIDRAM['lang']['state_risk_low'] = 'Rendah';
 $CIDRAM['lang']['state_risk_medium'] = 'Menengah';
-$CIDRAM['lang']['state_tracking'] = 'Saat ini melacak <span class="txtRd">%s</span> IP.';
+$CIDRAM['lang']['state_tracking'] = 'Saat ini melacak %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Tidak menyembunyikan non-digunakan';

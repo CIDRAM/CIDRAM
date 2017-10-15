@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.10.09).
+ * This file: English language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Log Out</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren\'t used). 200 = Don\'t override [Default]; 403 = Override with "403 Forbidden"; 503 = Override with "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Defines which algorithm to use for all future passwords and sessions. Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requires PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don\'t change this unless you know what you\'re doing!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'Disable CLI mode?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Disable front-end access?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don\'t need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Disable front-end access? Front-end access can make CIDRAM more manageable, but can also be a potential security risk, too. It\'s recommended to manage CIDRAM via the back-end whenever possible, but front-end access is provided for when it isn\'t possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Disable webfonts? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'If you wish, you can supply an email address here to be given to users when they\'re blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it\'s strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don\'t mind being spammed (in other words, you probably don\'t want to use your primary personal or primary business email addresses).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'How would you prefer the email address to be presented to users?';
@@ -105,7 +105,7 @@ $CIDRAM['lang']['field_rename_file'] = 'Rename';
 $CIDRAM['lang']['field_reset'] = 'Reset';
 $CIDRAM['lang']['field_set_new_password'] = 'Set new password';
 $CIDRAM['lang']['field_size'] = 'Total Size: ';
-$CIDRAM['lang']['field_size_bytes'] = 'bytes';
+$CIDRAM['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Warning: This account is not usin
 $CIDRAM['lang']['state_risk_high'] = 'High';
 $CIDRAM['lang']['state_risk_low'] = 'Low';
 $CIDRAM['lang']['state_risk_medium'] = 'Medium';
-$CIDRAM['lang']['state_tracking'] = 'Currently tracking <span class="txtRd">%s</span> IPs.';
+$CIDRAM['lang']['state_tracking'] = ['Currently tracking %s IP.', 'Currently tracking %s IPs.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Don\'t hide non-outdated';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Hide non-outdated';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Don\'t hide unused';

@@ -8,13 +8,21 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.08.15).
+ * This file: Russian language data (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
 if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
+
+/** Language plurality rule. */
+$CIDRAM['Plural-Rule'] = function($Num) {
+    if ($Num % 10 === 1 && $Num % 100 !== 11) {
+        return 0;
+    }
+    return $Num % 10 >= 2 && $Num % 10 <= 4 && ($Num % 100 < 10 || $Num % 100 >= 20) ? 1 : 2;
+};
 
 $CIDRAM['lang']['click_here'] = 'кликните сюда';
 $CIDRAM['lang']['denied'] = 'Доступ Закрыт!';

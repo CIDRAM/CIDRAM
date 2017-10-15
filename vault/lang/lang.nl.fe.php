@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.10.09).
+ * This file: Dutch language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]; 403 = Overrijden met "403 Forbidden"; 503 = Overrijden met "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Definieert welk algoritme u wilt gebruiken voor alle toekomstige wachtwoorden en sessies. Opties: PASSWORD_DEFAULT (standaard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (vereist PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Een door komma\'s gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Uitschakelen webfonts? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hoe zou u het e-mailadres voor gebruikers willen aanbieden?';
@@ -105,7 +105,7 @@ $CIDRAM['lang']['field_rename_file'] = 'Naam veranderen';
 $CIDRAM['lang']['field_reset'] = 'Resetten';
 $CIDRAM['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
 $CIDRAM['lang']['field_size'] = 'Totale Grootte: ';
-$CIDRAM['lang']['field_size_bytes'] = 'bytes';
+$CIDRAM['lang']['field_size_bytes'] = ['byte', 'bytes'];
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet
 $CIDRAM['lang']['state_risk_high'] = 'Hoog';
 $CIDRAM['lang']['state_risk_low'] = 'Laag';
 $CIDRAM['lang']['state_risk_medium'] = 'Middelgroot';
-$CIDRAM['lang']['state_tracking'] = 'Momenteel controleren <span class="txtRd">%s</span> IPs.';
+$CIDRAM['lang']['state_tracking'] = ['Momenteel controleren %s IP.', 'Momenteel controleren %s IPs.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'De ongebruikte niet verbergen';

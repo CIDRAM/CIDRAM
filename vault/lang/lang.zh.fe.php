@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.09).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
 $CIDRAM['lang']['config_general_default_algo'] = '定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。';
 $CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器列表，​用于主机名查找。​标准 = “8.8.8.8,8.8.4.4” (Google DNS)。​警告：不要修改此除非您知道什么您做着！';
-$CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？';
-$CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？';
+$CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】； True（真）=关闭CLI模式。';
+$CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？​前端访问可以使CIDRAM更易于管理，​但也可能是潜在的安全风险。​建议管理CIDRAM通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问； True（真）=关闭前端访问【标准】。';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？​True（真）=关闭； False（假）=不关闭【标准】。';
 $CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何将电子邮件地址呈现给用户？';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = '警告：此账户不​使用有
 $CIDRAM['lang']['state_risk_high'] = '高';
 $CIDRAM['lang']['state_risk_low'] = '低';
 $CIDRAM['lang']['state_risk_medium'] = '中等';
-$CIDRAM['lang']['state_tracking'] = '目前正在跟踪<span class="txtRd">%s</span>个IP。';
+$CIDRAM['lang']['state_tracking'] = '目前正在跟踪%s个IP。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';

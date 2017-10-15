@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.09).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın; 403 = "403 Yasak" ile geçersiz kıl; 503 = "503 Hizmet kullanılamıyor" ile geçersiz kılın.';
 $CIDRAM['lang']['config_general_default_algo'] = 'Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 gerektirir).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'CLI modunu devre dışı bırak?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre dışı bırak?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'CLI modunu devre dışı bırak? CLI modu varsayılan olarak etkindir, ancak bazen bazı test araçlarına (örneğin PHPUnit) ve diğer CLI tabanlı uygulamalara müdahale edebilir. CLI modunu devre dışı bırakmanız gerekmiyorsa, bu direktif görmezden almalısınız. False = CLI modunu etkinleştir [Varsayılan]; True = CLI modunu devre dışı bırak.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre dışı bırak? Ön uç erişimi CIDRAM\'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. CIDRAM\'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'İsterseniz, kullanıcıları engellediğinde verilecek bir e-posta adresi sağlayabilirsiniz, yanlışlıkla engellendikleri zaman destek için sizinle iletişim kurabilmeleri için. UYARI: Burada tedarik ettiğiniz e-posta adresiniz kesinlikle spambotlar ve sıyırıcılar tarafından edinilecektir. Bu nedenle, tek kullanımlık veya önemsiz bir e-posta adresini seçmeniz kesinlikle önerilir (diğer bir deyişle, büyük olasılıkla birincil kişisel veya birincil iş e-posta adreslerinizi kullanmak istemiyorsunuzdur).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?';
@@ -105,7 +105,7 @@ $CIDRAM['lang']['field_rename_file'] = 'Adını değiştirmek';
 $CIDRAM['lang']['field_reset'] = 'Sıfırla';
 $CIDRAM['lang']['field_set_new_password'] = 'Yeni Şifre Oluştur';
 $CIDRAM['lang']['field_size'] = 'Toplam Boyut: ';
-$CIDRAM['lang']['field_size_bytes'] = 'Bayt';
+$CIDRAM['lang']['field_size_bytes'] = 'bayt';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şi
 $CIDRAM['lang']['state_risk_high'] = 'Yüksek';
 $CIDRAM['lang']['state_risk_low'] = 'Düşük';
 $CIDRAM['lang']['state_risk_medium'] = 'Orta';
-$CIDRAM['lang']['state_tracking'] = 'Şu anda <span class="txtRd">%s</span> IP izleme.';
+$CIDRAM['lang']['state_tracking'] = 'Şu anda %s IP izleme.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları gizleme';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Kullanılmayanları gizleme';

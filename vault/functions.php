@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.09).
+ * This file: Functions file (last modified: 2017.10.15).
  */
 
 /**
@@ -66,7 +66,9 @@ $CIDRAM['ParseVars'] = function ($Needle, $Haystack) {
         return '';
     }
     array_walk($Needle, function($Value, $Key) use (&$Haystack) {
-        $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+        if (!is_array($Value)) {
+            $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+        }
     });
     return $Haystack;
 };
@@ -1331,13 +1333,7 @@ $CIDRAM['WrapRedText'] = function($Err) {
 
 /** Format filesize information. */
 $CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
-    $Scale = array(
-        $CIDRAM['lang']['field_size_bytes'],
-        $CIDRAM['lang']['field_size_KB'],
-        $CIDRAM['lang']['field_size_MB'],
-        $CIDRAM['lang']['field_size_GB'],
-        $CIDRAM['lang']['field_size_TB']
-    );
+    $Scale = array('field_size_bytes', 'field_size_KB', 'field_size_MB', 'field_size_GB', 'field_size_TB');
     $Iterate = 0;
     $Filesize = (int)$Filesize;
     while ($Filesize > 1024) {
@@ -1347,7 +1343,7 @@ $CIDRAM['FormatFilesize'] = function (&$Filesize) use (&$CIDRAM) {
             break;
         }
     }
-    $Filesize = $CIDRAM['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+    $Filesize = $CIDRAM['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $CIDRAM['Plural']($Filesize, $CIDRAM['lang'][$Scale[$Iterate]]);
 };
 
 /**
@@ -2309,4 +2305,21 @@ $CIDRAM['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redi
         $Label = isset($CIDRAM['lang'][$LangItem]) ? $CIDRAM['lang'][$LangItem] : $LangItem;
         $Options .= '<option value="' . $Switch . '">' . $Label . '</option>';
     }
+};
+
+/** Default language plurality rule. */
+$CIDRAM['Plural-Rule'] = function($Num) {
+    return $Num === 1 ? 0 : 1;
+};
+
+/** Select string based on plural rule. */
+$CIDRAM['Plural'] = function($Num, $String) use (&$CIDRAM) {
+    if (!is_array($String)) {
+        return $String;
+    }
+    $Choice = $CIDRAM['Plural-Rule']($Num);
+    if (!empty($String[$Choice])) {
+        return $String[$Choice];
+    }
+    return empty($String[0]) ? '' : $String[0];
 };

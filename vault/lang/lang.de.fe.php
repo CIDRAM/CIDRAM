@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.10.09).
+ * This file: German language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Ausloggen</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockiert Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]; 403 = Überschreiben mit "403 Forbidden"; 503 = Überschreiben mit "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Eine durch Kommata getrennte Liste von DNS-Servern, die für Hostnamen-Lookups verwendet werden sollen. Standardeinstellung = "8.8.8.8,8.8.4.4" (Google DNS). ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'CLI-Modus deaktivieren?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Front-End-Access deaktivieren?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Front-End-Access deaktivieren? Front-End-Access kann machen CIDRAM einfacher zu handhaben, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, CIDRAM über die Back-End-Access zu verwalten, aber Front-End-Access vorgesehen ist, für wenn es nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Wie möchten Sie die E-Mail-Adresse für die Nutzer vorstellen?';
@@ -105,7 +105,7 @@ $CIDRAM['lang']['field_rename_file'] = 'Umbenennen';
 $CIDRAM['lang']['field_reset'] = 'Zurücksetzen';
 $CIDRAM['lang']['field_set_new_password'] = 'Neues Passwort eingeben';
 $CIDRAM['lang']['field_size'] = 'Gesamtgröße: ';
-$CIDRAM['lang']['field_size_bytes'] = 'Byte';
+$CIDRAM['lang']['field_size_bytes'] = ['Byte', 'Bytes'];
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet k
 $CIDRAM['lang']['state_risk_high'] = 'Hohes';
 $CIDRAM['lang']['state_risk_low'] = 'Niedriges';
 $CIDRAM['lang']['state_risk_medium'] = 'Mittleres';
-$CIDRAM['lang']['state_tracking'] = 'Tracking von <span class="txtRd">%s</span> IP-Adressen in diesem Moment.';
+$CIDRAM['lang']['state_tracking'] = ['Tracking von %s IP-Adresse in diesem Moment.', 'Tracking von %s IP-Adressen in diesem Moment.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';

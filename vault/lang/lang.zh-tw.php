@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2017.08.15).
+ * This file: Chinese (traditional) language data (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */

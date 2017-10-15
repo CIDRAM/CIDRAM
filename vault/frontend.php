@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.09).
+ * This file: Front-end handler (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -867,7 +867,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             'ent.all&&!document.getElementById?document.all.%1$s_preview.innerHTML=t:' .
                             '\'\'};%1$s_function();</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
-                        $CIDRAM['lang']['field_size_bytes'],
+                        $CIDRAM['Plural'](0, $CIDRAM['lang']['field_size_bytes']),
                         $CIDRAM['lang']['field_size_KB'],
                         $CIDRAM['lang']['field_size_MB'],
                         $CIDRAM['lang']['field_size_GB'],
@@ -2591,7 +2591,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     if (!empty($CIDRAM['Cache']['Tracking']) && is_array($CIDRAM['Cache']['Tracking'])) {
 
         /** Count currently tracked IPs. */
-        $CIDRAM['FE']['TrackingCount'] = sprintf($CIDRAM['lang']['state_tracking'], $CIDRAM['Number_L10N'](count($CIDRAM['Cache']['Tracking'])));
+        $CIDRAM['FE']['TrackingCount'] = count($CIDRAM['Cache']['Tracking']);
+        $CIDRAM['FE']['TrackingCount'] = sprintf(
+            $CIDRAM['Plural']($CIDRAM['FE']['TrackingCount'], $CIDRAM['lang']['state_tracking']),
+            '<span class="txtRd">' . $CIDRAM['Number_L10N']($CIDRAM['FE']['TrackingCount']) . '</span>'
+        );
 
         uasort($CIDRAM['Cache']['Tracking'], function ($A, $B) {
             if (empty($A['Time']) || empty($B['Time']) || $A['Time'] === $B['Time']) {

@@ -8,13 +8,18 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2017.08.15).
+ * This file: French language data (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
 if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
+
+/** Language plurality rule. */
+$CIDRAM['Plural-Rule'] = function($Num) {
+    return ($Num >= 0 || $Num <= 1) ? 0 : 1;
+};
 
 $CIDRAM['lang']['click_here'] = 'cliquez ici';
 $CIDRAM['lang']['denied'] = 'Accès Refusé !';

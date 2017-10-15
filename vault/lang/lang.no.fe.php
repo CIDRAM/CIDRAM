@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.10.09).
+ * This file: Norwegian language data for the front-end (last modified: 2017.10.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,8 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logg Ut</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]; 403 = Overstyr med "403 Forbidden"; 503 = Overstyr med "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!';
-$CIDRAM['lang']['config_general_disable_cli'] = 'Deaktiver CLI-modus?';
-$CIDRAM['lang']['config_general_disable_frontend'] = 'Deaktiver tilgang til frontenden?';
+$CIDRAM['lang']['config_general_disable_cli'] = 'Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (for eksempel; PHPUnit) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus.';
+$CIDRAM['lang']['config_general_disable_frontend'] = 'Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre CIDRAM mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere CIDRAM via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Deaktiver webfonter? True = Ja; False = Nei [Standardverdi].';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?';
@@ -237,7 +237,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Advarsel: Denne kontoen bruker ik
 $CIDRAM['lang']['state_risk_high'] = 'Høy';
 $CIDRAM['lang']['state_risk_low'] = 'Lav';
 $CIDRAM['lang']['state_risk_medium'] = 'Medium';
-$CIDRAM['lang']['state_tracking'] = 'Foreløpig sporer <span class="txtRd">%s</span> IP-adresser.';
+$CIDRAM['lang']['state_tracking'] = ['Foreløpig sporer %s IP-adresse.', 'Foreløpig sporer %s IP-adresser.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ikke skjul hvis ikke utdatert';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Skjul hvis ikke utdatert';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Ikke skjul ubrukte';

@@ -654,21 +654,22 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 1.80%.
-# %Listed, CleanTalk.org: 21.58%.
-# Stop Forum Spam (SFS) listings: 8,303.
-# Updated: 2017.04.01
+# %Listed, Google Malware Dashboard: 0.89%.
+# %Listed, CleanTalk.org: 18.90%.
+# Stop Forum Spam (SFS) listings: 10,281.
+# Updated: 2017.10.17
 
 # Note for when updating: "2002::/16" appears in the announces; This is a "6to4" block, and should never be included as
 # a signature by default. When seen, just delete it from the list.
 
 2001::/32 Run rules_as6939.php
 2001:470::/32 Run rules_as6939.php
+2001:df2:7900::/48 Run rules_as6939.php
 2001:49e8::/32 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
-2403:ce00:c0da::/48 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
 2602:ff06:725::/48 Run rules_as6939.php
+2602:ff22::/36 Run rules_as6939.php
 2604:a100::/32 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
 2620:0:50c0::/48 Run rules_as6939.php
@@ -778,10 +779,10 @@ Tag: Root SA
 
 
 # ASN 11878 ("Tzulo Inc").
-# %Listed, Google Malware Dashboard: 0.30%.
-# %Listed, CleanTalk.org: 29.70%.
-# Stop Forum Spam (SFS) listings: 322.
-# Updated: 2016.04.25 / Checked: 2017.04.01
+# %Listed, Google Malware Dashboard: 0.18%.
+# %Listed, CleanTalk.org: 34.24%.
+# Stop Forum Spam (SFS) listings: 188.
+# Updated: 2016.04.25 / Checked: 2017.10.17
 
 2607:2780::/48 Deny Cloud
 2607:8b00::/32 Deny Cloud
@@ -812,8 +813,8 @@ Tag: Corporate Colocation
 Tag: iWeb
 
 
-# ASNs 13926, 22781, 29713, 54203, 62651, 63128 ("Reliable Hosting Services").
-# Updated: 2017.02.18 / Checked: 2017.04.01
+# ASNs 13926, 22781, 29713, 54203, 62651, 63128 ("Reliable Hosting Services", "Strong Technology, LLC").
+# Updated: 2017.02.18 / Checked: 2017.10.17
 
 2602:ff62:120::/48 Deny Cloud
 2604:4100::/36 Deny Cloud
@@ -851,10 +852,10 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# %Listed, Google Malware Dashboard: 29.80%.
-# %Listed, CleanTalk.org: 42.74%.
-# Stop Forum Spam (SFS) listings: 11,200.
-# Updated: 2016.01.20 / Checked: 2017.04.01
+# %Listed, Google Malware Dashboard: 23.15%.
+# %Listed, CleanTalk.org: 43.72%.
+# Stop Forum Spam (SFS) listings: 8,436.
+# Updated: 2016.01.20 / Checked: 2017.10.17
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
@@ -938,8 +939,8 @@ Tag: Wowrack.com
 
 
 # ASN 197746 ("HyperHosting - Cloud Infrastructure").
-# %Listed, Google Malware Dashboard: 5.82%.
-# Updated: 2016.01.21 / Checked: 2017.05.08
+# %Listed, Google Malware Dashboard: 1.36%.
+# Updated: 2016.01.21 / Checked: 2017.10.17
 
 2a00:6620:2000::/48 Deny Cloud
 Tag: HyperHosting
@@ -976,27 +977,39 @@ Tag: Black Lotus
 
 
 # ASNs 8100, 29761 ("QuadraNet, Inc").
-# %Listed, Google Malware Dashboard: 3.00% (AS8100), 0% (AS29761).
-# %Listed, CleanTalk.org: 84.12% (AS8100), 88.53% (AS29761).
-# Stop Forum Spam (SFS) listings: 50,826 (AS8100), 0 (AS29761).
-# Updated: 2017.03.31
+# %Listed, Google Malware Dashboard: 4.95% (AS8100), 0% (AS29761).
+# %Listed, CleanTalk.org: 84.01% (AS8100), 89.09% (AS29761).
+# Stop Forum Spam (SFS) listings: 60,391 (AS8100), 0 (AS29761).
+# Updated: 2017.10.17
 
+2400:30c0:1::/48 Deny Cloud
+2400:30c0:2::/48 Deny Cloud
 2602:ff75::/36 Deny Cloud
 2602:ff96:2::/48 Deny Cloud
 2602:ff96:4::/48 Deny Cloud
 2602:ff96:11::/48 Deny Cloud
+2602:ff96:14::/48 Deny Cloud
 2602:fff6:1::/48 Deny Cloud
 2602:fff6:3::/48 Deny Cloud
 2602:fff6:6::/48 Deny Cloud
 2604:bc0::/47 Deny Cloud
 2605:8900:3000::/36 Deny Cloud
-2607:8700:102::/48 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
+2a04:6ac0::/29 Deny Cloud
 2a05:4240::/29 Deny Cloud
 2a05:b0c6:300::/40 Deny Cloud
 2a06:e800::/29 Deny Cloud
+2a07:1c44:1820::/48 Deny Cloud
 2a07:9944:1a::/47 Deny Cloud
+2a07:ca06::/32 Deny Cloud
+2a0a:6c0::/29 Deny Cloud
+2a0a:8f80::/29 Deny Cloud
+2a0a:b380::/32 Deny Cloud
+2a0a:ebc0::/29 Deny Cloud
+2a0a:f640::/29 Deny Cloud
+2a0a:f8c0::/29 Deny Cloud
+2a0a:f9c6::/32 Deny Cloud
 Tag: QuadraNet, Inc
 
 
@@ -1021,10 +1034,10 @@ Tag: SERVERYOU INC
 
 
 # ASN 25577 ("Connexions4London Ltd").
-# %Listed, Google Malware Dashboard: 2.37%.
-# %Listed, CleanTalk.org: 20.59%.
-# Stop Forum Spam (SFS) listings: 38.
-# Updated: 2017.03.31
+# %Listed, Google Malware Dashboard: 1.45%.
+# %Listed, CleanTalk.org: 18.42%.
+# Stop Forum Spam (SFS) listings: 11.
+# Updated: 2017.03.31 / Checked: 2017.10.17
 
 2001:67c:1c0::/48 Deny Cloud
 2001:67c:580::/48 Deny Cloud
@@ -1035,12 +1048,12 @@ Tag: Connexions4London
 
 
 # ASN 32475 ("SingleHop, Inc").
-# %Listed, Google Malware Dashboard: 2.55%.
-# %Listed, CleanTalk.org: 69.64%.
-# Stop Forum Spam (SFS) listings: 2,403.
-# Updated: 2017.03.31
+# %Listed, Google Malware Dashboard: 0.91%.
+# %Listed, CleanTalk.org: 69.66%.
+# Stop Forum Spam (SFS) listings: 2,048.
+# Updated: 2017.10.17
 
-2607:f978:4::/47 Deny Cloud
+2607:f978:5::/48 Deny Cloud
 Tag: SingleHop, Inc
 
 
@@ -1114,20 +1127,20 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# %Listed, Google Malware Dashboard: 22.56%.
-# %Listed, CleanTalk.org: 38.93%.
-# Stop Forum Spam (SFS) listings: 1,967.
-# Updated: 2016.01.23 / Checked: 2017.03.29
+# %Listed, Google Malware Dashboard: 10.68%.
+# %Listed, CleanTalk.org: 40.11%.
+# Stop Forum Spam (SFS) listings: 719.
+# Updated: 2016.01.23 / Checked: 2017.10.17
 
 2605:6f80::/40 Deny Cloud
 Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
-# %Listed, Google Malware Dashboard: 2.96%.
-# %Listed, CleanTalk.org: 13.64%.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2017.03.29
+# %Listed, Google Malware Dashboard: 3.34%.
+# %Listed, CleanTalk.org: 33.33%.
+# Stop Forum Spam (SFS) listings: 872.
+# Updated: 2017.03.29 / Checked: 2017.10.17
 
 2605:aa80::/32 Deny Cloud
 2a0b:300::/29 Deny Cloud
@@ -1233,12 +1246,15 @@ Tag: AS46562
 Tag: RAM Host
 
 
-# "Host Europe GmbH" (ASNs 8972, 20738, 20773, 25074, 34011, 50932, 61157).
+# "Host Europe GmbH", "HEG Managed", "PlusServer GmbH" (all three combined due to heavy interlacing).
+# ASNs 5521, 8972, 20621, 20738, 20773, 25074, 31100, 50932, 61157.
 # Note: When updating, check for both "Host Europe" and "HostEurope" (no space). There are some additional CIDRs in use
 # that aren't tied to any particular ASN.
-# Updated: 2017.03.29
+# Updated: 2017.10.17
 
+2001:67c:1164::/48 Deny Cloud
 2001:830::/32 Deny Cloud
+2001:aa8::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
 2001:2000:3080:551::/64 Deny Cloud
 2a00:e10::/32 Deny Cloud
@@ -1251,8 +1267,11 @@ Tag: RAM Host
 2a02:4e8:d::/48 Deny Cloud
 2a02:4e8:14::/48 Deny Cloud
 2a02:4e8:de::/48 Deny Cloud
+2a02:ad0::/29 Deny Cloud
 2a02:cbf0::/30 Deny Cloud
+2a02:cbf4::/32 Deny Cloud
 2a02:cbf7::/47 Deny Cloud
+2a02:cbf7:100::/48 Deny Cloud
 2a02:e740::/29 Deny Cloud
 2a04:2f80::/29 Deny Cloud
 2a04:e540::/32 Deny Cloud

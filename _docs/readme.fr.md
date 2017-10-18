@@ -206,12 +206,18 @@ Fichier | Description
 /vault/lang/lang.nl.cli.php | Données linguistiques en Néerlandaise pour CLI.
 /vault/lang/lang.nl.fe.php | Données linguistiques en Néerlandaise pour l'accès frontal.
 /vault/lang/lang.nl.php | Données linguistiques en Néerlandaise.
+/vault/lang/lang.no.cli.php | Données linguistiques en Norvégienne pour CLI.
+/vault/lang/lang.no.fe.php | Données linguistiques en Norvégienne pour l'accès frontal.
+/vault/lang/lang.no.php | Données linguistiques en Norvégienne.
 /vault/lang/lang.pt.cli.php | Données linguistiques en Portugaise pour CLI.
 /vault/lang/lang.pt.fe.php | Données linguistiques en Portugaise pour l'accès frontal.
 /vault/lang/lang.pt.php | Données linguistiques en Portugaise.
 /vault/lang/lang.ru.cli.php | Données linguistiques en Russe pour CLI.
 /vault/lang/lang.ru.fe.php | Données linguistiques en Russe pour l'accès frontal.
 /vault/lang/lang.ru.php | Données linguistiques en Russe.
+/vault/lang/lang.sv.cli.php | Données linguistiques en Suédois pour CLI.
+/vault/lang/lang.sv.fe.php | Données linguistiques en Suédois pour l'accès frontal.
+/vault/lang/lang.sv.php | Données linguistiques en Suédois.
 /vault/lang/lang.th.cli.php | Données linguistiques en Thai pour CLI.
 /vault/lang/lang.th.fe.php | Données linguistiques en Thai pour l'accès frontal.
 /vault/lang/lang.th.php | Données linguistiques en Thai.
@@ -754,4 +760,4 @@ Valeur | En utilisant
 ---
 
 
-Dernière mise à jour : 5 Octobre 2017 (2017.10.05).
+Dernière mise à jour : 18 Octobre 2017 (2017.10.18).

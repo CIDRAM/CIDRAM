@@ -206,12 +206,18 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/lang/lang.nl.cli.php | ＣＬＩのオランダ語言語データ。
 /vault/lang/lang.nl.fe.php | フロントエンドのオランダ語言語データ。
 /vault/lang/lang.nl.php | オランダ語言語データ。
+/vault/lang/lang.no.cli.php | ＣＬＩのノルウェー語言語データ。
+/vault/lang/lang.no.fe.php | フロントエンドのノルウェー語言語データ。
+/vault/lang/lang.no.php | ノルウェー語言語データ。
 /vault/lang/lang.pt.cli.php | ＣＬＩのポルトガル語言語データ。
 /vault/lang/lang.pt.fe.php | フロントエンドのポルトガル語言語データ。
 /vault/lang/lang.pt.php | ポルトガル語言語データ。
 /vault/lang/lang.ru.cli.php | ＣＬＩのロシア語言語データ。
 /vault/lang/lang.ru.fe.php | フロントエンドのロシア語言語データ。
 /vault/lang/lang.ru.php | ロシア語言語データ。
+/vault/lang/lang.sv.cli.php | ＣＬＩのスウェーデン語言語データ。
+/vault/lang/lang.sv.fe.php | フロントエンドのスウェーデン語言語データ。
+/vault/lang/lang.sv.php | スウェーデン語言語データ。
 /vault/lang/lang.th.cli.php | ＣＬＩのタイ語言語データ。
 /vault/lang/lang.th.fe.php | フロントエンドのタイ語言語データ。
 /vault/lang/lang.th.php | タイ語言語データ。
@@ -754,4 +760,4 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ---
 
 
-最終アップデート：2017年10月5日。
+最終アップデート：2017年10月18日。

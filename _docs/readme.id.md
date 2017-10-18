@@ -206,12 +206,18 @@ Data | Deskripsi
 /vault/lang/lang.nl.cli.php | File Bahasa Belanda untuk CLI.
 /vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk bagian depan.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
+/vault/lang/lang.no.cli.php | File Bahasa Norwegia untuk CLI.
+/vault/lang/lang.no.fe.php | File Bahasa Norwegia untuk bagian depan.
+/vault/lang/lang.no.php | File Bahasa Norwegia.
 /vault/lang/lang.pt.cli.php | File Bahasa Portugis untuk CLI.
 /vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk bagian depan.
 /vault/lang/lang.pt.php | File Bahasa Portugis.
 /vault/lang/lang.ru.cli.php | File Bahasa Rusia untuk CLI.
 /vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk bagian depan.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.sv.cli.php | File Bahasa Swedia untuk CLI.
+/vault/lang/lang.sv.fe.php | File Bahasa Swedia untuk bagian depan.
+/vault/lang/lang.sv.php | File Bahasa Swedia.
 /vault/lang/lang.th.cli.php | File Bahasa Thailand untuk CLI.
 /vault/lang/lang.th.fe.php | File Bahasa Thailand untuk bagian depan.
 /vault/lang/lang.th.php | File Bahasa Thailand.
@@ -754,4 +760,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 5 Oktober 2017 (2017.10.05).
+Terakhir Diperbarui: 18 Oktober 2017 (2017.10.18).

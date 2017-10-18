@@ -206,12 +206,18 @@ Tập tin | Chi tiết
 /vault/lang/lang.nl.cli.php | Dữ liệu tiếng Hà Lan cho CLI.
 /vault/lang/lang.nl.fe.php | Dữ liệu tiếng Hà Lan cho các front-end.
 /vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
+/vault/lang/lang.no.cli.php | Dữ liệu tiếng Na Uy cho CLI.
+/vault/lang/lang.no.fe.php | Dữ liệu tiếng Na Uy cho các front-end.
+/vault/lang/lang.no.php | Dữ liệu tiếng Na Uy.
 /vault/lang/lang.pt.cli.php | Dữ liệu tiếng Bồ Đào Nha cho CLI.
 /vault/lang/lang.pt.fe.php | Dữ liệu tiếng Bồ Đào Nha cho các front-end.
 /vault/lang/lang.pt.php | Dữ liệu tiếng Bồ Đào Nha.
 /vault/lang/lang.ru.cli.php | Dữ liệu tiếng Nga cho CLI.
 /vault/lang/lang.ru.fe.php | Dữ liệu tiếng Nga cho các front-end.
 /vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
+/vault/lang/lang.sv.cli.php | Dữ liệu tiếng Thụy Điển cho CLI.
+/vault/lang/lang.sv.fe.php | Dữ liệu tiếng Thụy Điển cho các front-end.
+/vault/lang/lang.sv.php | Dữ liệu tiếng Thụy Điển.
 /vault/lang/lang.th.cli.php | Dữ liệu tiếng Thái Lan cho CLI.
 /vault/lang/lang.th.fe.php | Dữ liệu tiếng Thái Lan cho các front-end.
 /vault/lang/lang.th.php | Dữ liệu tiếng Thái Lan.
@@ -754,4 +760,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Mười 2017 (2017.10.05).
+Lần cuối cập nhật: 18 Tháng Mười 2017 (2017.10.18).

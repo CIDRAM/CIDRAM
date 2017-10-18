@@ -208,12 +208,18 @@
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ناروے زبان کے اعداد و شمار.</div> | /vault/lang/lang.no.php
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">سویڈش زبان کے اعداد و شمار.</div> | /vault/lang/lang.sv.php
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
@@ -859,4 +865,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 5 اکتوبر 2017 (2017.10.05).</div>
+<div dir="rtl">آخری تازہ کاری: 18 اکتوبر 2017 (2017.10.18).</div>

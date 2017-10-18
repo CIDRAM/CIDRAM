@@ -168,68 +168,74 @@ Bestand | Beschrijving
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
 /vault/fe_assets/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/fe_assets/pips.php | Pitten-handler (door de frontend bestandsbeheer gebruikt).
-/vault/lang/ | Bevat CIDRAM taaldata/taalgegevens.
+/vault/lang/ | Bevat CIDRAM lokalisaties.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.ar.cli.php | Arabisch taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ar.fe.php | Arabisch taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
-/vault/lang/lang.bn.cli.php | Bengalees taaldata/taalgegevens voor CLI.
-/vault/lang/lang.bn.fe.php | Bengalees taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.bn.php | Bengalees taaldata/taalgegevens.
-/vault/lang/lang.de.cli.php | Duitse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.de.fe.php | Duitse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
-/vault/lang/lang.en.cli.php | Engels taaldata/taalgegevens voor CLI.
-/vault/lang/lang.en.fe.php | Engels taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.en.php | Engels taaldata/taalgegevens.
-/vault/lang/lang.es.cli.php | Spaanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.es.fe.php | Spaanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
-/vault/lang/lang.fr.cli.php | Franse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.fr.fe.php | Franse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
-/vault/lang/lang.hi.cli.php | Hindi taaldata/taalgegevens voor CLI.
-/vault/lang/lang.hi.fe.php | Hindi taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.hi.php | Hindi taaldata/taalgegevens.
-/vault/lang/lang.id.cli.php | Indonesisch taaldata/taalgegevens voor CLI.
-/vault/lang/lang.id.fe.php | Indonesisch taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
-/vault/lang/lang.it.cli.php | Italiaanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.it.fe.php | Italiaanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
-/vault/lang/lang.ja.cli.php | Japanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ja.fe.php | Japanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
-/vault/lang/lang.ko.cli.php | Koreaanse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ko.fe.php | Koreaanse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ko.php | Koreaanse taaldata/taalgegevens.
-/vault/lang/lang.nl.cli.php | Nederlandse taaldata/taalgegevens voor CLI.
-/vault/lang/lang.nl.fe.php | Nederlandse taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
-/vault/lang/lang.pt.cli.php | Portugees taaldata/taalgegevens voor CLI.
-/vault/lang/lang.pt.fe.php | Portugees taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
-/vault/lang/lang.ru.cli.php | Russische taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ru.fe.php | Russische taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
-/vault/lang/lang.th.cli.php | Thaise taaldata/taalgegevens voor CLI.
-/vault/lang/lang.th.fe.php | Thaise taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.th.php | Thaise taaldata/taalgegevens.
-/vault/lang/lang.tr.cli.php | Turks taaldata/taalgegevens voor CLI.
-/vault/lang/lang.tr.fe.php | Turks taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.tr.php | Turks taaldata/taalgegevens.
-/vault/lang/lang.ur.cli.php | Urdu taaldata/taalgegevens voor CLI.
-/vault/lang/lang.ur.fe.php | Urdu taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.ur.php | Urdu taaldata/taalgegevens.
-/vault/lang/lang.vi.cli.php | Vietnamees taaldata/taalgegevens voor CLI.
-/vault/lang/lang.vi.fe.php | Vietnamees taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
-/vault/lang/lang.zh-tw.cli.php | Chinees (traditioneel) taaldata/taalgegevens voor CLI.
-/vault/lang/lang.zh-tw.fe.php | Chinees (traditioneel) taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
-/vault/lang/lang.zh.cli.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor CLI.
-/vault/lang/lang.zh.fe.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor het frontend.
-/vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
+/vault/lang/lang.ar.cli.php | Arabisch lokalisatie voor CLI.
+/vault/lang/lang.ar.fe.php | Arabisch lokalisatie voor het frontend.
+/vault/lang/lang.ar.php | Arabisch lokalisatie.
+/vault/lang/lang.bn.cli.php | Bengalees lokalisatie voor CLI.
+/vault/lang/lang.bn.fe.php | Bengalees lokalisatie voor het frontend.
+/vault/lang/lang.bn.php | Bengalees lokalisatie.
+/vault/lang/lang.de.cli.php | Duitse lokalisatie voor CLI.
+/vault/lang/lang.de.fe.php | Duitse lokalisatie voor het frontend.
+/vault/lang/lang.de.php | Duitse lokalisatie.
+/vault/lang/lang.en.cli.php | Engels lokalisatie voor CLI.
+/vault/lang/lang.en.fe.php | Engels lokalisatie voor het frontend.
+/vault/lang/lang.en.php | Engels lokalisatie.
+/vault/lang/lang.es.cli.php | Spaanse lokalisatie voor CLI.
+/vault/lang/lang.es.fe.php | Spaanse lokalisatie voor het frontend.
+/vault/lang/lang.es.php | Spaanse lokalisatie.
+/vault/lang/lang.fr.cli.php | Franse lokalisatie voor CLI.
+/vault/lang/lang.fr.fe.php | Franse lokalisatie voor het frontend.
+/vault/lang/lang.fr.php | Franse lokalisatie.
+/vault/lang/lang.hi.cli.php | Hindi lokalisatie voor CLI.
+/vault/lang/lang.hi.fe.php | Hindi lokalisatie voor het frontend.
+/vault/lang/lang.hi.php | Hindi lokalisatie.
+/vault/lang/lang.id.cli.php | Indonesisch lokalisatie voor CLI.
+/vault/lang/lang.id.fe.php | Indonesisch lokalisatie voor het frontend.
+/vault/lang/lang.id.php | Indonesisch lokalisatie.
+/vault/lang/lang.it.cli.php | Italiaanse lokalisatie voor CLI.
+/vault/lang/lang.it.fe.php | Italiaanse lokalisatie voor het frontend.
+/vault/lang/lang.it.php | Italiaanse lokalisatie.
+/vault/lang/lang.ja.cli.php | Japanse lokalisatie voor CLI.
+/vault/lang/lang.ja.fe.php | Japanse lokalisatie voor het frontend.
+/vault/lang/lang.ja.php | Japanse lokalisatie.
+/vault/lang/lang.ko.cli.php | Koreaanse lokalisatie voor CLI.
+/vault/lang/lang.ko.fe.php | Koreaanse lokalisatie voor het frontend.
+/vault/lang/lang.ko.php | Koreaanse lokalisatie.
+/vault/lang/lang.nl.cli.php | Nederlandse lokalisatie voor CLI.
+/vault/lang/lang.nl.fe.php | Nederlandse lokalisatie voor het frontend.
+/vault/lang/lang.nl.php | Nederlandse lokalisatie.
+/vault/lang/lang.no.cli.php | Noorse lokalisatie voor CLI.
+/vault/lang/lang.no.fe.php | Noorse lokalisatie voor het frontend.
+/vault/lang/lang.no.php | Noorse lokalisatie.
+/vault/lang/lang.pt.cli.php | Portugees lokalisatie voor CLI.
+/vault/lang/lang.pt.fe.php | Portugees lokalisatie voor het frontend.
+/vault/lang/lang.pt.php | Portugees lokalisatie.
+/vault/lang/lang.ru.cli.php | Russische lokalisatie voor CLI.
+/vault/lang/lang.ru.fe.php | Russische lokalisatie voor het frontend.
+/vault/lang/lang.ru.php | Russische lokalisatie.
+/vault/lang/lang.sv.cli.php | Zweedse lokalisatie voor CLI.
+/vault/lang/lang.sv.fe.php | Zweedse lokalisatie voor het frontend.
+/vault/lang/lang.sv.php | Zweedse lokalisatie.
+/vault/lang/lang.th.cli.php | Thaise lokalisatie voor CLI.
+/vault/lang/lang.th.fe.php | Thaise lokalisatie voor het frontend.
+/vault/lang/lang.th.php | Thaise lokalisatie.
+/vault/lang/lang.tr.cli.php | Turks lokalisatie voor CLI.
+/vault/lang/lang.tr.fe.php | Turks lokalisatie voor het frontend.
+/vault/lang/lang.tr.php | Turks lokalisatie.
+/vault/lang/lang.ur.cli.php | Urdu lokalisatie voor CLI.
+/vault/lang/lang.ur.fe.php | Urdu lokalisatie voor het frontend.
+/vault/lang/lang.ur.php | Urdu lokalisatie.
+/vault/lang/lang.vi.cli.php | Vietnamees lokalisatie voor CLI.
+/vault/lang/lang.vi.fe.php | Vietnamees lokalisatie voor het frontend.
+/vault/lang/lang.vi.php | Vietnamees lokalisatie.
+/vault/lang/lang.zh-tw.cli.php | Chinees (traditioneel) lokalisatie voor CLI.
+/vault/lang/lang.zh-tw.fe.php | Chinees (traditioneel) lokalisatie voor het frontend.
+/vault/lang/lang.zh-tw.php | Chinees (traditioneel) lokalisatie.
+/vault/lang/lang.zh.cli.php | Chinees (vereenvoudigd) lokalisatie voor CLI.
+/vault/lang/lang.zh.fe.php | Chinees (vereenvoudigd) lokalisatie voor het frontend.
+/vault/lang/lang.zh.php | Chinees (vereenvoudigd) lokalisatie.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/.travis.php | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
@@ -337,7 +343,7 @@ Algemene configuratie voor CIDRAM.
 - Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
 
 "disable_frontend"
-- Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].
+- Uitschakelen frontend toegang? Frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].
 
 "max_login_attempts"
 - Maximum aantal inlogpogingen (frontend). Standaard = 5.
@@ -670,7 +676,7 @@ Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "s
 
 "CIDR" is een acroniem voor "Classless Inter-Domain Routing" *[[1](https://nl.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, en het is dit acroniem dat gebruikt wordt als onderdeel van de naam voor dit pakket, "CIDRAM", waarvoor is een acroniem voor "Classless Inter-Domain Routing Access Manager".
 
-Echter, in het context van CIDRAM (zoals, binnen deze documentatie, binnen discussies met betrekking tot CIDRAM, of binnen de CIDRAM taalgegevens), wanneer een "CIDR" (enkelvoud) of "CIDRs" (meervoud) wordt genoemd of bedoeld (en dus waarbij we deze woorden als zelfstandige naamwoorden gebruiken, in tegenstelling tot als acroniemen), wat hier bedoeld is, is een subnet (of subnetten), uitgedrukt met CIDR notatie. De reden dat CIDR (of CIDRs) wordt gebruikt in plaats van subnet (of subnetten) is om duidelijk te maken dat het specifiek subnets wordt uitgedrukt met CIDR notatie waarnaar wordt verwezen (omdat CIDR notatie slechts één van de verschillende manieren waarop subnetten uitgedrukt kunnen worden). CIDRAM kan daarom beschouwd worden als een "subnet access manager".
+Echter, in het context van CIDRAM (zoals, binnen deze documentatie, binnen discussies met betrekking tot CIDRAM, of binnen de CIDRAM lokalisaties), wanneer een "CIDR" (enkelvoud) of "CIDRs" (meervoud) wordt genoemd of bedoeld (en dus waarbij we deze woorden als zelfstandige naamwoorden gebruiken, in tegenstelling tot als acroniemen), wat hier bedoeld is, is een subnet (of subnetten), uitgedrukt met CIDR notatie. De reden dat CIDR (of CIDRs) wordt gebruikt in plaats van subnet (of subnetten) is om duidelijk te maken dat het specifiek subnets wordt uitgedrukt met CIDR notatie waarnaar wordt verwezen (omdat CIDR notatie slechts één van de verschillende manieren waarop subnetten uitgedrukt kunnen worden). CIDRAM kan daarom beschouwd worden als een "subnet access manager".
 
 Hoewel deze dubbele betekenis van "CIDR" in sommige gevallen dubbelzinnig kan zijn, deze uitleg, samen met de context die wordt verstrekt, zou moeten helpen om dubbelzinnigheid te heffen.
 
@@ -754,4 +760,4 @@ Waarde | Gebruik makend van
 ---
 
 
-Laatste Bijgewerkt: 5 Oktober 2017 (2017.10.05).
+Laatste Bijgewerkt: 18 Oktober 2017 (2017.10.18).

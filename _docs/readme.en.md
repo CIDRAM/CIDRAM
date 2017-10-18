@@ -206,12 +206,18 @@ File | Description
 /vault/lang/lang.nl.cli.php | Dutch language data for CLI.
 /vault/lang/lang.nl.fe.php | Dutch language data for the front-end.
 /vault/lang/lang.nl.php | Dutch language data.
+/vault/lang/lang.no.cli.php | Norwegian language data for CLI.
+/vault/lang/lang.no.fe.php | Norwegian language data for the front-end.
+/vault/lang/lang.no.php | Norwegian language data.
 /vault/lang/lang.pt.cli.php | Portuguese language data for CLI.
 /vault/lang/lang.pt.fe.php | Portuguese language data for the front-end.
 /vault/lang/lang.pt.php | Portuguese language data.
 /vault/lang/lang.ru.cli.php | Russian language data for CLI.
 /vault/lang/lang.ru.fe.php | Russian language data for the front-end.
 /vault/lang/lang.ru.php | Russian language data.
+/vault/lang/lang.sv.cli.php | Swedish language data for CLI.
+/vault/lang/lang.sv.fe.php | Swedish language data for the front-end.
+/vault/lang/lang.sv.php | Swedish language data.
 /vault/lang/lang.th.cli.php | Thai language data for CLI.
 /vault/lang/lang.th.fe.php | Thai language data for the front-end.
 /vault/lang/lang.th.php | Thai language data.
@@ -754,4 +760,4 @@ Value | Using
 ---
 
 
-Last Updated: 5 October 2017 (2017.10.05).
+Last Updated: 18 October 2017 (2017.10.18).

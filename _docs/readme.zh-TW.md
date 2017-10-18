@@ -207,12 +207,18 @@ CIDRAM 應自動阻止不良的請求至您的網站，​沒有任何需求除�
 /vault/lang/lang.nl.cli.php | 荷蘭文CLI語言數據。
 /vault/lang/lang.nl.fe.php | 荷蘭文前端語言數據。
 /vault/lang/lang.nl.php | 荷蘭文語言數據。
+/vault/lang/lang.no.cli.php | 挪威文CLI語言數據。
+/vault/lang/lang.no.fe.php | 挪威文前端語言數據。
+/vault/lang/lang.no.php | 挪威文語言數據。
 /vault/lang/lang.pt.cli.php | 葡萄牙文CLI語言數據。
 /vault/lang/lang.pt.fe.php | 葡萄牙文前端語言數據。
 /vault/lang/lang.pt.php | 葡萄牙文語言數據。
 /vault/lang/lang.ru.cli.php | 俄文CLI語言數據。
 /vault/lang/lang.ru.fe.php | 俄文前端語言數據。
 /vault/lang/lang.ru.php | 俄文語言數據。
+/vault/lang/lang.sv.cli.php | 瑞典文CLI語言數據。
+/vault/lang/lang.sv.fe.php | 瑞典文前端語言數據。
+/vault/lang/lang.sv.php | 瑞典文語言數據。
 /vault/lang/lang.th.cli.php | 泰文CLI語言數據。
 /vault/lang/lang.th.fe.php | 泰文前端語言數據。
 /vault/lang/lang.th.php | 泰文語言數據。
@@ -755,4 +761,4 @@ CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責�
 ---
 
 
-最後更新：2017年10月5日。
+最後更新：2017年10月18日。

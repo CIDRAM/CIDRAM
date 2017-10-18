@@ -206,12 +206,18 @@ Datei | Beschreibung
 /vault/lang/lang.nl.cli.php | Niederländische Sprachdateien für CLI.
 /vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Front-End.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
+/vault/lang/lang.no.cli.php | Norwegische Sprachdateien für CLI.
+/vault/lang/lang.no.fe.php | Norwegische Sprachdateien für das Front-End.
+/vault/lang/lang.no.php | Norwegische Sprachdateien.
 /vault/lang/lang.pt.cli.php | Portugiesische Sprachdateien für CLI.
 /vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Front-End.
 /vault/lang/lang.pt.php | Portugiesische Sprachdateien.
 /vault/lang/lang.ru.cli.php | Russische Sprachdateien für CLI.
 /vault/lang/lang.ru.fe.php | Russische Sprachdateien für das Front-End.
 /vault/lang/lang.ru.php | Russische Sprachdateien.
+/vault/lang/lang.sv.cli.php | Schwedische Sprachdateien für CLI.
+/vault/lang/lang.sv.fe.php | Schwedische Sprachdateien für das Front-End.
+/vault/lang/lang.sv.php | Schwedische Sprachdateien.
 /vault/lang/lang.th.cli.php | Thai Sprachdateien für CLI.
 /vault/lang/lang.th.fe.php | Thai Sprachdateien für das Front-End.
 /vault/lang/lang.th.php | Thai Sprachdateien.
@@ -754,4 +760,4 @@ Wert | Verwenden
 ---
 
 
-Zuletzt aktualisiert: 5 Oktober 2017 (2017.10.05).
+Zuletzt aktualisiert: 18 Oktober 2017 (2017.10.18).

@@ -208,12 +208,18 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لCLI.</div> | /vault/lang/lang.nl.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية لfront-end.</div> | /vault/lang/lang.nl.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة النرويجيةة لCLI.</div> | /vault/lang/lang.no.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة النرويجيةة لfront-end.</div> | /vault/lang/lang.no.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة النرويجيةة.</div> | /vault/lang/lang.no.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية لCLI.</div> | /vault/lang/lang.pt.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية لfront-end.</div> | /vault/lang/lang.pt.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية.</div> | /vault/lang/lang.pt.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية لCLI.</div> | /vault/lang/lang.ru.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية لfront-end.</div> | /vault/lang/lang.ru.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة السويدية لCLI.</div> | /vault/lang/lang.sv.cli.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة السويدية لfront-end.</div> | /vault/lang/lang.sv.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة السويدية.</div> | /vault/lang/lang.sv.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة التايلاندية لCLI.</div> | /vault/lang/lang.th.cli.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة التايلاندية لfront-end.</div> | /vault/lang/lang.th.fe.php
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة التايلاندية.</div> | /vault/lang/lang.th.php
@@ -859,4 +865,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 اكتوبر 2017 (2017.10.05).</div>
+<div dir="rtl">آخر تحديث: 18 اكتوبر 2017 (2017.10.18).</div>

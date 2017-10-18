@@ -206,12 +206,18 @@ File | Descrizione
 /vault/lang/lang.nl.cli.php | Dati linguistici Olandese per CLI.
 /vault/lang/lang.nl.fe.php | Dati linguistici Olandese per il front-end.
 /vault/lang/lang.nl.php | Dati linguistici Olandese.
+/vault/lang/lang.no.cli.php | Dati linguistici Norvegese per CLI.
+/vault/lang/lang.no.fe.php | Dati linguistici Norvegese per il front-end.
+/vault/lang/lang.no.php | Dati linguistici Norvegese.
 /vault/lang/lang.pt.cli.php | Dati linguistici Portoghese per CLI.
 /vault/lang/lang.pt.fe.php | Dati linguistici Portoghese per il front-end.
 /vault/lang/lang.pt.php | Dati linguistici Portoghese.
 /vault/lang/lang.ru.cli.php | Dati linguistici Russa per CLI.
 /vault/lang/lang.ru.fe.php | Dati linguistici Russa per il front-end.
 /vault/lang/lang.ru.php | Dati linguistici Russa.
+/vault/lang/lang.sv.cli.php | Dati linguistici Svedese per CLI.
+/vault/lang/lang.sv.fe.php | Dati linguistici Svedese per il front-end.
+/vault/lang/lang.sv.php | Dati linguistici Svedese.
 /vault/lang/lang.th.cli.php | Dati linguistici Tailandese per CLI.
 /vault/lang/lang.th.fe.php | Dati linguistici Tailandese per il front-end.
 /vault/lang/lang.th.php | Dati linguistici Tailandese.
@@ -754,4 +760,4 @@ Valore | Utilizzando
 ---
 
 
-Ultimo Aggiornamento: 5 Ottobre 2017 (2017.10.05).
+Ultimo Aggiornamento: 18 Ottobre 2017 (2017.10.18).

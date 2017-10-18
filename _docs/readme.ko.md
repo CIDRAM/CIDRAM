@@ -206,12 +206,18 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/lang/lang.nl.cli.php | CLI 네덜란드어 언어 데이터.
 /vault/lang/lang.nl.fe.php | 프론트 엔드 네덜란드어 언어 데이터.
 /vault/lang/lang.nl.php | 네덜란드어 언어 데이터.
+/vault/lang/lang.no.cli.php | CLI 노르웨이 언어 데이터.
+/vault/lang/lang.no.fe.php | 프론트 엔드 노르웨이 언어 데이터.
+/vault/lang/lang.no.php | 노르웨이 언어 데이터.
 /vault/lang/lang.pt.cli.php | CLI 포르투갈어 언어 데이터.
 /vault/lang/lang.pt.fe.php | 프론트 엔드 포르투갈어 언어 데이터.
 /vault/lang/lang.pt.php | 포르투갈어 언어 데이터.
 /vault/lang/lang.ru.cli.php | CLI 러시아어 언어 데이터.
 /vault/lang/lang.ru.fe.php | 프론트 엔드 러시아어 언어 데이터.
 /vault/lang/lang.ru.php | 러시아어 언어 데이터.
+/vault/lang/lang.sv.cli.php | CLI 스웨덴어 언어 데이터.
+/vault/lang/lang.sv.fe.php | 프론트 엔드 스웨덴어 언어 데이터.
+/vault/lang/lang.sv.php | 스웨덴어 언어 데이터.
 /vault/lang/lang.th.cli.php | CLI 태국어 언어 데이터.
 /vault/lang/lang.th.fe.php | 프론트 엔드 태국어 언어 데이터.
 /vault/lang/lang.th.php | 태국어 언어 데이터.
@@ -754,4 +760,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2017년 10월 5일.
+최종 업데이트 : 2017년 10월 18일.

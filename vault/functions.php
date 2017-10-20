@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.15).
+ * This file: Functions file (last modified: 2017.10.17).
  */
 
 /**
@@ -200,14 +200,9 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
     if (count($NAddr) !== 8) {
         return false;
     }
-    $NAddr[0] = hexdec($NAddr[0]);
-    $NAddr[1] = hexdec($NAddr[1]);
-    $NAddr[2] = hexdec($NAddr[2]);
-    $NAddr[3] = hexdec($NAddr[3]);
-    $NAddr[4] = hexdec($NAddr[4]);
-    $NAddr[5] = hexdec($NAddr[5]);
-    $NAddr[6] = hexdec($NAddr[6]);
-    $NAddr[7] = hexdec($NAddr[7]);
+    for ($i = 0; $i < 8; $i++) {
+        $NAddr[$i] = hexdec($NAddr[$i]);
+    }
     $CIDRs = array();
     $Base = array(0, 0, 0, 0, 0, 0, 0, 0);
     for ($Cycle = 0; $Cycle < 8; $Cycle++) {
@@ -589,12 +584,9 @@ $CIDRAM['TimeFormat'] = function ($Time, $In) use (&$CIDRAM) {
     );
     $values['d'] = (int)$values['dd'];
     $values['m'] = (int)$values['mm'];
-    if (is_array($In)) {
-        return array_map(function ($Item) use (&$values, &$CIDRAM) {
-            return $CIDRAM['ParseVars']($values, $Item);
-        }, $In);
-    }
-    return $CIDRAM['ParseVars']($values, $In);
+    return is_array($In) ? array_map(function ($Item) use (&$values, &$CIDRAM) {
+        return $CIDRAM['ParseVars']($values, $Item);
+    }, $In) : $CIDRAM['ParseVars']($values, $In);
 };
 
 /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2017.10.08).
+ * This file: IP aggregator (last modified: 2017.10.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -75,10 +75,7 @@ class Aggregator
                 !$this->CIDRAM['ExpandIPv4']($B, true) && !$this->CIDRAM['ExpandIPv6']($B, true)
             ) ? '' : inet_pton($B);
             if ($A === false) {
-                if ($B === false) {
-                    return 0;
-                }
-                return 1;
+                return $B === false ? 0 : 1;
             }
             if ($B === false) {
                 return -1;
@@ -88,9 +85,9 @@ class Aggregator
                 if ($ASize === $BSize) {
                     return 0;
                 }
-                return ($ASize > $BSize) ? 1 : -1;
+                return $ASize > $BSize ? 1 : -1;
             }
-            return ($Compare < 0) ? -1 : 1;
+            return $Compare < 0 ? -1 : 1;
         });
         $In = implode("\n", $In);
     }

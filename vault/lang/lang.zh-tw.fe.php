@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.15).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_show'] = '顯示';
 $CIDRAM['lang']['label_stable'] = '最新穩定：';
 $CIDRAM['lang']['label_sysinfo'] = '系統信息：';
+$CIDRAM['lang']['label_tests'] = '測試：';
 $CIDRAM['lang']['label_total'] = '總';
 $CIDRAM['lang']['label_unstable'] = '最新不穩定：';
 $CIDRAM['lang']['link_accounts'] = '賬戶';

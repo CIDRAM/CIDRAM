@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.10.15).
+ * This file: Russian language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
 $CIDRAM['lang']['label_show'] = 'Показать';
 $CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
+$CIDRAM['lang']['label_tests'] = 'Испытания:';
 $CIDRAM['lang']['label_total'] = 'Всего';
 $CIDRAM['lang']['label_unstable'] = 'Последние нестабильный:';
 $CIDRAM['lang']['link_accounts'] = 'Учетными Записями';

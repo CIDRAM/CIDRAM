@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.10.15).
+ * This file: Urdu language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $CIDRAM['lang']['label_show'] = 'دکھائیں';
 $CIDRAM['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
+$CIDRAM['lang']['label_tests'] = 'ٹیسٹ:';
 $CIDRAM['lang']['label_total'] = 'تمام';
 $CIDRAM['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.15).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
 $CIDRAM['lang']['label_show'] = 'Menunjukkan';
 $CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
+$CIDRAM['lang']['label_tests'] = 'Pengujian:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Terbaru tidak stabil:';
 $CIDRAM['lang']['link_accounts'] = 'Akun';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.10.15).
+ * This file: Swedish language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI som används:';
 $CIDRAM['lang']['label_show'] = 'Visa';
 $CIDRAM['lang']['label_stable'] = 'Senaste stabila:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformation:';
+$CIDRAM['lang']['label_tests'] = 'Tester:';
 $CIDRAM['lang']['label_total'] = 'Totalt';
 $CIDRAM['lang']['label_unstable'] = 'Senaste instabil:';
 $CIDRAM['lang']['link_accounts'] = 'Konton';

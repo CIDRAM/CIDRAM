@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.10.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $CIDRAM['lang']['label_show'] = 'Hiển thị';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
+$CIDRAM['lang']['label_tests'] = 'Kiểm tra:';
 $CIDRAM['lang']['label_total'] = 'Toàn bộ';
 $CIDRAM['lang']['label_unstable'] = 'Không ổn định mới nhất:';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';

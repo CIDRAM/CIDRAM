@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.10.15).
+ * This file: Thai language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
 $CIDRAM['lang']['label_show'] = 'แสดง';
 $CIDRAM['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $CIDRAM['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
+$CIDRAM['lang']['label_tests'] = 'การทดสอบ:';
 $CIDRAM['lang']['label_total'] = 'ทั้งหมด';
 $CIDRAM['lang']['label_unstable'] = 'ไม่เสถียรล่าสุด:';
 $CIDRAM['lang']['link_accounts'] = 'บัญชี';

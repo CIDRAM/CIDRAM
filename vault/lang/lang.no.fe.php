@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.10.15).
+ * This file: Norwegian language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI brukt:';
 $CIDRAM['lang']['label_show'] = 'Vis';
 $CIDRAM['lang']['label_stable'] = 'Siste stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformasjon:';
+$CIDRAM['lang']['label_tests'] = 'Tester:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Siste ustabil:';
 $CIDRAM['lang']['link_accounts'] = 'Kontoer';

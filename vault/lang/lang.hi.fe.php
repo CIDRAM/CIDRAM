@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.10.15).
+ * This file: Hindi language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI का इस्तेमाल किय�
 $CIDRAM['lang']['label_show'] = 'दिखाना';
 $CIDRAM['lang']['label_stable'] = 'नवीनतम स्थिर:';
 $CIDRAM['lang']['label_sysinfo'] = 'प्रणाली की जानकारी:';
+$CIDRAM['lang']['label_tests'] = 'परीक्षण:';
 $CIDRAM['lang']['label_total'] = 'कुल';
 $CIDRAM['lang']['label_unstable'] = 'नवीनतम अस्थिर:';
 $CIDRAM['lang']['link_accounts'] = 'खातों';

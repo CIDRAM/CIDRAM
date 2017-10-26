@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2017.10.17).
+ * This file: IP aggregator (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -26,7 +26,7 @@ class Aggregator
     public $Output = '';
 
     /** Access parent scope data, closures, variables, etc. */
-    public $CIDRAM = array();
+    public $CIDRAM = [];
 
     public function __construct(array &$CIDRAM)
     {
@@ -52,7 +52,7 @@ class Aggregator
             $this->CIDRAM['Results']['In'] = count($In);
         }
         $In = array_filter(array_unique(array_map(function ($Line) {
-            $Line = preg_replace(array('~^[^0-9a-f:./]*~i', '~[ \t].*$~', '~[^0-9a-f:./]*$~i'), '', $Line);
+            $Line = preg_replace(['~^[^0-9a-f:./]*~i', '~[ \t].*$~', '~[^0-9a-f:./]*$~i'], '', $Line);
             return (!$Line || !preg_match('~[0-9a-f:./]+~i', $Line) || preg_match('~[^0-9a-f:./]+~i', $Line)) ? '' : $Line;
         }, $In)));
         usort($In, function ($A, $B) {

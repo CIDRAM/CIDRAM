@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.06.03).
+ * This file: The loader (last modified: 2017.10.26).
  */
 
 /**
@@ -45,9 +45,7 @@ if (!defined('CIDRAM')) {
         return (str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__)));
     };
 
-    /**
-     * Check whether the functions file exists; Kill the script if it doesn't.
-     */
+    /** Kill the script if the functions file doesn't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'functions.php')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Functions file missing! Please reinstall CIDRAM.');
@@ -55,10 +53,7 @@ if (!defined('CIDRAM')) {
     /** Load the functions file. */
     require $CIDRAM['Vault'] . 'functions.php';
 
-    /**
-     * Check whether the configuration handler exists; If it doesn't, kill the
-     * script.
-     */
+    /** Kill the script if the configuration handler doesn't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'config.php')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Configuration handler missing! Please reinstall CIDRAM.');

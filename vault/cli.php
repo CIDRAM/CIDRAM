@@ -8,19 +8,19 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.06.03).
+ * This file: CLI handler (last modified: 2017.10.26).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
 if (!isset($_SERVER)) {
-    $_SERVER = array();
+    $_SERVER = [];
 }
 
-$CIDRAM['argv'] = array(
+$CIDRAM['argv'] = [
     isset($argv[0]) ? $argv[0] : '',
     isset($argv[1]) ? $argv[1] : '',
     isset($argv[2]) ? $argv[2] : '',
-);
+];
 
 if ($CIDRAM['argv'][1] === '-h') {
     /** CIDRAM CLI-mode help. */
@@ -29,7 +29,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     /** Check if an IP address is blocked by the CIDRAM signature files. */
     echo "\n";
     /** Prepare variables to simulate the normal IP checking process. */
-    $CIDRAM['BlockInfo'] = array(
+    $CIDRAM['BlockInfo'] = [
         'IPAddr' => $CIDRAM['argv'][2],
         'Query' => $CIDRAM['Query'],
         'Referrer' => '',
@@ -41,7 +41,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         'WhyReason' => '',
         'xmlLang' => $CIDRAM['Config']['general']['lang'],
         'rURI' => 'CLI'
-    );
+    ];
     try {
         $CIDRAM['Caught'] = false;
         $CIDRAM['TestResults'] = $CIDRAM['RunTests']($CIDRAM['argv'][2]);
@@ -51,12 +51,12 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     if (!$CIDRAM['Caught']) {
         if (!$CIDRAM['TestResults']) {
-            echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
+            echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
         } else {
             echo
                 ($CIDRAM['BlockInfo']['SignatureCount']) ?
-                wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Blocked']), 78, "\n ") :
-                wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_IP_Not_Blocked']), 78, "\n ");
+                wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_IP_Blocked']), 78, "\n ") :
+                wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_IP_Not_Blocked']), 78, "\n ");
         }
     }
     echo "\n";
@@ -68,7 +68,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         $CIDRAM['TestResults'] = $CIDRAM['ExpandIPv6']($CIDRAM['argv'][2]);
     }
     if (empty($CIDRAM['TestResults'])) {
-        echo wordwrap($CIDRAM['ParseVars'](array('IP' => $CIDRAM['argv'][2]), $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
+        echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
     } else {
         echo ' ' . implode("\n ", $CIDRAM['TestResults']);
     }
@@ -127,7 +127,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             continue;
         }
         if ($YAMLM) {
-            $YAMLA = array();
+            $YAMLA = [];
             $YAMLD .= $ArrayToValidate[$i] . "\n";
             if (empty($ArrayToValidate[$i + 1])) {
                 $YAMLM = false;
@@ -143,7 +143,9 @@ if ($CIDRAM['argv'][1] === '-h') {
             $YAMLD = '';
             continue;
         }
-        $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
+        $Sig = ['Base' => (
+            ($BasePos = strpos($ArrayToValidate[$i], ' ')) !== false
+        ) ? substr($ArrayToValidate[$i], 0, $BasePos) : $ArrayToValidate[$i]];
         if ($Sig['x'] = strpos($Sig['Base'], '/')) {
             $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
             $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
@@ -299,7 +301,9 @@ if ($CIDRAM['argv'][1] === '-h') {
             $YAMLM = true;
             continue;
         }
-        $Sig = array('Base' => (strpos($ArrayToValidate[$i], ' ')) ? substr($ArrayToValidate[$i], 0, strpos($ArrayToValidate[$i], ' ')) : $ArrayToValidate[$i]);
+        $Sig = ['Base' => (
+            ($BasePos = strpos($ArrayToValidate[$i], ' ')) !== false
+        ) ? substr($ArrayToValidate[$i], 0, $BasePos) : $ArrayToValidate[$i]];
         if ($Sig['x'] = strpos($Sig['Base'], '/')) {
             $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
             $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
@@ -336,7 +340,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         }
         if ($Sig['Function'] === 'Deny' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Deny ')) && $Sig['n'] > 1) {
             $Sig['x'] = strpos($FileToValidate, "\n" . $Sig['Base'] . ' Deny ') + strlen("\n" . $Sig['Base'] . ' Deny ');
-            $Sig['FilePartial'] = array(substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x']));
+            $Sig['FilePartial'] = [substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x'])];
             $Sig['FilePartial'][1] = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Deny[^\n]*\n\x1ai", "\n", $Sig['FilePartial'][1]);
             $FileToValidate = $Sig['FilePartial'][0] . $Sig['FilePartial'][1];
             $Sig['FilePartial'] = '';
@@ -344,7 +348,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Operations++;
         } elseif ($Sig['Function'] === 'Whitelist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Whitelist')) && $Sig['n'] > 1) {
             $Sig['x'] = strpos($FileToValidate, "\n" . $Sig['Base'] . ' Whitelist') + strlen("\n" . $Sig['Base'] . ' Whitelist');
-            $Sig['FilePartial'] = array(substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x']));
+            $Sig['FilePartial'] = [substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x'])];
             $Sig['FilePartial'][1] = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Whitelist[^\n]*\n\x1ai", "\n", $Sig['FilePartial'][1]);
             $FileToValidate = $Sig['FilePartial'][0] . $Sig['FilePartial'][1];
             $Sig['FilePartial'] = '';
@@ -352,7 +356,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Operations++;
         } elseif ($Sig['Function'] === 'Greylist' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Greylist')) && $Sig['n'] > 1) {
             $Sig['x'] = strpos($FileToValidate, "\n" . $Sig['Base'] . ' Greylist') + strlen("\n" . $Sig['Base'] . ' Greylist');
-            $Sig['FilePartial'] = array(substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x']));
+            $Sig['FilePartial'] = [substr($FileToValidate, 0, $Sig['x']), substr($FileToValidate, $Sig['x'])];
             $Sig['FilePartial'][1] = preg_replace("\x1a\n" . addslashes($Sig['Base']) . " Greylist[^\n]*\n\x1ai", "\n", $Sig['FilePartial'][1]);
             $FileToValidate = $Sig['FilePartial'][0] . $Sig['FilePartial'][1];
             $Sig['FilePartial'] = '';

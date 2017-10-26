@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.10.15).
+ * This file: English language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI used:';
 $CIDRAM['lang']['label_show'] = 'Show';
 $CIDRAM['lang']['label_stable'] = 'Latest stable:';
 $CIDRAM['lang']['label_sysinfo'] = 'System information:';
+$CIDRAM['lang']['label_tests'] = 'Tests:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Latest unstable:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';

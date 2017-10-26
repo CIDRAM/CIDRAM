@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.10.15).
+ * This file: Korean language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = '사용 된 SAPI :';
 $CIDRAM['lang']['label_show'] = '보여';
 $CIDRAM['lang']['label_stable'] = '최신 안정 :';
 $CIDRAM['lang']['label_sysinfo'] = '시스템 정보 :';
+$CIDRAM['lang']['label_tests'] = '테스트 :';
 $CIDRAM['lang']['label_total'] = '합계';
 $CIDRAM['lang']['label_unstable'] = '최신 불안정 :';
 $CIDRAM['lang']['link_accounts'] = '계정';

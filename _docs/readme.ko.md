@@ -248,6 +248,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/config.php | 구성 핸들러.
 /vault/config.yaml | 설정 기본값 스 파일; CIDRAM의 기본 설정이 포함되어 있습니다.
 /vault/frontend.php | 프론트 엔드 핸들러.
+/vault/frontend_functions.php | 프론트 엔드 기능 파일.
 /vault/functions.php | 기능 파일 (기본적으로 파일).
 /vault/hashes.dat | 허용되는 해시 목록 (reCAPTCHA의 기능에 관련합니다; 만 reCAPTCHA 기능이 활성화되어있는 경우에 생성).
 /vault/ignore.dat | 무시 파일 (이것은 서명 섹션 무시합니다).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.15).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
 $CIDRAM['lang']['label_show'] = '表示する';
 $CIDRAM['lang']['label_stable'] = '最新安定：';
 $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
+$CIDRAM['lang']['label_tests'] = 'テスト：';
 $CIDRAM['lang']['label_total'] = '合計';
 $CIDRAM['lang']['label_unstable'] = '最新不安定：';
 $CIDRAM['lang']['link_accounts'] = 'アカウント';

@@ -248,6 +248,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/config.php | コンフィギュレーション・ハンドラ。
 /vault/config.yaml | 設定・デフォルトス・ファイル；CIDRAMのデフォルト設定値が含まれます。
 /vault/frontend.php | フロントエンド・ハンドラ。
+/vault/frontend_functions.php | フロントエンド機能ファイル。
 /vault/functions.php | 機能ファイル（本質的ファイル）。
 /vault/hashes.dat | 受け入れられているハッシュのリスト（reCAPTCHAの機能に関連します；のみreCAPTCHAの機能が有効になっている場合に生成）。
 /vault/ignore.dat | 無視ファイル（これはシグネチャセクション無視します）。
@@ -760,4 +761,4 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ---
 
 
-最終アップデート：2017年10月18日。
+最終アップデート：2017年10月26日。

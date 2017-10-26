@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.10.03).
+ * This file: Output generator (last modified: 2017.10.26).
  */
 
 $CIDRAM['CacheModified'] = false;
@@ -16,7 +16,7 @@ $CIDRAM['CacheModified'] = false;
 /** Prepare the cache. */
 if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
     $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-    $CIDRAM['Cache'] = array('Counter' => 0);
+    $CIDRAM['Cache'] = ['Counter' => 0];
     fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
     fclose($CIDRAM['Handle']);
     if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
@@ -42,7 +42,7 @@ $CIDRAM['ClearFromCache']('DNS-Reverses');
 
 /** Initialise statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics'] && empty($CIDRAM['Cache']['Statistics'])) {
-    $CIDRAM['Cache']['Statistics'] = array(
+    $CIDRAM['Cache']['Statistics'] = [
         'Other-Since' => $CIDRAM['Now'],
         'Blocked-IPv4' => 0,
         'Blocked-IPv6' => 0,
@@ -51,13 +51,13 @@ if ($CIDRAM['Config']['general']['statistics'] && empty($CIDRAM['Cache']['Statis
         'Banned-IPv6' => 0,
         'reCAPTCHA-Failed' => 0,
         'reCAPTCHA-Passed' => 0
-    );
+    ];
     $CIDRAM['CacheModified'] = true;
 }
 
 /** Fallback for missing $_SERVER superglobal. */
 if (!isset($_SERVER)) {
-    $_SERVER = array();
+    $_SERVER = [];
 }
 
 /** Ensure we have a variable available for the IP address of the request. */
@@ -76,7 +76,7 @@ $CIDRAM['Protect'] = (
 );
 
 /** Prepare variables for block information (used if we kill the request). */
-$CIDRAM['BlockInfo'] = array(
+$CIDRAM['BlockInfo'] = [
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
     'IPAddr' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
@@ -89,7 +89,7 @@ $CIDRAM['BlockInfo'] = array(
     'Signatures' => '',
     'WhyReason' => '',
     'xmlLang' => $CIDRAM['Config']['general']['lang']
-);
+];
 $CIDRAM['BlockInfo']['UALC'] = strtolower($CIDRAM['BlockInfo']['UA']);
 $CIDRAM['BlockInfo']['rURI'] = (
     (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
@@ -205,7 +205,7 @@ if (
      * Reference: https://support.google.com/webmasters/answer/80553?hl=en
      */
     if (empty($CIDRAM['Flag-Bypass-Googlebot-Check']) && strpos($CIDRAM['UA-Clean'], 'googlebot') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](array('.googlebot.com', '.google.com'), 'Googlebot');
+        $CIDRAM['DNS-Reverse-Forward'](['.googlebot.com', '.google.com'], 'Googlebot');
     }
     /**
      * Verify Bingbot.
@@ -221,28 +221,28 @@ if (
      * Reference: http://www.ysearchblog.com/2007/06/05/yahoo-search-crawler-slurp-has-a-new-address-and-signature-card/
      */
     if (empty($CIDRAM['Flag-Bypass-Y!Slurp-Check']) && strpos($CIDRAM['UA-Clean'], 'slurp') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](array('.crawl.yahoo.net', '.yse.yahoo.net'), 'Y!Slurp');
+        $CIDRAM['DNS-Reverse-Forward'](['.crawl.yahoo.net', '.yse.yahoo.net'], 'Y!Slurp');
     }
     /**
      * Verify Baidu Spider.
      * Reference: http://help.baidu.com/question?prod_en=master&class=Baiduspider
      */
     if (empty($CIDRAM['Flag-Bypass-Baidu-Check']) && strpos($CIDRAM['UA-Clean'], 'baidu') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](array('.baidu.com', '.baidu.jp'), 'Baidu', true);
+        $CIDRAM['DNS-Reverse-Forward'](['.baidu.com', '.baidu.jp'], 'Baidu', true);
     }
     /**
      * Verify YandexBot.
      * Reference: https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
      */
     if (empty($CIDRAM['Flag-Bypass-Yandex-Check']) && strpos($CIDRAM['UA-Clean'], 'yandex') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](array('.yandex.com', '.yandex.net', '.yandex.ru'), 'YandexBot');
+        $CIDRAM['DNS-Reverse-Forward'](['.yandex.com', '.yandex.net', '.yandex.ru'], 'YandexBot');
     }
     /**
      * Verify DuckDuckGo Bot.
      * Reference: https://duckduckgo.com/duckduckbot
      */
     if (empty($CIDRAM['Flag-Bypass-DuckDuckGo-Check']) && strpos($CIDRAM['UA-Clean'], 'duckduckbot') !== false) {
-        $CIDRAM['UA-IP-Match'](array('72.94.249.34', '72.94.249.35', '72.94.249.36', '72.94.249.37', '72.94.249.38'), 'DuckDuckGo Bot');
+        $CIDRAM['UA-IP-Match'](['72.94.249.34', '72.94.249.35', '72.94.249.36', '72.94.249.37', '72.94.249.38'], 'DuckDuckGo Bot');
     }
     unset($CIDRAM['UA-Clean']);
 }
@@ -250,7 +250,7 @@ if (
 /** Process tracking information for the inbound IP. */
 if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
     if (!isset($CIDRAM['Cache']['Tracking'])) {
-        $CIDRAM['Cache']['Tracking'] = array();
+        $CIDRAM['Cache']['Tracking'] = [];
     }
 
     /** Set tracking expiry. */
@@ -269,7 +269,10 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
             $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]['Time'] = $CIDRAM['TrackTime'];
         }
     } else {
-        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
+        $CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']] = [
+            'Count' => $CIDRAM['TrackCount'],
+            'Time' => $CIDRAM['TrackTime']
+        ];
     }
 
     /** Implement double-banning (required by some specific custom modules; not a standard feature). */
@@ -283,7 +286,10 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
                 $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']]['Time'] = $CIDRAM['TrackTime'];
             }
         } else {
-            $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']] = array('Count' => $CIDRAM['TrackCount'], 'Time' => $CIDRAM['TrackTime']);
+            $CIDRAM['Cache']['Tracking'][$CIDRAM['Config']['Options']['DoubleBan']] = [
+                'Count' => $CIDRAM['TrackCount'],
+                'Time' => $CIDRAM['TrackTime']
+            ];
         }
     }
 
@@ -300,7 +306,7 @@ if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && 
 if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
     /** Define reCAPTCHA working data. */
-    $CIDRAM['reCAPTCHA'] = array('Bypass' => false, 'Loggable' => false, 'Expiry' => ($CIDRAM['Config']['recaptcha']['expiry'] * 3600));
+    $CIDRAM['reCAPTCHA'] = ['Bypass' => false, 'Loggable' => false, 'Expiry' => ($CIDRAM['Config']['recaptcha']['expiry'] * 3600)];
 
     /** Handling reCAPTCHA here. */
     if (
@@ -427,8 +433,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
      * some obscure types of XSS attacks).
      */
     $CIDRAM['BlockInfo'] = str_replace(
-        array('<', '>', "\r", "\n", "\t"),
-        array('&lt;', '&gt;', '&#13;', '&#10;', '&#9;'),
+        ['<', '>', "\r", "\n", "\t"],
+        ['&lt;', '&gt;', '&#13;', '&#10;', '&#9;'],
         $CIDRAM['BlockInfo']
     );
 
@@ -438,9 +444,9 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
      * would've previously been broken by the above anti-XSS sanitisation).
      */
     list($CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason']) = str_ireplace(
-        array('&lt;br /&gt;', '&lt;br&gt;'),
-        array('<br />', '<br />'),
-        array($CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason'])
+        ['&lt;br /&gt;', '&lt;br&gt;'],
+        ['<br />', '<br />'],
+        [$CIDRAM['BlockInfo']['ReasonMessage'], $CIDRAM['BlockInfo']['WhyReason']]
     );
 
     /** Determine which template file to use, if this hasn't already been determined. */
@@ -518,31 +524,31 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                             "er}{Referrer}\n{field_sigcount}{SignatureCount}\n{field_sigref}{Signatur" .
                             "es}\n{field_whyreason}{WhyReason}!\n{field_ua}{UA}\n{field_rURI}{rURI}\n\n"
                         )) . '"><strong>' . $CIDRAM['lang']['click_here'] . '</strong></a>';
-                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars'](array(
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars']([
                         'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
-                    ), $CIDRAM['lang']['Support_Email']) . '</p>';
+                    ], $CIDRAM['lang']['Support_Email']) . '</p>';
                 } elseif ($CIDRAM['Config']['general']['emailaddr_display_style'] === 'noclick') {
-                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars'](array(
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars']([
                         'EmailAddr' => str_replace(
                             '@',
                             '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',
                             '<strong>' . $CIDRAM['Config']['general']['emailaddr'] . '</strong>'
                         )
-                    ), $CIDRAM['lang']['Support_Email_2']) . '</p>';
+                    ], $CIDRAM['lang']['Support_Email_2']) . '</p>';
                 }
             }
-            $CIDRAM['HTML'] = $CIDRAM['ParseVars'](array(
+            $CIDRAM['HTML'] = $CIDRAM['ParseVars']([
                 'EmailAddr' => $CIDRAM['BlockInfo']['EmailAddr']
-            ), $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['ReadFile'](
+            ], $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['ReadFile'](
                 $CIDRAM['Vault'] . $CIDRAM['template_file']
             )));
             if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
-                $CIDRAM['HTML'] = str_replace(array('<!-- WebFont Begin -->', '<!-- WebFont End -->'), '', $CIDRAM['HTML']);
+                $CIDRAM['HTML'] = str_replace(['<!-- WebFont Begin -->', '<!-- WebFont End -->'], '', $CIDRAM['HTML']);
             } else {
-                $CIDRAM['WebFontPos'] = array(
+                $CIDRAM['WebFontPos'] = [
                     'Begin' => strpos($CIDRAM['HTML'], '<!-- WebFont Begin -->'),
                     'End' => strpos($CIDRAM['HTML'], '<!-- WebFont End -->')
-                );
+                ];
                 $CIDRAM['HTML'] =
                     substr($CIDRAM['HTML'], 0, $CIDRAM['WebFontPos']['Begin']) . substr($CIDRAM['HTML'], $CIDRAM['WebFontPos']['End'] + 20);
                 unset($CIDRAM['WebFontPos']);
@@ -576,23 +582,23 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 $CIDRAM['Config']['general']['logfile'],
                 $CIDRAM['Config']['general']['logfileApache'],
                 $CIDRAM['Config']['general']['logfileSerialized']
-            ) = $CIDRAM['TimeFormat']($CIDRAM['Now'], array(
+            ) = $CIDRAM['TimeFormat']($CIDRAM['Now'], [
                 $CIDRAM['Config']['general']['logfile'],
                 $CIDRAM['Config']['general']['logfileApache'],
                 $CIDRAM['Config']['general']['logfileSerialized']
-            ));
+            ]);
         }
 
         /** Writing to the standard logfile. */
         if ($CIDRAM['Config']['general']['logfile']) {
-            $CIDRAM['logfileData'] = array('d' =>
+            $CIDRAM['logfileData'] = ['d' =>
                 ((
                     !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']) || (
                         $CIDRAM['Config']['general']['truncate'] > 0 &&
                         filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
                     )
                 ) ? "\x3c\x3fphp die; \x3f\x3e\n\n" : '')
-            );
+            ];
             $CIDRAM['logfileData']['Mode'] = !empty($CIDRAM['logfileData']['d']) ? 'w' : 'a';
             $CIDRAM['logfileData']['d'] .= $CIDRAM['ParseVars']($CIDRAM['Parsables'],
                 "{field_id}{Counter}\n{field_scriptversion}{ScriptIdent}\n{field_datetime" .
@@ -609,7 +615,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
 
         /** Writing to the Apache-style logfile. */
         if ($CIDRAM['Config']['general']['logfileApache']) {
-            $CIDRAM['logfileApacheData'] = array('d' => sprintf(
+            $CIDRAM['logfileApacheData'] = ['d' => sprintf(
                 "%s - - [%s] \"%s %s %s\" %s %s \"%s\" \"%s\"\n",
                 $CIDRAM['BlockInfo']['IPAddr'],
                 $CIDRAM['BlockInfo']['DateTime'],
@@ -620,12 +626,12 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 strlen($CIDRAM['HTML']),
                 (empty($CIDRAM['BlockInfo']['Referrer']) ? '-' : $CIDRAM['BlockInfo']['Referrer']),
                 (empty($CIDRAM['BlockInfo']['UA']) ? '-' : $CIDRAM['BlockInfo']['UA'])
-            ), 'Mode' => ((
+            ), 'Mode' => (
                 !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) || (
                     $CIDRAM['Config']['general']['truncate'] > 0 &&
                     filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
                 )
-            ) ? 'w' : 'a'));
+            ) ? 'w' : 'a'];
             $CIDRAM['logfileApacheData']['f'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['logfileApache'], $CIDRAM['logfileApacheData']['Mode']);
             fwrite($CIDRAM['logfileApacheData']['f'], $CIDRAM['logfileApacheData']['d']);
             fclose($CIDRAM['logfileApacheData']['f']);

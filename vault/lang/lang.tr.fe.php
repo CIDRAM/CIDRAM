@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.15).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $CIDRAM['lang']['label_show'] = 'Göstermek';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
+$CIDRAM['lang']['label_tests'] = 'Testler:';
 $CIDRAM['lang']['label_total'] = 'Toplam';
 $CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.10.15).
+ * This file: Bangla language data for the front-end (last modified: 2017.10.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -147,6 +147,7 @@ $CIDRAM['lang']['label_sapi'] = 'SAPI ব্যবহৃত:';
 $CIDRAM['lang']['label_show'] = 'দেখাও';
 $CIDRAM['lang']['label_stable'] = 'সর্বশেষ স্থিতিশীল:';
 $CIDRAM['lang']['label_sysinfo'] = 'সিস্টেম তথ্য:';
+$CIDRAM['lang']['label_tests'] = 'পরীক্ষাগুলি:';
 $CIDRAM['lang']['label_total'] = 'মোট';
 $CIDRAM['lang']['label_unstable'] = 'সর্বশেষ অস্থিতিশীল:';
 $CIDRAM['lang']['link_accounts'] = 'অ্যাকাউন্ট';

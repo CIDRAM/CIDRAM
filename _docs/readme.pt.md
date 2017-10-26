@@ -248,6 +248,7 @@ Arquivo | Descrição
 /vault/config.php | Módulo de configuração.
 /vault/config.yaml | Arquivo de valores padrão para a configuração; Contém valores padrão para a configuração de CIDRAM.
 /vault/frontend.php | Módulo do front-end.
+/vault/frontend_functions.php | Arquivo de funções do front-end.
 /vault/functions.php | Arquivo de funções.
 /vault/hashes.dat | Contém uma lista de hashes aceitos (pertinente para o funcionalidade reCAPTCHA; só gerou se a funcionalidade reCAPTCHA está habilitado).
 /vault/ignore.dat | Arquivo de ignorados (usado para especificar quais seções de assinaturas CIDRAM deve ignorar).
@@ -760,4 +761,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 18 Outubro 2017 (2017.10.18).
+Última Atualização: 26 Outubro 2017 (2017.10.26).

@@ -95,10 +95,10 @@ if (empty($CIDRAM['Config']['Config Defaults'])) {
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */
-$CIDRAM['Config']['Temp'] = array();
+$CIDRAM['Config']['Temp'] = [];
 foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyCat'] => $CIDRAM['Config']['Temp']['DCat']) {
     if (!isset($CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']])) {
-        $CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']] = array();
+        $CIDRAM['Config'][$CIDRAM['Config']['Temp']['KeyCat']] = [];
     }
     if (isset($CIDRAM['Config']['Temp']['Cat'])) {
         unset($CIDRAM['Config']['Temp']['Cat']);
@@ -159,7 +159,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     parse_str($_SERVER['QUERY_STRING'], $CIDRAM['QueryVars']);
 } else {
     $CIDRAM['Query'] = '';
-    $CIDRAM['QueryVars'] = array();
+    $CIDRAM['QueryVars'] = [];
 }
 
 /** Set default hashing algorithm. */

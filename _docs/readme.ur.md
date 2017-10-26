@@ -250,6 +250,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ہینڈلر.</div> | /vault/config.php
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن ڈیفالٹس فائل؛ CIDRAM لئے پہلے سے طے شدہ ترتیب کے اقدار پر مشتمل ہے.</div> | /vault/config.yaml
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ہینڈلر.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر افعال فائل.</div> | /vault/frontend_functions.php
 &nbsp; <div dir="rtl" style="display:inline;">افعال فائل (ضروری).</div> | /vault/functions.php
 &nbsp; <div dir="rtl" style="display:inline;">قبول کر لیا hashes کی ایک فہرست پر مشتمل ہے (ہیتی خصوصیت کرنا مناسب؛ صرف reCAPTCHA کے خصوصیت فعال ہے تو پیدا کیا).</div> | /vault/hashes.dat
 &nbsp; <div dir="rtl" style="display:inline;">ائل (CIDRAM کی پروا نہ کرے جس کے دستخط حصوں کی وضاحت کرنے کے لئے استعمال) کو نظر انداز.</div> | /vault/ignore.dat
@@ -865,4 +866,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 18 اکتوبر 2017 (2017.10.18).</div>
+<div dir="rtl">آخری تازہ کاری: 26 اکتوبر 2017 (2017.10.26).</div>

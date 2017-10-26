@@ -249,6 +249,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 /vault/config.php | 配置处理文件。
 /vault/config.yaml | 配置默认文件；包含CIDRAM的默认配置值。
 /vault/frontend.php | 前端处理文件。
+/vault/frontend_functions.php | 前端功能处理文件。
 /vault/functions.php | 功能处理文件（必不可少）。
 /vault/hashes.dat | 包含列表接受哈希表（相关的reCAPTCHA功能；只有生成如果reCAPTCHA功能被启用）。
 /vault/ignore.dat | 忽略文件（用于指定其中签名章节CIDRAM应该忽略）。
@@ -761,4 +762,4 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 ---
 
 
-最后更新：2017年10月18日。
+最后更新：2017年10月26日。

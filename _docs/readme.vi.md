@@ -247,7 +247,8 @@ Tập tin | Chi tiết
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho CIDRAM.
-/vault/frontend.php | Tập tin cho xử lý các front-end.
+/vault/frontend.php | Tập tin cho xử lý front-end.
+/vault/frontend_functions.php | Tập tin cho chức năng front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/hashes.dat | Danh sách các giá trị băm được chấp nhận (thích hợp với các tính năng reCAPTCHA; chỉ tạo ra nếu tính năng reCAPTCHA được kích hoạt).
 /vault/ignore.dat | Tập tin các bỏ qua (được sử dụng để xác định mà phần chữ ký CIDRAM nên bỏ qua).
@@ -760,4 +761,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Mười 2017 (2017.10.18).
+Lần cuối cập nhật: 26 Tháng Mười 2017 (2017.10.26).

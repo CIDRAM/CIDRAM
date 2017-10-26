@@ -250,6 +250,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
 &nbsp; <div dir="rtl" style="display:inline;">ملف التخلف التكوين؛ يحتوي على قيم التكوين الافتراضي لCIDRAM.</div> | /vault/config.yaml
 &nbsp; <div dir="rtl" style="display:inline;">معالج front-end.</div> | /vault/frontend.php
+&nbsp; <div dir="rtl" style="display:inline;">ملف وظائف front-end.</div> | /vault/frontend_functions.php
 &nbsp; <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
 &nbsp; <div dir="rtl" style="display:inline;">يحتوي على قائمة من علامات الرقم المقبولة (وثيقة الصلة ميزة اختبار reCAPTCHA؛ فقط إنشاء إذا تم تمكين ميزة اختبار reCAPTCHA).</div> | /vault/hashes.dat
 &nbsp; <div dir="rtl" style="display:inline;">تستخدم لتحديد أقسام توقيع التي CIDRAM يجب تجاهل.</div> | /vault/ignore.dat
@@ -865,4 +866,4 @@ Ignore القسم ١
 ---
 
 
-<div dir="rtl">آخر تحديث: 18 اكتوبر 2017 (2017.10.18).</div>
+<div dir="rtl">آخر تحديث: 26 اكتوبر 2017 (2017.10.26).</div>

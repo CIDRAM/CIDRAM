@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.10.26).
+ * This file: Front-end functions file (last modified: 2017.10.27).
  */
 
 /**
@@ -1061,8 +1061,13 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
                 !empty($ThisStatus['state'])
             ) {
                 if ($ThisStatus['state'] === 'success') {
-                    $TestsPassed++;
+                    if ($TestsPassed !== '?') {
+                        $TestsPassed++;
+                    }
                     $StatusHead .= '<span class="txtGn">✔️ ';
+                } elseif ($ThisStatus['state'] === 'pending') {
+                    $TestsPassed = '?';
+                    $StatusHead .= '<span class="txtOe">❓ ';
                 } else {
                     $StatusHead .= '<span class="txtRd">❌ ';
                 }
@@ -1075,7 +1080,7 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
         if ($TestsTotal === $TestsPassed) {
             $TestClr = 'txtGn';
         } else {
-            $TestClr = ($TestsPassed < ($TestsTotal / 2)) ? 'txtRd' : 'txtOe';
+            $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
         }
         $TestsTotal = sprintf(
             '<span class="%1$s">%2$s/%3$s</span> <span id="%4$s-showtests">' .
@@ -1084,7 +1089,7 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
             '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
             '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
             $TestClr,
-            $CIDRAM['Number_L10N']($TestsPassed),
+            ($TestsPassed === '?' ? '?' : $CIDRAM['Number_L10N']($TestsPassed)),
             $CIDRAM['Number_L10N']($TestsTotal),
             $Component['ID'],
             $TestDetails

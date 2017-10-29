@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.27).
+ * This file: Front-end handler (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -31,31 +31,80 @@ if (empty($CIDRAM['QueryVars']['cidram-page'])) {
 
 /** Populate common front-end variables. */
 $CIDRAM['FE'] = [
+
+    /** Main front-end HTML template file. */
     'Template' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('frontend.html')),
+
+    /** Main front-end JavaScript data. */
+    'JS' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')),
+
+    /** Default password hash ("password"). */
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
+
+    /** Current default language. */
     'FE_Lang' => $CIDRAM['Config']['general']['lang'],
+
+    /** Font magnification. */
     'Magnification' => $CIDRAM['Config']['template_data']['Magnification'],
-    'MaintenanceWarning' => $CIDRAM['Config']['general']['maintenance_mode'] ?
-        "\n<div class=\"center\"><span class=\"txtRd\">" . $CIDRAM['lang']['state_maintenance_mode'] . '</span></div><hr />' : '',
+
+    /** Warns if maintenance mode is enabled. */
+    'MaintenanceWarning' => (
+        $CIDRAM['Config']['general']['maintenance_mode']
+    ) ? "\n<div class=\"center\"><span class=\"txtRd\">" . $CIDRAM['lang']['state_maintenance_mode'] . '</span></div><hr />' : '',
+
+    /** Define active configuration file. */
+    'ActiveConfigFile' => !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini',
+
+    /** Number localisation JavaScript. */
     'Number_L10N_JS' => $CIDRAM['Number_L10N_JS'](),
+
+    /** Current time and date. */
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
+
+    /** How the script identifies itself. */
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
+
+    /** Current default theme. */
     'theme' => $CIDRAM['Config']['template_data']['theme'],
+
+    /** List of front-end users will be populated here. */
     'UserList' => "\n",
+
+    /** List of front-end sessions will be populated here. */
     'SessionList' => "\n",
+
+    /** Cache data will be populated here. */
     'Cache' => "\n",
+
+    /** The current user state (0 = Not logged in; 1 = Logged in; -1 = Attempted and failed to log in). */
     'UserState' => 0,
+
+    /** Taken from either $_POST['username'] or $_COOKIE['CIDRAM-ADMIN'] (the username claimed by the client). */
     'UserRaw' => '',
+
+    /** User permissions (0 = Not logged in; 1 = Complete access; 2 = Logs access only; 3 = Cronable). */
     'Permissions' => 0,
+
+    /** Will be populated by messages reflecting the current request state. */
     'state_msg' => '',
+
+    /** Will be populated by the current session data. */
     'ThisSession' => '',
+
+    /** Will be populated by either [Log Out] or [Home | Log Out] links. */
     'bNav' => '&nbsp;',
+
+    /** State reflecting whether the current request is cronable. */
+    'CronMode' => !empty($_POST['CronMode']),
+
+    /** Will be populated by the page title. */
     'FE_Title' => ''
+
 ];
 
 /** Fetch pips data. */
-$CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.php');
-if (is_readable($CIDRAM['Pips_Path'])) {
+$CIDRAM['Pips_Path'] = $CIDRAM['GetAssetPath']('pips.php', true);
+if (!empty($CIDRAM['Pips_Path']) && is_readable($CIDRAM['Pips_Path'])) {
     require $CIDRAM['Pips_Path'];
 }
 
@@ -208,7 +257,7 @@ if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
 }
 
 /** Attempt to log in the user. */
-if ($CIDRAM['FE']['FormTarget'] === 'login') {
+if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
         $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_password_field_empty'];
@@ -235,14 +284,16 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
                 $CIDRAM['FECacheRemove'](
                     $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
                 );
-                $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
-                $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
-                setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
                 $CIDRAM['FE']['UserState'] = 1;
-                $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
-                    $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
-                ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
-                $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
+                if (!$CIDRAM['FE']['CronMode']) {
+                    $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
+                    $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
+                    setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+                    $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
+                        $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
+                    ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
+                    $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
+                }
                 $CIDRAM['FE']['Rebuild'] = true;
             } else {
                 $CIDRAM['FE']['Permissions'] = 0;
@@ -277,7 +328,9 @@ if ($CIDRAM['FE']['FormTarget'] === 'login') {
         if ($CIDRAM['Config']['general']['FrontEndLog']) {
             $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['FE']['state_msg'] . "\n";
         }
-        $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['FE']['state_msg'] . '<br /><br /></div>';
+        if (!$CIDRAM['FE']['CronMode']) {
+            $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['FE']['state_msg'] . '<br /><br /></div>';
+        }
     } elseif ($CIDRAM['Config']['general']['FrontEndLog']) {
         $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['lang']['state_logged_in'] . "\n";
     }
@@ -349,7 +402,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
 }
 
 /** Only execute this code block for users that are logged in. */
-if ($CIDRAM['FE']['UserState'] === 1) {
+if ($CIDRAM['FE']['UserState'] === 1 && !$CIDRAM['FE']['CronMode']) {
 
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
 
@@ -390,7 +443,7 @@ if ($CIDRAM['FE']['UserState'] === 1) {
 $CIDRAM['FE']['bNavBR'] = ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
 
 /** The user hasn't logged in. Show them the login page. */
-if ($CIDRAM['FE']['UserState'] !== 1) {
+if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
 
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_login'];
@@ -413,7 +466,7 @@ if ($CIDRAM['FE']['UserState'] !== 1) {
  * The user has logged in, but hasn't selected anything to view. Show them the
  * front-end home page.
  */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === '') {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']) {
 
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_home'];
@@ -754,9 +807,16 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
         $CIDRAM['RowInfo'] = ['DelPos' => strpos($CIDRAM['FE']['NewLine'], ','), 'AccWarnings' => ''];
         $CIDRAM['RowInfo']['AccUsername'] = substr($CIDRAM['FE']['NewLine'], 0, $CIDRAM['RowInfo']['DelPos']);
         $CIDRAM['RowInfo']['AccPassword'] = substr($CIDRAM['FE']['NewLine'], $CIDRAM['RowInfo']['DelPos'] + 1);
-        $CIDRAM['RowInfo']['AccPermissions'] = (
-            (int)substr($CIDRAM['RowInfo']['AccPassword'], -1) === 1
-        ) ? $CIDRAM['lang']['state_complete_access'] : $CIDRAM['lang']['state_logs_access_only'];
+        $CIDRAM['RowInfo']['AccPermissions'] = (int)substr($CIDRAM['RowInfo']['AccPassword'], -1);
+        if ($CIDRAM['RowInfo']['AccPermissions'] === 1) {
+            $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['lang']['state_complete_access'];
+        } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 2) {
+            $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['lang']['state_logs_access_only'];
+        } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 3) {
+            $CIDRAM['RowInfo']['AccPermissions'] = 'Cronable';
+        } else {
+            $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['lang']['response_error'];
+        }
         $CIDRAM['RowInfo']['AccPassword'] = substr($CIDRAM['RowInfo']['AccPassword'], 0, -2);
         if ($CIDRAM['RowInfo']['AccPassword'] === $CIDRAM['FE']['DefaultPassword']) {
             $CIDRAM['RowInfo']['AccWarnings'] .= '<br /><div class="txtRd">' . $CIDRAM['lang']['state_default_password'] . '</div>';
@@ -805,13 +865,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
+    /** Directive template. */
     $CIDRAM['FE']['ConfigRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_config_row.html'));
 
     /** Indexes. */
     $CIDRAM['FE']['Indexes'] = '            ';
-
-    /** Define active configuration file. */
-    $CIDRAM['FE']['ActiveConfigFile'] = !empty($CIDRAM['Overrides']) ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
     $CIDRAM['FE']['ConfigFields'] = $CIDRAM['RegenerateConfig'] = '';
@@ -821,16 +879,30 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             continue;
         }
         $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . "]\r\n\r\n";
+        $CIDRAM['FE']['ConfigFields'] .= sprintf(
+            '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+            '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
+            '<a id="%1$s-hidelink" style="display:none" href="#" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
+            "</div></td></tr></table>\n<span class=\"%1\$s-row\" style=\"display:none\"><table>\n",
+            $CIDRAM['CatKey']
+        );
+        $CIDRAM['FE']['Indexes'] .= sprintf(
+            '<a id="%1$s-ishowlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
+            '<a id="%1$s-ihidelink" style="display:none" href="#" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
+            "<br /><br />\n            ",
+            $CIDRAM['CatKey']
+        );
         foreach ($CIDRAM['CatValue'] as $CIDRAM['DirKey'] => $CIDRAM['DirValue']) {
-            $CIDRAM['ThisDir'] = ['FieldOut' => ''];
+            $CIDRAM['ThisDir'] = ['FieldOut' => '', 'CatKey' => $CIDRAM['CatKey']];
             if (empty($CIDRAM['DirValue']['type']) || !isset($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']])) {
                 continue;
             }
             $CIDRAM['ThisDir']['DirLangKey'] = 'config_' . $CIDRAM['CatKey'] . '_' . $CIDRAM['DirKey'];
-            $CIDRAM['ThisDir']['DirName'] = $CIDRAM['CatKey'] . '->' . $CIDRAM['DirKey'];
-            $CIDRAM['FE']['Indexes'] .= '<a href="#' . $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['ThisDir']['DirName'] . "</a><br /><br />\n            ";
-            $CIDRAM['ThisDir']['DirLang'] =
-                !empty($CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']]) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
+            $CIDRAM['ThisDir']['DirName'] = $CIDRAM['CatKey'] . '-&gt;' . $CIDRAM['DirKey'];
+            $CIDRAM['FE']['Indexes'] .= '<span class="' . $CIDRAM['CatKey'] . '-index" style="display:none"><a href="#' . $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['ThisDir']['DirName'] . "</a><br /><br /></span>\n            ";
+            $CIDRAM['ThisDir']['DirLang'] = !empty(
+                $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']]
+            ) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
             $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($CIDRAM['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
                 if ($CIDRAM['DirValue']['type'] === 'kb' || $CIDRAM['DirValue']['type'] === 'string' || $CIDRAM['DirValue']['type'] === 'timezone' || $CIDRAM['DirValue']['type'] === 'int' || $CIDRAM['DirValue']['type'] === 'real' || $CIDRAM['DirValue']['type'] === 'bool') {
@@ -1002,13 +1074,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['lang'] + $CIDRAM['ThisDir'], $CIDRAM['FE']['ConfigRow']
             );
         }
+        $CIDRAM['FE']['ConfigFields'] .= "</table></span>\n";
         $CIDRAM['RegenerateConfig'] .= "\r\n";
     }
 
-    /** Update the configuration file if any changes were made. */
+    /** Update the currently active configuration file if any changes were made. */
     if ($CIDRAM['ConfigModified']) {
         $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_configuration_updated'];
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'config.ini', 'w');
+        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'w');
         fwrite($CIDRAM['Handle'], $CIDRAM['RegenerateConfig']);
         fclose($CIDRAM['Handle']);
         if (empty($CIDRAM['QueryVars']['updated'])) {
@@ -1029,23 +1102,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 }
 
 /** Updates. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Permissions'] === 1) {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Permissions'] === 1 || ($CIDRAM['FE']['Permissions'] === 3 && $CIDRAM['FE']['CronMode']))) {
 
     $CIDRAM['FE']['UpdatesFormTarget'] = 'cidram-page=updates';
     $CIDRAM['FE']['UpdatesFormTargetControls'] = '';
-    $CIDRAM['StateModified'] = false;
-    $CIDRAM['FilterSwitch'](
-        ['hide-non-outdated', 'hide-unused'],
-        isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
-        $CIDRAM['StateModified'],
-        $CIDRAM['FE']['UpdatesFormTarget'],
-        $CIDRAM['FE']['UpdatesFormTargetControls']
-    );
-    if ($CIDRAM['StateModified']) {
-        header('Location: ?' . $CIDRAM['FE']['UpdatesFormTarget']);
-        die;
+    if (!$CIDRAM['FE']['CronMode']) {
+        $CIDRAM['StateModified'] = false;
+        $CIDRAM['FilterSwitch'](
+            ['hide-non-outdated', 'hide-unused'],
+            isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
+            $CIDRAM['StateModified'],
+            $CIDRAM['FE']['UpdatesFormTarget'],
+            $CIDRAM['FE']['UpdatesFormTargetControls']
+        );
+        if ($CIDRAM['StateModified']) {
+            header('Location: ?' . $CIDRAM['FE']['UpdatesFormTarget']);
+            die;
+        }
+        unset($CIDRAM['StateModified']);
     }
-    unset($CIDRAM['StateModified']);
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = ['Meta' => [], 'RemoteMeta' => []];
@@ -1342,7 +1417,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesAdded']);
                 $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesRemoved']);
                 $CIDRAM['FE']['state_msg'] .= sprintf(
-                    ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+                    $CIDRAM['FE']['CronMode'] ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                     $CIDRAM['Components']['BytesAdded'],
                     $CIDRAM['Components']['BytesRemoved'],
                     $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
@@ -1437,7 +1512,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             }
             $CIDRAM['FormatFilesize']($CIDRAM['Components']['BytesRemoved']);
             $CIDRAM['FE']['state_msg'] .= sprintf(
-                ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
+                $CIDRAM['FE']['CronMode'] ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
                 $CIDRAM['Components']['BytesRemoved'],
                 $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
             );
@@ -1446,7 +1521,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         /** Activate a component. */
         if ($_POST['do'] === 'activate-component' && !empty($_POST['ID'])) {
             $CIDRAM['Activation'] = [
-                'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.ini'),
+                'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
                 'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
                 'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
                 'modules' => $CIDRAM['Config']['signatures']['modules'],
@@ -1489,7 +1564,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Config']['signatures']['ipv4'] = $CIDRAM['Activation']['ipv4'];
                 $CIDRAM['Config']['signatures']['ipv6'] = $CIDRAM['Activation']['ipv6'];
                 $CIDRAM['Config']['signatures']['modules'] = $CIDRAM['Activation']['modules'];
-                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'config.ini', 'w');
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['Activation']['Config']);
                 fclose($CIDRAM['Handle']);
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_activated'];
@@ -1503,7 +1578,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         /** Deactivate a component. */
         if ($_POST['do'] === 'deactivate-component' && !empty($_POST['ID'])) {
             $CIDRAM['Deactivation'] = [
-                'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'config.ini'),
+                'Config' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile']),
                 'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
                 'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
                 'modules' => $CIDRAM['Config']['signatures']['modules'],
@@ -1544,7 +1619,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
                 $CIDRAM['Config']['signatures']['ipv4'] = $CIDRAM['Deactivation']['ipv4'];
                 $CIDRAM['Config']['signatures']['ipv6'] = $CIDRAM['Deactivation']['ipv6'];
                 $CIDRAM['Config']['signatures']['modules'] = $CIDRAM['Deactivation']['modules'];
-                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'config.ini', 'w');
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FE']['ActiveConfigFile'], 'w');
                 fwrite($CIDRAM['Handle'], $CIDRAM['Deactivation']['Config']);
                 fclose($CIDRAM['Handle']);
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_deactivated'];
@@ -1977,9 +2052,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
             '" method="POST"><input name="cidram-form-target" type="hidden" value="updates" />' .
             '<input name="do" type="hidden" value="update-component" />';
         foreach ($CIDRAM['Components']['Outdated'] as $CIDRAM['Components']['ThisOutdated']) {
-            $CIDRAM['FE']['UpdateAll'] .=
-                '<input name="ID[]" type="hidden" value="' .
-                $CIDRAM['Components']['ThisOutdated'] . '" />';
+            $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisOutdated'] . '" />';
         }
         $CIDRAM['FE']['UpdateAll'] .=
             '<input type="submit" value="' . $CIDRAM['lang']['field_update_all'] . '" class="auto" /></form>';
@@ -2002,11 +2075,25 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && $CIDRAM['FE']['Perm
         $CIDRAM['FE']['FE_Content']);
     }
 
+    /** Send output. */
+    if (!$CIDRAM['FE']['CronMode']) {
+        /** Normal page output. */
+        echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+    } elseif (!empty($CIDRAM['FE']['state_msg'])) {
+        /** Returned state message for cronable. */
+        echo json_encode([
+            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])
+        ]);
+    } elseif (!empty($_POST['do']) && $_POST['do'] === 'get-list' && count($CIDRAM['Components']['Outdated'])) {
+        /** Returned list of outdated components for cronable. */
+        echo json_encode([
+            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg']),
+            'outdated' => $CIDRAM['Components']['Outdated']
+        ]);
+    }
+
     /** Cleanup. */
     unset($CIDRAM['Components'], $CIDRAM['Count'], $CIDRAM['Iterate']);
-
-    /** Send output. */
-    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 
 }
 
@@ -2744,7 +2831,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
 }
 
 /** Statistics. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics') {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_statistics'];
@@ -2937,9 +3024,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         ) . "\n";
     });
 
-    if (!$CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out']) {
-        $CIDRAM['FE']['LogFiles'] = $CIDRAM['lang']['logs_no_logfiles_available'];
-    }
+    /** Set logfile list or no logfiles available message. */
+    $CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out'] ?: $CIDRAM['lang']['logs_no_logfiles_available'];
 
     /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
@@ -2957,4 +3043,10 @@ if ($CIDRAM['FE']['Rebuild']) {
     fclose($CIDRAM['Handle']);
 }
 
+/** Print Cronable failure state messages here. */
+if ($CIDRAM['FE']['CronMode'] && $CIDRAM['FE']['state_msg'] && $CIDRAM['FE']['UserState'] !== 1) {
+    echo json_encode(['state_msg' => $CIDRAM['FE']['state_msg']]);
+}
+
+/** Exit front-end. */
 die;

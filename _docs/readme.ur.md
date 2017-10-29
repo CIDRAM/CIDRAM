@@ -170,6 +170,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
 &nbsp; <div dir="rtl" style="display:inline;">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
 &nbsp; <div dir="rtl" style="display:inline;">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر جاوا اسکرپٹ ڈیٹا پر مشتمل ہے.</div> | /vault/fe_assets/scripts.js
 &nbsp; <div dir="rtl" style="display:inline;">CIDRAM زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">CLI کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.cli.php
@@ -866,4 +867,4 @@ Ignore سیکشن 1
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 26 اکتوبر 2017 (2017.10.26).</div>
+<div dir="rtl">آخری تازہ کاری: 28 اکتوبر 2017 (2017.10.28).</div>

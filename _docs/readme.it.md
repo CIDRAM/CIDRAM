@@ -168,6 +168,7 @@ File | Descrizione
 /vault/fe_assets/frontend.html | Il file modello HTML principale per il front-end.
 /vault/fe_assets/icons.php | Gestore dell'icone (utilizzata dal file manager del front-end).
 /vault/fe_assets/pips.php | Gestore delle pips (utilizzata dal file manager del front-end).
+/vault/fe_assets/scripts.js | Contiene dati JavaScript per il front-end.
 /vault/lang/ | Contiene dati linguistici.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/lang.ar.cli.php | Dati linguistici Araba per CLI.
@@ -761,4 +762,4 @@ Valore | Utilizzando
 ---
 
 
-Ultimo Aggiornamento: 26 Ottobre 2017 (2017.10.26).
+Ultimo Aggiornamento: 28 Ottobre 2017 (2017.10.28).

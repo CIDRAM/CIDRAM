@@ -169,6 +169,7 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 /vault/fe_assets/frontend.html | 前端的主HTML模板文件。
 /vault/fe_assets/icons.php | 图标处理文件（由前端文件管理器使用）。
 /vault/fe_assets/pips.php | 点数处理文件（由前端文件管理器使用）。
+/vault/fe_assets/scripts.js | 包含前端JavaScript数据。
 /vault/lang/ | 包含CIDRAM语言数据。
 /vault/lang/.htaccess | 超文本访问文件（在这种情况，​以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/lang/lang.ar.cli.php | 阿拉伯文CLI语言数据。
@@ -762,4 +763,4 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 ---
 
 
-最后更新：2017年10月26日。
+最后更新：2017年10月28日。

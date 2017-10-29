@@ -168,6 +168,7 @@ Data | Deskripsi
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
 /vault/fe_assets/icons.php | File ikon (digunakan oleh file manager bagian depan).
 /vault/fe_assets/pips.php | File pip (digunakan oleh file manager bagian depan).
+/vault/fe_assets/scripts.js | Berisi data JavaScript bagian depan.
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/lang.ar.cli.php | File Bahasa Arab untuk CLI.
@@ -761,4 +762,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 26 Oktober 2017 (2017.10.26).
+Terakhir Diperbarui: 28 Oktober 2017 (2017.10.28).

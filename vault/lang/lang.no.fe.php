@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.10.26).
+ * This file: Norwegian language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />Konfigurasjonssiden lar
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM tilbys gratis, men hvis du vil donere til prosjektet, du kan gjøre det ved å klikke på donate-knappen.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Skriv inn IPer her.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Skriv inn IP her.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Merk: CIDRAM bruker en informasjonskapsel for å godkjenne innlogginger. Ved å logge inn, gir du ditt samtykke til at en informasjonskapsel skal opprettes og lagres av nettleseren din.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Filbehandleren lar deg slette, redigere, laste opp og laste ned filer. Bruk med forsiktighet (du kan ødelegge installasjonen din med dette).';
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dette er hjemmesiden for frontenden av CIDRAM. Velg en lenke fra navigasjonsmenyen til venstre for å fortsette.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallo, {username}.<br />IP-aggregatoren lar deg uttrykke IPer og CIDRer på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk "OK".';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.10.26).
+ * This file: Swedish language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Hallå, {username}.<br />Du kan ändra konfigur
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM erbjuds gratis, men om du vill donera till projektet, du kan göra det genom att klicka på donera-knappen.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Ange IP-adresser här.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Ange IP-adress här.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Notera: CIDRAM använder en cookie för att autentisera inloggningar. Genom att logga in, ger du ditt samtycke till att en cookie ska skapas och lagras av din webbläsare.';
 $CIDRAM['lang']['tip_file_manager'] = 'Hallå, {username}.<br />Du kan radera, redigera, ladda upp och ladda ner filer med hjälp av filhanteraren. Använd med försiktighet (du kan bryta din installation med detta).';
 $CIDRAM['lang']['tip_home'] = 'Hallå, {username}.<br />Detta är hemsidan för CIDRAM front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallå, {username}.<br />Du kan aggregera IP-adresser och subnät till deras minsta möjliga uttryck med hjälp av IP-aggregatorn. Ange data som ska aggregeras och tryck på "OK".';

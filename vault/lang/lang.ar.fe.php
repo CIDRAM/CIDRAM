@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.10.26).
+ * This file: Arabic language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة ال
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'أدخل IPs هنا.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'أدخل IP هنا.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'الملاحظة: يستخدم CIDRAM ملف تعريف ارتباط لمصادقة تسجيلات الدخول. من خلال تسجيل الدخول، فإنك تعطي موافقتك على إنشاء ملف تعريف ارتباط وتخزينه بواسطة المتصفح.';
 $CIDRAM['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير الملفات يسمح لك لحذف، تعديل، وتحميل الملفات. استخدام بحذر (هل يمكن كسر التثبيت مع هذا).';
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليمين للمتابعة.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'مرحبا، {username}.<br />IP aggregator يسمح لك للتعبير عن IP و CIDR في أصغر طريقة ممكنة. أدخل البيانات التي سيتم تجميعها واضغط على "حسنا".';

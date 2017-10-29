@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.10.26).
+ * This file: Turkish language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfas
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ücretsiz olarak sunulmaktadır, ancak projeye bağış yapmak isterseniz, bağış düğmesini tıklayarak bunu yapabilirsiniz.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'IP\'leri buraya girin.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'IP\'yi buraya girin.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Not: CIDRAM, oturum açma kimlik doğrulamasında çerez kullanır. Oturum açarak, tarayıcınız tarafından oluşturulacak ve saklanacak bir çerez için onayınızı verirsiniz.';
 $CIDRAM['lang']['tip_file_manager'] = 'Merhaba, {username}.<br />Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz).';
 $CIDRAM['lang']['tip_home'] = 'Merhaba, {username}.<br />Bu, CIDRAM ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Merhaba, {username}.<br />IP toplayıcı IP\'leri ve CIDR\'leri olabildiğince az şekilde ifade etmenizi sağlar. Birleştirilecek verileri girin ve "Tamam" düğmesine basın.';

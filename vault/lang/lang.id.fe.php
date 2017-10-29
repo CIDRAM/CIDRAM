@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.10.26).
+ * This file: Indonesian language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi mem
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catatan: CIDRAM menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salam, {username}.<br />Agregator IP memungkinkan Anda untuk mengekspresikan IP dan CIDR dengan cara sekecil mungkin. Masukkan data yang akan digabungkan dan tekan "OK".';

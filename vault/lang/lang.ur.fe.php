@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.10.26).
+ * This file: Urdu language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے ص�
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM بلا معاوضہ پیش کی جاتی ہے، لیکن آپ کو اس منصوبے کے لئے عطیہ کرنا چاہتے ہیں تو، آپ کو عطیہ کے بٹن پر کلک کر کے ایسا کر سکتے ہیں.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'یہاں آئی پی ایس کے درج.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'یہاں IP درج.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'نوٹ: لاگز کی تصدیق کے لئے CIDRAM کوکی کا استعمال کرتا ہے. لاگ ان کرکے، آپ کو اپنے براؤزر کی طرف سے تخلیق اور ذخیرہ کرنے کے لئے ایک کوکی کے لئے آپ کی رضامندی دیتے ہیں.';
 $CIDRAM['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل مینیجر آپ کو، کو حذف ترمیم کریں، اپ لوڈ، اور فائلوں کو ڈاؤن لوڈ کرنے کی اجازت دیتا ہے. احتیاط کے ساتھ استعمال کریں (آپ کو اس کے ساتھ آپ کی تنصیب توڑ سکتا ہے).';
 $CIDRAM['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ CIDRAM سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'ہیلو، {username}.<br />IP مجموعی طور پر آپ کو کم سے کم ممکنہ طریقے سے IP اور CIDR کا اظہار کرنے کی اجازت دیتا ہے. جمع کرنے کے لئے اعداد و شمار درج کریں اور "ٹھیک ہے" دبائیں.';

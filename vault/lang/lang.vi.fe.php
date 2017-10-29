@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.10.26).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình c
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Nhập IP ở đây.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Lưu ý: CIDRAM sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn.';
 $CIDRAM['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này).';
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Xin chào, {username}.<br />Tập hợp IP cho phép bạn thể hiện các IP và CIDR theo cách nhỏ nhất có thể. Nhập dữ liệu được tập hợp và nhấn "OK".';

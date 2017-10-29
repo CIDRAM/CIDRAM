@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.10.26).
+ * This file: Korean language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -161,7 +161,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP 테스트';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP 추적';
 $CIDRAM['lang']['link_logs'] = '로고스';
 $CIDRAM['lang']['link_statistics'] = '통계';
-$CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
+$CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
 $CIDRAM['lang']['link_updates'] = '업데이트';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지 않습니다!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM는 무료로 제공되고 있습니다, 하지만 당신이 원한다면 기부 버튼을 클릭하면 프로젝트에 기부 할 수 있습니다.';
 $CIDRAM['lang']['tip_enter_ips_here'] = '여기에 IP를 입력하십시오.';
 $CIDRAM['lang']['tip_enter_ip_here'] = '여기에 IP를 입력하십시오.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = '노트 : CIDRAM은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다.';
 $CIDRAM['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다).';
 $CIDRAM['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $CIDRAM['lang']['tip_ip_aggregator'] = '안녕하세요, {username}.<br />IP 애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR을 표현할 수있게합니다. 집계 할 데이터를 입력하고 "확인"을 누릅니다.';
@@ -262,7 +263,7 @@ $CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">a
 $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
 $CIDRAM['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ko.md#SECTION6">문서를</a> 참조하십시오.';
 $CIDRAM['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다.';
-$CIDRAM['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
+$CIDRAM['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 계정';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.10.26).
+ * This file: Russian language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Привет, {username}.<br />Конфигур
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Введите IP-адреса здесь.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Введите IP здесь.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Заметка: CIDRAM использует cookie для аутентификации логинов. Войдя в систему, Вы даете свое согласие на создание и сохранение файла cookie вашим браузером.';
 $CIDRAM['lang']['tip_file_manager'] = 'Привет, {username}.<br />Файл менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим).';
 $CIDRAM['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для CIDRAM фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Привет, {username}.<br />Агрегатор IP позволяет вам выражать IP-адреса и CIDR как можно меньше. Введите данные для агрегирования и нажмите «ОК».';

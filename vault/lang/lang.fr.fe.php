@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.10.26).
+ * This file: French language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'Bonjour, {username}.<br />La page de configurat
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM est offert gratuitement, mais si vous voulez faire un don au projet, vous pouvez le faire en cliquant sur le bouton don.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Entrez les adresses IP ici.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Entrez ici l\'adresse IP.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Remarque : CIDRAM utilise un cookie pour authentifier les connexions. En vous connectant, vous donnez votre consentement pour qu\'un cookie soit créé et stocké par votre navigateur.';
 $CIDRAM['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci).';
 $CIDRAM['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Bonjour, {username}.<br />L\'agrégateur IP vous permet d\'exprimer les adresses IP et les CIDR de la manière la plus petite possible. Entrez les données à agréger et appuyez sur "OK".';

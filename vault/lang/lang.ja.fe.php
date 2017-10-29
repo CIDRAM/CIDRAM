@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.10.26).
+ * This file: Japanese language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = 'こんにちは、​{username}。​<br />コ�
 $CIDRAM['lang']['tip_donate'] = 'CIDRAMは無料で提供されています、​しかし、​あなたがしたい場合、​寄付ボタンをクリックすると、​プロジェクトに寄付することができます。';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'ここにＩＰを入力してください。';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'ここにＩＰを入力してください。';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = '注意：CIDRAMは、Cookieを使用してログインを認証します。​ログインすると、ブラウザでCookieを作成して保存することに同意したことになります。';
 $CIDRAM['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<br />ファイル・マネージャを使用する、​ファイルを削除、​編集、​アップロード、​ダウンロードができます。​慎重に使用する（これを使って、​インストールを壊すことができます）。';
 $CIDRAM['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはCIDRAMフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'こんにちは、​{username}。​<br />ＩＰアグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲを表現できます。​集計するデータを入力し、「ＯＫ」を押します。';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.26).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.10.28).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置页面�
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，​但如果您想捐赠给项目，​您可以通过点击捐赠按钮这样做。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_enter_ip_here'] = '在这里输入IP。';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = '注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。';
 $CIDRAM['lang']['tip_file_manager'] = '你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。';
 $CIDRAM['lang']['tip_home'] = '你好，​{username}。​<br />这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。';
 $CIDRAM['lang']['tip_ip_aggregator'] = '你好，​{username}。​<br />IP聚合器允许您以最小的可能方式表达IP和CIDR。​输入要聚合的数据，然后按“OK”。';

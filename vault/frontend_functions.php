@@ -1082,7 +1082,7 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
             $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
         }
         $TestsTotal = sprintf(
-            '<span class="%1$s">%2$s/%3$s</span> <span id="%4$s-showtests">' .
+            '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
             '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
             '</span><span id="%4$s-hidetests" style="display:none">' .
             '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.10.27).
+ * This file: Front-end functions file (last modified: 2017.10.30).
  */
 
 /**
@@ -1053,29 +1053,28 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
         $TestsPassed = 0;
         $TestDetails = '';
         foreach ($TestData['statuses'] as $ThisStatus) {
+            if (empty($ThisStatus['context']) || empty($ThisStatus['state'])) {
+                continue;
+            }
             $TestsTotal++;
             $StatusHead = '';
-            if (
-                !empty($ThisStatus['context']) &&
-                !empty($ThisStatus['target_url']) &&
-                !empty($ThisStatus['state'])
-            ) {
-                if ($ThisStatus['state'] === 'success') {
-                    if ($TestsPassed !== '?') {
-                        $TestsPassed++;
-                    }
-                    $StatusHead .= '<span class="txtGn">✔️ ';
-                } elseif ($ThisStatus['state'] === 'pending') {
-                    $TestsPassed = '?';
-                    $StatusHead .= '<span class="txtOe">❓ ';
-                } else {
-                    $StatusHead .= '<span class="txtRd">❌ ';
+            if ($ThisStatus['state'] === 'success') {
+                if ($TestsPassed !== '?') {
+                    $TestsPassed++;
                 }
+                $StatusHead .= '<span class="txtGn">✔️ ';
+            } elseif ($ThisStatus['state'] === 'pending') {
+                $TestsPassed = '?';
+                $StatusHead .= '<span class="txtOe">❓ ';
+            } else {
+                $StatusHead .= '<span class="txtRd">❌ ';
             }
-            $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">';
-            $CIDRAM['AppendToString']($TestDetails, '<br />',
-                $StatusHead . $ThisStatus['context'] . '</a></span>'
-            );
+            if (empty($ThisStatus['target_url'])) {
+                $StatusHead .= $ThisStatus['context'];
+            } else {
+                $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>';
+            }
+            $CIDRAM['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
         }
         if ($TestsTotal === $TestsPassed) {
             $TestClr = 'txtGn';

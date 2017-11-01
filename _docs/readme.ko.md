@@ -23,7 +23,7 @@ CIDRAM (시도라무 클래스없는 도메인 간 라우팅 액세스 매니저
 
 CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
-본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License" (일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다:
+본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License" (일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다 :
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -56,7 +56,7 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
-또는 `.htaccess`에서:
+또는 `.htaccess`에서 :
 
 `php_value auto_prepend_file "/user_name/public_html/cidram/loader.php"`
 
@@ -305,7 +305,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 
 *유용한 팁 : 당신이 원하는 경우 로그 파일 이름에 날짜/시간 정보를 부가 할 수 있습니다 이름 이들을 포함하여 : 전체 연도에 대한 `{yyyy}`생략 된 년간 `{yy}`달 `{mm}`일 `{dd}`시간 `{hh}`.*
 
-*예:*
+*예 :*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -451,7 +451,7 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 
 *유용한 팁 : 당신이 원하는 경우 로그 파일 이름에 날짜/시간 정보를 부가 할 수 있습니다 이름 이들을 포함하여 : 전체 연도에 대한 `{yyyy}`생략 된 년간 `{yy}`달 `{mm}`일 `{dd}`시간 `{hh}`.*
 
-*예:*
+*예 :*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 #### "template_data" (카테고리)
@@ -498,7 +498,7 @@ CIDRAM에서 사용되는 서명의 형식과 구조에 대한 설명은 사용�
 
 스크립트가 인식되지 않는 시그니처 파일의 것은 무시됩니다. 즉, 서명 파일을 손상없이 거의 모든 데이터를 서명 파일에 안전하게 넣을 수 있습니다. 서명 파일의 댓글은 허용입니다. 특별한 서식이 필요하지 않습니다. 쉘 형식의 해시가 권장되지만 강제는되지 않습니다 (쉘 스타일 해시는 IDE이나 일반 텍스트 편집기에 도움이됩니다).
 
-"기능"의 가능한 값:
+"기능"의 가능한 값 :
 - Run
 - Whitelist
 - Greylist
@@ -524,7 +524,7 @@ CIDRAM에서 사용되는 서명의 형식과 구조에 대한 설명은 사용�
 
 미리 준비된 설명은 L10N의 지원이 스크립트로 번역 할 수 있습니다. 번역은 스크립트 구성의`lang` 지시문을 사용하여 지정된 언어에 따라 이루어집니다. 또한 이러한 단축형 단어를 사용하는 경우 `[매개 변수]`값에 따라 "Deny"서명을 무시하도록 스크립트에 지시 할 수 있습니다. 이것은 스크립트 설정에 지정된 지시어를 통해 이루어집니다 (각각의 약어에 해당하는 지시문이 있습니다). 그러나 다른 `[매개 변수]`값은 L10N이 지원되지 않습니다 (따라서 다른 값은 번역되지 않습니다, 그리고 조직에 의해 통제 가능하지 않다).
 
-약어:
+약어 :
 - Bogon
 - Cloud
 - Generic
@@ -758,6 +758,10 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 `X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/).
 *서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
+
+#### Cron을 사용하여 자동으로 업데이트 할 수 있습니까?
+
+예. 외부 스크립트를 통해 업데이트 페이지와 상호 작용하기위한 프런트 엔드에 API가 내장되어 있습니다. 별도의 스크립트 인 "[Cronable](https://github.com/Maikuolan/Cronable)"을 사용할 수 있습니다. Cron 관리자 또는 Cron 스케줄러가이 사용할 수 있습니다, 패키지 및 기타 지원되는 패키지를 자동으로 업데이트하는 데 사용할 수 있습니다 (이 스크립트는 자체 문서를 제공합니다.).
 
 ---
 

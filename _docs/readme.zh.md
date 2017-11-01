@@ -760,6 +760,10 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 *由服务器配置定义。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
 `REMOTE_ADDR` | 没有反向代理（默认值）。
 
+#### 可以使用cron自动更新吗？
+
+您可以。​前端有内置了API，外部脚本可以使用它与更新页面进行交互。​一个单独的脚本，“[Cronable](https://github.com/Maikuolan/Cronable)”，是可用，它可以由您的cron manager或cron scheduler程序使用于自动更新此和其他支持的包（此脚本提供自己的文档）。
+
 ---
 
 

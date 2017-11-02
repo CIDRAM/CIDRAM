@@ -402,20 +402,22 @@ Tag: Aruba S.p.A
 
 
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.04%.
-# %Listed, CleanTalk.org: 56.76%.
-# %Listed, abuseat.org (CBL-Listed): 3.53%.
-# Stop Forum Spam (SFS) listings: 1,598.
-# Updated: 2017.05.21
+# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, CleanTalk.org: 56.01%.
+# Stop Forum Spam (SFS) listings: 2,187.
+# Updated: 2017.11.02
 
 37.46.128.0/21 Deny Generic
 37.230.112.0/21 Deny Generic
 62.109.0.0/19 Deny Generic
-77.246.144.0/20 Deny Generic
+77.246.144.0/21 Deny Generic
+77.246.156.0/22 Deny Generic
 78.24.216.0/21 Deny Generic
 80.87.192.0/21 Deny Generic
 80.87.200.0/22 Deny Generic
 82.146.32.0/19 Deny Generic
+82.202.160.0/21 Deny Generic
+82.202.168.0/22 Deny Generic
 83.220.168.0/21 Deny Generic
 91.240.84.0/22 Deny Generic
 92.63.96.0/20 Deny Generic
@@ -424,6 +426,7 @@ Tag: Aruba S.p.A
 185.43.4.0/22 Deny Generic
 185.60.132.0/22 Deny Generic
 185.63.188.0/22 Deny Generic
+185.86.93.0/24 Deny Generic
 185.97.56.0/22 Deny Generic
 185.146.156.0/22 Deny Generic
 185.180.212.0/24 Deny Generic
@@ -436,6 +439,7 @@ Tag: Aruba S.p.A
 185.200.171.0/24 Deny Generic
 185.201.44.0/24 Deny Generic
 185.201.47.0/24 Deny Generic
+185.219.4.0/22 Deny Generic
 188.120.224.0/19 Deny Generic
 193.150.0.0/23 Deny Generic
 212.22.83.0/24 Deny Generic
@@ -468,10 +472,10 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 3.44%.
-# %Listed, CleanTalk.org: 36.96%.
+# %Listed, Google Malware Dashboard: 1.88%.
+# %Listed, CleanTalk.org: 37.50%.
 # Stop Forum Spam (SFS) listings: 2.
-# Updated: 2017.05.21
+# Updated: 2017.05.21 / Checked: 2017.11.02
 
 46.151.160.0/21 Deny Generic
 46.175.56.0/21 Deny Generic
@@ -832,10 +836,10 @@ Tag: AS12880
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 1.12% (AS24940), 0.97% (AS37153).
-# %Listed, CleanTalk.org: 33.97% (AS24940), 31.63% (AS37153).
-# Stop Forum Spam (SFS) listings: 11,886 (AS24940), 165 (AS37153).
-# Updated: 2017.05.21
+# %Listed, Google Malware Dashboard: 0.73% (AS24940), 0.60% (AS37153).
+# %Listed, CleanTalk.org: 33.97% (AS24940), 32.17% (AS37153).
+# Stop Forum Spam (SFS) listings: 19,656 (AS24940), 315 (AS37153).
+# Updated: 2017.11.02
 
 5.9.0.0/16 Deny Generic
 41.72.128.0/19 Deny Generic
@@ -851,17 +855,17 @@ Tag: AS12880
 91.220.49.0/24 Deny Generic
 91.233.8.0/22 Deny Generic
 94.130.0.0/16 Deny Generic
+95.216.0.0/15 Deny Generic
 129.232.128.0/17 Deny Generic
 136.243.0.0/16 Deny Generic
 138.201.0.0/16 Deny Generic
 144.76.0.0/16 Deny Generic
 148.251.0.0/16 Deny Generic
 156.38.128.0/17 Deny Generic
+160.119.200.0/22 Deny Generic
+160.119.248.0/22 Deny Generic
 169.239.152.0/22 Deny Generic
-169.239.180.0/23 Deny Generic
-169.239.182.0/24 Deny Generic
-169.239.200.0/23 Deny Generic
-169.239.203.0/24 Deny Generic
+169.239.180.0/22 Deny Generic
 169.239.204.0/22 Deny Generic
 169.239.224.0/22 Deny Generic
 176.9.0.0/16 Deny Generic
@@ -871,12 +875,16 @@ Tag: AS12880
 185.50.120.0/23 Deny Generic
 185.107.52.0/22 Deny Generic
 185.126.28.0/22 Deny Generic
+185.136.140.0/23 Deny Generic
 185.141.200.0/24 Deny Generic
 185.141.202.0/24 Deny Generic
 185.171.224.0/22 Deny Generic
 185.185.26.0/23 Deny Generic
 185.189.228.0/24 Deny Generic
-185.189.231.0/24 Deny Generic
+185.189.230.0/23 Deny Generic
+185.209.124.0/22 Deny Generic
+185.216.237.0/24 Deny Generic
+185.228.8.0/23 Deny Generic
 188.40.0.0/16 Deny Generic
 192.96.96.0/24 Deny Generic
 193.25.170.0/23 Deny Generic
@@ -901,7 +909,6 @@ Tag: AS12880
 197.221.0.0/18 Deny Generic
 197.242.64.0/19 Deny Generic
 213.133.96.0/19 Deny Generic
-213.169.144.0/22 Deny Generic
 213.239.192.0/18 Deny Generic
 Tag: Hetzner Online GmbH
 
@@ -1246,10 +1253,10 @@ Tag: MediaFire, LLC
 
 
 # ASN 6870 ("H1 LLC").
-# %Listed, Google Malware Dashboard: 2.44%.
-# %Listed, CleanTalk.org: 67.50%.
-# Stop Forum Spam (SFS) listings: 1,299.
-# Updated: 2017.05.21
+# %Listed, Google Malware Dashboard: 1.36%.
+# %Listed, CleanTalk.org: 69.74%.
+# Stop Forum Spam (SFS) listings: 2,620.
+# Updated: 2017.05.21 / Checked: 2017.11.02
 
 91.105.232.0/21 Deny Generic
 146.120.110.0/24 Deny Generic
@@ -1260,62 +1267,96 @@ Tag: H1 LLC
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 1.80%.
-# %Listed, CleanTalk.org: 41.56%.
-# Stop Forum Spam (SFS) listings: 13,740.
-# Updated: 2017.05.21
+# %Listed, Google Malware Dashboard: 1.28%.
+# %Listed, CleanTalk.org: 42.44%.
+# Stop Forum Spam (SFS) listings: 33,654.
+# Updated: 2017.11.02
 
-5.254.64.0/19 Deny Generic
+5.254.61.0/24 Deny Generic
+5.254.62.0/24 Deny Generic
+5.254.65.0/24 Deny Generic
+5.254.66.0/23 Deny Generic
+5.254.68.0/22 Deny Generic
+5.254.72.0/21 Deny Generic
+5.254.80.0/21 Deny Generic
+5.254.88.0/23 Deny Generic
+5.254.90.0/24 Deny Generic
+5.254.92.0/22 Deny Generic
 5.254.96.0/20 Deny Generic
-5.254.112.0/21 Deny Generic
-5.254.122.0/23 Deny Generic
+5.254.112.0/22 Deny Generic
+5.254.116.0/23 Deny Generic
+5.254.118.0/24 Deny Generic
+5.254.120.0/22 Deny Generic
 5.254.124.0/24 Deny Generic
 5.254.126.0/23 Deny Generic
 37.156.32.0/23 Deny Generic
 37.221.160.0/20 Deny Generic
+37.230.130.0/23 Deny Generic
 43.255.190.0/24 Deny Generic
 45.43.7.0/24 Deny Generic
-45.74.37.0/24 Deny Generic
-45.74.58.0/24 Deny Generic
+45.74.63.0/24 Deny Generic
+45.115.26.0/24 Deny Generic
 46.8.37.0/24 Deny Generic
+46.243.214.0/24 Deny Generic
+46.243.221.0/24 Deny Generic
 66.11.125.0/24 Deny Generic
 77.81.164.0/23 Deny Generic
 86.105.187.0/24 Deny Generic
 86.105.215.0/24 Deny Generic
-86.106.89.0/24 Deny Generic
 89.32.130.0/23 Deny Generic
-89.37.101.0/24 Deny Generic
+89.36.169.0/24 Deny Generic
 89.40.104.0/23 Deny Generic
 89.40.233.0/24 Deny Generic
 89.45.89.0/24 Deny Generic
+89.46.34.0/24 Deny Generic
 91.217.232.0/24 Deny Generic
 93.114.40.0/21 Deny Generic
 93.115.80.0/20 Deny Generic
-93.115.210.0/24 Deny Generic
-94.176.131.0/24 Deny Generic
 103.249.70.0/24 Deny Generic
+104.37.2.0/24 Deny Generic
+104.37.4.0/24 Deny Generic
 104.152.44.0/22 Deny Generic
-107.181.167.0/24 Deny Generic
+104.243.242.0/24 Deny Generic
+104.243.248.0/23 Deny Generic
+104.250.173.0/24 Deny Generic
 109.163.224.0/20 Deny Generic
 128.0.46.0/23 Deny Generic
+141.101.143.0/24 Deny Generic
+141.101.144.0/24 Deny Generic
+141.101.152.0/24 Deny Generic
+141.101.161.0/24 Deny Generic
+141.101.169.0/24 Deny Generic
+141.101.170.0/24 Deny Generic
+172.94.21.0/24 Deny Generic
 172.94.28.0/24 Deny Generic
 172.94.39.0/24 Deny Generic
-172.94.58.0/23 Deny Generic
+172.94.43.0/24 Deny Generic
+172.94.58.0/24 Deny Generic
+172.94.63.0/24 Deny Generic
+172.94.64.0/24 Deny Generic
+172.94.75.0/24 Deny Generic
+172.94.76.0/23 Deny Generic
+172.94.97.0/24 Deny Generic
+172.94.111.0/24 Deny Generic
+172.94.113.0/24 Deny Generic
+172.111.136.0/24 Deny Generic
 172.111.201.0/24 Deny Generic
-172.111.234.0/24 Deny Generic
+172.111.208.0/24 Deny Generic
 185.5.172.0/24 Deny Generic
 185.5.174.0/23 Deny Generic
 185.23.16.0/23 Deny Generic
 185.82.99.0/24 Deny Generic
 185.87.171.0/24 Deny Generic
-185.96.160.0/23 Deny Generic
+185.96.160.0/24 Deny Generic
 185.124.160.0/22 Deny Generic
 185.133.194.0/24 Deny Generic
 185.171.184.0/23 Deny Generic
+188.72.80.0/24 Deny Generic
+188.72.84.0/24 Deny Generic
+188.72.95.0/24 Deny Generic
 188.213.19.0/24 Deny Generic
 188.213.22.0/24 Deny Generic
 188.215.36.0/24 Deny Generic
-188.241.187.0/24 Deny Generic
 193.105.21.0/24 Deny Generic
 195.60.76.0/23 Deny Generic
 Tag: Voxility LLC
@@ -4232,15 +4273,16 @@ recaptcha:
 
 
 # ASN 36678 ("CHINA TELECOM (AMERICAS) CORPORATION").
-# %Listed, Google Malware Dashboard: 7.14%.
+# %Listed, Google Malware Dashboard: 7.09%.
 # %Listed, CleanTalk.org: 30.77%.
 # Stop Forum Spam (SFS) listings: 23.
-# Updated: 2016.10.23
+# Updated: 2017.11.02
 
 5.154.128.0/19 Deny Generic
 66.102.241.0/24 Deny Generic
 66.102.248.0/24 Deny Generic
 66.102.250.0/23 Deny Generic
+69.163.96.0/19 Deny Generic
 104.192.111.0/24 Deny Generic
 203.14.184.0/22 Deny Generic
 203.14.188.0/23 Deny Generic

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.10.28).
+ * This file: Front-end handler (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1032,7 +1032,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             if (isset($CIDRAM['DirValue']['choices'])) {
                 $CIDRAM['ThisDir']['FieldOut'] = '<select class="auto" name="'. $CIDRAM['ThisDir']['DirLangKey'] . '" id="'. $CIDRAM['ThisDir']['DirLangKey'] . '_field"' . $CIDRAM['ThisDir']['Trigger'] . '>';
                 foreach ($CIDRAM['DirValue']['choices'] as $CIDRAM['ChoiceKey'] => $CIDRAM['ChoiceValue']) {
-                    if (isset($CIDRAM['DirValue']['choice_filter']) && isset($CIDRAM[$CIDRAM['DirValue']['choice_filter']])) {
+                    if (isset($CIDRAM['DirValue']['choice_filter'], $CIDRAM[$CIDRAM['DirValue']['choice_filter']])) {
                         if (!$CIDRAM[$CIDRAM['DirValue']['choice_filter']]($CIDRAM['ChoiceKey'], $CIDRAM['ChoiceValue'])) {
                             continue;
                         }
@@ -2168,8 +2168,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         $CIDRAM['SafeToContinue'] = (
             basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
             $CIDRAM['FileManager-PathSecurityCheck']($_FILES['upload-file']['name']) &&
-            isset($_FILES['upload-file']['tmp_name']) &&
-            isset($_FILES['upload-file']['error']) &&
+            isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
             $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
             is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
             !is_link($CIDRAM['Vault'] . $_FILES['upload-file']['name'])
@@ -2200,8 +2199,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 
     /** A form was submitted. */
     elseif (
-        isset($_POST['filename']) &&
-        isset($_POST['do']) &&
+        isset($_POST['filename'], $_POST['do']) &&
         is_readable($CIDRAM['Vault'] . $_POST['filename']) &&
         $CIDRAM['FileManager-PathSecurityCheck']($_POST['filename'])
     ) {

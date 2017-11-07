@@ -129,6 +129,7 @@ Config Defaults:
     pt: Português
     ru: Русский
     sv: Svenska
+    ta: தமிழ்
     th: ภาษาไทย
     tr: Türkçe
     ur: ‏اردو‏
@@ -209,6 +210,9 @@ Config Defaults:
     PASSWORD_ARGON2I: PASSWORD_ARGON2I (PHP >= 7.2.0)
    choice_filter: "FilterAlgo"
   statistics:
+   type: bool
+   default: false
+  force_hostname_lookup:
    type: bool
    default: false
  signatures:

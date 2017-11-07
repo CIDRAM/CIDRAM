@@ -10,6 +10,28 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.10.30; Bug-fix; Maikuolan]: Cancelled or pending CI tests sometimes
   wouldn't display correctly on the updates page; Fixed.
 
+- [2017.11.07; Minor code change; Maikuolan]: Added a new directive,
+  "force_hostname_lookup" (normally, hostname lookups occur on the basis of
+  necessity; e.g., when a module requires hostname information to check against
+  hostname-based signatures; this new directive allows users to force hostname
+  lookups to occur for all requests). Removed hardcoded references to fields
+  from the main template files in favour of having fields generated entirely by
+  the output generator (thus enabling greater control over which fields are
+  generated and displayed for any given instance). Empty fields are now omitted
+  from block events (Access Denied page, logfiles, etc). reCAPTCHA fields are
+  now omitted if reCAPTCHA is entirely disabled. A hostname field is now
+  included in the fields if it isn't empty for any given instance (Access
+  Denied page, logfiles, etc). Added the ability to resolve 6to4 IPv6 addresses
+  to their IPv4 counterparts, and automatically check these resolved addresses
+  against the signature files, alongside the original unresolved IP addresses;
+  This should help to abate the risk of clients attempting to connect through
+  6to4 as a means to avoid being blocked by IPv4 signatures (technically this
+  shouldn't be possible to do when a network is configured correctly anyhow,
+  but I've recently encountered a few requests that appeared as if they may be
+  such attempts; requests on networks that should only support IPv4, but seemed
+  to occasionally allow requests from non-blocked 6to4 addresses that resolved
+  back to blocked IPv4 addresses).
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

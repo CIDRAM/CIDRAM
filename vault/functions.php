@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.10.26).
+ * This file: Functions file (last modified: 2017.11.07).
  */
 
 /**
@@ -82,10 +82,9 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
     $IgnoreMe = [];
     $IgnoreFile = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ignore.dat');
     if (strpos($IgnoreFile, "\r")) {
-        $IgnoreFile =
-            (strpos($IgnoreFile, "\r\n")) ?
-            str_replace("\r", '', $IgnoreFile) :
-            str_replace("\r", "\n", $IgnoreFile);
+        $IgnoreFile = (
+            strpos($IgnoreFile, "\r\n")
+        ) ? str_replace("\r", '', $IgnoreFile) : str_replace("\r", "\n", $IgnoreFile);
     }
     $IgnoreFile = "\n" . $IgnoreFile . "\n";
     $PosB = -1;
@@ -356,7 +355,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     ($PosY = strpos($Files[$FileIndex], "\n", ($PosX + 1))) &&
                     !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) ? substr($Files[$FileIndex], ($PosX + 6), ($PosY - $PosX - 6)) : $DefTag;
-                if (isset($CIDRAM['Ignore'][$Tag]) && $CIDRAM['Ignore'][$Tag]) {
+                if (!empty($CIDRAM['Ignore'][$Tag])) {
                     continue;
                 }
                 if (
@@ -466,7 +465,9 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
     if (!isset($CIDRAM['BlockInfo'])) {
         return false;
     }
-    $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
+    if (!isset($CIDRAM['Ignore'])) {
+        $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
+    }
     $CIDRAM['Whitelisted'] = false;
     $CIDRAM['LastTestIP'] = 0;
     if ($IPv4Factors = $CIDRAM['ExpandIPv4']($Addr)) {
@@ -1264,4 +1265,34 @@ $CIDRAM['ReadBytes'] = function ($In, $Mode = 0) {
     }
     $Multiply = ['K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776];
     return (int)floor($In * (isset($Multiply[$Unit]) ? $Multiply[$Unit] : 1));
+};
+
+/**
+ * Add to page output and block event logfile fields.
+ *
+ * @param string $FieldName Name of the field (generally, the L10N label).
+ * @param string $FieldName Data for the field.
+ */
+$CIDRAM['AddField'] = function ($FieldName, $FieldData) use (&$CIDRAM) {
+    $CIDRAM['FieldTemplates']['Logs'] .= $FieldName . $FieldData . "\n";
+    $CIDRAM['FieldTemplates']['Output'][] = '<span class="textLabel">' . $FieldName . '</span>' . $FieldData . "<br />";
+};
+
+/**
+ * Resolves an 6to4 IPv6 address to its IPv4 address counterpart.
+ *
+ * @param string $In An IPv6 address.
+ * @return string An IPv4 address.
+ */
+$CIDRAM['Resolve6to4'] = function ($In) {
+    $Parts = explode(':', substr($In, 5), 8);
+    if (count($Parts) < 2 || preg_match('~[^0-9a-f]~i', $Parts[0]) || preg_match('~[^0-9a-f]~i', $Parts[1])) {
+        return '';
+    }
+    $Parts[0] = hexdec($Parts[0]) ?: 0;
+    $Parts[1] = hexdec($Parts[1]) ?: 0;
+    $Octets = [0 => floor($Parts[0] / 256), 1 => 0, 2 => floor($Parts[1] / 256), 3 => 0];
+    $Octets[1] = $Parts[0] - ($Octets[0] * 256);
+    $Octets[3] = $Parts[1] - ($Octets[2] * 256);
+    return implode('.', $Octets);
 };

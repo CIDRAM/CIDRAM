@@ -380,6 +380,9 @@ Cấu hình chung cho CIDRAM.
 "statistics"
 - Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định].
 
+"force_hostname_lookup"
+- Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất.
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -766,4 +769,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 28 Tháng Mười 2017 (2017.10.28).
+Lần cuối cập nhật: 6 Tháng Mười Một 2017 (2017.11.06).

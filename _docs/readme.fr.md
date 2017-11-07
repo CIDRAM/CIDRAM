@@ -380,6 +380,9 @@ Configuration générale pour CIDRAM.
 « statistics »
 - Suivre les statistiques d'utilisation pour CIDRAM ? True = Oui ; False = Non [Défaut].
 
+« force_hostname_lookup »
+- Forcer les recherches de nom d'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les demandes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances.
+
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 
@@ -766,4 +769,4 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 ---
 
 
-Dernière mise à jour : 28 Octobre 2017 (2017.10.28).
+Dernière mise à jour : 6 Novembre 2017 (2017.11.06).

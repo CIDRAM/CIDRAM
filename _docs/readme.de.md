@@ -380,6 +380,9 @@ Generelle Konfiguration von CIDRAM.
 "statistics"
 - CIDRAM-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung].
 
+"force_hostname_lookup"
+- Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]. Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken.
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -766,4 +769,4 @@ Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der U
 ---
 
 
-Zuletzt aktualisiert: 28 Oktober 2017 (2017.10.28).
+Zuletzt aktualisiert: 6 November 2017 (2017.11.06).

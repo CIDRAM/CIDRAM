@@ -380,6 +380,9 @@ General CIDRAM configuration.
 "statistics"
 - Track CIDRAM usage statistics? True = Yes; False = No [Default].
 
+"force_hostname_lookup"
+- Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance.
+
 #### "signatures" (Category)
 Signatures configuration.
 
@@ -766,4 +769,4 @@ Yes. An API is built into the front-end for interacting with the updates page vi
 ---
 
 
-Last Updated: 28 October 2017 (2017.10.28).
+Last Updated: 6 November 2017 (2017.11.06).

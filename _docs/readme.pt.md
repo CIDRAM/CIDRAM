@@ -380,6 +380,9 @@ Configuração geral por CIDRAM.
 "statistics"
 - Monitorar as estatísticas de uso do CIDRAM? True = Sim; False = Não [Padrão].
 
+"force_hostname_lookup"
+- Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os pedidos. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho.
+
 #### "signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -766,4 +769,4 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 ---
 
 
-Última Atualização: 28 Outubro 2017 (2017.10.28).
+Última Atualização: 6 Novembro 2017 (2017.11.06).

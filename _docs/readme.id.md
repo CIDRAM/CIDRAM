@@ -380,6 +380,9 @@ Konfigurasi umum dari CIDRAM.
 "statistics"
 - Lacak statistik penggunaan CIDRAM? True = Ya; False = Tidak [Default].
 
+"force_hostname_lookup"
+- Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja.
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -766,4 +769,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 28 Oktober 2017 (2017.10.28).
+Terakhir Diperbarui: 6 November 2017 (2017.11.06).

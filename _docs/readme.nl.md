@@ -380,6 +380,9 @@ Algemene configuratie voor CIDRAM.
 "statistics"
 - Track CIDRAM gebruiksstatistieken? True = Ja; False = Nee [Standaard].
 
+"force_hostname_lookup"
+- Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties.
+
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -766,4 +769,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 28 Oktober 2017 (2017.10.28).
+Laatste Bijgewerkt: 6 November 2017 (2017.11.06).

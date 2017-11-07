@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.10.15).
+ * This file: Turkish language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -26,8 +26,10 @@ $CIDRAM['lang']['denied'] = 'Erişim Reddedildi!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Önbelleğe yazılamıyor! Lütfen CHMOD dosya izinlerinizi kontrol edin!';
 $CIDRAM['lang']['fake_ua'] = 'Sahte {ua}';
 $CIDRAM['lang']['field_datetime'] = 'Tarih/Saat: ';
+$CIDRAM['lang']['field_hostname'] = 'Hostname: ';
 $CIDRAM['lang']['field_id'] = 'İD: ';
 $CIDRAM['lang']['field_ipaddr'] = 'İP Adresi: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'İP Adresi (Kararlı): ';
 $CIDRAM['lang']['field_query'] = 'Sorgu: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA durumu: ';
 $CIDRAM['lang']['field_referrer'] = 'Yönlendiren: ';

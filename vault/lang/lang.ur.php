@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.10.15).
+ * This file: Urdu language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,8 +24,10 @@ $CIDRAM['lang']['denied'] = 'رسائی نہیں ہوئی!';
 $CIDRAM['lang']['Error_WriteCache'] = 'کیشے کو لکھنے سے قاصر ہے! آپ کے CHMOD فائل کی اجازت براہ مہربانی چیک کریں!';
 $CIDRAM['lang']['fake_ua'] = 'جعلی {UA}';
 $CIDRAM['lang']['field_datetime'] = 'تاریخ وقت: ';
+$CIDRAM['lang']['field_hostname'] = 'میزبان کا نام: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP پتہ: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP پتہ (حل کیا): ';
 $CIDRAM['lang']['field_query'] = 'طلب: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA کے ریاست: ';
 $CIDRAM['lang']['field_referrer'] = 'حوالہ دہندہ: ';

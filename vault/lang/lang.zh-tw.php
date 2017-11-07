@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2017.10.15).
+ * This file: Chinese (traditional) language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = '拒絕訪問！';
 $CIDRAM['lang']['Error_WriteCache'] = '無法寫入緩存！​請檢查您的CHMOD文件的權限！';
 $CIDRAM['lang']['fake_ua'] = '假{ua}';
 $CIDRAM['lang']['field_datetime'] = '日期/時間：';
+$CIDRAM['lang']['field_hostname'] = '主機名：';
 $CIDRAM['lang']['field_id'] = 'ID：';
 $CIDRAM['lang']['field_ipaddr'] = 'IP地址：';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP地址（解決）：';
 $CIDRAM['lang']['field_query'] = '網頁查詢：';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA狀態：';
 $CIDRAM['lang']['field_referrer'] = '引薦：';

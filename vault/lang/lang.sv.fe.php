@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.10.28).
+ * This file: Swedish language data for the front-end (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['config_general_disable_webfonts'] = 'Inaktivera webbfonter? Tru
 $CIDRAM['lang']['config_general_emailaddr'] = 'Om du vill, kan du ange en e-postadress här för att kunna ges till användare när de är blockerade, för att de ska kunna användas som kontaktpunkt för stöd och/eller hjälp till om de blockeras av misstag eller fel. VARNING: Alla e-postadresser du tillhandahåller här kommer säkert att förvärvas av spamrobotar och skrapor medan de används här, och så, det rekommenderas starkt att om du väljer att tillhandahålla en e-postadress här, så ser du till att e-postadressen du tillhandahåller här är en engångsadress och/eller en adress som du inte har något emot att bli spamad (med andra ord, vill du antagligen inte använda dina primära personliga eller primära företags e-postadresser).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hur skulle du föredra att e-postadressen ska presenteras för användarna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Vilka rubriker ska CIDRAM reagera med vid blockering av förfrågningar?';
+$CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda.';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!';
 $CIDRAM['lang']['config_general_lang'] = 'Ange standardspråk för CIDRAM.';

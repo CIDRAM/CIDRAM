@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data (last modified: 2017.10.15).
+ * This file: Swedish language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = 'Nekat Tillgång!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!';
 $CIDRAM['lang']['fake_ua'] = 'Falsk {ua}';
 $CIDRAM['lang']['field_datetime'] = 'Datum/Tid: ';
+$CIDRAM['lang']['field_hostname'] = 'Hostname: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP-Adress: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP-Adress (Löst): ';
 $CIDRAM['lang']['field_query'] = 'Fråga: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA Stat: ';
 $CIDRAM['lang']['field_referrer'] = 'Hänvisnings: ';

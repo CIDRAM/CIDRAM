@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.10.28).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,6 +27,7 @@ $CIDRAM['lang']['config_general_disable_webfonts'] = '關閉網絡字體嗎？�
 $CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何將電子郵件地址呈現給用戶？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什麼頭CIDRAM應該應對當申請是拒絕？';
+$CIDRAM['lang']['config_general_force_hostname_lookup'] = '強制主機名查找？​True（真）=跟踪； False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準 = REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！';
 $CIDRAM['lang']['config_general_lang'] = '指定標準CIDRAM語言。';
@@ -254,7 +255,6 @@ $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免費提供的，​但如果您想�
 $CIDRAM['lang']['tip_enter_ips_here'] = '在這裡輸入IP。';
 $CIDRAM['lang']['tip_enter_ip_here'] = '在這裡輸入IP。';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = '注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。';
-$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Note: CIDRAM uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser.';
 $CIDRAM['lang']['tip_file_manager'] = '你好，​{username}。​<br />文件管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。';
 $CIDRAM['lang']['tip_home'] = '你好，​{username}。​<br />這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。';
 $CIDRAM['lang']['tip_ip_aggregator'] = '你好，​{username}。​<br />IP聚合器允許您以最小的可能方式表達IP和CIDR。​輸入要聚合的數據，然後按“OK”。';

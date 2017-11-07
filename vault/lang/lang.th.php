@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.10.15).
+ * This file: Thai language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = 'ปฏิเสธการเข้าใช้!';
 $CIDRAM['lang']['Error_WriteCache'] = 'ไม่สามารถเขียนลงในแคช! โปรดตรวจสอบสิทธิ์ของไฟล์ CHMOD!';
 $CIDRAM['lang']['fake_ua'] = '{ua} ปลอม';
 $CIDRAM['lang']['field_datetime'] = 'วันเวลา: ';
+$CIDRAM['lang']['field_hostname'] = 'ชื่อโฮสต์: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'ที่อยู่ IP: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'ที่อยู่ IP (แก้ไข): ';
 $CIDRAM['lang']['field_query'] = 'ข้อความค้นหา: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'สภาพ reCAPTCHA: ';
 $CIDRAM['lang']['field_referrer'] = 'ผู้อ้างอิง: ';

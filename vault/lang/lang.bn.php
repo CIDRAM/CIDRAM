@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2017.10.15).
+ * This file: Bangla language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = 'প্রবেশাধিকার অস্ব�
 $CIDRAM['lang']['Error_WriteCache'] = 'ক্যাশে লিখতে অক্ষম! আপনার CHMOD ফাইল অনুমতি চেক করুন!';
 $CIDRAM['lang']['fake_ua'] = 'জাল {ua}';
 $CIDRAM['lang']['field_datetime'] = 'তারিখ/সময়: ';
+$CIDRAM['lang']['field_hostname'] = 'হোস্টনাম: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP ঠিকানা: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP ঠিকানা (স্থিরপ্রতিজ্ঞ): ';
 $CIDRAM['lang']['field_query'] = 'প্রশ্ন: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA অবস্থা: ';
 $CIDRAM['lang']['field_referrer'] = 'রেফারার: ';

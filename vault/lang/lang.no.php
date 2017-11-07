@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data (last modified: 2017.10.15).
+ * This file: Norwegian language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = 'Tilgang Nektet!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan ikke skrive til hurtigbufferen! Vennligst sjekk CHMOD-filtillatelsene dine!';
 $CIDRAM['lang']['fake_ua'] = 'Falsk {ua}';
 $CIDRAM['lang']['field_datetime'] = 'Dato/Tid: ';
+$CIDRAM['lang']['field_hostname'] = 'Vertsnavn: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP-Adresse: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP-Adresse (Løst): ';
 $CIDRAM['lang']['field_query'] = 'Spørring: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA Stat: ';
 $CIDRAM['lang']['field_referrer'] = 'Referent: ';

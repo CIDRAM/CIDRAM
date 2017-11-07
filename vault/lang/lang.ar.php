@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.10.15).
+ * This file: Arabic language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,8 +24,10 @@ $CIDRAM['lang']['denied'] = 'تم رفض الوصول!';
 $CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات';
 $CIDRAM['lang']['fake_ua'] = '{ua} همية';
 $CIDRAM['lang']['field_datetime'] = 'الوقت / التاريخ: ';
+$CIDRAM['lang']['field_hostname'] = 'اسم المضيف: ';
 $CIDRAM['lang']['field_id'] = 'الهوية الشخصية: ';
 $CIDRAM['lang']['field_ipaddr'] = 'عنوان IP: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'عنوان IP (تم حلها): ';
 $CIDRAM['lang']['field_query'] = 'إستعلام: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'الحالة reCAPTCHA: ';
 $CIDRAM['lang']['field_referrer'] = 'المرجع: ';

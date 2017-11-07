@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2017.10.15).
+ * This file: Hindi language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = 'पहुंच अस्वीकृत!';
 $CIDRAM['lang']['Error_WriteCache'] = 'कैश में लिखने में असमर्थ! कृपया अपने CHMOD अनुमतियों की जांच करें!';
 $CIDRAM['lang']['fake_ua'] = 'नकली {ua}';
 $CIDRAM['lang']['field_datetime'] = 'दिनांक/समय: ';
+$CIDRAM['lang']['field_hostname'] = 'होस्ट का नाम: ';
 $CIDRAM['lang']['field_id'] = 'आईडी: ';
 $CIDRAM['lang']['field_ipaddr'] = 'आईपी पता: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'आईपी पता (संकल्प लिया): ';
 $CIDRAM['lang']['field_query'] = 'क्वेरी: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'रीकैपचा स्थिति: ';
 $CIDRAM['lang']['field_referrer'] = 'रेफरर: ';

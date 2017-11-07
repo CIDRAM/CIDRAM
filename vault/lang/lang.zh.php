@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2017.10.15).
+ * This file: Chinese (simplified) language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = '拒绝访问！';
 $CIDRAM['lang']['Error_WriteCache'] = '无法写入缓存！​请检查您的CHMOD文件的权限！';
 $CIDRAM['lang']['fake_ua'] = '假{ua}';
 $CIDRAM['lang']['field_datetime'] = '日期/时间：';
+$CIDRAM['lang']['field_hostname'] = '主机名：';
 $CIDRAM['lang']['field_id'] = 'ID：';
 $CIDRAM['lang']['field_ipaddr'] = 'IP地址：';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP地址（解决）：';
 $CIDRAM['lang']['field_query'] = '网页查询：';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA状态：';
 $CIDRAM['lang']['field_referrer'] = '引荐：';

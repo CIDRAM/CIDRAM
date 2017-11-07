@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2017.10.15).
+ * This file: Dutch language data (last modified: 2017.11.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,8 +21,10 @@ $CIDRAM['lang']['denied'] = 'Toegang Geweigerd!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!';
 $CIDRAM['lang']['fake_ua'] = 'Valse {ua}';
 $CIDRAM['lang']['field_datetime'] = 'Datum/Tijd: ';
+$CIDRAM['lang']['field_hostname'] = 'Hostname: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'IP-Adres: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP-Adres (Vastbesloten): ';
 $CIDRAM['lang']['field_query'] = 'Query: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'reCAPTCHA State: ';
 $CIDRAM['lang']['field_referrer'] = 'Verwijzer: ';

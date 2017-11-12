@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.10.30).
+ * This file: Front-end functions file (last modified: 2017.11.12).
  */
 
 /**
@@ -741,6 +741,17 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr) use (&$CIDRAM) {
         $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr);
     } catch (\Exception $e) {
         $CIDRAM['Caught'] = true;
+    }
+    if (substr($CIDRAM['BlockInfo']['IPAddr'], 0, 5) === '2002:') {
+        $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Resolve6to4']($Addr);
+        if (!empty($CIDRAM['ThisIP']['IPAddress'])) {
+            $CIDRAM['ThisIP']['IPAddress'] .= ' (' . $CIDRAM['BlockInfo']['IPAddrResolved'] . ')';
+        }
+        try {
+            $CIDRAM['TestResults'] = ($CIDRAM['RunTests']($CIDRAM['BlockInfo']['IPAddrResolved']) || $CIDRAM['TestResults']);
+        } catch (\Exception $e) {
+            $CIDRAM['Caught'] = true;
+        }
     }
 };
 

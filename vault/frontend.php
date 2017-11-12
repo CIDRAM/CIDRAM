@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.11.06).
+ * This file: Front-end handler (last modified: 2017.11.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2573,20 +2573,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
                 continue;
             }
             $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress']);
-            if ($CIDRAM['Caught']) {
+            if ($CIDRAM['Caught'] || empty($CIDRAM['LastTestIP']) || empty($CIDRAM['TestResults'])) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
+            } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
+                $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_yes'] . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
+                $CIDRAM['ThisIP']['StatClass'] = 'txtRd';
             } else {
-                if (!$CIDRAM['TestResults']) {
-                    $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
-                    $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
-                } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
-                    $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_yes'] . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
-                    $CIDRAM['ThisIP']['StatClass'] = 'txtRd';
-                } else {
-                    $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_no'];
-                    $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
-                }
+                $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_no'];
+                $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
             }
             $CIDRAM['FE']['IPTestResults'] .= $CIDRAM['ParseVars'](
                 $CIDRAM['lang'] + $CIDRAM['ThisIP'],

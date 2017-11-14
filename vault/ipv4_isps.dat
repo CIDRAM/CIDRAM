@@ -1723,14 +1723,15 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 1.39%.
-# %Listed, CleanTalk.org: 11.16%.
-# %Listed, abuseat.org (CBL-Listed): 0.21%.
-# Stop Forum Spam (SFS) listings: 2,108.
-# Updated: 2017.06.04
+# %Listed, Google Malware Dashboard: 0.65%.
+# %Listed, CleanTalk.org: 10.52%.
+# %Listed, abuseat.org (CBL-Listed): 0.32%.
+# Stop Forum Spam (SFS) listings: 2,203.
+# Updated: 2017.11.14
 
 2.20.152.0/22 Deny Generic
 23.34.224.0/20 Deny Generic
+23.195.8.0/22 Deny Generic
 31.168.0.0/16 Deny Generic
 62.219.0.0/16 Deny Generic
 72.246.151.0/24 Deny Generic
@@ -1739,6 +1740,7 @@ Tag: Trend Micro
 82.80.0.0/15 Deny Generic
 84.108.0.0/14 Deny Generic
 85.130.128.0/17 Deny Generic
+89.38.28.0/22 Deny Generic
 92.122.128.0/20 Deny Generic
 95.101.4.0/22 Deny Generic
 104.70.127.0/24 Deny Generic
@@ -1871,18 +1873,14 @@ Tag: Xirra GmbH
 
 
 # ASNs 35804, 43765 ("PP SKS-LUGAN").
-# %Listed, Google Malware Dashboard: 0.69% (AS35804), 0% (AS35804).
-# %Listed, CleanTalk.org: 31.09% (AS35804), 100.00% (AS35804).
-# Stop Forum Spam (SFS) listings: 2,137,952 (AS35804), 1,308,214 (AS35804).
-# Updated: 2017.06.08
+# %Listed, Google Malware Dashboard: 1.34% (AS35804), 0% (AS35804).
+# %Listed, CleanTalk.org: 30.72% (AS35804), 100.00% (AS35804).
+# Stop Forum Spam (SFS) listings: 1,385,500 (AS35804), 1,551,004 (AS35804).
+# Updated: 2017.11.14
 
 91.200.12.0/22 Deny Generic
 91.202.212.0/22 Deny Generic
-91.210.31.0/24 Deny Generic
-193.110.144.0/24 Deny Generic
-193.110.168.0/23 Deny Generic
 194.79.60.0/22 Deny Generic
-194.145.220.0/23 Deny Generic
 213.111.128.0/18 Deny Generic
 Tag: PP SKS-LUGAN
 
@@ -2135,8 +2133,8 @@ recaptcha:
 # ASN 47155 ("ViaEuropa i Lund AB").
 # Refer stopforumspam.com/forum/viewtopic.php?id=4676
 # %Listed, CleanTalk.org: 31.59%.
-# Stop Forum Spam (SFS) listings: 1,400.
-# Updated: 2016.04.17 / Checked: 2017.06.04
+# Stop Forum Spam (SFS) listings: 1,251.
+# Updated: 2016.04.17 / Checked: 2017.11.14
 
 93.182.128.0/18 Deny Spam
 185.123.228.0/22 Deny Spam
@@ -2145,8 +2143,8 @@ Tag: ViaEuropa
 
 # ASN 43700 ("UAB CONSILIUM OPTIMUM").
 # Vulnerability scanner.
-# %Listed, CleanTalk.org: 6.45%.
-# Updated: 2016.04.17 / Checked: 2017.06.04
+# %Listed, CleanTalk.org: 6.35%.
+# Updated: 2016.04.17 / Checked: 2017.11.14
 
 78.158.0.0/19 Deny Generic
 Tag: AS43700
@@ -2163,7 +2161,7 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Updated: 2016.04.23 / Checked: 2017.06.04
+# Updated: 2016.04.23 / Checked: 2017.11.14
 
 185.35.136.0/22 Deny Generic
 Tag: Zyztm

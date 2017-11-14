@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.11.06).
+ * This file: Bangla language data for the front-end (last modified: 2017.11.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -95,7 +95,7 @@ $CIDRAM['lang']['field_install'] = 'ইনস্টল করুন';
 $CIDRAM['lang']['field_ip_address'] = 'IP ঠিকানা';
 $CIDRAM['lang']['field_latest_version'] = 'সবচেয়ে সাম্প্রতিক সংস্করণ';
 $CIDRAM['lang']['field_log_in'] = 'লগ ইন করুন';
-$CIDRAM['lang']['field_new_name'] = 'New name:';
+$CIDRAM['lang']['field_new_name'] = 'নতুন নাম:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'অ-ক্লিকযোগ্য পাঠ্য';
 $CIDRAM['lang']['field_ok'] = 'OK';
 $CIDRAM['lang']['field_options'] = 'বিকল্প';
@@ -301,6 +301,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'কিছু দরকারী ল
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org কম্পোজিট ব্লকিং তালিকা</a> – ASNগুলি এর জন্য ম্যালওয়ার সংক্রমণের হার সংক্রান্ত প্রতিবেদনগুলি প্রদর্শন করে।</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – একটি পরিচিত অপমানজনক IPগুলি ডাটাবেস বজায় রাখে; IPগুলি চেক এবং রিপোর্ট করার জন্য একটি API উপলব্ধ করে।</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – পরিচিত স্প্যামারদের তালিকা বজায় রাখে; IP/ASN স্প্যাম ক্রিয়াকলাপ পরীক্ষা করার জন্য দরকারী।</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (সামঞ্জস্যের চার্ট)</a> – বিভিন্ন প্যাকেজের জন্য সামঞ্জস্য তথ্য তালিকা (CIDRAM, phpMussel, ইত্যাদি).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি)।</li>
+            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (সামঞ্জস্যের চার্ট)</a> – বিভিন্ন প্যাকেজের জন্য সামঞ্জস্য তথ্য তালিকা (CIDRAM, phpMussel, ইত্যাদি)।</li>
         </ul>';

@@ -32,6 +32,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   to occasionally allow requests from non-blocked 6to4 addresses that resolved
   back to blocked IPv4 addresses).
 
+- [2017.11.15; Bug-fix; Maikuolan]: Run commands in signature files encountered
+  consequent to resolving 6to4 addresses were being ignored in some cases (such
+  as in the case of the default signature bypass files); Fixed.
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

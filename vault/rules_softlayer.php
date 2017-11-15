@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2016.06.18).
+ * This file: Custom rules file for Soft Layer (last modified: 2017.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,39 +21,44 @@ if (!isset($Factors[$FactorIndex])) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$bypass = false;
-
-/** Skip further processing if the "block_cloud" directive is false. */
-if (!$CIDRAM['Config']['signatures']['block_cloud']) {
-    $bypass = true;
+/** Safety. */
+if (!isset($CIDRAM['RunParamResCache'])) {
+    $CIDRAM['RunParamResCache'] = [];
 }
 
-/** ShowyouBot bypass. */
-if (substr_count($CIDRAM['BlockInfo']['UALC'], 'showyoubot')) {
-    $bypass = true;
-}
+/** Define object for these rules for later recall. */
+$CIDRAM['RunParamResCache']['rules_softlayer.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0) use (&$CIDRAM) {
 
-/** Disqus bypass. */
-if (substr_count($CIDRAM['BlockInfo']['UALC'], 'disqus')) {
-    $bypass = true;
-}
+    /** Skip further processing if the "block_cloud" directive is false. */
+    if (!$CIDRAM['Config']['signatures']['block_cloud']) {
+        return;
+    }
 
-/** Feedspot bypass. */
-if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
-    $bypass = true;
-}
+    /** ShowyouBot bypass. */
+    if (substr_count($CIDRAM['BlockInfo']['UALC'], 'showyoubot')) {
+        return;
+    }
 
-/** Superfeedr bypass. */
-if (substr_count($CIDRAM['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
-    $bypass = true;
-}
+    /** Disqus bypass. */
+    if (substr_count($CIDRAM['BlockInfo']['UALC'], 'disqus')) {
+        return;
+    }
 
-/** Feedbot bypass. */
-if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedbot')) {
-    $bypass = true;
-}
+    /** Feedspot bypass. */
+    if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
+        return;
+    }
 
-if (!$bypass) {
+    /** Superfeedr bypass. */
+    if (substr_count($CIDRAM['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
+        return;
+    }
+
+    /** Feedbot bypass. */
+    if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedbot')) {
+        return;
+    }
+
     if (!$CIDRAM['CIDRAM_sapi']) {
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
@@ -66,4 +71,8 @@ if (!$bypass) {
     }
     $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
     $CIDRAM['BlockInfo']['SignatureCount']++;
-}
+
+};
+
+/** Execute object. */
+$CIDRAM['RunParamResCache']['rules_softlayer.php']($Factors, $FactorIndex, $LN);

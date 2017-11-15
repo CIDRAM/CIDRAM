@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.11.07).
+ * This file: Functions file (last modified: 2017.11.15).
  */
 
 /**
@@ -373,13 +373,20 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     $Signature = substr($Signature, strpos($Signature, ' ') + 1);
                 }
                 if ($Category === 'Run' && !$CIDRAM['CIDRAM_sapi']) {
-                    if (file_exists($CIDRAM['Vault'] . $Signature)) {
-                        require_once $CIDRAM['Vault'] . $Signature;
+                    if (!isset($CIDRAM['RunParamResCache'])) {
+                        $CIDRAM['RunParamResCache'] = [];
+                    }
+                    if (isset($CIDRAM['RunParamResCache'][$Signature]) && is_object($CIDRAM['RunParamResCache'][$Signature])) {
+                        $CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN);
                     } else {
-                        throw new \Exception($CIDRAM['ParseVars'](
-                            ['FileName' => $Signature],
-                            '[CIDRAM] ' . $CIDRAM['lang']['Error_MissingRequire']
-                        ));
+                        if (file_exists($CIDRAM['Vault'] . $Signature)) {
+                            require_once $CIDRAM['Vault'] . $Signature;
+                        } else {
+                            throw new \Exception($CIDRAM['ParseVars'](
+                                ['FileName' => $Signature],
+                                '[CIDRAM] ' . $CIDRAM['lang']['Error_MissingRequire']
+                            ));
+                        }
                     }
                 } elseif ($Category === 'Whitelist') {
                     $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';

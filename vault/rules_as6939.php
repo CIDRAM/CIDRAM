@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for AS6939 (last modified: 2016.06.18).
+ * This file: Custom rules file for AS6939 (last modified: 2017.11.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,28 +21,33 @@ if (!isset($Factors[$FactorIndex])) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$bypass = false;
-
-/** Skip further processing if the "block_cloud" directive is false. */
-if (!$CIDRAM['Config']['signatures']['block_cloud']) {
-    $bypass = true;
+/** Safety. */
+if (!isset($CIDRAM['RunParamResCache'])) {
+    $CIDRAM['RunParamResCache'] = [];
 }
 
-/** Access provider block bypass. */
-if ($Factors[23] === '65.49.67.0/24') {
-    $bypass = true;
-}
+/** Define object for these rules for later recall. */
+$CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0) use (&$CIDRAM) {
 
-/** Feedly/Feedspot bypass. */
-if (
-    preg_match('/\.getpebble\.com$/i', $CIDRAM['BlockInfo']['UALC']) ||
-    substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') ||
-    substr_count($CIDRAM['BlockInfo']['UA'], 'Feedly')
-) {
-    $bypass = true;
-}
+    /** Skip further processing if the "block_cloud" directive is false. */
+    if (!$CIDRAM['Config']['signatures']['block_cloud']) {
+        return;
+    }
 
-if (!$bypass) {
+    /** Access provider block bypass. */
+    if ($Factors[23] === '65.49.67.0/24') {
+        return;
+    }
+
+    /** Feedly/Feedspot bypass. */
+    if (
+        preg_match('/\.getpebble\.com$/i', $CIDRAM['BlockInfo']['UALC']) ||
+        substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') ||
+        substr_count($CIDRAM['BlockInfo']['UA'], 'Feedly')
+    ) {
+        return;
+    }
+
     if (!$CIDRAM['CIDRAM_sapi']) {
         $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
@@ -55,4 +60,8 @@ if (!$bypass) {
     }
     $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
     $CIDRAM['BlockInfo']['SignatureCount']++;
-}
+
+};
+
+/** Execute object. */
+$CIDRAM['RunParamResCache']['rules_as6939.php']($Factors, $FactorIndex, $LN);

@@ -2694,8 +2694,9 @@ Tag: Nobis/Ubiquity
 
 
 # "Rackspace Hosting".
+# Section contains one "Run" parameter; Careful when updating.
 # Known ASNs: 10532, 15395, 19994, 22720, 27357, 33070, 39921, 44716, 45187, 54636, 58683.
-# Updated: 2017.06.12
+# Updated: 2017.11.15
 
 5.79.0.0/18 Deny Cloud
 5.152.187.0/24 Deny Cloud
@@ -2709,7 +2710,10 @@ Tag: Nobis/Ubiquity
 50.56.152.0/21 Deny Cloud
 50.56.160.0/19 Deny Cloud
 50.56.192.0/18 Deny Cloud
-50.57.0.0/16 Deny Cloud
+50.57.0.0/17 Deny Cloud
+50.57.128.0/18 Deny Cloud
+50.57.192.0/19 Deny Cloud
+50.57.224.0/20 Deny Cloud
 64.39.0.0/19 Deny Cloud
 64.49.192.0/18 Deny Cloud
 65.61.128.0/18 Deny Cloud
@@ -2748,7 +2752,6 @@ Tag: Nobis/Ubiquity
 103.204.13.0/24 Deny Cloud
 104.130.0.0/16 Deny Cloud
 104.222.0.0/20 Deny Cloud
-104.237.95.0/24 Deny Cloud
 104.239.128.0/17 Deny Cloud
 108.166.0.0/17 Deny Cloud
 108.171.160.0/19 Deny Cloud
@@ -2765,10 +2768,13 @@ Tag: Nobis/Ubiquity
 146.177.0.0/16 Deny Cloud
 148.62.0.0/16 Deny Cloud
 156.43.59.0/24 Deny Cloud
-159.135.48.0/20 Deny Cloud
 159.135.128.0/19 Deny Cloud
-161.47.0.0/17 Deny Cloud
-162.13.0.0/16 Deny Cloud
+159.135.229.0/24 Deny Cloud
+159.135.230.0/23 Deny Cloud
+159.135.232.0/24 Deny Cloud
+159.135.234.0/24 Deny Cloud
+161.47.0.0/16 Deny Cloud
+162.13.0.0/16 Run rules_specific.php
 162.209.0.0/17 Deny Cloud
 162.220.0.0/24 Deny Cloud
 162.242.128.0/17 Deny Cloud
@@ -2780,18 +2786,23 @@ Tag: Nobis/Ubiquity
 173.45.224.0/19 Deny Cloud
 173.203.0.0/16 Deny Cloud
 174.143.0.0/16 Deny Cloud
-177.152.202.0/24 Deny Cloud
 180.150.128.0/19 Deny Cloud
-184.106.0.0/16 Deny Cloud
+184.106.0.0/19 Deny Cloud
+184.106.32.0/20 Deny Cloud
+184.106.48.0/22 Deny Cloud
+184.106.52.0/23 Deny Cloud
+184.106.54.0/24 Deny Cloud
+184.106.56.0/21 Deny Cloud
+184.106.64.0/18 Deny Cloud
+184.106.128.0/17 Deny Cloud
 185.28.196.0/24 Deny Cloud
 185.36.144.0/22 Deny Cloud
 185.64.72.0/24 Deny Cloud
-185.64.75.0/24 Deny Cloud
+185.64.74.0/23 Deny Cloud
 185.75.60.0/22 Deny Cloud
 185.118.172.0/22 Deny Cloud
 185.144.228.0/22 Deny Cloud
 185.194.86.0/23 Deny Cloud
-192.40.168.0/21 Deny Cloud
 192.155.42.0/23 Deny Cloud
 192.155.44.0/24 Deny Cloud
 192.155.48.0/22 Deny Cloud
@@ -2808,6 +2819,7 @@ Tag: Nobis/Ubiquity
 201.131.3.0/24 Deny Cloud
 203.60.0.0/17 Deny Cloud
 204.63.38.0/23 Deny Cloud
+204.107.168.0/24 Deny Cloud
 204.232.128.0/17 Deny Cloud
 207.97.192.0/18 Deny Cloud
 207.189.184.0/24 Deny Cloud
@@ -2815,7 +2827,6 @@ Tag: Nobis/Ubiquity
 209.0.201.0/24 Deny Cloud
 209.20.64.0/19 Deny Cloud
 209.61.128.0/18 Deny Cloud
-209.87.184.0/22 Deny Cloud
 209.114.32.0/19 Deny Cloud
 209.133.224.0/19 Deny Cloud
 209.163.232.0/21 Deny Cloud

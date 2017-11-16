@@ -1107,19 +1107,18 @@ Tag: Private Layer INC
 
 # ASN 40676 ("Psychz Networks").
 # Ranges change very frequently; May need to check more often than some of the others.
-# %Listed, Google Malware Dashboard: 6.30%.
+# %Listed, Google Malware Dashboard: 6.03%.
 # %Listed, CleanTalk.org: 48.19%.
-# Stop Forum Spam (SFS) listings: 9,482.
-# Updated: 2017.09.20
+# Stop Forum Spam (SFS) listings: 10,153.
+# Updated: 2017.11.16
 
 2001:df2:c600::/48 Deny Cloud
-2602:fece:2::/47 Deny Cloud
-2602:fece:4::/48 Deny Cloud
-2602:fece:10::/44 Deny Cloud
+2602:fece::/36 Deny Cloud
 2602:ff62:fff::/48 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
 2602:ff96:12::/48 Deny Cloud
+2602:ff96:15::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
 2602:ffc5:110::/44 Deny Cloud
 2602:ffc5:120::/43 Deny Cloud
@@ -1128,14 +1127,18 @@ Tag: Private Layer INC
 2604:6600::/32 Deny Cloud
 2605:5200:c91a::/48 Deny Cloud
 2605:6c80:6::/47 Deny Cloud
+2605:6c80:a::/48 Deny Cloud
 2606:1780::/32 Deny Cloud
 2606:6680:2::/48 Deny Cloud
 2606:6680:4::/48 Deny Cloud
 2606:6680:7::/48 Deny Cloud
+2803:dc40:1::/48 Deny Cloud
 2a06:a006:c4::/47 Deny Cloud
 2a06:a006:f0::/47 Deny Cloud
 2a07:9944:1c::/48 Deny Cloud
 2a0a:6700::/45 Deny Cloud
+2a0b:9a03::/32 Deny Cloud
+2a0c:2200::/29 Deny Cloud
 Tag: Psychz Networks
 
 
@@ -1322,15 +1325,19 @@ Tag: K SERVERS LTD
 Tag: Enzu Inc
 
 
-# ASN 18779 ("EGIHosting").
-# %Listed, Google Malware Dashboard: 5.37%.
-# %Listed, CleanTalk.org: 46.83%.
-# Stop Forum Spam (SFS) listings: 2,418.
-# Updated: 2017.01.25 / Checked: 2017.07.25
+# ASNs 18779, 54500 ("EGIHosting").
+# %Listed, Google Malware Dashboard: 5.21% (AS18779), 0% (AS54500).
+# %Listed, CleanTalk.org: 46.83% (AS18779), 25.32% (AS54500).
+# Stop Forum Spam (SFS) listings: 2,492 (AS18779), 269 (AS54500).
+# Updated: 2017.11.16
 
 2604:bc0:3::/48 Deny Cloud
 2604:4f00::/36 Deny Cloud
+2606:f180::/48 Deny Cloud
 2607:f358::/32 Deny Cloud
+2a03:4a80:a::/48 Deny Cloud
+2a07:23c0:1::/48 Deny Cloud
+2a07:23c0:7::/48 Deny Cloud
 Tag: EGIHosting
 
 
@@ -2231,12 +2238,11 @@ Tag: Krypt Technologies
 
 
 # ASN 31815 ("Media Temple, Inc").
-# %Listed, Google Malware Dashboard: 4.86%.
-# %Listed, CleanTalk.org: 19.60%.
-# Stop Forum Spam (SFS) listings: 105.
-# Updated: 2017.06.08
+# %Listed, Google Malware Dashboard: 2.22%.
+# %Listed, CleanTalk.org: 20.82%.
+# Stop Forum Spam (SFS) listings: 200.
+# Updated: 2017.11.16
 
-2606:2300:18::/48 Deny Cloud
 2606:2300:8000::/48 Deny Cloud
 Tag: Media Temple, Inc
 
@@ -2293,10 +2299,10 @@ Tag: Yesup Ecommerce
 
 
 # ASN 30475 ("Handy Networks, LLC").
-# %Listed, Google Malware Dashboard: 1.32%.
-# %Listed, CleanTalk.org: 70.51%.
-# Stop Forum Spam (SFS) listings: 1,962.
-# Updated: 2016.11.03 / Checked: 2017.06.08
+# %Listed, Google Malware Dashboard: 1.04%.
+# %Listed, CleanTalk.org: 70.38%.
+# Stop Forum Spam (SFS) listings: 1,257.
+# Updated: 2016.11.03 / Checked: 2017.11.16
 
 2602:fff6:d::/48 Deny Cloud
 2606:6680:6::/48 Deny Cloud
@@ -3655,20 +3661,21 @@ Tag: Ficolo Oy
 
 
 # ASNs 25484, 31400 ("Accelerated IT Services GmbH").
-# Careful when updating! There are some non-cloud endpoints mixed in with these ASNs!
-# %Listed, Google Malware Dashboard: 0% (AS25484), 2.04% (AS31400).
-# %Listed, CleanTalk.org: ??.??% (AS25484), 88.57% (AS31400).
-# Stop Forum Spam (SFS) listings: 0 (AS25484), 7,108 (AS31400).
-# Updated: 2017.06.08
+# %Listed, Google Malware Dashboard: 1.19% (AS31400).
+# %Listed, CleanTalk.org: 88.66% (AS31400).
+# Stop Forum Spam (SFS) listings: 9,887 (AS31400).
+# Updated: 2017.11.16
 
-2001:67c:2c58::/48 Deny Cloud
 2001:1608::/32 Deny Cloud
 2001:1638::/32 Deny Cloud
+2403:4f00:5000::/36 Deny Cloud
 2a00:5080::/32 Deny Cloud
+2a01:4d0::/32 Deny Cloud
 2a03:2902::/32 Deny Cloud
 2a03:ebc0:1000::/36 Deny Cloud
 2a05:ff01::/32 Deny Cloud
 2a0a:51c0::/29 Deny Cloud
+2a0d:c400::/29 Deny Cloud
 Tag: Accelerated IT
 
 
@@ -4302,3 +4309,11 @@ Tag: Deninet KFT
 
 2607:c080::/32 Deny Cloud
 Tag: SAPIOTERRA, LLC
+
+
+# Announcing as: "LogicWeb Inc".
+# Various ASNs; Sourced from HE.
+# Updated: 2017.11.16
+
+2606:f180:8::/48 Deny Cloud
+Tag: LogicWeb Inc

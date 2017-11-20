@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.11.15).
+ * This file: Functions file (last modified: 2017.11.20).
  */
 
 /**
@@ -1302,4 +1302,36 @@ $CIDRAM['Resolve6to4'] = function ($In) {
     $Octets[1] = $Parts[0] - ($Octets[0] * 256);
     $Octets[3] = $Parts[1] - ($Octets[2] * 256);
     return implode('.', $Octets);
+};
+
+/** Initialise cache. */
+$CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
+    $CIDRAM['CacheModified'] = false;
+
+    /** Prepare the cache. */
+    if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
+        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+        $CIDRAM['Cache'] = ['Counter' => 0];
+        fwrite($Handle, serialize($CIDRAM['Cache']));
+        fclose($Handle);
+        if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
+            header('Content-Type: text/plain');
+            die('[CIDRAM] ' . $CIDRAM['lang']['Error_WriteCache']);
+        }
+    } else {
+        $CIDRAM['Cache'] = unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat'));
+        if (!isset($CIDRAM['Cache']['Counter'])) {
+            $CIDRAM['CacheModified'] = true;
+            $CIDRAM['Cache']['Counter'] = 0;
+        }
+    }
+
+    /** Clear outdated IP tracking. */
+    $CIDRAM['ClearFromCache']('Tracking');
+
+    /** Clear outdated DNS forward lookups. */
+    $CIDRAM['ClearFromCache']('DNS-Forwards');
+
+    /** Clear outdated DNS reverse lookups. */
+    $CIDRAM['ClearFromCache']('DNS-Reverses');
 };

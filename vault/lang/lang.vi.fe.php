@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.11.06).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạ
 $CIDRAM['lang']['label_banned'] = 'Yêu cầu bị cấm';
 $CIDRAM['lang']['label_blocked'] = 'Yêu cầu bị chặn';
 $CIDRAM['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
+$CIDRAM['lang']['label_check_modules'] = 'Cũng kiểm tra đối với mô-đun.';
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';

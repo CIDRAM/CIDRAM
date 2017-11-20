@@ -8,37 +8,11 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.11.06).
+ * This file: Output generator (last modified: 2017.11.20).
  */
 
-$CIDRAM['CacheModified'] = false;
-
-/** Prepare the cache. */
-if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
-    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-    $CIDRAM['Cache'] = ['Counter' => 0];
-    fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
-    fclose($CIDRAM['Handle']);
-    if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
-        header('Content-Type: text/plain');
-        die('[CIDRAM] ' . $CIDRAM['lang']['Error_WriteCache']);
-    }
-} else {
-    $CIDRAM['Cache'] = unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat'));
-    if (!isset($CIDRAM['Cache']['Counter'])) {
-        $CIDRAM['CacheModified'] = true;
-        $CIDRAM['Cache']['Counter'] = 0;
-    }
-}
-
-/** Clear outdated IP tracking. */
-$CIDRAM['ClearFromCache']('Tracking');
-
-/** Clear outdated DNS forward lookups. */
-$CIDRAM['ClearFromCache']('DNS-Forwards');
-
-/** Clear outdated DNS reverse lookups. */
-$CIDRAM['ClearFromCache']('DNS-Reverses');
+/** Initialise cache. */
+$CIDRAM['InitialiseCache']();
 
 /** Initialise statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics'] && empty($CIDRAM['Cache']['Statistics'])) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.11.06).
+ * This file: Swedish language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'Aktiv konfigurationsfil: ';
 $CIDRAM['lang']['label_banned'] = 'Förfrågningar förbjudna';
 $CIDRAM['lang']['label_blocked'] = 'Förfrågningar blockerade';
 $CIDRAM['lang']['label_branch'] = 'Branch senaste stabila:';
+$CIDRAM['lang']['label_check_modules'] = 'Test även mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-version som används:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cacherdata och tillfälliga filer';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.11.06).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
 $CIDRAM['lang']['label_banned'] = '请求已禁止';
 $CIDRAM['lang']['label_blocked'] = '请求已阻止';
 $CIDRAM['lang']['label_branch'] = '分支最新稳定：';
+$CIDRAM['lang']['label_check_modules'] = '也用模块进行测试。';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_false_positive_risk'] = '假阳性风险：';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '缓存数据和临时文件';

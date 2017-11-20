@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.11.12).
+ * This file: Front-end handler (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2560,6 +2560,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Initialise results data. */
     $CIDRAM['FE']['IPTestResults'] = '';
 
+    /** Module switch for SimulateBlockEvent closure */
+    $CIDRAM['ModuleSwitch'] = !empty($_POST['ModuleSwitch']);
+
+    /** Module switch for HTML. */
+    $CIDRAM['FE']['ModuleSwitch'] = $CIDRAM['ModuleSwitch'] ? ' checked' : '';
+
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {
         $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
@@ -2572,7 +2578,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             if (!$CIDRAM['ThisIP']['IPAddress']) {
                 continue;
             }
-            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress']);
+            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch']);
             if ($CIDRAM['Caught'] || empty($CIDRAM['LastTestIP']) || empty($CIDRAM['TestResults'])) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
@@ -2591,6 +2597,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     } else {
         $CIDRAM['FE']['ip-addr'] = '';
     }
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['state_msg'] .= sprintf($CIDRAM['lang']['state_loadtime'], $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3));
 
     /** Parse output. */
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](

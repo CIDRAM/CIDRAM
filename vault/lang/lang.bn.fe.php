@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.11.14).
+ * This file: Bangla language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'সক্রিয় কনফ�
 $CIDRAM['lang']['label_banned'] = 'অনুরোধ নিষিদ্ধ';
 $CIDRAM['lang']['label_blocked'] = 'অনুরোধ অবরুদ্ধ';
 $CIDRAM['lang']['label_branch'] = 'শাখা সর্বশেষ স্থিতিশীল:';
+$CIDRAM['lang']['label_check_modules'] = 'এছাড়াও মডিউলগুলির বিরুদ্ধে পরীক্ষা করুন।';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM সংস্করণ ব্যবহৃত:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'ঝুঁকিতে ইতিবাচক মিথ্যা: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'ক্যাশ ডেটা এবং অস্থায়ী ফাইল';

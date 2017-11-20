@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.11.06).
+ * This file: Indonesian language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $CIDRAM['lang']['label_banned'] = 'Permintaan dilarang';
 $CIDRAM['lang']['label_blocked'] = 'Permintaan diblokir';
 $CIDRAM['lang']['label_branch'] = 'Cabang terbaru stabil:';
+$CIDRAM['lang']['label_check_modules'] = 'Juga menguji terhadap modul.';
 $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Risiko positif palsu: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';

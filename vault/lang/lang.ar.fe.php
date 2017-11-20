@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.11.06).
+ * This file: Arabic language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط:
 $CIDRAM['lang']['label_banned'] = 'طلبات محظورة ';
 $CIDRAM['lang']['label_blocked'] = 'الطلبات المحظورة';
 $CIDRAM['lang']['label_branch'] = 'فرع أحدث مستقرة:';
+$CIDRAM['lang']['label_check_modules'] = 'أيضا اختبار ضد وحدات.';
 $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';

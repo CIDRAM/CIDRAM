@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.11.06).
+ * This file: Korean language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $CIDRAM['lang']['label_banned'] = '금지 된 요청';
 $CIDRAM['lang']['label_blocked'] = '차단 된 요청';
 $CIDRAM['lang']['label_branch'] = '분기 최신 안정 :';
+$CIDRAM['lang']['label_check_modules'] = '모듈에 대해서도 테스트하십시오.';
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전 :';
 $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';

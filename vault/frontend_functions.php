@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.11.12).
+ * This file: Front-end functions file (last modified: 2017.11.20).
  */
 
 /**
@@ -721,14 +721,21 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
     }
 };
 
-/** Duplication avoidance (front-end IP test page and IP tracking page). */
-$CIDRAM['SimulateBlockEvent'] = function ($Addr) use (&$CIDRAM) {
+/**
+ * Simulates block event (used by the IP tracking and IP test pages).
+ *
+ * @param string $Addr The IP address to test against.
+ * @param bool $Modules Specifies whether to test against modules.
+ */
+$CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM) {
+
+    /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
         'IPAddr' => $Addr,
         'Query' => 'SimulateBlockEvent',
         'Referrer' => '',
-        'UA' => '',
-        'UALC' => '',
+        'UA' => 'SimulateBlockEvent',
+        'UALC' => 'simulateblockevent',
         'ReasonMessage' => '',
         'SignatureCount' => 0,
         'Signatures' => '',
@@ -736,12 +743,16 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr) use (&$CIDRAM) {
         'xmlLang' => $CIDRAM['Config']['general']['lang'],
         'rURI' => 'SimulateBlockEvent'
     ];
+
+    /** Standard IP checks. */
     try {
         $CIDRAM['Caught'] = false;
         $CIDRAM['TestResults'] = $CIDRAM['RunTests']($Addr);
     } catch (\Exception $e) {
         $CIDRAM['Caught'] = true;
     }
+
+    /** 6to4 IP checks. */
     if (substr($CIDRAM['BlockInfo']['IPAddr'], 0, 5) === '2002:') {
         $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Resolve6to4']($Addr);
         if (!empty($CIDRAM['ThisIP']['IPAddress'])) {
@@ -753,6 +764,30 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr) use (&$CIDRAM) {
             $CIDRAM['Caught'] = true;
         }
     }
+
+    /** Module checks. */
+    if ($Modules && !empty($CIDRAM['Config']['signatures']['modules']) && empty($CIDRAM['Whitelisted'])) {
+
+        /** Initialise cache. */
+        $CIDRAM['InitialiseCache']();
+
+        $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
+        array_walk($Modules, function ($Module) use (&$CIDRAM) {
+            $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
+            if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
+                require $CIDRAM['Vault'] . $Module;
+            }
+        });
+
+        /** Update the cache. */
+        if ($CIDRAM['CacheModified']) {
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+            fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
+            fclose($CIDRAM['Handle']);
+        }
+
+    }
+
 };
 
 /**

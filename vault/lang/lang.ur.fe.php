@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.11.06).
+ * This file: Urdu language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فا�
 $CIDRAM['lang']['label_banned'] = 'کی درخواستیں کالعدم';
 $CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
+$CIDRAM['lang']['label_check_modules'] = 'ماڈیولز کے خلاف بھی ٹیسٹ کریں.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';

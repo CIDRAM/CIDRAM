@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.11.06).
+ * This file: Norwegian language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'Aktiv konfigurasjonsfil: ';
 $CIDRAM['lang']['label_banned'] = 'Forespørsler utestengt';
 $CIDRAM['lang']['label_blocked'] = 'Forespørsler blokkert';
 $CIDRAM['lang']['label_branch'] = 'Branch siste stabile:';
+$CIDRAM['lang']['label_check_modules'] = 'Test også mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versjon brukt:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risiko: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data og midlertidige filer';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.11.06).
+ * This file: Turkish language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
 $CIDRAM['lang']['label_banned'] = 'Yasaklı talepler';
 $CIDRAM['lang']['label_blocked'] = 'Engellenen talepler';
 $CIDRAM['lang']['label_branch'] = 'Branşı en yeni kararlı:';
+$CIDRAM['lang']['label_check_modules'] = 'Ayrıca modülleri test edin.';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';

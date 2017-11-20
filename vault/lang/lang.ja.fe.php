@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.11.06).
+ * This file: Japanese language data for the front-end (last modified: 2017.11.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -126,6 +126,7 @@ $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグ
 $CIDRAM['lang']['label_banned'] = '禁止されたリクエスト';
 $CIDRAM['lang']['label_blocked'] = 'ブロックされたリクエスト';
 $CIDRAM['lang']['label_branch'] = 'ブランチ最新安定：';
+$CIDRAM['lang']['label_check_modules'] = 'モジュールに対してもテストします。';
 $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
 $CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';

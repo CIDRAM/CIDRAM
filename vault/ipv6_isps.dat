@@ -4,7 +4,7 @@
 
 # ---
 # ASNs 30548, 31034, 199653, 200185 ("Aruba S.p.A" / "Aruba SAS").
-# Updated: 2016.07.02 / Checked: 2017.08.15
+# Updated: 2016.07.02 / Checked: 2017.11.20
 
 2620:11d:6000::/42 Deny Generic
 2a00:6d40::/31 Deny Generic
@@ -191,12 +191,14 @@ Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.48%.
-# %Listed, CleanTalk.org: 42.73%.
-# Stop Forum Spam (SFS) listings: 4,293.
-# Updated: 2016.04.27 / Checked: 2017.06.12
+# %Listed, Google Malware Dashboard: 0.70%.
+# %Listed, CleanTalk.org: 41.69%.
+# Stop Forum Spam (SFS) listings: 4,096.
+# Updated: 2017.11.20
 
+2a03:a960:1000::/48 Deny Spam
 2a05:b80::/29 Deny Spam
+2a0a:9a06::/32 Deny Spam
 Tag: Mir Telematiki Ltd
 
 
@@ -297,10 +299,10 @@ recaptcha:
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
 # Spam emitters; Subsidiary of Bezeq International.
-# %Listed, Google Malware Dashboard: 0% (AS5486), 1.48% (AS9116).
-# %Listed, CleanTalk.org: 0% (AS5486), 34.51% (AS9116).
-# Stop Forum Spam (SFS) listings: 0 (AS5486), 4,949 (AS9116).
-# Updated: 2016.12.10 / Checked: 2017.06.12
+# %Listed, Google Malware Dashboard: 0% (AS5486), 0.86% (AS9116).
+# %Listed, CleanTalk.org: 0% (AS5486), 34.24% (AS9116).
+# Stop Forum Spam (SFS) listings: 0 (AS5486), 4,349 (AS9116).
+# Updated: 2016.12.10 / Checked: 2017.11.20
 
 2001:40a8::/32 Deny Spam
 Tag: 012 Smile
@@ -481,16 +483,6 @@ Tag: Zyztm
 Tag: Trader soft LLC
 
 
-# ASN 45753 ("Unit 1205-1207").
-# %Listed, Google Malware Dashboard: 4.68%.
-# %Listed, CleanTalk.org: 32.23%.
-# Stop Forum Spam (SFS) listings: 126.
-# Updated: 2016.12.05 / Checked: 2017.06.12
-
-2401:4c00::/32 Deny Generic
-Tag: Unit 1205-1207
-
-
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 1.40%.
@@ -523,10 +515,10 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 2.19%.
-# %Listed, CleanTalk.org: 33.89%.
+# %Listed, Google Malware Dashboard: 0.62%.
+# %Listed, CleanTalk.org: 34.31%.
 # Stop Forum Spam (SFS) listings: 127.
-# Updated: 2016.12.24 / Checked: 2017.06.12
+# Updated: 2016.12.24 / Checked: 2017.11.20
 
 2401:5f80::/34 Deny Generic
 2401:5f80:4000::/35 Deny Generic

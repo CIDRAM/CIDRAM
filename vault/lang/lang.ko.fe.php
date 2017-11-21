@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = '로그인 실패! 잘못�
 $CIDRAM['lang']['response_login_invalid_username'] = '로그인 실패! 사용자 이름은 존재하지 않습니다!';
 $CIDRAM['lang']['response_login_password_field_empty'] = '암호가 비어 있습니다!';
 $CIDRAM['lang']['response_login_username_field_empty'] = '사용자 이름 입력이 비어 있습니다!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = '잘못된 끝점!';
 $CIDRAM['lang']['response_no'] = '아니오';
 $CIDRAM['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
 $CIDRAM['lang']['response_statistics_cleared'] = '통계가 삭제되었습니다.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파일 
 $CIDRAM['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $CIDRAM['lang']['tip_ip_aggregator'] = '안녕하세요, {username}.<br />IP 애그리게이터 가능한 한 가장 작은 방법으로 IP와 CIDR을 표현할 수있게합니다. 집계 할 데이터를 입력하고 "확인"을 누릅니다.';
 $CIDRAM['lang']['tip_ip_test'] = '안녕하세요, {username}.<br />IP 테스트 페이지는 IP 주소가 차단되어 있는지를 테스트 할 수 있습니다.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(선택하지 않으면 서명 파일 만 테스트됩니다).';
 $CIDRAM['lang']['tip_ip_tracking'] = '안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다.';
 $CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';

@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'ログイン失敗！​�
 $CIDRAM['lang']['response_login_invalid_username'] = 'ログイン失敗！​ユーザー名は存在しません！';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = '間違ったエンドポイント！';
 $CIDRAM['lang']['response_no'] = 'いいえ';
 $CIDRAM['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $CIDRAM['lang']['response_statistics_cleared'] = '統計はクリアされました。';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'こんにちは、​{username}。​<br 
 $CIDRAM['lang']['tip_home'] = 'こんにちは、​{username}。​<br />これはCIDRAMフロントエンドのホームページです。​続行するには、​左側のナビゲーションメニューからリンクを選択します。';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'こんにちは、​{username}。​<br />ＩＰアグリゲータを使用すると、最小限の方法でＩＰとＣＩＤＲを表現できます。​集計するデータを入力し、「ＯＫ」を押します。';
 $CIDRAM['lang']['tip_ip_test'] = 'こんにちは、​{username}。​<br />ＩＰテスト・ページは、​ＩＰアドレスがブロックされているかどうかをテストできます。';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '（選択されていない場合は、​シグネチャ・ファイルのみがテストされます）。';
 $CIDRAM['lang']['tip_ip_tracking'] = 'こんにちは、​{username}。​<br />ＩＰトラッキング・ページでは、​ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、​望むならばあなたはトラッキングをキャンセルことができます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';

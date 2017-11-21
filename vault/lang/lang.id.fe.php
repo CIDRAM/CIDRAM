@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Kegagalan masuk! Kata sand
 $CIDRAM['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama pengguna tidak ada!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Jalur akses salah!';
 $CIDRAM['lang']['response_no'] = 'Tidak';
 $CIDRAM['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistik dicabut';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memu
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salam, {username}.<br />Agregator IP memungkinkan Anda untuk mengekspresikan IP dan CIDR dengan cara sekecil mungkin. Masukkan data yang akan digabungkan dan tekan "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Salam, {username}.<br />Halaman IP test memungkinkan Anda untuk mengetes apakah alamat IP yang diblokir dengan tanda tangan yang saat ini diinstal.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Bila tidak dipilih, hanya file tanda tangan akan diuji).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan.';
 $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';

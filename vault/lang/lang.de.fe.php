@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Einloggen-Fehler! Ungülti
 $CIDRAM['lang']['response_login_invalid_username'] = 'Einloggen-Fehler! Benutzername existiert nicht!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Benutzername-Feld leer!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Falscher Endpunkt!';
 $CIDRAM['lang']['response_no'] = 'Nein';
 $CIDRAM['lang']['response_rename_error'] = 'Umbenennung-Fehler!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiken gelöscht.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Mit dem Dateimana
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der CIDRAM Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallo, {username}.<br />Mit dem IP-Aggregator können Sie IPs und CIDRs auf kleinstmögliche Weise ausdrücken. Geben Sie die zu aggregierenden Daten und drücken Sie "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />Das IP-Test-Seite macht es möglich zu prüfen ob IP-Adressen blockiert durch die aktuell installierten Signaturen sind.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Wenn nicht ausgewählt, werden nur die Signaturdateien getestet).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Auf der Seite IP-Tracking können Sie den Tracking-Status für IP-Adressen überprüfen, welche von ihnen verboten wurden, und Sie können das Tracking für sie widerrufen, wenn Sie dies tun möchten.';
 $CIDRAM['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';

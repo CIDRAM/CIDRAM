@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Accedi non riuscito! Passw
 $CIDRAM['lang']['response_login_invalid_username'] = 'Accedi non riuscito! Nome utente non esiste!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'L\'input password era vuoto!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'L\'input nome utente era vuoto!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Punto finale errato!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = 'Non riuscito a rinominare!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiche revocate.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Salve, {username}.<br />Il file manager c
 $CIDRAM['lang']['tip_home'] = 'Salve, {username}.<br />Questa è la pagina principale per il front-end di CIDRAM. Selezionare un collegamento dal menu di navigazione a sinistra per continuare.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salve, {username}.<br />L\'aggregatore IP consente di esprimere IP e CIDR nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Salve, {username}.<br />La pagina di per il test di IP permette di testare se gli indirizzi IP sono bloccati dalle firme attualmente installati.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Quando non è selezionato, solo i file delle firme verranno testati).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salve, {username}.<br />La pagina di monitoraggio IP consente di verificare lo stato del monitoraggio degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il monitoraggio loro se si vuole farlo.';
 $CIDRAM['lang']['tip_login'] = 'Nome utente predefinito: <span class="txtRd">admin</span> – Password predefinita: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salve, {username}.<br />Selezionare un file di log dall\'elenco sottostante per visualizzare il contenuto di tale file di log.';

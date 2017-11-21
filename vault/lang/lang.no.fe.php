@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Innlogging mislyktes! Ugyl
 $CIDRAM['lang']['response_login_invalid_username'] = 'Innlogging mislyktes! Brukernavnet eksisterer ikke!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Passord-felt tomt!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Brukernavn-felt tomt!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Feil sluttpunkt!';
 $CIDRAM['lang']['response_no'] = 'Nei';
 $CIDRAM['lang']['response_rename_error'] = 'Omdøpe mislyktes!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistikk fjernet.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Filbehandleren la
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dette er hjemmesiden for frontenden av CIDRAM. Velg en lenke fra navigasjonsmenyen til venstre for å fortsette.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallo, {username}.<br />IP-aggregatoren lar deg uttrykke IPer og CIDRer på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />IP-testsiden lar deg teste om IP-adresser er blokkert av signaturene som er installert.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Når ikke valgt, blir bare signaturfiler testet mot).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det.';
 $CIDRAM['lang']['tip_login'] = 'Standard brukernavn: <span class="txtRd">admin</span> – Standard passord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen.';

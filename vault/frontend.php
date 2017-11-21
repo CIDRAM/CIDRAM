@@ -97,6 +97,9 @@ $CIDRAM['FE'] = [
     /** State reflecting whether the current request is cronable. */
     'CronMode' => !empty($_POST['CronMode']),
 
+    /** The user agent of the current request. */
+    'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
+
     /** Will be populated by the page title. */
     'FE_Title' => ''
 
@@ -284,17 +287,24 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                 $CIDRAM['FECacheRemove'](
                     $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
                 );
-                $CIDRAM['FE']['UserState'] = 1;
-                if (!$CIDRAM['FE']['CronMode']) {
-                    $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
-                    $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
-                    setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
-                    $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
-                        $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
-                    ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
-                    $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
+                if (($CIDRAM['FE']['Permissions'] === 3 && (
+                    !$CIDRAM['FE']['CronMode'] || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
+                )) || !($CIDRAM['FE']['Permissions'] > 0 && $CIDRAM['FE']['Permissions'] <= 3)) {
+                    $CIDRAM['FE']['Permissions'] = 0;
+                    $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_wrong_endpoint'];
+                } else {
+                    $CIDRAM['FE']['UserState'] = 1;
+                    if (!$CIDRAM['FE']['CronMode']) {
+                        $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
+                        $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
+                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+                        $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
+                            $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
+                        ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
+                        $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
+                    }
+                    $CIDRAM['FE']['Rebuild'] = true;
                 }
-                $CIDRAM['FE']['Rebuild'] = true;
             } else {
                 $CIDRAM['FE']['Permissions'] = 0;
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_invalid_password'];

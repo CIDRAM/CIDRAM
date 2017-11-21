@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Erreur de connexion ! Mot 
 $CIDRAM['lang']['response_login_invalid_username'] = 'Erreur de connexion ! Nom d\'utilisateur n\'existe pas !';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Mot de passe entrée était vide !';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nom d\'utilisateur entrée était vide !';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Mauvais point final !';
 $CIDRAM['lang']['response_no'] = 'Non';
 $CIDRAM['lang']['response_rename_error'] = 'Échec du renomment !';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiques annulées.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionnaire
 $CIDRAM['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Bonjour, {username}.<br />L\'agrégateur IP vous permet d\'exprimer les adresses IP et les CIDR de la manière la plus petite possible. Entrez les données à agréger et appuyez sur "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Bonjour, {username}.<br />La page des tests IP vous permet de tester si les adresses IP sont bloquées par les signatures actuellement installées.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Lorsque cette option n\'est pas sélectionnée, seuls les fichiers de signatures seront testés).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Bonjour, {username}.<br />La page de surveillance IP vous permet de vérifier l\'état de surveillance des adresses IP, pour vérifier lesquels d\'entre eux ont été interdits, et d\'annuler la surveillance si vous voulez le faire.';
 $CIDRAM['lang']['tip_login'] = 'Nom d\'utilisateur défaut : <span class="txtRd">admin</span> – Mot de passe défaut : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';

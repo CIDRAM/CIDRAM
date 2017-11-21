@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخ
 $CIDRAM['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'نقطة نهاية خاطئة!';
 $CIDRAM['lang']['response_no'] = 'لا';
 $CIDRAM['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير ا
 $CIDRAM['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end CIDRAM. اختر ارتباط من قائمة التنقل على اليمين للمتابعة.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'مرحبا، {username}.<br />IP aggregator يسمح لك للتعبير عن IP و CIDR في أصغر طريقة ممكنة. أدخل البيانات التي سيتم تجميعها واضغط على "حسنا".';
 $CIDRAM['lang']['tip_ip_test'] = 'مرحبا، {username}.<br />الصفحة اختبار IP يسمح لك لاختبار سواء عناوين IP مسدودة من التوقيعات المثبتة حاليا.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(عند عدم تحديده، سيتم اختبار ملفات التوقيع فقط).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'مرحبا، {username}.<br />التتبع IP يسمح لك للتحقق من حالة تتبع عناوين IP، تحقق محظورة، و إلغاء تتبع إذا كنت تريد أن تفعل ذلك.';
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';

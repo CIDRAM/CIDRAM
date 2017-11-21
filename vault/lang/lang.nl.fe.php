@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig
 $CIDRAM['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Wachtwoord veld leeg!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Verkeerd eindpunt!';
 $CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistieken geannuleerd.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hallo, {username}.<br />De bestandsbeheer
 $CIDRAM['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de CIDRAM frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallo, {username}.<br />Met de IP-aggregator kunt u IP\'s en CIDR\'s zo de kleinste mogelijke weg uitdrukken. Voer de gegevens in die moeten worden geaggregeerd en druk op "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallo, {username}.<br />De IP test pagina stelt u in staat om te testen of IP-adressen door de geïnstalleerde signatures worden geblokkeerd.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Wanneer niet geselecteerd, worden alleen de signature bestanden getest tegen).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />Met het IP-Tracking pagina, is het mogelijk om de tracking status van IP-adressen te controleren, en u kunt zien welke zijn verboden, en om te annuleren de tracking van hen als u wilt doen.';
 $CIDRAM['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';

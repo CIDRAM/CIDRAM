@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'لاگ ان ناکامی! 
 $CIDRAM['lang']['response_login_invalid_username'] = 'لاگ ان ناکامی! صارف کا نام موجود نہیں ہے!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدان خالی!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'غلط رسائی پوائنٹ!';
 $CIDRAM['lang']['response_no'] = 'نہیں';
 $CIDRAM['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل می
 $CIDRAM['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ CIDRAM سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'ہیلو، {username}.<br />IP مجموعی طور پر آپ کو کم سے کم ممکنہ طریقے سے IP اور CIDR کا اظہار کرنے کی اجازت دیتا ہے. جمع کرنے کے لئے اعداد و شمار درج کریں اور "ٹھیک ہے" دبائیں.';
 $CIDRAM['lang']['tip_ip_test'] = 'ہیلو، {username}.<br />IP ٹیسٹ کے صفحے آپ کو ٹیسٹ کرنے IP پتوں موجودہ میں انسٹال دستخط کی طرف سے بلاک کر رہے ہیں کہ آیا کی اجازت دیتا ہے.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(جب منتخب نہ ہو، صرف دستخط فائلوں کے خلاف ٹیسٹ کیا جائے گا).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'ہیلو، {username}.<br />IP باخبر رہنے کے صفحے آپ / ان میں سے جو پابندی عائد کی گئی ہے کو چیک کرنے کے، اور پابندی ہٹانے کی، IP پتوں میں سے باخبر رہنے کے کی حیثیت کی جانچ کرنا اگر آپ ایسا کرنا چاہتے ہیں تو انہیں untrack کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';

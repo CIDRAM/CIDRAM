@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Login failure! Invalid pas
 $CIDRAM['lang']['response_login_invalid_username'] = 'Login failure! Username doesn\'t exist!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Username field empty!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Wrong endpoint!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = 'Failed to rename!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistics cleared.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hello, {username}.<br />The file manager 
 $CIDRAM['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hello, {username}.<br />The IP aggregator allows you to express IPs and CIDRs in the smallest possible way. Enter the data to be aggregated and press "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hello, {username}.<br />The IP test page allows you to test whether IP addresses are blocked by the currently installed signatures.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(When not selected, only the signature files will be tested against).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hello, {username}.<br />The IP tracking page allows you to check the tracking status of IP addresses, to check which of them have been banned, and to unban/untrack them if you want to do so.';
 $CIDRAM['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile.';

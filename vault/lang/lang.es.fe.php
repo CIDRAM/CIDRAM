@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión
 $CIDRAM['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión – El usuario no existe!';
 $CIDRAM['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $CIDRAM['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Punto final equivocado!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Estadística anulado.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hola, {username}.<br />El administración
 $CIDRAM['lang']['tip_home'] = 'Hola, {username}.<br />Esta es la página principal para el front-end de CIDRAM. Seleccione un enlace en el menú de navegación de la izquierda para continuar.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hola, {username}.<br />El agregador IP le permite expresar IPs y CIDRs en la forma más pequeña posible. Introduzca los datos que desea agregar y pulse "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hola, {username}.<br />La página para prueba IP permite pruebar si las direcciones IP están bloqueadas por las firmas actualmente instaladas.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Cuando no se selecciona, solo los archivos de firma se probarán contra).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hola, {username}.<br />La página de seguimiento de IP le permite comprobar el estado de seguimiento de las direcciones IP, para comprobar cuál de ellos ha sido prohibido, y anular el seguimiento de ellos si desea hacerlo.';
 $CIDRAM['lang']['tip_login'] = 'El usuario estándar: <span class="txtRd">admin</span> – La contraseña estándar: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hola, {username}.<br />Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro.';

@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Inloggningsfel! Felaktigt 
 $CIDRAM['lang']['response_login_invalid_username'] = 'Inloggningsfel! Användarnamnet existerar inte!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Lösenord fältet tomt!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Användarnamn fältet tomt!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Felaktig slutpunkt!';
 $CIDRAM['lang']['response_no'] = 'Nej';
 $CIDRAM['lang']['response_rename_error'] = 'Misslyckades med att byta namn!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistik rensas.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hallå, {username}.<br />Du kan radera, r
 $CIDRAM['lang']['tip_home'] = 'Hallå, {username}.<br />Detta är hemsidan för CIDRAM front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallå, {username}.<br />Du kan aggregera IP-adresser och subnät till deras minsta möjliga uttryck med hjälp av IP-aggregatorn. Ange data som ska aggregeras och tryck på "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallå, {username}.<br />Du kan testa om IP-adresser blockeras av nuvarande installerade signaturer med hjälp av IP-testsidan.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(När den inte är vald, endast signaturfiler kommer att testas mot).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallå, {username}.<br />Med hjälp av IP-spårningssidan, du kan kontrollera vilka IP-adresser som spåras, vilka har blivit förbjudna, och du kan återkalla spårning och förbud om du vill.';
 $CIDRAM['lang']['tip_login'] = 'Standard användarnamn: <span class="txtRd">admin</span> – Standard lösenord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen.';

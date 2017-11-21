@@ -214,6 +214,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = 'Thất bại đăng nhập
 $CIDRAM['lang']['response_login_invalid_username'] = 'Thất bại đăng nhập! Tên người dùng không tồn tại!';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Điểm truy cập không đúng!';
 $CIDRAM['lang']['response_no'] = 'Không';
 $CIDRAM['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
@@ -260,6 +261,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý t�
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Xin chào, {username}.<br />Tập hợp IP cho phép bạn thể hiện các IP và CIDR theo cách nhỏ nhất có thể. Nhập dữ liệu được tập hợp và nhấn "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Xin chào, {username}.<br />Trang kiểm tra IP cho phép bạn kiểm tra nếu địa chỉ IP bị chặn bằng các chữ ký hiện đang được cài đặt.';
+$CIDRAM['lang']['tip_ip_test_module_switch'] = '(Khi không được chọn, chỉ các tập tin chữ ký sẽ được kiểm tra chống lại).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy.';
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';

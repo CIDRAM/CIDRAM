@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.11.20).
+ * This file: Front-end functions file (last modified: 2017.11.22).
  */
 
 /**
@@ -771,6 +771,10 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
         /** Initialise cache. */
         $CIDRAM['InitialiseCache']();
 
+        /** Reset hostname (needed to prevent falsing due to repeat module calls involving hostname lookups). */
+        $CIDRAM['Hostname'] = '';
+
+        /** Explode module list and cycle through all modules. */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];

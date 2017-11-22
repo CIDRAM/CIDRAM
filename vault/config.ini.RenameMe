@@ -64,10 +64,17 @@ emailaddr=''
 ; How would you prefer the email address to be presented to users?
 emailaddr_display_style='default'
 
-; Disable CLI mode?
+; Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere
+; with certain testing tools (such as PHPUnit, for example) and other CLI-based
+; applications. If you don't need to disable CLI mode, you should ignore this
+; directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
 disable_cli=false
 
-; Disable front-end access?
+; Disable front-end access? Front-end access can make CIDRAM more manageable,
+; but can also be a potential security risk, too. It's recommended to manage
+; CIDRAM via the back-end whenever possible, but front-end access is provided
+; for when it isn't possible. Keep it disabled unless you need it. False =
+; Enable front-end access; True = Disable front-end access [Default].
 disable_frontend=true
 
 ; Maximum number of login attempts.
@@ -122,7 +129,7 @@ maintenance_mode=false
 ; (requires PHP >= 7.2.0).
 default_algo='PASSWORD_DEFAULT'
 
-; Track CIDRAM usage statistics?
+; Track CIDRAM usage statistics? True = Yes; False = No [Default].
 statistics=false
 
 ; Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups

@@ -43,6 +43,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   the problem (thanks to Dibbyo456 for reporting this bug).
   Refer github.com/CIDRAM/CIDRAM/issues/43
 
+- [2017.11.23; Bug-fix; Maikuolan]: Bug found by Dibbyo456 whereby the failsafe
+  for ipaddr values correponding to non-existent variables would sometimes
+  prevent modification of ipaddr value via the front-end configuration page,
+  and would cause the default value to always be displayed, instead of the
+  correctly assigned value; Fixed.
+  Refer github.com/CIDRAM/CIDRAM/issues/44
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

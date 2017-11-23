@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.11.20).
+ * This file: Front-end handler (last modified: 2017.11.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,7 +253,7 @@ $CIDRAM['ClearExpired']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild']);
 
 /** Brute-force security check. */
 if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
-    $CIDRAM['FE']['Cache'], 'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+    $CIDRAM['FE']['Cache'], 'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
 )) && ($CIDRAM['LoginAttempts'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
     header('Content-Type: text/plain');
     die('[CIDRAM] ' . $CIDRAM['lang']['max_login_attempts_exceeded']);
@@ -285,7 +285,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
             $CIDRAM['FE']['Password'] = substr($CIDRAM['FE']['Password'], 0, -2);
             if (password_verify($_POST['password'], $CIDRAM['FE']['Password'])) {
                 $CIDRAM['FECacheRemove'](
-                    $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                    $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']]
                 );
                 if (($CIDRAM['FE']['Permissions'] === 3 && (
                     !$CIDRAM['FE']['CronMode'] || substr($CIDRAM['FE']['UA'], 0, 10) !== 'Cronable v'
@@ -322,7 +322,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                 $CIDRAM['Config']['general']['FrontEndLog']
             );
         }
-        $CIDRAM['FrontEndLog'] = $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
+        $CIDRAM['FrontEndLog'] = $_SERVER[$CIDRAM['IPAddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
         $CIDRAM['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
     }
     if ($CIDRAM['FE']['state_msg']) {
@@ -331,7 +331,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
         $CIDRAM['FECacheAdd'](
             $CIDRAM['FE']['Cache'],
             $CIDRAM['FE']['Rebuild'],
-            'LoginAttempts' . $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
+            'LoginAttempts' . $_SERVER[$CIDRAM['IPAddr']],
             $CIDRAM['LoginAttempts'],
             $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
         );

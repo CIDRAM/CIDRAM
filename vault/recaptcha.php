@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2017.10.26).
+ * This file: reCAPTCHA module (last modified: 2017.11.23).
  */
 
 /**
@@ -19,7 +19,7 @@ $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
     $CIDRAM['reCAPTCHA']['Results'] = $CIDRAM['Request']('https://www.google.com/recaptcha/api/siteverify', [
         'secret' => $CIDRAM['Config']['recaptcha']['secret'],
         'response' => $_POST['g-recaptcha-response'],
-        'remoteip' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+        'remoteip' => $_SERVER[$CIDRAM['IPAddr']]
     ]);
     $Offset = strpos($CIDRAM['reCAPTCHA']['Results'], '"success": ');
     $CIDRAM['reCAPTCHA']['Bypass'] = (
@@ -51,7 +51,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         if (strpos($CIDRAM['reCAPTCHA']['HashList'], "\n" . $CIDRAM['reCAPTCHA']['UsrHash'] . ',') !== false) {
             $CIDRAM['reCAPTCHA']['UsrSalt'] = base64_decode(substr($_COOKIE['CIDRAM'], $CIDRAM['reCAPTCHA']['Split']));
             $CIDRAM['reCAPTCHA']['UsrMeld'] = $CIDRAM['Config']['recaptcha']['lockip'] ? $CIDRAM['Meld'](
-                $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt'], $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt'], $_SERVER[$CIDRAM['IPAddr']]
             ) : $CIDRAM['Meld'](
                 $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt']
             );
@@ -90,7 +90,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 $CIDRAM['reCAPTCHA']['UsrSalt'] = $CIDRAM['GenerateSalt']();
                 /** Generate authentication hash. */
                 $CIDRAM['reCAPTCHA']['Cookie'] = $CIDRAM['Config']['recaptcha']['lockip'] ? $CIDRAM['Meld'](
-                    $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt'], $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
+                    $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt'], $_SERVER[$CIDRAM['IPAddr']]
                 ) : $CIDRAM['Meld'](
                     $CIDRAM['Salt'], $CIDRAM['reCAPTCHA']['UsrSalt']
                 );
@@ -160,7 +160,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
      * for the current IP, populate relevant variables and/or generate CAPTCHA
      * fields.
      */
-    if (strpos($CIDRAM['reCAPTCHA']['BypassList'], "\n" . $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ',') !== false) {
+    if (strpos($CIDRAM['reCAPTCHA']['BypassList'], "\n" . $_SERVER[$CIDRAM['IPAddr']] . ',') !== false) {
 
         $CIDRAM['reCAPTCHA']['Bypass'] = true;
         $CIDRAM['BlockInfo']['SignatureCount'] = 0;
@@ -178,7 +178,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                 /** Append to the IP bypass list. */
                 $CIDRAM['reCAPTCHA']['BypassList'] .=
-                    $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ',' .
+                    $_SERVER[$CIDRAM['IPAddr']] . ',' .
                     ($CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry']) . "\n";
                 $CIDRAM['reCAPTCHA']['BypassListMod'] = true;
                 /** Set status for reCAPTCHA block information. */
@@ -233,7 +233,7 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
         )
     ) ? 'w' : 'a';
     $CIDRAM['reCAPTCHA']['LogfileData'] =
-        $CIDRAM['lang']['field_ipaddr'] . $_SERVER[$CIDRAM['Config']['general']['ipaddr']] . ' - ' .
+        $CIDRAM['lang']['field_ipaddr'] . $_SERVER[$CIDRAM['IPAddr']] . ' - ' .
         $CIDRAM['lang']['field_datetime'] . $CIDRAM['BlockInfo']['DateTime'] . ' - ' .
         $CIDRAM['lang']['field_reCAPTCHA_state'] . $CIDRAM['BlockInfo']['reCAPTCHA'] . "\n";
     $CIDRAM['reCAPTCHA']['LogfileHandle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['recaptcha']['logfile'], $CIDRAM['reCAPTCHA']['WriteMode']);

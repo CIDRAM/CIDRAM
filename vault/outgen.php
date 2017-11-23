@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.11.20).
+ * This file: Output generator (last modified: 2017.11.23).
  */
 
 /** Initialise cache. */
@@ -35,8 +35,8 @@ if (!isset($_SERVER)) {
 }
 
 /** Ensure we have a variable available for the IP address of the request. */
-if (!isset($_SERVER[$CIDRAM['Config']['general']['ipaddr']])) {
-    $_SERVER[$CIDRAM['Config']['general']['ipaddr']] = '';
+if (!isset($_SERVER[$CIDRAM['IPAddr']])) {
+    $_SERVER[$CIDRAM['IPAddr']] = '';
 }
 
 /**
@@ -52,7 +52,7 @@ $CIDRAM['Protect'] = (
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = [
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
-    'IPAddr' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
+    'IPAddr' => $_SERVER[$CIDRAM['IPAddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
     'Query' => $CIDRAM['Query'],

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.11.07).
+ * This file: Configuration handler (last modified: 2017.11.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -125,10 +125,10 @@ foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyC
 }
 unset($CIDRAM['Config']['Temp']);
 
-/** Failsafe for weird ipaddr configuration. */
-if ($CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])) {
-    $CIDRAM['Config']['general']['ipaddr'] = 'REMOTE_ADDR';
-}
+/** Doing it this way as a failsafe and to avoid overrides instead of pulling from config directly later. */
+$CIDRAM['IPAddr'] = (
+    $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
+) ? 'REMOTE_ADDR' : $CIDRAM['Config']['general']['ipaddr'];
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);
@@ -142,7 +142,7 @@ if (!empty($CIDRAM['Config']['general']['timezone']) && $CIDRAM['Config']['gener
 $CIDRAM['CIDRAM_sapi'] = !defined('Via-Travis') && (
     empty($_SERVER['REQUEST_METHOD']) ||
     substr(php_sapi_name(), 0, 3) === 'cli' || (
-        empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']]) &&
+        empty($_SERVER[$CIDRAM['IPAddr']]) &&
         empty($_SERVER['HTTP_USER_AGENT']) &&
         !empty($_SERVER['argc']) &&
         is_numeric($_SERVER['argc']) &&

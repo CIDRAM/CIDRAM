@@ -766,7 +766,11 @@ Wert | Verwenden
 
 Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der Update-Seite zu interagieren. Ein separates Skript, "[Cronable](https://github.com/Maikuolan/Cronable)", ist verfügbar, und kann von Ihrem Cron-Manager oder Cron-Scheduler verwendet werden, um dieses und andere unterstützte Pakete automatisch zu aktualisieren (dieses Skript enthält eine eigene Dokumentation).
 
+#### Was sind "Verstöße"?
+
+"Verstöße" bestimmen, wann eine IP-Adresse, die noch nicht von bestimmten Signaturdateien blockiert wurde, für zukünftige Anforderungen blockiert werden soll, und sie sind eng mit IP-Tracking verbunden. Es gibt einige Funktionen und Module, die es ermöglichen, dass Anfragen aus anderen Gründen als der Ursprungs-IP blockiert werden (wie die Anwesenheit von User Agents von Hacktools oder Spambots, gefährliche Anfragen, gefälschte DNS und so weiter), und wenn dies passiert, eine "Verstöß" kann auftreten. Sie bieten eine Möglichkeit für IP-Adressen zu identifizieren, die unerwünschten Anforderungen entsprechen, die möglicherweise noch nicht von bestimmten Signaturdateien blockiert wurden. Verstöße entsprechen in der Regel 1-zu-1 der Häufigkeit, mit der eine IP blockiert wird, aber nicht immer (bei schweren Blockereignissen kann es zu einem Verstoßwert größer als eins kommen, und wenn "track_mode" false ist, verstöße für Blockereignisse, die ausschließlich von Signaturdateien ausgelöst werden, werden nicht auftreten).
+
 ---
 
 
-Zuletzt aktualisiert: 6 November 2017 (2017.11.06).
+Zuletzt aktualisiert: 25 November 2017 (2017.11.25).

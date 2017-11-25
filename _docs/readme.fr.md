@@ -766,7 +766,11 @@ Valeur | En utilisant
 
 Oui. Une API est intégrée dans le frontal pour interagir avec la page des mises à jour via des scripts externes. Un script séparé, « [Cronable](https://github.com/Maikuolan/Cronable) », est disponible, et peut être utilisé par votre gestionnaire de cron ou cron scheduler pour mettre à jour ce paquet et d'autres paquets supportés automatiquement (ce script fournit sa propre documentation).
 
+#### Quelles sont les « infractions »?
+
+« Infractions » détermine quand une adresse IP qui n'est pas bloquée par des fichiers de signatures spécifiques devrait être bloqué pour les demandes futures, et ils sont étroitement associés au surveillance des adresses IP. Certaines fonctionnalités et certains modules permettent de bloquer les demandes pour des raisons autres que l'adresse IP d'origine (tels que la présence d'agents utilisateurs [ user agents ] correspondant à spambots ou hacktools, requêtes dangereuses, DNS usurpé et ainsi de suite), et quand cela arrive, une « infraction » peut survenir. Ils fournissent un moyen d'identifier les adresses IP qui correspondent à des demandes non désirées qui ne sont pas bloquées par des fichiers de signatures spécifiques. Les infractions correspondent généralement 1-à-1 avec le nombre de fois qu'une IP est bloquée, mais pas toujours (les événements de bloc graves peuvent entraîner une valeur d'infraction supérieure à un, et si « track_mode » est false, les infractions ne se produiront pas pour les événements de bloc déclenchés uniquement par des fichiers de signatures).
+
 ---
 
 
-Dernière mise à jour : 6 Novembre 2017 (2017.11.06).
+Dernière mise à jour : 25 Novembre 2017 (2017.11.25).

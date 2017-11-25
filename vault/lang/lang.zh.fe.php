@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.11.20).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.11.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,7 +63,7 @@ $CIDRAM['lang']['config_signatures_infraction_limit'] = '从IP最大允许违规
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4签名文件，​CIDRAM应该尝试使用，​用逗号分隔。';
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，​CIDRAM应该尝试使用，​用逗号分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模块文件要加载的列表以后检查签名IPv4/IPv6，​用逗号分隔。';
-$CIDRAM['lang']['config_signatures_track_mode'] = '什么时候应该对违规行为进行计数？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。';
+$CIDRAM['lang']['config_signatures_track_mode'] = '何时应该记录违规？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_Magnification'] = '字体放大。​标准 = 1。';
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';

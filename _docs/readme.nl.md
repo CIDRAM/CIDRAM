@@ -766,7 +766,11 @@ Waarde | Gebruik makend van
 
 Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina via externe scripts. Een apart script, "[Cronable](https://github.com/Maikuolan/Cronable)", is beschikbaar, en kan door uw cron manager of cron scheduler gebruikt worden om deze en andere ondersteunde pakketten automatisch te updaten (dit script biedt zijn eigen documentatie).
 
+#### Wat zijn "overtredingen"?
+
+"Overtredingen" bepalen wanneer een IP die nog niet is geblokkeerd door specifieke signature bestanden, moet worden geblokkeerd voor toekomstige verzoeken, en ze zijn nauw verbonden met IP-tracking. Sommige functionaliteit en modules bestaan die toestaan dat verzoeken om andere redenen dan het oorsprong van IP worden geblokkeerd (zoals de aanwezigheid van user agents die overeenkomen met spambots of hacktools, gevaarlijke zoekopdrachten, vervalste DNS enzovoort), en wanneer dit gebeurt, kan een "overtreding" optreden. Ze bieden een manier om IP-adressen te identificeren die overeenkomen met ongewenste verzoeken die nog niet door specifieke signature bestanden worden geblokkeerd. Overtredingen komen meestal 1-op-1 overeen met het aantal keren dat een IP wordt geblokkeerd, maar niet altijd (ernstige blokgebeurtenissen kunnen een overtredingen-waarde groter dan één oplopen, en als "track_mode" false is, er zullen geen overtredingen plaatsvinden voor blokgebeurtenissen die alleen door signature bestanden worden veroorzaakt).
+
 ---
 
 
-Laatste Bijgewerkt: 6 November 2017 (2017.11.06).
+Laatste Bijgewerkt: 25 November 2017 (2017.11.25).

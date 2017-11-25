@@ -766,7 +766,11 @@ Valor | Usando
 
 Sim. Uma API é integrada no front-end para interagir com a página de atualizações por meio de scripts externos. Um script separado, "[Cronable](https://github.com/Maikuolan/Cronable)", está disponível, e pode ser usado pelo seu cron manager ou cron scheduler para atualizar este e outros pacotes suportados automaticamente (este script fornece sua própria documentação).
 
+#### O que são "infrações"?
+
+"Infrações" determinam quando um IP que ainda não está bloqueado por qualquer arquivo de assinatura específico deve começar a ser bloqueado para quaisquer pedidos futuros, e estão intimamente associados ao monitoração IP. Existem algumas funcionalidades e módulos que permitem que os pedidos sejam bloqueados por motivos diferentes do IP de origem (tal como a presença de agentes de usuários [user agents] correspondentes a spambots ou hacktools, solicitações perigosas, DNS falsificado e assim por diante), e quando isso acontece, uma "infração" pode ocorrer. Eles fornecem uma maneira de identificar endereços IP que correspondem a solicitações indesejadas que podem ainda não ser bloqueadas por arquivos de assinatura específicos. Infrações geralmente correspondem 1-a-1 com o número de vezes que um IP está bloqueado, mas nem sempre (eventos de bloqueio severo podem ter um valor de infração maior do que um, e se "track_mode" for false, infrações não ocorrerão para eventos de bloco desencadeados exclusivamente por arquivos de assinatura).
+
 ---
 
 
-Última Atualização: 6 Novembro 2017 (2017.11.06).
+Última Atualização: 25 Novembro 2017 (2017.11.25).

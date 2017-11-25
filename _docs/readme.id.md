@@ -766,7 +766,11 @@ Nilai | Menggunakan
 
 Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan melalui skrip eksternal. Skrip terpisah, "[Cronable](https://github.com/Maikuolan/Cronable)", tersedia, dan dapat digunakan oleh cron manager atau cron scheduler untuk mengupdate paket ini dan paket didukung lainnya secara otomatis (script ini menyediakan dokumentasi sendiri).
 
+#### Apa "pelanggaran"?
+
+"Pelanggaran" menentukan kapan IP yang belum diblokir oleh file tanda tangan tertentu seharusnya mulai diblokir untuk permintaan di masa mendatang, dan mereka terkait erat dengan pelacakan IP. Beberapa fungsi dan modul ada yang memungkinkan permintaan menjadi diblokir karena alasan selain IP asal (seperti kehadiran agen pengguna [user agent] yang sesuai dengan spambot atau hacktool, permintaan berbahaya, DNS ditempa dan seterusnya), dan kapan ini terjadi, "pelanggaran" dapat terjadi. Mereka menyediakan cara untuk mengidentifikasi alamat IP yang sesuai dengan permintaan yang tidak diinginkan yang mungkin belum terhalang oleh file tanda tangan tertentu. Pelanggaran biasanya sesuai 1-ke-1 dengan berapa kali IP diblokir, namun tidak selalu (kejadian blokir yang parah dapat menimbulkan nilai pelanggaran lebih besar dari satu, dan jika "track_mode" false, pelanggaran tidak akan terjadi karena kejadian blokir yang hanya dipicu oleh file tanda tangan).
+
 ---
 
 
-Terakhir Diperbarui: 6 November 2017 (2017.11.06).
+Terakhir Diperbarui: 25 November 2017 (2017.11.25).

@@ -766,7 +766,11 @@ Giá trị | Sử dụng
 
 Vâng. API được tích hợp trong front-end để tương tác với trang cập nhật thông qua các kịch bản bên ngoài. Một kịch bản riêng biệt, "[Cronable](https://github.com/Maikuolan/Cronable)", là có sẵn, và có thể được sử dụng bởi cron manager hay cron scheduler để tự động cập nhật gói này và gói hỗ trợ khác (kịch bản này cung cấp tài liệu riêng của nó).
 
+#### "Vi phạm" là gì?
+
+"Vi phạm" xác định khi một IP không bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào cũng sẽ bị chặn vì bất kỳ yêu cầu nào trong tương lai, và chúng liên quan chặt chẽ với giám sát IP. Một số chức năng và mô-đun tồn tại cho phép các yêu cầu bị chặn vì các lý do khác với IP có nguồn gốc (như là sự hiện diện của các đại lý người sử dụng [user agents] tương ứng với spambots hay hacktools, truy vấn nguy hiểm, giả mạo DNS và vv), và khi điều này xảy ra, một "vi phạm" có thể xảy ra. Chúng cung cấp cách để nhận định địa chỉ IP tương ứng với các yêu cầu không mong muốn mà có thể chưa bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào. Các vi phạm thường tương ứng với 1 đến 1 với số lần IP bị chặn, nhưng không phải luôn luôn (sự kiện nghiêm trọng chặn có thể gây ra một giá trị vi phạm lớn hơn một, và nếu "track_mode" là sai [false], vi phạm sẽ không xảy ra cho các sự kiện chặn gây ra bởi chỉ các tập tin chữ ký).
+
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Mười Một 2017 (2017.11.06).
+Lần cuối cập nhật: 25 Tháng Mười Một 2017 (2017.11.25).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.11.25).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '隱藏被禁�
 $CIDRAM['lang']['tip_accounts'] = '你好，​{username}。​<br />賬戶頁面允許您控制誰可以訪問CIDRAM前端。';
 $CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR計算器允許您計算IP地址屬於哪個CIDR。';
 $CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置頁面允許您修改CIDRAM配置從前端。';
+$CIDRAM['lang']['tip_custom_ua'] = '在這裡輸入用戶代理【user agent】（可選的）。';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免費提供的，​但如果您想捐贈給項目，​您可以通過點擊捐贈按鈕這樣做。';
 $CIDRAM['lang']['tip_enter_ips_here'] = '在這裡輸入IP。';
 $CIDRAM['lang']['tip_enter_ip_here'] = '在這裡輸入IP。';

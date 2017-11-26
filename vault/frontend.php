@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.11.23).
+ * This file: Front-end handler (last modified: 2017.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2570,11 +2570,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Initialise results data. */
     $CIDRAM['FE']['IPTestResults'] = '';
 
-    /** Module switch for SimulateBlockEvent closure */
+    /** Module switch for SimulateBlockEvent closure. */
     $CIDRAM['ModuleSwitch'] = !empty($_POST['ModuleSwitch']);
 
     /** Module switch for HTML. */
     $CIDRAM['FE']['ModuleSwitch'] = $CIDRAM['ModuleSwitch'] ? ' checked' : '';
+
+    /** Fetch custom user agent if specified. */
+    $CIDRAM['FE']['custom-ua'] = !empty($_POST['custom-ua']) ? $_POST['custom-ua'] : '';
 
     /** IPs were submitted for testing. */
     if (isset($_POST['ip-addr'])) {

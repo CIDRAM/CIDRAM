@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.11.20).
+ * This file: Norwegian language data for the front-end (last modified: 2017.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Skjul utesten
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallo, {username}.<br />CIDR-kalkulatoren lar deg beregne hvilke CIDRer en IP-adresse er en faktor av.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />Konfigurasjonssiden lar deg endre konfigurasjonen for CIDRAM fra frontenden.';
+$CIDRAM['lang']['tip_custom_ua'] = 'Skriv inn brukeragent (user agent) her (valgfritt).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM tilbys gratis, men hvis du vil donere til prosjektet, du kan gjøre det ved å klikke på donate-knappen.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Skriv inn IPer her.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Skriv inn IP her.';

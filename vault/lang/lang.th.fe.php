@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.11.20).
+ * This file: Thai language data for the front-end (last modified: 2017.11.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -253,6 +253,7 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'ซ่อน 
 $CIDRAM['lang']['tip_accounts'] = 'สวัสดี, {username}.<br />หน้าบัญชีช่วยให้คุณสามารถควบคุมผู้ที่สามารถเข้าถึง front-end ของ CIDRAM.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'สวัสดี, {username}.<br />เครื่องคิดเลข CIDR ช่วยให้คุณสามารถคำนวณค่า CIDR ของที่อยู่ IP.';
 $CIDRAM['lang']['tip_config'] = 'สวัสดี, {username}.<br />หน้าการกำหนดค่าช่วยให้คุณสามารถแก้ไขการกำหนดค่าสำหรับ CIDRAM จาก front-end.';
+$CIDRAM['lang']['tip_custom_ua'] = 'ใส่ user agent ที่นี่ (เป็นตัวเลือก).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ให้บริการฟรี, แต่ถ้าคุณต้องการบริจาคให้กับโครงการ, คุณสามารถทำได้โดยคลิกที่ปุ่มบริจาค.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'ใส่ IP ที่นี่.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'ใส่ IP ที่นี่.';

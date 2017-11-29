@@ -2150,7 +2150,7 @@ Tag: EDIS GmbH
 
 
 # ASNs 8272, 8426, 34948 ("ClaraNET LTD").
-# Updated: 2017.06.12
+# Updated: 2017.11.29
 
 2001:67c:1088::/47 Deny Cloud
 2001:67c:27dc::/48 Deny Cloud
@@ -2165,6 +2165,7 @@ Tag: EDIS GmbH
 2a02:830::/32 Deny Cloud
 2a02:2328::/32 Deny Cloud
 2a03:6420::/32 Deny Cloud
+2a03:7300::/32 Deny Cloud
 2a03:73c0::/48 Deny Cloud
 2a03:8bc0:33::/48 Deny Cloud
 2a03:9c80::/32 Deny Cloud
@@ -2728,6 +2729,16 @@ Tag: Amazon Data Services
 Tag: UAB Rakrejus
 
 
+# ASNs 22611, 54641 ("InMotion Hosting, Inc").
+# %Listed, Google Malware Dashboard: 0.71% (AS22611), 0.13% (AS54641).
+# %Listed, CleanTalk.org: 19.67% (AS22611), 22.64% (AS54641).
+# Stop Forum Spam (SFS) listings: 0 (AS22611), 44 (AS54641).
+# Updated: 2017.11.29
+
+2605:f400:2::/47 Deny Cloud
+Tag: InMotion Hosting, Inc
+
+
 # ASN 45638 ("SYNERGY WHOLESALE PTY LTD").
 # %Listed, Google Malware Dashboard: 0.37%.
 # %Listed, CleanTalk.org: 16.33%.
@@ -2867,7 +2878,7 @@ Tag: Falco Networks B.V
 # %Listed, Google Malware Dashboard: 8.06%.
 # %Listed, CleanTalk.org: 27.87%.
 # Stop Forum Spam (SFS) listings: 863.
-# Updated: 2016.05.01 / Checked: 2017.06.28
+# Updated: 2016.05.01 / Checked: 2017.11.29
 
 2400:f100::/47 Deny Cloud
 2400:f100:2::/48 Deny Cloud
@@ -2875,10 +2886,10 @@ Tag: SunnyVision Limited
 
 
 # ASN 37943 ("ZhengZhou GIANT Computer Network Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 6.80%.
+# %Listed, Google Malware Dashboard: 7.28%.
 # %Listed, CleanTalk.org: 35.60%.
-# Stop Forum Spam (SFS) listings: 29.
-# Updated: 2016.05.01 / Checked: 2017.06.28
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2016.05.01 / Checked: 2017.11.29
 
 2400:a480::/32 Deny Cloud
 Tag: ZhengZhou GIANT
@@ -2969,13 +2980,15 @@ Tag: 23Media GmbH
 
 
 # ASN 49544 ("i3d B.V").
-# %Listed, Google Malware Dashboard: 1.97%.
-# %Listed, CleanTalk.org: 52.27%.
-# Stop Forum Spam (SFS) listings: 69.
-# Updated: 2017.06.22
+# %Listed, Google Malware Dashboard: 0.60%.
+# %Listed, CleanTalk.org: 52.21%.
+# Stop Forum Spam (SFS) listings: 159.
+# Updated: 2017.11.29
 
 2001:678:198::/48 Deny Cloud
+2402:b180:9000::/36 Deny Cloud
 2402:c080::/31 Deny Cloud
+2403:1480:9000::/36 Deny Cloud
 2605:7300::/31 Deny Cloud
 2606:d880::/32 Deny Cloud
 2a00:1630::/29 Deny Cloud
@@ -2990,6 +3003,7 @@ Tag: 23Media GmbH
 2a06:7a00::/48 Deny Cloud
 2a0a:5980::/29 Deny Cloud
 2a0b:1b00::/29 Deny Cloud
+2a0b:2640::/31 Deny Cloud
 2a0b:f380::/48 Deny Cloud
 Tag: i3d B.V
 
@@ -3691,13 +3705,17 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# %Listed, Google Malware Dashboard: 3.09%.
-# %Listed, CleanTalk.org: 80.50%.
-# Stop Forum Spam (SFS) listings: 3,273.
-# Updated: 2016.11.02 / Checked: 2017.06.22
+# %Listed, Google Malware Dashboard: 1.24%.
+# %Listed, CleanTalk.org: 80.46%.
+# Stop Forum Spam (SFS) listings: 5,297.
+# Updated: 2017.11.29
 
 2401:f500:4::/48 Deny Cloud
 2602:ffc8::/32 Deny Cloud
+2a0a:80::/29 Deny Cloud
+2a0a:1f45::/32 Deny Cloud
+2a0b:aac0::/29 Deny Cloud
+2a0d:f800::/29 Deny Cloud
 Tag: Nexeon Technologies
 
 
@@ -3798,11 +3816,12 @@ Tag: velia.net
 
 
 # ASN 38719 ("Dreamscape Networks Pty Ltd").
-# %Listed, Google Malware Dashboard: 1.71%.
-# %Listed, CleanTalk.org: 28.81%.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2017.06.22
+# %Listed, Google Malware Dashboard: 0.71%.
+# %Listed, CleanTalk.org: 27.87%.
+# Stop Forum Spam (SFS) listings: 37.
+# Updated: 2017.11.29
 
+2001:df2:e400::/48 Deny Cloud
 2400:6d80::/32 Deny Cloud
 2400:8240::/32 Deny Cloud
 2404:8280::/32 Deny Cloud
@@ -3812,18 +3831,10 @@ Tag: velia.net
 Tag: Dreamscape Networks
 
 
-# ASN 203625 ("Europe Domains LTD").
-# %Listed, Google Malware Dashboard: 3.33%.
-# Updated: 2016.12.04 / Checked: 2017.06.22
-
-2a06:d2c0::/29 Deny Cloud
-Tag: Europe Domains LTD
-
-
 # ASN 22458 ("NetSource Communications, Inc").
-# %Listed, Google Malware Dashboard: 0.25%.
+# %Listed, Google Malware Dashboard: 0.14%.
 # %Listed, CleanTalk.org: 14.63%.
-# Updated: 2017.06.22
+# Updated: 2017.06.22 / Checked: 2017.11.29
 
 2604:f80::/32 Deny Cloud
 2a0b:1900::/44 Deny Cloud
@@ -4162,11 +4173,11 @@ Tag: 2 connect a.s.
 # Caught hitting protected honeypot pages for unknown purposes. No problems otherwise. Provides digital cable and
 # satellite television; Not expected to carry standard HTTP traffic from human endpoints normally. May remove if
 # problems emerge, but adding them here for now as a precaution. Not currently listed on other known blacklists.
-# Updated: 2017.06.21
+# Updated: 2017.11.29
 
 2a04:5c80::/32 Deny Generic
-2a04:5c84::/31 Deny Generic
-2a04:5c86::/48 Deny Generic
+2a04:5c85::/36 Deny Generic
+2a04:5c85:4000::/36 Deny Generic
 2a04:5c87::/32 Deny Generic
 Tag: Nagravision SA
 

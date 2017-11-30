@@ -311,7 +311,7 @@ Konfigurasi umum dari CIDRAM.
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "truncate"
-- Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catatan: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.
+- Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.
 
 "timeOffset"
 - Jika waktu server Anda tidak cocok waktu lokal Anda, Anda dapat menentukan offset sini untuk menyesuaikan informasi tanggal/waktu dihasilkan oleh CIDRAM sesuai dengan kebutuhan Anda. Ini umumnya direkomendasikan sebagai gantinya untuk menyesuaikan direktif zona waktu dalam file `php.ini` Anda, tapi terkadang (seperti ketika bekerja dengan terbatas penyedia shared hosting) ini tidak selalu mungkin untuk melakukan, dan demikian, opsi ini disediakan disini. Offset adalah dalam menit.
@@ -479,7 +479,7 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 *Lihat juga:*
 - *[Apa yang "tanda tangan"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 DASAR-DASAR
+#### 7.0 DASAR-DASAR (UNTUK FILE TANDA TANGAN)
 
 Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silakan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
 
@@ -673,7 +673,17 @@ Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 
 Dalam konteks CIDRAM, "tanda tangan" mengacu pada data yang bertindak sebagai indikator/pengenal untuk sesuatu spesifik yang kita mencari, biasanya alamat IP atau CIDR, dan termasuk beberapa instruksi untuk CIDRAM, mengatakannya cara terbaik untuk menanggapi saat menemukan apa yang kita mencari. Tanda tangan khas untuk CIDRAM terlihat seperti ini:
 
+Untuk "file tanda tangan":
+
 `1.2.3.4/32 Deny Generic`
+
+Untuk "modul":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Catat: Tanda tangan untuk "file tanda tangan", dan tanda tangan untuk "modul", bukanlah hal yang sama.*
 
 Sering (tapi tidak selalu), tanda tangan akan digabungkan dalam grup-grup, Membentuk "bagian tanda tangan", sering disertai dengan komentar, markup, dan/atau metadata terkait yang bisa digunakan untuk memberikan konteks tambahan untuk tanda tangan dan/atau instruksi tambahan.
 
@@ -773,4 +783,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 25 November 2017 (2017.11.25).
+Terakhir Diperbarui: 30 November 2017 (2017.11.30).

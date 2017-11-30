@@ -479,7 +479,7 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 *Veja também:*
 - *[O que é uma "assinatura"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 NOÇÕES BÁSICAS
+#### 7.0 NOÇÕES BÁSICAS (PARA ARQUIVOS DE ASSINATURA)
 
 A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode ser encontrada documentado em texto simples dentro de qualquer um dos dois arquivos de assinaturas personalizados. Por favor, consulte que a documentação para saber mais sobre o formato e estrutura das assinaturas de CIDRAM.
 
@@ -673,7 +673,17 @@ Consulte os arquivos de assinaturas personalizadas para obter mais informações
 
 No contexto do CIDRAM, uma "assinatura" refere-se a dados que actuam como um indicador/identificador para algo específico que estamos procurando, geralmente um endereço IP ou CIDR, e inclui algumas instruções para CIDRAM, dizendo-lhe a melhor maneira de responder quando encontrar o que estamos procurando. Uma assinatura típica para o CIDRAM é algo como isto:
 
+Para "arquivos de assinatura":
+
 `1.2.3.4/32 Deny Generic`
+
+Para "módulos":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Nota: Assinaturas para "arquivos de assinatura", e assinaturas para "módulos", não são a mesma coisa.*
 
 Muitas vezes (mas nem sempre), as assinaturas serão agrupadas em grupos, formando "seções de assinaturas", freqüentemente acompanhado de comentários, marcação e/ou metadados relacionados que podem ser usados para fornecer contexto adicional para as assinaturas e/ou instrução adicional.
 
@@ -773,4 +783,4 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 ---
 
 
-Última Atualização: 25 Novembro 2017 (2017.11.25).
+Última Atualização: 30 Novembro 2017 (2017.11.30).

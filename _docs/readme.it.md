@@ -479,7 +479,7 @@ Si riferisce al HTML utilizzato per generare la pagina "Accesso Negato". Se stai
 *Guarda anche:*
 - *[Che cosa è una "firma"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 NOZIONI DI BASE
+#### 7.0 NOZIONI DI BASE (PER FILE DI FIRMA)
 
 Una descrizione del formato e la struttura delle firme utilizzate da CIDRAM può essere trovato documentato in testo semplice entro una delle due file di firma personalizzati. Si prega di fare riferimento a tale documentazione per saperne di più sul formato e la struttura delle firme di CIDRAM.
 
@@ -673,7 +673,17 @@ Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 
 Nel contesto di CIDRAM, una "firma" si riferisce a dati che fungono da indicatore/identificatore per qualcosa di specifico che stiamo cercando, di solito un indirizzo IP o CIDR, e include alcune istruzioni per CIDRAM, dicendogli il modo migliore per rispondere quando incontra quello che stiamo cercando. Una firma tipica per CIDRAM sembra qualcosa di simile:
 
+Per "file di firma":
+
 `1.2.3.4/32 Deny Generic`
+
+Per "moduli":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Nota: Le firme per "file di firma", e le firme per "moduli", non sono la stessa cosa.*
 
 Spesso (ma non sempre), le firme verranno raggruppate in gruppi, formando "sezioni di firma", spesso accompagnati da commenti, markup e/o metadati correlati che possono essere utilizzati per fornire contesto aggiuntivo per le firme e/o ulteriori istruzioni.
 
@@ -766,11 +776,11 @@ Valore | Utilizzando
 
 Sì. Una API è incorporata nel front-end per interagire con la pagina degli aggiornamenti tramite script esterni. È disponibile uno script separato, "[Cronable](https://github.com/Maikuolan/Cronable)", e può essere utilizzato dal tuo cron manager o cron scheduler per aggiornare automaticamente questo e altri pacchetti supportati (questo script fornisce la propria documentazione).
 
-#### Cosa sono le "infrazioni"?w
+#### Cosa sono le "infrazioni"?
 
 Le "infrazioni" determinano quando un IP che non è ancora bloccato da uno specifico file di firma dovrebbe iniziare a essere bloccato per eventuali richieste future, e sono strettamente associati al monitoraggio IP. Esistono alcune funzionalità e moduli che consentono di bloccare le richieste per motivi diversi dall'IP di origine (ad esempio la presenza di agenti utente [user agents] corrispondenti a spambots o hacktools, richieste pericolose, DNS falsificato e così via), e quando ciò accade, può verificarsi una "infrazione". Forniscono un modo per identificare gli indirizzi IP che corrispondono a richieste indesiderate che potrebbero non essere ancora bloccate da alcun file di firma specifico. Le infrazioni di solito corrispondono 1-a-1 con il numero di volte in cui un IP è bloccato, ma non sempre (eventi di blocco gravi possono incorrere in un valore di infrazione maggiore di uno, e se "track_mode" è false, le infrazioni non si verificano per gli eventi di blocco innescati esclusivamente dai file delle firme).
 
 ---
 
 
-Ultimo Aggiornamento: 25 Novembre 2017 (2017.11.25).
+Ultimo Aggiornamento: 30 Novembre 2017 (2017.11.30).

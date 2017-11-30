@@ -479,7 +479,7 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 *Siehe auch:*
 - *[Was ist eine "Signatur"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 GRUNDLAGEN
+#### 7.0 GRUNDLAGEN (FÜR SIGNATURDATEIEN)
 
 Eine Beschreibung das Formats und die Struktur der Signaturen benutzt von CIDRAM kann gefunden im Klartext dokumentiert werden in der benutzerdefinierten Signaturdateien. Bitte beachten Sie zu dieser Dokumentation, um mehr über das Format und die Struktur der Signaturen für CIDRAM zu erfahren.
 
@@ -673,7 +673,17 @@ Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informat
 
 Im Kontext von CIDRAM, eine "Signatur" bezieht sich auf Daten, die als Indikator/Identifikator fungieren, für etwas Bestimmtes dass wir suchen (normalerweise eine IP-Adresse oder CIDR), und enthält einige Anweisungen für CIDRAM, erzählen es der beste Weg zu reagieren, wenn es begegnet was wir suchen. Eine typische Signatur für CIDRAM sieht so aus:
 
+Für "Signaturdateien":
+
 `1.2.3.4/32 Deny Generic`
+
+Für "Modulen":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Hinweis: Signaturen für "Signaturdateien", und Signaturen für "Module", sind nicht dasselbe.*
 
 Oft (aber nicht immer), Signaturen werden in Gruppen zusammengebunden, als "Signatur-Sektionen" zu bilden, oft begleitet von Kommentaren, Markup und/oder verwandten Metadaten das kann verwendet werden, um zusätzlichen Kontext zu bieten der Signaturen und/oder weitere Anweisung.
 
@@ -773,4 +783,4 @@ Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der U
 ---
 
 
-Zuletzt aktualisiert: 25 November 2017 (2017.11.25).
+Zuletzt aktualisiert: 30 November 2017 (2017.11.30).

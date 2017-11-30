@@ -479,7 +479,7 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 *Ver también:*
 - *[¿Qué es una "firma"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 LOS FUNDAMENTOS
+#### 7.0 LOS FUNDAMENTOS (PARA "ARCHIVOS DE FIRMA")
 
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
 
@@ -673,7 +673,17 @@ Consulte los archivos de firmas personalizadas para obtener más información.
 
 En el contexto de CIDRAM, una "firma" se refiere a datos que actúan como un indicador/identificador para algo específico que estamos buscando, normalmente una dirección IP o CIDR, e incluye algunas instrucciones para CIDRAM, diciéndole la mejor manera de responder cuando encuentra lo que estamos buscando. Una firma típica para CIDRAM se parece a esto:
 
+Para "archivos de firma":
+
 `1.2.3.4/32 Deny Generic`
+
+Para "módulos":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Nota: Las firmas para "archivos de firma", y las firmas para "módulos", no son lo mismo.*
 
 A menudo (pero no siempre), las firmas se agruparán en grupos, formando "secciones de firmas", a menudo acompañado de comentarios, markup, y/o metadatos relacionados que se pueden utilizar para proporcionar contexto adicional para las firmas y/o instrucción adicional.
 
@@ -773,4 +783,4 @@ Las "infracciones" determinan cuándo una IP que todavía no está bloqueada por
 ---
 
 
-Última Actualización: 25 Noviembre 2017 (2017.11.25).
+Última Actualización: 30 Noviembre 2017 (2017.11.30).

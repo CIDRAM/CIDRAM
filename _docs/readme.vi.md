@@ -479,7 +479,7 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 *Xem thêm:*
 - *["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 KHÁI NIỆM CƠ BẢN
+#### 7.0 KHÁI NIỆM CƠ BẢN (ĐỐI VỚI TẬP TIN CHỮ KÝ)
 
 Một mô tả của các định dạng và cấu trúc của chữ ký được sử dụng bởi CIDRAM có thể được tìm thấy trong văn bản thô trong bất kỳ tập tin chữ ký tùy chỉnh. Vui lòng tham khảo tài liệu hướng dẫn để tìm hiểu thêm về định dạng và cấu trúc của chữ ký của CIDRAM.
 
@@ -673,7 +673,17 @@ Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 
 Trong bối cảnh của CIDRAM, "chữ ký" đề cập đến dữ liệu hoạt động như một định danh cho một cái gì đó cụ thể mà chúng tôi đang tìm kiếm, thường là một địa chỉ IP hoặc CIDR, và bao gồm một số chỉ dẫn cho CIDRAM, nói với nó cách trả lời khi nó gặp những gì chúng ta đang tìm kiếm. Một chữ ký CIDRAM điển hình trông giống như thế này:
 
+Đối với "tập tin chữ ký":
+
 `1.2.3.4/32 Deny Generic`
+
+Đối với "mô-đun":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Chú thích: Chữ ký cho "tập tin chữ ký", và chữ ký cho "mô-đun", không phải là cùng một điều.*
 
 Thông thường (nhưng không phải luôn luôn), chữ ký sẽ được nhóm lại với nhau, để hình thành "phần chữ ký", thường kèm theo bình luận, đánh dấu, hay siêu dữ liệu liên quan mà có thể được sử dụng để cung cấp bối cảnh bổ sung cho chữ ký hay lệnh bổ sung.
 
@@ -773,4 +783,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 25 Tháng Mười Một 2017 (2017.11.25).
+Lần cuối cập nhật: 30 Tháng Mười Một 2017 (2017.11.30).

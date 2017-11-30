@@ -479,7 +479,7 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 *See also:*
 - *[What is a "signature"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 BASICS
+#### 7.0 BASICS (FOR SIGNATURE FILES)
 
 A description of the format and structure of the signatures used by CIDRAM can be found documented in plain-text within either of the two custom signature files. Please refer to that documentation to learn more about the format and structure of the signatures of CIDRAM.
 
@@ -664,6 +664,10 @@ Ignore Section 1
 
 Refer to the custom signature files for more information.
 
+#### 7.4 BASICS (FOR MODULES)
+
+*-- This section to be written in the near future. --*
+
 ---
 
 
@@ -673,7 +677,17 @@ Refer to the custom signature files for more information.
 
 In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
 
+For "signature files":
+
 `1.2.3.4/32 Deny Generic`
+
+For "modules":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Note: Signatures for "signature files", and signatures for "modules", are not the same thing.*
 
 Often (but not always), signatures will bundled together in groups, forming "signature sections", often accompanied by comments, markup, and/or related metadata that can be used to provide additional context for the signatures and/or further instruction.
 
@@ -773,4 +787,4 @@ Yes. An API is built into the front-end for interacting with the updates page vi
 ---
 
 
-Last Updated: 25 November 2017 (2017.11.25).
+Last Updated: 30 November 2017 (2017.11.30).

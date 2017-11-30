@@ -479,7 +479,7 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 *Voir également :*
 - *[Qu'est-ce qu'une « signature » ?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 BASES
+#### 7.0 BASES (POUR LES FICHIERS DE SIGNATURE)
 
 Une description du format et de la structure du signatures utilisé par CIDRAM peut être trouvée documentée en plain-text dans les deux fichiers de signatures personnalisées. S'il vous plaît référez à cette documentation pour apprendre plus sur le format et la structure du signatures de CIDRAM.
 
@@ -673,7 +673,17 @@ Reportez-vous aux fichiers de signatures personnalisées pour plus d'information
 
 Dans le contexte du CIDRAM, une « signature » désigne les données qui servent d'indicateur ou d'identifiant pour quelque chose de spécifique que nous chercher, habituellement une adresse IP ou CIDR, et inclures des instructions pour CIDRAM, indiquant la meilleure façon de répondre quand il rencontre ce que nous chercher. Une signature typique pour CIDRAM ressemble à ceci :
 
+Pour les « fichiers de signature » :
+
 `1.2.3.4/32 Deny Generic`
+
+Pour les « modules » :
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Remarque : Les signatures pour les « fichiers de signature », et les signatures pour les « modules », ne sont pas la même chose.*
 
 Souvent (mais pas toujours), les signatures seront regroupées en groupes, formant des « sections de signatures », souvent accompagné de commentaires, de balisage et/ou de métadonnées connexes qui peuvent être utilisées pour fournir un contexte supplémentaire pour les signatures et/ou d'autres instructions.
 
@@ -768,9 +778,9 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 
 #### Quelles sont les « infractions »?
 
-« Infractions » détermine quand une adresse IP qui n'est pas bloquée par des fichiers de signatures spécifiques devrait être bloqué pour les demandes futures, et ils sont étroitement associés au surveillance des adresses IP. Certaines fonctionnalités et certains modules permettent de bloquer les demandes pour des raisons autres que l'adresse IP d'origine (tels que la présence d'agents utilisateurs [ user agents ] correspondant à spambots ou hacktools, requêtes dangereuses, DNS usurpé et ainsi de suite), et quand cela arrive, une « infraction » peut survenir. Ils fournissent un moyen d'identifier les adresses IP qui correspondent à des demandes non désirées qui ne sont pas bloquées par des fichiers de signatures spécifiques. Les infractions correspondent généralement 1-à-1 avec le nombre de fois qu'une IP est bloquée, mais pas toujours (les événements de bloc graves peuvent entraîner une valeur d'infraction supérieure à un, et si « track_mode » est false, les infractions ne se produiront pas pour les événements de bloc déclenchés uniquement par des fichiers de signatures).
+« Infractions » détermine quand une adresse IP qui n'est pas bloquée par des fichiers de signatures spécifiques devrait être bloqué pour les demandes futures, et ils sont étroitement associés au surveillance des adresses IP. Certaines fonctionnalités et certains modules permettent de bloquer les demandes pour des raisons autres que l'adresse IP d'origine (tels que la présence d'agents utilisateurs [user agents] correspondant à spambots ou hacktools, requêtes dangereuses, DNS usurpé et ainsi de suite), et quand cela arrive, une « infraction » peut survenir. Ils fournissent un moyen d'identifier les adresses IP qui correspondent à des demandes non désirées qui ne sont pas bloquées par des fichiers de signatures spécifiques. Les infractions correspondent généralement 1-à-1 avec le nombre de fois qu'une IP est bloquée, mais pas toujours (les événements de bloc graves peuvent entraîner une valeur d'infraction supérieure à un, et si « track_mode » est false, les infractions ne se produiront pas pour les événements de bloc déclenchés uniquement par des fichiers de signatures).
 
 ---
 
 
-Dernière mise à jour : 25 Novembre 2017 (2017.11.25).
+Dernière mise à jour : 30 Novembre 2017 (2017.11.30).

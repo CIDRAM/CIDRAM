@@ -479,7 +479,7 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 *Zie ook:*
 - *[Wat is een "signature"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 BASICS
+#### 7.0 BASICS (VOOR SIGNATURE BESTANDEN)
 
 Een beschrijving van het formaat en de structuur van de signatures gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste signatures bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de signatures van CIDRAM.
 
@@ -673,7 +673,17 @@ Raadpleeg de aangepaste signature bestanden voor meer informatie.
 
 In het context van CIDRAM, een "signature" verwijst naar gegevens die als een indicator/identifier werken, voor iets specifiek waarnaar we op zoek zijn, gewoonlijk een IP-adres of CIDR, en bevat een aantal instructies voor CIDRAM, vertelt het de beste manier om wanneer het ontmoet waar we naar op zoek zijn te reageren. Een typische signature voor CIDRAM ziet er als volgt uit:
 
+Voor "signature bestanden":
+
 `1.2.3.4/32 Deny Generic`
+
+Voor "modules":
+
+```PHP
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+```
+
+*Notitie: Signatures voor "signature bestanden", en signatures voor "modules", zijn niet hetzelfde.*
 
 Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "signature secties", vaak vergezeld van opmerkingen, markup, en/of gerelateerde metadata die kunnen om extra context voor de signatures en/of om verdere instructies worden gebruikt.
 
@@ -773,4 +783,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 25 November 2017 (2017.11.25).
+Laatste Bijgewerkt: 30 November 2017 (2017.11.30).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.11.26).
+ * This file: Front-end handler (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -578,9 +578,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
             $CIDRAM['ThisBranch'] = 'php' . $CIDRAM['ThisBranch'];
             $CIDRAM['FE']['info_php_branch'] = empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest']) ?
                 $CIDRAM['lang']['response_error'] : $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['Latest'];
-            $CIDRAM['ForceVersionWarning'] = (!empty($CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin']) && (
-                $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'] === '*' ||
-                $CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Remote-YAML-PHP-Array'][$CIDRAM['ThisBranch']]['WarnMin'])
+            $CIDRAM['ForceVersionWarning'] = (!empty($CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['WarnMin']) && (
+                $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['WarnMin'] === '*' ||
+                $CIDRAM['VersionCompare'](PHP_VERSION, $CIDRAM['Remote-YAML-PHP-Array']['Branch'][$CIDRAM['ThisBranch']]['WarnMin'])
             ));
         } else {
             $CIDRAM['FE']['info_php_branch'] = $CIDRAM['lang']['response_error'];

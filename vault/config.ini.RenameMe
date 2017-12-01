@@ -219,6 +219,11 @@ expiry=720
 ; If no, leave this variable blank.
 logfile=''
 
+; Maximum number of signatures allowed to be triggered when a reCAPTCHA
+; instance is to be offered. Default = 1. If this number is exceeded for any
+; particular request, a reCAPTCHA instance won't be offered.
+signature_limit=1
+
 
 [template_data]
 

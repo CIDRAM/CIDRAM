@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.11.26).
+ * This file: Swedish language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'Låsa reCAPTCHA till IP-adresser?'
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Låsa reCAPTCHA till användare?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'Logga in alla reCAPTCHA-försök? Om ja, ange det namn som ska användas för loggfilen. Om nej, lämna denna variabel tom.';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Detta värde bör motsvara den "secret key" för din reCAPTCHA, som finns i reCAPTCHA-instrumentpanelen.';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'Maximalt antal signaturer får utlösas när en reCAPTCHA-instans ska erbjudas. Standard = 1. Om detta nummer överskrids för en viss begäran, kommer inte en reCAPTCHA-instans att erbjudas.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Detta värde bör motsvara den "site key" för din reCAPTCHA, som finns i reCAPTCHA-instrumentpanelen.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Definierar hur CIDRAM ska använda reCAPTCHA (se dokumentation).';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blockera bogon/martian CIDRer? Om du förväntar dig anslutningar till din webbplats från ditt lokala nätverk, från localhost eller från ditt LAN, detta direktiv borde vara false. Om du inte förväntar dig sådana anslutningar, detta direktiv borde vara true.';

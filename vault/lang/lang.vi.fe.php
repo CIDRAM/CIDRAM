@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.11.26).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'Khóa reCAPTCHA để IP?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Khóa reCAPTCHA để người dùng?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'Đăng nhập tất cả các nỗ lực cho reCAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này.';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Giá trị này nên tương ứng với "secret key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'Số chữ ký tối đa cho phép được kích hoạt khi một cá thể reCAPTCHA được cung cấp. Mặc định = 1. Nếu số này vượt quá cho bất kỳ yêu cầu cụ thể nào, một cá thể reCAPTCHA sẽ không được cung cấp.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Giá trị này nên tương ứng với "site key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Định nghĩa thế nào CIDRAM nên sử dụng reCAPTCHA (xem tài liệu).';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Chặn CIDR bogon/martian? Nếu bạn mong đợi các kết nối đến trang mạng của bạn từ bên trong mạng nội bộ của bạn, từ localhost, hay từ LAN của bạn, tùy chọn này cần được thiết lập để false. Nếu bạn không mong đợi những kết nối như vậy, tùy chọn này cần được thiết lập để true.';

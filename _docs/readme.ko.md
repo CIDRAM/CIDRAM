@@ -457,6 +457,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 *예 :*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- reCAPTCHA 인스턴스가 제공 될 때 트리거 될 수있는 최대 서명 수입니다. Default (기본 설정) = 1. 특정 요청에 대해이 수가 초과되면, reCAPTCHA 인스턴스가 제공되지 않습니다.
+
 #### "template_data" (카테고리)
 템플릿과 테마 지시어와 변수.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-주의 : reCAPTCHA 인스턴스는 reCAPTCHA가 유효한 경우에만 사용자에게 제공됩니다 ("usemode"가 1 일 때, 또는 "usemode"가 2 "enabled"이 "true"인 경우), 그리고, 정확히 하나의 서명이 트리거 된 경우 (큰 수없는 작은 수 없다; 여러 서명이 트리거 된 경우 reCAPTCHA 인스턴스는 제공되지 않습니다).
+*주의 : 기본적으로, reCAPTCHA 인스턴스는 reCAPTCHA가 유효한 경우에만 사용자에게 제공됩니다 ("usemode"가 1 일 때, 또는 "usemode"가 2 "enabled"이 "true"인 경우), 그리고, 정확히 하나의 서명이 트리거 된 경우 (큰 수없는 작은 수 없다; 여러 서명이 트리거 된 경우 reCAPTCHA 인스턴스는 제공되지 않습니다). 그러나이 동작은 "signature_limit"지시문을 통해 수정할 수 있습니다.*
 
 #### 7.3 보조
 
@@ -680,7 +683,7 @@ CIDRAM의 맥락에서 "서명"이라 함은 지표/식별자 역할을하는 �
 "모듈"의 경우 :
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *노트 : "서명 파일"에 대한 서명과, "모듈"에 대한 서명은, 동일한 것이 아닙니다.*
@@ -783,4 +786,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2017년 11월 30일.
+최종 업데이트 : 2017년 12월 1일.

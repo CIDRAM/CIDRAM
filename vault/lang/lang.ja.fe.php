@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.11.26).
+ * This file: Japanese language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをＩＰにロックし�
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHAをユーザーにロックしますか？';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'reCAPTCHA試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'この値は、​あなたのreCAPTCHAのための「secret key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定の要求に対してこの数を超えると、reCAPTCHAインスタンスは提供されません。';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'この値は、​あなたのreCAPTCHAのための「site key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'reCAPTCHAをCIDRAMで使用する方法（ドキュメントを参照してください）。';
 $CIDRAM['lang']['config_signatures_block_bogons'] = '火星の\ぼごんからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。';

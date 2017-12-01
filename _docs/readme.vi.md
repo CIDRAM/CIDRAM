@@ -457,6 +457,9 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 *Các ví dụ:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Số chữ ký tối đa cho phép được kích hoạt khi một cá thể reCAPTCHA được cung cấp. Mặc định = 1. Nếu số này vượt quá cho bất kỳ yêu cầu cụ thể nào, một cá thể reCAPTCHA sẽ không được cung cấp.
+
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Lưu ý: Một trường hợp reCAPTCHA sẽ chỉ được cung cấp cho người dùng nếu reCAPTCHA được kích hoạt (với "usemode" như 1, hay "usemode" như 2 với "enabled" như true), và nếu chính xác MỘT chữ ký đã được kích hoạt (không nhiều hơn, không ít hơn; nếu nhiều chữ ký được kích hoạt, một trường hợp reCAPTCHA sẽ KHÔNG được cung cấp).
+*Lưu ý: Theo mặc định, một trường hợp reCAPTCHA sẽ chỉ được cung cấp cho người dùng nếu reCAPTCHA được kích hoạt (với "usemode" như 1, hay "usemode" như 2 với "enabled" như true), và nếu chính xác MỘT chữ ký đã được kích hoạt (không nhiều hơn, không ít hơn; nếu nhiều chữ ký được kích hoạt, một trường hợp reCAPTCHA sẽ KHÔNG được cung cấp). Tuy nhiên, hành vi này có thể được sửa đổi thông qua chỉ thị "signature_limit".*
 
 #### 7.3 PHỤ TRỢ
 
@@ -680,7 +683,7 @@ Trong bối cảnh của CIDRAM, "chữ ký" đề cập đến dữ liệu ho�
 Đối với "mô-đun":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Chú thích: Chữ ký cho "tập tin chữ ký", và chữ ký cho "mô-đun", không phải là cùng một điều.*
@@ -783,4 +786,4 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 ---
 
 
-Lần cuối cập nhật: 30 Tháng Mười Một 2017 (2017.11.30).
+Lần cuối cập nhật: 1 Tháng Mười Hai 2017 (2017.12.01).

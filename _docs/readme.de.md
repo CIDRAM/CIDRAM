@@ -457,6 +457,9 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 *Beispielen:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Maximale Anzahl von Signaturen, die ausgelöst werden dürfen, wenn eine reCAPTCHA-Instanz angeboten werden soll. Standardeinstellung = 1. Wenn diese Anzahl für eine bestimmte Anfrage überschritten wird, wird keine reCAPTCHA-Instanz angeboten.
+
 #### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Beachten: Eine reCAPTCHA-Instanz wird NUR dem Benutzer angeboten wenn reCAPTCHA aktiviert ist (entweder mit "usemode" als 1, oder "usemode" als 2 mit "enabled" als true), und wenn genau EINE Signatur ausgelöst wurde (nicht mehr und nicht weniger; wenn mehrere Signaturen ausgelöst werden, eine reCAPTCHA-Instanz wird NICHT angeboten werden).
+*Beachten: Standardmäßig, eine reCAPTCHA-Instanz wird NUR dem Benutzer angeboten wenn reCAPTCHA aktiviert ist (entweder mit "usemode" als 1, oder "usemode" als 2 mit "enabled" als true), und wenn genau EINE Signatur ausgelöst wurde (nicht mehr und nicht weniger; wenn mehrere Signaturen ausgelöst werden, eine reCAPTCHA-Instanz wird NICHT angeboten werden). Jedoch, dieses Verhalten kann über die Anweisung "signature_limit" geändert werden.*
 
 #### 7.3 ZUSATZINFORMATION
 
@@ -680,7 +683,7 @@ Für "Signaturdateien":
 Für "Modulen":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Hinweis: Signaturen für "Signaturdateien", und Signaturen für "Module", sind nicht dasselbe.*
@@ -783,4 +786,4 @@ Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der U
 ---
 
 
-Zuletzt aktualisiert: 30 November 2017 (2017.11.30).
+Zuletzt aktualisiert: 1 Dezember 2017 (2017.12.01).

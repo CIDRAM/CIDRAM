@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.11.26).
+ * This file: Turkish language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA\'yı IP\'lere kilitle?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHA kullanıcılara kilitle?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'Tüm reCAPTCHA denemelerini günlüğe yaz? Yanıt evet ise, günlük dosyası için kullanılacak adı belirtin. Yanıt hayır ise, bu değişkeni boş bırakın.';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Bu değer, reCAPTCHA gösterge tablosunda bulunabilen reCAPTCHA\'nızın "secret key"na karşılık gelmelidir.';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'reCAPTCHA örneği sunulduğunda tetiklenmesine izin verilen maksimum imza sayısı. Varsayılan = 1. Herhangi bir talep için bu sayı aşılırsa, reCAPTCHA örneği sunulmaz.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Bu değer, reCAPTCHA gösterge tablosunda bulunabilen reCAPTCHA\'nızın "site key"na karşılık gelmelidir.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'CIDRAM\'ın reCAPTCHA\'yi nasıl kullanması gerektiğini tanımlar (belgelere bakın).';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Bogon/martian CIDR\'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır.';

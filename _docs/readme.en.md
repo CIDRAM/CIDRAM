@@ -457,6 +457,9 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 *Examples:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Maximum number of signatures allowed to be triggered when a reCAPTCHA instance is to be offered. Default = 1. If this number is exceeded for any particular request, a reCAPTCHA instance won't be offered.
+
 #### "template_data" (Category)
 Directives/Variables for templates and themes.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Note: A reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered).
+*Note: By default, a reCAPTCHA instance will ONLY be offered to the user if reCAPTCHA is enabled (either with "usemode" as 1, or "usemode" as 2 with "enabled" as true), and if exactly ONE signature has been triggered (no more, no less; if multiple signatures are triggered, a reCAPTCHA instance will NOT be offered). However, this behaviour can be modified via the "signature_limit" directive.*
 
 #### 7.3 AUXILIARY
 
@@ -684,7 +687,7 @@ For "signature files":
 For "modules":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Note: Signatures for "signature files", and signatures for "modules", are not the same thing.*
@@ -787,4 +790,4 @@ Yes. An API is built into the front-end for interacting with the updates page vi
 ---
 
 
-Last Updated: 30 November 2017 (2017.11.30).
+Last Updated: 1 December 2017 (2017.12.01).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.11.26).
+ * This file: Indonesian language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -45,12 +45,13 @@ $CIDRAM['lang']['config_general_statistics'] = 'Lacak statistik penggunaan CIDRA
 $CIDRAM['lang']['config_general_timeFormat'] = 'Format notasi tanggal/waktu yang digunakan oleh CIDRAM. Opsi tambahan dapat ditambahkan atas permintaan.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Offset zona waktu dalam hitungan menit.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zona waktu Anda.';
-$CIDRAM['lang']['config_general_truncate'] = 'Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catatan: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.';
+$CIDRAM['lang']['config_general_truncate'] = 'Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Jumlah jam untuk mengingat instansi reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Kunci reCAPTCHA ke IP?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Kunci reCAPTCHA ke pengguna?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'Mencatat hasil semua instansi reCAPTCHA? Jika ya, tentukan nama untuk menggunakan untuk file catatan. Jika tidak, variabel ini harus kosong.';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Nilai ini harus sesuai dengan "secret key" untuk reCAPTCHA Anda, yang dapat ditemukan dalam dashboard reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'Jumlah maksimum tanda tangan diizinkan untuk dipicu saat instansi reCAPTCHA harus ditawarkan. Default = 1. Jika nomor ini terlampaui untuk permintaan tertentu, instansi reCAPTCHA tidak akan ditawarkan.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Nilai ini harus sesuai dengan "site key" untuk reCAPTCHA Anda, yang dapat ditemukan dalam dashboard reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Mendefinisikan bagaimana CIDRAM harus menggunakan reCAPTCHA.';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Memblokir CIDR bogon/martian? Jika Anda mengharapkan koneksi ke website Anda dari dalam jaringan lokal Anda, dari localhost, atau dari LAN Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak mengharapkan ini, direktif ini harus didefinisikan untuk true/benar.';
@@ -257,7 +258,7 @@ $CIDRAM['lang']['tip_custom_ua'] = 'Masukkan agen pengguna (user agent) disini (
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
-$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catatan: CIDRAM menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salam, {username}.<br />Agregator IP memungkinkan Anda untuk mengekspresikan IP dan CIDR dengan cara sekecil mungkin. Masukkan data yang akan digabungkan dan tekan "OK".';
@@ -268,7 +269,7 @@ $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin
 $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.id.md#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $CIDRAM['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda.';
-$CIDRAM['lang']['tip_statistics_disabled'] = 'Catatan: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
+$CIDRAM['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $CIDRAM['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Akun';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Kalkulator CIDR';

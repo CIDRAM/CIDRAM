@@ -258,12 +258,12 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 /vault/ipv4_bogons.dat | ＩＰｖ４のシグネチャファイル （ボゴン/火星ＣＩＤＲ）。
 /vault/ipv4_custom.dat.RenameMe | ＩＰｖ４のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/ipv4_isps.dat | ＩＰｖ４のシグネチャファイル （スパマーを持つ危険なＩＳＰ）。
-/vault/ipv4_other.dat | ＩＰｖ４のシグネチャファイル （プロキシ、​VPN、​およびその他の不要なサービスのＣＩＤＲ）。
+/vault/ipv4_other.dat | ＩＰｖ４のシグネチャファイル （プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲ）。
 /vault/ipv6.dat | ＩＰｖ６のシグネチャファイル （不要なクラウドサービスと非人のエンドポイント）。
 /vault/ipv6_bogons.dat | ＩＰｖ６のシグネチャファイル （ボゴン/火星ＣＩＤＲ）。
 /vault/ipv6_custom.dat.RenameMe | ＩＰｖ６のカスタムシグネチャファイル（アクティブにするために名前を変更します）。
 /vault/ipv6_isps.dat | ＩＰｖ６のシグネチャファイル （スパマーを持つ危険なＩＳＰ）。
-/vault/ipv6_other.dat | ＩＰｖ６のシグネチャファイル （プロキシ、​VPN、​およびその他の不要なサービスのＣＩＤＲ）。
+/vault/ipv6_other.dat | ＩＰｖ６のシグネチャファイル （プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲ）。
 /vault/lang.php | 言語・ハンドラ。
 /vault/modules.dat | CIDRAMのモジュール情報が含まれています；​アップデート機能で使用（フロントエンドが提供します）。
 /vault/outgen.php | 出力発生器。
@@ -456,6 +456,9 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 
 *例:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+"signature_limit" （シグネチャ・リミット）
+- reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定の要求に対してこの数を超えると、reCAPTCHAインスタンスは提供されません。
 
 #### "template_data" （テンプレート・データ、​カテゴリ）
 テンプレートとテーマ用のディレクティブと変数。
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-注意：reCAPTCHAインスタンスは、​reCAPTCHAが有効な場合にのみユーザーに提供されます（「usemode」が１のとき、​または、​「usemode」が２と「enabled」が「true」のとき）、​そして、​厳密に１つのシグネチャがトリガされた場合（より大きい数ない、​より小さい数ない；複数のシグネチャがトリガーされた場合、​reCAPTCHAインスタンスは提供されません）。
+*注意：​デフォルトでは、reCAPTCHAインスタンスは、​reCAPTCHAが有効な場合にのみユーザーに提供されます（「usemode」が１のとき、​または、​「usemode」が２と「enabled」が「true」のとき）、​そして、​厳密に１つのシグネチャがトリガされた場合（より大きい数ない、​より小さい数ない；複数のシグネチャがトリガーされた場合、​reCAPTCHAインスタンスは提供されません）。​ただし、この動作は「signature_limit」ディレクティブで変更できます。*
 
 #### 7.3 補助
 
@@ -680,7 +683,7 @@ CIDRAMの文脈では、​「シグネチャ」とは、​インジケータ/�
 「モジュール」の場合：
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *注意：​「シグネチャ・ファイル」のシグネチャと、「モジュール」のシグネチャは、同じではありません。*
@@ -783,4 +786,4 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ---
 
 
-最終アップデート：2017年11月30日。
+最終アップデート：2017年12月1日。

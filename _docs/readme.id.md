@@ -457,6 +457,9 @@ Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCA
 *Contoh:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Jumlah maksimum tanda tangan diizinkan untuk dipicu saat instansi reCAPTCHA harus ditawarkan. Default = 1. Jika nomor ini terlampaui untuk permintaan tertentu, instansi reCAPTCHA tidak akan ditawarkan.
+
 #### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Catat: Sebuah instansi reCAPTCHA akan HANYA ditawarkan kepada pengguna jika reCAPTCHA diaktifkan (dengan "usemode" sebagai 1, atau "usemode" sebagai 2 dengan "enabled" sebagai true), dan jika tepat SATU tanda tangan dipicu (tidak lebih, tidak kurang; jika kelipatan tanda tangan dipicu, instansi reCAPTCHA TIDAK akan ditawarkan).
+*Catat: Secara default, instansi reCAPTCHA akan HANYA ditawarkan kepada pengguna jika reCAPTCHA diaktifkan (dengan "usemode" sebagai 1, atau "usemode" sebagai 2 dengan "enabled" sebagai true), dan jika tepat SATU tanda tangan dipicu (tidak lebih, tidak kurang; jika kelipatan tanda tangan dipicu, instansi reCAPTCHA TIDAK akan ditawarkan). Namun, perilaku ini dapat dimodifikasi melalui direktif "signature_limit".*
 
 #### 7.3 INFORMASI TAMBAHAN
 
@@ -680,7 +683,7 @@ Untuk "file tanda tangan":
 Untuk "modul":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Catat: Tanda tangan untuk "file tanda tangan", dan tanda tangan untuk "modul", bukanlah hal yang sama.*
@@ -783,4 +786,4 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 ---
 
 
-Terakhir Diperbarui: 30 November 2017 (2017.11.30).
+Terakhir Diperbarui: 1 Desember 2017 (2017.12.01).

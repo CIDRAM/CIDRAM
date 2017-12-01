@@ -457,6 +457,9 @@ Per ottenere una "site key" e una "secret key" (necessaria per l'utilizzo di reC
 *Esempi:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Il numero massimo di firme consentito per essere innescato quando viene offerta un'istanza di reCAPTCHA. Predefinito = 1. Se questo numero viene superato per una particolare richiesta, non verrà offerta un'istanza di reCAPTCHA.
+
 #### "template_data" (Categoria)
 Direttive/Variabili per modelli e temi.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Nota: Un istanza di reCAPTCHA sarà solo essere offerto all'utente se reCAPTCHA è attivato (sia con "usemode" come 1, o "usemode" come 2 con "enabled" come true), e se esattamente UN firma è stato attivato (né più, né meno; se più firme sono attivati, un'istanza di reCAPTCHA NON sarà offerto).
+*Nota: Di default, un'istanza di reCAPTCHA sarà solo essere offerto all'utente se reCAPTCHA è attivato (sia con "usemode" come 1, o "usemode" come 2 con "enabled" come true), e se esattamente UN firma è stato attivato (né più, né meno; se più firme sono attivati, un'istanza di reCAPTCHA NON sarà offerto). Però, questo comportamento può essere modificato tramite la direttiva "signature_limit".*
 
 #### 7.3 AUSILIARIO
 
@@ -680,7 +683,7 @@ Per "file di firma":
 Per "moduli":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Nota: Le firme per "file di firma", e le firme per "moduli", non sono la stessa cosa.*
@@ -783,4 +786,4 @@ Le "infrazioni" determinano quando un IP che non è ancora bloccato da uno speci
 ---
 
 
-Ultimo Aggiornamento: 30 Novembre 2017 (2017.11.30).
+Ultimo Aggiornamento: 1 Dicembre 2017 (2017.12.01).

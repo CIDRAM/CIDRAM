@@ -553,6 +553,11 @@
 
 `logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`
 
+<div dir="rtl">"signature_limit"<br /></div>
+<div dir="rtl"><ul>
+ <li>reCAPTCHA مثال پیش کرنے کے لئے جب دستخط کی زیادہ سے زیادہ تعداد کی شروعات کی جائے گی. پہلے سے طے شدہ = 1. اگر یہ نمبر کسی بھی مخصوص درخواست کے لئے حد سے تجاوز کردی گئی ہے تو، reCAPTCHA پیش نہیں کیا جائے گا.</li>
+</ul></div>
+
 #### <div dir="rtl">"template_data" (قسم)<br /></div>
 <div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات / متغیر.<br /><br /></div>
 
@@ -758,7 +763,7 @@ recaptcha:
  enabled: true
 ```
 
-<div dir="rtl">نوٹ: ایک reCAPTCHA مثال صرف (یا تو کے ساتھ 2 کے طور پر "usemode" کے طور پر 1، یا "usemode" "چالو حالت میں" کے طور پر سچ کے ساتھ) تو reCAPTCHA کے چالو حالت میں ہے صارف کو پیش کیا جائے گا، اور بالکل ایک دستخطی متحرک کیا گیا ہے (کوئی زیادہ ، کم نہیں؛ ایک سے زیادہ دستخط متحرک کر رہے ہیں تو، ایک reCAPTCHA مثال پیش کیا جائے نہیں کرے گا).<br /><br /></div>
+<div dir="rtl"><em>نوٹ: ڈیفالٹ کے مطابق، ایک reCAPTCHA مثال صرف (یا تو کے ساتھ 2 کے طور پر "usemode" کے طور پر 1، یا "usemode" "چالو حالت میں" کے طور پر سچ کے ساتھ) تو reCAPTCHA کے چالو حالت میں ہے صارف کو پیش کیا جائے گا، اور بالکل ایک دستخطی متحرک کیا گیا ہے (کوئی زیادہ ، کم نہیں؛ ایک سے زیادہ دستخط متحرک کر رہے ہیں تو، ایک reCAPTCHA مثال پیش کیا جائے نہیں کرے گا). تاہم، یہ رویہ "signature_limit" ہدایت کے ذریعے نظر ثانی کی جا سکتی ہے.</em><br /><br /></div>
 
 #### <div dir="rtl">٧.٣ معاون<br /><br /></div>
 
@@ -786,7 +791,7 @@ Ignore سیکشن 1
 <div dir="rtl">"ماڈیولز" کے لئے:<br /><br /></div>
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 <div dir="rtl">نوٹ: "دستخط فائلوں" کے لئے دستخط، اور "ماڈیولز" کے لئے دستخط وہی چیز نہیں ہیں.<em></em><br /><br /></div>
@@ -890,4 +895,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001'
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 30 نومبر 2017 (2017.11.30).</div>
+<div dir="rtl">آخری تازہ کاری: 1 دسمبر 2017 (2017.12.01).</div>

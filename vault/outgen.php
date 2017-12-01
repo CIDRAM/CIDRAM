@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.11.23).
+ * This file: Output generator (last modified: 2017.12.01).
  */
 
 /** Initialise cache. */
@@ -137,7 +137,8 @@ if (
     !empty($CIDRAM['Config']['recaptcha']['sitekey']) &&
     !empty($CIDRAM['Config']['recaptcha']['secret']) &&
     file_exists($CIDRAM['Vault'] . 'recaptcha.php') &&
-    $CIDRAM['BlockInfo']['SignatureCount'] === 1 && (
+    $CIDRAM['BlockInfo']['SignatureCount'] > 0 &&
+    $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] && (
         $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
             $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
             !empty($CIDRAM['Config']['recaptcha']['enabled'])
@@ -317,7 +318,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         !empty($CIDRAM['Config']['recaptcha']['secret']) &&
         empty($CIDRAM['Banned']) &&
         file_exists($CIDRAM['Vault'] . 'recaptcha.php') &&
-        $CIDRAM['BlockInfo']['SignatureCount'] === 1 && (
+        $CIDRAM['BlockInfo']['SignatureCount'] > 0 &&
+        $CIDRAM['BlockInfo']['SignatureCount'] <= $CIDRAM['Config']['recaptcha']['signature_limit'] && (
             $CIDRAM['Config']['recaptcha']['usemode'] === 1 || (
                 $CIDRAM['Config']['recaptcha']['usemode'] === 2 &&
                 !empty($CIDRAM['Config']['recaptcha']['enabled'])

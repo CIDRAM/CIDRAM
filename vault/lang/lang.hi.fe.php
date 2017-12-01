@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.11.26).
+ * This file: Hindi language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'कोई पी एस के ल
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'उपभोक्ताओं के लिए हीती लॉक?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'सभी reCAPTCHA के प्रयासों प्रवेश? यदि हाँ, लॉग फाइल पर के लिए उपयोग करने के लिए नाम निर्दिष्ट। कोई तो चर खाली छोड़ दें।';
 $CIDRAM['lang']['config_recaptcha_secret'] = '"secret key" मान reCAPTCHA डैशबोर्ड में पाया जा सकता है।';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'जब एक reCAPTCHA की पेशकश की जाती है तो अधिकतम हस्ताक्षर किए जाने की अनुमति दी जाती है। डिफ़ॉल्ट = 1। अगर यह संख्या किसी विशेष अनुरोध के लिए पार कर दी गई है, तो reCAPTCHA पेशकश नहीं किया जाएगा।';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = '"site key" मान reCAPTCHA डैशबोर्ड में पाया जा सकता है।';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'CIDRAM reCAPTCHA का उपयोग करना चाहिए कैसे विवरण (दस्तावेज़ देखें)।';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'अवरुद्ध bogon/martian की CIDRs? आप स्थानीय होस्ट, या अपने LAN अपने स्थानीय नेटवर्क के भीतर से अपनी वेबसाइट पर कनेक्शन, उम्मीद है, यह नुस्खा के गलत पर सेट किया जाना चाहिए। आप उनमें ऐसे कनेक्शनों की उम्मीद नहीं है, तो यह नुस्खा सही पर सेट किया जाना चाहिए।';

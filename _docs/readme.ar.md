@@ -553,6 +553,11 @@
 
 `logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`
 
+<div dir="rtl">"signature_limit"<br /></div>
+<div dir="rtl"><ul>
+ <li>الحد الأقصى لعدد التوقيعات المسموح بتشغيلها عند تقديم مثال reCAPTCHA. افتراضي = 1. إذا تم تجاوز هذا الرقم لأي طلب معين، لن يتم عرض مثال reCAPTCHA.</li>
+</ul></div>
+
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
 <div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
 
@@ -758,7 +763,7 @@ recaptcha:
  enabled: true
 ```
 
-<div dir="rtl">ملحوظة: سيتم فقط عرض على اختبار reCAPTCHA إذا تم تمكين اختبار reCAPTCHA (مع "usemode" ك 1، أو "usemode" ك 2 مع "enabled" ك true)، و إذا بالضبط واحد يتم تشغيل توقيع (لا أكثر ولا أقل؛ إذا يتم تشغيلها توقيعات متعددة، لن يتم عرض على اختبار reCAPTCHA).<br /><br /></div>
+<div dir="rtl"><em>ملحوظة: وفقا الافتراضي، سيتم فقط عرض على اختبار reCAPTCHA إذا تم تمكين اختبار reCAPTCHA (مع "usemode" ك 1، أو "usemode" ك 2 مع "enabled" ك true)، و إذا بالضبط واحد يتم تشغيل توقيع (لا أكثر ولا أقل؛ إذا يتم تشغيلها توقيعات متعددة، لن يتم عرض على اختبار reCAPTCHA). ومع ذلك، يمكن تعديل هذا السلوك عن طريق التوجيه "signature_limit".</em><br /><br /></div>
 
 #### <div dir="rtl">٧.٣ معلومات اضافية<br /><br /></div>
 
@@ -786,7 +791,7 @@ Ignore القسم ١
 <div dir="rtl">بالنسبة إلى "الوحدات النمطية":<br /><br /></div>
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 <div dir="rtl">ملاحظة: التوقيعات ل "ملفات التوقيع"، والتوقيعات ل "وحدات"، ليست هي نفس الشيء.<em></em><br /><br /></div>
@@ -890,4 +895,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001'
 ---
 
 
-<div dir="rtl">آخر تحديث: 30 نوفمبر 2017 (2017.11.30).</div>
+<div dir="rtl">آخر تحديث: 1 ديسمبر 2017 (2017.12.01).</div>

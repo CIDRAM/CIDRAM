@@ -457,6 +457,9 @@ Para obtener una "site key" y una "secret key" (requerida para utilizar reCAPTCH
 *Ejemplos:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Número máximo de firmas permitidas para ser disparado cuando se ofrece una instancia reCAPTCHA. Predefinido = 1. Si se excede este número para cualquier solicitud particular, no se ofrecerá una instancia de reCAPTCHA.
+
 #### "template_data" (Categoría)
 Directivas/Variables para las plantillas y temas.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Nota: Un instancia de reCAPTCHA sólo se ofrecerán al usuario si reCAPTCHA está activado (ya sea con "usemode" como 1, o "usemode" como 2 con "enabled" como true), y si exactamente UNA firma se desencadena (ni mas, ni menos; si múltiples firmas se desencadena, una instancia de reCAPTCHA NO se ofrecerán).
+*Nota: Como comportamiento predefinido, un instancia de reCAPTCHA sólo se ofrecerán al usuario si reCAPTCHA está activado (ya sea con "usemode" como 1, o "usemode" como 2 con "enabled" como true), y si exactamente UNA firma se desencadena (ni mas, ni menos; si múltiples firmas se desencadena, una instancia de reCAPTCHA NO se ofrecerán). Aunque, este comportamiento se puede modificar mediante la directiva "signature_limit".*
 
 #### 7.3 AUXILIAR
 
@@ -680,7 +683,7 @@ Para "archivos de firma":
 Para "módulos":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Nota: Las firmas para "archivos de firma", y las firmas para "módulos", no son lo mismo.*
@@ -783,4 +786,4 @@ Las "infracciones" determinan cuándo una IP que todavía no está bloqueada por
 ---
 
 
-Última Actualización: 30 Noviembre 2017 (2017.11.30).
+Última Actualización: 1 Diciembre 2017 (2017.12.01).

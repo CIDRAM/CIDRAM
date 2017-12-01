@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.11.26).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = '應該reCAPTCHA鎖定到IP？';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = '應該reCAPTCHA鎖定到用戶？';
 $CIDRAM['lang']['config_recaptcha_logfile'] = '記錄所有的reCAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。';
 $CIDRAM['lang']['config_recaptcha_secret'] = '該值應該對應於『secret key』為您的reCAPTCHA，​該可以發現在reCAPTCHA的儀表板。';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = '當提供reCAPTCHA實例時，允許觸發的最大簽名數量。​標準 = 1。​如果這個數字超過了任何特定的請求，一個reCAPTCHA實例將不會被提供。';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = '該值應該對應於『site key』為您的reCAPTCHA，​該可以發現在reCAPTCHA的儀表板。';
 $CIDRAM['lang']['config_recaptcha_usemode'] = '它定義瞭如何CIDRAM應該使用reCAPTCHA（請參閱文檔）。';
 $CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（『火星』）CIDR嗎？​如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，​這應該被設置為False（假）。​如果不，​這應該被設置為True（真）。';

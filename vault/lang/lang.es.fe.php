@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.11.26).
+ * This file: Spanish language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'Ligar reCAPTCHA a los IPs?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Ligar reCAPTCHA a los usuarios?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'Registrar todos los intentos de reCAPTCHA? En caso afirmativo, especifique el nombre que se utilizará para el archivo de registro. Si no, dejar esta variable en blanco.';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Este valor debe corresponder a la "secret key" para su reCAPTCHA, que se puede encontrar en el panel de control de reCAPTCHA.';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'Número máximo de firmas permitidas para ser disparado cuando se ofrece una instancia reCAPTCHA. Predefinido = 1. Si se excede este número para cualquier solicitud particular, no se ofrecerá una instancia de reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Este valor debe corresponder a la "site key" para su reCAPTCHA, que se puede encontrar en el panel de control de reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Define cómo CIDRAM debe utilizar reCAPTCHA (ver documentación).';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Bloquear CIDRs identificados como bogons/martians? Si usted espera conexiones a su sitio web desde dentro de su red local, desde localhost, o desde su LAN, esta directiva debe ser establecido para false. Si usted no espera estos tipos de conexiones, esta directiva debe ser establecido para true.';

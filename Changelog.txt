@@ -53,6 +53,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.11.24; Sub-minor code change; Maikuolan]: Refactored the code for the
   reCAPTCHA module and slightly improved its UI.
 
+- [2017.12.01; Minor code change; Maikuolan]: Added a new directive,
+  "signature_limit", allowing users to specify via configuration the maximum
+  number of signatures allowed to be triggered when a reCAPTCHA instance is to
+  be offered. Previously, this value was hardcoded to 1 (which remains the
+  default value for this new directive).
+  Refer github.com/CIDRAM/CIDRAM/issues/45
+
 === Version/Release 1.2.0 ===
 MINOR RELEASE.
 

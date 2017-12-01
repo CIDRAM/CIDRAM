@@ -420,7 +420,7 @@ Configuração por assinaturas.
 - Quando as infrações devem ser contadas? False = Quando os IPs são bloqueados por módulos. True = Quando os IPs são bloqueados por qualquer motivo.
 
 #### "recaptcha" (Categoria)
-Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
+Opcionalmente, você pode fornecer aos usuários uma maneira de contornar a página de "Acesso Negado" por meio de completar uma instância de reCAPTCHA, se você quiser fazê-lo. Isso pode ajudar a mitigar alguns dos riscos associados com falsos positivos nas situações em que não estamos inteiramente certo se uma solicitação tem originado a partir de uma máquina ou um ser humano.
 
 Devido aos riscos associados com fornecimento de uma maneira para os usuários a ignorar a página de "Acesso Negado", geralmente, gostaria de aconselhar contra habilitação deste recurso a menos que você sente que isso é necessário para fazê-lo. Situações em que poderia ser necessário: Se seu site tem clientes/usuários que precisam ter acesso ao seu site, e se essa é algo que não pode ser comprometida em, mas se os clientes/usuários acontecer a ser conectando a partir de uma rede hostil que poderiam ser também carregando de tráfego indesejável, e bloqueando este tráfego indesejável também é algo que não pode ser comprometida em, nessas situações particulares sem vitória, o recurso reCAPTCHA poderia ser útil como um meio de permitir que os clientes/usuários desejáveis, enquanto mantendo fora o tráfego indesejável a partir da mesma rede. Dito isto, considerando que o propósito de um CAPTCHA é distinguir entre humanos e não-humanos, o recurso reCAPTCHA só iria ajudar nestas situações sem vitória se fosse para supor que este tráfego indesejável é não-humano (por exemplo, spambots, raspadores, ferramentas de hackers, tráfego automatizado), ao contrário de ser tráfego humano indesejável (tais como spammer humanos, hackers, et ai).
 
@@ -456,6 +456,9 @@ Para obter uma "site key" e uma "secret key" (necessário para usando reCAPTCHA)
 
 *Exemplos:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+"signature_limit"
+- O número máximo de assinaturas que podem ser desencadeado quando uma instância de reCAPTCHA deve ser oferecida. Padrão = 1. Se este número for excedido para qualquer solicitação específica, uma instância de reCAPTCHA não será oferecida.
 
 #### "template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Nota: Um instância de reCAPTCHA vai SOMENTE ser oferecido ao usuário se reCAPTCHA está habilitado (quer com "usemode" como 1, ou "usemode" como 2 com "enabled" como true), e se exatamente UMA assinatura foi desencadeada (nem mais, nem menos; se assinaturas múltiplas são desencadeadas, uma instância de reCAPTCHA NÃO será oferecida).
+*Nota: Por padrão, uma instância de reCAPTCHA vai SOMENTE ser oferecido ao usuário se reCAPTCHA está habilitado (quer com "usemode" como 1, ou "usemode" como 2 com "enabled" como true), e se exatamente UMA assinatura foi desencadeada (nem mais, nem menos; se assinaturas múltiplas são desencadeadas, uma instância de reCAPTCHA NÃO será oferecida). Contudo, esse comportamento pode ser modificado através da diretiva "signature_limit".*
 
 #### 7.3 AUXILIAR
 
@@ -680,7 +683,7 @@ Para "arquivos de assinatura":
 Para "módulos":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Nota: Assinaturas para "arquivos de assinatura", e assinaturas para "módulos", não são a mesma coisa.*
@@ -783,4 +786,4 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 ---
 
 
-Última Atualização: 30 Novembro 2017 (2017.11.30).
+Última Atualização: 1 Dezembro 2017 (2017.12.01).

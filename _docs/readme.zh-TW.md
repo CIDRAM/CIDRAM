@@ -458,6 +458,9 @@ CIDRAM 應自動阻止不良的請求至您的網站，​沒有任何需求除�
 *例子：*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+『signature_limit』
+- 當提供reCAPTCHA實例時，允許觸發的最大簽名數量。​標準 = 1。​如果這個數字超過了任何特定的請求，一個reCAPTCHA實例將不會被提供。
+
 #### 『template_data』 （類別）
 指令和變量為模板和主題。
 
@@ -653,7 +656,7 @@ recaptcha:
  enabled: true
 ```
 
-注意：一個reCAPTCHA將僅提供給用戶如果reCAPTCHA是啟用（當『usemode』是『1』，​或『usemode』是『2』和『enabled』是『true』），​和如果只有一個簽名已觸發（不多不少；如果多個簽名被觸發，​一個reCAPTCHA將不提供）。
+*注意：默認，一個reCAPTCHA將僅提供給用戶如果reCAPTCHA是啟用（當『usemode』是『1』，​或『usemode』是『2』和『enabled』是『true』），​和如果只有一個簽名已觸發（不多不少；如果多個簽名被觸發，​一個reCAPTCHA將不提供）。​然而，這個行為可以通過『signature_limit』指令來修改。*
 
 #### 7.3 輔
 
@@ -681,7 +684,7 @@ Ignore 部分一
 對於『模塊』：
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *注意：『簽名文件』的簽名，和『模塊』的簽名，不是一回事。*
@@ -784,4 +787,4 @@ CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責�
 ---
 
 
-最後更新：2017年11月30日。
+最後更新：2017年12月1日。

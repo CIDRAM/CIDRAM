@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.11.26).
+ * This file: Dutch language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'Binden reCAPTCHA om IPs?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Binden reCAPTCHA om gebruikers?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'Log alle reCAPTCHA pogingen? Zo ja, geef de naam te gebruiken voor het logbestand. Zo nee, laat u deze variabele leeg.';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'Deze waarde moet overeenkomen met de "secret key" voor uw reCAPTCHA, die kan worden gevonden binnen de reCAPTCHA dashboard.';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'Maximale aantal signatures dat kan worden veroorzaakt wanneer een reCAPTCHA-instantie wordt aangeboden. Standaard = 1. Als dit aantal wordt overschreden voor een bepaald verzoek, wordt er geen reCAPTCHA-instantie aangeboden.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Deze waarde moet overeenkomen met de "site key" voor uw reCAPTCHA, die kan worden gevonden binnen de reCAPTCHA dashboard.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Bepaalt hoe CIDRAM reCAPTCHA moet gebruiken (raadpleeg de documentatie).';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blokkeren bogon/martian CIDRs? Als u verwacht aansluitingen om uw website vanuit uw lokale netwerk, vanuit localhost, of vanuit uw LAN, dit richtlijn moet worden ingesteld op false. Als u niet verwacht deze aansluitingen, dit richtlijn moet worden ingesteld op true.';

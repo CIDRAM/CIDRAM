@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.11.26).
+ * This file: Bangla language data for the front-end (last modified: 2017.12.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA IP অ্যাড্র
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHA ব্যবহারকারীদের লক করুন?';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'সব reCAPTCHA প্রচেষ্টা লগ ইন করুন? যদি তাই, লগ ফাইলে ব্যবহারের জন্য নামটি উল্লেখ করুন। যদি না, এই পরিবর্তনশীল খালি রাখুন।';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'এই মান আপনার reCAPTCHA জন্য "secret key" অনুরূপ করা উচিত (reCAPTCHA ড্যাশবোর্ডের মধ্যে পাওয়া যেতে পারে)।';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'একটি reCAPTCHA উদাহরণ প্রস্তাব করা হয় যখন সর্বাধিক স্বাক্ষর আরম্ভ করা অনুমোদিত। ডিফল্ট = 1। যদি এই নম্বরটি কোনো নির্দিষ্ট অনুরোধের জন্য অতিক্রম করা হয়, তাহলে একটি reCAPTCHA উদাহরণ দেওয়া হবে না।';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'এই মান আপনার reCAPTCHA জন্য "site key" অনুরূপ করা উচিত (reCAPTCHA ড্যাশবোর্ডের মধ্যে পাওয়া যেতে পারে)।';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'কিভাবে CIDRAM reCAPTCHA ব্যবহার করা উচিত তা নির্ধারণ করে (ডকুমেন্টেশন দেখুন)।';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'bogon/মঙ্গল CIDRগুলি ব্লক কর? আপনার স্থানীয় নেটওয়ার্কে, localhost, LAN, ইত্যাদি থেকে আপনার ওয়েবসাইট সংযোগ, এই নির্দেশটি false হিসাবে সেট করা উচিত। আপনি যদি এই ধরনের সংযোগগুলি আশা না করেন, এই নির্দেশটি true হিসাবে সেট করা উচিত।';

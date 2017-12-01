@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.11.26).
+ * This file: Front-end functions file (last modified: 2017.11.30).
  */
 
 /**
@@ -898,10 +898,10 @@ $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Date = date('Y.n.j', $CIDRAM['Now']);
     $Level = 0;
-    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.31') || (
-        !$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.17')
+    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.32') || (
+        !$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.25')
     ) || (
-        !$CIDRAM['VersionCompare']($Version, '7.1.0') && $CIDRAM['VersionCompare']($Version, '7.1.3')
+        !$CIDRAM['VersionCompare']($Version, '7.1.0') && $CIDRAM['VersionCompare']($Version, '7.1.11')
     )) {
         $Level += 2;
     }

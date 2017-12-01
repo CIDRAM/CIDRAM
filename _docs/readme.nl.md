@@ -457,6 +457,9 @@ Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik va
 *Voorbeelden:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+"signature_limit"
+- Maximale aantal signatures dat kan worden veroorzaakt wanneer een reCAPTCHA-instantie wordt aangeboden. Standaard = 1. Als dit aantal wordt overschreden voor een bepaald verzoek, wordt er geen reCAPTCHA-instantie aangeboden.
+
 #### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
 
@@ -652,7 +655,7 @@ recaptcha:
  enabled: true
 ```
 
-Notitie: Een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN signature is geactiveerd (niet meer, niet minder; als er meerdere signatures worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden).
+*Notitie: Als standaard, een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN signature is geactiveerd (niet meer, niet minder; als er meerdere signatures worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden). Echter, dit gedrag kan worden gewijzigd via de "signature_limit" richtlijn.*
 
 #### 7.3 EXTRA INFORMATIE
 
@@ -680,7 +683,7 @@ Voor "signature bestanden":
 Voor "modules":
 
 ```PHP
-$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'No-Foobar-001', 'No foobar here. Foobar not here.');
+$Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
 *Notitie: Signatures voor "signature bestanden", en signatures voor "modules", zijn niet hetzelfde.*
@@ -783,4 +786,4 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 ---
 
 
-Laatste Bijgewerkt: 30 November 2017 (2017.11.30).
+Laatste Bijgewerkt: 1 December 2017 (2017.12.01).

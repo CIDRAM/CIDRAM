@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.11.20).
+ * This file: Functions file (last modified: 2017.12.03).
  */
 
 /**
@@ -826,6 +826,20 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
 };
 
 /**
+ * Routes to "DNS-Reverse-IPv4" or "DNS-Reverse-IPv6", or returns an empty
+ * string, depending on the type of input supplied to $Addr.
+ */
+$CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
+    if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false) {
+        return $CIDRAM['DNS-Reverse-IPv4']($Addr, $DNS, $Timeout);
+    }
+    if (strpos($Addr, '.') === false && strpos($Addr, ':') !== false) {
+        return $CIDRAM['DNS-Reverse-IPv6']($Addr, $DNS, $Timeout);
+    }
+    return '';
+};
+
+/**
  * Performs reverse DNS lookups for IPv4 IP addresses, to resolve their
  * hostnames. This is functionally equivalent to the in-built PHP function
  * "gethostbyaddr", but with the added benefits of being able to specify which
@@ -839,6 +853,11 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
  * @return string The hostname on success, or the IP address on failure.
  */
 $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
+    /** Reroute to "DNS-Reverse-IPv6" if we've gotten it wrong. */
+    if (strpos($Addr, '.') === false && strpos($Addr, ':') !== false) {
+        return $CIDRAM['DNS-Reverse-IPv6']($Addr, $DNS, $Timeout);
+    }
+
     if (!isset($CIDRAM['_allow_url_fopen'])) {
         $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
         $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] == 'Off');
@@ -904,6 +923,20 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
 };
 
 /**
+ * Reserved for future use (reverse DNS lookups for IPv6 IP addresses aren't
+ * supported yet, but will be supported in the future).
+ */
+$CIDRAM['DNS-Reverse-IPv6'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
+    /** Reroute to "DNS-Reverse-IPv4" if we've gotten it wrong. */
+    if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false) {
+        return $CIDRAM['DNS-Reverse-IPv4']($Addr, $DNS, $Timeout);
+    }
+
+    /** Return $Addr. */
+    return $Addr;
+};
+
+/**
  * Performs forward DNS lookups for hostnames, to resolve their IP address.
  * This is functionally equivalent to the in-built PHP function
  * "gethostbyname", but with the added benefits of having IPv6 support and of
@@ -963,7 +996,7 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
 $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = false) use (&$CIDRAM) {
     if (empty($CIDRAM['Hostname'])) {
         /** Fetch the hostname. */
-        $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse-IPv4']($CIDRAM['BlockInfo']['IPAddr']);
+        $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
     }
     /** Force domains to be an array. */
     $CIDRAM['Arrayify']($Domains);

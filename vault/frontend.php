@@ -443,11 +443,6 @@ if ($CIDRAM['FE']['UserState'] === 1 && !$CIDRAM['FE']['CronMode']) {
 
     }
 
-    /** Execute hotfixes. */
-    if (file_exists($CIDRAM['Vault'] . 'hotfixes.php')) {
-        require $CIDRAM['Vault'] . 'hotfixes.php';
-    }
-
 }
 
 $CIDRAM['FE']['bNavBR'] = ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';

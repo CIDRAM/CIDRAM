@@ -1116,21 +1116,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     $CIDRAM['FE']['UpdatesFormTarget'] = 'cidram-page=updates';
     $CIDRAM['FE']['UpdatesFormTargetControls'] = '';
-    if (!$CIDRAM['FE']['CronMode']) {
-        $CIDRAM['StateModified'] = false;
-        $CIDRAM['FilterSwitch'](
-            ['hide-non-outdated', 'hide-unused'],
-            isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
-            $CIDRAM['StateModified'],
-            $CIDRAM['FE']['UpdatesFormTarget'],
-            $CIDRAM['FE']['UpdatesFormTargetControls']
-        );
-        if ($CIDRAM['StateModified']) {
-            header('Location: ?' . $CIDRAM['FE']['UpdatesFormTarget']);
-            die;
-        }
-        unset($CIDRAM['StateModified']);
+    $CIDRAM['StateModified'] = false;
+    $CIDRAM['FilterSwitch'](
+        ['hide-non-outdated', 'hide-unused'],
+        isset($_POST['FilterSelector']) ? $_POST['FilterSelector'] : '',
+        $CIDRAM['StateModified'],
+        $CIDRAM['FE']['UpdatesFormTarget'],
+        $CIDRAM['FE']['UpdatesFormTargetControls']
+    );
+    if ($CIDRAM['StateModified']) {
+        header('Location: ?' . $CIDRAM['FE']['UpdatesFormTarget']);
+        die;
     }
+    unset($CIDRAM['StateModified']);
 
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = ['Meta' => [], 'RemoteMeta' => []];
@@ -1608,10 +1606,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         /** Normal page output. */
         echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
     } elseif (!empty($UpdateAll)) {
-        $Results = json_encode([
         /** Returned state message for cronable (locally updating). */
-            'state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])
-        ]);
+        $Results = ['state_msg' => str_ireplace(['<code>', '</code>', '<br />'], ['[', ']', "\n"], $CIDRAM['FE']['state_msg'])];
     } elseif (!empty($CIDRAM['FE']['state_msg'])) {
         /** Returned state message for cronable. */
         echo json_encode([
@@ -2586,7 +2582,7 @@ if ($CIDRAM['FE']['CronMode'] && $CIDRAM['FE']['state_msg'] && $CIDRAM['FE']['Us
     if (empty($UpdateAll)) {
         echo json_encode(['state_msg' => $CIDRAM['FE']['state_msg']]);
     } else {
-        $Results = json_encode(['state_msg' => $CIDRAM['FE']['state_msg']]);
+        $Results = ['state_msg' => $CIDRAM['FE']['state_msg']];
     }
 }
 

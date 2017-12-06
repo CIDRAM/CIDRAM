@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.12.01).
+ * This file: Japanese language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'アップデート';
 $CIDRAM['lang']['field_update_all'] = 'すべてアップデートする';
 $CIDRAM['lang']['field_upload_file'] = '新しいファイルをアップロードする';
 $CIDRAM['lang']['field_username'] = 'ユーザー名';
+$CIDRAM['lang']['field_verify'] = '検証する';
+$CIDRAM['lang']['field_verify_all'] = 'すべてを検証する';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、​ログインしてください。';
 $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'パスワード入力�
 $CIDRAM['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = '間違ったエンドポイント！';
 $CIDRAM['lang']['response_no'] = 'いいえ';
+$CIDRAM['lang']['response_possible_problem_found'] = '考えられる問題が見つかりました。';
 $CIDRAM['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $CIDRAM['lang']['response_statistics_cleared'] = '統計はクリアされました。';
 $CIDRAM['lang']['response_tracking_cleared'] = 'トラッキングがキャンセルされました。';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = '時代遅れです（�
 $CIDRAM['lang']['response_updates_outdated_php_version'] = '時代遅れです（PHP {V}が必要です）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '決定することができません。';
 $CIDRAM['lang']['response_upload_error'] = 'アップロードに失敗しました！';
+$CIDRAM['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
+$CIDRAM['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
 $CIDRAM['lang']['response_yes'] = 'はい';
 $CIDRAM['lang']['state_complete_access'] = '完全なアクセス';
 $CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';

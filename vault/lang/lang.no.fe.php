@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.12.01).
+ * This file: Norwegian language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Oppdater';
 $CIDRAM['lang']['field_update_all'] = 'Oppdater alt';
 $CIDRAM['lang']['field_upload_file'] = 'Last opp ny fil';
 $CIDRAM['lang']['field_username'] = 'Brukernavn';
+$CIDRAM['lang']['field_verify'] = 'Verifisere';
+$CIDRAM['lang']['field_verify_all'] = 'Verifisere alt';
 $CIDRAM['lang']['field_your_version'] = 'Din Versjon';
 $CIDRAM['lang']['header_login'] = 'Vennligst logg inn for å fortsette.';
 $CIDRAM['lang']['label_active_config_file'] = 'Aktiv konfigurasjonsfil: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Passord-felt tomt!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Brukernavn-felt tomt!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Feil sluttpunkt!';
 $CIDRAM['lang']['response_no'] = 'Nei';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Mulig problem funnet.';
 $CIDRAM['lang']['response_rename_error'] = 'Omdøpe mislyktes!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistikk fjernet.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Sporing fjernet.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Utdatert (vennligst opp
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Utdatert (krever PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Kan ikke fastslå.';
 $CIDRAM['lang']['response_upload_error'] = 'Opplasting mislyktes!';
+$CIDRAM['lang']['response_verification_failed'] = 'Verifisering mislyktes! Komponent kan bli skadet.';
+$CIDRAM['lang']['response_verification_success'] = 'Verifisering suksess! Ingen problemer funnet.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_complete_access'] = 'Komplett tilgang';
 $CIDRAM['lang']['state_component_is_active'] = 'Komponent er aktiv.';

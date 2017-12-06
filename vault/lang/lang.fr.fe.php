@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.12.01).
+ * This file: French language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Mettre à jour';
 $CIDRAM['lang']['field_update_all'] = 'Tout mettre à jour';
 $CIDRAM['lang']['field_upload_file'] = 'Télécharger un nouveau fichier';
 $CIDRAM['lang']['field_username'] = 'Nom d\'Utilisateur';
+$CIDRAM['lang']['field_verify'] = 'Vérifier';
+$CIDRAM['lang']['field_verify_all'] = 'Vérifier tous';
 $CIDRAM['lang']['field_your_version'] = 'Votre Version';
 $CIDRAM['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $CIDRAM['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Mot de passe entrée �
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nom d\'utilisateur entrée était vide !';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Mauvais point final !';
 $CIDRAM['lang']['response_no'] = 'Non';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Problème possible trouvé.';
 $CIDRAM['lang']['response_rename_error'] = 'Échec du renomment !';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiques annulées.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Surveillance annulée.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vous p
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Dépassé (il nécessite PHP {V}) !';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
 $CIDRAM['lang']['response_upload_error'] = 'Échec du téléchargement !';
+$CIDRAM['lang']['response_verification_failed'] = 'Échec de la vérification ! Composant pourrait être corrompu.';
+$CIDRAM['lang']['response_verification_success'] = 'Succès de la vérification ! Aucun problème trouvé.';
 $CIDRAM['lang']['response_yes'] = 'Oui';
 $CIDRAM['lang']['state_complete_access'] = 'Accès complet';
 $CIDRAM['lang']['state_component_is_active'] = 'Le composant est actif.';

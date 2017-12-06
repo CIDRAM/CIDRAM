@@ -1195,18 +1195,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
             }
         }
-        if (empty($CIDRAM['Components']['ThisComponent']['Remote'])) {
-            $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
-            if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
-                $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
-            }
-        } else {
+        if (!empty($CIDRAM['Components']['ThisComponent']['Files'])) {
             $CIDRAM['Arrayify']($CIDRAM['Components']['ThisComponent']['Files']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['ThisComponent']['Files']['To']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['ThisComponent']['Files']['From']);
             if (isset($CIDRAM['Components']['ThisComponent']['Files']['Checksum'])) {
                 $CIDRAM['Arrayify']($CIDRAM['Components']['ThisComponent']['Files']['Checksum']);
             }
+        }
+        if (empty($CIDRAM['Components']['ThisComponent']['Remote'])) {
+            $CIDRAM['Components']['ThisComponent']['RemoteData'] = $CIDRAM['lang']['response_updates_unable_to_determine'];
+            if (!$CIDRAM['Components']['ThisComponent']['StatClass']) {
+                $CIDRAM['Components']['ThisComponent']['StatClass'] = 's';
+            }
+        } else {
             $CIDRAM['FetchRemote']();
             if (
                 substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 0, 4) === "---\n" &&
@@ -1362,6 +1364,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             !empty($CIDRAM['Components']['ThisComponent']['Files']['Checksum']) &&
             is_array($CIDRAM['Components']['ThisComponent']['Files']['Checksum'])
         ) {
+            $CIDRAM['Components']['ThisComponent']['Options'] .=
+                '<option value="verify-component">' . $CIDRAM['lang']['field_verify'] . '</option>';
             array_walk($CIDRAM['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$CIDRAM) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
                     $CIDRAM['Components']['ThisComponent']['VersionSize'] +=
@@ -1384,8 +1388,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         ) {
             array_walk($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Files']['Checksum'], function ($Checksum) use (&$CIDRAM) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
-                    $CIDRAM['Components']['ThisComponent']['LatestSize'] +=
-                        (int)substr($Checksum, $Delimiter + 1);
+                    $CIDRAM['Components']['ThisComponent']['LatestSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
             });
         }

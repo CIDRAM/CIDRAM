@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.12.01).
+ * This file: Bangla language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'আপডেট করুন';
 $CIDRAM['lang']['field_update_all'] = 'সব আপডেট করুন';
 $CIDRAM['lang']['field_upload_file'] = 'নতুন ফাইল আপলোড করুন';
 $CIDRAM['lang']['field_username'] = 'ব্যবহারকারীর নাম';
+$CIDRAM['lang']['field_verify'] = 'যাচাই করুন';
+$CIDRAM['lang']['field_verify_all'] = 'সব যাচাই করুন';
 $CIDRAM['lang']['field_your_version'] = 'আপনার সংস্করণ';
 $CIDRAM['lang']['header_login'] = 'চালিয়ে যেতে দয়া করে লগ ইন করুন।';
 $CIDRAM['lang']['label_active_config_file'] = 'সক্রিয় কনফিগারেশন ফাইল: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'পাসওয়া�
 $CIDRAM['lang']['response_login_username_field_empty'] = 'ব্যবহারকারীর নাম ক্ষেত্র খালি!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'ভুল শেষপ্রান্ত!';
 $CIDRAM['lang']['response_no'] = 'না';
+$CIDRAM['lang']['response_possible_problem_found'] = 'সম্ভাব্য সমস্যা পাওয়া যায়।';
 $CIDRAM['lang']['response_rename_error'] = 'নামান্তর করতে ব্যর্থ!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'পরিসংখ্যান পরিস্কার।';
 $CIDRAM['lang']['response_tracking_cleared'] = 'পর্যবেক্ষণ মুছে ফেলা হয়েছে।';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'আউটডেটে�
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'আউটডেটেড (PHP {V} প্রয়োজন)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'নির্ধারণ করতে অক্ষম।';
 $CIDRAM['lang']['response_upload_error'] = 'আপলোড করতে ব্যর্থ!';
+$CIDRAM['lang']['response_verification_failed'] = 'যাচাইয়ের ব্যর্থ! কম্পোনেন্ট ভাঙ্গা হতে পারে।';
+$CIDRAM['lang']['response_verification_success'] = 'যাচাইয়ের সাফল্য! কোন সমস্যা খুঁজে পাওয়া যায় নি।';
 $CIDRAM['lang']['response_yes'] = 'হাঁ';
 $CIDRAM['lang']['state_complete_access'] = 'সম্পূর্ণ প্রবেশাধিকার';
 $CIDRAM['lang']['state_component_is_active'] = 'কম্পোনেন্ট সক্রিয়।';

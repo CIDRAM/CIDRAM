@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.12.01).
+ * This file: Arabic language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'تحديث';
 $CIDRAM['lang']['field_update_all'] = 'تحديث الجميع';
 $CIDRAM['lang']['field_upload_file'] = 'تحميل ملف جديد';
 $CIDRAM['lang']['field_username'] = 'اسم المستخدم';
+$CIDRAM['lang']['field_verify'] = 'التحقق';
+$CIDRAM['lang']['field_verify_all'] = 'التحقق من الكل';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'كلمه السر حق
 $CIDRAM['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'نقطة نهاية خاطئة!';
 $CIDRAM['lang']['response_no'] = 'لا';
+$CIDRAM['lang']['response_possible_problem_found'] = 'تم العثور على مشكلة محتملة.';
 $CIDRAM['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'التتبع ألغيت.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'عفا عليها ال�
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'عفا عليها الزمن (يتطلب PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';
 $CIDRAM['lang']['response_upload_error'] = 'فشل لتحميل!';
+$CIDRAM['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
+$CIDRAM['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
 $CIDRAM['lang']['response_yes'] = 'نعم';
 $CIDRAM['lang']['state_complete_access'] = 'الوصول كامل';
 $CIDRAM['lang']['state_component_is_active'] = 'وحدة نشطة.';

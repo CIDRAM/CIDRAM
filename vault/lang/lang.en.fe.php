@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.12.01).
+ * This file: English language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Update';
 $CIDRAM['lang']['field_update_all'] = 'Update all';
 $CIDRAM['lang']['field_upload_file'] = 'Upload new file';
 $CIDRAM['lang']['field_username'] = 'Username';
+$CIDRAM['lang']['field_verify'] = 'Verify';
+$CIDRAM['lang']['field_verify_all'] = 'Verify all';
 $CIDRAM['lang']['field_your_version'] = 'Your Version';
 $CIDRAM['lang']['header_login'] = 'Please log in to continue.';
 $CIDRAM['lang']['label_active_config_file'] = 'Active configuration file: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Password field empty!'
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Username field empty!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Wrong endpoint!';
 $CIDRAM['lang']['response_no'] = 'No';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Possible problem found.';
 $CIDRAM['lang']['response_rename_error'] = 'Failed to rename!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistics cleared.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracking cleared.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Outdated (please update
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Outdated (requires PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
 $CIDRAM['lang']['response_upload_error'] = 'Failed to upload!';
+$CIDRAM['lang']['response_verification_failed'] = 'Verification failed! Component could be corrupted.';
+$CIDRAM['lang']['response_verification_success'] = 'Verification success! No problems found.';
 $CIDRAM['lang']['response_yes'] = 'Yes';
 $CIDRAM['lang']['state_complete_access'] = 'Complete access';
 $CIDRAM['lang']['state_component_is_active'] = 'Component is active.';

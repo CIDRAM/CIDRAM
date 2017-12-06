@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.12.01).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = '更新';
 $CIDRAM['lang']['field_update_all'] = '更新一切';
 $CIDRAM['lang']['field_upload_file'] = '上传新文件';
 $CIDRAM['lang']['field_username'] = '用户名';
+$CIDRAM['lang']['field_verify'] = '验证';
+$CIDRAM['lang']['field_verify_all'] = '验证全部';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = '密码输入是空的�
 $CIDRAM['lang']['response_login_username_field_empty'] = '用户名输入是空的！';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = '错误的端点！';
 $CIDRAM['lang']['response_no'] = '不是';
+$CIDRAM['lang']['response_possible_problem_found'] = '可能的问题发现。';
 $CIDRAM['lang']['response_rename_error'] = '无法改名！';
 $CIDRAM['lang']['response_statistics_cleared'] = '统计删除。';
 $CIDRAM['lang']['response_tracking_cleared'] = '已撤消跟踪。';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = '过时（请更新手�
 $CIDRAM['lang']['response_updates_outdated_php_version'] = '过时（它需要PHP {V}）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '无法确定。';
 $CIDRAM['lang']['response_upload_error'] = '无法上传！';
+$CIDRAM['lang']['response_verification_failed'] = '验证失败！组件可能已损坏。';
+$CIDRAM['lang']['response_verification_success'] = '验证成功！没有发现问题。';
 $CIDRAM['lang']['response_yes'] = '是';
 $CIDRAM['lang']['state_complete_access'] = '完全访问';
 $CIDRAM['lang']['state_component_is_active'] = '组件是活性。';

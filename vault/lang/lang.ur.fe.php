@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.12.01).
+ * This file: Urdu language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'اپ ڈیٹ';
 $CIDRAM['lang']['field_update_all'] = 'تمام تجدید کریں';
 $CIDRAM['lang']['field_upload_file'] = 'نئی فائل اپ لوڈ کریں';
 $CIDRAM['lang']['field_username'] = 'صارف کا نام';
+$CIDRAM['lang']['field_verify'] = 'تصدیق کریں';
+$CIDRAM['lang']['field_verify_all'] = 'سب کی توثیق کریں';
 $CIDRAM['lang']['field_your_version'] = 'آپ کے ورژن';
 $CIDRAM['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'پاس ورڈ میدا
 $CIDRAM['lang']['response_login_username_field_empty'] = 'صارف کا نام فیلڈ کو خالی!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'غلط رسائی پوائنٹ!';
 $CIDRAM['lang']['response_no'] = 'نہیں';
+$CIDRAM['lang']['response_possible_problem_found'] = 'ممکنہ مسئلہ پایا.';
 $CIDRAM['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'صاف کر دیا ٹریکنگ.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'فرسودہ (دستی 
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'فرسودہ (درکار PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'اس بات کا تعین کرنے سے قاصر ہے.';
 $CIDRAM['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکام ہو گیا!';
+$CIDRAM['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
+$CIDRAM['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
 $CIDRAM['lang']['response_yes'] = 'جی ہاں';
 $CIDRAM['lang']['state_complete_access'] = 'مکمل رسائی';
 $CIDRAM['lang']['state_component_is_active'] = 'جزو فعال ہے.';

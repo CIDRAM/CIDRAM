@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.12.01).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Cập nhật';
 $CIDRAM['lang']['field_update_all'] = 'Cập nhật tất cả';
 $CIDRAM['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $CIDRAM['lang']['field_username'] = 'Tên Người Dùng';
+$CIDRAM['lang']['field_verify'] = 'Xác minh';
+$CIDRAM['lang']['field_verify_all'] = 'Xác minh tất cả';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Mật khẩu là trố
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Điểm truy cập không đúng!';
 $CIDRAM['lang']['response_no'] = 'Không';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Có thể tìm thấy vấn đề.';
 $CIDRAM['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Giám sát được hủy bỏ.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lòng 
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Hết hạn (đòi hỏi PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
 $CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
+$CIDRAM['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
+$CIDRAM['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $CIDRAM['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';

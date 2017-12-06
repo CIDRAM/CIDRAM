@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.12.01).
+ * This file: Korean language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = '업데이트';
 $CIDRAM['lang']['field_update_all'] = '모두 업데이트';
 $CIDRAM['lang']['field_upload_file'] = '새로운 파일을 업로드하기';
 $CIDRAM['lang']['field_username'] = '사용자 이름';
+$CIDRAM['lang']['field_verify'] = '검증';
+$CIDRAM['lang']['field_verify_all'] = '모두 검증';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = '암호가 비어 있�
 $CIDRAM['lang']['response_login_username_field_empty'] = '사용자 이름 입력이 비어 있습니다!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = '잘못된 끝점!';
 $CIDRAM['lang']['response_no'] = '아니오';
+$CIDRAM['lang']['response_possible_problem_found'] = '가능한 문제가 발견되었습니다.';
 $CIDRAM['lang']['response_rename_error'] = '이름을 변경할 수 없습니다!';
 $CIDRAM['lang']['response_statistics_cleared'] = '통계가 삭제되었습니다.';
 $CIDRAM['lang']['response_tracking_cleared'] = '추적이 취소되었습니다.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = '구식입니다 (수동
 $CIDRAM['lang']['response_updates_outdated_php_version'] = '구식입니다 (PHP {V}가 필요합니다)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '결정 수 없습니다.';
 $CIDRAM['lang']['response_upload_error'] = '업로드에 실패했습니다!';
+$CIDRAM['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
+$CIDRAM['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
 $CIDRAM['lang']['response_yes'] = '예';
 $CIDRAM['lang']['state_complete_access'] = '전체 액세스';
 $CIDRAM['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';

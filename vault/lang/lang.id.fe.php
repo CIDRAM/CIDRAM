@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.12.01).
+ * This file: Indonesian language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Perbarui';
 $CIDRAM['lang']['field_update_all'] = 'Memperbarui semua';
 $CIDRAM['lang']['field_upload_file'] = 'Mengupload file baru';
 $CIDRAM['lang']['field_username'] = 'Nama Pengguna';
+$CIDRAM['lang']['field_verify'] = 'Memverifikasi';
+$CIDRAM['lang']['field_verify_all'] = 'Memverifikasi semua';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Jalur akses salah!';
 $CIDRAM['lang']['response_no'] = 'Tidak';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Kemungkinan masalah ditemukan.';
 $CIDRAM['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistik dicabut';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Pelacakan dicabut.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (sil
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Tidak yang terbaru (membutuhkan PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
 $CIDRAM['lang']['response_upload_error'] = 'Gagal mengupload!';
+$CIDRAM['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
+$CIDRAM['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
 $CIDRAM['lang']['response_yes'] = 'Ya';
 $CIDRAM['lang']['state_complete_access'] = 'Akses lengkap';
 $CIDRAM['lang']['state_component_is_active'] = 'Komponen ini aktif.';

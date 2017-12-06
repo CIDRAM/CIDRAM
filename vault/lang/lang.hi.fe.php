@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.12.01).
+ * This file: Hindi language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'अपडेट करो';
 $CIDRAM['lang']['field_update_all'] = 'सब कुछ अपडेट करें';
 $CIDRAM['lang']['field_upload_file'] = 'नई फाइल अपलोड करें';
 $CIDRAM['lang']['field_username'] = 'उपयोगकर्ता नाम';
+$CIDRAM['lang']['field_verify'] = 'सत्यापित करें';
+$CIDRAM['lang']['field_verify_all'] = 'सभी को सत्यापित करें';
 $CIDRAM['lang']['field_your_version'] = 'आपका संस्करण';
 $CIDRAM['lang']['header_login'] = 'जारी रखने के लिए कृपया लॉग इन करें।';
 $CIDRAM['lang']['label_active_config_file'] = 'सक्रिय कॉन्फ़िगरेशन फाइल: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'पासवर्ड 
 $CIDRAM['lang']['response_login_username_field_empty'] = 'उपयोगकर्ता नाम फ़ील्ड खाली!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'गलत समापन बिंदु!';
 $CIDRAM['lang']['response_no'] = 'नहीं';
+$CIDRAM['lang']['response_possible_problem_found'] = 'संभव समस्या मिली।';
 $CIDRAM['lang']['response_rename_error'] = 'नाम बदलने में विफल!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'सांख्यिकी साफ है।';
 $CIDRAM['lang']['response_tracking_cleared'] = 'ट्रैकिंग साफ है।';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'पदावनत (क
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'पदावनत (PHP {V} की आवश्यकता है)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'निर्धारित करने में असमर्थ।';
 $CIDRAM['lang']['response_upload_error'] = 'अपलोड करने में विफल!';
+$CIDRAM['lang']['response_verification_failed'] = 'सत्यापन असफल! घटक भ्रष्ट हो सकता है।';
+$CIDRAM['lang']['response_verification_success'] = 'सत्यापन सफलता! कोई समस्या नहीं मिली।';
 $CIDRAM['lang']['response_yes'] = 'हाँ';
 $CIDRAM['lang']['state_complete_access'] = 'पूरा पहुंच';
 $CIDRAM['lang']['state_component_is_active'] = 'घटक सक्रिय है।';

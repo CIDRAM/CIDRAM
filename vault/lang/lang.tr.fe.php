@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.12.01).
+ * This file: Turkish language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Güncelle';
 $CIDRAM['lang']['field_update_all'] = 'Tümünü güncelle';
 $CIDRAM['lang']['field_upload_file'] = 'Yeni dosya yükle';
 $CIDRAM['lang']['field_username'] = 'Kullanıcı adı';
+$CIDRAM['lang']['field_verify'] = 'Doğrula';
+$CIDRAM['lang']['field_verify_all'] = 'Tümünü doğrula';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Parola alanı boş!';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Kullanıcı adı alanı boş!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Yanlış bitiş noktası!';
 $CIDRAM['lang']['response_no'] = 'Hayır';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Olası problem bulundu.';
 $CIDRAM['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'İstatistikler temizlendi.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'İzleme temizlendi.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Eski (lütfen manuel ol
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Eski (PHP {V} gerektirir)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Belirlenemedi.';
 $CIDRAM['lang']['response_upload_error'] = 'Yüklenemedi!';
+$CIDRAM['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
+$CIDRAM['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
 $CIDRAM['lang']['response_yes'] = 'Evet';
 $CIDRAM['lang']['state_complete_access'] = 'Tam erişim';
 $CIDRAM['lang']['state_component_is_active'] = 'Bileşen aktiftir.';

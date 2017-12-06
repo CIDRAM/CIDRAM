@@ -1281,8 +1281,8 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                     $CIDRAM['Components']['OldMeta']
                 );
                 $Count = count($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']);
-                $RemoteFiles = [];
-                $IgnoredFiles = [];
+                $CIDRAM['RemoteFiles'] = [];
+                $CIDRAM['IgnoredFiles'] = [];
                 $Rollback = false;
                 /** Write new and updated files and directories. */
                 for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
@@ -1293,8 +1293,8 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                     /** Rolls back to previous version or uninstalls if an update/install fails. */
                     if ($Rollback) {
                         if (
-                            isset($RemoteFiles[$ThisFileName]) &&
-                            !isset($IgnoredFiles[$ThisFileName]) &&
+                            isset($CIDRAM['RemoteFiles'][$ThisFileName]) &&
+                            !isset($CIDRAM['IgnoredFiles'][$ThisFileName]) &&
                             is_readable($CIDRAM['Vault'] . $ThisFileName)
                         ) {
                             $CIDRAM['Components']['BytesAdded'] -= filesize($CIDRAM['Vault'] . $ThisFileName);
@@ -1313,7 +1313,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                             $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]
                         )
                     ) {
-                        $IgnoredFiles[$ThisFileName] = true;
+                        $CIDRAM['IgnoredFiles'][$ThisFileName] = true;
                         continue;
                     }
                     if (
@@ -1371,8 +1371,8 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                     }
                     $CIDRAM['Components']['BytesAdded'] += strlen($ThisFile);
                     $Handle = fopen($CIDRAM['Vault'] . $ThisFileName, 'w');
-                    $RemoteFiles[$ThisFileName] = fwrite($Handle, $ThisFile);
-                    $RemoteFiles[$ThisFileName] = ($RemoteFiles[$ThisFileName] !== false);
+                    $CIDRAM['RemoteFiles'][$ThisFileName] = fwrite($Handle, $ThisFile);
+                    $CIDRAM['RemoteFiles'][$ThisFileName] = ($CIDRAM['RemoteFiles'][$ThisFileName] !== false);
                     fclose($Handle);
                     $ThisFile = '';
                 }
@@ -1400,8 +1400,8 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                                     unlink($CIDRAM['Vault'] . $ThisFile . '.rollback');
                                 }
                                 if (
-                                    !isset($RemoteFiles[$ThisFile]) &&
-                                    !isset($IgnoredFiles[$ThisFile]) &&
+                                    !isset($CIDRAM['RemoteFiles'][$ThisFile]) &&
+                                    !isset($CIDRAM['IgnoredFiles'][$ThisFile]) &&
                                     file_exists($CIDRAM['Vault'] . $ThisFile)
                                 ) {
                                     $CIDRAM['Components']['BytesRemoved'] += filesize($CIDRAM['Vault'] . $ThisFile);
@@ -1474,6 +1474,10 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             fwrite($Handle, $ThisFile);
             fclose($Handle);
         }
+        /** Cleanup. */
+        unset($CIDRAM['RemoteFiles'], $CIDRAM['IgnoredFiles']);
+        /** Exit. */
+        return;
     }
 
     /** Uninstall a component. */
@@ -1543,6 +1547,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             $CIDRAM['Components']['BytesRemoved'],
             $CIDRAM['Number_L10N'](microtime(true) - $CIDRAM['Components']['TimeRequired'], 3)
         );
+        return;
     }
 
     /** Activate a component. */
@@ -1600,6 +1605,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             }
         }
         unset($CIDRAM['Activation']);
+        return;
     }
 
     /** Deactivate a component. */
@@ -1656,6 +1662,46 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             }
         }
         unset($CIDRAM['Deactivation']);
+        return;
+    }
+
+    /** Verify a component. */
+    if ($Action === 'verify-component') {
+        $CIDRAM['Arrayify']($ID);
+        foreach ($ID as $ThisID) {
+            if (!empty($CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
+                $TheseFiles = $CIDRAM['Components']['Meta'][$ThisID]['Files'];
+            }
+            if (!empty($TheseFiles['To'])) {
+                $CIDRAM['Arrayify']($TheseFiles['To']);
+            }
+            $Count = count($TheseFiles['To']);
+            if (!empty($TheseFiles['Checksum'])) {
+                $CIDRAM['Arrayify']($TheseFiles['Checksum']);
+                if ($Count !== count($TheseFiles['Checksum'])) {
+                    $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . $CIDRAM['lang']['response_verification_failed'] . '<br />';
+                    continue;
+                }
+            }
+            $Passed = true;
+            for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
+                $ThisFile = $TheseFiles['To'][$Iterate];
+                $FileFailMsg = '<code>' . $ThisID . '</code> – <code>' . $ThisFile . '</code> – ' . $CIDRAM['lang']['response_possible_problem_found'] . '<br />';
+                $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? false : $TheseFiles['Checksum'][$Iterate];
+                if (!$ThisFileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile)) {
+                    $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
+                    $Passed = false;
+                } elseif ($Checksum) {
+                    $Expected = md5($ThisFileData) . ':' . strlen($ThisFileData);
+                    if ($Expected !== $Checksum) {
+                        $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
+                        $Passed = false;
+                    }
+                }
+            }
+            $CIDRAM['FE']['state_msg'] .= $Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed'];
+        }
+        return;
     }
 
 };

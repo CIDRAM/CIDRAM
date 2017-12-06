@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.12.01).
+ * This file: Thai language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'อัปเดต';
 $CIDRAM['lang']['field_update_all'] = 'อัพเดททั้งสิ้น';
 $CIDRAM['lang']['field_upload_file'] = 'อัปโหลดไฟล์ใหม่';
 $CIDRAM['lang']['field_username'] = 'ชื่อผู้ใช้';
+$CIDRAM['lang']['field_verify'] = 'ตรวจสอบ';
+$CIDRAM['lang']['field_verify_all'] = 'ตรวจสอบทั้งหมด';
 $CIDRAM['lang']['field_your_version'] = 'เวอร์ชั่นของคุณ';
 $CIDRAM['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
 $CIDRAM['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'รหัสผ่า�
 $CIDRAM['lang']['response_login_username_field_empty'] = 'ชื่อผู้ใช้ฟิลด์ว่างเปล่า!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'จุดเชื่อมต่อ ไม่ถูกต้อง!';
 $CIDRAM['lang']['response_no'] = 'ไม่ได้';
+$CIDRAM['lang']['response_possible_problem_found'] = 'พบปัญหาที่เป็นไปได้.';
 $CIDRAM['lang']['response_rename_error'] = 'ล้มเหลวเปลี่ยนชื่อ!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'สถิติลบแล้ว';
 $CIDRAM['lang']['response_tracking_cleared'] = 'การติดตามถูกล้าง.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'ล้าสมัย�
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'ล้าสมัยแล้ว (ต้องการ PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'ไม่สามารถกำหนดได้.';
 $CIDRAM['lang']['response_upload_error'] = 'ล้มเหลวอัปโหลด!';
+$CIDRAM['lang']['response_verification_failed'] = 'การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย.';
+$CIDRAM['lang']['response_verification_success'] = 'การตรวจสอบสำเร็จ! ไม่พบปัญหา.';
 $CIDRAM['lang']['response_yes'] = 'ใช่แล้ว';
 $CIDRAM['lang']['state_complete_access'] = 'เข้าถึงได้อย่างสมบูรณ์';
 $CIDRAM['lang']['state_component_is_active'] = 'คอมโพเนนต์ใช้งานอยู่.';

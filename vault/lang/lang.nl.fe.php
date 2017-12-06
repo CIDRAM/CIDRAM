@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.12.01).
+ * This file: Dutch language data for the front-end (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,8 @@ $CIDRAM['lang']['field_update'] = 'Bijwerken';
 $CIDRAM['lang']['field_update_all'] = 'Bijwerken alles';
 $CIDRAM['lang']['field_upload_file'] = 'Nieuw bestand uploaden';
 $CIDRAM['lang']['field_username'] = 'Gebruikersnaam';
+$CIDRAM['lang']['field_verify'] = 'Verifiëren';
+$CIDRAM['lang']['field_verify_all'] = 'Verifiëren alles';
 $CIDRAM['lang']['field_your_version'] = 'Uw Versie';
 $CIDRAM['lang']['header_login'] = 'Inloggen om verder te gaan.';
 $CIDRAM['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
@@ -217,6 +219,7 @@ $CIDRAM['lang']['response_login_password_field_empty'] = 'Wachtwoord veld leeg!'
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Verkeerd eindpunt!';
 $CIDRAM['lang']['response_no'] = 'Nee';
+$CIDRAM['lang']['response_possible_problem_found'] = 'Mogelijk probleem gevonden.';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistieken geannuleerd.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracking geannuleerd.';
@@ -228,6 +231,8 @@ $CIDRAM['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmat
 $CIDRAM['lang']['response_updates_outdated_php_version'] = 'Verouderd (heeft nodig PHP {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $CIDRAM['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
+$CIDRAM['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
+$CIDRAM['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';
 $CIDRAM['lang']['state_component_is_active'] = 'Component is actief.';

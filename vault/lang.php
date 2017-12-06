@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2017.10.26).
+ * This file: Language handler (last modified: 2017.12.06).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,7 @@ if (empty($CIDRAM['Config']['general']['lang'])) {
 /** Create the language data array. */
 $CIDRAM['lang'] = [];
 
-if ($CIDRAM['CIDRAM_sapi']) {
+if ($CIDRAM['CIDRAM_sapi'] && empty($CIDRAM['Alternate'])) {
 
     /**
      * Kill the script if the CLI-mode language data file corresponding to the
@@ -79,7 +79,7 @@ if ($CIDRAM['CIDRAM_sapi']) {
         !$CIDRAM['Config']['general']['disable_frontend'] &&
         file_exists($CIDRAM['Vault'] . 'frontend.php') &&
         file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-        $CIDRAM['Direct']
+        ($CIDRAM['Direct']() || !empty($CIDRAM['Alternate']))
     ) {
         /**
          * Kill the script if the front-end language data file corresponding to

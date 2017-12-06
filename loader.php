@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.10.26).
+ * This file: The loader (last modified: 2017.12.06).
  */
 
 /**
@@ -19,13 +19,14 @@
 if (!defined('CIDRAM')) {
     define('CIDRAM', true);
 
+    /** Version check. */
     if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
         header('Content-Type: text/plain');
         die('[CIDRAM] Not compatible with PHP versions below 5.4.0; Please update PHP in order to use CIDRAM.');
     }
 
     /** Create an array for our working data. */
-    $CIDRAM = array();
+    $CIDRAM = [];
 
     /** Determine the location of the "vault" directory. */
     $CIDRAM['Vault'] = __DIR__ . '/vault/';
@@ -44,6 +45,11 @@ if (!defined('CIDRAM')) {
     $CIDRAM['Direct'] = function () {
         return (str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__)));
     };
+
+    /** Checks whether we're calling CIDRAM through an alternative pathway (e.g., Cronable). */
+    $CIDRAM['Alternate'] = (
+        class_exists('\Maikuolan\Cronable\Cronable')
+    );
 
     /** Kill the script if the functions file doesn't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'functions.php')) {
@@ -72,7 +78,8 @@ if (!defined('CIDRAM')) {
     /** Load the language handler. */
     require $CIDRAM['Vault'] . 'lang.php';
 
-    if (!$CIDRAM['CIDRAM_sapi']) {
+    /* This code block only executed if we're NOT in CLI mode (or if we're running via Cronable). */
+    if (!$CIDRAM['CIDRAM_sapi'] || $CIDRAM['Alternate']) {
 
         /**
          * Check whether the output generator exists; Kill the script if it
@@ -82,7 +89,9 @@ if (!defined('CIDRAM')) {
             header('Content-Type: text/plain');
             die('[CIDRAM] Output generator missing! Please reinstall CIDRAM.');
         }
-        require $CIDRAM['Vault'] . 'outgen.php';
+        if (!$CIDRAM['Alternate']) {
+            require $CIDRAM['Vault'] . 'outgen.php';
+        }
 
         /**
          * Check whether the front-end handler and the front-end template file
@@ -93,21 +102,16 @@ if (!defined('CIDRAM')) {
             !$CIDRAM['Config']['general']['disable_frontend'] &&
             file_exists($CIDRAM['Vault'] . 'frontend.php') &&
             file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.html') &&
-            $CIDRAM['Direct']()
+            ($CIDRAM['Direct']() || $CIDRAM['Alternate'])
         ) {
             require $CIDRAM['Vault'] . 'frontend.php';
         }
 
-    } else {
+    }
 
-        /**
-         * Check whether the CLI handler exists; Load it if it does.
-         * Skip this check if we're not in CLI-mode.
-         */
-        if (!$CIDRAM['Config']['general']['disable_cli'] && file_exists($CIDRAM['Vault'] . 'cli.php')) {
-            require $CIDRAM['Vault'] . 'cli.php';
-        }
-
+    /** This code block only executed if we're in CLI mode. */
+    elseif (!$CIDRAM['Config']['general']['disable_cli'] && file_exists($CIDRAM['Vault'] . 'cli.php')) {
+        require $CIDRAM['Vault'] . 'cli.php';
     }
 
     /** Unset our working data so that we can exit cleanly. */

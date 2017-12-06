@@ -1164,6 +1164,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         'Remotes' => [],
         'Dependencies' => [],
         'Outdated' => [],
+        'Verify' => [],
         'Out' => []
     ];
 
@@ -1361,10 +1362,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
         ) {
             $CIDRAM['Components']['ThisComponent']['Options'] .=
                 '<option value="verify-component">' . $CIDRAM['lang']['field_verify'] . '</option>';
+            $CIDRAM['Components']['Verify'][] = $CIDRAM['Components']['Key'];
             array_walk($CIDRAM['Components']['ThisComponent']['Files']['Checksum'], function ($Checksum) use (&$CIDRAM) {
                 if (!empty($Checksum) && ($Delimiter = strpos($Checksum, ':')) !== false) {
-                    $CIDRAM['Components']['ThisComponent']['VersionSize'] +=
-                        (int)substr($Checksum, $Delimiter + 1);
+                    $CIDRAM['Components']['ThisComponent']['VersionSize'] += (int)substr($Checksum, $Delimiter + 1);
                 }
             });
         }
@@ -1569,19 +1570,34 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     uksort($CIDRAM['Components']['Out'], $CIDRAM['UpdatesSortFunc']);
     $CIDRAM['FE']['Components'] = implode('', $CIDRAM['Components']['Out']);
 
+    $CIDRAM['Components']['CountOutdated'] = count($CIDRAM['Components']['Outdated']);
+    $CIDRAM['Components']['CountVerify'] = count($CIDRAM['Components']['Verify']);
+    
+    /** Preparing for update all and verify all buttons. */
+    $CIDRAM['FE']['UpdateAll'] = ($CIDRAM['Components']['CountOutdated'] || $CIDRAM['Components']['CountVerify']) ? '<hr />' : '';
+
     /** Instructions to update everything at once. */
-    if (count($CIDRAM['Components']['Outdated'])) {
-        $CIDRAM['FE']['UpdateAll'] =
-            '<hr /><form action="?' . $CIDRAM['FE']['UpdatesFormTarget'] .
-            '" method="POST"><input name="cidram-form-target" type="hidden" value="updates" />' .
+    if ($CIDRAM['Components']['CountOutdated']) {
+        $CIDRAM['FE']['UpdateAll'] .=
+            '<form action="?' . $CIDRAM['FE']['UpdatesFormTarget'] .
+            '" method="POST" style="display:inline"><input name="cidram-form-target" type="hidden" value="updates" />' .
             '<input name="do" type="hidden" value="update-component" />';
         foreach ($CIDRAM['Components']['Outdated'] as $CIDRAM['Components']['ThisOutdated']) {
             $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisOutdated'] . '" />';
         }
+        $CIDRAM['FE']['UpdateAll'] .= '<input type="submit" value="' . $CIDRAM['lang']['field_update_all'] . '" class="auto" /></form>';
+    }
+
+    /** Instructions to verify everything at once. */
+    if ($CIDRAM['Components']['CountVerify']) {
         $CIDRAM['FE']['UpdateAll'] .=
-            '<input type="submit" value="' . $CIDRAM['lang']['field_update_all'] . '" class="auto" /></form>';
-    } else {
-        $CIDRAM['FE']['UpdateAll'] = '';
+            '<form action="?' . $CIDRAM['FE']['UpdatesFormTarget'] .
+            '" method="POST" style="display:inline"><input name="cidram-form-target" type="hidden" value="updates" />' .
+            '<input name="do" type="hidden" value="verify-component" />';
+        foreach ($CIDRAM['Components']['Verify'] as $CIDRAM['Components']['ThisVerify']) {
+            $CIDRAM['FE']['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $CIDRAM['Components']['ThisVerify'] . '" />';
+        }
+        $CIDRAM['FE']['UpdateAll'] .= '<input type="submit" value="' . $CIDRAM['lang']['field_verify_all'] . '" class="auto" /></form>';
     }
 
     /** Parse output. */

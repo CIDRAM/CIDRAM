@@ -1699,7 +1699,9 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                     }
                 }
             }
-            $CIDRAM['FE']['state_msg'] .= $Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed'];
+            $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . (
+                $Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed']
+            ) . '<br />';
         }
         return;
     }

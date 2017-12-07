@@ -86,10 +86,10 @@ Tag: Hetzner Online GmbH
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
-# %Listed, Google Malware Dashboard: 1.26%.
+# %Listed, Google Malware Dashboard: 0.61%.
 # %Listed, CleanTalk.org: 35.65%.
-# Stop Forum Spam (SFS) listings: 203.
-# Updated: 2017.07.08
+# Stop Forum Spam (SFS) listings: 104.
+# Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a02:f80::/32 Deny Generic
 2a03:2100::/32 Deny Generic
@@ -117,22 +117,13 @@ recaptcha:
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # %Listed, CleanTalk.org: 6.54%.
-# Stop Forum Spam (SFS) listings: 174.
-# Updated: 2016.03.02 / Checked: 2017.07.06
+# %Listed, abuseat.org (CBL-Listed): 27.46%.
+# Stop Forum Spam (SFS) listings: 158.
+# Updated: 2017.12.08
 
 2400:9800::/32 Deny Spam
+2600:1417:3000::/48 Deny Spam
 Tag: PT Excelcomindo
----
-recaptcha:
- enabled: true
-
-
-# ASN 31080 ("o2 Sp. Z.o.o").
-# %Listed, Google Malware Dashboard: 0.38%.
-# Updated: 2016.01.18 / Checked: 2017.07.06
-
-2001:67c:25c4::/48 Deny Generic
-Tag: AS31080
 ---
 recaptcha:
  enabled: true
@@ -371,31 +362,14 @@ recaptcha:
  enabled: true
 
 
-# ASN 49981 ("WorldStream").
-# %Listed, Google Malware Dashboard: 4.56%.
-# %Listed, CleanTalk.org: 43.41%.
-# %Listed, abuseat.org (CBL-Listed): 3.53%.
-# Stop Forum Spam (SFS) listings: 6,925.
-# Updated: 2017.07.08
-
-2001:16c0:fefe::/48 Deny Generic
-2a00:7c80::/32 Deny Generic
-2a03:69c0:100::/40 Deny Generic
-2a04:92c7:16::/48 Deny Generic
-2a06:3880::/29 Deny Generic
-2a06:d641::/32 Deny Generic
-2a0a:1f40::/31 Deny Generic
-2a0b:9a00::/31 Deny Generic
-Tag: WorldStream
-
-
 # ASN 13030 ("Init7").
 # Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
-# %Listed, Google Malware Dashboard: 0.85%.
+# %Listed, Google Malware Dashboard: 0.62%.
 # %Listed, CleanTalk.org: 18.03%.
-# Stop Forum Spam (SFS) listings: 414.
-# Updated: 2017.07.08
+# Stop Forum Spam (SFS) listings: 707.
+# Updated: 2017.12.08
 
+2001:67c:7ac::/48 Deny Generic
 2001:67c:1388::/48 Deny Generic
 2001:67c:2570::/48 Deny Generic
 2001:67c:2648::/48 Deny Generic
@@ -403,7 +377,7 @@ Tag: WorldStream
 2a00:5640::/32 Deny Generic
 2a00:e020::/32 Deny Generic
 2a00:f080::/42 Deny Generic
-2a02:168::/32 Deny Generic
+2a02:168::/31 Deny Generic
 2a02:16a0::/32 Deny Generic
 2a03:7520::/32 Deny Generic
 2a07:600::/29 Deny Generic
@@ -416,10 +390,9 @@ Tag: Init7
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3672
-# Updated: 2017.01.09 / Checked: 2017.07.08
+# Updated: 2017.12.08
 
 2a03:6540::/32 Deny Generic
-2a0b:da00::/29 Deny Generic
 Tag: Yes Networks
 
 
@@ -662,7 +635,7 @@ recaptcha:
 
 
 # ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2017.07.08
+# Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a00:8860::/32 Deny Generic
 Tag: PHOENIX NAP, LLC
@@ -1137,10 +1110,10 @@ recaptcha:
 
 # ASN 3255: State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
 #   Institute for Condensed Matter Physics of the National Academy of Science of Ukraine (UARNet).
-# %Listed, Google Malware Dashboard: 1.36%.
+# %Listed, Google Malware Dashboard: 0.94%.
 # %Listed, CleanTalk.org: 22.12%.
-# Stop Forum Spam (SFS) listings: 367.
-# Updated: 2017.07.08
+# Stop Forum Spam (SFS) listings: 3,940.
+# Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a00:fc00::/32 Deny Spam
 Tag: UARNet
@@ -1150,10 +1123,10 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.35%.
+# %Listed, Google Malware Dashboard: 0.50%.
 # %Listed, CleanTalk.org: 37.35%.
-# Stop Forum Spam (SFS) listings: 131.
-# Updated: 2017.07.08
+# Stop Forum Spam (SFS) listings: 177.
+# Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a03:a0e0::/32 Deny Spam
 Tag: Chelyabinsk-Signal
@@ -1164,8 +1137,8 @@ recaptcha:
 
 # ASN 44775 ("Closed Joint Stock Company TransTeleCom").
 # %Listed, CleanTalk.org: 5.36%.
-# Stop Forum Spam (SFS) listings: 1,392.
-# Updated: 2017.07.08
+# Stop Forum Spam (SFS) listings: 744.
+# Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a02:28d8::/36 Deny Spam
 Tag: TransTeleCom
@@ -1176,11 +1149,24 @@ recaptcha:
 
 # ASN 51570 ('JSC "ER-Telecom Holding"').
 # %Listed, CleanTalk.org: 14.94%.
-# Stop Forum Spam (SFS) listings: 1,193.
-# Updated: 2017.07.08
+# Stop Forum Spam (SFS) listings: 1,141.
+# Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a02:2698:6c00::/38 Deny Spam
 Tag: ER-Telecom Holding
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 25408 ("WEST CALL SPb LLC").
+# %Listed, Google Malware Dashboard: 0.87%.
+# %Listed, CleanTalk.org: 8.62%.
+# Stop Forum Spam (SFS) listings: 130.
+# Updated: 2017.11.26
+
+2a00:1c78::/29 Deny Generic
+Tag: WEST CALL SPb LLC
 ---
 recaptcha:
  enabled: true

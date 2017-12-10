@@ -882,7 +882,7 @@ Yes. An API is built into the front-end for interacting with the updates page vi
 
 "Infractions" determine when an IP that isn't yet blocked by any specific signature files should start being blocked for any future requests, and they are closely associated with IP tracking. Some functionality and modules exist that allow requests to be blocked for reasons other than the IP of origin (such as the presence of user agents corresponding to spambots or hacktools, dangerous queries, spoofed DNS and so on), and when this happens, an "infraction" can occur. They provide a way to identify IP addresses that correspond to unwanted requests that mightn't yet be blocked by any specific signature files. Infractions usually correspond 1-to-1 with the number of times an IP is blocked, but not always (severe block events may incur an infraction value greater than one, and if "track_mode" is false, infractions won't occur for block events triggered solely by signature files).
 
-#### <a name="BLOCK_HOSTNAMES"></a>Can CIDRAM block hostnames?
+#### Can CIDRAM block hostnames?
 
 Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR MODULES)](#MODULE_BASICS)*.
 

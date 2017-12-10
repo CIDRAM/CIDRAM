@@ -17,7 +17,7 @@
 
 ### 1. <a name="SECTION1"></a>PRÉAMBULE
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) est un script PHP conçu pour la protection des sites web par bloquant les demandes de page produit à partir d'adresses IP considéré comme étant sources de trafic indésirable, comprenant (mais pas limité a) le trafic de terminaux d'accès non humains, services de cloud computing, spambots, scrapers, etc. Elle le fait en calculant les CIDRs possibles des adresses IP fournie par les demandes entrantes puis essayant pour correspondre à ces CIDRs possibles contre ses fichiers de signatures (ces fichiers de signatures contenir des listes de CIDRs d'adresses IP considéré comme étant sources de trafic indésirable) ; Si des correspondances sont trouvées, les demandes sont bloquées.
+CIDRAM (Classless Inter-Domain Routing Access Manager) est un script PHP conçu pour la protection des sites web par bloquant les requêtes de page produit à partir d'adresses IP considéré comme étant sources de trafic indésirable, comprenant (mais pas limité a) le trafic de terminaux d'accès non humains, services de cloud computing, spambots, scrapers, etc. Elle le fait en calculant les CIDRs possibles des adresses IP fournie par les requêtes entrantes puis essayant pour correspondre à ces CIDRs possibles contre ses fichiers de signatures (ces fichiers de signatures contenir des listes de CIDRs d'adresses IP considéré comme étant sources de trafic indésirable) ; Si des correspondances sont trouvées, les requêtes sont bloquées.
 
 *(Voir : [Qu'est-ce qu'un « CIDR » ?](#WHAT_IS_A_CIDR)).*
 
@@ -52,7 +52,7 @@ Enregistrer le fichier, fermer, rétélécharger.
 
 -- OU ALTERNATIVEMENT --
 
-Si vous utilisez un Apache serveur web et si vous avez accès à `php.ini`, vous pouvez utiliser la `auto_prepend_file` directive à préfixer CIDRAM chaque fois qu'une demande de PHP est faite. Quelque chose comme :
+Si vous utilisez un Apache serveur web et si vous avez accès à `php.ini`, vous pouvez utiliser la `auto_prepend_file` directive à préfixer CIDRAM chaque fois qu'une requête de PHP est faite. Quelque chose comme :
 
 `auto_prepend_file = "/user_name/public_html/cidram/loader.php"`
 
@@ -79,7 +79,7 @@ Si vous souhaitez utiliser CIDRAM avec WordPress, vous pouvez ignorer toutes les
 
 ### 3. <a name="SECTION3"></a>COMMENT UTILISER
 
-CIDRAM devrait bloquer automatiquement les demandes indésirables à votre site web sans nécessitant aucune intervention manuelle, en dehors de son installation initiale.
+CIDRAM devrait bloquer automatiquement les requêtes indésirables à votre site web sans nécessitant aucune intervention manuelle, en dehors de son installation initiale.
 
 La mise à jour se fait manuellement, et vous pouvez personnaliser votre configuration et personnaliser les CIDRs sont bloqués par modifiant le fichier de configuration et/ou vos fichiers de signatures.
 
@@ -321,10 +321,10 @@ Configuration générale pour CIDRAM.
 - Le format de notation de la date/heure utilisé par CIDRAM. Défaut = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 « ipaddr »
-- Où trouver l'adresse IP de demandes de connexion ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
+- Où trouver l'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
 « forbid_on_block »
-- Quels têtes devrait CIDRAM répondre avec lors de bloquer les demandes ? False/200 = 200 OK [Défaut] ; True/403 = 403 Forbidden (Interdit) ; 503 = 503 Service unavailable (Service indisponible).
+- Quels têtes devrait CIDRAM répondre avec lors de bloquer les requêtes ? False/200 = 200 OK [Défaut] ; True/403 = 403 Forbidden (Interdit) ; 503 = 503 Service unavailable (Service indisponible).
 
 « silent_mode »
 - Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page « Accès Refusé » ? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide.
@@ -354,16 +354,16 @@ Configuration générale pour CIDRAM.
 - Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.
 
 « ban_override »
-- Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les demandes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut] ; 403 = Remplacer par « 403 Forbidden » ; 503 = Remplacer par « 503 Service unavailable ».
+- Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut] ; 403 = Remplacer par « 403 Forbidden » ; 503 = Remplacer par « 503 Service unavailable ».
 
 « log_banned_ips »
-- Inclure les demandes bloquées provenant d'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.
+- Inclure les requêtes bloquées provenant d'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.
 
 « default_dns »
 - Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
 « search_engine_verification »
-- Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses demandes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.
+- Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.
 
 « protect_frontend »
 - Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non.
@@ -381,7 +381,7 @@ Configuration générale pour CIDRAM.
 - Suivre les statistiques d'utilisation pour CIDRAM ? True = Oui ; False = Non [Défaut].
 
 « force_hostname_lookup »
-- Forcer les recherches de nom d'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les demandes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances.
+- Forcer les recherches de nom d'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances.
 
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
@@ -420,7 +420,7 @@ Configuration pour les signatures.
 - Quand faut-il compter les infractions ? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.
 
 #### « recaptcha » (Catégorie)
-Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de « Accès Refusé » par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une demande est à l'origine d'une machine ou d'un être humain.
+Si vous souhaitez, vous pouvez fournir aux utilisateurs un moyen de contourner la page de « Accès Refusé » par voie de complétant d'une instance reCAPTCHA. Cela peut aider à atténuer certains risques associés à des faux positifs dans les situations où nous ne sommes pas tout à fait sûr si une requête est à l'origine d'une machine ou d'un être humain.
 
 En raison des risques associés à la fourniture d'une façon pour les utilisateurs pour contourner la page « Accès Refusé », généralement, je déconseille d'activer cette fonctionnalité à moins que vous sentez qu'il soit nécessaire de le faire. Situations dans lesquelles il serait nécessaire : Si vous avez des clients/utilisateurs pour votre site web qui ont besoin d'avoir accès, et si cela est quelque chose qui ne peut être pas compromise, mais si elles se connectant à partir d'un réseau hostile qui pourrait potentiellement être aussi transporter le trafic indésirable, et le blocage de ce trafic indésirable est aussi quelque chose qui ne peut pas être compromise, dans ces situations sans victoire, la fonctionnalité reCAPTCHA pourrait être utile un moyen de permettre aux clients/utilisateurs désirables, et en même temps tenir à l'écart le trafic indésirable à partir du même réseau. Cela dit, étant donné que l'objectif d'un CAPTCHA est pour la distinction entre les humains et les nonhumains, la fonctionnalité reCAPTCHA serait seulement aider dans ces situations sans victoire si nous voulons supposer que ce trafic indésirable est nonhumain (par exemple, spambots, scrapers, outils de piratage, trafic automatisé), plutôt d'être le trafic indésirable des humains (tels que les spammeurs humains, hackers, et al).
 
@@ -438,7 +438,7 @@ Pour obtenir une « site key » et une « secret key » (nécessaires à l'u
 - Note : La valeur de « lockip » est ignoré lorsque « lockuser » est false, en raison de ce que le mécanisme pour se souvenir de « utilisateurs » varie en fonction de cette valeur.
 
 « lockuser »
-- Indique si le succès d'une instance de reCAPTCHA devrait être verrouillé à des utilisateurs spécifiques. False = Le succès d'une instance de reCAPTCHA donnera accès à toutes les demandes provenant de la même adresse IP que celui utilisé par l'utilisateur de remplir l'instance du reCAPTCHA ; Cookies et hachages ne sont pas utilisés ; Au lieu, une liste blanche IP sera utilisé. True = Le succès d'une instance de reCAPTCHA donnera accès seulement à l'utilisateur remplissant l'instance du reCAPTCHA ; Cookies et hachages sont utilisés pour mémoriser l'utilisateur ; Une liste blanche IP n'est pas utilisé (défaut).
+- Indique si le succès d'une instance de reCAPTCHA devrait être verrouillé à des utilisateurs spécifiques. False = Le succès d'une instance de reCAPTCHA donnera accès à toutes les requêtes provenant de la même adresse IP que celui utilisé par l'utilisateur de remplir l'instance du reCAPTCHA ; Cookies et hachages ne sont pas utilisés ; Au lieu, une liste blanche IP sera utilisé. True = Le succès d'une instance de reCAPTCHA donnera accès seulement à l'utilisateur remplissant l'instance du reCAPTCHA ; Cookies et hachages sont utilisés pour mémoriser l'utilisateur ; Une liste blanche IP n'est pas utilisé (défaut).
 
 « sitekey »
 - Cette valeur devrait correspondre à la « site key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
@@ -447,18 +447,18 @@ Pour obtenir une « site key » et une « secret key » (nécessaires à l'u
 - Cette valeur devrait correspondre à la « secret key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
 
 « expiry »
-- Quand « lockuser » est true (défaut), afin de se souvenir quand un utilisateur a passé avec succès une instance de reCAPTCHA, pour les futures demandes de page, CIDRAM génère un cookie HTTP standard contenant un hachage qui correspond à un enregistrement interne contenant ce même hachage ; Les futures demandes de page utilisera ces hachage correspondant pour authentifier qu'un utilisateur a préalablement déjà passé une instance de reCAPTCHA. Quand « lockuser » est false, une liste blanche IP est utilisé pour déterminer si les demandes devraient être autorisée à partir de l'adresse IP de demandes entrantes ; Les entrées sont ajoutées à cette liste blanche lorsque l'instance de reCAPTCHA est passé avec succès. Pour combien d'heures devrait ces cookies, hachages et les entrées du liste blanche rester valables ? Défaut = 720 (1 mois).
+- Quand « lockuser » est true (défaut), afin de se souvenir quand un utilisateur a passé avec succès une instance de reCAPTCHA, pour les futures requêtes de page, CIDRAM génère un cookie HTTP standard contenant un hachage qui correspond à un enregistrement interne contenant ce même hachage ; Les futures requêtes de page utilisera ces hachage correspondant pour authentifier qu'un utilisateur a préalablement déjà passé une instance de reCAPTCHA. Quand « lockuser » est false, une liste blanche IP est utilisé pour déterminer si les requêtes devraient être autorisée à partir de l'adresse IP de requêtes entrantes ; Les entrées sont ajoutées à cette liste blanche lorsque l'instance de reCAPTCHA est passé avec succès. Pour combien d'heures devrait ces cookies, hachages et les entrées du liste blanche rester valables ? Défaut = 720 (1 mois).
 
 « logfile »
 - Enregistrez toutes les tentatives du reCAPTCHA ? Si oui, indiquez le nom à utiliser pour le fichier d'enregistrement. Si non, laisser vide ce variable.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
 
-*Exemples :*
+*Exemples :*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 « signature_limit »
-- Nombre maximum de signatures autorisées à être déclenchées lorsqu'une instance de reCAPTCHA doit être présentée. Défaut = 1. Si ce nombre est dépassé pour une demande particulière, une instance de reCAPTCHA ne sera pas présentée.
+- Nombre maximum de signatures autorisées à être déclenchées lorsqu'une instance de reCAPTCHA doit être présentée. Défaut = 1. Si ce nombre est dépassé pour une requête particulière, une instance de reCAPTCHA ne sera pas présentée.
 
 #### « template_data » (Catégorie)
 Directives/Variables pour les modèles et thèmes.
@@ -479,7 +479,7 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 
 ### 7. <a name="SECTION7"></a>FORMATS DE SIGNATURES
 
-*Voir également :*
+*Voir également :*
 - *[Qu'est-ce qu'une « signature » ?](#WHAT_IS_A_SIGNATURE)*
 
 #### 7.0 BASES (POUR LES FICHIERS DE SIGNATURE)
@@ -524,7 +524,7 @@ Si « Greylist » est utilisé, quand la signature est déclenchée, le script
 
 Exemple : `127.0.0.1/32 Greylist`
 
-Si « Deny » est utilisé, quand la signature est déclenchée, en supposant qu'aucune signature whitelist a été déclenchée pour l'adresse IP donnée et/ou CIDR donnée, accès à la page protégée sera refusée. « Deny » est ce que vous aurez envie d'utiliser d'effectivement bloquer une adresse IP et/ou CIDR. Quand quelconque les signatures sont déclenchées que faire usage de « Deny », la page « Access Denied » du script seront générés et la demande à la page protégée tué.
+Si « Deny » est utilisé, quand la signature est déclenchée, en supposant qu'aucune signature whitelist a été déclenchée pour l'adresse IP donnée et/ou CIDR donnée, accès à la page protégée sera refusée. « Deny » est ce que vous aurez envie d'utiliser d'effectivement bloquer une adresse IP et/ou CIDR. Quand quelconque les signatures sont déclenchées que faire usage de « Deny », la page « Access Denied » du script seront générés et la requête à la page protégée tué.
 
 La valeur de `[Param]` accepté par « Deny » seront traitées au la sortie de la page « Accès Refusé », fourni au client/utilisateur comme la raison invoquée pour leur accès à la page demandée étant refusée. Il peut être une phrase courte et simple, expliquant pourquoi vous avez choisi de les bloquer (quoi que ce soit devrait suffire, même une simple « Je ne veux tu pas sur mon site »), ou l'un d'une petite poignée de mots courts fourni par le script, que si elle est utilisée, sera remplacé par le script avec une explication pré-préparés des raisons pour lesquelles le client/utilisateur a été bloqué.
 
@@ -667,6 +667,105 @@ Ignore Section 1
 
 Reportez-vous aux fichiers de signatures personnalisées pour plus d'informations.
 
+#### 7.4 <a name="MODULE_BASICS"></a>BASES (POUR LES MODULES)
+
+Les modules peuvent être utilisés pour étendre les fonctionnalités de CIDRAM, effectuer des tâches supplémentaires ou traiter les logiques supplémentaires. Typiquement, ils sont utilisés lorsqu'il est nécessaire de bloquer une requête sur une base autre que son adresse IP d'origine (et donc, quand une signature CIDR ne suffira pas à bloquer la requête). Les modules sont écrits en tant que fichiers PHP, et donc, typiquement, les signatures de module sont écrites en tant que code PHP.
+
+Quelques bons exemples de modules pour CIDRAM peuvent être trouvés ici :
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Un modèle pour écrire de nouveaux modules peut être trouvé ici :
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+En raison de ce que les modules sont écrits en tant que fichiers PHP, si vous connaissez bien la base de code pour CIDRAM, vous pouvez structurer vos modules comme vous le souhaitez, et écrivez vos signatures de module comme vous le souhaitez (en raison de ce qui est possible avec PHP). Cependant, pour votre propre commodité, et dans l'intérêt d'une meilleure intelligibilité mutuelle entre les modules existants et les vôtres, l'analyse du modèle lié ci-dessus est recommandée, afin de pouvoir utiliser la structure et le format qu'il fournit.
+
+*Remarque : Si vous n'êtes pas à l'aise de travailler avec du code PHP, il n'est pas recommandé d'écrire vos propres modules.*
+
+Certaines fonctionnalités sont fournies par CIDRAM pour les modules à utiliser, ce qui devrait simplifier et faciliter l'écriture de vos propres modules. Des informations sur cette fonctionnalité sont décrites ci-dessous.
+
+#### 7.5 MODULE FONCTIONNALITÉ
+
+##### 7.5.0 « $Trigger »
+
+Les signatures de module sont typiquement écrites avec « $Trigger ». Dans la plupart des cas, cette closure sera plus importante que toute autre chose dans le but d'écrire des modules.
+
+« $Trigger » accepte 4 paramètres : « $Condition », « $ReasonShort », « $ReasonLong » (optionnel), et « $DefineOptions » (optionnel).
+
+La véracité de « $Condition » est évaluée, et si elle est true/vraie, la signature est « déclenchée ». Si false/faux, la signature *n'est pas* « déclenchée ». « $Condition » contient typiquement du code PHP pour évaluer une condition qui devrait entraîner le blocage d'une requête.
+
+« $ReasonShort » est cité dans le champ « Raison Bloquée » lorsque la signature est « déclenchée ».
+
+« $ReasonLong » est un message optionnel à afficher à l'utilisateur/client pour quand ils sont bloqués, pour expliquer pourquoi ils ont été bloqués. Utilise le message standard « Accès Refusé » lorsqu'il est omis.
+
+« $DefineOptions » est un tableau optionnel contenant des paires clé/valeur, utilisé pour définir les options de configuration spécifiques à l'instance de requête. Les options de configuration seront appliquées lorsque la signature est « déclenchée ».
+
+« $Trigger » retourne true/vrai lorsque la signature est « déclenchée », et false/faux quand ce n'est pas le cas.
+
+Pour utiliser cette closure dans votre module, souvenez-vous tout d'abord de l'hériter de la portée parent :
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 « $Bypass »
+
+Les contournements pour les signatures sont typiquement écrits avec « $Bypass ».
+
+« $Bypass » accepte 3 paramètres : « $Condition », « $ReasonShort », et « $DefineOptions » (optionnel).
+
+La véracité de « $Condition » est évaluée, et si elle est true/vraie, la signature est « déclenchée ». Si false/faux, la signature *n'est pas* « déclenchée ». « $Condition » contient typiquement du code PHP pour évaluer une condition qui ne devrait *pas* entraîner le blocage d'une requête.
+
+« $ReasonShort » est cité dans le champ « Raison Bloquée » lorsque le contournement est « déclenchée ».
+
+« $DefineOptions » est un tableau optionnel contenant des paires clé/valeur, utilisé pour définir les options de configuration spécifiques à l'instance de requête. Les options de configuration seront appliquées lorsque la signature est « déclenchée ».
+
+« $Bypass » retourne true/vrai lorsque le contournement est « déclenchée », et false/faux quand ce n'est pas le cas.
+
+Pour utiliser cette closure dans votre module, souvenez-vous tout d'abord de l'hériter de la portée parent :
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 « $CIDRAM['DNS-Reverse'] »
+
+Cela peut être utilisé pour récupérer le nom de l'hôte d'une adresse IP. Si vous voulez créer un module pour bloquer les noms d'hôtes, cette closure pourrait être utile.
+
+Exemple :
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 MODULES VARIABLES
+
+Les modules s'exécutent dans leur propre portée, et toutes les variables définies par un module ne seront pas accessibles aux autres modules, ni au script parent, sauf s'ils sont stockés dans le tableau « $CIDRAM » (tout le reste est vidé après la fin de l'exécution du module).
+
+Voici quelques variables communes qui pourraient être utiles pour votre module :
+
+Variable | Description
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | La date et l'heure actuelles.
+`$CIDRAM['BlockInfo']['IPAddr']` | L'adresse IP pour la requête actuelle.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | Version de CIDRAM.
+`$CIDRAM['BlockInfo']['Query']` | La « query » pour la requête actuelle.
+`$CIDRAM['BlockInfo']['Referrer']` | Le référent pour la requête actuelle (s'il existe).
+`$CIDRAM['BlockInfo']['UA']` | L'agent utilisateur (user agent) pour la requête actuelle.
+`$CIDRAM['BlockInfo']['UALC']` | L'agent utilisateur (user agent) pour la requête actuelle (en minuscules).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | Le message à afficher à l'utilisateur/client pour la requête actuelle s'ils sont bloqués.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Le nombre de signatures déclenchées pour la requête actuelle.
+`$CIDRAM['BlockInfo']['Signatures']` | Informations de référence pour toutes les signatures déclenchées pour la requête actuelle.
+`$CIDRAM['BlockInfo']['WhyReason']` | Informations de référence pour toutes les signatures déclenchées pour la requête actuelle.
+
 ---
 
 
@@ -741,7 +840,7 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL (« End of Life », ou fin de vi
 
 #### Puis-je utiliser une seule installation de CIDRAM pour protéger plusieurs domaines ?
 
-Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations CIDRAM protégeant un seul domaine comme « installations à un seul domaine » (« single-domain installations »), et nous référons aux installations CIDRAM protégeant plusieurs domaines et/ou sous-domaines comme « installations multi-domaines » (« multi-domain installations »). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de CIDRAM pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), CIDRAM vérifiera l'existence d'un « fichier de substitution de configuration » spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour CIDRAM, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la demande ; « www » est ignoré.
+Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations CIDRAM protégeant un seul domaine comme « installations à un seul domaine » (« single-domain installations »), et nous référons aux installations CIDRAM protégeant plusieurs domaines et/ou sous-domaines comme « installations multi-domaines » (« multi-domain installations »). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de CIDRAM pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), CIDRAM vérifiera l'existence d'un « fichier de substitution de configuration » spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour CIDRAM, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la requête ; « www » est ignoré.
 
 #### Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site ; Puis-je vous payer pour tout faire pour moi ?
 
@@ -781,7 +880,11 @@ Oui. Une API est intégrée dans le frontal pour interagir avec la page des mise
 
 #### Quelles sont les « infractions »?
 
-« Infractions » détermine quand une adresse IP qui n'est pas bloquée par des fichiers de signatures spécifiques devrait être bloqué pour les demandes futures, et ils sont étroitement associés au surveillance des adresses IP. Certaines fonctionnalités et certains modules permettent de bloquer les demandes pour des raisons autres que l'adresse IP d'origine (tels que la présence d'agents utilisateurs [user agents] correspondant à spambots ou hacktools, requêtes dangereuses, DNS usurpé et ainsi de suite), et quand cela arrive, une « infraction » peut survenir. Ils fournissent un moyen d'identifier les adresses IP qui correspondent à des demandes non désirées qui ne sont pas bloquées par des fichiers de signatures spécifiques. Les infractions correspondent généralement 1-à-1 avec le nombre de fois qu'une IP est bloquée, mais pas toujours (les événements de bloc graves peuvent entraîner une valeur d'infraction supérieure à un, et si « track_mode » est false, les infractions ne se produiront pas pour les événements de bloc déclenchés uniquement par des fichiers de signatures).
+« Infractions » détermine quand une adresse IP qui n'est pas bloquée par des fichiers de signatures spécifiques devrait être bloqué pour les requêtes futures, et ils sont étroitement associés au surveillance des adresses IP. Certaines fonctionnalités et certains modules permettent de bloquer les requêtes pour des raisons autres que l'adresse IP d'origine (tels que la présence d'agents utilisateurs [user agents] correspondant à spambots ou hacktools, requêtes dangereuses, DNS usurpé et ainsi de suite), et quand cela arrive, une « infraction » peut survenir. Ils fournissent un moyen d'identifier les adresses IP qui correspondent à des requêtes non désirées qui ne sont pas bloquées par des fichiers de signatures spécifiques. Les infractions correspondent généralement 1-à-1 avec le nombre de fois qu'une IP est bloquée, mais pas toujours (les événements de bloc graves peuvent entraîner une valeur d'infraction supérieure à un, et si « track_mode » est false, les infractions ne se produiront pas pour les événements de bloc déclenchés uniquement par des fichiers de signatures).
+
+#### Est-ce que CIDRAM peut bloquer les noms d'hôtes?
+
+Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir : [BASES (POUR LES MODULES)](#MODULE_BASICS)*.
 
 ---
 

@@ -94,7 +94,7 @@ Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tah
 
 Manajemen bagian depan menyediakan cara yang nyaman dan mudah untuk mempertahankan, mengelola, dan memperbarui instalasi CIDRAM Anda. Anda dapat melihat, berbagi, dan download file log melalui halaman log, Anda dapat mengubah konfigurasi melalui halaman konfigurasi, Anda dapat instal dan uninstal/hapus komponen melalui halaman pembaruan, dan Anda dapat upload, download, dan memodifikasi file dalam vault Anda melalui file manager.
 
-Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak sah (akses yang tidak sah bisa memiliki konsekuensi yang signifikan untuk website Anda dan keamanannya). Instruksi untuk mengaktifkannya termasuk di bawah paragraf ini.
+Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak sah (akses yang tidak sah bisa memiliki konsekuensi yang signifikan untuk website Anda dan keamanannya). Instruksi untuk mengaktifkannya termasuk dibawah paragraf ini.
 
 #### 4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
 
@@ -667,6 +667,105 @@ Ignore Bagian 1
 
 Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 
+#### 7.4 <a name="MODULE_BASICS"></a>DASAR-DASAR (UNTUK MODUL)
+
+Modul dapat digunakan untuk memperluas fungsionalitas CIDRAM, melakukan tugas tambahan, atau memproses logika tambahan. Biasanya, mereka digunakan saat perlu memblokir permintaan untuk alasan selain alamat IP (dan dengan demikian, ketika tanda tangan CIDR tidak cukup untuk memblokir permintaan). Modul ditulis sebagai file PHP, dan dengan demikian, biasanya, tanda tangan modul ditulis sebagai kode PHP.
+
+Beberapa contoh bagus untuk modul CIDRAM dapat ditemukan disini:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Template untuk menulis modul baru dapat ditemukan disini:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Karena modul ditulis sebagai file PHP, jika Anda cukup mengenal basis kode CIDRAM, Anda dapat menyusun modul Anda namun Anda inginkan, dan menulis tanda tangan modul Anda namun Anda inginkan (dalam batasan untuk apa yang mungkin di PHP). Namun, untuk kenyamanan Anda sendiri, dan demi saling pengertian antara modul yang ada dan modul Anda sendiri, menganalisis template yang terhubung di atas direkomendasikan, agar bisa menggunakan struktur dan format yang diberikannya.
+
+*Catat: Jika Anda tidak nyaman bekerja dengan kode PHP, menulis modul Anda sendiri tidak disarankan.*
+
+Beberapa fungsi disediakan oleh CIDRAM yang dapat digunakan oleh modul, yang seharusnya membuatnya lebih sederhana dan mudah untuk menulis modul Anda sendiri. Informasi tentang fungsi ini dijelaskan dibawah ini.
+
+#### 7.5 FUNGSIONALITAS MODUL
+
+##### 7.5.0 "$Trigger"
+
+Tanda tangan modul biasanya ditulis dengan "$Trigger". Dalam kebanyakan kasus, closure ini akan lebih penting daripada hal lain untuk tujuan penulisan modul.
+
+"$Trigger" menerima 4 parameter: "$Condition", "$ReasonShort", "$ReasonLong" (opsional), dan "$DefineOptions" (opsional).
+
+Kebenaran dari "$Condition" dievaluasi, dan jika true/benar, tanda tangan "dipicu". Jika false/salah, tanda tangan *tidak* "dipicu". "$Condition" biasanya berisi kode PHP untuk mengevaluasi suatu kondisi yang harus menyebabkan permintaan diblokir.
+
+"$ReasonShort" dikutip di bidang "Mengapa Diblokir" saat tanda tangan "dipicu".
+
+"$ReasonLong" adalah pesan opsional yang akan ditampilkan kepada pengguna/klien saat mereka diblokir, untuk menjelaskan mengapa mereka diblokir. Default ke pesan "Akses Ditolak" standar saat dihilangkan.
+
+"$DefineOptions" adalah array opsional yang berisi pasangan kunci/nilai, digunakan untuk menentukan opsi konfigurasi yang spesifik untuk instance permintaan. Opsi konfigurasi akan diterapkan saat tanda tangan "dipicu".
+
+"$Trigger" kembali true/benar saat tanda tangan "dipicu", dan false/salah saat tidak.
+
+Untuk menggunakan closure ini di modul Anda, ingat dulu untuk mewarisi dari lingkup luar:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Tanda tangan bypass biasanya ditulis dengan "$Bypass".
+
+"$Bypass" menerima 3 parameter: "$Condition", "$ReasonShort", dan "$DefineOptions" (opsional).
+
+Kebenaran dari "$Condition" dievaluasi, dan jika true/benar, bypass "dipicu". Jika false/salah, bypass *tidak* "dipicu". "$Condition" biasanya berisi kode PHP untuk mengevaluasi suatu kondisi yang harus *tidak* menyebabkan permintaan diblokir.
+
+"$ReasonShort" dikutip di bidang "Mengapa Diblokir" saat bypass "dipicu".
+
+"$DefineOptions" adalah array opsional yang berisi pasangan kunci/nilai, digunakan untuk menentukan opsi konfigurasi yang spesifik untuk instance permintaan. Opsi konfigurasi akan diterapkan saat bypass "dipicu".
+
+"$Bypass" kembali true/benar saat bypass "dipicu", dan false/salah saat tidak.
+
+Untuk menggunakan closure ini di modul Anda, ingat dulu untuk mewarisi dari lingkup luar:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Ini bisa digunakan untuk mengambil nama host dari alamat IP. Jika Anda ingin membuat modul untuk memblokir nama host, closure ini bisa bermanfaat.
+
+Contoh:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 MODUL VARIABEL
+
+Modul mengeksekusi dalam lingkup mereka sendiri, dan variabel apapun yang ditentukan oleh modul, tidak akan dapat diakses ke modul lain, atau ke skrip utama, kecuali jika disimpan dalam array "$CIDRAM" (segala sesuatu yang lain dibuang setelah eksekusi modul selesai).
+
+Tercantum dibawah ini adalah beberapa variabel umum yang mungkin berguna untuk modul Anda:
+
+Variabel | Deskripsi
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | Tanggal dan waktu sekarang.
+`$CIDRAM['BlockInfo']['IPAddr']` | Alamat IP untuk permintaan saat ini.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | Versi skrip CIDRAM.
+`$CIDRAM['BlockInfo']['Query']` | "Query" untuk permintaan saat ini.
+`$CIDRAM['BlockInfo']['Referrer']` | Perujuk untuk permintaan saat ini (jika ada).
+`$CIDRAM['BlockInfo']['UA']` | Agen pengguna (user agent) untuk permintaan saat ini.
+`$CIDRAM['BlockInfo']['UALC']` | Agen pengguna (user agent) untuk permintaan saat ini (di huruf kecil).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | Pesan yang akan ditampilkan ke pengguna/klien untuk permintaan saat ini jika diblokir.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Jumlah tanda tangan dipicu untuk permintaan saat ini.
+`$CIDRAM['BlockInfo']['Signatures']` | Informasi referensi untuk tanda tangan yang dipicu untuk permintaan saat ini.
+`$CIDRAM['BlockInfo']['WhyReason']` | Informasi referensi untuk tanda tangan yang dipicu untuk permintaan saat ini.
+
 ---
 
 
@@ -706,7 +805,7 @@ Hasil terkait ketika pengujian untuk kondisi dapat digambarkan menggunakan istil
 
 Dalam konteks CIDRAM, istilah-istilah ini mengacu pada tanda tangan dari CIDRAM dan apa/siapa mereka memblokir. Ketika CIDRAM blok alamat IP karena buruk, usang atau salah tanda tangan, tapi seharusnya tidak melakukannya, atau ketika melakukannya untuk alasan salah, kita menyebut acara ini sebuah "positif palsu". Ketika CIDRAM gagal untuk memblokir alamat IP yang seharusnya diblokir, karena ancaman tak terduga, hilang tanda tangan atau kekurangan dalam tanda tangan nya, kita menyebut acara ini sebuah "deteksi terjawab" atau "missing detection" (ini analog dengan sebuah "negatif palsu").
 
-Ini dapat diringkas dengan tabel di bawah:
+Ini dapat diringkas dengan tabel dibawah:
 
 &nbsp; | CIDRAM seharusnya *TIDAK* memblokir alamat IP | CIDRAM *SEHARUSNYA* memblokir alamat IP
 ---|---|---
@@ -782,6 +881,10 @@ Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan 
 #### Apa "pelanggaran"?
 
 "Pelanggaran" menentukan kapan IP yang belum diblokir oleh file tanda tangan tertentu seharusnya mulai diblokir untuk permintaan di masa mendatang, dan mereka terkait erat dengan pelacakan IP. Beberapa fungsi dan modul ada yang memungkinkan permintaan menjadi diblokir karena alasan selain IP asal (seperti kehadiran agen pengguna [user agent] yang sesuai dengan spambot atau hacktool, permintaan berbahaya, DNS ditempa dan seterusnya), dan kapan ini terjadi, "pelanggaran" dapat terjadi. Mereka menyediakan cara untuk mengidentifikasi alamat IP yang sesuai dengan permintaan yang tidak diinginkan yang mungkin belum terhalang oleh file tanda tangan tertentu. Pelanggaran biasanya sesuai 1-ke-1 dengan berapa kali IP diblokir, namun tidak selalu (kejadian blokir yang parah dapat menimbulkan nilai pelanggaran lebih besar dari satu, dan jika "track_mode" false, pelanggaran tidak akan terjadi karena kejadian blokir yang hanya dipicu oleh file tanda tangan).
+
+#### Dapatkah CIDRAM memblokir nama host?
+
+Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DASAR-DASAR (UNTUK MODUL)](#MODULE_BASICS)*.
 
 ---
 

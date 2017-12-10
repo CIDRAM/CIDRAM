@@ -458,7 +458,7 @@ Para obtener una "site key" y una "secret key" (requerida para utilizar reCAPTCH
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "signature_limit"
-- Número máximo de firmas permitidas para ser disparado cuando se ofrece una instancia reCAPTCHA. Predefinido = 1. Si se excede este número para cualquier solicitud particular, no se ofrecerá una instancia de reCAPTCHA.
+- Número máximo de firmas permitidas para se desencadena cuando se ofrece una instancia reCAPTCHA. Predefinido = 1. Si se excede este número para cualquier solicitud particular, no se ofrecerá una instancia de reCAPTCHA.
 
 #### "template_data" (Categoría)
 Directivas/Variables para las plantillas y temas.
@@ -482,7 +482,7 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 *Ver también:*
 - *[¿Qué es una "firma"?](#WHAT_IS_A_SIGNATURE)*
 
-#### 7.0 LOS FUNDAMENTOS (PARA "ARCHIVOS DE FIRMA")
+#### 7.0 LOS FUNDAMENTOS (PARA ARCHIVOS DE FIRMA)
 
 Una descripción del formato y la estructura de las firmas utilizado por CIDRAM pueden encontrar documentado en texto plano dentro cualquiera de los dos archivos de firmas personalizadas. Por favor refiérase a la documentación para aprender más sobre el formato y la estructura de las firmas de CIDRAM.
 
@@ -667,6 +667,105 @@ Ignore Sección 1
 
 Consulte los archivos de firmas personalizadas para obtener más información.
 
+#### 7.4 <a name="MODULE_BASICS"></a>LOS FUNDAMENTOS (PARA MÓDULOS)
+
+Los módulos se pueden usar para ampliar la funcionalidad de CIDRAM, realizar tareas adicionales o procesar lógica adicional. Típicamente, se usan cuando es necesario bloquear una solicitud por razones distintas de la dirección IP de origen (y por lo tanto, cuando una firma CIDR no sea suficiente para bloquear la solicitud). Los módulos se escriben como archivos PHP y, por lo tanto, típicamente, las firmas de los módulos se escriben como código PHP.
+
+Algunos buenos ejemplos de módulos CIDRAM se pueden encontrar aquí:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Una plantilla para escribir nuevos módulos se puede encontrar aquí:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Debido a que los módulos se escriben como archivos PHP, si está familiarizado adecuadamente con la base de código de CIDRAM, puede estructurar los módulos de la forma que desee, y escribe las firmas de tu módulo como quieras (dentro de lo que es posible con PHP). Pero, para su propia conveniencia, y en aras de una mejor inteligibilidad mutua entre los módulos existentes y su propio, se recomienda analizar la plantilla vinculada anteriormente, para poder usar la estructura y el formato que proporciona.
+
+*Nota: Si no se siente cómodo trabajando con código PHP, no se recomienda escribir sus propios módulos.*
+
+CIDRAM brinda cierta funcionalidad que los módulos pueden usar, lo que simplifica la escritura de sus propios módulos. La información sobre esta funcionalidad se describe a continuación.
+
+#### 7.5 FUNCIONALIDAD DEL MÓDULO
+
+##### 7.5.0 "$Trigger"
+
+Las firmas de los módulos generalmente se escriben con "$Trigger". En la mayoría de los casos, este closure será más importante que cualquier otra cosa con el fin de escribir módulos.
+
+"$Trigger" acepta 4 parámetros: "$Condition", "$ReasonShort", "$ReasonLong" (opcional), y "$DefineOptions" (opcional).
+
+La veracidad de "$Condition" se evalúa, y si es true/verdadera, la firma se "desencadena". Si es false/falso, la firma *no* se "desencadena". "$Condition" generalmente contiene código PHP para evaluar una condición que debe causar el bloqueo de una solicitud.
+
+"$ReasonShort" se cita en el campo "Razón Bloqueado" cuando la firma se "desencadena".
+
+"$ReasonLong" es un mensaje opcional que se mostrará al usuario/cliente para cuando estén bloqueados, para explicar por qué se han bloqueado. Se predetermina al mensaje estándar "¡Acceso Denegado!" cuando se omite.
+
+"$DefineOptions" es una array opcional que contiene pares clave/valor, que se utiliza para definir opciones de configuración específicas para la instancia de solicitud. Las opciones de configuración se aplicarán cuando la firma se "desencadena".
+
+"$Trigger" devuelve true/verdadero cuando la firma se "desencadena" y false/falso cuando no es así.
+
+Para usar este closure en su módulo, recuerde primero heredarlo del alcance principal:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Los bypass de la firma generalmente se escriben con "$Bypass".
+
+"$Bypass" acepta 3 parámetros: "$Condition", "$ReasonShort", y "$DefineOptions" (opcional).
+
+La veracidad de "$Condition" se evalúa, y si es true/verdadera, el bypass se "desencadena". Si es false/falso, el bypass *no* se "desencadena". "$Condition" generalmente contiene código PHP para evaluar una condición que *no* debe causar el bloqueo de una solicitud.
+
+"$ReasonShort" se cita en el campo "Razón Bloqueado" cuando el bypass se "desencadena".
+
+"$DefineOptions" es una array opcional que contiene pares clave/valor, que se utiliza para definir opciones de configuración específicas para la instancia de solicitud. Las opciones de configuración se aplicarán cuando el bypass se "desencadena".
+
+"$Bypass" devuelve true/verdadero cuando el bypass se "desencadena" y false/falso cuando no es así.
+
+Para usar este closure en su módulo, recuerde primero heredarlo del alcance principal:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Esto se puede usar para buscar el nombre del host de una dirección IP. Si desea crear un módulo para bloquear nombres de host, este closure podría ser útil.
+
+Ejemplo:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 VARIABLES DE MÓDULO
+
+Los módulos se ejecutan dentro de su propio alcance, y cualquier variable definida por un módulo, no será accesible para otros módulos, o para el script principal, a menos que estén almacenados en la array "$CIDRAM" (todo lo demás se vacía después de que finaliza la ejecución del módulo).
+
+A continuación se enumeran algunas variables comunes que pueden ser útiles para su módulo:
+
+Variable | Descripción
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | La fecha y hora actual.
+`$CIDRAM['BlockInfo']['IPAddr']` | Dirección IP para la solicitud actual.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | Versión de CIDRAM.
+`$CIDRAM['BlockInfo']['Query']` | La "query" para la solicitud actual.
+`$CIDRAM['BlockInfo']['Referrer']` | El referente para la solicitud actual (si existe).
+`$CIDRAM['BlockInfo']['UA']` | El agente de usuario (user agent) para la solicitud actual.
+`$CIDRAM['BlockInfo']['UALC']` | El agente de usuario (user agent) para la solicitud actual (en minúsculas).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | El mensaje que se mostrará al usuario/cliente para la solicitud actual si están bloqueados.
+`$CIDRAM['BlockInfo']['SignatureCount']` | El número de firmas desencadenadas para la solicitud actual.
+`$CIDRAM['BlockInfo']['Signatures']` | Información de referencia para cualquier firma desencadenada para la solicitud actual.
+`$CIDRAM['BlockInfo']['WhyReason']` | Información de referencia para cualquier firma desencadenada para la solicitud actual.
+
 ---
 
 
@@ -782,6 +881,10 @@ Sí. Una API está integrada en el front-end para interactuar con la página de 
 #### ¿Qué son "infracciones"?
 
 Las "infracciones" determinan cuándo una IP que todavía no está bloqueada por ningún archivo de firma específico debe comenzar a bloquearse para futuras solicitudes, y están estrechamente asociados con el seguimiento de IP. Existen algunas funcionalidades y módulos que permiten que las solicitudes sean bloqueadas por razones distintas del origen del IP (tal como la presencia de agentes de usuario [user agents] correspondientes a spambots o hacktools, solicitudes peligrosas, DNS falsificado, etc), y cuando esto sucede, una "infracción" puede ocurrir. Proporcionan una forma de identificar las direcciones IP que corresponden a las solicitudes no deseadas que aún no pueden ser bloqueadas por ningún archivo de firma específico. Las infracciones generalmente corresponden de 1-a-1 con la cantidad de veces que se bloquea un IP, pero no siempre (los eventos de bloque severos pueden incurrir en un valor de infracción mayor que uno, y si "track_mode" es false, infracciones no ocurrirán para eventos de bloque causados únicamente por archivos de firma).
+
+#### ¿Puede CIDRAM bloquear nombres de host?
+
+Sí. Para hacer esto, necesitarás crear un archivo de módulo personalizado. *Ver: [LOS FUNDAMENTOS (PARA MÓDULOS)](#MODULE_BASICS)*.
 
 ---
 

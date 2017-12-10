@@ -311,7 +311,7 @@ Generelle Konfiguration von CIDRAM.
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "truncate"
-- Trunkate Protokolldateien, wenn sie eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei wachsen kann, bevor sie trunkiert wird. Der Standardwert von 0KB deaktiviert die Trunkierung (Protokolldateien können unbegrenzt wachsen). Hinweis: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht als kollektiv.
+- Trunkate Protokolldateien, wenn sie eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei wachsen kann, bevor sie trunkiert wird. Der Standardwert von 0KB deaktiviert die Trunkierung (Protokolldateien können unbegrenzt wachsen). Beachten: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht als kollektiv.
 
 "timeOffset"
 - Wenn Ihr Server-Zeit nicht mit Ihrer Ortszeit, Sie können einen Offset hier angeben (Dies ist das Datum/Zeit-Informationen anpassen, die durch CIDRAM erzeugt wird). Es ist in der Regel statt zur Einstellung der Zeitzone Richtlinie in Ihrer Datei `php.ini` empfohlen, aber manchmal (wie wenn Sie mit begrenzten Shared-Hosting-Provider arbeiten) dies ist nicht immer möglich zu tun, und so, ist diese Option hier zur Verfügung gestellt.
@@ -667,6 +667,105 @@ Ignore Sektion 1
 
 Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informationen.
 
+#### 7.4 <a name="MODULE_BASICS"></a>GRUNDLAGEN (FÜR MODULE)
+
+Module können verwendet werden, um die Funktionalität von CIDRAM zu erweitern, zusätzliche Aufgaben auszuführen oder zusätzliche Logik zu verarbeiten. Werden sie verwendet typischerweise, wenn eine Anforderung auf einer anderen Basis als der ursprünglichen IP-Adresse blockiert werden muss (und daher, wenn eine CIDR-Signatur nicht ausreicht, um die Anfrage zu blockieren). Module werden als PHP-Dateien geschrieben, und daher werden Modul-Signaturen typischerweise als PHP-Code geschrieben.
+
+Einige gute Beispiele für CIDRAM-Module finden Sie hier:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Eine Vorlage zum Schreiben neuer Module finden Sie hier:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Da Module als PHP-Dateien geschrieben werden, können Sie Ihre Module beliebig strukturieren und schreiben Sie Ihre Modul-Signaturen wie Sie wollen (im Rahmen des Zumutbaren für was mit PHP möglich ist), wenn Sie mit der CIDRAM-Codebasis ausreichend vertraut sind. Jedoch, zu Ihrer eigenen Bequemlichkeit und aus Gründen der besseren gegenseitigen Verständlichkeit zwischen vorhandenen Modulen und Ihren eigenen, es wird empfohlen, die oben verlinkte Vorlage zu analysieren, um die von ihr bereitgestellte Struktur und das Format verwenden zu können.
+
+*Beachten: Wenn Sie nicht komfortabel mit PHP-Code arbeiten, wird das Schreiben eigener Module nicht empfohlen.*
+
+Einige Funktionen werden von CIDRAM für Module zur Verfügung gestellt, die es einfacher machen sollten eigene Module zu schreiben. Informationen zu dieser Funktionalität werden im Folgenden beschrieben.
+
+#### 7.5 MODUL-FUNKTIONALITÄT
+
+##### 7.5.0 "$Trigger"
+
+Modul-Signaturen werden typischerweise mit "$Trigger" geschrieben. In den meisten Fällen ist diese Closure für das Schreiben von Modulen wichtiger als alles andere Closure.
+
+"$Trigger" akzeptiert 4 Parameter: "$Condition", "$ReasonShort", "$ReasonLong" (optional), und "$DefineOptions" (optional).
+
+Die Wahrheit von "$Condition" wird ausgewertet, und wenn dies wahr/true, wird die Signatur "ausgelöst". Wenn falsch/false, wird die Signatur *nicht* "ausgelöst". "$Condition" enthält typischerweise PHP-Code, um eine Bedingung auszuwerten, die dazu führen sollte, dass eine Anfrage blockiert wird.
+
+"$ReasonShort" wird im Feld "Warum blockierte" angegeben, wenn die Signatur "ausgelöst" wird.
+
+"$ReasonLong" ist eine optionale Nachricht, die dem Benutzer/Client angezeigt wird, wenn sie blockiert sind, um zu erklären, warum sie blockiert wurden. Verwendet die Standardmeldung "Zugriff verweigert", wenn sie weggelassen wird.
+
+"$DefineOptions" ist ein optionales Array, das Schlüssel/Wert-Paare enthält, mit denen Konfigurationsoptionen definiert werden, die für die Anforderungsinstanz spezifisch sind. Konfigurationsoptionen werden angewendet, wenn die Signatur "ausgelöst" wird.
+
+"$Trigger" gibt wahr/true zurück, wenn die Signatur "ausgelöst" wird, und falsch/false, wenn dies nicht der Fall ist.
+
+Um diese Closure in Ihrem Modul zu verwenden, denken Sie daran sie zuerst vom übergeordneten Geltungsbereich zu übernehmen:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Signatur-Bypass werden normalerweise mit "$Bypass" geschrieben.
+
+"$Bypass" akzeptiert 3 Parameter: "$Condition", "$ReasonShort", und "$DefineOptions" (optional).
+
+Die Wahrheit von "$Condition" wird ausgewertet, und wenn dies wahr/true, wird die Signatur "ausgelöst". Wenn falsch/false, wird die Signatur *nicht* "ausgelöst". "$Condition" enthält typischerweise PHP-Code, um eine Bedingung auszuwerten, die dazu führen sollte *nicht*, dass eine Anfrage blockiert wird.
+
+"$ReasonShort" wird im Feld "Warum blockierte" angegeben, wenn der Bypass "ausgelöst" wird.
+
+"$DefineOptions" ist ein optionales Array, das Schlüssel/Wert-Paare enthält, mit denen Konfigurationsoptionen definiert werden, die für die Anforderungsinstanz spezifisch sind. Konfigurationsoptionen werden angewendet, wenn die Bypass "ausgelöst" wird.
+
+"$Bypass" gibt wahr/true zurück, wenn die Bypass "ausgelöst" wird, und falsch/false, wenn dies nicht der Fall ist.
+
+Um diese Closure in Ihrem Modul zu verwenden, denken Sie daran sie zuerst vom übergeordneten Geltungsbereich zu übernehmen:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Dies kann verwendet werden, um den Hostnamen einer IP-Adresse abzurufen. Wenn Sie ein Modul zum Blockieren von Hostnamen erstellen möchten, könnte diese Closure nützlich sein.
+
+Beispiel:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 MODUL VARIABLEN
+
+Module werden in ihrem eigenen Umfang ausgeführt, und alle Variablen, die von einem Modul definiert werden, sind für andere Module oder das übergeordnete Skript nicht zugänglich, es sei denn, sie sind im Array "$CIDRAM" gespeichert (alles andere wird gelöscht, nachdem die Modulausführung abgeschlossen ist).
+
+Im Folgenden finden Sie einige allgemeine Variablen, die für Ihr Modul nützlich sein könnten:
+
+Variable | Beschreibung
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | Das aktuelle Datum und die Uhrzeit.
+`$CIDRAM['BlockInfo']['IPAddr']` | IP-Adresse für die aktuelle Anfrage.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM Script-Version.
+`$CIDRAM['BlockInfo']['Query']` | Die Abfrage (query) für die aktuelle Anfrage.
+`$CIDRAM['BlockInfo']['Referrer']` | Der Referrer für die aktuelle Anfrage (falls vorhanden).
+`$CIDRAM['BlockInfo']['UA']` | Der Benutzeragent (user agent) für die aktuelle Anfrage.
+`$CIDRAM['BlockInfo']['UALC']` | Der Benutzeragent (user agent) für die aktuelle Anfrage (als Kleinbuchstaben).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | Die Nachricht, die dem Benutzer/Client für die aktuelle Anfrage angezeigt wird, wenn sie blockiert sind.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Die Anzahl der Signaturen, die für die aktuelle Anfrage ausgelöst wurden.
+`$CIDRAM['BlockInfo']['Signatures']` | Referenzinformationen für alle Signaturen, die für die aktuelle Anforderung ausgelöst wurden.
+`$CIDRAM['BlockInfo']['WhyReason']` | Referenzinformationen für alle Signaturen, die für die aktuelle Anforderung ausgelöst wurden.
+
 ---
 
 
@@ -686,7 +785,7 @@ Für "Modulen":
 $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');
 ```
 
-*Hinweis: Signaturen für "Signaturdateien", und Signaturen für "Module", sind nicht dasselbe.*
+*Beachten: Signaturen für "Signaturdateien", und Signaturen für "Module", sind nicht dasselbe.*
 
 Oft (aber nicht immer), Signaturen werden in Gruppen zusammengebunden, als "Signatur-Sektionen" zu bilden, oft begleitet von Kommentaren, Markup und/oder verwandten Metadaten das kann verwendet werden, um zusätzlichen Kontext zu bieten der Signaturen und/oder weitere Anweisung.
 
@@ -782,6 +881,10 @@ Ja. Eine API ist in das Front-End integriert, um über externe Skripte mit der U
 #### Was sind "Verstöße"?
 
 "Verstöße" bestimmen, wann eine IP-Adresse, die noch nicht von bestimmten Signaturdateien blockiert wurde, für zukünftige Anforderungen blockiert werden soll, und sie sind eng mit IP-Tracking verbunden. Es gibt einige Funktionen und Module, die es ermöglichen, dass Anfragen aus anderen Gründen als der Ursprungs-IP blockiert werden (wie die Anwesenheit von User Agents von Hacktools oder Spambots, gefährliche Anfragen, gefälschte DNS und so weiter), und wenn dies passiert, eine "Verstöß" kann auftreten. Sie bieten eine Möglichkeit für IP-Adressen zu identifizieren, die unerwünschten Anforderungen entsprechen, die möglicherweise noch nicht von bestimmten Signaturdateien blockiert wurden. Verstöße entsprechen in der Regel 1-zu-1 der Häufigkeit, mit der eine IP blockiert wird, aber nicht immer (bei schweren Blockereignissen kann es zu einem Verstoßwert größer als eins kommen, und wenn "track_mode" false ist, verstöße für Blockereignisse, die ausschließlich von Signaturdateien ausgelöst werden, werden nicht auftreten).
+
+#### Kann CIDRAM Hostnamen blockieren?
+
+Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUNDLAGEN (FÜR MODULE)](#MODULE_BASICS)*.
 
 ---
 

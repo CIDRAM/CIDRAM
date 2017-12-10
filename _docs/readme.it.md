@@ -667,6 +667,105 @@ Ignore Sezione 1
 
 Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 
+#### 7.4 <a name="MODULE_BASICS"></a>NOZIONI DI BASE (PER MODULI)
+
+I moduli possono essere utilizzati per estendere la funzionalità di CIDRAM, eseguire attività aggiuntive o elaborare una logica aggiuntiva. Tipicamente, vengono utilizzati quando è necessario bloccare una richiesta su una base diversa dal suo indirizzo IP di origine (e quindi, quando una firma CIDR non è sufficiente per bloccare la richiesta). I moduli sono scritti come file PHP e quindi, in genere, le firme dei moduli sono scritte come codice PHP.
+
+Alcuni buoni esempi di moduli CIDRAM possono essere trovati qui:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Un modello per scrivere nuovi moduli può essere trovato qui:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Dato che i moduli sono scritti come file PHP, se hai familiarità con il codice CIDRAM, puoi strutturare i tuoi moduli come vuoi, e scrivi le tue firme del modulo come preferisci (entro i limiti di ciò che è possibile in PHP). Tuttavia, per tua comodità, e per una migliore intelligibilità reciproca tra i moduli esistenti e il tuo, è consigliabile analizzare il modello collegato sopra, per poter utilizzare la struttura e il formato che fornisce.
+
+*Nota: Se non ti piace lavorare con il codice PHP, non è consigliabile scrivere i tuoi moduli.*
+
+Alcune funzionalità sono fornite da CIDRAM per essere utilizzato dai moduli, il che dovrebbe rendere più semplice e facile scrivere i propri moduli. Le informazioni su questa funzionalità sono descritte di seguito.
+
+#### 7.5 FUNZIONALITÀ DEL MODULO
+
+##### 7.5.0 "$Trigger"
+
+Le firme dei moduli sono scritte tipicamente con "$Trigger". Nella maggior parte dei casi, questa closure sarà più importante di ogni altra cosa allo scopo di scrivere moduli.
+
+"$Trigger" accetta 4 parametri: "$Condition", "$ReasonShort", "$ReasonLong" (opzionale), e "$DefineOptions" (opzionale).
+
+La veridicità di "$Condition" è valutata e, se è true/vera, la firma è "innescato". Se false, la firma *non* è "innescato". "$Condition" contiene tipicamente codice PHP per valutare una condizione che dovrebbe causa una richiesta essere bloccare.
+
+"$ReasonShort" è citato nel campo "Perché Bloccato" quando la firma è "innescata".
+
+"$ReasonLong" è un messaggio opzionale da mostrare all'utente/cliente per quando sono bloccati, per spiegare perché sono stati bloccati. Utilizza il messaggio standard "Accesso Negato" quando omesso.
+
+"$DefineOptions" è un array opzionale contenente coppie chiave/valore, utilizzato per definire le opzioni di configurazione specifiche dell'istanza della richiesta. Le opzioni di configurazione verranno applicate quando la firma è "innescata".
+
+"$Trigger" restituisce true quando la firma è "innescata", e false quando non lo è.
+
+Per utilizzare questa closure nel modulo, ricorda innanzitutto di ereditarlo dall'ambito principale:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+I bypass di firma sono scritte tipicamente con "$Bypass".
+
+"$Bypass" accetta 3 parametri: "$Condition", "$ReasonShort", e "$DefineOptions" (opzionale).
+
+La veridicità di "$Condition" è valutata e, se è true/vera, il bypass è "innescato". Se false, il bypass *non* è "innescato". "$Condition" contiene tipicamente codice PHP per valutare una condizione che *non* dovrebbe causa una richiesta essere bloccare.
+
+"$ReasonShort" è citato nel campo "Perché Bloccato" quando il bypass è "innescata".
+
+"$DefineOptions" è un array opzionale contenente coppie chiave/valore, utilizzato per definire le opzioni di configurazione specifiche dell'istanza della richiesta. Le opzioni di configurazione verranno applicate quando il bypass è "innescata".
+
+"$Bypass" restituisce true quando il bypass è "innescata", e false quando non lo è.
+
+Per utilizzare questa closure nel modulo, ricorda innanzitutto di ereditarlo dall'ambito principale:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Questo può essere usato per recuperare il nome host di un indirizzo IP. Se vuoi creare un modulo per bloccare i nomi degli host, questa closure potrebbe essere utile.
+
+Esempio:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 VARIABILI DEL MODULO
+
+I moduli eseguiti all'interno del proprio ambito, e qualsiasi variabile definita da un modulo, non saranno accessibili ad altri moduli, o allo script principale, tranne se sono memorizzati nella array "$CIDRAM" (tutto il resto viene svuotato al termine dell'esecuzione del modulo).
+
+Di seguito sono elencate alcune variabili comuni che potrebbero essere utili per il tuo modulo:
+
+Variabile | Descrizione
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | La data e l'ora correnti.
+`$CIDRAM['BlockInfo']['IPAddr']` | L'indirizzo IP per la richiesta corrente.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | Versione di script CIDRAM.
+`$CIDRAM['BlockInfo']['Query']` | La query per la richiesta corrente.
+`$CIDRAM['BlockInfo']['Referrer']` | Il referrer per la richiesta corrente (se esiste).
+`$CIDRAM['BlockInfo']['UA']` | L'agente utente (user agent) per la richiesta corrente.
+`$CIDRAM['BlockInfo']['UALC']` | L'agente utente (user agent) per la richiesta corrente (in minuscolo).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | Il messaggio visualizzato all'utente/cliente per la richiesta corrente se sono bloccati.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Il numero di firme innescati per la richiesta corrente.
+`$CIDRAM['BlockInfo']['Signatures']` | Informazioni di riferimento per eventuali firme innescati per la richiesta corrente.
+`$CIDRAM['BlockInfo']['WhyReason']` | Informazioni di riferimento per eventuali firme innescati per la richiesta corrente.
+
 ---
 
 
@@ -782,6 +881,10 @@ Sì. Una API è incorporata nel front-end per interagire con la pagina degli agg
 #### Cosa sono le "infrazioni"?
 
 Le "infrazioni" determinano quando un IP che non è ancora bloccato da uno specifico file di firma dovrebbe iniziare a essere bloccato per eventuali richieste future, e sono strettamente associati al monitoraggio IP. Esistono alcune funzionalità e moduli che consentono di bloccare le richieste per motivi diversi dall'IP di origine (ad esempio la presenza di agenti utente [user agents] corrispondenti a spambots o hacktools, richieste pericolose, DNS falsificato e così via), e quando ciò accade, può verificarsi una "infrazione". Forniscono un modo per identificare gli indirizzi IP che corrispondono a richieste indesiderate che potrebbero non essere ancora bloccate da alcun file di firma specifico. Le infrazioni di solito corrispondono 1-a-1 con il numero di volte in cui un IP è bloccato, ma non sempre (eventi di blocco gravi possono incorrere in un valore di infrazione maggiore di uno, e se "track_mode" è false, le infrazioni non si verificano per gli eventi di blocco innescati esclusivamente dai file delle firme).
+
+#### CIDRAM può bloccare i nomi degli host?
+
+Sì. Per fare ciò, dovrai creare un file modulo personalizzato. *Vedere: [NOZIONI DI BASE (PER MODULI)](#MODULE_BASICS)*.
 
 ---
 

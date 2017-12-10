@@ -667,6 +667,105 @@ Ignore Seção 1
 
 Consulte os arquivos de assinaturas personalizadas para obter mais informações.
 
+#### 7.4 <a name="MODULE_BASICS"></a>NOÇÕES BÁSICAS (PARA MÓDULOS)
+
+Os módulos podem ser usados para ampliar a funcionalidade do CIDRAM, executar tarefas adicionais, ou processar lógica adicional. Tipicamente, eles são usados quando é necessário bloquear um pedido em uma base diferente do endereço IP de origem (portanto, quando uma assinatura do CIDR não será suficiente para bloquear o pedido). Os módulos são escritos como arquivos PHP e portanto, tipicamente, as assinaturas dos módulos são escritas como código PHP.
+
+Alguns bons exemplos de módulos do CIDRAM podem ser encontrados aqui:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Um modelo para escrever novos módulos pode ser encontrado aqui:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Devido a que os módulos são escritos como arquivos PHP, se você estiver adequadamente familiarizado com a base de códigos CIDRAM, você pode estruturar seus módulos e escreva as assinaturas do módulo, como quiser (em razão do que é possível com o PHP). Mas, para sua própria conveniência, e por uma melhor inteligibilidade mútua entre os módulos existentes e os seus próprios, é recomendável analisar o modelo acima, para poder usar a estrutura e o formato que ele fornece.
+
+*Nota: Se você não está confortável trabalhando com o código PHP, não é recomendável escrever seus próprios módulos.*
+
+Algumas funcionalidades são fornecidas pelo CIDRAM para os módulos a serem usados, o que deve tornar mais simples e fácil de escrever seus próprios módulos. A informação sobre esta funcionalidade é descrita abaixo.
+
+#### 7.5 FUNCIONALIDADE DO MÓDULO
+
+##### 7.5.0 "$Trigger"
+
+As assinaturas do módulo geralmente são escritas com "$Trigger". Na maioria dos casos, esse closure será mais importante do que qualquer outra coisa com a finalidade de escrever módulos.
+
+"$Trigger" aceita 4 parâmetros: "$Condition", "$ReasonShort", "$ReasonLong" (opcional), e "$DefineOptions" (opcional).
+
+A verdade de "$Condition" é avaliada, e se for true/verdade, a assinatura é "desencadeada". Se false/falso, a assinatura *não* é "desencadeada". "$Condition" tipicamente contém código PHP para avaliar uma condição que deve causar um pedido para ser bloqueado.
+
+"$ReasonShort" é citado no campo "Razão Bloqueada" quando a assinatura é "desencadeada".
+
+"$ReasonLong" é uma mensagem opcional a ser exibida para o usuário/cliente para quando eles estão bloqueados, para explicar por que eles foram bloqueados. Usa a mensagem padrão "Acesso Negado" quando omitido.
+
+"$DefineOptions" é uma array opcional contendo pares de chave/valor, usada para definir opções de configuração específicas para a instância de solicitação. As opções de configuração serão aplicadas quando a assinatura é "desencadeada".
+
+"$Trigger" retorna true/verdadeiro quando a assinatura é "desencadeada", e false/falsa quando não é.
+
+Para usar esse closure em seu módulo, lembre-se de herdá-lo do escopo pai:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Os bypass de assinatura geralmente são escritos com "$Bypass".
+
+"$Bypass" aceita 3 parâmetros: "$Condition", "$ReasonShort", e "$DefineOptions" (opcional).
+
+A verdade de "$Condition" é avaliada, e se for true/verdade, o bypass é "desencadeado". Se false/falso, o bypass *não* é "desencadeado". "$Condition" tipicamente contém código PHP para avaliar uma condição *não* que deve causar um pedido para ser bloqueado.
+
+"$ReasonShort" é citado no campo "Razão Bloqueada" quando o bypass é "desencadeado".
+
+"$DefineOptions" é uma array opcional contendo pares de chave/valor, usada para definir opções de configuração específicas para a instância de solicitação. As opções de configuração serão aplicadas quando o bypass é "desencadeado".
+
+"$Bypass" retorna true/verdadeiro quando o bypass é "desencadeado", e false/falsa quando não é.
+
+Para usar esse closure em seu módulo, lembre-se de herdá-lo do escopo pai:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Isso pode ser usado para buscar o nome do host de um endereço IP. Se você quiser criar um módulo para bloquear nomes de host, este closure pode ser útil.
+
+Exemplo:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 VARIABLES DE MÓDULO
+
+Os módulos executam dentro do seu próprio escopo, e quaisquer variáveis definidas por um módulo, não serão acessíveis a outros módulos, nem ao script pai, a menos que estejam armazenados na array "$CIDRAM" (tudo o resto é liberado após a conclusão do módulo).
+
+Abaixo estão algumas das variáveis comuns que podem ser úteis para o seu módulo:
+
+Variável | Descrição
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | A data e a hora atuais.
+`$CIDRAM['BlockInfo']['IPAddr']` | O endereço IP para a pedido atual.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | Versão do CIDRAM.
+`$CIDRAM['BlockInfo']['Query']` | A consulta para o pedido atual.
+`$CIDRAM['BlockInfo']['Referrer']` | O referente para o pedido atual (se houver).
+`$CIDRAM['BlockInfo']['UA']` | O agente do usuário (user agent) para o pedido atual.
+`$CIDRAM['BlockInfo']['UALC']` | O agente do usuário (user agent) para o pedido atual (em minúsculas).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | A mensagem a ser exibida para o usuário/cliente do pedido atual se eles estiverem bloqueados.
+`$CIDRAM['BlockInfo']['SignatureCount']` | O número de assinaturas desencadeadas para o pedido atual.
+`$CIDRAM['BlockInfo']['Signatures']` | Informações de referência para qualquer assinatura desencadeada para o pedido atual.
+`$CIDRAM['BlockInfo']['WhyReason']` | Informações de referência para qualquer assinatura desencadeada para o pedido atual.
+
 ---
 
 
@@ -782,6 +881,10 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 #### O que são "infrações"?
 
 "Infrações" determinam quando um IP que ainda não está bloqueado por qualquer arquivo de assinatura específico deve começar a ser bloqueado para quaisquer pedidos futuros, e estão intimamente associados ao monitoração IP. Existem algumas funcionalidades e módulos que permitem que os pedidos sejam bloqueados por motivos diferentes do IP de origem (tal como a presença de agentes de usuários [user agents] correspondentes a spambots ou hacktools, solicitações perigosas, DNS falsificado e assim por diante), e quando isso acontece, uma "infração" pode ocorrer. Eles fornecem uma maneira de identificar endereços IP que correspondem a solicitações indesejadas que podem ainda não ser bloqueadas por arquivos de assinatura específicos. Infrações geralmente correspondem 1-a-1 com o número de vezes que um IP está bloqueado, mas nem sempre (eventos de bloqueio severo podem ter um valor de infração maior do que um, e se "track_mode" for false, infrações não ocorrerão para eventos de bloco desencadeados exclusivamente por arquivos de assinatura).
+
+#### O CIDRAM pode bloquear nomes de host?
+
+Sim. Para fazer isso, você precisará criar um arquivo de módulo personalizado. *Vejo: [NOÇÕES BÁSICAS (PARA MÓDULOS)](#MODULE_BASICS)*.
 
 ---
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.12.06).
+ * This file: Russian language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Формат нотации да
 $CIDRAM['lang']['config_general_timeOffset'] = 'Смещение часового пояса в минут.';
 $CIDRAM['lang']['config_general_timezone'] = 'Ваш часовой пояс.';
 $CIDRAM['lang']['config_general_truncate'] = 'Усекать лог-файлы, когда они достигают определенного размера? Значение это максимальный размер в Б/КБ/МБ/ГБ/ТБ, до которого файл журнала может увеличиться до усечения. Стандартное значение 0КБ отключает усечение (лог-файлы может расти неограниченно). Примечание: относится к отдельным лог-файлы! Размер файлов журнала не учитывается совместно.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'Какой API использовать? V2 или Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Количество часов, чтобы вспомнить инстанция reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Свяжите reCAPTCHA к IP-адреса?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Свяжите reCAPTCHA к пользователи?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'Запросы блокированный';
 $CIDRAM['lang']['label_branch'] = 'Ветвь последние стабильный:';
 $CIDRAM['lang']['label_check_modules'] = 'Также протестируйте модули.';
 $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
+$CIDRAM['lang']['label_displaying'] = ['Отображение <span class="txtRd">%s</span> запись.', 'Отображение <span class="txtRd">%s</span> записи.', 'Отображение <span class="txtRd">%s</span> записей.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['Отображение <span class="txtRd">%1$s</span> запись, которая ссылается на «%2$s».', 'Отображение <span class="txtRd">%1$s</span> записи, которые ссылаются на «%2$s».', 'Отображение <span class="txtRd">%1$s</span> записей, которые ссылаются на «%2$s».'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'Риск ложноположительный: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Данные кэша и временные файлы';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM Использование диска: ';

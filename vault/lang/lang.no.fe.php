@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2017.12.06).
+ * This file: Norwegian language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Dato/tid notasjonsformat som bru
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidssone forskjøvet i minutter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidssone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'Hvilken API skal du bruke? V2 eller invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Antall timer for å huske reCAPTCHA-forekomster.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lås reCAPTCHA til IP-adresser?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Lås reCAPTCHA til brukere?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'Forespørsler blokkert';
 $CIDRAM['lang']['label_branch'] = 'Branch siste stabile:';
 $CIDRAM['lang']['label_check_modules'] = 'Test også mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versjon brukt:';
+$CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> oppføring vises.', '<span class="txtRd">%s</span> oppføringer vises.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> oppføring vises som citerer "%2$s".', '<span class="txtRd">%1$s</span> oppføringer vises som citerer "%2$s".'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risiko: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data og midlertidige filer';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM diskbruk: ';

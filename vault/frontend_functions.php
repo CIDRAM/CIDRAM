@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.06).
+ * This file: Front-end functions file (last modified: 2017.12.12).
  */
 
 /**
@@ -833,28 +833,78 @@ $CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
 };
 
 /** Attempt to perform some simple formatting for the log data. */
-$CIDRAM['Formatter'] = function (&$In) {
-    $Len = strlen($In);
-    if ($Len > 65536 || $Len > ini_get('pcre.backtrack_limit')) {
+$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '') {
+    static $MaxBlockSize = 65536;
+    if (strpos($In, "<br />\n") === false) {
+        $In = '<div class="s" style="background-color:rgba(0,0,0,0.125);">' . $In . '</div>';
         return;
     }
-    preg_match_all('~(&lt;\?.*\?&gt;|<\?.*\?>|\{.*\})~i', $In, $Parts);
-    foreach ($Parts[0] as $ThisPart) {
-        if (strlen($ThisPart) > 512 || strpos($ThisPart, "\n") !== false) {
-            continue;
+    $Out = '';
+    $In = "\n" . $In;
+    $Len = strlen($In);
+    $Caret = 0;
+    $BlockSeparator = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
+    $BlockSeparatorLen = strlen($BlockSeparator);
+    while ($Caret < $Len) {
+        $Remainder = $Len - $Caret;
+        if ($Remainder < $MaxBlockSize && $Remainder < ini_get('pcre.backtrack_limit')) {
+            $Section = substr($In, $Caret) . $BlockSeparator;
+            $Caret = $Len;
+        } else {
+            $SectionLen = strrpos(substr($In, $Caret, $MaxBlockSize), $BlockSeparator);
+            $Section = substr($In, $Caret, $SectionLen) . $BlockSeparator;
+            $Caret += $SectionLen;
         }
-        $In = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $In);
-    }
-    if (strpos($In, "<br />\n<br />\n") !== false) {
-        preg_match_all('~\n([^\n:]+): [^\n]+~i', $In, $Parts);
-        foreach ($Parts[1] as $ThisPart) {
-            $In = str_replace("\n" . $ThisPart . ': ', "\n<span class=\"textLabel\">" . $ThisPart . '</span>: ', $In);
-        }
-        preg_match_all('~\n([^\n:]+): [^\n]+~i', $In, $Parts);
+        preg_match_all('~(&lt;\?(?:(?!&lt;\?)[^\n])+\?&gt;|<\?(?:(?!<\?)[^\n])+\?>|\{\?(?:(?!\{\?)[^\n])+\?\})~i', $Section, $Parts);
         foreach ($Parts[0] as $ThisPart) {
-            $In = str_replace("\n" . substr($ThisPart, 1) . "\n", "\n<span class=\"s\">" . substr($ThisPart, 1) . "</span>\n", $In);
+            if (strlen($ThisPart) > 512 || strpos($ThisPart, "\n") !== false) {
+                continue;
+            }
+            $Section = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
         }
+        if (strpos($Section, "<br />\n<br />\n") !== false) {
+            preg_match_all('~\n([^\n:]+): ((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+            if (count($Parts[1])) {
+                $Parts[1] = array_unique($Parts[1]);
+                foreach ($Parts[1] as $ThisPart) {
+                    $Section = str_replace("\n" . $ThisPart . ': ', "\n<span class=\"textLabel\">" . $ThisPart . '</span>: ', $Section);
+                }
+            }
+            if (count($Parts[2]) && $BlockSeparatorLen === 14) {
+                $Parts[2] = array_unique($Parts[2]);
+                foreach ($Parts[2] as $ThisPart) {
+                    if (!$ThisPart || $ThisPart === $Current) {
+                        continue;
+                    }
+                    $Enc = str_replace('=', '_', base64_encode($ThisPart));
+                    $Section = str_replace(
+                        ': ' . $ThisPart . "<br />\n",
+                        ': ' . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n",
+                        $Section
+                    );
+                }
+            }
+            preg_match_all('~\n([^\n:]+: (?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+            if (count($Parts[1])) {
+                foreach ($Parts[1] as $ThisPart) {
+                    $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
+                }
+            }
+        }
+        $Out .= substr($Section, 0, $BlockSeparatorLen * -1);
     }
+    $Out = substr($Out, 1);
+    $In = '';
+    $BlockStart = 0;
+    $BlockEnd = 0;
+    while ($BlockEnd !== false) {
+        $Darken = empty($Darken);
+        $Style = $Darken ? '<div style="background-color:rgba(0,0,0,0.125);">' : '<div style="background-color:rgba(255,255,255,0.125);">';
+        $BlockEnd = strpos($Out, $BlockSeparator, $BlockStart);
+        $In .= $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
+        $BlockStart = $BlockEnd + $BlockSeparatorLen;
+    }
+    $In = str_replace("<br />\n</div>", "<br /></div>\n", $In);
 };
 
 /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.06).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符號格�
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
 $CIDRAM['lang']['config_general_timezone'] = '您的時區。';
 $CIDRAM['lang']['config_general_truncate'] = '截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。';
+$CIDRAM['lang']['config_recaptcha_api'] = '使用哪個API？V2或Invisible？';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '記得reCAPTCHA多少小時？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '應該reCAPTCHA鎖定到IP？';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = '應該reCAPTCHA鎖定到用戶？';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = '請求已阻止';
 $CIDRAM['lang']['label_branch'] = '分支最新穩定：';
 $CIDRAM['lang']['label_check_modules'] = '也用模塊進行測試。';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
+$CIDRAM['lang']['label_displaying'] = '顯示<span class="txtRd">%1$s</span>個項目。';
+$CIDRAM['lang']['label_displaying_that_cite'] = '顯示<span class="txtRd">%1$s</span>個包含『%2$s』的項目。';
 $CIDRAM['lang']['label_false_positive_risk'] = '假陽性風險：';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '緩存數據和臨時文件';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM使用的磁盤空間： ';

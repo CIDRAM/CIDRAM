@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.12.06).
+ * This file: Front-end handler (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1572,7 +1572,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     $CIDRAM['Components']['CountOutdated'] = count($CIDRAM['Components']['Outdated']);
     $CIDRAM['Components']['CountVerify'] = count($CIDRAM['Components']['Verify']);
-    
+
     /** Preparing for update all and verify all buttons. */
     $CIDRAM['FE']['UpdateAll'] = ($CIDRAM['Components']['CountOutdated'] || $CIDRAM['Components']['CountVerify']) ? '<hr />' : '';
 
@@ -2516,6 +2516,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     /** Text mode switch link base. */
     $CIDRAM['FE']['TextModeSwitchLink'] = '';
 
+    /** Link to search for related blocks and search information readout. */
+    $CIDRAM['FE']['SearchInfo'] = $CIDRAM['FE']['SearchQuery'] = $CIDRAM['FE']['BlockLink'] = '';
+
     /** How to display the log data? */
     if (empty($CIDRAM['QueryVars']['text-mode']) || $CIDRAM['QueryVars']['text-mode'] === 'false') {
         $CIDRAM['FE']['TextModeLinks'] = 'false';
@@ -2531,8 +2534,59 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     } elseif (empty($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_logfile_doesnt_exist'];
     } else {
-        $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&logfile=' . $CIDRAM['QueryVars']['logfile'] . '&text-mode=';
         $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
+        $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&logfile=' . $CIDRAM['QueryVars']['logfile'];
+
+        /** Handle block filtering. */
+        if (!empty($CIDRAM['FE']['logfileData']) && !empty($CIDRAM['QueryVars']['search'])) {
+            $CIDRAM['FE']['TextModeSwitchLink'] .= '&search=' . $CIDRAM['QueryVars']['search'];
+            $CIDRAM['FE']['NewLogFileData'] = '';
+            $CIDRAM['FE']['SearchQuery'] = base64_decode(str_replace('_', '=', $CIDRAM['QueryVars']['search']));
+            $CIDRAM['FE']['BlockStart'] = 0;
+            $CIDRAM['FE']['BlockEnd'] = 0;
+            $CIDRAM['FE']['BlockSeparator'] = (
+                strpos($CIDRAM['FE']['logfileData'], "\n\n") !== false
+            ) ? "\n\n" : "\n";
+            while (($CIDRAM['FE']['Needle'] = strpos(
+                $CIDRAM['FE']['logfileData'],
+                ($CIDRAM['FE']['BlockSeparator'] === "\n\n" ? ': ' . $CIDRAM['FE']['SearchQuery'] . "\n" : $CIDRAM['FE']['SearchQuery']),
+                $CIDRAM['FE']['BlockEnd']
+            )) !== false) {
+                $CIDRAM['FE']['BlockStart'] = strrpos(substr($CIDRAM['FE']['logfileData'], 0, $CIDRAM['FE']['Needle']), $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd']);
+                $CIDRAM['FE']['BlockEnd'] = strpos($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['Needle']);
+                $CIDRAM['FE']['NewLogFileData'] .= substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']);
+            }
+            if ($CIDRAM['FE']['BlockSeparator'] === "\n\n") {
+                $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['NewLogFileData'], strlen($CIDRAM['FE']['BlockSeparator'])) . $CIDRAM['FE']['BlockSeparator'];
+            }
+            if (!str_replace("\n", '', $CIDRAM['FE']['logfileData'])) {
+                $CIDRAM['FE']['EntryCount'] = 0;
+            } else {
+                $CIDRAM['FE']['EntryCount'] = substr_count($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator']);
+            }
+            unset($CIDRAM['FE']['Needle'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['NewLogFileData']);
+            $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
+                $CIDRAM['Plural']($CIDRAM['FE']['EntryCount'], $CIDRAM['lang']['label_displaying_that_cite']),
+                $CIDRAM['Number_L10N']($CIDRAM['FE']['EntryCount']),
+                '<code>' . $CIDRAM['FE']['SearchQuery'] . '</code>'
+            );
+        } else {
+            if (!str_replace("\n", '', $CIDRAM['FE']['logfileData'])) {
+                $CIDRAM['FE']['EntryCount'] = 0;
+            } else {
+                $CIDRAM['FE']['EntryCount'] = substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n");
+            }
+            if (substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?') {
+                $CIDRAM['FE']['EntryCount']--;
+            }
+            $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
+                $CIDRAM['Plural']($CIDRAM['FE']['EntryCount'], $CIDRAM['lang']['label_displaying']),
+                $CIDRAM['Number_L10N']($CIDRAM['FE']['EntryCount'])
+            );
+        }
+
+        $CIDRAM['FE']['TextModeSwitchLink'] .= '&text-mode=';
+        $CIDRAM['FE']['BlockLink'] .= $CIDRAM['FE']['TextModeSwitchLink'] . $CIDRAM['FE']['TextModeLinks'];
         $CIDRAM['FE']['logfileData'] = $CIDRAM['FE']['TextMode'] ? str_replace(
             ['<', '>', "\r", "\n"], ['&lt;', '&gt;', '', "<br />\n"], $CIDRAM['FE']['logfileData']
         ) : str_replace(
@@ -2557,7 +2611,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 
     /** Prepare log data formatting. */
     if ($CIDRAM['FE']['TextMode']) {
-        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData']);
+        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery']);
     } else {
         $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . $CIDRAM['FE']['logfileData'] . '</textarea>';
     }

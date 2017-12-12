@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.12.06).
+ * This file: Urdu language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استع
 $CIDRAM['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
 $CIDRAM['lang']['config_general_timezone'] = 'آپ کے ٹائم زون.';
 $CIDRAM['lang']['config_general_truncate'] = 'وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'گھنٹوں کی تعداد reCAPTCHA کے واقعات کو یاد کرنے.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'ئی پی ایس کے لئے ہیتی لاک؟';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'صارفین کے لئے ہیتی لاک؟';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_check_modules'] = 'ماڈیولز کے خلاف بھی ٹیسٹ کریں.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
+$CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> آئٹم دکھایا.', '<span class="txtRd">%s</span> اشیاء دکھایا.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> آئٹم دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.', '<span class="txtRd">%1$s</span> اشیاء دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ڈسک استعمال: ';

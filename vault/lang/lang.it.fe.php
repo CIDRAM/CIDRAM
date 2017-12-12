@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.12.06).
+ * This file: Italian language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Il formato della data/ora di not
 $CIDRAM['lang']['config_general_timeOffset'] = 'Fuso orario offset in minuti.';
 $CIDRAM['lang']['config_general_timezone'] = 'Il vostro fuso orario.';
 $CIDRAM['lang']['config_general_truncate'] = 'Troncare i file di log quando raggiungono una determinata dimensione? Il valore è la dimensione massima in B/KB/MB/GB/TB che un file di log può crescere prima di essere troncato. Il valore predefinito di 0KB disattiva il troncamento (i file di log possono crescere indefinitamente). Nota: Si applica ai singoli file di log! La dimensione dei file di log non viene considerata collettivamente.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'Quale API usare? V2 o Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Numero di ore per ricordare le istanze reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Legare reCAPTCHA per IP?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Legare reCAPTCHA per gli utenti?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'Richieste bloccate';
 $CIDRAM['lang']['label_branch'] = 'Branch più recente stabile:';
 $CIDRAM['lang']['label_check_modules'] = 'Prova anche contro i moduli.';
 $CIDRAM['lang']['label_cidram'] = 'Versione CIDRAM utilizzata:';
+$CIDRAM['lang']['label_displaying'] = ['Visualizzazione di <span class="txtRd">%s</span> voce.', 'Visualizzazione di <span class="txtRd">%s</span> voci.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['Visualizzazione di <span class="txtRd">%1$s</span> voce che cita "%2$s".', 'Visualizzazione di <span class="txtRd">%1$s</span> voci che citano "%2$s".'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'Rischio di falsi positivi: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Dati di cache e file temporanei';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Utilizzo del disco da parte di CIDRAM: ';

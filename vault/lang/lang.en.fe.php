@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.12.06).
+ * This file: English language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format us
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Your timezone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'Which API to use? V2 or Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lock reCAPTCHA to IPs?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Lock reCAPTCHA to users?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'Requests blocked';
 $CIDRAM['lang']['label_branch'] = 'Branch latest stable:';
 $CIDRAM['lang']['label_check_modules'] = 'Also test against modules.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM version used:';
+$CIDRAM['lang']['label_displaying'] = ['Displaying <span class="txtRd">%s</span> entry.', 'Displaying <span class="txtRd">%s</span> entries.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['Displaying <span class="txtRd">%1$s</span> entry that cites "%2$s".', 'Displaying <span class="txtRd">%1$s</span> entries that cite "%2$s".'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'False positive risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data and temporary files';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk usage: ';

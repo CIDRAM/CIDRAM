@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.12.06).
+ * This file: Dutch language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door C
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
 $CIDRAM['lang']['config_general_timezone'] = 'Uw tijdzone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'Welke API gebruiken? V2 of invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Aantal uren om reCAPTCHA instanties herinneren.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Binden reCAPTCHA om IPs?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Binden reCAPTCHA om gebruikers?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'Verzoeken geblokkeerd';
 $CIDRAM['lang']['label_branch'] = 'Branch laatste stabiele:';
 $CIDRAM['lang']['label_check_modules'] = 'Test ook tegen modules.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
+$CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> item weergeven.', '<span class="txtRd">%s</span> items weergeven.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> item weergeven dat "%2$s" citeert.', '<span class="txtRd">%1$s</span> items weergeven dat "%2$s" citeren.'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-schijfgebruik: ';

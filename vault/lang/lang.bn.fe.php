@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.12.06).
+ * This file: Bangla language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM দ্বারা ব্
 $CIDRAM['lang']['config_general_timeOffset'] = 'টাইমজোন মিনিটে অফসেট।';
 $CIDRAM['lang']['config_general_timezone'] = 'আপনার টাইমজোন।';
 $CIDRAM['lang']['config_general_truncate'] = 'একটি নির্দিষ্ট আকারে পৌঁছানোর সময় লগ ফাইলগুলি কেটে ফেলা হবে? লগ ফাইলগুলির জন্য B/KB/MB/GB/TB এ মান সর্বাধিক অনুমোদিত আকার (এই আকারের বাইরে, লগ ফাইলগুলি ছোট করা হবে)। ডিফল্ট মান 0KB ট্রুনাকশন নিষ্ক্রিয় করবে (লগ ফাইলগুলি অনির্দিষ্টকালের জন্য বাড়তে পারে)। দয়া করে নোট করুন: এটি স্বতন্ত্র লগ ফাইলগুলিতে প্রযোজ্য! লগ ফাইলের আকার সমষ্টিগতভাবে বিবেচনা করা হয় না।';
+$CIDRAM['lang']['config_recaptcha_api'] = 'API ব্যবহার করতে? V2 বা Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA দৃষ্টান্তগুলি মনে রাখার জন্য ঘন্টাগুলির সংখ্যা।';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA IP অ্যাড্রেসগুলি লক করুন?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHA ব্যবহারকারীদের লক করুন?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'অনুরোধ অবরুদ্ধ';
 $CIDRAM['lang']['label_branch'] = 'শাখা সর্বশেষ স্থিতিশীল:';
 $CIDRAM['lang']['label_check_modules'] = 'এছাড়াও মডিউলগুলির বিরুদ্ধে পরীক্ষা করুন।';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM সংস্করণ ব্যবহৃত:';
+$CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> এন্ট্রি প্রদর্শন করা হচ্ছে।';
+$CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s" উল্লেখ করে <span class="txtRd">%1$s</span> এন্ট্রি প্রদর্শন করা হচ্ছে।';
 $CIDRAM['lang']['label_false_positive_risk'] = 'ঝুঁকিতে ইতিবাচক মিথ্যা: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'ক্যাশ ডেটা এবং অস্থায়ী ফাইল';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ডিস্ক ব্যবহার: ';

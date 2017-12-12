@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.12.03).
+ * This file: Output generator (last modified: 2017.12.12).
  */
 
 /** Initialise cache. */
@@ -447,7 +447,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
         $CIDRAM['AddField']($CIDRAM['lang']['field_ipaddr_resolved'], $CIDRAM['BlockInfo']['IPAddrResolved']);
     }
-    if (!empty($CIDRAM['Hostname'])) {
+    if (!empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
         $CIDRAM['BlockInfo']['Hostname'] = $CIDRAM['Hostname'];
         $CIDRAM['AddField']($CIDRAM['lang']['field_hostname'], $CIDRAM['BlockInfo']['Hostname']);
     }

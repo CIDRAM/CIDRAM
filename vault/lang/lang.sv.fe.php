@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.12.06).
+ * This file: Swedish language data for the front-end (last modified: 2017.12.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -46,6 +46,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Datum/tid notationsformat som an
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidszonen kompenseras i minuter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidszon.';
 $CIDRAM['lang']['config_general_truncate'] = 'Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt.';
+$CIDRAM['lang']['config_recaptcha_api'] = 'Vilket API ska användas? V2 eller Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Antal timmar för att komma ihåg reCAPTCHA-instanser.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Låsa reCAPTCHA till IP-adresser?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'Låsa reCAPTCHA till användare?';
@@ -131,6 +132,8 @@ $CIDRAM['lang']['label_blocked'] = 'Förfrågningar blockerade';
 $CIDRAM['lang']['label_branch'] = 'Branch senaste stabila:';
 $CIDRAM['lang']['label_check_modules'] = 'Test även mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-version som används:';
+$CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> föremål visas.', '<span class="txtRd">%s</span> föremålen visas.'];
+$CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> föremål visas som citerar "%2$s".', '<span class="txtRd">%1$s</span> föremålen visas som citerar "%2$s".'];
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cacherdata och tillfälliga filer';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-diskanvändning: ';

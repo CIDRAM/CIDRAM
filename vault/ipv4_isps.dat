@@ -7445,7 +7445,7 @@ recaptcha:
 
 
 # ASNs 49775, 59665 ("Ultra-Telecom LLC").
-# Updated: 2017.07.12
+# Updated: 2017.07.12 / Checked: 2017.12.11
 
 176.124.144.0/22 Deny Spam
 195.160.164.0/23 Deny Spam
@@ -7608,3 +7608,14 @@ Tag: WEST CALL SPb LLC
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 198093 ("Foreningen for digitala fri- och rattigheter").
+# Dead homepage and high levels of automated spam from this ASN.
+# %Listed, CleanTalk.org: 90.91%.
+# Stop Forum Spam (SFS) listings: 23,490.
+# Updated: 2017.12.11
+
+171.25.193.0/24 Deny Spam
+194.0.61.0/24 Deny Spam
+Tag: Foreningen

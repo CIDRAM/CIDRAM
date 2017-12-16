@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.03).
+ * This file: Functions file (last modified: 2017.12.17).
  */
 
 /**
@@ -826,61 +826,27 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
 };
 
 /**
- * Routes to "DNS-Reverse-IPv4" or "DNS-Reverse-IPv6", or returns an empty
- * string, depending on the type of input supplied to $Addr.
- */
-$CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
-    if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false) {
-        return $CIDRAM['DNS-Reverse-IPv4']($Addr, $DNS, $Timeout);
-    }
-    if (strpos($Addr, '.') === false && strpos($Addr, ':') !== false) {
-        return $CIDRAM['DNS-Reverse-IPv6']($Addr, $DNS, $Timeout);
-    }
-    return '';
-};
-
-/**
- * Performs reverse DNS lookups for IPv4 IP addresses, to resolve their
- * hostnames. This is functionally equivalent to the in-built PHP function
- * "gethostbyaddr", but with the added benefits of being able to specify which
- * DNS servers to use for lookups, and of being able to enforce timeout limits,
- * which should help to avoid some of the problems normally associated with
- * using "gethostbyaddr".
+ * Performs reverse DNS lookups for IP addresses, to resolve their hostnames.
+ * This is functionally equivalent to the in-built "gethostbyaddr" PHP
+ * function, but with the added benefit of being able to specify which DNS
+ * servers to use for lookups, and of being able to enforce timeouts, which
+ * should help to avoid some of the problems normally encountered by using
+ * "gethostbyaddr".
  *
- * @param string $Addr The IPv4 IP address to look up.
+ * @param string $Addr The IP address to look up.
  * @param string $DNS An optional, comma delimited list of DNS servers to use.
  * @param string $Timeout The timeout limit (optional; defaults to 5 seconds).
  * @return string The hostname on success, or the IP address on failure.
  */
-$CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
-    /** Reroute to "DNS-Reverse-IPv6" if we've gotten it wrong. */
-    if (strpos($Addr, '.') === false && strpos($Addr, ':') !== false) {
-        return $CIDRAM['DNS-Reverse-IPv6']($Addr, $DNS, $Timeout);
-    }
+$CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
 
-    if (!isset($CIDRAM['_allow_url_fopen'])) {
-        $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
-        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] == 'Off');
-    }
-    if (!function_exists('fsockopen') || !$CIDRAM['_allow_url_fopen']) {
-        return $Addr;
-    }
+    /** We've already got it cached. We can return the results early. */
     if (isset($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'])) {
         return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'];
     }
-    if (!isset($CIDRAM['Cache']['DNS-Reverses'])) {
-        $CIDRAM['Cache']['DNS-Reverses'] = [];
-    }
-    $CIDRAM['Cache']['DNS-Reverses'][$Addr] = ['Host' => '', 'Time' => $CIDRAM['Now'] + 21600];
-    $CIDRAM['CacheModified'] = true;
 
-    if (!$DNS && !$DNS = $CIDRAM['Config']['general']['default_dns']) {
-        return $Addr;
-    }
-    $DNS = explode(',', $DNS);
-
-    $LeftPad = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
-    if (preg_match(
+    /** The IP address is IPv4. */
+    if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
         '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-' .
         '9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2' .
         '}|2[0-4][0-9]|25[0-5])$/i',
@@ -891,22 +857,79 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
             chr(strlen($Octets[2])) . $Octets[2] .
             chr(strlen($Octets[1])) . $Octets[1] .
             "\7in-addr\4arpa\0\0\x0c\0\1";
-    } else {
-        return '';
     }
+
+    /** The IP address is IPv6. */
+    elseif (strpos($Addr, '.') === false && strpos($Addr, ':') !== false && $CIDRAM['ExpandIPv6']($Addr, true)) {
+        $Lookup = $Addr;
+        if (strpos($Addr, '::') !== false) {
+            $Repeat = 8 - substr_count($Addr, ':');
+            $Lookup = str_replace('::', str_repeat(':0', ($Repeat < 1 ? 0 : $Repeat)) . ':', $Lookup);
+        }
+        while (strlen($Lookup) < 39) {
+            $Lookup = preg_replace(
+                ['/:$/', '/^([0-9a-f]{1,3}):/i', '/:([0-9a-f]{1,3})$/i', '/:([0-9a-f]{1,3}):/i'],
+                [':0', '0\1:', ':0\1', ':0\1:'],
+                $Lookup
+            );
+        }
+        $Lookup = strrev(preg_replace(['/\:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
+    }
+
+    /** The IP address is.. wrong. Let's exit the closure. */
+    else {
+        return $Addr;
+    }
+
+    /** Some safety mechanisms. */
+    if (!isset($CIDRAM['_allow_url_fopen'])) {
+        $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
+        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] == 'Off');
+    }
+    if (empty($Lookup) || !function_exists('fsockopen') || !$CIDRAM['_allow_url_fopen']) {
+        return $Addr;
+    }
+
+    /** Prepare cache. */
+    if (!isset($CIDRAM['Cache']['DNS-Reverses'])) {
+        $CIDRAM['Cache']['DNS-Reverses'] = [];
+    }
+    $CIDRAM['Cache']['DNS-Reverses'][$Addr] = ['Host' => $Addr, 'Time' => $CIDRAM['Now'] + 21600];
+    $CIDRAM['CacheModified'] = true;
+
+    /** DNS is disabled. Let's exit the closure. */
+    if (!$DNS && !$DNS = $CIDRAM['Config']['general']['default_dns']) {
+        return $Addr;
+    }
+
+    /** Expand list of lookup servers. */
+    $DNS = explode(',', $DNS);
+
+    /** UDP padding. */
+    $LeftPad = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
+
+    /** Perform the lookup. */
     foreach ($DNS as $Server) {
         if (!empty($Response) || !$Server) {
             break;
         }
+
         $Handle = fsockopen('udp://' . $Server, 53);
-        fwrite($Handle, $LeftPad . $Lookup);
-        stream_set_timeout($Handle, $Timeout);
-        $Response = fread($Handle, 1024);
-        fclose($Handle);
+        if ($Handle !== false) {
+            fwrite($Handle, $LeftPad . $Lookup);
+            stream_set_timeout($Handle, $Timeout);
+            stream_set_blocking($Handle, true);
+            $Response = fread($Handle, 1024);
+            fclose($Handle);
+        }
     }
+
+    /** No response, or failed lookup. Let's exit the closure. */
     if (empty($Response)) {
         return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = $Addr;
     }
+
+    /** We got a response! Now let's process it accordingly. */
     $Host = '';
     if (($Pos = strpos($Response, $Lookup)) !== false) {
         $Pos += strlen($Lookup) + 12;
@@ -919,21 +942,15 @@ $CIDRAM['DNS-Reverse-IPv4'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$C
             $Pos += 1 + $Len;
         }
     }
+
+    /** Return results. */
     return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^0-9a-z._~-]/i', '', $Host) ?: $Addr;
+
 };
 
-/**
- * Reserved for future use (reverse DNS lookups for IPv6 IP addresses aren't
- * supported yet, but will be supported in the future).
- */
-$CIDRAM['DNS-Reverse-IPv6'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
-    /** Reroute to "DNS-Reverse-IPv4" if we've gotten it wrong. */
-    if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false) {
-        return $CIDRAM['DNS-Reverse-IPv4']($Addr, $DNS, $Timeout);
-    }
-
-    /** Return $Addr. */
-    return $Addr;
+/** Aliases for "DNS-Reverse". */
+$CIDRAM['DNS-Reverse-IPv4'] = $CIDRAM['DNS-Reverse-IPv6'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
+    return $CIDRAM['DNS-Reverse']($Addr, $DNS, $Timeout);
 };
 
 /**

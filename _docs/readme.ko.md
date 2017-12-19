@@ -460,6 +460,9 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 "signature_limit"
 - reCAPTCHA 인스턴스가 제공 될 때 트리거 될 수있는 최대 서명 수입니다. Default (기본 설정) = 1. 특정 요청에 대해이 수가 초과되면, reCAPTCHA 인스턴스가 제공되지 않습니다.
 
+"api"
+- 어떤 API를 사용할 수 있습니까? V2 또는 Invisible?
+
 #### "template_data" (카테고리)
 템플릿과 테마 지시어와 변수.
 
@@ -667,6 +670,105 @@ Ignore 섹션 1
 
 자세한 내용은 사용자 정의 시그니처 파일을 참조하십시오.
 
+#### 7.4 <a name="MODULE_BASICS"></a>기초 (모듈 경우)
+
+Modules can be used to extend the functionality of CIDRAM, perform additional tasks, or process additional logic. Typically, they're used when it's necessary to block a request on a basis other than its originating IP address (and thus, when a CIDR signature won't suffice to block the request). Modules are written as PHP files, and thus, typically, module signatures are written as PHP code.
+
+Some good examples of CIDRAM modules can be found here:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+A template for writing new modules can be found here:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Due to that modules are written as PHP files, if you're adequately familiar with the CIDRAM codebase, you can structure your modules however you want, and write your module signatures however you want (within reason of what is possible with PHP). However, for your own convenience, and for the sake of better mutual intelligibility between existing modules and your own, analysing the template linked above is recommended, in order to be able to use the structure and format that it provides.
+
+*Note: If you're not comfortable working with PHP code, writing your own modules is not recommended.*
+
+Some functionality is provided by CIDRAM for modules to use, which should make it simpler and easier to write your own modules. Information about this functionality is described below.
+
+#### 7.5 MODULE FUNCTIONALITY
+
+##### 7.5.0 "$Trigger"
+
+Module signatures are typically written with "$Trigger". In most cases, this closure will be more important than anything else for the purpose of writing modules.
+
+"$Trigger" accepts 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optional), and "$DefineOptions" (optional).
+
+The truthiness of "$Condition" is evaluated, and if true, the signature is "triggered". If false, the signature is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+
+"$ReasonShort" is cited in the "Why Blocked" field when the signature is "triggered".
+
+"$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
+
+"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is "triggered".
+
+"$Trigger" returns true when the signature is "triggered", and false when it isn't.
+
+To use this closure in your module, remember firstly to inherit it from the parent scope:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Signature bypasses are typically written with "$Bypass".
+
+"$Bypass" accepts 3 parameters: "$Condition", "$ReasonShort", and "$DefineOptions" (optional).
+
+The truthiness of "$Condition" is evaluated, and if true, the bypass is "triggered". If false, the bypass is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should *not* cause a request to be blocked.
+
+"$ReasonShort" is cited in the "Why Blocked" field when the bypass is "triggered".
+
+"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is "triggered".
+
+"$Bypass" returns true when the bypass is "triggered", and false when it isn't.
+
+To use this closure in your module, remember firstly to inherit it from the parent scope:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+This can be used to fetch the hostname of an IP address. If you want to create a module to block hostnames, this closure could be useful.
+
+Example:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 MODULE VARIABLES
+
+Modules execute within their own scope, and any variables defined by a module, won't be accessible to other modules, or to the parent script, unless they're stored in the "$CIDRAM" array (everything else is flushed after the module execution finishes).
+
+Listed below are some common variables that might be useful for your module:
+
+Variable | Description
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | The current date and time.
+`$CIDRAM['BlockInfo']['IPAddr']` | IP address for the current request.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM script version.
+`$CIDRAM['BlockInfo']['Query']` | The query for the current request.
+`$CIDRAM['BlockInfo']['Referrer']` | The referrer for the current request (if one exists).
+`$CIDRAM['BlockInfo']['UA']` | The user agent for the current request.
+`$CIDRAM['BlockInfo']['UALC']` | The user agent for the current request (lower-cased).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | The message to be displayed to the user/client for the current request if they're blocked.
+`$CIDRAM['BlockInfo']['SignatureCount']` | The number of signatures triggered for the current request.
+`$CIDRAM['BlockInfo']['Signatures']` | Reference information for any signatures triggered for the current request.
+`$CIDRAM['BlockInfo']['WhyReason']` | Reference information for any signatures triggered for the current request.
+
 ---
 
 
@@ -782,6 +884,10 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 #### "위반"이란 무엇입니까?
 
 "위반"은 특정 서명 파일에 의해 아직 차단되지 않은 IP가 이후 요청에 대해 차단되기 시작해야하는시기를 결정합니다. 이들은 IP 추적과 밀접하게 관련되어 있습니다. 원래의 IP가 아닌 이유로 요청을 차단할 수있는 기능 및 모듈이 있습니다 (예를 들어, 스팸봇 또는 해킹 도구에 해당하는 사용자 에이전트가있는 것과 같은 이유, 위험한 검색어, 스푸핑 된 DNS, 기타). 이 경우 "위반"이 발생할 수 있습니다. 이들은 특정 서명 파일에 의해 아직 차단되지 않은 원치 않는 요청에 해당하는 IP 주소를 식별하는 방법을 제공합니다. 위반은 일반적으로 IP가 차단 된 횟수와 일대일로 대응하지만 항상 그렇지는 않습니다 (심한 경우에는 위반 값이 더 클 수 있습니다, 또한, "track_mode"가 false 인 경우, 서명 파일에 의해서만 트리거 된 블록 이벤트에 대해서는 위반이 발생하지 않습니다).
+
+#### CIDRAM이 호스트 이름을 차단할 수 있습니까?
+
+예. 이렇게하려면 사용자 지정 모듈 파일을 만들어야합니다. *참조하십시오 : [기초 (모듈 경우)](#MODULE_BASICS)*.
 
 ---
 

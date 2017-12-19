@@ -460,6 +460,9 @@ Pour obtenir une « site key » et une « secret key » (nécessaires à l'u
 « signature_limit »
 - Nombre maximum de signatures autorisées à être déclenchées lorsqu'une instance de reCAPTCHA doit être présentée. Défaut = 1. Si ce nombre est dépassé pour une requête particulière, une instance de reCAPTCHA ne sera pas présentée.
 
+« api »
+- Quelle API utiliser ? V2 ou Invisible ?
+
 #### « template_data » (Catégorie)
 Directives/Variables pour les modèles et thèmes.
 

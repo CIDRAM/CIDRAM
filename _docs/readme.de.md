@@ -460,6 +460,9 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 "signature_limit"
 - Maximale Anzahl von Signaturen, die ausgelöst werden dürfen, wenn eine reCAPTCHA-Instanz angeboten werden soll. Standardeinstellung = 1. Wenn diese Anzahl für eine bestimmte Anfrage überschritten wird, wird keine reCAPTCHA-Instanz angeboten.
 
+"api"
+- Welche API soll verwendet werden? V2 oder Invisible?
+
 #### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
 

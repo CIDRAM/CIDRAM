@@ -460,6 +460,9 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 "signature_limit"
 - Maximum number of signatures allowed to be triggered when a reCAPTCHA instance is to be offered. Default = 1. If this number is exceeded for any particular request, a reCAPTCHA instance won't be offered.
 
+"api"
+- Which API to use? V2 or Invisible?
+
 #### "template_data" (Category)
 Directives/Variables for templates and themes.
 

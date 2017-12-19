@@ -460,6 +460,9 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 "signature_limit"
 - Số chữ ký tối đa cho phép được kích hoạt khi một cá thể reCAPTCHA được cung cấp. Mặc định = 1. Nếu số này vượt quá cho bất kỳ yêu cầu cụ thể nào, một cá thể reCAPTCHA sẽ không được cung cấp.
 
+"api"
+- API nào để sử dụng? V2 hoặc Invisible?
+
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
 
@@ -667,6 +670,105 @@ Ignore Phần 1
 
 Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 
+#### 7.4 <a name="MODULE_BASICS"></a>KHÁI NIỆM CƠ BẢN (CHO MÔ-ĐUN)
+
+Các mô-đun có thể được sử dụng để mở rộng chức năng của CIDRAM, thực hiện các tác vụ bổ sung hay xử lý logic bổ sung. Thông thường, chúng được sử dụng khi cần thiết để chặn một yêu cho cầu lý do khác với địa chỉ IP có nguồn gốc (và như vậy, khi một chữ ký CIDR sẽ không đủ để chặn yêu cầu). Mô-đun được viết như tập tin PHP, và như vậy, thông thường, chữ ký mô-đun được viết như mã PHP.
+
+Một số ví dụ điển hình về mô-đun CIDRAM có thể được tìm thấy ở đây:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Bạn có thể tìm thấy khuôn mẫu để viết mô-đun mới ở đây:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Bởi vì các mô-đun được viết như tập tin PHP, nếu bạn đã quen thuộc với mã nguồn CIDRAM, bạn có thể cấu trúc module của bạn tuy nhiên bạn muốn, và viết chữ ký mô-đun của bạn tuy nhiên bạn muốn (trong vòng suy luận những gì có thể với PHP). Tuy nhiên, để thuận tiện cho bạn, và vì lợi ích của hiểu rõ hơn giữa các mô-đun hiện tại và của riêng bạn, phân tích mẫu liên kết ở trên được khuyến nghị, để có thể sử dụng cấu trúc và định dạng mà nó cung cấp.
+
+*Lưu ý: Nếu bạn không cảm thấy thoải mái khi làm việc với mã PHP, bạn không nên viết mô-đun riêng của mình.*
+
+Một số chức năng được cung cấp bởi CIDRAM cho các mô-đun để sử dụng, để làm cho việc viết mô-đun của bạn trở nên đơn giản và dễ dàng hơn. Thông tin về chức năng này được mô tả dưới đây.
+
+#### 7.5 CHỨC NĂNG MÔ-ĐUN
+
+##### 7.5.0 "$Trigger"
+
+Chữ ký mô-đun thường được viết bằng "$Trigger". Trong hầu hết các trường hợp, sự đóng này sẽ quan trọng hơn bất cứ thứ gì khác để viết mô-đun.
+
+"$Trigger" chấp nhận 4 tham số: "$Condition", "$ReasonShort", "$ReasonLong" (không bắt buộc), và "$DefineOptions" (không bắt buộc).
+
+Thực tế của "$Condition" được đánh giá, và nếu true/đúng, chữ ký là "kích hoạt". Nếu false/sai, chữ ký không phải là "kích hoạt". "$Condition" thường có chứa mã PHP để đánh giá một điều kiện nên làm yêu cầu bị chặn.
+
+"$ReasonShort" được trích dẫn trong trường "Tại sao bị chặn" khi chữ ký được "kích hoạt".
+
+"$ReasonLong" là một thông báo tùy chọn được hiển thị cho người dùng / khách hàng khi chúng bị chặn, để giải thích tại sao chúng bị chặn. Nó sử dụng thông báo "Truy cập bị từ chối" thông thường khi bị bỏ qua.
+
+"$DefineOptions" là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi chữ ký được "kích hoạt".
+
+"$Trigger" trả về true/đúng khi chữ ký được "kích hoạt", và false/sai khi không.
+
+Để sử dụng sự đóng này trong mô-đun của bạn, trước tiên hãy nhớ kế thừa nó từ phạm vi cha mẹ:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Đường tránh chữ ký thường được viết bằng "$Bypass".
+
+"$Bypass" chấp nhận 3 tham số: "$Condition", "$ReasonShort", và "$DefineOptions" (không bắt buộc).
+
+Thực tế của "$Condition" được đánh giá, và nếu true/đúng, đường tránh là "kích hoạt". Nếu false/sai, đường tránh không phải là "kích hoạt". "$Condition" thường có chứa mã PHP để đánh giá một điều kiện *không* nên làm yêu cầu bị chặn.
+
+"$ReasonShort" được trích dẫn trong trường "Tại sao bị chặn" khi đường tránh được "kích hoạt".
+
+"$DefineOptions" là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi đường tránh được "kích hoạt".
+
+"$Bypass" trả về true/đúng khi đường tránh được "kích hoạt", và false/sai khi không.
+
+Để sử dụng sự đóng này trong mô-đun của bạn, trước tiên hãy nhớ kế thừa nó từ phạm vi cha mẹ:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Điều này có thể được sử dụng để lấy tên máy chủ của một địa chỉ IP. Nếu bạn muốn tạo một mô-đun để chặn tên máy chủ, sự đóng này có thể hữu ích.
+
+Ví dụ:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 BIẾN MÔ-ĐUN
+
+Mô-đun thực hiện theo phạm vi riêng của chúng, và bất kỳ biến nào được xác định bởi mô-đun, sẽ không thể truy cập vào mô-đun khác, hoặc kịch bản cha mẹ, trừ khi chúng được lưu trữ trong mảng "$CIDRAM" (mọi thứ khác được làm sạch sau khi kết thúc thực hiện mô-đun).
+
+Dưới đây là một số biến phổ biến có thể hữu ích cho mô-đun của bạn:
+
+Biến | Chi tiết
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | Ngày hiện tại và thời gian.
+`$CIDRAM['BlockInfo']['IPAddr']` | Địa chỉ IP cho yêu cầu hiện tại.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | Phiên bản kịch bản CIDRAM.
+`$CIDRAM['BlockInfo']['Query']` | Truy vấn (query) cho yêu cầu hiện tại.
+`$CIDRAM['BlockInfo']['Referrer']` | Người giới thiệu (referrer) cho yêu cầu hiện tại (nếu có).
+`$CIDRAM['BlockInfo']['UA']` | Đại lý người dùng (user agent) cho yêu cầu hiện tại.
+`$CIDRAM['BlockInfo']['UALC']` | Đại lý người dùng (user agent) cho yêu cầu hiện tại (trong trường hợp thấp).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | Thông báo sẽ được hiển thị cho người dùng / khách hàng cho yêu cầu hiện tại nếu chúng bị chặn.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Số chữ ký kích hoạt cho yêu cầu hiện tại.
+`$CIDRAM['BlockInfo']['Signatures']` | Thông tin tham khảo cho bất kỳ chữ ký nào được kích hoạt cho yêu cầu hiện tại.
+`$CIDRAM['BlockInfo']['WhyReason']` | Thông tin tham khảo cho bất kỳ chữ ký nào được kích hoạt cho yêu cầu hiện tại.
+
 ---
 
 
@@ -782,6 +884,10 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 #### "Vi phạm" là gì?
 
 "Vi phạm" xác định khi một IP không bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào cũng sẽ bị chặn vì bất kỳ yêu cầu nào trong tương lai, và chúng liên quan chặt chẽ với giám sát IP. Một số chức năng và mô-đun tồn tại cho phép các yêu cầu bị chặn vì các lý do khác với IP có nguồn gốc (như là sự hiện diện của các đại lý người sử dụng [user agents] tương ứng với spambots hay hacktools, truy vấn nguy hiểm, giả mạo DNS và vv), và khi điều này xảy ra, một "vi phạm" có thể xảy ra. Chúng cung cấp cách để nhận định địa chỉ IP tương ứng với các yêu cầu không mong muốn mà có thể chưa bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào. Các vi phạm thường tương ứng với 1 đến 1 với số lần IP bị chặn, nhưng không phải luôn luôn (sự kiện nghiêm trọng chặn có thể gây ra một giá trị vi phạm lớn hơn một, và nếu "track_mode" là sai [false], vi phạm sẽ không xảy ra cho các sự kiện chặn gây ra bởi chỉ các tập tin chữ ký).
+
+#### CIDRAM có thể chặn tên máy chủ không?
+
+Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy chỉnh. *Xem: [KHÁI NIỆM CƠ BẢN (CHO MÔ-ĐUN)](#MODULE_BASICS)*.
 
 ---
 

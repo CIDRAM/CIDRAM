@@ -459,7 +459,10 @@ CIDRAM 應自動阻止不良的請求至您的網站，​沒有任何需求除�
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 『signature_limit』
-- 當提供reCAPTCHA實例時，允許觸發的最大簽名數量。​標準 = 1。​如果這個數字超過了任何特定的請求，一個reCAPTCHA實例將不會被提供。
+- 當提供reCAPTCHA實例時，允許觸發最大簽名數量。​標準 = 1。​如果這個數字超過了任何特定的請求，一個reCAPTCHA實例將不會被提供。
+
+『api』
+- 使用哪個API？V2或Invisible？
 
 #### 『template_data』 （類別）
 指令和變量為模板和主題。
@@ -552,7 +555,7 @@ CIDRAM簽名文件應該使用Unix的換行符（`%0A`，​或`\n`）！​其�
 Tag: 部分一
 ```
 
-為了打破章節標籤和以確保標籤不是確定不正確的對於簽名章節從較早的在簽名文件，​確保有至少有兩個連續的換行符之間您的標籤和您的較早的簽名章節。​任何未標記簽名將默認為『IPv4』或『IPv6』（取決於簽名類型被觸發的）。
+為了打破章節標籤和以確保標籤不是確定不正確的對於簽名章節從較早的在簽名文件，​確保有至少有兩個連續的換行符之間您的標籤和您的較早的簽名章節。​任何未標記簽名將默認為『IPv4』或『IPv6』（取決於簽名類型被觸發）。
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -668,6 +671,105 @@ Ignore 部分一
 
 參考定制簽名文件了解更多信息。
 
+#### 7.4 <a name="MODULE_BASICS"></a>基本概念（對於模塊）
+
+模塊可用於擴展CIDRAM的功能，執行額外的任務，或處理額外的邏輯。​通常，當除了起源IP地址之外的原因需要阻止請求時它們使用​（因此，當CIDR簽名不足以阻止請求）。​模塊被寫為PHP文件，因此，通常，模塊簽名被寫為PHP代碼。
+
+CIDRAM模塊的一些很好的例子可以在這裡找到：
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+編寫新模塊的模板可以在這裡找到：
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+由於模塊是作為PHP文件編寫的，如果您對CIDRAM代碼庫有足夠的了解，則可以根據需要構建模塊，並根據需要編寫模塊簽名​（在合理範圍的什麼可以用PHP來完成內）。​但是，為了您自己的方便，並為了介於存在的模塊和您自己的之間好的理解，建議分析上面鏈接的模板，以便能夠使用它提供的結構和格式。
+
+*注意：如果您不舒服使用PHP代碼，則不建議編寫自己的模塊。*
+
+CIDRAM提供了一些用於模塊的功能，這將使編寫自己的模塊變得更簡單和容易。​有關此功能的信息如下所述。
+
+#### 7.5 模塊功能
+
+##### 7.5.0 『$Trigger』
+
+模塊簽名通常使用『$Trigger』編寫。​在大多數情況下，為了編寫模塊，這個閉包比其他任何東西都重要。
+
+『$Trigger』接受4個參數：『$Condition』、『$ReasonShort』、『$ReasonLong』（可選的）、和『$DefineOptions』（可選的）。
+
+『$Condition』感實性被評估，和如果是true（真），簽名是『觸發』。​如果是false（假），簽名不是『觸發』。​『$Condition』通常包含PHP代碼來評估應該導致請求被阻止的條件。
+
+當簽名被『觸發』時，『$ReasonShort』在『為什麼被阻止』字段中被引用。
+
+『$ReasonLong』是一個可選消息，當用戶/客戶端被阻止時顯示給用戶/客戶端，解釋為什麼他們被阻止。​省略時默認為標準的『拒絕訪問』消息。
+
+『$DefineOptions』是一個包含鍵/值對的可選數組，用於定義特定於請求實例的配置選項。​配置選項將在簽名被『觸發』時應用。
+
+『$Trigger』當簽名是『觸發』時將返回true（真），當簽名不是『觸發』時將返回false（假）。
+
+要在模塊中使用這個閉包，首先要記住從父範圍繼承它：
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 『$Bypass』
+
+簽名旁路通常使用『$Bypass』編寫。
+
+『$Bypass』接受3個參數：『$Condition』、『$ReasonShort』、和『$DefineOptions』（可選的）。
+
+『$Condition』感實性被評估，和如果是true（真），旁路是『觸發』。​如果是false（假），旁路不是『觸發』。​『$Condition』通常包含PHP代碼來評估應不該導致請求被阻止的條件。
+
+當旁路被『觸發』時，『$ReasonShort』在『為什麼被阻止』字段中被引用。
+
+『$DefineOptions』是一個包含鍵/值對的可選數組，用於定義特定於請求實例的配置選項。​配置選項將在旁路被『觸發』時應用。
+
+『$Bypass』當旁路是『觸發』時將返回true（真），當旁路不是『觸發』時將返回false（假）。
+
+要在模塊中使用這個閉包，首先要記住從父範圍繼承它：
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 『$CIDRAM['DNS-Reverse']』
+
+這可以用來獲取IP地址的主機名。​如果您想創建一個模塊來阻止主機名，這個閉包可能是有用的。
+
+例子：
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 模塊變量
+
+模塊在其自己的範圍內執行，並且由模塊定義的任何變量將不能被其他模塊訪問，也不由父腳本，除非它們存儲在『$CIDRAM』數組中（模塊執行完成後，其他所有內容都將被擦洗）。
+
+下面列出了一些可能對你的模塊有用的常見變量：
+
+變量 | 說明
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | 當前日期和時間。
+`$CIDRAM['BlockInfo']['IPAddr']` | 當前請求的IP地址。
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM腳本版本。
+`$CIDRAM['BlockInfo']['Query']` | 當前請求的查詢。
+`$CIDRAM['BlockInfo']['Referrer']` | 當前請求的引用者（如果存在）。
+`$CIDRAM['BlockInfo']['UA']` | 當前請求的用戶代理【user agent】。
+`$CIDRAM['BlockInfo']['UALC']` | 當前請求的用戶代理【user agent】（小寫）。
+`$CIDRAM['BlockInfo']['ReasonMessage']` | 當前請求被阻止時顯示給用戶/客戶端的消息。
+`$CIDRAM['BlockInfo']['SignatureCount']` | 當前請求的觸發的簽名數量。
+`$CIDRAM['BlockInfo']['Signatures']` | 針對當前請求觸發的任何簽名的參考信息。
+`$CIDRAM['BlockInfo']['WhyReason']` | 針對當前請求觸發的任何簽名的參考信息。
+
 ---
 
 
@@ -782,7 +884,11 @@ CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責�
 
 #### 什麼是『違規』？
 
-『違規』決定何時還沒有被任何特定簽名文件阻止的IP應該開始被阻止以將來的任何請求，​他們與IP跟踪密切相關。​一些功能和模塊允許請求由於起源IP以外的原因被阻塞（例如，spambot或hacktool用戶代理【user agent】，危險的查詢，假的DNS，等等），當發生這種情況時，可能會發生『違規』。​這提供了一種識別不需要的請求的IP地址的方法（如果被任何特定的簽名文件的不被阻止已經）。​違規通常與IP被阻止的次數是1比1，但不總是（在嚴重事件中，可能會產生大於1的違規值，如果『track_mode』是假的【false】，對於僅由簽名文件觸發的塊事件，不會發生違規）。
+『違規』決定何時還沒有被任何特定簽名文件阻止的IP應該開始被阻止以將來的任何請求，​他們與IP跟踪密切相關。​一些功能和模塊允許請求由於起源IP以外的原因被阻塞（例如，spambot或hacktool用戶代理【user agent】，危險的查詢，假的DNS，等等），當發生這種情況時，可能會發生『違規』。​這提供了一種識別不需要的請求的IP地址的方法（如果被任何特定的簽名文件的不被阻止已經）。​違規通常與IP被阻止的次數是1比1，但不總是（在嚴重事件中，可能會產生大於1的違規值，如果『track_mode』是假的【false】，對於僅由簽名文件觸發塊事件，不會發生違規）。
+
+#### CIDRAM可以阻止主機名？
+
+可以做。您將需要創建一個自定義模塊文件。 *看到：[基本概念（對於模塊）](#MODULE_BASICS)*.
 
 ---
 

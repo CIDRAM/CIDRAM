@@ -460,6 +460,9 @@ Per ottenere una "site key" e una "secret key" (necessaria per l'utilizzo di reC
 "signature_limit"
 - Il numero massimo di firme consentito per essere innescato quando viene offerta un'istanza di reCAPTCHA. Predefinito = 1. Se questo numero viene superato per una particolare richiesta, non verrà offerta un'istanza di reCAPTCHA.
 
+"api"
+- Quale API usare? V2 o Invisible?
+
 #### "template_data" (Categoria)
 Direttive/Variabili per modelli e temi.
 

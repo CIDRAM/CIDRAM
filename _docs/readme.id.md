@@ -460,6 +460,9 @@ Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCA
 "signature_limit"
 - Jumlah maksimum tanda tangan diizinkan untuk dipicu saat instansi reCAPTCHA harus ditawarkan. Default = 1. Jika nomor ini terlampaui untuk permintaan tertentu, instansi reCAPTCHA tidak akan ditawarkan.
 
+"api"
+- API mana yang akan digunakan? V2 atau Invisible?
+
 #### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 

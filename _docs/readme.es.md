@@ -460,6 +460,9 @@ Para obtener una "site key" y una "secret key" (requerida para utilizar reCAPTCH
 "signature_limit"
 - Número máximo de firmas permitidas para se desencadena cuando se ofrece una instancia reCAPTCHA. Predefinido = 1. Si se excede este número para cualquier solicitud particular, no se ofrecerá una instancia de reCAPTCHA.
 
+"api"
+- ¿Qué API usar? V2 o Invisible?
+
 #### "template_data" (Categoría)
 Directivas/Variables para las plantillas y temas.
 

@@ -459,7 +459,10 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 “signature_limit”
-- 当提供reCAPTCHA实例时，允许触发的最大签名数量。​标准 = 1。​如果这个数字超过了任何特定的请求，一个reCAPTCHA实例将不会被提供。
+- 当提供reCAPTCHA实例时，允许触发最大签名数量。​标准 = 1。​如果这个数字超过了任何特定的请求，一个reCAPTCHA实例将不会被提供。
+
+“api”
+- 使用哪个API？V2或Invisible？
 
 #### “template_data” （类别）
 指令和变量为模板和主题。
@@ -552,7 +555,7 @@ CIDRAM签名文件应该使用Unix的换行符（`%0A`，​或`\n`）！​其�
 Tag: 部分一
 ```
 
-为了打破章节标签和以确保标签不是确定不正确的对于签名章节从较早的在签名文件，​确保有至少有两个连续的换行符之间您的标签和您的较早的签名章节。​任何未标记签名将默认为“IPv4”或“IPv6”（取决于签名类型被触发的）。
+为了打破章节标签和以确保标签不是确定不正确的对于签名章节从较早的在签名文件，​确保有至少有两个连续的换行符之间您的标签和您的较早的签名章节。​任何未标记签名将默认为“IPv4”或“IPv6”（取决于签名类型被触发）。
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -668,6 +671,105 @@ Ignore 部分一
 
 参考定制签名文件了解更多信息。
 
+#### 7.4 <a name="MODULE_BASICS"></a>基本概念（对于模块）
+
+模块可用于扩展CIDRAM的功能，执行额外的任务，或处理额外的逻辑。​通常，当除了起源IP地址之外的原因需要阻止请求时它们使用​（因此，当CIDR签名不足以阻止请求）。​模块被写为PHP文件，因此，通常，模块签名被写为PHP代码。
+
+CIDRAM模块的一些很好的例子可以在这里找到：
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+编写新模块的模板可以在这里找到：
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+由于模块是作为PHP文件编写的，如果您对CIDRAM代码库有足够的了解，则可以根据需要构建模块，并根据需要编写模块签名​（在合理范围的什么可以用PHP来完成内）。​但是，为了您自己的方便，并为了介于存在的模块和您自己的之间好的理解，建议分析上面链接的模板，以便能够使用它提供的结构和格式。
+
+*注意：如果您不舒服使用PHP代码，则不建议编写自己的模块。*
+
+CIDRAM提供了一些用于模块的功能，这将使编写自己的模块变得更简单和容易。​有关此功能的信息如下所述。
+
+#### 7.5 模块功能
+
+##### 7.5.0 “$Trigger”
+
+模块签名通常使用“$Trigger”编写。​在大多数情况下，为了编写模块，这个闭包比其他任何东西都重要。
+
+“$Trigger”接受4个参数：“$Condition”、“$ReasonShort”、“$ReasonLong”（可选的）、和“$DefineOptions”（可选的）。
+
+“$Condition”感实性被评估，和如果是true（真），签名是“触发”。​如果是false（假），签名不是“触发”。​“$Condition”通常包含PHP代码来评估应该导致请求被阻止的条件。
+
+当签名被“触发”时，“$ReasonShort”在“为什么被阻止”字段中被引用。
+
+“$ReasonLong”是一个可选消息，当用户/客户端被阻止时显示给用户/客户端，解释为什么他们被阻止。​省略时默认为标准的“拒绝访问”消息。
+
+“$DefineOptions”是一个包含键/值对的可选数组，用于定义特定于请求实例的配置选项。​配置选项将在签名被“触发”时应用。
+
+“$Trigger”当签名是“触发”时将返回true（真），当签名不是“触发”时将返回false（假）。
+
+要在模块中使用这个闭包，首先要记住从父范围继承它：
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 “$Bypass”
+
+签名旁路通常使用“$Bypass”编写。
+
+“$Bypass”接受3个参数：“$Condition”、“$ReasonShort”、和“$DefineOptions”（可选的）。
+
+“$Condition”感实性被评估，和如果是true（真），旁路是“触发”。​如果是false（假），旁路不是“触发”。​“$Condition”通常包含PHP代码来评估应不该导致请求被阻止的条件。
+
+当旁路被“触发”时，“$ReasonShort”在“为什么被阻止”字段中被引用。
+
+“$DefineOptions”是一个包含键/值对的可选数组，用于定义特定于请求实例的配置选项。​配置选项将在旁路被“触发”时应用。
+
+“$Bypass”当旁路是“触发”时将返回true（真），当旁路不是“触发”时将返回false（假）。
+
+要在模块中使用这个闭包，首先要记住从父范围继承它：
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 “$CIDRAM['DNS-Reverse']”
+
+这可以用来获取IP地址的主机名。​如果您想创建一个模块来阻止主机名，这个闭包可能是有用的。
+
+例子：
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 模块变量
+
+模块在其自己的范围内执行，并且由模块定义的任何变量将不能被其他模块访问，也不由父脚本，除非它们存储在“$CIDRAM”数组中（模块执行完成后，其他所有内容都将被擦洗）。
+
+下面列出了一些可能对你的模块有用的常见变量：
+
+变量 | 说明
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | 当前日期和时间。
+`$CIDRAM['BlockInfo']['IPAddr']` | 当前请求的IP地址。
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM脚本版本。
+`$CIDRAM['BlockInfo']['Query']` | 当前请求的查询。
+`$CIDRAM['BlockInfo']['Referrer']` | 当前请求的引用者（如果存在）。
+`$CIDRAM['BlockInfo']['UA']` | 当前请求的用户代理【user agent】。
+`$CIDRAM['BlockInfo']['UALC']` | 当前请求的用户代理【user agent】（小写）。
+`$CIDRAM['BlockInfo']['ReasonMessage']` | 当前请求被阻止时显示给用户/客户端的消息。
+`$CIDRAM['BlockInfo']['SignatureCount']` | 当前请求的触发的签名数量。
+`$CIDRAM['BlockInfo']['Signatures']` | 针对当前请求触发的任何签名的参考信息。
+`$CIDRAM['BlockInfo']['WhyReason']` | 针对当前请求触发的任何签名的参考信息。
+
 ---
 
 
@@ -782,7 +884,11 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 
 #### 什么是“违规”？
 
-“违规”决定何时还没有被任何特定签名文件阻止的IP应该开始被阻止以将来的任何请求，​他们与IP跟踪密切相关。​一些功能和模块允许请求由于起源IP以外的原因被阻塞（例如，spambot或hacktool用户代理【user agent】，危险的查询，假的DNS，等等），当发生这种情况时，可能会发生“违规”。​这提供了一种识别不需要的请求的IP地址的方法（如果被任何特定的签名文件的不被阻止已经）。​违规通常与IP被阻止的次数是1比1，但不总是（在严重事件中，可能会产生大于1的违规值，如果“track_mode”是假的【false】，对于仅由签名文件触发的块事件，不会发生违规）。
+“违规”决定何时还没有被任何特定签名文件阻止的IP应该开始被阻止以将来的任何请求，​他们与IP跟踪密切相关。​一些功能和模块允许请求由于起源IP以外的原因被阻塞（例如，spambot或hacktool用户代理【user agent】，危险的查询，假的DNS，等等），当发生这种情况时，可能会发生“违规”。​这提供了一种识别不需要的请求的IP地址的方法（如果被任何特定的签名文件的不被阻止已经）。​违规通常与IP被阻止的次数是1比1，但不总是（在严重事件中，可能会产生大于1的违规值，如果“track_mode”是假的【false】，对于仅由签名文件触发块事件，不会发生违规）。
+
+#### CIDRAM可以阻止主机名？
+
+可以做。您将需要创建一个自定义模块文件。 *看到：[基本概念（对于模块）](#MODULE_BASICS)*.
 
 ---
 

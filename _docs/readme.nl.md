@@ -38,7 +38,7 @@ Dit document en de bijbehorende pakket kunt gedownload gratis zijn van [GitHub](
 
 1) Omdat u zijn lezen dit, ik ben ervan uit u al gedownload een gearchiveerde kopie van het script, uitgepakt zijn inhoud en heeft het ergens op uw lokale computer. Vanaf hier, u nodig te bepalen waar op uw host of CMS die inhoud te plaatsen. Een bestandsmap zoals `/public_html/cidram/` of soortgelijk (hoewel, het is niet belangrijk welke u kiest, zolang het is iets veilig en iets waar u blij mee bent) zal volstaan. *Voordat u het uploaden begint, lees verder..*
 
-2) Hernoemen `config.ini.RenameMe` naar `config.ini` (gelegen binnen `vault`), en facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open het (dit bestand bevat alle beschikbare CIDRAM configuratie opties; boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor). Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+2) Hernoemen `config.ini.RenameMe` naar `config.ini` (gelegen binnen `vault`), en facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open het (dit bestand bevat alle beschikbare CIDRAM configuratie-opties; boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor). Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
 3) Upload de inhoud (CIDRAM en zijn bestanden) naar het bestandsmap die u zou op eerder besloten (u nodig niet de `*.txt`/`*.md` bestanden opgenomen, maar meestal, u moeten uploaden alles).
 
@@ -252,7 +252,7 @@ Bestand | Beschrijving
 /vault/frontend_functions.php | Frontend-functies bestand.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
-/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke signature secties CIDRAM moeten negeren).
+/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke signature-secties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ipv4.dat | IPv4 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
 /vault/ipv4_bogons.dat | IPv4 signatures bestand (bogon/martian CIDRs).
@@ -458,7 +458,10 @@ Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik va
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "signature_limit"
-- Maximale aantal signatures dat kan worden veroorzaakt wanneer een reCAPTCHA-instantie wordt aangeboden. Standaard = 1. Als dit aantal wordt overschreden voor een bepaald verzoek, wordt er geen reCAPTCHA-instantie aangeboden.
+- Maximale aantal signatures dat kan worden getriggerd wanneer een reCAPTCHA-instantie wordt aangeboden. Standaard = 1. Als dit aantal wordt overschreden voor een bepaald verzoek, wordt er geen reCAPTCHA-instantie aangeboden.
+
+"api"
+- Welke API gebruiken? V2 of invisible?
 
 #### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
@@ -510,25 +513,25 @@ Mogelijke waarden van `[Function]` zijn als volgt:
 - Greylist
 - Deny
 
-Als "Run" wordt gebruikt, als de signature wordt geactiveerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `[Param]` waarde (de werkmap moet worden de "/vault/" map van het script).
+Als "Run" wordt gebruikt, als de signature wordt getriggerd, het script zal proberen (gebruiken een `require_once` statement) om een externe PHP-script uit te voeren, gespecificeerd door de `[Param]` waarde (de werkmap moet worden de "/vault/" map van het script).
 
 Voorbeeld: `127.0.0.0/8 Run example.php`
 
 Dit kan handig zijn als u wilt, voor enige specifieke IPs en/of CIDRs, om specifieke PHP-code uit te voeren.
 
-Als "Whitelist" wordt gebruikt, als de signature wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
+Als "Whitelist" wordt gebruikt, als de signature wordt getriggerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
 
 Voorbeeld: `127.0.0.1/32 Whitelist`
 
-Als "Greylist" wordt gebruikt, als de signature wordt geactiveerd, het script zal alle detecties resetten (als er is al enige detecties) en doorgaan naar de volgende signature bestand te gaan met verwerken. `[Param]` worden genegeerd.
+Als "Greylist" wordt gebruikt, als de signature wordt getriggerd, het script zal alle detecties resetten (als er is al enige detecties) en doorgaan naar de volgende signature bestand te gaan met verwerken. `[Param]` worden genegeerd.
 
 Voorbeeld: `127.0.0.1/32 Greylist`
 
-Als "Deny" wordt gebruikt, als de signature wordt geactiveerd, veronderstelling dat er geen whitelist signature is geactiveerd voor het opgegeven IP-adres en/of opgegeven CIDR, toegang tot de beveiligde pagina wordt ontzegd. "Deny" is wat u wilt gebruiken om een IP-adres en/of CIDR range te daadwerkelijk blokkeren. Wanneer enige signatures zijn geactiveerd er dat gebruik "Deny", de "Toegang Geweigerd" pagina van het script zal worden gegenereerd en het verzoek naar de beveiligde pagina wordt gedood.
+Als "Deny" wordt gebruikt, als de signature wordt getriggerd, veronderstelling dat er worden geen whitelist-signature getriggerd voor het opgegeven IP-adres en/of opgegeven CIDR, toegang tot de beveiligde pagina wordt ontzegd. "Deny" is wat u wilt gebruiken om een IP-adres en/of CIDR range te daadwerkelijk blokkeren. Wanneer enige signatures zijn getriggerd er dat gebruik "Deny", de "Toegang Geweigerd" pagina van het script zal worden gegenereerd en het verzoek naar de beveiligde pagina wordt gedood.
 
 De `[Param]` waarde geaccepteerd door "Deny" zal worden parsed aan de "Toegang Geweigerd" pagina-uitgang, geleverd aan de klant/gebruiker als de genoemde reden voor hun toegang tot de gevraagde pagina worden geweigerd. Het kan een korte en eenvoudige zin zijn, uit te leggen waarom u hebt gekozen om ze te blokkeren (iets moeten volstaan, zelfs een simpele "Ik wil je niet op mijn website"), of een van het handjevol korte woorden geleverd door het script, dat als gebruikt, wordt vervangen door het script met een voorbereide toelichting waarom de klant/gebruiker is geblokkeerd.
 
-De voorbereide toelichtingen hebben L10N ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script configuratie. Tevens, u kunt het script instrueren om "Deny" signatures te negeren op basis van hun `[Param]` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende signatures of te negeren hen). `[Param]` waarden dat niet gebruiken deze korte woorden, echter, hebben geen L10N ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script configuratie.
+De voorbereide toelichtingen hebben L10N-ondersteuning en kan worden vertaald door het script op basis van de taal die u opgeeft naar de `lang` richtlijn van het script-configuratie. Tevens, u kunt het script instrueren om "Deny"-signatures te negeren op basis van hun `[Param]` waarde (als ze gebruik maken van deze korte woorden) via de richtlijnen gespecificeerd door het script-configuratie (elk kort woord heeft een overeenkomstige richtlijn te verwerken overeenkomende signatures of te negeren hen). `[Param]` waarden dat niet gebruiken deze korte woorden, echter, hebben geen L10N-ondersteuning en daarom zal NIET worden vertaald door het script, en tevens, en zijn niet direct controleerbaar door het script-configuratie.
 
 De beschikbare korte woorden zijn:
 - Bogon
@@ -539,7 +542,7 @@ De beschikbare korte woorden zijn:
 
 #### 7.1 ETIKETTEN
 
-Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de signatures van elke sectie, samen met de naam van uw signature sectie (zie het onderstaande voorbeeld).
+Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de signatures van elke sectie, samen met de naam van uw signature-sectie (zie het onderstaande voorbeeld).
 
 ```
 # Sectie 1.
@@ -551,7 +554,7 @@ Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt
 Tag: Sectie 1
 ```
 
-Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met signature secties uit eerder in de signature bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere signature secties. Een ongeëtiketteerd signatures wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten signatures worden geactiveerd).
+Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met signature-secties uit eerder in de signature bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere signature-secties. Een ongeëtiketteerd signatures wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten signatures worden getriggerd).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -586,13 +589,13 @@ Expires: 2016.12.31
 
 ##### 7.2.0 YAML BASICS
 
-Een vereenvoudigde vorm van YAML markup kan worden gebruikt in signature bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke signature secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele signatures en signature secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde signature, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere signatures; als u wilt een specifieke signatures te leiden tot een pagina redirect; als u wilt een signature sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele signatures en/of signature secties).
+Een vereenvoudigde vorm van YAML markup kan worden gebruikt in signature bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke signature-secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele signatures en signature-secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde signature, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere signatures; als u wilt een specifieke signatures te leiden tot een pagina redirect; als u wilt een signature-sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele signatures en/of signature-secties).
 
 Het gebruik van YAML markup in de signature bestanden is volledig optioneel (d.w.z., u kan het gebruiken als u wenst te doen, maar u bent niet verplicht om dit te doen), en is in staat om de meeste (maar niet alle) configuratie richtlijnen hefboomeffect.
 
 Notitie: YAML markup implementatie in CIDRAM is zeer simplistisch en zeer beperkt; Het is bedoeld om de specifieke eisen van CIDRAM te voldoen op een manier dat heeft de vertrouwdheid van YAML markup, maar noch volgt noch voldoet aan de officiële specificaties (en zal daarom niet zich op dezelfde wijze als grondiger implementaties elders, en is misschien niet geschikt voor alle andere projecten elders).
 
-In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signature secties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDRs en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature sectie wordt geactiveerd (zie de onderstaande voorbeelden).
+In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signature-secties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature-sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDRs en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature-sectie wordt getriggerd (zie de onderstaande voorbeelden).
 
 ```
 # Foobar 1.
@@ -639,11 +642,11 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-##### 7.2.1 HOE OM SIGNATURE SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
+##### 7.2.1 HOE OM SIGNATURE-SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
 
-Als "usemode" is 0 of 1, signature secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
+Als "usemode" is 0 of 1, signature-secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
 
-Als "usemode" is 2, om signature secties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat signature sectie (zie het onderstaande voorbeeld).
+Als "usemode" is 2, om signature-secties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat signature-sectie (zie het onderstaande voorbeeld).
 
 ```
 # Deze sectie zal reCAPTCHA te gebruiken.
@@ -655,7 +658,7 @@ recaptcha:
  enabled: true
 ```
 
-*Notitie: Als standaard, een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN signature is geactiveerd (niet meer, niet minder; als er meerdere signatures worden geactiveerd, een reCAPTCHA instantie zal NIET worden aangeboden). Echter, dit gedrag kan worden gewijzigd via de "signature_limit" richtlijn.*
+*Notitie: Als standaard, een reCAPTCHA instantie zal ALLEEN worden aangeboden aan de gebruiker als reCAPTCHA is ingeschakeld (met "usemode" als 1, of "usemode" als 2 met "enabled" als true), en als precies ÉÉN signature is getriggerd (niet meer, niet minder; als er meerdere signatures worden getriggerd, een reCAPTCHA instantie zal NIET worden aangeboden). Echter, dit gedrag kan worden gewijzigd via de "signature_limit" richtlijn.*
 
 #### 7.3 EXTRA INFORMATIE
 
@@ -666,6 +669,105 @@ Ignore Sectie 1
 ```
 
 Raadpleeg de aangepaste signature bestanden voor meer informatie.
+
+#### 7.4 <a name="MODULE_BASICS"></a>BASICS (VOOR MODULES)
+
+Modules kunnen worden gebruikt om de functionaliteit van CIDRAM uit te breiden, extra taken uit te voeren, of aanvullende logica te verwerken. Meestal worden ze gebruikt wanneer een verzoek op een andere manier dan het oorspronkelijke IP-adres moet worden geblokkeerd (en dus, wanneer een CIDR-signature niet voldoende is om de aanvraag te blokkeren). Modules worden geschreven als PHP-bestanden, en dus worden module-signatures doorgaans geschreven als PHP-code.
+
+Enkele goede voorbeelden van CIDRAM-modules zijn hier te vinden:
+- https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
+
+Een sjabloon voor het schrijven van nieuwe modules vindt u hier:
+- https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
+
+Vanwege dat modules worden geschreven als PHP-bestanden, als je voldoende bekend bent met de CIDRAM-codebase, kun je je modules structureren zoals u wilt, en schrijf uw module-signatures zoals u dat wilt (op grond van wat mogelijk is met PHP). Voor uw gemak echter, en voor een betere wederzijdse verstaanbaarheid tussen bestaande modules en uw eigen modules, het is aan te raden de bovenstaande sjabloon te analyseren om de structuur en het formaat die het biedt te kunnen gebruiken.
+
+*Notitie: Als u het niet prettig vindt om met PHP-code te werken, wordt het niet aanbevolen om uw eigen modules te schrijven.*
+
+CIDRAM biedt een aantal functies voor het gebruik van modules, waardoor het eenvoudiger en gemakkelijker is om uw eigen modules te schrijven. Informatie over deze functionaliteit wordt hieronder beschreven.
+
+#### 7.5 MODULE FUNCTIONALITEIT
+
+##### 7.5.0 "$Trigger"
+
+Module-signatures worden meestal geschreven met "$Trigger". In de meeste gevallen zal deze closure belangrijker zijn dan iets anders om modules te schrijven.
+
+"$Trigger" accepteert 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optioneel), en "$DefineOptions" (optioneel).
+
+De waarachtigheid van "$Condition" wordt geëvalueerd, en indien true/waar, wordt de signature "getriggerd". Indien deze false/vals is, wordt de signature *niet* "getriggerd". "$Condition" bevat meestal PHP-code om een voorwaarde te evalueren die ervoor moet zorgen dat een verzoek wordt geblokkeerd.
+
+"$ReasonShort" wordt vermeld in het "Waarom Geblokkeerd" veld wanneer de signature wordt "getriggerd".
+
+"$ReasonLong" is een optioneel bericht dat aan de gebruiker/client moet worden weergegeven voor wanneer ze zijn geblokkeerd, om uit te leggen waarom ze zijn geblokkeerd. Standaard ingesteld op het standaardbericht "Toegang Geweigerd" wanneer dit wordt weggelaten.
+
+"$DefineOptions" is een optionele array met sleutel/waarde-paren, die wordt gebruikt om configuratie-opties te definiëren die specifiek zijn voor de instantie. Configuratie-opties worden toegepast wanneer de signature "getriggerd" is.
+
+"$Trigger" retourneert true/waar als de signature "getriggerd" is, en false/vals als dat niet het geval is.
+
+Als u deze closure in uw module wilt gebruiken, moet u deze eerst erven het van de bovenliggende-scope:
+```PHP
+$Trigger = $CIDRAM['Trigger'];
+```
+
+##### 7.5.1 "$Bypass"
+
+Signature-bypasses worden meestal geschreven met "$Bypass".
+
+"$Bypass" accepteert 3 parameters: "$Condition", "$ReasonShort", en "$DefineOptions" (optioneel).
+
+De waarachtigheid van "$Condition" wordt geëvalueerd, en indien true/waar, wordt de bypass "getriggerd". Indien deze false/vals is, wordt de bypass *niet* "getriggerd". "$Condition" bevat meestal PHP-code om een voorwaarde te evalueren die ervoor moet zorgen dat een verzoek wordt *niet* geblokkeerd.
+
+"$ReasonShort" wordt vermeld in het "Waarom Geblokkeerd" veld wanneer de bypass wordt "getriggerd".
+
+"$DefineOptions" is een optionele array met sleutel/waarde-paren, die wordt gebruikt om configuratie-opties te definiëren die specifiek zijn voor de instantie. Configuratie-opties worden toegepast wanneer de bypass "getriggerd" is.
+
+"$Bypass" retourneert true/waar als de bypass "getriggerd" is, en false/vals als dat niet het geval is.
+
+Als u deze closure in uw module wilt gebruiken, moet u deze eerst erven het van de bovenliggende-scope:
+```PHP
+$Bypass = $CIDRAM['Bypass'];
+```
+
+##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+
+Dit kan worden gebruikt om de hostnaam van een IP-adres op te halen. Als u een module wilt maken om hostnamen te blokkeren, kan deze closure nuttig zijn.
+
+Voorbeeld:
+```PHP
+<?php
+/** Inherit trigger closure (see functions.php). */
+$Trigger = $CIDRAM['Trigger'];
+
+/** Fetch hostname. */
+if (empty($CIDRAM['Hostname'])) {
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
+}
+
+/** Example signature. */
+if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
+    $Trigger($CIDRAM['Hostname'] === 'www.foobar.tld', 'Foobar.tld', 'Hostname Foobar.tld is not allowed.');
+}
+```
+
+#### 7.6 MODULE VARIABELEN
+
+Modules worden in hun eigen bereik uitgevoerd, en alle variabelen gedefinieerd door een module, zullen niet toegankelijk zijn voor andere modules, of naar het bovenliggende script, tenzij ze zijn opgeslagen in de array "$CIDRAM" (al het andere wordt gespoeld nadat de module-uitvoering is voltooid).
+
+Hieronder vindt u enkele veelvoorkomende variabelen die handig kunnen zijn voor uw module:
+
+Variabele | Beschrijving
+----|----
+`$CIDRAM['BlockInfo']['DateTime']` | De huidige datum en tijd.
+`$CIDRAM['BlockInfo']['IPAddr']` | IP-adres voor het huidige verzoek.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM-scriptversie.
+`$CIDRAM['BlockInfo']['Query']` | De vraag voor het huidige verzoek.
+`$CIDRAM['BlockInfo']['Referrer']` | De verwijzer voor het huidige verzoek (indien aanwezig).
+`$CIDRAM['BlockInfo']['UA']` | De user-agent voor het huidige verzoek.
+`$CIDRAM['BlockInfo']['UALC']` | De user-agent voor het huidige verzoek (in kleine letters).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | Het bericht dat moet worden weergegeven aan de gebruiker/client voor het huidige verzoek als ze zijn geblokkeerd.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Het aantal handtekeningen dat is getriggerd voor het huidige verzoek.
+`$CIDRAM['BlockInfo']['Signatures']` | Referentie-informatie voor alle signatures die zijn getriggerd voor het huidige verzoek.
+`$CIDRAM['BlockInfo']['WhyReason']` | Referentie-informatie voor alle signatures die zijn getriggerd voor het huidige verzoek.
 
 ---
 
@@ -688,7 +790,7 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 *Notitie: Signatures voor "signature bestanden", en signatures voor "modules", zijn niet hetzelfde.*
 
-Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "signature secties", vaak vergezeld van opmerkingen, markup, en/of gerelateerde metadata die kunnen om extra context voor de signatures en/of om verdere instructies worden gebruikt.
+Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "signature-secties", vaak vergezeld van opmerkingen, markup, en/of gerelateerde metadata die kunnen om extra context voor de signatures en/of om verdere instructies worden gebruikt.
 
 #### <a name="WHAT_IS_A_CIDR"></a>Wat is een "CIDR"?
 
@@ -781,7 +883,11 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 
 #### Wat zijn "overtredingen"?
 
-"Overtredingen" bepalen wanneer een IP die nog niet is geblokkeerd door specifieke signature bestanden, moet worden geblokkeerd voor toekomstige verzoeken, en ze zijn nauw verbonden met IP-tracking. Sommige functionaliteit en modules bestaan die toestaan dat verzoeken om andere redenen dan het oorsprong van IP worden geblokkeerd (zoals de aanwezigheid van user agents die overeenkomen met spambots of hacktools, gevaarlijke zoekopdrachten, vervalste DNS enzovoort), en wanneer dit gebeurt, kan een "overtreding" optreden. Ze bieden een manier om IP-adressen te identificeren die overeenkomen met ongewenste verzoeken die nog niet door specifieke signature bestanden worden geblokkeerd. Overtredingen komen meestal 1-op-1 overeen met het aantal keren dat een IP wordt geblokkeerd, maar niet altijd (ernstige blokgebeurtenissen kunnen een overtredingen-waarde groter dan één oplopen, en als "track_mode" false is, er zullen geen overtredingen plaatsvinden voor blokgebeurtenissen die alleen door signature bestanden worden veroorzaakt).
+"Overtredingen" bepalen wanneer een IP die nog niet is geblokkeerd door specifieke signature bestanden, moet worden geblokkeerd voor toekomstige verzoeken, en ze zijn nauw verbonden met IP-tracking. Sommige functionaliteit en modules bestaan die toestaan dat verzoeken om andere redenen dan het oorsprong van IP worden geblokkeerd (zoals de aanwezigheid van user agents die overeenkomen met spambots of hacktools, gevaarlijke zoekopdrachten, vervalste DNS enzovoort), en wanneer dit gebeurt, kan een "overtreding" optreden. Ze bieden een manier om IP-adressen te identificeren die overeenkomen met ongewenste verzoeken die nog niet door specifieke signature bestanden worden geblokkeerd. Overtredingen komen meestal 1-op-1 overeen met het aantal keren dat een IP wordt geblokkeerd, maar niet altijd (ernstige blokgebeurtenissen kunnen een overtredingen-waarde groter dan één oplopen, en als "track_mode" false is, er zullen geen overtredingen plaatsvinden voor blokgebeurtenissen die alleen door signature bestanden worden getriggerd).
+
+#### Kan CIDRAM hostnamen blokkeren?
+
+Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODULES)](#MODULE_BASICS)*.
 
 ---
 

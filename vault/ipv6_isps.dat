@@ -641,12 +641,14 @@ recaptcha:
 Tag: PHOENIX NAP, LLC
 
 
-# ASN 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# %Listed, CleanTalk.org: 10.94%.
-# Stop Forum Spam (SFS) listings: 35,057.
-# Updated: 2016.09.09 / Checked: 2017.10.17
+# ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
+# %Listed, CleanTalk.org: 55.52% (AS24955), 10.94% (AS41704).
+# Stop Forum Spam (SFS) listings: 17,325 (AS24955), 29,699 (AS41704).
+# Updated: 2017.12.18
 
+2a02:1c8:1::/48 Deny Spam
 2a02:1c8:7::/48 Deny Spam
+2a02:1c8:100::/40 Deny Spam
 2a02:1c8:700::/40 Deny Spam
 Tag: Ufanet
 ---
@@ -990,23 +992,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
-# Numerous significant spam events caught originating from this network. IPs belong to mobile carriers in China, and
-# could cause false positives for websites with Chinese users. Recommended to add this section to the "Ignores" list in
-# such cases, and may remove this section in the future if the number of future spam events decreases.
-# %Listed, Google Malware Dashboard: 2.20%.
-# %Listed, CleanTalk.org: 55.80%.
-# %Listed, abuseat.org (CBL-Listed): 0.01%.
-# Stop Forum Spam (SFS) listings: 3,813.
-# Updated: 2017.09.20
-
-2409:8000::/20 Deny Spam
-Tag: Guangdong Mobile
----
-recaptcha:
- enabled: true
-
-
 # ASN 9387 ("AUGERE-Pakistan").
 # %Listed, CleanTalk.org: 11.07%.
 # %Listed, abuseat.org (CBL-Listed): 9.04%.
@@ -1147,12 +1132,14 @@ recaptcha:
  enabled: true
 
 
-# ASN 51570 ('JSC "ER-Telecom Holding"').
-# %Listed, CleanTalk.org: 14.94%.
-# Stop Forum Spam (SFS) listings: 1,141.
-# Updated: 2017.07.08 / Checked: 2017.12.08
+# ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
+# %Listed, CleanTalk.org: 61.30% (AS42682), 14.94% (AS51570).
+# Stop Forum Spam (SFS) listings: 19,203 (AS42682), 1,210 (AS51570).
+# Updated: 2017.12.18
 
+2a02:2698:4c00::/38 Deny Spam
 2a02:2698:6c00::/38 Deny Spam
+2a02:2698:a000::/48 Deny Spam
 Tag: ER-Telecom Holding
 ---
 recaptcha:

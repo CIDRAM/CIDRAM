@@ -58,6 +58,40 @@ $CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
         "var onloadCallback=function(){grecaptcha.render(" . $Params . ');' . $More . '}</script>';
 };
 
+/** Generate data for failed attempts. */
+$CIDRAM['reCAPTCHA']['GenerateFailed'] = function () use (&$CIDRAM) {
+    /** Set status for reCAPTCHA block information. */
+    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
+    /** Append to reCAPTCHA statistics if necessary. */
+    if ($CIDRAM['Config']['general']['statistics']) {
+        $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
+        $CIDRAM['CacheModified'] = true;
+    }
+};
+
+/** Generate data for passed attempts. */
+$CIDRAM['reCAPTCHA']['GeneratePassed'] = function () use (&$CIDRAM) {
+    /** Set status for reCAPTCHA block information. */
+    $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_passed'];
+    /** Append to reCAPTCHA statistics if necessary. */
+    if ($CIDRAM['Config']['general']['statistics']) {
+        $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
+        $CIDRAM['CacheModified'] = true;
+    }
+};
+
+/** Data generation container. */
+$CIDRAM['reCAPTCHA']['GenerateContainer'] = function ($CookieWarn = false) use (&$CIDRAM) {
+    if (!$CIDRAM['reCAPTCHA']['Bypass']) {
+        $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
+            $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
+        );
+        $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
+            $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api'], $CookieWarn
+        );
+    }
+};
+
 /** Refer to the documentation regarding the behaviour of "lockuser". */
 if ($CIDRAM['Config']['recaptcha']['lockuser']) {
 
@@ -133,21 +167,9 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 /** Append to the hash list. */
                 $CIDRAM['reCAPTCHA']['HashList'] .= $CIDRAM['reCAPTCHA']['UsrHash'] . ',' . ($CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry']) . "\n";
                 $CIDRAM['reCAPTCHA']['HashListMod'] = true;
-                /** Set status for reCAPTCHA block information. */
-                $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_passed'];
-                /** Append to reCAPTCHA statistics if necessary. */
-                if ($CIDRAM['Config']['general']['statistics']) {
-                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
-                    $CIDRAM['CacheModified'] = true;
-                }
+                $CIDRAM['reCAPTCHA']['GeneratePassed']();
             } else {
-                /** Set status for reCAPTCHA block information. */
-                $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
-                /** Append to reCAPTCHA statistics if necessary. */
-                if ($CIDRAM['Config']['general']['statistics']) {
-                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
-                    $CIDRAM['CacheModified'] = true;
-                }
+                $CIDRAM['reCAPTCHA']['GenerateFailed']();
             }
         }
 
@@ -155,14 +177,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * reCAPTCHA template data included if reCAPTCHA not being bypassed.
          * Note: Cookie warning IS included here due to expected behaviour when lockuser is TRUE.
          */
-        if (!$CIDRAM['reCAPTCHA']['Bypass']) {
-            $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
-                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
-            );
-            $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
-                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api'], true
-            );
-        }
+        $CIDRAM['reCAPTCHA']['GenerateContainer'](true);
 
     }
 
@@ -208,25 +223,13 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
                 /** Reset signature count. */
                 $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                 /** Append to the IP bypass list. */
-                $CIDRAM['reCAPTCHA']['BypassList'] .=
-                    $_SERVER[$CIDRAM['IPAddr']] . ',' .
-                    ($CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry']) . "\n";
+                $CIDRAM['reCAPTCHA']['BypassList'] .= $_SERVER[$CIDRAM['IPAddr']] . ',' . (
+                    $CIDRAM['Now'] + $CIDRAM['reCAPTCHA']['Expiry']
+                ) . "\n";
                 $CIDRAM['reCAPTCHA']['BypassListMod'] = true;
-                /** Set status for reCAPTCHA block information. */
-                $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_passed'];
-                /** Append to reCAPTCHA statistics if necessary. */
-                if ($CIDRAM['Config']['general']['statistics']) {
-                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Passed']++;
-                    $CIDRAM['CacheModified'] = true;
-                }
+                $CIDRAM['reCAPTCHA']['GeneratePassed']();
             } else {
-                /** Set status for reCAPTCHA block information. */
-                $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_failed'];
-                /** Append to reCAPTCHA statistics if necessary. */
-                if ($CIDRAM['Config']['general']['statistics']) {
-                    $CIDRAM['Cache']['Statistics']['reCAPTCHA-Failed']++;
-                    $CIDRAM['CacheModified'] = true;
-                }
+                $CIDRAM['reCAPTCHA']['GenerateFailed']();
             }
         }
 
@@ -234,14 +237,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          * reCAPTCHA template data included if reCAPTCHA not being bypassed.
          * Note: Cookie warning is NOT included here due to expected behaviour when lockuser is FALSE.
          */
-        if (!$CIDRAM['reCAPTCHA']['Bypass']) {
-            $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
-                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
-            );
-            $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
-                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
-            );
-        }
+        $CIDRAM['reCAPTCHA']['GenerateContainer']();
 
     }
 

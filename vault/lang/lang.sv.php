@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data (last modified: 2017.11.06).
+ * This file: Swedish language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Inaktiverad.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Aktiverad.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Misslyckades!';
 $CIDRAM['lang']['recaptcha_message'] = 'För att få tillgång till den här sidan, fyll i CAPTCHA nedan och tryck på Submit-knappen.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'För de flesta användare, sidan ska ladda om och återställa normal åtkomst. I vissa fall kan du behöva slutföra en CAPTCHA-utmaning.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Godkänd!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Submit';
 $CIDRAM['lang']['Short_BadIP'] = 'Ogiltig IP';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.11.25).
+ * This file: Urdu language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'معذور.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'فعال کردہ.';
 $CIDRAM['lang']['recaptcha_failed'] = 'ناکام ہوگیا!';
 $CIDRAM['lang']['recaptcha_message'] = 'اس صفحے کی رسائی دوبارہ حاصل کرنے کے لئے، CAPTCHA ذیل میں فراہم کی مکمل کریں اور جمع کرائیں بٹن دبائیں کریں.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'زیادہ تر صارفین کے لئے، صفحہ کو دوبارہ لوڈ کرنا چاہئے، عام رسائی کو بحال کرنا چاہئے. کچھ معاملات میں، آپ کو CAPTCHA چیلنج مکمل کرنے کی ضرورت ہوسکتی ہے.';
 $CIDRAM['lang']['recaptcha_passed'] = 'ایوان کے پاس!';
 $CIDRAM['lang']['recaptcha_submit'] = 'جمع';
 $CIDRAM['lang']['Short_BadIP'] = 'غلط IP';

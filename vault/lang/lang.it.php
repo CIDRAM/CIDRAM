@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2017.11.06).
+ * This file: Italian language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Disattivato.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Attivato.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Fallito!';
 $CIDRAM['lang']['recaptcha_message'] = 'Al fine di riottenere l\'accesso a questa pagina, compila il CAPTCHA fornito qui sotto e premere il pulsante di invio.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'Per la maggior parte degli utenti, la pagina dovrebbe ricaricare e ripristinare l\'accesso normale. In alcuni casi, potrebbe essere necessario completare una sfida CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Successo!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Invio';
 $CIDRAM['lang']['Short_BadIP'] = 'IP non valido!';

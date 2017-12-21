@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2017.11.24).
+ * This file: reCAPTCHA module (last modified: 2017.12.21).
  */
 
 /**
@@ -28,22 +28,34 @@ $CIDRAM['reCAPTCHA']['DoResponse'] = function () use (&$CIDRAM) {
 };
 
 /** Generate reCAPTCHA form template data. */
-$CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function ($SiteKey, $CookieWarn = false) {
+$CIDRAM['reCAPTCHA']['GenerateTemplateData'] = function ($SiteKey, $API, $CookieWarn = false) {
     $CookieWarn = $CookieWarn ? '<br />{recaptcha_cookie_warning}' : '';
-    return
-        "\n<hr />\n<p class=\"detected\">{recaptcha_message}" . $CookieWarn . "<br /><br /></p>\n" .
-        "<form method=\"POST\" action=\"\" class=\"gForm\">" .
-            "<div id=\"gForm\"></div><br /><br /><input type=\"submit\" value=\"{recaptcha_submit}\" />" .
+    return $API === 'Invisible' ?
+        "\n<hr />\n<p class=\"detected\">{recaptcha_message_invisible}" . $CookieWarn . "<br /></p>\n" .
+        "<div class=\"gForm\">" .
+            "<div id=\"gForm\" class=\"g-recaptcha\" data-sitekey=\"" . $SiteKey .
+            "\" data-callback=\"onSubmitCallback\" data-size=\"invisible\"></div>" .
+        "</div>\n" .
+        "<form id=\"gF\" method=\"POST\" action=\"\" class=\"gForm\">" .
+            "<input id=\"rData\" type=\"hidden\" name=\"g-recaptcha-response\" value=\"\">" .
+        "</form>\n" .
+        "<script type=\"text/javascript\">function onSubmitCallback(token){document.getElementById('rData').value=token;document.getElementById('gF').submit()}</script>\n" .
+        "<script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>\n"
+    :
+        "\n<hr />\n<p class=\"detected\">{recaptcha_message}" . $CookieWarn . "<br /></p>\n" .
+        "<form method=\"POST\" action=\"\" class=\"gForm\" onsubmit=\"javascript:grecaptcha.execute();\">" .
+            "<div id=\"gForm\"></div><div><input type=\"submit\" value=\"{recaptcha_submit}\" /></div>" .
         "</form>\n" .
         "<script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer></script>";
 };
 
 /** Generate reCAPTCHA callback data. */
-$CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey) {
+$CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
+    $Params = "'gForm',{'sitekey':'" . $SiteKey . "'" . ($API === 'Invisible' ? ",'size':'invisible'" : '') . '}';
+    $More = ($API === 'Invisible') ? "grecaptcha.execute();" : '';
     return
-        '<script type="text/javascript">' .
-        "var onloadCallback=function(){grecaptcha.render('gForm',{'sitekey':'" . $SiteKey . "'})}" .
-        '</script>';
+        "\n    <script type=\"text/javascript\">" .
+        "var onloadCallback=function(){grecaptcha.render(" . $Params . ');' . $More . '}</script>';
 };
 
 /** Refer to the documentation regarding the behaviour of "lockuser". */
@@ -98,7 +110,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         /** Set status for reCAPTCHA block information. */
         $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_enabled'];
         /** We've received a response. */
-        if (!empty($_POST['g-recaptcha-response'])) {
+        if (isset($_POST['g-recaptcha-response'])) {
             $CIDRAM['reCAPTCHA']['Loggable'] = true;
             $CIDRAM['reCAPTCHA']['DoResponse']();
             if ($CIDRAM['reCAPTCHA']['Bypass']) {
@@ -145,10 +157,10 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          */
         if (!$CIDRAM['reCAPTCHA']['Bypass']) {
             $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
-                $CIDRAM['Config']['recaptcha']['sitekey']
+                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
             );
             $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
-                $CIDRAM['Config']['recaptcha']['sitekey'], true
+                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api'], true
             );
         }
 
@@ -189,7 +201,7 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         /** Set status for reCAPTCHA block information. */
         $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_enabled'];
         /** We've received a response. */
-        if (!empty($_POST['g-recaptcha-response'])) {
+        if (isset($_POST['g-recaptcha-response'])) {
             $CIDRAM['reCAPTCHA']['Loggable'] = true;
             $CIDRAM['reCAPTCHA']['DoResponse']();
             if ($CIDRAM['reCAPTCHA']['Bypass']) {
@@ -224,10 +236,10 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
          */
         if (!$CIDRAM['reCAPTCHA']['Bypass']) {
             $CIDRAM['Config']['template_data']['recaptcha_api_include'] = $CIDRAM['reCAPTCHA']['GenerateCallbackData'](
-                $CIDRAM['Config']['recaptcha']['sitekey']
+                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
             );
             $CIDRAM['Config']['template_data']['recaptcha_div_include'] = $CIDRAM['reCAPTCHA']['GenerateTemplateData'](
-                $CIDRAM['Config']['recaptcha']['sitekey']
+                $CIDRAM['Config']['recaptcha']['sitekey'], $CIDRAM['Config']['recaptcha']['api']
             );
         }
 

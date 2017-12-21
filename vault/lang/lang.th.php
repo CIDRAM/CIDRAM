@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.11.06).
+ * This file: Thai language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'ไม่ใช้งาน.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'ใช้งานอยู่.';
 $CIDRAM['lang']['recaptcha_failed'] = 'ล้มเหลว!';
 $CIDRAM['lang']['recaptcha_message'] = 'เพื่อให้สามารถเข้าถึงหน้านี้ได้อีกครั้ง, โปรดกรอกข้อมูล CAPTCHA ด้านล่างนี้และกดปุ่มส่ง.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'ในกรณีส่วนใหญ่ หน้าเว็บควรโหลดและกู้คืนการเข้าถึงตามปกติ. ในบางกรณี คุณอาจต้องกรอกข้อมูล CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'ผ่าน!';
 $CIDRAM['lang']['recaptcha_submit'] = 'ส่ง';
 $CIDRAM['lang']['Short_BadIP'] = 'IP ไม่ถูกต้อง';

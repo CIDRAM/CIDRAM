@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2017.11.06).
+ * This file: Bangla language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'অফলাইন।';
 $CIDRAM['lang']['recaptcha_enabled'] = 'অনলাইন।';
 $CIDRAM['lang']['recaptcha_failed'] = 'ব্যর্থ!';
 $CIDRAM['lang']['recaptcha_message'] = 'এই পৃষ্ঠায় অ্যাক্সেস পুনরায় পেতে, দয়া করে নীচে দেওয়া CAPTCHA পূরণ করুন এবং জমা বোতামটি টিপুন।';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'বেশিরভাগ ব্যবহারকারীর জন্য, পৃষ্ঠাটি স্বাভাবিক অ্যাক্সেস রিফ্রেশ এবং পুনঃস্থাপন করা উচিত। কিছু ক্ষেত্রে, আপনি একটি CAPTCHA চ্যালেঞ্জ সম্পূর্ণ করতে প্রয়োজন হতে পারে।';
 $CIDRAM['lang']['recaptcha_passed'] = 'পাস!';
 $CIDRAM['lang']['recaptcha_submit'] = 'জমা দিন';
 $CIDRAM['lang']['Short_BadIP'] = 'অবৈধ IP';

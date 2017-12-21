@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.11.06).
+ * This file: Russian language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,6 +56,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Отключается.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Включается.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Не успех!';
 $CIDRAM['lang']['recaptcha_message'] = 'Чтобы вновь получить доступ к этой странице, пожалуйста, заполните ниже CAPTCHA, и нажмите кнопку отправить.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'Для большинства пользователей, страница должна перезагружать и восстанавливать обычный доступ. В некоторых случаях вам может потребоваться выполнить вызов CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Успех!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Отправить';
 $CIDRAM['lang']['Short_BadIP'] = 'Неверный IP';

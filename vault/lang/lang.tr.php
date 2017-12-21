@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.11.06).
+ * This file: Turkish language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -53,6 +53,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Devre dışı.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Etkinleştirildi.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Başarısız oldu!';
 $CIDRAM['lang']['recaptcha_message'] = 'Bu sayfaya tekrar erişmek için lütfen aşağıda verilen CAPTCHA\'yi doldurun ve gönderme düğmesine basın.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'Çoğu kullanıcı için, sayfa yenilenmeli ve normal erişime geri dönülmelidir. Bazı durumlarda, bir CAPTCHA zorluğu doldurmanız istenebilir.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Geçildi!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Gönder';
 $CIDRAM['lang']['Short_BadIP'] = 'Geçersiz IP';

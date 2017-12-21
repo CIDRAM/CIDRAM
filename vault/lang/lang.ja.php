@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.11.06).
+ * This file: Japanese language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'オフ。';
 $CIDRAM['lang']['recaptcha_enabled'] = 'オン。';
 $CIDRAM['lang']['recaptcha_failed'] = '失敗！';
 $CIDRAM['lang']['recaptcha_message'] = 'このページへのアクセスを回復するためには、​以下の供給CAPTCHAを完了し、​送信ボタンを押してください。';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'ほとんどの場合、ページがリロードされます、通常のアクセスを復元する必要があります。​場合によっては、CAPTCHAチャレンジを完了する必要があります。';
 $CIDRAM['lang']['recaptcha_passed'] = '合格！';
 $CIDRAM['lang']['recaptcha_submit'] = '送信';
 $CIDRAM['lang']['Short_BadIP'] = '無効なＩＰ';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2017.11.06).
+ * This file: Chinese (simplified) language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,7 +33,7 @@ $CIDRAM['lang']['field_scriptversion'] = '脚本版本：';
 $CIDRAM['lang']['field_sigcount'] = '签名计数：';
 $CIDRAM['lang']['field_sigref'] = '签名参考：';
 $CIDRAM['lang']['field_ua'] = '用户代理：';
-$CIDRAM['lang']['field_whyreason'] = '为何受阻：';
+$CIDRAM['lang']['field_whyreason'] = '为什么被阻止：';
 $CIDRAM['lang']['generated_by'] = '所产生通过';
 $CIDRAM['lang']['preamble'] = '-- 结束序言。​添加您的问题或意见该行之后。 --';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = '您的访问这个页面被拒绝因为您试图访问该页面使用一个无效的IP地址。';
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = '关掉。';
 $CIDRAM['lang']['recaptcha_enabled'] = '打开。';
 $CIDRAM['lang']['recaptcha_failed'] = '失败！';
 $CIDRAM['lang']['recaptcha_message'] = '为了重新进入此页面，​请填写以下提供的CAPTCHA并按提交按钮。';
+$CIDRAM['lang']['recaptcha_message_invisible'] = '对于大多数用户，页面应该刷新并恢复正常访问。​在某些情况下，您可能需要填写CAPTCHA挑战。';
 $CIDRAM['lang']['recaptcha_passed'] = '成功！';
 $CIDRAM['lang']['recaptcha_submit'] = '提交';
 $CIDRAM['lang']['Short_BadIP'] = '无效的IP！';

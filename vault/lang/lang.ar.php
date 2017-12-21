@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.11.06).
+ * This file: Arabic language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,6 +51,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'تعطيل.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'تمكين.';
 $CIDRAM['lang']['recaptcha_failed'] = 'فشل!';
 $CIDRAM['lang']['recaptcha_message'] = 'من أجل استعادة الوصول إلى هذه الصفحة، يرجى إكمال CAPTCHA زودت أدناه واضغط على زر الإرسال.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'بالنسبة إلى معظم المستخدمين، يجب أن تقوم الصفحة بتحديث واستعادة الوصول العادي. في بعض الحالات، قد يطلب منك إكمال تحدي CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'نجحت!';
 $CIDRAM['lang']['recaptcha_submit'] = 'الإرسال';
 $CIDRAM['lang']['Short_BadIP'] = 'IP غير صالح';

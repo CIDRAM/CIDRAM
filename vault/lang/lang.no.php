@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data (last modified: 2017.11.06).
+ * This file: Norwegian language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Deaktivert.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Aktivert.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Feilet!';
 $CIDRAM['lang']['recaptcha_message'] = 'For å få tilgang til denne siden, vennligst fyll ut CAPTCHA som følger med nedenfor, og trykk på send-knappen.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'For de fleste brukere, siden skal lastes igjen og gjenopprette normal tilgang. I noen tilfeller kan det være nødvendig å fullføre en CAPTCHA-utfordring.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Bestått!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Send';
 $CIDRAM['lang']['Short_BadIP'] = 'Ugyldig IP';

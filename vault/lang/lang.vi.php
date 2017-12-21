@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.11.06).
+ * This file: Vietnamese language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Tắt.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Trên.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Thất bại!';
 $CIDRAM['lang']['recaptcha_message'] = 'Để lấy lại truy cập trang này, xin điền CAPTCHA được cung cấp dưới đây và nhấn nút gửi.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'Đối với hầu hết người dùng, trang sẽ làm mới và khôi phục quyền truy cập thông thường. Trong một số trường hợp, bạn có thể được yêu cầu để hoàn thành một thách thức CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Thành công!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Gửi';
 $CIDRAM['lang']['Short_BadIP'] = 'IP không hợp lệ';

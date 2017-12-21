@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.11.06).
+ * This file: Korean language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = '오프.';
 $CIDRAM['lang']['recaptcha_enabled'] = '온.';
 $CIDRAM['lang']['recaptcha_failed'] = '실패!';
 $CIDRAM['lang']['recaptcha_message'] = '이 페이지에 대한 액세스를 회복하기 위해서는 다음의 공급 CAPTCHA를 완료하고 전송 버튼을 누르십시오.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = '대부분의 경우 페이지는, 페이지가 다시로드되어, 정상적인 액세스로 복원됩니다. 일부 경우에, CAPTCHA 챌린지를 완료해야 할 수도 있습니다.';
 $CIDRAM['lang']['recaptcha_passed'] = '합격!';
 $CIDRAM['lang']['recaptcha_submit'] = '전송';
 $CIDRAM['lang']['Short_BadIP'] = '잘못된 IP';

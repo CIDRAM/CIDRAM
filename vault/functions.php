@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.17).
+ * This file: Functions file (last modified: 2017.12.19).
  */
 
 /**
@@ -868,8 +868,8 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
         }
         while (strlen($Lookup) < 39) {
             $Lookup = preg_replace(
-                ['/:$/', '/^([0-9a-f]{1,3}):/i', '/:([0-9a-f]{1,3})$/i', '/:([0-9a-f]{1,3}):/i'],
-                [':0', '0\1:', ':0\1', ':0\1:'],
+                ['/^:/', '/:$/', '/^([0-9a-f]{1,3}):/i', '/:([0-9a-f]{1,3})$/i', '/:([0-9a-f]{1,3}):/i'],
+                ['0:', ':0', '0\1:', ':0\1', ':0\1:'],
                 $Lookup
             );
         }

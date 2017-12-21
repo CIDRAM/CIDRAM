@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2017.11.06).
+ * This file: Hindi language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'निष्क्रिय।';
 $CIDRAM['lang']['recaptcha_enabled'] = 'सक्रिय।';
 $CIDRAM['lang']['recaptcha_failed'] = 'अनुत्तीर्ण होना!';
 $CIDRAM['lang']['recaptcha_message'] = 'इस पृष्ठ पर पहुंच हासिल करने के लिए, कृपया नीचे दिए गए कैप्चा को पूरा करें और सबमिट बटन दबाएं।';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'अधिकतर उपयोगकर्ताओं के लिए, पृष्ठ को सामान्य पहुंच को रीफ्रेश और पुनर्स्थापित करना चाहिए। कुछ मामलों में, आपको CAPTCHA चुनौती को पूरा करना पड़ सकता है।';
 $CIDRAM['lang']['recaptcha_passed'] = 'बीतने के!';
 $CIDRAM['lang']['recaptcha_submit'] = 'जमा करें';
 $CIDRAM['lang']['Short_BadIP'] = 'अमान्य आईपी';

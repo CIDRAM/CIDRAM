@@ -277,6 +277,12 @@ Config Defaults:
   signature_limit:
    type: int
    default: 1
+  api:
+   type: string
+   default: "V2"
+   choices:
+    V2: "V2"
+    Invisible: "Invisible"
  template_data:
   theme:
    type: string

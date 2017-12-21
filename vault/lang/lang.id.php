@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.11.06).
+ * This file: Indonesian language data (last modified: 2017.12.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,6 +48,7 @@ $CIDRAM['lang']['recaptcha_disabled'] = 'Dinonaktifkan.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'Diaktifkan.';
 $CIDRAM['lang']['recaptcha_failed'] = 'Gagal!';
 $CIDRAM['lang']['recaptcha_message'] = 'Dalam rangka untuk mendapatkan kembali akses ke halaman ini, melengkapi CAPTCHA disediakan di bawah dan tekan tombol mengirim.';
+$CIDRAM['lang']['recaptcha_message_invisible'] = 'Bagi kebanyakan pengguna, halaman harus menyegarkan dan mengembalikan akses normal. Dalam beberapa kasus, Anda mungkin diminta untuk menyelesaikan tantangan CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'Lulus!';
 $CIDRAM['lang']['recaptcha_submit'] = 'Mengirim';
 $CIDRAM['lang']['Short_BadIP'] = 'IP tidak valid!';

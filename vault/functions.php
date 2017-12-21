@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.19).
+ * This file: Functions file (last modified: 2017.12.22).
  */
 
 /**
@@ -83,7 +83,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
     $IgnoreFile = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ignore.dat');
     if (strpos($IgnoreFile, "\r")) {
         $IgnoreFile = (
-            strpos($IgnoreFile, "\r\n")
+            strpos($IgnoreFile, "\r\n") !== false
         ) ? str_replace("\r", '', $IgnoreFile) : str_replace("\r", "\n", $IgnoreFile);
     }
     $IgnoreFile = "\n" . $IgnoreFile . "\n";
@@ -101,6 +101,7 @@ $CIDRAM['FetchIgnores'] = function () use (&$CIDRAM) {
         if (strlen($Tag)) {
             $IgnoreMe[$Tag] = true;
         }
+        $PosB--;
     }
     return $IgnoreMe;
 };

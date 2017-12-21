@@ -782,19 +782,21 @@ Ignore القسم ١
 
 #### <div dir="rtl">٧.٤ <a name="MODULE_BASICS"></a>مبادئ (للوحدات)<br /><br /></div>
 
-Modules can be used to extend the functionality of CIDRAM, perform additional tasks, or process additional logic. Typically, they're used when it's necessary to block a request on a basis other than its originating IP address (and thus, when a CIDR signature won't suffice to block the request). Modules are written as PHP files, and thus, typically, module signatures are written as PHP code.
+<div dir="rtl">وحدات يمكن استخدامها لتوسيع وظائف CIDRAM، أداء مهام إضافية، أو معالجة منطق إضافي. عادة، يتم استخدامها عندما يكون من الضروري منع طلب على أساس آخر غير عنوان IP الأصل (وبالتالي، عندما لا يكون توقيع CIDR كافيا لمنع الطلب). PHP كتابة وحدات كملفات فب، وبالتالي، عادة، تكتب التوقيعات وحدة كما كود PHP.<br /><br /></div>
 
-Some good examples of CIDRAM modules can be found here:
+<div dir="rtl">بعض الأمثلة الجيدة على وحدات CIDRAM يمكن العثور عليها هنا:</div>
+
 - https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
 
-A template for writing new modules can be found here:
+<div dir="rtl">يمكن العثور على نموذج لكتابة وحدات جديدة هنا:</div>
+
 - https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
 
-Due to that modules are written as PHP files, if you're adequately familiar with the CIDRAM codebase, you can structure your modules however you want, and write your module signatures however you want (within reason of what is possible with PHP). However, for your own convenience, and for the sake of better mutual intelligibility between existing modules and your own, analysing the template linked above is recommended, in order to be able to use the structure and format that it provides.
+<div dir="rtl">لأن يتم كتابة وحدات كملفات PHP، إذا كنت على دراية كافية مع مصدر برنامج CIDRAM، يمكنك هيكلة وحدات وحدة التواقيع ولكن تريد (في إطار ما هو ممكن مع فب). ومع ذلك، لراحتك ولأفضل وضوح متبادل بين وحدات القائمة الخاصة بك، ويوصى تحليل قالب ربط أعلاه، من أجل أن تكون قادرة على استخدام هيكل وشكل أنه يوفر.<br /><br /></div>
 
-*Note: If you're not comfortable working with PHP code, writing your own modules is not recommended.*
+<div dir="rtl"><em>ملحوظة: إذا كنت غير مريح العمل مع التعليمات البرمجية PHP، كتابة الوحدات الخاصة بك لا ينصح.</em><br /><br /></div>
 
-Some functionality is provided by CIDRAM for modules to use, which should make it simpler and easier to write your own modules. Information about this functionality is described below.
+<div dir="rtl">يتم توفير بعض الوظائف من قبل CIDRAM التي ينبغي أن تجعل من أبسط وأسهل لكتابة وحدات الخاصة بك. وترد أدناه معلومات عن هذه الوظيفة.<br /><br /></div>
 
 #### 7.5 MODULE FUNCTIONALITY
 

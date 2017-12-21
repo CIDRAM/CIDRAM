@@ -782,19 +782,21 @@ Ignore سیکشن 1
 
 #### <div dir="rtl">٧.٤ <a name="MODULE_BASICS"></a>مبادیات (ماڈیولز کے لئے)<br /><br /></div>
 
-Modules can be used to extend the functionality of CIDRAM, perform additional tasks, or process additional logic. Typically, they're used when it's necessary to block a request on a basis other than its originating IP address (and thus, when a CIDR signature won't suffice to block the request). Modules are written as PHP files, and thus, typically, module signatures are written as PHP code.
+<div dir="rtl">ماڈیولز CIDRAM کی فعالیت کو بڑھانے کے لئے استعمال کیا جا سکتا ہے، اضافی کاموں کو انجام دینے کے لئے، یا اضافی منطق پر عمل درآمد. عام طور پر، ماڈیولز استعمال کیے جاتے ہیں جب اصل میں IP ایڈریس کے مقابلے میں دیگر وجوہات کی درخواست کو روکنے کے لئے ضروری ہے (اور اس طرح، جب CIDR دستخط درخواست کو روکنے کے لئے کافی نہیں ہوگا). ماڈیول PHP کی فائلوں کے طور پر لکھا جاتا ہے، اور اس طرح، عام طور پر، ماڈیول دستخط PHP کوڈ کے طور پر لکھا جاتا ہے.<br /><br /></div>
 
-Some good examples of CIDRAM modules can be found here:
+<div dir="rtl">CIDRAM ماڈیولز کے کچھ اچھے مثال یہاں پایا جا سکتا ہے:</div>
+
 - https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
 
-A template for writing new modules can be found here:
+<div dir="rtl">نئے ماڈیولز لکھنے کے لئے ایک سانچے یہاں پایا جا سکتا ہے:</div>
+
 - https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
 
-Due to that modules are written as PHP files, if you're adequately familiar with the CIDRAM codebase, you can structure your modules however you want, and write your module signatures however you want (within reason of what is possible with PHP). However, for your own convenience, and for the sake of better mutual intelligibility between existing modules and your own, analysing the template linked above is recommended, in order to be able to use the structure and format that it provides.
+<div dir="rtl">کیونکہ ماڈیولز PHP کی فائلوں کے طور پر لکھی جاتی ہیں، اگر آپ CIDRAM کوڈ بیس کے ساتھ مناسب طریقے سے واقف ہیں تو، آپ اپنی ماڈیول اور ماڈیول دستخط کی تشکیل کرسکتے ہیں تاہم آپ چاہتے ہیں (PHP کے ساتھ کیا ممکن ہے کی مناسب حدود کے اندر اندر). تاہم، آپ کی سہولت اور موجودہ ماڈیولز اور آپ کے اپنے درمیان خود کار طریقے سے ذہنی سمجھداری کے لۓ، مندرجہ بالا منسلک ٹیمپلیٹ کا تجزیہ کرنے کی سفارش کی جاتی ہے، تاکہ وہ ڈھانچہ اور فارمیٹ استعمال کرسکیں جو اسے فراہم کرتی ہے.<br /><br /></div>
 
-*Note: If you're not comfortable working with PHP code, writing your own modules is not recommended.*
+<div dir="rtl"><em>نوٹ: اگر آپ PHP کے کوڈ کے ساتھ کام کرنے میں آرام دہ اور پرسکون نہیں ہیں تو، آپ کے اپنے ماڈیول لکھنے کی سفارش نہیں کی جاتی ہے.</em><br /><br /></div>
 
-Some functionality is provided by CIDRAM for modules to use, which should make it simpler and easier to write your own modules. Information about this functionality is described below.
+<div dir="rtl">کچھ فعالیتیں CIDRAM کی طرف سے فراہم کی جاتی ہیں جو اپنے ماڈیولز کو لکھنے کے لئے آسان اور آسان بنانا چاہئے. اس فعالیت کے بارے میں معلومات ذیل میں بیان کی گئی ہے.<br /><br /></div>
 
 #### 7.5 MODULE FUNCTIONALITY
 

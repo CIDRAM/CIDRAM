@@ -17,7 +17,7 @@
 
 ### １.<a name="SECTION1"></a>序文
 
-CIDRAM（シドラム、​クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 『Classless Inter-Domain Routing Access Manager』）は、​ＰＨＰスクリプトです。​ウェブサイトを保護するように設計されて、​ＩＰアドレス（望ましくないトラフィックのあるソースとみなします）から、​発信要求をブロックすることによって（ヒト以外のアクセスエンドポイント、​クラウドサービス、​スパムロボット、​スクレーパー、​等）。​ＩＰアドレスの可能ＣＩＤＲを計算することにより、​ＣＩＤＲは、​そのシグネチャファイルと比較することができます（これらのシグネチャファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）；​一致が見つかった場合、​要求はブロックされます。
+CIDRAM（シドラム、​クラスレス・ドメイン間・ルーティング・アクセス・マネージャー 『Classless Inter-Domain Routing Access Manager』）は、​ＰＨＰスクリプトです。​ウェブサイトを保護するように設計されて、​ＩＰアドレス（望ましくないトラフィックのあるソースとみなします）から、​発信リクエストをブロックすることによって（ヒト以外のアクセスエンドポイント、​クラウドサービス、​スパムロボット、​スクレーパー、​等）。​ＩＰアドレスの可能ＣＩＤＲを計算することにより、​ＣＩＤＲは、​そのシグネチャファイルと比較することができます（これらのシグネチャファイルは不要なIPアドレスに対応するCIDRのリストが含まれています）；​一致が見つかった場合、​リクエストはブロックされます。
 
 *（参照する：​[「ＣＩＤＲ」とは何ですか？​](#WHAT_IS_A_CIDR)）。*
 
@@ -79,7 +79,7 @@ WordPressでCIDRAMを使用する場合は、​上記の手順をすべて無�
 
 ### ３.<a name="SECTION3"></a>使用方法
 
-CIDRAMは自動的に望ましくない要求をブロックする必要があります；支援が必要とされていません（インストールを除きます）。
+CIDRAMは自動的に望ましくないリクエストをブロックする必要があります；支援が必要とされていません（インストールを除きます）。
 
 更新（アップデイト）は手動で行われています。​あなたの設定ファイルを変更することによって、​構成設定をカスタマイズすることができます。​あなたのシグネチャファイルを変更することによって、​ＣＩＤＲがブロックされて変更することができます。
 
@@ -321,10 +321,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - CIDRAMで使用される日付表記形式。​Default（デフォルト設定） = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 "ipaddr" （アイピーアドレス）
-- 接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。
+- 接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。
 
 "forbid_on_block" （フォービッド・オン・ブロック）
-- 何ヘッダー使用する必要がありますか（要求をブロックしたとき）？​`false`（偽）/200 = 200 OK （Default/デフォルルト）；​`true`（真）/403 = 403 Forbidden （４０３禁止されている）；​503 = 503 Service unavailable （５０３サービス利用不可）。
+- 何ヘッダー使用する必要がありますか（リクエストをブロックしたとき）？​`false`（偽）/200 = 200 OK （Default/デフォルルト）；​`true`（真）/403 = 403 Forbidden （４０３禁止されている）；​503 = 503 Service unavailable （５０３サービス利用不可）。
 
 "silent_mode" （サイレント・モード）
 - 「アクセス拒否」ページを表示する代わりに、​CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？​はいの場合は、​リダイレクトの場所を指定します。​いいえの場合は、​この変数を空白のままにします。
@@ -354,10 +354,10 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
 
 "ban_override" （バン・オーバーライド）
-- 「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）；​４０３ = 「403 Forbidden」で上書きする；​５０３ = 「503 Service unavailable」で上書きする。
+- 「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）；​４０３ = 「403 Forbidden」で上書きする；​５０３ = 「503 Service unavailable」で上書きする。
 
 "log_banned_ips" （ログ・バンド・アイピーズ）
-- 禁止されたＩＰからブロックされた要求をログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。
+- 禁止されたＩＰからブロックされたリクエストをログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。
 
 "default_dns" （ディフォールト・ディーエンエス）
 - ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。
@@ -381,7 +381,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - CIDRAM使用統計を追跡しますか？​True = はい；​False = いいえ（Default/デフォルルト）。
 
 "force_hostname_lookup" （フォース・ホストネーム・ルックアップ）
-- ホスト名検索を強制しますか？​True = はい；​False = いいえ（Default/デフォルルト）。 ホスト名検索は、通常、「必要に応じて」実行されますが、すべての要求に対して強制することができます。​これは、より詳細な情報をログファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。
+- ホスト名検索を強制しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。
 
 #### "signatures" （シグネチャーズ、​カテゴリ）
 シグネチャの設定。
@@ -420,7 +420,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - 違反はいつカウントされるべきですか？​False = ＩＰがモジュールによってブロックされている場合。​True = なんでもの理由でＩＰがブロックされた場合。
 
 #### "recaptcha" （リーキャプチャ、​カテゴリ）
-ユーザーにとって、​reCAPTCHAインスタンスを完成させることによって、​「アクセス拒否」ページをバイパスする方法を提供することができます。​これは、​偽陽性に関連するいくつかのリスクを緩和するのに役立ちます （要求が機械または人間から、​生じたものであるかどうかは不明である場合）。
+ユーザーにとって、​reCAPTCHAインスタンスを完成させることによって、​「アクセス拒否」ページをバイパスする方法を提供することができます。​これは、​偽陽性に関連するいくつかのリスクを緩和するのに役立ちます （リクエストが機械または人間から、​生じたものであるかどうかは不明である場合）。
 
 「アクセス拒否」ページをバイパスすることに伴うリスクがあります。​このため、​一般的に、​必要な場合を除いて、​この機能を有効にすることはお勧めしません。​それが必要な状況：​ユーザーはあなたのウェブサイトにアクセスする必要があります、​しかし、​彼らは敵対的なネットワークから接続しています、​そして、​これは交渉できません；​ユーザーはアクセスが必要です、​敵対的なネットワークを拒絶する必要がある（何をすべきか？​！​）。​。​このような状況では、​reCAPTCHA機能が役立つ可能性があります：​ユーザーはアクセス権を持つことができます；​不要なトラフィックをフィルタリングすることができます（一般的に）。​人間以外のトラフィックに対しても有効です（例えば、​スパムロボット、​スクレーパー、​ハックツール、​自動交通、​など）、​しかし、​人間のトラフィックにあまり役に立たない（例えば、​人間のスパマー、​ハッカー、​その他）。
 
@@ -447,7 +447,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - この値は、​あなたのreCAPTCHAのための「secret key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。
 
 "expiry" （シークレット）
-- 「lockuser」が「true」とき（Default「デフォルルト」）、​reCAPTCHAインスタンスの合格/不合格態を覚えておくために、​将来のページリクエスト用、​CIDRAMは、​ハッシュを含む標準のHTTP Cookieを生成します；​このハッシュは、​同じハッシュを含む内部レコードに対応します；​将来のページリクエストでは、​対応するハッシュを使用して合格/不合格の状態を認証します。​「lockuser」が「false」とき、​要求を許可する必要があるかどうかを判断するために、​ＩＰホワイトリストが使用されます；​reCAPTCHAインスタンスが正常に渡されると、​このホワイトリストにエントリが追加されます。​これらのクッキー、​ハッシュ、​ホワイトリストのエントリは何時間有効であるべきですか？​Default（デフォルルト） = ７２０（１ヶ月）。
+- 「lockuser」が「true」とき（Default「デフォルルト」）、​reCAPTCHAインスタンスの合格/不合格態を覚えておくために、​将来のページリクエスト用、​CIDRAMは、​ハッシュを含む標準のHTTP Cookieを生成します；​このハッシュは、​同じハッシュを含む内部レコードに対応します；​将来のページリクエストでは、​対応するハッシュを使用して合格/不合格の状態を認証します。​「lockuser」が「false」とき、​リクエストを許可する必要があるかどうかを判断するために、​ＩＰホワイトリストが使用されます；​reCAPTCHAインスタンスが正常に渡されると、​このホワイトリストにエントリが追加されます。​これらのクッキー、​ハッシュ、​ホワイトリストのエントリは何時間有効であるべきですか？​Default（デフォルルト） = ７２０（１ヶ月）。
 
 "logfile" （ログ・ファイル）
 - reCAPTCHA試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
@@ -458,7 +458,7 @@ CIDRAMは自動的に望ましくない要求をブロックする必要があ�
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "signature_limit" （シグネチャ・リミット）
-- reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定の要求に対してこの数を超えると、reCAPTCHAインスタンスは提供されません。
+- reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定のリクエストに対してこの数を超えると、reCAPTCHAインスタンスは提供されません。
 
 "api" （エイ・ピー・アイ）
 - どのＡＰＩを使用するのですか？​「V2」または「invisible」？
@@ -529,7 +529,7 @@ CIDRAMで使用されるシグネチャの形式と構造の説明は、​カ�
 
 「Deny」を使用すると、​シグネチャがトリガーされると、​保護されたページへのアクセスは拒否されます（ＩＰ/ＣＩＤＲがホワイトリストに登録されていない場合）。​「Deny」は、​実際にＩＰアドレスとＣＩＤＲの範囲をブロックするために使用するものです。​「Deny」を使用するシグネチャがトリガーされると、​「アクセス拒否」ページが生成され、​保護されたページへのリクエストが終了します。
 
-「Deny」によって受け入れられた`「パラメータ」`値は、​「アクセス拒否」ページ出力に処理されます、​要求されたページへのアクセスが拒否された理由として、​クライアント/ユーザーに提供されます。​それは短くて簡単な文章にすることができます（なぜそれらをブロックすることを選択したのか説明するために）。​また、​略語とすることもできます（事前準備された説明をクライアント/ユーザに提供する）。
+「Deny」によって受け入れられた`「パラメータ」`値は、​「アクセス拒否」ページ出力に処理されます、​リクエストされたページへのアクセスが拒否された理由として、​クライアント/ユーザーに提供されます。​それは短くて簡単な文章にすることができます（なぜそれらをブロックすることを選択したのか説明するために）。​また、​略語とすることもできます（事前準備された説明をクライアント/ユーザに提供する）。
 
 あらかじめ用意された説明にはL10Nのサポートがあり、​スクリプトで翻訳することができます。​翻訳は、​スクリプト構成の`lang`ディレクティブを使用して指定した言語に基づいて行われます。​さらに、​これらの短縮形の単語を使用している場合、​`「パラメータ」`値に基づいて 「Deny」シグネチャを無視するようスクリプトに指示できます。​これは、​スクリプト設定で指定されたディレクティブを介して行われます（それぞれの省略形に対応するディレクティブがあります）。​ただし、​他の`「パラメータ」`値にはL10Nがサポートされていません（したがって、​他の値は翻訳されません、​そして構成によって制御可能ではない）。
 
@@ -672,67 +672,67 @@ Ignore セクション１
 
 #### 7.4 <a name="MODULE_BASICS"></a>基本原則 （モジュールの場合）
 
-Modules can be used to extend the functionality of CIDRAM, perform additional tasks, or process additional logic. Typically, they're used when it's necessary to block a request on a basis other than its originating IP address (and thus, when a CIDR signature won't suffice to block the request). Modules are written as PHP files, and thus, typically, module signatures are written as PHP code.
+モジュールを使用して、CIDRAMの機能を拡張したり、追加のタスクを実行したり、追加ロジックを処理することができます。​通常は、発信元ＩＰアドレス以外のリクエストをブロックする必要がある場合に使用されます​（したがって、ＣＩＤＲシグネチャがリクエストをブロックするのに十分でない場合）。​モジュールはＰＨＰファイルとして記述されるため、通常、モジュール・シグネチャはＰＨＰコードとして記述されます。
 
-Some good examples of CIDRAM modules can be found here:
+CIDRAMモジュールのいくつかの良い例がここにあります：
 - https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
 
-A template for writing new modules can be found here:
+新しいモジュールを書くためのテンプレートは、ここで見つけることができます：
 - https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
 
-Due to that modules are written as PHP files, if you're adequately familiar with the CIDRAM codebase, you can structure your modules however you want, and write your module signatures however you want (within reason of what is possible with PHP). However, for your own convenience, and for the sake of better mutual intelligibility between existing modules and your own, analysing the template linked above is recommended, in order to be able to use the structure and format that it provides.
+モジュールはＰＨＰファイルとして記述されているため、CIDRAMコードベースを十分に理解している場合は、必要に応じてモジュールとモジュール・シグネチャを構造化できます（ＰＨＰで可能なことを理由に）。​ただし、既存のモジュールと独自のモジュールとの間の相互明瞭性を高めるために、上記のリンクされたテンプレートを分析することをお勧めします。​これは、提供する構造とフォーマットを使用できるようにするためです。
 
-*Note: If you're not comfortable working with PHP code, writing your own modules is not recommended.*
+*注意：​ＰＨＰコードの操作に慣れていない場合は、独自のモジュールを作成することはお勧めしません。*
 
-Some functionality is provided by CIDRAM for modules to use, which should make it simpler and easier to write your own modules. Information about this functionality is described below.
+CIDRAMは、独自のモジュールを簡単かつ簡単に作成できる機能を提供しています。​この機能に関する情報は、以下で説明します。
 
-#### 7.5 MODULE FUNCTIONALITY
+#### 7.5 モジュール機能
 
 ##### 7.5.0 "$Trigger"
 
-Module signatures are typically written with "$Trigger". In most cases, this closure will be more important than anything else for the purpose of writing modules.
+モジュール・シグネチャは、通常、「$Trigger」で記述されます。​ほとんどの場合、このクロージャ（closure）はモジュールを書く目的のために何よりも重要になります。
 
-"$Trigger" accepts 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optional), and "$DefineOptions" (optional).
+「$Trigger」は４つのパラメータを受け取ります：​「$Condition」、「$ReasonShort」、「$ReasonLong」（オプショナル）、「$DefineOptions」（オプショナル）。
 
-The truthiness of "$Condition" is evaluated, and if true, the signature is "triggered". If false, the signature is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+「$Condition」の真実性が評価されます。​真の場合（true）、シグネチャはトリガーされます。​偽の場合（false）、シグネチャはトリガーされません。​「$Condition」には通常、リクエストをブロックする条件を評価するためのＰＨＰコードが含まれています。
 
-"$ReasonShort" is cited in the "Why Blocked" field when the signature is "triggered".
+シグネチャがトリガーされると、「なぜブロックされましたか」フィールドに「$ReasonShort」が引用されます。
 
-"$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
+「$ReasonLong」は、ユーザー/クライアントがブロックされたときにそれらがブロックされた理由を説明するためにユーザー/クライアントに表示されるオプションのメッセージです。​省略された場合、標準の「アクセス拒否」メッセージを使用します。
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is "triggered".
+「$DefineOptions」は、オプショナル・キーと値のペアを含む配列です。​これは、リクエスト・インスタンスに固有の設定オプションを定義するために使用されます。​設定オプションは、シグネチャがトリガーされたときに適用されます。
 
-"$Trigger" returns true when the signature is "triggered", and false when it isn't.
+「$Trigger」は、シグネチャがトリガされたときに真（true）を返し、そうでないときに偽（false）を返します。
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+このクロージャをモジュールで使用するには、最初に親スコープから継承することを忘れないでください：
 ```PHP
 $Trigger = $CIDRAM['Trigger'];
 ```
 
 ##### 7.5.1 "$Bypass"
 
-Signature bypasses are typically written with "$Bypass".
+シグネチャ・バイパスは、通常、「$Bypass」で記述されます。
 
-"$Bypass" accepts 3 parameters: "$Condition", "$ReasonShort", and "$DefineOptions" (optional).
+「$Bypass」は３つのパラメータを受け取ります：​「$Condition」、「$ReasonShort」、「$DefineOptions」（オプショナル）。
 
-The truthiness of "$Condition" is evaluated, and if true, the bypass is "triggered". If false, the bypass is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should *not* cause a request to be blocked.
+「$Condition」の真実性が評価されます。​真の場合（true）、バイパスはトリガーされます。​偽の場合（false）、バイパスはトリガーされません。​「$Condition」には通常、リクエストをブロックしてはならない条件を評価するＰＨＰコードが含まれています。
 
-"$ReasonShort" is cited in the "Why Blocked" field when the bypass is "triggered".
+バイパスがトリガーされると、「なぜブロックされましたか」フィールドに「$ReasonShort」が引用されます。
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is "triggered".
+「$DefineOptions」は、オプショナル・キーと値のペアを含む配列です。​これは、リクエスト・インスタンスに固有の設定オプションを定義するために使用されます。​設定オプションは、バイパスがトリガーされたときに適用されます。
 
-"$Bypass" returns true when the bypass is "triggered", and false when it isn't.
+「$Bypass」は、バイパスがトリガされたときに真（true）を返し、そうでないときに偽（false）を返します。
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+このクロージャをモジュールで使用するには、最初に親スコープから継承することを忘れないでください：
 ```PHP
 $Bypass = $CIDRAM['Bypass'];
 ```
 
 ##### 7.5.1 "$CIDRAM['DNS-Reverse']"
 
-This can be used to fetch the hostname of an IP address. If you want to create a module to block hostnames, this closure could be useful.
+これは、ＩＰアドレスのホスト名を取得するために使用できます。​ホスト名をブロックするモジュールを作成する場合は、このクロージャーが便利です。
 
-Example:
+例：
 ```PHP
 <?php
 /** Inherit trigger closure (see functions.php). */
@@ -749,25 +749,25 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 }
 ```
 
-#### 7.6 MODULE VARIABLES
+#### 7.6 モジュール変数
 
-Modules execute within their own scope, and any variables defined by a module, won't be accessible to other modules, or to the parent script, unless they're stored in the "$CIDRAM" array (everything else is flushed after the module execution finishes).
+モジュールは独自のスコープ内で実行され、モジュールで定義された変数は他のモジュールや親スクリプトにアクセスできません。​「$CIDRAM」配列に格納されている場合を除いて（この配列は保持されます；モジュールの実行が終了した後はすべてがフラッシュされます）。
 
-Listed below are some common variables that might be useful for your module:
+あなたのモジュールに役立つ一般的な変数は次のとおりです：
 
-Variable | Description
+変数 | 説明
 ----|----
-`$CIDRAM['BlockInfo']['DateTime']` | The current date and time.
-`$CIDRAM['BlockInfo']['IPAddr']` | IP address for the current request.
-`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM script version.
-`$CIDRAM['BlockInfo']['Query']` | The query for the current request.
-`$CIDRAM['BlockInfo']['Referrer']` | The referrer for the current request (if one exists).
-`$CIDRAM['BlockInfo']['UA']` | The user agent for the current request.
-`$CIDRAM['BlockInfo']['UALC']` | The user agent for the current request (lower-cased).
-`$CIDRAM['BlockInfo']['ReasonMessage']` | The message to be displayed to the user/client for the current request if they're blocked.
-`$CIDRAM['BlockInfo']['SignatureCount']` | The number of signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['Signatures']` | Reference information for any signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['WhyReason']` | Reference information for any signatures triggered for the current request.
+`$CIDRAM['BlockInfo']['DateTime']` | 現在の日付と時刻。
+`$CIDRAM['BlockInfo']['IPAddr']` | 現在のリクエストのＩＰアドレス。
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAMスクリプトのバージョン。
+`$CIDRAM['BlockInfo']['Query']` | 現在のリクエストのクエリ。
+`$CIDRAM['BlockInfo']['Referrer']` | 現在のリクエストのリファラー（存在する場合）。
+`$CIDRAM['BlockInfo']['UA']` | 現在のリクエストのユーザー・エージェント（user agent）。
+`$CIDRAM['BlockInfo']['UALC']` | 現在のリクエストの小文字でユーザー・エージェント（user agent）。
+`$CIDRAM['BlockInfo']['ReasonMessage']` | 現在のリクエストがブロックされている場合、ユーザー/クライアントに表示されるメッセージです。
+`$CIDRAM['BlockInfo']['SignatureCount']` | 現在のリクエストに対してトリガされたシグネチャの数。
+`$CIDRAM['BlockInfo']['Signatures']` | 現在のリクエストに対してトリガーされたシグニチャーの参照情報。
+`$CIDRAM['BlockInfo']['WhyReason']` | 現在のリクエストに対してトリガーされたシグニチャーの参照情報。
 
 ---
 
@@ -843,7 +843,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 #### 複数のドメインを保護するために１つのCIDRAMインストールを使用できますか？
 
-はい。​CIDRAMのインストールは特定のドメインに限定されていません、​したがって、​複数のドメインを保護するために使用できます。​一般的に、​１つのドメインのみを保護するインストール、​私たちは「単一ドメイン・インストール」と呼んでいますで、​複数のドメイン/サブドメインを保護するインストール、​私たちは「マルチドメイン・インストール」と呼んでいます。​マルチドメインインストールを使用している場合で、​異なるドメインに異なるシグネチャ・ファイルセットを使用する必要がある場合や、​異なるドメインにCIDRAMを異なる設定する必要があります、​これを行うことができます。​コンフィグレーション・ファイルをロードした後（`config.ini`）、​CIDRAMは、​要求されたドメインの「コンフィグレーション・オーバーライド・ファイル」の存在をチェックします (`xn--48jua8kwd4hof5er493ch97b.tld.config.ini`)、​そして見つかった場合、​コンフィグレーション・オーバーライド・ファイルによって定義された構成値は、​コンフィグレーション・ファイルによって定義された構成値ではなく、​実行インスタンスに使用されます。​コンフィグレーション・オーバーライド・ファイルは、​コンフィグレーション・ファイルと同じです。​お客様の裁量で、​CIDRAMで利用可能なすべての設定指示句の全体または必要なサブセクションを含めることができます。​コンフィグレーション・オーバーライド・ファイルは彼らが意図しているドメインに従って命名されます （そう、​例えば、​ドメイン`http://www.some-domain.tld/`にコンフィグレーション・オーバーライド・ファイルが必要な場合は、​コンフィグレーション・オーバーライド・ファイルの名前は`some-domain.tld.config.ini`にする必要があります。​通常の設定ファイルと同じ場所に保存する必要があります）。​ドメイン名は `HTTP_HOST` から来ます。​"www"は無視されます。
+はい。​CIDRAMのインストールは特定のドメインに限定されていません、​したがって、​複数のドメインを保護するために使用できます。​一般的に、​１つのドメインのみを保護するインストール、​私たちは「単一ドメイン・インストール」と呼んでいますで、​複数のドメイン/サブドメインを保護するインストール、​私たちは「マルチドメイン・インストール」と呼んでいます。​マルチドメインインストールを使用している場合で、​異なるドメインに異なるシグネチャ・ファイルセットを使用する必要がある場合や、​異なるドメインにCIDRAMを異なる設定する必要があります、​これを行うことができます。​コンフィグレーション・ファイルをロードした後（`config.ini`）、​CIDRAMは、​リクエストされたドメインの「コンフィグレーション・オーバーライド・ファイル」の存在をチェックします (`xn--48jua8kwd4hof5er493ch97b.tld.config.ini`)、​そして見つかった場合、​コンフィグレーション・オーバーライド・ファイルによって定義された構成値は、​コンフィグレーション・ファイルによって定義された構成値ではなく、​実行インスタンスに使用されます。​コンフィグレーション・オーバーライド・ファイルは、​コンフィグレーション・ファイルと同じです。​お客様の裁量で、​CIDRAMで利用可能なすべての設定指示句の全体または必要なサブセクションを含めることができます。​コンフィグレーション・オーバーライド・ファイルは彼らが意図しているドメインに従って命名されます （そう、​例えば、​ドメイン`http://www.some-domain.tld/`にコンフィグレーション・オーバーライド・ファイルが必要な場合は、​コンフィグレーション・オーバーライド・ファイルの名前は`some-domain.tld.config.ini`にする必要があります。​通常の設定ファイルと同じ場所に保存する必要があります）。​ドメイン名は `HTTP_HOST` から来ます。​"www"は無視されます。
 
 #### 私はこれをインストールするか、​それが私のウェブサイト上で動作することを保証する時間を費やす、​にしたくない；​それできますか？​私はあなたを雇うことができますか？
 
@@ -883,7 +883,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 #### 「違反」とは何ですか？
 
-「違反」は、特定のシグネチャ・ファイルによってまだブロックされていないＩＰが将来の要求に対してブロックされる時期を決定します。​これらはＩＰトラッキングに密接に関連しています。​いくつかの機能とモジュールが存在し、元のIP以外の理由でリクエストをブロックすることができます​（例えば、スパムロボッ「spambots」トやハックツール「hacktools」に対応するユーザー・エージェント「user agents」の存在、危険な照会、偽装されたＤＮＳなどの理由）。​これが起こると、「違反」が起こる可能性があります。​これらは、特定のシグネチャ・ファイルによってまだブロックされていない不要な要求に対応するＩＰアドレスを識別する方法を提供します。​違反は通常、ＩＰがブロックされた回数と1対1に対応しますが、必ずしもそうではありません（重大なケースでは、より大きな違反価値があるかもしれない、また、「track_mode」が偽である場合、シグネチャ・ファイルのみによってトリガされたブロックイベントに対して違反は発生しません）。
+「違反」は、特定のシグネチャ・ファイルによってまだブロックされていないＩＰが将来のリクエストに対してブロックされる時期を決定します。​これらはＩＰトラッキングに密接に関連しています。​いくつかの機能とモジュールが存在し、元のIP以外の理由でリクエストをブロックすることができます​（例えば、スパムロボッ「spambots」トやハックツール「hacktools」に対応するユーザー・エージェント「user agents」の存在、危険な照会、偽装されたＤＮＳなどの理由）。​これが起こると、「違反」が起こる可能性があります。​これらは、特定のシグネチャ・ファイルによってまだブロックされていない不要なリクエストに対応するＩＰアドレスを識別する方法を提供します。​違反は通常、ＩＰがブロックされた回数と1対1に対応しますが、必ずしもそうではありません（重大なケースでは、より大きな違反価値があるかもしれない、また、「track_mode」が偽である場合、シグネチャ・ファイルのみによってトリガされたブロックイベントに対して違反は発生しません）。
 
 #### CIDRAMはホスト名をブロックできますか？
 

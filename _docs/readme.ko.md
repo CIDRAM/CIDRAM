@@ -672,21 +672,21 @@ Ignore 섹션 1
 
 #### 7.4 <a name="MODULE_BASICS"></a>기초 (모듈 경우)
 
-Modules can be used to extend the functionality of CIDRAM, perform additional tasks, or process additional logic. Typically, they're used when it's necessary to block a request on a basis other than its originating IP address (and thus, when a CIDR signature won't suffice to block the request). Modules are written as PHP files, and thus, typically, module signatures are written as PHP code.
+모듈은 CIDRAM의 기능을 확장하거나, 추가 작업을 수행하거나 추가 논리를 처리하는 데 사용할 수 있습니다. 일반적으로, 모듈은 원래 IP 주소 이외의 이유로 요청을 차단해야 할 때 사용됩니다 (따라서 CIDR 서명으로 요청을 차단할 수 없을 때). 모듈은 PHP 파일로 작성되므로 일반적으로 모듈 서명은 PHP 코드로 작성됩니다.
 
-Some good examples of CIDRAM modules can be found here:
+CIDRAM 모듈의 좋은 예는 다음에서 찾을 수 있습니다.
 - https://github.com/CIDRAM/CIDRAM-Extras/tree/master/modules
 
-A template for writing new modules can be found here:
+새 모듈 작성을위한 템플릿은 다음에서 찾을 수 있습니다.
 - https://github.com/CIDRAM/CIDRAM-Extras/blob/master/modules/module_template.php
 
-Due to that modules are written as PHP files, if you're adequately familiar with the CIDRAM codebase, you can structure your modules however you want, and write your module signatures however you want (within reason of what is possible with PHP). However, for your own convenience, and for the sake of better mutual intelligibility between existing modules and your own, analysing the template linked above is recommended, in order to be able to use the structure and format that it provides.
+모듈은 PHP 파일로 작성되기 때문에, CIDRAM 코드베이스에 대해 잘 알고 있다면, 원하는대로 모듈과 모듈 서명을 구성 할 수 있습니다 (합리적인 한도 내에서). 그러나 기존 모듈과 자신의 편의를 위해 더 나은 상호 명료성을 위해 위에서 링크 된 템플릿을 분석하여 제공되는 구조와 형식을 사용할 수 있도록하는 것이 좋습니다.
 
-*Note: If you're not comfortable working with PHP code, writing your own modules is not recommended.*
+*노트 : PHP 코드 작업에 익숙하지 않은 경우 자신 만의 모듈을 작성하는 것은 좋지 않습니다.*
 
-Some functionality is provided by CIDRAM for modules to use, which should make it simpler and easier to write your own modules. Information about this functionality is described below.
+CIDRAM이 제공하는 일부 기능을 사용하면 모듈을 더 간단하고 쉽게 작성할 수 있습니다. 이 기능에 대한 정보는 아래에 설명되어 있습니다.
 
-#### 7.5 MODULE FUNCTIONALITY
+#### 7.5 모듈 기능
 
 ##### 7.5.0 "$Trigger"
 

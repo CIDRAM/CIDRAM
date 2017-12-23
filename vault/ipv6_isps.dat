@@ -929,8 +929,9 @@ recaptcha:
 # traffic from India, to list this section in their "ignore.dat" file as a means of minimising the potential impact of
 # false positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to
 # not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# Updated: 2017.10.17
+# Updated: 2017.12.23
 
+2400:ff00::/32 Deny Spam
 2401:4900:808::/45 Deny Spam
 2401:4900:810::/44 Deny Spam
 2401:4900:840::/44 Deny Spam
@@ -938,12 +939,15 @@ recaptcha:
 2401:4900:900::/40 Deny Spam
 2401:4900:a00::/39 Deny Spam
 2401:4900:c00::/40 Deny Spam
-2401:4900:d00::/41 Deny Spam
 2401:4900:1000::/41 Deny Spam
 2401:4900:1100::/41 Deny Spam
-2401:4900:1200::/41 Deny Spam
+2401:4900:1200::/40 Deny Spam
 2401:4900:1300::/41 Deny Spam
-2401:4900:1680::/41 Deny Spam
+2401:4900:1680::/42 Deny Spam
+2401:4900:16d0::/44 Deny Spam
+2401:4900:16e0::/44 Deny Spam
+2401:4900:1700::/42 Deny Spam
+2401:4900:1744::/46 Deny Spam
 2401:4900:1800::/39 Deny Spam
 2401:4900:1d00::/41 Deny Spam
 2401:4900:2000::/48 Deny Spam
@@ -958,7 +962,7 @@ recaptcha:
 2401:4900:2580::/41 Deny Spam
 2401:4900:2600::/39 Deny Spam
 2401:4900:2e80::/41 Deny Spam
-2401:4900:2f80::/41 Deny Spam
+2401:4900:2f00::/40 Deny Spam
 2404:a800::/32 Deny Spam
 2405:a700:14::/47 Deny Spam
 2407:7400::/48 Deny Spam
@@ -967,7 +971,9 @@ recaptcha:
 2600:140f:d::/48 Deny Spam
 2600:140f:e::/48 Deny Spam
 2600:140f:5000::/48 Deny Spam
+2600:140f:7000::/48 Deny Spam
 2600:140f:9000::/48 Deny Spam
+2600:140f:b000::/48 Deny Spam
 2600:1417:1e::/48 Deny Spam
 2600:1417:20::/48 Deny Spam
 2600:1417:2c::/48 Deny Spam
@@ -979,13 +985,6 @@ recaptcha:
 2600:1417:6e::/48 Deny Spam
 2600:1417:70::/48 Deny Spam
 2600:1417:78::/48 Deny Spam
-2a03:2880:d000::/48 Deny Spam
-2a03:2880:d002::/47 Deny Spam
-2a03:2880:d004::/47 Deny Spam
-2a03:2880:d007::/48 Deny Spam
-2a03:2887:ff00::/48 Deny Spam
-2a03:2887:ff02::/47 Deny Spam
-2a03:2887:ff04::/46 Deny Spam
 Tag: Bharti Airtel
 ---
 recaptcha:

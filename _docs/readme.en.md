@@ -463,6 +463,8 @@ To obtain a "site key" and a "secret key" (required for using reCAPTCHA), please
 "api"
 - Which API to use? V2 or Invisible?
 
+*Note for users in the European Union: When CIDRAM is configured to use cookies (e.g., when "lockuser" is true), a cookie warning is displayed prominently on the page as per the requirements of [EU cookie legislation](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). However, when using the invisible API, CIDRAM attempts to complete the reCAPTCHA for the user automatically, and when successful, this could result in the page being reloaded and a cookie being created without the user being given adequate time to actually see the cookie warning. If this poses a legal risk for you, it may be better to use the V2 API instead of the invisible API (the V2 API is not automated, and requires that the user completes the reCAPTCHA challenge themselves, thus providing an opportunity to see the cookie warning).*
+
 #### "template_data" (Category)
 Directives/Variables for templates and themes.
 
@@ -728,7 +730,7 @@ To use this closure in your module, remember firstly to inherit it from the pare
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### 7.5.2 "$CIDRAM['DNS-Reverse']"
 
 This can be used to fetch the hostname of an IP address. If you want to create a module to block hostnames, this closure could be useful.
 
@@ -892,4 +894,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 1 December 2017 (2017.12.01).
+Last Updated: 22 December 2017 (2017.12.22).

@@ -463,6 +463,8 @@ Para obter uma "site key" e uma "secret key" (necessário para usando reCAPTCHA)
 "api"
 - Qual API usar? V2 ou Invisible?
 
+*Nota para usuários na União Européia: Quando o CIDRAM está configurado para usar cookies (por exemplo, quando "lockuser" é true/verdadeiro), um aviso de cookie é exibido de forma proeminente na página de acordo com os requisitos da [legislação comunitária sobre cookies](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Mas, ao usar a API invisible, o CIDRAM tenta completar o reCAPTCHA para o usuário automaticamente, e quando bem-sucedido, isso pode resultar na recarga da página e criar um cookie sem que o usuário tenha dado tempo suficiente para realmente ver o aviso de cookie. Se isso representa um risco legal para você, talvez seja melhor usar a API V2 em vez da API invisible (a API V2 não é automatizada e exige que o usuário complete o desafio reCAPTCHA, proporcionando assim uma oportunidade para ver o aviso de cookie).*
+
 #### "template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
 
@@ -728,7 +730,7 @@ Para usar esse closure em seu módulo, lembre-se de herdá-lo do escopo pai:
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### 7.5.2 "$CIDRAM['DNS-Reverse']"
 
 Isso pode ser usado para buscar o nome do host de um endereço IP. Se você quiser criar um módulo para bloquear nomes de host, este closure pode ser útil.
 
@@ -892,4 +894,4 @@ Sim. Para fazer isso, você precisará criar um arquivo de módulo personalizado
 ---
 
 
-Última Atualização: 1 Dezembro 2017 (2017.12.01).
+Última Atualização: 22 Dezembro 2017 (2017.12.22).

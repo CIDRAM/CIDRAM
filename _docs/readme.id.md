@@ -463,6 +463,8 @@ Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCA
 "api"
 - API mana yang akan digunakan? V2 atau Invisible?
 
+*Catat untuk pengguna di Uni Eropa: Saat CIDRAM dikonfigurasi untuk menggunakan cookie (mis., ketika "lockuser" true/benar), peringatan cookie ditampilkan secara mencolok di halaman sesuai persyaratan [undang-undang cookie UE](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Namun, saat menggunakan API invisible, CIDRAM berupaya menyelesaikan reCAPTCHA untuk pengguna secara otomatis, dan bila berhasil, ini bisa mengakibatkan halaman menjadi reload dan cookie dibuat tanpa pengguna diberi waktu yang cukup untuk benar-benar melihat peringatan cookie. Jika ini menimbulkan risiko hukum bagi Anda, mungkin lebih baik menggunakan API V2 dan bukan API invisible (API V2 tidak otomatis, dan mengharuskan pengguna menyelesaikan tantangan reCAPTCHA sendiri, sehingga memberikan kesempatan untuk melihat peringatan cookie).*
+
 #### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
@@ -728,7 +730,7 @@ Untuk menggunakan closure ini di modul Anda, ingat dulu untuk mewarisi dari ling
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### 7.5.2 "$CIDRAM['DNS-Reverse']"
 
 Ini bisa digunakan untuk mengambil nama host dari alamat IP. Jika Anda ingin membuat modul untuk memblokir nama host, closure ini bisa bermanfaat.
 
@@ -892,4 +894,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 1 Desember 2017 (2017.12.01).
+Terakhir Diperbarui: 22 Desember 2017 (2017.12.22).

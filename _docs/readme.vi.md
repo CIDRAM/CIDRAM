@@ -463,6 +463,8 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 "api"
 - API nào để sử dụng? V2 hoặc Invisible?
 
+*Lưu ý đối với người dùng ở Liên minh châu Âu: Khi CIDRAM được định cấu hình để sử dụng cookie (v.d., khi "lockuser" là true/đúng), cảnh báo cookie được hiển thị trên trang theo quy định của [pháp luật về cookie của EU](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Tuy nhiên, khi sử dụng API invisible, CIDRAM cố gắng hoàn thành reCAPTCHA cho người dùng tự động, và khi thành công, điều này có thể dẫn đến việc trang được tải lại và một cookie được tạo ra mà không có người dùng được cho đủ thời gian để thực sự xem cảnh báo cookie. Nếu điều này đặt ra rủi ro pháp lý cho bạn, bạn nên sử dụng API V2 thay vì API invisible (API V2 không phải là tự động và yêu cầu người dùng tự hoàn thành reCAPTCHA, do đó cung cấp cơ hội để xem cảnh báo cookie).*
+
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
 
@@ -728,7 +730,7 @@ Thực tế của "$Condition" được đánh giá, và nếu true/đúng, đư
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### 7.5.2 "$CIDRAM['DNS-Reverse']"
 
 Điều này có thể được sử dụng để lấy tên máy chủ của một địa chỉ IP. Nếu bạn muốn tạo một mô-đun để chặn tên máy chủ, sự đóng này có thể hữu ích.
 
@@ -892,4 +894,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 1 Tháng Mười Hai 2017 (2017.12.01).
+Lần cuối cập nhật: 22 Tháng Mười Hai 2017 (2017.12.22).

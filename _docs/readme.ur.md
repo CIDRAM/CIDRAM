@@ -563,6 +563,8 @@
  <li>کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟</li>
 </ul></div>
 
+<div dir="rtl"><em>یورپی یونین کے صارفین کے لئے نوٹ: جب CIDRAM کوکیز کو استعمال کرنے کے لئے تشکیل دیا جاتا ہے (مثال کے طور پر، جب "lockuser" سچ/true ہے)، ایک کوکی انتباہ [یورپی یونین کوکی قانون سازی](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm) کے مطابق دکھایا جاتا ہے. تاہم، جب invisible API کا استعمال کرتے ہوئے، CIDRAM صارف کو خود کار طریقے سے رییکاپا کو مکمل کرنے کی کوشش کرتا ہے، اور جب کامیاب ہوجاتا ہے، تو اس کا نتیجہ دوبارہ لوڈ ہونے کی وجہ سے ہو سکتا ہے اور کسی کوکیز کی تخلیق کے بغیر صارف کو مناسب وقت کو کوکیز کو دیکھنے کے لئے کافی وقت نہیں دیا جاسکتا ہے. اگر یہ آپ کے لئے ایک قانونی خطرہ بنتا ہے تو، یہ ممکن ہے کہ invisible API کے بجائے V2 API استعمال کرنا بہتر ہو (V2 API خود کار طریقے سے نہیں ہے، اور صارف کو reCAPTCHA خود کو مکمل کرنے کی ضرورت ہے، اس طرح کوکی انتباہ کو دیکھنے کا موقع فراہم کرنا).</em><br /><br /></div>
+
 #### <div dir="rtl">"template_data" (قسم)<br /></div>
 <div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات / متغیر.<br /><br /></div>
 
@@ -798,53 +800,74 @@ Ignore سیکشن 1
 
 <div dir="rtl">کچھ فعالیتیں CIDRAM کی طرف سے فراہم کی جاتی ہیں جو اپنے ماڈیولز کو لکھنے کے لئے آسان اور آسان بنانا چاہئے. اس فعالیت کے بارے میں معلومات ذیل میں بیان کی گئی ہے.<br /><br /></div>
 
-#### 7.5 MODULE FUNCTIONALITY
+#### <div dir="rtl">٧.٥ ماڈیول فعالیت<br /><br /></div>
 
-##### 7.5.0 "$Trigger"
+##### ٧.٥.٠ "$Trigger"
 
-Module signatures are typically written with "$Trigger". In most cases, this closure will be more important than anything else for the purpose of writing modules.
+<div dir="rtl">ماڈیول دستخط عام طور پر "$Trigger" کے ساتھ لکھا جاتا ہے. زیادہ تر معاملات میں، یہ بندش ماڈیول لکھنے کے مقصد کیلئے کسی اور سے کہیں زیادہ اہم ہو گی.<br /><br /></div>
 
-"$Trigger" accepts 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optional), and "$DefineOptions" (optional).
+<div dir="rtl">"$Trigger" ٤ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
 
-The truthiness of "$Condition" is evaluated, and if true, the signature is "triggered". If false, the signature is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+- "$Condition"
+- "$ReasonShort"
+- "$ReasonLong" (اختیاری).
+- "$DefineOptions" (اختیاری).
 
-"$ReasonShort" is cited in the "Why Blocked" field when the signature is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+The truthiness of "$Condition" is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
 
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$ReasonShort" is cited in the "Why Blocked" field when the signature is triggered.
+
+<div dir="rtl">@TranslateMe@<br /><br /></div>
 "$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
 
-"$Trigger" returns true when the signature is "triggered", and false when it isn't.
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$Trigger" returns true when the signature is triggered, and false when it isn't.
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+<div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
+
 ```PHP
 $Trigger = $CIDRAM['Trigger'];
 ```
 
-##### 7.5.1 "$Bypass"
+##### ٧.٥.١ "$Bypass"
 
-Signature bypasses are typically written with "$Bypass".
+<div dir="rtl">دستخط بائی پاسز عام طور پر "$Bypass" کے ساتھ لکھے جاتے ہیں.<br /><br /></div>
 
-"$Bypass" accepts 3 parameters: "$Condition", "$ReasonShort", and "$DefineOptions" (optional).
+<div dir="rtl">"$Bypass" ٣ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
 
-The truthiness of "$Condition" is evaluated, and if true, the bypass is "triggered". If false, the bypass is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should *not* cause a request to be blocked.
+- "$Condition"
+- "$ReasonShort"
+- "$DefineOptions" (اختیاری).
 
-"$ReasonShort" is cited in the "Why Blocked" field when the bypass is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+The truthiness of "$Condition" is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$ReasonShort" is cited in the "Why Blocked" field when the bypass is triggered.
 
-"$Bypass" returns true when the bypass is "triggered", and false when it isn't.
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$Bypass" returns true when the bypass is triggered, and false when it isn't.
+
+<div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
+
 ```PHP
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### ٧.٥.٢ "$CIDRAM['DNS-Reverse']"
 
-This can be used to fetch the hostname of an IP address. If you want to create a module to block hostnames, this closure could be useful.
+<div dir="rtl">یہ ایک IP ایڈریس کے میزبان نام کو حاصل کرنے کے لئے استعمال کیا جا سکتا ہے. اگر آپ میزبانوں کو روکنے کے لئے ماڈیول بنانا چاہتے ہیں، تو یہ بندش مفید ثابت ہوسکتا ہے.<br /><br /></div>
 
-Example:
+<div dir="rtl">مثال:<br /><br /></div>
+
 ```PHP
 <?php
 /** Inherit trigger closure (see functions.php). */
@@ -861,25 +884,25 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 }
 ```
 
-#### 7.6 MODULE VARIABLES
+#### <div dir="rtl">٧.٦ ماڈیول متغیر<br /><br /></div>
 
-Modules execute within their own scope, and any variables defined by a module, won't be accessible to other modules, or to the parent script, unless they're stored in the "$CIDRAM" array (everything else is flushed after the module execution finishes).
+<div dir="rtl">ماڈیول ان کے اپنے گنجائش کے اندر عملدرآمد کرتے ہیں، اور کسی ماڈیول کی طرف سے وضاحت کردہ متغیرات، دوسرے ماڈیولز، یا پیراگراف اسکرپٹ تک نہیں پہنچ سکیں گے، جب تک کہ وہ "$CIDRAM" صف میں محفوظ نہ ہو جائیں (ماڈیول پھانسی ختم ہونے کے بعد سب کچھ صاف ہو گیا ہے).<br /><br /></div>
 
-Listed below are some common variables that might be useful for your module:
+<div dir="rtl">مندرجہ ذیل فہرست کچھ عام متغیر ہیں جو آپ کے ماڈیول کے لئے مفید ہوسکتے ہیں:<br /><br /></div>
 
-Variable | Description
+&nbsp; <div dir="rtl" style="display:inline;">تفصیل</div> | <div dir="rtl" style="display:inline;">متغیر</div>
 ----|----
-`$CIDRAM['BlockInfo']['DateTime']` | The current date and time.
-`$CIDRAM['BlockInfo']['IPAddr']` | IP address for the current request.
-`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM script version.
-`$CIDRAM['BlockInfo']['Query']` | The query for the current request.
-`$CIDRAM['BlockInfo']['Referrer']` | The referrer for the current request (if one exists).
-`$CIDRAM['BlockInfo']['UA']` | The user agent for the current request.
-`$CIDRAM['BlockInfo']['UALC']` | The user agent for the current request (lower-cased).
-`$CIDRAM['BlockInfo']['ReasonMessage']` | The message to be displayed to the user/client for the current request if they're blocked.
-`$CIDRAM['BlockInfo']['SignatureCount']` | The number of signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['Signatures']` | Reference information for any signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['WhyReason']` | Reference information for any signatures triggered for the current request.
+&nbsp; <div dir="rtl" style="display:inline;">موجودہ تاریخ اور وقت.</div> | `$CIDRAM['BlockInfo']['DateTime']`
+&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے IP ایڈریس.</div> | `$CIDRAM['BlockInfo']['IPAddr']`
+&nbsp; <div dir="rtl" style="display:inline;">CIDRAM سکرپٹ ورژن.</div> | `$CIDRAM['BlockInfo']['ScriptIdent']`
+&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے سوال.</div> | `$CIDRAM['BlockInfo']['Query']`
+&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے ریفرر (اگر ایک موجود ہے).</div> | `$CIDRAM['BlockInfo']['Referrer']`
+&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے صارف ایجنٹ (user agent).</div> | `$CIDRAM['BlockInfo']['UA']`
+&nbsp; <div dir="rtl" style="display:inline;">موجودہ درخواست کے لئے کم کیس میں صارف ایجنٹ (user agent).</div> | `$CIDRAM['BlockInfo']['UALC']`
+&nbsp; <div dir="rtl" style="display:inline;">جب صارف کو بلاک کردیا جاتا ہے تو صارف کو ظاہر کرنے کا پیغام.</div> | `$CIDRAM['BlockInfo']['ReasonMessage']`
+&nbsp; <div dir="rtl" style="display:inline;">دستخط کی تعداد موجودہ درخواست کے لئے شروع ہوگئی ہے.</div> | `$CIDRAM['BlockInfo']['SignatureCount']`
+&nbsp; <div dir="rtl" style="display:inline;">کسی بھی دستخط کے لئے حوالہ کی معلومات موجودہ درخواست کے لئے تیار ہوئی.</div> | `$CIDRAM['BlockInfo']['Signatures']`
+&nbsp; <div dir="rtl" style="display:inline;">کسی بھی دستخط کے لئے حوالہ کی معلومات موجودہ درخواست کے لئے تیار ہوئی.</div> | `$CIDRAM['BlockInfo']['WhyReason']`
 
 ---
 
@@ -1005,4 +1028,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 1 دسمبر 2017 (2017.12.01).</div>
+<div dir="rtl">آخری تازہ کاری: 22 دسمبر 2017 (2017.12.22).</div>

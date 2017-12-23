@@ -563,6 +563,8 @@
  <li>أي API لاستخدام؟ V2 أو Invisible؟</li>
 </ul></div>
 
+<div dir="rtl">ملاحظة للمستخدمين في الاتحاد الأوروبي: عند تهيئة CIDRAM لاستخدام ملفات تعريف الارتباط (على سبيل المثال، عندما يكون "lockuser" صحيحا/true)، يتم عرض تحذير ملف تعريف الارتباط بشكل بارز على الصفحة وفقا ل [تشريعات ملفات تعريف الارتباط في الاتحاد الأوروبي](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). ومع ذلك، عند استخدام invisible API، CIDRAM يحاول إكمال reCAPTCHA للمستخدم تلقائيا، وعندما ناجحة، وهذا يمكن أن يؤدي إلى إعادة تحميل الصفحة ويتم إنشاء ملف تعريف الارتباط دون إعطاء المستخدم الوقت الكافي ل في الواقع رؤية تحذير ملف تعريف الارتباط. إذا كان هذا يشكل خطرا قانونيا بالنسبة لك، قد يكون من الأفضل استخدام V2 API بدلا من invisible API (V2 API ليست الآلي، ويتطلب أن يكمل المستخدم التحدي reCAPTCHA أنفسهم، وبالتالي توفير فرصة لرؤية تحذير ملف تعريف الارتباط).<em></em><br /><br /></div>
+
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
 <div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
 
@@ -798,53 +800,74 @@ Ignore القسم ١
 
 <div dir="rtl">يتم توفير بعض الوظائف من قبل CIDRAM التي ينبغي أن تجعل من أبسط وأسهل لكتابة وحدات الخاصة بك. وترد أدناه معلومات عن هذه الوظيفة.<br /><br /></div>
 
-#### 7.5 MODULE FUNCTIONALITY
+#### <div dir="rtl">٧.٥ وحدة نمطية<br /><br /></div>
 
-##### 7.5.0 "$Trigger"
+##### ٧.٥.٠ "$Trigger"
 
-Module signatures are typically written with "$Trigger". In most cases, this closure will be more important than anything else for the purpose of writing modules.
+<div dir="rtl">وعادة ما تكتب تواقيع الوحدة مع "$Trigger". في معظم الحالات، هذا الإغلاق سيكون أكثر أهمية من أي شيء آخر لغرض كتابة وحدات.<br /><br /></div>
 
-"$Trigger" accepts 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optional), and "$DefineOptions" (optional).
+<div dir="rtl">"$Trigger" يقبل ٤ المعلمات:<br /><br /></div>
 
-The truthiness of "$Condition" is evaluated, and if true, the signature is "triggered". If false, the signature is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+- "$Condition"
+- "$ReasonShort"
+- "$ReasonLong" (اختياري).
+- "$DefineOptions" (اختياري).
 
-"$ReasonShort" is cited in the "Why Blocked" field when the signature is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+The truthiness of "$Condition" is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
 
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$ReasonShort" is cited in the "Why Blocked" field when the signature is triggered.
+
+<div dir="rtl">@TranslateMe@<br /><br /></div>
 "$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
 
-"$Trigger" returns true when the signature is "triggered", and false when it isn't.
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$Trigger" returns true when the signature is triggered, and false when it isn't.
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+<div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
+
 ```PHP
 $Trigger = $CIDRAM['Trigger'];
 ```
 
-##### 7.5.1 "$Bypass"
+##### ٧.٥.١ "$Bypass"
 
-Signature bypasses are typically written with "$Bypass".
+<div dir="rtl">وعادة ما تكتب التجاوزات التوقيع مع "$Bypass".<br /><br /></div>
 
-"$Bypass" accepts 3 parameters: "$Condition", "$ReasonShort", and "$DefineOptions" (optional).
+<div dir="rtl">"$Bypass" يقبل ٣ المعلمات:<br /><br /></div>
 
-The truthiness of "$Condition" is evaluated, and if true, the bypass is "triggered". If false, the bypass is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should *not* cause a request to be blocked.
+- "$Condition"
+- "$ReasonShort"
+- "$DefineOptions" (اختياري).
 
-"$ReasonShort" is cited in the "Why Blocked" field when the bypass is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+The truthiness of "$Condition" is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is "triggered".
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$ReasonShort" is cited in the "Why Blocked" field when the bypass is triggered.
 
-"$Bypass" returns true when the bypass is "triggered", and false when it isn't.
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+<div dir="rtl">@TranslateMe@<br /><br /></div>
+"$Bypass" returns true when the bypass is triggered, and false when it isn't.
+
+<div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
+
 ```PHP
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### ٧.٥.٢ "$CIDRAM['DNS-Reverse']"
 
-This can be used to fetch the hostname of an IP address. If you want to create a module to block hostnames, this closure could be useful.
+<div dir="rtl">يمكن استخدام هذا لجلب اسم المضيف لعنوان IP. إذا كنت ترغب في إنشاء وحدة لمنع أسماء المضيفين، قد يكون هذا الإغلاق مفيدا.<br /><br /></div>
 
-Example:
+<div dir="rtl">مثال:<br /><br /></div>
+
 ```PHP
 <?php
 /** Inherit trigger closure (see functions.php). */
@@ -861,25 +884,25 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 }
 ```
 
-#### 7.6 MODULE VARIABLES
+#### <div dir="rtl">٧.٦ وحدة المتغيرات<br /><br /></div>
 
-Modules execute within their own scope, and any variables defined by a module, won't be accessible to other modules, or to the parent script, unless they're stored in the "$CIDRAM" array (everything else is flushed after the module execution finishes).
+<div dir="rtl">الوحدات النمطية تنفذ ضمن نطاقها الخاص، وأي متغيرات محددة من قبل وحدة نمطية، لن تكون في متناول وحدات أخرى، أو إلى السيناريو الأصل، إلا إذا كانت مخزنة في "$CIDRAM" مجموعة (يتم مسح كل شيء آخر بعد انتهاء تنفيذ الوحدة).<br /><br /></div>
 
-Listed below are some common variables that might be useful for your module:
+<div dir="rtl">فيما يلي بعض المتغيرات الشائعة التي قد تكون مفيدة للوحدة النمطية الخاصة بك:<br /><br /></div>
 
-Variable | Description
+&nbsp; <div dir="rtl" style="display:inline;">وصف</div> | <div dir="rtl" style="display:inline;">متغير</div>
 ----|----
-`$CIDRAM['BlockInfo']['DateTime']` | The current date and time.
-`$CIDRAM['BlockInfo']['IPAddr']` | IP address for the current request.
-`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM script version.
-`$CIDRAM['BlockInfo']['Query']` | The query for the current request.
-`$CIDRAM['BlockInfo']['Referrer']` | The referrer for the current request (if one exists).
-`$CIDRAM['BlockInfo']['UA']` | The user agent for the current request.
-`$CIDRAM['BlockInfo']['UALC']` | The user agent for the current request (lower-cased).
-`$CIDRAM['BlockInfo']['ReasonMessage']` | The message to be displayed to the user/client for the current request if they're blocked.
-`$CIDRAM['BlockInfo']['SignatureCount']` | The number of signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['Signatures']` | Reference information for any signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['WhyReason']` | Reference information for any signatures triggered for the current request.
+&nbsp; <div dir="rtl" style="display:inline;">التاريخ والوقت الحاليان.</div> | `$CIDRAM['BlockInfo']['DateTime']`
+&nbsp; <div dir="rtl" style="display:inline;">عنوان IP للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['IPAddr']`
+&nbsp; <div dir="rtl" style="display:inline;">إصدار النص البرمجي CIDRAM.</div> | `$CIDRAM['BlockInfo']['ScriptIdent']`
+&nbsp; <div dir="rtl" style="display:inline;">الاستعلام عن الطلب الحالي.</div> | `$CIDRAM['BlockInfo']['Query']`
+&nbsp; <div dir="rtl" style="display:inline;">المحيل للطلب الحالي (إذا كان موجودا).</div> | `$CIDRAM['BlockInfo']['Referrer']`
+&nbsp; <div dir="rtl" style="display:inline;">وكيل المستخدم (user agent) للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['UA']`
+&nbsp; <div dir="rtl" style="display:inline;">وكيل المستخدم (user agent) للطلب الحالي (في حالة أقل).</div> | `$CIDRAM['BlockInfo']['UALC']`
+&nbsp; <div dir="rtl" style="display:inline;">الرسالة المراد عرضها للمستخدم عند حظرها.</div> | `$CIDRAM['BlockInfo']['ReasonMessage']`
+&nbsp; <div dir="rtl" style="display:inline;">عدد التوقيعات التي أدت إلى الطلب الحالي.</div> | `$CIDRAM['BlockInfo']['SignatureCount']`
+&nbsp; <div dir="rtl" style="display:inline;">المعلومات المرجعية عن أي توقيعات أثارت للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['Signatures']`
+&nbsp; <div dir="rtl" style="display:inline;">المعلومات المرجعية عن أي توقيعات أثارت للطلب الحالي.</div> | `$CIDRAM['BlockInfo']['WhyReason']`
 
 ---
 
@@ -1005,4 +1028,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 1 ديسمبر 2017 (2017.12.01).</div>
+<div dir="rtl">آخر تحديث: 22 ديسمبر 2017 (2017.12.22).</div>

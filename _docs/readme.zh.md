@@ -464,6 +464,8 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 “api”
 - 使用哪个API？V2或Invisible？
 
+*欧盟用户须知：​当CIDRAM被配置为使用cookie时（例如，当“lockuser”是true/真时），根据[欧盟的cookie法规](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)，cookie警告显示在页面上。​但是，当使用invisible API时，CIDRAM将自动为用户完成reCAPTCHA，并且当成功时，这可能导致页面被重新加载，并且创建cookie，而用户没有足够的时间来实际看到cookie警告。​如果这对您构成法律风险，那么最好使用V2 API而不使用invisible API（V2 API不是自动的，并且要求用户自己完成reCAPTCHA挑战，因此提供了一个机会来查看cookie警告）。*
+
 #### “template_data” （类别）
 指令和变量为模板和主题。
 
@@ -729,7 +731,7 @@ $Trigger = $CIDRAM['Trigger'];
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 “$CIDRAM['DNS-Reverse']”
+##### 7.5.2 “$CIDRAM['DNS-Reverse']”
 
 这可以用来获取IP地址的主机名。​如果您想创建一个模块来阻止主机名，这个闭包可能是有用的。
 
@@ -893,4 +895,4 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 ---
 
 
-最后更新：2017年12月1日。
+最后更新：2017年12月22日。

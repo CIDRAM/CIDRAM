@@ -463,6 +463,8 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 "api"
 - 어떤 API를 사용할 수 있습니까? V2 또는 Invisible?
 
+*유럽 연합 사용자를위한 참고 사항 : 쿠키를 사용하도록 CIDRAM을 구성한 경우 (예 : lockuser가 true 인 경우), 쿠키 경고가 [EU 쿠키 법안](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)의 요구 사항에 따라 페이지에 눈에 띄게 표시됩니다. 그러나, invisible API를 사용할 때 CIDRAM은 자동으로 사용자의 reCAPTCHA를 완료하려고 시도합니다. 성공하면 페이지가 다시로드되고 실제로 쿠키 경고를 볼 적절한 시간이 주어지지 않고 쿠키가 생성 될 수 있습니다. 이 문제로 인해 법적 위험이있는 경우, invisible API 대신 V2 API를 사용하는 것이 좋습니다 (V2 API는 자동화되어 있지 않으므로, 사용자가 reCAPTCHA 챌린지를 완료해야하므로 쿠키 경고를 볼 수 있습니다).*
+
 #### "template_data" (카테고리)
 템플릿과 테마 지시어와 변수.
 
@@ -690,49 +692,49 @@ CIDRAM이 제공하는 일부 기능을 사용하면 모듈을 더 간단하고 
 
 ##### 7.5.0 "$Trigger"
 
-Module signatures are typically written with "$Trigger". In most cases, this closure will be more important than anything else for the purpose of writing modules.
+모듈 서명은 일반적으로 "$Trigger"로 작성됩니다. 대부분의 경우, 모듈 작성을 목적으로이 closure 다른 어떤 것보다 중요합니다.
 
-"$Trigger" accepts 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optional), and "$DefineOptions" (optional).
+"$Trigger"는 4 개의 매개 변수를 허용합니다 : "$Condition", "$ReasonShort", "$ReasonLong" (선택 과목), 및 "$DefineOptions" (선택 과목).
 
-The truthiness of "$Condition" is evaluated, and if true, the signature is "triggered". If false, the signature is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+"$Condition"의 진실성이 평가됩니다. True의 경우, 서명은 트리거됩니다. False의 경우, 서명은 트리거되지 않습니다. "$Condition"에는 대개 요청을 차단해야하는 조건을 평가하는 PHP 코드가 들어 있습니다.
 
-"$ReasonShort" is cited in the "Why Blocked" field when the signature is "triggered".
+서명이 트리거되면, "$ReasonShort"가 "왜 차단이 되셨나요"필드에 표시됩니다.
 
-"$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
+"$ReasonLong"은 차단되었을 때 사용자/클라이언트에게 차단 된 이유를 설명하기 위해 표시되는 선택적 메시지입니다. 생략시 표준 "액세스 거부"메시지를 사용합니다.
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is "triggered".
+"$DefineOptions"는 키/값 쌍을 포함하는 선택적 배열입니다. 요청 인스턴스와 관련된 구성 옵션을 정의하는 데 사용됩니다. 구성 옵션은 서명이 트리거 될 때 적용됩니다.
 
-"$Trigger" returns true when the signature is "triggered", and false when it isn't.
+"$Trigger"는 서명이 트리거되면 true를 반환하고, 그렇지 않으면 false를 반환합니다.
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+이 closure를 모듈에서 사용하려면 먼저 부모 범위에서 상속 받는다는 것을 기억하십시오 :
 ```PHP
 $Trigger = $CIDRAM['Trigger'];
 ```
 
 ##### 7.5.1 "$Bypass"
 
-Signature bypasses are typically written with "$Bypass".
+서명 우회는 일반적으로 "$Bypass"로 작성됩니다.
 
-"$Bypass" accepts 3 parameters: "$Condition", "$ReasonShort", and "$DefineOptions" (optional).
+"$Bypass"는 3 개의 매개 변수를 허용합니다 : "$Condition", "$ReasonShort", 및 "$DefineOptions" (선택 과목).
 
-The truthiness of "$Condition" is evaluated, and if true, the bypass is "triggered". If false, the bypass is *not* "triggered". "$Condition" typically contains PHP code to evaluate a condition that should *not* cause a request to be blocked.
+"$Condition"의 진실성이 평가됩니다. True의 경우, 우회가은 트리거됩니다. False의 경우, 우회가은 트리거되지 않습니다. "$Condition"에는 일반적으로 요청을 차단해서는 안되는 조건을 평가하는 PHP 코드가 들어 있습니다.
 
-"$ReasonShort" is cited in the "Why Blocked" field when the bypass is "triggered".
+우회가이 트리거되면, "$ReasonShort"가 "왜 차단이 되셨나요"필드에 표시됩니다.
 
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is "triggered".
+"$DefineOptions"는 키/값 쌍을 포함하는 선택적 배열입니다. 요청 인스턴스와 관련된 구성 옵션을 정의하는 데 사용됩니다. 구성 옵션은 우회가이 트리거 될 때 적용됩니다.
 
-"$Bypass" returns true when the bypass is "triggered", and false when it isn't.
+"$Bypass"는 우회가 트리거되면 true를, 그렇지 않으면 false를 반환합니다.
 
-To use this closure in your module, remember firstly to inherit it from the parent scope:
+이 closure를 모듈에서 사용하려면 먼저 부모 범위에서 상속 받는다는 것을 기억하십시오 :
 ```PHP
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### 7.5.1 "$CIDRAM['DNS-Reverse']"
+##### 7.5.2 "$CIDRAM['DNS-Reverse']"
 
-This can be used to fetch the hostname of an IP address. If you want to create a module to block hostnames, this closure could be useful.
+IP 주소의 호스트 이름을 가져 오는 데 사용할 수 있습니다. 호스트 이름을 차단하는 모듈을 만들려면이, closure가 유용 할 수 있습니다.
 
-Example:
+예 :
 ```PHP
 <?php
 /** Inherit trigger closure (see functions.php). */
@@ -749,25 +751,25 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 }
 ```
 
-#### 7.6 MODULE VARIABLES
+#### 7.6 모듈 변수
 
-Modules execute within their own scope, and any variables defined by a module, won't be accessible to other modules, or to the parent script, unless they're stored in the "$CIDRAM" array (everything else is flushed after the module execution finishes).
+모듈은 자체 범위 내에서 실행되며 모듈에 정의 된 변수는 다른 모듈이나 상위 스크립트에 액세스 할 수 없습니다 ("$CIDRAM"배열에 저장되어 있지 않으면; 모듈 실행이 끝난 후에 다른 모든 것은 비워진다).
 
-Listed below are some common variables that might be useful for your module:
+다음은 모듈에 유용한 몇 가지 일반적인 변수입니다 :
 
-Variable | Description
+변수 | 설명
 ----|----
-`$CIDRAM['BlockInfo']['DateTime']` | The current date and time.
-`$CIDRAM['BlockInfo']['IPAddr']` | IP address for the current request.
-`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM script version.
-`$CIDRAM['BlockInfo']['Query']` | The query for the current request.
-`$CIDRAM['BlockInfo']['Referrer']` | The referrer for the current request (if one exists).
-`$CIDRAM['BlockInfo']['UA']` | The user agent for the current request.
-`$CIDRAM['BlockInfo']['UALC']` | The user agent for the current request (lower-cased).
-`$CIDRAM['BlockInfo']['ReasonMessage']` | The message to be displayed to the user/client for the current request if they're blocked.
-`$CIDRAM['BlockInfo']['SignatureCount']` | The number of signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['Signatures']` | Reference information for any signatures triggered for the current request.
-`$CIDRAM['BlockInfo']['WhyReason']` | Reference information for any signatures triggered for the current request.
+`$CIDRAM['BlockInfo']['DateTime']` | 현재 날짜와 시간.
+`$CIDRAM['BlockInfo']['IPAddr']` | 현재 요청의 IP 주소.
+`$CIDRAM['BlockInfo']['ScriptIdent']` | CIDRAM 스크립트 버전.
+`$CIDRAM['BlockInfo']['Query']` | 현재 요청에 대한 쿼리입니다.
+`$CIDRAM['BlockInfo']['Referrer']` | 현재 요청에 대한 리퍼러 (존재하는 경우).
+`$CIDRAM['BlockInfo']['UA']` | 현재 요청에 대한 사용자 에이전트입니다 (user agent).
+`$CIDRAM['BlockInfo']['UALC']` | 현재 요청에 대한 소문자의 사용자 에이전트입니다 (user agent).
+`$CIDRAM['BlockInfo']['ReasonMessage']` | 현재 요청이 차단 된 경우 사용자/클라이언트에게 표시 할 메시지입니다.
+`$CIDRAM['BlockInfo']['SignatureCount']` | 현재 요청에 대해 트리거 된 서명 수입니다.
+`$CIDRAM['BlockInfo']['Signatures']` | 현재 요청에 대해 트리거 된 모든 서명에 대한 참조 정보.
+`$CIDRAM['BlockInfo']['WhyReason']` | 현재 요청에 대해 트리거 된 모든 서명에 대한 참조 정보.
 
 ---
 
@@ -892,4 +894,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2017년 12월 1일.
+최종 업데이트 : 2017년 12월 22일.

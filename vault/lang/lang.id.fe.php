@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.12.12).
+ * This file: Indonesian language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'Pelacakan IP';
 $CIDRAM['lang']['link_logs'] = 'Log';
 $CIDRAM['lang']['link_statistics'] = 'Statistik';
-$CIDRAM['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse">Sederhana</a> – <a href="%1$strue">Terformat</a>';
+$CIDRAM['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse">Sederhana</a> – <a href="%1$strue">Terformat</a> – <a href="%1$stally">Penghitungannya</a>';
 $CIDRAM['lang']['link_updates'] = 'Pembaruan';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';

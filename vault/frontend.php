@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.12.12).
+ * This file: Front-end handler (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2516,13 +2516,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     /** Text mode switch link base. */
     $CIDRAM['FE']['TextModeSwitchLink'] = '';
 
+    /** Default field separator. */
+    $CIDRAM['FE']['FieldSeparator'] = ': ';
+
     /** Link to search for related blocks and search information readout. */
     $CIDRAM['FE']['SearchInfo'] = $CIDRAM['FE']['SearchQuery'] = $CIDRAM['FE']['BlockLink'] = '';
 
     /** How to display the log data? */
+    $CIDRAM['FE']['TextMode'] = false;
     if (empty($CIDRAM['QueryVars']['text-mode']) || $CIDRAM['QueryVars']['text-mode'] === 'false') {
         $CIDRAM['FE']['TextModeLinks'] = 'false';
-        $CIDRAM['FE']['TextMode'] = false;
+    } elseif ($CIDRAM['QueryVars']['text-mode'] === 'tally') {
+        $CIDRAM['FE']['TextModeLinks'] = 'tally';
     } else {
         $CIDRAM['FE']['TextModeLinks'] = 'true';
         $CIDRAM['FE']['TextMode'] = true;
@@ -2536,6 +2541,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     } else {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
         $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&logfile=' . $CIDRAM['QueryVars']['logfile'];
+        if (strpos($CIDRAM['FE']['logfileData'], '：') !== false) {
+            $CIDRAM['FE']['FieldSeparator'] = '：';
+        }
 
         /** Handle block filtering. */
         if (!empty($CIDRAM['FE']['logfileData']) && !empty($CIDRAM['QueryVars']['search'])) {
@@ -2549,7 +2557,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
             ) ? "\n\n" : "\n";
             while (($CIDRAM['FE']['Needle'] = strpos(
                 $CIDRAM['FE']['logfileData'],
-                ($CIDRAM['FE']['BlockSeparator'] === "\n\n" ? ': ' . $CIDRAM['FE']['SearchQuery'] . "\n" : $CIDRAM['FE']['SearchQuery']),
+                ($CIDRAM['FE']['BlockSeparator'] === "\n\n" ? $CIDRAM['FE']['FieldSeparator'] . $CIDRAM['FE']['SearchQuery'] . "\n" : $CIDRAM['FE']['SearchQuery']),
                 $CIDRAM['FE']['BlockEnd']
             )) !== false) {
                 $CIDRAM['FE']['BlockStart'] = strrpos(substr($CIDRAM['FE']['logfileData'], 0, $CIDRAM['FE']['Needle']), $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd']);
@@ -2611,7 +2619,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 
     /** Prepare log data formatting. */
     if ($CIDRAM['FE']['TextMode']) {
-        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery']);
+        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery'], $CIDRAM['FE']['FieldSeparator']);
+    } elseif ($CIDRAM['FE']['TextModeLinks'] === 'tally') {
+        $CIDRAM['FE']['logfileData'] = $CIDRAM['Tally']($CIDRAM['FE']['logfileData'], [$CIDRAM['lang']['field_id'], $CIDRAM['lang']['field_datetime']]);
     } else {
         $CIDRAM['FE']['logfileData'] = '<textarea readonly>' . $CIDRAM['FE']['logfileData'] . '</textarea>';
     }

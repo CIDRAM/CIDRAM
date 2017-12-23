@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.22).
+ * This file: Functions file (last modified: 2017.12.23).
  */
 
 /**
@@ -36,7 +36,7 @@ $CIDRAM['ReadFile'] = function ($File) {
      * decrease performance, whereas increasing this value will increase
      * performance but decrease stability.
      */
-    $Blocksize = 131072;
+    static $Blocksize = 131072;
     $Filesize = filesize($File);
     $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
     $Data = '';

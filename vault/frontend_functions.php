@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.12).
+ * This file: Front-end functions file (last modified: 2017.12.23).
  */
 
 /**
@@ -833,7 +833,7 @@ $CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
 };
 
 /** Attempt to perform some simple formatting for the log data. */
-$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '') {
+$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSeparator = ': ') {
     static $MaxBlockSize = 65536;
     if (strpos($In, "<br />\n") === false) {
         $In = '<div class="s" style="background-color:rgba(0,0,0,0.125);">' . $In . '</div>';
@@ -863,11 +863,15 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '') {
             $Section = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
         }
         if (strpos($Section, "<br />\n<br />\n") !== false) {
-            preg_match_all('~\n([^\n:]+): ((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+            preg_match_all('~\n((?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts);
             if (count($Parts[1])) {
                 $Parts[1] = array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace("\n" . $ThisPart . ': ', "\n<span class=\"textLabel\">" . $ThisPart . '</span>: ', $Section);
+                    $Section = str_replace(
+                        "\n" . $ThisPart . $FieldSeparator,
+                        "\n<span class=\"textLabel\">" . $ThisPart . '</span>' . $FieldSeparator,
+                        $Section
+                    );
                 }
             }
             if (count($Parts[2]) && $BlockSeparatorLen === 14) {
@@ -878,13 +882,13 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '') {
                     }
                     $Enc = str_replace('=', '_', base64_encode($ThisPart));
                     $Section = str_replace(
-                        ': ' . $ThisPart . "<br />\n",
-                        ': ' . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n",
+                        $FieldSeparator . $ThisPart . "<br />\n",
+                        $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n",
                         $Section
                     );
                 }
             }
-            preg_match_all('~\n([^\n:]+: (?:(?!<br />)[^\n])+)~i', $Section, $Parts);
+            preg_match_all('~\n((?:(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
@@ -905,6 +909,52 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '') {
         $BlockStart = $BlockEnd + $BlockSeparatorLen;
     }
     $In = str_replace("<br />\n</div>", "<br /></div>\n", $In);
+};
+
+/** Attempt to tally logfile data. */
+$CIDRAM['Tally'] = function ($In, $Exceptions = []) use (&$CIDRAM) {
+    if (empty($In)) {
+        return '';
+    }
+    $Data = [];
+    $PosA = $PosB = 0;
+    while (($PosB = strpos($In, "\n", $PosA)) !== false) {
+        $Line = substr($In, $PosA, $PosB - $PosA);
+        $PosA = $PosB + 1;
+        if (empty($Line)) {
+            continue;
+        }
+        foreach ($Exceptions as $Exception) {
+            $Len = strlen($Exception);
+            if (substr($Line, 0, $Len) === $Exception) {
+                continue 2;
+            }
+        }
+        $Separator = (strpos($Line, '：') !== false) ? '：' : ': ';
+        if (($SeparatorPos = strpos($Line, $Separator)) === false) {
+            continue;
+        }
+        $Field = trim(substr($Line, 0, $SeparatorPos));
+        $Entry = trim(substr($Line, $SeparatorPos + strlen($Separator)));
+        if (!isset($Data[$Field])) {
+            $Data[$Field] = [];
+        }
+        if (!isset($Data[$Field][$Entry])) {
+            $Data[$Field][$Entry] = 0;
+        }
+        $Data[$Field][$Entry]++;
+    }
+    $Out = '<table>';
+    foreach ($Data as $Field => $Entries) {
+        $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
+        arsort($Entries, SORT_NUMERIC);
+        foreach ($Entries as $Entry => $Count) {
+            $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
+            $Out .= '<tr><td class="h1">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['Number_L10N']($Count) . ' (' . $CIDRAM['Number_L10N']($Percent, 2) . "%)</div></td></tr>\n";
+        }
+    }
+    $Out .= '</table>';
+    return $Out;
 };
 
 /**

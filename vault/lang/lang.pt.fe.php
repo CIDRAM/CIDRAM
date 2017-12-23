@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.12.12).
+ * This file: Portuguese language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'Teste IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Monitoração IP';
 $CIDRAM['lang']['link_logs'] = 'Arquivos de Registro';
 $CIDRAM['lang']['link_statistics'] = 'Estatisticas';
-$CIDRAM['lang']['link_textmode'] = 'Formatação de texto: <a href="%1$sfalse">Simples</a> – <a href="%1$strue">Chique</a>';
+$CIDRAM['lang']['link_textmode'] = 'Formatação de texto: <a href="%1$sfalse">Simples</a> – <a href="%1$strue">Chique</a> – <a href="%1$stally">Contagem</a>';
 $CIDRAM['lang']['link_updates'] = 'Atualizações';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Arquivo de registro selecionado não existe!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Não quaisquer arquivos de registro disponíveis.';

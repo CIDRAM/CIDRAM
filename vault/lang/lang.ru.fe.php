@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.12.12).
+ * This file: Russian language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'Тест IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Отслеживания IP';
 $CIDRAM['lang']['link_logs'] = 'Лог-Файлы';
 $CIDRAM['lang']['link_statistics'] = 'Статистика';
-$CIDRAM['lang']['link_textmode'] = 'Форматирование текста: <a href="%1$sfalse">Просто</a> – <a href="%1$strue">Маскарадный</a>';
+$CIDRAM['lang']['link_textmode'] = 'Форматирование текста: <a href="%1$sfalse">Просто</a> – <a href="%1$strue">Маскарадный</a> – <a href="%1$stally">Подсчет</a>';
 $CIDRAM['lang']['link_updates'] = 'Обновления';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Выбранный лог-файл не существует!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Не лог-файлы доступны.';

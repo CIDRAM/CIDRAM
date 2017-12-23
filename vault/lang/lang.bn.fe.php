@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2017.12.12).
+ * This file: Bangla language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP টেস্ট';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP পর্যবেক্ষণ';
 $CIDRAM['lang']['link_logs'] = 'লগ ফাইল';
 $CIDRAM['lang']['link_statistics'] = 'পরিসংখ্যান';
-$CIDRAM['lang']['link_textmode'] = 'পাঠ্য বিন্যাস: <a href="%1$sfalse">সহজ</a> – <a href="%1$strue">অভিনব</a>';
+$CIDRAM['lang']['link_textmode'] = 'পাঠ্য বিন্যাস: <a href="%1$sfalse">সহজ</a> – <a href="%1$strue">অভিনব</a> – <a href="%1$stally">তালি</a>';
 $CIDRAM['lang']['link_updates'] = 'আপডেট';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'নির্বাচিত লগ ফাইল বিদ্যমান নেই!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'কোন লগ ফাইল উপলব্ধ।';

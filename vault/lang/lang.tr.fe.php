@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.12.12).
+ * This file: Turkish language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP Testi';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP İzleme';
 $CIDRAM['lang']['link_logs'] = 'Kayıtlar';
 $CIDRAM['lang']['link_statistics'] = 'İstatistik';
-$CIDRAM['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse">Basit</a> – <a href="%1$strue">Süslü</a>';
+$CIDRAM['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse">Basit</a> – <a href="%1$strue">Süslü</a> – <a href="%1$stally">Taksir</a>';
 $CIDRAM['lang']['link_updates'] = 'Güncellemeler';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Seçilen günlük dosyası yok!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';

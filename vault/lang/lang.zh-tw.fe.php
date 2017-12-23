@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.12).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP測試';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP跟踪';
 $CIDRAM['lang']['link_logs'] = '日誌';
 $CIDRAM['lang']['link_statistics'] = '統計';
-$CIDRAM['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">簡單</a> – <a href="%1$strue">漂亮</a>';
+$CIDRAM['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse">簡單</a> – <a href="%1$strue">漂亮</a> – <a href="%1$stally">理貨</a>';
 $CIDRAM['lang']['link_updates'] = '更新';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '沒有日誌可用。';

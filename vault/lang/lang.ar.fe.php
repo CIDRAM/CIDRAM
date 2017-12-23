@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.12.12).
+ * This file: Arabic language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'اختبار IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'التتبع IP';
 $CIDRAM['lang']['link_logs'] = 'سجلات';
 $CIDRAM['lang']['link_statistics'] = 'الإحصاء';
-$CIDRAM['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse">بسيط</a> – <a href="%1$strue">تهيئتها</a>';
+$CIDRAM['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse">بسيط</a> – <a href="%1$strue">تهيئتها</a> – <a href="%1$stally">عد</a>';
 $CIDRAM['lang']['link_updates'] = 'التحديثات';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'لا سجلات متاح.';

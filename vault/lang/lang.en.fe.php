@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.12.12).
+ * This file: English language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP Tracking';
 $CIDRAM['lang']['link_logs'] = 'Logs';
 $CIDRAM['lang']['link_statistics'] = 'Statistics';
-$CIDRAM['lang']['link_textmode'] = 'Text formatting: <a href="%1$sfalse">Simple</a> – <a href="%1$strue">Fancy</a>';
+$CIDRAM['lang']['link_textmode'] = 'Text formatting: <a href="%1$sfalse">Simple</a> – <a href="%1$strue">Fancy</a> – <a href="%1$stally">Tally</a>';
 $CIDRAM['lang']['link_updates'] = 'Updates';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Selected logfile doesn\'t exist!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'No logfiles available.';

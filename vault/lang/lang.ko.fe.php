@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.12.12).
+ * This file: Korean language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP 테스트';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP 추적';
 $CIDRAM['lang']['link_logs'] = '로고스';
 $CIDRAM['lang']['link_statistics'] = '통계';
-$CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a>';
+$CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse">단순한</a> – <a href="%1$strue">공상</a> – <a href="%1$stally">집계</a>';
 $CIDRAM['lang']['link_updates'] = '업데이트';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지 않습니다!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';

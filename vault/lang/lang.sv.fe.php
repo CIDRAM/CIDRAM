@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2017.12.12).
+ * This file: Swedish language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP-Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Spårning';
 $CIDRAM['lang']['link_logs'] = 'Loggfiler';
 $CIDRAM['lang']['link_statistics'] = 'Statistik';
-$CIDRAM['lang']['link_textmode'] = 'Textformatering: <a href="%1$sfalse">Enkel</a> – <a href="%1$strue">Fint</a>';
+$CIDRAM['lang']['link_textmode'] = 'Textformatering: <a href="%1$sfalse">Enkel</a> – <a href="%1$strue">Fint</a> – <a href="%1$stally">Tally</a>';
 $CIDRAM['lang']['link_updates'] = 'Uppdateringar';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Vald loggfil existerar inte!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Inga loggfiler finns tillgängliga.';

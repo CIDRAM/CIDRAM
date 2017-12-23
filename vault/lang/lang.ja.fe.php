@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.12.12).
+ * This file: Japanese language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
-$CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされた要求は空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）；​４０３ = 「403 Forbidden」で上書きする；​５０３ = 「503 Service unavailable」で上書きする。';
+$CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）；​４０３ = 「403 Forbidden」で上書きする；​５０３ = 「503 Service unavailable」で上書きする。';
 $CIDRAM['lang']['config_general_default_algo'] = '将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。';
 $CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $CIDRAM['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？​ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、​テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。​ＣＬＩモードを無効にする必要がなければ、​このデレクティブは無視してもらって結構です。​<code>false</code>（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）；​<code>true</code>（真） = ＣＬＩモードを無効にします。';
@@ -26,15 +26,15 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへ�
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $CIDRAM['lang']['config_general_emailaddr'] = 'ここにＥメールアドレスを入力して、​ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、​等）。​警告：​ここに入力された電子Ｅメールアドレスは、​おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、​すべて使い捨てにすることを強く推奨します（例えば、​プライマリ個人アドレスまたはビジネスアドレスを使用しない、​等）。';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？';
-$CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（要求をブロックしたとき）？';
-$CIDRAM['lang']['config_general_force_hostname_lookup'] = 'ホスト名検索を強制しますか？​True = はい；​False = いいえ（Default/デフォルルト）。 ホスト名検索は、通常、「必要に応じて」実行されますが、すべての要求に対して強制することができます。​これは、より詳細な情報をログファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。';
+$CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（リクエストをブロックしたとき）？';
+$CIDRAM['lang']['config_general_force_hostname_lookup'] = 'ホスト名検索を強制しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
-$CIDRAM['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
+$CIDRAM['lang']['config_general_ipaddr'] = '接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設定します。';
 $CIDRAM['lang']['config_general_logfile'] = 'アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
-$CIDRAM['lang']['config_general_log_banned_ips'] = '禁止されたＩＰからブロックされた要求をログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '禁止されたＩＰからブロックされたリクエストをログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
 $CIDRAM['lang']['config_general_maintenance_mode'] = 'メンテナンス・モードを有効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。';
 $CIDRAM['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
@@ -52,7 +52,7 @@ $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHAをＩＰにロックし�
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHAをユーザーにロックしますか？';
 $CIDRAM['lang']['config_recaptcha_logfile'] = 'reCAPTCHA試行の記録。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_recaptcha_secret'] = 'この値は、​あなたのreCAPTCHAのための「secret key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。';
-$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定の要求に対してこの数を超えると、reCAPTCHAインスタンスは提供されません。';
+$CIDRAM['lang']['config_recaptcha_signature_limit'] = 'reCAPTCHAインスタンスが提供されるときにトリガされることができるシグネチャの最大数。​Default/デフォルルト = １。​特定のリクエストに対してこの数を超えると、reCAPTCHAインスタンスは提供されません。';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'この値は、​あなたのreCAPTCHAのための「site key」に対応している必要があり；​これは、​reCAPTCHAのダッシュボードの中に見つけることができます。';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'reCAPTCHAをCIDRAMで使用する方法（ドキュメントを参照してください）。';
 $CIDRAM['lang']['config_signatures_block_bogons'] = '火星の\ぼごんからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。';
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'ＩＰテスト';
 $CIDRAM['lang']['link_ip_tracking'] = 'ＩＰトラッキング';
 $CIDRAM['lang']['link_logs'] = 'ロゴス';
 $CIDRAM['lang']['link_statistics'] = '統計';
-$CIDRAM['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse">シンプル</a> – <a href="%1$strue">ファンシー</a>';
+$CIDRAM['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse">シンプル</a> – <a href="%1$strue">ファンシー</a> – <a href="%1$stally">集計</a>';
 $CIDRAM['lang']['link_updates'] = 'アップデート';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';

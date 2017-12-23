@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.12.12).
+ * This file: French language data for the front-end (last modified: 2017.12.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'Surveillance IP';
 $CIDRAM['lang']['link_logs'] = 'Fichiers Journaux';
 $CIDRAM['lang']['link_statistics'] = 'Statistiques';
-$CIDRAM['lang']['link_textmode'] = 'Formatage du texte : <a href="%1$sfalse">Simple</a> – <a href="%1$strue">Formaté</a>';
+$CIDRAM['lang']['link_textmode'] = 'Formatage du texte : <a href="%1$sfalse">Simple</a> – <a href="%1$strue">Formaté</a> – <a href="%1$stally">Compte</a>';
 $CIDRAM['lang']['link_updates'] = 'Mises à Jour';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Le fichier journal sélectionné n\'existe pas !';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Aucun fichiers journaux disponibles.';

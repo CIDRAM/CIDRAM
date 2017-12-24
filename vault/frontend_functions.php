@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.24).
+ * This file: Front-end functions file (last modified: 2017.12.25).
  */
 
 /**
@@ -836,7 +836,7 @@ $CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
 $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSeparator = ': ') {
     static $MaxBlockSize = 65536;
     if (strpos($In, "<br />\n") === false) {
-        $In = '<div class="s" style="background-color:rgba(0,0,0,0.125);">' . $In . '</div>';
+        $In = '<div class="hB hFd s">' . $In . '</div>';
         return;
     }
     $Out = '';
@@ -886,20 +886,23 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
                         $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n",
                         $Section
                     );
-                    preg_match_all('~\("([^()"]+)", L~', $Section, $PartsInner);
-                    foreach ($PartsInner[1] as $ThisPartInner) {
-                        $Section = str_replace(
-                            '("' . $ThisPartInner . '", L',
-                            '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPartInner)) . '">' . $ThisPartInner . '</a>", L',
-                            $Section
-                        );
-                    }
                 }
             }
             preg_match_all('~\n((?:(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
+                }
+            }
+            preg_match_all('~\("([^()"]+)", L~', $Section, $Parts);
+            if (count($Parts[1])) {
+                $Parts[1] = array_unique($Parts[1]);
+                foreach ($Parts[1] as $ThisPart) {
+                    $Section = str_replace(
+                        '("' . $ThisPart . '", L',
+                        '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                        $Section
+                    );
                 }
             }
         }
@@ -911,7 +914,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
     $BlockEnd = 0;
     while ($BlockEnd !== false) {
         $Darken = empty($Darken);
-        $Style = $Darken ? '<div style="background-color:rgba(0,0,0,0.125);">' : '<div style="background-color:rgba(255,255,255,0.125);">';
+        $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd">';
         $BlockEnd = strpos($Out, $BlockSeparator, $BlockStart);
         $In .= $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
         $BlockStart = $BlockEnd + $BlockSeparatorLen;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.12.23).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'Kiểm Tra IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Giám sát IP';
 $CIDRAM['lang']['link_logs'] = 'Bản Ghi';
 $CIDRAM['lang']['link_statistics'] = 'Số liệu thống kê';
-$CIDRAM['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse">Đơn giản</a> – <a href="%1$strue">Đẹp</a> – <a href="%1$stally">Kiểm đếm</a>';
+$CIDRAM['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse%2$s">Đơn giản</a> – <a href="%1$strue%2$s">Đẹp</a> – <a href="%1$stally%2$s">Kiểm đếm</a>';
 $CIDRAM['lang']['link_updates'] = 'Cập Nhật';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';

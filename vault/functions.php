@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.23).
+ * This file: Functions file (last modified: 2017.12.24).
  */
 
 /**
@@ -373,12 +373,13 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 } else {
                     $Signature = substr($Signature, strpos($Signature, ' ') + 1);
                 }
+                $RunExitCode = 0;
                 if ($Category === 'Run' && !$CIDRAM['CIDRAM_sapi']) {
                     if (!isset($CIDRAM['RunParamResCache'])) {
                         $CIDRAM['RunParamResCache'] = [];
                     }
                     if (isset($CIDRAM['RunParamResCache'][$Signature]) && is_object($CIDRAM['RunParamResCache'][$Signature])) {
-                        $CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN);
+                        $RunExitCode = $CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN, $Tag);
                     } else {
                         if (file_exists($CIDRAM['Vault'] . $Signature)) {
                             require_once $CIDRAM['Vault'] . $Signature;
@@ -389,16 +390,19 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                             ));
                         }
                     }
-                } elseif ($Category === 'Whitelist') {
+                }
+                if ($Category === 'Whitelist' || $RunExitCode === 3) {
                     $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
                     $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                     $CIDRAM['Whitelisted'] = true;
                     break 3;
-                } elseif ($Category === 'Greylist') {
+                }
+                if ($Category === 'Greylist' || $RunExitCode === 2) {
                     $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
                     $CIDRAM['BlockInfo']['SignatureCount'] = 0;
                     break 2;
-                } elseif ($Category === 'Deny') {
+                }
+                if ($Category === 'Deny') {
                     if ($Signature === 'Bogon' && !$CIDRAM['CIDRAM_sapi']) {
                         if (!$CIDRAM['Config']['signatures']['block_bogons']) {
                             continue;

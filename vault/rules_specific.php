@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2017.11.15).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,7 +27,15 @@ if (!isset($CIDRAM['RunParamResCache'])) {
 }
 
 /** Define object for these rules for later recall. */
-$CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0) use (&$CIDRAM) {
+$CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
+
+    /** Bingbot bypasses. */
+    if (!$Tag || $Tag === 'Bingbot bypasses') {
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'bingbot') !== false) {
+            return 2;
+        }
+        return;
+    }
 
     /** Skip further processing if the "block_cloud" directive is false. */
     if (!$CIDRAM['Config']['signatures']['block_cloud']) {
@@ -35,7 +43,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
     }
 
     /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". **/
-    if ($Factors[31] === '162.13.83.46/32') {
+    if ($Tag === 'Rackspace Hosting' && $Factors[31] === '162.13.83.46/32') {
         return;
     }
 
@@ -55,4 +63,4 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
 };
 
 /** Execute object. */
-$CIDRAM['RunParamResCache']['rules_specific.php']($Factors, $FactorIndex, $LN);
+$RunExitCode = $CIDRAM['RunParamResCache']['rules_specific.php']($Factors, $FactorIndex, $LN, $Tag);

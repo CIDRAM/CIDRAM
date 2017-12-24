@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.12.23).
+ * This file: Japanese language data for the front-end (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'ＩＰテスト';
 $CIDRAM['lang']['link_ip_tracking'] = 'ＩＰトラッキング';
 $CIDRAM['lang']['link_logs'] = 'ロゴス';
 $CIDRAM['lang']['link_statistics'] = '統計';
-$CIDRAM['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse">シンプル</a> – <a href="%1$strue">ファンシー</a> – <a href="%1$stally">集計</a>';
+$CIDRAM['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse%2$s">シンプル</a> – <a href="%1$strue%2$s">ファンシー</a> – <a href="%1$stally%2$s">集計</a>';
 $CIDRAM['lang']['link_updates'] = 'アップデート';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';

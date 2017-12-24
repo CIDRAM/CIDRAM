@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.12.23).
+ * This file: German language data for the front-end (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP-Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Tracking';
 $CIDRAM['lang']['link_logs'] = 'Protokolldateien';
 $CIDRAM['lang']['link_statistics'] = 'Statistiken';
-$CIDRAM['lang']['link_textmode'] = 'Textformatierung: <a href="%1$sfalse">Einfach</a> – <a href="%1$strue">Schick</a> – <a href="%1$stally">Tally</a>';
+$CIDRAM['lang']['link_textmode'] = 'Textformatierung: <a href="%1$sfalse%2$s">Einfach</a> – <a href="%1$strue%2$s">Schick</a> – <a href="%1$stally%2$s">Tally</a>';
 $CIDRAM['lang']['link_updates'] = 'Aktualisierungen';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei existiert nicht!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';

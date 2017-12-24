@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.12.23).
+ * This file: Urdu language data for the front-end (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP ٹیسٹ';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP ٹریکنگ';
 $CIDRAM['lang']['link_logs'] = 'لاگز';
 $CIDRAM['lang']['link_statistics'] = 'اعداد و شمار';
-$CIDRAM['lang']['link_textmode'] = 'ٹیکسٹ فارمیٹنگ: <a href="%1$sfalse">سادہ</a> – <a href="%1$strue">خوبصورت</a> – <a href="%1$stally">ٹیلی</a>';
+$CIDRAM['lang']['link_textmode'] = 'ٹیکسٹ فارمیٹنگ: <a href="%1$sfalse%2$s">سادہ</a> – <a href="%1$strue%2$s">خوبصورت</a> – <a href="%1$stally%2$s">ٹیلی</a>';
 $CIDRAM['lang']['link_updates'] = 'تازہ ترین معلومات کے';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'منتخب شدہ لاگ فائل موجود نہیں ہے!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'کوئی لاگ مسلیں دستیاب.';

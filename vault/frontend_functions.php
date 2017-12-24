@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.23).
+ * This file: Front-end functions file (last modified: 2017.12.24).
  */
 
 /**
@@ -886,6 +886,14 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
                         $FieldSeparator . $ThisPart . ' <a href="' . $BlockLink . '&search=' . $Enc . '">»</a>' . "<br />\n",
                         $Section
                     );
+                    preg_match_all('~\("([^()"]+)", L~', $Section, $PartsInner);
+                    foreach ($PartsInner[1] as $ThisPartInner) {
+                        $Section = str_replace(
+                            '("' . $ThisPartInner . '", L',
+                            '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPartInner)) . '">' . $ThisPartInner . '</a>", L',
+                            $Section
+                        );
+                    }
                 }
             }
             preg_match_all('~\n((?:(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts);
@@ -912,7 +920,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
 };
 
 /** Attempt to tally logfile data. */
-$CIDRAM['Tally'] = function ($In, $Exceptions = []) use (&$CIDRAM) {
+$CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
     if (empty($In)) {
         return '';
     }
@@ -949,6 +957,15 @@ $CIDRAM['Tally'] = function ($In, $Exceptions = []) use (&$CIDRAM) {
         $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
         arsort($Entries, SORT_NUMERIC);
         foreach ($Entries as $Entry => $Count) {
+            $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+            preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
+            foreach ($Parts[1] as $ThisPart) {
+                $Entry = str_replace(
+                    '("' . $ThisPart . '", L',
+                    '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                    $Entry
+                );
+            }
             $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
             $Out .= '<tr><td class="h1">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['Number_L10N']($Count) . ' (' . $CIDRAM['Number_L10N']($Percent, 2) . "%)</div></td></tr>\n";
         }

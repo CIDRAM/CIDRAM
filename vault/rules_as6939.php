@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for AS6939 (last modified: 2017.11.15).
+ * This file: Custom rules file for AS6939 (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -27,7 +27,7 @@ if (!isset($CIDRAM['RunParamResCache'])) {
 }
 
 /** Define object for these rules for later recall. */
-$CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0) use (&$CIDRAM) {
+$CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
 
     /** Skip further processing if the "block_cloud" directive is false. */
     if (!$CIDRAM['Config']['signatures']['block_cloud']) {
@@ -64,4 +64,4 @@ $CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $Fact
 };
 
 /** Execute object. */
-$CIDRAM['RunParamResCache']['rules_as6939.php']($Factors, $FactorIndex, $LN);
+$RunExitCode = $CIDRAM['RunParamResCache']['rules_as6939.php']($Factors, $FactorIndex, $LN, $Tag);

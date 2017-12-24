@@ -7978,18 +7978,17 @@ Tag: XT GLOBAL
 
 
 # ASN 13739 ("Datacenter IP, LLC").
-# %Listed, Google Malware Dashboard: 1.12%.
+# %Listed, Google Malware Dashboard: 0.72%.
 # %Listed, CleanTalk.org: 38.31%.
-# Stop Forum Spam (SFS) listings: 1,933.
-# Updated: 2017.07.20
+# Stop Forum Spam (SFS) listings: 536.
+# Updated: 2017.12.24
 
 104.143.64.0/20 Deny Cloud
-104.254.202.0/23 Deny Cloud
+104.254.200.0/22 Deny Cloud
 162.219.40.0/22 Deny Cloud
 162.245.88.0/21 Deny Cloud
 162.252.180.0/22 Deny Cloud
-172.110.56.0/23 Deny Cloud
-172.110.59.0/24 Deny Cloud
+172.110.56.0/22 Deny Cloud
 192.74.128.0/21 Deny Cloud
 192.184.0.0/22 Deny Cloud
 198.60.200.0/21 Deny Cloud
@@ -8002,10 +8001,10 @@ Tag: Datacenter IP, LLC
 
 
 # ASN 43578 ("MBA DATACENTERS S.L").
-# %Listed, Google Malware Dashboard: 1.67%.
+# %Listed, Google Malware Dashboard: 0.42%.
 # %Listed, CleanTalk.org: 80.83%.
-# Stop Forum Spam (SFS) listings: 79.
-# Updated: 2017.07.20
+# Stop Forum Spam (SFS) listings: 41.
+# Updated: 2017.07.20 / Checked: 2017.12.24
 
 5.226.168.0/24 Deny Cloud
 5.226.172.0/24 Deny Cloud
@@ -12108,9 +12107,9 @@ Tag: UK-2 Limited
 
 
 # ASN 25525 ("Reasonnet IP Networks B.V").
-# %Listed, Google Malware Dashboard: 1.64%.
+# %Listed, Google Malware Dashboard: 0.80%.
 # %Listed, CleanTalk.org: 30.23%.
-# Updated: 2017.07.20
+# Updated: 2017.12.24
 
 62.84.244.0/22 Deny Cloud
 79.99.24.0/21 Deny Cloud
@@ -12124,7 +12123,6 @@ Tag: UK-2 Limited
 91.216.104.0/24 Deny Cloud
 93.175.176.0/20 Deny Cloud
 128.140.220.0/22 Deny Cloud
-173.239.62.0/23 Deny Cloud
 193.33.214.0/23 Deny Cloud
 193.84.176.0/24 Deny Cloud
 193.189.141.0/24 Deny Cloud
@@ -12200,12 +12198,15 @@ Tag: IT7 Networks Inc
 
 
 # ASN 27843 ("OPTICAL TECHNOLOGIES S.A.C").
-# %Listed, Google Malware Dashboard: 0.60%.
+# %Listed, Google Malware Dashboard: 0.14%.
 # %Listed, CleanTalk.org: 19.47%.
-# Stop Forum Spam (SFS) listings: 65.
-# Updated: 2017.07.20
+# Stop Forum Spam (SFS) listings: 66.
+# Updated: 2017.12.24
 
 45.5.68.0/22 Deny Cloud
+45.71.32.0/22 Deny Cloud
+45.224.144.0/22 Deny Cloud
+45.226.68.0/22 Deny Cloud
 143.0.248.0/22 Deny Cloud
 143.208.132.0/22 Deny Cloud
 161.132.96.0/19 Deny Cloud
@@ -12217,6 +12218,7 @@ Tag: IT7 Networks Inc
 168.121.236.0/22 Deny Cloud
 168.181.8.0/22 Deny Cloud
 168.205.132.0/22 Deny Cloud
+170.0.232.0/22 Deny Cloud
 170.231.80.0/22 Deny Cloud
 170.231.168.0/22 Deny Cloud
 170.233.144.0/22 Deny Cloud
@@ -12306,10 +12308,9 @@ Tag: Hosting Services Inc
 
 
 # ASN 34931 ("Awareness Software Limited").
-# %Listed, Google Malware Dashboard: 0.33%.
+# %Listed, Google Malware Dashboard: 0.26%.
 # %Listed, CleanTalk.org: 18.75%.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2017.01.25 / Checked: 2017.07.20
+# Updated: 2017.01.25 / Checked: 2017.12.24
 
 85.159.248.0/21 Deny Cloud
 89.28.168.0/21 Deny Cloud
@@ -17642,6 +17643,29 @@ Tag: AVAST Software
 216.119.128.0/20 Deny Cloud
 216.234.124.0/24 Deny Cloud
 Tag: A2 Hosting, Inc
+
+
+# ---
+# Bingbot sometimes routes through ranges blocked by this signature file. When possible, we'll greylist them, to avoid
+# potential false positives with Bingbot. Updated manually when we find new ranges to add or remove.
+# Updated: 2017.12.24
+
+13.64.0.0/11 Run rules_specific.php
+23.96.0.0/13 Run rules_specific.php
+40.64.0.0/13 Run rules_specific.php
+40.74.0.0/15 Run rules_specific.php
+40.76.0.0/14 Run rules_specific.php
+40.80.0.0/12 Run rules_specific.php
+40.112.0.0/13 Run rules_specific.php
+40.124.0.0/16 Run rules_specific.php
+40.126.0.0/18 Run rules_specific.php
+65.52.0.0/14 Run rules_specific.php
+70.37.0.0/17 Run rules_specific.php
+104.40.0.0/13 Run rules_specific.php
+104.208.0.0/13 Run rules_specific.php
+157.55.0.0/16 Run rules_specific.php
+157.56.0.0/14 Run rules_specific.php
+Tag: Bingbot bypasses
 
 
 # ---

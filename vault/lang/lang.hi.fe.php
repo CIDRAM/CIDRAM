@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.12.23).
+ * This file: Hindi language data for the front-end (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'IP परीक्षण';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP ट्रैकिंग';
 $CIDRAM['lang']['link_logs'] = 'लॉग फाइलें';
 $CIDRAM['lang']['link_statistics'] = 'सांख्यिकी';
-$CIDRAM['lang']['link_textmode'] = 'पाठ स्वरूपण: <a href="%1$sfalse">बुनियादी</a> – <a href="%1$strue">स्वरूपित</a> – <a href="%1$stally">मिलान</a>';
+$CIDRAM['lang']['link_textmode'] = 'पाठ स्वरूपण: <a href="%1$sfalse%2$s">बुनियादी</a> – <a href="%1$strue%2$s">स्वरूपित</a> – <a href="%1$stally%2$s">मिलान</a>';
 $CIDRAM['lang']['link_updates'] = 'अपडेट';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'चयनित लॉग फाइल मौजूद नहीं है!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'कोई लॉग फाइल उपलब्ध नहीं।';

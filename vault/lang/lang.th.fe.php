@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.12.23).
+ * This file: Thai language data for the front-end (last modified: 2017.12.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -169,7 +169,7 @@ $CIDRAM['lang']['link_ip_test'] = 'ทดสอบ IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'การติดตาม IP';
 $CIDRAM['lang']['link_logs'] = 'บันทึก';
 $CIDRAM['lang']['link_statistics'] = 'สถิติ';
-$CIDRAM['lang']['link_textmode'] = 'การจัดรูปแบบข้อความ: <a href="%1$sfalse">ง่าย</a> – <a href="%1$strue">แฟนซี</a> – <a href="%1$stally">นับ</a>';
+$CIDRAM['lang']['link_textmode'] = 'การจัดรูปแบบข้อความ: <a href="%1$sfalse%2$s">ง่าย</a> – <a href="%1$strue%2$s">แฟนซี</a> – <a href="%1$stally%2$s">นับ</a>';
 $CIDRAM['lang']['link_updates'] = 'อัปเดต';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'ไฟล์บันทึกเลือกไม่มีอยู่จริง!';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'ไม่มีไฟล์บันทึกใช้ได้.';

@@ -7,7 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2017.12.24; Sub-minor code change; Maikuolan]: Signature file extended run
+  rule closures can now return exit codes to trigger greylist or whitelist
+  mechanisms. Improved default signature bypasses so that CIDRAM can play more
+  nicely with Bingbot (occasional false positives with requests originating
+  from Azure ranges). Slightly improved logs filtering and search mechanism.
 
 === Version/Release 1.3.0 ===
 MINOR RELEASE.

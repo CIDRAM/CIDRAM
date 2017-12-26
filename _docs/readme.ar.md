@@ -39,13 +39,13 @@
 
 #### <div dir="rtl">٢.٠ تثبيت يدويا</div>
 
-<div dir="rtl">١. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل "/public_html/cidram/" أو ما شابه سيكون كاف.<br /><br /></div>
+<div dir="rtl">١. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل <code dir="ltr">"/public_html/cidram/"</code> أو ما شابه سيكون كاف.<br /><br /></div>
 
 <div dir="rtl">٢. إعادة تسمية "config.ini.RenameMe" إلى "config.ini" (تقع داخل "vault")، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
 
-<div dir="rtl">٣. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع "*.txt/*.md" لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
+<div dir="rtl">٣. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع <code dir="ltr">"*.txt/*.md"</code> لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
-<div dir="rtl">٤. غير التصريح لمجلد vault للتصريح "755" (إذا كان هناك مشاكل، يمكنك محاولة "777"، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون "755").<br /><br /></div>
+<div dir="rtl">٤. غير التصريح لمجلد vault للتصريح<code dir="ltr">"755"</code> (إذا كان هناك مشاكل، يمكنك محاولة<code dir="ltr">"777"</code>، ولكن هذه ليست آمنة). المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون<code dir="ltr">"755"</code>).<br /><br /></div>
 
 <div dir="rtl">٥. الآن أنت بحاجة لربط CIDRAM لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل "require" أو "include"، بالعادة سيتم التخزين في "/includes"، "/assets" أو "/functions"، وسيتم تسميته بالغالب مثل: "init.php"، "common_functions.php"، "functions.php" أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام "require" أو "include" قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار "loader.php" لديك.<br /><br /></div>
 
@@ -101,9 +101,9 @@
 
 #### <div dir="rtl">٤.١ كيفية تمكين FRONT-END.<br /><br /></div>
 
-<div dir="rtl">١. العثور "disable_frontend" من في "config.ini"، وتعيينها إلى false (القيمة القياسية هي true).<br /><br /></div>
+<div dir="rtl">١. العثور <code dir="ltr">"disable_frontend"</code> من في <code dir="ltr">"config.ini"</code>، وتعيينها إلى false (القيمة القياسية هي true).<br /><br /></div>
 
-<div dir="rtl">٢. الوصول إلى "loader.php" من المتصفح (مثلا، "http://localhost/cidram/loader.php").<br /><br /></div>
+<div dir="rtl">٢. الوصول إلى <code dir="ltr">"loader.php"</code> من المتصفح (مثلا، <code dir="ltr">"http://localhost/cidram/loader.php"</code>).<br /><br /></div>
 
 <div dir="rtl">٣. تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور الافتراضية (admin/password).<br /><br /></div>
 
@@ -563,7 +563,7 @@
  <li>أي API لاستخدام؟ V2 أو Invisible؟</li>
 </ul></div>
 
-<div dir="rtl">ملاحظة للمستخدمين في الاتحاد الأوروبي: عند تهيئة CIDRAM لاستخدام ملفات تعريف الارتباط (على سبيل المثال، عندما يكون "lockuser" صحيحا/true)، يتم عرض تحذير ملف تعريف الارتباط بشكل بارز على الصفحة وفقا ل [تشريعات ملفات تعريف الارتباط في الاتحاد الأوروبي](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). ومع ذلك، عند استخدام invisible API، CIDRAM يحاول إكمال reCAPTCHA للمستخدم تلقائيا، وعندما ناجحة، وهذا يمكن أن يؤدي إلى إعادة تحميل الصفحة ويتم إنشاء ملف تعريف الارتباط دون إعطاء المستخدم الوقت الكافي ل في الواقع رؤية تحذير ملف تعريف الارتباط. إذا كان هذا يشكل خطرا قانونيا بالنسبة لك، قد يكون من الأفضل استخدام V2 API بدلا من invisible API (V2 API ليست الآلي، ويتطلب أن يكمل المستخدم التحدي reCAPTCHA أنفسهم، وبالتالي توفير فرصة لرؤية تحذير ملف تعريف الارتباط).<em></em><br /><br /></div>
+<div dir="rtl">ملاحظة للمستخدمين في الاتحاد الأوروبي: عند تهيئة CIDRAM لاستخدام ملفات تعريف الارتباط (على سبيل المثال، عندما يكون "lockuser" صحيحا/true)، يتم عرض تحذير ملف تعريف الارتباط بشكل بارز على الصفحة وفقا ل <a href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">تشريعات ملفات تعريف الارتباط في الاتحاد الأوروبي</a>. ومع ذلك، عند استخدام invisible API، CIDRAM يحاول إكمال reCAPTCHA للمستخدم تلقائيا، وعندما ناجحة، وهذا يمكن أن يؤدي إلى إعادة تحميل الصفحة ويتم إنشاء ملف تعريف الارتباط دون إعطاء المستخدم الوقت الكافي ل في الواقع رؤية تحذير ملف تعريف الارتباط. إذا كان هذا يشكل خطرا قانونيا بالنسبة لك، قد يكون من الأفضل استخدام V2 API بدلا من invisible API (V2 API ليست الآلي، ويتطلب أن يكمل المستخدم التحدي reCAPTCHA أنفسهم، وبالتالي توفير فرصة لرؤية تحذير ملف تعريف الارتباط).<em></em><br /><br /></div>
 
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
 <div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
@@ -607,17 +607,17 @@
  <li>"[معامل]" تمثل أي معلومات إضافية قد تكون مطلوبة من قبل "[وظيفة]".</li>
 </ul></div>
 
-<div dir="rtl">جميع التوقيعات من IPv6 تتبع هذا الشكل: "xxxx:xxxx:xxxx:xxxx::xxxx/yy [وظيفة] [معامل]".<br /></div>
+<div dir="rtl">جميع التوقيعات من IPv6 تتبع هذا الشكل: <code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx/yy</code> [وظيفة] [معامل]".<br /></div>
 <div dir="rtl"><ul>
- <li>"xxxx:xxxx:xxxx:xxxx::xxxx" يمثل بداية كتلة CIDR (المجموعة ثمانية من عنوان IP الأول). تدوين كامل وتدوين يختصر على حد سواء مقبول (كل يجب أن تلتزم المعايير تدوين الإصدار IPv6، ولكن مع استثناء واحد: عنوان IPv6 لا يمكن أبدا أن تبدأ مع اختصار عند استخدامها في التوقيع لهذا النصي، بسبب الطريقة التي يتم بناؤها CIDRs؛ فمثلا، "::1/128" ينبغي التعبير، عند استخدامها في توقيع، كما "0::1/128"، و"::0/128" التعبير بأنه "0::/128").</li>
+ <li><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx"</code> يمثل بداية كتلة CIDR (المجموعة ثمانية من عنوان IP الأول). تدوين كامل وتدوين يختصر على حد سواء مقبول (كل يجب أن تلتزم المعايير تدوين الإصدار IPv6، ولكن مع استثناء واحد: عنوان IPv6 لا يمكن أبدا أن تبدأ مع اختصار عند استخدامها في التوقيع لهذا النصي، بسبب الطريقة التي يتم بناؤها CIDRs؛ فمثلا،<code dir="ltr">"::1/128"</code> ينبغي التعبير، عند استخدامها في توقيع، كما<code dir="ltr">"0::1/128"</code>، و"::0/128" التعبير بأنه<code dir="ltr">"0::/128"</code>).</li>
  <li>"yy" تمثل حجم الكتلة [١-١٢٨].</li>
  <li>"[وظيفة]" يرشد النصي ما يجب القيام به مع التوقيع.</li>
  <li>"[معامل]" تمثل أي معلومات إضافية قد تكون مطلوبة من قبل "[وظيفة]".</li>
 </ul></div>
 
-<div dir="rtl">أسطر جديدة يونكس الموصى بها ("%0A"، أو "\n")! أسطر جديدة أخرى (على سبيل المثال، Windows "%0D%0A" أو أسطر جديدة "\r\n"، Mac "%0D" أو أسطر جديدة "\r"، إلخ) يمكن استخدامها، ولكن لا يفضل. أسطر جديدة تطبيع من قبل البرنامج النصي.<br /><br /></div>
+<div dir="rtl">أسطر جديدة يونكس الموصى بها (<code dir="ltr">"%0A"</code>، أو "\n")! أسطر جديدة أخرى (على سبيل المثال، Windows <code dir="ltr">"%0D%0A"</code> أو أسطر جديدة <code dir="ltr">"\r\n"</code>، Mac <code dir="ltr">"%0D"</code> أو أسطر جديدة <code dir="ltr">"\r"</code>، إلخ) يمكن استخدامها، ولكن لا يفضل. أسطر جديدة تطبيع من قبل البرنامج النصي.<br /><br /></div>
 
-<div dir="rtl">يجب أن يكون تدوين CIDR دقيق. يجب أن أعداد تقسم بالتساوي (على سبيل المثال، من أجل الحيلولة دون "10.128.0.0"-"11.127.255.255"، "10.128.0.0/8" لن تكون صالحة، لكن "10.128.0.0/9" و "11.0.0.0/9" على ما يرام).<br /><br /></div>
+<div dir="rtl">يجب أن يكون تدوين CIDR دقيق. يجب أن أعداد تقسم بالتساوي (على سبيل المثال، من أجل الحيلولة دون<code dir="ltr">"10.128.0.0"</code>-"11.127.255.255"،<code dir="ltr">"10.128.0.0/8"</code> لن تكون صالحة، لكن<code dir="ltr">"10.128.0.0/9"</code> و<code dir="ltr">"11.0.0.0/9"</code> على ما يرام).<br /><br /></div>
 
 <div dir="rtl">أي شيء لذا أوقع الذي يعني أنك يمكن أن تريد بأمان في ملفات توقيعك دون انقطاع دون اقتحام والكتابات التي وضعت البيانات في أي غير الموقعة، و سيتم تجاهل رأي ولا كدليل على الاعتراف بأنه بناء الجملة من توقيع الملفات النصي. التعليقات هي ملفات التوقيع مقبولة، وأي تنسيق خاص اللازمة لها. على غرار قذيفة المفضل التجزئة للحصول على تعليق، ولكن لا تفرض أي، يستحق ذلك تماما، فإنه لا يحدث أي فارق أو لم النصي اختيار استخدام التجزئة على غرار قذيفة على تعليقاتكم، ولكن التجزئة على غرار قذيفة استخدام برامج تحرير النصوص واضحة وبيئات التطوير يساعد على تسليط الضوء وقعت أجزاء من الملفات بشكل صحيح (وبالتالي، يمكن أن تساعد باعتبارها المساعدات البصرية في حالة وضع تحرير التجزئة).<br /><br /></div>
 
@@ -681,7 +681,7 @@ Tag: القسم 1
 Tag: القسم ١
 ```
 
-<div dir="rtl">في المثال أعلاه "1.2.3.4/32" و "2.3.4.5/32" وصفت بأنها "IPv4"، بينما "4.5.6.7/32" و "5.6.7.8/32" وصفت بأنها "القسم 1".<br /><br /></div>
+<div dir="rtl">في المثال أعلاه<code dir="ltr">"1.2.3.4/32"</code> و<code dir="ltr">"2.3.4.5/32"</code> وصفت بأنها "IPv4"، بينما<code dir="ltr">"4.5.6.7/32"</code> و<code dir="ltr">"5.6.7.8/32"</code> وصفت بأنها "القسم 1".<br /><br /></div>
 
 <div dir="rtl">في المثال التالي، سوف التوقيعات تنتهي بعد مرور بعض الوقت:<br /><br /></div>
 
@@ -802,31 +802,29 @@ Ignore القسم ١
 
 #### <div dir="rtl">٧.٥ وحدة نمطية<br /><br /></div>
 
-##### ٧.٥.٠ "$Trigger"
+##### <div dir="rtl">٧.٥.٠ <code dir="ltr">"$Trigger"</code></div>
 
-<div dir="rtl">وعادة ما تكتب تواقيع الوحدة مع "$Trigger". في معظم الحالات، هذا الإغلاق سيكون أكثر أهمية من أي شيء آخر لغرض كتابة وحدات.<br /><br /></div>
+<div dir="rtl">وعادة ما تكتب تواقيع الوحدة مع <code dir="ltr">"$Trigger"</code>. في معظم الحالات، هذا الإغلاق سيكون أكثر أهمية من أي شيء آخر لغرض كتابة وحدات.<br /><br /></div>
 
-<div dir="rtl">"$Trigger" يقبل ٤ المعلمات:<br /><br /></div>
+<div dir="rtl"><code dir="ltr">"$Trigger"</code> يقبل ٤ المعلمات:<br /><br /></div>
 
 - "$Condition"
 - "$ReasonShort"
-- "$ReasonLong" (اختياري).
-- "$DefineOptions" (اختياري).
+- "$ReasonLong" (اختياري)
+- "$DefineOptions" (اختياري)
+
+<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، التوقيع نشط. إذا كان "خطأ" (<code dir="ltr">false</code>)، التوقيع غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على التعليمات البرمجية PHP التي يجب منع الطلبات.<br /><br /></div>
+
+<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> في حقل "سبب الحظر" عندما يكون التوقيع نشطا.<br /><br /></div>
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-The truthiness of "$Condition" is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+<code dir="ltr">"$ReasonLong"</code> is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$ReasonShort" is cited in the "Why Blocked" field when the signature is triggered.
+<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is active.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
-
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
-
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-"$Trigger" returns true when the signature is triggered, and false when it isn't.
+<code dir="ltr">"$Trigger"</code> returns true when the signature is triggered, and false when it isn't.
 
 <div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
 
@@ -834,27 +832,25 @@ The truthiness of "$Condition" is evaluated, and if true, the signature is trigg
 $Trigger = $CIDRAM['Trigger'];
 ```
 
-##### ٧.٥.١ "$Bypass"
+##### <div dir="rtl">٧.٥.١ <code dir="ltr">"$Bypass"</code></div>
 
-<div dir="rtl">وعادة ما تكتب التجاوزات التوقيع مع "$Bypass".<br /><br /></div>
+<div dir="rtl">وعادة ما تكتب التجاوزات التوقيع مع <code dir="ltr">"$Bypass"</code>.<br /><br /></div>
 
-<div dir="rtl">"$Bypass" يقبل ٣ المعلمات:<br /><br /></div>
+<div dir="rtl"><code dir="ltr">"$Bypass"</code> يقبل ٣ المعلمات:<br /><br /></div>
 
 - "$Condition"
 - "$ReasonShort"
-- "$DefineOptions" (اختياري).
+- "$DefineOptions" (اختياري)
+
+<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، الالتفافية نشط. إذا كان "خطأ" (<code dir="ltr">false</code>)، الالتفافية غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على رمز PHP التي يجب عدم منع الطلبات.<br /><br /></div>
+
+<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> في حقل "سبب الحظر" عندما يكون الالتفافية نشطا.<br /><br /></div>
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-The truthiness of "$Condition" is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
+<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$ReasonShort" is cited in the "Why Blocked" field when the bypass is triggered.
-
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
-
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-"$Bypass" returns true when the bypass is triggered, and false when it isn't.
+<code dir="ltr">"$Bypass"</code> returns true when the bypass is triggered, and false when it isn't.
 
 <div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
 
@@ -862,7 +858,7 @@ The truthiness of "$Condition" is evaluated, and if true, the bypass is triggere
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### ٧.٥.٢ "$CIDRAM['DNS-Reverse']"
+##### <div dir="rtl">٧.٥.٢ <code dir="ltr">"$CIDRAM['DNS-Reverse']"</code></div>
 
 <div dir="rtl">يمكن استخدام هذا لجلب اسم المضيف لعنوان IP. إذا كنت ترغب في إنشاء وحدة لمنع أسماء المضيفين، قد يكون هذا الإغلاق مفيدا.<br /><br /></div>
 
@@ -886,7 +882,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### <div dir="rtl">٧.٦ وحدة المتغيرات<br /><br /></div>
 
-<div dir="rtl">الوحدات النمطية تنفذ ضمن نطاقها الخاص، وأي متغيرات محددة من قبل وحدة نمطية، لن تكون في متناول وحدات أخرى، أو إلى السيناريو الأصل، إلا إذا كانت مخزنة في "$CIDRAM" مجموعة (يتم مسح كل شيء آخر بعد انتهاء تنفيذ الوحدة).<br /><br /></div>
+<div dir="rtl">الوحدات النمطية تنفذ ضمن نطاقها الخاص، وأي متغيرات محددة من قبل وحدة نمطية، لن تكون في متناول وحدات أخرى، أو إلى السيناريو الأصل، إلا إذا كانت مخزنة في <code dir="ltr">"$CIDRAM"</code> مجموعة (يتم مسح كل شيء آخر بعد انتهاء تنفيذ الوحدة).<br /><br /></div>
 
 <div dir="rtl">فيما يلي بعض المتغيرات الشائعة التي قد تكون مفيدة للوحدة النمطية الخاصة بك:<br /><br /></div>
 
@@ -979,7 +975,7 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 <div dir="rtl">هل يمكنني استخدام تثبيت CIDRAM واحد لحماية نطاقات متعددة؟<br /><br /></div>
 
-<div dir="rtl">نعم. يمكن استخدام CIDRAM لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل "http://www.some-domain.tld/"، أطلق عليه اسما "some-domain.tld.config.ini". اسم النطاق يأتي من "HTTP_HOST". يتم تجاهل "www".<br /><br /></div>
+<div dir="rtl">نعم. يمكن استخدام CIDRAM لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل <code dir="ltr">"http://www.some-domain.tld/"</code>، أطلق عليه اسما <code dir="ltr">"some-domain.tld.config.ini"</code>. اسم النطاق يأتي من <code dir="ltr">"HTTP_HOST"</code>. يتم تجاهل <code dir="ltr">"www"</code>.<br /><br /></div>
 
 <div dir="rtl">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
 

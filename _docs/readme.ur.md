@@ -39,13 +39,13 @@
 
 #### <div dir="rtl">٢.٠ دستی طور پر نصب</div>
 
-<div dir="rtl">١. آپ کے پڑھنے کی طرف سے اس، مجھے سنبھالنے رہا ہوں آپ کے پاس پہلے، اسکرپٹ کا ایک آرکائیو کاپی کو ڈاؤن لوڈ کیا اس کے مشمولات کو پھیلا اور اس کو اپنے مقامی مشین پر کہیں بیٹھے ہیں کیا ہے. یہاں سے، آپ جہاں آپ کا میزبان یا CMS پر آپ ان کے مندرجات رکھنے کے لئے چاہتے ہیں باہر کام کرنے چاہیں گے. جیسے "/public_html/cidram/" یا اسی طرح کی (اگرچہ، یہ جو آپ کو اسے محفوظ ہے کچھ اور کچھ اور آپ کے ساتھ خوش ہیں ہے اتنی دیر کے طور پر انتخاب کرتے ہیں، کوئی فرق نہیں پڑتا) ایک ڈائریکٹری کافی ہوگا. <em>آپ کو اپ لوڈ کرنے شروع کرنے سے پہلے، پر پڑھیں ..</em><br /><br /></div>
+<div dir="rtl">١. آپ کے پڑھنے کی طرف سے اس، مجھے سنبھالنے رہا ہوں آپ کے پاس پہلے، اسکرپٹ کا ایک آرکائیو کاپی کو ڈاؤن لوڈ کیا اس کے مشمولات کو پھیلا اور اس کو اپنے مقامی مشین پر کہیں بیٹھے ہیں کیا ہے. یہاں سے، آپ جہاں آپ کا میزبان یا CMS پر آپ ان کے مندرجات رکھنے کے لئے چاہتے ہیں باہر کام کرنے چاہیں گے. جیسے <code dir="ltr">"/public_html/cidram/"</code> یا اسی طرح کی (اگرچہ، یہ جو آپ کو اسے محفوظ ہے کچھ اور کچھ اور آپ کے ساتھ خوش ہیں ہے اتنی دیر کے طور پر انتخاب کرتے ہیں، کوئی فرق نہیں پڑتا) ایک ڈائریکٹری کافی ہوگا. <em>آپ کو اپ لوڈ کرنے شروع کرنے سے پہلے، پر پڑھیں ..</em><br /><br /></div>
 
 <div dir="rtl">٢. config.ini" (اندر "vault" واقع کرنے "config.ini.RenameMe" نام تبدیل)، اور اختیاری پختہ اعلی درجے کی صارفین کے لئے سفارش کی جاتی ہے، لیکن (اس فائل پر مشتمل ابتدائی کے لئے یا ناتجربہ کار)، اسے کھولنے کے لئے سفارش کی نہیں CIDRAM لئے دستیاب تمام ہدایات؛ ہر آپشن کے اوپر ایک مختصر تبصرہ یہ کیا کرتا بیان اور کیا اس کے لئے ہے) ہونا چاہئے. آپ کو فٹ دیکھ کے طور جو بھی اپنے مخصوص سیٹ اپ کے لئے مناسب ہے کے مطابق ان ہدایات کو ایڈجسٹ کریں. فائل محفوظ کریں، قریب ہے.<br /><br /></div>
 
-<div dir="rtl">٣. (اگر آپ پہلے پر فیصلہ کیا تھا ڈائریکٹری میں مندرجات (CIDRAM اور اس کی فائلوں) کو اپ لوڈ کریں آپ "*.txt/*.md" فائلوں کو شامل کرنے کی ضرورت نہیں ہے، لیکن زیادہ تر، تم سب کچھ اپ لوڈ کرنا چاہئے) .<br /><br /></div>
+<div dir="rtl">٣. (اگر آپ پہلے پر فیصلہ کیا تھا ڈائریکٹری میں مندرجات (CIDRAM اور اس کی فائلوں) کو اپ لوڈ کریں آپ <code dir="ltr">"*.txt/*.md"</code> فائلوں کو شامل کرنے کی ضرورت نہیں ہے، لیکن زیادہ تر، تم سب کچھ اپ لوڈ کرنا چاہئے) .<br /><br /></div>
 
-<div dir="rtl">٤. CHMOD "755" (مسائل ہیں تو، آپ کو کوشش "vault" ڈائریکٹری میں کر سکتے ہیں "777"؛ اس سے کم محفوظ ہے، اگرچہ). مندرجات (آپ اس سے قبل انتخاب کیا ایک) ذخیرہ کرنے کے اہم ڈائریکٹری، عام طور پر، آپ کو آپ کے سسٹم پر ماضی میں اجازتیں مسائل پڑا ہے تو اکیلے چھوڑ دیا جا سکتا ہے، لیکن CHMOD کی حیثیت کی جانچ پڑتال کی جانی چاہئے (ڈیفالٹ کی طرف سے، جیسے "755" کچھ ہونا چاہئے).<br /><br /></div>
+<div dir="rtl">٤. CHMOD<code dir="ltr">"755"</code> (مسائل ہیں تو، آپ کو کوشش "vault" ڈائریکٹری میں کر سکتے ہیں<code dir="ltr">"777"</code>؛ اس سے کم محفوظ ہے، اگرچہ). مندرجات (آپ اس سے قبل انتخاب کیا ایک) ذخیرہ کرنے کے اہم ڈائریکٹری، عام طور پر، آپ کو آپ کے سسٹم پر ماضی میں اجازتیں مسائل پڑا ہے تو اکیلے چھوڑ دیا جا سکتا ہے، لیکن CHMOD کی حیثیت کی جانچ پڑتال کی جانی چاہئے (ڈیفالٹ کی طرف سے، جیسے<code dir="ltr">"755"</code> کچھ ہونا چاہئے).<br /><br /></div>
 
 <div dir="rtl">٥. اگلا، آپ کو "ہک" آپ کے سسٹم یا CMS کرنے CIDRAM کرنا ہوگا. کئی مختلف طریقے ہیں آپ کر سکتے ہیں جیسا کہ آپ کے سسٹم یا CMS، لیکن سب سے آسان ہے صرف عام طور پر ہمیشہ سے لوڈ کیا جائے گا کہ آپ کے سسٹم یا CMS (ایک کی ایک بنیادی فائل کے شروع میں سکرپٹ کو شامل کرنے کے لئے کرنا CIDRAM "ہک" اسکرپٹس اگر کوئی ویب سائٹ بھر میں کسی بھی صفحے تک رسائی حاصل کرتا ہے جب) ایک "require" یا "include" بیان کا استعمال کرتے ہوئے. عام طور پر، اس طرح کے طور پر "/includes"، "/assets" یا "/functions" ایک ڈائریکٹری میں محفوظ کیا کچھ ہو جائے گا، اور اکثر" init.php"، "common_functions.php"،" افعال کی طرح کچھ نام دیا جائے گا. php" یا اسی طرح کی. تم جس فائل اگر یہ آپ کی صورت حال کے لئے ہے باہر کام کرنا پڑے گا؛ تم اپنے لئے اس سے باہر کام کرنے میں مشکلات کا سامنا کرتے ہیں، GitHub کے پر CIDRAM مسائل کا صفحہ ملاحظہ کریں. [ "require" یا" استعمال کرنے کے لئے include"] ایسا کرنے کے لئے، جو کہ بنیادی فائل کے شروع کرنے کے لئے کوڈ کی مندرجہ ذیل لائن داخل، "loader.php" فائل کا عین مطابق ایڈریس کے ساتھ واوین کے اندر موجود سٹرنگ کی جگہ (مقامی پتہ، نہ HTTP ایڈریس؛ یہ پہلے ذکر والٹ ایڈریس کو اسی طرح دیکھ لیں گے).<br /><br /></div>
 
@@ -101,9 +101,9 @@
 
 #### <div dir="rtl">٤.١ سامنے کے آخر میں فعال کرنے کا طریقہ.<br /><br /></div>
 
-<div dir="rtl">١. اندر "config.ini", "disable_frontend" ہدایت کو تلاش کریں اور "false" کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے "true" ہو جائے گا).<br /><br /></div>
+<div dir="rtl">١. اندر <code dir="ltr">"config.ini"</code>، <code dir="ltr">"disable_frontend"</code> ہدایت کو تلاش کریں اور "false" کرنے کے لئے مقرر (یہ ڈیفالٹ کی طرف سے "true" ہو جائے گا).<br /><br /></div>
 
-<div dir="rtl">٢. رسائی اپنے براؤزر سے "loader.php" (جیسے، "http://localhost/cidram/loader.php").<br /><br /></div>
+<div dir="rtl">٢. رسائی اپنے براؤزر سے <code dir="ltr">"loader.php"</code> (جیسے، <code dir="ltr">"http://localhost/cidram/loader.php"</code>).<br /><br /></div>
 
 <div dir="rtl">٣. پہلے سے طے شدہ صارف کا نام اور پاس ورڈ کے ساتھ لاگ ان کریں (admin/password).<br /><br /></div>
 
@@ -563,7 +563,7 @@
  <li>کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟</li>
 </ul></div>
 
-<div dir="rtl"><em>یورپی یونین کے صارفین کے لئے نوٹ: جب CIDRAM کوکیز کو استعمال کرنے کے لئے تشکیل دیا جاتا ہے (مثال کے طور پر، جب "lockuser" سچ/true ہے)، ایک کوکی انتباہ [یورپی یونین کوکی قانون سازی](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm) کے مطابق دکھایا جاتا ہے. تاہم، جب invisible API کا استعمال کرتے ہوئے، CIDRAM صارف کو خود کار طریقے سے رییکاپا کو مکمل کرنے کی کوشش کرتا ہے، اور جب کامیاب ہوجاتا ہے، تو اس کا نتیجہ دوبارہ لوڈ ہونے کی وجہ سے ہو سکتا ہے اور کسی کوکیز کی تخلیق کے بغیر صارف کو مناسب وقت کو کوکیز کو دیکھنے کے لئے کافی وقت نہیں دیا جاسکتا ہے. اگر یہ آپ کے لئے ایک قانونی خطرہ بنتا ہے تو، یہ ممکن ہے کہ invisible API کے بجائے V2 API استعمال کرنا بہتر ہو (V2 API خود کار طریقے سے نہیں ہے، اور صارف کو reCAPTCHA خود کو مکمل کرنے کی ضرورت ہے، اس طرح کوکی انتباہ کو دیکھنے کا موقع فراہم کرنا).</em><br /><br /></div>
+<div dir="rtl"><em>یورپی یونین کے صارفین کے لئے نوٹ: جب CIDRAM کوکیز کو استعمال کرنے کے لئے تشکیل دیا جاتا ہے (مثال کے طور پر، جب "lockuser" سچ/true ہے)، ایک کوکی انتباہ <a href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">یورپی یونین کوکی قانون سازی</a> کے مطابق دکھایا جاتا ہے. تاہم، جب invisible API کا استعمال کرتے ہوئے، CIDRAM صارف کو خود کار طریقے سے رییکاپا کو مکمل کرنے کی کوشش کرتا ہے، اور جب کامیاب ہوجاتا ہے، تو اس کا نتیجہ دوبارہ لوڈ ہونے کی وجہ سے ہو سکتا ہے اور کسی کوکیز کی تخلیق کے بغیر صارف کو مناسب وقت کو کوکیز کو دیکھنے کے لئے کافی وقت نہیں دیا جاسکتا ہے. اگر یہ آپ کے لئے ایک قانونی خطرہ بنتا ہے تو، یہ ممکن ہے کہ invisible API کے بجائے V2 API استعمال کرنا بہتر ہو (V2 API خود کار طریقے سے نہیں ہے، اور صارف کو reCAPTCHA خود کو مکمل کرنے کی ضرورت ہے، اس طرح کوکی انتباہ کو دیکھنے کا موقع فراہم کرنا).</em><br /><br /></div>
 
 #### <div dir="rtl">"template_data" (قسم)<br /></div>
 <div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات / متغیر.<br /><br /></div>
@@ -607,17 +607,17 @@
  <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
 </ul></div>
 
-<div dir="rtl">"xxxx:xxxx:xxxx:xxxx::xxxx/yy [فنکشن] [پرم]" تمام IPv6 کی دستخط کی شکل کی پیروی.<br /></div>
+<div dir="rtl"><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx/yy</code> [فنکشن] [پرم]" تمام IPv6 کی دستخط کی شکل کی پیروی.<br /></div>
 <div dir="rtl"><ul>
- <li>"xxxx:xxxx:xxxx:xxxx::xxxx" CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی "<code>0::1/128</code>" طور مثلا، ایک دستخط میں استعمال کیا جاتا ہے جب "<code>::1/128</code>" کا اظہار کیا جانا چاہئے، اور "<code>0::/128</code>" کے طور پر اظہار، جس CIDR سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں "<code>::0/128</code>").</li>
+ <li><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx"</code> CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی <code dir="ltr">"0::1/128"</code> طور مثلا، ایک دستخط میں استعمال کیا جاتا ہے جب <code dir="ltr">"::1/128"</code> کا اظہار کیا جانا چاہئے، اور <code dir="ltr">"0::/128"</code> کے طور پر اظہار، جس CIDR سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں <code dir="ltr">"::0/128"</code>).</li>
  <li>"yy" CIDR بلاک سائز [1-128] نمائندگی کرتا ہے.</li>
  <li>"(فنکشن)" سکرپٹ سگنیچر (دستخط شمار کیا جانا چاہئے کہ کس طرح) کے ساتھ کیا کیا ہدایات.</li>
  <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
 </ul></div>
 
-<div dir="rtl">ہ دستخط کے CIDRAM یونیکس طرز نیولائنز ("%0A"، یا "\n") کا استعمال کرنا چاہئے کے لئے فائلوں! دوسری قسم / نیولائنز کے سٹائل (جیسے ونڈوز "%0D%0A" یا "\r\n" نیولائنز، میک "%0D" یا" \r" نیولائنز، وغیرہ) استعمال کیا جا سکتا ہے، لیکن ترجیح نہیں ہیں. غیر یونیکس طرز نیولائنز سکرپٹ طرف یونیکس طرز نیولائنز کو معمول کی جائے گی.<br /><br /></div>
+<div dir="rtl">ہ دستخط کے CIDRAM یونیکس طرز نیولائنز (<code dir="ltr">"%0A"</code>، یا "\n") کا استعمال کرنا چاہئے کے لئے فائلوں! دوسری قسم / نیولائنز کے سٹائل (جیسے ونڈوز <code dir="ltr">"%0D%0A"</code> یا <code dir="ltr">"\r\n"</code> نیولائنز، میک <code dir="ltr">"%0D"</code> یا<code dir="ltr">"\r"</code> نیولائنز، وغیرہ) استعمال کیا جا سکتا ہے، لیکن ترجیح نہیں ہیں. غیر یونیکس طرز نیولائنز سکرپٹ طرف یونیکس طرز نیولائنز کو معمول کی جائے گی.<br /><br /></div>
 
-<div dir="rtl">عین مطابق اور درست CIDR سنکیتن کی ضرورت ہے، دوسری صورت سکرپٹ دستخط کو تسلیم نہیں کریں گے. مزید برآں، اس سکرپٹ کی تمام CIDR دستخط ایک IP ایڈریس جن IP نمبر، اس کی CIDR بلاک سائز (مثلا طرف سے نمائندگی آپ "11،127 کرنا" 10.128.0.0" سے تمام IP ایس کو بلاک کرنا چاہتے تھے تو بلاک ڈویژن میں یکساں طور پر تقسیم کر سکتے ہیں کے ساتھ شروع ہونا چاہئے .255.255"، "10.128.0.0 / 8" سکرپٹ کی طرف سے تسلیم نہیں کیا جائے گا، لیکن" 10.128.0.0 / 9" اور "11.0.0.0 / 9" مل کر میں استعمال کیا جاتا ہے، سکرپٹ کی طرف سے تسلیم کیا جائے گا).<br /><br /></div>
+<div dir="rtl">عین مطابق اور درست CIDR سنکیتن کی ضرورت ہے، دوسری صورت سکرپٹ دستخط کو تسلیم نہیں کریں گے. مزید برآں، اس سکرپٹ کی تمام CIDR دستخط ایک IP ایڈریس جن IP نمبر، اس کی CIDR بلاک سائز (مثلا طرف سے نمائندگی آپ <code dir="ltr">"11.127.255.255"</code> کرنا <code dir="ltr">"10.128.0.0"</code> سے تمام IP ایس کو بلاک کرنا چاہتے تھے تو بلاک ڈویژن میں یکساں طور پر تقسیم کر سکتے ہیں کے ساتھ شروع ہونا چاہئے، <code dir="ltr">"10.128.0.0/8"</code> سکرپٹ کی طرف سے تسلیم نہیں کیا جائے گا، لیکن"</code> 10.128.0.0/9"</code> اور <code dir="ltr">"11.0.0.0/9"</code> مل کر میں استعمال کیا جاتا ہے، سکرپٹ کی طرف سے تسلیم کیا جائے گا).<br /><br /></div>
 
 <div dir="rtl">دستخط میں کوئی بھی چیز اس وجہ سے جس کا مطلب آپ کو محفوظ طریقے سے ان کو توڑنے کے بغیر اور اسکرپٹ کو توڑنے کے بغیر آپ کے دستخط فائلوں میں چاہتا ہوں کہ کسی بھی غیر دستخط کے اعداد و شمار کو ڈال کر سکتے ہیں، کو نظر انداز کر دیا جائے گا ایک دستخط کے طور پر اور نہ ہی سکرپٹ کی طرف سے دستخط کے متعلق نحو کے طور پر تسلیم نہیں فائلوں. تبصرے کے دستخط فائلوں میں قابل قبول ہیں، اور کوئی خاص فارمیٹنگ ان کے لئے کی ضرورت ہے. تبصرے کے لئے شیل طرز hashing کے ترجیح دی جاتی ہے، لیکن نافذ نہیں؛ مکمل طور پر قابل، یہ آپ کے تبصرے کے لئے شیل طرز hashing کے استعمال کرنے کا انتخاب کرتے ہیں یا نہیں اسکرپٹ کو کوئی فرق نہیں پڑتا، لیکن شیل طرز hashing کے استعمال کر IDEs کے اور سادہ ٹیکسٹ ایڈیٹرز صحیح دستخط کی فائلوں کے مختلف حصوں کو اجاگر کرنے میں مدد ملتی ہے (اور اس طرح، شیل طرز میں ترمیم کرتے ہوئے hashing کے ایک بصری امداد کے طور پر مدد کر سکتے ہیں).<br /><br /></div>
 
@@ -681,7 +681,7 @@ Tag: سیکشن 1
 Tag: سیکشن 1
 ```
 
-<div dir="rtl">اوپر کی مثال میں "1.2.3.4/32" اور "2.3.4.5/32" "IPv4" کی کے طور پر ٹیگ کیا جائے گا، جبکہ "4.5.6.7/32" اور "5.6.7.8/32" "سیکشن 1" کے طور پر ٹیگ کیا جائے گا.<br /><br /></div>
+<div dir="rtl">اوپر کی مثال میں<code dir="ltr">"1.2.3.4/32"</code> اور<code dir="ltr">"2.3.4.5/32"</code> "IPv4" کی کے طور پر ٹیگ کیا جائے گا، جبکہ<code dir="ltr">"4.5.6.7/32"</code> اور<code dir="ltr">"5.6.7.8/32"</code> "سیکشن 1" کے طور پر ٹیگ کیا جائے گا.<br /><br /></div>
 
 <div dir="rtl">آپ دستخط سیکشن ٹیگز کو اسی انداز میں، کچھ وقت کے بعد ختم کرنا چاہتے ہیں تو، آپ کو متعین کرنے کی ایک "ختم ہونے ٹیگ" استعمال دستخط درست نہیں رہے چاہئے جب سکتا. ختم ہونے ٹیگز شکل "YYYY.MM.DD" استعمال کرتے ہیں (ذیل کی مثال دیکھیں).<br /><br /></div>
 
@@ -756,9 +756,9 @@ general:
 
 ##### <div dir="rtl">٧.٢.١ کس طرح "خاص نشان" reCAPTCHA کے ساتھ استعمال کریں کے لئے دستخط قسموں<br /><br /></div>
 
-<div dir="rtl">جب "usemode" 0 یا 1 ہے، دستخط حصوں (وہ پہلے یا reCAPTCHA کے، اس ترتیب کے لحاظ سے استعمال نہیں کرے گا کرے گا کیونکہ) reCAPTCHA کے ساتھ استعمال کے لئے "خاص طور پر نشان زد" کرنے کی ضرورت نہیں ہے.<br /><br /></div>
+<div dir="rtl">جب <code dir="ltr">"usemode"</code> 0 یا 1 ہے، دستخط حصوں (وہ پہلے یا reCAPTCHA کے، اس ترتیب کے لحاظ سے استعمال نہیں کرے گا کرے گا کیونکہ) reCAPTCHA کے ساتھ استعمال کے لئے "خاص طور پر نشان زد" کرنے کی ضرورت نہیں ہے.<br /><br /></div>
 
-<div dir="rtl">جب "usemode" 2 ہے، "خاص نشان" reCAPTCHA کے ساتھ استعمال کے لئے دستخط حصوں، ایک اندراج ہے کہ دستخط کے حصے کے لیے YAML طبقہ میں (ذیل کی مثال ملاحظہ کریں) شامل ہے کرنے کے لئے.<br /><br /></div>
+<div dir="rtl">جب <code dir="ltr">"usemode"</code> 2 ہے، "خاص نشان" reCAPTCHA کے ساتھ استعمال کے لئے دستخط حصوں، ایک اندراج ہے کہ دستخط کے حصے کے لیے YAML طبقہ میں (ذیل کی مثال ملاحظہ کریں) شامل ہے کرنے کے لئے.<br /><br /></div>
 
 ```
 # یہ حصہ reCAPTCHA کے استعمال کریں گے.
@@ -802,31 +802,31 @@ Ignore سیکشن 1
 
 #### <div dir="rtl">٧.٥ ماڈیول فعالیت<br /><br /></div>
 
-##### ٧.٥.٠ "$Trigger"
+##### <div dir="rtl">٧.٥.٠ <code dir="ltr">"$Trigger"</code></div>
 
-<div dir="rtl">ماڈیول دستخط عام طور پر "$Trigger" کے ساتھ لکھا جاتا ہے. زیادہ تر معاملات میں، یہ بندش ماڈیول لکھنے کے مقصد کیلئے کسی اور سے کہیں زیادہ اہم ہو گی.<br /><br /></div>
+<div dir="rtl">ماڈیول دستخط عام طور پر <code dir="ltr">"$Trigger"</code> کے ساتھ لکھا جاتا ہے. زیادہ تر معاملات میں، یہ بندش ماڈیول لکھنے کے مقصد کیلئے کسی اور سے کہیں زیادہ اہم ہو گی.<br /><br /></div>
 
-<div dir="rtl">"$Trigger" ٤ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
+<div dir="rtl"><code dir="ltr">"$Trigger"</code> ٤ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
 
 - "$Condition"
 - "$ReasonShort"
-- "$ReasonLong" (اختیاری).
-- "$DefineOptions" (اختیاری).
+- "$ReasonLong" (اختیاری)
+- "$DefineOptions" (اختیاری)
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-The truthiness of "$Condition" is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. <code dir="ltr">"$Condition"</code> typically contains PHP code to evaluate a condition that should cause a request to be blocked.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$ReasonShort" is cited in the "Why Blocked" field when the signature is triggered.
+<code dir="ltr">"$ReasonShort"</code> is cited in the "Why Blocked" field when the signature is triggered.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$ReasonLong" is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
+<code dir="ltr">"$ReasonLong"</code> is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
+<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$Trigger" returns true when the signature is triggered, and false when it isn't.
+<code dir="ltr">"$Trigger"</code> returns true when the signature is triggered, and false when it isn't.
 
 <div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
 
@@ -834,27 +834,27 @@ The truthiness of "$Condition" is evaluated, and if true, the signature is trigg
 $Trigger = $CIDRAM['Trigger'];
 ```
 
-##### ٧.٥.١ "$Bypass"
+##### <div dir="rtl">٧.٥.١ <code dir="ltr">"$Bypass"</code></div>
 
-<div dir="rtl">دستخط بائی پاسز عام طور پر "$Bypass" کے ساتھ لکھے جاتے ہیں.<br /><br /></div>
+<div dir="rtl">دستخط بائی پاسز عام طور پر <code dir="ltr">"$Bypass"</code> کے ساتھ لکھے جاتے ہیں.<br /><br /></div>
 
-<div dir="rtl">"$Bypass" ٣ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
+<div dir="rtl"><code dir="ltr">"$Bypass"</code> ٣ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
 
 - "$Condition"
 - "$ReasonShort"
-- "$DefineOptions" (اختیاری).
+- "$DefineOptions" (اختیاری)
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-The truthiness of "$Condition" is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. "$Condition" typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
+The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. <code dir="ltr">"$Condition"</code> typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$ReasonShort" is cited in the "Why Blocked" field when the bypass is triggered.
+<code dir="ltr">"$ReasonShort"</code> is cited in the "Why Blocked" field when the bypass is triggered.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$DefineOptions" is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
+<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
-"$Bypass" returns true when the bypass is triggered, and false when it isn't.
+<code dir="ltr">"$Bypass"</code> returns true when the bypass is triggered, and false when it isn't.
 
 <div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
 
@@ -862,7 +862,7 @@ The truthiness of "$Condition" is evaluated, and if true, the bypass is triggere
 $Bypass = $CIDRAM['Bypass'];
 ```
 
-##### ٧.٥.٢ "$CIDRAM['DNS-Reverse']"
+##### <div dir="rtl">٧.٥.٢ <code dir="ltr">"$CIDRAM['DNS-Reverse']"</code></div>
 
 <div dir="rtl">یہ ایک IP ایڈریس کے میزبان نام کو حاصل کرنے کے لئے استعمال کیا جا سکتا ہے. اگر آپ میزبانوں کو روکنے کے لئے ماڈیول بنانا چاہتے ہیں، تو یہ بندش مفید ثابت ہوسکتا ہے.<br /><br /></div>
 
@@ -886,7 +886,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### <div dir="rtl">٧.٦ ماڈیول متغیر<br /><br /></div>
 
-<div dir="rtl">ماڈیول ان کے اپنے گنجائش کے اندر عملدرآمد کرتے ہیں، اور کسی ماڈیول کی طرف سے وضاحت کردہ متغیرات، دوسرے ماڈیولز، یا پیراگراف اسکرپٹ تک نہیں پہنچ سکیں گے، جب تک کہ وہ "$CIDRAM" صف میں محفوظ نہ ہو جائیں (ماڈیول پھانسی ختم ہونے کے بعد سب کچھ صاف ہو گیا ہے).<br /><br /></div>
+<div dir="rtl">ماڈیول ان کے اپنے گنجائش کے اندر عملدرآمد کرتے ہیں، اور کسی ماڈیول کی طرف سے وضاحت کردہ متغیرات، دوسرے ماڈیولز، یا پیراگراف اسکرپٹ تک نہیں پہنچ سکیں گے، جب تک کہ وہ <code dir="ltr">"$CIDRAM"</code> صف میں محفوظ نہ ہو جائیں (ماڈیول پھانسی ختم ہونے کے بعد سب کچھ صاف ہو گیا ہے).<br /><br /></div>
 
 <div dir="rtl">مندرجہ ذیل فہرست کچھ عام متغیر ہیں جو آپ کے ماڈیول کے لئے مفید ہوسکتے ہیں:<br /><br /></div>
 
@@ -979,7 +979,7 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 <div dir="rtl">میں نے ایک سے زیادہ ڈومینز کی حفاظت کے لئے ایک واحد CIDRAM تنصیب کا استعمال کر سکتا ہوں؟<br /><br /></div>
 
-<div dir="rtl">جی ہاں. CIDRAM ایک سے زیادہ ڈومینز کی حفاظت کے لئے استعمال کیا جا سکتا ہے. ضرورت کی ترتیب مختلف ہے تو، ایسا کرنے کے لئے تحفظ کی ضرورت ہوتی ڈومینز کے مطابق نامی نئی ترتیب فائل، تخلیق کرتے ہیں. CIDRAM یہ ڈومین کیلئے کام کرنا چاہئے کہ کس طرح اس بات کا تعین کرنے کے لئے ان فائلوں کو استعمال کریں گے. سوف تستخدم CIDRAM هذه الملفات لتحديد كيفية تشغيلها للنطاق. ایک مثال کے طور، کے لئے "http://www.some-domain.tld/"، اس کا نام ہے "some-domain.tld.config.ini". ڈومین نام "HTTP_HOST" سے آتا ہے. "www" نظر انداز کر دیا جاتا ہے.<br /><br /></div>
+<div dir="rtl">جی ہاں. CIDRAM ایک سے زیادہ ڈومینز کی حفاظت کے لئے استعمال کیا جا سکتا ہے. ضرورت کی ترتیب مختلف ہے تو، ایسا کرنے کے لئے تحفظ کی ضرورت ہوتی ڈومینز کے مطابق نامی نئی ترتیب فائل، تخلیق کرتے ہیں. CIDRAM یہ ڈومین کیلئے کام کرنا چاہئے کہ کس طرح اس بات کا تعین کرنے کے لئے ان فائلوں کو استعمال کریں گے. سوف تستخدم CIDRAM هذه الملفات لتحديد كيفية تشغيلها للنطاق. ایک مثال کے طور، کے لئے <code dir="ltr">"http://www.some-domain.tld/"</code>، اس کا نام ہے <code dir="ltr">"some-domain.tld.config.ini"</code>. ڈومین نام <code dir="ltr">"HTTP_HOST"</code> سے آتا ہے. <code dir="ltr">"www"</code> نظر انداز کر دیا جاتا ہے.<br /><br /></div>
 
 <div dir="rtl">میں نے اس پر وقت خرچ نہیں کرنا چاہتا (اسے انسٹال، اس کے قیام، وغیرہ)؛ میں نے آپ کو ایسا کرنے کے لئے ادا کر سکتے ہیں؟<br /><br /></div>
 

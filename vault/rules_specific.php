@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2017.12.24).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2017.12.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -31,7 +31,7 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
 
     /** Bingbot bypasses. */
     if (!$Tag || $Tag === 'Bingbot bypasses') {
-        if (strpos($CIDRAM['BlockInfo']['UALC'], 'bingbot') !== false) {
+        if (preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])) {
             return 2;
         }
         return;

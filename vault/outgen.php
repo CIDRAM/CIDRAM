@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.12.12).
+ * This file: Output generator (last modified: 2017.12.26).
  */
 
 /** Initialise cache. */
@@ -215,9 +215,7 @@ if (
      * Verify Bingbot.
      * Reference: http://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
      */
-    if (empty($CIDRAM['Flag-Bypass-Bingbot-Check']) && (
-            strpos($CIDRAM['UA-Clean'], 'bingbot') !== false || strpos($CIDRAM['UA-Clean'], 'msnbot') !== false
-    )) {
+    if (empty($CIDRAM['Flag-Bypass-Bingbot-Check']) && preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['UA-Clean'])) {
         $CIDRAM['DNS-Reverse-Forward']('.search.msn.com', 'Bingbot');
     }
     /**

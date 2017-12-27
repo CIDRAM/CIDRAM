@@ -376,7 +376,7 @@
 
 <div dir="rtl">"disable_cli"<br /></div>
 <div dir="rtl"><ul>
- <li>وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خطأ = تمكين وضع CLI [الافتراضي]. صحيح = وضع تعطيل CLI.</li>
+ <li>وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خاطئة = تمكين وضع CLI [الافتراضي]. صحيح = وضع تعطيل CLI.</li>
 </ul></div>
 
 <div dir="rtl">"disable_frontend"<br /></div>
@@ -442,6 +442,11 @@
 <div dir="rtl">"force_hostname_lookup"<br /></div>
 <div dir="rtl"><ul>
  <li>فرض بحث اسم المضيف؟ True = نعم؛ False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء.</li>
+</ul></div>
+
+<div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
+<div dir="rtl"><ul>
+ <li>السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ True = نعم [افتراضي]؛ False = لا. ملاحظة: IPv6 غير مدعوم من gethostbyaddr.</li>
 </ul></div>
 
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
@@ -607,7 +612,7 @@
  <li>"[معامل]" تمثل أي معلومات إضافية قد تكون مطلوبة من قبل "[وظيفة]".</li>
 </ul></div>
 
-<div dir="rtl">جميع التوقيعات من IPv6 تتبع هذا الشكل: <code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx/yy</code> [وظيفة] [معامل]".<br /></div>
+<div dir="rtl">جميع التوقيعات من IPv6 تتبع هذا الشكل: <code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx/yy"</code> [وظيفة] [معامل]".<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx"</code> يمثل بداية كتلة CIDR (المجموعة ثمانية من عنوان IP الأول). تدوين كامل وتدوين يختصر على حد سواء مقبول (كل يجب أن تلتزم المعايير تدوين الإصدار IPv6، ولكن مع استثناء واحد: عنوان IPv6 لا يمكن أبدا أن تبدأ مع اختصار عند استخدامها في التوقيع لهذا النصي، بسبب الطريقة التي يتم بناؤها CIDRs؛ فمثلا،<code dir="ltr">"::1/128"</code> ينبغي التعبير، عند استخدامها في توقيع، كما<code dir="ltr">"0::1/128"</code>، و"::0/128" التعبير بأنه<code dir="ltr">"0::/128"</code>).</li>
  <li>"yy" تمثل حجم الكتلة [١-١٢٨].</li>
@@ -615,9 +620,9 @@
  <li>"[معامل]" تمثل أي معلومات إضافية قد تكون مطلوبة من قبل "[وظيفة]".</li>
 </ul></div>
 
-<div dir="rtl">أسطر جديدة يونكس الموصى بها (<code dir="ltr">"%0A"</code>، أو "\n")! أسطر جديدة أخرى (على سبيل المثال، Windows <code dir="ltr">"%0D%0A"</code> أو أسطر جديدة <code dir="ltr">"\r\n"</code>، Mac <code dir="ltr">"%0D"</code> أو أسطر جديدة <code dir="ltr">"\r"</code>، إلخ) يمكن استخدامها، ولكن لا يفضل. أسطر جديدة تطبيع من قبل البرنامج النصي.<br /><br /></div>
+<div dir="rtl">أسطر جديدة يونكس الموصى بها (<code dir="ltr">"%0A"</code>، أو <code dir="ltr">"\n"</code>)! أسطر جديدة أخرى (على سبيل المثال، Windows <code dir="ltr">"%0D%0A"</code> أو أسطر جديدة <code dir="ltr">"\r\n"</code>، Mac <code dir="ltr">"%0D"</code> أو أسطر جديدة <code dir="ltr">"\r"</code>، إلخ) يمكن استخدامها، ولكن لا يفضل. أسطر جديدة تطبيع من قبل البرنامج النصي.<br /><br /></div>
 
-<div dir="rtl">يجب أن يكون تدوين CIDR دقيق. يجب أن أعداد تقسم بالتساوي (على سبيل المثال، من أجل الحيلولة دون<code dir="ltr">"10.128.0.0"</code>-"11.127.255.255"،<code dir="ltr">"10.128.0.0/8"</code> لن تكون صالحة، لكن<code dir="ltr">"10.128.0.0/9"</code> و<code dir="ltr">"11.0.0.0/9"</code> على ما يرام).<br /><br /></div>
+<div dir="rtl">يجب أن يكون تدوين CIDR دقيق. يجب أن أعداد تقسم بالتساوي (على سبيل المثال، من أجل الحيلولة دون<code dir="ltr">"10.128.0.0"-"11.127.255.255"</code>، <code dir="ltr">"10.128.0.0/8"</code> لن تكون صالحة، لكن <code dir="ltr">"10.128.0.0/9"</code> و<code dir="ltr">"11.0.0.0/9"</code> على ما يرام).<br /><br /></div>
 
 <div dir="rtl">أي شيء لذا أوقع الذي يعني أنك يمكن أن تريد بأمان في ملفات توقيعك دون انقطاع دون اقتحام والكتابات التي وضعت البيانات في أي غير الموقعة، و سيتم تجاهل رأي ولا كدليل على الاعتراف بأنه بناء الجملة من توقيع الملفات النصي. التعليقات هي ملفات التوقيع مقبولة، وأي تنسيق خاص اللازمة لها. على غرار قذيفة المفضل التجزئة للحصول على تعليق، ولكن لا تفرض أي، يستحق ذلك تماما، فإنه لا يحدث أي فارق أو لم النصي اختيار استخدام التجزئة على غرار قذيفة على تعليقاتكم، ولكن التجزئة على غرار قذيفة استخدام برامج تحرير النصوص واضحة وبيئات التطوير يساعد على تسليط الضوء وقعت أجزاء من الملفات بشكل صحيح (وبالتالي، يمكن أن تساعد باعتبارها المساعدات البصرية في حالة وضع تحرير التجزئة).<br /><br /></div>
 
@@ -806,25 +811,17 @@ Ignore القسم ١
 
 <div dir="rtl">وعادة ما تكتب تواقيع الوحدة مع <code dir="ltr">"$Trigger"</code>. في معظم الحالات، هذا الإغلاق سيكون أكثر أهمية من أي شيء آخر لغرض كتابة وحدات.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Trigger"</code> يقبل ٤ المعلمات:<br /><br /></div>
+<div dir="rtl"><code dir="ltr">"$Trigger"</code> يقبل ٤ المعلمات: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$ReasonLong"</code> (اختياري)، <code dir="ltr">"$DefineOptions"</code> (اختياري).<br /><br /></div>
 
-- "$Condition"
-- "$ReasonShort"
-- "$ReasonLong" (اختياري)
-- "$DefineOptions" (اختياري)
-
-<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، التوقيع نشط. إذا كان "خطأ" (<code dir="ltr">false</code>)، التوقيع غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على التعليمات البرمجية PHP التي يجب منع الطلبات.<br /><br /></div>
+<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، التوقيع نشط. إذا كان "خاطئة" (<code dir="ltr">false</code>))، التوقيع غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على التعليمات البرمجية PHP التي يجب منع الطلبات.<br /><br /></div>
 
 <div dir="rtl"><code dir="ltr">"$ReasonShort"</code> في حقل "سبب الحظر" عندما يكون التوقيع نشطا.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$ReasonLong"</code> is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
+<div dir="rtl"><code dir="ltr">"$ReasonLong"</code> هي رسالة اختيارية يتم عرضها للمستخدم عند حظرها، لشرح سبب حظرها. يستخدم الرسالة القياسية "سبب الحظر" عند حذفها.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is active.
+<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> عبارة عن صفيف اختياري يحتوي على أزواج المفاتيح/القيم التي تحدد خيارات التكوين الخاصة بمثيل الطلب. سيتم تطبيق خيارات التهيئة عندما يكون التوقيع نشطا.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$Trigger"</code> returns true when the signature is triggered, and false when it isn't.
+<div dir="rtl">ترجع <code dir="ltr">"$Trigger"</code> صحيح (<code dir="ltr">true</code>) عندما يكون التوقيع نشطا و خاطئة (<code dir="ltr">false</code>) عندما لا يكون.<br /><br /></div>
 
 <div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
 
@@ -834,23 +831,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### <div dir="rtl">٧.٥.١ <code dir="ltr">"$Bypass"</code></div>
 
-<div dir="rtl">وعادة ما تكتب التجاوزات التوقيع مع <code dir="ltr">"$Bypass"</code>.<br /><br /></div>
+<div dir="rtl">وعادة ما تكتب الالتفافية التوقيع مع <code dir="ltr">"$Bypass"</code>.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Bypass"</code> يقبل ٣ المعلمات:<br /><br /></div>
+<div dir="rtl"><code dir="ltr">"$Bypass"</code> يقبل ٣ المعلمات: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$DefineOptions"</code> (اختياري).<br /><br /></div>
 
-- "$Condition"
-- "$ReasonShort"
-- "$DefineOptions" (اختياري)
-
-<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، الالتفافية نشط. إذا كان "خطأ" (<code dir="ltr">false</code>)، الالتفافية غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على رمز PHP التي يجب عدم منع الطلبات.<br /><br /></div>
+<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، الالتفافية نشط. إذا كان "خاطئة" (<code dir="ltr">false</code>))، الالتفافية غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على رمز PHP التي يجب عدم منع الطلبات.<br /><br /></div>
 
 <div dir="rtl"><code dir="ltr">"$ReasonShort"</code> في حقل "سبب الحظر" عندما يكون الالتفافية نشطا.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
+<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> عبارة عن صفيف اختياري يحتوي على أزواج المفاتيح/القيم التي تحدد خيارات التكوين الخاصة بمثيل الطلب. سيتم تطبيق خيارات التهيئة عندما يكون الالتفافية نشطا.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$Bypass"</code> returns true when the bypass is triggered, and false when it isn't.
+<div dir="rtl">ترجع <code dir="ltr">"$Bypass"</code> صحيح (<code dir="ltr">true</code>) عندما يكون الالتفافية نشطا و خاطئة (<code dir="ltr">false</code>) عندما لا يكون.<br /><br /></div>
 
 <div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
 
@@ -1024,4 +1015,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 22 ديسمبر 2017 (2017.12.22).</div>
+<div dir="rtl">آخر تحديث: 27 ديسمبر 2017 (2017.12.27).</div>

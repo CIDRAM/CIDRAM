@@ -383,6 +383,9 @@ Konfigurasi umum dari CIDRAM.
 "force_hostname_lookup"
 - Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja.
 
+"allow_gethostbyaddr_lookup"
+- Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak. *Catat: IPv6 tidak didukung oleh gethostbyaddr.*
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -894,4 +897,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 22 Desember 2017 (2017.12.22).
+Terakhir Diperbarui: 27 Desember 2017 (2017.12.27).

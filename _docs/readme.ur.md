@@ -444,6 +444,11 @@
  <li>تمام درخواستوں کے لئے میزبانی حاصل کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]. میزبان نام کی تلاش عام طور پر "ضرورت کی بنیاد" کی بنیاد پر انجام دیا جاتا ہے، لیکن تمام درخواستوں کے لئے مجبور کیا جاسکتا ہے. ایسا کرتے ہوئے لاگ ان میں مزید تفصیلی معلومات فراہم کرنے کے ذریعہ مفید ثابت ہوسکتا ہے، لیکن کارکردگی پر تھوڑا منفی اثر بھی ہوسکتا ہے.</li>
 </ul></div>
 
+<div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
+<div dir="rtl"><ul>
+ <li>جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں. نوٹ: IPv6 gethostbyaddr کی طرف سے حمایت نہیں ہے.</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (قسم)<br /></div>
 <div dir="rtl">دستخط کی ترتیب.<br /><br /></div>
 
@@ -607,7 +612,7 @@
  <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
 </ul></div>
 
-<div dir="rtl"><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx/yy</code> [فنکشن] [پرم]" تمام IPv6 کی دستخط کی شکل کی پیروی.<br /></div>
+<div dir="rtl"><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx/yy"</code> [فنکشن] [پرم]" تمام IPv6 کی دستخط کی شکل کی پیروی.<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">"xxxx:xxxx:xxxx:xxxx::xxxx"</code> CIDR بلاک کے آغاز (بلاک میں ابتدائی IP ایڈریس کی آکٹیٹ) نمائندگی کرتا ہے. مکمل سنکیتن اور مختصر سنکیتن دونوں قابل قبول ہیں (اور ہر ایک IPv6 کی سنکیتن کے مناسب اور متعلقہ معیار پر عمل کرنا ضروری ہے، لیکن ایک رعایت کے ساتھ: ایک IPv6 کی ایڈریس مخفف کے ساتھ اس سکرپٹ کے لئے ایک دستخط میں استعمال کرتے ہیں، کی وجہ سے میں جس طرح کرنے کے لئے شروع نہیں کر سکتی <code dir="ltr">"0::1/128"</code> طور مثلا، ایک دستخط میں استعمال کیا جاتا ہے جب <code dir="ltr">"::1/128"</code> کا اظہار کیا جانا چاہئے، اور <code dir="ltr">"0::/128"</code> کے طور پر اظہار، جس CIDR سکرپٹ کی طرف سے دوبارہ تعمیر کر رہے ہیں <code dir="ltr">"::0/128"</code>).</li>
  <li>"yy" CIDR بلاک سائز [1-128] نمائندگی کرتا ہے.</li>
@@ -615,7 +620,7 @@
  <li>"[پرم]" کی نمائندگی کرتا ہے جو کچھ بھی اضافی معلومات "طرف (فنکشن) کی ضرورت ہوسکتی ہے".</li>
 </ul></div>
 
-<div dir="rtl">ہ دستخط کے CIDRAM یونیکس طرز نیولائنز (<code dir="ltr">"%0A"</code>، یا "\n") کا استعمال کرنا چاہئے کے لئے فائلوں! دوسری قسم / نیولائنز کے سٹائل (جیسے ونڈوز <code dir="ltr">"%0D%0A"</code> یا <code dir="ltr">"\r\n"</code> نیولائنز، میک <code dir="ltr">"%0D"</code> یا<code dir="ltr">"\r"</code> نیولائنز، وغیرہ) استعمال کیا جا سکتا ہے، لیکن ترجیح نہیں ہیں. غیر یونیکس طرز نیولائنز سکرپٹ طرف یونیکس طرز نیولائنز کو معمول کی جائے گی.<br /><br /></div>
+<div dir="rtl">ہ دستخط کے CIDRAM یونیکس طرز نیولائنز (<code dir="ltr">"%0A"</code>، یا <code dir="ltr">"\n"</code>) کا استعمال کرنا چاہئے کے لئے فائلوں! دوسری قسم / نیولائنز کے سٹائل (جیسے ونڈوز <code dir="ltr">"%0D%0A"</code> یا <code dir="ltr">"\r\n"</code> نیولائنز، میک <code dir="ltr">"%0D"</code> یا<code dir="ltr">"\r"</code> نیولائنز، وغیرہ) استعمال کیا جا سکتا ہے، لیکن ترجیح نہیں ہیں. غیر یونیکس طرز نیولائنز سکرپٹ طرف یونیکس طرز نیولائنز کو معمول کی جائے گی.<br /><br /></div>
 
 <div dir="rtl">عین مطابق اور درست CIDR سنکیتن کی ضرورت ہے، دوسری صورت سکرپٹ دستخط کو تسلیم نہیں کریں گے. مزید برآں، اس سکرپٹ کی تمام CIDR دستخط ایک IP ایڈریس جن IP نمبر، اس کی CIDR بلاک سائز (مثلا طرف سے نمائندگی آپ <code dir="ltr">"11.127.255.255"</code> کرنا <code dir="ltr">"10.128.0.0"</code> سے تمام IP ایس کو بلاک کرنا چاہتے تھے تو بلاک ڈویژن میں یکساں طور پر تقسیم کر سکتے ہیں کے ساتھ شروع ہونا چاہئے، <code dir="ltr">"10.128.0.0/8"</code> سکرپٹ کی طرف سے تسلیم نہیں کیا جائے گا، لیکن"</code> 10.128.0.0/9"</code> اور <code dir="ltr">"11.0.0.0/9"</code> مل کر میں استعمال کیا جاتا ہے، سکرپٹ کی طرف سے تسلیم کیا جائے گا).<br /><br /></div>
 
@@ -806,12 +811,7 @@ Ignore سیکشن 1
 
 <div dir="rtl">ماڈیول دستخط عام طور پر <code dir="ltr">"$Trigger"</code> کے ساتھ لکھا جاتا ہے. زیادہ تر معاملات میں، یہ بندش ماڈیول لکھنے کے مقصد کیلئے کسی اور سے کہیں زیادہ اہم ہو گی.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Trigger"</code> ٤ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
-
-- "$Condition"
-- "$ReasonShort"
-- "$ReasonLong" (اختیاری)
-- "$DefineOptions" (اختیاری)
+<div dir="rtl"><code dir="ltr">"$Trigger"</code> ٤ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$ReasonLong"</code> (اختیاری)، <code dir="ltr">"$DefineOptions"</code> (اختیاری).<br /><br /></div>
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
 The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. <code dir="ltr">"$Condition"</code> typically contains PHP code to evaluate a condition that should cause a request to be blocked.
@@ -819,14 +819,12 @@ The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true,
 <div dir="rtl">@TranslateMe@<br /><br /></div>
 <code dir="ltr">"$ReasonShort"</code> is cited in the "Why Blocked" field when the signature is triggered.
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$ReasonLong"</code> is an optional message to be displayed to the user/client for when they're blocked, to explain why they've been blocked. Defaults to the standard "Access Denied" message when omitted.
+<div dir="rtl"><code dir="ltr">"$ReasonLong"</code> صارف کو ظاہر ہونے پر ایک پیغام ہے جب وہ روک رہے ہیں، اس وجہ سے وضاحت کریں کہ. ختم ہونے پر معیاری "کیوں بلاک شدہ" پیغام استعمال کرتا ہے.<br /><br /></div>
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
 <code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$Trigger"</code> returns true when the signature is triggered, and false when it isn't.
+<div dir="rtl"><code dir="ltr">"$Trigger"</code> سچ ہے جب دستخط چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا تو غلط ہوتا ہے.<br /><br /></div>
 
 <div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
 
@@ -838,11 +836,7 @@ $Trigger = $CIDRAM['Trigger'];
 
 <div dir="rtl">دستخط بائی پاسز عام طور پر <code dir="ltr">"$Bypass"</code> کے ساتھ لکھے جاتے ہیں.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Bypass"</code> ٣ پیرامیٹرز کو قبول کرتا ہے:<br /><br /></div>
-
-- "$Condition"
-- "$ReasonShort"
-- "$DefineOptions" (اختیاری)
+<div dir="rtl"><code dir="ltr">"$Bypass"</code> ٣ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$DefineOptions"</code> (اختیاری).<br /><br /></div>
 
 <div dir="rtl">@TranslateMe@<br /><br /></div>
 The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. <code dir="ltr">"$Condition"</code> typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
@@ -853,8 +847,7 @@ The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true,
 <div dir="rtl">@TranslateMe@<br /><br /></div>
 <code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$Bypass"</code> returns true when the bypass is triggered, and false when it isn't.
+<div dir="rtl"><code dir="ltr">"$Bypass"</code> سچ ہے جب بائی پاس چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا.<br /><br /></div>
 
 <div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
 
@@ -1028,4 +1021,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 22 دسمبر 2017 (2017.12.22).</div>
+<div dir="rtl">آخری تازہ کاری: 27 دسمبر 2017 (2017.12.27).</div>

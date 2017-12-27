@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.24).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.12.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主頁</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】； False（假）=不允許。​<em>注意：gethostbyaddr不支持IPv6。</em>';
 $CIDRAM['lang']['config_general_ban_override'] = '覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】； 403 = 使用『403 Forbidden』覆蓋； 503 = 使用『503 Service unavailable』覆蓋。';
 $CIDRAM['lang']['config_general_default_algo'] = '定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。';
 $CIDRAM['lang']['config_general_default_dns'] = '以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！';

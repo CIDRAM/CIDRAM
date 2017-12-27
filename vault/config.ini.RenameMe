@@ -139,6 +139,10 @@ statistics=false
 ; performance.
 force_hostname_lookup=false
 
+; Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default];
+; False = No. Note: IPv6 isn't supported by gethostbyaddr.
+allow_gethostbyaddr_lookup=true
+
 
 [signatures]
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.12.24).
+ * This file: Thai language data for the front-end (last modified: 2017.12.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">โฮมเพจ</a> | <a href="?cidram-page=logout">ออกจากระบบ</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ออกจากระบบ</a>';
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'อนุญาตให้มีการค้นหา gethostbyaddr เมื่อ UDP ไม่พร้อมใช้งานหรือไม่? True = หยุดใช้ [ค่าเริ่มต้น]; False = ไม่หยุดใช้. <em>หมายเหตุ: gethostbyaddr ไม่สนับสนุน IPv6.</em>';
 $CIDRAM['lang']['config_general_ban_override'] = 'แทนที่ "forbid_on_block" เมื่อ "infraction_limit" ได้รับการเกินหรือไม่? เมื่อแทนที่: คำขอที่ถูกบล็อกกลับหน้าเปล่า (ไฟล์เทมเพลตจะไม่ถูกใช้). 200 = อย่าแทนที่ [ค่าเริ่มต้น]; 403 = อย่าแทนที่ด้วย "403 Forbidden"; 503 = อย่าแทนที่ด้วย "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'กำหนดว่าจะใช้อัลกอริทึมใดสำหรับรหัสผ่านและเซสชันในอนาคต. ตัวเลือก: PASSWORD_DEFAULT (ค่าเริ่มต้น), PASSWORD_BCRYPT, PASSWORD_ARGON2I (ต้องการ PHP >= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'รายการคั่นด้วยจุลภาคของเซิร์ฟเวอร์ DNS ใช้สำหรับการค้นหาชื่อโฮสต์. ค่าเริ่มต้น = "8.8.8.8,8.8.4.4" (Google DNS). คำเตือน: อย่าเปลี่ยนสิ่งนี้จนกว่าคุณจะรู้ว่าคุณกำลังทำอะไร!';

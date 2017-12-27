@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.12.24).
+ * This file: Hindi language data for the front-end (last modified: 2017.12.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No. *Note: IPv6 isn't supported by gethostbyaddr.*';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">होमपेज</a> | <a href="?cidram-page=logout">लोग आउट</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">लोग आउट</a>';
 $CIDRAM['lang']['config_general_ban_override'] = 'विलोपन "forbid_on_block" कब "infraction_limit" पार कर रहा है? अधिभावी कब: विचाराधीन अनुरोध एक खाली पेज वापस (टेम्पलेट फाइलों का उपयोग नहीं कर रहे हैं)। 200 = ओवरराइड न करें [डिफ़ॉल्ट]; 403 = "403 Forbidden" के साथ ओवरराइड करें (मना किया हुआ); 503 = "503 Service unavailable" के साथ ओवरराइड करें (सेवा उप्लब्ध् नहीं है)।';

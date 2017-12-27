@@ -383,6 +383,9 @@ General configuración para CIDRAM.
 "force_hostname_lookup"
 - ¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento.
 
+"allow_gethostbyaddr_lookup"
+- ¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No. *Nota: IPv6 no es compatible con gethostbyaddr.*
+
 #### "signatures" (Categoría)
 Configuración de firmas.
 
@@ -894,4 +897,4 @@ Sí. Para hacer esto, necesitarás crear un archivo de módulo personalizado. *V
 ---
 
 
-Última Actualización: 22 Diciembre 2017 (2017.12.22).
+Última Actualización: 27 Diciembre 2017 (2017.12.27).

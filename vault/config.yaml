@@ -215,6 +215,9 @@ Config Defaults:
   force_hostname_lookup:
    type: bool
    default: false
+  allow_gethostbyaddr_lookup:
+   type: bool
+   default: true
  signatures:
   ipv4:
    type: string

@@ -383,6 +383,9 @@ Generelle Konfiguration von CIDRAM.
 "force_hostname_lookup"
 - Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]. Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken.
 
+"allow_gethostbyaddr_lookup"
+- gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein. *Hinweis: IPv6 wird von gethostbyaddr nicht unterstützt.*
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -894,4 +897,4 @@ Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUN
 ---
 
 
-Zuletzt aktualisiert: 22 Dezember 2017 (2017.12.22).
+Zuletzt aktualisiert: 27 Dezember 2017 (2017.12.27).

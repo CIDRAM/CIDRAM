@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
-$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？​True = はい（Default/デフォルルト）；​False = いいえ。​<em>注：IPv6はgethostbyaddrによってサポートされていません。</em>';
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
 $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）；​４０３ = 「403 Forbidden」で上書きする；​５０３ = 「503 Service unavailable」で上書きする。';
 $CIDRAM['lang']['config_general_default_algo'] = '将来のすべてのパスワードとセッションに使用するアルゴリズムを定義します。​オプション：​PASSWORD_DEFAULT（Default/デフォルルト）、​PASSWORD_BCRYPT、​PASSWORD_ARGON2I ​（ＰＨＰ >= 7.2.0 が必要）。';
 $CIDRAM['lang']['config_general_default_dns'] = 'ホスト名検索に使用する、​ＤＮＳ（ドメイン・ネーム・システム）サーバーのカンマ区切りリスト。​Default（デフォルルト） = "8.8.8.8,8.8.4.4" （Google DNS）。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
@@ -70,8 +70,8 @@ $CIDRAM['lang']['config_signatures_track_mode'] = '違反はいつカウント�
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣＳＳファイルＵＲＬ。';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'フォントの倍率。​Default/デフォルルト = １。';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAMに使用するデフォルトテーマ。';
-$CIDRAM['lang']['Extended Description: Bypasses'] = 'デフォルト署名バイパス、​通常はメインパッケージに含まれています。​';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = 'メインパッケージ​（署名、​ドキュメンテーション、​コンフィギュレーション、​は含まれません）。​';
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'デフォルト署名バイパス、​通常はメインパッケージに含まれています。';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'メインパッケージ​（署名、​ドキュメンテーション、​コンフィギュレーション、​は含まれません）。';
 $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
@@ -176,14 +176,14 @@ $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在し�
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
-$CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。​';
-$CIDRAM['lang']['Name: IPv4'] = 'ＩＰｖ４のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。​';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'ＩＰｖ４のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。​';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'ＩＰｖ４のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。​';
+$CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。';
+$CIDRAM['lang']['Name: IPv4'] = 'ＩＰｖ４のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'ＩＰｖ４のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'ＩＰｖ４のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。';
 $CIDRAM['lang']['Name: IPv4-Other'] = 'ＩＰｖ４のシグネチャファイル​（プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ）。';
-$CIDRAM['lang']['Name: IPv6'] = 'ＩＰｖ６のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。​';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'ＩＰｖ６のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。​';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'ＩＰｖ６のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。​';
+$CIDRAM['lang']['Name: IPv6'] = 'ＩＰｖ６のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'ＩＰｖ６のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'ＩＰｖ６のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。';
 $CIDRAM['lang']['Name: IPv6-Other'] = 'ＩＰｖ６のシグネチャファイル​（プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ）。';
 $CIDRAM['lang']['previewer_days'] = '日';
 $CIDRAM['lang']['previewer_hours'] = '時';

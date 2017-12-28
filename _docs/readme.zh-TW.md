@@ -385,7 +385,8 @@ CIDRAM 應自動阻止不良的請求至您的網站，​沒有任何需求除�
 - 強制主機名查找？​True（真）=跟踪； False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。
 
 『allow_gethostbyaddr_lookup』
-- 當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】； False（假）=不允許。​*注意：gethostbyaddr不支持IPv6。*
+- 當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】； False（假）=不允許。
+- *注意：在某些32位系統上，IPv6查找可能無法正常工作。*
 
 #### 『signatures』 （類別）
 簽名配置。

@@ -384,7 +384,8 @@ Generale configurazione per CIDRAM.
 - Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni.
 
 "allow_gethostbyaddr_lookup"
-- Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No. *Nota: IPv6 non è supportato da gethostbyaddr.*
+- Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No.
+- *Nota: La ricerca di IPv6 potrebbe non funzionare correttamente su alcuni sistemi a 32-bit.*
 
 #### "signatures" (Categoria)
 Configurazione per firme.

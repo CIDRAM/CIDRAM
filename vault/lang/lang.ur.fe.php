@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ہوم</a> | <a href="?cidram-page=logout">لاگ آوٹ</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">لاگ آوٹ</a>';
-$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں. نوٹ: IPv6 gethostbyaddr کی طرف سے حمایت نہیں ہے.';
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں.';
 $CIDRAM['lang']['config_general_ban_override'] = 'کی منسوخی "forbid_on_block" کب "infraction_limit" حد سے تجاوز کر رہا ہے? زیرکر کب: التواء درخواستوں ایک خالی صفحے کو واپس (سانچے فائلوں کا استعمال نہیں کر رہے ہیں). 200 = کی جگہ لے لے نہیں ہے [طے شدہ]؛ کے ساتھ "403 حرام" 403 = جگہ لے لے؛ کے ساتھ "503 سروس دستیاب نہیں 503 = زیر کریں".';
 $CIDRAM['lang']['config_general_default_algo'] = 'اس بات کی وضاحت کرتا ہے جو تمام مستقبل کے پاس ورڈ اور سیشن کے لئے الگورتھم استعمال کرنا ہے. اختیارات: PASSWORD_DEFAULT (ڈیفالٹ), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 کی ضرورت ہے).';
 $CIDRAM['lang']['config_general_default_dns'] = 'میزبان نام لک اپ کے لئے استعمال کرنے کے لئے DNS سرورز کی کوما ختم ہونے والی فہرست. پہلے سے طے شدہ = "8.8.8.8,8.8.4.4" (Google DNS). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!';

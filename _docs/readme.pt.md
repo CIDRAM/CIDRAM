@@ -384,7 +384,8 @@ Configuração geral por CIDRAM.
 - Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os pedidos. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho.
 
 "allow_gethostbyaddr_lookup"
-- Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não. *Nota: IPv6 não é suportado pelo gethostbyaddr.*
+- Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não.
+- *Nota: A pesquisa do IPv6 pode não funcionar corretamente em alguns sistemas de 32-bits.*
 
 #### "signatures" (Categoria)
 Configuração por assinaturas.

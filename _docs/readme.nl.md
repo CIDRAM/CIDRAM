@@ -384,7 +384,8 @@ Algemene configuratie voor CIDRAM.
 - Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties.
 
 "allow_gethostbyaddr_lookup"
-- Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee. *Notitie: IPv6 wordt niet ondersteund door gethostbyaddr.*
+- Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee.
+- *Notitie: IPv6-lookup werkt mogelijk niet correct op sommige 32-bits systemen.*
 
 #### "signatures" (Categorie)
 Configuratie voor signatures.

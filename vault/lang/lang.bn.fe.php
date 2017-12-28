@@ -18,7 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">হোম পেজ</a> | <a href="?cidram-page=logout">প্রস্থান</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">প্রস্থান</a>';
-$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'যখন UDP অনুপলব্ধ হয় তখন gethostbyaddr সন্ধানগুলি মঞ্জুর করুন? True = হাঁ [ডিফল্ট]; False = না। <em>দ্রষ্টব্য: IPv6 gethostbyaddr দ্বারা সমর্থিত নয়।</em>';
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'যখন UDP অনুপলব্ধ হয় তখন gethostbyaddr সন্ধানগুলি মঞ্জুর করুন? True = হাঁ [ডিফল্ট]; False = না।';
 $CIDRAM['lang']['config_general_ban_override'] = 'যখন "infraction_limit" অতিক্রম করা হয় তখন "forbid_on_block" ওভাররাইড করে? ওভাররাইড করার সময়: ব্লক করা অনুরোধগুলি একটি ফাঁকা পৃষ্ঠাটি ফেরত পাঠায় (টেমপ্লেট ফাইল ব্যবহার করা হয় না)। 200 = ওভাররাইড করবেন না [ডিফল্ট]; 403 = "403 Forbidden" এর সাথে ওভাররাইড করুন; 503 = "503 Service unavailable" এর সাথে ওভাররাইড করুন।';
 $CIDRAM['lang']['config_general_default_algo'] = 'সব ভবিষ্যত পাসওয়ার্ড এবং সেশন জন্য ব্যবহার করে অ্যালগরিদম সংজ্ঞায়িত করে। বিকল্প: PASSWORD_DEFAULT (ডিফল্ট), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 প্রয়োজন)।';
 $CIDRAM['lang']['config_general_default_dns'] = 'হোস্টনামগুলি দেখার জন্য ডিএনএস সার্ভারগুলির একটি কমা দ্বারা পৃথক তালিকা। ডিফল্ট = "8.8.8.8,8.8.4.4" (Google DNS)। সতর্কতা: আপনি কি করছেন তা না জানলে তা পরিবর্তন করবেন না!';

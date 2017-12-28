@@ -385,7 +385,8 @@ CIDRAM 应自动阻止不良的请求至您的网站，​没有任何需求除�
 - 强制主机名查找？​True（真）=跟踪； False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。
 
 “allow_gethostbyaddr_lookup”
-- 当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】； False（假）=不允许。​*注意：gethostbyaddr不支持IPv6。*
+- 当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】； False（假）=不允许。
+- *注意：在某些32位系统上，IPv6查找可能无法正常工作。*
 
 #### “signatures” （类别）
 签名配置。

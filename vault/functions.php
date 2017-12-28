@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.27).
+ * This file: Functions file (last modified: 2017.12.28).
  */
 
 /**
@@ -862,7 +862,6 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
             chr(strlen($Octets[2])) . $Octets[2] .
             chr(strlen($Octets[1])) . $Octets[1] .
             "\7in-addr\4arpa\0\0\x0c\0\1";
-        $Type = 4;
     }
 
     /** The IP address is IPv6. */
@@ -880,7 +879,6 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
             );
         }
         $Lookup = strrev(preg_replace(['/\:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
-        $Type = 6;
     }
 
     /** The IP address is.. wrong. Let's exit the closure. */
@@ -893,8 +891,8 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
         $CIDRAM['Root'] = (!function_exists('posix_getuid') || posix_getuid() === 0);
     }
 
-    /** Use gethostbyaddr if we anticipate UDP failing and the IP address is IPv4. */
-    if (!$CIDRAM['Root'] && $Type === 4 && $CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']) {
+    /** Use gethostbyaddr if enabled and if we anticipate UDP failing. */
+    if (!$CIDRAM['Root'] && $CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']) {
         return $CIDRAM['DNS-Reverse-Fallback']($Addr);
     }
 
@@ -916,7 +914,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
 
     /** DNS is disabled. Let's exit the closure. */
     if (!$DNS && !$DNS = $CIDRAM['Config']['general']['default_dns']) {
-        return ($Type === 4 && $CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']) ? $CIDRAM['DNS-Reverse-Fallback']($Addr) : $Addr;
+        return ($CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']) ? $CIDRAM['DNS-Reverse-Fallback']($Addr) : $Addr;
     }
 
     /** Expand list of lookup servers. */
@@ -944,7 +942,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     /** No response, or failed lookup. Let's exit the closure. */
     if (empty($Response)) {
         return (
-            $Type === 4 && $CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']
+            $CIDRAM['Config']['general']['allow_gethostbyaddr_lookup']
         ) ? $CIDRAM['DNS-Reverse-Fallback']($Addr) : ($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = $Addr);
     }
 
@@ -1294,7 +1292,7 @@ $CIDRAM['Meld'] = function () {
 $CIDRAM['ClearFromCache'] = function ($Section) use (&$CIDRAM) {
     if (isset($CIDRAM['Cache'][$Section])) {
         foreach ($CIDRAM['Cache'][$Section] as $Key => $Value) {
-            if ($Value['Time'] < $CIDRAM['Now']) {
+            if (empty($Value['Time']) || $Value['Time'] < $CIDRAM['Now']) {
                 unset($CIDRAM['Cache'][$Section][$Key]);
                 $CIDRAM['CacheModified'] = true;
             }

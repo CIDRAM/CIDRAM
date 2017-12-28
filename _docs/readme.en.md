@@ -384,7 +384,8 @@ General CIDRAM configuration.
 - Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance.
 
 "allow_gethostbyaddr_lookup"
-- Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No. *Note: IPv6 isn't supported by gethostbyaddr.*
+- Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No.
+- *Note: IPv6 lookup mightn't work correctly on some 32-bit systems.*
 
 #### "signatures" (Category)
 Signatures configuration.

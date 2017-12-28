@@ -5709,25 +5709,19 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 1.77%.
+# %Listed, Google Malware Dashboard: 1.01%.
 # %Listed, CleanTalk.org: 17.43%.
-# Stop Forum Spam (SFS) listings: 13,030.
-# Updated: 2017.07.21
+# %Listed, abuseat.org (CBL-Listed): 2.92%.
+# Stop Forum Spam (SFS) listings: 14,224.
+# Updated: 2017.12.28
 
 1.52.0.0/14 Deny Generic
-27.111.228.0/22 Deny Generic
 42.112.0.0/13 Deny Generic
 43.239.148.0/22 Deny Generic
 43.239.223.0/24 Deny Generic
 45.125.239.0/24 Deny Generic
 58.186.0.0/15 Deny Generic
 80.81.192.0/22 Deny Generic
-80.249.208.0/21 Deny Generic
-100.64.0.0/11 Deny Generic
-100.96.0.0/12 Deny Generic
-100.112.0.0/13 Deny Generic
-100.120.0.0/14 Deny Generic
-100.125.176.0/22 Deny Generic
 103.12.160.0/22 Deny Generic
 103.16.102.0/23 Deny Generic
 103.17.88.0/24 Deny Generic
@@ -5736,9 +5730,10 @@ recaptcha:
 103.53.170.0/23 Deny Generic
 103.72.96.0/22 Deny Generic
 103.74.120.0/22 Deny Generic
-103.81.84.0/24 Deny Generic
+103.81.84.0/22 Deny Generic
 103.82.192.0/22 Deny Generic
 103.90.227.0/24 Deny Generic
+103.102.128.0/22 Deny Generic
 103.200.22.0/23 Deny Generic
 103.203.158.0/23 Deny Generic
 103.205.104.0/22 Deny Generic
@@ -5749,15 +5744,16 @@ recaptcha:
 113.23.0.0/17 Deny Generic
 118.68.0.0/14 Deny Generic
 119.27.63.0/24 Deny Generic
-157.119.244.0/23 Deny Generic
 183.80.0.0/16 Deny Generic
 183.81.0.0/17 Deny Generic
 195.66.224.0/22 Deny Generic
+203.186.77.0/24 Deny Generic
 203.190.230.0/24 Deny Generic
 210.171.224.0/24 Deny Generic
 210.173.176.0/24 Deny Generic
 210.245.0.0/17 Deny Generic
-218.100.6.0/24 Deny Generic
+211.136.98.0/24 Deny Generic
+218.100.6.0/23 Deny Generic
 218.100.10.0/24 Deny Generic
 Tag: CFPT
 ---

@@ -4,16 +4,17 @@
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, Google Malware Dashboard: 0.31%.
 # %Listed, CleanTalk.org: 56.01%.
-# Stop Forum Spam (SFS) listings: 2,187.
-# Updated: 2017.11.02
+# Stop Forum Spam (SFS) listings: 2,816.
+# Updated: 2017.12.30
 
 2a01:230::/48 Deny Generic
 2a01:230:2::/47 Deny Generic
 2a06:dc40::/29 Deny Generic
-2a0a:b383::/32 Deny Generic
 2a0a:b386::/32 Deny Generic
+2a0d:c700::/32 Deny Generic
+Origin: RU
 Tag: ISPsystem
 
 
@@ -24,6 +25,7 @@ Tag: ISPsystem
 # Updated: 2016.01.18 / Checked: 2017.11.25
 
 2a02:2020::/32 Deny Generic
+Origin: TR
 Tag: CIZGI TELEKOM
 
 
@@ -35,6 +37,7 @@ Tag: CIZGI TELEKOM
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
+Origin: DE
 Tag: Vautron Rech. AG
 
 
@@ -44,6 +47,7 @@ Tag: Vautron Rech. AG
 # Updated: 2016.01.18 / Checked: 2017.08.25
 
 2a00:1a68::/32 Deny Generic
+Origin: AT
 Tag: World4You
 
 
@@ -55,6 +59,7 @@ Tag: World4You
 # Updated: 2016.07.13 / Checked: 2017.08.15
 
 2a03:57c0::/32 Deny Generic
+Origin: IR
 Tag: AS48159
 
 
@@ -66,21 +71,24 @@ Tag: AS48159
 # Updated: 2017.10.20
 
 2001:4188::/29 Deny Generic
+Origin: IR
 Tag: AS12880
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.73% (AS24940), 0.60% (AS37153).
+# %Listed, Google Malware Dashboard: 0.29% (AS24940), 0.39% (AS37153).
 # %Listed, CleanTalk.org: 33.97% (AS24940), 32.17% (AS37153).
-# Stop Forum Spam (SFS) listings: 19,656 (AS24940), 315 (AS37153).
-# Updated: 2017.11.02
+# Stop Forum Spam (SFS) listings: 23,398 (AS24940), 429 (AS37153).
+# Updated: 2017.12.30
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
 2a06:be80::/29 Deny Generic
-2a0c:de00::/29 Deny Generic
+2a0d:7e00::/48 Deny Generic
+Origin: DE
 2c0f:f300::/48 Deny Generic
 2c0f:fce8::/33 Deny Generic
+Origin: ZA
 Tag: Hetzner Online GmbH
 
 
@@ -96,19 +104,36 @@ Tag: Hetzner Online GmbH
 2a05:9bc0::/29 Deny Generic
 2a06:41c0::/29 Deny Generic
 2a06:c400::/29 Deny Generic
+Origin: TR
 Tag: AS51559
 
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
 # %Listed, CleanTalk.org: 32.56%.
-# Stop Forum Spam (SFS) listings: 338.
-# Updated: 2017.08.15
+# Stop Forum Spam (SFS) listings: 393.
+# Updated: 2017.12.30
 
-2400:8b00:1000:2::/64 Deny Spam
-2400:8b00:1000:7::/64 Deny Spam
-2400:8b00:1000:8::/62 Deny Spam
+2400:8b00:100::/42 Deny Spam
+2400:8b00:200::/42 Deny Spam
+2400:8b00:300::/42 Deny Spam
+2400:8b00:800::/42 Deny Spam
+2400:8b00:980::/42 Deny Spam
+2400:8b00:a00::/42 Deny Spam
+2400:8b00:a80::/42 Deny Spam
+2400:8b00:b00::/42 Deny Spam
+2400:8b00:b80::/42 Deny Spam
+2400:8b00:c00::/42 Deny Spam
+2400:8b00:c80::/42 Deny Spam
+2400:8b00:d00::/42 Deny Spam
+2400:8b00:d80::/42 Deny Spam
+2400:8b00:e00::/42 Deny Spam
+2400:8b00:e80::/42 Deny Spam
+2400:8b00:f00::/42 Deny Spam
+2400:8b00:f80::/42 Deny Spam
+2400:8b00:1000::/44 Deny Spam
 2400:8b00:1100:1::/64 Deny Spam
 2400:8b00:a000::/47 Deny Spam
+Origin: ID
 Tag: PT Hutchison
 ---
 recaptcha:
@@ -123,6 +148,7 @@ recaptcha:
 
 2400:9800::/32 Deny Spam
 2600:1417:3000::/48 Deny Spam
+Origin: ID
 Tag: PT Excelcomindo
 ---
 recaptcha:
@@ -136,6 +162,7 @@ recaptcha:
 # Updated: 2016.01.18 / Checked: 2017.11.02
 
 2a00:1f70::/32 Deny Generic
+Origin: RU
 Tag: H1 LLC
 
 
@@ -152,6 +179,7 @@ Tag: H1 LLC
 2a03:5180:6:3::/64 Deny Generic
 2a03:5180:6:4::/64 Deny Generic
 2a06:b380::/29 Deny Generic
+Origin: RO
 Tag: Voxility LLC
 
 
@@ -162,6 +190,7 @@ Tag: Voxility LLC
 # Updated: 2016.01.18 / Checked: 2017.11.25
 
 2a02:440::/32 Deny Generic
+Origin: RU
 Tag: INFOBOX
 
 
@@ -174,6 +203,7 @@ Tag: INFOBOX
 2a03:a960:1000::/48 Deny Spam
 2a05:b80::/29 Deny Spam
 2a0a:9a06::/32 Deny Spam
+Origin: RU
 Tag: Mir Telematiki Ltd
 
 
@@ -185,17 +215,11 @@ Tag: Mir Telematiki Ltd
 # Updated: 2017.03.22 / Checked: 2017.10.23
 
 2404:7000::/32 Deny Spam
+Origin: PK
 Tag: Pakistan Telecom
 ---
 recaptcha:
  enabled: true
-
-
-# ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2016.03.13 / Checked: 2017.09.19
-
-2620:11::/40 Deny Generic
-Tag: JPMorgan Chase & Co
 
 
 # ASN 41011 ("CH-NET S.R.L").
@@ -206,7 +230,16 @@ Tag: JPMorgan Chase & Co
 2001:67c:2100::/48 Deny Generic
 2a06:afc0::/47 Deny Generic
 2a06:afc0:2::/48 Deny Generic
+Origin: RO
 Tag: CH-NET S.R.L
+
+
+# ASN 7743 ("JPMorgan Chase & Co").
+# Updated: 2016.03.13 / Checked: 2017.12.30
+
+2620:11::/40 Deny Generic
+Origin: US
+Tag: JPMorgan Chase & Co
 
 
 # ASN 42708 ("Portlane AB").
@@ -220,6 +253,7 @@ Tag: CH-NET S.R.L
 2a01:8640:6::/48 Deny Spam
 2a02:7ac0::/32 Deny Spam
 2a02:d507:ffff::/48 Deny Spam
+Origin: SE
 Tag: Portlane Networks AB
 ---
 recaptcha:
@@ -235,13 +269,14 @@ recaptcha:
 2a00:1d78::/32 Deny Generic
 2a0a:7746::/32 Deny Generic
 2a0b:d000::/32 Deny Generic
+Origin: RU
 Tag: PIN-AS
 
 
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
 # %Listed, CleanTalk.org: 28.57% (AS16880), 0% (AS36421).
-# Updated: 2017.09.19
+# Updated: 2017.09.19 / Checked: 2017.12.30
 
 2620:101:402c::/47 Deny Generic
 2620:101:4034::/47 Deny Generic
@@ -249,6 +284,7 @@ Tag: PIN-AS
 2620:101:403a::/48 Deny Generic
 2620:101:403c::/48 Deny Generic
 2620:101:403f::/48 Deny Generic
+Origin: US
 Tag: Trend Micro
 
 
@@ -265,6 +301,7 @@ Tag: Trend Micro
 
 2001:4cd0::/32 Deny Generic
 2a02:26f0:8000::/48 Deny Generic
+Origin: IL
 Tag: Bezeq International
 ---
 recaptcha:
@@ -279,6 +316,7 @@ recaptcha:
 # Updated: 2016.12.10 / Checked: 2017.11.20
 
 2001:40a8::/32 Deny Spam
+Origin: IL
 Tag: 012 Smile
 ---
 recaptcha:
@@ -291,6 +329,7 @@ recaptcha:
 # Updated: 2017.09.22
 
 2a00:4b40::/32 Deny Generic
+Origin: SK
 Tag: Websupport s.r.o
 
 
@@ -303,6 +342,7 @@ Tag: Websupport s.r.o
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
 2a06:4b00::/29 Deny Generic
+Origin: DE
 Tag: Xirra GmbH
 
 
@@ -313,6 +353,7 @@ Tag: Xirra GmbH
 # Updated: 2016.03.30 / Checked: 2017.11.14
 
 2a00:ede0::/32 Deny Generic
+Origin: UA
 Tag: PP SKS-LUGAN
 
 
@@ -356,6 +397,7 @@ Tag: PP SKS-LUGAN
 2406:5600:d2::/47 Deny Spam
 2406:5600:d4::/46 Deny Spam
 2406:5600:d8::/45 Deny Spam
+Origin: IN
 Tag: Sistema Shyam
 ---
 recaptcha:
@@ -385,6 +427,7 @@ recaptcha:
 2a0a:df80:24::/48 Deny Generic
 2a0a:e5c0::/29 Deny Generic
 2a0b:5400:1::/48 Deny Generic
+Origin: CH
 Tag: Init7
 
 
@@ -393,6 +436,7 @@ Tag: Init7
 # Updated: 2017.12.08
 
 2a03:6540::/32 Deny Generic
+Origin: VG
 Tag: Yes Networks
 
 
@@ -405,6 +449,7 @@ Tag: Yes Networks
 2600:1400:7::/48 Deny Spam
 2a02:b48:4000::/34 Deny Spam
 2a03:5400::/32 Deny Spam
+Origin: US
 Tag: PCCW Global
 ---
 recaptcha:
@@ -417,6 +462,7 @@ recaptcha:
 # Updated: 2016.05.12 / Checked: 2017.11.24
 
 2c0f:f4a8::/32 Deny Spam
+Origin: ZA
 Tag: GREEN FLASH TRADING
 
 
@@ -425,6 +471,7 @@ Tag: GREEN FLASH TRADING
 # Updated: 2016.04.23 / Checked: 2017.11.14
 
 2a01:54c0::/32 Deny Generic
+Origin: NL
 Tag: Zyztm
 
 
@@ -436,6 +483,7 @@ Tag: Zyztm
 
 2a04:ac00:1::/48 Deny Generic
 2a04:ac00:4::/48 Deny Generic
+Origin: RU
 Tag: Trader soft LLC
 
 
@@ -467,6 +515,7 @@ Tag: Trader soft LLC
 2a07:21c0::/29 Deny Generic
 2a0a:6040::/29 Deny Generic
 2a0b:a280::/32 Deny Generic
+Origin: TR
 Tag: DGN TEKNOLOJI
 
 
@@ -478,6 +527,7 @@ Tag: DGN TEKNOLOJI
 
 2401:5f80::/34 Deny Generic
 2401:5f80:4000::/35 Deny Generic
+Origin: VN
 Tag: Vietel
 ---
 recaptcha:
@@ -491,6 +541,7 @@ recaptcha:
 # Updated: 2016.07.20 / Checked: 2017.09.03
 
 2a04:2c00::/29 Deny Generic
+Origin: UA
 Tag: TeNeT
 
 
@@ -503,6 +554,7 @@ Tag: TeNeT
 2a00:9900::/29 Deny Generic
 2a01:320::/29 Deny Generic
 2a0b:dd00::/29 Deny Generic
+Origin: MD
 Tag: STARNET S.R.L
 
 
@@ -515,6 +567,7 @@ Tag: STARNET S.R.L
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
+Origin: IN
 Tag: SITI NETWORKS LTD
 ---
 recaptcha:
@@ -528,6 +581,7 @@ recaptcha:
 # Updated: 2017.10.20
 
 2407:9e00::/48 Deny Spam
+Origin: PK
 Tag: AS23888
 ---
 recaptcha:
@@ -552,6 +606,7 @@ recaptcha:
 2402:8100:3850::/45 Deny Spam
 2402:8100:38c0::/42 Deny Spam
 2402:8100:3900::/41 Deny Spam
+Origin: IN
 Tag: Idea Cellular
 ---
 recaptcha:
@@ -567,6 +622,7 @@ recaptcha:
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
+Origin: UA
 Tag: Kyivstar
 
 
@@ -599,6 +655,7 @@ Tag: Kyivstar
 2a03:7380:6000::/41 Deny Spam
 2a03:7380:6400::/42 Deny Spam
 2a03:7380:7380::/42 Deny Spam
+Origin: UA
 Tag: AS13188-CDN-LTD
 
 
@@ -609,6 +666,7 @@ Tag: AS13188-CDN-LTD
 # Updated: 2016.09.06 / Checked: 2017.10.20
 
 2a02:f680::/29 Deny Spam
+Origin: RU
 Tag: MAROSNET
 
 
@@ -619,6 +677,7 @@ Tag: MAROSNET
 
 2a02:598::/32 Deny Spam
 2a06:2140::/29 Deny Spam
+Origin: CZ
 Tag: Seznam.cz
 
 
@@ -628,6 +687,7 @@ Tag: Seznam.cz
 # Updated: 2017.04.26 / Checked: 2017.10.20
 
 2402:800::/32 Deny Spam
+Origin: VN
 Tag: Viettel Corporation
 ---
 recaptcha:
@@ -650,6 +710,7 @@ Tag: PHOENIX NAP, LLC
 2a02:1c8:7::/48 Deny Spam
 2a02:1c8:100::/40 Deny Spam
 2a02:1c8:700::/40 Deny Spam
+Origin: RU
 Tag: Ufanet
 ---
 recaptcha:
@@ -720,6 +781,7 @@ recaptcha:
 2600:1417:50::/47 Deny Spam
 2600:1417:62::/48 Deny Spam
 2600:1417:71::/48 Deny Spam
+Origin: IN
 Tag: BSNL
 ---
 recaptcha:
@@ -760,6 +822,7 @@ recaptcha:
 2a04:f580:8290::/48 Deny Generic
 2c0f:f7a8:8010::/47 Deny Generic
 2c0f:f7a8:8210::/47 Deny Generic
+Origin: CN
 Tag: China Backbone 4134
 ---
 recaptcha:
@@ -783,6 +846,7 @@ recaptcha:
 # Updated: 2016.09.14 / Checked: 2017.09.30
 
 2408:8000::/24 Deny Generic
+Origin: CN
 Tag: China Backbone 4837
 ---
 recaptcha:
@@ -809,6 +873,7 @@ recaptcha:
 2406:300::/32 Deny Generic
 2407:4700::/32 Deny Generic
 2606:c00:35:2::/64 Deny Generic
+Origin: TW
 Tag: DCBG
 ---
 recaptcha:
@@ -891,6 +956,7 @@ recaptcha:
 2001:ef0:1:1b::/64 Deny Generic
 2400:8800:7f02:36::/64 Deny Generic
 2405:f980::/48 Deny Generic
+Origin: VN
 Tag: VNPT Corp
 ---
 recaptcha:
@@ -918,6 +984,7 @@ recaptcha:
 2001:df6:1e00::/48 Deny Generic
 2401:f740::/32 Deny Generic
 2405:4800::/32 Deny Generic
+Origin: VN
 Tag: CFPT
 ---
 recaptcha:
@@ -989,7 +1056,24 @@ recaptcha:
 2600:1417:6e::/48 Deny Spam
 2600:1417:70::/48 Deny Spam
 2600:1417:78::/48 Deny Spam
+Origin: IN
 Tag: Bharti Airtel
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 23944 ("SKYBroadband SKYCable Corporation").
+# ( No problems encountered from their IPv6 ranges yet, but included here anyhow for reference, but commented out. )
+# %Listed, CleanTalk.org: 4.87%.
+# Stop Forum Spam (SFS) listings: 284.
+# Updated: 2017.12.30
+
+# 2404:3c00:1000::/36 Deny Spam
+# 2404:3c00:2000::/35 Deny Spam
+# 2404:3c00:4000::/36 Deny Spam
+Origin: PH
+Tag: SKYBROADBAND
 ---
 recaptcha:
  enabled: true
@@ -1002,6 +1086,7 @@ recaptcha:
 # Updated: 2017.03.22 / Checked: 2017.09.19
 
 2401:4100::/32 Deny Spam
+Origin: PK
 Tag: AUGERE-Pakistan
 ---
 recaptcha:
@@ -1043,6 +1128,7 @@ recaptcha:
 2a01:540:a000::/36 Deny Spam
 2a01:540:c000::/36 Deny Spam
 2a01:620::/32 Deny Spam
+Origin: RU
 Tag: PJSC Rostelecom
 ---
 recaptcha:
@@ -1059,6 +1145,7 @@ recaptcha:
 # Updated: 2017.06.08 / Checked: 2017.09.30
 
 2a00:18c0::/32 Deny Generic
+Origin: RU
 Tag: OJSC Vimpelcom
 ---
 recaptcha:
@@ -1074,6 +1161,7 @@ recaptcha:
 # Updated: 2017.09.30
 
 2a00:1248::/32 Deny Generic
+Origin: RU
 Tag: PJSC Vimpelcom
 ---
 recaptcha:
@@ -1090,6 +1178,7 @@ recaptcha:
 # Updated: 2017.09.30
 
 2a00:7700::/32 Deny Generic
+Origin: RU
 Tag: Novotelecom Ltd
 ---
 recaptcha:
@@ -1104,6 +1193,7 @@ recaptcha:
 # Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a00:fc00::/32 Deny Spam
+Origin: UA
 Tag: UARNet
 ---
 recaptcha:
@@ -1117,6 +1207,7 @@ recaptcha:
 # Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a03:a0e0::/32 Deny Spam
+Origin: RU
 Tag: Chelyabinsk-Signal
 ---
 recaptcha:
@@ -1129,6 +1220,7 @@ recaptcha:
 # Updated: 2017.07.08 / Checked: 2017.12.08
 
 2a02:28d8::/36 Deny Spam
+Origin: RU
 Tag: TransTeleCom
 ---
 recaptcha:
@@ -1143,6 +1235,7 @@ recaptcha:
 2a02:2698:4c00::/38 Deny Spam
 2a02:2698:6c00::/38 Deny Spam
 2a02:2698:a000::/48 Deny Spam
+Origin: RU
 Tag: ER-Telecom Holding
 ---
 recaptcha:
@@ -1156,6 +1249,7 @@ recaptcha:
 # Updated: 2017.11.26
 
 2a00:1c78::/29 Deny Generic
+Origin: RU
 Tag: WEST CALL SPb LLC
 ---
 recaptcha:
@@ -1170,4 +1264,5 @@ recaptcha:
 
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam
+Origin: SE
 Tag: Foreningen

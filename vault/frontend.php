@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.12.24).
+ * This file: Front-end handler (last modified: 2017.12.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,6 +37,9 @@ $CIDRAM['FE'] = [
 
     /** Main front-end JavaScript data. */
     'JS' => $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')),
+
+    /** Populated by any other header data required for the request (usually nothing). */
+    'OtherHead' => '',
 
     /** Default password hash ("password"). */
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
@@ -661,6 +664,17 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'icon' && $CIDRAM['FE']['Permiss
 
     die;
 
+}
+
+/** A simple passthru for the flags CSS. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'flags' && $CIDRAM['FE']['Permissions'] && file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+    /** Sets mime-type. */
+    header('Content-Type: text/css');
+    /** Prevents needlessly reloading static assets. */
+    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($CIDRAM['Vault'] . 'fe_assets/flags.css')));
+    /** Sends asset data. */
+    echo $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/flags.css');
+    die;
 }
 
 /** Accounts. */
@@ -2522,6 +2536,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     /** Link to search for related blocks and search information readout. */
     $CIDRAM['FE']['SearchInfo'] = $CIDRAM['FE']['SearchQuery'] = $CIDRAM['FE']['BlockLink'] = '';
 
+    /** Add flags CSS. */
+    if (file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+        $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+    }
+
     /** How to display the log data? */
     $CIDRAM['FE']['TextMode'] = false;
     if (empty($CIDRAM['QueryVars']['text-mode']) || $CIDRAM['QueryVars']['text-mode'] === 'false') {
@@ -2545,6 +2564,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
             $CIDRAM['FE']['FieldSeparator'] = '：';
         }
 
+        /** Check whether flags CSS is installed. */
+        $CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css');
+
         /** Handle block filtering. */
         if (!empty($CIDRAM['FE']['logfileData']) && !empty($CIDRAM['QueryVars']['search'])) {
             $CIDRAM['FE']['NewLogFileData'] = '';
@@ -2562,7 +2584,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
                 $CIDRAM['FE']['logfileData'],
                 '("' . $CIDRAM['FE']['SearchQuery'] . '", L',
                 $CIDRAM['FE']['BlockEnd']
-            )) !== false) {
+            )) !== false || (strlen($CIDRAM['FE']['SearchQuery']) === 2 && ($CIDRAM['FE']['Needle'] = strpos(
+                $CIDRAM['FE']['logfileData'],
+                '[' . $CIDRAM['FE']['SearchQuery'] . ']',
+                $CIDRAM['FE']['BlockEnd']
+            )) !== false)) {
                 $CIDRAM['FE']['BlockStart'] = strrpos(substr($CIDRAM['FE']['logfileData'], 0, $CIDRAM['FE']['Needle']), $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd']);
                 $CIDRAM['FE']['BlockEnd'] = strpos($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['Needle']);
                 $CIDRAM['FE']['NewLogFileData'] .= substr($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['BlockEnd'] - $CIDRAM['FE']['BlockStart']);
@@ -2576,10 +2602,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
                 $CIDRAM['FE']['EntryCount'] = substr_count($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator']);
             }
             unset($CIDRAM['FE']['Needle'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['NewLogFileData']);
+            $CIDRAM['FE']['SearchInfoRender'] = (
+                $CIDRAM['FE']['Flags'] && preg_match('~^[A-Z]{2}$~', $CIDRAM['FE']['SearchQuery'])
+            ) ? '<span class="flag ' . $CIDRAM['FE']['SearchQuery'] . '"><span></span></span>' : '<code>' . $CIDRAM['FE']['SearchQuery'] . '</code>';
             $CIDRAM['FE']['SearchInfo'] = '<br />' . sprintf(
                 $CIDRAM['Plural']($CIDRAM['FE']['EntryCount'], $CIDRAM['lang']['label_displaying_that_cite']),
                 $CIDRAM['Number_L10N']($CIDRAM['FE']['EntryCount']),
-                '<code>' . $CIDRAM['FE']['SearchQuery'] . '</code>'
+                $CIDRAM['FE']['SearchInfoRender']
             );
         } else {
             if (!str_replace("\n", '', $CIDRAM['FE']['logfileData'])) {
@@ -2624,7 +2653,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
 
     /** Prepare log data formatting. */
     if ($CIDRAM['FE']['TextMode']) {
-        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery'], $CIDRAM['FE']['FieldSeparator']);
+        $CIDRAM['Formatter']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], $CIDRAM['FE']['SearchQuery'], $CIDRAM['FE']['FieldSeparator'], $CIDRAM['FE']['Flags']);
     } elseif ($CIDRAM['FE']['TextModeLinks'] === 'tally') {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['Tally']($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockLink'], [$CIDRAM['lang']['field_id'], $CIDRAM['lang']['field_datetime']]);
     } else {

@@ -16,9 +16,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.12.26; Sub-minor code change; Maikuolan]: Root check safeguard added to
   the "DNS-Reverse" closure.
 
-- [2017.12.27; Sub-minor code change; Maikuolan]: Optional fallback added to
+- [2017.12.27; Minor code change; Maikuolan]: Optional fallback added to
   "DNS-Reverse" closure for "gethostbyaddr" (can be toggled via a newly added
   configuration directive).
+
+- [2017.12.30; NEW FEATURE; Maikuolan]: Added flag support to the front-end
+  logs page (it should now be possible to filter log entries on the basis of
+  country flags, if any were indicated by the signatures triggered for them).
 
 === Version/Release 1.3.0 ===
 MINOR RELEASE.

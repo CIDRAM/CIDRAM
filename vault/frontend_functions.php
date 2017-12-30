@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.25).
+ * This file: Front-end functions file (last modified: 2017.12.30).
  */
 
 /**
@@ -833,7 +833,7 @@ $CIDRAM['FilterTheme'] = function ($ChoiceKey) use (&$CIDRAM) {
 };
 
 /** Attempt to perform some simple formatting for the log data. */
-$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSeparator = ': ') {
+$CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSeparator = ': ', $Flags) {
     static $MaxBlockSize = 65536;
     if (strpos($In, "<br />\n") === false) {
         $In = '<div class="hB hFd s">' . $In . '</div>';
@@ -905,6 +905,20 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
                     );
                 }
             }
+            preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts);
+            if (count($Parts[1])) {
+                foreach ($Parts[1] as $ThisPart) {
+                    $Section = str_replace(
+                        '[' . $ThisPart . ']',
+                        $Flags ? (
+                            '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"><span></span></span></a>'
+                        ) : (
+                            '[<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
+                        ),
+                        $Section
+                    );
+                }
+            }
         }
         $Out .= substr($Section, 0, $BlockSeparatorLen * -1);
     }
@@ -962,12 +976,28 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
         foreach ($Entries as $Entry => $Count) {
             $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
             preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
-            foreach ($Parts[1] as $ThisPart) {
-                $Entry = str_replace(
-                    '("' . $ThisPart . '", L',
-                    '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
-                    $Entry
-                );
+            if (count($Parts[1])) {
+                foreach ($Parts[1] as $ThisPart) {
+                    $Entry = str_replace(
+                        '("' . $ThisPart . '", L',
+                        '("<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>", L',
+                        $Entry
+                    );
+                }
+            }
+            preg_match_all('~\[([A-Z]{2})\]~', $Entry, $Parts);
+            if (count($Parts[1])) {
+                foreach ($Parts[1] as $ThisPart) {
+                    $Entry = str_replace(
+                        '[' . $ThisPart . ']',
+                        $CIDRAM['FE']['Flags'] ? (
+                            '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"><span></a>'
+                        ) : (
+                            '[<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
+                        ),
+                        $Entry
+                    );
+                }
             }
             $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
             $Out .= '<tr><td class="h1">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['Number_L10N']($Count) . ' (' . $CIDRAM['Number_L10N']($Percent, 2) . "%)</div></td></tr>\n";

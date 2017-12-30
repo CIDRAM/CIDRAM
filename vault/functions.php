@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.28).
+ * This file: Functions file (last modified: 2017.12.30).
  */
 
 /**
@@ -238,6 +238,19 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
 };
 
 /**
+ * Gets tags from signature files.
+ */
+$CIDRAM['Getter'] = function ($Haystack, $Offset, $Tag, $DefTag) {
+    $Key = "\n" . $Tag . ': ';
+    $KeyLen = strlen($Key);
+    return (
+        ($PosX = strpos($Haystack, $Key, $Offset)) &&
+        ($PosY = strpos($Haystack, "\n", $PosX + 1)) &&
+        !substr_count($Haystack, "\n\n", $Offset, $PosX - $Offset + 1)
+    ) ? substr($Haystack, $PosX + $KeyLen, $PosY - $PosX - $KeyLen) : $DefTag;
+};
+
+/**
  * Checks CIDRs (generally, potential factors expanded from IP addresses)
  * against the IPv4/IPv6 signature files, and if any matches are found,
  * increments `$CIDRAM['BlockInfo']['SignatureCount']`, and
@@ -343,22 +356,19 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     break;
                 }
                 if (
-                    ($PosX = strpos($Files[$FileIndex], "\nExpires: ", $PosA)) &&
-                    ($PosY = strpos($Files[$FileIndex], "\n", ($PosX + 1))) &&
-                    !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1)) &&
-                    ($Expires = $CIDRAM['FetchExpires'](substr($Files[$FileIndex], ($PosX + 10), ($PosY - $PosX - 10)))) &&
+                    ($Expires = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Expires', false)) &&
+                    ($Expires = $CIDRAM['FetchExpires']($Expires)) &&
                     $Expires < $CIDRAM['Now']
                 ) {
                     continue;
                 }
-                $Tag = (
-                    ($PosX = strpos($Files[$FileIndex], "\nTag: ", $PosA)) &&
-                    ($PosY = strpos($Files[$FileIndex], "\n", ($PosX + 1))) &&
-                    !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
-                ) ? substr($Files[$FileIndex], ($PosX + 6), ($PosY - $PosX - 6)) : $DefTag;
+                $Tag = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Tag', $DefTag);
                 if (!empty($CIDRAM['Ignore'][$Tag])) {
                     continue;
                 }
+                $Origin = (
+                    $Origin = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Origin', false)
+                ) ? ', [' . $Origin . ']' : '';
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
@@ -366,7 +376,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 ) {
                     $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
-                $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . ')';
+                $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
                 $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
                 if (!$Category = substr($Signature, 0, strpos($Signature, ' '))) {
                     $Category = $Signature;

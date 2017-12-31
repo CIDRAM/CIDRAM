@@ -2027,11 +2027,12 @@ Tag: SoftLayer
 
 
 # ASN 50465 ("IQHost Ltd").
-# %Listed, Google Malware Dashboard: 1.03%.
+# %Listed, Google Malware Dashboard: 0.62%.
 # %Listed, CleanTalk.org: 20.00%.
-# Updated: 2016.01.21 / Checked: 2017.07.25
+# Updated: 2016.01.21 / Checked: 2017.12.30
 
 193.106.172.0/22 Deny Cloud
+Origin: RU
 Tag: IQHost Ltd
 
 
@@ -2160,11 +2161,12 @@ Tag: Webzilla B.V
 
 
 # ASN 41126 ("CJSC Registrar R01").
-# %Listed, Google Malware Dashboard: 0.75%.
+# %Listed, Google Malware Dashboard: 0.54%.
 # %Listed, CleanTalk.org: 16.67%.
-# Updated: 2016.01.21 / Checked: 2017.07.25
+# Updated: 2016.01.21 / Checked: 2017.12.30
 
 89.111.176.0/20 Deny Cloud
+Origin: RU
 Tag: CJSC Registrar R01
 
 
@@ -2194,10 +2196,10 @@ Tag: DataCorpore Servios
 
 
 # ASN 42807 ("Aerotek Bilisim Taahhut Sanayi ve Ticaret Limited Sirketi").
-# %Listed, Google Malware Dashboard: 1.04%.
+# %Listed, Google Malware Dashboard: 0.77%.
 # %Listed, CleanTalk.org: 28.21%.
-# Stop Forum Spam (SFS) listings: 121.
-# Updated: 2017.07.25
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2017.07.25 / Checked: 2017.12.30
 
 31.207.80.0/21 Deny Cloud
 37.230.104.0/21 Deny Cloud
@@ -2209,6 +2211,7 @@ Tag: DataCorpore Servios
 185.15.40.0/22 Deny Cloud
 213.159.0.0/21 Deny Cloud
 213.159.28.0/22 Deny Cloud
+Origin: TR
 Tag: AS42807
 
 
@@ -3266,10 +3269,10 @@ Tag: A2B IP B.V
 
 
 # ASNs 20860, 21130 ("IOMart").
-# %Listed, Google Malware Dashboard: 1.05% (AS20860), 0% (AS21130).
-# %Listed, CleanTalk.org: 28.59% (AS20860), 0% (AS21130).
-# Stop Forum Spam (SFS) listings: 2,652 (AS20860), 0 (AS21130).
-# Updated: 2017.07.29
+# %Listed, Google Malware Dashboard: 0.67% (AS20860).
+# %Listed, CleanTalk.org: 28.59% (AS20860).
+# Stop Forum Spam (SFS) listings: 4,766 (AS20860).
+# Updated: 2017.12.31
 
 5.62.0.0/22 Deny Cloud
 5.62.4.0/23 Deny Cloud
@@ -3278,13 +3281,17 @@ Tag: A2B IP B.V
 5.62.24.0/21 Deny Cloud
 5.77.32.0/19 Deny Cloud
 5.133.176.0/21 Deny Cloud
+5.152.192.0/19 Deny Cloud
 5.159.224.0/21 Deny Cloud
 5.187.16.0/20 Deny Cloud
+23.139.0.0/24 Deny Cloud
+31.3.224.0/19 Deny Cloud
 31.24.32.0/21 Deny Cloud
 31.187.70.0/23 Deny Cloud
 31.216.48.0/21 Deny Cloud
 37.128.184.0/21 Deny Cloud
-37.157.242.0/23 Deny Cloud
+37.157.240.0/21 Deny Cloud
+37.220.0.0/19 Deny Cloud
 37.235.124.0/22 Deny Cloud
 37.247.116.0/23 Deny Cloud
 46.20.224.0/20 Deny Cloud
@@ -3292,12 +3299,16 @@ Tag: A2B IP B.V
 62.233.64.0/18 Deny Cloud
 64.64.123.0/24 Deny Cloud
 77.240.0.0/20 Deny Cloud
+77.245.64.0/20 Deny Cloud
 77.246.160.0/20 Deny Cloud
 78.129.128.0/17 Deny Cloud
+79.143.80.0/22 Deny Cloud
 79.171.32.0/21 Deny Cloud
 80.75.64.0/20 Deny Cloud
-80.84.49.0/24 Deny Cloud
-81.94.192.0/24 Deny Cloud
+80.84.48.0/20 Deny Cloud
+80.243.176.0/20 Deny Cloud
+80.246.28.0/24 Deny Cloud
+81.94.192.0/20 Deny Cloud
 82.102.8.0/21 Deny Cloud
 82.145.32.0/19 Deny Cloud
 83.142.224.0/21 Deny Cloud
@@ -3307,23 +3318,13 @@ Tag: A2B IP B.V
 86.107.42.0/24 Deny Cloud
 87.117.192.0/18 Deny Cloud
 87.237.56.0/21 Deny Cloud
-88.150.137.0/24 Deny Cloud
-88.150.140.0/22 Deny Cloud
-88.150.144.0/22 Deny Cloud
-88.150.154.0/24 Deny Cloud
-88.150.156.0/22 Deny Cloud
-88.150.160.0/21 Deny Cloud
-88.150.168.0/22 Deny Cloud
-88.150.206.0/24 Deny Cloud
-88.150.220.0/24 Deny Cloud
-88.150.230.0/24 Deny Cloud
-88.150.240.0/23 Deny Cloud
-88.150.252.0/23 Deny Cloud
+88.150.128.0/17 Deny Cloud
 89.207.168.0/21 Deny Cloud
 91.199.151.0/24 Deny Cloud
 91.207.220.0/23 Deny Cloud
 91.212.93.0/24 Deny Cloud
 91.215.180.0/22 Deny Cloud
+91.225.0.0/22 Deny Cloud
 91.234.184.0/23 Deny Cloud
 91.238.100.0/24 Deny Cloud
 91.245.218.0/24 Deny Cloud
@@ -3334,54 +3335,71 @@ Tag: A2B IP B.V
 95.129.104.0/21 Deny Cloud
 95.154.192.0/18 Deny Cloud
 104.237.241.0/24 Deny Cloud
+109.73.64.0/20 Deny Cloud
 109.75.160.0/21 Deny Cloud
 109.169.0.0/18 Deny Cloud
 109.169.64.0/19 Deny Cloud
-109.200.30.0/24 Deny Cloud
+109.200.0.0/19 Deny Cloud
 109.203.103.0/24 Deny Cloud
+109.203.106.0/24 Deny Cloud
+109.203.108.0/24 Deny Cloud
 109.203.110.0/24 Deny Cloud
 109.203.112.0/24 Deny Cloud
+109.203.115.0/24 Deny Cloud
 109.203.117.0/24 Deny Cloud
 109.203.127.0/24 Deny Cloud
 130.180.200.0/21 Deny Cloud
 130.185.144.0/21 Deny Cloud
 141.0.160.0/21 Deny Cloud
+149.3.128.0/20 Deny Cloud
 149.255.96.0/20 Deny Cloud
 151.252.0.0/21 Deny Cloud
 159.255.208.0/21 Deny Cloud
 172.93.122.0/24 Deny Cloud
 172.111.206.0/24 Deny Cloud
 172.111.212.0/24 Deny Cloud
-176.227.214.0/23 Deny Cloud
+176.56.192.0/19 Deny Cloud
+176.227.192.0/19 Deny Cloud
+178.170.143.0/24 Deny Cloud
 178.250.48.0/21 Deny Cloud
 182.54.237.0/24 Deny Cloud
+185.5.0.0/22 Deny Cloud
 185.5.188.0/22 Deny Cloud
 185.17.148.0/22 Deny Cloud
 185.19.16.0/22 Deny Cloud
 185.20.48.0/24 Deny Cloud
+185.20.96.0/22 Deny Cloud
 185.25.240.0/22 Deny Cloud
 185.26.148.0/23 Deny Cloud
 185.32.109.0/24 Deny Cloud
 185.32.110.0/24 Deny Cloud
-185.34.252.0/22 Deny Cloud
+185.34.252.0/23 Deny Cloud
 185.35.77.0/24 Deny Cloud
 185.35.79.0/24 Deny Cloud
+185.36.76.0/22 Deny Cloud
 185.37.178.0/23 Deny Cloud
 185.57.188.0/22 Deny Cloud
 185.73.114.0/24 Deny Cloud
 185.91.76.0/22 Deny Cloud
 185.108.104.0/24 Deny Cloud
 185.141.192.0/24 Deny Cloud
+185.141.195.0/24 Deny Cloud
 185.161.16.0/22 Deny Cloud
 185.162.108.0/22 Deny Cloud
 185.179.252.0/22 Deny Cloud
 185.181.124.0/22 Deny Cloud
 185.182.228.0/22 Deny Cloud
+185.186.77.0/24 Deny Cloud
+185.187.240.0/24 Deny Cloud
+185.201.60.0/22 Deny Cloud
+185.207.48.0/23 Deny Cloud
+185.224.196.0/22 Deny Cloud
+185.225.4.0/23 Deny Cloud
+185.227.60.0/22 Deny Cloud
 188.65.176.0/21 Deny Cloud
-188.227.169.0/24 Deny Cloud
-188.227.170.0/24 Deny Cloud
-188.227.174.0/24 Deny Cloud
-188.227.186.0/24 Deny Cloud
+188.72.99.0/24 Deny Cloud
+188.227.160.0/19 Deny Cloud
+190.121.209.0/24 Deny Cloud
 192.121.166.0/23 Deny Cloud
 193.200.98.0/23 Deny Cloud
 193.201.200.0/23 Deny Cloud
@@ -3390,10 +3408,13 @@ Tag: A2B IP B.V
 195.24.230.0/23 Deny Cloud
 195.62.10.0/23 Deny Cloud
 195.177.192.0/23 Deny Cloud
+196.17.221.0/24 Deny Cloud
+196.18.215.0/24 Deny Cloud
 206.187.52.0/22 Deny Cloud
 206.187.56.0/22 Deny Cloud
 212.38.160.0/19 Deny Cloud
 212.84.160.0/19 Deny Cloud
+213.175.200.0/23 Deny Cloud
 217.26.232.0/21 Deny Cloud
 217.77.176.0/20 Deny Cloud
 217.147.80.0/20 Deny Cloud
@@ -3538,20 +3559,22 @@ Tag: Root SA
 
 # ASN 25643 ("ColdRack, Inc").
 # %Listed, CleanTalk.org: 27.27%.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2016.01.19 / Checked: 2017.07.29
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2016.12.31
 
+103.6.219.0/24 Deny Cloud
+Origin: AU
 64.209.56.0/21 Deny Cloud
 64.209.68.0/22 Deny Cloud
 64.214.184.0/21 Deny Cloud
 66.207.160.0/20 Deny Cloud
 67.43.48.0/20 Deny Cloud
-103.6.219.0/24 Deny Cloud
 173.242.48.0/20 Deny Cloud
 199.115.176.0/21 Deny Cloud
 207.126.64.0/19 Deny Cloud
 209.130.152.0/22 Deny Cloud
 209.135.0.0/19 Deny Cloud
+Origin: US
 Tag: ColdRack, Inc
 
 
@@ -6125,10 +6148,10 @@ Tag: K SERVERS LTD
 
 
 # ASN 25761 ("Staminus Communications").
-# %Listed, Google Malware Dashboard: 1.13%.
+# %Listed, Google Malware Dashboard: 1.25%.
 # %Listed, CleanTalk.org: 27.98%.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2017.07.25
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2017.07.25 / Checked: 2017.12.30
 
 69.197.0.0/18 Deny Cloud
 72.8.128.0/18 Deny Cloud
@@ -6139,6 +6162,7 @@ Tag: K SERVERS LTD
 199.241.194.0/23 Deny Cloud
 199.241.196.0/24 Deny Cloud
 199.241.198.0/23 Deny Cloud
+Origin: US
 Tag: Staminus
 
 
@@ -6453,17 +6477,21 @@ Tag: Sovremennie
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
-# %Listed, CleanTalk.org: 32.26% (AS59711), 57.14% (AS61046), 66.67% (AS201525), 100.00% (AS202015).
-# Stop Forum Spam (SFS) listings: 256 (AS59711), 9 (AS61046), 84 (AS201525), 30 (AS202015).
-# Updated: 2017.07.29
+# Updated: 2017.12.31
 
 5.149.248.0/21 Deny Cloud
 185.80.52.0/22 Deny Cloud
 185.81.112.0/22 Deny Cloud
-195.191.234.0/24 Deny Cloud
+Origin: GB
 200.7.96.0/22 Deny Cloud
 200.7.102.0/23 Deny Cloud
 200.7.104.0/22 Deny Cloud
+Origin: PA
+185.174.139.0/24 Deny Cloud
+Origin: RU
+193.200.64.0/23 Deny Cloud
+195.191.234.0/24 Deny Cloud
+Origin: UA
 Tag: HZ Hosting Ltd
 
 
@@ -8047,12 +8075,13 @@ Tag: CachedNet LLC
 
 
 # ASN 20068 ("Hawk Host Inc").
-# %Listed, Google Malware Dashboard: 0.79%.
-# Updated: 2017.07.25
+# %Listed, Google Malware Dashboard: 1.27%.
+# Updated: 2017.07.25 / Checked: 2017.12.30
 
 172.96.185.0/24 Deny Cloud
 198.252.106.0/23 Deny Cloud
 198.252.108.0/24 Deny Cloud
+Origin: CA
 Tag: Hawk Host Inc
 
 
@@ -8925,15 +8954,17 @@ Tag: Handy Networks
 
 
 # ASN 31863 ("Centrilogic, Inc").
-# %Listed, Google Malware Dashboard: 1.95%.
+# %Listed, Google Malware Dashboard: 2.04%.
 # %Listed, CleanTalk.org: 48.74%.
-# Stop Forum Spam (SFS) listings: 582.
-# Updated: 2017.07.29
+# Stop Forum Spam (SFS) listings: 1,017.
+# Updated: 2017.12.31
 
 23.92.62.0/23 Deny Cloud
 23.92.208.0/20 Deny Cloud
 45.33.159.0/24 Deny Cloud
 45.43.8.0/24 Deny Cloud
+45.56.163.0/24 Deny Cloud
+45.199.176.0/24 Deny Cloud
 67.220.236.0/24 Deny Cloud
 67.220.246.0/23 Deny Cloud
 67.220.250.0/23 Deny Cloud
@@ -8968,18 +8999,7 @@ Tag: Handy Networks
 173.240.15.0/24 Deny Cloud
 173.246.173.0/24 Deny Cloud
 173.246.174.0/24 Deny Cloud
-177.172.76.0/22 Deny Cloud
-179.48.224.0/20 Deny Cloud
-181.224.0.0/18 Deny Cloud
-181.224.64.0/19 Deny Cloud
-181.224.216.0/21 Deny Cloud
-181.232.128.0/17 Deny Cloud
-181.233.0.0/18 Deny Cloud
-181.233.152.0/21 Deny Cloud
-181.233.160.0/19 Deny Cloud
-190.102.32.0/20 Deny Cloud
-190.103.188.0/22 Deny Cloud
-191.96.8.0/24 Deny Cloud
+185.221.133.0/24 Deny Cloud
 191.101.52.0/24 Deny Cloud
 192.111.144.0/20 Deny Cloud
 192.198.80.0/20 Deny Cloud
@@ -9038,42 +9058,36 @@ Tag: Beijing Blue
 
 
 # ASN 53340 ("VegasNAP, LLC").
-# %Listed, Google Malware Dashboard: 0.95%.
+# %Listed, Google Malware Dashboard: 0.69%.
 # %Listed, CleanTalk.org: 84.70%.
-# Stop Forum Spam (SFS) listings: 994.
-# Updated: 2017.07.27
+# Stop Forum Spam (SFS) listings: 654.
+# Updated: 2017.12.31
 
+192.67.255.0/24 Deny Cloud
+Origin: CA
 5.226.169.0/24 Deny Cloud
 5.226.170.0/24 Deny Cloud
 5.226.174.0/23 Deny Cloud
-8.23.72.0/24 Deny Cloud
+185.48.204.0/22 Deny Cloud
+Origin: ES
 76.164.234.0/23 Deny Cloud
-104.128.65.0/24 Deny Cloud
-104.128.66.0/23 Deny Cloud
-104.128.68.0/22 Deny Cloud
-104.128.72.0/21 Deny Cloud
-104.129.128.0/20 Deny Cloud
-104.129.176.0/21 Deny Cloud
-104.129.184.0/22 Deny Cloud
+104.128.64.0/20 Deny Cloud
+104.129.128.0/21 Deny Cloud
+104.129.176.0/23 Deny Cloud
 104.143.9.0/24 Deny Cloud
-104.200.240.0/22 Deny Cloud
-104.225.128.0/19 Deny Cloud
-104.225.232.0/21 Deny Cloud
-104.225.240.0/21 Deny Cloud
+104.225.128.0/20 Deny Cloud
 104.225.248.0/22 Deny Cloud
 104.225.252.0/23 Deny Cloud
+104.238.236.0/22 Deny Cloud
 104.251.82.0/24 Deny Cloud
 104.251.90.0/24 Deny Cloud
 104.251.93.0/24 Deny Cloud
 104.251.94.0/24 Deny Cloud
+162.220.115.0/24 Deny Cloud
 162.249.224.0/22 Deny Cloud
-162.251.152.0/22 Deny Cloud
 162.251.232.0/21 Deny Cloud
 172.93.0.0/21 Deny Cloud
 172.96.132.0/23 Deny Cloud
-179.61.251.0/24 Deny Cloud
-185.48.204.0/22 Deny Cloud
-192.67.255.0/24 Deny Cloud
 192.228.96.0/20 Deny Cloud
 198.37.127.0/24 Deny Cloud
 199.19.72.0/21 Deny Cloud
@@ -9084,6 +9098,7 @@ Tag: Beijing Blue
 199.241.136.0/21 Deny Cloud
 204.77.0.0/20 Deny Cloud
 206.191.192.0/19 Deny Cloud
+Origin: US
 Tag: VegasNAP, LLC
 
 
@@ -10520,10 +10535,10 @@ Tag: InMotion Hosting, Inc
 
 
 # ASN 53755 ("Input Output Flood LLC").
-# %Listed, Google Malware Dashboard: 4.17%.
+# %Listed, Google Malware Dashboard: 4.01%.
 # %Listed, CleanTalk.org: 63.60%.
-# Stop Forum Spam (SFS) listings: 128.
-# Updated: 2017.02.06 / Checked: 2017.07.27
+# Stop Forum Spam (SFS) listings: 63.
+# Updated: 2017.02.06 / Checked: 2017.12.31
 
 23.226.64.0/20 Deny Cloud
 104.161.0.0/16 Deny Cloud
@@ -10539,6 +10554,7 @@ Tag: InMotion Hosting, Inc
 199.30.48.0/21 Deny Cloud
 199.167.132.0/22 Deny Cloud
 199.231.84.0/22 Deny Cloud
+Origin: US
 Tag: IOFlood LLC
 
 
@@ -10597,14 +10613,13 @@ Tag: AS45538
 
 
 # ASN 45102 ("Alibaba (China) Technology Co., Ltd").
-# %Listed, Google Malware Dashboard: 2.35%.
+# %Listed, Google Malware Dashboard: 2.08%.
 # %Listed, CleanTalk.org: 43.25%.
-# %Listed, abuseat.org (CBL-Listed): 3.53%.
-# Stop Forum Spam (SFS) listings: 13,260.
-# Updated: 2017.07.29
+# Stop Forum Spam (SFS) listings: 12,132.
+# Updated: 2017.12.31
 
 47.52.0.0/16 Deny Cloud
-47.74.0.0/16 Deny Cloud
+47.74.0.0/15 Deny Cloud
 47.88.0.0/16 Deny Cloud
 47.89.0.0/18 Deny Cloud
 47.89.71.0/24 Deny Cloud
@@ -10612,11 +10627,17 @@ Tag: AS45538
 47.89.74.0/23 Deny Cloud
 47.89.76.0/22 Deny Cloud
 47.89.80.0/22 Deny Cloud
+47.89.84.0/23 Deny Cloud
+47.89.88.0/22 Deny Cloud
+47.89.92.0/23 Deny Cloud
 47.89.96.0/22 Deny Cloud
 47.89.104.0/21 Deny Cloud
+47.89.122.0/24 Deny Cloud
+47.89.124.0/23 Deny Cloud
 47.89.128.0/17 Deny Cloud
 47.90.0.0/15 Deny Cloud
-47.254.0.0/17 Deny Cloud
+47.252.0.0/17 Deny Cloud
+47.254.0.0/16 Deny Cloud
 62.128.96.0/22 Deny Cloud
 89.219.0.0/22 Deny Cloud
 110.76.21.0/24 Deny Cloud
@@ -10633,7 +10654,7 @@ Tag: Alibaba
 # %Listed, Google Malware Dashboard: 1.84%.
 # %Listed, CleanTalk.org: 61.06%.
 # Stop Forum Spam (SFS) listings: 7,243.
-# Updated: 2017.09.19 / Checked: 2017.12.18
+# Updated: 2017.09.19 / Checked: 2017.12.31
 
 39.96.0.0/13 Deny Cloud
 39.104.0.0/14 Deny Cloud
@@ -10685,6 +10706,7 @@ Tag: Alibaba
 203.209.224.0/19 Deny Cloud
 218.244.128.0/19 Deny Cloud
 223.4.0.0/14 Deny Cloud
+Origin: CN
 Tag: Alibaba Advertising
 
 
@@ -10894,16 +10916,14 @@ Tag: CNSERVERS LLC
 
 # ASN 21321 ("Areti Internet Ltd").
 # %Listed, CleanTalk.org: 39.86%.
-# Stop Forum Spam (SFS) listings: 2,032.
-# Updated: 2017.08.02
+# Stop Forum Spam (SFS) listings: 1,465.
+# Updated: 2017.12.31
 
 23.27.2.0/24 Deny Cloud
 23.27.4.0/24 Deny Cloud
 23.27.13.0/24 Deny Cloud
 23.27.18.0/24 Deny Cloud
 23.27.220.0/24 Deny Cloud
-23.27.228.0/24 Deny Cloud
-23.27.230.0/24 Deny Cloud
 23.27.235.0/24 Deny Cloud
 23.27.244.0/24 Deny Cloud
 23.27.246.0/24 Deny Cloud
@@ -10914,12 +10934,12 @@ Tag: CNSERVERS LLC
 45.252.190.0/24 Deny Cloud
 46.16.32.0/21 Deny Cloud
 46.29.165.0/24 Deny Cloud
+46.229.254.0/24 Deny Cloud
 50.117.45.0/24 Deny Cloud
 50.118.143.0/24 Deny Cloud
 50.118.150.0/24 Deny Cloud
 50.118.159.0/24 Deny Cloud
 50.118.172.0/24 Deny Cloud
-50.118.189.0/24 Deny Cloud
 50.118.198.0/24 Deny Cloud
 50.118.210.0/24 Deny Cloud
 50.118.213.0/24 Deny Cloud
@@ -10946,45 +10966,39 @@ Tag: CNSERVERS LLC
 69.31.103.0/24 Deny Cloud
 74.115.1.0/24 Deny Cloud
 80.79.50.0/24 Deny Cloud
-80.251.25.0/24 Deny Cloud
-80.251.31.0/24 Deny Cloud
 85.158.56.0/21 Deny Cloud
 85.203.7.0/24 Deny Cloud
 85.203.8.0/23 Deny Cloud
 85.203.16.0/22 Deny Cloud
 85.203.24.0/23 Deny Cloud
 85.203.26.0/24 Deny Cloud
-85.203.32.0/23 Deny Cloud
-85.203.34.0/24 Deny Cloud
+85.203.32.0/24 Deny Cloud
 85.203.38.0/23 Deny Cloud
 85.237.192.0/19 Deny Cloud
+91.238.70.0/24 Deny Cloud
 91.247.76.0/24 Deny Cloud
 103.239.175.0/24 Deny Cloud
-136.0.98.0/23 Deny Cloud
+136.0.98.0/24 Deny Cloud
 136.0.233.0/24 Deny Cloud
 136.0.234.0/24 Deny Cloud
 136.0.238.0/24 Deny Cloud
 138.99.144.0/24 Deny Cloud
-151.236.215.0/24 Deny Cloud
-159.253.255.0/24 Deny Cloud
-162.217.27.0/24 Deny Cloud
-162.217.29.0/24 Deny Cloud
 162.217.31.0/24 Deny Cloud
 166.88.123.0/24 Deny Cloud
-166.88.192.0/24 Deny Cloud
 172.99.23.0/24 Deny Cloud
 172.252.120.0/24 Deny Cloud
 172.252.123.0/24 Deny Cloud
 172.252.124.0/24 Deny Cloud
 172.252.126.0/24 Deny Cloud
 185.20.255.0/24 Deny Cloud
+185.80.200.0/22 Deny Cloud
 185.89.76.0/22 Deny Cloud
 185.89.248.0/24 Deny Cloud
 185.89.251.0/24 Deny Cloud
 185.93.34.0/23 Deny Cloud
-185.100.212.0/22 Deny Cloud
 185.114.34.0/23 Deny Cloud
 185.139.27.0/24 Deny Cloud
+185.198.88.0/24 Deny Cloud
 191.101.30.0/24 Deny Cloud
 192.119.165.0/24 Deny Cloud
 193.109.192.0/21 Deny Cloud
@@ -10993,22 +11007,21 @@ Tag: CNSERVERS LLC
 196.53.34.0/24 Deny Cloud
 196.53.36.0/24 Deny Cloud
 196.53.38.0/24 Deny Cloud
-196.53.40.0/23 Deny Cloud
+196.53.40.0/24 Deny Cloud
 196.53.43.0/24 Deny Cloud
 196.53.45.0/24 Deny Cloud
 196.53.47.0/24 Deny Cloud
-196.53.48.0/24 Deny Cloud
 196.53.51.0/24 Deny Cloud
 196.53.52.0/24 Deny Cloud
 196.53.54.0/24 Deny Cloud
 196.53.58.0/24 Deny Cloud
 196.53.60.0/24 Deny Cloud
 198.47.112.0/24 Deny Cloud
+198.47.115.0/24 Deny Cloud
 198.144.106.0/23 Deny Cloud
 198.144.116.0/24 Deny Cloud
 198.144.118.0/24 Deny Cloud
 199.68.218.0/23 Deny Cloud
-199.101.170.0/23 Deny Cloud
 199.255.210.0/24 Deny Cloud
 199.255.214.0/23 Deny Cloud
 202.69.240.0/24 Deny Cloud
@@ -11026,12 +11039,9 @@ Tag: CNSERVERS LLC
 209.73.132.0/24 Deny Cloud
 209.73.151.0/24 Deny Cloud
 209.126.88.0/24 Deny Cloud
-209.126.90.0/24 Deny Cloud
 216.172.142.0/24 Deny Cloud
 216.177.128.0/23 Deny Cloud
 216.185.38.0/24 Deny Cloud
-216.185.45.0/24 Deny Cloud
-216.185.58.0/24 Deny Cloud
 216.230.87.0/24 Deny Cloud
 217.113.249.0/24 Deny Cloud
 Tag: Areti Internet Ltd
@@ -11358,47 +11368,21 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# %Listed, Google Malware Dashboard: 0.84%.
+# %Listed, Google Malware Dashboard: 0.57%.
 # %Listed, CleanTalk.org: 28.37%.
-# Stop Forum Spam (SFS) listings: 1,742.
-# Updated: 2017.07.27
+# Stop Forum Spam (SFS) listings: 3,077.
+# Updated: 2017.12.31
 
-5.62.16.0/22 Deny Cloud
 37.247.119.0/24 Deny Cloud
-45.59.129.0/24 Deny Cloud
-45.59.135.0/24 Deny Cloud
-45.59.141.0/24 Deny Cloud
-45.59.147.0/24 Deny Cloud
-45.59.153.0/24 Deny Cloud
-45.59.159.0/24 Deny Cloud
-45.59.165.0/24 Deny Cloud
-45.59.171.0/24 Deny Cloud
-45.59.177.0/24 Deny Cloud
-45.59.183.0/24 Deny Cloud
-45.59.189.0/24 Deny Cloud
 62.113.192.0/18 Deny Cloud
 86.105.5.0/24 Deny Cloud
 86.106.131.0/24 Deny Cloud
 89.34.111.0/24 Deny Cloud
 91.216.248.0/24 Deny Cloud
-104.166.119.0/24 Deny Cloud
-104.167.193.0/24 Deny Cloud
-104.167.198.0/24 Deny Cloud
-104.167.211.0/24 Deny Cloud
-104.167.213.0/24 Deny Cloud
-107.168.204.0/24 Deny Cloud
 149.154.159.0/24 Deny Cloud
 151.236.15.0/24 Deny Cloud
 151.236.17.0/24 Deny Cloud
-155.254.201.0/24 Deny Cloud
-155.254.211.0/24 Deny Cloud
-155.254.215.0/24 Deny Cloud
-155.254.218.0/24 Deny Cloud
-155.254.225.0/24 Deny Cloud
-155.254.239.0/24 Deny Cloud
 158.255.214.0/24 Deny Cloud
-167.88.109.0/24 Deny Cloud
-167.88.110.0/24 Deny Cloud
 176.223.165.0/24 Deny Cloud
 185.52.248.0/22 Deny Cloud
 185.53.168.0/22 Deny Cloud
@@ -11406,9 +11390,15 @@ Tag: HighSpeed Office Ltd
 185.88.212.0/22 Deny Cloud
 185.117.214.0/23 Deny Cloud
 185.158.251.0/24 Deny Cloud
+185.181.10.0/24 Deny Cloud
 185.212.44.0/22 Deny Cloud
+185.213.175.0/24 Deny Cloud
+185.219.220.0/23 Deny Cloud
+185.219.222.0/24 Deny Cloud
+185.227.108.0/24 Deny Cloud
+185.233.190.0/24 Deny Cloud
 192.121.22.0/23 Deny Cloud
-192.171.253.0/24 Deny Cloud
+194.6.208.0/22 Deny Cloud
 198.177.125.0/24 Deny Cloud
 212.83.32.0/19 Deny Cloud
 Tag: 23Media GmbH
@@ -11756,10 +11746,10 @@ Tag: Huawei Cloud Service
 
 # ASN 38001 ("NewMedia Express Pte Ltd. Singapore Web Hosting Service Provider").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 1.76%.
+# %Listed, Google Malware Dashboard: 1.21%.
 # %Listed, CleanTalk.org: 44.60%.
-# Stop Forum Spam (SFS) listings: 556.
-# Updated: 2017.11.12
+# Stop Forum Spam (SFS) listings: 456.
+# Updated: 2017.12.31
 
 43.226.231.0/24 Deny Cloud
 43.228.158.0/24 Deny Cloud
@@ -11779,6 +11769,7 @@ Tag: Huawei Cloud Service
 103.53.198.0/23 Deny Cloud
 103.55.11.0/24 Deny Cloud
 103.60.10.0/24 Deny Cloud
+103.104.196.0/24 Deny Cloud
 103.200.4.0/23 Deny Cloud
 103.200.6.0/24 Deny Cloud
 103.200.217.0/24 Deny Cloud
@@ -11794,7 +11785,6 @@ Tag: Huawei Cloud Service
 119.161.100.0/22 Deny Cloud
 154.16.19.0/24 Deny Cloud
 172.94.88.0/24 Deny Cloud
-172.111.143.0/24 Deny Cloud
 172.111.193.0/24 Deny Cloud
 172.111.218.0/24 Deny Cloud
 179.61.193.0/24 Deny Cloud
@@ -11803,7 +11793,6 @@ Tag: Huawei Cloud Service
 181.215.177.0/24 Deny Cloud
 182.54.239.0/24 Deny Cloud
 192.230.37.0/24 Deny Cloud
-192.253.240.0/24 Deny Cloud
 192.253.249.0/24 Deny Cloud
 192.253.251.0/24 Deny Cloud
 192.253.254.0/24 Deny Cloud
@@ -11814,6 +11803,7 @@ Tag: Huawei Cloud Service
 202.150.208.0/20 Deny Cloud
 203.114.75.0/24 Deny Cloud
 203.174.80.0/21 Deny Cloud
+Origin: SG
 Tag: NewMedia Express
 
 
@@ -11861,23 +11851,24 @@ Tag: Inetmar
 Tag: RamNode LLC
 
 
-# ASNs 198203, 202645 ("RouteLabel V.O.F").
-# %Listed, Google Malware Dashboard: 0.99% (AS198203), 3.10% (AS198203).
-# %Listed, CleanTalk.org: 75.34% (AS198203), 25.00% (AS198203).
-# Stop Forum Spam (SFS) listings: 487 (AS198203), 0 (AS198203).
-# Updated: 2017.02.03 / Checked: 2017.07.29
+# ASN 198203 ("RouteLabel V.O.F").
+# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, CleanTalk.org: 75.34%.
+# Stop Forum Spam (SFS) listings: 110.
+# Updated: 2017.12.31
 
+185.52.0.0/22 Deny Cloud
+Origin: GB
 81.4.100.0/22 Deny Cloud
 81.4.104.0/21 Deny Cloud
 81.4.120.0/21 Deny Cloud
 91.229.232.0/24 Deny Cloud
 176.56.224.0/20 Deny Cloud
-185.34.216.0/23 Deny Cloud
-185.52.0.0/22 Deny Cloud
+185.34.216.0/22 Deny Cloud
 185.56.60.0/22 Deny Cloud
-185.122.192.0/22 Deny Cloud
 185.142.76.0/22 Deny Cloud
 185.157.208.0/22 Deny Cloud
+Origin: NL
 Tag: RouteLabel V.O.F
 
 
@@ -11905,6 +11896,7 @@ Tag: RouteLabel V.O.F
 212.76.128.0/20 Deny Cloud
 212.76.144.0/22 Deny Cloud
 212.76.152.0/21 Deny Cloud
+Origin: RU
 Tag: MnogoByte LLC
 
 
@@ -11958,10 +11950,10 @@ Tag: Lightstream
 
 
 # ASN 15244 ("Lunar Pages").
-# %Listed, Google Malware Dashboard: 1.67%.
+# %Listed, Google Malware Dashboard: 1.06%.
 # %Listed, CleanTalk.org: 19.60%.
-# Stop Forum Spam (SFS) listings: 32.
-# Updated: 2017.01.25 / Checked: 2017.07.25
+# Stop Forum Spam (SFS) listings: 34.
+# Updated: 2017.12.30
 
 64.50.160.0/20 Deny Cloud
 64.50.176.0/22 Deny Cloud
@@ -11992,9 +11984,8 @@ Tag: Lightstream
 209.200.248.0/22 Deny Cloud
 209.200.252.0/23 Deny Cloud
 216.97.224.0/20 Deny Cloud
-216.227.208.0/21 Deny Cloud
-216.227.216.0/22 Deny Cloud
-216.227.220.0/23 Deny Cloud
+216.227.208.0/20 Deny Cloud
+Origin: US
 Tag: Lunar Pages
 
 
@@ -12856,12 +12847,11 @@ Tag: Endurance Int
 
 
 # ASN 17819 ("Equinix Asia Pacific").
-# %Listed, Google Malware Dashboard: 0.21%.
+# %Listed, Google Malware Dashboard: 0.06%.
 # %Listed, CleanTalk.org: 18.33%.
-# Stop Forum Spam (SFS) listings: 228.
-# Updated: 2017.07.27
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2017.12.31
 
-5.152.179.0/24 Deny Cloud
 5.152.180.0/24 Deny Cloud
 14.102.156.0/24 Deny Cloud
 27.111.160.0/19 Deny Cloud
@@ -12871,13 +12861,14 @@ Tag: Endurance Int
 45.116.132.0/24 Deny Cloud
 45.116.135.0/24 Deny Cloud
 45.126.14.0/23 Deny Cloud
+49.255.8.0/24 Deny Cloud
 103.3.18.0/24 Deny Cloud
 103.5.66.0/23 Deny Cloud
 103.5.251.0/24 Deny Cloud
 103.6.62.0/24 Deny Cloud
 103.7.208.0/22 Deny Cloud
 103.9.92.0/22 Deny Cloud
-103.9.164.0/24 Deny Cloud
+103.9.164.0/23 Deny Cloud
 103.10.36.0/24 Deny Cloud
 103.11.4.0/23 Deny Cloud
 103.12.36.0/22 Deny Cloud
@@ -12894,13 +12885,14 @@ Tag: Endurance Int
 103.54.132.0/23 Deny Cloud
 103.58.212.0/24 Deny Cloud
 103.66.60.0/22 Deny Cloud
+103.103.140.0/23 Deny Cloud
 103.195.128.0/24 Deny Cloud
 103.204.67.0/24 Deny Cloud
-103.239.19.0/24 Deny Cloud
 103.245.4.0/23 Deny Cloud
 103.245.6.0/24 Deny Cloud
 103.250.72.0/23 Deny Cloud
 103.254.24.0/24 Deny Cloud
+113.59.241.0/24 Deny Cloud
 119.27.0.0/19 Deny Cloud
 119.27.32.0/20 Deny Cloud
 119.27.50.0/23 Deny Cloud
@@ -12913,6 +12905,7 @@ Tag: Endurance Int
 129.192.202.0/24 Deny Cloud
 133.152.0.0/17 Deny Cloud
 133.152.128.0/18 Deny Cloud
+150.228.92.0/24 Deny Cloud
 180.148.24.0/22 Deny Cloud
 180.189.0.0/20 Deny Cloud
 180.189.16.0/22 Deny Cloud
@@ -12925,10 +12918,6 @@ Tag: Endurance Int
 183.177.32.0/20 Deny Cloud
 183.177.52.0/22 Deny Cloud
 185.93.57.0/24 Deny Cloud
-192.48.18.0/23 Deny Cloud
-192.48.20.0/24 Deny Cloud
-192.48.23.0/24 Deny Cloud
-192.48.25.0/24 Deny Cloud
 192.170.106.0/24 Deny Cloud
 192.221.84.0/23 Deny Cloud
 202.53.141.0/24 Deny Cloud
@@ -12965,10 +12954,10 @@ Tag: Equinix Asia Pacific
 
 
 # ASN 6364 ("Atlantic.net, Inc").
-# %Listed, Google Malware Dashboard: 0.74%.
+# %Listed, Google Malware Dashboard: 0.28%.
 # %Listed, CleanTalk.org: 41.80%.
-# Stop Forum Spam (SFS) listings: 39.
-# Updated: 2017.07.25
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2017.07.25 / Checked: 2017.12.30
 
 45.58.32.0/20 Deny Cloud
 69.28.64.0/20 Deny Cloud
@@ -12987,6 +12976,7 @@ Tag: Equinix Asia Pacific
 209.26.48.0/21 Deny Cloud
 209.208.0.0/17 Deny Cloud
 216.98.0.0/20 Deny Cloud
+Origin: US
 Tag: Atlantic.net, Inc
 
 
@@ -15367,59 +15357,64 @@ Tag: LLHost Inc
 
 
 # ASN 51859 ("Mainstream doo").
-# %Listed, Google Malware Dashboard: 1.67%.
+# %Listed, Google Malware Dashboard: 0.24%.
 # %Listed, CleanTalk.org: 42.86%.
-# Updated: 2017.02.03 / Checked: 2017.07.27
+# Updated: 2017.12.31
 
+87.237.201.0/24 Deny Cloud
 87.237.202.0/23 Deny Cloud
 87.237.204.0/22 Deny Cloud
 91.222.4.0/22 Deny Cloud
 185.29.100.0/22 Deny Cloud
-188.93.124.0/22 Deny Cloud
+188.93.120.0/21 Deny Cloud
+Origin: RS
 Tag: Mainstream doo
 
 
 # ASN 37692 ("NetStack Ltd").
-# %Listed, Google Malware Dashboard: 0.40%.
+# %Listed, Google Malware Dashboard: 1.04%.
 # %Listed, CleanTalk.org: 53.52%.
-# Stop Forum Spam (SFS) listings: 1,389.
-# Updated: 2017.07.27
+# Stop Forum Spam (SFS) listings: 759.
+# Updated: 2017.12.31
 
 45.221.70.0/23 Deny Cloud
+93.171.226.0/24 Deny Cloud
 154.16.93.0/24 Deny Cloud
 154.16.139.0/24 Deny Cloud
-154.16.205.0/24 Deny Cloud
 154.70.152.0/22 Deny Cloud
-154.127.48.0/20 Deny Cloud
+154.127.49.0/24 Deny Cloud
+154.127.50.0/24 Deny Cloud
+154.127.56.0/21 Deny Cloud
 172.111.128.0/24 Deny Cloud
-179.61.194.0/24 Deny Cloud
 181.41.222.0/23 Deny Cloud
 191.96.75.0/24 Deny Cloud
-191.101.49.0/24 Deny Cloud
-191.101.61.0/24 Deny Cloud
 196.251.64.0/23 Deny Cloud
 196.251.66.0/24 Deny Cloud
 196.251.112.0/24 Deny Cloud
 196.251.120.0/21 Deny Cloud
+196.251.248.0/22 Deny Cloud
 Tag: NetStack Ltd
 
 
 # ASN 18876 ("Arrival Communication, Inc").
 # %Listed, CleanTalk.org: 22.22%.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2017.02.06 / Checked: 2017.07.27
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2017.02.06 / Checked: 2017.12.31
 
 66.17.0.0/18 Deny Cloud
 69.84.192.0/20 Deny Cloud
+Origin: US
 Tag: Arrival Communication
 
 
-# ASN 13354 ("EBL Global Networks, Inc").
-# %Listed, Google Malware Dashboard: 0.68%.
-# %Listed, CleanTalk.org: 49.66%.
-# Stop Forum Spam (SFS) listings: 195.
-# Updated: 2017.07.27
+# ASNs 13354, 32952 ("zColo").
+# %Listed, Google Malware Dashboard: 0.38% (AS13354).
+# %Listed, CleanTalk.org: 49.66% (AS13354).
+# Stop Forum Spam (SFS) listings: 91 (AS13354).
+# Updated: 2017.12.31
 
+103.194.47.0/24 Deny Cloud
+Origin: IN
 64.26.230.0/24 Deny Cloud
 67.211.32.0/19 Deny Cloud
 74.117.152.0/21 Deny Cloud
@@ -15429,36 +15424,48 @@ Tag: Arrival Communication
 96.47.38.0/24 Deny Cloud
 96.47.40.0/22 Deny Cloud
 96.47.44.0/24 Deny Cloud
-103.194.47.0/24 Deny Cloud
-104.255.96.0/21 Deny Cloud
 108.60.192.0/19 Deny Cloud
 108.166.160.0/19 Deny Cloud
 162.252.168.0/24 Deny Cloud
+170.76.204.0/24 Deny Cloud
 184.75.248.0/21 Deny Cloud
 192.126.90.0/23 Deny Cloud
 192.126.92.0/22 Deny Cloud
 198.154.96.0/19 Deny Cloud
 199.119.176.0/22 Deny Cloud
+204.13.12.0/22 Deny Cloud
+204.14.208.0/21 Deny Cloud
 204.117.64.0/24 Deny Cloud
+208.74.16.0/21 Deny Cloud
 208.78.216.0/21 Deny Cloud
 208.83.128.0/23 Deny Cloud
 209.105.224.0/19 Deny Cloud
 216.172.96.0/20 Deny Cloud
-Tag: EBL Global Networks
+Origin: US
+Tag: zColo
 
 
 # ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, CleanTalk.org: 45.45% (AS61138), 0% (AS206122).
-# Stop Forum Spam (SFS) listings: 21 (AS61138), 0 (AS206122).
-# Updated: 2017.07.29
+# %Listed, Google Malware Dashboard: 4.11% (AS61138).
+# %Listed, CleanTalk.org: 45.45% (AS61138).
+# Stop Forum Spam (SFS) listings: 21 (AS61138).
+# Updated: 2017.12.31
 
-103.208.86.0/23 Deny Cloud
-169.239.128.0/22 Deny Cloud
-185.90.62.0/24 Deny Cloud
 185.99.132.0/23 Deny Cloud
-185.121.160.0/22 Deny Cloud
-185.121.168.0/24 Deny Cloud
+Origin: BY
+185.90.62.0/24 Deny Cloud
+Origin: GB
 185.195.239.0/24 Deny Cloud
+Origin: GL
+185.121.168.0/24 Deny Cloud
+Origin: HR
+185.121.160.0/22 Deny Cloud
+Origin: NO
+43.251.204.0/22 Deny Cloud
+103.208.86.0/23 Deny Cloud
+Origin: NZ
+169.239.128.0/22 Deny Cloud
+Origin: SC
 Tag: Zappie Host LLC
 
 
@@ -16066,21 +16073,22 @@ Tag: Oy Creanova Hosting
 # ASN 25092 ("PE Tetyana Mysyk").
 # Huge number of entries with Stop Forum Spam !! Massive spam slinger !! Dangerous !!
 # %Listed, CleanTalk.org: 86.18%.
-# Stop Forum Spam (SFS) listings: 914,929.
-# Updated: 2017.05.02 / Checked: 2017.10.23
+# Stop Forum Spam (SFS) listings: 1,344,868.
+# Updated: 2017.05.02 / Checked: 2017.12.31
 
 193.201.224.0/22 Deny Spam
+Origin: UA
 Tag: PE Tetyana Mysyk
 
 
 # ASN 206791 ("Slobozhenyuk B.Y. PE").
 # Huge number of entries with Stop Forum Spam !! Massive spam slinger !! Dangerous !!
 # %Listed, CleanTalk.org: 93.48%.
-# %Listed, abuseat.org (CBL-Listed): 3.53%.
-# Stop Forum Spam (SFS) listings: 1,168,489.
-# Updated: 2017.05.12 / Checked: 2017.10.23
+# Stop Forum Spam (SFS) listings: 1,664,949.
+# Updated: 2017.05.12 / Checked: 2017.12.31
 
 178.159.37.0/24 Deny Spam
+Origin: UA
 Tag: Slobozhenyuk B.Y. PE
 
 
@@ -16533,11 +16541,12 @@ Tag: Confluence
 
 
 # ASN 200039 ("Hydra Communications Ltd").
-# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, Google Malware Dashboard: 0.95%.
 # %Listed, CleanTalk.org: 81.31%.
-# Stop Forum Spam (SFS) listings: 11,659.
-# Updated: 2017.07.29
+# Stop Forum Spam (SFS) listings: 14,744.
+# Updated: 2017.12.30
 
+31.44.191.0/24 Deny Cloud
 31.220.29.0/24 Deny Cloud
 37.10.113.0/24 Deny Cloud
 37.10.114.0/24 Deny Cloud
@@ -16557,28 +16566,32 @@ Tag: Confluence
 109.230.218.0/24 Deny Cloud
 109.230.220.0/24 Deny Cloud
 134.255.243.0/24 Deny Cloud
-153.92.40.0/24 Deny Cloud
+167.88.171.0/24 Deny Cloud
 172.111.150.0/24 Deny Cloud
 185.38.148.0/22 Deny Cloud
 185.44.76.0/22 Deny Cloud
-185.74.67.0/24 Deny Cloud
 185.114.224.0/24 Deny Cloud
 185.115.131.0/24 Deny Cloud
 185.119.253.0/24 Deny Cloud
 185.119.255.0/24 Deny Cloud
 185.120.15.0/24 Deny Cloud
 185.120.34.0/24 Deny Cloud
+185.121.136.0/22 Deny Cloud
+185.125.204.0/22 Deny Cloud
 185.141.206.0/23 Deny Cloud
 185.175.208.0/24 Deny Cloud
 185.177.22.0/24 Deny Cloud
+185.177.80.0/24 Deny Cloud
 185.182.48.0/23 Deny Cloud
 185.182.62.0/24 Deny Cloud
-185.188.207.0/24 Deny Cloud
+185.187.242.0/23 Deny Cloud
 185.193.36.0/24 Deny Cloud
 185.193.39.0/24 Deny Cloud
-185.208.170.0/24 Deny Cloud
+185.218.0.0/22 Deny Cloud
+185.222.210.0/24 Deny Cloud
 188.215.92.0/24 Deny Cloud
 188.241.39.0/24 Deny Cloud
+195.140.212.0/22 Deny Cloud
 209.182.109.0/24 Deny Cloud
 Tag: Hydra Communications
 

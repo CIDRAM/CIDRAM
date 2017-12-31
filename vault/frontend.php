@@ -2111,6 +2111,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
+    /** Add flags CSS. */
+    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+        $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+    }
+
     /** Template for result rows. */
     $CIDRAM['FE']['IPTestRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_ip_test_row.html'));
 
@@ -2145,6 +2150,19 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             } elseif ($CIDRAM['BlockInfo']['SignatureCount']) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_yes'] . ' – ' . $CIDRAM['BlockInfo']['WhyReason'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtRd';
+                if (
+                    $CIDRAM['FE']['Flags'] &&
+                    preg_match_all('~\[([A-Z]{2})\]~', $CIDRAM['ThisIP']['YesNo'], $CIDRAM['ThisIP']['Matches']) &&
+                    !empty($CIDRAM['ThisIP']['Matches'][1])
+                ) {
+                    foreach ($CIDRAM['ThisIP']['Matches'][1] as $CIDRAM['ThisIP']['ThisMatch']) {
+                        $CIDRAM['ThisIP']['YesNo'] = str_replace(
+                            '[' . $CIDRAM['ThisIP']['ThisMatch'] . ']',
+                            '<span class="flag ' . $CIDRAM['ThisIP']['ThisMatch'] . '"><span></span></span>',
+                            $CIDRAM['ThisIP']['YesNo']
+                        );
+                    }
+                }
             } else {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_no'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtGn';
@@ -2537,7 +2555,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     $CIDRAM['FE']['SearchInfo'] = $CIDRAM['FE']['SearchQuery'] = $CIDRAM['FE']['BlockLink'] = '';
 
     /** Add flags CSS. */
-    if (file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
         $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
@@ -2563,9 +2581,6 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
         if (strpos($CIDRAM['FE']['logfileData'], '：') !== false) {
             $CIDRAM['FE']['FieldSeparator'] = '：';
         }
-
-        /** Check whether flags CSS is installed. */
-        $CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css');
 
         /** Handle block filtering. */
         if (!empty($CIDRAM['FE']['logfileData']) && !empty($CIDRAM['QueryVars']['search'])) {

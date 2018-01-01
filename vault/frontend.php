@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.12.30).
+ * This file: Front-end handler (last modified: 2018.01.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2684,6 +2684,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
             $CIDRAM['FE']['TextModeLinks']
         ) . "\n";
     });
+
+    /** Calculate page load time (useful for debugging). */
+    $CIDRAM['FE']['SearchInfo'] .= '<br />' . sprintf($CIDRAM['lang']['state_loadtime'], $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3));
 
     /** Set logfile list or no logfiles available message. */
     $CIDRAM['FE']['LogFiles'] = $CIDRAM['FE']['LogFiles']['Out'] ?: $CIDRAM['lang']['logs_no_logfiles_available'];

@@ -548,6 +548,8 @@ Kata-kata singkat yang tersedia adalah:
 
 #### 7.1 TAG
 
+##### 7.1.0 TAG BAGIAN
+
 Jika Anda ingin membagi tanda tangan kustom Anda ke bagian individual, Anda dapat mengidentifikasi bagian individual untuk skrip dengan menambahkan "tag bagian" segera setelah tanda tangan dari setiap bagian, bersama dengan nama bagian tanda tangan Anda (lihat contoh dibawah ini).
 
 ```
@@ -573,6 +575,10 @@ Tag: Bagian 1
 
 Dalam contoh di atas `1.2.3.4/32` dan `2.3.4.5/32` akan di-tag sebagai "IPv4", sedangkan `4.5.6.7/32` dan `5.6.7.8/32` akan di-tag sebagai "Bagian 1".
 
+Logika sama ini dapat diterapkan untuk memisahkan jenis tag lainnya juga.
+
+##### 7.1.1 TAG KADALUARSA
+
 Jika Anda ingin tanda tangan untuk berakhir setelah beberapa waktu, dengan cara yang sama untuk tag bagian, Anda dapat menggunakan "tag kadaluarsa" untuk menentukan kapan tanda tangan harus berhenti menjadi valid. Tag kadaluarsa menggunakan format "TTTT.BB.HH" (lihat contoh dibawah ini).
 
 ```
@@ -582,11 +588,12 @@ Jika Anda ingin tanda tangan untuk berakhir setelah beberapa waktu, dengan cara 
 Expires: 2016.12.31
 ```
 
-Tag bagian dan tag kadaluarsa dapat digunakan bersama, dan mereka berdua opsional (lihat contoh dibawah ini).
+Tag apapun dapat digunakan bersamaan, dan semua tag bersifat opsional (lihat contoh dibawah ini).
 
 ```
 # Contoh Bagian.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Contoh Bagian
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian terte
 ```
 Ignore Bagian 1
 ```
-
-Mengacu pada file tanda tangan kustom untuk informasi lebih lanjut.
 
 #### 7.4 <a name="MODULE_BASICS"></a>DASAR-DASAR (UNTUK MODUL)
 

@@ -548,7 +548,9 @@ Le parole brevi disponibili sono:
 
 #### 7.1 ETICHETTE
 
-Se si desidera dividere le vostre firme personalizzate in singole sezioni, è possibile identificare queste singole sezioni per lo script per aggiungendo un "etichetta sezione" subito dopo le firme di ogni sezione, insieme con il nome della sezione di firme (vedere l'esempio cui seguito).
+##### 7.1.0 ETICHETTE DI SEZIONE
+
+Se si desidera dividere le vostre firme personalizzate in singole sezioni, è possibile identificare queste singole sezioni per lo script per aggiungendo un "etichetta di sezione" subito dopo le firme di ogni sezione, insieme con il nome della sezione di firme (vedere l'esempio cui seguito).
 
 ```
 # Sezione 1.
@@ -573,7 +575,11 @@ Tag: Sezione 1
 
 Nell'esempio sopra `1.2.3.4/32` e `2.3.4.5/32` saranno etichettato come "IPv4", mentre `4.5.6.7/32` e `5.6.7.8/32` saranno etichettato come "Sezione 1".
 
-Se si desidera firme per scadono dopo un certo tempo, in modo analogo all'etichette sezione, è possibile utilizzare un "etichetta scadenza" per specificare quando le firme dovrebbero cessano di essere validi. Etichette scadenza usano il formato "AAAA.MM.GG" (vedere l'esempio cui seguito).
+La stessa logica può essere applicata anche per separare altri tipi di etichette.
+
+##### 7.1.1 ETICHETTE DI SCADENZA
+
+Se si desidera firme per scadono dopo un certo tempo, in modo analogo all'etichette sezione, è possibile utilizzare un "etichetta di scadenza" per specificare quando le firme dovrebbero cessano di essere validi. Etichette scadenza usano il formato "AAAA.MM.GG" (vedere l'esempio cui seguito).
 
 ```
 # Sezione 1.
@@ -582,11 +588,12 @@ Se si desidera firme per scadono dopo un certo tempo, in modo analogo all'etiche
 Expires: 2016.12.31
 ```
 
-Etichette sezione ed etichette scadenza possono essere utilizzati insieme, ed entrambi sono opzionali (vedere l'esempio cui seguito).
+Qualsiasi tag possono essere utilizzati insieme e tutti i tag sono opzionali (vedere l'esempio cui seguito).
 
 ```
 # Sezione Esempio.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Sezione Esempio
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ In aggiunta, se si desidera CIDRAM di ignorare completamente alcune sezioni spec
 ```
 Ignore Sezione 1
 ```
-
-Fare riferimento ai file di firme personalizzati per ulteriori informazioni.
 
 #### 7.4 <a name="MODULE_BASICS"></a>NOZIONI DI BASE (PER MODULI)
 

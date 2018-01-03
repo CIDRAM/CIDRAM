@@ -548,6 +548,8 @@ De beschikbare korte woorden zijn:
 
 #### 7.1 ETIKETTEN
 
+##### 7.1.0 SECTIE ETIKETTEN
+
 Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt deze individuele secties te identificeren om het script door toevoeging van een "sectie etiket" onmiddellijk na de signatures van elke sectie, samen met de naam van uw signature-sectie (zie het onderstaande voorbeeld).
 
 ```
@@ -573,6 +575,10 @@ Tag: Sectie 1
 
 In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtiketteerd als "IPv4", terwijl `4.5.6.7/32` en `5.6.7.8/32` zal worden geëtiketteerd als "Sectie 1".
 
+Dezelfde logica kan ook worden toegepast voor het scheiden van andere typen etiketten.
+
+##### 7.1.1 VERVALTIJD ETIKETTEN
+
 Als u wilt signatures te vervallen na verloop van tijd, op soortgelijke wijze als sectie etiketten, u kan een "vervaltijd etiket" gebruikt om aan te geven wanneer signatures moet niet meer geldig. Vervaltijd etiketten gebruiken het formaat "JJJJ.MM.DD" (zie het onderstaande voorbeeld).
 
 ```
@@ -582,11 +588,12 @@ Als u wilt signatures te vervallen na verloop van tijd, op soortgelijke wijze al
 Expires: 2016.12.31
 ```
 
-Sectie etiketten en vervaltijd etiketten kunnen worden gebruikt in combinatie, en beide zijn optioneel (zie het onderstaande voorbeeld).
+Alle etiketten kunnen samen worden gebruikt en alle etiketten zijn optioneel (zie het onderstaande voorbeeld).
 
 ```
 # Voorbeeld Sectie.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Voorbeeld Sectie.
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de sig
 ```
 Ignore Sectie 1
 ```
-
-Raadpleeg de aangepaste signature bestanden voor meer informatie.
 
 #### 7.4 <a name="MODULE_BASICS"></a>BASICS (VOOR MODULES)
 

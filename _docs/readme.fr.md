@@ -546,9 +546,11 @@ Les mots courts disponibles sont :
 - Proxy
 - Spam
 
-#### 7.1 BALISES
+#### 7.1 ÉTIQUETTES
 
-Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant une « balise de section » immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures (voir l'exemple ci-dessous).
+##### 7.1.0 ÉTIQUETTE DE SECTION
+
+Si vous voulez partager vos signatures personnalisées en sections individuelles, vous pouvez identifier ces sections individuelles au script par ajoutant une « étiquette de section » immédiatement après les signatures de chaque section, inclus avec le nom de votre section de signatures (voir l'exemple ci-dessous).
 
 ```
 # Section 1.
@@ -560,7 +562,7 @@ Si vous voulez partager vos signatures personnalisées en sections individuelles
 Tag: Section 1
 ```
 
-Pour briser les balises de section et assurer que les balises ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre balise et vos sections précédent. Toutes les signatures non balisé sera par défaut soit « IPv4 » ou « IPv6 » (en fonction de quels types de signatures sont déclenchés).
+Pour briser les étiquettes de section et assurer que les étiquettes ne sont pas identifié incorrectement pour les sections de signatures à partir de plus tôt dans les fichiers, assurez-vous simplement qu'il ya au moins deux sauts de ligne consécutifs entre votre étiquette et vos sections précédent. Toutes les signatures non balisé sera par défaut soit « IPv4 » ou « IPv6 » (en fonction de quels types de signatures sont déclenchés).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -573,7 +575,11 @@ Tag: Section 1
 
 Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront balisés comme « IPv4 », tandis que `4.5.6.7/32` et `5.6.7.8/32` seront balisés comme « Section 1 ».
 
-Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les balises de section, vous pouvez utiliser une « balise d'expiration » à spécifier quand les signatures doivent cesser d'être valide. Les balises d'expiration utilisent le format « AAAA.MM.JJ » (voir l'exemple ci-dessous).
+La même logique peut également être appliquée pour séparer d'autres types d'étiquettes.
+
+##### 7.1.1 ÉTIQUETTES D'EXPIRATION
+
+Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les étiquettes de section, vous pouvez utiliser une « étiquette d'expiration » à spécifier quand les signatures doivent cesser d'être valide. Les étiquettes d'expiration utilisent le format « AAAA.MM.JJ » (voir l'exemple ci-dessous).
 
 ```
 # Section 1.
@@ -582,11 +588,12 @@ Si vous voulez des signatures expirent après un certain temps, d'une manière s
 Expires: 2016.12.31
 ```
 
-Les balises de section et les balises d'expiration peuvent être utilisés en conjonction, et les deux sont optionnel (voir l'exemple ci-dessous).
+Toutes les étiquettes peuvent être utilisées conjointement et toutes les étiquettes sont facultatives (voir l'exemple ci-dessous).
 
 ```
 # Section Exemple.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Section Exemple
 Expires: 2016.12.31
 ```
@@ -601,7 +608,7 @@ L'utilisation de YAML dans les fichiers de signature est entièrement facultativ
 
 Note : L'implémentation de YAML dans CIDRAM est très simpliste et très limitée ; L'intention est de satisfaire aux exigences spécifiques à CIDRAM d'une manière qui a la familiarité de YAML, mais ne suit pas et ne sont pas conformes aux spécifications officielles (et ne sera donc pas se comporter de la même manière que des implémentations plus approfondies ailleurs, et peuvent ne pas convenir à d'autres projets ailleurs).
 
-Dans CIDRAM, segments YAML sont identifiés au script par trois tirets (« --- »), et terminer aux côtés de leur contenant sections de signature par sauts de ligne double. Un segment YAML typique dans une section de signatures se compose de trois tirets sur une ligne immédiatement après la liste des CIDRs et des balises, suivi d'une liste de bidimensionnelle paires clé-valeur (première dimension, catégories de directives de configuration ; deuxième dimension, directives de configuration) pour les directives de configuration que doivent être modifiés (et pour quelles valeurs) chaque fois qu'une signature dans cette section de signatures est déclenchée (voir les exemples ci-dessous).
+Dans CIDRAM, segments YAML sont identifiés au script par trois tirets (« --- »), et terminer aux côtés de leur contenant sections de signature par sauts de ligne double. Un segment YAML typique dans une section de signatures se compose de trois tirets sur une ligne immédiatement après la liste des CIDRs et des étiquettes, suivi d'une liste de bidimensionnelle paires clé-valeur (première dimension, catégories de directives de configuration ; deuxième dimension, directives de configuration) pour les directives de configuration que doivent être modifiés (et pour quelles valeurs) chaque fois qu'une signature dans cette section de signatures est déclenchée (voir les exemples ci-dessous).
 
 ```
 # Foobar 1.
@@ -673,8 +680,6 @@ En addition, si vous voulez CIDRAM à ignorer complètement certaines sections s
 ```
 Ignore Section 1
 ```
-
-Reportez-vous aux fichiers de signatures personnalisées pour plus d'informations.
 
 #### 7.4 <a name="MODULE_BASICS"></a>BASES (POUR LES MODULES)
 

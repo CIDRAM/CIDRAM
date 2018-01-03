@@ -548,6 +548,8 @@ Die verfügbaren Kurzwörter sind:
 
 #### 7.1 TAGS
 
+##### 7.1.0 SEKTION-TAGS
+
 Wenn Sie Ihre benutzerdefinierten Signaturen in einzelne Sektionen aufteilen möchten, können Sie diese einzelne Sektionen zu dem Skript identifizieren durch Hinzufügen eine "Sektion-Tag" unmittelbar nach den Signaturen von jeder Sektion, zusammen mit dem Namen Ihres Signatur-Sektion (siehe Beispiel unten).
 
 ```
@@ -573,6 +575,10 @@ Tag: Sektion 1
 
 In dem obigen Beispiel, `1.2.3.4/32` und `2.3.4.5/32` wird als "IPv4" markiert werden, wohingegen `4.5.6.7/32` und `5.6.7.8/32` wird als "Sektion 1" markiert werden.
 
+Die gleiche Logik kann auch zum Trennen anderer Arten von Tags angewendet werden.
+
+##### 7.1.1 ABLAUF-TAGS
+
 Wenn Sie möchten dass Signaturen nach einiger Zeit wird ablaufen, in einer Weise ähnlicher wie Sektion-Tags, können Sie ein "Ablauf-Tag" verwenden um anzugeben wann Signaturen nicht mehr gültig sind. Ablauf-Tags verwenden das Format "JJJJ.MM.TT" (siehe Beispiel unten).
 
 ```
@@ -582,11 +588,12 @@ Wenn Sie möchten dass Signaturen nach einiger Zeit wird ablaufen, in einer Weis
 Expires: 2016.12.31
 ```
 
-Sektion-Tags und Ablauf-Tags kann zusammen verwendet werden, und beide sind optional (siehe Beispiel unten).
+Alle Tags können zusammen verwendet werden, und alle Tags sind optional (siehe Beispiel unten).
 
 ```
 # Beispiel Sektion.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Beispiel Sektion
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ In Ergänzung, wenn Sie möchten dass CIDRAM wird bestimmte Sektionen innerhalb 
 ```
 Ignore Sektion 1
 ```
-
-Wenden Sie sich an den benutzerdefinierten Signaturdateien für weitere Informationen.
 
 #### 7.4 <a name="MODULE_BASICS"></a>GRUNDLAGEN (FÜR MODULE)
 

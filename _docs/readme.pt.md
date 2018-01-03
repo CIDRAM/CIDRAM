@@ -548,7 +548,9 @@ As palavras curtas disponíveis são:
 
 #### 7.1 ETIQUETAS
 
-Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas seções individuais para o script por adição de uma "etiqueta de secção" imediatamente após as assinaturas de cada secção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
+##### 7.1.0 ETIQUETAS DE SEÇÃO
+
+Se você quiser dividir suas assinaturas personalizadas em seções individuais, você pode identificar estas seções individuais para o script por adição de uma "etiqueta de seção" imediatamente após as assinaturas de cada seção, juntamente com o nome de sua seção de assinaturas (veja o exemplo abaixo).
 
 ```
 # Seção 1.
@@ -573,7 +575,11 @@ Tag: Seção 1
 
 No exemplo acima, `1.2.3.4/32` e `2.3.4.5/32` será etiquetadas como "IPv4", enquanto que `4.5.6.7/32` e `5.6.7.8/32` será etiquetadas como "Seção 1".
 
-Se você quiser assinaturas para expirar depois de algum tempo, de um modo semelhante para etiquetas de secção, você pode usar um "etiqueta de expiração" para especificar quando as assinaturas devem deixar de ser válida. Etiquetas de expiração usam o formato "AAAA.MM.DD" (veja o exemplo abaixo).
+A mesma lógica pode ser aplicada para separar outros tipos de tags, também.
+
+##### 7.1.1 ETIQUETAS DE EXPIRAÇÃO
+
+Se você quiser assinaturas para expirar depois de algum tempo, de um modo semelhante para etiquetas de seção, você pode usar um "etiqueta de expiração" para especificar quando as assinaturas devem deixar de ser válida. Etiquetas de expiração usam o formato "AAAA.MM.DD" (veja o exemplo abaixo).
 
 ```
 # Seção 1.
@@ -582,11 +588,12 @@ Se você quiser assinaturas para expirar depois de algum tempo, de um modo semel
 Expires: 2016.12.31
 ```
 
-Etiquetas de secção and e etiquetas de expiração pode ser usado em conjunto, e ambos são opcionais (veja o exemplo abaixo).
+Todas as etiquetas podem ser usadas em conjunto e todas as etiquetas são opcionais (veja o exemplo abaixo).
 
 ```
 # Seção Exemplo.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Seção Exemplo
 Expires: 2016.12.31
 ```
@@ -601,7 +608,7 @@ Uso de marcação YAML nos arquivos de assinatura é totalmente opcional (isto �
 
 Nota: Implementação de marcação YAML em CIDRAM é muito simplista e muito limitado; Destina-se a cumprir as exigências específicas para CIDRAM de uma maneira que tem a familiaridade de marcação YAML, mas nem segue nem está de acordo com as especificações oficiais (e portanto, não se comporta da mesma forma como outros implementações mais completas, e pode não ser apropriado para outros projetos).
 
-Em CIDRAM, Segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens em uma linha imediatamente após a lista de CIDRs e todas as tags, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso secção de assinaturas é desencadeada (veja os exemplos abaixo).
+Em CIDRAM, Segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens em uma linha imediatamente após a lista de CIDRs e todas as tags, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso seção de assinaturas é desencadeada (veja os exemplos abaixo).
 
 ```
 # Foobar 1.
@@ -652,7 +659,7 @@ general:
 
 Quando "usemode" é 0 ou 1, seções de assinatura não precisa ser "marcado especialmente" para uso com reCAPTCHA (porque eles já vão usar ou não vão usar o reCAPTCHA, dependendo essa configuração).
 
-Quando "usemode" é 2, para "marcar especialmente" seções de assinatura para uso com reCAPTCHA, uma entrada está incluído no segmento de YAML para que a secção de assinatura (veja o exemplo abaixo).
+Quando "usemode" é 2, para "marcar especialmente" seções de assinatura para uso com reCAPTCHA, uma entrada está incluído no segmento de YAML para que a seção de assinatura (veja o exemplo abaixo).
 
 ```
 # Esta seção usará reCAPTCHA.
@@ -673,8 +680,6 @@ Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seçõe
 ```
 Ignore Seção 1
 ```
-
-Consulte os arquivos de assinaturas personalizadas para obter mais informações.
 
 #### 7.4 <a name="MODULE_BASICS"></a>NOÇÕES BÁSICAS (PARA MÓDULOS)
 

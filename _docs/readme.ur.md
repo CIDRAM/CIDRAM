@@ -41,7 +41,7 @@
 
 <div dir="rtl">١. آپ کے پڑھنے کی طرف سے اس، مجھے سنبھالنے رہا ہوں آپ کے پاس پہلے، اسکرپٹ کا ایک آرکائیو کاپی کو ڈاؤن لوڈ کیا اس کے مشمولات کو پھیلا اور اس کو اپنے مقامی مشین پر کہیں بیٹھے ہیں کیا ہے. یہاں سے، آپ جہاں آپ کا میزبان یا CMS پر آپ ان کے مندرجات رکھنے کے لئے چاہتے ہیں باہر کام کرنے چاہیں گے. جیسے <code dir="ltr">"/public_html/cidram/"</code> یا اسی طرح کی (اگرچہ، یہ جو آپ کو اسے محفوظ ہے کچھ اور کچھ اور آپ کے ساتھ خوش ہیں ہے اتنی دیر کے طور پر انتخاب کرتے ہیں، کوئی فرق نہیں پڑتا) ایک ڈائریکٹری کافی ہوگا. <em>آپ کو اپ لوڈ کرنے شروع کرنے سے پہلے، پر پڑھیں ..</em><br /><br /></div>
 
-<div dir="rtl">٢. config.ini" (اندر "vault" واقع کرنے "config.ini.RenameMe" نام تبدیل)، اور اختیاری پختہ اعلی درجے کی صارفین کے لئے سفارش کی جاتی ہے، لیکن (اس فائل پر مشتمل ابتدائی کے لئے یا ناتجربہ کار)، اسے کھولنے کے لئے سفارش کی نہیں CIDRAM لئے دستیاب تمام ہدایات؛ ہر آپشن کے اوپر ایک مختصر تبصرہ یہ کیا کرتا بیان اور کیا اس کے لئے ہے) ہونا چاہئے. آپ کو فٹ دیکھ کے طور جو بھی اپنے مخصوص سیٹ اپ کے لئے مناسب ہے کے مطابق ان ہدایات کو ایڈجسٹ کریں. فائل محفوظ کریں، قریب ہے.<br /><br /></div>
+<div dir="rtl">٢. config.ini" (اندر "vault" واقع کرنے <code dir="ltr">"config.ini.RenameMe"</code> نام تبدیل)، اور اختیاری پختہ اعلی درجے کی صارفین کے لئے سفارش کی جاتی ہے، لیکن (اس فائل پر مشتمل ابتدائی کے لئے یا ناتجربہ کار)، اسے کھولنے کے لئے سفارش کی نہیں CIDRAM لئے دستیاب تمام ہدایات؛ ہر آپشن کے اوپر ایک مختصر تبصرہ یہ کیا کرتا بیان اور کیا اس کے لئے ہے) ہونا چاہئے. آپ کو فٹ دیکھ کے طور جو بھی اپنے مخصوص سیٹ اپ کے لئے مناسب ہے کے مطابق ان ہدایات کو ایڈجسٹ کریں. فائل محفوظ کریں، قریب ہے.<br /><br /></div>
 
 <div dir="rtl">٣. (اگر آپ پہلے پر فیصلہ کیا تھا ڈائریکٹری میں مندرجات (CIDRAM اور اس کی فائلوں) کو اپ لوڈ کریں آپ <code dir="ltr">"*.txt/*.md"</code> فائلوں کو شامل کرنے کی ضرورت نہیں ہے، لیکن زیادہ تر، تم سب کچھ اپ لوڈ کرنا چاہئے) .<br /><br /></div>
 
@@ -73,7 +73,7 @@
 
 #### <div dir="rtl">٢.٢ ورڈپریس کے لئے نصب</div>
 
-<div dir="rtl">اگر آپ ورڈپریس کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں تو، آپ کو مندرجہ بالا تمام ہدایات کو نظر انداز کر سکتے ہیں. <a href="https://wordpress.org/plugins/cidram/">CIDRAM ورڈپریس پلگ ان کے ڈیٹا بیس کے ساتھ ایک پلگ ان کے طور پر رجسٹرڈ ہے</a>، اور آپ کو پلگ ان ڈیش بورڈ سے براہ راست CIDRAM انسٹال کر سکتے ہیں. آپ کسی بھی دیگر پلگ ان کے طور پر اسی انداز میں اسے انسٹال کر سکتے ہیں، اور کوئی اس کے علاوہ اقدامات کی ضرورت ہے. بس دوسرے کی تنصیب کے طریقوں کے ساتھ کے طور پر، آپ "config.ini" فائل کے مواد میں تبدیلی کرنے کی طرف سے یا سامنے کے آخر میں ترتیب صفحے کا استعمال کرتے ہوئے کی طرف سے آپ کی تنصیب کے اپنی مرضی کے مطابق کر سکتے ہیں. آپ کو سامنے کے آخر میں اپ ڈیٹس صفحے کا استعمال کرتے ہوئے CIDRAM سامنے کے آخر میں اور اپ ڈیٹ CIDRAM فعال کرتے ہیں تو یہ خود کار طریقے سے پلگ ان ڈیش بورڈ میں ظاہر پلگ ان ورژن کی معلومات کے ساتھ مطابقت پذیر ہو گی<br /><br /></div>
+<div dir="rtl">اگر آپ ورڈپریس کے ساتھ CIDRAM استعمال کرنا چاہتے ہیں تو، آپ کو مندرجہ بالا تمام ہدایات کو نظر انداز کر سکتے ہیں. <a href="https://wordpress.org/plugins/cidram/">CIDRAM ورڈپریس پلگ ان کے ڈیٹا بیس کے ساتھ ایک پلگ ان کے طور پر رجسٹرڈ ہے</a>، اور آپ کو پلگ ان ڈیش بورڈ سے براہ راست CIDRAM انسٹال کر سکتے ہیں. آپ کسی بھی دیگر پلگ ان کے طور پر اسی انداز میں اسے انسٹال کر سکتے ہیں، اور کوئی اس کے علاوہ اقدامات کی ضرورت ہے. بس دوسرے کی تنصیب کے طریقوں کے ساتھ کے طور پر، آپ <code dir="ltr">"config.ini"</code> فائل کے مواد میں تبدیلی کرنے کی طرف سے یا سامنے کے آخر میں ترتیب صفحے کا استعمال کرتے ہوئے کی طرف سے آپ کی تنصیب کے اپنی مرضی کے مطابق کر سکتے ہیں. آپ کو سامنے کے آخر میں اپ ڈیٹس صفحے کا استعمال کرتے ہوئے CIDRAM سامنے کے آخر میں اور اپ ڈیٹ CIDRAM فعال کرتے ہیں تو یہ خود کار طریقے سے پلگ ان ڈیش بورڈ میں ظاہر پلگ ان ورژن کی معلومات کے ساتھ مطابقت پذیر ہو گی<br /><br /></div>
 
 <div dir="rtl"><em>انتباہ: ایک صاف تنصیب میں پلگ ان ڈیش بورڈ کے نتائج کے ذریعے CIDRAM تازہ کاری ہو رہی! آپ کو آپ کی تنصیب کے اپنی مرضی کے مطابق کیا ہے تو (اپنی ترتیب بدل گیا، نصب ماڈیولز، وغیرہ)، ان کی تخصیصات پلگ ان ڈیش بورڈ کے ذریعے اپ ڈیٹ کر جب ختم ہو جائے گا! لاگ مسلیں بھی ختم ہو جائے گا! لاگ فائلوں اور اصلاح کے تحفظ کے لئے، CIDRAM سامنے کے آخر میں اپ ڈیٹس صفحے کے ذریعے اپ ڈیٹ کریں.</em><br /><br /></div>
 
@@ -291,7 +291,7 @@
 
 
 ### <div dir="rtl">٦. <a name="SECTION6"></a>ترتیب کے اختیارات</div>
-<div dir="rtl">ندرجہ ذیل ان ہدایات کے مقصد کی وضاحت کے ساتھ ساتھ، "config.ini" ترتیب فائل میں CIDRAM کو دستیاب ہدایات کی ایک فہرست ہے.<br /><br /></div>
+<div dir="rtl">ندرجہ ذیل ان ہدایات کے مقصد کی وضاحت کے ساتھ ساتھ، <code dir="ltr">"config.ini"</code> ترتیب فائل میں CIDRAM کو دستیاب ہدایات کی ایک فہرست ہے.<br /><br /></div>
 
 #### <div dir="rtl">"general" (قسم)<br /></div>
 <div dir="rtl">جنرل CIDRAM کنفیگریشن.<br /><br /></div>
@@ -446,7 +446,8 @@
 
 <div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
 <div dir="rtl"><ul>
- <li>جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں. نوٹ: IPv6 gethostbyaddr کی طرف سے حمایت نہیں ہے.</li>
+ <li>جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟</li>
+ <li>نوٹ: <code dir="ltr">IPv6</code> کی تلاش کچھ <code dir="ltr">32-bit</code> کے نظام پر صحیح طریقے سے کام نہیں کرسکتا.</li>
 </ul></div>
 
 #### <div dir="rtl">"signatures" (قسم)<br /></div>
@@ -663,6 +664,8 @@
 
 #### <div dir="rtl">٧.١ ٹیگز<br /><br /></div>
 
+##### <div dir="rtl">٧.١.٠ سیکشن ٹیگ<br /><br /></div>
+
 <div dir="rtl">آپ کو انفرادی حصوں میں آپ اپنی مرضی کے دستخط کو تقسیم کرنا چاہتے ہیں تو، آپ کو آپ کے دستخط کے سیکشن کے نام کے ساتھ ساتھ فوری طور پر ہر سیکشن کے دستخط کے بعد ایک "سیکشن ٹیگ" انہوں نے مزید کہا کی طرف سے سکرپٹ کے لئے ان کے انفرادی حصوں کی شناخت کر سکتے ہیں (ذیل کی مثال ملاحظہ کریں).<br /><br /></div>
 
 ```
@@ -688,7 +691,11 @@ Tag: سیکشن 1
 
 <div dir="rtl">اوپر کی مثال میں<code dir="ltr">"1.2.3.4/32"</code> اور<code dir="ltr">"2.3.4.5/32"</code> "IPv4" کی کے طور پر ٹیگ کیا جائے گا، جبکہ<code dir="ltr">"4.5.6.7/32"</code> اور<code dir="ltr">"5.6.7.8/32"</code> "سیکشن 1" کے طور پر ٹیگ کیا جائے گا.<br /><br /></div>
 
-<div dir="rtl">آپ دستخط سیکشن ٹیگز کو اسی انداز میں، کچھ وقت کے بعد ختم کرنا چاہتے ہیں تو، آپ کو متعین کرنے کی ایک "ختم ہونے ٹیگ" استعمال دستخط درست نہیں رہے چاہئے جب سکتا. ختم ہونے ٹیگز شکل "YYYY.MM.DD" استعمال کرتے ہیں (ذیل کی مثال دیکھیں).<br /><br /></div>
+<div dir="rtl">اسی منطق کو بھی دیگر اقسام کے ٹیگ کو الگ کرنے کے لئے لاگو کیا جا سکتا ہے.<br /><br /></div>
+
+##### <div dir="rtl">٧.١.١ ختم ہونے والی ٹیگ<br /><br /></div>
+
+<div dir="rtl">آپ دستخط سیکشن ٹیگز کو اسی انداز میں، کچھ وقت کے بعد ختم کرنا چاہتے ہیں تو، آپ کو متعین کرنے کی ایک "ختم ہونے ٹیگ" استعمال دستخط درست نہیں رہے چاہئے جب سکتا. ختم ہونے ٹیگز شکل <code dir="ltr">"YYYY.MM.DD"</code> استعمال کرتے ہیں (ذیل کی مثال دیکھیں).<br /><br /></div>
 
 ```
 # سیکشن 1.
@@ -697,11 +704,12 @@ Tag: سیکشن 1
 Expires: 2016.12.31
 ```
 
-<div dir="rtl">دفعہ ٹیگ اور ختم ہونے ٹیگز مل کر میں استعمال کیا جا سکتا ہے، اور دونوں (ذیل مثال دیکھیں) اختیاری ہیں.<br /><br /></div>
+<div dir="rtl">کسی ٹیگ کے ساتھ مل کر استعمال کیا جا سکتا ہے، اور تمام ٹیگ اختیاری ہیں (ذیل مثال دیکھیں).<br /><br /></div>
 
 ```
 # Example Section.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Example Section
 Expires: 2016.12.31
 ```
@@ -785,8 +793,6 @@ recaptcha:
 Ignore سیکشن 1
 ```
 
-<div dir="rtl">مزید معلومات کے لئے اپنی مرضی کے دستخط فائلوں کا حوالہ لیں.<br /><br /></div>
-
 #### <div dir="rtl">٧.٤ <a name="MODULE_BASICS"></a>مبادیات (ماڈیولز کے لئے)<br /><br /></div>
 
 <div dir="rtl">ماڈیولز CIDRAM کی فعالیت کو بڑھانے کے لئے استعمال کیا جا سکتا ہے، اضافی کاموں کو انجام دینے کے لئے، یا اضافی منطق پر عمل درآمد. عام طور پر، ماڈیولز استعمال کیے جاتے ہیں جب اصل میں IP ایڈریس کے مقابلے میں دیگر وجوہات کی درخواست کو روکنے کے لئے ضروری ہے (اور اس طرح، جب CIDR دستخط درخواست کو روکنے کے لئے کافی نہیں ہوگا). ماڈیول PHP کی فائلوں کے طور پر لکھا جاتا ہے، اور اس طرح، عام طور پر، ماڈیول دستخط PHP کوڈ کے طور پر لکھا جاتا ہے.<br /><br /></div>
@@ -813,16 +819,13 @@ Ignore سیکشن 1
 
 <div dir="rtl"><code dir="ltr">"$Trigger"</code> ٤ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$ReasonLong"</code> (اختیاری)، <code dir="ltr">"$DefineOptions"</code> (اختیاری).<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true, the signature is triggered. If false, the signature is not triggered. <code dir="ltr">"$Condition"</code> typically contains PHP code to evaluate a condition that should cause a request to be blocked.
+<div dir="rtl"><code dir="ltr">"$Condition"</code> سچائی کا اندازہ کیا جاتا ہے. اگر یہ سچ (true) ہے تو، دستخط چالو ہے. اگر یہ غلط (false) ہے تو، دستخط چالو نہیں ہے. <code dir="ltr">"$Condition"</code> عام طور پر ایک ایسی شرط پر مشتمل ہے جس کی وجہ سے کسی درخواست کو بلاک کرنا ہوگا.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$ReasonShort"</code> is cited in the "Why Blocked" field when the signature is triggered.
+<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> کو "کیوں بلاک شدہ" فیلڈ میں حوالہ دیا جاتا ہے جب دستخط چالو ہوجاتا ہے.<br /><br /></div>
 
 <div dir="rtl"><code dir="ltr">"$ReasonLong"</code> صارف کو ظاہر ہونے پر ایک پیغام ہے جب وہ روک رہے ہیں، اس وجہ سے وضاحت کریں کہ. ختم ہونے پر معیاری "کیوں بلاک شدہ" پیغام استعمال کرتا ہے.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the signature is triggered.
+<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> ایک اختیاری سرنی ہے جس میں کلیدی/قدر شامل ہیں، درخواست کی مثال کے مطابق مخصوص ترتیبات کے اختیارات کی وضاحت کرنے کے لئے استعمال کیا جاتا ہے. جب دستخط چالو ہو تو ترتیب کے اختیارات لاگو کیے جائیں گے.<br /><br /></div>
 
 <div dir="rtl"><code dir="ltr">"$Trigger"</code> سچ ہے جب دستخط چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا تو غلط ہوتا ہے.<br /><br /></div>
 
@@ -838,14 +841,11 @@ $Trigger = $CIDRAM['Trigger'];
 
 <div dir="rtl"><code dir="ltr">"$Bypass"</code> ٣ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$DefineOptions"</code> (اختیاری).<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-The truthiness of <code dir="ltr">"$Condition"</code> is evaluated, and if true, the bypass is triggered. If false, the bypass is not triggered. <code dir="ltr">"$Condition"</code> typically contains PHP code to evaluate a condition that should not cause a request to be blocked.
+<div dir="rtl"><code dir="ltr">"$Condition"</code> سچائی کا اندازہ کیا جاتا ہے. اگر یہ سچ (true) ہے تو، بائی پاس چالو ہے. اگر یہ غلط (false) ہے تو، بائی پاس چالو نہیں ہے. <code dir="ltr">"$Condition"</code> عام طور پر ایک ایسی شرط پر مشتمل ہے جو کسی کو بلاک کرنے کی درخواست نہیں بننی چاہئے.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$ReasonShort"</code> is cited in the "Why Blocked" field when the bypass is triggered.
+<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> کو "کیوں بلاک شدہ" فیلڈ میں حوالہ دیا جاتا ہے جب بائی پاس چالو ہوجاتا ہے.<br /><br /></div>
 
-<div dir="rtl">@TranslateMe@<br /><br /></div>
-<code dir="ltr">"$DefineOptions"</code> is an optional array containing key/value pairs, used to define configuration options specific to the request instance. Configuration options will be applied when the bypass is triggered.
+<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> ایک اختیاری سرنی ہے جس میں کلیدی/قدر شامل ہیں، درخواست کی مثال کے مطابق مخصوص ترتیبات کے اختیارات کی وضاحت کرنے کے لئے استعمال کیا جاتا ہے. جب دستخط چالو ہو تو ترتیب کے اختیارات لاگو کیے جائیں گے.<br /><br /></div>
 
 <div dir="rtl"><code dir="ltr">"$Bypass"</code> سچ ہے جب بائی پاس چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا.<br /><br /></div>
 

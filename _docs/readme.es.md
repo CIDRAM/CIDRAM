@@ -548,6 +548,8 @@ Las palabras abreviadas disponibles son:
 
 #### 7.1 ETIQUETAS
 
+##### 7.1.0 ETIQUETA DE SECCIÓN
+
 Si desea dividir sus firmas personalizadas en secciones individuales, se puede identificar estas secciones individuales a la script mediante la adición de una "etiqueta de sección" inmediatamente después de las firmas de cada sección, junto con el nombre de su sección de firmas (vea el ejemplo siguiente).
 
 ```
@@ -573,6 +575,10 @@ Tag: Sección 1
 
 En el ejemplo anterior `1.2.3.4/32` y `2.3.4.5/32` será etiquetado como "IPv4", mientras `4.5.6.7/32` y `5.6.7.8/32` será etiquetado como "Sección 1".
 
+La misma lógica se puede aplicar para separar otros tipos de etiquetas, también.
+
+##### 7.1.1 ETIQUETAS DE EXPIRACIÓN
+
 Si desea firmas para expiran después de un tiempo, de una manera similar a las etiquetas de sección, se puede utilizar una "etiqueta de expiración" para especificar cuándo deben firmas dejarán de ser válidas. Etiquetas de expiración utilizan el formato "AAAA.MM.DD" (vea el ejemplo siguiente).
 
 ```
@@ -582,11 +588,12 @@ Si desea firmas para expiran después de un tiempo, de una manera similar a las 
 Expires: 2016.12.31
 ```
 
-Etiquetas de sección y etiquetas de expiración se pueden utilizar en conjunción, y ambos son opcionales (vea el ejemplo siguiente).
+Cualquier etiqueta se puede usar en conjunto, y todas las etiquetas son opcionales (vea el ejemplo siguiente).
 
 ```
 # Sección Ejemplo.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Sección Ejemplo
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ En adición, si quieres CIDRAM ignorar completamente algunas secciones específi
 ```
 Ignore Sección 1
 ```
-
-Consulte los archivos de firmas personalizadas para obtener más información.
 
 #### 7.4 <a name="MODULE_BASICS"></a>LOS FUNDAMENTOS (PARA MÓDULOS)
 

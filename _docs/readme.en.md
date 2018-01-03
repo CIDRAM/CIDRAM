@@ -548,6 +548,8 @@ The available shorthand words are:
 
 #### 7.1 TAGS
 
+##### 7.1.0 SECTION TAGS
+
 If you want to split your custom signatures into individual sections, you can identify these individual sections to the script by adding a "section tag" immediately after the signatures of each section, along with the name of your signature section (see the example below).
 
 ```
@@ -573,6 +575,10 @@ Tag: Section 1
 
 In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whereas `4.5.6.7/32` and `5.6.7.8/32` will be tagged as "Section 1".
 
+The same logic can be applied for separating other types of tags, too.
+
+##### 7.1.1 EXPIRY TAGS
+
 If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "YYYY.MM.DD" (see the example below).
 
 ```
@@ -582,11 +588,12 @@ If you want signatures to expire after some time, in a similar manner to section
 Expires: 2016.12.31
 ```
 
-Section tags and expiry tags may be used in conjunction, and both are optional (see the example below).
+Any tags may be used in conjunction, and all tags are optional (see the example below).
 
 ```
 # Example Section.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Example Section
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ In addition, if you want CIDRAM to completely ignore some specific sections with
 ```
 Ignore Section 1
 ```
-
-Refer to the custom signature files for more information.
 
 #### 7.4 <a name="MODULE_BASICS"></a>BASICS (FOR MODULES)
 

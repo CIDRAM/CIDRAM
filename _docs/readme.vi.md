@@ -548,6 +548,8 @@ Những từ viết tắt có sẵn là:
 
 #### 7.1 GẮN THẺ
 
+##### 7.1.0 GẮN THẺ PHẦN
+
 Nếu bạn muốn chia chữ ký tùy chỉnh của bạn để các phần riêng biệt, bạn có thể xác định những phần riêng lẻ cho các kịch bản bằng cách thêm một "gắn thẻ phần" ngay sau khi có chữ ký của từng phần, với tên của phần chữ ký của bạn (xem ví dụ dưới đây).
 
 ```
@@ -573,6 +575,10 @@ Tag: Phần 1
 
 Trong ví dụ trên `1.2.3.4/32` và `2.3.4.5/32` sẽ được xác định như "IPv4", trong khi `4.5.6.7/32` và `5.6.7.8/32` sẽ được xác định như "Phần 1".
 
+Tương tự logic có thể được áp dụng để tách thẻ loại khác.
+
+##### 7.1.1 GẮN THẺ HẾT HẠN
+
 Nếu bạn muốn chữ ký hết hạn sau một thời gian, trong một cách tương tự như gắn thẻ phần, bạn có thể sử dụng một "gắn thẻ hết hạn" để chỉ định khi chữ ký nên hết hiệu lực. Gắn thẻ hết hạn sử dụng định dạng "YYYY.MM.DD" (xem ví dụ dưới đây).
 
 ```
@@ -582,11 +588,12 @@ Nếu bạn muốn chữ ký hết hạn sau một thời gian, trong một các
 Expires: 2016.12.31
 ```
 
-Các gắn thẻ phần và các gắn thẻ hết hạn có thể được sử dụng kết hợp, và cả hai đều là tùy chọn (xem ví dụ dưới đây).
+Bất kỳ thẻ có thể được sử dụng kết hợp, và tất cả các thẻ là tùy chọn (xem ví dụ dưới đây).
 
 ```
 # Phần Ví Dụ.
 1.2.3.4/32 Deny Generic
+Origin: US
 Tag: Phần Ví Dụ
 Expires: 2016.12.31
 ```
@@ -673,8 +680,6 @@ Ngoài ra, nếu bạn muốn CIDRAM để hoàn toàn bỏ qua một số phầ
 ```
 Ignore Phần 1
 ```
-
-Tham khảo các tập tin chữ ký tùy chỉnh để biết thêm thông tin.
 
 #### 7.4 <a name="MODULE_BASICS"></a>KHÁI NIỆM CƠ BẢN (CHO MÔ-ĐUN)
 

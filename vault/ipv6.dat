@@ -212,28 +212,36 @@ Tag: GoDaddy.com, LLC
 
 
 # ASN 8560 ("1&1 Internet SE").
-# %Listed, Google Malware Dashboard: 0.53%.
+# %Listed, Google Malware Dashboard: 0.54%.
 # %Listed, CleanTalk.org: 38.11%.
-# Stop Forum Spam (SFS) listings: 5,115.
-# Updated: 2016.03.17 / Checked: 2017.12.13
+# Stop Forum Spam (SFS) listings: 5,251.
+# Updated: 2016.03.17 / Checked: 2018.01.04
 
 2001:8d8::/32 Deny Cloud
+Origin: DE
 2001:ba0::/32 Deny Cloud
-2607:f1c0::/32 Deny Cloud
+Origin: ES
 2a00:da00::/32 Deny Cloud
+Origin: GB
+2607:f1c0::/32 Deny Cloud
+Origin: US
 Tag: 1&1 Internet SE
 
 
-# ASN 16276 ("OVH Systems").
-# %Listed, Google Malware Dashboard: 0.59%.
-# %Listed, CleanTalk.org: 55.80%.
-# Stop Forum Spam (SFS) listings: 664,902.
-# Updated: 2017.05.06 / Checked: 2017.10.26
+# ASNs 16276, 35540 ("OVH Systems").
+# %Listed, Google Malware Dashboard: 0.53% (AS16276), 0.51% (AS35540).
+# %Listed, CleanTalk.org: 55.80% (AS16276), 3.03% (AS35540).
+# Stop Forum Spam (SFS) listings: 772,677 (AS16276), 5 (AS35540).
+# Updated: 2017.05.06 / Checked: 2018.01.04
 
-2001:41d0::/32 Deny Cloud
-2402:1f00::/32 Deny Cloud
-2604:2dc0::/32 Deny Cloud
 2607:5300::/32 Deny Cloud
+Origin: CA
+2001:41d0::/32 Deny Cloud
+Origin: FR
+2402:1f00::/32 Deny Cloud
+Origin: HK
+2604:2dc0::/32 Deny Cloud
+Origin: US
 Tag: OVH Systems
 
 
@@ -915,32 +923,27 @@ Tag: Ready Server
 Tag: ON-LINE Ltd
 
 
-# "Internap Network Services Corporation". Various ASNs. Updated: 2017.11.02
+# "Internap Network Services Corporation". Various ASNs. Updated: 2018.01.04
 
-2400:f800::/32 Deny Cloud
-2404:ca00::/32 Deny Cloud
-2405:5a00::/36 Deny Cloud
-2405:c400:195::/48 Deny Cloud
-2405:c400:196::/48 Deny Cloud
-2405:d800::/32 Deny Cloud
-2405:e800::/32 Deny Cloud
 2406:3800::/32 Deny Cloud
+Origin: AU
+2a02:b50::/33 Deny Cloud
+2a02:b50:8000::/34 Deny Cloud
+Origin: GB
+2400:f800::/32 Deny Cloud
+Origin: HK
+2404:1200::/32 Deny Cloud
+2405:d800::/32 Deny Cloud
+Origin: SG
 2600:c00::/31 Deny Cloud
 2600:c02::/32 Deny Cloud
 2600:c04::/31 Deny Cloud
 2600:c06::/32 Deny Cloud
+2600:c07::/48 Deny Cloud
 2600:c08::/29 Deny Cloud
 2600:c10::/30 Deny Cloud
 2600:c14::/32 Deny Cloud
-2602:ff8d:1::/48 Deny Cloud
-2604:1900::/40 Deny Cloud
-2604:5b00::/32 Deny Cloud
-2604:6300::/32 Deny Cloud
-2604:b300:ad03::/48 Deny Cloud
-2607:f080:300::/40 Deny Cloud
-2803:8080::/32 Deny Cloud
-2a02:b50::/33 Deny Cloud
-2a02:b50:8000::/34 Deny Cloud
+Origin: US
 Tag: Internap Network
 
 
@@ -1037,12 +1040,13 @@ Tag: QuadraNet, Inc
 
 
 # ASN 36352 ("ColoCrossing").
-# %Listed, Google Malware Dashboard: 1.40%.
+# %Listed, Google Malware Dashboard: 1.47%.
 # %Listed, CleanTalk.org: 76.25%.
-# Stop Forum Spam (SFS) listings: 201,901.
-# Updated: 2016.01.22 / Checked: 2017.12.05
+# Stop Forum Spam (SFS) listings: 189,748.
+# Updated: 2016.01.22 / Checked: 2018.01.04
 
 2607:9d00:1::/48 Deny Cloud
+Origin: US
 Tag: ColoCrossing
 
 
@@ -1323,10 +1327,10 @@ Tag: K SERVERS LTD
 
 
 # ASN 18978 ("Enzu Inc").
-# %Listed, Google Malware Dashboard: 6.68%.
+# %Listed, Google Malware Dashboard: 7.12%.
 # %Listed, CleanTalk.org: 79.08%.
-# Stop Forum Spam (SFS) listings: 34,470.
-# Updated: 2017.09.24 / Checked: 2017.12.18
+# Stop Forum Spam (SFS) listings: 34,664.
+# Updated: 2017.09.24 / Checked: 2018.01.04
 
 2605:f700:10::/48 Deny Cloud
 2605:f700:40::/44 Deny Cloud
@@ -1336,6 +1340,7 @@ Tag: K SERVERS LTD
 2605:f700:140::/42 Deny Cloud
 2605:f700:180::/42 Deny Cloud
 2605:f700:400::/38 Deny Cloud
+Origin: US
 Tag: Enzu Inc
 
 
@@ -1368,12 +1373,13 @@ Tag: HEG US Inc
 # ASN 12876 ("ONLINE S.A.S").
 # Caught trying to DDoS SFS.
 # Spamming getting significantly worse!
-# %Listed, Google Malware Dashboard: 0.46%.
+# %Listed, Google Malware Dashboard: 0.43%.
 # %Listed, CleanTalk.org: 61.31%.
-# Stop Forum Spam (SFS) listings: 214,822.
-# Updated: 2016.09.28 / Checked: 2017.12.04
+# Stop Forum Spam (SFS) listings: 239,883.
+# Updated: 2016.09.28 / Checked: 2018.01.04
 
 2001:bc8::/32 Deny Cloud
+Origin: FR
 Tag: ONLINE S.A.S
 
 
@@ -3419,17 +3425,15 @@ Tag: Host Sailor Ltd
 # ASNs 61317, 61440 ("Digital Energy Technologies").
 # %Listed, Google Malware Dashboard: 0.44% (AS61317), 0.69% (AS61440).
 # %Listed, CleanTalk.org: 81.09% (AS61317), 73.91% (AS61440).
-# Stop Forum Spam (SFS) listings: 87,820 (AS61317), 22,839 (AS61440).
-# Updated: 2017.12.18
+# Stop Forum Spam (SFS) listings: 89,344 (AS61317), 22,777 (AS61440).
+# Updated: 2018.01.04
 
-2602:ff62::/39 Deny Cloud
-2602:ff62:200::/40 Deny Cloud
-2607:6980:4fe0::/44 Deny Cloud
 2803:80:1004::/48 Deny Cloud
 2803:80:2000::/35 Deny Cloud
 2803:80:4000::/34 Deny Cloud
 2803:80:8000::/47 Deny Cloud
 2803:80:8002::/48 Deny Cloud
+Origin: CL
 2a00:d1a0::/48 Deny Cloud
 2a03:a960::/32 Deny Cloud
 2a0a:7a04::/48 Deny Cloud
@@ -3442,7 +3446,18 @@ Tag: Host Sailor Ltd
 2a0a:9a04::/48 Deny Cloud
 2a0a:9e00::/29 Deny Cloud
 2a0a:a600::/29 Deny Cloud
+2a0a:ae00::/29 Deny Cloud
+2a0a:b200::/29 Deny Cloud
+2a0b:8700::/29 Deny Cloud
+Origin: DE
+2a07:bdc0::/29 Deny Cloud
 2a0a:d780::/29 Deny Cloud
+2a0d:af00::/29 Deny Cloud
+Origin: RU
+2602:ff62::/39 Deny Cloud
+2602:ff62:200::/40 Deny Cloud
+2607:6980:4fe0::/44 Deny Cloud
+Origin: US
 Tag: D.E.Tech
 
 
@@ -4208,12 +4223,13 @@ Tag: Oy Creanova Hosting
 
 
 # ASN 49505 ("Selectel Ltd").
-# %Listed, Google Malware Dashboard: 0.28%.
+# %Listed, Google Malware Dashboard: 0.30%.
 # %Listed, CleanTalk.org: 31.02%.
-# Stop Forum Spam (SFS) listings: 3,473.
-# Updated: 2017.05.12 / Checked: 2017.10.29
+# Stop Forum Spam (SFS) listings: 3,643.
+# Updated: 2017.05.12 / Checked: 2018.01.04
 
 2a00:ab00::/32 Deny Cloud
+Origin: RU
 Tag: Selectel Ltd
 
 

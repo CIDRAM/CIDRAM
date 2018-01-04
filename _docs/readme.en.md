@@ -588,6 +588,28 @@ If you want signatures to expire after some time, in a similar manner to section
 Expires: 2016.12.31
 ```
 
+##### 7.1.2 ORIGIN TAGS
+
+If you want to specify the country of origin for some particular signature, you can do so using an "origin tag". An origin tag accepts an "[ISO 3166-1 Alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)" code corresponding to the country of origin for the signatures that it applies to. These codes must be written in upper-case (lower-case or mixed-case won't render correctly). When an origin tag is used, it is added to the "Why blocked" log field entry for any requests blocked as a result of the signatures that the tag is applied to.
+
+If the optional "flags CSS" component is installed, when viewing logfiles via the front-end logs page, information appended by origin tags is replaced with the flag of the country corresponding to that information. This information, whether in its raw form or as a country flag, is clickable, and when clicked on, will filter log entries by way of other similarly identifying log entries (effectively allowing those accessing the logs page to filter by way of country of origin).
+
+Note: Technically, this isn't any form of geolocation, due to that it doesn't involve looking up any specific information relating to inbound IPs, but rather, simply allows us to explictly state a country of origin for any requests blocked by specific signatures. Multiple origin tags are permissible within the same signature section.
+
+Hypothetical example:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
+```
+
 Any tags may be used in conjunction, and all tags are optional (see the example below).
 
 ```
@@ -903,4 +925,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 27 December 2017 (2017.12.27).
+Last Updated: 4 January 2018 (2018.01.04).

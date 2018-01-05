@@ -577,6 +577,8 @@ Nell'esempio sopra `1.2.3.4/32` e `2.3.4.5/32` saranno etichettato come "IPv4", 
 
 La stessa logica può essere applicata anche per separare altri tipi di etichette.
 
+In particolare, l'etichette di sezione possono essere molto utili per il debug quando si verificano falsi positivi, fornendo un facile mezzo di trovare l'esatta fonte del problema, e può essere molto utili per filtrare le voci del file di registro durante la visualizzazione dei file di registro tramite il front-end pagina per i file di log (i nomi delle sezioni sono selezionabili tramite la pagina dei front-end pagina per i file di log e possono essere utilizzati come criteri di filtro). Se l'etichetta della sezione vengono omessi per alcune firme particolari, quando tali firme vengono innescate, CIDRAM utilizza il nome del file di firma insieme al tipo di indirizzo IP bloccato (IPv4 o IPv6) come ripiego, e quindi, l'etichette di sezione sono completamente opzionali. In alcuni casi, tuttavia, possono essere raccomandati, ad esempio quando i file delle firme sono nominati vagamente o quando potrebbe essere difficile identificare chiaramente la fonte delle firme che causano il blocco di una richiesta.
+
 ##### 7.1.1 ETICHETTE DI SCADENZA
 
 Se si desidera firme per scadono dopo un certo tempo, in modo analogo all'etichette sezione, è possibile utilizzare un "etichetta di scadenza" per specificare quando le firme dovrebbero cessano di essere validi. Etichette scadenza usano il formato "AAAA.MM.GG" (vedere l'esempio cui seguito).
@@ -586,6 +588,30 @@ Se si desidera firme per scadono dopo un certo tempo, in modo analogo all'etiche
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Le firme scadute non verranno mai innescate su nessuna richiesta, non importa quale.
+
+##### 7.1.2 ETICHETTE DI ORIGINE
+
+Se si desidera specificare il paese di origine per alcune firme particolari, è possibile farlo utilizzando un "etichette di origine". Un etichette di origine accetta un codice "[ISO 3166-1 Alpha-2](https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2)" corrispondente al paese di origine per le firme a cui si applica. Questi codici devono essere scritti in maiuscolo (minuscole non verranno visualizzate correttamente). Quando viene utilizzato un etichette di origine, viene aggiunto alla voce del campo di registro "Perché Bloccato" per qualsiasi richieste bloccate a seguito delle firme a cui il tag viene applicato.
+
+Se è installato il componente opzionale "flags CSS", quando si visualizzano i file di registro tramite il front-end pagina per i file di log, le informazioni aggiunte dai etichette di origine vengono sostituite con la bandiera del paese corrispondente a tali informazioni. Questa informazione, sia nella sua forma grezza o come bandiera di un paese, è cliccabile e, quando viene cliccato, filtra le voci di registro tramite altre voci di registro che identificano in modo simile (abilitante effettivamente agli utenti che accedono alla pagina dei registri di filtrare in base al paese di origine).
+
+Nota: Tecnicamente, questa non è una forma di geolocalizzazione, in quanto non implica la ricerca di alcuna informazione specifica relativa agli IP in entrata, ma piuttosto, semplicemente ci consente di dichiarare esplicitamente un paese di origine per qualsiasi richieste bloccate da firme specifiche. Sono consentiti più tag di origine all'interno della stessa sezione di firma.
+
+Esempio ipotetico:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Qualsiasi tag possono essere utilizzati insieme e tutti i tag sono opzionali (vedere l'esempio cui seguito).
@@ -903,4 +929,4 @@ Sì. Per fare ciò, dovrai creare un file modulo personalizzato. *Vedere: [NOZIO
 ---
 
 
-Ultimo Aggiornamento: 27 Dicembre 2017 (2017.12.27).
+Ultimo Aggiornamento: 5 Gennaio 2018 (2018.01.05).

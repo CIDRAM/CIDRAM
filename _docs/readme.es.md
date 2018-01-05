@@ -548,7 +548,7 @@ Las palabras abreviadas disponibles son:
 
 #### 7.1 ETIQUETAS
 
-##### 7.1.0 ETIQUETA DE SECCIÓN
+##### 7.1.0 ETIQUETAS DE SECCIÓN
 
 Si desea dividir sus firmas personalizadas en secciones individuales, se puede identificar estas secciones individuales a la script mediante la adición de una "etiqueta de sección" inmediatamente después de las firmas de cada sección, junto con el nombre de su sección de firmas (vea el ejemplo siguiente).
 
@@ -577,6 +577,8 @@ En el ejemplo anterior `1.2.3.4/32` y `2.3.4.5/32` será etiquetado como "IPv4",
 
 La misma lógica se puede aplicar para separar otros tipos de etiquetas, también.
 
+En particular, las etiquetas de sección pueden ser muy útiles para la depuración cuando se producen falsos positivos, al proporcionar un medio fácil de determinar la fuente exacta del problema, y pueden ser muy útiles para filtrar entradas de archivos de registro cuando se visualizan archivos de registro a través de la página de registros del front-end (nombres de sección se puede hacer clic a través de la página de registros del front-end y pueden usarse como un criterio de filtrado). Si las etiquetas de sección se omiten para algunas firmas particulares, cuando estas firmas se desencadenan, CIDRAM utiliza el nombre del archivo de firma junto con el tipo de dirección IP bloqueada (IPv4 o IPv6) como alternativa, y por lo tanto, las etiquetas de sección son completamente opcionales. Sin embargo, pueden recomendarse en algunos casos, como cuando los archivos de firma tienen un nombre vago o cuando puede ser difícil identificar claramente la fuente de las firmas que causa el bloqueo de una solicitud.
+
 ##### 7.1.1 ETIQUETAS DE EXPIRACIÓN
 
 Si desea firmas para expiran después de un tiempo, de una manera similar a las etiquetas de sección, se puede utilizar una "etiqueta de expiración" para especificar cuándo deben firmas dejarán de ser válidas. Etiquetas de expiración utilizan el formato "AAAA.MM.DD" (vea el ejemplo siguiente).
@@ -586,6 +588,30 @@ Si desea firmas para expiran después de un tiempo, de una manera similar a las 
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Las firmas expiradas nunca se desencadenán en ninguna solicitud, sin importar qué.
+
+##### 7.1.2 ETIQUETAS DE ORIGEN
+
+Si desea especificar el país de origen para alguna firma particular, puede hacerlo usando una "etiqueta de origen". Una etiqueta de origen acepta un código "[ISO 3166-1 Alfa-2](https://es.wikipedia.org/wiki/ISO_3166-1)" correspondiente al país de origen para las firmas a las que se aplica. Estos códigos deben escribirse en mayúsculas (minúsculas no se mostrarán correctamente). Cuando se utiliza una etiqueta de origen, se agrega a la entrada del campo de registro "Razón Bloqueado" para todas las solicitudes bloqueadas como resultado de las firmas a las que se aplica la etiqueta.
+
+Si el componente opcional "flags CSS" está instalado, cuando se visualizan los archivos de registro a través de la página de registros del front-end, la información adjunta por las etiquetas de origen se reemplaza por el indicador del país correspondiente a esa información. Esta información, ya sea en su forma original o como bandera de país, se puede hacer clic, y cuando se hace clic en ella, filtrará las entradas de registro a través de otras entradas de registro de identificación similar (permitiendo de manera efectiva que aquellos que acceden a la página de registros se filtren por país de origen).
+
+Nota: Técnicamente, esta no es ninguna forma de geolocalización, debido a que no involucra buscar ninguna información específica relacionada con las IP entrantes, sino simplemente, nos permite indicar explícitamente un país de origen para cualquier solicitud bloqueada por firmas específicas. Se permiten múltiples etiquetas de origen dentro de la misma sección de firma.
+
+Ejemplo hipotético:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Cualquier etiqueta se puede usar en conjunto, y todas las etiquetas son opcionales (vea el ejemplo siguiente).
@@ -903,4 +929,4 @@ Sí. Para hacer esto, necesitarás crear un archivo de módulo personalizado. *V
 ---
 
 
-Última Actualización: 27 Diciembre 2017 (2017.12.27).
+Última Actualización: 5 Enero 2018 (2018.01.05).

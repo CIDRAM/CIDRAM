@@ -577,6 +577,8 @@ In the above example `1.2.3.4/32` and `2.3.4.5/32` will be tagged as "IPv4", whe
 
 The same logic can be applied for separating other types of tags, too.
 
+In particular, section tags can be very useful for debugging when false positives occur, by providing an easy means of locating the exact source of the problem, and can be very useful for filtering logfile entries when viewing logfiles via the front-end logs page (section names are clickable via the front-end logs page and can be used as a filtering criteria). If section tags are omitted for some particular signatures, when those signatures are triggered, CIDRAM uses the name of the signature file along with the type of IP address blocked (IPv4 or IPv6) as a fallback, and thus, section tags are entirely optional. They may be recommend in some cases though, such as when signature files are vaguely named or when it may otherwise be difficult to clearly identify the source of the signatures causing a request to be blocked.
+
 ##### 7.1.1 EXPIRY TAGS
 
 If you want signatures to expire after some time, in a similar manner to section tags, you can use an "expiry tag" to specify when signatures should cease to be valid. Expiry tags use the format "YYYY.MM.DD" (see the example below).
@@ -588,13 +590,15 @@ If you want signatures to expire after some time, in a similar manner to section
 Expires: 2016.12.31
 ```
 
+Expired signatures will never be triggered on any request, no matter what.
+
 ##### 7.1.2 ORIGIN TAGS
 
 If you want to specify the country of origin for some particular signature, you can do so using an "origin tag". An origin tag accepts an "[ISO 3166-1 Alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)" code corresponding to the country of origin for the signatures that it applies to. These codes must be written in upper-case (lower-case or mixed-case won't render correctly). When an origin tag is used, it is added to the "Why blocked" log field entry for any requests blocked as a result of the signatures that the tag is applied to.
 
 If the optional "flags CSS" component is installed, when viewing logfiles via the front-end logs page, information appended by origin tags is replaced with the flag of the country corresponding to that information. This information, whether in its raw form or as a country flag, is clickable, and when clicked on, will filter log entries by way of other similarly identifying log entries (effectively allowing those accessing the logs page to filter by way of country of origin).
 
-Note: Technically, this isn't any form of geolocation, due to that it doesn't involve looking up any specific information relating to inbound IPs, but rather, simply allows us to explictly state a country of origin for any requests blocked by specific signatures. Multiple origin tags are permissible within the same signature section.
+Note: Technically, this isn't any form of geolocation, due to that it doesn't involve looking up any specific information relating to inbound IPs, but rather, simply allows us to explicitly state a country of origin for any requests blocked by specific signatures. Multiple origin tags are permissible within the same signature section.
 
 Hypothetical example:
 

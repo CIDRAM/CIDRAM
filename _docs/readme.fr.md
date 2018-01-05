@@ -577,6 +577,8 @@ Dans l'exemple ci-dessus `1.2.3.4/32` et `2.3.4.5/32` seront balisés comme « 
 
 La même logique peut également être appliquée pour séparer d'autres types d'étiquettes.
 
+En particulier, les étiquettes de section peuvent être très utiles pour le débogage lorsque des faux positifs se produisent, en fournissant un moyen facile de trouver la source exacte du problème, et peut être très utiles pour filtrer les entrées du les fichiers journaux lors de l'affichage des fichiers journaux via la page des journaux frontaux (les noms de section sont cliquables via la page des journaux frontaux et peuvent être utilisés comme critères de filtrage). Si les étiquettes de section sont omises pour certaines signatures particulières, lorsque ces signatures sont déclenchées, CIDRAM utilise le nom du fichier de signature avec le type d'adresse IP bloqué (IPv4 ou IPv6) comme solution de repli, et donc, les étiquettes de section sont entièrement facultatives. Cependant, ils peuvent être recommandés dans certains cas, par exemple lorsque les fichiers de signature sont nommés de façon vague ou lorsqu'il peut être difficile d'identifier clairement la source des signatures provoquant le blocage d'une requête.
+
 ##### 7.1.1 ÉTIQUETTES D'EXPIRATION
 
 Si vous voulez des signatures expirent après un certain temps, d'une manière similaire aux les étiquettes de section, vous pouvez utiliser une « étiquette d'expiration » à spécifier quand les signatures doivent cesser d'être valide. Les étiquettes d'expiration utilisent le format « AAAA.MM.JJ » (voir l'exemple ci-dessous).
@@ -586,6 +588,30 @@ Si vous voulez des signatures expirent après un certain temps, d'une manière s
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Les signatures expirées ne seront jamais déclenchées sur n'importe quelle requête, quoi qu'il arrive.
+
+##### 7.1.2 ÉTIQUETTES D'ORIGINE
+
+Si vous souhaitez spécifier le pays d'origine pour une signature particulière, vous pouvez le faire en utilisant une « étiquette d'origine ». Une étiquette d'origine accepte un code « [ISO 3166-1 Alpha-2](https://fr.wikipedia.org/wiki/ISO_3166-1) » correspondant au pays d'origine pour les signatures auxquelles elle s'applique. Ces codes doivent être écrits en majuscules (les minuscules ne seront pas rendus correctement). Lorsqu'une étiquette d'origine est utilisée, elle est ajoutée à le champ de l'entrée du fichier journal « Raison Bloquée » pour toutes les requêtes bloquées suite aux signatures auxquelles l'étiquette est appliquée.
+
+Si le composant facultatif « flags CSS » est installé, lors de l'affichage des fichiers journaux via la page des journaux frontaux, les informations ajoutées par les étiquettes d'origine sont remplacées par le drapeau du pays correspondant à ces informations. Cette information, sous sa forme brute ou sous forme de drapeau de pays, est cliquable et, lorsqu'elle est cliquée, filtre les entrées du journal à l'aide d'autres entrées de journal d'identification similaire (permettant effectivement à ceux qui accèdent à la page des journaux de filtrer par le biais du pays d'origine).
+
+Remarque : Techniquement, il ne s'agit pas d'une forme de géolocalisation, car cela ne nécessite pas de rechercher des informations spécifiques relatives aux adresses IP entrantes, mais plutôt, nous permet simplement d'indiquer explicitement un pays d'origine pour toutes les requêtes bloquées par des signatures spécifiques. Les étiquettes d'origine multiples sont permises dans la même section de signature.
+
+Exemple hypothétique :
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Toutes les étiquettes peuvent être utilisées conjointement et toutes les étiquettes sont facultatives (voir l'exemple ci-dessous).
@@ -903,4 +929,4 @@ Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir�
 ---
 
 
-Dernière mise à jour : 27 Décembre 2017 (2017.12.27).
+Dernière mise à jour : 5 Janvier 2018 (2018.01.05).

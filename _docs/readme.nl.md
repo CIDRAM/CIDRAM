@@ -577,6 +577,8 @@ In het bovenstaande voorbeeld `1.2.3.4/32` en `2.3.4.5/32` zal worden geëtikett
 
 Dezelfde logica kan ook worden toegepast voor het scheiden van andere typen etiketten.
 
+In het bijzonder kunnen sectie etiketten erg handig zijn voor foutopsporing wanneer valse positieven optreden, door een eenvoudige manier te voorzien om de exacte oorzaak van het probleem te vinden, en kunnen erg handig zijn om logbestanditems te filteren bij het bekijken van logbestanden via de frontend logbestanden pagina (sectienamen kunnen worden aangeklikt via de frontend logs pagina en kunnen worden gebruikt als filtercriteria). Als sectie etiketten zijn weggelaten voor bepaalde signatures, wanneer de signatures worden getriggerd, gebruikt CIDRAM de naam van het signature bestand samen met het type IP-adres geblokkeerd (IPv4 of IPv6) als een fallback, en dus zijn sectie etiketten volledig optioneel. In sommige gevallen kunnen ze echter worden aanbevolen, zoals wanneer signature bestanden vaag worden genoemd of wanneer het anders moeilijk zou zijn om de bron van de signatures duidelijk te identificeren waardoor een verzoek wordt geblokkeerd.
+
 ##### 7.1.1 VERVALTIJD ETIKETTEN
 
 Als u wilt signatures te vervallen na verloop van tijd, op soortgelijke wijze als sectie etiketten, u kan een "vervaltijd etiket" gebruikt om aan te geven wanneer signatures moet niet meer geldig. Vervaltijd etiketten gebruiken het formaat "JJJJ.MM.DD" (zie het onderstaande voorbeeld).
@@ -586,6 +588,30 @@ Als u wilt signatures te vervallen na verloop van tijd, op soortgelijke wijze al
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Verlopen signatures zullen nooit worden getriggerd bij een aanvraag, wat er ook gebeurt.
+
+##### 7.1.2 HERKOMST ETIKETTEN
+
+Als u het land van herkomst voor een bepaalde signature wilt opgeven, kunt u dit doen met behulp van een "herkomst etiket". Een herkomst etiket accepteert een "[ISO 3166-1 2-letterig](https://nl.wikipedia.org/wiki/ISO_3166-1)"-code die overeenkomt met het land van herkomst voor de signatures waarop deze van toepassing is. Deze codes moeten in hoofd-letters worden geschreven (kleine-letters worden niet correct weergegeven). Wanneer een herkomst etiket wordt gebruikt, wordt deze toegevoegd aan het logboekveld "Waarom Geblokkeerd" voor alle verzoeken die zijn geblokkeerd als gevolg van de signatures waarop de etiket is toegepast.
+
+Als de optionele component "flags CSS" is geïnstalleerd, wanneer u de logbestanden bekijkt via de frontend, wordt informatie dat toegevoegd door herkomst etiketten vervangen met de vlag van het land dat overeenkomt met die informatie. Deze informatie, in ruwe vorm of als de vlag van een land, kan worden aangeklikt, en wanneer erop wordt geklikt, filteren logboekinvoeren door middel van andere, soortgelijk identificerende logboekinvoeren (waardoor effectief degenen die de logs pagina openen te filteren op basis van land van herkomst).
+
+Notitie: Technisch gezien is dit geen vorm van geolocatie, vanwege het feit dat het niet gaat om het opzoeken van specifieke informatie met betrekking tot inkomende IP's, maar in plaats stelt ons in staat om expliciet een land van herkomst opgeven voor verzoeken die worden geblokkeerd door specifieke signatures. Meerdere herkomst etiketten zijn toegestaan binnen dezelfde signature sectie.
+
+Hypothetisch voorbeeld:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Alle etiketten kunnen samen worden gebruikt en alle etiketten zijn optioneel (zie het onderstaande voorbeeld).
@@ -776,7 +802,7 @@ Variabele | Beschrijving
 `$CIDRAM['BlockInfo']['UA']` | De user-agent voor het huidige verzoek.
 `$CIDRAM['BlockInfo']['UALC']` | De user-agent voor het huidige verzoek (in kleine letters).
 `$CIDRAM['BlockInfo']['ReasonMessage']` | Het bericht dat moet worden weergegeven aan de gebruiker/client voor het huidige verzoek als ze zijn geblokkeerd.
-`$CIDRAM['BlockInfo']['SignatureCount']` | Het aantal handtekeningen dat is getriggerd voor het huidige verzoek.
+`$CIDRAM['BlockInfo']['SignatureCount']` | Het aantal signatures dat is getriggerd voor het huidige verzoek.
 `$CIDRAM['BlockInfo']['Signatures']` | Referentie-informatie voor alle signatures die zijn getriggerd voor het huidige verzoek.
 `$CIDRAM['BlockInfo']['WhyReason']` | Referentie-informatie voor alle signatures die zijn getriggerd voor het huidige verzoek.
 
@@ -894,7 +920,7 @@ Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina v
 
 #### Wat zijn "overtredingen"?
 
-"Overtredingen" bepalen wanneer een IP die nog niet is geblokkeerd door specifieke signature bestanden, moet worden geblokkeerd voor toekomstige verzoeken, en ze zijn nauw verbonden met IP-tracking. Sommige functionaliteit en modules bestaan die toestaan dat verzoeken om andere redenen dan het oorsprong van IP worden geblokkeerd (zoals de aanwezigheid van user agents die overeenkomen met spambots of hacktools, gevaarlijke zoekopdrachten, vervalste DNS enzovoort), en wanneer dit gebeurt, kan een "overtreding" optreden. Ze bieden een manier om IP-adressen te identificeren die overeenkomen met ongewenste verzoeken die nog niet door specifieke signature bestanden worden geblokkeerd. Overtredingen komen meestal 1-op-1 overeen met het aantal keren dat een IP wordt geblokkeerd, maar niet altijd (ernstige blokgebeurtenissen kunnen een overtredingen-waarde groter dan één oplopen, en als "track_mode" false is, er zullen geen overtredingen plaatsvinden voor blokgebeurtenissen die alleen door signature bestanden worden getriggerd).
+"Overtredingen" bepalen wanneer een IP die nog niet is geblokkeerd door specifieke signature bestanden, moet worden geblokkeerd voor toekomstige verzoeken, en ze zijn nauw verbonden met IP-tracking. Sommige functionaliteit en modules bestaan die toestaan dat verzoeken om andere redenen dan het herkomst van IP worden geblokkeerd (zoals de aanwezigheid van user agents die overeenkomen met spambots of hacktools, gevaarlijke zoekopdrachten, vervalste DNS enzovoort), en wanneer dit gebeurt, kan een "overtreding" optreden. Ze bieden een manier om IP-adressen te identificeren die overeenkomen met ongewenste verzoeken die nog niet door specifieke signature bestanden worden geblokkeerd. Overtredingen komen meestal 1-op-1 overeen met het aantal keren dat een IP wordt geblokkeerd, maar niet altijd (ernstige blokgebeurtenissen kunnen een overtredingen-waarde groter dan één oplopen, en als "track_mode" false is, er zullen geen overtredingen plaatsvinden voor blokgebeurtenissen die alleen door signature bestanden worden getriggerd).
 
 #### Kan CIDRAM hostnamen blokkeren?
 
@@ -903,4 +929,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 27 December 2017 (2017.12.27).
+Laatste Bijgewerkt: 5 Januari 2018 (2018.01.05).

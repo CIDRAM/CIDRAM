@@ -577,6 +577,8 @@ Dalam contoh di atas `1.2.3.4/32` dan `2.3.4.5/32` akan di-tag sebagai "IPv4", s
 
 Logika sama ini dapat diterapkan untuk memisahkan jenis tag lainnya juga.
 
+Secara khusus, tag bagian bisa sangat berguna untuk debugging bila terjadi positif palsu, dengan menyediakan sarana mudah untuk menemukan sumber masalah yang tepat, dan bisa sangat berguna untuk menyaring entri file log saat melihat file log melalui halaman log depan (nama bagian dapat diklik melalui halaman log depan dan dapat digunakan sebagai kriteria penyaringan). Jika tag bagian diabaikan untuk beberapa tanda tangan tertentu, saat tanda tangan dipicu, CIDRAM menggunakan nama file tanda tangan beserta jenis alamat IP yang diblokir (IPv4 atau IPv6) sebagai fallback, dan demikian, tag bagian sepenuhnya opsional. Mereka mungkin akan merekomendasikan dalam beberapa kasus meskipun, seperti ketika file tanda tangan diberi nama samar-samar atau bila mungkin sulit untuk secara jelas mengidentifikasi sumber tanda tangan yang menyebabkan permintaan diblokir.
+
 ##### 7.1.1 TAG KADALUARSA
 
 Jika Anda ingin tanda tangan untuk berakhir setelah beberapa waktu, dengan cara yang sama untuk tag bagian, Anda dapat menggunakan "tag kadaluarsa" untuk menentukan kapan tanda tangan harus berhenti menjadi valid. Tag kadaluarsa menggunakan format "TTTT.BB.HH" (lihat contoh dibawah ini).
@@ -586,6 +588,30 @@ Jika Anda ingin tanda tangan untuk berakhir setelah beberapa waktu, dengan cara 
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Tanda tangan kadaluarsa tidak akan pernah dipicu pada permintaan apapun, tidak masalah apa.
+
+##### 7.1.2 TAG ASAL
+
+Jika Anda ingin menentukan negara asal untuk beberapa tanda tangan tertentu, Anda dapat melakukannya dengan menggunakan "tag asal". Tag asal menerima kode "[ISO 3166-1 Alpha-2](https://id.wikipedia.org/wiki/ISO_3166-1)" yang sesuai dengan negara asal untuk tanda tangan yang berlaku. Kode ini harus ditulis dalam huruf besar (huruf kecil atau huruf campuran tidak akan ditampilkan dengan benar). Saat tag asal digunakan, ditambahkan ke entri lapangan log "Mengapa Diblokir" untuk setiap permintaan yang diblokir akibat tanda tangan yang diterapkan tag.
+
+Jika komponen "flags CSS" opsional diinstal, saat melihat logfile melalui halaman log depan, informasi yang ditambahkan oleh tag asal akan diganti dengan bendera negara yang sesuai dengan informasi tersebut. Informasi ini, apakah dalam bentuk mentah atau sebagai bendera negara, dapat diklik, dan saat diklik, akan menyaring entri log dengan cara entri serupa lainnya (secara efektif membiarkan mereka mengakses halaman log untuk menyaring dengan cara negara asal).
+
+Catat: Secara teknis, ini bukan geolokasi, karena ini tidak melibatkan pencarian informasi spesifik terkait dengan IP, namun hanya memungkinkan kita untuk secara eksplisit menyatakan negara asal untuk setiap permintaan yang diblokir oleh tanda tangan tertentu. Lebih dari satu tag asal diperbolehkan di bagian tanda tangan sama.
+
+Contoh hipotetis:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Tag apapun dapat digunakan bersamaan, dan semua tag bersifat opsional (lihat contoh dibawah ini).
@@ -903,4 +929,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 27 Desember 2017 (2017.12.27).
+Terakhir Diperbarui: 5 Januari 2018 (2018.01.05).

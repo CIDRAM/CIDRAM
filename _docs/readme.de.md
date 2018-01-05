@@ -577,6 +577,8 @@ In dem obigen Beispiel, `1.2.3.4/32` und `2.3.4.5/32` wird als "IPv4" markiert w
 
 Die gleiche Logik kann auch zum Trennen anderer Arten von Tags angewendet werden.
 
+Insbesondere, Sektion-Tags können beim Debuggen sehr nützlich sein, wenn Falsche-Positives auftreten, durch Bereitstellung einer Möglichkeit, die genaue Ursache des Problems zu finden, und können beim Filtern von Protokolleinträgen beim Anzeigen von Protokolldateien über die Front-End-Protokollseite sehr nützlich sein (Sektionsnamen sind über die Front-End-Protokollseite anklickbar und können als Filterkriterien verwendet werden). Wenn für bestimmte Signaturen Sektion-Tags weggelassen werden, verwendet CIDRAM beim Auslösen dieser Signaturen den Namen der Signaturdatei zusammen mit dem Typ der blockierten IP-Adresse (IPv4 oder IPv6) als Fallback, daher sind Sektion-Tags völlig optional. Sie können jedoch in einigen Fällen empfohlen werden, z.B. wenn die Signaturdateien vage benannt werden oder wenn es sonst schwierig ist, die Quelle der Signaturen eindeutig zu identifizieren, die eine gesperrte Anforderung verursachen.
+
 ##### 7.1.1 ABLAUF-TAGS
 
 Wenn Sie möchten dass Signaturen nach einiger Zeit wird ablaufen, in einer Weise ähnlicher wie Sektion-Tags, können Sie ein "Ablauf-Tag" verwenden um anzugeben wann Signaturen nicht mehr gültig sind. Ablauf-Tags verwenden das Format "JJJJ.MM.TT" (siehe Beispiel unten).
@@ -586,6 +588,30 @@ Wenn Sie möchten dass Signaturen nach einiger Zeit wird ablaufen, in einer Weis
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Abgelaufene Signaturen werden niemals auf irgendeine Anfrage ausgelöst, egal was passiert.
+
+##### 7.1.2 URSPRUNGS-TAGS
+
+Wenn Sie das Herkunftsland für eine bestimmte Signatur angeben möchten, können Sie dies mit einem "Ursprungs-Tag" tun. Ein Ursprungs-Tag akzeptiert einen "[ISO 3166-1 Alpha-2](https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste)"-Code, der dem Ursprungsland für die Signaturen entspricht, auf die es angewendet wird. Diese Codes müssen in Großbuchstaben geschrieben werden (Kleinbuchstaben oder Groß-/Kleinschreibung werden nicht korrekt dargestellt). Wenn ein Ursprungs-Tag verwendet wird, wird es zum Log-Feld "Warum blockierte" hinzugefügt für alle Anfragen, die aufgrund der Signaturen blockiert wurden, auf die das Tag angewendet wurde.
+
+Wenn die optionale Komponente "flags CSS" installiert ist, werden beim Anzeigen von Protokolldateien über die Front-End-Protokollseite Informationen, die durch Ursprungs-Tags angehängt sind, durch das Flag des Landes ersetzt, das dieser Information entspricht. Diese Informationen, ob in roher Form oder als Länderflagge, sind anklickbar und, nach dem Anklicken, filtern Log-Einträge durch andere, ähnlich identifizierende Log-Einträge (somit erlauben denjenigen, die auf die Protokollseite zugreifen, nach Herkunftsland zu filtern).
+
+Hinweis: Technisch gesehen ist, dies keine Form von Geolokalisierung, weil es keine spezifischen Informationen sucht in Bezug auf eingehende IPs, aber stattdessen, erlaubt uns einfach, ein Herkunftsland für alle Anfragen anzugeben, die durch bestimmte Signaturen blockiert werden. Innerhalb desselben Signatur-Sektionen sind mehrere Ursprungs-Tags zulässig.
+
+Hypothetisches Beispiel:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Alle Tags können zusammen verwendet werden, und alle Tags sind optional (siehe Beispiel unten).
@@ -903,4 +929,4 @@ Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUN
 ---
 
 
-Zuletzt aktualisiert: 27 Dezember 2017 (2017.12.27).
+Zuletzt aktualisiert: 5 Januar 2018 (2018.01.05).

@@ -575,7 +575,9 @@ Tag: Seção 1
 
 No exemplo acima, `1.2.3.4/32` e `2.3.4.5/32` será etiquetadas como "IPv4", enquanto que `4.5.6.7/32` e `5.6.7.8/32` será etiquetadas como "Seção 1".
 
-A mesma lógica pode ser aplicada para separar outros tipos de tags, também.
+A mesma lógica pode ser aplicada para separar outros tipos de etiquetas, também.
+
+Em particular, as etiquetas de seção podem ser muito úteis para depuração quando ocorrem falsos positivos, fornecendo um meio fácil de encontrar a fonte exata do problema, e pode ser muito útil para filtrar entradas de arquivos de log ao visualizar arquivos de log por meio da página de logs do front-end (os nomes das seções são clicáveis através da página de logs do front-end e podem ser usados como critérios de filtragem). Se as etiquetas de seção forem omitidas para algumas assinaturas específicas, quando essas assinaturas são desencadeadas, o CIDRAM usa o nome do arquivo de assinatura juntamente com o tipo de endereço IP bloqueado (IPv4 ou IPv6) como um retorno, e portanto, as etiquetas de seção são inteiramente opcionais. Embora, eles podem ser recomendados em alguns casos, como quando os arquivos de assinatura são nomeados vagamente ou quando pode ser difícil identificar claramente a origem das assinaturas fazendo com que um pedido seja bloqueado.
 
 ##### 7.1.1 ETIQUETAS DE EXPIRAÇÃO
 
@@ -586,6 +588,30 @@ Se você quiser assinaturas para expirar depois de algum tempo, de um modo semel
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+As assinaturas expiradas nunca serão desencadeadas em qualquer pedido, não importa o que.
+
+##### 7.1.2 ETIQUETAS DE ORIGEM
+
+Se você deseja especificar o país de origem para alguma assinatura específica, você pode fazer isso usando uma "etiqueta de origem". Uma etiqueta de origem aceita um código "[ISO 3166-1 alfa-2](https://pt.wikipedia.org/wiki/ISO_3166-1_alfa-2)" correspondente ao país de origem para as assinaturas às quais se aplica. Esses códigos devem ser escritos em maiúsculas (minúsculas não serão processadas corretamente). Quando uma etiqueta de origem é usada, ela é adicionada à campo "Razão Bloqueada" do entrada de log para quaisquer solicitações bloqueadas como resultado das assinaturas às quais a etiqueta é aplicada.
+
+Se o componente opcional "flags CSS" estiver instalado, ao visualizar arquivos de log na página de logs do front-end, as informações anexadas pelas etiquetas de origem são substituídas pela bandeira do país correspondente a essa informação. Esta informação, seja em sua forma bruta ou como uma bandeira de país, é clicável, e quando clicada, irá filtrar entradas de log por meio de outras entradas de log de identificação semelhante (efetivamente permitindo que aqueles que acessem a página de logs sejam filtrados por país de origem).
+
+Nota: Tecnicamente, esta não é uma forma de geolocalização, pela razão de que isso não envolve a pesquisa de informações específicas relativas a IPs de entrada, mas sim, simplesmente nos permite declarar explicitamente um país de origem para quaisquer pedidos bloqueados por assinaturas específicas. As etiquetas de origem múltipla são permitidas dentro da mesma seção de assinatura.
+
+Exemplo hipotético:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Todas as etiquetas podem ser usadas em conjunto e todas as etiquetas são opcionais (veja o exemplo abaixo).
@@ -608,7 +634,7 @@ Uso de marcação YAML nos arquivos de assinatura é totalmente opcional (isto �
 
 Nota: Implementação de marcação YAML em CIDRAM é muito simplista e muito limitado; Destina-se a cumprir as exigências específicas para CIDRAM de uma maneira que tem a familiaridade de marcação YAML, mas nem segue nem está de acordo com as especificações oficiais (e portanto, não se comporta da mesma forma como outros implementações mais completas, e pode não ser apropriado para outros projetos).
 
-Em CIDRAM, Segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens em uma linha imediatamente após a lista de CIDRs e todas as tags, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso seção de assinaturas é desencadeada (veja os exemplos abaixo).
+Em CIDRAM, segmentos de marcação YAML são identificados para o script por três hífens ("---"), e terminar ao lado de seus contendo seções de assinatura por quebras de linha dupla. Um segmento típico de marcação YAML dentro de uma seção de assinaturas consiste de três hífens em uma linha imediatamente após a lista de CIDRs e todas as etiquetas, seguido por uma lista bidimensional de pares chave-valor (primeira dimensão, categorias das diretivas de configuração; segunda dimensão, as diretivas de configuração) para as quais diretivas de configuração deve ser modificada (e em qual valores) sempre que uma assinatura em nisso seção de assinaturas é desencadeada (veja os exemplos abaixo).
 
 ```
 # Foobar 1.
@@ -903,4 +929,4 @@ Sim. Para fazer isso, você precisará criar um arquivo de módulo personalizado
 ---
 
 
-Última Atualização: 27 Dezembro 2017 (2017.12.27).
+Última Atualização: 5 Janeiro 2018 (2018.01.05).

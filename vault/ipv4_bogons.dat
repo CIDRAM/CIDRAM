@@ -12,7 +12,7 @@
 
 # ---
 # IPv4 Bogons List.
-# Updated: 2017.12.23
+# Updated: 2018.01.05
 # Refer team-cymru.org/Services/Bogons/fullbogons-ipv4.txt
 
 0.0.0.0/8 Deny Bogon
@@ -63,10 +63,14 @@
 45.66.0.0/15 Deny Bogon
 45.80.0.0/12 Deny Bogon
 45.128.0.0/10 Deny Bogon
-45.226.56.0/23 Deny Bogon
-45.228.140.0/22 Deny Bogon
-45.229.64.0/18 Deny Bogon
-45.229.128.0/17 Deny Bogon
+45.227.131.0/24 Deny Bogon
+45.229.32.0/21 Deny Bogon
+45.229.52.0/22 Deny Bogon
+45.229.150.0/23 Deny Bogon
+45.229.160.0/21 Deny Bogon
+45.229.172.0/22 Deny Bogon
+45.229.176.0/20 Deny Bogon
+45.229.192.0/18 Deny Bogon
 45.230.0.0/15 Deny Bogon
 45.232.0.0/13 Deny Bogon
 46.16.128.0/21 Deny Bogon
@@ -419,6 +423,7 @@
 91.212.163.0/24 Deny Bogon
 91.212.198.0/24 Deny Bogon
 91.212.201.0/24 Deny Bogon
+91.212.220.0/24 Deny Bogon
 91.212.226.0/24 Deny Bogon
 91.212.231.0/24 Deny Bogon
 91.212.240.0/24 Deny Bogon
@@ -564,6 +569,7 @@
 91.235.241.0/24 Deny Bogon
 91.236.115.0/24 Deny Bogon
 91.236.121.0/24 Deny Bogon
+91.236.213.0/24 Deny Bogon
 91.237.53.0/24 Deny Bogon
 91.237.153.0/24 Deny Bogon
 91.237.198.0/24 Deny Bogon
@@ -607,6 +613,7 @@
 93.90.64.0/20 Deny Bogon
 93.92.224.0/21 Deny Bogon
 93.93.104.0/21 Deny Bogon
+93.93.168.0/21 Deny Bogon
 93.93.240.0/21 Deny Bogon
 93.157.104.0/21 Deny Bogon
 93.157.184.0/21 Deny Bogon
@@ -650,11 +657,10 @@
 102.176.176.0/22 Deny Bogon
 102.176.250.0/24 Deny Bogon
 102.192.0.0/11 Deny Bogon
-103.106.117.0/24 Deny Bogon
-103.106.118.0/23 Deny Bogon
-103.106.120.0/21 Deny Bogon
-103.106.128.0/17 Deny Bogon
-103.107.0.0/16 Deny Bogon
+103.107.28.0/22 Deny Bogon
+103.107.32.0/19 Deny Bogon
+103.107.64.0/18 Deny Bogon
+103.107.128.0/17 Deny Bogon
 103.108.0.0/14 Deny Bogon
 103.112.0.0/12 Deny Bogon
 103.128.0.0/10 Deny Bogon
@@ -699,6 +705,7 @@
 164.40.184.0/21 Deny Bogon
 164.138.96.0/21 Deny Bogon
 169.254.0.0/16 Deny Bogon
+171.33.240.0/21 Deny Bogon
 172.16.0.0/12 Deny Bogon
 176.53.128.0/18 Deny Bogon
 176.56.40.0/21 Deny Bogon
@@ -706,6 +713,7 @@
 176.97.152.0/22 Deny Bogon
 176.98.32.0/20 Deny Bogon
 176.101.168.0/21 Deny Bogon
+176.102.64.0/21 Deny Bogon
 176.105.144.0/20 Deny Bogon
 176.105.224.0/19 Deny Bogon
 176.110.101.0/24 Deny Bogon
@@ -724,6 +732,7 @@
 178.20.24.0/21 Deny Bogon
 178.20.208.0/21 Deny Bogon
 178.215.224.0/20 Deny Bogon
+178.216.240.0/21 Deny Bogon
 178.217.88.0/21 Deny Bogon
 178.217.232.0/21 Deny Bogon
 178.218.144.0/20 Deny Bogon
@@ -737,11 +746,10 @@
 182.161.67.0/24 Deny Bogon
 185.1.112.0/20 Deny Bogon
 185.1.128.0/17 Deny Bogon
-185.238.100.0/22 Deny Bogon
-185.238.104.0/21 Deny Bogon
-185.238.112.0/20 Deny Bogon
-185.238.128.0/17 Deny Bogon
-185.239.0.0/16 Deny Bogon
+185.239.196.0/22 Deny Bogon
+185.239.200.0/21 Deny Bogon
+185.239.208.0/20 Deny Bogon
+185.239.224.0/19 Deny Bogon
 185.240.0.0/12 Deny Bogon
 188.64.208.0/21 Deny Bogon
 188.65.16.0/21 Deny Bogon
@@ -760,6 +768,7 @@
 192.33.163.0/24 Deny Bogon
 192.35.205.0/24 Deny Bogon
 192.35.206.0/24 Deny Bogon
+192.40.69.0/24 Deny Bogon
 192.42.253.0/24 Deny Bogon
 192.54.54.0/23 Deny Bogon
 192.54.56.0/22 Deny Bogon
@@ -853,7 +862,6 @@
 192.166.240.0/21 Deny Bogon
 192.166.248.0/22 Deny Bogon
 192.166.252.0/24 Deny Bogon
-192.188.82.0/23 Deny Bogon
 192.207.14.0/24 Deny Bogon
 193.0.129.0/24 Deny Bogon
 193.0.146.0/23 Deny Bogon
@@ -930,6 +938,7 @@
 193.16.110.0/24 Deny Bogon
 193.16.144.0/24 Deny Bogon
 193.16.149.0/24 Deny Bogon
+193.16.151.0/24 Deny Bogon
 193.16.156.0/24 Deny Bogon
 193.16.213.0/24 Deny Bogon
 193.16.221.0/24 Deny Bogon
@@ -986,6 +995,7 @@
 193.22.144.0/20 Deny Bogon
 193.22.168.0/24 Deny Bogon
 193.22.170.0/24 Deny Bogon
+193.22.224.0/20 Deny Bogon
 193.22.240.0/23 Deny Bogon
 193.22.244.0/24 Deny Bogon
 193.22.246.0/23 Deny Bogon
@@ -1965,6 +1975,7 @@
 193.178.170.0/24 Deny Bogon
 193.178.172.0/24 Deny Bogon
 193.178.174.0/24 Deny Bogon
+193.178.196.0/22 Deny Bogon
 193.178.212.0/24 Deny Bogon
 193.178.218.0/24 Deny Bogon
 193.178.220.0/24 Deny Bogon
@@ -2074,6 +2085,7 @@
 193.201.208.0/22 Deny Bogon
 193.201.244.0/22 Deny Bogon
 193.201.248.0/22 Deny Bogon
+193.202.8.0/21 Deny Bogon
 193.202.31.0/24 Deny Bogon
 193.202.40.0/22 Deny Bogon
 193.202.44.0/23 Deny Bogon
@@ -2430,6 +2442,7 @@
 194.26.188.0/22 Deny Bogon
 194.28.44.0/22 Deny Bogon
 194.28.96.0/22 Deny Bogon
+194.28.156.0/22 Deny Bogon
 194.29.52.0/22 Deny Bogon
 194.30.161.0/24 Deny Bogon
 194.30.165.0/24 Deny Bogon
@@ -3853,7 +3866,6 @@
 196.223.29.0/24 Deny Bogon
 198.18.0.0/15 Deny Bogon
 198.51.100.0/24 Deny Bogon
-202.4.162.0/23 Deny Bogon
 202.74.48.0/24 Deny Bogon
 203.0.113.0/24 Deny Bogon
 203.82.218.0/24 Deny Bogon

@@ -577,6 +577,8 @@ Trong ví dụ trên `1.2.3.4/32` và `2.3.4.5/32` sẽ được xác định nh
 
 Tương tự logic có thể được áp dụng để tách thẻ loại khác.
 
+Gắn thẻ phần có thể rất hữu ích cho lọc lỗi khi xảy ra sai tích cực, bằng cách cung cấp một phương tiện dễ dàng để tìm ra chính xác nguồn gốc của vấn đề, và có thể rất hữu ích cho lọc các mục nhập tập tin bản ghi khi xem tập tin bản ghi qua trang bản ghi của front-end (tên phần có thể nhấp qua trang bản ghi của front-end và có thể được sử dụng làm tiêu chí lọc). Nếu gắn thẻ phần bị bỏ qua đối với một số chữ ký cụ thể, khi những chữ ký được kích hoạt, CIDRAM sử dụng tên của tập tin chữ ký cùng với loại địa chỉ IP bị chặn (IPv4 hoặc IPv6) như là một dự phòng, và do đó, các gắn thẻ phần là hoàn toàn tùy chọn. Chúng có thể được khuyên dùng trong một số trường hợp, chẳng hạn như khi tập tin chữ ký được đặt tên mơ hồ hoặc nếu không thì khó xác định được nguồn gốc của chữ ký gây ra yêu cầu bị chặn.
+
 ##### 7.1.1 GẮN THẺ HẾT HẠN
 
 Nếu bạn muốn chữ ký hết hạn sau một thời gian, trong một cách tương tự như gắn thẻ phần, bạn có thể sử dụng một "gắn thẻ hết hạn" để chỉ định khi chữ ký nên hết hiệu lực. Gắn thẻ hết hạn sử dụng định dạng "YYYY.MM.DD" (xem ví dụ dưới đây).
@@ -586,6 +588,30 @@ Nếu bạn muốn chữ ký hết hạn sau một thời gian, trong một các
 1.2.3.4/32 Deny Generic
 2.3.4.5/32 Deny Generic
 Expires: 2016.12.31
+```
+
+Chữ ký hết hạn sẽ không bao giờ được kích hoạt trên bất kỳ yêu cầu, không có vấn đề gì.
+
+##### 7.1.2 GẮN THẺ XUẤT XỨ
+
+Nếu bạn muốn chỉ định quốc gia xuất xứ cho một số chữ ký cụ thể, bạn có thể làm như vậy bằng cách sử dụng một "gắn thẻ xuất xứ". Gắn thẻ xuất xứ chấp nhận một mã "[ISO 3166-1 Alpha-2](https://vi.wikipedia.org/wiki/ISO_3166-1_alpha-2)" tương ứng với quốc gia xuất xứ cho các chữ ký mà nó áp dụng. Các mã này phải được viết bằng chữ hoa (trường hợp thấp hoặc trường hợp hỗn hợp sẽ không hiển thị chính xác). Khi một gắn thẻ xuất xứ được sử dụng, nó được thêm vào mục nhập bản ghi "Tại sao bị chặn" cho bất kỳ yêu cầu bị chặn như là kết quả của chữ ký mà gắn thẻ được áp dụng.
+
+Nếu cài đặt thành phần "flags CSS", khi xem các tập tin bản ghi qua trang bản ghi, thông tin được bổ sung bởi gắn thẻ xuất xứ sẽ được thay thế bằng cờ quốc gia tương ứng với thông tin đó. Thông tin này, dù ở dạng thô hoặc quốc kỳ, có thể nhấp được, và khi được nhấp, sẽ lọc các mục nhập bản ghi bằng cách các mục nhập bản ghi khác tương tự (do đó có hiệu quả cho phép các trang bản ghi để lọc theo cách của quốc gia xuất xứ).
+
+Chú thích: Về mặt kỹ thuật, đây không phải là bất kỳ dạng geolocation, bởi vì nó không liên quan đến việc tìm nạp bất kỳ thông tin vị trí cụ thể liên quan đến IP, mà đúng hơn, nó chỉ đơn giản cho phép chúng ta xác định rõ ràng một quốc gia xuất xứ cho bất kỳ yêu cầu bị chặn bởi chữ ký cụ thể. Nhiều gắn thẻ xuất xứ được cho phép trong cùng một phần chữ ký.
+
+Ví dụ giả thuyết:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: CN
+2.3.4.5/32 Deny Generic
+Origin: FR
+4.5.6.7/32 Deny Generic
+Origin: DE
+6.7.8.9/32 Deny Generic
+Origin: US
+Tag: Foobar
 ```
 
 Bất kỳ thẻ có thể được sử dụng kết hợp, và tất cả các thẻ là tùy chọn (xem ví dụ dưới đây).
@@ -903,4 +929,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Mười Hai 2017 (2017.12.27).
+Lần cuối cập nhật: 5 Tháng Một 2018 (2018.01.05).

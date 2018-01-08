@@ -450,23 +450,25 @@ Tag: Webzilla B.V
 
 
 # ASN 53225 ("IPGLOBE DATACENTER").
-# %Listed, Google Malware Dashboard: 2.50%.
+# %Listed, Google Malware Dashboard: 1.96%.
 # %Listed, CleanTalk.org: 12.50%.
 # Stop Forum Spam (SFS) listings: 18.
-# Updated: 2016.05.15 / Checked: 2017.08.15
+# Updated: 2016.05.15 / Checked: 2018.01.07
 
 2804:644::/32 Deny Cloud
+Origin: BR
 Tag: IPGLOBE DATACENTER
 
 
 # ASN 28271 ("DataCorpore Servios e Representaes").
-# %Listed, Google Malware Dashboard: 0.82%.
+# %Listed, Google Malware Dashboard: 0.25%.
 # %Listed, CleanTalk.org: 18.48%.
-# Stop Forum Spam (SFS) listings: 63.
-# Updated: 2016.07.02 / Checked: 2017.08.31
+# Stop Forum Spam (SFS) listings: 53.
+# Updated: 2016.07.02 / Checked: 2018.01.08
 
 2804:4c4::/32 Deny Cloud
 2804:cc0::/32 Deny Cloud
+Origin: BR
 Tag: DataCorpore Servios
 
 
@@ -594,13 +596,15 @@ Tag: H88 S.A
 
 
 # ASN 46475 ("Limestone Networks, Inc").
-# %Listed, Google Malware Dashboard: 1.93%.
+# %Listed, Google Malware Dashboard: 0.82%.
 # %Listed, CleanTalk.org: 26.86%.
-# Stop Forum Spam (SFS) listings: 429.
-# Updated: 2017.03.02 / Checked: 2017.08.31
+# Stop Forum Spam (SFS) listings: 449.
+# Updated: 2017.03.02 / Checked: 2018.01.08
 
 2400:ed00::/48 Deny Cloud
+Origin: SG
 2607:ff68::/32 Deny Cloud
+Origin: US
 Tag: Limestone Networks
 
 
@@ -1425,19 +1429,25 @@ Tag: ONLINE S.A.S
 # Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 
 # Announces with "Hosting"
-# Updated: 2017.09.09
-2001:978:2309::/48 Deny Cloud
+# Updated: 2017.09.09 / Checked: 2018.01.08
 2602:ffb6::/36 Deny Cloud
+Origin: CA
+2001:978:2309::/48 Deny Cloud
+Origin: DE
 Tag: Cogent Hosting
 
 # Announces with "Host"
-# Updated: 2017.09.09
+# Updated: 2018.01.08
 2001:978:3901::/48 Deny Cloud
 2001:978:b600::/48 Deny Cloud
+Origin: DE
+2a07:85c0::/48 Deny Cloud
+2a07:85c1::/48 Deny Cloud
+Origin: NL
 Tag: Cogent Host
 
 # Announces with "Server"
-# Updated: 2017.09.09
+# Updated: 2018.01.08
 2001:49f0::/47 Deny Cloud
 2001:49f0:a::/48 Deny Cloud
 2001:49f0:100d::/48 Deny Cloud
@@ -1455,10 +1465,7 @@ Tag: Cogent Host
 2001:49f0:2024::/47 Deny Cloud
 2001:49f0:2027::/48 Deny Cloud
 2001:49f0:2028::/45 Deny Cloud
-2001:49f0:2031::/48 Deny Cloud
-2001:49f0:2032::/47 Deny Cloud
-2001:49f0:2034::/47 Deny Cloud
-2001:49f0:2036::/48 Deny Cloud
+2001:49f0:2030::/45 Deny Cloud
 2001:49f0:2039::/48 Deny Cloud
 2001:49f0:203a::/47 Deny Cloud
 2001:49f0:203c::/46 Deny Cloud
@@ -1475,76 +1482,35 @@ Tag: Cogent Host
 2001:49f0:7000::/47 Deny Cloud
 2001:49f0:7002::/48 Deny Cloud
 2001:49f0:a000::/36 Deny Cloud
-2001:49f0:a004::/46 Deny Cloud
-2001:49f0:a008::/47 Deny Cloud
-2001:49f0:a00a::/48 Deny Cloud
-2001:49f0:a00c::/47 Deny Cloud
-2001:49f0:a00f::/48 Deny Cloud
-2001:49f0:a010::/48 Deny Cloud
-2001:49f0:a014::/47 Deny Cloud
-2001:49f0:a016::/48 Deny Cloud
-2001:49f0:a019::/48 Deny Cloud
-2001:49f0:a01a::/47 Deny Cloud
-2001:49f0:a01e::/48 Deny Cloud
-2001:49f0:a020::/46 Deny Cloud
-2001:49f0:a025::/48 Deny Cloud
-2001:49f0:a026::/48 Deny Cloud
-2001:49f0:a028::/45 Deny Cloud
-2001:49f0:a031::/48 Deny Cloud
-2001:49f0:a032::/47 Deny Cloud
-2001:49f0:a034::/47 Deny Cloud
-2001:49f0:a036::/48 Deny Cloud
-2001:49f0:a039::/48 Deny Cloud
-2001:49f0:a03a::/47 Deny Cloud
-2001:49f0:a03c::/48 Deny Cloud
-2001:49f0:a040::/46 Deny Cloud
-2001:49f0:a044::/47 Deny Cloud
-2001:49f0:a047::/48 Deny Cloud
-2001:49f0:a048::/48 Deny Cloud
-2001:49f0:a04a::/47 Deny Cloud
-2001:49f0:a04c::/47 Deny Cloud
-2001:49f0:a04f::/48 Deny Cloud
-2001:49f0:a053::/48 Deny Cloud
-2001:49f0:a054::/47 Deny Cloud
-2001:49f0:a056::/48 Deny Cloud
-2001:49f0:a058::/47 Deny Cloud
-2001:49f0:a05d::/48 Deny Cloud
-2001:49f0:a05f::/48 Deny Cloud
-2001:49f0:a063::/48 Deny Cloud
-2001:49f0:a064::/46 Deny Cloud
-2001:49f0:a068::/47 Deny Cloud
-2001:49f0:a06b::/48 Deny Cloud
-2001:49f0:a070::/48 Deny Cloud
-2001:49f0:d000::/47 Deny Cloud
-2001:49f0:d003::/48 Deny Cloud
-2001:49f0:d004::/46 Deny Cloud
-2001:49f0:d008::/45 Deny Cloud
+2001:49f0:d000::/44 Deny Cloud
 2001:49f0:d010::/45 Deny Cloud
 2001:49f0:d018::/48 Deny Cloud
-2001:49f0:d01a::/48 Deny Cloud
+2001:49f0:d01a::/47 Deny Cloud
 2001:49f0:d01c::/46 Deny Cloud
 2001:49f0:d020::/44 Deny Cloud
 2001:49f0:d030::/46 Deny Cloud
+2001:49f0:d034::/48 Deny Cloud
 2001:49f0:d036::/47 Deny Cloud
 2001:49f0:d038::/45 Deny Cloud
 2001:49f0:d040::/46 Deny Cloud
 2001:49f0:d044::/47 Deny Cloud
 2001:49f0:d046::/48 Deny Cloud
-2001:49f0:d04b::/48 Deny Cloud
+2001:49f0:d049::/48 Deny Cloud
+2001:49f0:d04a::/47 Deny Cloud
 2001:49f0:d04c::/48 Deny Cloud
 2001:49f0:d050::/47 Deny Cloud
 2001:49f0:d052::/48 Deny Cloud
 2001:49f0:d055::/48 Deny Cloud
 2001:49f0:d057::/48 Deny Cloud
 2001:49f0:d058::/45 Deny Cloud
-2001:49f0:d060::/44 Deny Cloud
-2001:49f0:d070::/45 Deny Cloud
-2001:49f0:d079::/48 Deny Cloud
-2001:49f0:d07a::/47 Deny Cloud
-2001:49f0:d07c::/48 Deny Cloud
-2001:49f0:d07e::/47 Deny Cloud
-2001:49f0:d080::/48 Deny Cloud
-2001:49f0:d082::/47 Deny Cloud
+2001:49f0:d060::/43 Deny Cloud
+2001:49f0:d080::/46 Deny Cloud
+2001:49f0:d084::/48 Deny Cloud
+2001:49f0:d086::/47 Deny Cloud
+2001:49f0:d089::/48 Deny Cloud
+2001:49f0:d08d::/48 Deny Cloud
+2001:49f0:d08e::/48 Deny Cloud
+Origin: US
 Tag: Cogent Server
 
 
@@ -1597,15 +1563,17 @@ Tag: Continuum
 
 
 # ASN 51167 ("Contabo GmbH").
-# %Listed, Google Malware Dashboard: 0.90%.
+# %Listed, Google Malware Dashboard: 1.14%.
 # %Listed, CleanTalk.org: 58.41%.
-# Stop Forum Spam (SFS) listings: 19,891.
-# Updated: 2017.08.31
+# Stop Forum Spam (SFS) listings: 26,035.
+# Updated: 2018.01.07
 
 2a02:c200::/32 Deny Cloud
 2a02:c205::/32 Deny Cloud
 2a02:c207::/32 Deny Cloud
-2a0b:9c80::/29 Deny Cloud
+Origin: DE
+2a0c:ab00::/29 Deny Cloud
+Origin: RU
 Tag: Contabo GmbH
 
 
@@ -1620,14 +1588,16 @@ Tag: ESDS
 
 
 # ASN 51430 ("AltusHost B.V").
-# %Listed, Google Malware Dashboard: 1.10%.
+# %Listed, Google Malware Dashboard: 0.93%.
 # %Listed, CleanTalk.org: 0.05%.
-# Stop Forum Spam (SFS) listings: 392.
-# Updated: 2017.03.02 / Checked: 2017.08.31
+# Stop Forum Spam (SFS) listings: 309.
+# Updated: 2018.01.08
 
 2a00:7140::/32 Deny Cloud
 2a00:7142::/31 Deny Cloud
 2a00:7144::/32 Deny Cloud
+2a00:7145::/48 Deny Cloud
+Origin: NL
 Tag: AltusHost B.V
 
 
@@ -2458,12 +2428,13 @@ Tag: Henderson
 
 
 # ASN 15967 ("Nazwa.pl Sp.z.o.o").
-# %Listed, Google Malware Dashboard: 12.14%.
+# %Listed, Google Malware Dashboard: 5.57%.
 # %Listed, CleanTalk.org: 75.94%.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2016.04.23 / Checked: 2017.08.25
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2016.04.23 / Checked: 2018.01.07
 
 2a01:6100::/32 Deny Cloud
+Origin: PL
 Tag: Nazwa.pl
 
 
@@ -2879,9 +2850,18 @@ Tag: EVANZO GmbH
 
 # ASN 21321 ("Areti Internet Ltd").
 # %Listed, CleanTalk.org: 39.86%.
-# Stop Forum Spam (SFS) listings: 1,465.
-# Updated: 2017.08.02 / Checked: 2017.12.31
+# Stop Forum Spam (SFS) listings: 1,485.
+# Updated: 2018.01.08
 
+2a01:b840::/32 Deny Cloud
+2a07:1240::/29 Deny Cloud
+2a07:23c0:2::/48 Deny Cloud
+2a07:23c0:4::/48 Deny Cloud
+2a07:23c0:8::/47 Deny Cloud
+Origin: GB
+2a03:4a80::/45 Deny Cloud
+2a03:4a80:8::/47 Deny Cloud
+Origin: NL
 2001:590:1405::/48 Deny Cloud
 2001:590:3c03::/48 Deny Cloud
 2606:f180:1::/48 Deny Cloud
@@ -2893,42 +2873,33 @@ Tag: EVANZO GmbH
 2607:f358:1f::/48 Deny Cloud
 2607:f358:2e::/48 Deny Cloud
 2607:f358:35::/48 Deny Cloud
-2a01:b840::/32 Deny Cloud
-2a03:4a80::/45 Deny Cloud
-2a03:4a80:8::/47 Deny Cloud
-2a07:1240::/29 Deny Cloud
-2a07:23c0:2::/48 Deny Cloud
-2a07:23c0:4::/48 Deny Cloud
-2a07:23c0:8::/47 Deny Cloud
+Origin: US
 Tag: Areti Internet Ltd
 
 
 # ASNs 4250, 25745 ("Alentus Corporation").
-# %Listed, Google Malware Dashboard: 3.86% (AS4250), 0.15% (AS25745).
+# %Listed, Google Malware Dashboard: 2.32% (AS4250), 0.16% (AS25745).
 # %Listed, CleanTalk.org: 29.00% (AS4250), 19.32% (AS25745).
-# Stop Forum Spam (SFS) listings: 182 (AS4250), 0 (AS25745).
-# Updated: 2017.02.15 / Checked: 2017.08.15
+# Stop Forum Spam (SFS) listings: 195 (AS4250).
+# Updated: 2018.01.07
 
-2001:590:4802::/48 Deny Cloud
-2606:f180:2::/48 Deny Cloud
+2a07:23c0::/48 Deny Cloud
+2a07:23c0:5::/48 Deny Cloud
+Origin: GB
 2606:f180:4::/48 Deny Cloud
-2607:f358:19::/48 Deny Cloud
 2607:f358:22::/48 Deny Cloud
 2607:f358:2d::/48 Deny Cloud
-2a07:23c0::/48 Deny Cloud
-2a07:23c0:3::/48 Deny Cloud
-2a07:23c0:5::/48 Deny Cloud
-2a07:23c0:6::/48 Deny Cloud
+Origin: US
 Tag: Alentus Corp
 
 
 # ASN 31251 ("Falco Networks B.V").
-# %Listed, CleanTalk.org: 7.75%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2016.04.30 / Checked: 2017.08.15
+# Not listed on any BLs as of last check. Possible candidate for future removal.
+# Updated: 2018.01.07
 
-2a02:a10::/32 Deny Cloud
-2a03:60c0::/32 Deny Cloud
+2a02:a10::/29 Deny Cloud
+2a03:60c0::/29 Deny Cloud
+Origin: NL
 Tag: Falco Networks B.V
 
 
@@ -2983,12 +2954,13 @@ Tag: NetRegistry Pty Ltd
 
 
 # ASN 22552 ("eSited Solutions").
-# %Listed, Google Malware Dashboard: 9.56%.
+# %Listed, Google Malware Dashboard: 5.74%.
 # %Listed, CleanTalk.org: 33.11%.
-# Stop Forum Spam (SFS) listings: 747.
-# Updated: 2017.08.25
+# Stop Forum Spam (SFS) listings: 474.
+# Updated: 2017.08.25 / Checked: 2018.01.07
 
 2604:4480::/32 Deny Cloud
+Origin: US
 Tag: eSited Solutions
 
 
@@ -3105,16 +3077,18 @@ Tag: Transip B.V
 
 # ASN 200429 ("HostSlim BV").
 # %Listed, CleanTalk.org: 96.33%.
-# Stop Forum Spam (SFS) listings: 3,586.
-# Updated: 2017.02.15 / Checked: 2017.08.15
+# Stop Forum Spam (SFS) listings: 3,242.
+# Updated: 2017.02.15 / Checked: 2018.01.07
 
+2a06:a006:f3::/48 Deny Cloud
+Origin: IS
 2a00:1ca8:17::/48 Deny Cloud
 2a00:1ca8:19::/48 Deny Cloud
 2a00:1ca8:37::/48 Deny Cloud
 2a06:4140::/29 Deny Cloud
 2a06:5b80::/32 Deny Cloud
-2a06:a006:f3::/48 Deny Cloud
 2a0a:4300::/29 Deny Cloud
+Origin: NL
 Tag: HostSlim BV
 
 
@@ -3240,16 +3214,19 @@ Tag: Lightstream
 
 
 # ASN 13213 ("UK-2 Limited").
-# %Listed, Google Malware Dashboard: 0.55%.
+# %Listed, Google Malware Dashboard: 0.54%.
 # %Listed, CleanTalk.org: 40.60%.
-# Stop Forum Spam (SFS) listings: 2,734.
-# Updated: 2017.12.23
+# Stop Forum Spam (SFS) listings: 2,534.
+# Updated: 2018.01.08
 
+2a02:2498::/32 Deny Cloud
+Origin: GB
+2a04:76c7:200::/48 Deny Cloud
+Origin: NL
 2602:ff84::/48 Deny Cloud
 2605:a80:1::/48 Deny Cloud
 2a01:5a80::/32 Deny Cloud
-2a02:2498::/32 Deny Cloud
-2a04:76c7:200::/48 Deny Cloud
+Origin: US
 Tag: UK-2 Limited
 
 
@@ -3483,12 +3460,12 @@ Tag: D.E.Tech
 
 
 # ASN 29873 ("The Endurance International Group, Inc").
-# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, Google Malware Dashboard: 0.56%.
 # %Listed, CleanTalk.org: 18.58%.
-# Stop Forum Spam (SFS) listings: 62.
-# Updated: 2016.06.17 / Checked: 2017.08.25
+# Updated: 2016.06.17 / Checked: 2018.01.07
 
 2605:f300:ffff::/48 Deny Cloud
+Origin: US
 Tag: Endurance Int
 
 
@@ -3990,14 +3967,31 @@ Tag: CloudSRV Limited
 
 
 # ASN 61337 ("Electronic Communities Ltd").
-# %Listed, Google Malware Dashboard: 0.48%.
 # %Listed, CleanTalk.org: 59.78%.
-# Stop Forum Spam (SFS) listings: 82.
-# Updated: 2017.02.18 / Checked: 2017.08.31
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2017.02.18 / Checked: 2018.01.08
 
 2001:67c:504::/48 Deny Cloud
 2001:67c:72c::/48 Deny Cloud
+Origin: GB
 Tag: ECOM-AS
+
+
+# ASN 42831 ("UK Dedicated Servers Limited").
+# %Listed, Google Malware Dashboard: 0.76%.
+# %Listed, CleanTalk.org: 32.87%.
+# Stop Forum Spam (SFS) listings: 2,809.
+# Updated: 2018.01.08
+
+2a0a:4e83::/48 Deny Cloud
+Origin: DE
+2a01:a500::/32 Deny Cloud
+2a03:9da0::/40 Deny Cloud
+2a04:d180::/29 Deny Cloud
+2a0b:4e01::/32 Deny Cloud
+Origin: GB
+2605:7900:1000::/48 Deny Cloud
+Tag: UK Dedicated Servers
 
 
 # ASN 44812 ("IT Expert LLC").
@@ -4070,25 +4064,28 @@ Tag: Zappie Host LLC
 
 
 # ASN 197540 ("netcup GmbH").
-# %Listed, Google Malware Dashboard: 0.84%.
+# %Listed, Google Malware Dashboard: 0.64%.
 # %Listed, CleanTalk.org: 50.00%.
-# Stop Forum Spam (SFS) listings: 42.
-# Updated: 2017.02.15 / Checked: 2017.08.15
+# Stop Forum Spam (SFS) listings: 113.
+# Updated: 2017.02.15 / Checked: 2018.01.07
 
-2a03:4000::/31 Deny Cloud
 2a04:b500::/32 Deny Cloud
+Origin: CH
+2a03:4000::/31 Deny Cloud
+Origin: DE
 Tag: netcup GmbH
 
 
-# ASNs 19531, 43737, 43755 ("Nodes Direct").
-# %Listed, Google Malware Dashboard: 1.67% (AS19531), "ASN not found" (AS43737/AS43755).
-# %Listed, CleanTalk.org: 86.55% (AS19531), ??.??% (AS43737/AS43755).
-# Stop Forum Spam (SFS) listings: 1,986 (AS19531), 0 (AS43737/AS43755).
-# Updated: 2017.02.15 / Checked: 2017.08.15
+# ASNs 19531, 43755 ("Nodes Direct").
+# %Listed, CleanTalk.org: 86.55% (AS19531).
+# Stop Forum Spam (SFS) listings: 192 (AS19531).
+# Updated: 2017.02.15 / Checked: 2018.01.07
 
-2604:4600::/32 Deny Cloud
+2a0b:9c80::/29 Deny Cloud
+Origin: RU
+2604:4600::/28 Deny Cloud
 2605:d100:b000::/36 Deny Cloud
-2607:8700:104::/48 Deny Cloud
+Origin: US
 Tag: Nodes Direct
 
 
@@ -4116,15 +4113,16 @@ Tag: netirons
 
 
 # ASNs 30496, 36024 ("Colo4, LLC").
-# %Listed, Google Malware Dashboard: 1.16% (AS30496), 2.12% (AS36024).
+# %Listed, Google Malware Dashboard: 0.99% (AS30496), 1.73% (AS36024).
 # %Listed, CleanTalk.org: 27.99% (AS30496), 32.41% (AS36024).
-# Stop Forum Spam (SFS) listings: 5,565 (AS30496), 18 (AS36024).
-# Updated: 2017.08.31
+# Stop Forum Spam (SFS) listings: 2,330 (AS30496), 7 (AS36024).
+# Updated: 2017.08.31 / Checked: 2018.01.07
 
 2605:7700::/47 Deny Cloud
 2606:4300::/48 Deny Cloud
 2607:f198::/32 Deny Cloud
 2607:fdb8::/32 Deny Cloud
+Origin: US
 Tag: Colo4, LLC
 
 
@@ -4258,13 +4256,14 @@ Tag: Dream Wave
 
 
 # ASN 60592 ("Gransy s.r.o.").
-# %Listed, Google Malware Dashboard: 79.01%.
+# %Listed, Google Malware Dashboard: 78.43%.
 # %Listed, CleanTalk.org: 71.43%.
-# Stop Forum Spam (SFS) listings: 256.
-# Updated: 2017.08.31
+# Stop Forum Spam (SFS) listings: 179.
+# Updated: 2017.08.31 / Checked: 2018.01.07
 
 2a00:a160::/32 Deny Cloud
 2a03:6920::/32 Deny Cloud
+Origin: CZ
 Tag: Gransy s.r.o.
 
 
@@ -4351,31 +4350,38 @@ Tag: 24 SHELLS
 
 
 # ASNs 11588, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
-# Updated: 2017.08.25
+# Updated: 2018.01.07
 
-2001:1938::/43 Deny Cloud
-2001:1938:4202::/47 Deny Cloud
-2001:1938:7001::/48 Deny Cloud
-2001:1938:7002::/47 Deny Cloud
-2001:1938:7004::/46 Deny Cloud
-2001:1938:7008::/48 Deny Cloud
-2001:1938:b000::/48 Deny Cloud
-2001:1938:b00b::/48 Deny Cloud
+2a03:efc0:500::/40 Deny Cloud
+2a03:efc0:900::/40 Deny Cloud
+Origin: GB
+2403:f880:6000::/39 Deny Cloud
+2403:f880:6300::/40 Deny Cloud
+2404:5d80:6000::/39 Deny Cloud
+2404:5d80:6300::/40 Deny Cloud
+Origin: JP
 2001:4de0:500::/40 Deny Cloud
 2001:4de0:600::/40 Deny Cloud
 2001:4de0:2400::/40 Deny Cloud
 2001:4de0:4202::/47 Deny Cloud
 2001:4de0:6000::/39 Deny Cloud
 2001:4de0:6300::/40 Deny Cloud
+2001:4de0:7001::/48 Deny Cloud
+2001:4de0:7002::/47 Deny Cloud
 2001:4de0:ac10::/47 Deny Cloud
 2001:4de0:ac12::/48 Deny Cloud
 2001:4de0:ac18::/47 Deny Cloud
-2403:f880:6000::/39 Deny Cloud
-2403:f880:6300::/40 Deny Cloud
-2404:5d80:6000::/39 Deny Cloud
-2404:5d80:6300::/40 Deny Cloud
-2a03:efc0:500::/40 Deny Cloud
-2a03:efc0:900::/40 Deny Cloud
+Origin: NL
+2001:1938:10::/44 Deny Cloud
+2001:1938:4202::/47 Deny Cloud
+2001:1938:7001::/48 Deny Cloud
+2001:1938:7002::/47 Deny Cloud
+2001:1938:7004::/46 Deny Cloud
+2001:1938:7008::/48 Deny Cloud
+2001:1938::/44 Deny Cloud
+2001:1938:b000::/48 Deny Cloud
+2001:1938:b00b::/48 Deny Cloud
+Origin: US
 Tag: Highwinds
 
 
@@ -4555,3 +4561,50 @@ Tag: TV Internacional
 
 2607:fb30::/32 Deny Cloud
 Tag: A2 Hosting, Inc
+
+
+# ASN 43317 ('OOO "Fishnet Communications"').
+# %Listed, Google Malware Dashboard: 1.57%.
+# %Listed, CleanTalk.org: 46.95%.
+# Stop Forum Spam (SFS) listings: 2,382.
+# Updated: 2018.01.07
+
+2a00:1838::/32 Deny Cloud
+2a0a:4784::/32 Deny Cloud
+2a0b:d000::/32 Deny Cloud
+Origin: RU
+Tag: Fishnet
+
+
+# ASN 59504 ('LLC "CloudSol"').
+# %Listed, Google Malware Dashboard: 0.19%.
+# %Listed, CleanTalk.org: 48.65%.
+# Stop Forum Spam (SFS) listings: 82.
+# Updated: 2018.01.07
+
+2a0a:f9c7::/32 Deny Cloud
+Origin: EU
+2a02:eb00::/30 Deny Cloud
+2a02:eb06::/32 Deny Cloud
+2a05:fb40::/29 Deny Cloud
+2a07:14c0::/47 Deny Cloud
+2a07:14c0:100::/40 Deny Cloud
+2a07:14c0:3000::/36 Deny Cloud
+2a07:14c0:4000::/36 Deny Cloud
+2a07:14c0:a000::/36 Deny Cloud
+2a07:14c0:e000::/36 Deny Cloud
+2a07:14c1::/32 Deny Cloud
+2a07:14c2::/31 Deny Cloud
+2a07:14c4::/31 Deny Cloud
+2a07:14c6::/32 Deny Cloud
+2a0a:4780::/32 Deny Cloud
+2a0a:4782::/31 Deny Cloud
+2a0a:4786::/31 Deny Cloud
+2a0a:7743::/32 Deny Cloud
+2a0a:7745::/32 Deny Cloud
+2a0a:7746::/32 Deny Cloud
+2a0c:2100::/30 Deny Cloud
+2a0c:2104::/31 Deny Cloud
+2a0c:2106::/32 Deny Cloud
+Origin: RU
+Tag: CloudSol

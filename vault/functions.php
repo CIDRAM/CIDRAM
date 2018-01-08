@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.12.30).
+ * This file: Functions file (last modified: 2018.01.01).
  */
 
 /**
@@ -971,7 +971,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     }
 
     /** Return results. */
-    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^0-9a-z._~-]/i', '', $Host) ?: $Addr;
+    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:0-9a-z._~-]/i', '', $Host) ?: $Addr;
 
 };
 
@@ -991,7 +991,7 @@ $CIDRAM['DNS-Reverse-Fallback'] = function ($Addr) use (&$CIDRAM) {
     $CIDRAM['CacheModified'] = true;
 
     /** Return results. */
-    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^0-9a-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
+    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:0-9a-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
 
 };
 

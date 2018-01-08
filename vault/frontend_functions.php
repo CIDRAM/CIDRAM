@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2017.12.30).
+ * This file: Front-end functions file (last modified: 2018.01.08).
  */
 
 /**
@@ -968,6 +968,15 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
             $Data[$Field][$Entry] = 0;
         }
         $Data[$Field][$Entry]++;
+    }
+    $Data['Origin'] = [];
+    for ($A = 65; $A < 91; $A++) {
+        for ($B = 65; $B < 91; $B++) {
+            $Code = '[' . chr($A) . chr($B) . ']';
+            if ($Count = substr_count($In, $Code)) {
+                $Data['Origin'][$Code] = $Count;
+            }
+        }
     }
     $Out = '<table>';
     foreach ($Data as $Field => $Entries) {

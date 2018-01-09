@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.01.08).
+ * This file: Front-end functions file (last modified: 2018.01.09).
  */
 
 /**
@@ -978,12 +978,17 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
             }
         }
     }
+    if (empty($Data['Origin'])) {
+        unset($Data['Origin']);
+    }
     $Out = '<table>';
     foreach ($Data as $Field => $Entries) {
         $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
         arsort($Entries, SORT_NUMERIC);
         foreach ($Entries as $Entry => $Count) {
-            $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+            if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
+                $Entry .= ' <a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($Entry)) . '">»</a>';
+            }
             preg_match_all('~\("([^()"]+)", L~', $Entry, $Parts);
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {

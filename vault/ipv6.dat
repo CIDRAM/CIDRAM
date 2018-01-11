@@ -213,15 +213,18 @@ Tag: Masterhost
 
 
 # ASN 26496 ("GoDaddy.com, LLC").
-# %Listed, Google Malware Dashboard: 2.88%.
+# %Listed, Google Malware Dashboard: 2.11%.
 # %Listed, CleanTalk.org: 44.48%.
-# Stop Forum Spam (SFS) listings: 2,904.
-# Updated: 2016.04.18 / Checked: 2017.11.02
+# Stop Forum Spam (SFS) listings: 3,023.
+# Updated: 2016.04.18 / Checked: 2018.01.11
 
+2a00:1168::/32 Deny Cloud
+Origin: NL
 2407:1c00::/32 Deny Cloud
+Origin: SG
 2603::/20 Deny Cloud
 2607:f208::/32 Deny Cloud
-2a00:1168::/32 Deny Cloud
+Origin: US
 Tag: GoDaddy.com, LLC
 
 
@@ -269,17 +272,29 @@ Tag: OVH Systems
 Tag: Dattatec.com
 
 
-# ASNs 7203, 16265, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 394380, 395954 ("Leaseweb Network").
-# Updated: 2017.05.08 / Checked: 2017.10.26
+# ASNs 7203, 16265, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 136988, 205544, 394380, 395954, 396190, 396362
+# ("Leaseweb Network"). Updated: 2018.01.11
 
-2001:df1:800::/47 Deny Cloud
-2001:1af8::/32 Deny Cloud
-2402:5980::/40 Deny Cloud
-2402:9e80:2402::/48 Deny Cloud
-2604:9a00::/32 Deny Cloud
-2605:fe80::/32 Deny Cloud
-2606:9880::/32 Deny Cloud
+2a03:f85:2::/48 Deny Cloud
+Origin: AT
+2401:d040::/32 Deny Cloud
+Origin: AU
+2a06:1180::/29 Deny Cloud
+Origin: CY
 2a00:c98::/32 Deny Cloud
+2a03:ce40::/47 Deny Cloud
+Origin: DE
+2a03:7480::/44 Deny Cloud
+Origin: ES
+2a02:2ca0:3a::/48 Deny Cloud
+Origin: EU
+2a01:9260::/32 Deny Cloud
+2a0d:3000::/29 Deny Cloud
+Origin: GB
+2402:9e80:2402::/48 Deny Cloud
+Origin: HK
+2001:1af8::/32 Deny Cloud
+2402:20c0:1::/48 Deny Cloud
 2a00:ec8::/32 Deny Cloud
 2a00:5020::/48 Deny Cloud
 2a00:9d20:1::/48 Deny Cloud
@@ -289,32 +304,18 @@ Tag: Dattatec.com
 2a00:9d20:53::/48 Deny Cloud
 2a00:9d20:5353::/48 Deny Cloud
 2a00:c6c0:1::/48 Deny Cloud
-2a01:9260::/32 Deny Cloud
 2a01:9400::/32 Deny Cloud
 2a01:b2e0::/29 Deny Cloud
 2a02:bc0::/32 Deny Cloud
 2a02:cc8::/32 Deny Cloud
-2a02:1330::/32 Deny Cloud
 2a02:2870:8000::/33 Deny Cloud
-2a02:2968::/29 Deny Cloud
-2a02:2ca0:3a::/48 Deny Cloud
 2a02:40c0::/36 Deny Cloud
 2a02:4600::/32 Deny Cloud
-2a03:f85:2::/48 Deny Cloud
-2a03:2280::/32 Deny Cloud
 2a03:38a0::/32 Deny Cloud
-2a03:7480::/44 Deny Cloud
-2a03:ce40::/47 Deny Cloud
 2a03:e280::/32 Deny Cloud
-2a04:1880:1111::/48 Deny Cloud
-2a04:88c0::/36 Deny Cloud
-2a05:3a40::/29 Deny Cloud
 2a05:3f40::/30 Deny Cloud
-2a05:b300::/29 Deny Cloud
-2a06:1180::/29 Deny Cloud
 2a06:6ec0::/29 Deny Cloud
 2a06:6f80::/29 Deny Cloud
-2a06:a5c0::/29 Deny Cloud
 2a06:ab00::/32 Deny Cloud
 2a06:b5c0::/29 Deny Cloud
 2a07:2c00::/29 Deny Cloud
@@ -330,6 +331,23 @@ Tag: Dattatec.com
 2a0a:4980::/29 Deny Cloud
 2a0a:8580::/29 Deny Cloud
 2a0a:b400::/29 Deny Cloud
+Origin: NL
+2a05:3a40::/29 Deny Cloud
+Origin: RO
+2a04:88c0::/36 Deny Cloud
+Origin: RU
+2a05:b300::/29 Deny Cloud
+2a06:a5c0::/29 Deny Cloud
+Origin: SC
+2001:df1:800::/47 Deny Cloud
+2402:5980::/40 Deny Cloud
+Origin: SG
+2a04:1880:1111::/48 Deny Cloud
+Origin: TR
+2604:9a00::/32 Deny Cloud
+2605:fe80::/32 Deny Cloud
+2606:9880::/32 Deny Cloud
+Origin: US
 Tag: Leaseweb
 
 
@@ -351,26 +369,43 @@ Tag: Agava Ltd
 
 
 # ASN 36351 ("SoftLayer Technologies").
-# %Listed, Google Malware Dashboard: 0.34%.
+# %Listed, Google Malware Dashboard: 0.48%.
 # %Listed, CleanTalk.org: 30.68%.
-# Stop Forum Spam (SFS) listings: 17,089.
-# Updated: 2017.12.28
+# Stop Forum Spam (SFS) listings: 16,835.
+# Updated: 2018.01.11
 
+2402:2f80::/48 Run rules_softlayer.php
+2403:1480:1000::/36 Run rules_softlayer.php
+2403:5680::/48 Run rules_softlayer.php
+Origin: AU
+2803:3240:1::/48 Run rules_softlayer.php
+Origin: BZ
+2a01:6f0:fffe::/48 Run rules_softlayer.php
+Origin: DE
+2a02:2498:3::/48 Run rules_softlayer.php
+Origin: GB
+2402:9e80::/47 Run rules_softlayer.php
+2403:ad80:10::/48 Run rules_softlayer.php
+2403:ad80:20::/48 Run rules_softlayer.php
+Origin: HK
 2001:df3:8800::/48 Run rules_softlayer.php
 2001:df4:f000::/48 Run rules_softlayer.php
 2001:df5:9000::/48 Run rules_softlayer.php
+Origin: IN
+2a03:8180:1000::/38 Run rules_softlayer.php
+2a03:8180:1400::/39 Run rules_softlayer.php
+2a03:8180:1600::/40 Run rules_softlayer.php
+2a03:8180:1800::/39 Run rules_softlayer.php
+Origin: NL
+2400:bb40:1000::/40 Run rules_softlayer.php
+Origin: PA
 2401:c900:1000::/38 Run rules_softlayer.php
 2401:c900:1400::/39 Run rules_softlayer.php
 2401:c900:1600::/40 Run rules_softlayer.php
 2401:c900:1800::/40 Run rules_softlayer.php
-2402:2f80::/48 Run rules_softlayer.php
-2402:9e80::/47 Run rules_softlayer.php
 2402:b180:1::/48 Run rules_softlayer.php
+Origin: SG
 2402:e380::/48 Run rules_softlayer.php
-2403:1480:1000::/36 Run rules_softlayer.php
-2403:5680::/48 Run rules_softlayer.php
-2403:ad80:10::/48 Run rules_softlayer.php
-2403:ad80:20::/48 Run rules_softlayer.php
 2600:2a04::/48 Run rules_softlayer.php
 2602:ff1c:1::/48 Run rules_softlayer.php
 2602:ff84:1::/48 Run rules_softlayer.php
@@ -391,14 +426,9 @@ Tag: Agava Ltd
 2620:121:5000::/47 Run rules_softlayer.php
 2620:121:5002::/48 Run rules_softlayer.php
 2620:121:7000::/47 Run rules_softlayer.php
+Origin: US
 2803:2f40:ffff::/48 Run rules_softlayer.php
-2803:3240:1::/48 Run rules_softlayer.php
-2a01:6f0:fffe::/48 Run rules_softlayer.php
-2a02:2498:3::/48 Run rules_softlayer.php
-2a03:8180:1000::/38 Run rules_softlayer.php
-2a03:8180:1400::/39 Run rules_softlayer.php
-2a03:8180:1600::/40 Run rules_softlayer.php
-2a03:8180:1800::/39 Run rules_softlayer.php
+Origin: UY
 Tag: SoftLayer
 
 
@@ -639,16 +669,17 @@ Tag: United Gameserver
 
 # ASN 24961 ("myLoc managed IT AG").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 1.03%.
+# %Listed, Google Malware Dashboard: 0.73%.
 # %Listed, CleanTalk.org: 37.09%.
-# Stop Forum Spam (SFS) listings: 7,773.
-# Updated: 2017.05.06 / Checked: 2017.10.26
+# Stop Forum Spam (SFS) listings: 9,950.
+# Updated: 2018.01.11
 
 2001:678:248::/48 Deny Cloud
 2001:67c:192c::/48 Deny Cloud
-2001:4ba0::/32 Deny Cloud
-2a06:1c0::/30 Deny Cloud
+2001:4ba0::/31 Deny Cloud
 2a07:4400::/29 Deny Cloud
+2a0c:2500::/29 Deny Cloud
+Origin: DE
 Tag: myLoc
 
 
@@ -1401,10 +1432,11 @@ Tag: EGIHosting
 # ASN 30083 ("HEG US Inc").
 # %Listed, Google Malware Dashboard: 0.09%.
 # %Listed, CleanTalk.org: 26.15%.
-# Stop Forum Spam (SFS) listings: 120.
-# Updated: 2017.01.25 / Checked: 2017.12.28
+# Stop Forum Spam (SFS) listings: 121.
+# Updated: 2017.01.25 / Checked: 2018.01.11
 
 2605:de00::/32 Deny Cloud
+Origin: US
 Tag: HEG US Inc
 
 
@@ -4787,9 +4819,12 @@ Tag: SAPIOTERRA, LLC
 
 # Announcing as: "LogicWeb Inc".
 # Various ASNs; Sourced from HE.
-# Updated: 2017.11.16
+# Updated: 2018.01.11
 
-2606:f180:8::/48 Deny Cloud
+2606:f180::/47 Deny Cloud
+2606:f180:3::/48 Deny Cloud
+2606:f180:4::/46 Deny Cloud
+Origin: US
 Tag: LogicWeb Inc
 
 

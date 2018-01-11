@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.01.01).
+ * This file: Functions file (last modified: 2018.01.11).
  */
 
 /**
@@ -854,6 +854,11 @@ $CIDRAM['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$CIDRAM)
  * @return string The hostname on success, or the IP address on failure.
  */
 $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM) {
+
+    /** Shouldn't try to reverse localhost addresses; There'll be problems. */
+    if ($Addr === '127.0.0.1' || $Addr === '::1') {
+        return 'localhost';
+    }
 
     /** We've already got it cached. We can return the results early. */
     if (isset($CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'])) {

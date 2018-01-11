@@ -24,6 +24,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   logs page (it should now be possible to filter log entries on the basis of
   country flags, if any were indicated by the signatures triggered for them).
 
+- [2018.01.11; Sub-minor code change; Maikuolan]: Not technically a bug, but
+  DNS lookups shouldn't be performed on localhost addresses due to the risk of
+  false positives. Code modified accordingly.
+
 === Version/Release 1.3.0 ===
 MINOR RELEASE.
 

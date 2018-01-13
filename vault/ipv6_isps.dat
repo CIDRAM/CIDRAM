@@ -250,17 +250,20 @@ Tag: JPMorgan Chase & Co
 
 
 # ASN 42708 ("Portlane AB").
-# %Listed, Google Malware Dashboard: 0.05%.
+# %Listed, Google Malware Dashboard: 0.35%.
 # %Listed, CleanTalk.org: 49.35%.
-# Stop Forum Spam (SFS) listings: 5,670.
-# Updated: 2017.09.19
+# Stop Forum Spam (SFS) listings: 1,925.
+# Updated: 2018.01.13
 
-2a00:1a28::/32 Deny Spam
-2a01:6f0:ffff::/48 Deny Spam
 2a01:8640:6::/48 Deny Spam
+2a01:8640:9::/48 Deny Spam
+Origin: GB
+2a00:1a28::/32 Deny Spam
+2a02:750:10::/48 Deny Spam
 2a02:7ac0::/32 Deny Spam
-2a02:d507:ffff::/48 Deny Spam
 Origin: SE
+2a0a:e2c6::/32 Deny Spam
+Origin: UA
 Tag: Portlane Networks AB
 ---
 recaptcha:
@@ -360,53 +363,6 @@ Tag: Xirra GmbH
 2a00:ede0::/32 Deny Generic
 Origin: UA
 Tag: PP SKS-LUGAN
-
-
-# ASN 131222 ("MTS India").
-# %Listed, Google Malware Dashboard: 1.59%.
-# %Listed, CleanTalk.org: 3.69%.
-# %Listed, abuseat.org (CBL-Listed): 3.49%.
-# Stop Forum Spam (SFS) listings: 1,295.
-# Updated: 2017.09.19
-
-2406:5600:9::/48 Deny Spam
-2406:5600:a::/48 Deny Spam
-2406:5600:13::/48 Deny Spam
-2406:5600:14::/46 Deny Spam
-2406:5600:18::/45 Deny Spam
-2406:5600:20::/44 Deny Spam
-2406:5600:30::/47 Deny Spam
-2406:5600:53::/48 Deny Spam
-2406:5600:54::/46 Deny Spam
-2406:5600:58::/45 Deny Spam
-2406:5600:60::/44 Deny Spam
-2406:5600:70::/48 Deny Spam
-2406:5600:73::/48 Deny Spam
-2406:5600:74::/46 Deny Spam
-2406:5600:78::/45 Deny Spam
-2406:5600:80::/45 Deny Spam
-2406:5600:88::/48 Deny Spam
-2406:5600:8a::/47 Deny Spam
-2406:5600:8c::/46 Deny Spam
-2406:5600:90::/48 Deny Spam
-2406:5600:93::/48 Deny Spam
-2406:5600:94::/46 Deny Spam
-2406:5600:98::/45 Deny Spam
-2406:5600:a0::/47 Deny Spam
-2406:5600:a2::/48 Deny Spam
-2406:5600:b3::/48 Deny Spam
-2406:5600:b4::/47 Deny Spam
-2406:5600:bb::/48 Deny Spam
-2406:5600:bc::/47 Deny Spam
-2406:5600:be::/48 Deny Spam
-2406:5600:d2::/47 Deny Spam
-2406:5600:d4::/46 Deny Spam
-2406:5600:d8::/45 Deny Spam
-Origin: IN
-Tag: Sistema Shyam
----
-recaptcha:
- enabled: true
 
 
 # ASN 13030 ("Init7").
@@ -564,11 +520,11 @@ Tag: STARNET S.R.L
 
 
 # ASN 17747 ("SITI NETWORKS LIMITED").
-# %Listed, Google Malware Dashboard: 3.96%.
+# %Listed, Google Malware Dashboard: 5.79%.
 # %Listed, CleanTalk.org: 6.19%.
-# %Listed, abuseat.org (CBL-Listed): 16.48%.
-# Stop Forum Spam (SFS) listings: 586.
-# Updated: 2016.09.04 / Checked: 2017.09.19
+# %Listed, abuseat.org (CBL-Listed): 30.28%.
+# Stop Forum Spam (SFS) listings: 488.
+# Updated: 2016.09.04 / Checked: 2018.01.13
 
 2402:ea80::/48 Deny Spam
 2406:3c80::/46 Deny Spam
@@ -803,31 +759,35 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 3.04%.
+# %Listed, Google Malware Dashboard: 3.40%.
 # %Listed, CleanTalk.org: 36.22%.
-# Stop Forum Spam (SFS) listings: 302,999.
-# Updated: 2017.08.02 / Checked: 2017.09.19
+# Stop Forum Spam (SFS) listings: 237,969.
+# Updated: 2018.01.13
 
-2400:9380:8000::/47 Deny Generic
-2400:9380:8020::/47 Deny Generic
-2400:9380:8030::/48 Deny Generic
-2400:9380:8200::/47 Deny Generic
-2400:9380:8221::/48 Deny Generic
 2406:8500::/32 Deny Generic
 240e::/24 Deny Generic
-2605:9d80:8001::/48 Deny Generic
-2605:9d80:8011::/48 Deny Generic
-2605:9d80:8031::/48 Deny Generic
-2605:9d80:8041::/48 Deny Generic
+Origin: CN
 2a04:f580:8000::/48 Deny Generic
 2a04:f580:8010::/47 Deny Generic
 2a04:f580:8090::/48 Deny Generic
 2a04:f580:8200::/48 Deny Generic
 2a04:f580:8210::/47 Deny Generic
 2a04:f580:8290::/48 Deny Generic
+Origin: GB
+2400:9380:8000::/47 Deny Generic
+2400:9380:8020::/47 Deny Generic
+2400:9380:8030::/48 Deny Generic
+2400:9380:8200::/47 Deny Generic
+2400:9380:8221::/48 Deny Generic
+Origin: HK
+2605:9d80:8001::/48 Deny Generic
+2605:9d80:8011::/48 Deny Generic
+2605:9d80:8031::/48 Deny Generic
+2605:9d80:8041::/48 Deny Generic
+Origin: US
 2c0f:f7a8:8010::/47 Deny Generic
 2c0f:f7a8:8210::/47 Deny Generic
-Origin: CN
+Origin: ZA
 Tag: China Backbone 4134
 ---
 recaptcha:
@@ -896,26 +856,23 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 2.38%.
+# %Listed, Google Malware Dashboard: 1.41%.
 # %Listed, CleanTalk.org: 14.37%.
-# %Listed, abuseat.org (CBL-Listed): 3.41%.
-# Stop Forum Spam (SFS) listings: 10,339.
-# Updated: 2017.09.19
+# %Listed, abuseat.org (CBL-Listed): 3.61%.
+# Stop Forum Spam (SFS) listings: 9,129.
+# Updated: 2018.01.13
 
-2001:504:0:3::/64 Deny Generic
-2001:de8:4::/64 Deny Generic
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
-2001:ee0::/47 Deny Generic
-2001:ee0:100::/40 Deny Generic
+2001:ee0:1::/48 Deny Generic
 2001:ee0:200::/40 Deny Generic
 2001:ee0:300::/47 Deny Generic
-2001:ee0:304::/47 Deny Generic
+2001:ee0:305::/48 Deny Generic
 2001:ee0:37f::/48 Deny Generic
-2001:ee0:1000::/48 Deny Generic
 2001:ee0:1006::/48 Deny Generic
 2001:ee0:1080::/48 Deny Generic
 2001:ee0:2f00::/43 Deny Generic
+2001:ee0:3100::/43 Deny Generic
 2001:ee0:3200::/45 Deny Generic
 2001:ee0:3209::/48 Deny Generic
 2001:ee0:3220::/47 Deny Generic
@@ -926,40 +883,48 @@ recaptcha:
 2001:ee0:4000::/40 Deny Generic
 2001:ee0:4100::/41 Deny Generic
 2001:ee0:4180::/42 Deny Generic
+2001:ee0:4240::/42 Deny Generic
 2001:ee0:4280::/42 Deny Generic
+2001:ee0:4340::/42 Deny Generic
 2001:ee0:4380::/42 Deny Generic
 2001:ee0:44c0::/42 Deny Generic
 2001:ee0:4500::/42 Deny Generic
 2001:ee0:4580::/41 Deny Generic
 2001:ee0:4640::/42 Deny Generic
-2001:ee0:4700::/42 Deny Generic
+2001:ee0:46c0::/42 Deny Generic
+2001:ee0:4700::/41 Deny Generic
 2001:ee0:47c0::/42 Deny Generic
 2001:ee0:4840::/42 Deny Generic
 2001:ee0:4880::/42 Deny Generic
-2001:ee0:49c0::/42 Deny Generic
+2001:ee0:4900::/40 Deny Generic
 2001:ee0:4b00::/40 Deny Generic
-2001:ee0:5100::/42 Deny Generic
-2001:ee0:51c0::/42 Deny Generic
+2001:ee0:4c00::/40 Deny Generic
+2001:ee0:4d00::/41 Deny Generic
+2001:ee0:4d80::/42 Deny Generic
+2001:ee0:4e00::/42 Deny Generic
+2001:ee0:5100::/40 Deny Generic
+2001:ee0:5200::/40 Deny Generic
 2001:ee0:5300::/42 Deny Generic
-2001:ee0:5380::/42 Deny Generic
-2001:ee0:5400::/42 Deny Generic
-2001:ee0:5480::/42 Deny Generic
+2001:ee0:5380::/41 Deny Generic
+2001:ee0:5400::/40 Deny Generic
 2001:ee0:5500::/42 Deny Generic
-2001:ee0:5580::/42 Deny Generic
-2001:ee0:5640::/42 Deny Generic
+2001:ee0:5580::/41 Deny Generic
+2001:ee0:5600::/40 Deny Generic
+2001:ee0:5700::/41 Deny Generic
+2001:ee0:7240::/42 Deny Generic
 2001:ee0:7280::/42 Deny Generic
+2001:ee0:7340::/42 Deny Generic
 2001:ee0:73c0::/42 Deny Generic
 2001:ee0:74c0::/42 Deny Generic
 2001:ee0:7500::/42 Deny Generic
 2001:ee0:7580::/41 Deny Generic
 2001:ee0:7640::/42 Deny Generic
+2001:ee0:76c0::/42 Deny Generic
 2001:ee0:7700::/42 Deny Generic
 2001:ee0:77c0::/42 Deny Generic
 2001:ee0:7840::/42 Deny Generic
 2001:ee0:7880::/42 Deny Generic
-2001:ee0:79c0::/42 Deny Generic
-2001:ef0:1:1b::/64 Deny Generic
-2400:8800:7f02:36::/64 Deny Generic
+2001:ee0:7900::/40 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
 Tag: VNPT Corp
@@ -1086,9 +1051,9 @@ recaptcha:
 
 # ASN 9387 ("AUGERE-Pakistan").
 # %Listed, CleanTalk.org: 11.07%.
-# %Listed, abuseat.org (CBL-Listed): 9.04%.
-# Stop Forum Spam (SFS) listings: 83.
-# Updated: 2017.03.22 / Checked: 2017.09.19
+# %Listed, abuseat.org (CBL-Listed): 9.23%.
+# Stop Forum Spam (SFS) listings: 115.
+# Updated: 2017.03.22 / Checked: 2018.01.13
 
 2401:4100::/32 Deny Spam
 Origin: PK

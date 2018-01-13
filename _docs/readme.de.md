@@ -161,6 +161,8 @@ Datei | Beschreibung
 /vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für die Front-End Navigation-Links, für alle mit vollständiger Zugriff.
 /vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für die Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
 /vault/fe_assets/_statistics.html | Ein HTML-Template für die Front-End Statistikseite.
+/vault/fe_assets/_sections.html | Eine HTML-Template für die Sektionsliste.
+/vault/fe_assets/_sections_row.html | Eine HTML-Template für die Sektionsliste.
 /vault/fe_assets/_updates.html | Ein HTML-Template für die Front-End Aktualisierungen-Seite.
 /vault/fe_assets/_updates_row.html | Ein HTML-Template für die Front-End Aktualisierungen-Seite.
 /vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
@@ -929,4 +931,4 @@ Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUN
 ---
 
 
-Zuletzt aktualisiert: 5 Januar 2018 (2018.01.05).
+Zuletzt aktualisiert: 14 Januar 2018 (2018.01.14).

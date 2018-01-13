@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.12.27).
+ * This file: Italian language data for the front-end (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,8 +16,20 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Il pacchetto principale (senza le firme, la documentazione, e la configurazione).';
+$CIDRAM['lang']['Name: Bypasses'] = 'I firme predefinite bypass.';
+$CIDRAM['lang']['Name: IPv4'] = 'File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File di firme per IPv4 (bogon/marziano CIDRs).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File di firme per IPv4 (ISP pericolosi e spam incline).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'File di firme per IPv4 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).';
+$CIDRAM['lang']['Name: IPv6'] = 'File di firme per IPv6 (servizi cloud indesiderate e punti finali non umani).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File di firme per IPv6 (bogon/marziano CIDRs).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File di firme per IPv6 (ISP pericolosi e spam incline).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'File di firme per IPv6 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Pagina Principale</a> | <a href="?cidram-page=logout">Disconnettersi</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Disconnettersi</a>';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'File per la registrazione di l\'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]; 403 = Sostituire con "403 Forbidden"; 503 = Sostituire con "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro. Opzioni: PASSWORD_DEFAULT (predefinito), PASSWORD_BCRYPT, PASSWORD_ARGON2I (richiede PHP >= 7.2.0).';
@@ -29,13 +41,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Se si desidera, è possibile forn
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Come preferisci che l\'indirizzo email venga presentato agli utenti?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quale intestazioni dovrebbe CIDRAM rispondere con quando bloccano le richieste?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni.';
-$CIDRAM['lang']['config_general_FrontEndLog'] = 'File per la registrazione di l\'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dove trovare l\'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!';
 $CIDRAM['lang']['config_general_lang'] = 'Specifica la lingua predefinita per CIDRAM.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.';
 $CIDRAM['lang']['config_general_logfile'] = 'Un file leggibile dagli umani per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Un file nello stile di apache per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare.';
-$CIDRAM['lang']['config_general_log_banned_ips'] = 'Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.';
 $CIDRAM['lang']['config_general_maintenance_mode'] = 'Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l\'aggiornamento del CMS, dei framework, ecc.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Numero massimo di tentativi di accesso.';
 $CIDRAM['lang']['config_general_numbers'] = 'Come preferisci che i numeri siano visualizzati? Seleziona l\'esempio che ti sembra più corretto.';
@@ -67,11 +78,9 @@ $CIDRAM['lang']['config_signatures_ipv4'] = 'Un elenco dei file di firma IPv4 ch
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Un elenco dei file di firma IPv6 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Un elenco di file moduli da caricare dopo l\'esecuzione delle firme IPv4/IPv6, delimitati da virgole.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Quando devono infrazioni essere contati? False = Quando IP sono bloccati da moduli. True = Quando IP sono bloccati per qualsiasi motivo.';
-$CIDRAM['lang']['config_template_data_css_url'] = 'URL del file CSS per i temi personalizzati.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Ingrandimento del carattere. Predefinito = 1.';
+$CIDRAM['lang']['config_template_data_css_url'] = 'URL del file CSS per i temi personalizzati.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema predefinito da utilizzare per CIDRAM.';
-$CIDRAM['lang']['Extended Description: Bypasses'] = 'Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale.';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Il pacchetto principale (senza le firme, la documentazione, e la configurazione).';
 $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_banned'] = 'Vietato';
 $CIDRAM['lang']['field_blocked'] = 'Bloccato';
@@ -109,11 +118,11 @@ $CIDRAM['lang']['field_rename_file'] = 'Rinominare';
 $CIDRAM['lang']['field_reset'] = 'Azzerare';
 $CIDRAM['lang']['field_set_new_password'] = 'Imposta una nuova password';
 $CIDRAM['lang']['field_size'] = 'Dimensione Totale: ';
-$CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
+$CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Utilizza il fuso orario predefinito del sistema.';
 $CIDRAM['lang']['field_tracking'] = 'Monitoraggio';
@@ -169,22 +178,14 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Aggregatore IP';
 $CIDRAM['lang']['link_ip_test'] = 'Test di IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Monitoraggio IP';
 $CIDRAM['lang']['link_logs'] = 'File di Log';
+$CIDRAM['lang']['link_sections_list'] = 'Lista delle Sezioni';
 $CIDRAM['lang']['link_statistics'] = 'Statistiche';
 $CIDRAM['lang']['link_textmode'] = 'Formattazione del testo: <a href="%1$sfalse%2$s">Semplice</a> – <a href="%1$strue%2$s">Formattato</a> – <a href="%1$stally%2$s">Conteggio</a>';
 $CIDRAM['lang']['link_updates'] = 'Aggiornamenti';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log selezionato non esiste!';
-$CIDRAM['lang']['logs_no_logfiles_available'] = 'Nessun file di log disponibili.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Nessun file di log selezionato.';
+$CIDRAM['lang']['logs_no_logfiles_available'] = 'Nessun file di log disponibili.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Numero massimo di tentativi di accesso superato; Accesso negato.';
-$CIDRAM['lang']['Name: Bypasses'] = 'I firme predefinite bypass.';
-$CIDRAM['lang']['Name: IPv4'] = 'File di firme per IPv4 (servizi cloud indesiderate e punti finali non umani).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File di firme per IPv4 (bogon/marziano CIDRs).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File di firme per IPv4 (ISP pericolosi e spam incline).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'File di firme per IPv4 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).';
-$CIDRAM['lang']['Name: IPv6'] = 'File di firme per IPv6 (servizi cloud indesiderate e punti finali non umani).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File di firme per IPv6 (bogon/marziano CIDRs).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File di firme per IPv6 (ISP pericolosi e spam incline).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'File di firme per IPv6 (CIDRs per i proxy, VPN e altri vari servizi indesiderati).';
 $CIDRAM['lang']['previewer_days'] = 'Giorni';
 $CIDRAM['lang']['previewer_hours'] = 'Ore';
 $CIDRAM['lang']['previewer_minutes'] = 'Minuti';
@@ -251,6 +252,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non 
 $CIDRAM['lang']['state_risk_high'] = 'Alto';
 $CIDRAM['lang']['state_risk_low'] = 'A basso';
 $CIDRAM['lang']['state_risk_medium'] = 'Medio';
+$CIDRAM['lang']['state_sl_totals'] = 'Totali (Firme: <span class="txtRd">%s</span> – Sezioni di firma: <span class="txtRd">%s</span> – File di firma: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Attualmente monitoraggio di %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Non nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiornato';
@@ -265,8 +267,8 @@ $CIDRAM['lang']['tip_cidr_calc'] = 'Salve, {username}.<br />La calcolatrice CIDR
 $CIDRAM['lang']['tip_config'] = 'Salve, {username}.<br />La pagina di configurazione permette di modificare la configurazione per CIDRAM dal front-end.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Inserisci l\'agente utente (user agent) qui (facoltativo).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM è offerto gratuitamente, ma se si vuole donare al progetto, è possibile farlo facendo clic sul pulsante donare.';
-$CIDRAM['lang']['tip_enter_ips_here'] = 'Inserisci IP qui.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Inserire IP qui.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'Inserisci IP qui.';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = 'Nota: CIDRAM utilizza un cookie per autenticare gli accessi. Accedendo, ti dà il tuo consenso per creare e memorizzare un cookie dal tuo browser.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salve, {username}.<br />Il file manager consente di eliminare, modificare, caricare e scaricare file. Usare con cautela (si potrebbe rompere l\'installazione di questo).';
 $CIDRAM['lang']['tip_home'] = 'Salve, {username}.<br />Questa è la pagina principale per il front-end di CIDRAM. Selezionare un collegamento dal menu di navigazione a sinistra per continuare.';
@@ -276,6 +278,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Quando non è selezionato, solo
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salve, {username}.<br />La pagina di monitoraggio IP consente di verificare lo stato del monitoraggio degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il monitoraggio loro se si vuole farlo.';
 $CIDRAM['lang']['tip_login'] = 'Nome utente predefinito: <span class="txtRd">admin</span> – Password predefinita: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salve, {username}.<br />Selezionare un file di log dall\'elenco sottostante per visualizzare il contenuto di tale file di log.';
+$CIDRAM['lang']['tip_sections_list'] = 'Salve, {username}.<br />Questa pagina elenca le sezioni presenti nei file di firma attualmente attivi.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Vedere la <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.it.md#SECTION6">documentazione</a> per informazioni sulle varie direttive di configurazione ed i loro scopi.';
 $CIDRAM['lang']['tip_statistics'] = 'Salve, {username}.<br />Questa pagina mostra alcune statistiche di utilizzo relative all\'installazione di CIDRAM.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Nota: Il monitoraggio delle statistiche è attualmente disattivato, ma può essere attivato tramite la pagina di configurazione.';
@@ -290,6 +293,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Test di IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Monitoraggio IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Accedi';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – File di Log';
+$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Lista delle Sezioni';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistiche';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Aggiornamenti';
 $CIDRAM['lang']['warning'] = 'Avvertimenti:';

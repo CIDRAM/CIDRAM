@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.12.27).
+ * This file: Turkish language data for the front-end (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,8 +16,20 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Varsayılan imza bypass\'lar, normalde ana paketle birlikte verilir.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
+$CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan bitiş noktaları).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan bitiş noktaları).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın; 403 = "403 Yasak" ile geçersiz kıl; 503 = "503 Hizmet kullanılamıyor" ile geçersiz kılın.';
 $CIDRAM['lang']['config_general_default_algo'] = 'Gelecekteki tüm şifreler ve oturumlar için hangi algoritmayı kullanacağını tanımlar. Options: PASSWORD_DEFAULT (varsayılan), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 gerektirir).';
@@ -29,13 +41,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'İsterseniz, kullanıcıları eng
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'İstekleri engellerken CIDRAM hangi üstbilgilerle karşılık vermeli?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Hostname aramayı zorla? True = Yes; False = No [Default]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir.';
-$CIDRAM['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM için varsayılan dili belirleyin.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Yasaklanmış IP\'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_logfile'] = 'Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
-$CIDRAM['lang']['config_general_log_banned_ips'] = 'Yasaklanmış IP\'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_maintenance_mode'] = 'Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS\'nizi, çerçeveleri vb. güncellenirken yararlıdır.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maksimum giriş denemesi sayısı.';
 $CIDRAM['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin.';
@@ -67,11 +78,9 @@ $CIDRAM['lang']['config_signatures_ipv4'] = 'Virgülle sınırlı, CIDRAM\'ın a
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Virgülle sınırlı, CIDRAM\'ın ayrıştırmaya çalıştığı IPv6 imza dosyalarının bir listesi.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Virgülle sınırlı, IPv4/IPv6 imzalarını kontrol ettikten sonra yüklenecek modül dosyalarının bir listesi.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'İhlaller ne zaman sayılmalıdır? Yanlış/False = IP\'ler modüller tarafından engellendiğinde. Doğru/True = Herhangi bir nedenle IP\'ler engellendiğinde.';
-$CIDRAM['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Yazı tipi büyütme. Varsayılan = 1.';
+$CIDRAM['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM için kullanılacak varsayılan tema.';
-$CIDRAM['lang']['Extended Description: Bypasses'] = 'Varsayılan imza bypass\'lar, normalde ana paketle birlikte verilir.';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
 $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
@@ -109,11 +118,11 @@ $CIDRAM['lang']['field_rename_file'] = 'Adını değiştirmek';
 $CIDRAM['lang']['field_reset'] = 'Sıfırla';
 $CIDRAM['lang']['field_set_new_password'] = 'Yeni Şifre Oluştur';
 $CIDRAM['lang']['field_size'] = 'Toplam Boyut: ';
-$CIDRAM['lang']['field_size_bytes'] = 'bayt';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
+$CIDRAM['lang']['field_size_bytes'] = 'bayt';
 $CIDRAM['lang']['field_status'] = 'Durum';
 $CIDRAM['lang']['field_system_timezone'] = 'Sistem varsayılan saat dilimini kullanın.';
 $CIDRAM['lang']['field_tracking'] = 'İzleme';
@@ -169,22 +178,14 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP Toplayıcı';
 $CIDRAM['lang']['link_ip_test'] = 'IP Testi';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP İzleme';
 $CIDRAM['lang']['link_logs'] = 'Kayıtlar';
+$CIDRAM['lang']['link_sections_list'] = 'Bölüm Listeleri';
 $CIDRAM['lang']['link_statistics'] = 'İstatistik';
 $CIDRAM['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse%2$s">Basit</a> – <a href="%1$strue%2$s">Süslü</a> – <a href="%1$stally%2$s">Taksir</a>';
 $CIDRAM['lang']['link_updates'] = 'Güncellemeler';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Seçilen günlük dosyası yok!';
-$CIDRAM['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Hiçbir günlük dosyası seçilmedi.';
+$CIDRAM['lang']['logs_no_logfiles_available'] = 'Günlük dosyası yok.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Maksimum giriş denemesi aşıldı; Erişim reddedildi.';
-$CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan bitiş noktaları).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan bitiş noktaları).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
 $CIDRAM['lang']['previewer_days'] = 'Günler';
 $CIDRAM['lang']['previewer_hours'] = 'Saatler';
 $CIDRAM['lang']['previewer_minutes'] = 'Dakikalar';
@@ -251,6 +252,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şi
 $CIDRAM['lang']['state_risk_high'] = 'Yüksek';
 $CIDRAM['lang']['state_risk_low'] = 'Düşük';
 $CIDRAM['lang']['state_risk_medium'] = 'Orta';
+$CIDRAM['lang']['state_sl_totals'] = 'Toplamları (İmzalar: <span class="txtRd">%s</span> – İmza bölümleri: <span class="txtRd">%s</span> – İmza dosyaları: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Şu anda %s IP izleme.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları gizleme';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';
@@ -265,8 +267,8 @@ $CIDRAM['lang']['tip_cidr_calc'] = 'Merhaba, {username}.<br />CIDR hesaplayıcı
 $CIDRAM['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Buraya user agent girin (isteğe).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ücretsiz olarak sunulmaktadır, ancak projeye bağış yapmak isterseniz, bağış düğmesini tıklayarak bunu yapabilirsiniz.';
-$CIDRAM['lang']['tip_enter_ips_here'] = 'IP\'leri buraya girin.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'IP\'yi buraya girin.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'IP\'leri buraya girin.';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = 'Not: CIDRAM, oturum açma kimlik doğrulamasında çerez kullanır. Oturum açarak, tarayıcınız tarafından oluşturulacak ve saklanacak bir çerez için onayınızı verirsiniz.';
 $CIDRAM['lang']['tip_file_manager'] = 'Merhaba, {username}.<br />Dosya yöneticisi dosyalarınızı silmenizi, düzenlemenizi, yüklemenizi ve indirmenizi sağlar. Dikkatli kullanın (kurulumunuzu bununla bozabilirsiniz).';
 $CIDRAM['lang']['tip_home'] = 'Merhaba, {username}.<br />Bu, CIDRAM ön uçunun ana sayfasıdır. Devam etmek için soldaki gezinme menüsünden bir bağlantı seçin.';
@@ -276,6 +278,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Seçilmediğinde, yalnızca imz
 $CIDRAM['lang']['tip_ip_tracking'] = 'Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar.';
 $CIDRAM['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
+$CIDRAM['lang']['tip_sections_list'] = 'Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">belgelere</a> bakın.';
 $CIDRAM['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
@@ -290,6 +293,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Testi';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP İzleme';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Giriş';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Kayıtlar';
+$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Bölüm Listeleri';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – İstatistik';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Güncellemeler';
 $CIDRAM['lang']['warning'] = 'Uyarılar:';

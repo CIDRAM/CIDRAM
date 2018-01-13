@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.12.27).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,8 +16,20 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
+$CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
+$CIDRAM['lang']['Name: IPv4'] = 'Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'Tập tin chữ ký IPv4 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'Tập tin chữ ký IPv4 (ISP nguy hiểm và gửi thư rác).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'Tập tin chữ ký IPv4 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
+$CIDRAM['lang']['Name: IPv6'] = 'Tập tin chữ ký IPv6 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'Tập tin chữ ký IPv6 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]; 403 = Ghi đè với "403 Forbidden"; 503 = Ghi đè với "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP >= 7.2.0).';
@@ -29,13 +41,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Nếu bạn muốn, bạn có th�
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất.';
-$CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như CloudFlare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
 $CIDRAM['lang']['config_general_lang'] = 'Xác định tiếng mặc định cho CIDRAM.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_logfile'] = 'Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Tập tin Apache phong cách cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Tập tin tuần tự cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
-$CIDRAM['lang']['config_general_log_banned_ips'] = 'Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_maintenance_mode'] = 'Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Số lượng tối đa cố gắng đăng nhập.';
 $CIDRAM['lang']['config_general_numbers'] = 'Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn.';
@@ -67,11 +78,9 @@ $CIDRAM['lang']['config_signatures_ipv4'] = 'Một danh sách các tập tin ch�
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.';
-$CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Phóng to chữ. Mặc định = 1.';
+$CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho CIDRAM.';
-$CIDRAM['lang']['Extended Description: Bypasses'] = 'Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính.';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
 $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
@@ -109,11 +118,11 @@ $CIDRAM['lang']['field_rename_file'] = 'Đổi tên';
 $CIDRAM['lang']['field_reset'] = 'Thiết Lập Lại';
 $CIDRAM['lang']['field_set_new_password'] = 'Đặt mật khẩu mới';
 $CIDRAM['lang']['field_size'] = 'Kích thước tổng: ';
-$CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
+$CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_status'] = 'Tình Trạng';
 $CIDRAM['lang']['field_system_timezone'] = 'Sử dụng múi giờ mặc định của hệ thống.';
 $CIDRAM['lang']['field_tracking'] = 'Giám sát';
@@ -169,22 +178,14 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Tập Hợp IP';
 $CIDRAM['lang']['link_ip_test'] = 'Kiểm Tra IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Giám sát IP';
 $CIDRAM['lang']['link_logs'] = 'Bản Ghi';
+$CIDRAM['lang']['link_sections_list'] = 'Danh sách phần';
 $CIDRAM['lang']['link_statistics'] = 'Số liệu thống kê';
 $CIDRAM['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse%2$s">Đơn giản</a> – <a href="%1$strue%2$s">Đẹp</a> – <a href="%1$stally%2$s">Kiểm đếm</a>';
 $CIDRAM['lang']['link_updates'] = 'Cập Nhật';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
-$CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
+$CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập bị từ chối.';
-$CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
-$CIDRAM['lang']['Name: IPv4'] = 'Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'Tập tin chữ ký IPv4 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'Tập tin chữ ký IPv4 (ISP nguy hiểm và gửi thư rác).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'Tập tin chữ ký IPv4 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
-$CIDRAM['lang']['Name: IPv6'] = 'Tập tin chữ ký IPv6 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'Tập tin chữ ký IPv6 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
 $CIDRAM['lang']['previewer_days'] = 'Ngày';
 $CIDRAM['lang']['previewer_hours'] = 'Giờ';
 $CIDRAM['lang']['previewer_minutes'] = 'Phút';
@@ -251,6 +252,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này kh
 $CIDRAM['lang']['state_risk_high'] = 'Cao';
 $CIDRAM['lang']['state_risk_low'] = 'Thấp';
 $CIDRAM['lang']['state_risk_medium'] = 'Trung bình';
+$CIDRAM['lang']['state_sl_totals'] = 'Tổng cộng (Chữ ký: <span class="txtRd">%s</span> – Phần chữ ký: <span class="txtRd">%s</span> – Tập tin chữ ký: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Hiện đang giám sát %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';
@@ -265,8 +267,8 @@ $CIDRAM['lang']['tip_cidr_calc'] = 'Xin chào, {username}.<br />Máy tính CIDR 
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Nhập đại lý người sử dụng (user agent) ở đây (tùy chọn).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
-$CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Nhập IP ở đây.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'Nhập IP ở đây.';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = 'Lưu ý: CIDRAM sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn.';
 $CIDRAM['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý tập tin cho phép bạn xóa bỏ, chỉnh sửa, tải lên, và tải về các tập tin. Sử dụng thận trọng (bạn có thể phá vỡ cài đặt của bạn với điều này).';
 $CIDRAM['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end CIDRAM. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
@@ -276,6 +278,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Khi không được chọn, ch�
 $CIDRAM['lang']['tip_ip_tracking'] = 'Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy.';
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$CIDRAM['lang']['tip_sections_list'] = 'Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.vi.md#SECTION6">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
 $CIDRAM['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
@@ -290,6 +293,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Giám sát IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Bản Ghi';
+$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Danh sách phần';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Số liệu thống kê';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Cập Nhật';
 $CIDRAM['lang']['warning'] = 'Cảnh báo:';

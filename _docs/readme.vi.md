@@ -161,6 +161,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
 /vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
 /vault/fe_assets/_statistics.html | Một tập tin mẫu HTML cho các trang thống kê của front-end.
+/vault/fe_assets/_sections.html | Một tập tin mẫu HTML cho danh sách phần.
+/vault/fe_assets/_sections_row.html | Một tập tin mẫu HTML cho danh sách phần.
 /vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
 /vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
@@ -929,4 +931,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Một 2018 (2018.01.05).
+Lần cuối cập nhật: 14 Tháng Một 2018 (2018.01.14).

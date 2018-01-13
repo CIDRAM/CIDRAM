@@ -161,6 +161,8 @@ CIDRAMは自動的に望ましくないリクエストをブロックする必�
 /vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​は完全なアクセスのためのものです。
 /vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​はログのみにアクセスのためのものです。
 /vault/fe_assets/_statistics.html | フロントエンドの統計ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_sections.html | セクション・リストのＨＴＭＬテンプレート。
+/vault/fe_assets/_sections_row.html | セクション・リストのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_updates_row.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/frontend.css | フロントエンドのＣＳＳスタイルシート。
@@ -929,4 +931,4 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ---
 
 
-最終アップデート：2018年1月8日。
+最終アップデート：2018年1月14日。

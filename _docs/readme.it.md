@@ -161,6 +161,8 @@ File | Descrizione
 /vault/fe_assets/_nav_complete_access.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso completo.
 /vault/fe_assets/_nav_logs_access_only.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso solo per i log.
 /vault/fe_assets/_statistics.html | Un modello HTML per il front-end pagina delle statistiche.
+/vault/fe_assets/_sections.html | Un modello HTML per la lista delle sezioni.
+/vault/fe_assets/_sections_row.html | Un modello HTML per la lista delle sezioni.
 /vault/fe_assets/_updates.html | Un modello HTML per il front-end pagina degli aggiornamenti.
 /vault/fe_assets/_updates_row.html | Un modello HTML per il front-end pagina degli aggiornamenti.
 /vault/fe_assets/frontend.css | Foglio di stile CSS per il front-end.
@@ -929,4 +931,4 @@ Sì. Per fare ciò, dovrai creare un file modulo personalizzato. *Vedere: [NOZIO
 ---
 
 
-Ultimo Aggiornamento: 5 Gennaio 2018 (2018.01.05).
+Ultimo Aggiornamento: 14 Gennaio 2018 (2018.01.14).

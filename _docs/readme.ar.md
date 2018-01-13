@@ -163,6 +163,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع وصول كامل.</div> | /vault/fe_assets/_nav_complete_access.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع سجلات الوصول فقط.</div> | /vault/fe_assets/_nav_logs_access_only.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الإحصاء.</div> | /vault/fe_assets/_statistics.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لقائمة الأقسام.</div> | /vault/fe_assets/_sections.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لقائمة الأقسام.</div> | /vault/fe_assets/_sections_row.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة التحديثات.</div> | /vault/fe_assets/_updates_row.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف CSS (صفحات الطرز المتراصة) لfront-end.</div> | /vault/fe_assets/frontend.css
@@ -1047,4 +1049,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 يناير 2018 (2018.01.05).</div>
+<div dir="rtl">آخر تحديث: 14 يناير 2018 (2018.01.14).</div>

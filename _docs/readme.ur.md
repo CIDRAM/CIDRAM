@@ -163,6 +163,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
 &nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
+&nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections.html
+&nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
@@ -1047,4 +1049,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 5 جنوری 2018 (2018.01.05).</div>
+<div dir="rtl">آخری تازہ کاری: 14 جنوری 2018 (2018.01.14).</div>

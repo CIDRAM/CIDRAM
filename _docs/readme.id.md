@@ -161,6 +161,8 @@ Data | Deskripsi
 /vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
 /vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
 /vault/fe_assets/_statistics.html | Template HTML untuk akses bagian depan halaman statistik.
+/vault/fe_assets/_sections.html | Template HTML untuk daftar bagian.
+/vault/fe_assets/_sections_row.html | Template HTML untuk daftar bagian.
 /vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
 /vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
@@ -929,4 +931,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 5 Januari 2018 (2018.01.05).
+Terakhir Diperbarui: 14 Januari 2018 (2018.01.14).

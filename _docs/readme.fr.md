@@ -161,6 +161,8 @@ Fichier | Description
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
 /vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès aux fichiers journaux seulement.
 /vault/fe_assets/_statistics.html | Un modèle HTML pour la page de statistiques de l'accès frontal.
+/vault/fe_assets/_sections.html | Un modèle HTML pour la liste des sections.
+/vault/fe_assets/_sections_row.html | Un modèle HTML pour la liste des sections.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
@@ -929,4 +931,4 @@ Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir�
 ---
 
 
-Dernière mise à jour : 5 Janvier 2018 (2018.01.05).
+Dernière mise à jour : 14 Janvier 2018 (2018.01.14).

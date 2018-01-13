@@ -161,6 +161,8 @@ Bestand | Beschrijving
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
 /vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
+/vault/fe_assets/_sections.html | Een HTML sjabloon voor de sectielijst.
+/vault/fe_assets/_sections_row.html | Een HTML sjabloon voor de sectielijst.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
@@ -929,4 +931,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 5 Januari 2018 (2018.01.05).
+Laatste Bijgewerkt: 14 Januari 2018 (2018.01.14).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.01.01).
+ * This file: Front-end handler (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -600,11 +600,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
             $CIDRAM['FE']['Warnings'] .= '<li><a href="https://secure.php.net/supported-versions.php">' . $CIDRAM['lang']['warning_php_1'] . '</a></li>';
         }
     }
-    if (
-        empty($CIDRAM['Config']['signatures']['ipv4']) &&
-        empty($CIDRAM['Config']['signatures']['ipv6']) &&
-        empty($CIDRAM['Config']['signatures']['modules'])
-    ) {
+    if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
         $CIDRAM['FE']['Warnings'] .= '<li>' . $CIDRAM['lang']['warning_signatures_1'] . '</li>';
     }
     if ($CIDRAM['FE']['Warnings']) {
@@ -2027,6 +2023,54 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['FreeSpace']);
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalSpace']);
     $CIDRAM['FormatFilesize']($CIDRAM['FE']['TotalUsage']);
+
+    /** Send output. */
+    echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+
+}
+
+/** Sections List. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $CIDRAM['lang']['title_sections_list'];
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](
+        ['username' => $CIDRAM['FE']['UserRaw']],
+        $CIDRAM['lang']['tip_sections_list']
+    );
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Template for section rows. */
+    $CIDRAM['FE']['SectionsRow'] = $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_sections_row.html')));
+
+    /** Process signature files. */
+    if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
+        $CIDRAM['FE']['Data'] = '        <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n";
+    } else {
+        $CIDRAM['FE']['Data'] = $CIDRAM['SectionsHandler'](
+            array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
+        );
+    }
+
+    /** Calculate and append page load time, and append totals. */
+    $CIDRAM['FE']['Data'] = '<div class="s">' . sprintf(
+        $CIDRAM['lang']['state_loadtime'],
+        $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3)
+    ) . '<br />' . sprintf(
+        $CIDRAM['lang']['state_sl_totals'],
+        $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Signatures']) ? $CIDRAM['FE']['SL_Signatures'] : 0),
+        $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Sections']) ? $CIDRAM['FE']['SL_Sections'] : 0),
+        $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0)
+    ) . '</div><hr />' . $CIDRAM['FE']['Data'];
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_sections.html'))
+    );
 
     /** Send output. */
     echo $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);

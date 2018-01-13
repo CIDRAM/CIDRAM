@@ -161,6 +161,8 @@ File | Description
 /vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access.
 /vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only.
 /vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
+/vault/fe_assets/_sections.html | An HTML template for the sections list.
+/vault/fe_assets/_sections_row.html | An HTML template for the sections list.
 /vault/fe_assets/_updates.html | An HTML template for the front-end updates page.
 /vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page.
 /vault/fe_assets/frontend.css | CSS style-sheet for the front-end.
@@ -929,4 +931,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 4 January 2018 (2018.01.04).
+Last Updated: 14 January 2018 (2018.01.14).

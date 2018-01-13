@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.12.27).
+ * This file: Indonesian language data for the front-end (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,8 +16,20 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Extended Description: Bypasses'] = 'File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
+$CIDRAM['lang']['Name: Bypasses'] = 'Bypass tanda tangan standar.';
+$CIDRAM['lang']['Name: IPv4'] = 'File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File tanda tangan IPv4 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File tanda tangan IPv4 (ISP berbahaya dan spam rawan).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
+$CIDRAM['lang']['Name: IPv6'] = 'File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File tanda tangan IPv6 (CIDR bogon/martian).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File tanda tangan IPv6 (ISP berbahaya dan spam rawan).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]; 403 = Mengesampingkan dengan "403 Forbidden"; 503 = Mengesampingkan dengan "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP >= 7.2.0).';
@@ -29,13 +41,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Jika Anda ingin, Anda dapat menye
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Apa header harus CIDRAM merespon dengan ketika memblokir permintaan?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja.';
-$CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $CIDRAM['lang']['config_general_lang'] = 'Tentukan bahasa default untuk CIDRAM.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = 'Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_logfile'] = 'File yang dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
-$CIDRAM['lang']['config_general_log_banned_ips'] = 'Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_maintenance_mode'] = 'Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Jumlah maksimum upaya untuk memasukkan.';
 $CIDRAM['lang']['config_general_numbers'] = 'Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda.';
@@ -67,11 +78,9 @@ $CIDRAM['lang']['config_signatures_ipv4'] = 'Daftar file tanda tangan IPv4 yang 
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Daftar file tanda tangan IPv6 yang CIDRAM harus berusaha untuk menggunakan, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Daftar file modul untuk memuat setelah memeriksa tanda tangan IPv4/IPv6, dipisahkan dengan koma.';
 $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran dihitung? False = Ketika IP adalah diblokir oleh modul. True = Ketika IP adalah diblokir untuk alasan apapun.';
-$CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Perbesaran font. Default = 1.';
+$CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
-$CIDRAM['lang']['Extended Description: Bypasses'] = 'File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama.';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
@@ -109,11 +118,11 @@ $CIDRAM['lang']['field_rename_file'] = 'Memodifikasi nama';
 $CIDRAM['lang']['field_reset'] = 'Mengatur Kembali';
 $CIDRAM['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
 $CIDRAM['lang']['field_size'] = 'Ukuran Total: ';
-$CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
+$CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Gunakan zona waktu default sistem.';
 $CIDRAM['lang']['field_tracking'] = 'Pelacakan';
@@ -169,22 +178,14 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Agregator IP';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'Pelacakan IP';
 $CIDRAM['lang']['link_logs'] = 'Log';
+$CIDRAM['lang']['link_sections_list'] = 'Daftar Bagian';
 $CIDRAM['lang']['link_statistics'] = 'Statistik';
 $CIDRAM['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse%2$s">Sederhana</a> – <a href="%1$strue%2$s">Terformat</a> – <a href="%1$stally%2$s">Penghitungannya</a>';
 $CIDRAM['lang']['link_updates'] = 'Pembaruan';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
-$CIDRAM['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Tidak ada log dipilih.';
+$CIDRAM['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = 'Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak.';
-$CIDRAM['lang']['Name: Bypasses'] = 'Bypass tanda tangan standar.';
-$CIDRAM['lang']['Name: IPv4'] = 'File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File tanda tangan IPv4 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File tanda tangan IPv4 (ISP berbahaya dan spam rawan).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
-$CIDRAM['lang']['Name: IPv6'] = 'File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File tanda tangan IPv6 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File tanda tangan IPv6 (ISP berbahaya dan spam rawan).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
 $CIDRAM['lang']['previewer_days'] = 'Hari';
 $CIDRAM['lang']['previewer_hours'] = 'Jam';
 $CIDRAM['lang']['previewer_minutes'] = 'Menit';
@@ -251,6 +252,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggu
 $CIDRAM['lang']['state_risk_high'] = 'Tinggi';
 $CIDRAM['lang']['state_risk_low'] = 'Rendah';
 $CIDRAM['lang']['state_risk_medium'] = 'Menengah';
+$CIDRAM['lang']['state_sl_totals'] = 'Total (Tanda tangan: <span class="txtRd">%s</span> – Bagian tanda tangan: <span class="txtRd">%s</span> – File tanda tangan: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Saat ini melacak %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';
@@ -265,8 +267,8 @@ $CIDRAM['lang']['tip_cidr_calc'] = 'Salam, {username}.<br />Kalkulator CIDR memu
 $CIDRAM['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk CIDRAM dari bagian depan.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Masukkan agen pengguna (user agent) disini (opsional).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
-$CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
+$CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
@@ -276,6 +278,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Bila tidak dipilih, hanya file 
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan.';
 $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
+$CIDRAM['lang']['tip_sections_list'] = 'Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.id.md#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $CIDRAM['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
@@ -290,6 +293,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Pelacakan IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Log';
+$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Daftar Bagian';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistik';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Pembaruan';
 $CIDRAM['lang']['warning'] = 'Peringatan:';

@@ -161,6 +161,8 @@ CIDRAM은 자동으로 원치 않는 요청을 차단해야합니다; 지원이 
 /vault/fe_assets/_nav_complete_access.html | 프론트 엔드의 탐색 링크의 HTML 템플릿, 완전한 액세스를위한 것입니다.
 /vault/fe_assets/_nav_logs_access_only.html | 프론트 엔드의 탐색 링크의 HTML 템플릿은 로그에만 액세스를위한 것입니다.
 /vault/fe_assets/_statistics.html | 프론트 엔드 통계 페이지의 HTML 템플릿.
+/vault/fe_assets/_sections.html | 섹션 목록 용 HTML 템플릿.
+/vault/fe_assets/_sections_row.html | 섹션 목록 용 HTML 템플릿.
 /vault/fe_assets/_updates.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates_row.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/frontend.css | 프론트 엔드 CSS 스타일 시트.
@@ -929,4 +931,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2018년 1월 8일.
+최종 업데이트 : 2018년 1월 14일.

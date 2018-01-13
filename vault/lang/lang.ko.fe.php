@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.12.27).
+ * This file: Korean language data for the front-end (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,8 +16,20 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Extended Description: Bypasses'] = '기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다.';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = '메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).';
+$CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4의 서명 파일 (보곤/화성 CIDR).';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4의 서명 파일 (스패머을 가진 위험한 ISP).';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6의 서명 파일 (보곤/화성 CIDR).';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6의 서명 파일 (스패머을 가진 위험한 ISP).';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
+$CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값); 403 = "403 Forbidden"로 덮어; 503 = "503 Service unavailable"로 덮어한다.';
 $CIDRAM['lang']['config_general_default_algo'] = '향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 가 필요합니다).';
@@ -29,13 +41,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = '여기에 이메일 주소를 입
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '무엇 헤더 사용해야합니까 (요청을 차단했을 때)?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '호스트 이름 검색을 시행 하시겠습니까 (모든 요청)? True = 예; False = 아니오 (Default / 기본 설정). 호스트 이름 검색은 일반적으로 "필요에 따라"수행됩니다, 그러나 모든 요청에 대해 강제 될 수 있습니다. 이는 로그 파일에보다 자세한 정보를 제공하는 데 유용 할 수 있습니다, 그러나 또한 성능에 약간 부정적인 영향을 줄 수 있습니다.';
-$CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM의 기본 언어를 설정합니다.';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오.';
 $CIDRAM['lang']['config_general_logfile'] = '액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_logfileApache'] = '액세스 시도 저지를 기록, Apache 스타일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름 지정하거나 해제하려면 비워하십시오.';
-$CIDRAM['lang']['config_general_log_banned_ips'] = '금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오.';
 $CIDRAM['lang']['config_general_maintenance_mode'] = '유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '로그인 시도 최대 횟수입니다.';
 $CIDRAM['lang']['config_general_numbers'] = '어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오.';
@@ -67,11 +78,9 @@ $CIDRAM['lang']['config_signatures_ipv4'] = 'IPv4의 서명 파일 목록 (CIDRA
 $CIDRAM['lang']['config_signatures_ipv6'] = 'IPv6의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다.';
 $CIDRAM['lang']['config_signatures_modules'] = 'IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다.';
 $CIDRAM['lang']['config_signatures_track_mode'] = '위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우.';
-$CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
 $CIDRAM['lang']['config_template_data_Magnification'] = '글꼴 배율. Default (기본 설정) = 1.';
+$CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테마.';
-$CIDRAM['lang']['Extended Description: Bypasses'] = '기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다.';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = '메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).';
 $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
@@ -109,11 +118,11 @@ $CIDRAM['lang']['field_rename_file'] = '이름을 변경하려면';
 $CIDRAM['lang']['field_reset'] = '재설정';
 $CIDRAM['lang']['field_set_new_password'] = '새 암호를 설정합니다';
 $CIDRAM['lang']['field_size'] = '전체 크기 : ';
-$CIDRAM['lang']['field_size_bytes'] = '바이트';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
+$CIDRAM['lang']['field_size_bytes'] = '바이트';
 $CIDRAM['lang']['field_status'] = '상태';
 $CIDRAM['lang']['field_system_timezone'] = '시스템 기본 시간대를 사용하십시오.';
 $CIDRAM['lang']['field_tracking'] = '추적';
@@ -169,22 +178,14 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP 애그리게이터';
 $CIDRAM['lang']['link_ip_test'] = 'IP 테스트';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP 추적';
 $CIDRAM['lang']['link_logs'] = '로고스';
+$CIDRAM['lang']['link_sections_list'] = '섹션 목록';
 $CIDRAM['lang']['link_statistics'] = '통계';
 $CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse%2$s">단순한</a> – <a href="%1$strue%2$s">공상</a> – <a href="%1$stally%2$s">집계</a>';
 $CIDRAM['lang']['link_updates'] = '업데이트';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하지 않습니다!';
-$CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '로그가 선택되어 있지 않습니다.';
+$CIDRAM['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = '로그인 시도 횟수를 초과했습니다; 액세스 거부.';
-$CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4의 서명 파일 (보곤/화성 CIDR).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4의 서명 파일 (스패머을 가진 위험한 ISP).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6의 서명 파일 (보곤/화성 CIDR).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6의 서명 파일 (스패머을 가진 위험한 ISP).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
 $CIDRAM['lang']['previewer_days'] = '일';
 $CIDRAM['lang']['previewer_hours'] = '시간';
 $CIDRAM['lang']['previewer_minutes'] = '의사록';
@@ -251,6 +252,7 @@ $CIDRAM['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른
 $CIDRAM['lang']['state_risk_high'] = '높은';
 $CIDRAM['lang']['state_risk_low'] = '낮은';
 $CIDRAM['lang']['state_risk_medium'] = '중간';
+$CIDRAM['lang']['state_sl_totals'] = '합계 (서명 : <span class="txtRd">%s</span> – 서명 섹션 : <span class="txtRd">%s</span> – 서명 파일 : <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = '현재 %s 개의 IP를 추적 중입니다.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지 않고';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
@@ -265,8 +267,8 @@ $CIDRAM['lang']['tip_cidr_calc'] = '안녕하세요, {username}.<br />CIDR 계�
 $CIDRAM['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다.';
 $CIDRAM['lang']['tip_custom_ua'] = '여기에 사용자 에이전트를 입력하십시오 (선택 사항이다).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM는 무료로 제공되고 있습니다, 하지만 당신이 원한다면 기부 버튼을 클릭하면 프로젝트에 기부 할 수 있습니다.';
-$CIDRAM['lang']['tip_enter_ips_here'] = '여기에 IP를 입력하십시오.';
 $CIDRAM['lang']['tip_enter_ip_here'] = '여기에 IP를 입력하십시오.';
+$CIDRAM['lang']['tip_enter_ips_here'] = '여기에 IP를 입력하십시오.';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = '노트 : CIDRAM은 쿠키를 사용하여 로그인을 인증합니다. 로그인하면, 브라우저에서 쿠키를 만들고 저장하는 것에 동의하게됩니다.';
 $CIDRAM['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다).';
 $CIDRAM['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
@@ -276,6 +278,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(선택하지 않으면 서명 �
 $CIDRAM['lang']['tip_ip_tracking'] = '안녕하세요, {username}.<br />IP 추적 페이지에서 IP 주소 추적 상태를 확인할 수 있습니다. 당신이 금지되어있는 것을 확인 할 수 있으며, 원한다면 당신은 추적을 취소 할 수 있습니다.';
 $CIDRAM['lang']['tip_login'] = '기본 사용자 이름 : <span class="txtRd">admin</span> – 기본 암호 : <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
+$CIDRAM['lang']['tip_sections_list'] = '안녕하세요, {username}.<br />이 페이지는 현재 활성화 된 서명 파일에 존재하는 섹션을 나열합니다.';
 $CIDRAM['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ko.md#SECTION6">문서를</a> 참조하십시오.';
 $CIDRAM['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페이지는 CIDRAM 설치와 관련된 몇 가지 기본 사용 통계를 보여줍니다.';
 $CIDRAM['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
@@ -290,6 +293,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP 테스트';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP 추적';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 로그인';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 로고스';
+$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – 섹션 목록';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – 통계';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 업데이트';
 $CIDRAM['lang']['warning'] = '경고 :';

@@ -161,6 +161,8 @@ Archivo | Descripción
 /vault/fe_assets/_nav_complete_access.html | Un archivo HTML para el menú de navegación del front-end, para aquellos con acceso completo.
 /vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación del front-end, para aquellos con acceso de registros solamente.
 /vault/fe_assets/_statistics.html | Un archivo HTML para el front-end página de estadísticas.
+/vault/fe_assets/_sections.html | Una archivo HTML para la lista de secciones.
+/vault/fe_assets/_sections_row.html | Una archivo HTML para la lista de secciones.
 /vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
@@ -929,4 +931,4 @@ Sí. Para hacer esto, necesitarás crear un archivo de módulo personalizado. *V
 ---
 
 
-Última Actualización: 5 Enero 2018 (2018.01.05).
+Última Actualización: 14 Enero 2018 (2018.01.14).

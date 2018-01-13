@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.12.27).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.01.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,8 +16,20 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Extended Description: Bypasses'] = '标准签名旁路文件通常包括在主包。';
+$CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（没有签名文件，文档，和配置）。';
+$CIDRAM['lang']['Name: Bypasses'] = '标准签名旁路。';
+$CIDRAM['lang']['Name: IPv4'] = 'IPv4签名文件（不想要的云服务和非人端点）。';
+$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4签名文件（bogon/火星CIDR）。';
+$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4签名文件（危险和垃圾容易ISP）。';
+$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4签名文件（CIDR从代理，VPN和其他不需要服务）。';
+$CIDRAM['lang']['Name: IPv6'] = 'IPv6签名文件（不想要的云服务和非人端点）。';
+$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6签名文件（bogon/火星CIDR）。';
+$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6签名文件（危险和垃圾容易ISP）。';
+$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6签名文件（CIDR从代理，VPN和其他不需要服务）。';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
+$CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】； False（假）=不允许。';
 $CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
 $CIDRAM['lang']['config_general_default_algo'] = '定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。';
@@ -29,13 +41,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何将电子邮件地址呈现给用户？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '强制主机名查找？​True（真）=跟踪； False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。';
-$CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';
 $CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
-$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';
 $CIDRAM['lang']['config_general_maintenance_mode'] = '启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数。';
 $CIDRAM['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';
@@ -67,11 +78,9 @@ $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4签名文件，​CIDR
 $CIDRAM['lang']['config_signatures_ipv6'] = '列表的IPv6签名文件，​CIDRAM应该尝试使用，​用逗号分隔。';
 $CIDRAM['lang']['config_signatures_modules'] = '模块文件要加载的列表以后检查签名IPv4/IPv6，​用逗号分隔。';
 $CIDRAM['lang']['config_signatures_track_mode'] = '何时应该记录违规？​False（假）=当IP被模块阻止时。​True（真）=当IP由于任何原因阻止时。';
-$CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_Magnification'] = '字体放大。​标准 = 1。';
+$CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';
-$CIDRAM['lang']['Extended Description: Bypasses'] = '标准签名旁路文件通常包括在主包。';
-$CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（没有签名文件，文档，和配置）。';
 $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
@@ -109,11 +118,11 @@ $CIDRAM['lang']['field_rename_file'] = '改名';
 $CIDRAM['lang']['field_reset'] = '重启';
 $CIDRAM['lang']['field_set_new_password'] = '保存新密码';
 $CIDRAM['lang']['field_size'] = '总大小：';
-$CIDRAM['lang']['field_size_bytes'] = '字节';
 $CIDRAM['lang']['field_size_GB'] = 'GB';
 $CIDRAM['lang']['field_size_KB'] = 'KB';
 $CIDRAM['lang']['field_size_MB'] = 'MB';
 $CIDRAM['lang']['field_size_TB'] = 'TB';
+$CIDRAM['lang']['field_size_bytes'] = '字节';
 $CIDRAM['lang']['field_status'] = '状态';
 $CIDRAM['lang']['field_system_timezone'] = '使用系统默认时区。';
 $CIDRAM['lang']['field_tracking'] = '跟踪';
@@ -169,22 +178,14 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP聚合器';
 $CIDRAM['lang']['link_ip_test'] = 'IP测试';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP跟踪';
 $CIDRAM['lang']['link_logs'] = '日志';
+$CIDRAM['lang']['link_sections_list'] = '章节列表';
 $CIDRAM['lang']['link_statistics'] = '统计';
 $CIDRAM['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse%2$s">简单</a> – <a href="%1$strue%2$s">漂亮</a> – <a href="%1$stally%2$s">理货</a>';
 $CIDRAM['lang']['link_updates'] = '更新';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = '选择的日志不存在！';
-$CIDRAM['lang']['logs_no_logfiles_available'] = '没有日志可用。';
 $CIDRAM['lang']['logs_no_logfile_selected'] = '没有选择的日志。';
+$CIDRAM['lang']['logs_no_logfiles_available'] = '没有日志可用。';
 $CIDRAM['lang']['max_login_attempts_exceeded'] = '最大登录尝试次数已经超过；拒绝访问。';
-$CIDRAM['lang']['Name: Bypasses'] = '标准签名旁路。';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4签名文件（不想要的云服务和非人端点）。';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4签名文件（bogon/火星CIDR）。';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4签名文件（危险和垃圾容易ISP）。';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4签名文件（CIDR从代理，VPN和其他不需要服务）。';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6签名文件（不想要的云服务和非人端点）。';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6签名文件（bogon/火星CIDR）。';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6签名文件（危险和垃圾容易ISP）。';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6签名文件（CIDR从代理，VPN和其他不需要服务）。';
 $CIDRAM['lang']['previewer_days'] = '天';
 $CIDRAM['lang']['previewer_hours'] = '小时';
 $CIDRAM['lang']['previewer_minutes'] = '分';
@@ -251,6 +252,7 @@ $CIDRAM['lang']['state_password_not_valid'] = '警告：此账户不​使用有
 $CIDRAM['lang']['state_risk_high'] = '高';
 $CIDRAM['lang']['state_risk_low'] = '低';
 $CIDRAM['lang']['state_risk_medium'] = '中等';
+$CIDRAM['lang']['state_sl_totals'] = '汇总（签名： <span class="txtRd">%s</span> – 签名章节： <span class="txtRd">%s</span> – 签名文件： <span class="txtRd">%s</span>）。';
 $CIDRAM['lang']['state_tracking'] = '目前正在跟踪%s个IP。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
@@ -265,8 +267,8 @@ $CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR计算
 $CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置页面允许您修改CIDRAM配置从前端。';
 $CIDRAM['lang']['tip_custom_ua'] = '在这里输入用户代理【user agent】（可选的）。';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，​但如果您想捐赠给项目，​您可以通过点击捐赠按钮这样做。';
-$CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_enter_ip_here'] = '在这里输入IP。';
+$CIDRAM['lang']['tip_enter_ips_here'] = '在这里输入IP。';
 $CIDRAM['lang']['tip_fe_cookie_warning'] = '注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。';
 $CIDRAM['lang']['tip_file_manager'] = '你好，​{username}。​<br />文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。';
 $CIDRAM['lang']['tip_home'] = '你好，​{username}。​<br />这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。';
@@ -276,6 +278,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '（如果未选中的，只有�
 $CIDRAM['lang']['tip_ip_tracking'] = '你好，​{username}。​<br />IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。';
 $CIDRAM['lang']['tip_login'] = '标准用户名：<span class="txtRd">admin</span> – 标准密码：<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，​{username}。​<br />选择一个日志从下面的列表以查看那个日志的内容。';
+$CIDRAM['lang']['tip_sections_list'] = '你好，​{username}。<br />此页面列出当前活动签名文件中存在哪些章节。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh.md#SECTION6">文档</a>以获取有关各种配置指令的信息和他们的目的。';
 $CIDRAM['lang']['tip_statistics'] = '你好，​{username}。​<br />此页面显示了有关CIDRAM安装的一些基本使用统计信息。';
 $CIDRAM['lang']['tip_statistics_disabled'] = '注意：统计跟踪目前已被禁用，但可以通过配置页面启用。';
@@ -290,6 +293,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP测试';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登录';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日志';
+$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – 章节列表';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – 统计';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
 $CIDRAM['lang']['warning'] = '警告：';

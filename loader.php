@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.12.06).
+ * This file: The loader (last modified: 2018.01.16).
  */
 
 /**
@@ -43,7 +43,10 @@ if (!defined('CIDRAM')) {
 
     /** Checks whether we're calling CIDRAM directly or through a hook. */
     $CIDRAM['Direct'] = function () {
-        return (str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__)));
+        return (
+            !isset($_SERVER['SCRIPT_FILENAME']) ||
+            str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__))
+        );
     };
 
     /** Checks whether we're calling CIDRAM through an alternative pathway (e.g., Cronable). */

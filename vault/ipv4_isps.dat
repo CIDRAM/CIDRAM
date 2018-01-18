@@ -1663,7 +1663,7 @@ recaptcha:
 
 
 # ASN 7914 ("Church of Scientology International").
-# Updated: 2016.01.20 / Checked: 2017.09.19
+# Updated: 2016.01.20 / Checked: 2018.01.15
 
 12.9.239.0/24 Deny Generic
 192.216.201.0/24 Deny Generic
@@ -1679,8 +1679,8 @@ Tag: CoS International
 
 # ASN 36923 ("Swift Networks Limited").
 # %Listed, CleanTalk.org: 1.73%.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2016.01.21 / Checked: 2017.09.19
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2016.01.21 / Checked: 2018.01.15
 
 41.58.0.0/16 Deny Generic
 41.189.0.0/19 Deny Generic
@@ -1818,11 +1818,45 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# %Listed, Google Malware Dashboard: 0.14% (AS3491), 0% (AS6279/AS7262).
-# %Listed, CleanTalk.org: 11.67% (AS3491), 0% (AS6279/AS7262).
-# Updated: 2017.09.19
+# Updated: 2018.01.15
 
-1.1.3.0/24 Deny Spam
+203.5.148.0/24 Deny Spam
+203.30.26.0/23 Deny Spam
+Origin: AU
+149.134.175.0/24 Deny Spam
+217.113.64.0/19 Deny Spam
+Origin: BE
+122.10.203.0/24 Deny Spam
+Origin: CN
+213.248.118.0/23 Deny Spam
+213.248.120.0/23 Deny Spam
+Origin: EU
+37.17.186.0/24 Deny Spam
+217.156.160.0/21 Deny Spam
+Origin: GB
+66.133.83.0/24 Deny Spam
+66.133.84.0/24 Deny Spam
+66.133.95.0/24 Deny Spam
+103.17.28.0/22 Deny Spam
+103.20.192.0/22 Deny Spam
+116.66.216.0/21 Deny Spam
+208.87.166.0/24 Deny Spam
+Origin: HK
+41.79.244.0/22 Deny Spam
+169.239.144.0/22 Deny Spam
+Origin: MZ
+112.78.49.0/24 Deny Spam
+123.108.119.0/24 Deny Spam
+202.183.39.0/24 Deny Spam
+Origin: PH
+196.216.156.0/24 Deny Spam
+Origin: TN
+103.28.200.0/24 Deny Spam
+112.121.42.0/24 Deny Spam
+Origin: TW
+41.79.248.0/23 Deny Spam
+41.79.250.0/24 Deny Spam
+Origin: TZ
 23.32.176.0/20 Deny Spam
 23.33.44.0/22 Deny Spam
 23.33.80.0/20 Deny Spam
@@ -1831,23 +1865,10 @@ Tag: Yes Networks
 23.60.112.0/20 Deny Spam
 23.60.128.0/20 Deny Spam
 23.60.144.0/22 Deny Spam
-37.17.186.0/24 Deny Spam
-41.79.244.0/22 Deny Spam
-41.79.248.0/23 Deny Spam
-41.79.250.0/24 Deny Spam
-41.221.208.0/20 Deny Spam
 63.216.0.0/13 Deny Spam
 65.72.0.0/18 Deny Spam
 65.72.64.0/20 Deny Spam
-66.133.83.0/24 Deny Spam
-66.133.84.0/24 Deny Spam
-66.133.95.0/24 Deny Spam
-69.1.80.0/24 Deny Spam
-69.1.86.0/24 Deny Spam
-69.1.88.0/24 Deny Spam
 75.96.165.0/24 Deny Spam
-103.17.28.0/22 Deny Spam
-103.20.192.0/22 Deny Spam
 104.95.20.0/22 Deny Spam
 104.95.24.0/21 Deny Spam
 104.95.32.0/19 Deny Spam
@@ -1855,24 +1876,13 @@ Tag: Yes Networks
 104.99.60.0/22 Deny Spam
 104.99.96.0/19 Deny Spam
 104.99.128.0/23 Deny Spam
-112.78.49.0/24 Deny Spam
-112.121.42.0/24 Deny Spam
 113.29.44.0/24 Deny Spam
-116.66.216.0/21 Deny Spam
-122.10.203.0/24 Deny Spam
-123.108.119.0/24 Deny Spam
 146.222.18.0/24 Deny Spam
 146.222.35.0/24 Deny Spam
 146.222.187.0/24 Deny Spam
 146.222.194.0/24 Deny Spam
-149.134.175.0/24 Deny Spam
-169.239.144.0/22 Deny Spam
-192.221.77.0/24 Deny Spam
-196.216.156.0/24 Deny Spam
 198.69.128.0/20 Deny Spam
 199.0.216.0/21 Deny Spam
-203.5.148.0/24 Deny Spam
-203.30.26.0/23 Deny Spam
 204.180.160.0/19 Deny Spam
 205.161.96.0/20 Deny Spam
 205.177.0.0/16 Deny Spam
@@ -1880,14 +1890,10 @@ Tag: Yes Networks
 206.161.0.0/16 Deny Spam
 207.176.0.0/17 Deny Spam
 207.226.0.0/16 Deny Spam
-208.87.166.0/24 Deny Spam
 209.8.0.0/15 Deny Spam
-209.170.64.0/23 Deny Spam
-213.248.118.0/23 Deny Spam
-213.248.120.0/23 Deny Spam
-217.113.64.0/19 Deny Spam
-217.156.160.0/21 Deny Spam
 Origin: US
+41.221.208.0/20 Deny Spam
+Origin: ZA
 Tag: PCCW Global
 ---
 recaptcha:
@@ -2138,11 +2144,12 @@ recaptcha:
 
 # ASN 203912 ("Sicres SRL").
 # Caught distributing ransomware (188.0.236.7:443).
-# %Listed, Google Malware Dashboard: 1.23%.
 # %Listed, CleanTalk.org: 10.53%.
-# Stop Forum Spam (SFS) listings: 14.
-# Updated: 2017.09.19
+# Stop Forum Spam (SFS) listings: 47.
+# Updated: 2018.01.15
 
+185.162.84.0/22 Deny Generic
+185.169.48.0/22 Deny Generic
 185.172.28.0/22 Deny Generic
 188.0.224.0/20 Deny Generic
 Origin: MD
@@ -2181,10 +2188,10 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# %Listed, Google Malware Dashboard: 2.22%.
+# %Listed, Google Malware Dashboard: 0.90%.
 # %Listed, CleanTalk.org: 17.27%.
-# Stop Forum Spam (SFS) listings: 96,944.
-# Updated: 2017.09.19
+# Stop Forum Spam (SFS) listings: 65,962.
+# Updated: 2017.09.19 / Checked: 2018.01.15
 
 37.233.0.0/18 Deny Generic
 87.248.160.0/19 Deny Generic
@@ -2205,7 +2212,8 @@ Tag: STARNET S.R.L
 
 # ASN 31423 ("Przedsiebiorstwo "PROMAX" Spolka Jawna Zofia Formanek-Mroczkowska Wieslaw Okroj").
 # %Listed, CleanTalk.org: 16.89%.
-# Updated: 2016.07.24 / Checked: 2017.09.19
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2016.07.24 / Checked: 2018.01.15
 
 77.89.64.0/18 Deny Generic
 87.248.64.0/19 Deny Generic
@@ -6421,8 +6429,8 @@ recaptcha:
 
 # ASN 44725 ("Sinam").
 # %Listed, CleanTalk.org: 20.37%.
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2017.03.22 / Checked: 2017.09.19
+# Stop Forum Spam (SFS) listings: 17.
+# Updated: 2017.03.22 / Checked: 2018.01.15
 
 5.250.192.0/19 Deny Spam
 31.171.0.0/18 Deny Spam

@@ -402,15 +402,20 @@ Tag: Yes Networks
 
 
 # ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# %Listed, Google Malware Dashboard: 0.14% (AS3491), 0% (AS6279/AS7262).
-# %Listed, CleanTalk.org: 11.67% (AS3491), 0% (AS6279/AS7262).
-# Updated: 2017.09.19
+# Updated: 2018.01.15
 
-2400:8800::/32 Deny Spam
-2600:1400:7::/48 Deny Spam
-2a02:b48:4000::/34 Deny Spam
 2a03:5400::/32 Deny Spam
+Origin: BE
+2400:8800::/32 Deny Spam
+Origin: HK
+2c0f:f3d0::/32 Deny Spam
+Origin: MZ
+2a02:b48:4000::/34 Deny Spam
+Origin: NL
+2600:1400:7::/48 Deny Spam
 Origin: US
+2c0f:f3c0::/32 Deny Spam
+Origin: ZA
 Tag: PCCW Global
 ---
 recaptcha:
@@ -507,10 +512,10 @@ Tag: TeNeT
 
 
 # ASN 31252 ("Starnet Servicii SRL").
-# %Listed, Google Malware Dashboard: 2.22%.
+# %Listed, Google Malware Dashboard: 0.90%.
 # %Listed, CleanTalk.org: 17.27%.
-# Stop Forum Spam (SFS) listings: 96,944.
-# Updated: 2017.03.11 / Checked: 2017.09.19
+# Stop Forum Spam (SFS) listings: 65,962.
+# Updated: 2017.03.11 / Checked: 2018.01.15
 
 2a00:9900::/29 Deny Generic
 2a01:320::/29 Deny Generic

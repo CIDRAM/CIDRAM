@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.01.14).
+ * This file: Russian language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Компонент активе�
 $CIDRAM['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $CIDRAM['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
+$CIDRAM['lang']['state_ignored'] = 'Игнорируется';
 $CIDRAM['lang']['state_loadtime'] = 'Запрос страницы завершен через <span class="txtRd">%s</span> секунд.';
 $CIDRAM['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';

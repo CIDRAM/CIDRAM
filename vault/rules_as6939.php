@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for AS6939 (last modified: 2017.12.24).
+ * This file: Custom rules file for AS6939 (last modified: 2018.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -42,8 +42,8 @@ $CIDRAM['RunParamResCache']['rules_as6939.php'] = function ($Factors = [], $Fact
     /** Feedly/Feedspot bypass. */
     if (
         preg_match('/\.getpebble\.com$/i', $CIDRAM['BlockInfo']['UALC']) ||
-        substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') ||
-        substr_count($CIDRAM['BlockInfo']['UA'], 'Feedly')
+        strpos($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') !== false ||
+        strpos($CIDRAM['BlockInfo']['UA'], 'Feedly') !== false
     ) {
         return;
     }

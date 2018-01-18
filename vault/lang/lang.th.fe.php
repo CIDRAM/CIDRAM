@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.01.14).
+ * This file: Thai language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'คอมโพเนนต์�
 $CIDRAM['lang']['state_component_is_inactive'] = 'คอมโพเนนต์ไม่ใช้งาน.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'คอมโพเนนต์เป็นครั้งคราว.';
 $CIDRAM['lang']['state_default_password'] = 'คำเตือน: ใช้ค่าเริ่มต้นรหัสผ่าน!';
+$CIDRAM['lang']['state_ignored'] = 'จะถูกละเลย';
 $CIDRAM['lang']['state_loadtime'] = 'คำขอหน้าเสร็จสิ้นภายใน <span class="txtRd">%s</span> วินาที.';
 $CIDRAM['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';

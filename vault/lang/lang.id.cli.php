@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for CLI (last modified: 2016.07.26).
+ * This file: Indonesian language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s dan L%s adalah identik, dan demikian,
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] tidak ada; Tanda tangan tampaknya tidak lengkap.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" tidak dapat dipicu! Basisnya tidak cocok awal untuk jangkauannya! Cobalah mengganti dengan "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" tidak dapat dipicu! "%s" tidak rentang valid!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Tag asal tidak berisi kode ISO 3166-1 Alpha-2 yang valid!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" adalah bawahan untuk tanda tangan sudah ada "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" adalah superset untuk tanda tangan sudah ada "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Sintaksis tidak tepat.';

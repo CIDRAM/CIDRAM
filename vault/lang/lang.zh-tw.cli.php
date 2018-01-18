@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for CLI (last modified: 2017.06.21).
+ * This file: Chinese (traditional) language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,6 +64,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = '線%s和線%s是相同的，​和因此�
 $CIDRAM['lang']['CLI_VL_Missing'] = '線%s：【Function】失踪；簽名似乎是不完整。';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = '線%s：『%s』不可觸發！​其基不匹配開始其範圍內！​試圖取代它以『%s』。';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = '線%s：『%s』不可觸發！​『%s』不是一個有效的範圍內！';
+$CIDRAM['lang']['CLI_VL_Origin'] = '線%s：原產標籤不包含有效的ISO 3166-1 二位字母代碼！';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = '線%s：『%s』是從屬於現有簽名『%s』。';
 $CIDRAM['lang']['CLI_VL_Superset'] = '線%s：『%s』是一個超集現有簽名『%s』。';
 $CIDRAM['lang']['CLI_VL_Syntax'] = '線%s：語法上不准確的。';

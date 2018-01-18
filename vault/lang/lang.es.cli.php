@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for CLI (last modified: 2016.07.26).
+ * This file: Spanish language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s y L%s son identicos, y por lo tanto, 
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] es ausente; Firma parece estar incompletos.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" no es activable! Su base no coincide con el comienzo de su rango! Intente reemplazarlo con "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" no es activable! "%s" no es un rango válido!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Etiqueta de origen no contiene un código ISO 3166-1 Alfa-2 válido.';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" está subordinada a la ya existente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" es un superconjunto a la ya existente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: No sintácticamente precisa.';

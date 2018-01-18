@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for Soft Layer (last modified: 2017.12.24).
+ * This file: Custom rules file for Soft Layer (last modified: 2018.01.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,27 +35,27 @@ $CIDRAM['RunParamResCache']['rules_softlayer.php'] = function ($Factors = [], $F
     }
 
     /** ShowyouBot bypass. */
-    if (substr_count($CIDRAM['BlockInfo']['UALC'], 'showyoubot')) {
+    if (strpos($CIDRAM['BlockInfo']['UALC'], 'showyoubot') !== false) {
         return;
     }
 
     /** Disqus bypass. */
-    if (substr_count($CIDRAM['BlockInfo']['UALC'], 'disqus')) {
+    if (strpos($CIDRAM['BlockInfo']['UALC'], 'disqus') !== false) {
         return;
     }
 
     /** Feedspot bypass. */
-    if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com')) {
+    if (strpos($CIDRAM['BlockInfo']['UA'], 'Feedspot http://www.feedspot.com') !== false) {
         return;
     }
 
     /** Superfeedr bypass. */
-    if (substr_count($CIDRAM['BlockInfo']['UA'], 'Superfeedr bot/2.0')) {
+    if (strpos($CIDRAM['BlockInfo']['UA'], 'Superfeedr bot/2.0') !== false) {
         return;
     }
 
     /** Feedbot bypass. */
-    if (substr_count($CIDRAM['BlockInfo']['UA'], 'Feedbot')) {
+    if (strpos($CIDRAM['BlockInfo']['UA'], 'Feedbot') !== false) {
         return;
     }
 

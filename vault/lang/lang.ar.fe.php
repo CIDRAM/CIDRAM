@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.01.14).
+ * This file: Arabic language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $CIDRAM['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
+$CIDRAM['lang']['state_ignored'] = 'تجاهل';
 $CIDRAM['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال <span class="txtRd">%s</span> ثوان.';
 $CIDRAM['lang']['state_logged_in'] = 'حاليا على.';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for CLI (last modified: 2016.10.20).
+ * This file: German language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s und L%s sind identisch, und somit, zu
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Fehlende [Function]; Signatur scheint unvollständig zu sein.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" kann nicht ausgelöst werden! Seine Basis passt nicht auf den Beginn seiner Reichweite! Versuchen Sie es mit "%s" ersetzen.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" kann nicht ausgelöst werden! "%s" ist kein gültiges Reichweite!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Ursprungs-Tag enthält keinen gültigen ISO 3166-1 Alpha-2-Code!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" ist eine Teilmenge den bereits bestehenden "%s" Signatur.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" ist eine Obermenge zu den bereits bestehenden "%s" Signatur.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Nicht syntaktisch präzise.';

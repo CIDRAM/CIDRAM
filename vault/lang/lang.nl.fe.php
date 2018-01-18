@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.01.14).
+ * This file: Dutch language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Component is actief.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactief.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
+$CIDRAM['lang']['state_ignored'] = 'Genegeerd';
 $CIDRAM['lang']['state_loadtime'] = 'Paginaverzoek voltooid in <span class="txtRd">%s</span> seconden.';
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for CLI (last modified: 2017.06.03).
+ * This file: Urdu language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,6 +64,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s اور L%s کو ایک جیسی ہی�
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: لاپتہ (فنکشن)؛ دستخط نامکمل ہونا ظاہر ہوتا ہے.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" غیر ٹرگر کے قابل اس کی بنیاد اس کی رینج کے آغاز سے مطابقت نہیں رکھتا ہے! ساتھ اس کی جگہ کوشش "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" غیر ٹرگر کے قابل "%s" کو ایک درست رینج نہیں ہے!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: اصل ٹیگ میں ایک درست آیزو 3166-1 کوڈ نہیں ہے!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" پہلے سے موجود "%s" کو دستخطی کے ماتحت ہے.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" یک سپر پہلے سے موجود "%s" کو دستخط کے لئے مقرر کیا جاتا ہے.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: syntactically ہے عین مطابق نہیں.';

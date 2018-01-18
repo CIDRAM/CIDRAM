@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.01.14).
+ * This file: Bangla language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'কম্পোনেন্ট �
 $CIDRAM['lang']['state_component_is_inactive'] = 'কম্পোনেন্ট নিষ্ক্রিয়।';
 $CIDRAM['lang']['state_component_is_provisional'] = 'কম্পোনেন্ট অস্থায়ী।';
 $CIDRAM['lang']['state_default_password'] = 'সতর্কতা: ডিফল্ট পাসওয়ার্ড ব্যবহার করে!';
+$CIDRAM['lang']['state_ignored'] = 'উপেক্ষিত';
 $CIDRAM['lang']['state_loadtime'] = 'পৃষ্ঠা অনুরোধ সম্পন্ন <span class="txtRd">%s</span> সেকেন্ড।';
 $CIDRAM['lang']['state_logged_in'] = 'লগ ইন আছে।';
 $CIDRAM['lang']['state_logs_access_only'] = 'লগ প্রবেশাধিকার শুধুমাত্র';

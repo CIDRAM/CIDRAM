@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for CLI (last modified: 2017.09.24).
+ * This file: Bangla language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'লাইন %s এবং লাইন %s
 $CIDRAM['lang']['CLI_VL_Missing'] = 'লাইন %s: [Function] অনুপস্থিত; স্বাক্ষর অসম্পূর্ণ বলে মনে হচ্ছে।';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'লাইন %s: "%s" চালিত হতে পারে না! এর বেস তার রেঞ্জ প্রারম্ভে মেলে না! "%s" এ পরিবর্তন করার চেষ্টা করুন।';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'লাইন %s: "%s" চালিত হতে পারে না! "%s" একটি বৈধ রেঞ্জ নয়!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'লাইন %s: মাত্রিভূমি ট্যাগ একটি বৈধ ISO 3166-1 Alpha-2 কোড ধারণ করে না!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'লাইন %s: "%s" হল "%s" এর একটি সদস্য।';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'লাইন %s: "%s" হল "%s" এর একটি সুপারসেট।';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'লাইন %s: সিনট্যাক্টিকভাবে সুনির্দিষ্ট নয়।';

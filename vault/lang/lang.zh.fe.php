@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.01.14).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = '组件是活性。';
 $CIDRAM['lang']['state_component_is_inactive'] = '组件是非活性。';
 $CIDRAM['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $CIDRAM['lang']['state_default_password'] = '警告：它使用标准密码！';
+$CIDRAM['lang']['state_ignored'] = '忽略了';
 $CIDRAM['lang']['state_loadtime'] = '页面请求在<span class="txtRd">%s</span>秒内完成。';
 $CIDRAM['lang']['state_logged_in'] = '目前在线。';
 $CIDRAM['lang']['state_logs_access_only'] = '仅日志访问';

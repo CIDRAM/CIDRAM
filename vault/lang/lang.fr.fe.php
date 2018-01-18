@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.01.14).
+ * This file: French language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Le composant est actif.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $CIDRAM['lang']['state_default_password'] = 'Attention : Utilisant le mot de passe défaut !';
+$CIDRAM['lang']['state_ignored'] = 'Ignoré';
 $CIDRAM['lang']['state_loadtime'] = 'Requête de page complétée en <span class="txtRd">%s</span> secondes.';
 $CIDRAM['lang']['state_logged_in'] = 'Connecté.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';

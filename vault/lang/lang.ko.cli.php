@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.08.10).
+ * This file: Korean language data (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,6 +64,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s와 L%s는 동일합니다, 따라서 
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s : "기능"은 존재하지 않습니다; 서명은 완전하지가 표시됩니다.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s : "%s"는 활성화 될 수 없습니다! 베이스와 범위의 시작은 일치하지 않습니다! "%s"와 그것을 교체하려고합니다.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s : "%s"는 활성화 될 수 없습니다! "%s"는 유효한 범위에 없습니다!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s : 원산지 태그에 올바른 ISO 3166-1 Alpha-2 코드가 없습니다!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s : "%s"는 "%s" (이것은 이미 존재합니다)에 종속합니다.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s : "%s"는 "%s" (이것은 이미 존재합니다) 슈퍼 세트입니다.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s : 문법적으로 정확하지는 않습니다.';

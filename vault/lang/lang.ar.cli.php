@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for CLI (last modified: 2017.08.14).
+ * This file: Arabic language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s و L%s متطابقين ويمكن د
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: ينقصه [Function]; يبدو ان ملف التوقيع غير مكتمل.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" غير قابله للاستدعاء ! أساسها لا يوافق بدايه مداها ! حاول استبدالها ب "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" غير قابله  للاستدعاء "%s" مدي غير صالح !';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: علامات المنشأ لا يحتوي على أيزو 3166-1 حرفي-2 رمز صالح!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already existing "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: ليس دقيقا من حيث التركيب.';

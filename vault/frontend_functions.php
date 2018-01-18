@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.01.14).
+ * This file: Front-end functions file (last modified: 2018.01.18).
  */
 
 /**
@@ -1874,6 +1874,9 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
 
 /** Signature files handler for sections list. */
 $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
+    if (!isset($CIDRAM['Ignore'])) {
+        $CIDRAM['Ignore'] = $CIDRAM['FetchIgnores']();
+    }
     $CIDRAM['FE']['SL_Signatures'] = 0;
     $CIDRAM['FE']['SL_Sections'] = 0;
     $CIDRAM['FE']['SL_Files'] = count($Files);
@@ -1888,39 +1891,33 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
                 strpos($Data, "\r\n") !== false
             ) ? str_replace("\r", '', $Data) : str_replace("\r", "\n", $Data);
         }
-        $Data = "\n" . $Data . "\n";
-        $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => ((
-            isset($Details['Class']) && $Details['Class'] === 'ng2'
-        ) ? 'ng1' : 'ng2')];
-        $PosB = -1;
-        while (true) {
-            $PosA = strpos($Data, "\n", $PosB + 1);
-            if ($PosA === false) {
-                break;
-            }
-            $PosA++;
-            if (!$PosB = strpos($Data, "\n", $PosA)) {
-                break;
-            }
-            $Line = substr($Data, $PosA, $PosB - $PosA);
+        $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
+        $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => $Class];
+        $Data = $CIDRAM['ReadLines']($Data);
+        foreach ($Data as $Line) {
             if ($Line === '# ---') {
                 $Details['Comments'] = '';
             } elseif (preg_match('~^(?:#|[ /]\*)~', $Line)) {
                 $Details['Comments'] .= $Line . '<br />';
             } elseif (substr($Line, 0, 5) === 'Tag: ') {
-                $Details['Name'] .= substr($Line, 5);
+                $Tag = substr($Line, 5);
+                $Details['Name'] .= $Tag;
+                if (!empty($CIDRAM['Ignore'][$Tag])) {
+                    $Details['Class'] .= '" style="filter:grayscale(50%) contrast(50%)';
+                    $Details['Name'] .= ' – ' . $CIDRAM['lang']['state_ignored'];
+                }
                 if ($Details['Comments']) {
                     $Details['Comments'] = '<hr />' . $Details['Comments'];
                 }
                 $Details['Signatures'] = $CIDRAM['Number_L10N']($Details['Signatures']);
                 $Out .= $CIDRAM['ParseVars']($Details, $CIDRAM['FE']['SectionsRow']);
                 $CIDRAM['FE']['SL_Sections']++;
-                $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => ($Details['Class'] === 'ng2' ? 'ng1' : 'ng2')];
+                $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
+                $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => $Class];
             } elseif (preg_match('~^(?!(?:Tag|Expires|Origin): ).+~', $Line)) {
                 $Details['Signatures']++;
                 $CIDRAM['FE']['SL_Signatures']++;
             }
-            $PosB--;
         }
         if ($Details['Signatures']) {
             if ($Details['Comments']) {
@@ -1930,7 +1927,7 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
             $Out .= $CIDRAM['ParseVars']($Details, $CIDRAM['FE']['SectionsRow']);
             $CIDRAM['FE']['SL_Sections']++;
         } else {
-            $Details['Class'] = ($Details['Class'] === 'ng2') ? 'ng1' : 'ng2';
+            $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
         }
     }
     return $Out;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for CLI last modified: 2017.08.10).
+ * This file: French language data for CLI last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s et L%s sont identiques, et ainsi, fus
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s : [Function] absent ; Signature semble être incomplètes.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s : « %s » est non déclenchable ! Sa base ne correspond pas au début de sa gamme ! Essayez de remplacer avec « %s ».';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s : « %s » est non déclenchable ! « %s » n\'est pas une gamme valide !';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s : Étiquette d\'origine ne contient pas un code ISO 3166-1 Alpha-2 valide !';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s : « %s » est subordonnée à l\'existant signature « %s ».';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s : « %s » est un superset du déjà existant signature « %s ».';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s : Non syntaxiquement précis.';

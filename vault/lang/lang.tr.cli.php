@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for CLI (last modified: 2017.06.03).
+ * This file: Turkish language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,6 +64,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s ve L%s aynıdır ve bu yüzden birle�
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Eksik [İşlev]; İmza eksik görünüyor.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" tetiklenemez! Tabanı, aralığının başlangıcıyla eşleşmiyor! "%s" ile değiştirmeyi deneyin.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" tetiklenemez! "%s" geçerli bir aralık değil!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Menşe etiketi geçerli bir ISO 3166-1 Alpha-2 kodu içermiyor!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s", mevcut "%s" imzasının emri altındadır.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s", zaten var olan "%s" imzasının üst kümesidir.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Sözdizimsel olarak kesin değil.';

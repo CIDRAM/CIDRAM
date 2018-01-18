@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.10.26).
+ * This file: CLI handler (last modified: 2018.01.18).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -83,7 +83,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     }
     if (strpos($FileToValidate, "\r")) {
         echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_CRLF']);
-        $FileToValidate = (strpos($FileToValidate, "\r\n")) ? str_replace("\r", '', $FileToValidate) : str_replace("\r", "\n", $FileToValidate);
+        $FileToValidate = (strpos($FileToValidate, "\r\n") !== false) ? str_replace("\r", '', $FileToValidate) : str_replace("\r", "\n", $FileToValidate);
     }
     if (substr($FileToValidate, -1) !== "\n") {
         echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], $CIDRAM['lang']['CLI_V_Terminal_LF']);
@@ -109,7 +109,7 @@ if ($CIDRAM['argv'][1] === '-h') {
         if (substr($ArrayToValidate[$i], 0, 1) === '#') {
             continue;
         }
-        if (substr_count($ArrayToValidate[$i], "\t")) {
+        if (strpos($ArrayToValidate[$i], "\t") !== false) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Tabs'], $i));
         } elseif (preg_match('/[^\x20-\xff]/', $ArrayToValidate[$i])) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_CC'], $i));
@@ -122,6 +122,12 @@ if ($CIDRAM['argv'][1] === '-h') {
         }
         if (substr($ArrayToValidate[$i], 0, 9) === 'Expires: ') {
             if (!$CIDRAM['FetchExpires'](substr($ArrayToValidate[$i], 9))) {
+                echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Expiry'], $i));
+            }
+            continue;
+        }
+        if (substr($ArrayToValidate[$i], 0, 8) === 'Origin: ') {
+            if (!preg_match('~^[A-Z]{2}$~', substr($ArrayToValidate[$i], 8))) {
                 echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_2'], sprintf($CIDRAM['lang']['CLI_VL_Expiry'], $i));
             }
             continue;
@@ -284,11 +290,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Changes++;
             $Operations++;
         }
-        if (
-            substr($ArrayToValidate[$i], 0, 1) === '#' ||
-            substr($ArrayToValidate[$i], 0, 5) === 'Tag: ' ||
-            substr($ArrayToValidate[$i], 0, 9) === 'Expires: '
-        ) {
+        if (preg_match('~^(?:(?:Tag|Expires|Origin): |#)~', $ArrayToValidate[$i])) {
             continue;
         }
         if ($YAMLM) {

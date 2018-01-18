@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for CLI (last modified: 2017.10.15).
+ * This file: Swedish language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,11 +63,12 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s och L%s är identiska, och därmed, s
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Saknad [Function]; Signaturen verkar vara ofullständig.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" är inte utlösbar! Dess bas motsvarar inte början på sortimentet! Försök att byta ut det med "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" är inte utlösbar! "%s" är inte ett giltigt range!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Ursprungs tagg innehåller inte en giltig ISO 3166-1 Alpha-2-kod!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" är underordnad den redan existerande signaturen "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" är en superset till den redan existerande signaturen "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Inte syntaktiskt exakt.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Flikar detekteras; Mellanslag föredras över flikar för optimal läsbarhet.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sektionstaggen är större än 20 byte; Sektionstaggar ska vara klara och koncisa.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sektions tagg är större än 20 byte; Sektionstaggar ska vara klara och koncisa.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: Okänd [Function]; Signaturen kan vara trasig.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Överdriven efterföljande blankutrymme detekteras på denna rad.';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: YAML-liknande data upptäcktes, men kunde inte bearbeta den.';

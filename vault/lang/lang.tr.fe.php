@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.01.14).
+ * This file: Turkish language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Bileşen geçicidir.';
 $CIDRAM['lang']['state_default_password'] = 'Uyarı: Varsayılan şifreyi kullanıyor!';
+$CIDRAM['lang']['state_ignored'] = 'Kullanılmamış';
 $CIDRAM['lang']['state_loadtime'] = 'Sayfa isteği <span class="txtRd">%s</span> saniye içinde tamamlandı.';
 $CIDRAM['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';

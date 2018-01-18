@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for CLI (last modified: 2017.06.03).
+ * This file: Dutch language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -57,18 +57,19 @@ $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Signature bestanden moet eindigen met ee
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Controle karakters gedetecteerd; Dit kan duiden corruptie en moet worden onderzocht.';
 $CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Signature "%s" is gedupliceerd (%s tellingen)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Vervaltijd label bevat geen geldig ISO 8601 datum/tijd bevatten!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Vervaltijd etiket bevat geen geldig ISO 8601 datum/tijd bevatten!';
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" is *GEEN* geldig IPv4 of IPv6 adres!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Lijnlengte is groter dan 120 bytes; Lijnlengte moet worden beperkt tot 120 bytes voor optimale leesbaarheid.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s en L%s zijn identiek, en daarom, kan worden samengevoegd.';
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Ontbrekende [Function]; Signature lijkt onvolledig.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" kan niet worden geactiveerd! Haar basis niet overeen met het begin van de series! Probeer te vervangen het door "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" kan niet worden geactiveerd! "%s" is niet een geldig series!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Herkomst etiket bevat geen geldige ISO 3166-1 2-letterig-code!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is ondergeschikt aan de reeds bestaande "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is een superset aan de reeds bestaande "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Niet syntactisch precies.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tabs gedetecteerd; Spaces voorkeur boven tabs voor optimale leesbaarheid.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sectie label is groter dan 20 bytes; Sectie labels moeten duidelijk en beknopt zijn.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Sectie etiket is groter dan 20 bytes; Sectie etiketten moeten duidelijk en beknopt zijn.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] is niet herkend; Signature misschien gebroken.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Overmaat afsluitende witruimte gedetecteerd op dit lijn.';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: YAML-achtige data gedetecteerd, maar kon het niet verwerken.';

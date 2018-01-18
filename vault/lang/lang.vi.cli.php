@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for CLI (last modified: 2016.07.26).
+ * This file: Vietnamese language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -57,18 +57,19 @@ $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Tập tin chữ ký nên chấm dứt v�
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Điều khiển nhân vật được phát hiện; Điều này có thể chỉ ra tham nhũng và nên được điều tra.';
 $CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: Chữ ký "%s" được nhân đôi (%s đếm)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Chỉ số hết hạn không chứa đựng một ngày hay thời gian ISO 8601 hợp lệ!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Gắn thẻ hết hạn không chứa một ngày hay thời gian ISO 8601 hợp lệ!';
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" *KHÔNG* phải là một địa chỉ IPv4 hay IPv6 hợp lệ!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Chiều dài dòng là lớn hơn 120 byte; Chiều dài dòng nên được giới hạn đến 120 byte cho dễ đọc tối ưu.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s và L%s là giống hệt nhau, và như vậy, có thể hợp nhất.';
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] vắng mặt; Chữ ký dường như là không đầy đủ.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" không thể được kích hoạt! Cơ sở của nó không phù hợp đầu phạm vi của nó! Hãy thử thay thế nó bằng "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" không thể được kích hoạt! "%s" không phải là một phạm vi hợp lệ!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Gắn thẻ xuất xứ không chứa mã "ISO 3166-1 Alpha-2" hợp lệ!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" là cấp dưới của một chữ ký đã tồn tại "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" là cấp trên của một chữ ký đã tồn tại "%s".';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Không cú pháp chính xác.';
 $CIDRAM['lang']['CLI_VL_Tabs'] = 'L%s: Tab được phát hiện; Không gian được ưa thích hơn các tab cho dễ đọc tối ưu.';
-$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Chỉ số phần lớn hơn 20 byte; Chỉ số phần phải rõ ràng và súc tích.';
+$CIDRAM['lang']['CLI_VL_Tags'] = 'L%s: Gắn thẻ phần lớn hơn 20 byte; Gắn thẻ phần phải rõ ràng và súc tích.';
 $CIDRAM['lang']['CLI_VL_Unrecognised'] = 'L%s: [Function] không xác định; Chữ ký có thể bị phá vỡ.';
 $CIDRAM['lang']['CLI_VL_Whitespace'] = 'L%s: Khoảng trắng dư thừa dấu phát hiện trên dòng này.';
 $CIDRAM['lang']['CLI_VL_YAML'] = 'L%s: Dữ liệu tương tự như YAML đã được phát hiện, nhưng không thể xử lý.';

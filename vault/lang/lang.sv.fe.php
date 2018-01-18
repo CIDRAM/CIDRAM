@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.01.14).
+ * This file: Swedish language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponenten är aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponenten är inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponenten är provisorisk.';
 $CIDRAM['lang']['state_default_password'] = 'Varning: Använder standardlösenordet!';
+$CIDRAM['lang']['state_ignored'] = 'Ignorerades';
 $CIDRAM['lang']['state_loadtime'] = 'Sidförfrågan färdigställd om <span class="txtRd">%s</span> sekunder.';
 $CIDRAM['lang']['state_logged_in'] = 'Inloggad.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Kan bara komma åt loggfilerna';

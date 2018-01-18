@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for CLI (last modified: 2017.09.29).
+ * This file: Norwegian language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -63,6 +63,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s og L%s er identiske, og kan slås sam
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: Mangler [Function]; Signaturen ser ut til å være ufullstendig.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" vil aldri matche! Basen sin stemmer ikke overens med begynnelsen av sitt utvalg! Prøv å erstatte den med "%s".';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" vil aldri matche! "%s" er ikke et gyldig område!';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Opprinnelseslabel inneholder ikke en gyldig ISO 3166-1 Alpha-2-kode!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" er underordnet den allerede eksisterende "%s" signaturen.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" er en superset til den allerede eksisterende "%s" signaturen.';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s: Ikke syntaktisk presis.';

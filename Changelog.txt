@@ -36,6 +36,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   when running CIDRAM via Cron (e.g., via Cronable) due to SCRIPT_FILENAME
   sometimes not being defined in that context; Fixed via isset check.
 
+- [2018.01.18; Sub-minor code change; Maikuolan]: Performed some minor
+  refactoring. Added checks for origin tags to the CLI signature file validator
+  and fixer. Sections list now checks whether sections have been ignored.
+
 === Version/Release 1.3.0 ===
 MINOR RELEASE.
 

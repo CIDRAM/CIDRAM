@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.01.14).
+ * This file: Norwegian language data for the front-end (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -244,6 +244,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponent er aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponent er inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponent er foreløpig.';
 $CIDRAM['lang']['state_default_password'] = 'Advarsel: Bruker standard passordet';
+$CIDRAM['lang']['state_ignored'] = 'Ignorert';
 $CIDRAM['lang']['state_loadtime'] = 'Sideforespørsel avsluttet om <span class="txtRd">%s</span> sekunder.';
 $CIDRAM['lang']['state_logged_in'] = 'Logget inn.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bare logger tilgang';

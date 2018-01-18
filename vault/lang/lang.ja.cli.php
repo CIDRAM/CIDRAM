@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for CLI (last modified: 2017.06.21).
+ * This file: Japanese language data for CLI (last modified: 2018.01.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -64,6 +64,7 @@ $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%sとL%sは同じです、​そのた�
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s：​「機能」は存在しません；シグネチャは不完全であることが表示されます。';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s：​「%s」は、​活性化することはできません！​ベースと範囲の始まりは一致していません！​「%s」とそれを交換してみてください。';
 $CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s：​「%s」は、​活性化することはできません！​「%s」は有効な範囲ではありません！';
+$CIDRAM['lang']['CLI_VL_Origin'] = 'L%s：​原点タグに有効な「ISO 3166-1 Alpha-2」コードが含まれていません！';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s：​「%s」は「%s」（これはすでに存在します）に従属します。';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s：​「%s」は「%s」（これはすでに存在します）にスーパーセットです。';
 $CIDRAM['lang']['CLI_VL_Syntax'] = 'L%s：​文法的に正確ではありません。';

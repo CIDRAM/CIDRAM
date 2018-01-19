@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.01.18).
+ * This file: Front-end functions file (last modified: 2018.01.19).
  */
 
 /**
@@ -1893,8 +1893,19 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
         }
         $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
         $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => $Class];
-        $Data = $CIDRAM['ReadLines']($Data);
-        foreach ($Data as $Line) {
+        $Data = "\n" . $Data . "\n";
+        $PosB = -1;
+        while (true) {
+            $PosA = strpos($Data, "\n", $PosB + 1);
+            if ($PosA === false) {
+                break;
+            }
+            $PosA++;
+            if (!$PosB = strpos($Data, "\n", $PosA)) {
+                break;
+            }
+            $Line = substr($Data, $PosA, $PosB - $PosA);
+            $PosB--;
             if ($Line === '# ---') {
                 $Details['Comments'] = '';
             } elseif (preg_match('~^(?:#|[ /]\*)~', $Line)) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.01.17).
+ * This file: Functions file (last modified: 2018.01.19).
  */
 
 /**
@@ -50,30 +50,6 @@ $CIDRAM['ReadFile'] = function ($File) {
         fclose($Handle);
     }
     return $Data ?: false;
-};
-
-/**
- * Reads and yields individual lines of the supplied data.
- *
- * @param string $Data The data to yield from.
- * @param string $Delimiter Line delimiter (optional).
- */
-$CIDRAM['ReadLines'] = function ($Data, $Delimiter = "\n") {
-    $Data = $Delimiter . $Data . $Delimiter;
-    $Len = strlen($Delimiter);
-    $PosB = -1 * $Len;
-    while (true) {
-        $PosA = strpos($Data, $Delimiter, $PosB + $Len);
-        if ($PosA === false) {
-            break;
-        }
-        $PosA += $Len;
-        if (!$PosB = strpos($Data, $Delimiter, $PosA)) {
-            break;
-        }
-        yield substr($Data, $PosA, $PosB - $PosA);
-        $PosB -= $Len;
-    }
 };
 
 /**

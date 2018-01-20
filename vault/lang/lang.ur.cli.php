@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for CLI (last modified: 2018.01.18).
+ * This file: Urdu language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,22 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI امداد.
 
  استعمال کریں:
- /راہ/کرنا/php/php.exe /راہ/کرنا/cidram/loader.php -پرچم (ان پٹ)
+ php.exe /cidram/loader.php -پرچم (ان پٹ)
 
  پرچم:
-    -h  اس مدد کی معلومات دکھائیں.
-    -c  چیک کریں اگر ایک IP ایڈریس CIDRAM دستخط کی فائلوں کی طرف سے بلاک کیا جاتا ہے.
-    -g  ایک IP ایڈریس سے CIDR پیدا.
-
- ان پٹ: یہ کسی بھی IPv4 یا IPv6 ایڈریس درست ہے ہو سکتا ہے.
+ -h اس مدد کی معلومات دکھائیں.
+ -c چیک کریں اگر ایک IP ایڈریس CIDRAM دستخط کی فائلوں کی طرف سے بلاک کیا جاتا ہے.
+ -g ایک IP ایڈریس سے CIDR پیدا.
+ -v ایک دستخط فائل کو درست کریں.
+ -f ایک دستخط فائل درست کریں.
 
  مثال کے طور پر:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

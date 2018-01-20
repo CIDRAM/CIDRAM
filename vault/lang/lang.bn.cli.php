@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for CLI (last modified: 2018.01.18).
+ * This file: Bangla language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,19 +20,21 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI- মোড সাহায্য।
 
  ব্যবহার:
- /path/to/php/php.exe /path/to/cidram/loader.php -Flag (ইনপুট)
+ php.exe /cidram/loader.php -Flag (ইনপুট)
 
- Flags: -h  এই সহায়তা তথ্য প্রদর্শন করুন।
-        -c  CIDRAM স্বাক্ষর ফাইলগুলি দ্বারা IP ঠিকানাটি আবদ্ধ হলে দেখুন।
-        -g  একটি IP ঠিকানা থেকে CIDR তৈরি করুন।
-
- ইনপুট: কোন বৈধ IPv4 বা IPv6 IP ঠিকানা হতে পারে।
+ Flags: -h এই সহায়তা তথ্য প্রদর্শন করুন।
+        -c CIDRAM স্বাক্ষর ফাইলগুলি দ্বারা IP ঠিকানাটি আবদ্ধ হলে দেখুন।
+        -g একটি IP ঠিকানা থেকে CIDR তৈরি করুন।
+        -v একটি স্বাক্ষর ফাইল যাচাই করুন।
+        -f একটি স্বাক্ষর ফাইল ঠিক করুন।
 
  উদাহরণ:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

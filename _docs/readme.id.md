@@ -81,9 +81,11 @@ Jika Anda ingin menggunakan CIDRAM dengan WordPress, Anda dapat mengabaikan semu
 
 CIDRAM harus secara otomatis memblokir permintaan yang tidak diinginkan ke website Anda tanpa memerlukan bantuan manual, selain dari instalasi.
 
-Update dilakukan manual, dan Anda dapat menyesuaikan konfigurasi Anda dan menyesuaikan apa CIDRs diblokir oleh memodifikasi file konfigurasi Anda dan/atau file tanda tangan Anda.
+Anda dapat menyesuaikan konfigurasi Anda dan menyesuaikan apa CIDRs diblokir oleh memodifikasi file konfigurasi Anda dan/atau file tanda tangan Anda.
 
 Jika Anda menemukan positif palsu, tolong hubungi saya untuk membiarkan saya tahu tentang hal itu. *(Lihat: [Apa yang dimaksud dengan "positif palsu"?](#WHAT_IS_A_FALSE_POSITIVE)).*
+
+CIDRAM dapat diperbarui secara manual atau melalui bagian depan. CIDRAM juga bisa diperbarui via Composer atau WordPress, jika sudah diinstal dengan cara ini.
 
 ---
 
@@ -931,4 +933,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 14 Januari 2018 (2018.01.14).
+Terakhir Diperbarui: 20 Januari 2018 (2018.01.20).

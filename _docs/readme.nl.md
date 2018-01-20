@@ -81,9 +81,11 @@ Als u wilt CIDRAM gebruiken met WordPress, u kunt alle bovenstaande instructies 
 
 CIDRAM moet blokkeren ongewenste verzoeken naar uw website automatisch zonder enige handmatige hulp, afgezien van de eerste installatie.
 
-Updaten gebeurt met de hand, en u kunt aanpassen uw configuratie en aanpassen de CIDRs dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw signature bestanden.
+U kunt aanpassen uw configuratie en aanpassen de CIDRs dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw signature bestanden.
 
 Als u tegenkomen een valse positieven, neem dan contact met mij op om me te laten weten. *(Zien: [Wat is een "vals positieve"?](#WHAT_IS_A_FALSE_POSITIVE)).*
+
+CIDRAM kan handmatig of via de frontend worden bijgewerkt. CIDRAM kan ook worden bijgewerkt via Composer of WordPress, indien oorspronkelijk via die middelen geïnstalleerd.
 
 ---
 
@@ -931,4 +933,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 14 Januari 2018 (2018.01.14).
+Laatste Bijgewerkt: 20 Januari 2018 (2018.01.20).

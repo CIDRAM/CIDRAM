@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for CLI (last modified: 2018.01.18).
+ * This file: Chinese (traditional) language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,22 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI模式輔助。
 
  用法：
- /路徑到PHP/php.exe /路徑到CIDRAM/loader.php -鍵 （輸入）
+ php.exe /cidram/loader.php -鍵 （輸入）
 
  鍵：
-    -h  顯示此幫助信息。
-    -c  檢查如果一個IP地址被阻止由CIDRAM簽名文件。
-    -g  生成CIDR從一個IP地址。
-
- 輸入：可以是任何有效的地址（IPv4/IPv6）。
+ -h 顯示此幫助信息。
+ -c 檢查如果一個IP地址被阻止由CIDRAM簽名文件。
+ -g 生成CIDR從一個IP地址。
+ -v 驗證簽名文件。
+ -f 修復簽名文件。
 
  例子：
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

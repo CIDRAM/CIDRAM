@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for CLI (last modified: 2018.01.18).
+ * This file: Hindi language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,22 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI-मोड सहायता।
 
  कैसे इस्तेमाल करे:
- /पथ/के/लिए/php/php.exe /पथ/के/लिए/cidram/loader.php -फ्लैग (इनपुट)
+ php.exe /cidram/loader.php -फ्लैग (इनपुट)
 
  फ्लैग:
-    -h  यह सहायता जानकारी प्रदर्शित करें।
-    -c  जांचें कि क्या आईपी पता CIDRAM हस्ताक्षर फाइलों द्वारा अवरुद्ध है।
-    -g  एक आईपी पते से CIDR उत्पन्न करें।
-
- इनपुट: कोई मान्य IPv4 या IPv6 आईपी पता हो सकता है।
+    -h यह सहायता जानकारी प्रदर्शित करें।
+    -c जांचें कि क्या आईपी पता CIDRAM हस्ताक्षर फाइलों द्वारा अवरुद्ध है।
+    -g एक आईपी पते से CIDR उत्पन्न करें।
+    -v एक हस्ताक्षर फ़ाइल मान्य करें।
+    -f एक हस्ताक्षर फ़ाइल ठीक करें।
 
  उदाहरण:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

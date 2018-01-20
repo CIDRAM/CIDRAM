@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for CLI (last modified: 2018.01.18).
+ * This file: Indonesian language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,19 +20,21 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM modus CLI bantuan.
 
  Menggunakan:
- /jalan/ke/php/php.exe /jalan/ke/cidram/loader.php -Flag (Masukkan)
+ php.exe /cidram/loader.php -Flag (Masukkan)
 
- Flag:  -h  Menampilkan informasi bantuan ini.
-        -c  Periksa apakah alamat IP diblokir dengan file tanda tangan CIDRAM.
-        -g  Menghasilkan CIDR dari alamat IP.
-
- Masukkan:  Dapat menjadi apa-apa alamat IPv4 atau IPv6 valid.
+ Flag: -h Menampilkan informasi bantuan ini.
+       -c Periksa apakah alamat IP diblokir dengan file tanda tangan CIDRAM.
+       -g Menghasilkan CIDR dari alamat IP.
+       -v Validasi file tanda tangan.
+       -f Perbaiki file tanda tangan.
 
  Contoh:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

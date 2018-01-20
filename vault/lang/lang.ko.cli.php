@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.01.18).
+ * This file: Korean language data (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,22 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI 모드 도와주세요.
 
  사용법:
- /PHP-경로/php.exe /CIDRAM-경로/loader.php -플래그 : (입력)
+ php.exe /cidram/loader.php -플래그 (입력)
 
  플래그:
-    -h  이 도움말 정보를 표시합니다.
-    -c  IP 주소를 확인하십시오 여부는 CIDRAM에 의해 차단되어 있습니다.
-    -g  IP 주소에서 CIDR을 생성합니다.
-
- 입력 : 유효한 주소 (IPv4/IPv6)을 지정할 수 있습니다.
+ -h 이 도움말 정보를 표시합니다.
+ -c IP 주소를 확인하십시오 여부는 CIDRAM에 의해 차단되어 있습니다.
+ -g IP 주소에서 CIDR을 생성합니다.
+ -v 서명 파일의 유효성을 검사한다.
+ -f 서명 파일을 고치다.
 
  예:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

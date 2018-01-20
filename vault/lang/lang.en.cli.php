@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for CLI (last modified: 2018.01.18).
+ * This file: English language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,19 +20,21 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI-mode help.
 
  Usage:
- /path/to/php/php.exe /path/to/cidram/loader.php -Flag (Input)
+ php.exe /cidram/loader.php -Flag (Input)
 
- Flags: -h  Display this help information.
-        -c  Check if an IP address is blocked by the CIDRAM signature files.
-        -g  Generate CIDRs from an IP address.
-
- Input: Can be any valid IPv4 or IPv6 IP address.
+ Flags: -h Display this help information.
+        -c Check if an IP address is blocked by the CIDRAM signature files.
+        -g Generate CIDRs from an IP address.
+        -v Validate a signature file.
+        -f Fix a signature file.
 
  Examples:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

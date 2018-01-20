@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for CLI (last modified: 2018.01.18).
+ * This file: Turkish language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,23 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI mod yardımı
 
  Kullanım:
- /klasör/yolu/php/php.exe /klasör/yolu/cidram/loader.php -Bayraklar (Giriş)
+ php.exe /cidram/loader.php -Bayraklar (Giriş)
 
- Bayraklar: -h  Bu yardım bilgisini görüntüleyin.
-            -c  IP adresinin CIDRAM imza dosyaları tarafından engellenip
-                engellenmediğini kontrol edin.
-            -g  IP adresinden CIDR'ler üretin.
-
- Giriş: Herhangi bir geçerli IPv4 veya IPv6 IP adresi olabilir.
+ Bayraklar:
+ -h Bu yardım bilgisini görüntüleyin.
+ -c IP adresinin CIDRAM imza dosyaları tarafından engellenip engellenmediğini
+    kontrol edin.
+ -g IP adresinden CIDR'ler üretin.
+ -v İmza dosyasını doğrulayın.
+ -f İmza dosyasını düzeltin.
 
  Örnekler:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

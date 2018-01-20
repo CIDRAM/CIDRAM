@@ -81,9 +81,11 @@ Wenn Sie CIDRAM mit WordPress verwenden möchten, können Sie alle Anweisungen o
 
 CIDRAM sollte automatisch unerwünschte Zugriffe auf Ihre Website blockieren, ohne manuelle Unterstützung erforderlich, abgesehen von seiner Erstinstallation.
 
-Die Aktualisierung erfolgt manuell, und Sie können Ihre Konfiguration anpassen, und Sie können welche CIDRs blockiert festlegen, durch Sie Ihre Konfigurationsdatei und/oder Signaturdateien Modifizieren.
+Sie können Ihre Konfiguration anpassen, und Sie können welche CIDRs blockiert festlegen, durch Sie Ihre Konfigurationsdatei und/oder Signaturdateien Modifizieren.
 
 Wenn Sie Falsch-Positivs begegnen, bitte kontaktieren Sie mich zu informieren. *(Beziehen auf: [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)).*
+
+CIDRAM kann manuell oder über das Front-End aktualisiert werden. CIDRAM kann auch über Composer oder WordPress aktualisiert werden, wenn es ursprünglich mit diesen Mitteln installiert wurde.
 
 ---
 
@@ -931,4 +933,4 @@ Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUN
 ---
 
 
-Zuletzt aktualisiert: 14 Januar 2018 (2018.01.14).
+Zuletzt aktualisiert: 20 Januar 2018 (2018.01.20).

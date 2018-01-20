@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for CLI (last modified: 2018.01.18).
+ * This file: Swedish language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,19 +20,21 @@ $CIDRAM['lang']['CLI_H'] = "
  Hjälp för CIDRAM CLI-läge.
 
  Användande:
- /väg/till/php/php.exe /väg/till/cidram/loader.php -Flagga (Input)
+ php.exe /cidram/loader.php -Flagga (Input)
 
  Flaggor: -h Visa denna hjälpinformation.
           -c Kontrollera om en IP-adress blockeras av CIDRAM-signaturfilerna.
           -g Generera CIDRer från en IP-adress.
-
- Input: Kan vara någon giltig IPv4 eller IPv6 IP-adress.
+          -v Kolla en signaturfil.
+          -f Fixa en signaturfil.
 
  Exempel:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

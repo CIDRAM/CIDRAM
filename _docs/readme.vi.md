@@ -81,9 +81,11 @@ Nếu bạn muốn sử dụng CIDRAM với WordPress, bạn có thể bỏ qua 
 
 CIDRAM nên tự động chặn các yêu cầu không mong muốn để trang mạng của bạn mà không cần bất kỳ hỗ trợ bằng tay, trừ cài đặt.
 
-Đang cập nhật được thực hiện bằng tay, và bạn có thể tùy chỉnh cấu hình của bạn và tùy chỉnh mà CIDR bị chặn bằng cách sửa đổi tập tin cấu hình hay tập tin chữ ký của bạn.
+Bạn có thể tùy chỉnh cấu hình của bạn và tùy chỉnh mà CIDR bị chặn bằng cách sửa đổi tập tin cấu hình hay tập tin chữ ký của bạn.
 
 Nếu bạn gặp bất kỳ sai tích cực, xin vui lòng liên hệ với tôi để cho tôi biết về nó. *(Xem: ["Sai tích cực" là gì?](#WHAT_IS_A_FALSE_POSITIVE)).*
+
+CIDRAM có thể được cập nhật bằng tay hoặc thông qua front-end. CIDRAM cũng có thể được cập nhật qua Composer hoặc WordPress, nếu ban đầu được cài đặt qua các phương tiện đó.
 
 ---
 
@@ -931,4 +933,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Một 2018 (2018.01.14).
+Lần cuối cập nhật: 20 Tháng Một 2018 (2018.01.20).

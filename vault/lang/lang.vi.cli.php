@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for CLI (last modified: 2018.01.18).
+ * This file: Vietnamese language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,21 @@ $CIDRAM['lang']['CLI_H'] = "
  Trợ giúp cho chế độ CLI của CIDRAM.
 
  Sử dụng:
- /đường/dẫn/đến/php/php.exe /đường/dẫn/đến/cidram/loader.php -Dấu (Đầu vào)
+ php.exe /cidram/loader.php -Dấu (Đầu vào)
 
- Dấu: -h    Hiển thị thông tin trợ giúp này.
-      -c    Kiểm tra nếu một địa chỉ IP bị chặn bởi các tập tin chữ ký của
-            CIDRAM.
-      -g    Tạo ra CIDR từ một địa chỉ IP.
-
- Đầu vào: Có thể là bất kỳ IPv4 hoặc IPv6 địa chỉ IP hợp lệ.
+ Dấu: -h Hiển thị thông tin trợ giúp này.
+      -c Kiểm tra nếu một địa chỉ IP bị chặn bởi các tập tin chữ ký của CIDRAM.
+      -g Tạo ra CIDR từ một địa chỉ IP.
+      -v Kiểm tra tập tin chữ ký.
+      -f Hãy sửa tập tin chữ ký.
 
  Các ví dụ:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

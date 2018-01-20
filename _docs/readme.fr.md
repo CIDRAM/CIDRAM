@@ -81,9 +81,11 @@ Si vous souhaitez utiliser CIDRAM avec WordPress, vous pouvez ignorer toutes les
 
 CIDRAM devrait bloquer automatiquement les requêtes indésirables à votre site web sans nécessitant aucune intervention manuelle, en dehors de son installation initiale.
 
-La mise à jour se fait manuellement, et vous pouvez personnaliser votre configuration et personnaliser les CIDRs sont bloqués par modifiant le fichier de configuration et/ou vos fichiers de signatures.
+Vous pouvez personnaliser votre configuration et personnaliser les CIDRs sont bloqués par modifiant le fichier de configuration et/ou vos fichiers de signatures.
 
 Si vous rencontrez des faux positifs, s'il vous plaît, contactez moi et parle moi de ça. *(Voir : [Qu'est-ce qu'un « faux positif » ?](#WHAT_IS_A_FALSE_POSITIVE)).*
+
+CIDRAM peut être mis à jour manuellement ou via le frontal. CIDRAM peut également être mis à jour via Composer ou WordPress, si initialement installé via ces moyens.
 
 ---
 
@@ -931,4 +933,4 @@ Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir�
 ---
 
 
-Dernière mise à jour : 14 Janvier 2018 (2018.01.14).
+Dernière mise à jour : 20 Janvier 2018 (2018.01.20).

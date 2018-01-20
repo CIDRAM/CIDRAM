@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for CLI (last modified: 2018.01.18).
+ * This file: Dutch language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,23 @@ $CIDRAM['lang']['CLI_H'] = "
  CIDRAM CLI-modus hulp.
 
  Gebruik:
- /pad/naar/php/php.exe /pad/naar/cidram/loader.php -Vlag (Invoer)
+ php.exe /cidram/loader.php -Vlag (Invoer)
 
- Vlaggen:   -h  Geeft dit help informatie.
-            -c  Controleer of een IP-adres is geblokkeerd door de CIDRAM
-                signature bestanden.
-            -g  Genereer CIDRs van een IP-adres.
-
- Invoer: Kan ieder geldig IP-adres zijn.
+ Vlaggen:
+ -h Geeft dit help informatie.
+ -c Controleer of een IP-adres is geblokkeerd door de CIDRAM signature
+    bestanden.
+ -g Genereer CIDRs van een IP-adres.
+ -v Een signature bestanden valideren.
+ -f Een signature bestanden repareren.
 
  Voorbeelden:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

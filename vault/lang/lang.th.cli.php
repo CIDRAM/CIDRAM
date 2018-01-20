@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for CLI (last modified: 2018.01.18).
+ * This file: Thai language data for CLI (last modified: 2018.01.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,20 +20,22 @@ $CIDRAM['lang']['CLI_H'] = "
  ช่วยสำหรับโหมด CLI ของ CIDRAM.
 
  การใช้งาน:
- /เส้นทาง/ไป/php/php.exe /เส้นทาง/ไป/cidram/loader.php -ธง (ใส่ข้อมูล)
+ php.exe /cidram/loader.php -ธง (ใส่ข้อมูล)
 
  ธง:
-    -h  แสดงข้อมูลความช่วยเหลือนี้.
-    -c  ตรวจสอบว่าที่อยู่ IP ถูกบล็อกโดยไฟล์ลายเซ็นของ CIDRAM.
-    -g  สร้าง CIDR จากที่อยู่ IP.
-
- ใส่ข้อมูล: มันอาจจะใด ๆ ที่อยู่ IP ถูกต้อง IPv4 หรือ IPv6.
+ -h แสดงข้อมูลความช่วยเหลือนี้.
+ -c ตรวจสอบว่าที่อยู่ IP ถูกบล็อกโดยไฟล์ลายเซ็นของ CIDRAM.
+ -g สร้าง CIDR จากที่อยู่ IP.
+ -v ตรวจสอบไฟล์ลายเซ็น.
+ -f แก้ไขไฟล์ลายเซ็น.
 
  ตัวอย่าง:
-        -c  192.168.0.0/16
-        -c  127.0.0.1/32
-        -c  2001:db8::/32
-        -c  2002::1/128
+ php.exe /cidram/loader.php -c 192.168.0.0
+ php.exe /cidram/loader.php -c 2001:db8::
+ php.exe /cidram/loader.php -g 1.2.3.4
+ php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -f signatures.dat
+ php.exe /cidram/loader.php -v signatures.dat
 
 ";
 

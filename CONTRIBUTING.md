@@ -24,6 +24,6 @@ Anyone interested in contributing to the project is encouraged to do so.
 
 **Can you spread the word?**
 - CIDRAM won't serve any benefit to people unless they actually use it, and they won't ever use it unless they actually know about it. Getting word out would help (but please don't do anything spammy or unsolicited).
-- Submit reviews about CIDRAM to various software review sites where it's listed (for example, [SourceForge](https://sourceforge.net/projects/cidram/reviews?source=navbar), [HotScripts](https://www.hotscripts.com/listing/cidram/), [WordPress](https://wordpress.org/plugins/cidram/)), write blog posts, use word of mouth, mention it on Facebook, Twitter, etc.
+- Submit reviews about CIDRAM to various software review sites where it's listed (e.g., [SourceForge](https://sourceforge.net/projects/cidram/reviews?source=navbar), [WordPress](https://wordpress.org/plugins/cidram/)), write blog posts, use word of mouth, mention it on Facebook, Twitter, etc.
 
-*Last modified: 3 June 2017 (2017.06.03).*
+*Last Updated: 5 February 2018 (2018.02.05).*

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.01.18).
+ * This file: Italian language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Non ci sono file di firme attivi!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Alcuni link utili:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problemi di CIDRAM @ GitHub</a> – Pagina dei problemi per CIDRAM (supporto, assistenza, ecc).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Forum di discussione per CIDRAM (supporto, assistenza, ecc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin per WordPress per CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Una scarica specchio alternativa per CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una collezione di semplici strumenti per i webmaster per sicurezza del sito Web.</li>

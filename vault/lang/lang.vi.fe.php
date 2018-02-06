@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.01.18).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Không có tập tin chữ ký nào �
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Vấn đề cho CIDRAM @ GitHub</a> – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Diễn đàn thảo luận cho CIDRAM (hỗ trợ, vv).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress cho CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Tải về gương thay thế cho CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>

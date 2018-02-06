@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.01.18).
+ * This file: Turkish language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Hiçbir imza dosyası aktif değil!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Sorunları @ GitHub</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb.).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM için tartışma forumu (destek, yardım vb.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM için WordPress eklentisi.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM için alternatif karşıdan yükleme aynası.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Web sitelerini güvenli hale getirmek için basit web yöneticisi araçlarından oluşan bir koleksiyon.</li>

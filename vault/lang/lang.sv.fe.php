@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.01.18).
+ * This file: Swedish language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Inga signaturfiler är aktiva!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Några användbara länkar:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Diskussionsforum för CIDRAM (stöd, hjälp, osv).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin för CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternativ nedladdningsspegel för CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – En samling enkla verktyg för webbansvariga för att säkra webbplatser.</li>

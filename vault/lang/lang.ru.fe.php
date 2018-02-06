@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.01.18).
+ * This file: Russian language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Активные файлы сигн�
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – Дискуссионный форум для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>

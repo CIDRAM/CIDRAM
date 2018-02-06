@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.01.18).
+ * This file: Thai language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'ไม่มีไฟล์ลาย�
 
 $CIDRAM['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">ปัญหา CIDRAM @ GitHub</a> – หน้าปัญหาสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – ฟอรั่มการอภิปรายสำหรับ CIDRAM (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – ปลั๊กอิน WordPress สำหรับ CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – สถานที่ดาวน์โหลดอื่นสำหรับ CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – คอลเลกชันเครื่องมือเว็บมาสเตอร์ง่ายสำหรับการรักษาความปลอดภัยเว็บไซต์.</li>

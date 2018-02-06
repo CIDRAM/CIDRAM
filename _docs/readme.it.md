@@ -869,8 +869,7 @@ Frequenza di aggiornamento varia a seconda delle file di firma in questione. Tut
 - Si sta utilizzando la versione più recente del software? Si sta utilizzando le ultime versioni dei file di firma? Se la risposta a una di queste due domande è no, provare ad aggiornare tutto prima, e verificare se il problema persiste. Se persiste, continuare a leggere.
 - Hai controllato attraverso tutta la documentazione? In caso non fatto, si prega di farlo. Se il problema non può essere risolto utilizzando la documentazione, continuare a leggere.
 - Hai controllato la **[pagina dei problemi](https://github.com/CIDRAM/CIDRAM/issues)**, per vedere se il problema è stato accennato prima? Se è stato accennato prima, verificare se sono stati forniti qualsiasi suggerimenti, idee, e/o soluzioni, e seguire come necessario per cercare di risolvere il problema.
-- Hai controllato il **[forum di supporto per CIDRAM fornito da Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, per vedere se il problema è stato accennato prima? Se è stato accennato prima, verificare se sono stati forniti qualsiasi suggerimenti, idee, e/o soluzioni, e seguire come necessario per cercare di risolvere il problema.
-- Se il problema persiste, fatecelo sapere su di esso con la creazione di una nuova discussione sulla pagina dei problemi o sul forum di supporto.
+- Se il problema persiste, fatecelo sapere su di esso con la creazione di una nuova discussione sulla pagina dei problemi.
 
 #### CIDRAM mi ha bloccato da un sito web che voglio visitare! Aiutami!
 
@@ -933,4 +932,4 @@ Sì. Per fare ciò, dovrai creare un file modulo personalizzato. *Vedere: [NOZIO
 ---
 
 
-Ultimo Aggiornamento: 20 Gennaio 2018 (2018.01.20).
+Ultimo Aggiornamento: 5 Febbraio 2018 (2018.02.05).

@@ -869,8 +869,7 @@ La frecuencia de actualización varía dependiendo de los archivos de firma en c
 - ¿Está utilizando la última versión del software? ¿Está utilizando las últimas versiones de sus archivos de firma? Si la respuesta a cualquiera de estas dos preguntas es no, intente actualizar todo primero, y compruebe si el problema persiste. Si persiste, continúe leyendo.
 - ¿Ha revisado toda la documentación? Si no, por favor, hágalo. Si el problema no puede resolverse utilizando la documentación, continúe leyendo.
 - ¿Ha revisado la **[página de problemas](https://github.com/CIDRAM/CIDRAM/issues)**, para ver si el problema ha sido mencionado antes? Si se ha mencionado antes, compruebe si se han proporcionado sugerencias, ideas y/o soluciones, y siga según sea necesario para tratar de resolver el problema.
-- ¿Ha consultado el **[foro de soporte para CIDRAM proporcionado por Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, para ver si el problema ha sido mencionado antes? Si se ha mencionado antes, compruebe si se han proporcionado sugerencias, ideas y/o soluciones, y siga según sea necesario para tratar de resolver el problema.
-- Si el problema persiste, comuníquenoslo creando un nuevo discusión en la página de problemas o en el foro de soporte.
+- Si el problema persiste, comuníquenoslo creando un nuevo discusión en la página de problemas.
 
 #### ¡He sido bloqueado por CIDRAM desde un sitio web que quiero visitar! ¡Por favor ayuda!
 
@@ -933,4 +932,4 @@ Sí. Para hacer esto, necesitarás crear un archivo de módulo personalizado. *V
 ---
 
 
-Última Actualización: 20 Enero 2018 (2018.01.20).
+Última Actualización: 5 Febrero 2018 (2018.02.05).

@@ -869,8 +869,7 @@ A frequência das atualizações varia de acordo com os arquivos de assinatura e
 - Você está usando a versão mais recente do software? Você está usando as versões mais recentes de seus arquivos de assinatura? Se a resposta a qualquer destas duas perguntas é não, tente atualizar tudo primeiro, e verifique se o problema persiste. Se persistir, continue lendo.
 - Você já examinou toda a documentação? Se não, por favor, faça isso. Se o problema não puder ser resolvido usando a documentação, continue lendo.
 - Você já examinou a **[página de problemas](https://github.com/CIDRAM/CIDRAM/issues)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
-- Você já examinou a **[fórum de suporte do CIDRAM fornecido pela Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
-- Se o problema ainda persistir, informe-nos através da iniciando uma nova discussão na página de problemas ou no fórum de suporte.
+- Se o problema ainda persistir, informe-nos através da iniciando uma nova discussão na página de problemas.
 
 #### Eu fui bloqueado pelo CIDRAM de um site que eu quero visitar! Ajude-me!
 
@@ -933,4 +932,4 @@ Sim. Para fazer isso, você precisará criar um arquivo de módulo personalizado
 ---
 
 
-Última Atualização: 20 Janeiro 2018 (2018.01.20).
+Última Atualização: 5 Fevereiro 2018 (2018.02.05).

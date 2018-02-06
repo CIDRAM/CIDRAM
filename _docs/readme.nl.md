@@ -869,8 +869,7 @@ Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. All
 - Gebruikt u de nieuwste versie van de software? Gebruikt u de nieuwste versies van uw signature bestanden? Indien het antwoord op een van deze twee vragen is nee, probeer eerst om alles te bijwerken, en controleer of het probleem zich blijft voordoen. Als dit aanhoudt, lees verder.
 - Hebt u door alle documentatie gecontroleerd? Zo niet, doe dat dan. Als het probleem niet kan worden opgelost met behulp van de documentatie, lees verder.
 - Hebt u de **[kwesties pagina](https://github.com/CIDRAM/CIDRAM/issues)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
-- Hebt u de **[CIDRAM support forum van Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
-- Als het probleem blijft bestaan, laat het ons dan weten door het creëren van een nieuwe vraag op de kwesties pagina of door het starten van een nieuwe discussie over het support forum.
+- Als het probleem blijft bestaan, laat het ons dan weten door het creëren van een nieuwe vraag op de kwesties pagina.
 
 #### Ik ben geblokkeerd door CIDRAM van een website die ik wil bezoeken! Help alstublieft!
 
@@ -933,4 +932,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 20 Januari 2018 (2018.01.20).
+Laatste Bijgewerkt: 5 Februari 2018 (2018.02.05).

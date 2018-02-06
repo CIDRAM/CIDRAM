@@ -1500,8 +1500,6 @@ Tag: ONLINE S.A.S
 # Refer bgpmon.net/large-scale-bgp-hijack-out-of-india/
 # Refer forums.spybot.info/showthread.php?23632-SPAM-frauds-fakes-and-other-MALWARE-deliveries/page37
 # Refer research.dyn.com/2013/11/mitm-internet-hijacking/
-# Refer spambotsecurity.com/forum/viewtopic.php?f=14&t=3014
-# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=1966
 
 # Announces with "Hosting"
 # Updated: 2017.09.09 / Checked: 2018.01.08
@@ -2636,13 +2634,13 @@ Tag: Astutium Limited
 
 
 # ASN 35908 ("Krypt Technologies").
-# %Listed, Google Malware Dashboard: 11.28%.
+# %Listed, Google Malware Dashboard: 10.93%.
 # %Listed, CleanTalk.org: 49.46%.
-# Stop Forum Spam (SFS) listings: 2,932.
-# Updated: 2016.09.28 / Checked: 2017.09.24
-# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3273
+# Stop Forum Spam (SFS) listings: 1,555.
+# Updated: 2016.09.28 / Checked: 2018.02.04
 
 2607:f180::/31 Deny Cloud
+Origin: US
 Tag: Krypt Technologies
 
 
@@ -3807,12 +3805,14 @@ Tag: Linode, LLC
 
 
 # ASN 22653 ("Cyber Wurx LLC").
-# %Listed, Google Malware Dashboard: 30.73%.
-# %Listed, CleanTalk.org: 21.13%.
-# Stop Forum Spam (SFS) listings: 350.
-# Updated: 2016.06.09 / Checked: 2017.09.24
+# %Listed, Google Malware Dashboard: 1.26%.
+# %Listed, CleanTalk.org: 27.03%.
+# Stop Forum Spam (SFS) listings: 864.
+# Updated: 2018.02.04
 
 2607:1a00::/32 Deny Cloud
+2a0c:8600::/29 Deny Cloud
+Origin: US
 Tag: Cyber Wurx LLC
 
 
@@ -4296,15 +4296,23 @@ Tag: meerfarbig
 
 
 # ASN 29066 ("velia.net Internetdienste GmbH").
-# %Listed, Google Malware Dashboard: 0.78%.
+# %Listed, Google Malware Dashboard: 1.66%.
 # %Listed, CleanTalk.org: 37.22%.
-# Stop Forum Spam (SFS) listings: 1,517.
-# Updated: 2017.09.25
+# Stop Forum Spam (SFS) listings: 10,515.
+# Updated: 2018.02.04
 
-2402:5780::/32 Deny Cloud
-2406:f380::/32 Deny Cloud
 2a00:fa40:3000::/36 Deny Cloud
+2a00:fa40:4000::/36 Deny Cloud
 2a01:7a0::/29 Deny Cloud
+Origin: DE
+2406:f380::/32 Deny Cloud
+Origin: HK
+2a0b:c2c0::/29 Deny Cloud
+Origin: NL
+2402:5780::/32 Deny Cloud
+Origin: SG
+2604:bc80::/32 Deny Cloud
+Origin: US
 Tag: velia.net
 
 
@@ -4762,7 +4770,6 @@ Tag: Hydra Communications
 # %Listed, CleanTalk.org: 72.98%.
 # Stop Forum Spam (SFS) listings: 1,388.
 # Updated: 2017.08.16 / Checked: 2018.01.05
-# Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=4272
 
 2a06:8640::/29 Deny Cloud
 Origin: GB
@@ -4807,6 +4814,18 @@ Origin: US
 Tag: Highwinds
 
 
+# ASN 133229 ("HostPalace Web Solution PVT LTD").
+# %Listed, Google Malware Dashboard: 2.20%.
+# %Listed, CleanTalk.org: 69.80%.
+# Stop Forum Spam (SFS) listings: 2,257.
+# Updated: 2018.02.06
+
+2a04:f780:1000::/36 Deny Cloud
+2a04:f780:2000::/36 Deny Cloud
+Origin: IN
+Tag: HostPalace
+
+
 # ASNs 62, 4558, 19479, 20013, 30023 ("CyrusOne LLC").
 # Some IPs on these ASNs caught probing for database dumps.
 # Updated: 2018.01.12
@@ -4835,26 +4854,29 @@ Tag: WEBSITEWELCOME.COM
 
 
 # ASN 18229 ("CtrlS Datacenters Ltd").
-# %Listed, Google Malware Dashboard: 1.68%.
+# Some IPs on this ASN caught probing for database dumps.
+# %Listed, Google Malware Dashboard: 0.99%.
 # %Listed, CleanTalk.org: 8.96%.
-# Stop Forum Spam (SFS) listings: 178.
-# Updated: 2017.09.25
+# Stop Forum Spam (SFS) listings: 189.
+# Updated: 2018.02.04
 
-2001:df0:458::/48 Deny Cloud
 2001:df0:fc00::/48 Deny Cloud
 2400:3b00::/47 Deny Cloud
 2400:3b00:2::/48 Deny Cloud
 2400:3b00:20::/48 Deny Cloud
+2400:3b00:30::/48 Deny Cloud
+Origin: IN
 Tag: CtrlS Datacenters
 
 
 # ASNs 25234, 41499 ("ACTIVE 24 Sp. z o.o.").
 # Some IPs on these ASNs caught probing for database dumps.
-# %Listed, Google Malware Dashboard: 2.07% (AS25234), 1.27% (AS41499).
-# %Listed, CleanTalk.org: 7.69% (AS25234), 0% (AS41499).
-# Updated: 2017.09.25
+# %Listed, Google Malware Dashboard: 1.16% (AS25234), 0.85% (AS41499).
+# %Listed, CleanTalk.org: 7.69% (AS25234).
+# Updated: 2017.09.25 / Checked: 2018.02.04
 
 2a02:4a8::/32 Deny Cloud
+Origin: CZ
 Tag: ACTIVE 24
 
 

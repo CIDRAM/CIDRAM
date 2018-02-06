@@ -869,8 +869,7 @@ Frekuensi pembaruan bervariasi tergantung pada file tanda tangan. Semua penulis 
 - Apakah Anda menggunakan versi terbaru bagi perangkat lunak? Apakah Anda menggunakan versi terbaru bagi file tanda tangan Anda? Jika jawaban untuk salah satu dari dua pertanyaan ini adalah tidak, mencoba untuk memperbarui segala sesuatu pertama, dan memeriksa apakah masalah terus berlanjut. Jika terus berlanjut, lanjutkan membaca.
 - Apakah Anda memeriksa semua dokumentasi? Jika tidak, silahkan melakukannya. Jika masalah tidak dapat diselesaikan dengan menggunakan dokumentasi, lanjutkan membaca.
 - Apakah Anda memeriksa **[halaman isu-isu](https://github.com/CIDRAM/CIDRAM/issues)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
-- Apakah Anda memeriksa **[forum dukungan bagi CIDRAM yang disediakan oleh Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
-- Jika masalah masih berlanjut, silahkan beritahu kami dengan membuat isu baru di halaman isu-isu atau dengan memulai diskusi baru di forum dukungan.
+- Jika masalah masih berlanjut, silahkan beritahu kami dengan membuat isu baru di halaman isu-isu.
 
 #### Saya diblokir oleh CIDRAM dari situs web yang saya ingin mengunjungi! Tolong bantu!
 
@@ -933,4 +932,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 20 Januari 2018 (2018.01.20).
+Terakhir Diperbarui: 5 Februari 2018 (2018.02.05).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.01.18).
+ * This file: Hindi language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'कोई हस्ताक्षर
 
 $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लिंक:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM के लिए चर्चा मंच (सहायता के लिए, आदि)।</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM के लिए WordPress प्लगइन।</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM के लिए वैकल्पिक डाउनलोड आईना।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – वेबसाइटों को सुरक्षित करने के लिए सरल वेबमास्टर उपकरण का एक संग्रह।</li>

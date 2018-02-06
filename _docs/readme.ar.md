@@ -986,7 +986,6 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
  <li>تحقق مما إذا كنت تستخدم أحدث إصدار من البرنامج والتوقيع الملفات.</li>
  <li>قراءة الوثائق. قد تكون هناك إجابات هناك.</li>
  <li>قراءة <strong><a href="https://github.com/CIDRAM/CIDRAM/issues">صفحة المشكلات</a></strong>. قد تكون هناك إجابات هناك.</li>
- <li>قراءة <strong><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">منتدى الدعم</a></strong>. قد تكون هناك إجابات هناك.</li>
  <li>لا يوجد حتى الآن إجابات؟ اخبرنا عنها. إنشاء مناقشة جديدة مع واحدة من أعلاه.</li>
 </ul></div>
 
@@ -1051,4 +1050,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 20 يناير 2018 (2018.01.20).</div>
+<div dir="rtl">آخر تحديث: 5 فبراير 2018 (2018.02.05).</div>

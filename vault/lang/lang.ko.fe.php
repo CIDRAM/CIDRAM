@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.01.18).
+ * This file: Korean language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있�
 
 $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM 문제 @ GitHub</a> – CIDRAM 문제 페이지 (지원, 원조 등).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM @ Spambot Security</a> – CIDRAM 토론 포럼 (지원, 원조 등).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM 자료 WordPress 플러그인.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>

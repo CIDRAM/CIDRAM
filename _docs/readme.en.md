@@ -869,8 +869,7 @@ Update frequency varies depending on the signature files in question. All mainta
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/CIDRAM/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- Have you checked the **[CIDRAM support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=61)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
+- If the problem still persists, please let us know about it by creating a new issue on the issues page.
 
 #### I've been blocked by CIDRAM from a website that I want to visit! Please help!
 
@@ -933,4 +932,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 20 January 2018 (2018.01.20).
+Last Updated: 5 February 2018 (2018.02.05).

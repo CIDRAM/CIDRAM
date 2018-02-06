@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.01.18).
+ * This file: Japanese language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'アクティブ・シグネチャ・�
 
 $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAMの問題 ＠ GitHub</a> – CIDRAMの問題ページ（サポート、​援助、​など）。</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAMのディスカッションフォーラム（サポート、​援助、​など）。</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM ＠ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM ＠ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>

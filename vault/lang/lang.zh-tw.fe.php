@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.01.18).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.02.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -304,7 +304,6 @@ $CIDRAM['lang']['warning_signatures_1'] = '沒有簽名文件是活動的！';
 
 $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM問題＠GitHub</a> – CIDRAM問題頁面（支持，​協助，​等等）。​</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=61">CIDRAM ＠ Spambot Security</a> – CIDRAM討論論壇（支持，​協助，​等等）。​</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。​</li>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠開源中國社區</a> – CIDRAM頁面託管在開源中國社區。​</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM＠SourceForge</a> – CIDRAM替代下載鏡像。​</li>

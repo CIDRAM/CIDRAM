@@ -93,7 +93,6 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3553
 # %Listed, Google Malware Dashboard: 0.61%.
 # %Listed, CleanTalk.org: 35.65%.
 # Stop Forum Spam (SFS) listings: 104.
@@ -366,7 +365,6 @@ Tag: PP SKS-LUGAN
 
 
 # ASN 13030 ("Init7").
-# Refer spambotsecurity.com/forum/viewtopic.php?f=15&t=3740
 # %Listed, Google Malware Dashboard: 0.62%.
 # %Listed, CleanTalk.org: 18.03%.
 # Stop Forum Spam (SFS) listings: 707.
@@ -393,7 +391,6 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Refer spambotsecurity.com/forum/viewtopic.php?f=7&t=3672
 # Updated: 2017.12.08
 
 2a03:6540::/32 Deny Generic
@@ -556,22 +553,27 @@ recaptcha:
 
 # ASN 45271 ("Idea Cellular Limited").
 # %Listed, CleanTalk.org: 0.19%.
-# %Listed, abuseat.org (CBL-Listed): 22.14%.
-# Stop Forum Spam (SFS) listings: 200.
-# Updated: 2017.09.30
+# %Listed, abuseat.org (CBL-Listed): 23.94%.
+# Stop Forum Spam (SFS) listings: 265.
+# Updated: 2018.02.04
 
-2402:8100:2::/48 Deny Spam
-2402:8100:5::/48 Deny Spam
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
 2402:8100:2080::/42 Deny Spam
 2402:8100:2800::/41 Deny Spam
+2402:8100:3008::/45 Deny Spam
 2402:8100:3010::/44 Deny Spam
 2402:8100:3020::/44 Deny Spam
-2402:8100:3848::/45 Deny Spam
-2402:8100:3850::/45 Deny Spam
+2402:8100:3038::/45 Deny Spam
+2402:8100:3804::/46 Deny Spam
+2402:8100:383c::/46 Deny Spam
+2402:8100:3840::/42 Deny Spam
 2402:8100:38c0::/42 Deny Spam
 2402:8100:3900::/41 Deny Spam
+2402:8100:3984::/46 Deny Spam
+2402:8100:3988::/47 Deny Spam
+2402:8100:398c::/48 Deny Spam
+2402:8100:398e::/47 Deny Spam
 Origin: IN
 Tag: Idea Cellular
 ---
@@ -809,13 +811,13 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 1.98%.
+# %Listed, Google Malware Dashboard: 2.10%.
 # %Listed, CleanTalk.org: 24.97%.
-# %Listed, abuseat.org (CBL-Listed): 0.27%.
-# Stop Forum Spam (SFS) listings: 56,910.
-# Updated: 2016.09.14 / Checked: 2017.09.30
+# %Listed, abuseat.org (CBL-Listed): 0.61%.
+# Stop Forum Spam (SFS) listings: 43,072.
+# Updated: 2018.02.04
 
-2408:8000::/24 Deny Generic
+2408:8000::/20 Deny Generic
 Origin: CN
 Tag: China Backbone 4837
 ---
@@ -1090,13 +1092,14 @@ recaptcha:
 
 # ASN 12389 ("PJSC Rostelecom").
 # Careful about "2002::/16" listing: Never include this in the aggregated list!
-# %Listed, Google Malware Dashboard: 1.02%.
+# %Listed, Google Malware Dashboard: 0.78%.
 # %Listed, CleanTalk.org: 10.87%.
 # %Listed, abuseat.org (CBL-Listed): 1.61%.
-# Stop Forum Spam (SFS) listings: 256,861.
-# Updated: 2017.09.30
+# Stop Forum Spam (SFS) listings: 380,488.
+# Updated: 2018.02.04
 
 2a00:1e88::/32 Deny Spam
+2a01:540::/36 Deny Spam
 2a01:540:2000::/36 Deny Spam
 2a01:540:4000::/36 Deny Spam
 2a01:540:6000::/36 Deny Spam
@@ -1112,13 +1115,13 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 0.41%.
+# %Listed, Google Malware Dashboard: 0.44%.
 # %Listed, CleanTalk.org: 15.69%.
-# %Listed, abuseat.org (CBL-Listed): 0.13%.
-# Stop Forum Spam (SFS) listings: 38,466.
+# %Listed, abuseat.org (CBL-Listed): 0.43%.
+# Stop Forum Spam (SFS) listings: 10,340.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.06.08 / Checked: 2017.09.30
+# Updated: 2017.06.08 / Checked: 2018.02.04
 
 2a00:18c0::/32 Deny Generic
 Origin: RU
@@ -1129,12 +1132,12 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 2.57%.
+# %Listed, Google Malware Dashboard: 4.75%.
 # %Listed, CleanTalk.org: 11.36%.
-# Stop Forum Spam (SFS) listings: 3,208.
+# Stop Forum Spam (SFS) listings: 12,002.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.09.30
+# Updated: 2017.09.30 / Checked: 2018.02.04
 
 2a00:1248::/32 Deny Generic
 Origin: RU
@@ -1145,13 +1148,13 @@ recaptcha:
 
 
 # ASN 31200 ("Novotelecom Ltd").
-# %Listed, Google Malware Dashboard: 2.41%.
+# %Listed, Google Malware Dashboard: 0.22%.
 # %Listed, CleanTalk.org: 12.11%.
-# Stop Forum Spam (SFS) listings: 5,296.
+# Stop Forum Spam (SFS) listings: 3,175.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all the "Novotelecom" ASNs could be problematic.
 # Instead, we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events,
 # etc).
-# Updated: 2017.09.30
+# Updated: 2017.09.30 / Checked: 2018.02.04
 
 2a00:7700::/32 Deny Generic
 Origin: RU

@@ -519,8 +519,9 @@ Tag: GorillaServers, Inc
 
 # Announcing as: "Data Center", "Data Centre" (w/ + w/o space).
 # Various ASNs; Sourced from HE.
-# Updated: 2017.09.25
+# Updated: 2018.02.12
 
+2001:67c:33c::/48 Deny Cloud
 2001:b20::/32 Deny Cloud
 2001:4c48:e::/48 Deny Cloud
 2001:4c48:10::/48 Deny Cloud
@@ -544,25 +545,21 @@ Tag: GorillaServers, Inc
 2404:6300::/32 Deny Cloud
 2404:7e80:1000::/36 Deny Cloud
 2404:7e80:2000::/36 Deny Cloud
+2404:7e80:4000::/36 Deny Cloud
 2404:a700::/32 Deny Cloud
 2405:2500:50::/48 Deny Cloud
 2406:fe00::/32 Deny Cloud
-2407:500::/47 Deny Cloud
-2407:500:4::/47 Deny Cloud
-2407:500:100::/47 Deny Cloud
-2407:500:106::/48 Deny Cloud
-2407:500:167::/48 Deny Cloud
-2407:500:500::/48 Deny Cloud
-2407:500:502::/47 Deny Cloud
-2407:500:1000::/48 Deny Cloud
 2407:7200::/32 Deny Cloud
+2602:fec4::/36 Deny Cloud
 2602:fff8::/36 Deny Cloud
+2604:2ec0::/48 Deny Cloud
 2604:5800::/32 Deny Cloud
 2605:3380::/32 Deny Cloud
 2605:4400::/32 Deny Cloud
 2605:9700::/32 Deny Cloud
 2605:bc00::/32 Deny Cloud
 2606:db00::/32 Deny Cloud
+2607:8880::/32 Deny Cloud
 2607:fd60:c930::/48 Deny Cloud
 2607:fd60:c938::/48 Deny Cloud
 2801:190::/44 Deny Cloud
@@ -575,16 +572,17 @@ Tag: GorillaServers, Inc
 2804:1d40::/32 Deny Cloud
 2804:2520::/32 Deny Cloud
 2804:3cb8::/32 Deny Cloud
+2804:3fe4::/32 Deny Cloud
+2a00:1df0::/32 Deny Cloud
 2a00:7580:10::/48 Deny Cloud
 2a00:a300::/32 Deny Cloud
 2a00:f5c0::/32 Deny Cloud
 2a01:8d20::/32 Deny Cloud
 2a01:9b40::/32 Deny Cloud
 2a01:a4c0::/32 Deny Cloud
-2a02:4e8:4::/47 Deny Cloud
 2a02:1760::/32 Deny Cloud
 2a03:3180:f::/48 Deny Cloud
-2a03:7480::/44 Deny Cloud
+2a03:7480::/43 Deny Cloud
 2a03:7580:1::/48 Deny Cloud
 2a03:7720::/48 Deny Cloud
 2a03:ad40:120::/48 Deny Cloud
@@ -598,13 +596,16 @@ Tag: GorillaServers, Inc
 2a04:cac0::/32 Deny Cloud
 2a04:cac3::/32 Deny Cloud
 2a04:d500::/32 Deny Cloud
+2a05:dfc7:31::/48 Deny Cloud
+2a06:9500:1001::/48 Deny Cloud
+2a06:9500:1002::/47 Deny Cloud
+2a06:9500:1004::/48 Deny Cloud
 2a06:9fc0::/29 Deny Cloud
 2a07:6d40::/29 Deny Cloud
-2a0a:1f43::/32 Deny Cloud
-2a0a:1f44::/32 Deny Cloud
 2a0a:8ec0::/29 Deny Cloud
-2a0b:1d40::/32 Deny Cloud
+2a0b:2380::/32 Deny Cloud
 2a0b:76c0::/29 Deny Cloud
+2a0b:a180::/29 Deny Cloud
 2c0f:f598:1::/48 Deny Cloud
 Tag: Data Center
 
@@ -725,29 +726,34 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.89%.
+# %Listed, Google Malware Dashboard: 0.85%.
 # %Listed, CleanTalk.org: 18.90%.
-# Stop Forum Spam (SFS) listings: 10,281.
-# Updated: 2017.10.17
+# Stop Forum Spam (SFS) listings: 8,345.
+# Updated: 2018.02.12
 
-# Note for when updating: "2002::/16" appears in the announces; This is a "6to4" block, and should never be included as
-# a signature by default. When seen, just delete it from the list.
+# Note for when updating: Some CIDRs appear in the announces that we don't want to be including here as signatures!
+# - "2001::/32"; Provides "Teredo" tunneling.
+# - "2002::/16"; Provides "6to4" bridging connectivity.
+# When seen, just delete them from the list.
 
-2001::/32 Run rules_as6939.php
-2001:470::/32 Run rules_as6939.php
+2602:ff22::/36 Run rules_as6939.php
+2620:10a:80fd::/48 Run rules_as6939.php
+2620:10a:80ff::/48 Run rules_as6939.php
+Origin: CA
 2001:df2:7900::/48 Run rules_as6939.php
-2001:49e8::/32 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
+Origin: HK
+2a06:1c80::/32 Run rules_as6939.php
+Origin: NL
+2001:470::/32 Run rules_as6939.php
+2001:49e8::/32 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
 2602:ff06:725::/48 Run rules_as6939.php
-2602:ff22::/36 Run rules_as6939.php
 2604:a100::/32 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
 2620:0:50c0::/48 Run rules_as6939.php
 2620:ba:4000::/48 Run rules_as6939.php
-2620:10a:80fd::/48 Run rules_as6939.php
-2620:10a:80fe::/47 Run rules_as6939.php
-2a06:1c80::/32 Run rules_as6939.php
+Origin: US
 Tag: Hurricane Electric
 
 
@@ -869,14 +875,18 @@ Tag: Root SA
 
 
 # ASN 11878 ("Tzulo Inc").
-# %Listed, Google Malware Dashboard: 0.18%.
+# %Listed, Google Malware Dashboard: 0.10%.
 # %Listed, CleanTalk.org: 34.24%.
-# Stop Forum Spam (SFS) listings: 188.
-# Updated: 2016.04.25 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 385.
+# Updated: 2018.02.15
 
+2620:15:6000::/48 Deny Cloud
+Origin: CA
+2602:fea7:10::/44 Deny Cloud
 2607:2780::/48 Deny Cloud
 2607:8b00::/32 Deny Cloud
 2607:9000::/32 Deny Cloud
+Origin: US
 Tag: Tzulo Inc
 
 
@@ -951,24 +961,27 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# %Listed, Google Malware Dashboard: 23.15%.
+# %Listed, Google Malware Dashboard: 11.13%.
 # %Listed, CleanTalk.org: 43.72%.
-# Stop Forum Spam (SFS) listings: 8,436.
-# Updated: 2016.01.20 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 8,343.
+# Updated: 2016.01.20 / Checked: 2018.02.15
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
+Origin: US
 Tag: WholeSale Internet
 
 
 # ASN 33387 ("DataShack, LC").
-# %Listed, Google Malware Dashboard: 18.52%.
+# %Listed, Google Malware Dashboard: 12.21%.
 # %Listed, CleanTalk.org: 59.09%.
-# Stop Forum Spam (SFS) listings: 1,120.
-# Updated: 2018.01.15
+# Stop Forum Spam (SFS) listings: 685.
+# Updated: 2018.02.15
 
 2a07:1c44:213::/48 Deny Cloud
 Origin: AT
+2a07:59c6:2000::/48 Deny Cloud
+Origin: IT
 2a0c:7c00::/29 Deny Cloud
 Origin: US
 Tag: DataShack, LC
@@ -1086,14 +1099,29 @@ Origin: US
 Tag: Black Lotus
 
 
-# ASNs 8100, 29761 ("QuadraNet, Inc").
-# %Listed, Google Malware Dashboard: 4.95% (AS8100), 0% (AS29761).
-# %Listed, CleanTalk.org: 84.01% (AS8100), 89.09% (AS29761).
-# Stop Forum Spam (SFS) listings: 60,391 (AS8100), 0 (AS29761).
-# Updated: 2017.10.17
+# ASNs 8100, 29761, 62639 ("QuadraNet, Inc").
+# %Listed, Google Malware Dashboard: 5.41% (AS8100), 2.22% (AS62639).
+# %Listed, CleanTalk.org: 84.01% (AS8100), 89.09% (AS29761), 60.80% (AS62639).
+# Stop Forum Spam (SFS) listings: 82,394 (AS8100).
+# Updated: 2018.02.12
 
+2a07:1c44:1820::/48 Deny Cloud
+Origin: AT
+2a06:e800::/29 Deny Cloud
+Origin: DK
+2a0a:f9c6::/32 Deny Cloud
+Origin: EU
 2400:30c0:1::/48 Deny Cloud
 2400:30c0:2::/48 Deny Cloud
+2a05:b0c6:300::/40 Deny Cloud
+2a07:9944:1a::/47 Deny Cloud
+Origin: GB
+2a07:ca06::/32 Deny Cloud
+Origin: RU
+2a05:4240::/29 Deny Cloud
+Origin: TR
+2a04:6ac0::/29 Deny Cloud
+Origin: UA
 2602:ff75::/36 Deny Cloud
 2602:ff96:2::/48 Deny Cloud
 2602:ff96:4::/48 Deny Cloud
@@ -1106,20 +1134,9 @@ Tag: Black Lotus
 2605:8900:3000::/36 Deny Cloud
 2607:fcd0::/32 Deny Cloud
 2607:ff48::/32 Deny Cloud
-2a04:6ac0::/29 Deny Cloud
-2a05:4240::/29 Deny Cloud
-2a05:b0c6:300::/40 Deny Cloud
-2a06:e800::/29 Deny Cloud
-2a07:1c44:1820::/48 Deny Cloud
-2a07:9944:1a::/47 Deny Cloud
-2a07:ca06::/32 Deny Cloud
-2a0a:6c0::/29 Deny Cloud
-2a0a:8f80::/29 Deny Cloud
-2a0a:b380::/32 Deny Cloud
-2a0a:ebc0::/29 Deny Cloud
-2a0a:f640::/29 Deny Cloud
+2620:134:8004::/47 Deny Cloud
 2a0a:f8c0::/29 Deny Cloud
-2a0a:f9c6::/32 Deny Cloud
+Origin: US
 Tag: QuadraNet, Inc
 
 
@@ -1145,16 +1162,18 @@ Tag: SERVERYOU INC
 
 
 # ASN 25577 ("Connexions4London Ltd").
-# %Listed, Google Malware Dashboard: 1.45%.
+# %Listed, Google Malware Dashboard: 1.13%.
 # %Listed, CleanTalk.org: 18.42%.
-# Stop Forum Spam (SFS) listings: 11.
-# Updated: 2017.03.31 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2017.03.31 / Checked: 2018.02.15
 
+2803:8700:10::/48 Deny Cloud
+Origin: CR
 2001:67c:1c0::/48 Deny Cloud
 2001:67c:580::/48 Deny Cloud
 2001:9d8::/32 Deny Cloud
-2803:8700:10::/48 Deny Cloud
 2a05:2e00::/29 Deny Cloud
+Origin: GB
 Tag: Connexions4London
 
 
@@ -1254,12 +1273,13 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# %Listed, Google Malware Dashboard: 10.68%.
+# %Listed, Google Malware Dashboard: 5.58%.
 # %Listed, CleanTalk.org: 40.11%.
-# Stop Forum Spam (SFS) listings: 719.
-# Updated: 2016.01.23 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 609.
+# Updated: 2016.01.23 / Checked: 2018.02.12
 
 2605:6f80::/40 Deny Cloud
+Origin: US
 Tag: Versaweb, LLC
 
 
@@ -1384,23 +1404,16 @@ Tag: RAM Host
 # ASNs 5521, 8972, 20621, 20738, 20773, 25074, 31100, 50932, 61157.
 # Note: When updating, check for both "Host Europe" and "HostEurope" (no space). There are some additional CIDRs in use
 # that aren't tied to any particular ASN.
-# Updated: 2017.10.17
+# Updated: 2018.02.15
 
 2001:67c:1164::/48 Deny Cloud
 2001:830::/32 Deny Cloud
 2001:aa8::/32 Deny Cloud
 2001:1520::/32 Deny Cloud
-2001:2000:3080:551::/64 Deny Cloud
 2a00:e10::/32 Deny Cloud
 2a00:1158::/32 Deny Cloud
 2a01:488::/32 Deny Cloud
 2a01:a740::/32 Deny Cloud
-2a02:4e8:1::/48 Deny Cloud
-2a02:4e8:4::/47 Deny Cloud
-2a02:4e8:a::/48 Deny Cloud
-2a02:4e8:d::/48 Deny Cloud
-2a02:4e8:14::/48 Deny Cloud
-2a02:4e8:de::/48 Deny Cloud
 2a02:ad0::/29 Deny Cloud
 2a02:cbf0::/30 Deny Cloud
 2a02:cbf4::/32 Deny Cloud
@@ -1409,6 +1422,13 @@ Tag: RAM Host
 2a02:e740::/29 Deny Cloud
 2a04:2f80::/29 Deny Cloud
 2a04:e540::/32 Deny Cloud
+Origin: DE
+2a02:4e8::/32 Deny Cloud
+Origin: ES
+2001:2000:3080:551::/64 Deny Cloud
+Origin: EU
+2a02:4e8::/32 Deny Cloud
+Origin: GB
 Tag: Host Europe GmbH
 
 
@@ -5063,3 +5083,20 @@ Origin: EU
 2a0c:2106::/32 Deny Cloud
 Origin: RU
 Tag: CloudSol
+
+
+# ASN 55720 ("Gigabit Hosting Sdn Bhd").
+# %Listed, Google Malware Dashboard: 6.90%.
+# %Listed, CleanTalk.org: 31.75%.
+# Stop Forum Spam (SFS) listings: 132.
+# Updated: 2018.02.12
+
+2407:a480::/32 Deny Cloud
+Origin: CN
+2400:5680::/32 Deny Cloud
+2402:9500::/32 Deny Cloud
+2407:1100::/32 Deny Cloud
+Origin: MY
+2a0a:da40::/29 Deny Cloud
+Origin: NL
+Tag: Gigabit Hosting

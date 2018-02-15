@@ -341,10 +341,10 @@ Tag: Websupport s.r.o
 
 
 # ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 4.47%.
+# %Listed, Google Malware Dashboard: 1.29%.
 # %Listed, CleanTalk.org: 32.07%.
-# Stop Forum Spam (SFS) listings: 1,536.
-# Updated: 2016.01.21 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 1,514.
+# Updated: 2016.01.21 / Checked: 2018.02.12
 
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
@@ -595,10 +595,10 @@ Tag: Kyivstar
 
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD").
-# %Listed, Google Malware Dashboard: 1.01%.
+# %Listed, Google Malware Dashboard: 1.03%.
 # %Listed, CleanTalk.org: 15.50%.
-# Stop Forum Spam (SFS) listings: 155,176.
-# Updated: 2017.10.17
+# Stop Forum Spam (SFS) listings: 214,867.
+# Updated: 2018.02.12
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
@@ -612,9 +612,7 @@ Tag: Kyivstar
 2a03:7380:2400::/40 Deny Spam
 2a03:7380:2500::/42 Deny Spam
 2a03:7380:2fc0::/42 Deny Spam
-2a03:7380:3000::/42 Deny Spam
-2a03:7380:30c0::/42 Deny Spam
-2a03:7380:3100::/40 Deny Spam
+2a03:7380:3000::/39 Deny Spam
 2a03:7380:4000::/41 Deny Spam
 2a03:7380:4080::/42 Deny Spam
 2a03:7380:5840::/42 Deny Spam
@@ -691,13 +689,16 @@ recaptcha:
 # I think it would be unwise to not block this AS. However, I'm marking it for use with reCAPTCHA, and those CIDRAM
 # users that don't want to block it can drop this section's tag into the ignore list as a means of ignoring this
 # listing if they want to do so. May remove this section in the future if the AS cleans up their act.
-# %Listed, Google Malware Dashboard: 0.30%.
+# %Listed, Google Malware Dashboard: 0.31%.
 # %Listed, CleanTalk.org: 6.76%.
-# %Listed, abuseat.org (CBL-Listed): 5.86%.
-# Stop Forum Spam (SFS) listings: 8,176.
-# Updated: 2017.10.17
+# %Listed, abuseat.org (CBL-Listed): 13.68%.
+# Stop Forum Spam (SFS) listings: 8,248.
+# Updated: 2018.02.12
 
-2001:4490::/38 Deny Spam
+2001:4490:3fc::/46 Deny Spam
+2001:4490:7f8::/45 Deny Spam
+2001:4490:bfc::/46 Deny Spam
+2001:4490:ffc::/46 Deny Spam
 2001:4490:3ffc::/46 Deny Spam
 2001:4490:7000::/46 Deny Spam
 2001:4490:7400::/46 Deny Spam
@@ -707,7 +708,7 @@ recaptcha:
 2001:4490:d040::/46 Deny Spam
 2001:4490:d080::/46 Deny Spam
 2001:4490:d0c0::/46 Deny Spam
-2001:4490:d100::/45 Deny Spam
+2001:4490:d100::/46 Deny Spam
 2001:4490:d140::/46 Deny Spam
 2001:4490:d180::/46 Deny Spam
 2001:4490:d1c0::/46 Deny Spam
@@ -745,11 +746,11 @@ recaptcha:
 2001:4490:eff0::/44 Deny Spam
 2001:4490:f020::/46 Deny Spam
 2001:4490:fffc::/46 Deny Spam
-2600:140f:1000::/64 Deny Spam
-2600:1417:50::/47 Deny Spam
+Origin: IN
+2600:1417:50::/48 Deny Spam
 2600:1417:62::/48 Deny Spam
 2600:1417:71::/48 Deny Spam
-Origin: IN
+Origin: US
 Tag: BSNL
 ---
 recaptcha:

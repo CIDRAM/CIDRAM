@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.01.19).
+ * This file: Front-end functions file (last modified: 2018.02.15).
  */
 
 /**
@@ -1062,16 +1062,17 @@ $CIDRAM['GetAssetPath'] = function ($Asset, $CanFail = false) use (&$CIDRAM) {
 $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Date = date('Y.n.j', $CIDRAM['Now']);
     $Level = 0;
-    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.32') || (
-        !$CIDRAM['VersionCompare']($Version, '7.0.0') && $CIDRAM['VersionCompare']($Version, '7.0.25')
+    $Minor = substr($Version, 0, 4);
+    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.33') || substr($Version, 0, 2) === '6.' || (
+        $Minor === '7.0.' && $CIDRAM['VersionCompare']($Version, '7.0.27')
     ) || (
-        !$CIDRAM['VersionCompare']($Version, '7.1.0') && $CIDRAM['VersionCompare']($Version, '7.1.11')
+        $Minor === '7.1.' && $CIDRAM['VersionCompare']($Version, '7.1.14')
+    ) || (
+        $Minor === '7.2.' && $CIDRAM['VersionCompare']($Version, '7.2.1')
     )) {
         $Level += 2;
     }
-    if ($CIDRAM['VersionCompare']($Version, '7.0.0') || (
-        !$CIDRAM['VersionCompare']($Date, '2017.12.3') && $CIDRAM['VersionCompare']($Version, '7.1.0')
-    ) || (
+    if ($CIDRAM['VersionCompare']($Version, '7.1.0') || (
         !$CIDRAM['VersionCompare']($Date, '2018.12.1') && $CIDRAM['VersionCompare']($Version, '7.2.0')
     )) {
         $Level += 1;
@@ -1242,7 +1243,7 @@ $CIDRAM['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redi
 };
 
 /** Duplication avoidance (front-end updates page). */
-$CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
+$CIDRAM['AppendTests'] = function (&$Component, $ReturnState = false) use (&$CIDRAM) {
     $TestData = $CIDRAM['FECacheGet'](
         $CIDRAM['FE']['Cache'],
         $CIDRAM['Components']['RemoteMeta'][$Component['ID']]['Tests']
@@ -1281,6 +1282,9 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
                 $TestsPassed = '?';
                 $StatusHead .= '<span class="txtOe">❓ ';
             } else {
+                if ($ReturnState) {
+                    return false;
+                }
                 $StatusHead .= '<span class="txtRd">❌ ';
             }
             if (empty($ThisStatus['target_url'])) {
@@ -1288,28 +1292,37 @@ $CIDRAM['AppendTests'] = function (&$Component) use (&$CIDRAM) {
             } else {
                 $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>';
             }
-            $CIDRAM['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
+            if (!$ReturnState) {
+                $CIDRAM['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
+            }
         }
-        if ($TestsTotal === $TestsPassed) {
-            $TestClr = 'txtGn';
-        } else {
-            $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
+        if (!$ReturnState) {
+            if ($TestsTotal === $TestsPassed) {
+                $TestClr = 'txtGn';
+            } else {
+                $TestClr = ($TestsPassed === '?' || $TestsPassed >= ($TestsTotal / 2)) ? 'txtOe' : 'txtRd';
+            }
+            $TestsTotal = sprintf(
+                '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
+                '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
+                '</span><span id="%4$s-hidetests" style="display:none">' .
+                '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
+                '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
+                $TestClr,
+                ($TestsPassed === '?' ? '?' : $CIDRAM['Number_L10N']($TestsPassed)),
+                $CIDRAM['Number_L10N']($TestsTotal),
+                $Component['ID'],
+                $TestDetails
+            );
+            $CIDRAM['AppendToString'](
+                $Component['StatusOptions'],
+                '<hr />',
+                '<div class="s">' . $CIDRAM['lang']['label_tests'] . ' ' . $TestsTotal
+            );
         }
-        $TestsTotal = sprintf(
-            '<span class="%1$s">%2$s/%3$s</span><br /><span id="%4$s-showtests">' .
-            '<input class="auto" type="button" onclick="javascript:showid(\'%4$s-tests\');hideid(\'%4$s-showtests\');showid(\'%4$s-hidetests\')" value="+" />' .
-            '</span><span id="%4$s-hidetests" style="display:none">' .
-            '<input class="auto" type="button" onclick="javascript:hideid(\'%4$s-tests\');showid(\'%4$s-showtests\');hideid(\'%4$s-hidetests\')" value="-" />' .
-            '</span><span id="%4$s-tests" style="display:none"><br />%5$s</span>',
-            $TestClr,
-            ($TestsPassed === '?' ? '?' : $CIDRAM['Number_L10N']($TestsPassed)),
-            $CIDRAM['Number_L10N']($TestsTotal),
-            $Component['ID'],
-            $TestDetails
-        );
-        $CIDRAM['AppendToString']($Component['StatusOptions'], '<hr />',
-            '<div class="s">' . $CIDRAM['lang']['label_tests'] . ' ' . $TestsTotal
-        );
+    }
+    if ($ReturnState) {
+        return true;
     }
 };
 
@@ -1431,7 +1444,10 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                     $CIDRAM['Components']['NewMeta'],
                     $CIDRAM['Components']['NewMetaMatches']
                 ) &&
-                ($CIDRAM['Components']['NewMetaMatches'] = $CIDRAM['Components']['NewMetaMatches'][0])
+                ($CIDRAM['Components']['NewMetaMatches'] = $CIDRAM['Components']['NewMetaMatches'][0]) &&
+                (!$CIDRAM['FE']['CronMode'] || empty(
+                    $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Tests']
+                ) || $CIDRAM['AppendTests']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']], true))
             ) {
                 $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']);
                 $CIDRAM['Arrayify']($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['From']);
@@ -1942,4 +1958,28 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
         }
     }
     return $Out;
+};
+
+/** Assign some basic variables (initial prepwork for most front-end pages). */
+$CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$CIDRAM) {
+
+    /** Set page title. */
+    $CIDRAM['FE']['FE_Title'] = $Title;
+
+    /** Prepare page tooltip/description. */
+    $CIDRAM['FE']['FE_Tip'] = empty(
+        $CIDRAM['FE']['UserRaw']
+    ) ? $Tips : $CIDRAM['ParseVars'](['username' => $CIDRAM['FE']['UserRaw']], $Tips);
+
+    /** Load main front-end JavaScript data. */
+    $CIDRAM['FE']['JS'] = $JS ? $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')) : '';
+
+};
+
+/** Send page output for front-end pages (plus some other final prepwork). */
+$CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
+    if ($CIDRAM['FE']['JS']) {
+        $CIDRAM['FE']['JS'] = "\n<script type=\"text/javascript\">" . $CIDRAM['FE']['JS'] . '</script>';
+    }
+    return $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 };

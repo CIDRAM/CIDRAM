@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.01.19).
+ * This file: Functions file (last modified: 2018.02.02).
  */
 
 /**
@@ -1015,17 +1015,18 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
     if (isset($CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'])) {
         return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'];
     }
-    if (!isset($CIDRAM['Cache']['DNS-Forwards'])) {
-        $CIDRAM['Cache']['DNS-Forwards'] = [];
-    }
-    $CIDRAM['Cache']['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600];
-    $CIDRAM['CacheModified'] = true;
-
-    static $Valid = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
     $Host = urlencode($Host);
     if (($HostLen = strlen($Host)) > 253) {
         return '';
     }
+    static $Valid = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~';
+    if (!isset($CIDRAM['Cache']['DNS-Forwards'])) {
+        $CIDRAM['Cache']['DNS-Forwards'] = [];
+    }
+
+    $CIDRAM['Cache']['DNS-Forwards'][$Host] = ['IPAddr' => '', 'Time' => $CIDRAM['Now'] + 21600];
+    $CIDRAM['CacheModified'] = true;
+
     $URI = 'https://dns.google.com/resolve?name=' . urlencode($Host) . '&random_padding=';
     $PadLen = 204 - $HostLen;
     if ($PadLen < 1) {
@@ -1083,8 +1084,8 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
      * false); Act according to the results and return.
      */
     if ($Pass && (
-        $ReverseOnly || $CIDRAM['DNS-Resolve']($CIDRAM['Hostname']) === $CIDRAM['BlockInfo']['IPAddr'])
-    ) {
+        $ReverseOnly || $CIDRAM['DNS-Resolve']($CIDRAM['Hostname']) === $CIDRAM['BlockInfo']['IPAddr']
+    )) {
         /** It's the real deal; Disable tracking. */
         $CIDRAM['Trackable'] = false;
     } else {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.02.05).
+ * This file: Korean language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = '업로드에 실패했습니다!';
 $CIDRAM['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
 $CIDRAM['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
 $CIDRAM['lang']['response_yes'] = '예';
+$CIDRAM['lang']['state_async_deny'] = '권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오.';
 $CIDRAM['lang']['state_complete_access'] = '전체 액세스';
 $CIDRAM['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';
 $CIDRAM['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
 $CIDRAM['lang']['state_component_is_provisional'] = '구성 요소가 잠정입니다.';
 $CIDRAM['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
 $CIDRAM['lang']['state_ignored'] = '무시 됨';
+$CIDRAM['lang']['state_loading'] = '로드 중 ...';
 $CIDRAM['lang']['state_loadtime'] = '페이지 요청이 <span class="txtRd">%s</span> 초 후에 완료되었습니다.';
 $CIDRAM['lang']['state_logged_in'] = '로그인 있습니다.';
 $CIDRAM['lang']['state_logs_access_only'] = '로그에만 액세스';

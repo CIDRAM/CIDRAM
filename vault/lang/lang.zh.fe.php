@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.02.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = '无法上传！';
 $CIDRAM['lang']['response_verification_failed'] = '验证失败！组件可能已损坏。';
 $CIDRAM['lang']['response_verification_success'] = '验证成功！没有发现问题。';
 $CIDRAM['lang']['response_yes'] = '是';
+$CIDRAM['lang']['state_async_deny'] = '权限不足以执行异步请求。尝试再次登录。';
 $CIDRAM['lang']['state_complete_access'] = '完全访问';
 $CIDRAM['lang']['state_component_is_active'] = '组件是活性。';
 $CIDRAM['lang']['state_component_is_inactive'] = '组件是非活性。';
 $CIDRAM['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $CIDRAM['lang']['state_default_password'] = '警告：它使用标准密码！';
 $CIDRAM['lang']['state_ignored'] = '忽略了';
+$CIDRAM['lang']['state_loading'] = '载入中...';
 $CIDRAM['lang']['state_loadtime'] = '页面请求在<span class="txtRd">%s</span>秒内完成。';
 $CIDRAM['lang']['state_logged_in'] = '目前在线。';
 $CIDRAM['lang']['state_logs_access_only'] = '仅日志访问';

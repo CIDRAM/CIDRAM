@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.02.05).
+ * This file: Arabic language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'فشل لتحميل!';
 $CIDRAM['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
 $CIDRAM['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
 $CIDRAM['lang']['response_yes'] = 'نعم';
+$CIDRAM['lang']['state_async_deny'] = 'أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى.';
 $CIDRAM['lang']['state_complete_access'] = 'الوصول كامل';
 $CIDRAM['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $CIDRAM['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
 $CIDRAM['lang']['state_ignored'] = 'تجاهل';
+$CIDRAM['lang']['state_loading'] = 'جار التحميل...';
 $CIDRAM['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال <span class="txtRd">%s</span> ثوان.';
 $CIDRAM['lang']['state_logged_in'] = 'حاليا على.';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';

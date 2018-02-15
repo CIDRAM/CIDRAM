@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.02.05).
+ * This file: Norwegian language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Opplasting mislyktes!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifisering mislyktes! Komponent kan bli skadet.';
 $CIDRAM['lang']['response_verification_success'] = 'Verifisering suksess! Ingen problemer funnet.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
+$CIDRAM['lang']['state_async_deny'] = 'Tillatelser ikke tilstrekkelig til å utføre asynkrone forespørsler. Prøv å logge inn igjen.';
 $CIDRAM['lang']['state_complete_access'] = 'Komplett tilgang';
 $CIDRAM['lang']['state_component_is_active'] = 'Komponent er aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponent er inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponent er foreløpig.';
 $CIDRAM['lang']['state_default_password'] = 'Advarsel: Bruker standard passordet';
 $CIDRAM['lang']['state_ignored'] = 'Ignorert';
+$CIDRAM['lang']['state_loading'] = 'Laster ...';
 $CIDRAM['lang']['state_loadtime'] = 'Sideforespørsel avsluttet om <span class="txtRd">%s</span> sekunder.';
 $CIDRAM['lang']['state_logged_in'] = 'Logget inn.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bare logger tilgang';

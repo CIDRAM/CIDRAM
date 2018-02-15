@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.02.05).
+ * This file: Italian language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Non riuscito a caricare!';
 $CIDRAM['lang']['response_verification_failed'] = 'Non è riuscito a verificare! Componente potrebbe essere danneggiato.';
 $CIDRAM['lang']['response_verification_success'] = 'Verificato con successo! Nessun problema trovato.';
 $CIDRAM['lang']['response_yes'] = 'Sì';
+$CIDRAM['lang']['state_async_deny'] = 'Autorizzazioni non adeguate per eseguire richieste asincrone. Prova ad accedere di nuovo.';
 $CIDRAM['lang']['state_complete_access'] = 'Accesso completo';
 $CIDRAM['lang']['state_component_is_active'] = 'Componente è attivo.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Componente è inattivo.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Componente è provvisorio.';
 $CIDRAM['lang']['state_default_password'] = 'Avvertimento: Utilizzando la password predefinita!';
 $CIDRAM['lang']['state_ignored'] = 'Ignorato';
+$CIDRAM['lang']['state_loading'] = 'Caricamento in corso...';
 $CIDRAM['lang']['state_loadtime'] = 'Richiesta di pagina completata in <span class="txtRd">%s</span> secondi.';
 $CIDRAM['lang']['state_logged_in'] = 'Connesso.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accesso solo per i log';

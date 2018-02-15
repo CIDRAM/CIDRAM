@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.02.05).
+ * This file: Dutch language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
 $CIDRAM['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
+$CIDRAM['lang']['state_async_deny'] = 'Machtigingen niet geschikt om asynchrone verzoeken uit te voeren. Probeer opnieuw in te loggen.';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';
 $CIDRAM['lang']['state_component_is_active'] = 'Component is actief.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactief.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
 $CIDRAM['lang']['state_ignored'] = 'Genegeerd';
+$CIDRAM['lang']['state_loading'] = 'Bezig met laden...';
 $CIDRAM['lang']['state_loadtime'] = 'Paginaverzoek voltooid in <span class="txtRd">%s</span> seconden.';
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';

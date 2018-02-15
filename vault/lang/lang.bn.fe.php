@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.02.05).
+ * This file: Bangla language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'আপলোড করতে ব্�
 $CIDRAM['lang']['response_verification_failed'] = 'যাচাইয়ের ব্যর্থ! কম্পোনেন্ট ভাঙ্গা হতে পারে।';
 $CIDRAM['lang']['response_verification_success'] = 'যাচাইয়ের সাফল্য! কোন সমস্যা খুঁজে পাওয়া যায় নি।';
 $CIDRAM['lang']['response_yes'] = 'হাঁ';
+$CIDRAM['lang']['state_async_deny'] = 'অনুমতিগুলি অ্যাসিঙ্ক্রোনাস অনুরোধগুলি সঞ্চালনের পর্যাপ্ত নয়। আবার চেষ্টা করুন লগ ইন.';
 $CIDRAM['lang']['state_complete_access'] = 'সম্পূর্ণ প্রবেশাধিকার';
 $CIDRAM['lang']['state_component_is_active'] = 'কম্পোনেন্ট সক্রিয়।';
 $CIDRAM['lang']['state_component_is_inactive'] = 'কম্পোনেন্ট নিষ্ক্রিয়।';
 $CIDRAM['lang']['state_component_is_provisional'] = 'কম্পোনেন্ট অস্থায়ী।';
 $CIDRAM['lang']['state_default_password'] = 'সতর্কতা: ডিফল্ট পাসওয়ার্ড ব্যবহার করে!';
 $CIDRAM['lang']['state_ignored'] = 'উপেক্ষিত';
+$CIDRAM['lang']['state_loading'] = 'লোড হচ্ছে ...';
 $CIDRAM['lang']['state_loadtime'] = 'পৃষ্ঠা অনুরোধ সম্পন্ন <span class="txtRd">%s</span> সেকেন্ড।';
 $CIDRAM['lang']['state_logged_in'] = 'লগ ইন আছে।';
 $CIDRAM['lang']['state_logs_access_only'] = 'লগ প্রবেশাধিকার শুধুমাত্র';

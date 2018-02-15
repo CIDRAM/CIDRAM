@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.02.05).
+ * This file: Japanese language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'アップロードに失敗しまし
 $CIDRAM['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
 $CIDRAM['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
 $CIDRAM['lang']['response_yes'] = 'はい';
+$CIDRAM['lang']['state_async_deny'] = 'あなたのパーミッションは、非同期要求を実行するのに十分ではありません。​もう一度ログインしてみてください。';
 $CIDRAM['lang']['state_complete_access'] = '完全なアクセス';
 $CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
 $CIDRAM['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $CIDRAM['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
 $CIDRAM['lang']['state_ignored'] = '無視された';
+$CIDRAM['lang']['state_loading'] = '読み込んでいます...';
 $CIDRAM['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</span>秒後に完了しました。';
 $CIDRAM['lang']['state_logged_in'] = 'ログインしています。';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';

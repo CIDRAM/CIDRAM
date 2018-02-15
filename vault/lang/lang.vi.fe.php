@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.02.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
 $CIDRAM['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
 $CIDRAM['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
+$CIDRAM['lang']['state_async_deny'] = 'Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại.';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $CIDRAM['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Thành phần này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $CIDRAM['lang']['state_ignored'] = 'Bị bỏ qua';
+$CIDRAM['lang']['state_loading'] = 'Trong tiến trình...';
 $CIDRAM['lang']['state_loadtime'] = 'Yêu cầu trang hoàn thành trong <span class="txtRd">%s</span> giây.';
 $CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.02.05).
+ * This file: Urdu language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکا
 $CIDRAM['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
 $CIDRAM['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
 $CIDRAM['lang']['response_yes'] = 'جی ہاں';
+$CIDRAM['lang']['state_async_deny'] = 'اجازت غیر عارضی درخواستوں کو انجام دینے کے لئے کافی نہیں ہے. دوبارہ لاگ ان کرنے کی کوشش کریں.';
 $CIDRAM['lang']['state_complete_access'] = 'مکمل رسائی';
 $CIDRAM['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'اجزاء عارضی ہے.';
 $CIDRAM['lang']['state_default_password'] = 'انتباہ: ڈیفالٹ پاس ورڈ کو استعمال کرتے ہوئے!';
 $CIDRAM['lang']['state_ignored'] = 'نظر انداز';
+$CIDRAM['lang']['state_loading'] = 'لوڈ کر رہا ہے ...';
 $CIDRAM['lang']['state_loadtime'] = '<span class="txtRd">%s</span> سیکنڈ میں مکمل ہونے والی درخواست کی درخواست.';
 $CIDRAM['lang']['state_logged_in'] = 'لاگ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';

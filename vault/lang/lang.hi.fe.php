@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.02.05).
+ * This file: Hindi language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'अपलोड करने मे�
 $CIDRAM['lang']['response_verification_failed'] = 'सत्यापन असफल! घटक भ्रष्ट हो सकता है।';
 $CIDRAM['lang']['response_verification_success'] = 'सत्यापन सफलता! कोई समस्या नहीं मिली।';
 $CIDRAM['lang']['response_yes'] = 'हाँ';
+$CIDRAM['lang']['state_async_deny'] = 'अनुमतियाँ अतुल्यकालिक अनुरोध करने के लिए पर्याप्त नहीं हैं। फिर से लॉग इन करने का प्रयास करें';
 $CIDRAM['lang']['state_complete_access'] = 'पूरा पहुंच';
 $CIDRAM['lang']['state_component_is_active'] = 'घटक सक्रिय है।';
 $CIDRAM['lang']['state_component_is_inactive'] = 'घटक निष्क्रिय है।';
 $CIDRAM['lang']['state_component_is_provisional'] = 'घटक अस्थायी है।';
 $CIDRAM['lang']['state_default_password'] = 'चेतावनी: डिफ़ॉल्ट पासवर्ड का उपयोग करना!';
 $CIDRAM['lang']['state_ignored'] = 'अवहेलना करना';
+$CIDRAM['lang']['state_loading'] = 'लोड हो रहा है...';
 $CIDRAM['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।';
 $CIDRAM['lang']['state_logged_in'] = 'लॉग इन किया है।';
 $CIDRAM['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';

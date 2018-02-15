@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.02.05).
+ * This file: Thai language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'ล้มเหลวอัปโห
 $CIDRAM['lang']['response_verification_failed'] = 'การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย.';
 $CIDRAM['lang']['response_verification_success'] = 'การตรวจสอบสำเร็จ! ไม่พบปัญหา.';
 $CIDRAM['lang']['response_yes'] = 'ใช่แล้ว';
+$CIDRAM['lang']['state_async_deny'] = 'สิทธิ์ไม่เพียงพอที่จะดำเนินการคำขอแบบอะซิงโครนัส. ลองเข้าสู่ระบบอีกครั้ง.';
 $CIDRAM['lang']['state_complete_access'] = 'เข้าถึงได้อย่างสมบูรณ์';
 $CIDRAM['lang']['state_component_is_active'] = 'คอมโพเนนต์ใช้งานอยู่.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'คอมโพเนนต์ไม่ใช้งาน.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'คอมโพเนนต์เป็นครั้งคราว.';
 $CIDRAM['lang']['state_default_password'] = 'คำเตือน: ใช้ค่าเริ่มต้นรหัสผ่าน!';
 $CIDRAM['lang']['state_ignored'] = 'จะถูกละเลย';
+$CIDRAM['lang']['state_loading'] = 'กำลังโหลด ...';
 $CIDRAM['lang']['state_loadtime'] = 'คำขอหน้าเสร็จสิ้นภายใน <span class="txtRd">%s</span> วินาที.';
 $CIDRAM['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';

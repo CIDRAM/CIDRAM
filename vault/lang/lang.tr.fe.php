@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.02.05).
+ * This file: Turkish language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Yüklenemedi!';
 $CIDRAM['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu! Bileşen bozulmuş olabilir.';
 $CIDRAM['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
 $CIDRAM['lang']['response_yes'] = 'Evet';
+$CIDRAM['lang']['state_async_deny'] = 'İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek için yeterli değil. Tekrar giriş yapmayı deneyin.';
 $CIDRAM['lang']['state_complete_access'] = 'Tam erişim';
 $CIDRAM['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Bileşen geçicidir.';
 $CIDRAM['lang']['state_default_password'] = 'Uyarı: Varsayılan şifreyi kullanıyor!';
 $CIDRAM['lang']['state_ignored'] = 'Kullanılmamış';
+$CIDRAM['lang']['state_loading'] = 'Yükleniyor...';
 $CIDRAM['lang']['state_loadtime'] = 'Sayfa isteği <span class="txtRd">%s</span> saniye içinde tamamlandı.';
 $CIDRAM['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';

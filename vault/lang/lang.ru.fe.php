@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.02.05).
+ * This file: Russian language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Не удалось загрузит
 $CIDRAM['lang']['response_verification_failed'] = 'Ошибка проверки! Компонент может быть поврежден.';
 $CIDRAM['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
 $CIDRAM['lang']['response_yes'] = 'Да';
+$CIDRAM['lang']['state_async_deny'] = 'Разрешения не подходят для выполнения асинхронных запросов. Попробуйте снова войти в систему.';
 $CIDRAM['lang']['state_complete_access'] = 'Полный доступ';
 $CIDRAM['lang']['state_component_is_active'] = 'Компонент активен.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $CIDRAM['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
 $CIDRAM['lang']['state_ignored'] = 'Игнорируется';
+$CIDRAM['lang']['state_loading'] = 'В ходе выполнения...';
 $CIDRAM['lang']['state_loadtime'] = 'Запрос страницы завершен через <span class="txtRd">%s</span> секунд.';
 $CIDRAM['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';

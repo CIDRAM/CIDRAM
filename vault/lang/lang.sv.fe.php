@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.02.05).
+ * This file: Swedish language data for the front-end (last modified: 2018.02.14).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,12 +239,14 @@ $CIDRAM['lang']['response_upload_error'] = 'Misslyckades med att ladda upp!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifiering misslyckades! Komponenten kan vara skadad.';
 $CIDRAM['lang']['response_verification_success'] = 'Verifiering succes! Inga problem hittades.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
+$CIDRAM['lang']['state_async_deny'] = 'Behörigheter är inte tillräckliga för att utföra asynkrona förfrågningar. Försök logga in igen.';
 $CIDRAM['lang']['state_complete_access'] = 'Fullständig tillgång';
 $CIDRAM['lang']['state_component_is_active'] = 'Komponenten är aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponenten är inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponenten är provisorisk.';
 $CIDRAM['lang']['state_default_password'] = 'Varning: Använder standardlösenordet!';
 $CIDRAM['lang']['state_ignored'] = 'Ignorerades';
+$CIDRAM['lang']['state_loading'] = 'Laddar...';
 $CIDRAM['lang']['state_loadtime'] = 'Sidförfrågan färdigställd om <span class="txtRd">%s</span> sekunder.';
 $CIDRAM['lang']['state_logged_in'] = 'Inloggad.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Kan bara komma åt loggfilerna';

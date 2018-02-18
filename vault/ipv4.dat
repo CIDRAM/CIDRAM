@@ -4011,13 +4011,15 @@ Tag: iWeb
 
 
 # ASNs 13926, 22781, 29713, 54203, 62651, 63128 ("Reliable Hosting Services", "Strong Technology, LLC").
-# Updated: 2017.10.17
+# Updated: 2018.02.18
 
+191.96.69.0/24 Deny Cloud
+Origin: CL
+66.231.178.0/24 Deny Cloud
 68.68.32.0/20 Deny Cloud
 98.158.112.0/20 Deny Cloud
 104.36.176.0/21 Deny Cloud
 108.171.96.0/19 Deny Cloud
-154.16.219.0/24 Deny Cloud
 172.96.162.0/23 Deny Cloud
 173.195.0.0/20 Deny Cloud
 173.255.160.0/19 Deny Cloud
@@ -4030,6 +4032,9 @@ Tag: iWeb
 216.131.64.0/18 Deny Cloud
 216.151.184.0/24 Deny Cloud
 216.169.128.0/20 Deny Cloud
+Origin: US
+154.16.219.0/24 Deny Cloud
+Origin: ZA
 Tag: Reliable Hosting
 
 
@@ -4421,8 +4426,8 @@ Tag: Wowrack.com
 
 
 # ASN 197746 ("HyperHosting - Cloud Infrastructure").
-# %Listed, Google Malware Dashboard: 1.36%.
-# Updated: 2016.01.21 / Checked: 2017.10.17
+# %Listed, Google Malware Dashboard: 0.62%.
+# Updated: 2016.01.21 / Checked: 2018.02.18
 
 31.22.112.0/23 Deny Cloud
 31.22.115.0/24 Deny Cloud
@@ -4430,11 +4435,12 @@ Tag: Wowrack.com
 62.1.216.0/24 Deny Cloud
 185.23.88.0/23 Deny Cloud
 194.219.79.0/24 Deny Cloud
+Origin: GR
 Tag: HyperHosting
 
 
 # ASN 25700 ("SWIFT VENTURES Inc").
-# Updated: 2016.08.26 / Checked: 2017.10.17
+# Updated: 2016.08.26 / Checked: 2018.02.18
 
 204.8.32.0/24 Deny Cloud
 204.8.34.0/24 Deny Cloud
@@ -4448,6 +4454,7 @@ Tag: HyperHosting
 208.99.208.0/22 Deny Cloud
 208.99.214.0/23 Deny Cloud
 208.99.216.0/21 Deny Cloud
+Origin: US
 Tag: SWIFT VENTURES Inc
 
 
@@ -5339,12 +5346,13 @@ Tag: eUKhost LTD
 
 
 # ASN 8669 ("Total Web Solutions Ltd").
-# %Listed, Google Malware Dashboard: 1.23%.
-# Updated: 2016.01.22 / Checked: 2017.10.17
+# Not listed on any BLs as of last check. Possible candidate for future removal.
+# Updated: 2016.01.22 / Checked: 2018.02.18
 
 195.206.160.0/23 Deny Cloud
 195.206.162.0/24 Deny Cloud
 195.206.168.0/23 Deny Cloud
+Origin: GB
 Tag: Total Web Solutions
 
 
@@ -5685,17 +5693,17 @@ Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
-# %Listed, Google Malware Dashboard: 3.34%.
+# %Listed, Google Malware Dashboard: 0.26%.
 # %Listed, CleanTalk.org: 33.33%.
-# Stop Forum Spam (SFS) listings: 872.
-# Updated: 2017.03.29 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 3,167.
+# Updated: 2018.02.18
 
 45.119.208.0/22 Deny Cloud
 103.60.12.0/22 Deny Cloud
 104.192.0.0/22 Deny Cloud
 104.219.232.0/21 Deny Cloud
 172.81.128.0/21 Deny Cloud
-209.66.128.0/20 Deny Cloud
+Origin: US
 Tag: DataWagon LLC
 
 
@@ -18791,6 +18799,20 @@ Origin: MY
 98.159.109.0/24 Deny Cloud
 Origin: US
 Tag: Gigabit Hosting
+
+
+# ASNs 43037, 200600 ("Seznam.cz").
+# Legit search engine in the Czech Republic, but prone to sending probe/hacky requests.
+# Websites intended for a Czech audience should add "Seznam.cz" to their ignore.dat file.
+# %Listed, Google Malware Dashboard: 0.46% (AS43037).
+# %Listed, CleanTalk.org: 76.12% (AS43037).
+# Updated: 2016.09.06 / Checked: 2018.02.18
+
+77.75.72.0/21 Deny Cloud
+185.66.188.0/22 Deny Cloud
+185.101.220.0/22 Deny Cloud
+Origin: CZ
+Tag: Seznam.cz
 
 
 # IPs belonging to non-blocked ASNs, caught performing low-level WordPress hack attempts.

@@ -63,18 +63,6 @@ Origin: IR
 Tag: AS48159
 
 
-# ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 0.65%.
-# %Listed, CleanTalk.org: 15.41%.
-# %Listed, abuseat.org (CBL-Listed): 1.15%.
-# Stop Forum Spam (SFS) listings: 912.
-# Updated: 2017.10.20
-
-2001:4188::/29 Deny Generic
-Origin: IR
-Tag: AS12880
-
-
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
 # %Listed, Google Malware Dashboard: 0.29% (AS24940), 0.39% (AS37153).
 # %Listed, CleanTalk.org: 33.97% (AS24940), 32.17% (AS37153).
@@ -537,20 +525,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 23888 ("National Telecommunication Corporation HQ").
-# %Listed, CleanTalk.org: 5.38%.
-# %Listed, abuseat.org (CBL-Listed): 22.55%.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2017.10.20
-
-2407:9e00::/48 Deny Spam
-Origin: PK
-Tag: AS23888
----
-recaptcha:
- enabled: true
-
-
 # ASN 45271 ("Idea Cellular Limited").
 # %Listed, CleanTalk.org: 0.19%.
 # %Listed, abuseat.org (CBL-Listed): 23.94%.
@@ -582,11 +556,11 @@ recaptcha:
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
-# %Listed, Google Malware Dashboard: 3.31% (AS12530), 1.26% (AS15895), 0% (AS35081).
-# %Listed, CleanTalk.org: 13.30% (AS12530), 34.65% (AS15895), 0% (AS35081).
-# %Listed, abuseat.org (CBL-Listed): N/A (AS12530), 0.49% (AS15895), N/A (AS35081).
-# Stop Forum Spam (SFS) listings: 103,401 (AS12530), 7,932,368 (AS15895), 0 (AS35081).
-# Updated: 2016.09.06 / Checked: 2017.10.20
+# %Listed, Google Malware Dashboard: 3.63% (AS12530), 0.79% (AS15895).
+# %Listed, CleanTalk.org: 13.30% (AS12530), 34.65% (AS15895).
+# %Listed, abuseat.org (CBL-Listed): 1.18% (AS15895).
+# Stop Forum Spam (SFS) listings: 541,741 (AS12530), 7,107,841 (AS15895).
+# Updated: 2016.09.06 / Checked: 2018.02.18
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -626,25 +600,14 @@ Tag: AS13188-CDN-LTD
 
 
 # ASN 48666 ("MAROSNET Telecommunication Company LLC").
-# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, Google Malware Dashboard: 0.78%.
 # %Listed, CleanTalk.org: 44.84%.
-# Stop Forum Spam (SFS) listings: 67,517.
-# Updated: 2016.09.06 / Checked: 2017.10.20
+# Stop Forum Spam (SFS) listings: 74,279.
+# Updated: 2016.09.06 / Checked: 2018.02.18
 
 2a02:f680::/29 Deny Spam
 Origin: RU
 Tag: MAROSNET
-
-
-# ASNs 43037, 200600 ("Seznam.cz").
-# %Listed, Google Malware Dashboard: 0.42% (AS43037), 0% (AS200600).
-# %Listed, CleanTalk.org: 76.12% (AS43037), 0% (AS200600).
-# Updated: 2016.09.06 / Checked: 2017.10.20
-
-2a02:598::/32 Deny Spam
-2a06:2140::/29 Deny Spam
-Origin: CZ
-Tag: Seznam.cz
 
 
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
@@ -849,6 +812,35 @@ Origin: TW
 2606:c00:35:2::/64 Deny Generic
 Origin: US
 Tag: DCBG
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 4808 ("China Unicom Beijing Province Network").
+# Interlaces with human access endpoints in Taiwan; Would rather not be including this section here due to the high
+# risk of false positives, but the numerous records of spamming events seen originating from across a wide range of
+# CIDRs tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not
+# considerations that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to
+# the risk of false positives, and I would encourage that any CIDRAM users expecting to receive any traffic from
+# Taiwan, to list this section in their "ignore.dat" file as a means of minimising the potential impact of false
+# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
+# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
+# %Listed, Google Malware Dashboard: 2.82%.
+# %Listed, CleanTalk.org: 29.81%.
+# %Listed, abuseat.org (CBL-Listed): 0.07%.
+# Stop Forum Spam (SFS) listings: 2,129.
+# Updated: 2018.02.18
+
+2408:8000:1000::/36 Deny Generic
+2408:8020::/30 Deny Generic
+2408:8024::/33 Deny Generic
+2408:80e0:4000::/34 Deny Generic
+2408:80e0:8000::/33 Deny Generic
+2408:80f0:4000::/34 Deny Generic
+2408:80f0:8000::/33 Deny Generic
+Origin: CN
+Tag: China Unicom 4808
 ---
 recaptcha:
  enabled: true

@@ -919,15 +919,15 @@ Tag: iWeb
 
 
 # ASNs 13926, 22781, 29713, 54203, 62651, 63128 ("Reliable Hosting Services", "Strong Technology, LLC").
-# Updated: 2017.02.18 / Checked: 2017.10.17
+# Updated: 2018.02.18
 
-2602:ff62:120::/48 Deny Cloud
 2604:4100::/36 Deny Cloud
 2604:c980::/32 Deny Cloud
 2604:ea80::/32 Deny Cloud
 2604:fc80::/32 Deny Cloud
 2606:b300::/32 Deny Cloud
 2607:fb50::/32 Deny Cloud
+Origin: US
 Tag: Reliable Hosting
 
 
@@ -1061,10 +1061,11 @@ Tag: Wowrack.com
 
 
 # ASN 197746 ("HyperHosting - Cloud Infrastructure").
-# %Listed, Google Malware Dashboard: 1.36%.
-# Updated: 2016.01.21 / Checked: 2017.10.17
+# %Listed, Google Malware Dashboard: 0.62%.
+# Updated: 2016.01.21 / Checked: 2018.02.18
 
 2a00:6620:2000::/48 Deny Cloud
+Origin: GR
 Tag: HyperHosting
 
 
@@ -1284,14 +1285,16 @@ Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
-# %Listed, Google Malware Dashboard: 3.34%.
+# %Listed, Google Malware Dashboard: 0.26%.
 # %Listed, CleanTalk.org: 33.33%.
-# Stop Forum Spam (SFS) listings: 872.
-# Updated: 2017.03.29 / Checked: 2017.10.17
+# Stop Forum Spam (SFS) listings: 3,167.
+# Updated: 2017.03.29 / Checked: 2018.02.18
 
-2605:aa80::/32 Deny Cloud
 2a0b:300::/29 Deny Cloud
 2a0b:3700::/29 Deny Cloud
+Origin: DE
+2605:aa80::/32 Deny Cloud
+Origin: US
 Tag: DataWagon LLC
 
 
@@ -5100,3 +5103,16 @@ Origin: MY
 2a0a:da40::/29 Deny Cloud
 Origin: NL
 Tag: Gigabit Hosting
+
+
+# ASNs 43037, 200600 ("Seznam.cz").
+# Legit search engine in the Czech Republic, but prone to sending probe/hacky/flood requests.
+# Websites intended for a Czech audience should add "Seznam.cz" to their ignore.dat file.
+# %Listed, Google Malware Dashboard: 0.46% (AS43037).
+# %Listed, CleanTalk.org: 76.12% (AS43037).
+# Updated: 2016.09.06 / Checked: 2018.02.18
+
+2a02:598::/32 Deny Cloud
+2a06:2140::/29 Deny Cloud
+Origin: CZ
+Tag: Seznam.cz

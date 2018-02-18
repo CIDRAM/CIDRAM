@@ -11,11 +11,10 @@
 # sections from the default CIDRAM signature files, listed here to demonstrate what an ignore list could look like.
 # These examples are commmented out at this time (because they're intended only as examples and nothing more).
 
-# Ignore anonymouse.org
-# Ignore proXPN Direct LLC
 # Ignore CH-NET S.R.L
 # Ignore Hurricane Electric
 # Ignore Internap Network
+# Ignore proXPN Direct LLC
 
 # ---
 # The entries below correspond to signature sections in the signature files that are considered to have a high
@@ -29,32 +28,33 @@
 # allows these users a means of accessing your website while simultaneously maximising the benefit that CIDRAM can
 # provide for you (to the extent of being able to block undesirable non-human traffic, at least).
 
-# Relating to China, Taiwan, Hong Kong and surrounding areas:
+# Relating to China, Taiwan, Hong Kong, and surrounding areas:
 Ignore China Backbone 4134
 Ignore China Backbone 4837
 Ignore China Telecom 4812
 Ignore China Telecom USA
 Ignore China Unicom 4808
 Ignore DCBG
+Ignore Guangdong Mobile
 Ignore Sun Network HK
 Ignore VpsQuan LLC
-Ignore Guangdong Mobile
 
 # Relating to Vietnam:
-Ignore Viettel Corporation
-Ignore VNPT Corp
 Ignore CFPT
+Ignore VNPT Corp
+Ignore Viettel Corporation
 
 # Relating to India:
 Ignore BSNL
 Ignore Bharti Airtel
 Ignore Idea Cellular Ltd
-Ignore Sistema Shyam
+Ignore MEGHBELA BROADBAND
 Ignore SITI NETWORKS LTD
+Ignore Sistema Shyam
 
 # Relating to Pakistan:
-Ignore Pakistan Telecom
 Ignore AUGERE-Pakistan
+Ignore Pakistan Telecom
 
 # Relating to Iran:
 Ignore AS12880
@@ -62,3 +62,6 @@ Ignore AS48159
 
 # Relating to Israel:
 Ignore Bezeq International
+
+# Relating to the Czech Republic:
+Ignore Seznam.cz

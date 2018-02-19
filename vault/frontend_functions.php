@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.02.15).
+ * This file: Front-end functions file (last modified: 2018.02.20).
  */
 
 /**
@@ -785,9 +785,9 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
 
         /** Update the cache. */
         if ($CIDRAM['CacheModified']) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-            fwrite($CIDRAM['Handle'], serialize($CIDRAM['Cache']));
-            fclose($CIDRAM['Handle']);
+            $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+            fwrite($Handle, serialize($CIDRAM['Cache']));
+            fclose($Handle);
         }
 
     }
@@ -1761,15 +1761,16 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Fails']);
             }
         } else {
+            $EOL = (strpos($CIDRAM['Activation']['Config'], "\r\n") !== false) ? "\r\n" : "\n";
             $CIDRAM['Activation']['Config'] = str_replace(
                 [
-                    "\r\nipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'\r\n",
-                    "\r\nipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'\r\n",
-                    "\r\nmodules='" . $CIDRAM['Config']['signatures']['modules'] . "'\r\n"
+                    $EOL . "ipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'" . $EOL,
+                    $EOL . "ipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'" . $EOL,
+                    $EOL . "modules='" . $CIDRAM['Config']['signatures']['modules'] . "'" . $EOL
                 ], [
-                    "\r\nipv4='" . $CIDRAM['Activation']['ipv4'] . "'\r\n",
-                    "\r\nipv6='" . $CIDRAM['Activation']['ipv6'] . "'\r\n",
-                    "\r\nmodules='" . $CIDRAM['Activation']['modules'] . "'\r\n"
+                    $EOL . "ipv4='" . $CIDRAM['Activation']['ipv4'] . "'" . $EOL,
+                    $EOL . "ipv6='" . $CIDRAM['Activation']['ipv6'] . "'" . $EOL,
+                    $EOL . "modules='" . $CIDRAM['Activation']['modules'] . "'" . $EOL
                 ],
                 $CIDRAM['Activation']['Config']
             );
@@ -1818,15 +1819,16 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails']);
             }
         } else {
+            $EOL = (strpos($CIDRAM['Deactivation']['Config'], "\r\n") !== false) ? "\r\n" : "\n";
             $CIDRAM['Deactivation']['Config'] = str_replace(
                 [
-                    "\r\nipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'\r\n",
-                    "\r\nipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'\r\n",
-                    "\r\nmodules='" . $CIDRAM['Config']['signatures']['modules'] . "'\r\n"
+                    $EOL . "ipv4='" . $CIDRAM['Config']['signatures']['ipv4'] . "'" . $EOL,
+                    $EOL . "ipv6='" . $CIDRAM['Config']['signatures']['ipv6'] . "'" . $EOL,
+                    $EOL . "modules='" . $CIDRAM['Config']['signatures']['modules'] . "'" . $EOL
                 ], [
-                    "\r\nipv4='" . $CIDRAM['Deactivation']['ipv4'] . "'\r\n",
-                    "\r\nipv6='" . $CIDRAM['Deactivation']['ipv6'] . "'\r\n",
-                    "\r\nmodules='" . $CIDRAM['Deactivation']['modules'] . "'\r\n"
+                    $EOL . "ipv4='" . $CIDRAM['Deactivation']['ipv4'] . "'" . $EOL,
+                    $EOL . "ipv6='" . $CIDRAM['Deactivation']['ipv6'] . "'" . $EOL,
+                    $EOL . "modules='" . $CIDRAM['Deactivation']['modules'] . "'" . $EOL
                 ],
                 $CIDRAM['Deactivation']['Config']
             );

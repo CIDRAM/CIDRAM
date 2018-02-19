@@ -1,0 +1,246 @@
+[general]
+
+; Human readable file for logging all blocked access attempts. Specify a
+; filename, or leave blank to disable.
+logfile=''
+
+; Apache-style file for logging all blocked access attempts. Specify a
+; filename, or leave blank to disable.
+logfileApache=''
+
+; Serialised file for logging all blocked access attempts. Specify a filename,
+; or leave blank to disable.
+logfileSerialized=''
+
+; Truncate logfiles when they reach a certain size? Value is the maximum size
+; in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The
+; default value of 0KB disables truncation (logfiles can grow indefinitely).
+; Note: Applies to individual logfiles! The size of logfiles is not considered
+; collectively.
+truncate='0KB'
+
+; Your timezone.
+timezone='SYSTEM'
+
+; Timezone offset in minutes.
+timeOffset=0
+
+; The date/time notation format used by CIDRAM. Additional options may be added
+; upon request.
+timeFormat='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
+
+; Where to find the IP address of connecting requests? (Useful for services
+; such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't
+; change this unless you know what you're doing!
+ipaddr='REMOTE_ADDR'
+
+; Which headers should CIDRAM respond with when blocking requests?
+forbid_on_block=200
+
+; Should CIDRAM silently redirect blocked access attempts instead of displaying
+; the "Access Denied" page? If yes, specify the location to redirect blocked
+; access attempts to. If no, leave this variable blank.
+silent_mode=''
+
+; Specify the default language for CIDRAM.
+lang='en'
+
+; How do you prefer numbers to be displayed? Select the example that looks the
+; most correct to you.
+numbers='Latin-1'
+
+; If you wish, you can supply an email address here to be given to users when
+; they're blocked, for them to use as a point of contact for support and/or
+; assistance for in the event of them being blocked mistakenly or in error.
+; WARNING: Whatever email address you supply here will most certainly be
+; acquired by spambots and scrapers during the course of its being used here,
+; and so, it's strongly recommended that if you choose to supply an email
+; address here, that you ensure that the email address you supply here is a
+; disposable address and/or an address that you don't mind being spammed (in
+; other words, you probably don't want to use your primary personal or primary
+; business email addresses).
+emailaddr=''
+
+; How would you prefer the email address to be presented to users?
+emailaddr_display_style='default'
+
+; Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere
+; with certain testing tools (such as PHPUnit, for example) and other CLI-based
+; applications. If you don't need to disable CLI mode, you should ignore this
+; directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
+disable_cli=false
+
+; Disable front-end access? Front-end access can make CIDRAM more manageable,
+; but can also be a potential security risk, too. It's recommended to manage
+; CIDRAM via the back-end whenever possible, but front-end access is provided
+; for when it isn't possible. Keep it disabled unless you need it. False =
+; Enable front-end access; True = Disable front-end access [Default].
+disable_frontend=true
+
+; Maximum number of login attempts.
+max_login_attempts=5
+
+; File for logging front-end login attempts. Specify a filename, or leave blank
+; to disable.
+FrontEndLog=''
+
+; Override "forbid_on_block" when "infraction_limit" is exceeded? When
+; overriding: Blocked requests return a blank page (template files aren't
+; used). 200 = Don't override [Default]; 403 = Override with "403 Forbidden";
+; 503 = Override with "503 Service unavailable".
+ban_override=200
+
+; Include blocked requests from banned IPs in the logfiles? True = Yes
+; [Default]; False = No.
+log_banned_ips=true
+
+; A comma delimited list of DNS servers to use for hostname lookups. Default =
+; "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know
+; what you're doing!
+default_dns='8.8.8.8,8.8.4.4'
+
+; Attempt to verify requests from search engines? Verifying search engines
+; ensures that they won't be banned as a result of exceeding the infraction
+; limit (banning search engines from your website will usually have a negative
+; effect upon your search engine ranking, SEO, etc). When verified, search
+; engines can be blocked as per normal, but won't be banned. When not verified,
+; it's possible for them to be banned as a result of exceeding the infraction
+; limit. Additionally, search engine verification provides protection against
+; fake search engine requests and against potentially malicious entities
+; masquerading as search engines (such requests will be blocked when search
+; engine verification is enabled). True = Enable search engine verification
+; [Default]; False = Disable search engine verification.
+search_engine_verification=true
+
+; Specifies whether the protections normally provided by CIDRAM should be
+; applied to the front-end. True = Yes [Default]; False = No.
+protect_frontend=true
+
+; Disable webfonts? True = Yes; False = No [Default].
+disable_webfonts=false
+
+; Enable maintenance mode? True = Yes; False = No [Default]. Disables
+; everything other than the front-end. Sometimes useful for when updating your
+; CMS, frameworks, etc.
+maintenance_mode=false
+
+; Defines which algorithm to use for all future passwords and sessions.
+; Options: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I
+; (requires PHP >= 7.2.0).
+default_algo='PASSWORD_DEFAULT'
+
+; Track CIDRAM usage statistics? True = Yes; False = No [Default].
+statistics=false
+
+; Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups
+; are normally performed on an "as needed" basis, but can be forced for all
+; requests. Doing so may be useful as a means of providing more detailed
+; information in the logfiles, but may also have a slightly negative effect on
+; performance.
+force_hostname_lookup=false
+
+; Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default];
+; False = No. Note: IPv6 isn't supported by gethostbyaddr.
+allow_gethostbyaddr_lookup=true
+
+
+[signatures]
+
+; A list of the IPv4 signature files that CIDRAM should attempt to parse,
+; delimited by commas.
+ipv4='ipv4.dat,ipv4_bogons.dat,ipv4_custom.dat,ipv4_isps.dat,ipv4_other.dat'
+
+; A list of the IPv6 signature files that CIDRAM should attempt to parse,
+; delimited by commas.
+ipv6='ipv6.dat,ipv6_bogons.dat,ipv6_custom.dat,ipv6_isps.dat,ipv6_other.dat'
+
+; Block CIDRs identified as belonging to webhosting/cloud services? If you
+; operate an API service from your website or if you expect other websites to
+; connect to your website, this should be set to false. If you don't, then,
+; this directive should be set to true.
+block_cloud=true
+
+; Block bogon/martian CIDRs? If you expect connections to your website from
+; within your local network, from localhost, or from your LAN, this directive
+; should be set to false. If you don't expect these such connections, this
+; directive should be set to true.
+block_bogons=false
+
+; Block CIDRs generally recommended for blacklisting? This covers any
+; signatures that aren't marked as being part of any of the other more specific
+; signature categories.
+block_generic=true
+
+; Block CIDRs identified as belonging to proxy services? If you require that
+; users be able to access your website from anonymous proxy services, this
+; should be set to false. Otherwise, if you don't require anonymous proxies,
+; this directive should be set to true as a means of improving security.
+block_proxies=false
+
+; Block CIDRs identified as being high-risk for spam? Unless you experience
+; problems when doing so, generally, this should always be set to true.
+block_spam=true
+
+; A list of module files to load after checking the IPv4/IPv6 signatures,
+; delimited by commas.
+modules=''
+
+; How many seconds to track IPs banned by modules. Default = 604800 (1 week).
+default_tracktime=604800
+
+; Maximum number of infractions an IP is allowed to incur before it is banned
+; by IP tracking. Default = 10.
+infraction_limit=10
+
+; When should infractions be counted? False = When IPs are blocked by modules.
+; True = When IPs are blocked for any reason.
+track_mode=false
+
+
+[recaptcha]
+
+; Defines how CIDRAM should use reCAPTCHA (see documentation).
+usemode=0
+
+; Lock reCAPTCHA to IPs?
+lockip=false
+
+; Lock reCAPTCHA to users?
+lockuser=true
+
+; This value should correspond to the "site key" for your reCAPTCHA, which can
+; be found within the reCAPTCHA dashboard.
+sitekey=''
+
+; This value should correspond to the "secret key" for your reCAPTCHA, which
+; can be found within the reCAPTCHA dashboard.
+secret=''
+
+; Number of hours to remember reCAPTCHA instances.
+expiry=720
+
+; Log all reCAPTCHA attempts? If yes, specify the name to use for the logfile.
+; If no, leave this variable blank.
+logfile=''
+
+; Maximum number of signatures allowed to be triggered when a reCAPTCHA
+; instance is to be offered. Default = 1. If this number is exceeded for any
+; particular request, a reCAPTCHA instance won't be offered.
+signature_limit=1
+
+; Which API to use? V2 or Invisible?
+api='V2'
+
+
+[template_data]
+
+; Default theme to use for CIDRAM.
+theme='default'
+
+; Font magnification. Default = 1.
+Magnification=1
+
+; CSS file URL for custom themes.
+css_url=''
+
+

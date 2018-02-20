@@ -202,11 +202,11 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# %Listed, Google Malware Dashboard: 0.90%.
+# %Listed, Google Malware Dashboard: 2.02%.
 # %Listed, CleanTalk.org: 12.33%.
-# %Listed, abuseat.org (CBL-Listed): 0.70%.
-# Stop Forum Spam (SFS) listings: 74,563.
-# Updated: 2017.03.22 / Checked: 2017.10.23
+# %Listed, abuseat.org (CBL-Listed): 0.93%.
+# Stop Forum Spam (SFS) listings: 81,222.
+# Updated: 2017.03.22 / Checked: 2018.02.20
 
 2404:7000::/32 Deny Spam
 Origin: PK
@@ -613,7 +613,7 @@ Tag: MAROSNET
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
 # Legit/real human endpoint ISP with high levels of spam/abuse reports listed at various DBs. List in the "ignore.dat"
 # file if the signature section causes any problems.
-# Updated: 2017.04.26 / Checked: 2017.10.20
+# Updated: 2017.04.26 / Checked: 2018.02.20
 
 2402:800::/32 Deny Spam
 Origin: VN
@@ -1238,3 +1238,20 @@ recaptcha:
 2001:67c:289c::/48 Deny Spam
 Origin: SE
 Tag: Foreningen
+
+
+# ASN 31148 ("Freenet Ltd").
+# %Listed, CleanTalk.org: 13.65%.
+# Stop Forum Spam (SFS) listings: 698.
+# Legit human endpoint/ISP based in Ukraine, but have been encountering numerous hack attempts from their ASN in recent
+# months. Marking this section for use with reCAPTCHA, because we don't want to accidentally block human users if we
+# can avoid it at all. HUGE numbers of nefarious listings at MegaRBL.net and AbuseIPDB.com! Can't really afford to just
+# ignore it. Ukrainian CIDRAM users should probably add the name of this section to their ignore.dat file.
+# Updated: 2018.02.20
+
+2a00:1228::/32 Deny Generic
+Origin: UA
+Tag: Freenet Ltd
+---
+recaptcha:
+ enabled: true

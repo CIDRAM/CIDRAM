@@ -443,12 +443,13 @@ Tag: SoftLayer
 
 
 # ASN 54444 ("Avesta Networks LLC").
-# %Listed, Google Malware Dashboard: 0.68%.
+# %Listed, Google Malware Dashboard: 0.19%.
 # %Listed, CleanTalk.org: 38.81%.
-# Stop Forum Spam (SFS) listings: 35.
-# Updated: 2017.05.08 / Checked: 2017.10.26
+# Stop Forum Spam (SFS) listings: 42.
+# Updated: 2017.05.08 / Checked: 2018.02.24
 
 2604:d780::/38 Deny Cloud
+Origin: CA
 Tag: Avesta Networks LLC
 
 
@@ -633,11 +634,12 @@ Tag: AS42807
 
 # ASNs 34360, 41079, 48760, 198414 ("H88 S.A").
 # Webhosting company based in Poland.
-# Updated: 2016.01.18 / Checked: 2017.10.26
+# Updated: 2016.01.18 / Checked: 2018.02.24
 
 2a01:4660::/32 Deny Cloud
 2a02:1778::/32 Deny Cloud
 2a07:1cc0::/29 Deny Cloud
+Origin: PL
 Tag: H88 S.A
 
 
@@ -1242,10 +1244,10 @@ Tag: Private Layer INC
 
 # ASN 40676 ("Psychz Networks").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 5.45%.
+# %Listed, Google Malware Dashboard: 5.98%.
 # %Listed, CleanTalk.org: 48.19%.
-# Stop Forum Spam (SFS) listings: 10,713.
-# Updated: 2018.01.05
+# Stop Forum Spam (SFS) listings: 13,486.
+# Updated: 2018.02.24
 
 2001:df2:c600::/48 Deny Cloud
 Origin: AU
@@ -1254,12 +1256,15 @@ Origin: CL
 2a07:9944:1c::/48 Deny Cloud
 2a0a:6700::/45 Deny Cloud
 Origin: GB
-2a06:a006:c5::/48 Deny Cloud
+2a06:a006:c4::/47 Deny Cloud
 2a06:a006:f0::/47 Deny Cloud
 Origin: IS
+2a0b:9a03::/32 Deny Cloud
 2a0c:2200::/29 Deny Cloud
 Origin: RU
+2602:fe90::/47 Deny Cloud
 2602:fece::/36 Deny Cloud
+2602:ff62:fff::/48 Deny Cloud
 2602:ff96:5::/48 Deny Cloud
 2602:ff96:9::/48 Deny Cloud
 2602:ff96:12::/48 Deny Cloud
@@ -1269,6 +1274,7 @@ Origin: RU
 2602:ff96:1fe::/48 Deny Cloud
 2602:ffb0:11::/48 Deny Cloud
 2602:ffc5:10b::/48 Deny Cloud
+2602:ffc5:10c::/48 Deny Cloud
 2602:ffc5:110::/44 Deny Cloud
 2602:ffc5:120::/43 Deny Cloud
 2604:980:1::/48 Deny Cloud
@@ -4748,15 +4754,19 @@ Tag: IO Capital Princess
 
 
 # ASN 51765 ("Oy Creanova Hosting Solutions Ltd").
-# %Listed, Google Malware Dashboard: 0.11%.
+# %Listed, Google Malware Dashboard: 0.09%.
 # %Listed, CleanTalk.org: 43.80%.
-# Stop Forum Spam (SFS) listings: 5,343.
-# Updated: 2017.10.29
+# Stop Forum Spam (SFS) listings: 7,975.
+# Updated: 2017.10.29 / Checked: 2018.02.24
 
-2001:978:7400::/48 Deny Cloud
 2a02:2808:5401::/48 Deny Cloud
-2a04:5200:68::/48 Deny Cloud
+Origin: CZ
+2001:978:7400::/48 Deny Cloud
+Origin: DE  
 2a06:1700:1::/48 Deny Cloud
+Origin: RO
+2a04:5200:68::/48 Deny Cloud
+Origin: RU
 Tag: Oy Creanova Hosting
 
 
@@ -5020,12 +5030,14 @@ Tag: Infium, UAB
 
 
 # ASNs 30548, 31034, 199653, 200185 ("Aruba S.p.A" / "Aruba SAS").
-# Updated: 2018.01.10
+# Ranges change frequently / Should update often.
+# Updated: 2018.02.24
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
 Origin: FR
 2a00:6d40::/31 Deny Cloud
+2a00:6d42::/32 Deny Cloud
 2a01:5940::/35 Deny Cloud
 2a01:5940:2000::/36 Deny Cloud
 2a02:4ae0:a::/48 Deny Cloud

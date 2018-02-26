@@ -8,7 +8,8 @@
 - 5. [IM PAKET ENTHALTENE DATEIEN](#SECTION5)
 - 6. [EINSTELLUNGEN](#SECTION6)
 - 7. [SIGNATURENFORMAT](#SECTION7)
-- 8. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION8)
+- 8. [BEKANNTE KOMPATIBILITÄTSPROBLEME](#SECTION8)
+- 9. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION9)
 
 *Hinweis für Übersetzungen: Im Falle von Fehlern (z.B, Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
 
@@ -813,7 +814,15 @@ Variable | Beschreibung
 ---
 
 
-### 8. <a name="SECTION8"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
+### 8. <a name="SECTION8"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
+
+Die folgenden Pakete und Produkte haben sich als inkompatibel mit CIDRAM erwiesen:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -932,4 +941,4 @@ Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUN
 ---
 
 
-Zuletzt aktualisiert: 5 Februar 2018 (2018.02.05).
+Zuletzt aktualisiert: 25 Februar 2018 (2018.02.25).

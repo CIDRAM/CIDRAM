@@ -9,7 +9,8 @@
  <li>٥. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة</a></li>
  <li>٦. <a href="#SECTION6">خياراتالتكوين/التهيئة</a></li>
  <li>٧. <a href="#SECTION7">شكل/تنسيق التوقيع</a></li>
- <li>٨. <a href="#SECTION8">أسئلة وأجوبة (FAQ)</a></li>
+ <li>٨. <a href="#SECTION8">مشاكل التوافق المعروفة</a></li>
+ <li>٩. <a href="#SECTION9">أسئلة وأجوبة (FAQ)</a></li>
 </ul></div>
 
 <div dir="rtl"><em>ملاحظة بخصوص ترجمة: في حالة الأخطاء (على سبيل المثال، التناقضات بين الترجمات، الأخطاء المطبعية، إلخ)، النسخة الإنجليزية من هذه الوثيقة هو تعتبر النسخة الأصلية وموثوق. إذا وجدت أي أخطاء، سيكون موضع ترحيب مساعدتكم في تصحيحها.</em></div>
@@ -930,7 +931,17 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 ---
 
 
-### <div dir="rtl">٨. <a name="SECTION8"></a>أسئلة وأجوبة (FAQ)</div>
+### <div dir="rtl">٨. <a name="SECTION8"></a>مشاكل التوافق المعروفة</div>
+
+<div dir="rtl">تم العثور على الحزم والمنتجات التالية لتكون غير متوافقة مع CIDRAM:</div>
+<div dir="rtl"><ul>
+ <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
+</ul></div>
+
+---
+
+
+### <div dir="rtl">٩. <a name="SECTION9"></a>أسئلة وأجوبة (FAQ)</div>
 
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ما هو "التوقيع"؟<br /><br /></div>
 
@@ -1050,4 +1061,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 فبراير 2018 (2018.02.05).</div>
+<div dir="rtl">آخر تحديث: 25 فبراير 2018 (2018.02.25).</div>

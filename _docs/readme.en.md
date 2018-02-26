@@ -8,7 +8,8 @@
 - 5. [FILES INCLUDED IN THIS PACKAGE](#SECTION5)
 - 6. [CONFIGURATION OPTIONS](#SECTION6)
 - 7. [SIGNATURE FORMAT](#SECTION7)
-- 8. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION8)
+- 8. [KNOWN COMPATIBILITY PROBLEMS](#SECTION8)
+- 9. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION9)
 
 *Note regarding translations: In the event of errors (e.g., discrepancies between translations, typos, etc), the English version of the README is considered the original and authoritative version. If you find any errors, your assistance in correcting them would be welcomed.*
 
@@ -813,7 +814,15 @@ Variable | Description
 ---
 
 
-### 8. <a name="SECTION8"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
+### 8. <a name="SECTION8"></a>KNOWN COMPATIBILITY PROBLEMS
+
+The following packages and products have been found to be incompatible with CIDRAM:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
@@ -932,4 +941,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 5 February 2018 (2018.02.05).
+Last Updated: 25 February 2018 (2018.02.25).

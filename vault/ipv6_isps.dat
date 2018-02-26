@@ -154,19 +154,22 @@ Tag: H1 LLC
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 1.28%.
+# %Listed, Google Malware Dashboard: 1.06%.
 # %Listed, CleanTalk.org: 42.44%.
-# Stop Forum Spam (SFS) listings: 33,654.
-# Updated: 2017.11.02
+# Stop Forum Spam (SFS) listings: 49,499.
+# Updated: 2018.02.26
 
-2602:ff84:8::/48 Deny Generic
+2a06:b380::/29 Deny Generic
+Origin: GB
 2a03:5180::/47 Deny Generic
 2a03:5180:2::/48 Deny Generic
-2a03:5180:4::/47 Deny Generic
-2a03:5180:6:3::/64 Deny Generic
-2a03:5180:6:4::/64 Deny Generic
-2a06:b380::/29 Deny Generic
+2a03:5180:4::/46 Deny Generic
+2a03:5180:8::/48 Deny Generic
 Origin: RO
+2a0d:cd00::/29 Deny Generic
+Origin: RU
+2602:ff84:8::/48 Deny Generic
+Origin: US
 Tag: Voxility LLC
 
 
@@ -440,12 +443,13 @@ Tag: Trader soft LLC
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 1.40%.
+# %Listed, Google Malware Dashboard: 1.12%.
 # %Listed, CleanTalk.org: 40.11%.
-# Stop Forum Spam (SFS) listings: 103.
-# Updated: 2017.11.07
+# Stop Forum Spam (SFS) listings: 130.
+# Updated: 2018.02.26
 
-2402:1780:1::/48 Deny Generic
+2a0a:6040::/29 Deny Generic
+Origin: GL
 2a04:3880::/30 Deny Generic
 2a04:4280::/29 Deny Generic
 2a04:8340::/29 Deny Generic
@@ -464,9 +468,10 @@ Tag: Trader soft LLC
 2a06:a80::/29 Deny Generic
 2a06:9140::/29 Deny Generic
 2a07:21c0::/29 Deny Generic
-2a0a:6040::/29 Deny Generic
 2a0b:a280::/32 Deny Generic
 Origin: TR
+2402:1780:1::/48 Deny Generic
+Origin: TW
 Tag: DGN TEKNOLOJI
 
 
@@ -760,6 +765,20 @@ Origin: US
 2c0f:f7a8:8210::/47 Deny Generic
 Origin: ZA
 Tag: China Backbone 4134
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 36678 ("CHINA TELECOM (AMERICAS) CORPORATION").
+# %Listed, Google Malware Dashboard: 7.61%.
+# %Listed, CleanTalk.org: 30.77%.
+# Stop Forum Spam (SFS) listings: 12.
+# Updated: 2018.02.26
+
+2605:9d80:a000::/48 Deny Generic
+Origin: US
+Tag: China Telecom USA
 ---
 recaptcha:
  enabled: true

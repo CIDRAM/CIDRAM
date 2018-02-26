@@ -8,7 +8,8 @@
 - 5. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION5)
 - 6. [OPÇÕES DE CONFIGURAÇÃO](#SECTION6)
 - 7. [FORMATO DE ASSINATURAS](#SECTION7)
-- 8. [PERGUNTAS MAIS FREQUENTES (FAQ)](#SECTION8)
+- 8. [PROBLEMAS DE COMPATIBILIDADE CONHECIDOS](#SECTION8)
+- 9. [PERGUNTAS MAIS FREQUENTES (FAQ)](#SECTION9)
 
 *Nota relativa às traduções: Em caso de erros (por exemplo, discrepâncias entre as traduções, erros de digitação, etc), a versão em inglês do README é considerada a versão original e autorizada. Se você encontrar algum erro, a sua ajuda em corrigi-los seria bem-vinda.*
 
@@ -813,7 +814,15 @@ Variável | Descrição
 ---
 
 
-### 8. <a name="SECTION8"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
+### 8. <a name="SECTION8"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
+
+Os seguintes pacotes e produtos foram considerados incompatíveis com o CIDRAM:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>O que é uma "assinatura"?
 
@@ -932,4 +941,4 @@ Sim. Para fazer isso, você precisará criar um arquivo de módulo personalizado
 ---
 
 
-Última Atualização: 5 Fevereiro 2018 (2018.02.05).
+Última Atualização: 25 Fevereiro 2018 (2018.02.25).

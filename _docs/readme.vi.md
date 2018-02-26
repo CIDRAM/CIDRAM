@@ -8,7 +8,8 @@
 - 5. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION5)
 - 6. [TÙY CHỌN CHO CẤU HÌNH](#SECTION6)
 - 7. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION7)
-- 8. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION8)
+- 8. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION8)
+- 9. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION9)
 
 *Lưu ý về bản dịch: Trong trường hợp có sai sót (ví dụ, sự khác biệt giữa bản dịch, lỗi chính tả, vv), phiên bản tiếng Anh của README được coi là phiên bản gốc và có thẩm quyền. Nếu bạn tìm thấy bất kỳ lỗi, giúp đỡ của bạn trong việc điều chỉnh họ sẽ được hoan nghênh.*
 
@@ -813,7 +814,15 @@ Biến | Chi tiết
 ---
 
 
-### 8. <a name="SECTION8"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
+### 8. <a name="SECTION8"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
+
+Các gói và sản phẩm sau đã được tìm thấy là không tương thích với CIDRAM:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
@@ -932,4 +941,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Hai 2018 (2018.02.05).
+Lần cuối cập nhật: 25 Tháng Hai 2018 (2018.02.25).

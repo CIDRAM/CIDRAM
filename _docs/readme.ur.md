@@ -9,7 +9,8 @@
  <li>٥. <a href="#SECTION5">فائل اس پیکیج میں شامل</a></li>
  <li>٦. <a href="#SECTION6">ترتیب کے اختیارات</a></li>
  <li>٧. <a href="#SECTION7">دستخط فارمیٹ</a></li>
- <li>٨. <a href="#SECTION8">اکثر پوچھے گئے سوالات (FAQ)</a></li>
+ <li>٨. <a href="#SECTION8">جانا جاتا مطابقت کے مسائل</a></li>
+ <li>٩. <a href="#SECTION9">اکثر پوچھے گئے سوالات (FAQ)</a></li>
 </ul></div>
 
 <div dir="rtl"><em>ترجمہ سلسلے نوٹ: کی غلطیوں کی صورت میں (جیسے، ترجمہ، typos کے، وغیرہ کے درمیان تضادات)، مجھے پڑھ کے انگریزی ورژن اصل اور مستند ورژن سمجھا جاتا ہے. آپ کو کسی بھی کی غلطیوں کو تلاش کریں تو ان کو ٹھیک کرنے میں آپ کی مدد کا خیر مقدم کیا جائے گا.</em></div>
@@ -930,7 +931,17 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 ---
 
 
-### <div dir="rtl">٨. <a name="SECTION8">اکثر پوچھے گئے سوالات (FAQ)</div>
+### <div dir="rtl">٨. <a name="SECTION8"></a>جانا جاتا مطابقت کے مسائل</div>
+
+<div dir="rtl">مندرجہ ذیل پیکجوں اور مصنوعات کو CIDRAM کے ساتھ مطابقت پذیر ہونے کے لئے مل گیا ہے:</div>
+<div dir="rtl"><ul>
+ <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
+</ul></div>
+
+---
+
+
+### <div dir="rtl">٩. <a name="SECTION9">اکثر پوچھے گئے سوالات (FAQ)</div>
 
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ایک "دستخط" کیا ہے؟<br /><br /></div>
 
@@ -1050,4 +1061,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 5 فروری 2018 (2018.02.05).</div>
+<div dir="rtl">آخری تازہ کاری: 25 فروری 2018 (2018.02.25).</div>

@@ -8,7 +8,8 @@
 - 5. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION5)
 - 6. [OPSI KONFIGURASI](#SECTION6)
 - 7. [FORMAT TANDA TANGAN](#SECTION7)
-- 8. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION8)
+- 8. [MASALAH KOMPATIBILITAS DIKETAHUI](#SECTION8)
+- 9. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION9)
 
 *Catatan tentang terjemahan: Dalam hal kesalahan (misalnya, perbedaan antara terjemahan, kesalahan cetak, dll), versi bahasa Inggris dari README dianggap versi asli dan berwibawa. Jika Anda menemukan kesalahan, bantuan Anda dalam mengoreksi mereka akan disambut.*
 
@@ -813,7 +814,15 @@ Variabel | Deskripsi
 ---
 
 
-### 8. <a name="SECTION8"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
+### 8. <a name="SECTION8"></a>MASALAH KOMPATIBILITAS DIKETAHUI
+
+Paket dan produk berikut telah ditemukan tidak bisa dioperasikan dengan CIDRAM:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Apa yang "tanda tangan"?
 
@@ -932,4 +941,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 5 Februari 2018 (2018.02.05).
+Terakhir Diperbarui: 25 Februari 2018 (2018.02.25).

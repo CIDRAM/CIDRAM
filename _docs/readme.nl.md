@@ -8,7 +8,8 @@
 - 5. [BESTANDEN IN DIT PAKKET](#SECTION5)
 - 6. [CONFIGURATIEOPTIES](#SECTION6)
 - 7. [SIGNATURE FORMAAT](#SECTION7)
-- 8. [VEELGESTELDE VRAGEN (FAQ)](#SECTION8)
+- 8. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION8)
+- 9. [VEELGESTELDE VRAGEN (FAQ)](#SECTION9)
 
 *Opmerking over vertalingen: In geval van fouten (bv, verschillen tussen vertalingen, typefouten, ezv), de Engels versie van de README wordt beschouwd als het origineel en gezaghebbende versie. Als u vinden elke fouten, uw hulp bij het corrigeren van hen zou worden toegejuicht.*
 
@@ -813,7 +814,15 @@ Variabele | Beschrijving
 ---
 
 
-### 8. <a name="SECTION8"></a>VEELGESTELDE VRAGEN (FAQ)
+### 8. <a name="SECTION8"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
+
+De volgende pakketten en producten zijn incompatibel met CIDRAM:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>VEELGESTELDE VRAGEN (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
@@ -932,4 +941,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 5 Februari 2018 (2018.02.05).
+Laatste Bijgewerkt: 25 Februari 2018 (2018.02.25).

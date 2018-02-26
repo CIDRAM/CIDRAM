@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.4.1-DEV+18049735
+ Version: 1.4.1
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -174,7 +174,7 @@ IPv4:
   zh: 标准IPv4签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2018.54.479
+ Version: 2018.56.033
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -184,7 +184,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 98fb0fa602d0d06eddb67885097c5f6d:537747
+   - 399e0f6227136d988eab314b69caa692:540508
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description:
@@ -208,7 +208,7 @@ IPv4-Bogons:
   zh: 标准IPv4签名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2018.48.620
+ Version: 2018.56.033
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -218,7 +218,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - ef15907a7fb523df869992b693f566a4:106317
+   - 332446c571d1f560952cc4ec47386b68:106422
  Reannotate: components.dat
 IPv4-ISPs:
  Extended Description:
@@ -242,7 +242,7 @@ IPv4-ISPs:
   zh: 标准IPv4签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2018.50.678
+ Version: 2018.56.033
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -252,7 +252,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 221494934fed6e5a0f185fb0978727de:215571
+   - 188d58866086c010ce481b143b5fec1a:216236
  Reannotate: components.dat
 IPv4-Other:
  Extended Description:
@@ -310,7 +310,7 @@ IPv6:
   zh: 标准IPv6签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.54.479
+ Version: 2018.56.033
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -320,7 +320,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - eae4ef66d198c617269dd1320f40302d:137689
+   - a17a50573e42cdb3e0507659dc4a2e1d:138599
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description:
@@ -344,7 +344,7 @@ IPv6-Bogons:
   zh: 标准IPv6签名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.48.620
+ Version: 2018.56.033
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -354,7 +354,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - 054b1af057b926a59745a650e3895eb8:2563882
+   - 941926cc8064ca94ec4467c7519869e6:2569792
  Reannotate: components.dat
 IPv6-ISPs:
  Extended Description:
@@ -378,7 +378,7 @@ IPv6-ISPs:
   zh: 标准IPv6签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Medium
- Version: 2018.50.678
+ Version: 2018.56.033
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -388,7 +388,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - d0a7291ce879beed219c4390ca7cb2f6:39561
+   - 323c64c3b7edcaa624fc240a0a9cdafe:39902
  Reannotate: components.dat
 IPv6-Other:
  Extended Description:
@@ -493,7 +493,7 @@ l10n/ar:
 l10n/bn:
  Name: L10N: বাংলা
  Extended Description: বাংলা ভাষার তথ্য
- Version: 2018.45.232
+ Version: 2018.56.033
  Minimum Required: 1.2.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -509,7 +509,7 @@ l10n/bn:
    - lang/lang.bn.php
   Checksum:
    - a0a5493fd4037e5bfa6849237fad109c:7234
-   - 5898b6db42fc658c0b22fc6bd0042ee7:56855
+   - b54ad841c6692b314c21e832cea82065:56883
    - fec1ce1419a9c5de0418b11a1fc7f6ae:8033
  Reannotate: components.dat
 l10n/de:

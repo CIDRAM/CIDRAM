@@ -8,7 +8,8 @@
 - 5. [文件在包](#SECTION5)
 - 6. [配置选项](#SECTION6)
 - 7. [签名格式](#SECTION7)
-- 8. [常见问题（FAQ）](#SECTION8)
+- 8. [已知的兼容问题](#SECTION8)
+- 9. [常见问题（FAQ）](#SECTION9)
 
 *翻译注释：如果错误（例如，​翻译差异，​错别字，​等等），​英文版这个文件是考虑了原版和权威版。​如果您发现任何错误，​您的协助纠正他们将受到欢迎。​*
 
@@ -814,7 +815,15 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 ---
 
 
-### 8. <a name="SECTION8"></a>常见问题（FAQ）
+### 8. <a name="SECTION8"></a>已知的兼容问题
+
+下列软件包和产品被发现与CIDRAM不兼容：
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>常见问题（FAQ）
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>什么是“签名”？
 
@@ -933,4 +942,4 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 ---
 
 
-最后更新：2018年2月5日。
+最后更新：2018年2月25日。

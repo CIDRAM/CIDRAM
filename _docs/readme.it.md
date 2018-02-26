@@ -8,7 +8,8 @@
 - 5. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION5)
 - 6. [OPZIONI DI CONFIGURAZIONE](#SECTION6)
 - 7. [FIRMA FORMATO](#SECTION7)
-- 8. [DOMANDE FREQUENTI (FAQ)](#SECTION8)
+- 8. [CONOSCIUTI COMPATIBILITÀ PROBLEMI](#SECTION8)
+- 9. [DOMANDE FREQUENTI (FAQ)](#SECTION9)
 
 *Nota per quanto riguarda le traduzioni: In caso di errori (per esempio, discrepanze tra le traduzioni, errori di battitura, ecc), la versione Inglese del README è considerata la versione originale e autorevole. Se trovate errori, il vostro aiuto a correggerli sarebbe il benvenuto.*
 
@@ -813,7 +814,15 @@ Variabile | Descrizione
 ---
 
 
-### 8. <a name="SECTION8"></a>DOMANDE FREQUENTI (FAQ)
+### 8. <a name="SECTION8"></a>CONOSCIUTI COMPATIBILITÀ PROBLEMI
+
+I seguenti pacchetti e prodotti sono stati trovati incompatibili con CIDRAM:
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>DOMANDE FREQUENTI (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Che cos'è una "firma"?
 
@@ -932,4 +941,4 @@ Sì. Per fare ciò, dovrai creare un file modulo personalizzato. *Vedere: [NOZIO
 ---
 
 
-Ultimo Aggiornamento: 5 Febbraio 2018 (2018.02.05).
+Ultimo Aggiornamento: 25 Febbraio 2018 (2018.02.25).

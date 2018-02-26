@@ -8,7 +8,8 @@
 - 5. [본 패키지에 포함 된 파일](#SECTION5)
 - 6. [설정 옵션](#SECTION6)
 - 7. [서명 포맷](#SECTION7)
-- 8. [자주 묻는 질문 (FAQ)](#SECTION8)
+- 8. [적합성 문제](#SECTION8)
+- 9. [자주 묻는 질문 (FAQ)](#SECTION9)
 
 *번역에 노트 : 오류가 발생하는 경우 (예를 들어, 번역 사이의 불일치, 오타, 등등), README의 영어 버전은 원본과 권위 버전이라고 생각됩니다. 오류를 발견하면이를 해결하려면 협력을 환영하는 것이다.*
 
@@ -813,7 +814,15 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 ---
 
 
-### 8. <a name="SECTION8"></a>자주 묻는 질문 (FAQ)
+### 8. <a name="SECTION8"></a>적합성 문제
+
+다음 패키지 및 제품이 CIDRAM과 호환되지 않습니다.
+- __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+
+---
+
+
+### 9. <a name="SECTION9"></a>자주 묻는 질문 (FAQ)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"서명"이란 무엇입니까?
 
@@ -932,4 +941,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2018년 2월 5일.
+최종 업데이트 : 2018년 2월 25일.

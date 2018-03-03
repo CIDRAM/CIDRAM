@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.02.14).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'Cũng kiểm tra đối với mô-đun
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_displaying'] = 'Hiển thị <span class="txtRd">%s</span> mục.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'Hiển thị <span class="txtRd">%1$s</span> mục có chứa "%2$s".';
+$CIDRAM['lang']['label_expires'] = 'Hết hạn: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'Số lượng sử dụng đĩa bởi CIDRAM: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩ
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $CIDRAM['lang']['label_hide'] = 'Che giấu';
+$CIDRAM['lang']['label_never'] = 'Không bao giờ';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_other'] = 'Khác';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Tập tin chữ ký IPv4 kích hoạt';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'Kiểm tra:';
 $CIDRAM['lang']['label_total'] = 'Toàn bộ';
 $CIDRAM['lang']['label_unstable'] = 'Không ổn định mới nhất:';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';
+$CIDRAM['lang']['link_cache_data'] = 'Dữ liệu cache';
 $CIDRAM['lang']['link_cidr_calc'] = 'Máy Tính CIDR';
 $CIDRAM['lang']['link_config'] = 'Cấu Hình';
 $CIDRAM['lang']['link_documentation'] = 'Tài Liệu';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'Xác minh không thành công
 $CIDRAM['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
 $CIDRAM['lang']['state_async_deny'] = 'Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'Bộ nhớ cache là trống.';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $CIDRAM['lang']['state_component_is_active'] = 'Thành phần này đang kích hoạt.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kiểm tra đối
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Không ẩn các IP bị cấm/chặn';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Ẩn các IP bị cấm/chặn';
 $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM.';
+$CIDRAM['lang']['tip_cache_data'] = 'Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Xin chào, {username}.<br />Máy tính CIDR cho phép bạn để tính toán mà các CIDR một địa chỉ IP thuộc về.';
 $CIDRAM['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình CIDRAM từ các front-end.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Nhập đại lý người sử dụng (user agent) ở đây (tùy chọn).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho 
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $CIDRAM['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Tài Khoản';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Dữ liệu cache';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Máy Tính CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Cấu Hình';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Quản Lý Tập Tin';

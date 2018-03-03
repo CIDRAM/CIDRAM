@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.02.14).
+ * This file: Urdu language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'ماڈیولز کے خلاف بھی ٹ
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> آئٹم دکھایا.', '<span class="txtRd">%s</span> اشیاء دکھایا.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> آئٹم دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.', '<span class="txtRd">%1$s</span> اشیاء دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.'];
+$CIDRAM['lang']['label_expires'] = 'ختم ہو جاتی ہے: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM ڈسک استعمال: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $CIDRAM['lang']['label_hide'] = 'چھپائیں';
+$CIDRAM['lang']['label_never'] = 'کبھی نہیں';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $CIDRAM['lang']['label_other'] = 'دیگر';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'فعال IPv4 دستخط فائلیں';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'ٹیسٹ:';
 $CIDRAM['lang']['label_total'] = 'تمام';
 $CIDRAM['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';
+$CIDRAM['lang']['link_cache_data'] = 'کیش ڈیٹا';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR کیلکولیٹر';
 $CIDRAM['lang']['link_config'] = 'کنفگریشن';
 $CIDRAM['lang']['link_documentation'] = 'دستاویزی';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'توثیقی ناکام ہو�
 $CIDRAM['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
 $CIDRAM['lang']['response_yes'] = 'جی ہاں';
 $CIDRAM['lang']['state_async_deny'] = 'اجازت غیر عارضی درخواستوں کو انجام دینے کے لئے کافی نہیں ہے. دوبارہ لاگ ان کرنے کی کوشش کریں.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'کیش خالی ہے.';
 $CIDRAM['lang']['state_complete_access'] = 'مکمل رسائی';
 $CIDRAM['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'دستخط فائ
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'ممنوعہ/بلاک شدہ IP کو چھپانا مت چھوڑیں';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'ممنوعہ/بلاک شدہ IP چھپائیں';
 $CIDRAM['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ CIDRAM سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
+$CIDRAM['lang']['tip_cache_data'] = 'ہیلو، {username}.<br />یہاں آپ کیش کے مندرجات کا جائزہ لے سکتے ہیں.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'ہیلو، {username}.<br />CIDR کیلکولیٹر آپ کو ایک IP ایڈریس CIDRs جس کا حساب کرنے کی اجازت دیتا ہے کا ایک عنصر ہے.';
 $CIDRAM['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے صفحے آپ کو سامنے کے آخر میں سے CIDRAM لئے ترتیب میں ترمیم کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_custom_ua'] = 'یہاں صارف ایجنٹ (user agent) درج کریں (یہ اختیاری ہے).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفحہ �
 $CIDRAM['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $CIDRAM['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو نصب کی اجازت دیتا ہے کے لئے، انسٹال، اور CIDRAM (بنیادی پیکج، دستخط، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – اکاؤنٹس';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – کیش ڈیٹا';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR کیلکولیٹر';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – کنفگریشن';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – فائل مینیجر';

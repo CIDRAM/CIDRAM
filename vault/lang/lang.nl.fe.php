@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.02.14).
+ * This file: Dutch language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'Test ook tegen modules.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versie gebruikt:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> item weergeven.', '<span class="txtRd">%s</span> items weergeven.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> item weergeven dat "%2$s" citeert.', '<span class="txtRd">%1$s</span> items weergeven dat "%2$s" citeren.'];
+$CIDRAM['lang']['label_expires'] = 'Verloopt: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Vals positieve risico: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data en tijdelijke bestanden';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-schijfgebruik: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totaal schijfgebruik: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totale schijfruimte: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $CIDRAM['lang']['label_hide'] = 'Verbergen';
+$CIDRAM['lang']['label_never'] = 'Nooit';
 $CIDRAM['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $CIDRAM['lang']['label_other'] = 'Anders';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Actieve IPv4 signature bestanden';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'Testen:';
 $CIDRAM['lang']['label_total'] = 'Totaal';
 $CIDRAM['lang']['label_unstable'] = 'Laatste onstabiele:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
+$CIDRAM['lang']['link_cache_data'] = 'Cachegegevens';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
 $CIDRAM['lang']['link_config'] = 'Configuratie';
 $CIDRAM['lang']['link_documentation'] = 'Documentatie';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'Verificatie mislukt! Componen
 $CIDRAM['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_async_deny'] = 'Machtigingen niet geschikt om asynchrone verzoeken uit te voeren. Probeer opnieuw in te loggen.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'De cache is leeg.';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';
 $CIDRAM['lang']['state_component_is_active'] = 'Component is actief.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactief.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Controleer tegen 
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Verberg verboden/geblokkeerde IP\'s niet';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Verberg verboden/geblokkeerde IP\'s';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend.';
+$CIDRAM['lang']['tip_cache_data'] = 'Hallo, {username}.<br />Hier kunt u de inhoud van de cache bekijken.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallo, {username}.<br />De CIDR calculator stelt u in staat om te berekenen welke CIDRs een IP-adres is een factor.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor CIDRAM te modificeren vanaf de frontend.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Voer hier user agent in (optioneel).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Hallo, {username}.<br />Deze pagina bevat e
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Notitie: Statistische tracking is momenteel uitgeschakeld, maar kan via de configuratiepagina worden ingeschakeld.';
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, ezv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Cachegegevens';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuratie';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Bestandsbeheer';

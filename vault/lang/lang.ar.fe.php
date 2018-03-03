@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.02.14).
+ * This file: Arabic language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'أيضا اختبار ضد وحدات.
 $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
 $CIDRAM['lang']['label_displaying'] = 'عرض <span class="txtRd">%s</span> إدخالات.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'عرض <span class="txtRd">%1$s</span> إدخالات تشير إلى "%2$s".';
+$CIDRAM['lang']['label_expires'] = 'تنتهي: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM إستخدام القرص: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام ا
 $CIDRAM['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $CIDRAM['lang']['label_hide'] = 'إخفائه';
+$CIDRAM['lang']['label_never'] = 'أبدا';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $CIDRAM['lang']['label_other'] = 'آخر';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'ملفات التوقيع IPv4 النشطة';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'اختبارات:';
 $CIDRAM['lang']['label_total'] = 'مجموع';
 $CIDRAM['lang']['label_unstable'] = 'أحدث غير مستقرة:';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
+$CIDRAM['lang']['link_cache_data'] = 'بيانات ذاكرة التخزين المؤقت';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR حاسبة';
 $CIDRAM['lang']['link_config'] = 'التكوين';
 $CIDRAM['lang']['link_documentation'] = 'توثيق';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'فشل التحقق! يمكن
 $CIDRAM['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
 $CIDRAM['lang']['response_yes'] = 'نعم';
 $CIDRAM['lang']['state_async_deny'] = 'أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'ذاكرة التخزين المؤقت فارغة.';
 $CIDRAM['lang']['state_complete_access'] = 'الوصول كامل';
 $CIDRAM['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'تحقق من م�
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'لا تخفي عناوين IP المحظورة';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'تخفي عناوين IP المحظورة';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
+$CIDRAM['lang']['tip_cache_data'] = 'مرحبا، {username}.<br />هنا يمكنك مراجعة محتويات ذاكرة التخزين المؤقت.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل.';
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';
 $CIDRAM['lang']['tip_custom_ua'] = 'أدخل وكيل المستخدم (user agent) هنا (انها اختيارية).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذ
 $CIDRAM['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $CIDRAM['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – حسابات';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – بيانات ذاكرة التخزين المؤقت';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR حاسبة';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – مدير الملفات';

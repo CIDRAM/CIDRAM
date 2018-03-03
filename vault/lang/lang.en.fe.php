@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.02.14).
+ * This file: English language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'Also test against modules.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM version used:';
 $CIDRAM['lang']['label_displaying'] = ['Displaying <span class="txtRd">%s</span> entry.', 'Displaying <span class="txtRd">%s</span> entries.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['Displaying <span class="txtRd">%1$s</span> entry that cites "%2$s".', 'Displaying <span class="txtRd">%1$s</span> entries that cite "%2$s".'];
+$CIDRAM['lang']['label_expires'] = 'Expires: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'False positive risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cache data and temporary files';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk usage: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Total disk usage: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Total disk space: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Component updates metadata';
 $CIDRAM['lang']['label_hide'] = 'Hide';
+$CIDRAM['lang']['label_never'] = 'Never';
 $CIDRAM['lang']['label_os'] = 'Operating system used:';
 $CIDRAM['lang']['label_other'] = 'Other';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Active IPv4 signature files';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'Tests:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Latest unstable:';
 $CIDRAM['lang']['link_accounts'] = 'Accounts';
+$CIDRAM['lang']['link_cache_data'] = 'Cache Data';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Calculator';
 $CIDRAM['lang']['link_config'] = 'Configuration';
 $CIDRAM['lang']['link_documentation'] = 'Documentation';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'Verification failed! Componen
 $CIDRAM['lang']['response_verification_success'] = 'Verification success! No problems found.';
 $CIDRAM['lang']['response_yes'] = 'Yes';
 $CIDRAM['lang']['state_async_deny'] = 'Permissions not adequate to perform asynchronous requests. Try logging in again.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'The cache is empty.';
 $CIDRAM['lang']['state_complete_access'] = 'Complete access';
 $CIDRAM['lang']['state_component_is_active'] = 'Component is active.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactive.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Check against sig
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Don\'t hide banned/blocked IPs';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Hide banned/blocked IPs';
 $CIDRAM['lang']['tip_accounts'] = 'Hello, {username}.<br />The accounts page allows you to control who can access the CIDRAM front-end.';
+$CIDRAM['lang']['tip_cache_data'] = 'Hello, {username}.<br />Here you can review the contents of the cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hello, {username}.<br />The CIDR calculator allows you to calculate which CIDRs an IP address is a factor of.';
 $CIDRAM['lang']['tip_config'] = 'Hello, {username}.<br />The configuration page allows you to modify the configuration for CIDRAM from the front-end.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Enter user agent here (optional).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Hello, {username}.<br />This page shows som
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Note: Statistics tracking is currently disabled, but can be enabled via the configuration page.';
 $CIDRAM['lang']['tip_updates'] = 'Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Accounts';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Cache Data';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Calculator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';

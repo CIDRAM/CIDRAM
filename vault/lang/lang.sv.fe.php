@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.02.14).
+ * This file: Swedish language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'Test även mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-version som används:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> föremål visas.', '<span class="txtRd">%s</span> föremålen visas.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> föremål visas som citerar "%2$s".', '<span class="txtRd">%1$s</span> föremålen visas som citerar "%2$s".'];
+$CIDRAM['lang']['label_expires'] = 'Utgår: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Falsk positiv risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Cacherdata och tillfälliga filer';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM-diskanvändning: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Totalt diskanvändning: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Totalt diskutrymme: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponentuppdateringsmetadata';
 $CIDRAM['lang']['label_hide'] = 'Dölja';
+$CIDRAM['lang']['label_never'] = 'Aldrig';
 $CIDRAM['lang']['label_os'] = 'Operativsystem som används:';
 $CIDRAM['lang']['label_other'] = 'Andra';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Aktiva IPv4-signaturfiler';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'Tester:';
 $CIDRAM['lang']['label_total'] = 'Totalt';
 $CIDRAM['lang']['label_unstable'] = 'Senaste instabil:';
 $CIDRAM['lang']['link_accounts'] = 'Konton';
+$CIDRAM['lang']['link_cache_data'] = 'Cacherdata';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Kalkylator';
 $CIDRAM['lang']['link_config'] = 'Konfiguration';
 $CIDRAM['lang']['link_documentation'] = 'Dokumentation';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'Verifiering misslyckades! Kom
 $CIDRAM['lang']['response_verification_success'] = 'Verifiering succes! Inga problem hittades.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
 $CIDRAM['lang']['state_async_deny'] = 'Behörigheter är inte tillräckliga för att utföra asynkrona förfrågningar. Försök logga in igen.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'Cacheminnet är tomt.';
 $CIDRAM['lang']['state_complete_access'] = 'Fullständig tillgång';
 $CIDRAM['lang']['state_component_is_active'] = 'Komponenten är aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponenten är inaktiv.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kontrollera signa
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Göm inte förbjudna/blockerade IP-adresser';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Göm förbjudna/blockerade IP-adresser';
 $CIDRAM['lang']['tip_accounts'] = 'Hallå, {username}.<br />Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan.';
+$CIDRAM['lang']['tip_cache_data'] = 'Hallå, {username}.<br />Här kan du granska innehållet i cacheminnet.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallå, {username}.<br />CIDR-kalkylatorn kan beräkna CIDR-faktorerna för en IP-adress.';
 $CIDRAM['lang']['tip_config'] = 'Hallå, {username}.<br />Du kan ändra konfigurationen för CIDRAM från front-enden konfigurationssida.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Ange användaragent (user agent) här (valfritt).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Hallå, {username}.<br />Den här sidan vis
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan.';
 $CIDRAM['lang']['tip_updates'] = 'Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i CIDRAM (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Konton';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Cacherdata';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR-Kalkylator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfiguration';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Filhanterare';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.02.14).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = '也用模塊進行測試。';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_displaying'] = '顯示<span class="txtRd">%1$s</span>個項目。';
 $CIDRAM['lang']['label_displaying_that_cite'] = '顯示<span class="txtRd">%1$s</span>個包含『%2$s』的項目。';
+$CIDRAM['lang']['label_expires'] = '過期： ';
 $CIDRAM['lang']['label_false_positive_risk'] = '假陽性風險：';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '緩存數據和臨時文件';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM使用的磁盤空間： ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間：
 $CIDRAM['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '組件更新元數據';
 $CIDRAM['lang']['label_hide'] = '隱藏';
+$CIDRAM['lang']['label_never'] = '決不';
 $CIDRAM['lang']['label_os'] = '目前使用操作系統：';
 $CIDRAM['lang']['label_other'] = '其他';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = '活動IPv4簽名文件';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = '測試：';
 $CIDRAM['lang']['label_total'] = '總';
 $CIDRAM['lang']['label_unstable'] = '最新不穩定：';
 $CIDRAM['lang']['link_accounts'] = '賬戶';
+$CIDRAM['lang']['link_cache_data'] = '緩存數據';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR計算器';
 $CIDRAM['lang']['link_config'] = '配置';
 $CIDRAM['lang']['link_documentation'] = '文檔';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = '驗證失敗！組件可能�
 $CIDRAM['lang']['response_verification_success'] = '驗證成功！沒有發現問題。';
 $CIDRAM['lang']['response_yes'] = '是';
 $CIDRAM['lang']['state_async_deny'] = '權限不足以執行異步請求。嘗試再次登錄。';
+$CIDRAM['lang']['state_cache_is_empty'] = '緩存是空的。';
 $CIDRAM['lang']['state_complete_access'] = '完全訪問';
 $CIDRAM['lang']['state_component_is_active'] = '組件是活性。';
 $CIDRAM['lang']['state_component_is_inactive'] = '組件是非活性。';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '檢查簽名文�
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '不要隱藏被禁止/阻止的IP';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '隱藏被禁止/阻止的IP';
 $CIDRAM['lang']['tip_accounts'] = '你好，​{username}。​<br />賬戶頁面允許您控制誰可以訪問CIDRAM前端。';
+$CIDRAM['lang']['tip_cache_data'] = '你好，​{username}。<br />在這裡您可以查看緩存的內容。';
 $CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR計算器允許您計算IP地址屬於哪個CIDR。';
 $CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置頁面允許您修改CIDRAM配置從前端。';
 $CIDRAM['lang']['tip_custom_ua'] = '在這裡輸入用戶代理【user agent】（可選的）。';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = '你好，​{username}。​<br />此頁面
 $CIDRAM['lang']['tip_statistics_disabled'] = '注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。';
 $CIDRAM['lang']['tip_updates'] = '你好，​{username}。​<br />更新頁面允許您安裝，​卸載，​和更新CIDRAM的各種組件（核心包，​簽名，​L10N文件，​等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 帳戶';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – 緩存數據';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR計算器';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 文件管理器';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.02.14).
+ * This file: Russian language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'Также протестируйте 
 $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:';
 $CIDRAM['lang']['label_displaying'] = ['Отображение <span class="txtRd">%s</span> запись.', 'Отображение <span class="txtRd">%s</span> записи.', 'Отображение <span class="txtRd">%s</span> записей.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['Отображение <span class="txtRd">%1$s</span> запись, которая ссылается на «%2$s».', 'Отображение <span class="txtRd">%1$s</span> записи, которые ссылаются на «%2$s».', 'Отображение <span class="txtRd">%1$s</span> записей, которые ссылаются на «%2$s».'];
+$CIDRAM['lang']['label_expires'] = 'Истекает: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Риск ложноположительный: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Данные кэша и временные файлы';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM Использование диска: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Все использован�
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
 $CIDRAM['lang']['label_hide'] = 'Скрывать';
+$CIDRAM['lang']['label_never'] = 'Никогда';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_other'] = 'Другие';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Активные файлы сигнатур IPv4';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'Испытания:';
 $CIDRAM['lang']['label_total'] = 'Всего';
 $CIDRAM['lang']['label_unstable'] = 'Последние нестабильный:';
 $CIDRAM['lang']['link_accounts'] = 'Учетными Записями';
+$CIDRAM['lang']['link_cache_data'] = 'Данные Кэша';
 $CIDRAM['lang']['link_cidr_calc'] = 'Калькулятор CIDR';
 $CIDRAM['lang']['link_config'] = 'Конфигурация';
 $CIDRAM['lang']['link_documentation'] = 'Документация';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'Ошибка проверки
 $CIDRAM['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
 $CIDRAM['lang']['response_yes'] = 'Да';
 $CIDRAM['lang']['state_async_deny'] = 'Разрешения не подходят для выполнения асинхронных запросов. Попробуйте снова войти в систему.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'Кэш пуст.';
 $CIDRAM['lang']['state_complete_access'] = 'Полный доступ';
 $CIDRAM['lang']['state_component_is_active'] = 'Компонент активен.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Проверят�
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Не скрывайте запрещенные/заблокированные IP-адреса';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Скрывайте запрещенные/заблокированные IP-адреса';
 $CIDRAM['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к CIDRAM фронтенд.';
+$CIDRAM['lang']['tip_cache_data'] = 'Привет, {username}.<br />Здесь вы можете просмотреть содержимое кеша.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Привет, {username}.<br />Калькулятор CIDR позволяет рассчитать которые CIDRs IP-адрес принадлежит.';
 $CIDRAM['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для CIDRAM от фронтенд.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Введите здесь пользовательский агент (user agent) – необязательно.';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Привет, {username}.<br />На это�
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Заметка: Отслеживание статистики в настоящее время отключено, но может быть включено через страницу конфигурации.';
 $CIDRAM['lang']['tip_updates'] = 'Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов CIDRAM (пакет ядра, сигнатуры, L10N файлы, итд).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Учетными Записями';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Данные Кэша';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Калькулятор CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Конфигурация';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Файл Менеджер';

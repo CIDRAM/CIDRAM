@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.02.14).
+ * This file: Korean language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = '모듈에 대해서도 테스트하십
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전 :';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> 항목이 표시됩니다.';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s"라고 표시된 <span class="txtRd">%1$s</span> 개의 항목이 표시됩니다.';
+$CIDRAM['lang']['label_expires'] = '만료일 : ';
 $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM 디스크 사용 : ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $CIDRAM['lang']['label_hide'] = '숨기다';
+$CIDRAM['lang']['label_never'] = '못';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제 :';
 $CIDRAM['lang']['label_other'] = '다른';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = '활성 IPv4 서명 파일';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = '테스트 :';
 $CIDRAM['lang']['label_total'] = '합계';
 $CIDRAM['lang']['label_unstable'] = '최신 불안정 :';
 $CIDRAM['lang']['link_accounts'] = '계정';
+$CIDRAM['lang']['link_cache_data'] = '데이터 캐쉬';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR 계산기';
 $CIDRAM['lang']['link_config'] = '구성';
 $CIDRAM['lang']['link_documentation'] = '문서';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = '검증 실패했습니다! �
 $CIDRAM['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
 $CIDRAM['lang']['response_yes'] = '예';
 $CIDRAM['lang']['state_async_deny'] = '권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오.';
+$CIDRAM['lang']['state_cache_is_empty'] = '캐시가 비어 있습니다.';
 $CIDRAM['lang']['state_complete_access'] = '전체 액세스';
 $CIDRAM['lang']['state_component_is_active'] = '구성 요소가 활성화됩니다.';
 $CIDRAM['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '서명 파일을 
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '금지/차단 된 IP를 숨기지 마십시오';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '금지/차단 된 IP를 숨기기';
 $CIDRAM['lang']['tip_accounts'] = '안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다.';
+$CIDRAM['lang']['tip_cache_data'] = '안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다.';
 $CIDRAM['lang']['tip_cidr_calc'] = '안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다.';
 $CIDRAM['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다.';
 $CIDRAM['lang']['tip_custom_ua'] = '여기에 사용자 에이전트를 입력하십시오 (선택 사항이다).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페�
 $CIDRAM['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 계정';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – 데이터 캐쉬';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 구성';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 파일 관리자';

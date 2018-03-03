@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.02.14).
+ * This file: Turkish language data for the front-end (last modified: 2018.03.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -144,6 +144,7 @@ $CIDRAM['lang']['label_check_modules'] = 'Ayrıca modülleri test edin.';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> öğe görüntüleniyor.';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s" ibaresi verilen <span class="txtRd">%1$s</span> öğe görüntüleniyor.';
+$CIDRAM['lang']['label_expires'] = 'Son Geçerlilik Tarihi: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAM disk kullanımı: ';
@@ -152,6 +153,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $CIDRAM['lang']['label_hide'] = 'Saklamak';
+$CIDRAM['lang']['label_never'] = 'Asla';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_other'] = 'Diğer';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Etkin IPv4 imza dosyaları';
@@ -169,6 +171,7 @@ $CIDRAM['lang']['label_tests'] = 'Testler:';
 $CIDRAM['lang']['label_total'] = 'Toplam';
 $CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';
+$CIDRAM['lang']['link_cache_data'] = 'Önbellek Verileri';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Hesaplayıcı';
 $CIDRAM['lang']['link_config'] = 'Yapılandırma';
 $CIDRAM['lang']['link_documentation'] = 'Belgeler';
@@ -240,6 +243,7 @@ $CIDRAM['lang']['response_verification_failed'] = 'Doğrulama başarısız oldu!
 $CIDRAM['lang']['response_verification_success'] = 'Doğrulama başarısı! Hiçbir sorun bulunamadı.';
 $CIDRAM['lang']['response_yes'] = 'Evet';
 $CIDRAM['lang']['state_async_deny'] = 'İzinleriniz uyumsuz eşzamansız istekler gerçekleştirmek için yeterli değil. Tekrar giriş yapmayı deneyin.';
+$CIDRAM['lang']['state_cache_is_empty'] = 'Önbellek boş.';
 $CIDRAM['lang']['state_complete_access'] = 'Tam erişim';
 $CIDRAM['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
@@ -266,6 +270,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'İmza dosyaların
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Yasaklanmış/engellenen IP\'leri gizleme';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Yasaklanmış/engellenen IP\'leri gizle';
 $CIDRAM['lang']['tip_accounts'] = 'Merhaba, {username}.<br />Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar.';
+$CIDRAM['lang']['tip_cache_data'] = 'Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR\'lerin olduğunu hesaplamanızı mümkün kılar.';
 $CIDRAM['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Buraya user agent girin (isteğe).';
@@ -287,6 +292,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, CIDRA
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $CIDRAM['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Hesaplar';
+$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Önbellek Verileri';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Hesaplayıcı';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Yapılandırma';
 $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Dosya Yöneticisi';

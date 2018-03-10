@@ -677,10 +677,9 @@ Tag: Redstation Limited
 
 # ASN 13301 ("United Gameserver GmbH").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.55%.
+# %Listed, Google Malware Dashboard: 0.17%.
 # %Listed, CleanTalk.org: 30.89%.
-# Stop Forum Spam (SFS) listings: 122.
-# Updated: 2016.05.13 / Checked: 2017.11.12
+# Updated: 2016.05.13 / Checked: 2018.03.10
 
 2a01:480::/32 Deny Cloud
 Tag: United Gameserver
@@ -777,14 +776,21 @@ Origin: US
 Tag: Hurricane Electric
 
 
-# ASNs 30693, 49532, 62904 ("Eonix Corporation").
-# Updated: 2017.11.14
+# ASNs 49532, 62904 ("Eonix Corporation").
+# %Listed, Google Malware Dashboard: 1.31% (AS49532), 0.59% (AS62904).
+# %Listed, CleanTalk.org: 76.97% (AS49532), 83.21% (AS62904).
+# Stop Forum Spam (SFS) listings: 20,234 (AS49532), 18,720 (AS62904).
+# Updated: 2018.03.10
 
+2a0a:5680::/29 Deny Cloud
+Origin: CH
+2a07:440::/31 Deny Cloud
+Origin: DE
+2a0a:4880::/29 Deny Cloud
+Origin: RU
 2605:f680::/32 Deny Cloud
 2607:ff28::/32 Deny Cloud
-2a07:440::/31 Deny Cloud
-2a0a:4880::/29 Deny Cloud
-2a0a:5680::/29 Deny Cloud
+Origin: US
 Tag: Eonix Corporation
 
 
@@ -1174,10 +1180,10 @@ Tag: ColoCrossing
 
 
 # ASN 11282 ("SERVERYOU INC").
-# %Listed, Google Malware Dashboard: 49.80%.
+# %Listed, Google Malware Dashboard: 49.01%.
 # %Listed, CleanTalk.org: 71.06%.
-# Stop Forum Spam (SFS) listings: 350.
-# Updated: 2017.03.31 / Checked: 2017.11.12
+# Stop Forum Spam (SFS) listings: 280.
+# Updated: 2017.03.31 / Checked: 2018.03.10
 
 2001:470:e3::/48 Deny Cloud
 Tag: SERVERYOU INC
@@ -2745,14 +2751,16 @@ Tag: Zenlayer Inc
 
 
 # ASN 22923 ("Yesup Ecommerce Solutions Inc").
-# %Listed, Google Malware Dashboard: 0.73%.
+# %Listed, Google Malware Dashboard: 0.51%.
 # %Listed, CleanTalk.org: 73.80%.
-# Stop Forum Spam (SFS) listings: 828.
-# Updated: 2017.05.31 / Checked: 2017.11.12
+# Stop Forum Spam (SFS) listings: 693.
+# Updated: 2017.05.31 / Checked: 2018.03.10
 
 2604:6880::/32 Deny Cloud
+Origin: CA
 2a0a:9204:ab6d::/48 Deny Cloud
 2a0a:9603:49ce::/48 Deny Cloud
+Origin: DE
 Tag: Yesup Ecommerce
 
 
@@ -2853,14 +2861,15 @@ Tag: M247 Ltd
 
 
 # ASN 9123 ("OOO TimeWeb").
-# %Listed, Google Malware Dashboard: 2.61%.
+# %Listed, Google Malware Dashboard: 6.20%.
 # %Listed, CleanTalk.org: 32.05%.
-# Stop Forum Spam (SFS) listings: 1,208.
-# Updated: 2016.11.18 / Checked: 2017.11.12
+# Stop Forum Spam (SFS) listings: 1,332.
+# Updated: 2016.11.18 / Checked: 2018.03.08
 
 2a03:6f00:1::/48 Deny Cloud
 2a03:6f00:2::/47 Deny Cloud
 2a03:6f00:4::/48 Deny Cloud
+Origin: RU
 Tag: OOO TimeWeb
 
 
@@ -2910,10 +2919,10 @@ Tag: FASTVPS EESTI OU
 
 
 # ASN 43513 ("Sia Nano IT").
-# %Listed, Google Malware Dashboard: 0.38%.
+# %Listed, Google Malware Dashboard: 0.15%.
 # %Listed, CleanTalk.org: 22.50%.
-# Stop Forum Spam (SFS) listings: 4,069.
-# Updated: 2016.04.25 / Checked: 2017.11.12
+# Stop Forum Spam (SFS) listings: 2,067.
+# Updated: 2016.04.25 / Checked: 2018.03.08
 
 2a00:c68::/32 Deny Cloud
 2a05:8700::/29 Deny Cloud
@@ -3589,30 +3598,35 @@ Tag: HostSlim BV
 
 
 # ASN 43350 ("NForce Entertainment B.V").
-# %Listed, Google Malware Dashboard: 0.66%.
+# %Listed, Google Malware Dashboard: 0.69%.
 # %Listed, CleanTalk.org: 69.17%.
-# Stop Forum Spam (SFS) listings: 74,508.
-# Updated: 2017.11.12
+# Stop Forum Spam (SFS) listings: 111,672.
+# Updated: 2018.03.08
 
-2602:ffda:aaa::/48 Deny Cloud
+2a07:1c41::/40 Deny Cloud
+Origin: AT
 2803:8700:1a::/48 Deny Cloud
+Origin: CR
+2a07:2680::/29 Deny Cloud
+Origin: DK
+2a02:2ca0::/32 Deny Cloud
+Origin: EU
+2a06:a006:c3::/48 Deny Cloud
+Origin: IS
 2a00:1768::/34 Deny Cloud
 2a00:1768:4000::/35 Deny Cloud
 2a00:1768:6000::/36 Deny Cloud
-2a02:2ca0::/32 Deny Cloud
 2a03:3740::/32 Deny Cloud
 2a04:b040::/47 Deny Cloud
 2a04:b040:2::/48 Deny Cloud
 2a05:840::/48 Deny Cloud
 2a05:f080::/29 Deny Cloud
-2a06:e80::/36 Deny Cloud
-2a06:a006:c3::/48 Deny Cloud
-2a07:1c41::/40 Deny Cloud
-2a07:2680::/29 Deny Cloud
 2a07:bd80::/29 Deny Cloud
 2a07:be80::/29 Deny Cloud
-2a0b:5780::/29 Deny Cloud
 2a0b:8400::/47 Deny Cloud
+Origin: NL
+2a06:e80::/36 Deny Cloud
+Origin: SC
 Tag: NForce Entertainment
 
 
@@ -4110,11 +4124,12 @@ Tag: Netelligent Hosting
 
 
 # ASN 9925 ("Powerbase DataCenter Services (HK) Ltd").
-# %Listed, Google Malware Dashboard: 0.50%.
+# %Listed, Google Malware Dashboard: 0.40%.
 # %Listed, CleanTalk.org: 38.46%.
-# Updated: 2016.08.19 / Checked: 2017.11.14
+# Updated: 2016.08.19 / Checked: 2018.03.10
 
 2401:9f00::/32 Deny Cloud
+Origin: HK
 Tag: Powerbase DataCenter
 
 

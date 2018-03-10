@@ -291,15 +291,18 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.65%.
+# %Listed, Google Malware Dashboard: 0.46%.
 # %Listed, CleanTalk.org: 10.52%.
-# %Listed, abuseat.org (CBL-Listed): 0.32%.
-# Stop Forum Spam (SFS) listings: 2,203.
-# Updated: 2016.12.10 / Checked: 2017.11.14
+# %Listed, abuseat.org (CBL-Listed): 0.44%.
+# Stop Forum Spam (SFS) listings: 4,380.
+# Updated: 2018.03.08
 
-2001:4cd0::/32 Deny Generic
 2a02:26f0:8000::/48 Deny Generic
+Origin: EU
+2001:4cd0::/32 Deny Generic
 Origin: IL
+2620:11b:e0be::/48 Deny Generic
+Origin: US
 Tag: Bezeq International
 ---
 recaptcha:
@@ -345,10 +348,10 @@ Tag: Xirra GmbH
 
 
 # ASNs 35804, 43765 ("PP SKS-LUGAN").
-# %Listed, Google Malware Dashboard: 1.34% (AS35804), 0% (AS35804).
+# %Listed, Google Malware Dashboard: 3.23% (AS35804).
 # %Listed, CleanTalk.org: 30.72% (AS35804), 100.00% (AS35804).
-# Stop Forum Spam (SFS) listings: 1,385,500 (AS35804), 1,551,004 (AS35804).
-# Updated: 2016.03.30 / Checked: 2017.11.14
+# Stop Forum Spam (SFS) listings: 178 (AS35804), 1,160,630 (AS35804).
+# Updated: 2016.03.30 / Checked: 2018.03.06
 
 2a00:ede0::/32 Deny Generic
 Origin: UA
@@ -422,7 +425,8 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Updated: 2016.04.23 / Checked: 2017.11.14
+# Stop Forum Spam (SFS) listings: 50.
+# Updated: 2016.04.23 / Checked: 2018.03.08
 
 2a01:54c0::/32 Deny Generic
 Origin: NL

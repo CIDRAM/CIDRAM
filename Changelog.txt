@@ -10,6 +10,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.03.03; Minor code change; Maikuolan]: Added a new front-end page,
   "Cache Data", enabling users to review the contents of their cache.
 
+- [2018.03.13; Signatures; Maikuolan]: BingBot search engine verification will
+  no longer occur when Azure signatures are triggered (too many false positives
+  and related problems had been occurring).
+
+- [2018.03.13; Sub-minor code change; Maikuolan]: Shifted the code responsible
+  for search engine verification from the outgen generator to the functions
+  file, and added support for search engine verification to the IP test page.
+
 === Version/Release 1.4.1 ===
 PATCH RELEASE.
 

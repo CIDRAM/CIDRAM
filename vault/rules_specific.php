@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2017.12.26).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2018.03.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,17 +29,15 @@ if (!isset($CIDRAM['RunParamResCache'])) {
 /** Define object for these rules for later recall. */
 $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
 
-    /** Bingbot bypasses. */
-    if (!$Tag || $Tag === 'Bingbot bypasses') {
-        if (preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])) {
-            return 2;
-        }
+    /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
+    if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {
         return;
     }
 
-    /** Skip further processing if the "block_cloud" directive is false. */
-    if (!$CIDRAM['Config']['signatures']['block_cloud']) {
-        return;
+    /** Bingbot bypasses. */
+    if ($Tag === 'Azure' && preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['BlockInfo']['UALC'])) {
+        $CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
+        return 2;
     }
 
     /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". **/

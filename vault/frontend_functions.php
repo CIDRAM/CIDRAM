@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.02.20).
+ * This file: Front-end functions file (last modified: 2018.03.13).
  */
 
 /**
@@ -729,6 +729,15 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM) {
 
+    /** Initialise cache. */
+    $CIDRAM['InitialiseCache']();
+
+    /** Reset bypass flags (needed to prevent falsing due to search engine verification). */
+    $CIDRAM['ResetBypassFlags']();
+
+    /** Reset hostname (needed to prevent falsing due to repeat module calls involving hostname lookups). */
+    $CIDRAM['Hostname'] = '';
+
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
         'IPAddr' => $Addr,
@@ -768,12 +777,6 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
     /** Module checks. */
     if ($Modules && !empty($CIDRAM['Config']['signatures']['modules']) && empty($CIDRAM['Whitelisted'])) {
 
-        /** Initialise cache. */
-        $CIDRAM['InitialiseCache']();
-
-        /** Reset hostname (needed to prevent falsing due to repeat module calls involving hostname lookups). */
-        $CIDRAM['Hostname'] = '';
-
         /** Explode module list and cycle through all modules. */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
@@ -783,13 +786,19 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
             }
         });
 
-        /** Update the cache. */
-        if ($CIDRAM['CacheModified']) {
-            $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
-            fwrite($Handle, serialize($CIDRAM['Cache']));
-            fclose($Handle);
-        }
+    }
 
+    /**
+     * Block bots masquerading as popular search engines and disable tracking
+     * for real, legitimate search engines.
+     */
+    $CIDRAM['SearchEngineVerification']();
+
+    /** Update the cache. */
+    if ($CIDRAM['CacheModified']) {
+        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
+        fwrite($Handle, serialize($CIDRAM['Cache']));
+        fclose($Handle);
     }
 
 };

@@ -716,18 +716,22 @@ Tag: HOSTKEY B.V
 
 # "Rackspace Hosting".
 # Section contains one "Run" parameter; Careful when updating.
-# Known ASNs: 10532, 15395, 19994, 22720, 27357, 33070, 39921, 44716, 45187, 54636, 58683.
-# Updated: 2017.11.15
+# Known ASNs: 10532, 12200, 15395, 19994, 22720, 27357, 33070, 39921, 44716, 45187, 54636, 58683.
+# Updated: 2018.03.13
 
 2001:bf0::/29 Deny Cloud
-2001:4800::/31 Deny Cloud
-2001:4802::/32 Deny Cloud
-2401:1800::/31 Deny Cloud
-2620:103::/47 Deny Cloud
-2620:103:2::/48 Deny Cloud
-2a00:1a48::/32 Deny Cloud
 2a06:9380::/29 Deny Cloud
 2a0b:440::/32 Deny Cloud
+Origin: DE
+2a00:1a48::/32 Deny Cloud
+Origin: GB
+2401:1800::/32 Deny Cloud
+Origin: HK
+2001:4800::/31 Deny Cloud
+2001:4802::/32 Deny Cloud
+2620:103::/47 Deny Cloud
+2620:103:2::/48 Deny Cloud
+Origin: US
 Tag: Rackspace Hosting
 
 
@@ -810,16 +814,16 @@ Tag: Steadfast Networks
 
 
 # ASN 51088 ("A2B IP B.V").
-# %Listed, Google Malware Dashboard: 1.25%.
+# %Listed, Google Malware Dashboard: 0.87%.
 # %Listed, CleanTalk.org: 5.56%.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2017.06.04 / Checked: 2017.11.14
+# Updated: 2017.06.04 / Checked: 2018.03.12
 
 2001:67c:1064::/48 Deny Cloud
 2a01:77e0::/32 Deny Cloud
 2a02:1668::/32 Deny Cloud
 2a02:2738::/32 Deny Cloud
 2a0b:1c0::/29 Deny Cloud
+Origin: NL
 Tag: A2B IP B.V
 
 
@@ -2443,10 +2447,12 @@ Tag: Rose Hosting
 
 
 # ASN 5693 ("Latisys-Irvine, LLC").
+# %Listed, Google Malware Dashboard: 0.07%.
 # %Listed, CleanTalk.org: 5.63%.
-# Updated: 2016.04.03 / Checked: 2017.11.14
+# Updated: 2016.04.03 / Checked: 2018.03.12
 
 2001:1990::/32 Deny Cloud
+Origin: US
 Tag: Latisys-Irvine, LLC
 
 
@@ -2505,12 +2511,12 @@ Tag: MBA DATACENTERS S.L
 
 
 # ASN 10439 ("CariNet, Inc").
-# %Listed, Google Malware Dashboard: 0.83%.
+# %Listed, Google Malware Dashboard: 0.41%.
 # %Listed, CleanTalk.org: 14.38%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.04.08 / Checked: 2017.12.28
+# Updated: 2016.04.08 / Checked: 2018.03.12
 
 2607:ff10::/32 Deny Cloud
+Origin: US
 Tag: CariNet, Inc
 
 
@@ -4804,7 +4810,7 @@ Tag: IO Capital Princess
 2a02:2808:5401::/48 Deny Cloud
 Origin: CZ
 2001:978:7400::/48 Deny Cloud
-Origin: DE  
+Origin: DE
 2a06:1700:1::/48 Deny Cloud
 Origin: RO
 2a04:5200:68::/48 Deny Cloud
@@ -4848,12 +4854,13 @@ Tag: Gransy s.r.o.
 
 
 # ASN 35236 ("2 connect a.s.").
-# %Listed, Google Malware Dashboard: 86.29%.
+# %Listed, Google Malware Dashboard: 87.03%.
 # %Listed, CleanTalk.org: 100.00%.
-# Updated: 2017.06.04 / Checked: 2017.11.14
+# Updated: 2017.06.04 / Checked: 2018.03.13
 
 2a00:1238::/32 Deny Cloud
 2a0b:640::/30 Deny Cloud
+Origin: CZ
 Tag: 2 connect a.s.
 
 

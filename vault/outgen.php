@@ -8,11 +8,14 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2017.12.26).
+ * This file: Output generator (last modified: 2018.03.13).
  */
 
 /** Initialise cache. */
 $CIDRAM['InitialiseCache']();
+
+/** Reset bypass flags. */
+$CIDRAM['ResetBypassFlags']();
 
 /** Initialise statistics if necessary. */
 if ($CIDRAM['Config']['general']['statistics'] && empty($CIDRAM['Cache']['Statistics'])) {
@@ -198,56 +201,7 @@ if (
  * Block bots masquerading as popular search engines and disable tracking for
  * real, legitimate search engines.
  */
-if (
-    !empty($CIDRAM['TestResults']) &&
-    !$CIDRAM['Config']['general']['maintenance_mode'] &&
-    $CIDRAM['Config']['general']['search_engine_verification'] &&
-    $CIDRAM['UA-Clean'] = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))
-) {
-    /**
-     * Verify Googlebot.
-     * Reference: https://support.google.com/webmasters/answer/80553?hl=en
-     */
-    if (empty($CIDRAM['Flag-Bypass-Googlebot-Check']) && strpos($CIDRAM['UA-Clean'], 'googlebot') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](['.googlebot.com', '.google.com'], 'Googlebot');
-    }
-    /**
-     * Verify Bingbot.
-     * Reference: http://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
-     */
-    if (empty($CIDRAM['Flag-Bypass-Bingbot-Check']) && preg_match('~(?:msn|bing)bot|bingpreview~', $CIDRAM['UA-Clean'])) {
-        $CIDRAM['DNS-Reverse-Forward']('.search.msn.com', 'Bingbot');
-    }
-    /**
-     * Verify Yahoo! Slurp.
-     * Reference: http://www.ysearchblog.com/2007/06/05/yahoo-search-crawler-slurp-has-a-new-address-and-signature-card/
-     */
-    if (empty($CIDRAM['Flag-Bypass-Y!Slurp-Check']) && strpos($CIDRAM['UA-Clean'], 'slurp') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](['.crawl.yahoo.net', '.yse.yahoo.net'], 'Y!Slurp');
-    }
-    /**
-     * Verify Baidu Spider.
-     * Reference: http://help.baidu.com/question?prod_en=master&class=Baiduspider
-     */
-    if (empty($CIDRAM['Flag-Bypass-Baidu-Check']) && strpos($CIDRAM['UA-Clean'], 'baidu') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](['.baidu.com', '.baidu.jp'], 'Baidu', true);
-    }
-    /**
-     * Verify YandexBot.
-     * Reference: https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
-     */
-    if (empty($CIDRAM['Flag-Bypass-Yandex-Check']) && strpos($CIDRAM['UA-Clean'], 'yandex') !== false) {
-        $CIDRAM['DNS-Reverse-Forward'](['.yandex.com', '.yandex.net', '.yandex.ru'], 'YandexBot');
-    }
-    /**
-     * Verify DuckDuckGo Bot.
-     * Reference: https://duckduckgo.com/duckduckbot
-     */
-    if (empty($CIDRAM['Flag-Bypass-DuckDuckGo-Check']) && strpos($CIDRAM['UA-Clean'], 'duckduckbot') !== false) {
-        $CIDRAM['UA-IP-Match'](['72.94.249.34', '72.94.249.35', '72.94.249.36', '72.94.249.37', '72.94.249.38'], 'DuckDuckGo Bot');
-    }
-    unset($CIDRAM['UA-Clean']);
-}
+$CIDRAM['SearchEngineVerification']();
 
 /** Process tracking information for the inbound IP. */
 if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {

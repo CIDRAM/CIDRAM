@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.03.03).
+ * This file: Russian language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Если Вы хотите, Вы 
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Как Вы предпочитаете, чтобы адрес электронной почты был представлен пользователям?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Какой тип заголовка должен CIDRAM ответить при блокировке запросов?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Поиск имен хостов для всех запросов? True = Да; False = Нет [Стандарт]. Поиск имен хостов обычно выполняется по принципу «по мере необходимости», но может быть принудительно для всех запросов. Это может быть полезно в качестве средства предоставления более подробной информации в логфайлах, но может также иметь слегка отрицательный эффект на производительность.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Скрыть информацию о версии из журналов и вывода на страницу? True = Да; False = Нет [Стандарт].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
 $CIDRAM['lang']['config_general_lang'] = 'Задаёт CIDRAM стандарт языка.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Включить заблокированные запросы от запрещенных IP-адресов в лог-файлы? True = Да [Стандарт]; False = Нет.';

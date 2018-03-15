@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.03.03).
+ * This file: Swedish language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Om du vill, kan du ange en e-post
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hur skulle du föredra att e-postadressen ska presenteras för användarna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Vilka rubriker ska CIDRAM reagera med vid blockering av förfrågningar?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Dölj versionsinformation från loggar och sidoutgång? True = Ja; False = Nej [Standard].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Var hittar du IP-adressen för anslutningsförfrågningar? (Användbar för tjänster som Cloudflare och liknande). Standard = REMOTE_ADDR. VARNING: Ändra inte detta om du inte vet vad du gör!';
 $CIDRAM['lang']['config_general_lang'] = 'Ange standardspråk för CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inkludera blockerade förfrågningar från förbjudna IP-adresser i loggfilerna? True = Ja [Standard]; False = Nej.';

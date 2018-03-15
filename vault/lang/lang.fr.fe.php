@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.03.03).
+ * This file: French language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Si vous souhaitez, vous pouvez fo
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Comment préférez-vous que l\'adresse électronique soit présentée aux utilisateurs ?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quels têtes devrait CIDRAM répondre avec lors de bloquer les requêtes ?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forcer les recherches de nom d\'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d\'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Masquer les informations de version à partir des journaux et de la sortie de la page ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $CIDRAM['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inclure les requêtes bloquées provenant d\'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.';

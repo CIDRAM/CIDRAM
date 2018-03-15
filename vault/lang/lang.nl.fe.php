@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.03.03).
+ * This file: Dutch language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Indien u wenst, u kunt een e-mail
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hoe zou u het e-mailadres voor gebruikers willen aanbieden?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Versleutelingsinformatie uit logboeken en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
 $CIDRAM['lang']['config_general_lang'] = 'Geef de standaardtaal voor CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.';

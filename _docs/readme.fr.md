@@ -392,6 +392,9 @@ Configuration générale pour CIDRAM.
 - Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Yes [Default]; False = No.
 - *Remarque : La recherche de IPv6 peut ne pas fonctionner correctement sur certains systèmes 32-bits.*
 
+« hide_version »
+- Masquer les informations de version à partir des journaux et de la sortie de la page ? True = Oui ; False = Non [Défaut].
+
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 
@@ -941,4 +944,4 @@ Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir�
 ---
 
 
-Dernière mise à jour : 25 Février 2018 (2018.02.25).
+Dernière mise à jour : 15 Mars 2018 (2018.03.15).

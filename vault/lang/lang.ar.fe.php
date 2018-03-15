@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.03.03).
+ * This file: Arabic language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'لو كنت تريد، يمكنك
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'كيف تفضل أن يتم تقديم عنوان البريد الإلكتروني إلى المستخدمين؟';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'فرض بحث اسم المضيف؟ True = نعم؛ False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء.';
+$CIDRAM['lang']['config_general_hide_version'] = 'إخفاء معلومات الإصدار من السجلات وإخراج الصفحة؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!';
 $CIDRAM['lang']['config_general_lang'] = 'تحديد اللغة الافتراضية الخاصة بـ CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'من IP المحظورة في ملفات السجل؟ True = نعم [افتراضي]؛ False = لا.';

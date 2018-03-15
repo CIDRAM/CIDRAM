@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.03.03).
+ * This file: Norwegian language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Hvis du vil, du kan levere en e-p
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Hvilke overskrifter skal CIDRAM svare med når du blokkerer forespørsler?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Håndheve vertsnavn-oppslag? True = Ja; False = Nei [Standardverdi]. Vertsnavn-oppslag utføres normalt på en "etter behov" basis, men kan håndheves for alle forespørsler. Å gjøre det kan være nyttig som et middel til å gi mer detaljert informasjon i loggfilene, men kan også ha en litt negativ effekt på ytelsen.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Skjul versjoninformasjon fra logger og sideutdata? True = Ja; False = Nei [Standardverdi].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!';
 $CIDRAM['lang']['config_general_lang'] = 'Angi standardspråket for CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inkluder blokkerte forespørsler fra utestengt IP-adresser i loggfilene? True = Ja [Standardverdi]; False = Nei.';

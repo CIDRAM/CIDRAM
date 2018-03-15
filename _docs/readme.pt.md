@@ -392,6 +392,9 @@ Configuração geral por CIDRAM.
 - Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não.
 - *Nota: A pesquisa do IPv6 pode não funcionar corretamente em alguns sistemas de 32-bits.*
 
+"hide_version"
+- Ocultar informações da versão dos logs e da saída da página? True = Sim; False = Não [Padrão].
+
 #### "signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -941,4 +944,4 @@ Sim. Para fazer isso, você precisará criar um arquivo de módulo personalizado
 ---
 
 
-Última Atualização: 25 Fevereiro 2018 (2018.02.25).
+Última Atualização: 15 Marcha 2018 (2018.03.15).

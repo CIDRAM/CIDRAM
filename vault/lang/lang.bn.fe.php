@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.02.25).
+ * This file: Bangla language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'তুমি যদি চাও,
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'ব্যবহারকারীদের কাছে ইমেল ঠিকানা কীভাবে উপস্থাপন করা উচিত?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'অনুরোধগুলি ব্লক করার সময় কোন হেডার ব্যবহার করা হবে?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'হোস্টনাম সন্ধান করার জন্য ফোর্স? True = হাঁ; False = না [ডিফল্ট]। হোস্টনাম সন্ধানগুলি সাধারণভাবে একটি "প্রয়োজনীয়" ভিত্তিতে সঞ্চালিত হয়, কিন্তু সব অনুরোধের জন্য বাধ্য করা যেতে পারে। লগ ফাইলে আরো বিস্তারিত তথ্য প্রদানের একটি উপায় হিসাবে এটি করা দরকারী হতে পারে, কিন্তু এটি কর্মক্ষমতা উপর সামান্য নেতিবাচক প্রভাব থাকতে পারে।';
+$CIDRAM['lang']['config_general_hide_version'] = 'লগ এবং পৃষ্ঠা আউটপুট থেকে সংস্করণ তথ্য লুকান? True = হাঁ; False = না [ডিফল্ট]।';
 $CIDRAM['lang']['config_general_ipaddr'] = 'ইনবাউন্ড অনুরোধের আইপি ঠিকানা কোথায় পাওয়া যায়? (যেমন Cloudflare এবং ইত্যাদি সেবা জন্য দরকারী)। ডিফল্ট = REMOTE_ADDR। সতর্কতা: আপনি কি করছেন তা না জানলে তা পরিবর্তন করবেন না!';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM এর জন্য ডিফল্ট ভাষা নির্দিষ্ট করুন।';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'লগ ফাইলগুলিতে নিষিদ্ধ IP ঠিকানাগুলি থেকে অবরুদ্ধ অনুরোধ অন্তর্ভুক্ত করুন? True = হাঁ [ডিফল্ট]; False = না।';

@@ -392,6 +392,9 @@ Konfigurasi umum dari CIDRAM.
 - Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak.
 - *Catat: Pencarian IPv6 mungkin tidak bekerja dengan benar pada beberapa sistem 32-bit.*
 
+"hide_version"
+- Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default].
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -941,4 +944,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 25 Februari 2018 (2018.02.25).
+Terakhir Diperbarui: 15 Maret 2018 (2018.03.15).

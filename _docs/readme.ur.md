@@ -455,6 +455,11 @@
  <li>نوٹ: <code dir="ltr">IPv6</code> کی تلاش کچھ <code dir="ltr">32-bit</code> کے نظام پر صحیح طریقے سے کام نہیں کرسکتا.</li>
 </ul></div>
 
+<div dir="rtl">"hide_version"<br /></div>
+<div dir="rtl"><ul>
+ <li>لاگ ان اور صفحے کی پیداوار سے ورژن کی معلومات چھپائیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (قسم)<br /></div>
 <div dir="rtl">دستخط کی ترتیب.<br /><br /></div>
 
@@ -1061,4 +1066,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 25 فروری 2018 (2018.02.25).</div>
+<div dir="rtl">آخری تازہ کاری: 15 مارچ 2018 (2018.03.15).</div>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.03.03).
+ * This file: Indonesian language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Jika Anda ingin, Anda dapat menye
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Apa header harus CIDRAM merespon dengan ketika memblokir permintaan?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $CIDRAM['lang']['config_general_lang'] = 'Tentukan bahasa default untuk CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Termasuk permintaan diblokir dari IP dilarang dalam file log? True = Ya [Default]; False = Tidak.';

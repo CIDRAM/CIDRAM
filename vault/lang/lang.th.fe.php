@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.03.03).
+ * This file: Thai language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'หากต้องการค
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'คุณต้องการที่อยู่อีเมลที่จะนำเสนอต่อผู้ใช้อย่างไร?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'ระบุส่วนหัวสำหรับ CIDRAM ที่จะตอบด้วยเมื่อบล็อกคำขอ.';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'บังคับใช้การค้นหาชื่อโฮสต์? True = หยุดใช้; False = ไม่หยุดใช้ [ค่าเริ่มต้น]. การค้นหาชื่อโฮสต์จะดำเนินการตามปกติโดยพิจารณาจากความจำเป็น แต่สามารถบังคับให้คำขอทั้งหมด. นี้อาจเป็นประโยชน์สำหรับการให้ข้อมูลเพิ่มเติมในไฟล์บันทึก แต่อาจมีผลเสียต่อประสิทธิภาพเล็กน้อย.';
+$CIDRAM['lang']['config_general_hide_version'] = 'ซ่อนข้อมูลเวอร์ชันจากบันทึกและเอาต์พุตหน้าเว็บ? True = หยุดใช้; False = ไม่หยุดใช้ [ค่าเริ่มต้น].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'ตำแหน่งของที่อยู่ IP สำหรับคำขอการเชื่อมต่อ (เป็นประโยชน์สำหรับบริการเช่น Cloudflare, ฯลฯ). ค่าเริ่มต้น = REMOTE_ADDR. คำเตือน: อย่าเปลี่ยนสิ่งนี้จนกว่าคุณจะรู้ว่าคุณกำลังทำอะไร!';
 $CIDRAM['lang']['config_general_lang'] = 'ระบุภาษาค่าเริ่มต้นสำหรับ CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'รวมคำขอที่ถูกบล็อกจากที่อยู่ IP ที่ถูกห้ามในไฟล์บันทึกหรือไม่? True = รวม [ค่าเริ่มต้น]; False = ไม่รวม.';

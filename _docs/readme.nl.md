@@ -392,6 +392,9 @@ Algemene configuratie voor CIDRAM.
 - Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee.
 - *Notitie: IPv6-lookup werkt mogelijk niet correct op sommige 32-bits systemen.*
 
+"hide_version"
+- Versleutelingsinformatie uit logboeken en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].
+
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -941,4 +944,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 25 Februari 2018 (2018.02.25).
+Laatste Bijgewerkt: 15 Maart 2018 (2018.03.15).

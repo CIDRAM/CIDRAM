@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.03.03).
+ * This file: Italian language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Se si desidera, è possibile forn
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Come preferisci che l\'indirizzo email venga presentato agli utenti?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quale intestazioni dovrebbe CIDRAM rispondere con quando bloccano le richieste?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Nascondi informazioni sulla versione dai registri e l\'output della pagina? True = Sì; False = No [Predefinito].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dove trovare l\'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!';
 $CIDRAM['lang']['config_general_lang'] = 'Specifica la lingua predefinita per CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.';

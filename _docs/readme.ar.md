@@ -455,6 +455,11 @@
  <li>ملاحظة: قد لا يعمل البحث عن <code dir="ltr">IPv6</code> بشكل صحيح على بعض أنظمة <code dir="ltr">32-bit</code>.</li>
 </ul></div>
 
+<div dir="rtl">"hide_version"<br /></div>
+<div dir="rtl"><ul>
+ <li>إخفاء معلومات الإصدار من السجلات وإخراج الصفحة؟ True = نعم؛ False = لا [افتراضي].</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
@@ -1061,4 +1066,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 25 فبراير 2018 (2018.02.25).</div>
+<div dir="rtl">آخر تحديث: 15 مارس 2018 (2018.03.15).</div>

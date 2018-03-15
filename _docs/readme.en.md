@@ -392,6 +392,9 @@ General CIDRAM configuration.
 - Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No.
 - *Note: IPv6 lookup mightn't work correctly on some 32-bit systems.*
 
+"hide_version"
+- Hide version information from logs and page output? True = Yes; False = No [Default].
+
 #### "signatures" (Category)
 Signatures configuration.
 
@@ -941,4 +944,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 25 February 2018 (2018.02.25).
+Last Updated: 15 March 2018 (2018.03.15).

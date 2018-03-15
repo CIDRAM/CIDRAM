@@ -392,6 +392,9 @@ Cấu hình chung cho CIDRAM.
 - Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không.
 - *Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32-bit.*
 
+"hide_version"
+- Ẩn thông tin phiên bản từ nhật ký và đầu ra của trang? True = Vâng; False = Không [Mặc định].
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -941,4 +944,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 25 Tháng Hai 2018 (2018.02.25).
+Lần cuối cập nhật: 15 Tháng Ba 2018 (2018.03.15).

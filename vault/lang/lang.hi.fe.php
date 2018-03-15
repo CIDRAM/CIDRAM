@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.03.03).
+ * This file: Hindi language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'अगर आप चाहते 
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'उपयोगकर्ताओं को प्रस्तुत करने के लिए आप ईमेल पते को कैसे पसंद करेंगे?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'कौन हेडर जब अवरुद्ध अनुरोध के साथ उत्तर CIDRAM चाहिए?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'होस्ट नाम लुकअप के लिए मजबूर? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]। होस्ट नाम लुकअप सामान्य रूप से "आवश्यकतानुसार" आधार पर किया जाता है, लेकिन इसे सभी अनुरोधों के लिए मजबूर किया जा सकता है। ऐसा करना लॉगफाइल में अधिक विस्तृत जानकारी प्रदान करने के साधन के रूप में उपयोगी हो सकता है, लेकिन प्रदर्शन पर इसका थोड़ा नकारात्मक प्रभाव हो सकता है।';
+$CIDRAM['lang']['config_general_hide_version'] = 'लॉग्स और पेज आउटपुट से संस्करण जानकारी छुपाएं? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।';
 $CIDRAM['lang']['config_general_ipaddr'] = 'कहां अनुरोध जोड़ने के IP पते खोजने के लिए? (जैसा CloudFlare के रूप में सेवाओं और पसंद के लिए उपयोगी)। डिफ़ॉल्ट = REMOTE_ADDR। चेतावनी: जब तक कि आप को पता है तुम क्या कर रहे हो उसे बदल नहीं!';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM लिए डिफ़ॉल्ट भाषा निर्दिष्ट।';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'प्रवेश फाइलें में प्रतिबंधित IP से अवरुद्ध अनुरोध जोड़ें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।';

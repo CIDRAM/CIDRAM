@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.03.03).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何将电子邮件地址呈现给用户？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '强制主机名查找？​True（真）=跟踪； False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。';
+$CIDRAM['lang']['config_general_hide_version'] = '从日志和页面输出中隐藏版本信息吗？​True（真）=关闭； False（假）=不关闭【标准】。';
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';

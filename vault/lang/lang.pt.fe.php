@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.03.03).
+ * This file: Portuguese language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Se você desejar, você pode forn
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Como você prefere que o endereço de e-mail seja apresentado aos usuários?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quais cabeçalhos deve CIDRAM responder com quando bloqueando solicitações?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os pedidos. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Ocultar informações da versão dos logs e da saída da página? True = Sim; False = Não [Padrão].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!';
 $CIDRAM['lang']['config_general_lang'] = 'Especificar o padrão da linguagem por CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Incluir solicitações bloqueadas de IPs banidas nos arquivos de log? True = Sim [Padrão]; False = Não.';

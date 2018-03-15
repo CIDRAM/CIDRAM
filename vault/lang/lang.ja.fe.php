@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.03.03).
+ * This file: Japanese language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'ここにＥメールアドレス
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '何ヘッダー使用する必要がありますか（リクエストをブロックしたとき）？';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'ホスト名検索を強制しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。';
+$CIDRAM['lang']['config_general_hide_version'] = 'ログとページ出力からバージョン情報を隠すか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $CIDRAM['lang']['config_general_ipaddr'] = '接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設定します。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '禁止されたＩＰからブロックされたリクエストをログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。';

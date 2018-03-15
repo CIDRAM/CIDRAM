@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.03.03).
+ * This file: English language data for the front-end (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -41,6 +41,7 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'If you wish, you can supply an em
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'How would you prefer the email address to be presented to users?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Which headers should CIDRAM respond with when blocking requests?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Force hostname lookups? True = Yes; False = No [Default]. Hostname lookups are normally performed on an "as needed" basis, but can be forced for all requests. Doing so may be useful as a means of providing more detailed information in the logfiles, but may also have a slightly negative effect on performance.';
+$CIDRAM['lang']['config_general_hide_version'] = 'Hide version information from logs and page output? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don\'t change this unless you know what you\'re doing!';
 $CIDRAM['lang']['config_general_lang'] = 'Specify the default language for CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.';

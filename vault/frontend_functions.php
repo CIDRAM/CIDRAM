@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.13).
+ * This file: Front-end functions file (last modified: 2018.03.15).
  */
 
 /**
@@ -740,6 +740,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
 
     /** Populate BlockInfo. */
     $CIDRAM['BlockInfo'] = [
+        'Counter' => 0,
         'IPAddr' => $Addr,
         'Query' => 'SimulateBlockEvent',
         'Referrer' => '',

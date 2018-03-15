@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.03.02).
+ * This file: Configuration handler (last modified: 2018.03.15).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,3 +166,8 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 $CIDRAM['DefaultAlgo'] = (
     !empty($CIDRAM['Config']['general']['default_algo']) && defined($CIDRAM['Config']['general']['default_algo'])
 ) ? constant($CIDRAM['Config']['general']['default_algo']) : 1;
+
+/** Revert script ident if "hide_version" is true. */
+if (!empty($CIDRAM['Config']['general']['hide_version'])) {
+    $CIDRAM['ScriptIdent'] = 'CIDRAM';
+}

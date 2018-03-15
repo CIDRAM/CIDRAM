@@ -218,6 +218,9 @@ Config Defaults:
   allow_gethostbyaddr_lookup:
    type: bool
    default: true
+  hide_version:
+   type: bool
+   default: false
  signatures:
   ipv4:
    type: string
@@ -298,6 +301,7 @@ Config Defaults:
     moss: "Moss"
     fullmoon: "Full Moon"
     unicorn: "Unicorn"
+    obscured: "Obscured"
    choice_filter: "FilterTheme"
   Magnification:
    type: real

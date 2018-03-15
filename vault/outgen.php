@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.03.13).
+ * This file: Output generator (last modified: 2018.03.15).
  */
 
 /** Initialise cache. */
@@ -55,6 +55,7 @@ $CIDRAM['Protect'] = (
 /** Prepare variables for block information (used if we kill the request). */
 $CIDRAM['BlockInfo'] = [
     'DateTime' => $CIDRAM['TimeFormat']($CIDRAM['Now'], $CIDRAM['Config']['general']['timeFormat']),
+    'Counter' => 0,
     'IPAddr' => $_SERVER[$CIDRAM['IPAddr']],
     'ScriptIdent' => $CIDRAM['ScriptIdent'],
     'favicon' => $CIDRAM['favicon'],
@@ -392,8 +393,12 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Build fields. */
-    $CIDRAM['AddField']($CIDRAM['lang']['field_id'], $CIDRAM['BlockInfo']['Counter']);
-    $CIDRAM['AddField']($CIDRAM['lang']['field_scriptversion'], $CIDRAM['BlockInfo']['ScriptIdent']);
+    if (!empty($CIDRAM['BlockInfo']['Counter'])) {
+        $CIDRAM['AddField']($CIDRAM['lang']['field_id'], $CIDRAM['BlockInfo']['Counter']);
+    }
+    if (!$CIDRAM['Config']['general']['hide_version']) {
+        $CIDRAM['AddField']($CIDRAM['lang']['field_scriptversion'], $CIDRAM['BlockInfo']['ScriptIdent']);
+    }
     $CIDRAM['AddField']($CIDRAM['lang']['field_datetime'], $CIDRAM['BlockInfo']['DateTime']);
     $CIDRAM['AddField']($CIDRAM['lang']['field_ipaddr'], $CIDRAM['BlockInfo']['IPAddr']);
     if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {

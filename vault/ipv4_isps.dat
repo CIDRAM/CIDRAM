@@ -1653,10 +1653,10 @@ recaptcha:
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
 # Spam emitters; Subsidiary of Bezeq International.
-# %Listed, Google Malware Dashboard: 0% (AS5486), 0.86% (AS9116).
-# %Listed, CleanTalk.org: 0% (AS5486), 34.24% (AS9116).
-# Stop Forum Spam (SFS) listings: 0 (AS5486), 4,349 (AS9116).
-# Updated: 2017.06.12 / Checked: 2017.11.20
+# %Listed, Google Malware Dashboard: 0.55% (AS9116).
+# %Listed, CleanTalk.org: 34.24% (AS9116).
+# Stop Forum Spam (SFS) listings: 5,968 (AS9116).
+# Updated: 2017.06.12 / Checked: 2018.03.15
 
 31.154.139.0/24 Deny Spam
 46.120.0.0/15 Deny Spam
@@ -2002,43 +2002,39 @@ Tag: 10dencehispahard
 
 
 # ASN 45753 ("Unit 1205-1207").
-# %Listed, Google Malware Dashboard: 4.68%.
-# %Listed, CleanTalk.org: 32.23%.
-# Stop Forum Spam (SFS) listings: 126.
-# Updated: 2017.11.20
+# %Listed, Google Malware Dashboard: 6.28%.
+# %Listed, CleanTalk.org: 32.79%.
+# Stop Forum Spam (SFS) listings: 38.
+# Updated: 2018.03.15
 
+103.42.104.0/22 Deny Generic
+103.71.144.0/23 Deny Generic
+103.100.140.0/22 Deny Generic
+106.3.86.0/24 Deny Generic
+118.91.240.0/20 Deny Generic
+183.182.12.0/22 Deny Generic
+Origin: CN
 43.225.196.0/22 Deny Generic
 45.121.140.0/22 Deny Generic
 52.128.224.0/19 Deny Generic
-63.216.57.0/24 Deny Generic
-63.220.4.0/24 Deny Generic
-63.220.7.0/24 Deny Generic
-63.221.138.0/24 Deny Generic
-69.176.88.0/23 Deny Generic
-96.43.96.0/24 Deny Generic
 103.1.224.0/22 Deny Generic
 103.30.24.0/22 Deny Generic
-103.42.104.0/22 Deny Generic
 103.44.160.0/22 Deny Generic
 103.61.240.0/22 Deny Generic
 103.70.76.0/23 Deny Generic
 103.71.252.0/23 Deny Generic
 103.80.168.0/22 Deny Generic
 103.84.84.0/22 Deny Generic
-103.89.72.0/24 Deny Generic
 103.91.8.0/22 Deny Generic
-103.100.140.0/22 Deny Generic
 103.194.184.0/22 Deny Generic
 103.199.104.0/22 Deny Generic
 103.203.48.0/22 Deny Generic
 103.212.96.0/22 Deny Generic
 103.240.40.0/22 Deny Generic
-106.3.86.0/24 Deny Generic
 110.173.48.0/20 Deny Generic
 111.68.0.0/20 Deny Generic
 112.121.160.0/19 Deny Generic
 116.213.36.0/22 Deny Generic
-118.91.240.0/20 Deny Generic
 119.42.144.0/21 Deny Generic
 137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
@@ -2047,11 +2043,18 @@ Tag: 10dencehispahard
 175.41.16.0/20 Deny Generic
 180.178.32.0/19 Deny Generic
 182.16.0.0/17 Deny Generic
-183.182.12.0/22 Deny Generic
-185.191.127.0/24 Deny Generic
+216.118.224.0/19 Deny Generic
+Origin: HK
+63.216.57.0/24 Deny Generic
+63.220.4.0/24 Deny Generic
+63.220.7.0/24 Deny Generic
+63.221.138.0/24 Deny Generic
+69.176.88.0/23 Deny Generic
+96.43.96.0/24 Deny Generic
+103.72.82.0/23 Deny Generic
 216.83.40.0/21 Deny Generic
 216.83.56.0/21 Deny Generic
-Origin: HK
+Origin: US
 Tag: Unit 1205-1207
 
 
@@ -2154,10 +2157,10 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.62%.
+# %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, CleanTalk.org: 34.31%.
-# Stop Forum Spam (SFS) listings: 127.
-# Updated: 2017.11.20
+# Stop Forum Spam (SFS) listings: 181.
+# Updated: 2018.03.15
 
 45.117.160.0/22 Deny Generic
 103.1.208.0/22 Deny Generic
@@ -2167,7 +2170,7 @@ Tag: DGN TEKNOLOJI
 125.212.240.0/20 Deny Generic
 171.244.0.0/19 Deny Generic
 171.244.32.0/20 Deny Generic
-171.244.48.0/22 Deny Generic
+171.244.48.0/21 Deny Generic
 210.211.96.0/19 Deny Generic
 Origin: VN
 Tag: Vietel

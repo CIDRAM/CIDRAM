@@ -311,10 +311,10 @@ recaptcha:
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
 # Spam emitters; Subsidiary of Bezeq International.
-# %Listed, Google Malware Dashboard: 0% (AS5486), 0.86% (AS9116).
-# %Listed, CleanTalk.org: 0% (AS5486), 34.24% (AS9116).
-# Stop Forum Spam (SFS) listings: 0 (AS5486), 4,349 (AS9116).
-# Updated: 2016.12.10 / Checked: 2017.11.20
+# %Listed, Google Malware Dashboard: 0.55% (AS9116).
+# %Listed, CleanTalk.org: 34.24% (AS9116).
+# Stop Forum Spam (SFS) listings: 5,968 (AS9116).
+# Updated: 2016.12.10 / Checked: 2018.03.15
 
 2001:40a8::/32 Deny Spam
 Origin: IL
@@ -445,6 +445,17 @@ Origin: RU
 Tag: Trader soft LLC
 
 
+# ASN 45753 ("Unit 1205-1207").
+# %Listed, Google Malware Dashboard: 6.28%.
+# %Listed, CleanTalk.org: 32.79%.
+# Stop Forum Spam (SFS) listings: 38.
+# Updated: 2018.03.15
+
+2401:4c00::/32 Deny Generic
+Origin: HK
+Tag: Unit 1205-1207
+
+
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 1.12%.
@@ -480,10 +491,10 @@ Tag: DGN TEKNOLOJI
 
 
 # ASN 38731 ("Vietel - CHT Compamy Ltd").
-# %Listed, Google Malware Dashboard: 0.62%.
+# %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, CleanTalk.org: 34.31%.
-# Stop Forum Spam (SFS) listings: 127.
-# Updated: 2016.12.24 / Checked: 2017.11.20
+# Stop Forum Spam (SFS) listings: 181.
+# Updated: 2016.12.24 / Checked: 2018.03.15
 
 2401:5f80::/34 Deny Generic
 2401:5f80:4000::/35 Deny Generic

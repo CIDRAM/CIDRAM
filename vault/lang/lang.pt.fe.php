@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.03.15).
+ * This file: Portuguese language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA tentativas';
 $CIDRAM['lang']['label_results'] = 'Resultados (%s entrada – %s rejeitado – %s aceito – %s mesclado – %s saída):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI usada:';
 $CIDRAM['lang']['label_show'] = 'Mostrar';
+$CIDRAM['lang']['label_signature_type'] = 'Tipo de assinatura:';
 $CIDRAM['lang']['label_stable'] = 'Mais novo de estável:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informação do sistema:';
 $CIDRAM['lang']['label_tests'] = 'Testes:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Agregador IP';
 $CIDRAM['lang']['link_ip_test'] = 'Teste IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Monitoração IP';
 $CIDRAM['lang']['link_logs'] = 'Arquivos de Registro';
+$CIDRAM['lang']['link_range'] = 'Tabelas de Alcance';
 $CIDRAM['lang']['link_sections_list'] = 'Lista de Seções';
 $CIDRAM['lang']['link_statistics'] = 'Estatisticas';
 $CIDRAM['lang']['link_textmode'] = 'Formatação de texto: <a href="%1$sfalse%2$s">Simples</a> – <a href="%1$strue%2$s">Chique</a> – <a href="%1$stally%2$s">Contagem</a>';
@@ -284,9 +286,10 @@ $CIDRAM['lang']['tip_home'] = 'Olá, {username}.<br />Esta é a página principa
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Olá, {username}.<br />O agregador IP permite que você expresse IPs e CIDRs da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Olá, {username}.<br />A página para teste IP permite que você teste se os endereços IP são bloqueados pelas assinaturas atualmente instaladas.';
 $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Quando não selecionado, somente os arquivos de assinatura serão testados contra).';
-$CIDRAM['lang']['tip_ip_tracking'] = 'Hello, {username}.<br />A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Olá, {username}.<br />A página de monitoração IP permite verificar o status de monitoração de endereços IP, para verificar quais deles foram banidos, e para cancelar monitoração para eles se você quiser fazê-lo.';
 $CIDRAM['lang']['tip_login'] = 'Nome de usuário padrão: <span class="txtRd">admin</span> – Senha padrão: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Olá, {username}.<br />Selecionar um arquivo de registro da lista abaixo para visualizar o conteúdo do arquivo de registro.';
+$CIDRAM['lang']['tip_range'] = 'Olá, {username}.<br />Esta página mostra algumas informações estatísticas básicas sobre os IPs abrangidos pelos arquivos de assinatura ativos no momento.';
 $CIDRAM['lang']['tip_sections_list'] = 'Olá, {username}.<br />Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Consulte a <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.pt.md#SECTION6">documentação</a> para obter informações sobre as várias diretrizes de configuração e seus objetivos.';
 $CIDRAM['lang']['tip_statistics'] = 'Olá, {username}.<br />Esta página mostra algumas estatísticas de uso básicas relativas à instalação do CIDRAM.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Teste IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Monitoração IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Login';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Arquivos de Registro';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – Tabelas de Alcance';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Lista de Seções';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Estatisticas';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Atualizações';

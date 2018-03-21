@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.15).
+ * This file: Front-end functions file (last modified: 2018.03.21).
  */
 
 /**
@@ -1900,6 +1900,13 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
 
 };
 
+/** Normalise linebreaks. */
+$CIDRAM['NormaliseLinebreaks'] = function (&$Data) {
+    if (strpos($Data, "\r")) {
+        $Data = (strpos($Data, "\r\n") !== false) ? str_replace("\r", '', $Data) : str_replace("\r", "\n", $Data);
+    }
+};
+
 /** Signature files handler for sections list. */
 $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
     if (!isset($CIDRAM['Ignore'])) {
@@ -1914,11 +1921,7 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
         if (!$Data) {
             continue;
         }
-        if (strpos($Data, "\r")) {
-            $Data = (
-                strpos($Data, "\r\n") !== false
-            ) ? str_replace("\r", '', $Data) : str_replace("\r", "\n", $Data);
-        }
+        $CIDRAM['NormaliseLinebreaks']($Data);
         $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
         $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => $Class];
         $Data = "\n" . $Data . "\n";
@@ -1970,6 +1973,215 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
         }
     }
     return $Out;
+};
+
+/** Fetch some data about CIDRs. */
+$CIDRAM['RangeHandlerFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOrigin) {
+    $Check = strpos($Data, $Needle, $Offset);
+    if ($Check !== false) {
+        $NeedleLen = strlen($Needle);
+        $LFPos = strpos($Data, "\n", $Check + $NeedleLen);
+        if ($LFPos !== false) {
+            if ($Deduct = $LFPos - $Check - $NeedleLen) {
+                $Param = trim(substr($Data, $Check + $NeedleLen + 1, $LFPos - $Check - $NeedleLen - 1));
+                $Offset = $Check + $NeedleLen + strlen($Param) + 1;
+            } else {
+                $Param = '';
+                $Offset = $Check + $NeedleLen;
+            }
+        } else {
+            $Param = trim(substr($Data, $Check + $NeedleLen));
+            $Offset = false;
+        }
+        $From = $Check > 128 ? $Check - 128 : 0;
+        $CPos = strrpos(substr($Data, $From, $Check - $From), "\n");
+        if (substr($Data, $CPos + 1, 1) === '#') {
+            return false;
+        }
+        $Origin = '-';
+        if ($Offset !== false && $HasOrigin) {
+            $CPos = strpos($Data, "\n\n", $Offset);
+            $OPos = strpos($Data, "\nOrigin: ", $Offset);
+            if ($OPos !== false && ($CPos === false || $CPos > $OPos)) {
+                $Origin = substr($Data, $OPos + 9, 2);
+            }
+        }
+        $Param = trim($Param) ?: '-';
+        return ['Param' => $Param, 'Origin' => $Origin];
+    }
+    $Offset = false;
+    return false;
+};
+
+/** Signature files handler for range tables. */
+$CIDRAM['RangeHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
+    $CIDRAM['FE']['rangeCatOptions'] = '';
+    $Arr = ['IPv4' => [], 'IPv4-Origin' => [], 'IPv6' => [], 'IPv6-Origin' => []];
+    $SigTypes = ['Run', 'Whitelist', 'Greylist', 'Deny'];
+    foreach ($SigTypes as $SigType) {
+        $Arr['IPv4'][$SigType] = [];
+        $Arr['IPv4-Origin'][$SigType] = [];
+        $Arr['IPv6'][$SigType] = [];
+        $Arr['IPv6-Origin'][$SigType] = [];
+        for ($Range = 1; $Range <= 32; $Range++) {
+            $Arr['IPv4'][$SigType][$Range] = [];
+            $Arr['IPv4-Origin'][$SigType][$Range] = [];
+        }
+        for ($Range = 1; $Range <= 128; $Range++) {
+            $Arr['IPv6'][$SigType][$Range] = [];
+            $Arr['IPv6-Origin'][$SigType][$Range] = [];
+        }
+    }
+    $Out = [];
+    foreach ($IPv4 as $File) {
+        $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
+        if (!$Data) {
+            continue;
+        }
+        $CIDRAM['NormaliseLinebreaks']($Data);
+        $HasOrigin = (strpos($Data, "\nOrigin: ") !== false);
+        foreach ($SigTypes as $SigType) {
+            for ($Range = 1; $Range <= 32; $Range++) {
+                $Offset = 0;
+                $Needle = '/' . $Range . ' ' . $SigType;
+                while ($Offset !== false) {
+                    if ($Entry = $CIDRAM['RangeHandlerFetchLine']($Data, $Offset, $Needle, $HasOrigin)) {
+                        if (empty($Arr['IPv4'][$SigType][$Range][$Entry['Param']])) {
+                            $Arr['IPv4'][$SigType][$Range][$Entry['Param']] = 1;
+                        } else {
+                            $Arr['IPv4'][$SigType][$Range][$Entry['Param']]++;
+                        }
+                        if ($Entry['Origin'] !== '-') {
+                            if (empty($Arr['IPv4-Origin'][$SigType][$Range][$Entry['Origin']])) {
+                                $Arr['IPv4-Origin'][$SigType][$Range][$Entry['Origin']] = 1;
+                            } else {
+                                $Arr['IPv4-Origin'][$SigType][$Range][$Entry['Origin']]++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    for ($Range = 1; $Range <= 32; $Range++) {
+        $Out['IPv4/' . $Range] = '';
+    }
+    foreach ($IPv6 as $File) {
+        $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
+        if (!$Data) {
+            continue;
+        }
+        $CIDRAM['NormaliseLinebreaks']($Data);
+        $HasOrigin = (strpos($Data, 'Origin: ') !== false);
+        foreach ($SigTypes as $SigType) {
+            for ($Range = 1; $Range <= 128; $Range++) {
+                $Offset = 0;
+                $Needle = '/' . $Range . ' ' . $SigType;
+                while ($Offset !== false) {
+                    if ($Entry = $CIDRAM['RangeHandlerFetchLine']($Data, $Offset, $Needle, $HasOrigin)) {
+                        if (empty($Arr['IPv6'][$SigType][$Range][$Entry['Param']])) {
+                            $Arr['IPv6'][$SigType][$Range][$Entry['Param']] = 1;
+                        } else {
+                            $Arr['IPv6'][$SigType][$Range][$Entry['Param']]++;
+                        }
+                        if ($Entry['Origin'] !== '-') {
+                            if (empty($Arr['IPv6-Origin'][$SigType][$Range][$Entry['Origin']])) {
+                                $Arr['IPv6-Origin'][$SigType][$Range][$Entry['Origin']] = 1;
+                            } else {
+                                $Arr['IPv6-Origin'][$SigType][$Range][$Entry['Origin']]++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    for ($Range = 1; $Range <= 128; $Range++) {
+        $Out['IPv6/' . $Range] = '';
+    }
+    $CIDRAM['FE']['Labels'] = '';
+    foreach ($SigTypes as $SigType) {
+        $Class = 'sigtype_' . str_replace(' ', '_', strtolower($SigType));
+        $CIDRAM['FE']['rangeCatOptions'] .= "\n            <option value=\"" . $Class . '">' . $SigType . '</option>';
+        $CIDRAM['FE']['Labels'] .= '<span style="display:none" class="s ' . $Class . '">' . $CIDRAM['lang']['label_signature_type'] . ' ' . $SigType . '</span>';
+        if ($SigType === 'Run') {
+            $ZeroPlus = 'txtOe';
+        } else {
+            $ZeroPlus = ($SigType === 'Whitelist' || $SigType === 'Greylist') ? 'txtGn' : 'txtRd';
+        }
+        for ($Range = 1; $Range <= 32; $Range++) {
+            $Size = '*Math.pow(2,' . (32 - $Range) . ')';
+            if (count($Arr['IPv4'][$SigType][$Range])) {
+                $StatClass = $ZeroPlus;
+                arsort($Arr['IPv4'][$SigType][$Range]);
+                foreach ($Arr['IPv4'][$SigType][$Range] as $Param => &$Count) {
+                    $ThisID = 'IPv4' . preg_replace('~[^0-9a-z]~i', '_', $SigType . $Range . $Param . $Count);
+                    $Total = '<span id="' . $ThisID . '"><script type="text/javascript">w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));</script><span>';
+                    $Count = $CIDRAM['Number_L10N']($Count) . ' (' . $Total . ')';
+                    if ($Param !== '-') {
+                        $Count = $Param . ' – ' . $Count;
+                    }
+                }
+                $Arr['IPv4'][$SigType][$Range] = implode('<br />', $Arr['IPv4'][$SigType][$Range]);
+                if (count($Arr['IPv4-Origin'][$SigType][$Range])) {
+                    arsort($Arr['IPv4-Origin'][$SigType][$Range]);
+                    foreach ($Arr['IPv4-Origin'][$SigType][$Range] as $Origin => &$Count) {
+                        $ThisID = 'IPv4' . preg_replace('~[^0-9a-z]~i', '_', $SigType . $Range . $Origin . $Count);
+                        $Total = '<span id="' . $ThisID . '"><script type="text/javascript">w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));</script><span>';
+                        $Count = $CIDRAM['Number_L10N']($Count) . ' (' . $Total . ')';
+                        if ($Origin !== '-') {
+                            $Count = '<span class="flag ' . $Origin . '"></span> – ' . $Count;
+                        }
+                    }
+                    $Arr['IPv4-Origin'][$SigType][$Range] = implode('<br />', $Arr['IPv4-Origin'][$SigType][$Range]);
+                    $Arr['IPv4'][$SigType][$Range] .= '<hr />' . $Arr['IPv4-Origin'][$SigType][$Range];
+                }
+            } else {
+                $StatClass = 's';
+                $Arr['IPv4'][$SigType][$Range] = '-';
+            }
+            $Out['IPv4/' . $Range] .= '<span style="display:none" class="' . $Class . ' ' . $StatClass . '">' . $Arr['IPv4'][$SigType][$Range] . '</span>';
+        }
+        for ($Range = 1; $Range <= 128; $Range++) {
+            if (count($Arr['IPv6'][$SigType][$Range])) {
+                $StatClass = $ZeroPlus;
+                arsort($Arr['IPv6'][$SigType][$Range]);
+                foreach ($Arr['IPv6'][$SigType][$Range] as $Param => &$Count) {
+                    $Count = $CIDRAM['Number_L10N']($Count);
+                    if ($Param !== '-') {
+                        $Count = $Param . ' – ' . $Count;
+                    }
+                }
+                $Arr['IPv6'][$SigType][$Range] = implode('<br />', $Arr['IPv6'][$SigType][$Range]);
+                if (count($Arr['IPv6-Origin'][$SigType][$Range])) {
+                    arsort($Arr['IPv6-Origin'][$SigType][$Range]);
+                    foreach ($Arr['IPv6-Origin'][$SigType][$Range] as $Origin => &$Count) {
+                        $Count = $CIDRAM['Number_L10N']($Count);
+                        if ($Origin !== '-') {
+                            $Count = '<span class="flag ' . $Origin . '"></span> – ' . $Count;
+                        }
+                    }
+                    $Arr['IPv6-Origin'][$SigType][$Range] = implode('<br />', $Arr['IPv6-Origin'][$SigType][$Range]);
+                    $Arr['IPv6'][$SigType][$Range] .= '<hr />' . $Arr['IPv6-Origin'][$SigType][$Range];
+                }
+            } else {
+                $StatClass = 's';
+                $Arr['IPv6'][$SigType][$Range] = '-';
+            }
+            $Out['IPv6/' . $Range] .= '<span style="display:none" class="' . $Class . ' ' . $StatClass . '">' . $Arr['IPv6'][$SigType][$Range] . '</span>';
+        }
+    }
+    $CIDRAM['FE']['RangeRows'] = '';
+    for ($Range = 1; $Range <= 32; $Range++) {
+        $Label = 'IPv4/' . $Range;
+        $ThisArr = ['RangeType' => $Label, 'NumOfCIDRs' => $Out[$Label], 'state_loading' => $CIDRAM['lang']['state_loading']];
+        $CIDRAM['FE']['RangeRows'] .= $CIDRAM['ParseVars']($ThisArr, $CIDRAM['FE']['RangeRow']);
+    }
+    for ($Range = 1; $Range <= 128; $Range++) {
+        $Label = 'IPv6/' . $Range;
+        $ThisArr = ['RangeType' => $Label, 'NumOfCIDRs' => $Out[$Label], 'state_loading' => $CIDRAM['lang']['state_loading']];
+        $CIDRAM['FE']['RangeRows'] .= $CIDRAM['ParseVars']($ThisArr, $CIDRAM['FE']['RangeRow']);
+    }
 };
 
 /** Assign some basic variables (initial prepwork for most front-end pages). */

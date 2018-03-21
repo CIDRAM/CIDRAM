@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.03.15).
+ * This file: Arabic language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'محاولات reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $CIDRAM['lang']['label_show'] = 'اظهره';
+$CIDRAM['lang']['label_signature_type'] = 'نوع التوقيع:';
 $CIDRAM['lang']['label_stable'] = 'أحدث مستقرة:';
 $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
 $CIDRAM['lang']['label_tests'] = 'اختبارات:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'اختبار IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'التتبع IP';
 $CIDRAM['lang']['link_logs'] = 'سجلات';
+$CIDRAM['lang']['link_range'] = 'جداول الشبكة الفرعية';
 $CIDRAM['lang']['link_sections_list'] = 'قائمة الأقسام';
 $CIDRAM['lang']['link_statistics'] = 'الإحصاء';
 $CIDRAM['lang']['link_textmode'] = 'تنسيق النص: <a href="%1$sfalse%2$s">بسيط</a> – <a href="%1$strue%2$s">تهيئتها</a> – <a href="%1$stally%2$s">عد</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(عند عدم تحديده، س
 $CIDRAM['lang']['tip_ip_tracking'] = 'مرحبا، {username}.<br />التتبع IP يسمح لك للتحقق من حالة تتبع عناوين IP، تحقق محظورة، و إلغاء تتبع إذا كنت تريد أن تفعل ذلك.';
 $CIDRAM['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
+$CIDRAM['lang']['tip_range'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض المعلومات الإحصائية الأساسية حول نطاقات IP التي تغطيها ملفات التوقيع النشطة حاليًا.';
 $CIDRAM['lang']['tip_sections_list'] = 'مرحبا، {username}.<br />تسرد هذه الصفحة الأقسام الموجودة في ملفات التوقيع النشطة حاليا.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ar.md#SECTION6">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
 $CIDRAM['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت CIDRAM.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – التتبع IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – سجلات';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – جداول الشبكة الفرعية';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – قائمة الأقسام';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – الإحصاء';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – التحديثات';

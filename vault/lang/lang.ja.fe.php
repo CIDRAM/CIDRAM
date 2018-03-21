@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.03.15).
+ * This file: Japanese language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHAの試み';
 $CIDRAM['lang']['label_results'] = '結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）：';
 $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
 $CIDRAM['lang']['label_show'] = '表示する';
+$CIDRAM['lang']['label_signature_type'] = 'シグネチャ・タイプ：';
 $CIDRAM['lang']['label_stable'] = '最新安定：';
 $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $CIDRAM['lang']['label_tests'] = 'テスト：';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'ＩＰアグリゲータ';
 $CIDRAM['lang']['link_ip_test'] = 'ＩＰテスト';
 $CIDRAM['lang']['link_ip_tracking'] = 'ＩＰトラッキング';
 $CIDRAM['lang']['link_logs'] = 'ロゴス';
+$CIDRAM['lang']['link_range'] = '範囲テーブル';
 $CIDRAM['lang']['link_sections_list'] = 'セクション・リスト';
 $CIDRAM['lang']['link_statistics'] = '統計';
 $CIDRAM['lang']['link_textmode'] = 'テキスト・フォーマット： <a href="%1$sfalse%2$s">シンプル</a> – <a href="%1$strue%2$s">ファンシー</a> – <a href="%1$stally%2$s">集計</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '（選択されていない場�
 $CIDRAM['lang']['tip_ip_tracking'] = 'こんにちは、​{username}。​<br />ＩＰトラッキング・ページでは、​ＩＰアドレスのトラッキングステータスを確認できます。​あなたは禁止されているものを確認することができ、​望むならばあなたはトラッキングをキャンセルことができます。';
 $CIDRAM['lang']['tip_login'] = 'デフォルト・ユーザ名：​<span class="txtRd">admin</span> – デフォルト・パスワード：​<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'こんにちは、​{username}。​<br />そのログの内容を表示するために、​次のリストからログを選択します。';
+$CIDRAM['lang']['tip_range'] = 'こんにちは、​{username}。​<br />このページには、現在アクティブな・シグネチャ・ファイルが対象とするＩＰ範囲に関する基本的な統計情報が表示されます。';
 $CIDRAM['lang']['tip_sections_list'] = 'こんにちは、​{username}。<br />このページには、現在アクティブなシグネチャ・ファイルに存在するセクションが一覧表示されます。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、​<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ja.md#SECTION6">ドキュメント</a>を参照してください。';
 $CIDRAM['lang']['tip_statistics'] = 'こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – ＩＰテスト';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – ＩＰトラッキング';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – ログイン';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – 範囲テーブル';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – セクション・リスト';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – 統計';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';

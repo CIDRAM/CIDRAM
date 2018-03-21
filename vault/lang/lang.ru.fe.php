@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.03.15).
+ * This file: Russian language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'Попытки reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'Результаты (%s вход – %s отвергнуто – %s принято – %s слиты – %s вывод):';
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
 $CIDRAM['lang']['label_show'] = 'Показать';
+$CIDRAM['lang']['label_signature_type'] = 'Тип сигнатуры:';
 $CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
 $CIDRAM['lang']['label_tests'] = 'Испытания:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Агрегатор IP';
 $CIDRAM['lang']['link_ip_test'] = 'Тест IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Отслеживания IP';
 $CIDRAM['lang']['link_logs'] = 'Лог-Файлы';
+$CIDRAM['lang']['link_range'] = 'Таблицы Диапазонов';
 $CIDRAM['lang']['link_sections_list'] = 'Списка Секций';
 $CIDRAM['lang']['link_statistics'] = 'Статистика';
 $CIDRAM['lang']['link_textmode'] = 'Форматирование текста: <a href="%1$sfalse%2$s">Просто</a> – <a href="%1$strue%2$s">Маскарадный</a> – <a href="%1$stally%2$s">Подсчет</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Если не выбрано, �
 $CIDRAM['lang']['tip_ip_tracking'] = 'Привет, {username}.<br />Страница отслеживания IP позволяет проверять состояние отслеживание IP-адресов, чтобы проверить какие из них были запрещены, и отменить отслеживание за ними, если вы хотите чтобы сделать это.';
 $CIDRAM['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл.';
+$CIDRAM['lang']['tip_range'] = 'Привет, {username}.<br />На этой странице показана базовая статистическая информация о диапазонах IP, охватываемых активными сигнатурными файлами.';
 $CIDRAM['lang']['tip_sections_list'] = 'Привет, {username}.<br />На этой странице перечислены секций, которые существуют в активных файлах сигнатур.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.ru.md#SECTION6">документации</a> для получения информации о различных директив конфигурации и их целей.';
 $CIDRAM['lang']['tip_statistics'] = 'Привет, {username}.<br />На этой странице показаны основные статистические данные об использовании вашей CIDRAM-инсталляция.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Тест IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Отслеживания IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Войти';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Лог-Файлы';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – Таблицы Диапазонов';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Списка Секций';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Статистика';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Обновления';

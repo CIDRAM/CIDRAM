@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.03.15).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA嘗試';
 $CIDRAM['lang']['label_results'] = '結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_show'] = '顯示';
+$CIDRAM['lang']['label_signature_type'] = '簽名類型：';
 $CIDRAM['lang']['label_stable'] = '最新穩定：';
 $CIDRAM['lang']['label_sysinfo'] = '系統信息：';
 $CIDRAM['lang']['label_tests'] = '測試：';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP聚合器';
 $CIDRAM['lang']['link_ip_test'] = 'IP測試';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP跟踪';
 $CIDRAM['lang']['link_logs'] = '日誌';
+$CIDRAM['lang']['link_range'] = '範圍表';
 $CIDRAM['lang']['link_sections_list'] = '章節列表';
 $CIDRAM['lang']['link_statistics'] = '統計';
 $CIDRAM['lang']['link_textmode'] = '文字格式： <a href="%1$sfalse%2$s">簡單</a> – <a href="%1$strue%2$s">漂亮</a> – <a href="%1$stally%2$s">理貨</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '（如果未選中的，只有�
 $CIDRAM['lang']['tip_ip_tracking'] = '你好，​{username}。​<br />IP跟踪頁面允許您檢查IP地址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。';
 $CIDRAM['lang']['tip_login'] = '標準用戶名：<span class="txtRd">admin</span> – 標準密碼：<span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = '你好，​{username}。​<br />選擇一個日誌從下面的列表以查看那個日誌的內容。';
+$CIDRAM['lang']['tip_range'] = '你好，​{username}。<br />本頁面顯示了有關當前活性簽名文件覆蓋的IP範圍的一些基本統計信息。';
 $CIDRAM['lang']['tip_sections_list'] = '你好，​{username}。<br />此頁面列出當前活動簽名文件中存在哪些章節。';
 $CIDRAM['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.zh-TW.md#SECTION6">文檔</a>以獲取有關各種配置指令的信息和他們的目的。';
 $CIDRAM['lang']['tip_statistics'] = '你好，​{username}。​<br />此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP測試';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 登錄';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 日誌';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – 範圍表';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – 章節列表';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – 統計';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';

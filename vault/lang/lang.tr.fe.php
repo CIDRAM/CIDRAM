@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.03.15).
+ * This file: Turkish language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA denemeler';
 $CIDRAM['lang']['label_results'] = 'Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $CIDRAM['lang']['label_show'] = 'Göstermek';
+$CIDRAM['lang']['label_signature_type'] = 'İmza tipi:';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
 $CIDRAM['lang']['label_tests'] = 'Testler:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP Toplayıcı';
 $CIDRAM['lang']['link_ip_test'] = 'IP Testi';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP İzleme';
 $CIDRAM['lang']['link_logs'] = 'Kayıtlar';
+$CIDRAM['lang']['link_range'] = 'İmza Tabloları';
 $CIDRAM['lang']['link_sections_list'] = 'Bölüm Listeleri';
 $CIDRAM['lang']['link_statistics'] = 'İstatistik';
 $CIDRAM['lang']['link_textmode'] = 'Metin biçimlendirme: <a href="%1$sfalse%2$s">Basit</a> – <a href="%1$strue%2$s">Süslü</a> – <a href="%1$stally%2$s">Taksir</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Seçilmediğinde, yalnızca imz
 $CIDRAM['lang']['tip_ip_tracking'] = 'Merhaba, {username}.<br />IP izleme sayfası, IP adreslerinin izleme durumunu kontrol etmenizi, hangilerinin yasak olduğunu kontrol etmenizi ve isterseniz bunların yasaklanmasını/izlemensini kaldırmanızı kontrol etmenizi sağlar.';
 $CIDRAM['lang']['tip_login'] = 'Varsayılan kullanıcı adı: <span class="txtRd">admin</span> – Varsayılan şifre: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Merhaba, {username}.<br />Bu günlük dosyasının içeriğini görüntülemek için aşağıdaki listeden bir günlük dosyası seçin.';
+$CIDRAM['lang']['tip_range'] = 'Merhaba, {username}.<br />Bu sayfa, şu anda aktif imza dosyalarının kapsadığı IP aralıkları hakkında bazı temel istatistiksel bilgileri göstermektedir.';
 $CIDRAM['lang']['tip_sections_list'] = 'Merhaba, {username}.<br />Bu sayfa şu anda etkin olan imza dosyalarında hangi bölümlerin bulunduğunu listeler.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönergeleri ve amaçlarıyla ilgili bilgi için <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">belgelere</a> bakın.';
 $CIDRAM['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Testi';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP İzleme';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Giriş';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Kayıtlar';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – İmza Tabloları';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Bölüm Listeleri';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – İstatistik';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Güncellemeler';

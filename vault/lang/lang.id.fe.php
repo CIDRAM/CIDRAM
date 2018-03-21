@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.03.15).
+ * This file: Indonesian language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'Upaya reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
 $CIDRAM['lang']['label_show'] = 'Menunjukkan';
+$CIDRAM['lang']['label_signature_type'] = 'Jenis tanda tangan:';
 $CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
 $CIDRAM['lang']['label_tests'] = 'Pengujian:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Agregator IP';
 $CIDRAM['lang']['link_ip_test'] = 'IP Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'Pelacakan IP';
 $CIDRAM['lang']['link_logs'] = 'Log';
+$CIDRAM['lang']['link_range'] = 'Tabel Rentang';
 $CIDRAM['lang']['link_sections_list'] = 'Daftar Bagian';
 $CIDRAM['lang']['link_statistics'] = 'Statistik';
 $CIDRAM['lang']['link_textmode'] = 'Format teks: <a href="%1$sfalse%2$s">Sederhana</a> – <a href="%1$strue%2$s">Terformat</a> – <a href="%1$stally%2$s">Penghitungannya</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Bila tidak dipilih, hanya file 
 $CIDRAM['lang']['tip_ip_tracking'] = 'Salam, {username}.<br />Halaman pelacakan IP memungkinkan Anda untuk memeriksa status pelacakan alamat IP, untuk memeriksa yang mereka telah dilarang, dan mencabut pelacakan untuk mereka jika Anda ingin melakukan.';
 $CIDRAM['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
+$CIDRAM['lang']['tip_range'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif.';
 $CIDRAM['lang']['tip_sections_list'] = 'Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.id.md#SECTION6">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $CIDRAM['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Pelacakan IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Log';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – Tabel Rentang';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Daftar Bagian';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistik';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Pembaruan';

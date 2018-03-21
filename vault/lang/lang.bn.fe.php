@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.03.15).
+ * This file: Bangla language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA প্রচেষ্টা';
 $CIDRAM['lang']['label_results'] = 'ফলাফল (%s ইনপুট – %s প্রত্যাখ্যাত – %s গৃহীত – %s মার্জ করা – %s আউটপুট):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI ব্যবহৃত:';
 $CIDRAM['lang']['label_show'] = 'দেখাও';
+$CIDRAM['lang']['label_signature_type'] = 'স্বাক্ষর প্রকার:';
 $CIDRAM['lang']['label_stable'] = 'সর্বশেষ স্থিতিশীল:';
 $CIDRAM['lang']['label_sysinfo'] = 'সিস্টেম তথ্য:';
 $CIDRAM['lang']['label_tests'] = 'পরীক্ষাগুলি:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP এগ্রিগেটর';
 $CIDRAM['lang']['link_ip_test'] = 'IP টেস্ট';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP পর্যবেক্ষণ';
 $CIDRAM['lang']['link_logs'] = 'লগ ফাইল';
+$CIDRAM['lang']['link_range'] = 'রেঞ্জ টেবিল';
 $CIDRAM['lang']['link_sections_list'] = 'বিভাগ তালিকা';
 $CIDRAM['lang']['link_statistics'] = 'পরিসংখ্যান';
 $CIDRAM['lang']['link_textmode'] = 'পাঠ্য বিন্যাস: <a href="%1$sfalse%2$s">সহজ</a> – <a href="%1$strue%2$s">অভিনব</a> – <a href="%1$stally%2$s">তালি</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(নির্বাচিত ন
 $CIDRAM['lang']['tip_ip_tracking'] = 'হ্যালো, {username}।<br />IP পর্যবেক্ষণ পৃষ্ঠা আপনাকে IP ঠিকানাগুলির নিরীক্ষণ করা হচ্ছে তা পরীক্ষা করার অনুমতি দেয়, যাদেরকে নিষিদ্ধ করা হয়েছে তা দেখতে, এবং যদি আপনি চান, নিষিদ্ধ অপসারণ।';
 $CIDRAM['lang']['tip_login'] = 'ডিফল্ট ব্যবহারকারীর নাম: <span class="txtRd">admin</span> – ডিফল্ট পাসওয়ার্ড: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'হ্যালো, {username}।<br />যে লগ ফাইল এর বিষয়বস্তু দেখতে নীচের তালিকা থেকে একটি লগ ফাইল নির্বাচন করুন।';
+$CIDRAM['lang']['tip_range'] = 'হ্যালো, {username}।<br />এই পৃষ্ঠাটি বর্তমানে সক্রিয় স্বাক্ষর ফাইলগুলির দ্বারা আবৃত IP রেঞ্জ সম্পর্কে কিছু মৌলিক পরিসংখ্যানগত তথ্য দেখায়।';
 $CIDRAM['lang']['tip_sections_list'] = 'হ্যালো, {username}।<br />এই পৃষ্ঠাটি বর্তমানে সক্রিয় স্বাক্ষর ফাইলগুলির মধ্যে কোন অংশগুলি বিদ্যমান।';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'বিভিন্ন কনফিগারেশন নির্দেশাবলী এবং তাদের উদ্দেশ্য সম্পর্কে আরও তথ্যের জন্য <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">ডকুমেন্টেশনটি</a> দেখুন।';
 $CIDRAM['lang']['tip_statistics'] = 'হ্যালো, {username}।<br />এই পৃষ্ঠাটি আপনার CIDRAM ইনস্টলেশনের সম্পর্কিত কিছু মৌলিক ব্যবহারের পরিসংখ্যান দেখায়।';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP টেস্ট';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP পর্যবেক্ষণ';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – লগ ইন';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – লগ ফাইল';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – রেঞ্জ টেবিল';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – বিভাগ তালিকা';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – পরিসংখ্যান';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – আপডেট';

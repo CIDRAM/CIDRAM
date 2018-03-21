@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.03.15).
+ * This file: Norwegian language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA forsøk';
 $CIDRAM['lang']['label_results'] = 'Resultater (%s i – %s avvist – %s akseptert – %s sammensmeltet – %s ut):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI brukt:';
 $CIDRAM['lang']['label_show'] = 'Vis';
+$CIDRAM['lang']['label_signature_type'] = 'Signaturtype:';
 $CIDRAM['lang']['label_stable'] = 'Siste stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Systeminformasjon:';
 $CIDRAM['lang']['label_tests'] = 'Tester:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP-Aggregator';
 $CIDRAM['lang']['link_ip_test'] = 'IP-Test';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP-Sporing';
 $CIDRAM['lang']['link_logs'] = 'Logger';
+$CIDRAM['lang']['link_range'] = 'Signatur Tabeller';
 $CIDRAM['lang']['link_sections_list'] = 'Seksjonsliste';
 $CIDRAM['lang']['link_statistics'] = 'Statistikk';
 $CIDRAM['lang']['link_textmode'] = 'Tekstformatering: <a href="%1$sfalse%2$s">Enkel</a> – <a href="%1$strue%2$s">Fancy</a> – <a href="%1$stally%2$s">Tally</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Når ikke valgt, blir bare sign
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallo, {username}.<br />IP-sporing-siden lar deg sjekke sporingsstatus for IP-adresser, for å sjekke hvilken av dem som er blitt utestengt, og å oppheve utestengt status eller slutte å spore hvis du vil gjøre det.';
 $CIDRAM['lang']['tip_login'] = 'Standard brukernavn: <span class="txtRd">admin</span> – Standard passord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallo, {username}.<br />Velg en loggfil fra listen nedenfor for å se innholdet i den loggfilen.';
+$CIDRAM['lang']['tip_range'] = 'Hallo, {username}.<br />Denne siden viser noen grunnleggende statistiske opplysninger om signaturene som dekkes av de aktive signaturfilene.';
 $CIDRAM['lang']['tip_sections_list'] = 'Hallo, {username}.<br />Denne siden viser hvilke seksjoner som finnes i de aktive signaturfilene.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Se <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.en.md#SECTION6">dokumentasjonen</a> for informasjon om de ulike konfigurasjonsdirektiver og deres formål.';
 $CIDRAM['lang']['tip_statistics'] = 'Hallo, {username}.<br />Denne siden viser noen grunnleggende bruksstatistikk angående CIDRAM-installasjonen.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP-Test';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Sporing';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Innloggingssiden';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Logger';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – Signatur Tabeller';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Seksjonsliste';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistikk';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Oppdateringer';

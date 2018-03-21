@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.03.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -166,6 +166,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA nỗ lực';
 $CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $CIDRAM['lang']['label_show'] = 'Hiển thị';
+$CIDRAM['lang']['label_signature_type'] = 'Loại chữ ký';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $CIDRAM['lang']['label_tests'] = 'Kiểm tra:';
@@ -182,6 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'Tập Hợp IP';
 $CIDRAM['lang']['link_ip_test'] = 'Kiểm Tra IP';
 $CIDRAM['lang']['link_ip_tracking'] = 'Giám sát IP';
 $CIDRAM['lang']['link_logs'] = 'Bản Ghi';
+$CIDRAM['lang']['link_range'] = 'Bảng Dãy';
 $CIDRAM['lang']['link_sections_list'] = 'Danh sách phần';
 $CIDRAM['lang']['link_statistics'] = 'Số liệu thống kê';
 $CIDRAM['lang']['link_textmode'] = 'Định dạng văn bản: <a href="%1$sfalse%2$s">Đơn giản</a> – <a href="%1$strue%2$s">Đẹp</a> – <a href="%1$stally%2$s">Kiểm đếm</a>';
@@ -287,6 +289,7 @@ $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Khi không được chọn, ch�
 $CIDRAM['lang']['tip_ip_tracking'] = 'Xin chào, {username}.<br />Các trang cho giám sát IP cho phép bạn kiểm tra tình trạng giám sát các địa chỉ IP, để kiểm tra mà trong số họ đã bị cấm, và hủy bỏ giám sát họ nếu bạn muốn làm như vậy.';
 $CIDRAM['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$CIDRAM['lang']['tip_range'] = 'Xin chào, {username}.<br />Trang này hiển thị một số thông tin thống kê cơ bản về các dãy IP được bao phủ bởi các tập tin chữ ký đang hoạt động.';
 $CIDRAM['lang']['tip_sections_list'] = 'Xin chào, {username}.<br />Trang này liệt kê những phần nào tồn tại trong các tập tin chữ ký đang kích hoạt.';
 $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/CIDRAM/CIDRAM/blob/master/_docs/readme.vi.md#SECTION6">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
 $CIDRAM['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn.';
@@ -303,6 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Giám sát IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – Bản Ghi';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – Bảng Dãy';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Danh sách phần';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Số liệu thống kê';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Cập Nhật';

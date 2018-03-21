@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.03.03).
+ * This file: Front-end handler (last modified: 2018.03.21).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2228,6 +2228,48 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
     $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
         $CIDRAM['lang'] + $CIDRAM['FE'],
         $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_sections.html'))
+    );
+
+    /** Send output. */
+    echo $CIDRAM['SendOutput']();
+
+}
+
+/** Range Tables. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Page initial prepwork. */
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_range'], $CIDRAM['lang']['tip_range']);
+
+    /** Append number localosation JS. */
+    $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
+
+    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+    /** Add flags CSS. */
+    if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+        $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+    }
+
+    /** Template for range rows. */
+    $CIDRAM['FE']['RangeRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_row.html'));
+
+    /** Process signature files. */
+    $CIDRAM['RangeHandler'](
+        array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'])),
+        array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv6']))
+    );
+
+    /** Calculate and append page load time, and append totals. */
+    $CIDRAM['FE']['ProcTime'] = '<div class="s">' . sprintf(
+        $CIDRAM['lang']['state_loadtime'],
+        $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3)
+    ) . '</div>';
+
+    /** Parse output. */
+    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+        $CIDRAM['lang'] + $CIDRAM['FE'],
+        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range.html'))
     );
 
     /** Send output. */

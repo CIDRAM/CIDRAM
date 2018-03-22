@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.03.21).
+ * This file: Front-end handler (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2254,8 +2254,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     /** Template for range rows. */
     $CIDRAM['FE']['RangeRow'] = $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_range_row.html'));
 
-    /** Process signature files. */
-    $CIDRAM['RangeHandler'](
+    /** Process signature files and fetch returned JavaScript stuff. */
+    $CIDRAM['FE']['JSFOOT'] = $CIDRAM['RangeTablesHandler'](
         array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'])),
         array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv6']))
     );

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.21).
+ * This file: Front-end functions file (last modified: 2018.03.22).
  */
 
 /**
@@ -1983,7 +1983,7 @@ $CIDRAM['RangeHandlerFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOr
         $LFPos = strpos($Data, "\n", $Check + $NeedleLen);
         if ($LFPos !== false) {
             if ($Deduct = $LFPos - $Check - $NeedleLen) {
-                $Param = trim(substr($Data, $Check + $NeedleLen + 1, $LFPos - $Check - $NeedleLen - 1));
+                $Param = trim(substr($Data, $Check + $NeedleLen + 1, $Deduct - 1));
                 $Offset = $Check + $NeedleLen + strlen($Param) + 1;
             } else {
                 $Param = '';

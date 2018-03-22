@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.5.0-DEV+18079870
+ Version: 1.5.0-DEV+18080642
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -151,7 +151,7 @@ CIDRAM:
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - cc1df155d08a9eb1690fd11d07ca24e5:152580
-   - c17718209a97f2015db31ac6ad4c4c73:103981
+   - 1cb7e852cdebfea9717c1a377113ca7e:103960
    - 7997eec2b28834c713a96133121b9565:60208
    - 02454aff649cf2a9837b8adf7ca81dfc:5071
    - 8e03209e7fc6641b45094e584340feff:83
@@ -183,7 +183,7 @@ IPv4:
   zh: 标准IPv4签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2018.80.036
+ Version: 2018.80.642
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -193,7 +193,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - dece8e8e83753db5d6f2532096ffb639:574097
+   - cde187e67c11b8e3b156a8f2c58654d6:578322
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description:
@@ -251,7 +251,7 @@ IPv4-ISPs:
   zh: 标准IPv4签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2018.80.036
+ Version: 2018.80.642
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -261,7 +261,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - fa7648aa3c3253b27b4a6032ac755c00:216810
+   - bfb0c6de8599318843a3dc205d021241:216715
  Reannotate: components.dat
 IPv4-Other:
  Extended Description:
@@ -285,7 +285,7 @@ IPv4-Other:
   zh: 标准IPv4签名通常包括在主包。​阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2018.51.261
+ Version: 2018.80.642
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -295,7 +295,7 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 6c1bd00e8cbf13ab04d063ce97125c4f:68799
+   - dd284a001a3309afae595a50d4c7baa3:68821
  Reannotate: components.dat
 IPv6:
  Extended Description:
@@ -319,7 +319,7 @@ IPv6:
   zh: 标准IPv6签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.80.036
+ Version: 2018.80.642
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -329,7 +329,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - fa5ae040685b181d031bfc7bab8e7d81:140916
+   - 7102af762e0aba21a3801f55080617af:141468
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description:
@@ -421,7 +421,7 @@ IPv6-Other:
   zh: 标准IPv6签名通常包括在主包。​阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.36.132
+ Version: 2018.80.642
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -431,11 +431,11 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - 7ab1f9ecf3b225425fa23b5b436778b1:1819
+   - 5c1fe70e3ad96548f72f0dbaa6fce19e:1819
  Reannotate: components.dat
 Bypasses:
  False Positive Risk: Low
- Version: 2018.71.480
+ Version: 2018.80.642
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -453,7 +453,7 @@ Bypasses:
   Checksum:
    - 44cb5f9b6da1d3dc9873937ec7603537:2153
    - c70da108007c66cfda562b1efbf549e4:2382
-   - ad37e171e5accd6d7b16e176b42a66fb:2193
+   - 19ee23c4fca67e8f0c717c565f4e6fef:2415
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2018.03.13).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2018.03.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -42,6 +42,11 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
 
     /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". **/
     if ($Tag === 'Rackspace Hosting' && $Factors[31] === '162.13.83.46/32') {
+        return;
+    }
+
+    /** Ensure the 38.0.0.0/8 in PSINet only triggers ONCE! Multiple triggers cause problems for some CDN bypasses. */
+    if ($Tag === 'PSINet, Inc' && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         return;
     }
 

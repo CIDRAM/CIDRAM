@@ -837,14 +837,10 @@ recaptcha:
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # %Listed, CleanTalk.org: 6.54%.
-# %Listed, abuseat.org (CBL-Listed): 27.46%.
-# Stop Forum Spam (SFS) listings: 158.
-# Updated: 2017.12.08
+# %Listed, abuseat.org (CBL-Listed): 28.48%.
+# Stop Forum Spam (SFS) listings: 285.
+# Updated: 2018.03.23
 
-104.118.106.0/23 Deny Spam
-104.118.108.0/22 Deny Spam
-104.118.144.0/20 Deny Spam
-104.118.160.0/20 Deny Spam
 112.215.16.0/24 Deny Spam
 112.215.19.0/24 Deny Spam
 112.215.26.0/24 Deny Spam
@@ -901,8 +897,14 @@ recaptcha:
 203.78.114.0/24 Deny Spam
 203.78.116.0/22 Deny Spam
 203.78.120.0/22 Deny Spam
-203.78.124.0/24 Deny Spam
+203.78.124.0/23 Deny Spam
+203.78.126.0/24 Deny Spam
 Origin: ID
+104.118.106.0/23 Deny Spam
+104.118.108.0/22 Deny Spam
+104.118.144.0/20 Deny Spam
+104.118.160.0/20 Deny Spam
+Origin: US
 Tag: PT Excelcomindo
 ---
 recaptcha:
@@ -929,12 +931,15 @@ Tag: AS48359
 
 # ASN 22368 ("TELEBUCARAMANGA S.A. E.S.P").
 # %Listed, CleanTalk.org: 8.99%.
-# %Listed, abuseat.org (CBL-Listed): 6.01%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2017.12.08
+# %Listed, abuseat.org (CBL-Listed): 5.28%.
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2018.03.23
 
 170.80.8.0/22 Deny Spam
 181.174.0.0/18 Deny Spam
+181.236.224.0/20 Deny Spam
+181.236.240.0/22 Deny Spam
+181.236.244.0/23 Deny Spam
 186.183.128.0/17 Deny Spam
 190.13.0.0/18 Deny Spam
 190.96.128.0/17 Deny Spam
@@ -952,9 +957,10 @@ Tag: AS48359
 201.245.177.0/24 Deny Spam
 201.245.178.0/24 Deny Spam
 201.245.180.0/24 Deny Spam
+Origin: CO
 205.160.32.0/24 Deny Spam
 205.160.34.0/23 Deny Spam
-Origin: IR
+Origin: US
 Tag: TELEBUCARAMANGA
 ---
 recaptcha:
@@ -962,11 +968,11 @@ recaptcha:
 
 
 # ASN 16322 ("Pars Online PJS").
-# %Listed, Google Malware Dashboard: 0.24%.
+# %Listed, Google Malware Dashboard: 0.16%.
 # %Listed, CleanTalk.org: 21.27%.
-# %Listed, abuseat.org (CBL-Listed): 2.91%.
-# Stop Forum Spam (SFS) listings: 257.
-# Updated: 2017.12.08
+# %Listed, abuseat.org (CBL-Listed): 2.76%.
+# Stop Forum Spam (SFS) listings: 169.
+# Updated: 2018.03.23
 
 5.78.0.0/16 Deny Spam
 31.214.132.0/23 Deny Spam
@@ -997,7 +1003,6 @@ recaptcha:
 95.156.234.0/23 Deny Spam
 95.156.236.0/23 Deny Spam
 95.156.248.0/23 Deny Spam
-95.156.252.0/22 Deny Spam
 109.230.192.0/23 Deny Spam
 109.230.204.0/22 Deny Spam
 109.230.221.0/24 Deny Spam
@@ -1012,7 +1017,7 @@ recaptcha:
 134.255.248.0/23 Deny Spam
 178.169.0.0/19 Deny Spam
 185.10.71.0/24 Deny Spam
-185.13.228.0/22 Deny Spam
+185.76.248.0/22 Deny Spam
 188.245.0.0/16 Deny Spam
 213.217.32.0/19 Deny Spam
 Origin: IR
@@ -1818,12 +1823,13 @@ Tag: INFOKOM Ltd
 
 
 # ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.62%.
+# %Listed, Google Malware Dashboard: 0.31%.
 # %Listed, CleanTalk.org: 18.03%.
-# Stop Forum Spam (SFS) listings: 707.
-# Updated: 2017.12.08
+# Stop Forum Spam (SFS) listings: 565.
+# Updated: 2018.03.23
 
-37.17.232.0/21 Deny Generic
+195.211.32.0/22 Deny Generic
+Origin: AT
 77.109.128.0/18 Deny Generic
 80.253.88.0/21 Deny Generic
 81.6.32.0/20 Deny Generic
@@ -1848,16 +1854,19 @@ Tag: INFOKOM Ltd
 185.198.204.0/23 Deny Generic
 185.203.112.0/22 Deny Generic
 185.210.68.0/24 Deny Generic
-193.202.106.0/24 Deny Generic
+185.240.172.0/22 Deny Generic
 193.222.255.0/24 Deny Generic
 193.223.80.0/20 Deny Generic
-195.8.117.0/24 Deny Generic
 195.8.210.0/23 Deny Generic
 195.191.240.0/23 Deny Generic
-195.211.32.0/22 Deny Generic
 212.51.128.0/19 Deny Generic
 213.144.128.0/19 Deny Generic
 Origin: CH
+37.17.232.0/21 Deny Generic
+Origin: DE
+193.202.106.0/24 Deny Generic
+195.8.117.0/24 Deny Generic
+Origin: GB
 Tag: Init7
 
 
@@ -7463,24 +7472,22 @@ recaptcha:
 
 # ASN 3255: State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
 #   Institute for Condensed Matter Physics of the National Academy of Science of Ukraine (UARNet).
-# %Listed, Google Malware Dashboard: 0.94%.
+# %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, CleanTalk.org: 22.12%.
-# Stop Forum Spam (SFS) listings: 3,940.
-# Updated: 2017.12.08
+# Stop Forum Spam (SFS) listings: 4,811.
+# Updated: 2018.03.23
 
-69.168.237.0/24 Deny Spam
-69.168.239.0/24 Deny Spam
+193.232.65.0/24 Deny Spam
+Origin: RU
+37.221.128.0/19 Deny Spam
 91.237.241.0/24 Deny Spam
 91.237.242.0/24 Deny Spam
 176.120.96.0/24 Deny Spam
-176.125.32.0/20 Deny Spam
-176.125.48.0/21 Deny Spam
-176.125.56.0/22 Deny Spam
 185.17.124.0/23 Deny Spam
 185.17.126.0/24 Deny Spam
+185.96.190.0/24 Deny Spam
 185.228.76.0/22 Deny Spam
 193.41.184.0/22 Deny Spam
-193.232.65.0/24 Deny Spam
 194.44.0.0/16 Deny Spam
 213.174.0.0/23 Deny Spam
 213.174.2.0/24 Deny Spam
@@ -7492,6 +7499,9 @@ recaptcha:
 217.65.248.0/24 Deny Spam
 217.65.255.0/24 Deny Spam
 Origin: UA
+69.168.237.0/24 Deny Spam
+69.168.239.0/24 Deny Spam
+Origin: US
 Tag: UARNet
 ---
 recaptcha:
@@ -7499,12 +7509,14 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.50%.
+# %Listed, Google Malware Dashboard: 2.21%.
 # %Listed, CleanTalk.org: 37.35%.
-# Stop Forum Spam (SFS) listings: 177.
-# Updated: 2017.12.08
+# Stop Forum Spam (SFS) listings: 194.
+# Updated: 2018.03.23
 
-80.85.152.0/21 Deny Spam
+80.85.152.0/23 Deny Spam
+80.85.154.0/24 Deny Spam
+80.85.156.0/22 Deny Spam
 91.202.12.0/22 Deny Spam
 185.118.164.0/22 Deny Spam
 185.144.28.0/22 Deny Spam
@@ -7607,101 +7619,101 @@ recaptcha:
 # Contains one "Run" signature. Careful when updating.
 # Updated: 2018.03.22
 38.0.0.0/8 Run rules_specific.php
-128.145.0.0/16 Deny Cloud
-130.117.0.0/16 Deny Cloud
-148.254.0.0/16 Deny Cloud
-149.2.0.0/16 Deny Cloud
-149.5.0.0/16 Deny Cloud
-149.6.127.0/24 Deny Cloud
-149.6.194.0/23 Deny Cloud
-149.6.196.0/24 Deny Cloud
-149.6.206.0/23 Deny Cloud
-149.7.1.0/24 Deny Cloud
-149.7.16.0/23 Deny Cloud
-149.7.39.0/24 Deny Cloud
-149.7.61.0/24 Deny Cloud
-149.7.99.0/24 Deny Cloud
-149.7.105.0/24 Deny Cloud
-149.7.114.0/23 Deny Cloud
-149.7.210.0/23 Deny Cloud
-149.7.212.0/23 Deny Cloud
-149.7.218.0/23 Deny Cloud
-149.7.220.0/23 Deny Cloud
-149.7.225.0/24 Deny Cloud
-149.7.226.0/24 Deny Cloud
-149.11.0.0/16 Deny Cloud
-149.12.24.0/21 Deny Cloud
-149.12.67.0/24 Deny Cloud
-149.12.68.0/23 Deny Cloud
-149.12.96.0/23 Deny Cloud
-149.12.104.0/21 Deny Cloud
-149.12.112.0/21 Deny Cloud
-149.12.164.0/22 Deny Cloud
-149.12.177.0/24 Deny Cloud
-149.12.179.0/24 Deny Cloud
-149.12.182.0/24 Deny Cloud
-149.12.194.0/23 Deny Cloud
-149.12.210.0/23 Deny Cloud
-149.12.212.0/24 Deny Cloud
-149.12.216.0/22 Deny Cloud
-149.12.222.0/23 Deny Cloud
-149.13.20.0/22 Deny Cloud
-149.13.28.0/24 Deny Cloud
-149.13.31.0/24 Deny Cloud
-149.13.71.0/24 Deny Cloud
-149.13.80.0/21 Deny Cloud
-149.13.89.0/24 Deny Cloud
-149.13.91.0/24 Deny Cloud
-149.13.114.0/23 Deny Cloud
-149.13.121.0/24 Deny Cloud
-149.13.122.0/23 Deny Cloud
-149.13.124.0/23 Deny Cloud
-149.13.145.0/24 Deny Cloud
-149.13.180.0/22 Deny Cloud
-149.14.0.0/16 Deny Cloud
-149.29.0.0/16 Deny Cloud
-149.30.0.0/16 Deny Cloud
-149.33.0.0/16 Deny Cloud
-149.36.0.0/16 Deny Cloud
-149.38.0.0/16 Deny Cloud
-149.40.0.0/16 Deny Cloud
-149.46.0.0/16 Deny Cloud
-149.57.0.0/16 Deny Cloud
-149.67.0.0/16 Deny Cloud
-149.71.0.0/16 Deny Cloud
-149.91.0.0/16 Deny Cloud
-149.100.0.0/16 Deny Cloud
-149.102.16.0/20 Deny Cloud
-149.104.0.0/16 Deny Cloud
-149.107.0.0/16 Deny Cloud
-149.108.0.0/16 Deny Cloud
-149.110.0.0/16 Deny Cloud
-149.113.0.0/16 Deny Cloud
-149.115.104.0/21 Deny Cloud
-149.115.120.0/21 Deny Cloud
-149.115.128.0/19 Deny Cloud
-149.120.0.0/16 Deny Cloud
-149.127.0.0/16 Deny Cloud
-192.77.171.0/24 Deny Cloud
-192.77.224.0/21 Deny Cloud
-192.246.0.0/16 Deny Cloud
-198.242.0.0/16 Deny Cloud
-199.29.0.0/16 Deny Cloud
-199.97.0.0/16 Deny Cloud
-199.98.0.0/15 Deny Cloud
-199.100.0.0/16 Deny Cloud
-204.4.0.0/14 Deny Cloud
-204.217.0.0/16 Deny Cloud
-204.240.0.0/14 Deny Cloud
-206.0.0.0/15 Deny Cloud
-206.2.0.0/16 Deny Cloud
-206.3.32.0/19 Deny Cloud
-206.3.64.0/18 Deny Cloud
-206.3.128.0/17 Deny Cloud
-206.4.0.0/14 Deny Cloud
-206.232.0.0/14 Deny Cloud
-206.236.0.0/15 Deny Cloud
-206.238.0.0/16 Deny Cloud
+128.145.0.0/16 Deny Generic
+130.117.0.0/16 Deny Generic
+148.254.0.0/16 Deny Generic
+149.2.0.0/16 Deny Generic
+149.5.0.0/16 Deny Generic
+149.6.127.0/24 Deny Generic
+149.6.194.0/23 Deny Generic
+149.6.196.0/24 Deny Generic
+149.6.206.0/23 Deny Generic
+149.7.1.0/24 Deny Generic
+149.7.16.0/23 Deny Generic
+149.7.39.0/24 Deny Generic
+149.7.61.0/24 Deny Generic
+149.7.99.0/24 Deny Generic
+149.7.105.0/24 Deny Generic
+149.7.114.0/23 Deny Generic
+149.7.210.0/23 Deny Generic
+149.7.212.0/23 Deny Generic
+149.7.218.0/23 Deny Generic
+149.7.220.0/23 Deny Generic
+149.7.225.0/24 Deny Generic
+149.7.226.0/24 Deny Generic
+149.11.0.0/16 Deny Generic
+149.12.24.0/21 Deny Generic
+149.12.67.0/24 Deny Generic
+149.12.68.0/23 Deny Generic
+149.12.96.0/23 Deny Generic
+149.12.104.0/21 Deny Generic
+149.12.112.0/21 Deny Generic
+149.12.164.0/22 Deny Generic
+149.12.177.0/24 Deny Generic
+149.12.179.0/24 Deny Generic
+149.12.182.0/24 Deny Generic
+149.12.194.0/23 Deny Generic
+149.12.210.0/23 Deny Generic
+149.12.212.0/24 Deny Generic
+149.12.216.0/22 Deny Generic
+149.12.222.0/23 Deny Generic
+149.13.20.0/22 Deny Generic
+149.13.28.0/24 Deny Generic
+149.13.31.0/24 Deny Generic
+149.13.71.0/24 Deny Generic
+149.13.80.0/21 Deny Generic
+149.13.89.0/24 Deny Generic
+149.13.91.0/24 Deny Generic
+149.13.114.0/23 Deny Generic
+149.13.121.0/24 Deny Generic
+149.13.122.0/23 Deny Generic
+149.13.124.0/23 Deny Generic
+149.13.145.0/24 Deny Generic
+149.13.180.0/22 Deny Generic
+149.14.0.0/16 Deny Generic
+149.29.0.0/16 Deny Generic
+149.30.0.0/16 Deny Generic
+149.33.0.0/16 Deny Generic
+149.36.0.0/16 Deny Generic
+149.38.0.0/16 Deny Generic
+149.40.0.0/16 Deny Generic
+149.46.0.0/16 Deny Generic
+149.57.0.0/16 Deny Generic
+149.67.0.0/16 Deny Generic
+149.71.0.0/16 Deny Generic
+149.91.0.0/16 Deny Generic
+149.100.0.0/16 Deny Generic
+149.102.16.0/20 Deny Generic
+149.104.0.0/16 Deny Generic
+149.107.0.0/16 Deny Generic
+149.108.0.0/16 Deny Generic
+149.110.0.0/16 Deny Generic
+149.113.0.0/16 Deny Generic
+149.115.104.0/21 Deny Generic
+149.115.120.0/21 Deny Generic
+149.115.128.0/19 Deny Generic
+149.120.0.0/16 Deny Generic
+149.127.0.0/16 Deny Generic
+192.77.171.0/24 Deny Generic
+192.77.224.0/21 Deny Generic
+192.246.0.0/16 Deny Generic
+198.242.0.0/16 Deny Generic
+199.29.0.0/16 Deny Generic
+199.97.0.0/16 Deny Generic
+199.98.0.0/15 Deny Generic
+199.100.0.0/16 Deny Generic
+204.4.0.0/14 Deny Generic
+204.217.0.0/16 Deny Generic
+204.240.0.0/14 Deny Generic
+206.0.0.0/15 Deny Generic
+206.2.0.0/16 Deny Generic
+206.3.32.0/19 Deny Generic
+206.3.64.0/18 Deny Generic
+206.3.128.0/17 Deny Generic
+206.4.0.0/14 Deny Generic
+206.232.0.0/14 Deny Generic
+206.236.0.0/15 Deny Generic
+206.238.0.0/16 Deny Generic
 Origin: US
 Tag: PSINet, Inc
 ---

@@ -129,13 +129,14 @@ recaptcha:
 
 # ASN 24203 ("PT Excelcomindo Pratama").
 # %Listed, CleanTalk.org: 6.54%.
-# %Listed, abuseat.org (CBL-Listed): 27.46%.
-# Stop Forum Spam (SFS) listings: 158.
-# Updated: 2017.12.08
+# %Listed, abuseat.org (CBL-Listed): 28.48%.
+# Stop Forum Spam (SFS) listings: 285.
+# Updated: 2017.12.08 / Checked: 2018.03.23
 
 2400:9800::/32 Deny Spam
-2600:1417:3000::/48 Deny Spam
 Origin: ID
+2600:1417:3000::/48 Deny Spam
+Origin: US
 Tag: PT Excelcomindo
 ---
 recaptcha:
@@ -360,20 +361,17 @@ Tag: PP SKS-LUGAN
 
 
 # ASN 13030 ("Init7").
-# %Listed, Google Malware Dashboard: 0.62%.
+# %Listed, Google Malware Dashboard: 0.31%.
 # %Listed, CleanTalk.org: 18.03%.
-# Stop Forum Spam (SFS) listings: 707.
-# Updated: 2017.12.08
+# Stop Forum Spam (SFS) listings: 565.
+# Updated: 2018.03.23
 
 2001:67c:7ac::/48 Deny Generic
-2001:67c:1388::/48 Deny Generic
-2001:67c:2570::/48 Deny Generic
 2001:67c:2648::/48 Deny Generic
 2001:1620::/32 Deny Generic
-2a00:5640::/32 Deny Generic
 2a00:e020::/32 Deny Generic
 2a00:f080::/42 Deny Generic
-2a02:168::/31 Deny Generic
+2a02:168::/30 Deny Generic
 2a02:16a0::/32 Deny Generic
 2a03:7520::/32 Deny Generic
 2a07:600::/29 Deny Generic
@@ -382,6 +380,12 @@ Tag: PP SKS-LUGAN
 2a0a:e5c0::/29 Deny Generic
 2a0b:5400:1::/48 Deny Generic
 Origin: CH
+2a00:5640::/32 Deny Generic
+Origin: DE
+2001:67c:1388::/48 Deny Generic
+Origin: GB
+2001:67c:2570::/48 Deny Generic
+Origin: LI
 Tag: Init7
 
 
@@ -1182,10 +1186,10 @@ recaptcha:
 
 # ASN 3255: State Enterprise Scientific and Telecommunication Centre "Ukrainian Academic and Research Network" of the
 #   Institute for Condensed Matter Physics of the National Academy of Science of Ukraine (UARNet).
-# %Listed, Google Malware Dashboard: 0.94%.
+# %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, CleanTalk.org: 22.12%.
-# Stop Forum Spam (SFS) listings: 3,940.
-# Updated: 2017.07.08 / Checked: 2017.12.08
+# Stop Forum Spam (SFS) listings: 4,811.
+# Updated: 2017.07.08 / Checked: 2018.03.23
 
 2a00:fc00::/32 Deny Spam
 Origin: UA
@@ -1196,10 +1200,10 @@ recaptcha:
 
 
 # ASN 44493 ("Chelyabinsk-Signal").
-# %Listed, Google Malware Dashboard: 0.50%.
+# %Listed, Google Malware Dashboard: 2.21%.
 # %Listed, CleanTalk.org: 37.35%.
-# Stop Forum Spam (SFS) listings: 177.
-# Updated: 2017.07.08 / Checked: 2017.12.08
+# Stop Forum Spam (SFS) listings: 194.
+# Updated: 2017.07.08 / Checked: 2018.03.23
 
 2a03:a0e0::/32 Deny Spam
 Origin: RU

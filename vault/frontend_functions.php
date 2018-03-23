@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.22).
+ * This file: Front-end functions file (last modified: 2018.03.23).
  */
 
 /**
@@ -1998,7 +1998,7 @@ $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOri
         if (substr($Data, $CPos + 1, 1) === '#') {
             return false;
         }
-        $Origin = '';
+        $Origin = '??';
         if ($Offset !== false && $HasOrigin) {
             $CPos = strpos($Data, "\n\n", $Offset);
             $OPos = strpos($Data, "\nOrigin: ", $Offset);
@@ -2080,7 +2080,9 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
                         $Count = $CIDRAM['Number_L10N']($Count);
                     }
                     if ($Origin) {
-                        $Count = '<span class="flag ' . $Origin . '"></span> – ' . $Count;
+                        $Count = '<code class="hB">' . $Origin . '</code> – ' . (
+                            $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
+                        ) . $Count;
                     }
                 }
                 $Arr[$IPType . '-Origin'][$SigType][$Range] = implode('<br />', $Arr[$IPType . '-Origin'][$SigType][$Range]);

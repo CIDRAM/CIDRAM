@@ -163,6 +163,8 @@ CIDRAMは、手動で、または、フロント・エンド経由で更新で�
 /vault/fe_assets/_logs.html | フロントエンドのロゴスページのＨＴＭＬテンプレート。
 /vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​は完全なアクセスのためのものです。
 /vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのＨＴＭＬテンプレート、​はログのみにアクセスのためのものです。
+/vault/fe_assets/_range.html | フロントエンドの範囲テーブル・ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_range_row.html | フロントエンドの範囲テーブル・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_statistics.html | フロントエンドの統計ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_sections.html | セクション・リストのＨＴＭＬテンプレート。
 /vault/fe_assets/_sections_row.html | セクション・リストのＨＴＭＬテンプレート。
@@ -822,6 +824,11 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 次のパッケージと製品は、CIDRAMと互換性がないことが判明しています。
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+CIDRAMとの互換性を確保するために、以下のパッケージと製品用、モジュールが用意されています。
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*参照：​[互換性チャート](https://maikuolan.github.io/Compatibility-Charts/)。*
+
 ---
 
 
@@ -944,4 +951,4 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ---
 
 
-最終アップデート：2018年3月15日。
+最終アップデート：2018年3月23日。

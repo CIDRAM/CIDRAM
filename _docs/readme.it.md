@@ -163,6 +163,8 @@ File | Descrizione
 /vault/fe_assets/_logs.html | Un modello HTML per il front-end pagina per i file di log.
 /vault/fe_assets/_nav_complete_access.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso completo.
 /vault/fe_assets/_nav_logs_access_only.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso solo per i log.
+/vault/fe_assets/_range.html | Un modello HTML per il front-end pagina per le tabelle della gamma.
+/vault/fe_assets/_range_row.html | Un modello HTML per il front-end pagina per le tabelle della gamma.
 /vault/fe_assets/_statistics.html | Un modello HTML per il front-end pagina delle statistiche.
 /vault/fe_assets/_sections.html | Un modello HTML per la lista delle sezioni.
 /vault/fe_assets/_sections_row.html | Un modello HTML per la lista delle sezioni.
@@ -822,6 +824,11 @@ Variabile | Descrizione
 I seguenti pacchetti e prodotti sono stati trovati incompatibili con CIDRAM:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+I moduli sono stati resi disponibili per garantire che i seguenti pacchetti e prodotti siano compatibili con CIDRAM:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*Guarda anche: [Grafici di Compatibilità](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Sì. Per fare ciò, dovrai creare un file modulo personalizzato. *Vedere: [NOZIO
 ---
 
 
-Ultimo Aggiornamento: 15 Marzo 2018 (2018.03.15).
+Ultimo Aggiornamento: 23 Marzo 2018 (2018.03.23).

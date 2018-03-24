@@ -163,6 +163,8 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/fe_assets/_logs.html | 프론트 엔드 로고스 페이지의 HTML 템플릿.
 /vault/fe_assets/_nav_complete_access.html | 프론트 엔드의 탐색 링크의 HTML 템플릿, 완전한 액세스를위한 것입니다.
 /vault/fe_assets/_nav_logs_access_only.html | 프론트 엔드의 탐색 링크의 HTML 템플릿은 로그에만 액세스를위한 것입니다.
+/vault/fe_assets/_range.html | 프론트 엔드 범위 테이블 페이지의 HTML 템플릿.
+/vault/fe_assets/_range_row.html | 프론트 엔드 범위 테이블 페이지의 HTML 템플릿.
 /vault/fe_assets/_statistics.html | 프론트 엔드 통계 페이지의 HTML 템플릿.
 /vault/fe_assets/_sections.html | 섹션 목록 용 HTML 템플릿.
 /vault/fe_assets/_sections_row.html | 섹션 목록 용 HTML 템플릿.
@@ -822,6 +824,11 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 다음 패키지 및 제품이 CIDRAM과 호환되지 않습니다.
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+CIDRAM과의 호환성을 보장하기 위해, 다음 패키지 및 제품에, 모듈을 사용할 수 있습니다.
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*참조 : [호환성 차트](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 ---
 
 
-최종 업데이트 : 2018년 3월 15일.
+최종 업데이트 : 2018년 3월 23일.

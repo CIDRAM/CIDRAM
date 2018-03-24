@@ -163,6 +163,8 @@ Data | Deskripsi
 /vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
 /vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
 /vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
+/vault/fe_assets/_range.html | Template HTML untuk tabel rentang.
+/vault/fe_assets/_range_row.html | Template HTML untuk tabel rentang.
 /vault/fe_assets/_statistics.html | Template HTML untuk akses bagian depan halaman statistik.
 /vault/fe_assets/_sections.html | Template HTML untuk daftar bagian.
 /vault/fe_assets/_sections_row.html | Template HTML untuk daftar bagian.
@@ -822,6 +824,11 @@ Variabel | Deskripsi
 Paket dan produk berikut telah ditemukan tidak bisa dioperasikan dengan CIDRAM:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+Modul telah tersedia untuk memastikan bahwa paket dan produk berikut akan kompatibel dengan CIDRAM:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*Lihat juga: [Bagan Kompatibilitas](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Ya. Untuk melakukan ini, Anda harus membuat file modul disesuaikan. *Lihat: [DAS
 ---
 
 
-Terakhir Diperbarui: 15 Maret 2018 (2018.03.15).
+Terakhir Diperbarui: 23 Maret 2018 (2018.03.23).

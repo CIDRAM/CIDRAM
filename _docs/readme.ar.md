@@ -165,6 +165,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة السجلات.</div> | /vault/fe_assets/_logs.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع وصول كامل.</div> | /vault/fe_assets/_nav_complete_access.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end ارتباطات التنقل، يستخدم لهؤلاء مع سجلات الوصول فقط.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الجداول الشبكة الفرعية.</div> | /vault/fe_assets/_range.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الجداول الشبكة الفرعية.</div> | /vault/fe_assets/_range_row.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الإحصاء.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لقائمة الأقسام.</div> | /vault/fe_assets/_sections.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لقائمة الأقسام.</div> | /vault/fe_assets/_sections_row.html
@@ -943,6 +945,13 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
  <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
 </ul></div>
 
+<div dir="rtl">تم توفير وحدات لضمان توافق الحزم والمنتجات التالية مع CIDRAM:</div>
+<div dir="rtl"><ul>
+ <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/56">BunnyCDN</a></strong></li>
+</ul></div>
+
+<div dir="rtl"><em>انظر أيضا: <a href="https://maikuolan.github.io/Compatibility-Charts/">مخططات التوافق</a>.</em><br /><br /></div>
+
 ---
 
 
@@ -1066,4 +1075,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخر تحديث: 15 مارس 2018 (2018.03.15).</div>
+<div dir="rtl">آخر تحديث: 23 مارس 2018 (2018.03.23).</div>

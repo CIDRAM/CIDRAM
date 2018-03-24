@@ -165,6 +165,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
 &nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
 &nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline;">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range.html
+&nbsp; <div dir="rtl" style="display:inline;">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections.html
 &nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections_row.html
@@ -943,6 +945,13 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
  <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
 </ul></div>
 
+<div dir="rtl">اس بات کا یقین کرنے کے لئے کہ مندرجہ ذیل پیکجوں اور مصنوعات CIDRAM کے ساتھ مطابقت پذیر ہوں گے ماڈیولز دستیاب کیے گئے ہیں:</div>
+<div dir="rtl"><ul>
+ <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/56">BunnyCDN</a></strong></li>
+</ul></div>
+
+<div dir="rtl"><em>بھی دیکھو: <a href="https://maikuolan.github.io/Compatibility-Charts/">مطابقت چارٹ</a>.</em><br /><br /></div>
+
 ---
 
 
@@ -1066,4 +1075,4 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 15 مارچ 2018 (2018.03.15).</div>
+<div dir="rtl">آخری تازہ کاری: 23 مارچ 2018 (2018.03.23).</div>

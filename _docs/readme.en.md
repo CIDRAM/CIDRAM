@@ -163,6 +163,8 @@ File | Description
 /vault/fe_assets/_logs.html | An HTML template for the front-end logs page.
 /vault/fe_assets/_nav_complete_access.html | An HTML template for the front-end navigation links, for those with complete access.
 /vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only.
+/vault/fe_assets/_range.html | An HTML template for the front-end range tables page.
+/vault/fe_assets/_range_row.html | An HTML template for the front-end range tables page.
 /vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_sections.html | An HTML template for the sections list.
 /vault/fe_assets/_sections_row.html | An HTML template for the sections list.
@@ -822,6 +824,11 @@ Variable | Description
 The following packages and products have been found to be incompatible with CIDRAM:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+Modules have been made available to ensure that the following packages and products will be compatible with CIDRAM:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*See also: [Compatibility Charts](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR 
 ---
 
 
-Last Updated: 15 March 2018 (2018.03.15).
+Last Updated: 23 March 2018 (2018.03.23).

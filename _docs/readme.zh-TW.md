@@ -164,6 +164,8 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/fe_assets/_logs.html | 前端日誌頁面的HTML模板。
 /vault/fe_assets/_nav_complete_access.html | 前端導航鏈接的HTML模板，​由那些與完全訪問使用。
 /vault/fe_assets/_nav_logs_access_only.html | 前端導航鏈接的HTML模板，​由那些與僅日誌訪問使用。
+/vault/fe_assets/_range.html | 範圍表的HTML模板。
+/vault/fe_assets/_range_row.html | 範圍表的HTML模板。
 /vault/fe_assets/_statistics.html | 前端統計頁面的HTML模板。
 /vault/fe_assets/_sections.html | 章節列表的HTML模板。
 /vault/fe_assets/_sections_row.html | 章節列表的HTML模板。
@@ -823,6 +825,11 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 下列軟件包和產品被發現與CIDRAM不兼容：
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+已提供模塊以確保以下軟件包和產品與CIDRAM兼容：
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*也可以看看：​[兼容性圖表](https://maikuolan.github.io/Compatibility-Charts/)。*
+
 ---
 
 
@@ -945,4 +952,4 @@ CIDRAM使網站所有者能夠阻止不良流量，​但網站所有者有責�
 ---
 
 
-最後更新：2018年3月15日。
+最後更新：2018年3月23日。

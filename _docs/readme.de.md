@@ -163,6 +163,8 @@ Datei | Beschreibung
 /vault/fe_assets/_logs.html | Ein HTML-Template für die Front-End Protokolldateien-Seite.
 /vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für die Front-End Navigation-Links, für alle mit vollständiger Zugriff.
 /vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für die Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
+/vault/fe_assets/_range.html | Ein HTML-Template für die Front-End Bereichstische-Seite.
+/vault/fe_assets/_range_row.html | Ein HTML-Template für die Front-End Bereichstische-Seite.
 /vault/fe_assets/_statistics.html | Ein HTML-Template für die Front-End Statistikseite.
 /vault/fe_assets/_sections.html | Eine HTML-Template für die Sektionsliste.
 /vault/fe_assets/_sections_row.html | Eine HTML-Template für die Sektionsliste.
@@ -822,6 +824,11 @@ Variable | Beschreibung
 Die folgenden Pakete und Produkte haben sich als inkompatibel mit CIDRAM erwiesen:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+Module wurden zur Verfügung gestellt, um sicherzustellen, dass die folgenden Pakete und Produkte mit CIDRAM kompatibel sind:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*Siehe auch: [Kompatibilitätstabellen](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Ja. Dazu müssen Sie eine benutzerdefinierte Moduldatei erstellen. *Siehe: [GRUN
 ---
 
 
-Zuletzt aktualisiert: 15 März 2018 (2018.03.15).
+Zuletzt aktualisiert: 23 März 2018 (2018.03.23).

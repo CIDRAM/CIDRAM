@@ -163,6 +163,8 @@ Fichier | Description
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
 /vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
 /vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès aux fichiers journaux seulement.
+/vault/fe_assets/_range.html | Un modèle HTML pour la page pour les tableaux de gamme de l'accès frontal.
+/vault/fe_assets/_range_row.html | Un modèle HTML pour la page pour les tableaux de gamme de l'accès frontal.
 /vault/fe_assets/_statistics.html | Un modèle HTML pour la page de statistiques de l'accès frontal.
 /vault/fe_assets/_sections.html | Un modèle HTML pour la liste des sections.
 /vault/fe_assets/_sections_row.html | Un modèle HTML pour la liste des sections.
@@ -822,6 +824,11 @@ Variable | Description
 Les paquets et produits suivants ont été jugés incompatibles avec CIDRAM :
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+Des modules ont été mis à disposition pour garantir que les packages et produits suivants seront compatibles avec CIDRAM:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*Voir également : [Tableaux de Compatibilité](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir�
 ---
 
 
-Dernière mise à jour : 15 Mars 2018 (2018.03.15).
+Dernière mise à jour : 23 Mars 2018 (2018.03.23).

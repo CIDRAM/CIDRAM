@@ -163,6 +163,8 @@ Bestand | Beschrijving
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
 /vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
+/vault/fe_assets/_range.html | Een HTML sjabloon voor de frontend reeks tafels pagina.
+/vault/fe_assets/_range_row.html | Een HTML sjabloon voor de frontend reeks tafels pagina.
 /vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_sections.html | Een HTML sjabloon voor de sectielijst.
 /vault/fe_assets/_sections_row.html | Een HTML sjabloon voor de sectielijst.
@@ -822,6 +824,11 @@ Variabele | Beschrijving
 De volgende pakketten en producten zijn incompatibel met CIDRAM:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+Modules zijn beschikbaar gemaakt om ervoor te zorgen dat de volgende pakketten en producten compatibel zijn met CIDRAM:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*Zie ook: [Compatibiliteitskaarten](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODU
 ---
 
 
-Laatste Bijgewerkt: 15 Maart 2018 (2018.03.15).
+Laatste Bijgewerkt: 23 Maart 2018 (2018.03.23).

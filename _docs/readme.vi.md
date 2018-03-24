@@ -163,6 +163,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
 /vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
 /vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_range.html | Một tập tin mẫu HTML cho các bảng dãy.
+/vault/fe_assets/_range_row.html | Một tập tin mẫu HTML cho các bảng dãy.
 /vault/fe_assets/_statistics.html | Một tập tin mẫu HTML cho các trang thống kê của front-end.
 /vault/fe_assets/_sections.html | Một tập tin mẫu HTML cho danh sách phần.
 /vault/fe_assets/_sections_row.html | Một tập tin mẫu HTML cho danh sách phần.
@@ -822,6 +824,11 @@ Biến | Chi tiết
 Các gói và sản phẩm sau đã được tìm thấy là không tương thích với CIDRAM:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
 
+Các mô-đun đã được cung cấp để đảm bảo rằng các gói và sản phẩm sau sẽ tương thích với CIDRAM:
+- __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
+
+*Xem thêm: [Biểu đồ tương thích](https://maikuolan.github.io/Compatibility-Charts/).*
+
 ---
 
 
@@ -944,4 +951,4 @@ Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy c
 ---
 
 
-Lần cuối cập nhật: 15 Tháng Ba 2018 (2018.03.15).
+Lần cuối cập nhật: 23 Tháng Ba 2018 (2018.03.23).

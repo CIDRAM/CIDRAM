@@ -713,11 +713,13 @@ Tag: Hetzner Online GmbH
 
 
 # ASN 51559 ("Server Internet Bilisim ve Bilgisayar Hizmetleri").
-# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, Google Malware Dashboard: 0.38%.
 # %Listed, CleanTalk.org: 35.65%.
-# Stop Forum Spam (SFS) listings: 104.
-# Updated: 2017.12.08
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2018.03.26
 
+185.137.180.0/24 Deny Generic
+Origin: AT
 31.192.208.0/21 Deny Generic
 89.43.28.0/22 Deny Generic
 89.43.64.0/22 Deny Generic
@@ -733,13 +735,16 @@ Tag: Hetzner Online GmbH
 93.113.60.0/22 Deny Generic
 93.115.76.0/22 Deny Generic
 94.102.0.0/20 Deny Generic
-95.173.160.0/19 Deny Generic
+95.173.160.0/21 Deny Generic
+95.173.168.0/22 Deny Generic
+95.173.172.0/24 Deny Generic
+95.173.175.0/24 Deny Generic
+95.173.176.0/20 Deny Generic
 159.253.32.0/20 Deny Generic
 185.83.144.0/22 Deny Generic
 185.95.84.0/22 Deny Generic
 185.106.208.0/22 Deny Generic
 185.126.216.0/22 Deny Generic
-185.137.180.0/24 Deny Generic
 185.146.88.0/22 Deny Generic
 185.149.100.0/22 Deny Generic
 185.174.28.0/22 Deny Generic
@@ -913,8 +918,10 @@ recaptcha:
 
 # ASN 48359 ("Hesabgar Pardaz Gharb Company").
 # %Listed, CleanTalk.org: 7.26%.
-# Updated: 2017.12.08
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2018.03.26
 
+93.110.128.0/22 Deny Spam
 185.47.48.0/22 Deny Spam
 185.82.64.0/22 Deny Spam
 185.121.56.0/22 Deny Spam
@@ -922,8 +929,11 @@ recaptcha:
 185.137.60.0/22 Deny Spam
 185.142.92.0/22 Deny Spam
 185.142.124.0/22 Deny Spam
+185.187.48.0/23 Deny Spam
 185.212.192.0/22 Deny Spam
 185.221.192.0/22 Deny Spam
+185.238.44.0/22 Deny Spam
+188.253.8.0/21 Deny Spam
 212.95.128.0/19 Deny Spam
 Origin: IR
 Tag: AS48359
@@ -1871,12 +1881,14 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2017.12.08
+# Updated: 2018.03.26
 
-46.174.190.0/23 Deny Generic
+185.41.52.0/23 Deny Generic
+Origin: CZ
 185.10.208.0/22 Deny Generic
-185.41.52.0/24 Deny Generic
 193.33.212.0/23 Deny Generic
+Origin: UA
+46.174.190.0/23 Deny Generic
 Origin: VG
 Tag: Yes Networks
 
@@ -3024,10 +3036,18 @@ Tag: ALEXHOST SRL
 
 
 # ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2017.12.08
+# Updated: 2018.03.26
 
-23.235.232.0/21 Deny Generic
+185.56.136.0/22 Deny Generic
+185.62.36.0/22 Deny Generic
+Origin: MT
 37.140.232.0/21 Deny Generic
+185.28.188.0/22 Deny Generic
+185.52.52.0/22 Deny Generic
+Origin: NL
+185.184.8.0/24 Deny Generic
+Origin: PL
+23.235.232.0/21 Deny Generic
 45.59.24.0/24 Deny Generic
 63.246.124.0/23 Deny Generic
 64.38.214.0/23 Deny Generic
@@ -3036,7 +3056,6 @@ Tag: ALEXHOST SRL
 67.220.253.0/24 Deny Generic
 67.220.254.0/24 Deny Generic
 67.227.30.0/24 Deny Generic
-103.44.108.0/24 Deny Generic
 104.193.181.0/24 Deny Generic
 107.150.220.0/23 Deny Generic
 131.153.16.0/21 Deny Generic
@@ -3046,12 +3065,10 @@ Tag: ALEXHOST SRL
 173.211.4.0/24 Deny Generic
 184.174.68.0/24 Deny Generic
 184.174.94.0/24 Deny Generic
-185.28.188.0/22 Deny Generic
-185.52.52.0/22 Deny Generic
-185.56.136.0/22 Deny Generic
-185.62.36.0/22 Deny Generic
-185.184.8.0/24 Deny Generic
+207.66.82.0/23 Deny Generic
+207.66.86.0/24 Deny Generic
 209.182.105.0/24 Deny Generic
+Origin: US
 Tag: PHOENIX NAP, LLC
 
 
@@ -7528,10 +7545,52 @@ recaptcha:
  enabled: true
 
 
-# ASN 44775 ("Closed Joint Stock Company TransTeleCom").
+# ASN Prefix   	Description   
+5.149.144.0/21	Closed Joint Stock Company TransTeleCom Russian Federation
+5.149.144.0/23	Closed Joint Stock Company TransTeleCom Russian Federation
+5.149.146.0/24	ZAO "Electro-Com" B2B Russian Federation
+5.149.149.0/24	Rostov Network ETH B2B/B2C Russian Federation
+5.149.150.0/24	Taganrog Network ETH B2B/B2C Russian Federation
+86.110.168.0/22	ZAO "Electro-Com Don" Russian Federation
+86.110.168.0/23	ZAO "Electro-Com Don" Russian Federation
+86.110.170.0/23	ZAO "Electro-Com Don" Russian Federation
+86.110.173.0/24	ZAO "Electro-Com Don" Russian Federation
+86.110.174.0/23	ZAO "Electro-Com Don" Russian Federation
+86.110.178.0/24	ZAO "Electro-com Ryazan" Russian Federation
+86.110.180.0/22	ZAO "Electro-Com Don" Russian Federation
+86.110.182.0/23	ZAO "Electro-Com Don" Russian Federation
+86.110.184.0/21	Closed Joint Stock Company TransTeleCom Russian Federation
+86.110.188.0/23	ZAO "Electro-Com Don" P2P Customers Russian Federation
+86.110.190.0/23	ZAO "Electro-Com" Krasnodar Russian Federation
+93.189.12.0/22	SFD Network Russian Federation
+178.76.192.0/18	Closed Joint Stock Company TransTeleCom Russian Federation
+178.76.194.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.195.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.207.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.208.0/23	ZAO "Electro-Com Don" Russian Federation
+178.76.210.0/24	ZAO "Electro-Com" Russian Federation
+178.76.211.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.213.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.214.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.216.0/22	ZAO "TransTeleKom" Macroregion SPARK Russian Federation
+178.76.220.0/22	ZAO "TransTeleKom" Macroregion SPARK Russian Federation
+178.76.224.0/22	ZAO "TransTeleKom" Macroregion SPARK Russian Federation
+178.76.228.0/22	ZAO "TransTeleKom" Macroregion SPARK Russian Federation
+178.76.232.0/23	ZAO "Electro-Com Don" Russian Federation
+178.76.234.0/24	ZAO "Electro-Com" Rostov NAT Russian Federation
+178.76.235.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.236.0/22	ZAO "Electro-Com Don" Russian Federation
+178.76.240.0/22	ZAO "Electro-Com Don" Russian Federation
+178.76.248.0/22	ZAO "Electro-Com Don" Russian Federation
+178.76.252.0/23	ZAO "Electro-Com Don" Russian Federation
+178.76.254.0/24	ZAO "Electro-Com Don" Russian Federation
+178.76.255.0/24	ZAO "Electro-Com Don" Russian Federation
+185.52.132.0/22	Closed Joint Stock Company TransTeleCom Russian Federation
+213.138.64.0/19	Closed Joint Stock Company TransTeleCom Russian Federation
+Updated 25 Mar 2018 1 ("Closed Joint Stock Company TransTeleCom").
 # %Listed, CleanTalk.org: 5.36%.
-# Stop Forum Spam (SFS) listings: 744.
-# Updated: 2017.07.08 / Checked: 2017.12.08
+# Stop Forum Spam (SFS) listings: 28.
+# Updated: 2017.07.08 / Checked: 2018.03.26
 
 5.149.144.0/21 Deny Spam
 86.110.168.0/22 Deny Spam

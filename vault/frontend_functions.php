@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.23).
+ * This file: Front-end functions file (last modified: 2018.03.25).
  */
 
 /**
@@ -183,7 +183,7 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
         $Ver =
             preg_match('~^v?([0-9]+)$~i', $Ver, $Matches) ?:
             preg_match('~^v?([0-9]+)\.([0-9]+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[.0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
             preg_match('~^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})(RC[0-9]{1,2}|[.+-][0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
             preg_match('~^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$~i', $Ver, $Matches);
         $Ver = [
@@ -441,7 +441,7 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     }
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
-    array_walk($Path, function($Segment) use (&$Valid) {
+    array_walk($Path, function ($Segment) use (&$Valid) {
         if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
@@ -1230,7 +1230,7 @@ $CIDRAM['Number_L10N_JS'] = function () use (&$CIDRAM) {
  * @param string $Redirect Reconstructed path to redirect to when the state changes.
  * @param string $Options Recontructed filter controls.
  */
-$CIDRAM['FilterSwitch'] = function($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
+$CIDRAM['FilterSwitch'] = function ($Switches, $Selector, &$StateModified, &$Redirect, &$Options) use (&$CIDRAM) {
     foreach ($Switches as $Switch) {
         $State = (!empty($Selector) && $Selector === $Switch);
         $CIDRAM['FE'][$Switch] = empty($CIDRAM['QueryVars'][$Switch]) ? false : (

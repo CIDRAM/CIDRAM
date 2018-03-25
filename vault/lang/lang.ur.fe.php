@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.03.22).
+ * This file: Urdu language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">لاگ آوٹ</a
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں.';
 $CIDRAM['lang']['config_general_ban_override'] = 'کی منسوخی "forbid_on_block" کب "infraction_limit" حد سے تجاوز کر رہا ہے? زیرکر کب: التواء درخواستوں ایک خالی صفحے کو واپس (سانچے فائلوں کا استعمال نہیں کر رہے ہیں). 200 = کی جگہ لے لے نہیں ہے [طے شدہ]؛ کے ساتھ "403 حرام" 403 = جگہ لے لے؛ کے ساتھ "503 سروس دستیاب نہیں 503 = زیر کریں".';
-$CIDRAM['lang']['config_general_default_algo'] = 'اس بات کی وضاحت کرتا ہے جو تمام مستقبل کے پاس ورڈ اور سیشن کے لئے الگورتھم استعمال کرنا ہے. اختیارات: PASSWORD_DEFAULT (ڈیفالٹ), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 کی ضرورت ہے).';
+$CIDRAM['lang']['config_general_default_algo'] = 'اس بات کی وضاحت کرتا ہے جو تمام مستقبل کے پاس ورڈ اور سیشن کے لئے الگورتھم استعمال کرنا ہے. اختیارات: PASSWORD_DEFAULT (ڈیفالٹ), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 کی ضرورت ہے).';
 $CIDRAM['lang']['config_general_default_dns'] = 'میزبان نام لک اپ کے لئے استعمال کرنے کے لئے DNS سرورز کی کوما ختم ہونے والی فہرست. پہلے سے طے شدہ = "8.8.8.8,8.8.4.4" (Google DNS). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI موڈ کو غیر فعال کریں؟ CLI موڈ ڈیفالٹ کی طرف سے چالو حالت میں ہے، لیکن کبھی کبھی بعض جانچ کے آلات (جیسے PHPUnit کے طور پر، مثال کے طور پر) اور دیگر CLI کی بنیاد پر ایپلی کیشنز کے ساتھ مداخلت کر سکتے ہیں. آپ CLI موڈ کو غیر فعال کرنے کی ضرورت نہیں ہے تو، آپ کو اس ہدایت کو نظر انداز کرنا چاہئے. False (جھوٹی) = CLI موڈ [طے شدہ] فعال؛ سچا = غیر فعال CLI موڈ.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'سامنے کے آخر تک رسائی کو غیر فعال کریں؟ سامنے کے آخر میں رسائی CIDRAM زیادہ انتظام بنا سکتے ہیں، لیکن یہ بھی بہت ہے، ایک زبردست حفاظتی خطرہ ہو سکتا ہے. یہ جب بھی ممکن ہو واپس کے آخر کے ذریعے CIDRAM منظم کرنے کی سفارش کی جاتی ہے، لیکن سامنے کے آخر میں رسائی ممکن نہیں ہے جب کے لئے فراہم کی جاتی ہے. تمہیں اس کی ضرورت ہے جب تک کہ اس کو معذور رکھیں. False (جھوٹی) = سامنے کے آخر میں رسائی کو فعال کریں؛ سچا = غیر فعال سامنے کے آخر میں رسائی [طے شدہ].';
@@ -239,7 +239,7 @@ $CIDRAM['lang']['response_updates_not_installed'] = 'اجزاء انسٹال ن�
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'اجزاء انسٹال نہیں (PHP ضرورت ہوتی {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'فرسودہ!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'فرسودہ (دستی طور پر اپ ڈیٹ کریں)!';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = 'فرسودہ (درکار PHP {V})!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'فرسودہ (درکار PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'اس بات کا تعین کرنے سے قاصر ہے.';
 $CIDRAM['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکام ہو گیا!';
 $CIDRAM['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';

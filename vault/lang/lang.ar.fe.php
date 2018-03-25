@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.03.22).
+ * This file: Arabic language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ True = نعم [افتراضي]؛ False = لا.';
 $CIDRAM['lang']['config_general_ban_override'] = 'تجاوز "forbid_on_block" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]؛ 403 = تجاوز مع "403 Forbidden"; 503 = تجاوز مع "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_algo'] = 'يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP >= 7.2.0).';
+$CIDRAM['lang']['config_general_default_algo'] = 'يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP &gt;= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'قائمة بفواصل من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = "8.8.8.8,8.8.4.4" (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خاطئة = تمكين وضع CLI [الافتراضي]. صحيح = وضع تعطيل CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'تعطيل وصول front-end؟ وصول front-end يستطيع جعل CIDRAM أكثر قابلية للإدارة، ولكن يمكن أيضا أن تكون مخاطر أمنية محتملة. من المستحسن لإدارة CIDRAM عبر back-end متى أمكن، لكن وصول front-end متوفر عندما لم يكن ممكنا. يبقيه المعوقين إلا إذا كنت في حاجة إليها. False = تمكين وصول front-end؛ True = تعطيل وصول front-end [الافتراضي].';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات
 $CIDRAM['lang']['response_tracking_cleared'] = 'التتبع ألغيت.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'وحدة غير مثبت (يتطلب PHP {V})!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'وحدة غير مثبت (يتطلب PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'عفا عليها الزمن!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'عفا عليها الزمن (يرجى تحديث يدويا)!';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = 'عفا عليها الزمن (يتطلب PHP {V})!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'عفا عليها الزمن (يتطلب PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';
 $CIDRAM['lang']['response_upload_error'] = 'فشل لتحميل!';
 $CIDRAM['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';

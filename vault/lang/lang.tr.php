@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.01.20).
+ * This file: Turkish language data (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** Language plurality rule. */
-$CIDRAM['Plural-Rule'] = function($Num) {
+$CIDRAM['Plural-Rule'] = function ($Num) {
     return $Num <= 1 ? 0 : 1;
 };
 

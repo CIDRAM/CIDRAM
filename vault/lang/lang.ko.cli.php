@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.01.20).
+ * This file: Korean language data (last modified: 2018.03.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,7 +33,7 @@ $CIDRAM['lang']['CLI_H'] = "
  php.exe /cidram/loader.php -c 192.168.0.0
  php.exe /cidram/loader.php -c 2001:db8::
  php.exe /cidram/loader.php -g 1.2.3.4
- php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -g ::1
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.03.13).
+ * This file: Functions file (last modified: 2018.03.25).
  */
 
 /**
@@ -65,7 +65,7 @@ $CIDRAM['ParseVars'] = function ($Needle, $Haystack) {
     if (!is_array($Needle) || empty($Haystack)) {
         return '';
     }
-    array_walk($Needle, function($Value, $Key) use (&$Haystack) {
+    array_walk($Needle, function ($Value, $Key) use (&$Haystack) {
         if (!is_array($Value)) {
             $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
         }

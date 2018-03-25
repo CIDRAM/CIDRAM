@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.03.22).
+ * This file: Italian language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Disconnettersi</
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File per la registrazione di l\'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]; 403 = Sostituire con "403 Forbidden"; 503 = Sostituire con "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_algo'] = 'Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro. Opzioni: PASSWORD_DEFAULT (predefinito), PASSWORD_BCRYPT, PASSWORD_ARGON2I (richiede PHP >= 7.2.0).';
+$CIDRAM['lang']['config_general_default_algo'] = 'Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro. Opzioni: PASSWORD_DEFAULT (predefinito), PASSWORD_BCRYPT, PASSWORD_ARGON2I (richiede PHP &gt;= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Un elenco delimitato con virgole di server DNS da utilizzare per le ricerche dei nomi di host. Predefinito = "8.8.8.8,8.8.4.4" (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disabilita l\'accesso front-end? L\'accesso front-end può rendere CIDRAM più gestibile, ma può anche essere un potenziale rischio per la sicurezza. Si consiglia di gestire CIDRAM attraverso il back-end, quando possibile, ma l\'accesso front-end è previsto per quando non è possibile. Mantenerlo disabilitato tranne se hai bisogno. False = Abilita l\'accesso front-end; True = Disabilita l\'accesso front-end [Predefinito].';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiche revocate.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Monitoraggio revocato.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Aggiornato già.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Componente non installato!';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'Componente non installato (richiede PHP {V})!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Componente non installato (richiede PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Non aggiornato!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Non aggiornato (si prega di aggiornare manualmente)!';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Non aggiornato (richiede PHP {V})!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Non aggiornato (richiede PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapace di determinare.';
 $CIDRAM['lang']['response_upload_error'] = 'Non riuscito a caricare!';
 $CIDRAM['lang']['response_verification_failed'] = 'Non è riuscito a verificare! Componente potrebbe essere danneggiato.';

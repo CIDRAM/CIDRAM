@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2017.12.06).
+ * This file: Language handler (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,12 +24,12 @@ $CIDRAM['Swap'] = function(&$First, &$Second) {
 };
 
 /** Default language plurality rule. */
-$CIDRAM['Plural-Rule'] = function($Num) {
+$CIDRAM['Plural-Rule'] = function ($Num) {
     return $Num === 1 ? 0 : 1;
 };
 
 /** Select string based on plural rule. */
-$CIDRAM['Plural'] = function($Num, $String) use (&$CIDRAM) {
+$CIDRAM['Plural'] = function ($Num, $String) use (&$CIDRAM) {
     if (!is_array($String)) {
         return $String;
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.03.22).
+ * This file: Korean language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값); 403 = "403 Forbidden"로 덮어; 503 = "503 Service unavailable"로 덮어한다.';
-$CIDRAM['lang']['config_general_default_algo'] = '향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 가 필요합니다).';
+$CIDRAM['lang']['config_general_default_algo'] = '향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다).';
 $CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. <code>false</code> = CLI 모드를 활성화합니다 (Default / 기본 설정); <code>true</code> = CLI 모드를 해제합니다.';
 $CIDRAM['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정).';
@@ -183,7 +183,7 @@ $CIDRAM['lang']['link_ip_aggregator'] = 'IP 애그리게이터';
 $CIDRAM['lang']['link_ip_test'] = 'IP 테스트';
 $CIDRAM['lang']['link_ip_tracking'] = 'IP 추적';
 $CIDRAM['lang']['link_logs'] = '로고스';
-$CIDRAM['lang']['link_range'] = '범위 표';
+$CIDRAM['lang']['link_range'] = '범위 테이블';
 $CIDRAM['lang']['link_sections_list'] = '섹션 목록';
 $CIDRAM['lang']['link_statistics'] = '통계';
 $CIDRAM['lang']['link_textmode'] = '텍스트 서식 지정 : <a href="%1$sfalse%2$s">단순한</a> – <a href="%1$strue%2$s">공상</a> – <a href="%1$stally%2$s">집계</a>';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = '통계가 삭제되었습니�
 $CIDRAM['lang']['response_tracking_cleared'] = '추적이 취소되었습니다.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '이미 최신 상태입니다.';
 $CIDRAM['lang']['response_updates_not_installed'] = '구성 요소 설치되어 있지 않습니다!';
-$CIDRAM['lang']['response_updates_not_installed_php'] = '구성 요소 설치되어 있지 않습니다 (PHP {V}가 필요합니다)!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = '구성 요소 설치되어 있지 않습니다 (PHP &gt;= {V}가 필요합니다)!';
 $CIDRAM['lang']['response_updates_outdated'] = '구식입니다!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '구식입니다 (수동으로 업데이트하십시오)!';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = '구식입니다 (PHP {V}가 필요합니다)!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = '구식입니다 (PHP &gt;= {V}가 필요합니다)!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '결정 수 없습니다.';
 $CIDRAM['lang']['response_upload_error'] = '업로드에 실패했습니다!';
 $CIDRAM['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
@@ -306,7 +306,7 @@ $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP 테스트';
 $CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP 추적';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – 로그인';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – 로고스';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – 범위 표';
+$CIDRAM['lang']['title_range'] = 'CIDRAM – 범위 테이블';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – 섹션 목록';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – 통계';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – 업데이트';

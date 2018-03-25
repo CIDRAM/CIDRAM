@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.03.22).
+ * This file: Japanese language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = '統計はクリアされまし
 $CIDRAM['lang']['response_tracking_cleared'] = 'トラッキングがキャンセルされました。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $CIDRAM['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'コンポーネントのインストールされていません（PHP {V}が必要です）！';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'コンポーネントのインストールされていません（PHP &gt;= {V}が必要です）！';
 $CIDRAM['lang']['response_updates_outdated'] = '時代遅れです！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '時代遅れです（手動でアップデートしてください）！';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = '時代遅れです（PHP {V}が必要です）！';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = '時代遅れです（PHP &gt;= {V}が必要です）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '決定することができません。';
 $CIDRAM['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $CIDRAM['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';

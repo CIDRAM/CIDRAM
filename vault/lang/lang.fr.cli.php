@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for CLI last modified: 2018.01.20).
+ * This file: French language data for CLI last modified: 2018.03.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,7 +19,7 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['CLI_H'] = "
  Aide pour le mode CLI de CIDRAM.
 
- Usage :
+ Usage :
  php.exe /cidram/loader.php -Flag (Input)
 
  Flags : -h Afficher cette information d'aide.
@@ -28,11 +28,11 @@ $CIDRAM['lang']['CLI_H'] = "
          -v Validez un fichier de signature.
          -f Corrigez un fichier de signature.
 
- Exemples :
+ Exemples :
  php.exe /cidram/loader.php -c 192.168.0.0
  php.exe /cidram/loader.php -c 2001:db8::
  php.exe /cidram/loader.php -g 1.2.3.4
- php.exe /cidram/loader.php -g ::1
+ php.exe /cidram/loader.php -g ::1
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
 
@@ -51,7 +51,7 @@ $CIDRAM['lang']['CLI_VF_Level_2'] = 'Erreur';
 $CIDRAM['lang']['CLI_VF_Level_3'] = 'Erreur Fatale';
 
 $CIDRAM['lang']['CLI_V_CRLF'] = 'CR/CRLF détecté dans le fichier de signatures ; Ceux-ci sont permissible et ne causera pas de problèmes, mais LF est préférable.';
-$CIDRAM['lang']['CLI_V_Finished'] = 'Validation de signatures a terminé (%s). Si aucun avertissement et aucun erreurs apparaissent, votre fichier de signatures est *probablement* bien. :-)';
+$CIDRAM['lang']['CLI_V_Finished'] = 'Validation de signatures a terminé (%s). Si aucun avertissement et aucun erreurs apparaissent, votre fichier de signatures est *probablement* bien. :-)';
 $CIDRAM['lang']['CLI_V_LineByLine'] = 'Validation ligne par ligne a commencé.';
 $CIDRAM['lang']['CLI_V_Started'] = 'Validation de signatures a commencé (%s).';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Fichiers de signatures devrait terminer avec un saut de ligne LF.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.03.22).
+ * This file: Norwegian language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logg Ut</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Overstyr "forbid_on_block" når "infraction_limit" overskrides? Når overstyrende: Blokkerte forespørsler returnerer en tom side (malfiler blir ikke brukt). 200 = Ikke overstyre [Standardverdi]; 403 = Overstyr med "403 Forbidden"; 503 = Overstyr med "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_algo'] = 'Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP >= 7.2.0).';
+$CIDRAM['lang']['config_general_default_algo'] = 'Definerer hvilken algoritme som skal brukes for alle fremtidige passord og økter. Alternativer: PASSWORD_DEFAULT (standardverdi), PASSWORD_BCRYPT, PASSWORD_ARGON2I (krever PHP &gt;= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (for eksempel; PHPUnit) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre CIDRAM mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere CIDRAM via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi].';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = 'Statistikk fjernet.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Sporing fjernet.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Allerede oppdatert.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponent ikke installert!';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponent ikke installert (krever PHP {V})!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponent ikke installert (krever PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Utdatert!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Utdatert (vennligst oppdatere manuelt)!';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Utdatert (krever PHP {V})!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Utdatert (krever PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Kan ikke fastslå.';
 $CIDRAM['lang']['response_upload_error'] = 'Opplasting mislyktes!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifisering mislyktes! Komponent kan bli skadet.';

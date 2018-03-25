@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.03.22).
+ * This file: French language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Déconnecter</a>
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut] ; 403 = Remplacer par « 403 Forbidden » ; 503 = Remplacer par « 503 Service unavailable ».';
-$CIDRAM['lang']['config_general_default_algo'] = 'Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l\'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP >= 7.2.0).';
+$CIDRAM['lang']['config_general_default_algo'] = 'Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l\'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP &gt;= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d\'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI ? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d\'autres applications basées sur CLI. Si vous n\'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut] ; True = Désactiver le mode CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal ? L\'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l\'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l\'accès frontal ; True = Désactiver l\'accès frontal [Défaut].';
@@ -108,7 +108,7 @@ $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'Adresse IP';
 $CIDRAM['lang']['field_latest_version'] = 'Dernière Version';
 $CIDRAM['lang']['field_log_in'] = 'Connecter';
-$CIDRAM['lang']['field_new_name'] = 'Nouveau nom :';
+$CIDRAM['lang']['field_new_name'] = 'Nouveau nom :';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Texte non-cliquable';
 $CIDRAM['lang']['field_ok'] = 'D\'accord';
 $CIDRAM['lang']['field_options'] = 'Options';
@@ -140,9 +140,9 @@ $CIDRAM['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $CIDRAM['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
 $CIDRAM['lang']['label_banned'] = 'Requêtes interdites';
 $CIDRAM['lang']['label_blocked'] = 'Requêtes bloquées';
-$CIDRAM['lang']['label_branch'] = 'Dernier stable de branche :';
+$CIDRAM['lang']['label_branch'] = 'Dernier stable de branche :';
 $CIDRAM['lang']['label_check_modules'] = 'Tester également contre les modules.';
-$CIDRAM['lang']['label_cidram'] = 'Version CIDRAM utilisée :';
+$CIDRAM['lang']['label_cidram'] = 'Version CIDRAM utilisée :';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> entrée affichée.', '<span class="txtRd">%s</span> entrées affichées.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> entrée affichée qui cite « %2$s ».', '<span class="txtRd">%1$s</span> entrées affichées qui citent « %2$s ».'];
 $CIDRAM['lang']['label_expires'] = 'Expire : ';
@@ -155,23 +155,23 @@ $CIDRAM['lang']['label_fmgr_total_space'] = 'Espace disque total : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Métadonnées pour la mise à jour des composants';
 $CIDRAM['lang']['label_hide'] = 'Cacher';
 $CIDRAM['lang']['label_never'] = 'Jamais';
-$CIDRAM['lang']['label_os'] = 'Système opérateur utilisée :';
+$CIDRAM['lang']['label_os'] = 'Système opérateur utilisée :';
 $CIDRAM['lang']['label_other'] = 'Autres';
 $CIDRAM['lang']['label_other-ActiveIPv4'] = 'Fichiers de signatures IPv4 actifs';
 $CIDRAM['lang']['label_other-ActiveIPv6'] = 'Fichiers de signatures IPv6 actifs';
 $CIDRAM['lang']['label_other-ActiveModules'] = 'Modules actifs';
 $CIDRAM['lang']['label_other-Since'] = 'Date de début';
-$CIDRAM['lang']['label_php'] = 'Version PHP utilisée :';
+$CIDRAM['lang']['label_php'] = 'Version PHP utilisée :';
 $CIDRAM['lang']['label_reCAPTCHA'] = 'Tentatives de reCAPTCHA';
-$CIDRAM['lang']['label_results'] = 'Résultats (%s entré – %s rejeté – %s accepté – %s fusionné – %s sortie) :';
-$CIDRAM['lang']['label_sapi'] = 'SAPI utilisée :';
+$CIDRAM['lang']['label_results'] = 'Résultats (%s entré – %s rejeté – %s accepté – %s fusionné – %s sortie) :';
+$CIDRAM['lang']['label_sapi'] = 'SAPI utilisée :';
 $CIDRAM['lang']['label_show'] = 'Montrer';
-$CIDRAM['lang']['label_signature_type'] = 'Type de signature :';
-$CIDRAM['lang']['label_stable'] = 'Dernier stable :';
-$CIDRAM['lang']['label_sysinfo'] = 'Informations sur le système :';
-$CIDRAM['lang']['label_tests'] = 'Tests :';
+$CIDRAM['lang']['label_signature_type'] = 'Type de signature :';
+$CIDRAM['lang']['label_stable'] = 'Dernier stable :';
+$CIDRAM['lang']['label_sysinfo'] = 'Informations sur le système :';
+$CIDRAM['lang']['label_tests'] = 'Tests :';
 $CIDRAM['lang']['label_total'] = 'Total';
-$CIDRAM['lang']['label_unstable'] = 'Dernier instable :';
+$CIDRAM['lang']['label_unstable'] = 'Dernier instable :';
 $CIDRAM['lang']['link_accounts'] = 'Comptes';
 $CIDRAM['lang']['link_cache_data'] = 'Données de Cache';
 $CIDRAM['lang']['link_cidr_calc'] = 'Calculatrice CIDR';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiques annulées.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Surveillance annulée.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Déjà mise à jour.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Composant pas installé !';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'Composant pas installé (il nécessite PHP {V}) !';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Composant pas installé (il nécessite PHP &gt;= {V}) !';
 $CIDRAM['lang']['response_updates_outdated'] = 'Dépassé !';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vous plaît mettre à jour manuellement) !';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Dépassé (il nécessite PHP {V}) !';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Dépassé (il nécessite PHP &gt;= {V}) !';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
 $CIDRAM['lang']['response_upload_error'] = 'Échec du téléchargement !';
 $CIDRAM['lang']['response_verification_failed'] = 'Échec de la vérification ! Composant pourrait être corrompu.';
@@ -310,7 +310,7 @@ $CIDRAM['lang']['title_range'] = 'CIDRAM – Tableaux de Gamme';
 $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Liste des Sections';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistiques';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Mises à Jour';
-$CIDRAM['lang']['warning'] = 'Avertissements :';
+$CIDRAM['lang']['warning'] = 'Avertissements :';
 $CIDRAM['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
 $CIDRAM['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
 $CIDRAM['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';

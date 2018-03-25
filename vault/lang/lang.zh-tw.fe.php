@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.03.22).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】； False（假）=不允許。';
 $CIDRAM['lang']['config_general_ban_override'] = '覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】； 403 = 使用『403 Forbidden』覆蓋； 503 = 使用『503 Service unavailable』覆蓋。';
-$CIDRAM['lang']['config_general_default_algo'] = '定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。';
+$CIDRAM['lang']['config_general_default_algo'] = '定義要用於所有未來密碼和會話的算法。​選項：​​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。';
 $CIDRAM['lang']['config_general_default_dns'] = '以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！';
 $CIDRAM['lang']['config_general_disable_cli'] = '關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】； True（真）=關閉CLI模式。';
 $CIDRAM['lang']['config_general_disable_frontend'] = '關閉前端訪問嗎？​前端訪問可以使CIDRAM更易於管理，​但也可能是潛在的安全風險。​建議管理CIDRAM通過後端只要有可能，​但前端訪問提供當不可能。​保持關閉除非您需要它。​False（假）=激活前端訪問； True（真）=關閉前端訪問【標準】。';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = '統計刪除。';
 $CIDRAM['lang']['response_tracking_cleared'] = '已撤消跟踪。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '已經更新。';
 $CIDRAM['lang']['response_updates_not_installed'] = '組件不安裝！';
-$CIDRAM['lang']['response_updates_not_installed_php'] = '組件不安裝（它需要PHP {V}）！';
+$CIDRAM['lang']['response_updates_not_installed_php'] = '組件不安裝（它需要PHP &gt;= {V}）！';
 $CIDRAM['lang']['response_updates_outdated'] = '過時！';
 $CIDRAM['lang']['response_updates_outdated_manually'] = '過時（請更新手動）！';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = '過時（它需要PHP {V}）！';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = '過時（它需要PHP &gt;= {V}）！';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = '無法確定。';
 $CIDRAM['lang']['response_upload_error'] = '無法上傳！';
 $CIDRAM['lang']['response_verification_failed'] = '驗證失敗！組件可能已損壞。';

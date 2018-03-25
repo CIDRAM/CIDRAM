@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.03.22).
+ * This file: Swedish language data for the front-end (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,7 +32,7 @@ $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logga Ut</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Åsidosätta "forbid_on_block" när "infraction_limit" överskrids? När det åsidosätter: Blockerade förfrågningar returnerar en tom sida (mallfiler används inte). 200 = Åsidosätta inte [Standard]; 403 = Åsidosätt med "403 Forbidden"; 503 = Åsidosätt med "503 Service unavailable".';
-$CIDRAM['lang']['config_general_default_algo'] = 'Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP >= 7.2.0).';
+$CIDRAM['lang']['config_general_default_algo'] = 'Definierar vilken algoritm som ska användas för alla framtida lösenord och sessioner. Alternativ: PASSWORD_DEFAULT (standard), PASSWORD_BCRYPT, PASSWORD_ARGON2I (kräver PHP &gt;= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'En komma-avgränsad lista över DNS-servrar som ska användas för värdnamnssökningar. Standard = "8.8.8.8,8.8.4.4" (Google DNS). VARNING: Ändra inte detta om du inte vet vad du gör!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Inaktivera CLI-läge? CLI-läge är som standard aktiverat, men kan ibland störa vissa testverktyg (t.ex., PHPUnit) och andra CLI-baserade applikationer. Om du inte behöver avaktivera CLI-läge, bör du ignorera detta direktiv. False = Aktivera CLI-läge [Standard]; True = Inaktivera CLI-läge.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Inaktivera front-end tillgång? Front-end tillgång kan göra CIDRAM mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera CIDRAM via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard].';
@@ -236,10 +236,10 @@ $CIDRAM['lang']['response_statistics_cleared'] = 'Statistik rensas.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Spårning rensas.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Redan uppdaterad.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Komponenten inte installerad!';
-$CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponenten inte installerad (kräver PHP {V})!';
+$CIDRAM['lang']['response_updates_not_installed_php'] = 'Komponenten inte installerad (kräver PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_outdated'] = 'Föråldrad!';
 $CIDRAM['lang']['response_updates_outdated_manually'] = 'Föråldrad (vänligen uppdatera manuellt)!';
-$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Föråldrad (kräver PHP {V})!';
+$CIDRAM['lang']['response_updates_outdated_php_version'] = 'Föråldrad (kräver PHP &gt;= {V})!';
 $CIDRAM['lang']['response_updates_unable_to_determine'] = 'Kan inte bestämma.';
 $CIDRAM['lang']['response_upload_error'] = 'Misslyckades med att ladda upp!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifiering misslyckades! Komponenten kan vara skadad.';

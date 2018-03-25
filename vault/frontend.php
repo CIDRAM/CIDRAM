@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.03.22).
+ * This file: Front-end handler (last modified: 2018.03.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1530,7 +1530,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             ) {
                 $CIDRAM['Components']['ThisComponent']['Options'] .=
                     '<option value="update-component">' . $CIDRAM['lang']['field_install'] . '</option>';
-            } elseif ($CIDRAM['Components']['ThisComponent']['StatusOptions'] == $CIDRAM['lang']['response_updates_not_installed']) {
+            } elseif ($CIDRAM['Components']['ThisComponent']['StatusOptions'] === $CIDRAM['lang']['response_updates_not_installed']) {
                 $CIDRAM['Components']['ThisComponent']['StatusOptions'] = $CIDRAM['ParseVars'](
                     ['V' => $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Minimum Required PHP']],
                     $CIDRAM['lang']['response_updates_not_installed_php']

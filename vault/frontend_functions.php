@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.25).
+ * This file: Front-end functions file (last modified: 2018.03.26).
  */
 
 /**
@@ -2024,20 +2024,33 @@ $CIDRAM['RangeTablesIterateFiles'] = function (&$Arr, $Files, $SigTypes, $MaxRan
         $HasOrigin = (strpos($Data, "\nOrigin: ") !== false);
         foreach ($SigTypes as $SigType) {
             for ($Range = 1; $Range <= $MaxRange; $Range++) {
+                if ($MaxRange === 32) {
+                    $Order = pow(2, $MaxRange - $Range);
+                }
                 $Offset = 0;
                 $Needle = '/' . $Range . ' ' . $SigType;
                 while ($Offset !== false) {
                     if ($Entry = $CIDRAM['RangeTablesFetchLine']($Data, $Offset, $Needle, $HasOrigin)) {
                         if (empty($Arr[$IPType][$SigType][$Range][$Entry['Param']])) {
-                            $Arr[$IPType][$SigType][$Range][$Entry['Param']] = 1;
-                        } else {
-                            $Arr[$IPType][$SigType][$Range][$Entry['Param']]++;
+                            $Arr[$IPType][$SigType][$Range][$Entry['Param']] = 0;
+                        }
+                        $Arr[$IPType][$SigType][$Range][$Entry['Param']]++;
+                        if ($MaxRange === 32) {
+                            if (empty($Arr[$IPType][$SigType]['Total'][$Entry['Param']])) {
+                                $Arr[$IPType][$SigType]['Total'][$Entry['Param']] = 0;
+                            }
+                            $Arr[$IPType][$SigType]['Total'][$Entry['Param']] += $Order;
                         }
                         if ($Entry['Origin']) {
                             if (empty($Arr[$IPType . '-Origin'][$SigType][$Range][$Entry['Origin']])) {
-                                $Arr[$IPType . '-Origin'][$SigType][$Range][$Entry['Origin']] = 1;
-                            } else {
-                                $Arr[$IPType . '-Origin'][$SigType][$Range][$Entry['Origin']]++;
+                                $Arr[$IPType . '-Origin'][$SigType][$Range][$Entry['Origin']] = 0;
+                            }
+                            $Arr[$IPType . '-Origin'][$SigType][$Range][$Entry['Origin']]++;
+                            if ($MaxRange === 32) {
+                                if (empty($Arr[$IPType . '-Origin'][$SigType]['Total'][$Entry['Origin']])) {
+                                    $Arr[$IPType . '-Origin'][$SigType]['Total'][$Entry['Origin']] = 0;
+                                }
+                                $Arr[$IPType . '-Origin'][$SigType]['Total'][$Entry['Origin']] += $Order;
                             }
                         }
                     }
@@ -2079,11 +2092,9 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
                     } else {
                         $Count = $CIDRAM['Number_L10N']($Count);
                     }
-                    if ($Origin) {
-                        $Count = '<code class="hB">' . $Origin . '</code> – ' . (
-                            $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
-                        ) . $Count;
-                    }
+                    $Count = '<code class="hB">' . $Origin . '</code> – ' . (
+                        $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
+                    ) . $Count;
                 }
                 $Arr[$IPType . '-Origin'][$SigType][$Range] = implode('<br />', $Arr[$IPType . '-Origin'][$SigType][$Range]);
                 $Arr[$IPType][$SigType][$Range] .= '<hr />' . $Arr[$IPType . '-Origin'][$SigType][$Range];
@@ -2099,6 +2110,42 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
             $Out[$IPType . '/' . $Range] .= '<span style="display:none" class="' . $Class . ' ' . $StatClass . '">' . $Arr[$IPType][$SigType][$Range] . '</span>';
         }
     }
+    if ($MaxRange === 32) {
+        if (count($Arr[$IPType][$SigType]['Total'])) {
+            $StatClass = $ZeroPlus;
+            arsort($Arr[$IPType][$SigType]['Total']);
+            foreach ($Arr[$IPType][$SigType]['Total'] as $Param => &$Count) {
+                $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . 'Total' . $Param . $Count);
+                $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . ').toString()));';
+                $Count = '<span id="' . $ThisID . '"></span>';
+                if ($Param) {
+                    $Count = $Param . ' – ' . $Count;
+                }
+            }
+            $Arr[$IPType][$SigType]['Total'] = implode('<br />', $Arr[$IPType][$SigType]['Total']);
+            if (count($Arr[$IPType . '-Origin'][$SigType]['Total'])) {
+                arsort($Arr[$IPType . '-Origin'][$SigType]['Total']);
+                foreach ($Arr[$IPType . '-Origin'][$SigType]['Total'] as $Origin => &$Count) {
+                    $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . 'Total' . $Origin . $Count);
+                    $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . ').toString()));';
+                    $Count = '<code class="hB">' . $Origin . '</code> – ' . (
+                        $CIDRAM['FE']['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
+                    ) . '<span id="' . $ThisID . '"></span>';
+                }
+                $Arr[$IPType . '-Origin'][$SigType]['Total'] = implode('<br />', $Arr[$IPType . '-Origin'][$SigType]['Total']);
+                $Arr[$IPType][$SigType]['Total'] .= '<hr />' . $Arr[$IPType . '-Origin'][$SigType]['Total'];
+            }
+        } else {
+            $StatClass = 's';
+            $Arr[$IPType][$SigType]['Total'] = '';
+        }
+        if ($Arr[$IPType][$SigType]['Total']) {
+            if (!isset($Out[$IPType . '/Total'])) {
+                $Out[$IPType . '/Total'] = '';
+            }
+            $Out[$IPType . '/Total'] .= '<span style="display:none" class="' . $Class . ' ' . $StatClass . '">' . $Arr[$IPType][$SigType]['Total'] . '</span>';
+        }
+    }
 };
 
 /** Range tables handler. */
@@ -2107,8 +2154,8 @@ $CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
     $Arr = ['IPv4' => [], 'IPv4-Origin' => [], 'IPv6' => [], 'IPv6-Origin' => []];
     $SigTypes = ['Run', 'Whitelist', 'Greylist', 'Deny'];
     foreach ($SigTypes as $SigType) {
-        $Arr['IPv4'][$SigType] = [];
-        $Arr['IPv4-Origin'][$SigType] = [];
+        $Arr['IPv4'][$SigType] = ['Total' => []];
+        $Arr['IPv4-Origin'][$SigType] = ['Total' => []];
         $Arr['IPv6'][$SigType] = [];
         $Arr['IPv6-Origin'][$SigType] = [];
         for ($Range = 1; $Range <= 32; $Range++) {
@@ -2152,6 +2199,18 @@ $CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
                 $CIDRAM['FE']['RangeRows'] .= $CIDRAM['ParseVars']($ThisArr, $CIDRAM['FE']['RangeRow']);
             }
         }
+    }
+    $Label = 'IPv4/' . $CIDRAM['lang']['label_total'];
+    $Internal = 'IPv4/Total';
+    if (!empty($Out[$Internal])) {
+        foreach ($SigTypes as $SigType) {
+            $Class = 'sigtype_' . strtolower($SigType);
+            if (strpos($Out[$Internal], $Class) === false) {
+                $Out[$Internal] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
+            }
+        }
+        $ThisArr = ['RangeType' => $Label, 'NumOfCIDRs' => $Out[$Internal], 'state_loading' => $CIDRAM['lang']['state_loading']];
+        $CIDRAM['FE']['RangeRows'] .= $CIDRAM['ParseVars']($ThisArr, $CIDRAM['FE']['RangeRow']);
     }
     return $JS;
 };

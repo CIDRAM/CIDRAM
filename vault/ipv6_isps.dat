@@ -1231,13 +1231,25 @@ recaptcha:
 # ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
 # %Listed, CleanTalk.org: 61.30% (AS42682), 14.94% (AS51570).
 # Stop Forum Spam (SFS) listings: 19,203 (AS42682), 1,210 (AS51570).
-# Updated: 2017.12.18
+# Updated: 2017.12.18 / Checked: 2018.03.27
 
 2a02:2698:4c00::/38 Deny Spam
 2a02:2698:6c00::/38 Deny Spam
 2a02:2698:a000::/48 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").
+# Caught trying to hack into WordPress sites.
+# Updated: 2018.03.27
+
+2a02:22a8::/32 Deny Generic
+Origin: RU
+Tag: is74.ru
 ---
 recaptcha:
  enabled: true

@@ -4,10 +4,10 @@
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# %Listed, Google Malware Dashboard: 3.12%.
+# %Listed, Google Malware Dashboard: 4.20%.
 # %Listed, CleanTalk.org: 34.52%.
-# Stop Forum Spam (SFS) listings: 98.
-# Updated: 2018.01.08
+# Stop Forum Spam (SFS) listings: 104.
+# Updated: 2018.03.27
 
 103.12.68.0/22 Deny Generic
 103.14.100.0/22 Deny Generic
@@ -26,7 +26,8 @@ Origin: CN
 43.243.108.0/22 Deny Generic
 43.243.220.0/22 Deny Generic
 43.248.8.0/22 Deny Generic
-43.248.172.0/22 Deny Generic
+43.248.172.0/23 Deny Generic
+43.248.175.0/24 Deny Generic
 43.249.204.0/22 Deny Generic
 45.64.52.0/22 Deny Generic
 45.113.160.0/22 Deny Generic
@@ -36,7 +37,7 @@ Origin: CN
 103.1.40.0/24 Deny Generic
 103.1.42.0/23 Deny Generic
 103.12.149.0/24 Deny Generic
-103.12.151.0/24 Deny Generic
+103.12.150.0/23 Deny Generic
 103.19.188.0/24 Deny Generic
 103.26.124.0/22 Deny Generic
 103.39.76.0/22 Deny Generic
@@ -68,9 +69,7 @@ Origin: CN
 112.213.110.0/23 Deny Generic
 112.213.112.0/20 Deny Generic
 115.42.60.0/22 Deny Generic
-117.18.0.0/22 Deny Generic
-117.18.4.0/23 Deny Generic
-117.18.7.0/24 Deny Generic
+117.18.0.0/21 Deny Generic
 117.18.8.0/22 Deny Generic
 117.18.12.0/24 Deny Generic
 117.18.14.0/23 Deny Generic
@@ -88,6 +87,7 @@ Origin: CN
 210.56.63.0/24 Deny Generic
 223.26.48.0/20 Deny Generic
 Origin: HK
+45.195.198.0/24 Deny Generic
 156.234.224.0/19 Deny Generic
 Origin: SC
 Tag: Sun Network HK
@@ -7573,12 +7573,14 @@ recaptcha:
 # ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
 # %Listed, CleanTalk.org: 61.30% (AS42682), 14.94% (AS51570).
 # Stop Forum Spam (SFS) listings: 19,203 (AS42682), 1,210 (AS51570).
-# Updated: 2017.12.18
+# Updated: 2018.03.27
 
+5.3.176.0/20 Deny Spam
 5.3.192.0/19 Deny Spam
 5.16.24.0/21 Deny Spam
 5.16.64.0/19 Deny Spam
 5.16.96.0/21 Deny Spam
+5.18.108.0/23 Deny Spam
 5.164.64.0/18 Deny Spam
 5.164.192.0/18 Deny Spam
 5.166.128.0/19 Deny Spam
@@ -7599,6 +7601,36 @@ recaptcha:
 188.187.240.0/24 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
+---
+recaptcha:
+ enabled: true
+
+
+# ASNs 8369, 198675, 199619 ("Intersvyaz-2 JSC").
+# Caught trying to hack into WordPress sites.
+# Updated: 2018.03.27
+
+5.79.128.0/17 Deny Generic
+5.206.0.0/17 Deny Generic
+31.207.128.0/17 Deny Generic
+37.140.0.0/17 Deny Generic
+77.222.96.0/19 Deny Generic
+78.29.0.0/20 Deny Generic
+78.29.16.0/21 Deny Generic
+78.29.24.0/22 Deny Generic
+78.29.28.0/23 Deny Generic
+78.29.32.0/19 Deny Generic
+80.255.80.0/20 Deny Generic
+83.142.160.0/21 Deny Generic
+88.206.0.0/17 Deny Generic
+91.238.48.0/23 Deny Generic
+94.24.128.0/17 Deny Generic
+109.191.0.0/16 Deny Generic
+176.226.128.0/17 Deny Generic
+185.5.143.0/24 Deny Generic
+185.12.228.0/22 Deny Generic
+Origin: RU
+Tag: is74.ru
 ---
 recaptcha:
  enabled: true

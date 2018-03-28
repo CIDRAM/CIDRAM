@@ -309,13 +309,11 @@ Tag: World4You
 
 
 # ASN 29073 ("Quasi Networks LTD", formerly "Ecatel Network").
-# %Listed, Google Malware Dashboard: 0.33%.
+# %Listed, Google Malware Dashboard: 0.46%.
 # %Listed, CleanTalk.org: 67.18%.
-# Stop Forum Spam (SFS) listings: 12,813.
-# Updated: 2018.01.07
+# Stop Forum Spam (SFS) listings: 18,253.
+# Updated: 2018.03.28
 
-191.101.242.0/24 Deny Generic
-Origin: CL
 213.184.105.0/24 Deny Generic
 213.184.113.0/24 Deny Generic
 213.184.115.0/24 Deny Generic
@@ -8002,6 +8000,411 @@ Tag: Foreningen
 212.22.208.0/20 Deny Generic
 Origin: UA
 Tag: Freenet Ltd
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 9009 ("M247 Ltd").
+# Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
+# Some risk of false positives exists. To reduce this, when updating:
+# - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
+# - Section still under review, and further work needed to minimise false positives.
+# %Listed, Google Malware Dashboard: 0.65%.
+# %Listed, CleanTalk.org: 58.66%.
+# Stop Forum Spam (SFS) listings: 46,916.
+# Updated: 2018.03.28
+
+185.56.88.0/24 Deny Generic
+Origin: AE
+193.203.0.0/23 Deny Generic
+Origin: AT
+188.215.30.0/24 Deny Generic
+193.218.0.0/24 Deny Generic
+Origin: BG
+138.99.211.0/24 Deny Generic
+Origin: BZ
+192.198.120.0/24 Deny Generic
+Origin: CA
+91.206.52.0/23 Deny Generic
+185.186.76.0/24 Deny Generic
+Origin: CH
+179.61.143.0/24 Deny Generic
+Origin: CL
+91.213.211.0/24 Deny Generic
+Origin: CZ
+37.10.71.0/24 Deny Generic
+185.168.168.0/24 Deny Generic
+185.231.248.0/22 Deny Generic
+185.246.244.0/22 Deny Generic
+185.247.72.0/24 Deny Generic
+185.248.232.0/22 Deny Generic
+185.249.128.0/22 Deny Generic
+Origin: DE
+185.145.136.0/22 Deny Generic
+185.240.192.0/22 Deny Generic
+185.241.12.0/22 Deny Generic
+185.244.88.0/22 Deny Generic
+Origin: DK
+185.233.224.0/22 Deny Generic
+Origin: ES
+77.243.176.0/20 Deny Generic
+83.143.240.0/21 Deny Generic
+84.39.112.0/21 Deny Generic
+87.239.249.0/24 Deny Generic
+176.10.80.0/21 Deny Generic
+193.27.64.0/23 Deny Generic
+Origin: EU
+81.92.200.0/21 Deny Generic
+82.102.24.0/21 Deny Generic
+83.245.62.0/23 Deny Generic
+87.117.68.0/22 Deny Generic
+89.238.128.0/18 Deny Generic
+89.249.64.0/20 Deny Generic
+91.102.64.0/21 Deny Generic
+91.207.56.0/23 Deny Generic
+91.232.124.0/23 Deny Generic
+91.232.150.0/23 Deny Generic
+95.215.224.0/22 Deny Generic
+185.9.16.0/22 Deny Generic
+185.12.190.0/24 Deny Generic
+185.19.88.0/22 Deny Generic
+185.25.156.0/22 Deny Generic
+185.30.212.0/23 Deny Generic
+185.59.60.0/22 Deny Generic
+185.65.144.0/22 Deny Generic
+185.90.60.0/24 Deny Generic
+185.91.236.0/23 Deny Generic
+185.93.180.0/22 Deny Generic
+185.94.188.0/22 Deny Generic
+185.94.192.0/22 Deny Generic
+185.104.184.0/22 Deny Generic
+185.119.132.0/24 Deny Generic
+185.156.172.0/22 Deny Generic
+185.178.216.0/23 Deny Generic
+185.183.104.0/22 Deny Generic
+185.189.112.0/22 Deny Generic
+185.195.200.0/22 Deny Generic
+185.198.84.0/22 Deny Generic
+185.200.116.0/22 Deny Generic
+185.206.224.0/22 Deny Generic
+185.212.168.0/22 Deny Generic
+185.216.32.0/22 Deny Generic
+185.227.248.0/22 Deny Generic
+193.33.108.0/23 Deny Generic
+193.189.74.0/23 Deny Generic
+194.1.166.0/24 Deny Generic
+194.79.28.0/22 Deny Generic
+194.105.134.0/23 Deny Generic
+194.145.240.0/22 Deny Generic
+194.187.248.0/22 Deny Generic
+195.8.196.0/23 Deny Generic
+195.12.48.0/22 Deny Generic
+195.66.244.0/24 Deny Generic
+195.110.8.0/23 Deny Generic
+195.242.212.0/22 Deny Generic
+213.230.203.0/24 Deny Generic
+217.64.112.0/20 Deny Generic
+217.151.96.0/20 Deny Generic
+Origin: GB
+193.188.137.0/24 Deny Generic
+Origin: HU
+185.1.114.0/24 Deny Generic
+Origin: IT
+185.180.124.0/22 Deny Generic
+Origin: LT
+82.102.16.0/21 Deny Generic
+Origin: MT
+37.230.174.0/23 Deny Generic
+37.230.176.0/22 Deny Generic
+37.230.180.0/23 Deny Generic
+37.230.187.0/24 Deny Generic
+37.230.191.0/24 Deny Generic
+46.243.140.0/24 Deny Generic
+46.243.144.0/23 Deny Generic
+46.243.146.0/24 Deny Generic
+46.243.205.0/24 Deny Generic
+46.243.215.0/24 Deny Generic
+46.243.217.0/24 Deny Generic
+46.243.218.0/24 Deny Generic
+46.243.222.0/23 Deny Generic
+46.243.233.0/24 Deny Generic
+46.243.235.0/24 Deny Generic
+46.243.237.0/24 Deny Generic
+46.243.239.0/24 Deny Generic
+46.243.241.0/24 Deny Generic
+46.243.248.0/23 Deny Generic
+141.101.145.0/24 Deny Generic
+141.101.146.0/24 Deny Generic
+141.101.153.0/24 Deny Generic
+141.101.154.0/23 Deny Generic
+141.101.156.0/22 Deny Generic
+141.101.160.0/24 Deny Generic
+141.101.162.0/24 Deny Generic
+185.1.32.0/24 Deny Generic
+185.92.172.0/22 Deny Generic
+185.95.188.0/22 Deny Generic
+185.158.248.0/24 Deny Generic
+185.158.250.0/24 Deny Generic
+185.245.216.0/22 Deny Generic
+185.246.108.0/22 Deny Generic
+185.246.136.0/22 Deny Generic
+185.249.244.0/22 Deny Generic
+185.249.248.0/22 Deny Generic
+188.72.89.0/24 Deny Generic
+188.72.98.0/24 Deny Generic
+188.72.103.0/24 Deny Generic
+188.72.106.0/24 Deny Generic
+188.72.117.0/24 Deny Generic
+188.72.119.0/24 Deny Generic
+193.239.116.0/22 Deny Generic
+Origin: NL
+91.198.176.0/24 Deny Generic
+185.54.24.0/22 Deny Generic
+185.242.240.0/22 Deny Generic
+185.243.196.0/22 Deny Generic
+Origin: NO
+46.243.148.0/24 Deny Generic
+Origin: OM
+36.255.98.0/23 Deny Generic
+103.209.76.0/23 Deny Generic
+Origin: PK
+195.182.218.0/23 Deny Generic
+Origin: PL
+46.243.147.0/24 Deny Generic
+Origin: QA
+5.83.43.0/24 Deny Generic
+5.154.182.0/24 Deny Generic
+31.14.252.0/24 Deny Generic
+46.102.117.0/24 Deny Generic
+46.102.250.0/24 Deny Generic
+77.81.98.0/24 Deny Generic
+77.81.107.0/24 Deny Generic
+77.81.109.0/24 Deny Generic
+77.81.110.0/24 Deny Generic
+80.97.248.0/23 Deny Generic
+85.204.124.0/24 Deny Generic
+86.105.9.0/24 Deny Generic
+86.105.25.0/24 Deny Generic
+86.106.137.0/24 Deny Generic
+89.33.8.0/24 Deny Generic
+89.33.246.0/24 Deny Generic
+89.35.57.0/24 Deny Generic
+89.36.224.0/24 Deny Generic
+89.40.40.0/24 Deny Generic
+89.40.71.0/24 Deny Generic
+89.40.181.0/24 Deny Generic
+89.40.219.0/24 Deny Generic
+89.42.31.0/24 Deny Generic
+89.42.135.0/24 Deny Generic
+89.45.10.0/24 Deny Generic
+89.46.63.0/24 Deny Generic
+89.46.100.0/22 Deny Generic
+89.46.246.0/24 Deny Generic
+91.195.98.0/23 Deny Generic
+91.207.102.0/23 Deny Generic
+93.115.7.0/24 Deny Generic
+93.120.27.0/24 Deny Generic
+93.120.33.0/24 Deny Generic
+93.120.84.0/24 Deny Generic
+94.176.148.0/24 Deny Generic
+94.176.163.0/24 Deny Generic
+95.128.168.0/24 Deny Generic
+128.0.1.0/24 Deny Generic
+185.45.12.0/22 Deny Generic
+185.120.144.0/22 Deny Generic
+185.122.223.0/24 Deny Generic
+185.123.140.0/22 Deny Generic
+185.128.24.0/22 Deny Generic
+185.130.184.0/23 Deny Generic
+185.144.80.0/22 Deny Generic
+185.163.108.0/22 Deny Generic
+185.181.100.0/22 Deny Generic
+185.181.243.0/24 Deny Generic
+185.195.16.0/22 Deny Generic
+185.210.216.0/22 Deny Generic
+185.217.68.0/22 Deny Generic
+185.220.68.0/22 Deny Generic
+185.226.68.0/22 Deny Generic
+185.227.40.0/22 Deny Generic
+185.230.124.0/22 Deny Generic
+185.232.20.0/22 Deny Generic
+185.236.200.0/22 Deny Generic
+185.242.4.0/22 Deny Generic
+185.244.212.0/22 Deny Generic
+185.245.84.0/22 Deny Generic
+188.213.242.0/24 Deny Generic
+188.214.28.0/24 Deny Generic
+188.214.93.0/24 Deny Generic
+188.240.220.0/24 Deny Generic
+193.231.202.0/24 Deny Generic
+Origin: RO
+82.117.80.0/20 Deny Generic
+91.243.134.0/23 Deny Generic
+91.243.140.0/22 Deny Generic
+91.243.156.0/22 Deny Generic
+158.46.176.0/22 Deny Generic
+158.46.181.0/24 Deny Generic
+158.46.182.0/23 Deny Generic
+158.46.184.0/21 Deny Generic
+178.171.32.0/22 Deny Generic
+178.171.36.0/23 Deny Generic
+178.171.38.0/24 Deny Generic
+178.171.40.0/21 Deny Generic
+178.171.48.0/22 Deny Generic
+178.171.54.0/23 Deny Generic
+178.171.56.0/24 Deny Generic
+178.171.58.0/23 Deny Generic
+178.171.60.0/22 Deny Generic
+178.171.64.0/22 Deny Generic
+178.171.68.0/23 Deny Generic
+178.171.90.0/23 Deny Generic
+178.171.102.0/23 Deny Generic
+178.171.104.0/23 Deny Generic
+178.171.108.0/22 Deny Generic
+178.171.118.0/23 Deny Generic
+185.242.16.0/22 Deny Generic
+Origin: RU
+196.16.80.0/22 Deny Generic
+196.16.88.0/22 Deny Generic
+196.16.104.0/22 Deny Generic
+196.16.120.0/22 Deny Generic
+196.16.184.0/22 Deny Generic
+196.16.200.0/24 Deny Generic
+196.16.221.0/24 Deny Generic
+196.17.84.0/22 Deny Generic
+196.17.95.0/24 Deny Generic
+196.17.104.0/23 Deny Generic
+196.17.106.0/24 Deny Generic
+196.17.112.0/22 Deny Generic
+196.17.168.0/22 Deny Generic
+196.17.176.0/22 Deny Generic
+196.17.184.0/22 Deny Generic
+196.17.200.0/24 Deny Generic
+196.18.104.0/23 Deny Generic
+196.18.112.0/22 Deny Generic
+196.18.156.0/22 Deny Generic
+196.18.164.0/22 Deny Generic
+196.18.174.0/24 Deny Generic
+196.18.200.0/24 Deny Generic
+196.19.104.0/23 Deny Generic
+196.19.200.0/24 Deny Generic
+196.19.237.0/24 Deny Generic
+196.19.241.0/24 Deny Generic
+196.19.242.0/24 Deny Generic
+196.19.250.0/23 Deny Generic
+Origin: SC
+192.71.172.0/24 Deny Generic
+192.121.82.0/24 Deny Generic
+192.165.251.0/24 Deny Generic
+193.183.217.0/24 Deny Generic
+193.234.55.0/24 Deny Generic
+193.235.66.0/24 Deny Generic
+194.14.248.0/24 Deny Generic
+194.132.59.0/24 Deny Generic
+194.132.121.0/24 Deny Generic
+Origin: SE
+45.33.152.0/24 Deny Generic
+45.74.4.0/24 Deny Generic
+45.74.36.0/24 Deny Generic
+45.74.62.0/24 Deny Generic
+66.78.42.0/23 Deny Generic
+66.78.57.0/24 Deny Generic
+67.207.190.0/24 Deny Generic
+67.227.108.0/23 Deny Generic
+69.51.31.0/24 Deny Generic
+69.85.90.0/24 Deny Generic
+69.168.233.0/24 Deny Generic
+104.37.6.0/24 Deny Generic
+104.224.90.0/24 Deny Generic
+104.224.92.0/24 Deny Generic
+104.243.240.0/24 Deny Generic
+104.243.250.0/24 Deny Generic
+104.250.162.0/24 Deny Generic
+104.250.164.0/23 Deny Generic
+104.250.167.0/24 Deny Generic
+104.250.169.0/24 Deny Generic
+104.250.176.0/23 Deny Generic
+104.250.180.0/24 Deny Generic
+104.250.182.0/24 Deny Generic
+104.250.185.0/24 Deny Generic
+104.250.186.0/24 Deny Generic
+104.250.190.0/24 Deny Generic
+172.94.19.0/24 Deny Generic
+172.94.41.0/24 Deny Generic
+172.94.53.0/24 Deny Generic
+172.94.54.0/23 Deny Generic
+172.94.60.0/24 Deny Generic
+172.94.65.0/24 Deny Generic
+172.94.69.0/24 Deny Generic
+172.94.71.0/24 Deny Generic
+172.94.74.0/24 Deny Generic
+172.94.83.0/24 Deny Generic
+172.94.84.0/24 Deny Generic
+172.94.87.0/24 Deny Generic
+172.94.89.0/24 Deny Generic
+172.94.90.0/24 Deny Generic
+172.94.101.0/24 Deny Generic
+172.94.104.0/23 Deny Generic
+172.94.109.0/24 Deny Generic
+172.94.114.0/24 Deny Generic
+172.111.129.0/24 Deny Generic
+172.111.130.0/24 Deny Generic
+172.111.133.0/24 Deny Generic
+172.111.138.0/24 Deny Generic
+172.111.140.0/23 Deny Generic
+172.111.143.0/24 Deny Generic
+172.111.147.0/24 Deny Generic
+172.111.148.0/23 Deny Generic
+172.111.153.0/24 Deny Generic
+172.111.157.0/24 Deny Generic
+172.111.167.0/24 Deny Generic
+172.111.178.0/23 Deny Generic
+172.111.180.0/23 Deny Generic
+172.111.183.0/24 Deny Generic
+172.111.188.0/24 Deny Generic
+172.111.190.0/24 Deny Generic
+172.111.195.0/24 Deny Generic
+172.111.197.0/24 Deny Generic
+172.111.205.0/24 Deny Generic
+172.111.211.0/24 Deny Generic
+172.111.214.0/24 Deny Generic
+172.111.216.0/24 Deny Generic
+172.111.220.0/24 Deny Generic
+172.111.222.0/24 Deny Generic
+172.111.233.0/24 Deny Generic
+172.111.242.0/23 Deny Generic
+172.111.244.0/23 Deny Generic
+172.111.250.0/24 Deny Generic
+172.111.253.0/24 Deny Generic
+173.211.14.0/24 Deny Generic
+173.211.92.0/24 Deny Generic
+173.211.95.0/24 Deny Generic
+174.140.251.0/24 Deny Generic
+184.174.44.0/24 Deny Generic
+184.174.46.0/24 Deny Generic
+192.253.244.0/24 Deny Generic
+192.253.253.0/24 Deny Generic
+206.41.108.0/24 Deny Generic
+206.123.140.0/24 Deny Generic
+206.123.146.0/24 Deny Generic
+206.130.10.0/24 Deny Generic
+207.188.156.0/22 Deny Generic
+209.198.4.0/24 Deny Generic
+209.198.21.0/24 Deny Generic
+209.198.24.0/24 Deny Generic
+209.198.51.0/24 Deny Generic
+216.74.99.0/24 Deny Generic
+216.189.3.0/24 Deny Generic
+216.189.20.0/24 Deny Generic
+216.189.118.0/24 Deny Generic
+216.189.122.0/24 Deny Generic
+216.189.124.0/24 Deny Generic
+216.250.99.0/24 Deny Generic
+Origin: US
+46.243.149.0/24 Deny Generic
+Origin: YE
+Tag: M247 Ltd
 ---
 recaptcha:
  enabled: true

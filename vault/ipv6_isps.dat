@@ -1296,3 +1296,66 @@ Tag: Freenet Ltd
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 9009 ("M247 Ltd").
+# Multiplay network providing broadband connectivity, server leasing, line rental, webhosting services and others.
+# Some risk of false positives exists. To reduce this, when updating:
+# - Remove all subordinates of 38.0.0.0/8 from final aggregate (already blocked elsewhere and don't want duplicates).
+# - Section still under review, and further work needed to minimise false positives.
+# %Listed, Google Malware Dashboard: 0.65%.
+# %Listed, CleanTalk.org: 58.66%.
+# Stop Forum Spam (SFS) listings: 46,916.
+# Updated: 2018.03.28
+
+2001:978:2305::/48 Deny Generic
+2001:978:3400::/48 Deny Generic
+Origin: DE
+2a01:300::/29 Deny Generic
+2a05:9f41:1a::/48 Deny Generic
+Origin: EU
+2001:ac8::/32 Deny Generic
+2a00:b320::/48 Deny Generic
+2a02:40::/32 Deny Generic
+2a02:710:1000:700::/56 Deny Generic
+2a03:34c0::/32 Deny Generic
+2a07:a343:120::/44 Deny Generic
+2a07:a343:3c00::/44 Deny Generic
+2a07:a343:7870::/44 Deny Generic
+2a07:a343:94d0::/44 Deny Generic
+2a07:a343:aee0::/44 Deny Generic
+2a07:a343:bc70::/44 Deny Generic
+2a07:a343:cd10::/44 Deny Generic
+2a07:a343:ce30::/44 Deny Generic
+2a07:a343:e0f0::/44 Deny Generic
+2a07:a343:f210::/44 Deny Generic
+2a0a:b640:1::/48 Deny Generic
+2a0a:b640:2::/47 Deny Generic
+Origin: GB
+2a00:55a0:ea00::/40 Deny Generic
+2a00:55a0:f000::/40 Deny Generic
+2a00:55a0:f900::/40 Deny Generic
+2a00:55a0:ff00::/40 Deny Generic
+Origin: IL
+2a04:9dc0::/29 Deny Generic
+2a07:9200::/46 Deny Generic
+2a07:9200:4::/47 Deny Generic
+Origin: RO
+2a0d:db00::/32 Deny Generic
+Origin: RU
+2001:504:f::/64 Deny Generic
+2001:550:1d05::/48 Deny Generic
+2604:17c0::/41 Deny Generic
+2604:17c0:80::/42 Deny Generic
+2607:6980:e710::/44 Deny Generic
+2a0d:5600:1::/48 Deny Generic
+2a0d:5600:2::/47 Deny Generic
+2a0d:5600:4::/46 Deny Generic
+2a0d:5600:8::/45 Deny Generic
+2a0d:5600:11::/48 Deny Generic
+2a0d:5600:12::/47 Deny Generic
+Origin: US
+Tag: M247 Ltd
+---
+recaptcha:
+ enabled: true

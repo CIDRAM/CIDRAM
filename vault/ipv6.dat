@@ -393,10 +393,10 @@ Tag: Leaseweb
 
 
 # ASN 43146 ("Agava Ltd").
-# %Listed, Google Malware Dashboard: 0.51%.
+# %Listed, Google Malware Dashboard: 0.46%.
 # %Listed, CleanTalk.org: 43.46%.
-# Stop Forum Spam (SFS) listings: 93.
-# Updated: 2017.12.19
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2017.12.19 / Checked: 2018.03.29
 
 2a03:4900::/47 Deny Cloud
 2a03:4900:2::/48 Deny Cloud
@@ -406,6 +406,7 @@ Tag: Leaseweb
 2a03:4900:fffb::/48 Deny Cloud
 2a03:4900:fffc::/48 Deny Cloud
 2a03:4900:ffff::/48 Deny Cloud
+Origin: RU
 Tag: Agava Ltd
 
 
@@ -1047,12 +1048,19 @@ Origin: US
 Tag: DataShack, LC
 
 
-# ASN 36137 ("Avante Hosting Services Inc").
-# %Listed, CleanTalk.org: 90.07%.
-# Stop Forum Spam (SFS) listings: 1,662.
-# Updated: 2016.01.21 / Checked: 2017.12.18
+# ASNs 36137, 62710 ("Avante Hosting Services Inc", "Rack911").
+# %Listed, Google Malware Dashboard: 1.35% (AS62710).
+# %Listed, CleanTalk.org: 90.07% (AS36137).
+# Stop Forum Spam (SFS) listings: 1,300 (AS36137), 4 (AS62710).
+# Updated: 2018.03.29
 
 2607:bd00::/32 Deny Cloud
+Origin: CA
+2602:ffdb::/41 Deny Cloud
+2602:ffdb:980::/41 Deny Cloud
+2602:ffdb:d80::/41 Deny Cloud
+2602:ffdb:f80::/41 Deny Cloud
+Origin: US
 Tag: Avante Hosting
 
 
@@ -1732,27 +1740,33 @@ Tag: HZ Hosting Ltd
 
 
 # ASN 53889 ("Micfo, LLC").
-# %Listed, Google Malware Dashboard: 2.01%.
+# %Listed, Google Malware Dashboard: 1.18%.
 # %Listed, CleanTalk.org: 80.30%.
-# Stop Forum Spam (SFS) listings: 6,821.
-# Updated: 2017.09.20 / Checked: 2017.12.18
+# Stop Forum Spam (SFS) listings: 8,491.
+# Updated: 2017.09.20 / Checked: 2018.03.29
 
 2605:3e80::/32 Deny Cloud
+Origin: US
 Tag: Micfo, LLC
 
 
 # ASN 63008 ("Contina").
 # %Listed, CleanTalk.org: 79.96%.
-# Stop Forum Spam (SFS) listings: 6,863.
-# Updated: 2017.12.18
+# Stop Forum Spam (SFS) listings: 5,778.
+# Updated: 2018.03.29
 
 2407:9780::/32 Deny Cloud
 2605:3e80:300::/40 Deny Cloud
 2605:3e80:400::/40 Deny Cloud
 2605:3e80:600::/39 Deny Cloud
-2605:3e80:1000::/40 Deny Cloud
+2605:3e80:900::/40 Deny Cloud
+2605:3e80:c00::/40 Deny Cloud
+2605:3e80:e00::/39 Deny Cloud
+2605:3e80:1000::/39 Deny Cloud
 2605:3e80:1800::/40 Deny Cloud
+2605:3e80:2d00::/40 Deny Cloud
 2605:3e80:c000::/48 Deny Cloud
+Origin: US
 Tag: Contina
 
 
@@ -2771,11 +2785,12 @@ Tag: AS61102
 Origin: CA
 Tag: Media-Hosts Inc
 
+
 # ASN 53667 ("FranTech Solutions").
-# %Listed, Google Malware Dashboard: 1.28%.
+# %Listed, Google Malware Dashboard: 1.38%.
 # %Listed, CleanTalk.org: 79.94%.
-# Stop Forum Spam (SFS) listings: 1,967.
-# Updated: 2017.12.18
+# Stop Forum Spam (SFS) listings: 6,625.
+# Updated: 2017.12.18 / Checked: 2018.03.29
 
 2605:6400:1::/48 Deny Cloud
 2605:6400:2::/47 Deny Cloud
@@ -2783,6 +2798,7 @@ Tag: Media-Hosts Inc
 2605:6400:20::/48 Deny Cloud
 2605:6400:30::/48 Deny Cloud
 2605:6400:100::/48 Deny Cloud
+Origin: US
 Tag: FranTech Solutions
 
 
@@ -3851,10 +3867,10 @@ Tag: Reasonnet IP
 
 
 # ASN 25820 ("IT7 Networks Inc").
-# %Listed, Google Malware Dashboard: 3.22%.
+# %Listed, Google Malware Dashboard: 2.33%.
 # %Listed, CleanTalk.org: 76.17%.
-# Stop Forum Spam (SFS) listings: 648.
-# Updated: 2017.07.16 / Checked: 2017.12.18
+# Stop Forum Spam (SFS) listings: 204.
+# Updated: 2017.07.16 / Checked: 2018.03.29
 
 2607:8700::/48 Deny Cloud
 2607:8700:101::/48 Deny Cloud
@@ -3864,6 +3880,7 @@ Tag: Reasonnet IP
 2607:8700:108::/47 Deny Cloud
 2607:8700:110::/46 Deny Cloud
 2607:8700:114::/48 Deny Cloud
+Origin: CA
 Tag: IT7 Networks Inc
 
 
@@ -3899,10 +3916,10 @@ Tag: Hosting Services Inc
 
 
 # ASN 54540 ("Incero LLC").
-# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, Google Malware Dashboard: 0.59%.
 # %Listed, CleanTalk.org: 85.80%.
-# Stop Forum Spam (SFS) listings: 1,199.
-# Updated: 2017.12.18
+# Stop Forum Spam (SFS) listings: 1,340.
+# Updated: 2018.03.29
 
 2602:ff16:1::/48 Deny Cloud
 2602:ff16:2::/47 Deny Cloud
@@ -3931,6 +3948,7 @@ Tag: Hosting Services Inc
 2604:880:36::/47 Deny Cloud
 2604:880:39::/48 Deny Cloud
 2604:880:3a::/47 Deny Cloud
+2604:880:3c::/48 Deny Cloud
 2604:880:3f::/48 Deny Cloud
 2604:880:41::/48 Deny Cloud
 2604:880:45::/48 Deny Cloud
@@ -3973,6 +3991,9 @@ Tag: Hosting Services Inc
 2604:880:280::/44 Deny Cloud
 2604:880:290::/45 Deny Cloud
 2604:880:298::/47 Deny Cloud
+2604:880:3a2::/48 Deny Cloud
+2604:880:3a4::/48 Deny Cloud
+2604:880:3a6::/47 Deny Cloud
 2604:880:3ab::/48 Deny Cloud
 2604:880:3ac::/48 Deny Cloud
 2604:880:700::/48 Deny Cloud
@@ -3995,6 +4016,7 @@ Tag: Hosting Services Inc
 2604:880:6d00::/48 Deny Cloud
 2606:cd80::/48 Deny Cloud
 2620:1e8:2::/47 Deny Cloud
+Origin: US
 Tag: Incero LLC
 
 
@@ -4621,36 +4643,48 @@ Tag: SPRINT
 
 
 # ASN 55286 ("B2 Net Solutions Inc").
-# %Listed, Google Malware Dashboard: 0.18%.
+# %Listed, Google Malware Dashboard: 0.25%.
 # %Listed, CleanTalk.org: 83.57%.
-# Stop Forum Spam (SFS) listings: 112,495.
-# Updated: 2017.12.18
+# Stop Forum Spam (SFS) listings: 101,001.
+# Updated: 2017.12.18 / Checked: 2018.03.29
 
 2607:4300::/48 Deny Cloud
+Origin: CA
 Tag: B2 Net Solutions
 
 
-# ASNs 24669, 35545, 42902, 62240, 202791, 202792, 206136, 206144 ("CloudSRV Limited" and "Clouvider Limited").
-# Updated: 2017.12.19
+# ASNs 24669, 34202, 35545, 42902, 62240, 202791, 202792, 206136, 206144 ("CloudSRV Limited" and "Clouvider Limited").
+# Updated: 2018.03.29
 
-2001:678:258::/48 Deny Cloud
 2403:5680:e000::/35 Deny Cloud
-2404:b980::/35 Deny Cloud
-2405:3580::/32 Deny Cloud
+Origin: AU
+2a02:e00:ffe9::/48 Deny Cloud
+Origin: DE
+2a06:8ec0::/48 Deny Cloud
+Origin: EU
+2001:678:258::/48 Deny Cloud
 2a04:6400::/29 Deny Cloud
 2a04:92c0::/29 Deny Cloud
 2a05:b0c2::/35 Deny Cloud
 2a05:dfc7:6::/48 Deny Cloud
 2a06:8185:e000::/35 Deny Cloud
-2a06:8ec0::/48 Deny Cloud
-2a06:a006:c2::/48 Deny Cloud
 2a06:bdc0::/29 Deny Cloud
-2a07:3b80:2::/48 Deny Cloud
 2a07:7ec2::/31 Deny Cloud
 2a0a:54c0::/29 Deny Cloud
-2a0a:c180::/31 Deny Cloud
 2a0b:1c00:1919::/48 Deny Cloud
 2a0b:bf00::/29 Deny Cloud
+2a0d:5087:1a2c::/48 Deny Cloud
+Origin: GB
+2a07:3b80:2::/48 Deny Cloud
+Origin: GI
+2405:3580::/32 Deny Cloud
+Origin: IN
+2a06:a006:c2::/48 Deny Cloud
+Origin: IS
+2a0c:ef01::/32 Deny Cloud
+Origin: NL
+2404:b980::/35 Deny Cloud
+Origin: SG
 Tag: CloudSRV Limited
 
 
@@ -4687,13 +4721,15 @@ Tag: UK Dedicated Servers
 
 
 # ASN 44812 ("IT Expert LLC").
-# %Listed, Google Malware Dashboard: 0.07%.
+# %Listed, Google Malware Dashboard: 0.18%.
 # %Listed, CleanTalk.org: 29.89%.
-# Stop Forum Spam (SFS) listings: 198.
-# Updated: 2017.12.18
+# Stop Forum Spam (SFS) listings: 213.
+# Updated: 2018.03.29
 
 2a07:ac80::/29 Deny Cloud
 2a07:ca05::/32 Deny Cloud
+2a0b:2d84::/32 Deny Cloud
+Origin: RU
 Tag: IT Expert LLC
 
 
@@ -4710,13 +4746,16 @@ Tag: INTERNET CZ, a.s
 
 # ASN 202023 ("LLHost Inc").
 # %Listed, CleanTalk.org: 5.26%.
-# Updated: 2017.01.24 / Checked: 2017.12.18
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2018.03.29
 
 2a04:bc40:1dc1::/48 Deny Cloud
 2a04:bc40:1dc3::/48 Deny Cloud
-2a04:bc40:1dc4::/46 Deny Cloud
+2a04:bc40:1dc5::/48 Deny Cloud
+2a04:bc40:1dc6::/47 Deny Cloud
 2a04:bc40:2dc1::/48 Deny Cloud
 2a04:bc40:2dc2::/47 Deny Cloud
+Origin: UA
 Tag: LLHost Inc
 
 
@@ -5312,10 +5351,12 @@ Tag: WorldStream
 
 # ASN 11888 ("Television Internacional, S.A. de C.V.").
 # %Listed, CleanTalk.org: 58.98%.
-# Stop Forum Spam (SFS) listings: 410.
-# Updated: 2017.12.18
+# %Listed, abuseat.org (CBL-Listed): 0.73%.
+# Stop Forum Spam (SFS) listings: 701.
+# Updated: 2017.12.18 / Checked: 2018.03.29
 
 2806:230::/32 Deny Cloud
+Origin: MX
 Tag: TV Internacional
 
 

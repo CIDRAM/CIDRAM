@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.5.0-DEV+18085627
+ Version: 1.5.0-DEV+18087646
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -151,7 +151,7 @@ CIDRAM:
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
    - 8c48d32a663c5a91a6a6ea201e4f9455:152649
-   - 22c0a3d62f61f690851987cee4eba092:108790
+   - 3398e20f921a906ff7fb00cbf15315d1:108678
    - 687dcd375508c63d9eacba8b32898a97:60209
    - 75f693f4e6f965e4cb74f32fc30813bf:5073
    - 8e03209e7fc6641b45094e584340feff:83
@@ -183,7 +183,7 @@ IPv4:
   zh: 标准IPv4签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2018.86.342
+ Version: 2018.87.527
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -193,7 +193,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 33e8c97839e6007bb3e10b0e33f5637d:572774
+   - 2756eabfaab0eee8b3e447fbbfb1fe7b:574646
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description:
@@ -217,7 +217,7 @@ IPv4-Bogons:
   zh: 标准IPv4签名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2018.80.036
+ Version: 2018.87.527
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -227,7 +227,7 @@ IPv4-Bogons:
   To:
    - ipv4_bogons.dat
   Checksum:
-   - b1ad79a7daffcea71235e3ef66fb6506:107830
+   - 14cc196f66e00dcf9fc25d91bb0d0a05:374
  Reannotate: components.dat
 IPv4-ISPs:
  Extended Description:
@@ -251,7 +251,7 @@ IPv4-ISPs:
   zh: 标准IPv4签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2018.86.342
+ Version: 2018.87.527
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -261,7 +261,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - 135096873ff135ab5447315b7145d34c:229596
+   - d594ca2daafcb39da72d3b6a924f735a:229746
  Reannotate: components.dat
 IPv4-Other:
  Extended Description:
@@ -319,7 +319,7 @@ IPv6:
   zh: 标准IPv6签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.86.342
+ Version: 2018.87.527
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -329,7 +329,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - f18aa279310e0ff0f163228d20310d12:142194
+   - 6f51167ffa14caa286419b4015b56ae2:143134
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description:
@@ -353,7 +353,7 @@ IPv6-Bogons:
   zh: 标准IPv6签名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止bogon/火星CIDR。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.80.036
+ Version: 2018.87.527
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -363,7 +363,7 @@ IPv6-Bogons:
   To:
    - ipv6_bogons.dat
   Checksum:
-   - 2e485be3ba6ff372867328e0b3845c14:2590474
+   - 71ba58bdbf20bfec6fc4aa11d9beb26c:466
  Reannotate: components.dat
 IPv6-ISPs:
  Extended Description:
@@ -387,7 +387,7 @@ IPv6-ISPs:
   zh: 标准IPv6签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Medium
- Version: 2018.86.342
+ Version: 2018.87.527
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -397,7 +397,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 4494319a3adc541fc6156323dd476c25:42212
+   - f8a0381e10d3499802a1a16b4f764f5f:42342
  Reannotate: components.dat
 IPv6-Other:
  Extended Description:

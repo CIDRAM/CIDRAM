@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.27).
+ * This file: Front-end functions file (last modified: 2018.03.29).
  */
 
 /**
@@ -639,7 +639,7 @@ $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
     }
     $CIDRAM['Activation'][$Type] = implode(',', $CIDRAM['Activation'][$Type]);
     if ($CIDRAM['Activation'][$Type] !== $CIDRAM['Config']['signatures'][$Type]) {
-        $CIDRAM['Activation']['modified'] = true;
+        $CIDRAM['Activation']['Modified'] = true;
     }
 };
 
@@ -661,7 +661,7 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
     }
     $CIDRAM['Deactivation'][$Type] = substr($CIDRAM['Deactivation'][$Type], 1, -1);
     if ($CIDRAM['Deactivation'][$Type] !== $CIDRAM['Config']['signatures'][$Type]) {
-        $CIDRAM['Deactivation']['modified'] = true;
+        $CIDRAM['Deactivation']['Modified'] = true;
     }
 };
 
@@ -714,11 +714,12 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
         $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]);
         $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']);
         $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To']);
-        $CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['InUse'] = $CIDRAM['IsInUse'](
+        return $CIDRAM['IsInUse'](
             $CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To'],
             $CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Extended Description']
         );
     }
+    return false;
 };
 
 /**
@@ -1074,11 +1075,11 @@ $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Level = 0;
     $Minor = substr($Version, 0, 4);
     if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.33') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $CIDRAM['VersionCompare']($Version, '7.0.27')
+        $Minor === '7.0.' && $CIDRAM['VersionCompare']($Version, '7.0.28')
     ) || (
         $Minor === '7.1.' && $CIDRAM['VersionCompare']($Version, '7.1.14')
     ) || (
-        $Minor === '7.2.' && $CIDRAM['VersionCompare']($Version, '7.2.1')
+        $Minor === '7.2.' && $CIDRAM['VersionCompare']($Version, '7.2.2')
     )) {
         $Level += 2;
     }
@@ -1672,11 +1673,11 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
 
     /** Uninstall a component. */
     if ($Action === 'uninstall-component') {
-        $CIDRAM['ComponentFunctionUpdatePrep']();
+        $InUse = $CIDRAM['ComponentFunctionUpdatePrep']();
         $CIDRAM['Components']['BytesRemoved'] = 0;
         $CIDRAM['Components']['TimeRequired'] = microtime(true);
         if (
-            empty($CIDRAM['Components']['Meta'][$ID]['Files']['InUse']) &&
+            empty($InUse) &&
             !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
             ($ID !== 'l10n/' . $CIDRAM['Config']['general']['lang']) &&
             ($ID !== 'theme/' . $CIDRAM['Config']['template_data']['theme']) &&
@@ -1715,8 +1716,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                     $CIDRAM['DeleteDirectory']($ThisFile);
                 }
             });
-            $Handle =
-                fopen($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate'], 'w');
+            $Handle = fopen($CIDRAM['Vault'] . $CIDRAM['Components']['Meta'][$ID]['Reannotate'], 'w');
             fwrite($Handle, $CIDRAM['Components']['NewMeta']);
             fclose($Handle);
             $CIDRAM['Components']['Meta'][$ID]['Version'] = false;
@@ -1747,11 +1747,11 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
             'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
             'modules' => $CIDRAM['Config']['signatures']['modules'],
-            'modified' => false
+            'Modified' => false
         ];
-        $CIDRAM['ComponentFunctionUpdatePrep']();
+        $InUse = $CIDRAM['ComponentFunctionUpdatePrep']();
         if (
-            empty($CIDRAM['Components']['Meta'][$ID]['Files']['InUse']) &&
+            empty($InUse) &&
             !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
             !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
         ) {
@@ -1765,7 +1765,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
                 $CIDRAM['ActivateComponent']('modules');
             }
         }
-        if (!$CIDRAM['Activation']['modified'] || !$CIDRAM['Activation']['Config']) {
+        if (!$CIDRAM['Activation']['Modified'] || !$CIDRAM['Activation']['Config']) {
             $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_activation_failed'];
             if (!empty($CIDRAM['Components']['Meta'][$ID]['When Activation Fails'])) {
                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Activation Fails']);
@@ -1806,24 +1806,23 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             'ipv4' => $CIDRAM['Config']['signatures']['ipv4'],
             'ipv6' => $CIDRAM['Config']['signatures']['ipv6'],
             'modules' => $CIDRAM['Config']['signatures']['modules'],
-            'modified' => false
+            'Modified' => false
         ];
+        $InUse = false;
         if (!empty($CIDRAM['Components']['Meta'][$ID]['Files'])) {
             $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$ID]['Files']);
             $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$ID]['Files']['To']);
-            $CIDRAM['Components']['Meta'][$ID]['Files']['InUse'] = $CIDRAM['IsInUse'](
-                $CIDRAM['Components']['Meta'][$ID]['Files']['To']
-            );
+            $ThisComponent = $CIDRAM['Components']['Meta'][$ID];
+            $CIDRAM['PrepareExtendedDescription']($ThisComponent);
+            $InUse = $CIDRAM['IsInUse']($ThisComponent['Files']['To'], $ThisComponent['Extended Description']);
+            unset($ThisComponent);
         }
-        if (
-            !empty($CIDRAM['Components']['Meta'][$ID]['Files']['InUse']) &&
-            !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To'])
-        ) {
+        if (!empty($InUse) && !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To'])) {
             $CIDRAM['DeactivateComponent']('ipv4');
             $CIDRAM['DeactivateComponent']('ipv6');
             $CIDRAM['DeactivateComponent']('modules');
         }
-        if (!$CIDRAM['Deactivation']['modified'] || !$CIDRAM['Deactivation']['Config']) {
+        if (!$CIDRAM['Deactivation']['Modified'] || !$CIDRAM['Deactivation']['Config']) {
             $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_deactivation_failed'];
             if (!empty($CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails'])) {
                 $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$ID]['When Deactivation Fails']);
@@ -1978,7 +1977,6 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
 /** Tally IPv6 count. */
 $CIDRAM['RangeTablesTallyIPv6'] = function (&$Arr, $Range) {
     $Order = ceil($Range / 16) - 1;
-    $Power = (7 - $Order) * 16;
     $Arr[$Order] += pow(2, (128 - $Range) % 16);
 };
 

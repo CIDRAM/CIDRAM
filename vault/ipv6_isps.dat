@@ -4,16 +4,14 @@
 
 # ---
 # ASN 29182 ("ISPsystem").
-# %Listed, Google Malware Dashboard: 0.31%.
+# %Listed, Google Malware Dashboard: 1.69%.
 # %Listed, CleanTalk.org: 56.01%.
-# Stop Forum Spam (SFS) listings: 2,816.
-# Updated: 2017.12.30
+# Stop Forum Spam (SFS) listings: 4,199.
+# Updated: 2018.03.31
 
 2a01:230::/48 Deny Generic
 2a01:230:2::/47 Deny Generic
 2a06:dc40::/29 Deny Generic
-2a0a:b386::/32 Deny Generic
-2a0d:c700::/32 Deny Generic
 Origin: RU
 Tag: ISPsystem
 
@@ -64,10 +62,10 @@ Tag: AS48159
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
-# %Listed, Google Malware Dashboard: 0.29% (AS24940), 0.39% (AS37153).
+# %Listed, Google Malware Dashboard: 0.52% (AS24940), 0.34% (AS37153).
 # %Listed, CleanTalk.org: 33.97% (AS24940), 32.17% (AS37153).
-# Stop Forum Spam (SFS) listings: 23,398 (AS24940), 429 (AS37153).
-# Updated: 2017.12.30
+# Stop Forum Spam (SFS) listings: 27,967 (AS24940), 337 (AS37153).
+# Updated: 2017.12.30 / Checked: 2018.03.31
 
 2001:67c:1164::/48 Deny Generic
 2a01:4f8::/29 Deny Generic
@@ -98,12 +96,14 @@ Tag: AS51559
 
 # ASN 45727 ("Hutchison CP Telecommunications, PT").
 # %Listed, CleanTalk.org: 32.56%.
-# Stop Forum Spam (SFS) listings: 393.
-# Updated: 2017.12.30
+# Stop Forum Spam (SFS) listings: 353.
+# Updated: 2018.03.31
 
 2400:8b00:100::/42 Deny Spam
 2400:8b00:200::/42 Deny Spam
 2400:8b00:300::/42 Deny Spam
+2400:8b00:500::/42 Deny Spam
+2400:8b00:600::/42 Deny Spam
 2400:8b00:800::/42 Deny Spam
 2400:8b00:980::/42 Deny Spam
 2400:8b00:a00::/42 Deny Spam
@@ -119,7 +119,6 @@ Tag: AS51559
 2400:8b00:f00::/42 Deny Spam
 2400:8b00:f80::/42 Deny Spam
 2400:8b00:1000::/44 Deny Spam
-2400:8b00:1100:1::/64 Deny Spam
 2400:8b00:a000::/47 Deny Spam
 Origin: ID
 Tag: PT Hutchison
@@ -235,7 +234,7 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2017.12.30
+# Updated: 2017.12.30 / Checked: 2018.03.31
 
 2620:11::/40 Deny Generic
 Origin: US
@@ -277,9 +276,9 @@ Tag: PIN-AS
 # ASNs 16880, 36421 ("Trend Micro Incorporated").
 # Follows their users around and attempts to get into restricted/private parts of websites.
 # %Listed, CleanTalk.org: 28.57% (AS16880), 0% (AS36421).
-# Updated: 2017.09.19 / Checked: 2017.12.30
+# Updated: 2018.03.31
 
-2620:101:402c::/47 Deny Generic
+2620:101:402d::/48 Deny Generic
 2620:101:4034::/47 Deny Generic
 2620:101:4036::/48 Deny Generic
 2620:101:403a::/48 Deny Generic
@@ -976,11 +975,11 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 1.01%.
+# %Listed, Google Malware Dashboard: 0.70%.
 # %Listed, CleanTalk.org: 17.43%.
-# %Listed, abuseat.org (CBL-Listed): 2.92%.
-# Stop Forum Spam (SFS) listings: 14,224.
-# Updated: 2017.12.28
+# %Listed, abuseat.org (CBL-Listed): 2.35%.
+# Stop Forum Spam (SFS) listings: 15,007.
+# Updated: 2017.12.28 / Checked: 2018.03.31
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic
@@ -1002,9 +1001,35 @@ recaptcha:
 # traffic from India, to list this section in their "ignore.dat" file as a means of minimising the potential impact of
 # false positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to
 # not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# Updated: 2017.12.23
+# Updated: 2018.03.31
 
-2400:ff00::/32 Deny Spam
+2001:7f8::/64 Deny Spam
+2a01:4a0:1338:57::/64 Deny Spam
+Origin: DE
+2001:2000:3080:eb::/64 Deny Spam
+2001:2000:3080:780::/64 Deny Spam
+2001:2000:3080:79e::/64 Deny Spam
+2a01:62e0:f001:17b::/64 Deny Spam
+Origin: EU
+2001:7f8:36::/64 Deny Spam
+Origin: FR
+2001:df5:b800:bb00::/64 Deny Spam
+2400:8800:1f02:d::/64 Deny Spam
+2400:8800:1f02:2b::/64 Deny Spam
+2400:8800:1f02:46::/63 Deny Spam
+2400:8800:7f06:22::/63 Deny Spam
+2404:d180:1:4::/64 Deny Spam
+Origin: HK
+2a03:2887:ff00::/48 Deny Spam
+2a03:2887:ff02::/47 Deny Spam
+2a03:2887:ff04::/46 Deny Spam
+2a03:2887:ff08::/48 Deny Spam
+2a03:2887:ff0a::/48 Deny Spam
+Origin: IE
+2001:de8:1::/64 Deny Spam
+2001:de8:1:2::/64 Deny Spam
+2001:de8:1:5::/64 Deny Spam
+2401:4900:c0:2000::/64 Deny Spam
 2401:4900:808::/45 Deny Spam
 2401:4900:810::/44 Deny Spam
 2401:4900:840::/44 Deny Spam
@@ -1017,11 +1042,13 @@ recaptcha:
 2401:4900:1200::/40 Deny Spam
 2401:4900:1300::/41 Deny Spam
 2401:4900:1680::/42 Deny Spam
-2401:4900:16d0::/44 Deny Spam
+2401:4900:16c0::/43 Deny Spam
 2401:4900:16e0::/44 Deny Spam
-2401:4900:1700::/42 Deny Spam
-2401:4900:1744::/46 Deny Spam
-2401:4900:1800::/39 Deny Spam
+2401:4900:1710::/44 Deny Spam
+2401:4900:1720::/43 Deny Spam
+2401:4900:1740::/45 Deny Spam
+2401:4900:1800::/41 Deny Spam
+2401:4900:1900::/40 Deny Spam
 2401:4900:1d00::/41 Deny Spam
 2401:4900:2000::/48 Deny Spam
 2401:4900:2080::/48 Deny Spam
@@ -1039,6 +1066,24 @@ recaptcha:
 2404:a800::/32 Deny Spam
 2405:a700:14::/47 Deny Spam
 2407:7400::/48 Deny Spam
+Origin: IN
+2001:de8:4::/64 Deny Spam
+2001:de8:7::/64 Deny Spam
+2001:de8:c::/64 Deny Spam
+Origin: JP
+2400:ff00::/32 Deny Spam
+Origin: LK
+2001:7f8:1::/64 Deny Spam
+2001:7f8:13::/64 Deny Spam
+Origin: NL
+2001:428:601:10::/64 Deny Spam
+2001:428:4c01:c::/64 Deny Spam
+2001:450:2002:18c::/64 Deny Spam
+2001:504:1::/64 Deny Spam
+2001:504:d::/64 Deny Spam
+2001:504:f::/64 Deny Spam
+2001:504:13::/64 Deny Spam
+2001:504:36::/64 Deny Spam
 2600:140f:3::/48 Deny Spam
 2600:140f:b::/48 Deny Spam
 2600:140f:d::/48 Deny Spam
@@ -1047,6 +1092,7 @@ recaptcha:
 2600:140f:7000::/48 Deny Spam
 2600:140f:9000::/48 Deny Spam
 2600:140f:b000::/48 Deny Spam
+2600:140f:d000::/64 Deny Spam
 2600:1417:1e::/48 Deny Spam
 2600:1417:20::/48 Deny Spam
 2600:1417:2c::/48 Deny Spam
@@ -1058,7 +1104,8 @@ recaptcha:
 2600:1417:6e::/48 Deny Spam
 2600:1417:70::/48 Deny Spam
 2600:1417:78::/48 Deny Spam
-Origin: IN
+2620:107:4008:223::/64 Deny Spam
+Origin: US
 Tag: Bharti Airtel
 ---
 recaptcha:
@@ -1068,8 +1115,8 @@ recaptcha:
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
 # ( No problems encountered from their IPv6 ranges yet, but included here anyhow for reference, but commented out. )
 # %Listed, CleanTalk.org: 4.87%.
-# Stop Forum Spam (SFS) listings: 284.
-# Updated: 2017.12.30
+# Stop Forum Spam (SFS) listings: 139.
+# Updated: 2017.12.30 / Checked: 2018.03.31
 
 # 2404:3c00:1000::/36 Deny Spam
 # 2404:3c00:2000::/35 Deny Spam

@@ -486,25 +486,29 @@ Tag: Avesta Networks LLC
 
 
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
-# %Listed, Google Malware Dashboard: 0.37%.
+# %Listed, Google Malware Dashboard: 0.23%.
 # %Listed, CleanTalk.org: 25.76%.
-# Stop Forum Spam (SFS) listings: 232.
-# Updated: 2017.07.16 / Checked: 2017.12.19
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2017.07.16 / Checked: 2018.03.30
 
+2a0a:2540::/29 Deny Cloud
+Origin: RU
 2a04:b540:1000::/36 Deny Cloud
 2a04:b540:2000::/36 Deny Cloud
-2a0a:2540::/29 Deny Cloud
+Origin: SK
 Tag: eServer.ru
 
 
 # ASN 12722 ("RECONN. Operator svyazy Ltd").
-# %Listed, Google Malware Dashboard: 1.89%.
+# %Listed, Google Malware Dashboard: 5.14%.
 # %Listed, CleanTalk.org: 17.39%.
-# Stop Forum Spam (SFS) listings: 911.
-# Updated: 2017.01.13 / Checked: 2017.12.19
+# Stop Forum Spam (SFS) listings: 890.
+# Updated: 2018.03.30
 
 2001:67c:2824::/48 Deny Cloud
+2a00:1f70::/32 Deny Cloud
 2a05:4800::/29 Deny Cloud
+Origin: RU
 Tag: svyazy
 
 
@@ -691,20 +695,6 @@ Origin: US
 Tag: Limestone Networks
 
 
-# ASN 35662 ("Redstation Limited").
-# %Listed, Google Malware Dashboard: 0.72%.
-# %Listed, CleanTalk.org: 37.69%.
-# Stop Forum Spam (SFS) listings: 2,688.
-# Updated: 2016.01.19 / Checked: 2017.12.19
-# Note: At the time of last update, the ASN wasn't reporting any CIDRs and seemed empty! Its CIDRs still exist
-# nonetheless, and announce back their original ASN in most cases. Despite being "empty", ASN remains routable and
-# peerable (peers mostly iomart at AS20860), and most definitely isn't dead. Check manually for CIDRs on next update if
-# ASN continues to appear empty.
-
-2a02:2658::/32 Deny Cloud
-Tag: Redstation Limited
-
-
 # ASN 13301 ("United Gameserver GmbH").
 # Caught trying to DDoS SFS.
 # %Listed, Google Malware Dashboard: 0.17%.
@@ -857,11 +847,12 @@ Origin: NL
 Tag: A2B IP B.V
 
 
-# ASNs 20860, 21130 ("IOMart").
-# %Listed, Google Malware Dashboard: 0.67% (AS20860).
+# ASNs 20860, 21130, 25108 ("IOMart").
+# Careful when updating; Also contains some proxies and VPNs (should be marked differently).
+# %Listed, Google Malware Dashboard: 0.59% (AS20860).
 # %Listed, CleanTalk.org: 28.59% (AS20860).
-# Stop Forum Spam (SFS) listings: 4,936 (AS20860).
-# Updated: 2018.01.12
+# Stop Forum Spam (SFS) listings: 9,398 (AS20860).
+# Updated: 2018.03.30
 
 2607:bd00:100::/48 Deny Cloud
 Origin: CA
@@ -878,12 +869,12 @@ Origin: CA
 2a03:f2c0::/32 Deny Cloud
 2a04:de40::/32 Deny Cloud
 2a0b:4580::/32 Deny Cloud
+2a0b:9400:1000::/48 Deny Cloud
 2a0b:cc40::/29 Deny Cloud
+2a0d:9780::/32 Deny Cloud
 Origin: GB
 2403:cc00:3000::/36 Deny Cloud
 Origin: SG
-2a05:bf00::/29 Deny Cloud
-Origin: TR
 2a0c:4380::/40 Deny Cloud
 Origin: US
 Tag: IOMart

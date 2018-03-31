@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.03.25).
+ * This file: Functions file (last modified: 2018.03.31).
  */
 
 /**
@@ -1079,30 +1079,39 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
             break;
         }
     }
-    /**
-     * Resolve the hostname to the original IP address (if $ReverseOnly is
-     * false); Act according to the results and return.
-     */
-    if ($Pass && (
-        $ReverseOnly || $CIDRAM['DNS-Resolve']($CIDRAM['Hostname']) === $CIDRAM['BlockInfo']['IPAddr']
-    )) {
-        /** It's the real deal; Disable tracking. */
-        $CIDRAM['Trackable'] = false;
-    } else {
-        /** It's a fake; Block it. */
-        $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['lang']['fake_ua']);
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
-        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+
+    /** Successfully compared. */
+    if ($Pass) {
+        /** We're only reversing; Don't forward resolve. Disable tracking and return. */
+        if ($ReverseOnly) {
+            $CIDRAM['Trackable'] = false;
+            return true;
         }
-        $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
-        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+        /** Attempt to resolve. */
+        if (!$Resolved = $CIDRAM['DNS-Resolve']($CIDRAM['Hostname'])) {
+            /** Failed to resolve. Do nothing and return. */
+            return false;
         }
-        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-        $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
-        $CIDRAM['BlockInfo']['SignatureCount']++;
+        /** It's the real deal; Disable tracking and return. */
+        if ($Resolved === $CIDRAM['BlockInfo']['IPAddr']) {
+            $CIDRAM['Trackable'] = false;
+            return true;
+        }
     }
+
+    /** It's a fake; Block it. */
+    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['lang']['fake_ua']);
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+    }
+    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+    $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
     return true;
 };
 

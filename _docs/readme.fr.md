@@ -834,6 +834,25 @@ Des modules ont été mis à disposition pour garantir que les packages et produ
 
 ### 9. <a name="SECTION9"></a>QUESTIONS FRÉQUEMMENT POSÉES (FAQ)
 
+- [Qu'est-ce qu'une « signature » ?](#WHAT_IS_A_SIGNATURE)
+- [Qu'est-ce qu'un « CIDR » ?](#WHAT_IS_A_CIDR)
+- [Qu'est-ce qu'un « faux positif » ?](#WHAT_IS_A_FALSE_POSITIVE)
+- [CIDRAM peut-il bloquer des pays entiers ?](#BLOCK_ENTIRE_COUNTRIES)
+- [À quelle fréquence les signatures sont-elles mises à jour ?](#SIGNATURE_UPDATE_FREQUENCY)
+- [J'ai rencontré un problème lors de l'utilisation de CIDRAM et je ne sais pas quoi faire à ce sujet ! Aidez-moi !](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [J'ai été bloqué par CIDRAM d'un site Web que je veux visiter ! Aidez-moi !](#BLOCKED_WHAT_TO_DO)
+- [Je veux utiliser CIDRAM avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?](#MINIMUM_PHP_VERSION)
+- [Puis-je utiliser une seule installation de CIDRAM pour protéger plusieurs domaines ?](#PROTECT_MULTIPLE_DOMAINS)
+- [Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site ; Puis-je vous payer pour tout faire pour moi ?](#PAY_YOU_TO_DO_IT)
+- [Puis-je vous embaucher ou à l'un des développeurs de ce projet pour un travail privé ?](#HIRE_FOR_PRIVATE_WORK)
+- [J'ai besoin de modifications spécialisées, de personnalisations, etc ; Êtes-vous en mesure d'aider ?](#SPECIALIST_MODIFICATIONS)
+- [Je suis un développeur, un concepteur de site Web ou un programmeur. Puis-je accepter ou offrir des travaux relatifs à ce projet ?](#ACCEPT_OR_OFFER_WORK)
+- [Je veux contribuer au projet ; Puis-je faire cela ?](#WANT_TO_CONTRIBUTE)
+- [Valeurs recommandées pour « ipaddr ».](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [Puis-je utiliser cron pour mettre à jour automatiquement ?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [Quelles sont les « infractions »?](#WHAT_ARE_INFRACTIONS)
+- [Est-ce que CIDRAM peut bloquer les noms d'hôtes ?](#BLOCK_HOSTNAMES)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Qu'est-ce qu'une « signature » ?
 
 Dans le contexte du CIDRAM, une « signature » désigne les données qui servent d'indicateur ou d'identifiant pour quelque chose de spécifique que nous chercher, habituellement une adresse IP ou CIDR, et inclures des instructions pour CIDRAM, indiquant la meilleure façon de répondre quand il rencontre ce que nous chercher. Une signature typique pour CIDRAM ressemble à ceci :
@@ -875,56 +894,56 @@ Ceci peut être résumé par le tableau ci-dessous :
 CIDRAM ne bloque *PAS* une adresse IP | Vrai négatif (inférence correcte) | Détection manquée (analogue à faux négatif)
 CIDRAM bloque une adresse IP | __Faux positif__ | Vrai positif (inférence correcte)
 
-#### CIDRAM peut-il bloquer des pays entiers ?
+#### <a name="BLOCK_ENTIRE_COUNTRIES"></a>CIDRAM peut-il bloquer des pays entiers ?
 
 Oui. La meilleure façon d'y parvenir serait d'installer certaines des listes facultatives pour les pays bloquants fournies par Macmathan. Cela peut être fait avec quelques clics simples directement à partir de la page des mises à jour de l'accès frontal, ou, si vous préférez que l'accès frontal reste désactivé, en les téléchargeant directement depuis la **[page de téléchargement des listes facultatives pour les pays bloquants](https://macmathan.info/blocklists)**, en les téléchargeant dans le vault, et en citant leurs noms dans les directives de configuration appropriées.
 
-#### À quelle fréquence les signatures sont-elles mises à jour ?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>À quelle fréquence les signatures sont-elles mises à jour ?
 
 La fréquence de mise à jour varie selon les fichiers de signature en question. Tous les mainteneurs des fichiers de signature pour CIDRAM tentent généralement de conserver leurs signatures aussi à jour que possible, mais comme nous avons tous divers autres engagements, nos vies en dehors du projet, et comme aucun de nous n'est rémunéré financièrement (ou payé) pour nos efforts sur le projet, un planning de mise à jour précis ne peut être garanti. Généralement, les signatures sont mises à jour chaque fois qu'il y a suffisamment de temps pour les mettre à jour, et généralement, les mainteneurs tentent de prioriser basé sur la nécessité et la fréquence à laquelle des changements se produisent entre les gammes. L'assistance est toujours appréciée si vous êtes prêt à en offrir.
 
-#### J'ai rencontré un problème lors de l'utilisation de CIDRAM et je ne sais pas quoi faire à ce sujet ! Aidez-moi !
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>J'ai rencontré un problème lors de l'utilisation de CIDRAM et je ne sais pas quoi faire à ce sujet ! Aidez-moi !
 
 - Utilisez-vous la dernière version du logiciel ? Utilisez-vous les dernières versions de vos fichiers de signature ? Si la réponse à l'une ou l'autre de ces deux est non, essayez de tout mettre à jour tout d'abord, et vérifier si le problème persiste. Si elle persiste, continuez à lire.
 - Avez-vous vérifié toute la documentation ? Si non, veuillez le faire. Si le problème ne peut être résolu en utilisant la documentation, continuez à lire.
 - Avez-vous vérifié la **[page des problèmes](https://github.com/CIDRAM/CIDRAM/issues)**, pour voir si le problème a été mentionné avant ? Si on l'a mentionné avant, vérifier si des suggestions, des idées et/ou des solutions ont été fournies, et suivez comme nécessaire pour essayer de résoudre le problème.
 - Si le problème persiste, veuillez nous en informer en créant un nouveau discussion sur la page des problèmes.
 
-#### J'ai été bloqué par CIDRAM d'un site Web que je veux visiter ! Aidez-moi !
+#### <a name="BLOCKED_WHAT_TO_DO"></a>J'ai été bloqué par CIDRAM d'un site Web que je veux visiter ! Aidez-moi !
 
 CIDRAM fournit un moyen pour les propriétaires de sites Web de bloquer le trafic indésirable, mais c'est la responsabilité des propriétaires de sites Web de décider eux-mêmes comment ils veulent utiliser CIDRAM. Dans le cas des faux positifs relatifs aux fichiers de signature normalement inclus dans CIDRAM, des corrections peuvent être apportées, mais en ce qui concerne d'être débloqué à partir de sites Web spécifiques, vous devrez contacter les propriétaires des sites Web en question. Dans les cas où des corrections sont apportées, à tout le moins, ils devront mettre à jour leurs fichiers de signature et/ou d'installation, et dans d'autres cas (tels que, par exemple, où ils ont modifié leur installation, créé leurs propres signatures personnalisées, etc), la responsabilité de résoudre votre problème est entièrement à eux, et est entièrement hors de notre contrôle.
 
-#### Je veux utiliser CIDRAM avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?
+#### <a name="MINIMUM_PHP_VERSION"></a>Je veux utiliser CIDRAM avec une version PHP plus ancienne que 5.4.0 ; Pouvez-vous m'aider ?
 
 Non. PHP 5.4.0 a atteint officiellement l'EoL (« End of Life », ou fin de vie) en 2014, et le support étendu en matière de sécurité a pris fin en 2015. À la date d'écriture, il est 2017, et PHP 7.1.0 est déjà disponible. À l'heure actuelle, le support est fourni pour l'utilisation de CIDRAM avec PHP 5.4.0 et toutes les nouvelles versions PHP disponibles, mais si vous essayez d'utiliser CIDRAM avec les anciennes versions PHP, le support ne sera pas fourni.
 
 *Voir également : [Tableaux de Compatibilité](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Puis-je utiliser une seule installation de CIDRAM pour protéger plusieurs domaines ?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Puis-je utiliser une seule installation de CIDRAM pour protéger plusieurs domaines ?
 
 Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations CIDRAM protégeant un seul domaine comme « installations à un seul domaine » (« single-domain installations »), et nous référons aux installations CIDRAM protégeant plusieurs domaines et/ou sous-domaines comme « installations multi-domaines » (« multi-domain installations »). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de CIDRAM pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), CIDRAM vérifiera l'existence d'un « fichier de substitution de configuration » spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour CIDRAM, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la requête ; « www » est ignoré.
 
-#### Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site ; Puis-je vous payer pour tout faire pour moi ?
+#### <a name="PAY_YOU_TO_DO_IT"></a>Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site ; Puis-je vous payer pour tout faire pour moi ?
 
 Peut-être. Ceci est considéré au cas par cas. Faites-nous savoir ce dont vous avez besoin, ce que vous offrez, et nous vous informerons si nous pouvons vous aider.
 
-#### Puis-je vous embaucher ou à l'un des développeurs de ce projet pour un travail privé ?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Puis-je vous embaucher ou à l'un des développeurs de ce projet pour un travail privé ?
 
 *Voir au dessus.*
 
-#### J'ai besoin de modifications spécialisées, de personnalisations, etc ; Êtes-vous en mesure d'aider ?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>J'ai besoin de modifications spécialisées, de personnalisations, etc ; Êtes-vous en mesure d'aider ?
 
 *Voir au dessus.*
 
-#### Je suis un développeur, un concepteur de site Web ou un programmeur. Puis-je accepter ou offrir des travaux relatifs à ce projet ?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>Je suis un développeur, un concepteur de site Web ou un programmeur. Puis-je accepter ou offrir des travaux relatifs à ce projet ?
 
 Oui. Notre licence ne l'interdit pas.
 
-#### Je veux contribuer au projet ; Puis-je faire cela ?
+#### <a name="WANT_TO_CONTRIBUTE"></a>Je veux contribuer au projet ; Puis-je faire cela ?
 
 Oui. Les contributions au projet sont les bienvenues. Voir « CONTRIBUTING.md » pour plus d'informations.
 
-#### Valeurs recommandées pour « ipaddr ».
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valeurs recommandées pour « ipaddr ».
 
 Valeur | En utilisant
 ---|---
@@ -936,19 +955,19 @@ Valeur | En utilisant
 *Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
 
-#### Puis-je utiliser cron pour mettre à jour automatiquement ?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Puis-je utiliser cron pour mettre à jour automatiquement ?
 
 Oui. Une API est intégrée dans le frontal pour interagir avec la page des mises à jour via des scripts externes. Un script séparé, « [Cronable](https://github.com/Maikuolan/Cronable) », est disponible, et peut être utilisé par votre gestionnaire de cron ou cron scheduler pour mettre à jour ce paquet et d'autres paquets supportés automatiquement (ce script fournit sa propre documentation).
 
-#### Quelles sont les « infractions »?
+#### <a name="WHAT_ARE_INFRACTIONS"></a>Quelles sont les « infractions »?
 
 « Infractions » détermine quand une adresse IP qui n'est pas bloquée par des fichiers de signatures spécifiques devrait être bloqué pour les requêtes futures, et ils sont étroitement associés au surveillance des adresses IP. Certaines fonctionnalités et certains modules permettent de bloquer les requêtes pour des raisons autres que l'adresse IP d'origine (tels que la présence d'agents utilisateurs [user agents] correspondant à spambots ou hacktools, requêtes dangereuses, DNS usurpé et ainsi de suite), et quand cela arrive, une « infraction » peut survenir. Ils fournissent un moyen d'identifier les adresses IP qui correspondent à des requêtes non désirées qui ne sont pas bloquées par des fichiers de signatures spécifiques. Les infractions correspondent généralement 1-à-1 avec le nombre de fois qu'une IP est bloquée, mais pas toujours (les événements de bloc graves peuvent entraîner une valeur d'infraction supérieure à un, et si « track_mode » est false, les infractions ne se produiront pas pour les événements de bloc déclenchés uniquement par des fichiers de signatures).
 
-#### Est-ce que CIDRAM peut bloquer les noms d'hôtes?
+#### <a name="BLOCK_HOSTNAMES"></a>Est-ce que CIDRAM peut bloquer les noms d'hôtes ?
 
 Oui. Pour ce faire, vous devez créer un fichier de module personnalisé. *Voir : [BASES (POUR LES MODULES)](#MODULE_BASICS)*.
 
 ---
 
 
-Dernière mise à jour : 23 Mars 2018 (2018.03.23).
+Dernière mise à jour : 31 Mars 2018 (2018.03.31).

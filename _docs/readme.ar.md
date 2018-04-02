@@ -957,6 +957,27 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 ### <div dir="rtl">٩. <a name="SECTION9"></a>أسئلة وأجوبة (FAQ)</div>
 
+<div dir="rtl"><ul>
+ <li><a href="#WHAT_IS_A_SIGNATURE">ما هو "التوقيع"؟</a></li>
+ <li><a href="#WHAT_IS_A_CIDR">ما هو "CIDR"؟</a></li>
+ <li><a href="#WHAT_IS_A_FALSE_POSITIVE">ما هو "إيجابية خاطئة"؟</a></li>
+ <li><a href="#BLOCK_ENTIRE_COUNTRIES">يمكن CIDRAM منع الدول؟</a></li>
+ <li><a href="#SIGNATURE_UPDATE_FREQUENCY">عدد المرات التي يتم تحديثها التوقيعات؟</a></li>
+ <li><a href="#ENCOUNTERED_PROBLEM_WHAT_TO_DO">لقد واجهت مشكلة! أنا لا أعرف ما يجب القيام به! الرجاء المساعدة!</a></li>
+ <li><a href="#BLOCKED_WHAT_TO_DO">لقد تم حظر من موقع على شبكة الانترنت! الرجاء المساعدة!</a></li>
+ <li><a href="#MINIMUM_PHP_VERSION">أريد استخدام CIDRAM مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟</a></li>
+ <li><a href="#PROTECT_MULTIPLE_DOMAINS">هل يمكنني استخدام تثبيت CIDRAM واحد لحماية نطاقات متعددة؟</a></li>
+ <li><a href="#PAY_YOU_TO_DO_IT">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟</a></li>
+ <li><a href="#HIRE_FOR_PRIVATE_WORK">هل يمكنني توظيفك أو أي من مطوري هذا المشروع للعمل الخاص؟</a></li>
+ <li><a href="#SPECIALIST_MODIFICATIONS">أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟</a></li>
+ <li><a href="#ACCEPT_OR_OFFER_WORK">أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟</a></li>
+ <li><a href="#WANT_TO_CONTRIBUTE">أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟</a></li>
+ <li><a href="#RECOMMENDED_VALUES_FOR_IPADDR">القيم الموصى بها ل "ipaddr".</a></li>
+ <li><a href="#CRON_TO_UPDATE_AUTOMATICALLY">هل يمكنني استخدام cron لتحديث تلقائيا؟</a></li>
+ <li><a href="#WHAT_ARE_INFRACTIONS">ما هي "المخالفات"؟</a></li>
+ <li><a href="#BLOCK_HOSTNAMES">هل يمكن لأسماء المضيفين في CIDRAM حظر؟</a></li>
+</ul></div>
+
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ما هو "التوقيع"؟<br /><br /></div>
 
 <div dir="rtl">في CIDRAM، يشير "التوقيع" إلى البيانات التي تعمل كمعرف، لشيء معين أننا نبحث عنه. عادة عنوان IP أو CIDR، يتضمن بعض التعليمات لCIDRAM، مثل أفضل طريقة للرد عندما يواجه ما نحن نبحث عنه. توقيع نموذجي لCIDRAM يبدو شيئا من هذا القبيل:<br /><br /></div>
@@ -998,15 +1019,15 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 &nbsp; <div dir="rtl" style="display:inline;">سلبي صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline;">افتقد (التناظرية من سلبي خاطئة)</div> | <div dir="rtl" style="display:inline;"><strong>CIDRAM لا يمنع عنوان IP</strong></div>
 &nbsp; <div dir="rtl" style="display:inline;"><strong>إيجابية خاطئة</strong></div> | <div dir="rtl" style="display:inline;">إيجابية صحيح (الاستدلال الصحيح)</div> | <div dir="rtl" style="display:inline;"><strong>CIDRAM منع عنوان IP</strong></div>
 
-<div dir="rtl">يمكن CIDRAM منع الدول؟<br /><br /></div>
+#### <div dir="rtl"><a name="BLOCK_ENTIRE_COUNTRIES"></a>يمكن CIDRAM منع الدول؟<br /><br /></div>
 
 <div dir="rtl">نعم. يمكنك القيام بذلك عن طريق القوائم تحميل Macmathan ل (إما من frontend تلقائيا أو من <strong><a href="https://macmathan.info/blocklists">صفحة التحميل</a></strong> ليدويا. عندما يدويا، تحميلها على vault، لهم وتحدد لهم التكوين.<br /><br /></div>
 
-<div dir="rtl">عدد المرات التي يتم تحديثها التوقيعات؟<br /><br /></div>
+#### <div dir="rtl"><a name="SIGNATURE_UPDATE_FREQUENCY"></a>عدد المرات التي يتم تحديثها التوقيعات؟<br /><br /></div>
 
 <div dir="rtl">أنه يختلف. نحن نحاول قدر الإمكان، ولكن نظرا لالتزامات أخرى، حياتنا اليومية، وعدم حصولهم على رواتبهم، تحديث الجدول الزمني الدقيق لا يمكن أن تكون مضمونة. الأولوية لضرورة. ورحب المساعدة دائما.<br /><br /></div>
 
-<div dir="rtl">لقد واجهت مشكلة! أنا لا أعرف ما يجب القيام به! الرجاء المساعدة!</div>
+#### <div dir="rtl"><a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>لقد واجهت مشكلة! أنا لا أعرف ما يجب القيام به! الرجاء المساعدة!</div>
 <div dir="rtl"><ul>
  <li>تحقق مما إذا كنت تستخدم أحدث إصدار من البرنامج والتوقيع الملفات.</li>
  <li>قراءة الوثائق. قد تكون هناك إجابات هناك.</li>
@@ -1014,41 +1035,41 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
  <li>لا يوجد حتى الآن إجابات؟ اخبرنا عنها. إنشاء مناقشة جديدة مع واحدة من أعلاه.</li>
 </ul></div>
 
-<div dir="rtl">لقد تم حظر من موقع على شبكة الانترنت! الرجاء المساعدة!<br /><br /></div>
+#### <div dir="rtl"><a name="BLOCKED_WHAT_TO_DO"></a>لقد تم حظر من موقع على شبكة الانترنت! الرجاء المساعدة!<br /><br /></div>
 
 <div dir="rtl">CIDRAM يمكن أن تتوقف حركة المرور غير المرغوب فيها، ولكن اصحاب المواقع هي المسؤولة عن البت في كيفية استخدام هذه. ويمكننا تصحيح أخطائنا، ولكن في حالات أخرى، ستحتاج إلى الاتصال بأصحاب الموقع ذات الصلة. لا نستطيع أن نفعل أي شيء عن أشياء خارجة عن سيطرتنا.<br /><br /></div>
 
-<div dir="rtl">أريد استخدام CIDRAM مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟<br /><br /></div>
+#### <div dir="rtl"><a name="MINIMUM_PHP_VERSION"></a>أريد استخدام CIDRAM مع نسخة PHP كبار السن من 5.4.0؛ يمكنك أن تساعد؟<br /><br /></div>
 
 <div dir="rtl">لا. PHP 5.4.0 دعم إنهاء عام 2014. الدعم الأمني الموسع إنهاء في عام 2015. حاليا، فمن عام 2017، وPHP 7.1.0 متاحة بالفعل. يتم توفير دعم لاستخدام CIDRAM مع PHP 5.4.0 و كل ما هو متاح أحدث إصدارات PHP. لن تكون معتمدة الإصدارات القديمة PHP.<br /><br /></div>
 
 <div dir="rtl"><em>انظر أيضا: <a href="https://maikuolan.github.io/Compatibility-Charts/">مخططات التوافق</a>.</em><br /><br /></div>
 
-<div dir="rtl">هل يمكنني استخدام تثبيت CIDRAM واحد لحماية نطاقات متعددة؟<br /><br /></div>
+#### <div dir="rtl"><a name="PROTECT_MULTIPLE_DOMAINS"></a>هل يمكنني استخدام تثبيت CIDRAM واحد لحماية نطاقات متعددة؟<br /><br /></div>
 
 <div dir="rtl">نعم. يمكن استخدام CIDRAM لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل <code dir="ltr">"http://www.some-domain.tld/"</code>، أطلق عليه اسما <code dir="ltr">"some-domain.tld.config.ini"</code>. اسم النطاق يأتي من <code dir="ltr">"HTTP_HOST"</code>. يتم تجاهل <code dir="ltr">"www"</code>.<br /><br /></div>
 
-<div dir="rtl">أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
+#### <div dir="rtl"><a name="PAY_YOU_TO_DO_IT"></a>أنا لا أريد أن تضيع الوقت مع تثبيت هذا أو ضمان أنه يعمل لموقع الويب الخاص بي؛ يمكنني دفع لك أن تفعل ذلك بالنسبة لي؟<br /><br /></div>
 
 <div dir="rtl">ربما. وينظر في ذلك على أساس كل حالة على حدة. أخبرنا احتياجاتك وما تقدمه. سنخبرك بما إذا كنا نستطيع مساعدتك أم لا.<br /><br /></div>
 
-<div dir="rtl">هل يمكنني توظيفك أو أي من مطوري هذا المشروع للعمل الخاص؟<br /><br /></div>
+#### <div dir="rtl"><a name="HIRE_FOR_PRIVATE_WORK"></a>هل يمكنني توظيفك أو أي من مطوري هذا المشروع للعمل الخاص؟<br /><br /></div>
 
 <div dir="rtl"><em>راجع اإلجابة أعاله.</em><br /><br /></div>
 
-<div dir="rtl">أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟<br /><br /></div>
+#### <div dir="rtl"><a name="SPECIALIST_MODIFICATIONS"></a>أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟<br /><br /></div>
 
 <div dir="rtl"><em>راجع اإلجابة أعاله.</em><br /><br /></div>
 
-<div dir="rtl">أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟<br /><br /></div>
+#### <div dir="rtl"><a name="ACCEPT_OR_OFFER_WORK"></a>أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟<br /><br /></div>
 
 <div dir="rtl">نعم. ترخيصنا لا يحظر هذا.<br /><br /></div>
 
-<div dir="rtl">أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟<br /><br /></div>
+#### <div dir="rtl"><a name="WANT_TO_CONTRIBUTE"></a>أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟<br /><br /></div>
 
 <div dir="rtl">نعم. المساهمة في المشروع هو موضع ترحيب كبير. يرجى الاطلاع على "CONTRIBUTING.md" لمزيد من المعلومات.<br /><br /></div>
 
-<div dir="rtl">القيم الموصى بها ل "ipaddr".<br /><br /></div>
+#### <div dir="rtl"><a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>القيم الموصى بها ل "ipaddr".<br /><br /></div>
 
 &nbsp; <div dir="rtl" style="display:inline;">القيمة</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
 ---|---
@@ -1060,19 +1081,19 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 &nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
 
-<div dir="rtl">هل يمكنني استخدام cron لتحديث تلقائيا؟<br /><br /></div>
+#### <div dir="rtl"><a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>هل يمكنني استخدام cron لتحديث تلقائيا؟<br /><br /></div>
 
 <div dir="rtl">نعم. يتم تضمين API في front-end للتفاعل مع صفحة التحديثات عبر النصوص البرمجية الخارجية. وهناك نص منفصل، <a href="https://github.com/Maikuolan/Cronable">Cronable</a>، هو متاح، ويمكن استخدامها من قبل مدير كرون أو كرون جدولة لتحديث هذا وغيرها من الحزم المعتمدة تلقائيا (يوفر هذا البرنامج النصي وثائقه الخاصة).<br /><br /></div>
 
-<div dir="rtl">ما هي "المخالفات"؟<br /><br /></div>
+#### <div dir="rtl"><a name="WHAT_ARE_INFRACTIONS"></a>ما هي "المخالفات"؟<br /><br /></div>
 
 <div dir="rtl">"المخالفات" تحدد متى يجب أن يبدأ حظر IP الذي لم يتم حظره من قبل أي ملفات توقيع محددة لأي طلبات مستقبلية، وهي ترتبط ارتباطا وثيقا ب التتبع IP. توجد بعض الوظائف والوحدات التي تسمح برفض الطلبات لأسباب أخرى غير IP (على سبيل المثال، وجود وكلاء المستخدم [user agents] المقابلة ل سبامبوتس [spambots] أو هاكتولس [hacktools]، استفسارات خطيرة، وهمية DNS، إلخ)، وعندما يحدث ذلك، يمكن أن يحدث "مخالفة". وهي توفر طريقة لتحديد عناوين IP التي تتطابق مع الطلبات غير المرغوب فيها التي قد لا يتم حظرها من قبل أي ملفات توقيع محددة. مخالفات عادة ما تتطابق 1 إلى 1 مع عدد المرات IP يتم حظر، ولكن ليس دائما (قد تتسبب الأحداث الشديدة في قيمة مخالفة أكبر، وإذا كان "track_mode" هو false، لن تحدث المخالفات عند حظرها فقط بواسطة ملفات التوقيع).<br /><br /></div>
 
-<div dir="rtl">هل يمكن لأسماء المضيفين في CIDRAM حظر؟<br /><br /></div>
+#### <div dir="rtl"><a name="BLOCK_HOSTNAMES"></a>هل يمكن لأسماء المضيفين في CIDRAM حظر؟<br /><br /></div>
 
 <div dir="rtl">نعم. للقيام بذلك، ستحتاج إلى إنشاء ملف وحدة نمطية مخصصة. <em>نرى: <a href="#MODULE_BASICS">مبادئ (للوحدات)</a></em>.<br /><br /></div>
 
 ---
 
 
-<div dir="rtl">آخر تحديث: 23 مارس 2018 (2018.03.23).</div>
+<div dir="rtl">آخر تحديث: 31 مارس 2018 (2018.03.31).</div>

@@ -834,6 +834,25 @@ Modules have been made available to ensure that the following packages and produ
 
 ### 9. <a name="SECTION9"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
 
+- [What is a "signature"?](#WHAT_IS_A_SIGNATURE)
+- [What is a "CIDR"?](#WHAT_IS_A_CIDR)
+- [What is a "false positive"?](#WHAT_IS_A_FALSE_POSITIVE)
+- [Can CIDRAM block entire countries?](#BLOCK_ENTIRE_COUNTRIES)
+- [How frequently are signatures updated?](#SIGNATURE_UPDATE_FREQUENCY)
+- [I've encountered a problem while using CIDRAM and I don't know what to do about it! Please help!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [I've been blocked by CIDRAM from a website that I want to visit! Please help!](#BLOCKED_WHAT_TO_DO)
+- [I want to use CIDRAM with a PHP version older than 5.4.0; Can you help?](#MINIMUM_PHP_VERSION)
+- [Can I use a single CIDRAM installation to protect multiple domains?](#PROTECT_MULTIPLE_DOMAINS)
+- [I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?](#PAY_YOU_TO_DO_IT)
+- [Can I hire you or any of the developers of this project for private work?](#HIRE_FOR_PRIVATE_WORK)
+- [I need specialist modifications, customisations, etc; Can you help?](#SPECIALIST_MODIFICATIONS)
+- [I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?](#ACCEPT_OR_OFFER_WORK)
+- [I want to contribute to the project; Can I do this?](#WANT_TO_CONTRIBUTE)
+- [Recommended values for "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [Can I use cron to update automatically?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [What are "infractions"?](#WHAT_ARE_INFRACTIONS)
+- [Can CIDRAM block hostnames?](#BLOCK_HOSTNAMES)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
 In the context of CIDRAM, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually an IP address or CIDR, and includes some instruction for CIDRAM, telling it the best way to respond when it encounters what we're looking for. A typical signature for CIDRAM looks something like this:
@@ -875,56 +894,56 @@ This can be summarised by the table below:
 CIDRAM does *NOT* block an IP address | True negative (correct inference) | Missed detection (analogous to false negative)
 CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct inference)
 
-#### Can CIDRAM block entire countries?
+#### <a name="BLOCK_ENTIRE_COUNTRIES"></a>Can CIDRAM block entire countries?
 
 Yes. The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://macmathan.info/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
 
-#### How frequently are signatures updated?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>How frequently are signatures updated?
 
 Update frequency varies depending on the signature files in question. All maintainers for CIDRAM signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
 
-#### I've encountered a problem while using CIDRAM and I don't know what to do about it! Please help!
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>I've encountered a problem while using CIDRAM and I don't know what to do about it! Please help!
 
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/CIDRAM/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
 - If the problem still persists, please let us know about it by creating a new issue on the issues page.
 
-#### I've been blocked by CIDRAM from a website that I want to visit! Please help!
+#### <a name="BLOCKED_WHAT_TO_DO"></a>I've been blocked by CIDRAM from a website that I want to visit! Please help!
 
 CIDRAM provides a means for website owners to block undesirable traffic, but it's the responsibility of website owners to decide for themselves how they want to use CIDRAM. In case of the false positives relating to the signature files normally included with CIDRAM, corrections can be made, but in regards to being unblocked from specific websites, you'll need to take that up with the owners of the websites in question. In cases where corrections are made, at the very least, they'll need to update their signature files and/or installation, and in other cases (such as, for example, where they've modified their installation, created their own custom signatures, etc), the responsibility to solve your problem is entirely theirs, and is entirely outside our control.
 
-#### I want to use CIDRAM with a PHP version older than 5.4.0; Can you help?
+#### <a name="MINIMUM_PHP_VERSION"></a>I want to use CIDRAM with a PHP version older than 5.4.0; Can you help?
 
 No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using CIDRAM with PHP 5.4.0 and all available newer PHP versions, but if you try to use CIDRAM with any older PHP versions, support won't be provided.
 
 *See also: [Compatibility Charts](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Can I use a single CIDRAM installation to protect multiple domains?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Can I use a single CIDRAM installation to protect multiple domains?
 
 Yes. CIDRAM installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to CIDRAM installations protecting only one domain as "single-domain installations", and we refer to CIDRAM installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need CIDRAM to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), CIDRAM will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to CIDRAM, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.
 
-#### I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?
+#### <a name="PAY_YOU_TO_DO_IT"></a>I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?
 
 Maybe. This is considered on a case-by-case basis. Let us know what you need, what you're offering, and we'll let you know whether we can help.
 
-#### Can I hire you or any of the developers of this project for private work?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Can I hire you or any of the developers of this project for private work?
 
 *See above.*
 
-#### I need specialist modifications, customisations, etc; Can you help?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>I need specialist modifications, customisations, etc; Can you help?
 
 *See above.*
 
-#### I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?
 
 Yes. Our license does not prohibit this.
 
-#### I want to contribute to the project; Can I do this?
+#### <a name="WANT_TO_CONTRIBUTE"></a>I want to contribute to the project; Can I do this?
 
 Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md" for more information.
 
-#### Recommended values for "ipaddr".
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Recommended values for "ipaddr".
 
 Value | Using
 ---|---
@@ -936,19 +955,19 @@ Value | Using
 *Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | No reverse proxy (default value).
 
-#### Can I use cron to update automatically?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Can I use cron to update automatically?
 
 Yes. An API is built into the front-end for interacting with the updates page via external scripts. A separate script, "[Cronable](https://github.com/Maikuolan/Cronable)", is available, and can be used by your cron manager or cron scheduler to update this and other supported packages automatically (this script provides its own documentation).
 
-#### What are "infractions"?
+#### <a name="WHAT_ARE_INFRACTIONS"></a>What are "infractions"?
 
 "Infractions" determine when an IP that isn't yet blocked by any specific signature files should start being blocked for any future requests, and they are closely associated with IP tracking. Some functionality and modules exist that allow requests to be blocked for reasons other than the IP of origin (such as the presence of user agents corresponding to spambots or hacktools, dangerous queries, spoofed DNS and so on), and when this happens, an "infraction" can occur. They provide a way to identify IP addresses that correspond to unwanted requests that mightn't yet be blocked by any specific signature files. Infractions usually correspond 1-to-1 with the number of times an IP is blocked, but not always (severe block events may incur an infraction value greater than one, and if "track_mode" is false, infractions won't occur for block events triggered solely by signature files).
 
-#### Can CIDRAM block hostnames?
+#### <a name="BLOCK_HOSTNAMES"></a>Can CIDRAM block hostnames?
 
 Yes. To do this, you'll need to create a custom module file. *See: [BASICS (FOR MODULES)](#MODULE_BASICS)*.
 
 ---
 
 
-Last Updated: 23 March 2018 (2018.03.23).
+Last Updated: 31 March 2018 (2018.03.31).

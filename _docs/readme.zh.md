@@ -835,6 +835,25 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 ### 9. <a name="SECTION9"></a>常见问题（FAQ）
 
+- [什么是“签名”？](#WHAT_IS_A_SIGNATURE)
+- [什么是“CIDR”？](#WHAT_IS_A_CIDR)
+- [什么是“假阳性”？](#WHAT_IS_A_FALSE_POSITIVE)
+- [CIDRAM可以阻止整个国家吗？](#BLOCK_ENTIRE_COUNTRIES)
+- [什么是签名更新频率？](#SIGNATURE_UPDATE_FREQUENCY)
+- [我在使用CIDRAM时遇到问题和我不知道该怎么办！​请帮忙！](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [因为CIDRAM，​我被阻止从我想访问的网站！​请帮忙！](#BLOCKED_WHAT_TO_DO)
+- [我想使用CIDRAM与早于5.4.0的PHP版本；​您能帮我吗？](#MINIMUM_PHP_VERSION)
+- [我可以使用单个CIDRAM安装来保护多个域吗？](#PROTECT_MULTIPLE_DOMAINS)
+- [我不想浪费时间安装这个和确保它在我的网站上功能正常；我可以雇用您这样做吗？](#PAY_YOU_TO_DO_IT)
+- [我可以聘请您或这个项目的任何开发者私人工作吗？](#HIRE_FOR_PRIVATE_WORK)
+- [我需要专家修改，​的定制，​等等；您能帮我吗？](#SPECIALIST_MODIFICATIONS)
+- [我是开发人员，​网站设计师，​或程序员。​我可以接受还是提供与这个项目有关的工作？](#ACCEPT_OR_OFFER_WORK)
+- [我想为这个项目做出贡献；我可以这样做吗？](#WANT_TO_CONTRIBUTE)
+- [“ipaddr”的推荐值。](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [可以使用cron自动更新吗？](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [什么是“违规”？](#WHAT_ARE_INFRACTIONS)
+- [CIDRAM可以阻止主机名？](#BLOCK_HOSTNAMES)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>什么是“签名”？
 
 在CIDRAM的上下文中，​“签名”是一些数据，​它表示/识别我们正在寻找的东西，​通常是IP地址或CIDR，​并包含一些说明，​告诉CIDRAM最好的回应方法当它遇到我们正在寻找的。​CIDRAM的典型签名如下所示：
@@ -876,56 +895,56 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 CIDRAM不会阻止IP地址 | 真阴性（正确的推理） | 检测错过（同样的“假阴性”）
 CIDRAM会阻止IP地址 | __假阳性__ | 真阳性（正确的推理）
 
-#### CIDRAM可以阻止整个国家吗？
+#### <a name="BLOCK_ENTIRE_COUNTRIES"></a>CIDRAM可以阻止整个国家吗？
 
 它可以。​实现这个最简单的方法是安装一些由Macmathan提供的可选的国家阻止列表。​这可以通过直接从前端更新页面的几个简单的点击完成，​或，​如果您希望前端保持停用状态，​通过直接从下载页面下载它们。​通过直接从 **[可选的国家阻止列表下载页面](https://macmathan.info/blocklists)** 下载它们，​上传他们到vault，​在相关配置指令中引用它们的名称。
 
-#### 什么是签名更新频率？
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>什么是签名更新频率？
 
 更新频率根据相关的签名文件而有所不同。​所有的CIDRAM签名文件的维护者通常尽量保持他们的签名为最新，​但是因为我们所有人都有各种其他承诺，​和因为我们的生活超越了项目，​和因为我们不得到经济补偿/付款为我们的项目的努力，​无法保证精确的更新时间表。​通常，​签名被更新每当有足够的时间，​和维护者尝试根据必要性和根据范围之间的变化频率确定优先级。​帮助总是感谢，​如果你愿意提供任何。
 
-#### 我在使用CIDRAM时遇到问题和我不知道该怎么办！​请帮忙！
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>我在使用CIDRAM时遇到问题和我不知道该怎么办！​请帮忙！
 
 - 您使用软件的最新版本吗？​您使用签名文件的最新版本吗？​如果这两个问题的答案是不，​尝试首先更新一切，​然后检查问题是否仍然存在。​如果它仍然存在，​继续阅读。
 - 您检查过所有的文档吗？​如果没有做，​请这样做。​如果文档不能解决问题，​继续阅读。
 - 您检查过 **[问题页面](https://github.com/CIDRAM/CIDRAM/issues)** 吗？​检查是否已经提到了问题。​如果已经提到了，​请检查是否提供了任何建议，​想法或解决方案。​按照需要尝试解决问题。
 - 如果问题仍然存在，​请让我们知道；在问题页面上开始新的讨论。
 
-#### 因为CIDRAM，​我被阻止从我想访问的网站！​请帮忙！
+#### <a name="BLOCKED_WHAT_TO_DO"></a>因为CIDRAM，​我被阻止从我想访问的网站！​请帮忙！
 
 CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责任为自己决定如何使用CIDRAM。​在关于默认签名文件假阳性的情况下，​可以进行校正。​但关于从特定网站解除阻止，​您需要与相关网站的所有者进行沟通。​当进行校正时，​至少，​他们需要更新他们的签名文件和/或安装。​在其他情况下（例如，​当他们修改了他们的安装，​当他们创建自己的自定义签名，​等等），​解决您的问题的责任完全是他们的，​并完全不在我们的控制之内。
 
-#### 我想使用CIDRAM与早于5.4.0的PHP版本；​您能帮我吗？
+#### <a name="MINIMUM_PHP_VERSION"></a>我想使用CIDRAM与早于5.4.0的PHP版本；​您能帮我吗？
 
 不能。​PHP 5.4.0于2014年达到官方EoL（“生命终止”）。​延长的安全支持在2015年终止。​这时候目前，​它是2017年，​和PHP 7.1.0已经可用。​目前，​有支持使用CIDRAM与PHP 5.4.0和所有可用的较新的PHP版本，​但不有支持使用CIDRAM与任何以前的PHP版本。
 
 *也可以看看：​[兼容性图表](https://maikuolan.github.io/Compatibility-Charts/)。*
 
-#### 我可以使用单个CIDRAM安装来保护多个域吗？
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>我可以使用单个CIDRAM安装来保护多个域吗？
 
 可以。​CIDRAM安装未绑定到特定域，​因此可以用来保护多个域。​通常，​当CIDRAM安装保护只一个域，​我们称之为“单域安装”，​和当CIDRAM安装保护多个域和/或子域，​我们称之为“多域安装”。​如果您进行多域安装并需要使用不同的签名文件为不同的域，​或需要不同配置CIDRAM为不同的域，​这可以做到。​加载配置文件后（`config.ini`），​CIDRAM将寻找“配置覆盖文件”特定于所请求的域（`xn--cjs74vvlieukn40a.tld.config.ini`），​并如果发现，​由配置覆盖文件定义的任何配置值将用于执行实例而不是由配置文件定义的配置值。​配置覆盖文件与配置文件相同，​并通过您的决定，​可能包含CIDRAM可用的所有配置指令，​或任何必需的章节当需要。​配置覆盖文件根据它们旨在的域来命名（所以，​例如，​如果您需要一个配置覆盖文件为域，​`http://www.some-domain.tld/`，​它的配置覆盖文件应该被命名`some-domain.tld.config.ini`，​和它应该放置在`vault`与配置文件，​`config.ini`）。​域名是从标题`HTTP_HOST`派生的；“www”被忽略。
 
-#### 我不想浪费时间安装这个和确保它在我的网站上功能正常；我可以雇用您这样做吗？
+#### <a name="PAY_YOU_TO_DO_IT"></a>我不想浪费时间安装这个和确保它在我的网站上功能正常；我可以雇用您这样做吗？
 
 也许。​这是根据具体情况考虑的。​告诉我们您需要什么，​您提供什么，​和我们会告诉您是否可以帮忙。
 
-#### 我可以聘请您或这个项目的任何开发者私人工作吗？
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>我可以聘请您或这个项目的任何开发者私人工作吗？
 
 *参考上面。​*
 
-#### 我需要专家修改，​的定制，​等等；您能帮我吗？
+#### <a name="SPECIALIST_MODIFICATIONS"></a>我需要专家修改，​的定制，​等等；您能帮我吗？
 
 *参考上面。​*
 
-#### 我是开发人员，​网站设计师，​或程序员。​我可以接受还是提供与这个项目有关的工作？
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>我是开发人员，​网站设计师，​或程序员。​我可以接受还是提供与这个项目有关的工作？
 
 您可以。​我们的许可证并不禁止这一点。
 
-#### 我想为这个项目做出贡献；我可以这样做吗？
+#### <a name="WANT_TO_CONTRIBUTE"></a>我想为这个项目做出贡献；我可以这样做吗？
 
 您可以。​对项目的贡献是欢迎。​有关详细信息，​请参阅“CONTRIBUTING.md”。
 
-#### “ipaddr”的推荐值。
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>“ipaddr”的推荐值。
 
 值 | 运用
 ---|---
@@ -937,19 +956,19 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 *由服务器配置定义。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
 `REMOTE_ADDR` | 没有反向代理（默认值）。
 
-#### 可以使用cron自动更新吗？
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>可以使用cron自动更新吗？
 
 您可以。​前端有内置了API，外部脚本可以使用它与更新页面进行交互。​一个单独的脚本，“[Cronable](https://github.com/Maikuolan/Cronable)”，是可用，它可以由您的cron manager或cron scheduler程序使用于自动更新此和其他支持的包（此脚本提供自己的文档）。
 
-#### 什么是“违规”？
+#### <a name="WHAT_ARE_INFRACTIONS"></a>什么是“违规”？
 
 “违规”决定何时还没有被任何特定签名文件阻止的IP应该开始被阻止以将来的任何请求，​他们与IP跟踪密切相关。​一些功能和模块允许请求由于起源IP以外的原因被阻塞（例如，spambot或hacktool用户代理【user agent】，危险的查询，假的DNS，等等），当发生这种情况时，可能会发生“违规”。​这提供了一种识别不需要的请求的IP地址的方法（如果被任何特定的签名文件的不被阻止已经）。​违规通常与IP被阻止的次数是1比1，但不总是（在严重事件中，可能会产生大于1的违规值，如果“track_mode”是假的【false】，对于仅由签名文件触发块事件，不会发生违规）。
 
-#### CIDRAM可以阻止主机名？
+#### <a name="BLOCK_HOSTNAMES"></a>CIDRAM可以阻止主机名？
 
 可以做。您将需要创建一个自定义模块文件。 *看到：[基本概念（对于模块）](#MODULE_BASICS)*.
 
 ---
 
 
-最后更新：2018年3月23日。
+最后更新：2018年3月31日。

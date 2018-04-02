@@ -834,6 +834,25 @@ Các mô-đun đã được cung cấp để đảm bảo rằng các gói và s
 
 ### 9. <a name="SECTION9"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
+- ["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE)
+- ["CIDR" là gì?](#WHAT_IS_A_CIDR)
+- ["Sai tích cực" là gì?](#WHAT_IS_A_FALSE_POSITIVE)
+- [CIDRAM có thể chặn toàn bộ quốc gia?](#BLOCK_ENTIRE_COUNTRIES)
+- [Tần suất cập nhật chữ ký là bao nhiêu?](#SIGNATURE_UPDATE_FREQUENCY)
+- [Tôi đã gặp một vấn đề trong khi sử dụng CIDRAM và tôi không biết phải làm gì về nó! Hãy giúp tôi!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [Tôi đã bị chặn bởi CIDRAM từ một trang web mà tôi muốn ghé thăm! Hãy giúp tôi!](#BLOCKED_WHAT_TO_DO)
+- [Tôi muốn sử dụng CIDRAM với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?](#MINIMUM_PHP_VERSION)
+- [Tôi có thể sử dụng một cài đặt CIDRAM để bảo vệ nhiều tên miền?](#PROTECT_MULTIPLE_DOMAINS)
+- [Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?](#PAY_YOU_TO_DO_IT)
+- [Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?](#HIRE_FOR_PRIVATE_WORK)
+- [Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?](#SPECIALIST_MODIFICATIONS)
+- [Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?](#ACCEPT_OR_OFFER_WORK)
+- [Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?](#WANT_TO_CONTRIBUTE)
+- [Giá trị được đề xuất cho "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [Tôi có thể sử dụng cron để cập nhật tự động không?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- ["Vi phạm" là gì?](#WHAT_ARE_INFRACTIONS)
+- [CIDRAM có thể chặn tên máy chủ không?](#BLOCK_HOSTNAMES)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
 Trong bối cảnh của CIDRAM, "chữ ký" đề cập đến dữ liệu hoạt động như một định danh cho một cái gì đó cụ thể mà chúng tôi đang tìm kiếm, thường là một địa chỉ IP hoặc CIDR, và bao gồm một số chỉ dẫn cho CIDRAM, nói với nó cách trả lời khi nó gặp những gì chúng ta đang tìm kiếm. Một chữ ký CIDRAM điển hình trông giống như thế này:
@@ -875,56 +894,56 @@ Trong bối cảnh CIDRAM, các từ ngữ đề cập đến chữ ký của CI
 CIDRAM *KHÔNG* chặn một địa chỉ IP | Đúng tiêu cực (suy luận đúng) | Phát hiện mất tích (điều tương tự như sai tiêu cực)
 CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (suy luận đúng)
 
-#### CIDRAM có thể chặn toàn bộ quốc gia?
+#### <a name="BLOCK_ENTIRE_COUNTRIES"></a>CIDRAM có thể chặn toàn bộ quốc gia?
 
 Vâng. Cách dễ nhất để đạt được điều này sẽ được cài đặt một số các danh sách chặn quốc gia tùy chọn được cung cấp bởi Macmathan. Điều này có thể được thực hiện với một vài cú nhấp chuột đơn giản trực tiếp từ trang cập nhật của front-end, hoặc, nếu bạn thích các front-end ở lại vô hiệu hóa, bằng cách tải chúng trực tiếp từ **[trang tải xuống cho các danh sách chặn quốc gia tùy chọn](https://macmathan.info/blocklists)**, tải chúng lên vault, và trích dẫn tên của họ trong các chỉ thị cấu hình có liên quan.
 
-#### Tần suất cập nhật chữ ký là bao nhiêu?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Tần suất cập nhật chữ ký là bao nhiêu?
 
 Tần suất cập nhật thay đổi tùy thuộc vào các tập tin chữ ký trong câu hỏi. Nói chung là, tất cả các người bảo trì cho các tất cả tập tin chữ ký cố gắng đảm bảo rằng chữ ký của họ được cập nhật càng nhiều càng tốt, nhưng bởi vì tất cả chúng ta đều có nhiều cam kết khác, cuộc sống của chúng ta bên ngoài dự án, và bởi vì không ai trong chúng ta được bồi thường tài chính (hay được thanh toán) cho các nỗ lực dự án của chúng tôi, Một lịch trình cập nhật chính xác không thể được đảm bảo. Nói chung là, chữ ký được cập nhật bất cứ khi nào có đủ thời gian để cập nhật chúng, và các người bảo trì cố gắng ưu tiên dựa trên sự cần thiết và dựa trên tần suất của thay đổi giữa các phạm vi. Trợ giúp luôn được đánh giá cao nếu bạn sẵn sàng cung cấp bất kỳ.
 
-#### Tôi đã gặp một vấn đề trong khi sử dụng CIDRAM và tôi không biết phải làm gì về nó! Hãy giúp tôi!
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Tôi đã gặp một vấn đề trong khi sử dụng CIDRAM và tôi không biết phải làm gì về nó! Hãy giúp tôi!
 
 - Bạn đang sử dụng phiên bản mới nhất của phần mềm? Bạn đang sử dụng phiên bản mới nhất của tập tin chữ ký của bạn? Nếu câu trả lời cho một trong hai những câu hỏi này là không, cố gắng cập nhật mọi thứ đầu tiên, và kiểm tra nếu vấn đề vẫn còn. Nếu nó vẫn còn, tiếp tục đọc.
 - Bạn đã kiểm tra tất cả các tài liệu chưa? Nếu không, xin hãy làm như vậy. Nếu vấn đề không thể giải quyết bằng cách sử dụng tài liệu, hãy tiếp tục đọc.
 - Bạn đã kiểm tra các **[trang vấn đề](https://github.com/CIDRAM/CIDRAM/issues)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
 - Nếu vấn đề vẫn còn, vui lòng nói cho chúng tôi bằng cách bắt đầu một cuộc thảo luận mới trên các trang vấn đề.
 
-#### Tôi đã bị chặn bởi CIDRAM từ một trang web mà tôi muốn ghé thăm! Hãy giúp tôi!
+#### <a name="BLOCKED_WHAT_TO_DO"></a>Tôi đã bị chặn bởi CIDRAM từ một trang web mà tôi muốn ghé thăm! Hãy giúp tôi!
 
 CIDRAM cung cấp một cách cho chủ sở hữu trang web để chặn lưu lượng không mong muốn, nhưng đó là trách nhiệm của chủ sở hữu trang web tự quyết định cách mà họ muốn sử dụng CIDRAM. Trong trường hợp của sai tích cực liên quan đến các tập tin chữ ký thường trong gói CIDRAM, đính chính có thể được thực hiện, nhưng để được bỏ chặn từ các trang web cụ thể, bạn sẽ cần phải liên hệ với chủ sở hữu của các trang web được đề cập. Trong trường hợp đính chính được thực hiện, ít nhất, họ sẽ cần phải cập nhật các tập tin chữ ký hay cài đặt của họ, và trong các trường hợp khác (chẳng hạn như, ví dụ, khi họ đã sửa đổi cài đặt của họ, đã tạo ra chữ ký riêng của họ, vv), trách nhiệm của giải quyết vấn đề của bạn hoàn toàn là của họ, và hoàn toàn nằm ngoài tầm kiểm soát của chúng tôi.
 
-#### Tôi muốn sử dụng CIDRAM với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
+#### <a name="MINIMUM_PHP_VERSION"></a>Tôi muốn sử dụng CIDRAM với phiên bản PHP cũ hơn 5.4.0; Bạn có thể giúp?
 
 Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộc sống) chính thức vào năm 2014, và hỗ trợ an ninh mở rộng đã được chấm dứt vào năm 2015. Khi viết này, nó là năm 2017, và PHP 7.1.0 đã có sẵn. Tại thời điểm này, hỗ trợ được cung cấp để sử dụng CIDRAM với PHP 5.4.0 và tất cả các phiên bản PHP có sẵn mới hơn, nhưng nếu bạn cố gắng sử dụng CIDRAM với bất kỳ phiên bản PHP lớn hơn, hỗ trợ sẽ không được cung cấp.
 
 *Xem thêm: [Biểu đồ tương thích](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Tôi có thể sử dụng một cài đặt CIDRAM để bảo vệ nhiều tên miền?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Tôi có thể sử dụng một cài đặt CIDRAM để bảo vệ nhiều tên miền?
 
 Vâng. Cài đặt CIDRAM không bị khóa vào các tên miền cụ thể, và do đó có thể được sử dụng để bảo vệ nhiều tên miền. Nói chung là, chúng tôi đề cập đến cài đặt CIDRAM chỉ bảo vệ một miền như "cài đặt miền đơn" ("single-domain installations"), và chúng tôi đề cập đến cài đặt CIDRAM bảo vệ nhiều miền hay miền phụ như "cài đặt nhiều miền" ("multi-domain installations"). Nếu bạn sử dụng một cài đặt nhiều miền và cần phải sử dụng các bộ tập tin chữ ký khác nhau cho các miền khác nhau, hoặc cần CIDRAM được cấu hình khác nhau cho các miền khác nhau, điều này có thể làm được. Sau khi tải tập tin cấu hình (`config.ini`), CIDRAM sẽ kiểm tra sự tồn tại của một "tập tin ghi đè cấu hình" cụ thể cho miền được yêu cầu (`miền-được-yêu-cầu.tld.config.ini`), và nếu được tìm thấy, bất kỳ giá trị cấu hình nào được xác định bởi tập tin ghi đè cấu hình sẽ được sử dụng cho trường hợp thực hiện thay vì các giá trị cấu hình được định nghĩa bởi tập tin cấu hình. Các tập tin ghi đè cấu hình giống với tập tin cấu hình, và tùy theo quyết định của bạn, có thể chứa toàn bộ các chỉ thị cấu hình sẵn có cho CIDRAM, hoặc bất kỳ phần bắt buộc nào mà khác với các giá trị được xác định bởi tập tin cấu hình. Các tập tin ghi đè cấu hình được đặt tên theo miền mà chúng được dự định (vì vậy, ví dụ, nếu bạn cần một tập tin ghi đè cấu hình cho miền, `http://www.some-domain.tld/`, các tập tin ghi đè cấu hình của nó nên được đặt tên là `some-domain.tld.config.ini`, và nên được đặt trong vault với tập tin cấu hình, `config.ini`). Tên miền cho trường hợp thực hiện được bắt nguồn từ header (tiêu đề) `HTTP_HOST` của các yêu cầu; "www" bị bỏ qua.
 
-#### Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?
+#### <a name="PAY_YOU_TO_DO_IT"></a>Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?
 
 Có lẽ. Điều này được xem xét theo từng trường hợp cụ thể. Cho chúng tôi biết những gì bạn cần, những gì bạn đang cung cấp, và chúng tôi sẽ cho bạn biết liệu chúng tôi có thể giúp đỡ hay không.
 
-#### Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Tôi có thể thuê bạn hay bất kỳ nhà phát triển nào của dự án này cho công việc riêng tư?
 
 *Xem ở trên.*
 
-#### Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?
 
 *Xem ở trên.*
 
-#### Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?
 
 Vâng. Giấy phép của chúng tôi không cấm điều này.
 
-#### Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?
+#### <a name="WANT_TO_CONTRIBUTE"></a>Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?
 
 Vâng. Đóng góp cho dự án rất được hoan nghênh. Vui lòng xem "CONTRIBUTING.md" để biết thêm thông tin.
 
-#### Giá trị được đề xuất cho "ipaddr".
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Giá trị được đề xuất cho "ipaddr".
 
 Giá trị | Sử dụng
 ---|---
@@ -936,19 +955,19 @@ Giá trị | Sử dụng
 *Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
 
-#### Tôi có thể sử dụng cron để cập nhật tự động không?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Tôi có thể sử dụng cron để cập nhật tự động không?
 
 Vâng. API được tích hợp trong front-end để tương tác với trang cập nhật thông qua các kịch bản bên ngoài. Một kịch bản riêng biệt, "[Cronable](https://github.com/Maikuolan/Cronable)", là có sẵn, và có thể được sử dụng bởi cron manager hay cron scheduler để tự động cập nhật gói này và gói hỗ trợ khác (kịch bản này cung cấp tài liệu riêng của nó).
 
-#### "Vi phạm" là gì?
+#### <a name="WHAT_ARE_INFRACTIONS"></a>"Vi phạm" là gì?
 
 "Vi phạm" xác định khi một IP không bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào cũng sẽ bị chặn vì bất kỳ yêu cầu nào trong tương lai, và chúng liên quan chặt chẽ với giám sát IP. Một số chức năng và mô-đun tồn tại cho phép các yêu cầu bị chặn vì các lý do khác với IP có nguồn gốc (như là sự hiện diện của các đại lý người dùng [user agents] tương ứng với spambots hay hacktools, truy vấn nguy hiểm, giả mạo DNS và vv), và khi điều này xảy ra, một "vi phạm" có thể xảy ra. Chúng cung cấp cách để nhận định địa chỉ IP tương ứng với các yêu cầu không mong muốn mà có thể chưa bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào. Các vi phạm thường tương ứng với 1 đến 1 với số lần IP bị chặn, nhưng không phải luôn luôn (sự kiện nghiêm trọng chặn có thể gây ra một giá trị vi phạm lớn hơn một, và nếu "track_mode" là sai [false], vi phạm sẽ không xảy ra cho các sự kiện chặn gây ra bởi chỉ các tập tin chữ ký).
 
-#### CIDRAM có thể chặn tên máy chủ không?
+#### <a name="BLOCK_HOSTNAMES"></a>CIDRAM có thể chặn tên máy chủ không?
 
 Vâng. Để làm điều này, bạn sẽ cần tạo tập tin mô-đun tùy chỉnh. *Xem: [KHÁI NIỆM CƠ BẢN (CHO MÔ-ĐUN)](#MODULE_BASICS)*.
 
 ---
 
 
-Lần cuối cập nhật: 23 Tháng Ba 2018 (2018.03.23).
+Lần cuối cập nhật: 31 Tháng Ba 2018 (2018.03.31).

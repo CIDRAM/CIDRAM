@@ -834,6 +834,25 @@ Modules zijn beschikbaar gemaakt om ervoor te zorgen dat de volgende pakketten e
 
 ### 9. <a name="SECTION9"></a>VEELGESTELDE VRAGEN (FAQ)
 
+- [Wat is een "signature"?](#WHAT_IS_A_SIGNATURE)
+- [Wat is een "CIDR"?](#WHAT_IS_A_CIDR)
+- [Wat is een "vals positieve"?](#WHAT_IS_A_FALSE_POSITIVE)
+- [Kan CIDRAM blok hele landen?](#BLOCK_ENTIRE_COUNTRIES)
+- [Hoe vaak worden signatures bijgewerkt?](#SIGNATURE_UPDATE_FREQUENCY)
+- [Ik heb een fout tegengekomen tijdens het gebruik van CIDRAM en ik weet niet wat te doen! Help alstublieft!](#ENCOUNTERED_PROBLEM_WHAT_TO_DO)
+- [Ik ben geblokkeerd door CIDRAM van een website die ik wil bezoeken! Help alstublieft!](#BLOCKED_WHAT_TO_DO)
+- [Ik wil CIDRAM gebruiken met een PHP-versie ouder dan 5.4.0; Kan u helpen?](#MINIMUM_PHP_VERSION)
+- [Kan ik een enkele CIDRAM-installatie gebruiken om meerdere domeinen te beschermen?](#PROTECT_MULTIPLE_DOMAINS)
+- [Ik wil niet tijd verspillen met het installeren van dit en om het te laten werken met mijn website; Kan ik u betalen om het te doen?](#PAY_YOU_TO_DO_IT)
+- [Kan ik u of een van de ontwikkelaars van dit project voor privéwerk huren?](#HIRE_FOR_PRIVATE_WORK)
+- [Ik heb speciale modificaties en aanpassingen nodig; Kan u helpen?](#SPECIALIST_MODIFICATIONS)
+- [Ik ben een ontwikkelaar, website ontwerper, of programmeur. Kan ik werken aan dit project accepteren of aanbieden?](#ACCEPT_OR_OFFER_WORK)
+- [Ik wil bijdragen aan het project; Kan ik dit doen?](#WANT_TO_CONTRIBUTE)
+- [Aanbevolen waarden voor "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
+- [Kan ik cron gebruiken om automatisch bij te werken?](#CRON_TO_UPDATE_AUTOMATICALLY)
+- [Wat zijn "overtredingen"?](#WHAT_ARE_INFRACTIONS)
+- [Kan CIDRAM hostnamen blokkeren?](#BLOCK_HOSTNAMES)
+
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
 In het context van CIDRAM, een "signature" verwijst naar gegevens die als een indicator/identifier werken, voor iets specifiek waarnaar we op zoek zijn, gewoonlijk een IP-adres of CIDR, en bevat een aantal instructies voor CIDRAM, vertelt het de beste manier om wanneer het ontmoet waar we naar op zoek zijn te reageren. Een typische signature voor CIDRAM ziet er als volgt uit:
@@ -875,56 +894,56 @@ Dit kan worden samengevat in de onderstaande tabel:
 CIDRAM *NIET* doet blokkeren van een IP-adres | Waar negatieve (correcte gevolgtrekking) | Gemiste detectie (analoog aan vals negatieve)
 CIDRAM *DOET* blokkeren van een IP-adres | __Vals positieve__ | Waar positieve (correcte gevolgtrekking)
 
-#### Kan CIDRAM blok hele landen?
+#### <a name="BLOCK_ENTIRE_COUNTRIES"></a>Kan CIDRAM blok hele landen?
 
 Ja. De eenvoudigste manier om dit te bereiken zou zijn om sommige van de optionele land blocklists door Macmathan te installeren. Dit kan gedaan worden met een paar simpele muisklikken direct vanaf de frontend updates pagina, of, als u liever voor de frontend te blijven uitgeschakeld, door ze rechtstreeks downloaden van de **[optionele land blocklists downloads pagina](https://macmathan.info/blocklists)**, uploaden van hen om de vault, en citeren van hun namen in de desbetreffende configuratie richtlijnen.
 
-#### Hoe vaak worden signatures bijgewerkt?
+#### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Hoe vaak worden signatures bijgewerkt?
 
 Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor CIDRMA signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen, en in het algemeen, onderhouders proberen om prioriteiten te stellen op basis van noodzaak en van hoe vaak veranderingen optreden tussen ranges. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
 
-#### Ik heb een fout tegengekomen tijdens het gebruik van CIDRAM en ik weet niet wat te doen! Help alstublieft!
+#### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Ik heb een fout tegengekomen tijdens het gebruik van CIDRAM en ik weet niet wat te doen! Help alstublieft!
 
 - Gebruikt u de nieuwste versie van de software? Gebruikt u de nieuwste versies van uw signature bestanden? Indien het antwoord op een van deze twee vragen is nee, probeer eerst om alles te bijwerken, en controleer of het probleem zich blijft voordoen. Als dit aanhoudt, lees verder.
 - Hebt u door alle documentatie gecontroleerd? Zo niet, doe dat dan. Als het probleem niet kan worden opgelost met behulp van de documentatie, lees verder.
 - Hebt u de **[kwesties pagina](https://github.com/CIDRAM/CIDRAM/issues)** gecontroleerd, om te zien of het probleem al eerder is vermeld? Als het eerder vermeld, controleer of eventuele suggesties, ideeën en/of oplossingen werden verstrekt, en volg als per nodig om te proberen het probleem op te lossen.
 - Als het probleem blijft bestaan, laat het ons dan weten door het creëren van een nieuwe vraag op de kwesties pagina.
 
-#### Ik ben geblokkeerd door CIDRAM van een website die ik wil bezoeken! Help alstublieft!
+#### <a name="BLOCKED_WHAT_TO_DO"></a>Ik ben geblokkeerd door CIDRAM van een website die ik wil bezoeken! Help alstublieft!
 
 CIDRAM biedt een manier voor website-eigenaren om ongewenst verkeer te blokkeren, maar het is de verantwoordelijkheid van de website-eigenaren om zelf te beslissen hoe ze willen CIDRAM gebruiken. In het geval van de valse positieven met betrekking tot de signature bestanden normaal meegeleverd met CIDRAM, correcties kunnen worden gemaakt, maar met betrekking tot het wordt gedeblokkeerd van specifieke websites, u nodig hebt om te communiceren met de eigenaren van de websites in kwestie. In gevallen waarin correcties worden gemaakt, op zijn minst, zullen ze nodig hebben om hun signature bestanden en/of installatie bij te werken, en in andere gevallen (zoals bijvoorbeeld, waarin ze hun installatie hebt gewijzigd, creëerden hun eigen aangepaste signatures, ezv), het is hun verantwoordelijkheid om uw probleem op te lossen, en is geheel buiten onze controle.
 
-#### Ik wil CIDRAM gebruiken met een PHP-versie ouder dan 5.4.0; Kan u helpen?
+#### <a name="MINIMUM_PHP_VERSION"></a>Ik wil CIDRAM gebruiken met een PHP-versie ouder dan 5.4.0; Kan u helpen?
 
 Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in 2014, en verlengd veiligheid ondersteuning werd beëindigd in 2015. Met ingang van het schrijven van dit, het is 2017, en PHP 7.1.0 is al beschikbaar. Momenteel, ondersteuning wordt verleend voor het gebruik van CIDRAM met PHP 5.4.0 en alle beschikbare nieuwere PHP-versies, maar als u probeert te CIDRAM gebruiken met een oudere PHP-versies, steun zal niet worden verstrekt.
 
 *Zie ook: [Compatibiliteitskaarten](https://maikuolan.github.io/Compatibility-Charts/).*
 
-#### Kan ik een enkele CIDRAM-installatie gebruiken om meerdere domeinen te beschermen?
+#### <a name="PROTECT_MULTIPLE_DOMAINS"></a>Kan ik een enkele CIDRAM-installatie gebruiken om meerdere domeinen te beschermen?
 
 Ja. CIDRAM-installaties zijn niet van nature gebonden naar specifieke domeinen, en kan daarom worden gebruikt om meerdere domeinen te beschermen. Algemeen, wij verwijzen naar CIDRAM installaties die slechts één domein beschermen als "single-domain installaties", en wij verwijzen naar CIDRAM installaties die meerdere domeinen en/of subdomeinen beschermen als "multi-domain installaties". Als u een multi-domain installaties werken en nodig om verschillende signature bestanden voor verschillende domeinen te gebruiken, of nodig om CIDRAM anders geconfigureerd voor verschillende domeinen te zijn, het is mogelijk om dit te doen. Nadat het configuratiebestand hebt geladen (`config.ini`), CIDRAM controleert het bestaan van een "configuratie overschrijdend bestand" specifiek voor het domein (of sub-domein) dat wordt aangevraagd (`het-domein-dat-wordt-aangevraagd.tld.config.ini`), en als gevonden, elke configuratie waarden gedefinieerd door het configuratie overschrijdend bestand zal worden gebruikt in plaats van de configuratie waarden die zijn gedefinieerd door het configuratiebestand. Het configuratie overschrijdende bestanden zijn identiek aan het configuratiebestand, en naar eigen goeddunken, kan de volledige van alle configuratie richtlijnen beschikbaar voor CIDRAM bevatten, of wat dan ook kleine subsectie dat nodig is die afwijkt van de waarden die normaal door het configuratiebestand worden gedefinieerd. Het configuratie overschrijdende bestanden worden genoemd volgens het domein waaraan ze bestemd zijn (dus, bijvoorbeeld, als u een configuratie overschrijdend bestand voor het domein `http://www.some-domain.tld/` nodig hebt, het configuratie overschrijdende bestanden moeten worden genoemd als `some-domain.tld.config.ini`, en moeten naast het configuratiebestand, `config.ini`, in de vault geplaatst worden). De domeinnaam is afgeleid van de koptekst `HTTP_HOST` van het verzoek; "www" wordt genegeerd.
 
-#### Ik wil niet tijd verspillen met het installeren van dit en om het te laten werken met mijn website; Kan ik u betalen om het te doen?
+#### <a name="PAY_YOU_TO_DO_IT"></a>Ik wil niet tijd verspillen met het installeren van dit en om het te laten werken met mijn website; Kan ik u betalen om het te doen?
 
 Misschien. Dit wordt per geval beoordeeld. Laat ons weten wat u nodig hebt, wat u aanbiedt, en wij laten u weten of we kunnen helpen.
 
-#### Kan ik u of een van de ontwikkelaars van dit project voor privéwerk huren?
+#### <a name="HIRE_FOR_PRIVATE_WORK"></a>Kan ik u of een van de ontwikkelaars van dit project voor privéwerk huren?
 
 *Zie hierboven.*
 
-#### Ik heb speciale modificaties en aanpassingen nodig; Kan u helpen?
+#### <a name="SPECIALIST_MODIFICATIONS"></a>Ik heb speciale modificaties en aanpassingen nodig; Kan u helpen?
 
 *Zie hierboven.*
 
-#### Ik ben een ontwikkelaar, website ontwerper, of programmeur. Kan ik werken aan dit project accepteren of aanbieden?
+#### <a name="ACCEPT_OR_OFFER_WORK"></a>Ik ben een ontwikkelaar, website ontwerper, of programmeur. Kan ik werken aan dit project accepteren of aanbieden?
 
 Ja. Onze licentie verbiedt dit niet.
 
-#### Ik wil bijdragen aan het project; Kan ik dit doen?
+#### <a name="WANT_TO_CONTRIBUTE"></a>Ik wil bijdragen aan het project; Kan ik dit doen?
 
 Ja. Bijdragen aan het project zijn zeer welkom. Zie voor meer informatie "CONTRIBUTING.md".
 
-#### Aanbevolen waarden voor "ipaddr".
+#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Aanbevolen waarden voor "ipaddr".
 
 Waarde | Gebruik makend van
 ---|---
@@ -936,19 +955,19 @@ Waarde | Gebruik makend van
 *Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
 
-#### Kan ik cron gebruiken om automatisch bij te werken?
+#### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Kan ik cron gebruiken om automatisch bij te werken?
 
 Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina via externe scripts. Een apart script, "[Cronable](https://github.com/Maikuolan/Cronable)", is beschikbaar, en kan door uw cron manager of cron scheduler gebruikt worden om deze en andere ondersteunde pakketten automatisch te updaten (dit script biedt zijn eigen documentatie).
 
-#### Wat zijn "overtredingen"?
+#### <a name="WHAT_ARE_INFRACTIONS"></a>Wat zijn "overtredingen"?
 
 "Overtredingen" bepalen wanneer een IP die nog niet is geblokkeerd door specifieke signature bestanden, moet worden geblokkeerd voor toekomstige verzoeken, en ze zijn nauw verbonden met IP-tracking. Sommige functionaliteit en modules bestaan die toestaan dat verzoeken om andere redenen dan het herkomst van IP worden geblokkeerd (zoals de aanwezigheid van user agents die overeenkomen met spambots of hacktools, gevaarlijke zoekopdrachten, vervalste DNS enzovoort), en wanneer dit gebeurt, kan een "overtreding" optreden. Ze bieden een manier om IP-adressen te identificeren die overeenkomen met ongewenste verzoeken die nog niet door specifieke signature bestanden worden geblokkeerd. Overtredingen komen meestal 1-op-1 overeen met het aantal keren dat een IP wordt geblokkeerd, maar niet altijd (ernstige blokgebeurtenissen kunnen een overtredingen-waarde groter dan één oplopen, en als "track_mode" false is, er zullen geen overtredingen plaatsvinden voor blokgebeurtenissen die alleen door signature bestanden worden getriggerd).
 
-#### Kan CIDRAM hostnamen blokkeren?
+#### <a name="BLOCK_HOSTNAMES"></a>Kan CIDRAM hostnamen blokkeren?
 
 Ja. Hiervoor moet u een aangepast modulebestand maken. *Zien: [BASICS (VOOR MODULES)](#MODULE_BASICS)*.
 
 ---
 
 
-Laatste Bijgewerkt: 23 Maart 2018 (2018.03.23).
+Laatste Bijgewerkt: 31 Maart 2018 (2018.03.31).

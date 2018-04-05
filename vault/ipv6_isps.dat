@@ -397,19 +397,91 @@ Origin: UA
 Tag: Yes Networks
 
 
-# ASNs 3491, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
-# Updated: 2018.01.15
+# ASNs 3491, 4760, 6279, 7262 ("PCCW Global" / "Beyond The Network America, Inc").
+# Careful when updating; Contains both "proxy" and "spam" parameters (should be marked differently).
+# Updated: 2018.04.05
 
+2001:730:2902:7::/64 Deny Spam
+2001:730:2d02:16::/64 Deny Spam
+Origin: AT
+2a02:13e0:2::/64 Deny Spam
 2a03:5400::/32 Deny Spam
 Origin: BE
+2607:f798:14:22::/63 Deny Spam
+Origin: CA
+2001:7f8::/64 Deny Spam
+2003:0:130c:8017::/64 Deny Spam
+2003:3c0:1603:10::/64 Deny Spam
+Origin: DE
+2001:1498:1:36e::/64 Deny Spam
+2001:1498:1:3e3::/64 Deny Spam
+Origin: ES
+2a01:62e0:f001:7b::/64 Deny Spam
+2a01:62e0:f001:94::/64 Deny Spam
+2a01:62e0:f001:ae::/63 Deny Spam
+2a01:62e0:f001:c5::/64 Deny Spam
+2a01:62e0:f001:d9::/64 Deny Spam
+2a01:62e0:f001:da::/64 Deny Spam
+2a01:62e0:f001:157::/64 Deny Spam
+Origin: EU
+2001:7f8:4::/63 Deny Spam
+2001:5002:400:2::/64 Deny Spam
+2a02:2d8:0:480a::/64 Deny Spam
+Origin: GB
+2001:7fa:0:1::/64 Deny Spam
 2400:8800::/32 Deny Spam
+2400:c800:610::/44 Deny Spam
+2404:c800::/29 Deny Spam
 Origin: HK
+2001:268:fc80:1::/64 Deny Spam
+2001:268:fc91:b::/64 Deny Spam
+2001:de8:4::/64 Deny Spam
+2001:de8:6::/64 Deny Spam
+2001:de8:7::/64 Deny Spam
+2402:6800:0:2060::/63 Deny Spam
+Origin: JP
+2001:478:132::/64 Deny Spam
+Origin: KN
+2400:800:1f11:4::/64 Deny Spam
+2400:800:7f06:25::/64 Deny Spam
+Origin: KR
+2001:1260:11a:ffff::/64 Deny Spam
+Origin: MX
 2c0f:f3d0::/32 Deny Spam
 Origin: MZ
+2001:7f8:1::/64 Deny Spam
 2a02:b48:4000::/34 Deny Spam
 Origin: NL
+2a0c:6980::/29 Deny Spam
+Origin: RU
+2001:428:101:16::/64 Deny Spam
+2001:428:201:21::/64 Deny Spam
+2001:428:401:c::/64 Deny Spam
+2001:428:801:8::/64 Deny Spam
+2001:428:c01:8::/64 Deny Spam
+2001:428:4401:5::/64 Deny Spam
+2001:428:f801::/64 Deny Spam
+2001:470:0:2b0::/64 Deny Spam
+2001:504:0:2::/64 Deny Spam
+2001:504:0:4::/63 Deny Spam
+2001:504:13::/64 Deny Spam
+2001:504:16::/64 Deny Spam
+2001:df2:e500:fe00::/64 Deny Spam
+2001:1890:1fff:226::/64 Deny Spam
+2001:1890:1fff:31e::/64 Deny Spam
+2001:1890:1fff:417::/64 Deny Spam
+2001:1890:1fff:620::/64 Deny Spam
+2001:1890:1fff:713::/64 Deny Spam
 2600:1400:7::/48 Deny Spam
+2600:1407:8::/64 Deny Spam
+2620:0:50a0:814::/64 Deny Spam
+2620:107:4008:172::/64 Deny Spam
+2620:107:4008:23e::/63 Deny Spam
+2620:107:4008:24b::/64 Deny Spam
+2620:107:4008:26d::/64 Deny Spam
+2620:107:4008:2ac::/64 Deny Spam
 Origin: US
+2001:43f8:6d0::/64 Deny Spam
 2c0f:f3c0::/32 Deny Spam
 Origin: ZA
 Tag: PCCW Global

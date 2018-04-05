@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.03.25).
+ * This file: German language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'Anfragen blockiert';
 $CIDRAM['lang']['label_branch'] = 'Branch neueste stabil:';
 $CIDRAM['lang']['label_check_modules'] = 'Testen Sie auch gegen Module.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-Version verwendet:';
+$CIDRAM['lang']['label_clientinfo'] = 'Client Information:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> Eintrag angezeigt.', '<span class="txtRd">%s</span> Einträge angezeigt.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> Eintrag mit "%2$s" angezeigt.', '<span class="txtRd">%1$s</span> Einträge mit "%2$s" angezeigt.'];
 $CIDRAM['lang']['label_expires'] = 'Läuft ab: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'System Information:';
 $CIDRAM['lang']['label_tests'] = 'Tests:';
 $CIDRAM['lang']['label_total'] = 'Gesamt';
 $CIDRAM['lang']['label_unstable'] = 'Neueste instabil:';
+$CIDRAM['lang']['label_your_ip'] = 'Deine IP:';
+$CIDRAM['lang']['label_your_ua'] = 'Deine UA:';
 $CIDRAM['lang']['link_accounts'] = 'Konten';
 $CIDRAM['lang']['link_cache_data'] = 'Datencache';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Rechner';

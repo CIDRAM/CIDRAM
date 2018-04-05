@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.03.25).
+ * This file: Indonesian language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'Permintaan diblokir';
 $CIDRAM['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $CIDRAM['lang']['label_check_modules'] = 'Juga menguji terhadap modul.';
 $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
+$CIDRAM['lang']['label_clientinfo'] = 'Informasi klien:';
 $CIDRAM['lang']['label_displaying'] = 'Menampilkan <span class="txtRd">%s</span> entri.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'Menampilkan <span class="txtRd">%1$s</span> entri yang berisi "%2$s".';
 $CIDRAM['lang']['label_expires'] = 'Kedaluwarsa: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
 $CIDRAM['lang']['label_tests'] = 'Pengujian:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Terbaru tidak stabil:';
+$CIDRAM['lang']['label_your_ip'] = 'IP Anda:';
+$CIDRAM['lang']['label_your_ua'] = 'UA Anda:';
 $CIDRAM['lang']['link_accounts'] = 'Akun';
 $CIDRAM['lang']['link_cache_data'] = 'Data Cache';
 $CIDRAM['lang']['link_cidr_calc'] = 'Kalkulator CIDR';

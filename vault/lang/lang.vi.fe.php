@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.03.25).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'Yêu cầu bị chặn';
 $CIDRAM['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $CIDRAM['lang']['label_check_modules'] = 'Cũng kiểm tra đối với mô-đun.';
 $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
+$CIDRAM['lang']['label_clientinfo'] = 'Thông tin người dùng:';
 $CIDRAM['lang']['label_displaying'] = 'Hiển thị <span class="txtRd">%s</span> mục.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'Hiển thị <span class="txtRd">%1$s</span> mục có chứa "%2$s".';
 $CIDRAM['lang']['label_expires'] = 'Hết hạn: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $CIDRAM['lang']['label_tests'] = 'Kiểm tra:';
 $CIDRAM['lang']['label_total'] = 'Toàn bộ';
 $CIDRAM['lang']['label_unstable'] = 'Không ổn định mới nhất:';
+$CIDRAM['lang']['label_your_ip'] = 'IP của bạn:';
+$CIDRAM['lang']['label_your_ua'] = 'UA của bạn:';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';
 $CIDRAM['lang']['link_cache_data'] = 'Dữ liệu cache';
 $CIDRAM['lang']['link_cidr_calc'] = 'Máy Tính CIDR';

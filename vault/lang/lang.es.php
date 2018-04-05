@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2018.01.20).
+ * This file: Spanish language data (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,7 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['Error_WriteCache'] = 'No se puede escribir a la caché! Compruebe sus CHMOD permisos!';
+$CIDRAM['lang']['Error_WriteCache'] = '¡No se puede escribir a la caché! Compruebe sus CHMOD permisos!';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Su acceso a esta página se negó porque porque ha intentado acceder esta página utilizando una dirección IP no válida.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Su acceso a esta página se negó debido a mal comportamiento anterior de su dirección IP.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Su acceso a esta página se negó porque su dirección IP se reconoce como una dirección bogon, y la conexión de bogons a este sitio web no está permitido por el propietario del sitio web.';
@@ -24,7 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Su acceso a esta página se negó porq
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red figuran en una lista negra utilizada por este sitio web.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Su acceso a esta página se negó porque su dirección IP se reconoce como perteneciente a un servicio de proxy, y la conexión de servicios de proxy a este sitio web no está permitido por el propietario del sitio web.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Su acceso a esta página se negó porque su dirección IP pertenece a una red considerados de alto riesgo de spam.';
-$CIDRAM['lang']['Short_BadIP'] = 'IP no válida!';
+$CIDRAM['lang']['Short_BadIP'] = '¡IP no válida!';
 $CIDRAM['lang']['Short_Banned'] = 'Prohibido';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Servicio en la nube';

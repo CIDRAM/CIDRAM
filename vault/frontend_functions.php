@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.03.29).
+ * This file: Front-end functions file (last modified: 2018.04.03).
  */
 
 /**
@@ -1074,12 +1074,12 @@ $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
     $Date = date('Y.n.j', $CIDRAM['Now']);
     $Level = 0;
     $Minor = substr($Version, 0, 4);
-    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.33') || substr($Version, 0, 2) === '6.' || (
-        $Minor === '7.0.' && $CIDRAM['VersionCompare']($Version, '7.0.28')
+    if (!empty($CIDRAM['ForceVersionWarning']) || $CIDRAM['VersionCompare']($Version, '5.6.35') || substr($Version, 0, 2) === '6.' || (
+        $Minor === '7.0.' && $CIDRAM['VersionCompare']($Version, '7.0.29')
     ) || (
-        $Minor === '7.1.' && $CIDRAM['VersionCompare']($Version, '7.1.14')
+        $Minor === '7.1.' && $CIDRAM['VersionCompare']($Version, '7.1.15')
     ) || (
-        $Minor === '7.2.' && $CIDRAM['VersionCompare']($Version, '7.2.2')
+        $Minor === '7.2.' && $CIDRAM['VersionCompare']($Version, '7.2.3')
     )) {
         $Level += 2;
     }

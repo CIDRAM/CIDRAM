@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.03.25).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = '请求已阻止';
 $CIDRAM['lang']['label_branch'] = '分支最新稳定：';
 $CIDRAM['lang']['label_check_modules'] = '也用模块进行测试。';
 $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
+$CIDRAM['lang']['label_clientinfo'] = '客户信息：';
 $CIDRAM['lang']['label_displaying'] = '显示<span class="txtRd">%1$s</span>个项目。';
 $CIDRAM['lang']['label_displaying_that_cite'] = '显示<span class="txtRd">%1$s</span>个包含“%2$s”的项目。';
 $CIDRAM['lang']['label_expires'] = '过期： ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = '系统信息：';
 $CIDRAM['lang']['label_tests'] = '测试：';
 $CIDRAM['lang']['label_total'] = '总';
 $CIDRAM['lang']['label_unstable'] = '最新不稳定：';
+$CIDRAM['lang']['label_your_ip'] = '您的IP：';
+$CIDRAM['lang']['label_your_ua'] = '您的UA：';
 $CIDRAM['lang']['link_accounts'] = '账户';
 $CIDRAM['lang']['link_cache_data'] = '缓存数据';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR计算器';

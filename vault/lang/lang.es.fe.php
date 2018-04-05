@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.03.25).
+ * This file: Spanish language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,7 +33,7 @@ $CIDRAM['lang']['config_general_FrontEndLog'] = 'Archivo para registrar intentos
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '¿Permitir búsquedas gethostbyaddr cuando UDP no está disponible? True = Sí [Predefinido]; False = No.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Anular "forbid_on_block" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]; 403 = Anular con "403 Forbidden"; 503 = Anular con "503 Service unavailable".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Define qué algoritmo utilizar para todas las contraseñas y sesiones en el futuro. Opciones: PASSWORD_DEFAULT (predefinido), PASSWORD_BCRYPT, PASSWORD_ARGON2I (requiere PHP &gt;= 7.2.0).';
-$CIDRAM['lang']['config_general_default_dns'] = 'Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
+$CIDRAM['lang']['config_general_default_dns'] = 'Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
 $CIDRAM['lang']['config_general_disable_cli'] = '¿Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo.';
 $CIDRAM['lang']['config_general_disable_frontend'] = '¿Desactivar el acceso front-end? El acceso front-end puede hacer CIDRAM más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar CIDRAM a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '¿Desactivar webfonts? True = Sí; False = No [Predefinido].';
@@ -42,7 +42,7 @@ $CIDRAM['lang']['config_general_emailaddr_display_style'] = '¿Cómo prefieres q
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cual cabeceras debe CIDRAM responder con cuando bloquear acceso?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento.';
 $CIDRAM['lang']['config_general_hide_version'] = '¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido].';
-$CIDRAM['lang']['config_general_ipaddr'] = 'Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
+$CIDRAM['lang']['config_general_ipaddr'] = 'Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
 $CIDRAM['lang']['config_general_lang'] = 'Especifique la predefinido del lenguaje para CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No.';
 $CIDRAM['lang']['config_general_logfile'] = 'Un archivo legible por humanos para el registro de todos los intentos de acceso bloqueados. Especificar el nombre del archivo, o dejar en blanco para desactivar.';
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'Solicitudes bloqueadas';
 $CIDRAM['lang']['label_branch'] = 'Branch más nuevo estable:';
 $CIDRAM['lang']['label_check_modules'] = 'También prueba contra módulos.';
 $CIDRAM['lang']['label_cidram'] = 'Versión CIDRAM utilizada:';
+$CIDRAM['lang']['label_clientinfo'] = 'Información del cliente:';
 $CIDRAM['lang']['label_displaying'] = ['Se muestra <span class="txtRd">%s</span> entrada.', 'Se muestran <span class="txtRd">%s</span> entradas.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['Se muestra <span class="txtRd">%1$s</span> entrada que cita "%2$s".', 'Se muestran <span class="txtRd">%1$s</span> entradas que citan "%2$s".'];
 $CIDRAM['lang']['label_expires'] = 'Expirará: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'Información del sistema:';
 $CIDRAM['lang']['label_tests'] = 'Pruebas:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Más nuevo inestable:';
+$CIDRAM['lang']['label_your_ip'] = 'Tu IP:';
+$CIDRAM['lang']['label_your_ua'] = 'Tu UA:';
 $CIDRAM['lang']['link_accounts'] = 'Cuentas';
 $CIDRAM['lang']['link_cache_data'] = 'Datos de Caché';
 $CIDRAM['lang']['link_cidr_calc'] = 'Calculadora CIDR';
@@ -203,10 +206,10 @@ $CIDRAM['lang']['response_accounts_already_exists'] = '¡Una cuenta con ese nomb
 $CIDRAM['lang']['response_accounts_created'] = '¡Cuenta creada con éxito!';
 $CIDRAM['lang']['response_accounts_deleted'] = '¡Cuenta eliminada con éxito!';
 $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Esa cuenta no existe.';
-$CIDRAM['lang']['response_accounts_password_updated'] = 'Contraseña actualizado con éxito!';
+$CIDRAM['lang']['response_accounts_password_updated'] = '¡Contraseña actualizado con éxito!';
 $CIDRAM['lang']['response_activated'] = 'Se ha activado correctamente.';
 $CIDRAM['lang']['response_activation_failed'] = '¡No se pudo activar!';
-$CIDRAM['lang']['response_checksum_error'] = 'Error de suma de comprobación! Archivo rechazado!';
+$CIDRAM['lang']['response_checksum_error'] = '¡Error de suma de comprobación! Archivo rechazado!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Componente instalado con éxito.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Componente desinstalado con éxito.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Componente actualizado con éxito.';
@@ -228,7 +231,7 @@ $CIDRAM['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión
 $CIDRAM['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión – El usuario no existe!';
 $CIDRAM['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $CIDRAM['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
-$CIDRAM['lang']['response_login_wrong_endpoint'] = 'Punto final equivocado!';
+$CIDRAM['lang']['response_login_wrong_endpoint'] = '¡Punto final equivocado!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Posible problema encontrado.';
 $CIDRAM['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';

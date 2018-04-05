@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.03.25).
+ * This file: Urdu language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_check_modules'] = 'ماڈیولز کے خلاف بھی ٹیسٹ کریں.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
+$CIDRAM['lang']['label_clientinfo'] = 'کلائنٹ کی معلومات:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> آئٹم دکھایا.', '<span class="txtRd">%s</span> اشیاء دکھایا.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> آئٹم دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.', '<span class="txtRd">%1$s</span> اشیاء دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.'];
 $CIDRAM['lang']['label_expires'] = 'ختم ہو جاتی ہے: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
 $CIDRAM['lang']['label_tests'] = 'ٹیسٹ:';
 $CIDRAM['lang']['label_total'] = 'تمام';
 $CIDRAM['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';
+$CIDRAM['lang']['label_your_ip'] = 'آپ کے IP:';
+$CIDRAM['lang']['label_your_ua'] = 'آپ کے UA:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';
 $CIDRAM['lang']['link_cache_data'] = 'کیش ڈیٹا';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR کیلکولیٹر';

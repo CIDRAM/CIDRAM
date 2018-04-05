@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.03.25).
+ * This file: Front-end handler (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -99,6 +99,9 @@ $CIDRAM['FE'] = [
 
     /** The user agent of the current request. */
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
+
+    /** The IP address of the current request. */
+    'YourIP' => $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),

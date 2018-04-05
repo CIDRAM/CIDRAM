@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.03.25).
+ * This file: Korean language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = '차단 된 요청';
 $CIDRAM['lang']['label_branch'] = '분기 최신 안정 :';
 $CIDRAM['lang']['label_check_modules'] = '모듈에 대해서도 테스트하십시오.';
 $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전 :';
+$CIDRAM['lang']['label_clientinfo'] = '사용자 정보 :';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> 항목이 표시됩니다.';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s"라고 표시된 <span class="txtRd">%1$s</span> 개의 항목이 표시됩니다.';
 $CIDRAM['lang']['label_expires'] = '만료일 : ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = '시스템 정보 :';
 $CIDRAM['lang']['label_tests'] = '테스트 :';
 $CIDRAM['lang']['label_total'] = '합계';
 $CIDRAM['lang']['label_unstable'] = '최신 불안정 :';
+$CIDRAM['lang']['label_your_ip'] = '당신의 IP :';
+$CIDRAM['lang']['label_your_ua'] = '당신의 UA :';
 $CIDRAM['lang']['link_accounts'] = '계정';
 $CIDRAM['lang']['link_cache_data'] = '데이터 캐쉬';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR 계산기';

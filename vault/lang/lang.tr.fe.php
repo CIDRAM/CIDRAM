@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.03.25).
+ * This file: Turkish language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'Engellenen talepler';
 $CIDRAM['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $CIDRAM['lang']['label_check_modules'] = 'Ayrıca modülleri test edin.';
 $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
+$CIDRAM['lang']['label_clientinfo'] = 'Kullanıcı bilgisi:';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> öğe görüntüleniyor.';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s" ibaresi verilen <span class="txtRd">%1$s</span> öğe görüntüleniyor.';
 $CIDRAM['lang']['label_expires'] = 'Son Geçerlilik Tarihi: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
 $CIDRAM['lang']['label_tests'] = 'Testler:';
 $CIDRAM['lang']['label_total'] = 'Toplam';
 $CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';
+$CIDRAM['lang']['label_your_ip'] = 'Senin IP:';
+$CIDRAM['lang']['label_your_ua'] = 'Senin UA:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';
 $CIDRAM['lang']['link_cache_data'] = 'Önbellek Verileri';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Hesaplayıcı';

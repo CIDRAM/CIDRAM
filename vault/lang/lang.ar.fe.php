@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.03.25).
+ * This file: Arabic language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'الطلبات المحظورة';
 $CIDRAM['lang']['label_branch'] = 'فرع أحدث مستقرة:';
 $CIDRAM['lang']['label_check_modules'] = 'أيضا اختبار ضد وحدات.';
 $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
+$CIDRAM['lang']['label_clientinfo'] = 'معلومات المستخدممعلومات المستخدم:';
 $CIDRAM['lang']['label_displaying'] = 'عرض <span class="txtRd">%s</span> إدخالات.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'عرض <span class="txtRd">%1$s</span> إدخالات تشير إلى "%2$s".';
 $CIDRAM['lang']['label_expires'] = 'تنتهي: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
 $CIDRAM['lang']['label_tests'] = 'اختبارات:';
 $CIDRAM['lang']['label_total'] = 'مجموع';
 $CIDRAM['lang']['label_unstable'] = 'أحدث غير مستقرة:';
+$CIDRAM['lang']['label_your_ip'] = 'عنوان IP الخاص بك:';
+$CIDRAM['lang']['label_your_ua'] = 'وكيل المستخدم الخاص بك:';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
 $CIDRAM['lang']['link_cache_data'] = 'بيانات ذاكرة التخزين المؤقت';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR حاسبة';

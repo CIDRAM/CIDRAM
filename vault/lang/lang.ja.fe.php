@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.03.25).
+ * This file: Japanese language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'ブロックされたリクエスト';
 $CIDRAM['lang']['label_branch'] = 'ブランチ最新安定：';
 $CIDRAM['lang']['label_check_modules'] = 'モジュールに対してもテストします。';
 $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
+$CIDRAM['lang']['label_clientinfo'] = 'クライアント情報：';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span>エントリが表示されます。';
 $CIDRAM['lang']['label_displaying_that_cite'] = '「%2$s」を含む<span class="txtRd">%1$s</span>つのエントリが表示されます。';
 $CIDRAM['lang']['label_expires'] = '有効期限： ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $CIDRAM['lang']['label_tests'] = 'テスト：';
 $CIDRAM['lang']['label_total'] = '合計';
 $CIDRAM['lang']['label_unstable'] = '最新不安定：';
+$CIDRAM['lang']['label_your_ip'] = 'あなたのＩＰ：';
+$CIDRAM['lang']['label_your_ua'] = 'あなたのＵＡ：';
 $CIDRAM['lang']['link_accounts'] = 'アカウント';
 $CIDRAM['lang']['link_cache_data'] = 'キャッシュ・データ';
 $CIDRAM['lang']['link_cidr_calc'] = 'ＣＩＤＲ計算機';

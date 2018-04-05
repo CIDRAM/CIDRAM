@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for CLI (last modified: 2018.01.20).
+ * This file: Spanish language data for CLI (last modified: 2018.04.03).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,7 +38,7 @@ $CIDRAM['lang']['CLI_H'] = "
 
 ";
 
-$CIDRAM['lang']['CLI_Bad_IP'] = ' La dirección IP especificada, "{IP}", no es una dirección IPv4 o IPv6 IP válida!';
+$CIDRAM['lang']['CLI_Bad_IP'] = ' ¡La dirección IP especificada, "{IP}", no es una dirección IPv4 o IPv6 IP válida!';
 $CIDRAM['lang']['CLI_IP_Blocked'] = ' La dirección IP especificada, "{IP}", *ESTÁ* bloqueada por uno o más de las firmas de CIDRAM.';
 $CIDRAM['lang']['CLI_IP_Not_Blocked'] = ' La dirección IP especificada, "{IP}", *NO* está bloqueada por cualquiera de las firmas de CIDRAM.';
 
@@ -57,14 +57,14 @@ $CIDRAM['lang']['CLI_V_Started'] = 'Validador de la firmas se iniciado (%s).';
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'Archivos de firmas debe terminar con un salto de línea LF.';
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'L%s: Caracteres control detectados; Esto podría indicar la corrupción y debe ser investigado.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: La firma "%s" está duplicada (%s conteos)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: Etiqueta de expiración no contiene una norma ISO 8601 fecha/hora válida!';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" *NO* es una dirección IPv4 o IPv6 válida!';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: ¡La firma "%s" está duplicada (%s conteos)!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: ¡Etiqueta de expiración no contiene una norma ISO 8601 fecha/hora válida!';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: ¡"%s" *NO* es una dirección IPv4 o IPv6 válida!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: Longitud de la línea es mayor que 120 bytes; Longitud de la línea debe limitarse a 120 bytes para la legibilidad óptima.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s y L%s son identicos, y por lo tanto, pueden fusionarse.';
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: [Function] es ausente; Firma parece estar incompletos.';
 $CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" no es activable! Su base no coincide con el comienzo de su rango! Intente reemplazarlo con "%s".';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" no es activable! "%s" no es un rango válido!';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: ¡"%s" no es activable! "%s" no es un rango válido!';
 $CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: Etiqueta de origen no contiene un código ISO 3166-1 Alfa-2 válido.';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" está subordinada a la ya existente firma "%s".';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" es un superconjunto a la ya existente firma "%s".';

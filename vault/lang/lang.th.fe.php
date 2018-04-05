@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.03.25).
+ * This file: Thai language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'คำขอถูกบล็อก';
 $CIDRAM['lang']['label_branch'] = 'สาขาเสถียรล่าสุด:';
 $CIDRAM['lang']['label_check_modules'] = 'ทดสอบกับโมดูลด้วย.';
 $CIDRAM['lang']['label_cidram'] = 'รุ่น CIDRAM ในการใช้งาน:';
+$CIDRAM['lang']['label_clientinfo'] = 'ข้อมูลผู้ใช้:';
 $CIDRAM['lang']['label_displaying'] = 'แสดง <span class="txtRd">%s</span> รายการ.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'แสดง <span class="txtRd">%1$s</span> รายการที่อ้างอิง "%2$s".';
 $CIDRAM['lang']['label_expires'] = 'หมดอายุ: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';
 $CIDRAM['lang']['label_tests'] = 'การทดสอบ:';
 $CIDRAM['lang']['label_total'] = 'ทั้งหมด';
 $CIDRAM['lang']['label_unstable'] = 'ไม่เสถียรล่าสุด:';
+$CIDRAM['lang']['label_your_ip'] = 'IP ของคุณ:';
+$CIDRAM['lang']['label_your_ua'] = 'UA ของคุณ:';
 $CIDRAM['lang']['link_accounts'] = 'บัญชี';
 $CIDRAM['lang']['link_cache_data'] = 'ข้อมูลแคช';
 $CIDRAM['lang']['link_cidr_calc'] = 'เครื่องคิดเลข CIDR';

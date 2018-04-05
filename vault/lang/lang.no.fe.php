@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.03.25).
+ * This file: Norwegian language data for the front-end (last modified: 2018.04.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -143,6 +143,7 @@ $CIDRAM['lang']['label_blocked'] = 'Forespørsler blokkert';
 $CIDRAM['lang']['label_branch'] = 'Branch siste stabile:';
 $CIDRAM['lang']['label_check_modules'] = 'Test også mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM versjon brukt:';
+$CIDRAM['lang']['label_clientinfo'] = 'Klientinformasjon:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> oppføring vises.', '<span class="txtRd">%s</span> oppføringer vises.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> oppføring vises som citerer "%2$s".', '<span class="txtRd">%1$s</span> oppføringer vises som citerer "%2$s".'];
 $CIDRAM['lang']['label_expires'] = 'Utgår: ';
@@ -172,6 +173,8 @@ $CIDRAM['lang']['label_sysinfo'] = 'Systeminformasjon:';
 $CIDRAM['lang']['label_tests'] = 'Tester:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Siste ustabil:';
+$CIDRAM['lang']['label_your_ip'] = 'Din IP:';
+$CIDRAM['lang']['label_your_ua'] = 'Din UA:';
 $CIDRAM['lang']['link_accounts'] = 'Kontoer';
 $CIDRAM['lang']['link_cache_data'] = 'Cache Data';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Kalkulator';

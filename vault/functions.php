@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.03.31).
+ * This file: Functions file (last modified: 2018.04.06).
  */
 
 /**
@@ -1508,4 +1508,21 @@ $CIDRAM['ResetBypassFlags'] = function() use (&$CIDRAM) {
     $CIDRAM['Flag-Bypass-Baidu-Check'] = false;
     $CIDRAM['Flag-Bypass-Yandex-Check'] = false;
     $CIDRAM['Flag-Bypass-DuckDuckGo-Check'] = false;
+};
+
+/** Build directory path for logfiles. */
+$CIDRAM['BuildLogPath'] = function($File) use (&$CIDRAM) {
+    $ThisPath = $CIDRAM['Vault'];
+    $File = str_replace("\\", '/', $File);
+    while (strpos($File, '/') !== false) {
+        $Dir = substr($File, 0, strpos($File, '/'));
+        $ThisPath .= $Dir . '/';
+        $File = substr($File, strlen($Dir) + 1);
+        if (!file_exists($ThisPath) || !is_dir($ThisPath)) {
+            if (!mkdir($ThisPath)) {
+                return false;
+            }
+        }
+    }
+    return true;
 };

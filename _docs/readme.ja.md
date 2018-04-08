@@ -852,6 +852,7 @@ CIDRAMとの互換性を確保するために、以下のパッケージと製�
 - [Cronを使って自動的にアップデートできますか？](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [「違反」とは何ですか？](#WHAT_ARE_INFRACTIONS)
 - [CIDRAMはホスト名をブロックできますか？](#BLOCK_HOSTNAMES)
+- [「default_dns」には何が使えますか？](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>「シグネチャ」とは何ですか？
 
@@ -967,7 +968,34 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 はい。​これを行うには、カスタム・モジュール・ファイルを作成する必要があります。 *参照する：​[基本原則 （モジュールの場合）](#MODULE_BASICS)*.
 
+#### <a name="WHAT_CAN_I_USE_FOR_DEFAULT_DNS"></a>「default_dns」には何が使えますか？
+
+あなたが提案を探しているならば、「[public-dns.info](https://public-dns.info/)」と「[OpenNIC](https://servers.opennic.org/)」は既知の公開ＤＮＳサーバの広範なリストを提供します。​または、次の表を参照してください：
+
+ＩＰ | オペレーター
+---|---
+`1.1.1.1` | [Cloudflare](https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/)
+`4.2.2.1`<br />`4.2.2.2`<br />`209.244.0.3`<br />`209.244.0.4` | [Level3](https://www.level3.com/en/)
+`8.8.4.4`<br />`8.8.8.8`<br />`2001:4860:4860::8844`<br />`2001:4860:4860::8888` | [Google Public DNS](https://developers.google.com/speed/public-dns/)
+`9.9.9.9`<br />`149.112.112.112` | [Quad9 DNS](https://www.quad9.net/)
+`84.200.69.80`<br />`84.200.70.40`<br />`2001:1608:10:25::1c04:b12f`<br />`2001:1608:10:25::9249:d69b` | [DNS.WATCH](https://dns.watch/index)
+`208.67.220.220`<br />`208.67.222.220`<br />`208.67.222.222` | [OpenDNS Home](https://www.opendns.com/)
+`77.88.8.1`<br />`77.88.8.8`<br />`2a02:6b8::feed:0ff`<br />`2a02:6b8:0:1::feed:0ff` | [Yandex.DNS](https://dns.yandex.com/advanced/)
+`8.20.247.20`<br />`8.26.56.26` | [Comodo Secure DNS](https://www.comodo.com/secure-dns/)
+`216.146.35.35`<br />`216.146.36.36` | [Dyn](https://help.dyn.com/internet-guide-setup/)
+`64.6.64.6`<br />`64.6.65.6` | [Verisign Public DNS](https://www.verisign.com/en_US/security-services/public-dns/index.xhtml)
+`37.235.1.174`<br />`37.235.1.177` | [FreeDNS](https://freedns.zone/en/)
+`156.154.70.1`<br />`156.154.71.1`<br />`2610:a1:1018::1`<br />`2610:a1:1019::1` | [Neustar Security](https://www.security.neustar/dns-services/free-recursive-dns-service)
+`45.32.36.36`<br />`45.77.165.194`<br />`179.43.139.226` | [Fourth Estate](https://dns.fourthestate.co/)
+`74.82.42.42` | [Hurricane Electric](https://dns.he.net/)
+`195.46.39.39`<br />`195.46.39.40` | [SafeDNS](https://www.safedns.com/en/features/)
+`81.218.119.11`<br />`209.88.198.133` | [GreenTeam Internet](http://www.greentm.co.uk/)
+`89.233.43.71`<br />`91.239.100.100 `<br />`2001:67c:28a4::`<br />`2a01:3a0:53:53::` | [UncensoredDNS](https://blog.uncensoreddns.org/)
+`208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
+
+*注意：​私は、ＤＮＳサービス（リストされた、リストされていない、いずれの場合）のプライバシーの実践、セキュリティ、有効性、または信頼性に関して、いかなる請求または保証もしません。​決定を下す際には、あなた自身の研究をしてください。*
+
 ---
 
 
-最終アップデート：2018年3月31日。
+最終アップデート：2018年4月8日。

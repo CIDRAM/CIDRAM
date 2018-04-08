@@ -852,6 +852,7 @@ CIDRAM과의 호환성을 보장하기 위해, 다음 패키지 및 제품에, �
 - [Cron을 사용하여 자동으로 업데이트 할 수 있습니까?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - ["위반"이란 무엇입니까?](#WHAT_ARE_INFRACTIONS)
 - [CIDRAM이 호스트 이름을 차단할 수 있습니까?](#BLOCK_HOSTNAMES)
+- ["default_dns"에 사용할 수있는 항목은 무엇입니까?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"서명"이란 무엇입니까?
 
@@ -967,7 +968,34 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 
 예. 이렇게하려면 사용자 지정 모듈 파일을 만들어야합니다. *참조하십시오 : [기초 (모듈 경우)](#MODULE_BASICS)*.
 
+#### <a name="WHAT_CAN_I_USE_FOR_DEFAULT_DNS"></a>"default_dns"에 사용할 수있는 항목은 무엇입니까?
+
+제안을 찾고있는 경우, [public-dns.info](https://public-dns.info/)및 [OpenNIC](https://servers.opennic.org/)는 알려진 공개 DNS 서버의 광범위한 목록을 제공합니다. 또는 아래 표를 참조하십시오 :
+
+IP | 운영자
+---|---
+`1.1.1.1` | [Cloudflare](https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/)
+`4.2.2.1`<br />`4.2.2.2`<br />`209.244.0.3`<br />`209.244.0.4` | [Level3](https://www.level3.com/en/)
+`8.8.4.4`<br />`8.8.8.8`<br />`2001:4860:4860::8844`<br />`2001:4860:4860::8888` | [Google Public DNS](https://developers.google.com/speed/public-dns/)
+`9.9.9.9`<br />`149.112.112.112` | [Quad9 DNS](https://www.quad9.net/)
+`84.200.69.80`<br />`84.200.70.40`<br />`2001:1608:10:25::1c04:b12f`<br />`2001:1608:10:25::9249:d69b` | [DNS.WATCH](https://dns.watch/index)
+`208.67.220.220`<br />`208.67.222.220`<br />`208.67.222.222` | [OpenDNS Home](https://www.opendns.com/)
+`77.88.8.1`<br />`77.88.8.8`<br />`2a02:6b8::feed:0ff`<br />`2a02:6b8:0:1::feed:0ff` | [Yandex.DNS](https://dns.yandex.com/advanced/)
+`8.20.247.20`<br />`8.26.56.26` | [Comodo Secure DNS](https://www.comodo.com/secure-dns/)
+`216.146.35.35`<br />`216.146.36.36` | [Dyn](https://help.dyn.com/internet-guide-setup/)
+`64.6.64.6`<br />`64.6.65.6` | [Verisign Public DNS](https://www.verisign.com/en_US/security-services/public-dns/index.xhtml)
+`37.235.1.174`<br />`37.235.1.177` | [FreeDNS](https://freedns.zone/en/)
+`156.154.70.1`<br />`156.154.71.1`<br />`2610:a1:1018::1`<br />`2610:a1:1019::1` | [Neustar Security](https://www.security.neustar/dns-services/free-recursive-dns-service)
+`45.32.36.36`<br />`45.77.165.194`<br />`179.43.139.226` | [Fourth Estate](https://dns.fourthestate.co/)
+`74.82.42.42` | [Hurricane Electric](https://dns.he.net/)
+`195.46.39.39`<br />`195.46.39.40` | [SafeDNS](https://www.safedns.com/en/features/)
+`81.218.119.11`<br />`209.88.198.133` | [GreenTeam Internet](http://www.greentm.co.uk/)
+`89.233.43.71`<br />`91.239.100.100 `<br />`2001:67c:28a4::`<br />`2a01:3a0:53:53::` | [UncensoredDNS](https://blog.uncensoreddns.org/)
+`208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
+
+*노트 : 본인은 모든 DNS 서비스의 개인, 열거 되든 그렇지 않든, 정보 보호 관행, 보안, 효능 또는 신뢰성과 관련하여 어떠한 보증이나 보장도하지 않습니다. 그들에 대한 결정을 내릴 때 자신의 연구를하십시오.*
+
 ---
 
 
-최종 업데이트 : 2018년 3월 31일.
+최종 업데이트 : 2018년 4월 8일.

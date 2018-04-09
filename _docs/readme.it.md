@@ -853,6 +853,8 @@ I moduli sono stati resi disponibili per garantire che i seguenti pacchetti e pr
 - [Cosa sono le "infrazioni"?](#WHAT_ARE_INFRACTIONS)
 - [CIDRAM può bloccare i nomi degli host?](#BLOCK_HOSTNAMES)
 - [Cosa posso usare per "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
+- [Posso usare CIDRAM per proteggere cose diverse dai siti web (per esempio, server di posta elettronica, FTP, SSH, IRC, ecc)?](#PROTECT_OTHER_THINGS)
+- [Avrò problemi se utilizzo CIDRAM contemporaneamente all'utilizzo di CDN o servizi di cache?](#CDN_CACHING_PROBLEMS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Che cos'è una "firma"?
 
@@ -994,6 +996,14 @@ IP | Operatore
 `208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
 
 *Nota: Non faccio reclami o garanzie riguardo alle pratiche di privacy, sicurezza, efficacia, né affidabilità di alcun servizio DNS, elencati o altrimenti. Per favore fai le tue ricerche quando prendi decisioni su di loro.*
+
+#### <a name="PROTECT_OTHER_THINGS"></a>Posso usare CIDRAM per proteggere cose diverse dai siti web (per esempio, server di posta elettronica, FTP, SSH, IRC, ecc)?
+
+Puoi (legalmente), ma non dovresti (tecnicamente; praticamente). La nostra licenza non limita le tecnologie che implementano CIDRAM, ma CIDRAM è un WAF (Web Application Firewall) ed è sempre stato concepito per proteggere i siti web. Poiché non è stato progettato pensando ad altre tecnologie, è improbabile che sia efficace o fornisca una protezione affidabile per altre tecnologie, l'implementazione è probabile che sia difficile, e il rischio di falsi positivi e rilevazioni mancate è molto alto.
+
+#### <a name="CDN_CACHING_PROBLEMS"></a>Avrò problemi se utilizzo CIDRAM contemporaneamente all'utilizzo di CDN o servizi di cache?
+
+Possibilmente. Questo dipende dalla natura del servizio in questione e da come lo stai usando. In genere, se si memorizzano nella cache solo risorse statiche (immagini, CSS, ecc; tutto ciò che generalmente non cambia nel tempo), non dovrebbero esserci problemi. Tuttavia, potrebbero verificarsi problemi se si memorizzano nella cache dati che altrimenti verrebbe generati in modo dinamico quando richiesto, o se stai memorizzando nella cache i risultati delle richieste POST (questo renderebbe essenzialmente statico il tuo sito web e il suo ambiente, e CIDRAM non è probabile di fornire alcun beneficio significativo in un ambiente statico obbligatorio). Potrebbero inoltre esserci requisiti di configurazione specifici per CIDRAM, basato sul servizio CDN o servizio cache che stai utilizzando (dovrai assicurarti che CIDRAM sia configurato correttamente per il servizio specifico di CDN o cache che stai utilizzando). La configurazione scorretto per CIDRAM può causare falsi positivi e rilevamenti mancati in modo significativo.
 
 ---
 

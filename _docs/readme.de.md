@@ -18,7 +18,7 @@
 
 ### 1. <a name="SECTION1"></a>VORWORT
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) ist ein PHP-Skript gestaltete für Websites zu schützen, durch das Blockieren von IP-Adressen als Quellen von unerwünschten Verkehr angesehen, einschließlich (aber nicht beschränkt auf) Datenverkehr von nicht-menschlichen Zugang Endpunkte, Cloud-Services, spambots, Website Schaber, usw. Es tut dies durch die möglichen CIDRs von IP-Adressen zu berechnen, von eingehenden Anfragen geliefert, und dann versuchen, diese gegen ihre Signaturdateien zu entsprechen (Diese Signaturdateien enthalten Listen von CIDRs von IP-Adressen als Ursachen für unerwünschte Verkehrs angesehen); Wenn Übereinstimmungen gefunden werden, die Anfragen ist blockiert.
+CIDRAM (Classless Inter-Domain Routing Access Manager) ist ein PHP-Skript gestaltete für Websites zu schützen, durch das Blockieren von IP-Adressen als Quellen von unerwünschten Verkehr angesehen, einschließlich (aber nicht beschränkt auf) Datenverkehr von nicht-menschlichen Zugang Endpunkte, Cloud-Services, spambots, Website Schaber, u.s.w. Es tut dies durch die möglichen CIDRs von IP-Adressen zu berechnen, von eingehenden Anfragen geliefert, und dann versuchen, diese gegen ihre Signaturdateien zu entsprechen (Diese Signaturdateien enthalten Listen von CIDRs von IP-Adressen als Ursachen für unerwünschte Verkehrs angesehen); Wenn Übereinstimmungen gefunden werden, die Anfragen ist blockiert.
 
 *(Beziehen auf: [Was ist ein "CIDR"?](#WHAT_IS_A_CIDR)).*
 
@@ -73,7 +73,7 @@ Oder das in der `.htaccess` Datei:
 
 Wenn Sie CIDRAM mit WordPress verwenden möchten, können Sie alle Anweisungen oben ignorieren. [CIDRAM ist als Plugin mit der WordPress Plugin Datenbank registriert](https://wordpress.org/plugins/cidram/), und Sie kannst CIDRAM direkt aus dem Plugins-Dashboard installieren. Sie können es in der gleichen Weise wie jedes andere Plugin installieren, und es sind keine zusätzlichen Schritte erforderlich. Genauso wie bei den anderen Installationsmethoden, Sie können Ihre Installation anpassen, indem Sie den Inhalt der `config.ini`-Datei, oder indem Sie die Front-End-Konfigurationsseite verwenden. Wenn Sie das Front-End für CIDRAM aktivieren und CIDRAM mit der Front-End-Aktualisierungen-Seite aktualisieren, dies wird automatisch mit den Plugin-Versionsinformationen synchronisiert, die im Plugins-Dashboard angezeigt werden.
 
-*Warnung: Die Aktualisierung von CIDRAM über das Plugins-Dashboard führt zu einer sauberen Installation! Wenn Sie Ihre Installation angepasst haben (änderte deine Konfiguration, installierte Module, usw), diese Anpassungen werden bei wenn der Aktualisierung über das Plugins-Dashboard verloren! Protokolldateien werden auch bei wenn der Aktualisierung über das Plugins-Dashboard verloren! Um Protokolldateien und Anpassungen zu bewahren, aktualisieren Sie über die CIDRAM-Front-End-Aktualisierungen-Seite.*
+*Warnung: Die Aktualisierung von CIDRAM über das Plugins-Dashboard führt zu einer sauberen Installation! Wenn Sie Ihre Installation angepasst haben (änderte deine Konfiguration, installierte Module, u.s.w.), diese Anpassungen werden bei wenn der Aktualisierung über das Plugins-Dashboard verloren! Protokolldateien werden auch bei wenn der Aktualisierung über das Plugins-Dashboard verloren! Um Protokolldateien und Anpassungen zu bewahren, aktualisieren Sie über die CIDRAM-Front-End-Aktualisierungen-Seite.*
 
 ---
 
@@ -379,7 +379,7 @@ Generelle Konfiguration von CIDRAM.
 - Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].
 
 "maintenance_mode"
-- Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.
+- Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w.
 
 "default_algo"
 - Definiert den Algorithmus für alle zukünftigen Passwörter und Sitzungen. Optionen: PASSWORD_DEFAULT (Standardeinstellung), PASSWORD_BCRYPT, PASSWORD_ARGON2I (erfordert PHP >= 7.2.0).
@@ -388,7 +388,7 @@ Generelle Konfiguration von CIDRAM.
 - CIDRAM-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung].
 
 "force_hostname_lookup"
-- Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]. Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken.
+- Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]. Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance au.s.w.irken.
 
 "allow_gethostbyaddr_lookup"
 - gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein.
@@ -853,6 +853,8 @@ Module wurden zur Verfügung gestellt, um sicherzustellen, dass die folgenden Pa
 - [Was sind "Verstöße"?](#WHAT_ARE_INFRACTIONS)
 - [Kann CIDRAM Hostnamen blockieren?](#BLOCK_HOSTNAMES)
 - [Was kann ich für "default_dns" verwenden?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
+- [Kann ich CIDRAM verwenden, um andere Dinge als Websites zu schützen (z.B. E-Mail-Server, FTP, SSH, IRC u.s.w.)?](#PROTECT_OTHER_THINGS)
+- [Werden Probleme auftreten, wenn ich CIDRAM gleichzeitig mit CDNs oder Caching-Diensten verwende?](#CDN_CACHING_PROBLEMS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
@@ -912,7 +914,7 @@ Die Aktualisierungshäufigkeit hängt von den betreffenden Signaturdateien ab. I
 
 #### <a name="BLOCKED_WHAT_TO_DO"></a>CIDRAM hat mich von einer Website blockiert die ich besuchen möchte! Bitte helfen Sie!
 
-CIDRAM bietet ein Mittel für Website-Besitzer, um unerwünschten Verkehr zu blockieren, aber es liegt in der Verantwortung der Website-Besitzer, selbst zu entscheiden, wie sie CIDRAM nutzen wollen. Im Falle der falschen-Positiven in Bezug auf der Signaturdateien die normalerweise mit CIDRAM enthalten sind, Korrekturen können vorgenommen werden, aber in Bezug auf unblockiert von bestimmten Websites werden, Sie müssen mit den Besitzern der betreffenden Webseiten sprechen. In Fällen in denen Korrekturen vorgenommen werden, zumindest müssen sie ihre Signaturdateien und/oder Installation aktualisieren, und in anderen Fällen (wie zum Beispiel, wo sie ihre Installation geändert haben, wo sie ihre eigenen benutzerdefinierten Signaturen erstellt haben, usw), Verantwortung für Ihr Problem zu lösen ist ganz ihre, und ist ganz außerhalb unserer Kontrolle.
+CIDRAM bietet ein Mittel für Website-Besitzer, um unerwünschten Verkehr zu blockieren, aber es liegt in der Verantwortung der Website-Besitzer, selbst zu entscheiden, wie sie CIDRAM nutzen wollen. Im Falle der falschen-Positiven in Bezug auf der Signaturdateien die normalerweise mit CIDRAM enthalten sind, Korrekturen können vorgenommen werden, aber in Bezug auf unblockiert von bestimmten Websites werden, Sie müssen mit den Besitzern der betreffenden Webseiten sprechen. In Fällen in denen Korrekturen vorgenommen werden, zumindest müssen sie ihre Signaturdateien und/oder Installation aktualisieren, und in anderen Fällen (wie zum Beispiel, wo sie ihre Installation geändert haben, wo sie ihre eigenen benutzerdefinierten Signaturen erstellt haben, u.s.w.), Verantwortung für Ihr Problem zu lösen ist ganz ihre, und ist ganz außerhalb unserer Kontrolle.
 
 #### <a name="MINIMUM_PHP_VERSION"></a>Ich möchte CIDRAM mit einer PHP-Version älter als 5.4.0 verwenden; Kannst du helfen?
 
@@ -994,6 +996,14 @@ IP | Operator
 `208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
 
 *Hinweis: Ich mache keine Angaben oder Garantien in Bezug auf die Datenschutzpraktiken, die Sicherheit, die Wirksamkeit oder die Zuverlässigkeit von DNS-Diensten, die aufgelistet sind oder nicht. Bitte machen Sie Ihre eigene Forschung, wenn Sie Entscheidungen über sie treffen.*
+
+#### <a name="PROTECT_OTHER_THINGS"></a>Kann ich CIDRAM verwenden, um andere Dinge als Websites zu schützen (z.B. E-Mail-Server, FTP, SSH, IRC u.s.w.)?
+
+Sie können (rechtlich), aber du solltest nicht (technisch; praktisch). Unsere Lizenz beschränkt nicht, welche Technologien implementieren CIDRAM, aber CIDRAM ist eine WAF (Web Application Firewall) und war schon immer zum Schutz von Webseiten gedacht. Da es nicht mit anderen Technologien entwickelt wurde, ist es unwahrscheinlich, dass es mit anderen Technologien effektiv ist, oder für anderen Technologien zuverlässigen Schutz bietet, die Umsetzung dürfte schwierig sein, und das Risiko von Falsch-Positivs und verpassten Erkennungen ist sehr hoch.
+
+#### <a name="CDN_CACHING_PROBLEMS"></a>Werden Probleme auftreten, wenn ich CIDRAM gleichzeitig mit CDNs oder Caching-Diensten verwende?
+
+Möglicherweise. Dies hängt von der Art des Dienstes ab und davon, wie Sie es verwenden. Im Algemeinen, wenn Sie nur statische Assets im Cache speichern (Bilder, CSS, u.s.w.; alles, was sich im Laufe der Zeit nicht ändert), sollten keine Probleme auftreten. Es kann jedoch Probleme geben, wenn Sie Daten zwischenspeichern, die andernfalls, wenn angefordert, typischerweise dynamisch generiert würde, oder wenn Sie die Ergebnisse von POST-Anfragen zwischenspeichern (dies würde Ihre Website und ihre Umgebung im Wesentlichen statisch machen, und es ist unwahrscheinlich, dass CIDRAM in einer obligatorisch statischen Umgebung einen nennenswerten Nutzen bringt). Es kann auch spezifische Konfigurationsanforderungen für CIDRAM geben, abhängig davon, welchen CDN oder Caching-Service Sie verwenden (Sie müssen sicherstellen, dass CIDRAM für den bestimmten CDN oder Caching-Dienst, den Sie verwenden, korrekt konfiguriert ist). Wenn CIDRAM nicht richtig konfiguriert wird, kann dies zu erheblich problematischen Falsch-Positive und verpassten Erkennungen verursachen.
 
 ---
 

@@ -853,6 +853,8 @@ Modul telah tersedia untuk memastikan bahwa paket dan produk berikut akan kompat
 - [Apa "pelanggaran"?](#WHAT_ARE_INFRACTIONS)
 - [Dapatkah CIDRAM memblokir nama host?](#BLOCK_HOSTNAMES)
 - [Apa yang bisa saya gunakan untuk "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
+- [Dapatkah saya menggunakan CIDRAM untuk melindungi hal-hal selain daripada situs web (misalnya, server email, FTP, SSH, IRC, dll)?](#PROTECT_OTHER_THINGS)
+- [Akankah masalah terjadi jika saya menggunakan CIDRAM pada saat yang sama dengan menggunakan layanan CDN atau cache?](#CDN_CACHING_PROBLEMS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Apa yang "tanda tangan"?
 
@@ -994,6 +996,14 @@ IP | Operator
 `208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
 
 *Catat: Saya tidak membuat klaim atau jaminan berkenaan dengan praktik privasi, keamanan, keampuhan, atau keandalan untuk layanan DNS apapun, apakah terdaftar atau sebaliknya. Silakan lakukan penelitian Anda sendiri ketika membuat keputusan tentang mereka.*
+
+#### <a name="PROTECT_OTHER_THINGS"></a>Dapatkah saya menggunakan CIDRAM untuk melindungi hal-hal selain daripada situs web (misalnya, server email, FTP, SSH, IRC, dll)?
+
+Anda dapat (dalam pengertian hukum), tetapi Anda tidak seharusnya (dalam pengertian teknis dan praktis). Lisensi kami tidak membatasi teknologi mana yang menerapkan CIDRAM, tetapi CIDRAM adalah WAF (Aplikasi Web Firewall) dan selalu dimaksudkan untuk melindungi situs web. Karena itu tidak dirancang dengan teknologi lain dalam pikiran, kemungkinan besar itu tidak akan efektif atau memberikan perlindungan diandalkan untuk teknologi lain, implementasi bisa sulit, dan risiko positif palsu dan deteksi terjawab akan sangat tinggi.
+
+#### <a name="CDN_CACHING_PROBLEMS"></a>Akankah masalah terjadi jika saya menggunakan CIDRAM pada saat yang sama dengan menggunakan layanan CDN atau cache?
+
+Mungkin. Ini tergantung pada sifat layanan yang dipermasalahkan, dan bagaimana Anda menggunakannya. Umumnya, jika Anda hanya menyimpan aset statis dalam cache (gambar, CSS, dll; apapun yang umumnya tidak berubah seiring waktu), seharusnya tidak ada masalah. Namun, mungkin ada masalah, jika Anda menyimpan data dalam cache yang biasanya akan dihasilkan secara dinamis saat diminta, atau jika Anda menyimpan hasil dari permintaan POST (ini pada dasarnya akan membuat situs web Anda dan lingkungannya sebagai statis wajib, dan CIDRAM tidak akan memberikan manfaat yang berarti dalam lingkungan statis wajib). Mungkin juga ada persyaratan konfigurasi khusus untuk CIDRAM, tergantung pada layanan CDN atau cache yang Anda gunakan (Anda harus memastikan bahwa CIDRAM dikonfigurasi benar untuk layanan CDN atau cache spesifik yang Anda gunakan). Kegagalan untuk mengkonfigurasi CIDRAM benar dapat menyebabkan masalah positif palsu dan deteksi terjawab.
 
 ---
 

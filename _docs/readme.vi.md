@@ -853,6 +853,8 @@ Các mô-đun đã được cung cấp để đảm bảo rằng các gói và s
 - ["Vi phạm" là gì?](#WHAT_ARE_INFRACTIONS)
 - [CIDRAM có thể chặn tên máy chủ không?](#BLOCK_HOSTNAMES)
 - [Những gì tôi có thể sử dụng cho "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
+- [Tôi có thể sử dụng CIDRAM để bảo vệ những thứ khác ngoài trang web (v.d., máy chủ email, FTP, SSH, IRC, vv)?](#PROTECT_OTHER_THINGS)
+- [Sẽ xảy ra sự cố nếu tôi sử dụng CIDRAM cùng lúc với việc sử dụng các CDN hoặc các dịch vụ bộ nhớ đệm?](#CDN_CACHING_PROBLEMS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
@@ -994,6 +996,14 @@ IP | Nhà điều hành
 `208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
 
 *Chú thích: Tôi không cung cấp quả quyết hoặc đảm bảo về các chính sách bảo mật, tính bảo mật, hiệu quả, và độ tin cậy của bất kỳ dịch vụ DNS nào, được liệt kê hay cách khác. Xin vui lòng làm nghiên cứu của riêng bạn khi đưa ra quyết định về họ.*
+
+#### <a name="PROTECT_OTHER_THINGS"></a>Tôi có thể sử dụng CIDRAM để bảo vệ những thứ khác ngoài trang web (v.d., máy chủ email, FTP, SSH, IRC, vv)?
+
+Bạn có thể (theo nghĩa hợp pháp), nhưng không nên (theo nghĩa kỹ thuật và thực tế). Giấy phép của chúng tôi không hạn chế công nghệ nào thực hiện CIDRAM, nhưng CIDRAM là một WAF (Web Application Firewall) và luôn có ý định bảo vệ các trang web. Bởi vì nó không được thiết kế với các công nghệ khác trong tâm trí, nó không có hiệu quả hoặc cung cấp bảo vệ đáng tin cậy cho các công nghệ khác, việc thực hiện có thể là khó khăn, và nguy cơ sai tích cực và phát hiện mất tích là rất cao.
+
+#### <a name="CDN_CACHING_PROBLEMS"></a>Sẽ xảy ra sự cố nếu tôi sử dụng CIDRAM cùng lúc với việc sử dụng các CDN hoặc các dịch vụ bộ nhớ đệm?
+
+Có lẽ. Điều này phụ thuộc vào tính chất của dịch vụ được đề cập và cách bạn sử dụng dịch vụ. Nói chung, nếu bạn chỉ lưu trữ nội dung tĩnh (v.d., hình ảnh, CSS, vv; bất cứ điều gì không thay đổi theo thời gian), không nên có bất kỳ vấn đề. Có thể có vấn đề mặc dù, nếu bạn đang lưu trữ dữ liệu mà thông thường sẽ được tạo động nếu được yêu cầu, hoặc nếu bạn đang lưu trữ kết quả của các yêu cầu POST (điều này về cơ bản sẽ làm cho trang web của bạn và môi trường của nó như bắt buộc tĩnh, và CIDRAM không có khả năng cung cấp bất kỳ lợi ích có ý nghĩa nào trong một môi trường bắt buộc tĩnh). Cũng có thể có các yêu cầu cấu hình cụ thể cho CIDRAM, tùy thuộc vào dịch vụ bộ nhớ đệm hoặc CDN mà bạn đang sử dụng (bạn cần đảm bảo rằng CIDRAM được định cấu hình chính xác cho dịch vụ bộ nhớ đệm hoặc CDN cụ thể mà bạn đang sử dụng). Cấu hình không chính xác cho CIDRAM có thể dẫn đến vấn đề đáng kể của các sai tích cực và các sự phát hiện mất tích.
 
 ---
 

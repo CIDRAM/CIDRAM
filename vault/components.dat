@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.5.0-DEV+18095227
+ Version: 1.5.0
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -183,7 +183,7 @@ IPv4:
   zh: 标准IPv4签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Low
- Version: 2018.94.057
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -193,7 +193,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - 5845404a9fcd04644bced5deec4a492e:576097
+   - 49e2f134821b410169f0601b7611dc74:574491
  Reannotate: components.dat
 IPv4-Bogons:
  Extended Description:
@@ -251,7 +251,7 @@ IPv4-ISPs:
   zh: 标准IPv4签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2018.94.057
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -261,7 +261,7 @@ IPv4-ISPs:
   To:
    - ipv4_isps.dat
   Checksum:
-   - f6e2182c3d2ed155e6fa53a6bc3c71c0:231336
+   - cdf2d8150c9b1b6db1825f81860eda70:229646
  Reannotate: components.dat
 IPv4-Other:
  Extended Description:
@@ -285,7 +285,7 @@ IPv4-Other:
   zh: 标准IPv4签名通常包括在主包。​阻止CIDR从代理，VPN和其他不需要服务。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
   zh-tw: 標準IPv4簽名通常包括在主包。​阻止CIDR從代理，VPN和其他不需要服務。<br /><em>使用：<code>signatures-&gt;ipv4</code></em>.
  False Positive Risk: Medium
- Version: 2018.84.030
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -295,7 +295,7 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - c03afc985a1148f94776539f8ea15d0f:70454
+   - 5b8d0a173fafd7f9840a6c76848f2196:70009
  Reannotate: components.dat
 IPv6:
  Extended Description:
@@ -319,7 +319,7 @@ IPv6:
   zh: 标准IPv6签名通常包括在主包。​阻止不想要的云服务和非人终端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止不想要的雲服務和非人終端。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Low
- Version: 2018.94.057
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -329,7 +329,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - 216c5e427ff4de82adf5a6e5211e5649:143421
+   - ad61186291d5db6564563b0a5182f849:141939
  Reannotate: components.dat
 IPv6-Bogons:
  Extended Description:
@@ -387,7 +387,7 @@ IPv6-ISPs:
   zh: 标准IPv6签名通常包括在主包。​阻止危险和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
   zh-tw: 標準IPv6簽名通常包括在主包。​阻止危險和垃圾容易ISP。<br /><em>使用：<code>signatures-&gt;ipv6</code></em>.
  False Positive Risk: Medium
- Version: 2018.94.057
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -397,7 +397,7 @@ IPv6-ISPs:
   To:
    - ipv6_isps.dat
   Checksum:
-   - 27997223734f8648135c81d51ba1ed09:45692
+   - 7764bc2057f689338e2fcea77edaf145:45882
  Reannotate: components.dat
 IPv6-Other:
  Extended Description:
@@ -590,7 +590,7 @@ l10n/fr:
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description: हिंदी भाषा डाटा
- Version: 2018.94.589
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -606,7 +606,7 @@ l10n/hi:
    - lang/lang.hi.php
   Checksum:
    - d8bf86b6d502123bbc8001e68d0abb1c:7740
-   - 1df9e973a83eebf5a5fbb5e5f0f0740a:58006
+   - a26c0ca6c6bf8acc749f078eabc195ac:58006
    - 33a0bd5ce643978354b7a12439312404:7434
  Reannotate: components.dat
 l10n/id:
@@ -854,7 +854,7 @@ l10n/tr:
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description: ‏اردو‏ زبان فائلوں
- Version: 2018.94.589
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -870,13 +870,13 @@ l10n/ur:
    - lang/lang.ur.php
   Checksum:
    - 6a60215e896ed15e706deb71fa52da30:5794
-   - c42e58359399d7bc7d2749f48ddeaf95:45731
+   - 760c31935e8c7eed4bcb0ca5621705d1:45731
    - dfcbedef287c847d322cea5a4f673b68:6257
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description: Dữ liệu tiếng Việt
- Version: 2018.94.589
+ Version: 2018.99.159
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
@@ -892,7 +892,7 @@ l10n/vi:
    - lang/lang.vi.php
   Checksum:
    - d0334f8d5f6a14013637b5a59b8261cf:5215
-   - 123d66e54a69b01593f6af7950f87aaf:39301
+   - eace847077e52ca7156c023856b169a3:39301
    - f782afeefb4616cc74c2b2e7add47768:5405
  Reannotate: components.dat
 l10n/zh-TW:

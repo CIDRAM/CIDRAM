@@ -39,19 +39,9 @@ Origin: US
 Tag: Cogent VPNs+Proxies
 
 
-# Dangerous IPs/CIDRs infected by malware, whose ASNs can't be reliably blocked due to false positives and such.
-
-# "Trojan.Win32.Injector.cdgy" virus threat via domain "associationlachaloupe.com". Also caught attempting remote SQLi
-# to other websites. See: threatminer.org/av.php?q=Trojan.Win32.Injector.cdgy%20(v)
-# Updated: 2017.07.12 / Checked: 2017.12.19
-193.227.248.0/23 Deny Generic
-193.227.248.241/32 Deny Generic
-Tag: Malware Threat
-
-
 # proXPN Direct LLC (1 CIDR; no ASN).
 # Anonymous proxy service; Potential source of SPAM and hacking attacks.
-# Updated: 2016.05.26 / Checked: 2018.01.29
+# Updated: 2016.05.26 / Checked: 2018.04.06
 
 173.0.0.0/20 Deny Proxy
 Origin: US

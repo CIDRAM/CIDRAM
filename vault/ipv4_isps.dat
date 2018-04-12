@@ -8413,3 +8413,18 @@ Tag: Comcast Spam IPs
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 56048 ("China Mobile Communicaitons Corporation").
+# Legit mobile ISP in China. Not including entire ASN here; Only some specific problematic, spammy CIDRs.
+# %Listed, Google Malware Dashboard: 2.20%.
+# %Listed, CleanTalk.org: 21.17%.
+# Stop Forum Spam (SFS) listings: 18.
+# Updated: 2018.04.11
+
+223.71.0.0/16 Deny Spam
+Origin: CN
+Tag: China Mobile
+---
+recaptcha:
+ enabled: true

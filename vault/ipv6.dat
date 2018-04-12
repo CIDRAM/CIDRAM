@@ -1032,14 +1032,19 @@ Tag: Internap Network
 
 
 # ASN 23033 ("Wowrack.com").
-# %Listed, Google Malware Dashboard: 16.42%.
+# %Listed, Google Malware Dashboard: 1.49%.
 # %Listed, CleanTalk.org: 77.66%.
-# Stop Forum Spam (SFS) listings: 13,245.
-# Updated: 2018.01.05
+# Stop Forum Spam (SFS) listings: 11,232.
+# Updated: 2018.04.12
 
+2a07:1c44:6446::/48 Deny Cloud
+Origin: AT
 2a07:9944:1d::/48 Deny Cloud
 Origin: GB
+2001:df0:2e1:a00::/56 Deny Cloud
+Origin: ID
 2001:df6:6c00::/48 Deny Cloud
+2402:6680::/32 Deny Cloud
 Origin: IN
 2602:febc::/36 Deny Cloud
 2604:c00::/32 Deny Cloud
@@ -2759,7 +2764,7 @@ Tag: Media Temple, Inc
 
 
 # ASNs 12586, 31530, 48039, 197549 ("GHOSTnet GmbH").
-# Updated: 2018.01.05
+# Updated: 2018.01.05 / Checked: 2018.04.12
 
 2001:67c:18e8::/48 Deny Cloud
 2001:67c:2c58::/48 Deny Cloud
@@ -3999,11 +4004,12 @@ Tag: Host Sailor Ltd
 
 
 # ASNs 61317, 61440 ("Digital Energy Technologies").
-# %Listed, Google Malware Dashboard: 0.44% (AS61317), 0.69% (AS61440).
+# %Listed, Google Malware Dashboard: 0.42% (AS61317), 0.57% (AS61440).
 # %Listed, CleanTalk.org: 81.09% (AS61317), 73.91% (AS61440).
-# Stop Forum Spam (SFS) listings: 89,437 (AS61317), 22,739 (AS61440).
-# Updated: 2018.01.05
+# Stop Forum Spam (SFS) listings: 86,951 (AS61317), 19,853 (AS61440).
+# Updated: 2018.04.12
 
+2803:80::/36 Deny Cloud
 2803:80:1004::/48 Deny Cloud
 2803:80:2000::/35 Deny Cloud
 2803:80:4000::/34 Deny Cloud
@@ -4012,22 +4018,36 @@ Tag: Host Sailor Ltd
 Origin: CL
 2a00:d1a0::/48 Deny Cloud
 2a03:a960::/32 Deny Cloud
-2a0a:7a04::/48 Deny Cloud
+2a0a:7a00::/30 Deny Cloud
 2a0a:7a05::/32 Deny Cloud
-2a0a:7e04::/48 Deny Cloud
+2a0a:7a06::/32 Deny Cloud
 2a0a:7e05::/32 Deny Cloud
+2a0a:8603::/32 Deny Cloud
 2a0a:8604::/48 Deny Cloud
+2a0a:8605::/32 Deny Cloud
 2a0a:8606::/31 Deny Cloud
-2a0a:9204::/48 Deny Cloud
-2a0a:9a04::/48 Deny Cloud
+2a0a:9200::/32 Deny Cloud
+2a0a:9203::/32 Deny Cloud
+2a0a:9204::/30 Deny Cloud
+2a0a:9600::/29 Deny Cloud
+2a0a:9a00::/31 Deny Cloud
+2a0a:9a03::/32 Deny Cloud
+2a0a:9a04::/31 Deny Cloud
+2a0a:9a06::/32 Deny Cloud
 2a0a:9e00::/29 Deny Cloud
+2a0a:a600::/29 Deny Cloud
+2a0a:ae00::/29 Deny Cloud
+2a0a:b200::/29 Deny Cloud
+2a0b:8700::/29 Deny Cloud
 Origin: DE
+2a06:d644::/32 Deny Cloud
 2a0a:d780::/29 Deny Cloud
+2a0c:a187::/32 Deny Cloud
 2a0d:af00::/29 Deny Cloud
 Origin: RU
 2602:ff62::/39 Deny Cloud
 2602:ff62:200::/40 Deny Cloud
-2607:6980:4fe0::/44 Deny Cloud
+2602:ff62:f00::/40 Deny Cloud
 Origin: US
 Tag: D.E.Tech
 

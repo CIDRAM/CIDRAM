@@ -34,3 +34,14 @@ Origin: LT
 2a07:a880:1416::/48 Deny Proxy
 Origin: SE
 Tag: Cogent VPNs+Proxies
+
+
+# ASN 59898 ("AllSafe Sarl").
+# Related to "ProtonVPN", "ProtonMail", and "Proton Technologies". Provides VPNs and proxies, both public and private.
+# No listings on any BLs yet, but we've been seeing some strange, bot-like activity from them via access logs and
+# honeypots. Added as a precaution.
+# Updated: 2018.04.17
+
+2a0a:6d40::/29 Deny Proxy
+Origin: CH
+Tag: AllSafe Sarl

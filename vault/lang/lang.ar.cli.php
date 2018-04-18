@@ -29,7 +29,7 @@ $CIDRAM['lang']['CLI_H'] = "
  -v التحقق من ملف التوقيع.
  -f إصلاح ملف التوقيع.
 
- Examples:
+ مثال:
  php.exe /cidram/loader.php -c 192.168.0.0
  php.exe /cidram/loader.php -c 2001:db8::
  php.exe /cidram/loader.php -g 1.2.3.4

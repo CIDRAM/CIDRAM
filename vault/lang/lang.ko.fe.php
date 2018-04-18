@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.04.05).
+ * This file: Korean language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = '기본 ' . $CIDRAM['IPvX'] . ' 서명 일반적으로 기본 패키지에 포함되어 있습니다. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . '불필요한 클라우드 서비스와 非人의 끝점을 차단합니다.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . '보곤/화성 CIDR을 차단합니다.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . '스패머을 가진 위험한 ISP를 차단합니다.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . '프록시, VPN 및 기타 불필요한 서비스 CIDR을 차단합니다.';
+    $CIDRAM['Pre'] = $CIDRAM['IPvX'] . '의 서명 파일 (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], '불필요한 클라우드 서비스와 非人의 끝점');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], '보곤/화성 CIDR');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], '스패머을 가진 위험한 ISP');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], '프록시, VPN 및 기타 불필요한 서비스 CIDR');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = '기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = '메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = '스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = '스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 ISP에 속한 호스트를 차단합니다.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = '스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 TLD에 속한 호스트를 차단합니다.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = '위험한 쿠키에 대해 제한된 보호 기능을 제공합니다.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = '요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다.';
 $CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4의 서명 파일 (보곤/화성 CIDR).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4의 서명 파일 (스패머을 가진 위험한 ISP).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6의 서명 파일 (불필요한 클라우드 서비스와 非人의 끝점).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6의 서명 파일 (보곤/화성 CIDR).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6의 서명 파일 (스패머을 가진 위험한 ISP).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = '위험한 호스트 차단 모듈';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = '위험한 호스트 차단 모듈 (ISP)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = '위험한 TLD 차단 모듈';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu 차단기 모듈';
+$CIDRAM['lang']['Name: module_cookies.php'] = '선택적 쿠키 스캐너 모듈';
+$CIDRAM['lang']['Name: module_extras.php'] = '선택적 보안 엑스트라 스 모듈';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam 모듈';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex 차단기 모듈';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
@@ -173,8 +193,9 @@ $CIDRAM['lang']['label_sysinfo'] = '시스템 정보 :';
 $CIDRAM['lang']['label_tests'] = '테스트 :';
 $CIDRAM['lang']['label_total'] = '합계';
 $CIDRAM['lang']['label_unstable'] = '최신 불안정 :';
-$CIDRAM['lang']['label_your_ip'] = '당신의 IP :';
-$CIDRAM['lang']['label_your_ua'] = '당신의 UA :';
+$CIDRAM['lang']['label_used_with'] = '용법 : ';
+$CIDRAM['lang']['label_your_ip'] = '당신의 IP :';
+$CIDRAM['lang']['label_your_ua'] = '당신의 UA :';
 $CIDRAM['lang']['link_accounts'] = '계정';
 $CIDRAM['lang']['link_cache_data'] = '데이터 캐쉬';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR 계산기';

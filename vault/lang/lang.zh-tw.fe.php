@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.04.05).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = '標準' . $CIDRAM['IPvX'] . '簽名通常包括在主包。​';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . '阻止不想要的雲服務和非人終端。';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . '阻止bogon/火星CIDR。';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . '阻止危險和垃圾容易ISP。';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . '阻止CIDR從代理，VPN和其他不需要服務。';
+    $CIDRAM['Pre'] = $CIDRAM['IPvX'] . '簽名文件（%s）。';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], '不想要的雲服務和非人端點');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'bogon/火星CIDR');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], '危險和垃圾容易ISP');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDR從代理，VPN和其他不需要服務');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = '標準簽名旁路文件通常包括在主包。';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（沒有簽名文件，文檔，和配置）。';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = '阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = '阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的ISP擁有的主機。';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = '阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機的TLD。';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = '提供一些針對危險cookie的有限保護。';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = '提供一些有限的保護針對各種攻擊向量常用於請求。';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = '防止通過SFS列出的IP地址訪問註冊和登錄頁面。';
 $CIDRAM['lang']['Name: Bypasses'] = '標準簽名旁路。';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4簽名文件（不想要的雲服務和非人端點）。';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4簽名文件（bogon/火星CIDR）。';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4簽名文件（危險和垃圾容易ISP）。';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4簽名文件（CIDR從代理，VPN和其他不需要服務）。';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6簽名文件（不想要的雲服務和非人端點）。';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6簽名文件（bogon/火星CIDR）。';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6簽名文件（危險和垃圾容易ISP）。';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6簽名文件（CIDR從代理，VPN和其他不需要服務）。';
+$CIDRAM['lang']['Name: module_badhosts.php'] = '壞主機阻塞模塊';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = '壞主機阻塞模塊（ISP）';
+$CIDRAM['lang']['Name: module_badtlds.php'] = '壞TLD阻塞模塊';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = '百度阻塞模塊';
+$CIDRAM['lang']['Name: module_cookies.php'] = '可選cookie掃描器模塊';
+$CIDRAM['lang']['Name: module_extras.php'] = '可選安全附加模塊';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam 模塊';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex阻塞模塊';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主頁</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = '系統信息：';
 $CIDRAM['lang']['label_tests'] = '測試：';
 $CIDRAM['lang']['label_total'] = '總';
 $CIDRAM['lang']['label_unstable'] = '最新不穩定：';
+$CIDRAM['lang']['label_used_with'] = '用於：';
 $CIDRAM['lang']['label_your_ip'] = '您的IP：';
 $CIDRAM['lang']['label_your_ua'] = '您的UA：';
 $CIDRAM['lang']['link_accounts'] = '賬戶';

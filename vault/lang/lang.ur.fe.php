@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.04.05).
+ * This file: Urdu language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'پہلے سے طے شدہ ' . $CIDRAM['IPvX'] . ' کی دستخط عام طور پر بنیادی پیکیج کے ساتھ شامل تھے. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'بلاکس martian/bogon CIDR.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'خطرناک بلاکس اور سپام ISP.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات کے لئے CIDR.';
+    $CIDRAM['Pre'] = $CIDRAM['IPvX'] . ' کی دستخط کی فائل (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'bogon/martian CIDRs');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'خطرناک اور سپام ISP');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'مرکزی پیکیج (بغیر دستخط، دستاویزات، اور ترتیب).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'بلاکس اکثر سپیمرز، ہیکرز، اور دیگر غلط تنظیموں کے ذریعہ استعمال ہوتے ہیں.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'آئی ایس پیز سے تعلق رکھنے والے بلاکس میزبان اکثر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کی طرف سے استعمال ہوتے ہیں.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'عام طور پر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کے ذریعہ TLDs سے تعلق رکھنے والے بلاکس میزبان.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'خطرناک کوکیز کے خلاف کچھ محدود تحفظ فراہم کرتا ہے.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'عام طور پر درخواستوں میں استعمال ہونے والی مختلف حمل ویکٹروں کے خلاف کچھ محدود تحفظ فراہم کرتا ہے.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS سے گنا آئی پی ایس کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے.';
 $CIDRAM['lang']['Name: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائ پاس.';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4 کی دستخط کی فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 کی دستخط کی فائل (bogon/martian CIDRs).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 کی دستخط کی فائل (خطرناک اور سپام ISP).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 کی دستخط کی فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6 کی دستخط کی فائل (ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 کی دستخط کی فائل (bogon/martian CIDRs).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 کی دستخط کی فائل (خطرناک اور سپام ISP).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 کی دستخط کی فائل (کے لئے پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات CIDR).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'برا میزبانوں بلاکر ماڈیول';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'برا میزبانوں بلاکر ماڈیول (ISP)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'خراب TLD بلاکر ماڈیول';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'بیدو بلاکر ماڈیول';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'اختیاری کوکی سکینر ماڈیول';
+$CIDRAM['lang']['Name: module_extras.php'] = 'اختیاری سیکورٹی مع اضافہ جات ماڈیول';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam ماڈیول';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex کی بلاکر ماڈیول';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ہوم</a> | <a href="?cidram-page=logout">لاگ آوٹ</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">لاگ آوٹ</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';
 $CIDRAM['lang']['label_tests'] = 'ٹیسٹ:';
 $CIDRAM['lang']['label_total'] = 'تمام';
 $CIDRAM['lang']['label_unstable'] = 'تازہ ترین غیر مستحکم:';
+$CIDRAM['lang']['label_used_with'] = 'کے ساتھ استعمال کیا جاتا ہے: ';
 $CIDRAM['lang']['label_your_ip'] = 'آپ کے IP:';
 $CIDRAM['lang']['label_your_ua'] = 'آپ کے UA:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.04.05).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'Các chữ ký ' . $CIDRAM['IPvX'] . ' mặc định thường bao gồm với gói thầu chính. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'Chặn dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'Chặn các CIDR bogon/martian.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'Chặn ISP nguy hiểm và gửi thư rác.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Chặn các CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn.';
+    $CIDRAM['Pre'] = 'Tập tin chữ ký ' . $CIDRAM['IPvX'] . ' (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'CIDR bogon/martian');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'ISP nguy hiểm và gửi thư rác');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Chặn các máy chủ web của các ISP mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
-$CIDRAM['lang']['Name: IPv4'] = 'Tập tin chữ ký IPv4 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'Tập tin chữ ký IPv4 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'Tập tin chữ ký IPv4 (ISP nguy hiểm và gửi thư rác).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'Tập tin chữ ký IPv4 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
-$CIDRAM['lang']['Name: IPv6'] = 'Tập tin chữ ký IPv6 (dịch vụ điện toán đám mây không mong muốn và thiết bị đầu cuối không phải con người).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'Tập tin chữ ký IPv6 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'Mô-đun cho chặn các host xấu';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Mô-đun cho chặn các host xấu (ISP)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'Mô-đun cho chặn các TLD xấu';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Mô-đun cho chặn Baidu';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'Mô-đun tùy chọn cho cookie quét';
+$CIDRAM['lang']['Name: module_extras.php'] = 'Mô-đun tùy chọn cho bảo mật tính năng bổ sung';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Mô-đun Stop Forum Spam';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Mô-đun cho chặn Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $CIDRAM['lang']['label_tests'] = 'Kiểm tra:';
 $CIDRAM['lang']['label_total'] = 'Toàn bộ';
 $CIDRAM['lang']['label_unstable'] = 'Không ổn định mới nhất:';
+$CIDRAM['lang']['label_used_with'] = 'Được sử dụng với: ';
 $CIDRAM['lang']['label_your_ip'] = 'IP của bạn:';
 $CIDRAM['lang']['label_your_ua'] = 'UA của bạn:';
 $CIDRAM['lang']['link_accounts'] = 'Tài Khoản';

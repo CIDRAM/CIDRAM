@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.04.05).
+ * This file: Turkish language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'Normal olarak ana paketle birlikte verilen varsayılan ' . $CIDRAM['IPvX'] . ' imzaları. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'İstenmeyen bulut servislerini ve insan olmayan uç noktaları engeller.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'Bogon/martian CIDR\'leri engeller.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'Tehlikeli ve spam yapan ISS\'leri engeller.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Yakınlık/Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'leri engeller.';
+    $CIDRAM['Pre'] = $CIDRAM['IPvX'] . ' imzaları dosyası (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'istenmeyen bulut servislerini ve insan olmayan bitiş noktaları');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'Bogon/Martıyen CIDR\'leri');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'tehlikeli ve spam gönderen ISS\'ler');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Varsayılan imza bypass\'lar, normalde ana paketle birlikte verilir.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça ISP\'lere ait kullanılan ana bilgisayarları engeller.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD\'lere ait kullanılan ana bilgisayarları engeller.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS tarafından listelenen IP\'lere karşı kayıt ve oturum açma sayfalarını korur.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan bitiş noktaları).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6 imzaları dosyası (istenmeyen bulut servislerini ve insan olmayan bitiş noktaları).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 imzaları dosyası (Bogon/Martıyen CIDR\'leri).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 imzaları dosyası (tehlikeli ve spam gönderen ISS\'ler).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 imzaları dosyası (yakınlık/proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR\'ler).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'Kötü ana engelleyici modülü';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Kötü ana engelleyici modülü (ISS\'ler)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'Kötü TLD engelleyici modülü';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu engelleyici modülü';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'İsteğe bağlı çerez tarayıcı modülü';
+$CIDRAM['lang']['Name: module_extras.php'] = 'İsteğe bağlı güvenlik ekstrası modülü';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam modülü';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex engelleyici modülü';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';
 $CIDRAM['lang']['label_tests'] = 'Testler:';
 $CIDRAM['lang']['label_total'] = 'Toplam';
 $CIDRAM['lang']['label_unstable'] = 'En yeni kararsız:';
+$CIDRAM['lang']['label_used_with'] = 'İle kullanılan: ';
 $CIDRAM['lang']['label_your_ip'] = 'Senin IP:';
 $CIDRAM['lang']['label_your_ua'] = 'Senin UA:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';

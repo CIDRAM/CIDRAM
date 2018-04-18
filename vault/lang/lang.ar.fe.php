@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.04.05).
+ * This file: Arabic language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'تواقيع القياسية ' . $CIDRAM['IPvX'] . ' وشملت عادة مع الحزمة. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'بحجبه نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'بحجبه bogon/المريخ CIDRs.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'بحجبه مزودي خدمات الإنترنت خطيرة ومزعجة.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'بحجبه CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة.';
+    $CIDRAM['Pre'] = 'عناوين ' . $CIDRAM['IPvX'] . ' ملف التوقيعات (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'bogon/المريخ CIDRs');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'مزودي خدمات الإنترنت خطيرة ومزعجة');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'ملفات الالتفافية التوقيع القياسية المدرجة عادة مع الحزمة الرئيسية.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'كتل المضيفات التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'كتل المضيفين الذين ينتمون إلى مقدمي خدمات الإنترنت، التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'كتل المضيفين التي تنتمي إلى TLD، التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'يوفر بعض الحماية المحدودة ضد ملفات تعريف الارتباط الخطيرة.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS.';
 $CIDRAM['lang']['Name: Bypasses'] = 'يتجاوز توقيع قياسي.';
-$CIDRAM['lang']['Name: IPv4'] = 'عناوين IPv4 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'عناوين IPv4 ملف التوقيعات (bogon/المريخ CIDRs).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'عناوين IPv4 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'عناوين IPv4 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).';
-$CIDRAM['lang']['Name: IPv6'] = 'عناوين IPv6 ملف التوقيعات (نقاط الوصول غير البشرية و الخدمات السحابية غير المرغوب فيها).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'عناوين IPv6 ملف التوقيعات (bogon/المريخ CIDRs).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'عناوين IPv6 ملف التوقيعات (مزودي خدمات الإنترنت خطيرة ومزعجة).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'عناوين IPv6 ملف التوقيعات (CIDRs الوكلاء، والشبكات الخاصة الإفتراضية، وغيرها من الخدمات غير المرغوب فيها المتنوعة).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'سيئة المضيفين وحدة مانع';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'سيئة المضيفين وحدة مانع (ISP)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'وحدة حجب TLD سيئة';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'بايدو وحدة مانع';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'كوكي الماسح الضوئي';
+$CIDRAM['lang']['Name: module_extras.php'] = 'وحدة اشياء الأمن اختياري';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam وحدة';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'بايدو وحدة مانع';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';
 $CIDRAM['lang']['label_tests'] = 'اختبارات:';
 $CIDRAM['lang']['label_total'] = 'مجموع';
 $CIDRAM['lang']['label_unstable'] = 'أحدث غير مستقرة:';
+$CIDRAM['lang']['label_used_with'] = 'يستعمل مع: ';
 $CIDRAM['lang']['label_your_ip'] = 'عنوان IP الخاص بك:';
 $CIDRAM['lang']['label_your_ua'] = 'وكيل المستخدم الخاص بك:';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';

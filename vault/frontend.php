@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.04.05).
+ * This file: Front-end handler (last modified: 2018.04.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1426,6 +1426,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 $CIDRAM['Components']['ThisComponent']['False Positive Risk'] =
                     $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['False Positive Risk'];
             }
+            if (
+                empty($CIDRAM['Components']['ThisComponent']['Used with']) &&
+                !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Used with'])
+            ) {
+                $CIDRAM['Components']['ThisComponent']['Used with'] = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Used with'];
+            }
             if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'])) {
                 $CIDRAM['Components']['ThisComponent']['Extended Description'] =
                     $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Extended Description'];
@@ -1479,19 +1485,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                 }
             }
             if (!empty($CIDRAM['Components']['ThisComponent']['Files']['To'])) {
-                $CIDRAM['Activable'] = (
-                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv4') !== false ||
-                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;ipv6') !== false ||
-                    strpos($CIDRAM['Components']['ThisComponent']['Extended Description'], 'signatures-&gt;modules') !== false
-                );
+                $CIDRAM['Activable'] = $CIDRAM['IsActivable']($CIDRAM['Components']['ThisComponent']);
                 if (
                     ($CIDRAM['Components']['Key'] === 'l10n/' . $CIDRAM['Config']['general']['lang']) ||
                     ($CIDRAM['Components']['Key'] === 'theme/' . $CIDRAM['Config']['template_data']['theme']) ||
                     ($CIDRAM['Components']['Key'] === 'CIDRAM') ||
-                    $CIDRAM['IsInUse'](
-                        $CIDRAM['Components']['ThisComponent']['Files']['To'],
-                        $CIDRAM['Components']['ThisComponent']['Extended Description']
-                    )
+                    $CIDRAM['IsInUse']($CIDRAM['Components']['ThisComponent'])
                 ) {
                     $CIDRAM['AppendToString']($CIDRAM['Components']['ThisComponent']['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $CIDRAM['lang']['state_component_is_active'] . '</div>'

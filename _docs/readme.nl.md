@@ -18,7 +18,7 @@
 
 ### 1. <a name="SECTION1"></a>PREAMBULE
 
-CIDRAM (Classless Inter-Domain Routing Access Manager) is een PHP-script ontworpen om websites te beschermen door het blokkeren van verzoeken afkomstig van IP-adressen beschouwd als bronnen van ongewenste verkeer, inclusief (maar niet gelimiteerd tot) het verkeer van niet-menselijke toegang eindpunten, cloud-diensten, spambots, schrapers/scrapers, ezv. Het doet dit door het berekenen van de mogelijke CIDRs van de IP-adressen geleverde van binnenkomende verzoeken en dan het vergelijken van deze mogelijke CIDRs tegen zijn signature bestanden (deze signature bestanden bevatten lijsten van CIDRs van IP-adressen beschouwd als bronnen van ongewenste verkeer); Als overeenkomsten worden gevonden, de verzoeken worden geblokkeerd.
+CIDRAM (Classless Inter-Domain Routing Access Manager) is een PHP-script ontworpen om websites te beschermen door het blokkeren van verzoeken afkomstig van IP-adressen beschouwd als bronnen van ongewenste verkeer, inclusief (maar niet gelimiteerd tot) het verkeer van niet-menselijke toegang eindpunten, cloud-diensten, spambots, schrapers/scrapers, ezv. Het doet dit door het berekenen van de mogelijke CIDR's van de IP-adressen geleverde van binnenkomende verzoeken en dan het vergelijken van deze mogelijke CIDR's tegen zijn signature bestanden (deze signature bestanden bevatten lijsten van CIDR's van IP-adressen beschouwd als bronnen van ongewenste verkeer); Als overeenkomsten worden gevonden, de verzoeken worden geblokkeerd.
 
 *(Zien: [Wat is een "CIDR"?](#WHAT_IS_A_CIDR)).*
 
@@ -82,7 +82,7 @@ Als u wilt CIDRAM gebruiken met WordPress, u kunt alle bovenstaande instructies 
 
 CIDRAM moet blokkeren ongewenste verzoeken naar uw website automatisch zonder enige handmatige hulp, afgezien van de eerste installatie.
 
-U kunt aanpassen uw configuratie en aanpassen de CIDRs dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw signature bestanden.
+U kunt aanpassen uw configuratie en aanpassen de CIDR's dat zal worden geblokkeerd door het modificeren van het configuratiebestand en/of uw signature bestanden.
 
 Als u tegenkomen een valse positieven, neem dan contact met mij op om me te laten weten. *(Zien: [Wat is een "vals positieve"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
@@ -262,15 +262,15 @@ Bestand | Beschrijving
 /vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke signature-secties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ipv4.dat | IPv4 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
-/vault/ipv4_bogons.dat | IPv4 signatures bestand (bogon/martian CIDRs).
+/vault/ipv4_bogons.dat | IPv4 signatures bestand (bogon/martian CIDR's).
 /vault/ipv4_custom.dat.RenameMe | IPv4 aangepaste signatures bestand (hernoemen om te activeren).
-/vault/ipv4_isps.dat | IPv4 signatures bestand (gevaarlijk en spammy ISPs).
-/vault/ipv4_other.dat | IPv4 signatures bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+/vault/ipv4_isps.dat | IPv4 signatures bestand (gevaarlijk en spammy ISP's).
+/vault/ipv4_other.dat | IPv4 signatures bestand (CIDR's voor proxies, VPN's, en diverse andere ongewenste diensten).
 /vault/ipv6.dat | IPv6 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
-/vault/ipv6_bogons.dat | IPv6 signatures bestand (bogon/martian CIDRs).
+/vault/ipv6_bogons.dat | IPv6 signatures bestand (bogon/martian CIDR's).
 /vault/ipv6_custom.dat.RenameMe | IPv6 aangepaste signatures bestand (hernoemen om te activeren).
-/vault/ipv6_isps.dat | IPv6 signatures bestand (gevaarlijk en spammy ISPs).
-/vault/ipv6_other.dat | IPv6 signatures bestand (CIDRs voor proxies, VPN's, en diverse andere ongewenste diensten).
+/vault/ipv6_isps.dat | IPv6 signatures bestand (gevaarlijk en spammy ISP's).
+/vault/ipv6_other.dat | IPv6 signatures bestand (CIDR's voor proxies, VPN's, en diverse andere ongewenste diensten).
 /vault/lang.php | Taal-handler.
 /vault/modules.dat | Bevat informatie met betrekking tot de CIDRAM modules; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/outgen.php | Uitvoer generator.
@@ -278,7 +278,7 @@ Bestand | Beschrijving
 /vault/recaptcha.php | reCAPTCHA module.
 /vault/rules_as6939.php | Aangepaste regels bestand voor AS6939.
 /vault/rules_softlayer.php | Aangepaste regels bestand voor Soft Layer.
-/vault/rules_specific.php | Aangepaste regels bestand voor sommige specifiek CIDRs.
+/vault/rules_specific.php | Aangepaste regels bestand voor sommige specifiek CIDR's.
 /vault/salt.dat | Zout bestand (gebruikt door sommige perifere functionaliteit; alleen gegenereerd indien nodig).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
@@ -407,31 +407,31 @@ Configuratie voor signatures.
 - Een lijst van de IPv6 signature bestanden dat CIDRAM moet proberen om te gebruiken, afgebakend door komma's. U kunt items hier toevoegen Als u wilt meer IPv6 signature files in CIDRAM bevatten.
 
 "block_cloud"
-- Blokkeren CIDRs geïdentificeerd als behorend tot webhosting/cloud-diensten? Als u een api te bedienen vanaf uw website of als u verwacht dat andere websites aan te sluiten op uw website, dit richtlijn moet worden ingesteld op false. Als u niet, dan, dit richtlijn moet worden ingesteld op true.
+- Blokkeren CIDR's geïdentificeerd als behorend tot webhosting/cloud-diensten? Als u een api te bedienen vanaf uw website of als u verwacht dat andere websites aan te sluiten op uw website, dit richtlijn moet worden ingesteld op false. Als u niet, dan, dit richtlijn moet worden ingesteld op true.
 
 "block_bogons"
-- Blokkeren bogon/martian CIDRs? Als u verwacht aansluitingen om uw website vanuit uw lokale netwerk, vanuit localhost, of vanuit uw LAN, dit richtlijn moet worden ingesteld op false. Als u niet verwacht deze aansluitingen, dit richtlijn moet worden ingesteld op true.
+- Blokkeren bogon/martian CIDR's? Als u verwacht aansluitingen om uw website vanuit uw lokale netwerk, vanuit localhost, of vanuit uw LAN, dit richtlijn moet worden ingesteld op false. Als u niet verwacht deze aansluitingen, dit richtlijn moet worden ingesteld op true.
 
 "block_generic"
-- Blokkeren CIDRs algemeen aanbevolen voor blacklisting? Dit omvat alle signatures die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke signature categorieën.
+- Blokkeren CIDR's algemeen aanbevolen voor blacklisting? Dit omvat alle signatures die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke signature categorieën.
 
 "block_proxies"
-- Blokkeren CIDRs geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
+- Blokkeren CIDR's geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
 
 "block_spam"
-- Blokkeren CIDRs geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
+- Blokkeren CIDR's geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
 
 "modules"
 - Een lijst van module bestanden te laden na verwerking van de IPv4/IPv6 signatures, afgebakend door komma's.
 
 "default_tracktime"
-- Hoeveel seconden om IPs verboden door modules te volgen. Standaard = 604800 (1 week).
+- Hoeveel seconden om IP's verboden door modules te volgen. Standaard = 604800 (1 week).
 
 "infraction_limit"
 - Maximum aantal overtredingen een IP mag worden gesteld voordat hij wordt verboden door IP-tracking. Standaard = 10.
 
 "track_mode"
-- Wanneer moet overtredingen worden gerekend? False = Wanneer IPs geblokkeerd door modules worden. True = Wanneer IPs om welke reden geblokkeerd worden.
+- Wanneer moet overtredingen worden gerekend? False = Wanneer IP's geblokkeerd door modules worden. True = Wanneer IP's om welke reden geblokkeerd worden.
 
 #### "recaptcha" (Categorie)
 Optioneel, u kan uw gebruikers te voorzien van een manier om de "Toegang Geweigerd" pagina te omzeilen, door middel van het invullen van een reCAPTCHA instantie, als u wilt om dit te doen. Dit kan helpen om een aantal van de risico's die samenhangen met valse positieven te beperken, in die situaties waar we niet helemaal zeker of er een verzoek is voortgekomen uit een machine of een mens.
@@ -448,7 +448,7 @@ Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik va
 - (Een andere waarde wordt op dezelfde wijze als 0 behandeld).
 
 "lockip"
-- Geeft aan of hashes moeten worden vergrendeld om specifieke IPs. False = Cookies en hashes KAN worden gebruikt voor meerdere IP-adressen (standaard). True = Cookies en hashes kan NIET worden gebruikt voor meerdere IP-adressen (cookies/hashes worden vergrendeld om IPs).
+- Geeft aan of hashes moeten worden vergrendeld om specifieke IP's. False = Cookies en hashes KAN worden gebruikt voor meerdere IP-adressen (standaard). True = Cookies en hashes kan NIET worden gebruikt voor meerdere IP-adressen (cookies/hashes worden vergrendeld om IP's).
 - Notitie: "lockip" waarde wordt genegeerd als "lockuser" is false, te wijten aan dat het mechanisme voor het onthouden van "gebruikers" verschilt afhankelijk van deze waarde.
 
 "lockuser"
@@ -512,7 +512,7 @@ Alle IPv4 signatures volgt het formaat: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `[Param]` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `[Function]`.
 
 Alle IPv6 signatures volgt het formaat: `xxxx:xxxx:xxxx:xxxx::xxxx/yy [Function] [Param]`.
-- `xxxx:xxxx:xxxx:xxxx::xxxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok). Compleet notatie en verkorte notatie zijn beide aanvaardbaar (en ieder moet volg de juiste en relevante normen van IPv6-notatie, maar met één uitzondering: een IPv6-adres kan nooit beginnen met een afkorting wanneer het wordt gebruikt in een signature voor dit script, vanwege de manier waarop CIDRs door het script zijn gereconstrueerd; Bijvoorbeeld, `::1/128` moet worden uitgedrukt, bij gebruik in een signature, als `0::1/128`, en `::0/128` uitgedrukt als `0::/128`).
+- `xxxx:xxxx:xxxx:xxxx::xxxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok). Compleet notatie en verkorte notatie zijn beide aanvaardbaar (en ieder moet volg de juiste en relevante normen van IPv6-notatie, maar met één uitzondering: een IPv6-adres kan nooit beginnen met een afkorting wanneer het wordt gebruikt in een signature voor dit script, vanwege de manier waarop CIDR's door het script zijn gereconstrueerd; Bijvoorbeeld, `::1/128` moet worden uitgedrukt, bij gebruik in een signature, als `0::1/128`, en `::0/128` uitgedrukt als `0::/128`).
 - `yy` vertegenwoordigt het CIDR blokgrootte [1-128].
 - `[Function]` instrueert het script wat te doen met de signature (hoe de signature moet worden beschouwd).
 - `[Param]` vertegenwoordigt alle aanvullende informatie dat kan worden verlangd door `[Function]`.
@@ -533,9 +533,9 @@ Als "Run" wordt gebruikt, als de signature wordt getriggerd, het script zal prob
 
 Voorbeeld: `127.0.0.0/8 Run example.php`
 
-Dit kan handig zijn als u wilt, voor enige specifieke IPs en/of CIDRs, om specifieke PHP-code uit te voeren.
+Dit kan handig zijn als u wilt, voor enige specifieke IP's en/of CIDR's, om specifieke PHP-code uit te voeren.
 
-Als "Whitelist" wordt gebruikt, als de signature wordt getriggerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDRs van wordt gedetecteerd.
+Als "Whitelist" wordt gebruikt, als de signature wordt getriggerd, het script zal alle detecties resetten (als er is al enige detecties) en breek de testfunctie. `[Param]` worden genegeerd. Deze functie werkt als een whitelist, om te voorkomen dat bepaalde IP-adressen en/of CIDR's van wordt gedetecteerd.
 
 Voorbeeld: `127.0.0.1/32 Whitelist`
 
@@ -644,7 +644,7 @@ Het gebruik van YAML markup in de signature bestanden is volledig optioneel (d.w
 
 Notitie: YAML markup implementatie in CIDRAM is zeer simplistisch en zeer beperkt; Het is bedoeld om de specifieke eisen van CIDRAM te voldoen op een manier dat heeft de vertrouwdheid van YAML markup, maar noch volgt noch voldoet aan de officiële specificaties (en zal daarom niet zich op dezelfde wijze als grondiger implementaties elders, en is misschien niet geschikt voor alle andere projecten elders).
 
-In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signature-secties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature-sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDRs en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature-sectie wordt getriggerd (zie de onderstaande voorbeelden).
+In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signature-secties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature-sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDR's en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature-sectie wordt getriggerd (zie de onderstaande voorbeelden).
 
 ```
 # Foobar 1.
@@ -878,7 +878,7 @@ Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "s
 
 "CIDR" is een acroniem voor "Classless Inter-Domain Routing" *[[1](https://nl.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [2](http://whatismyipaddress.com/cidr)]*, en het is dit acroniem dat gebruikt wordt als onderdeel van de naam voor dit pakket, "CIDRAM", waarvoor is een acroniem voor "Classless Inter-Domain Routing Access Manager".
 
-Echter, in het context van CIDRAM (zoals, binnen deze documentatie, binnen discussies met betrekking tot CIDRAM, of binnen de CIDRAM lokalisaties), wanneer een "CIDR" (enkelvoud) of "CIDRs" (meervoud) wordt genoemd of bedoeld (en dus waarbij we deze woorden als zelfstandige naamwoorden gebruiken, in tegenstelling tot als acroniemen), wat hier bedoeld is, is een subnet (of subnetten), uitgedrukt met CIDR notatie. De reden dat CIDR (of CIDRs) wordt gebruikt in plaats van subnet (of subnetten) is om duidelijk te maken dat het specifiek subnets wordt uitgedrukt met CIDR notatie waarnaar wordt verwezen (omdat CIDR notatie slechts één van de verschillende manieren waarop subnetten uitgedrukt kunnen worden). CIDRAM kan daarom beschouwd worden als een "subnet access manager".
+Echter, in het context van CIDRAM (zoals, binnen deze documentatie, binnen discussies met betrekking tot CIDRAM, of binnen de CIDRAM lokalisaties), wanneer een "CIDR" (enkelvoud) of "CIDR's" (meervoud) wordt genoemd of bedoeld (en dus waarbij we deze woorden als zelfstandige naamwoorden gebruiken, in tegenstelling tot als acroniemen), wat hier bedoeld is, is een subnet (of subnetten), uitgedrukt met CIDR notatie. De reden dat CIDR (of CIDR's) wordt gebruikt in plaats van subnet (of subnetten) is om duidelijk te maken dat het specifiek subnets wordt uitgedrukt met CIDR notatie waarnaar wordt verwezen (omdat CIDR notatie slechts één van de verschillende manieren waarop subnetten uitgedrukt kunnen worden). CIDRAM kan daarom beschouwd worden als een "subnet access manager".
 
 Hoewel deze dubbele betekenis van "CIDR" in sommige gevallen dubbelzinnig kan zijn, deze uitleg, samen met de context die wordt verstrekt, zou moeten helpen om dubbelzinnigheid te heffen.
 

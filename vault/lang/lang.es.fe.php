@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.04.05).
+ * This file: Spanish language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'Firmas estándar ' . $CIDRAM['IPvX'] . ' normalmente se incluyen con el paquete principal. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'Bloquea los servicios en la nube no deseados y puntos finales no humanos.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'Bloquea bogon/marciano CIDRs.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'Bloquea ISPs peligroso y propenso a spam.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Bloquea CIDRs para proxies, VPNs y otros servicios misceláneos no deseados.';
+    $CIDRAM['Pre'] = 'Archivo de firmas por ' . $CIDRAM['IPvX'] . ' (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'servicios en la nube no deseados y puntos finales no humanos');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'bogon/marciano CIDRs');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'ISPs peligroso y propenso a spam');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDRs para proxies, VPNs y otros servicios misceláneos no deseados');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Los archivos para bypass de firmas estándar normalmente se incluyen con el paquete principal.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'El paquete principal (menos las firmas, la documentación, y la configuración).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Bloquea los hosts utilizados con frecuencia por spammers, hackers y otras entidades nefastas.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Bloquea los hosts que pertenecen a los ISP utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Bloquea los hosts que pertenecen a los TLD utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Proporciona algunas protecciones limitadas contra cookies peligrosas.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'Proporciona algunas protecciones limitadas contra varios vectores de ataque comúnmente utilizado en las solicitudes.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Bypasses de firmas estándar.';
-$CIDRAM['lang']['Name: IPv4'] = 'Archivo de firmas por IPv4 (servicios en la nube no deseados y puntos finales no humanos).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'Archivo de firmas por IPv4 (bogon/marciano CIDRs).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'Archivo de firmas por IPv4 (ISPs peligroso y propenso a spam).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'Archivo de firmas por IPv4 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).';
-$CIDRAM['lang']['Name: IPv6'] = 'Archivo de firmas por IPv6 (servicios en la nube no deseados y puntos finales no humanos).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'Archivo de firmas por IPv6 (bogon/marciano CIDRs).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'Archivo de firmas por IPv6 (ISPs peligroso y propenso a spam).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'Archivo de firmas por IPv6 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'Módulo bloqueador de hosts malos';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Módulo bloqueador de hosts malos (ISPs)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'Módulo bloqueador de TLDs malos';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Módulo bloqueador de Baidu';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'Escáner de cookies módulo opcional';
+$CIDRAM['lang']['Name: module_extras.php'] = 'Extras de seguridad módulo opcional';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Módulo Stop Forum Spam';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Módulo bloqueador de Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Cerrar Sesión</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Cerrar Sesión</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'Información del sistema:';
 $CIDRAM['lang']['label_tests'] = 'Pruebas:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Más nuevo inestable:';
+$CIDRAM['lang']['label_used_with'] = 'Usado con: ';
 $CIDRAM['lang']['label_your_ip'] = 'Tu IP:';
 $CIDRAM['lang']['label_your_ua'] = 'Tu UA:';
 $CIDRAM['lang']['link_accounts'] = 'Cuentas';

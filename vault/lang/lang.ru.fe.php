@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.04.05).
+ * This file: Russian language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'Стандартные сигнатуры ' . $CIDRAM['IPvX'] . ', обычно включены в основной пакет. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'Блокирует bogon/марсианин CIDRs.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'Блокирует опасно и спам-склонным интернет-провайдеры.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Блокирует CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг.';
+    $CIDRAM['Pre'] = $CIDRAM['IPvX'] . ' файла сигнатур (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'нежелательные облачные сервисы и нечеловеческие конечные точки');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'bogon/марсианин CIDRs');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'опасно и спам-склонным интернет-провайдеры');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Стандартная сигнатуры байпасы, обычно включены в основной пакет.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Основной пакет (минус сигнатуры, документация, и конфигурация).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Блокирует хосты, принадлежащие интернет-провайдерам, часто используемые спамерами, хакерами и другими гнусными объектами.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Блокирует хосты, принадлежащие ДВУ, часто используемые спамерами, хакерами и другими гнусными объектами.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Обеспечивает некоторые ограниченные средства защиты против опасных куки.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Стандартная сигнатуры байпасы.';
-$CIDRAM['lang']['Name: IPv4'] = 'IPv4 файла сигнатур (нежелательные облачные сервисы и нечеловеческие конечные точки).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'IPv4 файла сигнатур (bogon/марсианин CIDRs).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'IPv4 файла сигнатур (опасно и спам-склонным интернет-провайдеры).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'IPv4 файла сигнатур (CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг).';
-$CIDRAM['lang']['Name: IPv6'] = 'IPv6 файла сигнатур (нежелательные облачные сервисы и нечеловеческие конечные точки).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'IPv6 файла сигнатур (bogon/марсианин CIDRs).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'IPv6 файла сигнатур (опасно и спам-склонным интернет-провайдеры).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'IPv6 файла сигнатур (CIDRs для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'Модуль блокатор для плохие хосты';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Модуль блокатор для плохие хосты (интернет-провайдеры)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'Модуль блокатор для плохие ДВУ';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Модуль блокатор Baidu';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'Куки сканер модуль необязательный';
+$CIDRAM['lang']['Name: module_extras.php'] = 'Модуль необязательный дополнительные безопасности';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Модуль Stop Forum Spam';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Модуль блокатор Яндекс';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Файл для запись всех попыток входа в фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';
 $CIDRAM['lang']['label_tests'] = 'Испытания:';
 $CIDRAM['lang']['label_total'] = 'Всего';
 $CIDRAM['lang']['label_unstable'] = 'Последние нестабильный:';
+$CIDRAM['lang']['label_used_with'] = 'Используется с: ';
 $CIDRAM['lang']['label_your_ip'] = 'Ваш IP:';
 $CIDRAM['lang']['label_your_ua'] = 'Ваш UA:';
 $CIDRAM['lang']['link_accounts'] = 'Учетными Записями';
@@ -283,7 +304,7 @@ $CIDRAM['lang']['tip_custom_ua'] = 'Введите здесь пользоват
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Введите IP здесь.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Введите IP-адреса здесь.';
-$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Заметка: CIDRAM использует cookie для аутентификации логинов. Войдя в систему, Вы даете свое согласие на создание и сохранение файла cookie вашим браузером.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Заметка: CIDRAM использует куки для аутентификации логинов. Войдя в систему, Вы даете свое согласие на создание и сохранение файла куки вашим браузером.';
 $CIDRAM['lang']['tip_file_manager'] = 'Привет, {username}.<br />Файл менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим).';
 $CIDRAM['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для CIDRAM фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Привет, {username}.<br />Агрегатор IP позволяет вам выражать IP-адреса и CIDR как можно меньше. Введите данные для агрегирования и нажмите «ОК».';

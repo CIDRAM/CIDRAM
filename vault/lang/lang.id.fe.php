@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.04.05).
+ * This file: Indonesian language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'Tanda tangan ' . $CIDRAM['IPvX'] . ' standar biasanya disertakan dengan paket utama. ';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'Memblokir layanan cloud tidak diinginkan dan jalur akses non-manusia.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'Memblokir CIDR bogon/martian.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'Memblokir ISP berbahaya dan spam rawan.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan.';
+    $CIDRAM['Pre'] = 'File tanda tangan ' . $CIDRAM['IPvX'] . ' (%s).';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'layanan cloud tidak diinginkan dan jalur akses non-manusia');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'CIDR bogon/martian');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'ISP berbahaya dan spam rawan');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Memblokir host yang milik ISP, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Memblokir host yang milik TLD, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Menyediakan beberapa perlindungan terbatas terhadap cookie berbahaya.';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Bypass tanda tangan standar.';
-$CIDRAM['lang']['Name: IPv4'] = 'File tanda tangan IPv4 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'File tanda tangan IPv4 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'File tanda tangan IPv4 (ISP berbahaya dan spam rawan).';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'File tanda tangan IPv4 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
-$CIDRAM['lang']['Name: IPv6'] = 'File tanda tangan IPv6 (layanan cloud tidak diinginkan dan jalur akses non-manusia).';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'File tanda tangan IPv6 (CIDR bogon/martian).';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'File tanda tangan IPv6 (ISP berbahaya dan spam rawan).';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).';
+$CIDRAM['lang']['Name: module_badhosts.php'] = 'Modul pemblokir untuk host buruk';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Modul pemblokir untuk host buruk (ISP)';
+$CIDRAM['lang']['Name: module_badtlds.php'] = 'Modul pemblokir TLD buruk';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Modul pemblokir untuk Baidu';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'Modul scanner cookie opsional';
+$CIDRAM['lang']['Name: module_extras.php'] = 'Modul tambahan keamanan opsional';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Modul Stop Forum Spam';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modul pemblokir untuk Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';
 $CIDRAM['lang']['label_tests'] = 'Pengujian:';
 $CIDRAM['lang']['label_total'] = 'Total';
 $CIDRAM['lang']['label_unstable'] = 'Terbaru tidak stabil:';
+$CIDRAM['lang']['label_used_with'] = 'Digunakan dengan: ';
 $CIDRAM['lang']['label_your_ip'] = 'IP Anda:';
 $CIDRAM['lang']['label_your_ua'] = 'UA Anda:';
 $CIDRAM['lang']['link_accounts'] = 'Akun';

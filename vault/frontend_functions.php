@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.04.03).
+ * This file: Front-end functions file (last modified: 2018.04.18).
  */
 
 /**
@@ -487,26 +487,23 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     return $Arr;
 };
 
-/**
- * Checks whether a component is in use (front-end closure).
- *
- * @param array $Files The list of files to be checked.
- * @param array $Description The component extended description (used to
- *      determine which type of component it is).
- * @return bool Returns true (in use) or false (not in use).
- */
-$CIDRAM['IsInUse'] = function ($Files, $Description = '') use (&$CIDRAM) {
+/** Checks whether a component is in use (front-end closure). */
+$CIDRAM['IsInUse'] = function (&$Component) use (&$CIDRAM) {
+    $Files = empty($Component['Files']['To']) ? [] : $Component['Files']['To'];
+    $UsedWith = empty($Component['Used with']) ? '' : $Component['Used with'];
+    $Description = empty($Component['Extended Description']) ? '' : $Component['Extended Description'];
     foreach ($Files as $File) {
-        if ((
-            strpos($Description, 'signatures-&gt;ipv4') !== false &&
-            strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $File . ',') !== false
-        ) || (
-            strpos($Description, 'signatures-&gt;ipv6') !== false &&
-            strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $File . ',') !== false
-        ) || (
-            strpos($Description, 'signatures-&gt;modules') !== false &&
-            strpos(',' . $CIDRAM['Config']['signatures']['modules'] . ',', ',' . $File . ',') !== false
-        ) || (
+        if ((($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) && strpos(
+            ',' . $CIDRAM['Config']['signatures']['ipv4'] . ',',
+            ',' . $File . ','
+        ) !== false) || (($UsedWith === 'ipv6' || strpos($Description, 'signatures-&gt;ipv6') !== false) && strpos(
+            ',' . $CIDRAM['Config']['signatures']['ipv6'] . ',',
+            ',' . $File . ','
+        ) !== false) || (($UsedWith === 'modules' || strpos($Description, 'signatures-&gt;modules') !== false) && strpos(
+            ',' . $CIDRAM['Config']['signatures']['modules'] . ',',
+            ',' . $File . ','
+        ) !== false) || (
+            !$UsedWith &&
             strpos($Description, 'signatures-&gt;ipv4') === false &&
             strpos($Description, 'signatures-&gt;ipv6') === false &&
             strpos($Description, 'signatures-&gt;modules') === false && (
@@ -617,6 +614,11 @@ $CIDRAM['FetchRemote'] = function () use (&$CIDRAM) {
     }
 };
 
+/** Check whether component is activable. */
+$CIDRAM['IsActivable'] = function (&$Component) {
+    return (!empty($Component['Used with']) || strpos($Component['Extended Description'], 'signatures-&gt;') !== false);
+};
+
 /** Activate component (front-end updates page). */
 $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
@@ -676,6 +678,11 @@ $CIDRAM['PrepareExtendedDescription'] = function (&$Arr, $Key = '') use (&$CIDRA
     if (is_array($Arr['Extended Description'])) {
         $CIDRAM['IsolateL10N']($Arr['Extended Description'], $CIDRAM['Config']['general']['lang']);
     }
+    if (!empty($Arr['Used with']) && strpos($Arr['Extended Description'], 'signatures-&gt;') === false) {
+        $Arr['Extended Description'] .=
+            '<br /><em>' . $CIDRAM['lang']['label_used_with'] .
+            '<code>signatures-&gt;' . $Arr['Used with'] . '</code></em>';
+    }
     if (!empty($Arr['False Positive Risk'])) {
         if ($Arr['False Positive Risk'] === 'Low') {
             $State = $CIDRAM['lang']['state_risk_low'];
@@ -714,10 +721,7 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
         $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]);
         $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']);
         $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To']);
-        return $CIDRAM['IsInUse'](
-            $CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To'],
-            $CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Extended Description']
-        );
+        return $CIDRAM['IsInUse']($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]);
     }
     return false;
 };
@@ -1752,16 +1756,18 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
         $InUse = $CIDRAM['ComponentFunctionUpdatePrep']();
         if (
             empty($InUse) &&
-            !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) &&
-            !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
-        ) {
-            if (strpos($CIDRAM['Components']['Meta'][$ID]['Extended Description'], 'signatures-&gt;ipv4') !== false) {
+            !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To']) && (
+                !empty($CIDRAM['Components']['Meta'][$ID]['Used with']) || !empty($CIDRAM['Components']['Meta'][$ID]['Extended Description'])
+        )) {
+            $UsedWith = empty($CIDRAM['Components']['Meta'][$ID]['Used with']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Used with'];
+            $Description = empty($CIDRAM['Components']['Meta'][$ID]['Extended Description']) ? '' : $CIDRAM['Components']['Meta'][$ID]['Extended Description'];
+            if ($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) {
                 $CIDRAM['ActivateComponent']('ipv4');
             }
-            if (strpos($CIDRAM['Components']['Meta'][$ID]['Extended Description'], 'signatures-&gt;ipv6') !== false) {
+            if ($UsedWith === 'ipv6' || strpos($Description, 'signatures-&gt;ipv6') !== false) {
                 $CIDRAM['ActivateComponent']('ipv6');
             }
-            if (strpos($CIDRAM['Components']['Meta'][$ID]['Extended Description'], 'signatures-&gt;modules') !== false) {
+            if ($UsedWith === 'modules' || strpos($Description, 'signatures-&gt;modules') !== false) {
                 $CIDRAM['ActivateComponent']('modules');
             }
         }
@@ -1814,7 +1820,7 @@ $CIDRAM['UpdatesHandler'] = function ($Action, $ID) use (&$CIDRAM) {
             $CIDRAM['Arrayify']($CIDRAM['Components']['Meta'][$ID]['Files']['To']);
             $ThisComponent = $CIDRAM['Components']['Meta'][$ID];
             $CIDRAM['PrepareExtendedDescription']($ThisComponent);
-            $InUse = $CIDRAM['IsInUse']($ThisComponent['Files']['To'], $ThisComponent['Extended Description']);
+            $InUse = $CIDRAM['IsInUse']($ThisComponent);
             unset($ThisComponent);
         }
         if (!empty($InUse) && !empty($CIDRAM['Components']['Meta'][$ID]['Files']['To'])) {

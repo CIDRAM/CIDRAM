@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.04.05).
+ * This file: Japanese language data for the front-end (last modified: 2018.04.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,17 +16,37 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
+    $CIDRAM['Pre'] = 'デフォルト' . $CIDRAM['IPvX'] . '署名、​通常はメインパッケージに含まれています。​';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . '不要なクラウドサービスと非人のエンドポイントをブロックします。';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'ボゴン/火星ＣＩＤＲをブロックします。';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'スパマーを持つ危険なＩＳＰをブロックします。';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'プロキシ、​ＶＰＮ、​およびその他の不要なサービスのＣＩＤＲをブロックします。';
+    $CIDRAM['Pre'] = $CIDRAM['IPvX'] . 'のシグネチャファイル​（%s）。';
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], '不要なクラウドサービスと非人のエンドポイント');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'ボゴン/火星ＣＩＤＲ');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'スパマーを持つ危険なＩＳＰ');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ');
+}
+unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
+
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'デフォルト署名バイパス、​通常はメインパッケージに含まれています。';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'メインパッケージ​（署名、​ドキュメンテーション、​コンフィギュレーション、​は含まれません）。';
+$CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。';
+$CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。';
+$CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。';
+$CIDRAM['lang']['Extended Description: module_cookies.php'] = '危険なクッキーに対するいくつかの限定された保護を提供します。';
+$CIDRAM['lang']['Extended Description: module_extras.php'] = 'リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。';
 $CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。';
-$CIDRAM['lang']['Name: IPv4'] = 'ＩＰｖ４のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。';
-$CIDRAM['lang']['Name: IPv4-Bogons'] = 'ＩＰｖ４のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。';
-$CIDRAM['lang']['Name: IPv4-ISPs'] = 'ＩＰｖ４のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。';
-$CIDRAM['lang']['Name: IPv4-Other'] = 'ＩＰｖ４のシグネチャファイル​（プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ）。';
-$CIDRAM['lang']['Name: IPv6'] = 'ＩＰｖ６のシグネチャファイル​（不要なクラウドサービスと非人のエンドポイント）。';
-$CIDRAM['lang']['Name: IPv6-Bogons'] = 'ＩＰｖ６のシグネチャファイル​（ボゴン/火星ＣＩＤＲ）。';
-$CIDRAM['lang']['Name: IPv6-ISPs'] = 'ＩＰｖ６のシグネチャファイル​（スパマーを持つ危険なＩＳＰ）。';
-$CIDRAM['lang']['Name: IPv6-Other'] = 'ＩＰｖ６のシグネチャファイル​（プロキシ、ＶＰＮ、およびその他の不要なサービスのＣＩＤＲ）。';
+$CIDRAM['lang']['Name: module_badhosts.php'] = '危険なホスト・ブロッカーモジュール';
+$CIDRAM['lang']['Name: module_badhosts_isps.php'] = '危険なホスト・ブロッカーモジュール（ＩＳＰ）';
+$CIDRAM['lang']['Name: module_badtlds.php'] = '危険なホストＴＬＤブロッカーモジュール';
+$CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baiduブロッカーモジュール';
+$CIDRAM['lang']['Name: module_cookies.php'] = 'オプショナル・クッキー・スキャナ・モジュール';
+$CIDRAM['lang']['Name: module_extras.php'] = 'オプショナル・セキュリティ・エクストラス・モジュール';
+$CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam モジュール';
+$CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandexブロッカーモジュール';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
@@ -173,6 +193,7 @@ $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $CIDRAM['lang']['label_tests'] = 'テスト：';
 $CIDRAM['lang']['label_total'] = '合計';
 $CIDRAM['lang']['label_unstable'] = '最新不安定：';
+$CIDRAM['lang']['label_used_with'] = '使用法：';
 $CIDRAM['lang']['label_your_ip'] = 'あなたのＩＰ：';
 $CIDRAM['lang']['label_your_ua'] = 'あなたのＵＡ：';
 $CIDRAM['lang']['link_accounts'] = 'アカウント';

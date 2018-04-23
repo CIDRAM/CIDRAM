@@ -164,7 +164,7 @@ CIDRAM:
 IPv4:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2018.111.381
+ Version: 2018.112.791
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -174,7 +174,7 @@ IPv4:
   To:
    - ipv4.dat
   Checksum:
-   - d91e993a97c230ba39979bf0cb7b2447:576814
+   - 8c69a084c5db257c5bcf2f4df9a45908:583082
  Used with: ipv4
  Reannotate: components.dat
 IPv4-Bogons:
@@ -212,7 +212,7 @@ IPv4-ISPs:
 IPv4-Other:
  Extended Description: Default IPv4 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Medium
- Version: 2018.107.740
+ Version: 2018.112.791
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -222,13 +222,13 @@ IPv4-Other:
   To:
    - ipv4_other.dat
   Checksum:
-   - 84e36a955b7f1c6eafcbf9b7bc872117:82074
+   - 9f5cea9ddbe0bf2bc5fe6f431a4c4596:82255
  Used with: ipv4
  Reannotate: components.dat
 IPv6:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks unwanted cloud services and non-human endpoints.
  False Positive Risk: Low
- Version: 2018.111.381
+ Version: 2018.112.791
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -238,7 +238,7 @@ IPv6:
   To:
    - ipv6.dat
   Checksum:
-   - d6472d1fb5451b6b8562f4f58cf37a18:143808
+   - 5c7964454f1d14097aee7702d6de627a:145589
  Used with: ipv6
  Reannotate: components.dat
 IPv6-Bogons:
@@ -276,7 +276,7 @@ IPv6-ISPs:
 IPv6-Other:
  Extended Description: Default IPv6 signatures normally included with the main package. Blocks CIDRs for proxies, VPNs, and other miscellaneous unwanted services.
  False Positive Risk: Low
- Version: 2018.107.740
+ Version: 2018.112.791
  Minimum Required: 1.0.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/components.dat
  Uninstallable: true
@@ -286,7 +286,7 @@ IPv6-Other:
   To:
    - ipv6_other.dat
   Checksum:
-   - dddcc5fd0fb9ac8f3acabf8b2b76472b:2198
+   - cc5fd42e3e42e8790884e07d0ffe5de4:2437
  Used with: ipv6
  Reannotate: components.dat
 Bypasses:

@@ -651,13 +651,14 @@ Tag: myLoc
 
 
 # ASNs 57043, 395839 ("HOSTKEY B.V").
-# %Listed, Google Malware Dashboard: 0.09% (AS57043), 4.17% (AS395839).
+# %Listed, Google Malware Dashboard: 0.13% (AS57043), 2.27% (AS395839).
 # %Listed, CleanTalk.org: 48.15% (AS57043).
-# Stop Forum Spam (SFS) listings: 15,724 (AS57043), 206 (AS395839).
-# Updated: 2018.02.23
+# Stop Forum Spam (SFS) listings: 16,365 (AS57043), 205 (AS395839).
+# Updated: 2018.04.24
 
 2a05:b40::/29 Deny Cloud
 Origin: NL
+2602:ffc5:cb0::/44 Deny Cloud
 2604:5940::/32 Deny Cloud
 Origin: US
 Tag: HOSTKEY B.V
@@ -700,16 +701,27 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.85%.
+# %Listed, Google Malware Dashboard: 0.91%.
 # %Listed, CleanTalk.org: 18.90%.
-# Stop Forum Spam (SFS) listings: 8,345.
-# Updated: 2018.02.12
+# Stop Forum Spam (SFS) listings: 8,245.
+# Updated: 2018.04.23
 
 # Note for when updating: Some CIDRs appear in the announces that we don't want to be including here as signatures!
-# - "2001::/32"; Provides "Teredo" tunneling.
-# - "2002::/16"; Provides "6to4" bridging connectivity.
+# - "2001::/32" (provides "Teredo" tunneling).
+# - "2002::/16" (provides "6to4" bridging connectivity).
+# - "AeroSurf" (human endpoints).
+# - "BLOOMINGDALE HOME TELEPHONE COMPANY, INC" (human endpoints).
+# - "Charter Communications" (human endpoints; also sometimes doesn't announce properly).
+# - "Glasford Telephone Company" (human endpoints).
+# - "Internet Assigned Numbers Authority" (bogons, reversed, and inactive CIDRs).
+# - "SeaKay Broadband" (human endpoints).
+# - "Telecom" (human endpoints).
+# - "Wicked Broadband" (human endpoints).
 # When seen, just delete them from the list.
+# I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|BLOOMINGDALE|Charter|Glasford|SeaKay|Telecom|Wicked).*$|^.*Authority$"
 
+2a06:1287:3480::/41 Run rules_as6939.php
+Origin: BY
 2602:ff22::/36 Run rules_as6939.php
 2620:10a:80fd::/48 Run rules_as6939.php
 2620:10a:80ff::/48 Run rules_as6939.php
@@ -717,13 +729,19 @@ Origin: CA
 2001:df2:7900::/48 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
 Origin: HK
+2a07:59c0:2300::/40 Run rules_as6939.php
+2a07:59c0:2400::/39 Run rules_as6939.php
+2a07:59c0:2600::/40 Run rules_as6939.php
+Origin: IT
+2001:67c:12e0::/48 Run rules_as6939.php
+Origin: KG
 2a06:1c80::/32 Run rules_as6939.php
 Origin: NL
 2001:470::/32 Run rules_as6939.php
 2001:49e8::/32 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
 2602:ff06:725::/48 Run rules_as6939.php
-2604:a100::/32 Run rules_as6939.php
+2604:a100:100::/48 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
 2620:0:50c0::/48 Run rules_as6939.php
 2620:ba:4000::/48 Run rules_as6939.php
@@ -3637,10 +3655,10 @@ Tag: HostSlim BV
 
 # ASN 43350 ("NForce Entertainment B.V").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.68%.
+# %Listed, Google Malware Dashboard: 0.76%.
 # %Listed, CleanTalk.org: 69.17%.
-# Stop Forum Spam (SFS) listings: 111,870.
-# Updated: 2018.03.19
+# Stop Forum Spam (SFS) listings: 120,097.
+# Updated: 2018.03.19 / Checked: 2018.04.24
 
 2a07:1c41::/40 Deny Cloud
 Origin: AT
@@ -4585,10 +4603,10 @@ Tag: NetSource
 
 
 # ASN 197226 ('"SPRINT" S.A.').
-# %Listed, Google Malware Dashboard: 1.61%.
+# %Listed, Google Malware Dashboard: 0.74%.
 # %Listed, CleanTalk.org: 77.69%.
-# Stop Forum Spam (SFS) listings: 117,012.
-# Updated: 2017.01.05 / Checked: 2018.01.09
+# Stop Forum Spam (SFS) listings: 131,916.
+# Updated: 2017.01.05 / Checked: 2018.04.24
 
 2a03:7940::/32 Deny Cloud
 Origin: PL
@@ -5617,3 +5635,46 @@ Tag: Automattic
 2606:5b80::/32 Deny Cloud
 Origin: US
 Tag: Namecheap, Inc
+
+
+# ASN 49349 ("Dotsi, Unipessoal Lda").
+# %Listed, Google Malware Dashboard: 0.39%.
+# %Listed, CleanTalk.org: 58.33%.
+# Stop Forum Spam (SFS) listings: 2,352.
+# Updated: 2018.04.23
+
+2a00:1c60::/32 Deny Cloud
+Origin: PT
+2a02:7a60::/32 Deny Cloud
+Origin: UA
+Tag: Dotsi
+
+
+# ASN 263179 ("Webline Services, S.A").
+# %Listed, CleanTalk.org: 63.53%.
+# Stop Forum Spam (SFS) listings: 372.
+# Updated: 2018.04.23
+
+2803:c880::/32 Deny Cloud
+Origin: HN
+Tag: Webline Services
+
+
+# ASN 8220 ("COLT Technology Services Group Limited").
+# %Listed, Google Malware Dashboard: 0.10%.
+# %Listed, CleanTalk.org: 4.70%.
+# Stop Forum Spam (SFS) listings: 2,566.
+# Updated: 2018.04.23
+
+2a06:6540:1241::/48 Deny Cloud
+2a06:6541:1241::/48 Deny Cloud
+Origin: CH
+2001:678:274::/48 Deny Cloud
+Origin: DE
+2001:920::/32 Deny Cloud
+Origin: GB
+2a04:9a00:1100::/48 Deny Cloud
+Origin: NL
+2620:ad:8084::/48 Deny Cloud
+Origin: US
+Tag: COLT Technology SGL

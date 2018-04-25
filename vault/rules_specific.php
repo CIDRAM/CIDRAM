@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2018.03.22).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2018.04.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -47,6 +47,11 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
 
     /** Ensure the 38.0.0.0/8 in PSINet only triggers ONCE! Multiple triggers cause problems for some CDN bypasses. */
     if ($Tag === 'PSINet, Inc' && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
+        return;
+    }
+
+    /** Ensure that Jetpack isn't blocked via Automattic. */
+    if ($Tag === 'Automattic' && strpos($CIDRAM['BlockInfo']['UALC'], 'jetpack') !== false) {
         return;
     }
 

@@ -4598,9 +4598,9 @@ Tag: CoreSpace, Inc
 
 
 # ASN 32421 ("Black Lotus Communications").
-# %Listed, Google Malware Dashboard: 0.23%.
+# %Listed, Google Malware Dashboard: 0.04%.
 # %Listed, CleanTalk.org: 26.92%.
-# Updated: 2018.01.10
+# Updated: 2018.01.10 / Checked: 2018.04.30
 
 162.252.54.0/24 Deny Cloud
 162.254.240.0/22 Deny Cloud
@@ -6938,12 +6938,14 @@ Tag: ONLINE S.A.S
 # Refer research.dyn.com/2013/11/mitm-internet-hijacking/
 
 # Announces with "Hosting"
-# Updated: 2018.01.08
+# Updated: 2018.04.29
 170.75.160.0/20 Deny Cloud
 172.81.176.0/21 Deny Cloud
 Origin: CA
 179.51.192.0/20 Deny Cloud
 Origin: CR
+185.254.28.0/22 Deny Cloud
+Origin: DK
 185.130.200.0/24 Deny Cloud
 Origin: ES
 74.221.210.0/23 Deny Cloud
@@ -6952,30 +6954,39 @@ Origin: ES
 74.221.219.0/24 Deny Cloud
 74.221.220.0/24 Deny Cloud
 74.221.222.0/23 Deny Cloud
-104.37.56.0/24 Deny Cloud
+104.37.56.0/23 Deny Cloud
 209.73.140.0/24 Deny Cloud
 216.128.69.0/24 Deny Cloud
 Origin: US
 Tag: Cogent Hosting
 
 # Announces with "Host"
-# Updated: 2018.01.08
+# Updated: 2018.04.29
 104.171.204.0/22 Deny Cloud
 Origin: CA
+81.2.144.0/22 Deny Cloud
+Origin: DE
 87.239.254.0/24 Deny Cloud
 Origin: GB
 185.142.236.0/24 Deny Cloud
 185.142.238.0/23 Deny Cloud
 Origin: NL
-185.174.139.0/24 Deny Cloud
-Origin: RU
+195.144.21.0/24 Deny Cloud
+Origin: SC
 162.253.65.0/24 Deny Cloud
 204.45.61.0/24 Deny Cloud
 Origin: US
 Tag: Cogent Host
 
 # Announces with "Server"
-# Updated: 2018.01.08
+# Updated: 2018.04.29
+185.82.215.0/24 Deny Cloud
+Origin: CZ
+82.129.65.0/24 Deny Cloud
+Origin: EU
+213.146.161.0/24 Deny Cloud
+213.146.184.0/24 Deny Cloud
+Origin: GB
 185.191.228.0/22 Deny Cloud
 185.199.224.0/22 Deny Cloud
 185.202.172.0/22 Deny Cloud
@@ -7004,20 +7015,6 @@ Origin: NL
 216.227.128.0/18 Deny Cloud
 Origin: US
 Tag: Cogent Server
-
-# Announces with "MasterBase LLC"
-# Updated: 2017.09.09 / Checked: 2018.01.08
-108.175.96.0/23 Deny Cloud
-108.175.99.0/24 Deny Cloud
-108.175.110.0/24 Deny Cloud
-Origin: US
-Tag: MasterBase LLC
-
-# Announces with "Sovremennie Techologii Biznesa"
-# Updated: 2017.09.09 / Checked: 2018.01.08
-91.220.173.0/24 Deny Cloud
-Origin: RU
-Tag: Sovremennie
 
 
 # ASNs 59711, 61046, 201525, 202015 ("HZ Hosting Ltd").
@@ -7756,13 +7753,13 @@ Tag: AltusHost B.V
 # ASN 59564 ("Unit-IS Ltd").
 # %Listed, CleanTalk.org: 64.77%.
 # Stop Forum Spam (SFS) listings: 125.
-# Updated: 2017.08.31 / Checked: 2018.01.08
+# Updated: 2017.08.31 / Checked: 2018.04.29
 
 46.243.142.0/24 Deny Cloud
 Origin: NL
 188.72.101.0/24 Deny Cloud
 195.211.152.0/22 Deny Cloud
-Origin: UA
+Origin: US
 Tag: Unit-IS Ltd
 
 
@@ -9844,12 +9841,14 @@ Origin: US
 Tag: VegasNAP, LLC
 
 
-# "Braveway LLC"; Various ASNs; A cloud provider caught spamming.
-# Updated: 2018.03.10
+# Announcing as: "Braveway LLC". A cloud provider caught spamming.
+# Various ASNs; Sourced from HE.
+# Updated: 2018.04.29
 
 23.249.212.0/22 Deny Cloud
 23.249.216.0/23 Deny Cloud
 23.249.220.0/22 Deny Cloud
+24.235.20.0/23 Deny Cloud
 45.33.144.0/20 Deny Cloud
 45.73.180.0/23 Deny Cloud
 63.246.116.0/22 Deny Cloud
@@ -9870,18 +9869,18 @@ Tag: VegasNAP, LLC
 104.251.84.0/23 Deny Cloud
 104.251.86.0/24 Deny Cloud
 104.251.89.0/24 Deny Cloud
-104.251.91.0/24 Deny Cloud
 104.251.92.0/22 Deny Cloud
 107.150.204.0/23 Deny Cloud
 107.150.208.0/21 Deny Cloud
 107.150.220.0/22 Deny Cloud
 108.175.48.0/23 Deny Cloud
-108.175.52.0/24 Deny Cloud
-108.175.56.0/21 Deny Cloud
+108.175.60.0/22 Deny Cloud
+141.193.203.0/24 Deny Cloud
 155.254.160.0/22 Deny Cloud
 155.254.168.0/21 Deny Cloud
 155.254.178.0/23 Deny Cloud
 155.254.188.0/23 Deny Cloud
+158.115.224.0/19 Deny Cloud
 172.98.172.0/23 Deny Cloud
 172.98.184.0/22 Deny Cloud
 173.211.13.0/24 Deny Cloud
@@ -9896,6 +9895,22 @@ Tag: VegasNAP, LLC
 216.74.84.0/23 Deny Cloud
 Origin: US
 Tag: Braveway LLC
+
+
+# Announcing as: "MasterBase LLC".
+# Various ASNs; Sourced from HE.
+# Updated: 2018.04.29
+108.175.96.0/20 Deny Cloud
+Origin: US
+Tag: MasterBase LLC
+
+
+# Announcing as: "Sovremennie Techologii Biznesa".
+# Various ASNs; Sourced from HE.
+# Updated: 2017.09.09 / Checked: 2018.04.29
+91.220.173.0/24 Deny Cloud
+Origin: RU
+Tag: Sovremennie
 
 
 # ASN 54290 ("Hostwinds LLC").
@@ -13759,8 +13774,8 @@ Tag: Bird Hosting Inc
 
 # ASN 19624 ("Data Room, Inc").
 # %Listed, CleanTalk.org: 84.00%.
-# Stop Forum Spam (SFS) listings: 1,427.
-# Updated: 2016.07.16 / Checked: 2018.01.09
+# Stop Forum Spam (SFS) listings: 1,015.
+# Updated: 2018.04.29
 
 31.14.40.0/23 Deny Cloud
 89.39.149.0/24 Deny Cloud
@@ -13769,6 +13784,7 @@ Origin: RO
 38.96.148.0/24 Deny Cloud
 38.96.174.0/23 Deny Cloud
 162.244.80.0/22 Deny Cloud
+185.105.7.0/24 Deny Cloud
 Origin: US
 Tag: Data Room, Inc
 
@@ -13788,9 +13804,8 @@ Tag: vXchnge
 
 
 # ASN 34309 ("Link11 GmbH").
-# %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, CleanTalk.org: 21.05%.
-# Updated: 2018.01.10
+# Updated: 2018.01.10 / Checked: 2018.04.30
 
 31.214.215.0/24 Deny Cloud
 78.143.0.0/18 Deny Cloud
@@ -16477,10 +16492,10 @@ Tag: IT Expert LLC
 
 
 # ASN 24806 ("INTERNET CZ, a.s").
-# %Listed, Google Malware Dashboard: 1.09%.
+# %Listed, Google Malware Dashboard: 0.48%.
 # %Listed, CleanTalk.org: 46.20%.
-# Stop Forum Spam (SFS) listings: 516.
-# Updated: 2017.07.16 / Checked: 2018.01.09
+# Stop Forum Spam (SFS) listings: 827.
+# Updated: 2018.04.29
 
 81.2.192.0/18 Deny Cloud
 185.129.136.0/24 Deny Cloud
@@ -16492,6 +16507,7 @@ Origin: CZ
 185.33.144.0/22 Deny Cloud
 Origin: HU
 80.211.192.0/19 Deny Cloud
+194.182.64.0/19 Deny Cloud
 Origin: IT
 85.255.0.0/20 Deny Cloud
 185.186.20.0/22 Deny Cloud
@@ -18422,15 +18438,16 @@ Tag: TOPWAY GLOBAL LIMITED
 
 # Announcing as: "LogicWeb Inc".
 # Various ASNs; Sourced from HE.
-# Updated: 2018.01.11
+# Updated: 2018.04.30
 
-64.64.97.0/24 Deny Cloud
-98.159.232.0/24 Deny Cloud
-98.159.234.0/24 Deny Cloud
+64.64.98.0/23 Deny Cloud
+64.64.121.0/24 Deny Cloud
 98.159.236.0/23 Deny Cloud
-173.239.192.0/20 Deny Cloud
+173.239.192.0/23 Deny Cloud
+173.239.194.0/24 Deny Cloud
+173.239.200.0/23 Deny Cloud
+173.239.204.0/23 Deny Cloud
 173.244.32.0/22 Deny Cloud
-173.244.62.0/24 Deny Cloud
 Origin: US
 196.52.0.0/24 Deny Cloud
 196.52.2.0/23 Deny Cloud
@@ -18442,31 +18459,23 @@ Origin: US
 196.52.34.0/24 Deny Cloud
 196.52.36.0/24 Deny Cloud
 196.52.38.0/24 Deny Cloud
-196.52.42.0/23 Deny Cloud
+196.52.42.0/24 Deny Cloud
 196.52.44.0/24 Deny Cloud
 196.52.49.0/24 Deny Cloud
-196.52.50.0/24 Deny Cloud
-196.52.55.0/24 Deny Cloud
 196.52.58.0/24 Deny Cloud
-196.52.60.0/23 Deny Cloud
+196.52.60.0/24 Deny Cloud
 196.52.63.0/24 Deny Cloud
 196.52.64.0/21 Deny Cloud
 196.52.72.0/24 Deny Cloud
 196.52.74.0/23 Deny Cloud
-196.52.76.0/24 Deny Cloud
 196.52.79.0/24 Deny Cloud
 196.52.80.0/24 Deny Cloud
-196.52.83.0/24 Deny Cloud
-196.52.85.0/24 Deny Cloud
-196.52.90.0/23 Deny Cloud
+196.52.90.0/24 Deny Cloud
 196.52.93.0/24 Deny Cloud
 196.52.94.0/23 Deny Cloud
 196.52.96.0/24 Deny Cloud
-196.52.100.0/24 Deny Cloud
 196.52.104.0/22 Deny Cloud
-196.52.252.0/22 Deny Cloud
 196.53.0.0/24 Deny Cloud
-196.53.2.0/23 Deny Cloud
 196.53.4.0/22 Deny Cloud
 196.53.8.0/21 Deny Cloud
 196.53.16.0/22 Deny Cloud
@@ -18474,21 +18483,7 @@ Origin: US
 196.53.23.0/24 Deny Cloud
 196.53.24.0/24 Deny Cloud
 196.53.30.0/23 Deny Cloud
-196.53.32.0/22 Deny Cloud
-196.53.36.0/24 Deny Cloud
-196.53.38.0/23 Deny Cloud
-196.53.40.0/24 Deny Cloud
-196.53.42.0/23 Deny Cloud
-196.53.45.0/24 Deny Cloud
-196.53.46.0/23 Deny Cloud
-196.53.49.0/24 Deny Cloud
-196.53.51.0/24 Deny Cloud
-196.53.52.0/23 Deny Cloud
-196.53.54.0/24 Deny Cloud
-196.53.56.0/24 Deny Cloud
-196.53.58.0/23 Deny Cloud
-196.53.60.0/24 Deny Cloud
-196.53.63.0/24 Deny Cloud
+196.53.32.0/19 Deny Cloud
 196.53.64.0/24 Deny Cloud
 196.53.66.0/24 Deny Cloud
 196.53.68.0/24 Deny Cloud
@@ -18497,13 +18492,16 @@ Origin: US
 196.53.76.0/24 Deny Cloud
 196.53.80.0/24 Deny Cloud
 196.53.84.0/24 Deny Cloud
-196.53.94.0/23 Deny Cloud
 196.53.108.0/22 Deny Cloud
-196.54.0.0/23 Deny Cloud
-196.54.3.0/24 Deny Cloud
+196.53.112.0/23 Deny Cloud
+196.53.144.0/23 Deny Cloud
+196.53.148.0/22 Deny Cloud
+196.54.0.0/24 Deny Cloud
 196.54.4.0/22 Deny Cloud
-196.54.8.0/21 Deny Cloud
-196.54.16.0/22 Deny Cloud
+196.54.10.0/23 Deny Cloud
+196.54.12.0/22 Deny Cloud
+196.54.16.0/24 Deny Cloud
+196.54.18.0/23 Deny Cloud
 196.54.20.0/24 Deny Cloud
 196.54.22.0/23 Deny Cloud
 196.54.24.0/24 Deny Cloud
@@ -18534,6 +18532,8 @@ Origin: US
 196.55.34.0/24 Deny Cloud
 196.55.70.0/24 Deny Cloud
 196.55.72.0/22 Deny Cloud
+196.55.101.0/24 Deny Cloud
+196.55.120.0/22 Deny Cloud
 Origin: ZA
 Tag: LogicWeb Inc
 

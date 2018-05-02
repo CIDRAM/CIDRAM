@@ -1,45 +1,12 @@
 ---
 module_cookies.php:
- Name:
-  en: Optional cookie scanner module
-  ar: كوكي الماسح الضوئي
-  de: Optionales Cookie-Scanner-Modul
-  es: Escáner de cookies módulo opcional
-  fr: Module optionnel pour l'analyse des cookies
-  hi: वैकल्पिक कुकी स्कैनर मॉड्यूल
-  id: Modul scanner cookie opsional
-  it: Modulo opzionale per l'analisi dei cookies
-  ja: オプショナル・クッキー・スキャナ・モジュール
-  ko: 선택적 쿠키 스캐너 모듈
-  nl: Optionele cookie-scanner module
-  pt: Módulo opcional para análise de cookies
-  ru: Куки сканер модуль необязательный
-  th: โมดูลสแกนเนอร์คุกกี้ตัวเลือก
-  tr: İsteğe bağlı çerez tarayıcı modülü
-  ur: اختیاری کوکی سکینر ماڈیول
-  vi: Mô-đun tùy chọn cho cookie quét
-  zh: 可选cookie扫描器模块
-  zh-tw: 可選cookie掃描器模塊
- Extended Description:
-  en: Provides some limited protections against various attack vectors commonly used in requests.<br /><em><code>signatures-&gt;modules</code></em>
-  ar: يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات.<br /><em><code>signatures-&gt;modules</code></em>
-  de: Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet.<br /><em><code>signatures-&gt;modules</code></em>
-  es: Proporciona algunas protecciones limitadas contra varios vectores de ataque comúnmente utilizado en las solicitudes.<br /><em><code>signatures-&gt;modules</code></em>
-  fr: Fournit quelques protections limitées contre divers vecteurs d'attaque communément utilisé dans les demandes.<br /><em><code>signatures-&gt;modules</code></em>
-  id: Memberikan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan.<br /><em><code>signatures-&gt;modules</code></em>
-  it: Fornisce alcune protezioni limitate contro i vari vettori di attacco comunemente usata nelle richieste.<br /><em><code>signatures-&gt;modules</code></em>
-  ja: リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。<br /><em><code>signatures-&gt;modules</code></em>
-  ko: 요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다.<br /><em><code>signatures-&gt;modules</code></em>
-  nl: Biedt een beperkte bescherming tegen verschillende aanvalsvectoren vaak gebruikt in aanvragen.<br /><em><code>signatures-&gt;modules</code></em>
-  pt: Fornece algumas proteções limitadas contra vários vectores de ataque comumente usado em solicitações.<br /><em><code>signatures-&gt;modules</code></em>
-  ru: Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах.<br /><em><code>signatures-&gt;modules</code></em>
-  vi: Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu.<br /><em><code>signatures-&gt;modules</code></em>
-  zh: 提供一些有限的保护针对各种攻击向量常用于请求。<br /><em><code>signatures-&gt;modules</code></em>
-  zh-tw: 提供一些有限的保護針對各種攻擊向量常用於請求。<br /><em><code>signatures-&gt;modules</code></em>
+ Name: Optional cookie scanner module
+ Extended Description: Provides some limited protections against dangerous cookies.
  False Positive Risk: Low
- Minimum Required: 0.7.0-DEV
+ Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/modules/modules.dat
  Uninstallable: true
+ Used with: modules
  Reannotate: modules.dat
 

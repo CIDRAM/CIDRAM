@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.04.17).
+ * This file: Italian language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -88,11 +88,12 @@ $CIDRAM['lang']['config_recaptcha_secret'] = 'Questo valore deve corrispondere a
 $CIDRAM['lang']['config_recaptcha_signature_limit'] = 'Il numero massimo di firme consentito per essere innescato quando viene offerta un\'istanza di reCAPTCHA. Predefinito = 1. Se questo numero viene superato per una particolare richiesta, non verrà offerta un\'istanza di reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Questo valore deve corrispondere alla "site key" per il vostro reCAPTCHA, che può essere trovato all\'interno del cruscotto di reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Definisce come CIDRAM dovrebbe usare reCAPTCHA (consultare la documentazione).';
-$CIDRAM['lang']['config_signatures_block_bogons'] = 'Bloccare bogone/marziano CIDRs? Se aspetta i collegamenti al suo sito dall\'interno della rete locale, da localhost, o dalla LAN, questa direttiva deve essere impostata su false. Se si non aspetta queste tali connessioni, questa direttiva deve essere impostata su true.';
-$CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloccare CIDRs identificato come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true.';
-$CIDRAM['lang']['config_signatures_block_generic'] = 'Bloccare CIDRs generalmente consigliato per la lista nera? Questo copre qualsiasi firme che non sono contrassegnate come parte del qualsiasi delle altre più specifiche categorie di firme.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloccare CIDRs identificato come appartenente alla servizi proxy? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi di proxy anonimi, questa direttiva deve essere impostata su false. Altrimenti, se non si richiede proxy anonimi, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.';
-$CIDRAM['lang']['config_signatures_block_spam'] = 'Bloccare CIDRs identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true.';
+$CIDRAM['lang']['config_signatures_block_bogons'] = 'Blocca i CIDR bogone/marziano? Se aspetta i collegamenti al suo sito dall\'interno della rete locale, da localhost, o dalla LAN, questa direttiva deve essere impostata su false. Se si non aspetta queste tali connessioni, questa direttiva deve essere impostata su true.';
+$CIDRAM['lang']['config_signatures_block_cloud'] = 'Blocca i CIDR identificati come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true.';
+$CIDRAM['lang']['config_signatures_block_generic'] = 'Blocca i CIDR generalmente consigliati per la lista nera? Questo copre qualsiasi firme che non sono contrassegnate come parte del qualsiasi delle altre più specifiche categorie di firme.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Blocca i CIDR in risposta agli obblighi legali? Normalmente, questa direttiva non dovrebbe avere alcun effetto, poiché CIDRAM non associa alcun CIDR a "obblighi legali" per impostazione predefinita, ma esiste comunque come misura di controllo aggiuntiva a vantaggio di eventuali file di firme o moduli personalizzati che potrebbero esistere per motivi legali.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blocca i CIDR identificati come appartenente a servizi proxy o VPN? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi proxy o VPN, questa direttiva deve essere impostata su false. Altrimenti, se non hanno bisogno di servizi proxy o VPN, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.';
+$CIDRAM['lang']['config_signatures_block_spam'] = 'Blocca i CIDR identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Quanti secondi per monitorare IP vietati dai moduli. Predefinito = 604800 (1 settimana).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dal monitoraggio IP. Predefinito = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Un elenco dei file di firma IPv4 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Alcuni link utili:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Lista blocco composito da Abuseat.org</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce una API per il controllo e la segnalazione di IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mantiene liste di spammer conosciuti; Utile per il controllo delle attività di spam dalla IP/ASN.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (PHP, HHVM, ecc).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (HHVM, PHP, phpMyAdmin, Python, ecc).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Mappe di Compatibilità</a> – Elenca le informazioni sulla compatibilità per vari pacchetti (CIDRAM, phpMussel, ecc).</li>
         </ul>';

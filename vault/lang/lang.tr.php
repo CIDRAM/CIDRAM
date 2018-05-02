@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.03.25).
+ * This file: Turkish language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,19 +22,22 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
 };
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Önbelleğe yazılamıyor! Lütfen CHMOD dosya izinlerinizi kontrol edin!';
+$CIDRAM['lang']['MoreInfo'] = 'Daha fazla bilgi için:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Geçersiz bir IP adresi kullanarak bu sayfaya erişmeye çalıştığınızdan bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'IP adresinizden önceki kötü davranış nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'IP adresiniz bir bogon adresi olarak tanındığı ve bu web sitesine bogonlardan başlanmanın web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'IP adresiniz bir bulut hizmetine ait olduğu ve bulut servislerinden bu web sitesine bağlanmaya web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'IP adresiniz, bu web sitesi tarafından kullanılan bir kara listede listelenen bir ağa ait olduğu için, bu sayfaya erişiminiz reddedildi.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'IP adresinizin bir aracı site (proxy) hizmetine ait olduğu kabul edildiğinden ve bu web sitesine aracı site hizmetleri aracılığıyla bağlanmaya web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'Yasal yükümlülükler nedeniyle bu sayfaya erişiminiz reddedildi.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'IP adresinizin bir vekil servisi veya VPN hizmetine ait olduğu kabul edildiğinden ve bu web sitesine vekil servisi veya VPN hizmetleri aracılığıyla bağlanmaya web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'IP adresiniz istenmeyen eposta için yüksek riskli olduğu düşünülen bir ağa ait olduğu için bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['Short_BadIP'] = 'Geçersiz IP';
 $CIDRAM['lang']['Short_Banned'] = 'Yasaklandı';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Bulut hizmeti';
 $CIDRAM['lang']['Short_Generic'] = 'Genel';
-$CIDRAM['lang']['Short_Proxy'] = 'Aracı site (proxy)';
+$CIDRAM['lang']['Short_Legal'] = 'Yasal';
+$CIDRAM['lang']['Short_Proxy'] = 'Vekil servisi';
 $CIDRAM['lang']['Short_Spam'] = 'İstenmeyen eposta riski';
 $CIDRAM['lang']['Support_Email'] = 'Bunun yanlış olduğuna inanıyorsanız veya yardım almak için, bu sitesinin yöneticisine bir e-posta destek bileti göndermek için {ClickHereLink} (e-postanın önsözünü veya başlama ekini değiştirmeyin).';
 $CIDRAM['lang']['Support_Email_2'] = 'Bunun yanlış olduğuna inanıyorsanız, yardım istemek için {EmailAddr} ya bir e-posta gönderin.';

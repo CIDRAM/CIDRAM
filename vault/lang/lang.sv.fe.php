@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.04.17).
+ * This file: Swedish language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,12 +21,12 @@ foreach (['IPv4', 'IPv6'] as $CIDRAM['IPvX']) {
     $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX']] = $CIDRAM['Pre'] . 'Blockerar oönskade molntjänster och icke-mänskliga ändpunkter.';
     $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Bogons'] = $CIDRAM['Pre'] . 'Blockerar bogon/martian CIDRer.';
     $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-ISPs'] = $CIDRAM['Pre'] . 'Blockerar farliga och spammiga internetleverantörer.';
-    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Blockerar CIDRer för proxy, VPNer och andra diverse oönskade tjänster.';
+    $CIDRAM['lang']['Extended Description: ' . $CIDRAM['IPvX'] . '-Other'] = $CIDRAM['Pre'] . 'Blockerar CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster.';
     $CIDRAM['Pre'] = $CIDRAM['IPvX'] . '-signaturfil (%s).';
     $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX']] = sprintf($CIDRAM['Pre'], 'oönskade molntjänster och icke-mänskliga ändpunkter');
     $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Bogons'] = sprintf($CIDRAM['Pre'], 'bogon/martian CIDRer');
     $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-ISPs'] = sprintf($CIDRAM['Pre'], 'farliga och spammiga internetleverantörer');
-    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDRer för proxy, VPNer och andra diverse oönskade tjänster');
+    $CIDRAM['lang']['Name: ' . $CIDRAM['IPvX'] . '-Other'] = sprintf($CIDRAM['Pre'], 'CIDRer för proxytjänster, VPNer och andra diverse oönskade tjänster');
 }
 unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Definierar hur CIDRAM ska använd
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blockera bogon/martian CIDRer? Om du förväntar dig anslutningar till din webbplats från ditt lokala nätverk, från localhost eller från ditt LAN, detta direktiv borde vara false. Om du inte förväntar dig sådana anslutningar, detta direktiv borde vara true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blockera CIDRer identifierade som tillhör webbhotell/molntjänster? Om du använder en API-tjänst från din webbplats eller om du förväntar dig att andra webbplatser ska ansluta till din webbplats, detta direktiv borde vara false. Annars, detta direktiv borde vara true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blockera CIDRer rekommenderas generellt för svartlistning? Detta omfattar alla signaturer som inte är markerade som en del av någon av de andra mer specifika signaturkategorierna.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockera CIDRer identifierade som tillhör proxytjänster? Om du behöver att användare ska kunna komma åt din webbplats från anonyma proxytjänster, detta direktiv borde vara false. Annars, om du inte behöver anonyma proxies, detta direktiv borde vara true som ett sätt att förbättra säkerheten.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Blockera CIDRer som svar på lagliga skyldigheter? Detta direktiv borde normalt inte ha någon effekt, eftersom CIDRAM inte som standard kopplar samman några CIDR med "lagliga skyldigheter", men det finns ändå som en extra kontrollåtgärd till förmån för eventuella anpassade signaturfiler eller moduler som kan existera av juridiska skäl.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockera CIDRer identifierade som tillhör proxytjänster eller VPNer? Om du behöver att användare ska kunna komma åt din webbplats från proxytjänster och VPNer, detta direktiv borde vara false. Annars, om du inte behöver proxytjänster eller VPNer, detta direktiv borde vara true som ett sätt att förbättra säkerheten.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blockera CIDRer identifierade som högrisk för spam? Om du inte upplever problem när du gör det, bör det alltid vara true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hur många sekunder spåra IP-adresser som är förbjudna av moduler. Standard = 604800 (1 vecka).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximalt antal infraktions som en IP får medföra innan den är förbjuden av IP-spårning. Standard = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Några användbara länkar:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Upprätthåller listor över kända spammare; Användbar för att kontrollera IP/ASN-spamaktiviteter.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (PHP, HHVM, osv).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
         </ul>';

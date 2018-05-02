@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.04.17).
+ * This file: Indonesian language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -90,8 +90,9 @@ $CIDRAM['lang']['config_recaptcha_sitekey'] = 'Nilai ini harus sesuai dengan "si
 $CIDRAM['lang']['config_recaptcha_usemode'] = 'Mendefinisikan bagaimana CIDRAM harus menggunakan reCAPTCHA.';
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Memblokir CIDR bogon/martian? Jika Anda mengharapkan koneksi ke website Anda dari dalam jaringan lokal Anda, dari localhost, atau dari LAN Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak mengharapkan ini, direktif ini harus didefinisikan untuk true/benar.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Memblokir CIDR yang diidentifikasi sebagai milik webhosting dan/atau layanan cloud? Jika Anda mengoperasikan layanan API dari website Anda atau jika Anda mengharapkan website lain untuk menghubungkan ke website Anda, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak, maka, direktif ini harus didefinisikan untuk true/benar.';
-$CIDRAM['lang']['config_signatures_block_generic'] = 'Memblokir CIDR umumnya direkomendasikan untuk mendaftar hitam / blacklist? Ini mencakup tanda tangan apapun yang tidak ditandai sebagai bagian dari apapun lainnya kategori tanda tangan lebih spesifik.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy anonymous, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan.';
+$CIDRAM['lang']['config_signatures_block_generic'] = 'Memblokir CIDR umumnya direkomendasikan untuk mendaftar hitam? Ini mencakup tanda tangan apapun yang tidak ditandai sebagai bagian dari apapun lainnya kategori tanda tangan lebih spesifik.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Memblokir CIDR sebagai respons terhadap kewajiban hukum? Direktif ini seharusnya tidak memiliki efek apapun, karena CIDRAM tidak menghubungkan CIDR apapun dengan "kewajiban hukum" secara default, tetapi tetap ada sebagai ukuran kontrol tambahan untuk kepentingan file tanda tangan atau modul dipersonalisasi yang mungkin ada karena alasan hukum.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy atau VPN? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy atau VPN, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Berapa banyak detik untuk melacak IP dilarang oleh modul. Default = 604800 (1 seminggu).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Daftar Pemblokiran Komposit dari Abuseat.org</a> – Menampilkan laporan tentang tingkat infeksi botnet untuk ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mempertahankan database IP berbahaya dikenal; Menyediakan API untuk memeriksa dan melaporkan IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mempertahankan daftar spammer dikenal; Berguna untuk memeriksa aktivitas spam dari IP/ASN.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (PHP, HHVM, dll).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
         </ul>';

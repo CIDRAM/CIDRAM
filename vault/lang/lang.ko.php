@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.01.20).
+ * This file: Korean language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,18 +17,21 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = '캐시는 쓰기 불가입니다! 당신의 CHMOD를 확인하십시오!';
-$CIDRAM['lang']['ReasonMessage_BadIP'] = '왜 차단이 되셨나요 : 잘못된 IP.';
-$CIDRAM['lang']['ReasonMessage_Banned'] = '왜 차단이 되셨나요 : 당신의 IP 주소에서 원하지 않는 동작.';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = '왜 차단이 되셨나요 : Bogon/화성의 IP.';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = '왜 차단이 되셨나요 : 클라우드 서비스 연결.';
-$CIDRAM['lang']['ReasonMessage_Generic'] = '왜 차단이 되셨나요 : IP가 블랙리스트에 게재되어 있습니다 / 위험한 네트워크.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = '왜 차단이 되셨나요 : 프록시 서비스 연결.';
-$CIDRAM['lang']['ReasonMessage_Spam'] = '왜 차단이 되셨나요 : 스팸 네트워크 / 위험한 네트워크.';
+$CIDRAM['lang']['MoreInfo'] = '자세한 내용은 :';
+$CIDRAM['lang']['ReasonMessage_BadIP'] = '이 페이지에 액세스은 당신의, 잘못된 IP에 대한 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = '이 페이지에 액세스은 당신의, IP 주소에서 원치 않는 작동을 위해 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = '이 페이지에 액세스은 당신의, IP가 bogon IP 주소이기 때문입니다 때문에 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = '이 페이지에 액세스은 당신의, IP는 클라우드 서비스에 속한다 위해 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Generic'] = '이 페이지에 액세스은 당신의, IP는 위험한 네트워크 또는 웹 사이트에서 사용되는 블랙리스트에 속합니다 때문에 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = '이 페이지에 액세스은 당신의, 법적 의무에 대한 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = '이 페이지에 액세스은 당신의, IP는 프록시 서비스 또는 VPN에 속한다 위해 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Spam'] = '이 페이지에 액세스은 당신의, IP 네트워크는, 스팸 메일을 보낼 잘 알려져 있습니다에 속한다 위해 거부되었습니다.';
 $CIDRAM['lang']['Short_BadIP'] = '잘못된 IP';
 $CIDRAM['lang']['Short_Banned'] = '금지 된';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon/화성의 IP';
 $CIDRAM['lang']['Short_Cloud'] = '클라우드 서비스';
 $CIDRAM['lang']['Short_Generic'] = '일반';
+$CIDRAM['lang']['Short_Legal'] = '적법한';
 $CIDRAM['lang']['Short_Proxy'] = '프록시';
 $CIDRAM['lang']['Short_Spam'] = '스팸 위험';
 $CIDRAM['lang']['Support_Email'] = '이메일 지원 티켓을 제출 내용이나 지원 내용은 {ClickHereLink}하십시오 (프리앰블을 변경하지 마십시오).';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data (last modified: 2018.01.20).
+ * This file: Norwegian language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,11 +17,13 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan ikke skrive til hurtigbufferen! Vennligst sjekk CHMOD-filtillatelsene dine!';
+$CIDRAM['lang']['MoreInfo'] = 'For mer informasjon:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Din tilgang til denne siden ble nektet fordi du forsøkte å få tilgang til denne siden ved hjelp av en ugyldig IP-adresse.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Din tilgang til denne siden ble nektet på grunn av tidligere dårlig oppførsel fra din IP-adresse.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Din tilgang til denne siden ble nektet fordi din IP-adresse er anerkjent som en bogon-adresse, og tilkobling fra bogoner til dette nettstedet er ikke tillatt av nettstedets eier.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Din tilgang til denne siden ble nektet fordi din IP-adresse er anerkjent som tilhørende en skytjeneste, og tilkobling til dette nettstedet fra skytjenester er ikke tillatt av nettsideeieren.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Din tilgang til denne siden ble nektet fordi din IP-adresse tilhører et nettverk som er oppført på en svarteliste som brukes av dette nettstedet.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'Din tilgang til denne siden ble nektet på grunn av juridiske forpliktelser.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Din tilgang til denne siden ble nektet fordi din IP-adresse er anerkjent som tilhørende en proxy-tjeneste, og tilkobling til dette nettstedet fra proxy-tjenester er ikke tillatt av nettsideeieren.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Din tilgang til denne siden ble nektet fordi din IP-adresse tilhører et nettverk som anses som høy-risiko for spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ugyldig IP';
@@ -29,6 +31,7 @@ $CIDRAM['lang']['Short_Banned'] = 'Utestengt';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Skytjeneste';
 $CIDRAM['lang']['Short_Generic'] = 'Generisk';
+$CIDRAM['lang']['Short_Legal'] = 'Juridiske';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risiko';
 $CIDRAM['lang']['Support_Email'] = 'Hvis du tror dette er en feil, eller å søke hjelp, {ClickHereLink} for å sende en e-postsupportbillett til webansvarlig for dette nettstedet (vennligst ikke endre preamble eller emnelinje i e-posten).';

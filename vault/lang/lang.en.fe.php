@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.04.17).
+ * This file: English language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Defines how CIDRAM should use reC
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Block bogon/martian CIDRs? If you expect connections to your website from within your local network, from localhost, or from your LAN, this directive should be set to false. If you don\'t expect these such connections, this directive should be set to true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Block CIDRs identified as belonging to webhosting/cloud services? If you operate an API service from your website or if you expect other websites to connect to your website, this should be set to false. If you don\'t, then, this directive should be set to true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Block CIDRs generally recommended for blacklisting? This covers any signatures that aren\'t marked as being part of any of the other more specific signature categories.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don\'t require anonymous proxies, this directive should be set to true as a means of improving security.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Block CIDRs in response to legal obligations? This directive shouldn\'t normally have any effect, because CIDRAM doesn\'t associate any CIDRs with "legal obligations" by default, but it exists nonetheless as an additional control measure for the benefit of any custom signature files or modules that might exist for legal reasons.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Block CIDRs identified as belonging to proxy services or VPNs? If you require that users be able to access your website from proxy services and VPNs, this directive should be set to false. Otherwise, if you don\'t require proxy services or VPNs, this directive should be set to true as a means of improving security.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'How many seconds to track IPs banned by modules. Default = 604800 (1 week).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximum number of infractions an IP is allowed to incur before it is banned by IP tracking. Default = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org\'s Composite Blocking List</a> – Displays reports regarding botnet infection rates for ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Maintains a database of known abusive IPs; Provides an API for checking and reporting IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Maintains listings of known spammers; Useful for checking IP/ASN spam activities.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (PHP, HHVM, etc).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts</a> – Lists safe/unsafe versions of various packages (HHVM, PHP, phpMyAdmin, Python, etc).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts</a> – Lists compatibility information for various packages (CIDRAM, phpMussel, etc).</li>
         </ul>';

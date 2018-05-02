@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.04.17).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -88,11 +88,12 @@ $CIDRAM['lang']['config_recaptcha_secret'] = '該值應該對應於『secret key
 $CIDRAM['lang']['config_recaptcha_signature_limit'] = '當提供reCAPTCHA實例時，允許觸發的最大簽名數量。​標準 = 1。​如果這個數字超過了任何特定的請求，一個reCAPTCHA實例將不會被提供。';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = '該值應該對應於『site key』為您的reCAPTCHA，​該可以發現在reCAPTCHA的儀表板。';
 $CIDRAM['lang']['config_recaptcha_usemode'] = '它定義瞭如何CIDRAM應該使用reCAPTCHA（請參閱文檔）。';
-$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（『火星』）CIDR嗎？​如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，​這應該被設置為False（假）。​如果不，​這應該被設置為True（真）。';
-$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR認定為屬於虛擬主機或云服務嗎？​如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，​這應該被設置為False（假）。​如果不，​這應該被設置為True（真）。';
-$CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建議對於黑名單嗎？​這包括簽名不標記為的一章節任何其他更具體簽名類別。';
-$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於代理服務嗎？​如果您需要該用戶可以訪問您的網站從匿名代理服務，​這應該被設置為False（假）。​除此以外，​如果您不需要匿名代理服務，​這應該被設置為True（真）作為一個方式以提高安全性。';
-$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？​除非您遇到問題當這樣做，​通常，​這應該被設置為True（真）。';
+$CIDRAM['lang']['config_signatures_block_bogons'] = '阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（​『火星』）CIDR嗎？​如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。';
+$CIDRAM['lang']['config_signatures_block_cloud'] = '阻止CIDR認定為屬於虛擬主機或云服務嗎？​如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。';
+$CIDRAM['lang']['config_signatures_block_generic'] = '阻止CIDR一般建議對於黑名單嗎？​這包括簽名不標記為的一章节任何其他更具體簽名類別。';
+$CIDRAM['lang']['config_signatures_block_legal'] = '阻止CIDR因為法律義務嗎？​這個指令通常不應該有任何作用，因為CIDRAM默認情況下不會將任何CIDR與『法律義務』相關聯，​但它作為一個額外的控制措施存在，以利於任何可能因法律原因而存在的自定義簽名文件或模塊。';
+$CIDRAM['lang']['config_signatures_block_proxies'] = '阻止CIDR認定為屬於代理服務或VPN嗎？​如果您需要該用戶可以訪問您的網站從代理服務和VPN，​這應該被設置為『false』（假）。​除此以外，​如果您不需要代理服務或VPN，​這應該被設置為『true』（真）作為一個方式以提高安全性。';
+$CIDRAM['lang']['config_signatures_block_spam'] = '阻止高風險垃圾郵件CIDR嗎？​除非您遇到問題當這樣做，​通常，​這應該被設置為『true』（真）。';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = '多少秒鐘來跟踪模塊禁止的IP。​標準 = 604800 （1週）。';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = '從IP最大允許違規數量之前它被禁止。​標準=10。';
 $CIDRAM['lang']['config_signatures_ipv4'] = '列表的IPv4簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。';
@@ -357,6 +358,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org的複合阻止列表</a> – 顯示有​關ASN殭屍網絡感染率的報告。​</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 維護已知的濫用IP數據庫；它為IP檢查和報告提供了一個API。​</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 維護已知垃圾郵件發送者的列表；有用為檢查IP/ASN垃圾郵件活動。​</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（PHP，HHVM，等等）。</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';

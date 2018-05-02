@@ -407,19 +407,22 @@ Configuration pour les signatures.
 - Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d'utiliser, délimité par des virgules. Vous pouvez ajouter des entrées ici si vous voulez inclure des fichiers supplémentaires dans CIDRAM.
 
 « block_cloud »
-- Bloquer CIDRs identifié comme appartenant à hébergement/cloud services ? Si vous utilisez un service d'API à partir de votre site web ou si vous attendez d'autres sites à connecter avec votre site web, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true.
+- Bloquer les CIDRs identifié comme appartenant aux services d'hébergement/cloud ? Si vous utilisez un service d'API à partir de votre site web ou si vous attendez d'autres sites à connecter avec votre site web, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true.
 
 « block_bogons »
-- Bloquer CIDRs bogon/martian ? Si vous attendre connexions à votre site web à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true.
+- Bloquer les CIDRs bogon/martian ? Si vous attendre connexions à votre site web à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true.
 
 « block_generic »
-- Bloquer CIDRs recommandé en généralement pour les listes noires ? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l'autre plus spécifique catégories de signatures.
+- Bloquer les CIDRs recommandé en généralement pour les listes noires ? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l'autre plus spécifique catégories de signatures.
+
+« block_legal »
+- Bloquer les CIDRs en réponse à des obligations légales ? Cette directive ne devrait normalement pas avoir d'effet, car CIDRAM n'associe aucun CIDR avec des « obligations légales » par défaut, mais il existe néanmoins comme une mesure de contrôle supplémentaire au profit de tous les fichiers de signatures personnalisées ou des modules qui pourraient exister pour des raisons juridiques.
 
 « block_proxies »
-- Bloquer CIDRs identifié comme appartenant à services de proxy ? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy anonymes, cette directive devrait être fixé sur false. Autrement, si vous n'avez besoin pas de proxies anonymes, cette directive devrait être fixé sur true comme moyen d'améliorer la sécurité.
+- Bloquer les CIDRs identifié comme appartenant aux services proxy ou VPNs ? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy ou des VPNs, cette directive devrait être fixé sur false. Autrement, si vous n'avez besoin pas des services de proxy ou des VPNs, cette directive devrait être fixé sur true comme moyen d'améliorer la sécurité.
 
 « block_spam »
-- Bloquer CIDRs identifié comme étant risque élevé pour le spam ? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.
+- Bloquer les CIDRs identifié comme étant risque élevé pour le spam ? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.
 
 « modules »
 - Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.
@@ -555,6 +558,7 @@ Les mots courts disponibles sont :
 - Generic
 - Proxy
 - Spam
+- Legal
 
 #### 7.1 ÉTIQUETTES
 
@@ -1008,4 +1012,4 @@ Peut être. Cela dépend de la nature du service en question et de la façon don
 ---
 
 
-Dernière mise à jour : 8 Avril 2018 (2018.04.08).
+Dernière mise à jour : 1 Mai 2018 (2018.05.01).

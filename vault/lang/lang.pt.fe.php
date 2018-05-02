@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.04.17).
+ * This file: Portuguese language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Define como CIDRAM deve usar reCA
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Bloquear bogon/martian CIDRs? Se você espera conexões para o seu site de dentro de sua rede local, de localhost, ou de seu LAN, esta directiva deve ser definido como false. Se você não esperar que esses tais conexões, esta directiva deve ser definido como true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Bloquear CIDRs identificado como pertencente a webhosting e/ou serviços em nuvem? Se você operar um serviço de API a partir do seu site ou se você espera outros sites para se conectar para o seu site, este deve ser definido como false. Se não, este deve ser definido como true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Bloquear CIDRs geralmente recomendado para a lista negra? Isso abrange todas as assinaturas que não são marcados como sendo parte de qualquer um dos outros mais categorias de assinaturas mais específica.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquear CIDRs identificado como pertencente a serviços de proxy? Se você precisar que os usuários poderão acessar seu site dos serviços de proxy anônimos, este deve ser definido como false. De outra forma, se você não precisa de proxies anônimos, este deve ser definido como true como um meio de melhorar a segurança.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Bloquear CIDRs em resposta a obrigações legais? Esta diretiva normalmente não deve ter qualquer efeito, porque o CIDRAM não associa nenhum CIDR com "obrigações legais" por padrão, mas existe, no entanto, como uma medida de controle adicional para o benefício de quaisquer arquivos de assinatura ou módulos personalizados que possam existir por motivos legais.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Bloquear CIDRs identificado como pertencente a serviços de proxy ou VPNs? Se você precisar que os usuários poderão acessar seu site dos serviços de proxy e VPNs, este deve ser definido como false. De outra forma, se você não precisa de serviços de proxy ou VPNs, este deve ser definido como true como um meio de melhorar a segurança.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Bloquear CIDRs identificado como sendo de alto risco para spam? A menos que você tiver problemas ao fazê-lo, geralmente, esta deve sempre ser definido como true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Quantos segundos para rastrear IPs banidos por módulos. Padrão = 604800 (1 semana).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Número máximo de infrações que um IP pode incorrer antes de ser banido por monitoração IP. Padrão = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Alguns links úteis:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Lista de Bloqueio Composto @ Abuseat.org</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mantém listagens de spammers conhecidos; Útil para verificar as atividades de spam por IPs/ASNs.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (PHP, HHVM, etc).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mapas de Vulnerabilidade</a> – Lista as versões seguras/inseguras de vários pacotes (HHVM, PHP, phpMyAdmin, Python, etc).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Mapas de Compatibilidade</a> – Lista informações de compatibilidade para vários pacotes (CIDRAM, phpMussel, etc).</li>
         </ul>';

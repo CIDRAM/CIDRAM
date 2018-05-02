@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.01.20).
+ * This file: Thai language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,18 +17,21 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'ไม่สามารถเขียนลงในแคช! โปรดตรวจสอบสิทธิ์ของไฟล์ CHMOD!';
+$CIDRAM['lang']['MoreInfo'] = 'สำหรับข้อมูลเพิ่มเติม:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากคุณพยายามเข้าถึงหน้านี้ใช้ที่อยู่ IP ที่ไม่ถูกต้อง.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากพฤติกรรมที่ไม่ดีก่อนหน้านี้จากที่อยู่ IP ของคุณ.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากที่อยู่ IP ของคุณเป็นที่อยู่ของ bogon. เว็บไซต์นี้ไม่อนุญาตการเชื่อมต่อจากที่อยู่ IP bogon.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากที่อยู่ IP ของคุณเป็นของบริการระบบคลาวด์. เว็บไซต์นี้ไม่อนุญาตการเชื่อมต่อจากบริการคลาวด์.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากที่อยู่ IP ของคุณอยู่ในบัญชีดำโดยเว็บไซต์นี้.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากคุณได้เชื่อมต่อผ่านบริการพร็อกซี่. เว็บไซต์นี้ไม่อนุญาตการเชื่อมต่อจากบริการพร็อกซี.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากข้อผูกมัดทางกฎหมาย.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากคุณได้เชื่อมต่อผ่านบริการพร็อกซี่หรือ VPN. เว็บไซต์นี้ไม่อนุญาตการเชื่อมต่อจากบริการพร็อกซีหรือ VPN.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากที่อยู่ IP ของคุณอยู่ในเครือข่ายที่เกี่ยวข้องกับกิจกรรมสแปม.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP ไม่ถูกต้อง';
 $CIDRAM['lang']['Short_Banned'] = 'ถูกห้าม';
 $CIDRAM['lang']['Short_Bogon'] = 'IP Bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'บริการคลาวด์';
 $CIDRAM['lang']['Short_Generic'] = 'ทั่วไป';
+$CIDRAM['lang']['Short_Legal'] = 'ทางกฎหมาย';
 $CIDRAM['lang']['Short_Proxy'] = 'ผู้รับมอบฉันทะ';
 $CIDRAM['lang']['Short_Spam'] = 'ความเสี่ยงของสแปม';
 $CIDRAM['lang']['Support_Email'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด, หรือเพื่อขอความช่วยเหลือ, {ClickHereLink}เพื่อส่งอีเมลสนับสนุนไปยังเว็บมาสเตอร์ของเว็บไซต์นี้ (โปรดอย่าเปลี่ยนบรรทัดคำนำหรือหัวเรื่องของอีเมล).';

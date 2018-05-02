@@ -415,8 +415,11 @@ Signatures configuration.
 "block_generic"
 - Block CIDRs generally recommended for blacklisting? This covers any signatures that aren't marked as being part of any of the other more specific signature categories.
 
+"block_legal"
+- Block CIDRs in response to legal obligations? This directive shouldn't normally have any effect, because CIDRAM doesn't associate any CIDRs with "legal obligations" by default, but it exists nonetheless as an additional control measure for the benefit of any custom signature files or modules that might exist for legal reasons.
+
 "block_proxies"
-- Block CIDRs identified as belonging to proxy services? If you require that users be able to access your website from anonymous proxy services, this should be set to false. Otherwise, if you don't require anonymous proxies, this directive should be set to true as a means of improving security.
+- Block CIDRs identified as belonging to proxy services or VPNs? If you require that users be able to access your website from proxy services and VPNs, this directive should be set to false. Otherwise, if you don't require proxy services or VPNs, this directive should be set to true as a means of improving security.
 
 "block_spam"
 - Block CIDRs identified as being high-risk for spam? Unless you experience problems when doing so, generally, this should always be set to true.
@@ -555,6 +558,7 @@ The available shorthand words are:
 - Generic
 - Proxy
 - Spam
+- Legal
 
 #### 7.1 TAGS
 
@@ -1008,4 +1012,4 @@ Maybe. This depends on the nature of the service in question, and how you're usi
 ---
 
 
-Last Updated: 8 April 2018 (2018.04.08).
+Last Updated: 1 May 2018 (2018.05.01).

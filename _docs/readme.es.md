@@ -407,19 +407,22 @@ Configuración de firmas.
 - Una lista de los archivos de firmas IPv6 que CIDRAM debe tratar de utilizar, delimitado por comas. Puede agregar entradas aquí si desea incluir archivos de firmas IPv6 adicionales dentro CIDRAM.
 
 "block_cloud"
-- Bloquear CIDRs identificados como pertenecientes de servicios de webhosting o servicios en la nube? Si usted operar un servicio de un API desde su sitio web o si usted espera otros sitios web para conectarse a su sitio web, esta directiva debe ser establecido para false. Si usted no espera esta, esta directiva debe ser establecido para true.
+- ¿Bloquear CIDRs identificados como pertenecientes de servicios de webhosting o servicios en la nube? Si usted operar un servicio de un API desde su sitio web o si usted espera otros sitios web para conectarse a su sitio web, esta directiva debe ser establecido para false. Si usted no espera esta, esta directiva debe ser establecido para true.
 
 "block_bogons"
-- Bloquear CIDRs identificados como bogons/martians? Si usted espera conexiones a su sitio web desde dentro de su red local, desde localhost, o desde su LAN, esta directiva debe ser establecido para false. Si usted no espera estos tipos de conexiones, esta directiva debe ser establecido para true.
+- ¿Bloquear CIDRs identificados como bogons/martians? Si usted espera conexiones a su sitio web desde dentro de su red local, desde localhost, o desde su LAN, esta directiva debe ser establecido para false. Si usted no espera estos tipos de conexiones, esta directiva debe ser establecido para true.
 
 "block_generic"
-- Bloquear CIDRs recomendado generalmente para las listas negras? Esto abarca todos las firmas que no están marcadas como parte de cualquiera de los otros mas especifico categorías de firmas.
+- ¿Bloquear CIDRs recomendado generalmente para las listas negras? Esto abarca todos las firmas que no están marcadas como parte de cualquiera de los otros mas especifico categorías de firmas.
+
+"block_legal"
+- ¿Bloquear CIDRs en respuesta a obligaciones legales? Esta directiva normalmente no debería tener ningún efecto, porque CIDRAM no asocia ningún CIDR con "obligaciones legales" como estándar, pero existe aunque como una medida de control adicional en beneficio de cualquier archivo de firmas o módulo personalizado que pueda existir por razones legales.
 
 "block_proxies"
-- Bloquear CIDRs identificados como pertenecientes de servicios de proxy? Si requiere que los usuarios puedan acceder a su sitio web a partir de los servicios de proxy anónimos, esta directiva debe ser establecido para false. Alternativamente, Si usted no requiere proxies anónimos, esta directiva debe ser establecido para true como un medio para mejorar la seguridad.
+- ¿Bloquear CIDRs identificados como pertenecientes a los servicios de proxy o VPNs? Si requiere que los usuarios puedan acceder a su sitio web a partir de los servicios de proxy o VPNs, esta directiva debe ser establecido para false. Alternativamente, Si usted no requiere servicios de proxy o VPNs, esta directiva debe ser establecido para true como un medio para mejorar la seguridad.
 
 "block_spam"
-- Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true.
+- ¿Bloquear CIDRs identificado como siendo de alto riesgo para el spam? A menos que experimentar problemas cuando hacerlo, en general, esto siempre debe establecerse para true.
 
 "modules"
 - Una lista de archivos módulo a cargar después de comprobar las firmas IPv4/IPv6, delimitado por comas.
@@ -555,6 +558,7 @@ Las palabras abreviadas disponibles son:
 - Generic
 - Proxy
 - Spam
+- Legal
 
 #### 7.1 ETIQUETAS
 
@@ -1008,4 +1012,4 @@ Posiblemente. Esto depende de la naturaleza del servicio en cuestión y de cómo
 ---
 
 
-Última Actualización: 8 Abril 2018 (2018.04.08).
+Última Actualización: 1 Mayo de 2018 (2018.05.01).

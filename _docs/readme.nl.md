@@ -415,8 +415,11 @@ Configuratie voor signatures.
 "block_generic"
 - Blokkeren CIDR's algemeen aanbevolen voor blacklisting? Dit omvat alle signatures die niet zijn gemarkeerd als onderdeel van elke van de andere, meer specifieke signature categorieën.
 
+"block_legal"
+- Blokkeren CIDR's als reactie op wettelijke verplichtingen? Dit richtlijn zou normaal gesproken geen effect moeten hebben, omdat CIDRAM als standaard geen CIDR's met "wettelijke verplichtingen" associeert, maar het bestaat niettemin als een extra beheersmaatregel ten behoeve van eventuele aangepaste signatures bestanden of  modules die mogelijk bestaan om wettelijke redenen.
+
 "block_proxies"
-- Blokkeren CIDR's geïdentificeerd als behorend tot proxy-services? Als u vereisen dat gebruikers kan toegang tot uw website van anonieme proxy-services, dit richtlijn moet worden ingesteld op false. Anders, als u niet nodig anonieme proxies, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
+- Blokkeren CIDR's geïdentificeerd als behorend tot proxy-services of VPN's? Als u vereisen dat gebruikers kan toegang tot uw website van proxy-services en VPN's, dit richtlijn moet worden ingesteld op false. Anders, als u geen proxy-services of VPN's nodig, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
 
 "block_spam"
 - Blokkeren CIDR's geïdentificeerd als zijnde hoog risico voor spam? Tenzij u problemen ondervindt wanneer u dit doet, in algemeen, dit moet altijd worden ingesteld op true.
@@ -555,6 +558,7 @@ De beschikbare korte woorden zijn:
 - Generic
 - Proxy
 - Spam
+- Legal
 
 #### 7.1 ETIKETTEN
 
@@ -1008,4 +1012,4 @@ Mogelijk. Dit is afhankelijk van de aard van de service in kwestie en hoe u deze
 ---
 
 
-Laatste Bijgewerkt: 8 April 2018 (2018.04.08).
+Laatste Bijgewerkt: 1 Mei 2018 (2018.05.01).

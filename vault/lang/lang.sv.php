@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data (last modified: 2018.01.20).
+ * This file: Swedish language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,18 +17,21 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!';
+$CIDRAM['lang']['MoreInfo'] = 'För mer information:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Din tillgång till den här sidan nekades eftersom du försökte komma åt den här sidan med en ogiltig IP-adress.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Din tillgång till den här sidan nekades på grund av tidigare dåligt beteende från din IP-adress.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress är erkänd som en bogonadress, och anslutning från bogonger till denna webbplats är inte tillåtet av webbplatsägaren.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress är erkänd som tillhör en molntjänst, och anslutning från molntjänster till denna webbplats är inte tillåtet av webbplatsägaren.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress tillhör ett nätverk som är listat på en svart lista som används av den här webbplatsen.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress är erkänd som tillhör en proxy-tjänst, och anslutning från proxy-tjänster till denna webbplats är inte tillåtet av webbplatsägaren.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'Din tillgång till den här sidan nekades på grund av lagliga skyldigheter.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress är erkänd som tillhör en proxytjänst eller VPN, och anslutning från proxytjänster eller VPNer till denna webbplats är inte tillåtet av webbplatsägaren.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress tillhör ett nätverk som anses ha hög risk för spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ogiltig IP';
 $CIDRAM['lang']['Short_Banned'] = 'Förbjudna';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Molntjänst';
 $CIDRAM['lang']['Short_Generic'] = 'Generisk';
+$CIDRAM['lang']['Short_Legal'] = 'Lagliga';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risk';
 $CIDRAM['lang']['Support_Email'] = 'Om du tror att det här är felaktigt, eller att söka hjälp, {ClickHereLink} för att skicka en e-post support biljett till webmaster på denna webbplats (vänligen ändra inte ingressen eller ämnesraden i e-postmeddelandet).';

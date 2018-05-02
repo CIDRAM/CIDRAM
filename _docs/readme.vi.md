@@ -334,7 +334,7 @@ Cấu hình chung cho CIDRAM.
 - Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn? False/200 = 200 OK [Mặc định]; True/403 = 403 Forbidden (Cấm); 503 = 503 Service unavailable (Dịch vụ không có sẵn).
 
 "silent_mode"
-- CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
+- CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
 
 "lang"
 - Xác định tiếng mặc định cho CIDRAM.
@@ -415,8 +415,11 @@ Cấu hình cho chữ ký.
 "block_generic"
 - Chặn CIDR thường được khuyến cáo cho danh sách đen? Điều này bao gồm bất kỳ chữ ký không được đánh dấu như một phần của bất kỳ các loại chữ ký cụ thể khác.
 
+"block_legal"
+- Chặn CIDR theo các nghĩa vụ pháp lý? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ pháp lý" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do pháp lý.
+
 "block_proxies"
-- Chặn CIDR xác định là thuộc về các dịch vụ proxy? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy ẩn danh, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu proxy vô danh, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.
+- Chặn CIDR xác định là thuộc về các dịch vụ proxy hay VPN? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy hay VPN, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu các dịch vụ proxy hay VPN, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.
 
 "block_spam"
 - Chặn CIDR xác định như có nguy cơ cao đối được thư rác? Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true.
@@ -434,9 +437,9 @@ Cấu hình cho chữ ký.
 - Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.
 
 #### "recaptcha" (Thể loại)
-Nếu bạn muốn, bạn có thể cung cấp cho người dùng một cách để vượt qua các trang "Truy cập bị từ chối" bằng cách hoàn thành một reCAPTCHA. Điều này có thể giúp giảm thiểu một số rủi ro kết hợp với sai tích cực trong những tình huống theo đó chúng tôi không hoàn toàn chắc chắn liệu một yêu cầu bắt nguồn từ một máy tính hay một con người.
+Nếu bạn muốn, bạn có thể cung cấp cho người dùng một cách để vượt qua các trang "Truy cập đã bị từ chối" bằng cách hoàn thành một reCAPTCHA. Điều này có thể giúp giảm thiểu một số rủi ro kết hợp với sai tích cực trong những tình huống theo đó chúng tôi không hoàn toàn chắc chắn liệu một yêu cầu bắt nguồn từ một máy tính hay một con người.
 
-Do những rủi ro liên quan đến việc cung cấp một cách cho người dùng để bỏ qua trang "Truy cập bị từ chối", nói chung, tôi sẽ tư vấn để không cho phép tính năng này trừ khi bạn cảm thấy nó là cần thiết phải làm như vậy. Tình huống mà nó sẽ là cần thiết: Nếu trang mạng của bạn có khách hàng hay người dùng mà cần phải có quyền truy cập vào trang mạng của bạn, và nếu điều này là một cái gì đó mà không thể được thỏa hiệp, nhưng nếu những khách hàng hay người dùng xảy ra để được kết nối từ một mạng thù địch mà có lẽ được mang giao thông không mong muốn, và ngăn chặn giao thông không mong muốn này cũng là một cái gì đó mà không thể được thỏa hiệp, trong những tình huống mà không chiến thắng này, tính năng reCAPTCHA có thể hữu ích như một phương tiện cho phép các giao thông mong muốn từ khách hàng hay người dùng, trong khi ngăn chặn các giao thông không mong muốn từ cùng một mạng. Tuy vậy, xem xét rằng mục đích của một CAPTCHA là để phân biệt giữa con người và chương trình máy tính, tính năng reCAPTCHA sẽ chỉ giúp đỡ trong những tình huống mà không chiến thắng này nếu chúng ta giả định rằng giao thông không mong muốn này là từ một chương trình máy tính (ví dụ, chương trình thư rác, công cụ cào, công cụ hack, giao thông tự động, vv), như trái ngược với giao thông không mong muốn từ người (như thế thư rác từ người, hacker, vv).
+Do những rủi ro liên quan đến việc cung cấp một cách cho người dùng để bỏ qua trang "Truy cập đã bị từ chối", nói chung, tôi sẽ tư vấn để không cho phép tính năng này trừ khi bạn cảm thấy nó là cần thiết phải làm như vậy. Tình huống mà nó sẽ là cần thiết: Nếu trang mạng của bạn có khách hàng hay người dùng mà cần phải có quyền truy cập vào trang mạng của bạn, và nếu điều này là một cái gì đó mà không thể được thỏa hiệp, nhưng nếu những khách hàng hay người dùng xảy ra để được kết nối từ một mạng thù địch mà có lẽ được mang giao thông không mong muốn, và ngăn chặn giao thông không mong muốn này cũng là một cái gì đó mà không thể được thỏa hiệp, trong những tình huống mà không chiến thắng này, tính năng reCAPTCHA có thể hữu ích như một phương tiện cho phép các giao thông mong muốn từ khách hàng hay người dùng, trong khi ngăn chặn các giao thông không mong muốn từ cùng một mạng. Tuy vậy, xem xét rằng mục đích của một CAPTCHA là để phân biệt giữa con người và chương trình máy tính, tính năng reCAPTCHA sẽ chỉ giúp đỡ trong những tình huống mà không chiến thắng này nếu chúng ta giả định rằng giao thông không mong muốn này là từ một chương trình máy tính (ví dụ, chương trình thư rác, công cụ cào, công cụ hack, giao thông tự động, vv), như trái ngược với giao thông không mong muốn từ người (như thế thư rác từ người, hacker, vv).
 
 Để có được một "site key" và một "secret key" (cần thiết để sử dụng reCAPTCHA), xin truy cập vào: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
@@ -482,7 +485,7 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
 
-Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy cập bị từ chối". Nếu bạn đang sử dụng chủ đề tùy chỉnh cho CIDRAM, đầu ra HTML có nguồn gốc từ tập tin `template_custom.html`, và nếu không thì, đầu ra HTML có nguồn gốc từ tập tin `template.html`. Biến bằng văn bản cho phần này của tập tin cấu hình được xử lý để đầu ra HTML bằng cách thay thế bất kỳ tên biến được bao quanh bởi các dấu ngoặc nhọn tìm thấy trong đầu ra HTML với các dữ liệu biến tương ứng. Ví dụ, ở đâu `foo="bar"`, bất kỳ trường hợp `<p>{foo}</p>` tìm thấy trong đầu ra HTML sẽ trở thành `<p>bar</p>`.
+Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy cập đã bị từ chối". Nếu bạn đang sử dụng chủ đề tùy chỉnh cho CIDRAM, đầu ra HTML có nguồn gốc từ tập tin `template_custom.html`, và nếu không thì, đầu ra HTML có nguồn gốc từ tập tin `template.html`. Biến bằng văn bản cho phần này của tập tin cấu hình được xử lý để đầu ra HTML bằng cách thay thế bất kỳ tên biến được bao quanh bởi các dấu ngoặc nhọn tìm thấy trong đầu ra HTML với các dữ liệu biến tương ứng. Ví dụ, ở đâu `foo="bar"`, bất kỳ trường hợp `<p>{foo}</p>` tìm thấy trong đầu ra HTML sẽ trở thành `<p>bar</p>`.
 
 "theme"
 - Chủ đề mặc định để sử dụng cho CIDRAM.
@@ -543,9 +546,9 @@ Nếu "Greylist" được sử dụng, khi chữ ký được kích hoạt, c�
 
 Ví dụ: `127.0.0.1/32 Greylist`
 
-Nếu "Deny" được sử dụng, khi chữ ký được kích hoạt, giả sử không có chữ ký danh sách trắng đã được kích hoạt cho các địa chỉ IP hay CIDR thích hợp, truy cập vào các trang được bảo vệ sẽ bị từ chối. "Deny" là những gì bạn sẽ muốn sử dụng để thực sự ngăn chặn một địa chỉ IP hay phạm vi CIDR. Khi bất kỳ chữ ký được kích hoạt đó làm cho sử dụng của "Deny", trang "Truy cập bị từ chối" của các kịch bản sẽ được tạo ra và các yêu cầu đến trang bảo vệ sẽ bị giết.
+Nếu "Deny" được sử dụng, khi chữ ký được kích hoạt, giả sử không có chữ ký danh sách trắng đã được kích hoạt cho các địa chỉ IP hay CIDR thích hợp, truy cập vào các trang được bảo vệ sẽ bị từ chối. "Deny" là những gì bạn sẽ muốn sử dụng để thực sự ngăn chặn một địa chỉ IP hay phạm vi CIDR. Khi bất kỳ chữ ký được kích hoạt đó làm cho sử dụng của "Deny", trang "Truy cập đã bị từ chối" của các kịch bản sẽ được tạo ra và các yêu cầu đến trang bảo vệ sẽ bị giết.
 
-Giá trị `[Param]` chấp nhận bởi "Deny" sẽ được phân tích để đầu ra trang "Truy cập bị từ chối", cung cấp cho các khách hàng / người dùng như các lý do được trích dẫn cho truy cập của họ vào trang yêu cầu được bị từ chối. Nó có thể là một câu ngắn và đơn giản, giải thích lý do tại sao bạn đã chọn để ngăn chặn chúng (bất cứ điều gì là đủ, cái gì đó như "Tôi không muốn bạn trên trang mạng của tôi" sẽ đủ), hay một trong một số ít các từ viết tắt được cung cấp bởi các kịch bản, mà nếu được sử dụng, sẽ được thay thế bởi các kịch bản với một lời giải thích chuẩn bị trước lý do tại sao khách hàng / người dùng đã bị chặn.
+Giá trị `[Param]` chấp nhận bởi "Deny" sẽ được phân tích để đầu ra trang "Truy cập đã bị từ chối", cung cấp cho các khách hàng / người dùng như các lý do được trích dẫn cho truy cập của họ vào trang yêu cầu được bị từ chối. Nó có thể là một câu ngắn và đơn giản, giải thích lý do tại sao bạn đã chọn để ngăn chặn chúng (bất cứ điều gì là đủ, cái gì đó như "Tôi không muốn bạn trên trang mạng của tôi" sẽ đủ), hay một trong một số ít các từ viết tắt được cung cấp bởi các kịch bản, mà nếu được sử dụng, sẽ được thay thế bởi các kịch bản với một lời giải thích chuẩn bị trước lý do tại sao khách hàng / người dùng đã bị chặn.
 
 Những lời giải thích trước khi chuẩn bị có hỗ trợ L10N và có thể được dịch bởi kịch bản dựa trên ngôn ngữ mà bạn chỉ định đến tùy chọn `lang` của các cấu hình kịch bản. Ngoài ra, bạn có thể hướng dẫn các kịch bản để bỏ qua chữ ký "Deny" dựa trên giá trị `[Param]` của họ (nếu họ đang sử dụng những từ viết tắt) thông qua các tùy chọn định bởi cấu hình kịch bản (mỗi từ viết tắt có một tùy chọn tương ứng để xử lý chữ ký tương ứng hoặc bỏ qua chúng). Các giá trị `[Param]` mà không sử dụng những từ viết tắt, tuy nhiên, không có hỗ trợ L10N và do đó KHÔNG SẼ được dịch bởi kịch bản, và do đó, không thể được kiểm soát trực tiếp bởi các cấu hình kịch bản.
 
@@ -555,6 +558,7 @@ Những từ viết tắt có sẵn là:
 - Generic
 - Proxy
 - Spam
+- Legal
 
 #### 7.1 GẮN THẺ
 
@@ -745,7 +749,7 @@ Thực tế của "$Condition" được đánh giá, và nếu true/đúng, ch�
 
 "$ReasonShort" được trích dẫn trong trường "Tại sao bị chặn" khi chữ ký được "kích hoạt".
 
-"$ReasonLong" là một thông báo tùy chọn được hiển thị cho người dùng / khách hàng khi chúng bị chặn, để giải thích tại sao chúng bị chặn. Nó sử dụng thông báo "Truy cập bị từ chối" thông thường khi bị bỏ qua.
+"$ReasonLong" là một thông báo tùy chọn được hiển thị cho người dùng / khách hàng khi chúng bị chặn, để giải thích tại sao chúng bị chặn. Nó sử dụng thông báo "Truy cập đã bị từ chối" thông thường khi bị bỏ qua.
 
 "$DefineOptions" là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi chữ ký được "kích hoạt".
 
@@ -1008,4 +1012,4 @@ Có lẽ. Điều này phụ thuộc vào tính chất của dịch vụ đượ
 ---
 
 
-Lần cuối cập nhật: 8 Tháng Tư 2018 (2018.04.08).
+Lần cuối cập nhật: 1 Tháng Năm 2018 (2018.05.01).

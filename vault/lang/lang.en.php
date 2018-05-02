@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2018.01.20).
+ * This file: English language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,18 +17,21 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Unable to write to the cache! Please check your CHMOD file permissions!';
+$CIDRAM['lang']['MoreInfo'] = 'For more information:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Your access to this page was denied because you attempted to access this page using an invalid IP address.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Your access to this page was denied due to previous bad behaviour from your IP address.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Your access to this page was denied because your IP address is recognised as a bogon address, and connecting from bogons to this website isn\'t permitted by the website owner.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Your access to this page was denied because your IP address is recognised as belonging to a cloud service, and connecting to this website from cloud services isn\'t permitted by the website owner.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Your access to this page was denied because your IP address belongs to a network listed on a blacklist used by this website.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Your access to this page was denied because your IP address is recognised as belonging to a proxy service, and connecting to this website from proxy services isn\'t permitted by the website owner.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'Your access to this page was denied due to legal obligations.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Your access to this page was denied because your IP address is recognised as belonging to a proxy service or VPN, and connecting to this website from proxy services or VPNs isn\'t permitted by the website owner.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Your access to this page was denied because your IP address belongs to a network considered high-risk for spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Invalid IP';
 $CIDRAM['lang']['Short_Banned'] = 'Banned';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Cloud service';
 $CIDRAM['lang']['Short_Generic'] = 'Generic';
+$CIDRAM['lang']['Short_Legal'] = 'Legal';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risk';
 $CIDRAM['lang']['Support_Email'] = 'If you believe this is in error, or to seek assistance, {ClickHereLink} to send an email support ticket to the webmaster of this website (please don\'t change the preamble or subject line of the email).';

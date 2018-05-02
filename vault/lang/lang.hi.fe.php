@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.04.17).
+ * This file: Hindi language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'CIDRAM reCAPTCHA का उपय
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'अवरुद्ध bogon/martian की CIDRs? आप स्थानीय होस्ट, या अपने LAN अपने स्थानीय नेटवर्क के भीतर से अपनी वेबसाइट पर कनेक्शन, उम्मीद है, यह नुस्खा के गलत पर सेट किया जाना चाहिए। आप उनमें ऐसे कनेक्शनों की उम्मीद नहीं है, तो यह नुस्खा सही पर सेट किया जाना चाहिए।';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'अवरुद्ध CIDRs webhosting के / बादल सेवाओं से संबंधित के रूप में पहचान? आप अपनी वेबसाइट से एक API सेवा संचालित या आप अन्य वेब साइटों को अपनी वेबसाइट से कनेक्ट करने की उम्मीद है, तो इस झूठ के लिए निर्धारित किया जाना चाहिए। आप ऐसा नहीं करते, तो, यह नुस्खा सही पर सेट किया जाना चाहिए।';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'अवरुद्ध CIDRs आमतौर पर काली सूची सिफारिश? यह अन्य अधिक विशिष्ट हस्ताक्षर प्रकार से किसी का हिस्सा होने के रूप में चिह्नित नहीं है कि किसी भी हस्ताक्षर के कवर।';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'अवरुद्ध CIDRs प्रॉक्सी सेवाओं से संबंधित के रूप में पहचान? अपने उपयोगकर्ताओं अनाम प्रॉक्सी सेवाओं आप साइट तक पहुँचने के लिए सक्षम होने की आवश्यकता है, तो उसके गलत पर सेट किया जाना चाहिए। अन्यथा, आप गुमनाम परदे के पीछे की जरूरत नहीं है, यह नुस्खा सच सुधार सुरक्षा का एक साधन के रूप में सेट किया जाना चाहिए।';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'कानूनी दायित्वों के जवाब में CIDRs ब्लॉक करें? इस निर्देश का सामान्य रूप से कोई प्रभाव नहीं होना चाहिए, क्योंकि CIDRAM किसी भी CIDRs को डिफ़ॉल्ट रूप से "कानूनी दायित्वों" से संबद्ध नहीं करता है, लेकिन यह कानूनी कारणों से मौजूद किसी भी कस्टम हस्ताक्षर फ़ाइलों या मॉड्यूल के लिए अतिरिक्त नियंत्रण उपाय के रूप में वैसे भी मौजूद है।';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'अवरुद्ध CIDRs प्रॉक्सी सेवाओं या VPN से संबंधित के रूप में पहचान? अपने उपयोगकर्ताओं प्रॉक्सी सेवाओं या VPN आप साइट तक पहुँचने के लिए सक्षम होने की आवश्यकता है, तो उसके गलत पर सेट किया जाना चाहिए। अन्यथा, अगर आपको प्रॉक्सी सेवाओं या VPN की आवश्यकता नहीं है, यह विकल्प सच सुधार सुरक्षा का एक साधन के रूप में सेट किया जाना चाहिए।';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'अवरुद्ध CIDRs स्पैम के लिए उच्च जोखिम के रूप में पहचाना? ऐसा करने जब आप समस्याओं का सामना होता है जब तक आम तौर पर, यह हमेशा सच के लिए निर्धारित किया जाना चाहिए।';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'मॉड्यूल द्वारा प्रतिबंधित IP ट्रैक करने सेकंड कितने। डिफ़ॉल्ट = 604800 (1 सप्ताह)।';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'मिथकों की अधिकतम संख्या एक IP इससे पहले किया जाता है IP ट्रैकिंग से प्रतिबंध लागू करने की अनुमति है। डिफ़ॉल्ट = 10।';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लि
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org की समग्र ब्लॉकिंग सूची</a> – ASN बोटनेट संक्रमण दरों के बारे में रिपोर्ट प्रदर्शित करता है।</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – ज्ञात अपमानजनक IP के डेटाबेस बनाए रखता है; IP जांच और रिपोर्ट करने के लिए API प्रदान करता है।</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – ज्ञात स्पैमर की सूची बनाए रखता है; IP/ASN स्पैम गतिविधियों को देखने के लिए उपयोगी।</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (PHP, HHVM, आदि)।</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (भेद्यता चार्ट)</a> – विभिन्न पैकेजों के सुरक्षित/असुरक्षित संस्करणों की सूची (HHVM, PHP, phpMyAdmin, Python, आदि)।</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (संगतता चार्ट)</a> – विभिन्न पैकेजों के लिए सुसंगतता सूचियों की सूची (CIDRAM, phpMussel, आदि)।</li>
         </ul>';

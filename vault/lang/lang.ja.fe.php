@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.04.17).
+ * This file: Japanese language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'reCAPTCHAをCIDRAMで使用する
 $CIDRAM['lang']['config_signatures_block_bogons'] = '火星の\ぼごんからのＣＩＤＲをブロックする必要がありますか？​あなたがローカルホストから、​またはお使いのＬＡＮから、​ローカルネットワーク内からの接続を受信した場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'クラウドサービスからのＣＩＤＲをブロックする必要がありますか？​あなたのウェブサイトからのＡＰＩサービスを操作する場合、​または、​あなたがウェブサイトツーサイト接続が予想される場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_generic'] = '一般的なＣＩＤＲをブロックする必要がありますか？​（他のオプションに固有ではないもの）。';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービスからのＣＩＤＲをブロックする必要がありますか？​匿名プロキシサービスが必要な場合は、​これをfalseに設定する必要があります。​ない場合は、​セキュリティを向上させるために、​これをtrueに設定する必要があります。';
+$CIDRAM['lang']['config_signatures_block_legal'] = '法的義務に対応してＣＩＤＲをブロックするか？​CIDRAMは、どんなＣＩＤＲをデフォルトで「法的義務」に関連付けることはないため、このディレクティブは通常は効果がありません。​しかし、それは法的理由のために存在する可能性のある任意のカスタム・シグネチャ・ファイルまたはモジュールの利益のための追加の制御手段として存在する。';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービスまたはＶＰＮからのＣＩＤＲをブロックする必要がありますか？​プロキシサービスまたはＶＰＮが必要な場合は、​これをfalseに設定する必要があります。​ない場合は、​セキュリティを向上させるために、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'スパムのため、​ＣＩＤＲをブロックする必要がありますか？​問題がある場合を除き、​一般的には、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'モジュールによって禁止されているＩＰを追跡する秒数。​Default（デフォルト設定） = ６０４８００（１週間）。';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'ＩＰがＩＰトラッキングによって禁止される前に発生することが、​許される違反の最大数。​Default（デフォルト設定） = １０。';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgの複合・ブロック・リスト</a> – ＡＳＮのボットネット感染率に関するレポートを表示します。</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – 既知危険なＩＰアドレスのデータベースを維持します；​ＩＰアドレスを確認と報告するためのＡＰＩを提供します。</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 既知のスパマーリストを維持する；​ＩＰ/ＡＳＮスパム活動のチェックに役立ちます。</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（ＰＨＰ、ＨＨＶＭ、等）。</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
         </ul>';

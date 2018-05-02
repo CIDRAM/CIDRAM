@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.04.17).
+ * This file: Turkish language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'CIDRAM\'ın reCAPTCHA\'yi nasıl 
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Bogon/martian CIDR\'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Webhosting/bulut hizmetlerine ait olarak tanımlanan CIDR\'leri engelle? Sitenizden bir API hizmeti işletiyorsanız veya diğer web sitelerinin web sitenize bağlanmasını bekliyorsanız, bu yanlışa (false) ayarlanmalıdır. Aksi takdirde, bu yönergenin doğruya (true) ayarlanması gerekir.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Çoğu zaman kara liste için tavsiye edilen CIDR\'ler engelle? Bu, diğer daha belirgin imza kategorilerinin herhangi birinin parçası olarak işaretlenmeyen tüm imzaları kapsar.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Aracı site hizmetlerine ait olduğu saptanan CIDRleri engelle? Kullanıcıların, sitenize anonim aracı site servislerinden erişebilmelerini istiyorsanız, bu, yanlışa (false) ayarlanmalıdır. Aksi takdirde, anonim aracı sitelere gereksinim duymuyorsanız, bu yönergenin güvenliği artırmak için doğruya (true) ayarlanması gerekir.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Yasal yükümlülüklere yanıt olarak CIDR\'leri engelleyin? Bu yönerge normalde herhangi bir etkiye sahip olmamalıdır CIDRAM, herhangi bir CIDR\'yi varsayılan olarak "yasal yükümlülükler" ile ilişkilendirmediğinden. Ancak, yasal nedenlerden dolayı mevcut olabilecek herhangi bir özel imza dosyasının veya modülünün faydası için ek bir kontrol önlemi olarak mevcuttur.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Vekil servisler veya VPN\'ler ait olduğu saptanan CIDR\'leri engelle? Kullanıcıların, sitenize vekil servislerinden ve VPN\'lerinden erişebilmelerini istiyorsanız, bu, yanlışa (false) ayarlanmalıdır. Aksi takdirde, vekil servisler veya VPN\'ler gereksinim duymuyorsanız, bu yönergenin güvenliği artırmak için doğruya (true) ayarlanması gerekir.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Yüksek riskli çöp posta olarak sahtanan CIDR\'leri enğelle? Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Modüller tarafından yasaklanan IP\'leri izlemek için kaç saniye. Varsayılan = 604800 (1 hafta).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'IP izlemesi tarafından yasaklanmadan önce bir IPnin uğrayacağı maksimum ihlal sayısı. Varsayılan = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org\'un Kompozit Engelleme Listesi</a> – ASN\'ler için botnet enfeksiyon oranları ile ilgili raporları görüntüler.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Bilinen kötü amaçlı IP\'lerin veritabanını korur; IP\'leri denetlemek ve raporlamak için bir API sağlar.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Bilinen spam göndericilerinin listelerini sağlar; IP/ASN spam etkinliklerini kontrol etmek için yararlıdır.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (PHP, HHVM, vb.) güvenli/güvensiz sürümlerini listeler.</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb.) güvenli/güvensiz sürümlerini listeler.</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
         </ul>';

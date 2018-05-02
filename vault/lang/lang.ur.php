@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.01.20).
+ * This file: Urdu language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -20,11 +20,13 @@ if (!defined('CIDRAM')) {
 $CIDRAM['lang']['textDir'] = 'rtl';
 
 $CIDRAM['lang']['Error_WriteCache'] = 'کیشے کو لکھنے سے قاصر ہے! آپ کے CHMOD فائل کی اجازت براہ مہربانی چیک کریں!';
+$CIDRAM['lang']['MoreInfo'] = 'مزید معلومات کے لیے:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'آپ نے ایک غلط IP ایڈریس کا استعمال کرتے ہوئے اس صفحہ پر جانے کی کوشش کی کیونکہ اس صفحہ تک آپ کی رسائی منع کر دیا گیا.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'اس صفحہ تک آپ کی رسائی اپنے IP ایڈریس سے پچھلے برے رویے کی وجہ سے انکار کیا گیا تھا.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'اس صفحہ تک آپ کی رسائی منع کر دیا گیا کیونکہ آپ کا IP ایڈریس ایک bogon ایڈریس کے طور پر تسلیم کیا جاتا ہے، اور bogons سے اس ویب سائٹ سے منسلک کرنے کی ویب سائٹ کے مالک کی طرف سے اجازت نہیں ہے.';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'اس صفحہ تک آپ کی رسائی منع کر دیا گیا کیونکہ آپ کا IP ایڈریس ایک کلاؤڈ سروس سے تعلق رکھنے والے، اور کلاؤڈ سروسز کی جانب سے اس ویب سائٹ سے منسلک ہونے کے طور پر تسلیم کیا جاتا ہے ویب سائٹ کے مالک کی طرف سے اجازت نہیں ہے.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'اس صفحہ تک آپ کی رسائی کی وجہ سے آپ کا IP ایڈریس یہ ویب سائٹ کی طرف سے استعمال ایک بلیک لسٹ پر درج ایک نیٹ ورک سے تعلق رکھتا مسترد کردی گئی تھی.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'قانونی ذمہ داریوں کی وجہ سے آپ کے اس صفحے تک رسائی کا انکار کیا گیا تھا.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'اس صفحہ تک آپ کی رسائی منع کر دیا گیا کیونکہ آپ کا IP ایڈریس ایک پراکسی سروس سے تعلق رکھنے والے، اور پراکسی کی خدمات کی طرف سے اس ویب سائٹ سے منسلک ہونے کے طور پر تسلیم کیا جاتا ہے ویب سائٹ کے مالک کی طرف سے اجازت نہیں ہے.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'اس صفحہ تک آپ کی رسائی کی وجہ سے آپ کا IP ایڈریس کو spam لئے ایک نیٹ ورک سمجھا اعلی خطرے سے تعلق رکھتا مسترد کردی گئی تھی.';
 $CIDRAM['lang']['Short_BadIP'] = 'غلط IP';
@@ -32,6 +34,7 @@ $CIDRAM['lang']['Short_Banned'] = 'کالعدم';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'کلاؤڈ سروس';
 $CIDRAM['lang']['Short_Generic'] = 'جنرک';
+$CIDRAM['lang']['Short_Legal'] = 'قانونی';
 $CIDRAM['lang']['Short_Proxy'] = 'پراکسی';
 $CIDRAM['lang']['Short_Spam'] = 'سپیم خطرے';
 $CIDRAM['lang']['Support_Email'] = 'آپ کو یقین ہے کہ یہ غلطی سے ہے، یا مدد حاصل کرنے کے لئے تو، {ClickHereLink} اس ویب سائٹ کی ویب ماسٹر کو ایک ای میل کی حمایت کے ٹکٹ بھیجنے کے لئے (ای میل کی تمہید یا عنوان کی سطر کو تبدیل نہ کریں).';

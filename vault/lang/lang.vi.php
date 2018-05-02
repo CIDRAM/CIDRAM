@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2018.01.20).
+ * This file: Vietnamese language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,24 +17,27 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Không thể ghi vào cache! Xin kiểm tra quyền tập tin CHMOD của bạn!';
-$CIDRAM['lang']['ReasonMessage_BadIP'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì bạn đã cố gắng truy cập trang này sử dụng một địa chỉ IP không hợp lệ.';
-$CIDRAM['lang']['ReasonMessage_Banned'] = 'Truy cập của bạn vào trang này bị từ chối do hành vi xấu trước đó từ địa chỉ IP của bạn.';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như một địa chỉ bogon, và kết nối từ bogon đến trang web này không được phép bởi chủ sở hữu trang web.';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ điện toán đám mây, và kết nối đến trang web này từ dịch vụ điện toán đám mây không được phép bởi chủ sở hữu trang web.';
-$CIDRAM['lang']['ReasonMessage_Generic'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một mạng lưới được liệt kê vào danh sách đen được sử dụng bởi trang web này.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ proxy, và kết nối đến trang web này từ dịch vụ proxy không được phép bởi chủ sở hữu trang web.';
-$CIDRAM['lang']['ReasonMessage_Spam'] = 'Truy cập của bạn vào trang này bị từ chối bởi vì địa chỉ IP của bạn thuộc về một mạng lưới coi có nguy cơ cao đối với thư rác.';
+$CIDRAM['lang']['MoreInfo'] = 'Để biết thêm thông tin:';
+$CIDRAM['lang']['ReasonMessage_BadIP'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì bạn đã cố gắng truy cập trang này sử dụng một địa chỉ IP không hợp lệ.';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'Truy cập của bạn vào trang này đã bị từ chối do hành vi xấu trước đó từ địa chỉ IP của bạn.';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì địa chỉ IP của bạn được công nhận như một địa chỉ bogon, và kết nối từ bogon đến trang web này không được phép bởi chủ sở hữu trang web.';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ điện toán đám mây, và kết nối đến trang web này từ dịch vụ điện toán đám mây không được phép bởi chủ sở hữu trang web.';
+$CIDRAM['lang']['ReasonMessage_Generic'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một mạng lưới được liệt kê vào danh sách đen được sử dụng bởi trang web này.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'Truy cập của bạn vào trang này đã bị từ chối do các nghĩa vụ pháp lý.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì địa chỉ IP của bạn được công nhận như thuộc về một dịch vụ proxy, và kết nối đến trang web này từ dịch vụ proxy không được phép bởi chủ sở hữu trang web.';
+$CIDRAM['lang']['ReasonMessage_Spam'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì địa chỉ IP của bạn thuộc về một mạng lưới coi có nguy cơ cao đối với thư rác.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP không hợp lệ';
 $CIDRAM['lang']['Short_Banned'] = 'Bị cấm';
 $CIDRAM['lang']['Short_Bogon'] = 'IP bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'Dịch vụ điện toán đám mây';
 $CIDRAM['lang']['Short_Generic'] = 'Chủng loại';
+$CIDRAM['lang']['Short_Legal'] = 'Nghĩa vụ pháp lý';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Nguy cơ rác';
 $CIDRAM['lang']['Support_Email'] = 'Nếu bạn tin chắc đây là lỗi, hoặc để tìm sự giúp đỡ, {ClickHereLink} để gửi một vé hỗ trợ email cho webmaster của trang web này (xin không thay đổi lời nói đầu hoặc dòng tiêu đề của email).';
 $CIDRAM['lang']['Support_Email_2'] = 'Nếu bạn tin chắc đây là lỗi, gửi email đến {EmailAddr} để tìm kiếm sự trợ giúp.';
 $CIDRAM['lang']['click_here'] = 'nhấp vào đây';
-$CIDRAM['lang']['denied'] = 'Truy cập bị từ chối!';
+$CIDRAM['lang']['denied'] = 'Truy cập đã bị từ chối!';
 $CIDRAM['lang']['fake_ua'] = '{ua} giả mạo';
 $CIDRAM['lang']['field_datetime'] = 'Ngày / Thời gian: ';
 $CIDRAM['lang']['field_hostname'] = 'Tên máy chủ: ';

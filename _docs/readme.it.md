@@ -407,19 +407,22 @@ Configurazione per firme.
 - Un elenco dei file di firma IPv6 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole. È possibile aggiungere voci qui se si desidera includere ulteriori file di firma IPv6 per CIDRAM.
 
 "block_cloud"
-- Bloccare CIDRs identificato come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true.
+- Blocca i CIDR identificati come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true.
 
 "block_bogons"
-- Bloccare bogone/marziano CIDRs? Se aspetta i collegamenti al suo sito dall'interno della rete locale, da localhost, o dalla LAN, questa direttiva deve essere impostata su false. Se si non aspetta queste tali connessioni, questa direttiva deve essere impostata su true.
+- Blocca i CIDR bogone/marziano? Se aspetta i collegamenti al suo sito dall'interno della rete locale, da localhost, o dalla LAN, questa direttiva deve essere impostata su false. Se si non aspetta queste tali connessioni, questa direttiva deve essere impostata su true.
 
 "block_generic"
-- Bloccare CIDRs generalmente consigliato per la lista nera? Questo copre qualsiasi firme che non sono contrassegnate come parte del qualsiasi delle altre più specifiche categorie di firme.
+- Blocca i CIDR generalmente consigliati per la lista nera? Questo copre qualsiasi firme che non sono contrassegnate come parte del qualsiasi delle altre più specifiche categorie di firme.
+
+"block_legal"
+- Blocca i CIDR in risposta agli obblighi legali? Normalmente, questa direttiva non dovrebbe avere alcun effetto, poiché CIDRAM non associa alcun CIDR a "obblighi legali" per impostazione predefinita, ma esiste comunque come misura di controllo aggiuntiva a vantaggio di eventuali file di firme o moduli personalizzati che potrebbero esistere per motivi legali.
 
 "block_proxies"
-- Bloccare CIDRs identificato come appartenente alla servizi proxy? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi di proxy anonimi, questa direttiva deve essere impostata su false. Altrimenti, se non si richiede proxy anonimi, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.
+- Blocca i CIDR identificati come appartenente a servizi proxy o VPN? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi proxy o VPN, questa direttiva deve essere impostata su false. Altrimenti, se non hanno bisogno di servizi proxy o VPN, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.
 
 "block_spam"
-- Bloccare CIDRs identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true.
+- Blocca i CIDR identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true.
 
 "modules"
 - Un elenco di file moduli da caricare dopo l'esecuzione delle firme IPv4/IPv6, delimitati da virgole.
@@ -555,6 +558,7 @@ Le parole brevi disponibili sono:
 - Generic
 - Proxy
 - Spam
+- Legal
 
 #### 7.1 ETICHETTE
 
@@ -1008,4 +1012,4 @@ Possibilmente. Questo dipende dalla natura del servizio in questione e da come l
 ---
 
 
-Ultimo Aggiornamento: 8 Aprile 2018 (2018.04.08).
+Ultimo Aggiornamento: 1 Maggio 2018 (2018.05.01).

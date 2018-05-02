@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.04.17).
+ * This file: Norwegian language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Definerer hvordan CIDRAM skal bru
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blokker bogon/martian CIDRer? Hvis du forventer tilkoblinger til nettstedet ditt fra ditt lokale nettverk, fra localhost eller fra ditt LAN, bør dette direktivet settes til false. Hvis du ikke forventer slike tilkoblinger, bør dette direktivet settes til true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blokker CIDRer anbefales vanligvis for svarteliste? Dette dekker alle signaturer som ikke er merket som en del av noen av de andre mer spesifikke signaturkategoriene.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokker CIDRer som er identifisert som tilhørende proxy-tjenester? Hvis du krever at brukerne skal kunne få tilgang til nettstedet ditt fra anonyme proxy-tjenester, bør dette settes til feil. Ellers, hvis du ikke trenger anonyme proxyer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med "juridiske forpliktelser" som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokker CIDRer som er identifisert som tilhørende proxy-tjenester eller VPNer? Hvis du trenger at brukerne skal kunne få tilgang til nettstedet ditt fra proxy-tjenester og VPNer, bør dette settes til false. Ellers, hvis du ikke trenger proxy-tjenester eller VPNer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blokker CIDRer som er utsatt for høy risiko for spam? Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hvor mange sekunder å spore IPer som er utestengt av moduler. Standardverdi = 604800 (1 uke).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maks antall infraksjoner som en IP har lov til å pådra seg før den er utestengt av IP-sporing. Standardverdi = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Noen nyttige lenker:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org\'s Composite Blocking List</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Opprettholder en database med kjente farlige IPer; Gir en API for å sjekke og rapportere IPer.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Opprettholder oppføringer av kjente spammere; Nyttig for å sjekke IP/ASN spam aktiviteter.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (PHP, HHVM, osv).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
         </ul>';

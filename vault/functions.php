@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.04.06).
+ * This file: Functions file (last modified: 2018.05.01).
  */
 
 /**
@@ -413,52 +413,31 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     break 2;
                 }
                 if ($Category === 'Deny') {
-                    if ($Signature === 'Bogon' && !$CIDRAM['CIDRAM_sapi']) {
-                        if (!$CIDRAM['Config']['signatures']['block_bogons']) {
-                            continue;
+                    $DenyMatched = false;
+                    if (!$CIDRAM['CIDRAM_sapi']) {
+                        foreach ([
+                            ['Type' => 'Bogon', 'Config' => 'block_bogons', 'ReasonLong' => 'ReasonMessage_Bogon', 'ReasonShort' => 'Short_Bogon'],
+                            ['Type' => 'Cloud', 'Config' => 'block_cloud', 'ReasonLong' => 'ReasonMessage_Cloud', 'ReasonShort' => 'Short_Cloud'],
+                            ['Type' => 'Generic', 'Config' => 'block_generic', 'ReasonLong' => 'ReasonMessage_Generic', 'ReasonShort' => 'Short_Generic'],
+                            ['Type' => 'Proxy', 'Config' => 'block_proxies', 'ReasonLong' => 'ReasonMessage_Proxy', 'ReasonShort' => 'Short_Proxy'],
+                            ['Type' => 'Spam', 'Config' => 'block_spam', 'ReasonLong' => 'ReasonMessage_Spam', 'ReasonShort' => 'Short_Spam'],
+                            ['Type' => 'Legal', 'Config' => 'block_legal', 'ReasonLong' => 'ReasonMessage_Legal', 'ReasonShort' => 'Short_Legal']
+                        ] as $Params) {
+                            if ($Signature === $Params['Type']) {
+                                if (empty($CIDRAM['Config']['signatures'][$Params['Config']])) {
+                                    continue 2;
+                                }
+                                $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang'][$Params['ReasonLong']];
+                                if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                                    $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+                                }
+                                $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang'][$Params['ReasonShort']] . $LN;
+                                $DenyMatched = true;
+                                break;
+                            }
                         }
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Bogon'];
-                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Bogon'] . $LN;
-                    } elseif ($Signature === 'Cloud' && !$CIDRAM['CIDRAM_sapi']) {
-                        if (!$CIDRAM['Config']['signatures']['block_cloud']) {
-                            continue;
-                        }
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Cloud'];
-                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Cloud'] . $LN;
-                    } elseif ($Signature === 'Generic' && !$CIDRAM['CIDRAM_sapi']) {
-                        if (!$CIDRAM['Config']['signatures']['block_generic']) {
-                            continue;
-                        }
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
-                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
-                    } elseif ($Signature === 'Proxy' && !$CIDRAM['CIDRAM_sapi']) {
-                        if (!$CIDRAM['Config']['signatures']['block_proxies']) {
-                            continue;
-                        }
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Proxy'];
-                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Proxy'] . $LN;
-                    } elseif ($Signature === 'Spam' && !$CIDRAM['CIDRAM_sapi']) {
-                        if (!$CIDRAM['Config']['signatures']['block_spam']) {
-                            continue;
-                        }
-                        $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Spam'];
-                        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-                            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-                        }
-                        $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Spam'] . $LN;
-                    } else {
+                    }
+                    if (!$DenyMatched) {
                         $CIDRAM['BlockInfo']['ReasonMessage'] = $Signature;
                         if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
                             $CIDRAM['BlockInfo']['WhyReason'] .= ', ';

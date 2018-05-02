@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.04.17).
+ * This file: Bangla language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'কিভাবে CIDRAM reCAPTC
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'bogon/মঙ্গল CIDRগুলি ব্লক কর? আপনার স্থানীয় নেটওয়ার্কে, localhost, LAN, ইত্যাদি থেকে আপনার ওয়েবসাইট সংযোগ, এই নির্দেশটি false হিসাবে সেট করা উচিত। আপনি যদি এই ধরনের সংযোগগুলি আশা না করেন, এই নির্দেশটি true হিসাবে সেট করা উচিত।';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'ওয়েব হোস্টিং এবং ক্লাউড পরিষেবাগুলির সাথে সম্পর্কিত হিসাবে CIDRগুলি ব্লক কর? আপনি যদি আপনার ওয়েবসাইট থেকে একটি API সেবা পরিচালনা করেন, অথবা যদি আপনি অন্য ওয়েবসাইটে আপনার ওয়েবসাইট সংযোগ করতে আশা, এই false সেট করা উচিত। অন্যভাবে, যদি না, এই true সেট করা উচিত।';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'ব্ল্যাকলিস্টের জন্য CIDRগুলি সুপারিশ করেছে ব্লক কর? এটি কোন স্বাক্ষর বিবেচনা করে যা অন্য কোনও অংশ হিসাবে চিহ্নিত করা হয় না।';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'প্রক্সি পরিষেবাগুলির সাথে সম্পর্কিত হিসাবে চিহ্নিত CIDRগুলি ব্লক কর? আপনি ব্যবহারকারীদের বেনামী প্রক্সি পরিষেবাগুলি থেকে আপনার ওয়েবসাইট অ্যাক্সেস করতে সক্ষম হবে যদি প্রয়োজন, এই false সেট করা উচিত। অন্যভাবে, যদি না, এই true সেট করা উচিত (যদি true নির্ধারণ করা হয়, তাহলে নিরাপত্তা আরো ভালো হবে)।';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'আইনি বাধ্যবাধকতা প্রতিক্রিয়া হিসেবে CIDRগুলি ব্লক কর? এই নির্দেশটি সাধারণত কোন প্রভাব না থাকা উচিত, কারণ CIDRAM ডিফল্ট হিসাবে "আইনি বাধ্যবাধকতা" সঙ্গে কোনো CIDR সংযুক্ত না, কিন্তু এটি কোনও স্বনির্ধারিত স্বাক্ষর ফাইল বা মডিউলগুলির সুবিধা জন্য একটি অতিরিক্ত নিয়ন্ত্রণ পরিমাপ হিসাবে বিদ্যমান যা আইনি কারণগুলির জন্য বিদ্যমান হতে পারে।';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'প্রক্সি পরিষেবাগুলির বা VPNগুলির সাথে সম্পর্কিত হিসাবে চিহ্নিত CIDRগুলি ব্লক কর? আপনি ব্যবহারকারীদের পরিষেবাগুলি এবং VPNগুলি থেকে আপনার ওয়েবসাইট অ্যাক্সেস করতে সক্ষম হবে যদি প্রয়োজন, এই false সেট করা উচিত। অন্যভাবে, যদি না, এই true সেট করা উচিত (যদি true নির্ধারণ করা হয়, তাহলে নিরাপত্তা আরো ভালো হবে)।';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'স্প্যামাররা সাথে যুক্ত CIDRগুলি ব্লক কর? যখন সম্ভব, এবং যদি কোনো সমস্যা না ঘটে, এই true সেট করা উচিত।';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'মডিউল দ্বারা নিষিদ্ধ IP ঠিকানাগুলি কতগুলি সেকেন্ডের ট্র্যাক করা উচিত। ডিফল্ট = 604800 (1 সপ্তাহ)।';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'IP ট্র্যাকিং দ্বারা এটি নিষিদ্ধ হওয়ার আগে একটি আইপি দ্বারা অনুমোদিত লঙ্ঘনটিকে সর্বাধিক সংখ্যা। ডিফল্ট = 10।';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'কিছু দরকারী ল
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org কম্পোজিট ব্লকিং তালিকা</a> – ASNগুলি এর জন্য ম্যালওয়ার সংক্রমণের হার সংক্রান্ত প্রতিবেদনগুলি প্রদর্শন করে।</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – একটি পরিচিত অপমানজনক IPগুলি ডাটাবেস বজায় রাখে; IPগুলি চেক এবং রিপোর্ট করার জন্য একটি API উপলব্ধ করে।</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – পরিচিত স্প্যামারদের তালিকা বজায় রাখে; IP/ASN স্প্যাম ক্রিয়াকলাপ পরীক্ষা করার জন্য দরকারী।</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (PHP, HHVM, ইত্যাদি)।</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Vulnerability Charts (দুর্বলতা চার্ট)</a> – বিভিন্ন প্যাকেজের নিরাপদ/অনিরাপদ সংস্করণের তালিকা (HHVM, PHP, phpMyAdmin, Python, ইত্যাদি)।</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Compatibility Charts (সামঞ্জস্যের চার্ট)</a> – বিভিন্ন প্যাকেজের জন্য সামঞ্জস্য তথ্য তালিকা (CIDRAM, phpMussel, ইত্যাদি)।</li>
         </ul>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.04.17).
+ * This file: German language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Dies definiert wie CIDRAM sollte 
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blockieren Sie Bogon/Martian CIDRs? Wenn Sie Verbindungen zu Ihrer Website von localhost, von Ihrem LAN, oder von innerhalb Ihres lokalen Netzwerks erwarten, diese Richtlinie auf false sollte gesetzt werden. Wenn Sie diese Verbindungen nicht erwarten, dies auf true sollte gesetzt werden.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blockieren Sie CIDRs identifiziert als zu Web-Hosting/Cloud-Services gehören? Wenn Sie einen API-Dienst von Ihrer Website aus betreiben, oder wenn Sie erwarten dass andere Websites eine Verbindung zu Ihrer Website herstellen, dies auf false sollte gesetzt werden. Wenn Sie nicht, dann, dies auf true sollte gesetzt werden.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blockieren Sie CIDRs allgemein empfohlen für eine schwarze Liste? Dies gilt für alle Signaturen, die nicht als Teil einer der anderen spezifischen Signaturkategorien markiert sind.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste gehören? Wenn Sie benötigen dass Benutzer auf Ihre Website von anonymen Proxy-Diensten zugreifen können, dies auf false sollte gesetzt werden. Andernfalls, Wenn Sie anonyme Proxies nicht benötigen, diese Richtlinie auf true sollte gesetzt werden, als Mittel zur Verbesserung der Sicherheit.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Blockieren Sie CIDRs als Antwort auf gesetzliche Verpflichtungen? Diese Richtlinie sollte normalerweise keine Wirkung haben, da CIDRAM standardmäßig keine CIDRs mit "gesetzliche Verpflichtungen" assoziiert, aber es existiert dennoch als zusätzliche Kontrollmaßnahme für den Vorteil von benutzerdefinierten Signaturdateien oder Modulen, die aus gesetzlichen Gründen existieren könnten.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste oder VPNs gehören? Wenn Sie benötigen dass Benutzer auf Ihre Website von Proxy-Dienste und VPNs zugreifen können, diese Richtlinie auf false sollte gesetzt werden. Andernfalls, Wenn Sie Proxy-Dienste oder VPNs nicht benötigen, diese Richtlinie auf true sollte gesetzt werden, als Mittel zur Verbesserung der Sicherheit.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blockieren Sie CIDRs identifiziert als ein hohem Risiko für Spam? Solange Sie keine Probleme haben während Sie dies tun, allgemein, dies immer auf true sollte gesetzt sein.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Wie viele Sekunden, um IPs von Modulen verboten zu verfolgen. Standardeinstellung = 604800 (1 Woche).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Maximale Anzahl von Verstöße, die eine IP zulassen darf, bevor sie durch IP-Tracking verboten ist. Standardeinstellung = 10.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.org\'s Composite-Blockierliste</a> – Zeigt Berichte über Botnet-Infektionsraten für ASNs.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Verwaltet eine Datenbank für bekannter missbräuchlicher IPs; Bietet eine API zum Überprüfen und Melden IPs.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Verwaltet Listen von bekannten Spammern; Nützlich für die Überprüfung von IP/ASN-Spam-Aktivitäten.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (PHP, HHVM, usw).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sicherheitskarten</a> – Listet sichere/unsichere Versionen verschiedener Pakete auf (HHVM, PHP, phpMyAdmin, Python, usw).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitätskarten</a> – Listet Kompatibilitätsinformationen für verschiedene Pakete auf (CIDRAM, phpMussel, usw).</li>
         </ul>';

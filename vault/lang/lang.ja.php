@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.01.20).
+ * This file: Japanese language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,20 +17,23 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'キャッシュは書き込み不可です！​あなたのＣＨＭＯＤをチェックしてください！';
-$CIDRAM['lang']['ReasonMessage_BadIP'] = 'なぜブロックされましたか：​無効なＩＰ。';
-$CIDRAM['lang']['ReasonMessage_Banned'] = 'なぜブロックされましたか：​あなたのＩＰアドレスからの望ましくない動作。';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = 'なぜブロックされましたか：​Bogon/火星のＩＰ。';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = 'なぜブロックされましたか：​クラウドサービス接続。';
-$CIDRAM['lang']['ReasonMessage_Generic'] = 'なぜブロックされましたか：​ＩＰがブラックリストに掲載されています/危険なネットワーク。';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'なぜブロックされましたか：​プロキシサービス接続。';
-$CIDRAM['lang']['ReasonMessage_Spam'] = 'なぜブロックされましたか：​スパムネットワーク/危険なネットワーク。';
+$CIDRAM['lang']['MoreInfo'] = '詳細については：';
+$CIDRAM['lang']['ReasonMessage_BadIP'] = 'このページへのアクセスは、無効なＩＰのために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Banned'] = 'このページへのアクセスは、あなたのＩＰアドレスからの望ましくない動作のために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = 'このページへのアクセスは、あなたのＩＰがBogon「ボゴン、火星」ＩＰアドレスであるからですのために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = 'このページへのアクセスは、あなたのＩＰはクラウド・サービスに属していますのために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Generic'] = 'このページへのアクセスは、あなたのＩＰは危険なネットワークまたはこのウェブサイトで使用されているブラックリストに属していますのために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'このページへのアクセスは、法的義務のために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'このページへのアクセスは、あなたのＩＰはプロキシ・サービスまたはＶＰＮに属していますのために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Spam'] = 'このページへのアクセスは、あなたのＩＰは、ネットワークはスパムを送信するによく知られていますに属していますのために拒否されました。';
 $CIDRAM['lang']['Short_BadIP'] = '無効なＩＰ';
 $CIDRAM['lang']['Short_Banned'] = '禁止された';
-$CIDRAM['lang']['Short_Bogon'] = 'Bogon/火星のＩＰ';
-$CIDRAM['lang']['Short_Cloud'] = 'クラウドサービス';
+$CIDRAM['lang']['Short_Bogon'] = 'Bogon「ボゴン、火星」ＩＰ';
+$CIDRAM['lang']['Short_Cloud'] = 'クラウド・サービス';
 $CIDRAM['lang']['Short_Generic'] = 'ジェネリック';
+$CIDRAM['lang']['Short_Legal'] = '法的';
 $CIDRAM['lang']['Short_Proxy'] = 'プロキシ';
-$CIDRAM['lang']['Short_Spam'] = 'スパムリスク';
+$CIDRAM['lang']['Short_Spam'] = 'スパム・リスク';
 $CIDRAM['lang']['Support_Email'] = 'Ｅメールサポートチケットを送信については、​または、​支援については、​{ClickHereLink}してください（プリアンブルを変更しないでください）。';
 $CIDRAM['lang']['Support_Email_2'] = 'これが間違っていると思われる場合は、{EmailAddr}に電子Ｅメールを送信して支援を求めてください。';
 $CIDRAM['lang']['click_here'] = 'こちらをクリック';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2018.01.20).
+ * This file: Chinese (simplified) language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,18 +17,21 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = '无法写入缓存！​请检查您的CHMOD文件的权限！';
+$CIDRAM['lang']['MoreInfo'] = '了解更多信息：';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = '您的访问这个页面被拒绝因为您试图访问该页面使用一个无效的IP地址。';
 $CIDRAM['lang']['ReasonMessage_Banned'] = '您的访问这个页面被拒绝因由于您的IP地址以前的错误行为。';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = '您的访问这个页面被拒绝因为您的IP地址被识别作为火星IP地址，​和来自这些IP连接不是由网站所有者允许。';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于云服务，​和来自这些IP连接不是由网站所有者允许。';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = '您的访问这个页面被拒绝因为您的IP地址被识别作为火星IP地址，​和从火星IP地址连接是网站所有者不允许。';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于云服务，​和从云服务连接是网站所有者不允许。';
 $CIDRAM['lang']['ReasonMessage_Generic'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络在黑名单中所列使用本网站。';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于代理服务，​和来自这些IP连接不是由网站所有者允许。';
+$CIDRAM['lang']['ReasonMessage_Legal'] = '您的访问这个页面被拒绝因为由于法律义务。';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = '您的访问这个页面被拒绝因为您的IP地址被识别为属于代理服务或VPN，​和从代理服务或VPN连接是网站所有者不允许。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '您的访问这个页面被拒绝因为您的IP地址属于一个网络被认为是高风险的垃圾邮件。';
 $CIDRAM['lang']['Short_BadIP'] = '无效的IP！';
 $CIDRAM['lang']['Short_Banned'] = '禁止';
 $CIDRAM['lang']['Short_Bogon'] = '火星IP';
 $CIDRAM['lang']['Short_Cloud'] = '云服务';
 $CIDRAM['lang']['Short_Generic'] = '通用';
+$CIDRAM['lang']['Short_Legal'] = '法律义务';
 $CIDRAM['lang']['Short_Proxy'] = '代理';
 $CIDRAM['lang']['Short_Spam'] = '垃圾邮件的风险';
 $CIDRAM['lang']['Support_Email'] = '如果您认为这是错误的，​或寻求援助，​{ClickHereLink}发送电子邮件支持票本网站的网站管理员（请不要改变序言或主题行）。';

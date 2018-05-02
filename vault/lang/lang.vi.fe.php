@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.04.17).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -73,7 +73,7 @@ $CIDRAM['lang']['config_general_max_login_attempts'] = 'Số lượng tối đa 
 $CIDRAM['lang']['config_general_numbers'] = 'Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.';
-$CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.';
+$CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.';
 $CIDRAM['lang']['config_general_statistics'] = 'Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';
@@ -91,7 +91,8 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Định nghĩa thế nào CIDRAM 
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Chặn CIDR bogon/martian? Nếu bạn mong đợi các kết nối đến trang mạng của bạn từ bên trong mạng nội bộ của bạn, từ localhost, hay từ LAN của bạn, tùy chọn này cần được thiết lập để false. Nếu bạn không mong đợi những kết nối như vậy, tùy chọn này cần được thiết lập để true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Chặn CIDR xác định là thuộc về các dịch vụ lưu trữ mạng hay dịch vụ điện toán đám mây? Nếu bạn điều hành một dịch vụ API từ trang mạng của bạn hay nếu bạn mong đợi các trang mạng khác để kết nối với trang mạng của bạn, điều này cần được thiết lập để false. Nếu bạn không, sau đó, tùy chọn này cần được thiết lập để true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Chặn CIDR thường được khuyến cáo cho danh sách đen? Điều này bao gồm bất kỳ chữ ký không được đánh dấu như một phần của bất kỳ các loại chữ ký cụ thể khác.';
-$CIDRAM['lang']['config_signatures_block_proxies'] = 'Chặn CIDR xác định là thuộc về các dịch vụ proxy? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy ẩn danh, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu proxy vô danh, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Chặn CIDR theo các nghĩa vụ pháp lý? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ pháp lý" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do pháp lý.';
+$CIDRAM['lang']['config_signatures_block_proxies'] = 'Chặn CIDR xác định là thuộc về các dịch vụ proxy hay VPN? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy hay VPN, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu các dịch vụ proxy hay VPN, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Chặn CIDR xác định như có nguy cơ cao đối được thư rác? Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Có bao nhiêu giây để giám sát các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).';
 $CIDRAM['lang']['config_signatures_infraction_limit'] = 'Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các giám sát IP. Mặc định = 10.';
@@ -215,7 +216,7 @@ $CIDRAM['lang']['link_updates'] = 'Cập Nhật';
 $CIDRAM['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
 $CIDRAM['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
 $CIDRAM['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
-$CIDRAM['lang']['max_login_attempts_exceeded'] = 'Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập bị từ chối.';
+$CIDRAM['lang']['max_login_attempts_exceeded'] = 'Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập đã bị từ chối.';
 $CIDRAM['lang']['previewer_days'] = 'Ngày';
 $CIDRAM['lang']['previewer_hours'] = 'Giờ';
 $CIDRAM['lang']['previewer_minutes'] = 'Phút';
@@ -230,7 +231,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Tài khoản này không t�
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Mật khẩu cập nhật thành công!';
 $CIDRAM['lang']['response_activated'] = 'Kích hoạt thành công.';
 $CIDRAM['lang']['response_activation_failed'] = 'Không thể kích hoạt!';
-$CIDRAM['lang']['response_checksum_error'] = 'Kiểm tra lỗi! Tập tin bị từ chối!';
+$CIDRAM['lang']['response_checksum_error'] = 'Kiểm tra lỗi! Tập tin đã bị từ chối!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Thành phần cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Thành phần gỡ bỏ cài đặt thành công.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Thành phần cập nhật thành công.';
@@ -356,6 +357,6 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
             <li><a href="https://www.abuseat.org/public/asn.html">Danh sách chặn hỗn hợp @ Abuseat.org</a> – Hiển thị báo cáo về tỷ lệ lây nhiễm chương trình thư rác cho các ASN.</li>
             <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Duy trì một cơ sở dữ liệu của các IP mà lạm dụng và biết; Cung cấp một API để kiểm tra và báo cáo các IP.</li>
             <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Duy trì danh sách các spammer được biết; Hữu ích cho việc kiểm tra các hoạt động thư rác từ các IP/ASN.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (PHP, HHVM, vv).</li>
+            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (HHVM, PHP, phpMyAdmin, Python, vv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
         </ul>';

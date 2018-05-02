@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.01.20).
+ * This file: Hindi language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,11 +17,13 @@ if (!defined('CIDRAM')) {
 }
 
 $CIDRAM['lang']['Error_WriteCache'] = 'कैश में लिखने में असमर्थ! कृपया अपने CHMOD अनुमतियों की जांच करें!';
+$CIDRAM['lang']['MoreInfo'] = 'अधिक जानकारी के लिए:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता मान्य नहीं है।';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'आपके आईपी पते से पिछले दुर्व्यवहार के कारण, इस पृष्ठ पर प्रवेश से इंकार किया गया था।';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता एक बोगोन पता के रूप में पहचाना जाता है, और बोगोनों से कनेक्ट करना वेबसाइट के स्वामी द्वारा अनुमति नहीं है।';
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता एक क्लाउड सर्विस का हिस्सा है, और क्लाउड सेवाओं से कनेक्ट करना वेबसाइट के स्वामी द्वारा अनुमति नहीं है।';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता इस वेबसाइट द्वारा उपयोग की गई एक ब्लैकलिस्ट पर है।';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'कानूनी दायित्वों के कारण इस पृष्ठ तक आपकी पहुंच अस्वीकार कर दी गई थी।';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता प्रॉक्सी सेवा से संबंधित है, और प्रॉक्सी सेवाओं से कनेक्ट करना वेबसाइट के स्वामी द्वारा अनुमति नहीं है।';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता एक स्पैमर-अनुकूल नेटवर्क से संबंधित है।';
 $CIDRAM['lang']['Short_BadIP'] = 'अमान्य आईपी';
@@ -29,6 +31,7 @@ $CIDRAM['lang']['Short_Banned'] = 'प्रतिबंधित';
 $CIDRAM['lang']['Short_Bogon'] = 'बोगोन आईपी';
 $CIDRAM['lang']['Short_Cloud'] = 'क्लाउड सेवा';
 $CIDRAM['lang']['Short_Generic'] = 'सामान्य';
+$CIDRAM['lang']['Short_Legal'] = 'कानूनी';
 $CIDRAM['lang']['Short_Proxy'] = 'प्रॉक्सी';
 $CIDRAM['lang']['Short_Spam'] = 'स्पैम जोखिम';
 $CIDRAM['lang']['Support_Email'] = 'यदि आपको लगता है कि यह त्रुटि है, या सहायता प्राप्त करने के लिए, इस वेबसाइट के वेबमास्टर को ईमेल समर्थन टिकट भेजने के लिए {ClickHereLink} (कृपया प्रस्तावना या विषय रेखा को न बदलें)।';

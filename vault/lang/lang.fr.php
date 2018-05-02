@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.03.25).
+ * This file: French language data (last modified: 2018.05.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -22,18 +22,21 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
 };
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Ne peux pas d\'écrire dans le cache ! S\'il vous plaît vérifier votre permissions CHMOD !';
+$CIDRAM['lang']['MoreInfo'] = 'Pour plus d\'informations :';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Votre accès à cette page a été refusée parce que vous avez tenté d\'accéder à cette page en utilisant un invalide IP adresse.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Votre accès à cette page a été refusée en raison du mauvais comportement précédent de votre adresse IP.';
-$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme un bogon adresse, et la connexion de bogons à cette site est pas autorisée par le propriétaire du site.';
-$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme appartenant à un service de cloud computing, et la connexion des services de cloud computing à cette site est pas autorisée par le propriétaire du site.';
+$CIDRAM['lang']['ReasonMessage_Bogon'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme une adresse bogon, et la connexion de bogons à cette site n\'est pas autorisée par le propriétaire du site.';
+$CIDRAM['lang']['ReasonMessage_Cloud'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme appartenant à un service de cloud computing, et la connexion des services de cloud computing à cette site n\'est pas autorisée par le propriétaire du site.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Votre accès à cette page a été refusée parce que votre IP adresse appartient à un réseau figurant sur une liste noire utilisée par ce site.';
-$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme appartenant à un service de proxy, et la connexion des services de proxy à cette site est pas autorisée par le propriétaire du site.';
+$CIDRAM['lang']['ReasonMessage_Legal'] = 'Votre accès à cette page a été refusé en raison d\'obligations légales.';
+$CIDRAM['lang']['ReasonMessage_Proxy'] = 'Votre accès à cette page a été refusée parce que votre IP adresse est reconnue comme appartenant à un service de proxy ou un VPN, et la connexion des services de proxy ou des VPNs à cette site n\'est pas autorisée par le propriétaire du site.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Votre accès à cette page a été refusée parce que votre IP adresse appartient à un réseau considéré comme à haut risque pour le spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Invalide IP !';
 $CIDRAM['lang']['Short_Banned'] = 'Interdit';
 $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Service de cloud';
 $CIDRAM['lang']['Short_Generic'] = 'Générique';
+$CIDRAM['lang']['Short_Legal'] = 'Légal';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risque';
 $CIDRAM['lang']['Support_Email'] = 'Si vous croyez que cela est dans l\'erreur, ou pour demander de l\'aide, {ClickHereLink} pour envoyer un e-mail ticket de support au webmaster de ce site (s\'il vous plaît, ne pas modifier le préambule ou la ligne d\'objet de l\'e-mail).';

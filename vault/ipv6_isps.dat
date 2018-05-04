@@ -619,9 +619,9 @@ recaptcha:
 
 # ASN 45271 ("Idea Cellular Limited").
 # %Listed, CleanTalk.org: 0.19%.
-# %Listed, abuseat.org (CBL-Listed): 23.94%.
-# Stop Forum Spam (SFS) listings: 265.
-# Updated: 2018.02.04
+# %Listed, abuseat.org (CBL-Listed): 21.54%.
+# Stop Forum Spam (SFS) listings: 179.
+# Updated: 2018.05.03
 
 2402:8100:b::/48 Deny Spam
 2402:8100:2000::/41 Deny Spam
@@ -631,15 +631,14 @@ recaptcha:
 2402:8100:3010::/44 Deny Spam
 2402:8100:3020::/44 Deny Spam
 2402:8100:3038::/45 Deny Spam
+2402:8100:3800::/47 Deny Spam
 2402:8100:3804::/46 Deny Spam
-2402:8100:383c::/46 Deny Spam
+2402:8100:3808::/45 Deny Spam
+2402:8100:3810::/44 Deny Spam
+2402:8100:3820::/43 Deny Spam
 2402:8100:3840::/42 Deny Spam
 2402:8100:38c0::/42 Deny Spam
-2402:8100:3900::/41 Deny Spam
-2402:8100:3984::/46 Deny Spam
-2402:8100:3988::/47 Deny Spam
-2402:8100:398c::/48 Deny Spam
-2402:8100:398e::/47 Deny Spam
+2402:8100:3900::/40 Deny Spam
 Origin: IN
 Tag: Idea Cellular
 ---
@@ -747,13 +746,12 @@ recaptcha:
 # I think it would be unwise to not block this AS. However, I'm marking it for use with reCAPTCHA, and those CIDRAM
 # users that don't want to block it can drop this section's tag into the ignore list as a means of ignoring this
 # listing if they want to do so. May remove this section in the future if the AS cleans up their act.
-# %Listed, Google Malware Dashboard: 0.31%.
+# %Listed, Google Malware Dashboard: 0.13%.
 # %Listed, CleanTalk.org: 6.76%.
-# %Listed, abuseat.org (CBL-Listed): 13.68%.
-# Stop Forum Spam (SFS) listings: 8,248.
-# Updated: 2018.02.12
+# %Listed, abuseat.org (CBL-Listed): 7.78%.
+# Stop Forum Spam (SFS) listings: 5,918.
+# Updated: 2018.05.03
 
-2001:4490:3fc::/46 Deny Spam
 2001:4490:7f8::/45 Deny Spam
 2001:4490:bfc::/46 Deny Spam
 2001:4490:ffc::/46 Deny Spam
@@ -783,6 +781,7 @@ recaptcha:
 2001:4490:d800::/46 Deny Spam
 2001:4490:d820::/46 Deny Spam
 2001:4490:d890::/46 Deny Spam
+2001:4490:d8c0::/46 Deny Spam
 2001:4490:d930::/46 Deny Spam
 2001:4490:d970::/46 Deny Spam
 2001:4490:d980::/46 Deny Spam
@@ -793,6 +792,7 @@ recaptcha:
 2001:4490:db40::/46 Deny Spam
 2001:4490:dbf0::/46 Deny Spam
 2001:4490:dc4c::/46 Deny Spam
+2001:4490:dd18::/46 Deny Spam
 2001:4490:dda8::/45 Deny Spam
 2001:4490:ddb0::/46 Deny Spam
 2001:4490:de18::/46 Deny Spam
@@ -805,9 +805,8 @@ recaptcha:
 2001:4490:f020::/46 Deny Spam
 2001:4490:fffc::/46 Deny Spam
 Origin: IN
-2600:1417:50::/48 Deny Spam
-2600:1417:62::/48 Deny Spam
-2600:1417:71::/48 Deny Spam
+2600:140f:1000::/64 Deny Spam
+2600:1417:50::/47 Deny Spam
 Origin: US
 Tag: BSNL
 ---
@@ -884,11 +883,11 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.10%.
+# %Listed, Google Malware Dashboard: 1.98%.
 # %Listed, CleanTalk.org: 24.97%.
-# %Listed, abuseat.org (CBL-Listed): 0.61%.
-# Stop Forum Spam (SFS) listings: 43,072.
-# Updated: 2018.02.04
+# %Listed, abuseat.org (CBL-Listed): 0.58%.
+# Stop Forum Spam (SFS) listings: 22,295.
+# Updated: 2018.02.04 / Checked: 2018.05.03
 
 2408:8000::/20 Deny Generic
 Origin: CN
@@ -1234,15 +1233,15 @@ recaptcha:
 
 # ASN 12389 ("PJSC Rostelecom").
 # Careful about "2002::/16" listing: Never include this in the aggregated list!
-# %Listed, Google Malware Dashboard: 0.78%.
+# %Listed, Google Malware Dashboard: 0.48%.
 # %Listed, CleanTalk.org: 10.87%.
-# %Listed, abuseat.org (CBL-Listed): 1.61%.
-# Stop Forum Spam (SFS) listings: 380,488.
-# Updated: 2018.02.04
+# %Listed, abuseat.org (CBL-Listed): 1.37%.
+# Stop Forum Spam (SFS) listings: 308,824.
+# Updated: 2018.05.03
 
 2a00:1e88::/32 Deny Spam
 2a01:540::/36 Deny Spam
-2a01:540:2000::/36 Deny Spam
+2a01:540:2000::/35 Deny Spam
 2a01:540:4000::/36 Deny Spam
 2a01:540:6000::/36 Deny Spam
 2a01:540:8000::/36 Deny Spam

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2018.05.01).
+ * This file: Italian language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Accesso a questa pagina è stato negat
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Accesso a questa pagina è stato negato perché il suo indirizzo IP viene riconosciuto come appartenente ad un servizio cloud, e il collegamento a questo sito web da servizi cloud non è consentito dal proprietario del sito web.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Accesso a questa pagina è stato negato perché il suo indirizzo IP appartiene a una rete elencati in una lista nera utilizzato da questo sito web.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'Accesso a questa pagina è stato negato a causa di obblighi legali.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'Accesso a questa pagina è stato negato a causa di problemi di malware relativi al vostro indirizzo IP.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Accesso a questa pagina è stato negato perché il suo indirizzo IP viene riconosciuto come appartenente ad un servizio proxy o una VPN, e il collegamento a questo sito web da servizi proxy o VPN non è consentito dal proprietario del sito web.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Accesso a questa pagina è stato negato perché il suo indirizzo appartiene a una rete considerati ad alto rischio per lo spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP non valido!';
@@ -32,6 +33,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Servizio cloud';
 $CIDRAM['lang']['Short_Generic'] = 'Generico';
 $CIDRAM['lang']['Short_Legal'] = 'Legale';
+$CIDRAM['lang']['Short_Malware'] = 'Malware';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Rischio per lo spam';
 $CIDRAM['lang']['Support_Email'] = 'Se credi che questo è in errore, o per cercare assistenza, {ClickHereLink} per inviare una richiesta di assistenza via e-mail per il webmaster di questo sito (si prega di non modificare il preambolo o linea oggetto dell\'e-mail).';

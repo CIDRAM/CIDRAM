@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.05.01).
+ * This file: Russian language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Ваш доступ к этой стр
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес признается принадлежность к облачной службе, и подключение к этому сайту из облачных сервисов не допускается.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес принадлежит к сети, перечисленные в черном списке используемый этим сайтом.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'Ваш доступ к этой странице было отказано из-за юридическими обязательствами.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'Ваш доступ к этой странице было отказано из-за вредоносных программ, связанных с вашим IP-адресом.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес распознается как принадлежность к прокси-сервис, и подключение к этому сайту от прокси-серверов не допускается.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес принадлежит к сети считается высоким риском для спама.';
 $CIDRAM['lang']['Short_BadIP'] = 'Неверный IP';
@@ -40,6 +41,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon/Марсианин IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Облачный сервис';
 $CIDRAM['lang']['Short_Generic'] = 'Общий';
 $CIDRAM['lang']['Short_Legal'] = 'Юридический';
+$CIDRAM['lang']['Short_Malware'] = 'Вредоносные программы';
 $CIDRAM['lang']['Short_Proxy'] = 'Прокси';
 $CIDRAM['lang']['Short_Spam'] = 'Спам риск';
 $CIDRAM['lang']['Support_Email'] = 'Если Вы считаете, что это ошибка, или для того, попросить о помощи, {ClickHereLink}, чтобы отправить билет поддержки по электронной почте его на веб-мастеру этого сайта (пожалуйста, не изменить преамбулу или электронная почта тема линия).';

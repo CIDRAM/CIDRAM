@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.05.01).
+ * This file: Japanese language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'このページへのアクセスは�
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'このページへのアクセスは、あなたのＩＰはクラウド・サービスに属していますのために拒否されました。';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'このページへのアクセスは、あなたのＩＰは危険なネットワークまたはこのウェブサイトで使用されているブラックリストに属していますのために拒否されました。';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'このページへのアクセスは、法的義務のために拒否されました。';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'このページへのアクセスは、あなたのＩＰアドレスに関するマルウェアの懸念があるために拒否されました。';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'このページへのアクセスは、あなたのＩＰはプロキシ・サービスまたはＶＰＮに属していますのために拒否されました。';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'このページへのアクセスは、あなたのＩＰは、ネットワークはスパムを送信するによく知られていますに属していますのために拒否されました。';
 $CIDRAM['lang']['Short_BadIP'] = '無効なＩＰ';
@@ -32,6 +33,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon「ボゴン、火星」ＩＰ';
 $CIDRAM['lang']['Short_Cloud'] = 'クラウド・サービス';
 $CIDRAM['lang']['Short_Generic'] = 'ジェネリック';
 $CIDRAM['lang']['Short_Legal'] = '法的';
+$CIDRAM['lang']['Short_Malware'] = 'マルウェア';
 $CIDRAM['lang']['Short_Proxy'] = 'プロキシ';
 $CIDRAM['lang']['Short_Spam'] = 'スパム・リスク';
 $CIDRAM['lang']['Support_Email'] = 'Ｅメールサポートチケットを送信については、​または、​支援については、​{ClickHereLink}してください（プリアンブルを変更しないでください）。';

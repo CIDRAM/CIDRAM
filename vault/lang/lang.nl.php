@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.05.01).
+ * This file: Dutch language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Uw toegang tot deze pagina is geweiger
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een cloud service, en het bezoeken van deze website via cloud services niet is toegestaan door de beheerder van deze website.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres behoort tot een netwerk dat is op een zwarte lijst gebruikt door deze website.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'Uw toegang tot deze pagina is geweigerd vanwege wettelijke verplichtingen.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'Uw toegang tot deze pagina is geweigerd vanwege malwaregerelateerde problemen met betrekking tot uw IP-adres.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als behorend tot een proxy service of VPN, en het verbinden van proxy services of VPN\'s naar deze website is niet toegestaan door de eigenaar van deze website.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres behoort tot een netwerk beschouwd als een hoog risico op spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ongeldig IP!';
@@ -32,6 +33,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Cloud Service';
 $CIDRAM['lang']['Short_Generic'] = 'Algemeen';
 $CIDRAM['lang']['Short_Legal'] = 'Wettelijke';
+$CIDRAM['lang']['Short_Malware'] = 'Malware';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Spam risico';
 $CIDRAM['lang']['Support_Email'] = 'Als u denkt dat deze melding een fout is, of u heeft een vraag, {ClickHereLink} om een email sturen naar de webmaster van dit site (Wijzig a.u.b. het onderwerp veld van de email niet).';

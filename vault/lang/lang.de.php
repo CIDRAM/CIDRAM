@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2018.05.01).
+ * This file: German language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Ihr Zugriff auf diese Seite wurde verw
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einer Cloud-Service, und Verbindungen von einer Cloud-Service auf dieser Website ist nicht vom Besitzer der Website gestattet.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einem Netzwerk aufgelistet auf eine Schwarzliste benutzten mit dieser Website.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'Ihr Zugriff auf diese Seite wurde verweigert aufgrund gesetzlicher Verpflichtungen.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'Ihr Zugriff auf diese Seite wurde verweigert aufgrund von Malware-Problemen in Bezug auf Ihre IP-Adresse.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einem Proxy-Dienst oder VPN, und Verbindungen von einem Proxy-Dienst oder VPN auf dieser Website ist nicht vom Besitzer der Website gestattet.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse gehört zu einem Netzwerk auf einem hohen Risiko für Spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'Ungültige IP!';
@@ -32,6 +33,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon-IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Cloud-Service';
 $CIDRAM['lang']['Short_Generic'] = 'Generisches';
 $CIDRAM['lang']['Short_Legal'] = 'Gesetzliche';
+$CIDRAM['lang']['Short_Malware'] = 'Malware';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy-Service';
 $CIDRAM['lang']['Short_Spam'] = 'Spam Risiko';
 $CIDRAM['lang']['Support_Email'] = 'Wenn Sie glauben dies in Fehler, oder zu suchen Hilfe, {ClickHereLink} eine E-Mail Support-Ticket zu schicken an den Webmaster dieser Website (Sie ändern nicht der Präambel oder Betreffzeile der E-Mail).';

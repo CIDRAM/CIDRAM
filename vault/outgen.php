@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.04.06).
+ * This file: Output generator (last modified: 2018.05.03).
  */
 
 /** Initialise cache. */
@@ -473,6 +473,20 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     } else {
         $CIDRAM['Config']['template_data']['textBlockAlign'] = 'text-align:right;';
         $CIDRAM['Config']['template_data']['textBlockFloat'] = 'float:right;';
+    }
+
+    /** Prepare to process "more info" entries, if any exist. */
+    if (!empty($CIDRAM['Config']['More Info']) && !empty($CIDRAM['BlockInfo']['ReasonMessage'])) {
+        $CIDRAM['BlockInfo']['ReasonMessage'] .= '<br /><br />' . $CIDRAM['lang']['MoreInfo'];
+        $CIDRAM['Arrayify']($CIDRAM['Config']['More Info']);
+        /** Process entries. */
+        foreach ($CIDRAM['Config']['More Info'] as $CIDRAM['Info Name'] => $CIDRAM['Info Link']) {
+            $CIDRAM['BlockInfo']['ReasonMessage'] .= (!empty($CIDRAM['Info Name']) && is_string($CIDRAM['Info Name'])) ? (
+                sprintf('<br /><a href="%1$s">%2$s</a>', $CIDRAM['Info Link'], $CIDRAM['Info Name']
+            )) : sprintf('<br /><a href="%1$s">%1$s</a>', $CIDRAM['Info Link']);
+        }
+        /** Cleanup. */
+        unset($CIDRAM['Info Link'], $CIDRAM['Info Name'], $CIDRAM['Config']['More Info']);
     }
 
     /** Parsed to the template file upon generating HTML output. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2018.05.01).
+ * This file: Indonesian language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Akses Anda ke halaman ini ditolak kare
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai milik dari layanan komputasi awan, dan menghubungkan dari layanan komputasi awan ke situs ini tidak diizinkan oleh pemilik situs.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan terdaftar pada daftar hitam yang digunakan oleh situs ini.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'Akses Anda ke halaman ini ditolak karena kewajiban hukum.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'Akses Anda ke halaman ini ditolak karena kekhawatiran malware terkait dengan alamat IP Anda.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai milik dari layanan proxy atau VPN, dan menghubungkan dari layanan proxy atau VPN ke situs ini tidak diizinkan oleh pemilik situs.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda milik dari jaringan dianggap berisiko tinggi untuk spam.';
 $CIDRAM['lang']['Short_BadIP'] = 'IP tidak valid!';
@@ -32,6 +33,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'IP yang bogon';
 $CIDRAM['lang']['Short_Cloud'] = 'Layanan komputasi awan';
 $CIDRAM['lang']['Short_Generic'] = 'Umum';
 $CIDRAM['lang']['Short_Legal'] = 'Hukum';
+$CIDRAM['lang']['Short_Malware'] = 'Malware';
 $CIDRAM['lang']['Short_Proxy'] = 'Proxy';
 $CIDRAM['lang']['Short_Spam'] = 'Risiko spam';
 $CIDRAM['lang']['Support_Email'] = 'Jika Anda yakin ini adalah kesalahan, atau untuk mencari bantuan, {ClickHereLink} untuk mengirim tiket dukungan email ke webmaster dari situs ini (silahkan jangan mengubah pembukaan atau baris subjek email).';

@@ -418,6 +418,9 @@ Cấu hình cho chữ ký.
 "block_legal"
 - Chặn CIDR theo các nghĩa vụ pháp lý? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ pháp lý" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do pháp lý.
 
+"block_malware"
+- Chặn IP liên quan đến phần mềm độc hại? Điều này bao gồm các máy chủ C&C, máy chủ bị nhiễm, máy chủ liên quan đến phân phối phần mềm độc hại, vv.
+
 "block_proxies"
 - Chặn CIDR xác định là thuộc về các dịch vụ proxy hay VPN? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy hay VPN, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu các dịch vụ proxy hay VPN, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.
 
@@ -559,6 +562,7 @@ Những từ viết tắt có sẵn là:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 GẮN THẺ
 
@@ -1012,4 +1016,4 @@ Có lẽ. Điều này phụ thuộc vào tính chất của dịch vụ đượ
 ---
 
 
-Lần cuối cập nhật: 1 Tháng Năm 2018 (2018.05.01).
+Lần cuối cập nhật: 4 Tháng Năm 2018 (2018.05.04).

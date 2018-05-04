@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.05.01).
+ * This file: Italian language data for the front-end (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -92,6 +92,7 @@ $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blocca i CIDR bogone/marzia
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blocca i CIDR identificati come appartenente alla servizi webhosting/cloud? Se si utilizza un servizio di API dal suo sito o se si aspetta altri siti a collegare al suo sito, questa direttiva deve essere impostata su false. Se non, questa direttiva deve essere impostata su true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blocca i CIDR generalmente consigliati per la lista nera? Questo copre qualsiasi firme che non sono contrassegnate come parte del qualsiasi delle altre più specifiche categorie di firme.';
 $CIDRAM['lang']['config_signatures_block_legal'] = 'Blocca i CIDR in risposta agli obblighi legali? Normalmente, questa direttiva non dovrebbe avere alcun effetto, poiché CIDRAM non associa alcun CIDR a "obblighi legali" per impostazione predefinita, ma esiste comunque come misura di controllo aggiuntiva a vantaggio di eventuali file di firme o moduli personalizzati che potrebbero esistere per motivi legali.';
+$CIDRAM['lang']['config_signatures_block_malware'] = 'Blocca gli IP associati al malware? Ciò include server C&C, macchine infette, macchine coinvolte nella distribuzione di malware, ecc.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blocca i CIDR identificati come appartenente a servizi proxy o VPN? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi proxy o VPN, questa direttiva deve essere impostata su false. Altrimenti, se non hanno bisogno di servizi proxy o VPN, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blocca i CIDR identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Quanti secondi per monitorare IP vietati dai moduli. Predefinito = 604800 (1 settimana).';

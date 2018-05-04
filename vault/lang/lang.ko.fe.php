@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.01).
+ * This file: Korean language data for the front-end (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -92,6 +92,7 @@ $CIDRAM['lang']['config_signatures_block_bogons'] = '화성\ぼごんから의 C
 $CIDRAM['lang']['config_signatures_block_cloud'] = '클라우드 서비스에서 CIDR을 차단해야합니까? 당신의 웹 사이트에서 API 서비스를 운영하거나 당신이 웹 사이트 간 연결이 예상되는 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다.';
 $CIDRAM['lang']['config_signatures_block_generic'] = '일반적인 CIDR을 차단해야합니까? (다른 옵션과 관련되지 않은).';
 $CIDRAM['lang']['config_signatures_block_legal'] = '법적 의무에 대응하여 CIDR을 차단 하시겠습니까? CIDRAM은 어떤 CIDR을 기본적으로 "법적 의무에" 연결할 수 없기 때문에이 지시문은 일반적으로 효과가 없습니다. 하지만, 법적 이유로 존재할 가능성이있는 모든 사용자 정의 시그니처 파일 또는 모듈의 이익을위한 추가 제어 수단으로 존재한다.';
+$CIDRAM['lang']['config_signatures_block_malware'] = '멀웨어와 관련된 IP를 차단 하시겠습니까? 여기에는 C&C 서버, 감염된 시스템, 맬웨어 배포와 관련된 컴퓨터 등이 포함됩니다.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = '프록시 서비스 또는 VPN에서 CIDR을 차단해야합니까? 프록시 서비스 또는 VPN이 필요한 경우는, false로 설정해야합니다. 없는 경우에는 보안을 향상시키기 위해이를 true로 설정해야합니다.';
 $CIDRAM['lang']['config_signatures_block_spam'] = '스팸 때문에 CIDR을 차단해야합니까? 문제가있는 경우를 제외하고 일반적으로이를 true로 설정해야합니다.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = '모듈에 의해 금지 된 IP를 추적하는 초. Default (기본값) = 604800 (1 주).';

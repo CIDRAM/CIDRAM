@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.05.01).
+ * This file: Bangla language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'এই পৃষ্ঠায় আপ
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'এই পৃষ্ঠায় আপনার অ্যাক্সেসটি অস্বীকার করা হয়েছিল কারণ আপনার IP ঠিকানাটি ক্লাউড সার্ভিসের সাথে সম্পর্কিত হিসাবে স্বীকৃত, এবং ক্লাউড পরিষেবা এই ওয়েবসাইট থেকে সংযোগ করার অনুমতি নেই।';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'এই পৃষ্ঠায় আপনার অ্যাক্সেসটি অস্বীকার করা হয়েছিল কারণ আপনার IP ঠিকানা এই ওয়েবসাইট দ্বারা ব্যবহৃত ব্ল্যাকলিস্টে তালিকাভুক্ত একটি নেটওয়ার্কের সাথে সম্পর্কিত।';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'এই পৃষ্ঠাতে আপনার অ্যাক্সেস আইনি বাধ্যবাধকতা কারণে অস্বীকার করা হয়েছিল।';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'আপনার IP ঠিকানা সম্পর্কিত ম্যালওয়ারের উদ্বেগের কারণে এই পৃষ্ঠায় আপনার অ্যাক্সেস অস্বীকৃত হয়েছে।';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'এই পৃষ্ঠায় আপনার অ্যাক্সেসটি অস্বীকার করা হয়েছিল কারণ আপনার IP ঠিকানাটি প্রক্সি পরিষেবার বা VPN অন্তর্গত হিসাবে স্বীকৃত, এবং প্রক্সি পরিষেবা বা VPN এই ওয়েবসাইট থেকে সংযোগ করার অনুমতি নেই।';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'এই পৃষ্ঠায় আপনার অ্যাক্সেসটি অস্বীকার করা হয়েছিল কারণ আপনার IP ঠিকানা স্প্যামারদের সাথে যুক্ত একটি নেটওয়ার্কের সাথে সম্পর্কিত।';
 $CIDRAM['lang']['Short_BadIP'] = 'অবৈধ IP';
@@ -32,6 +33,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'মেঘ পরিষেবা';
 $CIDRAM['lang']['Short_Generic'] = 'জাতিবাচক';
 $CIDRAM['lang']['Short_Legal'] = 'আইনি';
+$CIDRAM['lang']['Short_Malware'] = 'ম্যালওয়ারের';
 $CIDRAM['lang']['Short_Proxy'] = 'প্রক্সি';
 $CIDRAM['lang']['Short_Spam'] = 'স্প্যাম ঝুঁকি';
 $CIDRAM['lang']['Support_Email'] = 'যদি এটি একটি ত্রুটি, বা সহায়তার সন্ধান, {ClickHereLink} এই ওয়েবসাইটের ওয়েবমাস্টার একটি ইমেইল সমর্থন টিকেট পাঠাতে (দয়া করে ইমেলের প্রস্তাবনা বা বিষয় লাইন পরিবর্তন করবেন না)।';

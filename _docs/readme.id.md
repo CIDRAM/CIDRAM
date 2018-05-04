@@ -418,6 +418,9 @@ Konfigurasi untuk tanda tangan.
 "block_legal"
 - Memblokir CIDR sebagai respons terhadap kewajiban hukum? Direktif ini seharusnya tidak memiliki efek apapun, karena CIDRAM tidak menghubungkan CIDR apapun dengan "kewajiban hukum" secara default, tetapi tetap ada sebagai ukuran kontrol tambahan untuk kepentingan file tanda tangan atau modul dipersonalisasi yang mungkin ada karena alasan hukum.
 
+"block_malware"
+- Memblokir IP yang terkait dengan malware? Ini termasuk server C&C, mesin yang terinfeksi, mesin yang terlibat dalam distribusi malware, dll.
+
 "block_proxies"
 - Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy atau VPN? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy atau VPN, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan.
 
@@ -559,6 +562,7 @@ Kata-kata singkat yang tersedia adalah:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 TAG
 
@@ -1012,4 +1016,4 @@ Mungkin. Ini tergantung pada sifat layanan yang dipermasalahkan, dan bagaimana A
 ---
 
 
-Terakhir Diperbarui: 1 Mei 2018 (2018.05.01).
+Terakhir Diperbarui: 4 Mei 2018 (2018.05.04).

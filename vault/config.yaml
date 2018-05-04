@@ -237,13 +237,16 @@ Config Defaults:
   block_generic:
    type: bool
    default: true
+  block_legal:
+   type: bool
+   default: true
+  block_malware:
+   type: bool
+   default: true
   block_proxies:
    type: bool
    default: false
   block_spam:
-   type: bool
-   default: true
-  block_legal:
    type: bool
    default: true
   modules:

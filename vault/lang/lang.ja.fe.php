@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.01).
+ * This file: Japanese language data for the front-end (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -92,6 +92,7 @@ $CIDRAM['lang']['config_signatures_block_bogons'] = '火星の\ぼごんから�
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'クラウドサービスからのＣＩＤＲをブロックする必要がありますか？​あなたのウェブサイトからのＡＰＩサービスを操作する場合、​または、​あなたがウェブサイトツーサイト接続が予想される場合、​これはfalseに設定する必要があります。​ない場合は、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_generic'] = '一般的なＣＩＤＲをブロックする必要がありますか？​（他のオプションに固有ではないもの）。';
 $CIDRAM['lang']['config_signatures_block_legal'] = '法的義務に対応してＣＩＤＲをブロックするか？​CIDRAMは、どんなＣＩＤＲをデフォルトで「法的義務」に関連付けることはないため、このディレクティブは通常は効果がありません。​しかし、それは法的理由のために存在する可能性のある任意のカスタム・シグネチャ・ファイルまたはモジュールの利益のための追加の制御手段として存在する。';
+$CIDRAM['lang']['config_signatures_block_malware'] = 'マルウェアに関連するＩＰをブロックするか？​これには、Ｃ＆Ｃサーバー、感染マシン、マルウェア配布に関係するマシンなどが含まれます。';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'プロキシサービスまたはＶＰＮからのＣＩＤＲをブロックする必要がありますか？​プロキシサービスまたはＶＰＮが必要な場合は、​これをfalseに設定する必要があります。​ない場合は、​セキュリティを向上させるために、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'スパムのため、​ＣＩＤＲをブロックする必要がありますか？​問題がある場合を除き、​一般的には、​これをtrueに設定する必要があります。';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'モジュールによって禁止されているＩＰを追跡する秒数。​Default（デフォルト設定） = ６０４８００（１週間）。';

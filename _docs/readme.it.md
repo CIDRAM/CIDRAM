@@ -418,6 +418,9 @@ Configurazione per firme.
 "block_legal"
 - Blocca i CIDR in risposta agli obblighi legali? Normalmente, questa direttiva non dovrebbe avere alcun effetto, poiché CIDRAM non associa alcun CIDR a "obblighi legali" per impostazione predefinita, ma esiste comunque come misura di controllo aggiuntiva a vantaggio di eventuali file di firme o moduli personalizzati che potrebbero esistere per motivi legali.
 
+"block_malware"
+- Blocca gli IP associati al malware? Ciò include server C&C, macchine infette, macchine coinvolte nella distribuzione di malware, ecc.
+
 "block_proxies"
 - Blocca i CIDR identificati come appartenente a servizi proxy o VPN? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi proxy o VPN, questa direttiva deve essere impostata su false. Altrimenti, se non hanno bisogno di servizi proxy o VPN, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.
 
@@ -559,6 +562,7 @@ Le parole brevi disponibili sono:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 ETICHETTE
 
@@ -1012,4 +1016,4 @@ Possibilmente. Questo dipende dalla natura del servizio in questione e da come l
 ---
 
 
-Ultimo Aggiornamento: 1 Maggio 2018 (2018.05.01).
+Ultimo Aggiornamento: 4 Maggio 2018 (2018.05.04).

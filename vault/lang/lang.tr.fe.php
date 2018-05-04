@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.05.01).
+ * This file: Turkish language data for the front-end (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -92,6 +92,7 @@ $CIDRAM['lang']['config_signatures_block_bogons'] = 'Bogon/martian CIDR\'leri en
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Webhosting/bulut hizmetlerine ait olarak tanımlanan CIDR\'leri engelle? Sitenizden bir API hizmeti işletiyorsanız veya diğer web sitelerinin web sitenize bağlanmasını bekliyorsanız, bu yanlışa (false) ayarlanmalıdır. Aksi takdirde, bu yönergenin doğruya (true) ayarlanması gerekir.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Çoğu zaman kara liste için tavsiye edilen CIDR\'ler engelle? Bu, diğer daha belirgin imza kategorilerinin herhangi birinin parçası olarak işaretlenmeyen tüm imzaları kapsar.';
 $CIDRAM['lang']['config_signatures_block_legal'] = 'Yasal yükümlülüklere yanıt olarak CIDR\'leri engelleyin? Bu yönerge normalde herhangi bir etkiye sahip olmamalıdır CIDRAM, herhangi bir CIDR\'yi varsayılan olarak "yasal yükümlülükler" ile ilişkilendirmediğinden. Ancak, yasal nedenlerden dolayı mevcut olabilecek herhangi bir özel imza dosyasının veya modülünün faydası için ek bir kontrol önlemi olarak mevcuttur.';
+$CIDRAM['lang']['config_signatures_block_malware'] = 'Kötü amaçlı yazılımlarla ilişkili IP\'leri engelle? Buna, C&C sunucuları, virüs bulaşmış makineler, kötü amaçlı yazılım dağıtımında yer alan makineler vb. dahildir.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Vekil servisler veya VPN\'ler ait olduğu saptanan CIDR\'leri engelle? Kullanıcıların, sitenize vekil servislerinden ve VPN\'lerinden erişebilmelerini istiyorsanız, bu, yanlışa (false) ayarlanmalıdır. Aksi takdirde, vekil servisler veya VPN\'ler gereksinim duymuyorsanız, bu yönergenin güvenliği artırmak için doğruya (true) ayarlanması gerekir.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Yüksek riskli çöp posta olarak sahtanan CIDR\'leri enğelle? Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Modüller tarafından yasaklanan IP\'leri izlemek için kaç saniye. Varsayılan = 604800 (1 hafta).';

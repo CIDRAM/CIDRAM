@@ -418,6 +418,9 @@ Configuração por assinaturas.
 "block_legal"
 - Bloquear CIDRs em resposta a obrigações legais? Esta diretiva normalmente não deve ter qualquer efeito, porque o CIDRAM não associa nenhum CIDR com "obrigações legais" por padrão, mas existe, no entanto, como uma medida de controle adicional para o benefício de quaisquer arquivos de assinatura ou módulos personalizados que possam existir por motivos legais.
 
+"block_malware"
+- Bloquear IPs associados ao malware? Isso inclui servidores C&C, máquinas infectadas, máquinas envolvidas na distribuição de malware, etc.
+
 "block_proxies"
 - Bloquear CIDRs identificado como pertencente a serviços de proxy ou VPNs? Se você precisar que os usuários poderão acessar seu site dos serviços de proxy e VPNs, este deve ser definido como false. De outra forma, se você não precisa de serviços de proxy ou VPNs, este deve ser definido como true como um meio de melhorar a segurança.
 
@@ -559,6 +562,7 @@ As palavras curtas disponíveis são:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 ETIQUETAS
 
@@ -1012,4 +1016,4 @@ Talvez. Isso depende da natureza do serviço em questão e de como você o utili
 ---
 
 
-Última Atualização: 1 Maio de 2018 (2018.05.01).
+Última Atualização: 4 Maio de 2018 (2018.05.04).

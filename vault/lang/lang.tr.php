@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.05.01).
+ * This file: Turkish language data (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = 'IP adresiniz bir bogon adresi olarak t
 $CIDRAM['lang']['ReasonMessage_Cloud'] = 'IP adresiniz bir bulut hizmetine ait olduğu ve bulut servislerinden bu web sitesine bağlanmaya web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = 'IP adresiniz, bu web sitesi tarafından kullanılan bir kara listede listelenen bir ağa ait olduğu için, bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = 'Yasal yükümlülükler nedeniyle bu sayfaya erişiminiz reddedildi.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = 'IP adresinizle ilgili kötü amaçlı yazılım sorunları nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = 'IP adresinizin bir vekil servisi veya VPN hizmetine ait olduğu kabul edildiğinden ve bu web sitesine vekil servisi veya VPN hizmetleri aracılığıyla bağlanmaya web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = 'IP adresiniz istenmeyen eposta için yüksek riskli olduğu düşünülen bir ağa ait olduğu için bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['Short_BadIP'] = 'Geçersiz IP';
@@ -37,6 +38,7 @@ $CIDRAM['lang']['Short_Bogon'] = 'Bogon IP';
 $CIDRAM['lang']['Short_Cloud'] = 'Bulut hizmeti';
 $CIDRAM['lang']['Short_Generic'] = 'Genel';
 $CIDRAM['lang']['Short_Legal'] = 'Yasal';
+$CIDRAM['lang']['Short_Malware'] = 'Kötü amaçlı yazılım';
 $CIDRAM['lang']['Short_Proxy'] = 'Vekil servisi';
 $CIDRAM['lang']['Short_Spam'] = 'İstenmeyen eposta riski';
 $CIDRAM['lang']['Support_Email'] = 'Bunun yanlış olduğuna inanıyorsanız veya yardım almak için, bu sitesinin yöneticisine bir e-posta destek bileti göndermek için {ClickHereLink} (e-postanın önsözünü veya başlama ekini değiştirmeyin).';

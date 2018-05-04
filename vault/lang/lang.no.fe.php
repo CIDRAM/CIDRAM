@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.05.01).
+ * This file: Norwegian language data for the front-end (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -92,6 +92,7 @@ $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blokker bogon/martian CIDRe
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blokker CIDRer identifisert som tilhørende web-verter og sky-tjenester? Hvis du driver en API-tjeneste fra nettstedet ditt eller hvis du forventer at andre nettsteder skal koble til nettstedet ditt, bør dette settes til false. Hvis du ikke gjør det, da bør dette direktivet settes til true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blokker CIDRer anbefales vanligvis for svarteliste? Dette dekker alle signaturer som ikke er merket som en del av noen av de andre mer spesifikke signaturkategoriene.';
 $CIDRAM['lang']['config_signatures_block_legal'] = 'Blokker CIDRer som svar på juridiske forpliktelser? Dette direktivet bør normalt ikke ha noen effekt, fordi CIDRAM ikke som standard forbinder noen CIDRer med "juridiske forpliktelser" som standard, men det eksisterer likevel som et ekstra kontrollmål til fordel for eventuelle tilpassede signaturfiler eller moduler som kan eksistere av juridiske årsaker.';
+$CIDRAM['lang']['config_signatures_block_malware'] = 'Blokker IP-adresser knyttet til skadelig programvare? Dette inkluderer C&C-servere, infiserte maskiner, maskiner involvert i distribusjon av skadelig programvare, etc.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blokker CIDRer som er identifisert som tilhørende proxy-tjenester eller VPNer? Hvis du trenger at brukerne skal kunne få tilgang til nettstedet ditt fra proxy-tjenester og VPNer, bør dette settes til false. Ellers, hvis du ikke trenger proxy-tjenester eller VPNer, bør dette direktivet settes til true som et middel til å forbedre sikkerheten.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blokker CIDRer som er utsatt for høy risiko for spam? Med mindre du opplever problemer når du gjør det, bør dette vanligvis alltid settes til true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hvor mange sekunder å spore IPer som er utestengt av moduler. Standardverdi = 604800 (1 uke).';

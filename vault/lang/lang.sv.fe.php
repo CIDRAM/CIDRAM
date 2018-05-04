@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.05.01).
+ * This file: Swedish language data for the front-end (last modified: 2018.05.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -92,6 +92,7 @@ $CIDRAM['lang']['config_signatures_block_bogons'] = 'Blockera bogon/martian CIDR
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Blockera CIDRer identifierade som tillhör webbhotell/molntjänster? Om du använder en API-tjänst från din webbplats eller om du förväntar dig att andra webbplatser ska ansluta till din webbplats, detta direktiv borde vara false. Annars, detta direktiv borde vara true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Blockera CIDRer rekommenderas generellt för svartlistning? Detta omfattar alla signaturer som inte är markerade som en del av någon av de andra mer specifika signaturkategorierna.';
 $CIDRAM['lang']['config_signatures_block_legal'] = 'Blockera CIDRer som svar på lagliga skyldigheter? Detta direktiv borde normalt inte ha någon effekt, eftersom CIDRAM inte som standard kopplar samman några CIDR med "lagliga skyldigheter", men det finns ändå som en extra kontrollåtgärd till förmån för eventuella anpassade signaturfiler eller moduler som kan existera av juridiska skäl.';
+$CIDRAM['lang']['config_signatures_block_malware'] = 'Blockera IP-adresser i samband med skadlig kod? Detta inkluderar C&C-servrar, infekterade maskiner, maskiner som är involverade i distribution av skadlig kod, etc.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blockera CIDRer identifierade som tillhör proxytjänster eller VPNer? Om du behöver att användare ska kunna komma åt din webbplats från proxytjänster och VPNer, detta direktiv borde vara false. Annars, om du inte behöver proxytjänster eller VPNer, detta direktiv borde vara true som ett sätt att förbättra säkerheten.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blockera CIDRer identifierade som högrisk för spam? Om du inte upplever problem när du gör det, bör det alltid vara true.';
 $CIDRAM['lang']['config_signatures_default_tracktime'] = 'Hur många sekunder spåra IP-adresser som är förbjudna av moduler. Standard = 604800 (1 vecka).';

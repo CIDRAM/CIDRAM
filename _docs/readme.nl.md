@@ -418,6 +418,9 @@ Configuratie voor signatures.
 "block_legal"
 - Blokkeren CIDR's als reactie op wettelijke verplichtingen? Dit richtlijn zou normaal gesproken geen effect moeten hebben, omdat CIDRAM als standaard geen CIDR's met "wettelijke verplichtingen" associeert, maar het bestaat niettemin als een extra beheersmaatregel ten behoeve van eventuele aangepaste signatures bestanden of  modules die mogelijk bestaan om wettelijke redenen.
 
+"block_malware"
+- Blokkeren IP's die zijn gekoppeld aan malware? Dit omvat C&C-servers, geïnfecteerde machines, machines die betrokken zijn bij de distributie van malware, enz.
+
 "block_proxies"
 - Blokkeren CIDR's geïdentificeerd als behorend tot proxy-services of VPN's? Als u vereisen dat gebruikers kan toegang tot uw website van proxy-services en VPN's, dit richtlijn moet worden ingesteld op false. Anders, als u geen proxy-services of VPN's nodig, dit richtlijn moet worden ingesteld op true als een middel ter verbetering van de beveiliging.
 
@@ -559,6 +562,7 @@ De beschikbare korte woorden zijn:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 ETIKETTEN
 
@@ -1012,4 +1016,4 @@ Mogelijk. Dit is afhankelijk van de aard van de service in kwestie en hoe u deze
 ---
 
 
-Laatste Bijgewerkt: 1 Mei 2018 (2018.05.01).
+Laatste Bijgewerkt: 4 Mei 2018 (2018.05.04).

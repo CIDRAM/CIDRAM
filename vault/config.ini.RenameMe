@@ -175,6 +175,17 @@ block_bogons=false
 ; signature categories.
 block_generic=true
 
+; Block CIDRs in response to legal obligations? This directive shouldn't
+; normally have any effect, because CIDRAM doesn't associate any CIDRs with
+; "legal obligations" by default, but it exists nonetheless as an additional
+; control measure for the benefit of any custom signature files or modules that
+; might exist for legal reasons.
+block_legal=true
+
+; Block IPs associated with malware? This includes C&C servers, infected
+; machines, machines involved in malware distribution, etc.
+block_malware=true
+
 ; Block CIDRs identified as belonging to proxy services or VPNs? If you require
 ; that users be able to access your website from proxy services and VPNs, this
 ; directive should be set to false. Otherwise, if you don't require proxy
@@ -185,13 +196,6 @@ block_proxies=false
 ; Block CIDRs identified as being high-risk for spam? Unless you experience
 ; problems when doing so, generally, this should always be set to true.
 block_spam=true
-
-; Block CIDRs in response to legal obligations? This directive shouldn't
-; normally have any effect, because CIDRAM doesn't associate any CIDRs with
-; "legal obligations" by default, but it exists nonetheless as an additional
-; control measure for the benefit of any custom signature files or modules that
-; might exist for legal reasons.
-block_legal=true
 
 ; A list of module files to load after checking the IPv4/IPv6 signatures,
 ; delimited by commas.

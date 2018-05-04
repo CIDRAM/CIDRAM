@@ -418,6 +418,9 @@ Konfiguration der Signaturen.
 "block_legal"
 - Blockieren Sie CIDRs als Antwort auf gesetzliche Verpflichtungen? Diese Richtlinie sollte normalerweise keine Wirkung haben, da CIDRAM standardmäßig keine CIDRs mit "gesetzliche Verpflichtungen" assoziiert, aber es existiert dennoch als zusätzliche Kontrollmaßnahme für den Vorteil von benutzerdefinierten Signaturdateien oder Modulen, die aus gesetzlichen Gründen existieren könnten.
 
+"block_malware"
+- Blockieren Sie IP-Adressen in Verbindung mit Malware? Dazu gehören C&C-Server, infizierte Computer, Malware-Verteilung beteiligte Computer, usw.
+
 "block_proxies"
 - Blockieren Sie CIDRs identifiziert als zu Proxy-Dienste oder VPNs gehören? Wenn Sie benötigen dass Benutzer auf Ihre Website von Proxy-Dienste und VPNs zugreifen können, diese Richtlinie auf false sollte gesetzt werden. Andernfalls, Wenn Sie Proxy-Dienste oder VPNs nicht benötigen, diese Richtlinie auf true sollte gesetzt werden, als Mittel zur Verbesserung der Sicherheit.
 
@@ -559,6 +562,7 @@ Die verfügbaren Kurzwörter sind:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 TAGS
 
@@ -1012,4 +1016,4 @@ Möglicherweise. Dies hängt von der Art des Dienstes ab und davon, wie Sie es v
 ---
 
 
-Zuletzt aktualisiert: 1 Mai 2018 (2018.05.01).
+Zuletzt aktualisiert: 4 Mai 2018 (2018.05.04).

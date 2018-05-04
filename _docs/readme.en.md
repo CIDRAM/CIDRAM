@@ -418,6 +418,9 @@ Signatures configuration.
 "block_legal"
 - Block CIDRs in response to legal obligations? This directive shouldn't normally have any effect, because CIDRAM doesn't associate any CIDRs with "legal obligations" by default, but it exists nonetheless as an additional control measure for the benefit of any custom signature files or modules that might exist for legal reasons.
 
+"block_malware"
+- Block IPs associated with malware? This includes C&C servers, infected machines, machines involved in malware distribution, etc.
+
 "block_proxies"
 - Block CIDRs identified as belonging to proxy services or VPNs? If you require that users be able to access your website from proxy services and VPNs, this directive should be set to false. Otherwise, if you don't require proxy services or VPNs, this directive should be set to true as a means of improving security.
 
@@ -559,6 +562,7 @@ The available shorthand words are:
 - Proxy
 - Spam
 - Legal
+- Malware
 
 #### 7.1 TAGS
 
@@ -1012,4 +1016,4 @@ Maybe. This depends on the nature of the service in question, and how you're usi
 ---
 
 
-Last Updated: 1 May 2018 (2018.05.01).
+Last Updated: 4 May 2018 (2018.05.04).

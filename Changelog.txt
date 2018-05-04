@@ -7,6 +7,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.5.1 ===
+PATCH RELEASE.
+
 - [2018.04.18; Sub-minor code change; Maikuolan]: Slightly refactored L10N data
   and adjusted how the updates page pulls L10N data, and "used with" hints can
   now be declared independently of "extended description" for the updates page.
@@ -17,6 +22,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   "Legal". Fixed some small L10N mistakes and improved some wording. Slightly
   refactored the CheckFactors closure. Clarified in L10N+docs that the
   directives and signature files related to blocking proxies also blocks VPNs.
+
+- [2018.05.03; Sub-minor code change; Maikuolan]: Added the ability for links
+  to be appended to the Access Denied page when specific CIDR signatures are
+  triggered (typically invoked via YAML appended to the signature sections).
+
+- [2018.05.04; Sub-minor code change; Maikuolan]: Added a new shorthand entry,
+  "Malware" (currently just used by some IPs linked to ZeuS, but may expand in
+  the future, maybe).
+
+Caleb M (Maikuolan),
+May 5, 2018.
 
 === Version/Release 1.5.0 ===
 MINOR RELEASE.

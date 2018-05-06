@@ -1254,10 +1254,10 @@ Tag: SingleHop, Inc
 
 
 # ASN 29550 ("eUKhost LTD").
-# %Listed, Google Malware Dashboard: 0.79%.
+# %Listed, Google Malware Dashboard: 0.54%.
 # %Listed, CleanTalk.org: 32.80%.
-# Stop Forum Spam (SFS) listings: 171.
-# Updated: 2017.03.19 / Checked: 2018.01.18
+# Stop Forum Spam (SFS) listings: 113.
+# Updated: 2017.03.19 / Checked: 2018.05.07
 
 2a02:af8::/32 Deny Cloud
 Origin: GB
@@ -1281,10 +1281,10 @@ Tag: Pulsant
 
 
 # ASN 51852 ("Private Layer INC").
-# %Listed, Google Malware Dashboard: 1.47%.
+# %Listed, Google Malware Dashboard: 0.94%.
 # %Listed, CleanTalk.org: 43.71%.
-# Stop Forum Spam (SFS) listings: 14,722.
-# Updated: 2017.03.14 / Checked: 2018.01.18
+# Stop Forum Spam (SFS) listings: 11,715.
+# Updated: 2017.03.14 / Checked: 2018.05.07
 
 2a02:29b8::/32 Deny Cloud
 Origin: CH
@@ -3067,9 +3067,12 @@ Origin: LV
 Tag: Sia Nano IT
 
 
-# ASNs 7224, 14618, 16509 ("Amazon.com, Inc").
+# ASNs 7224, 14618, 16509, 38895, 62785 ("Amazon.com, Inc").
+# ASNs 8987, 9059, 395343 ("Amazon Data Services").
+# Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
+# Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.04.26
+# Updated: 2018.05.05
 
 2403:b300::/32 Deny Cloud
 Origin: AU
@@ -3136,6 +3139,7 @@ Origin: SG
 2600:1f00:1000::/40 Deny Cloud
 2600:1f00:6000::/40 Deny Cloud
 2600:1f11::/36 Deny Cloud
+2600:1f12::/36 Deny Cloud
 2600:1f14::/35 Deny Cloud
 2600:1f16::/36 Deny Cloud
 2600:1f18::/33 Deny Cloud
@@ -3144,6 +3148,9 @@ Origin: SG
 2600:1fa0:1040::/44 Deny Cloud
 2600:1fa0:1080::/44 Deny Cloud
 2600:1fa0:10c0::/44 Deny Cloud
+2600:1fa0:2040::/44 Deny Cloud
+2600:1fa0:2080::/44 Deny Cloud
+2600:1fa0:20c0::/44 Deny Cloud
 2600:1fa0:4020::/44 Deny Cloud
 2600:1fa0:4040::/44 Deny Cloud
 2600:1fa0:4060::/44 Deny Cloud
@@ -3151,6 +3158,7 @@ Origin: SG
 2600:1fa0:40a0::/44 Deny Cloud
 2600:1fa0:40c0::/44 Deny Cloud
 2600:1fa0:5080::/44 Deny Cloud
+2600:1fa0:50c0::/44 Deny Cloud
 2600:1fa0:6040::/44 Deny Cloud
 2600:1fa0:6080::/44 Deny Cloud
 2600:1fa0:60c0::/44 Deny Cloud
@@ -3199,6 +3207,8 @@ Origin: SG
 2600:9000:108c::/46 Deny Cloud
 2600:9000:1090::/45 Deny Cloud
 2600:9000:1098::/47 Deny Cloud
+2600:9000:109b::/48 Deny Cloud
+2600:9000:109d::/48 Deny Cloud
 2600:9000:10a0::/48 Deny Cloud
 2600:9000:2000::/47 Deny Cloud
 2600:9000:2002::/48 Deny Cloud
@@ -3313,53 +3323,10 @@ Origin: SG
 2600:9000:f530::/47 Deny Cloud
 2620:107:3000::/44 Deny Cloud
 2620:108:7000::/44 Deny Cloud
+2620:108:d000::/44 Deny Cloud
 2a01:578::/32 Deny Cloud
 Origin: US
 Tag: Amazon.com, Inc
-
-
-# ASNs 8987, 38895, 62785, 395343 ("Amazon Data Services").
-# Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.04.26
-
-2400:6700::/32 Deny Cloud
-Origin: JP
-2400:6500::/32 Deny Cloud
-Origin: SG
-2406:da00:a000::/40 Deny Cloud
-2406:da14::/36 Deny Cloud
-2406:da18::/36 Deny Cloud
-2406:da1a::/36 Deny Cloud
-2406:daa0:4020::/44 Deny Cloud
-2406:daa0:4040::/44 Deny Cloud
-2406:daa0:4060::/44 Deny Cloud
-2406:daa0:4080::/44 Deny Cloud
-2406:daa0:8020::/44 Deny Cloud
-2406:daa0:8080::/44 Deny Cloud
-2406:daa0:80c0::/44 Deny Cloud
-2406:daa0:a040::/44 Deny Cloud
-2406:daa0:a080::/44 Deny Cloud
-2406:daa0:a0c0::/44 Deny Cloud
-2600:1f12::/36 Deny Cloud
-2600:1fa0:2040::/44 Deny Cloud
-2600:1fa0:2080::/44 Deny Cloud
-2600:1fa0:20c0::/44 Deny Cloud
-2600:9000:1030::/47 Deny Cloud
-2600:9000:1049::/48 Deny Cloud
-2600:9000:107e::/48 Deny Cloud
-2600:9000:10a0::/48 Deny Cloud
-2600:9000:2030::/47 Deny Cloud
-2600:9000:208b::/48 Deny Cloud
-2600:9000:2098::/48 Deny Cloud
-2600:9000:20a0::/48 Deny Cloud
-2600:9000:20b2::/48 Deny Cloud
-2600:9000:20fa::/48 Deny Cloud
-2600:9000:2115::/48 Deny Cloud
-2600:9000:2158::/48 Deny Cloud
-2600:9000:5304::/46 Deny Cloud
-2620:108:d000::/44 Deny Cloud
-Origin: US
-Tag: Amazon Data Services
 
 
 # ASN 62282 ("UAB Rakrejus").
@@ -5417,17 +5384,6 @@ Origin: MX
 Tag: TV Internacional
 
 
-# ASN 55293 ("A2 Hosting, Inc").
-# %Listed, Google Malware Dashboard: 0.76%.
-# %Listed, CleanTalk.org: 26.98%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2017.12.18 / Checked: 2018.01.29
-
-2607:fb30::/32 Deny Cloud
-Origin: US
-Tag: A2 Hosting, Inc
-
-
 # ASN 43317 ('OOO "Fishnet Communications"').
 # %Listed, Google Malware Dashboard: 1.57%.
 # %Listed, CleanTalk.org: 46.95%.
@@ -5781,3 +5737,23 @@ Origin: NL
 2605:f480::/31 Deny Cloud
 Origin: US
 Tag: Servers.com
+
+
+# ASN 48635 ("Astralus B.V").
+# %Listed, Google Malware Dashboard: 0.40%.
+# %Listed, CleanTalk.org: 34.00%.
+# Stop Forum Spam (SFS) listings: 3,502.
+# Updated: 2018.05.05
+
+2a05:1500:ff00::/40 Deny Cloud
+Origin: DE
+2001:1460::/32 Deny Cloud
+2a00:f10::/32 Deny Cloud
+2a02:13b0:1::/48 Deny Cloud
+2a02:13b0:100::/40 Deny Cloud
+2a05:a280::/29 Deny Cloud
+2a07:ae80::/29 Deny Cloud
+2a0b:7280::/29 Deny Cloud
+2a0b:8f80::/48 Deny Cloud
+Origin: NL
+Tag: Astralus B.V

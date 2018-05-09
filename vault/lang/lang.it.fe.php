@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.05.04).
+ * This file: Italian language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'Nascondi informazioni sulla ve
 $CIDRAM['lang']['config_general_ipaddr'] = 'Dove trovare l\'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!';
 $CIDRAM['lang']['config_general_lang'] = 'Specifica la lingua predefinita per CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l\'azione specificata. Qui puoi specificare l\'azione desiderato. Delete = Elimina i file di log più vecchi, finché il limite non viene più superato. Archive = In primo luogo archiviare e quindi, eliminare i file di log più vecchi, finché il limite non viene più superato.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'La rotazione dei log limita il numero di file di log che dovrebbero esistere in qualsiasi momento. Quando vengono creati nuovi file di log, se il numero totale di file di log supera il limite specificato, verrà eseguita l\'azione specificata. Qui puoi specificare il limite desiderato. Un valore di 0 disabiliterà la rotazione dei log.';
 $CIDRAM['lang']['config_general_logfile'] = 'Un file leggibile dagli umani per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Un file nello stile di apache per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un file serializzato per la registrazione di tutti i tentativi di accesso bloccati. Specificare un nome di file, o lasciare vuoto per disabilitare.';

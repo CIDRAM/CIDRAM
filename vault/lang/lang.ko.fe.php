@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.04).
+ * This file: Korean language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = '로그 및 페이지 출력에
 $CIDRAM['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM의 기본 언어를 설정합니다.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = '로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다. Delete = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오. Archive = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = '로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다.';
 $CIDRAM['lang']['config_general_logfile'] = '액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_logfileApache'] = '액세스 시도 저지를 기록, Apache 스타일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름 지정하거나 해제하려면 비워하십시오.';

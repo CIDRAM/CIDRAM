@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.05.04).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = '从日志和页面输出中隐
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';
+$CIDRAM['lang']['config_general_log_rotation_action'] = '日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。​“Delete”=删除最旧的日志文件，直到不再超出限制。​“Archive”=首先归档，然后删除最旧的日志文件，直到不再超出限制。';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = '日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。';
 $CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';

@@ -320,6 +320,14 @@ Algemene configuratie voor CIDRAM.
 "truncate"
 - Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.
 
+"log_rotation_limit"
+- Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste limiet opgeven. Een waarde van 0 zal logrotatie uitschakelen.
+
+"log_rotation_action"
+- Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste actie opgeven. Delete = Verwijder de oudste logbestanden, totdat de limiet niet langer wordt overschreden. Archive = Eerst archiveer en verwijder vervolgens de oudste logbestanden, totdat de limiet niet langer wordt overschreden.
+
+*Technische verduidelijking: In deze context, de "oudste" betekent de minste recentelijk gewijzigd.*
+
 "timeOffset"
 - Als uw server tijd niet overeenkomt met uw lokale tijd, u kunt opgeven hier een offset om de datum/tijd informatie gegenereerd door CIDRAM aan te passen volgens uw behoeften. Het is in het algemeen in plaats aanbevolen de tijdzone richtlijn in uw bestand `php.ini` aan te passen, maar somtijds (zoals bij het werken met beperkte shared hosting providers) dit is niet altijd mogelijk om te voldoen, en dus, Dit optie is hier voorzien. Offset is in een minuten.
 - Voorbeeld (een uur toe te voegen): `timeOffset=60`
@@ -395,7 +403,7 @@ Algemene configuratie voor CIDRAM.
 - *Notitie: IPv6-lookup werkt mogelijk niet correct op sommige 32-bits systemen.*
 
 "hide_version"
-- Versleutelingsinformatie uit logboeken en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].
+- Versleutelingsinformatie uit logs en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].
 
 #### "signatures" (Categorie)
 Configuratie voor signatures.
@@ -612,9 +620,9 @@ Verlopen signatures zullen nooit worden getriggerd bij een aanvraag, wat er ook 
 
 ##### 7.1.2 HERKOMST ETIKETTEN
 
-Als u het land van herkomst voor een bepaalde signature wilt opgeven, kunt u dit doen met behulp van een "herkomst etiket". Een herkomst etiket accepteert een "[ISO 3166-1 2-letterig](https://nl.wikipedia.org/wiki/ISO_3166-1)"-code die overeenkomt met het land van herkomst voor de signatures waarop deze van toepassing is. Deze codes moeten in hoofd-letters worden geschreven (kleine-letters worden niet correct weergegeven). Wanneer een herkomst etiket wordt gebruikt, wordt deze toegevoegd aan het logboekveld "Waarom Geblokkeerd" voor alle verzoeken die zijn geblokkeerd als gevolg van de signatures waarop de etiket is toegepast.
+Als u het land van herkomst voor een bepaalde signature wilt opgeven, kunt u dit doen met behulp van een "herkomst etiket". Een herkomst etiket accepteert een "[ISO 3166-1 2-letterig](https://nl.wikipedia.org/wiki/ISO_3166-1)"-code die overeenkomt met het land van herkomst voor de signatures waarop deze van toepassing is. Deze codes moeten in hoofd-letters worden geschreven (kleine-letters worden niet correct weergegeven). Wanneer een herkomst etiket wordt gebruikt, wordt deze toegevoegd aan het logveld "Waarom Geblokkeerd" voor alle verzoeken die zijn geblokkeerd als gevolg van de signatures waarop de etiket is toegepast.
 
-Als de optionele component "flags CSS" is geïnstalleerd, wanneer u de logbestanden bekijkt via de frontend, wordt informatie dat toegevoegd door herkomst etiketten vervangen met de vlag van het land dat overeenkomt met die informatie. Deze informatie, in ruwe vorm of als de vlag van een land, kan worden aangeklikt, en wanneer erop wordt geklikt, filteren logboekinvoeren door middel van andere, soortgelijk identificerende logboekinvoeren (waardoor effectief degenen die de logs pagina openen te filteren op basis van land van herkomst).
+Als de optionele component "flags CSS" is geïnstalleerd, wanneer u de logbestanden bekijkt via de frontend, wordt informatie dat toegevoegd door herkomst etiketten vervangen met de vlag van het land dat overeenkomt met die informatie. Deze informatie, in ruwe vorm of als de vlag van een land, kan worden aangeklikt, en wanneer erop wordt geklikt, filteren log-invoeren door middel van andere, soortgelijk identificerende log-invoeren (waardoor effectief degenen die de logs pagina openen te filteren op basis van land van herkomst).
 
 Notitie: Technisch gezien is dit geen vorm van geolocatie, vanwege het feit dat het niet gaat om het opzoeken van specifieke informatie met betrekking tot inkomende IP's, maar in plaats stelt ons in staat om expliciet een land van herkomst opgeven voor verzoeken die worden geblokkeerd door specifieke signatures. Meerdere herkomst etiketten zijn toegestaan binnen dezelfde signature sectie.
 
@@ -1016,4 +1024,4 @@ Mogelijk. Dit is afhankelijk van de aard van de service in kwestie en hoe u deze
 ---
 
 
-Laatste Bijgewerkt: 4 Mei 2018 (2018.05.04).
+Laatste Bijgewerkt: 7 Mei 2018 (2018.05.07).

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.05.04).
+ * This file: French language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'Masquer les informations de ve
 $CIDRAM['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $CIDRAM['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inclure les requêtes bloquées provenant d\'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l\'action spécifiée sera effectuée. Vous pouvez spécifier l\'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu\'à ce que la limite ne soit plus dépassée. Archive = Tout d\'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu\'à ce que la limite ne soit plus dépassée.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l\'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal.';
 $CIDRAM['lang']['config_general_logfile'] = 'Un fichier lisible par l\'homme pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Un fichier dans le style d\'Apache pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Un fichier sérialisé pour enregistrement de toutes les tentatives d\'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.';

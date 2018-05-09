@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.05.04).
+ * This file: German language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'Versionsinformationen aus Prot
 $CIDRAM['lang']['config_general_ipaddr'] = 'Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services). Standardeinstellung = REMOTE_ADDR. ACHTUNG: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!';
 $CIDRAM['lang']['config_general_lang'] = 'Gibt die Standardsprache für CIDRAM an.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Enthalten Sie blockierte Anfragen von verbotenen IPs in die Protokolldateien? True = Ja [Standardeinstellung]; False = Nein.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier die gewünschte Aktion angeben. Delete = Löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird. Archive = Zuerst archivieren, und dann löschen Sie die ältesten Protokolldateien, bis das Limit nicht mehr überschritten wird.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'Die Protokollrotation begrenzt die Anzahl der Protokolldateien, die gleichzeitig vorhanden sein sollten. Wenn neue Protokolldateien erstellt werden, und wenn die Gesamtzahl der Protokolldateien den angegebenen Limit überschreitet, wird die angegebene Aktion ausgeführt. Sie können hier das gewünschte Limit angeben. Ein Wert von 0 deaktiviert die Protokollrotation.';
 $CIDRAM['lang']['config_general_logfile'] = 'Name einer Datei für Menschen lesbar zu protokollieren alle blockierten Zugriffsversuche. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Name einer Apache-Stil-Datei zu protokollieren alle blockierten Zugriffsversuche. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';

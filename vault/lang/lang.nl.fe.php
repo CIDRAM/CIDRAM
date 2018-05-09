@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.05.04).
+ * This file: Dutch language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -61,10 +61,12 @@ $CIDRAM['lang']['config_general_emailaddr'] = 'Indien u wenst, u kunt een e-mail
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hoe zou u het e-mailadres voor gebruikers willen aanbieden?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken?';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties.';
-$CIDRAM['lang']['config_general_hide_version'] = 'Versleutelingsinformatie uit logboeken en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].';
+$CIDRAM['lang']['config_general_hide_version'] = 'Versleutelingsinformatie uit logs en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
 $CIDRAM['lang']['config_general_lang'] = 'Geef de standaardtaal voor CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste actie opgeven. Delete = Verwijder de oudste logbestanden, totdat de limiet niet langer wordt overschreden. Archive = Eerst archiveer en verwijder vervolgens de oudste logbestanden, totdat de limiet niet langer wordt overschreden.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'Logrotatie beperkt het aantal logbestanden dat op elk moment zou moeten bestaan. Wanneer nieuwe logbestanden worden gemaakt en het totale aantal logbestanden de opgegeven limiet overschrijdt, wordt de opgegeven actie uitgevoerd. U kunt hier de gewenste limiet opgeven. Een waarde van 0 zal logrotatie uitschakelen.';
 $CIDRAM['lang']['config_general_logfile'] = 'Mensen leesbare bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-stijl bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Geserialiseerd bestand om alle geblokkeerde toegang pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.05.04).
+ * This file: Norwegian language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'Skjul versjoninformasjon fra l
 $CIDRAM['lang']['config_general_ipaddr'] = 'Hvor finner jeg IP-adressen til å koble til forespørsler? (Nyttig for tjenester som Cloudflare og så videre). Standardverdi = REMOTE_ADDR. ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!';
 $CIDRAM['lang']['config_general_lang'] = 'Angi standardspråket for CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Inkluder blokkerte forespørsler fra utestengt IP-adresser i loggfilene? True = Ja [Standardverdi]; False = Nei.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket handling her. Delete = Slett de eldste loggfiler, til grensen ikke overskrides. Archive = Først arkiver, og deretter slett de eldste loggfiler, til grensen ikke overskrides.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'Loggrotasjon begrenser antall loggfiler som bør eksistere til enhver tid. Når nye loggfiler blir opprettet, hvis det totale antall loggfiler overskrider den angitte grensen, den angitte handlingen vil bli utført. Du kan angi ønsket grense her. En verdi på 0 deaktiverer loggrotasjon.';
 $CIDRAM['lang']['config_general_logfile'] = 'Menneskelig-lesbar fil for å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-stil fil for å logge alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Serialisert fil å logge av alle blokkerte tilgangsforsøk. Angi et filnavn, eller la det være tomt for å deaktivere.';

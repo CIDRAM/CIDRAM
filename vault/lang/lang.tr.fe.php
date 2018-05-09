@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.05.04).
+ * This file: Turkish language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'Sürüm bilgilerini günlükle
 $CIDRAM['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAM için varsayılan dili belirleyin.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Yasaklanmış IP\'lerden engellenen istekleri günlük dosyalarına dahil et? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen işlemi burada belirtebilirsiniz. Delete = En eski log dosyalarını sil, sınır artık aşılmamış kadar. Archive = Öncelikle dosyayı arşivleyin, ve sonra en eski log dosyalarını sil, sınır artık aşılmamış kadar.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'Log rotasyonu, herhangi bir zamanda bulunması gereken günlük dosyalarının sayısını sınırlar. Yeni log dosyaları oluşturulduğunda, toplam log dosya sayısı belirtilen sınırı aşarsa, belirtilen eylem gerçekleştirilecektir. İstenen sınırı burada belirtebilirsiniz. 0 değeri, log rotasyonunu devre dışı bırakır.';
 $CIDRAM['lang']['config_general_logfile'] = 'Engellenen tüm erişim girişimlerini kaydetmek için insanlar tarafından okunabilir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Engellenen tüm erişim girişimlerini kaydetmek için Apache tarzı dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Engellenen tüm erişim girişimlerini kaydetmek için seri haline getirilmiş dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';

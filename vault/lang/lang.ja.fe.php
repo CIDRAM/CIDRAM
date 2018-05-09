@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.04).
+ * This file: Japanese language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'ログとページ出力から
 $CIDRAM['lang']['config_general_ipaddr'] = '接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $CIDRAM['lang']['config_general_lang'] = 'CIDRAMのデフォルト言語を設定します。';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '禁止されたＩＰからブロックされたリクエストをログファイルに含めますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望のアクションを指定できます。 「Delete」 = 最も古いログ・ファイルを削除して、制限を超過しないようにします。 「Archive」 = 最初にアーカイブしてから、最も古いログ・ファイルを削除して、制限を超過しないようにします。';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'ログ・ローテーションは、一度に存在する必要があるログ・ファイルの数を制限します。​新しいログ・ファイルが作成されると、ログ・ファイルの総数が指定された制限を超えると、指定されたアクションが実行されます。​ここで希望の制限を指定することができます。​値「0」は、ログ・ローテーションを無効にします。';
 $CIDRAM['lang']['config_general_logfile'] = 'アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileApache'] = 'アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';

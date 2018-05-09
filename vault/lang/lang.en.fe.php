@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.05.04).
+ * This file: English language data for the front-end (last modified: 2018.05.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,6 +65,8 @@ $CIDRAM['lang']['config_general_hide_version'] = 'Hide version information from 
 $CIDRAM['lang']['config_general_ipaddr'] = 'Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don\'t change this unless you know what you\'re doing!';
 $CIDRAM['lang']['config_general_lang'] = 'Specify the default language for CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = 'Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.';
+$CIDRAM['lang']['config_general_log_rotation_action'] = 'Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired action here. Delete = Delete the oldest logfiles, until the limit is no longer exceeded. Archive = Firstly archive, and then delete the oldest logfiles, until the limit is no longer exceeded.';
+$CIDRAM['lang']['config_general_log_rotation_limit'] = 'Log rotation limits the number of logfiles that should exist at any one time. When new logfiles are created, if the total number of logfiles exceeds the specified limit, the specified action will be performed. You can specify the desired limit here. A value of 0 will disable log rotation.';
 $CIDRAM['lang']['config_general_logfile'] = 'Human readable file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_logfileApache'] = 'Apache-style file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_logfileSerialized'] = 'Serialised file for logging all blocked access attempts. Specify a filename, or leave blank to disable.';

@@ -5413,10 +5413,10 @@ Tag: Connexions4London
 
 
 # ASN 32475 ("SingleHop, Inc").
-# %Listed, Google Malware Dashboard: 0.64%.
+# %Listed, Google Malware Dashboard: 0.40%.
 # %Listed, CleanTalk.org: 69.66%.
-# Stop Forum Spam (SFS) listings: 1,402.
-# Updated: 2018.01.29
+# Stop Forum Spam (SFS) listings: 1,369.
+# Updated: 2018.05.08
 
 37.60.224.0/20 Deny Cloud
 37.60.240.0/22 Deny Cloud
@@ -5447,7 +5447,10 @@ Tag: Connexions4London
 146.66.80.0/21 Deny Cloud
 146.66.88.0/24 Deny Cloud
 146.66.95.0/24 Deny Cloud
-146.66.96.0/24 Deny Cloud
+146.66.96.0/22 Deny Cloud
+146.66.100.0/24 Deny Cloud
+146.66.110.0/24 Deny Cloud
+146.66.126.0/24 Deny Cloud
 185.56.84.0/22 Deny Cloud
 185.62.236.0/22 Deny Cloud
 Origin: BG
@@ -5456,7 +5459,8 @@ Origin: BG
 Origin: CA
 147.75.129.0/24 Deny Cloud
 Origin: CH
-185.126.96.0/23 Deny Cloud
+172.96.184.0/24 Deny Cloud
+209.222.114.0/23 Deny Cloud
 Origin: ES
 185.21.133.0/24 Deny Cloud
 185.21.134.0/23 Deny Cloud
@@ -5477,12 +5481,10 @@ Origin: PA
 96.127.128.0/18 Deny Cloud
 99.198.96.0/19 Deny Cloud
 104.171.12.0/24 Deny Cloud
-104.200.158.0/24 Deny Cloud
 107.6.128.0/18 Deny Cloud
 108.163.192.0/18 Deny Cloud
 108.178.0.0/18 Deny Cloud
 162.244.165.0/24 Deny Cloud
-162.244.166.0/24 Deny Cloud
 162.253.224.0/22 Deny Cloud
 172.94.45.0/24 Deny Cloud
 173.236.0.0/17 Deny Cloud
@@ -10053,14 +10055,16 @@ Tag: Sovremennie
 
 
 # ASN 54290 ("Hostwinds LLC").
-# %Listed, Google Malware Dashboard: 2.00%.
+# %Listed, Google Malware Dashboard: 1.22%.
 # %Listed, CleanTalk.org: 41.99%.
-# Stop Forum Spam (SFS) listings: 433.
-# Updated: 2018.01.29
+# Stop Forum Spam (SFS) listings: 292.
+# Updated: 2018.05.08
 
 185.145.96.0/22 Deny Cloud
 Origin: BG
+45.6.177.0/24 Deny Cloud
 170.231.146.0/23 Deny Cloud
+170.238.187.0/24 Deny Cloud
 Origin: BR
 23.135.0.0/24 Deny Cloud
 23.238.0.0/17 Deny Cloud
@@ -10068,7 +10072,6 @@ Origin: BR
 104.168.128.0/17 Deny Cloud
 108.174.192.0/20 Deny Cloud
 142.11.192.0/18 Deny Cloud
-162.211.220.0/22 Deny Cloud
 192.119.64.0/18 Deny Cloud
 192.129.128.0/17 Deny Cloud
 192.154.200.0/21 Deny Cloud
@@ -10078,10 +10081,7 @@ Origin: BR
 198.84.64.0/18 Deny Cloud
 198.143.96.0/19 Deny Cloud
 199.59.56.0/21 Deny Cloud
-199.193.124.0/22 Deny Cloud
 216.24.176.0/20 Deny Cloud
-216.99.192.0/23 Deny Cloud
-216.99.196.0/23 Deny Cloud
 216.137.176.0/20 Deny Cloud
 Origin: US
 Tag: Hostwinds LLC
@@ -12921,10 +12921,10 @@ Tag: OPTICAL TECHNOLOGIES
 
 
 # ASNs 29302, 32780 ("Hosting Services Inc").
-# %Listed, Google Malware Dashboard: 0.48% (AS29302), 0.25% (AS32780).
+# %Listed, Google Malware Dashboard: 0.08% (AS29302), 0.26% (AS32780).
 # %Listed, CleanTalk.org: 56.72% (AS29302), 59.94% (AS32780).
-# Stop Forum Spam (SFS) listings: 153 (AS29302), 4,816 (AS32780).
-# Updated: 2018.01.29
+# Stop Forum Spam (SFS) listings: 181 (AS29302), 5,758 (AS32780).
+# Updated: 2018.05.08
 
 181.214.90.0/23 Deny Cloud
 191.96.180.0/24 Deny Cloud
@@ -13226,10 +13226,10 @@ Tag: Cyber Wurx LLC
 
 # ASN 60117 ("Host Sailor Ltd").
 # Don't remove "Barbarich_Viacheslav_Yuryevich" (numerous hack attempts) !! (5.188.203.0/24)
-# %Listed, Google Malware Dashboard: 1.74%.
+# %Listed, Google Malware Dashboard: 1.31%.
 # %Listed, CleanTalk.org: 38.41%.
-# Stop Forum Spam (SFS) listings: 1,685.
-# Updated: 2018.01.29
+# Stop Forum Spam (SFS) listings: 570.
+# Updated: 2018.05.08
 
 185.45.192.0/23 Deny Cloud
 Origin: AE
@@ -13247,6 +13247,7 @@ Origin: BZ
 185.183.96.0/22 Deny Cloud
 185.186.54.0/23 Deny Cloud
 185.198.56.0/22 Deny Cloud
+185.244.148.0/22 Deny Cloud
 Origin: NL
 5.188.203.0/24 Deny Cloud
 Origin: RU
@@ -20438,6 +20439,33 @@ Tag: Astralus B.V
 195.254.134.0/23 Deny Cloud
 Origin: RO
 Tag: SC Fastweb SRL
+
+
+# ASN 205406 ("Hostio Solutions B.V").
+# Caught by honeypots.
+# Stop Forum Spam (SFS) listings: 596.
+# Updated: 2018.05.08
+
+46.243.188.0/22 Deny Cloud
+128.0.66.0/23 Deny Cloud
+128.0.69.0/24 Deny Cloud
+185.166.237.0/24 Deny Cloud
+185.208.208.0/23 Deny Cloud
+185.208.211.0/24 Deny Cloud
+185.227.80.0/22 Deny Cloud
+185.228.80.0/22 Deny Cloud
+185.243.112.0/23 Deny Cloud
+185.243.114.0/24 Deny Cloud
+185.244.25.0/24 Deny Cloud
+185.244.26.0/23 Deny Cloud
+185.244.28.0/22 Deny Cloud
+188.72.91.0/24 Deny Cloud
+Origin: NL
+45.227.253.0/24 Deny Cloud
+Origin: PA
+93.89.23.0/24 Deny Cloud
+Origin: TR
+Tag: Hostio Solutions B.V
 
 
 # CIDRs/IPs belonging to non-blocked ASNs, caught performing low-level WordPress hack attempts.

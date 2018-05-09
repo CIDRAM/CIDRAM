@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.04.27).
+ * This file: Front-end functions file (last modified: 2018.05.09).
  */
 
 /**
@@ -59,23 +59,6 @@ $CIDRAM['Delete'] = function ($File) use (&$CIDRAM) {
         return true;
     }
     return false;
-};
-
-/**
- * Can be used to delete some empty directories via the front-end.
- *
- * @param string $Dir The directory to delete.
- */
-$CIDRAM['DeleteDirectory'] = function ($Dir) use (&$CIDRAM) {
-    while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
-        $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
-        $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
-        if (is_dir($CIDRAM['Vault'] . $Dir) && $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $Dir)) {
-            rmdir($CIDRAM['Vault'] . $Dir);
-        } else {
-            break;
-        }
-    }
 };
 
 /**
@@ -307,6 +290,8 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                     }
                 } elseif (substr($ThisNameFixed, -10) === 'config.ini') {
                     $Component = $CIDRAM['lang']['link_config'];
+                } elseif ($CIDRAM['FileManager-IsLogFile']($ThisNameFixed)) {
+                    $Component = $CIDRAM['lang']['link_logs'];
                 } else {
                     $LastFour = strtolower(substr($ThisNameFixed, -4));
                     if (
@@ -316,8 +301,6 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                         substr($ThisNameFixed, -9) === '.rollback'
                     ) {
                         $Component = $CIDRAM['lang']['label_fmgr_cache_data'];
-                    } elseif ($LastFour === '.log' || $LastFour === '.txt') {
-                        $Component = $CIDRAM['lang']['link_logs'];
                     } elseif (preg_match('/^\.(?:dat|inc|ya?ml)$/i', $LastFour)) {
                         $Component = $CIDRAM['lang']['label_fmgr_updates_metadata'];
                     }
@@ -450,16 +433,6 @@ $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
 };
 
 /**
- * Checks whether the specified directory is empty.
- *
- * @param string $Directory The directory to check.
- * @return bool True if empty; False if not empty.
- */
-$CIDRAM['FileManager-IsDirEmpty'] = function ($Directory) {
-    return !((new \FilesystemIterator($Directory))->valid());
-};
-
-/**
  * Used by the logs viewer to generate a list of the logfiles contained in a
  * working directory (normally, the vault).
  *
@@ -470,17 +443,10 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
     $Arr = [];
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
     foreach ($List as $Item => $List) {
-        if (
-            preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) ||
-            !preg_match('~(?:logfile|\.(txt|log)$)~i', $Item) ||
-            !file_exists($Item) ||
-            is_dir($Item) ||
-            !is_file($Item) ||
-            !is_readable($Item)
-        ) {
+        $ThisName = str_replace("\\", '/', substr($Item, strlen($Base)));
+        if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$CIDRAM['FileManager-IsLogFile']($ThisName)) {
             continue;
         }
-        $ThisName = substr($Item, strlen($Base));
         $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
         $CIDRAM['FormatFilesize']($Arr[$ThisName]['Filesize']);
     }
@@ -2303,4 +2269,35 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
         $CIDRAM['FE']['JS'] = "\n<script type=\"text/javascript\">" . $CIDRAM['FE']['JS'] . '</script>';
     }
     return $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
+};
+
+/** Confirm whether a file is a logfile (used by the file manager and logs viewer). */
+$CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
+    static $Pattern_logfile = false;
+    if (!$Pattern_logfile && $CIDRAM['Config']['general']['logfile']) {
+        $Pattern_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfile']);
+    }
+    static $Pattern_logfileApache = false;
+    if (!$Pattern_logfileApache && $CIDRAM['Config']['general']['logfileApache']) {
+        $Pattern_logfileApache = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfileApache']);
+    }
+    static $Pattern_logfileSerialized = false;
+    if (!$Pattern_logfileSerialized && $CIDRAM['Config']['general']['logfileSerialized']) {
+        $Pattern_logfileSerialized = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfileSerialized']);
+    }
+    static $Pattern_FrontEndLog = false;
+    if (!$Pattern_FrontEndLog && $CIDRAM['Config']['general']['FrontEndLog']) {
+        $Pattern_FrontEndLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['FrontEndLog']);
+    }
+    return (
+        strtolower(substr($File, -4)) === '.log'
+    ) || (
+        $CIDRAM['Config']['general']['logfile'] && preg_match($Pattern_logfile, $File)
+    ) || (
+        $CIDRAM['Config']['general']['logfileApache'] && preg_match($Pattern_logfileApache, $File)
+    ) || (
+        $CIDRAM['Config']['general']['logfileSerialized'] && preg_match($Pattern_logfileSerialized, $File)
+    ) || (
+        $CIDRAM['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
+    );
 };

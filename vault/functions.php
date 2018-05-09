@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.01).
+ * This file: Functions file (last modified: 2018.05.09).
  */
 
 /**
@@ -419,9 +419,10 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                             ['Type' => 'Bogon', 'Config' => 'block_bogons', 'ReasonLong' => 'ReasonMessage_Bogon', 'ReasonShort' => 'Short_Bogon'],
                             ['Type' => 'Cloud', 'Config' => 'block_cloud', 'ReasonLong' => 'ReasonMessage_Cloud', 'ReasonShort' => 'Short_Cloud'],
                             ['Type' => 'Generic', 'Config' => 'block_generic', 'ReasonLong' => 'ReasonMessage_Generic', 'ReasonShort' => 'Short_Generic'],
+                            ['Type' => 'Legal', 'Config' => 'block_legal', 'ReasonLong' => 'ReasonMessage_Legal', 'ReasonShort' => 'Short_Legal'],
+                            ['Type' => 'Malware', 'Config' => 'block_malware', 'ReasonLong' => 'ReasonMessage_Malware', 'ReasonShort' => 'Short_Malware'],
                             ['Type' => 'Proxy', 'Config' => 'block_proxies', 'ReasonLong' => 'ReasonMessage_Proxy', 'ReasonShort' => 'Short_Proxy'],
-                            ['Type' => 'Spam', 'Config' => 'block_spam', 'ReasonLong' => 'ReasonMessage_Spam', 'ReasonShort' => 'Short_Spam'],
-                            ['Type' => 'Legal', 'Config' => 'block_legal', 'ReasonLong' => 'ReasonMessage_Legal', 'ReasonShort' => 'Short_Legal']
+                            ['Type' => 'Spam', 'Config' => 'block_spam', 'ReasonLong' => 'ReasonMessage_Spam', 'ReasonShort' => 'Short_Spam']
                         ] as $Params) {
                             if ($Signature === $Params['Type']) {
                                 if (empty($CIDRAM['Config']['signatures'][$Params['Config']])) {
@@ -1504,4 +1505,105 @@ $CIDRAM['BuildLogPath'] = function($File) use (&$CIDRAM) {
         }
     }
     return true;
+};
+
+/**
+ * Checks whether the specified directory is empty.
+ *
+ * @param string $Directory The directory to check.
+ * @return bool True if empty; False if not empty.
+ */
+$CIDRAM['IsDirEmpty'] = function ($Directory) {
+    return !((new \FilesystemIterator($Directory))->valid());
+};
+
+/**
+ * Deletes empty directories (used by some front-end functions and log rotation).
+ *
+ * @param string $Dir The directory to delete.
+ */
+$CIDRAM['DeleteDirectory'] = function ($Dir) use (&$CIDRAM) {
+    while (strrpos($Dir, '/') !== false || strrpos($Dir, "\\") !== false) {
+        $Separator = (strrpos($Dir, '/') !== false) ? '/' : "\\";
+        $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
+        if (!is_dir($CIDRAM['Vault'] . $Dir) || !$CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $Dir)) {
+            break;
+        }
+        rmdir($CIDRAM['Vault'] . $Dir);
+    }
+};
+
+/** Convert configuration directives for logfiles to regexable patterns. */
+$CIDRAM['BuildLogPattern'] = function ($Str) {
+    return '~^' . preg_replace(
+        ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
+        ['\d{2}', '\d{4}', '[a-z]{3}', '.{1,2}\d{4}', '.{1,2}\d{2}\:\d{2}'],
+        preg_quote(str_replace("\\", '/', $Str))
+    ) . '$~i';
+};
+
+/**
+ * GZ-compress a file (used by log rotation).
+ *
+ * @param string $File The file to GZ-compress.
+ */
+$CIDRAM['GZCompressFile'] = function ($File) {
+    if (!is_file($File) || !is_readable($File)) {
+        return false;
+    }
+    static $Blocksize = 131072;
+    $Filesize = filesize($File);
+    $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;
+    if ($Size > 0) {
+        $Handle = fopen($File, 'rb');
+        $HandleGZ = gzopen($File . '.gz', 'wb');
+        $Block = 0;
+        while ($Block < $Size) {
+            $Data = fread($Handle, $Blocksize);
+            gzwrite($HandleGZ, $Data);
+            $Block++;
+        }
+        gzclose($HandleGZ);
+        fclose($Handle);
+    }
+    return true;
+};
+
+/** Log rotation. */
+$CIDRAM['LogRotation'] = function($Pattern) use (&$CIDRAM) {
+    $Action = empty($CIDRAM['Config']['general']['log_rotation_action']) ? '' : $CIDRAM['Config']['general']['log_rotation_action'];
+    $Limit = empty($CIDRAM['Config']['general']['log_rotation_limit']) ? 0 : $CIDRAM['Config']['general']['log_rotation_limit'];
+    if (!$Limit || ($Action !== 'Delete' && $Action !== 'Archive')) {
+        return false;
+    }
+    $Pattern = $CIDRAM['BuildLogPattern']($Pattern);
+    $Arr = [];
+    $Offset = strlen($CIDRAM['Vault']);
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($CIDRAM['Vault']), RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($List as $Item => $List) {
+        $ItemFixed = str_replace("\\", '/', substr($Item, $Offset));
+        if ($ItemFixed && preg_match($Pattern, $ItemFixed) && is_readable($Item)) {
+            $Arr[$ItemFixed] = filemtime($Item);
+        }
+    }
+    unset($ItemFixed, $List, $Offset);
+    $Count = count($Arr);
+    $Err = 0;
+    if ($Count > $Limit) {
+        asort($Arr, SORT_NUMERIC);
+        foreach ($Arr as $Item => $Modified) {
+            if ($Action === 'Archive') {
+                $Err += !$CIDRAM['GZCompressFile']($CIDRAM['Vault'] . $Item);
+            }
+            $Err += !unlink($CIDRAM['Vault'] . $Item);
+            if (strpos($Item, '/') !== false) {
+                $CIDRAM['DeleteDirectory']($Item);
+            }
+            $Count--;
+            if (!($Count > $Limit)) {
+                break;
+            }
+        }
+    }
+    return $Err ? false : true;
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.04.18).
+ * This file: Configuration handler (last modified: 2018.05.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** CIDRAM version number (SemVer). */
-$CIDRAM['ScriptVersion'] = '1.5.1';
+$CIDRAM['ScriptVersion'] = '1.6.0';
 
 /** CIDRAM version identifier (complete notation). */
 $CIDRAM['ScriptIdent'] = 'CIDRAM v' . $CIDRAM['ScriptVersion'];
@@ -31,8 +31,10 @@ $CIDRAM['Timeout'] = 12;
 /** Determine PHP path. */
 $CIDRAM['CIDRAM_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 
-/** Determine the operating system in use. */
-$CIDRAM['CIDRAM_OS'] = strtoupper(substr(PHP_OS, 0, 3));
+/** Fetch domain segment of HTTP_HOST (needed for writing cookies safely). */
+$CIDRAM['HTTP_HOST'] = empty($_SERVER['HTTP_HOST']) ? '' : (
+    strpos($_SERVER['HTTP_HOST'], ':') === false ? $_SERVER['HTTP_HOST'] : substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ':'))
+);
 
 /** CIDRAM favicon. */
 $CIDRAM['favicon'] =

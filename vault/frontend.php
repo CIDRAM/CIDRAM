@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.04.18).
+ * This file: Front-end handler (last modified: 2018.05.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -303,7 +303,7 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     if (!$CIDRAM['FE']['CronMode']) {
                         $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
-                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HTTP_HOST'], false, true);
                         $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
                             $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
                         ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
@@ -321,13 +321,12 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
 
     }
 
+    $CIDRAM['FrontEndLogFile'] = '';
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
-        if (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) {
-            $CIDRAM['Config']['general']['FrontEndLog'] = $CIDRAM['TimeFormat'](
-                $CIDRAM['Now'],
-                $CIDRAM['Config']['general']['FrontEndLog']
-            );
-        }
+        $CIDRAM['FrontEndLogFile'] = (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
+            $CIDRAM['Now'],
+            $CIDRAM['Config']['general']['FrontEndLog']
+        ) : $CIDRAM['Config']['general']['FrontEndLog'];
         $CIDRAM['FrontEndLog'] = $_SERVER[$CIDRAM['IPAddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
         $CIDRAM['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
     }
@@ -352,15 +351,20 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
     }
     if ($CIDRAM['Config']['general']['FrontEndLog']) {
         $CIDRAM['WriteMode'] = (
-            !file_exists($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']) || (
+            !file_exists($CIDRAM['Vault'] . $CIDRAM['FrontEndLogFile']) || (
                 $CIDRAM['Config']['general']['truncate'] > 0 &&
-                filesize($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+                filesize($CIDRAM['Vault'] . $CIDRAM['FrontEndLogFile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
             )
         ) ? 'w' : 'a';
-        $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['Config']['general']['FrontEndLog'], $CIDRAM['WriteMode']);
-        fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
-        fclose($CIDRAM['Handle']);
-        unset($CIDRAM['WriteMode'], $CIDRAM['FrontEndLog']);
+        if ($CIDRAM['BuildLogPath']($CIDRAM['FrontEndLogFile'])) {
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FrontEndLogFile'], $CIDRAM['WriteMode']);
+            fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
+            fclose($CIDRAM['Handle']);
+            if ($CIDRAM['WriteMode'] === 'w') {
+                $CIDRAM['LogRotation']($CIDRAM['Config']['general']['FrontEndLog']);
+            }
+        }
+        unset($CIDRAM['WriteMode'], $CIDRAM['FrontEndLog'], $CIDRAM['FrontEndLogFile']);
     }
 }
 
@@ -435,7 +439,7 @@ if ($CIDRAM['FE']['UserState'] === 1 && !$CIDRAM['FE']['CronMode']) {
         $CIDRAM['FE']['ThisSession'] = '';
         $CIDRAM['FE']['Rebuild'] = true;
         $CIDRAM['FE']['UserState'] = $CIDRAM['FE']['Permissions'] = 0;
-        setcookie('CIDRAM-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
+        setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HTTP_HOST'], false, true);
 
     }
 
@@ -1898,7 +1902,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         /** If the filename already exists, delete the old file before moving the new file. */
         if ($CIDRAM['SafeToContinue'] && is_readable($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
             if (is_dir($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
-                if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
+                if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_FILES['upload-file']['name'])) {
                     rmdir($CIDRAM['Vault'] . $_FILES['upload-file']['name']);
                 } else {
                     $CIDRAM['SafeToContinue'] = false;
@@ -1929,7 +1933,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
         if ($_POST['do'] === 'delete-file') {
 
             if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
-                if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])) {
+                if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename'])) {
                     rmdir($CIDRAM['Vault'] . $_POST['filename']);
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_directory_deleted'];
                 } else {
@@ -1963,7 +1967,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
                     is_readable($CIDRAM['Vault'] . $_POST['filename_new'])
                 ) {
                     if (is_dir($CIDRAM['Vault'] . $_POST['filename_new'])) {
-                        if ($CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new'])) {
+                        if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new'])) {
                             rmdir($CIDRAM['Vault'] . $_POST['filename_new']);
                         } else {
                             $CIDRAM['SafeToContinue'] = false;
@@ -2154,7 +2158,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
         $ThisFile['ThisOptions'] = '';
-        if (!$ThisFile['Directory'] || $CIDRAM['FileManager-IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
+        if (!$ThisFile['Directory'] || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
             $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $CIDRAM['lang']['field_delete_file'] . '</option>';
             $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $CIDRAM['lang']['field_rename_file'] . '</option>';
         }

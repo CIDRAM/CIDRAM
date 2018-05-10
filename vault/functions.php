@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.09).
+ * This file: Functions file (last modified: 2018.05.10).
  */
 
 /**
@@ -1428,7 +1428,7 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
  * Block bots masquerading as popular search engines and disable tracking for
  * real, legitimate search engines.
  */
-$CIDRAM['SearchEngineVerification'] = function() use (&$CIDRAM) {
+$CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
     if (
         !empty($CIDRAM['TestResults']) &&
         !$CIDRAM['Config']['general']['maintenance_mode'] &&
@@ -1481,7 +1481,7 @@ $CIDRAM['SearchEngineVerification'] = function() use (&$CIDRAM) {
 };
 
 /** Reset bypass flags. */
-$CIDRAM['ResetBypassFlags'] = function() use (&$CIDRAM) {
+$CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
     $CIDRAM['Flag-Bypass-Googlebot-Check'] = false;
     $CIDRAM['Flag-Bypass-Bingbot-Check'] = false;
     $CIDRAM['Flag-Bypass-Y!Slurp-Check'] = false;
@@ -1491,7 +1491,7 @@ $CIDRAM['ResetBypassFlags'] = function() use (&$CIDRAM) {
 };
 
 /** Build directory path for logfiles. */
-$CIDRAM['BuildLogPath'] = function($File) use (&$CIDRAM) {
+$CIDRAM['BuildLogPath'] = function ($File) use (&$CIDRAM) {
     $ThisPath = $CIDRAM['Vault'];
     $File = str_replace("\\", '/', $File);
     while (strpos($File, '/') !== false) {
@@ -1569,8 +1569,13 @@ $CIDRAM['GZCompressFile'] = function ($File) {
     return true;
 };
 
-/** Log rotation. */
-$CIDRAM['LogRotation'] = function($Pattern) use (&$CIDRAM) {
+/**
+ * Log rotation.
+ *
+ * @param string $Pattern What to identify logfiles by (should be supplied via the relevant logging directive).
+ * @return bool False when log rotation is disabled or errors occur; True otherwise.
+ */
+$CIDRAM['LogRotation'] = function ($Pattern) use (&$CIDRAM) {
     $Action = empty($CIDRAM['Config']['general']['log_rotation_action']) ? '' : $CIDRAM['Config']['general']['log_rotation_action'];
     $Limit = empty($CIDRAM['Config']['general']['log_rotation_limit']) ? 0 : $CIDRAM['Config']['general']['log_rotation_limit'];
     if (!$Limit || ($Action !== 'Delete' && $Action !== 'Archive')) {

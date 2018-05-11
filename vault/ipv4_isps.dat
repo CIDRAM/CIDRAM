@@ -7453,13 +7453,12 @@ recaptcha:
 
 
 # ASN 8402 ("OJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 0.44%.
+# %Listed, Google Malware Dashboard: 0.32%.
 # %Listed, CleanTalk.org: 15.69%.
-# %Listed, abuseat.org (CBL-Listed): 0.43%.
-# Stop Forum Spam (SFS) listings: 10,340.
+# Stop Forum Spam (SFS) listings: 5,075.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2018.02.04
+# Updated: 2018.02.04 / Checked: 2018.05.11
 
 2.92.0.0/14 Deny Generic
 37.144.0.0/14 Deny Generic
@@ -7483,12 +7482,12 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 4.75%.
+# %Listed, Google Malware Dashboard: 5.36%.
 # %Listed, CleanTalk.org: 11.36%.
-# Stop Forum Spam (SFS) listings: 12,002.
+# Stop Forum Spam (SFS) listings: 12,319.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2018.02.04
+# Updated: 2018.05.11
 
 2.21.7.0/24 Deny Generic
 2.21.8.0/24 Deny Generic
@@ -7506,7 +7505,7 @@ Origin: NL
 37.146.224.0/20 Deny Generic
 37.147.32.0/19 Deny Generic
 37.147.64.0/19 Deny Generic
-37.147.176.0/22 Deny Generic
+37.147.176.0/21 Deny Generic
 62.105.128.0/19 Deny Generic
 62.141.64.0/18 Deny Generic
 62.231.0.0/19 Deny Generic

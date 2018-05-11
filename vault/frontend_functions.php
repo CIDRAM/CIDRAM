@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.09).
+ * This file: Front-end functions file (last modified: 2018.05.11).
  */
 
 /**
@@ -2289,6 +2289,10 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     if (!$Pattern_FrontEndLog && $CIDRAM['Config']['general']['FrontEndLog']) {
         $Pattern_FrontEndLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['FrontEndLog']);
     }
+    static $Pattern_reCAPTCHA_logfile = false;
+    if (!$Pattern_reCAPTCHA_logfile && $CIDRAM['Config']['recaptcha']['logfile']) {
+        $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile']);
+    }
     return (
         strtolower(substr($File, -4)) === '.log'
     ) || (
@@ -2299,5 +2303,7 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
         $CIDRAM['Config']['general']['logfileSerialized'] && preg_match($Pattern_logfileSerialized, $File)
     ) || (
         $CIDRAM['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
+    ) || (
+        $CIDRAM['Config']['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
     );
 };

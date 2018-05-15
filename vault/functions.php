@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.10).
+ * This file: Functions file (last modified: 2018.05.14).
  */
 
 /**
@@ -1534,12 +1534,12 @@ $CIDRAM['DeleteDirectory'] = function ($Dir) use (&$CIDRAM) {
 };
 
 /** Convert configuration directives for logfiles to regexable patterns. */
-$CIDRAM['BuildLogPattern'] = function ($Str) {
+$CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
     return '~^' . preg_replace(
         ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
         ['\d{2}', '\d{4}', '[a-z]{3}', '.{1,2}\d{4}', '.{1,2}\d{2}\:\d{2}'],
         preg_quote(str_replace("\\", '/', $Str))
-    ) . '$~i';
+    ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
 };
 
 /**

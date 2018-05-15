@@ -2816,8 +2816,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
     } elseif (empty($CIDRAM['FE']['LogFiles']['Files'][$CIDRAM['QueryVars']['logfile']])) {
         $CIDRAM['FE']['logfileData'] = $CIDRAM['lang']['logs_logfile_doesnt_exist'];
     } else {
-        $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
         $CIDRAM['FE']['TextModeSwitchLink'] .= '?cidram-page=logs&logfile=' . $CIDRAM['QueryVars']['logfile'];
+        if (strtolower(substr($CIDRAM['QueryVars']['logfile'], -3)) === '.gz') {
+            $CIDRAM['GZLogHandler'] = gzopen($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile'], 'rb');
+            $CIDRAM['FE']['logfileData'] = '';
+            if (is_resource($CIDRAM['GZLogHandler'])) {
+                while (!gzeof($CIDRAM['GZLogHandler'])) {
+                    $CIDRAM['FE']['logfileData'] .= gzread($CIDRAM['GZLogHandler'], 131072);
+                }
+                gzclose($CIDRAM['GZLogHandler']);
+            }
+            unset($CIDRAM['GZLogHandler']);
+        } else {
+            $CIDRAM['FE']['logfileData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $CIDRAM['QueryVars']['logfile']);
+        }
         if (strpos($CIDRAM['FE']['logfileData'], '：') !== false) {
             $CIDRAM['FE']['FieldSeparator'] = '：';
         }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.11).
+ * This file: Front-end functions file (last modified: 2018.05.14).
  */
 
 /**
@@ -2275,27 +2275,26 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
 $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     static $Pattern_logfile = false;
     if (!$Pattern_logfile && $CIDRAM['Config']['general']['logfile']) {
-        $Pattern_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfile']);
+        $Pattern_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfile'], true);
     }
     static $Pattern_logfileApache = false;
     if (!$Pattern_logfileApache && $CIDRAM['Config']['general']['logfileApache']) {
-        $Pattern_logfileApache = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfileApache']);
+        $Pattern_logfileApache = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfileApache'], true);
     }
     static $Pattern_logfileSerialized = false;
     if (!$Pattern_logfileSerialized && $CIDRAM['Config']['general']['logfileSerialized']) {
-        $Pattern_logfileSerialized = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfileSerialized']);
+        $Pattern_logfileSerialized = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['logfileSerialized'], true);
     }
     static $Pattern_FrontEndLog = false;
     if (!$Pattern_FrontEndLog && $CIDRAM['Config']['general']['FrontEndLog']) {
-        $Pattern_FrontEndLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['FrontEndLog']);
+        $Pattern_FrontEndLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['general']['FrontEndLog'], true);
     }
     static $Pattern_reCAPTCHA_logfile = false;
     if (!$Pattern_reCAPTCHA_logfile && $CIDRAM['Config']['recaptcha']['logfile']) {
-        $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile']);
+        $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile'], true);
     }
-    return (
-        strtolower(substr($File, -4)) === '.log'
-    ) || (
+    $FileLC = strtolower($File);
+    return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
         $CIDRAM['Config']['general']['logfile'] && preg_match($Pattern_logfile, $File)
     ) || (
         $CIDRAM['Config']['general']['logfileApache'] && preg_match($Pattern_logfileApache, $File)

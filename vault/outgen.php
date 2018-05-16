@@ -521,6 +521,8 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             $CIDRAM['HTML'] = '[CIDRAM] ' . $CIDRAM['lang']['denied'];
         } else {
             $CIDRAM['BlockInfo']['EmailAddr'] = '';
+
+            /** Generate email support ticket link. */
             if ($CIDRAM['Config']['general']['emailaddr']) {
                 if ($CIDRAM['Config']['general']['emailaddr_display_style'] === 'default') {
                     $CIDRAM['BlockInfo']['EmailAddr'] =
@@ -542,11 +544,20 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                     ], $CIDRAM['lang']['Support_Email_2']) . '</p>';
                 }
             }
+
+            /** Include privacy policy. */
+            $CIDRAM['Parsables']['pp'] = empty(
+                $CIDRAM['Config']['legal']['privacy_policy']
+            ) ? '' : '<br /><a href="' . $CIDRAM['Config']['legal']['privacy_policy'] . '">' . $CIDRAM['lang']['PrivacyPolicy'] . '</a>';
+
+            /** Generate HTML output. */
             $CIDRAM['HTML'] = $CIDRAM['ParseVars']([
                 'EmailAddr' => $CIDRAM['BlockInfo']['EmailAddr']
             ], $CIDRAM['ParseVars']($CIDRAM['Parsables'], $CIDRAM['ReadFile'](
                 $CIDRAM['Vault'] . $CIDRAM['template_file']
             )));
+
+            /** Handle webfonts. */
             if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
                 $CIDRAM['HTML'] = str_replace(['<!-- WebFont Begin -->', '<!-- WebFont End -->'], '', $CIDRAM['HTML']);
             } else {
@@ -561,6 +572,7 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                 );
                 unset($CIDRAM['WebFontPos']);
             }
+
         }
 
     } else {

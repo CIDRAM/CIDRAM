@@ -10,6 +10,8 @@
 - 7. [FORMATS DE SIGNATURES](#SECTION7)
 - 8. [PROBLÈMES DE COMPATIBILITÉ CONNUS](#SECTION8)
 - 9. [QUESTIONS FRÉQUEMMENT POSÉES (FAQ)](#SECTION9)
+- 10. *Réservé pour les ajouts futurs à la documentation.*
+- 11. [INFORMATION LÉGALE](#SECTION11)
 
 *Note concernant les traductions : En cas d'erreurs (par exemple, différences entre les traductions, fautes de frappe, etc), la version Anglaise du README est considérée comme la version originale et faisant autorité. Si vous trouvez des erreurs, votre aide pour les corriger serait bienvenue.*
 
@@ -384,7 +386,7 @@ Configuration générale pour CIDRAM.
 - Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non.
 
 « disable_webfonts »
-- Désactiver les webfonts ? True = Oui ; False = Non [Défaut].
+- Désactiver les webfonts ? True = Oui [Défaut] ; False = Non.
 
 « maintenance_mode »
 - Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.
@@ -492,6 +494,14 @@ Pour obtenir une « site key » et une « secret key » (nécessaires à l'u
 - Quelle API utiliser ? V2 ou Invisible ?
 
 *Note pour les utilisateurs de l'Union européenne : Lorsque CIDRAM est configuré pour utiliser des cookies (par exemple, lorsque « lockuser » est true/vrai), un avertissement de cookie est affiché en évidence sur la page conformément aux exigences de la [législation européenne sur les cookies](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Cependant, lorsque vous utilisez l'API invisible, CIDRAM tente de compléter automatiquement le reCAPTCHA pour l'utilisateur, et en cas de succès, cela pourrait entraîner le rechargement de la page et la création d'un cookie sans que l'utilisateur ait suffisamment de temps pour voir l'avertissement de cookie. Si cela pose un risque juridique pour vous, il peut être préférable d'utiliser l'API V2 au lieu de l'API invisible (l'API V2 n'est pas automatisée et nécessite que l'utilisateur complete le défi reCAPTCHA eux-mêmes, fournissant ainsi une occasion de voir l'avertissement de cookie).*
+
+#### « legal » (Catégorie)
+Configuration relative aux exigences légales.
+
+*Pour plus d'informations sur les exigences légales et comment cela peut affecter vos exigences de configuration, veuillez vous référer à la section « [INFORMATION LÉGALE](#SECTION11) » de la documentation.*
+
+« pseudonymise_ip_addresses »
+- Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
 
 #### « template_data » (Catégorie)
 Directives/Variables pour les modèles et thèmes.
@@ -1024,4 +1034,11 @@ Peut être. Cela dépend de la nature du service en question et de la façon don
 ---
 
 
-Dernière mise à jour : 7 Mai 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMATION LÉGALE
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Dernière mise à jour : 16 Mai 2018 (2018.05.16).

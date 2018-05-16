@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.05.08).
+ * This file: French language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Définit quel algorithme utili
 $CIDRAM['lang']['config_general_default_dns'] = 'Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d\'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI ? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d\'autres applications basées sur CLI. Si vous n\'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut] ; True = Désactiver le mode CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal ? L\'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l\'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l\'accès frontal ; True = Désactiver l\'accès frontal [Défaut].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Désactiver les webfonts ? True = Oui ; False = Non [Défaut].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Désactiver les webfonts ? True = Oui [Défaut] ; False = Non.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu\'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d\'eux étant bloqué par erreur. AVERTISSEMENT : Tout de l\'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l\'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d\'être spammé (en d\'autres termes, vous ne voulez probablement pas d\'utiliser votre adresses e-mail personnel primaire ou d\'affaires primaire).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Comment préférez-vous que l\'adresse électronique soit présentée aux utilisateurs ?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quels têtes devrait CIDRAM répondre avec lors de bloquer les requêtes ?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Votre fuseau horaire.';
 $CIDRAM['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S\'applique aux fichiers journaux individuels ! La taille des fichiers journaux n\'est pas considérée collectivement.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Quelle API utiliser ? V2 ou Invisible ?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Nombre d\'heures à retenir des instances reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Verrouiller reCAPTCHA aux adresses IP ?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Nom de fichier : ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Répertoire';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Fichier';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Inconnu';
-$CIDRAM['lang']['field_first_seen'] = 'Lors de la première vue';
 $CIDRAM['lang']['field_infractions'] = 'Infractions';
 $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'Adresse IP';

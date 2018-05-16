@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.05.08).
+ * This file: English language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Defines which algorithm to use
 $CIDRAM['lang']['config_general_default_dns'] = 'A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don\'t change this unless you know what you\'re doing!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don\'t need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disable front-end access? Front-end access can make CIDRAM more manageable, but can also be a potential security risk, too. It\'s recommended to manage CIDRAM via the back-end whenever possible, but front-end access is provided for when it isn\'t possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Disable webfonts? True = Yes; False = No [Default].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Disable webfonts? True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'If you wish, you can supply an email address here to be given to users when they\'re blocked, for them to use as a point of contact for support and/or assistance for in the event of them being blocked mistakenly or in error. WARNING: Whatever email address you supply here will most certainly be acquired by spambots and scrapers during the course of its being used here, and so, it\'s strongly recommended that if you choose to supply an email address here, that you ensure that the email address you supply here is a disposable address and/or an address that you don\'t mind being spammed (in other words, you probably don\'t want to use your primary personal or primary business email addresses).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'How would you prefer the email address to be presented to users?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Which headers should CIDRAM respond with when blocking requests?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format us
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Your timezone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Which API to use? V2 or Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lock reCAPTCHA to IPs?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Filename: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Directory';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} File';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Unknown';
-$CIDRAM['lang']['field_first_seen'] = 'First Seen';
 $CIDRAM['lang']['field_infractions'] = 'Infractions';
 $CIDRAM['lang']['field_install'] = 'Install';
 $CIDRAM['lang']['field_ip_address'] = 'IP Address';

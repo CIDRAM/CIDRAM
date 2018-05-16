@@ -10,6 +10,8 @@
 - 7. [FORMAT TANDA TANGAN](#SECTION7)
 - 8. [MASALAH KOMPATIBILITAS DIKETAHUI](#SECTION8)
 - 9. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION9)
+- 10. *Dicadangkan untuk penambahan dokumentasi di masa mendatang.*
+- 11. [INFORMASI HUKUM](#SECTION11)
 
 *Catatan tentang terjemahan: Dalam hal kesalahan (misalnya, perbedaan antara terjemahan, kesalahan cetak, dll), versi bahasa Inggris dari README dianggap versi asli dan berwibawa. Jika Anda menemukan kesalahan, bantuan Anda dalam mengoreksi mereka akan disambut.*
 
@@ -384,7 +386,7 @@ Konfigurasi umum dari CIDRAM.
 - Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak.
 
 "disable_webfonts"
-- Menonaktifkan webfonts? True = Ya; False = Tidak [Default].
+- Menonaktifkan webfonts? True = Ya [Default]; False = Tidak.
 
 "maintenance_mode"
 - Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
@@ -452,7 +454,7 @@ Jika Anda ingin, Anda dapat memberikan pengguna dengan cara untuk memotong halam
 
 Karena risiko yang terkait dengan menyediakan cara bagi pengguna untuk melewati halaman "Akses Ditolak", umumnya, saya tidak akan menyarankan mengaktifkan fitur ini kecuali jika Anda merasa itu perlu untuk melakukannya. Situasi dimana bisa jadi diperlukan: Jika situs Web Anda memiliki pelanggan/pengguna yang perlu memiliki akses ke situs web Anda, dan jika ini adalah sesuatu yang tidak bisa dikompromikan, tapi jika pelanggan/pengguna Anda menghubungkan dari jaringan bermusuhan yang berpotensi juga membawa lalu lintas yang tidak diinginkan, dan memblokir lalu lintas yang tidak diinginkan ini juga sesuatu yang tidak bisa dikompromikan, pada mereka khususnya situasi tidak-menang, fitur reCAPTCHA ini bisa berguna sebagai sarana yang memungkinkan pelanggan/pengguna diinginkan, sambil menjaga keluar lalu lintas yang tidak diinginkan dari jaringan sama. Yang menyatakan meskipun, mengingat bahwa tujuan yang dimaksudkan dari CAPTCHA adalah untuk membedakan antara manusia dan non-manusia, fitur reCAPTCHA ini hanya akan membantu dalam situasi tidak-menang ini jika kita berasumsi bahwa lalu lintas yang tidak diinginkan ini adalah non-manusia (misalnya, spambot, scraper, alat peretas, lalu lintas otomatis), bukannya lalu lintas manusia yang tidak diinginkan (seperti spammer manusia, hacker, dan lain-lain).
 
-Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCAPTCHA), silahkan ke: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
+Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCAPTCHA), silahkan pergi ke: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
 "usemode"
 - Mendefinisikan bagaimana CIDRAM harus menggunakan reCAPTCHA.
@@ -493,6 +495,14 @@ Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCA
 
 *Catat untuk pengguna di Uni Eropa: Saat CIDRAM dikonfigurasi untuk menggunakan cookie (mis., ketika "lockuser" true/benar), peringatan cookie ditampilkan secara mencolok di halaman sesuai persyaratan [undang-undang cookie UE](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Namun, saat menggunakan API invisible, CIDRAM berupaya menyelesaikan reCAPTCHA untuk pengguna secara otomatis, dan bila berhasil, ini bisa mengakibatkan halaman menjadi reload dan cookie dibuat tanpa pengguna diberi waktu yang cukup untuk benar-benar melihat peringatan cookie. Jika ini menimbulkan risiko hukum bagi Anda, mungkin lebih baik menggunakan API V2 dan bukan API invisible (API V2 tidak otomatis, dan mengharuskan pengguna menyelesaikan tantangan reCAPTCHA sendiri, sehingga memberikan kesempatan untuk melihat peringatan cookie).*
 
+#### "legal" (Kategori)
+Konfigurasi yang berkaitan dengan persyaratan hukum.
+
+*Untuk informasi lebih lanjut tentang persyaratan hukum dan bagaimana ini dapat mempengaruhi persyaratan konfigurasi Anda, silahkan lihat bagian "[LEGAL INFORMATION](#SECTION11)" pada dokumentasi.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].
+
 #### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
@@ -517,7 +527,7 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 
 #### 7.0 DASAR-DASAR (UNTUK FILE TANDA TANGAN)
 
-Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silakan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
+Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silahkan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
 
 Semua tanda tangan IPv4 mengikuti format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` merupakan awal dari blok CIDR (oktet dari alamat IP pertama dalam blok).
@@ -960,7 +970,7 @@ Ya. Lisensi kami tidak melarang hal ini.
 
 #### <a name="WANT_TO_CONTRIBUTE"></a>Saya ingin berkontribusi pada proyek ini; Dapatkah saya melakukan ini?
 
-Ya. Kontribusi untuk proyek ini sangat disambut baik. Silakan lihat "CONTRIBUTING.md" untuk informasi lebih lanjut.
+Ya. Kontribusi untuk proyek ini sangat disambut baik. Silahkan lihat "CONTRIBUTING.md" untuk informasi lebih lanjut.
 
 #### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Nilai yang disarankan untuk "ipaddr".
 
@@ -1011,7 +1021,7 @@ IP | Operator
 `89.233.43.71`<br />`91.239.100.100 `<br />`2001:67c:28a4::`<br />`2a01:3a0:53:53::` | [UncensoredDNS](https://blog.uncensoreddns.org/)
 `208.76.50.50`<br />`208.76.51.51` | [SmartViper](http://www.markosweb.com/free-dns/)
 
-*Catat: Saya tidak membuat klaim atau jaminan berkenaan dengan praktik privasi, keamanan, keampuhan, atau keandalan untuk layanan DNS apapun, apakah terdaftar atau sebaliknya. Silakan lakukan penelitian Anda sendiri ketika membuat keputusan tentang mereka.*
+*Catat: Saya tidak membuat klaim atau jaminan berkenaan dengan praktik privasi, keamanan, keampuhan, atau keandalan untuk layanan DNS apapun, apakah terdaftar atau sebaliknya. Silahkan lakukan penelitian Anda sendiri ketika membuat keputusan tentang mereka.*
 
 #### <a name="PROTECT_OTHER_THINGS"></a>Dapatkah saya menggunakan CIDRAM untuk melindungi hal-hal selain daripada situs web (misalnya, server email, FTP, SSH, IRC, dll)?
 
@@ -1024,4 +1034,11 @@ Mungkin. Ini tergantung pada sifat layanan yang dipermasalahkan, dan bagaimana A
 ---
 
 
-Terakhir Diperbarui: 7 Mei 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMASI HUKUM
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Terakhir Diperbarui: 16 Mei 2018 (2018.05.16).

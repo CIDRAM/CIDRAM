@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.05.08).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -50,21 +50,21 @@ $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex阻塞模块';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
-$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】； False（假）=不允许。';
+$CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。';
 $CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】； 403 = 使用“403 Forbidden”覆盖； 503 = 使用“503 Service unavailable”覆盖。';
 $CIDRAM['lang']['config_general_default_algo'] = '定义要用于所有未来密码和会话的算法。​选项：​​PASSWORD_DEFAULT（标准），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP &gt;= 7.2.0）。';
 $CIDRAM['lang']['config_general_default_dns'] = '以逗号分隔的DNS服务器列表，​用于主机名查找。​标准 = “8.8.8.8,8.8.4.4” (Google DNS)。​警告：不要修改此除非您知道什么您做着！';
-$CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】； True（真）=关闭CLI模式。';
-$CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？​前端访问可以使CIDRAM更易于管理，​但也可能是潜在的安全风险。​建议管理CIDRAM通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问； True（真）=关闭前端访问【标准】。';
-$CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？​True（真）=关闭； False（假）=不关闭【标准】。';
+$CIDRAM['lang']['config_general_disable_cli'] = '关闭CLI模式吗？​CLI模式是按说激活作为标准，​但可以有时干扰某些测试工具（例如PHPUnit，​为例子）和其他基于CLI应用。​如果您没有需要关闭CLI模式，​您应该忽略这个指令。​False（假）=激活CLI模式【标准】；True（真）=关闭CLI模式。';
+$CIDRAM['lang']['config_general_disable_frontend'] = '关闭前端访问吗？​前端访问可以使CIDRAM更易于管理，​但也可能是潜在的安全风险。​建议管理CIDRAM通过后端只要有可能，​但前端访问提供当不可能。​保持关闭除非您需要它。​False（假）=激活前端访问；True（真）=关闭前端访问【标准】。';
+$CIDRAM['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？​True（真）=关闭【标准】；False（假）=不关闭。';
 $CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何将电子邮件地址呈现给用户？';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '什么头CIDRAM应该应对当申请是拒绝？';
-$CIDRAM['lang']['config_general_force_hostname_lookup'] = '强制主机名查找？​True（真）=跟踪； False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。';
-$CIDRAM['lang']['config_general_hide_version'] = '从日志和页面输出中隐藏版本信息吗？​True（真）=关闭； False（假）=不关闭【标准】。';
+$CIDRAM['lang']['config_general_force_hostname_lookup'] = '强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。';
+$CIDRAM['lang']['config_general_hide_version'] = '从日志和页面输出中隐藏版本信息吗？​True（真）=关闭；False（假）=不关闭【标准】。';
 $CIDRAM['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准 = REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！';
 $CIDRAM['lang']['config_general_lang'] = '指定标准CIDRAM语言。';
-$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】； False（假）=不是。';
+$CIDRAM['lang']['config_general_log_banned_ips'] = '包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】；False（假）=不是。';
 $CIDRAM['lang']['config_general_log_rotation_action'] = '日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。​“Delete”=删除最旧的日志文件，直到不再超出限制。​“Archive”=首先归档，然后删除最旧的日志文件，直到不再超出限制。';
 $CIDRAM['lang']['config_general_log_rotation_limit'] = '日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。';
 $CIDRAM['lang']['config_general_logfile'] = '人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。';
@@ -73,14 +73,15 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = '连载的文件用于记�
 $CIDRAM['lang']['config_general_maintenance_mode'] = '启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '最大登录尝试次数。';
 $CIDRAM['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';
-$CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】； False（假）=不是。';
-$CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】； False（假）=搜索引擎验证是禁用。';
+$CIDRAM['lang']['config_general_protect_frontend'] = '指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】；False（假）=不是。';
+$CIDRAM['lang']['config_general_search_engine_verification'] = '尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】；False（假）=搜索引擎验证是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。';
-$CIDRAM['lang']['config_general_statistics'] = '跟踪CIDRAM使用情况统计？​True（真）=跟踪； False（假）=不跟踪【标准】。';
+$CIDRAM['lang']['config_general_statistics'] = '跟踪CIDRAM使用情况统计？​True（真）=跟踪；False（假）=不跟踪【标准】。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格式。​可根据要求增加附加选项。';
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
 $CIDRAM['lang']['config_general_timezone'] = '您的时区。';
 $CIDRAM['lang']['config_general_truncate'] = '截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。';
 $CIDRAM['lang']['config_recaptcha_api'] = '使用哪个API？V2或Invisible？';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';
 $CIDRAM['lang']['config_recaptcha_lockip'] = '应该reCAPTCHA锁定到IP？';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = '文件名：';
 $CIDRAM['lang']['field_filetype_directory'] = '文件夹';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}文件';
 $CIDRAM['lang']['field_filetype_unknown'] = '未知';
-$CIDRAM['lang']['field_first_seen'] = '当第一次遇到';
 $CIDRAM['lang']['field_infractions'] = '违规';
 $CIDRAM['lang']['field_install'] = '安装';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';

@@ -19,6 +19,19 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.05.10; Bug-fix; Maikuolan]: Log rotation not properly implemented to
   the reCAPTCHA module; Fixed.
 
+- [2018.05.14; Sub-minor code change; Maikuolan]: Logs page can now access
+  GZ-compressed logfiles.
+
+- [2018.05.16; Sub-minor code change; Maikuolan]: Changed the default value of
+  the "disable_webfonts" directive from "false" to "true" (meaning they should
+  now be disabled by default). Removed support for "double banning" (this was
+  something used only by some very specific, custom modules anyway, none which
+  are still supported anymore, and none of the standard features or functions
+  included in the package used it).
+
+- [2018.05.16; NEW FEATURE; Maikuolan]: Added support for pseudonymising IP
+  addresses when logging.
+
 === Version/Release 1.5.1 ===
 PATCH RELEASE.
 

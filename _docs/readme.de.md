@@ -10,6 +10,8 @@
 - 7. [SIGNATURENFORMAT](#SECTION7)
 - 8. [BEKANNTE KOMPATIBILITÄTSPROBLEME](#SECTION8)
 - 9. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION9)
+- 10. *Reserviert für zukünftige Ergänzungen der Dokumentation.*
+- 11. [RECHTSINFORMATION](#SECTION11)
 
 *Hinweis für Übersetzungen: Im Falle von Fehlern (z.B, Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
 
@@ -384,7 +386,7 @@ Generelle Konfiguration von CIDRAM.
 - Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.
 
 "disable_webfonts"
-- Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].
+- Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein.
 
 "maintenance_mode"
 - Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, u.s.w.
@@ -492,6 +494,14 @@ Um einen "site key" und einen "secret key" zu erhalten (für die Verwendung von 
 - Welche API soll verwendet werden? V2 oder Invisible?
 
 *Hinweis für Benutzer in der Europäischen Union: Wenn CIDRAM für die Verwendung von Cookies konfiguriert ist (z.B. wenn "lockuser" true/wahr ist), auf der Seite wird gemäß den Anforderungen der [EU-Cookie-Gesetzgebung](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm) eine Cookie-Warnung angezeigt. Jedoch, bei Verwendung der invisible API versucht CIDRAM, den reCAPTCHA für den Benutzer automatisch abzuschließen, und wenn dies erfolgreich ist, könnte dies dazu führen, dass die Seite erneut geladen wird und ein Cookie erstellt wird, ohne dass dem Benutzer ausreichend Zeit gegeben wird, die Cookie-Warnung tatsächlich zu sehen. Wenn dies für Sie ein rechtliches Risiko darstellt, ist es möglicherweise besser, die V2 API anstelle der invisible API zu verwenden (die V2 API ist nicht automatisiert und erfordert, dass der Benutzer die reCAPTCHA-Aufgabe selbst abschließt; dies bietet die Möglichkeit, die Cookie-Warnung zu sehen).*
+
+#### "legal" (Kategorie)
+Konfiguration für gesetzliche Anforderungen.
+
+*Für weitere Informationen zu gesetzlichen Anforderungen und wie sich dies auf Ihre Konfiguration-Anforderungen auswirken könnte, bitte beachten Sie den Sektion "[RECHTSINFORMATION](#SECTION11)" der Dokumentation.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].
 
 #### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
@@ -1024,4 +1034,11 @@ Möglicherweise. Dies hängt von der Art des Dienstes ab und davon, wie Sie es v
 ---
 
 
-Zuletzt aktualisiert: 7 Mai 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>RECHTSINFORMATION
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Zuletzt aktualisiert: 16 Mai 2018 (2018.05.16).

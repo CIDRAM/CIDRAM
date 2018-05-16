@@ -10,6 +10,8 @@
 - 7. [SIGNATURE FORMAAT](#SECTION7)
 - 8. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION8)
 - 9. [VEELGESTELDE VRAGEN (FAQ)](#SECTION9)
+- 10. *Gereserveerd voor toekomstige toevoegingen aan de documentatie.*
+- 11. [LEGALE INFORMATIE](#SECTION11)
 
 *Opmerking over vertalingen: In geval van fouten (bv, verschillen tussen vertalingen, typefouten, ezv), de Engels versie van de README wordt beschouwd als het origineel en gezaghebbende versie. Als u vinden elke fouten, uw hulp bij het corrigeren van hen zou worden toegejuicht.*
 
@@ -384,7 +386,7 @@ Algemene configuratie voor CIDRAM.
 - Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
 
 "disable_webfonts"
-- Uitschakelen webfonts? True = Ja; False = Nee [Standaard].
+- Uitschakelen webfonts? True = Ja [Standaard]; False = Nee.
 
 "maintenance_mode"
 - Inschakelen de onderhoudsmodus? True = Ja; False = Nee [Standaard]. Schakelt alles anders dan het frontend uit. Soms nuttig bij het bijwerken van uw CMS, frameworks, enz.
@@ -492,6 +494,14 @@ Om een "site key" en een "secret key" te verkrijgen (vereist voor het gebruik va
 - Welke API gebruiken? V2 of invisible?
 
 *Opmerking voor gebruikers in de Europese Unie: Wanneer CIDRAM is geconfigureerd om cookies te gebruiken (b.v., wanneer "lockuser" true/waar is), een cookie-waarschuwing wordt prominent op de pagina weergegeven volgens de vereisten van de [EU-cookiewetgeving](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Maar, bij het gebruik van de invisible API probeert CIDRAM automatisch de reCAPTCHA voor de gebruiker te voltooien, en wanneer dit lukt, kan dit ertoe leiden dat de pagina opnieuw wordt geladen en een cookie wordt gemaakt zonder dat de gebruiker voldoende tijd krijgt om de cookie-waarschuwing daadwerkelijk te zien. Als dit een juridisch risico voor u oplevert, is het misschien beter om de V2 API te gebruiken in plaats van de invisible API (de V2 API is niet geautomatiseerd en vereist dat de gebruiker de reCAPTCHA-uitdaging zelf voltooit, waardoor de mogelijkheid wordt geboden om de cookie-waarschuwing te zien).*
+
+#### "legal" (Category)
+Configuratie met betrekking tot wettelijke vereisten.
+
+*Voor meer informatie over wettelijke vereisten en hoe dit uw configuratie-eisen kan beïnvloeden, zie het sectie "[LEGALE INFORMATIE](#SECTION11)" van de documentatie.*
+
+"pseudonymise_ip_addresses"
+- Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].
 
 #### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
@@ -1024,4 +1034,11 @@ Mogelijk. Dit is afhankelijk van de aard van de service in kwestie en hoe u deze
 ---
 
 
-Laatste Bijgewerkt: 7 Mei 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>LEGALE INFORMATIE
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Laatste Bijgewerkt: 16 Mei 2018 (2018.05.16).

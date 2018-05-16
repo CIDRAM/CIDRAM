@@ -10,6 +10,8 @@
 - 7. [FIRMA FORMATO](#SECTION7)
 - 8. [CONOSCIUTI COMPATIBILITÀ PROBLEMI](#SECTION8)
 - 9. [DOMANDE FREQUENTI (FAQ)](#SECTION9)
+- 10. *Riservato per future aggiunte alla documentazione.*
+- 11. [INFORMAZIONE LEGALE](#SECTION11)
 
 *Nota per quanto riguarda le traduzioni: In caso di errori (per esempio, discrepanze tra le traduzioni, errori di battitura, ecc), la versione Inglese del README è considerata la versione originale e autorevole. Se trovate errori, il vostro aiuto a correggerli sarebbe il benvenuto.*
 
@@ -384,7 +386,7 @@ Generale configurazione per CIDRAM.
 - Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.
 
 "disable_webfonts"
-- Disabilita webfonts? True = Sì; False = No [Predefinito].
+- Disabilita webfonts? True = Sì [Predefinito]; False = No.
 
 "maintenance_mode"
 - Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l'aggiornamento del CMS, dei framework, ecc.
@@ -492,6 +494,14 @@ Per ottenere una "site key" e una "secret key" (necessaria per l'utilizzo di reC
 - Quale API usare? V2 o Invisible?
 
 *Nota per gli utenti nell'Unione europea: Quando CIDRAM è configurato per utilizzare i cookie (ad es., quando "lockuser" è true/vero), un avviso sui cookie viene visualizzato nella pagina in base ai requisiti della [legislazione sui cookie dell'UE](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Tuttavia, quando si utilizza l'API invisible, CIDRAM tenta di completare automaticamente reCAPTCHA per l'utente, e in caso di successo, ciò potrebbe comportare il ricaricamento della pagina e la creazione di un cookie senza che all'utente venga dato il tempo necessario per visualizzare effettivamente l'avviso sui cookie. Se ciò rappresenta un rischio legale per te, potrebbe essere preferibile utilizzare l'API V2 anziché l'API invisible (l'API V2 non è automatizzata e richiede che l'utente completi la stessa sfida reCAPTCHA, fornendo così l'opportunità di vedere l'avvertimento sui cookie).*
+
+#### "legal" (Categoria)
+Configurazione relativa ai requisiti legali.
+
+*Per ulteriori informazioni sui requisiti legali e su come ciò potrebbe influire sui requisiti di configurazione, si prega di fare riferimento alla sezione "[INFORMAZIONE LEGALE](#SECTION11)" della documentazione.*
+
+"pseudonymise_ip_addresses"
+- Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì; False = No [Predefinito].
 
 #### "template_data" (Categoria)
 Direttive/Variabili per modelli e temi.
@@ -1024,4 +1034,11 @@ Possibilmente. Questo dipende dalla natura del servizio in questione e da come l
 ---
 
 
-Ultimo Aggiornamento: 7 Maggio 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>INFORMAZIONE LEGALE
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Ultimo Aggiornamento: 16 Maggio 2018 (2018.05.16).

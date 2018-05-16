@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.05.08).
+ * This file: Turkish language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Gelecekteki tüm şifreler ve 
 $CIDRAM['lang']['config_general_default_dns'] = 'Ana makine adı aramalarda kullanılacak virgülle ayrılmış DNS sunucuları listesi. Varsayılan = "8.8.8.8,8.8.4.4" (Google DNS). UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI modunu devre dışı bırak? CLI modu varsayılan olarak etkindir, ancak bazen bazı test araçlarına (örneğin PHPUnit) ve diğer CLI tabanlı uygulamalara müdahale edebilir. CLI modunu devre dışı bırakmanız gerekmiyorsa, bu direktif görmezden almalısınız. False = CLI modunu etkinleştir [Varsayılan]; True = CLI modunu devre dışı bırak.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre dışı bırak? Ön uç erişimi CIDRAM\'ın daha yönetilebilir hale getirebilir, ancak potansiyel bir güvenlik riski de oluşturabilir. CIDRAM\'ın mümkün olduğunda arka ucundan yönetmesi önerilir, ancak kolaylık sağlamak için ön uç erişimi sağlanmıştır. İhtiyacınız olmadıkça devre dışı bırakın. False = Ön uç erişimini etkinleştir; True = Ön uç erişimini devre dışı bırak [Varsayılan].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'İsterseniz, kullanıcıları engellediğinde verilecek bir e-posta adresi sağlayabilirsiniz, yanlışlıkla engellendikleri zaman destek için sizinle iletişim kurabilmeleri için. UYARI: Burada tedarik ettiğiniz e-posta adresiniz kesinlikle spambotlar ve sıyırıcılar tarafından edinilecektir. Bu nedenle, tek kullanımlık veya önemsiz bir e-posta adresini seçmeniz kesinlikle önerilir (diğer bir deyişle, büyük olasılıkla birincil kişisel veya birincil iş e-posta adreslerinizi kullanmak istemiyorsunuzdur).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'İstekleri engellerken CIDRAM hangi üstbilgilerle karşılık vermeli?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM tarafından kullanılan t
 $CIDRAM['lang']['config_general_timeOffset'] = 'Dakika cinsinden zaman dilimi farkı.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zaman diliminiz.';
 $CIDRAM['lang']['config_general_truncate'] = 'Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Hangi API\'yı kullanacaksınız? V2 veya Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA örneklerini hatırlamak için saat sayısı.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA\'yı IP\'lere kilitle?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Dosya adı: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Rehber';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Dosya';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Bilinmiyor';
-$CIDRAM['lang']['field_first_seen'] = 'İlk Görülen';
 $CIDRAM['lang']['field_infractions'] = 'İhlaller';
 $CIDRAM['lang']['field_install'] = 'Yükle';
 $CIDRAM['lang']['field_ip_address'] = 'İP Adresi';

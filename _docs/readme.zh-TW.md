@@ -10,6 +10,8 @@
 - 7. [簽名格式](#SECTION7)
 - 8. [已知的兼容問題](#SECTION8)
 - 9. [常見問題（FAQ）](#SECTION9)
+- 10. *保留以備將來添加到文檔中。*
+- 11. [法律信息](#SECTION11)
 
 *翻譯註釋：如果錯誤（例如，​翻譯差異，​錯別字，​等等），​英文版這個文件是考慮了原版和權威版。​如果您發現任何錯誤，​您的協助糾正他們將受到歡迎。​*
 
@@ -385,7 +387,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - 指定是否應將CIDRAM通常提供的保護應用於前端。​True（真）=是【標準】；​False（假）=不是。
 
 『disable_webfonts』
-- 關閉網絡字體嗎？​True（真）=關閉；​False（假）=不關閉【標準】。
+- 關閉網絡字體嗎？​True（真）=關閉【標準】；False（假）=不關閉。
 
 『maintenance_mode』
 - 啟用維護模式？​True（真）=關閉；​False（假）=不關閉【標準】。​它停用一切以外前端。​有時候在更新CMS，框架，等時有用。
@@ -394,17 +396,17 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - 定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
 
 『statistics』
-- 跟踪CIDRAM使用情況統計？​True（真）=跟踪； False（假）=不跟踪【標準】。
+- 跟踪CIDRAM使用情況統計？​True（真）=跟踪；False（假）=不跟踪【標準】。
 
 『force_hostname_lookup』
-- 強制主機名查找？​True（真）=跟踪； False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。
+- 強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。
 
 『allow_gethostbyaddr_lookup』
-- 當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】； False（假）=不允許。
+- 當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。
 - *注意：在某些32位系統上，IPv6查找可能無法正常工作。*
 
 『hide_version』
-- 從日誌和頁面輸出中隱藏版本信息嗎？​True（真）=關閉； False（假）=不關閉【標準】。
+- 從日誌和頁面輸出中隱藏版本信息嗎？​True（真）=關閉；False（假）=不關閉【標準】。
 
 #### 『signatures』 （類別）
 簽名配置。
@@ -493,6 +495,14 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - 使用哪個API？V2或Invisible？
 
 *歐盟用戶須知：​當CIDRAM被配置為使用cookie時（例如，當『lockuser』是true/真時），根據[歐盟的cookie法規](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)，cookie警告顯示在頁面上。​但是，當使用invisible API時，CIDRAM將自動為用戶完成reCAPTCHA，並且當成功時，這可能導致頁面被重新加載，並且創建cookie，而用戶沒有足夠的時間來實際看到cookie警告。​如果這對您構成法律風險，那麼最好使用V2 API而不使用invisible API（V2 API不是自動的，並且要求用戶自己完成reCAPTCHA挑戰，因此提供了一個機會來查看cookie警告）。*
+
+#### 『legal』 （類別）
+有關法律義務的配置。
+
+*請參閱文檔的『[法律信息](#SECTION11)』章節以獲取更多有關法律義務的信息，以及它可以如何影響您的配置義務。*
+
+『pseudonymise_ip_addresses』
+- 編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名；False（假）=不使用假名【標準】。
 
 #### 『template_data』 （類別）
 指令和變量為模板和主題。
@@ -1025,4 +1035,11 @@ IP | 操作者
 ---
 
 
-最後更新：2018年5月7日。
+### 11. <a name="SECTION11"></a>法律信息
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+最後更新：2018年5月16日。

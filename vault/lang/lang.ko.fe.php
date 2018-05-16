@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.08).
+ * This file: Korean language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = '향후 모든 암호와 세션
 $CIDRAM['lang']['config_general_default_dns'] = '호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $CIDRAM['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. <code>false</code> = CLI 모드를 활성화합니다 (Default / 기본 설정); <code>true</code> = CLI 모드를 해제합니다.';
 $CIDRAM['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정).';
-$CIDRAM['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
+$CIDRAM['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.';
 $CIDRAM['lang']['config_general_emailaddr'] = '여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고 : 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '무엇 헤더 사용해야합니까 (요청을 차단했을 때)?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM에서 사용되는 날짜
 $CIDRAM['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $CIDRAM['lang']['config_general_timezone'] = '귀하의 시간대.';
 $CIDRAM['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_recaptcha_api'] = '어떤 API를 사용할 수 있습니까? V2 또는 Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA 인스턴스를 기억 시간.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA를 IP로 잠금 하시겠습니까?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = '파일 이름 : ';
 $CIDRAM['lang']['field_filetype_directory'] = '디렉토리';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} 파일';
 $CIDRAM['lang']['field_filetype_unknown'] = '알 수없는';
-$CIDRAM['lang']['field_first_seen'] = '처음 보았을 때';
 $CIDRAM['lang']['field_infractions'] = '위반';
 $CIDRAM['lang']['field_install'] = '설치';
 $CIDRAM['lang']['field_ip_address'] = 'IP 주소';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.05.08).
+ * This file: Norwegian language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Definerer hvilken algoritme so
 $CIDRAM['lang']['config_general_default_dns'] = 'En kommaseparert liste over DNS-servere som skal brukes til vertsnavn-oppslag. Standardverdi = "8.8.8.8,8.8.4.4" (Google DNS). ADVARSEL: Ikke endre dette med mindre du vet hva du gjør!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Deaktiver CLI-modus? CLI-modus er aktivert som standard, men kan noen ganger forstyrre visse testverktøy (for eksempel; PHPUnit) og andre CLI-baserte applikasjoner. Hvis du ikke trenger å deaktivere CLI-modus, bør du ignorere dette direktivet. False = Aktiver CLI-modus [Standardverdi]; True = Deaktiver CLI-modus.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Deaktiver tilgang til frontenden? Frontend tilgang kan gjøre CIDRAM mer overskuelig, men kan også være en potensiell sikkerhetsrisiko også. Det anbefales å administrere CIDRAM via bakenden når det er mulig, men frontend tilgang er gitt for når det ikke er mulig. Hold den deaktivert med mindre du trenger det. False = Aktiver tilgang til frontenden; True = Deaktiver tilgang til frontenden [Standardverdi].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Deaktiver webfonter? True = Ja; False = Nei [Standardverdi].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Deaktiver webfonter? True = Ja [Standardverdi]; False = Nei.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Hvis du vil, du kan levere en e-postadresse her for å bli gitt til brukerne når de er blokkert, for dem å bruke som et kontaktpunkt for støtte og/eller assistanse i tilfelle de blir blokkert feilaktig eller i feil. ADVARSEL: Uansett hvilken e-postadresse du leverer her, det vil helt sikkert bli ervervet av spamboter og skraper i løpet av bruken her, og så, det anbefales sterkt at hvis du velger å levere en e-postadresse her, at du sørger for at e-postadressen du oppgir her er en engangsadresse og/eller en adresse som du ikke bryr deg om å bli spammet (dvs., du vil sannsynligvis ikke bruke dine primære personlige eller primære virksomhets e-postadresser).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hvordan foretrekker du e-postadressen som skal presenteres for brukerne?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Hvilke overskrifter skal CIDRAM svare med når du blokkerer forespørsler?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Dato/tid notasjonsformat som bru
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidssone forskjøvet i minutter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidssone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisere IP-adresser når du logger? True = Ja; False = Nei [Standardverdi].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Hvilken API skal du bruke? V2 eller invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Antall timer for å huske reCAPTCHA-forekomster.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Lås reCAPTCHA til IP-adresser?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Filnavn: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Filkatalog';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Fil';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Ukjent';
-$CIDRAM['lang']['field_first_seen'] = 'Først Sett';
 $CIDRAM['lang']['field_infractions'] = 'Infraksjoner';
 $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adresse';

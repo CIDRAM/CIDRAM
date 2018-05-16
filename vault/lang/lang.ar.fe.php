@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.05.08).
+ * This file: Arabic language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'يحدد الخوارزمية 
 $CIDRAM['lang']['config_general_default_dns'] = 'قائمة بفواصل من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = "8.8.8.8,8.8.4.4" (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خاطئة = تمكين وضع CLI [الافتراضي]. صحيح = وضع تعطيل CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'تعطيل وصول front-end؟ وصول front-end يستطيع جعل CIDRAM أكثر قابلية للإدارة، ولكن يمكن أيضا أن تكون مخاطر أمنية محتملة. من المستحسن لإدارة CIDRAM عبر back-end متى أمكن، لكن وصول front-end متوفر عندما لم يكن ممكنا. يبقيه المعوقين إلا إذا كنت في حاجة إليها. False = تمكين وصول front-end؛ True = تعطيل وصول front-end [الافتراضي].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'هل تريد تعطيل ويبفونتس؟ True = نعم؛ False = لا [افتراضي].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'هل تريد تعطيل ويبفونتس؟ True = نعم [افتراضي]؛ False = لا.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'لو كنت تريد، يمكنك توفير عنوان البريد الإلكتروني هنا أن تعطى للمستخدمين عند أنها ممنوعة، بالنسبة لهم لاستخدامها كنقطة اتصال للحصول على الدعم والمساعدة لفي حال منهم سدت طريق الخطأ أو في ضلال. تحذير: أي عنوان البريد الإلكتروني الذي تزويد هنا وبالتأكيد سيتم شراؤها من قبل المتطفلين و برامج التطفل وكاشطات خلال المستخدمة هنا، و حينئذ، انها المستحسن أن إذا اخترت توفير عنوان البريد الإلكتروني هنا، يمكنك التأكد من أن عنوان البريد الإلكتروني الذي نورد هنا يمكن التخلص منها و/أو عنوان أنك لا تمانع في أن محتوى غير مرغوب فيه (بعبارات أخرى، وربما كنت لا تريد استخدام الرئيسية عناوين البريد الإلكتروني التجارية أو العناوين الشخصية الرئيسية الخاصة بك).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'كيف تفضل أن يتم تقديم عنوان البريد الإلكتروني إلى المستخدمين؟';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'الذي رؤوس ينبغي CIDRAM الرد عندما حظر طلبات؟';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'شكل التواريخ المس
 $CIDRAM['lang']['config_general_timeOffset'] = 'المنطقة الزمنية تعويض في غضون دقائق.';
 $CIDRAM['lang']['config_general_timezone'] = 'المنطقة الزمنية.';
 $CIDRAM['lang']['config_general_truncate'] = 'اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'إخفاء عناوين IP عند كتابة السجلات؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'أي API لاستخدام؟ V2 أو Invisible؟';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'عدد الساعات لنتذكر حالات اختبار reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'القفل reCAPTCHA إلى IP؟';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'اسم الملف: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'مجلد';
 $CIDRAM['lang']['field_filetype_info'] = 'ملف {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'غير معروف';
-$CIDRAM['lang']['field_first_seen'] = 'الروية الأولى';
 $CIDRAM['lang']['field_infractions'] = 'مخالفات';
 $CIDRAM['lang']['field_install'] = 'تثبيت';
 $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';

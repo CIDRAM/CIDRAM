@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.05.08).
+ * This file: Swedish language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Definierar vilken algoritm som
 $CIDRAM['lang']['config_general_default_dns'] = 'En komma-avgränsad lista över DNS-servrar som ska användas för värdnamnssökningar. Standard = "8.8.8.8,8.8.4.4" (Google DNS). VARNING: Ändra inte detta om du inte vet vad du gör!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Inaktivera CLI-läge? CLI-läge är som standard aktiverat, men kan ibland störa vissa testverktyg (t.ex., PHPUnit) och andra CLI-baserade applikationer. Om du inte behöver avaktivera CLI-läge, bör du ignorera detta direktiv. False = Aktivera CLI-läge [Standard]; True = Inaktivera CLI-läge.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Inaktivera front-end tillgång? Front-end tillgång kan göra CIDRAM mer hanterbar, men kan också vara en potentiell säkerhetsrisk. Det rekommenderas att hantera CIDRAM via back-end när det är möjligt, men front-end tillgång tillhandahålls när det inte är möjligt. Håll det inaktiverat om du inte behöver det. False = Aktivera front-end tillgång; True = Inaktivera front-end tillgång [Standard].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Inaktivera webbfonter? True = Ja; False = Nej [Standard].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Inaktivera webbfonter? True = Ja [Standard]; False = Nej.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Om du vill, kan du ange en e-postadress här för att kunna ges till användare när de är blockerade, för att de ska kunna användas som kontaktpunkt för stöd och/eller hjälp till om de blockeras av misstag eller fel. VARNING: Alla e-postadresser du tillhandahåller här kommer säkert att förvärvas av spamrobotar och skrapor medan de används här, och så, det rekommenderas starkt att om du väljer att tillhandahålla en e-postadress här, så ser du till att e-postadressen du tillhandahåller här är en engångsadress och/eller en adress som du inte har något emot att bli spamad (med andra ord, vill du antagligen inte använda dina primära personliga eller primära företags e-postadresser).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hur skulle du föredra att e-postadressen ska presenteras för användarna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Vilka rubriker ska CIDRAM reagera med vid blockering av förfrågningar?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Datum/tid notationsformat som an
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidszonen kompenseras i minuter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidszon.';
 $CIDRAM['lang']['config_general_truncate'] = 'Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisera IP-adresser när loggning? True = Ja; False = Nej [Standard].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Vilket API ska användas? V2 eller Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Antal timmar för att komma ihåg reCAPTCHA-instanser.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Låsa reCAPTCHA till IP-adresser?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Filnamn: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Katalog';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Fil';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Okänd';
-$CIDRAM['lang']['field_first_seen'] = 'Först sett';
 $CIDRAM['lang']['field_infractions'] = 'Infraktions';
 $CIDRAM['lang']['field_install'] = 'Installera';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adress';

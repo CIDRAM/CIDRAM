@@ -10,6 +10,8 @@
 - 7. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION7)
 - 8. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION8)
 - 9. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION9)
+- 10. *Dành riêng cho các bổ sung trong tương lai cho tài liệu.*
+- 11. [THÔNG TIN HỢP PHÁP](#SECTION11)
 
 *Lưu ý về bản dịch: Trong trường hợp có sai sót (ví dụ, sự khác biệt giữa bản dịch, lỗi chính tả, vv), phiên bản tiếng Anh của README được coi là phiên bản gốc và có thẩm quyền. Nếu bạn tìm thấy bất kỳ lỗi, giúp đỡ của bạn trong việc điều chỉnh họ sẽ được hoan nghênh.*
 
@@ -384,7 +386,7 @@ Cấu hình chung cho CIDRAM.
 - Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.
 
 "disable_webfonts"
-- Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].
+- Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không.
 
 "maintenance_mode"
 - Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
@@ -424,7 +426,7 @@ Cấu hình cho chữ ký.
 - Chặn CIDR thường được khuyến cáo cho danh sách đen? Điều này bao gồm bất kỳ chữ ký không được đánh dấu như một phần của bất kỳ các loại chữ ký cụ thể khác.
 
 "block_legal"
-- Chặn CIDR theo các nghĩa vụ pháp lý? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ pháp lý" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do pháp lý.
+- Chặn CIDR theo các nghĩa vụ hợp pháp? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ hợp pháp" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do hợp pháp.
 
 "block_malware"
 - Chặn IP liên quan đến phần mềm độc hại? Điều này bao gồm các máy chủ C&C, máy chủ bị nhiễm, máy chủ liên quan đến phân phối phần mềm độc hại, vv.
@@ -491,7 +493,15 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 "api"
 - API nào để sử dụng? V2 hoặc Invisible?
 
-*Lưu ý đối với người dùng ở Liên minh châu Âu: Khi CIDRAM được định cấu hình để sử dụng cookie (v.d., khi "lockuser" là true/đúng), cảnh báo cookie được hiển thị trên trang theo quy định của [pháp luật về cookie của EU](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Tuy nhiên, khi sử dụng API invisible, CIDRAM cố gắng hoàn thành reCAPTCHA cho người dùng tự động, và khi thành công, điều này có thể dẫn đến việc trang được tải lại và một cookie được tạo ra mà không có người dùng được cho đủ thời gian để thực sự xem cảnh báo cookie. Nếu điều này đặt ra rủi ro pháp lý cho bạn, bạn nên sử dụng API V2 thay vì API invisible (API V2 không phải là tự động và yêu cầu người dùng tự hoàn thành reCAPTCHA, do đó cung cấp cơ hội để xem cảnh báo cookie).*
+*Lưu ý đối với người dùng ở Liên minh châu Âu: Khi CIDRAM được định cấu hình để sử dụng cookie (v.d., khi "lockuser" là true/đúng), cảnh báo cookie được hiển thị trên trang theo quy định của [pháp luật về cookie của EU](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Tuy nhiên, khi sử dụng API invisible, CIDRAM cố gắng hoàn thành reCAPTCHA cho người dùng tự động, và khi thành công, điều này có thể dẫn đến việc trang được tải lại và một cookie được tạo ra mà không có người dùng được cho đủ thời gian để thực sự xem cảnh báo cookie. Nếu điều này đặt ra rủi ro hợp pháp cho bạn, bạn nên sử dụng API V2 thay vì API invisible (API V2 không phải là tự động và yêu cầu người dùng tự hoàn thành reCAPTCHA, do đó cung cấp cơ hội để xem cảnh báo cookie).*
+
+#### "legal" (Thể loại)
+Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
+
+*Để biết thêm thông tin về các nghĩa vụ hợp pháp và cách nó có thể ảnh hưởng đến các nghĩa vụ cấu hình của bạn, vui lòng tham khảo phần "[THÔNG TIN HỢP PHÁP](#SECTION11)" của các tài liệu.*
+
+"pseudonymise_ip_addresses"
+- Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
 
 #### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
@@ -1024,4 +1034,11 @@ Có lẽ. Điều này phụ thuộc vào tính chất của dịch vụ đượ
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Năm 2018 (2018.05.07).
+### 11. <a name="SECTION11"></a>THÔNG TIN HỢP PHÁP
+
+*(Not yet written, but will be available soon).*
+
+---
+
+
+Lần cuối cập nhật: 16 Tháng Năm 2018 (2018.05.16).

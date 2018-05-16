@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.05.08).
+ * This file: Indonesian language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Mendefinisikan algoritma mana 
 $CIDRAM['lang']['config_general_default_dns'] = 'Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya; False = Tidak [Default].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Apa header harus CIDRAM merespon dengan ketika memblokir permintaan?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Format notasi tanggal/waktu yang
 $CIDRAM['lang']['config_general_timeOffset'] = 'Offset zona waktu dalam hitungan menit.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zona waktu Anda.';
 $CIDRAM['lang']['config_general_truncate'] = 'Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'API mana yang akan digunakan? V2 atau Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Jumlah jam untuk mengingat instansi reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Kunci reCAPTCHA ke IP?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Nama file: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Direktori';
 $CIDRAM['lang']['field_filetype_info'] = 'File {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Tidak Diketahui';
-$CIDRAM['lang']['field_first_seen'] = 'Pertama Dilihat';
 $CIDRAM['lang']['field_infractions'] = 'Pelanggaran';
 $CIDRAM['lang']['field_install'] = 'Instal';
 $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';

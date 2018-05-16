@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2018.05.04).
+ * This file: Indonesian language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,7 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
-$CIDRAM['lang']['Error_WriteCache'] = 'Tidak dapat menulis ke cache! Silakan periksa hak akses file CHMOD Anda!';
+$CIDRAM['lang']['Error_WriteCache'] = 'Tidak dapat menulis ke cache! Silahkan periksa hak akses file CHMOD Anda!';
 $CIDRAM['lang']['MoreInfo'] = 'Untuk informasi lebih lanjut:';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Akses Anda ke halaman ini ditolak karena Anda mencoba untuk mengakses halaman ini menggunakan alamat IP yang tidak valid.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Akses Anda ke halaman ini ditolak karena perilaku buruk sebelumnya dari alamat IP Anda.';

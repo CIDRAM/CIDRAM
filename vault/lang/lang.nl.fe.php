@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.05.08).
+ * This file: Dutch language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Definieert welk algoritme u wi
 $CIDRAM['lang']['config_general_default_dns'] = 'Een door komma\'s gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toegang? frontend toegang kan CIDRAM beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om CIDRAM te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Uitschakelen webfonts? True = Ja; False = Nee [Standaard].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Uitschakelen webfonts? True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hoe zou u het e-mailadres voor gebruikers willen aanbieden?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door C
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
 $CIDRAM['lang']['config_general_timezone'] = 'Uw tijdzone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Welke API gebruiken? V2 of invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Aantal uren om reCAPTCHA instanties herinneren.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Binden reCAPTCHA om IP\'s?';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Bestandsnaam: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Bestandsmap';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Bestand';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Onbekend';
-$CIDRAM['lang']['field_first_seen'] = 'Eerst Gezien';
 $CIDRAM['lang']['field_infractions'] = 'Overtredingen';
 $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';

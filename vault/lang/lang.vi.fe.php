@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.05.08).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -56,7 +56,7 @@ $CIDRAM['lang']['config_general_default_algo'] = 'Xác định thuật toán nà
 $CIDRAM['lang']['config_general_default_dns'] = 'Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho CIDRAM dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý CIDRAM từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định].';
-$CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa các webfont? True = Vâng; False = Không [Mặc định].';
+$CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn?';
@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử
 $CIDRAM['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';
 $CIDRAM['lang']['config_general_timezone'] = 'Múi giờ của bạn.';
 $CIDRAM['lang']['config_general_truncate'] = 'Dọn dẹp các bản ghi khi họ được một kích thước nhất định? Giá trị là kích thước tối đa bằng B/KB/MB/GB/TB mà một tập tin bản ghi có thể tăng lên trước khi bị dọn dẹp. Giá trị mặc định 0KB sẽ vô hiệu hoá dọn dẹp (các bản ghi có thể tăng lên vô hạn). Lưu ý: Áp dụng cho tập tin riêng biệt! Kích thước tập tin bản ghi không được coi là tập thể.';
+$CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'API nào để sử dụng? V2 hoặc Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Số giờ để nhớ reCAPTCHA.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'Khóa reCAPTCHA để IP?';
@@ -93,7 +94,7 @@ $CIDRAM['lang']['config_recaptcha_usemode'] = 'Định nghĩa thế nào CIDRAM 
 $CIDRAM['lang']['config_signatures_block_bogons'] = 'Chặn CIDR bogon/martian? Nếu bạn mong đợi các kết nối đến trang mạng của bạn từ bên trong mạng nội bộ của bạn, từ localhost, hay từ LAN của bạn, tùy chọn này cần được thiết lập để false. Nếu bạn không mong đợi những kết nối như vậy, tùy chọn này cần được thiết lập để true.';
 $CIDRAM['lang']['config_signatures_block_cloud'] = 'Chặn CIDR xác định là thuộc về các dịch vụ lưu trữ mạng hay dịch vụ điện toán đám mây? Nếu bạn điều hành một dịch vụ API từ trang mạng của bạn hay nếu bạn mong đợi các trang mạng khác để kết nối với trang mạng của bạn, điều này cần được thiết lập để false. Nếu bạn không, sau đó, tùy chọn này cần được thiết lập để true.';
 $CIDRAM['lang']['config_signatures_block_generic'] = 'Chặn CIDR thường được khuyến cáo cho danh sách đen? Điều này bao gồm bất kỳ chữ ký không được đánh dấu như một phần của bất kỳ các loại chữ ký cụ thể khác.';
-$CIDRAM['lang']['config_signatures_block_legal'] = 'Chặn CIDR theo các nghĩa vụ pháp lý? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ pháp lý" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do pháp lý.';
+$CIDRAM['lang']['config_signatures_block_legal'] = 'Chặn CIDR theo các nghĩa vụ hợp pháp? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ hợp pháp" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do hợp pháp.';
 $CIDRAM['lang']['config_signatures_block_malware'] = 'Chặn IP liên quan đến phần mềm độc hại? Điều này bao gồm các máy chủ C&C, máy chủ bị nhiễm, máy chủ liên quan đến phân phối phần mềm độc hại, vv.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Chặn CIDR xác định là thuộc về các dịch vụ proxy hay VPN? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy hay VPN, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu các dịch vụ proxy hay VPN, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Chặn CIDR xác định như có nguy cơ cao đối được thư rác? Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true.';
@@ -126,7 +127,6 @@ $CIDRAM['lang']['field_filename'] = 'Tên tập tin: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Thư Mục';
 $CIDRAM['lang']['field_filetype_info'] = 'Tập Tin {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Không Xác Định';
-$CIDRAM['lang']['field_first_seen'] = 'Lần đầu tiên nhìn thấy';
 $CIDRAM['lang']['field_infractions'] = 'Vi phạm';
 $CIDRAM['lang']['field_install'] = 'Cài đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';

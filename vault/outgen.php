@@ -374,6 +374,16 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_disabled'];
     }
 
+    /** IP address pseudonymisation. */
+    if ($CIDRAM['Config']['legal']['pseudonymise_ip_addresses']) {
+        if ($CIDRAM['TestResults']) {
+            $CIDRAM['BlockInfo']['IPAddr'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddr']);
+            if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+                $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddrResolved']);
+            }
+        }
+    }
+
     /** Build fields. */
     if (!empty($CIDRAM['BlockInfo']['Counter'])) {
         $CIDRAM['AddField']($CIDRAM['lang']['field_id'], $CIDRAM['BlockInfo']['Counter']);

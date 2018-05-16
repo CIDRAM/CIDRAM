@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.14).
+ * This file: Front-end functions file (last modified: 2018.05.16).
  */
 
 /**
@@ -2294,7 +2294,7 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
         $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile'], true);
     }
     $FileLC = strtolower($File);
-    return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
+    return preg_match('~\.log(?:\.gz)?$~', $FileLC) || (
         $CIDRAM['Config']['general']['logfile'] && preg_match($Pattern_logfile, $File)
     ) || (
         $CIDRAM['Config']['general']['logfileApache'] && preg_match($Pattern_logfileApache, $File)

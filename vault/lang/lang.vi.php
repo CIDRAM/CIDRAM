@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Không thể ghi vào cache! Xin kiểm tra quyền tập tin CHMOD của bạn!';
 $CIDRAM['lang']['MoreInfo'] = 'Để biết thêm thông tin:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Chính sách bảo mật';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì bạn đã cố gắng truy cập trang này sử dụng một địa chỉ IP không hợp lệ.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Truy cập của bạn vào trang này đã bị từ chối do hành vi xấu trước đó từ địa chỉ IP của bạn.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Truy cập của bạn vào trang này đã bị từ chối bởi vì địa chỉ IP của bạn được công nhận như một địa chỉ bogon, và kết nối từ bogon đến trang web này không được phép bởi chủ sở hữu trang web.';

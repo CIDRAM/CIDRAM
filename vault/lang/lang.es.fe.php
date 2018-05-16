@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'El formato de notación de fecha
 $CIDRAM['lang']['config_general_timeOffset'] = 'Desplazamiento del huso horario en minutos.';
 $CIDRAM['lang']['config_general_timezone'] = 'Tu zona horaria.';
 $CIDRAM['lang']['config_general_truncate'] = '¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente.';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí; False = No [Predefinido].';
 $CIDRAM['lang']['config_recaptcha_api'] = '¿Qué API usar? V2 o Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Número de horas para recordar instancias de reCAPTCHA.';

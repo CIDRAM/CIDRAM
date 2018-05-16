@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data (last modified: 2018.05.04).
+ * This file: Swedish language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!';
 $CIDRAM['lang']['MoreInfo'] = 'För mer information:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Integritetspolicy';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Din tillgång till den här sidan nekades eftersom du försökte komma åt den här sidan med en ogiltig IP-adress.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Din tillgång till den här sidan nekades på grund av tidigare dåligt beteende från din IP-adress.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Din tillgång till den här sidan nekades eftersom din IP-adress är erkänd som en bogonadress, och anslutning från bogonger till denna webbplats är inte tillåtet av webbplatsägaren.';

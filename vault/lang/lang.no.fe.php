@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Dato/tid notasjonsformat som bru
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidssone forskjøvet i minutter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidssone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Skjær loggfiler når de kommer til en viss størrelse? Verdi er den maksimale størrelsen i B/KB/MB/GB/TB som en loggfil kan vokse til før den blir avkortet. Standardverdi på 0KB deaktiverer avkorting (loggfilene kan vokse på ubestemt tid). Merk: Gjelder for individuelle loggfiler! Størrelsen på loggfiler anses ikke kollektivt.';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'Adressen til en relevant personvernpolicy som skal vises i bunnteksten til genererte sider. Angi en nettadresse, eller la det være tomt for å deaktivere.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisere IP-adresser når du logger? True = Ja; False = Nei [Standardverdi].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Hvilken API skal du bruke? V2 eller invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Antall timer for å huske reCAPTCHA-forekomster.';

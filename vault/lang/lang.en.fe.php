@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format us
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Your timezone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Which API to use? V2 or Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Number of hours to remember reCAPTCHA instances.';

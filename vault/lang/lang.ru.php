@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.05.04).
+ * This file: Russian language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -26,6 +26,7 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Невозможно записать в кэш! Пожалуйста проверьте ваш CHMOD!';
 $CIDRAM['lang']['MoreInfo'] = 'Чтобы получить больше информации:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Политика Конфиденциальности';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Ваш доступ к этой странице было отказано потому что Вы попытались получить доступ к этой странице используя неверный IP-адрес.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Ваш доступ к этой странице было отказано из-за предыдущего плохого поведения с вашего IP-адреса.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Ваш доступ к этой странице было отказано потому что ваш IP-адрес распознается как адрес bogon/марсианин, и подключения от bogons/марсиане к этому сайту не допускается.';

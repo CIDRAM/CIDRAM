@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.05.04).
+ * This file: Arabic language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,6 +21,7 @@ $CIDRAM['lang']['textDir'] = 'rtl';
 
 $CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات';
 $CIDRAM['lang']['MoreInfo'] = 'للمزيد من المعلومات:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'سياسة الخصوصية';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'عنوان ال IP غير صالح.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'تم حجب الوصول من قبل صاحب الموقع.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'تم حجب الوصول من قبل صاحب الموقع.';

@@ -27,10 +27,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   now be disabled by default). Removed support for "double banning" (this was
   something used only by some very specific, custom modules anyway, none which
   are still supported anymore, and none of the standard features or functions
-  included in the package used it).
+  included in the package used it). Slightly refactored the expressions used
+  for expanding IP addresses.
 
-- [2018.05.16; NEW FEATURE; Maikuolan]: Added support for pseudonymising IP
-  addresses when logging.
+- [2018.05.16; NEW FEATURES; Maikuolan]: Added support for pseudonymising IP
+  addresses when logging. Added the ability to include a privacy policy link
+  in the footer of the Access Denied page.
 
 === Version/Release 1.5.1 ===
 PATCH RELEASE.

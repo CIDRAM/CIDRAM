@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2018.05.04).
+ * This file: English language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Unable to write to the cache! Please check your CHMOD file permissions!';
 $CIDRAM['lang']['MoreInfo'] = 'For more information:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Privacy Policy';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Your access to this page was denied because you attempted to access this page using an invalid IP address.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Your access to this page was denied due to previous bad behaviour from your IP address.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Your access to this page was denied because your IP address is recognised as a bogon address, and connecting from bogons to this website isn\'t permitted by the website owner.';

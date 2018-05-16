@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.05.04).
+ * This file: Japanese language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'キャッシュは書き込み不可です！​あなたのＣＨＭＯＤをチェックしてください！';
 $CIDRAM['lang']['MoreInfo'] = '詳細については：';
+$CIDRAM['lang']['PrivacyPolicy'] = 'プライバシー・ポリシー';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'このページへのアクセスは、無効なＩＰのために拒否されました。';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'このページへのアクセスは、あなたのＩＰアドレスからの望ましくない動作のために拒否されました。';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'このページへのアクセスは、あなたのＩＰがBogon「ボゴン、火星」ＩＰアドレスであるからですのために拒否されました。';

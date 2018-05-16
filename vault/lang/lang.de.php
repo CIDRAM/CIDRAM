@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2018.05.04).
+ * This file: German language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Kann nicht in den Cache schreiben! Bitte überprüfen Sie Ihre CHMOD Dateiberechtigungen!';
 $CIDRAM['lang']['MoreInfo'] = 'Für mehr Informationen:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Datenschutz-Bestimmungen';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Sie versuchen auf diese Website mit eine ungültige IP-Adresse zu verbinden.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Ihr Zugriff auf diese Seite wurde verweigert aufgrund der vorherigen schlechten Verhalten von Ihrer IP-Adresse.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Ihr Zugriff auf diese Seite wurde verweigert da Ihre IP-Adresse wird als Bogon Adresse erkannt, und Verbindungen von Bogon-Adressen auf dieser Website ist nicht vom Besitzer der Website gestattet.';

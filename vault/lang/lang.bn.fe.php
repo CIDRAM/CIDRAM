@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM দ্বারা ব্
 $CIDRAM['lang']['config_general_timeOffset'] = 'টাইমজোন মিনিটে অফসেট।';
 $CIDRAM['lang']['config_general_timezone'] = 'আপনার টাইমজোন।';
 $CIDRAM['lang']['config_general_truncate'] = 'একটি নির্দিষ্ট আকারে পৌঁছানোর সময় লগ ফাইলগুলি কেটে ফেলা হবে? লগ ফাইলগুলির জন্য B/KB/MB/GB/TB এ মান সর্বাধিক অনুমোদিত আকার (এই আকারের বাইরে, লগ ফাইলগুলি ছোট করা হবে)। ডিফল্ট মান 0KB ট্রুনাকশন নিষ্ক্রিয় করবে (লগ ফাইলগুলি অনির্দিষ্টকালের জন্য বাড়তে পারে)। দয়া করে নোট করুন: এটি স্বতন্ত্র লগ ফাইলগুলিতে প্রযোজ্য! লগ ফাইলের আকার সমষ্টিগতভাবে বিবেচনা করা হয় না।';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'কোন প্রযোজ্য পৃষ্ঠাগুলির পাদলেখ প্রদর্শিত একটি প্রাসঙ্গিক গোপনীয়তা নীতির ঠিকানা। একটি URL উল্লেখ করুন, বা অক্ষম করতে ফাঁকা রাখুন।';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'লগ লেখার সময় IP ঠিকানাগুলি pseudonymize? True = হাঁ; False = না [ডিফল্ট]।';
 $CIDRAM['lang']['config_recaptcha_api'] = 'API ব্যবহার করতে? V2 বা Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA দৃষ্টান্তগুলি মনে রাখার জন্য ঘন্টাগুলির সংখ্যা।';

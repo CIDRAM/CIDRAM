@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.05.04).
+ * This file: Dutch language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!';
 $CIDRAM['lang']['MoreInfo'] = 'Voor meer informatie:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Privacybeleid';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Uw toegang tot deze pagina is geweigerd omdat u heeft geprobeerd om deze pagina te openen met een geblackliste IP adres.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Uw toegang tot deze pagina is geweigerd als gevolg van eerdere slechte gedrag van uw IP-adres.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Uw toegang tot deze pagina is geweigerd omdat uw IP-adres wordt herkend als bogon adres, en het verbinden van bogons naar deze website is niet toegestaan door de eigenaar van deze website.';

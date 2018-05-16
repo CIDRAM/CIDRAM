@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Tidak dapat menulis ke cache! Silahkan periksa hak akses file CHMOD Anda!';
 $CIDRAM['lang']['MoreInfo'] = 'Untuk informasi lebih lanjut:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Kebijakan Privasi';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Akses Anda ke halaman ini ditolak karena Anda mencoba untuk mengakses halaman ini menggunakan alamat IP yang tidak valid.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Akses Anda ke halaman ini ditolak karena perilaku buruk sebelumnya dari alamat IP Anda.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Akses Anda ke halaman ini ditolak karena alamat IP Anda diakui sebagai alamat bogon, dan menghubungkan dari bogon ke situs ini tidak diizinkan oleh pemilik situs.';

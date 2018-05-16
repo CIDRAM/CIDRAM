@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2018.05.04).
+ * This file: Italian language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Non può scrivere nella cache! Si prega di controllare le autorizzazioni di CHMOD!';
 $CIDRAM['lang']['MoreInfo'] = 'Per maggiori informazioni:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Politica sulla Privacy';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Accesso a questa pagina è stato negato perché si è tentato di accedere a questa pagina utilizzando un indirizzo IP non valido.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Accesso a questa pagina è stato negato a causa della precedente cattivo comportamento dal vostro indirizzo IP.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Accesso a questa pagina è stato negato perché il suo indirizzo IP viene riconosciuto come un indirizzo bogone, e il collegamento da bogoni a questo sito web non è consentito dal proprietario del sito web.';

@@ -504,6 +504,9 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 “pseudonymise_ip_addresses”
 - 编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。
 
+“privacy_policy”
+- 要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。
+
 #### “template_data” （类别）
 指令和变量为模板和主题。
 

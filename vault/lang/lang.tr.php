@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.05.04).
+ * This file: Turkish language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,7 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Önbelleğe yazılamıyor! Lütfen CHMOD dosya izinlerinizi kontrol edin!';
 $CIDRAM['lang']['MoreInfo'] = 'Daha fazla bilgi için:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Gizlilik Politikası';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Geçersiz bir IP adresi kullanarak bu sayfaya erişmeye çalıştığınızdan bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'IP adresinizden önceki kötü davranış nedeniyle bu sayfaya erişiminiz reddedildi.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'IP adresiniz bir bogon adresi olarak tanındığı ve bu web sitesine bogonlardan başlanmanın web sitesi sahibi tarafından izin verilmemesi nedeniyle bu sayfaya erişiminiz reddedildi.';

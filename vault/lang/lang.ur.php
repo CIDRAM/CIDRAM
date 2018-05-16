@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.05.04).
+ * This file: Urdu language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,6 +21,7 @@ $CIDRAM['lang']['textDir'] = 'rtl';
 
 $CIDRAM['lang']['Error_WriteCache'] = 'کیشے کو لکھنے سے قاصر ہے! آپ کے CHMOD فائل کی اجازت براہ مہربانی چیک کریں!';
 $CIDRAM['lang']['MoreInfo'] = 'مزید معلومات کے لیے:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'رازداری کی پالیسی';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'آپ نے ایک غلط IP ایڈریس کا استعمال کرتے ہوئے اس صفحہ پر جانے کی کوشش کی کیونکہ اس صفحہ تک آپ کی رسائی منع کر دیا گیا.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'اس صفحہ تک آپ کی رسائی اپنے IP ایڈریس سے پچھلے برے رویے کی وجہ سے انکار کیا گیا تھا.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'اس صفحہ تک آپ کی رسائی منع کر دیا گیا کیونکہ آپ کا IP ایڈریس ایک bogon ایڈریس کے طور پر تسلیم کیا جاتا ہے، اور bogons سے اس ویب سائٹ سے منسلک کرنے کی ویب سائٹ کے مالک کی طرف سے اجازت نہیں ہے.';

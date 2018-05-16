@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'شكل التواريخ المس
 $CIDRAM['lang']['config_general_timeOffset'] = 'المنطقة الزمنية تعويض في غضون دقائق.';
 $CIDRAM['lang']['config_general_timezone'] = 'المنطقة الزمنية.';
 $CIDRAM['lang']['config_general_truncate'] = 'اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا.';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'عنوان سياسة الخصوصية ذات الصلة ليتم عرضها في تذييل الصفحات التي تم إنشاؤها. حدد عنوان URL، أو اتركه فارغًا لتعطيله.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'إخفاء عناوين IP عند كتابة السجلات؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'أي API لاستخدام؟ V2 أو Invisible؟';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'عدد الساعات لنتذكر حالات اختبار reCAPTCHA.';

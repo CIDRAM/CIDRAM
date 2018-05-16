@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.05.04).
+ * This file: Thai language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'ไม่สามารถเขียนลงในแคช! โปรดตรวจสอบสิทธิ์ของไฟล์ CHMOD!';
 $CIDRAM['lang']['MoreInfo'] = 'สำหรับข้อมูลเพิ่มเติม:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'นโยบายความเป็นส่วนตัว';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากคุณพยายามเข้าถึงหน้านี้ใช้ที่อยู่ IP ที่ไม่ถูกต้อง.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากพฤติกรรมที่ไม่ดีก่อนหน้านี้จากที่อยู่ IP ของคุณ.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'การเข้าถึงหน้าเว็บนี้ถูกปฏิเสธเนื่องจากที่อยู่ IP ของคุณเป็นที่อยู่ของ bogon. เว็บไซต์นี้ไม่อนุญาตการเชื่อมต่อจากที่อยู่ IP bogon.';

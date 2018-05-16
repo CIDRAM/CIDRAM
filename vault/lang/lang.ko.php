@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.05.04).
+ * This file: Korean language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = '캐시는 쓰기 불가입니다! 당신의 CHMOD를 확인하십시오!';
 $CIDRAM['lang']['MoreInfo'] = '자세한 내용은 :';
+$CIDRAM['lang']['PrivacyPolicy'] = '개인 정보 정책';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = '이 페이지에 액세스은, 귀하의 IP 주소가 유효하지 않습니다 대한 거부되었습니다.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = '이 페이지에 액세스은, 당신의 IP 주소에서 원치 않는 작동을 위해 거부되었습니다.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = '이 페이지에 액세스은, 당신의 IP가 bogon IP 주소이기 때문입니다 때문에 거부되었습니다.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data (last modified: 2018.05.04).
+ * This file: Norwegian language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan ikke skrive til hurtigbufferen! Vennligst sjekk CHMOD-filtillatelsene dine!';
 $CIDRAM['lang']['MoreInfo'] = 'For mer informasjon:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Personvernpolicy';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Din tilgang til denne siden ble nektet fordi du forsøkte å få tilgang til denne siden ved hjelp av en ugyldig IP-adresse.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Din tilgang til denne siden ble nektet på grunn av tidligere dårlig oppførsel fra din IP-adresse.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Din tilgang til denne siden ble nektet fordi din IP-adresse er anerkjent som en bogon-adresse, og tilkobling fra bogoner til dette nettstedet er ikke tillatt av nettstedets eier.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.05.04).
+ * This file: Hindi language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'कैश में लिखने में असमर्थ! कृपया अपने CHMOD अनुमतियों की जांच करें!';
 $CIDRAM['lang']['MoreInfo'] = 'अधिक जानकारी के लिए:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'गोपनीयता नीति';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता मान्य नहीं है।';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'आपके आईपी पते से पिछले दुर्व्यवहार के कारण, इस पृष्ठ पर प्रवेश से इंकार किया गया था।';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'इस पृष्ठ पर प्रवेश से इंकार किया गया था। आपका आईपी पता एक बोगोन पता के रूप में पहचाना जाता है, और बोगोनों से कनेक्ट करना वेबसाइट के स्वामी द्वारा अनुमति नहीं है।';

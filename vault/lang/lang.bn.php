@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.05.04).
+ * This file: Bangla language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = 'ক্যাশে লিখতে অক্ষম! আপনার CHMOD ফাইল অনুমতি চেক করুন!';
 $CIDRAM['lang']['MoreInfo'] = 'আরও তথ্যের জন্য:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'গোপনীয়তা নীতি';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'এই পৃষ্ঠাটিতে আপনার প্রবেশাধিকার অস্বীকার করা হয়েছে কারণ আপনি একটি অবৈধ IP ঠিকানা ব্যবহার করে এই পৃষ্ঠাটি অ্যাক্সেস করার চেষ্টা করেছেন।';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'আপনার IP ঠিকানা থেকে আগের খারাপ আচরণের কারণে এই পৃষ্ঠাটিতে আপনার অ্যাক্সেস অস্বীকৃত হয়েছে।';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'এই পৃষ্ঠায় আপনার অ্যাক্সেসটি অস্বীকার করা হয়েছিল কারণ আপনার IP ঠিকানা একটি bogon ঠিকানা হিসাবে স্বীকৃত, এবং ওয়েবসাইটের মালিক bogon IP অ্যাড্রেস এই ওয়েবসাইটে সংযোগ করতে অনুমতি দেয় না।';

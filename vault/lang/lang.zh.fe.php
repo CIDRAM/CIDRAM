@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符号格�
 $CIDRAM['lang']['config_general_timeOffset'] = '时区偏移量（分钟）。';
 $CIDRAM['lang']['config_general_timezone'] = '您的时区。';
 $CIDRAM['lang']['config_general_truncate'] = '截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。';
+$CIDRAM['lang']['config_legal_privacy_policy'] = '要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。';
 $CIDRAM['lang']['config_recaptcha_api'] = '使用哪个API？V2或Invisible？';
 $CIDRAM['lang']['config_recaptcha_expiry'] = '记得reCAPTCHA多少小时？';

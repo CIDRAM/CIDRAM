@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استع
 $CIDRAM['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
 $CIDRAM['lang']['config_general_timezone'] = 'آپ کے ٹائم زون.';
 $CIDRAM['lang']['config_general_truncate'] = 'وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'کسی بھی پیدا کردہ صفحات کے فوٹر میں ظاہر ہونے والی متعلقہ رازداری کی پالیسی کا پتہ. ایک URL کی وضاحت کریں، یا غیر فعال کرنے کیلئے خالی چھوڑ دیں.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'گھنٹوں کی تعداد reCAPTCHA کے واقعات کو یاد کرنے.';
@@ -351,7 +352,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://macmathan.info/blocklists" dir="ltr">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – ، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
+            <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> –، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
             <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
             <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
             <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>

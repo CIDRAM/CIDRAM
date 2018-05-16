@@ -81,6 +81,7 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Format notasi tanggal/waktu yang
 $CIDRAM['lang']['config_general_timeOffset'] = 'Offset zona waktu dalam hitungan menit.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zona waktu Anda.';
 $CIDRAM['lang']['config_general_truncate'] = 'Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif.';
+$CIDRAM['lang']['config_legal_privacy_policy'] = 'Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'API mana yang akan digunakan? V2 atau Invisible?';
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'Jumlah jam untuk mengingat instansi reCAPTCHA.';

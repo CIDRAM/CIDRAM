@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2018.05.04).
+ * This file: Chinese (simplified) language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = '无法写入缓存！​请检查您的CHMOD文件的权限！';
 $CIDRAM['lang']['MoreInfo'] = '了解更多信息：';
+$CIDRAM['lang']['PrivacyPolicy'] = '隐私政策';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = '您的访问这个页面被拒绝因为您试图访问该页面使用一个无效的IP地址。';
 $CIDRAM['lang']['ReasonMessage_Banned'] = '您的访问这个页面被拒绝因由于您的IP地址以前的错误行为。';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = '您的访问这个页面被拒绝因为您的IP地址被识别作为火星IP地址，​和从火星IP地址连接是网站所有者不允许。';

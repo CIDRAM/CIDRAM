@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2018.05.04).
+ * This file: Spanish language data (last modified: 2018.05.16).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -18,6 +18,7 @@ if (!defined('CIDRAM')) {
 
 $CIDRAM['lang']['Error_WriteCache'] = '¡No se puede escribir a la caché! Compruebe sus CHMOD permisos!';
 $CIDRAM['lang']['MoreInfo'] = 'Para más información:';
+$CIDRAM['lang']['PrivacyPolicy'] = 'Política de Privacidad';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Su acceso a esta página se negó porque porque ha intentado acceder esta página utilizando una dirección IP no válida.';
 $CIDRAM['lang']['ReasonMessage_Banned'] = 'Su acceso a esta página se negó debido a mal comportamiento anterior de su dirección IP.';
 $CIDRAM['lang']['ReasonMessage_Bogon'] = 'Su acceso a esta página se negó porque su dirección IP se reconoce como una dirección bogon, y la conexión de bogons a este sitio web no está permitido por el propietario del sitio web.';

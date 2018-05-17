@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.05.16).
+ * This file: Output generator (last modified: 2018.05.17).
  */
 
 /** Initialise cache. */
@@ -381,6 +381,33 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
             if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
                 $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddrResolved']);
             }
+        }
+    }
+
+    /** IP address omission. */
+    if ($CIDRAM['Config']['legal']['omit_ip']) {
+        if (isset($CIDRAM['BlockInfo']['IPAddr'])) {
+            unset($CIDRAM['BlockInfo']['IPAddr']);
+        }
+        if (isset($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+            unset($CIDRAM['BlockInfo']['IPAddrResolved']);
+        }
+    }
+
+    /** Hostname omission. */
+    if ($CIDRAM['Config']['legal']['omit_hostname']) {
+        if (isset($CIDRAM['BlockInfo']['Hostname'])) {
+            unset($CIDRAM['BlockInfo']['Hostname']);
+        }
+    }
+
+    /** User agent omission. */
+    if ($CIDRAM['Config']['legal']['omit_ua']) {
+        if (isset($CIDRAM['BlockInfo']['UA'])) {
+            unset($CIDRAM['BlockInfo']['UA']);
+        }
+        if (isset($CIDRAM['BlockInfo']['UALC'])) {
+            unset($CIDRAM['BlockInfo']['UALC']);
         }
     }
 

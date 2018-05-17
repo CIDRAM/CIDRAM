@@ -503,6 +503,15 @@ Konfiguration für gesetzliche Anforderungen.
 "pseudonymise_ip_addresses"
 - Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].
 
+"omit_ip"
+- IP-Adressen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]. Hinweis: "pseudonymise_ip_addresses" wird überflüssig, wenn "omit_ip" "true" ist.
+
+"omit_hostname"
+- Hostnamen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung].
+
+"omit_ua"
+- Benutzeragenten aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung].
+
 "privacy_policy"
 - Die Adresse einer relevanten Datenschutz-Bestimmungen, die in der Fußzeile aller generierten Seiten angezeigt werden soll. Geben Sie eine URL, oder lassen Sie sie leer, um sie zu deaktivieren.
 
@@ -1044,4 +1053,4 @@ Möglicherweise. Dies hängt von der Art des Dienstes ab und davon, wie Sie es v
 ---
 
 
-Zuletzt aktualisiert: 16 Mai 2018 (2018.05.16).
+Zuletzt aktualisiert: 17 Mai 2018 (2018.05.17).

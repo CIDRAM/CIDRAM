@@ -503,6 +503,15 @@ Configuration relating to legal requirements.
 "pseudonymise_ip_addresses"
 - Pseudonymise IP addresses when logging? True = Yes; False = No [Default].
 
+"omit_ip"
+- Omit IP addresses from logs? True = Yes; False = No [Default]. Note: "pseudonymise_ip_addresses" becomes redundant when "omit_ip" is "true".
+
+"omit_hostname"
+- Omit hostnames from logs? True = Yes; False = No [Default].
+
+"omit_ua"
+- Omit user agents from logs? True = Yes; False = No [Default].
+
 "privacy_policy"
 - The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.
 

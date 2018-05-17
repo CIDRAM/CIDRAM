@@ -503,6 +503,15 @@ Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
 "pseudonymise_ip_addresses"
 - Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
 
+"omit_ip"
+- Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true".
+
+"omit_hostname"
+- Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định].
+
+"omit_ua"
+- Bỏ qua tác nhân người dùng từ nhật ký? True = Vâng; False = Không [Mặc định].
+
 "privacy_policy"
 - Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa.
 
@@ -1044,4 +1053,4 @@ Có lẽ. Điều này phụ thuộc vào tính chất của dịch vụ đượ
 ---
 
 
-Lần cuối cập nhật: 16 Tháng Năm 2018 (2018.05.16).
+Lần cuối cập nhật: 17 Tháng Năm 2018 (2018.05.17).

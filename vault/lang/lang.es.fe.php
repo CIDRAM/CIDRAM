@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.05.16).
+ * This file: Spanish language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'El formato de notación de fecha
 $CIDRAM['lang']['config_general_timeOffset'] = 'Desplazamiento del huso horario en minutos.';
 $CIDRAM['lang']['config_general_timezone'] = 'Tu zona horaria.';
 $CIDRAM['lang']['config_general_truncate'] = '¿Truncar archivos de registro cuando alcanzan cierto tamaño? Valor es el tamaño máximo en B/KB/MB/GB/TB que un archivo de registro puede crecer antes de ser truncado. El valor predeterminado de 0KB deshabilita el truncamiento (archivos de registro pueden crecer indefinidamente). Nota: ¡Se aplica a archivos de registro individuales! El tamaño de los archivos de registro no se considera colectivamente.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Omitir nombres de host de los archivos de registro? True = Sí; False = No [Predefinido].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'Omitir direcciones IP de los archivos de registro? True = Sí; False = No [Predefinido]. Nota: "pseudonymise_ip_addresses" se vuelve redundante cuando "omit_ip" es "true".';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Omitir agentes de usuario de los archivos de registro? True = Sí; False = No [Predefinido].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'La dirección de una política de privacidad relevante que se mostrará en el pie de página de cualquier página generada. Especificar una URL, o dejar en blanco para desactivar.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '¿Seudonimizar las direcciones IP cuando al escribir archivos de registro? True = Sí; False = No [Predefinido].';
 $CIDRAM['lang']['config_recaptcha_api'] = '¿Qué API usar? V2 o Invisible?';

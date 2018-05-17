@@ -503,6 +503,15 @@ Konfigurasi yang berkaitan dengan persyaratan hukum.
 "pseudonymise_ip_addresses"
 - Pseudonymise alamat IP saat menulis file log? True = Ya; False = Tidak [Default].
 
+"omit_ip"
+- Jangan memasukkan alamat IP di log? True = Ya; False = Tidak [Default]. Catat: "pseudonymise_ip_addresses" menjadi tidak perlu ketika "omit_ip" adalah "true".
+
+"omit_hostname"
+- Jangan memasukkan nama host di log? True = Ya; False = Tidak [Default].
+
+"omit_ua"
+- Jangan memasukkan agen pengguna di log? True = Ya; False = Tidak [Default].
+
 "privacy_policy"
 - Alamat dari kebijakan privasi yang relevan untuk ditampilkan di footer dari setiap halaman yang dihasilkan. Spesifikasikan URL, atau biarkan kosong untuk menonaktifkan.
 
@@ -1044,4 +1053,4 @@ Mungkin. Ini tergantung pada sifat layanan yang dipermasalahkan, dan bagaimana A
 ---
 
 
-Terakhir Diperbarui: 16 Mei 2018 (2018.05.16).
+Terakhir Diperbarui: 17 Mei 2018 (2018.05.17).

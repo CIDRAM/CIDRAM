@@ -503,6 +503,15 @@ Configuration relative aux exigences légales.
 « pseudonymise_ip_addresses »
 - Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
 
+« omit_ip »
+- Omettre les adresses IP de la journalisation ? True = Oui ; False = Non [Défaut]. Remarque : « pseudonymise_ip_addresses » devient redondant lorsque « omit_ip » est « true ».
+
+« omit_hostname »
+- Omettre les noms d'hôtes de la journalisation ? True = Oui ; False = Non [Défaut].
+
+« omit_ua »
+- Omettre les agents utilisateurs de la journalisation ? True = Oui ; False = Non [Défaut].
+
 « privacy_policy »
 - L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.
 
@@ -1044,4 +1053,4 @@ Peut être. Cela dépend de la nature du service en question et de la façon don
 ---
 
 
-Dernière mise à jour : 16 Mai 2018 (2018.05.16).
+Dernière mise à jour : 17 Mai 2018 (2018.05.17).

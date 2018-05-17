@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.05.16).
+ * This file: Arabic language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'شكل التواريخ المس
 $CIDRAM['lang']['config_general_timeOffset'] = 'المنطقة الزمنية تعويض في غضون دقائق.';
 $CIDRAM['lang']['config_general_timezone'] = 'المنطقة الزمنية.';
 $CIDRAM['lang']['config_general_truncate'] = 'اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'حذف أسماء المضيف من السجلات؟ True = نعم؛ False = لا [افتراضي].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'حذف عناوين IP من السجلات؟ True = نعم؛ False = لا [افتراضي]. ملاحظة: يصبح "pseudonymise_ip_addresses" مكررًا عندما يكون "omit_ip" هو "true".';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'حذف وكلاء المستخدم من السجلات؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'عنوان سياسة الخصوصية ذات الصلة ليتم عرضها في تذييل الصفحات التي تم إنشاؤها. حدد عنوان URL، أو اتركه فارغًا لتعطيله.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'إخفاء عناوين IP عند كتابة السجلات؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'أي API لاستخدام؟ V2 أو Invisible؟';

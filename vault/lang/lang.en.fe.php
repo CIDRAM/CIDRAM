@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.05.16).
+ * This file: English language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format us
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Your timezone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Truncate logfiles when they reach a certain size? Value is the maximum size in B/KB/MB/GB/TB that a logfile may grow to before being truncated. The default value of 0KB disables truncation (logfiles can grow indefinitely). Note: Applies to individual logfiles! The size of logfiles is not considered collectively.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Omit hostnames from logs? True = Yes; False = No [Default].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'Omit IP addresses from logs? True = Yes; False = No [Default]. Note: "pseudonymise_ip_addresses" becomes redundant when "omit_ip" is "true".';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Omit user agents from logs? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'The address of a relevant privacy policy to be displayed in the footer of any generated pages. Specify a URL, or leave blank to disable.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymise IP addresses when logging? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Which API to use? V2 or Invisible?';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.05.16).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符號格�
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
 $CIDRAM['lang']['config_general_timezone'] = '您的時區。';
 $CIDRAM['lang']['config_general_truncate'] = '截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。';
+$CIDRAM['lang']['config_legal_omit_hostname'] = '從日誌文件中排除主機名？​True（真）=排除；False（假）=不排除【標準】。';
+$CIDRAM['lang']['config_legal_omit_ip'] = '從日誌文件中排除IP地址？​True（真）=排除；False（假）=不排除【標準】。​注意：『omit_ip』為『true』時，『pseudonymise_ip_addresses』變得不必要。';
+$CIDRAM['lang']['config_legal_omit_ua'] = '從日誌文件中排除用戶代理？​True（真）=排除；False（假）=不排除【標準】。';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名；False（假）=不使用假名【標準】。';
 $CIDRAM['lang']['config_recaptcha_api'] = '使用哪個API？V2或Invisible？';

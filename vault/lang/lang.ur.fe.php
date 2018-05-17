@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.05.16).
+ * This file: Urdu language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM کی طرف سے استع
 $CIDRAM['lang']['config_general_timeOffset'] = 'ٹائم زون منٹ میں آفسیٹ.';
 $CIDRAM['lang']['config_general_timezone'] = 'آپ کے ٹائم زون.';
 $CIDRAM['lang']['config_general_truncate'] = 'وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'لاگ فائلوں سے میزبانوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'لاگ فائلوں سے IP پتے کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]. نوٹ: "pseudonymise_ip_addresses" بے شمار ہو جاتا ہے جب "omit_ip" "true" ہے.';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'لاگ فائلوں سے صارف کے ایجنٹوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'کسی بھی پیدا کردہ صفحات کے فوٹر میں ظاہر ہونے والی متعلقہ رازداری کی پالیسی کا پتہ. ایک URL کی وضاحت کریں، یا غیر فعال کرنے کیلئے خالی چھوڑ دیں.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟';

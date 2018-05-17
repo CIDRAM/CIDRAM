@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.05.16).
+ * This file: German language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Das Datumsformat verwendet von C
 $CIDRAM['lang']['config_general_timeOffset'] = 'Zeitzonenversatz in Minuten.';
 $CIDRAM['lang']['config_general_timezone'] = 'Ihre Zeitzone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Trunkate Protokolldateien, wenn sie eine bestimmte Größe erreichen? Wert ist die maximale Größe in B/KB/MB/GB/TB, die eine Protokolldatei wachsen kann, bevor sie trunkiert wird. Der Standardwert von 0KB deaktiviert die Trunkierung (Protokolldateien können unbegrenzt wachsen). Hinweis: Gilt für einzelne Protokolldateien! Die Größe der Protokolldateien gilt nicht als kollektiv.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Hostnamen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'IP-Adressen aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung]. Hinweis: "pseudonymise_ip_addresses" wird überflüssig, wenn "omit_ip" "true" ist.';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Benutzeragenten aus Protokollen auslassen? True = Ja; False = Nein [Standardeinstellung].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Die Adresse einer relevanten Datenschutz-Bestimmungen, die in der Fußzeile aller generierten Seiten angezeigt werden soll. Geben Sie eine URL, oder lassen Sie sie leer, um sie zu deaktivieren.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisieren IP-Adressen beim Schreiben der Protokolldateien? True = Ja; False = Nein [Standardeinstellung].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Welche API soll verwendet werden? V2 oder Invisible?';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.16).
+ * This file: Japanese language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAMで使用される日付�
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
 $CIDRAM['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
 $CIDRAM['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？​値は、​ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。​デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。​注：個々のログファイルに適用されます。​ログファイルのサイズは一括して考慮されません。';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'ログからホスト名を省略しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'ログからＩＰアドレスを省略しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​注：「omit_ip」が「true」の場合、「pseudonymise_ip_addresses」は冗長になります。';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'ログからユーザー・エージェント（ユーエイ）を省略しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '生成されたページのフッターに表示される関連プライバシー・ポリシーのアドレス。​ＵＲＬを指定するか、無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'ログ・ファイルを書き込むときにIPアドレス偽名化するか「プセユードニマイズ」？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $CIDRAM['lang']['config_recaptcha_api'] = 'どのＡＰＩを使用するのですか？​「V2」または「invisible」？';

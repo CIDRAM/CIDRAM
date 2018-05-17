@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.05.16).
+ * This file: French language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Votre fuseau horaire.';
 $CIDRAM['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S\'applique aux fichiers journaux individuels ! La taille des fichiers journaux n\'est pas considérée collectivement.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Omettre les noms d\'hôtes de la journalisation ? True = Oui ; False = Non [Défaut].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'Omettre les adresses IP de la journalisation ? True = Oui ; False = Non [Défaut]. Remarque : « pseudonymise_ip_addresses » devient redondant lorsque « omit_ip » est « true ».';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Omettre les agents utilisateurs de la journalisation ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'L\'adresse d\'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Quelle API utiliser ? V2 ou Invisible ?';

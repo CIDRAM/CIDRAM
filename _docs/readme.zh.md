@@ -504,6 +504,15 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 “pseudonymise_ip_addresses”
 - 编写日志文件时使用假名的IP地址吗？​True（真）=使用假名；False（假）=不使用假名【标准】。
 
+“omit_ip”
+- 从日志文件中排除IP地址？​True（真）=排除；False（假）=不排除【标准】。​注意：“omit_ip”为“true”时，“pseudonymise_ip_addresses”变得不必要。
+
+“omit_hostname”
+- 从日志文件中排除主机名？​True（真）=排除；False（假）=不排除【标准】。
+
+“omit_ua”
+- 从日志文件中排除用户代理？​True（真）=排除；False（假）=不排除【标准】。
+
 “privacy_policy”
 - 要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。
 
@@ -1045,4 +1054,4 @@ IP | 操作者
 ---
 
 
-最后更新：2018年5月16日。
+最后更新：2018年5月17日。

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.05.16).
+ * This file: Hindi language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM द्वारा इस
 $CIDRAM['lang']['config_general_timeOffset'] = 'समय क्षेत्र मिनट में ऑफसेट।';
 $CIDRAM['lang']['config_general_timezone'] = 'अपने समय क्षेत्र।';
 $CIDRAM['lang']['config_general_truncate'] = 'वह एक विशेष आकार तक पहुँचने में जब साफ प्रवेश फाइलें? मूल्य में B/KB/MB/GB/TB अधिकतम आकार है। जब 0KB, वे अनिश्चित काल तक बढ़ सकता है (डिफ़ॉल्ट)। नोट: एकल फाइल पर लागू होता है! फाइलें सामूहिक विचार नहीं कर रहे हैं।';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'लॉग से होस्टनाम छोड़ दें? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'लॉग से IP पते छोड़ दें? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]। नोट: "omit_ip" "true" होने पर "pseudonymise_ip_addresses" अनावश्यक हो जाता है।';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'लॉग से उपयोगकर्ता एजेंटों को छोड़ दें? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'किसी भी जेनरेट किए गए पृष्ठों के पाद लेख में प्रदर्शित होने वाली प्रासंगिक गोपनीयता नीति का पता। एक URL निर्दिष्ट करें, या अक्षम करने के लिए खाली छोड़ दें।';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'लॉग फाइल लिखते समय pseudonymize IP पते? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।';
 $CIDRAM['lang']['config_recaptcha_api'] = 'किस API का उपयोग करना है? V2 या Invisible?';

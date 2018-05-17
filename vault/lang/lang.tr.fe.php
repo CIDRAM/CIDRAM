@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.05.16).
+ * This file: Turkish language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM tarafından kullanılan t
 $CIDRAM['lang']['config_general_timeOffset'] = 'Dakika cinsinden zaman dilimi farkı.';
 $CIDRAM['lang']['config_general_timezone'] = 'Zaman diliminiz.';
 $CIDRAM['lang']['config_general_truncate'] = 'Belirli bir boyuta ulaştığında günlük dosyalarını kesin? Değer, bir günlük dosyasının kesilmeden önce büyüyebileceği B/KB/MB/GB/TB cinsinden maksimum boyuttur. Varsayılan 0KB değeri, kesmeyi devre dışı bırakır (günlük dosyaları sınırsız büyüyebilir). Not: Tek tek kayıt dosyaları için geçerlidir! Günlük dosyalarının boyutu toplam olarak alınmaz.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Ana bilgisayar adlarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'IP adreslerini günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Not: "omit_ip" "true" olduğunda "pseudonymise_ip_addresses" gereksiz hale gelir.';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Kullanıcı aracılarını günlük dosyalardan hariç tutuluyor mu? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Oluşturulan sayfaların alt kısmında görüntülenecek ilgili gizlilik politikasının adresi. Bir URL belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Günlük dosyaları yazarken IP adresi "pseudonymize" edilir? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Hangi API\'yı kullanacaksınız? V2 veya Invisible?';

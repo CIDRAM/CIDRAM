@@ -503,6 +503,15 @@ Configuratie met betrekking tot wettelijke vereisten.
 "pseudonymise_ip_addresses"
 - Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].
 
+"omit_ip"
+- IP-adressen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]. Opmerking: "pseudonymise_ip_addresses" wordt overbodig zijn wanneer "omit_ip" "true" is.
+
+"omit_hostname"
+- Hostnamen uit logbestanden weglaten? True = Ja; False = Nee [Standaard].
+
+"omit_ua"
+- Gebruikersagenten uit logbestanden weglaten? True = Ja; False = Nee [Standaard].
+
 "privacy_policy"
 - Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina's. Geef een URL, of laat leeg om uit te schakelen.
 
@@ -1044,4 +1053,4 @@ Mogelijk. Dit is afhankelijk van de aard van de service in kwestie en hoe u deze
 ---
 
 
-Laatste Bijgewerkt: 16 Mei 2018 (2018.05.16).
+Laatste Bijgewerkt: 17 Mei 2018 (2018.05.17).

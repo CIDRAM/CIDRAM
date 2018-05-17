@@ -503,6 +503,15 @@ Configuração relacionada aos requisitos legais.
 "pseudonymise_ip_addresses"
 - Pseudonimiza endereços IP ao escrever os arquivos de log? True = Sim; False = Não [Padrão].
 
+"omit_ip"
+- Omitir endereços IP de logs? True = Sim; False = Não [Padrão]. Nota: "pseudonymise_ip_addresses" se torna redundante quando "omit_ip" é "true".
+
+"omit_hostname"
+- Omitir nomes de host de logs? True = Sim; False = Não [Padrão].
+
+"omit_ua"
+- Omitir agentes de usuários de logs? True = Sim; False = Não [Padrão].
+
 "privacy_policy"
 - O endereço de uma política de privacidade relevante a ser exibida no rodapé de qualquer página gerada. Especifique um URL, ou deixe em branco para desabilitar.
 
@@ -1044,4 +1053,4 @@ Talvez. Isso depende da natureza do serviço em questão e de como você o utili
 ---
 
 
-Última Atualização: 16 Maio de 2018 (2018.05.16).
+Última Atualização: 17 Maio de 2018 (2018.05.17).

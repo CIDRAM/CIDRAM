@@ -617,6 +617,21 @@
  <li>إخفاء عناوين IP عند كتابة السجلات؟ True = نعم؛ False = لا [افتراضي].</li>
 </ul></div>
 
+<div dir="rtl">"omit_ip"<br /></div>
+<div dir="rtl"><ul>
+ <li>حذف عناوين IP من السجلات؟ True = نعم؛ False = لا [افتراضي]. ملاحظة: يصبح "pseudonymise_ip_addresses" مكررًا عندما يكون "omit_ip" هو "true".</li>
+</ul></div>
+
+<div dir="rtl">"omit_hostname"<br /></div>
+<div dir="rtl"><ul>
+ <li>حذف أسماء المضيف من السجلات؟ True = نعم؛ False = لا [افتراضي].</li>
+</ul></div>
+
+<div dir="rtl">"omit_ua"<br /></div>
+<div dir="rtl"><ul>
+ <li>حذف وكلاء المستخدم من السجلات؟ True = نعم؛ False = لا [افتراضي].</li>
+</ul></div>
+
 <div dir="rtl">"privacy_policy"<br /></div>
 <div dir="rtl"><ul>
  <li>عنوان سياسة الخصوصية ذات الصلة ليتم عرضها في تذييل الصفحات التي تم إنشاؤها. حدد عنوان URL، أو اتركه فارغًا لتعطيله.</li>
@@ -1182,4 +1197,4 @@ IP | المشغل
 ---
 
 
-<div dir="rtl">آخر تحديث: 16 مايو 2018 (2018.05.16).</div>
+<div dir="rtl">آخر تحديث: 17 مايو 2018 (2018.05.17).</div>

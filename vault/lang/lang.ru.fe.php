@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.05.16).
+ * This file: Russian language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Формат нотации да
 $CIDRAM['lang']['config_general_timeOffset'] = 'Смещение часового пояса в минут.';
 $CIDRAM['lang']['config_general_timezone'] = 'Ваш часовой пояс.';
 $CIDRAM['lang']['config_general_truncate'] = 'Усекать лог-файлы, когда они достигают определенного размера? Значение это максимальный размер в Б/КБ/МБ/ГБ/ТБ, до которого файл журнала может увеличиться до усечения. Стандартное значение 0КБ отключает усечение (лог-файлы может расти неограниченно). Примечание: относится к отдельным лог-файлы! Размер файлов журнала не учитывается совместно.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Опустить имена хостов из журналов? True = Да; False = Нет [Стандарт].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'Опустить IP-адреса из журналов? True = Да; False = Нет [Стандарт]. Примечание: «pseudonymise_ip_addresses» становится излишним, когда «omit_ip» является «true».';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Опустить пользовательские агенты из журналов? True = Да; False = Нет [Стандарт].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Адрес соответствующей политики конфиденциальности, отображаемый в нижнем колонтитуле любых сгенерированных страниц. Укажите URL-адрес, или оставьте пустым для отключения.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Псевдонимный IP-адреса при записи файлов журнала? True = Да; False = Нет [Стандарт].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Какой API использовать? V2 или Invisible?';

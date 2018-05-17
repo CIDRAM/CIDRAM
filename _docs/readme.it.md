@@ -503,6 +503,15 @@ Configurazione relativa ai requisiti legali.
 "pseudonymise_ip_addresses"
 - Pseudonimizzare gli indirizzi IP durante la scrivono i file di registro? True = Sì; False = No [Predefinito].
 
+"omit_ip"
+- Ometti gli indirizzi IP dai log? True = Sì; False = No [Predefinito]. Nota: "pseudonymise_ip_addresses" diventa ridondante quando "omit_ip" è "true".
+
+"omit_hostname"
+- Ometti nomi host dai log? True = Sì; False = No [Predefinito].
+
+"omit_ua"
+- Ometti l'agente utente dai log? True = Sì; False = No [Predefinito].
+
 "privacy_policy"
 - L'indirizzo di una politica sulla privacy pertinente da visualizzare nel piè di pagina delle pagine generate. Specificare un URL, o lasciare vuoto per disabilitare.
 
@@ -1044,4 +1053,4 @@ Possibilmente. Questo dipende dalla natura del servizio in questione e da come l
 ---
 
 
-Ultimo Aggiornamento: 16 Maggio 2018 (2018.05.16).
+Ultimo Aggiornamento: 17 Maggio 2018 (2018.05.17).

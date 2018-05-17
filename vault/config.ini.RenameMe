@@ -267,6 +267,16 @@ api='V2'
 ; Pseudonymise IP addresses when logging? True = Yes; False = No [Default].
 pseudonymise_ip_addresses=false
 
+; Omit IP addresses from logs? True = Yes; False = No [Default]. Note:
+; "pseudonymise_ip_addresses" becomes redundant when "omit_ip" is "true".
+omit_ip=false
+
+; Omit hostnames from logs? True = Yes; False = No [Default].
+omit_hostname=false
+
+; Omit user agents from logs? True = Yes; False = No [Default].
+omit_ua=false
+
 ; The address of a relevant privacy policy to be displayed in the footer of any
 ; generated pages. Specify a URL, or leave blank to disable.
 privacy_policy=''

@@ -503,6 +503,15 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 "pseudonymise_ip_addresses"
 - 로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).
 
+"omit_ip"
+- 로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다.
+
+"omit_hostname"
+- 로그에서 호스트 이름을 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).
+
+"omit_ua"
+- 로그에서 사용자 에이전트를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).
+
 "privacy_policy"
 - 생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오.
 
@@ -1044,4 +1053,4 @@ IP | 운영자
 ---
 
 
-최종 업데이트 : 2018년 5월 16일.
+최종 업데이트 : 2018년 5월 17일.

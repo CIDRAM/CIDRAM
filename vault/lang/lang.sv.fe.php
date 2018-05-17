@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.05.16).
+ * This file: Swedish language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'Datum/tid notationsformat som an
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidszonen kompenseras i minuter.';
 $CIDRAM['lang']['config_general_timezone'] = 'Din tidszon.';
 $CIDRAM['lang']['config_general_truncate'] = 'Avkorta loggfiler när de når en viss storlek? Värdet är den maximala storleken i B/KB/MB/GB/TB som en loggfil kan växa till innan den trunkeras. Standardvärdet på 0KB inaktiverar avkortning (loggfiler kan växa i obestämd tid). Notera: Gäller enskilda loggfiler! Loggfiler storlek anses inte kollektivt.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Utelämna värdnamn från loggar? True = Ja; False = Nej [Standard].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'Utelämna IP-adresser från loggar? True = Ja; False = Nej [Standard]. Obs: "pseudonymise_ip_addresses" blir överflödigt när "omit_ip" är "true".';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Utelämna användaragenter från loggar? True = Ja; False = Nej [Standard].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Adressen till en relevant integritetspolicy som ska visas i sidfoten av genererade sidor. Ange en webbadress, eller lämna tomt för att inaktivera.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonymisera IP-adresser när loggning? True = Ja; False = Nej [Standard].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Vilket API ska användas? V2 eller Invisible?';

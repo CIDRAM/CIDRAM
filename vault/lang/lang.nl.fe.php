@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.05.16).
+ * This file: Dutch language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door C
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';
 $CIDRAM['lang']['config_general_timezone'] = 'Uw tijdzone.';
 $CIDRAM['lang']['config_general_truncate'] = 'Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in B/KB/MB/GB/TB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0KB schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = 'Hostnamen uit logbestanden weglaten? True = Ja; False = Nee [Standaard].';
+$CIDRAM['lang']['config_legal_omit_ip'] = 'IP-adressen uit logbestanden weglaten? True = Ja; False = Nee [Standaard]. Opmerking: "pseudonymise_ip_addresses" wordt overbodig zijn wanneer "omit_ip" "true" is.';
+$CIDRAM['lang']['config_legal_omit_ua'] = 'Gebruikersagenten uit logbestanden weglaten? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_legal_privacy_policy'] = 'Het adres van een relevant privacybeleid dat moet worden weergegeven in de voettekst van eventuele gegenereerde pagina\'s. Geef een URL, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = 'Pseudonimiseren de IP-adressen bij het schrijven van logbestanden? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_recaptcha_api'] = 'Welke API gebruiken? V2 of invisible?';

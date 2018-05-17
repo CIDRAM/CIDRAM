@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.16).
+ * This file: Korean language data for the front-end (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -81,6 +81,9 @@ $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM에서 사용되는 날짜
 $CIDRAM['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
 $CIDRAM['lang']['config_general_timezone'] = '귀하의 시간대.';
 $CIDRAM['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
+$CIDRAM['lang']['config_legal_omit_hostname'] = '로그에서 호스트 이름을 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
+$CIDRAM['lang']['config_legal_omit_ip'] = '로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다.';
+$CIDRAM['lang']['config_legal_omit_ua'] = '로그에서 사용자 에이전트를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_legal_privacy_policy'] = '생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오.';
 $CIDRAM['lang']['config_legal_pseudonymise_ip_addresses'] = '로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_recaptcha_api'] = '어떤 API를 사용할 수 있습니까? V2 또는 Invisible?';

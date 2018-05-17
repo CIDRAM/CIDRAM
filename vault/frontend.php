@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.16).
+ * This file: Front-end handler (last modified: 2018.05.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -327,8 +327,10 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
             $CIDRAM['Now'],
             $CIDRAM['Config']['general']['FrontEndLog']
         ) : $CIDRAM['Config']['general']['FrontEndLog'];
-        $CIDRAM['FrontEndLog'] = $_SERVER[$CIDRAM['IPAddr']] . ' - ' . $CIDRAM['FE']['DateTime'] . ' - ';
-        $CIDRAM['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
+        $CIDRAM['FrontEndLog'] = (
+            $CIDRAM['Config']['legal']['pseudonymise_ip_addresses']
+        ) ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']];
+        $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['FE']['DateTime'] . ' - ' . (empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"');
     }
     if ($CIDRAM['FE']['state_msg']) {
         $CIDRAM['LoginAttempts']++;

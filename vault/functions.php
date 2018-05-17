@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.16).
+ * This file: Functions file (last modified: 2018.05.17).
  */
 
 /**
@@ -1615,10 +1615,14 @@ $CIDRAM['LogRotation'] = function ($Pattern) use (&$CIDRAM) {
 /**
  * Pseudonymise an IP address (reduce IPv4s to /24s and IPv6s to /32s).
  */
-$CIDRAM['Pseudonymise-IP'] = function($IP) use (&$CIDRAM) {
-    $Factors = $CIDRAM['ExpandIPv6']($IP, false, 32);
-    if ($Factors !== false && !empty($Factors[31])) {
-        return substr($Factors[31], 0, -3) . 'x';
+$CIDRAM['Pseudonymise-IP'] = function($IP) {
+    if (($CPos = strpos($IP, ':')) !== false) {
+        $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos +1) ?: '')];
+        if (($CPos = strpos($Parts[1], ':')) !== false) {
+            $Parts[1] = substr($Parts[1], 0, $CPos) ?: '';
+        }
+        $Parts = $Parts[0] . ':' . $Parts[1] . '::x';
+        return str_replace(':::', '::', $Parts);
     }
     return preg_replace(
         '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',

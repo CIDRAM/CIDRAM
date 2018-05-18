@@ -37,6 +37,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.05.17; NEW FEATURES; Maikuolan]: Added support for omitting IP
   addresses, hostnames, and/or user agents from logs.
 
+- [2018.05.18; Minor code change; Maikuolan]: Refactored most of the procedures
+  for the front-end updates page, splitting some large closures and slightly
+  reducing filesize footprint. Added some new internal executor abilities for
+  components metadata to the front-end updates page, allowing for theoretical
+  smoother transitions when update channels change. Added an executor
+  instruction to update the components metadata to reflect a recent change to
+  the optional blocklists update channel.
+
 === Version/Release 1.5.1 ===
 PATCH RELEASE.
 

@@ -1,7 +1,7 @@
 ---
 CIDRAM:
  Name: CIDRAM
- Version: 1.6.0-DEV+18136648
+ Version: 1.6.0-DEV+18137238
  Minimum Required: 1.0.0
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/Changelog.txt
@@ -9,6 +9,9 @@ CIDRAM:
  Tests: https://api.github.com/repos/CIDRAM/CIDRAM/commits/master/status
  When Update Succeeds:
   - WP-Ver
+ When Checking:
+  - In "cidramblocklists.dat" Replace "~^ Remote\: https\://macmathan\.info/(?:zbblock-range-blocks|blocklists)/cidramblocklists\.dat\.gz$~m" With " Remote: https://raw.githubusercontent.com/macmathan/Blocklists/master/cidramblocklists.dat"
+  - In "cidramblocklists.dat" Replace "~\.gz$~im" With ""
  Files:
   From:
    - https://raw.githubusercontent.com/CIDRAM/CIDRAM/master/vault/.htaccess
@@ -150,8 +153,8 @@ CIDRAM:
    - f82b848ae0f532ee63cff24c69bdf07b:17536
    - 095216bc177b88dc81c15c4d4e42bd49:877
    - 8d1c2cf7f1065c5c560036e9135b46c3:992
-   - 01cd2a7c50568b7662e2d0361fc916e2:152491
-   - 20906d17d08b1d50a6bd73c30b8dc2b4:110359
+   - 702e983880e3151b54e2c06fb9d038c6:152863
+   - 54d2f3555c247ae2bb612c4cc69d981d:111387
    - f57971d55416a84120d1fad32b897969:64507
    - 75f693f4e6f965e4cb74f32fc30813bf:5073
    - 8e03209e7fc6641b45094e584340feff:83

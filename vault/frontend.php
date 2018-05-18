@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.17).
+ * This file: Front-end handler (last modified: 2018.05.18).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1361,10 +1361,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 
     /** Prepare installed component metadata and options for display. */
     foreach ($CIDRAM['Components']['Meta'] as $CIDRAM['Components']['Key'] => &$CIDRAM['Components']['ThisComponent']) {
+
+        /** Skip if component is malformed. */
         if (empty($CIDRAM['Components']['ThisComponent']['Name']) && empty($CIDRAM['lang']['Name: ' . $CIDRAM['Components']['Key']])) {
             $CIDRAM['Components']['ThisComponent'] = '';
             continue;
         }
+
+        /** Execute any necessary preload instructions. */
+        if (!empty($CIDRAM['Components']['ThisComponent']['When Checking'])) {
+            $CIDRAM['FE_Executor']($CIDRAM['Components']['ThisComponent']['When Checking']);
+        }
+
         $CIDRAM['PrepareName']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
         $CIDRAM['PrepareExtendedDescription']($CIDRAM['Components']['ThisComponent'], $CIDRAM['Components']['Key']);
         $CIDRAM['Components']['ThisComponent']['ID'] = $CIDRAM['Components']['Key'];
@@ -1403,12 +1411,15 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
                     $CIDRAM['Components']['ThisComponent']['RemoteData'], "\n\n"
                 )) !== false
             ) {
+
+                /** Process remote components metadata. */
                 if (!isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']])) {
                     $CIDRAM['YAML'](
                         substr($CIDRAM['Components']['ThisComponent']['RemoteData'], 4, $CIDRAM['Components']['EoYAML'] - 4),
                         $CIDRAM['Components']['RemoteMeta']
                     );
                 }
+
                 if (isset($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'])) {
                     $CIDRAM['Components']['ThisComponent']['Latest'] =
                         $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['Key']]['Version'];
@@ -1742,6 +1753,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
             );
         }
     }
+    /** Cleanup. */
     unset($CIDRAM['Components']['ThisComponent']);
 
     /** Write annotations for newly found component metadata. */

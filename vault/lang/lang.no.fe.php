@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.05.17).
+ * This file: Norwegian language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Når skal infraksjoner regnes
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Font forstørrelse. Standardverdi = 1.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL for CSS-fil for tilpassede temaer.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standard tema som skal brukes til CIDRAM.';
+$CIDRAM['lang']['confirm_action'] = 'Er du sikker på at du vil "%s"?';
 $CIDRAM['lang']['field_activate'] = 'Aktiver';
 $CIDRAM['lang']['field_banned'] = 'Utestengt';
 $CIDRAM['lang']['field_blocked'] = 'Blokkert';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Noen nyttige lenker:<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin for CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternativt nedlastingsspeil for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – En samling av enkle webmaster-verktøy for å sikre nettsteder.</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info Rekkevidde-Blokker</a> – Inneholder valgfrie rekkevidde-blokker som kan legges til CIDRAM for å blokkere uønskede land fra å få tilgang til nettstedet ditt.</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Inneholder valgfrie blokklister og moduler for CIDRAM, for eksempel for blokkering av farlige roboter, uønskede land, utdaterte nettlesere, etc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP læringsressurser og diskusjon.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP læringsressurser og diskusjon.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>

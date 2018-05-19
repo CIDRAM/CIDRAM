@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.05.17).
+ * This file: Russian language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Когда следует у�
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Увеличение шрифта. Стандарт = 1.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для пользовательских тем.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Стандартная тема для CIDRAM.';
+$CIDRAM['lang']['confirm_action'] = 'Вы действительно хотите «%s»?';
 $CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';
 $CIDRAM['lang']['field_blocked'] = 'Блокированный';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
-            <li><a href="https://macmathan.info/blocklists">Диапазонные блоки @ MacMathan.info</a> – Содержит дополнительные список блоки, которые могут быть добавлены к CIDRAM чтобы блокировать любые нежелательные страны получить доступ к вашему веб-сайт.</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>

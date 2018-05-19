@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.05.17).
+ * This file: Indonesian language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'Kapan sebaiknya pelanggaran d
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Perbesaran font. Default = 1.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
+$CIDRAM['lang']['confirm_action'] = 'Anda yakin ingin "%s"?';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress untuk CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Cermin download alternatif untuk CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>
-            <li><a href="https://macmathan.info/blocklists">Blok rentang dari MacMathan.info</a> – Berisi berbagai blok opsional yang dapat ditambahkan ke CIDRAM untuk memblokir setiap negara yang tidak diinginkan dari mengakses situs Anda.</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.18).
+ * This file: Front-end functions file (last modified: 2018.05.19).
  */
 
 /**
@@ -2384,4 +2384,9 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     ) || (
         $CIDRAM['Config']['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
     );
+};
+
+$CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
+    $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['lang']['confirm_action'], $Action));
+    return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
 };

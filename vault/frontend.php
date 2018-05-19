@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.18).
+ * This file: Front-end handler (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2478,6 +2478,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     $CIDRAM['FE']['TrackingCount'] = '';
     $CIDRAM['ThisTracking'] = [];
 
+    /** Generate confirm button. */
+    $CIDRAM['FE']['Confirm-ClearAll'] = $CIDRAM['GenerateConfirm']($CIDRAM['lang']['field_clear_all'], 'trackForm');
+
     /** Fetch cache.dat data. */
     $CIDRAM['Cache'] = file_exists($CIDRAM['Vault'] . 'cache.dat') ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : [];
 
@@ -2676,6 +2679,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
     if (!$CIDRAM['Config']['general']['statistics']) {
         $CIDRAM['FE']['state_msg'] .= '<span class="txtRd">' . $CIDRAM['lang']['tip_statistics_disabled'] . '</span><br />';
     }
+
+    /** Generate confirm button. */
+    $CIDRAM['FE']['Confirm-ClearAll'] = $CIDRAM['GenerateConfirm']($CIDRAM['lang']['field_clear_all'], 'statForm');
 
     /** Fetch cache.dat data. */
     $CIDRAM['Cache'] = file_exists($CIDRAM['Vault'] . 'cache.dat') ? unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) : [];

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.05.17).
+ * This file: Korean language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = '위반은 언제 계산해야
 $CIDRAM['lang']['config_template_data_Magnification'] = '글꼴 배율. Default (기본 설정) = 1.';
 $CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테마.';
+$CIDRAM['lang']['confirm_action'] = '"%s"하시겠습니까?';
 $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM 자료 WordPress 플러그인.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info 범위 블록</a> – 불필요한 국가가 당신의 웹 사이트에 액세스하는 것을 차단하기 위해 CIDRAM에 추가 할 수있는 옵션의 범위 블록이 포함되어 있습니다.</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – 위험한 봇, 원치 않는 국가, 오래된 브라우저 등을 차단하기위한 CIDRAM 용 선택적 블록리스트 및 모듈을 포함합니다.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP 학습 자원과 토론.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>

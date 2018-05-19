@@ -8,9 +8,9 @@
             <form action="?{TrackingFilter}" method="POST" name="SelectorForm"><select name="FilterSelector" class="ufts">
                 {TrackingFilterControls}
             </select> <input type="submit" value="{field_ok}" class="auto" /></form><hr />
-            <form action="?{TrackingFilter}" method="POST">
+            <form id="trackForm" action="?{TrackingFilter}" method="POST">
                 <input name="IPAddr" type="hidden" value="*" />
-                <input type="submit" value="{field_clear_all}" class="auto" />
+                <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
             </form>
         </td></tr></table>
         <table>

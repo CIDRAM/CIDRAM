@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.05.16).
+ * This file: Thai language data (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -37,8 +37,8 @@ $CIDRAM['lang']['Short_Legal'] = 'ทางกฎหมาย';
 $CIDRAM['lang']['Short_Malware'] = 'มัลแวร์';
 $CIDRAM['lang']['Short_Proxy'] = 'ผู้รับมอบฉันทะ';
 $CIDRAM['lang']['Short_Spam'] = 'ความเสี่ยงของสแปม';
-$CIDRAM['lang']['Support_Email'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด, หรือเพื่อขอความช่วยเหลือ, {ClickHereLink}เพื่อส่งอีเมลสนับสนุนไปยังเว็บมาสเตอร์ของเว็บไซต์นี้ (โปรดอย่าเปลี่ยนบรรทัดคำนำหรือหัวเรื่องของอีเมล).';
-$CIDRAM['lang']['Support_Email_2'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด, ส่งอีเมลไปที่ {EmailAddr} เพื่อขอความช่วยเหลือ.';
+$CIDRAM['lang']['Support_Email'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด หรือเพื่อขอความช่วยเหลือ {ClickHereLink}เพื่อส่งอีเมลสนับสนุนไปยังเว็บมาสเตอร์ของเว็บไซต์นี้ (โปรดอย่าเปลี่ยนบรรทัดคำนำหรือหัวเรื่องของอีเมล).';
+$CIDRAM['lang']['Support_Email_2'] = 'หากคุณเชื่อว่านี่เป็นข้อผิดพลาด ส่งอีเมลไปที่ {EmailAddr} เพื่อขอความช่วยเหลือ.';
 $CIDRAM['lang']['click_here'] = 'คลิกที่นี่';
 $CIDRAM['lang']['denied'] = 'ปฏิเสธการเข้าใช้!';
 $CIDRAM['lang']['fake_ua'] = '{ua} ปลอม';
@@ -62,7 +62,7 @@ $CIDRAM['lang']['recaptcha_cookie_warning'] = 'บันทึก: CIDRAM ใช
 $CIDRAM['lang']['recaptcha_disabled'] = 'ไม่ใช้งาน.';
 $CIDRAM['lang']['recaptcha_enabled'] = 'ใช้งานอยู่.';
 $CIDRAM['lang']['recaptcha_failed'] = 'ล้มเหลว!';
-$CIDRAM['lang']['recaptcha_message'] = 'เพื่อให้สามารถเข้าถึงหน้านี้ได้อีกครั้ง, โปรดกรอกข้อมูล CAPTCHA ด้านล่างนี้และกดปุ่มส่ง.';
+$CIDRAM['lang']['recaptcha_message'] = 'เพื่อให้สามารถเข้าถึงหน้านี้ได้อีกครั้ง โปรดกรอกข้อมูล CAPTCHA ด้านล่างนี้และกดปุ่มส่ง.';
 $CIDRAM['lang']['recaptcha_message_invisible'] = 'ในกรณีส่วนใหญ่ หน้าเว็บควรโหลดและกู้คืนการเข้าถึงตามปกติ. ในบางกรณี คุณอาจต้องกรอกข้อมูล CAPTCHA.';
 $CIDRAM['lang']['recaptcha_passed'] = 'ผ่าน!';
 $CIDRAM['lang']['recaptcha_submit'] = 'ส่ง';

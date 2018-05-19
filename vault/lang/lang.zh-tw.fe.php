@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.05.17).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = '何時應該記錄違規？�
 $CIDRAM['lang']['config_template_data_Magnification'] = '字體放大。​標準 = 1。';
 $CIDRAM['lang']['config_template_data_css_url'] = '自定義主題的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_theme'] = '用於CIDRAM的默認主題。';
+$CIDRAM['lang']['confirm_action'] = '你確定要『%s』嗎？';
 $CIDRAM['lang']['field_activate'] = '啟用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
@@ -353,7 +354,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠開源中國社區</a> – CIDRAM頁面託管在開源中國社區。​</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM＠SourceForge</a> – CIDRAM替代下載鏡像。​</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 簡單網站管理員工具集合為保護網站。​</li>
-            <li><a href="https://macmathan.info/blocklists">範圍阻止名單＠MacMathan.info</a> – 包含可選阻止名單，​可以添加的在CIDRAM，​用於阻止任何不需要的國家訪問您的網站。​</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – 包含用於CIDRAM的可選阻止列表和模塊，用於（例如）阻止危險機器人，不需要的國家，過時的瀏覽器等等目的。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP學習資源和討論。​</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP學習資源和討論。​</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。​</li>

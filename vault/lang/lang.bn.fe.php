@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.05.17).
+ * This file: Bangla language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'যখন লঙ্ঘন গ
 $CIDRAM['lang']['config_template_data_Magnification'] = 'ফন্ট বৃহত্তরীকরণ। ডিফল্ট = 1।';
 $CIDRAM['lang']['config_template_data_css_url'] = 'কাস্টম থিমগুলির জন্য CSS ফাইল URL।';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM এর জন্য ডিফল্ট থিম ব্যবহার করুন।';
+$CIDRAM['lang']['confirm_action'] = 'আপনি কি "%s" চান?';
 $CIDRAM['lang']['field_activate'] = 'সক্রিয় করা';
 $CIDRAM['lang']['field_banned'] = 'নিষিদ্ধ';
 $CIDRAM['lang']['field_blocked'] = 'ব্লক করা আছে';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'কিছু দরকারী ল
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM জন্য WordPress প্লাগইন।</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM জন্য বিকল্প ডাউনলোড আয়না।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ওয়েবসাইটগুলি সুরক্ষিত করার জন্য সহজ ওয়েবমাস্টার সরঞ্জামগুলির একটি সংগ্রহ।</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info রেঞ্জ ব্লক</a> – ঐচ্ছিক রেঞ্জ ব্লক যা আপনার ওয়েবসাইট থেকে অযাচিত দেশগুলি দূরে রাখার জন্য CIDRAM এ যোগ করা যেতে পারে।</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – CIDRAM এর জন্য ঐচ্ছিক ব্লক-লিস্ট এবং মডিউল রয়েছে যেমন বিপজ্জনক বট, অবাঞ্ছিত দেশ, পুরনো ব্রাউজার ইত্যাদি অবরুদ্ধ করা।</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP টুলকিট</a> – ASNগুলি থেকে CIDRগুলি পান, ASN সম্পর্কগুলি নির্ধারণ করুন, নেটওয়ার্ক নাম উপর ভিত্তি করে ASNগুলি আবিষ্কার, ইত্যাদি।</li>

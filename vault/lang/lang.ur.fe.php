@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.05.17).
+ * This file: Urdu language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'خلاف ورزی شمار ک
 $CIDRAM['lang']['config_template_data_Magnification'] = 'فونٹ اضافہ. پہلے سے طے شدہ = 1.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'اپنی مرضی کے موضوعات کے لئے سی ایس ایس فائل URL.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.';
+$CIDRAM['lang']['confirm_action'] = 'کیا آپ واقعی "%s" کرنا چاہتے ہیں؟';
 $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ WordPress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
             <li><a href="https://sourceforge.net/projects/cidram/" dir="ltr">CIDRAM @ SourceForge</a> – متبادل ڈاؤن آئینے CIDRAM لئے.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
-            <li><a href="https://macmathan.info/blocklists" dir="ltr">MacMathan.info Range Blocks</a> – آپ کی ویب سائٹ تک رسائی حاصل کرنے کی کوئی ناپسندیدہ ملکوں کو بلاک کرنے CIDRAM میں شامل کیا جا سکتا ہے کہ اختیاری رینج بلاکس پر مشتمل ہے.</li>
+            <li><a href="https://github.com/macmathan/Blocklists" dir="ltr">macmathan/Blocklists</a> – CIDRAM کے لئے اختیاری بلاسٹ لسٹ اور ماڈیولز پر مشتمل ہے جیسے خطرناک بٹس کو روکنے، ناپسندیدہ ممالک، پرانے براؤزر وغیرہ.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
             <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> –، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>

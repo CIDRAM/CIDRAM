@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.05.17).
+ * This file: English language data for the front-end (last modified: 2018.05.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -111,6 +111,7 @@ $CIDRAM['lang']['config_signatures_track_mode'] = 'When should infractions be co
 $CIDRAM['lang']['config_template_data_Magnification'] = 'Font magnification. Default = 1.';
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS file URL for custom themes.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Default theme to use for CIDRAM.';
+$CIDRAM['lang']['confirm_action'] = 'Are you sure you want to "%s"?';
 $CIDRAM['lang']['field_activate'] = 'Activate';
 $CIDRAM['lang']['field_banned'] = 'Banned';
 $CIDRAM['lang']['field_blocked'] = 'Blocked';
@@ -352,7 +353,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin for CIDRAM.</li>
             <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – A collection of simple webmaster tools to secure websites.</li>
-            <li><a href="https://macmathan.info/blocklists">MacMathan.info Range Blocks</a> – Contains optional range blocks that can be added to CIDRAM to block any unwanted countries from accessing your website.</li>
+            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Contains optional blocklists and modules for CIDRAM such as for blocking dangerous bots, unwanted countries, outdated browsers, etc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP learning resources and discussion.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Get CIDRs from ASNs, determine ASN relationships, discover ASNs based upon network names, etc.</li>

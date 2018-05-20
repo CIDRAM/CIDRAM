@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.01.18).
+ * This file: CLI handler (last modified: 2018.05.21).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -53,10 +53,9 @@ if ($CIDRAM['argv'][1] === '-h') {
         if (!$CIDRAM['TestResults']) {
             echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_Bad_IP']), 78, "\n ");
         } else {
-            echo
-                ($CIDRAM['BlockInfo']['SignatureCount']) ?
-                wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_IP_Blocked']), 78, "\n ") :
-                wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], $CIDRAM['lang']['CLI_IP_Not_Blocked']), 78, "\n ");
+            echo wordwrap($CIDRAM['ParseVars'](['IP' => $CIDRAM['argv'][2]], (
+                $CIDRAM['BlockInfo']['SignatureCount'] ? $CIDRAM['lang']['CLI_IP_Blocked'] : $CIDRAM['lang']['CLI_IP_Not_Blocked']
+            )), 78, "\n ");
         }
     }
     echo "\n";

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.19).
+ * This file: Front-end functions file (last modified: 2018.05.21).
  */
 
 /**
@@ -96,20 +96,24 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
     if (empty($QueryParts[0]) || empty($QueryParts[1]) || !file_exists($CIDRAM['Vault'] . $QueryParts[0]) || !is_readable($CIDRAM['Vault'] . $QueryParts[0])) {
         return false;
     }
+
+    /** Fetch file content. */
+    if (!isset($CIDRAM['FE_Executor_Files'][$QueryParts[0]])) {
+        $CIDRAM['FE_Executor_Files'][$QueryParts[0]] = ['Old' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $QueryParts[0])];
+        $CIDRAM['FE_Executor_Files'][$QueryParts[0]]['New'] = $CIDRAM['FE_Executor_Files'][$QueryParts[0]]['Old'];
+        $Data = &$CIDRAM['FE_Executor_Files'][$QueryParts[0]]['New'];
+    }
+
+    /** Normalise main instruction. */
     $QueryParts[1] = strtolower($QueryParts[1]);
 
     /** Replace file content. */
     if ($QueryParts[1] === 'replace' && !empty($QueryParts[3]) && strtolower($QueryParts[3]) === 'with') {
-        $FileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $QueryParts[0]);
-        $NewFileData = preg_replace($QueryParts[2], (isset($QueryParts[4]) ? $QueryParts[4] : ''), $FileData);
-        if ($NewFileData !== $FileData && is_writable($CIDRAM['Vault'] . $QueryParts[0])) {
-            $Handle = fopen($CIDRAM['Vault'] . $QueryParts[0], 'w');
-            fwrite($Handle, $NewFileData);
-            fclose($Handle);
-            return true;
-        }
+        $Data = preg_replace($QueryParts[2], (isset($QueryParts[4]) ? $QueryParts[4] : ''), $Data);
+        return true;
     }
 
+    /** Nothing done. Return false (failure). */
     return false;
 };
 
@@ -1134,6 +1138,7 @@ $CIDRAM['VersionWarning'] = function ($Version = PHP_VERSION) use (&$CIDRAM) {
  */
 $CIDRAM['FE_Executor'] = function ($Closures) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($Closures);
+    $CIDRAM['FE_Executor_Files'] = [];
     foreach ($Closures as $Closure) {
         if (isset($CIDRAM[$Closure]) && is_object($CIDRAM[$Closure])) {
             $CIDRAM[$Closure]();
@@ -1145,6 +1150,14 @@ $CIDRAM['FE_Executor'] = function ($Closures) use (&$CIDRAM) {
             }
         }
     }
+    foreach ($CIDRAM['FE_Executor_Files'] as $Name => $Data) {
+        if (isset($Data['New']) && isset($Data['Old']) && $Data['New'] !== $Data['Old'] && file_exists($CIDRAM['Vault'] . $Name) && is_writable($CIDRAM['Vault'] . $Name)) {
+            $Handle = fopen($CIDRAM['Vault'] . $Name, 'w');
+            fwrite($Handle, $Data['New']);
+            fclose($Handle);
+        }
+    }
+    unset($CIDRAM['FE_Executor_Files']);
 };
 
 /**
@@ -1435,10 +1448,10 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
     $FileData = [];
     $Annotations = [];
     foreach ($ID as $CIDRAM['Components']['ThisTarget']) {
-        if (
-            !isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote']) ||
-            !isset($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Reannotate'])
-        ) {
+        if (!isset(
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Remote'],
+            $CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['Reannotate']
+        )) {
             continue;
         }
         $CIDRAM['Components']['BytesAdded'] = 0;

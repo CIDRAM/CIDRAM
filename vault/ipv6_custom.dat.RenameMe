@@ -18,24 +18,23 @@
 # - %Function% instructs the script what to do with the signature (how the signature should be regarded).
 # - %Param% represents whatever additional information may be required by %Function%.
 
-# The signature files for CIDRAM SHOULD use Unix-style linebreaks (%0A, or \n)! Other types/styles of linebreaks (eg,
-# Windows %0D%0A or \r\n linebreaks, Mac %0D or \r linebreaks, etc) MAY be used, but are NOT preferred. Non-Unix-style
-# linebreaks will be normalised to Unix-style linebreaks by the script.
+# The signature files for CIDRAM SHOULD use Unix-style linebreaks (`%0A`, or `\n`)! Other types/styles of linebreaks
+# (e.g., Windows `%0D%0A` or `\r\n` linebreaks, Mac `%0D` or `\r` linebreaks, etc) MAY be used, but are NOT preferred.
+# Non-Unix-style linebreaks will be normalised to Unix-style linebreaks by the script.
 
 # Precise and correct CIDR notation is required, otherwise the script will NOT recognise the signatures. Additionally,
 # all the CIDR signatures of this script MUST begin with an IP address whose IP number can divide evenly into the block
-# division represented by its CIDR block size (eg, if you wanted to block all IPs from "ff01::2" to "ff01::11",
+# division represented by its CIDR block size (e.g., if you wanted to block all IPs from "ff01::2" to "ff01::11",
 # "ff01::2/124" would NOT be recognised by the script, but "ff01::2/127", "ff01::4/126", "ff01::8/125" and
 # "ff01::10/127" used in conjunction, WOULD be recognised by the script).
 
 # Anything in the signature files not recognised as a signature nor as signature-related syntax by the script will be
 # IGNORED, therefore meaning that you can safely put any non-signature data that you want into the signature files
-# without breaking them and without breaking the script. Comments, such as the comment that you're currently reading,
-# are acceptable in the signature files, and no special formatting is required for them. Shell-style hashing for
-# comments, such as the comment that you're currently reading, is preferred, but not enforced; Functionally, it makes
-# no difference to the script whether or not you choose to use Shell-style hashing for comments, but using Shell-style
-# hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files (and so,
-# Shell-style hashing can assist as a visual aid while editing).
+# without breaking them and without breaking the script. Comments are acceptable in the signature files, and no special
+# formatting is required for them. Shell-style hashing for comments is preferred, but not enforced; Functionally, it
+# makes no difference to the script whether or not you choose to use Shell-style hashing for comments, but using
+# Shell-style hashing helps IDEs and plain-text editors to correctly highlight the various parts of the signature files
+# (and so, Shell-style hashing can assist as a visual aid while editing).
 
 # The possible values of %Function% are as follows:
 # - Run
@@ -73,13 +72,13 @@
 # website"), or one of a small handful of shorthand words supplied by the script, that if used, will be replaced by the
 # script with a pre-prepared explanation of why the client/user has been blocked.
 
-# The pre-prepared explanations have i18n support and can be translated by the script based upon the language you
+# The pre-prepared explanations have L10N support and can be translated by the script based upon the language you
 # specify to the `lang` directive of the script configuration. Additionally, you can instruct the script to ignore
 # "Deny" signatures based upon their %Param% value (if they're using these shorthand words) via the directives
 # specified by the script configuration (each shorthand word has a corresponding directive to either process the
-# corresponding signatures or to ignore them). %Param% values that don't use these shorthand words, however, don't have
-# i18n support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by the
-# script configuration.
+# corresponding signatures or to ignore them). %Param% values that don't use these shorthand words, however, don't
+# have L10N support and therefore WON'T be translated by the script, and additionally, aren't directly controllable by
+# the script configuration.
 
 # The available shorthand words are:
 # - Bogon
@@ -87,19 +86,24 @@
 # - Generic
 # - Proxy
 # - Spam
+# - Legal
+# - Malware
 
 # These available shorthand words (these examples assume that you've specified English as your desired language to the
 # `lang` directive of the script configuration) will be replaced by the script with:
 # - Bogon:      "Your access to this page was denied because your IP address is recognised as a bogon address, and
-#               connecting from bogons to this website isn't permitted by the website owner."
+#                connecting from bogons to this website isn't permitted by the website owner."
 # - Cloud:      "Your access to this page was denied because your IP address is recognised as belonging to a cloud
-#               service, and connecting to this website from cloud services isn't permitted by the website owner.
+#                service, and connecting to this website from cloud services isn't permitted by the website owner."
 # - Generic:    "Your access to this page was denied because your IP address belongs to a network listed on a blacklist
-#               used by this website."
+#                used by this website."
 # - Proxy:      "Your access to this page was denied because your IP address is recognised as belonging to a proxy
-#               service, and connecting to this website from proxy services isn't permitted by the website owner."
+#                service or VPN, and connecting to this website from proxy services or VPNs isn't permitted by the
+#                website owner."
 # - Spam:       "Your access to this page was denied because your IP address belongs to a network considered high-risk
-#               for spam."
+#                for spam."
+# - Legal:      "Your access to this page was denied due to legal obligations."
+# - Malware:    "Your access to this page was denied due to malware concerns relating to your IP address."
 
 # Example 1: 2001:db8::/32 Deny Bogon
 # Example 2: 2001:db8::/32 Deny Cloud

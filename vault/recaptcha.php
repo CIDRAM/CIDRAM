@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2018.05.10).
+ * This file: reCAPTCHA module (last modified: 2018.05.20).
  */
 
 /**
@@ -139,6 +139,11 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
         $CIDRAM['reCAPTCHA']['Bypass'] = true;
         $CIDRAM['BlockInfo']['SignatureCount'] = 0;
 
+        /** Fix for infraction escalation bug. */
+        if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
+            unset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
+        }
+
     } else {
 
         /** Set status for reCAPTCHA block information. */
@@ -210,6 +215,11 @@ if ($CIDRAM['Config']['recaptcha']['lockuser']) {
 
         $CIDRAM['reCAPTCHA']['Bypass'] = true;
         $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+
+        /** Fix for infraction escalation bug. */
+        if (isset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']])) {
+            unset($CIDRAM['Cache']['Tracking'][$CIDRAM['BlockInfo']['IPAddr']]);
+        }
 
     } else {
 

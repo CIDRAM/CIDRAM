@@ -49,6 +49,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   slightly modified. Added some basic confirmation prompts to some of the
   "clear all" buttons on some front-end pages (may expand this in the future).
 
+- [2018.05.20; Bug-fix; Maikuolan]: Bug found by mikeruss1 whereby infraction
+  counts could silently escalate without any Access Denied page being produced
+  if module signatures are subsequently triggered after a reCAPTCHA instance is
+  successfully passed; Fixed.
+
 === Version/Release 1.5.1 ===
 PATCH RELEASE.
 

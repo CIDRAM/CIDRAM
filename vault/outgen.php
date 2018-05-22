@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.05.17).
+ * This file: Output generator (last modified: 2018.05.22).
  */
 
 /** Initialise cache. */
@@ -375,12 +375,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** IP address pseudonymisation. */
-    if ($CIDRAM['Config']['legal']['pseudonymise_ip_addresses']) {
-        if ($CIDRAM['TestResults']) {
-            $CIDRAM['BlockInfo']['IPAddr'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddr']);
-            if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
-                $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddrResolved']);
-            }
+    if ($CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] && $CIDRAM['TestResults']) {
+        $CIDRAM['BlockInfo']['IPAddr'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddr']);
+        if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+            $CIDRAM['BlockInfo']['IPAddrResolved'] = $CIDRAM['Pseudonymise-IP']($CIDRAM['BlockInfo']['IPAddrResolved']);
         }
     }
 

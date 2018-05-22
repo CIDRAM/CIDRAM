@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2018.05.20).
+ * This file: reCAPTCHA module (last modified: 2018.05.22).
  */
 
 /**
@@ -272,10 +272,15 @@ if ($CIDRAM['Config']['recaptcha']['logfile'] && $CIDRAM['reCAPTCHA']['Loggable'
             filesize($CIDRAM['Vault'] . $CIDRAM['reCAPTCHA']['LogfileName']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
         )
     ) ? 'w' : 'a';
-    $CIDRAM['reCAPTCHA']['LogfileData'] =
-        $CIDRAM['lang']['field_ipaddr'] . $_SERVER[$CIDRAM['IPAddr']] . ' - ' .
-        $CIDRAM['lang']['field_datetime'] . $CIDRAM['BlockInfo']['DateTime'] . ' - ' .
-        $CIDRAM['lang']['field_reCAPTCHA_state'] . $CIDRAM['BlockInfo']['reCAPTCHA'] . "\n";
+    $CIDRAM['reCAPTCHA']['LogfileData'] = sprintf(
+        "%1\$s%2\$s - %3\$s%4\$s - %5\$s%6\$s\n",
+        $CIDRAM['lang']['field_ipaddr'],
+        $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']],
+        $CIDRAM['lang']['field_datetime'],
+        $CIDRAM['BlockInfo']['DateTime'],
+        $CIDRAM['lang']['field_reCAPTCHA_state'],
+        $CIDRAM['BlockInfo']['reCAPTCHA']
+    );
     if ($CIDRAM['BuildLogPath']($CIDRAM['reCAPTCHA']['LogfileName'])) {
         $CIDRAM['reCAPTCHA']['LogfileHandle'] = fopen($CIDRAM['Vault'] . $CIDRAM['reCAPTCHA']['LogfileName'], $CIDRAM['reCAPTCHA']['WriteMode']);
         fwrite($CIDRAM['reCAPTCHA']['LogfileHandle'], $CIDRAM['reCAPTCHA']['LogfileData']);

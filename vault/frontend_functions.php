@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.21).
+ * This file: Front-end functions file (last modified: 2018.05.22).
  */
 
 /**
@@ -93,6 +93,8 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
     } else {
         $QueryParts = preg_split('~ +~', $Query, -1, PREG_SPLIT_NO_EMPTY);
     }
+
+    /** Safety mechanism. */
     if (empty($QueryParts[0]) || empty($QueryParts[1]) || !file_exists($CIDRAM['Vault'] . $QueryParts[0]) || !is_readable($CIDRAM['Vault'] . $QueryParts[0])) {
         return false;
     }
@@ -101,8 +103,10 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
     if (!isset($CIDRAM['FE_Executor_Files'][$QueryParts[0]])) {
         $CIDRAM['FE_Executor_Files'][$QueryParts[0]] = ['Old' => $CIDRAM['ReadFile']($CIDRAM['Vault'] . $QueryParts[0])];
         $CIDRAM['FE_Executor_Files'][$QueryParts[0]]['New'] = $CIDRAM['FE_Executor_Files'][$QueryParts[0]]['Old'];
-        $Data = &$CIDRAM['FE_Executor_Files'][$QueryParts[0]]['New'];
     }
+
+    /** For clean, easy referencing. */
+    $Data = &$CIDRAM['FE_Executor_Files'][$QueryParts[0]]['New'];
 
     /** Normalise main instruction. */
     $QueryParts[1] = strtolower($QueryParts[1]);

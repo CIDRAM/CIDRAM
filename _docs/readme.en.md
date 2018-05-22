@@ -948,7 +948,7 @@ Update frequency varies depending on the signature files in question. All mainta
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/CIDRAM/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- If the problem still persists, please let us know about it by creating a new issue on the issues page.
+- If the problem still persists, please seek help about it by creating a new issue on the issues page.
 
 #### <a name="BLOCKED_WHAT_TO_DO"></a>I've been blocked by CIDRAM from a website that I want to visit! Please help!
 
@@ -1048,9 +1048,61 @@ Maybe. This depends on the nature of the service in question, and how you're usi
 
 ### 11. <a name="SECTION11"></a>LEGAL INFORMATION
 
-*(Not yet written, but will be available soon).*
+#### 11.0 SECTION PREAMBLE
+
+This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+
+First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+
+#### 11.1 LIABILITY AND RESPONSIBILITY
+
+As per already stated by the package license, the package is provided without any warranty. This includes (but is not limited to) all scope of liability. The package is provided to you for your convenience, in the hope that it will be useful, and that it will provide some benefit for you. However, whether you use or implement the package, is your own choice. You are not forced to use or implement the package, but when you do so, you are responsible for that decision. Neither I, nor any other contributors to the package, are legally responsible for the consequences of the decisions that you make, regardless of whether direct, indirect, implied, or otherwise.
+
+#### 11.2 THIRD PARTIES
+
+Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+
+How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may best to disable all sharing of information with these third parties.
+
+For the purpose of transparency, the type of information shared, and with whom, is described below.
+
+##### 11.2.0 HOSTNAME LOOKUP
+
+If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed. The DNS servers define by default belong to the Google DNS service (but this can be easily changed via configuration). This is typically referred to as a "hostname lookup". The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you will need to contact your system administrator to determine how hostname lookups are performed. This behaviour can be prevented by avoiding the affected modules or by modifying the package configuration according to your needs.
+
+*Relevant configuration directives:*
+- `general` -> `default_dns`
+- `general` -> `search_engine_verification`
+- `general` -> `force_hostname_lookup`
+- `general` -> `allow_gethostbyaddr_lookup`
+
+##### 11.2.1 WEBFONTS
+
+Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the communication. Most of these webfonts are hosted by the Google Fonts service.
+
+*Relevant configuration directives:*
+- `general` -> `disable_webfonts`
+
+##### 11.2.2 SEARCH ENGINE VERIFICATION
+
+When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to ensure that inbound requests, which claim to be originating from search engines, are actually originating from search engines. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+
+*Relevant configuration directives:*
+- `general` -> `search_engine_verification`
+
+##### 11.2.3 GOOGLE reCAPTCHA
+
+CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the Access Denied page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the communication. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+
+*Relevant configuration directives: Anything listed under the "recaptcha" configuration category.*
+
+##### 11.2.4 STOP FORUM SPAM
+
+[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+
+CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
 
 ---
 
 
-Last Updated: 16 May 2018 (2018.05.16).
+Last Updated: 21 May 2018 (2018.05.21).

@@ -1068,7 +1068,7 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 ##### 11.2.0 HOSTNAME LOOKUP
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed. The DNS servers define by default belong to the Google DNS service (but this can be easily changed via configuration). This is typically referred to as a "hostname lookup". The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you will need to contact your system administrator to determine how hostname lookups are performed. This behaviour can be prevented by avoiding the affected modules or by modifying the package configuration according to your needs.
+If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
 
 *Relevant configuration directives:*
 - `general` -> `default_dns`
@@ -1078,21 +1078,21 @@ If you use any features or modules intended to work with hostnames (such as the 
 
 ##### 11.2.1 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the communication. Most of these webfonts are hosted by the Google Fonts service.
+Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
 *Relevant configuration directives:*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.2 SEARCH ENGINE VERIFICATION
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to ensure that inbound requests, which claim to be originating from search engines, are actually originating from search engines. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
 
 *Relevant configuration directives:*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the Access Denied page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the communication. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the Access Denied page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
 
 *Relevant configuration directives: Anything listed under the "recaptcha" configuration category.*
 
@@ -1102,7 +1102,131 @@ CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypa
 
 CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
 
+#### 11.3 LOGGING
+
+Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+
+Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+
+There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+
+##### 11.3.0 BLOCK EVENTS
+
+The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
+- Human readable logfiles.
+- Apache-style logfiles.
+- Serialised logfiles.
+
+A block event, logged to a human readable logfile, typically looks something like this (as an example):
+
+```
+ID: 1234
+Script Version: CIDRAM v1.6.0
+Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
+IP Address: x.x.x.x
+Hostname: dns.hostname.tld
+Signatures Count: 1
+Signatures Reference: x.x.x.x/xx
+Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
+User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+Reconstructed URI: http://your-site.tld/index.php
+reCAPTCHA State: Enabled.
+```
+
+That same block event, logged to an Apache-style logfile, would look something like this:
+
+```
+x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+```
+
+A logged block event typically includes the following information:
+- An ID number referencing the block event.
+- The version of CIDRAM currently in use.
+- The date and time that the block event occurred.
+- The IP address of the blocked request.
+- The hostname of the IP address of the blocked request (when available).
+- The number of signatures triggered by the request.
+- References to the signatures triggered.
+- References to the reasons for the block event and some basic, related debug information.
+- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
+- A reconstruction of the identifier for the resource originally requested.
+- The reCAPTCHA state for the current request (when relevant).
+
+The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+- `general` -> `logfile`
+- `general` -> `logfileApache`
+- `general` -> `logfileSerialized`
+
+When these directives are left empty, this type of logging will remain disabled.
+
+##### 11.3.1 reCAPTCHA LOGGING
+
+This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+
+A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+
+```
+IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+```
+
+The configuration directive responsible for reCAPTCHA logging is:
+- `recaptcha` -> `logfile`
+
+##### 11.3.2 FRONT-END LOGGING
+
+This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+
+A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+
+```
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+```
+
+The configuration directive responsible for front-end logging is:
+- `general` -> `FrontEndLog`
+
+##### 11.3.3 LOG ROTATION
+
+You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+
+For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+
+*Relevant configuration directives:*
+- `general` -> `log_rotation_limit`
+- `general` -> `log_rotation_action`
+
+##### 11.3.4 LOG TRUNCATION
+
+It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+
+*Relevant configuration directives:*
+- `general` -> `truncate`
+
+##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+
+-
+
+##### 11.3.6 OMITTING LOG INFORMATION
+
+-
+
+##### 11.3.7 STATISTICS
+
+-
+
+#### 11.4 COOKIES
+
+-
+
+#### 11.5 MARKETING AND ADVERTISING
+
+CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+
+#### 11.6 PRIVACY POLICY
+
+-
+
 ---
 
 
-Last Updated: 21 May 2018 (2018.05.21).
+Last Updated: 22 May 2018 (2018.05.22).

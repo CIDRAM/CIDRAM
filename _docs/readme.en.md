@@ -948,7 +948,7 @@ Update frequency varies depending on the signature files in question. All mainta
 - Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
 - Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
 - Have you checked the **[issues page](https://github.com/CIDRAM/CIDRAM/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
-- If the problem still persists, please let us know about it by creating a new issue on the issues page.
+- If the problem still persists, please seek help about it by creating a new issue on the issues page.
 
 #### <a name="BLOCKED_WHAT_TO_DO"></a>I've been blocked by CIDRAM from a website that I want to visit! Please help!
 
@@ -1048,9 +1048,246 @@ Maybe. This depends on the nature of the service in question, and how you're usi
 
 ### 11. <a name="SECTION11"></a>LEGAL INFORMATION
 
-*(Not yet written, but will be available soon).*
+#### 11.0 SECTION PREAMBLE
+
+This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+
+First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+
+#### 11.1 LIABILITY AND RESPONSIBILITY
+
+As per already stated by the package license, the package is provided without any warranty. This includes (but is not limited to) all scope of liability. The package is provided to you for your convenience, in the hope that it will be useful, and that it will provide some benefit for you. However, whether you use or implement the package, is your own choice. You are not forced to use or implement the package, but when you do so, you are responsible for that decision. Neither I, nor any other contributors to the package, are legally responsible for the consequences of the decisions that you make, regardless of whether direct, indirect, implied, or otherwise.
+
+#### 11.2 THIRD PARTIES
+
+Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+
+How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+
+For the purpose of transparency, the type of information shared, and with whom, is described below.
+
+##### 11.2.0 HOSTNAME LOOKUP
+
+If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+
+*Relevant configuration directives:*
+- `general` -> `default_dns`
+- `general` -> `search_engine_verification`
+- `general` -> `force_hostname_lookup`
+- `general` -> `allow_gethostbyaddr_lookup`
+
+##### 11.2.1 WEBFONTS
+
+Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+
+*Relevant configuration directives:*
+- `general` -> `disable_webfonts`
+
+##### 11.2.2 SEARCH ENGINE VERIFICATION
+
+When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+
+*Relevant configuration directives:*
+- `general` -> `search_engine_verification`
+
+##### 11.2.3 GOOGLE reCAPTCHA
+
+CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+
+*Relevant configuration directives: Anything listed under the "recaptcha" configuration category.*
+
+##### 11.2.4 STOP FORUM SPAM
+
+[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+
+CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+
+#### 11.3 LOGGING
+
+Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+
+Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+
+There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+
+##### 11.3.0 BLOCK EVENTS
+
+The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
+- Human readable logfiles.
+- Apache-style logfiles.
+- Serialised logfiles.
+
+A block event, logged to a human readable logfile, typically looks something like this (as an example):
+
+```
+ID: 1234
+Script Version: CIDRAM v1.6.0
+Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
+IP Address: x.x.x.x
+Hostname: dns.hostname.tld
+Signatures Count: 1
+Signatures Reference: x.x.x.x/xx
+Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
+User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+Reconstructed URI: http://your-site.tld/index.php
+reCAPTCHA State: Enabled.
+```
+
+That same block event, logged to an Apache-style logfile, would look something like this:
+
+```
+x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+```
+
+A logged block event typically includes the following information:
+- An ID number referencing the block event.
+- The version of CIDRAM currently in use.
+- The date and time that the block event occurred.
+- The IP address of the blocked request.
+- The hostname of the IP address of the blocked request (when available).
+- The number of signatures triggered by the request.
+- References to the signatures triggered.
+- References to the reasons for the block event and some basic, related debug information.
+- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
+- A reconstruction of the identifier for the resource originally requested.
+- The reCAPTCHA state for the current request (when relevant).
+
+The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+- `general` -> `logfile`
+- `general` -> `logfileApache`
+- `general` -> `logfileSerialized`
+
+When these directives are left empty, this type of logging will remain disabled.
+
+##### 11.3.1 reCAPTCHA LOGGING
+
+This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+
+A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+
+```
+IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+```
+
+The configuration directive responsible for reCAPTCHA logging is:
+- `recaptcha` -> `logfile`
+
+##### 11.3.2 FRONT-END LOGGING
+
+This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+
+A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+
+```
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+```
+
+The configuration directive responsible for front-end logging is:
+- `general` -> `FrontEndLog`
+
+##### 11.3.3 LOG ROTATION
+
+You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+
+For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+
+Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+
+*Relevant configuration directives:*
+- `general` -> `log_rotation_limit`
+- `general` -> `log_rotation_action`
+
+##### 11.3.4 LOG TRUNCATION
+
+It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+
+*Relevant configuration directives:*
+- `general` -> `truncate`
+
+##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+
+Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
+- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+
+In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+
+CIDRAM is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When CIDRAM pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+
+*Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
+
+*Relevant configuration directives:*
+- `signatures` -> `track_mode`
+- `legal` -> `pseudonymise_ip_addresses`
+
+##### 11.3.6 OMITTING LOG INFORMATION
+
+If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+
+*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+
+*Relevant configuration directives:*
+- `legal` -> `omit_ip`
+- `legal` -> `omit_hostname`
+- `legal` -> `omit_ua`
+
+##### 11.3.7 STATISTICS
+
+CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+
+*Relevant configuration directives:*
+- `general` -> `statistics`
+
+##### 11.3.8 ENCRYPTION
+
+CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+
+#### 11.4 COOKIES
+
+CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+
+In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+
+*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+
+*Relevant configuration directives:*
+- `general` -> `disable_frontend`
+- `recaptcha` -> `lockuser`
+- `recaptcha` -> `api`
+
+#### 11.5 MARKETING AND ADVERTISING
+
+CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+
+#### 11.6 PRIVACY POLICY
+
+In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+
+*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+
+*Relevant configuration directives:*
+- `legal` -> `privacy_policy`
+
+#### 11.7 GDPR/DSGVO
+
+The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+
+The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+
+Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+
+Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+
+[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
+- [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
+
+[Intersoft Consulting](https://www.intersoft-consulting.de/) also provides extensive information about GDPR/DSGVO, available in German and English, which could be useful to learn more about GDPR/DSGVO:
+- [General Data Protection Regulation (GDPR) – Final text neatly arranged](https://gdpr-info.eu/)
+
+Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
+- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
 
 ---
 
 
-Last Updated: 16 May 2018 (2018.05.16).
+Last Updated: 24 May 2018 (2018.05.24).

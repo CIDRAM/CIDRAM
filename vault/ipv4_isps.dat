@@ -481,11 +481,11 @@ Tag: AS48159
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 0.36%.
+# %Listed, Google Malware Dashboard: 0.12%.
 # %Listed, CleanTalk.org: 15.41%.
-# %Listed, abuseat.org (CBL-Listed): 2.14%.
-# Stop Forum Spam (SFS) listings: 830.
-# Updated: 2018.02.18
+# %Listed, abuseat.org (CBL-Listed): 0.20%.
+# Stop Forum Spam (SFS) listings: 418.
+# Updated: 2018.05.25
 
 2.176.0.0/12 Deny Generic
 5.62.160.0/19 Deny Generic
@@ -517,7 +517,6 @@ Tag: AS48159
 89.37.152.0/22 Deny Generic
 89.37.168.0/22 Deny Generic
 89.37.208.0/22 Deny Generic
-89.37.248.0/21 Deny Generic
 89.38.244.0/22 Deny Generic
 89.39.8.0/22 Deny Generic
 89.45.112.0/21 Deny Generic
@@ -547,6 +546,7 @@ Tag: AS48159
 151.235.128.0/17 Deny Generic
 185.88.48.0/22 Deny Generic
 185.105.100.0/22 Deny Generic
+185.119.164.0/24 Deny Generic
 188.209.8.0/21 Deny Generic
 188.209.16.0/20 Deny Generic
 188.209.32.0/20 Deny Generic
@@ -562,6 +562,7 @@ Tag: AS48159
 188.240.248.0/21 Deny Generic
 195.146.32.0/19 Deny Generic
 195.181.0.0/19 Deny Generic
+213.195.52.0/22 Deny Generic
 217.218.0.0/15 Deny Generic
 Origin: IR
 Tag: AS12880
@@ -2649,12 +2650,18 @@ recaptcha:
 
 # ASN 23888 ("National Telecommunication Corporation HQ").
 # %Listed, CleanTalk.org: 5.38%.
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2018.02.18
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2018.05.25
 
+43.250.86.0/23 Deny Spam
 103.253.156.0/22 Deny Spam
 113.197.48.0/21 Deny Spam
-175.107.0.0/18 Deny Spam
+175.107.0.0/20 Deny Spam
+175.107.16.0/23 Deny Spam
+175.107.18.0/24 Deny Spam
+175.107.20.0/22 Deny Spam
+175.107.24.0/21 Deny Spam
+175.107.32.0/19 Deny Spam
 202.83.160.0/20 Deny Spam
 Origin: PK
 Tag: AS23888
@@ -2665,8 +2672,8 @@ recaptcha:
 
 # ASN 45804 ("MEGHBELA BROADBAND").
 # %Listed, CleanTalk.org: 4.92%.
-# Stop Forum Spam (SFS) listings: 108.
-# Updated: 2018.02.18
+# Stop Forum Spam (SFS) listings: 81.
+# Updated: 2018.05.25
 
 43.239.80.0/22 Deny Spam
 43.251.168.0/21 Deny Spam
@@ -2675,24 +2682,22 @@ recaptcha:
 45.123.12.0/22 Deny Spam
 45.123.216.0/22 Deny Spam
 45.248.56.0/22 Deny Spam
+45.251.60.0/22 Deny Spam
 103.10.208.0/24 Deny Spam
 103.10.210.0/23 Deny Spam
 103.27.140.0/22 Deny Spam
-103.43.80.0/22 Deny Spam
 103.56.236.0/22 Deny Spam
 103.59.88.0/24 Deny Spam
 103.60.219.0/24 Deny Spam
-103.70.44.0/22 Deny Spam
-103.76.80.0/23 Deny Spam
-103.76.82.0/24 Deny Spam
+103.70.44.0/23 Deny Spam
+103.70.47.0/24 Deny Spam
 103.80.172.0/22 Deny Spam
 103.81.55.0/24 Deny Spam
 103.82.159.0/24 Deny Spam
 103.83.2.0/23 Deny Spam
 103.86.20.0/22 Deny Spam
-103.91.77.0/24 Deny Spam
-103.91.78.0/23 Deny Spam
 103.93.100.0/22 Deny Spam
+103.100.20.0/22 Deny Spam
 103.102.120.0/23 Deny Spam
 103.102.122.0/24 Deny Spam
 103.192.60.0/22 Deny Spam
@@ -2703,7 +2708,7 @@ recaptcha:
 103.215.135.0/24 Deny Spam
 103.216.204.0/22 Deny Spam
 103.224.188.0/24 Deny Spam
-103.224.191.0/24 Deny Spam
+103.224.190.0/23 Deny Spam
 103.234.93.0/24 Deny Spam
 103.244.240.0/22 Deny Spam
 103.245.2.0/24 Deny Spam
@@ -6495,7 +6500,7 @@ recaptcha:
 # three ASNs at the moment. This is intentional. Numbers may change in the
 # future pending changes in circumstance, which currently only necessitate
 # tracking these three ASNs).
-# Updated: 2017.09.22 / Checked: 2018.01.29
+# Updated: 2017.09.22 / Checked: 2018.05.23
 
 81.18.112.0/20 Deny Spam
 81.26.80.0/20 Deny Spam

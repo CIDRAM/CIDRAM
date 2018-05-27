@@ -1068,7 +1068,7 @@ Aus Gründen der Transparenz wird im Folgenden beschrieben, welche Art von Infor
 
 ##### 11.2.0 HOSTNAME-SUCHE
 
-Wenn Sie Funktionen oder Module verwenden, die mit Hostnamen arbeiten (z.B., "Schlechte Hosts Blocker-Modul", "tor project exit nodes block module", oder "Suchmaschinen-Verifizierung", u.s.w.), CIDRAM muss in der Lage sein, den Hostnamen eingehender Anfragen irgendwie zu erhalten. Typischerweise dazu wird der Hostname der IP-Adresse eingehender Anforderungen von einem DNS-Server angefordert, oder die Informationen über die Funktionalität angefordert, die vom System bereitgestellt werden, auf dem CIDRAM installiert ist (dies wird typischerweise als "Hostname-Suche" bezeichnet). Die standardmäßig definierten DNS-Server gehören zu Google DNS (dies kann jedoch einfach über die Konfiguration geändert werden). Die genauen Dienste, mit denen kommuniziert wird, sind konfigurierbar und hängen von der Konfiguration des Pakets ab. Wenn Sie Funktionen verwenden, die von dem System bereitgestellt werden, auf dem CIDRAM installiert ist, müssen Sie sich an Ihren Systemadministrator wenden, um zu ermitteln, welche Routen Hostnamen-Lookups verwenden. Hostnamen-Suchen können in CIDRAM verhindert werden, indem die betroffenen Module vermieden oder die Paketkonfiguration entsprechend Ihren Anforderungen geändert wird.
+Wenn Sie Funktionen oder Module verwenden, die mit Hostnamen arbeiten (z.B., "Schlechte Hosts Blocker-Modul", "tor project exit nodes block module", oder "Suchmaschinen-Verifizierung", u.s.w.), CIDRAM muss in der Lage sein, den Hostnamen eingehender Anfragen irgendwie zu erhalten. Typischerweise dazu wird der Hostname der IP-Adresse eingehender Anforderungen von einem DNS-Server angefordert, oder die Informationen über die Funktionalität angefordert, die vom System bereitgestellt werden, auf dem CIDRAM installiert ist (dies wird typischerweise als "Hostname-Suche" bezeichnet). Die standardmäßig definierten DNS-Server gehören zu [Google DNS](https://dns.google.com/) (dies kann jedoch einfach über die Konfiguration geändert werden). Die genauen Dienste, mit denen kommuniziert wird, sind konfigurierbar und hängen von der Konfiguration des Pakets ab. Wenn Sie Funktionen verwenden, die von dem System bereitgestellt werden, auf dem CIDRAM installiert ist, müssen Sie sich an Ihren Systemadministrator wenden, um zu ermitteln, welche Routen Hostnamen-Lookups verwenden. Hostnamen-Suchen können in CIDRAM verhindert werden, indem die betroffenen Module vermieden oder die Paketkonfiguration entsprechend Ihren Anforderungen geändert wird.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `default_dns`
@@ -1078,29 +1078,29 @@ Wenn Sie Funktionen oder Module verwenden, die mit Hostnamen arbeiten (z.B., "Sc
 
 ##### 11.2.1 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstelle) für das CIDRAM-Front-End und die Seite "Zugriff verweigert" können Webfonts aus ästhetischen Gründen verwenden. Webfonts sind standardmäßig deaktiviert. Wenn sie jedoch aktiviert sind, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst, der die Webfonts hostet. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten, das Betriebssystem und andere Details zur Anfrage verfügbar. Die meisten dieser Webfonts werden vom [Google Fonts](https://fonts.google.com/)-Service gehostet.
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 SUCHMASCHINEN-VERIFIZIERUNG
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+Wenn die Suchmaschinen-Verifizierung aktiviert ist, versucht CIDRAM "Forward-DNS-Lookups" durchzuführen, um zu überprüfen, ob Anfragen, die behaupten, von Suchmaschinen stammen, authentisch sind. Um dies zu tun, es verwendet den [Google DNS](https://dns.google.com/)-Dienst, um IP-Adressen aus den Hostnamen dieser eingehenden Anfragen aufzulösen (in diesem Prozess werden die Hostnamen dieser eingehenden Anfragen für den Dienst freigegeben).
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAM unterstützt [Google reCAPTCHA](https://www.google.com/recaptcha/) als Option, die Bereitstellung einer Möglichkeit für Benutzer, die Seite "Zugriff verweigert" zu umgehen, indem sie eine reCAPTCHA-Instanz abschließen (weitere Informationen zu dieser Funktion finden Sie weiter oben in der Dokumentation, vor allem im Konfigurationsabschnitt). Google reCAPTCHA benötigt API-Schlüssel, um ordnungsgemäß funktionieren zu können, und ist daher standardmäßig deaktiviert. Es kann aktiviert werden, indem die erforderlichen API-Schlüssel in der Paketkonfiguration definiert werden. Wenn diese Option aktiviert ist, erfolgt eine direkte Kommunikation zwischen dem Browser des Benutzers und dem Dienst reCAPTCHA. Dies kann möglicherweise die Übermittlung von Informationen wie die IP-Adresse des Benutzers, den Benutzeragenten, das Betriebssystem und andere Details zur Anfrage verfügbar. Die IP-Adresse des Benutzers kann auch für die Kommunikation zwischen CIDRAM und dem Dienst reCAPTCHA freigegeben werden, wenn die Gültigkeit einer reCAPTCHA-Instanz überprüft und überprüft wird, ob sie erfolgreich abgeschlossen wurde.
 
-*Relevante Konfigurationsdirektiven: Anything listed under the "recaptcha" configuration category.*
+*Relevante Konfigurationsdirektiven: Alles, was unter der Konfigurationskategorie "recaptcha" aufgeführt ist.*
 
 ##### 11.2.4 STOP FORUM SPAM
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/) ist ein fantastischer, frei verfügbarer Dienst, mit dem Sie Foren, Blogs und Websites vor Spammern schützen können. Dies geschieht durch Bereitstellung einer Datenbank bekannter Spammer und einer API, mit der überprüft werden kann, ob eine IP-Adresse, ein Benutzername oder eine E-Mail-Adresse in der Datenbank aufgeführt ist.
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+CIDRAM bietet ein optionales Modul, das diese API nutzt, um zu prüfen, ob die IP-Adresse eingehender Anfragen zu einem mutmaßlichen Spammer gehört. Das Modul wird nicht standardmäßig installiert, aber wenn Sie es installieren, können Benutzer-IP-Adressen mit der Stop Forum Spam API in Übereinstimmung mit dem beabsichtigten Zweck des Moduls geteilt werden. Wenn das Modul installiert wird, kommuniziert CIDRAM mit dieser API immer dann, wenn eine eingehende Anfrage eine Ressource anfordert, die von CIDRAM als eine Art von Ressource erkannt wird, die häufig von Spammern angegriffen wird (wie Anmeldeseiten, Registrierungsseiten, E-Mail-Verifizierungsseiten, Kommentarformulare, u.s.w.).
 
 #### 11.3 LOGGING
 
@@ -1290,4 +1290,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 25 Mai 2018 (2018.05.25).
+Zuletzt aktualisiert: 26 Mai 2018 (2018.05.26).

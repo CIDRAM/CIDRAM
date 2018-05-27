@@ -1049,11 +1049,11 @@ IP | 操作者
 
 ### 11. <a name="SECTION11"></a>法律信息
 
-#### 11.0 SECTION PREAMBLE
+#### 11.0 章節前言
 
-This section of the documentation is intended to describe possible legal considerations regarding the use and implementation of the package, and to provide some basic related information. This may be important for some users as a means to ensure compliancy with any legal requirements that may exist in the countries that they operate in, and some users may need to adjust their website policies in accordance with this information.
+本文檔章節描述了有關該軟件包的使用和實施的可能法律考慮事項，並提供一些基本的相關信息。​這對於一些用戶來說可能很重要，作為確保遵守其運營所在國家可能存在的任何法律要求的一種手段。​一些用戶可能需要根據這些信息調整他們的網站政策。
 
-First and foremost, please realise that I (the package author) am not a lawyer, nor a qualified legal professional of any kind. Therefore, I am not legally qualified to provide legal advice. Also, in some cases, exact legal requirements may vary between different countries and jurisdictions, and these varying legal requirements may sometimes conflict (such as, for example, in the case of countries that favour privacy rights and the right to be forgotten, versus countries that favour extended data retention). Consider also that access to the package is not restricted to specific countries or jurisdictions, and therefore, the package userbase is likely to the geographically diverse. These points considered, I'm not in a position to state what it means to be "legally compliant" for all users, in all regards. However, I hope that the information herein will help you to come to a decision yourself regarding what you must do in order to remain legally compliant in the context of the package. If you have any doubts or concerns regarding the information herein, or if you need additional help and advice from a legal perspective, I would recommend consulting a qualified legal professional.
+首先，請認識到我（軟件包作者）不是律師或合格的法律專業人員。​因此，我無法合法提供法律建議。​此外，在某些情況下，不同國家和地區的具體法律要求可能會有所不同。​這些不同的法律要求有時可能會相互矛盾​（例如：支持[隱私權](https://zh.wikipedia.org/wiki/%E9%9A%B1%E7%A7%81%E6%AC%8A_(%E8%87%BA%E7%81%A3))和[被遺忘權](https://zh.wikipedia.org/wiki/%E8%A2%AB%E9%81%BA%E5%BF%98%E6%AC%8A)的國家，與支持擴展數據保留的國家相比）。​還要考慮到對軟件包的訪問不限於特定的國家或轄區，因此，軟件包用戶群很可能在地理上多樣化。​這些觀點認為，我無法說明在所有方面對所有用戶『符合法律』意味著什麼。​不過，我希望這裡的信息能夠幫助您自己決定您必須做些什麼為了在軟件包的上下文中符合法律。​如果您對此處的信息有任何疑問或擔憂，或者您需要從法律角度提供更多幫助和建議，我會建議諮詢合格的法律專業人員。
 
 #### 11.1 LIABILITY AND RESPONSIBILITY
 
@@ -1071,7 +1071,7 @@ For the purpose of transparency, the type of information shared, and with whom, 
 
 If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
 - `general` -> `force_hostname_lookup`
@@ -1081,21 +1081,21 @@ If you use any features or modules intended to work with hostnames (such as the 
 
 Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.2 SEARCH ENGINE VERIFICATION
 
 When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
 CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
 
-*Relevant configuration directives: Anything listed under the "recaptcha" configuration category.*
+*相關配置指令：在『recaptcha』配置類別下列出的任何內容。*
 
 ##### 11.2.4 STOP FORUM SPAM
 
@@ -1194,7 +1194,7 @@ For example: If I was legally required to delete logs after 30 days, I could spe
 
 Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
@@ -1202,7 +1202,7 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `truncate`
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
@@ -1217,7 +1217,7 @@ CIDRAM is able to pseudonymise IP addresses when logging them, if this is someth
 
 *Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
@@ -1227,7 +1227,7 @@ If you want to take it a step further by preventing specific types of informatio
 
 *Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `legal` -> `omit_ip`
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
@@ -1236,7 +1236,7 @@ If you want to take it a step further by preventing specific types of informatio
 
 CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `statistics`
 
 ##### 11.3.8 ENCRYPTION
@@ -1251,7 +1251,7 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 
 *Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `general` -> `disable_frontend`
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
@@ -1266,7 +1266,7 @@ In some circumstances, you may be legally required to clearly display a link to 
 
 *Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
 
-*Relevant configuration directives:*
+*相關配置指令：*
 - `legal` -> `privacy_policy`
 
 #### 11.7 GDPR/DSGVO
@@ -1288,4 +1288,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-最後更新：2018年5月25日。
+最後更新：2018年5月26日。

@@ -1094,7 +1094,7 @@ When search engine verification is enabled, CIDRAM attempts to perform "forward 
 
 CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
 
-*Directives de configuration pertinentes : Anything listed under the "recaptcha" configuration category.*
+*Directives de configuration pertinentes : Tout ce qui est listé dans la catégorie de configuration "recaptcha".*
 
 ##### 11.2.4 STOP FORUM SPAM
 
@@ -1287,4 +1287,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 25 Mai 2018 (2018.05.25).
+Dernière mise à jour : 26 Mai 2018 (2018.05.26).

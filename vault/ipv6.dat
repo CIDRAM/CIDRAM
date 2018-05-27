@@ -927,16 +927,17 @@ Tag: Root SA
 
 
 # ASN 11878 ("Tzulo Inc").
-# %Listed, Google Malware Dashboard: 0.10%.
+# %Listed, Google Malware Dashboard: 0.22%.
 # %Listed, CleanTalk.org: 34.24%.
-# Stop Forum Spam (SFS) listings: 385.
-# Updated: 2018.02.15
+# Stop Forum Spam (SFS) listings: 365.
+# Updated: 2018.05.27
 
 2620:15:6000::/48 Deny Cloud
 Origin: CA
+2a0d:5980::/30 Deny Cloud
+Origin: RU
 2602:fea7:10::/44 Deny Cloud
 2607:2780::/48 Deny Cloud
-2607:8b00::/32 Deny Cloud
 2607:9000::/32 Deny Cloud
 Origin: US
 Tag: Tzulo Inc
@@ -1008,10 +1009,10 @@ Tag: WestHost, Inc
 
 
 # ASN 32097 ("WholeSale Internet, Inc").
-# %Listed, Google Malware Dashboard: 11.13%.
+# %Listed, Google Malware Dashboard: 2.19%.
 # %Listed, CleanTalk.org: 43.72%.
-# Stop Forum Spam (SFS) listings: 8,343.
-# Updated: 2016.01.20 / Checked: 2018.02.15
+# Stop Forum Spam (SFS) listings: 4,472.
+# Updated: 2016.01.20 / Checked: 2018.05.27
 
 2001:4858::/32 Deny Cloud
 2604:4300::/32 Deny Cloud
@@ -1020,17 +1021,17 @@ Tag: WholeSale Internet
 
 
 # ASN 33387 ("DataShack, LC").
-# %Listed, Google Malware Dashboard: 12.21%.
+# %Listed, Google Malware Dashboard: 4.70%.
 # %Listed, CleanTalk.org: 59.09%.
-# Stop Forum Spam (SFS) listings: 685.
-# Updated: 2018.02.15
+# Stop Forum Spam (SFS) listings: 1,111.
+# Updated: 2018.05.27
 
 2a07:1c44:213::/48 Deny Cloud
 Origin: AT
 2a07:59c6:2000::/48 Deny Cloud
 Origin: IT
-2a0c:7c00::/29 Deny Cloud
-Origin: US
+2a0b:5780::/29 Deny Cloud
+Origin: RU
 Tag: DataShack, LC
 
 
@@ -1062,10 +1063,10 @@ Tag: Ready Server
 
 
 # ASN 42655 ("ON-LINE Ltd").
-# %Listed, Google Malware Dashboard: 0.39%.
+# %Listed, Google Malware Dashboard: 0.35%.
 # %Listed, CleanTalk.org: 79.58%.
-# Stop Forum Spam (SFS) listings: 383.
-# Updated: 2016.01.21 / Checked: 2018.01.18
+# Stop Forum Spam (SFS) listings: 363.
+# Updated: 2016.01.21 / Checked: 2018.05.27
 
 2001:67c:2224::/48 Deny Cloud
 Origin: UA
@@ -1130,10 +1131,10 @@ Tag: HyperHosting
 
 
 # ASN 11051 ("Cyberverse, Inc").
-# %Listed, Google Malware Dashboard: 1.45%.
+# %Listed, Google Malware Dashboard: 0.60%.
 # %Listed, CleanTalk.org: 39.13%.
-# Stop Forum Spam (SFS) listings: 1,349.
-# Updated: 2016.01.22 / Checked: 2018.01.29
+# Stop Forum Spam (SFS) listings: 1,388.
+# Updated: 2016.01.22 / Checked: 2018.05.27
 
 2607:f820::/32 Deny Cloud
 Origin: US
@@ -1226,17 +1227,16 @@ Tag: SERVERYOU INC
 
 
 # ASN 25577 ("Connexions4London Ltd").
-# %Listed, Google Malware Dashboard: 1.13%.
+# %Listed, Google Malware Dashboard: 0.33%.
 # %Listed, CleanTalk.org: 18.42%.
 # Stop Forum Spam (SFS) listings: 3.
-# Updated: 2017.03.31 / Checked: 2018.02.15
+# Updated: 2018.05.27
 
 2803:8700:10::/48 Deny Cloud
 Origin: CR
 2001:67c:1c0::/48 Deny Cloud
 2001:67c:580::/48 Deny Cloud
 2001:9d8::/32 Deny Cloud
-2a05:2e00::/29 Deny Cloud
 Origin: GB
 Tag: Connexions4London
 
@@ -3659,10 +3659,10 @@ Tag: Serverius Holding
 
 
 # ASN 20857 ("Transip B.V").
-# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, Google Malware Dashboard: 0.33%.
 # %Listed, CleanTalk.org: 41.27%.
-# Stop Forum Spam (SFS) listings: 4,192.
-# Updated: 2017.11.12 / Checked: 2018.01.29
+# Stop Forum Spam (SFS) listings: 3,217.
+# Updated: 2017.11.12 / Checked: 2018.05.27
 
 2a01:7c8::/32 Deny Cloud
 Origin: NL
@@ -4264,10 +4264,10 @@ Tag: Powerbase DataCenter
 
 
 # ASN 32392 ("Ecommerce Corporation").
-# %Listed, Google Malware Dashboard: 1.70%.
+# %Listed, Google Malware Dashboard: 0.94%.
 # %Listed, CleanTalk.org: 21.58%.
-# Stop Forum Spam (SFS) listings: 8.
-# Updated: 2016.08.28 / Checked: 2018.01.18
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2016.08.28 / Checked: 2018.05.27
 
 2604:7800::/32 Deny Cloud
 Origin: US
@@ -5823,3 +5823,15 @@ Tag: DCS Pacific Star
 2a02:5c80::/32 Deny Cloud
 Origin: IT
 Tag: KPNQWest Italia
+
+
+# ASN 41564 ("Packet Exchange Limited").
+# Caught XRumer operating on this network.
+# Stop Forum Spam (SFS) listings: 13,775.
+# Updated: 2018.05.25
+
+2a02:5740::/46 Deny Cloud
+2a02:5740:4::/47 Deny Cloud
+2a02:5740:6::/48 Deny Cloud
+Origin: EE
+Tag: Packet Exchange Limited

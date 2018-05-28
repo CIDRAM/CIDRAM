@@ -1054,21 +1054,21 @@ Cette section de la documentation est destinée à décrire les considérations 
 
 Tout d'abord, s'il vous plaît se rendre compte que je (l'auteur du paquet) ne suis pas un avocat, ni un professionnel juridique qualifié de toute nature. Par conséquent, je ne suis pas légalement qualifié pour fournir des conseils juridiques. Aussi, dans certains cas, les exigences légales peuvent varier selon les pays et les juridictions, et ces différentes exigences juridiques peuvent parfois entrer en conflit (comme, par exemple, dans le cas des pays qui favorisent le droit à la [vie privée](https://fr.wikipedia.org/wiki/Vie_priv%C3%A9e) et le [droit à l'oubli](https://fr.wikipedia.org/wiki/Droit_%C3%A0_l%27oubli), par rapport aux pays qui favorisent la [conversation des données](https://fr.wikipedia.org/wiki/Conservation_des_donn%C3%A9es) étendue). Considérons également que l'accès au paquet n'est pas limité à des pays ou des juridictions spécifiques, et par conséquent, la base d'utilisateurs du paquet est susceptible de la diversité géographique. Ces points pris en compte, je ne suis pas en mesure de dire ce que cela signifie d'être « conforme à la loi » pour tous les utilisateurs, à tous égards. Cependant, j'espère que les informations contenues dans le présent document vous aideront à prendre vous-même une décision concernant ce que vous devez faire pour rester juridiquement conforme dans le cadre du paquet. Si vous avez des doutes ou des préoccupations concernant les informations contenues dans le présent document, ou si vous avez besoin d'aide supplémentaire et de conseils d'un point de vue juridique, je recommande de consulter un professionnel du droit qualifié.
 
-#### 11.1 LIABILITY AND RESPONSIBILITY
+#### 11.1 RESPONSABILITÉ
 
-As per already stated by the package license, the package is provided without any warranty. This includes (but is not limited to) all scope of liability. The package is provided to you for your convenience, in the hope that it will be useful, and that it will provide some benefit for you. However, whether you use or implement the package, is your own choice. You are not forced to use or implement the package, but when you do so, you are responsible for that decision. Neither I, nor any other contributors to the package, are legally responsible for the consequences of the decisions that you make, regardless of whether direct, indirect, implied, or otherwise.
+Comme déjà indiqué par la licence de paquet, le paquet est fourni sans aucune garantie. Cela inclut (mais n'est pas limité à) toute la portée de la responsabilité. Le paquet est fourni pour votre commodité, dans l'espoir qu'il vous sera utile, et qu'il vous apportera un certain avantage. Cependant, que vous utilisiez ou implémentiez le package, vous avez le choix. Vous n'êtes pas obligé d'utiliser ou de mettre en œuvre le package, mais lorsque vous le faites, vous êtes responsable de cette décision. Ni moi, ni aucun autre contributeur au paquet, ne sommes légalement responsables des conséquences des décisions que vous prenez, qu'elles soient directes, indirectes, implicites ou autres.
 
-#### 11.2 THIRD PARTIES
+#### 11.2 TIERS
 
-Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+En fonction de sa configuration et de son implémentation exactes, le paquet peut communiquer et partager des informations avec des tiers dans certains cas. Ces informations peuvent être définies comme des « [données personnelles](https://fr.wikipedia.org/wiki/Donn%C3%A9es_personnelles) » (PII) dans certains contextes, par certaines juridictions.
 
-How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+La manière dont ces informations peuvent être utilisées par ces tiers est soumise aux différentes politiques énoncées par ces tiers et ne relève pas de cette documentation. Cependant, dans tous ces cas, le partage d'informations avec ces tiers peut être désactivé. Dans tous ces cas, si vous choisissez de l'activer, vous êtes responsable de rechercher toute préoccupation que vous pourriez avoir concernant la confidentialité, la sécurité, et l'utilisation des informations personnelles par ces tiers. Si des doutes existent, ou si vous n'êtes pas satisfait de la conduite de ces tiers en ce qui concerne les PII, il peut être préférable de désactiver tout partage d'informations avec ces tiers.
 
-For the purpose of transparency, the type of information shared, and with whom, is described below.
+Dans un souci de transparence, le type d'informations partagées, et avec qui, est décrit ci-dessous.
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### 11.2.0 RECHERCHE DE NOM D'HÔTE
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+Si vous utilisez des fonctionnalités ou des modules destinés à fonctionner avec des noms d'hôte (tel que le « module de blocage pour les hôtes mauvais », « tor project exit nodes block module », ou la « vérification du moteur de recherche », par exemple), CIDRAM doit pouvoir obtenir le nom d'hôte des demandes entrantes en quelque sorte. Généralement, il le fait en demandant le nom d'hôte de l'adresse IP des demandes entrantes provenant d'un serveur DNS, ou en demandant l'information via la fonctionnalité fournie par le système sur lequel CIDRAM est installé (ceci est généralement appelé « recherche de nom d'hôte »). Les serveurs DNS définis par défaut appartiennent au [service DNS de Google](https://dns.google.com/) (mais cela peut être facilement modifié via la configuration). Les services précis communiqués sont configurables et dépendent de la configuration du package. Dans le cas de l'utilisation des fonctionnalités fournies par le système sur lequel CIDRAM est installé, vous devrez contacter votre administrateur système pour déterminer les routes qu'utilisent les recherches de nom d'hôte. Les recherches de noms d'hôtes peuvent être évitées dans CIDRAM en évitant les modules affectés ou en modifiant la configuration du package en fonction de vos besoins.
 
 *Directives de configuration pertinentes :*
 - `general` -> `default_dns`
@@ -1078,137 +1078,137 @@ If you use any features or modules intended to work with hostnames (such as the 
 
 ##### 11.2.1 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Certains thèmes personnalisés, et aussi l'interface utilisateur standard pour l'accès frontal de CIDRAM, et la page « Accès Refusé », peuvent utiliser des webfonts pour des raisons esthétiques. Les webfonts sont désactivées par défaut, mais lorsqu'elles sont activées, la communication directe entre le navigateur de l'utilisateur et le service hébergeant les webfonts produit. Cela peut éventuellement impliquer la communication d'informations telles que l'adresse IP de l'utilisateur, l'agent utilisateur, le système d'exploitation et d'autres informations disponibles à la demande. La plupart de ces webfonts sont hébergées par le service [Google Fonts](https://fonts.google.com/).
 
 *Directives de configuration pertinentes :*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 VÉRIFICATION DU MOTEUR DE RECHERCHE
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+Lorsque la vérification du moteur de recherche est activée, CIDRAM tente d'effectuer des « recherches DNS directes » pour vérifier si les demandes qui prétendent provenir des moteurs de recherche sont authentiques. Pour ce faire, il utilise le service [Google DNS](https://dns.google.com/) pour tenter de résoudre les adresses IP à partir des noms d'hôte de ces demandes entrantes (dans ce processus, les noms d'hôte de ces demandes entrantes sont partagés avec le service).
 
 *Directives de configuration pertinentes :*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+Facultativement, CIDRAM prend en charge [Google reCAPTCHA](https://www.google.com/recaptcha/), ce qui permet aux utilisateurs de contourner la page « Accès Refusé » en complétant une instance de reCAPTCHA (plus d'informations sur cette fonctionnalité sont décrites plus haut dans la documentation, notamment dans la section de configuration). Google reCAPTCHA nécessite des clés API pour fonctionner correctement, et est par conséquent désactivé par défaut. Il peut être activé en définissant les clés API requises dans la configuration du package. Lorsqu'elle est activée, la communication directe entre le navigateur de l'utilisateur et le service reCAPTCHA se produit. Cela peut éventuellement impliquer la communication d'informations telles que l'adresse IP de l'utilisateur, l'agent utilisateur, le système d'exploitation et d'autres informations disponibles à la demande. L'adresse IP de l'utilisateur peut également être partagée dans la communication entre CIDRAM et le service reCAPTCHA lors de la vérification de la validité d'une instance de reCAPTCHA et de la vérification de sa réussite.
 
 *Directives de configuration pertinentes : Tout ce qui est listé dans la catégorie de configuration "recaptcha".*
 
 ##### 11.2.4 STOP FORUM SPAM
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/) est un service fantastique et gratuit qui peut aider à protéger les forums, les blogs et les sites Web contre les spammeurs. Il le fait en fournissant une base de données de spammeurs connus, et une API qui peut être utilisée pour vérifier si une adresse IP, un nom d'utilisateur, ou une adresse e-mail est répertorié dans sa base de données.
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+CIDRAM fournit un module facultatif qui exploite cette API pour vérifier si l'adresse IP des demandes entrantes appartient à un spammeur suspecté. Le module n'est pas installé par défaut, mais si vous choisissez de l'installer, les adresses IP des utilisateurs peuvent être partagées avec l'API Stop Forum Spam conformément à l'usage prévu du module. Lorsque le module est installé, CIDRAM communique avec cette API chaque fois qu'une requête entrante demande une ressource que CIDRAM reconnaît comme un type de ressource fréquemment ciblée par les spammeurs (tels que les pages de connexion, les pages d'enregistrement, les pages de vérification par courriel, les formulaires de commentaires, etc).
 
-#### 11.3 LOGGING
+#### 11.3 JOURNALISATION
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+La journalisation est une partie importante de CIDRAM pour un certain nombre de raisons. Il peut être difficile de diagnostiquer et de résoudre les faux positifs lorsque les événements de blocage qui les provoquent ne sont pas journalisés. Sans journaliser les événements de blocage, il peut être difficile de déterminer exactement comment CIDRAM est performant dans un contexte particulier, et il peut être difficile de déterminer où ses lacunes peuvent être, et quels changements peuvent être nécessaires à sa configuration ou à ses signatures en conséquence, afin de continuer à fonctionner comme prévu. Quoi qu'il en soit, la journalisation peut ne pas être souhaitable pour tous les utilisateurs, et reste entièrement facultative. Dans CIDRAM, la journalisation est désactivée par défaut. Pour l'activer, CIDRAM doit être configuré en accord.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Aditionellement, si la journalisation est légalement autorisée, et dans la mesure où elle est légalement permise (par exemple, les types d'informations pouvant être journalisées, pendant combien de temps, et dans quelles circonstances), peut varier, selon la juridiction et le contexte dans lequel CIDRAM est mis en œuvre (par exemple, si vous opérez en tant qu'individu, en tant qu'entreprise, et si sur une base commerciale ou non-commerciale). Il peut donc être utile pour que vous lisiez attentivement cette section.
 
-There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+Il existe plusieurs types de journalisation que CIDRAM peut effectuer. Différents types de journalisation impliquent différents types d'informations, pour différentes raisons.
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 ÉVÉNEMENTS DE BLOCAGE
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+Le principal type de journalisation que CIDRAM peut effectuer concerne les « événements de blocage ». Ce type de journalisation concerne le moment où CIDRAM bloque une requête, et peut être fourni sous trois formats différents :
+- Fichiers journaux lisibles par l'homme.
+- Fichiers journaux de style Apache.
+- Fichiers journaux sérialisés.
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+Un événement de blocage, journalisé sur un fichier journal lisible par un humain, ressemble généralement à ceci (à titre d'exemple) :
 
 ```
-ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
+ID : 1234
+La version du script : CIDRAM v1.6.0
+Date/Heure : Day, dd Mon 20xx hh:ii:ss +0000
+IP Adresse : x.x.x.x
+Nom d'hôte : dns.hostname.tld
+Signatures Compte : 1
+Signatures Référence : x.x.x.x/xx
+Raison Bloquée : Service de cloud ("Nom de réseau", Lxx:Fx, [XX])!
+Agent Utilisateur : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+Reconstruite URI : http://your-site.tld/index.php
+État reCAPTCHA : Activée.
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+Ce même événement de blocage, journalisé à un fichier journal de style Apache, ressemblerait à ceci :
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+Un événement blocage journalisé inclut généralement les informations suivantes :
+- Un numéro d'identification référençant l'événement de blocage.
+- La version de CIDRAM actuellement utilisée.
+- La date et l'heure auxquelles l'événement de blocage s'est produit.
+- L'adresse IP de la requête bloquée.
+- Le nom d'hôte de l'adresse IP de la requête bloquée (si disponible).
+- Le nombre de signatures déclenchées par la requête.
+- Références aux signatures déclenchées.
+- Références aux raisons de l'événement de blocage et à certaines informations de débogage de base liées.
+- L'agent utilisateur de la requête bloquée (comment l'entité requérante s'est identifiée à la requête).
+- Une reconstruction de l'identifiant de la ressource initialement demandée.
+- L'état reCAPTCHA pour la requête en cours (le cas échéant).
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+Les directives de configuration responsables de ce type de journalisation, et pour chacun des trois formats disponibles, sont :
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Lorsque ces directives sont laissées vides, ce type de journalisation reste désactivé.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 JOURNALISATION reCAPTCHA
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+Ce type de journalisation concerne spécifiquement les instances reCAPTCHA, et se produit uniquement lorsqu'un utilisateur tente de terminer une instance reCAPTCHA.
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+Une entrée de journal reCAPTCHA contient l'adresse IP de l'utilisateur qui tente de terminer une instance reCAPTCHA, la date et l'heure auxquelles la tentative s'est produite, et l'état reCAPTCHA. Une entrée de journal reCAPTCHA ressemble généralement à ceci (à titre d'exemple) :
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+IP Adresse : x.x.x.x - Date/Heure : Day, dd Mon 20xx hh:ii:ss +0000 - État reCAPTCHA : Passé !
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+La directive de configuration responsable de la journalisation reCAPTCHA est :
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 JOURNALISATION FRONTALE
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Ce type de journalisation concerne les tentatives de connexion frontale, et se produit uniquement lorsqu'un utilisateur tente de se connecter à l'accès frontal (en supposant que l'accès frontal est activé).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Une entrée de journal frontal contient l'adresse IP de l'utilisateur qui tente de se connecter, la date et l'heure de la tentative, et les résultats de la tentative (connecté avec succès ou sans succès). Une entrée de journal frontal ressemble généralement à ceci (à titre d'exemple) :
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Connecté.
 ```
 
-The configuration directive responsible for front-end logging is:
+La directive de configuration responsable de la journalisation frontale est :
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ROTATION DES JOURNAUX
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Vous voudrez peut-être purger les journaux après un certain temps, ou peut être requis de le faire par la loi (c'est à dire, la durée légale de la conservation des journaux peut être limitée par la loi). Vous pouvez y parvenir en incluant des marqueurs de date/heure dans les noms de vos fichiers journaux (par exemple, `{yyyy}-{mm}-{dd}.log`), conformément à la configuration de votre package, puis en activant la rotation des journaux (la rotation des journaux vous permet d'effectuer des actions sur les fichiers journaux lorsque les limites spécifiées sont dépassées).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Par exemple : Si j'étais légalement tenu de supprimer les journaux après 30 jours, je pourrais spécifier `{dd}.log` dans les noms de mes fichiers journaux (`{dd}` représente les jours), définir la valeur de `log_rotation_limit` à 30, et définir la valeur de `log_rotation_action` à `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+À l'inverse, si vous devez conserver les journaux pendant une période prolongée, vous ne pouvez pas utiliser la rotation des journaux, ou vous pouvez définir la valeur de `log_rotation_action` à `Archive`, pour compresser les fichiers journaux, réduisant ainsi la quantité totale d'espace disque qu'ils occupent.
 
 *Directives de configuration pertinentes :*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 TRONCATION DES JOURNAUX
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Il est également possible de tronquer des fichiers journaux individuels lorsqu'ils dépassent une certaine taille, si c'est quelque chose que vous pourriez avoir besoin ou que vous voulez faire.
 
 *Directives de configuration pertinentes :*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 PSEUDONYMISATION D'ADRESSE IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Si vous n'êtes pas familier avec le terme « pseudonymisation », les ressources suivantes peuvent vous aider à l'expliquer en détail :
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+- [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 
 In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
 

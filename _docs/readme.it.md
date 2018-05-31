@@ -159,8 +159,8 @@ File | Descrizione
 /vault/fe_assets/_ip_aggregator.html | Un modello HTML per l'aggregatore IP.
 /vault/fe_assets/_ip_test.html | Un modello HTML per la pagina per il test IP.
 /vault/fe_assets/_ip_test_row.html | Un modello HTML per la pagina per il test IP.
-/vault/fe_assets/_ip_tracking.html | Un modello HTML per la pagina di monitoraggio IP.
-/vault/fe_assets/_ip_tracking_row.html | Un modello HTML per la pagina di monitoraggio IP.
+/vault/fe_assets/_ip_tracking.html | Un modello HTML pagina per il tracciamento IP.
+/vault/fe_assets/_ip_tracking_row.html | Un modello HTML pagina per il tracciamento IP.
 /vault/fe_assets/_login.html | Un modello HTML per il front-end pagina di accedi.
 /vault/fe_assets/_logs.html | Un modello HTML per il front-end pagina per i file di log.
 /vault/fe_assets/_nav_complete_access.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso completo.
@@ -380,7 +380,7 @@ Generale configurazione per CIDRAM.
 - Un elenco delimitato con virgole di server DNS da utilizzare per le ricerche dei nomi di host. Predefinito = "8.8.8.8,8.8.4.4" (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 "search_engine_verification"
-- Tentativo di verificare le richieste dai motori di ricerca? Verifica motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.
+- Tentativo di verificare le richieste dai motori di ricerca? Verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.
 
 "protect_frontend"
 - Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.
@@ -441,10 +441,10 @@ Configurazione per firme.
 - Un elenco di file moduli da caricare dopo l'esecuzione delle firme IPv4/IPv6, delimitati da virgole.
 
 "default_tracktime"
-- Quanti secondi per monitorare IP vietati dai moduli. Predefinito = 604800 (1 settimana).
+- Quanti secondi per tracciare IP vietati dai moduli. Predefinito = 604800 (1 settimana).
 
 "infraction_limit"
-- Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dal monitoraggio IP. Predefinito = 10.
+- Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dalle tracciamento IP. Predefinito = 10.
 
 "track_mode"
 - Quando devono infrazioni essere contati? False = Quando IP sono bloccati da moduli. True = Quando IP sono bloccati per qualsiasi motivo.
@@ -1002,7 +1002,7 @@ Sì. Una API è incorporata nel front-end per interagire con la pagina degli agg
 
 #### <a name="WHAT_ARE_INFRACTIONS"></a>Cosa sono le "infrazioni"?
 
-Le "infrazioni" determinano quando un IP che non è ancora bloccato da uno specifico file di firma dovrebbe iniziare a essere bloccato per eventuali richieste future, e sono strettamente associati al monitoraggio IP. Esistono alcune funzionalità e moduli che consentono di bloccare le richieste per motivi diversi dall'IP di origine (ad esempio la presenza di agenti utente [user agents] corrispondenti a spambots o hacktools, richieste pericolose, DNS falsificato e così via), e quando ciò accade, può verificarsi una "infrazione". Forniscono un modo per identificare gli indirizzi IP che corrispondono a richieste indesiderate che potrebbero non essere ancora bloccate da alcun file di firma specifico. Le infrazioni di solito corrispondono 1-a-1 con il numero di volte in cui un IP è bloccato, ma non sempre (eventi di blocco gravi possono incorrere in un valore di infrazione maggiore di uno, e se "track_mode" è false, le infrazioni non si verificano per gli eventi di blocco innescati esclusivamente dai file delle firme).
+Le "infrazioni" determinano quando un IP che non è ancora bloccato da uno specifico file di firma dovrebbe iniziare a essere bloccato per eventuali richieste future, e sono strettamente associati al tracciamento IP. Esistono alcune funzionalità e moduli che consentono di bloccare le richieste per motivi diversi dall'IP di origine (ad esempio la presenza di agenti utente [user agents] corrispondenti a spambots o hacktools, richieste pericolose, DNS falsificato e così via), e quando ciò accade, può verificarsi una "infrazione". Forniscono un modo per identificare gli indirizzi IP che corrispondono a richieste indesiderate che potrebbero non essere ancora bloccate da alcun file di firma specifico. Le infrazioni di solito corrispondono 1-a-1 con il numero di volte in cui un IP è bloccato, ma non sempre (eventi di blocco gravi possono incorrere in un valore di infrazione maggiore di uno, e se "track_mode" è false, le infrazioni non si verificano per gli eventi di blocco innescati esclusivamente dai file delle firme).
 
 #### <a name="BLOCK_HOSTNAMES"></a>CIDRAM può bloccare i nomi degli host?
 
@@ -1066,9 +1066,9 @@ Il modo in cui queste informazioni possono essere utilizzate da queste terze par
 
 Ai fini della trasparenza, il tipo di informazioni condivise e con chi è descritto di seguito.
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### 11.2.0 RICERCA DEL NOME HOST
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+Se si utilizzano funzioni o moduli destinati a funzionare con nomi host (come ad esempio il "modulo bloccante di cattivi host", "tor project exit nodes block module", o la "verifica dei motori di ricerca"), CIDRAM deve essere in grado di ottenere in qualche modo il nome host delle richieste in entrata. In genere, lo fa richiedendo il nome host dell'indirizzo IP delle richieste in entrata da un server DNS o richiedendo le informazioni tramite la funzionalità fornita dal sistema su cui è installato CIDRAM (questo in genere viene definito come un "ricerca del nome host"). I server DNS definiti per impostazione predefinita appartengono al servizio di [Google DNS](https://dns.google.com/) (ma possono essere facilmente modificati tramite la configurazione). I servizi esatti comunicati sono configurabili, e dipendono dalla modalità di configurazione del pacchetto. Nel caso in cui si utilizzi la funzionalità fornita dal sistema in cui è installato CIDRAM, è necessario contattare l'amministratore di sistema per determinare quali percorsi utilizzano le ricerche del nome host. Le ricerche del nome host possono essere prevenute in CIDRAM evitando i moduli interessati o modificando la configurazione del pacchetto in base alle proprie esigenze.
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `default_dns`
@@ -1078,213 +1078,212 @@ If you use any features or modules intended to work with hostnames (such as the 
 
 ##### 11.2.1 WEBFONTS
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Alcuni temi personalizzati, nonché l'interfaccia utente standard ("UI") per il front-end CIDRAM, e la pagina "Accesso Negato", possono utilizzare i webfonts per motivi estetici. I webfonts sono disabilitati per impostazione predefinita, ma quando abilitati, avviene una comunicazione diretta tra il browser dell'utente e il servizio che ospita i webfonts. Ciò potrebbe implicare la comunicazione di informazioni quali l'indirizzo IP dell'utente, l'agente utente, il sistema operativo, e altri dettagli disponibili per la richiesta. La maggior parte di questi webfonts è ospitata dal servizio [Google Fonts](https://fonts.google.com/).
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 VERIFICA DEI MOTORI DI RICERCA
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+Quando la verifica dei motori di ricerca è abilitata, CIDRAM tenta di eseguire "inoltrare ricerche DNS" per verificare se le richieste che provengono presumibilmente dai motori di ricerca sono autentiche. Per fare ciò, utilizza il servizio [Google DNS](https://dns.google.com/) per tentare di risolvere gli indirizzi IP dai nomi host di queste richieste in entrata (in questo processo, i nomi host di queste richieste in entrata sono condivisi con il servizio).
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAM supporta facoltativamente [Google reCAPTCHA](https://www.google.com/recaptcha/), fornendo agli utenti un mezzo per aggirare la pagina "Accesso Negato" completando un'istanza di reCAPTCHA (ulteriori informazioni su questa funzione sono descritte in precedenza nella documentazione, in particolare nella sezione di configurazione). Google reCAPTCHA richiede le chiavi API per funzionare correttamente, ed è quindi disabilitata per impostazione predefinita. Può essere abilitato definendo le chiavi API richieste nella configurazione del pacchetto. Se abilitato, si verifica una comunicazione diretta tra il browser dell'utente e il servizio reCAPTCHA. Ciò potrebbe implicare la comunicazione di informazioni quali l'indirizzo IP dell'utente, l'agente utente, il sistema operativo, e altri dettagli disponibili per la richiesta. L'indirizzo IP dell'utente può anche essere condiviso nelle comunicazioni tra CIDRAM e il servizio reCAPTCHA quando si verifica la validità di un'istanza di reCAPTCHA e si verifica se è stata completata correttamente.
 
 *Direttive di configurazione rilevanti: Qualsiasi cosa elencata nella categoria di configurazione "recaptcha".*
 
 ##### 11.2.4 STOP FORUM SPAM
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/) è un servizio fantastico, disponibile gratuitamente che può aiutare a proteggere forum, blog, e siti Web dagli spammer. Lo fa fornendo un database di spammer conosciuti e un'API che può essere sfruttata per verificare se un indirizzo IP, un nome utente, o un indirizzo e-mail sono elencati nel suo database.
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+CIDRAM fornisce un modulo opzionale che sfrutta questa API per verificare se l'indirizzo IP delle richieste in entrata appartiene a un sospetto spammer. Il modulo non è installato per impostazione predefinita, ma se si sceglie di installarlo, gli indirizzi IP dell'utente possono essere condivisi con l'API Stop Forum Spam in conformità con lo scopo previsto del modulo. Quando il modulo è installato, CIDRAM comunica con questa API ogni volta che una richiesta in entrata richiede una risorsa riconosciuta da CIDRAM come un tipo di risorsa spesso bersagliato dagli spammer (come pagine di login, pagine di registrazione, pagine di verifica e-mail, moduli di commento, ecc).
 
-#### 11.3 LOGGING
+#### 11.3 REGISTRAZIONE
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+La registrazione è una parte importante di CIDRAM per una serie di motivi. Potrebbe essere difficile diagnosticare e risolvere i falsi positivi quando gli eventi di blocco che li causano non vengono registrati. Senza registrare gli eventi di blocco, potrebbe essere difficile accertare esattamente quanto è performante CIDRAM in un particolare contesto, e potrebbe essere difficile determinare dove potrebbero essere le sue carenze, e quali modifiche potrebbero essere richieste alla sua configurazione o alle sue firme di conseguenza, affinché possa continuare a funzionare come previsto. Ciò nonostante, la registrazione potrebbe non essere auspicabile per tutti gli utenti, e rimane del tutto facoltativa. In CIDRAM, la registrazione è disabilitata per impostazione predefinita. Per abilitarlo, CIDRAM deve essere configurato di conseguenza.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Inoltre, se la registrazione è legalmente ammissibile, e nella misura in cui è legalmente ammissibile (ad esempio, i tipi di informazioni che possono essere registrati, per quanto tempo, e in quali circostanze), può variare, a seconda della giurisdizione e del contesto in cui è implementata la CIDRAM (ad esempio, se stai operando come individuo, come entità aziendale, e se commerciale o non commerciale). Potrebbe quindi essere utile leggere attentamente questa sezione.
 
-There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+Esistono diversi tipi di registrazione che CIDRAM può eseguire. Diversi tipi di registrazione coinvolgono diversi tipi di informazioni, per diversi motivi.
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 EVENTI DI BLOCCO
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+Il tipo principale di registrazione che CIDRAM può eseguire correla agli "eventi di blocco". Questo tipo di registrazione si riferisce a quando CIDRAM blocca una richiesta, e può essere fornita in tre formati diversi:
+- File di log leggibili dall'uomo.
+- File di log in stile Apache.
+- File di log serializzati.
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+Un evento di blocco, registrato in un file di log leggibile dall'uomo, in genere assomiglia a qualcosa come questo (ad esempio):
 
 ```
 ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
+Versione dello script: CIDRAM v1.6.0
+Data/Tempo: Day, dd Mon 20xx hh:ii:ss +0000
+Indirizzo IP: x.x.x.x
+Nome host: dns.hostname.tld
+Firme Conteggio: 1
+Firme Riferimento: x.x.x.x/xx
+Perché Bloccato: Servizio cloud ("Nome della rete", Lxx:Fx, [XX])!
 User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
+URI Ricostruito: http://your-site.tld/index.php
+Stato reCAPTCHA: Attivato.
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+Lo stesso evento di blocco, registrato in un file di log in stile Apache, sarebbe simile a questo:
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+Un evento di blocco registrato include in genere le seguenti informazioni:
+- Un numero ID che fa riferimento all'evento di blocco.
+- La versione di CIDRAM attualmente in uso.
+- La data e l'ora in cui si è verificato l'evento di blocco.
+- L'indirizzo IP della richiesta bloccata.
+- Il nome host dell'indirizzo IP della richiesta bloccata (se disponibile).
+- Il numero di firme innescate dalla richiesta.
+- Riferimenti alle firme innescate.
+- Riferimenti ai motivi dell'evento di blocco e alcune informazioni di debug di base correlate.
+- L'agente utente della richiesta bloccata (cioè, come l'entità richiedente si è identificata nella richiesta).
+- Una ricostruzione dell'identificatore per la risorsa originariamente richiesta.
+- Lo stato reCAPTCHA per la richiesta corrente (se pertinente).
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+Le direttive di configurazione responsabili di questo tipo di registrazione, e per ciascuno dei tre formati disponibili sono:
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Quando queste direttive vengono lasciate vuote, questo tipo di registrazione rimarrà disabilitato.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 REGISTRI DI reCAPTCHA
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+Questo tipo di registrazione è specifico per le istanze reCAPTCHA, e si verifica solo quando un utente tenta di completare un'istanza di reCAPTCHA.
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+Una voce di registro reCAPTCHA contiene l'indirizzo IP dell'utente che tenta di completare un'istanza di reCAPTCHA, la data e l'ora in cui si è verificato il tentativo, e lo stato reCAPTCHA. Una voce di registro reCAPTCHA in genere assomiglia a qualcosa come questo (ad esempio):
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+Indirizzo IP: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - Stato reCAPTCHA: Successo!
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+La direttiva di configurazione responsabile delle registri di reCAPTCHA è:
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 REGISTRI DEL FRONT-END
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Questo tipo di registrazione si riferisce ai tenta di accedere al front-end, e si verifica solo quando un utente tenta di accedere al front-end (supponendo che l'accesso front-end sia abilitato).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Una voce di registro front-end contiene l'indirizzo IP dell'utente che tenta di accedere, la data e l'ora in cui si è verificato il tentativo, e i risultati del tentativo (se il tentativo è fallito o è riuscito). Una voce di registro front-end in genere assomiglia a qualcosa come questo (ad esempio):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Connesso.
 ```
 
-The configuration directive responsible for front-end logging is:
+La direttiva di configurazione responsabile delle registri di front-end è:
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ROTAZIONE DEL REGISTRO
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Forse vuoi eliminare i log dopo un certo periodo di tempo, o forse sei obbligato a farlo per legge (cioè, la quantità di tempo per cui è legalmente ammissibile per te conservare i log può essere limitata dalla legge). È possibile ottenere ciò includendo indicatori di data/ora nei nomi dei file di log come specificato dalla configurazione del pacchetto (per esempio, `{yyyy}-{mm}-{dd}.log`), e quindi abilitando la rotazione del registro (la rotazione del registro permette di eseguire alcune azioni sui file di log quando vengono superati i limiti specificati).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Per esempio: Se dovessi legalmente richiesto di eliminare i log dopo 30 giorni, potrei specificare `{dd}.log` nei nomi dei miei file di log (`{dd}` rappresenta i giorni), impostare il valore di `log_rotation_limit` su 30, e impostare il valore di `log_rotation_action` su `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Al contrario, se è necessario conservare i log per un lungo periodo di tempo, potresti scegliere di non utilizzare la rotazione del registro affatto, oppure puoi impostare il valore di `log_rotation_action` su `Archive`, per comprimere i file di log, riducendo in tal modo la quantità totale di spazio su disco che occupano.
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 TRONCAMENTO DEL REGISTRO
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+È anche possibile troncare i singoli file di registro quando superano una dimensione predeterminata, se questo è qualcosa che potrebbe essere necessario o desiderare.
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 PSEUDONIMIZZAZIONE DELL'INDIRIZZO IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+Innanzitutto, se non hai familiarità con il termine "pseudonimizzazione", le seguenti risorse possono aiutarti a spiegarlo in dettaglio:
+- [[ipsoa.it] Crittografia e pseudonimizzazione nel GDPR](http://www.ipsoa.it/documents/lavoro-e-previdenza/rapporto-di-lavoro/quotidiano/2018/03/17/crittografia-pseudonimizzazione-gdpr)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+In alcune circostanze, potrebbe essere richiesto per legge di anonimizzare o pseudonimizzare qualsiasi informazione personale raccolta, elaborata, o memorizzata. Sebbene questo concetto sia esistito già da un po' di tempo, GDPR/DSGVO menziona in particolare, e in particolare incoraggia la "pseudonimizzazione".
 
-CIDRAM is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When CIDRAM pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+CIDRAM è in grado di pseudonimizzare gli indirizzi IP durante la registrazione, se questo è qualcosa che potresti aver bisogno o vuoi fare. Quando gli indirizzi IP sono pseudonimizzati da CIDRAM, quando registrati, l'ottetto finale degli indirizzi IPv4 e tutto ciò che segue la seconda parte degli indirizzi IPv6 è rappresentato da una "x" (arrotondare efficacemente gli indirizzi IPv4 all'indirizzo iniziale della 24a sottorete in cui fanno fattore e gli indirizzi IPv6 all'indirizzo iniziale della 32a sottorete a cui fanno fattore).
 
-*Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
+*Nota: Il processo di pseudonimizzazione degli indirizzi IP in CIDRAM non influisce sulla funzionalità di tracciamento IP in CIDRAM. Se questo è un problema per te, potrebbe essere meglio disabilitare completamente il tracciamento IP. Questo può essere ottenuto impostando `track_mode` su `false` ed evitando qualsiasi modulo.*
 
 *Direttive di configurazione rilevanti:*
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 OMETTENDO LE INFORMAZIONI DEL REGISTRO
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+Se si desidera fare un ulteriore passo avanti impedendo che determinati tipi di informazioni vengano registrati interamente, è anche possibile farlo. CIDRAM fornisce direttive di configurazione per controllare se gli indirizzi IP, i nomi host, e gli agenti utente sono inclusi nei registri. Per impostazione predefinita, tutti e tre questi punti dati sono inclusi nei registri, se disponibili. L'impostazione di una qualsiasi di queste direttive di configurazione su `true` ometterà le informazioni corrispondenti dai registri.
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+*Nota: Non c'è motivo di pseudonimizzare gli indirizzi IP quando li si omette completamente dai log.*
 
 *Direttive di configurazione rilevanti:*
 - `legal` -> `omit_ip`
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 STATISTICA
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM è facoltativamente in grado di tracciare statistiche come il numero totale di eventi di blocco o istanze di reCAPTCHA che si sono verificati da un certo punto nel tempo. Questa funzione è disabilitata per impostazione predefinita, ma può essere abilitata tramite la configurazione del pacchetto. Questa funzione traccia solo il numero totale di eventi verificatisi e non include alcuna informazione su eventi specifici (e quindi non dovrebbe essere considerata come PII).
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 CRITTOGRAFIA
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM non crittografa la sua cache o alcuna informazione di registro. La [crittografia](https://it.wikipedia.org/wiki/Crittografia) della cache e del registro potrebbe essere introdotta in futuro, ma al momento non sono previsti piani specifici. Se sei preoccupato per le terze parti non autorizzate che accedono a parti di CIDRAM che potrebbero contenere informazioni personali o riservate quali la cache o i registri, ti consiglio di non installare CIDRAM in una posizione accessibile al pubblico (per esempio, installare CIDRAM al di fuori della cartella `public_html` standard o equivalente di quella disponibile per la maggior parte dei server Web standard) e che le autorizzazioni appropriatamente restrittive siano applicate per la cartella in cui risiede (in particolare, per la cartella del vault). Se ciò non è sufficiente per risolvere i tuoi dubbi, allora configura CIDRAM in modo tale che i tipi di informazioni che causano i tuoi dubbi non saranno raccolti o registrati in primo luogo (ad esempio, di disabilitando la registrazione).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+CIDRAM imposta i [cookie](https://it.wikipedia.org/wiki/Cookie) in due punti nella sua base di codice. Innanzitutto, quando un utente completa con successo un'istanza di reCAPTCHA (e supponendo che `lockuser` sia impostato su `true`), CIDRAM imposta un cookie per essere in grado di ricordare per le richieste successive che l'utente ha già completato un'istanza di reCAPTCHA, in modo che non sia necessario chiedere continuamente all'utente di completare un'istanza di reCAPTCHA sulle richieste successive. In secondo luogo, quando un utente accede con successo al front-end, CIDRAM imposta un cookie per poter ricordare all'utente le richieste successive (cioè, i cookie vengono utilizzati per autenticare l'utente in una sessione di accesso).
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+In entrambi i casi, gli avvertimenti sui cookie vengono visualizzati in modo prominenti (se applicabile), avvisando l'utente che i cookie verranno impostati se si impegnano nell'azioni in questione. I cookie non sono impostati in altri punti della base di codice.
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+*Nota: La particolare implementazione dell'API "invisible" per reCAPTCHA in CIDRAM potrebbe essere incompatibile con le leggi sui cookie in alcune giurisdizioni, e dovrebbe essere evitato da qualsiasi sito web soggetto a tali leggi. Si potrebbe preferire l'utilizzo dell'API "V2", o semplicemente la disattivazione completa di reCAPTCHA.*
 
 *Direttive di configurazione rilevanti:*
 - `general` -> `disable_frontend`
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 MARKETING E PUBBLICITÀ
 
-CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+CIDRAM non raccoglie né elabora alcuna informazione per scopi di marketing o pubblicitari, e non vende né guadagna da alcuna informazione raccolta o registrata. CIDRAM non è un'impresa commerciale, né è collegata ad alcun interesse commerciale, quindi fare queste cose non avrebbe alcun senso. Questo è stato il caso dall'inizio del progetto e continua ad esserlo oggi. Inoltre, fare queste cose sarebbe controproducente per lo spirito e lo scopo del progetto nel suo insieme e, finché continuerò a mantenere il progetto, non accadrà mai.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 POLITICA SULLA PRIVACY
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+In alcune circostanze, potresti essere legalmente obbligato a mostrare chiaramente un link alla tua politica sulla privacy su tutte le pagine e sezioni del tuo sito web. Questo può essere importante come mezzo per garantire che gli utenti siano ben informati delle tue esatte pratiche sulla privacy, i tipi di Informazioni personali che raccogli, e come intendi usarli. Per poter includere tale link nella pagina "Accesso Negato" di CIDRAM, viene fornita una direttiva di configurazione per specificare l'URL della tua politica sulla privacy.
 
-*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+*Nota: Si raccomanda vivamente che la pagina della politica sulla privacy non sia posizionata dietro la protezione di CIDRAM. Se CIDRAM protegge la tua politica sulla privacy, e un utente bloccato da CIDRAM fa clic sul link alla tua politica sulla privacy, verrà semplicemente bloccato di nuovo e non sarà in grado di vedere la tua politica sulla privacy. Idealmente, dovresti collegare a una copia statica della tua politica sulla privacy, come una pagina HTML o un file di testo semplice che non è protetto da CIDRAM.*
 
 *Direttive di configurazione rilevanti:*
 - `legal` -> `privacy_policy`
 
 #### 11.7 GDPR/DSGVO
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+Il regolamento generale sulla protezione dei dati (GDPR) è un regolamento dell'Unione europea, che entrerà in vigore il 25 maggio 2018. L'obiettivo principale del regolamento è di dare il controllo dei cittadini e dei residenti dell'UE sui propri dati personali, e di unificare il regolamento all'interno dell'UE in materia di privacy e dati personali.
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+Il regolamento contiene disposizioni specifiche relative al trattamento di "[dati personali](https://it.wikipedia.org/wiki/Dati_personali)" (PII) di qualsiasi "interessato" (qualsiasi persona naturale identificata o identificabile) dall'UE o all'interno dell'UE. Per essere conformi al regolamento, le "imprese" (come definite dal regolamento), e tutti i sistemi e processi rilevanti devono implementare "[privacy by design](https://it.wikipedia.org/wiki/Privacy_by_design)" per impostazione predefinita, deve utilizzare le impostazioni di privacy più alte possibili, deve implementare le necessarie salvaguardie per qualsiasi informazione archiviata o elaborata (inclusa, ma non limitata a, l'implementazione della pseudonimizzazione o la completa anonimizzazione dei dati), deve dichiarare in modo chiaro e inequivocabile i tipi di dati che raccolgono, come li elaborano, per quali ragioni, per quanto tempo lo conservano, e se condividono questi dati con terze parti, i tipi di dati condivisi con terze parti, come, perché, e così via.
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+I dati non possono essere elaborati a meno che non vi sia una base legale per farlo, come definito dal regolamento. In generale, ciò significa che, al fine di elaborare i dati di un interessati su base legale, deve essere fatto in conformità con gli obblighi legali, o fatto solo dopo il consenso esplicito, ben informato, e non ambiguo è stato ottenuto dall'interessato.
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+Poiché gli aspetti del regolamento possono evolversi nel tempo, al fine di evitare la propagazione di informazioni obsolete, potrebbe essere meglio conoscere il regolamento da una fonte autorevole, al contrario di includere semplicemente le informazioni rilevanti qui nella documentazione del pacchetto (che potrebbe diventare obsoleto con l'evoluzione del regolamento).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
-- [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
+[EUR-Lex](https://eur-lex.europa.eu/) (una parte del sito web ufficiale dell'Unione europea che fornisce informazioni sul diritto dell'UE) fornisce ampie informazioni su GDPR/DSGVO, disponibile in 24 lingue diverse (al momento della stesura di questo documento), e disponibile per il download in formato PDF. Consiglio vivamente di leggere le informazioni che forniscono, per saperne di più su GDPR/DSGVO:
+- [REGOLAMENTO (UE) 2016/679 DEL PARLAMENTO EUROPEO E DEL CONSIGLIO](https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=celex:32016R0679)
 
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
+In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSGVO su Wikipedia:
+- [Regolamento generale sulla protezione dei dati](https://it.wikipedia.org/wiki/Regolamento_generale_sulla_protezione_dei_dati)
 
 ---
 
 
-Ultimo Aggiornamento: 26 Maggio 2018 (2018.05.26).
+Ultimo Aggiornamento: 1 Giugno 2018 (2018.06.01).

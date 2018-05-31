@@ -1076,7 +1076,7 @@ If you use any features or modules intended to work with hostnames (such as the 
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
-##### 11.2.1 WEBFONTS
+##### 11.2.1 ВЕБ ФОНТЫ
 
 Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
 
@@ -1102,7 +1102,7 @@ CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypa
 
 CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
 
-#### 11.3 LOGGING
+#### 11.3 ЖУРНАЛОВ
 
 Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
@@ -1110,7 +1110,7 @@ Additionally, whether logging is legally permissible, and to the extent that it 
 
 There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 БЛОКИРОВАТЬ СОБЫТИЯ
 
 The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
 - Human readable logfiles.
@@ -1159,7 +1159,7 @@ The configuration directives responsible for this type of logging, and for each 
 
 When these directives are left empty, this type of logging will remain disabled.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 reCAPTCHA ЖУРНАЛОВ
 
 This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
 
@@ -1172,7 +1172,7 @@ IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA Sta
 The configuration directive responsible for reCAPTCHA logging is:
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 ФРОНТЕНД ЖУРНАЛОВ
 
 This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
 
@@ -1185,7 +1185,7 @@ x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 The configuration directive responsible for front-end logging is:
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ВРАЩЕНИЕ ЖУРНАЛА
 
 You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
 
@@ -1197,14 +1197,14 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 УСЕЧЕНИЕ ЖУРНАЛА
 
 It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 ПСЕВДОНИФИКАЦИЯ IP-АДРЕСА
 
 Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
@@ -1220,7 +1220,7 @@ CIDRAM is able to pseudonymise IP addresses when logging them, if this is someth
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 ОПУСКАЯ ИНФОРМАЦИЮ ЖУРНАЛА
 
 If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
 
@@ -1231,18 +1231,18 @@ If you want to take it a step further by preventing specific types of informatio
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 СТАТИСТИКА
 
 CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 ШИФРОВАНИЕ
 
 CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### 11.4 КУКИ
 
 CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
 
@@ -1255,11 +1255,11 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 МАРКЕТИНГ И РЕКЛАМА
 
 CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
 
 In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
 
@@ -1287,4 +1287,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Последнее обновление: 26 Май 2018 (2018.05.26).
+Последнее обновление: 1 Июнь 2018 (2018.06.01).

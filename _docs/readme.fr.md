@@ -1189,7 +1189,7 @@ La directive de configuration responsable de la journalisation frontale est :
 
 Vous voudrez peut-être purger les journaux après un certain temps, ou peut être requis de le faire par la loi (c'est à dire, la durée légale de la conservation des journaux peut être limitée par la loi). Vous pouvez y parvenir en incluant des marqueurs de date/heure dans les noms de vos fichiers journaux (par exemple, `{yyyy}-{mm}-{dd}.log`), conformément à la configuration de votre package, puis en activant la rotation des journaux (la rotation des journaux vous permet d'effectuer des actions sur les fichiers journaux lorsque les limites spécifiées sont dépassées).
 
-Par exemple : Si j'étais légalement tenu de supprimer les journaux après 30 jours, je pourrais spécifier `{dd}.log` dans les noms de mes fichiers journaux (`{dd}` représente les jours), définir la valeur de `log_rotation_limit` à 30, et définir la valeur de `log_rotation_action` à `Delete`.
+Par exemple : Si j'étais légalement requis de supprimer les journaux après 30 jours, je pourrais spécifier `{dd}.log` dans les noms de mes fichiers journaux (`{dd}` représente les jours), définir la valeur de `log_rotation_limit` à 30, et définir la valeur de `log_rotation_action` à `Delete`.
 
 À l'inverse, si vous devez conserver les journaux pendant une période prolongée, vous ne pouvez pas utiliser la rotation des journaux, ou vous pouvez définir la valeur de `log_rotation_action` à `Archive`, pour compresser les fichiers journaux, réduisant ainsi la quantité totale d'espace disque qu'ils occupent.
 
@@ -1207,63 +1207,63 @@ Il est également possible de tronquer des fichiers journaux individuels lorsqu'
 ##### 11.3.5 PSEUDONYMISATION D'ADRESSE IP
 
 Si vous n'êtes pas familier avec le terme « pseudonymisation », les ressources suivantes peuvent vous aider à l'expliquer en détail :
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
+- [[les-infostrateges.com] RGPD : entre anonymisation et pseudonymisation](http://www.les-infostrateges.com/actu/18012505/rgpd-entre-anonymisation-et-pseudonymisation)
 - [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+Dans certaines circonstances, vous pouvez être légalement requis d'anonymiser ou de pseudonymiser toute PII collectée, traitée, ou stockée. Bien que ce concept existe depuis longtemps, le GDPR/DSGVO mentionne notamment, et encourage spécifiquement la «pseudonymisation».
 
-CIDRAM is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When CIDRAM pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+CIDRAM est capable de pseudonymiser les adresses IP lors de la connexion, si c'est quelque chose que vous pourriez avoir besoin ou que vous voulez faire. Lorsque CIDRAM pseudonymise les adresses IP, lorsqu'il est connecté, l'octet final des adresses IPv4, et tout ce qui suit la deuxième partie des adresses IPv6 est représenté par un « x » (arrondir efficacement les adresses IPv4 à l'adresse initiale du 24ème sous-réseau dans lequel elles sont factorisées, et les adresses IPv6 à l'adresse initiale du 32ème sous-réseau dans lequel elles sont factorisées).
 
-*Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
+*Remarque : Le processus dans CIDRAM pour la pseudonymisation des adresses IP n'affecte pas la fonction de suivi des adresses IP dans CIDRAM. Si cela pour vous pose un problème, il est préférable de désactiver entièrement le suivi des adresses IP. Cela peut être réalisé en mettre la valeur de `track_mode` à `false`, et en évitant les modules.*
 
 *Directives de configuration pertinentes :*
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 OMETTRE DES INFORMATIONS DE JOURNAL
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+Si vous voulez aller plus loin en empêchant la journalisation complète de certains types d'informations, c'est également possible. CIDRAM fournit des directives de configuration pour contrôler si les adresses IP, les noms d'hôtes, et les agents utilisateurs sont inclus dans les journaux. Par défaut, ces trois points de données sont inclus dans les journaux lorsqu'ils sont disponibles. La définition de l'une de ces directives de configuration sur `true` omettra les informations correspondantes des journaux.
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+*Remarque : Il n'y a aucune raison de pseudonymiser les adresses IP quand vous les omettez complètement dans les journaux.*
 
 *Directives de configuration pertinentes :*
 - `legal` -> `omit_ip`
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 STATISTIQUES
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM est facultativement capable de suivre des statistiques telles que le nombre total d'événements de blocage ou les instances de reCAPTCHA qui ont eu lieu depuis un certain moment. Cette fonctionnalité est désactivée par défaut, mais peut être activée via la configuration du package. Cette fonctionnalité suit uniquement le nombre total d'événements survenus et n'inclut aucune information sur des événements spécifiques (et par conséquent, ne devrait pas être considéré comme les PII).
 
 *Directives de configuration pertinentes :*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 CRYPTAGE
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM ne crypte pas son cache ou aucune information de journal. Le [cryptage](https://fr.wikipedia.org/wiki/Chiffrement) des cache et des journaux peuvent être introduits à l'avenir, mais il n'existe actuellement aucun plan spécifique. Si vous craignez que des tiers non autorisés puissent accéder à des parties de CIDRAM pouvant contenir des informations personnelles/sensibles telles que son cache ou ses journaux, je recommanderais que CIDRAM ne soit pas installé dans un endroit accessible au public (par exemple, installer CIDRAM en dehors du répertoire `public_html` standard ou équivalent disponible pour la plupart des serveurs web standard) et et que des autorisations appropriées restrictives soient appliquées pour le répertoire où il réside (en particulier, pour le répertoire vault). Si ce n'est pas suffisant pour répondre à vos préoccupations, configurez CIDRAM de telle sorte que les types d'informations à l'origine de vos préoccupations ne soient pas collectées ou journalisées en premier lieu (tel que en désactivant la journalisation).
 
 #### 11.4 COOKIES
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+CIDRAM définit les [cookies](https://fr.wikipedia.org/wiki/Cookie_(informatique)) à deux points dans son code. Premièrement, lorsqu'un utilisateur termine avec succès une instance de reCAPTCHA (et en supposant que `lockuser` est mis à `true`), CIDRAM définit un cookie afin de pouvoir se souvenir pour les requêtes suivantes que l'utilisateur a déjà terminé une instance de reCAPTCHA, de sorte qu'il n'aura pas besoin de demander continuellement à l'utilisateur de terminer une instance de reCAPTCHA lors des requêtes suivantes. Deuxièmement, lorsqu'un utilisateur se connecte avec succès à l'accès frontal, CIDRAM définit un cookie afin de pouvoir se souvenir de l'utilisateur pour les demandes suivantes (c'est à dire, les cookies sont utilisés pour authentifier l'utilisateur à une session de connexion).
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+Dans les deux cas, les avertissements de cookie sont affichés en évidence (le cas échéant), avertissant l'utilisateur que les cookies seront définis s'ils s'engagent dans les actions correspondantes. Les cookies ne sont définis à aucun autre endroit du code.
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+*Remarque : La mise en œuvre particulière par CIDRAM de l'API « invisible » pour reCAPTCHA pourrait être incompatible avec les lois sur les cookies dans certaines juridictions, et devrait être évitée par tous les sites web soumis à ces lois. Opter pour l'utilisation de l'API « V2 » à la place, ou simplement désactiver complètement reCAPTCHA, peut être préférable.*
 
 *Directives de configuration pertinentes :*
 - `general` -> `disable_frontend`
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 COMMERCIALISATION ET PUBLICITÉ
 
-CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+CIDRAM ni collecte ni traite aucune information à des fins de commercialisation ou de publicité, et ni vend ni profite d'aucune information collectée ou journalisée. CIDRAM n'est pas une entreprise commerciale, et n'est pas lié à des intérêts commerciaux, donc faire ces choses n'aurait aucun sens. Cela a été le cas depuis le début du projet, et continue d'être le cas aujourd'hui. Aditionellement, faire ces choses serait contre-productif à l'esprit et à l'objectif du projet dans son ensemble, et aussi longtemps que je continuerai à maintenir le projet, cela n'arrivera jamais.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 POLITIQUE DE CONFIDENTIALITÉ
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+Dans certaines circonstances, vous pouvez être légalement tenu d'afficher clairement un lien vers votre politique de confidentialité sur toutes les pages et sections de votre site Web. Cela peut être important pour s'assurer que les utilisateurs sont bien informés de vos pratiques exactes de confidentialité, les types de PII que vous collectez, et comment vous avez l'intention de l'utiliser. Afin de pouvoir inclure un lien sur la page « Accès Refusé » de CIDRAM, une directive de configuration est fournie pour spécifier l'URL de votre politique de confidentialité.
 
-*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+*Remarque : Il est fortement recommandé que votre page de politique de confidentialité ne soit pas placée derrière la protection de CIDRAM. Si CIDRAM protège votre page de politique de confidentialité, et qu'un utilisateur bloqué par CIDRAM clique sur le lien de votre politique de confidentialité, il sera simplement à nouveau bloqué et ne pourra pas voir votre politique de confidentialité. Idéalement, vous devez créer un lien vers une copie statique de votre politique de confidentialité, telle qu'une page HTML, ou un fichier en texte brut qui n'est pas protégé par CIDRAM.*
 
 *Directives de configuration pertinentes :*
 - `legal` -> `privacy_policy`
@@ -1287,4 +1287,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 26 Mai 2018 (2018.05.26).
+Dernière mise à jour : 1 Juin 2018 (2018.06.01).

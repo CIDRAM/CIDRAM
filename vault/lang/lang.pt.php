@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2018.05.16).
+ * This file: Portuguese language data (last modified: 2018.05.31).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -48,7 +48,7 @@ $CIDRAM['lang']['click_here'] = 'clique aqui';
 $CIDRAM['lang']['denied'] = 'Acesso Negado!';
 $CIDRAM['lang']['fake_ua'] = '{ua} falso';
 $CIDRAM['lang']['field_datetime'] = 'Data/Hora: ';
-$CIDRAM['lang']['field_hostname'] = 'Nome de anfitrião: ';
+$CIDRAM['lang']['field_hostname'] = 'Nome do host: ';
 $CIDRAM['lang']['field_id'] = 'ID: ';
 $CIDRAM['lang']['field_ipaddr'] = 'Endereço IP: ';
 $CIDRAM['lang']['field_ipaddr_resolved'] = 'Endereço IP (Resolvido): ';
@@ -56,11 +56,11 @@ $CIDRAM['lang']['field_query'] = 'Query: ';
 $CIDRAM['lang']['field_rURI'] = 'Reconstruído URI: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'Estado reCAPTCHA: ';
 $CIDRAM['lang']['field_referrer'] = 'Referente: ';
-$CIDRAM['lang']['field_scriptversion'] = 'Versão do Roteiro: ';
-$CIDRAM['lang']['field_sigcount'] = 'Contagem da Assinaturas: ';
-$CIDRAM['lang']['field_sigref'] = 'Assinaturas Referência: ';
-$CIDRAM['lang']['field_ua'] = 'Agente de Usuário: ';
-$CIDRAM['lang']['field_whyreason'] = 'Razão Bloqueada: ';
+$CIDRAM['lang']['field_scriptversion'] = 'Versão do script: ';
+$CIDRAM['lang']['field_sigcount'] = 'Contagem da assinaturas: ';
+$CIDRAM['lang']['field_sigref'] = 'Assinaturas referência: ';
+$CIDRAM['lang']['field_ua'] = 'Agente do usuário: ';
+$CIDRAM['lang']['field_whyreason'] = 'Razão bloqueada: ';
 $CIDRAM['lang']['generated_by'] = 'Gerado por';
 $CIDRAM['lang']['preamble'] = '-- Fim de preâmbulo. Adicionar suas perguntas ou comentários após esta linha. --';
 $CIDRAM['lang']['recaptcha_cookie_warning'] = 'Nota: CIDRAM usa um cookie para lembrar quando os usuários completar o CAPTCHA. Ao completar o CAPTCHA, você dá o seu consentimento para um cookie para ser criado e armazenado pelo seu navegador.';

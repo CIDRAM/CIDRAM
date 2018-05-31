@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.05.19).
+ * This file: Italian language data for the front-end (last modified: 2018.05.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -74,7 +74,7 @@ $CIDRAM['lang']['config_general_maintenance_mode'] = 'Abilita la modalità di ma
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Numero massimo di tentativi di accesso.';
 $CIDRAM['lang']['config_general_numbers'] = 'Come preferisci che i numeri siano visualizzati? Seleziona l\'esempio che ti sembra più corretto.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.';
-$CIDRAM['lang']['config_general_search_engine_verification'] = 'Tentativo di verificare le richieste dai motori di ricerca? Verifica motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Tentativo di verificare le richieste dai motori di ricerca? Verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto.';
 $CIDRAM['lang']['config_general_statistics'] = 'Monitorare le statistiche di utilizzo di CIDRAM? True = Sì; False = No [Predefinito].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta.';
@@ -102,8 +102,8 @@ $CIDRAM['lang']['config_signatures_block_legal'] = 'Blocca i CIDR in risposta ag
 $CIDRAM['lang']['config_signatures_block_malware'] = 'Blocca gli IP associati al malware? Ciò include server C&C, macchine infette, macchine coinvolte nella distribuzione di malware, ecc.';
 $CIDRAM['lang']['config_signatures_block_proxies'] = 'Blocca i CIDR identificati come appartenente a servizi proxy o VPN? Se si richiede che gli utenti siano in grado di accedere al suo sito web dai servizi proxy o VPN, questa direttiva deve essere impostata su false. Altrimenti, se non hanno bisogno di servizi proxy o VPN, questa direttiva deve essere impostata su true come un mezzo per migliorare la sicurezza.';
 $CIDRAM['lang']['config_signatures_block_spam'] = 'Blocca i CIDR identificati come alto rischio per spam? A meno che si sperimentare problemi quando si fa così, generalmente, questo dovrebbe essere sempre impostata su true.';
-$CIDRAM['lang']['config_signatures_default_tracktime'] = 'Quanti secondi per monitorare IP vietati dai moduli. Predefinito = 604800 (1 settimana).';
-$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dal monitoraggio IP. Predefinito = 10.';
+$CIDRAM['lang']['config_signatures_default_tracktime'] = 'Quanti secondi per tracciare IP vietati dai moduli. Predefinito = 604800 (1 settimana).';
+$CIDRAM['lang']['config_signatures_infraction_limit'] = 'Numero massimo di infrazioni un IP è permesso di incorrere prima di essere vietato dalle tracciamento IP. Predefinito = 10.';
 $CIDRAM['lang']['config_signatures_ipv4'] = 'Un elenco dei file di firma IPv4 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole.';
 $CIDRAM['lang']['config_signatures_ipv6'] = 'Un elenco dei file di firma IPv6 che CIDRAM dovrebbe tentare di utilizzare, delimitati da virgole.';
 $CIDRAM['lang']['config_signatures_modules'] = 'Un elenco di file moduli da caricare dopo l\'esecuzione delle firme IPv4/IPv6, delimitati da virgole.';
@@ -155,7 +155,7 @@ $CIDRAM['lang']['field_size_TB'] = 'TB';
 $CIDRAM['lang']['field_size_bytes'] = 'byte';
 $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Utilizza il fuso orario predefinito del sistema.';
-$CIDRAM['lang']['field_tracking'] = 'Monitoraggio';
+$CIDRAM['lang']['field_tracking'] = 'Tracciamento';
 $CIDRAM['lang']['field_true'] = 'True (Vero)';
 $CIDRAM['lang']['field_uninstall'] = 'Disinstallarlo';
 $CIDRAM['lang']['field_update'] = 'Aggiornarlo';
@@ -214,7 +214,7 @@ $CIDRAM['lang']['link_file_manager'] = 'File Manager';
 $CIDRAM['lang']['link_home'] = 'Pagina Principale';
 $CIDRAM['lang']['link_ip_aggregator'] = 'Aggregatore IP';
 $CIDRAM['lang']['link_ip_test'] = 'Test di IP';
-$CIDRAM['lang']['link_ip_tracking'] = 'Monitoraggio IP';
+$CIDRAM['lang']['link_ip_tracking'] = 'Tracciamento IP';
 $CIDRAM['lang']['link_logs'] = 'File di Log';
 $CIDRAM['lang']['link_range'] = 'Tabelle della Gamma';
 $CIDRAM['lang']['link_sections_list'] = 'Lista delle Sezioni';
@@ -266,7 +266,7 @@ $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Possibile problema riscontrato.';
 $CIDRAM['lang']['response_rename_error'] = 'Non riuscito a rinominare!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiche revocate.';
-$CIDRAM['lang']['response_tracking_cleared'] = 'Monitoraggio revocato.';
+$CIDRAM['lang']['response_tracking_cleared'] = 'Tracciamento revocato.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Aggiornato già.';
 $CIDRAM['lang']['response_updates_not_installed'] = 'Componente non installato!';
 $CIDRAM['lang']['response_updates_not_installed_php'] = 'Componente non installato (richiede PHP &gt;= {V})!';
@@ -296,7 +296,7 @@ $CIDRAM['lang']['state_risk_high'] = 'Alto';
 $CIDRAM['lang']['state_risk_low'] = 'A basso';
 $CIDRAM['lang']['state_risk_medium'] = 'Medio';
 $CIDRAM['lang']['state_sl_totals'] = 'Totali (Firme: <span class="txtRd">%s</span> – Sezioni di firma: <span class="txtRd">%s</span> – File di firma: <span class="txtRd">%s</span>).';
-$CIDRAM['lang']['state_tracking'] = 'Attualmente monitoraggio di %s IP.';
+$CIDRAM['lang']['state_tracking'] = 'Attualmente tracciamento di %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Non nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-unused-set-false'] = 'Non nascondere il inutilizzato';
@@ -319,7 +319,7 @@ $CIDRAM['lang']['tip_home'] = 'Salve, {username}.<br />Questa è la pagina princ
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salve, {username}.<br />L\'aggregatore IP consente di esprimere IP e CIDR nel modo più piccolo possibile. Inserire i dati da aggregare e premere "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Salve, {username}.<br />La pagina di per il test di IP permette di testare se gli indirizzi IP sono bloccati dalle firme attualmente installati.';
 $CIDRAM['lang']['tip_ip_test_module_switch'] = '(Quando non è selezionato, solo i file delle firme verranno testati).';
-$CIDRAM['lang']['tip_ip_tracking'] = 'Salve, {username}.<br />La pagina di monitoraggio IP consente di verificare lo stato del monitoraggio degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il monitoraggio loro se si vuole farlo.';
+$CIDRAM['lang']['tip_ip_tracking'] = 'Salve, {username}.<br />La pagina di tracciamento IP consente di verificare lo stato del tracciamento degli indirizzi IP, per verificare quali di essi sono stati vietati, e di revocare il tracciamento loro se si vuole farlo.';
 $CIDRAM['lang']['tip_login'] = 'Nome utente predefinito: <span class="txtRd">admin</span> – Password predefinita: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Salve, {username}.<br />Selezionare un file di log dall\'elenco sottostante per visualizzare il contenuto di tale file di log.';
 $CIDRAM['lang']['tip_range'] = 'Salve, {username}.<br />Questa pagina mostra alcune informazioni statistiche sugli gamme IP coperti dai file delle firme attualmente attivi.';
@@ -336,7 +336,7 @@ $CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
 $CIDRAM['lang']['title_home'] = 'CIDRAM – Pagina Principale';
 $CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Aggregatore IP';
 $CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Test di IP';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Monitoraggio IP';
+$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Tracciamento IP';
 $CIDRAM['lang']['title_login'] = 'CIDRAM – Accedi';
 $CIDRAM['lang']['title_logs'] = 'CIDRAM – File di Log';
 $CIDRAM['lang']['title_range'] = 'CIDRAM – Tabelle della Gamma';

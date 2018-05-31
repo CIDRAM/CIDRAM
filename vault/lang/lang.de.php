@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2018.05.16).
+ * This file: German language data (last modified: 2018.05.27).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -54,7 +54,7 @@ $CIDRAM['lang']['field_referrer'] = 'Referrer: ';
 $CIDRAM['lang']['field_scriptversion'] = 'Script-Version: ';
 $CIDRAM['lang']['field_sigcount'] = 'Zählung den Signaturen: ';
 $CIDRAM['lang']['field_sigref'] = 'Referenz für den Signaturen: ';
-$CIDRAM['lang']['field_ua'] = 'User-Agent: ';
+$CIDRAM['lang']['field_ua'] = 'Benutzeragent: ';
 $CIDRAM['lang']['field_whyreason'] = 'Warum blockierte: ';
 $CIDRAM['lang']['generated_by'] = 'Generiert von';
 $CIDRAM['lang']['preamble'] = '-- Ende der Präambel. Fügen Sie Ihre Fragen oder Kommentare nach dieser Zeile. --';

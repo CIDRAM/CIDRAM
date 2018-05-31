@@ -7590,19 +7590,22 @@ recaptcha:
 
 
 # ASN 31200 ("Novotelecom Ltd").
-# %Listed, Google Malware Dashboard: 0.22%.
+# %Listed, Google Malware Dashboard: 0.28%.
 # %Listed, CleanTalk.org: 12.11%.
-# Stop Forum Spam (SFS) listings: 3,175.
+# Stop Forum Spam (SFS) listings: 1,525.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all the "Novotelecom" ASNs could be problematic.
 # Instead, we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events,
 # etc).
-# Updated: 2017.09.30 / Checked: 2018.02.04
+# Updated: 2018.06.01
 
 5.128.0.0/16 Deny Generic
 5.129.0.0/17 Deny Generic
 5.129.128.0/19 Deny Generic
+5.129.184.0/23 Deny Generic
+5.129.186.0/24 Deny Generic
 5.130.0.0/15 Deny Generic
 37.192.0.0/14 Deny Generic
+91.217.129.0/24 Deny Generic
 178.49.0.0/16 Deny Generic
 Origin: RU
 Tag: Novotelecom Ltd
@@ -7954,12 +7957,12 @@ Tag: Foreningen
 
 # ASN 31148 ("Freenet Ltd").
 # %Listed, CleanTalk.org: 13.65%.
-# Stop Forum Spam (SFS) listings: 698.
+# Stop Forum Spam (SFS) listings: 633.
 # Legit human endpoint/ISP based in Ukraine, but have been encountering numerous hack attempts from their ASN in recent
 # months. Marking this section for use with reCAPTCHA, because we don't want to accidentally block human users if we
 # can avoid it at all. HUGE numbers of nefarious listings at MegaRBL.net and AbuseIPDB.com! Can't really afford to just
 # ignore it. Ukrainian CIDRAM users should probably add the name of this section to their ignore.dat file.
-# Updated: 2018.02.20
+# Updated: 2018.06.01
 
 46.219.1.0/24 Deny Generic
 46.219.2.0/23 Deny Generic
@@ -7974,7 +7977,7 @@ Tag: Foreningen
 46.219.44.0/22 Deny Generic
 46.219.48.0/24 Deny Generic
 46.219.52.0/22 Deny Generic
-46.219.57.0/24 Deny Generic
+46.219.56.0/23 Deny Generic
 46.219.59.0/24 Deny Generic
 46.219.60.0/23 Deny Generic
 46.219.62.0/24 Deny Generic
@@ -7996,12 +7999,16 @@ Tag: Foreningen
 46.219.120.0/22 Deny Generic
 46.219.124.0/23 Deny Generic
 46.219.126.0/24 Deny Generic
+46.219.200.0/24 Deny Generic
 46.219.208.0/20 Deny Generic
 46.219.232.0/21 Deny Generic
 46.219.240.0/20 Deny Generic
 78.159.32.0/19 Deny Generic
 81.95.176.0/20 Deny Generic
-89.252.0.0/20 Deny Generic
+89.252.0.0/21 Deny Generic
+89.252.8.0/23 Deny Generic
+89.252.11.0/24 Deny Generic
+89.252.12.0/22 Deny Generic
 89.252.16.0/23 Deny Generic
 89.252.19.0/24 Deny Generic
 89.252.20.0/22 Deny Generic
@@ -8012,7 +8019,10 @@ Tag: Foreningen
 89.252.40.0/22 Deny Generic
 89.252.45.0/24 Deny Generic
 89.252.46.0/23 Deny Generic
-89.252.48.0/20 Deny Generic
+89.252.48.0/24 Deny Generic
+89.252.50.0/23 Deny Generic
+89.252.52.0/22 Deny Generic
+89.252.56.0/21 Deny Generic
 94.76.66.0/23 Deny Generic
 94.76.69.0/24 Deny Generic
 94.76.70.0/23 Deny Generic
@@ -8024,7 +8034,9 @@ Tag: Foreningen
 94.76.96.0/23 Deny Generic
 94.76.101.0/24 Deny Generic
 94.76.102.0/24 Deny Generic
-94.76.104.0/21 Deny Generic
+94.76.104.0/22 Deny Generic
+94.76.108.0/23 Deny Generic
+94.76.111.0/24 Deny Generic
 94.76.113.0/24 Deny Generic
 94.76.114.0/23 Deny Generic
 94.76.117.0/24 Deny Generic
@@ -8108,7 +8120,6 @@ Tag: Foreningen
 188.231.192.0/23 Deny Generic
 188.231.212.0/23 Deny Generic
 188.231.214.0/24 Deny Generic
-188.231.218.0/23 Deny Generic
 188.231.220.0/23 Deny Generic
 188.231.223.0/24 Deny Generic
 188.231.224.0/23 Deny Generic
@@ -8120,6 +8131,7 @@ Tag: Foreningen
 188.231.248.0/21 Deny Generic
 193.24.25.0/24 Deny Generic
 195.160.220.0/22 Deny Generic
+195.245.200.0/24 Deny Generic
 212.22.192.0/21 Deny Generic
 212.22.201.0/24 Deny Generic
 212.22.202.0/23 Deny Generic

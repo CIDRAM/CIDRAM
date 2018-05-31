@@ -44,10 +44,10 @@ Tag: INTERIA
 
 
 # ASN 58879 ("ShangHai AnchNet Tec").
-# %Listed, Google Malware Dashboard: 5.02%.
+# %Listed, Google Malware Dashboard: 4.22%.
 # %Listed, CleanTalk.org: 39.75%.
-# Stop Forum Spam (SFS) listings: 346.
-# Updated: 2018.03.28
+# Stop Forum Spam (SFS) listings: 283.
+# Updated: 2018.03.28 / Checked: 2018.05.30
 
 2404:de80::/36 Deny Cloud
 Origin: HK
@@ -1353,14 +1353,16 @@ Tag: Versaweb, LLC
 
 
 # ASN 27176 ("DataWagon LLC").
-# %Listed, Google Malware Dashboard: 0.26%.
+# %Listed, Google Malware Dashboard: 2.24%.
 # %Listed, CleanTalk.org: 33.33%.
-# Stop Forum Spam (SFS) listings: 3,167.
-# Updated: 2017.03.29 / Checked: 2018.02.18
+# Stop Forum Spam (SFS) listings: 4,334.
+# Updated: 2018.06.01
 
 2a0b:300::/29 Deny Cloud
 2a0b:3700::/29 Deny Cloud
 Origin: DE
+2a0d:9480::/30 Deny Cloud
+Origin: RU
 2605:aa80::/32 Deny Cloud
 Origin: US
 Tag: DataWagon LLC
@@ -5236,10 +5238,11 @@ Tag: CtrlS Datacenters
 
 
 # ASNs 25234, 41499 ("ACTIVE 24 Sp. z o.o.").
+# Note when updating: Also contains "proxy" signatures.
 # Some IPs on these ASNs caught probing for database dumps.
-# %Listed, Google Malware Dashboard: 1.16% (AS25234), 0.85% (AS41499).
+# %Listed, Google Malware Dashboard: 0.43% (AS25234), 0.60% (AS41499).
 # %Listed, CleanTalk.org: 7.69% (AS25234).
-# Updated: 2017.09.25 / Checked: 2018.02.04
+# Updated: 2017.09.25 / Checked: 2018.06.01
 
 2a02:4a8::/32 Deny Cloud
 Origin: CZ

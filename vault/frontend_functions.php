@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.05.22).
+ * This file: Front-end functions file (last modified: 2018.06.02).
  */
 
 /**
@@ -527,6 +527,7 @@ $CIDRAM['Logs-RecursiveList'] = function ($Base) use (&$CIDRAM) {
         $Arr[$ThisName] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
         $CIDRAM['FormatFilesize']($Arr[$ThisName]['Filesize']);
     }
+    ksort($Arr);
     return $Arr;
 };
 
@@ -1605,17 +1606,36 @@ $CIDRAM['UpdatesHandler-Update'] = function ($ID) use (&$CIDRAM) {
                 ) {
                     $ThisFile = gzdecode($ThisFile);
                 }
+                if (!empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate])) {
+                    $ThisChecksum = $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate];
+                    $ThisLen = strlen($ThisFile);
+                    if (
+                        (md5($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (sha1($ThisFile) . ':' . $ThisLen) !== $ThisChecksum &&
+                        (hash('sha256', $ThisFile) . ':' . $ThisLen) !== $ThisChecksum
+                    ) {
+                        $CIDRAM['FE']['state_msg'] .=
+                            '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
+                            '<code>' . $ThisFileName . '</code> – ' .
+                            $CIDRAM['lang']['response_checksum_error'] . '<br />';
+                        if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error'])) {
+                            $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error']);
+                        }
+                        $Iterate = 0;
+                        $Rollback = true;
+                        continue;
+                    }
+                }
                 if (
-                    !empty($CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate]) &&
-                        $CIDRAM['Components']['RemoteMeta'][$CIDRAM['Components']['ThisTarget']]['Files']['Checksum'][$Iterate] !==
-                        md5($ThisFile) . ':' . strlen($ThisFile)
+                    preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFileName) &&
+                    !$CIDRAM['CheckFileUpdate']($ThisFile)
                 ) {
                     $CIDRAM['FE']['state_msg'] .=
                         '<code>' . $CIDRAM['Components']['ThisTarget'] . '</code> – ' .
                         '<code>' . $ThisFileName . '</code> – ' .
-                        $CIDRAM['lang']['response_checksum_error'] . '<br />';
-                    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error'])) {
-                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Checksum Error']);
+                        $CIDRAM['lang']['response_sanity_1'] . '<br />';
+                    if (!empty($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Sanity Error'])) {
+                        $CIDRAM['FE_Executor']($CIDRAM['Components']['Meta'][$CIDRAM['Components']['ThisTarget']]['On Sanity Error']);
                     }
                     $Iterate = 0;
                     $Rollback = true;
@@ -1954,9 +1974,16 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
             if (!$ThisFileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile)) {
                 $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
                 $Passed = false;
-            } elseif ($Checksum) {
-                $Expected = md5($ThisFileData) . ':' . strlen($ThisFileData);
-                if ($Expected !== $Checksum) {
+            } else {
+                $Len = strlen($ThisFileData);
+                if (($Checksum && (
+                    (md5($ThisFileData) . ':' . $Len) !== $Checksum &&
+                    (sha1($ThisFileData) . ':' . $Len) !== $Checksum &&
+                    (hash('sha256', $ThisFileData) . ':' . $Len) !== $Checksum
+                )) || (
+                    preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile) &&
+                    !$CIDRAM['CheckFileUpdate']($ThisFileData)
+                )) {
                     $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
                     $Passed = false;
                 }
@@ -2406,4 +2433,18 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
 $CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
     $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['lang']['confirm_action'], $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';
+};
+
+/**
+ * Checks file updates for known sanity errors (upstream problems, wrong files served because of server downtime, etc).
+ *
+ * @param string $FileData The data of the file to check.
+ * @param int $Mode What to check for (to be determined by the calling code).
+ * @return bool File passes check (true) or fails check (false).
+ */
+$CIDRAM['CheckFileUpdate'] = function ($FileData, $Mode = 1) use (&$CIDRAM) {
+    if ($Mode === 1) {
+        return $FileData && !preg_match('~<(?:html|body)~i', $FileData);
+    }
+    return true;
 };

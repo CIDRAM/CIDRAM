@@ -155,17 +155,17 @@ Tag: H1 LLC
 
 
 # ASN 3223 ("Voxility LLC").
-# %Listed, Google Malware Dashboard: 1.06%.
+# %Listed, Google Malware Dashboard: 0.46%.
 # %Listed, CleanTalk.org: 42.44%.
-# Stop Forum Spam (SFS) listings: 49,499.
-# Updated: 2018.02.26
+# Stop Forum Spam (SFS) listings: 58,660.
+# Updated: 2018.06.02
 
 2a06:b380::/29 Deny Generic
 Origin: GB
 2a03:5180::/47 Deny Generic
 2a03:5180:2::/48 Deny Generic
 2a03:5180:4::/46 Deny Generic
-2a03:5180:8::/48 Deny Generic
+2a03:5180:8::/47 Deny Generic
 Origin: RO
 2a0d:cd00::/29 Deny Generic
 Origin: RU
@@ -345,10 +345,10 @@ Tag: Websupport s.r.o
 
 
 # ASN 51191 ("Xirra GmbH").
-# %Listed, Google Malware Dashboard: 1.29%.
+# %Listed, Google Malware Dashboard: 1.98%.
 # %Listed, CleanTalk.org: 32.07%.
-# Stop Forum Spam (SFS) listings: 1,514.
-# Updated: 2016.01.21 / Checked: 2018.02.12
+# Stop Forum Spam (SFS) listings: 84.
+# Updated: 2016.01.21 / Checked: 2018.06.02
 
 2a01:4a0:2000::/47 Deny Generic
 2a01:4a0:2002::/48 Deny Generic
@@ -531,14 +531,13 @@ Tag: Unit 1205-1207
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 1.12%.
+# %Listed, Google Malware Dashboard: 0.20%.
 # %Listed, CleanTalk.org: 40.11%.
-# Stop Forum Spam (SFS) listings: 130.
-# Updated: 2018.02.26
+# Stop Forum Spam (SFS) listings: 132.
+# Updated: 2018.06.02
 
 2a0a:6040::/29 Deny Generic
 Origin: GL
-2a04:3880::/30 Deny Generic
 2a04:4280::/29 Deny Generic
 2a04:8340::/29 Deny Generic
 2a05:abc0::/29 Deny Generic
@@ -554,7 +553,6 @@ Origin: GL
 2a05:f740::/29 Deny Generic
 2a05:f7c0::/29 Deny Generic
 2a06:a80::/29 Deny Generic
-2a06:9140::/29 Deny Generic
 2a07:21c0::/29 Deny Generic
 2a0b:a280::/32 Deny Generic
 Origin: TR
@@ -647,11 +645,10 @@ recaptcha:
 
 
 # ASNs 12530, 15895, 35081 ('"Kyivstar" PJSC').
-# %Listed, Google Malware Dashboard: 3.63% (AS12530), 0.79% (AS15895).
+# %Listed, Google Malware Dashboard: 1.69% (AS12530).
 # %Listed, CleanTalk.org: 13.30% (AS12530), 34.65% (AS15895).
-# %Listed, abuseat.org (CBL-Listed): 1.18% (AS15895).
-# Stop Forum Spam (SFS) listings: 541,741 (AS12530), 7,107,841 (AS15895).
-# Updated: 2016.09.06 / Checked: 2018.02.18
+# Stop Forum Spam (SFS) listings: 1,012,088 (AS12530), 5,423,869 (AS15895).
+# Updated: 2016.09.06 / Checked: 2018.06.02
 
 2a02:8a8::/32 Deny Spam
 2a02:2378::/32 Deny Spam
@@ -714,6 +711,16 @@ Tag: Viettel Corporation
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 200019 ("ALEXHOST SRL").
+# %Listed, CleanTalk.org: 84.68%.
+# Stop Forum Spam (SFS) listings: 143.
+# Updated: 2018.06.02
+
+2001:678:6d4::/48 Deny Generic
+Origin: MD
+Tag: ALEXHOST SRL
 
 
 # ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
@@ -864,8 +871,8 @@ recaptcha:
 # ASN 36678 ("CHINA TELECOM (AMERICAS) CORPORATION").
 # %Listed, Google Malware Dashboard: 7.61%.
 # %Listed, CleanTalk.org: 30.77%.
-# Stop Forum Spam (SFS) listings: 12.
-# Updated: 2018.02.26
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2018.02.26 / Checked: 2018.06.02
 
 2605:9d80:a000::/48 Deny Generic
 Origin: US
@@ -1273,12 +1280,12 @@ recaptcha:
 
 
 # ASN 3216 ("PJSC Vimpelcom").
-# %Listed, Google Malware Dashboard: 5.36%.
+# %Listed, Google Malware Dashboard: 7.19%.
 # %Listed, CleanTalk.org: 11.36%.
-# Stop Forum Spam (SFS) listings: 12,319.
+# Stop Forum Spam (SFS) listings: 11,832.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all "Vimpelcom" ASNs could be problematic. Instead,
 # we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events, etc).
-# Updated: 2017.09.30 / Checked: 2018.05.11
+# Updated: 2017.09.30 / Checked: 2018.06.02
 
 2a00:1248::/32 Deny Generic
 Origin: RU

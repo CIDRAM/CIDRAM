@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.05.19).
+ * This file: Urdu language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'غلط رسائی پوائن
 $CIDRAM['lang']['response_no'] = 'نہیں';
 $CIDRAM['lang']['response_possible_problem_found'] = 'ممکنہ مسئلہ پایا.';
 $CIDRAM['lang']['response_rename_error'] = 'نام تبدیل کرنے میں ناکام!';
+$CIDRAM['lang']['response_sanity_1'] = 'فائل میں غیر متوقع مواد شامل ہے! فائل کو مسترد کر دیا!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'اعداد و شمار صاف ہوگئے.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'صاف کر دیا ٹریکنگ.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'پہلے سے اپ ڈیٹ.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.05.19).
+ * This file: Thai language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'จุดเชื่อม�
 $CIDRAM['lang']['response_no'] = 'ไม่ได้';
 $CIDRAM['lang']['response_possible_problem_found'] = 'พบปัญหาที่เป็นไปได้.';
 $CIDRAM['lang']['response_rename_error'] = 'ล้มเหลวเปลี่ยนชื่อ!';
+$CIDRAM['lang']['response_sanity_1'] = 'ไฟล์มีเนื้อหาที่ไม่คาดคิด! ไฟล์ถูกปฏิเสธ!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'สถิติลบแล้ว';
 $CIDRAM['lang']['response_tracking_cleared'] = 'การติดตามถูกล้าง.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'อัปเดตแล้ว.';

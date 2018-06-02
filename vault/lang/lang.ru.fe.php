@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.05.19).
+ * This file: Russian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Неправильная к�
 $CIDRAM['lang']['response_no'] = 'Нет';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Возможная проблема.';
 $CIDRAM['lang']['response_rename_error'] = 'Не удалось переименовать!';
+$CIDRAM['lang']['response_sanity_1'] = 'Файл содержит неожиданный контент! Файл отклонен!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Статистика очищена.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Отслеживание отменен.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Уже обновлено.';

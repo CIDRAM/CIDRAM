@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.05.19).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'ভুল শেষপ্র
 $CIDRAM['lang']['response_no'] = 'না';
 $CIDRAM['lang']['response_possible_problem_found'] = 'সম্ভাব্য সমস্যা পাওয়া যায়।';
 $CIDRAM['lang']['response_rename_error'] = 'নামান্তর করতে ব্যর্থ!';
+$CIDRAM['lang']['response_sanity_1'] = 'ফাইলটিতে অপ্রত্যাশিত সামগ্রী রয়েছে! ফাইল প্রত্যাখ্যাত!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'পরিসংখ্যান পরিস্কার।';
 $CIDRAM['lang']['response_tracking_cleared'] = 'পর্যবেক্ষণ মুছে ফেলা হয়েছে।';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'ইতিমধ্যে আপ-টু-ডেট।';

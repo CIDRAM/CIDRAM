@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.05.19).
+ * This file: Dutch language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Verkeerd eindpunt!';
 $CIDRAM['lang']['response_no'] = 'Nee';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Mogelijk probleem gevonden.';
 $CIDRAM['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
+$CIDRAM['lang']['response_sanity_1'] = 'Bestand bevat onverwachte inhoud! Bestand afgewezen!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistieken geannuleerd.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracking geannuleerd.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';

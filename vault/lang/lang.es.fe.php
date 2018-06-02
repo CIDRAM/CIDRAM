@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.05.28).
+ * This file: Spanish language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = '¡Punto final equivocado!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Posible problema encontrado.';
 $CIDRAM['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';
+$CIDRAM['lang']['response_sanity_1'] = '¡El archivo contiene contenido inesperado! Archivo rechazado!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Estadística anulado.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Seguimiento anulado.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Ya está actualizado.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.05.19).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'نقطة نهاية خاطئ
 $CIDRAM['lang']['response_no'] = 'لا';
 $CIDRAM['lang']['response_possible_problem_found'] = 'تم العثور على مشكلة محتملة.';
 $CIDRAM['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
+$CIDRAM['lang']['response_sanity_1'] = 'يحتوي الملف على محتوى غير متوقع! تم رفض الملف!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'تم مسح الإحصاءات.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'التتبع ألغيت.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';

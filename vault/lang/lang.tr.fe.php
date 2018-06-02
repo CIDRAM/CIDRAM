@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.05.19).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Yanlış bitiş noktası!';
 $CIDRAM['lang']['response_no'] = 'Hayır';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Olası problem bulundu.';
 $CIDRAM['lang']['response_rename_error'] = 'Yeniden adlandırılamadı!';
+$CIDRAM['lang']['response_sanity_1'] = 'Dosya beklenmedik içerik barındırıyor! Dosya reddedildi!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'İstatistikler temizlendi.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'İzleme temizlendi.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Zaten güncel.';

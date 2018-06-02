@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.05.19).
+ * This file: Hindi language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'गलत समापन �
 $CIDRAM['lang']['response_no'] = 'नहीं';
 $CIDRAM['lang']['response_possible_problem_found'] = 'संभव समस्या मिली।';
 $CIDRAM['lang']['response_rename_error'] = 'नाम बदलने में विफल!';
+$CIDRAM['lang']['response_sanity_1'] = 'फ़ाइल में अप्रत्याशित सामग्री है! फ़ाइल अस्वीकृत!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'सांख्यिकी साफ है।';
 $CIDRAM['lang']['response_tracking_cleared'] = 'ट्रैकिंग साफ है।';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'पहले से ही आधुनिक।';

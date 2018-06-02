@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.05.19).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Điểm truy cập không đ
 $CIDRAM['lang']['response_no'] = 'Không';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Có thể tìm thấy vấn đề.';
 $CIDRAM['lang']['response_rename_error'] = 'Không thể đổi tên!';
+$CIDRAM['lang']['response_sanity_1'] = 'Tập tin chứa nội dung không mong muốn! Tập tin đã bị từ chối!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Thống kê đã được xóa.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Giám sát được hủy bỏ.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';

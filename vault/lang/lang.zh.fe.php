@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.05.19).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = '错误的端点！';
 $CIDRAM['lang']['response_no'] = '不是';
 $CIDRAM['lang']['response_possible_problem_found'] = '可能的问题发现。';
 $CIDRAM['lang']['response_rename_error'] = '无法改名！';
+$CIDRAM['lang']['response_sanity_1'] = '文件包含意外的内容！​文件拒绝！';
 $CIDRAM['lang']['response_statistics_cleared'] = '统计删除。';
 $CIDRAM['lang']['response_tracking_cleared'] = '已撤消跟踪。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = '已经更新。';

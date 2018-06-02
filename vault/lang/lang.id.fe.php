@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.05.19).
+ * This file: Indonesian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Jalur akses salah!';
 $CIDRAM['lang']['response_no'] = 'Tidak';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Kemungkinan masalah ditemukan.';
 $CIDRAM['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
+$CIDRAM['lang']['response_sanity_1'] = 'File berisi konten yang tidak diharapkan! File ditolak!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistik dicabut';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Pelacakan dicabut.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';

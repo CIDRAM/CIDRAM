@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.05.19).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = '間違ったエンドポイ�
 $CIDRAM['lang']['response_no'] = 'いいえ';
 $CIDRAM['lang']['response_possible_problem_found'] = '考えられる問題が見つかりました。';
 $CIDRAM['lang']['response_rename_error'] = '名前を変更できませんでした！';
+$CIDRAM['lang']['response_sanity_1'] = 'ファイルに予期しないコンテンツがあります！​ファイルが拒否されました！';
 $CIDRAM['lang']['response_statistics_cleared'] = '統計はクリアされました。';
 $CIDRAM['lang']['response_tracking_cleared'] = 'トラッキングがキャンセルされました。';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.05.19).
+ * This file: Swedish language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -239,7 +239,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Det kontot existerar inte.'
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Lösenordet har uppdaterats framgångsrikt!';
 $CIDRAM['lang']['response_activated'] = 'Aktiverad framgångsrikt.';
 $CIDRAM['lang']['response_activation_failed'] = 'Misslyckades med att aktivera!';
-$CIDRAM['lang']['response_checksum_error'] = 'Checksumfel! Fil avslogs!';
+$CIDRAM['lang']['response_checksum_error'] = 'Checksumfel! Filen avvisas!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Komponent har installerats framgångsrikt.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponent har avinstallerats framgångsrikt.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Komponent har uppdaterats framgångsrikt.';
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Felaktig slutpunkt!';
 $CIDRAM['lang']['response_no'] = 'Nej';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Möjligt problem hittades.';
 $CIDRAM['lang']['response_rename_error'] = 'Misslyckades med att byta namn!';
+$CIDRAM['lang']['response_sanity_1'] = 'Filen innehåller oväntat innehåll! Filen avvisas!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistik rensas.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Spårning rensas.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Redan uppdaterad.';

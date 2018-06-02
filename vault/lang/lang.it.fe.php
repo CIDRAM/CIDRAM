@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.05.30).
+ * This file: Italian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -193,7 +193,7 @@ $CIDRAM['lang']['label_other-ActiveModules'] = 'Moduli attivi';
 $CIDRAM['lang']['label_other-Since'] = 'Data d\'inizio';
 $CIDRAM['lang']['label_php'] = 'Versione PHP utilizzata:';
 $CIDRAM['lang']['label_reCAPTCHA'] = 'Tentativi di reCAPTCHA';
-$CIDRAM['lang']['label_results'] = 'Risultati (%s in – %s respinto – %s accettato – %s combinato – %s su):';
+$CIDRAM['lang']['label_results'] = 'Risultati (%s in – %s rifiutato – %s accettato – %s combinato – %s su):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilizzata:';
 $CIDRAM['lang']['label_show'] = 'Mostrare';
 $CIDRAM['lang']['label_signature_type'] = 'Tipo di firma:';
@@ -239,7 +239,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Questo account non esiste.'
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Password aggiornato con successo!';
 $CIDRAM['lang']['response_activated'] = 'Attivato con successo.';
 $CIDRAM['lang']['response_activation_failed'] = 'Non poteva essere attivato!';
-$CIDRAM['lang']['response_checksum_error'] = 'Errore di checksum! File respinto!';
+$CIDRAM['lang']['response_checksum_error'] = 'Errore di checksum! File rifiutato!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Componente installato con successo.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Componente disinstallato con successo.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Componente aggiornato con successo.';
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Punto finale errato!';
 $CIDRAM['lang']['response_no'] = 'No';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Possibile problema riscontrato.';
 $CIDRAM['lang']['response_rename_error'] = 'Non riuscito a rinominare!';
+$CIDRAM['lang']['response_sanity_1'] = 'Il file contiene contenuti inattesi! File rifiutato!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistiche revocate.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Tracciamento revocato.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Aggiornato già.';

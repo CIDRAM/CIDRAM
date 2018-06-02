@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.05.19).
+ * This file: Norwegian language data for the front-end (last modified: 2018.06.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -265,6 +265,7 @@ $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Feil sluttpunkt!';
 $CIDRAM['lang']['response_no'] = 'Nei';
 $CIDRAM['lang']['response_possible_problem_found'] = 'Mulig problem funnet.';
 $CIDRAM['lang']['response_rename_error'] = 'Omdøpe mislyktes!';
+$CIDRAM['lang']['response_sanity_1'] = 'Filen inneholder uventet innhold! Fil avvist!';
 $CIDRAM['lang']['response_statistics_cleared'] = 'Statistikk fjernet.';
 $CIDRAM['lang']['response_tracking_cleared'] = 'Sporing fjernet.';
 $CIDRAM['lang']['response_updates_already_up_to_date'] = 'Allerede oppdatert.';

@@ -214,11 +214,11 @@ Tag: Mir Telematiki Ltd
 
 
 # ASN 45595 ("Pakistan Telecom").
-# %Listed, Google Malware Dashboard: 2.02%.
+# %Listed, Google Malware Dashboard: 3.85%.
 # %Listed, CleanTalk.org: 12.33%.
-# %Listed, abuseat.org (CBL-Listed): 0.93%.
-# Stop Forum Spam (SFS) listings: 81,222.
-# Updated: 2017.03.22 / Checked: 2018.02.20
+# %Listed, abuseat.org (CBL-Listed): 0.57%.
+# Stop Forum Spam (SFS) listings: 77,186.
+# Updated: 2017.03.22 / Checked: 2018.06.06
 
 2404:7000::/32 Deny Spam
 Origin: PK
@@ -600,6 +600,19 @@ Origin: MD
 Tag: STARNET S.R.L
 
 
+# ASN 23860 ("Alliance Broadband Services Pvt. Ltd").
+# %Listed, CleanTalk.org: 11.80%.
+# Stop Forum Spam (SFS) listings: 323.
+# Updated: 2018.06.06
+
+2407:cb00::/32 Deny Spam
+Origin: IN
+Tag: Alliance Broadband
+---
+recaptcha:
+ enabled: true
+
+
 # ASN 17747 ("SITI NETWORKS LIMITED").
 # %Listed, CleanTalk.org: 6.19%.
 # %Listed, abuseat.org (CBL-Listed): 25.06%.
@@ -703,7 +716,7 @@ Tag: MAROSNET
 # ASNs 7552, 24086, 37620, 133606, 262210, 327799, 327885 ("Viettel Corporation").
 # Legit/real human endpoint ISP with high levels of spam/abuse reports listed at various DBs. List in the "ignore.dat"
 # file if the signature section causes any problems.
-# Updated: 2017.04.26 / Checked: 2018.02.20
+# Updated: 2017.04.26 / Checked: 2018.06.06
 
 2402:800::/32 Deny Spam
 Origin: VN

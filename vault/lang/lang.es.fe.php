@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.06.02).
+ * This file: Spanish language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Verificar todo';
 $CIDRAM['lang']['field_your_version'] = 'Tu Versión';
 $CIDRAM['lang']['header_login'] = 'Por favor iniciar sesión para continuar.';
 $CIDRAM['lang']['label_active_config_file'] = 'Archivo de configuración activo: ';
+$CIDRAM['lang']['label_backup_location'] = 'Ubicaciones de copia de seguridad del repositorio (en caso de emergencia, o si todo lo demás falla):';
 $CIDRAM['lang']['label_banned'] = 'Solicitudes prohibidas';
 $CIDRAM['lang']['label_blocked'] = 'Solicitudes bloqueadas';
 $CIDRAM['lang']['label_branch'] = 'Branch más nuevo estable:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = '¡No hay archivos de firma activos!';
 $CIDRAM['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problemas de CIDRAM @ GitHub</a> – Página de problemas para CIDRAM (apoyo, asistencia, etc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin para CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una colección de sencillas herramientas de webmaster para proteger sitios web.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Contiene listas de bloqueo y módulos opcionales para CIDRAM, como para bloquear bots peligrosos, países no deseados, navegadores desactualizados, etc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP recursos de aprendizaje y discusión.</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.06.02).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Xác minh tất cả';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$CIDRAM['lang']['label_backup_location'] = 'Vị trí sao lưu kho lưu trữ (trong trường hợp khẩn cấp, hay nếu mọi thứ thất bại):';
 $CIDRAM['lang']['label_banned'] = 'Yêu cầu bị cấm';
 $CIDRAM['lang']['label_blocked'] = 'Yêu cầu bị chặn';
 $CIDRAM['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Không có tập tin chữ ký nào �
 $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Vấn đề cho CIDRAM @ GitHub</a> – Trang các vấn đề cho CIDRAM (hỗ trợ, vv).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress cho CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Tải về gương thay thế cho CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Chứa danh sách chặn và mô-đun tùy chọn cho CIDRAM chẳng hạn như để chặn chương trình nguy hiểm, quốc gia không mong muốn, trình duyệt lỗi thời, vv.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>

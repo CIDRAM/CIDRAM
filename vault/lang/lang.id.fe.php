@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.06.02).
+ * This file: Indonesian language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Memverifikasi semua';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
+$CIDRAM['lang']['label_backup_location'] = 'Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):';
 $CIDRAM['lang']['label_banned'] = 'Permintaan dilarang';
 $CIDRAM['lang']['label_blocked'] = 'Permintaan diblokir';
 $CIDRAM['lang']['label_branch'] = 'Cabang terbaru stabil:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Tidak ada file tanda tangan yang akti
 $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Masalah CIDRAM @ GitHub</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress untuk CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Cermin download alternatif untuk CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>

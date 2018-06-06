@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.06.02).
+ * This file: Portuguese language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Verifique tudo';
 $CIDRAM['lang']['field_your_version'] = 'Sua Versão';
 $CIDRAM['lang']['header_login'] = 'Por favor faça o login para continuar.';
 $CIDRAM['lang']['label_active_config_file'] = 'Arquivo de configuração ativo: ';
+$CIDRAM['lang']['label_backup_location'] = 'Locais de backup de repositório (em caso de emergência, ou se tudo o mais falhar):';
 $CIDRAM['lang']['label_banned'] = 'Solicitações banidas';
 $CIDRAM['lang']['label_blocked'] = 'Solicitações bloqueadas';
 $CIDRAM['lang']['label_branch'] = 'Mais novo de estável de branch:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Nenhum arquivo de assinaturas está a
 $CIDRAM['lang']['info_some_useful_links'] = 'Alguns links úteis:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problemas de CIDRAM @ GitHub</a> – Página de problemas para CIDRAM (apoio, assistência, etc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin para CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Espelho de download alternativo para CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Uma coleção de ferramentas de webmaster simples para proteger sites.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Contém listas de bloqueio e módulos opcionais para o CIDRAM, como para bloquear bots perigosos, países indesejados, navegadores desatualizados, etc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP recursos de aprendizagem e discussão.</li>

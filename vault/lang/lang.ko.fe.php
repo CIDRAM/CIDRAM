@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.02).
+ * This file: Korean language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = '모두 검증';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
+$CIDRAM['lang']['label_backup_location'] = '저장소 백업 위치 (비상 사태의 경우, 또는 다른 모든 것이 실패한 경우) :';
 $CIDRAM['lang']['label_banned'] = '금지 된 요청';
 $CIDRAM['lang']['label_blocked'] = '차단 된 요청';
 $CIDRAM['lang']['label_branch'] = '분기 최신 안정 :';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있�
 $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM 문제 @ GitHub</a> – CIDRAM 문제 페이지 (지원, 원조 등).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM 자료 WordPress 플러그인.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – 위험한 봇, 원치 않는 국가, 오래된 브라우저 등을 차단하기위한 CIDRAM 용 선택적 블록리스트 및 모듈을 포함합니다.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>

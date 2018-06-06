@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.02).
+ * This file: French language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Vérifier tous';
 $CIDRAM['lang']['field_your_version'] = 'Votre Version';
 $CIDRAM['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $CIDRAM['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
+$CIDRAM['lang']['label_backup_location'] = 'Emplacements de sauvegarde du référentiel (en cas d\'urgence, ou si tout le reste échoue) :';
 $CIDRAM['lang']['label_banned'] = 'Requêtes interdites';
 $CIDRAM['lang']['label_blocked'] = 'Requêtes bloquées';
 $CIDRAM['lang']['label_branch'] = 'Dernier stable de branche :';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures 
 $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problèmes de CIDRAM @ GitHub</a> – Page de problèmes pour CIDRAM (soutien, assistance, etc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin pour CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternative download mirror for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Contient des listes de blocage optionnelles et des modules pour CIDRAM tels que le blocage de robots dangereux, des pays indésirables, des navigateurs obsolètes, etc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.06.02).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'সব যাচাই করুন';
 $CIDRAM['lang']['field_your_version'] = 'আপনার সংস্করণ';
 $CIDRAM['lang']['header_login'] = 'চালিয়ে যেতে দয়া করে লগ ইন করুন।';
 $CIDRAM['lang']['label_active_config_file'] = 'সক্রিয় কনফিগারেশন ফাইল: ';
+$CIDRAM['lang']['label_backup_location'] = 'সংগ্রহস্থল ব্যাকআপ অবস্থানগুলি (জরুরী ক্ষেত্রে, বা অন্য সব ব্যর্থ হলে):';
 $CIDRAM['lang']['label_banned'] = 'অনুরোধ নিষিদ্ধ';
 $CIDRAM['lang']['label_blocked'] = 'অনুরোধ অবরুদ্ধ';
 $CIDRAM['lang']['label_branch'] = 'শাখা সর্বশেষ স্থিতিশীল:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'কোন স্বাক্ষর �
 $CIDRAM['lang']['info_some_useful_links'] = 'কিছু দরকারী লিঙ্ক:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM সমর্থন @ GitHub</a> – CIDRAM সমর্থন পৃষ্ঠা (সহায়তা, সহায়তা, ইত্যাদির জন্য)।</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM জন্য WordPress প্লাগইন।</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM জন্য বিকল্প ডাউনলোড আয়না।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ওয়েবসাইটগুলি সুরক্ষিত করার জন্য সহজ ওয়েবমাস্টার সরঞ্জামগুলির একটি সংগ্রহ।</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – CIDRAM এর জন্য ঐচ্ছিক ব্লক-লিস্ট এবং মডিউল রয়েছে যেমন বিপজ্জনক বট, অবাঞ্ছিত দেশ, পুরনো ব্রাউজার ইত্যাদি অবরুদ্ধ করা।</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP লার্নিং সম্পদ এবং আলোচনা।</li>

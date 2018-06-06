@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.06.02).
+ * This file: Russian language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Проверить все';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $CIDRAM['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
+$CIDRAM['lang']['label_backup_location'] = 'Расположение резервных хранилищ (в случае чрезвычайной ситуации, или если все остальное не работает):';
 $CIDRAM['lang']['label_banned'] = 'Запросы запрещенный';
 $CIDRAM['lang']['label_blocked'] = 'Запросы блокированный';
 $CIDRAM['lang']['label_branch'] = 'Ветвь последние стабильный:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Активные файлы сигн�
 $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Альтернативное скачать зеркало для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>

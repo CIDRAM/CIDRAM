@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.02).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Tümünü doğrula';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$CIDRAM['lang']['label_backup_location'] = 'Repository yedek konumları (acil bir durumda, ya da her şey başarısız olursa):';
 $CIDRAM['lang']['label_banned'] = 'Yasaklı talepler';
 $CIDRAM['lang']['label_blocked'] = 'Engellenen talepler';
 $CIDRAM['lang']['label_branch'] = 'Branşı en yeni kararlı:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Hiçbir imza dosyası aktif değil!';
 $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Sorunları @ GitHub</a> – CIDRAM için sorunlar sayfası (destek, yardım, vb.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM için WordPress eklentisi.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – CIDRAM için alternatif karşıdan yükleme aynası.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Web sitelerini güvenli hale getirmek için basit web yöneticisi araçlarından oluşan bir koleksiyon.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Tehlikeli botları, istenmeyen ülkeleri, güncel olmayan tarayıcıları, vb engellemek için, CIDRAM için isteğe bağlı blok listeleri ve modüller içerir.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP öğrenme kaynakları ve tartışmalar.</li>

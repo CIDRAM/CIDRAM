@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.02).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'すべてを検証する';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、​ログインしてください。';
 $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$CIDRAM['lang']['label_backup_location'] = 'リポジトリ・バックアップの場所（緊急の場合、または他のすべてが失敗した場合）：';
 $CIDRAM['lang']['label_banned'] = '禁止されたリクエスト';
 $CIDRAM['lang']['label_blocked'] = 'ブロックされたリクエスト';
 $CIDRAM['lang']['label_branch'] = 'ブランチ最新安定：';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'アクティブ・シグネチャ・�
 $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAMの問題 ＠ GitHub</a> – CIDRAMの問題ページ（サポート、​援助、​など）。</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM ＠ WordPress.org</a> – CIDRAMのWordPressプラグイン。</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM ＠ SourceForge</a> – CIDRAMの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – 危険なボット、不要な国、旧式のブラウザなどをブロックするためのCIDRAM用のオプションのブロックリストとモジュールが含まれています。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group の Facebook</a> – PHP学習リソースとディスカッション。</li>

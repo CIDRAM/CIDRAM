@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.06.02).
+ * This file: Norwegian language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Verifisere alt';
 $CIDRAM['lang']['field_your_version'] = 'Din Versjon';
 $CIDRAM['lang']['header_login'] = 'Vennligst logg inn for å fortsette.';
 $CIDRAM['lang']['label_active_config_file'] = 'Aktiv konfigurasjonsfil: ';
+$CIDRAM['lang']['label_backup_location'] = 'Repository backup steder (i nødstilfelle, eller hvis alt annet mislykkes):';
 $CIDRAM['lang']['label_banned'] = 'Forespørsler utestengt';
 $CIDRAM['lang']['label_blocked'] = 'Forespørsler blokkert';
 $CIDRAM['lang']['label_branch'] = 'Branch siste stabile:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Ingen signaturfiler er aktive!';
 $CIDRAM['lang']['info_some_useful_links'] = 'Noen nyttige lenker:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues side for CIDRAM (støtte, assistanse, osv).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin for CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Alternativt nedlastingsspeil for CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – En samling av enkle webmaster-verktøy for å sikre nettsteder.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Inneholder valgfrie blokklister og moduler for CIDRAM, for eksempel for blokkering av farlige roboter, uønskede land, utdaterte nettlesere, etc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP læringsressurser og diskusjon.</li>

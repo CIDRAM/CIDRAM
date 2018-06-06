@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.06.02).
+ * This file: Italian language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Verifica tutto';
 $CIDRAM['lang']['field_your_version'] = 'La Vostra Versione';
 $CIDRAM['lang']['header_login'] = 'Per favore accedi per continuare.';
 $CIDRAM['lang']['label_active_config_file'] = 'File di configurazione attivo: ';
+$CIDRAM['lang']['label_backup_location'] = 'Posizioni di backup del repository (in caso di emergenza, o se tutto il resto fallisce):';
 $CIDRAM['lang']['label_banned'] = 'Richieste vietate';
 $CIDRAM['lang']['label_blocked'] = 'Richieste bloccate';
 $CIDRAM['lang']['label_branch'] = 'Branch più recente stabile:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Non ci sono file di firme attivi!';
 $CIDRAM['lang']['info_some_useful_links'] = 'Alcuni link utili:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Problemi di CIDRAM @ GitHub</a> – Pagina dei problemi per CIDRAM (supporto, assistenza, ecc).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin per WordPress per CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM @ SourceForge</a> – Una scarica specchio alternativa per CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una collezione di semplici strumenti per i webmaster per sicurezza del sito Web.</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Contiene gli elenchi dei blocchi e moduli opzionali per CIDRAM come per bloccare di bot pericolosi, paesi indesiderati, browser obsoleti, ecc.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Risorse di apprendimento e discussione per PHP.</li>

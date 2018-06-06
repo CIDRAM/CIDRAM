@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.02).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'التحقق من الكل';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$CIDRAM['lang']['label_backup_location'] = 'مواقع النسخ الاحتياطي مستودع (في حالة الطوارئ، أو إذا فشل كل شيء آخر):';
 $CIDRAM['lang']['label_banned'] = 'طلبات محظورة ';
 $CIDRAM['lang']['label_blocked'] = 'الطلبات المحظورة';
 $CIDRAM['lang']['label_branch'] = 'فرع أحدث مستقرة:';
@@ -352,7 +353,6 @@ $CIDRAM['lang']['warning_signatures_1'] = 'لا ملفات التوقيع نشط
 $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>
             <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ WordPress.org</a> – WordPress البرنامج المساعد ل CIDRAM.</li>
-            <li><a href="https://sourceforge.net/projects/cidram/" dir="ltr">CIDRAM @ SourceForge</a> – بديلة حمل مرآة للCIDRAM.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>
             <li><a href="https://github.com/macmathan/Blocklists" dir="ltr">macmathan/Blocklists</a> – يحتوي على قوائم وحدات اختيارية ووحدات نمطية لـ CIDRAM، مثل حظر برامج التتبع الخطرة، والبلدان غير المرغوب فيها، والمتصفحات القديمة، وما إلى ذلك.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>

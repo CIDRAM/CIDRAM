@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.05.21).
+ * This file: Front-end handler (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -506,6 +506,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']
     $CIDRAM['FE']['info_os'] = php_uname();
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_logout'];
+
+    /** Build repository backup locations information. */
+    $CIDRAM['FE']['BackupLocations'] = implode(' | ', [
+        '<a href="https://bitbucket.org/Maikuolan/cidram">BitBucket</a>',
+        '<a href="https://sourceforge.net/projects/cidram/">SourceForge</a>'
+    ]);
 
     /** Where to find remote version information? */
     $CIDRAM['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';

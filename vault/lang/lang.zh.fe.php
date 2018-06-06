@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.02).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = '验证全部';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
+$CIDRAM['lang']['label_backup_location'] = '存储库备份位置（在紧急情况下，或如果一切都失败了）：';
 $CIDRAM['lang']['label_banned'] = '请求已禁止';
 $CIDRAM['lang']['label_blocked'] = '请求已阻止';
 $CIDRAM['lang']['label_branch'] = '分支最新稳定：';
@@ -353,7 +354,6 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM问题＠GitHub</a> – CIDRAM问题页面（支持，​协助，​等等）。​</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM＠WordPress.org</a> – CIDRAM WordPress插件。​</li>
             <li><a href="https://www.oschina.net/p/CIDRAM">CIDRAM＠开源中国社区</a> – CIDRAM页面托管在开源中国社区。​</li>
-            <li><a href="https://sourceforge.net/projects/cidram/">CIDRAM＠SourceForge</a> – CIDRAM替代下载镜像。​</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。​</li>
             <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – 包含用于CIDRAM的可选阻止列表和模块，用于（例如）阻止危险机器人，不需要的国家，过时的浏览器等等目的。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学习资源和讨论。​</li>

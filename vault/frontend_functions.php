@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.02).
+ * This file: Front-end functions file (last modified: 2018.06.07).
  */
 
 /**
@@ -987,7 +987,7 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
     $BlockEnd = 0;
     while ($BlockEnd !== false) {
         $Darken = empty($Darken);
-        $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd">';
+        $Style = '<div class="h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
         $BlockEnd = strpos($Out, $BlockSeparator, $BlockStart);
         $In .= $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
         $BlockStart = $BlockEnd + $BlockSeparatorLen;
@@ -1069,7 +1069,7 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
                 }
             }
             $Percent = $CIDRAM['FE']['EntryCount'] ? ($Count / $CIDRAM['FE']['EntryCount']) * 100 : 0;
-            $Out .= '<tr><td class="h1">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['Number_L10N']($Count) . ' (' . $CIDRAM['Number_L10N']($Percent, 2) . "%)</div></td></tr>\n";
+            $Out .= '<tr><td class="h1 fW">' . $Entry . '</td><td class="h1f"><div class="s">' . $CIDRAM['Number_L10N']($Count) . ' (' . $CIDRAM['Number_L10N']($Percent, 2) . "%)</div></td></tr>\n";
         }
     }
     $Out .= '</table>';

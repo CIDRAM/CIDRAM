@@ -10,7 +10,8 @@ CIDRAM:
  When Update Succeeds:
   - WP-Ver
  When Checking:
-  - In "cidramblocklists.dat" Replace "~^ Remote\: https\://macmathan\.info/(?:zbblock-range-blocks|blocklists)/cidramblocklists\.dat\.gz$~m" With " Remote: https://raw.githubusercontent.com/macmathan/Blocklists/master/cidramblocklists.dat"
+  - In "cidramblocklists.dat" Replace "~^ Remote\: https\://macmathan\.info/(?:zbblock-range-blocks|blocklists)/cidramblocklists\.dat\.gz$~m" With " Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat"
+  - In "cidramblocklists.dat" Replace "~^ Remote\: https\://raw\.githubusercontent\.com/macmathan/Blocklists/master/cidramblocklists\.dat$~m" With " Remote: https://bitbucket.org/macmathan/blocklists/raw/master/cidramblocklists.dat"
   - In "cidramblocklists.dat" Replace "~\.gz$~im" With ""
  Files:
   From:

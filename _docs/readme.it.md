@@ -345,14 +345,14 @@ Generale configurazione per CIDRAM.
 
 Valori attualmente supportati:
 
-Codice di stato | Messaggio di stato
----|---
-`200` | `200 OK` | Il valore predefinito. Meno robusto, ma più amichevole per gli utenti.
-`403` | `403 Forbidden` | Un po' più robusto, ma un po' meno amichevole per gli utenti.
-`410` | `410 Gone` | Potrebbe causare problemi quando si tenta di risolvere i falsi positivi, a causa di ciò alcuni browser memorizzeranno nella cache questo messaggio di stato e non invieranno richieste successive, anche dopo aver sbloccato gli utenti. Può essere più utile di altre opzioni per ridurre le richieste da determinati tipi di robot molto specifici.
-`418` | `418 I'm a teapot` | In realtà fa riferimento a uno scherzo di April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] ed è improbabile che venga compreso dal cliente. Fornito per divertimento e convenienza, ma generalmente non raccomandato.
-`451` | `Unavailable For Legal Reasons` | Appropriato per i contesti in cui le richieste vengono bloccate principalmente per motivi legali. Non raccomandato in altri contesti.
-`503` | `Service Unavailable` | Più robusto, ma meno amichevole per gli utenti.
+Codice di stato | Messaggio di stato | Descrizione
+---|---|---
+`200` | `200 OK` | Il valore predefinito. Meno robusto, ma più amichevole per gli utenti.
+`403` | `403 Forbidden` | Un po' più robusto, ma un po' meno amichevole per gli utenti.
+`410` | `410 Gone` | Potrebbe causare problemi quando si tenta di risolvere i falsi positivi, a causa di ciò alcuni browser memorizzeranno nella cache questo messaggio di stato e non invieranno richieste successive, anche dopo aver sbloccato gli utenti. Può essere più utile di altre opzioni per ridurre le richieste da determinati tipi di robot molto specifici.
+`418` | `418 I'm a teapot` | In realtà fa riferimento a uno scherzo di April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] ed è improbabile che venga compreso dal cliente. Fornito per divertimento e convenienza, ma generalmente non raccomandato.
+`451` | `Unavailable For Legal Reasons` | Appropriato per i contesti in cui le richieste vengono bloccate principalmente per motivi legali. Non raccomandato in altri contesti.
+`503` | `Service Unavailable` | Più robusto, ma meno amichevole per gli utenti.
 
 "silent_mode"
 - CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto.
@@ -365,8 +365,8 @@ Codice di stato | Messaggio di stato
 
 Valori attualmente supportati:
 
-Valore | Produce
----|---
+Valore | Produce | Descrizione
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Il valore predefinito.
@@ -1320,4 +1320,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 9 Giugno 2018 (2018.06.09).
+Ultimo Aggiornamento: 10 Giugno 2018 (2018.06.10).

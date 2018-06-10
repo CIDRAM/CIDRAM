@@ -345,14 +345,14 @@ Cấu hình chung cho CIDRAM.
 
 Giá trị hiện được hỗ trợ:
 
-Mã trạng thái | Thông thái trạng thái
----|---
-`200` | `200 OK` | Giá trị mặc định. Không phải là rất mạnh mẽ, nhưng thân thiện với người dùng.
-`403` | `403 Forbidden` | Hơi mạnh mẽ, và thân thiện với người dùng.
-`410` | `410 Gone` | Có thể gây ra sự cố khi cố gắng giải quyết các sai tích cực, bởi vì một số trình duyệt sẽ lưu trữ thông thái trạng thái này và không gửi lại yêu cầu, ngay cả sau khi bỏ chặn người dùng. Có thể hữu ích hơn các tùy chọn khác để giảm yêu cầu từ một số loại bot cụ thể.
-`418` | `418 I'm a teapot` | Điều này thực sự ám chỉ đến một trò đùa của April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] và có lẽ khách hàng sẽ không hiểu. Cung cấp cho vui chơi giải trí và thuận tiện, nhưng không thường được đề nghị.
-`451` | `Unavailable For Legal Reasons` | Thích hợp cho các ngữ cảnh khi các yêu cầu bị chặn chủ yếu vì lý do pháp lý. Không được đề xuất trong các ngữ cảnh khác.
-`503` | `Service Unavailable` | Không phải là rất thân thiện với người dùng, nhưng mạnh mẽ.
+Mã trạng thái | Thông thái trạng thái | Chi tiết
+---|---|---
+`200` | `200 OK` | Giá trị mặc định. Không phải là rất mạnh mẽ, nhưng thân thiện với người dùng.
+`403` | `403 Forbidden` | Hơi mạnh mẽ, và thân thiện với người dùng.
+`410` | `410 Gone` | Có thể gây ra sự cố khi cố gắng giải quyết các sai tích cực, bởi vì một số trình duyệt sẽ lưu trữ thông thái trạng thái này và không gửi lại yêu cầu, ngay cả sau khi bỏ chặn người dùng. Có thể hữu ích hơn các tùy chọn khác để giảm yêu cầu từ một số loại bot cụ thể.
+`418` | `418 I'm a teapot` | Điều này thực sự ám chỉ đến một trò đùa của April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] và có lẽ khách hàng sẽ không hiểu. Cung cấp cho vui chơi giải trí và thuận tiện, nhưng không thường được đề nghị.
+`451` | `Unavailable For Legal Reasons` | Thích hợp cho các ngữ cảnh khi các yêu cầu bị chặn chủ yếu vì lý do pháp lý. Không được đề xuất trong các ngữ cảnh khác.
+`503` | `Service Unavailable` | Không phải là rất thân thiện với người dùng, nhưng mạnh mẽ.
 
 "silent_mode"
 - CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
@@ -365,8 +365,8 @@ Mã trạng thái | Thông thái trạng thái
 
 Giá trị hiện được hỗ trợ:
 
-Giá trị | Nó tạo ra
----|---
+Giá trị | Nó tạo ra | Chi tiết
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Giá trị mặc định.
@@ -1321,4 +1321,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Sáu 2018 (2018.06.09).
+Lần cuối cập nhật: 10 Tháng Sáu 2018 (2018.06.10).

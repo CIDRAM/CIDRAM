@@ -345,14 +345,14 @@ General CIDRAM configuration.
 
 Currently supported values:
 
-Status code | Status message
----|---
-`200` | `200 OK` | Default value. Least robust, but most user-friendly.
-`403` | `403 Forbidden` | More robust, but less user-friendly.
-`410` | `410 Gone` | Could cause problems when attempting to resolve false positives, due to that some browsers will cache this status message and not send subsequent requests, even after unblocking users. May be more useful than other options for reducing requests from certain, very specific types of bots though.
-`418` | `418 I'm a teapot` | Actually references an April Fools' joke [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] and is unlikely to be understood by the client. Provided for amusement and convenience, but not generally recommended.
-`451` | `Unavailable For Legal Reasons` | Appropriate for contexts when requests are blocked primarily for legal reasons. Not recommended in other contexts.
-`503` | `Service Unavailable` | Most robust, but least user-friendly.
+Status code | Status message | Description
+---|---|---
+`200` | `200 OK` | Default value. Least robust, but most user-friendly.
+`403` | `403 Forbidden` | More robust, but less user-friendly.
+`410` | `410 Gone` | Could cause problems when attempting to resolve false positives, due to that some browsers will cache this status message and not send subsequent requests, even after unblocking users. May be more useful than other options for reducing requests from certain, very specific types of bots though.
+`418` | `418 I'm a teapot` | Actually references an April Fools' joke [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] and is unlikely to be understood by the client. Provided for amusement and convenience, but not generally recommended.
+`451` | `Unavailable For Legal Reasons` | Appropriate for contexts when requests are blocked primarily for legal reasons. Not recommended in other contexts.
+`503` | `Service Unavailable` | Most robust, but least user-friendly.
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -365,8 +365,8 @@ Status code | Status message
 
 Currently supported values:
 
-Value | Produces
----|---
+Value | Produces | Description
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Default value.
@@ -1325,4 +1325,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 9 June 2018 (2018.06.09).
+Last Updated: 10 June 2018 (2018.06.10).

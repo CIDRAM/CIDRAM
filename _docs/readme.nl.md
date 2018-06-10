@@ -345,14 +345,14 @@ Algemene configuratie voor CIDRAM.
 
 Momenteel ondersteunde waarden:
 
-Status code | Status bericht
----|---
-`200` | `200 OK` | Standaardwaarde. Minst robuust, maar meest gebruiksvriendelijk.
-`403` | `403 Forbidden` | Robuuster, maar minder gebruikersvriendelijk.
-`410` | `410 Gone` | Kan problemen veroorzaken bij pogingen om valse positieven op te lossen, omdat sommige browsers dit statusbericht in de cache opslaan en geen volgende verzoeken verzenden, zelfs niet na het deblokkeren van gebruikers. Kan echter nuttiger zijn dan andere opties om aanvragen van bepaalde, zeer specifieke typen bots te verminderen.
-`418` | `418 I'm a teapot` | Verwijst eigenlijk naar de grap van April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] en het is onwaarschijnlijk dat de klant het begrijpt. Voorzien voor amusement en gemak, maar over het algemeen niet aanbevolen.
-`451` | `Unavailable For Legal Reasons` | Geschikt voor situaties waarin verzoeken voornamelijk om juridische redenen worden geblokkeerd. Niet aanbevolen in andere contexten.
-`503` | `Service Unavailable` | Meest robuust, maar minst gebruiksvriendelijk.
+Status code | Status bericht | Beschrijving
+---|---|---
+`200` | `200 OK` | Standaardwaarde. Minst robuust, maar meest gebruiksvriendelijk.
+`403` | `403 Forbidden` | Robuuster, maar minder gebruikersvriendelijk.
+`410` | `410 Gone` | Kan problemen veroorzaken bij pogingen om valse positieven op te lossen, omdat sommige browsers dit statusbericht in de cache opslaan en geen volgende verzoeken verzenden, zelfs niet na het deblokkeren van gebruikers. Kan echter nuttiger zijn dan andere opties om aanvragen van bepaalde, zeer specifieke typen bots te verminderen.
+`418` | `418 I'm a teapot` | Verwijst eigenlijk naar de grap van April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] en het is onwaarschijnlijk dat de klant het begrijpt. Voorzien voor amusement en gemak, maar over het algemeen niet aanbevolen.
+`451` | `Unavailable For Legal Reasons` | Geschikt voor situaties waarin verzoeken voornamelijk om juridische redenen worden geblokkeerd. Niet aanbevolen in andere contexten.
+`503` | `Service Unavailable` | Meest robuust, maar minst gebruiksvriendelijk.
 
 "silent_mode"
 - Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.
@@ -365,8 +365,8 @@ Status code | Status bericht
 
 Momenteel ondersteunde waarden:
 
-Waarde | Produceert
----|---
+Waarde | Produceert | Beschrijving
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Standaardwaarde.
@@ -1323,4 +1323,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 9 Juni 2018 (2018.06.09).
+Laatste Bijgewerkt: 10 Juni 2018 (2018.06.10).

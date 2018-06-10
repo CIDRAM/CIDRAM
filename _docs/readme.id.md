@@ -345,14 +345,14 @@ Konfigurasi umum dari CIDRAM.
 
 Nilai yang didukung saat ini:
 
-Kode status | Pesan status
----|---
-`200` | `200 OK` | Nilai default. Paling tidak kuat, tetapi paling ramah kepada pengguna.
-`403` | `403 Forbidden` | Lebih kuat, tetapi kurang ramah kepada pengguna.
-`410` | `410 Gone` | Dapat menyebabkan masalah ketika mencoba menyelesaikan kesalahan positif, karena beberapa browser akan menyimpan pesan status ini dan tidak mengirim permintaan lagi, bahkan setelah membuka blokir pengguna. Mungkin lebih berguna daripada opsi lain untuk mengurangi permintaan dari jenis bot tertentu yang sangat spesifik.
-`418` | `418 I'm a teapot` | Sebenarnya referensi lelucon "bodoh april" [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] dan tidak mungkin dipahami oleh klien. Disediakan untuk hiburan dan kenyamanan, tetapi tidak direkomendasikan secara umum.
-`451` | `Unavailable For Legal Reasons` | Sesuai untuk konteks ketika permintaan diblokir terutama karena alasan hukum. Tidak direkomendasikan dalam konteks lain.
-`503` | `Service Unavailable` | Paling kuat, tetapi paling tidak ramah kepada pengguna.
+Kode status | Pesan status | Deskripsi
+---|---|---
+`200` | `200 OK` | Nilai default. Paling tidak kuat, tetapi paling ramah kepada pengguna.
+`403` | `403 Forbidden` | Lebih kuat, tetapi kurang ramah kepada pengguna.
+`410` | `410 Gone` | Dapat menyebabkan masalah ketika mencoba menyelesaikan kesalahan positif, karena beberapa browser akan menyimpan pesan status ini dan tidak mengirim permintaan lagi, bahkan setelah membuka blokir pengguna. Mungkin lebih berguna daripada opsi lain untuk mengurangi permintaan dari jenis bot tertentu yang sangat spesifik.
+`418` | `418 I'm a teapot` | Sebenarnya referensi lelucon "bodoh april" [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] dan tidak mungkin dipahami oleh klien. Disediakan untuk hiburan dan kenyamanan, tetapi tidak direkomendasikan secara umum.
+`451` | `Unavailable For Legal Reasons` | Sesuai untuk konteks ketika permintaan diblokir terutama karena alasan hukum. Tidak direkomendasikan dalam konteks lain.
+`503` | `Service Unavailable` | Paling kuat, tetapi paling tidak ramah kepada pengguna.
 
 "silent_mode"
 - Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.
@@ -365,8 +365,8 @@ Kode status | Pesan status
 
 Nilai yang didukung saat ini:
 
-Nilai | Menghasilkan
----|---
+Nilai | Menghasilkan | Deskripsi
+---|---|---
 `NoSep-1` | `1234567.89`
 `NoSep-2` | `1234567,89`
 `Latin-1` | `1,234,567.89` | Nilai default.
@@ -1321,4 +1321,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Terakhir Diperbarui: 9 Juni 2018 (2018.06.09).
+Terakhir Diperbarui: 10 Juni 2018 (2018.06.10).

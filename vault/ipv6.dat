@@ -506,10 +506,10 @@ Tag: DataCorpore Servios
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# %Listed, Google Malware Dashboard: 2.06%.
+# %Listed, Google Malware Dashboard: 2.00%.
 # %Listed, CleanTalk.org: 41.78%.
-# Stop Forum Spam (SFS) listings: 899.
-# Updated: 2016.09.15 / Checked: 2018.02.21
+# Stop Forum Spam (SFS) listings: 818.
+# Updated: 2016.09.15 / Checked: 2018.06.10
 
 2606:c700::/32 Deny Cloud
 Origin: US
@@ -650,7 +650,7 @@ Tag: AS42807
 
 # ASNs 34360, 41079, 48760, 198414 ("H88 S.A").
 # Webhosting company based in Poland.
-# Updated: 2016.01.18 / Checked: 2018.02.24
+# Updated: 2016.01.18 / Checked: 2018.06.09
 
 2a01:4660::/32 Deny Cloud
 2a02:1778::/32 Deny Cloud
@@ -1120,8 +1120,8 @@ Tag: Wowrack.com
 
 
 # ASN 197746 ("HyperHosting - Cloud Infrastructure").
-# %Listed, Google Malware Dashboard: 0.62%.
-# Updated: 2016.01.21 / Checked: 2018.02.18
+# At last check, not actively reported by any DBs anywhere anymore. Possible candidate for future removal.
+# Updated: 2016.01.21 / Checked: 2018.06.09
 
 2a00:6620:2000::/48 Deny Cloud
 Origin: GR
@@ -3072,7 +3072,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.05.25
+# Updated: 2018.06.09
 
 2403:b300::/32 Deny Cloud
 Origin: AU
@@ -3159,6 +3159,7 @@ Origin: SG
 2600:1fa0:4080::/44 Deny Cloud
 2600:1fa0:40a0::/44 Deny Cloud
 2600:1fa0:40c0::/44 Deny Cloud
+2600:1fa0:5040::/44 Deny Cloud
 2600:1fa0:5080::/44 Deny Cloud
 2600:1fa0:50c0::/44 Deny Cloud
 2600:1fa0:6040::/44 Deny Cloud
@@ -4271,9 +4272,11 @@ Origin: US
 Tag: Ecommerce Corporation
 
 
-# ASNs 132412, 135511, 136565 ("CyberWorld Data Center").
-# Updated: 2017.10.23 / Checked: 2018.02.21
+# ASNs 132412, 135511, 136565, 136566 ("CyberWorld Data Center").
+# Updated: 2018.06.10
 
+2405:2500:5::/48 Deny Cloud
+2405:2500:11::/48 Deny Cloud
 2405:2500:25::/48 Deny Cloud
 2405:2500:26::/48 Deny Cloud
 2405:2500:50::/48 Deny Cloud
@@ -4284,7 +4287,7 @@ Tag: CyberWorld
 
 
 # ASNs 24931, 32911, 57669 ("DediPower Managed Hosting Limited").
-# Updated: 2017.05.02 / Checked: 2018.02.23
+# Updated: 2017.05.02 / Checked: 2018.06.09
 
 2a01:ba20::/32 Deny Cloud
 2a02:16f8::/32 Deny Cloud
@@ -4322,10 +4325,9 @@ Tag: Cloud Sigma
 
 
 # ASN 30217 ("Desync Networks").
-# %Listed, Google Malware Dashboard: 0.78%.
+# %Listed, Google Malware Dashboard: 0.75%.
 # %Listed, CleanTalk.org: 9.59%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2017.10.23 / Checked: 2018.02.21
+# Updated: 2017.10.23 / Checked: 2018.06.10
 
 2607:f178::/48 Deny Cloud
 2607:f178:4::/48 Deny Cloud
@@ -4394,13 +4396,11 @@ Tag: Net Access Corp
 
 
 # ASN 19318 ("Interserver, Inc").
-# %Listed, Google Malware Dashboard: 1.18%.
+# %Listed, Google Malware Dashboard: 0.42%.
 # %Listed, CleanTalk.org: 40.91%.
-# Stop Forum Spam (SFS) listings: 2,001.
-# Updated: 2017.10.26 / Checked: 2018.02.24
+# Stop Forum Spam (SFS) listings: 1,848.
+# Updated: 2018.06.09
 
-2610:88:1::/48 Deny Cloud
-Origin: PL
 2604:a00::/32 Deny Cloud
 Origin: US
 Tag: Interserver, Inc
@@ -5139,37 +5139,34 @@ Origin: US
 Tag: 24 SHELLS
 
 
-# ASNs 11588, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
-# Updated: 2018.04.18
+# ASNs 11588, 12989, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
+# Updated: 2018.06.10
 
+2804:266c::/32 Deny Cloud
+Origin: BR
+2001:5c0:1400::/39 Deny Cloud
+Origin: CA
+2a03:efc0:200::/40 Deny Cloud
 2a03:efc0:500::/40 Deny Cloud
+2a03:efc0:700::/40 Deny Cloud
 2a03:efc0:900::/40 Deny Cloud
+2a03:efc0:1100::/40 Deny Cloud
 Origin: GB
 2403:f880:6000::/39 Deny Cloud
 2403:f880:6300::/40 Deny Cloud
 2404:5d80:6000::/39 Deny Cloud
 2404:5d80:6300::/40 Deny Cloud
 Origin: JP
-2001:4de0:500::/40 Deny Cloud
-2001:4de0:600::/40 Deny Cloud
-2001:4de0:2400::/40 Deny Cloud
-2001:4de0:4202::/47 Deny Cloud
-2001:4de0:6000::/39 Deny Cloud
-2001:4de0:6300::/40 Deny Cloud
-2001:4de0:7001::/48 Deny Cloud
-2001:4de0:7002::/47 Deny Cloud
-2001:4de0:ac10::/47 Deny Cloud
-2001:4de0:ac12::/48 Deny Cloud
-2001:4de0:ac18::/47 Deny Cloud
+2001:4de0::/32 Deny Cloud
+2a0a:e200:1100::/40 Deny Cloud
+2a0a:e200:1600::/40 Deny Cloud
 Origin: NL
-2001:1938::/43 Deny Cloud
-2001:1938:4202::/47 Deny Cloud
-2001:1938:7001::/48 Deny Cloud
-2001:1938:7002::/47 Deny Cloud
-2001:1938:7004::/46 Deny Cloud
-2001:1938:7008::/48 Deny Cloud
-2001:1938:b000::/48 Deny Cloud
-2001:1938:b00b::/48 Deny Cloud
+2001:1938::/32 Deny Cloud
+2407:1580:1200::/40 Deny Cloud
+2407:1580:1500::/40 Deny Cloud
+2407:1580:1700::/40 Deny Cloud
+2604:6840:1300::/40 Deny Cloud
+2604:6840:1400::/40 Deny Cloud
 2606:ce80::/32 Deny Cloud
 Origin: US
 Tag: Highwinds
@@ -5289,10 +5286,11 @@ Origin: UA
 Tag: Infium, UAB
 
 
-# ASNs 30548, 31034, 199653, 199883, 200185 ("Aruba S.p.A" / "Aruba SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited").
+# ASNs 30548, 31034, 199653, 199883, 200185, 205727.
+# "Aruba S.p.A" / "Aruba SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited".
 # Caught attempting to hack honeypots.
 # Ranges change frequently / Should update often.
-# Updated: 2018.02.24
+# Updated: 2018.02.24 / Checked: 2018.06.09
 
 2a03:2c40::/32 Deny Cloud
 2a03:a140::/32 Deny Cloud
@@ -5463,9 +5461,9 @@ Tag: Gigabit Hosting
 # ASNs 43037, 200600 ("Seznam.cz").
 # Legit search engine in the Czech Republic, but prone to sending probe/hacky/flood requests.
 # Websites intended for a Czech audience should add "Seznam.cz" to their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.46% (AS43037).
-# %Listed, CleanTalk.org: 76.12% (AS43037).
-# Updated: 2016.09.06 / Checked: 2018.02.18
+# As of last check, Google Malware Dashboard, CleanTalk.org, MegaRBL.net report as clean.
+# Active, recent and ongoing reports still exist at AbuseIPDB.com though.
+# Updated: 2016.09.06 / Checked: 2018.06.09
 
 2a02:598::/32 Deny Cloud
 2a06:2140::/29 Deny Cloud
@@ -5478,7 +5476,7 @@ Tag: Seznam.cz
 # I'm including just the one ASN (AS27435) that I've seen send unwanted/suspect requests to websites. May expand this
 # section to include other ASNs in the future if similar traffic or problems emerge from those ASNs. Activity seen from
 # the ASN in question includes spamming and probing.
-# Updated: 2018.02.24
+# Updated: 2018.06.09
 
 2402:9900::/48 Deny Cloud
 2402:9900:100::/47 Deny Cloud
@@ -5500,6 +5498,7 @@ Origin: GB
 2404:c8:2::/48 Deny Cloud
 Origin: ID
 2001:418:9807::/48 Deny Cloud
+2605:b800:787::/48 Deny Cloud
 2607:f480::/46 Deny Cloud
 2607:f480:4::/47 Deny Cloud
 2607:f480:8::/47 Deny Cloud
@@ -5515,7 +5514,7 @@ Origin: ID
 2607:f480:401::/48 Deny Cloud
 2607:f480:411::/48 Deny Cloud
 2607:f480:1111::/48 Deny Cloud
-2607:f480:1ab2::/47 Deny Cloud
+2607:f480:1ab0::/44 Deny Cloud
 2607:f480:f001::/48 Deny Cloud
 Origin: US
 2c0f:fc00:b004::/48 Deny Cloud

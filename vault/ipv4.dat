@@ -2570,7 +2570,7 @@ Tag: AS42807
 
 # ASNs 34360, 41079, 48760, 198414 ("H88 S.A").
 # Webhosting company based in Poland.
-# Updated: 2018.02.24
+# Updated: 2018.06.09
 
 91.189.32.0/21 Deny Cloud
 91.196.48.0/22 Deny Cloud
@@ -2594,6 +2594,8 @@ Tag: AS42807
 185.201.112.0/22 Deny Cloud
 185.204.216.0/22 Deny Cloud
 185.208.164.0/24 Deny Cloud
+185.212.132.0/22 Deny Cloud
+185.243.52.0/22 Deny Cloud
 193.17.184.0/24 Deny Cloud
 193.218.152.0/22 Deny Cloud
 194.169.227.0/24 Deny Cloud
@@ -4612,8 +4614,8 @@ Tag: Wowrack.com
 
 
 # ASN 197746 ("HyperHosting - Cloud Infrastructure").
-# %Listed, Google Malware Dashboard: 0.62%.
-# Updated: 2016.01.21 / Checked: 2018.02.18
+# At last check, not actively reported by any DBs anywhere anymore. Possible candidate for future removal.
+# Updated: 2016.01.21 / Checked: 2018.06.09
 
 31.22.112.0/23 Deny Cloud
 31.22.115.0/24 Deny Cloud
@@ -4626,7 +4628,7 @@ Tag: HyperHosting
 
 
 # ASN 25700 ("SWIFT VENTURES Inc").
-# Updated: 2016.08.26 / Checked: 2018.02.18
+# Updated: 2016.08.26 / Checked: 2018.06.09
 
 204.8.32.0/24 Deny Cloud
 204.8.34.0/24 Deny Cloud
@@ -10357,7 +10359,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.05.25
+# Updated: 2018.06.09
 
 103.8.172.0/22 Deny Cloud
 103.209.72.0/24 Deny Cloud
@@ -11013,10 +11015,10 @@ Origin: SG
 130.137.17.0/24 Deny Cloud
 130.137.20.0/24 Deny Cloud
 130.137.24.0/23 Deny Cloud
-140.16.6.0/23 Deny Cloud
 140.16.12.0/22 Deny Cloud
 140.16.16.0/24 Deny Cloud
 140.16.24.0/23 Deny Cloud
+140.18.4.0/23 Deny Cloud
 140.18.8.0/24 Deny Cloud
 140.18.10.0/24 Deny Cloud
 142.54.38.0/24 Deny Cloud
@@ -14067,18 +14069,17 @@ Origin: US
 Tag: Ecommerce Corporation
 
 
-# ASNs 132412, 135511, 136565 ("CyberWorld Data Center").
-# Updated: 2017.10.23 / Checked: 2018.02.21
+# ASNs 132412, 135511, 136565, 136566 ("CyberWorld Data Center").
+# Updated: 2018.06.10
 
-103.20.121.0/24 Deny Cloud
-103.20.122.0/23 Deny Cloud
+103.20.120.0/22 Deny Cloud
 202.183.234.0/24 Deny Cloud
 Origin: TH
 Tag: CyberWorld
 
 
 # ASNs 24931, 32911, 57669 ("DediPower Managed Hosting Limited").
-# Updated: 2018.02.23
+# Updated: 2018.02.23 / Checked: 2018.06.09
 
 46.236.0.0/19 Deny Cloud
 46.236.32.0/20 Deny Cloud
@@ -14212,7 +14213,7 @@ Tag: Cloud Sigma
 
 
 # ASNs 18465, 46864, 198301, 200451 ("Workday, Inc").
-# Updated: 2018.02.23
+# Updated: 2018.06.09
 
 212.187.172.0/24 Deny Cloud
 Origin: GB
@@ -14229,6 +14230,7 @@ Origin: IE
 107.1.22.0/24 Deny Cloud
 128.177.50.0/24 Deny Cloud
 154.50.199.0/24 Deny Cloud
+154.61.65.0/24 Deny Cloud
 173.226.103.0/24 Deny Cloud
 206.169.118.0/24 Deny Cloud
 209.177.160.0/23 Deny Cloud
@@ -14236,17 +14238,15 @@ Origin: IE
 209.177.164.0/22 Deny Cloud
 209.177.168.0/23 Deny Cloud
 209.177.171.0/24 Deny Cloud
-209.177.172.0/24 Deny Cloud
 209.177.174.0/24 Deny Cloud
 Origin: US
 Tag: Workday, Inc
 
 
 # ASN 30217 ("Desync Networks").
-# %Listed, Google Malware Dashboard: 0.78%.
+# %Listed, Google Malware Dashboard: 0.75%.
 # %Listed, CleanTalk.org: 9.59%.
-# Stop Forum Spam (SFS) listings: 3.
-# Updated: 2017.10.23 / Checked: 2018.02.21
+# Updated: 2017.10.23 / Checked: 2018.06.10
 
 208.83.20.0/22 Deny Cloud
 Origin: US
@@ -14475,10 +14475,10 @@ Tag: Gemini Software
 
 
 # ASN 19318 ("Interserver, Inc").
-# %Listed, Google Malware Dashboard: 1.18%.
+# %Listed, Google Malware Dashboard: 0.42%.
 # %Listed, CleanTalk.org: 40.91%.
-# Stop Forum Spam (SFS) listings: 2,001.
-# Updated: 2018.02.24
+# Stop Forum Spam (SFS) listings: 1,848.
+# Updated: 2018.02.24 / Checked: 2018.06.09
 
 91.208.95.0/24 Deny Cloud
 Origin: GB
@@ -14567,11 +14567,15 @@ Tag: SISTRIX GmbH
 
 
 # ASN 53850 ("GorillaServers, Inc").
-# %Listed, Google Malware Dashboard: 2.06%.
+# %Listed, Google Malware Dashboard: 2.00%.
 # %Listed, CleanTalk.org: 41.78%.
-# Stop Forum Spam (SFS) listings: 899.
-# Updated: 2017.10.23 / Checked: 2018.02.21
+# Stop Forum Spam (SFS) listings: 818.
+# Updated: 2018.06.10
 
+161.129.60.0/24 Deny Cloud
+Origin: CA
+179.61.143.0/24 Deny Cloud
+Origin: CL
 23.29.64.0/20 Deny Cloud
 23.239.96.0/19 Deny Cloud
 98.159.99.0/24 Deny Cloud
@@ -18069,43 +18073,63 @@ Origin: ZA
 Tag: 24 SHELLS
 
 
-# ASNs 11588, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
-# Updated: 2018.04.18
+# ASNs 11588, 12989, 18607, 20446, 33438 ("Highwinds Network Group, Inc").
+# Updated: 2018.06.10
 
-185.147.213.0/24 Deny Cloud
-185.147.214.0/24 Deny Cloud
+138.122.232.0/22 Deny Cloud
+Origin: BR
+185.147.212.0/22 Deny Cloud
 Origin: GB
 36.255.204.0/22 Deny Cloud
 Origin: HK
-81.171.61.0/24 Deny Cloud
-81.171.68.0/22 Deny Cloud
-81.171.108.0/24 Deny Cloud
+81.171.32.0/19 Deny Cloud
+81.171.64.0/18 Deny Cloud
+91.148.196.0/23 Deny Cloud
+91.148.208.0/20 Deny Cloud
 94.46.145.0/24 Deny Cloud
+94.46.150.0/24 Deny Cloud
 94.46.152.0/22 Deny Cloud
 185.69.89.0/24 Deny Cloud
+185.69.91.0/24 Deny Cloud
+185.90.196.0/22 Deny Cloud
+193.108.27.0/24 Deny Cloud
 Origin: NL
 63.78.12.0/22 Deny Cloud
-64.145.73.0/24 Deny Cloud
-64.145.90.0/23 Deny Cloud
+64.145.64.0/19 Deny Cloud
 69.16.128.0/19 Deny Cloud
 69.16.160.0/22 Deny Cloud
 69.16.164.0/24 Deny Cloud
-69.16.168.0/22 Deny Cloud
-69.16.173.0/24 Deny Cloud
-69.16.174.0/23 Deny Cloud
+69.16.168.0/21 Deny Cloud
+69.16.176.0/22 Deny Cloud
+69.16.180.0/23 Deny Cloud
+69.16.182.0/24 Deny Cloud
+69.16.184.0/21 Deny Cloud
 72.20.44.0/24 Deny Cloud
+74.209.128.0/20 Deny Cloud
 103.66.31.0/24 Deny Cloud
+104.86.95.0/24 Deny Cloud
+104.90.240.0/24 Deny Cloud
+104.113.56.0/24 Deny Cloud
 151.139.0.0/16 Deny Cloud
-173.245.194.0/23 Deny Cloud
-173.245.208.0/22 Deny Cloud
-173.245.216.0/22 Deny Cloud
+173.245.192.0/19 Deny Cloud
+176.67.84.0/23 Deny Cloud
+205.185.192.0/23 Deny Cloud
+205.185.196.0/22 Deny Cloud
 205.185.200.0/22 Deny Cloud
-205.185.208.0/24 Deny Cloud
-205.185.216.0/24 Deny Cloud
-209.107.195.0/24 Deny Cloud
-209.107.219.0/24 Deny Cloud
-209.197.2.0/23 Deny Cloud
-209.234.248.0/24 Deny Cloud
+205.185.206.0/24 Deny Cloud
+205.185.208.0/23 Deny Cloud
+205.185.212.0/24 Deny Cloud
+205.185.214.0/23 Deny Cloud
+205.185.216.0/21 Deny Cloud
+209.107.192.0/19 Deny Cloud
+209.197.0.0/20 Deny Cloud
+209.197.16.0/23 Deny Cloud
+209.197.18.0/24 Deny Cloud
+209.197.20.0/23 Deny Cloud
+209.197.22.0/24 Deny Cloud
+209.197.24.0/21 Deny Cloud
+209.234.240.0/20 Deny Cloud
+216.151.176.0/20 Deny Cloud
 Origin: US
 Tag: Highwinds
 
@@ -18637,10 +18661,11 @@ Origin: UA
 Tag: Infium, UAB
 
 
-# ASNs 30548, 31034, 199653, 199883, 200185 ("Aruba S.p.A" / "Aruba SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited").
+# ASNs 30548, 31034, 199653, 199883, 200185, 205727.
+# "Aruba S.p.A" / "Aruba SAS" / "ARUBA NETWORKS, INC" / "ArubaCloud Limited".
 # Caught attempting to hack honeypots.
 # Ranges change frequently / Should update often.
-# Updated: 2018.02.24
+# Updated: 2018.06.09
 
 185.35.64.0/22 Deny Cloud
 Origin: DE
@@ -18687,6 +18712,7 @@ Origin: GB
 185.62.0.0/22 Deny Cloud
 185.94.83.0/24 Deny Cloud
 185.135.102.0/24 Deny Cloud
+185.220.52.0/24 Deny Cloud
 188.213.160.0/20 Deny Cloud
 193.58.239.0/24 Deny Cloud
 193.254.240.0/23 Deny Cloud
@@ -18695,7 +18721,8 @@ Origin: GB
 194.182.110.0/23 Deny Cloud
 195.128.234.0/23 Deny Cloud
 195.225.168.0/22 Deny Cloud
-195.231.0.0/17 Deny Cloud
+195.231.0.0/18 Deny Cloud
+195.231.64.0/19 Deny Cloud
 195.234.171.0/24 Deny Cloud
 195.250.34.0/24 Deny Cloud
 212.237.0.0/18 Deny Cloud
@@ -18703,6 +18730,8 @@ Origin: GB
 217.61.96.0/19 Deny Cloud
 217.73.224.0/20 Deny Cloud
 Origin: IT
+82.102.4.0/24 Deny Cloud
+Origin: PT
 63.80.98.0/24 Deny Cloud
 66.71.128.0/18 Deny Cloud
 104.36.248.0/22 Deny Cloud
@@ -19526,9 +19555,9 @@ Tag: Gigabit Hosting
 # ASNs 43037, 200600 ("Seznam.cz").
 # Legit search engine in the Czech Republic, but prone to sending probe/hacky requests.
 # Websites intended for a Czech audience should add "Seznam.cz" to their ignore.dat file.
-# %Listed, Google Malware Dashboard: 0.46% (AS43037).
-# %Listed, CleanTalk.org: 76.12% (AS43037).
-# Updated: 2016.09.06 / Checked: 2018.02.18
+# As of last check, Google Malware Dashboard, CleanTalk.org, MegaRBL.net report as clean.
+# Active, recent and ongoing reports still exist at AbuseIPDB.com though.
+# Updated: 2016.09.06 / Checked: 2018.06.09
 
 77.75.72.0/21 Deny Cloud
 185.66.188.0/22 Deny Cloud
@@ -19542,7 +19571,7 @@ Tag: Seznam.cz
 # I'm including just the one ASN (AS27435) that I've seen send unwanted/suspect requests to websites. May expand this
 # section to include other ASNs in the future if similar traffic or problems emerge from those ASNs. Activity seen from
 # the ASN in question includes spamming and probing.
-# Updated: 2018.02.24
+# Updated: 2018.02.24 / Checked: 2018.06.09
 
 103.23.112.0/22 Deny Cloud
 175.184.200.0/21 Deny Cloud
@@ -20861,7 +20890,7 @@ Tag: WP/Temp/Cloud/Spam
 # Microsoft Azure IPv4 CIDRs.
 # A more up-to-date version of this section is available via the Azure optional blocklist provided by Macmathan.
 # It can be installed via the front-end.
-# Updated: 2018.05.25
+# Updated: 2018.06.09
 # Refer microsoft.com/en-us/download/details.aspx?id=41653
 # Refer microsoft.com/en-us/download/details.aspx?id=42064
 # Refer microsoft.com/en-us/download/details.aspx?id=54770
@@ -20995,11 +21024,14 @@ Origin: BR
 40.85.192.0/18 Run rules_specific.php
 40.86.192.0/18 Run rules_specific.php
 40.89.0.0/19 Run rules_specific.php
+40.90.128.0/28 Run rules_specific.php
 40.90.130.192/28 Run rules_specific.php
 40.90.138.32/27 Run rules_specific.php
 40.90.138.64/27 Run rules_specific.php
 40.90.140.0/27 Run rules_specific.php
+40.90.143.160/27 Run rules_specific.php
 40.90.147.32/27 Run rules_specific.php
+40.90.151.96/27 Run rules_specific.php
 40.126.11.0/24 Run rules_specific.php
 52.108.42.0/23 Run rules_specific.php
 52.108.232.0/23 Run rules_specific.php
@@ -21252,6 +21284,7 @@ Origin: DE
 52.239.205.0/24 Run rules_specific.php
 52.239.212.0/23 Run rules_specific.php
 52.239.242.0/23 Run rules_specific.php
+52.239.248.0/24 Run rules_specific.php
 52.245.40.0/22 Run rules_specific.php
 52.245.48.0/22 Run rules_specific.php
 52.245.88.0/22 Run rules_specific.php
@@ -21794,10 +21827,10 @@ Origin: KR
 40.80.192.0/19 Run rules_specific.php
 40.81.0.0/20 Run rules_specific.php
 40.81.32.0/20 Run rules_specific.php
-40.82.0.0/23 Run rules_specific.php
-40.82.4.0/22 Run rules_specific.php
+40.82.0.0/21 Run rules_specific.php
 40.82.16.0/22 Run rules_specific.php
 40.82.24.0/22 Run rules_specific.php
+40.82.36.0/22 Run rules_specific.php
 40.83.0.0/18 Run rules_specific.php
 40.83.128.0/17 Run rules_specific.php
 40.84.0.0/16 Run rules_specific.php

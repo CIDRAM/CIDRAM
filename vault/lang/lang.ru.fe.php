@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.06.05).
+ * This file: Russian language data for the front-end (last modified: 2018.06.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,7 +51,7 @@ $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страни
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Файл для запись всех попыток входа в фронтенд. Задайте имя файлу, или оставьте пустым чтобы деактивировать опцию.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Разрешить поиск gethostbyaddr, когда UDP недоступен? True = Да [Стандарт]; False = Нет.';
-$CIDRAM['lang']['config_general_ban_override'] = 'Переопределить «forbid_on_block» когда «infraction_limit» превысило? Когда переопределении: Блокированные запросы возвращают пустую страницу (файлы шаблонов не используются). 200 = Не переопределить [Стандарт]; 403 = Переопределить с «403 Forbidden»; 503 = Переопределить с «503 Service unavailable».';
+$CIDRAM['lang']['config_general_ban_override'] = 'Переопределить «forbid_on_block» когда «infraction_limit» превысило? Когда переопределении: Блокированные запросы возвращают пустую страницу (файлы шаблонов не используются). 200 = Не переопределить [Стандарт]. Другие значения совпадают с доступными значениями для «forbid_on_block».';
 $CIDRAM['lang']['config_general_default_algo'] = 'Определяет, какой алгоритм использовать для всех будущих паролей и сеансов. Опции: PASSWORD_DEFAULT (стандарт), PASSWORD_BCRYPT, PASSWORD_ARGON2I (требует PHP &gt;= 7.2.0).';
 $CIDRAM['lang']['config_general_default_dns'] = 'Разделенный запятыми список DNS-серверов, чтобы использовать для имен хостов поиска. Стандарт = «8.8.8.8,8.8.4.4» (Google DNS). ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'Деактивировать ли CLI-модус? Обычно CLI-модус активирован. Однако иногда он может отрицательно влиять на определённые тестовые программы (например на PHPUnit) и другие приложения, базирующиеся на CLI. Если CLI-модус нельзя деактивировать, то эту команду нужно игнорировать. False = CLI-модус активирован [Стандарт]; True = CLI-модус деактивирован.';
@@ -59,7 +59,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Деактивироват
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Отключить веб-шрифты? True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Если Вы хотите, Вы можете предоставить адрес электронной почты здесь чтобы дать пользователям, когда они заблокированы, для их использования в качестве точки контакта за поддержку и/или помощь ибо в случае их блокирования по ошибке. ПРЕДУПРЕЖДЕНИЕ: Любой адрес электронной почты Вы предоставляете здесь наверняка будет найдены по спамботами и скребки во время используется здесь, и так, это настоятельно рекомендуется, если Вы решите добавить адрес электронной почты здесь, что Вы убедитесь что адрес электронной почты что Вы предоставляете здесь одноразовый адрес и/или адрес который Вы не против чтобы быть спамом (другими словами, Вы вероятно не хотите использовать ваши основные личные электронной почты или первичные бизнес электронной почты).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Как Вы предпочитаете, чтобы адрес электронной почты был представлен пользователям?';
-$CIDRAM['lang']['config_general_forbid_on_block'] = 'Какой тип заголовка должен CIDRAM ответить при блокировке запросов?';
+$CIDRAM['lang']['config_general_forbid_on_block'] = 'Какое сообщение статуса HTTP должно отправлять CIDRAM при блокировке запросов? (Дополнительную информацию см. в документации).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Поиск имен хостов для всех запросов? True = Да; False = Нет [Стандарт]. Поиск имен хостов обычно выполняется по принципу «по мере необходимости», но может быть принудительно для всех запросов. Это может быть полезно в качестве средства предоставления более подробной информации в логфайлах, но может также иметь слегка отрицательный эффект на производительность.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Скрыть информацию о версии из журналов и вывода на страницу? True = Да; False = Нет [Стандарт].';
 $CIDRAM['lang']['config_general_ipaddr'] = 'Место IP-адреса актуального соединения в общем потоке данных (полезно для Cloud-сервиса). Стандарт = REMOTE_ADDR. ВНИМАНИЕ: Изменяйте это значение только в том случае, если Вы уверены в своих действиях!';
@@ -354,7 +354,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Некоторые полезные
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Вопросы @ GitHub</a> – Страница вопросы для CIDRAM (поддержка, помощь, и т.д.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress плагин для CIDRAM.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
-            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
+            <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Содержит дополнительные блоклисты и модули для CIDRAM, такие как блокирование опасных ботов, нежелательных стран, устаревшие браузеры, и т.д.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Получить CIDRs от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>

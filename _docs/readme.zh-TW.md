@@ -342,7 +342,18 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - 在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準=REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！
 
 『forbid_on_block』
-- 什麼頭CIDRAM應該應對當申請是拒絕？​False/200 = 200 OK【標準】；​True/403 = 403 Forbidden （被禁止）；​503 = 503 Service unavailable （服務暫停）。
+- 阻止請求時，CIDRAM應發送哪個HTTP狀態消息？
+
+目前支持的值：
+
+狀態碼 | 狀態消息
+---|---
+`200` | `200 OK` | 默認值。​最不強大，但對用戶最友善。
+`403` | `403 Forbidden` | 更強大，和對用戶有點友善。
+`410` | `410 Gone` | 某些瀏覽器會緩存此狀態消息，並且不會再發送請求，即使用戶未被阻止。​這可能會導致很難解決假陽性。​但為減少某些特定類型的漫遊器的請求的它可能比其他選項更有效。
+`418` | `418 I'm a teapot` | 這實際上引用了愚人節的笑話【[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)】，而客戶不太可能理解它。​提供了為娛樂和方便的，但一般不推薦。
+`451` | `Unavailable For Legal Reasons` | 主要出於法律原因阻止請求時適用於上下文。​不建議在其他情況下。
+`503` | `Service Unavailable` | 最強大，但對用戶最不友善。
 
 『silent_mode』
 - CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。
@@ -393,13 +404,15 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - 前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。
 
 『ban_override』
-- 覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】；​403 = 使用『403 Forbidden』覆蓋；​503 = 使用『503 Service unavailable』覆蓋。
+- 覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『forbid_on_block』的可用值相同。
 
 『log_banned_ips』
 - 包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；​False（假）=不是。
 
 『default_dns』
 - 以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！
+
+*也可以看看：​[在『default_dns』中我可以使用什麼？](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 『search_engine_verification』
 - 嘗試驗證來自搜索引擎的請求？​驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，​SEO，​等等）。​當被驗證，​搜索引擎可以被阻止，​但不會被禁止。​當不被驗證，​他們可以由於超過違規限製而被禁止。​另外，​搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，​這些請求將被阻止）。​True（真）=搜索引擎驗證是啟用【標準】；​False（假）=搜索引擎驗證是禁用。
@@ -1080,13 +1093,13 @@ IP | 操作者
 
 此軟件包不提供任何擔保（這已由包許可證提及）。​這包括（但不限於）所有責任範圍。​為了您的方便，該軟件包已提供給您。​希望它會有用，它會為你帶來一些好處。​但是，使用或實施該軟件包是您自己的選擇。​您不是被迫使用或實施該軟件包，但是當您這樣做時，您需要對該決定負責。​我，和其他軟件包貢獻者，對於您的決定的後果不承擔法律責任，無論是直接的，間接的，暗示的，還是其他方式。
 
-#### 11.2 THIRD PARTIES
+#### 11.2 第三方
 
-Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+取決於其確切的配置和實施，在某些情況下，該軟件包可能與第三方進行通信和共享信息。​在某些情況下，某些轄區可能會將此信息定義為『個人身份信息』（PII）。
 
-How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+這些信息如何被這些第三方使用，是受這些第三方制定的各種政策的約束，並且超出了本文檔的範圍。​但是，在所有這些情況下，與這些第三方共享信息可能被禁用。​在所有這些情況下，如果您選擇啟用它，則有責任研究您可能遇到的任何問題（如果您擔心這些第三方的隱私，安全，和PII使用情況）。​如果存在任何疑問，或者您對PII方面的這些第三方的行為不滿意，最好禁用與這些第三方分享的所有信息。
 
-For the purpose of transparency, the type of information shared, and with whom, is described below.
+為了透明的目的，共享信息的類型，以及與誰共享，如下所述。
 
 ##### 11.2.0 HOSTNAME LOOKUP
 
@@ -1098,9 +1111,9 @@ If you use any features or modules intended to work with hostnames (such as the 
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
-##### 11.2.1 WEBFONTS
+##### 11.2.1 網絡字體
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+一些自定義主題，以及CIDRAM前端的標準UI（『用戶界面』），和『拒絕訪問』頁面可能出於審美原因使用網絡字體。​網絡字體默認是禁用的，但啟用後，用戶的瀏覽器和託管網絡字體的服務之間會發生直接通信。​這可能涉及傳遞信息，例如用戶的IP地址，用戶代理，操作系統，以及請求可用的其他詳細信息。​大部分這些網絡字體都由[Google Fonts](https://fonts.google.com/)服務託管。
 
 *相關配置指令：*
 - `general` -> `disable_webfonts`
@@ -1309,4 +1322,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-最後更新：2018年6月1日。
+最後更新：2018年6月9日。

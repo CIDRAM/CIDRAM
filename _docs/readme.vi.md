@@ -341,7 +341,18 @@ Cấu hình chung cho CIDRAM.
 - Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 "forbid_on_block"
-- Cái nào tiêu đề nên CIDRAM phản ứng với khi các yêu cầu được bị chặn? False/200 = 200 OK [Mặc định]; True/403 = 403 Forbidden (Cấm); 503 = 503 Service unavailable (Dịch vụ không có sẵn).
+- Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn?
+
+Giá trị hiện được hỗ trợ:
+
+Mã trạng thái | Thông thái trạng thái
+---|---
+`200` | `200 OK` | Giá trị mặc định. Không phải là rất mạnh mẽ, nhưng thân thiện với người dùng.
+`403` | `403 Forbidden` | Hơi mạnh mẽ, và thân thiện với người dùng.
+`410` | `410 Gone` | Có thể gây ra sự cố khi cố gắng giải quyết các sai tích cực, bởi vì một số trình duyệt sẽ lưu trữ thông thái trạng thái này và không gửi lại yêu cầu, ngay cả sau khi bỏ chặn người dùng. Có thể hữu ích hơn các tùy chọn khác để giảm yêu cầu từ một số loại bot cụ thể.
+`418` | `418 I'm a teapot` | Điều này thực sự ám chỉ đến một trò đùa của April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] và có lẽ khách hàng sẽ không hiểu. Cung cấp cho vui chơi giải trí và thuận tiện, nhưng không thường được đề nghị.
+`451` | `Unavailable For Legal Reasons` | Thích hợp cho các ngữ cảnh khi các yêu cầu bị chặn chủ yếu vì lý do pháp lý. Không được đề xuất trong các ngữ cảnh khác.
+`503` | `Service Unavailable` | Không phải là rất thân thiện với người dùng, nhưng mạnh mẽ.
 
 "silent_mode"
 - CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
@@ -392,13 +403,15 @@ Giá trị | Nó tạo ra
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 "ban_override"
-- Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]; 403 = Ghi đè với "403 Forbidden"; 503 = Ghi đè với "503 Service unavailable".
+- Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "forbid_on_block".
 
 "log_banned_ips"
 - Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.
 
 "default_dns"
 - Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
+
+*Xem thêm: [Những gì tôi có thể sử dụng cho "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification"
 - Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.
@@ -1308,4 +1321,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Lần cuối cập nhật: 1 Tháng Sáu 2018 (2018.06.01).
+Lần cuối cập nhật: 9 Tháng Sáu 2018 (2018.06.09).

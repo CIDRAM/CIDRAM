@@ -341,7 +341,18 @@ General CIDRAM configuration.
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
-- Which headers should CIDRAM respond with when blocking requests? False/200 = 200 OK [Default]; True/403 = 403 Forbidden; 503 = 503 Service unavailable.
+- Which HTTP status message should CIDRAM send when blocking requests?
+
+Currently supported values:
+
+Status code | Status message
+---|---
+`200` | `200 OK` | Default value. Least robust, but most user-friendly.
+`403` | `403 Forbidden` | More robust, but less user-friendly.
+`410` | `410 Gone` | Could cause problems when attempting to resolve false positives, due to that some browsers will cache this status message and not send subsequent requests, even after unblocking users. May be more useful than other options for reducing requests from certain, very specific types of bots though.
+`418` | `418 I'm a teapot` | Actually references an April Fools' joke [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] and is unlikely to be understood by the client. Provided for amusement and convenience, but not generally recommended.
+`451` | `Unavailable For Legal Reasons` | Appropriate for contexts when requests are blocked primarily for legal reasons. Not recommended in other contexts.
+`503` | `Service Unavailable` | Most robust, but least user-friendly.
 
 "silent_mode"
 - Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.
@@ -392,13 +403,15 @@ Value | Produces
 - File for logging front-end login attempts. Specify a filename, or leave blank to disable.
 
 "ban_override"
-- Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren't used). 200 = Don't override [Default]; 403 = Override with "403 Forbidden"; 503 = Override with "503 Service unavailable".
+- Override "forbid_on_block" when "infraction_limit" is exceeded? When overriding: Blocked requests return a blank page (template files aren't used). 200 = Don't override [Default]. Other values are the same as the available values for "forbid_on_block".
 
 "log_banned_ips"
 - Include blocked requests from banned IPs in the logfiles? True = Yes [Default]; False = No.
 
 "default_dns"
 - A comma delimited list of DNS servers to use for hostname lookups. Default = "8.8.8.8,8.8.4.4" (Google DNS). WARNING: Don't change this unless you know what you're doing!
+
+*See also: [What can I use for "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification"
 - Attempt to verify requests from search engines? Verifying search engines ensures that they won't be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won't be banned. When not verified, it's possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.
@@ -1312,4 +1325,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 1 June 2018 (2018.06.01).
+Last Updated: 9 June 2018 (2018.06.09).

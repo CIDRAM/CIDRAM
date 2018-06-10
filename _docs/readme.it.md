@@ -341,7 +341,18 @@ Generale configurazione per CIDRAM.
 - Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili). Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 "forbid_on_block"
-- Quale intestazioni dovrebbe CIDRAM rispondere con quando bloccano le richieste? False/200 = 200 OK [Predefinito]; True/403 = 403 Forbidden (Proibito); 503 = 503 Service unavailable (Servizio non disponibile).
+- Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste?
+
+Valori attualmente supportati:
+
+Codice di stato | Messaggio di stato
+---|---
+`200` | `200 OK` | Il valore predefinito. Meno robusto, ma più amichevole per gli utenti.
+`403` | `403 Forbidden` | Un po' più robusto, ma un po' meno amichevole per gli utenti.
+`410` | `410 Gone` | Potrebbe causare problemi quando si tenta di risolvere i falsi positivi, a causa di ciò alcuni browser memorizzeranno nella cache questo messaggio di stato e non invieranno richieste successive, anche dopo aver sbloccato gli utenti. Può essere più utile di altre opzioni per ridurre le richieste da determinati tipi di robot molto specifici.
+`418` | `418 I'm a teapot` | In realtà fa riferimento a uno scherzo di April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] ed è improbabile che venga compreso dal cliente. Fornito per divertimento e convenienza, ma generalmente non raccomandato.
+`451` | `Unavailable For Legal Reasons` | Appropriato per i contesti in cui le richieste vengono bloccate principalmente per motivi legali. Non raccomandato in altri contesti.
+`503` | `Service Unavailable` | Più robusto, ma meno amichevole per gli utenti.
 
 "silent_mode"
 - CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto.
@@ -392,13 +403,15 @@ Valore | Produce
 - File per la registrazione di l'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.
 
 "ban_override"
-- Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]; 403 = Sostituire con "403 Forbidden"; 503 = Sostituire con "503 Service unavailable".
+- Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "forbid_on_block".
 
 "log_banned_ips"
 - Includi richieste bloccate da IP vietati nei file di log? True = Sì [Predefinito]; False = No.
 
 "default_dns"
 - Un elenco delimitato con virgole di server DNS da utilizzare per le ricerche dei nomi di host. Predefinito = "8.8.8.8,8.8.4.4" (Google DNS). AVVISO: Non modificare questa se non sai quello che stai facendo!
+
+*Guarda anche: [Cosa posso usare per "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification"
 - Tentativo di verificare le richieste dai motori di ricerca? Verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.
@@ -1307,4 +1320,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 1 Giugno 2018 (2018.06.01).
+Ultimo Aggiornamento: 9 Giugno 2018 (2018.06.09).

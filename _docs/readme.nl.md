@@ -6,7 +6,7 @@
 - 3. [HOE TE GEBRUIKEN](#SECTION3)
 - 4. [FRONTEND MANAGEMENT](#SECTION4)
 - 5. [BESTANDEN IN DIT PAKKET](#SECTION5)
-- 6. [CONFIGURATIEOPTIES](#SECTION6)
+- 6. [CONFIGURATIE-OPTIES](#SECTION6)
 - 7. [SIGNATURE FORMAAT](#SECTION7)
 - 8. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION8)
 - 9. [VEELGESTELDE VRAGEN (FAQ)](#SECTION9)
@@ -254,7 +254,7 @@ Bestand | Beschrijving
 /vault/cidramblocklists.dat | Bevat informatie met betrekking tot de optionele land blocklists door Macmathan; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/cli.php | CLI-handler.
 /vault/components.dat | Bevat informatie met betrekking tot de verschillende CIDRAM componenten; Gebruikt door de updates functie verzorgd door de frontend.
-/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
+/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratie-opties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie-handler.
 /vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de CIDRAM configuratie.
 /vault/frontend.php | Frontend-handler.
@@ -297,7 +297,7 @@ Bestand | Beschrijving
 ---
 
 
-### 6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
+### 6. <a name="SECTION6"></a>CONFIGURATIE-OPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van CIDRAM, samen met een beschrijving van hun doel en functie.
 
 #### "general" (Categorie)
@@ -341,7 +341,18 @@ Algemene configuratie voor CIDRAM.
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 "forbid_on_block"
-- Welke headers moet CIDRAM reageren met bij het blokkeren van verzoeken? False/200 = 200 OK [Standaard]; True/403 = 403 Forbidden (Verboden); 503 = 503 Service unavailable (Service onbeschikbaar).
+- Welk HTTP-statusbericht moet CIDRAM verzenden bij het blokkeren van verzoeken?
+
+Momenteel ondersteunde waarden:
+
+Status code | Status bericht
+---|---
+`200` | `200 OK` | Standaardwaarde. Minst robuust, maar meest gebruiksvriendelijk.
+`403` | `403 Forbidden` | Robuuster, maar minder gebruikersvriendelijk.
+`410` | `410 Gone` | Kan problemen veroorzaken bij pogingen om valse positieven op te lossen, omdat sommige browsers dit statusbericht in de cache opslaan en geen volgende verzoeken verzenden, zelfs niet na het deblokkeren van gebruikers. Kan echter nuttiger zijn dan andere opties om aanvragen van bepaalde, zeer specifieke typen bots te verminderen.
+`418` | `418 I'm a teapot` | Verwijst eigenlijk naar de grap van April Fools [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] en het is onwaarschijnlijk dat de klant het begrijpt. Voorzien voor amusement en gemak, maar over het algemeen niet aanbevolen.
+`451` | `Unavailable For Legal Reasons` | Geschikt voor situaties waarin verzoeken voornamelijk om juridische redenen worden geblokkeerd. Niet aanbevolen in andere contexten.
+`503` | `Service Unavailable` | Meest robuust, maar minst gebruiksvriendelijk.
 
 "silent_mode"
 - Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.
@@ -392,13 +403,15 @@ Waarde | Produceert
 - Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
 "ban_override"
-- Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]; 403 = Overrijden met "403 Forbidden"; 503 = Overrijden met "503 Service unavailable".
+- Overrijden "forbid_on_block" wanneer "infraction_limit" wordt overschreden? Wanneer het overrijdt: Geblokkeerde verzoeken retourneert een lege pagina (template bestanden worden niet gebruikt). 200 = Niet overrijden [Standaard]. Andere waarden zijn hetzelfde als de beschikbare waarden voor "forbid_on_block".
 
 "log_banned_ips"
 - Omvatten geblokkeerde verzoeken van verboden IP-adressen in de logbestanden? True = Ja [Standaard]; False = Nee.
 
 "default_dns"
 - Een door komma's gescheiden lijst met DNS-servers te gebruiken voor de hostnaam lookups. Standaard = "8.8.8.8,8.8.4.4" (Google DNS). WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
+
+*Zie ook: [Wat kan ik gebruiken voor "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification"
 - Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.
@@ -962,7 +975,7 @@ Ja. De eenvoudigste manier om dit te bereiken zou zijn om sommige van de optione
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Hoe vaak worden signatures bijgewerkt?
 
-Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor CIDRMA signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen, en in het algemeen, onderhouders proberen om prioriteiten te stellen op basis van noodzaak en van hoe vaak veranderingen optreden tussen ranges. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
+Bijwerkfrequentie varieert afhankelijk van de signature bestanden betrokken. Alle de onderhouders voor CIDRAM signature bestanden algemeen proberen om hun signatures regelmatig bijgewerkt te houden, maar als gevolg van dat ieder van ons hebben verschillende andere verplichtingen, ons leven buiten het project, en zijn niet financieel gecompenseerd (d.w.z., betaald) voor onze inspanningen aan het project, een nauwkeurige updateschema kan niet worden gegarandeerd. In het algemeen, signatures zullen worden bijgewerkt wanneer er genoeg tijd om dit te doen, en in het algemeen, onderhouders proberen om prioriteiten te stellen op basis van noodzaak en van hoe vaak veranderingen optreden tussen ranges. Het verlenen van bijstand wordt altijd gewaardeerde als u bent bereid om dat te doen.
 
 #### <a name="ENCOUNTERED_PROBLEM_WHAT_TO_DO"></a>Ik heb een fout tegengekomen tijdens het gebruik van CIDRAM en ik weet niet wat te doen! Help alstublieft!
 
@@ -1091,7 +1104,7 @@ Met het oog op transparantie wordt het type informatie dat wordt gedeeld en met 
 
 Als u functies of modules gebruikt die bedoeld zijn om met hostnamen te werken (zoals de "slechte hosts blokker module", "tor project exit nodes block module", of "zoekmachine verificatie", bijvoorbeeld), moet CIDRAM in staat zijn om de hostnaam van inkomende verzoeken op de een of andere manier. Dit gebeurt meestal door de hostnaam van het IP-adres van inkomende verzoeken van een DNS-server op te vragen, of door de informatie op te vragen via functionaliteit die wordt geboden door het systeem waarop CIDRAM is geïnstalleerd (dit wordt meestal een "hostnaam lookup" verwezen naar). De DNS-servers die standaard worden gedefinieerd, behoren tot de [Google DNS](https://dns.google.com/)-service (maar dit kan eenvoudig via de configuratie worden gewijzigd). De exacte services waarmee wordt gecommuniceerd, kunnen worden geconfigureerd en zijn afhankelijk van de manier waarop u het pakket configureert. In het geval dat u functionaliteit gebruikt die wordt geboden door het systeem waarop CIDRAM is geïnstalleerd, moet u contact opnemen met uw systeembeheerder om te bepalen naar welke routes hostnaam lookups moeten worden gebruikt. Hostnaam lookups kunnen worden voorkomen in CIDRAM door de betreffende modules te vermijden of door de pakketconfiguratie aan te passen aan uw behoeften.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
 - `general` -> `force_hostname_lookup`
@@ -1101,21 +1114,21 @@ Als u functies of modules gebruikt die bedoeld zijn om met hostnamen te werken (
 
 Sommige aangepaste thema's, evenals de standaard UI ("gebruikersinterface") voor de frontend van CIDRAM en de pagina "Toegang Geweigerd", kunnen webfonts gebruiken om esthetische redenen. Webfonts zijn standaard uitgeschakeld, maar indien ingeschakeld, vindt directe communicatie plaats tussen de browser van de gebruiker en de service die de webfonts host. Dit kan mogelijk inhouden dat informatie wordt doorgegeven zoals het IP-adres van de gebruiker, user agent, besturingssysteem, en andere details die beschikbaar zijn voor het verzoek. De meeste van deze webfonts worden gehost door de [Google Fonts](https://fonts.google.com/)-service.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.2 ZOEKMACHINE VERIFICATIE
 
 Wanneer verificatie van zoekmachines is ingeschakeld, probeert CIDRAM "forward DNS-lookups" uit te voeren om te verifiëren of verzoeken die claimen afkomstig te zijn van zoekmachines authentiek zijn. Hiertoe gebruikt het de [Google DNS](https://dns.google.com/)-service om IP-adressen van de hostnamen van deze inkomende verzoeken op te lossen (in dit proces worden de hostnamen van deze inkomende verzoeken gedeeld met de service).
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
 CIDRAM ondersteunt optioneel [Google reCAPTCHA](https://www.google.com/recaptcha/), waardoor gebruikers de mogelijkheid hebben om de pagina "Toegang Geweigerd" te omzeilen door een reCAPTCHA-instantie te voltooien (meer informatie over deze functie wordt eerder in de documentatie beschreven, met name in de configuratiesectie). Google reCAPTCHA vereist API-sleutels om correct te kunnen werken, en is daarom standaard uitgeschakeld. Dit kan worden ingeschakeld door de vereiste API-sleutels in de pakketconfiguratie te definiëren. Indien ingeschakeld, vindt directe communicatie tussen de browser van de gebruiker en de reCAPTCHA-service plaats. Dit kan mogelijk inhouden dat informatie wordt doorgegeven zoals het IP-adres van de gebruiker, user agent, besturingssysteem, en andere details die beschikbaar zijn voor het verzoek. Het IP-adres van de gebruiker kan ook worden gedeeld in communicatie tussen CIDRAM en de reCAPTCHA-service bij het verifiëren van de geldigheid van een reCAPTCHA-instantie en het controleren of deze met succes is voltooid.
 
-*Relevante configuratieopties: Alles vermeld onder de configuratiecategorie "recaptcha".*
+*Relevante configuratie-opties: Alles vermeld onder de configuratiecategorie "recaptcha".*
 
 ##### 11.2.4 STOP FORUM SPAM
 
@@ -1133,179 +1146,181 @@ CIDRAM kan informatie op verschillende manieren loggen, wat verschillende soorte
 
 ##### 11.3.0 BLOKGEBEURTENISSEN
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+Het primaire type loggen dat CIDRAM kan uitvoeren, heeft betrekking op "blokgebeurtenissen". Dit type loggen heeft betrekking op wanneer CIDRAM een aanvraag blokkeert, en kan in drie verschillende indelingen worden aangeboden:
+- Door mensen leesbare logbestanden.
+- Apache-stijl logbestanden.
+- Geserialiseerde logbestanden.
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+Een blokgebeurtenis, vastgelegd in een door mensen leesbaar logbestand, ziet er meestal als volgt uit (bijvoorbeeld):
 
 ```
 ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
+Script Versie: CIDRAM v1.6.0
+Datum/Tijd: Day, dd Mon 20xx hh:ii:ss +0000
+IP-Adres: x.x.x.x
 Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
+Signatures Tellen: 1
+Signatures Verwijzing: x.x.x.x/xx
+Waarom Geblokkeerd: Cloud Service ("Netwerknaam", Lxx:Fx, [XX])!
 User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
+Gereconstrueerde URI: http://your-site.tld/index.php
 reCAPTCHA State: Enabled.
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+Diezelfde blokgebeurtenis, geregistreerd in een Apache-stijl logbestand, ziet er ongeveer zo uit:
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+Een geregistreerde blokgebeurtenis bevat meestal de volgende informatie:
+- Een ID-nummer dat verwijst naar de blokgebeurtenis.
+- De versie van CIDRAM die momenteel wordt gebruikt.
+- De datum en tijd waarop de blokgebeurtenis plaatsvond.
+- Het IP-adres van het geblokkeerde verzoek.
+- De hostnaam van het IP-adres van het geblokkeerde verzoek (indien beschikbaar).
+- Het aantal signatures dat door het verzoek is geactiveerd.
+- Verwijzingen naar de geactiveerd signatures.
+- Verwijzingen naar de redenen voor de blokgebeurtenis, en enkele standaard, gerelateerde foutopsporingsinformatie.
+- De user agent van het geblokkeerde verzoek (d.w.z., hoe de verzoekende entiteit zichzelf identificeerde bij het verzoek).
+- Een reconstructie van de identifier voor de oorspronkelijk aangevraagde bron.
+- De reCAPTCHA state voor het huidige verzoek (indien relevant).
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+De configuratie richtlijnen die verantwoordelijk zijn voor dit type loggen, en voor elk van de drie beschikbare indelingen, zijn:
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Wanneer deze richtlijnen leeg worden gelaten, blijft dit type logboek uitgeschakeld.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 reCAPTCHA LOGGEN
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+Dit type loggen heeft specifiek betrekking op reCAPTCHA-instanties, en gebeurt alleen op wanneer een gebruiker een reCAPTCHA-instantie probeert te voltooien.
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+Een reCAPTCHA-logsinvoer bevat het IP-adres van de gebruiker die probeert een reCAPTCHA-instantie te voltooien, de datum en tijd waarop de poging heeft plaatsgevonden, en de reCAPTCHA state. Een reCAPTCHA-logsinvoer ziet er meestal als volgt uit (bijvoorbeeld):
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+IP-Adres: x.x.x.x - Datum/Tijd: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Succes!
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+De configuratie richtlijn die verantwoordelijk is voor reCAPTCHA loggen is:
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 FRONTEND LOGGEN
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Dit type loggen is bedoeld voor pogingen om bij de frontend in te loggen, en gebeurt alleen op wanneer een gebruiker zich probeert in te loggen bij de frontend (ervan uitgaande dat de frontend-toegang is ingeschakeld).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Een frontend logsinvoer bevat het IP-adres van de gebruiker die probeert in te loggen, de datum en tijd waarop de poging heeft plaatsgevonden, en de resultaten van de poging (ingelogd succesvol of niet). Een frontend logsinvoer ziet er meestal als volgt uit (bijvoorbeeld):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Ingelogd.
 ```
 
-The configuration directive responsible for front-end logging is:
+De configuratie-optie die verantwoordelijk is voor de frontend toegang te loggen is:
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 LOGROTATIE
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Mogelijk wilt u logs na een bepaalde periode opschonen, of mogelijk bent u wettelijk verplicht (d.w.z., de hoeveelheid tijd die het wettelijk toelaatbaar is om logs te bewaren, kan bij wet beperkt zijn). U kunt dit bereiken door datum/tijd-markeringen op te nemen in de namen van uw logbestanden, zoals gespecificeerd door uw pakketconfiguratie (b.v., `{yyyy}-{mm}-{dd}.log`), en vervolgens logrotatie in te schakelen (logrotatie stelt u in staat om enige actie in logbestanden uit te voeren wanneer de gespecificeerde limieten worden overschreden).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Bijvoorbeeld: Als ik wettelijk verplicht was om logs na 30 dagen te verwijderen, kon ik `{dd}.log` opgeven in de namen van mijn logbestanden (`{dd}` verwijst naar de dagen), de waarde van `log_rotation_limit` op 30 zetten, en de waarde van `log_rotation_action` op `Delete` zetten.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Omgekeerd, als u verplicht bent om logs gedurende langere tijd te bewaren, kunt u überhaupt geen logrotatie gebruiken, of kunt u de waarde van `log_rotation_action` op `Archive` zetten, om logbestanden te comprimeren, waardoor de totale hoeveelheid schijfruimte die ze innemen, wordt verminderd.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 LOGTRUNCATIE
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Het is ook mogelijk om afzonderlijke logbestanden af te kappen als ze een bepaalde grootte overschrijden, als dit iets is dat u misschien nodig heeft, of zou willen doen.
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 IP-ADRES PSEUDONIMISATIE
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+Ten eerste, als u niet bekend bent met de term "pseudonimisatie", kunnen de volgende bronnen u helpen om het in detail uit te leggen:
+- [[privacycompany.eu] Wat is het verschil tussen pseudonimiseren en anonimiseren van persoonsgegevens en wat zijn de gevolgen?](https://www.privacycompany.eu/blog-wat-is-het-verschil-tussen-pseudonimiseren-en-anonimiseren-van-persoonsgegevens-en-wat-zijn-de-gevolgen/)
+- [[nen.nl] Pseudonimisatie](https://www.nen.nl/Normontwikkeling/Pseudonimisatie.htm)
+- [[considerati.com] Anonimiseren en pseudonimiseren: wat is het verschil en wat is het belang ervan?](https://www.considerati.com/nl/publicaties/blog/anonimiseren-en-pseudonimiseren-wat-is-het-verschil-en-wat-is-het-belang-ervan/)
+- [[Wikipedia] Pseudonimiseren](https://nl.wikipedia.org/wiki/Pseudonimiseren)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+In sommige omstandigheden kan het wettelijk verplicht zijn om PII die is verzameld, verwerkt, of opgeslagen, te anonimiseren of te pseudonimiseren. Hoewel dit concept al geruime tijd bestaat, GDPR/DSGVO vermeldt, en moedigt specifiek "pseudonimisatie".
 
-CIDRAM is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When CIDRAM pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+CIDRAM kan IP-adressen pseudonimiseren wanneer ze worden geregistreerd, als dit iets is dat u misschien nodig heeft, of zou willen doen. Wanneer CIDRAM IP-adressen pseudonimiseert, wanneer geregistreerd, het laatste octet van IPv4-adressen, en alles na het tweede deel van IPv6-adressen wordt weergegeven door een "x" (effectief afronding van IPv4-adressen naar het initiële adres van het 24e subnet waar ze in factoreren, en IPv6-adressen naar het initiële adres van het 32e subnet waar ze in factoreren).
 
-*Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
+*Notitie: Het pseudonimisatieproces van het IP-adres van CIDRAM heeft geen invloed op de IP-trackingfunctie van CIDRAM. Als dit een probleem voor u is, is het misschien het beste om IP-tracking volledig uit te schakelen. Dit kan worden bereikt door `track_mode` in te stellen op `false` en door modules te vermijden.*
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 HET WEGLATEN VAN LOGINFORMATIE
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+Als u nog een stap verder wilt gaan door te voorkomen dat specifieke soorten informatie volledig worden vastgelegd, is dit ook mogelijk. CIDRAM biedt configuratie-opties om te bepalen of IP-adressen, hostnamen, en user agents in logs zijn opgenomen. Standaard worden alle drie deze gegevenspunten opgenomen in logs wanneer deze beschikbaar zijn. Als u een van deze configuratie-opties instelt op `true`, wordt de overeenkomstige informatie uit logs weggelaten.
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+*Notitie: Er is geen reden om IP-adressen te pseudonimiseren wanneer ze volledig uit logs worden weggelaten.*
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `legal` -> `omit_ip`
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 STATISTIEKEN
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM is optioneel in staat om statistieken bij te houden, zoals het totale aantal blokgebeurtenissen of reCAPTCHA-instanties die zijn opgetreden sinds een bepaald tijdstip. Deze functie is standaard uitgeschakeld, maar kan worden ingeschakeld via de pakketconfiguratie. Deze functie houdt alleen het totale aantal opgetreden gebeurtenissen bij en bevat geen informatie over specifieke gebeurtenissen (en moet daarom niet als PII worden beschouwd).
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 ENCRYPTIE
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM codeert de cache of logboekinformatie niet. [Encryptie](https://nl.wikipedia.org/wiki/Encryptie) voor de cache en logs kunnen in de toekomst worden geïntroduceerd, maar er zijn momenteel geen specifieke plannen voor. Als u zich zorgen maakt over ongeautoriseerde derden die toegang krijgen tot delen van CIDRAM die mogelijk PII of gevoelige informatie bevatten, zoals de cache of logbestanden, raad ik CIDRAM aan niet te installeren op een openbare locatie (b.v., installeer CIDRAM buiten de standaard `public_html` directory of gelijkwaardig daarvan beschikbaar voor de meeste standaard webservers) en dat de juiste beperkende machtigingen worden afgedwongen voor de directory waar deze zich bevindt (in het bijzonder, voor de vault directory). Als dat niet voldoende is om uw zorgen weg te nemen, configureer dan CIDRAM als zodanig dat de soorten informatie die uw zorgen veroorzaken, niet zullen worden verzameld of ingelogd (zoals door loggen uit te schakelen).
 
 #### 11.4 COOKIES
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+CIDRAM zet [cookies](https://nl.wikipedia.org/wiki/Cookie_(internet)) op twee punten in zijn codebase. Ten eerste, wanneer een gebruiker een reCAPTCHA-instantie met succes voltooit (en ervan uitgaande dat `lockuser` is ingesteld op `true`), CIDRAM stelt een cookie in om te kunnen onthouden voor volgende verzoeken dat de gebruiker al een reCAPTCHA-instantie heeft voltooid, zodat het niet nodig zal zijn om de gebruiker continu te vragen een reCAPTCHA-instantie bij volgende aanvragen in te vullen. Ten tweede, wanneer een gebruiker zich met succes ingelogd bij de frontend, stelt CIDRAM een cookie in om de gebruiker te kunnen onthouden voor volgende aanvragen (d.w.z., cookies worden gebruikt om de gebruiker te authenticeren voor een login-sessie).
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+In beide gevallen worden cookiewaarschuwingen prominent weergegeven (als het relevant is), waardoor de gebruiker wordt gewaarschuwd dat cookies worden ingesteld als deze zich bezighouden met de relevante acties. Cookies zijn niet ingesteld op andere punten in de codebase.
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+*Notitie: De specifieke implementatie door CIDRAM van de "invisible" API voor reCAPTCHA kan incompatibel zijn met cookiewetten in sommige rechtsgebieden, en moet worden vermeden door websites die onder dergelijke wetgeving vallen. Kiezen om in plaats daarvan de "V2" API te gebruiken, of eenvoudig reCAPTCHA volledig uit te schakelen, kan de voorkeur verdienen.*
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `general` -> `disable_frontend`
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 MARKETING EN ADVERTEREN
 
-CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+CIDRAM verzamelt of verwerkt geen informatie voor marketing of advertentie doeleinden, en verkoopt of profiteert niet van verzamelde of geregistreerde informatie. CIDRAM is geen commerciële onderneming, en houdt geen verband met commerciële belangen, dus het zou geen zin hebben om deze dingen te doen. Dit is sinds het begin van het project het geval geweest, en is nog steeds het geval. Bovendien zou het doen van deze dingen contraproductief zijn ten opzichte van de geest en het beoogde doel van het project als geheel, en zolang ik het project blijf onderhouden, zal het nooit gebeuren.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 PRIVACYBELEID
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+In sommige omstandigheden kan het wettelijk verplicht zijn om duidelijk een link naar uw privacybeleid te tonen op alle pagina's en secties van uw website. Dit kan belangrijk zijn als middel om ervoor te zorgen dat gebruikers en goed geïnformeerd zijn over uw exacte privacypraktijken, de soorten PII die u verzamelt, en hoe u van plan bent om het te gebruiken. Om een dergelijke link op de pagina "Toegang Geweigerd" van CIDRAM te kunnen opnemen, wordt een configuratie-optie verstrekt om de URL van uw privacybeleid op te geven.
 
 *Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
 
-*Relevante configuratieopties:*
+*Relevante configuratie-opties:*
 - `legal` -> `privacy_policy`
 
-#### 11.7 GDPR/DSGVO
+#### 11.7 GDPR/DSGVO/AVG
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+De Algemene Verordening Gegevensbescherming (AVG, of GDPR/DSGVO) is een verordening van de Europese Unie, die met ingang van 25 Mei 2018 in werking treedt. Het primaire doel van de verordening is om burgers en inwoners van de EU controle te geven over hun eigen persoonsgegevens, en om regelgeving binnen de EU te verenigen met betrekking tot privacy en persoonlijke gegevens.
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+De verordening bevat specifieke bepalingen met betrekking tot de verwerking van "[persoonsgegevens](https://nl.wikipedia.org/wiki/Persoonsgegevens)" (PII) van alle "betrokkenen" (elke geïdentificeerde of identificeerbare natuurlijke persoon) vanuit of binnen de EU. Om aan de regelgeving te voldoen, moeten "ondernemingen" (zoals bepaald door de verordening), en alle relevante systemen en processen moeten standaard "[privacy by design](https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/privacycheck/privacy-design)" implementeren, moet de hoogst mogelijke privacy-instellingen gebruiken, moet de nodige waarborgen implementeren voor alle opgeslagen of verwerkte informatie (inclusief, maar niet beperkt tot, de implementatie van pseudonimisering of volledige anonimisering van gegevens), moet duidelijk en ondubbelzinnig verklaren welke soorten gegevens zij verzamelen, hoe zij deze verwerken, om welke redenen, hoe lang zij deze bewaren, en of zij deze gegevens delen met derden, de soorten gegevens die met derden worden gedeeld, hoe, waarom, enzovoort.
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+Gegevens worden mogelijk niet verwerkt tenzij er een wettelijke basis is om dit te doen, zoals bepaald door de verordening. In het algemeen betekent dit dat om de gegevens van een betrokkene op een wettige basis te verwerken, dit moet worden gedaan in overeenstemming met wettelijke verplichtingen, of alleen moet worden gedaan nadat de betrokkene expliciete, goed geïnformeerde, ondubbelzinnige toestemming heeft verkregen.
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+Omdat aspecten van de verordening in de loop van de tijd kunnen evolueren, om de verspreiding van verouderde informatie te voorkomen, is het wellicht beter om de verordening te leren van een gezaghebbende bron, in tegenstelling tot het simpelweg opnemen van de relevante informatie hier in de documentatie van het pakket (die uiteindelijk verouderd kan raken naarmate de regelgeving evolueert).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
-- [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
+[EUR-Lex](https://eur-lex.europa.eu/) (een deel van de officiële website van de Europese Unie dat informatie biedt over EU-wetgeving) biedt uitgebreide informatie over GDPR/DSGVO/AVG, beschikbaar in 24 verschillende talen (op het moment dat dit wordt geschreven), en beschikbaar om te downloaden in PDF-formaat. Ik zou zeker aanraden om de informatie die ze bieden te lezen, om meer te leren over GDPR/DSGVO/AVG:
+- [VERORDENING (EU) 2016/679 VAN HET EUROPEES PARLEMENT EN DE RAAD](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=celex:32016R0679)
 
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
+Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG beschikbaar op Wikipedia:
+- [Algemene verordening gegevensbescherming](https://nl.wikipedia.org/wiki/Algemene_verordening_gegevensbescherming)
 
 ---
 
 
-Laatste Bijgewerkt: 1 Juni 2018 (2018.06.01).
+Laatste Bijgewerkt: 9 Juni 2018 (2018.06.09).

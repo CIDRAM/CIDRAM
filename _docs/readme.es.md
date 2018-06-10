@@ -341,7 +341,18 @@ General configuración para CIDRAM.
 - Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 "forbid_on_block"
-- Cual cabeceras debe CIDRAM responder con cuando bloquear acceso? False/200 = 200 OK [Predefinido]; True/403 = 403 Forbidden (Prohibido); 503 = 503 Service unavailable (Servicio no disponible).
+- ¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes?
+
+Valores soportados actualmente:
+
+Código de estado | Mensaje de estado
+---|---
+`200` | `200 OK` | Valor predefinido. Menos robusto, pero más amigable para los usuarios.
+`403` | `403 Forbidden` | Un poco más robusto, pero un poco menos amigable para los usuarios.
+`410` | `410 Gone` | Podría causar problemas al intentar resolver falsos positivos, debido a que algunos navegadores guardarán en caché este mensaje de estado y no enviarán solicitudes posteriores, incluso después de desbloquear usuarios. Pero, puede ser más útil que otras opciones para reducir solicitudes de determinados, específicos tipos de bots.
+`418` | `418 I'm a teapot` | En realidad hace referencia a una broma de los Inocentes [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] y es poco probable que el cliente lo entienda. Provisto de diversión y conveniencia, pero generalmente no recomendado.
+`451` | `Unavailable For Legal Reasons` | Apropiado para contextos en los que las solicitudes se bloquean principalmente por razones legales. No recomendado en otros contextos.
+`503` | `Service Unavailable` | Más robusto, pero menos amigable para los usuarios.
 
 "silent_mode"
 - Debería CIDRAM silencio redirigir los intentos de acceso bloqueados en lugar de mostrar la página "Acceso Denegado"? En caso afirmativo, especifique la ubicación para redirigir los intentos de acceso bloqueados. Si no, dejar esta variable en blanco.
@@ -392,13 +403,15 @@ Valor | Produce
 - Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.
 
 "ban_override"
-- Anular "forbid_on_block" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]; 403 = Anular con "403 Forbidden"; 503 = Anular con "503 Service unavailable".
+- Anular "forbid_on_block" cuando "infraction_limit" es excedido? Cuando se anula: Las solicitudes bloqueadas devuelven una página en blanco (los archivos templates no se utilizan). 200 = No anular [Predefinido]. Otros valores son los mismos que los valores disponibles para "forbid_on_block".
 
 "log_banned_ips"
 - ¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No.
 
 "default_dns"
 - Una lista delimitada por comas de los servidores DNS que se utilizarán para las búsquedas de nombres del host. Predefinido = "8.8.8.8,8.8.4.4" (Google DNS). ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+
+*Ver también: [¿Qué puedo usar para "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification"
 - ¿Intentar verificar las solicitudes de los motores de búsqueda? La verificación de los motores de búsqueda asegura que no serán prohibidos como resultado de exceder el número máximo de infracciones (la prohibición de los motores de búsqueda de su sitio web por lo general tendrán un efecto negativo sobre su ranking de motores de búsqueda, SEO, etc). Cuando se verifica, los motores de búsqueda se pueden bloquear como de costumbre, pero no se prohibirá. Cuando no se verifica, es posible que se les prohíba como resultado de exceder el número máximo de infracciones. Adicionalmente, la verificación de motores de búsqueda proporciona protección contra las solicitudes de motor de búsqueda falsas y contra entidades potencialmente maliciosas disfrazadas de motores de búsqueda (tales solicitudes serán bloqueadas cuando la verificación del motor de búsqueda esté habilitada). True = Activar la verificación del motores de búsqueda [Predefinido]; False = Desactivar la verificación del motores de búsqueda.
@@ -1309,4 +1322,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 1 Junio de 2018 (2018.06.01).
+Última Actualización: 9 Junio de 2018 (2018.06.09).

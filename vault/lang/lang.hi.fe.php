@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.06.05).
+ * This file: Hindi language data for the front-end (last modified: 2018.06.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -51,7 +51,7 @@ $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">होमपेज</a> | <a h
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">लोग आउट</a>';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'सामने के अंत में प्रवेश प्रयासों प्रवेश के लिए दायर। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'जब UDP अनुपलब्ध हो तो gethostbyaddr लुकअप की अनुमति दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।';
-$CIDRAM['lang']['config_general_ban_override'] = 'विलोपन "forbid_on_block" कब "infraction_limit" पार कर रहा है? अधिभावी कब: विचाराधीन अनुरोध एक खाली पेज वापस (टेम्पलेट फाइलों का उपयोग नहीं कर रहे हैं)। 200 = ओवरराइड न करें [डिफ़ॉल्ट]; 403 = "403 Forbidden" के साथ ओवरराइड करें (मना किया हुआ); 503 = "503 Service unavailable" के साथ ओवरराइड करें (सेवा उप्लब्ध् नहीं है)।';
+$CIDRAM['lang']['config_general_ban_override'] = 'विलोपन "forbid_on_block" कब "infraction_limit" पार कर रहा है? अधिभावी कब: विचाराधीन अनुरोध एक खाली पेज वापस (टेम्पलेट फाइलों का उपयोग नहीं कर रहे हैं)। 200 = ओवरराइड न करें [डिफ़ॉल्ट]। अन्य मान "forbid_on_block" के लिए उपलब्ध मानों के समान हैं।';
 $CIDRAM['lang']['config_general_default_algo'] = 'परिभाषित करता है कि भविष्य के सभी पासवर्ड और सत्रों के लिए किस एल्गोरिथम का उपयोग करना है। विकल्प: PASSWORD_DEFAULT (डिफ़ॉल्ट), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 की आवश्यकता है)।';
 $CIDRAM['lang']['config_general_default_dns'] = 'होस्ट नाम लुकअप के लिए उपयोग करने के लिए DNS सर्वर की अल्पविराम सीमांकित सूची। डिफ़ॉल्ट = "8.8.8.8,8.8.4.4" (Google DNS)। चेतावनी: जब तक कि आप को पता है तुम क्या कर रहे हो उसे बदल नहीं!';
 $CIDRAM['lang']['config_general_disable_cli'] = 'अक्षम CLI मोड? CLI मोड डिफ़ॉल्ट रूप से सक्षम होता है, लेकिन कभी-कभी कुछ परीक्षण टूल (जैसे कि PHPUnit, उदाहरण के लिए) और अन्य CLI-आधारित अनुप्रयोगों में हस्तक्षेप कर सकता है। यदि आपको CLI मोड को अक्षम करने की आवश्यकता नहीं है, तो आपको इस निर्देश को अनदेखा करना चाहिए। False(झूठी) = CLI मोड सक्षम करें [डिफ़ॉल्ट]; True(सच्चे) = CLI मोड को अक्षम करें।';
@@ -59,7 +59,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'सामने के अ
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'निष्क्रिय वेब फोंट? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।';
 $CIDRAM['lang']['config_general_emailaddr'] = 'अगर आप चाहते हैं, तो आप उपयोगकर्ताओं को जब उन्हें अवरुद्ध कर रहे हैं तो देने के लिए ईमेल पते की आपूर्ति कर सकते हैं। वे इसका इस्तेमाल आपसे संपर्क करने के लिए कर सकते हैं यदि वे गलती से अवरुद्ध कर रहे हैं। चेतावनी: आप जो भी ईमेल पते पर आपूर्ति करते हैं, वे निश्चित रूप से स्पैम्बट्स और स्क्रेपर द्वारा प्राप्त किए जाएंगे। इस वजह से, यह दृढ़ता से अनुशंसा की जाती है कि आप एक ईमेल पता चुनते हैं जो डिस्पोजेबल या महत्वहीन है (अर्थात।, अपने व्यक्तिगत या व्यावसायिक ईमेल पते का उपयोग न करें)।';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'उपयोगकर्ताओं को प्रस्तुत करने के लिए आप ईमेल पते को कैसे पसंद करेंगे?';
-$CIDRAM['lang']['config_general_forbid_on_block'] = 'कौन हेडर जब अवरुद्ध अनुरोध के साथ उत्तर CIDRAM चाहिए?';
+$CIDRAM['lang']['config_general_forbid_on_block'] = 'अनुरोधों को अवरुद्ध करते समय CIDRAM को कौन सी HTTP स्थिति संदेश भेजना चाहिए? (अधिक जानकारी के लिए डॉक्यूमेंटेशन का संदर्भ लें)।';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'होस्ट नाम लुकअप के लिए मजबूर? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]। होस्ट नाम लुकअप सामान्य रूप से "आवश्यकतानुसार" आधार पर किया जाता है, लेकिन इसे सभी अनुरोधों के लिए मजबूर किया जा सकता है। ऐसा करना लॉगफाइल में अधिक विस्तृत जानकारी प्रदान करने के साधन के रूप में उपयोगी हो सकता है, लेकिन प्रदर्शन पर इसका थोड़ा नकारात्मक प्रभाव हो सकता है।';
 $CIDRAM['lang']['config_general_hide_version'] = 'लॉग्स और पेज आउटपुट से संस्करण जानकारी छुपाएं? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।';
 $CIDRAM['lang']['config_general_ipaddr'] = 'कहां अनुरोध जोड़ने के IP पते खोजने के लिए? (जैसा Cloudflare के रूप में सेवाओं और पसंद के लिए उपयोगी)। डिफ़ॉल्ट = REMOTE_ADDR। चेतावनी: जब तक कि आप को पता है तुम क्या कर रहे हो उसे बदल नहीं!';
@@ -354,7 +354,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लि
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM के लिए WordPress प्लगइन।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – वेबसाइटों को सुरक्षित करने के लिए सरल वेबमास्टर उपकरण का एक संग्रह।</li>
-            <li><a href="https://github.com/macmathan/Blocklists">macmathan/Blocklists</a> – CIDRAM के लिए वैकल्पिक ब्लॉकलिस्ट और मॉड्यूल शामिल हैं जैसे खतरनाक बॉट, अवांछित देशों, पुराने ब्राउज़र, आदि को अवरुद्ध करने के लिए।</li>
+            <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – CIDRAM के लिए वैकल्पिक ब्लॉकलिस्ट और मॉड्यूल शामिल हैं जैसे खतरनाक बॉट, अवांछित देशों, पुराने ब्राउज़र, आदि को अवरुद्ध करने के लिए।</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP टूलकिट</a> – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>

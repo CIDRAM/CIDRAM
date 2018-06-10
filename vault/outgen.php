@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.05.22).
+ * This file: Output generator (last modified: 2018.06.09).
  */
 
 /** Initialise cache. */
@@ -509,34 +509,23 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     /** Parsed to the template file upon generating HTML output. */
     $CIDRAM['Parsables'] = $CIDRAM['FieldTemplates'] + $CIDRAM['Config']['template_data'] + $CIDRAM['lang'] + $CIDRAM['BlockInfo'];
 
-    if (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] === 403) {
+    if (!empty($CIDRAM['Banned']) && (
+        $CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['ban_override'])
+    )) {
 
-        $CIDRAM['errCode'] = 403;
-        header('HTTP/1.0 403 Forbidden');
-        header('HTTP/1.1 403 Forbidden');
-        header('Status: 403 Forbidden');
-        $CIDRAM['HTML'] = '';
-
-    } elseif (!empty($CIDRAM['Banned']) && $CIDRAM['Config']['general']['ban_override'] === 503) {
-
-        $CIDRAM['errCode'] = 503;
-        header('HTTP/1.0 503 Service Unavailable');
-        header('HTTP/1.1 503 Service Unavailable');
-        header('Status: 503 Service Unavailable');
+        $CIDRAM['errCode'] = $CIDRAM['Config']['general']['ban_override'];
+        header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+        header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+        header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         $CIDRAM['HTML'] = '';
 
     } elseif (!$CIDRAM['Config']['general']['silent_mode']) {
 
-        if ($CIDRAM['Config']['general']['forbid_on_block'] === 503) {
-            $CIDRAM['errCode'] = 503;
-            header('HTTP/1.0 503 Service Unavailable');
-            header('HTTP/1.1 503 Service Unavailable');
-            header('Status: 503 Service Unavailable');
-        } elseif ($CIDRAM['Config']['general']['forbid_on_block'] && $CIDRAM['Config']['general']['forbid_on_block'] !== 200) {
-            $CIDRAM['errCode'] = 403;
-            header('HTTP/1.0 403 Forbidden');
-            header('HTTP/1.1 403 Forbidden');
-            header('Status: 403 Forbidden');
+        if ($CIDRAM['ThisStatusHTTP'] = $CIDRAM['GetStatusHTTP']($CIDRAM['Config']['general']['forbid_on_block'])) {
+            $CIDRAM['errCode'] = $CIDRAM['Config']['general']['forbid_on_block'];
+            header('HTTP/1.0 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+            header('HTTP/1.1 ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
+            header('Status: ' . $CIDRAM['errCode'] . ' ' . $CIDRAM['ThisStatusHTTP']);
         } else {
             $CIDRAM['errCode'] = 200;
         }

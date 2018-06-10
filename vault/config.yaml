@@ -113,6 +113,9 @@ Config Defaults:
    choices:
     200: 200 OK
     403: 403 Forbidden
+    410: 410 Gone
+    418: 418 I'm a teapot
+    451: 451 Unavailable For Legal Reasons
     503: 503 Service Unavailable
   silent_mode:
    type: string
@@ -191,6 +194,9 @@ Config Defaults:
    choices:
     200: 200
     403: 403
+    410: 410
+    418: 418
+    451: 451
     503: 503
   log_banned_ips:
    type: bool

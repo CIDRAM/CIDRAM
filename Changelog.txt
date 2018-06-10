@@ -17,9 +17,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.07; Bug-fix; Maikuolan]: Fixed a possible "undefined index" error
   that could occur when updating CIDRAM via Cronable.
 
-- [2018.06.08; Bug-fix; Maikuolan]: Aesthetic bug whereby the logs page would
-  stretch sometimes because of non-breaking log entries; Fixed.
+- [2018.06.08; Bug-fix; Maikuolan]: Discovered an aesthetic bug whereby the
+  logs page would stretch sometimes because of non-breaking log entries; Fixed.
   Refer github.com/CIDRAM/CIDRAM/issues/71
+
+- [2018.06.09; Sub-minor code change; Maikuolan]: Slight refactor to allow for
+  a slightly greater range of options for HTTP status codes and messages to
+  send with blocked requests. "forbid_on_block" also now only accepts integers;
+  boolean (true/false) values won't be accepted anymore (technically this may
+  pose a backwards-compatibility problem for some pre-v1 installations, but as
+  pre-v1 installations aren't on the same major version as the current latest
+  version anyhow, this shouldn't necessitate bumping our major version number).
 
 === Version/Release 1.6.0 ===
 MINOR RELEASE.

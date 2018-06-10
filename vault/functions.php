@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.05.17).
+ * This file: Functions file (last modified: 2018.06.09).
  */
 
 /**
@@ -1629,4 +1629,21 @@ $CIDRAM['Pseudonymise-IP'] = function($IP) {
         '\1.\2.\3.x',
         $IP
     );
+};
+
+/**
+ * Fetch a status message from a HTTP status code for blocked requests.
+ *
+ * @param int $Status HTTP status code.
+ * @return string HTTP status message (empty when using non-supported codes).
+ */
+$CIDRAM['GetStatusHTTP'] = function($Status) {
+    $Message = [
+        403 => 'Forbidden',
+        410 => 'Gone',
+        418 => 'I\'m a teapot',
+        451 => 'Unavailable For Legal Reasons',
+        503 => 'Service Unavailable'
+    ];
+    return isset($Message[$Status]) ? $Message[$Status] : '';
 };

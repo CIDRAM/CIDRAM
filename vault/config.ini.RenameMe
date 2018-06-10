@@ -48,7 +48,8 @@ timeFormat='{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}'
 ; change this unless you know what you're doing!
 ipaddr='REMOTE_ADDR'
 
-; Which headers should CIDRAM respond with when blocking requests?
+; Which HTTP status message should CIDRAM send when blocking requests? (Refer
+; to the documentation for more information).
 forbid_on_block=200
 
 ; Should CIDRAM silently redirect blocked access attempts instead of displaying
@@ -100,8 +101,8 @@ FrontEndLog=''
 
 ; Override "forbid_on_block" when "infraction_limit" is exceeded? When
 ; overriding: Blocked requests return a blank page (template files aren't
-; used). 200 = Don't override [Default]; 403 = Override with "403 Forbidden";
-; 503 = Override with "503 Service unavailable".
+; used). 200 = Don't override [Default]. Other values are the same as the
+; available values for "forbid_on_block".
 ban_override=200
 
 ; Include blocked requests from banned IPs in the logfiles? True = Yes

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.06.09).
+ * This file: Urdu language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'سب کی توثیق کریں';
 $CIDRAM['lang']['field_your_version'] = 'آپ کے ورژن';
 $CIDRAM['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
+$CIDRAM['lang']['label_actual'] = 'اس وقت';
 $CIDRAM['lang']['label_backup_location'] = 'Repository بیک اپ مقامات (ہنگامی حالت میں، یا اگر سب کچھ ناکام ہوجاتا ہے):';
 $CIDRAM['lang']['label_banned'] = 'کی درخواستیں کالعدم';
 $CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_clientinfo'] = 'کلائنٹ کی معلومات:';
 $CIDRAM['lang']['label_displaying'] = ['<span class="txtRd">%s</span> آئٹم دکھایا.', '<span class="txtRd">%s</span> اشیاء دکھایا.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['<span class="txtRd">%1$s</span> آئٹم دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.', '<span class="txtRd">%1$s</span> اشیاء دکھایا کہ "%2$s" کا حوالہ دیتے ہیں.'];
+$CIDRAM['lang']['label_expected'] = 'متوقع';
 $CIDRAM['lang']['label_expires'] = 'ختم ہو جاتی ہے: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'غلط مثبت خطرہ: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'کیش کردہ ڈیٹا اور عارضی فائلیں';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'کل ڈسک استعمال: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'کل ڈسک کی جگہ: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'اجزاء اپ ڈیٹ میٹا ڈیٹا';
 $CIDRAM['lang']['label_hide'] = 'چھپائیں';
+$CIDRAM['lang']['label_hide_hash_table'] = 'ہیش ٹیبل چھپائیں';
 $CIDRAM['lang']['label_never'] = 'کبھی نہیں';
 $CIDRAM['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $CIDRAM['lang']['label_other'] = 'دیگر';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'کوششیں reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'نتائج (%s ان پٹ – %s مسترد – %s قبول – %s مل گیا – %s پیداوار):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI استعمال کیا:';
 $CIDRAM['lang']['label_show'] = 'دکھائیں';
+$CIDRAM['lang']['label_show_hash_table'] = 'ہیش ٹیبل دکھائیں';
 $CIDRAM['lang']['label_signature_type'] = 'دستخط کی قسم:';
 $CIDRAM['lang']['label_stable'] = 'تازہ ترین مستحکم:';
 $CIDRAM['lang']['label_sysinfo'] = 'سسٹم کی معلومات:';

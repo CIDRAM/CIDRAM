@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.06.09).
+ * This file: Thai language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'ตรวจสอบทั้งหม�
 $CIDRAM['lang']['field_your_version'] = 'เวอร์ชั่นของคุณ';
 $CIDRAM['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
 $CIDRAM['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
+$CIDRAM['lang']['label_actual'] = 'ปัจจุบัน';
 $CIDRAM['lang']['label_backup_location'] = 'Repository สถานที่สำรอง (ในกรณีฉุกเฉิน หรือถ้าทุกอย่างล้มเหลว):';
 $CIDRAM['lang']['label_banned'] = 'คำขอถูกแบน';
 $CIDRAM['lang']['label_blocked'] = 'คำขอถูกบล็อก';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'รุ่น CIDRAM ในการใช้�
 $CIDRAM['lang']['label_clientinfo'] = 'ข้อมูลผู้ใช้:';
 $CIDRAM['lang']['label_displaying'] = 'แสดง <span class="txtRd">%s</span> รายการ.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'แสดง <span class="txtRd">%1$s</span> รายการที่อ้างอิง "%2$s".';
+$CIDRAM['lang']['label_expected'] = 'ที่คาดหวัง';
 $CIDRAM['lang']['label_expires'] = 'หมดอายุ: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'ความเสี่ยงสำหรับการบวกเท็จ: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'ข้อมูลแคชและไฟล์ชั่วคราว';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'เนื้อที่ดิ
 $CIDRAM['lang']['label_fmgr_total_space'] = 'เนื้อที่ดิสก์ทั้งหมด: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'เมตาดาต้าสำหรับอัพเดตคอมโพเนนต์';
 $CIDRAM['lang']['label_hide'] = 'ปิดบัง';
+$CIDRAM['lang']['label_hide_hash_table'] = 'ซ่อนตารางแฮช';
 $CIDRAM['lang']['label_never'] = 'ไม่เคย';
 $CIDRAM['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $CIDRAM['lang']['label_other'] = 'อื่น ๆ';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'ความพยายามในกา
 $CIDRAM['lang']['label_results'] = 'ผล (%s ใน – %s ปฏิเสธ – %s ได้รับการยอมรับ – %s รวม – %s ออก):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI ในการใช้งาน:';
 $CIDRAM['lang']['label_show'] = 'แสดง';
+$CIDRAM['lang']['label_show_hash_table'] = 'แสดงตารางแฮช';
 $CIDRAM['lang']['label_signature_type'] = 'ประเภทลายมือชื่อ:';
 $CIDRAM['lang']['label_stable'] = 'เสถียรล่าสุด:';
 $CIDRAM['lang']['label_sysinfo'] = 'ข้อมูลระบบ:';

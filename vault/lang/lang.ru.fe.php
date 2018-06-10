@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.06.09).
+ * This file: Russian language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Проверить все';
 $CIDRAM['lang']['field_your_version'] = 'Ваша Версия';
 $CIDRAM['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $CIDRAM['lang']['label_active_config_file'] = 'Активный файл конфигурации: ';
+$CIDRAM['lang']['label_actual'] = 'Текущий';
 $CIDRAM['lang']['label_backup_location'] = 'Расположение резервных хранилищ (в случае чрезвычайной ситуации, или если все остальное не работает):';
 $CIDRAM['lang']['label_banned'] = 'Запросы запрещенный';
 $CIDRAM['lang']['label_blocked'] = 'Запросы блокированный';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'Используемая версия CIDRAM:
 $CIDRAM['lang']['label_clientinfo'] = 'Информация о клиенте:';
 $CIDRAM['lang']['label_displaying'] = ['Отображение <span class="txtRd">%s</span> запись.', 'Отображение <span class="txtRd">%s</span> записи.', 'Отображение <span class="txtRd">%s</span> записей.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['Отображение <span class="txtRd">%1$s</span> запись, которая ссылается на «%2$s».', 'Отображение <span class="txtRd">%1$s</span> записи, которые ссылаются на «%2$s».', 'Отображение <span class="txtRd">%1$s</span> записей, которые ссылаются на «%2$s».'];
+$CIDRAM['lang']['label_expected'] = 'Ожидаемый';
 $CIDRAM['lang']['label_expires'] = 'Истекает: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Риск ложноположительный: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Данные кэша и временные файлы';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Все использован�
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Емкость диска: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Метаданные обновлений компонентов';
 $CIDRAM['lang']['label_hide'] = 'Скрывать';
+$CIDRAM['lang']['label_hide_hash_table'] = 'Скрыть хэш-таблицы';
 $CIDRAM['lang']['label_never'] = 'Никогда';
 $CIDRAM['lang']['label_os'] = 'Используемая операционная система:';
 $CIDRAM['lang']['label_other'] = 'Другие';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'Попытки reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'Результаты (%s вход – %s отвергнуто – %s принято – %s слиты – %s вывод):';
 $CIDRAM['lang']['label_sapi'] = 'Используемая SAPI:';
 $CIDRAM['lang']['label_show'] = 'Показать';
+$CIDRAM['lang']['label_show_hash_table'] = 'Показать хэш-таблицы';
 $CIDRAM['lang']['label_signature_type'] = 'Тип сигнатуры:';
 $CIDRAM['lang']['label_stable'] = 'Последние стабильный:';
 $CIDRAM['lang']['label_sysinfo'] = 'Системная информация:';

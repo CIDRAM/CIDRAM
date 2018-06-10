@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.06.09).
+ * This file: Bangla language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'সব যাচাই করুন';
 $CIDRAM['lang']['field_your_version'] = 'আপনার সংস্করণ';
 $CIDRAM['lang']['header_login'] = 'চালিয়ে যেতে দয়া করে লগ ইন করুন।';
 $CIDRAM['lang']['label_active_config_file'] = 'সক্রিয় কনফিগারেশন ফাইল: ';
+$CIDRAM['lang']['label_actual'] = 'আসল';
 $CIDRAM['lang']['label_backup_location'] = 'সংগ্রহস্থল ব্যাকআপ অবস্থানগুলি (জরুরী ক্ষেত্রে, বা অন্য সব ব্যর্থ হলে):';
 $CIDRAM['lang']['label_banned'] = 'অনুরোধ নিষিদ্ধ';
 $CIDRAM['lang']['label_blocked'] = 'অনুরোধ অবরুদ্ধ';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'CIDRAM সংস্করণ ব্যবহ�
 $CIDRAM['lang']['label_clientinfo'] = 'ক্লায়েন্ট তথ্য:';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> এন্ট্রি প্রদর্শন করা হচ্ছে।';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s" উল্লেখ করে <span class="txtRd">%1$s</span> এন্ট্রি প্রদর্শন করা হচ্ছে।';
+$CIDRAM['lang']['label_expected'] = 'প্রত্যাশিত';
 $CIDRAM['lang']['label_expires'] = 'মেয়াদ শেষ: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'ঝুঁকিতে ইতিবাচক মিথ্যা: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'ক্যাশ ডেটা এবং অস্থায়ী ফাইল';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'মোট ডিস্ক ব�
 $CIDRAM['lang']['label_fmgr_total_space'] = 'মোট ডিস্ক স্থান: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'কম্পোনেন্ট আপডেট মেটাডেটা';
 $CIDRAM['lang']['label_hide'] = 'লুকান';
+$CIDRAM['lang']['label_hide_hash_table'] = 'হ্যাশ টেবিল লুকান';
 $CIDRAM['lang']['label_never'] = 'না';
 $CIDRAM['lang']['label_os'] = 'অপারেটিং সিস্টেম ব্যবহৃত:';
 $CIDRAM['lang']['label_other'] = 'অন্যান্য';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA প্রচেষ্টা';
 $CIDRAM['lang']['label_results'] = 'ফলাফল (%s ইনপুট – %s প্রত্যাখ্যাত – %s গৃহীত – %s মার্জ করা – %s আউটপুট):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI ব্যবহৃত:';
 $CIDRAM['lang']['label_show'] = 'দেখাও';
+$CIDRAM['lang']['label_show_hash_table'] = 'হ্যাশ টেবিল দেখান';
 $CIDRAM['lang']['label_signature_type'] = 'স্বাক্ষর প্রকার:';
 $CIDRAM['lang']['label_stable'] = 'সর্বশেষ স্থিতিশীল:';
 $CIDRAM['lang']['label_sysinfo'] = 'সিস্টেম তথ্য:';

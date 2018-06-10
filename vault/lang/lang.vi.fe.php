@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.06.09).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Xác minh tất cả';
 $CIDRAM['lang']['field_your_version'] = 'Phiên bản của bạn';
 $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$CIDRAM['lang']['label_actual'] = 'Thực tế';
 $CIDRAM['lang']['label_backup_location'] = 'Vị trí sao lưu kho lưu trữ (trong trường hợp khẩn cấp, hay nếu mọi thứ thất bại):';
 $CIDRAM['lang']['label_banned'] = 'Yêu cầu bị cấm';
 $CIDRAM['lang']['label_blocked'] = 'Yêu cầu bị chặn';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'Phiên bản CIDRAM đang được dùng:';
 $CIDRAM['lang']['label_clientinfo'] = 'Thông tin người dùng:';
 $CIDRAM['lang']['label_displaying'] = 'Hiển thị <span class="txtRd">%s</span> mục.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'Hiển thị <span class="txtRd">%1$s</span> mục có chứa "%2$s".';
+$CIDRAM['lang']['label_expected'] = 'Kỳ vọng';
 $CIDRAM['lang']['label_expires'] = 'Hết hạn: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Nguy cơ sai tích cực: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Dữ liệu bộ nhớ cache và các tập tin tạm thời';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Số lượng sử dụng đĩ
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Số lượng không gian đĩa trong tổng số: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Siêu dữ liệu cho cập nhật thành phần';
 $CIDRAM['lang']['label_hide'] = 'Che giấu';
+$CIDRAM['lang']['label_hide_hash_table'] = 'Ẩn bảng băm';
 $CIDRAM['lang']['label_never'] = 'Không bao giờ';
 $CIDRAM['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $CIDRAM['lang']['label_other'] = 'Khác';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA nỗ lực';
 $CIDRAM['lang']['label_results'] = 'Các kết quả (%s trong – %s từ chối – %s chấp nhận – %s sáp nhập – %s ngoài):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI đang được dùng:';
 $CIDRAM['lang']['label_show'] = 'Hiển thị';
+$CIDRAM['lang']['label_show_hash_table'] = 'Hiển thị bảng băm';
 $CIDRAM['lang']['label_signature_type'] = 'Loại chữ ký';
 $CIDRAM['lang']['label_stable'] = 'Ổn định mới nhất:';
 $CIDRAM['lang']['label_sysinfo'] = 'Thông tin hệ thống:';

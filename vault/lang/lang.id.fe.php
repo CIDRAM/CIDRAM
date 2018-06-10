@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.06.09).
+ * This file: Indonesian language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Memverifikasi semua';
 $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
+$CIDRAM['lang']['label_actual'] = 'Sebenarnya';
 $CIDRAM['lang']['label_backup_location'] = 'Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):';
 $CIDRAM['lang']['label_banned'] = 'Permintaan dilarang';
 $CIDRAM['lang']['label_blocked'] = 'Permintaan diblokir';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'Versi CIDRAM digunakan:';
 $CIDRAM['lang']['label_clientinfo'] = 'Informasi klien:';
 $CIDRAM['lang']['label_displaying'] = 'Menampilkan <span class="txtRd">%s</span> entri.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'Menampilkan <span class="txtRd">%1$s</span> entri yang berisi "%2$s".';
+$CIDRAM['lang']['label_expected'] = 'Diharapkan';
 $CIDRAM['lang']['label_expires'] = 'Kedaluwarsa: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Risiko positif palsu: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Data cache dan file sementara';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Penggunaan disk total: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Ruang disk total: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Komponen memperbarui metadata';
 $CIDRAM['lang']['label_hide'] = 'Menyembunyikan';
+$CIDRAM['lang']['label_hide_hash_table'] = 'Sembunyikan tabel hash';
 $CIDRAM['lang']['label_never'] = 'Tak pernah';
 $CIDRAM['lang']['label_os'] = 'Sistem operasi digunakan:';
 $CIDRAM['lang']['label_other'] = 'Lain';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'Upaya reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'Hasil (%s dimasukkan – %s ditolak – %s diterima – %s digabungkan – %s keluaran):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI digunakan:';
 $CIDRAM['lang']['label_show'] = 'Menunjukkan';
+$CIDRAM['lang']['label_show_hash_table'] = 'Tampilkan tabel hash';
 $CIDRAM['lang']['label_signature_type'] = 'Jenis tanda tangan:';
 $CIDRAM['lang']['label_stable'] = 'Terbaru stabil:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informasi sistem:';

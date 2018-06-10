@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.06.09).
+ * This file: Italian language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Verifica tutto';
 $CIDRAM['lang']['field_your_version'] = 'La Vostra Versione';
 $CIDRAM['lang']['header_login'] = 'Per favore accedi per continuare.';
 $CIDRAM['lang']['label_active_config_file'] = 'File di configurazione attivo: ';
+$CIDRAM['lang']['label_actual'] = 'Effettivo';
 $CIDRAM['lang']['label_backup_location'] = 'Posizioni di backup del repository (in caso di emergenza, o se tutto il resto fallisce):';
 $CIDRAM['lang']['label_banned'] = 'Richieste vietate';
 $CIDRAM['lang']['label_blocked'] = 'Richieste bloccate';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'Versione CIDRAM utilizzata:';
 $CIDRAM['lang']['label_clientinfo'] = 'Informazioni sul cliente:';
 $CIDRAM['lang']['label_displaying'] = ['Visualizzazione di <span class="txtRd">%s</span> voce.', 'Visualizzazione di <span class="txtRd">%s</span> voci.'];
 $CIDRAM['lang']['label_displaying_that_cite'] = ['Visualizzazione di <span class="txtRd">%1$s</span> voce che cita "%2$s".', 'Visualizzazione di <span class="txtRd">%1$s</span> voci che citano "%2$s".'];
+$CIDRAM['lang']['label_expected'] = 'Previsto';
 $CIDRAM['lang']['label_expires'] = 'Scade: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Rischio di falsi positivi: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Dati di cache e file temporanei';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Utilizzo del disco totale: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Spazio totale su disco: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Componente aggiorna metadati';
 $CIDRAM['lang']['label_hide'] = 'Nascondere';
+$CIDRAM['lang']['label_hide_hash_table'] = 'Nascondi tabella hash';
 $CIDRAM['lang']['label_never'] = 'Mai';
 $CIDRAM['lang']['label_os'] = 'Sistema operativo utilizzata:';
 $CIDRAM['lang']['label_other'] = 'Altro';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'Tentativi di reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'Risultati (%s in – %s rifiutato – %s accettato – %s combinato – %s su):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI utilizzata:';
 $CIDRAM['lang']['label_show'] = 'Mostrare';
+$CIDRAM['lang']['label_show_hash_table'] = 'Mostra tabella hash';
 $CIDRAM['lang']['label_signature_type'] = 'Tipo di firma:';
 $CIDRAM['lang']['label_stable'] = 'Più recente stabile:';
 $CIDRAM['lang']['label_sysinfo'] = 'Informazioni sul sistema:';

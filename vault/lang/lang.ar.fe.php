@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.09).
+ * This file: Arabic language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'التحقق من الكل';
 $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
+$CIDRAM['lang']['label_actual'] = 'فعلي';
 $CIDRAM['lang']['label_backup_location'] = 'مواقع النسخ الاحتياطي مستودع (في حالة الطوارئ، أو إذا فشل كل شيء آخر):';
 $CIDRAM['lang']['label_banned'] = 'طلبات محظورة ';
 $CIDRAM['lang']['label_blocked'] = 'الطلبات المحظورة';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'النسخة CIDRAM المستخدمة:';
 $CIDRAM['lang']['label_clientinfo'] = 'معلومات المستخدممعلومات المستخدم:';
 $CIDRAM['lang']['label_displaying'] = 'عرض <span class="txtRd">%s</span> إدخالات.';
 $CIDRAM['lang']['label_displaying_that_cite'] = 'عرض <span class="txtRd">%1$s</span> إدخالات تشير إلى "%2$s".';
+$CIDRAM['lang']['label_expected'] = 'متوقع';
 $CIDRAM['lang']['label_expires'] = 'تنتهي: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'خطر إيجابية كاذبة: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'بيانات ذاكرة التخزين المؤقت والملفات المؤقتة';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'إجمالي استخدام ا
 $CIDRAM['lang']['label_fmgr_total_space'] = 'إجمالي مساحة القرص: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'تحديثات البيانات الوصفية للمكون';
 $CIDRAM['lang']['label_hide'] = 'إخفائه';
+$CIDRAM['lang']['label_hide_hash_table'] = 'إخفاء جدول تجزئة';
 $CIDRAM['lang']['label_never'] = 'أبدا';
 $CIDRAM['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $CIDRAM['lang']['label_other'] = 'آخر';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'محاولات reCAPTCHA';
 $CIDRAM['lang']['label_results'] = 'النتائج (%s في – %s مرفوض – %s قبلت – %s اندمجت – %s خارج):';
 $CIDRAM['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $CIDRAM['lang']['label_show'] = 'اظهره';
+$CIDRAM['lang']['label_show_hash_table'] = 'إظهار جدول تجزئة';
 $CIDRAM['lang']['label_signature_type'] = 'نوع التوقيع:';
 $CIDRAM['lang']['label_stable'] = 'أحدث مستقرة:';
 $CIDRAM['lang']['label_sysinfo'] = 'معلومات النظام:';

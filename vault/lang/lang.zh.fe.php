@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.09).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = '验证全部';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
+$CIDRAM['lang']['label_actual'] = '目前';
 $CIDRAM['lang']['label_backup_location'] = '存储库备份位置（在紧急情况下，或如果一切都失败了）：';
 $CIDRAM['lang']['label_banned'] = '请求已禁止';
 $CIDRAM['lang']['label_blocked'] = '请求已阻止';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_clientinfo'] = '客户信息：';
 $CIDRAM['lang']['label_displaying'] = '显示<span class="txtRd">%1$s</span>个项目。';
 $CIDRAM['lang']['label_displaying_that_cite'] = '显示<span class="txtRd">%1$s</span>个包含“%2$s”的项目。';
+$CIDRAM['lang']['label_expected'] = '预期';
 $CIDRAM['lang']['label_expires'] = '过期： ';
 $CIDRAM['lang']['label_false_positive_risk'] = '假阳性风险：';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '缓存数据和临时文件';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '总共使用的磁盘空间：
 $CIDRAM['lang']['label_fmgr_total_space'] = '总磁盘空间： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '组件更新元数据';
 $CIDRAM['lang']['label_hide'] = '隐藏';
+$CIDRAM['lang']['label_hide_hash_table'] = '隐藏哈希表';
 $CIDRAM['lang']['label_never'] = '决不';
 $CIDRAM['lang']['label_os'] = '目前使用操作系统：';
 $CIDRAM['lang']['label_other'] = '其他';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA尝试';
 $CIDRAM['lang']['label_results'] = '结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_show'] = '显示';
+$CIDRAM['lang']['label_show_hash_table'] = '显示哈希表';
 $CIDRAM['lang']['label_signature_type'] = '签名类型：';
 $CIDRAM['lang']['label_stable'] = '最新稳定：';
 $CIDRAM['lang']['label_sysinfo'] = '系统信息：';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.09).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'すべてを検証する';
 $CIDRAM['lang']['field_your_version'] = 'お使いのバージョン';
 $CIDRAM['lang']['header_login'] = '継続するには、​ログインしてください。';
 $CIDRAM['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$CIDRAM['lang']['label_actual'] = '現在';
 $CIDRAM['lang']['label_backup_location'] = 'リポジトリ・バックアップの場所（緊急の場合、または他のすべてが失敗した場合）：';
 $CIDRAM['lang']['label_banned'] = '禁止されたリクエスト';
 $CIDRAM['lang']['label_blocked'] = 'ブロックされたリクエスト';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = '使用されたCIDRAMバージョン：';
 $CIDRAM['lang']['label_clientinfo'] = 'クライアント情報：';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span>エントリが表示されます。';
 $CIDRAM['lang']['label_displaying_that_cite'] = '「%2$s」を含む<span class="txtRd">%1$s</span>つのエントリが表示されます。';
+$CIDRAM['lang']['label_expected'] = '予想される';
 $CIDRAM['lang']['label_expires'] = '有効期限： ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計
 $CIDRAM['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';
 $CIDRAM['lang']['label_hide'] = '隠す';
+$CIDRAM['lang']['label_hide_hash_table'] = 'ハッシュ・テーブルを隠する';
 $CIDRAM['lang']['label_never'] = '決して';
 $CIDRAM['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $CIDRAM['lang']['label_other'] = 'その他';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHAの試み';
 $CIDRAM['lang']['label_results'] = '結果 （%s が入力された – %s が拒否された – %s が受け入れられた – %s が合併した – %s 出力された）：';
 $CIDRAM['lang']['label_sapi'] = '使用されたSAPI：';
 $CIDRAM['lang']['label_show'] = '表示する';
+$CIDRAM['lang']['label_show_hash_table'] = 'ハッシュ・テーブルを表示する';
 $CIDRAM['lang']['label_signature_type'] = 'シグネチャ・タイプ：';
 $CIDRAM['lang']['label_stable'] = '最新安定：';
 $CIDRAM['lang']['label_sysinfo'] = 'システムインフォメーション：';

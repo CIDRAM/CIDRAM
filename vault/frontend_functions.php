@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.07).
+ * This file: Front-end functions file (last modified: 2018.06.10).
  */
 
 /**
@@ -1952,6 +1952,17 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
 $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
+        $Ident = strtolower(preg_replace('~[^a-z]~i', '', $ThisID));
+        $HideLinkClass = 'hl_' . $Ident;
+        $ShowLinkClass = 'sl_' . $Ident;
+        $Ident = 'v_' . $Ident;
+        $Table = sprintf(
+            '<span class="v %1$s" style="display:none"><table><tr><td class="h4"><div class="s">%2$s</div></td><td class="h2"><div class="s">%3$s</div></td><td class="h2f"><div class="s">%4$s</div></td></tr>',
+            $Ident,
+            $CIDRAM['lang']['field_file'],
+            $CIDRAM['lang']['label_actual'],
+            $CIDRAM['lang']['label_expected']
+        );
         if (!empty($CIDRAM['Components']['Meta'][$ThisID]['Files'])) {
             $TheseFiles = $CIDRAM['Components']['Meta'][$ThisID]['Files'];
         }
@@ -1961,37 +1972,61 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
         $Count = count($TheseFiles['To']);
         if (!empty($TheseFiles['Checksum'])) {
             $CIDRAM['Arrayify']($TheseFiles['Checksum']);
-            if ($Count !== count($TheseFiles['Checksum'])) {
-                $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . $CIDRAM['lang']['response_verification_failed'] . '<br />';
-                continue;
-            }
         }
         $Passed = true;
         for ($Iterate = 0; $Iterate < $Count; $Iterate++) {
             $ThisFile = $TheseFiles['To'][$Iterate];
             $FileFailMsg = '<code>' . $ThisID . '</code> – <code>' . $ThisFile . '</code> – ' . $CIDRAM['lang']['response_possible_problem_found'] . '<br />';
             $Checksum = empty($TheseFiles['Checksum'][$Iterate]) ? false : $TheseFiles['Checksum'][$Iterate];
+            $Class = 's';
             if (!$ThisFileData = $CIDRAM['ReadFile']($CIDRAM['Vault'] . $ThisFile)) {
                 $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
                 $Passed = false;
+                $Actual = '';
             } else {
                 $Len = strlen($ThisFileData);
-                if (($Checksum && (
-                    (md5($ThisFileData) . ':' . $Len) !== $Checksum &&
-                    (sha1($ThisFileData) . ':' . $Len) !== $Checksum &&
-                    (hash('sha256', $ThisFileData) . ':' . $Len) !== $Checksum
-                )) || (
+                $HashPartLen = (
+                    ($HPos = strpos($Checksum, ':')) !== false
+                ) ? strlen(substr($Checksum, 0, $HPos)) : 64;
+                if ($HashPartLen === 32) {
+                    $Actual = md5($ThisFileData) . ':' . $Len;
+                } else {
+                    $Actual = (($HashPartLen === 40) ? sha1($ThisFileData) : hash('sha256', $ThisFileData)) . ':' . $Len;
+                }
+                if (($Checksum && $Actual !== $Checksum && ($Class = 'txtRd')) || (
                     preg_match('~\.(?:css|dat|gif|inc|jpe?g|php|png|ya?ml|[a-z]{0,2}db)$~i', $ThisFile) &&
                     !$CIDRAM['CheckFileUpdate']($ThisFileData)
                 )) {
                     $CIDRAM['FE']['state_msg'] .= $FileFailMsg;
                     $Passed = false;
                 }
+                if ($Checksum && $Class !== 'txtRd') {
+                    $Class = 'txtGn';
+                }
             }
+            $Table .= sprintf(
+                '<tr><td class="h3"><code class="s">%1$s</code></td><td class="h1"><code class="%2$s">%3$s</code></td><td class="h1f"><code class="%2$s">%4$s</code></td></tr>',
+                $ThisFile,
+                $Class,
+                $Actual,
+                $Checksum
+            );
         }
+        $Table .= '</table></span>';
         $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . (
             $Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed']
-        ) . '<br />';
+        ) . sprintf(
+            ' %1$s%3$s%2$shide(\'v\');show%5$shide(\'%3$s\');show(\'%4$s\');%6$s%7$s%8$s%1$s%4$s%2$shide(\'v\');hide(\'%4$s\');show(\'%3$s\');" style="display:none;%6$s%9$s%8$s',
+            '<a class="',
+            '" href="javascript:void(0);" onclick="javascript:',
+            $ShowLinkClass,
+            $HideLinkClass,
+            "('" . $Ident . "');",
+            '"><code>[',
+            $CIDRAM['lang']['label_show_hash_table'],
+            ']</code></a>',
+            $CIDRAM['lang']['label_hide_hash_table']
+        ) . '<br />' . $Table;
     }
 };
 

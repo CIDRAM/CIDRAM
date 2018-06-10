@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.06.09).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = '驗證全部';
 $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '請登錄以繼續。';
 $CIDRAM['lang']['label_active_config_file'] = '活動配置文件：';
+$CIDRAM['lang']['label_actual'] = '目前';
 $CIDRAM['lang']['label_backup_location'] = '存儲庫備份位置（在緊急情況下，或如果一切都失敗了）：';
 $CIDRAM['lang']['label_banned'] = '請求已禁止';
 $CIDRAM['lang']['label_blocked'] = '請求已阻止';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = '目前使用CIDRAM版本：';
 $CIDRAM['lang']['label_clientinfo'] = '客戶信息：';
 $CIDRAM['lang']['label_displaying'] = '顯示<span class="txtRd">%1$s</span>個項目。';
 $CIDRAM['lang']['label_displaying_that_cite'] = '顯示<span class="txtRd">%1$s</span>個包含『%2$s』的項目。';
+$CIDRAM['lang']['label_expected'] = '預期';
 $CIDRAM['lang']['label_expires'] = '過期： ';
 $CIDRAM['lang']['label_false_positive_risk'] = '假陽性風險：';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '緩存數據和臨時文件';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '總共使用的磁盤空間：
 $CIDRAM['lang']['label_fmgr_total_space'] = '總磁盤空間： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '組件更新元數據';
 $CIDRAM['lang']['label_hide'] = '隱藏';
+$CIDRAM['lang']['label_hide_hash_table'] = '隱藏哈希表';
 $CIDRAM['lang']['label_never'] = '決不';
 $CIDRAM['lang']['label_os'] = '目前使用操作系統：';
 $CIDRAM['lang']['label_other'] = '其他';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA嘗試';
 $CIDRAM['lang']['label_results'] = '結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）：';
 $CIDRAM['lang']['label_sapi'] = '目前使用SAPI：';
 $CIDRAM['lang']['label_show'] = '顯示';
+$CIDRAM['lang']['label_show_hash_table'] = '顯示哈希表';
 $CIDRAM['lang']['label_signature_type'] = '簽名類型：';
 $CIDRAM['lang']['label_stable'] = '最新穩定：';
 $CIDRAM['lang']['label_sysinfo'] = '系統信息：';

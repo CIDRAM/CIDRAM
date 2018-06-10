@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.09).
+ * This file: Korean language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = '모두 검증';
 $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
+$CIDRAM['lang']['label_actual'] = '현재';
 $CIDRAM['lang']['label_backup_location'] = '저장소 백업 위치 (비상 사태의 경우, 또는 다른 모든 것이 실패한 경우) :';
 $CIDRAM['lang']['label_banned'] = '금지 된 요청';
 $CIDRAM['lang']['label_blocked'] = '차단 된 요청';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = '사용 된 CIDRAM 버전 :';
 $CIDRAM['lang']['label_clientinfo'] = '사용자 정보 :';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> 항목이 표시됩니다.';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s"라고 표시된 <span class="txtRd">%1$s</span> 개의 항목이 표시됩니다.';
+$CIDRAM['lang']['label_expected'] = '예상 된';
 $CIDRAM['lang']['label_expires'] = '만료일 : ';
 $CIDRAM['lang']['label_false_positive_risk'] = '거짓 양성 위험 : ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = '캐시 데이터 및 임시 파일 ';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = '총 디스크 사용 : ';
 $CIDRAM['lang']['label_fmgr_total_space'] = '총 디스크 공간 : ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = '구성 요소 업데이트 메타 데이터';
 $CIDRAM['lang']['label_hide'] = '숨기다';
+$CIDRAM['lang']['label_hide_hash_table'] = '해시 테이블 숨기기';
 $CIDRAM['lang']['label_never'] = '못';
 $CIDRAM['lang']['label_os'] = '사용 된 운영 체제 :';
 $CIDRAM['lang']['label_other'] = '다른';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA 완료 시도';
 $CIDRAM['lang']['label_results'] = '결과 (%s 입력된 – %s 거부된 – %s 받아 들인 – %s 합병된 – %s 출력된) :';
 $CIDRAM['lang']['label_sapi'] = '사용 된 SAPI :';
 $CIDRAM['lang']['label_show'] = '보여';
+$CIDRAM['lang']['label_show_hash_table'] = '해시 테이블 표시';
 $CIDRAM['lang']['label_signature_type'] = '서명 유형 :';
 $CIDRAM['lang']['label_stable'] = '최신 안정 :';
 $CIDRAM['lang']['label_sysinfo'] = '시스템 정보 :';

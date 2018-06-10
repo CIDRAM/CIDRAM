@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.09).
+ * This file: Turkish language data for the front-end (last modified: 2018.06.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -167,6 +167,7 @@ $CIDRAM['lang']['field_verify_all'] = 'Tümünü doğrula';
 $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$CIDRAM['lang']['label_actual'] = 'Şimdiki';
 $CIDRAM['lang']['label_backup_location'] = 'Repository yedek konumları (acil bir durumda, ya da her şey başarısız olursa):';
 $CIDRAM['lang']['label_banned'] = 'Yasaklı talepler';
 $CIDRAM['lang']['label_blocked'] = 'Engellenen talepler';
@@ -176,6 +177,7 @@ $CIDRAM['lang']['label_cidram'] = 'Kullanılan CIDRAM sürümü:';
 $CIDRAM['lang']['label_clientinfo'] = 'Kullanıcı bilgisi:';
 $CIDRAM['lang']['label_displaying'] = '<span class="txtRd">%s</span> öğe görüntüleniyor.';
 $CIDRAM['lang']['label_displaying_that_cite'] = '"%2$s" ibaresi verilen <span class="txtRd">%1$s</span> öğe görüntüleniyor.';
+$CIDRAM['lang']['label_expected'] = 'Beklenen';
 $CIDRAM['lang']['label_expires'] = 'Son Geçerlilik Tarihi: ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'Yalancı pozitif risk: ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'Önbellek verileri ve geçici dosyalar';
@@ -185,6 +187,7 @@ $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'Toplam disk kullanımı: ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'Toplam disk alanı: ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'Bileşen güncellemeleri meta verileri';
 $CIDRAM['lang']['label_hide'] = 'Saklamak';
+$CIDRAM['lang']['label_hide_hash_table'] = 'Karma tabloyu gizle';
 $CIDRAM['lang']['label_never'] = 'Asla';
 $CIDRAM['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $CIDRAM['lang']['label_other'] = 'Diğer';
@@ -197,6 +200,7 @@ $CIDRAM['lang']['label_reCAPTCHA'] = 'reCAPTCHA denemeler';
 $CIDRAM['lang']['label_results'] = 'Sonuçlar (%s giriş – %s reddedildi – %s kabul edildi – %s birleşti – %s çıktı):';
 $CIDRAM['lang']['label_sapi'] = 'Kullanılan SAPI:';
 $CIDRAM['lang']['label_show'] = 'Göstermek';
+$CIDRAM['lang']['label_show_hash_table'] = 'Karma tablosu göster';
 $CIDRAM['lang']['label_signature_type'] = 'İmza tipi:';
 $CIDRAM['lang']['label_stable'] = 'En yeni kararlı:';
 $CIDRAM['lang']['label_sysinfo'] = 'Sistem bilgisi:';

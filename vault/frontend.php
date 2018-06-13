@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.07).
+ * This file: Front-end handler (last modified: 2018.06.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -158,7 +158,7 @@ if (!empty($CIDRAM['QueryVars']['cidram-asset'])) {
 
     if (
         $CIDRAM['FileManager-PathSecurityCheck']($CIDRAM['QueryVars']['cidram-asset']) &&
-        !preg_match('~[^0-9a-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
+        !preg_match('~[^\da-z._]~i', $CIDRAM['QueryVars']['cidram-asset'])
     ) {
         $CIDRAM['ThisAsset'] = $CIDRAM['GetAssetPath']($CIDRAM['QueryVars']['cidram-asset'], true);
         if (
@@ -818,13 +818,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
         $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_accounts'], $CIDRAM['lang']['tip_accounts']);
 
         /** Append async globals. */
-        $CIDRAM['FE']['JS'] .=
-            "window['cidram-form-target']='accounts';function acc(e,d,i,t){" .
-            "var o=function(e){w('stateMsg',e)},a=function(){w('stateMsg','" .
-            $CIDRAM['lang']['state_loading'] . "')};" .
-            'window.username=document.getElementById(e).value,window.password=document.getElementById(d).value,window.do=document.getElementById(t).value,' .
-            "'delete-account'==window.do&&\$('POST','',['cidram-form-target','username','password','do'],a,function(e){w('stateMsg',e),hideid(i)},o)," .
-            "'update-password'==window.do&&\$('POST','',['cidram-form-target','username','password','do'],a,o,o)}\n";
+        $CIDRAM['FE']['JS'] .= sprintf(
+            'window[%3$s]=\'accounts\';function acc(e,d,i,t){var o=function(e){%4$se)' .
+            '},a=function(){%4$s\'%1$s\')};window.username=%2$s(e).value,window.passw' .
+            'ord=%2$s(d).value,window.do=%2$s(t).value,\'delete-account\'==window.do&' .
+            '&\$(\'POST\',\'\',[%3$s,\'username\',\'password\',\'do\'],a,function(e){' .
+            '%4$se),hideid(i)},o),\'update-password\'==window.do&&\$(\'POST\',\'\',[' .
+            '%3$s,\'username\',\'password\',\'do\'],a,o,o)}' . "\n",
+            $CIDRAM['lang']['state_loading'],
+            'document.getElementById',
+            "'cidram-form-target'",
+            "w('stateMsg',"
+        );
 
         $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -859,7 +864,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
             } elseif ((
                 strlen($CIDRAM['RowInfo']['AccPassword']) !== 60 && strlen($CIDRAM['RowInfo']['AccPassword']) !== 96
             ) || (
-                strlen($CIDRAM['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$[0-9]{2}\$/', $CIDRAM['RowInfo']['AccPassword'])
+                strlen($CIDRAM['RowInfo']['AccPassword']) === 60 && !preg_match('/^\$2.\$\d\d\$/', $CIDRAM['RowInfo']['AccPassword'])
             ) || (
                 strlen($CIDRAM['RowInfo']['AccPassword']) === 96 && !preg_match('/^\$argon2i\$/', $CIDRAM['RowInfo']['AccPassword'])
             )) {
@@ -974,39 +979,38 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['ThisDir']['Trigger'] = ' onchange="javascript:' . $CIDRAM['ThisDir']['DirLangKey'] . '_function();" onkeyup="javascript:' . $CIDRAM['ThisDir']['DirLangKey'] . '_function();"';
                 if ($CIDRAM['DirValue']['preview'] === 'kb') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var e=document.g' .
-                            'etElementById?document.getElementById(\'%1$s_field\').value:document.all' .
-                            '&&!document.getElementById?document.all.%1$s_field.value:\'\',z=e.replac' .
-                            'e(/o$/i,\'b\').substr(-2).toLowerCase(),y=\'kb\'==z?1:\'mb\'==z?1024:\'g' .
-                            'b\'==z?1048576:\'tb\'==z?1073741824:\'b\'==e.substr(-1)?.0009765625:1,e=' .
-                            'e.replace(/[^0-9]*$/i,\'\'),e=isNaN(e)?0:e*y,t=0>e?\'0 %2$s\':1>e?nft((1' .
-                            '024*e).toFixed(0))+\' %2$s\':1024>e?nft((1*e).toFixed(2))+\' %3$s\':1048' .
-                            '576>e?nft((e/1024).toFixed(2))+\' %4$s\':1073741824>e?nft((e/1048576).to' .
-                            'Fixed(2))+\' %5$s\':nft((e/1073741824).toFixed(2))+\' %6$s\';document.ge' .
-                            'tElementById?document.getElementById(\'%1$s_preview\').innerHTML=t:docum' .
-                            'ent.all&&!document.getElementById?document.all.%1$s_preview.innerHTML=t:' .
-                            '\'\'};%1$s_function();</script>',
+                            '<script type="text/javascript">function %1$s_function(){var e=%7$s?%7$s(' .
+                            '\'%1$s_field\').value:%8$s&&!%7$s?%8$s.%1$s_field.value:\'\',z=e.replace' .
+                            '(/o$/i,\'b\').substr(-2).toLowerCase(),y=\'kb\'==z?1:\'mb\'==z?1024:\'gb' .
+                            '\'==z?1048576:\'tb\'==z?1073741824:\'b\'==e.substr(-1)?.0009765625:1,e=e' .
+                            '.replace(/[^0-9]*$/i,\'\'),e=isNaN(e)?0:e*y,t=0>e?\'0 %2$s\':1>e?nft((10' .
+                            '24*e).toFixed(0))+\' %2$s\':1024>e?nft((1*e).toFixed(2))+\' %3$s\':10485' .
+                            '76>e?nft((e/1024).toFixed(2))+\' %4$s\':1073741824>e?nft((e/1048576).toF' .
+                            'ixed(2))+\' %5$s\':nft((e/1073741824).toFixed(2))+\' %6$s\';%7$s?%7$s(\'' .
+                            '%1$s_preview\').innerHTML=t:%8$s&&!%7$s?%8$s.%1$s_preview.innerHTML=t:\'' .
+                            '\'};%1$s_function();</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['Plural'](0, $CIDRAM['lang']['field_size_bytes']),
                         $CIDRAM['lang']['field_size_KB'],
                         $CIDRAM['lang']['field_size_MB'],
                         $CIDRAM['lang']['field_size_GB'],
-                        $CIDRAM['lang']['field_size_TB']
+                        $CIDRAM['lang']['field_size_TB'],
+                        'document.getElementById',
+                        'document.all'
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'seconds') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var t=document.getE' .
-                            'lementById?document.getElementById(\'%1$s_field\').value:document.all&&!doc' .
-                            'ument.getElementById?document.all.%1$s_field.value:\'\',e=isNaN(t)?0:0>t?t*' .
-                            '-1:t,n=e?Math.floor(e/31536e3):0,e=e?e-31536e3*n:0,o=e?Math.floor(e/2592e3)' .
-                            ':0,e=e-2592e3*o,l=e?Math.floor(e/604800):0,e=e-604800*l,r=e?Math.floor(e/86' .
-                            '400):0,e=e-86400*r,d=e?Math.floor(e/3600):0,e=e-3600*d,i=e?Math.floor(e/60)' .
-                            ':0,e=e-60*i,f=e?Math.floor(1*e):0,a=nft(n.toString())+\' %2$s – \'+nft(o.to' .
-                            'String())+\' %3$s – \'+nft(l.toString())+\' %4$s – \'+nft(r.toString())+\' ' .
-                            '%5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.toString())+\' %7$s – \'+nft' .
-                            '(f.toString())+\' %8$s\';document.getElementById?document.getElementById(\'' .
-                            '%1$s_preview\').innerHTML=a:document.all&&!document.getElementById?document' .
-                            '.all.%1$s_preview.innerHTML=a:\'\'}%1$s_function();</script>',
+                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
+                            '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
+                            ')?0:0>t?t*-1:t,n=e?Math.floor(e/31536e3):0,e=e?e-31536e3*n:0,o=e?Math.fl' .
+                            'oor(e/2592e3):0,e=e-2592e3*o,l=e?Math.floor(e/604800):0,e=e-604800*l,r=e' .
+                            '?Math.floor(e/86400):0,e=e-86400*r,d=e?Math.floor(e/3600):0,e=e-3600*d,i' .
+                            '=e?Math.floor(e/60):0,e=e-60*i,f=e?Math.floor(1*e):0,a=nft(n.toString())' .
+                            '+\' %2$s – \'+nft(o.toString())+\' %3$s – \'+nft(l.toString())+\' %4$s –' .
+                            ' \'+nft(r.toString())+\' %5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.' .
+                            'toString())+\' %7$s – \'+nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_pr' .
+                            'eview\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}' .
+                            '%1$s_function();</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['lang']['previewer_years'],
                         $CIDRAM['lang']['previewer_months'],
@@ -1014,22 +1018,23 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['lang']['previewer_days'],
                         $CIDRAM['lang']['previewer_hours'],
                         $CIDRAM['lang']['previewer_minutes'],
-                        $CIDRAM['lang']['previewer_seconds']
+                        $CIDRAM['lang']['previewer_seconds'],
+                        'document.getElementById',
+                        'document.all'
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'minutes') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var t=document.getE' .
-                            'lementById?document.getElementById(\'%1$s_field\').value:document.all&&!doc' .
-                            'ument.getElementById?document.all.%1$s_field.value:\'\',e=isNaN(t)?0:0>t?t*' .
-                            '-1:t,n=e?Math.floor(e/525600):0,e=e?e-525600*n:0,o=e?Math.floor(e/43200):0,' .
-                            'e=e-43200*o,l=e?Math.floor(e/10080):0,e=e-10080*l,r=e?Math.floor(e/1440):0,' .
-                            'e=e-1440*r,d=e?Math.floor(e/60):0,e=e-60*d,i=e?Math.floor(e*1):0,e=e-i,f=e?' .
-                            'Math.floor(60*e):0,a=nft(n.toString())+\' %2$s – \'+nft(o.toString())+\' %3' .
-                            '$s – \'+nft(l.toString())+\' %4$s – \'+nft(r.toString())+\' %5$s – \'+nft(d' .
-                            '.toString())+\' %6$s – \'+nft(i.toString())+\' %7$s – \'+nft(f.toString())+' .
-                            '\' %8$s\';document.getElementById?document.getElementById(\'%1$s_preview\')' .
-                            '.innerHTML=a:document.all&&!document.getElementById?document.all.%1$s_previ' .
-                            'ew.innerHTML=a:\'\'}%1$s_function();</script>',
+                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
+                            '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
+                            ')?0:0>t?t*-1:t,n=e?Math.floor(e/525600):0,e=e?e-525600*n:0,o=e?Math.floo' .
+                            'r(e/43200):0,e=e-43200*o,l=e?Math.floor(e/10080):0,e=e-10080*l,r=e?Math.' .
+                            'floor(e/1440):0,e=e-1440*r,d=e?Math.floor(e/60):0,e=e-60*d,i=e?Math.floo' .
+                            'r(e*1):0,e=e-i,f=e?Math.floor(60*e):0,a=nft(n.toString())+\' %2$s – \'+n' .
+                            'ft(o.toString())+\' %3$s – \'+nft(l.toString())+\' %4$s – \'+nft(r.toStr' .
+                            'ing())+\' %5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.toString())+\' ' .
+                            '%7$s – \'+nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_preview\').innerH' .
+                            'TML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function();<' .
+                            '/script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['lang']['previewer_years'],
                         $CIDRAM['lang']['previewer_months'],
@@ -1037,22 +1042,22 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['lang']['previewer_days'],
                         $CIDRAM['lang']['previewer_hours'],
                         $CIDRAM['lang']['previewer_minutes'],
-                        $CIDRAM['lang']['previewer_seconds']
+                        $CIDRAM['lang']['previewer_seconds'],
+                        'document.getElementById',
+                        'document.all'
                     );
                 } elseif ($CIDRAM['DirValue']['preview'] === 'hours') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
-                            '<script type="text/javascript">function %1$s_function(){var t=document.getE' .
-                            'lementById?document.getElementById(\'%1$s_field\').value:document.all&&!doc' .
-                            'ument.getElementById?document.all.%1$s_field.value:\'\',e=isNaN(t)?0:0>t?t*' .
-                            '-1:t,n=e?Math.floor(e/8760):0,e=e?e-8760*n:0,o=e?Math.floor(e/720):0,e=e-72' .
-                            '0*o,l=e?Math.floor(e/168):0,e=e-168*l,r=e?Math.floor(e/24):0,e=e-24*r,d=e?M' .
-                            'ath.floor(e*1):0,e=e-d,i=e?Math.floor(60*e):0,e=e-(i/60),f=e?Math.floor(360' .
-                            '0*e):0,a=nft(n.toString())+\' %2$s – \'+nft(o.toString())+\' %3$s – \'+nft(' .
-                            'l.toString())+\' %4$s – \'+nft(r.toString())+\' %5$s – \'+nft(d.toString())' .
-                            '+\' %6$s – \'+nft(i.toString())+\' %7$s – \'+nft(f.toString())+\' %8$s\';do' .
-                            'cument.getElementById?document.getElementById(\'%1$s_preview\').innerHTML=a' .
-                            ':document.all&&!document.getElementById?document.all.%1$s_preview.innerHTML' .
-                            '=a:\'\'}%1$s_function();</script>',
+                            '<script type="text/javascript">function %1$s_function(){var t=%9$s?%9$s(' .
+                            '\'%1$s_field\').value:%10$s&&!%9$s?%10$s.%1$s_field.value:\'\',e=isNaN(t' .
+                            ')?0:0>t?t*-1:t,n=e?Math.floor(e/8760):0,e=e?e-8760*n:0,o=e?Math.floor(e/' .
+                            '720):0,e=e-720*o,l=e?Math.floor(e/168):0,e=e-168*l,r=e?Math.floor(e/24):' .
+                            '0,e=e-24*r,d=e?Math.floor(e*1):0,e=e-d,i=e?Math.floor(60*e):0,e=e-(i/60)' .
+                            ',f=e?Math.floor(3600*e):0,a=nft(n.toString())+\' %2$s – \'+nft(o.toStrin' .
+                            'g())+\' %3$s – \'+nft(l.toString())+\' %4$s – \'+nft(r.toString())+\' ' .
+                            '%5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.toString())+\' %7$s – \'+' .
+                            'nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_preview\').innerHTML=a:' .
+                            '%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function();</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['lang']['previewer_years'],
                         $CIDRAM['lang']['previewer_months'],
@@ -1060,7 +1065,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                         $CIDRAM['lang']['previewer_days'],
                         $CIDRAM['lang']['previewer_hours'],
                         $CIDRAM['lang']['previewer_minutes'],
-                        $CIDRAM['lang']['previewer_seconds']
+                        $CIDRAM['lang']['previewer_seconds'],
+                        'document.getElementById',
+                        'document.all'
                     );
                 }
             } else {
@@ -1086,27 +1093,31 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                             $CIDRAM['ChoiceValue'] = $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ChoiceValue']);
                         }
                     }
-                    $CIDRAM['ThisDir']['FieldOut'] .= ($CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) ?
-                        '<option value="' . $CIDRAM['ChoiceKey'] . '" selected>' . $CIDRAM['ChoiceValue'] . '</option>'
-                    :
-                        '<option value="' . $CIDRAM['ChoiceKey'] . '">' . $CIDRAM['ChoiceValue'] . '</option>';
+                    $CIDRAM['ThisDir']['FieldOut'] .= '<option value="' . $CIDRAM['ChoiceKey'] . '"' . ((
+                        $CIDRAM['ChoiceKey'] === $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]
+                    ) ? ' selected' : '') . '>' . $CIDRAM['ChoiceValue'] . '</option>';
                 }
                 $CIDRAM['ThisDir']['FieldOut'] .= '</select>';
             } elseif ($CIDRAM['DirValue']['type'] === 'bool') {
-                if ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']]) {
-                    $CIDRAM['ThisDir']['FieldOut'] =
-                        '<select class="auto" name="' . $CIDRAM['ThisDir']['DirLangKey'] . '" id="' . $CIDRAM['ThisDir']['DirLangKey'] . '_field"' . $CIDRAM['ThisDir']['Trigger'] . '>' .
-                        '<option value="true" selected>' . $CIDRAM['lang']['field_true'] . '</option><option value="false">' . $CIDRAM['lang']['field_false'] . '</option>' .
-                        '</select>';
-                } else {
-                    $CIDRAM['ThisDir']['FieldOut'] =
-                        '<select class="auto" name="' . $CIDRAM['ThisDir']['DirLangKey'] . '" id="' . $CIDRAM['ThisDir']['DirLangKey'] . '_field"' . $CIDRAM['ThisDir']['Trigger'] . '>' .
-                        '<option value="true">' . $CIDRAM['lang']['field_true'] . '</option><option value="false" selected>' . $CIDRAM['lang']['field_false'] . '</option>' .
-                        '</select>';
-                }
+                $CIDRAM['ThisDir']['FieldOut'] = sprintf(
+                    '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
+                    '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
+                    '</select>',
+                    $CIDRAM['ThisDir']['DirLangKey'],
+                    $CIDRAM['ThisDir']['Trigger'],
+                    $CIDRAM['lang']['field_true'],
+                    $CIDRAM['lang']['field_false'],
+                    ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? ' selected' : ''),
+                    ($CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] ? '' : ' selected')
+                );
             } elseif ($CIDRAM['DirValue']['type'] === 'int' || $CIDRAM['DirValue']['type'] === 'real') {
-                $CIDRAM['ThisDir']['Step'] = isset($CIDRAM['DirValue']['step']) ? ' step="' . $CIDRAM['DirValue']['step'] . '"' : '';
-                $CIDRAM['ThisDir']['FieldOut'] = '<input type="number" name="' . $CIDRAM['ThisDir']['DirLangKey'] . '" id="' . $CIDRAM['ThisDir']['DirLangKey'] . '_field" value="' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '"' . $CIDRAM['ThisDir']['Step'] . $CIDRAM['ThisDir']['Trigger'] . ' />';
+                $CIDRAM['ThisDir']['FieldOut'] = sprintf(
+                    '<input type="number" name="%1$s" id="%1$s_field" value="%2$s"%3$s%4$s />',
+                    $CIDRAM['ThisDir']['DirLangKey'],
+                    $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']],
+                    (isset($CIDRAM['DirValue']['step']) ? ' step="' . $CIDRAM['DirValue']['step'] . '"' : ''),
+                    $CIDRAM['ThisDir']['Trigger']
+                );
             } elseif ($CIDRAM['DirValue']['type'] === 'string') {
                 $CIDRAM['ThisDir']['FieldOut'] = '<textarea name="' . $CIDRAM['ThisDir']['DirLangKey'] . '" id="' . $CIDRAM['ThisDir']['DirLangKey'] . '_field" class="half"' . $CIDRAM['ThisDir']['Trigger'] . '>' . $CIDRAM['Config'][$CIDRAM['CatKey']][$CIDRAM['DirKey']] . '</textarea>';
             } else {
@@ -2395,7 +2406,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     if (isset($_POST['ip-addr'])) {
         $CIDRAM['FE']['ip-addr'] = $_POST['ip-addr'];
         $_POST['ip-addr'] = array_unique(array_map(function ($IP) {
-            return preg_replace("\x01[^0-9a-f:./]\x01i", '', $IP);
+            return preg_replace('~[^\da-f:./]~i', '', $IP);
         }, explode("\n", $_POST['ip-addr'])));
         natsort($_POST['ip-addr']);
         $CIDRAM['ThisIP'] = [];
@@ -2640,7 +2651,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
     /** IPs were submitted for testing. */
     if (isset($_POST['cidr'])) {
         $CIDRAM['FE']['cidr'] = $_POST['cidr'];
-        if ($_POST['cidr'] = preg_replace("\x01[^0-9a-f:./]\x01i", '', $_POST['cidr'])) {
+        if ($_POST['cidr'] = preg_replace('~[^\da-f:./]~i', '', $_POST['cidr'])) {
             if (!$CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv4']($_POST['cidr'])) {
                 $CIDRAM['CIDRs'] = $CIDRAM['ExpandIPv6']($_POST['cidr']);
             }

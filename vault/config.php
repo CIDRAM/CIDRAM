@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.06.10).
+ * This file: Configuration handler (last modified: 2018.06.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,7 +67,7 @@ if ($CIDRAM['Config'] === false) {
 if (
     !empty($_SERVER['HTTP_HOST']) &&
     ($CIDRAM['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&
-    !preg_match('/[^.0-9a-z-]/', $CIDRAM['Domain']) &&
+    !preg_match('/[^.\da-z-]/', $CIDRAM['Domain']) &&
     is_readable($CIDRAM['Vault'] . $CIDRAM['Domain'] . '.config.ini')
 ) {
     /** Attempts to parse the configuration overrides file. */

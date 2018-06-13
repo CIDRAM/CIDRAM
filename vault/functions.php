@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.06.09).
+ * This file: Functions file (last modified: 2018.06.13).
  */
 
 /**
@@ -524,28 +524,14 @@ $CIDRAM['ValidatorMsg'] = function ($lvl, $msg) {
  *      the expiry tag doesn't contain a valid ISO 8601 date/time.
  */
 $CIDRAM['FetchExpires'] = function ($in) {
+    static $CommonPart = '([12]\d{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2]\d|3[01])';
     if (
-        preg_match(
-            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
-            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[' .
-            '0-3])[\x2d\x2e\x3a]?([0-5][0-9])[\x2d\x2e\x3a]?([0-5][0-9])$/i',
-        $in, $Arr) ||
-        preg_match(
-            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
-            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[' .
-            '0-3])[\x2d\x2e\x3a]?([0-5][0-9])$/i',
-        $in, $Arr) ||
-        preg_match(
-            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
-            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])\x20?T?([01][0-9]|2[' .
-            '0-3])$/i',
-        $in, $Arr) ||
-        preg_match(
-            '/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2' .
-            '\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2][0-9]|3[01])$/i',
-        $in, $Arr) ||
-        preg_match('/^([12][0-9]{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $in, $Arr) ||
-        preg_match('/^([12][0-9]{3})$/i', $in, $Arr)
+        preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])[\x2d\x2e\x3a]?([0-5]\d)[\x2d\x2e\x3a]?([0-5]\d)$/i', $in, $Arr) ||
+        preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])[\x2d\x2e\x3a]?([0-5]\d)$/i', $in, $Arr) ||
+        preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])$/i', $in, $Arr) ||
+        preg_match('/^' . $CommonPart . '$/i', $in, $Arr) ||
+        preg_match('/^([12]\d{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $in, $Arr) ||
+        preg_match('/^([12]\d{3})$/i', $in, $Arr)
     ) {
         $Arr = [
             (int)$Arr[1],
@@ -607,7 +593,7 @@ $CIDRAM['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
         $Value = true;
     } elseif ($ValueLow === 'false' || $ValueLow === 'n') {
         $Value = false;
-    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^a-f0-9]/i', $HexTest) && !($ValueLen % 2)) {
+    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^\da-f]/i', $HexTest) && !($ValueLen % 2)) {
         $Value = hex2bin($HexTest);
     } else {
         $ValueInt = (int)$Value;
@@ -846,9 +832,8 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
 
     /** The IP address is IPv4. */
     if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
-        '/^([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-' .
-        '9]|25[0-5])\.([01]?[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]?[0-9]{1,2' .
-        '}|2[0-4][0-9]|25[0-5])$/i',
+        '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])' .
+        '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/i',
     $Addr, $Octets)) {
         $Lookup =
             chr(strlen($Octets[4])) . $Octets[4] .
@@ -867,7 +852,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
         }
         while (strlen($Lookup) < 39) {
             $Lookup = preg_replace(
-                ['/^:/', '/:$/', '/^([0-9a-f]{1,3}):/i', '/:([0-9a-f]{1,3})$/i', '/:([0-9a-f]{1,3}):/i'],
+                ['/^:/', '/:$/', '/^([\da-f]{1,3}):/i', '/:([\da-f]{1,3})$/i', '/:([\da-f]{1,3}):/i'],
                 ['0:', ':0', '0\1:', ':0\1', ':0\1:'],
                 $Lookup
             );
@@ -955,7 +940,7 @@ $CIDRAM['DNS-Reverse'] = function ($Addr, $DNS = '', $Timeout = 5) use (&$CIDRAM
     }
 
     /** Return results. */
-    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:0-9a-z._~-]/i', '', $Host) ?: $Addr;
+    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr;
 
 };
 
@@ -975,7 +960,7 @@ $CIDRAM['DNS-Reverse-Fallback'] = function ($Addr) use (&$CIDRAM) {
     $CIDRAM['CacheModified'] = true;
 
     /** Return results. */
-    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:0-9a-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
+    return $CIDRAM['Cache']['DNS-Reverses'][$Addr]['Host'] = preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr;
 
 };
 
@@ -1021,7 +1006,7 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
     }
     return $CIDRAM['Cache']['DNS-Forwards'][$Host]['IPAddr'] = empty(
         $Results['Answer'][0]['data']
-    ) ? '' : preg_replace('/[^0-9a-f.:]/i', '', $Results['Answer'][0]['data']);
+    ) ? '' : preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
 };
 
 /**
@@ -1380,7 +1365,7 @@ $CIDRAM['AddField'] = function ($FieldName, $FieldData) use (&$CIDRAM) {
  */
 $CIDRAM['Resolve6to4'] = function ($In) {
     $Parts = explode(':', substr($In, 5), 8);
-    if (count($Parts) < 2 || preg_match('~[^0-9a-f]~i', $Parts[0]) || preg_match('~[^0-9a-f]~i', $Parts[1])) {
+    if (count($Parts) < 2 || preg_match('~[^\da-f]~i', $Parts[0]) || preg_match('~[^\da-f]~i', $Parts[1])) {
         return '';
     }
     $Parts[0] = hexdec($Parts[0]) ?: 0;
@@ -1489,7 +1474,12 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
     $CIDRAM['Flag-Bypass-DuckDuckGo-Check'] = false;
 };
 
-/** Build directory path for logfiles. */
+/**
+ * Build directory path for logfiles.
+ *
+ * @param string $File The file we're building for.
+ * @return bool True on success; False on failure.
+ */
 $CIDRAM['BuildLogPath'] = function ($File) use (&$CIDRAM) {
     $ThisPath = $CIDRAM['Vault'];
     $File = str_replace("\\", '/', $File);
@@ -1545,6 +1535,7 @@ $CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
  * GZ-compress a file (used by log rotation).
  *
  * @param string $File The file to GZ-compress.
+ * @return bool True if the file exists and is readable; False otherwise.
  */
 $CIDRAM['GZCompressFile'] = function ($File) {
     if (!is_file($File) || !is_readable($File)) {
@@ -1614,6 +1605,9 @@ $CIDRAM['LogRotation'] = function ($Pattern) use (&$CIDRAM) {
 
 /**
  * Pseudonymise an IP address (reduce IPv4s to /24s and IPv6s to /32s).
+ *
+ * @param string $IP An IP address.
+ * @return string A pseudonymised IP address.
  */
 $CIDRAM['Pseudonymise-IP'] = function($IP) {
     if (($CPos = strpos($IP, ':')) !== false) {

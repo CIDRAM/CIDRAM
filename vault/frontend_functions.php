@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.10).
+ * This file: Front-end functions file (last modified: 2018.06.13).
  */
 
 /**
@@ -241,11 +241,11 @@ $CIDRAM['FECacheGet'] = function ($Source, $Entry) {
 $CIDRAM['VersionCompare'] = function ($A, $B) {
     $Normalise = function (&$Ver) {
         $Ver =
-            preg_match('~^v?([0-9]+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?([0-9]+)\.([0-9]+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[.0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})(RC[0-9]{1,2}|[.+-][0-9a-z_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$~i', $Ver, $Matches);
+            preg_match('~^v?(\d+)$~i', $Ver, $Matches) ?:
+            preg_match('~^v?(\d+)\.(\d+)$~i', $Ver, $Matches) ?:
+            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(RC\d{1,2}|-[.\da-z_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\da-z_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^([a-z]+)-([\da-z]+)-([\da-z]+)$~i', $Ver, $Matches);
         $Ver = [
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,
             'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
@@ -494,7 +494,7 @@ $CIDRAM['FetchComponentsLists'] = function ($Base, &$Arr) use (&$CIDRAM) {
 $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = str_replace("\\", '/', $Path);
     if (
-        preg_match('~(?://|[^!0-9A-Za-z\._-]$)~', $Path) ||
+        preg_match('~(?://|[^!\da-z\._-]$)~i', $Path) ||
         preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Path, -3)))
     ) {
         return false;
@@ -1985,9 +1985,7 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
                 $Actual = '';
             } else {
                 $Len = strlen($ThisFileData);
-                $HashPartLen = (
-                    ($HPos = strpos($Checksum, ':')) !== false
-                ) ? strlen(substr($Checksum, 0, $HPos)) : 64;
+                $HashPartLen = strpos($Checksum, ':') ?: 64;
                 if ($HashPartLen === 32) {
                     $Actual = md5($ThisFileData) . ':' . $Len;
                 } else {
@@ -2235,7 +2233,7 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
             arsort($Arr[$IPType][$SigType][$Range]);
             foreach ($Arr[$IPType][$SigType][$Range] as $Param => &$Count) {
                 if ($IPType === 'IPv4') {
-                    $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . $Range . $Param);
+                    $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . $Range . $Param);
                     $Total = '<span id="' . $ThisID . '"></span>';
                     $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));';
                     $Count = $CIDRAM['Number_L10N']($Count) . ' (' . $Total . ')';
@@ -2251,7 +2249,7 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
                 arsort($Arr[$IPType . '-Origin'][$SigType][$Range]);
                 foreach ($Arr[$IPType . '-Origin'][$SigType][$Range] as $Origin => &$Count) {
                     if ($IPType === 'IPv4') {
-                        $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . $Range . $Origin);
+                        $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . $Range . $Origin);
                         $Total = '<span id="' . $ThisID . '"></span>';
                         $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));';
                         $Count = $CIDRAM['Number_L10N']($Count) . ' (' . $Total . ')';
@@ -2292,12 +2290,12 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
         }
         foreach ($Arr[$IPType][$SigType]['Total'] as $Param => &$Count) {
             if ($MaxRange === 32) {
-                $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . 'Total' . $Param);
+                $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . 'Total' . $Param);
                 $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . ').toString()));';
             } elseif ($MaxRange === 128) {
                 $Count = $CIDRAM['RangeTablesFinaliseIPv6']($Count);
                 $Count[1] = $Count[1] ? '+\' × \'+nft((2).toString())+\'<sup>^\'+nft((' . $Count[1] . ').toString())+\'</sup>\'' : '';
-                $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . 'Total' . $Param);
+                $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . 'Total' . $Param);
                 $JS .= 'w(\'' . $ThisID . '\',' . ($Count[1] ? '\'~\'+' : '') . 'nft((' . $Count[0] . ').toString())' . $Count[1] . ');';
             }
             $Count = '<span id="' . $ThisID . '"></span>';
@@ -2310,12 +2308,12 @@ $CIDRAM['RangeTablesIterateData'] = function (&$Arr, &$Out, &$JS, $SigType, $Max
             arsort($Arr[$IPType . '-Origin'][$SigType]['Total']);
             foreach ($Arr[$IPType . '-Origin'][$SigType]['Total'] as $Origin => &$Count) {
                 if ($MaxRange === 32) {
-                    $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . 'Total' . $Origin);
+                    $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . 'Total' . $Origin);
                     $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . ').toString()));';
                 } elseif ($MaxRange === 128) {
                     $Count = $CIDRAM['RangeTablesFinaliseIPv6']($Count);
                     $Count[1] = $Count[1] ? '+\' × \'+nft((2).toString())+\'<sup>^\'+nft((' . $Count[1] . ').toString())+\'</sup>\'' : '';
-                    $ThisID = $IPType . preg_replace('~[^0-9a-z]~i', '_', $SigType . 'Total' . $Origin);
+                    $ThisID = $IPType . preg_replace('~[^\da-z]~i', '_', $SigType . 'Total' . $Origin);
                     $JS .= 'w(\'' . $ThisID . '\',' . ($Count[1] ? '\'~\'+' : '') . 'nft((' . $Count[0] . ').toString())' . $Count[1] . ');';
                 }
                 $Count = '<code class="hB">' . $Origin . '</code> – ' . (
@@ -2430,7 +2428,12 @@ $CIDRAM['SendOutput'] = function () use (&$CIDRAM) {
     return $CIDRAM['ParseVars']($CIDRAM['lang'] + $CIDRAM['FE'], $CIDRAM['FE']['Template']);
 };
 
-/** Confirm whether a file is a logfile (used by the file manager and logs viewer). */
+/**
+ * Confirm whether a file is a logfile (used by the file manager and logs viewer).
+ *
+ * @param string $File The path/name of the file to be confirmed.
+ * @return bool True if it's a logfile; False if it isn't.
+ */
 $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     static $Pattern_logfile = false;
     if (!$Pattern_logfile && $CIDRAM['Config']['general']['logfile']) {
@@ -2465,6 +2468,13 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     );
 };
 
+/**
+ * Generates JavaScript snippets for confirmation prompts for front-end actions.
+ *
+ * @param string $Action The action being taken to be confirmed.
+ * @param string $Form The ID of the form to be submitted when the action is confirmed.
+ * @return string The JavaScript snippet.
+ */
 $CIDRAM['GenerateConfirm'] = function ($Action, $Form) use (&$CIDRAM) {
     $Confirm = str_replace(["'", '"'], ["\'", '\x22'], sprintf($CIDRAM['lang']['confirm_action'], $Action));
     return 'javascript:confirm(\'' . $Confirm . '\')&&document.getElementById(\'' . $Form . '\').submit()';

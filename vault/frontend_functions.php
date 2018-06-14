@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.13).
+ * This file: Front-end functions file (last modified: 2018.06.14).
  */
 
 /**
@@ -1952,7 +1952,7 @@ $CIDRAM['UpdatesHandler-Deactivate'] = function ($ID) use (&$CIDRAM) {
 $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
     $CIDRAM['Arrayify']($ID);
     foreach ($ID as $ThisID) {
-        $Ident = strtolower(preg_replace('~[^a-z]~i', '', $ThisID));
+        $Ident = strtolower(preg_replace('~[^\da-z]~i', '', $ThisID));
         $HideLinkClass = 'hl_' . $Ident;
         $ShowLinkClass = 'sl_' . $Ident;
         $Ident = 'v_' . $Ident;
@@ -2014,7 +2014,7 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
         $CIDRAM['FE']['state_msg'] .= '<code>' . $ThisID . '</code> – ' . (
             $Passed ? $CIDRAM['lang']['response_verification_success'] : $CIDRAM['lang']['response_verification_failed']
         ) . sprintf(
-            ' %1$s%3$s%2$shide(\'v\');show%5$shide(\'%3$s\');show(\'%4$s\');%6$s%7$s%8$s%1$s%4$s%2$shide(\'v\');hide(\'%4$s\');show(\'%3$s\');" style="display:none;%6$s%9$s%8$s',
+            ' %1$ssl_ %3$s%2$shide(\'v\');%10$sshow%5$shide(\'%3$s\');show(\'%4$s\');%6$s%7$s%8$s%1$shl_ %4$s%2$shide(\'v\');%10$s" style="display:none;%6$s%9$s%8$s',
             '<a class="',
             '" href="javascript:void(0);" onclick="javascript:',
             $ShowLinkClass,
@@ -2023,7 +2023,8 @@ $CIDRAM['UpdatesHandler-Verify'] = function ($ID) use (&$CIDRAM) {
             '"><code>[',
             $CIDRAM['lang']['label_show_hash_table'],
             ']</code></a>',
-            $CIDRAM['lang']['label_hide_hash_table']
+            $CIDRAM['lang']['label_hide_hash_table'],
+            'hide(\'hl_\');show(\'sl_\');'
         ) . '<br />' . $Table;
     }
 };

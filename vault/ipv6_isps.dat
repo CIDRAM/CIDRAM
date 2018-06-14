@@ -1092,35 +1092,13 @@ recaptcha:
 # traffic from India, to list this section in their "ignore.dat" file as a means of minimising the potential impact of
 # false positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to
 # not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# Updated: 2018.03.31
+# - When updating, be careful about bogons (remove them prior to aggregating)!
+# - When updating, before aggregating, remove these (they don't belong to Bharti and shouldn't be being announced)!
+#   - 155.144.144.0/24 (AU), 80.81.192.0/22 (DE), 193.239.116.0/22 (NL), plus anything from Singapore (SG),
+#     Ireland (IE), or the United States (US).
+# Updated: 2018.06.14
 
-2001:7f8::/64 Deny Spam
-2a01:4a0:1338:57::/64 Deny Spam
-Origin: DE
-2001:2000:3080:eb::/64 Deny Spam
-2001:2000:3080:780::/64 Deny Spam
-2001:2000:3080:79e::/64 Deny Spam
-2a01:62e0:f001:17b::/64 Deny Spam
-Origin: EU
-2001:7f8:36::/64 Deny Spam
-Origin: FR
-2001:df5:b800:bb00::/64 Deny Spam
-2400:8800:1f02:d::/64 Deny Spam
-2400:8800:1f02:2b::/64 Deny Spam
-2400:8800:1f02:46::/63 Deny Spam
-2400:8800:7f06:22::/63 Deny Spam
-2404:d180:1:4::/64 Deny Spam
-Origin: HK
-2a03:2887:ff00::/48 Deny Spam
-2a03:2887:ff02::/47 Deny Spam
-2a03:2887:ff04::/46 Deny Spam
-2a03:2887:ff08::/48 Deny Spam
-2a03:2887:ff0a::/48 Deny Spam
-Origin: IE
-2001:de8:1::/64 Deny Spam
-2001:de8:1:2::/64 Deny Spam
-2001:de8:1:5::/64 Deny Spam
-2401:4900:c0:2000::/64 Deny Spam
+2401:4900:50::/48 Deny Spam
 2401:4900:808::/45 Deny Spam
 2401:4900:810::/44 Deny Spam
 2401:4900:840::/44 Deny Spam
@@ -1128,25 +1106,23 @@ Origin: IE
 2401:4900:900::/40 Deny Spam
 2401:4900:a00::/39 Deny Spam
 2401:4900:c00::/40 Deny Spam
+2401:4900:d00::/41 Deny Spam
 2401:4900:1000::/41 Deny Spam
 2401:4900:1100::/41 Deny Spam
 2401:4900:1200::/40 Deny Spam
 2401:4900:1300::/41 Deny Spam
-2401:4900:1680::/42 Deny Spam
-2401:4900:16c0::/43 Deny Spam
-2401:4900:16e0::/44 Deny Spam
+2401:4900:1680::/41 Deny Spam
 2401:4900:1710::/44 Deny Spam
 2401:4900:1720::/43 Deny Spam
 2401:4900:1740::/45 Deny Spam
-2401:4900:1800::/41 Deny Spam
-2401:4900:1900::/40 Deny Spam
+2401:4900:1800::/39 Deny Spam
 2401:4900:1d00::/41 Deny Spam
 2401:4900:2000::/48 Deny Spam
 2401:4900:2080::/48 Deny Spam
 2401:4900:2100::/48 Deny Spam
 2401:4900:2180::/41 Deny Spam
 2401:4900:2280::/48 Deny Spam
-2401:4900:2300::/48 Deny Spam
+2401:4900:2300::/42 Deny Spam
 2401:4900:2340::/48 Deny Spam
 2401:4900:2500::/46 Deny Spam
 2401:4900:2504::/47 Deny Spam
@@ -1154,49 +1130,20 @@ Origin: IE
 2401:4900:2600::/39 Deny Spam
 2401:4900:2e80::/41 Deny Spam
 2401:4900:2f00::/40 Deny Spam
+2401:4900:30c0::/44 Deny Spam
+2401:4900:3130::/44 Deny Spam
+2401:4900:35f0::/44 Deny Spam
+2401:4900:3600::/43 Deny Spam
+2401:4900:3620::/44 Deny Spam
+2401:4900:3670::/45 Deny Spam
+2401:4900:3727::/48 Deny Spam
+2401:4900:372d::/48 Deny Spam
 2404:a800::/32 Deny Spam
 2405:a700:14::/47 Deny Spam
 2407:7400::/48 Deny Spam
 Origin: IN
-2001:de8:4::/64 Deny Spam
-2001:de8:7::/64 Deny Spam
-2001:de8:c::/64 Deny Spam
-Origin: JP
 2400:ff00::/32 Deny Spam
 Origin: LK
-2001:7f8:1::/64 Deny Spam
-2001:7f8:13::/64 Deny Spam
-Origin: NL
-2001:428:601:10::/64 Deny Spam
-2001:428:4c01:c::/64 Deny Spam
-2001:450:2002:18c::/64 Deny Spam
-2001:504:1::/64 Deny Spam
-2001:504:d::/64 Deny Spam
-2001:504:f::/64 Deny Spam
-2001:504:13::/64 Deny Spam
-2001:504:36::/64 Deny Spam
-2600:140f:3::/48 Deny Spam
-2600:140f:b::/48 Deny Spam
-2600:140f:d::/48 Deny Spam
-2600:140f:e::/48 Deny Spam
-2600:140f:5000::/48 Deny Spam
-2600:140f:7000::/48 Deny Spam
-2600:140f:9000::/48 Deny Spam
-2600:140f:b000::/48 Deny Spam
-2600:140f:d000::/64 Deny Spam
-2600:1417:1e::/48 Deny Spam
-2600:1417:20::/48 Deny Spam
-2600:1417:2c::/48 Deny Spam
-2600:1417:53::/48 Deny Spam
-2600:1417:55::/48 Deny Spam
-2600:1417:56::/48 Deny Spam
-2600:1417:6a::/47 Deny Spam
-2600:1417:6d::/48 Deny Spam
-2600:1417:6e::/48 Deny Spam
-2600:1417:70::/48 Deny Spam
-2600:1417:78::/48 Deny Spam
-2620:107:4008:223::/64 Deny Spam
-Origin: US
 Tag: Bharti Airtel
 ---
 recaptcha:

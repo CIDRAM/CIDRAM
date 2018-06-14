@@ -245,7 +245,7 @@ Origin: CA
 2001:41d0::/32 Deny Cloud
 Origin: FR
 2402:1f00::/32 Deny Cloud
-Origin: HK   
+Origin: HK
 2604:2dc0::/32 Deny Cloud
 Origin: US
 Tag: OVH Systems
@@ -890,10 +890,13 @@ Origin: GB
 Tag: Bytemark Limited
 
 
-# "Digital Ocean, Inc", "DigitalOcean, LLC", "ServerStack, Inc".
-# ASNs 14061, 39690, 46652, 62567, 133165, 200130, 201229, 202018, 202109, 204794, 205301, 393406 ("Digital Ocean, Inc").
+# ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
 # Ranges change frequently / Should update often.
-# Updated: 2017.01.13 / Checked: 2018.03.23
+# Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
+# %Listed, Google Malware Dashboard: 2.58% (AS14061).
+# %Listed, CleanTalk.org: 28.39% (AS14061), 27.92% (AS46652).
+# Stop Forum Spam (SFS) listings: 83,165 (AS14061).
+# Updated: 2017.01.13 / Checked: 2018.06.14
 
 2a03:b0c0::/46 Deny Cloud
 Origin: NL

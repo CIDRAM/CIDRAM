@@ -3943,10 +3943,13 @@ Origin: GB
 Tag: Bytemark Limited
 
 
-# "Digital Ocean, Inc", "DigitalOcean, LLC", "ServerStack, Inc".
-# ASNs 14061, 39690, 46652, 62567, 133165, 200130, 201229, 202018, 202109, 204794, 205301, 393406 ("Digital Ocean, Inc").
+# ASNs 14061, 46652 ("DigitalOcean, LLC", "ServerStack, Inc").
 # Ranges change frequently / Should update often.
-# Updated: 2018.03.23
+# Remove unassigned prior to aggregating (e.g., 10.0.0.0/8).
+# %Listed, Google Malware Dashboard: 2.58% (AS14061).
+# %Listed, CleanTalk.org: 28.39% (AS14061), 27.92% (AS46652).
+# Stop Forum Spam (SFS) listings: 83,165 (AS14061).
+# Updated: 2018.06.14
 
 163.47.8.0/22 Deny Cloud
 Origin: AU
@@ -3959,19 +3962,16 @@ Origin: EU
 128.199.64.0/18 Deny Cloud
 128.199.128.0/17 Deny Cloud
 Origin: GB
-185.222.220.0/22 Deny Cloud
-185.225.128.0/22 Deny Cloud
-185.227.72.0/22 Deny Cloud
-185.229.104.0/22 Deny Cloud
-185.240.16.0/22 Deny Cloud
-185.244.176.0/22 Deny Cloud
-Origin: MD
 5.101.96.0/20 Deny Cloud
 37.139.0.0/19 Deny Cloud
 46.101.0.0/16 Deny Cloud
 82.196.0.0/20 Deny Cloud
 141.0.168.0/21 Deny Cloud
 146.185.128.0/18 Deny Cloud
+178.128.128.0/22 Deny Cloud
+178.128.144.0/20 Deny Cloud
+178.128.176.0/20 Deny Cloud
+178.128.192.0/20 Deny Cloud
 185.14.184.0/22 Deny Cloud
 185.88.180.0/22 Deny Cloud
 188.166.0.0/16 Deny Cloud
@@ -3981,7 +3981,6 @@ Origin: NL
 Origin: SG
 45.55.0.0/16 Deny Cloud
 67.205.128.0/18 Deny Cloud
-67.207.65.0/24 Deny Cloud
 67.207.66.0/23 Deny Cloud
 67.207.68.0/22 Deny Cloud
 67.207.72.0/21 Deny Cloud
@@ -3990,19 +3989,20 @@ Origin: SG
 104.131.0.0/16 Deny Cloud
 104.236.0.0/16 Deny Cloud
 107.170.0.0/16 Deny Cloud
-138.68.0.0/16 Deny Cloud
+138.68.0.0/19 Deny Cloud
+138.68.32.0/24 Deny Cloud
+138.68.36.0/22 Deny Cloud
+138.68.40.0/21 Deny Cloud
+138.68.48.0/20 Deny Cloud
+138.68.64.0/18 Deny Cloud
+138.68.128.0/17 Deny Cloud
 138.197.0.0/17 Deny Cloud
 138.197.128.0/18 Deny Cloud
 138.197.192.0/19 Deny Cloud
 138.197.224.0/20 Deny Cloud
 138.197.240.0/22 Deny Cloud
 138.197.252.0/22 Deny Cloud
-159.65.0.0/17 Deny Cloud
-159.65.128.0/18 Deny Cloud
-159.65.192.0/20 Deny Cloud
-159.65.208.0/22 Deny Cloud
-159.65.216.0/21 Deny Cloud
-159.65.224.0/19 Deny Cloud
+159.65.0.0/16 Deny Cloud
 159.89.0.0/19 Deny Cloud
 159.89.32.0/20 Deny Cloud
 159.89.48.0/21 Deny Cloud
@@ -4013,13 +4013,7 @@ Origin: SG
 159.203.0.0/16 Deny Cloud
 162.243.0.0/16 Deny Cloud
 165.227.0.0/16 Deny Cloud
-167.99.0.0/20 Deny Cloud
-167.99.16.0/21 Deny Cloud
-167.99.24.0/22 Deny Cloud
-167.99.32.0/19 Deny Cloud
-167.99.64.0/18 Deny Cloud
-167.99.128.0/19 Deny Cloud
-167.99.160.0/20 Deny Cloud
+167.99.0.0/16 Deny Cloud
 174.138.0.0/18 Deny Cloud
 174.138.64.0/19 Deny Cloud
 174.138.96.0/22 Deny Cloud
@@ -4030,8 +4024,18 @@ Origin: SG
 192.241.128.0/17 Deny Cloud
 198.199.64.0/18 Deny Cloud
 198.211.96.0/19 Deny Cloud
+204.48.16.0/20 Deny Cloud
+206.81.0.0/19 Deny Cloud
+206.189.0.0/17 Deny Cloud
+206.189.128.0/18 Deny Cloud
+206.189.192.0/19 Deny Cloud
+206.189.224.0/20 Deny Cloud
+206.189.240.0/22 Deny Cloud
+206.189.248.0/21 Deny Cloud
 207.154.192.0/18 Deny Cloud
 208.68.36.0/22 Deny Cloud
+209.97.128.0/19 Deny Cloud
+209.97.160.0/20 Deny Cloud
 Origin: US
 Tag: Digital Ocean, Inc
 
@@ -20858,6 +20862,18 @@ Origin: ZA
 Tag: Radore Veri Merkezi
 
 
+# ASN 204655 ("Novogara LTD").
+# Spam tolerant network.
+# Stop Forum Spam (SFS) listings: 2,026.
+# Updated: 2018.06.14
+
+185.216.140.0/23 Deny Cloud
+Origin: NL
+185.83.215.0/24 Deny Cloud
+Origin: PT
+Tag: Novogara LTD
+
+
 # CIDRs/IPs belonging to non-blocked ASNs, caught performing low-level WordPress hack attempts.
 # In some cases (when marked with "Deny Spam") also caught spamming honeypots.
 # IPs listed here to be listed temporarily, signatures to be either upgraded or removed at some point in the future,
@@ -20876,13 +20892,19 @@ Tag: Radore Veri Merkezi
 95.87.254.186/32 Deny Spam
 Origin: BG
 # Belongs to ASN 15169 ("Google LLC"), Google's user cloud service (NOT Google Search).
-# Updated: 2018.03.18
-35.185.96.0/19 Deny Spam
-35.188.83.255/32 Deny Cloud
+# Updated: 2018.06.14
 35.190.0.0/16 Deny Spam
-104.197.145.209/32 Deny Cloud
-130.211.0.0/16 Deny Spam
+35.196.21.90/32 Deny Spam
+35.226.236.145/32 Deny Spam
+74.125.82.195/32 Deny Spam
 Origin: US
+# Belongs to ASN 28685 ("Routit BV") / Updated: 2018.06.14 (Temporary listing)
+89.146.0.0/18 Deny Spam
+Origin: NL
+# Belongs to ASN 4766 ("Korea Telecom") / Updated: 2018.06.14
+# Caught port scanning honeypots.
+175.202.168.65/32 Deny Generic
+Origin: KR
 Tag: WP/Temp/Cloud/Spam
 
 

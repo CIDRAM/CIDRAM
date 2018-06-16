@@ -1036,7 +1036,7 @@ Vâng. API được tích hợp trong front-end để tương tác với trang c
 
 #### <a name="WHAT_ARE_INFRACTIONS"></a>"Vi phạm" là gì?
 
-"Vi phạm" xác định khi một IP không bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào cũng sẽ bị chặn vì bất kỳ yêu cầu nào trong tương lai, và chúng liên quan chặt chẽ với giám sát IP. Một số chức năng và mô-đun tồn tại cho phép các yêu cầu bị chặn vì các lý do khác với IP có nguồn gốc (như là sự hiện diện của các đại lý người dùng [user agents] tương ứng với spambots hay hacktools, truy vấn nguy hiểm, giả mạo DNS và vv), và khi điều này xảy ra, một "vi phạm" có thể xảy ra. Chúng cung cấp cách để nhận định địa chỉ IP tương ứng với các yêu cầu không mong muốn mà có thể chưa bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào. Các vi phạm thường tương ứng với 1 đến 1 với số lần IP bị chặn, nhưng không phải luôn luôn (sự kiện nghiêm trọng chặn có thể gây ra một giá trị vi phạm lớn hơn một, và nếu "track_mode" là sai [false], vi phạm sẽ không xảy ra cho các sự kiện chặn gây ra bởi chỉ các tập tin chữ ký).
+"Vi phạm" xác định khi một IP không bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào cũng sẽ bị chặn vì bất kỳ yêu cầu nào trong tương lai, và chúng liên quan chặt chẽ với giám sát IP. Một số chức năng và mô-đun tồn tại cho phép các yêu cầu bị chặn vì các lý do khác với IP có nguồn gốc (như là sự hiện diện của các đại lý người dùng ["user agents"] tương ứng với chương trình thư rác ["spambots"] hay công cụ hack ["hacktools"], truy vấn nguy hiểm, giả mạo DNS và vv), và khi điều này xảy ra, một "vi phạm" có thể xảy ra. Chúng cung cấp cách để nhận định địa chỉ IP tương ứng với các yêu cầu không mong muốn mà có thể chưa bị chặn bởi bất kỳ tập tin chữ ký cụ thể nào. Các vi phạm thường tương ứng với 1 đến 1 với số lần IP bị chặn, nhưng không phải luôn luôn (sự kiện nghiêm trọng chặn có thể gây ra một giá trị vi phạm lớn hơn một, và nếu "track_mode" là sai [false], vi phạm sẽ không xảy ra cho các sự kiện chặn gây ra bởi chỉ các tập tin chữ ký).
 
 #### <a name="BLOCK_HOSTNAMES"></a>CIDRAM có thể chặn tên máy chủ không?
 
@@ -1092,17 +1092,17 @@ Phần tài liệu này nhằm mô tả các cân nhắc pháp lý có thể có
 
 Theo như đã nêu trong giấy phép gói, gói được cung cấp mà không có bất kỳ bảo hành nào. Điều này bao gồm (nhưng không giới hạn) tất cả phạm vi trách nhiệm pháp lý. Gói phần mềm được cung cấp cho bạn để thuận tiện cho bạn, với hy vọng rằng nó sẽ hữu ích, và rằng nó sẽ cung cấp một số lợi ích cho bạn. Tuy nhiên, việc sử dụng hoặc triển khai gói, là lựa chọn của riêng bạn. Bạn không bị buộc phải sử dụng hoặc triển khai gói, nhưng khi bạn làm như vậy, bạn chịu trách nhiệm về quyết định đó. Tôi và những người đóng góp gói khác, không chịu trách nhiệm pháp lý về hậu quả của các quyết định mà bạn đưa ra, bất kể trực tiếp, gián tiếp, ngụ ý, hay nói cách khác.
 
-#### 11.2 THIRD PARTIES
+#### 11.2 BÊN THỨ BA
 
-Depending on its exact configuration and implementation, the package may communicate and share information with third parties in some cases. This information may be defined as "personally identifiable information" (PII) in some contexts, by some jurisdictions.
+Tùy thuộc vào cấu hình và triển khai chính xác của nó, gói có thể giao tiếp và chia sẻ thông tin với bên thứ ba trong một số trường hợp. Thông tin này có thể được định nghĩa là "[thông tin nhận dạng cá nhân](http://www.pcworld.com.vn/articles/cong-nghe/an-ninh-mang/2016/05/1248000/thong-tin-ca-nhan-tai-san-rieng-cung-la-tien/)" (PII) trong một số ngữ cảnh, bởi một số khu vực pháp lý.
 
-How this information may be used by these third parties, is subject to the various policies set forth by these third parties, and is outside the scope of this documentation. However, in all such cases, sharing of information with these third parties can be disabled. In all such cases, if you choose to enable it, it is your responsibility to research any concerns that you may have regarding the privacy, security, and usage of PII by these third parties. If any doubts exist, or if you're unsatisfied with the conduct of these third parties in regards to PII, it may be best to disable all sharing of information with these third parties.
+Thông tin này có thể được các bên thứ ba này sử dụng như thế nào, là tuân theo của chính sách của các bên thứ ba, và nằm ngoài phạm vi của tài liệu này. Tuy nhiên, trong tất cả các trường hợp như vậy, việc chia sẻ thông tin với các bên thứ ba này có thể bị vô hiệu hóa. Trong tất cả các trường hợp như vậy, nếu bạn chọn kích hoạt nó, bạn có trách nhiệm nghiên cứu bất kỳ mối lo ngại nào về sự riêng tư, bảo mật, và việc sử dụng PII của các bên thứ ba này. Nếu có bất kỳ nghi ngờ nào, hoặc nếu bạn không hài lòng với hành vi của các bên thứ ba liên quan đến PII, tốt nhất là nên vô hiệu hóa tất cả việc chia sẻ thông tin với các bên thứ ba này.
 
-For the purpose of transparency, the type of information shared, and with whom, is described below.
+Với mục đích minh bạch, loại thông tin được chia sẻ, và với ai, được mô tả dưới đây.
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### 11.2.0 TRA CỨU TÊN MÁY CHỦ
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+Nếu bạn sử dụng bất kỳ tính năng hay mô-đun nào để làm việc với tên máy chủ (chẳng hạn như "mô-đun cho chặn các host xấu", "tor project exit nodes block module", hay "xác minh máy tìm kiếm", ví dụ), CIDRAM cần để có thể có được tên máy chủ của các yêu cầu gửi đến bằng cách nào đó. Thông thường, nó thực hiện điều này bằng cách yêu cầu tên máy chủ của địa chỉ IP của các yêu cầu gửi đến từ một máy chủ DNS, hoặc bằng cách yêu cầu thông tin thông qua chức năng được cung cấp bởi hệ thống nơi CIDRAM được cài đặt (điều này thường được gọi là "tra cứu tên máy chủ"). Các máy chủ DNS được xác định theo mặc định thuộc về dịch vụ [Google DNS](https://dns.google.com/) (nhưng điều này có thể dễ dàng thay đổi thông qua cấu hình). Các dịch vụ chính xác được truyền thông phụ thuộc vào cách bạn định cấu hình gói (nó có thể được cấu hình dễ dàng). Trong trường hợp sử dụng chức năng được cung cấp bởi hệ thống nơi CIDRAM được cài đặt, bạn sẽ cần phải liên hệ với quản trị viên hệ thống của bạn để xác định các tuyến đường để sử dụng cho tra cứu tên máy chủ. Tra cứu tên máy chủ có thể được ngăn chặn trong CIDRAM bằng cách tránh các mô-đun bị ảnh hưởng hay bằng cách sửa đổi cấu hình gói để phù hợp với nhu cầu của bạn.
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `default_dns`
@@ -1110,14 +1110,14 @@ If you use any features or modules intended to work with hostnames (such as the 
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
-##### 11.2.1 WEBFONTS
+##### 11.2.1 WEBFONT
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+Một số chủ đề tùy chỉnh, cũng như UI chuẩn ("giao diện người dùng") cho front-end CIDRAM và trang "Truy cập đã bị từ chối", có thể sử dụng các webfont vì lý do thẩm mỹ. Các webfont được vô hiệu hóa theo mặc định, nhưng khi được kích hoạt, giao tiếp trực tiếp giữa trình duyệt của người dùng và dịch vụ lưu trữ webfont sẽ xảy ra. Điều này có thể liên quan đến việc truyền thông tin như địa chỉ IP của người dùng, đại lý người dùng, hệ điều hành, và các chi tiết khác có sẵn cho yêu cầu. Hầu hết các webfont này được lưu trữ bởi dịch vụ [Google Fonts](https://fonts.google.com/).
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 XÁC MINH MÁY TÌM KIẾM
 
 When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
 
@@ -1132,9 +1132,9 @@ CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypa
 
 ##### 11.2.4 STOP FORUM SPAM
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/) là một dịch vụ tuyệt vời, miễn phí có sẵn có thể giúp bảo vệ diễn đàn, blog và trang web từ chương trình thư rác. Nó thực hiện điều này bằng cách cung cấp một cơ sở dữ liệu của chương trình và những người gửi thư rác đã biết, và một API có thể được tận dụng để kiểm tra xem địa chỉ IP, tên người dùng hay địa chỉ email có được liệt kê trên cơ sở dữ liệu của nó hay không.
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+CIDRAM cung cấp một mô-đun tùy chọn tận dụng API này để kiểm tra xem địa chỉ IP của các yêu cầu gửi đến thuộc về một chương trình và những người gửi thư rác bị nghi ngờ hay không. Mô-đun không được cài đặt theo mặc định, nhưng nếu bạn chọn cài đặt nó, địa chỉ IP của người dùng có thể được chia sẻ với API của Stop Forum Spam theo đúng mục đích của mô-đun. Khi mô-đun được cài đặt, CIDRAM giao tiếp với API này bất cứ khi nào một yêu cầu gửi đến yêu cầu một nguồn tài nguyên mà CIDRAM nhận ra là một loại tài nguyên thường xuyên được nhắm mục tiêu bởi chương trình và những người gửi thư rác (ví dụ, trang đăng nhập, trang đăng ký, trang xác minh email, biểu mẫu nhận xét, vv).
 
 #### 11.3 LOGGING
 
@@ -1289,15 +1289,15 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 TIẾP THỊ VÀ QUẢNG CÁO
 
-CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+CIDRAM không thu thập hoặc xử lý bất kỳ thông tin nào cho mục đích tiếp thị hoặc quảng cáo, và không bán hoặc lợi nhuận từ bất kỳ thông tin được thu thập hoặc ghi lại nào. CIDRAM không phải là một doanh nghiệp thương mại, cũng không liên quan đến bất kỳ lợi ích thương mại nào, do đó, làm những việc này sẽ không có ý nghĩa gì cả. Đây là trường hợp kể từ khi bắt đầu dự án, và tiếp tục là trường hợp ngày hôm nay. Ngoài ra, làm những việc này sẽ phản tác dụng với tinh thần và mục đích dự định của toàn bộ dự án, và miễn là tôi tiếp tục duy trì dự án, sẽ không bao giờ xảy ra.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 CHÍNH SÁCH BẢO MẬT
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+Trong một số trường hợp, bạn có thể được yêu cầu về mặt pháp lý để hiển thị rõ ràng liên kết đến chính sách bảo mật của bạn trên tất cả các trang và phần trong trang web của bạn. Điều này có thể quan trọng như một phương tiện để đảm bảo rằng người dùng được thông báo đầy đủ về các thực tiễn bảo mật chính xác của bạn, loại PII bạn thu thập, và cách bạn định sử dụng. Để có thể bao gồm một liên kết trên trang "Truy cập đã bị từ chối" của CIDRAM, một chỉ thị cấu hình được cung cấp để chỉ định URL cho chính sách bảo mật của bạn.
 
-*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+*Chú thích: Tôi khuyên bạn không nên đặt trang chính sách bảo mật của bạn sau bảo vệ của CIDRAM. Nếu CIDRAM bảo vệ trang chính sách bảo mật của bạn, và người dùng bị chặn bởi CIDRAM nhấp vào liên kết đến chính sách bảo mật của bạn, chúng sẽ chỉ bị chặn lại, và sẽ không thể xem chính sách bảo mật của bạn. Lý tưởng nhất, bạn nên liên kết đến một bản sao tĩnh của chính sách bảo mật của bạn, chẳng hạn như một trang HTML hoặc tập tin văn bản thuần mà không được bảo vệ bởi CIDRAM.*
 
 *Chỉ thị cấu hình có liên quan:*
 - `legal` -> `privacy_policy`

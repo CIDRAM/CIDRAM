@@ -1100,9 +1100,9 @@ IP | Оператор
 
 В целях прозрачности тип информации, совместно используемой, и с кем, описан ниже.
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### 11.2.0 ПОИСК ИМЯ ХОСТА
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+Если вы используете какие-либо функции или модули, предназначенные для работы с именами хостов (например, "модуль блокатор для плохие хосты", "tor project exit nodes block module", или "проверка поисковой системы"), CIDRAM должен иметь возможность получить имя хоста входящих запросов. Как правило, он делает это, запрашивая имя хоста IP-адреса входящих запросов с DNS-сервера, или путем запроса информации через функциональные возможности, предоставляемые системой, где установлен CIDRAM (это обычно называют «поиском имени хоста»). DNS-серверы, определенные по умолчанию, принадлежат службе [Google DNS](https://dns.google.com/) (но это можно легко изменить с помощью конфигурации). Точные услуги, которые связаны с, зависят от конфигурации (это можно легко отрегулировать). В случае использования функциональных возможностей, предоставляемых системой, где установлен CIDRAM, вам необходимо обратиться к системному администратору, чтобы определить, какие поисковые запросы маршрутов используются. Поиск имени хоста можно предотвратить в CIDRAM, избегая затронутых модулей, или изменяя конфигурацию пакета в соответствии с вашими потребностями.
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `default_dns`
@@ -1117,9 +1117,9 @@ If you use any features or modules intended to work with hostnames (such as the 
 *Соответствующие директивы конфигурации:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 ПРОВЕРКА ПОИСКОВОЙ СИСТЕМЫ
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+Когда проверка поисковой системы включена, CIDRAM пытается выполнить «переадресацию DNS-запросов», чтобы проверить, являются ли запросы, утверждающие, что они происходят из поисковых систем, являются подлинными. Для этого он использует службу [Google DNS](https://dns.google.com/) для попытки разрешить IP-адреса из имен хостов этих входящих запросов (в этом процессе имена хостов этих запросов совместно используются службой).
 
 *Соответствующие директивы конфигурации:*
 - `general` -> `search_engine_verification`
@@ -1291,13 +1291,13 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 
 #### 11.5 МАРКЕТИНГ И РЕКЛАМА
 
-CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+CIDRAM не собирает и не обрабатывает какую-либо информацию для маркетинговых или рекламных целей и не продает и не получает прибыль от любой собранной или занесенной в журнал информации. CIDRAM не коммерческим предприятием и не имеет отношения к каким-либо коммерческим интересам, поэтому делать это не имеет смысла. Это имело место с самого начала проекта и по-прежнему имеет место сегодня. Кроме того, делать эти вещи было бы контрпродуктивным для духа и намеченной цели проекта в целом, и до тех пор, пока я продолжаю поддерживать проект, никогда не произойдет.
 
 #### 11.6 ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+В некоторых случаях вам может быть юридически необходимо четко отображать ссылку на вашу политику конфиденциальности на всех страницах и разделах вашего сайта. Это может быть важно как средство обеспечения того, чтобы пользователи были хорошо информированы о ваших точных правилах конфиденциальности, типах PII, которые вы собираете, и о том, как вы собираетесь их использовать. Чтобы иметь возможность включить такую ссылку на странице CIDRAM «Доступ Закрыт», предоставляется директива конфигурации для указания URL-адреса вашей политики конфиденциальности.
 
-*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+*Заметка: Настоятельно рекомендуется, чтобы страница политики конфиденциальности не была помещена за защитой CIDRAM. Если CIDRAM защищает вашу страницу политики конфиденциальности, а пользователь, заблокированный CIDRAM, нажимает ссылку на вашу политику конфиденциальности, они будут снова заблокированы и не смогут увидеть вашу политику конфиденциальности. В идеале вы должны ссылаться на статическую копию вашей политики конфиденциальности, такую как HTML-страница или текстовый файл, который не защищен CIDRAM.*
 
 *Соответствующие директивы конфигурации:*
 - `legal` -> `privacy_policy`

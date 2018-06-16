@@ -304,7 +304,7 @@ Berikut list variabel yang ditemukan pada file konfigurasi CIDRAM `config.ini`, 
 Konfigurasi umum dari CIDRAM.
 
 "logfile"
-- File yang dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+- File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
 "logfileApache"
 - File yang dalam gaya Apache untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
@@ -382,7 +382,7 @@ Nilai | Menghasilkan | Deskripsi
 `Arabic-2` | `١٬٢٣٤٬٥٦٧٫٨٩`
 `Thai-1` | `๑,๒๓๔,๕๖๗.๘๙`
 
-*Catat: Nilai-nilai ini tidak terstandardisasi di mana pun, dan mungkin tidak akan relevan di luar paket. Juga, nilai yang didukung dapat berubah di masa depan.*
+*Catat: Nilai-nilai ini tidak terstandardisasi dimana pun, dan mungkin tidak akan relevan di luar paket. Juga, nilai yang didukung dapat berubah di masa depan.*
 
 "emailaddr"
 - Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).
@@ -1100,9 +1100,9 @@ Bagaimana informasi ini dapat digunakan oleh pihak ketiga ini, tunduk pada berba
 
 Untuk tujuan transparansi, jenis informasi yang dibagikan, dan dengan siapa, dijelaskan di bawah ini.
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### 11.2.0 PENCARIAN NAMA HOST
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+Jika Anda menggunakan fitur atau modul yang dimaksudkan untuk bekerja dengan nama host (seperti "modul pemblokir untuk host buruk", "tor project exit nodes block module", atau "verifikasi mesin pencari", misalnya), CIDRAM harus dapat memperoleh nama host dari permintaan masuk entah bagaimana. Biasanya, ini dilakukan dengan meminta nama host dari alamat IP permintaan masuk dari server DNS, atau dengan meminta informasi melalui fungsionalitas yang disediakan oleh sistem tempat CIDRAM diinstal (ini biasanya disebut sebagai "pencarian nama host"). Server DNS yang ditentukan secara default adalah milik layanan [Google DNS](https://dns.google.com/) (tetapi ini dapat dengan mudah diubah melalui konfigurasi). Layanan yang tepat yang dikomunikasikan dapat dikonfigurasi, dan tergantung pada cara Anda mengonfigurasi paket. Dalam kasus menggunakan fungsionalitas yang disediakan oleh sistem tempat CIDRAM diinstal, Anda harus menghubungi administrator sistem Anda untuk menentukan rute mana yang digunakan oleh pencarian nama host. Pencarian nama host dapat dicegah dalam CIDRAM dengan menghindari modul yang terpengaruh atau dengan memodifikasi konfigurasi paket sesuai dengan kebutuhan Anda.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `default_dns`
@@ -1117,81 +1117,81 @@ Beberapa tema kustom, serta UI standar ("antarmuka pengguna") untuk halaman bagi
 *Direktif konfigurasi yang relevan:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 VERIFIKASI MESIN PENCARI
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+Ketika verifikasi mesin pencari diaktifkan, CIDRAM mencoba melakukan "pencarian DNS ke depan" untuk memverifikasi apakah permintaan yang mengaku berasal dari mesin pencari adalah asli. Untuk melakukan ini, verifikasi mesin pencari menggunakan layanan [Google DNS](https://dns.google.com/) untuk mencoba menyelesaikan alamat IP dari nama host dari permintaan masuk ini (dalam proses ini, nama host dari permintaan masuk ini dibagikan dengan layanan).
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `search_engine_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAM secara opsional mendukung [Google reCAPTCHA](https://www.google.com/recaptcha/), menyediakan sarana bagi pengguna untuk melewati halaman "Akses Ditolak" dengan menyelesaikan instance reCAPTCHA (informasi lebih lanjut tentang fitur ini dijelaskan sebelumnya dalam dokumentasi, terutama di bagian konfigurasi). Google reCAPTCHA membutuhkan kunci API agar berfungsi dengan benar, dan karenanya dinonaktifkan secara default. Ini dapat diaktifkan dengan menentukan kunci API yang diperlukan dalam konfigurasi paket. Ketika diaktifkan, komunikasi langsung antara browser pengguna dan layanan reCAPTCHA terjadi. Ini mungkin melibatkan mengkomunikasikan informasi seperti alamat IP pengguna, agen pengguna, sistem operasi, dan detail lainnya yang tersedia untuk permintaan tersebut. Alamat IP pengguna juga dapat dibagi dalam komunikasi antara CIDRAM dan layanan reCAPTCHA ketika memverifikasi validitas instance reCAPTCHA dan memverifikasi apakah itu berhasil diselesaikan.
 
 *Direktif konfigurasi yang relevan: Apapun yang tercantum di bawah kategori konfigurasi "recaptcha".*
 
 ##### 11.2.4 STOP FORUM SPAM
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/) adalah layanan fantastis, tersedia secara bebas yang dapat membantu melindungi forum, blog, dan situs web dari spammer. Ini dilakukan dengan menyediakan database spammer yang dikenal, dan API yang dapat dimanfaatkan untuk memeriksa apakah alamat IP, nama pengguna, atau alamat email tercantum dalam database-nya.
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+CIDRAM menyediakan modul opsional yang memanfaatkan API ini untuk memeriksa apakah alamat IP dari permintaan masuk milik seorang spammer yang dicurigai. Modul ini tidak diinstal secara default, tetapi jika Anda memilih untuk menginstalnya, alamat IP pengguna dapat dibagikan dengan API Stop Forum Spam sesuai dengan tujuan yang dimaksudkan dari modul. Ketika modul diinstal, CIDRAM berkomunikasi dengan API ini setiap kali permintaan masuk meminta sumber daya yang diakui oleh CIDRAM sebagai jenis sumber daya yang sering ditargetkan oleh pelaku spam (seperti halaman login, halaman registrasi, halaman verifikasi email, formulir komentar, dll).
 
-#### 11.3 LOGGING
+#### 11.3 PENCATATAN
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+Pencatatan adalah bagian penting dari CIDRAM karena sejumlah alasan. Mungkin sulit untuk mendiagnosis dan menyelesaikan kesalahan positif ketika kejadian blokir yang menyebabkan mereka tidak dicatat. Tanpa mencatat kejadian blokir, mungkin sulit untuk memastikan secara akurat seberapa baik kinerja CIDRAM dalam konteks tertentu, dan mungkin sulit untuk menentukan dimana kekurangannya, dan perubahan apa yang mungkin diperlukan untuk konfigurasi atau tanda tangan yang sesuai, agar terus berfungsi sebagaimana dimaksud. Apapun, pencatatan mungkin tidak diinginkan untuk semua pengguna, dan tetap sepenuhnya opsional. Di CIDRAM, pencatatan dinonaktifkan secara default. Untuk mengaktifkannya, CIDRAM harus dikonfigurasi dengan benar.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Juga, apakah pencatatan diizinkan secara hukum, dan sejauh diizinkan secara hukum (misalnya, jenis informasi yang dapat dicatat, untuk berapa lama, dan dalam keadaan apa), dapat bervariasi, tergantung pada yurisdiksi dan pada konteks dimana CIDRAM diimplementasikan (misalnya, apakah Anda beroperasi sebagai individu, sebagai entitas perusahaan, dan apakah secara komersial atau non-komersial). Jadi, mungkin berguna bagi Anda untuk membaca bagian ini dengan seksama.
 
-There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+Ada beberapa jenis pencatatan yang dapat dilakukan oleh CIDRAM. Berbagai jenis pencatatan melibatkan berbagai jenis informasi, untuk berbagai alasan.
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 KEJADIAN BLOKIR
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+Jenis utama dari pencatatan yang dapat dilakukan oleh CIDRAM berhubungan dengan "kejadian blokir". Jenis pencatatan ini terkait dengan kapan CIDRAM memblokir permintaan, dan dapat diberikan dalam tiga format berbeda:
+- File log yang dapat dibaca oleh manusia.
+- File log gaya Apache.
+- File log dalam format serial.
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+Kejadian blokir, yang dicatat ke file log yang dapat dibaca oleh manusia, biasanya terlihat seperti ini (sebagai contoh):
 
 ```
 ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
+Versi Skrip: CIDRAM v1.6.0
+Tanggal/Waktu: Day, dd Mon 20xx hh:ii:ss +0000
+Alamat IP: x.x.x.x
+Nama host: dns.hostname.tld
+Menghitung Tanda Tangan: 1
+Tanda Tangan Referensi: x.x.x.x/xx
+Mengapa Diblokir: Layanan komputasi awan ("Nama Jaringan", Lxx:Fx, [XX])!
+Agen Pengguna: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+Direkonstruksi URI: http://your-site.tld/index.php
+Status reCAPTCHA: Diaktifkan.
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+Kejadian blokir yang sama ini, yang dicatat ke file log dalam gaya Apache, akan terlihat seperti ini:
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+Kejadian blokir yang dicatat biasanya mencakup informasi berikut:
+- Nomor ID yang mereferensi pada kejadian blokir.
+- Versi CIDRAM sedang digunakan.
+- Tanggal dan waktu saat kejadian blokir terjadi.
+- Alamat IP dari permintaan yang diblokir.
+- Nama host dari alamat IP dari permintaan yang diblokir (bila tersedia).
+- Jumlah tanda tangan yang dipicu oleh permintaan.
+- Referensi untuk tanda tangan dipicu.
+- Referensi ke alasan untuk kejadian blokir dan beberapa informasi debug dasar yang terkait.
+- Agen pengguna dari permintaan yang diblokir (yaitu, bagaimana entitas yang meminta mengidentifikasi dirinya untuk permintaan tersebut).
+- Rekonstruksi pengidentifikasi untuk sumber yang awalnya diminta.
+- Status reCAPTCHA untuk permintaan saat ini (bila relevan).
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+Direktif konfigurasi yang bertanggung jawab untuk jenis pencatatan ini, dan untuk masing-masing dari tiga format yang tersedia, adalah:
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+Ketika direktif ini dibiarkan kosong, jenis pencatatan ini akan tetap dinonaktifkan.
 
 ##### 11.3.1 reCAPTCHA LOGGING
 
@@ -1289,15 +1289,15 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 - `recaptcha` -> `lockuser`
 - `recaptcha` -> `api`
 
-#### 11.5 MARKETING AND ADVERTISING
+#### 11.5 PEMASARAN DAN PERIKLANAN
 
-CIDRAM doesn't collect or process any information for marketing or advertising purposes, and neither sells nor profits from any collected or logged information. CIDRAM is not a commercial enterprise, nor is related to any commercial interests, so doing these things wouldn't make any sense. This has been the case since the beginning of the project, and continues to be the case today. Additionally, doing these things would be counter-productive to the spirit and intended purpose of the project as a whole, and for as long as I continue to maintain the project, will never happen.
+CIDRAM tidak mengumpulkan atau memproses informasi apapun untuk tujuan pemasaran atau periklanan, dan tidak menjual atau memperoleh keuntungan dari informasi yang dikumpulkan atau dicatat. CIDRAM bukan perusahaan komersial, juga tidak terkait dengan kepentingan komersial, sehingga melakukan hal-hal ini tidak akan masuk akal. Ini telah terjadi sejak awal proyek, dan terus menjadi kasus hari ini. Juga, melakukan hal-hal ini akan menjadi kontra-produktif terhadap semangat dan tujuan yang dimaksudkan dari proyek secara keseluruhan, dan selama saya terus mempertahankan proyek, tidak akan pernah terjadi.
 
-#### 11.6 PRIVACY POLICY
+#### 11.6 KEBIJAKAN PRIVASI
 
-In some circumstances, you may be legally required to clearly display a link to your privacy policy on all pages and sections of your website. This may be important as a means to ensure that users and well-informed of your exact privacy practices, the types of PII you collect, and how you intend to use it. In order to be able to include such a link on CIDRAM's "Access Denied" page, a configuration directive is provided to specify the URL to your privacy policy.
+Dalam beberapa keadaan, Anda mungkin diharuskan secara hukum untuk secara jelas menampilkan tautan ke kebijakan privasi Anda pada semua halaman dan bagian dari situs web Anda. Ini mungkin penting sebagai sarana untuk memastikan bahwa pengguna mendapat informasi yang jelas tentang praktik privasi Anda, jenis PII yang Anda kumpulkan, dan bagaimana Anda akan menggunakannya. Agar dapat menyertakan tautan di halaman "Akses Ditolak" CIDRAM, direktif konfigurasi disediakan untuk menentukan URL ke kebijakan privasi Anda.
 
-*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+*Catat: Sangat disarankan agar halaman kebijakan privasi Anda tidak ditempatkan di belakang perlindungan CIDRAM. Jika CIDRAM melindungi halaman kebijakan privasi Anda, dan pengguna yang diblokir oleh CIDRAM mengklik tautan ke kebijakan privasi Anda, mereka akan diblokir lagi, dan tidak akan dapat melihat kebijakan privasi Anda. Idealnya, Anda harus menautkan ke salinan statis dari kebijakan privasi Anda, seperti halaman HTML atau file teks biasa yang tidak dilindungi oleh CIDRAM.*
 
 *Direktif konfigurasi yang relevan:*
 - `legal` -> `privacy_policy`

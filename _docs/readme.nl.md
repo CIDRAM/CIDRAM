@@ -1297,9 +1297,9 @@ CIDRAM verzamelt of verwerkt geen informatie voor marketing of advertentie doele
 
 #### 11.6 PRIVACYBELEID
 
-In sommige omstandigheden kan het wettelijk verplicht zijn om duidelijk een link naar uw privacybeleid te tonen op alle pagina's en secties van uw website. Dit kan belangrijk zijn als middel om ervoor te zorgen dat gebruikers en goed geïnformeerd zijn over uw exacte privacypraktijken, de soorten PII die u verzamelt, en hoe u van plan bent om het te gebruiken. Om een dergelijke link op de pagina "Toegang Geweigerd" van CIDRAM te kunnen opnemen, wordt een configuratie-optie verstrekt om de URL van uw privacybeleid op te geven.
+In sommige omstandigheden kan het wettelijk verplicht zijn om duidelijk een link naar uw privacybeleid te tonen op alle pagina's en secties van uw website. Dit kan belangrijk zijn als middel om ervoor te zorgen dat gebruikers goed geïnformeerd zijn over uw exacte privacypraktijken, de soorten PII die u verzamelt, en hoe u van plan bent om het te gebruiken. Om een dergelijke link op de pagina "Toegang Geweigerd" van CIDRAM te kunnen opnemen, wordt een configuratie-optie verstrekt om de URL van uw privacybeleid op te geven.
 
-*Note: It's strongly recommended that your privacy policy page isn't placed behind CIDRAM's protection. If CIDRAM protects your privacy policy page, and a user blocked by CIDRAM clicks the link to your privacy policy, they'll just be blocked again, and won't be able to see your privacy policy. Ideally, you should link to a static copy of your privacy policy, such as an HTML page or plain-text file which isn't protected by CIDRAM.*
+*Notitie: Het wordt ten zeerste aanbevolen dat uw pagina met privacybeleid niet achter de bescherming van CIDRAM wordt geplaatst. Als CIDRAM uw privacybeleid pagina beschermt, en een door CIDRAM geblokkeerde gebruiker op de koppeling naar uw privacybeleid klikt, worden ze gewoon opnieuw geblokkeerd, en kunnen ze uw privacybeleid niet zien. Idealiter moet u een koppeling maken naar een statische kopie van uw privacybeleid, zoals een HTML-pagina of een niet-gecodeerd bestand dat niet door CIDRAM wordt beschermd.*
 
 *Relevante configuratie-opties:*
 - `legal` -> `privacy_policy`

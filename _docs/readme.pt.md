@@ -1294,7 +1294,7 @@ A CIDRAM não coleta ou processa qualquer informação para fins de marketing ou
 
 #### 11.6 POLÍTICA DE PRIVACIDADE
 
-Em algumas circunstâncias, você pode ser legalmente obrigado a exibir claramente um link para sua política de privacidade em todas as páginas e seções do seu site. Isso pode ser importante como um meio para garantir que os usuários e bem informados sobre suas práticas de privacidade exatas, os tipos de PII que você coletar, e como você pretende usá-lo. Para poder incluir esse link na página "Acesso Negado" do CIDRAM, é fornecida uma diretiva de configuração para especificar o URL da sua política de privacidade.
+Em algumas circunstâncias, você pode ser legalmente obrigado a exibir claramente um link para sua política de privacidade em todas as páginas e seções do seu site. Isso pode ser importante como um meio de garantir que os usuários estejam bem informados sobre suas práticas de privacidade exatas, os tipos de PII que você coletar, e como você pretende usá-lo. Para poder incluir esse link na página "Acesso Negado" do CIDRAM, é fornecida uma diretiva de configuração para especificar o URL da sua política de privacidade.
 
 *Nota: É altamente recomendável que sua página de política de privacidade não seja colocada atrás da proteção do CIDRAM. Se o CIDRAM proteger sua página de política de privacidade, e um usuário bloqueado pelo CIDRAM clicar no link para sua política de privacidade, ele será bloqueado novamente e não poderá ver sua política de privacidade. O ideal é vincular a uma cópia estática de sua política de privacidade, como uma página HTML ou um arquivo de texto simples que não esteja protegido pelo CIDRAM.*
 

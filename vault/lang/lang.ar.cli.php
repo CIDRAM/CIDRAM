@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for CLI (last modified: 2018.01.20).
+ * This file: Arabic language data for CLI (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -58,14 +58,14 @@ $CIDRAM['lang']['CLI_V_Started'] = 'لقد بدأت أداة التأكد من �
 $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'ملفات التوقيعات يجب ان تنتهي ب LF .';
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'L%s: تم اكتشاف أحرف التحكم. وهذا يمكن أن يشير إلى الفساد وينبغي التحقيق فيه.';
-$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: "%s" توقيعات مكرره ( %s مرات ) !';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: وسم الانتهاء لا يحتوي علي ترميز ISO 8601 تاريخ / وقت صالح';
-$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" ليس عنوان IPv4 أو IPv6 صالح !';
+$CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: "%s" توقيعات مكرره ( %s مرات )!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: وسم الانتهاء لا يحتوي علي ترميز ISO 8601 تاريخ/وقت صالح';
+$CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" ليس عنوان IPv4 أو IPv6 صالح!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: طول السطر اطول من 120 bytes ; طول السطر يجب الا يتجاوز 120 bytes حتي يكون صالح للقراءة.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s و L%s متطابقين ويمكن دمجهم معا';
 $CIDRAM['lang']['CLI_VL_Missing'] = 'L%s: ينقصه [Function]; يبدو ان ملف التوقيع غير مكتمل.';
-$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" غير قابله للاستدعاء ! أساسها لا يوافق بدايه مداها ! حاول استبدالها ب "%s".';
-$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" غير قابله  للاستدعاء "%s" مدي غير صالح !';
+$CIDRAM['lang']['CLI_VL_Nontriggerable'] = 'L%s: "%s" غير قابله للاستدعاء! أساسها لا يوافق بدايه مداها! حاول استبدالها ب "%s".';
+$CIDRAM['lang']['CLI_VL_Nontriggerable_Range'] = 'L%s: "%s" غير قابله للاستدعاء "%s" مدي غير صالح!';
 $CIDRAM['lang']['CLI_VL_Origin'] = 'L%s: علامات المنشأ لا يحتوي على أيزو 3166-1 حرفي-2 رمز صالح!';
 $CIDRAM['lang']['CLI_VL_Subordinate'] = 'L%s: "%s" is subordinate to the already existing "%s" signature.';
 $CIDRAM['lang']['CLI_VL_Superset'] = 'L%s: "%s" is a superset to the already existing "%s" signature.';

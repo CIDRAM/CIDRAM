@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.05.16).
+ * This file: French language data (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,7 +21,7 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
     return ($Num >= 0 || $Num <= 1) ? 0 : 1;
 };
 
-$CIDRAM['lang']['Error_WriteCache'] = 'Ne peux pas d\'écrire dans le cache ! S\'il vous plaît vérifier votre permissions CHMOD !';
+$CIDRAM['lang']['Error_WriteCache'] = 'Ne peux pas d\'écrire dans le cache ! S\'il vous plaît vérifier votre permissions CHMOD !';
 $CIDRAM['lang']['MoreInfo'] = 'Pour plus d\'informations :';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Politique de Confidentialité';
 $CIDRAM['lang']['ReasonMessage_BadIP'] = 'Votre accès à cette page a été refusée parce que vous avez tenté d\'accéder à cette page en utilisant un invalide IP adresse.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.14).
+ * This file: Front-end functions file (last modified: 2018.06.17).
  */
 
 /**
@@ -243,9 +243,9 @@ $CIDRAM['VersionCompare'] = function ($A, $B) {
         $Ver =
             preg_match('~^v?(\d+)$~i', $Ver, $Matches) ?:
             preg_match('~^v?(\d+)\.(\d+)$~i', $Ver, $Matches) ?:
-            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(RC\d{1,2}|-[.\da-z_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\da-z_+\\/]+)?$~i', $Ver, $Matches) ?:
-            preg_match('~^([a-z]+)-([\da-z]+)-([\da-z]+)$~i', $Ver, $Matches);
+            preg_match('~^v?(\d+)\.(\d+)\.(\d+)(RC\d{1,2}|-[.\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^(\d{1,4})[.-](\d{1,2})[.-](\d{1,4})(RC\d{1,2}|[.+-][\d\w_+\\/]+)?$~i', $Ver, $Matches) ?:
+            preg_match('~^([\w]+)-([\d\w]+)-([\d\w]+)$~i', $Ver, $Matches);
         $Ver = [
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,
             'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
@@ -494,7 +494,7 @@ $CIDRAM['FetchComponentsLists'] = function ($Base, &$Arr) use (&$CIDRAM) {
 $CIDRAM['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = str_replace("\\", '/', $Path);
     if (
-        preg_match('~(?://|[^!\da-z\._-]$)~i', $Path) ||
+        preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) ||
         preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Path, -3)))
     ) {
         return false;

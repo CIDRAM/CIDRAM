@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.06.13).
+ * This file: Functions file (last modified: 2018.06.20).
  */
 
 /**
@@ -632,13 +632,11 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
     $Key = $Value = $SendTo = '';
     $TabLen = $SoL = 0;
     while ($SoL !== false) {
-        if (($EoL = strpos($In, "\n", $SoL)) === false) {
-            $ThisLine = substr($In, $SoL);
-        } else {
-            $ThisLine = substr($In, $SoL, $EoL - $SoL);
-        }
+        $ThisLine = (
+            ($EoL = strpos($In, "\n", $SoL)) === false
+        ) ? substr($In, $SoL) : substr($In, $SoL, $EoL - $SoL);
         $SoL = ($EoL === false) ? false : $EoL + 1;
-        $ThisLine = preg_replace(["/#.*$/", "/\x20+$/"], '', $ThisLine);
+        $ThisLine = preg_replace(['/#.*$/', '/\s+$/'], '', $ThisLine);
         if (empty($ThisLine) || $ThisLine === "\n") {
             continue;
         }
@@ -1526,7 +1524,7 @@ $CIDRAM['DeleteDirectory'] = function ($Dir) use (&$CIDRAM) {
 $CIDRAM['BuildLogPattern'] = function ($Str, $GZ = false) {
     return '~^' . preg_replace(
         ['~\\\{(?:dd|mm|yy|hh|ii|ss)\\\}~i', '~\\\{yyyy\\\}~i', '~\\\{(?:Day|Mon)\\\}~i', '~\\\{tz\\\}~i', '~\\\{t\\\:z\\\}~i'],
-        ['\d{2}', '\d{4}', '[a-z]{3}', '.{1,2}\d{4}', '.{1,2}\d{2}\:\d{2}'],
+        ['\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}\:\d{2}'],
         preg_quote(str_replace("\\", '/', $Str))
     ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
 };

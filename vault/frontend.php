@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.14).
+ * This file: Front-end handler (last modified: 2018.06.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -908,7 +908,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_config'], $CIDRAM['lang']['tip_config']);
 
-    /** Append number localosation JS. */
+    /** Append number localisation JS. */
     $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
@@ -2281,7 +2281,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_range'], $CIDRAM['lang']['tip_range']);
 
-    /** Append number localosation JS. */
+    /** Append number localisation JS. */
     $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];

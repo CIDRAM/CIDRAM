@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.10).
+ * This file: Japanese language data for the front-end (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -182,7 +182,7 @@ $CIDRAM['lang']['label_expires'] = '有効期限： ';
 $CIDRAM['lang']['label_false_positive_risk'] = 'オプション： ';
 $CIDRAM['lang']['label_fmgr_cache_data'] = 'キャッシュ・データとテンポラリ・ファイル';
 $CIDRAM['lang']['label_fmgr_disk_usage'] = 'CIDRAMディスク使用量： ';
-$CIDRAM['lang']['label_fmgr_free_space'] = '空きディスク容量：  ';
+$CIDRAM['lang']['label_fmgr_free_space'] = '空きディスク容量：';
 $CIDRAM['lang']['label_fmgr_total_disk_usage'] = 'ディスク使用量の合計： ';
 $CIDRAM['lang']['label_fmgr_total_space'] = 'ディスク容量の合計： ';
 $CIDRAM['lang']['label_fmgr_updates_metadata'] = 'コンポーネント・アップデート・メタデータ';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.05.16).
+ * This file: Korean language data (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -25,7 +25,7 @@ $CIDRAM['lang']['ReasonMessage_Bogon'] = '이 페이지에 액세스은, 당신�
 $CIDRAM['lang']['ReasonMessage_Cloud'] = '이 페이지에 액세스은, 당신의 IP는 클라우드 서비스에 속한다 위해 거부되었습니다.';
 $CIDRAM['lang']['ReasonMessage_Generic'] = '이 페이지에 액세스은, 당신의 IP는 위험한 네트워크 또는 웹 사이트에서 사용되는 블랙리스트에 속합니다 때문에 거부되었습니다.';
 $CIDRAM['lang']['ReasonMessage_Legal'] = '이 페이지에 액세스은, 당신의 법적 의무에 대한 거부되었습니다.';
-$CIDRAM['lang']['ReasonMessage_Malware'] = '이 페이지에 액세스은, 당신의 IP 주소와 관련된 맬웨어 문제가  대한 거부되었습니다.';
+$CIDRAM['lang']['ReasonMessage_Malware'] = '이 페이지에 액세스은, 당신의 IP 주소와 관련된 맬웨어 문제가 대한 거부되었습니다.';
 $CIDRAM['lang']['ReasonMessage_Proxy'] = '이 페이지에 액세스은, 당신의 IP는 프록시 서비스 또는 VPN에 속한다 위해 거부되었습니다.';
 $CIDRAM['lang']['ReasonMessage_Spam'] = '이 페이지에 액세스은, 당신의 IP 네트워크는, 스팸 메일을 보낼 잘 알려져 있습니다에 속한다 위해 거부되었습니다.';
 $CIDRAM['lang']['Short_BadIP'] = '잘못된 IP';

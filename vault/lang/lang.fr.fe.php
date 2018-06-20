@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.10).
+ * This file: French language data for the front-end (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -80,7 +80,7 @@ $CIDRAM['lang']['config_general_statistics'] = 'Suivre les statistiques d\'utili
 $CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur requête.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';
 $CIDRAM['lang']['config_general_timezone'] = 'Votre fuseau horaire.';
-$CIDRAM['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S\'applique aux fichiers journaux individuels ! La taille des fichiers journaux n\'est pas considérée collectivement.';
+$CIDRAM['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S\'applique aux fichiers journaux individuels ! La taille des fichiers journaux n\'est pas considérée collectivement.';
 $CIDRAM['lang']['config_legal_omit_hostname'] = 'Omettre les noms d\'hôtes de la journalisation ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_legal_omit_ip'] = 'Omettre les adresses IP de la journalisation ? True = Oui ; False = Non [Défaut]. Remarque : « pseudonymise_ip_addresses » devient redondant lorsque « omit_ip » est « true ».';
 $CIDRAM['lang']['config_legal_omit_ua'] = 'Omettre les agents utilisateurs de la journalisation ? True = Oui ; False = Non [Défaut].';
@@ -244,7 +244,7 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Ce compte n\'existe pas.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Mot de passe mis à jour avec succès !';
 $CIDRAM['lang']['response_activated'] = 'Activé avec succès.';
 $CIDRAM['lang']['response_activation_failed'] = 'Échec de l\'activation !';
-$CIDRAM['lang']['response_checksum_error'] = 'Erreur checksum ! Fichier rejeté !';
+$CIDRAM['lang']['response_checksum_error'] = 'Erreur checksum ! Fichier rejeté !';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Composant installé avec succès.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Composant désinstallé avec succès.';
 $CIDRAM['lang']['response_component_successfully_updated'] = 'Composant mise à jour avec succès.';
@@ -262,8 +262,8 @@ $CIDRAM['lang']['response_file_deleted'] = 'Fichier supprimé avec succès !';
 $CIDRAM['lang']['response_file_edited'] = 'Fichier modifié avec succès !';
 $CIDRAM['lang']['response_file_renamed'] = 'Fichier renommé avec succès !';
 $CIDRAM['lang']['response_file_uploaded'] = 'Fichier téléchargé avec succès !';
-$CIDRAM['lang']['response_login_invalid_password'] = 'Erreur de connexion ! Mot de passe incorrect !';
-$CIDRAM['lang']['response_login_invalid_username'] = 'Erreur de connexion ! Nom d\'utilisateur n\'existe pas !';
+$CIDRAM['lang']['response_login_invalid_password'] = 'Erreur de connexion ! Mot de passe incorrect !';
+$CIDRAM['lang']['response_login_invalid_username'] = 'Erreur de connexion ! Nom d\'utilisateur n\'existe pas !';
 $CIDRAM['lang']['response_login_password_field_empty'] = 'Mot de passe entrée était vide !';
 $CIDRAM['lang']['response_login_username_field_empty'] = 'Nom d\'utilisateur entrée était vide !';
 $CIDRAM['lang']['response_login_wrong_endpoint'] = 'Mauvais point final !';
@@ -350,8 +350,8 @@ $CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Liste des Sections';
 $CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistiques';
 $CIDRAM['lang']['title_updates'] = 'CIDRAM – Mises à Jour';
 $CIDRAM['lang']['warning'] = 'Avertissements :';
-$CIDRAM['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
-$CIDRAM['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
+$CIDRAM['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
+$CIDRAM['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
 $CIDRAM['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>

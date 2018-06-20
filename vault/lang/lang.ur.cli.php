@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for CLI (last modified: 2018.01.20).
+ * This file: Urdu language data for CLI (last modified: 2018.06.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -59,7 +59,7 @@ $CIDRAM['lang']['CLI_V_Terminal_LF'] = 'دستخط فائلوں کو ایک LF �
 
 $CIDRAM['lang']['CLI_VL_CC'] = 'L%s: کنٹرول حروف کا پتہ چلا؛ یہ کرپشن کی نشاندہی کر سکتا ہے اور تحقیقات کی جانی چاہئے.';
 $CIDRAM['lang']['CLI_VL_Duplicated'] = 'L%s: دستخط "%s" کو دوہرایا گیا ہے ( "%s" کو شمار)!';
-$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: ختم ہونے ٹیگ موزوں ISO 8601 تاریخ / وقت پر مشتمل نہیں ہے!';
+$CIDRAM['lang']['CLI_VL_Expiry'] = 'L%s: ختم ہونے ٹیگ موزوں ISO 8601 تاریخ/وقت پر مشتمل نہیں ہے!';
 $CIDRAM['lang']['CLI_VL_Invalid'] = 'L%s: "%s" کو * نہیں * ایک درست IPv4 یا IPv6 ایڈریس ہے!';
 $CIDRAM['lang']['CLI_VL_L120'] = 'L%s: لائن کی لمبائی 120 بائٹس سے زیادہ ہے؛ لائن کی لمبائی زیادہ سے زیادہ پڑھنے کی اہلیت کے لئے 120 بائٹس تک محدود کیا جانا چاہئے.';
 $CIDRAM['lang']['CLI_VL_Mergeable'] = 'L%s اور L%s کو ایک جیسی ہیں، اور اس طرح، قابل ضم.';

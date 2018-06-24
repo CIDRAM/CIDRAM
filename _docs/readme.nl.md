@@ -147,6 +147,7 @@ Bestand | Beschrijving
 /vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_cache.html | Een HTML sjabloon voor de frontend cachegegevens pagina.
 /vault/fe_assets/_cidr_calc.html | Een HTML sjabloon voor de CIDR calculator.
 /vault/fe_assets/_cidr_calc_row.html | Een HTML sjabloon voor de CIDR calculator.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
@@ -167,9 +168,9 @@ Bestand | Beschrijving
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
 /vault/fe_assets/_range.html | Een HTML sjabloon voor de frontend reeks tafels pagina.
 /vault/fe_assets/_range_row.html | Een HTML sjabloon voor de frontend reeks tafels pagina.
-/vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_sections.html | Een HTML sjabloon voor de sectielijst.
 /vault/fe_assets/_sections_row.html | Een HTML sjabloon voor de sectielijst.
+/vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
@@ -251,9 +252,9 @@ Bestand | Beschrijving
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/aggregator.php | IP-aggregator.
 /vault/cache.dat | Cache data/gegevens.
-/vault/cidramblocklists.dat | Bevat informatie met betrekking tot de optionele land blocklists door Macmathan; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/cidramblocklists.dat | Metadata bestand voor de optionele blokkaderlijsten van Macmathan; Gebruikt door de frontend updates pagina.
 /vault/cli.php | CLI-handler.
-/vault/components.dat | Bevat informatie met betrekking tot de verschillende CIDRAM componenten; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/components.dat | Componenten metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratie-opties van CIDRAM, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie-handler.
 /vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de CIDRAM configuratie.
@@ -274,7 +275,7 @@ Bestand | Beschrijving
 /vault/ipv6_isps.dat | IPv6 signatures bestand (gevaarlijk en spammy ISP's).
 /vault/ipv6_other.dat | IPv6 signatures bestand (CIDR's voor proxies, VPN's, en diverse andere ongewenste diensten).
 /vault/lang.php | Taal-handler.
-/vault/modules.dat | Bevat informatie met betrekking tot de CIDRAM modules; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/modules.dat | Modules metadata bestand; Gebruikt door de frontend updates pagina.
 /vault/outgen.php | Uitvoer generator.
 /vault/php5.4.x.php | Polyfills voor PHP 5.4.X (nodig voor PHP 5.4.X achterwaartse compatibiliteit; veilig te verwijderen voor nieuwere PHP-versies).
 /vault/recaptcha.php | reCAPTCHA module.
@@ -284,7 +285,7 @@ Bestand | Beschrijving
 /vault/salt.dat | Zout bestand (gebruikt door sommige perifere functionaliteit; alleen gegenereerd indien nodig).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
-/vault/themes.dat | Thema bestand; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/themes.dat | Thema's metadata bestand; Gebruikt door de frontend updates pagina.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /Changelog.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
@@ -927,6 +928,7 @@ Modules zijn beschikbaar gemaakt om ervoor te zorgen dat de volgende pakketten e
 - [Wat kan ik gebruiken voor "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [Kan ik CIDRAM gebruiken om andere dingen dan websites te beschermen (b.v., e-mailservers, FTP, SSH, IRC, enz)?](#PROTECT_OTHER_THINGS)
 - [Zullen er problemen optreden als ik CIDRAM tegelijk gebruik met CDN's of cacheservices?](#CDN_CACHING_PROBLEMS)
+- [Zal CIDRAM mijn website beschermen tegen DDoS-aanvallen?](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
@@ -1076,6 +1078,16 @@ Je kan (in juridische zin), maar je zou dit niet moeten doen (in een technische 
 #### <a name="CDN_CACHING_PROBLEMS"></a>Zullen er problemen optreden als ik CIDRAM tegelijk gebruik met CDN's of cacheservices?
 
 Mogelijk. Dit is afhankelijk van de aard van de service in kwestie en hoe u deze gebruikt. Over het algemeen zijn er geen problemen als u alleen statische items (afbeeldingen, CSS, enz) in het cache plaatst. Er kunnen echter problemen zijn, als u gegevens in de cache opslaat die anders normaliter dynamisch zouden worden gegenereerd wanneer daarom wordt gevraagd, of als u de resultaten van POST-verzoeken in cache opslaat (dit zou in wezen uw website en zijn omgeving als verplicht statisch maken, en het is onwaarschijnlijk dat CIDRAM een zinvol voordeel biedt in een verplichte statische omgeving). Er kunnen ook specifieke configuratievereisten voor CIDRAM zijn, afhankelijk van welke CDN of cacheservice u gebruikt (je moet ervoor zorgen dat CIDRAM correct is geconfigureerd voor de specifieke CDN of cacheservice die u gebruikt). Het niet correct configureren van CIDRAM kan leiden tot aanzienlijk problematische valse positieven en gemiste detecties.
+
+#### <a name="DDOS_ATTACKS"></a>Zal CIDRAM mijn website beschermen tegen DDoS-aanvallen?
+
+Kort antwoord: Nee.
+
+Een iets langer antwoord: CIDRAM helpt de impact van ongewenst verkeer op uw website te verminderen (waardoor de bandbreedtekosten van uw website worden geminderd), helpt de impact van ongewenst verkeer op uw hardware te verminderen (b.v., de mogelijkheid van uw server om verzoeken te verwerken en te serveren), en kan helpen om verschillende andere mogelijke negatieve effecten geassocieerd met ongewenst verkeer te verminderen. Er zijn echter twee belangrijke dingen die onthouden moeten worden om deze vraag te begrijpen.
+
+Ten eerste, CIDRAM is een PHP-pakket en werkt daarom op de computer waarop PHP is geïnstalleerd. Dit betekent dat CIDRAM een verzoek alleen kan zien en blokkeren *nadat* de server het al heeft ontvangen. Ten tweede, effectieve DDoS-mitigatie moet aanvragen filteren *voordat* ze de server bereikt waarop de DDoS-aanval gericht is. In het ideale geval moeten DDoS-aanvallen worden gedetecteerd en beperkt door oplossingen die in staat zijn om verkeer dat is gekoppeld aan aanvallen te laten vallen of omleiden, voordat het in de eerste plaats de gerichte server bereikt.
+
+Dit kan worden geïmplementeerd met behulp van speciale hardware-oplossingen op locatie, en/of cloudgebaseerde oplossingen zoals speciale DDoS-mitigatie diensten, routering van de DNS van een domein via DDoS-resistente netwerken, cloudgebaseerde filteren, of een combinatie daarvan. In elk geval is dit onderwerp echter een beetje te ingewikkeld om grondig met slechts een paar alinea's uit te leggen, dus ik zou aanraden verder onderzoek te doen als dit een onderwerp is dat u wilt nastreven. Wanneer de ware aard van DDoS-aanvallen goed wordt begrepen, zal dit antwoord logischer zijn.
 
 ---
 
@@ -1323,4 +1335,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 10 Juni 2018 (2018.06.10).
+Laatste Bijgewerkt: 21 Juni 2018 (2018.06.21).

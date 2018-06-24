@@ -145,33 +145,34 @@ Data | Deskripsi
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/fe_assets/ | Data untuk akses bagian depan.
 /vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
-/vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_accounts.html | Template HTML untuk halaman akun.
+/vault/fe_assets/_accounts_row.html | Template HTML untuk halaman akun.
+/vault/fe_assets/_cache.html | Template HTML untuk halaman data cache.
 /vault/fe_assets/_cidr_calc.html | Template HTML untuk kalkulator CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Template HTML untuk kalkulator CIDR.
-/vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
-/vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_config.html | Template HTML untuk halaman konfigurasi.
+/vault/fe_assets/_config_row.html | Template HTML untuk halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_row.html | Template HTML untuk file manager.
-/vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
+/vault/fe_assets/_home.html | Template HTML untuk halaman utama.
 /vault/fe_assets/_ip_aggregator.html | Template HTML untuk agregator IP.
 /vault/fe_assets/_ip_test.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_ip_test_row.html | Template HTML untuk halaman test IP.
 /vault/fe_assets/_ip_tracking.html | Template HTML untuk halaman pelacakan IP.
 /vault/fe_assets/_ip_tracking_row.html | Template HTML untuk halaman pelacakan IP.
-/vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
-/vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
-/vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
-/vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
+/vault/fe_assets/_login.html | Template HTML untuk halaman masuk.
+/vault/fe_assets/_logs.html | Template HTML untuk halaman log.
+/vault/fe_assets/_nav_complete_access.html | Template HTML untuk link navigasi, untuk mereka yang memiliki akses lengkap.
+/vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk link navigasi, untuk mereka yang memiliki akses ke halaman log hanya.
 /vault/fe_assets/_range.html | Template HTML untuk tabel rentang.
 /vault/fe_assets/_range_row.html | Template HTML untuk tabel rentang.
-/vault/fe_assets/_statistics.html | Template HTML untuk akses bagian depan halaman statistik.
 /vault/fe_assets/_sections.html | Template HTML untuk daftar bagian.
 /vault/fe_assets/_sections_row.html | Template HTML untuk daftar bagian.
-/vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
-/vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/_statistics.html | Template HTML untuk halaman statistik.
+/vault/fe_assets/_updates.html | Template HTML untuk halaman pembaruan.
+/vault/fe_assets/_updates_row.html | Template HTML untuk halaman pembaruan.
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
 /vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi akun, informasi sesi, dan cache; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
@@ -251,9 +252,9 @@ Data | Deskripsi
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/aggregator.php | Agregator IP.
 /vault/cache.dat | Cache data.
-/vault/cidramblocklists.dat | Berisi informasi yang berkaitan dengan daftar blokir negara opsional disediakan oleh Macmathan; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/cidramblocklists.dat | File metadata untuk daftar-daftar blokir yang opsional dari Macmathan; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/cli.php | Modul CLI.
-/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen untuk CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/components.dat | File metadata komponen; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi CIDRAM; Berisi semua opsi konfigurasi dari CIDRAM, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
 /vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk CIDRAM.
@@ -274,7 +275,7 @@ Data | Deskripsi
 /vault/ipv6_isps.dat | File tanda tangan IPv6 (ISP berbahaya dan spam rawan).
 /vault/ipv6_other.dat | File tanda tangan IPv6 (CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan).
 /vault/lang.php | File bahasa.
-/vault/modules.dat | Berisi informasi yang berkaitan dengan berbagai modul untuk CIDRAM; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/modules.dat | File metadata modul; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/outgen.php | Output Generator.
 /vault/php5.4.x.php | Polyfill untuk PHP 5.4.X (diperlukan untuk kompatibilitas mundur PHP 5.4.X; aman untuk menghapus selama versi PHP yang lebih baru).
 /vault/recaptcha.php | Modul reCAPTCHA.
@@ -284,7 +285,7 @@ Data | Deskripsi
 /vault/salt.dat | File garam (digunakan oleh beberapa fungsi periferal; hanya dihasilkan jika diperlukan).
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/template_default.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
-/vault/themes.dat | File tema; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/themes.dat | File metadata tema; Digunakan oleh halaman pembaruan untuk bagian depan.
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
@@ -527,7 +528,7 @@ Untuk mendapatkan "site key" dan "secret key" (diperlukan untuk menggunakan reCA
 "api"
 - API mana yang akan digunakan? V2 atau Invisible?
 
-*Catat untuk pengguna di Uni Eropa: Saat CIDRAM dikonfigurasi untuk menggunakan cookie (mis., ketika "lockuser" true/benar), peringatan cookie ditampilkan secara mencolok di halaman sesuai persyaratan [undang-undang cookie UE](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Namun, saat menggunakan API invisible, CIDRAM berupaya menyelesaikan reCAPTCHA untuk pengguna secara otomatis, dan bila berhasil, ini bisa mengakibatkan halaman menjadi reload dan cookie dibuat tanpa pengguna diberi waktu yang cukup untuk benar-benar melihat peringatan cookie. Jika ini menimbulkan risiko hukum bagi Anda, mungkin lebih baik menggunakan API V2 dan bukan API invisible (API V2 tidak otomatis, dan mengharuskan pengguna menyelesaikan tantangan reCAPTCHA sendiri, sehingga memberikan kesempatan untuk melihat peringatan cookie).*
+*Catat untuk pengguna di Uni Eropa: Saat CIDRAM dikonfigurasi untuk menggunakan cookie (mis., ketika "lockuser" true/benar), peringatan cookie ditampilkan secara mencolok di halaman sesuai persyaratan [hukum-hukum cookie UE](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Namun, saat menggunakan API invisible, CIDRAM berupaya menyelesaikan reCAPTCHA untuk pengguna secara otomatis, dan bila berhasil, ini bisa mengakibatkan halaman menjadi reload dan cookie dibuat tanpa pengguna diberi waktu yang cukup untuk benar-benar melihat peringatan cookie. Jika ini menimbulkan risiko hukum bagi Anda, mungkin lebih baik menggunakan API V2 dan bukan API invisible (API V2 tidak otomatis, dan mengharuskan pengguna menyelesaikan tantangan reCAPTCHA sendiri, sehingga memberikan kesempatan untuk melihat peringatan cookie).*
 
 #### "legal" (Kategori)
 Konfigurasi yang berkaitan dengan persyaratan hukum.
@@ -927,6 +928,7 @@ Modul telah tersedia untuk memastikan bahwa paket dan produk berikut akan kompat
 - [Apa yang bisa saya gunakan untuk "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [Dapatkah saya menggunakan CIDRAM untuk melindungi hal-hal selain daripada situs web (misalnya, server email, FTP, SSH, IRC, dll)?](#PROTECT_OTHER_THINGS)
 - [Akankah masalah terjadi jika saya menggunakan CIDRAM pada saat yang sama dengan menggunakan layanan CDN atau cache?](#CDN_CACHING_PROBLEMS)
+- [Akankah CIDRAM melindungi situs web saya dari serangan DDoS?](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Apa yang "tanda tangan"?
 
@@ -1076,6 +1078,16 @@ Anda dapat (dalam pengertian hukum), tetapi Anda tidak seharusnya (dalam pengert
 #### <a name="CDN_CACHING_PROBLEMS"></a>Akankah masalah terjadi jika saya menggunakan CIDRAM pada saat yang sama dengan menggunakan layanan CDN atau cache?
 
 Mungkin. Ini tergantung pada sifat layanan yang dipermasalahkan, dan bagaimana Anda menggunakannya. Umumnya, jika Anda hanya menyimpan aset statis dalam cache (gambar, CSS, dll; apapun yang umumnya tidak berubah seiring waktu), seharusnya tidak ada masalah. Namun, mungkin ada masalah, jika Anda menyimpan data dalam cache yang biasanya akan dihasilkan secara dinamis saat diminta, atau jika Anda menyimpan hasil dari permintaan POST (ini pada dasarnya akan membuat situs web Anda dan lingkungannya sebagai statis wajib, dan CIDRAM tidak akan memberikan manfaat yang berarti dalam lingkungan statis wajib). Mungkin juga ada persyaratan konfigurasi khusus untuk CIDRAM, tergantung pada layanan CDN atau cache yang Anda gunakan (Anda harus memastikan bahwa CIDRAM dikonfigurasi benar untuk layanan CDN atau cache spesifik yang Anda gunakan). Kegagalan untuk mengkonfigurasi CIDRAM benar dapat menyebabkan masalah positif palsu dan deteksi terjawab.
+
+#### <a name="DDOS_ATTACKS"></a>Akankah CIDRAM melindungi situs web saya dari serangan DDoS?
+
+Jawaban singkat: Tidak.
+
+Jawaban sedikit lebih panjang: CIDRAM akan membantu mengurangi dampak yang dapat disebabkan oleh lalu lintas yang tidak diinginkan di situs web Anda (sehingga mengurangi biaya bandwidth situs web Anda), akan membantu mengurangi dampak yang dapat disebabkan oleh lalu lintas yang tidak diinginkan pada perangkat keras Anda (misalnya, kemampuan server Anda untuk memproses dan melayani permintaan), dan dapat membantu mengurangi berbagai efek negatif potensial lainnya yang terkait dengan lalu lintas yang tidak diinginkan. Namun, ada dua hal penting yang harus diingat untuk memahami pertanyaan ini.
+
+Pertama, CIDRAM adalah paket PHP, dan karena itu beroperasi di mesin tempat PHP diinstal. Ini berarti bahwa CIDRAM hanya dapat melihat dan memblokir permintaan *setelah* server telah menerimanya. Kedua, mitigasi DDoS yang efektif harus menyaring permintaan *sebelum* mereka mencapai server yang ditargetkan oleh serangan DDoS. Idealnya, serangan DDoS harus dideteksi dan dimitigasi oleh solusi yang mampu menjatuhkan atau merutekan di tempat lain lalu lintas yang terkait dengan serangan, sebelum mencapai server yang ditargetkan di tempat pertama.
+
+Ini dapat diimplementasikan dengan menggunakan solusi perangkat keras on-premise berdedikasi, dan/atau solusi berbasis cloud seperti layanan mitigasi DDoS berdedikasi, dengan merutekan DNS domain melalui jaringan yang dapat menahan serangan DDoS, dengan pemfilteran berbasis cloud, atau dengan beberapa kombinasinya. Bagaimanapun juga, subjek ini agak terlalu kompleks untuk dijelaskan secara menyeluruh hanya dengan satu atau dua paragraf, jadi saya akan merekomendasikan melakukan penelitian lebih lanjut jika ini adalah subjek yang ingin Anda kejar. Ketika sifat serangan DDoS benar dipahami, jawaban ini akan lebih masuk akal.
 
 ---
 
@@ -1254,35 +1266,35 @@ CIDRAM is able to pseudonymise IP addresses when logging them, if this is someth
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 MENGHILANGKAN INFORMASI LOG
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+Jika Anda ingin melangkah lebih jauh dengan mencegah jenis informasi tertentu sedang dicatat sepenuhnya, ini juga mungkin dilakukan. CIDRAM menyediakan direktif-direktif konfigurasi untuk mengontrol apakah alamat IP, nama host, dan agen pengguna termasuk dalam log. Secara default, ketiga titik data ini termasuk dalam log bila tersedia. Menetapkan apapun direktif-direktif konfigurasi ini ke `true` akan menghilangkan informasi terkait dari log.
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+*Catat: Tidak ada alasan untuk menggunakan pseudonim dengan alamat IP ketika menghilangkannya dari log sepenuhnya.*
 
 *Direktif konfigurasi yang relevan:*
 - `legal` -> `omit_ip`
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 STATISTIK
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM secara opsional dapat melacak statistik seperti jumlah total kejadian blokir atau instance reCAPTCHA yang telah terjadi sejak beberapa titik waktu tertentu. Fitur ini dinonaktifkan secara default, tetapi dapat diaktifkan melalui konfigurasi paket. Fitur ini hanya melacak jumlah total kejadian yang terjadi, dan tidak termasuk informasi apapun tentang kejadian tertentu (dan dengan demikian, tidak boleh dianggap sebagai PII).
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 ENKRIPSI
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM tidak mengenkripsi cache atau informasi log apapun. [Enkripsi](https://id.wikipedia.org/wiki/Enkripsi) cache dan log dapat diperkenalkan di masa depan, tetapi tidak ada rencana khusus untuk itu saat ini. Jika Anda khawatir tentang pihak ketiga yang tidak sah mendapatkan akses ke bagian depan dari CIDRAM yang mungkin berisi PII atau informasi sensitif seperti cache atau log-nya, saya akan merekomendasikan bahwa CIDRAM tidak diinstal di lokasi yang dapat diakses publik (misalnya, instal CIDRAM di luar direktori `public_html` standar atau yang setara dengan yang tersedia untuk sebagian besar web server standar) dan bahwa perizinan restriktif yang tepat diberlakukan untuk direktori tempat ia tinggal (khususnya, untuk direktori vault). Jika itu tidak cukup untuk mengatasi masalah Anda, konfigurasikan CIDRAM sedemikian rupa sehingga jenis informasi yang menyebabkan kekhawatiran Anda tidak akan dikumpulkan atau dicatat di tempat pertama (seperti, dengan menonaktifkan pencatatan).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+CIDRAM menetapkan [cookie](https://id.wikipedia.org/wiki/Kuki_HTTP) pada dua titik dalam basis kodenya. Pertama, ketika pengguna berhasil menyelesaikan instance reCAPTCHA (dan mengasumsikan bahwa `lockuser` diatur ke `true`), CIDRAM menetapkan cookie agar dapat mengingat untuk permintaan berikutnya bahwa pengguna telah menyelesaikan instance reCAPTCHA, sehingga tidak perlu meminta pengguna untuk menyelesaikan instance reCAPTCHA pada permintaan berikutnya. Kedua, ketika pengguna berhasil masuk ke akses bagian depan, CIDRAM menetapkan cookie agar dapat mengingat pengguna untuk permintaan berikutnya (yaitu, cookie digunakan untuk mengautentikasi pengguna ke sesi masuk).
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+Dalam kedua kasus, peringatan cookie ditampilkan dengan jelas (bila berlaku), memperingatkan pengguna bahwa cookie akan diatur jika mereka terlibat dalam tindakan yang relevan. Cookie tidak diatur dalam titik lain di basis kode.
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+*Catat: Implementasi spesifik CIDRAM dari "invisible" API untuk reCAPTCHA mungkin tidak kompatibel dengan hukum cookie di beberapa yurisdiksi, dan harus dihindari oleh situs web apapun yang tunduk pada hukum-hukum tersebut. Memilih untuk menggunakan "V2" API sebagai gantinya, atau hanya menonaktifkan reCAPTCHA sepenuhnya, mungkin lebih baik.*
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `disable_frontend`
@@ -1321,4 +1333,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Terakhir Diperbarui: 10 Juni 2018 (2018.06.10).
+Terakhir Diperbarui: 21 Juni 2018 (2018.06.21).

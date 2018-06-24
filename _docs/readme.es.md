@@ -147,6 +147,7 @@ Archivo | Descripción
 /vault/fe_assets/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/fe_assets/_accounts.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
+/vault/fe_assets/_cache.html | Un archivo HTML para el front-end página del datos de caché.
 /vault/fe_assets/_cidr_calc.html | Un archivo HTML para la calculadora CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Un archivo HTML para la calculadora CIDR.
 /vault/fe_assets/_config.html | Un archivo HTML para el front-end página de configuración.
@@ -167,9 +168,9 @@ Archivo | Descripción
 /vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación del front-end, para aquellos con acceso de registros solamente.
 /vault/fe_assets/_range.html | Un archivo HTML para el front-end página tablas de rango.
 /vault/fe_assets/_range_row.html | Un archivo HTML para el front-end página tablas de rango.
-/vault/fe_assets/_statistics.html | Un archivo HTML para el front-end página de estadísticas.
 /vault/fe_assets/_sections.html | Una archivo HTML para la lista de secciones.
 /vault/fe_assets/_sections_row.html | Una archivo HTML para la lista de secciones.
+/vault/fe_assets/_statistics.html | Un archivo HTML para el front-end página de estadísticas.
 /vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
@@ -251,9 +252,9 @@ Archivo | Descripción
 /vault/.travis.yml | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
 /vault/aggregator.php | Agregador IP.
 /vault/cache.dat | Cache data.
-/vault/cidramblocklists.dat | Contiene información relativa a las listas opcionales para bloquear países proporcionadas por Macmathan; Utilizado por la página de actualizaciones proporcionada por el front-end.
+/vault/cidramblocklists.dat | Archivo de metadatos para las listas de bloqueo opcionales de Macmathan; Utilizado por la página de actualizaciones del front-end.
 /vault/cli.php | Módulo de la CLI.
-/vault/components.dat | Contiene información relativa a los diversos componentes de CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
+/vault/components.dat | Archivo de metadatos de componentes; Utilizado por la página de actualizaciones del front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para CIDRAM, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
 /vault/config.yaml | Archivo de valores predefinidos para la configuración; Contiene valores predefinidos para la configuración de CIDRAM.
@@ -274,7 +275,7 @@ Archivo | Descripción
 /vault/ipv6_isps.dat | Archivo de firmas por IPv6 (ISPs peligroso y propenso a spam).
 /vault/ipv6_other.dat | Archivo de firmas por IPv6 (CIDRs para proxies, VPNs y otros servicios misceláneos no deseados).
 /vault/lang.php | Lingüísticos datos.
-/vault/modules.dat | Contiene información relativa a los diversos módulos para CIDRAM; Utilizado por la página de actualizaciones proporcionada por el front-end.
+/vault/modules.dat | Archivo de metadatos de los módulos; Utilizado por la página de actualizaciones del front-end.
 /vault/outgen.php | Generador de salida.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necesario para la retrocompatibilidad de PHP 5.4.X; seguro para eliminar por versiones más recientes de PHP).
 /vault/recaptcha.php | Módulo de reCAPTCHA.
@@ -284,7 +285,7 @@ Archivo | Descripción
 /vault/salt.dat | Archivo de sal (utilizado por algunas funciones periférico; solamente generada si es necesario).
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
 /vault/template_default.html | Template archivo; Plantilla para HTML salida producida por la CIDRAM generador de salida.
-/vault/themes.dat | Archivo de temas; Utilizado por la página de actualizaciones proporcionada por el front-end.
+/vault/themes.dat | Archivo de metadatos de temas; Utilizado por la página de actualizaciones del front-end.
 /.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
 /Changelog.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /composer.json | Composer/Packagist información (no se requiere para usar la script).
@@ -927,6 +928,7 @@ Los módulos se han puesto a disposición para garantizar que los siguientes paq
 - [¿Qué puedo usar para "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [¿Puedo usar CIDRAM para proteger cosas que no sean sitios web (por ejemplo, servidores de correo electrónico, FTP, SSH, IRC, etc)?](#PROTECT_OTHER_THINGS)
 - [¿Se producirán problemas si uso CIDRAM al mismo tiempo que uso CDN o servicios de caché?](#CDN_CACHING_PROBLEMS)
+- [¿CIDRAM protegerá mi sitio web de los ataques DDoS?](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>¿Qué es una "firma"?
 
@@ -1076,6 +1078,16 @@ Puedes (legalmente), pero no deberías (técnicamente; prácticamente). Nuestra 
 #### <a name="CDN_CACHING_PROBLEMS"></a>¿Se producirán problemas si uso CIDRAM al mismo tiempo que uso CDN o servicios de caché?
 
 Posiblemente. Esto depende de la naturaleza del servicio en cuestión y de cómo lo está usando. En general, si solo está almacenando en caché activos estáticos (imágenes, CSS, etc; cualquier cosa que generalmente no cambia con el tiempo), no debería haber ningún problema. Pero, puede haber problemas si almacena datos en caché que, de lo contrario, se generarían dinámicamente cuando se soliciten, o si está almacenando en caché los resultados de las solicitudes POST (esto esencialmente haría que su sitio web y su entorno sean obligatoriamente estáticos, y es improbable que CIDRAM proporcione ningún beneficio significativo en un entorno obligatoriamente estático). También puede haber requisitos de configuración específicos para CIDRAM, dependiendo de qué CDN o servicio de caché está utilizando (deberá asegurarse de que CIDRAM esté configurado correctamente para el CDN o el servicio de caché específico que está utilizando). Si CIDRAM no se configura correctamente, pueden producirse falsos positivos y detecciones perdidas.
+
+#### <a name="DDOS_ATTACKS"></a>¿CIDRAM protegerá mi sitio web de los ataques DDoS?
+
+Respuesta corta: No.
+
+Respuesta un poco más larga: CIDRAM ayudará a reducir el impacto que el tráfico no deseado puede tener en su sitio web (en efecto reduciendo los costos de ancho de banda de su sitio web), ayudará a reducir el impacto que el tráfico no deseado puede tener en su hardware (por ejemplo, la capacidad de su servidor para procesar y atender solicitudes), y puede ayudar a reducir otros posibles efectos negativos asociados con el tráfico no deseado. Sin embargo, hay dos cosas importantes que deben recordarse para comprender esta pregunta.
+
+En primer lugar, CIDRAM es un paquete PHP y, por lo tanto, opera en la máquina donde está instalado PHP. Esto significa que CIDRAM solo puede ver y bloquear una solicitud *después* de que el servidor ya la haya recibido. En segundo lugar, la [mitigación de DDoS](https://es.wikipedia.org/wiki/Mitigaci%C3%B3n_de_DDoS) efectiva debe filtrar las solicitudes *antes* de que lleguen al servidor al que se dirige el ataque DDoS. Idealmente, los ataques DDoS deberían ser detectados y mitigados por soluciones capaces de eliminar o redirigir el tráfico asociado con ataques, antes de que llegue al servidor objetivo en primer lugar.
+
+Esto puede implementarse utilizando soluciones de hardware locales dedicadas y/o soluciones basadas en la nube, como servicios de mitigación DDoS dedicados, enrutamiento del DNS de un dominio a través de redes resistentes a DDoS, filtrado basado en la nube, o alguna combinación de los mismos. En cualquier caso, este tema es un poco demasiado complejo para explicarlo exhaustivamente con solo un párrafo o dos, por lo que recomendaría investigar más si este es un tema que desea seguir. Cuando la verdadera naturaleza de los ataques DDoS se entiende correctamente, esta respuesta tendrá más sentido.
 
 ---
 
@@ -1322,4 +1334,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 10 Junio de 2018 (2018.06.10).
+Última Actualización: 21 Junio de 2018 (2018.06.21).

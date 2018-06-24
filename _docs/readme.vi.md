@@ -145,33 +145,34 @@ Tập tin | Chi tiết
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
 /vault/fe_assets/ | Các tài sản front-end.
 /vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
-/vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
-/vault/fe_assets/_cidr_calc.html | Một tập tin mẫu HTML cho các máy tính CIDR.
-/vault/fe_assets/_cidr_calc_row.html | Một tập tin mẫu HTML cho các máy tính CIDR.
-/vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
-/vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
-/vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_files_rename.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
-/vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
-/vault/fe_assets/_ip_aggregator.html | Một tập tin mẫu HTML cho các tập hợp IP.
-/vault/fe_assets/_ip_test.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
-/vault/fe_assets/_ip_test_row.html | Một tập tin mẫu HTML cho trang kiểm tra IP.
-/vault/fe_assets/_ip_tracking.html | Một tập tin mẫu HTML cho trang giám sát IP.
-/vault/fe_assets/_ip_tracking_row.html | Một tập tin mẫu HTML cho trang giám sát IP.
-/vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
-/vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
-/vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
-/vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
-/vault/fe_assets/_range.html | Một tập tin mẫu HTML cho các bảng dãy.
-/vault/fe_assets/_range_row.html | Một tập tin mẫu HTML cho các bảng dãy.
-/vault/fe_assets/_statistics.html | Một tập tin mẫu HTML cho các trang thống kê của front-end.
-/vault/fe_assets/_sections.html | Một tập tin mẫu HTML cho danh sách phần.
-/vault/fe_assets/_sections_row.html | Một tập tin mẫu HTML cho danh sách phần.
-/vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
-/vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
+/vault/fe_assets/_accounts.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
+/vault/fe_assets/_accounts_row.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
+/vault/fe_assets/_cache.html | Tập tin mẫu HTML cho trang dữ liệu cache của front-end.
+/vault/fe_assets/_cidr_calc.html | Tập tin mẫu HTML cho máy tính CIDR.
+/vault/fe_assets/_cidr_calc_row.html | Tập tin mẫu HTML cho máy tính CIDR.
+/vault/fe_assets/_config.html | Tập tin mẫu HTML cho trang cấu hình của front-end.
+/vault/fe_assets/_config_row.html | Tập tin mẫu HTML cho trang cấu hình của front-end.
+/vault/fe_assets/_files.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_files_edit.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_files_rename.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_files_row.html | Tập tin mẫu HTML cho quản lý tập tin.
+/vault/fe_assets/_home.html | Tập tin mẫu HTML cho trang chủ của front-end.
+/vault/fe_assets/_ip_aggregator.html | Tập tin mẫu HTML cho tập hợp IP.
+/vault/fe_assets/_ip_test.html | Tập tin mẫu HTML cho trang kiểm tra IP.
+/vault/fe_assets/_ip_test_row.html | Tập tin mẫu HTML cho trang kiểm tra IP.
+/vault/fe_assets/_ip_tracking.html | Tập tin mẫu HTML cho trang giám sát IP.
+/vault/fe_assets/_ip_tracking_row.html | Tập tin mẫu HTML cho trang giám sát IP.
+/vault/fe_assets/_login.html | Tập tin mẫu HTML cho đăng nhập front-end.
+/vault/fe_assets/_logs.html | Tập tin mẫu HTML cho trang bản ghi của front-end.
+/vault/fe_assets/_nav_complete_access.html | Tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
+/vault/fe_assets/_nav_logs_access_only.html | Tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_range.html | Tập tin mẫu HTML cho bảng dãy.
+/vault/fe_assets/_range_row.html | Tập tin mẫu HTML cho bảng dãy.
+/vault/fe_assets/_sections.html | Tập tin mẫu HTML cho danh sách phần.
+/vault/fe_assets/_sections_row.html | Tập tin mẫu HTML cho danh sách phần.
+/vault/fe_assets/_statistics.html | Tập tin mẫu HTML cho trang thống kê của front-end.
+/vault/fe_assets/_updates.html | Tập tin mẫu HTML cho trang cập nhật của front-end.
+/vault/fe_assets/_updates_row.html | Tập tin mẫu HTML cho trang cập nhật của front-end.
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
 /vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản, thông tin phiên, và bộ nhớ cache; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
@@ -251,9 +252,9 @@ Tập tin | Chi tiết
 /vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/aggregator.php | Tập hợp IP.
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
-/vault/cidramblocklists.dat | Chứa thông tin liên quan đến các danh sách chặn quốc gia tùy chọn được cung cấp bởi Macmathan; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/cidramblocklists.dat | Tập tin siêu dữ liệu cho danh sách chặn tùy chọn của Macmathan; Được sử dụng bởi trang cập nhật front-end.
 /vault/cli.php | Tập tin cho xử lý CLI.
-/vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/components.dat | Tập tin siêu dữ liệu thành phần; Được sử dụng bởi trang cập nhật front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của CIDRAM, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho CIDRAM.
@@ -274,7 +275,7 @@ Tập tin | Chi tiết
 /vault/ipv6_isps.dat | Tập tin chữ ký IPv6 (ISP nguy hiểm và gửi thư rác).
 /vault/ipv6_other.dat | Tập tin chữ ký IPv6 (CIDR cho proxy, VPN, và các dịch vụ khác mà không mong muốn).
 /vault/lang.php | Dữ liệu tiếng.
-/vault/modules.dat | Chứa thông tin liên quan đến các mô-đun khác nhau cho CIDRAM; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/modules.dat | Tập tin siêu dữ liệu mô-đun; Được sử dụng bởi trang cập nhật front-end.
 /vault/outgen.php | Máy phát đầu ra.
 /vault/php5.4.x.php | Polyfills cho PHP 5.4.X (cần cho khả năng tương thích ngược PHP 5.4.X; an toàn để xóa cho các phiên bản PHP mới hơn).
 /vault/recaptcha.php | reCAPTCHA mô-đun.
@@ -284,7 +285,7 @@ Tập tin | Chi tiết
 /vault/salt.dat | Tập tin muối (được sử dụng bởi một số chức năng ngoại vi; chỉ tạo ra nếu cần thiết).
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /vault/template_default.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
-/vault/themes.dat | Tập tin cho các chủ đề; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/themes.dat | Tập tin siêu dữ liệu chủ đề; Được sử dụng bởi trang cập nhật front-end.
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
@@ -927,6 +928,7 @@ Các mô-đun đã được cung cấp để đảm bảo rằng các gói và s
 - [Những gì tôi có thể sử dụng cho "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [Tôi có thể sử dụng CIDRAM để bảo vệ những thứ khác ngoài trang web (v.d., máy chủ email, FTP, SSH, IRC, vv)?](#PROTECT_OTHER_THINGS)
 - [Sẽ xảy ra sự cố nếu tôi sử dụng CIDRAM cùng lúc với việc sử dụng các CDN hoặc các dịch vụ bộ nhớ đệm?](#CDN_CACHING_PROBLEMS)
+- [CIDRAM có bảo vệ trang web của tôi khỏi các cuộc tấn công DDoS không?](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
@@ -1076,6 +1078,16 @@ Bạn có thể (theo nghĩa hợp pháp), nhưng không nên (theo nghĩa kỹ 
 #### <a name="CDN_CACHING_PROBLEMS"></a>Sẽ xảy ra sự cố nếu tôi sử dụng CIDRAM cùng lúc với việc sử dụng các CDN hoặc các dịch vụ bộ nhớ đệm?
 
 Có lẽ. Điều này phụ thuộc vào tính chất của dịch vụ được đề cập và cách bạn sử dụng dịch vụ. Nói chung, nếu bạn chỉ lưu trữ nội dung tĩnh (v.d., hình ảnh, CSS, vv; bất cứ điều gì không thay đổi theo thời gian), không nên có bất kỳ vấn đề. Có thể có vấn đề mặc dù, nếu bạn đang lưu trữ dữ liệu mà thông thường sẽ được tạo động nếu được yêu cầu, hoặc nếu bạn đang lưu trữ kết quả của các yêu cầu POST (điều này về cơ bản sẽ làm cho trang web của bạn và môi trường của nó như bắt buộc tĩnh, và CIDRAM không có khả năng cung cấp bất kỳ lợi ích có ý nghĩa nào trong một môi trường bắt buộc tĩnh). Cũng có thể có các yêu cầu cấu hình cụ thể cho CIDRAM, tùy thuộc vào dịch vụ bộ nhớ đệm hoặc CDN mà bạn đang sử dụng (bạn cần đảm bảo rằng CIDRAM được định cấu hình chính xác cho dịch vụ bộ nhớ đệm hoặc CDN cụ thể mà bạn đang sử dụng). Cấu hình không chính xác cho CIDRAM có thể dẫn đến vấn đề đáng kể của các sai tích cực và các sự phát hiện mất tích.
+
+#### <a name="DDOS_ATTACKS"></a>CIDRAM có bảo vệ trang web của tôi khỏi các cuộc tấn công DDoS không?
+
+Câu trả lời ngắn gọn: Không.
+
+Câu trả lời hơi dài hơn: CIDRAM sẽ giúp giảm tác động mà lưu lượng không mong muốn có thể có trên trang web của bạn (do đó làm giảm chi phí băng thông của trang web của bạn), sẽ giúp giảm tác động mà lưu lượng không mong muốn có thể có trên phần cứng của bạn (ví dụ, khả năng xử lý và phân phối yêu cầu của máy chủ của bạn), và có thể giúp giảm các hiệu ứng tiêu cực tiềm năng khác liên quan đến lưu lượng không mong muốn. Tuy nhiên, có hai điều quan trọng cần nhớ để hiểu câu hỏi này.
+
+Thứ nhất, CIDRAM là một gói PHP, và do đó hoạt động ở máy nơi PHP được cài đặt. Điều này có nghĩa là CIDRAM chỉ có thể xem và chặn một yêu cầu *sau khi* máy chủ đã nhận được nó. Thứ hai, giảm thiểu DDoS hiệu quả sẽ lọc các yêu cầu *trước khi* chúng đến được máy chủ được nhắm mục tiêu bởi cuộc tấn công DDoS. Lý tưởng nhất, các cuộc tấn công DDoS nên được phát hiện và giảm thiểu bằng các giải pháp có khả năng giảm hay định tuyến lại lưu lượng được liên kết đến cuộc tấn công, trước khi nó đến máy chủ được nhắm mục tiêu ngay từ đầu.
+
+Điều này có thể được thực hiện bằng cách sử dụng các giải pháp phần cứng chuyên dụng có trên địa điểm, các giải pháp dựa trên đám mây như các dịch vụ giảm thiểu DDoS chuyên dụng, định tuyến DNS của tên miền thông qua mạng chống DDoS, lọc dựa trên đám mây, hoặc một số kết hợp của chúng. Tuy nhiên, trong mọi trường hợp, chủ đề này hơi phức tạp để giải thích kỹ lưỡng chỉ với một hoặc hai đoạn, vì vậy tôi khuyên bạn nên nghiên cứu thêm nếu đây là chủ đề bạn muốn theo đuổi. Khi bản chất thực sự của các cuộc tấn công DDoS được hiểu đúng, câu trả lời này sẽ có ý nghĩa hơn.
 
 ---
 
@@ -1254,35 +1266,35 @@ CIDRAM is able to pseudonymise IP addresses when logging them, if this is someth
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 BỎ QUA THÔNG TIN NHẬT KÝ
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+Nếu bạn muốn tiến thêm một bước nữa bằng cách ngăn chặn các loại thông tin cụ thể được nhật ký hoàn toàn, điều này cũng có thể thực hiện được. CIDRAM cung cấp chỉ thị cấu hình để kiểm soát xem địa chỉ IP, tên máy chủ, và tác nhân người dùng có được bao gồm trong nhật ký hay không. Theo mặc định, tất cả ba trong số các điểm dữ liệu này được bao gồm trong nhật ký khi có sẵn. Việc đặt bất kỳ chỉ thị cấu hình nào thành `true` sẽ bỏ qua thông tin tương ứng từ nhật ký.
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+*Chú thích: Không có lý do gì để bút danh các địa chỉ IP khi bỏ qua chúng hoàn toàn từ các nhật ký.*
 
 *Chỉ thị cấu hình có liên quan:*
 - `legal` -> `omit_ip`
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 SỐ LIỆU THỐNG KÊ
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM có thể tùy chọn theo dõi số liệu thống kê như tổng số sự kiện chặn hay sự xuất hiện reCAPTCHA đã xảy ra kể từ một số thời điểm cụ thể. Tính năng này được vô hiệu hóa theo mặc định, nhưng có thể được kích hoạt thông qua cấu hình gói. Tính năng này chỉ theo dõi tổng số sự kiện đã xảy ra và không bao gồm bất kỳ thông tin nào về các sự kiện cụ thể (và do đó, không nên được coi là PII).
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 MÃ HÓA
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM không mã hóa bộ nhớ cache của nó hoặc bất kỳ thông tin log nào. [Mã hóa](https://vi.wikipedia.org/wiki/M%C3%A3_h%C3%B3a) bộ nhớ cache và log có thể được giới thiệu trong tương lai, nhưng hiện tại không có bất kỳ kế hoạch cụ thể nào. Nếu bạn lo lắng về các bên thứ ba không được phép truy cập vào các phần của CIDRAM có thể chứa thông tin nhận dạng cá nhân hay thông tin nhạy cảm như bộ nhớ cache hoặc nhật ký của nó, tôi khuyên bạn không nên cài đặt CIDRAM tại vị trí có thể truy cập công khai (ví dụ, cài đặt CIDRAM bên ngoài thư mục `public_html` tiêu chuẩn hoặc tương đương chúng có sẵn cho hầu hết các máy chủ web tiêu chuẩn) và các quyền hạn chế thích hợp sẽ được thực thi cho thư mục nơi nó cư trú (đặc biệt, cho thư mục vault). Nếu điều đó không đủ để giải quyết mối quan ngại của bạn, hãy định cấu hình CIDRAM để các loại thông tin gây ra mối lo ngại của bạn sẽ không được thu thập hoặc nhật ký ở địa điểm đầu tiên (ví dụ, bằng cách tắt ghi nhật ký).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+CIDRAM đặt [cookie](https://vi.wikipedia.org/wiki/Cookie_(tin_h%E1%BB%8Dc)) ở hai điểm trong cơ sở mã của nó. Thứ nhất, khi người dùng hoàn tất thành công sự xuất hiện reCAPTCHA (và giả định rằng `lockuser` được đặt thành `true`), CIDRAM đặt cookie để có thể ghi nhớ các yêu cầu tiếp theo mà người dùng đã hoàn sự xuất hiện reCAPTCHA, vì vậy để không cần liên tục yêu cầu người dùng hoàn thành một sự xuất hiện reCAPTCHA trên mỗi yêu cầu tiếp theo. Thứ hai, khi người dùng đăng nhập thành công vào front-end, CIDRAM đặt cookie để có thể nhớ người dùng cho các yêu cầu tiếp theo (cookie được sử dụng để xác thực người dùng đến phiên đăng nhập).
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+Trong cả hai trường hợp, cảnh báo cookie được hiển thị nổi bật (khi nó có liên quan), cảnh báo người dùng rằng cookie sẽ được đặt nếu họ tham gia vào các hành động có liên quan. Cookie không được đặt ở bất kỳ điểm nào khác trong cơ sở mã.
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+*Chú thích: Việc triển khai API "invisible" cụ thể của CIDRAM cho reCAPTCHA có thể không tương thích với luật cookie ở một số khu vực pháp lý, và phải được tránh bởi bất kỳ trang web nào tuân theo các luật đó. Thay vào đó, việc chọn sử dụng API "V2", hoặc chỉ đơn giản là tắt hoàn toàn reCAPTCHA, có thể thích hợp hơn.*
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `disable_frontend`
@@ -1321,4 +1333,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Lần cuối cập nhật: 10 Tháng Sáu 2018 (2018.06.10).
+Lần cuối cập nhật: 21 Tháng Sáu 2018 (2018.06.21).

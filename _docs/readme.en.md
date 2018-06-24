@@ -147,6 +147,7 @@ File | Description
 /vault/fe_assets/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page.
+/vault/fe_assets/_cache.html | An HTML template for the front-end cache data page.
 /vault/fe_assets/_cidr_calc.html | An HTML template for the CIDR calculator.
 /vault/fe_assets/_cidr_calc_row.html | An HTML template for the CIDR calculator.
 /vault/fe_assets/_config.html | An HTML template for the front-end configuration page.
@@ -167,9 +168,9 @@ File | Description
 /vault/fe_assets/_nav_logs_access_only.html | An HTML template for the front-end navigation links, for those with logs access only.
 /vault/fe_assets/_range.html | An HTML template for the front-end range tables page.
 /vault/fe_assets/_range_row.html | An HTML template for the front-end range tables page.
-/vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_sections.html | An HTML template for the sections list.
 /vault/fe_assets/_sections_row.html | An HTML template for the sections list.
+/vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_updates.html | An HTML template for the front-end updates page.
 /vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page.
 /vault/fe_assets/frontend.css | CSS style-sheet for the front-end.
@@ -251,9 +252,9 @@ File | Description
 /vault/.travis.yml | Used by Travis CI for testing (not required for proper function of the script).
 /vault/aggregator.php | IP aggregator.
 /vault/cache.dat | Cache data.
-/vault/cidramblocklists.dat | Contains information relating to the optional country blocklists provided by Macmathan; Used by the updates feature provided by the front-end.
+/vault/cidramblocklists.dat | Metadata file for Macmathan's optional blocklists; Used by the front-end updates page.
 /vault/cli.php | CLI handler.
-/vault/components.dat | Contains information relating to the various components of CIDRAM; Used by the updates feature provided by the front-end.
+/vault/components.dat | Components metadata file; Used by the front-end updates page.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of CIDRAM, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/config.yaml | Configuration defaults file; Contains default configuration values for CIDRAM.
@@ -274,7 +275,7 @@ File | Description
 /vault/ipv6_isps.dat | IPv6 signatures file (dangerous and spammy ISPs).
 /vault/ipv6_other.dat | IPv6 signatures file (CIDRs for proxies, VPNs, and other miscellaneous unwanted services).
 /vault/lang.php | Language handler.
-/vault/modules.dat | Contains information relating to the CIDRAM modules; Used by the updates feature provided by the front-end.
+/vault/modules.dat | Modules metadata file; Used by the front-end updates page.
 /vault/outgen.php | Output generator.
 /vault/php5.4.x.php | Polyfills for PHP 5.4.X (required for PHP 5.4.X backwards compatibility; safe to delete for newer PHP versions).
 /vault/recaptcha.php | reCAPTCHA module.
@@ -284,7 +285,7 @@ File | Description
 /vault/salt.dat | Salt file (used by some peripheral functionality; only generated if required).
 /vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/template_default.html | Template file; Template for HTML output produced by the CIDRAM output generator.
-/vault/themes.dat | Themes file; Used by the updates feature provided by the front-end.
+/vault/themes.dat | Themes metadata file; Used by the front-end updates page.
 /.gitattributes | A GitHub project file (not required for proper function of the script).
 /Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
 /composer.json | Composer/Packagist information (not required for proper function of the script).
@@ -927,6 +928,7 @@ Modules have been made available to ensure that the following packages and produ
 - [What can I use for "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [Can I use CIDRAM to protect things other than websites (e.g., email servers, FTP, SSH, IRC, etc)?](#PROTECT_OTHER_THINGS)
 - [Will problems occur if I use CIDRAM at the same time as using CDNs or caching services?](#CDN_CACHING_PROBLEMS)
+- [Will CIDRAM protect my website from DDoS attacks?](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
@@ -1076,6 +1078,16 @@ You can (legally), but shouldn't (technically; practically). Our license does no
 #### <a name="CDN_CACHING_PROBLEMS"></a>Will problems occur if I use CIDRAM at the same time as using CDNs or caching services?
 
 Maybe. This depends on the nature of the service in question, and how you're using it. Generally, if you're only caching static assets (images, CSS, etc; anything that doesn't generally change over time), there shouldn't be any problems. There may be problems though, if you're caching data that would otherwise typically be generated dynamically when requested, or if you're caching the results of POST requests (this would essentially render your website and its environment as obligatorily static, and CIDRAM is unlikely to provide any meaningful benefit in an obligatorily static environment). There may also be specific configuration requirements for CIDRAM, depending on which CDN or caching service you're using (you'll need to ensure that CIDRAM is configured correctly for the specific CDN or caching service that you're using). Failure to configure CIDRAM correctly may lead to significantly problematic false positives and missed detections.
+
+#### <a name="DDOS_ATTACKS"></a>Will CIDRAM protect my website from DDoS attacks?
+
+Short answer: No.
+
+Slightly longer answer: CIDRAM will help reduce the impact that unwanted traffic can have on your website (thus reducing your website's bandwidth costs), will help reduce the impact that unwanted traffic can have on your hardware (e.g., your server's ability to process and serve requests), and can help to reduce various other potential negative effects associated with unwanted traffic. However, there are two important things that must be remembered in order to understand this question.
+
+Firstly, CIDRAM is a PHP package, and therefore operates at the machine where PHP is installed. This means that CIDRAM can only see and block a request *after* the server has already received it. Secondly, effective [DDoS mitigation](https://en.wikipedia.org/wiki/DDoS_mitigation) should filter requests *before* they reach the server targeted by the DDoS attack. Ideally, DDoS attacks should be detected and mitigated by solutions capable of dropping or rerouting traffic associated with attacks, before it reaches the targeted server in the first place.
+
+This can be implemented using dedicated, on-premise hardware solutions, and/or cloud-based solutions such as dedicated DDoS mitigation services, routing a domain's DNS through DDoS-resistant networks, cloud-based filtering, or some combination thereof. In any case though, this subject is a little too complex to explain thoroughly with just a mere paragraph or two, so I would recommend doing further research if this is a subject you want to pursue. When the true nature of DDoS attacks is properly understood, this answer will make more sense.
 
 ---
 
@@ -1325,4 +1337,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 10 June 2018 (2018.06.10).
+Last Updated: 21 June 2018 (2018.06.21).

@@ -148,6 +148,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，​以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/_accounts.html | 前端賬戶頁面的HTML模板。
 /vault/fe_assets/_accounts_row.html | 前端賬戶頁面的HTML模板。
+/vault/fe_assets/_cache.html | 前端緩存數據頁面的HTML模板。
 /vault/fe_assets/_cidr_calc.html | CIDR計算器的HTML模板。
 /vault/fe_assets/_cidr_calc_row.html | CIDR計算器的HTML模板。
 /vault/fe_assets/_config.html | 前端配置頁面的HTML模板。
@@ -168,9 +169,9 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/fe_assets/_nav_logs_access_only.html | 前端導航鏈接的HTML模板，​由那些與僅日誌訪問使用。
 /vault/fe_assets/_range.html | 範圍表的HTML模板。
 /vault/fe_assets/_range_row.html | 範圍表的HTML模板。
-/vault/fe_assets/_statistics.html | 前端統計頁面的HTML模板。
 /vault/fe_assets/_sections.html | 章節列表的HTML模板。
 /vault/fe_assets/_sections_row.html | 章節列表的HTML模板。
+/vault/fe_assets/_statistics.html | 前端統計頁面的HTML模板。
 /vault/fe_assets/_updates.html | 前端更新頁面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新頁面的HTML模板。
 /vault/fe_assets/frontend.css | 前端CSS樣式表。
@@ -252,9 +253,9 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/.travis.yml | 由Travis CI用於測試（不需要為正確經營腳本）。
 /vault/aggregator.php | IP聚合器。
 /vault/cache.dat | 緩存數據。
-/vault/cidramblocklists.dat | 包含的相關信息關於由Macmathan提供的可選的國家阻止列表；由更新功能使用由前端提供。
+/vault/cidramblocklists.dat | Macmathan的可選阻止列表的元數據文件。由前端更新頁面使用。
 /vault/cli.php | CLI處理文件。
-/vault/components.dat | 包含的相關信息關於CIDRAM的各種組件；它使用通過更新功能從前端。
+/vault/components.dat | 組件元數據文件。由前端更新頁面使用。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為CIDRAM，​告訴它什麼做和怎麼正確地經營（重命名為激活）。
 /vault/config.php | 配置處理文件。
 /vault/config.yaml | 配置默認文件；包含CIDRAM的默認配置值。
@@ -275,7 +276,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/ipv6_isps.dat | IPv6簽名文件（危險和垃圾容易ISP）。
 /vault/ipv6_other.dat | IPv6簽名文件（CIDR從代理，​VPN和其他不需要服務）。
 /vault/lang.php | 語音數據。
-/vault/modules.dat | 包含的相關信息關於CIDRAM的模塊；它使用通過更新功能從前端。
+/vault/modules.dat | 模塊元數據文件。由前端更新頁面使用。
 /vault/outgen.php | 輸出發生器。
 /vault/php5.4.x.php | Polyfill對於PHP 5.4.X （PHP 5.4.X 向下兼容需要它；​較新的版本可以刪除它）。
 /vault/recaptcha.php | reCAPTCHA模塊。
@@ -285,7 +286,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/salt.dat | 鹽文件（使用由一些外圍功能；只產生當必要）。
 /vault/template_custom.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
 /vault/template_default.html | 模板文件；模板為HTML輸出產生通過CIDRAM輸出發生器。
-/vault/themes.dat | 主題文件；它使用通過更新功能從前端。
+/vault/themes.dat | 主題元數據文件。由前端更新頁面使用。
 /.gitattributes | GitHub文件（不需要為正確經營腳本）。
 /Changelog.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
@@ -928,6 +929,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 - [在『default_dns』中我可以使用什麼？](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [我可以使用CIDRAM保護網站以外的東西嗎（例如，電子郵件服務器，FTP，SSH，IRC，等）？](#PROTECT_OTHER_THINGS)
 - [如果我在使用CDN或緩存服務的同時使用CIDRAM，會發生問題嗎？](#CDN_CACHING_PROBLEMS)
+- [CIDRAM會保護我的網站免受DDoS攻擊嗎？](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>什麼是『簽名』？
 
@@ -1078,6 +1080,16 @@ IP | 操作者
 
 也許。​這取決於相關服務的性質以及您如何使用它。​通常，如果您只緩存靜態資產（例如，圖像，CSS，等；任何通常不會隨時間變化的東西），則不應該有任何問題。​但是，如果您要緩存的數據通常會在請求時動態生成，或者如果您正在緩存POST請求的結果，那麼可能會有問題（這基本上會使您的網站及其環境成為強制靜態，並且CIDRAM不太可能在強制靜態環境中提供任何有意義的好處）。​CIDRAM也可能有特定的配置要求，具體取決於您使用的CDN或緩存服務（您需要確保為您正在使用的特定CDN或緩存服務正確配置CIDRAM）。​未能正確配置CIDRAM可能會導致嚴重假陽性和檢測錯過。
 
+#### <a name="DDOS_ATTACKS"></a>CIDRAM會保護我的網站免受DDoS攻擊嗎？
+
+總之：不，它不能。
+
+更詳細地說闡述：CIDRAM將有助於減少不需要的流量的可能造成的影響，為您的網站（從而降低帶寬成本），為您的硬件（例如，您的服務器處理請求的能力），並可以幫助減少各種其他潛在的負面影響。​然而，為了理解這個問題，必須記住兩件重要的事情。
+
+首先，CIDRAM是一個PHP包，因此可以在安裝PHP的機器上運行。​這意味著CIDRAM只能在服務器收到請求後才能看到並阻止請求。​其次，有效的DDoS緩解應該在請求到達DDoS攻擊所針對的服務器之前對其進行過濾。​理想情況下，DDoS攻擊應該在能夠首先到達目標服務器之前通過能夠丟棄或重新路由與攻擊相關的流量的解決方案來檢測和緩解。
+
+這可以使用專用的內部部署硬件解決方案，基於雲的解決方案，如專用的DDoS緩解服務，通過耐DDoS網絡路由域名的DNS，基於雲的過濾，或者它們的一些組合實施。​無論如何，這個問題有點太複雜，不能僅僅用一到兩個段落來解釋，所以如果這是您想追求的主題，我會建議您做進一步的研究。​當DDoS攻擊的本質被正確理解時，這個答案會更有意義。
+
 ---
 
 
@@ -1091,7 +1103,7 @@ IP | 操作者
 
 #### 11.1 法律責任
 
-此軟件包不提供任何擔保（這已由包許可證提及）。​這包括（但不限於）所有責任範圍。​為了您的方便，該軟件包已提供給您。​希望它會有用，它會為你帶來一些好處。​但是，使用或實施該軟件包是您自己的選擇。​您不是被迫使用或實施該軟件包，但是當您這樣做時，您需要對該決定負責。​我，和其他軟件包貢獻者，對於您的決定的後果不承擔法律責任，無論是直接的，間接的，暗示的，還是其他方式。
+此軟件包不提供任何擔保（這已由包許可證提及）。​這包括（但不限於）所有責任範圍。​為了您的方便，該軟件包已提供給您。​希望它會有用，它會為您帶來一些好處。​但是，使用或實施該軟件包是您自己的選擇。​您不是被迫使用或實施該軟件包，但是當您這樣做時，您需要對該決定負責。​我，和其他軟件包貢獻者，對於您的決定的後果不承擔法律責任，無論是直接的，間接的，暗示的，還是其他方式。
 
 #### 11.2 第三方
 
@@ -1113,7 +1125,7 @@ IP | 操作者
 
 ##### 11.2.1 網絡字體
 
-一些自定義主題，以及CIDRAM前端的標準UI（『用戶界面』），和『拒絕訪問』頁面可能出於審美原因使用網絡字體。​網絡字體默認是禁用的，但啟用後，用戶的瀏覽器和託管網絡字體的服務之間會發生直接通信。​這可能涉及傳遞信息，例如用戶的IP地址，用戶代理，操作系統，以及請求可用的其他詳細信息。​大部分這些網絡字體都由[Google Fonts](https://fonts.google.com/)服務託管。
+一些自定義主題，以及CIDRAM前端的標準UI（『用戶界面』），和『拒絕訪問』頁面可能出於審美原因使用網絡字體。​網絡字體默認是禁用，但啟用後，用戶的瀏覽器和託管網絡字體的服務之間會發生直接通信。​這可能涉及傳遞信息，例如用戶的IP地址，用戶代理，操作系統，以及請求可用的其他詳細信息。​大部分這些網絡字體都由[Google Fonts](https://fonts.google.com/)服務託管。
 
 *相關配置指令：*
 - `general` -> `disable_webfonts`
@@ -1127,15 +1139,15 @@ IP | 操作者
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAM可選的支持Google reCAPTCHA，為用戶提供了一種通過完成reCAPTCHA實例繞過『拒絕訪問』頁面的方式​（關於此功能的更多信息在前面的文檔中有介紹，特別是在配置章節）。​Google reCAPTCHA需要API密鑰才能正常工作，因此默認情況下禁用。​可以通過在包配置中定義所需的API密鑰來啟用它。​啟用後，用戶的瀏覽器與reCAPTCHA服務之間會進行直接通信。​這可能涉及傳遞信息，例如用戶的IP地址，用戶代理，操作系統以及請求可用的其他詳細信息。​在驗證reCAPTCHA實例的有效性並驗證它是否成功完成時，用戶的IP地址也可以在CIDRAM和reCAPTCHA服務之間的通信中共享。
 
 *相關配置指令：在『recaptcha』配置類別下列出的任何內容。*
 
-##### 11.2.4 STOP FORUM SPAM
+##### 11.2.4 STOP FORUM SPAM 【停止論壇垃圾郵件】
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/)是一個輝煌的，免費提供的服務，可以幫助保護論壇，博客，和網站免受垃圾郵件製造者。​它提供了一個已知垃圾郵件發送者的數據庫，以及一個可用來檢查數據庫中是否列出IP地址，用戶名或電子郵件地址的API。
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+CIDRAM提供了一個可選模塊，它使用API​​來檢查入站請求的IP地址是否屬於可疑垃圾郵件發送者。​默認情況下該模塊不是安裝，但如果選擇安裝該模塊，則可以根據模塊的預期用途將用戶的IP地址與Stop Forum Spam【停止論壇垃圾郵件】API共享。​安裝模塊時，當入站請求請求的資源是CIDRAM識別為垃圾郵件發送者經常目標的資源時（如登錄頁面，註冊頁面，電子郵件驗證頁面，評論表單，等等），CIDRAM就會與此API通信。
 
 #### 11.3 LOGGING
 
@@ -1322,4 +1334,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-最後更新：2018年6月10日。
+最後更新：2018年6月21日。

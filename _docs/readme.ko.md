@@ -147,6 +147,7 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/fe_assets/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
+/vault/fe_assets/_cache.html | 프론트 엔드 데이터 캐쉬 페이지의 HTML 템플릿.
 /vault/fe_assets/_cidr_calc.html | CIDR 계산기 HTML 템플릿.
 /vault/fe_assets/_cidr_calc_row.html | CIDR 계산기 HTML 템플릿.
 /vault/fe_assets/_config.html | 프론트 엔드 구성 페이지의 HTML 템플릿.
@@ -167,9 +168,9 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/fe_assets/_nav_logs_access_only.html | 프론트 엔드의 탐색 링크의 HTML 템플릿은 로그에만 액세스를위한 것입니다.
 /vault/fe_assets/_range.html | 프론트 엔드 범위 테이블 페이지의 HTML 템플릿.
 /vault/fe_assets/_range_row.html | 프론트 엔드 범위 테이블 페이지의 HTML 템플릿.
-/vault/fe_assets/_statistics.html | 프론트 엔드 통계 페이지의 HTML 템플릿.
 /vault/fe_assets/_sections.html | 섹션 목록 용 HTML 템플릿.
 /vault/fe_assets/_sections_row.html | 섹션 목록 용 HTML 템플릿.
+/vault/fe_assets/_statistics.html | 프론트 엔드 통계 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/_updates_row.html | 프론트 엔드 업데이트 페이지의 HTML 템플릿.
 /vault/fe_assets/frontend.css | 프론트 엔드 CSS 스타일 시트.
@@ -251,9 +252,9 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/aggregator.php | IP 애그리게이터.
 /vault/cache.dat | 캐시 데이터.
-/vault/cidramblocklists.dat | Macmathan 제공하는 국가 선택적 차단 목록. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
+/vault/cidramblocklists.dat | Macmathan의 선택적 블록리스트 용 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/cli.php | CLI 핸들러.
-/vault/components.dat | CIDRAM 구성 요소 정보가 포함되어 있습니다. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
+/vault/components.dat | 구성 요소 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/config.ini.RenameMe | CIDRAM 설정 파일; CIDRAM 모든 옵션 설정을 포함하고 있습니다. 각 옵션의 기능과 작동 방법에 대한 설명입니다 (활성화하기 위해 이름을 변경합니다).
 /vault/config.php | 구성 핸들러.
 /vault/config.yaml | 설정 기본값 스 파일; CIDRAM의 기본 설정이 포함되어 있습니다.
@@ -274,7 +275,7 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/ipv6_isps.dat | IPv6의 서명 파일 (스패머를 가진 위험한 ISP).
 /vault/ipv6_other.dat | IPv6의 서명 파일 (프록시, VPN 및 기타 불필요한 서비스 CIDR).
 /vault/lang.php | 언어 처리기.
-/vault/modules.dat | CIDRAM 모듈 정보가 포함되어 있습니다; 업데이트 기능 사용 (프론트 엔드를 제공합니다).
+/vault/modules.dat | 모듈 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /vault/outgen.php | 출력 발생기.
 /vault/php5.4.x.php | PHP 5.4.X 뽀리휘루 (PHP 5.4.X의 하위 호환성을 위해 필요합니다; 더 새로운 PHP 버전을 위해 삭제하는 것이 안전합니다).
 /vault/recaptcha.php | reCAPTCHA 모듈.
@@ -284,7 +285,7 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/salt.dat | 솔트 파일 (일부 주변 기능에 의해 사용됩니다; 필요한 경우에만 생성).
 /vault/template_custom.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_default.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
-/vault/themes.dat | 테마 파일. 업데이트 기능 의해 사용됩니다 (프론트 엔드를 제공합니다).
+/vault/themes.dat | 테마 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).
@@ -927,6 +928,7 @@ CIDRAM과의 호환성을 보장하기 위해, 다음 패키지 및 제품에, �
 - ["default_dns"에 사용할 수있는 항목은 무엇입니까?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)
 - [CIDRAM을 사용하여 웹 사이트 (예 : 이메일 서버, FTP, SSH, IRC, 등) 이외의 것을 보호 할 수 있습니까?](#PROTECT_OTHER_THINGS)
 - [CDN 또는 캐싱 서비스를 사용하는 것과 동시에 CIDRAM을 사용하면 문제가 발생합니까?](#CDN_CACHING_PROBLEMS)
+- [CIDRAM이 내 웹 사이트를 DDoS 공격으로부터 보호합니까?](#DDOS_ATTACKS)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"서명"이란 무엇입니까?
 
@@ -1076,6 +1078,16 @@ IP | 운영자
 #### <a name="CDN_CACHING_PROBLEMS"></a>CDN 또는 캐싱 서비스를 사용하는 것과 동시에 CIDRAM을 사용하면 문제가 발생합니까?
 
 아마도. 이것은 서비스와 사용 방법에 따라 달라질 수 있습니다. 일반적으로, 정적 애셋 만 캐싱하는 경우 아무 문제가 없어야합니다 (정적 애셋이란 시간이 지나도 변하지 않는 것을 의미합니다; 예 : 이미지, CSS, 등). 그러나, 일반적으로 요청에 따라 동적으로 생성되는 데이터를 캐싱하거나 POST 요청의 결과를 캐싱 할 때 문제가 발생할 수 있습니다 (이것은 귀하의 웹 사이트와 그 환경을 정적으로 렌더링 할 것이며, CIDRAM은 정적 환경에서 의미있는 이점을 제공하지 않을 것입니다). 사용중인 CDN 또는 캐싱 서비스에 따라, CIDRAM에 대한 특정 구성 요구 사항이있을 수 있습니다 (귀하의 필요에 맞게 CIDRAM이 올바르게 구성되었는지 확인하십시오). 잘못된 구성은 심각한 문제를 일으킬 수 있습니다.
+
+#### <a name="DDOS_ATTACKS"></a>CIDRAM이 내 웹 사이트를 DDoS 공격으로부터 보호합니까?
+
+Short answer: No.
+
+More detailed answer: CIDRAM will help reduce the impact that unwanted traffic can have on your website (thus reducing your website's bandwidth costs), will help reduce the impact that unwanted traffic can have on your hardware (e.g., your server's ability to process and serve requests), and can help to reduce various other potential negative effects associated with unwanted traffic. However, there are two important things that must be remembered in order to understand this question.
+
+Firstly, CIDRAM is a PHP package, and therefore operates at the machine where PHP is installed. This means that CIDRAM can only see and block a request after the server has already received it. Secondly, effective DDoS mitigation should filter requests before they reach the server targeted by the DDoS attack. Ideally, DDoS attacks should be detected and mitigated by solutions capable of dropping or rerouting traffic associated with attacks, before it reaches the targeted server in the first place.
+
+This can be implemented using dedicated, on-premise hardware solutions, and/or cloud-based solutions such as dedicated DDoS mitigation services, routing a domain's DNS through DDoS-resistant networks, cloud-based filtering, or some combination thereof. In any case though, this subject is a little too complex to explain thoroughly with just a mere paragraph or two, so I would recommend doing further research if this is a subject you want to pursue. When the true nature of DDoS attacks is properly understood, this answer will make more sense.
 
 ---
 
@@ -1321,4 +1333,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-최종 업데이트 : 2018년 6월 10일.
+최종 업데이트 : 2018년 6월 21일.

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2018.04.25).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2018.06.24).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -29,6 +29,32 @@ if (!isset($CIDRAM['RunParamResCache'])) {
 /** Define object for these rules for later recall. */
 $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $FactorIndex = 0, $LN = 0, $Tag = '') use (&$CIDRAM) {
 
+    /** Handle PSINet prefixes here. */
+    if ($Tag === 'PSINet, Inc') {
+
+        /** Skip processing if signatures have already been triggered or if the "block_generic" directive is false. */
+        if ($CIDRAM['BlockInfo']['SignatureCount'] > 0 || !$CIDRAM['Config']['signatures']['block_generic']) {
+            return;
+        }
+
+        if (!$CIDRAM['CIDRAM_sapi']) {
+            $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['lang']['ReasonMessage_Generic'];
+            if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+                $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+            }
+            $CIDRAM['BlockInfo']['WhyReason'] .= $CIDRAM['lang']['Short_Generic'] . $LN;
+            if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+                $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+            }
+        }
+        $CIDRAM['BlockInfo']['Signatures'] .= $Factors[$FactorIndex];
+        $CIDRAM['BlockInfo']['SignatureCount']++;
+
+        /** Exit. */
+        return;
+
+    }
+
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
     if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {
         return;
@@ -42,11 +68,6 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
 
     /** Bypass for "googlealert.com", "gigaalert.com", "copyscape.com". **/
     if ($Tag === 'Rackspace Hosting' && $Factors[31] === '162.13.83.46/32') {
-        return;
-    }
-
-    /** Ensure the 38.0.0.0/8 in PSINet only triggers ONCE! Multiple triggers cause problems for some CDN bypasses. */
-    if ($Tag === 'PSINet, Inc' && $CIDRAM['BlockInfo']['SignatureCount'] > 0) {
         return;
     }
 

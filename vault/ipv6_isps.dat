@@ -1445,3 +1445,57 @@ Tag: M247 Ltd
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 8708 ("RCS & RDS SA").
+# %Listed, Google Malware Dashboard: 3.43%.
+# %Listed, CleanTalk.org: 16.07%.
+# %Listed, abuseat.org (CBL-Listed): 1.15%.
+# Stop Forum Spam (SFS) listings: 1,551.
+# Updated: 2018.06.24
+
+2a02:2f00::/28 Deny Generic
+Origin: RO
+Tag: RCS & RDS SA
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 36351 ("SoftLayer Technologies").
+# Ranges change frequently / Should update often.
+# Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
+# Section is split across multiple files.
+# %Listed, Google Malware Dashboard: 0.19%.
+# %Listed, CleanTalk.org: 30.68%.
+# Stop Forum Spam (SFS) listings: 14,739.
+
+# SoftLayer questionable multi-play networks, spammy ISPs, etc.
+# Includes: Anything citing "Starry".
+# ^(.*(Starry).*)$
+# Excludes: Everything else.
+# Updated: 2018.06.24
+
+2403:ad80:10::/48 Deny Spam
+2403:ad80:20::/48 Deny Spam
+Origin: HK
+Tag: SoftLayer Spam ISPs
+
+
+# ASNs 12322, 12876 ("ONLINE S.A.S").
+# Caught trying to DDoS SFS.
+# Spamming getting significantly worse!
+# Moved from cloud services to spammy ISPs signature files due to being a multi-play network.
+# Also provides internet connectivity in some parts of France.
+# %Listed, Google Malware Dashboard: 1.87% (12322), 0.21% (AS12876).
+# %Listed, CleanTalk.org: 3.90% (12322), 61.31% (AS12876).
+# Stop Forum Spam (SFS) listings: 635 (12322), 378,639 (AS12876).
+# Updated: 2018.06.24
+
+2001:bc8::/32 Deny Spam
+2a01:e00::/26 Deny Spam
+Origin: FR
+Tag: ONLINE S.A.S
+---
+recaptcha:
+ enabled: true

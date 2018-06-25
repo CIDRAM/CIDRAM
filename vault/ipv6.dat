@@ -362,10 +362,24 @@ Tag: Agava Ltd
 
 # ASN 36351 ("SoftLayer Technologies").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.43%.
+# Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
+# Section is split across multiple files.
+# %Listed, Google Malware Dashboard: 0.19%.
 # %Listed, CleanTalk.org: 30.68%.
-# Stop Forum Spam (SFS) listings: 15,179.
-# Updated: 2018.05.03
+# Stop Forum Spam (SFS) listings: 14,739.
+
+# SoftLayer cloud services, webhosting providers, etc.
+# This section all as "Run rules_softlayer.php".
+# Excludes: Anything citing "TEFINCOM", "VPN", "proxy", "Privat Kommunikation", "Secure Internet" (VPNs and proxies; covered elsewhere).
+# ^(.*(TEFINCOM|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
+# Excludes: Anything citing "Telecom", "AT&T", "American Heart Association" (not cloud services; shouldn't be blocked).
+# ^(.*(Telecom|AT&T|American Heart Association).*)$
+# Excludes: Anything citing "Starry" (not cloud services; blocked as generic via spammy ISPs).
+# ^(.*(Starry).*)$
+# Excludes: Anything citing "Vonex" (well-behaved; zero bad history; not necessary to block).
+# ^(.*(Vonex).*)$
+# Includes: Everything else.
+# Updated: 2018.06.24
 
 2402:2f80::/48 Run rules_softlayer.php
 2403:1480:1000::/36 Run rules_softlayer.php
@@ -373,13 +387,13 @@ Tag: Agava Ltd
 Origin: AU
 2803:3240:1::/48 Run rules_softlayer.php
 Origin: BZ
+2402:f740::/36 Run rules_softlayer.php
+Origin: CN
 2a01:6f0:fffe::/48 Run rules_softlayer.php
 Origin: DE
 2a02:2498:3::/48 Run rules_softlayer.php
 Origin: GB
 2402:9e80::/47 Run rules_softlayer.php
-2403:ad80:10::/48 Run rules_softlayer.php
-2403:ad80:20::/48 Run rules_softlayer.php
 Origin: HK
 2001:df3:8800::/48 Run rules_softlayer.php
 2001:df4:f000::/48 Run rules_softlayer.php
@@ -391,8 +405,6 @@ Origin: IN
 2a03:8180:1800::/39 Run rules_softlayer.php
 2a03:8180:1c00::/39 Run rules_softlayer.php
 Origin: NL
-2400:bb40:1000::/40 Run rules_softlayer.php
-Origin: PA
 2401:c900:1000::/38 Run rules_softlayer.php
 2401:c900:1400::/39 Run rules_softlayer.php
 2401:c900:1600::/40 Run rules_softlayer.php
@@ -401,9 +413,8 @@ Origin: PA
 Origin: SG
 2402:e380::/48 Run rules_softlayer.php
 2602:ff1c:1::/48 Run rules_softlayer.php
-2602:ff84:1::/48 Run rules_softlayer.php
-2602:ff84:c::/46 Run rules_softlayer.php
-2602:ff84:10::/46 Run rules_softlayer.php
+2602:ff84:e::/48 Run rules_softlayer.php
+2602:ff84:13::/48 Run rules_softlayer.php
 2606:2e00:8004::/47 Run rules_softlayer.php
 2606:2e00:8006::/48 Run rules_softlayer.php
 2606:2e00:8008::/45 Run rules_softlayer.php
@@ -1597,19 +1608,6 @@ Origin: US
 Tag: HEG US Inc
 
 
-# ASN 12876 ("ONLINE S.A.S").
-# Caught trying to DDoS SFS.
-# Spamming getting significantly worse!
-# %Listed, Google Malware Dashboard: 0.33%.
-# %Listed, CleanTalk.org: 61.31%.
-# Stop Forum Spam (SFS) listings: 303,118.
-# Updated: 2016.09.28 / Checked: 2018.04.07
-
-2001:bc8::/32 Deny Cloud
-Origin: FR
-Tag: ONLINE S.A.S
-
-
 # ASN 174 ("Cogent Communications").
 
 # Myself and others have seen and experienced a significant amount of unwanted traffic from their ASN in the past (hack
@@ -1719,10 +1717,12 @@ Tag: HZ Hosting Ltd
 
 
 # ASN 53889 ("Micfo, LLC").
-# %Listed, Google Malware Dashboard: 1.18%.
+# Exclude: Anything citing "Telecom" (ISP), "KAOS" (ISP), "Level3" (infrastructure).
+# ^.*(Telecom|KAOS|Level3).*$\n
+# %Listed, Google Malware Dashboard: 1.06%.
 # %Listed, CleanTalk.org: 80.30%.
-# Stop Forum Spam (SFS) listings: 8,491.
-# Updated: 2017.09.20 / Checked: 2018.03.29
+# Stop Forum Spam (SFS) listings: 9,905.
+# Updated: 2017.09.20 / Checked: 2018.06.25
 
 2605:3e80::/32 Deny Cloud
 Origin: US
@@ -4010,15 +4010,16 @@ Tag: Incero LLC
 
 
 # ASNs 48337, 63949 ("Linode, LLC").
-# %Listed, Google Malware Dashboard: 0.13% (AS63949).
+# %Listed, Google Malware Dashboard: 0.12% (AS63949).
 # %Listed, CleanTalk.org: 37.91% (AS63949).
-# Stop Forum Spam (SFS) listings: 13,291 (AS63949).
-# Updated: 2018.04.17
+# Stop Forum Spam (SFS) listings: 14,692 (AS63949).
+# Updated: 2018.06.25
 
 2a01:7e00::/31 Deny Cloud
 Origin: GB
 2400:8901::/32 Deny Cloud
 2400:8902::/31 Deny Cloud
+2400:8905::/32 Deny Cloud
 2600:3c00::/30 Deny Cloud
 Origin: US
 Tag: Linode, LLC
@@ -4939,15 +4940,13 @@ Tag: Global Layer B.V
 
 
 # ASN 50113 ("MediaServicePlus LLC").
-# Caught spamming at SBS.
-# %Listed, Google Malware Dashboard: 1.02%.
+# %Listed, Google Malware Dashboard: 0.10%.
 # %Listed, CleanTalk.org: 44.50%.
-# Stop Forum Spam (SFS) listings: 1,897.
-# Updated: 2018.02.25
+# Stop Forum Spam (SFS) listings: 1,518.
+# Updated: 2018.06.25
 
+2a03:e2c0::/32 Deny Cloud
 2a04:5200::/32 Deny Cloud
-2a06:d645::/32 Deny Cloud
-2a06:d646::/32 Deny Cloud
 2a0b:ac80::/29 Deny Cloud
 Origin: RU
 Tag: MediaServicePlus LLC
@@ -4955,7 +4954,7 @@ Tag: MediaServicePlus LLC
 
 # ASN 200161 ('"DATAPRO" Limited Liability Company').
 # %Listed, CleanTalk.org: 23.08%.
-# Updated: 2018.02.25
+# Updated: 2018.02.25 / Checked: 2018.06.25
 
 2a00:a960::/32 Deny Cloud
 Origin: RU
@@ -4963,41 +4962,35 @@ Tag: DATAPRO
 
 
 # ASN 12025 ("IO Capital Princess, LLC").
-# %Listed, Google Malware Dashboard: 0.51%.
+# Careful when updating; Contains some prefixes that should be marked differently.
+# Anything citing "VPN", "VPS" should be marked as "proxy".
+# Exclude (clean; don't need to list them): ^.*(Infinity|St Joseph|Brisbane Public|Decision North|Scholer LLP).*$\n
+# %Listed, Google Malware Dashboard: 0.57%.
 # %Listed, CleanTalk.org: 6.06%.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2018.02.25
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2018.06.25
 
 2a05:9800:4::/48 Deny Cloud
 2a05:9800:ff00::/40 Deny Cloud
 Origin: GB
-2406:c300::/32 Deny Cloud
-Origin: SG
-2001:19d0:600::/40 Deny Cloud
 2607:a500:4::/48 Deny Cloud
 2607:a500:8::/48 Deny Cloud
 2607:a500:c::/48 Deny Cloud
 2607:a500:d000::/36 Deny Cloud
 2607:a500:e000::/35 Deny Cloud
-2620:136:bb::/48 Deny Cloud
 Origin: US
 Tag: IO Capital Princess
 
 
 # ASN 51765 ("Oy Creanova Hosting Solutions Ltd").
-# %Listed, Google Malware Dashboard: 0.09%.
 # %Listed, CleanTalk.org: 43.80%.
-# Stop Forum Spam (SFS) listings: 7,975.
-# Updated: 2017.10.29 / Checked: 2018.02.24
+# Stop Forum Spam (SFS) listings: 8,958.
+# Updated: 2018.06.25
 
 2a02:2808:5401::/48 Deny Cloud
 Origin: CZ
 2001:978:7400::/48 Deny Cloud
 Origin: DE
-2a06:1700:1::/48 Deny Cloud
-Origin: RO
-2a04:5200:68::/48 Deny Cloud
-Origin: RU
 Tag: Oy Creanova Hosting
 
 
@@ -5396,6 +5389,17 @@ Origin: MX
 Tag: TV Internacional
 
 
+# ASN 198605 ("AVAST Software s.r.o.").
+# Caught attempting to access sensitive parts of WP sites for unknown reasons.
+# %Listed, CleanTalk.org: 24.82%.
+# Stop Forum Spam (SFS) listings: 13,738.
+# Updated: 2018.06.24
+
+2a0b:e182:200::/45 Deny Cloud
+Origin: CZ
+Tag: AVAST Software
+
+
 # ASN 43317 ('OOO "Fishnet Communications"').
 # %Listed, Google Malware Dashboard: 1.57%.
 # %Listed, CleanTalk.org: 46.95%.
@@ -5526,8 +5530,8 @@ Tag: Dimension Data
 
 
 # ASN 50300 ("CustodianDC Limited").
-# %Listed, Google Malware Dashboard: 0.98%.
-# Updated: 2018.02.25
+# At last check, not actively reported by any DBs anywhere anymore. Possible candidate for future removal.
+# Updated: 2018.02.25 / Checked: 2018.06.25
 
 2a00:1c10::/42 Deny Cloud
 2a00:1c10:40::/44 Deny Cloud
@@ -5541,23 +5545,11 @@ Tag: CustodianDC
 # ASN 60868 ("Runtime Collective Limited").
 # Trademark protection organisation; Scans websites looking for potential infringements in order to send legal notices
 # on behalf of clients. Serves no benefit to the websites being scanned.
-# Updated: 2018.02.25
+# Updated: 2018.02.25 / Checked: 2018.06.25
 
 2a00:77e0::/32 Deny Cloud
 Origin: GB
 Tag: Brandwatch
-
-
-# ASN 8708 ("RCS & RDS SA").
-# %Listed, Google Malware Dashboard: 3.54%.
-# %Listed, CleanTalk.org: 16.07%.
-# %Listed, abuseat.org (CBL-Listed): 1.23%.
-# Stop Forum Spam (SFS) listings: 1,653.
-# Updated: 2018.02.27
-
-2a02:2f00::/28 Deny Cloud
-Origin: RO
-Tag: RCS & RDS SA
 
 
 # ASN 395978 ("OkServers LLC").
@@ -5973,3 +5965,15 @@ Origin: CZ
 2a0c:8c40::/29 Deny Cloud
 Origin: RU
 Tag: Master Internet
+
+
+# ASN 200651 ("Flokinet Ltd").
+# %Listed, Google Malware Dashboard: 0.46%.
+# %Listed, CleanTalk.org: 86.59%.
+# Stop Forum Spam (SFS) listings: 31,283.
+# Updated: 2018.06.25
+
+2a06:1700::/47 Deny Cloud
+2a06:1700:2::/48 Deny Cloud
+Origin: RO
+Tag: Flokinet Ltd

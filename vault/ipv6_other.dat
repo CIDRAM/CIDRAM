@@ -36,6 +36,31 @@ Origin: SE
 Tag: Cogent VPNs+Proxies
 
 
+# ASN 36351 ("SoftLayer Technologies").
+# Ranges change frequently / Should update often.
+# Careful when updating; Signatures reflect varying block reasons, separated by different tags in different files.
+# Section is split across multiple files.
+# %Listed, Google Malware Dashboard: 0.19%.
+# %Listed, CleanTalk.org: 30.68%.
+# Stop Forum Spam (SFS) listings: 14,739.
+
+# SoftLayer VPNs and proxies.
+# Includes: Anything citing "TEFINCOM", "VPN", "proxy", "Privat Kommunikation", "Secure Internet".
+# ^(.*(TEFINCOM|VPN|Proxy|Privat Kommunikation|Secure Internet).*)$
+# Excludes: Everything else.
+# Updated: 2018.06.24
+
+2400:bb40:1000::/40 Deny Proxy
+Origin: PA
+2602:ff84:1::/48 Deny Proxy
+2602:ff84:c::/47 Deny Proxy
+2602:ff84:f::/48 Deny Proxy
+2602:ff84:10::/47 Deny Proxy
+2602:ff84:12::/48 Deny Proxy
+Origin: US
+Tag: SoftLayer VPNs
+
+
 # ASN 59898 ("AllSafe Sarl").
 # Related to "ProtonVPN", "ProtonMail", and "Proton Technologies". Provides VPNs and proxies, both public and private.
 # No listings on any BLs yet, but we've been seeing some strange, bot-like activity from them via access logs and

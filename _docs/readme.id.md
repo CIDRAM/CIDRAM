@@ -1205,56 +1205,54 @@ Direktif konfigurasi yang bertanggung jawab untuk jenis pencatatan ini, dan untu
 
 Ketika direktif ini dibiarkan kosong, jenis pencatatan ini akan tetap dinonaktifkan.
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 LOG reCAPTCHA
 
-This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
+Jenis pencatatan ini secara khusus berkaitan dengan instance reCAPTCHA, dan hanya terjadi ketika pengguna mencoba menyelesaikan instance reCAPTCHA.
 
-A reCAPTCHA log entry contains the IP address of the user attempting to complete a reCAPTCHA instance, the date and time that the attempt occurred, and the reCAPTCHA state. A reCAPTCHA log entry typically looks something like this (as an example):
+Entri log reCAPTCHA berisi alamat IP pengguna yang berusaha menyelesaikan instance reCAPTCHA, tanggal dan waktu ketika itu terjadi, dan status reCAPTCHA. Entri log reCAPTCHA biasanya terlihat seperti ini (sebagai contoh):
 
 ```
-IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
+Alamat IP: x.x.x.x - Tanggal/Waktu: Day, dd Mon 20xx hh:ii:ss +0000 - Status reCAPTCHA: Lulus!
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+Direktif konfigurasi yang bertanggung jawab untuk pencatatan reCAPTCHA adalah:
 - `recaptcha` -> `logfile`
 
-##### 11.3.2 FRONT-END LOGGING
+##### 11.3.2 LOG BAGIAN DEPAN
 
-This type of logging relates front-end login attempts, and occurs only when a user attempts to log into the front-end (assuming front-end access is enabled).
+Jenis pencatatan ini berhubungan dengan upaya masuk bagian depan, dan hanya terjadi ketika pengguna mencoba masuk ke bagian depan (dengan asumsi akses bagian depan diaktifkan).
 
-A front-end log entry contains the IP address of the user attempting to log in, the date and time that the attempt occurred, and the results of the attempt (successfully logged in, or failed to log in). A front-end log entry typically looks something like this (as an example):
+Entri log untuk bagian depan berisi alamat IP pengguna yang mencoba masuk, tanggal dan waktu ketika itu terjadi, dan hasil dari upaya tersebut (berhasil masuk, atau gagal masuk). Entri log untuk bagian depan biasanya terlihat seperti ini (sebagai contoh):
 
 ```
-x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
+x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Pengguna yang online.
 ```
 
-The configuration directive responsible for front-end logging is:
+Direktif konfigurasi yang bertanggung jawab untuk pencatatan bagian depan adalah:
 - `general` -> `FrontEndLog`
 
-##### 11.3.3 LOG ROTATION
+##### 11.3.3 ROTASI LOG
 
-You may want to purge logs after a period of time, or may be required to do so by law (i.e., the amount of time that it's legally permissible for you to retain logs may be limited by law). You can achieve this by including date/time markers in the names of your logfiles as per specified by your package configuration (e.g., `{yyyy}-{mm}-{dd}.log`), and then enabling log rotation (log rotation allows you to perform some action on logfiles when specified limits are exceeded).
+Anda mungkin ingin membersihkan log setelah jangka waktu tertentu, atau mungkin diminta untuk melakukannya oleh hukum (yaitu, jumlah waktu yang diizinkan secara hukum bagi Anda untuk mempertahankan log mungkin dibatasi oleh hukum). Anda dapat mencapai ini dengan menyertakan penanda tanggal/waktu dalam nama-nama file log Anda sesuai yang ditentukan oleh konfigurasi paket Anda (misalnya, `{yyyy}-{mm}-{dd}.log`), dan kemudian mengaktifkan rotasi log (rotasi log memungkinkan Anda untuk melakukan beberapa tindakan pada file log ketika batas yang ditentukan terlampaui).
 
-For example: If I was legally required to delete logs after 30 days, I could specify `{dd}.log` in the names of my logfiles (`{dd}` represents days), set the value of `log_rotation_limit` to 30, and set the value of `log_rotation_action` to `Delete`.
+Sebagai contoh: Jika saya secara hukum diminta untuk menghapus log setelah 30 hari, saya bisa menentukan `{dd}.log` dalam nama file log saya (`{dd}` represents days), atur nilai `log_rotation_limit` ke 30, dan atur nilai `log_rotation_action` ke `Delete`.
 
-Conversely, if you're required to retain logs for an extended period of time, you could either not use log rotation at all, or you could set the value of `log_rotation_action` to `Archive`, to compress logfiles, thereby reducing the total amount of disk space that they occupy.
+Sebaliknya, jika Anda diminta untuk menyimpan log untuk jangka waktu yang panjang, Anda bisa memilih untuk tidak menggunakan rotasi log sama sekali, atau Anda bisa mengatur nilai `log_rotation_action` ke `Archive`, untuk mengompres file log, sehingga mengurangi jumlah total ruang disk yang mereka tempati.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 PEMOTONGAN LOG
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+Ini juga memungkinkan untuk memotong file log individu ketika mereka melebihi ukuran tertentu, jika ini adalah sesuatu yang mungkin Anda butuhkan atau ingin lakukan.
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 PSEUDONIMISASI ALAMAT IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+Pertama, jika Anda tidak akrab dengan istilah ini, "pseudonimisasi" mengacu pada memproses data pribadi sedemikian rupa sehingga tidak dapat diidentifikasi ke subjek data tertentu lagi tanpa beberapa informasi tambahan, dan dengan ketentuan bahwa informasi tambahan tersebut dipelihara secara terpisah dan tunduk pada tindakan teknis dan organisasi untuk memastikan bahwa data pribadi tidak dapat diidentifikasi kepada orang alami.
 
 In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
 

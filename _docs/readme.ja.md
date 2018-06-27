@@ -332,7 +332,7 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 *技術的な説明：この文脈では、「最も古い」とは「最近変更されていない」という意味です。*
 
 "timeOffset" （タイム・オフセット）
-- お使いのサーバの時刻は、​ローカル時刻と一致しない場合、​あなたのニーズに応じて、​時間を調整するために、​あなたはここにオフセットを指定することができます。​しかし、​その代わりに、​一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、​でも時々（といった、​限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、​したがって、​このオプションは、​ここで提供されています。​オフセット分であります。
+- お使いのサーバーの時刻は、​ローカル時刻と一致しない場合、​あなたのニーズに応じて、​時間を調整するために、​あなたはここにオフセットを指定することができます。​しかし、​その代わりに、​一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、​でも時々（といった、​限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、​したがって、​このオプションは、​ここで提供されています。​オフセット分であります。
 - 例（１時間を追加します）：`timeOffset=60`
 
 "timeFormat"
@@ -1046,7 +1046,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 #### <a name="WHAT_CAN_I_USE_FOR_DEFAULT_DNS"></a>「default_dns」には何が使えますか？
 
-あなたが提案を探しているならば、「[public-dns.info](https://public-dns.info/)」と「[OpenNIC](https://servers.opennic.org/)」は既知の公開ＤＮＳサーバの広範なリストを提供します。​または、次の表を参照してください：
+あなたが提案を探しているならば、「[public-dns.info](https://public-dns.info/)」と「[OpenNIC](https://servers.opennic.org/)」は既知の公開ＤＮＳサーバーの広範なリストを提供します。​または、次の表を参照してください：
 
 ＩＰ | オペレーター
 ---|---
@@ -1085,9 +1085,10 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 より詳細な答え：​CIDRAMは、望ましくないトラフィックがあなたのウェブサイトに及ぼす影響を軽減するのに役立ちます（ウェブサイトの帯域幅コストを削減します）、​望ましくないトラフィックがあなたのハードウェアに及ぼす影響を軽減するのに役立ちます（たとえば、リクエストを処理して提供するサーバーの能力）、​望ましくないトラフィックに関連するその他のさまざまな潜在的な悪影響を軽減するのに役立ちます。​しかし、この質問を理解するためには、２つの重要なことを覚えておく必要があります。
 
-Firstly, CIDRAM is a PHP package, and therefore operates at the machine where PHP is installed. This means that CIDRAM can only see and block a request after the server has already received it. Secondly, effective DDoS mitigation should filter requests before they reach the server targeted by the DDoS attack. Ideally, DDoS attacks should be detected and mitigated by solutions capable of dropping or rerouting traffic associated with attacks, before it reaches the targeted server in the first place.
+１. CIDRAMはＰＨＰパッケージであるため、ＰＨＰがインストールされているマシンで動作します。​このため、CIDRAMは、サーバーがすでに要求を受信した後にのみ要求を表示およびブロックできます。
+２. 効果的なＤＤｏＳ軽減は、ＤＤｏＳ攻撃の対象となるサーバーに到達する前に要求をフィルタリングする必要があります。​理想的には、DDoS攻撃は、ターゲット・サーバーに到達する前に、攻撃に関連するトラフィックをドロップまたは再ルーティングできるソリューションによって検出および緩和する必要があります。
 
-This can be implemented using dedicated, on-premise hardware solutions, and/or cloud-based solutions such as dedicated DDoS mitigation services, routing a domain's DNS through DDoS-resistant networks, cloud-based filtering, or some combination thereof. In any case though, this subject is a little too complex to explain thoroughly with just a mere paragraph or two, so I would recommend doing further research if this is a subject you want to pursue. When the true nature of DDoS attacks is properly understood, this answer will make more sense.
+これは、専用のオンプレミス・ハードウェア・ソリューション、専用のＤＤｏＳ軽減サービスなどのクラウド・ベースのソリューション、ＤＤｏＳ対応ネットワークを介してドメインのＤＮＳをルーティング、クラウド・ベースのフィルタリング、またはそれらのいくつかの組み合わせを使用して実施することができる。​いずれにしても、この主題はちょうど単なる段落または２つで完全に説明するのは少し複雑すぎる。​これがあなたが追求したい科目であれば、さらなる研究をすることをお勧めします。​ＤＤｏＳ攻撃の真の性質が適切に理解されている場合、この回答はより理にかなっています。
 
 ---
 
@@ -1250,9 +1251,11 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 ＩＰアドレス・スドニマイゼーション
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+まず、あなたが用語に精通していない場合：​「スドニマイゼーション」（pseudonymisation）とは、補足情報なしで特定のデータ対象に特定できないような個人データの処理を指します​（ただし、そのような補足情報は、個人データが自然人に特定されないことを保証するために、個別に維持され、技術的および組織的措置を受けるものとします）。
+
+次のリソースは詳細情報を提供します。
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 

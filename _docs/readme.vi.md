@@ -1250,9 +1250,11 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 PSEUDONYMISATION ĐỊA CHỈ IP
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Thứ nhất, nếu bạn không quen thuộc với thuật ngữ này, "pseudonymisation" đề cập đến việc xử lý dữ liệu cá nhân sao cho không thể xác định được dữ liệu cá nhân cho bất kỳ chủ đề dữ liệu cụ thể nào nữa trừ khi có thông tin bổ sung, và miễn là thông tin bổ sung đó được duy trì riêng biệt và phải chịu sự các biện pháp kỹ thuật và tổ chức để đảm bảo rằng dữ liệu cá nhân không thể được xác định cho bất kỳ người tự nhiên nào.
+
+Các tài nguyên sau đây có thể giúp giải thích chi tiết hơn:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 

@@ -1252,7 +1252,9 @@ Al contrario, se è necessario conservare i log per un lungo periodo di tempo, p
 
 ##### 11.3.5 PSEUDONIMIZZAZIONE DELL'INDIRIZZO IP
 
-Innanzitutto, se non hai familiarità con il termine "pseudonimizzazione", le seguenti risorse possono aiutarti a spiegarlo in dettaglio:
+Innanzitutto, se non hai familiarità con il termine, "pseudonimizzazione" si riferisce al trattamento di dati personali in quanto tali che non può più essere identificato con alcun interessato specifico senza informazioni supplementari, e a condizione che tali informazioni supplementari siano mantenute separatamente e soggette a misure tecniche e organizzative per garantire che i dati personali non possano essere identificati da alcuna persona naturale.
+
+Le seguenti risorse possono aiutare a spiegarlo in modo più dettagliato:
 - [[ipsoa.it] Crittografia e pseudonimizzazione nel GDPR](http://www.ipsoa.it/documents/lavoro-e-previdenza/rapporto-di-lavoro/quotidiano/2018/03/17/crittografia-pseudonimizzazione-gdpr)
 
 In alcune circostanze, potrebbe essere richiesto per legge di anonimizzare o pseudonimizzare qualsiasi informazione personale raccolta, elaborata, o memorizzata. Sebbene questo concetto sia esistito già da un po' di tempo, GDPR/DSGVO menziona in particolare, e in particolare incoraggia la "pseudonimizzazione".

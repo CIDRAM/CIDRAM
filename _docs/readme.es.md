@@ -1252,7 +1252,9 @@ También es posible truncar archivos de registro individuales cuando exceden un 
 
 ##### 11.3.5 SEUDONIMIZACIÓN DE DIRECCIONES IP
 
-Primeramente, si no está familiarizado con el término "seudonimización", los siguientes recursos pueden ayudar a explicarlo con cierto detalle:
+Primeramente, si no está familiarizado con el término, "seudonimización" se refiere al procesamiento de datos personales como tal que ya no se puede identificar a ningún sujeto de datos específico sin información adicional, y siempre que dicha información adicional se mantenga por separado y esté sujeta a medidas técnicas y organizativas para garantizar que los datos personales no puedan identificarse a ninguna persona física.
+
+Los siguientes recursos pueden ayudar a explicarlo con más detalle:
 - [[confilegal.com] La importancia del seudonimización en el nuevo Reglamento de Protección de Datos](https://confilegal.com/20170129-la-importancia-del-seudonimizacion-en-el-nuevo-reglamento-de-proteccion-de-datos/)
 - [[forlopd.es] ¿Cómo me protege la seudonimización?](https://www.forlopd.es/web/blog/index.php/seudonimizacion-y-proteccion-de-datos/)
 - [[Wikipedia] Seudonimización](https://es.wikipedia.org/wiki/Seudonimizaci%C3%B3n)

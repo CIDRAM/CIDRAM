@@ -1252,7 +1252,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+
+The following resources can help to explain it in more detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[dataprotection.ie] Anonymisation and pseudonymisation](https://www.dataprotection.ie/docs/Anonymisation-and-pseudonymisation/1594.htm)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)

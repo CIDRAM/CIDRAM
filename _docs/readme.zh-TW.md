@@ -1251,9 +1251,11 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 *相關配置指令：*
 - `general` -> `truncate`
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### 11.3.5 IP地址『PSEUDONYMISATION』
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+首先，如果您不熟悉這個術語，『pseudonymisation』是指處理個人數據，使其不能在沒有補充信息的情況下被識別為屬於任何特定的『數據主體』，並規定這些補充信息分開保存，採取技術和組織措施以確保個人數據不能被識別給任何自然人。
+
+以下資源可以幫助更詳細地解釋它：
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 

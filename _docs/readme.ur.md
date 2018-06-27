@@ -1225,13 +1225,13 @@ IP | آپریٹر
 
 #### <div dir="rtl"><a name="DDOS_ATTACKS"></a>کیا CIDRAM DDoS حملوں کے خلاف میری ویب سائٹ کی حفاظت کرتا ہے؟<br /><br /></div>
 
-Short answer: No.
+<div dir="rtl">یہ نہیں کرے گا.<br /><br /></div>
 
-Slightly longer answer: CIDRAM will help reduce the impact that unwanted traffic can have on your website (thus reducing your website's bandwidth costs), will help reduce the impact that unwanted traffic can have on your hardware (e.g., your server's ability to process and serve requests), and can help to reduce various other potential negative effects associated with unwanted traffic. However, there are two important things that must be remembered in order to understand this question.
+<div dir="rtl">مزید تفصیل میں: CIDRAM اس اثر کو کم کرنے میں مدد دے گی جو ناپسندیدہ ٹریفک آپ کی ویب سائٹ اور ہارڈ ویئر پر ہوسکتی ہے (اس کا مطلب سستا ویب سائٹ بینڈوڈتھ اخراجات اور صحت مند سرور). تاہم، اس سوال کو سمجھنے کے لۓ دو اہم چیزیں ہیں جو یاد رکھنا ضروری ہے.<br /><br /></div>
 
-Firstly, CIDRAM is a PHP package, and therefore operates at the machine where PHP is installed. This means that CIDRAM can only see and block a request after the server has already received it. Secondly, effective DDoS mitigation should filter requests before they reach the server targeted by the DDoS attack. Ideally, DDoS attacks should be detected and mitigated by solutions capable of dropping or rerouting traffic associated with attacks, before it reaches the targeted server in the first place.
+<div dir="rtl">١. CIDRAM ایک پی ایچ پی پیکیج ہے، اور اس وجہ سے چلاتا ہے جہاں PHP انسٹال ہے. اس کا مطلب یہ ہے کہ سرور پہلے سے موصول ہونے کے بعد CIDRAM صرف درخواستوں کو دیکھ سکتے ہیں اور بلاک کرسکتے ہیں. ٢. DDoS حملے کے ذریعہ ھدف کردہ سرور تک پہنچنے سے قبل مؤثر DDoS کمیشن کو درخواستوں کو فلٹر کرنا چاہئے. مثالی طور پر، وہ ان جگہوں سے پتہ لگانے اور کم کرنے کے قابل ہونا چاہئے جو حملوں کے ساتھ منسلک ٹریفک کو ختم کرنے میں کامیاب ہوسکتی ہیں، اس سے پہلے کہ وہ پہلی جگہ میں ھدف شدہ سرور تک پہنچے.<br /><br /></div>
 
-This can be implemented using dedicated, on-premise hardware solutions, and/or cloud-based solutions such as dedicated DDoS mitigation services, routing a domain's DNS through DDoS-resistant networks, cloud-based filtering, or some combination thereof. In any case though, this subject is a little too complex to explain thoroughly with just a mere paragraph or two, so I would recommend doing further research if this is a subject you want to pursue. When the true nature of DDoS attacks is properly understood, this answer will make more sense.
+<div dir="rtl">اس کو نافذ کرنے کے کچھ طریقے: وقف ہارڈ ویئر کے حل. وقف DDoS کمیشن کی خدمات. DDoS مزاحم نیٹ ورک کے ذریعہ ڈومین کے DNS کو روٹنگ. کلاؤڈ پر مبنی فلٹرنگ. متبادل طور پر: اس کا کچھ مجموعہ کسی بھی صورت میں، یہ مضمون پیچیدہ ہے، لہذا اگر آپ اس میں دلچسپی رکھتے ہیں تو میں مزید تحقیق کروں گا. جب DDoS کے حملوں کی صحیح نوعیت مناسب طریقے سے سمجھ گئی ہے، تو یہ جواب زیادہ احساس کرے گا.<br /><br /></div>
 
 ---
 
@@ -1406,7 +1406,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+
+The following resources can help to explain it in more detail:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 

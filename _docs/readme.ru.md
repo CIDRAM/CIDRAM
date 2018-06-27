@@ -1252,7 +1252,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### 11.3.5 ПСЕВДОНИФИКАЦИЯ IP-АДРЕСА
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Во-первых, если вы не знакомы с термином, «псевдонификация» относится к обработке персональных данных таким образом, что она не может быть идентифицирована ни с каким конкретным объектом данных без дополнительной информации, и при условии, что такая дополнительная информация поддерживается отдельно и подлежит техническим и организационным мерам для обеспечения того, чтобы личные данные не могли быть идентифицированы ни одному физическому лицу.
+
+Следующие ресурсы могут помочь объяснить это более подробно:
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 

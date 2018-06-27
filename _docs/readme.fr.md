@@ -1252,7 +1252,9 @@ Il est également possible de tronquer des fichiers journaux individuels lorsqu'
 
 ##### 11.3.5 PSEUDONYMISATION D'ADRESSE IP
 
-Si vous n'êtes pas familier avec le terme « pseudonymisation », les ressources suivantes peuvent vous aider à l'expliquer en détail :
+Premièrement, si vous n'êtes pas familier avec le terme, « pseudonymisation » se réfère au traitement des données personnelles en tant que tel, il ne peut plus être identifié à une personne concernée sans information supplémentaire, et à condition que ces informations supplémentaires soient conservées séparément, et soumis à des mesures techniques et organisationnelles pour s'assurer que les données personnelles ne peuvent être identifiées à aucune personnes naturelles.
+
+Les ressources suivantes peuvent aider à l'expliquer plus en détail :
 - [[les-infostrateges.com] RGPD : entre anonymisation et pseudonymisation](http://www.les-infostrateges.com/actu/18012505/rgpd-entre-anonymisation-et-pseudonymisation)
 - [[Wikipedia] Pseudonymisation](https://fr.wikipedia.org/wiki/Pseudonymisation)
 

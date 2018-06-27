@@ -1081,13 +1081,14 @@ IP | 운영자
 
 #### <a name="DDOS_ATTACKS"></a>CIDRAM이 내 웹 사이트를 DDoS 공격으로부터 보호합니까?
 
-Short answer: No.
+짧은 대답 : 아니오.
 
-More detailed answer: CIDRAM will help reduce the impact that unwanted traffic can have on your website (thus reducing your website's bandwidth costs), will help reduce the impact that unwanted traffic can have on your hardware (e.g., your server's ability to process and serve requests), and can help to reduce various other potential negative effects associated with unwanted traffic. However, there are two important things that must be remembered in order to understand this question.
+더 자세한 대답 : CIDRAM은 원하지 않는 트래픽이 웹 사이트 (웹 사이트의 대역폭 비용 절감) 및 하드웨어에 (예를 들어, 요청을 처리하고 제공하는 서버 기능) 미칠 수있는 영향을 줄이는 데 도움이됩니다. 또한 원하지 않는 트래픽과 관련된 여러 가지 잠재적 인 부정적인 영향을 줄일 수 있습니다. 그러나이 질문을 이해하기 위해서는 반드시 기억해야 할 중요한 두 가지 사항이 있습니다.
 
-Firstly, CIDRAM is a PHP package, and therefore operates at the machine where PHP is installed. This means that CIDRAM can only see and block a request after the server has already received it. Secondly, effective DDoS mitigation should filter requests before they reach the server targeted by the DDoS attack. Ideally, DDoS attacks should be detected and mitigated by solutions capable of dropping or rerouting traffic associated with attacks, before it reaches the targeted server in the first place.
+1. CIDRAM은 PHP 패키지이므로 PHP가 설치된 시스템에서 작동합니다. 이 때문에 CIDRAM은 서버가 이미 요청을 수신 한 후에 만 요청을 인식하고 차단할 수 있습니다.
+2. 효과적인 DDoS 완화는 요청이 DDoS 공격의 대상인 서버에 도달하기 전에 요청을 필터링해야합니다. DDoS 공격은 대상 서버에 도달하기 전에 공격과 관련된 트래픽을 중단 또는 재 라우팅 할 수있는 솔루션에 의해 탐지되고 완화되어야합니다.
 
-This can be implemented using dedicated, on-premise hardware solutions, and/or cloud-based solutions such as dedicated DDoS mitigation services, routing a domain's DNS through DDoS-resistant networks, cloud-based filtering, or some combination thereof. In any case though, this subject is a little too complex to explain thoroughly with just a mere paragraph or two, so I would recommend doing further research if this is a subject you want to pursue. When the true nature of DDoS attacks is properly understood, this answer will make more sense.
+이것은 전용 "온 프레미스" 하드웨어 솔루션, 전용 DDoS 완화 서비스와 같은 클라우드 기반 솔루션, DDoS 방지 네트워크를 통해 도메인의 DNS 라우팅, 클라우드 기반 필터링, 또는 이들의 조합 일 수있다를 사용하여 구현할 수 있습니다. 어쨌든, 이 주제는 단순한 단락 또는 2 단으로 철저히 설명하기에는 너무 복잡합니다. 이것이 당신이 추구하고자하는 주제라면 더 깊은 연구를하는 것이 좋습니다. DDoS 공격의 진정한 본질이 제대로 이해되면이 대답이 더욱 의미가 있습니다.
 
 ---
 
@@ -1252,7 +1253,9 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 
 ##### 11.3.5 IP ADDRESS PSEUDONYMISATION
 
-Firstly, if you're not familiar with the term "pseudonymisation", the following resources can help explain it in some detail:
+Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+
+다음 자료는 추가 정보를 제공합니다.
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 

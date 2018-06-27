@@ -1252,8 +1252,7 @@ Também é possível truncar arquivos de registro individuais quando eles excede
 
 ##### 11.3.5 PSEUDONIMIZAÇÃO DE ENDEREÇOS IP
 
-O site [OpenLimits](http://www.openlimits.pt/pt/thinking-ahead-blog/glossario-rgpd-regulamento-europeu-protecao-dados/?all=1) fornece a seguinte explicação para o significado de "pseudonimização":
-> Tratamento de dados pessoais de forma a que deixem de poder ser atribuídos a um titular de dados específico sem recorrer a informações suplementares, desde que essas informações suplementares sejam mantidas separadamente e sujeitas a medidas técnicas e organizativas para assegurar que os dados pessoais não possam ser atribuídos a uma pessoa singular identificada ou identificável.
+Em primeiro lugar, se você não estiver familiarizado com o termo, "pseudonimização" refere-se ao processamento de dados pessoais como tal que não pode ser identificado a nenhuma pessoa específica sem informações suplementares, e desde que tais informações suplementares sejam mantidas separadamente e sujeitas a medidas técnicas e organizacionais para assegurar que os dados pessoais não possam ser identificados a nenhuma pessoa natural.
 
 Em algumas circunstâncias, você pode ser legalmente obrigado a anonimizar ou pseudonimizar qualquer PII coletada, processada ou armazenada. Embora este conceito já existe há algum tempo, o GDPR/DSGVO menciona notavelmente, e especificamente incentiva a "pseudonimização".
 

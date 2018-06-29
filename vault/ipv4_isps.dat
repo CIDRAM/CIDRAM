@@ -1585,13 +1585,12 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.46%.
+# %Listed, Google Malware Dashboard: 0.28%.
 # %Listed, CleanTalk.org: 10.52%.
-# %Listed, abuseat.org (CBL-Listed): 0.44%.
-# Stop Forum Spam (SFS) listings: 4,380.
-# Updated: 2018.03.08
+# %Listed, abuseat.org (CBL-Listed): 0.30%.
+# Stop Forum Spam (SFS) listings: 6,769.
+# Updated: 2018.06.28
 
-2.20.152.0/22 Deny Generic
 92.122.128.0/20 Deny Generic
 95.101.4.0/22 Deny Generic
 Origin: EU
@@ -1619,10 +1618,11 @@ Origin: EU
 192.117.232.0/21 Deny Generic
 212.25.64.0/18 Deny Generic
 212.179.0.0/16 Deny Generic
-217.194.200.0/23 Deny Generic
+217.194.200.0/24 Deny Generic
 Origin: IL
 8.253.255.0/24 Deny Generic
 23.34.224.0/20 Deny Generic
+23.45.121.0/24 Deny Generic
 23.195.8.0/22 Deny Generic
 72.246.151.0/24 Deny Generic
 104.70.127.0/24 Deny Generic
@@ -2028,58 +2028,57 @@ Tag: 10dencehispahard
 
 
 # ASN 45753 ("Unit 1205-1207").
-# %Listed, Google Malware Dashboard: 6.28%.
+# Confirmed data hosters: "Simcentric", "DATAPLUGS.COM", "Ethr.Net", "CLOUD LIMITED", "NETSEC".
+# ^.*(Simcentric|DATAPLUGS\.COM|Ethr\.Net|CLOUD LIMITED|NETSEC).*$\n
+# Confirmed data hosters split to the cloud services signature files.
+# Everything else remains in the ISPs signature files.
+# %Listed, Google Malware Dashboard: 7.00%.
 # %Listed, CleanTalk.org: 32.79%.
-# Stop Forum Spam (SFS) listings: 38.
-# Updated: 2018.03.15
+# Stop Forum Spam (SFS) listings: 37.
+# Updated: 2018.06.30
 
 103.42.104.0/22 Deny Generic
 103.71.144.0/23 Deny Generic
-103.100.140.0/22 Deny Generic
+103.100.140.0/23 Deny Generic
+103.106.246.0/24 Deny Generic
 106.3.86.0/24 Deny Generic
 118.91.240.0/20 Deny Generic
 183.182.12.0/22 Deny Generic
 Origin: CN
-43.225.196.0/22 Deny Generic
 45.121.140.0/22 Deny Generic
-52.128.224.0/19 Deny Generic
-103.1.224.0/22 Deny Generic
+52.128.253.0/24 Deny Generic
 103.30.24.0/22 Deny Generic
-103.44.160.0/22 Deny Generic
 103.61.240.0/22 Deny Generic
 103.70.76.0/23 Deny Generic
-103.71.252.0/23 Deny Generic
 103.80.168.0/22 Deny Generic
 103.84.84.0/22 Deny Generic
 103.91.8.0/22 Deny Generic
-103.194.184.0/22 Deny Generic
 103.199.104.0/22 Deny Generic
 103.203.48.0/22 Deny Generic
 103.212.96.0/22 Deny Generic
 103.240.40.0/22 Deny Generic
 110.173.48.0/20 Deny Generic
 111.68.0.0/20 Deny Generic
-112.121.160.0/19 Deny Generic
 116.213.36.0/22 Deny Generic
 119.42.144.0/21 Deny Generic
 137.59.20.0/22 Deny Generic
 139.5.200.0/22 Deny Generic
-148.66.0.0/19 Deny Generic
-148.66.48.0/20 Deny Generic
 175.41.16.0/20 Deny Generic
-180.178.32.0/19 Deny Generic
-182.16.0.0/17 Deny Generic
-216.118.224.0/19 Deny Generic
+202.61.97.0/24 Deny Generic
+202.61.111.0/24 Deny Generic
+203.33.189.0/24 Deny Generic
+216.118.240.0/20 Deny Generic
 Origin: HK
 63.216.57.0/24 Deny Generic
 63.220.4.0/24 Deny Generic
 63.220.7.0/24 Deny Generic
 63.221.138.0/24 Deny Generic
 69.176.88.0/23 Deny Generic
-96.43.96.0/24 Deny Generic
 103.72.82.0/23 Deny Generic
-216.83.40.0/21 Deny Generic
-216.83.56.0/21 Deny Generic
+141.193.152.0/21 Deny Generic
+192.252.176.0/20 Deny Generic
+192.253.224.0/20 Deny Generic
+216.83.58.0/24 Deny Generic
 Origin: US
 Tag: Unit 1205-1207
 
@@ -8851,6 +8850,19 @@ Origin: FR
 163.172.0.0/16 Deny Spam
 Origin: GB
 Tag: ONLINE S.A.S
+---
+recaptcha:
+ enabled: true
+
+
+# Detected spammy ranges belonging to otherwise benign and clean networks.
+
+# Belongs to ASN 24532 ("PT. Inet Global Indo").
+# Updated: 2018.06.30
+
+27.111.32.0/20 Deny Spam
+Origin: ID
+Tag: Misc. Spam
 ---
 recaptcha:
  enabled: true

@@ -301,11 +301,11 @@ Tag: Trend Micro
 # hacktools, scrapers, etc). Those whose websites anticipate human internet traffic from Israel should include this
 # section in their "ignore.dat" file, or else risk false positives by way of blocking innocents connecting from Israel.
 # Those whose don't anticipate any human internet traffic from Israel to their websites can safely block this ASN.
-# %Listed, Google Malware Dashboard: 0.46%.
+# %Listed, Google Malware Dashboard: 0.28%.
 # %Listed, CleanTalk.org: 10.52%.
-# %Listed, abuseat.org (CBL-Listed): 0.44%.
-# Stop Forum Spam (SFS) listings: 4,380.
-# Updated: 2018.03.08
+# %Listed, abuseat.org (CBL-Listed): 0.30%.
+# Stop Forum Spam (SFS) listings: 6,769.
+# Updated: 2018.03.08 / Checked: 2018.06.28
 
 2a02:26f0:8000::/48 Deny Generic
 Origin: EU
@@ -516,17 +516,6 @@ Tag: GREEN FLASH TRADING
 2a01:54c0::/32 Deny Generic
 Origin: NL
 Tag: Zyztm
-
-
-# ASN 45753 ("Unit 1205-1207").
-# %Listed, Google Malware Dashboard: 6.28%.
-# %Listed, CleanTalk.org: 32.79%.
-# Stop Forum Spam (SFS) listings: 38.
-# Updated: 2018.03.15
-
-2401:4c00::/32 Deny Generic
-Origin: HK
-Tag: Unit 1205-1207
 
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").

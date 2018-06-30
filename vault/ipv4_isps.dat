@@ -8866,3 +8866,29 @@ Tag: Misc. Spam
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 9123 ("OOO TimeWeb").
+# Split to ISPs signature files:
+# - "residential ethernet networks".
+# - "trade center public wi-fi & campus connectivity".
+# - "bank campus network & e-commerce cluster".
+# - "corporate internet gate".
+# ^.*(residential|trade center|campus connectivity|bank campus|corporate internet gate).*$
+# Everything else in the cloud services signature files.
+# %Listed, Google Malware Dashboard: 2.15%.
+# %Listed, CleanTalk.org: 32.05%.
+# Stop Forum Spam (SFS) listings: 142.
+# Updated: 2018.06.30
+
+188.225.8.0/21 Deny Generic
+188.225.40.0/21 Deny Generic
+188.225.56.0/23 Deny Generic
+188.225.59.0/24 Deny Generic
+188.225.60.0/22 Deny Generic
+188.225.80.0/21 Deny Generic
+Origin: RU
+Tag: OOO TimeWeb
+---
+recaptcha:
+ enabled: true

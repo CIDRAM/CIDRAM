@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.06.20).
+ * This file: Functions file (last modified: 2018.07.01).
  */
 
 /**
@@ -268,6 +268,9 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
         $CIDRAM['FileCache'] = [];
     }
     for ($FileIndex = 0; $FileIndex < $Counts['Files']; $FileIndex++) {
+        $Files[$FileIndex] = (
+            strpos($Files[$FileIndex], ':') === false
+        ) ? $Files[$FileIndex] : substr($Files[$FileIndex], strpos($Files[$FileIndex], ':') + 1);
         if (!$Files[$FileIndex]) {
             continue;
         }

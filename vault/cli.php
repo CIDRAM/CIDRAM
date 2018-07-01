@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.05.21).
+ * This file: CLI handler (last modified: 2018.07.01).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -93,10 +93,10 @@ if ($CIDRAM['argv'][1] === '-h') {
     $c = count($ArrayToValidate);
     $YAMLM = $YAMLL = false;
     for ($i = 0; $i < $c; $i++) {
-        $len = strlen($ArrayToValidate[$i]);
-        if ($len > 120) {
+        $Len = strlen($ArrayToValidate[$i]);
+        if ($Len > 120) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_L120'], $i));
-        } elseif (!$len) {
+        } elseif (!$Len) {
             continue;
         }
         if (isset($ArrayToValidate[$i + 1]) && $ArrayToValidate[$i + 1] === $ArrayToValidate[$i]) {
@@ -114,7 +114,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_CC'], $i));
         }
         if (substr($ArrayToValidate[$i], 0, 5) === 'Tag: ') {
-            if ($len > 25) {
+            if ($Len > 25) {
                 echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Tags'], $i));
             }
             continue;
@@ -151,15 +151,14 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig = ['Base' => (
             ($BasePos = strpos($ArrayToValidate[$i], ' ')) !== false
         ) ? substr($ArrayToValidate[$i], 0, $BasePos) : $ArrayToValidate[$i]];
-        if ($Sig['x'] = strpos($Sig['Base'], '/')) {
-            $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
-            $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
-            $Sig['PrefixInt'] = (int)$Sig['Prefix'];
-            $Sig['Key'] = $Sig['PrefixInt'] - 1;
-        } else {
+        if (!$Sig['x'] = strpos($Sig['Base'], '/')) {
             echo $CIDRAM['ValidatorMsg']($CIDRAM['lang']['CLI_VF_Level_1'], sprintf($CIDRAM['lang']['CLI_VL_Syntax'], $i));
             continue;
         }
+        $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
+        $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
+        $Sig['PrefixInt'] = (int)$Sig['Prefix'];
+        $Sig['Key'] = $Sig['PrefixInt'] - 1;
         $Sig['IPv4'] = $CIDRAM['ExpandIPv4']($Sig['Initial']);
         $Sig['IPv6'] = $CIDRAM['ExpandIPv6']($Sig['Initial']);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
@@ -275,7 +274,7 @@ if ($CIDRAM['argv'][1] === '-h') {
     $c = count($ArrayToValidate);
     $YAMLM = $YAMLL = false;
     for ($i = 0; $i < $c; $i++) {
-        if (!$len = strlen($ArrayToValidate[$i])) {
+        if (!$Len = strlen($ArrayToValidate[$i])) {
             continue;
         }
         if (isset($ArrayToValidate[$i + 1]) && $ArrayToValidate[$i + 1] === $ArrayToValidate[$i]) {
@@ -305,17 +304,16 @@ if ($CIDRAM['argv'][1] === '-h') {
         $Sig = ['Base' => (
             ($BasePos = strpos($ArrayToValidate[$i], ' ')) !== false
         ) ? substr($ArrayToValidate[$i], 0, $BasePos) : $ArrayToValidate[$i]];
-        if ($Sig['x'] = strpos($Sig['Base'], '/')) {
-            $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
-            $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
-            $Sig['PrefixInt'] = (int)$Sig['Prefix'];
-            $Sig['Key'] = $Sig['PrefixInt'] - 1;
-        } else {
+        if (!$Sig['x'] = strpos($Sig['Base'], '/')) {
             $FileToValidate = str_replace("\n" . $ArrayToValidate[$i] . "\n", "\n# " . $ArrayToValidate[$i] . "\n", $FileToValidate);
             $Changes++;
             $Operations++;
             continue;
         }
+        $Sig['Initial'] = substr($Sig['Base'], 0, $Sig['x']);
+        $Sig['Prefix'] = substr($Sig['Base'], $Sig['x'] + 1);
+        $Sig['PrefixInt'] = (int)$Sig['Prefix'];
+        $Sig['Key'] = $Sig['PrefixInt'] - 1;
         $Sig['IPv4'] = $CIDRAM['ExpandIPv4']($Sig['Initial']);
         $Sig['IPv6'] = $CIDRAM['ExpandIPv6']($Sig['Initial']);
         if (!$Sig['IPv4'] && !$Sig['IPv6']) {
@@ -324,20 +322,19 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Operations++;
             continue;
         }
-        if ($Sig['Base'] !== $ArrayToValidate[$i]) {
-            $Sig['Function'] = substr($ArrayToValidate[$i], strlen($Sig['Base']) + 1);
-            if ($Sig['x'] = strpos($Sig['Function'], ' ')) {
-                $Sig['Param'] = substr($Sig['Function'], $Sig['x'] + 1);
-                $Sig['Function'] = substr($Sig['Function'], 0, $Sig['x']);
-            } else {
-                $Sig['Param'] = '';
-            }
-        } else {
+        if ($Sig['Base'] === $ArrayToValidate[$i]) {
             $Sig['Param'] = $Sig['Function'] = '';
             $FileToValidate = str_replace("\n" . $ArrayToValidate[$i] . "\n", "\n# " . $ArrayToValidate[$i] . "\n", $FileToValidate);
             $Changes++;
             $Operations++;
             continue;
+        }
+        $Sig['Function'] = substr($ArrayToValidate[$i], strlen($Sig['Base']) + 1);
+        if ($Sig['x'] = strpos($Sig['Function'], ' ')) {
+            $Sig['Param'] = substr($Sig['Function'], $Sig['x'] + 1);
+            $Sig['Function'] = substr($Sig['Function'], 0, $Sig['x']);
+        } else {
+            $Sig['Param'] = '';
         }
         if ($Sig['Function'] === 'Deny' && ($Sig['n'] = substr_count($FileToValidate, "\n" . $Sig['Base'] . ' Deny ')) && $Sig['n'] > 1) {
             $Sig['x'] = strpos($FileToValidate, "\n" . $Sig['Base'] . ' Deny ') + strlen("\n" . $Sig['Base'] . ' Deny ');

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.06.22).
+ * This file: Front-end functions file (last modified: 2018.07.01).
  */
 
 /**
@@ -81,11 +81,11 @@ $CIDRAM['In'] = function ($Query) use (&$CIDRAM) {
         for ($Iter = 0; $Iter < $CountParts; $Iter++) {
             if ($Iter % 2) {
                 $Arr[] = $QueryParts[$Iter];
-            } else {
-                $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
-                foreach ($QueryParts[$Iter] as $ThisPart) {
-                    $Arr[] = $ThisPart;
-                }
+                continue;
+            }
+            $QueryParts[$Iter] = preg_split('~ +~', $QueryParts[$Iter], -1, PREG_SPLIT_NO_EMPTY);
+            foreach ($QueryParts[$Iter] as $ThisPart) {
+                $Arr[] = $ThisPart;
             }
         }
         $QueryParts = $Arr;
@@ -537,23 +537,24 @@ $CIDRAM['IsInUse'] = function (&$Component) use (&$CIDRAM) {
     $UsedWith = empty($Component['Used with']) ? '' : $Component['Used with'];
     $Description = empty($Component['Extended Description']) ? '' : $Component['Extended Description'];
     foreach ($Files as $File) {
-        if ((($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) && strpos(
-            ',' . $CIDRAM['Config']['signatures']['ipv4'] . ',',
-            ',' . $File . ','
-        ) !== false) || (($UsedWith === 'ipv6' || strpos($Description, 'signatures-&gt;ipv6') !== false) && strpos(
-            ',' . $CIDRAM['Config']['signatures']['ipv6'] . ',',
-            ',' . $File . ','
-        ) !== false) || (($UsedWith === 'modules' || strpos($Description, 'signatures-&gt;modules') !== false) && strpos(
-            ',' . $CIDRAM['Config']['signatures']['modules'] . ',',
-            ',' . $File . ','
-        ) !== false) || (
+        $File = preg_quote($File);
+        if ((($UsedWith === 'ipv4' || strpos($Description, 'signatures-&gt;ipv4') !== false) && preg_match(
+            '~,(?:[\w\d]+:)?' . $File . ',~',
+            ',' . $CIDRAM['Config']['signatures']['ipv4'] . ','
+        )) || (($UsedWith === 'ipv6' || strpos($Description, 'signatures-&gt;ipv6') !== false) && preg_match(
+            '~,(?:[\w\d]+:)?' . $File . ',~',
+            ',' . $CIDRAM['Config']['signatures']['ipv6'] . ','
+        )) || (($UsedWith === 'modules' || strpos($Description, 'signatures-&gt;modules') !== false) && preg_match(
+            '~,(?:[\w\d]+:)?' . $File . ',~',
+            ',' . $CIDRAM['Config']['signatures']['modules'] . ','
+        )) || (
             !$UsedWith &&
             strpos($Description, 'signatures-&gt;ipv4') === false &&
             strpos($Description, 'signatures-&gt;ipv6') === false &&
             strpos($Description, 'signatures-&gt;modules') === false && (
-                strpos(',' . $CIDRAM['Config']['signatures']['ipv4'] . ',', ',' . $File . ',') !== false ||
-                strpos(',' . $CIDRAM['Config']['signatures']['ipv6'] . ',', ',' . $File . ',') !== false ||
-                strpos(',' . $CIDRAM['Config']['signatures']['modules'] . ',', ',' . $File . ',') !== false
+                preg_match('~,(?:[\w\d]+:)?' . $File . ',~', ',' . $CIDRAM['Config']['signatures']['ipv4'] . ',') ||
+                preg_match('~,(?:[\w\d]+:)?' . $File . ',~', ',' . $CIDRAM['Config']['signatures']['ipv6'] . ',') ||
+                preg_match('~,(?:[\w\d]+:)?' . $File . ',~', ',' . $CIDRAM['Config']['signatures']['modules'] . ',')
             )
         )) {
             return true;
@@ -668,6 +669,7 @@ $CIDRAM['ActivateComponent'] = function ($Type) use (&$CIDRAM) {
     $CIDRAM['Activation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Activation'][$Type]),
         function ($Component) use (&$CIDRAM) {
+            $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
             return ($Component && file_exists($CIDRAM['Vault'] . $Component));
         }
     ));
@@ -694,6 +696,7 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
     $CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
         explode(',', $CIDRAM['Deactivation'][$Type]),
         function ($Component) use (&$CIDRAM) {
+            $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
             return ($Component && file_exists($CIDRAM['Vault'] . $Component));
         }
     ));
@@ -702,8 +705,11 @@ $CIDRAM['DeactivateComponent'] = function ($Type) use (&$CIDRAM) {
     }
     $CIDRAM['Deactivation'][$Type] = ',' . implode(',', $CIDRAM['Deactivation'][$Type]) . ',';
     foreach ($CIDRAM['Components']['Meta'][$CIDRAM['Targets']]['Files']['To'] as $CIDRAM['Deactivation']['ThisFile']) {
-        $CIDRAM['Deactivation'][$Type] =
-            str_replace(',' . $CIDRAM['Deactivation']['ThisFile'] . ',', ',', $CIDRAM['Deactivation'][$Type]);
+        $CIDRAM['Deactivation'][$Type] = preg_replace(
+            '~,(?:[\w\d]+:)?' . preg_quote($CIDRAM['Deactivation']['ThisFile']) . ',~',
+            ',',
+            $CIDRAM['Deactivation'][$Type]
+        );
     }
     $CIDRAM['Deactivation'][$Type] = substr($CIDRAM['Deactivation'][$Type], 1, -1);
     if ($CIDRAM['Deactivation'][$Type] !== $CIDRAM['Config']['signatures'][$Type]) {
@@ -830,6 +836,7 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
         /** Explode module list and cycle through all modules. */
         $Modules = explode(',', $CIDRAM['Config']['signatures']['modules']);
         array_walk($Modules, function ($Module) use (&$CIDRAM) {
+            $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
                 require $CIDRAM['Vault'] . $Module;
@@ -1351,11 +1358,9 @@ $CIDRAM['AppendTests'] = function (&$Component, $ReturnState = false) use (&$CID
                 }
                 $StatusHead .= '<span class="txtRd">❌ ';
             }
-            if (empty($ThisStatus['target_url'])) {
-                $StatusHead .= $ThisStatus['context'];
-            } else {
-                $StatusHead .= '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>';
-            }
+            $StatusHead .= empty($ThisStatus['target_url']) ? $ThisStatus['context'] : (
+                '<a href="' . $ThisStatus['target_url'] . '">' . $ThisStatus['context'] . '</a>'
+            );
             if (!$ReturnState) {
                 $CIDRAM['AppendToString']($TestDetails, '<br />', $StatusHead . '</span>');
             }
@@ -2171,6 +2176,7 @@ $CIDRAM['RangeTablesFetchLine'] = function (&$Data, &$Offset, &$Needle, &$HasOri
 /** Iterate range tables files. */
 $CIDRAM['RangeTablesIterateFiles'] = function (&$Arr, $Files, $SigTypes, $MaxRange, $IPType) use (&$CIDRAM) {
     foreach ($Files as $File) {
+        $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
         $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
         if (!$Data) {
             continue;

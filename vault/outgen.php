@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.06.09).
+ * This file: Output generator (last modified: 2018.07.01).
  */
 
 /** Initialise cache. */
@@ -189,6 +189,7 @@ if (
 ) {
     $CIDRAM['Modules'] = explode(',', $CIDRAM['Config']['signatures']['modules']);
     array_walk($CIDRAM['Modules'], function ($Module) use (&$CIDRAM) {
+        $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
         if (file_exists($CIDRAM['Vault'] . $Module) && is_readable($CIDRAM['Vault'] . $Module)) {
             $Infractions = $CIDRAM['BlockInfo']['SignatureCount'];
             require $CIDRAM['Vault'] . $Module;

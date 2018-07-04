@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2018.06.24).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -58,6 +58,14 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
     /** Skip further processing if the "block_cloud" directive is false, or if no section tag has been defined. */
     if (!$CIDRAM['Config']['signatures']['block_cloud'] || !$Tag) {
         return;
+    }
+
+    /** Amazon AWS bypasses. */
+    if ($Tag === 'Amazon.com, Inc') {
+        /** Embedly bypass. */
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false) {
+            return;
+        }
     }
 
     /** Bingbot bypasses. */

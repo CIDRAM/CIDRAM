@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.06.10).
+ * This file: Korean language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = '스팸 발송자,
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = '위험한 쿠키에 대해 제한된 보호 기능을 제공합니다.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = '요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = '원치 않는 봇과 관련없는 사용자 에이전트를 차단합니다.';
 $CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '위험한 호스트 차단 모듈';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '위험한 호스트 차단 모듈 (ISP)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu 차단기 모듈';
 $CIDRAM['lang']['Name: module_cookies.php'] = '선택적 쿠키 스캐너 모듈';
 $CIDRAM['lang']['Name: module_extras.php'] = '선택적 보안 엑스트라 스 모듈';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam 모듈';
+$CIDRAM['lang']['Name: module_ua.php'] = '선택적 사용자 에이전트 모듈';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex 차단기 모듈';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = '어떻게 숫자를 표시하는 �
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAM 의해 보통 제공되는 보호를 프론트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본값); False = 아니오.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default/기본 설정); False = 검색 엔진의 검증을 무효로한다.';
 $CIDRAM['lang']['config_general_silent_mode'] = '"액세스 거부" 페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다.';
+$CIDRAM['lang']['config_general_social_media_verification'] = '소셜 미디어 요청을 확인하려고합니까? 소셜 미디어 인증은 가짜 소셜 미디어 요청으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 소셜 미디어 검증을 활성화한다 (Default / 기본 설정); False = 소셜 미디어 인증을 무효로한다.';
 $CIDRAM['lang']['config_general_statistics'] = 'CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
 $CIDRAM['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';

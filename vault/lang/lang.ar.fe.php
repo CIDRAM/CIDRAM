@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.06.19).
+ * This file: Arabic language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'كتل المضي
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'يوفر بعض الحماية المحدودة ضد ملفات تعريف الارتباط الخطيرة.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'حظر وكلاء المستخدمين المرتبطين ببرامج الروبوت غير المرغوب فيها والنشاط الشنيع.';
 $CIDRAM['lang']['Name: Bypasses'] = 'يتجاوز توقيع قياسي.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'سيئة المضيفين وحدة مانع';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'سيئة المضيفين وحدة مانع (ISP)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'بايدو وحدة مانع
 $CIDRAM['lang']['Name: module_cookies.php'] = 'كوكي الماسح الضوئي';
 $CIDRAM['lang']['Name: module_extras.php'] = 'وحدة اشياء الأمن اختياري';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam وحدة';
+$CIDRAM['lang']['Name: module_ua.php'] = 'وحدة وكلاء المستخدم الاختيارية';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'بايدو وحدة مانع';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">خروج</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'كيف تفضل الأرقام لي
 $CIDRAM['lang']['config_general_protect_frontend'] = 'يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. True = نعم [افتراضي]؛ False = لا.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'محاولة للتحقق من طلبات من محركات البحث؟ التحقق من محركات البحث يضمن أنها لن تكون محظورة نتيجة لتجاوز الحد مخالفة (منع محركات البحث من موقع الويب الخاص بك عادة ما يكون لها تأثير سلبي على محرك البحث الترتيب، كبار المسئولين الاقتصاديين، إلخ). عند تمكين التحقق، محركات البحث يمكن أن يكون قد تم حظره، ولكن ليس محظورة. عند تعطيل التحقق، أنها يمكن أن تكون محظورة إذا تجاوزت الحد مخالفة. بالإضافة إلى، التحقق محرك البحث يحمي ضد الكيانات الخبيثة يتنكر في محركات البحث (سيتم حجب هذه الطلبات). True = تمكين التحقق محرك البحث [افتراضي]؛ False = تعطيل التحقق محرك البحث.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'محاولة التحقق من طلبات الشبكات الاجتماعية؟ يوفر التحقق من الشبكات الاجتماعية الحماية ضد طلبات وسائل الإعلام الاجتماعية المزيفة (سيتم حجب هذه الطلبات). True = تمكين [افتراضي]؛ False = تعطيل.';
 $CIDRAM['lang']['config_general_statistics'] = 'هل تريد تتبع إحصاءات استخدام CIDRAM؟ True = نعم؛ False = لا [افتراضي].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'شكل التواريخ المستخدم من قبل CIDRAM. ويمكن إضافة خيارات إضافية عند الطلب.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'المنطقة الزمنية تعويض في غضون دقائق.';

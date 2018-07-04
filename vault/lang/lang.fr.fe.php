@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.06.19).
+ * This file: French language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Bloque les hôtes
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Fournit quelques protections limitées contre les cookies dangereux.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Fournit quelques protections limitées contre divers vecteurs d\'attaque communément utilisé dans les demandes.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protège l\'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Bloque les agents utilisateurs associés aux bots indésirables et aux activités malveillantes.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Contournements pour signatures standard.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Module de blocage pour les hôtes mauvais';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Module de blocage pour les hôtes mauvais (ISPs)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Module de blocage pour Baidu
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Module optionnel pour l\'analyse des cookies';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Module optionnel pour la sécurité supplémentaire';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Module Stop Forum Spam';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Module optionnel d\'agents utilisateurs';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Module de blocage pour Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?cidram-page=logout">Déconnecter</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Déconnecter</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Comment préférez-vous que les nom
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l\'accès frontal. True = Oui [Défaut] ; False = Non.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu\'ils ne seront pas interdits en raison de dépassement de la limite d\'infraction (l\'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu\'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d\'habitude, mais ne seront pas interdits. Lorsqu\'ils ne sont pas vérifiés, il est possible qu\'ils soient interdits en raison du dépassement de la limite d\'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Devrait CIDRAM rediriger silencieusement les tentatives d\'accès bloquées à la place de l\'affichage de la page « Accès Refusé » ? Si oui, spécifiez l\'emplacement pour rediriger les tentatives d\'accès bloquées. Si non, laisser cette variable vide.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Essayez de vérifier des requêtes de médias sociaux ? La vérification des médias sociaux offre une protection contre les fausses requêtes de médias sociaux (ces requêtes seront bloquées). True = Activer la vérification des médias sociaux [Défaut] ; False = Désactiver la vérification des médias sociaux.';
 $CIDRAM['lang']['config_general_statistics'] = 'Suivre les statistiques d\'utilisation pour CIDRAM ? True = Oui ; False = Non [Défaut].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par CIDRAM. Des options supplémentaires peuvent être ajoutées sur requête.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Décalage horaire en minutes.';

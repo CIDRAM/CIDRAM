@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.06.10).
+ * This file: Norwegian language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blokker vertene s
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Gir noen begrensede beskyttelser mot farlige informasjonskapsler.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Standard signatur bypasses.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Dårlig vertene blokkeringsmodul';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Dårlig vertene blokkeringsmodul (ISPs)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu blokkeringsmodul';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Valgfrie informasjonskapselskannermodul';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Valgfrie sikkerhetstilleggsmodul';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam modul';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Valgfri brukeragentmodul';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blokkeringsmodul';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Hjem</a> | <a href="?cidram-page=logout">Logg Ut</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logg Ut</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Hvordan foretrekker du at tall vise
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Angir om beskyttelsen som normalt leveres av CIDRAM, skal brukes på frontenden. True = Ja [Standardverdi]; False = Nei.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Forsøk å bekrefte forespørsler fra søkemotorer? Verifiserende søkemotorer sikrer at de ikke vil bli utestengt som et resultat av å overskride infraksjonsgrensen (utestenging mot søkemotorer fra nettstedet ditt vil vanligvis ha en negativ effekt på søkemotorrangeringen din, SEO, osv). Når verifisert, kan søkemotorer bli blokkert som normalt, men vil ikke bli utestengt. Når det ikke er verifisert, er det mulig for dem å bli utestengt som et resultat av å overskride infraksjonsgrensen. Dess, søkemotor verifisering gir beskyttelse mot falske søkemotor forespørsler og mot potensielt skadelige enheter som later til å være søkemotorer (slike forespørsler vil bli blokkert når søkemotor verifisering er aktivert). True = Aktiver søkemotor verifisering [Standardverdi]; False = Deaktiver søkemotor verifisering.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Bør CIDRAM stille omdirigere blokkerte tilgangsforsøk i stedet for å vise "Tilgang Nektet" siden? Hvis ja, spesifiser stedet for å omdirigere blokkerte tilgangsforsøk til. Hvis nei, la denne variablen være tom.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Forsøk å verifisere sosial media forespørsler? Sosial media verifisering gir beskyttelse mot falske sosiale medier forespørsler (slike forespørsler vil bli blokkert). True = Aktiver sosial media verifisering [Standardverdi]; False = Deaktiver sosial media verifisering.';
 $CIDRAM['lang']['config_general_statistics'] = 'Spor CIDRAM bruksstatistikk? True = Ja; False = Nei [Standardverdi].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Dato/tid notasjonsformat som brukes av CIDRAM. Ytterligere alternativer kan legges på forespørsel.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tidssone forskjøvet i minutter.';

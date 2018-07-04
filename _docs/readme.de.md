@@ -417,6 +417,9 @@ Wert | Produziert | Beschreibung
 "search_engine_verification"
 - Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Verifizierung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Verifizierung aktiviert ist). True = Suchmaschinen-Verifizierung aktivieren [Standardeinstellung]; False = Suchmaschinen-Verifizierung deaktivieren.
 
+"social_media_verification"
+- Versuche, Social Media Anfragen zu verifizieren? Die Verifizierung von Social Media bietet Schutz vor gefälschten Social Media Anfragen (solche Anfragen werden blockiert). True = Die Verifizierung von Social Media aktivieren [Standardeinstellung]; False = Die Verifizierung von Social Media deaktivieren.
+
 "protect_frontend"
 - Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.
 
@@ -1339,4 +1342,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 21 Juni 2018 (2018.06.21).
+Zuletzt aktualisiert: 4 Juli 2018 (2018.07.04).

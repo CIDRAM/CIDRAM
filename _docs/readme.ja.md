@@ -415,7 +415,10 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 *参照：​[「default_dns」には何が使えますか？](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification" （サーチ・エンジン・ベリフィケーション）
-- 検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します （これらのリクエストはブロックされます）。​True = 検索エンジンの検証を有効にする（Default/デフォルルト）；​False = 検索エンジンの検証を無効にする。
+- 検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します（これらのリクエストはブロックされます）。​True = 検索エンジンの検証を有効にする（Default/デフォルルト）；​False = 検索エンジンの検証を無効にする。
+
+"social_media_verification" （ソーシャル・メディア・ベリフィケーション）
+- ソーシャル・メディアのリクエストを確認する必要がありますか？​ソーシャル・メディアの検証では、偽のソーシャル・メディア・リクエストに対する保護が提供されます（このようなリクエストはブロックされます）。​True = ソーシャル・メディア検証を有効にする（Default/デフォルルト）；​False = ソーシャル・メディア検証を無効にする。
 
 "protect_frontend" （プロテクト・フロントエンド）
 - CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。​True = はい（Default/デフォルルト）；​False = いいえ。
@@ -1125,14 +1128,14 @@ If you use any features or modules intended to work with hostnames (such as the 
 
 ##### 11.2.1 ウェブフォンツ
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+CIDRAMのフロントエンドと「アクセス拒否」ページの標準「ＵＩ」（ユーザー・インターフェイス）と同様に、一部のカスタム・テーマでは、美的な理由から「webfonts」（ウェブフォンツ）が使用されることがあります。​「Webfonts」（ウェブフォンツ）はデフォルトで無効になっていますが、有効にすると、ユーザーのブラウザと「webfont service」（ウェブフォント・サービス）間の直接通信が行われます。​これは、ユーザのＩＰアドレス、ユーザ・エージェント、オペレーティング・システム、および要求に利用可能な他の詳細などの情報を伝達することを潜在的に含むことがある。​これらのウェブフォンツのほとんどは「[Google Fonts](https://fonts.google.com/)」サービスによってホストされています。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `disable_webfonts`
 
 ##### 11.2.2 検索エンジンの検証 （サーチ・エンジン・ベリフィケーション）
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify whether requests claiming to originate from search engines are authentic. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify the authenticity of requests that claim to originate from search engines. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `search_engine_verification`
@@ -1319,7 +1322,7 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 
 #### 11.7 GDPR/DSGVO
 
-The General Data Protection Regulation (GDPR) is a regulation of the European Union, which comes into effect as of May 25, 2018. The primary goal of the regulation is to give control to EU citizens and residents regarding their own personal data, and to unify regulation within the EU concerning privacy and personal data.
+一般データ保護規制（ＧＤＰＲ）は、2018年5月25日に発効するＥＵの規制です。​規制の第一の目的は、ＥＵ市民および居住者に個人情報を管理させ、個人情報および個人情報に関するＥＵ内の規制を統一することです。
 
 The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
 
@@ -1327,13 +1330,13 @@ Data may not be processed unless there's a lawful basis for doing so, as per def
 
 Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
 
-[EUR-Lex](https://eur-lex.europa.eu/) (a part of the official website of the European Union that provides information about EU law) provides extensive information about GDPR/DSGVO, available in 24 different languages (at the time of writing this), and available for download in PDF format. I would definitely recommend reading the information that they provide, in order to learn more about GDPR/DSGVO:
+より多くの情報を習得するための推奨リソース：
+- [GDPR（EU一般データ保護規制）とは | 語句説明・適用範囲・与える影響を解説](https://boxil.jp/mag/a4605/)
+- [EU一般データ保護規則](https://ja.wikipedia.org/wiki/EU%E4%B8%80%E8%88%AC%E3%83%87%E3%83%BC%E3%82%BF%E4%BF%9D%E8%AD%B7%E8%A6%8F%E5%89%87)
+- [GDPR（EU一般データ保護規制）対策](https://eizone.info/gdpr/)
 - [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32016R0679)
-
-Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO available at Wikipedia:
-- [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)
 
 ---
 
 
-最終アップデート：2018年6月21日。
+最終アップデート：2018年7月4日。

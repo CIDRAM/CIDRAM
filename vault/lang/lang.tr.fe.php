@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.06.10).
+ * This file: Turkish language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Spam gönderenler
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS tarafından listelenen IP\'lere karşı kayıt ve oturum açma sayfalarını korur.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Kötü ana engelleyici modülü';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Kötü ana engelleyici modülü (ISS\'ler)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu engelleyici modülü';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'İsteğe bağlı çerez tarayıcı modülü';
 $CIDRAM['lang']['Name: module_extras.php'] = 'İsteğe bağlı güvenlik ekstrası modülü';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam modülü';
+$CIDRAM['lang']['Name: module_ua.php'] = 'İsteğe bağlı kullanıcı aracıları modülü';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex engelleyici modülü';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini na
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Normal olarak CIDRAM tarafından sağlanan korumaların ön uça uygulanıp uygulanmayacağını belirtir. Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Arama motorlarından gelen istekleri doğrulamaya çalışın? Arama motorlarını doğrulamak, ihlal sınırını aşmanın bir sonucu olarak yasaklanmamasını sağlar (sitenizdeki arama motorlarını yasaklamak genellikle arama motoru sıralaması, SEO, vb. üzerinde olumsuz bir etki yapar). Doğrulandığı zaman, arama motorları normal olarak engellenebilir, ancak yasaklanmaz. Doğrulanmadığı zaman ise, ihlal sınırının aşılmasının bir sonucu olarak yasaklanmaları mümkündür. Buna ek olarak, arama motoru doğrulaması, sahte arama motoru isteklerine ve arama motorları kılığına bürünen potansiyel olarak kötü amaçlı varlıklara karşı koruma sağlar (arama motoru doğrulama etkinleştirildiğinde bu tür istekler engellenir). Doğru/True = Arama motoru doğrulamasını etkinleştir [Varsayılan]; Yanlış/False = Arama motoru doğrulamasını devre dışı bırakın.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM, "Erişim Reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Sosyal medya isteklerini doğrulamayı denemek mi istiyorsunuz? Sosyal medya doğrulama, sahte sosyal medya isteklerine karşı koruma sağlar (bu gibi istekler engellenir). True = Sosyal medya doğrulamasını etkinleştir [Varsayılan]; False = Sosyal medya doğrulamasını devre dışı bırak.';
 $CIDRAM['lang']['config_general_statistics'] = 'CIDRAM kullanım istatistiklerini takip et? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM tarafından kullanılan tarih/saat gösterimi biçimi. İsteğe bağlı olarak ek seçenekler eklenebilir.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Dakika cinsinden zaman dilimi farkı.';

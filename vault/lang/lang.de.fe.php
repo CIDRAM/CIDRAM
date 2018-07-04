@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.06.10).
+ * This file: German language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blockiert Hosts, 
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Bietet einige begrenzte Schutzmaßnahmen gegen gefährliche Cookies.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Schützt die Registrierung und die Anmeldeseiten vor den von SFS aufgelisteten IPs.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blockiert Benutzeragenten, die mit unerwünschten Bots und ruchlosen Aktivitäten in Verbindung stehen.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Standard-Signatur-Bypässe.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Schlechte Hosts Blocker-Modul';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Schlechte Hosts Blocker-Modul (ISPs)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu Blocker-Modul';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Optionales Cookie-Scanner-Modul';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Optionales Sicherheits-Extras-Modul';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam Modul';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Optionales Benutzeragenten-Modul';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex Blocker-Modul';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startseite</a> | <a href="?cidram-page=logout">Ausloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Ausloggen</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Wie willst du Nummern anzeigen? Wä
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Verifizierung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Verifizierung aktiviert ist). True = Suchmaschinen-Verifizierung aktivieren [Standardeinstellung]; False = Suchmaschinen-Verifizierung deaktivieren.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Anstatt die "Zugriff verweigert", sollte CIDRAM leise blockiert Zugriffsversuche umleiten? Wenn ja, geben Sie den Speicherort auf den blockierten Zugriffsversuche umleiten. Wenn nein, diese Variable leer lassen.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Versuche, Social Media Anfragen zu verifizieren? Die Verifizierung von Social Media bietet Schutz vor gefälschten Social Media Anfragen (solche Anfragen werden blockiert). True = Die Verifizierung von Social Media aktivieren [Standardeinstellung]; False = Die Verifizierung von Social Media deaktivieren.';
 $CIDRAM['lang']['config_general_statistics'] = 'CIDRAM-Nutzungsstatistiken verfolgen? True = Ja; False = Nein [Standardeinstellung].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Das Datumsformat verwendet von CIDRAM. Zusätzliche Optionen können auf Anfrage hinzugefügt werden.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Zeitzonenversatz in Minuten.';

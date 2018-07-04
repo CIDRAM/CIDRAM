@@ -350,7 +350,7 @@ Código de status | Mensagem de status | Descrição
 ---|---|---
 `200` | `200 OK` | Valor padrão. Menos robusto, mas mais amigável para os usuários.
 `403` | `403 Forbidden` | Um pouco mais robusto, mas um pouco menos amigável para os usuários.
-`410` | `410 Gone` | Pode causar problemas ao tentar resolver falsos positivos, pois alguns navegadores armazenam em cache essa mensagem de status e não enviam solicitações subsequentes, mesmo depois de desbloquear os usuários. Pode ser mais útil do que outras opções para reduzir pedidos de certos, muito específicos tipos de bots.
+`410` | `410 Gone` | Pode causar problemas ao tentar resolver falsos positivos, pois alguns navegadores armazenam em cache essa mensagem de status e não enviam solicitações subsequentes, mesmo depois de desbloquear os usuários. Pode ser mais útil do que outras opções para reduzir solicitações de certos, muito específicos tipos de bots.
 `418` | `418 I'm a teapot` | Na verdade, faz referência a uma piada do primeiro de abril [[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)] e é improvável que seja entendida pelo cliente. Fornecido por diversão e conveniência, mas geralmente não é recomendado.
 `451` | `Unavailable For Legal Reasons` | Apropriado para contextos em que as solicitações são bloqueadas principalmente por motivos legais. Não recomendado em outros contextos.
 `503` | `Service Unavailable` | Mais robusto, mas menos amigável para os usuários.
@@ -415,7 +415,10 @@ Valor | Produz | Descrição
 *Veja também: [O que posso usar para "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
 "search_engine_verification"
-- Tentativa de verificar pedidos dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos pedidos de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais pedidos serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca.
+- Tentativa de verificar solicitações dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos solicitações de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais solicitações serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca.
+
+"social_media_verification"
+- Tentativa de verificar solicitações de mídia social? A verificação de mídia social fornece proteção contra solicitações falsas de mídia social (essas solicitações serão bloqueadas). True = Ativar a verificação de mídia social [Padrão]; False = Desativar a verificação de mídia social.
 
 "protect_frontend"
 - Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não.
@@ -433,7 +436,7 @@ Valor | Produz | Descrição
 - Monitorar as estatísticas de uso do CIDRAM? True = Sim; False = Não [Padrão].
 
 "force_hostname_lookup"
-- Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os pedidos. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho.
+- Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho.
 
 "allow_gethostbyaddr_lookup"
 - Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não.
@@ -681,7 +684,7 @@ Se você deseja especificar o país de origem para alguma assinatura específica
 
 Se o componente opcional "flags CSS" estiver instalado, ao visualizar arquivos de log na página de logs do front-end, as informações anexadas pelas etiquetas de origem são substituídas pela bandeira do país correspondente a essa informação. Esta informação, seja em sua forma bruta ou como uma bandeira de país, é clicável, e quando clicada, irá filtrar entradas de log por meio de outras entradas de log de identificação semelhante (efetivamente permitindo que aqueles que acessem a página de logs sejam filtrados por país de origem).
 
-Nota: Tecnicamente, esta não é uma forma de geolocalização, pela razão de que isso não envolve a pesquisa de informações específicas relativas a IPs de entrada, mas sim, simplesmente nos permite declarar explicitamente um país de origem para quaisquer pedidos bloqueados por assinaturas específicas. As etiquetas de origem múltipla são permitidas dentro da mesma seção de assinatura.
+Nota: Tecnicamente, esta não é uma forma de geolocalização, pela razão de que isso não envolve a pesquisa de informações específicas relativas a IPs de entrada, mas sim, simplesmente nos permite declarar explicitamente um país de origem para quaisquer solicitações bloqueados por assinaturas específicas. As etiquetas de origem múltipla são permitidas dentro da mesma seção de assinatura.
 
 Exemplo hipotético:
 
@@ -1038,7 +1041,7 @@ Sim. Uma API é integrada no front-end para interagir com a página de atualiza�
 
 #### <a name="WHAT_ARE_INFRACTIONS"></a>O que são "infrações"?
 
-"Infrações" determinam quando um IP que ainda não está bloqueado por qualquer arquivo de assinatura específico deve começar a ser bloqueado para quaisquer pedidos futuros, e estão intimamente associados ao monitoração IP. Existem algumas funcionalidades e módulos que permitem que os pedidos sejam bloqueados por motivos diferentes do IP de origem (tais como a presença de agentes de usuários [user agents] correspondentes a spambots ou hacktools, solicitações perigosas, DNS falsificado e assim por diante), e quando isso acontece, uma "infração" pode ocorrer. Eles fornecem uma maneira de identificar endereços IP que correspondem a solicitações indesejadas que podem ainda não ser bloqueadas por arquivos de assinatura específicos. Infrações geralmente correspondem 1-a-1 com o número de vezes que um IP está bloqueado, mas nem sempre (eventos de bloqueio severo podem ter um valor de infração maior do que um, e se "track_mode" for false, infrações não ocorrerão para eventos de bloco desencadeados exclusivamente por arquivos de assinatura).
+"Infrações" determinam quando um IP que ainda não está bloqueado por qualquer arquivo de assinatura específico deve começar a ser bloqueado para quaisquer solicitações futuros, e estão intimamente associados ao monitoração IP. Existem algumas funcionalidades e módulos que permitem que os solicitações sejam bloqueados por motivos diferentes do IP de origem (tais como a presença de agentes de usuários [user agents] correspondentes a spambots ou hacktools, solicitações perigosas, DNS falsificado e assim por diante), e quando isso acontece, uma "infração" pode ocorrer. Eles fornecem uma maneira de identificar endereços IP que correspondem a solicitações indesejadas que podem ainda não ser bloqueadas por arquivos de assinatura específicos. Infrações geralmente correspondem 1-a-1 com o número de vezes que um IP está bloqueado, mas nem sempre (eventos de bloqueio severo podem ter um valor de infração maior do que um, e se "track_mode" for false, infrações não ocorrerão para eventos de bloco desencadeados exclusivamente por arquivos de assinatura).
 
 #### <a name="BLOCK_HOSTNAMES"></a>O CIDRAM pode bloquear nomes de host?
 
@@ -1331,4 +1334,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 21 Junho de 2018 (2018.06.21).
+Última Atualização: 4 Julho de 2018 (2018.07.04).

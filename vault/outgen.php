@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.07.01).
+ * This file: Output generator (last modified: 2018.07.04).
  */
 
 /** Initialise cache. */
@@ -199,11 +199,11 @@ if (
     unset($CIDRAM['Modules']);
 }
 
-/**
- * Block bots masquerading as popular search engines and disable tracking for
- * real, legitimate search engines.
- */
+/** Execute search engine verification. */
 $CIDRAM['SearchEngineVerification']();
+
+/** Execute social media verification. */
+$CIDRAM['SocialMediaVerification']();
 
 /** Process tracking information for the inbound IP. */
 if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {

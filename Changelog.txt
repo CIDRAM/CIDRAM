@@ -38,12 +38,27 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2018.06.24; Signatures; Maikuolan]: Fixed some false positives via the
   default signature bypasses.
 
+- [2018.06.24-27; Documentation; Maikuolan]: Added an entry to the FAQ
+  regarding protection against DDoS attacks.
+
 - [2018.06.28; Bug-fix; Maikuolan]: Found a small typo in one of the JavaScript
   functions on the front-end accounts page; Fixed.
 
 - [2018.07.01; Sub-minor code change; Maikuolan]: It's now possible for users
   to specify their own sort order for when the updater activates or deactivates
   signature files and modules.
+
+- [2018.07.04; NEW FEATURE; Maikuolan]: Added new a configuration directive,
+  "social_media_verification". When enabled, and when possible, CIDRAM will
+  attempt to verify requests from social media platforms, and will block any
+  requests that it identifies as attempts to ghost/masquerade as those
+  platforms. This is effectively the same thing as the already existing search
+  engine verification feature, except that it instead focuses on social media
+  platforms, thus allowing the already existing search engine verification
+  feature to maintain its existing focus.
+
+- [2018.07.04; Sub-minor code change; Maikuolan]: Added a new bypass for
+  Embed.ly requests.
 
 === Version/Release 1.6.0 ===
 MINOR RELEASE.

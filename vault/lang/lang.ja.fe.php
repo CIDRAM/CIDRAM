@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.06.26).
+ * This file: Japanese language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'スパマー、�
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = '危険なクッキーに対するいくつかの限定された保護を提供します。';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = '望ましくないボットや悪意のあるアクティビティに関連付けられたユーザ・エージェントをブロックします。';
 $CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '危険なホスト・ブロッカーモジュール';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '危険なホスト・ブロッカーモジュール（ＩＳＰ）';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baiduブロッカーモジ�
 $CIDRAM['lang']['Name: module_cookies.php'] = 'オプショナル・クッキー・スキャナ・モジュール';
 $CIDRAM['lang']['Name: module_extras.php'] = 'オプショナル・セキュリティ・エクストラス・モジュール';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam モジュール';
+$CIDRAM['lang']['Name: module_ua.php'] = 'オプショナル・ユーザ・エージェント・モジュール';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandexブロッカーモジュール';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
@@ -74,8 +76,9 @@ $CIDRAM['lang']['config_general_maintenance_mode'] = 'メンテナンス・モ�
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。';
 $CIDRAM['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。​True = はい（Default/デフォルルト）；​False = いいえ。';
-$CIDRAM['lang']['config_general_search_engine_verification'] = '検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します （これらのリクエストはブロックされます）。​True = 検索エンジンの検証を有効にする（Default/デフォルルト）；​False = 検索エンジンの検証を無効にする。';
+$CIDRAM['lang']['config_general_search_engine_verification'] = '検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します（これらのリクエストはブロックされます）。​True = 検索エンジンの検証を有効にする（Default/デフォルルト）；​False = 検索エンジンの検証を無効にする。';
 $CIDRAM['lang']['config_general_silent_mode'] = '「アクセス拒否」ページを表示する代わりに、​CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？​はいの場合は、​リダイレクトの場所を指定します。​いいえの場合は、​この変数を空白のままにします。';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'ソーシャル・メディアのリクエストを確認する必要がありますか？​ソーシャル・メディアの検証では、偽のソーシャル・メディア・リクエストに対する保護が提供されます（このようなリクエストはブロックされます）。​True = ソーシャル・メディア検証を有効にする（Default/デフォルルト）；​False = ソーシャル・メディア検証を無効にする。';
 $CIDRAM['lang']['config_general_statistics'] = 'CIDRAM使用統計を追跡しますか？​True = はい；​False = いいえ（Default/デフォルルト）。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAMで使用される日付表記形式。​追加のオプションがリクエストに応じて追加される場合があります。';
 $CIDRAM['lang']['config_general_timeOffset'] = 'タイムゾーン・オフセット（分）。';

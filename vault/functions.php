@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.01).
+ * This file: Functions file (last modified: 2018.07.04).
  */
 
 /**
@@ -1011,31 +1011,37 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
 };
 
 /**
- * Distinguishes between bots masquerading as popular search engines and real,
- * legitimate search engines. Tracking is disabled for real, legitimate search
- * engines, and those masquerading as them are blocked. If DNS is unresolvable
- * and/or if it can't be determined whether a request has originated from a
- * fake or a legitimate source, it takes no action (i.e., doesn't mess with
- * tracking and doesn't block anything).
+ * Used to identify when bots ghost/masquerade as popular search engines and
+ * social media tools. Tracking is disabled for legitimate requests, while
+ * ghosted/faked requests are blocked. If DNS is unresolvable and/or if a bot's
+ * identity can't be verified, no action is taken (i.e., tracking isn't messed
+ * with and the request isn't blocked).
  *
  * @param string|array $Domains Accepted domain/hostname partials.
  * @param string $Friendly A friendly name to use in logfiles.
  * @param bool $ReverseOnly Skips forward lookups if true.
+ * @param bool $CanModTrackable Whether we can modify trackable state.
  * @return bool Returns true when a determination is successfully made, and
  *      false when a determination isn't able to be made.
  */
-$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = false) use (&$CIDRAM) {
+$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = false, $CanModTrackable = true) use (&$CIDRAM) {
+
+    /** Fetch the hostname. */
     if (empty($CIDRAM['Hostname'])) {
-        /** Fetch the hostname. */
         $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
     }
-    /** Force domains to be an array. */
-    $CIDRAM['Arrayify']($Domains);
+
     /** Do nothing more if we weren't able to resolve the DNS hostname. */
     if (!$CIDRAM['Hostname'] || $CIDRAM['Hostname'] === $CIDRAM['BlockInfo']['IPAddr']) {
         return false;
     }
+
+    /** Flag for whether our checks pass or fail. */
     $Pass = false;
+
+    /** Force domains to be an array. */
+    $CIDRAM['Arrayify']($Domains);
+
     /** Compare the hostname against the accepted domain/hostname partials. */
     foreach ($Domains as $Domain) {
         $Len = strlen($Domain) * -1;
@@ -1045,23 +1051,31 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
         }
     }
 
-    /** Successfully compared. */
+    /** Successfully passed. */
     if ($Pass) {
+
         /** We're only reversing; Don't forward resolve. Disable tracking and return. */
         if ($ReverseOnly) {
-            $CIDRAM['Trackable'] = false;
+            if ($CanModTrackable) {
+                $CIDRAM['Trackable'] = false;
+            }
             return true;
         }
+
         /** Attempt to resolve. */
         if (!$Resolved = $CIDRAM['DNS-Resolve']($CIDRAM['Hostname'])) {
             /** Failed to resolve. Do nothing and return. */
             return false;
         }
+
         /** It's the real deal; Disable tracking and return. */
         if ($Resolved === $CIDRAM['BlockInfo']['IPAddr']) {
-            $CIDRAM['Trackable'] = false;
+            if ($CanModTrackable) {
+                $CIDRAM['Trackable'] = false;
+            }
             return true;
         }
+
     }
 
     /** It's a fake; Block it. */
@@ -1077,7 +1091,10 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
     $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
     $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
     $CIDRAM['BlockInfo']['SignatureCount']++;
+
+    /** Exit. */
     return true;
+
 };
 
 /**
@@ -1088,26 +1105,33 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
  * @param string $Friendly A friendly name to use in logfiles.
  */
 $CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly) use (&$CIDRAM) {
+
+    /** Convert expected IPs to an array. */
     $CIDRAM['Arrayify']($Expected);
-    /** Compare the actual IP of the request against the expected IPs. */
+
+    /**
+     * Compare the actual IP of the request against the expected IPs, and
+     * disable tracking if any of them match.
+     */
     if (in_array($CIDRAM['BlockInfo']['IPAddr'], $Expected)) {
-        /** Disable tracking. */
         $CIDRAM['Trackable'] = false;
-    } else {
-        /** Block it. */
-        $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['lang']['fake_ua']);
-        $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
-        if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
-            $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
-        }
-        $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
-        if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
-            $CIDRAM['BlockInfo']['Signatures'] .= ', ';
-        }
-        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-        $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
-        $CIDRAM['BlockInfo']['SignatureCount']++;
+        return;
     }
+
+    /** Nothing matched. Block it. */
+    $Reason = $CIDRAM['ParseVars'](['ua' => $Friendly], $CIDRAM['lang']['fake_ua']);
+    $CIDRAM['BlockInfo']['ReasonMessage'] = $Reason;
+    if (!empty($CIDRAM['BlockInfo']['WhyReason'])) {
+        $CIDRAM['BlockInfo']['WhyReason'] .= ', ';
+    }
+    $CIDRAM['BlockInfo']['WhyReason'] .= $Reason;
+    if (!empty($CIDRAM['BlockInfo']['Signatures'])) {
+        $CIDRAM['BlockInfo']['Signatures'] .= ', ';
+    }
+    $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+    $CIDRAM['BlockInfo']['Signatures'] .= basename($Debug['file']) . ':L' . $Debug['line'];
+    $CIDRAM['BlockInfo']['SignatureCount']++;
+
 };
 
 /**
@@ -1411,7 +1435,7 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
 
 /**
  * Block bots masquerading as popular search engines and disable tracking for
- * real, legitimate search engines.
+ * for verified requests.
  */
 $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
     if (
@@ -1473,6 +1497,23 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
     $CIDRAM['Flag-Bypass-Baidu-Check'] = false;
     $CIDRAM['Flag-Bypass-Yandex-Check'] = false;
     $CIDRAM['Flag-Bypass-DuckDuckGo-Check'] = false;
+};
+
+/**
+ * Block bots masquerading as popular social media tools.
+ */
+$CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
+    if (
+        !empty($CIDRAM['TestResults']) &&
+        !$CIDRAM['Config']['general']['maintenance_mode'] &&
+        $CIDRAM['Config']['general']['social_media_verification'] &&
+        $CleanUA = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))
+    ) {
+        /** Verify Embedly requests. */
+        if (strpos($CleanUA, 'embedly') !== false) {
+            $CIDRAM['DNS-Reverse-Forward'](['embed.ly'], 'Embedly', true, false);
+        }
+    }
 };
 
 /**

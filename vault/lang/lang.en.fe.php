@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.06.10).
+ * This file: English language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blocks hosts belo
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Provides some limited protections against dangerous cookies.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Provides some limited protections against various attack vectors commonly used in requests.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protects registration and login pages against IPs listed by SFS.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blocks user agents associated with unwanted bots and nefarious activity.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Default signature bypasses.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Bad hosts blocker module';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Bad hosts blocker module (ISPs)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu blocker module';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Optional cookie scanner module';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Optional security extras module';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam module';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Optional user agents module';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blocker module';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Log Out</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'How do you prefer numbers to be dis
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Attempt to verify requests from search engines? Verifying search engines ensures that they won\'t be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won\'t be banned. When not verified, it\'s possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Should CIDRAM silently redirect blocked access attempts instead of displaying the "Access Denied" page? If yes, specify the location to redirect blocked access attempts to. If no, leave this variable blank.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Attempt to verify social media requests? Social media verification provides protection against fake social media requests (such requests will be blocked). True = Enable social media verification [Default]; False = Disable social media verification.';
 $CIDRAM['lang']['config_general_statistics'] = 'Track CIDRAM usage statistics? True = Yes; False = No [Default].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'The date/time notation format used by CIDRAM. Additional options may be added upon request.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Timezone offset in minutes.';

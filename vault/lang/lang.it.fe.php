@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.06.10).
+ * This file: Italian language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blocchi host appa
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Fornisce alcune protezioni limitate contro i cookie pericolosi.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Fornisce alcune protezioni limitate contro i vari vettori di attacco comunemente usata nelle richieste.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protegge le pagine di registrazione e di accesso agli IP elencati da SFS.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blocchi gli agenti utente associati a bot indesiderati e attività nefande.';
 $CIDRAM['lang']['Name: Bypasses'] = 'I firme predefinite bypass.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Modulo bloccante di cattivi host';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Modulo bloccante di cattivi host (ISP)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Modulo bloccante di Baidu';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Modulo opzionale per l\'analisi dei cookies';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Modulo opzionale per gli extra di sicurezza';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Modulo Stop Forum Spam';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Modulo opzionale di agenti utente';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modulo bloccante di Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Pagina Principale</a> | <a href="?cidram-page=logout">Disconnettersi</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Disconnettersi</a>';
@@ -74,8 +76,9 @@ $CIDRAM['lang']['config_general_maintenance_mode'] = 'Abilita la modalità di ma
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Numero massimo di tentativi di accesso.';
 $CIDRAM['lang']['config_general_numbers'] = 'Come preferisci che i numeri siano visualizzati? Seleziona l\'esempio che ti sembra più corretto.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.';
-$CIDRAM['lang']['config_general_search_engine_verification'] = 'Tentativo di verificare le richieste dai motori di ricerca? Verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Tentativo di verificare le richieste dai motori di ricerca? La verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM dovrebbe reindirizzare silenziosamente tutti i tentativi di accesso bloccati invece di visualizzare la pagina "Accesso Negato"? Se si, specificare la localizzazione di reindirizzare i tentativi di accesso bloccati. Se no, lasciare questo variabile vuoto.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Tentativo di verificare le richieste dei social media? La verifica dei social media fornisce protezione contro le false richieste dei social media (tali richieste saranno bloccate). True = Attiva la verifica dei social media [Predefinito]; False = Disattiva la verifica dei social media.';
 $CIDRAM['lang']['config_general_statistics'] = 'Monitorare le statistiche di utilizzo di CIDRAM? True = Sì; False = No [Predefinito].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Il formato della data/ora di notazione usata da CIDRAM. Ulteriori opzioni possono essere aggiunti su richiesta.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Fuso orario offset in minuti.';

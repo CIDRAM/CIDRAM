@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.06.19).
+ * This file: Dutch language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blokkeert hosts v
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Biedt een beperkte bescherming tegen gevaarlijke cookies.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Biedt een beperkte bescherming tegen verschillende aanvalsvectoren vaak gebruikt in aanvragen.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Beschermt registratie en login tegen IP\'s die door SFS worden vermeld.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blokkeert gebruikersagenten die zijn gekoppeld aan ongewenste bots en schadelijke activiteiten.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Standaard signature rondwegen.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Slechte hosts blokker module';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Slechte hosts blokker module (ISP\'s)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu blokker module';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Optionele cookie-scanner module';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Optionele beveiliging extra module';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam module';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Optionele gebruikersagent module';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blokker module';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Uitloggen</a>';
@@ -74,8 +76,9 @@ $CIDRAM['lang']['config_general_maintenance_mode'] = 'Inschakelen de onderhoudsm
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Maximum aantal inlogpogingen.';
 $CIDRAM['lang']['config_general_numbers'] = 'Hoe verkiest u nummers die worden weergegeven? Selecteer het voorbeeld dat het meest correct voor u lijkt.';
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.';
-$CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om verzoeken van zoekmachines te bevestigen? Het verifiëren van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke verzoeken zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.';
+$CIDRAM['lang']['config_general_search_engine_verification'] = 'Poging om aanvragen van zoekmachines te bevestigen? Verificatie van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke aanvragen zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Moet CIDRAM stilletjes redirect geblokkeerd toegang pogingen in plaats van het weergeven van de "Toegang Geweigerd" pagina? Als ja, geef de locatie te redirect geblokkeerd toegang pogingen. Als nee, verlaat deze variabele leeg.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Poging om aanvragen voor sociale media te verifiëren? Verificatie van sociale media biedt bescherming tegen nep-aanvragen voor sociale media (dergelijke aanvragen worden geblokkeerd). True = Inschakelen verificatie van sociale media [Standaard]; False = Uitschakelen verificatie van sociale media.';
 $CIDRAM['lang']['config_general_statistics'] = 'Track CIDRAM gebruiksstatistieken? True = Ja; False = Nee [Standaard].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door CIDRAM. Extra opties kunnen worden toegevoegd op aanvraag.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Tijdzone offset in minuten.';

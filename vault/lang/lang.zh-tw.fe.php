@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.06.10).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = '阻止垃圾郵�
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = '提供一些針對危險cookie的有限保護。';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = '提供一些有限的保護針對各種攻擊向量常用於請求。';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = '防止通過SFS列出的IP地址訪問註冊和登錄頁面。';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = '阻止不需要的機器人和惡意活動相關聯的用戶代理。';
 $CIDRAM['lang']['Name: Bypasses'] = '標準簽名旁路。';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '壞主機阻塞模塊';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '壞主機阻塞模塊（ISP）';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = '百度阻塞模塊';
 $CIDRAM['lang']['Name: module_cookies.php'] = '可選cookie掃描器模塊';
 $CIDRAM['lang']['Name: module_extras.php'] = '可選安全附加模塊';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam 模塊';
+$CIDRAM['lang']['Name: module_ua.php'] = '可選的用戶代理模塊';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex阻塞模塊';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主頁</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = '您如何喜歡顯示數字？​�
 $CIDRAM['lang']['config_general_protect_frontend'] = '指定是否應將CIDRAM通常提供的保護應用於前端。​True（真）=是【標準】；False（假）=不是。';
 $CIDRAM['lang']['config_general_search_engine_verification'] = '嘗試驗證來自搜索引擎的請求？​驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，​SEO，​等等）。​當被驗證，​搜索引擎可以被阻止，​但不會被禁止。​當不被驗證，​他們可以由於超過違規限製而被禁止。​另外，​搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，​這些請求將被阻止）。​True（真）=搜索引擎驗證是啟用【標準】；False（假）=搜索引擎驗證是禁用。';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。';
+$CIDRAM['lang']['config_general_social_media_verification'] = '嘗試驗證社交媒體請求？​社交媒體驗證可以防止虛假社交媒體請求（此類請求將被阻止）。​True（真）=啟用社交媒體驗證【標準】；​False（假）=禁用社交媒體驗證。';
 $CIDRAM['lang']['config_general_statistics'] = '跟踪CIDRAM使用情況統計？​True（真）=跟踪；False（假）=不跟踪【標準】。';
 $CIDRAM['lang']['config_general_timeFormat'] = 'CIDRAM使用的日期符號格式。​可根據要求增加附加選項。';
 $CIDRAM['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';

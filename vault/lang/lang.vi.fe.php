@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.06.29).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.07.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -38,6 +38,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Chặn các máy 
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê.';
+$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Mô-đun cho chặn các host xấu';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Mô-đun cho chặn các host xấu (ISP)';
@@ -46,6 +47,7 @@ $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Mô-đun cho chặn Baidu';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Mô-đun tùy chọn cho cookie quét';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Mô-đun tùy chọn cho bảo mật tính năng bổ sung';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Mô-đun Stop Forum Spam';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Mô-đun đại lý người dùng tùy chọn';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Mô-đun cho chặn Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';
@@ -76,6 +78,7 @@ $CIDRAM['lang']['config_general_numbers'] = 'Làm thế nào để bạn thích 
 $CIDRAM['lang']['config_general_protect_frontend'] = 'Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.';
+$CIDRAM['lang']['config_general_social_media_verification'] = 'Cố gắng xác minh yêu cầu truyền thông xã hội? Xác minh truyền thông xã hội cung cấp sự bảo vệ chống lại các yêu cầu truyền thông xã hội giả mạo (các yêu cầu như vậy sẽ bị chặn). True = Kích hoạt xác minh truyền thông xã hội [Mặc định]; False = Vô hiệu hóa xác minh truyền thông xã hội.';
 $CIDRAM['lang']['config_general_statistics'] = 'Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định].';
 $CIDRAM['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử dụng bởi CIDRAM. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu.';
 $CIDRAM['lang']['config_general_timeOffset'] = 'Múi giờ bù đắp trong phút.';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.07.01).
+ * This file: Front-end functions file (last modified: 2018.07.04).
  */
 
 /**
@@ -845,11 +845,11 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
 
     }
 
-    /**
-     * Block bots masquerading as popular search engines and disable tracking
-     * for real, legitimate search engines.
-     */
+    /** Execute search engine verification. */
     $CIDRAM['SearchEngineVerification']();
+
+    /** Execute social media verification. */
+    $CIDRAM['SocialMediaVerification']();
 
     /** Update the cache. */
     if ($CIDRAM['CacheModified']) {

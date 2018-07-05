@@ -366,6 +366,18 @@
  <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
 
+<div dir="rtl">القيم الموصى بها ل "ipaddr":<br /><br /></div>
+
+&nbsp; <div dir="rtl" style="display:inline;">القيمة</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (إنكابسولا عكس الوكيل).
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (كلودفلاري عكس الوكيل).
+`CF-Connecting-IP` | Cloudflare reverse proxy (كلودفلاري عكس الوكيل؛ لبديل؛ إذا كان ما سبق لا يعمل).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy (عكس الوكيل)](http://www.squid-cache.org/Doc/config/forwarded_for/).
+&nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
+
 <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
  <li>ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟</li>
@@ -1068,7 +1080,6 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
  <li><a href="#SPECIALIST_MODIFICATIONS">أنا بحاجة إلى تعديلات متخصصة، والتخصيصات، الخ؛ يمكنك أن تساعد؟</a></li>
  <li><a href="#ACCEPT_OR_OFFER_WORK">أنا مطور، مصمم موقع، أو مبرمج. هل يمكنني قبول أو عرض العمل المتعلق بهذا المشروع؟</a></li>
  <li><a href="#WANT_TO_CONTRIBUTE">أريد أن أساهم في المشروع؛ هل يمكنني فعل هذا؟</a></li>
- <li><a href="#RECOMMENDED_VALUES_FOR_IPADDR">القيم الموصى بها ل "ipaddr".</a></li>
  <li><a href="#CRON_TO_UPDATE_AUTOMATICALLY">هل يمكنني استخدام cron لتحديث تلقائيا؟</a></li>
  <li><a href="#WHAT_ARE_INFRACTIONS">ما هي "المخالفات"؟</a></li>
  <li><a href="#BLOCK_HOSTNAMES">هل يمكن لأسماء المضيفين في CIDRAM حظر؟</a></li>
@@ -1076,6 +1087,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
  <li><a href="#PROTECT_OTHER_THINGS">هل يمكنني استخدام CIDRAM لحماية الأشياء بخلاف مواقع الويب (مثل خوادم البريد الإلكتروني، FTP، SSH، IRC، إلخ)؟</a></li>
  <li><a href="#CDN_CACHING_PROBLEMS">هل تحدث مشكلات إذا كنت أستخدم CIDRAM في نفس وقت استخدام خدمات CDN أو خدمات التخزين المؤقت؟</a></li>
  <li><a href="#DDOS_ATTACKS">هل CIDRAM حماية موقعي على الويب ضد هجمات DDoS؟</a></li>
+ <li><a href="#CHANGE_COMPONENT_SORT_ORDER">عندما أقوم بتنشيط أو إلغاء تنشيط الوحدات النمطية أو ملفات التوقيع عبر صفحة التحديثات، فإنها تقوم بترتيبها أبجديًا في التكوين. هل يمكنني تغيير الطريقة التي يتم تصنيفها بها؟</a></li>
 </ul></div>
 
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ما هو "التوقيع"؟<br /><br /></div>
@@ -1169,18 +1181,6 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 <div dir="rtl">نعم. المساهمة في المشروع هو موضع ترحيب كبير. يرجى الاطلاع على "CONTRIBUTING.md" لمزيد من المعلومات.<br /><br /></div>
 
-#### <div dir="rtl"><a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>القيم الموصى بها ل "ipaddr".<br /><br /></div>
-
-&nbsp; <div dir="rtl" style="display:inline;">القيمة</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (إنكابسولا عكس الوكيل).
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (كلودفلاري عكس الوكيل).
-`CF-Connecting-IP` | Cloudflare reverse proxy (كلودفلاري عكس الوكيل؛ لبديل؛ إذا كان ما سبق لا يعمل).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
-`X-Forwarded-For` | [Squid reverse proxy (عكس الوكيل)](http://www.squid-cache.org/Doc/config/forwarded_for/).
-&nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
-
 #### <div dir="rtl"><a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>هل يمكنني استخدام cron لتحديث تلقائيا؟<br /><br /></div>
 
 <div dir="rtl">نعم. يتم تضمين API في front-end للتفاعل مع صفحة التحديثات عبر النصوص البرمجية الخارجية. وهناك نص منفصل، <a href="https://github.com/Maikuolan/Cronable">Cronable</a>، هو متاح، ويمكن استخدامها من قبل مدير كرون أو كرون جدولة لتحديث هذا وغيرها من الحزم المعتمدة تلقائيا (يوفر هذا البرنامج النصي وثائقه الخاصة).<br /><br /></div>
@@ -1237,6 +1237,24 @@ IP | المشغل
 <div dir="rtl">أولا، CIDRAM هي حزمة PHP، وبالتالي تعمل في الجهاز حيث يتم تثبيت PHP. وهذا يعني أن CIDRAM يمكنه فقط رؤية طلب ما وحظره بعد استلام الخادم له بالفعل. ثانيًا، يجب أن يعمل تخفيف DDoS الفعال على تصفية الطلبات قبل أن تصل إلى الخادم المستهدف بهجوم DDoS. من الناحية المثالية، يجب اكتشاف هجمات DDoS وتخفيفها بواسطة حلول قادرة على إسقاط أو إعادة توجيه حركة المرور المرتبطة بالهجمات، قبل أن تصل إلى الخادم المستهدف في المقام الأول.<br /><br /></div>
 
 <div dir="rtl">ويمكن تنفيذ ذلك باستخدام حلول الأجهزة المخصصة، والحلول القائمة على السحابة مثل خدمات التخفيف المخصصة لخدمة DDoS، وتوجيه DNS الخاص بالنطاق من خلال شبكات مقاومة DDoS، والترشيح المستند إلى السحابة، أو مزيج من ذلك. على أي حال، فإن هذا الموضوع معقد بعض الشىء بحيث لا يمكن تفسيره بشكل كامل مع مجرد فقرة أو فقرتين، لذا أوصي بإجراء المزيد من الأبحاث إذا كان هذا موضوعًا تريد دراسته. عندما يتم فهم الطبيعة الحقيقية لهجمات DDoS بشكل صحيح، فإن هذا الجواب سيكون أكثر منطقية.<br /><br /></div>
+
+#### <div dir="rtl"><a name="CHANGE_COMPONENT_SORT_ORDER"></a>عندما أقوم بتنشيط أو إلغاء تنشيط الوحدات النمطية أو ملفات التوقيع عبر صفحة التحديثات، فإنها تقوم بترتيبها أبجديًا في التكوين. هل يمكنني تغيير الطريقة التي يتم تصنيفها بها؟<br /><br /></div>
+
+<div dir="rtl">نعم. إذا كنت بحاجة إلى فرض بعض الملفات للتنفيذ بترتيب معين، فيمكنك إضافة بعض البيانات الاعتباطية قبل أسمائها في توجيه التهيئة حيث يتم إدراجها، مفصولة بنقطتين. عندما تقوم صفحة التحديثات بفرز الملفات في وقت لاحق، ستؤثر هذه البيانات العشوائية المضافة على ترتيب الفرز، مما يؤدي إلى تنفيذها وفقًا للترتيب الذي تريده، دون الحاجة إلى إعادة تسمية أي منها.<br /><br /></div>
+
+<div dir="rtl">على سبيل المثال، بافتراض توجيه تكوين مع الملفات المسرودة كما يلي:<br /><br /></div>
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+<div dir="rtl">إذا كنت تريد <code dir="ltr">file3.php</code> تنفيذ أولاً، يمكنك إضافة شيء مثل <code dir="ltr">aaa:</code> قبل اسم الملف:<br /><br /></div>
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+<div dir="rtl">وبعد ذلك، إذا تم تنشيط ملف جديد، <code dir="ltr">file6.php</code>، فعندما تقوم صفحة التحديثات بفرزها مرة أخرى، يجب أن ينتهي الأمر بهذا الشكل:<br /><br /></div>
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+<div dir="rtl">نفس الموقف عندما يتم إلغاء تنشيط الملف. وبالعكس، إذا أردت تنفيذ الملف آخر، فيمكنك إضافة شيء مثل <code dir="ltr">zzz:</code> قبل اسم الملف. على أي حال، لن تحتاج إلى إعادة تسمية الملف المعني.<br /><br /></div>
 
 ---
 
@@ -1511,4 +1529,4 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 ---
 
 
-<div dir="rtl">آخر تحديث: 4 يوليو 2018 (2018.07.04).</div>
+<div dir="rtl">آخر تحديث: 6 يوليو 2018 (2018.07.06).</div>

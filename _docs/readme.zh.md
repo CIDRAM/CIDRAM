@@ -342,6 +342,18 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 “ipaddr”
 - 在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）。​标准=REMOTE_ADDR。​警告：不要修改此除非您知道什么您做着！
 
+“ipaddr”的推荐值：
+
+值 | 运用
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula反向代理。
+`HTTP_CF_CONNECTING_IP` | Cloudflare反向代理。
+`CF-Connecting-IP` | Cloudflare反向代理（替代；如果另一个不工作）。
+`HTTP_X_FORWARDED_FOR` | Cloudbric反向代理。
+`X-Forwarded-For` | [Squid反向代理](http://www.squid-cache.org/Doc/config/forwarded_for/)。
+*由服务器配置定义。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
+`REMOTE_ADDR` | 没有反向代理（默认值）。
+
 “forbid_on_block”
 - 阻止请求时，CIDRAM应发送哪个HTTP状态消息？
 
@@ -925,7 +937,6 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 - [我需要专家修改，​的定制，​等等；您能帮我吗？](#SPECIALIST_MODIFICATIONS)
 - [我是开发人员，​网站设计师，​或程序员。​我可以接受还是提供与这个项目有关的工作？](#ACCEPT_OR_OFFER_WORK)
 - [我想为这个项目做出贡献；我可以这样做吗？](#WANT_TO_CONTRIBUTE)
-- [“ipaddr”的推荐值。](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [可以使用cron自动更新吗？](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [什么是“违规”？](#WHAT_ARE_INFRACTIONS)
 - [CIDRAM可以阻止主机名？](#BLOCK_HOSTNAMES)
@@ -933,6 +944,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 - [我可以使用CIDRAM保护网站以外的东西吗（例如，电子邮件服务器，FTP，SSH，IRC，等）？](#PROTECT_OTHER_THINGS)
 - [如果我在使用CDN或缓存服务的同时使用CIDRAM，会发生问题吗？](#CDN_CACHING_PROBLEMS)
 - [CIDRAM会保护我的网站免受DDoS攻击吗？](#DDOS_ATTACKS)
+- [当我通过更新页面启用或禁用模块或签名文件时，它会在配置中它们将按字母数字排序。​我可以改变他们排序的方式吗？](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>什么是“签名”？
 
@@ -1024,18 +1036,6 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 
 您可以。​对项目的贡献是欢迎。​有关详细信息，​请参阅“CONTRIBUTING.md”。
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>“ipaddr”的推荐值。
-
-值 | 运用
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula反向代理。
-`HTTP_CF_CONNECTING_IP` | Cloudflare反向代理。
-`CF-Connecting-IP` | Cloudflare反向代理（替代；如果另一个不工作）。
-`HTTP_X_FORWARDED_FOR` | Cloudbric反向代理。
-`X-Forwarded-For` | [Squid反向代理](http://www.squid-cache.org/Doc/config/forwarded_for/)。
-*由服务器配置定义。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
-`REMOTE_ADDR` | 没有反向代理（默认值）。
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>可以使用cron自动更新吗？
 
 您可以。​前端有内置了API，外部脚本可以使用它与更新页面进行交互。​一个单独的脚本，“[Cronable](https://github.com/Maikuolan/Cronable)”，是可用，它可以由您的cron manager或cron scheduler程序使用于自动更新此和其他支持的包（此脚本提供自己的文档）。
@@ -1092,6 +1092,24 @@ IP | 操作者
 首先，CIDRAM是一个PHP包，因此可以在安装PHP的机器上运行。​这意味着CIDRAM只能在服务器收到请求后才能看到并阻止请求。​其次，有效的DDoS缓解应该在请求到达DDoS攻击所针对的服务器之前对其进行过滤。​理想情况下，DDoS攻击应该在能够首先到达目标服务器之前通过能够丢弃或重新路由与攻击相关的流量的解决方案来检测和缓解。
 
 这可以使用专用的内部部署硬件解决方案，基于云的解决方案，如专用的DDoS缓解服务，通过耐DDoS网络路由域名的DNS，基于云的过滤，或者它们的一些组合实施。​无论如何，这个问题有点太复杂，不能仅仅用一到两个段落来解释，所以如果这是您想追求的主题，我会建议您做进一步的研究。​当DDoS攻击的本质被正确理解时，这个答案会更有意义。
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>当我通过更新页面启用或禁用模块或签名文件时，它会在配置中它们将按字母数字排序。​我可以改变他们排序的方式吗？
+
+这个有可能。​如果您需要强制某些文件以特定顺序执行，您可以在列出配置指令的位置中的在他们的名字之前添加一些任意数据，并用冒号分隔。​当更新页面随后再次对文件进行排序时，这个添加的任意数据会影响排序顺序，因此导致它们按照您想要的顺序执行，并且不需要重命名它们。
+
+例如，假设配置指令包含如下列出的文件：
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+如果您想首先执行`file3.php`，您可以在文件名前添加`aaa:`或类似：
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+然后，如果启用了新文件`file6.php`，当更新页面再次对它们进行排序时，它应该像这样结束：
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+当文件禁用时的情况是相同的。​相反，如果您希望文件最后执行，您可以在文件名前添加`zzz:`或类似。​在任何情况下，您都不需要重命名相关文件。
 
 ---
 
@@ -1341,4 +1359,4 @@ CIDRAM不收集或处理任何信息用于营销或广告目的，既不销售�
 ---
 
 
-最后更新：2018年7月4日。
+最后更新：2018年7月6日。

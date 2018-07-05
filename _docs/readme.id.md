@@ -341,6 +341,18 @@ Konfigurasi umum dari CIDRAM.
 "ipaddr"
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
+Nilai yang disarankan untuk "ipaddr":
+
+Nilai | Menggunakan
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternatif; jika di atas tidak bekerja).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Ditetapkan oleh konfigurasi server.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Tidak ada reverse proxy (nilai default).
+
 "forbid_on_block"
 - Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?
 
@@ -924,7 +936,6 @@ Modul telah tersedia untuk memastikan bahwa paket dan produk berikut akan kompat
 - [Saya perlu modifikasi khusus, customisasi, dll; Apakah kamu bisa membantu?](#SPECIALIST_MODIFICATIONS)
 - [Saya seorang pengembang, perancang situs web, atau programmer. Dapatkah saya menerima atau menawarkan pekerjaan yang berkaitan dengan proyek ini?](#ACCEPT_OR_OFFER_WORK)
 - [Saya ingin berkontribusi pada proyek ini; Dapatkah saya melakukan ini?](#WANT_TO_CONTRIBUTE)
-- [Nilai yang disarankan untuk "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Dapatkah saya menggunakan cron untuk mengupdate secara otomatis?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Apa "pelanggaran"?](#WHAT_ARE_INFRACTIONS)
 - [Dapatkah CIDRAM memblokir nama host?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ Modul telah tersedia untuk memastikan bahwa paket dan produk berikut akan kompat
 - [Dapatkah saya menggunakan CIDRAM untuk melindungi hal-hal selain daripada situs web (misalnya, server email, FTP, SSH, IRC, dll)?](#PROTECT_OTHER_THINGS)
 - [Akankah masalah terjadi jika saya menggunakan CIDRAM pada saat yang sama dengan menggunakan layanan CDN atau cache?](#CDN_CACHING_PROBLEMS)
 - [Akankah CIDRAM melindungi situs web saya dari serangan DDoS?](#DDOS_ATTACKS)
+- [Ketika saya mengaktifkan atau menonaktifkan modul atau file tanda tangan melalui halaman pembaruan, itu memilah mereka secara alfanumerik dalam konfigurasi. Bisakah saya mengubah cara mereka disortir?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Apa yang "tanda tangan"?
 
@@ -1023,18 +1035,6 @@ Ya. Lisensi kami tidak melarang hal ini.
 
 Ya. Kontribusi untuk proyek ini sangat disambut baik. Silahkan lihat "CONTRIBUTING.md" untuk informasi lebih lanjut.
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Nilai yang disarankan untuk "ipaddr".
-
-Nilai | Menggunakan
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternatif; jika di atas tidak bekerja).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Ditetapkan oleh konfigurasi server.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Tidak ada reverse proxy (nilai default).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Dapatkah saya menggunakan cron untuk mengupdate secara otomatis?
 
 Ya. API dibangun dalam bagian depan untuk berinteraksi dengan halaman pembaruan melalui skrip eksternal. Skrip terpisah, "[Cronable](https://github.com/Maikuolan/Cronable)", tersedia, dan dapat digunakan oleh cron manager atau cron scheduler untuk mengupdate paket ini dan paket didukung lainnya secara otomatis (script ini menyediakan dokumentasi sendiri).
@@ -1091,6 +1091,24 @@ Jawaban sedikit lebih panjang: CIDRAM akan membantu mengurangi dampak yang dapat
 Pertama, CIDRAM adalah paket PHP, dan karena itu beroperasi di mesin tempat PHP diinstal. Ini berarti bahwa CIDRAM hanya dapat melihat dan memblokir permintaan *setelah* server telah menerimanya. Kedua, mitigasi DDoS yang efektif harus menyaring permintaan *sebelum* mereka mencapai server yang ditargetkan oleh serangan DDoS. Idealnya, serangan DDoS harus dideteksi dan dimitigasi oleh solusi yang mampu menjatuhkan atau merutekan di tempat lain lalu lintas yang terkait dengan serangan, sebelum mencapai server yang ditargetkan di tempat pertama.
 
 Ini dapat diimplementasikan dengan menggunakan solusi perangkat keras on-premise berdedikasi, dan/atau solusi berbasis cloud seperti layanan mitigasi DDoS berdedikasi, dengan merutekan DNS domain melalui jaringan yang dapat menahan serangan DDoS, dengan pemfilteran berbasis cloud, atau dengan beberapa kombinasinya. Bagaimanapun juga, subjek ini agak terlalu kompleks untuk dijelaskan secara menyeluruh hanya dengan satu atau dua paragraf, jadi saya akan merekomendasikan melakukan penelitian lebih lanjut jika ini adalah subjek yang ingin Anda kejar. Ketika sifat serangan DDoS benar dipahami, jawaban ini akan lebih masuk akal.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Ketika saya mengaktifkan atau menonaktifkan modul atau file tanda tangan melalui halaman pembaruan, itu memilah mereka secara alfanumerik dalam konfigurasi. Bisakah saya mengubah cara mereka disortir?
+
+Ya. Jika Anda perlu memaksa beberapa file untuk dieksekusikan dalam urutan tertentu, Anda dapat menambahkan beberapa data sewenang-wenang sebelum nama mereka di direktif konfigurasi dimana mereka terdaftar, dipisahkan oleh titik dua. Ketika halaman pembaruan selanjutnya mengurutkan file lagi, data tambahan ini akan mempengaruhi urutan, menyebabkan mereka secara konsekuen mengeksekusi dalam urutan yang Anda inginkan, tanpa perlu mengganti nama mereka.
+
+Misalnya, dengan asumsi direktif konfigurasi dengan file yang tercantum sebagai berikut:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Jika Anda ingin `file3.php` untuk mengeksekusi terlebih dahulu, Anda bisa menambahkan sesuatu seperti `aaa:` sebelum nama file:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Kemudian, jika file baru, `file6.php`, diaktifkan, ketika halaman pembaruan mengurutkan semuanya lagi, itu akan berakhir seperti ini:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Situasi adalah sama ketika file dinonaktifkan. Sebaliknya, jika Anda ingin file dieksekusi terakhir, Anda bisa menambahkan sesuatu seperti `zzz:` sebelum nama file. Dalam hal apapun, Anda tidak perlu mengganti nama file yang dimaksud.
 
 ---
 
@@ -1332,4 +1350,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 4 Juli 2018 (2018.07.04).
+Terakhir Diperbarui: 6 Juli 2018 (2018.07.06).

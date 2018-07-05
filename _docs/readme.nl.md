@@ -341,6 +341,18 @@ Algemene configuratie voor CIDRAM.
 "ipaddr"
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke). Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
+Aanbevolen waarden voor "ipaddr":
+
+Waarde | Gebruik makend van
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternatief; als bovenstaande niet werkt).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
+
 "forbid_on_block"
 - Welk HTTP-statusbericht moet CIDRAM verzenden bij het blokkeren van verzoeken?
 
@@ -924,7 +936,6 @@ Modules zijn beschikbaar gemaakt om ervoor te zorgen dat de volgende pakketten e
 - [Ik heb speciale modificaties en aanpassingen nodig; Kan u helpen?](#SPECIALIST_MODIFICATIONS)
 - [Ik ben een ontwikkelaar, website ontwerper, of programmeur. Kan ik werken aan dit project accepteren of aanbieden?](#ACCEPT_OR_OFFER_WORK)
 - [Ik wil bijdragen aan het project; Kan ik dit doen?](#WANT_TO_CONTRIBUTE)
-- [Aanbevolen waarden voor "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Kan ik cron gebruiken om automatisch bij te werken?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [Wat zijn "overtredingen"?](#WHAT_ARE_INFRACTIONS)
 - [Kan CIDRAM hostnamen blokkeren?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ Modules zijn beschikbaar gemaakt om ervoor te zorgen dat de volgende pakketten e
 - [Kan ik CIDRAM gebruiken om andere dingen dan websites te beschermen (b.v., e-mailservers, FTP, SSH, IRC, enz)?](#PROTECT_OTHER_THINGS)
 - [Zullen er problemen optreden als ik CIDRAM tegelijk gebruik met CDN's of cacheservices?](#CDN_CACHING_PROBLEMS)
 - [Zal CIDRAM mijn website beschermen tegen DDoS-aanvallen?](#DDOS_ATTACKS)
+- [Wanneer ik modules of signatures bestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
@@ -1023,18 +1035,6 @@ Ja. Onze licentie verbiedt dit niet.
 
 Ja. Bijdragen aan het project zijn zeer welkom. Zie voor meer informatie "CONTRIBUTING.md".
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Aanbevolen waarden voor "ipaddr".
-
-Waarde | Gebruik makend van
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternatief; als bovenstaande niet werkt).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Kan ik cron gebruiken om automatisch bij te werken?
 
 Ja. Een API is ingebouwd in het frontend voor interactie met de updates pagina via externe scripts. Een apart script, "[Cronable](https://github.com/Maikuolan/Cronable)", is beschikbaar, en kan door uw cron manager of cron scheduler gebruikt worden om deze en andere ondersteunde pakketten automatisch te updaten (dit script biedt zijn eigen documentatie).
@@ -1091,6 +1091,24 @@ Een iets langer antwoord: CIDRAM helpt de impact van ongewenst verkeer op uw web
 Ten eerste, CIDRAM is een PHP-pakket en werkt daarom op de computer waarop PHP is geïnstalleerd. Dit betekent dat CIDRAM een verzoek alleen kan zien en blokkeren *nadat* de server het al heeft ontvangen. Ten tweede, effectieve DDoS-mitigatie moet aanvragen filteren *voordat* ze de server bereikt waarop de DDoS-aanval gericht is. In het ideale geval moeten DDoS-aanvallen worden gedetecteerd en beperkt door oplossingen die in staat zijn om verkeer dat is gekoppeld aan aanvallen te laten vallen of omleiden, voordat het in de eerste plaats de gerichte server bereikt.
 
 Dit kan worden geïmplementeerd met behulp van speciale hardware-oplossingen op locatie, en/of cloudgebaseerde oplossingen zoals speciale DDoS-mitigatie diensten, routering van de DNS van een domein via DDoS-resistente netwerken, cloudgebaseerde filteren, of een combinatie daarvan. In elk geval is dit onderwerp echter een beetje te ingewikkeld om grondig met slechts een paar alinea's uit te leggen, dus ik zou aanraden verder onderzoek te doen als dit een onderwerp is dat u wilt nastreven. Wanneer de ware aard van DDoS-aanvallen goed wordt begrepen, zal dit antwoord logischer zijn.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Wanneer ik modules of signatures bestanden activeer of deactiveer via de updates-pagina, sorteert deze ze alfanumeriek in de configuratie. Kan ik de manier wijzigen waarop ze worden gesorteerd?
+
+Ja. Als u bepaalde bestanden wilt dwingen om in een specifieke volgorde uit te voeren, kunt u enkele willekeurige gegevens vóór hun naam toevoegen in de configuratie richtlijn waar ze worden vermeld, gescheiden door een dubbele punt. Wanneer de updates-pagina vervolgens de bestanden opnieuw sorteert, heeft deze toegevoegde willekeurige gegevens invloed op de sorteervolgorde, waardoor ze vervolgens in de gewenste volgorde worden uitgevoerd, zonder dat ze hoeven te hernoemen.
+
+Stel dat u bijvoorbeeld een configuratie richtlijn aanneemt met de volgende bestanden:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Als u wilt dat `file3.php` het eerst uitvoert, u zou iets als `aaa:` kunnen toevoegen voor de naam van het bestand:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Als dan een nieuw bestand, `file6.php`, is geactiveerd, als de updates-pagina ze allemaal opnieuw sorteert, het zou zo moeten eindigen:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Dezelfde situatie wanneer een bestand is gedeactiveerd. Omgekeerd, als u wilde dat het bestand als laatste werd uitgevoerd, u zou iets als `zzz:` kunnen toevoegen voor de naam van het bestand. In elk geval hoeft u het betreffende bestand niet te hernoemen.
 
 ---
 
@@ -1340,4 +1358,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 4 Juli 2018 (2018.07.04).
+Laatste Bijgewerkt: 6 Juli 2018 (2018.07.06).

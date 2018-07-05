@@ -341,6 +341,18 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 "ipaddr"
 - 연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.
 
+"ipaddr"의 권장 값입니다 :
+
+값 | 사용
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula 리버스 프록시.
+`HTTP_CF_CONNECTING_IP` | Cloudflare 리버스 프록시.
+`CF-Connecting-IP` | Cloudflare 리버스 프록시 (대체; 위가 잘되지 않는 경우).
+`HTTP_X_FORWARDED_FOR` | Cloudbric 리버스 프록시.
+`X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
+
 "forbid_on_block"
 - 요청을 차단할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까?
 
@@ -924,7 +936,6 @@ CIDRAM과의 호환성을 보장하기 위해, 다음 패키지 및 제품에, �
 - [나는 전문가의 변경 및 사용자 맞춤형 등이 필요합니다; 도울 수 있니?](#SPECIALIST_MODIFICATIONS)
 - [나는 개발자, 웹 사이트 디자이너, 또는 프로그래머입니다. 이 프로젝트 관련 작업을 할 수 있습니까?](#ACCEPT_OR_OFFER_WORK)
 - [나는 프로젝트에 공헌하고 싶다; 이것은 수 있습니까?](#WANT_TO_CONTRIBUTE)
-- ["ipaddr"의 권장 값입니다.](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Cron을 사용하여 자동으로 업데이트 할 수 있습니까?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - ["위반"이란 무엇입니까?](#WHAT_ARE_INFRACTIONS)
 - [CIDRAM이 호스트 이름을 차단할 수 있습니까?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ CIDRAM과의 호환성을 보장하기 위해, 다음 패키지 및 제품에, �
 - [CIDRAM을 사용하여 웹 사이트 (예 : 이메일 서버, FTP, SSH, IRC, 등) 이외의 것을 보호 할 수 있습니까?](#PROTECT_OTHER_THINGS)
 - [CDN 또는 캐싱 서비스를 사용하는 것과 동시에 CIDRAM을 사용하면 문제가 발생합니까?](#CDN_CACHING_PROBLEMS)
 - [CIDRAM이 내 웹 사이트를 DDoS 공격으로부터 보호합니까?](#DDOS_ATTACKS)
+- [모듈 또는 서명 파일이 업데이트 페이지를 통해 활성화되거나 비활성화되면, 구성에서 문자 또는 숫자로 정렬됩니다. 분류 방식을 변경할 수 있습니까?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"서명"이란 무엇입니까?
 
@@ -1023,18 +1035,6 @@ CIDRAM는 웹 사이트 소유자가 원하지 않는 트래픽을 차단하는 
 
 예. 프로젝트에 기여 환영합니다. 자세한 내용은 "CONTRIBUTING.md"를 참조하십시오.
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>"ipaddr"의 권장 값입니다.
-
-값 | 사용
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula 리버스 프록시.
-`HTTP_CF_CONNECTING_IP` | Cloudflare 리버스 프록시.
-`CF-Connecting-IP` | Cloudflare 리버스 프록시 (대체; 위가 잘되지 않는 경우).
-`HTTP_X_FORWARDED_FOR` | Cloudbric 리버스 프록시.
-`X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Cron을 사용하여 자동으로 업데이트 할 수 있습니까?
 
 예. 외부 스크립트를 통해 업데이트 페이지와 상호 작용하기위한 프런트 엔드에 API가 내장되어 있습니다. 별도의 스크립트 인 "[Cronable](https://github.com/Maikuolan/Cronable)"을 사용할 수 있습니다. Cron 관리자 또는 Cron 스케줄러가이 사용할 수 있습니다, 패키지 및 기타 지원되는 패키지를 자동으로 업데이트하는 데 사용할 수 있습니다 (이 스크립트는 자체 문서를 제공합니다.).
@@ -1092,6 +1092,24 @@ IP | 운영자
 2. 효과적인 DDoS 완화는 요청이 DDoS 공격의 대상인 서버에 도달하기 전에 요청을 필터링해야합니다. DDoS 공격은 대상 서버에 도달하기 전에 공격과 관련된 트래픽을 중단 또는 재 라우팅 할 수있는 솔루션에 의해 탐지되고 완화되어야합니다.
 
 이것은 전용 "온 프레미스" 하드웨어 솔루션, 전용 DDoS 완화 서비스와 같은 클라우드 기반 솔루션, DDoS 방지 네트워크를 통해 도메인의 DNS 라우팅, 클라우드 기반 필터링, 또는 이들의 조합 일 수있다를 사용하여 구현할 수 있습니다. 어쨌든, 이 주제는 단순한 단락 또는 2 단으로 철저히 설명하기에는 너무 복잡합니다. 이것이 당신이 추구하고자하는 주제라면 더 깊은 연구를하는 것이 좋습니다. DDoS 공격의 진정한 본질이 제대로 이해되면이 대답이 더욱 의미가 있습니다.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>모듈 또는 서명 파일이 업데이트 페이지를 통해 활성화되거나 비활성화되면, 구성에서 문자 또는 숫자로 정렬됩니다. 분류 방식을 변경할 수 있습니까?
+
+예. 특정 순서로 실행할 파일이 필요할 때, 그들의 이름 앞에 설정 지시자가있는 임의의 데이터를 추가 할 수있다 (콜론을 사용하여이 데이터와 이름을 구분하십시오). 이후에 업데이트 페이지가 파일을 다시 정렬하면, 추가 된 임의의 데이터가 정렬 순서에 영향을줍니다. 이렇게하면 파일이 원하는 순서대로 실행됩니다, 그 중 하나의 이름을 바꿀 필요가 없습니다.
+
+예를 들어, 다음과 같이 나열된 파일이있는 구성 지시문을 가정합니다 :
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+`file3.php`를 먼저 실행시키고 싶다면, 파일 이름 앞에 `aaa:`와 같은 것을 추가 할 수 있습니다 :
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+그런 다음 새 파일 `file6.php`가 활성화되면, 업데이트 페이지에서 모두 다시 정렬하면 다음과 같이 끝납니다 :
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+파일이 비활성화 될 때와 동일한 상황입니다. 반대로, 파일을 마지막으로 실행하려면, 파일 이름 앞에 `zzz:`와 같은 것을 추가 할 수 있습니다. 어떤 경우이든 해당 파일의 이름을 바꿀 필요가 없습니다.
 
 ---
 
@@ -1338,4 +1356,4 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 ---
 
 
-최종 업데이트 : 2018년 7월 4일.
+최종 업데이트 : 2018년 7월 6일.

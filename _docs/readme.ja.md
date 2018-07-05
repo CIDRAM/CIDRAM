@@ -341,6 +341,18 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 "ipaddr" （アイピーアドレス）
 - 接続リクエストのＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。
 
+「ipaddr」の推奨値です：
+
+値 | 使用
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsulaリバース・プロキシ。
+`HTTP_CF_CONNECTING_IP` | Cloudflareリバース・プロキシ。
+`CF-Connecting-IP` | Cloudflareリバース・プロキシ（代替；上記がうまくいかない場合）。
+`HTTP_X_FORWARDED_FOR` | Cloudbricリバース・プロキシ。
+`X-Forwarded-For` | [Squidリバース・プロキシ](http://www.squid-cache.org/Doc/config/forwarded_for/)。
+*サーバー・コンフィグレーションによって定義されます。* | [Nginxリバース・プロキシ](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
+`REMOTE_ADDR` | リバース・プロキシはありません（デフォルト値）。
+
 "forbid_on_block" （フォービッド・オン・ブロック）
 - リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？
 
@@ -924,7 +936,6 @@ CIDRAMとの互換性を確保するために、以下のパッケージと製�
 - [私は専門家の変更、​カスタム化、​等が必要です；​手伝ってくれますか？](#SPECIALIST_MODIFICATIONS)
 - [私は開発者、​ウェブサイトデザイナー、​またはプログラマーです。​このプロジェクトに関連する作業を行うことはできますか？](#ACCEPT_OR_OFFER_WORK)
 - [私はプロジェクトに貢献したい；​これはできますか？](#WANT_TO_CONTRIBUTE)
-- [「ipaddr」の推奨値です。](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Cronを使って自動的にアップデートできますか？](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [「違反」とは何ですか？](#WHAT_ARE_INFRACTIONS)
 - [CIDRAMはホスト名をブロックできますか？](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ CIDRAMとの互換性を確保するために、以下のパッケージと製�
 - [CIDRAMを使用してウェブサイト以外のもの（メールサーバー、ＦＴＰ、ＳＳＨ、ＩＲＣ、など）を保護することはできますか？](#PROTECT_OTHER_THINGS)
 - [ＣＤＮやキャッシュ・サービスを使用するのと同時にCIDRAMを使用すると問題が発生しますか？](#CDN_CACHING_PROBLEMS)
 - [CIDRAMは、私のウェブサイトをＤＤｏＳ攻撃から守りますか？](#DDOS_ATTACKS)
+- [アップデート・ページでモジュールまたはシグネチャ・ファイルを有効または無効にすると、コンフィギュレーションに英数字でソートされます。​彼らのソート方法を変更することはできますか？](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>「シグネチャ」とは何ですか？
 
@@ -1023,18 +1035,6 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 はい。​プロジェクトへの貢献は大歓迎です。​詳細については、​「CONTRIBUTING.md」を参照してください。
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>「ipaddr」の推奨値です。
-
-値 | 使用
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsulaリバース・プロキシ。
-`HTTP_CF_CONNECTING_IP` | Cloudflareリバース・プロキシ。
-`CF-Connecting-IP` | Cloudflareリバース・プロキシ（代替；上記がうまくいかない場合）。
-`HTTP_X_FORWARDED_FOR` | Cloudbricリバース・プロキシ。
-`X-Forwarded-For` | [Squidリバース・プロキシ](http://www.squid-cache.org/Doc/config/forwarded_for/)。
-*サーバー・コンフィグレーションによって定義されます。* | [Nginxリバース・プロキシ](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
-`REMOTE_ADDR` | リバース・プロキシはありません（デフォルト値）。
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Cronを使って自動的にアップデートできますか？
 
 はい。​外部スクリプトを介してアップデート・ページと対話するためのＡＰＩがフロントエンドに組み込まれています。​別のスクリプト、「[Cronable](https://github.com/Maikuolan/Cronable)」、が利用可能です。​これは「cron manager （クロン・マネージャー）」や「cron scheduler （クロン・スケジューラ）」がこれと他のサポートされているパッケージを自動的に更新するために使うことができます（このスクリプトは独自のドキュメントを提供しています）。
@@ -1092,6 +1092,24 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 ２. 効果的なＤＤｏＳ軽減は、ＤＤｏＳ攻撃の対象となるサーバーに到達する前に要求をフィルタリングする必要があります。​理想的には、DDoS攻撃は、ターゲット・サーバーに到達する前に、攻撃に関連するトラフィックをドロップまたは再ルーティングできるソリューションによって検出および緩和する必要があります。
 
 これは、専用のオンプレミス・ハードウェア・ソリューション、専用のＤＤｏＳ軽減サービスなどのクラウド・ベースのソリューション、ＤＤｏＳ対応ネットワークを介してドメインのＤＮＳをルーティング、クラウド・ベースのフィルタリング、またはそれらのいくつかの組み合わせを使用して実施することができる。​いずれにしても、この主題はちょうど単なる段落または２つで完全に説明するのは少し複雑すぎる。​これがあなたが追求したい科目であれば、さらなる研究をすることをお勧めします。​ＤＤｏＳ攻撃の真の性質が適切に理解されている場合、この回答はより理にかなっています。
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>アップデート・ページでモジュールまたはシグネチャ・ファイルを有効または無効にすると、コンフィギュレーションに英数字でソートされます。​彼らのソート方法を変更することはできますか？
+
+はい。​特定の順序で実行するファイルが必要な場合は、コンフィギュレーション・ディレクティブの名前の前に任意のデータを追加できます（このデータと名前を区切るためにコロンを使用します）。​その後、アップデート・ページでファイルを再度並べ替えると、この追加された任意のデータがソート順に影響します。​これにより、それらの名前を変更せずに、必要な順序で実行されます。
+
+たとえば、次のようにファイルをコンフィギュレーション・ディレクティブがあるとします：
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+`file3.php`を最初に実行したければ、ファイル名の前に`aaa:`のようなものを追加することができます：
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+次に、新しいファイル`file6.php`が有効になっている場合、アップデート・ページがそれらをすべて並べ替えると、次のようになります：
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+ファイルが非アクティブになったときと同じ状況です。​逆に、ファイルを最後に実行したい場合は、ファイルの名前の前に`zzz:`のようなものを追加することができます。​いずれの場合でも、問題のファイルの名前を変更する必要はありません。
 
 ---
 
@@ -1339,4 +1357,4 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 ---
 
 
-最終アップデート：2018年7月4日。
+最終アップデート：2018年7月6日。

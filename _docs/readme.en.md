@@ -341,6 +341,18 @@ General CIDRAM configuration.
 "ipaddr"
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes). Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
+Recommended values for "ipaddr":
+
+Value | Using
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | No reverse proxy (default value).
+
 "forbid_on_block"
 - Which HTTP status message should CIDRAM send when blocking requests?
 
@@ -924,7 +936,6 @@ Modules have been made available to ensure that the following packages and produ
 - [I need specialist modifications, customisations, etc; Can you help?](#SPECIALIST_MODIFICATIONS)
 - [I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?](#ACCEPT_OR_OFFER_WORK)
 - [I want to contribute to the project; Can I do this?](#WANT_TO_CONTRIBUTE)
-- [Recommended values for "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Can I use cron to update automatically?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [What are "infractions"?](#WHAT_ARE_INFRACTIONS)
 - [Can CIDRAM block hostnames?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ Modules have been made available to ensure that the following packages and produ
 - [Can I use CIDRAM to protect things other than websites (e.g., email servers, FTP, SSH, IRC, etc)?](#PROTECT_OTHER_THINGS)
 - [Will problems occur if I use CIDRAM at the same time as using CDNs or caching services?](#CDN_CACHING_PROBLEMS)
 - [Will CIDRAM protect my website from DDoS attacks?](#DDOS_ATTACKS)
+- [When I activate or deactivate modules or signature files via the updates page, it sorts them alphanumerically in the configuration. Can I change the way that they get sorted?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>What is a "signature"?
 
@@ -1023,18 +1035,6 @@ Yes. Our license does not prohibit this.
 
 Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md" for more information.
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Recommended values for "ipaddr".
-
-Value | Using
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | No reverse proxy (default value).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Can I use cron to update automatically?
 
 Yes. An API is built into the front-end for interacting with the updates page via external scripts. A separate script, "[Cronable](https://github.com/Maikuolan/Cronable)", is available, and can be used by your cron manager or cron scheduler to update this and other supported packages automatically (this script provides its own documentation).
@@ -1091,6 +1091,24 @@ Slightly longer answer: CIDRAM will help reduce the impact that unwanted traffic
 Firstly, CIDRAM is a PHP package, and therefore operates at the machine where PHP is installed. This means that CIDRAM can only see and block a request *after* the server has already received it. Secondly, effective [DDoS mitigation](https://en.wikipedia.org/wiki/DDoS_mitigation) should filter requests *before* they reach the server targeted by the DDoS attack. Ideally, DDoS attacks should be detected and mitigated by solutions capable of dropping or rerouting traffic associated with attacks, before it reaches the targeted server in the first place.
 
 This can be implemented using dedicated, on-premise hardware solutions, and/or cloud-based solutions such as dedicated DDoS mitigation services, routing a domain's DNS through DDoS-resistant networks, cloud-based filtering, or some combination thereof. In any case though, this subject is a little too complex to explain thoroughly with just a mere paragraph or two, so I would recommend doing further research if this is a subject you want to pursue. When the true nature of DDoS attacks is properly understood, this answer will make more sense.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>When I activate or deactivate modules or signature files via the updates page, it sorts them alphanumerically in the configuration. Can I change the way that they get sorted?
+
+Yes. If you need to force some files to execute in a specific order, you can add some arbitrary data before their names in the configuration directive where they're listed, separated by a colon. When the updates page subsequently sorts the files again, this added arbitrary data will affect the sort order, causing them consequently to execute in the order that you want, without needing to rename any of them.
+
+For example, assuming a configuration directive with files listed as follows:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+If you wanted `file3.php` to execute first, you could add something like `aaa:` before the name of the file:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Then, if a new file, `file6.php`, is activated, when the updates page resorts them all, it should end up like this:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Same situation when a file is deactivated. Conversely, if you wanted the file to execute last, you could add something like `zzz:` before the name of the file. In any case, you won't need to rename the file in question.
 
 ---
 
@@ -1342,4 +1360,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 4 July 2018 (2018.07.04).
+Last Updated: 6 July 2018 (2018.07.06).

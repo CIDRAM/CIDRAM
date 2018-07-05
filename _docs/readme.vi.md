@@ -341,6 +341,18 @@ Cấu hình chung cho CIDRAM.
 "ipaddr"
 - Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
+Giá trị được đề xuất cho "ipaddr":
+
+Giá trị | Sử dụng
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy reverse Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy reverse Cloudflare.
+`CF-Connecting-IP` | Proxy reverse Cloudflare (một sự thay thế; nếu ở trên không hoạt động).
+`HTTP_X_FORWARDED_FOR` | Proxy reverse Cloudbric.
+`X-Forwarded-For` | [Proxy reverse Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
+
 "forbid_on_block"
 - Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn?
 
@@ -924,7 +936,6 @@ Các mô-đun đã được cung cấp để đảm bảo rằng các gói và s
 - [Tôi cần sửa đổi chuyên môn, tuỳ chỉnh, vv; Bạn có thể giúp?](#SPECIALIST_MODIFICATIONS)
 - [Tôi là nhà phát triển, nhà thiết kế trang web, hay lập trình viên. Tôi có thể chấp nhận hay cung cấp các công việc liên quan đến dự án này không?](#ACCEPT_OR_OFFER_WORK)
 - [Tôi muốn đóng góp cho dự án; Tôi có thể làm được điều này?](#WANT_TO_CONTRIBUTE)
-- [Giá trị được đề xuất cho "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Tôi có thể sử dụng cron để cập nhật tự động không?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - ["Vi phạm" là gì?](#WHAT_ARE_INFRACTIONS)
 - [CIDRAM có thể chặn tên máy chủ không?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ Các mô-đun đã được cung cấp để đảm bảo rằng các gói và s
 - [Tôi có thể sử dụng CIDRAM để bảo vệ những thứ khác ngoài trang web (v.d., máy chủ email, FTP, SSH, IRC, vv)?](#PROTECT_OTHER_THINGS)
 - [Sẽ xảy ra sự cố nếu tôi sử dụng CIDRAM cùng lúc với việc sử dụng các CDN hoặc các dịch vụ bộ nhớ đệm?](#CDN_CACHING_PROBLEMS)
 - [CIDRAM có bảo vệ trang web của tôi khỏi các cuộc tấn công DDoS không?](#DDOS_ATTACKS)
+- [Khi tôi kích hoạt hoặc hủy kích hoạt các mô-đun hay các tập tin chữ ký thông qua trang cập nhật, nó sắp xếp chúng theo thứ tự chữ và số trong cấu hình. Tôi có thể thay đổi cách họ được sắp xếp không?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
@@ -1023,18 +1035,6 @@ Vâng. Giấy phép của chúng tôi không cấm điều này.
 
 Vâng. Đóng góp cho dự án rất được hoan nghênh. Vui lòng xem "CONTRIBUTING.md" để biết thêm thông tin.
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Giá trị được đề xuất cho "ipaddr".
-
-Giá trị | Sử dụng
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy reverse Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy reverse Cloudflare.
-`CF-Connecting-IP` | Proxy reverse Cloudflare (một sự thay thế; nếu ở trên không hoạt động).
-`HTTP_X_FORWARDED_FOR` | Proxy reverse Cloudbric.
-`X-Forwarded-For` | [Proxy reverse Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Tôi có thể sử dụng cron để cập nhật tự động không?
 
 Vâng. API được tích hợp trong front-end để tương tác với trang cập nhật thông qua các kịch bản bên ngoài. Một kịch bản riêng biệt, "[Cronable](https://github.com/Maikuolan/Cronable)", là có sẵn, và có thể được sử dụng bởi cron manager hay cron scheduler để tự động cập nhật gói này và gói hỗ trợ khác (kịch bản này cung cấp tài liệu riêng của nó).
@@ -1091,6 +1091,24 @@ Câu trả lời hơi dài hơn: CIDRAM sẽ giúp giảm tác động mà lưu 
 Thứ nhất, CIDRAM là một gói PHP, và do đó hoạt động ở máy nơi PHP được cài đặt. Điều này có nghĩa là CIDRAM chỉ có thể xem và chặn một yêu cầu *sau khi* máy chủ đã nhận được nó. Thứ hai, giảm thiểu DDoS hiệu quả sẽ lọc các yêu cầu *trước khi* chúng đến được máy chủ được nhắm mục tiêu bởi cuộc tấn công DDoS. Lý tưởng nhất, các cuộc tấn công DDoS nên được phát hiện và giảm thiểu bằng các giải pháp có khả năng giảm hay định tuyến lại lưu lượng được liên kết đến cuộc tấn công, trước khi nó đến máy chủ được nhắm mục tiêu ngay từ đầu.
 
 Điều này có thể được thực hiện bằng cách sử dụng các giải pháp phần cứng chuyên dụng có trên địa điểm, các giải pháp dựa trên đám mây như các dịch vụ giảm thiểu DDoS chuyên dụng, định tuyến DNS của tên miền thông qua mạng chống DDoS, lọc dựa trên đám mây, hoặc một số kết hợp của chúng. Tuy nhiên, trong mọi trường hợp, chủ đề này hơi phức tạp để giải thích kỹ lưỡng chỉ với một hoặc hai đoạn, vì vậy tôi khuyên bạn nên nghiên cứu thêm nếu đây là chủ đề bạn muốn theo đuổi. Khi bản chất thực sự của các cuộc tấn công DDoS được hiểu đúng, câu trả lời này sẽ có ý nghĩa hơn.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Khi tôi kích hoạt hoặc hủy kích hoạt các mô-đun hay các tập tin chữ ký thông qua trang cập nhật, nó sắp xếp chúng theo thứ tự chữ và số trong cấu hình. Tôi có thể thay đổi cách họ được sắp xếp không?
+
+Vâng. Nếu bạn cần buộc một số tập tin thực thi theo thứ tự cụ thể, bạn có thể thêm một số dữ liệu tùy ý trước tên của chúng trong chỉ thị cấu hình nơi chúng được liệt kê, được phân tách bằng dấu hai chấm. Khi trang cập nhật sau đó sắp xếp lại các tập tin, dữ liệu tùy ý được thêm này sẽ ảnh hưởng đến thứ tự sắp xếp, gây ra chúng do đó để thực hiện theo thứ tự mà bạn muốn, mà không cần phải đổi tên bất kỳ người nào trong số họ.
+
+Ví dụ, giả sử một chỉ thị cấu hình với các tập tin được liệt kê như sau:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Nếu bạn muốn `file3.php` thực hiện trước, bạn có thể thêm một cái gì đó như `aaa:` trước tên của tập tin:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Sau đó, nếu một tập tin mới, `file6.php`, được kích hoạt, khi trang cập nhật sắp xếp lại tất cả, nó sẽ kết thúc như sau:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Tình huống tương tự khi một tập tin bị hủy kích hoạt. Ngược lại, nếu bạn muốn tập tin thực thi cuối cùng, bạn có thể thêm một cái gì đó như `zzz:` trước tên của tập tin. Trong mọi trường hợp, bạn sẽ không cần đổi tên tập tin đang được đề cập đến.
 
 ---
 
@@ -1332,4 +1350,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Bảy 2018 (2018.07.04).
+Lần cuối cập nhật: 6 Tháng Bảy 2018 (2018.07.06).

@@ -339,7 +339,19 @@ General configuración para CIDRAM.
 - El formato de notación de fecha/hora usado por CIDRAM. Predefinido = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 "ipaddr"
-- Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+- ¿Dónde puedo encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!
+
+Valores recomendados para "ipaddr":
+
+Valor | Utilizando
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare.
+`CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; si lo anterior no funciona).
+`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric.
+`X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definido por la configuración del servidor.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Sin proxy inverso (valor predefinido).
 
 "forbid_on_block"
 - ¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes?
@@ -924,7 +936,6 @@ Los módulos se han puesto a disposición para garantizar que los siguientes paq
 - [Necesito modificaciones especiales, personalizaciones, etc; ¿Puede usted ayudar?](#SPECIALIST_MODIFICATIONS)
 - [Soy desarrollador, diseñador de sitios web o programador. ¿Puedo aceptar u ofrecer trabajos relacionados con este proyecto?](#ACCEPT_OR_OFFER_WORK)
 - [Quiero contribuir al proyecto; ¿Puedo hacer esto?](#WANT_TO_CONTRIBUTE)
-- [Valores recomendados para "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [¿Puedo usar cron para actualizar automáticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [¿Qué son "infracciones"?](#WHAT_ARE_INFRACTIONS)
 - [¿Puede CIDRAM bloquear nombres de host?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ Los módulos se han puesto a disposición para garantizar que los siguientes paq
 - [¿Puedo usar CIDRAM para proteger cosas que no sean sitios web (por ejemplo, servidores de correo electrónico, FTP, SSH, IRC, etc)?](#PROTECT_OTHER_THINGS)
 - [¿Se producirán problemas si uso CIDRAM al mismo tiempo que uso CDN o servicios de caché?](#CDN_CACHING_PROBLEMS)
 - [¿CIDRAM protegerá mi sitio web de los ataques DDoS?](#DDOS_ATTACKS)
+- [Cuando activar o desactivar módulos o archivos de firmas a través de la página de actualizaciones, los ordena de forma alfanumérica en la configuración. ¿Puedo cambiar la forma en que se ordenan?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>¿Qué es una "firma"?
 
@@ -1023,18 +1035,6 @@ Sí. Nuestra licencia no lo prohíbe.
 
 Sí. Las contribuciones al proyecto son muy bienvenidas. Consulte "CONTRIBUTING.md" para obtener más información.
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valores recomendados para "ipaddr".
-
-Valor | Utilizando
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy inverso Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy inverso Cloudflare.
-`CF-Connecting-IP` | Proxy inverso Cloudflare (alternativa; si lo anterior no funciona).
-`HTTP_X_FORWARDED_FOR` | Proxy inverso Cloudbric.
-`X-Forwarded-For` | [Proxy inverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definido por la configuración del servidor.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Sin proxy inverso (valor predefinido).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>¿Puedo usar cron para actualizar automáticamente?
 
 Sí. Una API está integrada en el front-end para interactuar con la página de actualizaciones a través de scripts externos. Un script separado, "[Cronable](https://github.com/Maikuolan/Cronable)", está disponible, y puede ser utilizado por su cron manager o cron scheduler para actualizar este y otros paquetes soportados automáticamente (este script proporciona su propia documentación).
@@ -1091,6 +1091,24 @@ Respuesta un poco más larga: CIDRAM ayudará a reducir el impacto que el tráfi
 En primer lugar, CIDRAM es un paquete PHP y, por lo tanto, opera en la máquina donde está instalado PHP. Esto significa que CIDRAM solo puede ver y bloquear una solicitud *después* de que el servidor ya la haya recibido. En segundo lugar, la [mitigación de DDoS](https://es.wikipedia.org/wiki/Mitigaci%C3%B3n_de_DDoS) efectiva debe filtrar las solicitudes *antes* de que lleguen al servidor al que se dirige el ataque DDoS. Idealmente, los ataques DDoS deberían ser detectados y mitigados por soluciones capaces de eliminar o redirigir el tráfico asociado con ataques, antes de que llegue al servidor objetivo en primer lugar.
 
 Esto puede implementarse utilizando soluciones de hardware locales dedicadas y/o soluciones basadas en la nube, como servicios de mitigación DDoS dedicados, enrutamiento del DNS de un dominio a través de redes resistentes a DDoS, filtrado basado en la nube, o alguna combinación de los mismos. En cualquier caso, este tema es un poco demasiado complejo para explicarlo exhaustivamente con solo un párrafo o dos, por lo que recomendaría investigar más si este es un tema que desea seguir. Cuando la verdadera naturaleza de los ataques DDoS se entiende correctamente, esta respuesta tendrá más sentido.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Cuando activar o desactivar módulos o archivos de firmas a través de la página de actualizaciones, los ordena de forma alfanumérica en la configuración. ¿Puedo cambiar la forma en que se ordenan?
+
+Sí. Si necesita forzar algunos archivos se ejecuten en un orden específico, puede agregar algunos datos arbitrarios antes de sus nombres en la directiva de configuración donde están listados, separados por dos puntos. Cuando la página de actualizaciones clasifique los archivos nuevamente, esta información adicional arbitraria afectará el orden de clasificación, haciendo que, en consecuencia, se ejecuten en el orden que desee, sin necesidad de cambiar el nombre de ninguno de ellos.
+
+Por ejemplo, suponiendo una directiva de configuración con los archivos enumerados de la siguiente manera:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Si quería ejecutar `file3.php` primero, puede agregar algo como `aaa:` antes del nombre del archivo:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Entonces, si se activa un archivo nuevo, `file6.php`, cuando la página de actualizaciones los clasifique nuevamente, debería terminar así:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+La misma situación cuando un archivo está desactivado. Por el contrario, si quería que el archivo se ejecuta al final, podría agregar algo como `zzz:` antes del nombre del archivo. En cualquier caso, no necesitará cambiar el nombre del archivo en cuestión.
 
 ---
 
@@ -1339,4 +1357,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 4 Julio de 2018 (2018.07.04).
+Última Actualización: 6 Julio de 2018 (2018.07.06).

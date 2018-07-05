@@ -366,6 +366,18 @@
  <li>کہاں درخواستوں منسلک کرنے کے IP ایڈریس کو تلاش کرنے کے لئے؟ (جیسا Cloudflare کے اور پسند کرتا ہے کے طور پر خدمات کے لئے مفید). پہلے سے طے شدہ = REMOTE_ADDR. انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!</li>
 </ul></div>
 
+<div dir="rtl">"ipaddr" کے لئے سفارش کی اقدار:<br /><br /></div>
+
+&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی).
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی).
+`CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی).
+`X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/).
+&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
+
 <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
  <li>درخواستوں کو روکنے پر بھیجنے کے لئے HTTP حیثیت کا پیغام.</li>
@@ -1068,7 +1080,6 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
  <li><a href="#SPECIALIST_MODIFICATIONS">مجھے خصوصی ترمیم کی ضرورت؛ کیا آپ مدد کر سکتے ہیں؟</a></li>
  <li><a href="#ACCEPT_OR_OFFER_WORK">میں نے ایک ڈویلپر، ویب سائٹ ڈیزائنر، یا پروگرامر ہوں. میں اس منصوبے سے متعلق کام کر سکتے ہیں؟</a></li>
  <li><a href="#WANT_TO_CONTRIBUTE">میں نے اس منصوبے میں شراکت کے لئے چاہتے ہیں؛ میں یہ کر سکتا ہوں؟</a></li>
- <li><a href="#RECOMMENDED_VALUES_FOR_IPADDR">"ipaddr" کے لئے سفارش کی اقدار.</a></li>
  <li><a href="#CRON_TO_UPDATE_AUTOMATICALLY">کیا میں خود کار طریقے سے اپ ڈیٹ کرنے کیلئے cron استعمال کرسکتا ہوں؟</a></li>
  <li><a href="#WHAT_ARE_INFRACTIONS">"خلاف ورزی" کیا ہیں؟</a></li>
  <li><a href="#BLOCK_HOSTNAMES">CIDRAM بلاک میزبانوں کو کر سکتے ہیں؟</a></li>
@@ -1076,6 +1087,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
  <li><a href="#PROTECT_OTHER_THINGS">کیا ویب سائٹس کے علاوہ چیزوں کی حفاظت کے لئے میں CIDRAM استعمال کرسکتا ہوں (مثال کے طور پر، ای میل سرورز، FTP سرورز، SSH سرورز، IRC سرورز، وغیرہ)؟</a></li>
  <li><a href="#CDN_CACHING_PROBLEMS">مواد ترسیل کے نیٹ ورک یا کیشنگ کی خدمات کا استعمال کرتے ہوئے ایک ہی وقت میں CIDRAM کا استعمال کرتے ہوئے، کیا مسائل ہو گی؟</a></li>
  <li><a href="#DDOS_ATTACKS">کیا CIDRAM DDoS حملوں کے خلاف میری ویب سائٹ کی حفاظت کرتا ہے؟</a></li>
+ <li><a href="#CHANGE_COMPONENT_SORT_ORDER">جب میں اپ ڈیٹس کے صفحے کے ذریعہ ماڈیولز یا دستخط شدہ فائلوں کو چالو یا غیر فعال کروں تو، یہ انفرادی طور پر ترتیب میں تبدیل کرتا ہے. کیا میں اس راستہ کو تبدیل کر سکتا ہوں جسے وہ ترتیب دیں گے؟</a></li>
 </ul></div>
 
 #### <div dir="rtl"><a name="WHAT_IS_A_SIGNATURE"></a>ایک "دستخط" کیا ہے؟<br /><br /></div>
@@ -1169,18 +1181,6 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 <div dir="rtl">جی ہاں. اس کا خیر مقدم کیا جاتا ہے. "CONTRIBUTING.md" ملاحظہ کریں مزید معلومات کے لئے.<br /><br /></div>
 
-#### <div dir="rtl"><a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>"ipaddr" کے لئے سفارش کی اقدار.<br /><br /></div>
-
-&nbsp; <div dir="rtl" style="display:inline;">قدر</div> | &nbsp; <div dir="rtl" style="display:inline;">استعمال</div>
----|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy (ریورس پراکسی).
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy (ریورس پراکسی).
-`CF-Connecting-IP` | Cloudflare reverse proxy (ریورس پراکسی؛ متبادل؛ مندرجہ بالا کام نہیں کرتا تو).
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy (ریورس پراکسی).
-`X-Forwarded-For` | [Squid reverse proxy (ریورس پراکسی)](http://www.squid-cache.org/Doc/config/forwarded_for/).
-&nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
-
 #### <div dir="rtl"><a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>کیا میں خود کار طریقے سے اپ ڈیٹ کرنے کیلئے cron استعمال کرسکتا ہوں؟<br /><br /></div>
 
 <div dir="rtl">جی ہاں. بیرونی سکرپٹ کے ذریعہ اپ ڈیٹس صفحہ کے ساتھ بات چیت کرنے کے لئے ایک API سامنے کے آخر میں بنایا جاتا ہے. ایک علیحدہ لکھاوٹ، "<a href="https://github.com/Maikuolan/Cronable">Cronable</a>"، دستیاب ہے، اور اس کے اور دیگر معاون پیکجوں کو خود کار طریقے سے اپ ڈیٹ کرنے کے لئے آپ کے cron manager یا cron scheduler کا استعمال کیا جا سکتا ہے (یہ اسکرپٹ اپنی اپنی دستاویزات فراہم کرتا ہے).<br /><br /></div>
@@ -1237,6 +1237,24 @@ IP | آپریٹر
 <div dir="rtl">١. CIDRAM ایک پی ایچ پی پیکیج ہے، اور اس وجہ سے چلاتا ہے جہاں PHP انسٹال ہے. اس کا مطلب یہ ہے کہ سرور پہلے سے موصول ہونے کے بعد CIDRAM صرف درخواستوں کو دیکھ سکتے ہیں اور بلاک کرسکتے ہیں. ٢. DDoS حملے کے ذریعہ ھدف کردہ سرور تک پہنچنے سے قبل مؤثر DDoS کمیشن کو درخواستوں کو فلٹر کرنا چاہئے. مثالی طور پر، وہ ان جگہوں سے پتہ لگانے اور کم کرنے کے قابل ہونا چاہئے جو حملوں کے ساتھ منسلک ٹریفک کو ختم کرنے میں کامیاب ہوسکتی ہیں، اس سے پہلے کہ وہ پہلی جگہ میں ھدف شدہ سرور تک پہنچے.<br /><br /></div>
 
 <div dir="rtl">اس کو نافذ کرنے کے کچھ طریقے: وقف ہارڈ ویئر کے حل. وقف DDoS کمیشن کی خدمات. DDoS مزاحم نیٹ ورک کے ذریعہ ڈومین کے DNS کو روٹنگ. کلاؤڈ پر مبنی فلٹرنگ. متبادل طور پر: اس کا کچھ مجموعہ کسی بھی صورت میں، یہ مضمون پیچیدہ ہے، لہذا اگر آپ اس میں دلچسپی رکھتے ہیں تو میں مزید تحقیق کروں گا. جب DDoS کے حملوں کی صحیح نوعیت مناسب طریقے سے سمجھ گئی ہے، تو یہ جواب زیادہ احساس کرے گا.<br /><br /></div>
+
+#### <div dir="rtl"><a name="CHANGE_COMPONENT_SORT_ORDER"></a>جب میں اپ ڈیٹس کے صفحے کے ذریعہ ماڈیولز یا دستخط شدہ فائلوں کو چالو یا غیر فعال کروں تو، یہ انفرادی طور پر ترتیب میں تبدیل کرتا ہے. کیا میں اس راستہ کو تبدیل کر سکتا ہوں جسے وہ ترتیب دیں گے؟<br /><br /></div>
+
+<div dir="rtl">جی ہاں. اگر آپ کو مخصوص فائلوں میں عمل درآمد کرنے کے لئے کچھ فائلوں پر مجبور کرنے کی ضرورت ہے تو، آپ ان کے نام سے پہلے ان ترتیبات کو ہدایت دیتے ہیں جہاں وہ فہرست میں درج ہوتے ہیں، ان سے پہلے کسی بھی مباحثہ کے اعداد و شمار کو شامل کرسکتے ہیں. جب اپ ڈیٹس کے صفحے کو بعد میں فائلوں کو دوبارہ ترتیب دیتا ہے، تو اس نے مزید کہا کہ خود مختار اعداد و شمار اس طرح کے حکم کو متاثر کرے گی، جس کے نتیجے میں ان کے نتیجے میں عملدرآمد کرنے کے نتیجے میں عملدرآمد کرنے کے لۓ، بغیر کسی کو تبدیل کرنے کی ضرورت ہے.<br /><br /></div>
+
+<div dir="rtl">مثال کے طور پر، مندرجہ ذیل درج ذیل فائلوں کے ساتھ ایک ترتیب ڈائریکٹری کو فرض کرنا:<br /><br /></div>
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+<div dir="rtl">اگر آپ چاہتے تھے کہ <code dir="ltr">file3.php</code> سب سے پہلے عمل کرنے کیلئے، آپ فائل کے نام سے پہلے <code dir="ltr">aaa:</code> کی طرح کچھ شامل کرسکتے ہیں:<br /><br /></div>
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+<div dir="rtl">پھر، اگر ایک نئی فائل، <code dir="ltr">file6.php</code>، چالو کر دیا جاتا ہے، جب اپ ڈیٹس صفحہ ان کو دوبارہ دوبارہ تبدیل کرتا ہے، تو اسے اس طرح ختم کرنا چاہئے:<br /><br /></div>
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+<div dir="rtl">ایک ہی صورت حال حال ہی میں ایک فائل غیر فعال ہے. اس کے برعکس، اگر آپ چاہتے تھے کہ آخری فائل کو عمل کرنے کے لۓ، آپ فائل کے نام سے پہلے <code dir="ltr">zzz:</code> کی طرح کچھ شامل کرسکیں. کسی بھی صورت میں، آپ کو سوال میں فائل کا نام تبدیل کرنے کی ضرورت نہیں ہوگی.<br /><br /></div>
 
 ---
 
@@ -1510,4 +1528,4 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 4 جولائی 2018 (2018.07.04).</div>
+<div dir="rtl">آخری تازہ کاری: 6 جولائی 2018 (2018.07.06).</div>

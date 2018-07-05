@@ -341,6 +341,18 @@ Configuração geral por CIDRAM.
 "ipaddr"
 - Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
+Valores recomendados para "ipaddr":
+
+Valor | Usando
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy reverso Incapsula.
+`HTTP_CF_CONNECTING_IP` | Proxy reverso Cloudflare.
+`CF-Connecting-IP` | Proxy reverso Cloudflare (alternativa; se o acima não funcionar).
+`HTTP_X_FORWARDED_FOR` | Proxy reverso Cloudbric.
+`X-Forwarded-For` | [Proxy reverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definido pela configuração do servidor.* | [Proxy reverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Nenhum proxy reverso (valor padrão).
+
 "forbid_on_block"
 - Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?
 
@@ -924,7 +936,6 @@ Os módulos foram disponibilizados para garantir que os seguintes pacotes e prod
 - [Preciso de modificações especializadas, customizações, etc; Você pode ajudar?](#SPECIALIST_MODIFICATIONS)
 - [Eu sou um desenvolvedor, designer de site, ou programador. Posso aceitar ou oferecer trabalho relacionado a este projeto?](#ACCEPT_OR_OFFER_WORK)
 - [Quero contribuir para o projeto; Posso fazer isso?](#WANT_TO_CONTRIBUTE)
-- [Valores recomendados para "ipaddr".](#RECOMMENDED_VALUES_FOR_IPADDR)
 - [Posso usar o cron para atualizar automaticamente?](#CRON_TO_UPDATE_AUTOMATICALLY)
 - [O que são "infrações"?](#WHAT_ARE_INFRACTIONS)
 - [O CIDRAM pode bloquear nomes de host?](#BLOCK_HOSTNAMES)
@@ -932,6 +943,7 @@ Os módulos foram disponibilizados para garantir que os seguintes pacotes e prod
 - [Posso usar o CIDRAM para proteger outras coisas além de sites (por exemplo, servidores de e-mail, FTP, SSH, IRC, etc)?](#PROTECT_OTHER_THINGS)
 - [Ocorrerão problemas se eu usar o CIDRAM ao mesmo tempo que usando CDNs ou serviços de cache?](#CDN_CACHING_PROBLEMS)
 - [A CIDRAM protegerá meu site contra ataques DDoS?](#DDOS_ATTACKS)
+- [Quando eu ativar ou desativar os módulos ou os arquivos de assinatura através da página de atualizações, eles os classificam alfanumericamente na configuração. Posso mudar a maneira como eles são classificados?](#CHANGE_COMPONENT_SORT_ORDER)
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>O que é uma "assinatura"?
 
@@ -1023,18 +1035,6 @@ Sim. Nossa licença não proíbe isso.
 
 Sim. As contribuições para o projeto são muito bem-vindas. Consulte "CONTRIBUTING.md" para obter mais informações.
 
-#### <a name="RECOMMENDED_VALUES_FOR_IPADDR"></a>Valores recomendados para "ipaddr".
-
-Valor | Usando
----|---
-`HTTP_INCAP_CLIENT_IP` | Proxy reverso Incapsula.
-`HTTP_CF_CONNECTING_IP` | Proxy reverso Cloudflare.
-`CF-Connecting-IP` | Proxy reverso Cloudflare (alternativa; se o acima não funcionar).
-`HTTP_X_FORWARDED_FOR` | Proxy reverso Cloudbric.
-`X-Forwarded-For` | [Proxy reverso Squid](http://www.squid-cache.org/Doc/config/forwarded_for/).
-*Definido pela configuração do servidor.* | [Proxy reverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
-`REMOTE_ADDR` | Nenhum proxy reverso (valor padrão).
-
 #### <a name="CRON_TO_UPDATE_AUTOMATICALLY"></a>Posso usar o cron para atualizar automaticamente?
 
 Sim. Uma API é integrada no front-end para interagir com a página de atualizações por meio de scripts externos. Um script separado, "[Cronable](https://github.com/Maikuolan/Cronable)", está disponível, e pode ser usado pelo seu cron manager ou cron scheduler para atualizar este e outros pacotes suportados automaticamente (este script fornece sua própria documentação).
@@ -1091,6 +1091,24 @@ Resposta ligeiramente mais longa: O CIDRAM ajudará a reduzir o impacto que o tr
 Em primeiro lugar, o CIDRAM é um pacote PHP e, portanto, opera na máquina em que o PHP está instalado. Isso significa que o CIDRAM só pode ver e bloquear uma solicitação *após* o servidor já ter recebido. Em segundo lugar, a [mitigação de DDoS](https://pt.wikipedia.org/wiki/Mitiga%C3%A7%C3%A3o_de_ataques_DDoS) eficaz deve filtrar as solicitações *antes* que elas atinjam o servidor alvo do ataque DDoS. Idealmente, os ataques DDoS devem ser detectados e mitigados por soluções capazes de eliminar ou reencaminhar o tráfego associado a ataques, antes de atingir o servidor de destino em primeiro lugar.
 
 Isso pode ser implementado usando soluções de hardware dedicadas no local, e/ou soluções baseadas em nuvem, como serviços dedicados de mitigação de DDoS, roteamento de DNS de um domínio por meio de redes resistentes a DDoS, filtragem baseada em nuvem, ou alguma combinação dos mesmos. Em todo caso, esse assunto é um pouco complexo demais para ser explicado com apenas um ou dois parágrafos, então eu recomendaria fazer mais pesquisas se este é um assunto que você deseja seguir. Quando a verdadeira natureza dos ataques DDoS é entendida corretamente, essa resposta fará mais sentido.
+
+#### <a name="CHANGE_COMPONENT_SORT_ORDER"></a>Quando eu ativar ou desativar os módulos ou os arquivos de assinatura através da página de atualizações, eles os classificam alfanumericamente na configuração. Posso mudar a maneira como eles são classificados?
+
+Sim. Se você precisar forçar alguns arquivos a serem executados em uma ordem específica, você pode adicionar alguns dados arbitrários antes de seus nomes na diretiva de configuração, onde eles estão listados, separados por dois pontos. Quando a página de atualizações subseqüentemente classifica os arquivos novamente, esses dados arbitrários adicionados afetarão a ordem de classificação, fazendo com que eles sejam executados na ordem que você deseja, sem precisar renomear nenhum deles.
+
+Por exemplo, assumindo uma diretiva de configuração com arquivos listados da seguinte maneira:
+
+`file1.php,file2.php,file3.php,file4.php,file5.php`
+
+Se você queria `file3.php` para executar primeiro, você poderia adicionar algo como `aaa:` antes do nome do arquivo:
+
+`file1.php,file2.php,aaa:file3.php,file4.php,file5.php`
+
+Então, se um novo arquivo, `file6.php`, estiver ativado, quando a página de atualizações classifica os novamente, ele deve terminar assim:
+
+`aaa:file3.php,file1.php,file2.php,file4.php,file5.php,file6.php`
+
+Mesma situação quando um arquivo é desativado. Por outro lado, se você quiser que o arquivo seja executado por último, você poderia adicionar algo como `zzz:` antes do nome do arquivo. Em qualquer caso, você não precisará renomear o arquivo em questão.
 
 ---
 
@@ -1334,4 +1352,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 4 Julho de 2018 (2018.07.04).
+Última Atualização: 6 Julho de 2018 (2018.07.06).

@@ -482,6 +482,16 @@
  <li>تلاش کے انجن کی طرف سے درخواستوں کی تصدیق کرنے کی کوشش؟ تلاش کے انجن کی توثیق کرنے سے کہ وہ خلاف ورزی کی حد (ویب سائٹ سے تلاش کے انجن پر پابندی عائد عام طور پر آپ کی تلاش کے انجن کی درجہ بندی، SEO، وغیرہ پر منفی اثر پڑے گا) تجاوز کا ایک نتیجہ کے طور پر پابندی عائد نہیں کیا جائے گا یقینی بناتا ہے. تصدیق کی جب، تلاش کے انجن معمول فی کے طور پر بلاک کیا جا سکتا ہے، لیکن پابندی عائد نہیں کی گئی. کی توثیق نہیں کی ہے، تو یہ ان کے لئے خلاف ورزی کی حد سے تجاوز کرنے کے نتیجے کے طور پر پابندی عائد کی جائے کرنے کے لئے ممکن ہے. اس کے علاوہ، تلاش کے انجن کی توثیق کی جعلی تلاش کے انجن کی درخواستوں کے خلاف اور (اس طرح کی درخواستوں کی تلاش کے انجن کی توثیق فعال ہے جب بلاک کر دیا جائے گا) سرچ انجن کے طور پر ویش ممکنہ طور پر بدنیتی پر مبنی اداروں کے خلاف تحفظ فراہم کرتا ہے. True (سچے) = سرچ انجن توثیق [پہلے سے طے شدہ] فعال؛ False (جھوٹی) = غیر فعال تلاش کے انجن کی توثیق کی.</li>
 </ul></div>
 
+<div dir="rtl">فی الحال تعاون کی گئی:<br /></div>
+<div dir="rtl"><ul>
+ <li><a dir="ltr" href="https://support.google.com/webmasters/answer/80553?hl=en">Google</a></li>
+ <li><a dir="ltr" href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></li>
+ <li>Yahoo</li>
+ <li><a dir="ltr" href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></li>
+ <li><a dir="ltr" href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></li>
+ <li><a dir="ltr" href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></li>
+</ul></div>
+
 <div dir="rtl">"social_media_verification"<br /></div>
 <div dir="rtl"><ul>
  <li>سوشل میڈیا کی درخواستوں کی توثیق کرنے کی کوشش؟ سوشل میڈیا کی توثیق جعلی سوشل میڈیا کی درخواستوں کے خلاف تحفظ فراہم کرتا ہے (ایسی درخواستوں کو بلاک کردیا جائے گا). True (سچے) = سماجی میڈیا کی توثیق کو فعال کریں [پہلے سے طے شدہ]؛ False (جھوٹی) = سوشل میڈیا کی توثیق کو غیر فعال کریں.</li>
@@ -1287,6 +1297,7 @@ If you use any features or modules intended to work with hostnames (such as the 
 <div dir="rtl"><ul>
  <li><code dir="ltr">default_dns</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">search_engine_verification</code> &lt;- <code dir="ltr">general</code></li>
+ <li><code dir="ltr">social_media_verification</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">force_hostname_lookup</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">allow_gethostbyaddr_lookup</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
@@ -1479,13 +1490,13 @@ CIDRAM is optionally able to track statistics such as the total number of block 
 
 CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### <div dir="rtl">١١.٤ کوکی<br /><br /></div>
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+<div dir="rtl">CIDRAM کو دو مقامات پر کوکیز کا تعین کرتا ہے. سب سے پہلے، reCAPTCHA مکمل کرنے کے بعد "CIDRAM" کوکیز سیٹ کرتا ہے (اگر <code dir="ltr">lockuser</code> کو <code dir="ltr">true</code> میں مقرر کیا جاتا ہے تو)، لہذا یہ ہر درخواست پر ایسا کرنے کے لئے صارف سے پوچھنا جاری رکھنے کی ضرورت نہیں ہوگی. دوسرا، صارف کو سامنے کے آخر میں لاگ ان ہونے پر CIDRAM ایک کوکی سیٹ کرتا ہے (تصدیق کے مقاصد کے لئے).<br /><br /></div>
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+<div dir="rtl">دونوں صورتوں میں، صارف کو پہلے سے ہی کوکیز کے بارے میں خبردار کیا جاتا ہے. کوکیز کہیں اور نہیں بنائے جاتے ہیں.<br /><br /></div>
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+<div dir="rtl">نوٹ: "invisible" کچھ ممالک میں کوکی قوانین کے ساتھ مطابقت پذیر ہوسکتی ہے. ان صورتوں میں، اس کے بجائے "V2" کا استعمال بہتر ہوسکتا ہے. یا، آپ کو مکمل طور پر reCAPTCHA کو غیر فعال کردیا جا سکتا ہے.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1528,4 +1539,4 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 6 جولائی 2018 (2018.07.06).</div>
+<div dir="rtl">آخری تازہ کاری: 9 جولائی 2018 (2018.07.09).</div>

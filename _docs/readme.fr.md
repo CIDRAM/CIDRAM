@@ -429,6 +429,14 @@ Valeur | Produit | Description
 « search_engine_verification »
 - Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.
 
+Supporté actuellement :
+- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
+- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
+- Yahoo
+- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
+- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+
 « social_media_verification »
 - Essayez de vérifier des requêtes de médias sociaux ? La vérification des médias sociaux offre une protection contre les fausses requêtes de médias sociaux (ces requêtes seront bloquées). True = Activer la vérification des médias sociaux [Défaut] ; False = Désactiver la vérification des médias sociaux.
 
@@ -1140,6 +1148,7 @@ Si vous utilisez des fonctionnalités ou des modules destinés à fonctionner av
 *Directives de configuration pertinentes :*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
@@ -1356,4 +1365,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 6 Juillet 2018 (2018.07.06).
+Dernière mise à jour : 9 Juillet 2018 (2018.07.09).

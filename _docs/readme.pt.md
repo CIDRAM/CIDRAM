@@ -429,6 +429,14 @@ Valor | Produz | Descrição
 "search_engine_verification"
 - Tentativa de verificar solicitações dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos solicitações de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais solicitações serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca.
 
+Atualmente suportado:
+- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
+- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
+- Yahoo
+- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
+- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+
 "social_media_verification"
 - Tentativa de verificar solicitações de mídia social? A verificação de mídia social fornece proteção contra solicitações falsas de mídia social (essas solicitações serão bloqueadas). True = Ativar a verificação de mídia social [Padrão]; False = Desativar a verificação de mídia social.
 
@@ -1140,6 +1148,7 @@ Se você usar quaisquer funções ou módulos destinados a trabalhar com nomes d
 *Diretivas de configuração relevantes:*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
@@ -1352,4 +1361,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 6 Julho de 2018 (2018.07.06).
+Última Atualização: 9 Julho de 2018 (2018.07.09).

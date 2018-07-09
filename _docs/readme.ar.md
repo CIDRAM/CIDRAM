@@ -482,6 +482,16 @@
  <li>محاولة للتحقق من طلبات من محركات البحث؟ التحقق من محركات البحث يضمن أنها لن تكون محظورة نتيجة لتجاوز الحد مخالفة (منع محركات البحث من موقع الويب الخاص بك عادة ما يكون لها تأثير سلبي على محرك البحث الترتيب، كبار المسئولين الاقتصاديين، إلخ). عند تمكين التحقق، محركات البحث يمكن أن يكون قد تم حظره، ولكن ليس محظورة. عند تعطيل التحقق، أنها يمكن أن تكون محظورة إذا تجاوزت الحد مخالفة. بالإضافة إلى، التحقق محرك البحث يحمي ضد الكيانات الخبيثة يتنكر في محركات البحث (سيتم حجب هذه الطلبات). True = تمكين التحقق محرك البحث [افتراضي]؛ False = تعطيل التحقق محرك البحث.</li>
 </ul></div>
 
+<div dir="rtl">المدعومة حاليا:<br /></div>
+<div dir="rtl"><ul>
+ <li><a dir="ltr" href="https://support.google.com/webmasters/answer/80553?hl=en">Google</a></li>
+ <li><a dir="ltr" href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></li>
+ <li>Yahoo</li>
+ <li><a dir="ltr" href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></li>
+ <li><a dir="ltr" href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></li>
+ <li><a dir="ltr" href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></li>
+</ul></div>
+
 <div dir="rtl">"social_media_verification"<br /></div>
 <div dir="rtl"><ul>
  <li>محاولة التحقق من طلبات الشبكات الاجتماعية؟ يوفر التحقق من الشبكات الاجتماعية الحماية ضد طلبات وسائل الإعلام الاجتماعية المزيفة (سيتم حجب هذه الطلبات). True = تمكين [افتراضي]؛ False = تعطيل.</li>
@@ -1287,6 +1297,7 @@ If you use any features or modules intended to work with hostnames (such as the 
 <div dir="rtl"><ul>
  <li><code dir="ltr">default_dns</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">search_engine_verification</code> &lt;- <code dir="ltr">general</code></li>
+ <li><code dir="ltr">social_media_verification</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">force_hostname_lookup</code> &lt;- <code dir="ltr">general</code></li>
  <li><code dir="ltr">allow_gethostbyaddr_lookup</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
@@ -1479,13 +1490,13 @@ CIDRAM is optionally able to track statistics such as the total number of block 
 
 CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### <div dir="rtl">١١.٤ ملف تعريف ارتباط<br /><br /></div>
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+<div dir="rtl">يضع CIDRAM <a href="https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81_%D8%AA%D8%B9%D8%B1%D9%8A%D9%81_%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D8%B7">ملفات تعريف الارتباط</a> في نقطتين في تعليمات البرمجة الخاصة به. أولاً، عندما يقوم المستخدم بإكمال reCAPTCHA بنجاح (مع افتراض أن <code dir="ltr">lockuser</code> مضبوطة على <code dir="ltr">true</code>)، يعيّن CIDRAM ملف تعريف ارتباط ليتمكن من التذكر للطلبات التالية بأن المستخدم قد أكمل بالفعل reCAPTCHA، بحيث لا يحتاج إلى مطالبة المستخدم بإكمال reCAPTCHA في الطلبات اللاحقة. ثانيا، عندما يسجل المستخدم بنجاح في الواجهة الأمامية، يعين CIDRAM ملف تعريف ارتباط حتى يتمكن من تذكر المستخدم للطلبات اللاحقة (أي، يتم استخدام ملفات تعريف الارتباط لمصادقة المستخدم على جلسة تسجيل الدخول).<br /><br /></div>
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+<div dir="rtl">في كلتا الحالتين، يتم عرض تحذيرات ملفات تعريف الارتباط بشكل بارز (عند الاقتضاء)، وتحذير المستخدم من أنه سيتم تعيين ملفات تعريف الارتباط إذا شارك في الإجراءات ذات الصلة. لا يتم تعيين ملفات تعريف الارتباط في أي نقاط أخرى في مصدر التعليمات البرمجية.<br /><br /></div>
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+<div dir="rtl">ملحوظة: قد تكون واجهة برمجة التطبيقات "invisible"، طريقة تنفيذها في CIDRAM، غير متوافقة مع قوانين ملفات تعريف الارتباط في بعض الولايات القضائية. يجب أن تتجنب مواقع الويب التي تخضع لهذه القوانين واجهة برمجة التطبيقات "invisible". قد يكون استخدام واجهة برمجة التطبيقات "V2" بدلاً من ذلك، أو ببساطة تعطيل reCAPTCHA بالكامل، هو الأفضل.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1529,4 +1540,4 @@ In both cases, cookie warnings are displayed prominently (when applicable), warn
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 يوليو 2018 (2018.07.06).</div>
+<div dir="rtl">آخر تحديث: 9 يوليو 2018 (2018.07.09).</div>

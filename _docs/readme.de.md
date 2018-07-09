@@ -429,6 +429,14 @@ Wert | Produziert | Beschreibung
 "search_engine_verification"
 - Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Verifizierung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Verifizierung aktiviert ist). True = Suchmaschinen-Verifizierung aktivieren [Standardeinstellung]; False = Suchmaschinen-Verifizierung deaktivieren.
 
+Derzeit unterstützt:
+- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
+- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
+- Yahoo
+- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
+- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+
 "social_media_verification"
 - Versuche, Social Media Anfragen zu verifizieren? Die Verifizierung von Social Media bietet Schutz vor gefälschten Social Media Anfragen (solche Anfragen werden blockiert). True = Die Verifizierung von Social Media aktivieren [Standardeinstellung]; False = Die Verifizierung von Social Media deaktivieren.
 
@@ -1140,6 +1148,7 @@ Wenn Sie Funktionen oder Module verwenden, die mit Hostnamen arbeiten (z.B., "Sc
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
@@ -1360,4 +1369,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 6 Juli 2018 (2018.07.06).
+Zuletzt aktualisiert: 9 Juli 2018 (2018.07.09).

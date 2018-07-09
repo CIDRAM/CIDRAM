@@ -429,6 +429,14 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 "search_engine_verification"
 - 검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default / 기본 설정); False = 검색 엔진의 검증을 무효로한다.
 
+현재 지원 :
+- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
+- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
+- Yahoo
+- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
+- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+
 "social_media_verification"
 - 소셜 미디어 요청을 확인하려고합니까? 소셜 미디어 인증은 가짜 소셜 미디어 요청으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 소셜 미디어 검증을 활성화한다 (Default / 기본 설정); False = 소셜 미디어 인증을 무효로한다.
 
@@ -1086,10 +1094,7 @@ IP | 운영자
 
 짧은 대답 : 아니오.
 
-더 자세한 대답 : CIDRAM은 원하지 않는 트래픽이 웹 사이트 (웹 사이트의 대역폭 비용 절감) 및 하드웨어에 (예를 들어, 요청을 처리하고 제공하는 서버 기능) 미칠 수있는 영향을 줄이는 데 도움이됩니다. 또한 원하지 않는 트래픽과 관련된 여러 가지 잠재적 인 부정적인 영향을 줄일 수 있습니다. 그러나이 질문을 이해하기 위해서는 반드시 기억해야 할 중요한 두 가지 사항이 있습니다.
-
-1. CIDRAM은 PHP 패키지이므로 PHP가 설치된 시스템에서 작동합니다. 이 때문에 CIDRAM은 서버가 이미 요청을 수신 한 후에 만 요청을 인식하고 차단할 수 있습니다.
-2. 효과적인 DDoS 완화는 요청이 DDoS 공격의 대상인 서버에 도달하기 전에 요청을 필터링해야합니다. DDoS 공격은 대상 서버에 도달하기 전에 공격과 관련된 트래픽을 중단 또는 재 라우팅 할 수있는 솔루션에 의해 탐지되고 완화되어야합니다.
+더 자세한 대답 : CIDRAM은 원하지 않는 트래픽이 웹 사이트 (웹 사이트의 대역폭 비용 절감) 및 하드웨어에 (예를 들어, 요청을 처리하고 제공하는 서버 기능) 미칠 수있는 영향을 줄이는 데 도움이됩니다. 또한 원하지 않는 트래픽과 관련된 여러 가지 잠재적 인 부정적인 영향을 줄일 수 있습니다. 그러나이 질문을 이해하기 위해서는 반드시 기억해야 할 중요한 두 가지 사항이 있습니다. 1. CIDRAM은 PHP 패키지이므로 PHP가 설치된 시스템에서 작동합니다. 이 때문에 CIDRAM은 서버가 이미 요청을 수신 한 후에 만 요청을 인식하고 차단할 수 있습니다. 2. 효과적인 DDoS 완화는 요청이 DDoS 공격의 대상인 서버에 도달하기 전에 요청을 필터링해야합니다. DDoS 공격은 대상 서버에 도달하기 전에 공격과 관련된 트래픽을 중단 또는 재 라우팅 할 수있는 솔루션에 의해 탐지되고 완화되어야합니다.
 
 이것은 전용 "온 프레미스" 하드웨어 솔루션, 전용 DDoS 완화 서비스와 같은 클라우드 기반 솔루션, DDoS 방지 네트워크를 통해 도메인의 DNS 라우팅, 클라우드 기반 필터링, 또는 이들의 조합 일 수있다를 사용하여 구현할 수 있습니다. 어쨌든, 이 주제는 단순한 단락 또는 2 단으로 철저히 설명하기에는 너무 복잡합니다. 이것이 당신이 추구하고자하는 주제라면 더 깊은 연구를하는 것이 좋습니다. DDoS 공격의 진정한 본질이 제대로 이해되면이 대답이 더욱 의미가 있습니다.
 
@@ -1141,6 +1146,7 @@ If you use any features or modules intended to work with hostnames (such as the 
 *관련 설정 지시어 :*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
@@ -1312,13 +1318,13 @@ CIDRAM is optionally able to track statistics such as the total number of block 
 
 CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
-#### 11.4 COOKIES
+#### 11.4 COOKIE (쿠키)
 
-CIDRAM sets cookies at two points in its codebase. Firstly, when a user successfully completes a reCAPTCHA instance (and assuming that `lockuser` is set to `true`), CIDRAM sets a cookie in order to be able to remember for subsequent requests that the user has already completed a reCAPTCHA instance, so that it won't need to continuously ask the user to complete a reCAPTCHA instance on subsequent requests. Secondly, when a user successfully logs into the front-end, CIDRAM sets a cookie in order to be able to remember the user for subsequent requests (i.e., cookies are used for authenticate the user to a login session).
+CIDRAM은 [쿠키](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4)를 코드베이스의 두 지점에 설정합니다. 1. 사용자가 reCAPTCHA 인스턴스를 성공적으로 완료하면 (이것은 `lockuser`가 `true`로 설정된다고 가정합니다), CIDRAM은 사용자가 이미 reCAPTCHA 인스턴스를 완료했다는 후속 요청을 기억할 수 있도록 쿠키를 설정합니다. 이렇게하면 후속 요청에서 사용자에게 reCAPTCHA 인스턴스를 완료하도록 계속 요청하지 않아도됩니다. 2. 사용자가 프론트 엔드에 성공적으로 로그인하면, CIDRAM은 후속 요청에 대해 사용자를 기억할 수 있도록 쿠키를 설정합니다 (즉, 쿠키는 로그인 세션에 대해 사용자를 인증하는 데 사용됩니다).
 
-In both cases, cookie warnings are displayed prominently (when applicable), warning the user that cookies will be set if they engage in the relevant actions. Cookies aren't set at any other points in the codebase.
+두 경우 모두, 사용자는 관련 작업에 참여할 경우 쿠키가 설정된다는 사실을 눈에 띄게 경고합니다. 쿠키는 코드베이스의 다른 지점에서 설정되지 않습니다.
 
-*Note: CIDRAM's particular implementation of the "invisible" API for reCAPTCHA might be incompatible with cookie laws in some jurisdictions, and should be avoided by any websites subject to such laws. Opting to use the "V2" API instead, or simply disabling reCAPTCHA entirely, may be preferable.*
+*노트 : CIDRAM의 reCAPTCHA "invisible" API 구현은 일부 관할권의 쿠키 법과 호환되지 않을 수 있습니다. 이 법의 적용을받는 웹 사이트는 "invisible" API를 피해야합니다. 대신에 "V2" API를 사용하거나 reCAPTCHA를 완전히 사용하지 않는 것이 좋습니다.*
 
 *관련 설정 지시어 :*
 - `general` -> `disable_frontend`
@@ -1356,4 +1362,4 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 ---
 
 
-최종 업데이트 : 2018년 7월 6일.
+최종 업데이트 : 2018년 7월 9일.

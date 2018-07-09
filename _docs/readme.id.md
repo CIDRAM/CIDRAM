@@ -429,6 +429,14 @@ Nilai | Menghasilkan | Deskripsi
 "search_engine_verification"
 - Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari.
 
+Didukung sekarang:
+- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
+- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
+- Yahoo
+- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
+- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+
 "social_media_verification"
 - Mencoba memverifikasi permintaan media sosial? Verifikasi media sosial memberikan perlindungan terhadap permintaan media sosial palsu (permintaan semacam ini akan diblokir). True = Mengaktifkan verifikasi media sosial [Default]; False = Mengaktifkan verifikasi media sosial.
 
@@ -1140,6 +1148,7 @@ Jika Anda menggunakan fitur atau modul yang dimaksudkan untuk bekerja dengan nam
 *Direktif konfigurasi yang relevan:*
 - `general` -> `default_dns`
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
@@ -1350,4 +1359,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 6 Juli 2018 (2018.07.06).
+Terakhir Diperbarui: 9 Juli 2018 (2018.07.09).

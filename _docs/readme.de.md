@@ -440,6 +440,11 @@ Derzeit unterstützt:
 "social_media_verification"
 - Versuche, Social Media Anfragen zu verifizieren? Die Verifizierung von Social Media bietet Schutz vor gefälschten Social Media Anfragen (solche Anfragen werden blockiert). True = Die Verifizierung von Social Media aktivieren [Standardeinstellung]; False = Die Verifizierung von Social Media deaktivieren.
 
+Derzeit unterstützt:
+- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
+- Embedly
+- [Grapeshot](https://www.grapeshot.com/crawler/)
+
 "protect_frontend"
 - Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.
 

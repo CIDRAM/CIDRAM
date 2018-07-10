@@ -441,6 +441,11 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 “social_media_verification”
 - 尝试验证社交媒体请求？​社交媒体验证可以防止虚假社交媒体请求（此类请求将被阻止）。​True（真）=启用社交媒体验证【标准】；​False（假）=禁用社交媒体验证。
 
+目前支持：
+- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
+- Embedly
+- [Grapeshot](https://www.grapeshot.com/crawler/)
+
 “protect_frontend”
 - 指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】；​False（假）=不是。
 

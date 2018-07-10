@@ -440,6 +440,11 @@ Supporté actuellement :
 « social_media_verification »
 - Essayez de vérifier des requêtes de médias sociaux ? La vérification des médias sociaux offre une protection contre les fausses requêtes de médias sociaux (ces requêtes seront bloquées). True = Activer la vérification des médias sociaux [Défaut] ; False = Désactiver la vérification des médias sociaux.
 
+Supporté actuellement :
+- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
+- Embedly
+- [Grapeshot](https://www.grapeshot.com/crawler/)
+
 « protect_frontend »
 - Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non.
 

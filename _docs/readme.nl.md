@@ -440,6 +440,11 @@ Momenteel ondersteund:
 "social_media_verification"
 - Poging om aanvragen voor sociale media te verifiëren? Verificatie van sociale media biedt bescherming tegen nep-aanvragen voor sociale media (dergelijke aanvragen worden geblokkeerd). True = Inschakelen verificatie van sociale media [Standaard]; False = Uitschakelen verificatie van sociale media.
 
+Momenteel ondersteund:
+- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
+- Embedly
+- [Grapeshot](https://www.grapeshot.com/crawler/)
+
 "protect_frontend"
 - Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
 

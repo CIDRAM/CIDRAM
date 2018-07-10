@@ -497,6 +497,13 @@
  <li>محاولة التحقق من طلبات الشبكات الاجتماعية؟ يوفر التحقق من الشبكات الاجتماعية الحماية ضد طلبات وسائل الإعلام الاجتماعية المزيفة (سيتم حجب هذه الطلبات). True = تمكين [افتراضي]؛ False = تعطيل.</li>
 </ul></div>
 
+<div dir="rtl">المدعومة حاليا:<br /></div>
+<div dir="rtl"><ul>
+ <li><a dir="ltr" href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></li>
+ <li>Embedly</li>
+ <li><a dir="ltr" href="https://www.grapeshot.com/crawler/">Grapeshot</a></li>
+</ul></div>
+
 <div dir="rtl">"protect_frontend"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. True = نعم [افتراضي]؛ False = لا.</li>

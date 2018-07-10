@@ -1520,6 +1520,13 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
         if (strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false) {
             $CIDRAM['DNS-Reverse-Forward'](['embed.ly'], 'Embedly', true, false);
         }
+        /**
+         * Verify GrapeshotCrawler.
+         * Reference: https://www.grapeshot.com/crawler/
+         */
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'grapeshot') !== false) {
+            $CIDRAM['DNS-Reverse-Forward'](['.grapeshot.co.uk'], 'GrapeshotCrawler');
+        }
     }
 };
 

@@ -497,6 +497,13 @@
  <li>سوشل میڈیا کی درخواستوں کی توثیق کرنے کی کوشش؟ سوشل میڈیا کی توثیق جعلی سوشل میڈیا کی درخواستوں کے خلاف تحفظ فراہم کرتا ہے (ایسی درخواستوں کو بلاک کردیا جائے گا). True (سچے) = سماجی میڈیا کی توثیق کو فعال کریں [پہلے سے طے شدہ]؛ False (جھوٹی) = سوشل میڈیا کی توثیق کو غیر فعال کریں.</li>
 </ul></div>
 
+<div dir="rtl">فی الحال تعاون کی گئی:<br /></div>
+<div dir="rtl"><ul>
+ <li><a dir="ltr" href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></li>
+ <li>Embedly</li>
+ <li><a dir="ltr" href="https://www.grapeshot.com/crawler/">Grapeshot</a></li>
+</ul></div>
+
 <div dir="rtl">"protect_frontend"<br /></div>
 <div dir="rtl"><ul>
  <li>متعین کرتا ہے جو عام طور پر CIDRAM طرف سے فراہم کردہ تحفظات سامنے کے آخر پر لاگو کیا جانا چاہئے یا نہیں. سچا = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = کوئی.</li>

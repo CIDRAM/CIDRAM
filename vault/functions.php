@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.04).
+ * This file: Functions file (last modified: 2018.07.10).
  */
 
 /**
@@ -1453,7 +1453,7 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
         }
         /**
          * Verify Bingbot.
-         * Reference: http://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
+         * Reference: https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
          */
         if (empty($CIDRAM['Flag-Bypass-Bingbot-Check']) && preg_match('~(?:msn|bing)bot|bingpreview~', $CleanUA)) {
             $CIDRAM['DNS-Reverse-Forward']('.search.msn.com', 'Bingbot');
@@ -1467,7 +1467,7 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
         }
         /**
          * Verify Baidu Spider.
-         * Reference: http://help.baidu.com/question?prod_en=master&class=Baiduspider
+         * Reference: https://help.baidu.com/question?prod_en=master&class=Baiduspider
          */
         if (empty($CIDRAM['Flag-Bypass-Baidu-Check']) && strpos($CleanUA, 'baidu') !== false) {
             $CIDRAM['DNS-Reverse-Forward'](['.baidu.com', '.baidu.jp'], 'Baidu', true);
@@ -1507,10 +1507,17 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
         !empty($CIDRAM['TestResults']) &&
         !$CIDRAM['Config']['general']['maintenance_mode'] &&
         $CIDRAM['Config']['general']['social_media_verification'] &&
-        $CleanUA = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))
+        $CIDRAM['BlockInfo']['UALC']
     ) {
+        /**
+         * Verify Pinterest.
+         * Reference: https://help.pinterest.com/en/articles/about-pinterest-crawler-0
+         */
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'pinterest') !== false) {
+            $CIDRAM['DNS-Reverse-Forward'](['.pinterest.com'], 'Pinterest');
+        }
         /** Verify Embedly requests. */
-        if (strpos($CleanUA, 'embedly') !== false) {
+        if (strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false) {
             $CIDRAM['DNS-Reverse-Forward'](['embed.ly'], 'Embedly', true, false);
         }
     }

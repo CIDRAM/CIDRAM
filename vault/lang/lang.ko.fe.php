@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.07.04).
+ * This file: Korean language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = '메인 패키지 (서명, 문
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = '스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = '스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 ISP에 속한 호스트를 차단합니다.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = '스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 TLD에 속한 호스트를 차단합니다.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = '원치 않는 봇과 관련없는 사용자 에이전트를 차단합니다.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = '위험한 쿠키에 대해 제한된 보호 기능을 제공합니다.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = '요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = '원치 않는 봇과 관련없는 사용자 에이전트를 차단합니다.';
 $CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '위험한 호스트 차단 모듈';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '위험한 호스트 차단 모듈 (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = '위험한 TLD 차단 모듈';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu 차단기 모듈';
+$CIDRAM['lang']['Name: module_botua.php'] = '선택적 사용자 에이전트 모듈';
 $CIDRAM['lang']['Name: module_cookies.php'] = '선택적 쿠키 스캐너 모듈';
 $CIDRAM['lang']['Name: module_extras.php'] = '선택적 보안 엑스트라 스 모듈';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam 모듈';
-$CIDRAM['lang']['Name: module_ua.php'] = '선택적 사용자 에이전트 모듈';
+$CIDRAM['lang']['Name: module_ua.php'] = '빈 UA 차단기 모듈';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex 차단기 모듈';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';

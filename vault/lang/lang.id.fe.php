@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.07.04).
+ * This file: Indonesian language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Paket utama (tanpa tanda tang
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Memblokir host yang milik ISP, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Memblokir host yang milik TLD, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'Memblokir agen pengguna yang terkait dengan bot yang tidak diinginkan dan aktivitas jahat.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Menyediakan beberapa perlindungan terbatas terhadap cookie berbahaya.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Memblokir agen pengguna yang terkait dengan bot yang tidak diinginkan dan aktivitas jahat.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Bypass tanda tangan standar.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Modul pemblokir untuk host buruk';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Modul pemblokir untuk host buruk (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Modul pemblokir TLD buruk';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Modul pemblokir untuk Baidu';
+$CIDRAM['lang']['Name: module_botua.php'] = 'Modul agen pengguna opsional';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Modul scanner cookie opsional';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Modul tambahan keamanan opsional';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Modul Stop Forum Spam';
-$CIDRAM['lang']['Name: module_ua.php'] = 'Modul agen pengguna opsional';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Modul pemblokir UA kosong';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modul pemblokir untuk Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';

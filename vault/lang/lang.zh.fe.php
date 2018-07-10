@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.07.04).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（没有签名文件�
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = '阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = '阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的ISP拥有的主机。';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = '阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机的TLD。';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = '阻止不需要的机器人和恶意活动相关联的用户代理。';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = '提供一些针对危险cookie的有限保护。';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = '提供一些有限的保护针对各种攻击向量常用于请求。';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = '防止通过SFS列出的IP地址访问注册和登录页面。';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = '阻止不需要的机器人和恶意活动相关联的用户代理。';
 $CIDRAM['lang']['Name: Bypasses'] = '标准签名旁路。';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '坏主机阻塞模块';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '坏主机阻塞模块（ISP）';
 $CIDRAM['lang']['Name: module_badtlds.php'] = '坏TLD阻塞模块';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = '百度阻塞模块';
+$CIDRAM['lang']['Name: module_botua.php'] = '可选的用户代理模块';
 $CIDRAM['lang']['Name: module_cookies.php'] = '可选cookie扫描器模块';
 $CIDRAM['lang']['Name: module_extras.php'] = '可选安全附加模块';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam 模块';
-$CIDRAM['lang']['Name: module_ua.php'] = '可选的用户代理模块';
+$CIDRAM['lang']['Name: module_ua.php'] = '空UA阻塞模块';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex阻塞模块';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';

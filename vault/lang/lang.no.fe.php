@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.07.04).
+ * This file: Norwegian language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Hovedpakken (minus signaturen
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Blokker vertene ofte brukt av spammere, hackere og andre farlige enheter.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Blokker vertene som tilhører Internett-leverandører ofte brukt av spammere, hackere og andre farlige enheter.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blokker vertene som tilhører TLDer ofte brukt av spammere, hackere og andre farlige enheter.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Gir noen begrensede beskyttelser mot farlige informasjonskapsler.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Gir noen begrensede beskyttelser mot ulike angrepsvektorer som ofte brukes i forespørsler.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blokkerer brukeragenter assosiert med uønskede bots og ufarlig aktivitet.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Standard signatur bypasses.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Dårlig vertene blokkeringsmodul';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Dårlig vertene blokkeringsmodul (ISPs)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Dårlig TLDs blokkeringsmodul';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu blokkeringsmodul';
+$CIDRAM['lang']['Name: module_botua.php'] = 'Valgfri brukeragentmodul';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Valgfrie informasjonskapselskannermodul';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Valgfrie sikkerhetstilleggsmodul';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam modul';
-$CIDRAM['lang']['Name: module_ua.php'] = 'Valgfri brukeragentmodul';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Tom UA-blokkeringsmodul';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blokkeringsmodul';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Hjem</a> | <a href="?cidram-page=logout">Logg Ut</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logg Ut</a>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.07.04).
+ * This file: Spanish language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'El paquete principal (menos l
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Bloquea los hosts utilizados con frecuencia por spammers, hackers y otras entidades nefastas.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Bloquea los hosts que pertenecen a los ISP utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Bloquea los hosts que pertenecen a los TLD utilizados con frecuencia por los spammers, los hackers y otras entidades nefastas.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'Bloquea los agentes de usuario asociados con bots no deseados y actividad infame.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Proporciona algunas protecciones limitadas contra cookies peligrosas.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Proporciona algunas protecciones limitadas contra varios vectores de ataque comúnmente utilizado en las solicitudes.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Bloquea los agentes de usuario asociados con bots no deseados y actividad infame.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Bypasses de firmas estándar.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Módulo bloqueador de hosts malos';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Módulo bloqueador de hosts malos (ISPs)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Módulo bloqueador de TLDs malos';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Módulo bloqueador de Baidu';
+$CIDRAM['lang']['Name: module_botua.php'] = 'Módulo de agentes de usuario opcionales';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Escáner de cookies módulo opcional';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Extras de seguridad módulo opcional';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Módulo Stop Forum Spam';
-$CIDRAM['lang']['Name: module_ua.php'] = 'Módulo de agentes de usuario opcionales';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Módulo de bloqueador UA vacío';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Módulo bloqueador de Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Cerrar Sesión</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Cerrar Sesión</a>';
@@ -64,7 +65,7 @@ $CIDRAM['lang']['config_general_emailaddr_display_style'] = '¿Cómo prefieres q
 $CIDRAM['lang']['config_general_forbid_on_block'] = '¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes? (Consulte la documentación para más información).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento.';
 $CIDRAM['lang']['config_general_hide_version'] = '¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido].';
-$CIDRAM['lang']['config_general_ipaddr'] = 'Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
+$CIDRAM['lang']['config_general_ipaddr'] = '¿Dónde puedo encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales). Predefinido = REMOTE_ADDR. ¡AVISO: No cambie esto a menos que sepas lo que estás haciendo!';
 $CIDRAM['lang']['config_general_lang'] = 'Especifique la predefinido del lenguaje para CIDRAM.';
 $CIDRAM['lang']['config_general_log_banned_ips'] = '¿Incluir las solicitudes bloqueadas de IPs prohibidos en los archivos de registro? True = Sí [Predefinido]; False = No.';
 $CIDRAM['lang']['config_general_log_rotation_action'] = 'La rotación de registros limita la cantidad de archivos de registro que deberían existir al mismo tiempo. Cuando se crean nuevos archivos de registro, si la cantidad total de archivos de registro excede el límite especificado, se realizará la acción especificada. Puede especificar la acción deseada aquí. Delete = Eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda. Archive = Primero archiva, y luego eliminar los archivos de registro más antiguos, hasta que el límite ya no se exceda.';

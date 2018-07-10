@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.07.04).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Các gói thầu chính (mà 
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Chặn các máy chủ web của các ISP mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Cung cấp một số bảo vệ hạn chế đối với cookie nguy hiểm.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Chặn các đại lý người dùng liên quan đến các chương trình không mong muốn và hoạt động bất chính.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Mô-đun cho chặn các host xấu';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Mô-đun cho chặn các host xấu (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Mô-đun cho chặn các TLD xấu';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Mô-đun cho chặn Baidu';
+$CIDRAM['lang']['Name: module_botua.php'] = 'Mô-đun đại lý người dùng tùy chọn';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Mô-đun tùy chọn cho cookie quét';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Mô-đun tùy chọn cho bảo mật tính năng bổ sung';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Mô-đun Stop Forum Spam';
-$CIDRAM['lang']['Name: module_ua.php'] = 'Mô-đun đại lý người dùng tùy chọn';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Mô-đun chặn UA trống';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Mô-đun cho chặn Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';

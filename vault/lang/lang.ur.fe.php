@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.07.04).
+ * This file: Urdu language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'مرکزی پیکیج (بغی
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'بلاکس اکثر سپیمرز، ہیکرز، اور دیگر غلط تنظیموں کے ذریعہ استعمال ہوتے ہیں.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'آئی ایس پیز سے تعلق رکھنے والے بلاکس میزبان اکثر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کی طرف سے استعمال ہوتے ہیں.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'عام طور پر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کے ذریعہ TLDs سے تعلق رکھنے والے بلاکس میزبان.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'ناپسندیدہ بوٹس اور نفیاری سرگرمی سے منسلک بلاکس صارف ایجنٹوں.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'خطرناک کوکیز کے خلاف کچھ محدود تحفظ فراہم کرتا ہے.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'عام طور پر درخواستوں میں استعمال ہونے والی مختلف حمل ویکٹروں کے خلاف کچھ محدود تحفظ فراہم کرتا ہے.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS سے گنا آئی پی ایس کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'ناپسندیدہ بوٹس اور نفیاری سرگرمی سے منسلک بلاکس صارف ایجنٹوں.';
 $CIDRAM['lang']['Name: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائ پاس.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'برا میزبانوں بلاکر ماڈیول';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'برا میزبانوں بلاکر ماڈیول (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'خراب TLD بلاکر ماڈیول';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'بیدو بلاکر ماڈیول';
+$CIDRAM['lang']['Name: module_botua.php'] = 'اختیاری صارف ایجنٹ ماڈیول';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'اختیاری کوکی سکینر ماڈیول';
 $CIDRAM['lang']['Name: module_extras.php'] = 'اختیاری سیکورٹی مع اضافہ جات ماڈیول';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam ماڈیول';
-$CIDRAM['lang']['Name: module_ua.php'] = 'اختیاری صارف ایجنٹ ماڈیول';
+$CIDRAM['lang']['Name: module_ua.php'] = 'خالی UA بلاکر ماڈیول';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex کی بلاکر ماڈیول';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ہوم</a> | <a href="?cidram-page=logout">لاگ آوٹ</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">لاگ آوٹ</a>';

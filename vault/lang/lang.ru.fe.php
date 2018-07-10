@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.07.04).
+ * This file: Russian language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Основной пакет (
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Блокирует хосты, часто используемые спамерами, хакерами и другими гнусными объектами.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Блокирует хосты, принадлежащие интернет-провайдерам, часто используемые спамерами, хакерами и другими гнусными объектами.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Блокирует хосты, принадлежащие ДВУ, часто используемые спамерами, хакерами и другими гнусными объектами.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Обеспечивает некоторые ограниченные средства защиты против опасных куки.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Обеспечивает некоторые ограниченные средства защиты против различных векторов атак обычно используются в запросах.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Блокирует пользовательские агенты, связанные с нежелательными ботами и нечестной деятельностью.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Стандартная сигнатуры байпасы.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Модуль блокатор для плохие хосты';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Модуль блокатор для плохие хосты (интернет-провайдеры)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Модуль блокатор для плохие ДВУ';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Модуль блокатор Baidu';
+$CIDRAM['lang']['Name: module_botua.php'] = 'Модуль дополнительных пользовательских агентов';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Куки сканер модуль необязательный';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Модуль необязательный дополнительные безопасности';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Модуль Stop Forum Spam';
-$CIDRAM['lang']['Name: module_ua.php'] = 'Модуль дополнительных пользовательских агентов';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Модуль блокировки UA пустой';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Модуль блокатор Яндекс';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?cidram-page=logout">Выйдите</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Выйдите</a>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.07.04).
+ * This file: English language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'The main package (minus the s
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Blocks hosts frequently used by spammers, hackers, and other nefarious entities.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Blocks hosts belonging to ISPs frequently used by spammers, hackers, and other nefarious entities.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blocks hosts belonging to TLDs frequently used by spammers, hackers, and other nefarious entities.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'Blocks user agents associated with unwanted bots and nefarious activity.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Provides some limited protections against dangerous cookies.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Provides some limited protections against various attack vectors commonly used in requests.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protects registration and login pages against IPs listed by SFS.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'Blocks user agents associated with unwanted bots and nefarious activity.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Default signature bypasses.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Bad hosts blocker module';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Bad hosts blocker module (ISPs)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Bad TLDs blocker module';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu blocker module';
+$CIDRAM['lang']['Name: module_botua.php'] = 'Optional user agents module';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'Optional cookie scanner module';
 $CIDRAM['lang']['Name: module_extras.php'] = 'Optional security extras module';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam module';
-$CIDRAM['lang']['Name: module_ua.php'] = 'Optional user agents module';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Empty UA blocker module';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blocker module';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Log Out</a>';

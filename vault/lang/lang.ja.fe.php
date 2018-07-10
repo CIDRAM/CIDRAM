@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.07.04).
+ * This file: Japanese language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'メインパッケージ​�
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = '望ましくないボットや悪意のあるアクティビティに関連付けられたユーザ・エージェントをブロックします。';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = '危険なクッキーに対するいくつかの限定された保護を提供します。';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = '望ましくないボットや悪意のあるアクティビティに関連付けられたユーザ・エージェントをブロックします。';
 $CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '危険なホスト・ブロッカーモジュール';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '危険なホスト・ブロッカーモジュール（ＩＳＰ）';
 $CIDRAM['lang']['Name: module_badtlds.php'] = '危険なホストＴＬＤブロッカーモジュール';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baiduブロッカーモジュール';
+$CIDRAM['lang']['Name: module_botua.php'] = 'オプショナル・ユーザ・エージェント・モジュール';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'オプショナル・クッキー・スキャナ・モジュール';
 $CIDRAM['lang']['Name: module_extras.php'] = 'オプショナル・セキュリティ・エクストラス・モジュール';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam モジュール';
-$CIDRAM['lang']['Name: module_ua.php'] = 'オプショナル・ユーザ・エージェント・モジュール';
+$CIDRAM['lang']['Name: module_ua.php'] = '空のＵＡブロッカー・モジュール';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandexブロッカーモジュール';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.07.04).
+ * This file: Arabic language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'حزمة الابتدائية
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'كتل المضيفات التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'كتل المضيفين الذين ينتمون إلى مقدمي خدمات الإنترنت، التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'كتل المضيفين التي تنتمي إلى TLD، التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'حظر وكلاء المستخدمين المرتبطين ببرامج الروبوت غير المرغوب فيها والنشاط الشنيع.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'يوفر بعض الحماية المحدودة ضد ملفات تعريف الارتباط الخطيرة.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'يوفر بعض الحماية محدودة ضد مختلف ناقلات هجوم تستخدم عادة في طلبات.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'حظر وكلاء المستخدمين المرتبطين ببرامج الروبوت غير المرغوب فيها والنشاط الشنيع.';
 $CIDRAM['lang']['Name: Bypasses'] = 'يتجاوز توقيع قياسي.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'سيئة المضيفين وحدة مانع';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'سيئة المضيفين وحدة مانع (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'وحدة حجب TLD سيئة';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'بايدو وحدة مانع';
+$CIDRAM['lang']['Name: module_botua.php'] = 'وحدة وكلاء المستخدم الاختيارية';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'كوكي الماسح الضوئي';
 $CIDRAM['lang']['Name: module_extras.php'] = 'وحدة اشياء الأمن اختياري';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam وحدة';
-$CIDRAM['lang']['Name: module_ua.php'] = 'وحدة وكلاء المستخدم الاختيارية';
+$CIDRAM['lang']['Name: module_ua.php'] = 'فارغة وحدة مانع وا';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'بايدو وحدة مانع';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">خروج</a>';

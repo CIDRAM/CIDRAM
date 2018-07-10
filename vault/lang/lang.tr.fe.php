@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.07.04).
+ * This file: Turkish language data for the front-end (last modified: 2018.07.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -35,19 +35,20 @@ $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Ana paket (hariç imzalar, be
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça ISP\'lere ait kullanılan ana bilgisayarları engeller.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD\'lere ait kullanılan ana bilgisayarları engeller.';
+$CIDRAM['lang']['Extended Description: module_botua.php'] = 'İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Tehlikeli çerezlere karşı bazı sınırlı koruma sağlar.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS tarafından listelenen IP\'lere karşı kayıt ve oturum açma sayfalarını korur.';
-$CIDRAM['lang']['Extended Description: module_ua.php'] = 'İstenmeyen botlar ve nefret dolu faaliyetlerle ilişkili kullanıcı aracılarını engeller.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Kötü ana engelleyici modülü';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Kötü ana engelleyici modülü (ISS\'ler)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Kötü TLD engelleyici modülü';
 $CIDRAM['lang']['Name: module_baidublocker.php'] = 'Baidu engelleyici modülü';
+$CIDRAM['lang']['Name: module_botua.php'] = 'İsteğe bağlı kullanıcı aracıları modülü';
 $CIDRAM['lang']['Name: module_cookies.php'] = 'İsteğe bağlı çerez tarayıcı modülü';
 $CIDRAM['lang']['Name: module_extras.php'] = 'İsteğe bağlı güvenlik ekstrası modülü';
 $CIDRAM['lang']['Name: module_sfs.php'] = 'Stop Forum Spam modülü';
-$CIDRAM['lang']['Name: module_ua.php'] = 'İsteğe bağlı kullanıcı aracıları modülü';
+$CIDRAM['lang']['Name: module_ua.php'] = 'Boş UA engelleyici modülü';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex engelleyici modülü';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';

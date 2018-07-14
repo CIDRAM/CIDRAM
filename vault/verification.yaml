@@ -1,0 +1,72 @@
+Search Engine Verification:
+ # https://support.google.com/webmasters/answer/80553?hl=en
+ Googlebot:
+  Bypass Flag: "Flag-Bypass-Googlebot-Check"
+  User Agent: "googlebot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".googlebot.com"
+   - ".google.com"
+ # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
+ Bingbot:
+  Bypass Flag: "Flag-Bypass-Bingbot-Check"
+  User Agent Pattern: "~(?:msn|bing)bot|bingpreview~"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".search.msn.com"
+ # http://www.ysearchblog.com/2007/06/05/yahoo-search-crawler-slurp-has-a-new-address-and-signature-card/
+ Y!Slurp:
+  Bypass Flag: "Flag-Bypass-Y!Slurp-Check"
+  User Agent: "slurp"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".crawl.yahoo.net"
+   - ".yse.yahoo.net"
+ # https://help.baidu.com/question?prod_en=master&class=Baiduspider
+ Baidu:
+  Bypass Flag: "Flag-Bypass-Baidu-Check"
+  User Agent: "baidu"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".baidu.com"
+   - ".baidu.jp"
+ # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
+ YandexBot:
+  Bypass Flag: "Flag-Bypass-Yandex-Check"
+  User Agent: "yandex"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".yandex.com"
+   - ".yandex.net"
+   - ".yandex.ru"
+ # https://duckduckgo.com/duckduckbot
+ DuckDuckGo Bot:
+  Bypass Flag: "Flag-Bypass-DuckDuckGo-Check"
+  User Agent: "duckduckbot"
+  Closure: "UA-IP-Match"
+  Valid Domains:
+   - "72.94.249.34"
+   - "72.94.249.35"
+   - "72.94.249.36"
+   - "72.94.249.37"
+   - "72.94.249.38"
+Social Media Verification:
+ # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
+ Pinterest:
+  User Agent: "pinterest"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".pinterest.com"
+ # (No reference information currently available for Embedly).
+ Embedly:
+  User Agent: "embedly"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - "embed.ly"
+ # https://www.grapeshot.com/crawler/
+ GrapeshotCrawler:
+  User Agent: "grapeshot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".grapeshot.co.uk"
+

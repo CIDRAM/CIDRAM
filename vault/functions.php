@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.10).
+ * This file: Functions file (last modified: 2018.07.14).
  */
 
 /**
@@ -1439,64 +1439,44 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
     if (
-        !empty($CIDRAM['TestResults']) &&
-        !$CIDRAM['Config']['general']['maintenance_mode'] &&
-        $CIDRAM['Config']['general']['search_engine_verification'] &&
-        $CleanUA = strtolower(urldecode($CIDRAM['BlockInfo']['UA']))
+        empty($CIDRAM['TestResults']) ||
+        $CIDRAM['Config']['general']['maintenance_mode'] ||
+        !$CIDRAM['Config']['general']['search_engine_verification'] ||
+        !empty($CIDRAM['VerificationDataReadFailure']) ||
+        empty($CIDRAM['BlockInfo']['UALC'])
     ) {
-        /**
-         * Verify Googlebot.
-         * Reference: https://support.google.com/webmasters/answer/80553?hl=en
-         */
-        if (empty($CIDRAM['Flag-Bypass-Googlebot-Check']) && strpos($CleanUA, 'googlebot') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['.googlebot.com', '.google.com'], 'Googlebot');
+        return;
+    }
+    if (!isset($CIDRAM['VerificationData'])) {
+        if (!$Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) {
+            $CIDRAM['VerificationDataReadFailure'] = true;
+            return;
         }
-        /**
-         * Verify Bingbot.
-         * Reference: https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot
-         */
-        if (empty($CIDRAM['Flag-Bypass-Bingbot-Check']) && preg_match('~(?:msn|bing)bot|bingpreview~', $CleanUA)) {
-            $CIDRAM['DNS-Reverse-Forward']('.search.msn.com', 'Bingbot');
-        }
-        /**
-         * Verify Yahoo! Slurp.
-         * Reference: http://www.ysearchblog.com/2007/06/05/yahoo-search-crawler-slurp-has-a-new-address-and-signature-card/
-         */
-        if (empty($CIDRAM['Flag-Bypass-Y!Slurp-Check']) && strpos($CleanUA, 'slurp') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['.crawl.yahoo.net', '.yse.yahoo.net'], 'Y!Slurp');
-        }
-        /**
-         * Verify Baidu Spider.
-         * Reference: https://help.baidu.com/question?prod_en=master&class=Baiduspider
-         */
-        if (empty($CIDRAM['Flag-Bypass-Baidu-Check']) && strpos($CleanUA, 'baidu') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['.baidu.com', '.baidu.jp'], 'Baidu', true);
-        }
-        /**
-         * Verify YandexBot.
-         * Reference: https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
-         */
-        if (empty($CIDRAM['Flag-Bypass-Yandex-Check']) && strpos($CleanUA, 'yandex') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['.yandex.com', '.yandex.net', '.yandex.ru'], 'YandexBot');
-        }
-        /**
-         * Verify DuckDuckGo Bot.
-         * Reference: https://duckduckgo.com/duckduckbot
-         */
-        if (empty($CIDRAM['Flag-Bypass-DuckDuckGo-Check']) && strpos($CleanUA, 'duckduckbot') !== false) {
-            $CIDRAM['UA-IP-Match'](['72.94.249.34', '72.94.249.35', '72.94.249.36', '72.94.249.37', '72.94.249.38'], 'DuckDuckGo Bot');
+        $CIDRAM['VerificationData'] = [];
+        $CIDRAM['YAML']($Raw, $CIDRAM['VerificationData']);
+    }
+    if (empty($CIDRAM['VerificationData']['Search Engine Verification'])) {
+        return;
+    }
+    foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Name => $Values) {
+        if (empty($CIDRAM[$Values['Bypass Flag']]) && (
+            (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
+            (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
+        )) {
+            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name);
         }
     }
 };
 
 /** Reset bypass flags. */
 $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
-    $CIDRAM['Flag-Bypass-Googlebot-Check'] = false;
-    $CIDRAM['Flag-Bypass-Bingbot-Check'] = false;
-    $CIDRAM['Flag-Bypass-Y!Slurp-Check'] = false;
-    $CIDRAM['Flag-Bypass-Baidu-Check'] = false;
-    $CIDRAM['Flag-Bypass-Yandex-Check'] = false;
-    $CIDRAM['Flag-Bypass-DuckDuckGo-Check'] = false;
+    if (isset($CIDRAM['VerificationData']['Search Engine Verification'])) {
+        foreach ($CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
+            if (!empty($Values['Bypass Flag'])) {
+                $CIDRAM[$Values['Bypass Flag']] = false;
+            }
+        }
+    }
 };
 
 /**
@@ -1504,28 +1484,31 @@ $CIDRAM['ResetBypassFlags'] = function () use (&$CIDRAM) {
  */
 $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
     if (
-        !empty($CIDRAM['TestResults']) &&
-        !$CIDRAM['Config']['general']['maintenance_mode'] &&
-        $CIDRAM['Config']['general']['social_media_verification'] &&
-        $CIDRAM['BlockInfo']['UALC']
+        empty($CIDRAM['TestResults']) ||
+        $CIDRAM['Config']['general']['maintenance_mode'] ||
+        !$CIDRAM['Config']['general']['social_media_verification'] ||
+        !empty($CIDRAM['VerificationDataReadFailure']) ||
+        empty($CIDRAM['BlockInfo']['UALC'])
     ) {
-        /**
-         * Verify Pinterest.
-         * Reference: https://help.pinterest.com/en/articles/about-pinterest-crawler-0
-         */
-        if (strpos($CIDRAM['BlockInfo']['UALC'], 'pinterest') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['.pinterest.com'], 'Pinterest');
+        return;
+    }
+    if (!isset($CIDRAM['VerificationData'])) {
+        if (!$Raw = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'verification.yaml')) {
+            $CIDRAM['VerificationDataReadFailure'] = true;
+            return;
         }
-        /** Verify Embedly requests. */
-        if (strpos($CIDRAM['BlockInfo']['UALC'], 'embedly') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['embed.ly'], 'Embedly', true, false);
-        }
-        /**
-         * Verify GrapeshotCrawler.
-         * Reference: https://www.grapeshot.com/crawler/
-         */
-        if (strpos($CIDRAM['BlockInfo']['UALC'], 'grapeshot') !== false) {
-            $CIDRAM['DNS-Reverse-Forward'](['.grapeshot.co.uk'], 'GrapeshotCrawler');
+        $CIDRAM['VerificationData'] = [];
+        $CIDRAM['YAML']($Raw, $CIDRAM['VerificationData']);
+    }
+    if (empty($CIDRAM['VerificationData']['Social Media Verification'])) {
+        return;
+    }
+    foreach ($CIDRAM['VerificationData']['Social Media Verification'] as $Name => $Values) {
+        if (
+            (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
+            (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
+        ) {
+            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name);
         }
     }
 };

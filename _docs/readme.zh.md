@@ -287,6 +287,7 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 /vault/template_custom.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/template_default.html | 模板文件；模板为HTML输出产生通过CIDRAM输出发生器。
 /vault/themes.dat | 主题元数据文件。由前端更新页面使用。
+/vault/verification.yaml | 搜索引擎和社交媒体的验证数据。
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /Changelog.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
@@ -1055,7 +1056,7 @@ CIDRAM使网站所有者能够阻止不良流量，​但网站所有者有责�
 
 #### <a name="WHAT_ARE_INFRACTIONS"></a>什么是“违规”？
 
-“违规”决定何时还没有被任何特定签名文件阻止的IP应该开始被阻止以将来的任何请求，​他们与IP跟踪密切相关。​一些功能和模块允许请求由于起源IP以外的原因被阻塞（例如，spambot或hacktool用户代理【user agent】，危险的查询，假的DNS，等等），当发生这种情况时，可能会发生“违规”。​这提供了一种识别不需要的请求的IP地址的方法（如果被任何特定的签名文件的不被阻止已经）。​违规通常与IP被阻止的次数是1比1，但不总是（在严重事件中，可能会产生大于1的违规值，如果“track_mode”是假的【false】，对于仅由签名文件触发块事件，不会发生违规）。
+“违规”决定何时还没有被任何特定签名文件阻止的IP应该开始被阻止以将来的任何请求，​他们与IP跟踪密切相关。​一些功能和模块允许请求由于起源IP以外的原因被阻塞（例如，spambot或hacktool用户代理【user agent】，危险的查询，假的DNS，等等），当发生这种情况时，可能会发生“违规”。​这提供了一种识别不需要的请求的IP地址的方法（如果被任何特定的签名文件的不被阻止已经）。​违规通常与IP被阻止的次数是1比1，但不总是（在严重事件中，可能会产生大于1的违规值，如果“track_mode”是假的【false】，对于仅由签名文件触发的阻止事件，不会发生违规）。
 
 #### <a name="BLOCK_HOSTNAMES"></a>CIDRAM可以阻止主机名？
 
@@ -1184,13 +1185,13 @@ CIDRAM可选的支持Google reCAPTCHA，为用户提供了一种通过完成reCA
 
 CIDRAM提供了一个可选模块，它使用API来检查入站请求的IP地址是否属于可疑垃圾邮件发送者。​默认情况下该模块不是安装，但如果选择安装该模块，则可以根据模块的预期用途将用户的IP地址与Stop Forum Spam【停止论坛垃圾邮件】API共享。​安装模块时，当入站请求请求的资源是CIDRAM识别为垃圾邮件发送者经常目标的资源时（如登录页面，注册页面，电子邮件验证页面，评论表单，等等），CIDRAM就会与此API通信。
 
-#### 11.3 LOGGING
+#### 11.3 日志记录
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+由于多种原因，日志记录是CIDRAM的重要组成部分。​当未记录导致它们的阻止事件时，可能难以诊断和解决假阳性。​当未记录阻止事件时，可能很难确定CIDRAM在某些情况下的表现如何，而且可能很难确定其不足之处，以及可能需要更改哪些配置或签名，以使其继续按预期运行。​无论如何，一些用户可能不想要记录，并且它仍然是完全可选的。​在CIDRAM中，默认情况下日志记录是禁用。​要启用它，必须相应地配置CIDRAM。
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+另外，如果日志记录在法律上是允许的，并且在法律允许的范围内（例如，可记录的信息类型，多长时间，在什么情况下），可以变化，具体取决于管辖区域和CIDRAM的实施上下文（例如，如果您是个人或公司实体经营，如果您在商业或非商业基础上运营，等等）。​因此，仔细阅读本节可能对您有用。
 
-There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
+CIDRAM可以执行多种类型的日志记录。​不同类型的日志记录涉及不同类型的信息，出于各种原因。
 
 ##### 11.3.0 BLOCK EVENTS
 
@@ -1315,16 +1316,16 @@ If you want to take it a step further by preventing specific types of informatio
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 统计
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM可选择跟踪统计信息，例如自特定时间以来发生的阻止事件或reCAPTCHA实例的总数。​默认情况下此功能是禁用，但可以通过程序包配置启用此功能。​此功能仅跟踪发生的事件总数，不包括有关特定事件的任何信息（因此，不应被视为PII）。
 
 *相关配置指令：*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 加密
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM不[加密](https://zh.wikipedia.org/wiki/%E5%8A%A0%E5%AF%86)其缓存或任何日志信息。​可能会在将来引入缓存和日志加密，但目前没有任何具体的计划。​如果您担心未经授权的第三方获取可能包含PII或敏感信息（如缓存或日志）的CIDRAM部分的访问权限，我建议不要将CIDRAM安装在可公开访问的位置（例如，在标准`public_html`或等效目录之外【可用于大多数标准网络服务器】安装CIDRAM），​也我建议对安装目录强制执行适当的限制权限（特别是对于vault目录）。​如果这还不足以解决您的疑虑，应该配置CIDRAM为不会首先收集或记录引起您关注的信息类型（例如，通过禁用日志记录）。
 
 #### 11.4 COOKIE
 
@@ -1373,4 +1374,4 @@ CIDRAM不收集或处理任何信息用于营销或广告目的，既不销售�
 ---
 
 
-最后更新：2018年7月9日。
+最后更新：2018年7月14日。

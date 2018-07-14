@@ -286,6 +286,7 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 /vault/template_custom.html | CIDRAMテンプレートファイル；​CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_default.html | CIDRAMテンプレートファイル；​CIDRAMがファイルアップロードをブロックした際に作成されるメッセージのＨＴＭＬ出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/themes.dat | テーマのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
+/vault/verification.yaml | 検索エンジンとソーシャル・メディアの検証データ。
 /.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
@@ -1054,7 +1055,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 #### <a name="WHAT_ARE_INFRACTIONS"></a>「違反」とは何ですか？
 
-「違反」は、特定のシグネチャ・ファイルによってまだブロックされていないＩＰが将来のリクエストに対してブロックされる時期を決定します。​これらはＩＰトラッキングに密接に関連しています。​いくつかの機能とモジュールが存在し、元のIP以外の理由でリクエストをブロックすることができます​（例えば、スパムロボッ「spambots」トやハックツール「hacktools」に対応するユーザー・エージェント「user agents」の存在、危険な照会、偽装されたＤＮＳなどの理由）。​これが起こると、「違反」が起こる可能性があります。​これらは、特定のシグネチャ・ファイルによってまだブロックされていない不要なリクエストに対応するＩＰアドレスを識別する方法を提供します。​違反は通常、ＩＰがブロックされた回数と1対1に対応しますが、必ずしもそうではありません（重大なケースでは、より大きな違反価値があるかもしれない、また、「track_mode」が偽である場合、シグネチャ・ファイルのみによってトリガされたブロックイベントに対して違反は発生しません）。
+「違反」は、特定のシグネチャ・ファイルによってまだブロックされていないＩＰが将来のリクエストに対してブロックされる時期を決定します。​これらはＩＰトラッキングに密接に関連しています。​いくつかの機能とモジュールが存在し、元のIP以外の理由でリクエストをブロックすることができます​（例えば、スパムロボッ「spambots」トやハックツール「hacktools」に対応するユーザー・エージェント「user agents」の存在、危険な照会、偽装されたＤＮＳなどの理由）。​これが起こると、「違反」が起こる可能性があります。​これらは、特定のシグネチャ・ファイルによってまだブロックされていない不要なリクエストに対応するＩＰアドレスを識別する方法を提供します。​違反は通常、ＩＰがブロックされた回数と1対1に対応しますが、必ずしもそうではありません（重大なケースでは、より大きな違反価値があるかもしれない、また、「track_mode」が偽である場合、シグネチャ・ファイルのみによってトリガされたブロック・イベントに対して違反は発生しません）。
 
 #### <a name="BLOCK_HOSTNAMES"></a>CIDRAMはホスト名をブロックできますか？
 
@@ -1138,7 +1139,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 #### 11.2 第三者
 
-その正確なコンフィギュレーションと実装に応じて、パッケージは場合によっては第三者と通信し、情報を共有することがあります。​この情報は、いくつかの国において、状況によっては、「[個人を特定できる情報](https://ja.wikipedia.org/wiki/%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1)」（PII）と定義することができます。
+その正確なコンフィギュレーションと実装に応じて、パッケージは場合によっては第三者と通信し、情報を共有することがあります。​この情報は、いくつかの国において、状況によっては、「[個人を特定できる情報](https://ja.wikipedia.org/wiki/%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1)」（ＰＩＩ）と定義することができます。
 
 これらの第三者がこの情報をどのように使用するかは、これらの第三者によって定められたさまざまなポリシーの対象となります。​このドキュメントの範囲外です。​ただし、このような場合は、これらの第三者との情報の共有を無効にすることができます。​そのような場合は、有効にすることを選択した場合、これらの第三者によるＰＩＩのプライバシー、セキュリティ、および使用に関する懸念事項を調査することは、おあなたの責任です。​ご不明な点がある場合、またはＰＩＩに関してこれらの第三者の行為に不満がある場合は、これらの第三者との情報の共有をすべて無効にすることが最善の方法です。
 
@@ -1312,16 +1313,16 @@ If you want to take it a step further by preventing specific types of informatio
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 統計 （スタティスティックス）
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAMは、オプションで、特定の時間以降に発生したブロック・イベントまたはreCAPTCHAインスタンスの総数などの統計を追跡できます。​この機能はデフォルトで無効になっていますが、パッケージ・コンフィギュレーションで有効にすることができます。​この機能は、発生したイベントの総数のみを追跡します。​特定のイベントに関する情報は含まれていませんので、ＰＩＩと見なされるべきではありません。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 暗号化 （エンクリプション）
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAMは、キャッシュまたはログ情報を[暗号化](https://ja.wikipedia.org/wiki/%E6%9A%97%E5%8F%B7)しません。​キャッシュとログの暗号化は、将来導入される可能性がありますが、現在のところ具体的な計画はありません。​権限のない第三者によるＰＩＩへのアクセスについて（例えば、キャッシュ、ログ）：​CIDRAMは、一般にアクセス可能な場所にはインストールしないことをお勧めします（例えば、ほとんどのウェブサーバーで使用できる標準の`public_html`ディレクトリの外にCIDRAMをインストールする）、​そして適切に制限された権限が強制されるようにする（特に、「vault」ディレクトリ）。​懸念が残っている場合は、CIDRAMを設定して、この情報が収集または記録されないようにすることができます​（例えば、ロギングを無効にするなど）。
 
 #### 11.4 COOKIES （クッキー）
 
@@ -1355,9 +1356,9 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 
 この規制には、ＥＵ（欧州連合）の「データ主体」（識別された、または識別可能な自然人）の「個人識別情報」（ＰＩＩ）の処理に関する特定の規定が含まれています。​規制に準拠するためには、「企業」（規制によって定義されている）、関連するシステムおよびプロセスは、デフォルトで「設計上のプライバシー」を実装する必要があります、最高のプライバシー設定を使用する必要があります、格納された情報または処理された情報のためにセーフガードを実装する必要があります（「スドニマイゼーション」の実装またはデータの完全な「アノニマイゼーション」を含むがこれらに限定されません）、収集するデータの種類、処理方法、理由、保持期間、および第三者とこのデータを共有するかどうかを明確かつ明白に宣言する必要があります、第三者と共有されるデータの種類、方法、理由などが含まれます。
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+規制によって定義されているように、合法的な根拠がない限り、データを処理することはできません。​一般的に、これは、合法的な基準でデータ対象のデータを処理するためには、法的義務を遵守しなければならないを意味します、または明示され、十分に情報があり、明白な同意がデータ対象から得られた後にのみ行われる。
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+規制のいくつかの側面は時間とともに変化する可能性があります。​時代遅れの情報が広がらないようにするには、関係する情報をここに入れるのではなく、正式な情報源から規制について学ぶ方が良いでしょう（ここに含まれる情報が古くなる可能性があります）。
 
 より多くの情報を習得するための推奨リソース：
 - [GDPR（EU一般データ保護規制）とは | 語句説明・適用範囲・与える影響を解説](https://boxil.jp/mag/a4605/)
@@ -1369,4 +1370,4 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 ---
 
 
-最終アップデート：2018年7月9日。
+最終アップデート：2018年7月14日。

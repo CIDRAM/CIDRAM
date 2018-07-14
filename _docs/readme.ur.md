@@ -288,6 +288,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_custom.html
 &nbsp; <div dir="rtl" style="display:inline;">سانچہ فائل؛ CIDRAM پیداوار جنریٹر کی طرف سے تیار HTML پیداوار کے لئے سانچہ.</div> | /vault/template_default.html
 &nbsp; <div dir="rtl" style="display:inline;">موضوعات میٹا ڈیٹا فائل؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/themes.dat
+&nbsp; <div dir="rtl" style="display:inline;">تلاش کے انجن اور سوشل میڈیا کے لئے توثیقی ڈیٹا.</div> | /vault/verification.yaml
 &nbsp; <div dir="rtl" style="display:inline;">A GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /.gitattributes
 &nbsp; <div dir="rtl" style="display:inline;">مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /Changelog.txt
 &nbsp; <div dir="rtl" style="display:inline;">کمپوزر / Packagist معلومات (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /composer.json
@@ -1484,9 +1485,9 @@ If you want to take it a step further by preventing specific types of informatio
  <li><code dir="ltr">omit_ua</code> &lt;- <code dir="ltr">legal</code></li>
 </ul></div>
 
-##### 11.3.7 STATISTICS
+#### <div dir="rtl">١١.٣.٧ اعداد و شمار<br /><br /></div>
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+<div dir="rtl">CIDRAM اعداد و شمار کو ٹریک کر سکتے ہیں، جیسے کہ کسی مخصوص وقت سے کتنے بلاک واقعات یا reCAPTCHA مثال موجود ہیں. یہ خصوصیت ڈیفالٹ کے ذریعہ غیر فعال ہے، لیکن پیکیج کی ترتیب کے ذریعے فعال کیا جا سکتا ہے. یہ خصوصیت صرف واقعات کی تعداد کو ٹریک کرتا ہے. اس میں کوئی مخصوص معلومات شامل نہیں ہے، لہذا اسے PII کے طور پر نہیں جانا چاہئے.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1546,4 +1547,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 9 جولائی 2018 (2018.07.09).</div>
+<div dir="rtl">آخری تازہ کاری: 14 جولائی 2018 (2018.07.14).</div>

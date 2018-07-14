@@ -286,6 +286,7 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 /vault/template_custom.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_default.html | CIDRAM 템플릿 파일; CIDRAM가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/themes.dat | 테마 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
+/vault/verification.yaml | 검색 엔진 및 소셜 미디어에 대한 확인 데이터입니다.
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).
@@ -1312,16 +1313,16 @@ If you want to take it a step further by preventing specific types of informatio
 - `legal` -> `omit_hostname`
 - `legal` -> `omit_ua`
 
-##### 11.3.7 STATISTICS
+##### 11.3.7 통계
 
-CIDRAM is optionally able to track statistics such as the total number of block events or reCAPTCHA instances that have occurred since some particular point in time. This feature is disabled by default, but can be enabled via the package configuration. This feature only tracks the total number of events occurred, and doesn't include any information about specific events (and therefore, shouldn't be regarded as PII).
+CIDRAM은 선택적으로 특정 시간 이후에 발생한 블록 이벤트 또는 reCAPTCHA 인스턴스의 총 수와 같은 통계를 추적 할 수 있습니다. 이 기능은 기본적으로 비활성화되어 있지만 패키지 구성을 통해 활성화 할 수 있습니다. 이 기능은 발생 된 총 이벤트 수만 추적합니다. 특정 이벤트에 대한 정보는 포함되어 있지 않으므로 PII로 간주되어서는 안됩니다.
 
 *관련 설정 지시어 :*
 - `general` -> `statistics`
 
-##### 11.3.8 ENCRYPTION
+##### 11.3.8 암호화
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+CIDRAM은 캐시 또는 로그 정보를 [암호화](https://ko.wikipedia.org/wiki/%EC%95%94%ED%98%B8%ED%99%94)하지 않습니다. 캐시 및 로그 암호화는 향후 도입 될 수 있지만 현재 구체적인 계획은 없습니다. 승인되지 않은 제 3 자의 개인 식별 정보 (PII)에 대한 액세스 (예, 캐시 또는 로그) : 공개적으로 접근 가능한 위치에 CIDRAM을 설치하지 않을 것을 권장합니다 (예, 대부분의 표준 웹 서버에서 사용할 수있는 표준 `public_html` 디렉토리 외부에 CIDRAM 설치) 과 적절하게 제한적인 권한이 시행되는지 확인하십시오 (특히 vault 디렉토리의 경우). 문제가 지속되면 CIDRAM을 구성하여이 정보가 수집되거나 기록되지 않도록 할 수 있습니다 (예, 로깅 비활성화).
 
 #### 11.4 COOKIE (쿠키)
 
@@ -1353,11 +1354,11 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 
 일반 데이터 보호 규정 (GDPR)은 2018 년 5 월 25 일부터 효력을 발생하는 유럽 연합 (EU)의 규정입니다. 이 규정의 주요 목표는 EU 시민과 주민들에게 개인 정보를 통제하고 프라이버시 및 개인 정보와 관련하여 EU 내 규정을 통일하는 것입니다.
 
-The regulation contains specific provisions pertaining to the processing of "personally identifiable information" (PII) of any "data subjects" (any identified or identifiable natural person) either from or within the EU. To be compliant with the regulation, "enterprises" (as per defined by the regulation), and any relevant systems and processes must implement "privacy by design" by default, must use the highest possible privacy settings, must implement necessary safeguards for any stored or processed information (including, but not limited to, the implementation of pseudonymisation or full anonymisation of data), must clearly and unambiguously declare the types of data they collect, how they process it, for what reasons, for how long they retain it, and whether they share this data with any third parties, the types of data shared with third parties, how, why, and so on.
+이 규정에는 유럽 연합 (EU)의 "데이터 주체"에 대한 "[개인 식별 정보](https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4)"(PII) 처리와 관련된 특정 조항이 포함되어 있습니다 ("데이터 주체"는 식별 된 또는 식별 가능한 자연인을 의미합니다). 규정을 준수하려면 "기업"(규정에 정의 된대로) 및 관련 시스템 및 프로세스가 수행해야하는 몇 가지 사항이 있습니다 : 표준으로 "디자인에 의한 개인 정보 보호"구현; 최대한 높은 개인 정보 설정 사용; 저장된 정보 나 처리 된 정보에 대한 안전 장치 구현 (여기에는 다음이 포함됩니다 : 데이터의 pseudonymisation 또는 완전한 anonymisation 구현); 데이터 수집 유형, 처리 방법, 이유, 보유 기간 및 제 3 자와의 공유 여부를 모호하지 않게 선언하십시오; 제 3 자와 공유하는 데이터의 유형, 방법, 이유 등을 설명합니다.
 
-Data may not be processed unless there's a lawful basis for doing so, as per defined by the regulation. Generally, this means that in order to process a data subject's data on a lawful basis, it must be done in compliance with legal obligations, or done only after explicit, well-informed, unambiguous consent has been obtained from the data subject.
+규정에 정의 된대로 합법적 인 근거가없는 한 데이터를 처리 할 수 없습니다. 이것은 다음을 의미합니다 : 처리는 법적 의무를 준수하여 수행되어야합니다, 또는, 명백하고, 정보에 입각하고, 모호하지 않은 동의가 데이터 주체로부터 얻어진 후에 만 그것을 행한다.
 
-Because aspects of the regulation may evolve in time, in order to avoid the propagation of outdated information, it may be better to learn about the regulation from an authoritative source, as opposed to simply including the relevant information here in the package documentation (which may eventually become outdated as the regulation evolves).
+규제의 일부 측면은 시간이 지남에 따라 변경 될 수 있습니다. 구식 정보의 확산을 피하기 위해, 관련 정보를 여기에 포함하는 대신 권위있는 출처에서 규제에 대해 배우는 것이 더 좋습니다 (여기에 포함 된 정보가 오래 될 수 있습니다).
 
 추가 정보를 배우기 위해 권장되는 자료 :
 - [유럽 개인정보 보호법 GDPR 안내](https://www.privacy.go.kr/gdpr)
@@ -1367,4 +1368,4 @@ Because aspects of the regulation may evolve in time, in order to avoid the prop
 ---
 
 
-최종 업데이트 : 2018년 7월 9일.
+최종 업데이트 : 2018년 7월 14일.

@@ -286,6 +286,7 @@ Bestand | Beschrijving
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door de CIDRAM uitvoer generator.
 /vault/themes.dat | Thema's metadata bestand; Gebruikt door de frontend updates pagina.
+/vault/verification.yaml | Verificatiegegevens voor zoekmachines en sociale media.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /Changelog.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
@@ -1372,4 +1373,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 9 Juli 2018 (2018.07.09).
+Laatste Bijgewerkt: 14 Juli 2018 (2018.07.14).

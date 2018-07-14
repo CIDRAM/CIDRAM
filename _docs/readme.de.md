@@ -286,6 +286,7 @@ Datei | Beschreibung
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/template_default.html | Template Datei; Template für die HTML-Ausgabe durch der CIDRAM Ausgabe-Generator erzeugt.
 /vault/themes.dat | Themes-Metadaten-Datei; Wird von der Front-End-Updates-Seite verwendet.
+/vault/verification.yaml | Verifikationsdaten für Suchmaschinen und Social Media.
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /Changelog.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
@@ -1374,4 +1375,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 9 Juli 2018 (2018.07.09).
+Zuletzt aktualisiert: 14 Juli 2018 (2018.07.14).

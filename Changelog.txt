@@ -67,6 +67,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   nefarious activity, and then everything else). L10N data and etc updated
   accordingly. Added Grapeshot verification.
 
+- [2018.07.14; Minor code change; Maikuolan]: Split some of the hardcoded data
+  for search engine and social media verification out from the main functions
+  file (functions.php) and into its own file (verification.yaml). This improves
+  extensibility by eliminating the need to mess with the main functions file in
+  the future event that we want to add support for other platforms to be
+  verified at some point.
+
 === Version/Release 1.6.0 ===
 MINOR RELEASE.
 

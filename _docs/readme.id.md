@@ -286,6 +286,7 @@ Data | Deskripsi
 /vault/template_custom.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/template_default.html | File template; File template untuk output diproduksi HTML oleh CIDRAM output generator.
 /vault/themes.dat | File metadata tema; Digunakan oleh halaman pembaruan untuk bagian depan.
+/vault/verification.yaml | Data verifikasi untuk mesin pencari dan media sosial.
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /Changelog.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
@@ -1364,4 +1365,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 9 Juli 2018 (2018.07.09).
+Terakhir Diperbarui: 14 Juli 2018 (2018.07.14).

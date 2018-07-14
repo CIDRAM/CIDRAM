@@ -286,6 +286,7 @@ Tập tin | Chi tiết
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /vault/template_default.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi các máy phát đầu ra của CIDRAM.
 /vault/themes.dat | Tập tin siêu dữ liệu chủ đề; Được sử dụng bởi trang cập nhật front-end.
+/vault/verification.yaml | Dữ liệu xác minh cho máy tìm kiếm và truyền thông xã hội.
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
@@ -1187,7 +1188,7 @@ CIDRAM cung cấp một mô-đun tùy chọn tận dụng API này để kiểm 
 
 Nhật ký là một phần quan trọng của CIDRAM vì một số lý do. có thể khó để chẩn đoán và giải quyết các kết quả sai tích cực khi các sự kiện chặn khiến chúng không được ghi lại. Khi các sự kiện chặn không được ghi lại, có thể khó để xác định chính xác CIDRAM hoạt động tốt như thế nào trong bất kỳ ngữ cảnh cụ thể nào, và có thể khó để xác định nơi bất cập của nó, và những thay đổi nào có thể cần thiết đối với cấu hình hay chữ ký của nó, để nó có thể tiếp tục hoạt động như dự định. Bất kể, nhật ký có thể không được mong muốn cho tất cả người dùng, và vẫn hoàn toàn tùy chọn. Trong CIDRAM, ghi nhật ký bị vô hiệu hóa theo mặc định. Để kích hoạt nó, CIDRAM phải được cấu hình cho phù hợp.
 
-Ngoài ra, việc nhật ký có được cho phép hợp pháp hay không, và trong phạm vi được cho phép hợp pháp (ví dụ, các loại thông tin có thể nhật ký, bao lâu, và trong hoàn cảnh gì), có thể thay đổi, tùy thuộc vào thẩm quyền pháp lý và trong bối cảnh CIDRAM được triển khai (ví dụ, nếu bạn đang hoạt động như một cá nhân, như một thực thể công ty, và nếu trên cơ sở thương mại hay phi thương mại). Do đó, nó có thể hữu ích cho bạn để đọc kỹ phần này.
+Ngoài ra, việc nhật ký có được cho phép hợp pháp hay không, và trong phạm vi được cho phép hợp pháp (ví dụ, các loại thông tin có thể được nhật ký, bao lâu, và trong hoàn cảnh gì), có thể thay đổi, tùy thuộc vào thẩm quyền pháp lý và trong bối cảnh CIDRAM được triển khai (ví dụ, nếu bạn đang hoạt động như một cá nhân, như một thực thể công ty, và nếu trên cơ sở thương mại hay phi thương mại). Do đó, nó có thể hữu ích cho bạn để đọc kỹ phần này.
 
 Có nhiều kiểu ghi nhật ký mà CIDRAM có thể thực hiện. Các loại ghi nhật ký khác nhau liên quan đến các loại thông tin khác nhau, vì các lý do khác nhau.
 
@@ -1364,4 +1365,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Bảy 2018 (2018.07.09).
+Lần cuối cập nhật: 14 Tháng Bảy 2018 (2018.07.14).

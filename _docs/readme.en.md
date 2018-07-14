@@ -286,6 +286,7 @@ File | Description
 /vault/template_custom.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/template_default.html | Template file; Template for HTML output produced by the CIDRAM output generator.
 /vault/themes.dat | Themes metadata file; Used by the front-end updates page.
+/vault/verification.yaml | Verification data for search engines and social media.
 /.gitattributes | A GitHub project file (not required for proper function of the script).
 /Changelog.txt | A record of changes made to the script between different versions (not required for proper function of the script).
 /composer.json | Composer/Packagist information (not required for proper function of the script).
@@ -1187,7 +1188,7 @@ CIDRAM provides an optional module that leverages this API to check whether the 
 
 Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
-Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
+Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may be logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
 There are multiple types of logging that CIDRAM can perform. Different types of logging involves different types of information, for different reasons.
 
@@ -1374,4 +1375,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 9 July 2018 (2018.07.09).
+Last Updated: 14 July 2018 (2018.07.14).

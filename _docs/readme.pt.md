@@ -286,6 +286,7 @@ Arquivo | Descrição
 /vault/template_custom.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/template_default.html | Arquivo de modelo; Modelo para a saída de HTML produzido pela gerador de saída para CIDRAM.
 /vault/themes.dat | Arquivo de metadados de temas; Usado pela página de atualizações do front-end.
+/vault/verification.yaml | Dados de verificação para motores de busca e mídias sociais.
 /.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
 /Changelog.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
@@ -1366,4 +1367,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 9 Julho de 2018 (2018.07.09).
+Última Atualização: 14 Julho de 2018 (2018.07.14).

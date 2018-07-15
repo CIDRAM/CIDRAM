@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.14).
+ * This file: Functions file (last modified: 2018.07.15).
  */
 
 /**
@@ -1463,7 +1463,9 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
             (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
         )) {
-            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name);
+            $ReverseOnly = isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false;
+            $CanModTrackable = isset($Values['Can Modify Trackable']) ? $Values['Reverse Only'] : true;
+            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $ReverseOnly, $CanModTrackable);
         }
     }
 };
@@ -1508,7 +1510,9 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
             (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
         ) {
-            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name);
+            $ReverseOnly = isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false;
+            $CanModTrackable = isset($Values['Can Modify Trackable']) ? $Values['Reverse Only'] : true;
+            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $ReverseOnly, $CanModTrackable);
         }
     }
 };

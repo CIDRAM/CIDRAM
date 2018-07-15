@@ -27,6 +27,7 @@ Search Engine Verification:
   Bypass Flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baidu"
   Closure: "DNS-Reverse-Forward"
+  Reverse Only: true
   Valid Domains:
    - ".baidu.com"
    - ".baidu.jp"
@@ -61,6 +62,8 @@ Social Media Verification:
  Embedly:
   User Agent: "embedly"
   Closure: "DNS-Reverse-Forward"
+  Reverse Only: true
+  Can Modify Trackable: false
   Valid Domains:
    - "embed.ly"
  # https://www.grapeshot.com/crawler/

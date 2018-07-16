@@ -23,14 +23,34 @@ Search Engine Verification:
    - ".crawl.yahoo.net"
    - ".yse.yahoo.net"
  # https://help.baidu.com/question?prod_en=master&class=Baiduspider
- Baidu:
+ Baidu spider:
   Bypass Flag: "Flag-Bypass-Baidu-Check"
   User Agent: "baidu"
   Closure: "DNS-Reverse-Forward"
-  Reverse Only: true
   Valid Domains:
    - ".baidu.com"
    - ".baidu.jp"
+ # (No reference information currently available for Sogou web spider; Figured it out manually).
+ Sogou web spider:
+  Bypass Flag: "Flag-Bypass-Sogou-Check"
+  User Agent: "sogou"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".sogou.com"
+ # (No reference information currently available for YoudaoBot; Figured it out manually).
+ YoudaoBot:
+  Bypass Flag: "Flag-Bypass-YoudaoBot-Check"
+  User Agent: "youdaobot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".crawler.youdao.com"
+ # https://discussions.apple.com/thread/7090135
+ Applebot:
+  Bypass Flag: "Flag-Bypass-Applebot-Check"
+  User Agent: "applebot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".applebot.apple.com"
  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
  YandexBot:
   Bypass Flag: "Flag-Bypass-Yandex-Check"
@@ -58,7 +78,7 @@ Social Media Verification:
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".pinterest.com"
- # (No reference information currently available for Embedly).
+ # (No reference information currently available for Embedly; Figured it out manually).
  Embedly:
   User Agent: "embedly"
   Closure: "DNS-Reverse-Forward"
@@ -72,4 +92,10 @@ Social Media Verification:
   Closure: "DNS-Reverse-Forward"
   Valid Domains:
    - ".grapeshot.co.uk"
+ # (No reference information currently available for Twitterbot; Figured it out manually).
+ Twitterbot:
+  User Agent: "twitterbot"
+  Closure: "DNS-Reverse-Forward"
+  Valid Domains:
+   - ".twttr.com"
 

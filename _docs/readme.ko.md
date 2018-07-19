@@ -305,13 +305,13 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 #### "general" (카테고리)
 일반 설정.
 
-"logfile"
+##### "logfile"
 - 액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름 지정하거나 해제하려면 비워하십시오.
 
-"logfileApache"
+##### "logfileApache"
 - 액세스 시도 저지를 기록, Apache 스타일. 파일 이름 지정하거나 해제하려면 비워하십시오.
 
-"logfileSerialized"
+##### "logfileSerialized"
 - 액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름 지정하거나 해제하려면 비워하십시오.
 
 *유용한 팁 : 당신이 원하는 경우 로그 파일 이름에 날짜/시간 정보를 부가 할 수 있습니다 이름 이들을 포함하여 : 전체 연도에 대한 `{yyyy}`생략 된 년간 `{yy}`달 `{mm}`일 `{dd}`시간 `{hh}`.*
@@ -321,25 +321,25 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-"truncate"
+##### "truncate"
 - 로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고 : 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.
 
-"log_rotation_limit"
+##### "log_rotation_limit"
 - 로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다.
 
-"log_rotation_action"
+##### "log_rotation_action"
 - 로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다. Delete = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오. Archive = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오.
 
 *기술적 설명 : 이 문맥에서 "가장 오래된"은 "최근에 수정되지 않은"을 의미합니다.*
 
-"timeOffset"
+##### "timeOffset"
 - 귀하의 서버 시간은 로컬 시간과 일치하지 않는 경우, 당신의 요구에 따라 시간을 조정하기 위해, 당신은 여기에 오프셋을 지정할 수 있습니다. 하지만 그 대신에 일반적으로 시간대 지시문 (당신의`php.ini` 파일)을 조정 る 것이 좋습니다,하지만 때때로 (같은 제한 공유 호스팅 제공 업체에서 작업 할 때) 이것은 무엇을하는 것이 항상 가능하지는 않습니다 따라서이 옵션은 여기에서 볼 수 있습니다. 오프셋 분이며 있습니다.
 - 예 (1 시간을 추가합니다) : `timeOffset=60`
 
-"timeFormat"
+##### "timeFormat"
 - CIDRAM에서 사용되는 날짜 형식. Default (기본 설정) = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
-"ipaddr"
+##### "ipaddr"
 - 연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.
 
 "ipaddr"의 권장 값입니다 :
@@ -354,7 +354,7 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 *서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
 
-"forbid_on_block"
+##### "forbid_on_block"
 - 요청을 차단할 때 CIDRAM이 전송해야하는 HTTP 상태 메시지는 무엇입니까?
 
 현재 지원되는 값 :
@@ -368,13 +368,13 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 `451` | `Unavailable For Legal Reasons` | 주로 법적인 이유로 요청이 차단 된 경우 컨텍스트에 적합합니다. 다른 상황에서는 권장되지 않습니다.
 `503` | `Service Unavailable` | 가장 견고하지만 사용자에게는 가장 친숙하지 않습니다.
 
-"silent_mode"
+##### "silent_mode"
 - "액세스 거부"페이지를 표시하는 대신 CIDRAM는 차단 된 액세스 시도를 자동으로 리디렉션해야합니까? 그렇다면 리디렉션 위치를 지정합니다. 아니오의 경우이 변수를 비워 둡니다.
 
-"lang"
+##### "lang"
 - CIDRAM의 기본 언어를 설정합니다.
 
-"numbers"
+##### "numbers"
 - 숫자를 표시하는 방법을 지정합니다.
 
 현재 지원되는 값 :
@@ -398,36 +398,36 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 
 *노트 : 이 값은 패키지 외에도 관련이 없습니다. 또한, 지원되는 값은 앞으로 변경 될 수 있습니다.*
 
-"emailaddr"
+##### "emailaddr"
 - 여기에 이메일 주소를 입력하고 사용자가 차단 된 경우 사용자에게 보낼 수 있습니다. 이것은 지원과 지원에 사용할 수 있습니다 (실수로 차단 된 경우 등). 경고 : 여기에 입력 된 전자 이메일 주소는 아마 스팸 로봇에 의해 취득됩니다. 여기에서 제공되는 전자 이메일 주소는 모든 일회용하는 것이 좋습니다 (예를 들어, 기본 개인 주소 또는 비즈니스 주소를 사용하지 않는 등).
 
-"emailaddr_display_style"
+##### "emailaddr_display_style"
 - 사용자에게 전자 메일 주소를 어떻게 표시 하시겠습니까? "default" = 클릭 가능한 링크. "noclick" = 클릭 할 수없는 텍스트.
 
-"disable_cli"
+##### "disable_cli"
 - CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. `false`(거짓) = CLI 모드를 활성화합니다 (Default / 기본 설정); `true`(참된) = CLI 모드를 해제합니다.
 
-"disable_frontend"
+##### "disable_frontend"
 - 프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 CIDRAM을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. `false`(거짓) = 프론트 엔드에 대한 액세스를 활성화합니다; `true`(참된) = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정).
 
-"max_login_attempts"
+##### "max_login_attempts"
 - 로그인 시도 횟수 (프론트 엔드). Default (기본 설정) = 5.
 
-"FrontEndLog"
+##### "FrontEndLog"
 - 프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.
 
-"ban_override"
+##### "ban_override"
 - "infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본 설정). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다.
 
-"log_banned_ips"
+##### "log_banned_ips"
 - 금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본 설정); False = 아니오.
 
-"default_dns"
+##### "default_dns"
 - 호스트 이름 검색에 사용하는 DNS (도메인 이름 시스템) 서버의 쉼표로 구분 된 목록입니다. Default (기본 설정) = "8.8.8.8,8.8.4.4" (Google DNS). 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.
 
 *참조 : ["default_dns"에 사용할 수있는 항목은 무엇입니까?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
-"search_engine_verification"
+##### "search_engine_verification"
 - 검색 엔진의 요청을 확인해야합니까? 검색 엔진을 확인하여, 위반의 최대 수를 초과했기 때문에 검색 엔진이 금지되지 않는 것이 보증됩니다 (검색 엔진을 금지하는 것은 일반적으로 검색 엔진 순위의, SEO 등에 악영향을 미칩니다). 확인되면, 검색 엔진이 차단 될 수 있지만, 그러나 금지되지 않습니다. 검증되지 않은 경우는, 위반의 최대를 초과 한 결과, 금지 될 수 있습니다. 또한 검색 엔진의 검증은 사칭 된 검색 엔진으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 검색 엔진의 검증을 활성화한다 (Default / 기본 설정); False = 검색 엔진의 검증을 무효로한다.
 
 현재 지원 :
@@ -435,82 +435,89 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 - [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
 - Yahoo
 - [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- Sogou (搜狗)
+- Youdao (有道)
+- [Applebot](https://discussions.apple.com/thread/7090135)
 - [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
 - [DuckDuckGo](https://duckduckgo.com/duckduckbot)
 
-"social_media_verification"
+호환되지 않음 (갈등을 일으킨다) :
+- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+
+##### "social_media_verification"
 - 소셜 미디어 요청을 확인하려고합니까? 소셜 미디어 인증은 가짜 소셜 미디어 요청으로부터 보호합니다 (이러한 요청은 차단됩니다). True = 소셜 미디어 검증을 활성화한다 (Default / 기본 설정); False = 소셜 미디어 인증을 무효로한다.
 
 현재 지원 :
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - Embedly
 - [Grapeshot](https://www.grapeshot.com/crawler/)
+- Twitterbot
 
-"protect_frontend"
+##### "protect_frontend"
 - CIDRAM 의해 보통 제공되는 보호를 프론트 엔드에 적용할지 여부를 지정합니다. True = 예 (Default / 기본 설정); False = 아니오.
 
-"disable_webfonts"
+##### "disable_webfonts"
 - 웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.
 
-"maintenance_mode"
+##### "maintenance_mode"
 - 유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.
 
-"default_algo"
+##### "default_algo"
 - 향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 가 필요합니다).
 
-"statistics"
+##### "statistics"
 - CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정).
 
-"force_hostname_lookup"
+##### "force_hostname_lookup"
 - 호스트 이름 검색을 시행 하시겠습니까 (모든 요청)? True = 예; False = 아니오 (Default / 기본 설정). 호스트 이름 검색은 일반적으로 "필요에 따라"수행됩니다, 그러나 모든 요청에 대해 강제 될 수 있습니다. 이는 로그 파일에보다 자세한 정보를 제공하는 데 유용 할 수 있습니다, 그러나 또한 성능에 약간 부정적인 영향을 줄 수 있습니다.
 
-"allow_gethostbyaddr_lookup"
+##### "allow_gethostbyaddr_lookup"
 - UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.
 - *참고 : 일부 32 비트 시스템에서는 IPv6 조회가 제대로 작동하지 않을 수 있습니다.*
 
-"hide_version"
+##### "hide_version"
 - 로그 및 페이지 출력에서 버전 정보 숨기기? True = 예; False = 아니오 (Default / 기본 설정).
 
 #### "signatures" (카테고리)
 서명 설정.
 
-"ipv4"
+##### "ipv4"
 - IPv4의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다. 필요에 따라 항목을 추가 할 수 있습니다.
 
-"ipv6"
+##### "ipv6"
 - IPv6의 서명 파일 목록 (CIDRAM는 이것을 사용합니다). 이것은 쉼표로 구분되어 있습니다. 필요에 따라 항목을 추가 할 수 있습니다.
 
-"block_cloud"
+##### "block_cloud"
 - 클라우드 서비스에서 CIDR을 차단해야합니까? 당신의 웹 사이트에서 API 서비스를 운영하거나 당신이 웹 사이트 간 연결이 예상되는 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다.
 
-"block_bogons"
+##### "block_bogons"
 - Bogon/화성 CIDR을 차단해야합니까? 당신은 로컬 호스트에서 또는 귀하의 LAN에서 로컬 네트워크에서 연결을 수신 한 경우, 이것은 false로 설정해야합니다. 없는 경우에는이를 true로 설정해야합니다.
 
-"block_generic"
+##### "block_generic"
 - 일반적인 CIDR을 차단해야합니까? (다른 옵션과 관련되지 않은).
 
-"block_legal"
+##### "block_legal"
 - 법적 의무에 대응하여 CIDR을 차단 하시겠습니까? CIDRAM은 어떤 CIDR을 기본적으로 "법적 의무에" 연결할 수 없기 때문에이 지시문은 일반적으로 효과가 없습니다. 하지만, 법적 이유로 존재할 가능성이있는 모든 사용자 정의 시그니처 파일 또는 모듈의 이익을위한 추가 제어 수단으로 존재한다.
 
-"block_malware"
+##### "block_malware"
 - 멀웨어와 관련된 IP를 차단 하시겠습니까? 여기에는 C&C 서버, 감염된 시스템, 맬웨어 배포와 관련된 컴퓨터 등이 포함됩니다.
 
-"block_proxies"
+##### "block_proxies"
 - 프록시 서비스 또는 VPN에서 CIDR을 차단해야합니까? 프록시 서비스 또는 VPN이 필요한 경우는, false로 설정해야합니다. 없는 경우에는 보안을 향상시키기 위해이를 true로 설정해야합니다.
 
-"block_spam"
+##### "block_spam"
 - 스팸 때문에 CIDR을 차단해야합니까? 문제가있는 경우를 제외하고 일반적으로이를 true로 설정해야합니다.
 
-"modules"
+##### "modules"
 - IPv4/IPv6 서명을 체크 한 후로드 모듈 파일의 목록입니다. 이것은 쉼표로 구분되어 있습니다.
 
-"default_tracktime"
+##### "default_tracktime"
 - 모듈에 의해 금지 된 IP를 추적하는 초. Default (기본 설정) = 604800 (1 주).
 
-"infraction_limit"
+##### "infraction_limit"
 - IP가 IP 추적에 의해 금지되기 전에 발생하는 것이 허용된다 위반의 최대 수. Default (기본 설정) = 10.
 
-"track_mode"
+##### "track_mode"
 - 위반은 언제 계산해야합니까? False = IP가 모듈에 의해 차단되는 경우. True = 뭐든지 이유로 IP가 차단 된 경우.
 
 #### "recaptcha" (카테고리)
@@ -520,30 +527,30 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 
 "site key"와 "secret key"를 얻기 위해 (reCAPTCHA를 사용하는 데 필요한)이 링크를 클릭하십시오 : [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-"usemode"
+##### "usemode"
 - reCAPTCHA를 CIDRAM에서 사용하는 방법.
 - 0 = reCAPTCHA는 비활성화되어 있습니다 (Default / 기본 설정).
 - 1 = reCAPTCHA는 모두를 위해 서명이 활성화되어 있습니다.
 - 2 = 특별히 표시된 섹션의 경우에만 reCAPTCHA가 활성화됩니다.
 - (그렇지 값은 0과 같습니다).
 
-"lockip"
+##### "lockip"
 - reCAPTCHA를 IP로 잠금 하시겠습니까? False = 쿠키와 해시는 여러 IP에서 사용할 수 있습니다 (Default / 기본 설정). True = 쿠키와 해시는 여러 IP에서 사용할 수 없습니다 (쿠키와 해시는 IP에 잠겨 있습니다).
 - 주의 : "lockuser"이 "false"인 경우 "lockip"값은 무시됩니다. 이것은 사용자를 기억 메커니즘이 값에 의존하기 때문입니다.
 
-"lockuser"
+##### "lockuser"
 - reCAPTCHA를 사용자에 잠금 하시겠습니까? False = reCAPTCHA 완료하여 책임있는 IP (참고 : 사용자가 아닌) 에서 발생 된 모든 요청에 대한 액세스가 허용됩니다; 쿠키와 해시는 사용되지 않습니다; IP 허용 목록이 사용됩니다. True = reCAPTCHA 완료하여 책임있는 사용자 (참고 : IP가 아닌) 에서 발생 된 모든 요청에 대한 액세스가 허용됩니다; 쿠키와 해시는 고객을 기억하기 위해 사용됩니다; IP 화이트리스트는 사용되지 않습니다 (Default / 기본 설정).
 
-"sitekey"
+##### "sitekey"
 - 이 값은 당신의 reCAPTCHA에 대한 "site key"에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다.
 
-"secret"
+##### "secret"
 - 이 값은 당신의 reCAPTCHA에 대한 "secret key"에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다.
 
-"expiry"
+##### "expiry"
 - "lockuser"이 "true"때(Default / 기본 설정), reCAPTCHA 인스턴스의 합격/불합격 상태를 기억하고 미래의 페이지 요청 용 CIDRAM 해시를 포함한 표준 HTTP Cookie를 생성합니다; 이 해시는 동일한 해시를 포함한 내부 레코드에 해당합니다; 미래의 페이지 요청은 해당 해시를 사용하여 합격/불합격 상태를 인증합니다. "lockuser"이 "false"때 요청을 허용 할 필요가 있는지 여부를 판단하기 위해 IP 허용 목록이 사용됩니다; reCAPTCHA 인스턴스가 성공적으로 전달되면이 화이트리스트에 항목이 추가됩니다. 이러한 쿠키 해시 화이트리스트 항목은 몇 시간 유효해야하나요? Default (기본 설정) = 720 (1 개월).
 
-"logfile"
+##### "logfile"
 - reCAPTCHA 시도 기록. 파일 이름 지정하거나 해제하려면 비워하십시오.
 
 *유용한 팁 : 당신이 원하는 경우 로그 파일 이름에 날짜/시간 정보를 부가 할 수 있습니다 이름 이들을 포함하여 : 전체 연도에 대한 `{yyyy}`생략 된 년간 `{yy}`달 `{mm}`일 `{dd}`시간 `{hh}`.*
@@ -551,10 +558,10 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 *예 :*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-"signature_limit"
+##### "signature_limit"
 - reCAPTCHA 인스턴스가 제공 될 때 트리거 될 수있는 최대 서명 수입니다. Default (기본 설정) = 1. 특정 요청에 대해이 수가 초과되면, reCAPTCHA 인스턴스가 제공되지 않습니다.
 
-"api"
+##### "api"
 - 어떤 API를 사용할 수 있습니까? V2 또는 Invisible?
 
 *유럽 연합 사용자를위한 참고 사항 : 쿠키를 사용하도록 CIDRAM을 구성한 경우 (예 : lockuser가 true 인 경우), 쿠키 경고가 [EU 쿠키 법안](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)의 요구 사항에 따라 페이지에 눈에 띄게 표시됩니다. 그러나, invisible API를 사용할 때 CIDRAM은 자동으로 사용자의 reCAPTCHA를 완료하려고 시도합니다. 성공하면 페이지가 다시로드되고 실제로 쿠키 경고를 볼 적절한 시간이 주어지지 않고 쿠키가 생성 될 수 있습니다. 이 문제로 인해 법적 위험이있는 경우, invisible API 대신 V2 API를 사용하는 것이 좋습니다 (V2 API는 자동화되어 있지 않으므로, 사용자가 reCAPTCHA 챌린지를 완료해야하므로 쿠키 경고를 볼 수 있습니다).*
@@ -564,19 +571,19 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 
 *법적 요구 사항 및 이것이 구성 요구 사항에 미치는 영향에 대한 자세한 내용은 설명서의 "[법률 정보](#SECTION11)"절을 참조하십시오.*
 
-"pseudonymise_ip_addresses"
+##### "pseudonymise_ip_addresses"
 - 로그 파일을 쓸 때 가명으로하다 IP 주소? True = 예; False = 아니오 (Default / 기본 설정).
 
-"omit_ip"
+##### "omit_ip"
 - 로그에서 IP 주소를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 참고 : "pseudonymise_ip_addresses"는 "omit_ip"가 "true"일 때 중복됩니다.
 
-"omit_hostname"
+##### "omit_hostname"
 - 로그에서 호스트 이름을 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).
 
-"omit_ua"
+##### "omit_ua"
 - 로그에서 사용자 에이전트를 생략 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).
 
-"privacy_policy"
+##### "privacy_policy"
 - 생성 된 페이지의 꼬리말에 표시 할 관련 개인 정보 정책 방침의 주소입니다. URL 지정, 또는 사용하지 않으려면 비워 두십시오.
 
 #### "template_data" (카테고리)
@@ -584,13 +591,13 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 
 템플릿의 데이터는 사용자를위한 액세스 거부 메시지를 HTML 형식으로 출력 할 때 사용됩니다. 사용자 지정 테마를 사용하는 경우는`template_custom.html`를 사용하고, 그렇지 않은 경우는`template.html`를 사용하여 HTML 출력이 생성됩니다. 설정 파일에서이 섹션의 변수는 HTML 출력에 대한 해석되어로 둘러싸인 변수 이름은 해당 변수 데이터로 대체합니다. 예를 들어`foo="bar"`하면 HTML 출력의`<p>{foo}</p>`는`<p>bar</p>`입니다.
 
-"theme"
+##### "theme"
 - CIDRAM에 사용할 기본 테마.
 
-"Magnification"
+##### "Magnification"
 - 글꼴 배율. Default (기본 설정) = 1.
 
-"css_url"
+##### "css_url"
 - 사용자 정의 테마 템플릿 파일은 외부 CSS 속성을 사용합니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다.
 
 ---
@@ -925,6 +932,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 다음 패키지 및 제품이 CIDRAM과 호환되지 않습니다.
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 CIDRAM과의 호환성을 보장하기 위해, 다음 패키지 및 제품에, 모듈을 사용할 수 있습니다.
 - __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
@@ -1156,9 +1164,9 @@ If you use any features or modules intended to work with hostnames (such as the 
 - `general` -> `force_hostname_lookup`
 - `general` -> `allow_gethostbyaddr_lookup`
 
-##### 11.2.1 WEBFONTS
+##### 11.2.1 웹 글꼴
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+CIDRAM 프론트 엔드 및 "액세스 거부"페이지의 표준 UI ("사용자 인터페이스")뿐만 아니라 일부 사용자 정의 테마는 미적인 이유로 웹 글꼴을 사용할 수 있습니다. 웹 글꼴은 기본적으로 사용되지 않습니다. 사용하도록 설정하면 사용자의 브라우저와 웹 글꼴을 호스팅하는 서비스 간의 직접 통신이 발생합니다. 여기에는 사용자의 IP 주소, 사용자 에이전트, 운영 체제 및 요청에 사용 가능한 기타 세부 정보와 같은 정보를 전달하는 것이 포함될 수 있습니다. 대부분의 웹 글꼴은 [Google Fonts](https://fonts.google.com/) 서비스에서 호스팅합니다.
 
 *관련 설정 지시어 :*
 - `general` -> `disable_webfonts`
@@ -1368,4 +1376,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 7월 14일.
+최종 업데이트 : 2018년 7월 17일.

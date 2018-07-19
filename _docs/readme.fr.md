@@ -305,13 +305,13 @@ Ce qui suit est une liste des directives disponibles pour CIDRAM dans le `config
 #### « general » (Catégorie)
 Configuration générale pour CIDRAM.
 
-« logfile »
+##### « logfile »
 - Un fichier lisible par l'homme pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.
 
-« logfileApache »
+##### « logfileApache »
 - Un fichier dans le style d'Apache pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.
 
-« logfileSerialized »
+##### « logfileSerialized »
 - Un fichier sérialisé pour enregistrement de toutes les tentatives d'accès bloquées. Spécifier un fichier, ou laisser vide à désactiver.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
@@ -321,25 +321,25 @@ Configuration générale pour CIDRAM.
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-« truncate »
+##### « truncate »
 - Tronquer les fichiers journaux lorsqu'ils atteignent une certaine taille ? La valeur est la taille maximale en o/Ko/Mo/Go/To qu'un fichier journal peut croître avant d'être tronqué. La valeur par défaut de 0Ko désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque : S'applique aux fichiers journaux individuels ! La taille des fichiers journaux n'est pas considérée collectivement.
 
-« log_rotation_limit »
+##### « log_rotation_limit »
 - La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier la limite souhaitée ici. Une valeur de 0 désactivera la rotation du journal.
 
-« log_rotation_action »
+##### « log_rotation_action »
 - La rotation du journal limite le nombre de fichiers journaux qui doivent exister à un moment donné. Lorsque de nouveaux fichiers journaux sont créés, si le nombre total de fichiers journaux dépasse la limite spécifiée, l'action spécifiée sera effectuée. Vous pouvez spécifier l'action souhaitée ici. Delete = Supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée. Archive = Tout d'abord archiver, puis supprimez les fichiers journaux les plus anciens, jusqu'à ce que la limite ne soit plus dépassée.
 
 *Clarification technique : Dans ce contexte, « plus ancien » signifie moins récemment modifié.*
 
-« timeOffset »
+##### « timeOffset »
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par CIDRAM selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
 - Exemple (à ajouter une heure) : `timeOffset=60`
 
-« timeFormat »
+##### « timeFormat »
 - Le format de notation de la date/heure utilisé par CIDRAM. Défaut = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
-« ipaddr »
+##### « ipaddr »
 - Où trouver l'adresse IP de requêtes ? (Utile pour services tels que Cloudflare et similaires). Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
 Valeurs recommandées pour « ipaddr » :
@@ -354,7 +354,7 @@ Valeur | En utilisant
 *Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
 
-« forbid_on_block »
+##### « forbid_on_block »
 - Quel message d'état HTTP devrait être envoyé par CIDRAM lors du blocage des requêtes ?
 
 Valeurs actuellement supportées :
@@ -368,13 +368,13 @@ Code d'état | Message d'état | Description
 `451` | `Unavailable For Legal Reasons` | Approprié pour les contextes où les requêtes sont bloquées principalement pour des raisons juridiques. Non recommandé dans d'autres contextes.
 `503` | `Service Unavailable` | Le plus robuste, mais le moins convivial.
 
-« silent_mode »
+##### « silent_mode »
 - Devrait CIDRAM rediriger silencieusement les tentatives d'accès bloquées à la place de l'affichage de la page « Accès Refusé » ? Si oui, spécifiez l'emplacement pour rediriger les tentatives d'accès bloquées. Si non, laisser cette variable vide.
 
-« lang »
+##### « lang »
 - Spécifiez la langue défaut pour CIDRAM.
 
-« numbers »
+##### « numbers »
 - Spécifie comment afficher les nombres.
 
 Valeurs actuellement supportées :
@@ -398,36 +398,36 @@ Valeur | Produit | Description
 
 *Remarque : Ces valeurs ne sont standardisées nulle part, et ne seront probablement pas pertinentes au-delà du package. Aussi, les valeurs supportées peuvent changer à l'avenir.*
 
-« emailaddr »
+##### « emailaddr »
 - Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT : Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire).
 
-« emailaddr_display_style »
+##### « emailaddr_display_style »
 - Comment préférez-vous que l'adresse électronique soit présentée aux utilisateurs ? « default » = Lien cliquable. « noclick » = Texte non-cliquable.
 
-« disable_cli »
+##### « disable_cli »
 - Désactiver le mode CLI ? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut] ; True = Désactiver le mode CLI.
 
-« disable_frontend »
+##### « disable_frontend »
 - Désactiver l'accès frontal ? L'accès frontal peut rendre CIDRAM plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer CIDRAM via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal ; True = Désactiver l'accès frontal [Défaut].
 
-« max_login_attempts »
+##### « max_login_attempts »
 - Nombre maximal de tentatives de connexion (l'accès frontal). Défaut = 5.
 
-« FrontEndLog »
+##### « FrontEndLog »
 - Fichier pour l'enregistrement des tentatives de connexion à l'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.
 
-« ban_override »
+##### « ban_override »
 - Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour « forbid_on_block ».
 
-« log_banned_ips »
+##### « log_banned_ips »
 - Inclure les requêtes bloquées provenant d'IP interdites dans les fichiers journaux ? True = Oui [Défaut] ; False = Non.
 
-« default_dns »
+##### « default_dns »
 - Une liste délimitée par des virgules de serveurs DNS à utiliser pour les recherches de noms d'hôtes. Par Défaut = « 8.8.8.8,8.8.4.4 » (Google DNS). AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !
 
 *Voir également : [Que puis-je utiliser pour « default_dns » ?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
-« search_engine_verification »
+##### « search_engine_verification »
 - Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.
 
 Supporté actuellement :
@@ -435,82 +435,89 @@ Supporté actuellement :
 - [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
 - Yahoo
 - [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- Sogou (搜狗)
+- Youdao (有道)
+- [Applebot](https://discussions.apple.com/thread/7090135)
 - [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
 - [DuckDuckGo](https://duckduckgo.com/duckduckbot)
 
-« social_media_verification »
+N'est pas compatible (provoque des conflits) :
+- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+
+##### « social_media_verification »
 - Essayez de vérifier des requêtes de médias sociaux ? La vérification des médias sociaux offre une protection contre les fausses requêtes de médias sociaux (ces requêtes seront bloquées). True = Activer la vérification des médias sociaux [Défaut] ; False = Désactiver la vérification des médias sociaux.
 
 Supporté actuellement :
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - Embedly
 - [Grapeshot](https://www.grapeshot.com/crawler/)
+- Twitterbot
 
-« protect_frontend »
+##### « protect_frontend »
 - Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non.
 
-« disable_webfonts »
+##### « disable_webfonts »
 - Désactiver les webfonts ? True = Oui [Défaut] ; False = Non.
 
-« maintenance_mode »
+##### « maintenance_mode »
 - Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.
 
-« default_algo »
+##### « default_algo »
 - Définit quel algorithme utiliser pour tous les mots de passe et les sessions à l'avenir. Options : PASSWORD_DEFAULT (défaut), PASSWORD_BCRYPT, PASSWORD_ARGON2I (nécessite PHP >= 7.2.0).
 
-« statistics »
+##### « statistics »
 - Suivre les statistiques d'utilisation pour CIDRAM ? True = Oui ; False = Non [Défaut].
 
-« force_hostname_lookup »
+##### « force_hostname_lookup »
 - Forcer les recherches de nom d'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances.
 
-« allow_gethostbyaddr_lookup »
+##### « allow_gethostbyaddr_lookup »
 - Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Yes [Default]; False = No.
 - *Remarque : La recherche de IPv6 peut ne pas fonctionner correctement sur certains systèmes 32-bits.*
 
-« hide_version »
+##### « hide_version »
 - Masquer les informations de version à partir des journaux et de la sortie de la page ? True = Oui ; False = Non [Défaut].
 
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 
-« ipv4 »
+##### « ipv4 »
 - Une liste des fichiers du signatures IPv4 que CIDRAM devrait tenter d'utiliser, délimité par des virgules. Vous pouvez ajouter des entrées ici si vous voulez inclure des fichiers supplémentaires dans CIDRAM.
 
-« ipv6 »
+##### « ipv6 »
 - Une liste des fichiers du signatures IPv6 que CIDRAM devrait tenter d'utiliser, délimité par des virgules. Vous pouvez ajouter des entrées ici si vous voulez inclure des fichiers supplémentaires dans CIDRAM.
 
-« block_cloud »
+##### « block_cloud »
 - Bloquer les CIDRs identifié comme appartenant aux services d'hébergement/cloud ? Si vous utilisez un service d'API à partir de votre site web ou si vous attendez d'autres sites à connecter avec votre site web, cette directive devrait être fixé sur false. Si vous ne pas, puis, cette directive doit être fixé comme true.
 
-« block_bogons »
+##### « block_bogons »
 - Bloquer les CIDRs bogon/martian ? Si vous attendre connexions à votre site web à partir de dans votre réseau local, à partir de localhost, ou à partir de votre LAN, cette directive devrait être fixé sur false. Si vous ne attendez pas à ces telles connexions, cette directive doit être fixé comme true.
 
-« block_generic »
+##### « block_generic »
 - Bloquer les CIDRs recommandé en généralement pour les listes noires ? Cela couvre toutes les signatures qui ne sont pas marqué comme étant partie de l'autre plus spécifique catégories de signatures.
 
-« block_legal »
+##### « block_legal »
 - Bloquer les CIDRs en réponse à des obligations légales ? Cette directive ne devrait normalement pas avoir d'effet, car CIDRAM n'associe aucun CIDR avec des « obligations légales » par défaut, mais il existe néanmoins comme une mesure de contrôle supplémentaire au profit de tous les fichiers de signatures personnalisées ou des modules qui pourraient exister pour des raisons juridiques.
 
-« block_malware »
+##### « block_malware »
 - Bloquer les adresses IP associées à des logiciels malveillants ? Cela inclut les serveurs C&C, les machines infectées, les machines impliquées dans la distribution de logiciels malveillants, etc.
 
-« block_proxies »
+##### « block_proxies »
 - Bloquer les CIDRs identifié comme appartenant aux services proxy ou VPNs ? Si vous avez besoin que les utilisateurs puissent accéder à votre site web à partir des services de proxy ou des VPNs, cette directive devrait être fixé sur false. Autrement, si vous n'avez besoin pas des services de proxy ou des VPNs, cette directive devrait être fixé sur true comme moyen d'améliorer la sécurité.
 
-« block_spam »
+##### « block_spam »
 - Bloquer les CIDRs identifié comme étant risque élevé pour le spam ? Sauf si vous rencontrez des problèmes quand vous faire, en généralement, cette directive devrait toujours être fixé comme true.
 
-« modules »
+##### « modules »
 - Une liste des fichiers modules à charger après exécuter des signatures IPv4/IPv6, délimité par des virgules.
 
-« default_tracktime »
+##### « default_tracktime »
 - Combien de secondes pour suivre les IP interdites par les modules. Défaut = 604800 (1 semaine).
 
-« infraction_limit »
+##### « infraction_limit »
 - Nombre maximal d'infractions qu'une IP est autorisée à engager avant d'être interdite par la surveillance des IPs. Défaut = 10.
 
-« track_mode »
+##### « track_mode »
 - Quand faut-il compter les infractions ? False = Quand les adresses IP sont bloquées par des modules. True = Quand les adresses IP sont bloquées pour une raison quelconque.
 
 #### « recaptcha » (Catégorie)
@@ -520,30 +527,30 @@ En raison des risques associés à la fourniture d'une façon pour les utilisate
 
 Pour obtenir une « site key » et une « secret key » (nécessaires à l'utilisation de reCAPTCHA), s'il vous plaît allez à : [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-« usemode »
+##### « usemode »
 - Définit comment CIDRAM doit utiliser reCAPTCHA.
 - 0 = reCAPTCHA est complètement désactivé (défaut).
 - 1 = reCAPTCHA est activé pour toutes les signatures.
 - 2 = reCAPTCHA est activé seulement pour les signatures appartenant à des sections spécialement marquées dans les fichiers de signatures.
 - (Toute autre valeur sera traitée de la même manière que 0).
 
-« lockip »
+##### « lockip »
 - Indique si hachages devrait être verrouillé à des IPs spécifiques. False = Cookies et hachages PEUVENT être utilisés sur plusieurs IPs (défaut). True = Cookies et hachages NE PEUVENT PAS être utilisés sur plusieurs IPs (cookies/hachages sont verrouillés à IPs).
 - Note : La valeur de « lockip » est ignoré lorsque « lockuser » est false, en raison de ce que le mécanisme pour se souvenir de « utilisateurs » varie en fonction de cette valeur.
 
-« lockuser »
+##### « lockuser »
 - Indique si le succès d'une instance de reCAPTCHA devrait être verrouillé à des utilisateurs spécifiques. False = Le succès d'une instance de reCAPTCHA donnera accès à toutes les requêtes provenant de la même adresse IP que celui utilisé par l'utilisateur de remplir l'instance du reCAPTCHA ; Cookies et hachages ne sont pas utilisés ; Au lieu, une liste blanche IP sera utilisé. True = Le succès d'une instance de reCAPTCHA donnera accès seulement à l'utilisateur remplissant l'instance du reCAPTCHA ; Cookies et hachages sont utilisés pour mémoriser l'utilisateur ; Une liste blanche IP n'est pas utilisé (défaut).
 
-« sitekey »
+##### « sitekey »
 - Cette valeur devrait correspondre à la « site key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
 
-« secret »
+##### « secret »
 - Cette valeur devrait correspondre à la « secret key » pour votre reCAPTCHA, qui se trouve dans le tableau de bord reCAPTCHA.
 
-« expiry »
+##### « expiry »
 - Quand « lockuser » est true (défaut), afin de se souvenir quand un utilisateur a passé avec succès une instance de reCAPTCHA, pour les futures requêtes de page, CIDRAM génère un cookie HTTP standard contenant un hachage qui correspond à un enregistrement interne contenant ce même hachage ; Les futures requêtes de page utilisera ces hachage correspondant pour authentifier qu'un utilisateur a préalablement déjà passé une instance de reCAPTCHA. Quand « lockuser » est false, une liste blanche IP est utilisé pour déterminer si les requêtes devraient être autorisée à partir de l'adresse IP de requêtes entrantes ; Les entrées sont ajoutées à cette liste blanche lorsque l'instance de reCAPTCHA est passé avec succès. Pour combien d'heures devrait ces cookies, hachages et les entrées du liste blanche rester valables ? Défaut = 720 (1 mois).
 
-« logfile »
+##### « logfile »
 - Enregistrez toutes les tentatives du reCAPTCHA ? Si oui, indiquez le nom à utiliser pour le fichier d'enregistrement. Si non, laisser vide ce variable.
 
 *Conseil utile : Si vous souhaitez, vous pouvez ajouter l'information pour la date/l'heure à les noms de vos fichiers pour enregistrement par des incluant ceux-ci au nom : `{yyyy}` pour l'année complète, `{yy}` pour l'année abrégée, `{mm}` pour mois, `{dd}` pour le jour, `{hh}` pour l'heure.*
@@ -551,10 +558,10 @@ Pour obtenir une « site key » et une « secret key » (nécessaires à l'u
 *Exemples :*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-« signature_limit »
+##### « signature_limit »
 - Nombre maximum de signatures autorisées à être déclenchées lorsqu'une instance de reCAPTCHA doit être présentée. Défaut = 1. Si ce nombre est dépassé pour une requête particulière, une instance de reCAPTCHA ne sera pas présentée.
 
-« api »
+##### « api »
 - Quelle API utiliser ? V2 ou Invisible ?
 
 *Note pour les utilisateurs de l'Union européenne : Lorsque CIDRAM est configuré pour utiliser des cookies (par exemple, lorsque « lockuser » est true/vrai), un avertissement de cookie est affiché en évidence sur la page conformément aux exigences de la [législation européenne sur les cookies](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Cependant, lorsque vous utilisez l'API invisible, CIDRAM tente de compléter automatiquement le reCAPTCHA pour l'utilisateur, et en cas de succès, cela pourrait entraîner le rechargement de la page et la création d'un cookie sans que l'utilisateur ait suffisamment de temps pour voir l'avertissement de cookie. Si cela pose un risque juridique pour vous, il peut être préférable d'utiliser l'API V2 au lieu de l'API invisible (l'API V2 n'est pas automatisée et nécessite que l'utilisateur complete le défi reCAPTCHA eux-mêmes, fournissant ainsi une occasion de voir l'avertissement de cookie).*
@@ -564,19 +571,19 @@ Configuration relative aux exigences légales.
 
 *Pour plus d'informations sur les exigences légales et comment cela peut affecter vos exigences de configuration, veuillez vous référer à la section « [INFORMATION LÉGALE](#SECTION11) » de la documentation.*
 
-« pseudonymise_ip_addresses »
+##### « pseudonymise_ip_addresses »
 - Pseudonymiser les adresses IP lors de la journalisation ? True = Oui ; False = Non [Défaut].
 
-« omit_ip »
+##### « omit_ip »
 - Omettre les adresses IP de la journalisation ? True = Oui ; False = Non [Défaut]. Remarque : « pseudonymise_ip_addresses » devient redondant lorsque « omit_ip » est « true ».
 
-« omit_hostname »
+##### « omit_hostname »
 - Omettre les noms d'hôtes de la journalisation ? True = Oui ; False = Non [Défaut].
 
-« omit_ua »
+##### « omit_ua »
 - Omettre les agents utilisateurs de la journalisation ? True = Oui ; False = Non [Défaut].
 
-« privacy_policy »
+##### « privacy_policy »
 - L'adresse d'une politique de confidentialité pertinente à afficher dans le pied de page des pages générées. Spécifier une URL, ou laisser vide à désactiver.
 
 #### « template_data » (Catégorie)
@@ -584,13 +591,13 @@ Directives/Variables pour les modèles et thèmes.
 
 Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé ». Si vous utilisez des thèmes personnalisés pour CIDRAM, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
 
-« theme »
+##### « theme »
 - Le thème à utiliser par défaut pour CIDRAM.
 
-« Magnification »
+##### « Magnification »
 - Grossissement des fontes. Défaut = 1.
 
-« css_url »
+##### « css_url »
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire CIDRAM d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, CIDRAM va utiliser le modèle fichier pour le défaut thème.
 
 ---
@@ -925,6 +932,7 @@ Variable | Description
 
 Les paquets et produits suivants ont été jugés incompatibles avec CIDRAM :
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 Des modules ont été mis à disposition pour garantir que les packages et produits suivants seront compatibles avec CIDRAM:
 - __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
@@ -1371,4 +1379,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 14 Juillet 2018 (2018.07.14).
+Dernière mise à jour : 17 Juillet 2018 (2018.07.17).

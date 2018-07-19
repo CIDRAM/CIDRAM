@@ -305,13 +305,13 @@ Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho
 #### "general" (Thể loại)
 Cấu hình chung cho CIDRAM.
 
-"logfile"
+##### "logfile"
 - Tập tin có thể đọc con người cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
-"logfileApache"
+##### "logfileApache"
 - Tập tin Apache phong cách cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
-"logfileSerialized"
+##### "logfileSerialized"
 - Tập tin tuần tự cho ghi tất cả các nỗ lực truy cập bị chặn. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 *Mẹo hữu ích: Nếu bạn muốn, bạn có thể thêm thông tin ngày/giờ trong tên các tập tin ghi của bạn bằng cách bao gồm những trong tên: `{yyyy}` cho năm đầy, `{yy}` cho năm viết tắt, `{mm}` cho tháng, `{dd}` cho ngày, `{hh}` cho giờ.*
@@ -321,25 +321,25 @@ Cấu hình chung cho CIDRAM.
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-"truncate"
+##### "truncate"
 - Dọn dẹp các bản ghi khi họ được một kích thước nhất định? Giá trị là kích thước tối đa bằng B/KB/MB/GB/TB mà một tập tin bản ghi có thể tăng lên trước khi bị dọn dẹp. Giá trị mặc định 0KB sẽ vô hiệu hoá dọn dẹp (các bản ghi có thể tăng lên vô hạn). Lưu ý: Áp dụng cho tập tin riêng biệt! Kích thước tập tin bản ghi không được coi là tập thể.
 
-"log_rotation_limit"
+##### "log_rotation_limit"
 - Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định giới hạn mong muốn tại đây. Giá trị 0 sẽ vô hiệu hóa xoay vòng nhật ký.
 
-"log_rotation_action"
+##### "log_rotation_action"
 - Xoay vòng nhật ký giới hạn số lượng của tập tin nhật ký có cần tồn tại cùng một lúc. Khi các tập tin nhật ký mới được tạo, nếu tổng số lượng tập tin nhật ký vượt quá giới hạn được chỉ định, hành động được chỉ định sẽ được thực hiện. Bạn có thể chỉ định hành động mong muốn tại đây. Delete = Xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá. Archive = Trước tiên lưu trữ, và sau đó xóa các tập tin nhật ký cũ nhất, cho đến khi giới hạn không còn vượt quá.
 
 *Làm rõ kỹ thuật: Trong ngữ cảnh này, "cũ nhất" có nghĩa là không được sửa đổi gần đây.*
 
-"timeOffset"
+##### "timeOffset"
 - Nếu thời gian máy chủ của bạn không phù hợp với thời gian địa phương của bạn, bạn có thể chỉ định một bù đắp đây để điều chỉnh thông tin ngày/giờ được tạo ra bởi CIDRAM theo yêu cầu của bạn. Nó thường được đề nghị thay vì để điều chỉnh các chỉ thị múi giờ trong tập tin `php.ini` của bạn, nhưng đôi khi (như ví dụ, khi làm việc với giới hạn cung cấp lưu trữ chia sẻ) đây không phải là luôn luôn có thể làm, và như vậy, tùy chọn này được cung cấp ở đây. Bù đắp được đo bằng phút.
 - Ví dụ (để thêm một giờ): `timeOffset=60`
 
-"timeFormat"
+##### "timeFormat"
 - Định dạng ngày tháng sử dụng bởi CIDRAM. Mặc định = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
-"ipaddr"
+##### "ipaddr"
 - Nơi để tìm địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như Cloudflare và vv). Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 Giá trị được đề xuất cho "ipaddr":
@@ -354,7 +354,7 @@ Giá trị | Sử dụng
 *Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
 
-"forbid_on_block"
+##### "forbid_on_block"
 - Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn?
 
 Giá trị hiện được hỗ trợ:
@@ -368,13 +368,13 @@ Mã trạng thái | Thông thái trạng thái | Chi tiết
 `451` | `Unavailable For Legal Reasons` | Thích hợp cho các ngữ cảnh khi các yêu cầu bị chặn chủ yếu vì lý do pháp lý. Không được đề xuất trong các ngữ cảnh khác.
 `503` | `Service Unavailable` | Không phải là rất thân thiện với người dùng, nhưng mạnh mẽ.
 
-"silent_mode"
+##### "silent_mode"
 - CIDRAM nên âm thầm chuyển hướng cố gắng truy cập bị chặn thay vì hiển thị trang "Truy cập đã bị từ chối"? Nếu vâng, xác định vị trí để chuyển hướng cố gắng truy cập bị chặn để. Nếu không, để cho biến này được trống.
 
-"lang"
+##### "lang"
 - Xác định tiếng mặc định cho CIDRAM.
 
-"numbers"
+##### "numbers"
 - Chỉ định cách hiển thị số.
 
 Giá trị hiện được hỗ trợ:
@@ -398,36 +398,36 @@ Giá trị | Nó tạo ra | Chi tiết
 
 *Chú thích: Các giá trị này không được chuẩn hóa ở bất kỳ đâu, và có thể sẽ không liên quan ngoài gói. Ngoài ra, các giá trị được hỗ trợ có thể thay đổi trong tương lai.*
 
-"emailaddr"
+##### "emailaddr"
 - Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email).
 
-"emailaddr_display_style"
+##### "emailaddr_display_style"
 - Bạn muốn địa chỉ email được trình bày như thế nào với người dùng? "default" = Liên kết có thể nhấp. "noclick" = Văn bản không thể nhấp.
 
-"disable_cli"
+##### "disable_cli"
 - Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI.
 
-"disable_frontend"
+##### "disable_frontend"
 - Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho CIDRAM dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý CIDRAM từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định].
 
-"max_login_attempts"
+##### "max_login_attempts"
 - Số lượng tối đa cố gắng đăng nhập (front-end). Mặc định = 5.
 
-"FrontEndLog"
+##### "FrontEndLog"
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
-"ban_override"
+##### "ban_override"
 - Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "forbid_on_block".
 
-"log_banned_ips"
+##### "log_banned_ips"
 - Bao gồm các yêu cầu bị chặn từ các IP bị cấm trong các tập tin đăng nhập? True = Vâng [Mặc định]; False = Không.
 
-"default_dns"
+##### "default_dns"
 - Một dấu phẩy phân cách danh sách các máy chủ DNS để sử dụng cho tra cứu tên máy. Mặc định = "8.8.8.8,8.8.4.4" (Google DNS). CẢNH BÁO: Không thay đổi này, trừ khi bạn biết những gì bạn đang làm!
 
 *Xem thêm: [Những gì tôi có thể sử dụng cho "default_dns"?](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
-"search_engine_verification"
+##### "search_engine_verification"
 - Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.
 
 Được hỗ trợ hiện tại:
@@ -435,82 +435,89 @@ Giá trị | Nó tạo ra | Chi tiết
 - [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
 - Yahoo
 - [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- Sogou (搜狗)
+- Youdao (有道)
+- [Applebot](https://discussions.apple.com/thread/7090135)
 - [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
 - [DuckDuckGo](https://duckduckgo.com/duckduckbot)
 
-"social_media_verification"
+Không tương thích (gây ra xung đột):
+- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+
+##### "social_media_verification"
 - Cố gắng xác minh yêu cầu truyền thông xã hội? Xác minh truyền thông xã hội cung cấp sự bảo vệ chống lại các yêu cầu truyền thông xã hội giả mạo (các yêu cầu như vậy sẽ bị chặn). True = Kích hoạt xác minh truyền thông xã hội [Mặc định]; False = Vô hiệu hóa xác minh truyền thông xã hội.
 
 Được hỗ trợ hiện tại:
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - Embedly
 - [Grapeshot](https://www.grapeshot.com/crawler/)
+- Twitterbot
 
-"protect_frontend"
+##### "protect_frontend"
 - Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.
 
-"disable_webfonts"
+##### "disable_webfonts"
 - Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không.
 
-"maintenance_mode"
+##### "maintenance_mode"
 - Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
 
-"default_algo"
+##### "default_algo"
 - Xác định thuật toán nào sẽ sử dụng cho tất cả các mật khẩu và phiên trong tương lai. Tùy chọn: PASSWORD_DEFAULT (mặc định), PASSWORD_BCRYPT, PASSWORD_ARGON2I (yêu cầu PHP >= 7.2.0).
 
-"statistics"
+##### "statistics"
 - Giám sát thống kê sử dụng CIDRAM? True = Vâng; False = Không [Mặc định].
 
-"force_hostname_lookup"
+##### "force_hostname_lookup"
 - Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất.
 
-"allow_gethostbyaddr_lookup"
+##### "allow_gethostbyaddr_lookup"
 - Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không.
 - *Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32-bit.*
 
-"hide_version"
+##### "hide_version"
 - Ẩn thông tin phiên bản từ nhật ký và đầu ra của trang? True = Vâng; False = Không [Mặc định].
 
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
-"ipv4"
+##### "ipv4"
 - Một danh sách các tập tin chữ ký IPv4 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy. Bạn có thể thêm các mục ở đây nếu bạn muốn bao gồm thêm các tập tin chữ ký IPv4 trong CIDRAM.
 
-"ipv6"
+##### "ipv6"
 - Một danh sách các tập tin chữ ký IPv6 mà CIDRAM nên cố gắng để phân tích, ngăn cách bởi dấu phẩy. Bạn có thể thêm các mục ở đây nếu bạn muốn bao gồm thêm các tập tin chữ ký IPv6 trong CIDRAM.
 
-"block_cloud"
+##### "block_cloud"
 - Chặn CIDR xác định là thuộc về các dịch vụ lưu trữ mạng hay dịch vụ điện toán đám mây? Nếu bạn điều hành một dịch vụ API từ trang mạng của bạn hay nếu bạn mong đợi các trang mạng khác để kết nối với trang mạng của bạn, điều này cần được thiết lập để false. Nếu bạn không, sau đó, tùy chọn này cần được thiết lập để true.
 
-"block_bogons"
+##### "block_bogons"
 - Chặn CIDR bogon/martian? Nếu bạn mong đợi các kết nối đến trang mạng của bạn từ bên trong mạng nội bộ của bạn, từ localhost, hay từ LAN của bạn, tùy chọn này cần được thiết lập để false. Nếu bạn không mong đợi những kết nối như vậy, tùy chọn này cần được thiết lập để true.
 
-"block_generic"
+##### "block_generic"
 - Chặn CIDR thường được khuyến cáo cho danh sách đen? Điều này bao gồm bất kỳ chữ ký không được đánh dấu như một phần của bất kỳ các loại chữ ký cụ thể khác.
 
-"block_legal"
+##### "block_legal"
 - Chặn CIDR theo các nghĩa vụ hợp pháp? Chỉ thị này thường không có bất kỳ hiệu lực, vì CIDRAM không liên kết bất kỳ CIDR nào với "nghĩa vụ hợp pháp" theo mặc định, nhưng nó vẫn tồn tại tuy nhiên như một biện pháp kiểm soát bổ sung vì lợi ích của bất kỳ tập tin chữ ký hay mô-đun tùy chỉnh nào có thể tồn tại vì lý do hợp pháp.
 
-"block_malware"
+##### "block_malware"
 - Chặn IP liên quan đến phần mềm độc hại? Điều này bao gồm các máy chủ C&C, máy chủ bị nhiễm, máy chủ liên quan đến phân phối phần mềm độc hại, vv.
 
-"block_proxies"
+##### "block_proxies"
 - Chặn CIDR xác định là thuộc về các dịch vụ proxy hay VPN? Nếu bạn yêu cầu mà người dùng có thể truy cập trang mạng của bạn từ các dịch vụ proxy hay VPN, điều này cần được thiết lập để false. Nếu không thì, nếu bạn không yêu cầu các dịch vụ proxy hay VPN, tùy chọn này cần được thiết lập để true như một phương tiện để cải thiện an ninh.
 
-"block_spam"
+##### "block_spam"
 - Chặn CIDR xác định như có nguy cơ cao đối được thư rác? Trừ khi bạn gặp vấn đề khi làm như vậy, nói chung, điều này cần phải luôn được true.
 
-"modules"
+##### "modules"
 - Một danh sách các tập tin mô-đun để tải sau khi kiểm tra các chữ ký IPv4/IPv6, ngăn cách bởi dấu phẩy.
 
-"default_tracktime"
+##### "default_tracktime"
 - Có bao nhiêu giây để giám sát các IP bị cấm bởi các mô-đun. Mặc định = 604800 (1 tuần).
 
-"infraction_limit"
+##### "infraction_limit"
 - Số lượng tối đa các vi phạm một IP được phép chịu trước khi nó bị cấm bởi các giám sát IP. Mặc định = 10.
 
-"track_mode"
+##### "track_mode"
 - Khi vi phạm cần được tính? False = Khi IP bị chặn bởi các mô-đun. True = Khi IP bị chặn vì lý do bất kỳ.
 
 #### "recaptcha" (Thể loại)
@@ -520,30 +527,30 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 
 Để có được một "site key" và một "secret key" (cần thiết để sử dụng reCAPTCHA), xin truy cập vào: [https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-"usemode"
+##### "usemode"
 - Định nghĩa thế nào CIDRAM nên sử dụng reCAPTCHA.
 - 0 = reCAPTCHA là hoàn toàn bị vô hiệu hóa (mặc định).
 - 1 = reCAPTCHA là kích hoạt cho tất cả các chữ ký.
 - 2 = reCAPTCHA là kích hoạt chỉ cho chữ ký thuộc phần đặc biệt đánh dấu để sử dụng với reCAPTCHA.
 - (Bất kỳ giá trị khác sẽ được xử lý trong cùng một cách như là 0).
 
-"lockip"
+##### "lockip"
 - Chỉ định liệu các băm/hash nên được khóa trên IP cụ thể. False = Cookie và băm/hash CÓ THỂ được sử dụng bởi nhiều IP (mặc định). True = Cookie và băm/hash KHÔNG THỂ được sử dụng sử dụng bởi nhiều IP (cookie và băm/hash được khóa trên các IP).
 - Chú thích: Giá trị "lockip" được bỏ qua khi "lockuser" là false, bởi vì các cơ chế để nhớ "người dùng" khác nhau ơ tùy thuộc vào giá trị này.
 
-"lockuser"
+##### "lockuser"
 - Chỉ định liệu thành công hoàn thành của reCAPTCHA nên được khóa trên người dùng cụ thể. False = Thành công hoàn thành của reCAPTCHA sẽ cấp quyền truy cập cho tất cả các yêu cầu có nguồn gốc từ cùng một IP như được sử dụng bởi người dùng mà hoàn thành reCAPTCHA; Cookie và băm/hash không được sử dụng; Thay vào đó, một danh sách trắng IP sẽ được sử dụng. True = Thành công hoàn thành của reCAPTCHA sẽ chỉ cấp quyền truy cập cho người dùng mà hoàn thành reCAPTCHA; Cookie và băm/hash được sử dụng để nhớ người dùng; Một danh sách trắng IP sẽ không được sử dụng (mặc định).
 
-"sitekey"
+##### "sitekey"
 - Giá trị này nên tương ứng với "site key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA.
 
-"secret"
+##### "secret"
 - Giá trị này nên tương ứng với "secret key" cho reCAPTCHA của bạn, tìm thấy trong bảng điều khiển của reCAPTCHA.
 
-"expiry"
+##### "expiry"
 - Khi "lockuser" là true (mặc định), để nhớ khi một người dùng hoàn thành reCAPTCHA, cho yêu cầu trang tương lai, CIDRAM tạo ra một cookie chuẩn chứa một băm/hash tương ứng với một bản ghi nội chứa cùng băm/hash; Yêu cầu trang tương lai sẽ sử dụng các tương ứng giá trị băm/hash để xác thực mà người dùng đã hoàn thành reCAPTCHA. Khi "lockuser" là false, một danh sách trắng IP được sử dụng để xác định liệu các yêu cầu nên được chấp nhận từ các IP của các yêu; Mục được thêm vào danh sách trắng này khi reCAPTCHA được hoàn thành. Đối với bao nhiêu giờ nên các cookie, băm/hash và mục danh sách trắng vẫn còn hợp lệ? Mặc định = 720 (1 tháng).
 
-"logfile"
+##### "logfile"
 - Đăng nhập tất cả các nỗ lực cho reCAPTCHA? Nếu có, ghi rõ tên để sử dụng cho các tập tin đăng nhập. Nếu không, đốn biến này.
 
 *Mẹo hữu ích: Nếu bạn muốn, bạn có thể thêm thông tin ngày/giờ trong tên các tập tin ghi của bạn bằng cách bao gồm những trong tên: `{yyyy}` cho năm đầy, `{yy}` cho năm viết tắt, `{mm}` cho tháng, `{dd}` cho ngày, `{hh}` cho giờ.*
@@ -551,10 +558,10 @@ Do những rủi ro liên quan đến việc cung cấp một cách cho người
 *Các ví dụ:*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-"signature_limit"
+##### "signature_limit"
 - Số chữ ký tối đa cho phép được kích hoạt khi một cá thể reCAPTCHA được cung cấp. Mặc định = 1. Nếu số này vượt quá cho bất kỳ yêu cầu cụ thể nào, một cá thể reCAPTCHA sẽ không được cung cấp.
 
-"api"
+##### "api"
 - API nào để sử dụng? V2 hoặc Invisible?
 
 *Lưu ý đối với người dùng ở Liên minh châu Âu: Khi CIDRAM được định cấu hình để sử dụng cookie (v.d., khi "lockuser" là true/đúng), cảnh báo cookie được hiển thị trên trang theo quy định của [pháp luật về cookie của EU](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm). Tuy nhiên, khi sử dụng API invisible, CIDRAM cố gắng hoàn thành reCAPTCHA cho người dùng tự động, và khi thành công, điều này có thể dẫn đến việc trang được tải lại và một cookie được tạo ra mà không có người dùng được cho đủ thời gian để thực sự xem cảnh báo cookie. Nếu điều này đặt ra rủi ro hợp pháp cho bạn, bạn nên sử dụng API V2 thay vì API invisible (API V2 không phải là tự động và yêu cầu người dùng tự hoàn thành reCAPTCHA, do đó cung cấp cơ hội để xem cảnh báo cookie).*
@@ -564,19 +571,19 @@ Cấu hình mà liên quan đến các nghĩa vụ hợp pháp.
 
 *Để biết thêm thông tin về các nghĩa vụ hợp pháp và cách nó có thể ảnh hưởng đến các nghĩa vụ cấu hình của bạn, vui lòng tham khảo phần "[THÔNG TIN HỢP PHÁP](#SECTION11)" của các tài liệu.*
 
-"pseudonymise_ip_addresses"
+##### "pseudonymise_ip_addresses"
 - Pseudonymise địa chỉ IP khi viết các tập tin nhật ký? True = Vâng; False = Không [Mặc định].
 
-"omit_ip"
+##### "omit_ip"
 - Bỏ qua địa chỉ IP từ nhật ký? True = Vâng; False = Không [Mặc định]. Lưu ý: "pseudonymise_ip_addresses" trở nên dư thừa khi "omit_ip" là "true".
 
-"omit_hostname"
+##### "omit_hostname"
 - Bỏ qua tên máy chủ từ nhật ký? True = Vâng; False = Không [Mặc định].
 
-"omit_ua"
+##### "omit_ua"
 - Bỏ qua đại lý người dùng từ nhật ký? True = Vâng; False = Không [Mặc định].
 
-"privacy_policy"
+##### "privacy_policy"
 - Địa chỉ của chính sách bảo mật liên quan được hiển thị ở chân trang của bất kỳ trang nào được tạo. Chỉ định URL, hoặc để trống để vô hiệu hóa.
 
 #### "template_data" (Thể loại)
@@ -584,13 +591,13 @@ Cấu hình cho mẫu thiết kế và chủ đề.
 
 Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy cập đã bị từ chối". Nếu bạn đang sử dụng chủ đề tùy chỉnh cho CIDRAM, đầu ra HTML có nguồn gốc từ tập tin `template_custom.html`, và nếu không thì, đầu ra HTML có nguồn gốc từ tập tin `template.html`. Biến bằng văn bản cho phần này của tập tin cấu hình được xử lý để đầu ra HTML bằng cách thay thế bất kỳ tên biến được bao quanh bởi các dấu ngoặc nhọn tìm thấy trong đầu ra HTML với các dữ liệu biến tương ứng. Ví dụ, ở đâu `foo="bar"`, bất kỳ trường hợp `<p>{foo}</p>` tìm thấy trong đầu ra HTML sẽ trở thành `<p>bar</p>`.
 
-"theme"
+##### "theme"
 - Chủ đề mặc định để sử dụng cho CIDRAM.
 
-"Magnification"
+##### "Magnification"
 - Phóng to chữ. Mặc định = 1.
 
-"css_url"
+##### "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn CIDRAM để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, CIDRAM sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
 
 ---
@@ -925,6 +932,7 @@ Biến | Chi tiết
 
 Các gói và sản phẩm sau đã được tìm thấy là không tương thích với CIDRAM:
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 Các mô-đun đã được cung cấp để đảm bảo rằng các gói và sản phẩm sau sẽ tương thích với CIDRAM:
 - __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
@@ -1365,4 +1373,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Bảy 2018 (2018.07.14).
+Lần cuối cập nhật: 17 Tháng Bảy 2018 (2018.07.17).

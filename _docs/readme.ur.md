@@ -307,17 +307,17 @@
 #### <div dir="rtl">"general" (قسم)<br /></div>
 <div dir="rtl">جنرل CIDRAM کنفیگریشن.<br /><br /></div>
 
-<div dir="rtl">"logfile"<br /></div>
+##### <div dir="rtl">"logfile"<br /></div>
 <div dir="rtl"><ul>
  <li>تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے انسانی قابل مطالعہ فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے خالی چھوڑ دیں.</li>
 </ul></div>
 
-<div dir="rtl">"logfileApache"<br /></div>
+##### <div dir="rtl">"logfileApache"<br /></div>
 <div dir="rtl"><ul>
  <li>تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے اپاچی طرز فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
 </ul></div>
 
-<div dir="rtl">"logfileSerialized"<br /></div>
+##### <div dir="rtl">"logfileSerialized"<br /></div>
 <div dir="rtl"><ul>
  <li>تمام بلاک کر تک رسائی کی کوششوں کو لاگ ان کرنے کے لئے serialized کی فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
 </ul></div>
@@ -330,24 +330,24 @@
  logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'
 ```
 
-<div dir="rtl">"truncate"<br /></div>
+##### <div dir="rtl">"truncate"<br /></div>
 <div dir="rtl"><ul>
  <li>وہ ایک خاص سائز تک پہنچنے میں جب صاف لاگ مسلیں؟ ویلیو میں B/KB/MB/GB/TB زیادہ سے زیادہ سائز ہے. جب 0KB، وہ غیر معینہ مدت تک ترقی کر سکتا ہے (پہلے سے طے). نوٹ: واحد فائلوں پر لاگو ہوتا ہے! فائلیں اجتماعی غور نہیں کر رہے ہیں.</li>
 </ul></div>
 
-<div dir="rtl">"log_rotation_limit"<br /></div>
+##### <div dir="rtl">"log_rotation_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ گرد گردش کسی بھی وقت کسی بھی وقت موجود ہونا لاگ ان کی تعداد محدود کرتا ہے. جب نیا لاگ ان کی تخلیق کی جاتی ہے تو، اگر لاگ ان کی کل تعداد مخصوص حد سے زیادہ ہوتی ہے تو مخصوص کارروائی کی جائے گی. آپ یہاں مطلوبہ حد کی وضاحت کرسکتے ہیں. 0 کی قیمت لاگ گرد گردش کو غیر فعال کرے گی.</li>
 </ul></div>
 
-<div dir="rtl">"log_rotation_action"<br /></div>
+##### <div dir="rtl">"log_rotation_action"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ گرد گردش کسی بھی وقت کسی بھی وقت موجود ہونا لاگ ان کی تعداد محدود کرتا ہے. جب نیا لاگ ان کی تخلیق کی جاتی ہے تو، اگر لاگ ان کی کل تعداد مخصوص حد سے زیادہ ہوتی ہے تو مخصوص کارروائی کی جائے گی. آپ یہاں مطلوبہ کارروائی کی وضاحت کرسکتے ہیں. Delete = قدیم ترین لاگ ان کو حذف کریں، جب تک کہ حد تک زیادہ نہیں ہوسکتی ہے. Archive = سب سے پہلے آرکائیو، اور پھر سب سے پرانی لاگ ان کو حذف کریں، جب تک کہ حد زیادہ نہیں ہوسکتی.</li>
 </ul></div>
 
 <div dir="rtl">تکنیکی وضاحت: اس تناظر میں "سب سے پرانی" کا مطلب "کم از کم ترمیم شدہ" ہے.<br /><br /></div>
 
-<div dir="rtl">"timeOffset"<br /></div>
+##### <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
  <li>آپ کے سرور کے وقت آپ کے مقامی وقت کے مماثل نہیں ہے تو، آپ کو آپ کی ضروریات کے مطابق CIDRAM طرف سے پیدا تاریخ / وقت کی معلومات کو ایڈجسٹ کرنے کے لئے یہاں آفسیٹ ایک وضاحت کر سکتے ہیں. یہ عام طور پر یہ کرنا ہمیشہ ممکن نہیں ہے، اور تو، اس اختیار کو یہاں فراہم کی جاتی ہے (جیسا محدود مشترکہ ہوسٹنگ فراہم کرنے والے کے ساتھ کام کرتے وقت کے طور پر) آپ "php.ini" فائل میں ٹائم زون ہدایت کو ایڈجسٹ کرنے کی بجائے سفارش، لیکن کبھی کبھی رہا ہے. آف سیٹ منٹ میں ہے.<br /></li>
  <li>مثال (ایک گھنٹے کا اضافہ کرنے کے لئے):</li>
@@ -355,14 +355,14 @@
 
 `timeOffset=60`
 
-<div dir="rtl">"timeFormat"<br /></div>
+##### <div dir="rtl">"timeFormat"<br /></div>
 <div dir="rtl"><ul>
  <li>تاریخ کی شکل CIDRAM طرف سے استعمال کیا. پہلے سے طے شدہ:</li>
 </ul></div>
 
 `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`
 
-<div dir="rtl">"ipaddr"<br /></div>
+##### <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
  <li>کہاں درخواستوں منسلک کرنے کے IP ایڈریس کو تلاش کرنے کے لئے؟ (جیسا Cloudflare کے اور پسند کرتا ہے کے طور پر خدمات کے لئے مفید). پہلے سے طے شدہ = REMOTE_ADDR. انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!</li>
 </ul></div>
@@ -379,7 +379,7 @@
 &nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
 
-<div dir="rtl">"forbid_on_block"<br /></div>
+##### <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
  <li>درخواستوں کو روکنے پر بھیجنے کے لئے HTTP حیثیت کا پیغام.</li>
 </ul></div>
@@ -395,17 +395,17 @@
 `451` | `Unavailable For Legal Reasons` | جب شرائط بنیادی طور پر قانونی وجوہات کے لئے بند کردیئے جاتے ہیں ان کے لئے مناسب. دیگر مقاصد میں سفارش نہیں کی جاتی ہے.
 `503` | `Service Unavailable` | مضبوط، لیکن صارفین کے ساتھ دوستانہ نہیں.
 
-<div dir="rtl">"silent_mode"<br /></div>
+##### <div dir="rtl">"silent_mode"<br /></div>
 <div dir="rtl"><ul>
  <li>خاموشی CIDRAM چاہئے "رسائی نہیں ہوئی" کے صفحے کی نمائش سے بلاک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے بجائے؟ ہاں تو، کو بلاک کر تک رسائی کی کوششوں کو ری ڈائریکٹ کرنے کے محل وقوع کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں.</li>
 </ul></div>
 
-<div dir="rtl">"lang"<br /></div>
+##### <div dir="rtl">"lang"<br /></div>
 <div dir="rtl"><ul>
  <li>CIDRAM لئے پہلے سے طے شدہ زبان کی وضاحت.</li>
 </ul></div>
 
-<div dir="rtl">"numbers"<br /></div>
+##### <div dir="rtl">"numbers"<br /></div>
 <div dir="rtl"><ul>
  <li>نمبروں کو ظاہر کرنے کی وضاحت کرتا ہے.</li>
 </ul></div>
@@ -431,54 +431,54 @@
 
 <div dir="rtl">نوٹ: یہ اقدار کہیں بھی معیاری نہیں ہیں، اور شاید پیکج سے باہر متعلقہ نہیں ہوں گے. اس کے علاوہ، معاون اقدار مستقبل میں تبدیل کر سکتے ہیں.<br /><br /></div>
 
-<div dir="rtl">"emailaddr"<br /></div>
+##### <div dir="rtl">"emailaddr"<br /></div>
 <div dir="rtl"><ul>
  <li>اگر آپ چاہتے ہیں، تو آپ صارفین کو جب انہیں بلاک کر رہے ہیں تو دینے کے لئے ای میل ایڈریس کی فراہمی کر سکتے ہیں.وہ اسے استعمال آپ سے رابطہ کرنے کے لئے کر سکتے ہیں اگر وہ غلطی سے بلاک کر رہے ہیں. انتباہ: آپ جو بھی ای میل ایڈریس پر فراہمی کرتے ہیں، وہ یقینی طور پر سپےمبٹس اور کھرچنی کی طرف سے حاصل کئے جائیں گے. اس کی وجہ سے، اس کی سختی سے سفارش کی جاتی ہے کہ آپ ایک ای میل ایڈریس انتخاب کرتے ہیں جو ڈسپوزایبل یا غیر اہم ہے (یعنی.، آپ کی ذاتی یا کاروباری ای میل ایڈریس کا استعمال نہ کریں).</li>
 </ul></div>
 
-<div dir="rtl">"emailaddr_display_style"<br /></div>
+##### <div dir="rtl">"emailaddr_display_style"<br /></div>
 <div dir="rtl"><ul>
  <li>آپ کو ای میل ایڈریس کو کس طرح صارفین کو پیش کرنا پسند ہے؟ "default" = کلک کرنے والے لنک. "noclick" = متن جو کلک نہیں کیا جا سکتا.</li>
 </ul></div>
 
-<div dir="rtl">"disable_cli"<br /></div>
+##### <div dir="rtl">"disable_cli"<br /></div>
 <div dir="rtl"><ul>
  <li>CLI موڈ کو غیر فعال کریں؟ CLI موڈ ڈیفالٹ کی طرف سے چالو حالت میں ہے، لیکن کبھی کبھی بعض جانچ کے آلات (جیسے PHPUnit کے طور پر، مثال کے طور پر) اور دیگر CLI کی بنیاد پر ایپلی کیشنز کے ساتھ مداخلت کر سکتے ہیں. آپ CLI موڈ کو غیر فعال کرنے کی ضرورت نہیں ہے تو، آپ کو اس ہدایت کو نظر انداز کرنا چاہئے. False (جھوٹی) = CLI موڈ [پہلے سے طے شدہ] فعال؛ True (سچے) = غیر فعال CLI موڈ.</li>
 </ul></div>
 
-<div dir="rtl">"disable_frontend"<br /></div>
+##### <div dir="rtl">"disable_frontend"<br /></div>
 <div dir="rtl"><ul>
  <li>سامنے کے آخر تک رسائی کو غیر فعال کریں؟ سامنے کے آخر میں رسائی CIDRAM زیادہ انتظام بنا سکتے ہیں، لیکن یہ بھی بہت ہے، ایک زبردست حفاظتی خطرہ ہو سکتا ہے. یہ جب بھی ممکن ہو واپس کے آخر کے ذریعے CIDRAM منظم کرنے کی سفارش کی جاتی ہے، لیکن سامنے کے آخر میں رسائی ممکن نہیں ہے جب کے لئے فراہم کی جاتی ہے. تمہیں اس کی ضرورت ہے جب تک کہ اس کو معذور رکھیں. False (جھوٹی) = سامنے کے آخر میں رسائی کو فعال کریں؛ True (سچے) = غیر فعال سامنے کے آخر میں رسائی [پہلے سے طے شدہ].</li>
 </ul></div>
 
-<div dir="rtl">"max_login_attempts"<br /></div>
+##### <div dir="rtl">"max_login_attempts"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ ان کوششوں کی زیادہ سے زیادہ تعداد (سامنے کے آخر میں). پہلے سے طے شدہ = 5.</li>
 </ul></div>
 
-<div dir="rtl">"FrontEndLog"<br /></div>
+##### <div dir="rtl">"FrontEndLog"<br /></div>
 <div dir="rtl"><ul>
  <li>سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
 </ul></div>
 
-<div dir="rtl">"ban_override"<br /></div>
+##### <div dir="rtl">"ban_override"<br /></div>
 <div dir="rtl"><ul>
  <li>"forbid_on_block" کی جگہ لے لے، جب "infraction_limit" حد سے تجاوز کر رہا ہے؟ زیرکر کب: التواء درخواستوں ایک خالی صفحہ (سانچے فائلوں کا استعمال نہیں کر رہے ہیں) واپس جائیں. 200 = جگہ لے لے نہیں ہے [پہلے سے طے شدہ]. دیگر اقدار "forbid_on_block" کے لئے دستیاب اقدار کے طور پر اسی ہیں.</li>
 </ul></div>
 
-<div dir="rtl">"log_banned_ips"<br /></div>
+##### <div dir="rtl">"log_banned_ips"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ مسلیں میں کالعدم IP ایس سے مسدود درخواستوں شامل کریں؟ سچا = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نمبر.</li>
 </ul></div>
 
-<div dir="rtl">"default_dns"<br /></div>
+##### <div dir="rtl">"default_dns"<br /></div>
 <div dir="rtl"><ul>
  <li>میزبان نام لک اپ کے لئے استعمال کرنے کے لئے DNS سرورز کی کوما ختم ہونے والی فہرست. پہلے سے طے شدہ = "8.8.8.8,8.8.4.4" (گوگل DNS). انتباہ: جب تک کہ آپ کو پتہ ہے تم کیا کر رہے ہو اس کو تبدیل نہ کریں!</li>
 </ul></div>
 
 <div dir="rtl">بھی دیکھو: <a href="#WHAT_CAN_I_USE_FOR_DEFAULT_DNS">میں "default_dns" کے لئے کیا استعمال کر سکتا ہوں؟</a><br /><br /></div>
 
-<div dir="rtl">"search_engine_verification"<br /></div>
+##### <div dir="rtl">"search_engine_verification"<br /></div>
 <div dir="rtl"><ul>
  <li>تلاش کے انجن کی طرف سے درخواستوں کی تصدیق کرنے کی کوشش؟ تلاش کے انجن کی توثیق کرنے سے کہ وہ خلاف ورزی کی حد (ویب سائٹ سے تلاش کے انجن پر پابندی عائد عام طور پر آپ کی تلاش کے انجن کی درجہ بندی، SEO، وغیرہ پر منفی اثر پڑے گا) تجاوز کا ایک نتیجہ کے طور پر پابندی عائد نہیں کیا جائے گا یقینی بناتا ہے. تصدیق کی جب، تلاش کے انجن معمول فی کے طور پر بلاک کیا جا سکتا ہے، لیکن پابندی عائد نہیں کی گئی. کی توثیق نہیں کی ہے، تو یہ ان کے لئے خلاف ورزی کی حد سے تجاوز کرنے کے نتیجے کے طور پر پابندی عائد کی جائے کرنے کے لئے ممکن ہے. اس کے علاوہ، تلاش کے انجن کی توثیق کی جعلی تلاش کے انجن کی درخواستوں کے خلاف اور (اس طرح کی درخواستوں کی تلاش کے انجن کی توثیق فعال ہے جب بلاک کر دیا جائے گا) سرچ انجن کے طور پر ویش ممکنہ طور پر بدنیتی پر مبنی اداروں کے خلاف تحفظ فراہم کرتا ہے. True (سچے) = سرچ انجن توثیق [پہلے سے طے شدہ] فعال؛ False (جھوٹی) = غیر فعال تلاش کے انجن کی توثیق کی.</li>
 </ul></div>
@@ -489,11 +489,19 @@
  <li><a dir="ltr" href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></li>
  <li>Yahoo</li>
  <li><a dir="ltr" href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></li>
+ <li dir="ltr">Sogou (搜狗)</li>
+ <li dir="ltr">Youdao (有道)</li>
+ <li><a dir="ltr" href="https://discussions.apple.com/thread/7090135">Applebot</a></li>
  <li><a dir="ltr" href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></li>
  <li><a dir="ltr" href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></li>
 </ul></div>
 
-<div dir="rtl">"social_media_verification"<br /></div>
+<div dir="rtl">مطابقت نہیں ہے (تنازعات کا سبب بنتا ہے):<br /></div>
+<div dir="rtl"><ul>
+ <li><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></li>
+</ul></div>
+
+##### <div dir="rtl">"social_media_verification"<br /></div>
 <div dir="rtl"><ul>
  <li>سوشل میڈیا کی درخواستوں کی توثیق کرنے کی کوشش؟ سوشل میڈیا کی توثیق جعلی سوشل میڈیا کی درخواستوں کے خلاف تحفظ فراہم کرتا ہے (ایسی درخواستوں کو بلاک کردیا جائے گا). True (سچے) = سماجی میڈیا کی توثیق کو فعال کریں [پہلے سے طے شدہ]؛ False (جھوٹی) = سوشل میڈیا کی توثیق کو غیر فعال کریں.</li>
 </ul></div>
@@ -503,45 +511,46 @@
  <li><a dir="ltr" href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></li>
  <li>Embedly</li>
  <li><a dir="ltr" href="https://www.grapeshot.com/crawler/">Grapeshot</a></li>
+ <li>Twitterbot</li>
 </ul></div>
 
-<div dir="rtl">"protect_frontend"<br /></div>
+##### <div dir="rtl">"protect_frontend"<br /></div>
 <div dir="rtl"><ul>
  <li>متعین کرتا ہے جو عام طور پر CIDRAM طرف سے فراہم کردہ تحفظات سامنے کے آخر پر لاگو کیا جانا چاہئے یا نہیں. سچا = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = کوئی.</li>
 </ul></div>
 
-<div dir="rtl">"disable_webfonts"<br /></div>
+##### <div dir="rtl">"disable_webfonts"<br /></div>
 <div dir="rtl"><ul>
  <li>Webfonts کے غیر فعال کریں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = کوئی.</li>
 </ul></div>
 
-<div dir="rtl">"maintenance_mode"<br /></div>
+##### <div dir="rtl">"maintenance_mode"<br /></div>
 <div dir="rtl"><ul>
  <li>بحالی کا موڈ فعال کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = کوئی [پہلے سے طے شدہ]. سامنے کے اختتام کے مقابلے میں سب کچھ غیر فعال کرتا ہے. کبھی کبھی آپ کے CMS، فریم ورک، وغیرہ کو اپ ڈیٹ کرنے کے لئے مفید ہے.</li>
 </ul></div>
 
-<div dir="rtl">"default_algo"<br /></div>
+##### <div dir="rtl">"default_algo"<br /></div>
 <div dir="rtl"><ul>
  <li>اس بات کی وضاحت کرتا ہے جو تمام مستقبل کے پاس ورڈ اور سیشن کے لئے الگورتھم استعمال کرنا ہے. اختیارات: PASSWORD_DEFAULT (ڈیفالٹ), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP >= 7.2.0 کی ضرورت ہے).</li>
 </ul></div>
 
-<div dir="rtl">"statistics"<br /></div>
+##### <div dir="rtl">"statistics"<br /></div>
 <div dir="rtl"><ul>
  <li>CIDRAM استعمال کے اعداد و شمار کو ٹریک کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
 </ul></div>
 
-<div dir="rtl">"force_hostname_lookup"<br /></div>
+##### <div dir="rtl">"force_hostname_lookup"<br /></div>
 <div dir="rtl"><ul>
  <li>تمام درخواستوں کے لئے میزبانی حاصل کریں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]. میزبان نام کی تلاش عام طور پر "ضرورت کی بنیاد" کی بنیاد پر انجام دیا جاتا ہے، لیکن تمام درخواستوں کے لئے مجبور کیا جاسکتا ہے. ایسا کرتے ہوئے لاگ ان میں مزید تفصیلی معلومات فراہم کرنے کے ذریعہ مفید ثابت ہوسکتا ہے، لیکن کارکردگی پر تھوڑا منفی اثر بھی ہوسکتا ہے.</li>
 </ul></div>
 
-<div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
+##### <div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
 <div dir="rtl"><ul>
  <li>جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟</li>
  <li>نوٹ: <code dir="ltr">IPv6</code> کی تلاش کچھ <code dir="ltr">32-bit</code> کے نظام پر صحیح طریقے سے کام نہیں کرسکتا.</li>
 </ul></div>
 
-<div dir="rtl">"hide_version"<br /></div>
+##### <div dir="rtl">"hide_version"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ ان اور صفحے کی پیداوار سے ورژن کی معلومات چھپائیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
 </ul></div>
@@ -549,67 +558,67 @@
 #### <div dir="rtl">"signatures" (قسم)<br /></div>
 <div dir="rtl">دستخط کی ترتیب.<br /><br /></div>
 
-<div dir="rtl">"ipv4"<br /></div>
+##### <div dir="rtl">"ipv4"<br /></div>
 <div dir="rtl"><ul>
  <li>IPv4 کی دستخط کی ایک فہرست فائلوں کہ CIDRAM، کا تجزیہ کرنے کی کوشش کرنا چاہئے کوما سے ختم ہونے والی. آپ یہاں اندراجات کا اضافہ آپ CIDRAM میں اضافی IPv4 کی دستخط کی فائلوں کو شامل کرنے کے لئے چاہتے ہیں تو کر سکتے ہیں.</li>
 </ul></div>
 
-<div dir="rtl">"ipv6"<br /></div>
+##### <div dir="rtl">"ipv6"<br /></div>
 <div dir="rtl"><ul>
  <li>IPv6 کی دستخط کی ایک فہرست فائلوں کہ CIDRAM، کا تجزیہ کرنے کی کوشش کرنا چاہئے کوما سے ختم ہونے والی. آپ یہاں اندراجات کا اضافہ آپ CIDRAM میں اضافی IPv6 کی دستخط کی فائلوں کو شامل کرنے کے لئے چاہتے ہیں تو کر سکتے ہیں.</li>
 </ul></div>
 
-<div dir="rtl">"block_cloud"<br /></div>
+##### <div dir="rtl">"block_cloud"<br /></div>
 <div dir="rtl"><ul>
  <li>بلاک CIDR webhosting کے / کلاؤڈ سروسز سے تعلق رکھنے والے کے طور پر شناخت؟ آپ کو آپ کی ویب سائٹ سے ایک API سروس آپریٹ یا اگر آپ دوسری ویب سائٹس کو اپنی ویب سائٹ سے رابطہ قائم کرنے کی توقع ہے تو، تو اس جھوٹے کے لئے مقرر کیا جانا چاہئے. آپ ایسا نہیں کرتے، تو پھر، اس ہدایت صحیح پر سیٹ کیا جانا چاہئے.</li>
 </ul></div>
 
-<div dir="rtl">"block_bogons"<br /></div>
+##### <div dir="rtl">"block_bogons"<br /></div>
 <div dir="rtl"><ul>
  <li>بلاک bogon/martian کی CIDR؟ آپ لوکل ہوسٹ سے، یا اپنے LAN سے اپنے مقامی نیٹ ورک کے اندر سے اپنی ویب سائٹ پر کنکشن، توقع ہے، اس ہدایت کے جھوٹے پر مقرر کیا جائے چاہئے. اگر آپ ان میں ایسے کنکشنوں کی توقع نہیں ہے، تو اس ہدایت صحیح پر سیٹ کیا جانا چاہئے.</li>
 </ul></div>
 
-<div dir="rtl">"block_generic"<br /></div>
+##### <div dir="rtl">"block_generic"<br /></div>
 <div dir="rtl"><ul>
  <li>بلاک کرنے کی سفارش کی CIDRs کو بلاک کرنا؟ یہ دیگر زیادہ مخصوص دستخط کی اقسام میں سے کسی کا حصہ ہونے کے طور پر نشان نہیں ہیں کہ کسی بھی دستخطوں پر محیط ہے.</li>
 </ul></div>
 
-<div dir="rtl">"block_legal"<br /></div>
+##### <div dir="rtl">"block_legal"<br /></div>
 <div dir="rtl"><ul>
  <li>قانونی ذمہ داریوں کے جواب میں CIDRs کو بلاک کریں؟ یہ ہدایت عام طور پر کسی بھی اثر نہیں ہونا چاہئے، کیونکہ CIDRAM کسی CIDRs کے ساتھ "قانونی ذمہ داریوں" سے متعلق نہیں ہے، لیکن اس کے باوجود موجود ہے کہ کسی بھی اپنی مرضی کے دستخط فائلوں یا ماڈیولز کے فائدہ کے لئے اضافی کنٹرول کی پیمائش کے طور پر جو قانونی وجوہات کی بناء پر موجود ہو.</li>
 </ul></div>
 
-<div dir="rtl">"block_malware"<br /></div>
+##### <div dir="rtl">"block_malware"<br /></div>
 <div dir="rtl"><ul>
  <li>میلویئر کے ساتھ منسلک بلاک IPs؟ اس میں C&C سرورز، متاثرہ مشینیں، میلویئر کی تقسیم، وغیرہ میں شامل مشینیں شامل ہیں.</li>
 </ul></div>
 
-<div dir="rtl">"block_proxies"<br /></div>
+##### <div dir="rtl">"block_proxies"<br /></div>
 <div dir="rtl"><ul>
  <li>پراکسی خدمات یا VPNs سے تعلق رکھنے والے CIDRs کو بلاک کرنا؟ اگر آپ کو ضرورت ہو تو صارفین پراکسی سروسز اور VPNs سے آپ کی ویب سائٹ تک رسائی حاصل کرنے کے قابل ہو جائیں، یہ ہدایت false پر مرتب کرنا چاہئے. دوسری صورت میں، اگر آپ پراکسی خدمات یا VPNs کی ضرورت نہیں ہے، تو یہ ہدایت سیکورٹی کو بہتر بنانے کے ذریعہ true کو مقرر کیا جانا چاہئے.</li>
 </ul></div>
 
-<div dir="rtl">"block_spam"<br /></div>
+##### <div dir="rtl">"block_spam"<br /></div>
 <div dir="rtl"><ul>
  <li>بلاک CIDR سپیم کے لئے اعلی خطرے ہونے کے طور پر شناخت کیا؟ ایسا کرنے جب آپ کو مسائل کا سامنا ہوتا ہے جب تک، عام طور پر، یہ ہمیشہ سچ کے لئے مقرر کیا جانا چاہئے.</li>
 </ul></div>
 
-<div dir="rtl">"modules"<br /></div>
+##### <div dir="rtl">"modules"<br /></div>
 <div dir="rtl"><ul>
  <li>ماڈیول فائلوں کی ایک فہرست کوما سے ختم ہونے والی، IPv4 کی / IPv6 دستخط جانچ پڑتال کے بعد لوڈ کرنے کے لئے.</li>
 </ul></div>
 
-<div dir="rtl">"default_tracktime"<br /></div>
+##### <div dir="rtl">"default_tracktime"<br /></div>
 <div dir="rtl"><ul>
  <li>ماڈیولز کی طرف سے پابندی لگا دی IP ایس کے ٹریک کرنے سیکنڈ کتنے. پہلے سے طے شدہ = 604800 (1 ہفتہ).</li>
 </ul></div>
 
-<div dir="rtl">"infraction_limit"<br /></div>
+##### <div dir="rtl">"infraction_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>خلاف ورزی کی زیادہ سے زیادہ تعداد ایک IP اس سے پہلے کیا جاتا ہے IP باخبر رہنے کے کی طرف سے پابندی کا اطلاق کرنے کی اجازت ہے. پہلے سے طے شدہ = 10.</li>
 </ul></div>
 
-<div dir="rtl">"track_mode"<br /></div>
+##### <div dir="rtl">"track_mode"<br /></div>
 <div dir="rtl"><ul>
  <li>خلاف ورزی شمار کب کیا جانا چاہئے؟ False (جھوٹی) = IP ایس کے ماڈیول کی طرف سے بلاک کر رہے ہیں جب. سچا = IP ایس کے کسی بھی وجہ سے بلاک کر رہے ہیں جب.</li>
 </ul></div>
@@ -621,7 +630,7 @@
 
 <div dir="rtl">ایک "site key" اور ایک "secret key" (reCAPTCHA استعمال کرتے ہوئے کے لئے ضروری) حاصل کرنے کے لئے، براہ مہربانی پر جائیں: <a href="https://developers.google.com/recaptcha/">https://developers.google.com/recaptcha/</a><br /><br /></div>
 
-<div dir="rtl">"usemode"<br /></div>
+##### <div dir="rtl">"usemode"<br /></div>
 <div dir="rtl"><ul>
  <li>وضاحت کرتا CIDRAM reCAPTCHA کے استعمال کرنا چاہئے کہ کس طرح.</li>
  <li>0 = reCAPTCHA کے مکمل طور پر غیر فعال کر دیا (پہلے سے مقررشدہ) ہے.</li>
@@ -630,33 +639,33 @@
  <li>(کسی اور قدر 0 کے طور پر اسی طرح میں علاج کیا جائے گا).</li>
 </ul></div>
 
-<div dir="rtl">"lockip"<br /></div>
+##### <div dir="rtl">"lockip"<br /></div>
 <div dir="rtl"><ul>
  <li>متعین کرتا ہیشز مخصوص IP ایس کو بند کر دیا جانا چاہئے یا نہیں. False (جھوٹی) = کوکیز اور ہیشز ایک سے زیادہ IP ایس (پہلے سے مقررشدہ) بھر میں استعمال کیا جا سکتا. سچا = کوکیز اور ہیشز ایک سے زیادہ IP ایس کے اس پار نہیں کیا جا سکتا (کوکیز / ہیشز IP ایس کو بند کر دیا جاتا).</li>
  <li>نوٹ: یاد "صارفین" اس قیمت کے لحاظ سے مختلف ہے کے لئے اس طریقہ کار کی وجہ سے "lockip" قدر نظر انداز کر دیا جاتا ہے جب "lockuser" جھوٹی ہے.</li>
 </ul></div>
 
-<div dir="rtl">"lockuser"<br /></div>
+##### <div dir="rtl">"lockuser"<br /></div>
 <div dir="rtl"><ul>
  <li>ایک reCAPTCHA مثال کی کامیاب تکمیل کے مخصوص صارفین کے لئے بند کر دیا جانا چاہئے کہ آیا تعین کرتی ہے. False (جھوٹی) = ایک reCAPTCHA مثال کی کامیاب تکمیل reCAPTCHA کے مثال کو مکمل صارف کی طرف سے استعمال کیا جاتا ہے کہ کے طور پر ایک ہی IP سے شروع ہونے والے تمام درخواستوں کو رسائی فراہم کرے گا؛ کوکیز اور ہیشز نہیں استعمال کیا جاتا ہے؛ اس کے بجائے، ایک IP وائٹ لسٹ کا استعمال کیا جائے گا. سچا = ایک reCAPTCHA مثال صرف reCAPTCHA کے مثال کو مکمل صارف تک رسائی کی اجازت دے گا کی کامیاب تکمیل؛ کوکیز اور ہیشز صارف کو یاد کرنے کے لئے استعمال کر رہے ہیں؛ ایک IP وائٹ لسٹ نہیں استعمال کیا جاتا ہے (ڈیفالٹ).</li>
 </ul></div>
 
-<div dir="rtl">"sitekey"<br /></div>
+##### <div dir="rtl">"sitekey"<br /></div>
 <div dir="rtl"><ul>
  <li>"site key" کے طور پر ایک ہی ہونا چاہئے. یہ reCAPTCHA ڈیش بورڈ میں پایا جا سکتا ہے.</li>
 </ul></div>
 
-<div dir="rtl">"secret"<br /></div>
+##### <div dir="rtl">"secret"<br /></div>
 <div dir="rtl"><ul>
  <li>"secret key" کے طور پر ایک ہی ہونا چاہئے. یہ reCAPTCHA ڈیش بورڈ میں پایا جا سکتا ہے.</li>
 </ul></div>
 
-<div dir="rtl">"expiry"<br /></div>
+##### <div dir="rtl">"expiry"<br /></div>
 <div dir="rtl"><ul>
  <li>جب "lockuser" سچ (ڈیفالٹ) ہے، ایک صارف کو کامیابی کے مستقبل صفحے درخواستوں کے لئے، ایک reCAPTCHA مثال گزر چکی ہے جب یاد کرنے کے لئے ہے، CIDRAM اسی ہیش کہ استعمال کے ایک داخلی ریکارڈ سے میل جو ایک ہیش پر مشتمل ایک معیاری HTTP کوکی نکالتا؛ مستقبل صفحے درخواستوں کسی صارف نے پہلے پہلے سے ہی ایک reCAPTCHA مثال گزر چکی ہے کہ توثیق کرنے کے لئے ان کے لئے اسی ہیشز استعمال کریں گے. جب "lockuser" جھوٹی ہے، ایک IP وائٹ لسٹ درخواستوں باؤنڈ درخواستوں کی IP سے اجازت کی جانی چاہئے یا نہیں کا تعین کرنے کے لئے استعمال کیا جاتا ہے؛ جب reCAPTCHA کے مثال کامیابی سے منظور کیا جاتا لکھے اس وائٹ لسٹ میں شامل کر رہے ہیں. کتنے گھنٹے کے لئے ان کوکیز، hashes اور وائٹ لسٹ اندراجات درست رہنا چاہئے؟ پہلے سے طے شدہ = 720 (1 ماہ).</li>
 </ul></div>
 
-<div dir="rtl">"logfile"<br /></div>
+##### <div dir="rtl">"logfile"<br /></div>
 <div dir="rtl"><ul>
  <li>تمام reCAPTCHA کے کوششوں لاگ؟ اگر ہاں، logfile پر کے لئے استعمال کرنے کا نام کی وضاحت. کوئی تو اس متغیر خالی چھوڑ دیں.</li>
 </ul></div>
@@ -665,12 +674,12 @@
 
 `logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`
 
-<div dir="rtl">"signature_limit"<br /></div>
+##### <div dir="rtl">"signature_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>reCAPTCHA مثال پیش کرنے کے لئے جب دستخط کی زیادہ سے زیادہ تعداد کی شروعات کی جائے گی. پہلے سے طے شدہ = 1. اگر یہ نمبر کسی بھی مخصوص درخواست کے لئے حد سے تجاوز کردی گئی ہے تو، reCAPTCHA پیش نہیں کیا جائے گا.</li>
 </ul></div>
 
-<div dir="rtl">"api"<br /></div>
+##### <div dir="rtl">"api"<br /></div>
 <div dir="rtl"><ul>
  <li>کون سا API استعمال کرنے کے لئے؟ V2 یا Invisible؟</li>
 </ul></div>
@@ -682,27 +691,27 @@
 
 <div dir="rtl">قانونی ضروریات کے بارے میں مزید معلومات کے لئے اور یہ آپ کی ترتیبات کی ضروریات کو کس طرح اثر انداز کر سکتا ہے، براہ کرم دستاویزات کے "<a href="#SECTION11">قانونی معلومات</a>" حصے کا حوالہ دیتے ہیں.<br /><br /></div>
 
-<div dir="rtl">"pseudonymise_ip_addresses"<br /></div>
+##### <div dir="rtl">"pseudonymise_ip_addresses"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ ان کرتے وقت پی ایس ڈی نامناسب IP پتے؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
 </ul></div>
 
-<div dir="rtl">"omit_ip"<br /></div>
+##### <div dir="rtl">"omit_ip"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ فائلوں سے IP پتے کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ]. نوٹ: "pseudonymise_ip_addresses" بے شمار ہو جاتا ہے جب "omit_ip" "true" ہے.</li>
 </ul></div>
 
-<div dir="rtl">"omit_hostname"<br /></div>
+##### <div dir="rtl">"omit_hostname"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ فائلوں سے میزبانوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
 </ul></div>
 
-<div dir="rtl">"omit_ua"<br /></div>
+##### <div dir="rtl">"omit_ua"<br /></div>
 <div dir="rtl"><ul>
  <li>لاگ فائلوں سے صارف کے ایجنٹوں کو خارج کردیں؟ True (سچے) = جی ہاں؛ False (جھوٹی) = نہیں [پہلے سے طے شدہ].</li>
 </ul></div>
 
-<div dir="rtl">"privacy_policy"<br /></div>
+##### <div dir="rtl">"privacy_policy"<br /></div>
 <div dir="rtl"><ul>
  <li>کسی بھی پیدا کردہ صفحات کے فوٹر میں ظاہر ہونے والی متعلقہ رازداری کی پالیسی کا پتہ. ایک URL کی وضاحت کریں، یا غیر فعال کرنے کیلئے خالی چھوڑ دیں.</li>
 </ul></div>
@@ -712,17 +721,17 @@
 
 <div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ CIDRAM لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار "template_custom.html" فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار "template.html" فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں foo="bar" بار کے کسی بھی مثال &lt;p&gt;{foo}&lt;/p&gt; HTML پیداوار کے اندر اندر پایا بن جائے گا &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
 
-<div dir="rtl">"theme"<br /></div>
+##### <div dir="rtl">"theme"<br /></div>
 <div dir="rtl"><ul>
  <li>CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.</li>
 </ul></div>
 
-<div dir="rtl">"Magnificatio"<br /></div>
+##### <div dir="rtl">"Magnificatio"<br /></div>
 <div dir="rtl"><ul>
  <li>فونٹ اضافہ. پہلے سے طے شدہ = 1.</li>
 </ul></div>
 
-<div dir="rtl">"css_url"<br /></div>
+##### <div dir="rtl">"css_url"<br /></div>
 <div dir="rtl"><ul>
  <li>ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے CIDRAM ہدایت کرنے کے لئے، "css_url" متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، CIDRAM ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے.</li>
 </ul></div>
@@ -1068,12 +1077,13 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 <div dir="rtl">مندرجہ ذیل پیکجوں اور مصنوعات کو CIDRAM کے ساتھ مطابقت پذیر ہونے کے لئے مل گیا ہے:</div>
 <div dir="rtl"><ul>
- <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
+ <li><strong><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
+ <li><strong><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></strong></li>
 </ul></div>
 
 <div dir="rtl">اس بات کا یقین کرنے کے لئے کہ مندرجہ ذیل پیکجوں اور مصنوعات CIDRAM کے ساتھ مطابقت پذیر ہوں گے ماڈیولز دستیاب کیے گئے ہیں:</div>
 <div dir="rtl"><ul>
- <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/56">BunnyCDN</a></strong></li>
+ <li><strong><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/56">BunnyCDN</a></strong></li>
 </ul></div>
 
 <div dir="rtl"><em>بھی دیکھو: <a href="https://maikuolan.github.io/Compatibility-Charts/">مطابقت چارٹ</a>.</em><br /><br /></div>
@@ -1485,7 +1495,7 @@ If you want to take it a step further by preventing specific types of informatio
  <li><code dir="ltr">omit_ua</code> &lt;- <code dir="ltr">legal</code></li>
 </ul></div>
 
-#### <div dir="rtl">١١.٣.٧ اعداد و شمار<br /><br /></div>
+##### <div dir="rtl">١١.٣.٧ اعداد و شمار<br /><br /></div>
 
 <div dir="rtl">CIDRAM اعداد و شمار کو ٹریک کر سکتے ہیں، جیسے کہ کسی مخصوص وقت سے کتنے بلاک واقعات یا reCAPTCHA مثال موجود ہیں. یہ خصوصیت ڈیفالٹ کے ذریعہ غیر فعال ہے، لیکن پیکیج کی ترتیب کے ذریعے فعال کیا جا سکتا ہے. یہ خصوصیت صرف واقعات کی تعداد کو ٹریک کرتا ہے. اس میں کوئی مخصوص معلومات شامل نہیں ہے، لہذا اسے PII کے طور پر نہیں جانا چاہئے.<br /><br /></div>
 
@@ -1494,8 +1504,9 @@ If you want to take it a step further by preventing specific types of informatio
  <li><code dir="ltr">statistics</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.8 ENCRYPTION
+##### <div dir="rtl">١١.٣.٨ خفیہ کاری<br /><br /></div>
 
+<div dir="rtl"><br /><br /></div>
 CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
 
 #### <div dir="rtl">١١.٤ کوکی<br /><br /></div>
@@ -1547,4 +1558,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 14 جولائی 2018 (2018.07.14).</div>
+<div dir="rtl">آخری تازہ کاری: 17 جولائی 2018 (2018.07.17).</div>

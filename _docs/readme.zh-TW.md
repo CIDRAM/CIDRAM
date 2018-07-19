@@ -306,13 +306,13 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 #### 『general』 （類別）
 基本CIDRAM配置。
 
-『logfile』
+##### 『logfile』
 - 人類可讀文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。
 
-『logfileApache』
+##### 『logfileApache』
 - Apache風格文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。
 
-『logfileSerialized』
+##### 『logfileSerialized』
 - 連載的文件用於記錄所有被攔截的訪問。​指定一個文件名，​或留空以禁用。
 
 *有用的建議：如果您想，​可以追加日期/時間信息及附加到您的日誌文件的名稱通過包括這些中的名稱：`{yyyy}` 為今年完整，​`{yy}` 為今年縮寫，​`{mm}` 為今月，​`{dd}` 為今日，​`{hh}` 為今小時。​*
@@ -322,25 +322,25 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-『truncate』
+##### 『truncate』
 - 截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。
 
-『log_rotation_limit』
+##### 『log_rotation_limit』
 - 日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。
 
-『log_rotation_action』
+##### 『log_rotation_action』
 - 日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。​『Delete』=刪除最舊的日誌文件，直到不再超出限制。​『Archive』=首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。
 
 *技術澄清：在這種情況下，『最舊』意味著『不是最近被修改』。*
 
-『timeOffset』
+##### 『timeOffset』
 - 如果您的服務器時間不符合您的本地時間，​您可以在這裡指定的偏移調整日期/時間信息該產生通過CIDRAM根據您的需要。​它一般建議，​而不是，​調整時區指令的文件`php.ini`，​但是有時（例如，​當利用有限的共享主機提供商）這並不總是可能做到，​所以，​此選項在這裡是提供。​偏移量是在分鐘。
 - 例子（添加1小時）：`timeOffset=60`
 
-『timeFormat』
+##### 『timeFormat』
 - CIDRAM使用的日期符號格式。​標準 = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`。
 
-『ipaddr』
+##### 『ipaddr』
 - 在哪裡可以找到連接請求IP地址？​（可以使用為服務例如Cloudflare和類似）。​標準=REMOTE_ADDR。​警告：不要修改此除非您知道什麼您做著！
 
 『ipaddr』的推薦值：
@@ -355,7 +355,7 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 *由服務器配置定義。​* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
 `REMOTE_ADDR` | 沒有反向代理（默認值）。
 
-『forbid_on_block』
+##### 『forbid_on_block』
 - 阻止請求時，CIDRAM應發送哪個HTTP狀態消息？
 
 目前支持的值：
@@ -369,13 +369,13 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 `451` | `Unavailable For Legal Reasons` | 主要出於法律原因阻止請求時適用於上下文。​不建議在其他情況下。
 `503` | `Service Unavailable` | 最強大，但對用戶最不友善。
 
-『silent_mode』
+##### 『silent_mode』
 - CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。
 
-『lang』
+##### 『lang』
 - 指定標準CIDRAM語言。
 
-『numbers』
+##### 『numbers』
 - 指定如何顯示數字。
 
 目前支持的值：
@@ -399,36 +399,36 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 
 *注意：​這些值在任何地方都不是標準化的，並超出包裹且可能不會相關性。​此外，支持的值可能會在未來發生變化。*
 
-『emailaddr』
+##### 『emailaddr』
 - 如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。
 
-『emailaddr_display_style』
+##### 『emailaddr_display_style』
 - 您希望如何將電子郵件地址呈現給用戶？ 『default』 = 可點擊的鏈接。 『noclick』 = 不可點擊的文字。
 
-『disable_cli』
+##### 『disable_cli』
 - 關閉CLI模式嗎？​CLI模式是按說激活作為標準，​但可以有時干擾某些測試工具（例如PHPUnit，​為例子）和其他基於CLI應用。​如果您沒有需要關閉CLI模式，​您應該忽略這個指令。​False（假）=激活CLI模式【標準】；​True（真）=關閉CLI模式。
 
-『disable_frontend』
+##### 『disable_frontend』
 - 關閉前端訪問嗎？​前端訪問可以使CIDRAM更易於管理，​但也可能是潛在的安全風險。​建議管理CIDRAM通過後端只要有可能，​但前端訪問提供當不可能。​保持關閉除非您需要它。​False（假）=激活前端訪問；​True（真）=關閉前端訪問【標準】。
 
-『max_login_attempts』
+##### 『max_login_attempts』
 - 最大登錄嘗試次數（前端）。​標準=5。
 
-『FrontEndLog』
+##### 『FrontEndLog』
 - 前端登錄嘗試的錄音文件。​指定一個文件名，​或留空以禁用。
 
-『ban_override』
+##### 『ban_override』
 - 覆蓋『forbid_on_block』當『infraction_limit』已被超過？​當覆蓋：已阻止的請求返回一個空白頁（不使用模板文件）。​200 = 不要覆蓋【標準】。​其他值與『forbid_on_block』的可用值相同。
 
-『log_banned_ips』
+##### 『log_banned_ips』
 - 包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；​False（假）=不是。
 
-『default_dns』
+##### 『default_dns』
 - 以逗號分隔的DNS服務器列表，​用於主機名查找。​標準 = 『8.8.8.8,8.8.4.4』 (Google DNS)。​警告：不要修改此除非您知道什麼您做著！
 
 *也可以看看：​[在『default_dns』中我可以使用什麼？](#WHAT_CAN_I_USE_FOR_DEFAULT_DNS)*
 
-『search_engine_verification』
+##### 『search_engine_verification』
 - 嘗試驗證來自搜索引擎的請求？​驗證搜索引擎確保他們不會因超過違規限製而被禁止 （禁止在您的網站上使用搜索引擎通常會有產生負面影響對您的搜索引擎排名，​SEO，​等等）。​當被驗證，​搜索引擎可以被阻止，​但不會被禁止。​當不被驗證，​他們可以由於超過違規限製而被禁止。​另外，​搜索引擎驗證提供保護針對假搜索引擎請求和針對潛在的惡意實體偽裝成搜索引擎（當搜索引擎驗證是啟用，​這些請求將被阻止）。​True（真）=搜索引擎驗證是啟用【標準】；​False（假）=搜索引擎驗證是禁用。
 
 目前支持：
@@ -436,82 +436,89 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 - [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
 - Yahoo (雅虎)
 - [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
+- Sogou (搜狗)
+- Youdao (有道)
+- [Applebot](https://discussions.apple.com/thread/7090135)
 - [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
 - [DuckDuckGo](https://duckduckgo.com/duckduckbot)
 
-『social_media_verification』
+不兼容（導致衝突）：
+- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+
+##### 『social_media_verification』
 - 嘗試驗證社交媒體請求？​社交媒體驗證可以防止虛假社交媒體請求（此類請求將被阻止）。​True（真）=啟用社交媒體驗證【標準】；​False（假）=禁用社交媒體驗證。
 
 目前支持：
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - Embedly
 - [Grapeshot](https://www.grapeshot.com/crawler/)
+- Twitterbot
 
-『protect_frontend』
+##### 『protect_frontend』
 - 指定是否應將CIDRAM通常提供的保護應用於前端。​True（真）=是【標準】；​False（假）=不是。
 
-『disable_webfonts』
+##### 『disable_webfonts』
 - 關閉網絡字體嗎？​True（真）=關閉【標準】；False（假）=不關閉。
 
-『maintenance_mode』
+##### 『maintenance_mode』
 - 啟用維護模式？​True（真）=關閉；​False（假）=不關閉【標準】。​它停用一切以外前端。​有時候在更新CMS，框架，等時有用。
 
-『default_algo』
+##### 『default_algo』
 - 定義要用於所有未來密碼和會話的算法。​選項：​PASSWORD_DEFAULT（標準），​PASSWORD_BCRYPT，​PASSWORD_ARGON2I（需要PHP >= 7.2.0）。
 
-『statistics』
+##### 『statistics』
 - 跟踪CIDRAM使用情況統計？​True（真）=跟踪；False（假）=不跟踪【標準】。
 
-『force_hostname_lookup』
+##### 『force_hostname_lookup』
 - 強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。
 
-『allow_gethostbyaddr_lookup』
+##### 『allow_gethostbyaddr_lookup』
 - 當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。
 - *注意：在某些32位系統上，IPv6查找可能無法正常工作。*
 
-『hide_version』
+##### 『hide_version』
 - 從日誌和頁面輸出中隱藏版本信息嗎？​True（真）=關閉；False（假）=不關閉【標準】。
 
 #### 『signatures』 （類別）
 簽名配置。
 
-『ipv4』
+##### 『ipv4』
 - 列表的IPv4簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。​您可以在這裡添加條目如果您想包括其他文件在CIDRAM。
 
-『ipv6』
+##### 『ipv6』
 - 列表的IPv6簽名文件，​CIDRAM應該嘗試使用，​用逗號分隔。​您可以在這裡添加條目如果您想包括其他文件在CIDRAM。
 
-『block_cloud』
+##### 『block_cloud』
 - 阻止CIDR認定為屬於虛擬主機或云服務嗎？​如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。
 
-『block_bogons』
+##### 『block_bogons』
 - 阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（​『火星』）CIDR嗎？​如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，​這應該被設置為『false』（假）。​如果不，​這應該被設置為『true』（真）。
 
-『block_generic』
+##### 『block_generic』
 - 阻止CIDR一般建議對於黑名單嗎？​這包括簽名不標記為的一章节任何其他更具體簽名類別。
 
-『block_legal』
+##### 『block_legal』
 - 阻止CIDR因為法律義務嗎？​這個指令通常不應該有任何作用，因為CIDRAM默認情況下不會將任何CIDR與『法律義務』相關聯，​但它作為一個額外的控制措施存在，以利於任何可能因法律原因而存在的自定義簽名文件或模塊。
 
-『block_malware』
+##### 『block_malware』
 - 阻止與惡意軟件相關的IP？​這包括C＆C服務器，受感染的機器，涉及惡意軟件分發的機器，等等。
 
-『block_proxies』
+##### 『block_proxies』
 - 阻止CIDR認定為屬於代理服務或VPN嗎？​如果您需要該用戶可以訪問您的網站從代理服務和VPN，​這應該被設置為『false』（假）。​除此以外，​如果您不需要代理服務或VPN，​這應該被設置為『true』（真）作為一個方式以提高安全性。
 
-『block_spam』
+##### 『block_spam』
 - 阻止高風險垃圾郵件CIDR嗎？​除非您遇到問題當這樣做，​通常，​這應該被設置為『true』（真）。
 
-『modules』
+##### 『modules』
 - 模塊文件要加載的列表以後檢查簽名IPv4/IPv6，​用逗號分隔。
 
-『default_tracktime』
+##### 『default_tracktime』
 - 多少秒鐘來跟踪模塊禁止的IP。​標準 = 604800 （1週）。
 
-『infraction_limit』
+##### 『infraction_limit』
 - 從IP最大允許違規數量之前它被禁止。​標準=10。
 
-『track_mode』
+##### 『track_mode』
 - 何時應該記錄違規？​False（假）=當IP被模塊阻止時。​True（真）=當IP由於任何原因阻止時。
 
 #### 『recaptcha』 （類別）
@@ -521,30 +528,30 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 
 為了獲得『site key』和『secret key』（需要為了使用reCAPTCHA），​請訪問：[https://developers.google.com/recaptcha/](https://developers.google.com/recaptcha/)
 
-『usemode』
+##### 『usemode』
 - 它定義瞭如何CIDRAM應該使用reCAPTCHA。
 - 0 = reCAPTCHA是完全禁用【標準】。
 - 1 = reCAPTCHA是啟用為所有簽名。
 - 2 = reCAPTCHA是啟用只為簽名章節被特殊標記在簽名文件作為reCAPTCHA啟用。
 - （任何其他值將以同樣的方式被視作0）。
 
-『lockip』
+##### 『lockip』
 - 指定是否哈希應鎖定到特定IP地址。​False（假）=Cookie和哈希可以由多個IP地址使用【標準】。​True（真）=Cookie和哈希不能由多個IP地址使用（cookies/哈希是鎖定到IP地址）。
 - 注意：『lockip』值被忽略當『lockuser』是`false`（假），​由於該機制為記憶的『用戶』可以根據這個值的變化。
 
-『lockuser』
+##### 『lockuser』
 - 指定是否一個reCAPTCHA成功完成應鎖定到特定用戶。​False（假）=一個reCAPTCHA成功完成將授予訪問為所有請求該來自同IP作為由用戶使用當完成的reCAPTCHA；​Cookie和哈希不被使用；代替，​一個IP白名單將被用於。​True（真）=一個reCAPTCHA成功完成只會授予訪問為用戶該完成了reCAPTCHA；​Cookie和哈希是用於記住用戶；一個IP白名單不被使用【標準】。
 
-『sitekey』
+##### 『sitekey』
 - 該值應該對應於『site key』為您的reCAPTCHA，​該可以發現在reCAPTCHA的儀表板。
 
-『secret』
+##### 『secret』
 - 該值應該對應於『secret key』為您的reCAPTCHA，​該可以發現在reCAPTCHA的儀表板。
 
-『expiry』
+##### 『expiry』
 - 當『lockuser』是true（真）【標準】，​為了記住當用戶已經成功完成reCAPTCHA，​為未來頁面請求，​CIDRAM生成一個標準的HTTP cookie含哈希對應於內部哈希記錄含有相同哈希；未來頁面請求將使用這些對應的哈希為了驗證該用戶已預先完成reCAPTCHA。​當『lockuser』是false（假），​一個IP白名單被用來確定是否請求應允許從請求的入站IP；條目添加到這個白名單當reCAPTCHA是成功完成。​這些cookies，​哈希，​和白名單條目應在多少小時內有效？​標準 = 720 （1個月）。
 
-『logfile』
+##### 『logfile』
 - 記錄所有的reCAPTCHA的嘗試？​要做到這一點，​指定一個文件名到使用。​如果不，​離開這個變量為空白。
 
 *有用的建議：如果您想，​可以追加日期/時間信息及附加到您的日誌文件的名稱通過包括這些中的名稱：`{yyyy}` 為今年完整，​`{yy}` 為今年縮寫，​`{mm}` 為今月，​`{dd}` 為今日，​`{hh}` 為今小時。​*
@@ -552,10 +559,10 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 *例子：*
 - *`logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-『signature_limit』
+##### 『signature_limit』
 - 當提供reCAPTCHA實例時，允許觸發最大簽名數量。​標準 = 1。​如果這個數字超過了任何特定的請求，一個reCAPTCHA實例將不會被提供。
 
-『api』
+##### 『api』
 - 使用哪個API？V2或Invisible？
 
 *歐盟用戶須知：​當CIDRAM被配置為使用cookie時（例如，當『lockuser』是true/真時），根據[歐盟的cookie法規](http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm)，cookie警告顯示在頁面上。​但是，當使用invisible API時，CIDRAM將自動為用戶完成reCAPTCHA，並且當成功時，這可能導致頁面被重新加載，並且創建cookie，而用戶沒有足夠的時間來實際看到cookie警告。​如果這對您構成法律風險，那麼最好使用V2 API而不使用invisible API（V2 API不是自動的，並且要求用戶自己完成reCAPTCHA挑戰，因此提供了一個機會來查看cookie警告）。*
@@ -565,19 +572,19 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 
 *請參閱文檔的『[法律信息](#SECTION11)』章節以獲取更多有關法律義務的信息，以及它可以如何影響您的配置義務。*
 
-『pseudonymise_ip_addresses』
+##### 『pseudonymise_ip_addresses』
 - 編寫日誌文件時使用假名的IP地址嗎？​True（真）=使用假名；False（假）=不使用假名【標準】。
 
-『omit_ip』
+##### 『omit_ip』
 - 從日誌文件中排除IP地址？​True（真）=排除；False（假）=不排除【標準】。​注意：『omit_ip』為『true』時，『pseudonymise_ip_addresses』變得不必要。
 
-『omit_hostname』
+##### 『omit_hostname』
 - 從日誌文件中排除主機名？​True（真）=排除；False（假）=不排除【標準】。
 
-『omit_ua』
+##### 『omit_ua』
 - 從日誌文件中排除用戶代理？​True（真）=排除；False（假）=不排除【標準】。
 
-『privacy_policy』
+##### 『privacy_policy』
 - 要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。
 
 #### 『template_data』 （類別）
@@ -585,13 +592,13 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 
 涉及的HTML輸出用於生成該『拒絕訪問』頁面。​如果您使用個性化主題為CIDRAM，​HTML產量資源是從`template_custom.html`文件，​和否則，​HTML產量資源是從`template.html`文件。​變量書面在這個配置文件章节是餵在HTML產量通過更換任何變量名包圍在大括號發現在HTML產量使用相應變量數據。​為例子，​哪里`foo="bar"`，​任何發生的`<p>{foo}</p>`發現在HTML產量將成為`<p>bar</p>`。
 
-『theme』
+##### 『theme』
 - 用於CIDRAM的默認主題。
 
-『Magnification』
+##### 『Magnification』
 - 字體放大。​標準 = 1。
 
-『css_url』
+##### 『css_url』
 - 模板文件為個性化主題使用外部CSS屬性，​而模板文件為t標準主題使用內部CSS屬性。​以指令CIDRAM使用模板文件為個性化主題，​指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。​如果您離開這個變量空白，​CIDRAM將使用模板文件為默認主題。
 
 ---
@@ -926,6 +933,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 下列軟件包和產品被發現與CIDRAM不兼容：
 - __[Endurance Page Cache](https://github.com/CIDRAM/CIDRAM/issues/52)__
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 已提供模塊以確保以下軟件包和產品與CIDRAM兼容：
 - __[BunnyCDN](https://github.com/CIDRAM/CIDRAM/issues/56)__
@@ -1374,4 +1382,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2018年7月14日。
+最後更新：2018年7月17日。

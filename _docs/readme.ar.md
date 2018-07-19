@@ -307,17 +307,17 @@
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
 <div dir="rtl">التكوين العام لـ CIDRAM.<br /><br /></div>
 
-<div dir="rtl">"logfile"<br /></div>
+##### <div dir="rtl">"logfile"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف يمكن قراءته بالعين لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
 
-<div dir="rtl">"logfileApache"<br /></div>
+##### <div dir="rtl">"logfileApache"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف على غرار أباتشي لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
 
-<div dir="rtl">"logfileSerialized"<br /></div>
+##### <div dir="rtl">"logfileSerialized"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف تسلسل لتسجيل كل محاولات الوصول سدت. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
@@ -330,24 +330,24 @@
  logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'
 ```
 
-<div dir="rtl">"truncate"<br /></div>
+##### <div dir="rtl">"truncate"<br /></div>
 <div dir="rtl"><ul>
  <li>اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في بايت/كيلوبايت/ميغابايت/غيغابايت/تيرابايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0KB تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا.</li>
 </ul></div>
 
-<div dir="rtl">"log_rotation_limit"<br /></div>
+##### <div dir="rtl">"log_rotation_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد تدوير السجل عدد ملفات السجل التي يجب أن تكون موجودة في أي وقت. عند إنشاء ملفات السجل الجديدة، إذا تجاوز العدد الإجمالي لبيانات السجل الحد المحدد، فسيتم تنفيذ الإجراء المحدد. يمكنك تحديد الحد المرغوب هنا. ستعمل القيمة 0 على تعطيل تدوير السجل.</li>
 </ul></div>
 
-<div dir="rtl">"log_rotation_action"<br /></div>
+##### <div dir="rtl">"log_rotation_action"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد تدوير السجل عدد ملفات السجل التي يجب أن تكون موجودة في أي وقت. عند إنشاء ملفات السجل الجديدة، إذا تجاوز العدد الإجمالي لبيانات السجل الحد المحدد، فسيتم تنفيذ الإجراء المحدد. يمكنك تحديد الإجراء المطلوب هنا. Delete = احذف أقدم السجلات، حتى لا يتم تجاوز الحد. Archive = أرشفة أولاً، ثم احذف أقدم السجلات، حتى لا يتم تجاوز الحد.</li>
 </ul></div>
 
 <div dir="rtl">التوضيح الفني: في هذا السياق، تعني كلمة "أقدم"، هذا يعني "الأقل معدلة مؤخرا".<br /><br /></div>
 
-<div dir="rtl">"timeOffset"<br /></div>
+##### <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
  <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة CIDRAM). الإزاحة المستندة دقيقة.<br /></li>
  <li>مثال (لإضافة ساعة واحدة):</li>
@@ -355,14 +355,14 @@
 
 `timeOffset=60`
 
-<div dir="rtl">"timeFormat"<br /></div>
+##### <div dir="rtl">"timeFormat"<br /></div>
 <div dir="rtl"><ul>
  <li>شكل التواريخ المستخدم من قبل CIDRAM. الافتراضي:</li>
 </ul></div>
 
 `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`
 
-<div dir="rtl">"ipaddr"<br /></div>
+##### <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
  <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها). الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
@@ -379,7 +379,7 @@
 &nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
 
-<div dir="rtl">"forbid_on_block"<br /></div>
+##### <div dir="rtl">"forbid_on_block"<br /></div>
 <div dir="rtl"><ul>
  <li>ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟</li>
 </ul></div>
@@ -395,17 +395,17 @@
 `451` | `Unavailable For Legal Reasons` | مناسبة للسياقات عند حظر الطلبات في المقام الأول لأسباب قانونية. غير مستحسن في سياقات أخرى.
 `503` | `Service Unavailable` | الأكثر قوة، ولكن الأقل سهولة في الاستخدام.
 
-<div dir="rtl">"silent_mode"<br /></div>
+##### <div dir="rtl">"silent_mode"<br /></div>
 <div dir="rtl"><ul>
  <li>يجب CIDRAM إعادة توجيه بصمت محاولات وصول مرفوض بدلا من عرض الصفحة "تم رفض الوصول"؟ اذا نعم، تحديد الموقع لإعادة توجيه محاولات وصول مرفوض. ان لم، ترك هذا الحقل فارغا.</li>
 </ul></div>
 
-<div dir="rtl">"lang"<br /></div>
+##### <div dir="rtl">"lang"<br /></div>
 <div dir="rtl"><ul>
  <li>تحديد اللغة الافتراضية الخاصة بـ CIDRAM.</li>
 </ul></div>
 
-<div dir="rtl">"numbers"<br /></div>
+##### <div dir="rtl">"numbers"<br /></div>
 <div dir="rtl"><ul>
  <li>لتحديد كيفية عرض الأرقام.</li>
 </ul></div>
@@ -431,54 +431,54 @@
 
 <div dir="rtl">ملحوظة: هذه القيم ليست موحدة في أي مكان، وربما لن تكون ذات صلة خارج الحزمة. أيضا، قد تتغير القيم المدعومة في المستقبل.<br /><br /></div>
 
-<div dir="rtl">"emailaddr"<br /></div>
+##### <div dir="rtl">"emailaddr"<br /></div>
 <div dir="rtl"><ul>
  <li>لو كنت تريد، يمكنك توفير عنوان البريد الإلكتروني هنا أن تعطى للمستخدمين عند أنها ممنوعة، بالنسبة لهم لاستخدامها كنقطة اتصال للحصول على الدعم والمساعدة لفي حال منهم سدت طريق الخطأ أو في ضلال. تحذير: أي عنوان البريد الإلكتروني الذي تزويد هنا وبالتأكيد سيتم شراؤها من قبل المتطفلين و برامج التطفل وكاشطات خلال المستخدمة هنا، و حينئذ، انها المستحسن أن إذا اخترت توفير عنوان البريد الإلكتروني هنا، يمكنك التأكد من أن عنوان البريد الإلكتروني الذي نورد هنا يمكن التخلص منها و/أو عنوان أنك لا تمانع في أن محتوى غير مرغوب فيه (بعبارات أخرى، وربما كنت لا تريد استخدام الرئيسية عناوين البريد الإلكتروني التجارية أو العناوين الشخصية الرئيسية الخاصة بك).</li>
 </ul></div>
 
-<div dir="rtl">"emailaddr_display_style"<br /></div>
+##### <div dir="rtl">"emailaddr_display_style"<br /></div>
 <div dir="rtl"><ul>
  <li>كيف تفضل أن يتم تقديم عنوان البريد الإلكتروني إلى المستخدمين؟ "default" = رابط قابل للنقر. "noclick" = نص غير قابل للنقر.</li>
 </ul></div>
 
-<div dir="rtl">"disable_cli"<br /></div>
+##### <div dir="rtl">"disable_cli"<br /></div>
 <div dir="rtl"><ul>
  <li>وضع تعطيل CLI؟ يتم تمكين وضع CLI افتراضيا، ولكن يمكن أن تتداخل أحيانا مع بعض أدوات الاختبار (مثل PHPUnit، على سبيل المثال) وغيرها من التطبيقات القائمة على المبادرة القطرية. إذا كنت لا تحتاج إلى تعطيل وضع CLI، يجب تجاهل هذا التوجيه. خاطئة = تمكين وضع CLI [الافتراضي]. صحيح/True = وضع تعطيل CLI.</li>
 </ul></div>
 
-<div dir="rtl">"disable_frontend"<br /></div>
+##### <div dir="rtl">"disable_frontend"<br /></div>
 <div dir="rtl"><ul>
  <li>تعطيل وصول front-end؟ وصول front-end يستطيع جعل CIDRAM أكثر قابلية للإدارة، ولكن يمكن أيضا أن تكون مخاطر أمنية محتملة. من المستحسن لإدارة CIDRAM عبر back-end متى أمكن، لكن وصول front-end متوفر عندما لم يكن ممكنا. يبقيه المعوقين إلا إذا كنت في حاجة إليها. زائفة/False = تمكين وصول front-end؛ صحيح/True = تعطيل وصول front-end [الافتراضي].</li>
 </ul></div>
 
-<div dir="rtl">"max_login_attempts"<br /></div>
+##### <div dir="rtl">"max_login_attempts"<br /></div>
 <div dir="rtl"><ul>
  <li>الحد الأقصى لعدد محاولات تسجيل الدخول (front-end). الافتراضي = 5.</li>
 </ul></div>
 
-<div dir="rtl">"FrontEndLog"<br /></div>
+##### <div dir="rtl">"FrontEndLog"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
 
-<div dir="rtl">"ban_override"<br /></div>
+##### <div dir="rtl">"ban_override"<br /></div>
 <div dir="rtl"><ul>
  <li>تجاوز "forbid_on_block" متى "infraction_limit" تجاوزت؟ عندما تجاوز: الطلبات الممنوعة بإرجاع صفحة فارغة (لا يتم استخدام ملفات قالب). 200 = لا تجاوز [الافتراضي]. القيم الأخرى هي نفس القيم المتاحة لـ "forbid_on_block".</li>
 </ul></div>
 
-<div dir="rtl">"log_banned_ips"<br /></div>
+##### <div dir="rtl">"log_banned_ips"<br /></div>
 <div dir="rtl"><ul>
  <li>من IP المحظورة في ملفات السجل؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.</li>
 </ul></div>
 
-<div dir="rtl">"default_dns"<br /></div>
+##### <div dir="rtl">"default_dns"<br /></div>
 <div dir="rtl"><ul>
  <li>قائمة بفواصل من خوادم DNS لاستخدامها في عمليات البحث عن اسم المضيف. الافتراضي = "8.8.8.8,8.8.4.4" (Google DNS). تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
 
 <div dir="rtl">أنظر أيضا: <a href="#WHAT_CAN_I_USE_FOR_DEFAULT_DNS">ما الذي يمكنني استخدامه لـ "default_dns"؟</a><br /><br /></div>
 
-<div dir="rtl">"search_engine_verification"<br /></div>
+##### <div dir="rtl">"search_engine_verification"<br /></div>
 <div dir="rtl"><ul>
  <li>محاولة للتحقق من طلبات من محركات البحث؟ التحقق من محركات البحث يضمن أنها لن تكون محظورة نتيجة لتجاوز الحد مخالفة (منع محركات البحث من موقع الويب الخاص بك عادة ما يكون لها تأثير سلبي على محرك البحث الترتيب، كبار المسئولين الاقتصاديين، إلخ). عند تمكين التحقق، محركات البحث يمكن أن يكون قد تم حظره، ولكن ليس محظورة. عند تعطيل التحقق، أنها يمكن أن تكون محظورة إذا تجاوزت الحد مخالفة. بالإضافة إلى، التحقق محرك البحث يحمي ضد الكيانات الخبيثة يتنكر في محركات البحث (سيتم حجب هذه الطلبات). صحيح/True = تمكين التحقق محرك البحث [افتراضي]؛ زائفة/False = تعطيل التحقق محرك البحث.</li>
 </ul></div>
@@ -489,11 +489,19 @@
  <li><a dir="ltr" href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></li>
  <li>Yahoo</li>
  <li><a dir="ltr" href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></li>
+ <li dir="ltr">Sogou (搜狗)</li>
+ <li dir="ltr">Youdao (有道)</li>
+ <li><a dir="ltr" href="https://discussions.apple.com/thread/7090135">Applebot</a></li>
  <li><a dir="ltr" href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></li>
  <li><a dir="ltr" href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></li>
 </ul></div>
 
-<div dir="rtl">"social_media_verification"<br /></div>
+<div dir="rtl">غير متوافق (تسبب الصراعات):<br /></div>
+<div dir="rtl"><ul>
+ <li><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></li>
+</ul></div>
+
+##### <div dir="rtl">"social_media_verification"<br /></div>
 <div dir="rtl"><ul>
  <li>محاولة التحقق من طلبات الشبكات الاجتماعية؟ يوفر التحقق من الشبكات الاجتماعية الحماية ضد طلبات وسائل الإعلام الاجتماعية المزيفة (سيتم حجب هذه الطلبات). صحيح/True = تمكين [افتراضي]؛ زائفة/False = تعطيل.</li>
 </ul></div>
@@ -503,45 +511,46 @@
  <li><a dir="ltr" href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></li>
  <li>Embedly</li>
  <li><a dir="ltr" href="https://www.grapeshot.com/crawler/">Grapeshot</a></li>
+ <li>Twitterbot</li>
 </ul></div>
 
-<div dir="rtl">"protect_frontend"<br /></div>
+##### <div dir="rtl">"protect_frontend"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.</li>
 </ul></div>
 
-<div dir="rtl">"disable_webfonts"<br /></div>
+##### <div dir="rtl">"disable_webfonts"<br /></div>
 <div dir="rtl"><ul>
  <li>هل تريد تعطيل ويبفونتس؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.</li>
 </ul></div>
 
-<div dir="rtl">"maintenance_mode"<br /></div>
+##### <div dir="rtl">"maintenance_mode"<br /></div>
 <div dir="rtl"><ul>
  <li>هل تريد تمكين وضع الصيانة؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. تعطيل كل شيء بخلاف front-end. قد تكون مفيدة أحيانا عند تحديث نظام إدارة المحتوى والأطر وما إلى ذلك.</li>
 </ul></div>
 
-<div dir="rtl">"default_algo"<br /></div>
+##### <div dir="rtl">"default_algo"<br /></div>
 <div dir="rtl"><ul>
  <li>يحدد الخوارزمية التي سيتم استخدامها لكل كلمات المرور والجلسات المستقبلية. خيارات: PASSWORD_DEFAULT (افتراضي)، PASSWORD_BCRYPT، PASSWORD_ARGON2I (يتطلب PHP >= 7.2.0).</li>
 </ul></div>
 
-<div dir="rtl">"statistics"<br /></div>
+##### <div dir="rtl">"statistics"<br /></div>
 <div dir="rtl"><ul>
  <li>هل تريد تتبع إحصاءات استخدام CIDRAM؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].</li>
 </ul></div>
 
-<div dir="rtl">"force_hostname_lookup"<br /></div>
+##### <div dir="rtl">"force_hostname_lookup"<br /></div>
 <div dir="rtl"><ul>
  <li>فرض بحث اسم المضيف؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء.</li>
 </ul></div>
 
-<div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
+##### <div dir="rtl">"allow_gethostbyaddr_lookup"<br /></div>
 <div dir="rtl"><ul>
  <li>السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.</li>
  <li>ملاحظة: قد لا يعمل البحث عن <code dir="ltr">IPv6</code> بشكل صحيح على بعض أنظمة <code dir="ltr">32-bit</code>.</li>
 </ul></div>
 
-<div dir="rtl">"hide_version"<br /></div>
+##### <div dir="rtl">"hide_version"<br /></div>
 <div dir="rtl"><ul>
  <li>إخفاء معلومات الإصدار من السجلات وإخراج الصفحة؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].</li>
 </ul></div>
@@ -549,67 +558,67 @@
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
-<div dir="rtl">"ipv4"<br /></div>
+##### <div dir="rtl">"ipv4"<br /></div>
 <div dir="rtl"><ul>
  <li>وهناك قائمة من الملفات توقيع عناوين IPv4 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل. يمكنك إضافة إدخالات هنا إذا كنت ترغب في تضمين الملفات توقيع الإصدار IPv4 إضافية إلى CIDRAM.</li>
 </ul></div>
 
-<div dir="rtl">"ipv6"<br /></div>
+##### <div dir="rtl">"ipv6"<br /></div>
 <div dir="rtl"><ul>
  <li>وهناك قائمة من الملفات توقيع عناوين IPv6 التي CIDRAM يجب أن تحاول معالجة، مفصولة بفواصل. يمكنك إضافة إدخالات هنا إذا كنت ترغب في تضمين الملفات توقيع الإصدار IPv6 إضافية إلى CIDRAM.</li>
 </ul></div>
 
-<div dir="rtl">"block_cloud"<br /></div>
+##### <div dir="rtl">"block_cloud"<br /></div>
 <div dir="rtl"><ul>
  <li>منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات سحابية/الاستضافة؟ إذا كنت تعمل على خدمة API من موقع الويب الخاص بك، أو إذا كنت تتوقع مواقع أخرى للاتصال موقع الويب الخاص بك، هذا يجب أن يتم تعيين إلى false. إذا لم تقم بذلك، ثم، فإنه يجب تعيين إلى true.</li>
 </ul></div>
 
-<div dir="rtl">"block_bogons"<br /></div>
+##### <div dir="rtl">"block_bogons"<br /></div>
 <div dir="rtl"><ul>
  <li>منع CIDRs المريخ/bogon؟ إذا كنت تتوقع اتصالات إلى موقع الويب الخاص بك من خلال الشبكة المحلية، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب أن يتم تعيين إلى true.</li>
 </ul></div>
 
-<div dir="rtl">"block_generic"<br /></div>
+##### <div dir="rtl">"block_generic"<br /></div>
 <div dir="rtl"><ul>
  <li>منع CIDRs الموصى بها عموما للالقائمة السوداء؟ وهذا يشمل أي التوقيعات التي ليست جزءا من الفئات الأخرى.</li>
 </ul></div>
 
-<div dir="rtl">"block_legal"<br /></div>
+##### <div dir="rtl">"block_legal"<br /></div>
 <div dir="rtl"><ul>
  <li>حظر CIDRs ردا على الالتزامات القانونية؟ لا يجب أن يكون لهذا التوجيه عادة أي تأثير، لأن CIDRAM لا تربط أي CIDR مع "التزامات قانونية"، ولكنها موجودة كإجراء تحكم إضافي لصالح أي ملفات أو وحدات توقيع مخصصة قد تكون موجودة لأسباب قانونية.</li>
 </ul></div>
 
-<div dir="rtl">"block_malware"<br /></div>
+##### <div dir="rtl">"block_malware"<br /></div>
 <div dir="rtl"><ul>
  <li>حظر عناوين IP المرتبطة بالبرامج الضارة؟ وهذا يشمل خوادم C&C، والآلات المصابة، والآلات المستخدمة في توزيع البرامج الضارة، وما إلى ذلك.</li>
 </ul></div>
 
-<div dir="rtl">"block_proxies"<br /></div>
+##### <div dir="rtl">"block_proxies"<br /></div>
 <div dir="rtl"><ul>
  <li>منع CIDRs التي تم تحديدها على أنها تنتمي إلى خدمات وكيل أو شبكات VPN؟ إذا كنت تحتاج إلى أن يكون المستخدمون قادرين على الوصول إلى موقع الويب الخاص بك من خدمات بروكسي أو شبكات VPN، هذا يجب أن يتم تعيين إلى false. ان لم، هذا يجب تعيين إلى true كوسيلة لتحسين الأمن.</li>
 </ul></div>
 
-<div dir="rtl">"block_spam"<br /></div>
+##### <div dir="rtl">"block_spam"<br /></div>
 <div dir="rtl"><ul>
  <li>منع CIDRs التي تم تحديدها على أنها مخاطر البريد المزعج؟ عندما يكون ذلك ممكنا، عموما، وهذا ينبغي دائما أن يتم تعيين إلى true.</li>
 </ul></div>
 
-<div dir="rtl">"modules"<br /></div>
+##### <div dir="rtl">"modules"<br /></div>
 <div dir="rtl"><ul>
  <li>قائمة الملفات وحدة لتحميل بعد التحقق من التوقيعات IPv4/IPv6، مفصولة بفواصل.</li>
 </ul></div>
 
-<div dir="rtl">"default_tracktime"<br /></div>
+##### <div dir="rtl">"default_tracktime"<br /></div>
 <div dir="rtl"><ul>
  <li>كم ثانية لتعقب IP حظرت من قبل وحدات. افتراضي = 604800 (1 أسبوع).</li>
 </ul></div>
 
-<div dir="rtl">"infraction_limit"<br /></div>
+##### <div dir="rtl">"infraction_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>يسمح الحد الأقصى لعدد المخالفات IP يمكن أن تتكبد قبل أن يتم حظره من قبل تتبع IP. افتراضي = 10.</li>
 </ul></div>
 
-<div dir="rtl">"track_mode"<br /></div>
+##### <div dir="rtl">"track_mode"<br /></div>
 <div dir="rtl"><ul>
  <li>متى يجب أن تحسب المخالفات؟ زائفة/False = عندما IP تم حظره من قبل وحدات. صحيح/True = عندما IP يتم حظر لأي سبب من الأسباب.</li>
 </ul></div>
@@ -621,7 +630,7 @@
 
 <div dir="rtl">للحصول على "site key" و "secret key" (مطلوب لاستخدام اختبار reCAPTCHA)، الرجاء الذهاب إلى: <a href="https://developers.google.com/recaptcha/">https://developers.google.com/recaptcha/</a><br /><br /></div>
 
-<div dir="rtl">"usemode"<br /></div>
+##### <div dir="rtl">"usemode"<br /></div>
 <div dir="rtl"><ul>
  <li>هذا ويعرف كيفية CIDRAM يجب استخدام اختبار reCAPTCHA.</li>
  <li>0 = reCAPTCHA لم يتم تمكين (الافتراضي).</li>
@@ -630,33 +639,33 @@
  <li>(سيتم التعامل مع أي قيمة أخرى بالطريقة نفسها ك 0).</li>
 </ul></div>
 
-<div dir="rtl">"lockip"<br /></div>
+##### <div dir="rtl">"lockip"<br /></div>
 <div dir="rtl"><ul>
  <li>تحدد ما إذا كان التجزئة يجب أن يكون مؤمنا إلى عناوين IP محددة. زائفة/False = الكوكيز والتجزئة يمكن استخدامها عبر عدة عناوين IP (الافتراضي). صحيح/True = الكوكيز والتجزئة لا يمكن استخدامها عبر عدة عناوين IP (وتخوض الكوكيز والتجزئة إلى عناوين IP).</li>
  <li>ملحوظة: "lockip" يتم تجاهل قيمة عندما "lockuser" غير false (آلية لتذكر المستخدمين مختلفة، اعتمادا على هذه القيمة).</li>
 </ul></div>
 
-<div dir="rtl">"lockuser"<br /></div>
+##### <div dir="rtl">"lockuser"<br /></div>
 <div dir="rtl"><ul>
  <li>تحدد ما إذا كان اختبار reCAPTCHA يجب أن يكون مؤمنا لمستخدمين محددين. زائفة/False = الانتهاء من اختبار reCAPTCHA منح حق الوصول إلى كافة الطلبات من عنوان IP نفسه؛ لا تستخدم الكوكيز والتجزئة؛ بدلا من ذلك، سيتم استخدام قائمة بيضاء IP. صحيح/True = الانتهاء من اختبار reCAPTCHA منح حق الوصول فقط إلى المستخدم؛ تستخدم الكوكيز والتجزئة لتذكر المستخدم؛ لا يتم استخدام القائمة البيضاء IP (الافتراضي).</li>
 </ul></div>
 
-<div dir="rtl">"sitekey"<br /></div>
+##### <div dir="rtl">"sitekey"<br /></div>
 <div dir="rtl"><ul>
  <li>يجب أن تتطابق هذه القيمة إلى "site key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.</li>
 </ul></div>
 
-<div dir="rtl">"secret"<br /></div>
+##### <div dir="rtl">"secret"<br /></div>
 <div dir="rtl"><ul>
  <li>يجب أن تتطابق هذه القيمة إلى "secret key" لاختبار reCAPTCHA الخاص بك، التي يمكن العثور عليها داخل لوحة التحكم اختبار reCAPTCHA.</li>
 </ul></div>
 
-<div dir="rtl">"expiry"<br /></div>
+##### <div dir="rtl">"expiry"<br /></div>
 <div dir="rtl"><ul>
  <li>عندما "lockuser" هو true (الافتراضي)، من أجل أن نتذكر عند اكتمال المستخدم اختبار reCAPTCHA، لطلبات الصفحة المستقبلية، CIDRAM سوف إنشاء ملف تعريف ارتباط HTTP القياسية التي تتضمن تجزئة، والتي تتطابق مع السجل الداخلي، والذي يحتوي على نفس التجزئة؛ سوف طلبات الصفحة في المستقبل استخدام هذه لمصادقة المستخدم. عندما "lockuser" هو false، تم استخدام القائمة البيضاء IP لتحديد ما إذا كان ينبغي السماح الطلبات؛ وأضاف إدخالات إلى هذا البيضاء عند اكتمال اختبار reCAPTCHA. عدد الساعات يجب أن تبقى هذه صالحة؟ الافتراضي = 720 (١ شهر).</li>
 </ul></div>
 
-<div dir="rtl">"logfile"<br /></div>
+##### <div dir="rtl">"logfile"<br /></div>
 <div dir="rtl"><ul>
  <li>تسجيل جميع محاولات اختبار reCAPTCHA؟ إذا كانت الإجابة بنعم، حدد اسم لاستخدامه في ملف السجل. ان لم، ترك هذا الحقل فارغا.</li>
 </ul></div>
@@ -665,12 +674,12 @@
 
 `logfile='recaptcha.{yyyy}-{mm}-{dd}-{hh}.txt'`
 
-<div dir="rtl">"signature_limit"<br /></div>
+##### <div dir="rtl">"signature_limit"<br /></div>
 <div dir="rtl"><ul>
  <li>الحد الأقصى لعدد التوقيعات المسموح بتشغيلها عند تقديم مثال reCAPTCHA. افتراضي = 1. إذا تم تجاوز هذا الرقم لأي طلب معين، لن يتم عرض مثال reCAPTCHA.</li>
 </ul></div>
 
-<div dir="rtl">"api"<br /></div>
+##### <div dir="rtl">"api"<br /></div>
 <div dir="rtl"><ul>
  <li>أي API لاستخدام؟ V2 أو Invisible؟</li>
 </ul></div>
@@ -682,27 +691,27 @@
 
 <div dir="rtl">لمزيد من المعلومات حول المتطلبات القانونية وكيف يمكن أن يؤثر ذلك على متطلبات التهيئة الخاصة بك، يرجى الرجوع إلى قسم <a href="#SECTION11">المعلومات القانونية</a> من الوثائق.<br /><br /></div>
 
-<div dir="rtl">"pseudonymise_ip_addresses"<br /></div>
+##### <div dir="rtl">"pseudonymise_ip_addresses"<br /></div>
 <div dir="rtl"><ul>
  <li>إخفاء عناوين IP عند كتابة السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].</li>
 </ul></div>
 
-<div dir="rtl">"omit_ip"<br /></div>
+##### <div dir="rtl">"omit_ip"<br /></div>
 <div dir="rtl"><ul>
  <li>حذف عناوين IP من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. ملاحظة: يصبح "pseudonymise_ip_addresses" مكررًا عندما يكون "omit_ip" هو "true".</li>
 </ul></div>
 
-<div dir="rtl">"omit_hostname"<br /></div>
+##### <div dir="rtl">"omit_hostname"<br /></div>
 <div dir="rtl"><ul>
  <li>حذف أسماء المضيف من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].</li>
 </ul></div>
 
-<div dir="rtl">"omit_ua"<br /></div>
+##### <div dir="rtl">"omit_ua"<br /></div>
 <div dir="rtl"><ul>
  <li>حذف وكلاء المستخدم من السجلات؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].</li>
 </ul></div>
 
-<div dir="rtl">"privacy_policy"<br /></div>
+##### <div dir="rtl">"privacy_policy"<br /></div>
 <div dir="rtl"><ul>
  <li>عنوان سياسة الخصوصية ذات الصلة ليتم عرضها في تذييل الصفحات التي تم إنشاؤها. حدد عنوان URL، أو اتركه فارغًا لتعطيله.</li>
 </ul></div>
@@ -712,17 +721,17 @@
 
 <div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "تم رفض الوصول" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ CIDRAM، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين foo="bar"، أي مثيل &lt;p&gt;{foo}&lt;/p&gt; وجدت داخل إخراج HTML ستصبح &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
 
-<div dir="rtl">"theme"<br /></div>
+##### <div dir="rtl">"theme"<br /></div>
 <div dir="rtl"><ul>
  <li>الموضوع الافتراضي لاستخدام CIDRAM.</li>
 </ul></div>
 
-<div dir="rtl">"Magnification"<br /></div>
+##### <div dir="rtl">"Magnification"<br /></div>
 <div dir="rtl"><ul>
  <li>تكبير الخط. افتراضي = 1.</li>
 </ul></div>
 
-<div dir="rtl">"css_url"<br /></div>
+##### <div dir="rtl">"css_url"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد CIDRAM لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم CIDRAM باستخدام ملف القالب لموضوع التقصير.</li>
 </ul></div>
@@ -1068,12 +1077,13 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 <div dir="rtl">تم العثور على الحزم والمنتجات التالية لتكون غير متوافقة مع CIDRAM:</div>
 <div dir="rtl"><ul>
- <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
+ <li><strong><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/52">Endurance Page Cache</a></strong></li>
+ <li><strong><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></strong></li>
 </ul></div>
 
 <div dir="rtl">تم توفير وحدات لضمان توافق الحزم والمنتجات التالية مع CIDRAM:</div>
 <div dir="rtl"><ul>
- <li><strong><a href="https://github.com/CIDRAM/CIDRAM/issues/56">BunnyCDN</a></strong></li>
+ <li><strong><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/56">BunnyCDN</a></strong></li>
 </ul></div>
 
 <div dir="rtl"><em>انظر أيضا: <a href="https://maikuolan.github.io/Compatibility-Charts/">مخططات التوافق</a>.</em><br /><br /></div>
@@ -1485,7 +1495,7 @@ If you want to take it a step further by preventing specific types of informatio
  <li><code dir="ltr">omit_ua</code> &lt;- <code dir="ltr">legal</code></li>
 </ul></div>
 
-#### <div dir="rtl">١١.٣.٧ الإحصاء<br /><br /></div>
+##### <div dir="rtl">١١.٣.٧ الإحصاء<br /><br /></div>
 
 <div dir="rtl">CIDRAM قادر بشكل اختياري على تتبع الإحصائيات مثل إجمالي عدد أحداث المنع أو حالات reCAPTCHA التي حدثت منذ وقت معين. يتم تعطيل هذه الميزة بشكل افتراضي، ولكن يمكن تمكينها من خلال تهيئة الحزمة. هذه الميزة لا تتبع سوى العدد الإجمالي للأحداث. لا يتضمن أي معلومات حول أحداث معينة، لذلك لا ينبغي اعتباره معلومات تحديد الهوية الشخصية.<br /><br /></div>
 
@@ -1494,9 +1504,9 @@ If you want to take it a step further by preventing specific types of informatio
  <li><code dir="ltr">statistics</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.8 ENCRYPTION
+##### <div dir="rtl">١١.٣.٨ التشفير<br /><br /></div>
 
-CIDRAM doesn't encrypt its cache or any log information. Cache and log encryption may be introduced in the future, but there aren't any specific plans for it currently. If you're concerned about unauthorised third parties gaining access to parts of CIDRAM that may contain PII or sensitive information such as its cache or logs, I would recommend that CIDRAM not be installed at a publicly accessible location (e.g., install CIDRAM outside the standard `public_html` directory or equivalent thereof available to most standard webservers) and that appropriately restrictive permissions be enforced for the directory where it resides (in particular, for the vault directory). If that isn't sufficient to address your concerns, then configure CIDRAM as such that the types of information causing your concerns won't be collected or logged in the first place (such as, by disabling logging).
+<div dir="rtl">لا يقوم CIDRAM بتشفير ذاكرة التخزين المؤقت أو أي معلومات سجل. قد يتم إدخال <a href="https://ar.wikipedia.org/wiki/%D8%AA%D8%B4%D9%81%D9%8A%D8%B1">تشفير</a> ذاكرة التخزين المؤقت والسجلات في المستقبل، ولكن لا توجد خطط محددة لها حاليًا. إذا كنت قلقًا بشأن حصول أطراف ثالثة غير مصرح لها على إمكانية الوصول إلى أجزاء من CIDRAM قد تحتوي على معلومات تحديد الهوية الشخصية أو معلومات حساسة مثل ذاكرة التخزين المؤقت أو السجلات، أوصي بعدم تثبيت CIDRAM في مكان يمكن الوصول إليه بشكل عام (على سبيل المثال، مجلد تثبيت CIDRAM خارج الدليل <code dir="ltr">public_html</code> القياسي أو ما يعادله، متاح لمعظم خوادم الويب القياسية) والتأكد من فرض الأذونات المقيدة بشكل مناسب لدليل التثبيت (على وجه الخصوص، لدليل <code dir="ltr">vault</code>). إذا لم يكن ذلك كافيًا لمعالجة مخاوفك، فقم بتكوين CIDRAM بحيث لا يتم جمع أنواع المعلومات التي تسبب مخاوفك أو تسجيلها في المقام الأول (مثل، عن طريق تعطيل التسجيل).<br /><br /></div>
 
 #### <div dir="rtl">١١.٤ ملف تعريف ارتباط<br /><br /></div>
 
@@ -1548,4 +1558,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخر تحديث: 14 يوليو 2018 (2018.07.14).</div>
+<div dir="rtl">آخر تحديث: 17 يوليو 2018 (2018.07.17).</div>

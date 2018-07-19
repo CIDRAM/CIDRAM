@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.06.28).
+ * This file: Front-end handler (last modified: 2018.07.17).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2893,11 +2893,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
             if ($CIDRAM['FE']['BlockSeparator'] === "\n\n") {
                 $CIDRAM['FE']['logfileData'] = substr($CIDRAM['FE']['NewLogFileData'], strlen($CIDRAM['FE']['BlockSeparator'])) . $CIDRAM['FE']['BlockSeparator'];
             }
-            if (!str_replace("\n", '', $CIDRAM['FE']['logfileData'])) {
-                $CIDRAM['FE']['EntryCount'] = 0;
-            } else {
-                $CIDRAM['FE']['EntryCount'] = substr_count($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator']);
-            }
+            $CIDRAM['FE']['EntryCount'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
+                substr_count($CIDRAM['FE']['logfileData'], $CIDRAM['FE']['BlockSeparator'])
+            );
             unset($CIDRAM['FE']['Needle'], $CIDRAM['FE']['BlockSeparator'], $CIDRAM['FE']['BlockEnd'], $CIDRAM['FE']['BlockStart'], $CIDRAM['FE']['NewLogFileData']);
             $CIDRAM['FE']['SearchInfoRender'] = (
                 $CIDRAM['FE']['Flags'] && preg_match('~^[A-Z]{2}$~', $CIDRAM['FE']['SearchQuery'])
@@ -2908,11 +2906,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
                 $CIDRAM['FE']['SearchInfoRender']
             );
         } else {
-            if (!str_replace("\n", '', $CIDRAM['FE']['logfileData'])) {
-                $CIDRAM['FE']['EntryCount'] = 0;
-            } else {
-                $CIDRAM['FE']['EntryCount'] = substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n");
-            }
+            $CIDRAM['FE']['EntryCount'] = !str_replace("\n", '', $CIDRAM['FE']['logfileData']) ? 0 : (
+                substr_count($CIDRAM['FE']['logfileData'], "\n\n") ?: substr_count($CIDRAM['FE']['logfileData'], "\n")
+            );
             if (substr($CIDRAM['FE']['logfileData'], 0, 2) === '<?') {
                 $CIDRAM['FE']['EntryCount']--;
             }

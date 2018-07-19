@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.05.16).
+ * This file: Russian language data (last modified: 2018.07.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -53,15 +53,15 @@ $CIDRAM['lang']['fake_ua'] = 'Поддельный {ua}';
 $CIDRAM['lang']['field_datetime'] = 'Дата/Время: ';
 $CIDRAM['lang']['field_hostname'] = 'Имя хоста: ';
 $CIDRAM['lang']['field_id'] = 'ИД: ';
-$CIDRAM['lang']['field_ipaddr'] = 'IP Адрес: ';
-$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP Адрес (Постановили): ';
+$CIDRAM['lang']['field_ipaddr'] = 'IP-адрес: ';
+$CIDRAM['lang']['field_ipaddr_resolved'] = 'IP-адрес (Постановили): ';
 $CIDRAM['lang']['field_query'] = 'Запрос/Query: ';
 $CIDRAM['lang']['field_rURI'] = 'Реконструированный URI: ';
 $CIDRAM['lang']['field_reCAPTCHA_state'] = 'Статус reCAPTCHA: ';
 $CIDRAM['lang']['field_referrer'] = 'От (Referer): ';
 $CIDRAM['lang']['field_scriptversion'] = 'Скрипт Версия: ';
-$CIDRAM['lang']['field_sigcount'] = 'Количество подписей: ';
-$CIDRAM['lang']['field_sigref'] = 'Идентификаторы для подписей: ';
+$CIDRAM['lang']['field_sigcount'] = 'Количество сигнатурей: ';
+$CIDRAM['lang']['field_sigref'] = 'Идентификаторы для сигнатурей: ';
 $CIDRAM['lang']['field_ua'] = 'Агент пользователя (User Agent): ';
 $CIDRAM['lang']['field_whyreason'] = 'Почему Заблокированные: ';
 $CIDRAM['lang']['generated_by'] = 'Генерируется от';

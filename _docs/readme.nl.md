@@ -431,27 +431,27 @@ Waarde | Produceert | Beschrijving
 - Poging om aanvragen van zoekmachines te bevestigen? Verificatie van zoekmachines zorgt ervoor dat ze niet zullen worden verboden als gevolg van het overschrijden van de overtreding limiet (verbod op zoekmachines van uw website zal meestal een negatief effect hebben op uw zoekmachine ranking, SEO, enz). Wanneer geverifieerd, zoekmachines kunnen worden geblokkeerd als per normaal, maar zal niet worden verboden. Wanneer niet geverifieerd, het is mogelijk dat zij worden verboden ten gevolge van het overschrijden van de overtreding limiet. Bovendien, het verifiëren van zoekmachines biedt bescherming tegen nep-zoekmachine aanvragen en tegen de mogelijk schadelijke entiteiten vermomd als zoekmachines (dergelijke aanvragen zal worden geblokkeerd wanneer het verifiëren van zoekmachines is ingeschakeld). True = Inschakelen het verifiëren van zoekmachines [Standaard]; False = Uitschakelen het verifiëren van zoekmachines.
 
 Momenteel ondersteund:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Niet compatibel (veroorzaakt conflicten):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Poging om aanvragen voor sociale media te verifiëren? Verificatie van sociale media biedt bescherming tegen nep-aanvragen voor sociale media (dergelijke aanvragen worden geblokkeerd). True = Inschakelen verificatie van sociale media [Standaard]; False = Uitschakelen verificatie van sociale media.
 
 Momenteel ondersteund:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Geeft aan of de bescherming die gewoonlijk door CIDRAM is voorzien moet worden toegepast op de frontend. True = Ja [Standaard]; False = Nee.
@@ -1242,7 +1242,7 @@ Een geregistreerde blokgebeurtenis bevat meestal de volgende informatie:
 - Een reconstructie van de identifier voor de oorspronkelijk aangevraagde bron.
 - De reCAPTCHA state voor het huidige verzoek (indien relevant).
 
-De configuratie richtlijnen die verantwoordelijk zijn voor dit type loggen, en voor elk van de drie beschikbare indelingen, zijn:
+*De configuratie richtlijnen die verantwoordelijk zijn voor dit type loggen, en voor elk van de drie beschikbare indelingen, zijn:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Een reCAPTCHA-logsinvoer bevat het IP-adres van de gebruiker die probeert een re
 IP-Adres: x.x.x.x - Datum/Tijd: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Succes!
 ```
 
-De configuratie richtlijn die verantwoordelijk is voor reCAPTCHA loggen is:
+*De configuratie richtlijn die verantwoordelijk is voor reCAPTCHA loggen is:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 FRONTEND LOGGEN
@@ -1272,7 +1272,7 @@ Een frontend logsinvoer bevat het IP-adres van de gebruiker die probeert in te l
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Ingelogd.
 ```
 
-De configuratie-optie die verantwoordelijk is voor de frontend toegang te loggen is:
+*De configuratie-optie die verantwoordelijk is voor de frontend toegang te loggen is:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOGROTATIE
@@ -1381,4 +1381,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 17 Juli 2018 (2018.07.17).
+Laatste Bijgewerkt: 20 Juli 2018 (2018.07.20).

@@ -431,27 +431,27 @@ Valor | Produce | Descripción
 - ¿Intentar verificar las solicitudes de los motores de búsqueda? La verificación de los motores de búsqueda asegura que no serán prohibidos como resultado de exceder el número máximo de infracciones (la prohibición de los motores de búsqueda de su sitio web por lo general tendrán un efecto negativo sobre su ranking de motores de búsqueda, SEO, etc). Cuando se verifica, los motores de búsqueda se pueden bloquear como de costumbre, pero no se prohibirá. Cuando no se verifica, es posible que se les prohíba como resultado de exceder el número máximo de infracciones. Adicionalmente, la verificación de motores de búsqueda proporciona protección contra las solicitudes de motor de búsqueda falsas y contra entidades potencialmente maliciosas disfrazadas de motores de búsqueda (tales solicitudes serán bloqueadas cuando la verificación del motor de búsqueda esté habilitada). True = Activar la verificación del motores de búsqueda [Predefinido]; False = Desactivar la verificación del motores de búsqueda.
 
 Soportado actualmente:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 No es compatible (causa conflictos):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - ¿Intentar verificar las solicitudes de las redes sociales? La verificación de las redes sociales brinda protección contra solicitudes falsas de redes sociales (tales solicitudes serán bloqueadas). True = Activar la verificación de redes sociales [Predefinido]; False = Desactivar la verificación de redes sociales.
 
 Soportado actualmente:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Especifica si las protecciones normalmente proporcionadas por CIDRAM deben aplicarse al front-end. True = Sí [Predefinido]; False = No.
@@ -1242,7 +1242,7 @@ Un evento de bloque registrado generalmente incluye la siguiente información:
 - Una reconstrucción del identificador para el recurso solicitado originalmente.
 - El estado reCAPTCHA para la solicitud actual (cuando sea relevante).
 
-Las directivas de configuración responsables de este tipo de registro y de cada uno de los tres formatos disponibles son:
+*Las directivas de configuración responsables de este tipo de registro y de cada uno de los tres formatos disponibles son:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Una entrada de registros de reCAPTCHA contiene la dirección IP del usuario que 
 Dirección IP: x.x.x.x - Fecha/Hora: Day, dd Mon 20xx hh:ii:ss +0000 - Estado reCAPTCHA: ¡Éxito!
 ```
 
-La directiva de configuración responsable del registros de reCAPTCHA es:
+*La directiva de configuración responsable del registros de reCAPTCHA es:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 REGISTROS DE FRONT-END
@@ -1272,7 +1272,7 @@ Una entrada de registro en el front-end contiene la dirección IP del usuario qu
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Conectado.
 ```
 
-La directiva de configuración responsable del inicio de sesión es:
+*La directiva de configuración responsable del inicio de sesión es:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ROTACIÓN DE REGISTROS
@@ -1380,4 +1380,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 17 Julio de 2018 (2018.07.17).
+Última Actualización: 20 Julio de 2018 (2018.07.20).

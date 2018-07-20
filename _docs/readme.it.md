@@ -431,27 +431,27 @@ Valore | Produce | Descrizione
 - Tentativo di verificare le richieste dai motori di ricerca? La verifica dei motori di ricerca assicura che non saranno vietate a seguito del superamento del limite infrazione (vieta dei motori di ricerca dal vostro sito web di solito hanno un effetto negativo sul vostro posizionamento sui motori di ricerca, SEO, ecc). Quando verificato, i motori di ricerca possono essere bloccati come al solito, ma non saranno vietate. Quando non verificato, è possibile per loro di essere vietate a seguito del superamento del limite infrazione. Inoltre, verifica dei motori di ricerca fornisce una protezione contro le richieste dei motori di ricerca falso e contro le entità potenzialmente dannosi mascherato da motori di ricerca (tali richieste verranno bloccate quando la verifica dei motori di ricerca è attivato). True = Attiva la verifica dei motori di ricerca [Predefinito]; False = Disattiva la verifica dei motori di ricerca.
 
 Attualmente supportato:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Non compatibile (causa conflitti):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Tentativo di verificare le richieste dei social media? La verifica dei social media fornisce protezione contro le false richieste dei social media (tali richieste saranno bloccate). True = Attiva la verifica dei social media [Predefinito]; False = Disattiva la verifica dei social media.
 
 Attualmente supportato:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Specifica se le protezioni normalmente fornite da CIDRAM devono essere applicati al front-end. True = Sì [Predefinito]; False = No.
@@ -1242,7 +1242,7 @@ Un evento di blocco registrato include in genere le seguenti informazioni:
 - Una ricostruzione dell'identificatore per la risorsa originariamente richiesta.
 - Lo stato reCAPTCHA per la richiesta corrente (se pertinente).
 
-Le direttive di configurazione responsabili di questo tipo di registrazione, e per ciascuno dei tre formati disponibili sono:
+*Le direttive di configurazione responsabili di questo tipo di registrazione, e per ciascuno dei tre formati disponibili sono:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Una voce di registro reCAPTCHA contiene l'indirizzo IP dell'utente che tenta di 
 Indirizzo IP: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - Stato reCAPTCHA: Successo!
 ```
 
-La direttiva di configurazione responsabile delle registri di reCAPTCHA è:
+*La direttiva di configurazione responsabile delle registri di reCAPTCHA è:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 REGISTRI DEL FRONT-END
@@ -1272,7 +1272,7 @@ Una voce di registro front-end contiene l'indirizzo IP dell'utente che tenta di 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Connesso.
 ```
 
-La direttiva di configurazione responsabile delle registri di front-end è:
+*La direttiva di configurazione responsabile delle registri di front-end è:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ROTAZIONE DEL REGISTRO
@@ -1378,4 +1378,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 17 Luglio 2018 (2018.07.17).
+Ultimo Aggiornamento: 20 Luglio 2018 (2018.07.20).

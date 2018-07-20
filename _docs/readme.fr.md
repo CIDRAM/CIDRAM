@@ -431,27 +431,27 @@ Valeur | Produit | Description
 - Essayez de vérifier les moteurs de recherche ? Vérification des moteurs de recherche assure qu'ils ne seront pas interdits en raison de dépassement de la limite d'infraction (l'interdiction des moteurs de recherche de votre site web aura généralement un effet négatif sur votre moteur de recherche classement, SEO, etc). Lorsqu'ils sont vérifiés, les moteurs de recherche peuvent être bloqués comme d'habitude, mais ne seront pas interdits. Lorsqu'ils ne sont pas vérifiés, il est possible qu'ils soient interdits en raison du dépassement de la limite d'infraction. Aussi, la vérification des moteurs de recherche offre une protection contre les fausses requêtes des moteurs de recherche et contre les entités potentiellement malveillantes masquer comme moteurs de recherche (ces requêtes seront bloquées lorsque la vérification du moteur de recherche est activée). True = Activer la vérification du moteurs de recherche [Défaut] ; False = Désactiver la vérification du moteurs de recherche.
 
 Supporté actuellement :
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 N'est pas compatible (provoque des conflits) :
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### « social_media_verification »
 - Essayez de vérifier des requêtes de médias sociaux ? La vérification des médias sociaux offre une protection contre les fausses requêtes de médias sociaux (ces requêtes seront bloquées). True = Activer la vérification des médias sociaux [Défaut] ; False = Désactiver la vérification des médias sociaux.
 
 Supporté actuellement :
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### « protect_frontend »
 - Spécifie si les protections normalement fournies par CIDRAM doivent être appliquées à l'accès frontal. True = Oui [Défaut] ; False = Non.
@@ -1242,7 +1242,7 @@ Un événement blocage journalisé inclut généralement les informations suivan
 - Une reconstruction de l'identifiant de la ressource initialement requêtée.
 - L'état reCAPTCHA pour la requête en cours (le cas échéant).
 
-Les directives de configuration responsables de ce type de journalisation, et pour chacun des trois formats disponibles, sont :
+*Les directives de configuration responsables de ce type de journalisation, et pour chacun des trois formats disponibles, sont :*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Une entrée de journal reCAPTCHA contient l'adresse IP de l'utilisateur qui tent
 IP Adresse : x.x.x.x - Date/Heure : Day, dd Mon 20xx hh:ii:ss +0000 - État reCAPTCHA : Passé !
 ```
 
-La directive de configuration responsable de la journalisation reCAPTCHA est :
+*La directive de configuration responsable de la journalisation reCAPTCHA est :*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 JOURNALISATION FRONTALE
@@ -1272,7 +1272,7 @@ Une entrée de journal frontal contient l'adresse IP de l'utilisateur qui tente 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Connecté.
 ```
 
-La directive de configuration responsable de la journalisation frontale est :
+*La directive de configuration responsable de la journalisation frontale est :*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ROTATION DES JOURNAUX
@@ -1379,4 +1379,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 17 Juillet 2018 (2018.07.17).
+Dernière mise à jour : 20 Juillet 2018 (2018.07.20).

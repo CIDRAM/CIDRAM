@@ -485,20 +485,20 @@
 
 <div dir="rtl">فی الحال تعاون کی گئی:<br /></div>
 <div dir="rtl"><ul>
- <li><a dir="ltr" href="https://support.google.com/webmasters/answer/80553?hl=en">Google</a></li>
- <li><a dir="ltr" href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></li>
- <li>Yahoo</li>
- <li><a dir="ltr" href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></li>
- <li dir="ltr">Sogou (搜狗)</li>
- <li dir="ltr">Youdao (有道)</li>
- <li><a dir="ltr" href="https://discussions.apple.com/thread/7090135">Applebot</a></li>
- <li><a dir="ltr" href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></li>
- <li><a dir="ltr" href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></li>
+ <li><strong dir="ltr"><a href="https://support.google.com/webmasters/answer/80553?hl=en">Google</a></strong></li>
+ <li><strong dir="ltr"><a href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></strong></li>
+ <li><strong dir="ltr">Yahoo</strong></li>
+ <li><strong dir="ltr"><a href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></strong></li>
+ <li><strong dir="ltr">Sogou (搜狗)</strong></li>
+ <li><strong dir="ltr">Youdao (有道)</strong></li>
+ <li><strong dir="ltr"><a href="https://discussions.apple.com/thread/7090135">Applebot</a></strong></li>
+ <li><strong dir="ltr"><a href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></strong></li>
+ <li><strong dir="ltr"><a href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></strong></li>
 </ul></div>
 
 <div dir="rtl">مطابقت نہیں ہے (تنازعات کا سبب بنتا ہے):<br /></div>
 <div dir="rtl"><ul>
- <li><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></li>
+ <li><strong dir="ltr"><a href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></strong></li>
 </ul></div>
 
 ##### <div dir="rtl">"social_media_verification"<br /></div>
@@ -508,10 +508,10 @@
 
 <div dir="rtl">فی الحال تعاون کی گئی:<br /></div>
 <div dir="rtl"><ul>
- <li><a dir="ltr" href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></li>
- <li>Embedly</li>
- <li><a dir="ltr" href="https://www.grapeshot.com/crawler/">Grapeshot</a></li>
- <li>Twitterbot</li>
+ <li><strong dir="ltr"><a href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></strong></li>
+ <li><strong dir="ltr">Embedly</strong></li>
+ <li><strong dir="ltr"><a href="https://www.grapeshot.com/crawler/">Grapeshot</a></strong></li>
+ <li><strong dir="ltr">Twitterbot</strong></li>
 </ul></div>
 
 ##### <div dir="rtl">"protect_frontend"<br /></div>
@@ -719,14 +719,14 @@
 #### <div dir="rtl">"template_data" (قسم)<br /></div>
 <div dir="rtl">سانچوں اور موضوعات کے لئے ہدایات / متغیر.<br /><br /></div>
 
-<div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ CIDRAM لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار "template_custom.html" فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار "template.html" فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں foo="bar" بار کے کسی بھی مثال &lt;p&gt;{foo}&lt;/p&gt; HTML پیداوار کے اندر اندر پایا بن جائے گا &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
+<div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ CIDRAM لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار <code dir="ltr">template_custom.html</code> فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار <code dir="ltr">template.html</code> فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں <code dir="ltr">foo="bar"</code> بار کے کسی بھی مثال <code dir="ltr">&lt;p&gt;{foo}&lt;/p&gt;</code> HTML پیداوار کے اندر اندر پایا بن جائے گا <code dir="ltr">&lt;p&gt;bar&lt;/p&gt;</code>.<br /><br /></div>
 
 ##### <div dir="rtl">"theme"<br /></div>
 <div dir="rtl"><ul>
  <li>CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.</li>
 </ul></div>
 
-##### <div dir="rtl">"Magnificatio"<br /></div>
+##### <div dir="rtl">"Magnification"<br /></div>
 <div dir="rtl"><ul>
  <li>فونٹ اضافہ. پہلے سے طے شدہ = 1.</li>
 </ul></div>
@@ -1320,9 +1320,9 @@ If you use any features or modules intended to work with hostnames (such as the 
  <li><code dir="ltr">allow_gethostbyaddr_lookup</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.2.1 WEBFONTS
+##### <div dir="rtl">١١.٢.١ ویب فونٹس<br /><br /></div>
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+<div dir="rtl">کچھ اپنی مرضی کے مطابق موضوعات، معیاری CIDRAM صارف انٹرفیس، اور "رسائی نہیں ہوئی" صفحہ، ویب فونٹس کو جمالیاتی وجوہات کے لۓ استعمال کرسکتے ہیں. ویب فونٹس ڈیفالٹ کے ذریعہ غیر فعال ہیں. فعال ہونے پر، صارف کے برائوزر اور ویب فونٹ میزبان کے درمیان براہ راست مواصلات موجود ہے. یہ ممکنہ طور پر مواصلاتی معلومات جیسے صارف کے IP ایڈریس، صارف ایجنٹ، آپریٹنگ سسٹم، اور درخواست کے لئے دستیاب دیگر تفصیلات شامل ہوسکتا ہے. ان میں سے زیادہ تر ویب فونٹس <a href="https://fonts.google.com/">Google Fonts</a> سروس کی طرف سے میزبان ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1558,4 +1558,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 17 جولائی 2018 (2018.07.17).</div>
+<div dir="rtl">آخری تازہ کاری: 20 جولائی 2018 (2018.07.20).</div>

@@ -432,27 +432,27 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 - 尝试验证来自搜索引擎的请求？​验证搜索引擎确保他们不会因超过违规限制而被禁止 （禁止在您的网站上使用搜索引擎通常会有产生负面影响对您的搜索引擎排名，​SEO，​等等）。​当被验证，​搜索引擎可以被阻止，​但不会被禁止。​当不被验证，​他们可以由于超过违规限制而被禁止。​另外，​搜索引擎验证提供保护针对假搜索引擎请求和针对潜在的恶意实体伪装成搜索引擎（当搜索引擎验证是启用，​这些请求将被阻止）。​True（真）=搜索引擎验证是启用【标准】；​False（假）=搜索引擎验证是禁用。
 
 目前支持：
-- [Google (谷歌)](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo (雅虎)
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google (谷歌)](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo (雅虎)__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 不兼容（导致冲突）：
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### “social_media_verification”
 - 尝试验证社交媒体请求？​社交媒体验证可以防止虚假社交媒体请求（此类请求将被阻止）。​True（真）=启用社交媒体验证【标准】；​False（假）=禁用社交媒体验证。
 
 目前支持：
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### “protect_frontend”
 - 指定是否应将CIDRAM通常提供的保护应用于前端。​True（真）=是【标准】；​False（假）=不是。
@@ -1201,56 +1201,56 @@ CIDRAM提供了一个可选模块，它使用API来检查入站请求的IP地址
 
 CIDRAM可以执行多种类型的日志记录。​不同类型的日志记录涉及不同类型的信息，出于各种原因。
 
-##### 11.3.0 BLOCK EVENTS
+##### 11.3.0 阻止事件
 
-The primary type of logging that CIDRAM can perform relates to "block events". This type of logging relates to when CIDRAM blocks a request, and can be provided in three different formats:
-- Human readable logfiles.
-- Apache-style logfiles.
-- Serialised logfiles.
+CIDRAM可以执行的主要日志记录类型与“阻止事件”有关。​当CIDRAM阻止请求时会发生这种日志记录类型，并且可以以三种不同的格式提供：
+- 人类可读的日志文件。
+- Apache风格的日志文件。
+- 序列化日志文件。
 
-A block event, logged to a human readable logfile, typically looks something like this (as an example):
+记录到人类可读日志文件的阻止事件通常看起来像这样（作为示例）：
 
 ```
-ID: 1234
-Script Version: CIDRAM v1.6.0
-Date/Time: Day, dd Mon 20xx hh:ii:ss +0000
-IP Address: x.x.x.x
-Hostname: dns.hostname.tld
-Signatures Count: 1
-Signatures Reference: x.x.x.x/xx
-Why Blocked: Cloud service ("Network Name", Lxx:Fx, [XX])!
-User Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-Reconstructed URI: http://your-site.tld/index.php
-reCAPTCHA State: Enabled.
+ID： 1234
+脚本版本： CIDRAM v1.6.0
+日期/时间： Day, dd Mon 20xx hh:ii:ss +0000
+IP地址： x.x.x.x
+主机名： dns.hostname.tld
+签名计数： 1
+签名参考： x.x.x.x/xx
+为什么被阻止： 云服务 ("网络名字", Lxx:Fx, [XX])!
+用户代理： Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+重建URI： http://your-site.tld/index.php
+reCAPTCHA状态： 打开。
 ```
 
-That same block event, logged to an Apache-style logfile, would look something like this:
+记录到Apache样式的日志文件中的同一块事件看起来像这样：
 
 ```
 x.x.x.x - - [Day, dd Mon 20xx hh:ii:ss +0000] "GET /index.php HTTP/1.1" 200 xxxx "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
-A logged block event typically includes the following information:
-- An ID number referencing the block event.
-- The version of CIDRAM currently in use.
-- The date and time that the block event occurred.
-- The IP address of the blocked request.
-- The hostname of the IP address of the blocked request (when available).
-- The number of signatures triggered by the request.
-- References to the signatures triggered.
-- References to the reasons for the block event and some basic, related debug information.
-- The user agent of the blocked request (i.e., how the requesting entity identified itself to the request).
-- A reconstruction of the identifier for the resource originally requested.
-- The reCAPTCHA state for the current request (when relevant).
+阻止事件记录通常包括以下信息：
+- 阻止事件的ID号码。
+- 目前正在使用的CIDRAM版本。
+- 阻止事件发生的日期和时间。
+- 被阻止请求的IP地址。
+- 被阻止请求的IP地址的主机名（如果可用）。
+- 请求触发的签名数。
+- 触发的签名引用。
+- 引用阻止事件的原因和一些基本的相关调试信息。
+- 被阻止请求的用户代理（即，请求实体如何向请求标识自己）。
+- 重建最初请求的资源的标识符。
+- 当前请求的reCAPTCHA状态（相关时）。
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+*负责此类日志记录的配置指令，适用于以下三种格式中的每一种：*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
 
-When these directives are left empty, this type of logging will remain disabled.
+当这些指令保留为空时，这种类型的日志记录将保持禁用状态。
 
-##### 11.3.1 reCAPTCHA LOGGING
+##### 11.3.1 reCAPTCHA日志记录
 
 This type of logging relates specifically to reCAPTCHA instances, and occurs only when a user attempts to complete a reCAPTCHA instance.
 
@@ -1260,7 +1260,7 @@ A reCAPTCHA log entry contains the IP address of the user attempting to complete
 IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+*The configuration directive responsible for reCAPTCHA logging is:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 FRONT-END LOGGING
@@ -1273,7 +1273,7 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-The configuration directive responsible for front-end logging is:
+*The configuration directive responsible for front-end logging is:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOG ROTATION
@@ -1382,4 +1382,4 @@ CIDRAM不收集或处理任何信息用于营销或广告目的，既不销售�
 ---
 
 
-最后更新：2018年7月17日。
+最后更新：2018年7月20日。

@@ -431,27 +431,27 @@ Value | Produces | Description
 - Attempt to verify requests from search engines? Verifying search engines ensures that they won't be banned as a result of exceeding the infraction limit (banning search engines from your website will usually have a negative effect upon your search engine ranking, SEO, etc). When verified, search engines can be blocked as per normal, but won't be banned. When not verified, it's possible for them to be banned as a result of exceeding the infraction limit. Additionally, search engine verification provides protection against fake search engine requests and against potentially malicious entities masquerading as search engines (such requests will be blocked when search engine verification is enabled). True = Enable search engine verification [Default]; False = Disable search engine verification.
 
 Currently supported:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Not compatible (causes conflicts):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Attempt to verify social media requests? Social media verification provides protection against fake social media requests (such requests will be blocked). True = Enable social media verification [Default]; False = Disable social media verification.
 
 Currently supported:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Specifies whether the protections normally provided by CIDRAM should be applied to the front-end. True = Yes [Default]; False = No.
@@ -1242,7 +1242,7 @@ A logged block event typically includes the following information:
 - A reconstruction of the identifier for the resource originally requested.
 - The reCAPTCHA state for the current request (when relevant).
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+*The configuration directives responsible for this type of logging, and for each of the three formats available, are:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ A reCAPTCHA log entry contains the IP address of the user attempting to complete
 IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+*The configuration directive responsible for reCAPTCHA logging is:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 FRONT-END LOGGING
@@ -1272,7 +1272,7 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-The configuration directive responsible for front-end logging is:
+*The configuration directive responsible for front-end logging is:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOG ROTATION
@@ -1383,4 +1383,4 @@ Alternatively, there's a brief (non-authoritative) overview of GDPR/DSGVO availa
 ---
 
 
-Last Updated: 17 July 2018 (2018.07.17).
+Last Updated: 20 July 2018 (2018.07.20).

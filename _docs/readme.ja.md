@@ -431,27 +431,27 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 - 検索エンジンからのリクエストを確認する必要がありますか？​検索エンジンを確認することで、​違反の最大数を超えたために検索エンジンが禁止されないことが保証されます（検索エンジンを禁止することは、​通常、​検索エンジンランキング、​ＳＥＯなどに悪影響を及ぼします）。​確認されると、​検索エンジンがブロックされることがありますが、​しかしは禁止されません。​検証されていない場合は、​違反の最大を超えた結果、​禁止される可能性があります。​さらに、​検索エンジンの検証は、​詐称された検索エンジンから保護します（これらのリクエストはブロックされます）。​True = 検索エンジンの検証を有効にする（Default/デフォルルト）；​False = 検索エンジンの検証を無効にする。
 
 現在サポートされている：
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 互換性がありません（競合を引き起こす）：
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification" （ソーシャル・メディア・ベリフィケーション）
 - ソーシャル・メディアのリクエストを確認する必要がありますか？​ソーシャル・メディアの検証では、偽のソーシャル・メディア・リクエストに対する保護が提供されます（このようなリクエストはブロックされます）。​True = ソーシャル・メディア検証を有効にする（Default/デフォルルト）；​False = ソーシャル・メディア検証を無効にする。
 
 現在サポートされている：
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend" （プロテクト・フロントエンド）
 - CIDRAMによって通常提供される保護をフロントエンドに適用するかどうかを指定します。​True = はい（Default/デフォルルト）；​False = いいえ。
@@ -1240,7 +1240,7 @@ A logged block event typically includes the following information:
 - A reconstruction of the identifier for the resource originally requested.
 - The reCAPTCHA state for the current request (when relevant).
 
-The configuration directives responsible for this type of logging, and for each of the three formats available, are:
+*このタイプのロギングを担当するコンフィグレーション・ディレクティブは、利用可能な３つのフォーマットのそれぞれについて。*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1257,7 +1257,7 @@ A reCAPTCHA log entry contains the IP address of the user attempting to complete
 IP Address: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - reCAPTCHA State: Passed!
 ```
 
-The configuration directive responsible for reCAPTCHA logging is:
+*The configuration directive responsible for reCAPTCHA logging is:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 FRONT-END LOGGING
@@ -1270,7 +1270,7 @@ A front-end log entry contains the IP address of the user attempting to log in, 
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Logged in.
 ```
 
-The configuration directive responsible for front-end logging is:
+*The configuration directive responsible for front-end logging is:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 LOG ROTATION
@@ -1378,4 +1378,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：2018年7月17日。
+最終アップデート：2018年7月20日。

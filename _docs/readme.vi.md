@@ -431,27 +431,27 @@ Giá trị | Nó tạo ra | Chi tiết
 - Cố gắng xác minh các yêu cầu từ các máy tìm kiếm? Xác minh máy tìm kiếm đảm bảo rằng họ sẽ không bị cấm là kết quả của vượt quá giới các hạn vi phạm (cấm các máy tìm kiếm từ trang web của bạn thường sẽ có một tác động tiêu cực đến các xếp hạng máy tìm kiếm của bạn, SEO, vv). Khi xác minh được kích hoạt, các máy tìm kiếm có thể bị chặn như bình thường, nhưng sẽ không bị cấm. Khi xác minh không được kích hoạt, họ có thể bị cấm như là kết quả của vượt quá giới các hạn vi phạm. Ngoài ra, xác minh máy tìm kiếm cung cấp bảo vệ chống lại các yêu cầu giả máy tìm kiếm và chống lại các thực thể rằng là khả năng độc hại được giả mạo như là các máy tìm kiếm (những yêu cầu này sẽ bị chặn khi xác minh máy tìm kiếm được kích hoạt). True = Kích hoạt xác minh máy tìm kiếm [Mặc định]; False = Vô hiệu hóa xác minh máy tìm kiếm.
 
 Được hỗ trợ hiện tại:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Không tương thích (gây ra xung đột):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Cố gắng xác minh yêu cầu truyền thông xã hội? Xác minh truyền thông xã hội cung cấp sự bảo vệ chống lại các yêu cầu truyền thông xã hội giả mạo (các yêu cầu như vậy sẽ bị chặn). True = Kích hoạt xác minh truyền thông xã hội [Mặc định]; False = Vô hiệu hóa xác minh truyền thông xã hội.
 
 Được hỗ trợ hiện tại:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Chỉ định liệu các bảo vệ thường được cung cấp bởi CIDRAM nên được áp dụng cho các front-end. True = Vâng [Mặc định]; False = Không.
@@ -1242,7 +1242,7 @@ Sự kiện khối đã nhật ký thường bao gồm thông tin sau:
 - Việc xây dựng lại số nhận dạng cho tài nguyên được yêu cầu ban đầu.
 - Trạng thái reCAPTCHA cho yêu cầu hiện tại (khi có liên quan).
 
-Các chỉ thị cấu hình chịu trách nhiệm về loại ghi nhật ký này và cho mỗi một trong ba định dạng có sẵn:
+*Các chỉ thị cấu hình chịu trách nhiệm về loại ghi nhật ký này và cho mỗi một trong ba định dạng có sẵn:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Mục nhập nhật ký reCAPTCHA chứa địa chỉ IP của người dùng đ
 Địa chỉ IP: x.x.x.x - Ngày/Thời gian: Day, dd Mon 20xx hh:ii:ss +0000 - Tình trạng reCAPTCHA: Thành công!
 ```
 
-Chỉ thị cấu hình chịu trách nhiệm cho nhật ký reCAPTCHA là:
+*Chỉ thị cấu hình chịu trách nhiệm cho nhật ký reCAPTCHA là:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 NHẬT KÝ FRONT-END
@@ -1272,7 +1272,7 @@ Mục nhập nhật ký front-end chứa địa chỉ IP của người dùng đ
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Được đăng nhập.
 ```
 
-Chỉ thị cấu hình chịu trách nhiệm cho nhật ký front-end là:
+*Chỉ thị cấu hình chịu trách nhiệm cho nhật ký front-end là:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 XOAY VÒNG NHẬT KÝ
@@ -1373,4 +1373,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 17 Tháng Bảy 2018 (2018.07.17).
+Lần cuối cập nhật: 20 Tháng Bảy 2018 (2018.07.20).

@@ -485,20 +485,20 @@
 
 <div dir="rtl">المدعومة حاليا:<br /></div>
 <div dir="rtl"><ul>
- <li><a dir="ltr" href="https://support.google.com/webmasters/answer/80553?hl=en">Google</a></li>
- <li><a dir="ltr" href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></li>
- <li>Yahoo</li>
- <li><a dir="ltr" href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></li>
- <li dir="ltr">Sogou (搜狗)</li>
- <li dir="ltr">Youdao (有道)</li>
- <li><a dir="ltr" href="https://discussions.apple.com/thread/7090135">Applebot</a></li>
- <li><a dir="ltr" href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></li>
- <li><a dir="ltr" href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></li>
+ <li><strong dir="ltr"><a href="https://support.google.com/webmasters/answer/80553?hl=en">Google</a></strong></li>
+ <li><strong dir="ltr"><a href="https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot">Bing</a></strong></li>
+ <li><strong dir="ltr">Yahoo</strong></li>
+ <li><strong dir="ltr"><a href="https://help.baidu.com/question?prod_en=master&class=Baiduspider">Baidu (百度)</a></strong></li>
+ <li><strong dir="ltr">Sogou (搜狗)</strong></li>
+ <li><strong dir="ltr">Youdao (有道)</strong></li>
+ <li><strong dir="ltr"><a href="https://discussions.apple.com/thread/7090135">Applebot</a></strong></li>
+ <li><strong dir="ltr"><a href="https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml">Yandex (Яндекс)</a></strong></li>
+ <li><strong dir="ltr"><a href="https://duckduckgo.com/duckduckbot">DuckDuckGo</a></strong></li>
 </ul></div>
 
 <div dir="rtl">غير متوافق (تسبب الصراعات):<br /></div>
 <div dir="rtl"><ul>
- <li><a dir="ltr" href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></li>
+ <li><strong dir="ltr"><a href="https://github.com/CIDRAM/CIDRAM/issues/80">Mix.com</a></strong></li>
 </ul></div>
 
 ##### <div dir="rtl">"social_media_verification"<br /></div>
@@ -508,10 +508,10 @@
 
 <div dir="rtl">المدعومة حاليا:<br /></div>
 <div dir="rtl"><ul>
- <li><a dir="ltr" href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></li>
- <li>Embedly</li>
- <li><a dir="ltr" href="https://www.grapeshot.com/crawler/">Grapeshot</a></li>
- <li>Twitterbot</li>
+ <li><strong dir="ltr"><a href="https://help.pinterest.com/en/articles/about-pinterest-crawler-0">Pinterest</a></strong></li>
+ <li><strong dir="ltr">Embedly</strong></li>
+ <li><strong dir="ltr"><a href="https://www.grapeshot.com/crawler/">Grapeshot</a></strong></li>
+ <li><strong dir="ltr">Twitterbot</strong></li>
 </ul></div>
 
 ##### <div dir="rtl">"protect_frontend"<br /></div>
@@ -719,7 +719,7 @@
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
 <div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
 
-<div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "تم رفض الوصول" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ CIDRAM، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين foo="bar"، أي مثيل &lt;p&gt;{foo}&lt;/p&gt; وجدت داخل إخراج HTML ستصبح &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
+<div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "تم رفض الوصول" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ CIDRAM، هو مصدر إخراج HTML من ملف <code dir="ltr">template_custom.html</code> وغيرها، ويتم الحصول على إخراج HTML من ملف <code dir="ltr">template.html</code>. يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين <code dir="ltr">foo="bar"</code>، أي مثيل <code dir="ltr">&lt;p&gt;{foo}&lt;/p&gt;</code> وجدت داخل إخراج HTML ستصبح <code dir="ltr">&lt;p&gt;bar&lt;/p&gt;</code>.<br /><br /></div>
 
 ##### <div dir="rtl">"theme"<br /></div>
 <div dir="rtl"><ul>
@@ -1320,9 +1320,9 @@ If you use any features or modules intended to work with hostnames (such as the 
  <li><code dir="ltr">allow_gethostbyaddr_lookup</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.2.1 WEBFONTS
+##### <div dir="rtl">١١.٢.١ خطوط الويب<br /><br /></div>
 
-Some custom themes, as well as the the standard UI ("user interface") for the CIDRAM front-end and the "Access Denied" page, may use webfonts for aesthetic reasons. Webfonts are disabled by default, but when enabled, direct communication between the user's browser and the service hosting the webfonts occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. Most of these webfonts are hosted by the Google Fonts service.
+<div dir="rtl">بعض السمات المخصصة، واجهة المستخدم القياسية CIDRAM، وصفحة "تم رفض الوصول" قد تستخدم خطوط الويب لأسباب جمالية. يتم تعطيل خطوط الويب بشكل افتراضي. عند التمكين، هناك اتصال مباشر بين متصفح المستخدم ومضيف الويب. قد ينطوي ذلك على نقل معلومات مثل عنوان IP الخاص بالمستخدم، وكيل المستخدم، نظام التشغيل، وغيرها من التفاصيل المتاحة للطلب. تستضيف <a href="https://fonts.google.com/">خدمة خطوط Google</a> معظم خطوط الويب هذه.<br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1558,4 +1558,4 @@ If you want to take it a step further by preventing specific types of informatio
 ---
 
 
-<div dir="rtl">آخر تحديث: 17 يوليو 2018 (2018.07.17).</div>
+<div dir="rtl">آخر تحديث: 20 يوليو 2018 (2018.07.20).</div>

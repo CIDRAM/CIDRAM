@@ -431,27 +431,27 @@ Valor | Produz | Descrição
 - Tentativa de verificar solicitações dos motores de busca? Verificando os motores de busca garante que eles não serão banidos como resultado de exceder o limite de infrações (proibindo motores de busca de seu site normalmente terá um efeito negativo sobre o seu motor de busca ranking, SEO, etc). Quando verificado, os motores de busca podem ser bloqueados como por normal, mas não serão banidos. Quando não verificado, é possível que eles serão banidos como resultado de ultrapassar o limite de infrações. Também, a verificação dos motores de busca fornece proteção contra falsos solicitações de motores de busca e contra entidades potencialmente mal-intencionadas mascarando como motores de busca (tais solicitações serão bloqueados quando a verificação dos motores de busca estiver ativada). True = Ativar a verificação dos motores de busca [Padrão]; False = Desativar a verificação dos motores de busca.
 
 Atualmente suportado:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Não compatível (causa conflitos):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Tentativa de verificar solicitações de mídia social? A verificação de mídia social fornece proteção contra solicitações falsas de mídia social (essas solicitações serão bloqueadas). True = Ativar a verificação de mídia social [Padrão]; False = Desativar a verificação de mídia social.
 
 Atualmente suportado:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Especifica se as proteções normalmente fornecidas pelo CIDRAM devem ser aplicadas ao front-end. True = Sim [Padrão]; False = Não.
@@ -1242,7 +1242,7 @@ Um evento de bloqueio registrado geralmente inclui as seguintes informações:
 - Uma reconstrução do identificador para o recurso originalmente solicitado.
 - O estado reCAPTCHA para a solicitação atual (quando relevante).
 
-As diretivas de configuração responsáveis por esse tipo de log, e para cada um dos três formatos disponíveis, são:
+*As diretivas de configuração responsáveis por esse tipo de log, e para cada um dos três formatos disponíveis, são:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Uma entrada de registro reCAPTCHA contém o endereço IP do usuário que está t
 Endereço IP: x.x.x.x - Data/Hora: Day, dd Mon 20xx hh:ii:ss +0000 - Estado reCAPTCHA: Sucesso!
 ```
 
-A diretiva de configuração responsável pelo registro de reCAPTCHA é:
+*A diretiva de configuração responsável pelo registro de reCAPTCHA é:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 REGISTRO DO FRONT-END
@@ -1272,7 +1272,7 @@ Uma entrada de registro do front-end contém o endereço IP do usuário que est�
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Conectado.
 ```
 
-A diretiva de configuração responsável pelo registro do front-end é:
+*A diretiva de configuração responsável pelo registro do front-end é:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ROTAÇÃO DE REGISTRO
@@ -1375,4 +1375,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 17 Julho de 2018 (2018.07.17).
+Última Atualização: 20 Julho de 2018 (2018.07.20).

@@ -431,27 +431,27 @@ Wert | Produziert | Beschreibung
 - Versuche, Anfragen von Suchmaschinen zu überprüfen? Die Überprüfung der Suchmaschinen sorgt dafür, dass sie nicht als Folge der Maximale Anzahl von Verstöße verboten werden (Verbot der Suchmaschinen von Ihrer Website wird in der Regel einen negativen Effekt auf Ihre Suchmaschinen-Ranking, SEO und u.s.w. haben). Wenn überprüft, wie pro normal, Suchmaschinen können blockiert werden, aber sie werden nicht verboten. Wenn nicht überprüft, es ist möglich, dass sie verboten als Folge der Überschreitung der Maximale Anzahl von Verstöße werden können. Zusätzlich, Suchmaschinen-Verifizierung bietet Schutz gegen gefälschte Suchmaschinen-Anfragen und gegen potenziell böswillige Entitäten, die sich als Suchmaschinen maskieren (solche Anfragen werden blockiert, wenn die Suchmaschinen-Verifizierung aktiviert ist). True = Suchmaschinen-Verifizierung aktivieren [Standardeinstellung]; False = Suchmaschinen-Verifizierung deaktivieren.
 
 Derzeit unterstützt:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Nicht kompatibel (verursacht Konflikte):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Versuche, Social Media Anfragen zu verifizieren? Die Verifizierung von Social Media bietet Schutz vor gefälschten Social Media Anfragen (solche Anfragen werden blockiert). True = Die Verifizierung von Social Media aktivieren [Standardeinstellung]; False = Die Verifizierung von Social Media deaktivieren.
 
 Derzeit unterstützt:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Gibt an, ob die Schutzmaßnahmen normalerweise vom CIDRAM bereitgestellten auf das Frontend angewendet werden sollen. True = Ja [Standardeinstellung]; False = Nein.
@@ -1242,7 +1242,7 @@ Ein protokolliertes Blockereignis enthält normalerweise die folgenden Informati
 - Eine Rekonstruktion der Identifizierung für die ursprünglich angeforderte Ressource.
 - Der reCAPTCHA-Status für die aktuelle Anfrage (falls relevant).
 
-Die Konfigurationsdirektiven, die für diese Art der Protokollierung und für jedes der drei verfügbaren Formate verantwortlich sind:
+*Die Konfigurationsdirektiven, die für diese Art der Protokollierung und für jedes der drei verfügbaren Formate verantwortlich sind:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Ein reCAPTCHA-Protokolleintrag enthält die IP-Adresse des Benutzers, der versuc
 IP-Adresse: x.x.x.x - Date/Time: Day, dd Mon 20xx hh:ii:ss +0000 - Status der reCAPTCHA: Gelungen!
 ```
 
-Die für die reCAPTCHA-Protokollierung verantwortliche Konfigurationsdirektiven lautet:
+*Die für die reCAPTCHA-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 FRONT-END PROTOKOLLIERUNG
@@ -1272,7 +1272,7 @@ Ein Front-End-Protokolleintrag enthält die IP-Adresse des Benutzers, der sich a
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Eingeloggt.
 ```
 
-Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:
+*Die für die Front-End-Protokollierung verantwortliche Konfigurationsdirektiven lautet:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 PROTOKOLLROTATION
@@ -1383,4 +1383,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 17 Juli 2018 (2018.07.17).
+Zuletzt aktualisiert: 20 Juli 2018 (2018.07.20).

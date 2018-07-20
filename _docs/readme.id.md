@@ -431,27 +431,27 @@ Nilai | Menghasilkan | Deskripsi
 - Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari.
 
 Didukung sekarang:
-- [Google](https://support.google.com/webmasters/answer/80553?hl=en)
-- [Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)
-- Yahoo
-- [Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)
-- Sogou (搜狗)
-- Youdao (有道)
-- [Applebot](https://discussions.apple.com/thread/7090135)
-- [Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [DuckDuckGo](https://duckduckgo.com/duckduckbot)
+- __[Google](https://support.google.com/webmasters/answer/80553?hl=en)__
+- __[Bing](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot)__
+- __Yahoo__
+- __[Baidu (百度)](https://help.baidu.com/question?prod_en=master&class=Baiduspider)__
+- __Sogou (搜狗)__
+- __Youdao (有道)__
+- __[Applebot](https://discussions.apple.com/thread/7090135)__
+- __[Yandex (Яндекс)](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)__
+- __[DuckDuckGo](https://duckduckgo.com/duckduckbot)__
 
 Tidak kompatibel (menyebabkan konflik):
-- [Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)
+- __[Mix.com](https://github.com/CIDRAM/CIDRAM/issues/80)__
 
 ##### "social_media_verification"
 - Mencoba memverifikasi permintaan media sosial? Verifikasi media sosial memberikan perlindungan terhadap permintaan media sosial palsu (permintaan semacam ini akan diblokir). True = Mengaktifkan verifikasi media sosial [Default]; False = Mengaktifkan verifikasi media sosial.
 
 Didukung sekarang:
-- [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
-- Embedly
-- [Grapeshot](https://www.grapeshot.com/crawler/)
-- Twitterbot
+- __[Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)__
+- __Embedly__
+- __[Grapeshot](https://www.grapeshot.com/crawler/)__
+- __Twitterbot__
 
 ##### "protect_frontend"
 - Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak.
@@ -1242,7 +1242,7 @@ Kejadian blokir yang dicatat biasanya mencakup informasi berikut:
 - Rekonstruksi pengidentifikasi untuk sumber yang awalnya diminta.
 - Status reCAPTCHA untuk permintaan saat ini (bila relevan).
 
-Direktif konfigurasi yang bertanggung jawab untuk jenis pencatatan ini, dan untuk masing-masing dari tiga format yang tersedia, adalah:
+*Direktif konfigurasi yang bertanggung jawab untuk jenis pencatatan ini, dan untuk masing-masing dari tiga format yang tersedia, adalah:*
 - `general` -> `logfile`
 - `general` -> `logfileApache`
 - `general` -> `logfileSerialized`
@@ -1259,7 +1259,7 @@ Entri log reCAPTCHA berisi alamat IP pengguna yang berusaha menyelesaikan instan
 Alamat IP: x.x.x.x - Tanggal/Waktu: Day, dd Mon 20xx hh:ii:ss +0000 - Status reCAPTCHA: Lulus!
 ```
 
-Direktif konfigurasi yang bertanggung jawab untuk pencatatan reCAPTCHA adalah:
+*Direktif konfigurasi yang bertanggung jawab untuk pencatatan reCAPTCHA adalah:*
 - `recaptcha` -> `logfile`
 
 ##### 11.3.2 LOG BAGIAN DEPAN
@@ -1272,7 +1272,7 @@ Entri log untuk bagian depan berisi alamat IP pengguna yang mencoba masuk, tangg
 x.x.x.x - Day, dd Mon 20xx hh:ii:ss +0000 - "admin" - Pengguna yang online.
 ```
 
-Direktif konfigurasi yang bertanggung jawab untuk pencatatan bagian depan adalah:
+*Direktif konfigurasi yang bertanggung jawab untuk pencatatan bagian depan adalah:*
 - `general` -> `FrontEndLog`
 
 ##### 11.3.3 ROTASI LOG
@@ -1373,4 +1373,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 17 Juli 2018 (2018.07.17).
+Terakhir Diperbarui: 20 Juli 2018 (2018.07.20).

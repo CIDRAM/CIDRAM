@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.15).
+ * This file: Functions file (last modified: 2018.07.23).
  */
 
 /**
@@ -1019,12 +1019,11 @@ $CIDRAM['DNS-Resolve'] = function ($Host, $Timeout = 5) use (&$CIDRAM) {
  *
  * @param string|array $Domains Accepted domain/hostname partials.
  * @param string $Friendly A friendly name to use in logfiles.
- * @param bool $ReverseOnly Skips forward lookups if true.
- * @param bool $CanModTrackable Whether we can modify trackable state.
+ * @param array $Options Various options that can be passed to the closure.
  * @return bool Returns true when a determination is successfully made, and
  *      false when a determination isn't able to be made.
  */
-$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = false, $CanModTrackable = true) use (&$CIDRAM) {
+$CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $Options = []) use (&$CIDRAM) {
 
     /** Fetch the hostname. */
     if (empty($CIDRAM['Hostname'])) {
@@ -1055,8 +1054,8 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
     if ($Pass) {
 
         /** We're only reversing; Don't forward resolve. Disable tracking and return. */
-        if ($ReverseOnly) {
-            if ($CanModTrackable) {
+        if (!empty($Options['ReverseOnly'])) {
+            if (!empty($Options['CanModTrackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
             return true;
@@ -1070,7 +1069,7 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
 
         /** It's the real deal; Disable tracking and return. */
         if ($Resolved === $CIDRAM['BlockInfo']['IPAddr']) {
-            if ($CanModTrackable) {
+            if (!empty($Options['CanModTrackable'])) {
                 $CIDRAM['Trackable'] = false;
             }
             return true;
@@ -1101,20 +1100,21 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, $ReverseOnly = f
  * Checks whether an IP is expected. If so, tracking is disabled for the IP
  * being checked, and if not, the request is blocked. Has no return value.
  *
- * @param string|array $Expected IPs expected.
+ * @param string|array $Expected Accepted/Expected IPs.
  * @param string $Friendly A friendly name to use in logfiles.
+ * @param array $Options Various options that can be passed to the closure.
  */
-$CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly) use (&$CIDRAM) {
+$CIDRAM['UA-IP-Match'] = function ($Expected, $Friendly, $Options = []) use (&$CIDRAM) {
 
     /** Convert expected IPs to an array. */
     $CIDRAM['Arrayify']($Expected);
 
-    /**
-     * Compare the actual IP of the request against the expected IPs, and
-     * disable tracking if any of them match.
-     */
+    /** Compare the actual IP of the request against the expected IPs. */
     if (in_array($CIDRAM['BlockInfo']['IPAddr'], $Expected)) {
-        $CIDRAM['Trackable'] = false;
+        /** Disable tracking (if there are matches, and if relevant). */
+        if (!empty($Options['CanModTrackable'])) {
+            $CIDRAM['Trackable'] = false;
+        }
         return;
     }
 
@@ -1463,9 +1463,11 @@ $CIDRAM['SearchEngineVerification'] = function () use (&$CIDRAM) {
             (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
         )) {
-            $ReverseOnly = isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false;
-            $CanModTrackable = isset($Values['Can Modify Trackable']) ? $Values['Reverse Only'] : true;
-            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $ReverseOnly, $CanModTrackable);
+            $Options = [
+                'ReverseOnly' => isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false,
+                'CanModTrackable' => isset($Values['Can Modify Trackable']) ? $Values['Can Modify Trackable'] : true
+            ];
+            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $Options);
         }
     }
 };
@@ -1510,9 +1512,11 @@ $CIDRAM['SocialMediaVerification'] = function () use (&$CIDRAM) {
             (!empty($Values['User Agent']) && strpos($CIDRAM['BlockInfo']['UALC'], $Values['User Agent']) !== false) ||
             (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $CIDRAM['BlockInfo']['UALC']))
         ) {
-            $ReverseOnly = isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false;
-            $CanModTrackable = isset($Values['Can Modify Trackable']) ? $Values['Reverse Only'] : true;
-            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $ReverseOnly, $CanModTrackable);
+            $Options = [
+                'ReverseOnly' => isset($Values['Reverse Only']) ? $Values['Reverse Only'] : false,
+                'CanModTrackable' => isset($Values['Can Modify Trackable']) ? $Values['Can Modify Trackable'] : true
+            ];
+            $CIDRAM[$Values['Closure']]($Values['Valid Domains'], $Name, $Options);
         }
     }
 };

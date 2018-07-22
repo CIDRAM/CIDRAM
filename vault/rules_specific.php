@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Custom rules file for some specific CIDRs (last modified: 2018.07.10).
+ * This file: Custom rules file for some specific CIDRs (last modified: 2018.07.23).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -62,6 +62,10 @@ $CIDRAM['RunParamResCache']['rules_specific.php'] = function ($Factors = [], $Fa
 
     /** Amazon AWS bypasses. */
     if ($Tag === 'Amazon.com, Inc') {
+        /** DuckDuckGo bypass. */
+        if (preg_match('~duckduck(?:go-favicons-)?bot~', $CIDRAM['BlockInfo']['UALC'])) {
+            return;
+        }
         /** Pinterest bypass. */
         if (strpos($CIDRAM['BlockInfo']['UALC'], 'pinterest') !== false) {
             return;

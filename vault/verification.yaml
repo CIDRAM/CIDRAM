@@ -1,3 +1,4 @@
+# Search Engine Verification; Last Updated: 2018.07.23
 Search Engine Verification:
  # https://support.google.com/webmasters/answer/80553?hl=en
  Googlebot:
@@ -63,14 +64,15 @@ Search Engine Verification:
  # https://duckduckgo.com/duckduckbot
  DuckDuckGo Bot:
   Bypass Flag: "Flag-Bypass-DuckDuckGo-Check"
-  User Agent: "duckduckbot"
+  User Agent Pattern: "~duckduck(?:go-favicons-)?bot~"
   Closure: "UA-IP-Match"
+  Can Modify Trackable: false
   Valid Domains:
-   - "72.94.249.34"
-   - "72.94.249.35"
-   - "72.94.249.36"
-   - "72.94.249.37"
-   - "72.94.249.38"
+   - "23.21.226.191"
+   - "54.208.102.37"
+   - "107.20.237.51"
+   - "107.21.1.8"
+# Social Media Verification; Last Updated: 2018.07.23
 Social Media Verification:
  # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
  Pinterest:

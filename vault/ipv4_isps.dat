@@ -4,10 +4,10 @@
 
 # ---
 # ASN 38197 ("Sun Network (Hong Kong) Limited").
-# %Listed, Google Malware Dashboard: 4.20%.
+# %Listed, Google Malware Dashboard: 2.74%.
 # %Listed, CleanTalk.org: 34.52%.
-# Stop Forum Spam (SFS) listings: 104.
-# Updated: 2018.03.27
+# Stop Forum Spam (SFS) listings: 474.
+# Updated: 2018.07.25
 
 103.12.68.0/22 Deny Generic
 103.14.100.0/22 Deny Generic
@@ -17,6 +17,8 @@
 116.193.164.0/22 Deny Generic
 Origin: CN
 27.0.192.0/22 Deny Generic
+43.226.17.0/24 Deny Generic
+43.226.18.0/23 Deny Generic
 43.226.20.0/22 Deny Generic
 43.226.124.0/22 Deny Generic
 43.240.36.0/22 Deny Generic
@@ -34,8 +36,7 @@ Origin: CN
 45.116.212.0/22 Deny Generic
 45.120.184.0/22 Deny Generic
 58.82.226.0/23 Deny Generic
-103.1.40.0/24 Deny Generic
-103.1.42.0/23 Deny Generic
+103.1.40.0/22 Deny Generic
 103.12.149.0/24 Deny Generic
 103.12.150.0/23 Deny Generic
 103.19.188.0/24 Deny Generic
@@ -67,7 +68,10 @@ Origin: CN
 112.213.104.0/22 Deny Generic
 112.213.109.0/24 Deny Generic
 112.213.110.0/23 Deny Generic
-112.213.112.0/20 Deny Generic
+112.213.112.0/21 Deny Generic
+112.213.120.0/22 Deny Generic
+112.213.124.0/24 Deny Generic
+112.213.126.0/23 Deny Generic
 115.42.60.0/22 Deny Generic
 117.18.0.0/21 Deny Generic
 117.18.8.0/22 Deny Generic
@@ -81,14 +85,13 @@ Origin: CN
 202.89.0.0/22 Deny Generic
 202.146.216.0/21 Deny Generic
 202.179.152.0/22 Deny Generic
-210.56.48.0/21 Deny Generic
-210.56.56.0/22 Deny Generic
-210.56.60.0/23 Deny Generic
-210.56.63.0/24 Deny Generic
+210.56.48.0/20 Deny Generic
 223.26.48.0/20 Deny Generic
 Origin: HK
+45.195.146.0/24 Deny Generic
 45.195.198.0/24 Deny Generic
-156.234.224.0/19 Deny Generic
+154.91.171.0/24 Deny Generic
+156.234.224.0/21 Deny Generic
 Origin: SC
 Tag: Sun Network HK
 ---
@@ -271,10 +274,9 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 1.60%.
+# %Listed, Google Malware Dashboard: 0.56%.
 # %Listed, CleanTalk.org: 37.50%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2017.05.21 / Checked: 2018.03.01
+# Updated: 2017.05.21 / Checked: 2018.07.25
 
 46.175.56.0/21 Deny Generic
 83.243.56.0/21 Deny Generic
@@ -869,10 +871,11 @@ recaptcha:
 
 # ASN 48359 ("Hesabgar Pardaz Gharb Company").
 # %Listed, CleanTalk.org: 7.26%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2018.03.26
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2018.07.25
 
-93.110.128.0/22 Deny Spam
+93.110.96.0/19 Deny Spam
+93.110.128.0/21 Deny Spam
 185.47.48.0/22 Deny Spam
 185.82.64.0/22 Deny Spam
 185.121.56.0/22 Deny Spam
@@ -880,12 +883,9 @@ recaptcha:
 185.137.60.0/22 Deny Spam
 185.142.92.0/22 Deny Spam
 185.142.124.0/22 Deny Spam
-185.187.48.0/23 Deny Spam
 185.212.192.0/22 Deny Spam
 185.221.192.0/22 Deny Spam
 185.238.44.0/22 Deny Spam
-188.253.8.0/21 Deny Spam
-212.95.128.0/19 Deny Spam
 Origin: IR
 Tag: AS48359
 
@@ -996,8 +996,8 @@ recaptcha:
 
 # ASN 133042 ("Office of the basic education commission").
 # %Listed, CleanTalk.org: 17.36%.
-# Stop Forum Spam (SFS) listings: 7.
-# Updated: 2018.03.26
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2018.03.26 / Checked: 2018.07.25
 
 61.7.248.0/24 Deny Spam
 202.29.66.0/24 Deny Spam
@@ -1027,10 +1027,9 @@ recaptcha:
 
 
 # ASN 6870 ("H1 LLC").
-# %Listed, Google Malware Dashboard: 0.25%.
 # %Listed, CleanTalk.org: 69.74%.
-# Stop Forum Spam (SFS) listings: 2,411.
-# Updated: 2017.05.21 / Checked: 2018.03.01
+# Stop Forum Spam (SFS) listings: 2,131.
+# Updated: 2017.05.21 / Checked: 2018.07.25
 
 146.120.110.0/24 Deny Generic
 Origin: CZ
@@ -1841,7 +1840,7 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2018.03.26
+# Updated: 2018.03.26 / Checked: 2018.07.25
 
 185.41.52.0/23 Deny Generic
 Origin: CZ
@@ -2029,8 +2028,8 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2016.04.23 / Checked: 2018.03.08
+# Stop Forum Spam (SFS) listings: 62.
+# Updated: 2016.04.23 / Checked: 2018.07.25
 
 185.35.136.0/22 Deny Generic
 Origin: NL
@@ -3156,7 +3155,7 @@ Tag: ALEXHOST SRL
 
 
 # ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2018.03.26
+# Updated: 2018.07.25
 
 185.56.136.0/22 Deny Generic
 185.62.36.0/22 Deny Generic
@@ -3165,27 +3164,22 @@ Origin: MT
 185.28.188.0/22 Deny Generic
 185.52.52.0/22 Deny Generic
 Origin: NL
-185.184.8.0/24 Deny Generic
-Origin: PL
 23.235.232.0/21 Deny Generic
 45.59.24.0/24 Deny Generic
-63.246.124.0/23 Deny Generic
 64.38.214.0/23 Deny Generic
 66.78.18.0/23 Deny Generic
-67.220.249.0/24 Deny Generic
-67.220.253.0/24 Deny Generic
-67.220.254.0/24 Deny Generic
 67.227.30.0/24 Deny Generic
 104.193.181.0/24 Deny Generic
-107.150.220.0/23 Deny Generic
 131.153.16.0/21 Deny Generic
 131.153.40.0/23 Deny Generic
+131.153.86.0/23 Deny Generic
+131.153.96.0/23 Deny Generic
+158.115.252.0/22 Deny Generic
 172.98.169.0/24 Deny Generic
 172.98.179.0/24 Deny Generic
 173.211.4.0/24 Deny Generic
 184.174.68.0/24 Deny Generic
 184.174.94.0/24 Deny Generic
-207.66.82.0/23 Deny Generic
 207.66.86.0/24 Deny Generic
 209.182.105.0/24 Deny Generic
 Origin: US
@@ -7755,8 +7749,8 @@ recaptcha:
 
 # ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
 # %Listed, CleanTalk.org: 61.30% (AS42682), 14.94% (AS51570).
-# Stop Forum Spam (SFS) listings: 19,203 (AS42682), 1,210 (AS51570).
-# Updated: 2018.03.27
+# Stop Forum Spam (SFS) listings: 17,958 (AS42682), 1,886 (AS51570).
+# Updated: 2018.07.25
 
 5.3.176.0/20 Deny Spam
 5.3.192.0/19 Deny Spam
@@ -7769,8 +7763,8 @@ recaptcha:
 5.166.128.0/19 Deny Spam
 5.166.192.0/19 Deny Spam
 5.167.176.0/20 Deny Spam
+5.167.192.0/19 Deny Spam
 37.112.128.0/20 Deny Spam
-79.141.48.0/23 Deny Spam
 91.144.184.0/22 Deny Spam
 92.255.241.0/24 Deny Spam
 92.255.244.0/23 Deny Spam

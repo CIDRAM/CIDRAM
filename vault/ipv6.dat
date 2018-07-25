@@ -100,10 +100,10 @@ Tag: PEG TECH INC
 
 # ASN 133731 ("Royal Network Technology"), 134176 ("Rainbow network limited").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 3.44% (AS133731).
+# %Listed, Google Malware Dashboard: 1.77% (AS133731).
 # %Listed, CleanTalk.org: 25.00% (AS133731).
-# Stop Forum Spam (SFS) listings: 110 (AS133731).
-# Updated: 2018.05.03
+# Stop Forum Spam (SFS) listings: 50 (AS133731).
+# Updated: 2018.07.25
 
 2401:7340::/32 Deny Cloud
 2402:4540::/32 Deny Cloud
@@ -115,8 +115,10 @@ Tag: PEG TECH INC
 2402:5340::/32 Deny Cloud
 2402:62c0::/32 Deny Cloud
 2402:cbc0::/32 Deny Cloud
+2402:f340:1000::/36 Deny Cloud
 2407:1180::/32 Deny Cloud
 Origin: CN
+2a0b:4340:80::/45 Deny Cloud
 2a0c:9680::/29 Deny Cloud
 Origin: DE
 2400:be80::/32 Deny Cloud
@@ -187,11 +189,15 @@ Tag: Hostinger Int
 
 
 # ASN 12824 ("home.pl").
-# %Listed, Google Malware Dashboard: 2.41%.
+# %Listed, Google Malware Dashboard: 0.96%.
 # %Listed, CleanTalk.org: 22.38%.
-# Stop Forum Spam (SFS) listings: 59.
-# Updated: 2016.04.18 / Checked: 2018.02.24
+# Stop Forum Spam (SFS) listings: 58.
+# Updated: 2018.07.25
 
+2a07:1c44:205::/48 Deny Cloud
+2a07:1c44:209::/48 Deny Cloud
+Origin: AT
+2001:67c:2b68::/48 Deny Cloud
 2a02:25a8::/29 Deny Cloud
 Origin: PL
 Tag: home.pl
@@ -469,10 +475,9 @@ Tag: eServer.ru
 
 
 # ASN 12722 ("RECONN. Operator svyazy Ltd").
-# %Listed, Google Malware Dashboard: 5.14%.
 # %Listed, CleanTalk.org: 17.39%.
-# Stop Forum Spam (SFS) listings: 890.
-# Updated: 2018.03.30
+# Stop Forum Spam (SFS) listings: 816.
+# Updated: 2018.03.30 / Checked: 2018.07.25
 
 2001:67c:2824::/48 Deny Cloud
 2a00:1f70::/32 Deny Cloud
@@ -1270,10 +1275,9 @@ Tag: eUKhost LTD
 
 
 # ASNs 12703, 38963 ("Pulsant (Scotland) Ltd").
-# %Listed, Google Malware Dashboard: 0.77% (AS12703).
 # %Listed, CleanTalk.org: 20.42% (AS12703).
-# Stop Forum Spam (SFS) listings: 1 (AS12703).
-# Updated: 2017.01.25 / Checked: 2018.02.23
+# Stop Forum Spam (SFS) listings: 3 (AS12703).
+# Updated: 2017.01.25 / Checked: 2018.07.25
 
 2a00:85a0::/32 Deny Cloud
 2a01:5ae0::/32 Deny Cloud
@@ -3616,8 +3620,7 @@ Tag: 23Media GmbH
 Origin: AU
 2a06:7a00::/48 Deny Cloud
 Origin: EU
-2402:c080::/32 Deny Cloud
-2402:c081::/32 Deny Cloud
+2402:c080::/31 Deny Cloud
 Origin: JP
 2001:678:198::/48 Deny Cloud
 2a00:1630::/29 Deny Cloud
@@ -4342,21 +4345,21 @@ Tag: Affinity Internet, Inc
 
 
 # ASNs 52048, 60567, 202920, 203557 ("DataClub S.A").
-# Updated: 2016.09.06 / Checked: 2018.02.23
+# Updated: 2018.07.25
 
 2a02:4840::/47 Deny Cloud
 2a02:4840:2::/48 Deny Cloud
-2a02:4840:201::/48 Deny Cloud
+2a02:4840:200::/47 Deny Cloud
 2a02:4840:1000::/48 Deny Cloud
 Origin: LV
 Tag: DataClub S.A
 
 
 # ASN 30962 ("comtrance GmbH").
-# %Listed, Google Malware Dashboard: 1.17%.
+# %Listed, Google Malware Dashboard: 0.52%.
 # %Listed, CleanTalk.org: 51.67%.
-# Stop Forum Spam (SFS) listings: 117.
-# Updated: 2016.09.09 / Checked: 2018.02.23
+# Stop Forum Spam (SFS) listings: 87.
+# Updated: 2016.09.09 / Checked: 2018.07.25
 
 2001:67c:208::/48 Deny Cloud
 2a00:f70::/32 Deny Cloud
@@ -4409,8 +4412,8 @@ Tag: GMO-Z.com USA, INC
 
 # ASN 201628 ("Internet Unie Services B.V").
 # %Listed, CleanTalk.org: 100.00%.
-# Stop Forum Spam (SFS) listings: 1,205.
-# Updated: 2016.09.12 / Checked: 2018.02.24
+# Stop Forum Spam (SFS) listings: 3,175.
+# Updated: 2016.09.12 / Checked: 2018.07.25
 
 2a00:1ac0:f1be::/48 Deny Cloud
 Origin: NL
@@ -4641,10 +4644,10 @@ Tag: NetSource
 
 # ASN 197226 ('"SPRINT" S.A.').
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.43%.
+# %Listed, Google Malware Dashboard: 0.16%.
 # %Listed, CleanTalk.org: 77.69%.
-# Stop Forum Spam (SFS) listings: 133,627.
-# Updated: 2018.05.25
+# Stop Forum Spam (SFS) listings: 131,651.
+# Updated: 2018.05.25 / Checked: 2018.07.25
 
 2a03:7940::/32 Deny Cloud
 2a0c:5840::/32 Deny Cloud
@@ -5990,13 +5993,22 @@ Tag: Unit 1205-1207
 # ASN 25369 ("Bandwidth Technologies Ltd").
 # Malware detected on network; Future C&C risk.
 # %Listed, CleanTalk.org: 47.22%.
-# Stop Forum Spam (SFS) listings: 102.
-# Updated: 2018.06.30
+# Stop Forum Spam (SFS) listings: 130.
+# Updated: 2018.07.25
 
+2a06:8dc6::/44 Deny Cloud
+2a06:8dc7::/48 Deny Cloud
+2a06:8ec4::/43 Deny Cloud
+Origin: EU
 2a00:1a30::/32 Deny Cloud
+2a01:4020::/32 Deny Cloud
 Origin: GB
+2a05:6200:72::/48 Deny Cloud
+Origin: NL
 2a03:b000:a00::/40 Deny Cloud
 Origin: SE
+2602:ff71:1::/48 Deny Cloud
+Origin: US
 Tag: AS25369
 
 

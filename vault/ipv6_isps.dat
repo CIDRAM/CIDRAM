@@ -28,10 +28,9 @@ Tag: CIZGI TELEKOM
 
 
 # ASN 25504 ("Vautron Rechenzentrum AG").
-# %Listed, Google Malware Dashboard: 1.60%.
+# %Listed, Google Malware Dashboard: 0.56%.
 # %Listed, CleanTalk.org: 37.50%.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2016.01.18 / Checked: 2018.03.01
+# Updated: 2016.01.18 / Checked: 2018.07.25
 
 2001:67c:2394::/48 Deny Generic
 2a00:19e0::/29 Deny Generic
@@ -142,15 +141,14 @@ recaptcha:
  enabled: true
 
 
-# ASN 6870 ("H1 LLC").
-# %Listed, Google Malware Dashboard: 0.25%.
-# %Listed, CleanTalk.org: 69.74%.
-# Stop Forum Spam (SFS) listings: 2,411.
-# Updated: 2016.01.18 / Checked: 2018.03.01
+# ASN 48359 ("Hesabgar Pardaz Gharb Company").
+# %Listed, CleanTalk.org: 7.26%.
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2018.07.25
 
-2a00:1f70::/32 Deny Generic
-Origin: RU
-Tag: H1 LLC
+2a04:acc0::/29 Deny Spam
+Origin: IR
+Tag: AS48359
 
 
 # ASN 3223 ("Voxility LLC").
@@ -407,7 +405,7 @@ Tag: Init7
 
 
 # ASNs 24700, 61316 ("Yes Networks Unlimited Ltd").
-# Updated: 2017.12.08 / Checked: 2018.03.26
+# Updated: 2017.12.08 / Checked: 2018.07.25
 
 2a03:6540::/32 Deny Generic
 Origin: UA
@@ -519,8 +517,8 @@ Tag: GREEN FLASH TRADING
 
 # ASN 62454 ("Zyztm Research Division 10 B.V").
 # Cyber warfare, credit card theft, etc.
-# Stop Forum Spam (SFS) listings: 50.
-# Updated: 2016.04.23 / Checked: 2018.03.08
+# Stop Forum Spam (SFS) listings: 62.
+# Updated: 2016.04.23 / Checked: 2018.07.25
 
 2a01:54c0::/32 Deny Generic
 Origin: NL
@@ -735,7 +733,7 @@ Tag: ALEXHOST SRL
 
 
 # ASNs 29656, 57872, 60558, 207134 ("PHOENIX NAP, LLC").
-# Updated: 2017.07.08 / Checked: 2018.03.26
+# Updated: 2017.07.08 / Checked: 2018.07.25
 
 2a00:8860::/32 Deny Generic
 Origin: EU
@@ -1314,12 +1312,31 @@ recaptcha:
 
 # ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
 # %Listed, CleanTalk.org: 61.30% (AS42682), 14.94% (AS51570).
-# Stop Forum Spam (SFS) listings: 19,203 (AS42682), 1,210 (AS51570).
-# Updated: 2017.12.18 / Checked: 2018.03.27
+# Stop Forum Spam (SFS) listings: 17,958 (AS42682), 1,886 (AS51570).
+# Updated: 2018.07.25
 
 2a02:2698:4c00::/38 Deny Spam
 2a02:2698:6c00::/38 Deny Spam
 2a02:2698:a000::/48 Deny Spam
+2a03:1ac0:503:b000::/52 Deny Spam
+2a03:1ac0:503:c000::/51 Deny Spam
+2a03:1ac0:510:1800::/53 Deny Spam
+2a03:1ac0:510:4000::/51 Deny Spam
+2a03:1ac0:510:6000::/53 Deny Spam
+2a03:1ac0:5a4:4000::/50 Deny Spam
+2a03:1ac0:5a4:c000::/50 Deny Spam
+2a03:1ac0:5a6:8000::/51 Deny Spam
+2a03:1ac0:5a6:c000::/51 Deny Spam
+2a03:1ac0:5a7:b000::/52 Deny Spam
+2a03:1ac0:2570:8000::/52 Deny Spam
+2a03:1ac0:5b90:b800::/54 Deny Spam
+2a03:1ac0:5cff:f400::/55 Deny Spam
+2a03:1ac0:5f4f::/48 Deny Spam
+2a03:1ac0:6dc2:9f00::/56 Deny Spam
+2a03:1ac0:6dc2:e000::/52 Deny Spam
+2a03:1ac0:6dc3:5000::/52 Deny Spam
+2a03:1ac0:b0d5::/51 Deny Spam
+2a03:1ac0:bcbb::/49 Deny Spam
 Origin: RU
 Tag: ER-Telecom Holding
 ---

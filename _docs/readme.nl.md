@@ -1173,12 +1173,13 @@ Sommige aangepaste thema's, evenals de standaard UI ("gebruikersinterface") voor
 *Relevante configuratie-opties:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 ZOEKMACHINE VERIFICATIE
+##### 11.2.2 VERIFICATIE VAN ZOEKMACHINES EN SOCIALE MEDIA
 
-Wanneer verificatie van zoekmachines is ingeschakeld, probeert CIDRAM "forward DNS-lookups" uit te voeren om te verifiëren of verzoeken die claimen afkomstig te zijn van zoekmachines authentiek zijn. Hiertoe gebruikt het de [Google DNS](https://dns.google.com/)-service om IP-adressen van de hostnamen van deze inkomende verzoeken op te lossen (in dit proces worden de hostnamen van deze inkomende verzoeken gedeeld met de service).
+Wanneer verificatie van zoekmachines is ingeschakeld, probeert CIDRAM "forward DNS-lookups" uit te voeren om te verifiëren of verzoeken die claimen afkomstig te zijn van zoekmachines authentiek zijn. Hetzelfde, wanneer verificatie van sociale media is ingeschakeld, CIDRAM doet hetzelfde voor schijnbare verzoeken van sociale media. Hiertoe gebruikt het de [Google DNS](https://dns.google.com/)-service om IP-adressen van de hostnamen van deze inkomende verzoeken op te lossen (in dit proces worden de hostnamen van deze inkomende verzoeken gedeeld met de service).
 
 *Relevante configuratie-opties:*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
@@ -1381,4 +1382,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 20 Juli 2018 (2018.07.20).
+Laatste Bijgewerkt: 27 Juli 2018 (2018.07.27).

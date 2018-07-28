@@ -1307,9 +1307,9 @@ IP | آپریٹر
 
 <div dir="rtl">شفافیت کے مقصد کے لئے، مشترکہ معلومات کی قسم ذیل میں بیان کی گئی ہے.<br /><br /></div>
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### <div dir="rtl">١١.٢.٠ میزبان نام تلاش کریں<br /><br /></div>
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+<div dir="rtl">اگر آپ میزبانوں کے ساتھ کام کرنے کے لئے کسی بھی خصوصیات یا ماڈیولز کا استعمال کرتے ہیں تو، CIDRAM انباؤنڈ درخواستوں کے میزبان نام حاصل کرنے کے قابل ہوسکتا ہے. عام طور پر، یہ ایک DNS سرور سے IP ایڈریس کے میزبان ناموں کی درخواست کرکے یہ کرتا ہے، یا براہ راست نظام کی طرف سے فراہم کی گئی فعالیت کے ذریعے معلومات کی درخواست کی طرف سے. <a href="https://dns.google.com/">Google DNS</a> سروس پہلے سے طے شدہ طور پر مقرر کیا جاتا ہے (لیکن یہ ترتیب کے ذریعے آسانی سے تبدیل کیا جا سکتا ہے). مطابقت پذیر خدمات کے ساتھ مطابقت پذیری کی جا سکتی ہے، اور ان پر منحصر ہے کہ آپ کس طرح پیکج کو ترتیب دیں گے. نظام کے ذریعے براہ راست درخواست کرتے وقت، آپ کو اپنے نظام کے منتظم سے رابطہ کرنے کی ضرورت پڑے گی جس کا تعین کیا جاسکتا ہے. متاثر ماڈیولز سے بچنے یا اس کے مطابق پیکیج ترتیب میں ترمیم کرکے CIDRAM میں ہوسٹ نام کی تلاش کی جا سکتی ہے.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
@@ -1322,33 +1322,34 @@ If you use any features or modules intended to work with hostnames (such as the 
 
 ##### <div dir="rtl">١١.٢.١ ویب فونٹس<br /><br /></div>
 
-<div dir="rtl">کچھ اپنی مرضی کے مطابق موضوعات، معیاری CIDRAM صارف انٹرفیس، اور "رسائی نہیں ہوئی" صفحہ، ویب فونٹس کو جمالیاتی وجوہات کے لۓ استعمال کرسکتے ہیں. ویب فونٹس ڈیفالٹ کے ذریعہ غیر فعال ہیں. فعال ہونے پر، صارف کے برائوزر اور ویب فونٹ میزبان کے درمیان براہ راست مواصلات موجود ہے. یہ ممکنہ طور پر مواصلاتی معلومات جیسے صارف کے IP ایڈریس، صارف ایجنٹ، آپریٹنگ سسٹم، اور درخواست کے لئے دستیاب دیگر تفصیلات شامل ہوسکتا ہے. ان میں سے زیادہ تر ویب فونٹس <a href="https://fonts.google.com/">Google Fonts</a> سروس کی طرف سے میزبان ہیں.<br /><br /></div>
+<div dir="rtl">کچھ اپنی مرضی کے مطابق موضوعات، معیاری CIDRAM صارف انٹرفیس، اور "رسائی نہیں ہوئی" صفحہ، ویب فونٹس کو جمالیاتی وجوہات کے لۓ استعمال کرسکتے ہیں. ویب فونٹس ڈیفالٹ کے ذریعہ غیر فعال ہیں. فعال ہونے پر، صارف کے برائوزر اور ویب فونٹ میزبان کے درمیان براہ راست مواصلات موجود ہے. یہ ممکنہ طور پر مواصلاتی معلومات جیسے صارف کے IP ایڈریس، صارف ایجنٹ، آپریٹنگ سسٹم، اور درخواست کے لئے دستیاب دیگر تفصیلات شامل ہوسکتا ہے. ان میں سے زیادہ تر ویب فونٹس <a dir="ltr" href="https://fonts.google.com/">Google Fonts</a> سروس کی طرف سے میزبان ہیں.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">disable_webfonts</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### <div dir="rtl">١١.٢.٢ تلاش انجن اور سوشل میڈیا کی توثیق<br /><br /></div>
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify the authenticity of requests that claim to originate from search engines. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+<div dir="rtl">جب یہ اختیارات فعال ہوتے ہیں تو، CIDRAM کو تلاش کے انجن اور سوشل میڈیا کی درخواستوں کی صداقت کی توثیق کرنے کی کوشش ہوتی ہے. ایسا کرنے کے لئے، یہ ان پونڈ درخواستوں کے میزبانوں سے IP پتوں کو حل کرنے کی کوشش کرنے کیلئے <a dir="ltr" href="https://dns.google.com/">Google DNS</a> سروس کا استعمال کرتا ہے (اس عمل میں، ان بے حد درخواستوں کے میزبانوں کو سروس کے ساتھ اشتراک کیا جاتا ہے).<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات:<br /></div>
 <div dir="rtl"><ul>
  <li><code dir="ltr">search_engine_verification</code> &lt;- <code dir="ltr">general</code></li>
+ <li><code dir="ltr">social_media_verification</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.2.3 GOOGLE reCAPTCHA
+##### <div dir="rtl">١١.٢.٣ GOOGLE reCAPTCHA<br /><br /></div>
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+<div dir="rtl"><a dir="ltr" href="https://www.google.com/recaptcha/">Google reCAPTCHA</a> CIDRAM کی طرف سے حمایت کی جاتی ہے. اس کو صارفین کو بلاک کرنے کے بعد تک رسائی حاصل کرنے کے قابل بناتا ہے (اس کے بارے میں مزید معلومات دستاویزات میں پیش کی جاتی ہے). یہ سروس مناسب طریقے سے کام کرنے کے لئے API کی چابیاں کی ضرورت ہوتی ہے، اور ڈیفالٹ کی طرف سے معذور ہے. پیکیج کی ترتیب میں ضروری API چابیاں کی وضاحت کرکے اسے فعال کیا جا سکتا ہے. فعال ہونے پر، صارف کا براؤزر سروس سے رابطہ کرسکتا ہے. اس میں صارف کی آئی پی ایڈریس، صارف ایجنٹ، اور آپریٹنگ سسٹم جیسے ٹرانسمیشن کی معلومات شامل ہوسکتی ہے. صارف کا IP ایڈریس بھی اس وقت اشتراک کیا جاسکتا ہے جب کسی صارف نے reCAPTCHA مکمل کرنے کی کوشش کی ہے، اور اس کوشش کی توثیق.<br /><br /></div>
 
 <div dir="rtl">متعلقہ ترتیب ہدایات: "recaptcha" ترتیب کے زمرے کے تحت درج کردہ کچھ بھی.<br /><br /></div>
 
-##### 11.2.4 STOP FORUM SPAM
+##### <div dir="rtl">١١.٢.٤ STOP FORUM SPAM<br /><br /></div>
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+<div dir="rtl"><a dir="ltr" href="https://www.stopforumspam.com/">Stop Forum Spam</a> ایک شاندار، آزادانہ طور پر دستیاب سروس ہے جو اسپیمرز سے فورمز، بلاگز، اور ویب سائٹس کی حفاظت کے لئے مدد کرسکتا ہے. یہ یہ معروف اسپیمرز کے ایک ڈیٹا بیس فراہم کر کے کرتا ہے، اور ایک API جو لیورڈج کیا جا سکتا ہے کہ یہ چیک کرنے کے لئے کہ آیا IP ایڈریس، صارف کا نام، یا ای میل ایڈریس اس کے ڈیٹا بیس پر درج کیا جاتا ہے.<br /><br /></div>
 
-CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
+<div dir="rtl">CIDRAM ایک ماڈیول فراہم کرتا ہے جو اس API کو چیک کرنے کے لۓ لیتا ہے کہ آیا درخواستوں کا IP ایڈریس مشتبہ اسپیمر سے تعلق رکھتا ہے. ماڈیول ڈیفالٹ کے ذریعہ انسٹال نہیں ہے، لیکن اگر آپ اسے نصب کرنے کا انتخاب کرتے ہیں تو، صارف IP پتے کو Stop Forum Spam API کے ساتھ اشتراک کیا جا سکتا ہے. جب ماڈیول انسٹال ہوجاتا ہے تو، CIDRAM اس API کے ساتھ بات چیت کرتا ہے جب بھی انباؤنڈ درخواست کسی وسائل کی درخواست کرتا ہے جس میں CIDRAM اکثر اسپیمرز کی طرف سے نشانہ بنایا جاتا وسائل کے ایک قسم کے طور پر تسلیم کرتا ہے (مثلا لاگ ان کے صفحات، رجسٹریشن کے صفحات، ای میل کی توثیق کے صفحات، تبصرہ فارم، وغیرہ جیسے).<br /><br /></div>
 
 #### 11.3 LOGGING
 
@@ -1558,4 +1559,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 20 جولائی 2018 (2018.07.20).</div>
+<div dir="rtl">آخری تازہ کاری: 27 جولائی 2018 (2018.07.27).</div>

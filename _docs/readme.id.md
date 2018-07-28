@@ -1173,12 +1173,13 @@ Beberapa tema kustom, serta UI standar ("antarmuka pengguna") untuk halaman bagi
 *Direktif konfigurasi yang relevan:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 VERIFIKASI MESIN PENCARI
+##### 11.2.2 VERIFIKASI MESIN PENCARI DAN MEDIA SOSIAL
 
-Ketika verifikasi mesin pencari diaktifkan, CIDRAM mencoba melakukan "pencarian DNS ke depan" untuk memverifikasi apakah permintaan yang mengaku berasal dari mesin pencari adalah asli. Untuk melakukan ini, verifikasi mesin pencari menggunakan layanan [Google DNS](https://dns.google.com/) untuk mencoba menyelesaikan alamat IP dari nama host dari permintaan masuk ini (dalam proses ini, nama host dari permintaan masuk ini dibagikan dengan layanan).
+Ketika verifikasi mesin pencari diaktifkan, CIDRAM mencoba melakukan "pencarian DNS ke depan" untuk memverifikasi apakah permintaan yang mengaku berasal dari mesin pencari adalah asli. Juga, ketika verifikasi media sosial diaktifkan, CIDRAM melakukan hal yang sama untuk permintaan media sosial dugaan. Untuk melakukan ini, verifikasi mesin pencari menggunakan layanan [Google DNS](https://dns.google.com/) untuk mencoba menyelesaikan alamat IP dari nama host dari permintaan masuk ini (dalam proses ini, nama host dari permintaan masuk ini dibagikan dengan layanan).
 
 *Direktif konfigurasi yang relevan:*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
@@ -1373,4 +1374,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 20 Juli 2018 (2018.07.20).
+Terakhir Diperbarui: 27 Juli 2018 (2018.07.27).

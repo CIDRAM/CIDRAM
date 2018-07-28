@@ -1173,12 +1173,13 @@ Alguns temas personalizados, bem como a interface de usuário ("UI") padrão par
 *Diretivas de configuração relevantes:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 VERIFICAÇÃO DOS MOTORES DE BUSCA
+##### 11.2.2 VERIFICAÇÃO DOS MOTORES DE BUSCA E MÍDIAS SOCIAIS
 
-Quando a verificação dos motores de busca é ativada, o CIDRAM tenta executar pesquisas direta DNS para verificar se as solicitações que dizem ter origem nos motores de busca são autênticas. Para fazer isso, ele usa o serviço [Google DNS](https://dns.google.com/) para tentar resolver endereços IP dos nomes de host dessas solicitações de entrada (nesse processo, os nomes de host dessas solicitações de entrada são compartilhados com o serviço).
+Quando a verificação dos motores de busca é ativada, o CIDRAM tenta executar pesquisas direta DNS para verificar se as solicitações que dizem ter origem nos motores de busca são autênticas. Da mesma forma, quando a verificação de mídia social é ativada, o CIDRAM faz o mesmo para solicitações aparentes de mídia social. Para fazer isso, ele usa o serviço [Google DNS](https://dns.google.com/) para tentar resolver endereços IP dos nomes de host dessas solicitações de entrada (nesse processo, os nomes de host dessas solicitações de entrada são compartilhados com o serviço).
 
 *Diretivas de configuração relevantes:*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
@@ -1375,4 +1376,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 20 Julho de 2018 (2018.07.20).
+Última Atualização: 27 Julho de 2018 (2018.07.27).

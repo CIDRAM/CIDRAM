@@ -1173,12 +1173,13 @@ Một số chủ đề tùy chỉnh, cũng như UI chuẩn ("giao diện ngườ
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 XÁC MINH MÁY TÌM KIẾM
+##### 11.2.2 XÁC MINH MÁY TÌM KIẾM VÀ TRUYỀN THÔNG XÃ HỘI
 
-Khi xác minh máy tìm kiếm được kích hoạt, CIDRAM cố gắng thực hiện "tra cứu DNS chuyển tiếp" để xác minh tính xác thực của các yêu cầu nói rằng bắt nguồn từ các máy tìm kiếm. Để thực hiện điều này, nó sử dụng dịch vụ [Google DNS](https://dns.google.com/) để cố gắng giải quyết các địa chỉ IP từ tên máy chủ của các yêu cầu gửi đến này (trong quá trình này, tên máy chủ của các yêu cầu gửi đến này được chia sẻ với dịch vụ).
+Khi xác minh máy tìm kiếm được kích hoạt, CIDRAM cố gắng thực hiện "tra cứu DNS chuyển tiếp" để xác minh tính xác thực của các yêu cầu nói rằng bắt nguồn từ các máy tìm kiếm. Tương tự như vậy, khi xác minh truyền thông xã hội được kích hoạt, CIDRAM thực hiện tương tự cho các yêu cầu truyền thông xã hội bị nghi ngờ. Để thực hiện điều này, nó sử dụng dịch vụ [Google DNS](https://dns.google.com/) để cố gắng giải quyết các địa chỉ IP từ tên máy chủ của các yêu cầu gửi đến này (trong quá trình này, tên máy chủ của các yêu cầu gửi đến này được chia sẻ với dịch vụ).
 
 *Chỉ thị cấu hình có liên quan:*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
@@ -1373,4 +1374,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 20 Tháng Bảy 2018 (2018.07.20).
+Lần cuối cập nhật: 27 Tháng Bảy 2018 (2018.07.27).

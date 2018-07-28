@@ -1153,9 +1153,9 @@ IP | 운영자
 
 투명성을 목적으로, 공유되는 정보의 유형은 아래에 설명되어 있습니다.
 
-##### 11.2.0 HOSTNAME LOOKUP
+##### 11.2.0 호스트 이름 조회
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+호스트 이름으로 작업하도록 의도 된 기능 또는 모듈을 사용하는 경우 (예를 들어, "위험한 호스트 차단 모듈", "tor project exit nodes block module", "검색 엔진 검증"), CIDRAM은 인바운드 요청의 호스트 이름을 어떻게 든 얻을 수 있어야합니다. 일반적으로 DNS 서버에서 인바운드 요청의 IP 주소 호스트 이름을 요청하거나 CIDRAM이 설치된 시스템에서 제공하는 기능을 통해 정보를 요청하여이 작업을 수행합니다 (이것은 일반적으로 "호스트 이름 조회"로 알려져 있습니다). 기본적으로 정의 된 DNS 서버는 [Google DNS](https://dns.google.com/) 서비스에 속합니다 (그러나 구성을 통해 쉽게 변경할 수 있음). 전달 된 정확한 서비스는 구성 할 수 있으며 패키지를 구성하는 방법에 따라 다릅니다. CIDRAM이 설치된 시스템에서 제공하는 기능을 사용하는 경우 시스템 관리자에게 문의하여 호스트 이름 조회에서 사용하는 경로를 확인해야합니다. 영향을받는 모듈을 피하거나 필요에 따라 패키지 구성을 수정하여 CIDRAM에서 호스트 이름 조회를 방지 할 수 있습니다.
 
 *관련 설정 지시어 :*
 - `general` -> `default_dns`
@@ -1171,16 +1171,17 @@ CIDRAM 프론트 엔드 및 "액세스 거부"페이지의 표준 UI ("사용자
 *관련 설정 지시어 :*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SEARCH ENGINE VERIFICATION
+##### 11.2.2 검색 엔진 검증 및 소셜 미디어 검증
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify the authenticity of requests that claim to originate from search engines. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+이러한 구성 지시문을 사용하면, CIDRAM은 "순방향 DNS 조회"를 수행하여 검색 엔진 및 소셜 미디어에서 발생했다고 추정되는 요청의 진위 여부를 확인합니다. 이렇게하기 위해 [Google DNS](https://dns.google.com/) 서비스를 사용하여 이러한 인바운드 요청의 호스트 이름에서 IP 주소를 확인합니다 (이 프로세스에서 이러한 인바운드 요청의 호스트 이름은 서비스와 공유됩니다).
 
 *관련 설정 지시어 :*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAM은 [Google reCAPTCHA](https://www.google.com/recaptcha/)를 지원하며 사용자는 차단 된 후에 다시 액세스 할 수 있습니다. Google reCAPTCHA는 제대로 작동하려면 API 키가 필요하며 기본적으로 사용 중지됩니다. 패키지 구성에서 필요한 API 키를 지정하여 활성화 할 수 있습니다. 사용 설정되면 사용자의 브라우저가 reCAPTCHA 서비스와 통신 할 수 있습니다. 이로 인해 사용자의 IP 주소, 사용자 에이전트 및 운영 체제와 같은 정보가 전송 될 수 있습니다. 사용자의 IP 주소는 사용자가 reCAPTCHA를 완료하려고 시도했는지 여부와 해당 시도의 유효성을 확인할 때도 공유 될 수 있습니다.
 
 *관련 설정 지시어 : "recaptcha"구성 카테고리 아래에 나열된 모든 것.*
 
@@ -1376,4 +1377,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 7월 20일.
+최종 업데이트 : 2018년 7월 27일.

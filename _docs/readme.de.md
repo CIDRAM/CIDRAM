@@ -1173,12 +1173,13 @@ Einige benutzerdefinierte Themen sowie die Standard-UI (oder Benutzerschnittstel
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 SUCHMASCHINEN-VERIFIZIERUNG
+##### 11.2.2 VERIFIZIERUNG VON SUCHMASCHINEN UND SOCIAL MEDIA
 
-Wenn die Suchmaschinen-Verifizierung aktiviert ist, versucht CIDRAM "Forward-DNS-Lookups" durchzuführen, um zu überprüfen, ob Anfragen, die behaupten, von Suchmaschinen stammen, authentisch sind. Um dies zu tun, es verwendet den [Google DNS](https://dns.google.com/)-Dienst, um IP-Adressen aus den Hostnamen dieser eingehenden Anfragen aufzulösen (in diesem Prozess werden die Hostnamen dieser eingehenden Anfragen für den Dienst freigegeben).
+Wenn die Verifizierung von Suchmaschinen aktiviert ist, versucht CIDRAM "Forward-DNS-Lookups" durchzuführen, um zu überprüfen, ob Anfragen, die behaupten, von Suchmaschinen stammen, authentisch sind. Gleichfalls, wenn die Verifizierung von Social Media aktiviert ist, CIDRAM macht das gleiche für scheinbare Social-Media-Anfragen. Um dies zu tun, es verwendet den [Google DNS](https://dns.google.com/)-Dienst, um IP-Adressen aus den Hostnamen dieser eingehenden Anfragen aufzulösen (in diesem Prozess werden die Hostnamen dieser eingehenden Anfragen für den Dienst freigegeben).
 
 *Relevante Konfigurationsdirektiven:*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
 ##### 11.2.3 GOOGLE reCAPTCHA
 
@@ -1383,4 +1384,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 20 Juli 2018 (2018.07.20).
+Zuletzt aktualisiert: 27 Juli 2018 (2018.07.27).

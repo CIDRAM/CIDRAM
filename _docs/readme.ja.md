@@ -1155,7 +1155,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 ##### 11.2.0 ホスト名検索
 
-If you use any features or modules intended to work with hostnames (such as the "bad hosts blocker module", "tor project exit nodes block module", or "search engine verification", for example), CIDRAM needs to be able to obtain the hostname of inbound requests somehow. Typically, it does this by requesting the hostname of the IP address of inbound requests from a DNS server, or by requesting the information through functionality provided by the system where CIDRAM is installed (this is typically referred to as a "hostname lookup"). The DNS servers defined by default belong to the Google DNS service (but this can be easily changed via configuration). The exact services communicated with is configurable, and depends on how you configure the package. In the case of using functionality provided by the system where CIDRAM is installed, you'll need to contact your system administrator to determine which routes hostname lookups use. Hostname lookups can be prevented in CIDRAM by avoiding the affected modules or by modifying the package configuration in accordance with your needs.
+ホスト名を扱う機能やモジュールを使用している場合（例えば、「危険なホスト・ブロッカーモジュール」、「tor project exit nodes block module」、「サーチ・エンジン・ベリフィケーション」）、CIDRAMは、インバウンド要求のホスト名を何らかの形で取得できる必要があります。​通常、ＤＮＳサーバーからの着信要求のＩＰアドレスのホスト名を要求するか、またはCIDRAMがインストールされているシステムによって提供される機能によって情報を要求します（これは通常、「ホスト名検索」として知られています）。​デフォルトで定義されているＤＮＳサーバーは[Google DNS](https://dns.google.com/)サービスに属しています（これはコンフィギュレーションによって簡単に変更できます）。​通信される正確なサービスは構成可能であり、パッケージの構成方法によって異なります。​CIDRAMがインストールされているシステムで提供される機能を使用する場合は、システム管理者に連絡して、ホスト名検索で使用するルートを判断する必要があります。​影響を受けるモジュールを避けるか、必要に応じてパッケージ構成を変更して、CIDRAMでホスト名検索を防止できます。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `default_dns`
@@ -1171,22 +1171,23 @@ CIDRAMのフロントエンドと「アクセス拒否」ページの標準「�
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `disable_webfonts`
 
-##### 11.2.2 検索エンジンの検証 （サーチ・エンジン・ベリフィケーション）
+##### 11.2.2 検索エンジンの検証 （サーチ・エンジン・ベリフィケーション） ＋ ソーシャル・メディアの検証 （ソーシャル・メディア・ベリフィケーション）
 
-When search engine verification is enabled, CIDRAM attempts to perform "forward DNS lookups" to verify the authenticity of requests that claim to originate from search engines. To do this, it uses the Google DNS service to attempt to resolve IP addresses from the hostnames of these inbound requests (in this process, the hostnames of these inbound requests is shared with the service).
+これらのコンフィギュレーション・ディレクティブを有効にすると、CIDRAMは、検索エンジンやソーシャルメディアから発信されたと思われるリクエストの信憑性を検証するために、「転送ＤＮＳルックアップ」を実行しようとします。​これを行うために、[Google DNS](https://dns.google.com/)サービスを使用して、これらのインバウンド・リクエストのホスト名からＩＰアドレスを解決しようとします（このプロセスでは、これらのインバウンド・リクエストのホスト名はサービスと共有されます）。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `search_engine_verification`
+- `general` -> `social_media_verification`
 
-##### 11.2.3 GOOGLE reCAPTCHA
+##### 11.2.3 GOOGLE reCAPTCHA （グーグル・リーキャプチャ）
 
-CIDRAM optionally supports Google reCAPTCHA, providing a means for users to bypass the "Access Denied" page by completing a reCAPTCHA instance (more information about this feature is described earlier in the documentation, most notably in the configuration section). Google reCAPTCHA requires API keys in order to be work correctly, and is thereby disabled by default. It can be enabled by defining the required API keys in the package configuration. When enabled, direct communication between the user's browser and the reCAPTCHA service occurs. This may potentially involve communicating information such as the user's IP address, user agent, operating system, and other details available to the request. The user's IP address may also be shared in communication between CIDRAM and the reCAPTCHA service when verifying the validity of a reCAPTCHA instance and verifying whether it was completed successfully.
+CIDRAMは[Google reCAPTCHA](https://www.google.com/recaptcha/)をサポートしているため、ユーザーはブロックされた後にアクセス権を回復できます。​Google reCAPTCHAは正常に動作するためにはＡＰＩキーが必要で、デフォルトでは無効になっています。​これは、パッケージ・コンフィギュレーションで必要なＡＰＩキーを指定することで有効にすることができます。​有効にすると、ユーザーのブラウザはreCAPTCHAサービスと通信できます。​これにより、ユーザーのＩＰアドレス、ユーザー・エージェント、オペレーティング・システムなどの情報が送信されることがあります。​ユーザーのＩＰアドレスは、ユーザーがreCAPTCHAを完了しようとしたかどうか、およびその試行の有効性を確認するときにも共有されます。
 
 *関連するコンフィギュレーション・ディレクティブ：​すべての「recaptcha」コンフィギュレーション・カテゴリの下にリストされているもの。*
 
 ##### 11.2.4 STOP FORUM SPAM （ストップ・フォーラム・スパム）
 
-[Stop Forum Spam](https://www.stopforumspam.com/) is a fantastic, freely available service that can help to protect forums, blogs, and websites from spammers. It does this by providing a database of known spammers, and an API that can be leveraged to check whether an IP address, username, or email address is listed on its database.
+[Stop Forum Spam](https://www.stopforumspam.com/)は、スパマーからフォーラム、ブログ、ウェブサイトを保護するのに役立つ、無料で利用できる素晴らしいサービスです。​これは、既知のスパマーのデータベースと、ＩＰアドレス、ユーザー名、または電子Ｅメール・アドレスがそのデータベースにリストされているかどうかを確認するために利用できるＡＰＩを提供することによってこれを行います。
 
 CIDRAM provides an optional module that leverages this API to check whether the IP address of inbound requests belongs to a suspected spammer. The module is not installed by default, but if you choose to install it, user IP addresses may be shared with the Stop Forum Spam API in accordance with the intended purpose of the module. When the module is installed, CIDRAM communicates with this API whenever an inbound request requests a resource that CIDRAM recognises as a type of resource frequently targeted by spammers (such as login pages, registration pages, email verification pages, comment forms, etc).
 
@@ -1378,4 +1379,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：2018年7月20日。
+最終アップデート：2018年7月27日。

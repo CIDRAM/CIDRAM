@@ -920,10 +920,10 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, Google Malware Dashboard: 0.73%.
 # %Listed, CleanTalk.org: 23.10%.
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2016.04.18 / Checked: 2018.03.06
+# Stop Forum Spam (SFS) listings: 45.
+# Updated: 2016.04.18 / Checked: 2018.08.05
 
 83.222.0.0/19 Deny Cloud
 84.252.128.0/18 Deny Cloud
@@ -4627,10 +4627,10 @@ Tag: Cyberverse, Inc
 
 
 # ASN 54489 ("CoreSpace, Inc").
-# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, Google Malware Dashboard: 0.09%.
 # %Listed, CleanTalk.org: 88.80%.
-# Stop Forum Spam (SFS) listings: 1,110.
-# Updated: 2016.10.02 / Checked: 2018.03.01
+# Stop Forum Spam (SFS) listings: 1,291.
+# Updated: 2016.10.02 / Checked: 2018.08.05
 
 198.73.50.0/24 Deny Cloud
 Origin: CA
@@ -8228,10 +8228,10 @@ Tag: Akamai Technologies
 
 
 # ASN 6428 ("Rose Hosting").
-# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, Google Malware Dashboard: 0.93%.
 # %Listed, CleanTalk.org: 30.86%.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2017.10.30 / Checked: 2018.03.01
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2018.08.05
 
 64.39.224.0/20 Deny Cloud
 162.246.248.0/21 Deny Cloud
@@ -8242,23 +8242,14 @@ Tag: Akamai Technologies
 206.196.96.0/19 Deny Cloud
 206.225.0.0/19 Deny Cloud
 207.244.192.0/18 Deny Cloud
-208.16.24.0/21 Deny Cloud
-208.16.236.0/22 Deny Cloud
 208.19.224.0/20 Deny Cloud
 209.16.202.0/23 Deny Cloud
 209.126.0.0/20 Deny Cloud
 209.126.64.0/20 Deny Cloud
 209.126.80.0/21 Deny Cloud
 209.135.128.0/19 Deny Cloud
-209.144.40.0/22 Deny Cloud
 209.145.32.0/19 Deny Cloud
-209.223.72.0/22 Deny Cloud
-209.223.90.0/23 Deny Cloud
-209.223.92.0/23 Deny Cloud
 216.87.32.0/19 Deny Cloud
-216.88.184.0/21 Deny Cloud
-216.89.144.0/22 Deny Cloud
-216.89.168.0/21 Deny Cloud
 216.114.64.0/20 Deny Cloud
 Origin: US
 Tag: Rose Hosting
@@ -8669,8 +8660,8 @@ Tag: XT GLOBAL
 
 # ASN 13739 ("Datacenter IP, LLC").
 # %Listed, CleanTalk.org: 38.31%.
-# Stop Forum Spam (SFS) listings: 187.
-# Updated: 2018.04.01
+# Stop Forum Spam (SFS) listings: 158.
+# Updated: 2018.04.01 / Checked: 2018.08.05
 
 104.143.64.0/20 Deny Cloud
 162.245.88.0/21 Deny Cloud
@@ -10247,7 +10238,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.07.19
+# Updated: 2018.08.05
 
 103.8.172.0/22 Run rules_specific.php
 103.209.72.0/24 Run rules_specific.php
@@ -10283,6 +10274,7 @@ Origin: JP
 122.248.192.0/18 Run rules_specific.php
 175.41.128.0/18 Run rules_specific.php
 Origin: SG
+3.120.0.0/14 Run rules_specific.php
 8.18.145.0/24 Run rules_specific.php
 8.45.162.0/24 Run rules_specific.php
 13.32.0.0/21 Run rules_specific.php
@@ -10523,7 +10515,9 @@ Origin: SG
 52.84.185.0/24 Run rules_specific.php
 52.84.186.0/23 Run rules_specific.php
 52.84.188.0/22 Run rules_specific.php
-52.84.192.0/19 Run rules_specific.php
+52.84.192.0/21 Run rules_specific.php
+52.84.206.0/23 Run rules_specific.php
+52.84.208.0/20 Run rules_specific.php
 52.84.224.0/20 Run rules_specific.php
 52.84.240.0/21 Run rules_specific.php
 52.84.248.0/23 Run rules_specific.php
@@ -10625,6 +10619,7 @@ Origin: SG
 52.124.181.0/24 Run rules_specific.php
 52.124.184.0/24 Run rules_specific.php
 52.124.187.0/24 Run rules_specific.php
+52.124.191.0/24 Run rules_specific.php
 52.124.198.0/23 Run rules_specific.php
 52.124.201.0/24 Run rules_specific.php
 52.124.202.0/23 Run rules_specific.php
@@ -10646,7 +10641,7 @@ Origin: SG
 52.124.247.0/24 Run rules_specific.php
 52.124.248.0/23 Run rules_specific.php
 52.124.253.0/24 Run rules_specific.php
-52.124.255.0/24 Run rules_specific.php
+52.124.254.0/23 Run rules_specific.php
 52.192.0.0/12 Run rules_specific.php
 52.208.0.0/13 Run rules_specific.php
 52.216.0.0/15 Run rules_specific.php
@@ -10740,12 +10735,11 @@ Origin: SG
 54.192.180.0/22 Run rules_specific.php
 54.192.184.0/21 Run rules_specific.php
 54.192.192.0/20 Run rules_specific.php
-54.192.208.0/21 Run rules_specific.php
+54.192.208.0/22 Run rules_specific.php
 54.192.216.0/22 Run rules_specific.php
 54.192.224.0/21 Run rules_specific.php
 54.192.232.0/22 Run rules_specific.php
 54.192.240.0/24 Run rules_specific.php
-54.192.243.0/24 Run rules_specific.php
 54.193.0.0/16 Run rules_specific.php
 54.194.0.0/15 Run rules_specific.php
 54.196.0.0/14 Run rules_specific.php
@@ -10776,7 +10770,7 @@ Origin: SG
 54.230.180.0/22 Run rules_specific.php
 54.230.184.0/21 Run rules_specific.php
 54.230.192.0/20 Run rules_specific.php
-54.230.208.0/21 Run rules_specific.php
+54.230.208.0/22 Run rules_specific.php
 54.230.216.0/22 Run rules_specific.php
 54.230.224.0/21 Run rules_specific.php
 54.230.232.0/22 Run rules_specific.php
@@ -10827,8 +10821,7 @@ Origin: SG
 54.239.170.0/23 Run rules_specific.php
 54.239.172.0/24 Run rules_specific.php
 54.239.174.0/24 Run rules_specific.php
-54.239.176.0/24 Run rules_specific.php
-54.239.178.0/23 Run rules_specific.php
+54.239.178.0/24 Run rules_specific.php
 54.239.180.0/24 Run rules_specific.php
 54.239.182.0/23 Run rules_specific.php
 54.239.186.0/23 Run rules_specific.php
@@ -10887,28 +10880,35 @@ Origin: SG
 63.32.0.0/14 Run rules_specific.php
 67.54.205.0/24 Run rules_specific.php
 67.202.0.0/18 Run rules_specific.php
+67.219.180.0/24 Run rules_specific.php
 67.226.220.0/24 Run rules_specific.php
 67.226.222.0/24 Run rules_specific.php
 70.132.0.0/23 Run rules_specific.php
 70.132.3.0/24 Run rules_specific.php
 70.132.4.0/23 Run rules_specific.php
 70.132.9.0/24 Run rules_specific.php
+70.132.10.0/24 Run rules_specific.php
 70.132.12.0/23 Run rules_specific.php
 70.132.15.0/24 Run rules_specific.php
 70.132.17.0/24 Run rules_specific.php
 70.132.18.0/24 Run rules_specific.php
-70.132.20.0/23 Run rules_specific.php
-70.132.22.0/24 Run rules_specific.php
+70.132.20.0/22 Run rules_specific.php
+70.132.26.0/24 Run rules_specific.php
 71.152.0.0/24 Run rules_specific.php
 71.152.2.0/24 Run rules_specific.php
 71.152.4.0/22 Run rules_specific.php
 71.152.8.0/23 Run rules_specific.php
+71.152.10.0/24 Run rules_specific.php
 72.21.192.0/19 Run rules_specific.php
 72.44.32.0/19 Run rules_specific.php
+72.167.168.0/24 Run rules_specific.php
+74.116.239.0/24 Run rules_specific.php
 75.101.128.0/17 Run rules_specific.php
-76.223.160.0/23 Run rules_specific.php
-76.223.163.0/24 Run rules_specific.php
+76.223.160.0/22 Run rules_specific.php
 76.223.164.0/23 Run rules_specific.php
+76.223.178.0/23 Run rules_specific.php
+76.223.185.0/24 Run rules_specific.php
+76.223.186.0/23 Run rules_specific.php
 96.99.160.0/20 Run rules_specific.php
 96.112.224.0/22 Run rules_specific.php
 96.112.228.0/23 Run rules_specific.php
@@ -10993,6 +10993,10 @@ Origin: SG
 143.204.202.0/23 Run rules_specific.php
 143.204.204.0/22 Run rules_specific.php
 143.204.208.0/21 Run rules_specific.php
+143.204.233.0/24 Run rules_specific.php
+143.204.234.0/23 Run rules_specific.php
+143.204.236.0/22 Run rules_specific.php
+143.204.240.0/21 Run rules_specific.php
 162.150.18.0/23 Run rules_specific.php
 162.150.24.0/21 Run rules_specific.php
 162.150.184.0/23 Run rules_specific.php
@@ -11389,8 +11393,10 @@ Tag: Shenzhen Tencent
 
 
 # ASN 24413 ("ShenZhen Sunrise Technology Co.,Ltd").
+# %Listed, Google Malware Dashboard: 20.00%.
 # %Listed, CleanTalk.org: 100.00%.
-# Updated: 2017.05.21 / Checked: 2018.03.06
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2017.05.21 / Checked: 2018.08.05
 
 202.46.32.0/20 Deny Cloud
 Origin: CN
@@ -12539,8 +12545,8 @@ Tag: RouteLabel V.O.F
 # ASN 42632 ("MnogoByte LLC").
 # %Listed, Google Malware Dashboard: 0.10%.
 # %Listed, CleanTalk.org: 69.70%.
-# Stop Forum Spam (SFS) listings: 77.
-# Updated: 2018.04.01
+# Stop Forum Spam (SFS) listings: 75.
+# Updated: 2018.08.05
 
 46.243.253.0/24 Deny Cloud
 178.170.189.0/24 Deny Cloud
@@ -12556,7 +12562,6 @@ Origin: NL
 146.255.216.0/21 Deny Cloud
 176.58.32.0/21 Deny Cloud
 176.58.40.0/24 Deny Cloud
-185.224.248.0/22 Deny Cloud
 193.26.217.0/24 Deny Cloud
 194.1.236.0/22 Deny Cloud
 212.76.128.0/20 Deny Cloud
@@ -15362,9 +15367,9 @@ Tag: flexnetworks
 
 
 # ASN 52106 ("GALATEA - Dominik Budzowski").
-# %Listed, Google Malware Dashboard: 23.07%.
 # %Listed, CleanTalk.org: 3.85%.
-# Updated: 2016.10.26 / Checked: 2018.03.06
+# Stop Forum Spam (SFS) listings: 6.
+# Updated: 2016.10.26 / Checked: 2018.08.05
 
 91.238.56.0/22 Deny Cloud
 194.247.62.0/24 Deny Cloud
@@ -15374,10 +15379,10 @@ Tag: GALATEA
 
 
 # ASN 49282 ("Ficolo Oy").
-# %Listed, Google Malware Dashboard: 0.42%.
+# %Listed, Google Malware Dashboard: 0.21%.
 # %Listed, CleanTalk.org: 12.75%.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.11.02 / Checked: 2018.03.06
+# Updated: 2016.11.02 / Checked: 2018.08.05
 
 95.175.96.0/19 Deny Cloud
 164.215.32.0/21 Deny Cloud
@@ -16605,14 +16610,15 @@ Tag: zColo
 
 
 # ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, Google Malware Dashboard: 5.08% (AS61138).
+# %Listed, Google Malware Dashboard: 9.52% (AS61138).
 # %Listed, CleanTalk.org: 45.45% (AS61138).
-# Stop Forum Spam (SFS) listings: 21 (AS61138).
-# Updated: 2018.04.02
+# Stop Forum Spam (SFS) listings: 30 (AS61138).
+# Updated: 2018.08.05
 
+185.90.62.0/24 Deny Cloud
+Origin: GB
 185.121.160.0/22 Deny Cloud
 Origin: NO
-43.251.204.0/22 Deny Cloud
 103.208.86.0/23 Deny Cloud
 185.99.132.0/23 Deny Cloud
 185.121.168.0/24 Deny Cloud
@@ -17412,13 +17418,10 @@ Tag: Niobe Bilisim
 
 # ASN 11029 ("Border Technology, LLC").
 # %Listed, CleanTalk.org: 53.97%.
-# Stop Forum Spam (SFS) listings: 6.
-# Updated: 2017.05.21 / Checked: 2018.03.06
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2018.08.05
 
 45.61.32.0/20 Deny Cloud
-169.197.129.0/24 Deny Cloud
-169.197.150.0/24 Deny Cloud
-169.197.174.0/24 Deny Cloud
 172.81.0.0/18 Deny Cloud
 173.44.0.0/19 Deny Cloud
 Origin: US
@@ -17661,10 +17664,12 @@ Tag: Green House Data
 
 # ASN 20021 ("HostMySite").
 # 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
-# "InternetSeer.com". Users of this service should probably set an Ignore rule for this signature section.
-# %Listed, Google Malware Dashboard: 0.68%.
+# "InternetSeer.com". Users of this service should probably set an "ignore" rule for this signature section. I won't be
+# mainlining a bypass for them though due to abuse reports from some users.
+# %Listed, Google Malware Dashboard: 0.34%.
 # %Listed, CleanTalk.org: 24.86%.
-# Updated: 2017.12.28 / Checked: 2018.04.02
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2018.08.05
 
 65.36.128.0/17 Deny Cloud
 65.182.192.0/19 Deny Cloud
@@ -17677,7 +17682,6 @@ Tag: Green House Data
 199.168.252.0/22 Deny Cloud
 199.231.128.0/20 Deny Cloud
 199.231.144.0/22 Deny Cloud
-199.231.150.0/24 Deny Cloud
 204.12.0.0/17 Deny Cloud
 208.112.0.0/17 Deny Cloud
 209.41.160.0/19 Deny Cloud
@@ -17691,7 +17695,6 @@ Tag: Green House Data
 209.216.54.0/23 Deny Cloud
 209.216.56.0/21 Deny Cloud
 216.74.0.0/18 Deny Cloud
-216.237.144.0/20 Deny Cloud
 216.248.192.0/20 Deny Cloud
 Origin: US
 Tag: HostMySite
@@ -18248,9 +18251,9 @@ Tag: Deninet KFT
 
 
 # ASN 32767 ("SAPIOTERRA, LLC").
-# %Listed, Google Malware Dashboard: 0.43%.
+# %Listed, Google Malware Dashboard: 0.23%.
 # %Listed, CleanTalk.org: 33.33%.
-# Updated: 2017.11.06 / Checked: 2018.03.02
+# Updated: 2017.11.06 / Checked: 2018.08.05
 
 162.253.124.0/22 Deny Cloud
 192.70.246.0/23 Deny Cloud
@@ -18292,10 +18295,10 @@ Tag: Katherine Heng
 
 
 # ASN 63889 ("Cloud Iv Limited").
-# %Listed, Google Malware Dashboard: 10.26%.
+# %Listed, Google Malware Dashboard: 8.48%.
 # %Listed, CleanTalk.org: 61.54%.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2017.11.12 / Checked: 2018.03.08
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2017.11.12 / Checked: 2018.08.05
 
 110.173.96.0/19 Deny Cloud
 Origin: CN
@@ -18309,16 +18312,16 @@ Tag: Cloud Iv Limited
 
 
 # ASN 132883 ("TOPWAY GLOBAL LIMITED").
-# %Listed, Google Malware Dashboard: 5.72%.
+# %Listed, Google Malware Dashboard: 4.65%.
 # %Listed, CleanTalk.org: 46.77%.
-# Stop Forum Spam (SFS) listings: 30.
-# Updated: 2017.11.12 / Checked: 2018.03.08
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2018.08.05
 
 43.251.236.0/22 Deny Cloud
 45.115.236.0/22 Deny Cloud
 103.43.16.0/22 Deny Cloud
 103.56.16.0/22 Deny Cloud
-103.199.248.0/22 Deny Cloud
+203.83.8.0/22 Deny Cloud
 Origin: CN
 43.246.208.0/22 Deny Cloud
 103.27.108.0/22 Deny Cloud
@@ -18327,6 +18330,8 @@ Origin: CN
 Origin: HK
 103.64.12.0/24 Deny Cloud
 Origin: MY
+45.195.80.0/22 Deny Cloud
+Origin: SC
 Tag: TOPWAY GLOBAL LIMITED
 
 
@@ -19543,10 +19548,9 @@ Tag: J2 AUSTRALIA HOSTING
 
 # ASN 51395 ("SOFTplus Entwicklungen GmbH").
 # %Listed, CleanTalk.org: 80.36%.
-# Stop Forum Spam (SFS) listings: 39,627.
-# Updated: 2018.04.02
+# Stop Forum Spam (SFS) listings: 57,604.
+# Updated: 2018.08.05
 
-31.14.33.0/24 Deny Cloud
 37.156.224.0/24 Deny Cloud
 Origin: BG
 5.133.32.0/22 Deny Cloud
@@ -19556,13 +19560,13 @@ Origin: BG
 176.111.222.0/23 Deny Cloud
 185.4.168.0/23 Deny Cloud
 185.4.170.0/24 Deny Cloud
-185.32.221.0/24 Deny Cloud
-185.32.222.0/23 Deny Cloud
+185.32.220.0/22 Deny Cloud
 185.60.144.0/22 Deny Cloud
 185.78.124.0/22 Deny Cloud
 185.85.108.0/22 Deny Cloud
 185.189.148.0/22 Deny Cloud
 185.195.68.0/22 Deny Cloud
+194.5.228.0/22 Deny Cloud
 194.15.228.0/22 Deny Cloud
 194.50.176.0/24 Deny Cloud
 195.225.117.0/24 Deny Cloud
@@ -21146,7 +21150,7 @@ Tag: PLUTEX GmbH
 # Microsoft Azure IPv4 CIDRs.
 # A more up-to-date version of this section is available via the Azure optional blocklist provided by Macmathan.
 # It can be installed via the front-end.
-# Updated: 2018.07.04
+# Updated: 2018.08.05
 # Refer microsoft.com/en-us/download/details.aspx?id=41653
 # Refer microsoft.com/en-us/download/details.aspx?id=42064
 # Refer microsoft.com/en-us/download/details.aspx?id=54770
@@ -22137,6 +22141,8 @@ Origin: KR
 40.89.32.0/19 Run rules_specific.php
 40.89.64.0/18 Run rules_specific.php
 40.89.224.0/19 Run rules_specific.php
+40.90.16.0/27 Run rules_specific.php
+40.90.128.16/28 Run rules_specific.php
 40.90.129.224/27 Run rules_specific.php
 40.90.130.64/28 Run rules_specific.php
 40.90.130.96/28 Run rules_specific.php
@@ -22187,6 +22193,7 @@ Origin: KR
 40.90.150.32/27 Run rules_specific.php
 40.90.151.0/26 Run rules_specific.php
 40.90.151.128/28 Run rules_specific.php
+40.90.151.160/27 Run rules_specific.php
 40.90.192.0/18 Run rules_specific.php
 40.91.0.0/21 Run rules_specific.php
 40.91.12.0/25 Run rules_specific.php
@@ -22530,7 +22537,11 @@ Origin: KR
 65.55.218.0/23 Run rules_specific.php
 65.55.250.0/24 Run rules_specific.php
 65.55.252.0/24 Run rules_specific.php
-70.37.0.0/17 Run rules_specific.php
+70.37.0.0/21 Run rules_specific.php
+70.37.8.0/22 Run rules_specific.php
+70.37.16.0/20 Run rules_specific.php
+70.37.32.0/19 Run rules_specific.php
+70.37.64.0/18 Run rules_specific.php
 70.37.160.0/21 Run rules_specific.php
 104.40.0.0/17 Run rules_specific.php
 104.41.128.0/19 Run rules_specific.php
@@ -22804,8 +22815,10 @@ Origin: US
 40.77.161.0/26 Run rules_specific.php
 40.77.161.128/25 Run rules_specific.php
 40.77.175.128/27 Run rules_specific.php
+40.77.192.0/22 Run rules_specific.php
 40.77.226.0/25 Run rules_specific.php
 40.77.234.128/27 Run rules_specific.php
+40.77.252.0/23 Run rules_specific.php
 40.78.223.0/24 Run rules_specific.php
 40.78.232.0/21 Run rules_specific.php
 40.79.210.0/24 Run rules_specific.php

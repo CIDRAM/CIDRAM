@@ -204,10 +204,10 @@ Tag: home.pl
 
 
 # ASN 25532 ("Masterhost").
-# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, Google Malware Dashboard: 0.73%.
 # %Listed, CleanTalk.org: 23.10%.
-# Stop Forum Spam (SFS) listings: 54.
-# Updated: 2016.04.18 / Checked: 2018.03.06
+# Stop Forum Spam (SFS) listings: 45.
+# Updated: 2016.04.18 / Checked: 2018.08.05
 
 2a00:15f8::/32 Deny Cloud
 Origin: RU
@@ -1154,10 +1154,10 @@ Tag: Cyberverse, Inc
 
 
 # ASN 54489 ("CoreSpace, Inc").
-# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, Google Malware Dashboard: 0.09%.
 # %Listed, CleanTalk.org: 88.80%.
-# Stop Forum Spam (SFS) listings: 1,110.
-# Updated: 2016.01.22 / Checked: 2018.03.01
+# Stop Forum Spam (SFS) listings: 1,291.
+# Updated: 2016.01.22 / Checked: 2018.08.05
 
 2604:7780::/32 Deny Cloud
 Origin: US
@@ -2765,10 +2765,10 @@ Tag: Akamai Technologies
 
 
 # ASN 6428 ("Rose Hosting").
-# %Listed, Google Malware Dashboard: 0.86%.
+# %Listed, Google Malware Dashboard: 0.93%.
 # %Listed, CleanTalk.org: 30.86%.
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2017.10.30 / Checked: 2018.03.01
+# Stop Forum Spam (SFS) listings: 36.
+# Updated: 2017.10.30 / Checked: 2018.08.05
 
 2606:9200::/32 Deny Cloud
 Origin: US
@@ -2819,9 +2819,11 @@ Tag: HIVELOCITY VENTURES
 
 # ASN 13739 ("Datacenter IP, LLC").
 # %Listed, CleanTalk.org: 38.31%.
-# Stop Forum Spam (SFS) listings: 187.
-# Updated: 2017.12.24 / Checked: 2018.04.01
+# Stop Forum Spam (SFS) listings: 158.
+# Updated: 2018.08.05
 
+2a0c:acc0::/29 Deny Cloud
+Origin: AT
 2604:6080::/32 Deny Cloud
 Origin: US
 Tag: Datacenter IP, LLC
@@ -3279,7 +3281,7 @@ Tag: Sia Nano IT
 # Don't include: ASN 264167 ("Amazon Wifi Servicos de Internet Ltda") - False positive risk.
 # Remove from final aggregate: 203.83.220.0/22 ("Amazon.com Tech Telecom") - False positive risk.
 # Also check out the Amazon blocklist provided by Macmathan. It can be installed via the front-end updates page.
-# Updated: 2018.07.19
+# Updated: 2018.08.05
 
 2403:b300::/32 Run rules_specific.php
 Origin: AU
@@ -3299,6 +3301,9 @@ Origin: BR
 2a05:d050:4040::/44 Run rules_specific.php
 2a05:d050:4080::/44 Run rules_specific.php
 2a05:d050:40c0::/44 Run rules_specific.php
+2a05:d050:6040::/44 Run rules_specific.php
+2a05:d050:6080::/44 Run rules_specific.php
+2a05:d050:60c0::/44 Run rules_specific.php
 2a05:d050:8010::/44 Run rules_specific.php
 2a05:d050:8020::/44 Run rules_specific.php
 2a05:d050:8040::/43 Run rules_specific.php
@@ -3407,7 +3412,8 @@ Origin: SG
 2600:9000:102e::/47 Run rules_specific.php
 2600:9000:1030::/47 Run rules_specific.php
 2600:9000:1033::/48 Run rules_specific.php
-2600:9000:1034::/46 Run rules_specific.php
+2600:9000:1035::/48 Run rules_specific.php
+2600:9000:1036::/47 Run rules_specific.php
 2600:9000:1038::/45 Run rules_specific.php
 2600:9000:1040::/44 Run rules_specific.php
 2600:9000:1077::/48 Run rules_specific.php
@@ -3422,7 +3428,8 @@ Origin: SG
 2600:9000:1098::/46 Run rules_specific.php
 2600:9000:109c::/47 Run rules_specific.php
 2600:9000:10a0::/46 Run rules_specific.php
-2600:9000:10a6::/48 Run rules_specific.php
+2600:9000:10a4::/48 Run rules_specific.php
+2600:9000:10a6::/47 Run rules_specific.php
 2600:9000:10a8::/48 Run rules_specific.php
 2600:9000:10ac::/47 Run rules_specific.php
 2600:9000:10ae::/48 Run rules_specific.php
@@ -3447,7 +3454,8 @@ Origin: SG
 2600:9000:202e::/47 Run rules_specific.php
 2600:9000:2031::/48 Run rules_specific.php
 2600:9000:2032::/47 Run rules_specific.php
-2600:9000:2034::/46 Run rules_specific.php
+2600:9000:2035::/48 Run rules_specific.php
+2600:9000:2036::/47 Run rules_specific.php
 2600:9000:2038::/47 Run rules_specific.php
 2600:9000:203a::/48 Run rules_specific.php
 2600:9000:203c::/46 Run rules_specific.php
@@ -3476,7 +3484,6 @@ Origin: SG
 2600:9000:20ab::/48 Run rules_specific.php
 2600:9000:20ac::/47 Run rules_specific.php
 2600:9000:20b2::/47 Run rules_specific.php
-2600:9000:20b4::/48 Run rules_specific.php
 2600:9000:20b9::/48 Run rules_specific.php
 2600:9000:20ba::/47 Run rules_specific.php
 2600:9000:20bc::/47 Run rules_specific.php
@@ -3602,6 +3609,17 @@ Tag: AS45538
 2402:4e00::/32 Deny Cloud
 Origin: CN
 Tag: Shenzhen Tencent
+
+
+# ASN 24413 ("ShenZhen Sunrise Technology Co.,Ltd").
+# %Listed, Google Malware Dashboard: 20.00%.
+# %Listed, CleanTalk.org: 100.00%.
+# Stop Forum Spam (SFS) listings: 5.
+# Updated: 2018.08.05
+
+2402:33c0::/32 Deny Cloud
+Origin: CN
+Tag: ShenZhen Sunrise
 
 
 # ASN 39572 ("DataWeb Global Group B.V").
@@ -3986,16 +4004,16 @@ Tag: RouteLabel V.O.F
 # ASN 42632 ("MnogoByte LLC").
 # %Listed, Google Malware Dashboard: 0.10%.
 # %Listed, CleanTalk.org: 69.70%.
-# Stop Forum Spam (SFS) listings: 77.
-# Updated: 2017.12.28 / Checked: 2018.04.01
+# Stop Forum Spam (SFS) listings: 75.
+# Updated: 2018.08.05
 
+2001:67c:1688::/48 Deny Cloud
 2a02:878:1::/48 Deny Cloud
 2a02:878:2::/48 Deny Cloud
 2a02:878:a::/48 Deny Cloud
 2a02:878:10::/48 Deny Cloud
 2a02:878:a801::/48 Deny Cloud
 2a02:878:a80e::/48 Deny Cloud
-2a0d:8400::/32 Deny Cloud
 Origin: RU
 Tag: MnogoByte LLC
 
@@ -4626,10 +4644,10 @@ Tag: iu.nl
 
 
 # ASN 49282 ("Ficolo Oy").
-# %Listed, Google Malware Dashboard: 0.42%.
+# %Listed, Google Malware Dashboard: 0.21%.
 # %Listed, CleanTalk.org: 12.75%.
 # Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.11.02 / Checked: 2018.03.06
+# Updated: 2016.11.02 / Checked: 2018.08.05
 
 2a03:e580::/29 Deny Cloud
 Origin: FI
@@ -5000,10 +5018,10 @@ Tag: zColo
 
 
 # ASNs 61138, 206122 ("Zappie Host LLC").
-# %Listed, Google Malware Dashboard: 5.08% (AS61138).
+# %Listed, Google Malware Dashboard: 9.52% (AS61138).
 # %Listed, CleanTalk.org: 45.45% (AS61138).
-# Stop Forum Spam (SFS) listings: 21 (AS61138).
-# Updated: 2018.04.02
+# Stop Forum Spam (SFS) listings: 30 (AS61138).
+# Updated: 2018.04.02 / Checked: 2018.08.05
 
 2a06:1280::/32 Deny Cloud
 Origin: BY
@@ -5281,13 +5299,14 @@ Tag: Green House Data
 
 # ASN 20021 ("HostMySite").
 # 100% hosting provider (generally considered safe to block), but may interfere with uptime monitoring service
-# "InternetSeer.com". Users of this service should probably set an Ignore rule for this signature section.
-# %Listed, Google Malware Dashboard: 0.68%.
+# "InternetSeer.com". Users of this service should probably set an "ignore" rule for this signature section. I won't be
+# mainlining a bypass for them though due to abuse reports from some users.
+# %Listed, Google Malware Dashboard: 0.34%.
 # %Listed, CleanTalk.org: 24.86%.
-# Updated: 2018.04.02
+# Stop Forum Spam (SFS) listings: 7.
+# Updated: 2018.08.05
 
 2600:1300::/32 Deny Cloud
-2600:1302::/32 Deny Cloud
 2600:1304::/32 Deny Cloud
 2600:1308::/32 Deny Cloud
 2600:130c::/32 Deny Cloud
@@ -5448,9 +5467,9 @@ Tag: Deninet KFT
 
 
 # ASN 32767 ("SAPIOTERRA, LLC").
-# %Listed, Google Malware Dashboard: 0.43%.
+# %Listed, Google Malware Dashboard: 0.23%.
 # %Listed, CleanTalk.org: 33.33%.
-# Updated: 2017.11.06 / Checked: 2018.03.02
+# Updated: 2017.11.06 / Checked: 2018.08.05
 
 2607:c080::/32 Deny Cloud
 Origin: US
@@ -5770,8 +5789,8 @@ Tag: Trader soft LLC
 
 # ASN 51395 ("SOFTplus Entwicklungen GmbH").
 # %Listed, CleanTalk.org: 80.36%.
-# Stop Forum Spam (SFS) listings: 39,627.
-# Updated: 2018.04.02
+# Stop Forum Spam (SFS) listings: 57,604.
+# Updated: 2018.08.05
 
 2001:67c:2f0::/48 Deny Cloud
 2a00:bd80::/32 Deny Cloud
@@ -5780,6 +5799,7 @@ Tag: Trader soft LLC
 2a05:ad00::/29 Deny Cloud
 2a0a:5dc0::/29 Deny Cloud
 2a0b:ee80::/29 Deny Cloud
+2a0c:e740::/32 Deny Cloud
 Origin: CH
 Tag: SOFTplus
 

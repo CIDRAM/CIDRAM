@@ -3140,15 +3140,11 @@ Tag: Handy Networks
 
 
 # ASN 31863 ("Centrilogic, Inc").
-# %Listed, Google Malware Dashboard: 1.67%.
+# %Listed, Google Malware Dashboard: 1.10%.
 # %Listed, CleanTalk.org: 48.74%.
-# Stop Forum Spam (SFS) listings: 1,145.
-# Updated: 2018.04.03
+# Stop Forum Spam (SFS) listings: 1,412.
+# Updated: 2018.08.06
 
-2a00:fd41::/32 Deny Cloud
-Origin: NL
-2a0d:d700::/29 Deny Cloud
-Origin: RU
 2602:ff96:3::/48 Deny Cloud
 2602:ff96:7::/48 Deny Cloud
 2607:5600::/32 Deny Cloud
@@ -3807,10 +3803,10 @@ Tag: HighSpeed Office Ltd
 
 
 # ASN 47447 ("23Media GmbH").
-# %Listed, Google Malware Dashboard: 0.42%.
+# %Listed, Google Malware Dashboard: 0.45%.
 # %Listed, CleanTalk.org: 28.37%.
-# Stop Forum Spam (SFS) listings: 3,684.
-# Updated: 2018.04.03
+# Stop Forum Spam (SFS) listings: 4,499.
+# Updated: 2018.08.06
 
 2a03:f80:49::/48 Deny Cloud
 Origin: AT
@@ -3820,6 +3816,7 @@ Origin: CZ
 2a05:cc00::/29 Deny Cloud
 2a06:8781::/48 Deny Cloud
 2a0a:9202::/32 Deny Cloud
+2a0c:2040::/29 Deny Cloud
 Origin: DE
 2a02:2da0::/32 Deny Cloud
 2a07:a347::/32 Deny Cloud
@@ -3989,10 +3986,10 @@ Tag: RamNode LLC
 
 
 # ASN 198203 ("RouteLabel V.O.F").
-# %Listed, Google Malware Dashboard: 0.61%.
+# %Listed, Google Malware Dashboard: 0.65%.
 # %Listed, CleanTalk.org: 75.34%.
-# Stop Forum Spam (SFS) listings: 97.
-# Updated: 2018.04.03
+# Stop Forum Spam (SFS) listings: 173.
+# Updated: 2018.04.03 / Checked: 2018.08.06
 
 2a00:d880::/32 Deny Cloud
 2a02:50e0::/32 Deny Cloud
@@ -5314,22 +5311,23 @@ Origin: US
 Tag: HostMySite
 
 
-# ASN 200039 ("Hydra Communications Ltd").
-# %Listed, Google Malware Dashboard: 1.72%.
-# %Listed, CleanTalk.org: 81.31%.
-# Stop Forum Spam (SFS) listings: 13,997.
-# Updated: 2017.12.30 / Checked: 2018.04.02
+# ASNs 25369, 200039 ("Hydra Communications Ltd").
+# %Listed, Google Malware Dashboard: 0.17% (AS25369), 2.12% (AS200039).
+# %Listed, CleanTalk.org: 47.22% (AS25369), 81.31% (AS200039).
+# Stop Forum Spam (SFS) listings: 270 (AS25369), 6,762 (AS200039).
+# Updated: 2018.08.06
 
 2a06:8dc6::/44 Deny Cloud
 2a06:8dc7::/48 Deny Cloud
 2a06:8ec4::/43 Deny Cloud
 Origin: EU
+2a00:1a30::/32 Deny Cloud
 2a01:4020::/32 Deny Cloud
 Origin: GB
 2a05:6200:72::/48 Deny Cloud
 Origin: NL
-2a0c:8500::/29 Deny Cloud
-Origin: RU
+2a03:b000:a00::/40 Deny Cloud
+Origin: SE
 2602:ff71:1::/48 Deny Cloud
 Origin: US
 Tag: Hydra Communications
@@ -6252,3 +6250,15 @@ Tag: ICME LIMITED
 2a04:cac3::/32 Deny Cloud
 Origin: DE
 Tag: PLUTEX GmbH
+
+
+# ASN 29017 ("Gyron Internet Ltd").
+# Cloud/hosting network. IPs contained therein caught trying to access sensitive parts of websites without permission.
+# %Listed, Google Malware Dashboard: 1.70%.
+# %Listed, CleanTalk.org: 31.17%.
+# Updated: 2018.08.06
+
+2a00:14f0::/32 Deny Cloud
+2a04:84c1::/32 Deny Cloud
+Origin: GB
+Tag: Gyron Internet Ltd

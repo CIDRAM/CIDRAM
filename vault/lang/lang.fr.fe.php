@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.07.27).
+ * This file: French language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Les fichiers pour contourner les signatures standard qui sont normalement inclus dans le paquet principal.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Le paquet principal (moins les signatures, la documentation et la configuration).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'Permet à l\'interface frontale de générer des diagrammes à secteurs.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> est disponible via le <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'Requis pour l\'utilisation de toute fonctionnalité impliquant l\'envoi d\'e-mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> est disponible via la licence <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Bloque les hôtes fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Bloque les hôtes appartenant aux FAI/ISPs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Bloque les hôtes appartenant aux TLDs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Fournit quelques 
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Fournit quelques protections limitées contre divers vecteurs d\'attaque communément utilisé dans les demandes.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Protège l\'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Contournements pour signatures standard.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN module de compatibilité';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Module de blocage pour les hôtes mauvais';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Module de blocage pour les hôtes mauvais (ISPs)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Module de blocage des mauvais TLDs';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Module bloqueur UA vide';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Module de blocage pour Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?cidram-page=logout">Déconnecter</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Déconnecter</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'Ces directives de configuration peuvent être nécessaires pour les fonctionnalités impliquant l\'envoi d\'e-mails. Veuillez vous reporter à la documentation pour plus d\'informations et les valeurs recommandées.';
+$CIDRAM['lang']['config_experimental'] = 'Instable/Expérimental !';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Yes [Default]; False = No.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Remplacer « forbid_on_block » lorsque « infraction_limit » est dépassé ? En cas de remplacement : Les requêtes bloquées renvoient une page blanche (les fichiers modèles ne sont pas utilisés). 200 = Ne pas remplacer [Défaut]. Les autres valeurs sont les mêmes que les valeurs disponibles pour « forbid_on_block ».';

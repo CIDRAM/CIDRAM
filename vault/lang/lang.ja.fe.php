@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.07.10).
+ * This file: Japanese language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'デフォルト署名バイパス、​通常はメインパッケージに含まれています。';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'メインパッケージ​（署名、​ドキュメンテーション、​コンフィギュレーション、​は含まれません）。';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'フロントエンドが円グラフを生成できるようにします。<br />「<a href="https://github.com/chartjs/Chart.js">Chart.js</a>」は、「<a href="https://opensource.org/licenses/MIT">MIT license</a>」を介して利用可能です。';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = '電子Ｅメールの送信を含む機能の使用に必要です。<br />「<a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>」は、「<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>」ライセンスを介して利用可能です。';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'スパマー、ハッカー、およびその他の悪意のあるエンティティによって頻繁に使用されるホストをブロックします。';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＩＳＰに属するホストをブロックします。';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = '危険なクッ�
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'リクエストでよく使用される攻撃経路に対して、​いくつかの制限された保護を提供します。';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。';
 $CIDRAM['lang']['Name: Bypasses'] = 'デフォルト署名バイパス。';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN互換モジュール';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '危険なホスト・ブロッカーモジュール';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '危険なホスト・ブロッカーモジュール（ＩＳＰ）';
 $CIDRAM['lang']['Name: module_badtlds.php'] = '危険なホストＴＬＤブロッカーモジュール';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = '空のＵＡブロッカー・モジ�
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandexブロッカーモジュール';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'これらのコンフィギュレーション・ディレクティブは、電子Ｅメールを送信する機能に必要な場合があります。​詳細および推奨値については、ドキュメントを参照してください。';
+$CIDRAM['lang']['config_experimental'] = '不安定/実験的！';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
 $CIDRAM['lang']['config_general_ban_override'] = '「infraction_limit」を超えたときに「forbid_on_block」を上書きしますか？​上書きするとき：ブロックされたリクエストは空白のページを返します（テンプレートファイルは使用されません）。​２００ = 上書きしない（Default/デフォルルト）。​他の値は、「forbid_on_block」の利用可能な値と同じです。';

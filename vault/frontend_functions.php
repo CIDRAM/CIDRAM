@@ -599,7 +599,7 @@ $CIDRAM['IPv4GetLast'] = function ($First, $Factor) {
  * @return string The final IP address.
  */
 $CIDRAM['IPv6GetLast'] = function ($First, $Factor) {
-    if (substr_count($First, '::')) {
+    if (strpos($First, '::') !== false) {
         $Abr = 7 - substr_count($First, ':');
         $Arr = [':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:'];
         $First = str_replace('::', $Arr[$Abr], $First);

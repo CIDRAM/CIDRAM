@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.07.17).
+ * This file: Front-end handler (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -23,6 +23,15 @@ if (!file_exists($CIDRAM['Vault'] . 'frontend_functions.php')) {
 }
 /** Load the front-end functions file. */
 require $CIDRAM['Vault'] . 'frontend_functions.php';
+
+/** Load PHPMailer classes if they've been installed. */
+if (file_exists($CIDRAM['Vault'] . '/phpmailer/PHPMailer.php')) {
+    require $CIDRAM['Vault'] . '/phpmailer/PHPMailer.php';
+    require $CIDRAM['Vault'] . '/phpmailer/Exception.php';
+    require $CIDRAM['Vault'] . '/phpmailer/OAuth.php';
+    require $CIDRAM['Vault'] . '/phpmailer/POP3.php';
+    require $CIDRAM['Vault'] . '/phpmailer/SMTP.php';
+}
 
 /** Set page selector if not already set. */
 if (empty($CIDRAM['QueryVars']['cidram-page'])) {
@@ -928,10 +937,10 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
         }
         $CIDRAM['RegenerateConfig'] .= '[' . $CIDRAM['CatKey'] . "]\r\n\r\n";
         $CIDRAM['FE']['ConfigFields'] .= sprintf(
-            '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
-            '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
-            '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
-            "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
+                '<table><tr><td class="ng2"><div id="%1$s-container" class="s">' .
+                '<a id="%1$s-showlink" href="#%1$s-container" onclick="javascript:showid(\'%1$s-hidelink\');showid(\'%1$s-ihidelink\');hideid(\'%1$s-showlink\');hideid(\'%1$s-ishowlink\');show(\'%1$s-index\');show(\'%1$s-row\')">%1$s +</a>' .
+                '<a id="%1$s-hidelink" %2$s href="javascript:void(0);" onclick="javascript:showid(\'%1$s-showlink\');showid(\'%1$s-ishowlink\');hideid(\'%1$s-hidelink\');hideid(\'%1$s-ihidelink\');hide(\'%1$s-index\');hide(\'%1$s-row\')">%1$s -</a>' .
+                "</div></td></tr></table>\n<span class=\"%1\$s-row\" %2\$s><table>\n",
             $CIDRAM['CatKey'],
             'style="display:none"'
         );
@@ -951,7 +960,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
             $CIDRAM['FE']['Indexes'] .= '<span class="' . $CIDRAM['CatKey'] . '-index" style="display:none"><a href="#' . $CIDRAM['ThisDir']['DirLangKey'] . '">' . $CIDRAM['ThisDir']['DirName'] . "</a><br /><br /></span>\n            ";
             $CIDRAM['ThisDir']['DirLang'] = !empty(
                 $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']]
-            ) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : $CIDRAM['lang']['response_error'];
+            ) ? $CIDRAM['lang'][$CIDRAM['ThisDir']['DirLangKey']] : (
+                !empty($CIDRAM['lang']['config_' . $CIDRAM['CatKey']]) ? $CIDRAM['lang']['config_' . $CIDRAM['CatKey']] : $CIDRAM['lang']['response_error']
+            );
+            if (!empty($CIDRAM['DirValue']['experimental'])) {
+                $CIDRAM['ThisDir']['DirLang'] = '<code class="exp">' . $CIDRAM['lang']['config_experimental'] . '</code> ' . $CIDRAM['ThisDir']['DirLang'];
+            }
             $CIDRAM['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($CIDRAM['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$CIDRAM['ThisDir']['DirLangKey']])) {
                 if ($CIDRAM['DirValue']['type'] === 'kb' || $CIDRAM['DirValue']['type'] === 'string' || $CIDRAM['DirValue']['type'] === 'timezone' || $CIDRAM['DirValue']['type'] === 'int' || $CIDRAM['DirValue']['type'] === 'real' || $CIDRAM['DirValue']['type'] === 'bool') {
@@ -1101,9 +1115,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
                 $CIDRAM['ThisDir']['FieldOut'] .= '</select>';
             } elseif ($CIDRAM['DirValue']['type'] === 'bool') {
                 $CIDRAM['ThisDir']['FieldOut'] = sprintf(
-                    '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
-                    '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
-                    '</select>',
+                        '<select class="auto" name="%1$s" id="%1$s_field"%2$s>' .
+                        '<option value="true"%5$s>%3$s</option><option value="false"%6$s>%4$s</option>' .
+                        '</select>',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['ThisDir']['Trigger'],
                     $CIDRAM['lang']['field_true'],

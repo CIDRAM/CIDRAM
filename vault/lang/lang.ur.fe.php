@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.07.20).
+ * This file: Urdu language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'مرکزی پیکیج (بغیر دستخط، دستاویزات، اور ترتیب).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'پائی چارٹ پیدا کرنے کے لئے سامنے کے آخر میں قابل بناتا ہے.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> <a href="https://opensource.org/licenses/MIT">MIT license</a> کے ذریعہ دستیاب ہے.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'یہ کسی بھی فعالیت کا استعمال کرنے کے لئے ضروری ہے جس میں ای میل بھیجنا شامل ہے.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> لائسنس <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> کے ذریعہ دستیاب ہے.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'بلاکس اکثر سپیمرز، ہیکرز، اور دیگر غلط تنظیموں کے ذریعہ استعمال ہوتے ہیں.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'آئی ایس پیز سے تعلق رکھنے والے بلاکس میزبان اکثر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کی طرف سے استعمال ہوتے ہیں.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'عام طور پر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کے ذریعہ TLDs سے تعلق رکھنے والے بلاکس میزبان.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'خطرناک کو
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'عام طور پر درخواستوں میں استعمال ہونے والی مختلف حمل ویکٹروں کے خلاف کچھ محدود تحفظ فراہم کرتا ہے.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS سے گنا آئی پی ایس کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے.';
 $CIDRAM['lang']['Name: Bypasses'] = 'پہلے سے طے شدہ دستخطی بائ پاس.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN مطابقت ماڈیول';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'برا میزبانوں بلاکر ماڈیول';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'برا میزبانوں بلاکر ماڈیول (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'خراب TLD بلاکر ماڈیول';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'خالی UA بلاکر ماڈیول';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex کی بلاکر ماڈیول';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ہوم</a> | <a href="?cidram-page=logout">لاگ آوٹ</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">لاگ آوٹ</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'ان ترتیبات کے ہدایات کی ضرورت ہوسکتی ہے جو ای میل بھیجنے میں شامل ہیں. مزید معلومات اور سفارش کردہ اقدار کیلئے دستاویزات کا حوالہ دیتے ہیں.';
+$CIDRAM['lang']['config_experimental'] = 'غیر مستحکم / تجرباتی!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں.';
 $CIDRAM['lang']['config_general_ban_override'] = '"forbid_on_block" کی جگہ لے لے، جب "infraction_limit" حد سے تجاوز کر رہا ہے؟ زیرکر کب: التواء درخواستوں ایک خالی صفحہ (سانچے فائلوں کا استعمال نہیں کر رہے ہیں) واپس جائیں. 200 = جگہ لے لے نہیں ہے [پہلے سے طے شدہ]. دیگر اقدار "forbid_on_block" کے لئے دستیاب اقدار کے طور پر اسی ہیں.';

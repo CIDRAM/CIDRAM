@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.07.10).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = '标准签名旁路文件通常包括在主包。';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = '主包（没有签名文件，文档，和配置）。';
+$CIDRAM['lang']['Extended Description: Chart.js'] = '使前端能够生成饼图。<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>可通过<a href="https://opensource.org/licenses/MIT">MIT license</a>获得。';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = '使用涉及发送电子邮件的任何功能时需要。<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>可通过<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>许可证获得。';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = '阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = '阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的ISP拥有的主机。';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = '阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机的TLD。';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = '提供一些针�
 $CIDRAM['lang']['Extended Description: module_extras.php'] = '提供一些有限的保护针对各种攻击向量常用于请求。';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = '防止通过SFS列出的IP地址访问注册和登录页面。';
 $CIDRAM['lang']['Name: Bypasses'] = '标准签名旁路。';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN兼容模块';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '坏主机阻塞模块';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '坏主机阻塞模块（ISP）';
 $CIDRAM['lang']['Name: module_badtlds.php'] = '坏TLD阻塞模块';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = '空UA阻塞模块';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex阻塞模块';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
+$CIDRAM['lang']['config_PHPMailer'] = '涉及发送电子邮件的功能可能需要这些配置指令。​有关更多信息和建议值，请参阅文档。';
+$CIDRAM['lang']['config_experimental'] = '不稳定/实验！';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。';
 $CIDRAM['lang']['config_general_ban_override'] = '覆盖“forbid_on_block”当“infraction_limit”已被超过？​当覆盖：已阻止的请求返回一个空白页（不使用模板文件）。​200 = 不要覆盖【标准】。​其他值与“forbid_on_block”的可用值相同。';

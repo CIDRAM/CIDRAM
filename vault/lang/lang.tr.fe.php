@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.07.10).
+ * This file: Turkish language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Varsayılan imza bypass\'lar, normalde ana paketle birlikte verilir.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Ana paket (hariç imzalar, belgeler, ve yapılandırma).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'Ön uçların pasta grafikler oluşturmasını sağlar.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>, <a href="https://opensource.org/licenses/MIT">MIT license</a> üzerinden kullanılabilir.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'E-posta göndermeyi içeren herhangi bir işlev kullanmak için gereklidir.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>, <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1 </a> lisansı üzerinden kullanılabilir.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça kullanılan ana bilgisayarları engeller.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça ISP\'lere ait kullanılan ana bilgisayarları engeller.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD\'lere ait kullanılan ana bilgisayarları engeller.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Tehlikeli çerezl
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'İsteklerde yaygın olarak kullanılan çeşitli saldırı vektörlerine karşı bazı sınırlı koruma sağlar.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS tarafından listelenen IP\'lere karşı kayıt ve oturum açma sayfalarını korur.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Varsayılan imza bypass\'lar.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN uyumluluk modülü';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Kötü ana engelleyici modülü';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Kötü ana engelleyici modülü (ISS\'ler)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Kötü TLD engelleyici modülü';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Boş UA engelleyici modülü';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex engelleyici modülü';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'Bu yapılandırma yönergeleri, e-posta göndermeyi içeren işlevler için gerekli olabilir. Daha fazla bilgi ve tavsiye edilen değerler için lütfen dokümanlara bakınız.';
+$CIDRAM['lang']['config_experimental'] = 'Kararsız/Deneysel!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit" aşıldığında "forbid_on_block"u geçersiz kıl? Geçersiz kılarken: Engellenen istekler boş bir sayfa verir (şablon dosyaları kullanılmaz). 200 = [Varsayılan] değerini geçersiz kılmayın. Diğer değerler "forbid_on_block" için mevcut değerler ile aynıdır.';

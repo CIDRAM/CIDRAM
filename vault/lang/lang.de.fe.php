@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.07.10).
+ * This file: German language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Die Standard-Signatur-Bypass-Dateien, die normalerweise im Hauptpaket enthalten sind.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'Ermöglicht dem Front-End die Generierung von Kreisdiagrammen.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> ist über die <a href="https://opensource.org/licenses/MIT">MIT license</a> verfügbar.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'Erforderlich für die Verwendung von Funktionen zum Senden von E-Mails.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> ist über die <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>-Lizenz verfügbar.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Blockiert Hosts, die häufig von Spammern, Hackern und anderen bösartigen Entitäten verwendet werden.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Blockiert Hosts, die zu ISPs gehören, die häufig von Spammern, Hackern und anderen schändlichen Entitäten verwendet werden.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blockiert Hosts, die zu TLDs gehören, die häufig von Spammern, Hackern und anderen schändlichen Entitäten verwendet werden.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Bietet einige beg
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Schützt die Registrierung und die Anmeldeseiten vor den von SFS aufgelisteten IPs.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Standard-Signatur-Bypässe.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN Kompatibilitätsmodul';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Schlechte Hosts Blocker-Modul';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Schlechte Hosts Blocker-Modul (ISPs)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Schlechte TLDs Blocker-Modul';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Leeres UA-Blocker-Modul';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex Blocker-Modul';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startseite</a> | <a href="?cidram-page=logout">Ausloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Ausloggen</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'Diese Direktiven können für das Senden von E-Mails erforderlich sein (von einigen Funktionen verwendet). Weitere Informationen und empfohlene Werte finden Sie in der Dokumentation.';
+$CIDRAM['lang']['config_experimental'] = 'Instabil/Experimentell!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'gethostbyaddr-Suche erlauben, wenn UDP nicht verfügbar ist? True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Überschreiben "forbid_on_block" Wenn "infraction_limit" überschritten wird? Beim überschreiben: Blockiert Anfragen geben eine leere Seite zurück (Template-Dateien werden nicht verwendet). 200 = Nicht überschreiben [Standardeinstellung]. Andere Werte entsprechen den verfügbaren Werten für "forbid_on_block".';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.07.10).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Các tập tin đường tránh chữ ký mặc định thường bao gồm với gói thầu chính.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'Cho phép front-end tạo biểu đồ hình tròn.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> có sẵn qua <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'Cần thiết để sử dụng bất kỳ chức năng nào liên quan đến việc gửi email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> có sẵn qua giấy phép <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Chặn các máy chủ web mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Chặn các máy chủ web của các ISP mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Cung cấp một 
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Cung cấp một số bảo vệ hạn chế chống vectơ tấn công khác nhau thường được sử dụng trong các yêu cầu.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Các đường tránh chữ ký mặc định.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'Mô-đun tương thích BunnyCDN';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Mô-đun cho chặn các host xấu';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Mô-đun cho chặn các host xấu (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Mô-đun cho chặn các TLD xấu';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Mô-đun chặn UA trống';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Mô-đun cho chặn Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'Các chỉ thị cấu hình này có thể được yêu cầu cho các chức năng liên quan đến việc gửi email. Vui lòng tham khảo tài liệu để biết thêm thông tin và các giá trị được đề xuất.';
+$CIDRAM['lang']['config_experimental'] = 'Không ổn định / Thử nghiệm!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Ghi đè "forbid_on_block" khi "infraction_limit" bị vượt quá? Khi ghi đè: Các yêu cầu bị chặn sản xuất một trang trống (tập tin mẫu không được sử dụng). 200 = Không ghi đè [Mặc định]. Các giá trị khác giống với các giá trị có sẵn cho "forbid_on_block".';

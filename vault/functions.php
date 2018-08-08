@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.23).
+ * This file: Functions file (last modified: 2018.07.31).
  */
 
 /**
@@ -186,7 +186,7 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
     if (preg_match('/\:\:$/i', $NAddr)) {
         $NAddr .= '0';
     }
-    if (substr_count($NAddr, '::')) {
+    if (strpos($NAddr, '::') !== false) {
         $c = 7 - substr_count($Addr, ':');
         $Arr = [':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:'];
         if (!isset($Arr[$c])) {
@@ -245,7 +245,7 @@ $CIDRAM['Getter'] = function ($Haystack, $Offset, $Tag, $DefTag) {
     return (
         ($PosX = strpos($Haystack, $Key, $Offset)) &&
         ($PosY = strpos($Haystack, "\n", $PosX + 1)) &&
-        !substr_count($Haystack, "\n\n", $Offset, $PosX - $Offset + 1)
+        strpos($Haystack, "\n\n", $Offset, $PosX - $Offset + 1) === false
     ) ? substr($Haystack, $PosX + $KeyLen, $PosY - $PosX - $KeyLen) : $DefTag;
 };
 
@@ -374,7 +374,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
-                    !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
+                    strpos($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1)) === false
                 ) {
                     $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }
@@ -628,7 +628,7 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
         }
         $Arr = [];
     }
-    if (!substr_count($In, "\n")) {
+    if (strpos($In, "\n") === false) {
         return false;
     }
     $In = str_replace("\r", '', $In);

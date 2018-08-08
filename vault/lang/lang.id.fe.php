@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.07.10).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'File untuk bypass tanda tangan standar yang biasanya disertakan dengan paket utama.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = 'Memungkinkan bagian depan untuk menghasilkan bagan pai.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> tersedia melalui <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'Diperlukan untuk menggunakan fungsionalitas apapun yang melibatkan pengiriman email.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> tersedia melalui lisensi <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Memblokir host yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Memblokir host yang milik ISP, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Memblokir host yang milik TLD, yang sering digunakan oleh spammer, peretas, dan entitas jahat lainnya.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Menyediakan beber
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Menyediakan beberapa perlindungan terbatas terhadap berbagai vektor serangan umum digunakan dalam permintaan.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Bypass tanda tangan standar.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'Modul kompatibilitas BunnyCDN';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Modul pemblokir untuk host buruk';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = 'Modul pemblokir untuk host buruk (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = 'Modul pemblokir TLD buruk';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Modul pemblokir UA kosong';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modul pemblokir untuk Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
+$CIDRAM['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silakan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
+$CIDRAM['lang']['config_experimental'] = 'Tidak stabil / Eksperimental!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "forbid_on_block".';

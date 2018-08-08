@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.07.10).
+ * This file: Korean language data for the front-end (last modified: 2018.08.08).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -32,6 +32,8 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 
 $CIDRAM['lang']['Extended Description: Bypasses'] = '기본 서명 우회 일반적으로 기본 패키지에 포함되어 있습니다.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = '메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).';
+$CIDRAM['lang']['Extended Description: Chart.js'] = '프런트 엔드에서 원형 차트를 생성 할 수 있습니다.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a>는 <a href="https://opensource.org/licenses/MIT">MIT license</a>를 통해 사용 가능합니다.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = '이메일 전송과 관련된 기능 사용에 필요합니다.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>는 <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a> 라이센스를 통해 사용 가능합니다.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = '스패머, 해커 및 기타 사기꾼이 자주 사용하는 호스트를 차단합니다.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = '스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 ISP에 속한 호스트를 차단합니다.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = '스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 TLD에 속한 호스트를 차단합니다.';
@@ -40,6 +42,7 @@ $CIDRAM['lang']['Extended Description: module_cookies.php'] = '위험한 쿠키�
 $CIDRAM['lang']['Extended Description: module_extras.php'] = '요청에서 자주 사용되는 공격 경로에 대해 몇 가지 제한된 보호를 제공합니다.';
 $CIDRAM['lang']['Extended Description: module_sfs.php'] = 'SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다.';
 $CIDRAM['lang']['Name: Bypasses'] = '기본 서명 우회.';
+$CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN 호환성 모듈';
 $CIDRAM['lang']['Name: module_badhosts.php'] = '위험한 호스트 차단 모듈';
 $CIDRAM['lang']['Name: module_badhosts_isps.php'] = '위험한 호스트 차단 모듈 (ISP)';
 $CIDRAM['lang']['Name: module_badtlds.php'] = '위험한 TLD 차단 모듈';
@@ -52,6 +55,8 @@ $CIDRAM['lang']['Name: module_ua.php'] = '빈 UA 차단기 모듈';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex 차단기 모듈';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
+$CIDRAM['lang']['config_PHPMailer'] = '이러한 구성 지시문은 전자 이메일 보내기와 관련된 기능에 필요할 수 있습니다. 자세한 정보 및 권장 값은 설명서를 참조하십시오.';
+$CIDRAM['lang']['config_experimental'] = '불안정/실험적!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다.';

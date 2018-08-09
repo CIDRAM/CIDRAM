@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.08.08).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Phóng to chữ. Mặc 
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho các chủ đề tùy chỉnh.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Bạn có chắc chắn muốn "%s" không?';
+$CIDRAM['lang']['field_2fa'] = 'Mã 2FA';
 $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';
 $CIDRAM['lang']['field_blocked'] = 'Bị Chặn';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Thành phần này đang kích h
 $CIDRAM['lang']['state_component_is_inactive'] = 'Thành phần này đang vô hiệu hóa.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Thành phần này đang thỉnh thoảng hoạt động.';
 $CIDRAM['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
+$CIDRAM['lang']['state_email_sent'] = 'Email được gửi thành công tới "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'Tác vụ không thành công vì không có thành phần cần thiết.';
 $CIDRAM['lang']['state_ignored'] = 'Bị bỏ qua';
 $CIDRAM['lang']['state_loading'] = 'Trong tiến trình...';
 $CIDRAM['lang']['state_loadtime'] = 'Yêu cầu trang hoàn thành trong <span class="txtRd">%s</span> giây.';
-$CIDRAM['lang']['state_logged_in'] = 'Được đăng nhập.';
+$CIDRAM['lang']['state_logged_in'] = 'Đã đăng nhập.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Đã đăng nhập + Đang chờ xử lý 2FA.';
+$CIDRAM['lang']['state_logged_out'] = 'Đã đăng xuất.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Cảnh báo: Đã bật chế độ bảo trì!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';

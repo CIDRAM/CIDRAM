@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.08.08).
+ * This file: Portuguese language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Ampliação de fonte. P
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de arquivo CSS para temas personalizados.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema padrão a ser usado para CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Você tem certeza que quer "%s"?';
+$CIDRAM['lang']['field_2fa'] = 'Código 2FA';
 $CIDRAM['lang']['field_activate'] = 'Ativar';
 $CIDRAM['lang']['field_banned'] = 'Banido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Componente está ativo.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Componente está inativo.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Componente está provisório.';
 $CIDRAM['lang']['state_default_password'] = 'Atenção: Usando senha padrão!';
+$CIDRAM['lang']['state_email_sent'] = 'E-mail enviado com sucesso para "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'A tarefa falhou porque um componente necessário está indisponível.';
 $CIDRAM['lang']['state_ignored'] = 'Ignorado';
 $CIDRAM['lang']['state_loading'] = 'Carregando...';
 $CIDRAM['lang']['state_loadtime'] = 'Pedido de página concluído em <span class="txtRd">%s</span> segundos.';
 $CIDRAM['lang']['state_logged_in'] = 'Conectado.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Conectado + 2FA pendentes.';
+$CIDRAM['lang']['state_logged_out'] = 'Desconectado.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Acesso aos arquivos de registro somente';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Atenção: O modo de manutenção está ativado!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Atenção: Esta conta não está usando uma senha válida!';

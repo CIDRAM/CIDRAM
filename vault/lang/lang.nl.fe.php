@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.08).
+ * This file: Dutch language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Lettergrootte vergrotin
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepaste thema\'s.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Weet u zeker dat u wilt "%s"?';
+$CIDRAM['lang']['field_2fa'] = '2FA-code';
 $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_banned'] = 'Verboden';
 $CIDRAM['lang']['field_blocked'] = 'Geblokkeerd';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Component is actief.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactief.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Component is voorlopig.';
 $CIDRAM['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
+$CIDRAM['lang']['state_email_sent'] = 'E-mail succesvol verzonden naar "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'Taak mislukt omdat een noodzakelijk component niet beschikbaar is.';
 $CIDRAM['lang']['state_ignored'] = 'Genegeerd';
 $CIDRAM['lang']['state_loading'] = 'Bezig met laden...';
 $CIDRAM['lang']['state_loadtime'] = 'Paginaverzoek voltooid in <span class="txtRd">%s</span> seconden.';
 $CIDRAM['lang']['state_logged_in'] = 'Ingelogd.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Ingelogd + wachten op 2FA.';
+$CIDRAM['lang']['state_logged_out'] = 'Uitgelogd.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Waarschuwing: De onderhoudsmodus is ingeschakeld!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';

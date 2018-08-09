@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.08.08).
+ * This file: Russian language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Увеличение ш
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для пользовательских тем.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Стандартная тема для CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Вы действительно хотите «%s»?';
+$CIDRAM['lang']['field_2fa'] = 'Код 2FA';
 $CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';
 $CIDRAM['lang']['field_blocked'] = 'Блокированный';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Компонент активе�
 $CIDRAM['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $CIDRAM['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
+$CIDRAM['lang']['state_email_sent'] = 'Электронная почта успешно отправлена на «%s».';
+$CIDRAM['lang']['state_failed_missing'] = 'Не удалось выполнить задачу, потому что необходимый компонент недоступен.';
 $CIDRAM['lang']['state_ignored'] = 'Игнорируется';
 $CIDRAM['lang']['state_loading'] = 'В ходе выполнения...';
 $CIDRAM['lang']['state_loadtime'] = 'Запрос страницы завершен через <span class="txtRd">%s</span> секунд.';
-$CIDRAM['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
+$CIDRAM['lang']['state_logged_in'] = 'Вошли в систему.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Вошли в систему + Ожидается 2FA.';
+$CIDRAM['lang']['state_logged_out'] = 'Вышел из системы.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Предупреждение: Включен режим обслуживания!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';

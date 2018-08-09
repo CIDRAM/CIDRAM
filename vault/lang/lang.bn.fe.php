@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.08.08).
+ * This file: Bangla language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'ফন্ট বৃহ�
 $CIDRAM['lang']['config_template_data_css_url'] = 'কাস্টম থিমগুলির জন্য CSS ফাইল URL।';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM এর জন্য ডিফল্ট থিম ব্যবহার করুন।';
 $CIDRAM['lang']['confirm_action'] = 'আপনি কি "%s" চান?';
+$CIDRAM['lang']['field_2fa'] = '2FA কোড';
 $CIDRAM['lang']['field_activate'] = 'সক্রিয় করা';
 $CIDRAM['lang']['field_banned'] = 'নিষিদ্ধ';
 $CIDRAM['lang']['field_blocked'] = 'ব্লক করা আছে';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'কম্পোনেন্ট �
 $CIDRAM['lang']['state_component_is_inactive'] = 'কম্পোনেন্ট নিষ্ক্রিয়।';
 $CIDRAM['lang']['state_component_is_provisional'] = 'কম্পোনেন্ট অস্থায়ী।';
 $CIDRAM['lang']['state_default_password'] = 'সতর্কতা: ডিফল্ট পাসওয়ার্ড ব্যবহার করে!';
+$CIDRAM['lang']['state_email_sent'] = 'ইমেল সফলভাবে "%s" এ পাঠানো হয়েছে।';
+$CIDRAM['lang']['state_failed_missing'] = 'কার্য ব্যর্থ হয়েছে কারণ একটি প্রয়োজনীয় উপাদান অনুপলব্ধ।';
 $CIDRAM['lang']['state_ignored'] = 'উপেক্ষিত';
 $CIDRAM['lang']['state_loading'] = 'লোড হচ্ছে ...';
 $CIDRAM['lang']['state_loadtime'] = 'পৃষ্ঠা অনুরোধ সম্পন্ন <span class="txtRd">%s</span> সেকেন্ড।';
-$CIDRAM['lang']['state_logged_in'] = 'লগ ইন আছে।';
+$CIDRAM['lang']['state_logged_in'] = 'লগ ইন হয়।';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'লগ ইন হয় + 2FA মুলতুবি।';
+$CIDRAM['lang']['state_logged_out'] = 'লগ আউট হয়।';
 $CIDRAM['lang']['state_logs_access_only'] = 'লগ প্রবেশাধিকার শুধুমাত্র';
 $CIDRAM['lang']['state_maintenance_mode'] = 'সতর্কতা: রক্ষণাবেক্ষণ মোড সক্রিয় করা হয়!';
 $CIDRAM['lang']['state_password_not_valid'] = 'সতর্কতা: এই অ্যাকাউন্টটি একটি বৈধ পাসওয়ার্ড ব্যবহার করছে না!';

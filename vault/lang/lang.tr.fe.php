@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.08.08).
+ * This file: Turkish language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Yazı tipi büyütme. V
 $CIDRAM['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM için kullanılacak varsayılan tema.';
 $CIDRAM['lang']['confirm_action'] = '"%s" istediğinden emin misin?';
+$CIDRAM['lang']['field_2fa'] = '2FA kodu';
 $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Bileşen aktiftir.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Bileşen etkin değil.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Bileşen geçicidir.';
 $CIDRAM['lang']['state_default_password'] = 'Uyarı: Varsayılan şifreyi kullanıyor!';
+$CIDRAM['lang']['state_email_sent'] = 'E-posta başarıyla "%s" olarak gönderildi.';
+$CIDRAM['lang']['state_failed_missing'] = 'Gerekli bir bileşen kullanılamaması nedeniyle görev başarısız oldu.';
 $CIDRAM['lang']['state_ignored'] = 'Kullanılmamış';
 $CIDRAM['lang']['state_loading'] = 'Yükleniyor...';
 $CIDRAM['lang']['state_loadtime'] = 'Sayfa isteği <span class="txtRd">%s</span> saniye içinde tamamlandı.';
 $CIDRAM['lang']['state_logged_in'] = 'Giriş yapıldı.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Giriş yapıldı + 2FA beklemede.';
+$CIDRAM['lang']['state_logged_out'] = 'Çıkış yapıldı.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Uyarı: Bakım modu etkin!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şifre kullanmıyor!';

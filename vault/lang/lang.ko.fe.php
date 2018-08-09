@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.08).
+ * This file: Korean language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = '글꼴 배율. Default 
 $CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CSS 파일 URL입니다.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테마.';
 $CIDRAM['lang']['confirm_action'] = '"%s"하시겠습니까?';
+$CIDRAM['lang']['field_2fa'] = '2FA 코드';
 $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = '구성 요소가 활성화됩니
 $CIDRAM['lang']['state_component_is_inactive'] = '구성 요소가 비활성 상태입니다.';
 $CIDRAM['lang']['state_component_is_provisional'] = '구성 요소가 잠정입니다.';
 $CIDRAM['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
+$CIDRAM['lang']['state_email_sent'] = '이메일이 "%s"로 전송되었습니다.';
+$CIDRAM['lang']['state_failed_missing'] = '필요한 구성 요소를 사용할 수 없어 작업이 실패했습니다.';
 $CIDRAM['lang']['state_ignored'] = '무시 됨';
 $CIDRAM['lang']['state_loading'] = '로드 중 ...';
 $CIDRAM['lang']['state_loadtime'] = '페이지 요청이 <span class="txtRd">%s</span> 초 후에 완료되었습니다.';
-$CIDRAM['lang']['state_logged_in'] = '로그인 있습니다.';
+$CIDRAM['lang']['state_logged_in'] = '로그인 했습니다.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = '로그인 했습니다 + 2FA를 기다리는 중.';
+$CIDRAM['lang']['state_logged_out'] = '로그 아웃했습니다.';
 $CIDRAM['lang']['state_logs_access_only'] = '로그에만 액세스';
 $CIDRAM['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';
 $CIDRAM['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';

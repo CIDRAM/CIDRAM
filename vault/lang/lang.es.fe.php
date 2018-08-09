@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.08.08).
+ * This file: Spanish language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -65,8 +65,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Una lista delimitada por comas 
 $CIDRAM['lang']['config_general_disable_cli'] = '¿Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo.';
 $CIDRAM['lang']['config_general_disable_frontend'] = '¿Desactivar el acceso front-end? El acceso front-end puede hacer CIDRAM más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar CIDRAM a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = '¿Desactivar webfonts? True = Sí [Predefinido]; False = No.';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Si deseado, usted puede suministrar una dirección de email aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de email que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de email aquí, que se asegura de que la dirección de email usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal).';
-$CIDRAM['lang']['config_general_emailaddr_display_style'] = '¿Cómo prefieres que la dirección de email sea presentada a los usuarios?';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Si deseado, usted puede suministrar una dirección de correo electrónico aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de correo electrónico que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de correo electrónico aquí, que se asegura de que la dirección de correo electrónico usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = '¿Cómo prefieres que la dirección de correo electrónico sea presentada a los usuarios?';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes? (Consulte la documentación para más información).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento.';
 $CIDRAM['lang']['config_general_hide_version'] = '¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido].';
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Ampliación de fuente. 
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL del archivo CSS para temas personalizados.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema predefinido a utilizar para CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = '¿Estás seguro de que quieres "%s"?';
+$CIDRAM['lang']['field_2fa'] = 'Código 2FA';
 $CIDRAM['lang']['field_activate'] = 'Activar';
 $CIDRAM['lang']['field_banned'] = 'Prohibido';
 $CIDRAM['lang']['field_blocked'] = 'Bloqueado';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Componente está activo.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Componente está inactivo.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Componente está provisional.';
 $CIDRAM['lang']['state_default_password'] = '¡Advertencia: Usando la contraseña estándar!';
+$CIDRAM['lang']['state_email_sent'] = 'Correo electrónico enviado con éxito a "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'La tarea falló porque un componente necesario no está disponible.';
 $CIDRAM['lang']['state_ignored'] = 'Ignorado';
 $CIDRAM['lang']['state_loading'] = 'Cargando...';
 $CIDRAM['lang']['state_loadtime'] = 'Solicitud de página completada en <span class="txtRd">%s</span> segundos.';
 $CIDRAM['lang']['state_logged_in'] = 'Conectado.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Conectado + 2FA pendiente.';
+$CIDRAM['lang']['state_logged_out'] = 'Desconectado.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Advertencia: ¡El modo de mantenimiento está activado!';
 $CIDRAM['lang']['state_password_not_valid'] = '¡Advertencia: Esta cuenta no está utilizando una contraseña válida!';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.08.08).
+ * This file: Italian language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Ingrandimento del carat
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL del file CSS per i temi personalizzati.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema predefinito da utilizzare per CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Sei sicuro di voler "%s"?';
+$CIDRAM['lang']['field_2fa'] = 'Codice 2FA';
 $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_banned'] = 'Vietato';
 $CIDRAM['lang']['field_blocked'] = 'Bloccato';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Componente è attivo.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Componente è inattivo.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Componente è provvisorio.';
 $CIDRAM['lang']['state_default_password'] = 'Avvertimento: Utilizzando la password predefinita!';
+$CIDRAM['lang']['state_email_sent'] = 'Email inviata con successo a "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'Attività non riuscita perché un componente necessario non è disponibile.';
 $CIDRAM['lang']['state_ignored'] = 'Ignorato';
 $CIDRAM['lang']['state_loading'] = 'Caricamento in corso...';
 $CIDRAM['lang']['state_loadtime'] = 'Richiesta di pagina completata in <span class="txtRd">%s</span> secondi.';
 $CIDRAM['lang']['state_logged_in'] = 'Connesso.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Connesso + 2FA in sospeso.';
+$CIDRAM['lang']['state_logged_out'] = 'Disconnesso.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accesso solo per i log';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Attenzione: La modalità di manutenzione è abilitata!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non utilizzando una password valida!';

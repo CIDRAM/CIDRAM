@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.07.10).
+ * This file: Front-end functions file (last modified: 2018.08.09).
  */
 
 /**
@@ -2465,6 +2465,10 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
     if (!$Pattern_reCAPTCHA_logfile && $CIDRAM['Config']['recaptcha']['logfile']) {
         $Pattern_reCAPTCHA_logfile = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['recaptcha']['logfile'], true);
     }
+    static $Pattern_PHPMailer_EventLog = false;
+    if (!$Pattern_PHPMailer_EventLog && $CIDRAM['Config']['PHPMailer']['EventLog']) {
+        $Pattern_PHPMailer_EventLog = $CIDRAM['BuildLogPattern']($CIDRAM['Config']['PHPMailer']['EventLog'], true);
+    }
     return preg_match('~\.log(?:\.gz)?$~', strtolower($File)) || (
         $CIDRAM['Config']['general']['logfile'] && preg_match($Pattern_logfile, $File)
     ) || (
@@ -2475,6 +2479,8 @@ $CIDRAM['FileManager-IsLogFile'] = function ($File) use (&$CIDRAM) {
         $CIDRAM['Config']['general']['FrontEndLog'] && preg_match($Pattern_FrontEndLog, $File)
     ) || (
         $CIDRAM['Config']['recaptcha']['logfile'] && preg_match($Pattern_reCAPTCHA_logfile, $File)
+    ) || (
+        $CIDRAM['Config']['PHPMailer']['EventLog'] && preg_match($Pattern_PHPMailer_EventLog, $File)
     );
 };
 
@@ -2502,4 +2508,202 @@ $CIDRAM['CheckFileUpdate'] = function ($FileData, $Mode = 1) use (&$CIDRAM) {
         return $FileData && !preg_match('~<(?:html|body)~i', $FileData);
     }
     return true;
+};
+
+/**
+ * A quicker way to add entries to the front-end logfile.
+ *
+ * @param string $IPAddr The IP address triggering the log event.
+ * @param string $User The user triggering the log event.
+ * @param string $Message The message to be logged.
+ */
+$CIDRAM['FELogger'] = function ($IPAddr, $User, $Message) use (&$CIDRAM) {
+    if (!$CIDRAM['Config']['general']['FrontEndLog'] || empty($CIDRAM['FE']['DateTime'])) {
+        return;
+    }
+    $File = (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
+        $CIDRAM['Now'],
+        $CIDRAM['Config']['general']['FrontEndLog']
+    ) : $CIDRAM['Config']['general']['FrontEndLog'];
+    $Data = $CIDRAM['Config']['legal']['pseudonymise_ip_addresses'] ? $CIDRAM['Pseudonymise-IP']($IPAddr) : $IPAddr;
+    $Data .= ' - ' . $CIDRAM['FE']['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
+    $WriteMode = (!file_exists($CIDRAM['Vault'] . $File) || (
+        $CIDRAM['Config']['general']['truncate'] > 0 &&
+        filesize($CIDRAM['Vault'] . $File) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+    )) ? 'w' : 'a';
+    if ($CIDRAM['BuildLogPath']($File)) {
+        $Handle = fopen($CIDRAM['Vault'] . $File, $WriteMode);
+        fwrite($Handle, $Data);
+        fclose($Handle);
+        if ($WriteMode === 'w') {
+            $CIDRAM['LogRotation']($CIDRAM['Config']['general']['FrontEndLog']);
+        }
+    }
+};
+
+/**
+ * Wrapper for PHPMailer functionality.
+ *
+ * @param array $Recipients An array of recipients to send to.
+ * @param string $Subject The subject line of the email.
+ * @param string $Body The HTML content of the email.
+ * @param string $AltBody The alternative plain-text content of the email.
+ * @param array $Attachments An optional array of attachments.
+ * @return bool Operation failed (false) or succeeded (true).
+ */
+$CIDRAM['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '', $AltBody = '', $Attachments = []) use (&$CIDRAM) {
+    $EventLog = '';
+    $EventLogData = '';
+
+    /** Prepare event logging. */
+    if ($CIDRAM['Config']['PHPMailer']['EventLog']) {
+        $EventLog = (strpos($CIDRAM['Config']['PHPMailer']['EventLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
+            $CIDRAM['Now'],
+            $CIDRAM['Config']['PHPMailer']['EventLog']
+        ) : $CIDRAM['Config']['PHPMailer']['EventLog'];
+        $EventLogData = ((
+            $CIDRAM['Config']['legal']['pseudonymise_ip_addresses']
+        ) ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']]) . ' - ' . (
+            isset($CIDRAM['FE']['DateTime']) ? $CIDRAM['FE']['DateTime'] : $CIDRAM['TimeFormat'](
+                $CIDRAM['Now'],
+                $CIDRAM['Config']['general']['timeFormat']
+            )
+        ) . ' - ';
+        $WriteMode = (!file_exists($EventLog) || (
+            $CIDRAM['Config']['general']['truncate'] > 0 &&
+            filesize($CIDRAM['Vault'] . $EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
+        )) ? 'w' : 'a';
+    }
+
+    /** Operation success state. */
+    $State = false;
+
+    /** Check whether class exists to either load it and continue or fail the operation. */
+    if (!class_exists('\PHPMailer\PHPMailer\PHPMailer')) {
+        if ($EventLog) {
+            $EventLogData .= $CIDRAM['lang']['state_failed_missing'] . "\n";
+        }
+    } else {
+        try {
+
+            /** Create a new PHPMailer instance. */
+            $Mail = new \PHPMailer\PHPMailer\PHPMailer();
+
+            /** Tell PHPMailer to use SMTP. */
+            $Mail->isSMTP();
+
+            /** Disable debugging. */
+            $Mail->SMTPDebug = 0;
+
+            /** Skip authorisation process for some extreme problematic cases. */
+            if ($CIDRAM['Config']['PHPMailer']['SkipAuthProcess']) {
+                $Mail->SMTPOptions = ['ssl' => [
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                ]];
+            }
+
+            /** Set mail server hostname. */
+            $Mail->Host = $CIDRAM['Config']['PHPMailer']['Host'];
+
+            /** Set the SMTP port. */
+            $Mail->Port = $CIDRAM['Config']['PHPMailer']['Port'];
+
+            /** Set the encryption system to use. */
+            if (
+                !empty($CIDRAM['Config']['PHPMailer']['SMTPSecure']) &&
+                $CIDRAM['Config']['PHPMailer']['SMTPSecure'] !== '-'
+            ) {
+                $Mail->SMTPSecure = $CIDRAM['Config']['PHPMailer']['SMTPSecure'];
+            }
+
+            /** Set whether to use SMTP authentication. */
+            $Mail->SMTPAuth = $CIDRAM['Config']['PHPMailer']['SMTPAuth'];
+
+            /** Set the username to use for SMTP authentication. */
+            $Mail->Username = $CIDRAM['Config']['PHPMailer']['Username'];
+
+            /** Set the password to use for SMTP authentication. */
+            $Mail->Password = $CIDRAM['Config']['PHPMailer']['Password'];
+
+            /** Set the email sender address and name. */
+            $Mail->setFrom(
+                $CIDRAM['Config']['PHPMailer']['setFromAddress'],
+                $CIDRAM['Config']['PHPMailer']['setFromName']
+            );
+
+            /** Set the optional "reply to" address and name. */
+            if (
+                !empty($CIDRAM['Config']['PHPMailer']['addReplyToAddress']) &&
+                !empty($CIDRAM['Config']['PHPMailer']['addReplyToName'])
+            ) {
+                $Mail->addReplyTo(
+                    $CIDRAM['Config']['PHPMailer']['addReplyToAddress'],
+                    $CIDRAM['Config']['PHPMailer']['addReplyToName']
+                );
+            }
+
+            /** Used by logging when send succeeds. */
+            $SuccessDetails = '';
+
+            /** Set the recipient address and name. */
+            foreach ($Recipients as $Recipient) {
+                if (empty($Recipient['Address']) || empty($Recipient['Name'])) {
+                    continue;
+                }
+                $Mail->addAddress($Recipient['Address'], $Recipient['Name']);
+                $SuccessDetails .= (($SuccessDetails) ? ', ' : '') . $Recipient['Name'] . ' <' . $Recipient['Address'] . '>';
+            }
+
+            /** Set the subject line of the email. */
+            $Mail->Subject = $Subject;
+
+            /** Tell PHPMailer that the email is written using HTML. */
+            $Mail->isHTML = true;
+
+            /** Set the HTML body of the email. */
+            $Mail->Body = $Body;
+
+            /** Set the alternative, plain-text body of the email. */
+            $Mail->AltBody = $AltBody;
+
+            /** Process attachments. */
+            foreach ($Attachments as $Attachment) {
+                $Mail->addAttachment($Attachment);
+            }
+
+            /** Send it! */
+            $State = $Mail->send();
+
+            /** Log the results of the send attempt. */
+            if ($EventLog) {
+                $EventLogData .= ($State ? sprintf(
+                    $CIDRAM['lang']['state_email_sent'],
+                    $SuccessDetails
+                ) : $CIDRAM['lang']['response_error'] . ' - ' . $Mail->ErrorInfo) . "\n";
+            }
+
+        } catch (\Exception $e) {
+
+            /** An exeption occurred. Log the information. */
+            if ($EventLog) {
+                $EventLogData .= $CIDRAM['lang']['response_error'] . ' - ' . $e->getMessage() . "\n";
+            }
+
+        }
+    }
+
+    /** Write to the event log. */
+    if ($EventLog) {
+        $Handle = fopen($CIDRAM['Vault'] . $EventLog, $WriteMode);
+        fwrite($Handle, $EventLogData);
+        fclose($Handle);
+        if ($WriteMode === 'w') {
+            $CIDRAM['LogRotation']($CIDRAM['Config']['PHPMailer']['EventLog']);
+        }
+    }
+
+    /** Exit. */
+    return $State;
 };

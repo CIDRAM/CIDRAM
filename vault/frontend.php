@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.08).
+ * This file: Front-end handler (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -85,13 +85,25 @@ $CIDRAM['FE'] = [
     /** Cache data will be populated here. */
     'Cache' => "\n",
 
-    /** The current user state (0 = Not logged in; 1 = Logged in; -1 = Attempted and failed to log in). */
+    /**
+     * The current user state.
+     * -1 = Attempted and failed to log in.
+     * 0 = Not logged in.
+     * 1 = Logged in.
+     * 2 = Logged in, but awaiting two-factor authentication.
+     */
     'UserState' => 0,
 
     /** Taken from either $_POST['username'] or $_COOKIE['CIDRAM-ADMIN'] (the username claimed by the client). */
     'UserRaw' => '',
 
-    /** User permissions (0 = Not logged in; 1 = Complete access; 2 = Logs access only; 3 = Cronable). */
+    /**
+     * User permissions.
+     * 0 = Not logged in, or awaiting two-factor authentication.
+     * 1 = Complete access.
+     * 2 = Logs access only.
+     * 3 = Cronable.
+     */
     'Permissions' => 0,
 
     /** Will be populated by messages reflecting the current request state. */
@@ -310,7 +322,18 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     $CIDRAM['FE']['Permissions'] = 0;
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_wrong_endpoint'];
                 } else {
-                    $CIDRAM['FE']['UserState'] = 1;
+                    if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
+                        $CIDRAM['2FA-State'] = (int)$CIDRAM['FECacheGet'](
+                            $CIDRAM['FE']['Cache'],
+                            '2FA-State:' . $CIDRAM['FE']['User']
+                        );
+                        $CIDRAM['FE']['UserState'] = ($CIDRAM['2FA-State'] === 1) ? 1 : 2;
+                    } else {
+                        $CIDRAM['FE']['UserState'] = 1;
+                    }
+                    if ($CIDRAM['FE']['UserState'] !== 1) {
+                        $CIDRAM['FE']['Permissions'] = 0;
+                    }
                     if (!$CIDRAM['FE']['CronMode']) {
                         $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
                         $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
@@ -332,17 +355,6 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
 
     }
 
-    $CIDRAM['FrontEndLogFile'] = '';
-    if ($CIDRAM['Config']['general']['FrontEndLog']) {
-        $CIDRAM['FrontEndLogFile'] = (strpos($CIDRAM['Config']['general']['FrontEndLog'], '{') !== false) ? $CIDRAM['TimeFormat'](
-            $CIDRAM['Now'],
-            $CIDRAM['Config']['general']['FrontEndLog']
-        ) : $CIDRAM['Config']['general']['FrontEndLog'];
-        $CIDRAM['FrontEndLog'] = (
-            $CIDRAM['Config']['legal']['pseudonymise_ip_addresses']
-        ) ? $CIDRAM['Pseudonymise-IP']($_SERVER[$CIDRAM['IPAddr']]) : $_SERVER[$CIDRAM['IPAddr']];
-        $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['FE']['DateTime'] . ' - ' . (empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"');
-    }
     if ($CIDRAM['FE']['state_msg']) {
         $CIDRAM['LoginAttempts']++;
         $CIDRAM['TimeToAdd'] = ($CIDRAM['LoginAttempts'] > 4) ? ($CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
@@ -354,31 +366,21 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
             $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
         );
         if ($CIDRAM['Config']['general']['FrontEndLog']) {
-            $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['FE']['state_msg'] . "\n";
+            $CIDRAM['LoggerMessage'] = $CIDRAM['FE']['state_msg'];
         }
         if (!$CIDRAM['FE']['CronMode']) {
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['FE']['state_msg'] . '<br /><br /></div>';
         }
     } elseif ($CIDRAM['Config']['general']['FrontEndLog']) {
-        $CIDRAM['FrontEndLog'] .= ' - ' . $CIDRAM['lang']['state_logged_in'] . "\n";
+        $CIDRAM['LoggerMessage'] = (
+            $CIDRAM['Config']['PHPMailer']['Enable2FA'] &&
+            $CIDRAM['FE']['Permissions'] === 0
+        ) ? $CIDRAM['lang']['state_logged_in_2fa_pending'] : $CIDRAM['lang']['state_logged_in'];
     }
-    if ($CIDRAM['Config']['general']['FrontEndLog']) {
-        $CIDRAM['WriteMode'] = (
-            !file_exists($CIDRAM['Vault'] . $CIDRAM['FrontEndLogFile']) || (
-                $CIDRAM['Config']['general']['truncate'] > 0 &&
-                filesize($CIDRAM['Vault'] . $CIDRAM['FrontEndLogFile']) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
-            )
-        ) ? 'w' : 'a';
-        if ($CIDRAM['BuildLogPath']($CIDRAM['FrontEndLogFile'])) {
-            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . $CIDRAM['FrontEndLogFile'], $CIDRAM['WriteMode']);
-            fwrite($CIDRAM['Handle'], $CIDRAM['FrontEndLog']);
-            fclose($CIDRAM['Handle']);
-            if ($CIDRAM['WriteMode'] === 'w') {
-                $CIDRAM['LogRotation']($CIDRAM['Config']['general']['FrontEndLog']);
-            }
-        }
-        unset($CIDRAM['WriteMode'], $CIDRAM['FrontEndLog'], $CIDRAM['FrontEndLogFile']);
-    }
+    $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], (
+        empty($_POST['username']) ? '' : $_POST['username']
+    ), empty($CIDRAM['LoggerMessage']) ? '' : $CIDRAM['LoggerMessage']);
+    unset($CIDRAM['LoggerMessage']);
 }
 
 /** Determine whether the user has logged in. */
@@ -425,7 +427,18 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                         $CIDRAM['FE']['UserOffset'],
                         strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserOffset']) - $CIDRAM['FE']['UserOffset']
                     ), -1);
-                    $CIDRAM['FE']['UserState'] = 1;
+                    if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
+                        $CIDRAM['2FA-State'] = (int)$CIDRAM['FECacheGet'](
+                            $CIDRAM['FE']['Cache'],
+                            '2FA-State:' . $CIDRAM['FE']['User']
+                        );
+                        $CIDRAM['FE']['UserState'] = ($CIDRAM['2FA-State'] === 1) ? 1 : 2;
+                    } else {
+                        $CIDRAM['FE']['UserState'] = 1;
+                    }
+                    if ($CIDRAM['FE']['UserState'] !== 1) {
+                        $CIDRAM['FE']['Permissions'] = 0;
+                    }
                 }
                 break;
             }
@@ -442,8 +455,8 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['ASYNC']) {
     die($CIDRAM['lang']['state_async_deny']);
 }
 
-/** Only execute this code block for users that are logged in. */
-if ($CIDRAM['FE']['UserState'] === 1 && !$CIDRAM['FE']['CronMode']) {
+/** Only execute this code block for users that are logged in or awaiting two-factor authentication. */
+if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$CIDRAM['FE']['CronMode']) {
 
     if ($CIDRAM['QueryVars']['cidram-page'] === 'logout') {
 
@@ -451,8 +464,11 @@ if ($CIDRAM['FE']['UserState'] === 1 && !$CIDRAM['FE']['CronMode']) {
         $CIDRAM['FE']['SessionList'] = str_ireplace($CIDRAM['FE']['ThisSession'], '', $CIDRAM['FE']['SessionList']);
         $CIDRAM['FE']['ThisSession'] = '';
         $CIDRAM['FE']['Rebuild'] = true;
-        $CIDRAM['FE']['UserState'] = $CIDRAM['FE']['Permissions'] = 0;
+        $CIDRAM['FE']['UserState'] = 0;
+        $CIDRAM['FE']['Permissions'] = 0;
         setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HTTP_HOST'], false, true);
+        $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $CIDRAM['FE']['User']);
+        $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['state_logged_out']);
 
     }
 
@@ -478,17 +494,32 @@ if ($CIDRAM['FE']['UserState'] === 1 && !$CIDRAM['FE']['CronMode']) {
 
 $CIDRAM['FE']['bNavBR'] = ($CIDRAM['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
 
-/** The user hasn't logged in. Show them the login page. */
+/** The user hasn't logged in, or hasn't authenticated yet. */
 if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
 
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_login'], $CIDRAM['lang']['tip_login'], false);
 
-    /** Parse output. */
-    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
-        $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_login.html'))
-    );
+    if ($CIDRAM['FE']['UserState'] === 2) {
+
+        /** Provide an option for the user to log out instead, if they'd prefer. */
+        $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_logout'];
+
+        /** Show them the two-factor authentication page. */
+        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'],
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_2fa.html'))
+        );
+
+    } else {
+
+        /** Show them the login page. */
+        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'],
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_login.html'))
+        );
+
+    }
 
     /** Send output. */
     echo $CIDRAM['SendOutput']();
@@ -2810,7 +2841,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 }
 
 /** Logs. */
-elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs') {
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permissions'] > 0) {
 
     /** Page initial prepwork. */
     $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_logs'], $CIDRAM['lang']['tip_logs'], false);

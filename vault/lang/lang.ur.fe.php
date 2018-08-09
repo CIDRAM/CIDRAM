@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.08).
+ * This file: Urdu language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'فونٹ اضافہ. پ
 $CIDRAM['lang']['config_template_data_css_url'] = 'اپنی مرضی کے موضوعات کے لئے سی ایس ایس فائل URL.';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.';
 $CIDRAM['lang']['confirm_action'] = 'کیا آپ واقعی "%s" کرنا چاہتے ہیں؟';
+$CIDRAM['lang']['field_2fa'] = '2FA کوڈ';
 $CIDRAM['lang']['field_activate'] = 'فعال کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'جزو فعال ہے.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'اجزاء غیر فعال ہے.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'اجزاء عارضی ہے.';
 $CIDRAM['lang']['state_default_password'] = 'انتباہ: ڈیفالٹ پاس ورڈ کو استعمال کرتے ہوئے!';
+$CIDRAM['lang']['state_email_sent'] = 'ای میل کامیابی سے "%s" پر بھیجا گیا.';
+$CIDRAM['lang']['state_failed_missing'] = 'کام ناکام ہوگیا کیونکہ ایک ضروری جزو دستیاب نہیں ہے.';
 $CIDRAM['lang']['state_ignored'] = 'نظر انداز';
 $CIDRAM['lang']['state_loading'] = 'لوڈ کر رہا ہے ...';
 $CIDRAM['lang']['state_loadtime'] = '<span class="txtRd">%s</span> سیکنڈ میں مکمل ہونے والی درخواست کی درخواست.';
-$CIDRAM['lang']['state_logged_in'] = 'لاگ.';
+$CIDRAM['lang']['state_logged_in'] = 'لاگ ان.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'لاگ ان + 2FA زیر التواء.';
+$CIDRAM['lang']['state_logged_out'] = 'لاگ آؤٹ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'لاگز صرف رسائی';
 $CIDRAM['lang']['state_maintenance_mode'] = 'انتباہ: بحالی کا موڈ فعال ہے!';
 $CIDRAM['lang']['state_password_not_valid'] = 'انتباہ: یہ اکاؤنٹ ایک درست پاس ورڈ کا استعمال نہیں کر رہا ہے!';

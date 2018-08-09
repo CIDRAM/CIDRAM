@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.08.08).
+ * This file: Thai language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'การขยาย�
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ไฟล์ CSS สำหรับธีมที่กำหนดเอง.';
 $CIDRAM['lang']['config_template_data_theme'] = 'ธีมเริ่มต้นที่จะใช้สำหรับ CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'คุณแน่ใจหรือไม่ว่าต้องการ "%s"?';
+$CIDRAM['lang']['field_2fa'] = 'โค้ด 2FA';
 $CIDRAM['lang']['field_activate'] = 'เปิดใช้งาน';
 $CIDRAM['lang']['field_banned'] = 'ถูกห้าม';
 $CIDRAM['lang']['field_blocked'] = 'ถูกบล็อก';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'คอมโพเนนต์�
 $CIDRAM['lang']['state_component_is_inactive'] = 'คอมโพเนนต์ไม่ใช้งาน.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'คอมโพเนนต์เป็นครั้งคราว.';
 $CIDRAM['lang']['state_default_password'] = 'คำเตือน: ใช้ค่าเริ่มต้นรหัสผ่าน!';
+$CIDRAM['lang']['state_email_sent'] = 'ส่งอีเมลสำเร็จ "%s" แล้ว.';
+$CIDRAM['lang']['state_failed_missing'] = 'ภารกิจล้มเหลวเนื่องจากคอมโพเนนต์ที่จำเป็นไม่พร้อมใช้งาน.';
 $CIDRAM['lang']['state_ignored'] = 'จะถูกละเลย';
 $CIDRAM['lang']['state_loading'] = 'กำลังโหลด ...';
 $CIDRAM['lang']['state_loadtime'] = 'คำขอหน้าเสร็จสิ้นภายใน <span class="txtRd">%s</span> วินาที.';
 $CIDRAM['lang']['state_logged_in'] = 'เข้าสู่ระบบ.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'เข้าสู่ระบบ + รอดำเนินการ 2FA.';
+$CIDRAM['lang']['state_logged_out'] = 'ออกจากระบบ.';
 $CIDRAM['lang']['state_logs_access_only'] = 'เข้าถึงบันทึกเท่านั้น';
 $CIDRAM['lang']['state_maintenance_mode'] = 'คำเตือน: เปิดใช้งานโหมดการบำรุงรักษา!';
 $CIDRAM['lang']['state_password_not_valid'] = 'คำเตือน: บัญชีนี้ไม่ได้ใช้รหัสผ่านถูกต้อง!';

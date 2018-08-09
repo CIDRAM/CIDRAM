@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.08.08).
+ * This file: English language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Font magnification. Def
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS file URL for custom themes.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Default theme to use for CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Are you sure you want to "%s"?';
+$CIDRAM['lang']['field_2fa'] = '2FA code';
 $CIDRAM['lang']['field_activate'] = 'Activate';
 $CIDRAM['lang']['field_banned'] = 'Banned';
 $CIDRAM['lang']['field_blocked'] = 'Blocked';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Component is active.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Component is inactive.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Component is provisional.';
 $CIDRAM['lang']['state_default_password'] = 'Warning: Using default password!';
+$CIDRAM['lang']['state_email_sent'] = 'Email successfully sent to "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'Task failed because a necessary component is unavailable.';
 $CIDRAM['lang']['state_ignored'] = 'Ignored';
 $CIDRAM['lang']['state_loading'] = 'Loading...';
 $CIDRAM['lang']['state_loadtime'] = 'Page request completed in <span class="txtRd">%s</span> seconds.';
 $CIDRAM['lang']['state_logged_in'] = 'Logged in.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Logged in + 2FA pending.';
+$CIDRAM['lang']['state_logged_out'] = 'Logged out.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Logs access only';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Warning: Maintenance mode is enabled!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warning: This account is not using a valid password!';

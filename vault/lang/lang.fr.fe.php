@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.08.08).
+ * This file: French language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Grossissement des fonte
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL de fichier CSS pour les thèmes personnalisés.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Le thème à utiliser par défaut pour CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Êtes-vous sûr de vouloir « %s » ?';
+$CIDRAM['lang']['field_2fa'] = 'Code 2FA';
 $CIDRAM['lang']['field_activate'] = 'Activer';
 $CIDRAM['lang']['field_banned'] = 'Interdit';
 $CIDRAM['lang']['field_blocked'] = 'Bloqué';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Le composant est actif.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $CIDRAM['lang']['state_default_password'] = 'Attention : Utilisant le mot de passe défaut !';
+$CIDRAM['lang']['state_email_sent'] = 'Email envoyé avec succès à « %s ».';
+$CIDRAM['lang']['state_failed_missing'] = 'La tâche a échoué car un composant nécessaire n\'est pas disponible.';
 $CIDRAM['lang']['state_ignored'] = 'Ignoré';
 $CIDRAM['lang']['state_loading'] = 'Chargement...';
 $CIDRAM['lang']['state_loadtime'] = 'Requête de page complétée en <span class="txtRd">%s</span> secondes.';
 $CIDRAM['lang']['state_logged_in'] = 'Connecté.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Connecté + 2FA en attente.';
+$CIDRAM['lang']['state_logged_out'] = 'Déconnecté.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Avertissement : Le mode de maintenance est activé !';
 $CIDRAM['lang']['state_password_not_valid'] = 'Attention : Ce compte n\'utilise un mot de passe valide !';

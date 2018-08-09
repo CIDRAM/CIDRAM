@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.08).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -57,7 +57,7 @@ $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silakan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
 $CIDRAM['lang']['config_experimental'] = 'Tidak stabil / Eksperimental!';
-$CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
+$CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_ban_override'] = 'Mengesampingkan "forbid_on_block" ketika "infraction_limit" adalah melampaui? Ketika mengesampingkan: Permintaan diblokir menghasilkan halaman kosong (file template tidak digunakan). 200 = Jangan mengesampingkan [Default]. Nilai lainnya sama dengan nilai yang tersedia untuk "forbid_on_block".';
 $CIDRAM['lang']['config_general_default_algo'] = 'Mendefinisikan algoritma mana yang akan digunakan untuk semua password dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0).';
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Perbesaran font. Defaul
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kustom.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Anda yakin ingin "%s"?';
+$CIDRAM['lang']['field_2fa'] = 'Kode 2FA';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $CIDRAM['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
+$CIDRAM['lang']['state_email_sent'] = 'Email berhasil dikirim ke "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'Tugas gagal karena komponen yang diperlukan tidak tersedia.';
 $CIDRAM['lang']['state_ignored'] = 'Diabaikan';
 $CIDRAM['lang']['state_loading'] = 'Pemuatan...';
 $CIDRAM['lang']['state_loadtime'] = 'Permintaan halaman selesai dalam <span class="txtRd">%s</span> detik.';
-$CIDRAM['lang']['state_logged_in'] = 'Pengguna yang online.';
+$CIDRAM['lang']['state_logged_in'] = 'Dimasuk.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Dimasuk + 2FA sedang menunggu.';
+$CIDRAM['lang']['state_logged_out'] = 'Dikeluar.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Peringatan: Modus perawatan diaktifkan!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
@@ -328,7 +333,7 @@ $CIDRAM['lang']['tip_custom_ua'] = 'Masukkan agen pengguna (user agent) disini (
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
-$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi login. Saat kamu login, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salam, {username}.<br />Agregator IP memungkinkan Anda untuk mengekspresikan IP dan CIDR dengan cara sekecil mungkin. Masukkan data yang akan digabungkan dan tekan "OK".';

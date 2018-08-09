@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.08.08).
+ * This file: Arabic language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'تكبير الخط. ا
 $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع مخصصة.';
 $CIDRAM['lang']['config_template_data_theme'] = 'الموضوع الافتراضي لاستخدام CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'هل أنت متأكد من أنك تريد "%s"؟';
+$CIDRAM['lang']['field_2fa'] = 'كود 2FA';
 $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'وحدة نشطة.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'وحدة غير نشطة.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'وحدة نشطة جزئيا.';
 $CIDRAM['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
+$CIDRAM['lang']['state_email_sent'] = 'تم إرسال البريد الإلكتروني بنجاح إلى "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'فشلت المهمة لأن المكون الضروري غير متوفر.';
 $CIDRAM['lang']['state_ignored'] = 'تجاهل';
 $CIDRAM['lang']['state_loading'] = 'جار التحميل...';
 $CIDRAM['lang']['state_loadtime'] = 'اكتمل طلب الصفحة خلال <span class="txtRd">%s</span> ثوان.';
 $CIDRAM['lang']['state_logged_in'] = 'حاليا على.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'حاليا على + 2FA معلقة.';
+$CIDRAM['lang']['state_logged_out'] = 'تسجيل الخروج.';
 $CIDRAM['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $CIDRAM['lang']['state_maintenance_mode'] = 'تحذير: تم تمكين وضع الصيانة!';
 $CIDRAM['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب لا يستخدم كلمه السر صالحة!';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.08.08).
+ * This file: German language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Schriftvergrößerung. 
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-Datei URL für benutzerdefinierte Themen.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standard-Thema für CIDRAM verwenden.';
 $CIDRAM['lang']['confirm_action'] = 'Möchtest du wirklich zu "%s"?';
+$CIDRAM['lang']['field_2fa'] = '2FA-Code';
 $CIDRAM['lang']['field_activate'] = 'Aktivieren';
 $CIDRAM['lang']['field_banned'] = 'Verboten';
 $CIDRAM['lang']['field_blocked'] = 'Blockiert';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $CIDRAM['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
+$CIDRAM['lang']['state_email_sent'] = 'E-Mail wurde erfolgreich an "%s" gesendet.';
+$CIDRAM['lang']['state_failed_missing'] = 'Der Vorgang ist fehlgeschlagen, weil eine erforderliche Komponente nicht verfügbar ist.';
 $CIDRAM['lang']['state_ignored'] = 'Ignoriert';
 $CIDRAM['lang']['state_loading'] = 'Wird geladen...';
 $CIDRAM['lang']['state_loadtime'] = 'Seite-Anfrage in <span class="txtRd">%s</span> Sekunden abgeschlossen.';
 $CIDRAM['lang']['state_logged_in'] = 'Eingeloggt.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Eingeloggt + Warten auf 2FA.';
+$CIDRAM['lang']['state_logged_out'] = 'Ausgeloggt.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Warnung: Wartungsmodus ist aktiviert!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';

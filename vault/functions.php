@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.07.31).
+ * This file: Functions file (last modified: 2018.08.09).
  */
 
 /**
@@ -245,7 +245,7 @@ $CIDRAM['Getter'] = function ($Haystack, $Offset, $Tag, $DefTag) {
     return (
         ($PosX = strpos($Haystack, $Key, $Offset)) &&
         ($PosY = strpos($Haystack, "\n", $PosX + 1)) &&
-        strpos($Haystack, "\n\n", $Offset, $PosX - $Offset + 1) === false
+        !substr_count($Haystack, "\n\n", $Offset, $PosX - $Offset + 1)
     ) ? substr($Haystack, $PosX + $KeyLen, $PosY - $PosX - $KeyLen) : $DefTag;
 };
 
@@ -374,7 +374,7 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 if (
                     ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
                     ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
-                    strpos($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1)) === false
+                    !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                 ) {
                     $YAML = $CIDRAM['YAML'](substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $CIDRAM['Config']);
                 }

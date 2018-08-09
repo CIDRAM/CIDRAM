@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.08).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = '字体放大。​标�
 $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件URL。';
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';
 $CIDRAM['lang']['confirm_action'] = '你确定要“%s”吗？';
+$CIDRAM['lang']['field_2fa'] = '2FA代码';
 $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = '组件是活性。';
 $CIDRAM['lang']['state_component_is_inactive'] = '组件是非活性。';
 $CIDRAM['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $CIDRAM['lang']['state_default_password'] = '警告：它使用标准密码！';
+$CIDRAM['lang']['state_email_sent'] = '电子邮件已成功发送至“%s”。';
+$CIDRAM['lang']['state_failed_missing'] = '任务失败，因为必要的组件不可用。';
 $CIDRAM['lang']['state_ignored'] = '忽略了';
 $CIDRAM['lang']['state_loading'] = '载入中...';
 $CIDRAM['lang']['state_loadtime'] = '页面请求在<span class="txtRd">%s</span>秒内完成。';
-$CIDRAM['lang']['state_logged_in'] = '目前在线。';
+$CIDRAM['lang']['state_logged_in'] = '已登录。';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = '已登录，2FA待定。';
+$CIDRAM['lang']['state_logged_out'] = '已登出。';
 $CIDRAM['lang']['state_logs_access_only'] = '仅日志访问';
 $CIDRAM['lang']['state_maintenance_mode'] = '警告：维护模式是启用！';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：此账户不​使用有效的密码！';

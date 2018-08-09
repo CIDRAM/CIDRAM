@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.08.08).
+ * This file: Japanese language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'フォントの倍率�
 $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣＳＳファイルＵＲＬ。';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAMに使用するデフォルトテーマ。';
 $CIDRAM['lang']['confirm_action'] = 'あなたは「%s」したいですか？';
+$CIDRAM['lang']['field_2fa'] = '２ＦＡコード';
 $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_banned'] = '禁止された';
 $CIDRAM['lang']['field_blocked'] = 'ブロックされましたか？';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'コンポーネントがアク�
 $CIDRAM['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $CIDRAM['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $CIDRAM['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
+$CIDRAM['lang']['state_email_sent'] = 'Ｅメールは「%s」に送信されました。';
+$CIDRAM['lang']['state_failed_missing'] = '必要なコンポーネントが使用できないため、タスクが失敗しました。';
 $CIDRAM['lang']['state_ignored'] = '無視された';
 $CIDRAM['lang']['state_loading'] = '読み込んでいます...';
 $CIDRAM['lang']['state_loadtime'] = 'ページ要求は<span class="txtRd">%s</span>秒後に完了しました。';
-$CIDRAM['lang']['state_logged_in'] = 'ログインしています。';
+$CIDRAM['lang']['state_logged_in'] = 'ログインしました。';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'ログインしました＋２ＦＡを待っています。';
+$CIDRAM['lang']['state_logged_out'] = 'ログアウトしました。';
 $CIDRAM['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $CIDRAM['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';
 $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';

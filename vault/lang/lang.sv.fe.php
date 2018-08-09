@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.08.08).
+ * This file: Swedish language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'Font förstoring. Stand
 $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-filadress för anpassade teman.';
 $CIDRAM['lang']['config_template_data_theme'] = 'Standardtema som ska användas för CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Är du säker på att du vill "%s"?';
+$CIDRAM['lang']['field_2fa'] = '2FA-kod';
 $CIDRAM['lang']['field_activate'] = 'Aktivera';
 $CIDRAM['lang']['field_banned'] = 'Förbjudna';
 $CIDRAM['lang']['field_blocked'] = 'Blockerad';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'Komponenten är aktiv.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Komponenten är inaktiv.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Komponenten är provisorisk.';
 $CIDRAM['lang']['state_default_password'] = 'Varning: Använder standardlösenordet!';
+$CIDRAM['lang']['state_email_sent'] = 'E-post skickades framgångsrikt till "%s".';
+$CIDRAM['lang']['state_failed_missing'] = 'Uppgiften misslyckades eftersom en nödvändig komponent inte är tillgänglig.';
 $CIDRAM['lang']['state_ignored'] = 'Ignorerades';
 $CIDRAM['lang']['state_loading'] = 'Laddar...';
 $CIDRAM['lang']['state_loadtime'] = 'Sidförfrågan färdigställd om <span class="txtRd">%s</span> sekunder.';
 $CIDRAM['lang']['state_logged_in'] = 'Inloggad.';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'Inloggad + 2FA väntar.';
+$CIDRAM['lang']['state_logged_out'] = 'Utloggad.';
 $CIDRAM['lang']['state_logs_access_only'] = 'Kan bara komma åt loggfilerna';
 $CIDRAM['lang']['state_maintenance_mode'] = 'Varning: Underhållsläget är aktiverat!';
 $CIDRAM['lang']['state_password_not_valid'] = 'Varning: Det här kontot använder inte ett giltigt lösenord!';

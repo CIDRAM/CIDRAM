@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.08.08).
+ * This file: Hindi language data for the front-end (last modified: 2018.08.09).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -121,6 +121,7 @@ $CIDRAM['lang']['config_template_data_Magnification'] = 'फ़ॉन्ट ब�
 $CIDRAM['lang']['config_template_data_css_url'] = 'कस्टम थीम के लिए CSS फाइल URL।';
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM के इस्तेमाल के लिए डिफ़ॉल्ट थीम।';
 $CIDRAM['lang']['confirm_action'] = 'क्या आप वाकई "%s" चाहते हैं?';
+$CIDRAM['lang']['field_2fa'] = '2FA कोड';
 $CIDRAM['lang']['field_activate'] = 'सक्रिय करें';
 $CIDRAM['lang']['field_banned'] = 'प्रतिबंधित';
 $CIDRAM['lang']['field_blocked'] = 'अवरुद्ध';
@@ -300,10 +301,14 @@ $CIDRAM['lang']['state_component_is_active'] = 'घटक सक्रिय ह
 $CIDRAM['lang']['state_component_is_inactive'] = 'घटक निष्क्रिय है।';
 $CIDRAM['lang']['state_component_is_provisional'] = 'घटक अस्थायी है।';
 $CIDRAM['lang']['state_default_password'] = 'चेतावनी: डिफ़ॉल्ट पासवर्ड का उपयोग करना!';
+$CIDRAM['lang']['state_email_sent'] = 'ईमेल सफलतापूर्वक "%s" को भेजा गया।';
+$CIDRAM['lang']['state_failed_missing'] = 'कार्य विफल रहा क्योंकि एक आवश्यक घटक अनुपलब्ध है।';
 $CIDRAM['lang']['state_ignored'] = 'अवहेलना करना';
 $CIDRAM['lang']['state_loading'] = 'लोड हो रहा है...';
 $CIDRAM['lang']['state_loadtime'] = 'पृष्ठ अनुरोध <span class="txtRd">%s</span> सेकंड में पूरा हुआ।';
 $CIDRAM['lang']['state_logged_in'] = 'लॉग इन किया है।';
+$CIDRAM['lang']['state_logged_in_2fa_pending'] = 'लॉग इन किया है + 2FA लंबित है।';
+$CIDRAM['lang']['state_logged_out'] = 'लॉग आउट किया है।';
 $CIDRAM['lang']['state_logs_access_only'] = 'लॉग फाइल का उपयोग केवल';
 $CIDRAM['lang']['state_maintenance_mode'] = 'चेतावनी: रखरखाव मोड सक्षम है!';
 $CIDRAM['lang']['state_password_not_valid'] = 'चेतावनी: यह खाता किसी मान्य पासवर्ड का उपयोग नहीं कर रहा है!';

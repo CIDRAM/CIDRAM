@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2018.05.16).
+ * This file: Indonesian language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'File yang diperlukan hilang! Tidak bisa melanjutkan!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Tidak dapat menulis ke cache! Silahkan periksa hak akses file CHMOD Anda!';
 $CIDRAM['lang']['MoreInfo'] = 'Untuk informasi lebih lanjut:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Kebijakan Privasi';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2018.07.19).
+ * This file: Russian language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -24,6 +24,7 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
     return $Num % 10 >= 2 && $Num % 10 <= 4 && ($Num % 100 < 10 || $Num % 100 >= 20) ? 1 : 2;
 };
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Необходимые файлы отсутствуют! Не могу продолжить!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Невозможно записать в кэш! Пожалуйста проверьте ваш CHMOD!';
 $CIDRAM['lang']['MoreInfo'] = 'Чтобы получить больше информации:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Политика Конфиденциальности';

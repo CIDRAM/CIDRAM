@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2018.05.16).
+ * This file: Spanish language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = '¡Faltan los archivos necesarios! No puede continuar!';
 $CIDRAM['lang']['Error_WriteCache'] = '¡No se puede escribir a la caché! Compruebe sus CHMOD permisos!';
 $CIDRAM['lang']['MoreInfo'] = 'Para más información:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Política de Privacidad';

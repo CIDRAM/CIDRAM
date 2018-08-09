@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2018.05.16).
+ * This file: Hindi language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'आवश्यक फाइलें गायब हैं! जारी नहीं रख सकते!';
 $CIDRAM['lang']['Error_WriteCache'] = 'कैश में लिखने में असमर्थ! कृपया अपने CHMOD अनुमतियों की जांच करें!';
 $CIDRAM['lang']['MoreInfo'] = 'अधिक जानकारी के लिए:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'गोपनीयता नीति';

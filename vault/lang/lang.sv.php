@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data (last modified: 2018.05.16).
+ * This file: Swedish language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Obligatoriska filer saknas! Kan inte fortsätta!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Det går inte att skriva till cacheminnet! Kontrollera dina CHMOD-filbehörigheter!';
 $CIDRAM['lang']['MoreInfo'] = 'För mer information:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Integritetspolicy';

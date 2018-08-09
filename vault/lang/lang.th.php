@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2018.05.19).
+ * This file: Thai language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'ไฟล์ที่จำเป็นต้องสูญหาย! ไม่สามารถดำเนินการต่อได้!';
 $CIDRAM['lang']['Error_WriteCache'] = 'ไม่สามารถเขียนลงในแคช! โปรดตรวจสอบสิทธิ์ของไฟล์ CHMOD!';
 $CIDRAM['lang']['MoreInfo'] = 'สำหรับข้อมูลเพิ่มเติม:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'นโยบายความเป็นส่วนตัว';

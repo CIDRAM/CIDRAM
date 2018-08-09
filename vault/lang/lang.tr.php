@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2018.05.16).
+ * This file: Turkish language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,6 +21,7 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
     return $Num <= 1 ? 0 : 1;
 };
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Gerekli dosyalar eksik! Devam edemem!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Önbelleğe yazılamıyor! Lütfen CHMOD dosya izinlerinizi kontrol edin!';
 $CIDRAM['lang']['MoreInfo'] = 'Daha fazla bilgi için:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Gizlilik Politikası';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2018.05.16).
+ * This file: Urdu language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 /** Language text direction (RTL). */
 $CIDRAM['lang']['textDir'] = 'rtl';
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'ضروری فائلیں غائب ہیں! جاری نہیں رہ سکتا!';
 $CIDRAM['lang']['Error_WriteCache'] = 'کیشے کو لکھنے سے قاصر ہے! آپ کے CHMOD فائل کی اجازت براہ مہربانی چیک کریں!';
 $CIDRAM['lang']['MoreInfo'] = 'مزید معلومات کے لیے:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'رازداری کی پالیسی';

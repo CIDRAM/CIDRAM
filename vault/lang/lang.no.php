@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data (last modified: 2018.05.16).
+ * This file: Norwegian language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Nødvendige filer mangler! Kan ikke fortsette!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan ikke skrive til hurtigbufferen! Vennligst sjekk CHMOD-filtillatelsene dine!';
 $CIDRAM['lang']['MoreInfo'] = 'For mer informasjon:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Personvernpolicy';

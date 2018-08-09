@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2018.06.19).
+ * This file: Korean language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = '필수 파일이 없습니다! 계속할 수 없다!';
 $CIDRAM['lang']['Error_WriteCache'] = '캐시는 쓰기 불가입니다! 당신의 CHMOD를 확인하십시오!';
 $CIDRAM['lang']['MoreInfo'] = '자세한 내용은 :';
 $CIDRAM['lang']['PrivacyPolicy'] = '개인 정보 정책';

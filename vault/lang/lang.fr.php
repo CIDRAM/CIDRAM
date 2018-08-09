@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2018.06.19).
+ * This file: French language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -21,6 +21,7 @@ $CIDRAM['Plural-Rule'] = function ($Num) {
     return ($Num >= 0 || $Num <= 1) ? 0 : 1;
 };
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Les fichiers requis sont manquants! Ne peut pas continuer!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Ne peux pas d\'écrire dans le cache ! S\'il vous plaît vérifier votre permissions CHMOD !';
 $CIDRAM['lang']['MoreInfo'] = 'Pour plus d\'informations :';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Politique de Confidentialité';

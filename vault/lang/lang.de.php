@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2018.05.27).
+ * This file: German language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Benötigte Dateien fehlen! Kann nicht weitermachen!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Kann nicht in den Cache schreiben! Bitte überprüfen Sie Ihre CHMOD Dateiberechtigungen!';
 $CIDRAM['lang']['MoreInfo'] = 'Für mehr Informationen:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Datenschutz-Bestimmungen';

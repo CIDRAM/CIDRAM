@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data (last modified: 2018.05.16).
+ * This file: Bangla language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'প্রয়োজনীয় ফাইলগুলি অনুপস্থিত! চালিয়ে যেতে পারবেন না!';
 $CIDRAM['lang']['Error_WriteCache'] = 'ক্যাশে লিখতে অক্ষম! আপনার CHMOD ফাইল অনুমতি চেক করুন!';
 $CIDRAM['lang']['MoreInfo'] = 'আরও তথ্যের জন্য:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'গোপনীয়তা নীতি';

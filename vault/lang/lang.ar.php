@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2018.06.19).
+ * This file: Arabic language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -19,6 +19,7 @@ if (!defined('CIDRAM')) {
 /** Language text direction (RTL). */
 $CIDRAM['lang']['textDir'] = 'rtl';
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'الملفات المطلوبة مفقودة! لا يمكن الاستمرار!';
 $CIDRAM['lang']['Error_WriteCache'] = 'لا تملك تصريح للقيام بهذا، يرجى التأكد من تصاريح الملفات';
 $CIDRAM['lang']['MoreInfo'] = 'للمزيد من المعلومات:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'سياسة الخصوصية';

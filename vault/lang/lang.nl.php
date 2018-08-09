@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2018.05.16).
+ * This file: Dutch language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = 'Vereiste bestanden ontbreken! Kan niet doorgaan!';
 $CIDRAM['lang']['Error_WriteCache'] = 'Kan niet naar de cache schrijven! Controleer uw CHMOD permissies!';
 $CIDRAM['lang']['MoreInfo'] = 'Voor meer informatie:';
 $CIDRAM['lang']['PrivacyPolicy'] = 'Privacybeleid';

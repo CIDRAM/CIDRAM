@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.09).
+ * This file: Front-end handler (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -123,8 +123,8 @@ $CIDRAM['FE'] = [
 
     /** The IP address of the current request. */
     'YourIP' => empty(
-        $_SERVER[$CIDRAM['Config']['general']['ipaddr']]
-    ) ? '' : $_SERVER[$CIDRAM['Config']['general']['ipaddr']],
+        $_SERVER[$CIDRAM['IPAddr']]
+    ) ? '' : $_SERVER[$CIDRAM['IPAddr']],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2018.05.16).
+ * This file: Japanese language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = '必要なファイルがありません！続けることはできません！';
 $CIDRAM['lang']['Error_WriteCache'] = 'キャッシュは書き込み不可です！​あなたのＣＨＭＯＤをチェックしてください！';
 $CIDRAM['lang']['MoreInfo'] = '詳細については：';
 $CIDRAM['lang']['PrivacyPolicy'] = 'プライバシー・ポリシー';

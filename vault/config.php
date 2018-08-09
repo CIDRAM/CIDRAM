@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2018.08.08).
+ * This file: Configuration handler (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -127,10 +127,15 @@ foreach ($CIDRAM['Config']['Config Defaults'] as $CIDRAM['Config']['Temp']['KeyC
 }
 unset($CIDRAM['Config']['Temp']);
 
-/** Doing it this way as a failsafe and to avoid overrides instead of pulling from config directly later. */
+/** Failsafe for weird ipaddr configuration. */
 $CIDRAM['IPAddr'] = (
     $CIDRAM['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' && empty($_SERVER[$CIDRAM['Config']['general']['ipaddr']])
 ) ? 'REMOTE_ADDR' : $CIDRAM['Config']['general']['ipaddr'];
+
+/** Ensure we have an IP address variable to work with. */
+if (!isset($_SERVER[$CIDRAM['IPAddr']])) {
+    $_SERVER[$CIDRAM['IPAddr']] = '';
+}
 
 /** Adjusted present time. */
 $CIDRAM['Now'] = time() + ($CIDRAM['Config']['general']['timeOffset'] * 60);

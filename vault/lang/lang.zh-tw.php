@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2018.05.16).
+ * This file: Chinese (traditional) language data (last modified: 2018.08.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -16,6 +16,7 @@ if (!defined('CIDRAM')) {
     die('[CIDRAM] This should not be accessed directly.');
 }
 
+$CIDRAM['lang']['Error_MissingRequire'] = '缺少必需的文件！不能繼續！';
 $CIDRAM['lang']['Error_WriteCache'] = '無法寫入緩存！​請檢查您的CHMOD文件的權限！';
 $CIDRAM['lang']['MoreInfo'] = '了解更多信息：';
 $CIDRAM['lang']['PrivacyPolicy'] = '隱私政策';

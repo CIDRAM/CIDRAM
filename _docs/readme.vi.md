@@ -743,6 +743,22 @@ Tag: Phần Ví Dụ
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 GẮN THẺ TRÌ HOÃN
+
+Khi số lượng lớn các tập tin chữ ký được cài đặt và sử dụng, cài đặt có thể trở nên khá phức tạp, và có thể có một số chữ ký chồng lên nhau. Trong những trường hợp này, để ngăn chặn nhiều chữ ký chồng chéo được kích hoạt trong các sự kiện khối, gắn thẻ trì hoãn có thể được sử dụng để trì hoãn các phần chữ ký cụ thể trong trường hợp một số tập tin chữ ký cụ thể khác được cài đặt và sử dụng. Điều này có thể hữu ích trong trường hợp một số chữ ký được cập nhật thường xuyên hơn các chữ ký khác, để trì hoãn các chữ ký ít được cập nhật thường xuyên hơn với các chữ ký được cập nhật thường xuyên hơn.
+
+Gắn thẻ trì hoãn được sử dụng tương tự như các loại thẻ khác. Giá trị của thẻ phải khớp với tập tin chữ ký được cài đặt và sử dụng để bị trì hoãn.
+
+Ví dụ:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 YAML CƠ BẢN
@@ -1374,4 +1390,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Bảy 2018 (2018.07.27).
+Lần cuối cập nhật: 10 Tháng Tám 2018 (2018.08.10).

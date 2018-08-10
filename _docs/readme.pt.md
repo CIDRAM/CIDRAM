@@ -743,6 +743,22 @@ Tag: Seção Exemplo
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 ETIQUETAS DE DEFERÊNCIA
+
+Quando um grande número de arquivos de assinatura é instalado e usado ativamente, as instalações podem se tornar bastante complexas, e pode haver algumas assinaturas que se sobrepõem. Nestes casos, a fim de evitar que várias assinaturas sobrepostas sejam desencadeados durante eventos de bloco, etiquetas de deferência podem ser usadas para diferir seções de assinatura específicas nos casos em que algum outro arquivo de assinatura específico é instalado e usado ativamente. Isso pode ser útil nos casos em que algumas assinaturas são atualizadas com mais freqüência do que outras, a fim de diferir as assinaturas atualizadas com menos frequência em favor das assinaturas atualizadas com maior frequência.
+
+As etiquetas de deferência são usadas de forma semelhante a outros tipos de etiquetas. O valor da etiqueta deve corresponder a um arquivo de assinatura instalado e usado ativamente para ser diferido.
+
+Exemplo:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 YAML BÁSICOS
@@ -1376,4 +1392,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 27 Julho de 2018 (2018.07.27).
+Última Atualização: 10 Agosto de 2018 (2018.08.10).

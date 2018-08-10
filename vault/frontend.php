@@ -122,9 +122,7 @@ $CIDRAM['FE'] = [
     'UA' => empty($_SERVER['HTTP_USER_AGENT']) ? '' : $_SERVER['HTTP_USER_AGENT'],
 
     /** The IP address of the current request. */
-    'YourIP' => empty(
-        $_SERVER[$CIDRAM['IPAddr']]
-    ) ? '' : $_SERVER[$CIDRAM['IPAddr']],
+    'YourIP' => empty($_SERVER[$CIDRAM['IPAddr']]) ? '' : $_SERVER[$CIDRAM['IPAddr']],
 
     /** Asynchronous mode. */
     'ASYNC' => !empty($_POST['ASYNC']),

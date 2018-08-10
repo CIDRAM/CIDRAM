@@ -743,6 +743,22 @@ Tag: Contoh Bagian
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 TAG PENANGGUH
+
+Ketika sejumlah besar file tanda tangan diinstal dan aktif digunakan, instalasi bisa menjadi sangat kompleks, dan mungkin ada beberapa tanda tangan yang tumpang tindih. Dalam kasus ini, untuk mencegah banyak tanda tangan tumpang tindih dipicu selama kejadian blokir, tag penangguh dapat digunakan untuk menangguhkan bagian tanda tangan tertentu dalam kasus dimana beberapa file tanda tangan khusus lainnya diinstal dan aktif digunakan. Ini mungkin berguna jika beberapa tanda tangan diperbarui lebih sering daripada yang lain, untuk menangguhkan tanda tangan yang kurang sering diperbarui untuk mendukung tanda tangan yang lebih sering diperbarui.
+
+Tag penangguh digunakan serupa dengan jenis tag lainnya. Nilai tag harus cocok dengan file tanda tangan yang diinstal dan aktif digunakan untuk ditangguhkan.
+
+Contoh:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 DASAR-DASAR YAML
@@ -1374,4 +1390,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 27 Juli 2018 (2018.07.27).
+Terakhir Diperbarui: 10 Agustus 2018 (2018.08.10).

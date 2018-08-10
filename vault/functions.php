@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.08.09).
+ * This file: Functions file (last modified: 2018.08.10).
  */
 
 /**
@@ -356,6 +356,15 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                 $PosA += strlen($Factors[$FactorIndex]) + 2;
                 if (!$PosB = strpos($Files[$FileIndex], "\n", $PosA)) {
                     break;
+                }
+                if ($DefersTo = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Defers to', false)) {
+                    $DefersTo = preg_quote($DefersTo);
+                    if (
+                        preg_match('~(?:^|,)' . $DefersTo . '(?:$|,)~i', $CIDRAM['Config']['signatures']['ipv4']) ||
+                        preg_match('~(?:^|,)' . $DefersTo . '(?:$|,)~i', $CIDRAM['Config']['signatures']['ipv6'])
+                    ) {
+                        continue;
+                    }
                 }
                 if (
                     ($Expires = $CIDRAM['Getter']($Files[$FileIndex], $PosA, 'Expires', false)) &&

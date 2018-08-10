@@ -743,6 +743,22 @@ Tag: Sección Ejemplo
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 ETIQUETAS DE DEFERENCIA
+
+Cuando se instalan y usan activamente grandes cantidades de archivos de firmas, las instalaciones pueden volverse bastante complejas y es posible que haya algunas firmas que se superpongan. En estos casos, para evitar que se desencadenen varias firmas superpuestas durante los eventos de bloque, las etiquetas de deferencia se pueden usar para diferir secciones de firmas específicas en los casos en que se instala y utiliza activamente algún otro archivo de firmas específico. Esto puede ser útil en casos en que algunas firmas se actualicen con mayor frecuencia que otras, con el fin de diferir las firmas actualizadas menos frecuentemente a favor de las firmas actualizadas con mayor frecuencia.
+
+Las etiquetas de deferencia se usan de manera similar a otros tipos de etiquetas. El valor de la etiqueta debe coincidir con un archivo de firma instalado y utilizado activamente para ser diferido.
+
+Ejemplo:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 LOS FUNDAMENTOS DE YAML
@@ -1381,4 +1397,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 27 Julio de 2018 (2018.07.27).
+Última Actualización: 10 Agosto de 2018 (2018.08.10).

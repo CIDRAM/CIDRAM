@@ -743,6 +743,22 @@ Tag: Beispiel Sektion
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 ABWERTUNGS-TAGS
+
+Wenn eine große Anzahl von Signaturdateien installiert und aktiv verwendet wird, können Installationen sehr komplex werden, und es können einige Signaturen vorhanden sein, die sich überlappen. Um in diesen Fällen zu verhindern, dass während Blockereignissen mehrere überlappende Signaturen ausgelöst werden, können Abwertungs-Tags verwendet werden, um bestimmte Signatur-Sektionen in Fällen zu verschieben, in denen eine andere spezifische Signaturdatei installiert und aktiv verwendet wird. Dies kann nützlich sein, wenn einige Signaturen häufiger als andere aktualisiert werden, um die weniger häufig aktualisierten Signaturen zugunsten der häufiger aktualisierten Signaturen zu verschieben.
+
+Abwertungs-Tags werden ähnlich wie andere Tags verwendet. Der Wert des Tags sollte mit einer installierten und aktiv genutzten Signaturdatei übereinstimmen, auf die der Tag verschieben werden soll.
+
+Beispiel:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 YAML GRUNDLAGEN
@@ -1384,4 +1400,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 27 Juli 2018 (2018.07.27).
+Zuletzt aktualisiert: 10 August 2018 (2018.08.10).

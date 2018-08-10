@@ -743,6 +743,22 @@ Tag: Пример Секция
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 DEFERENCE TAGS
+
+When large numbers of signature files are installed and actively used, installations can become quite complex, and there may be some signatures which overlap. In these cases, in order to prevent multiple, overlapping signatures being triggered during block events, deference tags may be used to defer specific signature sections in cases where some other specific signature file is installed and actively used. This may be useful in cases where some signatures are updated more frequently than others, in order to defer the less frequently updated signatures in favour of the more frequently updated signatures.
+
+Deference tags are used similarly to other types of tags. The tag's value should match an installed and actively used signature file to be deferred to.
+
+Пример:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 ОСНОВЫ YAML
@@ -1376,4 +1392,4 @@ CIDRAM не собирает и не обрабатывает какую-либ�
 ---
 
 
-Последнее обновление: 27 Июль 2018 (2018.07.27).
+Последнее обновление: 10 Августа 2018 (2018.08.10).

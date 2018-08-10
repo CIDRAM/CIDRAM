@@ -743,6 +743,22 @@ Tag: Sezione Esempio
 Expires: 2016.12.31
 ```
 
+##### 7.1.3 ETICHETTE DI DEFERENZA
+
+Quando vengono installati e utilizzati attivamente un numero elevato di file di firma, le installazioni possono diventare piuttosto complesse, e potrebbero esserci alcune firme che si sovrappongono. In questi casi, al fine di evitare l'innescando di più firme sovrapposte durante gli eventi di blocco, i etichette di deferenza possono essere utilizzati per differire sezioni di firma specifiche nei casi in cui è installato e utilizzato attivamente un altro file di firma specifico. Questo può essere utile nei casi in cui alcune firme vengono aggiornate più frequentemente di altre, al fine di differire le firme meno frequentemente aggiornate a favore delle firme più frequentemente aggiornate.
+
+I etichette di deferenza sono utilizzati in modo simile ad altri tipi di etichette. Il valore dell'etichetta deve corrispondere a un file di firma installato e utilizzato attivamente a cui essere differite.
+
+Esempio:
+
+```
+1.2.3.4/32 Deny Generic
+Origin: AA
+2.3.4.5/32 Deny Generic
+Origin: BB
+Defers to: preferred_signatures.dat
+```
+
 #### 7.2 YAML
 
 ##### 7.2.0 YAML BASI
@@ -1379,4 +1395,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 27 Luglio 2018 (2018.07.27).
+Ultimo Aggiornamento: 10 Agosto 2018 (2018.08.10).

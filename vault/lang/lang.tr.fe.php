@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.08.09).
+ * This file: Turkish language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'Temiz';
 $CIDRAM['lang']['field_clear_all'] = 'Hepsini temizle';
 $CIDRAM['lang']['field_clickable_link'] = 'Tıklanabilir bağlantı';
 $CIDRAM['lang']['field_component'] = 'Bileşen';
+$CIDRAM['lang']['field_confirm'] = 'Onaylamak';
 $CIDRAM['lang']['field_create_new_account'] = 'Yeni Hesap Oluştur';
 $CIDRAM['lang']['field_deactivate'] = 'Devre dışı bırak';
 $CIDRAM['lang']['field_delete_account'] = 'Hesabı sil';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'Aylar';
 $CIDRAM['lang']['previewer_seconds'] = 'Saniyeler';
 $CIDRAM['lang']['previewer_weeks'] = 'Haftalar';
 $CIDRAM['lang']['previewer_years'] = 'Yıllar';
+$CIDRAM['lang']['response_2fa_invalid'] = 'Yanlış 2FA kodu girildi. Kimlik doğrulama başarısız oldu.';
+$CIDRAM['lang']['response_2fa_valid'] = 'Başarıyla doğrulandı.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Bu kullanıcı adıyla bir hesap zaten var!';
 $CIDRAM['lang']['response_accounts_created'] = 'Hesap başarıyla oluşturuldu!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Hesap başarıyla silindi!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'İmza dosyaları
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'İmza dosyalarına karşı kontrol edin';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Yasaklanmış/engellenen IP\'leri gizleme';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Yasaklanmış/engellenen IP\'leri gizle';
+$CIDRAM['lang']['tip_2fa_sent'] = 'E-posta adresinize iki faktörlü bir kimlik doğrulama kodu içeren bir e-posta gönderildi. Ön tarafa erişmek için lütfen aşağıdaki kodu doğrulayın. Bu e-postayı almadıysanız, yeni bir kod içeren yeni bir e-posta almak için, çıkış yapmayı, 10 dakika beklemeyi ve tekrar giriş yapmayı deneyin.';
 $CIDRAM['lang']['tip_accounts'] = 'Merhaba, {username}.<br />Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar.';
 $CIDRAM['lang']['tip_cache_data'] = 'Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR\'lerin olduğunu hesaplamanızı mümkün kılar.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb.) güvenli/güvensiz sürümlerini listeler.</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>Merhaba, %1$s.<br />
+<br />
+CIDRAM ön ucuna giriş yapmak için 2FA kodunuz:</p>
+<h1>%2$s</h1>
+<p>Bu kod 10 dakika içinde sona eriyor.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '2FA (İki Faktörlü Kimlik Doğrulama)';

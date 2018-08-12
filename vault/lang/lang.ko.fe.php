@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.09).
+ * This file: Korean language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = '취소';
 $CIDRAM['lang']['field_clear_all'] = '모두 취소';
 $CIDRAM['lang']['field_clickable_link'] = '클릭 가능한 링크';
 $CIDRAM['lang']['field_component'] = '구성 요소';
+$CIDRAM['lang']['field_confirm'] = '확인';
 $CIDRAM['lang']['field_create_new_account'] = '새로운 계정 만들기';
 $CIDRAM['lang']['field_deactivate'] = '비활성화';
 $CIDRAM['lang']['field_delete_account'] = '계정 삭제';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = '개월';
 $CIDRAM['lang']['previewer_seconds'] = '초';
 $CIDRAM['lang']['previewer_weeks'] = '주';
 $CIDRAM['lang']['previewer_years'] = '연령';
+$CIDRAM['lang']['response_2fa_invalid'] = '2FA 코드가 잘못 입력되었습니다. 인증 실패.';
+$CIDRAM['lang']['response_2fa_valid'] = '성공적으로 인증되었습니다.';
 $CIDRAM['lang']['response_accounts_already_exists'] = '계정이 이미 존재합니다!';
 $CIDRAM['lang']['response_accounts_created'] = '계정 만들기에 성공했습니다!';
 $CIDRAM['lang']['response_accounts_deleted'] = '계정 삭제가 성공했습니다!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = '서명 파일을
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '서명 파일을 확인';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '금지/차단 된 IP를 숨기지 마십시오';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '금지/차단 된 IP를 숨기기';
+$CIDRAM['lang']['tip_2fa_sent'] = '2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다.';
 $CIDRAM['lang']['tip_accounts'] = '안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다.';
 $CIDRAM['lang']['tip_cache_data'] = '안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다.';
 $CIDRAM['lang']['tip_cidr_calc'] = '안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>안녕하세요, %1$s.<br />
+<br />
+CIDRAM 프런트 엔드에 로그인하기위한 2FA 코드 :</p>
+<h1>%2$s</h1>
+<p>이 코드는 10 분 후에 만료됩니다.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '2FA (이중 인증)';

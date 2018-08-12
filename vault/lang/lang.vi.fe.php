@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.08.09).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'Hủy bỏ';
 $CIDRAM['lang']['field_clear_all'] = 'Hủy bỏ tất cả';
 $CIDRAM['lang']['field_clickable_link'] = 'Liên kết có thể nhấp';
 $CIDRAM['lang']['field_component'] = 'Thành phần';
+$CIDRAM['lang']['field_confirm'] = 'Xác nhận';
 $CIDRAM['lang']['field_create_new_account'] = 'Tạo ra tài khoản mới';
 $CIDRAM['lang']['field_deactivate'] = 'Vô hiệu hóa';
 $CIDRAM['lang']['field_delete_account'] = 'Xóa tài khoản';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'Tháng';
 $CIDRAM['lang']['previewer_seconds'] = 'Giây';
 $CIDRAM['lang']['previewer_weeks'] = 'Tuần';
 $CIDRAM['lang']['previewer_years'] = 'Năm';
+$CIDRAM['lang']['response_2fa_invalid'] = 'Đã nhập mã 2FA không chính xác. Quá trình xác thực đã thất bại.';
+$CIDRAM['lang']['response_2fa_valid'] = 'Đã xác thực thành công.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $CIDRAM['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Không kiểm tr
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kiểm tra đối với tập tin chữ ký';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Không ẩn các IP bị cấm/chặn';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Ẩn các IP bị cấm/chặn';
+$CIDRAM['lang']['tip_2fa_sent'] = 'Một email chứa mã 2FA đã được gửi đến địa chỉ email của bạn. Vui lòng xác nhận mã này bên dưới để có quyền truy cập vào front-end. Nếu bạn không nhận được email này, thử đăng xuất, đợi 10 phút, và đăng nhập lại để nhận email mới chứa mã mới.';
 $CIDRAM['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end CIDRAM.';
 $CIDRAM['lang']['tip_cache_data'] = 'Xin chào, {username}.<br />Ở đây bạn có thể xem lại nội dung của bộ nhớ cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Xin chào, {username}.<br />Máy tính CIDR cho phép bạn để tính toán mà các CIDR một địa chỉ IP thuộc về.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (HHVM, PHP, phpMyAdmin, Python, vv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>Xin chào, %1$s.<br />
+<br />
+Mã 2FA của bạn để đăng nhập vào front-end của CIDRAM:</p>
+<h1>%2$s</h1>
+<p>Mã này hết hạn sau 10 phút.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '2FA (Xác thực hai yếu tố)';

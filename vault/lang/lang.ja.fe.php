@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.08.09).
+ * This file: Japanese language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'キャンセル';
 $CIDRAM['lang']['field_clear_all'] = 'すべてキャンセル';
 $CIDRAM['lang']['field_clickable_link'] = 'クリック可能なリンク';
 $CIDRAM['lang']['field_component'] = 'コンポーネント';
+$CIDRAM['lang']['field_confirm'] = '確認';
 $CIDRAM['lang']['field_create_new_account'] = '新しいアカウントを作成する';
 $CIDRAM['lang']['field_deactivate'] = '非アクティブにする';
 $CIDRAM['lang']['field_delete_account'] = 'アカウントを削除する';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = '月';
 $CIDRAM['lang']['previewer_seconds'] = '秒';
 $CIDRAM['lang']['previewer_weeks'] = '週';
 $CIDRAM['lang']['previewer_years'] = '年';
+$CIDRAM['lang']['response_2fa_invalid'] = '間違った２ＦＡコードが入力されました。認証に失敗しました。';
+$CIDRAM['lang']['response_2fa_valid'] = '認証に成功しました。';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $CIDRAM['lang']['response_accounts_created'] = 'アカウントを作成に成功しました！';
 $CIDRAM['lang']['response_accounts_deleted'] = 'アカウントを削除が成功しました！';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'シグネチャ�
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'シグネチャ・ファイルをチェックする';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '禁止/ブロックされたＩＰを隠さないでください';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '禁止/ブロックされたＩＰを隠す';
+$CIDRAM['lang']['tip_2fa_sent'] = '２ＦＡコードを含むＥメールがあなたのＥメール・アドレスに送信されました。​フロントエンドにアクセスするには、このコードを確認してください。​このＥメールを受信しなかった場合は、新しいコードを含む新しい電子Ｅメールを受け取るために、ログアウトして、１０分待ってからもう一度ログインしてください。';
 $CIDRAM['lang']['tip_accounts'] = 'こんにちは、​{username}。​<br />アカウント・ページは、​CIDRAMフロントエンドにアクセスできるユーザーを制御できます。';
 $CIDRAM['lang']['tip_cache_data'] = 'こんにちは、​{username}。<br />ここでは、キャッシュの内容を確認できます。';
 $CIDRAM['lang']['tip_cidr_calc'] = 'こんにちは、​{username}。​<br />ＣＩＤＲ計算機では、​ＩＰアドレスがどのＣＩＤＲに属しているかを計算できます。';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>こんにちは、​%1$s。<br />
+<br />
+CIDRAMフロントエンドにログインするための２ＦＡコード：</p>
+<h1>%2$s</h1>
+<p>このコードの有効期限は１０分です。</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '２ＦＡ（二要素認証）';

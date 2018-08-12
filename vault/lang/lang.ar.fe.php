@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.08.09).
+ * This file: Arabic language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'إلغاء';
 $CIDRAM['lang']['field_clear_all'] = 'امسح الكل';
 $CIDRAM['lang']['field_clickable_link'] = 'رابط قابل للنقر';
 $CIDRAM['lang']['field_component'] = 'وحدة';
+$CIDRAM['lang']['field_confirm'] = 'تؤكد';
 $CIDRAM['lang']['field_create_new_account'] = 'إنشاء حساب جديد';
 $CIDRAM['lang']['field_deactivate'] = 'جعلها غير نشطة';
 $CIDRAM['lang']['field_delete_account'] = 'حذف حساب';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'الشهور';
 $CIDRAM['lang']['previewer_seconds'] = 'ثواني';
 $CIDRAM['lang']['previewer_weeks'] = 'أسابيع';
 $CIDRAM['lang']['previewer_years'] = 'سنوات';
+$CIDRAM['lang']['response_2fa_invalid'] = 'تم إدخال رمز 2FA غير صحيح. المصادقة فشلت.';
+$CIDRAM['lang']['response_2fa_valid'] = 'تمت المصادقة بنجاح.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'اسم المستخدم موجود بالفعل!';
 $CIDRAM['lang']['response_accounts_created'] = 'تم انشاء الحساب بنجاح!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'تم حذف الحساب بنجاح!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'لا تحقق م
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'تحقق من ملفات التوقيع';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'لا تخفي عناوين IP المحظورة';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'تخفي عناوين IP المحظورة';
+$CIDRAM['lang']['tip_2fa_sent'] = 'تم إرسال بريد إلكتروني يحتوي على رمز 2FA إلى عنوان بريدك الإلكتروني. يرجى تأكيد هذا الرمز أدناه للوصول إلى الواجهة الأمامية. إذا لم تتلقَ رسالة البريد الإلكتروني هذه، فحاول تسجيل الخروج، والانتظار لمدة 10 دقائق، وتسجيل الدخول مرة أخرى لتلقي رسالة إلكترونية جديدة تحتوي على رمز جديد.';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
 $CIDRAM['lang']['tip_cache_data'] = 'مرحبا، {username}.<br />هنا يمكنك مراجعة محتويات ذاكرة التخزين المؤقت.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيد�
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (HHVM، PHP، phpMyAdmin، Python، إلخ).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>مرحبا، %1$s.<br />
+<br />
+شفرة 2FA الخاصة بك لتسجيل الدخول إلى واجهة CIDRAM الأمامية:</p>
+<h1>%2$s</h1>
+<p>تنتهي صلاحية هذا الرمز خلال 10 دقائق.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '2FA';

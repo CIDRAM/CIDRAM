@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.08.09).
+ * This file: Swedish language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'Rensa';
 $CIDRAM['lang']['field_clear_all'] = 'Rensa alla';
 $CIDRAM['lang']['field_clickable_link'] = 'Klickbar länk';
 $CIDRAM['lang']['field_component'] = 'Komponent';
+$CIDRAM['lang']['field_confirm'] = 'Bekräfta';
 $CIDRAM['lang']['field_create_new_account'] = 'Skapa nytt konto';
 $CIDRAM['lang']['field_deactivate'] = 'Inaktivera';
 $CIDRAM['lang']['field_delete_account'] = 'Radera konto';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'Månader';
 $CIDRAM['lang']['previewer_seconds'] = 'Sekunder';
 $CIDRAM['lang']['previewer_weeks'] = 'Veckor';
 $CIDRAM['lang']['previewer_years'] = 'År';
+$CIDRAM['lang']['response_2fa_invalid'] = 'Felaktig 2FA-kod inmatad. Autentisering misslyckades.';
+$CIDRAM['lang']['response_2fa_valid'] = 'Succesfullt autentiserad.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Ett konto med det användarnamnet existerar redan!';
 $CIDRAM['lang']['response_accounts_created'] = 'Konto har skapats framgångsrikt!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Konto har raderats framgångsrikt!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Kontrollera inte
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Kontrollera signaturfiler';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Göm inte förbjudna/blockerade IP-adresser';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Göm förbjudna/blockerade IP-adresser';
+$CIDRAM['lang']['tip_2fa_sent'] = 'Ett email som innehåller en 2FA-kod har skickats till din e-postadress. Vänligen bekräfta den här koden nedan för att få tillgång till front-end. Om du inte fick det här e-postmeddelandet, försöker du logga ut, vänta i 10 minuter, och logga in igen för att få ett nytt e-postmeddelande med en ny kod.';
 $CIDRAM['lang']['tip_accounts'] = 'Hallå, {username}.<br />Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan.';
 $CIDRAM['lang']['tip_cache_data'] = 'Hallå, {username}.<br />Här kan du granska innehållet i cacheminnet.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallå, {username}.<br />CIDR-kalkylatorn kan beräkna CIDR-faktorerna för en IP-adress.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Några användbara länkar:<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>Hallå, %1$s.<br />
+<br />
+Din 2FA-kod för att logga in i CIDRAM front-end:</p>
+<h1>%2$s</h1>
+<p>Denna kod löper ut om 10 minuter.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = 'Tvåfaktorsautentisering';

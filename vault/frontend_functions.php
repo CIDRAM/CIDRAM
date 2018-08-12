@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.08.09).
+ * This file: Front-end functions file (last modified: 2018.08.11).
  */
 
 /**
@@ -213,7 +213,7 @@ $CIDRAM['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) 
  * @param string $Entry Name of the cache entry to get.
  * return string|bool Returned cache entry data (or false on failure).
  */
-$CIDRAM['FECacheGet'] = function ($Source, $Entry) {
+$CIDRAM['FECacheGet'] = function (&$Source, $Entry) {
     $Entry = base64_encode($Entry);
     $EntryPos = strpos($Source, "\n" . $Entry . ',');
     if ($EntryPos !== false) {
@@ -2420,10 +2420,15 @@ $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use 
     /** Set page title. */
     $CIDRAM['FE']['FE_Title'] = $Title;
 
+    /** Fetch and prepare username. */
+    if ($Username = (empty($CIDRAM['FE']['UserRaw']) ? '' : $CIDRAM['FE']['UserRaw'])) {
+        if (preg_match('~^[^<>]+<[^<>]+>$~', $Username)) {
+            $Username = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username));
+        }
+    }
+
     /** Prepare page tooltip/description. */
-    $CIDRAM['FE']['FE_Tip'] = empty(
-        $CIDRAM['FE']['UserRaw']
-    ) ? $Tips : $CIDRAM['ParseVars'](['username' => $CIDRAM['FE']['UserRaw']], $Tips);
+    $CIDRAM['FE']['FE_Tip'] = $CIDRAM['ParseVars'](['username' => $Username], $Tips);
 
     /** Load main front-end JavaScript data. */
     $CIDRAM['FE']['JS'] = $JS ? $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('scripts.js')) : '';
@@ -2569,7 +2574,7 @@ $CIDRAM['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '', $A
                 $CIDRAM['Config']['general']['timeFormat']
             )
         ) . ' - ';
-        $WriteMode = (!file_exists($EventLog) || (
+        $WriteMode = (!file_exists($CIDRAM['Vault'] . $EventLog) || (
             $CIDRAM['Config']['general']['truncate'] > 0 &&
             filesize($CIDRAM['Vault'] . $EventLog) >= $CIDRAM['ReadBytes']($CIDRAM['Config']['general']['truncate'])
         )) ? 'w' : 'a';
@@ -2706,4 +2711,22 @@ $CIDRAM['SendEmail'] = function ($Recipients = [], $Subject = '', $Body = '', $A
 
     /** Exit. */
     return $State;
+};
+
+/**
+ * Generates very simple 8-digit numbers used for 2FA.
+ *
+ * @return int An 8-digit number.
+ */
+$CIDRAM['2FA-Number'] = function () {
+    static $MinInt = 10000000;
+    static $MaxInt = 99999999;
+    if (function_exists('random_int')) {
+        try {
+            $Key = random_int($MinInt, $MaxInt);
+        } catch (\Exception $e) {
+            $Key = rand($MinInt, $MaxInt);
+        }
+    }
+    return isset($Key) ? $Key : rand($MinInt, $MaxInt);
 };

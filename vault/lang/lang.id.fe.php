@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.09).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,7 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Modul pemblokir UA kosong';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modul pemblokir untuk Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silakan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
+$CIDRAM['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silahkan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
 $CIDRAM['lang']['config_experimental'] = 'Tidak stabil / Eksperimental!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak.';
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'Cabut';
 $CIDRAM['lang']['field_clear_all'] = 'Cabut semua';
 $CIDRAM['lang']['field_clickable_link'] = 'Link yang dapat diklik';
 $CIDRAM['lang']['field_component'] = 'Komponen';
+$CIDRAM['lang']['field_confirm'] = 'Konfirmasikan';
 $CIDRAM['lang']['field_create_new_account'] = 'Buat Akun Baru';
 $CIDRAM['lang']['field_deactivate'] = 'Menonaktifkan';
 $CIDRAM['lang']['field_delete_account'] = 'Hapus Akun';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'Bulan';
 $CIDRAM['lang']['previewer_seconds'] = 'Detik';
 $CIDRAM['lang']['previewer_weeks'] = 'Minggu';
 $CIDRAM['lang']['previewer_years'] = 'Tahun';
+$CIDRAM['lang']['response_2fa_invalid'] = 'Kode 2FA salah dimasukkan. Otentikasi gagal.';
+$CIDRAM['lang']['response_2fa_valid'] = 'Berhasil dikonfirmasi.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $CIDRAM['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Jangan cek terha
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Cek terhadap file tanda tangan';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Jangan sembunyikan IP yang dilarang/diblokir';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Sembunyikan IP yang dilarang/diblokir';
+$CIDRAM['lang']['tip_2fa_sent'] = 'Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke front-end. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru.';
 $CIDRAM['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM.';
 $CIDRAM['lang']['tip_cache_data'] = 'Salam, {username}.<br />Disini Anda bisa meninjau isi cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor.';
@@ -333,7 +337,7 @@ $CIDRAM['lang']['tip_custom_ua'] = 'Masukkan agen pengguna (user agent) disini (
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $CIDRAM['lang']['tip_enter_ip_here'] = 'Masukkan IP disini.';
 $CIDRAM['lang']['tip_enter_ips_here'] = 'Masukkan IP disini.';
-$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengautentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
+$CIDRAM['lang']['tip_fe_cookie_warning'] = 'Catat: CIDRAM menggunakan cookie untuk mengotentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda.';
 $CIDRAM['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini).';
 $CIDRAM['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Salam, {username}.<br />Agregator IP memungkinkan Anda untuk mengekspresikan IP dan CIDR dengan cara sekecil mungkin. Masukkan data yang akan digabungkan dan tekan "OK".';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>Salam, %1$s.<br />
+<br />
+Kode otentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
+<h1>%2$s</h1>
+<p>Kode ini berakhir dalam 10 menit.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = 'Otentikasi Dua-Faktor';

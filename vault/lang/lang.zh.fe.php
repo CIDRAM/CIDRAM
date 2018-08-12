@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.09).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = '撤销';
 $CIDRAM['lang']['field_clear_all'] = '撤销所有';
 $CIDRAM['lang']['field_clickable_link'] = '可点击的链接';
 $CIDRAM['lang']['field_component'] = '组件';
+$CIDRAM['lang']['field_confirm'] = '确认';
 $CIDRAM['lang']['field_create_new_account'] = '创建新账户';
 $CIDRAM['lang']['field_deactivate'] = '停用';
 $CIDRAM['lang']['field_delete_account'] = '删除账户';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = '月';
 $CIDRAM['lang']['previewer_seconds'] = '秒';
 $CIDRAM['lang']['previewer_weeks'] = '周';
 $CIDRAM['lang']['previewer_years'] = '年';
+$CIDRAM['lang']['response_2fa_invalid'] = '输入了错误的2FA代码。验证失败。';
+$CIDRAM['lang']['response_2fa_valid'] = '验证成功。';
 $CIDRAM['lang']['response_accounts_already_exists'] = '一个账户与那个用户名已经存在！';
 $CIDRAM['lang']['response_accounts_created'] = '账户成功创建！';
 $CIDRAM['lang']['response_accounts_deleted'] = '账户成功删除！';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = '不要检查签�
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = '检查签名文件';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '不要隐藏被禁止/阻止的IP';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '隐藏被禁止/阻止的IP';
+$CIDRAM['lang']['tip_2fa_sent'] = '包含2FA代码的电子邮件已发送到您的电子邮件地址。​请确认以下代码以获取对前端的访问权限。​如果您没有收到此电子邮件，尝试登出，等待10分钟，然后再次登录以接收包含新代码的新电子邮件。';
 $CIDRAM['lang']['tip_accounts'] = '你好，​{username}。​<br />账户页面允许您控制谁可以访问CIDRAM前端。';
 $CIDRAM['lang']['tip_cache_data'] = '你好，​{username}。​<br />在这里您可以查看缓存的内容。';
 $CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR计算器允许您计算IP地址属于哪个CIDR。';
@@ -388,3 +392,10 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性图表</a> – 列出各种软件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性图表</a> – 列出各种软件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>你好，%1$s。<br />
+<br />
+用于登录CIDRAM前端的2FA代码：</p>
+<h1>%2$s</h1>
+<p>此代码将在10分钟后到期。</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '2FA（双因素身份验证）';

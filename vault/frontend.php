@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.10).
+ * This file: Front-end handler (last modified: 2018.08.11).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -321,11 +321,41 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_wrong_endpoint'];
                 } else {
                     if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
-                        $CIDRAM['2FA-State'] = (int)$CIDRAM['FECacheGet'](
+                        $CIDRAM['2FA-State'] = $CIDRAM['FECacheGet'](
                             $CIDRAM['FE']['Cache'],
-                            '2FA-State:' . $CIDRAM['FE']['User']
+                            '2FA-State:' . $CIDRAM['FE']['UserRaw']
                         );
-                        $CIDRAM['FE']['UserState'] = ($CIDRAM['2FA-State'] === 1) ? 1 : 2;
+                        if ($CIDRAM['2FA-State'] === false) {
+                            $CIDRAM['2FA-State'] = ['Number' => $CIDRAM['2FA-Number']()];
+                            $CIDRAM['2FA-State']['Hash'] = password_hash($CIDRAM['2FA-State']['Number'], $CIDRAM['DefaultAlgo']);
+                            $CIDRAM['FECacheAdd'](
+                                $CIDRAM['FE']['Cache'],
+                                $CIDRAM['FE']['Rebuild'],
+                                '2FA-State:' . $CIDRAM['FE']['UserRaw'],
+                                '0' . $CIDRAM['2FA-State']['Hash'],
+                                $CIDRAM['Now'] + 600
+                            );
+                            $CIDRAM['2FA-State']['Template'] = sprintf(
+                                $CIDRAM['lang']['msg_template_2fa'],
+                                $CIDRAM['FE']['UserRaw'],
+                                $CIDRAM['2FA-State']['Number']
+                            );
+                            if (preg_match('~^[^<>]+<[^<>]+>$~', $CIDRAM['FE']['UserRaw'])) {
+                                $CIDRAM['2FA-State']['Name'] = trim(preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $CIDRAM['FE']['UserRaw']));
+                                $CIDRAM['2FA-State']['Address'] = trim(preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $CIDRAM['FE']['UserRaw']));
+                            } else {
+                                $CIDRAM['2FA-State']['Name'] = trim($CIDRAM['FE']['UserRaw']);
+                                $CIDRAM['2FA-State']['Address'] = $CIDRAM['2FA-State']['Name'];
+                            }
+                            $CIDRAM['SendEmail'](
+                                [['Name' => $CIDRAM['2FA-State']['Name'], 'Address' => $CIDRAM['2FA-State']['Address']]],
+                                $CIDRAM['lang']['msg_subject_2fa'],
+                                $CIDRAM['2FA-State']['Template'],
+                                strip_tags($CIDRAM['2FA-State']['Template'])
+                            );
+                        }
+                        $CIDRAM['FE']['UserState'] = 2;
+                        unset($CIDRAM['2FA-State']);
                     } else {
                         $CIDRAM['FE']['UserState'] = 1;
                     }
@@ -375,6 +405,8 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
             $CIDRAM['FE']['Permissions'] === 0
         ) ? $CIDRAM['lang']['state_logged_in_2fa_pending'] : $CIDRAM['lang']['state_logged_in'];
     }
+
+    /** Handle front-end logging. */
     $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], (
         empty($_POST['username']) ? '' : $_POST['username']
     ), empty($CIDRAM['LoggerMessage']) ? '' : $CIDRAM['LoggerMessage']);
@@ -425,20 +457,54 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                         $CIDRAM['FE']['UserOffset'],
                         strpos($CIDRAM['FE']['UserList'], "\n", $CIDRAM['FE']['UserOffset']) - $CIDRAM['FE']['UserOffset']
                     ), -1);
+
+                    /** Handle 2FA stuff here. */
                     if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
-                        $CIDRAM['2FA-State'] = (int)$CIDRAM['FECacheGet'](
+                        $CIDRAM['2FA-State'] = $CIDRAM['FECacheGet'](
                             $CIDRAM['FE']['Cache'],
-                            '2FA-State:' . $CIDRAM['FE']['User']
+                            '2FA-State:' . $CIDRAM['FE']['UserRaw']
                         );
-                        $CIDRAM['FE']['UserState'] = ($CIDRAM['2FA-State'] === 1) ? 1 : 2;
+                        $CIDRAM['FE']['UserState'] = ((int)$CIDRAM['2FA-State'] === 1) ? 1 : 2;
+                        if ($CIDRAM['FE']['UserState'] === 2 && $CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
+
+                            /** User has submitted a 2FA code. Attempt to verify it. */
+                            if (password_verify($_POST['2fa'], substr($CIDRAM['2FA-State'], 1))) {
+                                $CIDRAM['FECacheAdd'](
+                                    $CIDRAM['FE']['Cache'],
+                                    $CIDRAM['FE']['Rebuild'],
+                                    '2FA-State:' . $CIDRAM['FE']['UserRaw'],
+                                    '1',
+                                    $CIDRAM['Now'] + 604800
+                                );
+                                $CIDRAM['FE']['UserState'] = 1;
+                            }
+
+                        }
+                        unset($CIDRAM['2FA-State']);
                     } else {
                         $CIDRAM['FE']['UserState'] = 1;
                     }
+
+                    /** Revert permissions if not authenticated. */
                     if ($CIDRAM['FE']['UserState'] !== 1) {
                         $CIDRAM['FE']['Permissions'] = 0;
                     }
                 }
                 break;
+            }
+        }
+    }
+
+    /** In case of 2FA form submission. */
+    if ($CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
+        if ($CIDRAM['FE']['UserState'] === 2) {
+            if ($CIDRAM['Config']['general']['FrontEndLog']) {
+                $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['response_2fa_invalid']);
+            }
+            $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['lang']['response_2fa_invalid'] . '<br /><br /></div>';
+        } else {
+            if ($CIDRAM['Config']['general']['FrontEndLog']) {
+                $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['response_2fa_valid']);
             }
         }
     }
@@ -465,7 +531,7 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
         $CIDRAM['FE']['UserState'] = 0;
         $CIDRAM['FE']['Permissions'] = 0;
         setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HTTP_HOST'], false, true);
-        $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $CIDRAM['FE']['User']);
+        $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $CIDRAM['FE']['UserRaw']);
         $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['state_logged_out']);
 
     }

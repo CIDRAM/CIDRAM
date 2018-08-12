@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.08.09).
+ * This file: Italian language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'Revocarlo';
 $CIDRAM['lang']['field_clear_all'] = 'Revoca tutto';
 $CIDRAM['lang']['field_clickable_link'] = 'Link cliccabile';
 $CIDRAM['lang']['field_component'] = 'Componente';
+$CIDRAM['lang']['field_confirm'] = 'Confermare';
 $CIDRAM['lang']['field_create_new_account'] = 'Crea un nuovo account';
 $CIDRAM['lang']['field_deactivate'] = 'Disattivarlo';
 $CIDRAM['lang']['field_delete_account'] = 'Elimina un account';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'Mesi';
 $CIDRAM['lang']['previewer_seconds'] = 'Secondi';
 $CIDRAM['lang']['previewer_weeks'] = 'Settimane';
 $CIDRAM['lang']['previewer_years'] = 'Anni';
+$CIDRAM['lang']['response_2fa_invalid'] = 'Codice 2FA errato inserito. Autenticazione fallita.';
+$CIDRAM['lang']['response_2fa_valid'] = 'Autenticato con successo.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'Un account con quel nome utente esiste già!';
 $CIDRAM['lang']['response_accounts_created'] = 'Account creato con successo!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'Account eliminato con successo!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Non controllare 
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Controllare i file di firme';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Non nascondere gli IP vietati/bloccati';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Nascondere gli IP vietati/bloccati';
+$CIDRAM['lang']['tip_2fa_sent'] = 'Un\'email contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo email. Si prega di confermare questo codice qui sotto per ottenere l\'accesso al front-end. Se non hai ricevuto questa email, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova email contenente un nuovo codice.';
 $CIDRAM['lang']['tip_accounts'] = 'Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM.';
 $CIDRAM['lang']['tip_cache_data'] = 'Salve, {username}.<br />Qui puoi rivedere il contenuto della cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salve, {username}.<br />La calcolatrice CIDR permette di calcolare che cosa CIDR un indirizzo IP appartiene.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Alcuni link utili:<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Mappe di Vulnerabilità</a> – Elenca le versioni sicure e non sicure di varie pacchetti (HHVM, PHP, phpMyAdmin, Python, ecc).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Mappe di Compatibilità</a> – Elenca le informazioni sulla compatibilità per vari pacchetti (CIDRAM, phpMussel, ecc).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>Salve, %1$s.<br />
+<br />
+Il vostro codice di autenticazione a due fattori per l\'accesso al front-end di CIDRAM:</p>
+<h1>%2$s</h1>
+<p>Questo codice scade tra 10 minuti.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = 'Autenticazione a due fattori';

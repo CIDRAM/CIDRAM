@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.09).
+ * This file: Urdu language data for the front-end (last modified: 2018.08.12).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -129,6 +129,7 @@ $CIDRAM['lang']['field_clear'] = 'صاف';
 $CIDRAM['lang']['field_clear_all'] = 'تمام کو صاف کریں';
 $CIDRAM['lang']['field_clickable_link'] = 'کلک کرنے والے لنک';
 $CIDRAM['lang']['field_component'] = 'اجزاء';
+$CIDRAM['lang']['field_confirm'] = 'تصدیق کریں';
 $CIDRAM['lang']['field_create_new_account'] = 'نیا اکاؤنٹ بنانے';
 $CIDRAM['lang']['field_deactivate'] = 'بے عمل';
 $CIDRAM['lang']['field_delete_account'] = 'کھاتہ مٹا دو';
@@ -247,6 +248,8 @@ $CIDRAM['lang']['previewer_months'] = 'مہینے';
 $CIDRAM['lang']['previewer_seconds'] = 'سیکنڈ';
 $CIDRAM['lang']['previewer_weeks'] = 'ہفتے';
 $CIDRAM['lang']['previewer_years'] = 'سال';
+$CIDRAM['lang']['response_2fa_invalid'] = 'غلط 2FA کوڈ داخل. تصدیق میں ناکام رہے.';
+$CIDRAM['lang']['response_2fa_valid'] = 'کامیابی سے تصدیق کی.';
 $CIDRAM['lang']['response_accounts_already_exists'] = 'وہ صارف نام کے ساتھ ایک اکاؤنٹ پہلے سے موجود ہے!';
 $CIDRAM['lang']['response_accounts_created'] = 'کاؤنٹ کامیابی سے تشکیل!';
 $CIDRAM['lang']['response_accounts_deleted'] = 'اکاؤنٹ کامیابی سے خارج!';
@@ -325,6 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'دستخط فا�
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'دستخط فائلوں کے خلاف چیک کریں';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'ممنوعہ/بلاک شدہ IP کو چھپانا مت چھوڑیں';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'ممنوعہ/بلاک شدہ IP چھپائیں';
+$CIDRAM['lang']['tip_2fa_sent'] = 'ایک ای میل دو فیکٹر کے توثیق کوڈ پر مشتمل ہے جو آپ کے ای میل ایڈریس پر بھیج دیا گیا ہے. سامنے کے اختتام تک رسائی حاصل کرنے کے لئے براہ مہربانی ذیل میں اس کوڈ کی تصدیق کریں. اگر آپ نے یہ ای میل موصول نہیں کیا تو، 10 منٹ کے انتظار میں لاگ ان کرنے کی کوشش کریں، اور ایک نیا ای میل کے ساتھ نیا ای میل وصول کرنے کیلئے دوبارہ لاگ ان کریں.';
 $CIDRAM['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ CIDRAM سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_cache_data'] = 'ہیلو، {username}.<br />یہاں آپ کیش کے مندرجات کا جائزہ لے سکتے ہیں.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'ہیلو، {username}.<br />CIDR کیلکولیٹر آپ کو ایک IP ایڈریس CIDRs جس کا حساب کرنے کی اجازت دیتا ہے کا ایک عنصر ہے.';
@@ -387,3 +391,10 @@ $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (HHVM، PHP، phpMyAdmin، Python، وغیرہ).</li>
             <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
         </ul>';
+
+$CIDRAM['lang']['msg_template_2fa'] = '<center><p>ہیلو، %1$s.<br />
+<br />
+CIDRAM سامنے کے آخر میں آپ کے 2FA کوڈ:</p>
+<h1>%2$s</h1>
+<p>یہ کوڈ 10 منٹ میں ختم ہو جاتا ہے.</p></center>';
+$CIDRAM['lang']['msg_subject_2fa'] = '2FA';

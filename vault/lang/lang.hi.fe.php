@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.08.12).
+ * This file: Hindi language data for the front-end (last modified: 2018.08.13).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -375,8 +375,7 @@ $CIDRAM['lang']['warning_signatures_1'] = 'कोई हस्ताक्षर
 $CIDRAM['lang']['info_some_useful_links'] = 'कुछ उपयोगी लिंक:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM के समस्याएं @ GitHub</a> – CIDRAM के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – CIDRAM के लिए WordPress प्लगइन।</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – वेबसाइटों को सुरक्षित करने के लिए सरल वेबमास्टर उपकरण का एक संग्रह।</li>
-            <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – CIDRAM के लिए वैकल्पिक ब्लॉकलिस्ट और मॉड्यूल शामिल हैं जैसे खतरनाक बॉट, अवांछित देशों, पुराने ब्राउज़र, आदि को अवरुद्ध करने के लिए।</li>
+             <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – CIDRAM के लिए वैकल्पिक ब्लॉकलिस्ट और मॉड्यूल शामिल हैं जैसे खतरनाक बॉट, अवांछित देशों, पुराने ब्राउज़र, आदि को अवरुद्ध करने के लिए।</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP सीखने संसाधन और चर्चा।</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP टूलकिट</a> – ASN से CIDR प्राप्त करें, ASN संबंधों को निर्धारित करें, नेटवर्क नामों पर आधारित ASN की खोज करें, आदि।</li>

@@ -45,7 +45,7 @@ CIDRAM Авторское право 2016 года, а также GNU/GPLv2 by C
 
 3) Скачайте всё содержимое (CIDRAM и файлы) в указанный в пункте 1 регистр, кроме файлов `*.txt`/`*.md`.
 
-4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, Вы можете попробовать „777“; это менее безопасно, хотя). Права доступа вышестоящего папка, в котором находится содержание (папка в который Вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ, если случились проблемы с доступом (обычно должно быть „755“ в стандарта).
+4) Право доступа `vault`-регистра поменяйте на «755» (если есть проблемы, Вы можете попробовать „777“; это менее безопасно, хотя). Права доступа вышестоящего папка, в котором находится содержание (папка в который Вы наметили занести файлы) могут остаться прежними, но всё же лучше проверить доступ, если случились проблемы с доступом (обычно должно быть „755“ в стандарта). Вкратце: Чтобы пакет работал правильно, PHP должен иметь возможность читать и писать файлы в каталоге `vault`. Многие вещи (обновление, ведение журнала, и т.д.) не будут возможны, если PHP не может писать в каталог `vault`, и пакет не будет работать вообще, если PHP не может читать из каталога `vault`. Однако для обеспечения оптимальной безопасности каталог `vault` НЕ должен быть общедоступным (конфиденциальная информация, такая как информация, содержащаяся в файле `config.ini` или `frontend.dat`, может быть обнаружена потенциальными злоумышленниками, если каталог `vault` является общедоступным).
 
 5) Скрепите CIDRAM с Вашей системой или с системой управления содержимым (CMS). Для этого есть много способов. Самым простым является способ, когда CIDRAM-руководство является началом главного файла, который будет загружаться всякий раз, когда будут заходить на ваш интернет-сайт. Этот файл нужно связать с Вашей системой или с системой управления содержимым (CMS) при помощи `require` или `include` команд. Обычно такой файл обозначается в регистре как `/includes`, `/assets` или `/functions`, и часто называется `init.php`, `common_functions.php`, `functions.php`. Вы должны найти тот файл, который соответствует Вашим требованиям. Если это трудно для Вас, то посетите страница вопросов CIDRAM на GitHub. Возможно я или кто-то другой уже имеет опыт работы с CMS, которую используете вы, и сможет дать Вам совет (обязательно сообщите, какой CMS Вы пользуетесь). Введите прямо в начало этого файла следующий код:
 
@@ -111,10 +111,23 @@ CIDRAM можно обновлять вручную или через фронт
 
 Заметка: После того, как Вы вошли в первый раз, в целях предотвращения несанкционированного доступа к фронтенд, Вы должны немедленно изменить имя пользователя и пароль! Это очень важно, потому что это можно загрузить произвольный PHP код на свой веб-сайт через фронтенд.
 
+Кроме того, для обеспечения оптимальной безопасности настоятельно рекомендуется включить «двухфакторную аутентификацию» для всех учетных записей фронтенд (инструкции приведены ниже).
+
 #### 4.2 КАК ИСПОЛЬЗОВАТЬ ФРОНТЕНД.
 
 Инструкции предоставляются на каждой странице в фронтенд, чтобы объяснить правильный способ использовать его и его целевое назначение. Если Вам нужна дополнительная объяснение или любой специальный помощь, обратитесь в поддержки. Дополнительно, есть некоторые видео доступны на YouTube, которые могли бы помочь путем демонстрации.
 
+#### 4.3 ДВУХФАКТОРНАЯ АУТЕНТИФИКАЦИЯ
+
+It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+
+Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+
+After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+
+Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+
+Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
 
 ---
 
@@ -145,6 +158,7 @@ CIDRAM можно обновлять вручную или через фронт
 /vault/ | Vault-регистр (содержит различные файлы).
 /vault/fe_assets/ | Данные для фронтенд.
 /vault/fe_assets/.htaccess | Гипертекст доступа файл (в этом случае защищает от неавторизованного доступа чувствительные файлы данного руководства).
+/vault/fe_assets/_2fa.html | Шаблон HTML, используемый при запросе пользователя для кода 2FA.
 /vault/fe_assets/_accounts.html | Шаблон HTML для учетными записями страница в фронтенд.
 /vault/fe_assets/_accounts_row.html | Шаблон HTML для учетными записями страница в фронтенд.
 /vault/fe_assets/_cache.html | Шаблон HTML для данные кэша страница в фронтенд.
@@ -600,6 +614,48 @@ CIDRAM можно обновлять вручную или через фронт
 ##### «css_url»
 - Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить CIDRAM использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя `css_url` переменная. Если оставить это переменная пустым, CIDRAM будет использовать шаблонный файл для стандарт тема.
 
+#### "PHPMailer" (Category)
+PHPMailer configuration.
+
+##### "EventLog"
+- @todo@
+
+##### "SkipAuthProcess"
+- @todo@
+
+##### "Enable2FA"
+- @todo@
+
+##### "Host"
+- @todo@
+
+##### "Port"
+- @todo@
+
+##### "SMTPSecure"
+- @todo@
+
+##### "SMTPAuth"
+- @todo@
+
+##### "Username"
+- @todo@
+
+##### "Password"
+- @todo@
+
+##### "setFromAddress"
+- @todo@
+
+##### "setFromName"
+- @todo@
+
+##### "addReplyToAddress"
+- @todo@
+
+##### "addReplyToName"
+- @todo@
+
 ---
 
 
@@ -743,11 +799,11 @@ Tag: Пример Секция
 Expires: 2016.12.31
 ```
 
-##### 7.1.3 DEFERENCE TAGS
+##### 7.1.3 ТЕГИ ОТЛОЖЕННЫЕ
 
-When large numbers of signature files are installed and actively used, installations can become quite complex, and there may be some signatures which overlap. In these cases, in order to prevent multiple, overlapping signatures being triggered during block events, deference tags may be used to defer specific signature sections in cases where some other specific signature file is installed and actively used. This may be useful in cases where some signatures are updated more frequently than others, in order to defer the less frequently updated signatures in favour of the more frequently updated signatures.
+Когда большое количество файлов сигнатур установлено и активно используется, инсталляция могут стать довольно сложными, и могут быть некоторые сигнатуры, которые перекрываются. В этих случаях для предотвращения включения нескольких перекрывающихся сигнатурей во время блочных событий, отложенные теги могут использоваться для отсрочки определенных секция сигнатуры в случаях, когда установлен и активно используется какой-либо другой файл сигнатур. Это может быть полезно в случаях, когда некоторые сигнатуры обновляются чаще других, чтобы отложить менее часто обновляемые сигнатуры в пользу более часто обновляемых сигнатурей.
 
-Deference tags are used similarly to other types of tags. The tag's value should match an installed and actively used signature file to be deferred to.
+Отложенные теги используются аналогично другим типам тегов. Значение тега должно соответствовать установленному и активно используемому файлу сигнатуры, от которого будет отложено.
 
 Пример:
 

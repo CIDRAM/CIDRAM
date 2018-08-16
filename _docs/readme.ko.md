@@ -45,7 +45,7 @@ CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 3) 콘텐츠 (CIDRAM 본체와 파일)을 먼저 정한 디렉토리에 업로드합니다. (`*.txt`또는 `*.md`파일 업로드 필요는 없지만, 대개는 모든 업로드 해달라고해도됩니다).
 
-4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). In short: For the package to work properly, PHP needs to be able to read and write files inside the `vault` directory. Many things (updating, logging, etc) won't be possible, if PHP can't write to the `vault` directory, and the package won't work at all if PHP can't read from the `vault` directory. However, for optimal security, the `vault` directory must NOT be publicly accessible (sensitive information, such as the information contained by `config.ini` or `frontend.dat`, could be exposed to potential attackers if the `vault` directory is publicly accessible). @Translate@
+4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). 간단히 말해서 : 패키지가 제대로 작동하려면 PHP가`vault` 디렉토리에서 파일을 읽고 쓸 수 있어야합니다. PHP가`vault` 디렉토리에 쓸 수 없다면 많은 것들 (업데이트, 로깅 등)은 불가능합니다. PHP가`vault` 디렉토리에서 읽을 수 없다면 패키지는 전혀 작동하지 않을 것입니다. 최적의 보안을 위해, `vault` 디렉토리는 공개적으로 접근 할 수 없어야합니다 (`vault` 디렉토리가 공개적으로 액세스 가능한 경우, `config.ini` 나`frontend.dat '에 포함 된 정보와 같은 민감한 정보는 잠재적 인 공격자에게 노출 될 수 있습니다).
 
 5) 그 다음에 시스템 또는 CMS에 CIDRAM를 연결합니다. 방법에는 여러 가지가 있지만 가장 쉬운 것은`require`과`include`에서 스크립트를 시스템 또는 CMS 코어 파일의 첫 부분에 기재하는 방법입니다. (코어 파일은 사이트의 어떤 페이지에 접근이 있어도 반드시로드되는 파일입니다). 일반적으로는 `/includes`또는 `/assets`또는 `/functions`같은 디렉토리에있는 파일에서 `init.php`, `common_functions.php`, `functions.php`라는 파일 이름을 붙일 수 있습니다. 실제로 어떤 파일인지는 찾아도 바닥입니다해야합니다. 잘 모르는 경우 CIDRAM 지원 포럼을 참조하거나 GitHub 때문에 CIDRAM 문제의 페이지 또는 알려주십시오 (CMS 정보 필수). 나 자신을 포함하여 사용자에 유사한 CMS를 다룬 경험이 있으면, 무엇인가의 지원을 제공 할 수 있습니다. 코어 파일이 발견 된 경우, (`require` 또는`include`을 사용하여) 다음 코드를 파일의 맨 위에 삽입하십시오. 그러나 따옴표로 둘러싸인 부분은`loader.php` 파일의 정확한 주소 (HTTP 주소가 아닌 로컬 주소 전술의 vault 주소와 유사)로 바꿉니다.
 
@@ -111,13 +111,13 @@ CIDRAM은 수동으로 또는 프런트 엔드를 통해 업데이트 할 수 �
 
 주의 : 당신이 처음 로그인 한 후 프론트 엔드에 대한 무단 액세스를 방지하기 위해 신속하게 사용자 이름과 암호를 변경해야합니다! 이것은 매우 중요합니다, 왜냐하면 프론트 엔드에서 임의의 PHP 코드를 당신의 웹 사이트에 업로드 할 수 있기 때문입니다.
 
-Also, for optimal security, enabling "two-factor authentication" for all front-end accounts is strongly recommended (instructions provided below). @Translate@
+최적의 보안을 위해 모든 프런트 엔드 계정에 대해 2FA (이중 인증)을 사용하는 것이 좋습니다 (아래 제공된 지침).
 
 #### 4.2 프론트 엔드 사용.
 
 프론트 엔드의 각 페이지에는 목적에 대한 설명과 사용 방법에 대한 설명이 있습니다. 전체 설명이나 특별한 지원이 필요한 경우 지원에 문의하십시오. 또한 데모를 제공 할 YouTube에서 사용 가능한 동영상도 있습니다.
 
-#### 4.3 TWO-FACTOR AUTHENTICATION @Translate@
+#### 4.3 2FA (이중 인증)
 
 It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
 

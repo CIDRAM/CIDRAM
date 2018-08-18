@@ -274,8 +274,9 @@ Origin: AR
 Tag: Dattatec.com
 
 
-# ASNs 7203, 16265, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 136988, 205544, 394380, 395954, 396190, 396362
-# ("Leaseweb Network"). Updated: 2018.05.04
+# ASNs 7203, 16265, 19148, 28753, 30633, 38930, 59253, 60626, 60781, 133752, 136988, 205025, 205544, 394380, 395954,
+# 396190, 396362, "Leaseweb Network". Updated: 2018.08.18
+# (Mostly should all just identify as "cloud". Also contains one "proxy").
 
 2a03:f85:2::/48 Deny Cloud
 Origin: AT
@@ -305,10 +306,11 @@ Origin: HK
 2a00:9d20:1::/48 Deny Cloud
 2a00:9d20:2::/47 Deny Cloud
 2a00:9d20:4::/48 Deny Cloud
-2a00:9d20:6::/47 Deny Cloud
+2a00:9d20:7::/48 Deny Cloud
 2a00:9d20:53::/48 Deny Cloud
 2a00:9d20:5353::/48 Deny Cloud
 2a00:c6c0:1::/48 Deny Cloud
+2a00:fc80::/48 Deny Cloud
 2a01:9400::/32 Deny Cloud
 2a01:b2e0::/29 Deny Cloud
 2a02:bc0::/32 Deny Cloud
@@ -322,7 +324,6 @@ Origin: HK
 2a06:6f80::/29 Deny Cloud
 2a06:ab00::/32 Deny Cloud
 2a06:b5c0::/29 Deny Cloud
-2a07:2c00::/29 Deny Cloud
 2a07:95c0::/29 Deny Cloud
 2a07:a300::/29 Deny Cloud
 2a0a:1400::/29 Deny Cloud
@@ -338,18 +339,23 @@ Origin: HK
 Origin: NL
 2a06:cd40:300::/48 Deny Cloud
 Origin: RO
+2a0c:ab00::/29 Deny Cloud
+Origin: RU
 2a04:88c0::/36 Deny Cloud
 2a05:b300::/29 Deny Cloud
 2a06:a5c0::/29 Deny Cloud
 Origin: SC
 2001:df1:800::/47 Deny Cloud
 2402:5980::/40 Deny Cloud
+2402:a7c1::/32 Deny Cloud
 Origin: SG
 2a04:1880:1111::/48 Deny Cloud
 Origin: TR
 2604:9a00::/32 Deny Cloud
 2605:fe80::/32 Deny Cloud
 2606:9880::/32 Deny Cloud
+2607:f5b0::/32 Deny Cloud
+2607:f5b3::/32 Deny Cloud
 Origin: US
 Tag: Leaseweb
 
@@ -1931,8 +1937,8 @@ Tag: Micfo, LLC
 
 # ASN 63008 ("Contina").
 # %Listed, CleanTalk.org: 79.96%.
-# Stop Forum Spam (SFS) listings: 5,778.
-# Updated: 2018.03.29
+# Stop Forum Spam (SFS) listings: 2,456.
+# Updated: 2018.03.29 / Checked: 2018.08.18
 
 2407:9780::/32 Deny Cloud
 2605:3e80:300::/40 Deny Cloud
@@ -3935,10 +3941,10 @@ Tag: HostSlim BV
 
 # ASN 43350 ("NForce Entertainment B.V").
 # Ranges change frequently / Should update often.
-# %Listed, Google Malware Dashboard: 0.76%.
+# %Listed, Google Malware Dashboard: 0.64%.
 # %Listed, CleanTalk.org: 69.17%.
-# Stop Forum Spam (SFS) listings: 120,097.
-# Updated: 2018.03.19 / Checked: 2018.04.24
+# Stop Forum Spam (SFS) listings: 222,751.
+# Updated: 2018.08.18
 
 2a07:1c41::/40 Deny Cloud
 Origin: AT
@@ -3947,6 +3953,7 @@ Origin: CR
 2a07:2680::/29 Deny Cloud
 Origin: DK
 2a02:2ca0::/32 Deny Cloud
+2a07:9942:39d8::/48 Deny Cloud
 Origin: EU
 2a06:a006:c3::/48 Deny Cloud
 Origin: IS
@@ -4150,10 +4157,10 @@ Tag: Hosting Services Inc
 
 
 # ASN 54540 ("Incero LLC").
-# %Listed, Google Malware Dashboard: 0.59%.
+# %Listed, Google Malware Dashboard: 0.35%.
 # %Listed, CleanTalk.org: 85.80%.
-# Stop Forum Spam (SFS) listings: 1,340.
-# Updated: 2018.03.29
+# Stop Forum Spam (SFS) listings: 439.
+# Updated: 2018.08.18
 
 2602:ff16:1::/48 Deny Cloud
 2602:ff16:2::/47 Deny Cloud
@@ -4188,7 +4195,8 @@ Tag: Hosting Services Inc
 2604:880:45::/48 Deny Cloud
 2604:880:46::/47 Deny Cloud
 2604:880:48::/45 Deny Cloud
-2604:880:50::/46 Deny Cloud
+2604:880:50::/47 Deny Cloud
+2604:880:53::/48 Deny Cloud
 2604:880:54::/48 Deny Cloud
 2604:880:56::/47 Deny Cloud
 2604:880:58::/47 Deny Cloud
@@ -4204,6 +4212,7 @@ Tag: Hosting Services Inc
 2604:880:72::/47 Deny Cloud
 2604:880:74::/47 Deny Cloud
 2604:880:76::/48 Deny Cloud
+2604:880:78::/48 Deny Cloud
 2604:880:80::/48 Deny Cloud
 2604:880:85::/48 Deny Cloud
 2604:880:92::/48 Deny Cloud
@@ -4250,6 +4259,7 @@ Tag: Hosting Services Inc
 2604:880:6d00::/48 Deny Cloud
 2606:cd80::/48 Deny Cloud
 2620:1e8:2::/47 Deny Cloud
+2620:1e8:4::/48 Deny Cloud
 Origin: US
 Tag: Incero LLC
 

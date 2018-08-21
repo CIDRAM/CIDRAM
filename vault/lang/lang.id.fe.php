@@ -81,7 +81,7 @@ $CIDRAM['lang']['config_general_logfileSerialized'] = 'File serial untuk mencata
 $CIDRAM['lang']['config_general_maintenance_mode'] = 'Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = 'Jumlah maksimum upaya untuk memasukkan.';
 $CIDRAM['lang']['config_general_numbers'] = 'Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda.';
-$CIDRAM['lang']['config_general_protect_frontend'] = 'Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada front-end. True = Ya [Default]; False = Tidak.';
+$CIDRAM['lang']['config_general_protect_frontend'] = 'Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_search_engine_verification'] = 'Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari.';
 $CIDRAM['lang']['config_general_silent_mode'] = 'Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "Akses Ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini.';
 $CIDRAM['lang']['config_general_social_media_verification'] = 'Mencoba memverifikasi permintaan media sosial? Verifikasi media sosial memberikan perlindungan terhadap permintaan media sosial palsu (permintaan semacam ini akan diblokir). True = Mengaktifkan verifikasi media sosial [Default]; False = Mengaktifkan verifikasi media sosial.';
@@ -328,7 +328,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Jangan cek terha
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Cek terhadap file tanda tangan';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Jangan sembunyikan IP yang dilarang/diblokir';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Sembunyikan IP yang dilarang/diblokir';
-$CIDRAM['lang']['tip_2fa_sent'] = 'Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke front-end. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru.';
+$CIDRAM['lang']['tip_2fa_sent'] = 'Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru.';
 $CIDRAM['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM.';
 $CIDRAM['lang']['tip_cache_data'] = 'Salam, {username}.<br />Disini Anda bisa meninjau isi cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor.';
@@ -375,7 +375,7 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Tidak ada file tanda tangan yang akti
 $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">Masalah CIDRAM @ GitHub</a> – Halaman masalah untuk CIDRAM (dukungan, bantuan, dll).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – Plugin WordPress untuk CIDRAM.</li>
-             <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
+            <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Berisi daftar blok opsional dan modul untuk CIDRAM seperti untuk memblokir bot berbahaya, negara yang tidak diinginkan, peramban yang ketinggalan jaman, dll.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDRs dari ASN, menentukan hubungan ASN, menemukan ASN berdasarkan nama jaringan, dll.</li>

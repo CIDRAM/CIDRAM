@@ -119,15 +119,15 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 
 #### 4.3 2FA（双因素身份验证）
 
-It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+通过启用双因素身份验证，可以使前端更安全。​当登录使用2FA的帐户时，会向与该帐户关联的电子邮件地址发送电子邮件。​此电子邮件包含“2FA代码”，用户必须输入它（以及他们的用户名和密码），为了能够使用该帐户登录。​这意味着获取帐户密码不足以让任何黑客或潜在攻击者能够帐户登录，因为他们还需要访问帐户的电子邮件地址才能接收和使用会话的2FA代码（从而使前端更安全）。
 
-Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+首先，为了启用双因素身份验证，请使用前端更新页面来安装PHPMailer组件。​CIDRAM使用PHPMailer发送电子邮件。​注意：虽然CIDRAM本身与`PHP >= 5.4.0`兼容，但PHPMailer需要`PHP >= 5.5.0`，因此，对于PHP 5.4用户来说，无法为CIDRAM前端启用双因素身份验证。
 
-After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+在安装PHPMailer后，您需要通过CIDRAM配置页面或配置文件填充PHPMailer的配置指令。​有关这些配置指令的更多信息包含在本文档的配置部分中。​在填充PHPMailer配置指令后，将`Enable2FA`设置为`true`。​现在应启用双因素身份验证。
 
-Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+接下来，您需要让CIDRAM知道在使用该帐户登录时将2FA代码发送到何处。​为此，请使用电子邮件地址作为帐户的用户名（例如，`foo@bar.tld`），或者将电子邮件地址作为用户名的一部分包括在内，就像通常发送电子邮件一样（例如，`Foo Bar <foo@bar.tld>`）。
 
-Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
+注意：保护您的vault免受未经授权的访问（例如，通过加强服务器的安全性和限制公共访问权限）在此非常重要，因为未经授权访问您的配置文件（存储在您的vault中）可能会暴露您的出站SMTP设置（包括SMTP用户名和密码）。​在启用双因素身份验证之前，应确保您的vault已正确保护。​如果您无法做到这一点，那么至少应该创建一个专门用于此目的的新电子邮件帐户，为了降低与暴露的SMTP设置相关的风险。
 
 ---
 
@@ -160,8 +160,8 @@ Note: Protecting your vault against unauthorised access (e.g., by hardening your
 /vault/fe_assets/ | 前端资产。
 /vault/fe_assets/.htaccess | 超文本访问文件（在这种情况，​以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/fe_assets/_2fa.html | 在向用户询问2FA代码时使用的HTML模板。
-/vault/fe_assets/_accounts.html | 前端账户页面的HTML模板。
-/vault/fe_assets/_accounts_row.html | 前端账户页面的HTML模板。
+/vault/fe_assets/_accounts.html | 前端帐户页面的HTML模板。
+/vault/fe_assets/_accounts_row.html | 前端帐户页面的HTML模板。
 /vault/fe_assets/_cache.html | 前端缓存数据页面的HTML模板。
 /vault/fe_assets/_cidr_calc.html | CIDR计算器的HTML模板。
 /vault/fe_assets/_cidr_calc_row.html | CIDR计算器的HTML模板。
@@ -189,7 +189,7 @@ Note: Protecting your vault against unauthorised access (e.g., by hardening your
 /vault/fe_assets/_updates.html | 前端更新页面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新页面的HTML模板。
 /vault/fe_assets/frontend.css | 前端CSS样式表。
-/vault/fe_assets/frontend.dat | 前端数据库（包含账户信息，​会话信息，​和缓存；只生成如果前端是启用和使用）。
+/vault/fe_assets/frontend.dat | 前端数据库（包含帐户信息，​会话信息，​和缓存；只生成如果前端是启用和使用）。
 /vault/fe_assets/frontend.html | 前端的主HTML模板文件。
 /vault/fe_assets/icons.php | 图标处理文件（由前端文件管理器使用）。
 /vault/fe_assets/pips.php | 点数处理文件（由前端文件管理器使用）。

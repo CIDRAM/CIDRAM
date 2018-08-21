@@ -40,7 +40,7 @@ $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blockiert Hosts, 
 $CIDRAM['lang']['Extended Description: module_botua.php'] = 'Blockiert Benutzeragenten, die mit unerwünschten Bots und ruchlosen Aktivitäten in Verbindung stehen.';
 $CIDRAM['lang']['Extended Description: module_cookies.php'] = 'Bietet einige begrenzte Schutzmaßnahmen gegen gefährliche Cookies.';
 $CIDRAM['lang']['Extended Description: module_extras.php'] = 'Bietet einige begrenzte Schutzmaßnahmen gegen verschiedene Angriffsvektoren häufig in Anfragen verwendet.';
-$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Schützt die Registrierung und die Anmeldeseiten vor den von SFS aufgelisteten IPs.';
+$CIDRAM['lang']['Extended Description: module_sfs.php'] = 'Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs.';
 $CIDRAM['lang']['Name: Bypasses'] = 'Standard-Signatur-Bypässe.';
 $CIDRAM['lang']['Name: compat_bunnycdn.php'] = 'BunnyCDN Kompatibilitätsmodul';
 $CIDRAM['lang']['Name: module_badhosts.php'] = 'Schlechte Hosts Blocker-Modul';
@@ -375,7 +375,7 @@ $CIDRAM['lang']['warning_signatures_1'] = 'Keine Signaturdateien sind aktiv!';
 $CIDRAM['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Fragen @ GitHub</a> – Fragen-Seite für CIDRAM (Unterstützung, u.s.w.).</li>
             <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress Plugin für CIDRAM.</li>
-             <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Enthält optionale Blocklisten und Module für CIDRAM, wie zum Beispiel zum Blockieren gefährlicher Bots, unerwünschter Länder, veralteter Browser, u.s.w.</li>
+            <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Enthält optionale Blocklisten und Module für CIDRAM, wie zum Beispiel zum Blockieren gefährlicher Bots, unerwünschter Länder, veralteter Browser, u.s.w.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP Lernressourcen und Diskussion.</li>
             <li><a href="https://php.earth/">PHP.earth</a> – PHP Lernressourcen und Diskussion.</li>
             <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Erhalten Sie CIDRs von ASNs, bestimmen Sie ASN-Beziehungen, entdecken Sie ASNs basierend auf Netzwerknamen, u.s.w.</li>
@@ -393,7 +393,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>Hallo, %1$s.<br />
 <br />
-Ihr Zwei-Faktor-Authentifizierungscode für die Anmeldung am CIDRAM Front-End:</p>
+Ihr Zwei-Faktor-Authentifizierungscode für die Einloggen am CIDRAM Front-End:</p>
 <h1>%2$s</h1>
 <p>Dieser Code läuft in 10 Minuten ab.</p></center>';
 $CIDRAM['lang']['msg_subject_2fa'] = 'Zwei-Faktor-Authentifizierung';

@@ -99,7 +99,7 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 
 フロントエンドは、​CIDRAMのインストールを維持、​管理、​更新するための便利で簡単な方法を提供します。​ログ・ページを使用してログファイルを表示、​共有、​ダウンロードすることができます、​コンフィギュレーションページでコンフィギュレーションを変更できます、​アップデートページを使用してコンポーネントをインストールおよびアンインストールできます、​そして、​ファイル・マネージャーを使用してvault「ボールト」内のファイルをアップロード、​ダウンロード、​および変更することができます。
 
-不正アクセスを防止するため、​フロントエンドはデフォルトで無効になっています （不正アクセスがウェブサイトとそのセキュリティに重大な影響を与える可能性があります）。​それを可能にするための指示は、​このパラグラフの下に含まれています。
+不正アクセスを防止するため、​フロントエンドはデフォルトで無効になっています​（不正アクセスがウェブサイトとそのセキュリティに重大な影響を与える可能性があります）。​それを可能にするための指示は、​このパラグラフの下に含まれています。
 
 #### 4.1 フロントエンドを有効にする方法。
 
@@ -119,15 +119,15 @@ CIDRAMは、手動で、または、フロントエンド経由で更新でき�
 
 #### 4.3 ２ＦＡ（二要素認証）
 
-It's possible to make the front-end more secure by enabling two-factor authentication ("2FA"). When logging into a 2FA-enabled account, an email is sent to the email address associated with that account. This email contains a "2FA code", which the user must then enter, in addition to the username and password, in order to be able to log in using that account. This means that obtaining an account password would not be enough for any hacker or potential attacker to be able to log into that account, as they would also need to already have access to the email address associated with that account in order to be able to receive and utilise the 2FA code associated with the session, thus making the front-end more secure. @Translate@
+２ＦＡ「二要素認証」を有効にすることで、フロントエンドをより安全にすることができます。​２ＦＡを使用するアカウントにログインすると、そのアカウントに関連付けられた電子Ｅメール・アドレスに電子Ｅメールが送信されます。​このＥメールには「２ＦＡコード」が含まれています。​このアカウントを使用してログインできるように、ユーザーはこの２ＦＡコードとユーザー名とパスワードを入力する必要があります。​つまり、アカウントのパスワードでは、ハッカーや潜在的な攻撃者がそのアカウントにログインするのに十分ではありません。​セッションに関連付けられた２ＦＡコードを受信して利用するには、そのアカウントに関連付けられた電子Ｅメールアドレスにアクセスする必要があります。
 
-Firstly, to enable two-factor authentication, using the front-end updates page, install the PHPMailer component. CIDRAM utilises PHPMailer for sending emails. It should be noted that although CIDRAM, by itself, is compatible with PHP >= 5.4.0, PHPMailer requires PHP >= 5.5.0, therefore meaning that enabling two-factor authentication for the CIDRAM front-end won't be possible for PHP 5.4 users.
+まず、２ＦＡを有効にするには、フロントエンドのアップデイト・ページを使用して、PHPMailerコンポーネントをインストールします。​CIDRAMは、電子Ｅメールを送信するために、PHPMailerを利用します。​注意：CIDRAM自体はPHP >= 5.4.0と互換性がありますが、PHPMailerにはPHP >= 5.5.0が必要です。​したがって、PHP 5.4ユーザーはCIDRAMフロントエンドに２ＦＡを有効にすることはできません。
 
-After you've installed PHPMailer, you'll need to populate the configuration directives for PHPMailer via the CIDRAM configuration page or configuration file. More information about these configuration directives is included in the configuration section of this document. After you've populated the PHPMailer configuration directives, set `Enable2FA` to `true`. Two-factor authentication should now be enabled.
+PHPMailerをインストールしたら、CIDRAMコンフィギュレーション・ページまたはコンフィギュレーション・ファイルを使用して、PHPMailerのコンフィギュレーション・ディレクティブを設定する必要があります。​これらのコンフィギュレーション・ディレクティブの詳細については、このドキュメントのコンフィギュレーション・セクションに記載されています。​PHPMailerコンフィギュレーション・ディレクティブを設定したら、`Enable2FA`を`true`に設定します。​２ＦＡが有効にされている。
 
-Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+次に、CIDRAMがそのアカウントでログインする際に２ＦＡコードを送信する場所を知るように、電子Ｅメール・アドレスをアカウントに関連付ける必要があります。​これを行うには、電子Ｅメール・アドレスをアカウントのユーザー名として使用する（例えば、`foo@bar.tld`）か、電子Ｅメール・アドレスを通常どおり電子Ｅメールを送信する場合と同じ方法でユーザー名の一部として含めます（例えば、`Foo Bar <foo@bar.tld>`）。
 
-Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enablng two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
+注意：不正なアクセスからvaultを保護することは特に重要です（たとえば、サーバーのセキュリティを強化し、パブリック・アクセス許可を制限する）。​コンフィギュレーション・ファイル（あなたのvaultに保存されています）の不正なアクセスが送信SMTPコンフィギュレーションを公開する可能性があります（SMTPユーザー名とパスワードを含む）。​２ＦＡを有効にする前に、vaultが適切に保護されていることを確認する必要があります。​あなたがこれを行うことができない場合は、少なくとも、この目的のために専用の新しい電子Ｅメール・アカウントを作成する必要があります（公開されたSMTPコンフィギュレーションに関連するリスクを軽減するため）。
 
 ---
 
@@ -380,7 +380,7 @@ Note: Protecting your vault against unauthorised access (e.g., by hardening your
 `410` | `410 Gone` | 一部のブラウザではこのステータス・メッセージがキャッシュされ、その後はそれ以上のリクエストは送信されません。​これにより、偽陽性を解決することが困難になる可能性があります。​しかし、特定の非常に特殊なタイプのボットからの要求を減らすために、他のオプションよりも有用かもしれません。
 `418` | `418 I'm a teapot` | 実際には「April Fools」の冗談を参照し「[RFC 2324](https://tools.ietf.org/html/rfc2324#section-6.5.14)」、クライアントが理解することはまずありません。​娯楽と利便性のために提供されるが、一般的に推奨されていない。
 `451` | `Unavailable For Legal Reasons` | リクエストが法的な理由で主にブロックされた場合のコンテキストに適しています。​他のコンテキストでは推奨されません。
-`503` | `Service Unavailable` | 最も堅牢ですが、ユーザにとっては最も親切ではありません。
+`503` | `Service Unavailable` | 最も堅牢ですが、ユーザーにとっては最も親切ではありません。
 
 ##### "silent_mode" （サイレント・モード）
 - 「アクセス拒否」ページを表示する代わりに、​CIDRAMはブロックされたアクセス試行を自動的にリダイレクトする必要がありますか？​はいの場合は、​リダイレクトの場所を指定します。​いいえの場合は、​この変数を空白のままにします。
@@ -708,7 +708,7 @@ CIDRAMで使用されるシグネチャの形式と構造の説明は、​カ�
 
 「Deny」を使用すると、​シグネチャがトリガーされると、​保護されたページへのアクセスは拒否されます（ＩＰ/ＣＩＤＲがホワイトリストに登録されていない場合）。​「Deny」は、​実際にＩＰアドレスとＣＩＤＲの範囲をブロックするために使用するものです。​「Deny」を使用するシグネチャがトリガーされると、​「アクセス拒否」ページが生成され、​保護されたページへのリクエストが終了します。
 
-「Deny」によって受け入れられた`「パラメータ」`値は、​「アクセス拒否」ページ出力に処理されます、​リクエストされたページへのアクセスが拒否された理由として、​クライアント/ユーザーに提供されます。​それは短くて簡単な文章にすることができます（なぜそれらをブロックすることを選択したのか説明するために）。​また、​略語とすることもできます（事前準備された説明をクライアント/ユーザに提供する）。
+「Deny」によって受け入れられた`「パラメータ」`値は、​「アクセス拒否」ページ出力に処理されます、​リクエストされたページへのアクセスが拒否された理由として、​クライアント/ユーザーに提供されます。​それは短くて簡単な文章にすることができます（なぜそれらをブロックすることを選択したのか説明するために）。​また、​略語とすることもできます（事前準備された説明をクライアント/ユーザーに提供する）。
 
 あらかじめ用意された説明にはL10Nのサポートがあり、​スクリプトで翻訳することができます。​翻訳は、​スクリプト・コンフィグレーションの`lang`ディレクティブを使用して指定した言語に基づいて行われます。​さらに、​これらの短縮形の単語を使用している場合、​`「パラメータ」`値に基づいて 「Deny」シグネチャを無視するようスクリプトに指示できます。​これは、​スクリプト設定で指定されたディレクティブを介して行われます（それぞれの省略形に対応するディレクティブがあります）。​ただし、​他の`「パラメータ」`値にはL10Nがサポートされていません（したがって、​他の値は翻訳されません、​そしてコンフィグレーションによって制御可能ではない）。
 
@@ -1238,7 +1238,7 @@ CIDRAMは、​ウェブサイト所有者が望ましくないトラフィッ�
 
 ##### 11.2.1 ウェブフォンツ
 
-CIDRAMのフロントエンドと「アクセス拒否」ページの標準「ＵＩ」（ユーザー・インターフェイス）と同様に、一部のカスタム・テーマでは、美的な理由から「webfonts」（ウェブフォンツ）が使用されることがあります。​「Webfonts」（ウェブフォンツ）はデフォルトで無効になっていますが、有効にすると、ユーザーのブラウザと「webfont service」（ウェブフォント・サービス）間の直接通信が行われます。​これは、ユーザのＩＰアドレス、ユーザ・エージェント、オペレーティング・システム、および要求に利用可能な他の詳細などの情報を伝達することを潜在的に含むことがある。​これらのウェブフォンツのほとんどは「[Google Fonts](https://fonts.google.com/)」サービスによってホストされています。
+CIDRAMのフロントエンドと「アクセス拒否」ページの標準「ＵＩ」（ユーザー・インターフェイス）と同様に、一部のカスタム・テーマでは、美的な理由から「webfonts」（ウェブフォンツ）が使用されることがあります。​「Webfonts」（ウェブフォンツ）はデフォルトで無効になっていますが、有効にすると、ユーザーのブラウザと「webfont service」（ウェブフォント・サービス）間の直接通信が行われます。​これは、ユーザーのＩＰアドレス、ユーザー・エージェント、オペレーティング・システム、および要求に利用可能な他の詳細などの情報を伝達することを潜在的に含むことがある。​これらのウェブフォンツのほとんどは「[Google Fonts](https://fonts.google.com/)」サービスによってホストされています。
 
 *関連するコンフィギュレーション・ディレクティブ：*
 - `general` -> `disable_webfonts`
@@ -1407,7 +1407,7 @@ CIDRAMは、キャッシュまたはログ情報を[暗号化](https://ja.wikipe
 
 #### 11.4 COOKIES （クッキー）
 
-CIDRAMは、コードベースの2つのポイントで[Cookie](https://ja.wikipedia.org/wiki/HTTP_cookie)を設定します。 １.ユーザーがreCAPTCHAインスタンスを正常に完了すると（これは、`lockuser`が`true`に設定されていると仮定します）、CIDRAMは、ユーザーがすでにreCAPTCHAインスタンスを完了しているという後続の要求を覚えておくために、Cookieを設定します。​この方法では、後続のリクエストでreCAPTCHAインスタンスを完了するようユーザーに継続的に要求する必要はありません。 ２.ユーザがフロントエンドに正常にログインすると、CIDRAMは後続のリクエストのためにユーザを覚えておくためにCookieを設定します（すなわち、Cookieはユーザをログインセッションに認証するために使用されます）。
+CIDRAMは、コードベースの2つのポイントで[Cookie](https://ja.wikipedia.org/wiki/HTTP_cookie)を設定します。 １.ユーザーがreCAPTCHAインスタンスを正常に完了すると（これは、`lockuser`が`true`に設定されていると仮定します）、CIDRAMは、ユーザーがすでにreCAPTCHAインスタンスを完了しているという後続の要求を覚えておくために、Cookieを設定します。​この方法では、後続のリクエストでreCAPTCHAインスタンスを完了するようユーザーに継続的に要求する必要はありません。 ２.ユーザーがフロントエンドに正常にログインすると、CIDRAMは後続のリクエストのためにユーザーを覚えておくためにCookieを設定します（すなわち、Cookieはユーザーをログインセッションに認証するために使用されます）。
 
 いずれの場合も、Cookieに関する警告が目立つように表示され（該当する場合）、Cookieが関連するアクションに関与する場合にCookieが設定されることをユーザーに警告します。​Cookieは、コードベースの他のどの場所にも設定されていません。
 

@@ -375,7 +375,7 @@ $CIDRAM['lang']['warning_signatures_1'] = 'لا ملفات التوقيع نشط
 $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
             <li><a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – صفحة المشكلات لCIDRAM (الدعم والمساعدة، الخ).</li>
             <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ WordPress.org</a> – WordPress البرنامج المساعد ل CIDRAM.</li>
-             <li><a href="https://bitbucket.org/macmathan/blocklists" dir="ltr">macmathan/blocklists</a> – يحتوي على قوائم وحدات اختيارية ووحدات نمطية لـ CIDRAM، مثل حظر برامج التتبع الخطرة، والبلدان غير المرغوب فيها، والمتصفحات القديمة، وما إلى ذلك.</li>
+            <li><a href="https://bitbucket.org/macmathan/blocklists" dir="ltr">macmathan/blocklists</a> – يحتوي على قوائم وحدات اختيارية ووحدات نمطية لـ CIDRAM، مثل حظر برامج التتبع الخطرة، والبلدان غير المرغوب فيها، والمتصفحات القديمة، وما إلى ذلك.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
             <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> – الحصول على CIDRs من ل ASNs، تحديد العلاقات ASN، اكتشف ل ASNs استنادا إلى أسماء الشبكات، إلخ.</li>

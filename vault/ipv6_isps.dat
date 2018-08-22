@@ -239,9 +239,12 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2017.12.30 / Checked: 2018.03.31
+# %Listed, CleanTalk.org: 3.33%.
+# Updated: 2018.08.22
 
-2620:11::/40 Deny Generic
+2620:11:1::/48 Deny Generic
+2620:11:2::/47 Deny Generic
+2620:11:4::/48 Deny Generic
 Origin: US
 Tag: JPMorgan Chase & Co
 
@@ -318,10 +321,10 @@ recaptcha:
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
 # Spam emitters; Subsidiary of Bezeq International.
-# %Listed, Google Malware Dashboard: 0.55% (AS9116).
+# %Listed, Google Malware Dashboard: 0.38% (AS9116).
 # %Listed, CleanTalk.org: 34.24% (AS9116).
-# Stop Forum Spam (SFS) listings: 5,968 (AS9116).
-# Updated: 2016.12.10 / Checked: 2018.03.15
+# Stop Forum Spam (SFS) listings: 3,544 (AS9116).
+# Updated: 2016.12.10 / Checked: 2018.08.21
 
 2001:40a8::/32 Deny Spam
 Origin: IL
@@ -994,11 +997,11 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 0.70%.
+# %Listed, Google Malware Dashboard: 0.38%.
 # %Listed, CleanTalk.org: 17.43%.
-# %Listed, abuseat.org (CBL-Listed): 2.35%.
-# Stop Forum Spam (SFS) listings: 15,007.
-# Updated: 2017.12.28 / Checked: 2018.03.31
+# %Listed, abuseat.org (CBL-Listed): 1.87%.
+# Stop Forum Spam (SFS) listings: 14,859.
+# Updated: 2017.12.28 / Checked: 2018.08.21
 
 2001:df2:d900::/48 Deny Generic
 2001:df6:1e00::/48 Deny Generic

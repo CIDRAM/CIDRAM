@@ -100,10 +100,10 @@ recaptcha:
 
 
 # ASN 26658 ("HT").
-# %Listed, Google Malware Dashboard: 9.10%.
+# %Listed, Google Malware Dashboard: 2.21%.
 # %Listed, CleanTalk.org: 64.75%.
-# Stop Forum Spam (SFS) listings: 1,709.
-# Updated: 2018.03.31
+# Stop Forum Spam (SFS) listings: 2,156.
+# Updated: 2018.08.22
 
 14.192.20.0/22 Deny Generic
 27.0.156.0/22 Deny Generic
@@ -124,6 +124,8 @@ recaptcha:
 103.10.172.0/22 Deny Generic
 103.12.48.0/22 Deny Generic
 103.21.8.0/22 Deny Generic
+103.24.153.0/24 Deny Generic
+103.24.154.0/23 Deny Generic
 103.35.76.0/22 Deny Generic
 103.35.184.0/22 Deny Generic
 103.61.20.0/22 Deny Generic
@@ -171,6 +173,8 @@ recaptcha:
 220.158.244.0/22 Deny Generic
 220.158.252.0/22 Deny Generic
 Origin: HK
+23.249.176.0/21 Deny Generic
+23.249.184.0/22 Deny Generic
 45.33.240.0/20 Deny Generic
 45.41.80.0/20 Deny Generic
 45.42.80.0/20 Deny Generic
@@ -179,10 +183,16 @@ Origin: HK
 104.232.64.0/20 Deny Generic
 104.232.96.0/20 Deny Generic
 104.243.128.0/20 Deny Generic
+107.178.128.0/21 Deny Generic
 107.178.144.0/20 Deny Generic
 107.178.160.0/19 Deny Generic
+107.190.226.0/23 Deny Generic
+107.190.228.0/22 Deny Generic
 146.148.128.0/19 Deny Generic
+146.148.176.0/20 Deny Generic
+146.148.192.0/18 Deny Generic
 172.87.192.0/19 Deny Generic
+192.119.136.0/22 Deny Generic
 198.180.198.0/24 Deny Generic
 216.12.160.0/20 Deny Generic
 Origin: US
@@ -697,11 +707,10 @@ Tag: AS51559
 
 
 # ASN 50810 ("Mobin Net Communication Company (Private Joint Stock)").
-# %Listed, Google Malware Dashboard: 0.46%.
 # %Listed, CleanTalk.org: 8.68%.
-# %Listed, abuseat.org (CBL-Listed): 2.32%.
-# Stop Forum Spam (SFS) listings: 31.
-# Updated: 2018.03.31
+# %Listed, abuseat.org (CBL-Listed): 1.59%.
+# Stop Forum Spam (SFS) listings: 82.
+# Updated: 2018.08.22
 
 2.182.160.0/20 Deny Spam
 2.183.128.0/20 Deny Spam
@@ -739,7 +748,7 @@ Tag: AS51559
 188.211.0.0/20 Deny Spam
 188.212.48.0/20 Deny Spam
 188.212.240.0/21 Deny Spam
-188.213.73.0/24 Deny Spam
+188.213.72.0/23 Deny Spam
 188.213.192.0/21 Deny Spam
 Origin: IR
 93.119.208.0/20 Deny Spam
@@ -1297,7 +1306,8 @@ Tag: CH-NET S.R.L
 
 
 # ASN 7743 ("JPMorgan Chase & Co").
-# Updated: 2018.03.31
+# %Listed, CleanTalk.org: 3.33%.
+# Updated: 2018.03.31 / Checked: 2018.08.22
 
 159.53.0.0/16 Deny Generic
 198.27.1.0/24 Deny Generic
@@ -1666,10 +1676,10 @@ recaptcha:
 
 # ASNs 5486, 9116 ("012 Smile Communications LTD").
 # Spam emitters; Subsidiary of Bezeq International.
-# %Listed, Google Malware Dashboard: 0.55% (AS9116).
+# %Listed, Google Malware Dashboard: 0.38% (AS9116).
 # %Listed, CleanTalk.org: 34.24% (AS9116).
-# Stop Forum Spam (SFS) listings: 5,968 (AS9116).
-# Updated: 2017.06.12 / Checked: 2018.03.15
+# Stop Forum Spam (SFS) listings: 3,544 (AS9116).
+# Updated: 2017.06.12 / Checked: 2018.08.21
 
 31.154.139.0/24 Deny Spam
 46.120.0.0/15 Deny Spam
@@ -5900,24 +5910,25 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 0.70%.
+# %Listed, Google Malware Dashboard: 0.38%.
 # %Listed, CleanTalk.org: 17.43%.
-# %Listed, abuseat.org (CBL-Listed): 2.35%.
-# Stop Forum Spam (SFS) listings: 15,007.
-# Updated: 2018.03.31
+# %Listed, abuseat.org (CBL-Listed): 1.87%.
+# Stop Forum Spam (SFS) listings: 14,859.
+# Updated: 2018.08.21
 
-103.12.160.0/22 Deny Generic
-Origin: KH
 1.52.0.0/14 Deny Generic
 42.112.0.0/13 Deny Generic
 43.239.148.0/22 Deny Generic
 43.239.223.0/24 Deny Generic
 45.125.239.0/24 Deny Generic
 58.186.0.0/15 Deny Generic
+103.17.88.0/24 Deny Generic
 103.35.64.0/22 Deny Generic
+103.39.92.0/22 Deny Generic
 103.47.192.0/23 Deny Generic
 103.53.170.0/23 Deny Generic
 103.74.120.0/22 Deny Generic
+103.78.93.0/24 Deny Generic
 103.81.84.0/22 Deny Generic
 103.82.192.0/22 Deny Generic
 103.90.227.0/24 Deny Generic
@@ -5929,8 +5940,10 @@ Origin: KH
 113.22.0.0/16 Deny Generic
 113.23.0.0/17 Deny Generic
 118.68.0.0/14 Deny Generic
+144.48.20.0/22 Deny Generic
 183.80.0.0/16 Deny Generic
 183.81.0.0/17 Deny Generic
+203.191.8.0/21 Deny Generic
 210.245.0.0/17 Deny Generic
 Origin: VN
 Tag: CFPT
@@ -6498,10 +6511,10 @@ recaptcha:
 
 
 # ASN 132742 ("Guochao Group limited").
-# %Listed, Google Malware Dashboard: 0.52%.
+# %Listed, Google Malware Dashboard: 3.10%.
 # %Listed, CleanTalk.org: 57.94%.
 # Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.03.31
+# Updated: 2018.03.31 / Checked: 2018.08.21
 
 43.241.252.0/22 Deny Spam
 43.242.44.0/22 Deny Spam
@@ -6634,8 +6647,8 @@ recaptcha:
 
 # ASN 24812 ("NPK Home-Net Ltd").
 # %Listed, CleanTalk.org: 4.41%.
-# Stop Forum Spam (SFS) listings: 17,447.
-# Updated: 2018.03.31
+# Stop Forum Spam (SFS) listings: 14,103.
+# Updated: 2018.03.31 / Checked: 2018.08.21
 
 176.105.196.0/22 Deny Spam
 176.105.200.0/21 Deny Spam

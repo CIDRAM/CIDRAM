@@ -2050,15 +2050,16 @@ Tag: Zyztm
 
 
 # ASN 197712 ("10dencehispahard, S.L").
-# %Listed, Google Malware Dashboard: 1.09%.
+# %Listed, Google Malware Dashboard: 0.61%.
 # %Listed, CleanTalk.org: 6.15%.
-# Updated: 2016.04.25 / Checked: 2018.03.21
+# Updated: 2018.08.25
 
 46.16.56.0/21 Deny Generic
 134.0.8.0/21 Deny Generic
 185.22.200.0/22 Deny Generic
 185.34.192.0/22 Deny Generic
 185.42.104.0/22 Deny Generic
+185.66.40.0/22 Deny Generic
 Origin: ES
 Tag: 10dencehispahard
 
@@ -7861,7 +7862,7 @@ recaptcha:
 # "PSINet"
 # Cheap human endpoint ISP with ranges known to be used by hackers and spammers, but also contains benign ranges+users.
 # Careful when updating; Section contains one "Run" parameter.
-# Updated: 2018.04.29
+# Updated: 2018.08.25
 38.0.0.0/8 Run rules_specific.php
 128.145.0.0/16 Deny Generic
 130.117.0.0/16 Deny Generic
@@ -7877,21 +7878,20 @@ recaptcha:
 149.7.16.0/23 Deny Generic
 149.7.39.0/24 Deny Generic
 149.7.61.0/24 Deny Generic
+149.7.68.0/22 Deny Generic
 149.7.99.0/24 Deny Generic
 149.7.105.0/24 Deny Generic
 149.7.114.0/23 Deny Generic
-149.7.210.0/23 Deny Generic
-149.7.212.0/23 Deny Generic
+149.7.213.0/24 Deny Generic
 149.7.218.0/23 Deny Generic
 149.7.220.0/23 Deny Generic
 149.7.225.0/24 Deny Generic
-149.7.226.0/24 Deny Generic
+149.7.226.0/23 Deny Generic
 149.11.0.0/16 Deny Generic
 149.12.24.0/21 Deny Generic
 149.12.33.0/24 Deny Generic
 149.12.67.0/24 Deny Generic
 149.12.68.0/23 Deny Generic
-149.12.96.0/23 Deny Generic
 149.12.104.0/21 Deny Generic
 149.12.112.0/21 Deny Generic
 149.12.164.0/22 Deny Generic
@@ -7903,11 +7903,12 @@ recaptcha:
 149.12.212.0/23 Deny Generic
 149.12.216.0/22 Deny Generic
 149.12.222.0/23 Deny Generic
+149.13.8.0/21 Deny Generic
 149.13.20.0/22 Deny Generic
 149.13.28.0/24 Deny Generic
 149.13.31.0/24 Deny Generic
 149.13.71.0/24 Deny Generic
-149.13.80.0/21 Deny Generic
+149.13.73.0/24 Deny Generic
 149.13.89.0/24 Deny Generic
 149.13.91.0/24 Deny Generic
 149.13.114.0/24 Deny Generic
@@ -7936,9 +7937,10 @@ recaptcha:
 149.108.0.0/16 Deny Generic
 149.110.0.0/16 Deny Generic
 149.113.0.0/16 Deny Generic
+149.115.32.0/20 Deny Generic
 149.115.104.0/21 Deny Generic
 149.115.120.0/21 Deny Generic
-149.115.128.0/19 Deny Generic
+149.115.128.0/17 Deny Generic
 149.120.0.0/16 Deny Generic
 149.127.0.0/16 Deny Generic
 192.77.171.0/24 Deny Generic
@@ -7956,8 +7958,8 @@ recaptcha:
 206.2.0.0/16 Deny Generic
 206.3.32.0/19 Deny Generic
 206.3.64.0/18 Deny Generic
-206.3.128.0/17 Deny Generic
-206.4.0.0/14 Deny Generic
+206.3.139.0/24 Deny Generic
+206.3.202.0/24 Deny Generic
 206.232.0.0/14 Deny Generic
 206.236.0.0/15 Deny Generic
 206.238.0.0/16 Deny Generic

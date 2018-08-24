@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.11).
+ * This file: Front-end handler (last modified: 2018.08.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -286,6 +286,14 @@ if (($CIDRAM['LoginAttempts'] = (int)$CIDRAM['FECacheGet'](
     die('[CIDRAM] ' . $CIDRAM['lang']['max_login_attempts_exceeded']);
 }
 
+/** Brute-force security check (2FA). */
+if (($CIDRAM['Failed2FA'] = (int)$CIDRAM['FECacheGet'](
+    $CIDRAM['FE']['Cache'], 'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
+)) && ($CIDRAM['Failed2FA'] >= $CIDRAM['Config']['general']['max_login_attempts'])) {
+    header('Content-Type: text/plain');
+    die('[CIDRAM] ' . $CIDRAM['lang']['max_login_attempts_exceeded']);
+}
+
 /** Attempt to log in the user. */
 if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
@@ -320,18 +328,23 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                     $CIDRAM['FE']['Permissions'] = 0;
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['lang']['response_login_wrong_endpoint'];
                 } else {
-                    if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
-                        $CIDRAM['2FA-State'] = $CIDRAM['FECacheGet'](
-                            $CIDRAM['FE']['Cache'],
-                            '2FA-State:' . $CIDRAM['FE']['UserRaw']
-                        );
-                        if ($CIDRAM['2FA-State'] === false) {
+                    if (!$CIDRAM['FE']['CronMode']) {
+                        $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
+                        $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
+                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HTTP_HOST'], false, true);
+                        $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
+                            $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
+                        ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
+                        $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
+
+                        /** Prepare 2FA email. */
+                        if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
                             $CIDRAM['2FA-State'] = ['Number' => $CIDRAM['2FA-Number']()];
                             $CIDRAM['2FA-State']['Hash'] = password_hash($CIDRAM['2FA-State']['Number'], $CIDRAM['DefaultAlgo']);
                             $CIDRAM['FECacheAdd'](
                                 $CIDRAM['FE']['Cache'],
                                 $CIDRAM['FE']['Rebuild'],
-                                '2FA-State:' . $CIDRAM['FE']['UserRaw'],
+                                '2FA-State:' . $CIDRAM['FE']['Cookie'],
                                 '0' . $CIDRAM['2FA-State']['Hash'],
                                 $CIDRAM['Now'] + 600
                             );
@@ -353,23 +366,15 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                                 $CIDRAM['2FA-State']['Template'],
                                 strip_tags($CIDRAM['2FA-State']['Template'])
                             );
+                            $CIDRAM['FE']['UserState'] = 2;
+                            unset($CIDRAM['2FA-State']);
+                        } else {
+                            $CIDRAM['FE']['UserState'] = 1;
                         }
-                        $CIDRAM['FE']['UserState'] = 2;
-                        unset($CIDRAM['2FA-State']);
-                    } else {
-                        $CIDRAM['FE']['UserState'] = 1;
+
                     }
                     if ($CIDRAM['FE']['UserState'] !== 1) {
                         $CIDRAM['FE']['Permissions'] = 0;
-                    }
-                    if (!$CIDRAM['FE']['CronMode']) {
-                        $CIDRAM['FE']['SessionKey'] = md5($CIDRAM['GenerateSalt']());
-                        $CIDRAM['FE']['Cookie'] = $_POST['username'] . $CIDRAM['FE']['SessionKey'];
-                        setcookie('CIDRAM-ADMIN', $CIDRAM['FE']['Cookie'], $CIDRAM['Now'] + 604800, '/', $CIDRAM['HTTP_HOST'], false, true);
-                        $CIDRAM['FE']['ThisSession'] = $CIDRAM['FE']['User'] . ',' . password_hash(
-                            $CIDRAM['FE']['SessionKey'], $CIDRAM['DefaultAlgo']
-                        ) . ',' . ($CIDRAM['Now'] + 604800) . "\n";
-                        $CIDRAM['FE']['SessionList'] .= $CIDRAM['FE']['ThisSession'];
                     }
                     $CIDRAM['FE']['Rebuild'] = true;
                 }
@@ -462,7 +467,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                     if ($CIDRAM['Config']['PHPMailer']['Enable2FA'] && preg_match('~^.+@.+$~', $CIDRAM['FE']['UserRaw'])) {
                         $CIDRAM['2FA-State'] = $CIDRAM['FECacheGet'](
                             $CIDRAM['FE']['Cache'],
-                            '2FA-State:' . $CIDRAM['FE']['UserRaw']
+                            '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']
                         );
                         $CIDRAM['FE']['UserState'] = ((int)$CIDRAM['2FA-State'] === 1) ? 1 : 2;
                         if ($CIDRAM['FE']['UserState'] === 2 && $CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
@@ -472,7 +477,7 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
                                 $CIDRAM['FECacheAdd'](
                                     $CIDRAM['FE']['Cache'],
                                     $CIDRAM['FE']['Rebuild'],
-                                    '2FA-State:' . $CIDRAM['FE']['UserRaw'],
+                                    '2FA-State:' . $_COOKIE['CIDRAM-ADMIN'],
                                     '1',
                                     $CIDRAM['Now'] + 604800
                                 );
@@ -498,11 +503,23 @@ elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
     /** In case of 2FA form submission. */
     if ($CIDRAM['FE']['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
         if ($CIDRAM['FE']['UserState'] === 2) {
+            $CIDRAM['Failed2FA']++;
+            $CIDRAM['TimeToAdd'] = ($CIDRAM['Failed2FA'] > 4) ? ($CIDRAM['Failed2FA'] - 4) * 86400 : 86400;
+            $CIDRAM['FECacheAdd'](
+                $CIDRAM['FE']['Cache'],
+                $CIDRAM['FE']['Rebuild'],
+                'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']],
+                $CIDRAM['Failed2FA'],
+                $CIDRAM['Now'] + $CIDRAM['TimeToAdd']
+            );
             if ($CIDRAM['Config']['general']['FrontEndLog']) {
                 $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['response_2fa_invalid']);
             }
             $CIDRAM['FE']['state_msg'] = '<div class="txtRd">' . $CIDRAM['lang']['response_2fa_invalid'] . '<br /><br /></div>';
         } else {
+            $CIDRAM['FECacheRemove'](
+                $CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], 'Failed2FA' . $_SERVER[$CIDRAM['IPAddr']]
+            );
             if ($CIDRAM['Config']['general']['FrontEndLog']) {
                 $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['response_2fa_valid']);
             }
@@ -531,7 +548,7 @@ if (($CIDRAM['FE']['UserState'] === 1 || $CIDRAM['FE']['UserState'] === 2) && !$
         $CIDRAM['FE']['UserState'] = 0;
         $CIDRAM['FE']['Permissions'] = 0;
         setcookie('CIDRAM-ADMIN', '', -1, '/', $CIDRAM['HTTP_HOST'], false, true);
-        $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $CIDRAM['FE']['UserRaw']);
+        $CIDRAM['FECacheRemove']($CIDRAM['FE']['Cache'], $CIDRAM['FE']['Rebuild'], '2FA-State:' . $_COOKIE['CIDRAM-ADMIN']);
         $CIDRAM['FELogger']($_SERVER[$CIDRAM['IPAddr']], $CIDRAM['FE']['UserRaw'], $CIDRAM['lang']['state_logged_out']);
 
     }

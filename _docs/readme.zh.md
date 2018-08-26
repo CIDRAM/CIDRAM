@@ -493,6 +493,9 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 ##### “hide_version”
 - 从日志和页面输出中隐藏版本信息吗？​True（真）=关闭；False（假）=不关闭【标准】。
 
+##### “empty_fields”
+- 在记录和显示阻止事件信息时，CIDRAM如何处理空字段？ “include” = 包括空字段。 “omit” = 省略空字段【标准】。
+
 #### “signatures” （类别）
 签名配置。
 

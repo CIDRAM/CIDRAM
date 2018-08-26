@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.07.04).
+ * This file: Output generator (last modified: 2018.08.26).
  */
 
 /** Initialise cache. */
@@ -411,7 +411,10 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
 
     /** Build fields. */
-    if (!empty($CIDRAM['BlockInfo']['Counter'])) {
+    if (!empty($CIDRAM['BlockInfo']['Counter']) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        if (empty($CIDRAM['BlockInfo']['Counter'])) {
+            $CIDRAM['BlockInfo']['Counter'] = 0;
+        }
         $CIDRAM['AddField']($CIDRAM['lang']['field_id'], $CIDRAM['BlockInfo']['Counter']);
     }
     if (!$CIDRAM['Config']['general']['hide_version']) {
@@ -419,27 +422,35 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
     }
     $CIDRAM['AddField']($CIDRAM['lang']['field_datetime'], $CIDRAM['BlockInfo']['DateTime']);
     $CIDRAM['AddField']($CIDRAM['lang']['field_ipaddr'], $CIDRAM['BlockInfo']['IPAddr']);
-    if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+    if (!empty($CIDRAM['BlockInfo']['IPAddrResolved']) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        if (empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
+            $CIDRAM['BlockInfo']['IPAddrResolved'] = '-';
+        }
         $CIDRAM['AddField']($CIDRAM['lang']['field_ipaddr_resolved'], $CIDRAM['BlockInfo']['IPAddrResolved']);
     }
-    if (!empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']) {
-        $CIDRAM['BlockInfo']['Hostname'] = $CIDRAM['Hostname'];
+    if ((
+        !empty($CIDRAM['Hostname']) && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr']
+    ) || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        $CIDRAM['BlockInfo']['Hostname'] = empty($CIDRAM['Hostname']) ? '-' : $CIDRAM['Hostname'];
         $CIDRAM['AddField']($CIDRAM['lang']['field_hostname'], $CIDRAM['BlockInfo']['Hostname']);
     }
-    if ($CIDRAM['BlockInfo']['Query']) {
-        $CIDRAM['AddField']($CIDRAM['lang']['field_query'], $CIDRAM['BlockInfo']['Query']);
+    if ($CIDRAM['BlockInfo']['Query'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        $CIDRAM['AddField']($CIDRAM['lang']['field_query'], $CIDRAM['BlockInfo']['Query'] ?: '-');
     }
-    if ($CIDRAM['BlockInfo']['Referrer']) {
-        $CIDRAM['AddField']($CIDRAM['lang']['field_referrer'], $CIDRAM['BlockInfo']['Referrer']);
+    if ($CIDRAM['BlockInfo']['Referrer'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        $CIDRAM['AddField']($CIDRAM['lang']['field_referrer'], $CIDRAM['BlockInfo']['Referrer'] ?: '-');
     }
     $CIDRAM['AddField']($CIDRAM['lang']['field_sigcount'], $CIDRAM['BlockInfo']['SignatureCount']);
     $CIDRAM['AddField']($CIDRAM['lang']['field_sigref'], $CIDRAM['BlockInfo']['Signatures']);
     $CIDRAM['AddField']($CIDRAM['lang']['field_whyreason'], $CIDRAM['BlockInfo']['WhyReason'] . '!');
-    if ($CIDRAM['BlockInfo']['UA']) {
-        $CIDRAM['AddField']($CIDRAM['lang']['field_ua'], $CIDRAM['BlockInfo']['UA']);
+    if ($CIDRAM['BlockInfo']['UA'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        $CIDRAM['AddField']($CIDRAM['lang']['field_ua'], $CIDRAM['BlockInfo']['UA'] ?: '-');
     }
     $CIDRAM['AddField']($CIDRAM['lang']['field_rURI'], $CIDRAM['BlockInfo']['rURI']);
-    if ($CIDRAM['Config']['recaptcha']['usemode']) {
+    if ($CIDRAM['Config']['recaptcha']['usemode'] || $CIDRAM['Config']['general']['empty_fields'] === 'include') {
+        if (empty($CIDRAM['BlockInfo']['reCAPTCHA'])) {
+            $CIDRAM['BlockInfo']['reCAPTCHA'] = $CIDRAM['lang']['recaptcha_disabled'];
+        }
         $CIDRAM['AddField']($CIDRAM['lang']['field_reCAPTCHA_state'], $CIDRAM['BlockInfo']['reCAPTCHA']);
     }
 

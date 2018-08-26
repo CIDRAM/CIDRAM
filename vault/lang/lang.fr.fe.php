@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.08.13).
+ * This file: French language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès fron
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Désactiver les webfonts ? True = Oui [Défaut] ; False = Non.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu\'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d\'eux étant bloqué par erreur. AVERTISSEMENT : Tout de l\'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l\'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d\'être spammé (en d\'autres termes, vous ne voulez probablement pas d\'utiliser votre adresses e-mail personnel primaire ou d\'affaires primaire).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Comment préférez-vous que l\'adresse électronique soit présentée aux utilisateurs ?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Comment CIDRAM doit-il gérer les champs vides lors de l\'enregistrement et de l\'affichage des informations sur les événements de blocage ? « include » = Inclure les champs vides. « omit » = Omettre les champs vides [défaut].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quel message d\'état HTTP devrait être envoyé par CIDRAM lors du blocage des requêtes ? (Référez-vous à la documentation pour plus d\'informations).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forcer les recherches de nom d\'hôte ? True = Oui ; False = Non [Défaut]. Les recherches de nom d\'hôte sont normalement effectuées « au besoin », mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Masquer les informations de version à partir des journaux et de la sortie de la page ? True = Oui ; False = Non [Défaut].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Nom de fichier : ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Répertoire';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Fichier';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Inconnu';
+$CIDRAM['lang']['field_include'] = 'Inclure les champs vides';
 $CIDRAM['lang']['field_infractions'] = 'Infractions';
 $CIDRAM['lang']['field_install'] = 'Installer';
 $CIDRAM['lang']['field_ip_address'] = 'Adresse IP';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Connecter';
 $CIDRAM['lang']['field_new_name'] = 'Nouveau nom :';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Texte non-cliquable';
 $CIDRAM['lang']['field_ok'] = 'D\'accord';
+$CIDRAM['lang']['field_omit'] = 'Omettre les champs vides';
 $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Mot de Passe';
 $CIDRAM['lang']['field_permissions'] = 'Autorisations';

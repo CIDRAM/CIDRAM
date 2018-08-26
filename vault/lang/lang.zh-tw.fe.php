@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.13).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = '關閉前端訪問嗎？�
 $CIDRAM['lang']['config_general_disable_webfonts'] = '關閉網絡字體嗎？​True（真）=關閉【標準】；False（假）=不關閉。';
 $CIDRAM['lang']['config_general_emailaddr'] = '如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '您希望如何將電子郵件地址呈現給用戶？';
+$CIDRAM['lang']['config_general_empty_fields'] = '在記錄和顯示阻止事件信息時，CIDRAM如何處理空字段？ 『include』 = 包括空字段。 『omit』 = 省略空字段【標準】。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '阻止請求時，CIDRAM應發送哪個HTTP狀態消息？ （請參閱文檔以獲取更多信息）。';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。';
 $CIDRAM['lang']['config_general_hide_version'] = '從日誌和頁面輸出中隱藏版本信息嗎？​True（真）=關閉；False（假）=不關閉【標準】。';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = '文件名：';
 $CIDRAM['lang']['field_filetype_directory'] = '文件夾';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}文件';
 $CIDRAM['lang']['field_filetype_unknown'] = '未知';
+$CIDRAM['lang']['field_include'] = '包括空字段';
 $CIDRAM['lang']['field_infractions'] = '違規';
 $CIDRAM['lang']['field_install'] = '安裝';
 $CIDRAM['lang']['field_ip_address'] = 'IP地址';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = '登錄';
 $CIDRAM['lang']['field_new_name'] = '新名稱：';
 $CIDRAM['lang']['field_nonclickable_text'] = '不可點擊的文字';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = '省略空字段';
 $CIDRAM['lang']['field_options'] = '選項';
 $CIDRAM['lang']['field_password'] = '密碼';
 $CIDRAM['lang']['field_permissions'] = '權限';

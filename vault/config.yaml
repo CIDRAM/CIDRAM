@@ -239,6 +239,12 @@ Config Defaults:
   hide_version:
    type: bool
    default: false
+  empty_fields:
+   type: string
+   default: omit
+   choices:
+    omit: {field_omit}
+    include: {field_include}
  signatures:
   ipv4:
    type: string

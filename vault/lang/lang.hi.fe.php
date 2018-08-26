@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.08.13).
+ * This file: Hindi language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'सामने के अ
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'निष्क्रिय वेब फोंट? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।';
 $CIDRAM['lang']['config_general_emailaddr'] = 'अगर आप चाहते हैं, तो आप उपयोगकर्ताओं को जब उन्हें अवरुद्ध कर रहे हैं तो देने के लिए ईमेल पते की आपूर्ति कर सकते हैं। वे इसका इस्तेमाल आपसे संपर्क करने के लिए कर सकते हैं यदि वे गलती से अवरुद्ध कर रहे हैं। चेतावनी: आप जो भी ईमेल पते पर आपूर्ति करते हैं, वे निश्चित रूप से स्पैम्बट्स और स्क्रेपर द्वारा प्राप्त किए जाएंगे। इस वजह से, यह दृढ़ता से अनुशंसा की जाती है कि आप एक ईमेल पता चुनते हैं जो डिस्पोजेबल या महत्वहीन है (अर्थात।, अपने व्यक्तिगत या व्यावसायिक ईमेल पते का उपयोग न करें)।';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'उपयोगकर्ताओं को प्रस्तुत करने के लिए आप ईमेल पते को कैसे पसंद करेंगे?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'ब्लॉक ईवेंट जानकारी लॉगिंग और प्रदर्शित करते समय, CIDRAM को खाली फ़ील्ड कैसे प्रबंधित करना चाहिए? "include" = खाली फ़ील्ड शामिल करें। "omit" = खाली फ़ील्ड को छुपाएं करें [डिफ़ॉल्ट]।';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'अनुरोधों को अवरुद्ध करते समय CIDRAM को कौन सी HTTP स्थिति संदेश भेजना चाहिए? (अधिक जानकारी के लिए डॉक्यूमेंटेशन का संदर्भ लें)।';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'होस्ट नाम लुकअप के लिए मजबूर? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]। होस्ट नाम लुकअप सामान्य रूप से "आवश्यकतानुसार" आधार पर किया जाता है, लेकिन इसे सभी अनुरोधों के लिए मजबूर किया जा सकता है। ऐसा करना लॉगफाइल में अधिक विस्तृत जानकारी प्रदान करने के साधन के रूप में उपयोगी हो सकता है, लेकिन प्रदर्शन पर इसका थोड़ा नकारात्मक प्रभाव हो सकता है।';
 $CIDRAM['lang']['config_general_hide_version'] = 'लॉग्स और पेज आउटपुट से संस्करण जानकारी छुपाएं? True(सच्चे) = हाँ; False(झूठी) = नहीं [डिफ़ॉल्ट]।';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'फाइल का नाम: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'निर्देशिका';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} फाइल';
 $CIDRAM['lang']['field_filetype_unknown'] = 'अनजान';
+$CIDRAM['lang']['field_include'] = 'खाली फ़ील्ड शामिल करें';
 $CIDRAM['lang']['field_infractions'] = 'उल्लंघन';
 $CIDRAM['lang']['field_install'] = 'इंस्टॉल करें';
 $CIDRAM['lang']['field_ip_address'] = 'IP पता';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'लॉग इन करें';
 $CIDRAM['lang']['field_new_name'] = 'नया नाम:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'बिना क्लिक करने योग्य पाठ';
 $CIDRAM['lang']['field_ok'] = 'ओके';
+$CIDRAM['lang']['field_omit'] = 'खाली फ़ील्ड को छुपाएं करें';
 $CIDRAM['lang']['field_options'] = 'विकल्प';
 $CIDRAM['lang']['field_password'] = 'पासवर्ड';
 $CIDRAM['lang']['field_permissions'] = 'अनुमतियां';

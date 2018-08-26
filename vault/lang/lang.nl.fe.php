@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.13).
+ * This file: Dutch language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Uitschakelen frontend toeg
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Uitschakelen webfonts? True = Ja [Standaard]; False = Nee.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Indien u wenst, u kunt een e-mailadres op hier te geven te geven aan de gebruikers als ze geblokkeerd, voor hen te gebruiken als aanspreekpunt voor steun en/of assistentie in het geval dat ze worden onrechte geblokkeerd. WAARSCHUWING: Elke e-mailadres u leveren hier zal zeker worden overgenomen met spambots en schrapers in de loop van zijn wezen die hier gebruikt, en dus, het wordt ten zeerste aanbevolen als u ervoor kiest om een e-mailadres hier te leveren, dat u ervoor zorgen dat het e-mailadres dat u hier leveren is een wegwerp-adres en/of een adres dat u niet de zorg over wordt gespamd (met andere woorden, u waarschijnlijk niet wilt om uw primaire persoonlijk of primaire zakelijke e-mailadressen te gebruik).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hoe zou u het e-mailadres voor gebruikers willen aanbieden?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Hoe moet CIDRAM lege velden afhandelen bij het loggen en weergeven van informatie over blokgebeurtenissen? "include" = Voeg lege velden in. "omit" = Sluit lege velden uit [standaard].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welk HTTP-statusbericht moet CIDRAM verzenden bij het blokkeren van verzoeken? (Raadpleeg de documentatie voor meer informatie).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Hostname-opzoekingen afdwingen? True = Ja; False = Nee [Standaard]. Hostname-opzoekingen worden normaal uitgevoerd op basis van noodzaak, maar kan voor alle verzoeken worden gedwongen. Dit kan nuttig zijn als een middel om meer gedetailleerde informatie in de logbestanden te verstrekken, maar kan ook een licht negatief effect hebben op de prestaties.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Versleutelingsinformatie uit logs en pagina-uitvoer verbergen? True = Ja; False = Nee [Standaard].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Bestandsnaam: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Bestandsmap';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Bestand';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Onbekend';
+$CIDRAM['lang']['field_include'] = 'Voeg lege velden in';
 $CIDRAM['lang']['field_infractions'] = 'Overtredingen';
 $CIDRAM['lang']['field_install'] = 'Installeren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adres';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Inloggen';
 $CIDRAM['lang']['field_new_name'] = 'Nieuwe naam:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Niet-klikbare tekst';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Sluit lege velden uit';
 $CIDRAM['lang']['field_options'] = 'Opties';
 $CIDRAM['lang']['field_password'] = 'Wachtwoord';
 $CIDRAM['lang']['field_permissions'] = 'Machtigingen';

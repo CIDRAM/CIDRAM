@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.08.13).
+ * This file: Portuguese language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Desativar o acesso front-e
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Desativar webfonts? True = Sim [Padrão]; False = Não.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles sendo bloqueado por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por spambots e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de email você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Como você prefere que o endereço de e-mail seja apresentado aos usuários?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Como o CIDRAM deve manipular campos vazios ao registrar e exibir informações de eventos de bloco? "include" = Incluir campos vazios. "omit" = Omitir campos vazios [padrão].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações? (Consulte a documentação para mais informações).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Ocultar informações da versão dos logs e da saída da página? True = Sim; False = Não [Padrão].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Nome do arquivo: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Diretório';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Arquivo';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Desconhecido';
+$CIDRAM['lang']['field_include'] = 'Incluir campos vazios';
 $CIDRAM['lang']['field_infractions'] = 'Infrações';
 $CIDRAM['lang']['field_install'] = 'Instalar';
 $CIDRAM['lang']['field_ip_address'] = 'Endereço IP';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Entrar';
 $CIDRAM['lang']['field_new_name'] = 'Novo nome:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Texto não-clicável';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Omitir campos vazios';
 $CIDRAM['lang']['field_options'] = 'Opções';
 $CIDRAM['lang']['field_password'] = 'Senha';
 $CIDRAM['lang']['field_permissions'] = 'Permissões';

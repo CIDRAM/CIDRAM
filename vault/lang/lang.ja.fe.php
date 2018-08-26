@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.08.13).
+ * This file: Japanese language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'フロントエンドへ�
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
 $CIDRAM['lang']['config_general_emailaddr'] = 'ここにＥメールアドレスを入力して、​ユーザーがブロックされているときにユーザーに送信することができます。​これはサポートと支援に使用できます（誤ってブロックされた場合、​等）。​警告：​ここに入力された電子Ｅメールアドレスは、​おそらくスパムロボットによって取得されます。​ここで提供される電子Ｅメールアドレスは、​すべて使い捨てにすることを強く推奨します（例えば、​プライマリ個人アドレスまたはビジネスアドレスを使用しない、​等）。';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'ユーザーに電子Ｅメール・アドレスを提示することをどのように希望しますか？';
+$CIDRAM['lang']['config_general_empty_fields'] = 'ブロック・イベント情報をロギングと表示場合、CIDRAMは空のフィールドをどのように処理すべきですか？ "include" = 空のフィールドを含めます。 "omit" = 空のフィールドを非表示にします（Default/デフォルルト）。';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '- リクエストをブロックするときに、CIDRAMが送信するＨＴＴＰステータス・メッセージはどれですか？ （詳細については、ドキュメントを参照してください）。';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'ホスト名検索を強制しますか？​True = はい；​False = いいえ（Default/デフォルルト）。​ホスト名検索は、通常、「必要に応じて」実行されますが、すべてのリクエストに対して強制することができます。​これは、より詳細な情報をログファイルに提供する手段として有用ですが、パフォーマンスに多少の悪影響を及ぼすこともあります。';
 $CIDRAM['lang']['config_general_hide_version'] = 'ログとページ出力からバージョン情報を隠すか？​True = はい；​False = いいえ（Default/デフォルルト）。';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'ファイル名：';
 $CIDRAM['lang']['field_filetype_directory'] = 'ディレクトリ';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}ファイル';
 $CIDRAM['lang']['field_filetype_unknown'] = '不明です';
+$CIDRAM['lang']['field_include'] = '空のフィールドを含めます';
 $CIDRAM['lang']['field_infractions'] = '違反';
 $CIDRAM['lang']['field_install'] = 'インストール';
 $CIDRAM['lang']['field_ip_address'] = 'ＩＰアドレス';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'ログイン';
 $CIDRAM['lang']['field_new_name'] = '新しい名前：';
 $CIDRAM['lang']['field_nonclickable_text'] = 'クリックできないテキスト';
 $CIDRAM['lang']['field_ok'] = 'ＯＫ';
+$CIDRAM['lang']['field_omit'] = '空のフィールドを非表示にします';
 $CIDRAM['lang']['field_options'] = 'オプション';
 $CIDRAM['lang']['field_password'] = 'パスワード';
 $CIDRAM['lang']['field_permissions'] = 'パーミッション';

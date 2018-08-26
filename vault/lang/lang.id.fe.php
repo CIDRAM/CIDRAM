@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.13).
+ * This file: Indonesian language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Menonaktifkan akses bagian
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Menonaktifkan webfonts? True = Ya [Default]; False = Tidak.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Bagaimana seharusnya CIDRAM menangani bidang kosong saat membuat log dan menampilkan informasi kejadian blokir? "include" = Sertakan bidang kosong. "omit" = Hilangkan bidang kosong [default].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan? (Lihat dokumentasi untuk informasi lebih lanjut).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Nama file: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Direktori';
 $CIDRAM['lang']['field_filetype_info'] = 'File {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Tidak Diketahui';
+$CIDRAM['lang']['field_include'] = 'Sertakan bidang kosong';
 $CIDRAM['lang']['field_infractions'] = 'Pelanggaran';
 $CIDRAM['lang']['field_install'] = 'Instal';
 $CIDRAM['lang']['field_ip_address'] = 'Alamat IP';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Masuk';
 $CIDRAM['lang']['field_new_name'] = 'Nama baru:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Teks yang tidak dapat diklik';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Hilangkan bidang kosong';
 $CIDRAM['lang']['field_options'] = 'Opsi';
 $CIDRAM['lang']['field_password'] = 'Kata Sandi';
 $CIDRAM['lang']['field_permissions'] = 'Izin';

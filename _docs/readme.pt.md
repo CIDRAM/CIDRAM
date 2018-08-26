@@ -492,6 +492,9 @@ Atualmente suportado:
 ##### "hide_version"
 - Ocultar informações da versão dos logs e da saída da página? True = Sim; False = Não [Padrão].
 
+##### "empty_fields"
+- Como o CIDRAM deve manipular campos vazios ao registrar e exibir informações de eventos de bloco? "include" = Incluir campos vazios. "omit" = Omitir campos vazios [padrão].
+
 #### "signatures" (Categoria)
 Configuração por assinaturas.
 

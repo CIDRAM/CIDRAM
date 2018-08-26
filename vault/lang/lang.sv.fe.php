@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.08.13).
+ * This file: Swedish language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Inaktivera front-end tillg
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Inaktivera webbfonter? True = Ja [Standard]; False = Nej.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Om du vill, kan du ange en e-postadress här för att kunna ges till användare när de är blockerade, för att de ska kunna användas som kontaktpunkt för stöd och/eller hjälp till om de blockeras av misstag eller fel. VARNING: Alla e-postadresser du tillhandahåller här kommer säkert att förvärvas av spamrobotar och skrapor medan de används här, och så, det rekommenderas starkt att om du väljer att tillhandahålla en e-postadress här, så ser du till att e-postadressen du tillhandahåller här är en engångsadress och/eller en adress som du inte har något emot att bli spamad (med andra ord, vill du antagligen inte använda dina primära personliga eller primära företags e-postadresser).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Hur skulle du föredra att e-postadressen ska presenteras för användarna?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Hur ska CIDRAM hantera tomma fält vid loggning och visning av blockhändelsesinformation? "include" = Inkludera tomma fält. "omit" = Utelämna tomma fält [standard].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Vilket HTTP-statusmeddelande ska CIDRAM skicka när blockering förfrågningar? (För mer information finns i dokumentationen).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Tvinga värdnamnssökningar? True = Ja; False = Nej [Standard]. Värdnamnssökningar utförs normalt på grundval av nödvändighet, men kan tvingas för alla förfrågningar. Att göra det kan vara användbart som ett medel för att ge mer detaljerad information i loggarna, men kan också ha en något negativ effekt på prestanda.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Dölj versionsinformation från loggar och sidoutgång? True = Ja; False = Nej [Standard].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Filnamn: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Katalog';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Fil';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Okänd';
+$CIDRAM['lang']['field_include'] = 'Inkludera tomma fält';
 $CIDRAM['lang']['field_infractions'] = 'Infraktions';
 $CIDRAM['lang']['field_install'] = 'Installera';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adress';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Logga in';
 $CIDRAM['lang']['field_new_name'] = 'Nytt namn:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Icke-klickbar text';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Utelämna tomma fält';
 $CIDRAM['lang']['field_options'] = 'Alternativ';
 $CIDRAM['lang']['field_password'] = 'Lösenord';
 $CIDRAM['lang']['field_permissions'] = 'Behörigheter';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.08.13).
+ * This file: Arabic language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'تعطيل وصول front-
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'هل تريد تعطيل ويبفونتس؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'لو كنت تريد، يمكنك توفير عنوان البريد الإلكتروني هنا أن تعطى للمستخدمين عند أنها ممنوعة، بالنسبة لهم لاستخدامها كنقطة اتصال للحصول على الدعم والمساعدة لفي حال منهم سدت طريق الخطأ أو في ضلال. تحذير: أي عنوان البريد الإلكتروني الذي تزويد هنا وبالتأكيد سيتم شراؤها من قبل المتطفلين و برامج التطفل وكاشطات خلال المستخدمة هنا، و حينئذ، انها المستحسن أن إذا اخترت توفير عنوان البريد الإلكتروني هنا، يمكنك التأكد من أن عنوان البريد الإلكتروني الذي نورد هنا يمكن التخلص منها و/أو عنوان أنك لا تمانع في أن محتوى غير مرغوب فيه (بعبارات أخرى، وربما كنت لا تريد استخدام الرئيسية عناوين البريد الإلكتروني التجارية أو العناوين الشخصية الرئيسية الخاصة بك).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'كيف تفضل أن يتم تقديم عنوان البريد الإلكتروني إلى المستخدمين؟';
+$CIDRAM['lang']['config_general_empty_fields'] = 'كيف يجب على CIDRAM التعامل مع الحقول الفارغة عند التسجيل وعرض معلومات أحداث المنع؟ "include" = تضمين حقول فارغة. "omit" = احذف الحقول الفارغة [افتراضي].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'ما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM عند حظر الطلبات؟ (الرجوع إلى الوثائق لمزيد من المعلومات).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'فرض بحث اسم المضيف؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي]. يتم إجراء عمليات البحث عن اسم المضيف عادة على أساس "حسب الحاجة"، ولكن يمكن إجبارها على جميع الطلبات. وقد يكون القيام بذلك مفيدا كوسيلة لتوفير معلومات أكثر تفصيلا في السجلات، ولكن قد يكون له أيضا أثر سلبي طفيف على الأداء.';
 $CIDRAM['lang']['config_general_hide_version'] = 'إخفاء معلومات الإصدار من السجلات وإخراج الصفحة؟ صحيح/True = نعم؛ زائفة/False = لا [افتراضي].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'اسم الملف: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'مجلد';
 $CIDRAM['lang']['field_filetype_info'] = 'ملف {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'غير معروف';
+$CIDRAM['lang']['field_include'] = 'تضمين حقول فارغة';
 $CIDRAM['lang']['field_infractions'] = 'مخالفات';
 $CIDRAM['lang']['field_install'] = 'تثبيت';
 $CIDRAM['lang']['field_ip_address'] = 'عنوان IP';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'تسجيل الدخول';
 $CIDRAM['lang']['field_new_name'] = 'اسم جديد:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'نص غير قابل للنقر';
 $CIDRAM['lang']['field_ok'] = 'حسنا';
+$CIDRAM['lang']['field_omit'] = 'احذف الحقول الفارغة';
 $CIDRAM['lang']['field_options'] = 'خيارات';
 $CIDRAM['lang']['field_password'] = 'كلمه السر';
 $CIDRAM['lang']['field_permissions'] = 'أذونات';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.08.13).
+ * This file: Russian language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Деактивироват
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Отключить веб-шрифты? True = Да [Стандарт]; False = Нет.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Если Вы хотите, Вы можете предоставить адрес электронной почты здесь чтобы дать пользователям, когда они заблокированы, для их использования в качестве точки контакта за поддержку и/или помощь ибо в случае их блокирования по ошибке. ПРЕДУПРЕЖДЕНИЕ: Любой адрес электронной почты Вы предоставляете здесь наверняка будет найдены по спамботами и скребки во время используется здесь, и так, это настоятельно рекомендуется, если Вы решите добавить адрес электронной почты здесь, что Вы убедитесь что адрес электронной почты что Вы предоставляете здесь одноразовый адрес и/или адрес который Вы не против чтобы быть спамом (другими словами, Вы вероятно не хотите использовать ваши основные личные электронной почты или первичные бизнес электронной почты).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Как Вы предпочитаете, чтобы адрес электронной почты был представлен пользователям?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Как CIDRAM обрабатывать пустые поля при регистрации и отображении информации о событии блока? «include» = Включить пустые поля. «omit» = Опустить пустые поля [стандарт].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Какое сообщение статуса HTTP должно отправлять CIDRAM при блокировке запросов? (Дополнительную информацию см. в документации).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Поиск имен хостов для всех запросов? True = Да; False = Нет [Стандарт]. Поиск имен хостов обычно выполняется по принципу «по мере необходимости», но может быть принудительно для всех запросов. Это может быть полезно в качестве средства предоставления более подробной информации в логфайлах, но может также иметь слегка отрицательный эффект на производительность.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Скрыть информацию о версии из журналов и вывода на страницу? True = Да; False = Нет [Стандарт].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Имя файла: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Каталог';
 $CIDRAM['lang']['field_filetype_info'] = 'Файл {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Неизвестный';
+$CIDRAM['lang']['field_include'] = 'Включить пустые поля';
 $CIDRAM['lang']['field_infractions'] = 'Нарушений';
 $CIDRAM['lang']['field_install'] = 'Устанавливать';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Адрес';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Войдите';
 $CIDRAM['lang']['field_new_name'] = 'Новое имя:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Текст не кликабельны';
 $CIDRAM['lang']['field_ok'] = 'ОК';
+$CIDRAM['lang']['field_omit'] = 'Опустить пустые поля';
 $CIDRAM['lang']['field_options'] = 'Опции';
 $CIDRAM['lang']['field_password'] = 'Пароль';
 $CIDRAM['lang']['field_permissions'] = 'Разрешения';

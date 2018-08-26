@@ -168,6 +168,11 @@ allow_gethostbyaddr_lookup=true
 ; [Default].
 hide_version=false
 
+; How should CIDRAM handle empty fields when logging and displaying block event
+; information? "include" = Include empty fields. "omit" = Omit empty fields
+; [default].
+empty_fields='omit'
+
 
 [signatures]
 

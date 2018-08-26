@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.08.13).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Vô hiệu hóa truy cập
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Vô hiệu hóa các webfont? True = Vâng [Mặc định]; False = Không.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Nếu bạn muốn, bạn có thể cung cấp một địa chỉ email ở đây để được trao cho người dùng khi họ đang bị chặn, cho họ để sử dụng như một điểm tiếp xúc cho hỗ trợ hay giúp đở cho trong trường hợp họ bị chặn bởi nhầm hay lỗi. CẢNH BÁO: Bất kỳ địa chỉ email mà bạn cung cấp ở đây sẽ chắc chắn nhất được mua lại bởi chương trình thư rác và cái nạo trong quá trình con của nó được sử dụng ở đây, và như vậy, nó khuyên rằng nếu bạn chọn để cung cấp một địa chỉ email ở đây, mà bạn đảm bảo rằng địa chỉ email bạn cung cấp ở đây là một địa chỉ dùng một lần hay một địa chỉ mà bạn không nhớ được thư rác (nói cách khác, có thể bạn không muốn sử dụng một cá nhân chính hay kinh doanh chính địa chỉ email).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Bạn muốn địa chỉ email được trình bày như thế nào với người dùng?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'CIDRAM nên xử lý các trường trống khi ghi và hiển thị thông tin sự kiện khối như thế nào? "include" = Bao gồm các trường trống. "omit" = Bỏ sót các trường trống [mặc định].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Những gì thông báo trạng thái HTTP mà CIDRAM nên gửi khi yêu cầu bị chặn? (Tham khảo tài liệu để biết thêm thông tin).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Thực hiện tìm kiếm tên máy chủ cho tất cả các yêu cầu? True = Vâng; False = Không [Mặc định]. Tìm kiếm tên máy chủ thường được thực hiện trên cơ sở cần thiết, nhưng có thể được thực hiện cho tất cả các yêu cầu. Điều này có thể hữu ích như một phương tiện cung cấp thông tin chi tiết hơn trong các tập tin đăng nhập, nhưng cũng có thể có tác động tiêu cực đến hiệu suất.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Ẩn thông tin phiên bản từ nhật ký và đầu ra của trang? True = Vâng; False = Không [Mặc định].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Tên tập tin: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Thư Mục';
 $CIDRAM['lang']['field_filetype_info'] = 'Tập Tin {EXT}';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Không Xác Định';
+$CIDRAM['lang']['field_include'] = 'Bao gồm các trường trống';
 $CIDRAM['lang']['field_infractions'] = 'Vi phạm';
 $CIDRAM['lang']['field_install'] = 'Cài đặt';
 $CIDRAM['lang']['field_ip_address'] = 'Địa Chỉ IP';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Đăng Nhập';
 $CIDRAM['lang']['field_new_name'] = 'Tên mới:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Văn bản không thể nhấp';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Bỏ sót các trường trống';
 $CIDRAM['lang']['field_options'] = 'Tùy Chọn';
 $CIDRAM['lang']['field_password'] = 'Mật Khẩu';
 $CIDRAM['lang']['field_permissions'] = 'Quyền';

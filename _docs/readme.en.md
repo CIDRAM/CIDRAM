@@ -492,6 +492,9 @@ Currently supported:
 ##### "hide_version"
 - Hide version information from logs and page output? True = Yes; False = No [Default].
 
+##### "empty_fields"
+- How should CIDRAM handle empty fields when logging and displaying block event information? "include" = Include empty fields. "omit" = Omit empty fields [default].
+
 #### "signatures" (Category)
 Signatures configuration.
 

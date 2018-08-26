@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.08.13).
+ * This file: Turkish language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Ön uç erişimini devre d
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Webfontlarını devre dışı bırak? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'İsterseniz, kullanıcıları engellediğinde verilecek bir e-posta adresi sağlayabilirsiniz, yanlışlıkla engellendikleri zaman destek için sizinle iletişim kurabilmeleri için. UYARI: Burada tedarik ettiğiniz e-posta adresiniz kesinlikle spambotlar ve sıyırıcılar tarafından edinilecektir. Bu nedenle, tek kullanımlık veya önemsiz bir e-posta adresini seçmeniz kesinlikle önerilir (diğer bir deyişle, büyük olasılıkla birincil kişisel veya birincil iş e-posta adreslerinizi kullanmak istemiyorsunuzdur).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'E-posta adresinin kullanıcılara sunulmasını nasıl tercih ederdiniz?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Blok olay bilgilerini kaydederken ve görüntülerken, CIDRAM boş alanları nasıl ele almalıdır? "include" = Boş alanları dahil et. "omit" = Boş alanları atla [varsayılan].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'İstekleri engellerken hangi HTTP durum iletisinin CIDRAM göndermesi gerekir? (Daha fazla bilgi için belgelere bakın).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Hostname aramayı zorla? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Hostname aramaları normal olarak ihtiyaçlara göre yapılır, ancak tüm istekler için zorla çalıştırılabilir. Bu, günlük dosyalarında daha ayrıntılı bilgi sağlama aracı olarak kullanışlı olabilir, ancak performans üzerinde de olumsuz bir etkisi olabilir.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Sürüm bilgilerini günlüklerden ve sayfa çıktısından gizle? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Dosya adı: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Rehber';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Dosya';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Bilinmiyor';
+$CIDRAM['lang']['field_include'] = 'Boş alanları dahil et';
 $CIDRAM['lang']['field_infractions'] = 'İhlaller';
 $CIDRAM['lang']['field_install'] = 'Yükle';
 $CIDRAM['lang']['field_ip_address'] = 'İP Adresi';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Oturum Aç';
 $CIDRAM['lang']['field_new_name'] = 'Yeni isim:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Tıklanmayan metin';
 $CIDRAM['lang']['field_ok'] = 'Tamam';
+$CIDRAM['lang']['field_omit'] = 'Boş alanları atla';
 $CIDRAM['lang']['field_options'] = 'Seçenekler';
 $CIDRAM['lang']['field_password'] = 'Parola';
 $CIDRAM['lang']['field_permissions'] = 'İzinler';

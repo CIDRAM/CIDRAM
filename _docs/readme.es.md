@@ -492,6 +492,9 @@ Soportado actualmente:
 ##### "hide_version"
 - ¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido].
 
+##### "empty_fields"
+- ¿Cómo debe manejar CIDRAM los campos vacíos al registrar y mostrar información de eventos de bloque? "include" = Incluye los campos vacíos. "omit" = Omita los campos vacíos [predefinido].
+
 #### "signatures" (Categoría)
 Configuración de firmas.
 

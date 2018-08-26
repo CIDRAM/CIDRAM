@@ -492,6 +492,9 @@ Không tương thích (gây ra xung đột):
 ##### "hide_version"
 - Ẩn thông tin phiên bản từ nhật ký và đầu ra của trang? True = Vâng; False = Không [Mặc định].
 
+##### "empty_fields"
+- CIDRAM nên xử lý các trường trống khi ghi và hiển thị thông tin sự kiện khối như thế nào? "include" = Bao gồm các trường trống. "omit" = Bỏ sót các trường trống [mặc định].
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 

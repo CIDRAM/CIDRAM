@@ -492,6 +492,9 @@ Didukung sekarang:
 ##### "hide_version"
 - Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default].
 
+##### "empty_fields"
+- Bagaimana seharusnya CIDRAM menangani bidang kosong saat membuat log dan menampilkan informasi kejadian blokir? "include" = Sertakan bidang kosong. "omit" = Hilangkan bidang kosong [default].
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 

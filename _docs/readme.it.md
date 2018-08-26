@@ -492,6 +492,9 @@ Attualmente supportato:
 ##### "hide_version"
 - Nascondi informazioni sulla versione dai registri e l'output della pagina? True = Sì; False = No [Predefinito].
 
+##### "empty_fields"
+- Come dovrebbe CIDRAM gestire i campi vuoti durante la registrazione e la visualizzazione delle informazioni sugli eventi di blocco? "include" = Includi campi vuoti. "omit" = Ometti campi vuoti [predefiniti].
+
 #### "signatures" (Categoria)
 Configurazione per firme.
 

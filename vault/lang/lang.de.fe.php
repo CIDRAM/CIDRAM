@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.08.13).
+ * This file: German language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = 'Front-End-Access deaktivie
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Web-Fonts deaktivieren? True = Ja [Standardeinstellung]; False = Nein.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Wie möchten Sie die E-Mail-Adresse für die Nutzer vorstellen?';
+$CIDRAM['lang']['config_general_empty_fields'] = 'Wie sollte CIDRAM leere Felder behandeln, wenn Blockereignisinformationen protokolliert und angezeigt werden? "include" = Leere Felder einlassen. "omit" = Leere Felder auslassen [Standardeinstellung].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Welche HTTP-Status-Message sollte CIDRAM senden, wenn Anfragen blockiert? (Bitte beachten Sie die Dokumentation).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]. Hostnamen-Suchen werden normalerweise auf einer "wie benötigt"-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken.';
 $CIDRAM['lang']['config_general_hide_version'] = 'Versionsinformationen aus Protokollen und Seitenausgabe ausblenden? True = Ja; False = Nein [Standardeinstellung].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Dateiname: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Verzeichnis';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT}-Datei';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Unbekannt';
+$CIDRAM['lang']['field_include'] = 'Leere Felder einlassen';
 $CIDRAM['lang']['field_infractions'] = 'Verstöße';
 $CIDRAM['lang']['field_install'] = 'Installieren';
 $CIDRAM['lang']['field_ip_address'] = 'IP-Adresse';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Einloggen';
 $CIDRAM['lang']['field_new_name'] = 'Neuer Name:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Nicht klickbarer Text';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Leere Felder auslassen';
 $CIDRAM['lang']['field_options'] = 'Optionen';
 $CIDRAM['lang']['field_password'] = 'Passwort';
 $CIDRAM['lang']['field_permissions'] = 'Berechtigungen';

@@ -492,6 +492,9 @@ Supporté actuellement :
 ##### « hide_version »
 - Masquer les informations de version à partir des journaux et de la sortie de la page ? True = Oui ; False = Non [Défaut].
 
+##### « empty_fields »
+- Comment CIDRAM doit-il gérer les champs vides lors de l'enregistrement et de l'affichage des informations sur les événements de blocage ? « include » = Inclure les champs vides. « omit » = Omettre les champs vides [défaut].
+
 #### « signatures » (Catégorie)
 Configuration pour les signatures.
 

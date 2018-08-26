@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.08.13).
+ * This file: Spanish language data for the front-end (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -67,6 +67,7 @@ $CIDRAM['lang']['config_general_disable_frontend'] = '¿Desactivar el acceso fro
 $CIDRAM['lang']['config_general_disable_webfonts'] = '¿Desactivar webfonts? True = Sí [Predefinido]; False = No.';
 $CIDRAM['lang']['config_general_emailaddr'] = 'Si deseado, usted puede suministrar una dirección de correo electrónico aquí que se dará a los usuarios cuando ellos están bloqueadas, para ellos utilizar como un punto de contacto para soporte y/o asistencia para el caso de ellos están bloqueadas por error. ADVERTENCIA: Cualquiera que sea la dirección de correo electrónico que usted suministrar aquí, que será sin duda adquirida por spambots y raspadores/scrapers durante el curso de su siendo utilizar aquí, y entonces, se recomienda encarecidamente que si eliges para suministrar una dirección de correo electrónico aquí, que se asegura de que la dirección de correo electrónico usted suministrar aquí es una dirección desechable y/o una dirección que usted no se preocupan por para ser bombardeado por correo (en otras palabras, es probable que usted no quiere utilizar sus correos electrónicos personal principal o comercio principal).';
 $CIDRAM['lang']['config_general_emailaddr_display_style'] = '¿Cómo prefieres que la dirección de correo electrónico sea presentada a los usuarios?';
+$CIDRAM['lang']['config_general_empty_fields'] = '¿Cómo debe manejar CIDRAM los campos vacíos al registrar y mostrar información de eventos de bloque? "include" = Incluye los campos vacíos. "omit" = Omita los campos vacíos [predefinido].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = '¿Cuál mensaje de estado HTTP debe enviar CIDRAM cuando se bloquean las solicitudes? (Consulte la documentación para más información).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = '¿Forzar búsquedas de nombres de host? True = Sí; False = No [Predefinido]. Las búsquedas de nombres de host normalmente se realizan según sea necesario, pero se pueden forzar para todas las solicitudes. Hacerlo puede ser útil como un medio para proporcionar información más detallada en los archivos de registro, pero también puede tener un efecto ligeramente negativo en el rendimiento.';
 $CIDRAM['lang']['config_general_hide_version'] = '¿Ocultar información de la versión de los archivos de registro y la salida de la página? True = Sí; False = No [Predefinido].';
@@ -143,6 +144,7 @@ $CIDRAM['lang']['field_filename'] = 'Nombre del archivo: ';
 $CIDRAM['lang']['field_filetype_directory'] = 'Directorio';
 $CIDRAM['lang']['field_filetype_info'] = '{EXT} Archivo';
 $CIDRAM['lang']['field_filetype_unknown'] = 'Desconocido';
+$CIDRAM['lang']['field_include'] = 'Incluye los campos vacíos';
 $CIDRAM['lang']['field_infractions'] = 'Infracciones';
 $CIDRAM['lang']['field_install'] = 'Instalar';
 $CIDRAM['lang']['field_ip_address'] = 'Dirección IP';
@@ -151,6 +153,7 @@ $CIDRAM['lang']['field_log_in'] = 'Iniciar Sesión';
 $CIDRAM['lang']['field_new_name'] = 'Nuevo nombre:';
 $CIDRAM['lang']['field_nonclickable_text'] = 'Texto que no se puede hacer clic';
 $CIDRAM['lang']['field_ok'] = 'OK';
+$CIDRAM['lang']['field_omit'] = 'Omita los campos vacíos';
 $CIDRAM['lang']['field_options'] = 'Opciones';
 $CIDRAM['lang']['field_password'] = 'Contraseña';
 $CIDRAM['lang']['field_permissions'] = 'Permisos';

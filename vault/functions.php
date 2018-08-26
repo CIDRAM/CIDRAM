@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.08.10).
+ * This file: Functions file (last modified: 2018.08.17).
  */
 
 /**
@@ -31,11 +31,12 @@ $CIDRAM['ReadFile'] = function ($File) {
         return false;
     }
     /**
-     * $Blocksize represents the size of each block to be read from the target
-     * file. 131072 = 128KB. Decreasing this value will increase stability but
-     * decrease performance, whereas increasing this value will increase
-     * performance but decrease stability.
+     * An alternative/fix to avoid dodgy fread operations via the phar wrapper.
      */
+    if (strpos($File, 'phar:') === 0) {
+        return file_get_contents($File) ?: false;
+    }
+    /** Default blocksize (128KB). */
     static $Blocksize = 131072;
     $Filesize = filesize($File);
     $Size = ($Filesize && $Blocksize) ? ceil($Filesize / $Blocksize) : 0;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.08.13).
+ * This file: Front-end functions file (last modified: 2018.08.26).
  */
 
 /**
@@ -1072,7 +1072,7 @@ $CIDRAM['Tally'] = function ($In, $BlockLink, $Exceptions = []) use (&$CIDRAM) {
             if (count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
                     $Entry = str_replace('[' . $ThisPart . ']', $CIDRAM['FE']['Flags'] ? (
-                        '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"><span></a>'
+                        '<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '"><span class="flag ' . $ThisPart . '"></span></a>'
                     ) : (
                         '[<a href="' . $BlockLink . '&search=' . str_replace('=', '_', base64_encode($ThisPart)) . '">' . $ThisPart . '</a>]'
                     ), $Entry);
@@ -2053,16 +2053,21 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
     $CIDRAM['FE']['SL_Sections'] = 0;
     $CIDRAM['FE']['SL_Files'] = count($Files);
     $Out = '';
+    $SectionsForIgnore = [];
+    $SignaturesCount = [];
+    $SectionMeta = [];
+    $BaseSectionMeta = ['Deny' => 0, 'Bogon' => 0, 'Cloud' => 0, 'Generic' => 0, 'Legal' => 0, 'Malware' => 0, 'Proxy' => 0, 'Spam' => 0, 'Run' => 0, 'Greylist' => 0, 'Whitelist' => 0];
+    $ThisSectionMeta = $BaseSectionMeta;
     foreach ($Files as $File) {
         $Data = $File && is_readable($CIDRAM['Vault'] . $File) ? $CIDRAM['ReadFile']($CIDRAM['Vault'] . $File) : '';
         if (!$Data) {
             continue;
         }
         $CIDRAM['NormaliseLinebreaks']($Data);
-        $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
-        $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => $Class];
         $Data = "\n" . $Data . "\n";
         $PosB = -1;
+        $ThisCount = 0;
+        $OriginCount = 0;
         while (true) {
             $PosA = strpos($Data, "\n", $PosB + 1);
             if ($PosA === false) {
@@ -2074,40 +2079,105 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
             }
             $Line = substr($Data, $PosA, $PosB - $PosA);
             $PosB--;
-            if ($Line === '# ---') {
-                $Details['Comments'] = '';
-            } elseif (preg_match('~^(?:#|[ /]\*)~', $Line)) {
-                $Details['Comments'] .= $Line . '<br />';
-            } elseif (substr($Line, 0, 5) === 'Tag: ') {
+            if (substr($Line, -1) === "\n") {
+                $Line = substr($Line, 0, -1);
+            }
+            if (substr($Line, 0, 5) === 'Tag: ') {
                 $Tag = substr($Line, 5);
-                $Details['Name'] .= $Tag;
-                if (!empty($CIDRAM['Ignore'][$Tag])) {
-                    $Details['Class'] .= '" style="filter:grayscale(50%) contrast(50%)';
-                    $Details['Name'] .= ' – ' . $CIDRAM['lang']['state_ignored'];
-                }
-                if ($Details['Comments']) {
-                    $Details['Comments'] = '<hr />' . $Details['Comments'];
-                }
-                $Details['Signatures'] = $CIDRAM['Number_L10N']($Details['Signatures']);
-                $Out .= $CIDRAM['ParseVars']($Details, $CIDRAM['FE']['SectionsRow']);
                 $CIDRAM['FE']['SL_Sections']++;
-                $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
-                $Details = ['Name' => $File . '/', 'Comments' => '', 'Signatures' => 0, 'Class' => $Class];
-            } elseif (preg_match('~^(?!(?:Tag|Expires|Origin): ).+~', $Line)) {
-                $Details['Signatures']++;
-                $CIDRAM['FE']['SL_Signatures']++;
+                if (!isset($SectionsForIgnore[$Tag])) {
+                    $SectionsForIgnore[$Tag] = empty($CIDRAM['Ignore'][$Tag]);
+                }
+                if (!isset($SignaturesCount[$Tag])) {
+                    $SignaturesCount[$Tag] = 0;
+                }
+                $SignaturesCount[$Tag] += $ThisCount;
+                $ThisCount = 0;
+                if (!isset($SectionMeta[$Tag])) {
+                    $SectionMeta[$Tag] = $BaseSectionMeta;
+                }
+                foreach ($ThisSectionMeta as $MetaKey => $MetaValue) {
+                    if (!isset($SectionMeta[$Tag][$MetaKey])) {
+                        $SectionMeta[$Tag][$MetaKey] = 0;
+                    }
+                    $SectionMeta[$Tag][$MetaKey] += $MetaValue;
+                }
+                $ThisSectionMeta = $BaseSectionMeta;
+                continue;
+            }
+            if (substr($Line, 0, 8) === 'Origin: ') {
+                $Origin = substr($Line, 8);
+                if ($CIDRAM['FE']['Flags']) {
+                    $Origin = '<span class="flag ' . $Origin . '"></span>';
+                }
+                $ThisSectionMeta[$Origin] = $OriginCount;
+                $OriginCount = 0;
+                continue;
+            }
+            if (!$Line || preg_match('~^([\n#]|Expires|Defers to)~', $Line) || strpos($Line, '/') === false) {
+                continue;
+            }
+            $ThisCount++;
+            $OriginCount++;
+            $CIDRAM['FE']['SL_Signatures']++;
+            if (($XPos = strpos($Line, 'Deny ')) !== false && ($Speculate = substr($Line, $XPos + 5))) {
+                if (!preg_match('~^(?:Bogon|Cloud|Generic|Legal|Malware|Proxy|Spam)$~', $Speculate)) {
+                    $Speculate = 'Deny';
+                }
+                $ThisSectionMeta[$Speculate]++;
+            } elseif (($XPos = strpos($Line, 'Run ')) !== false && substr($Line, $XPos + 4)) {
+                $ThisSectionMeta['Run']++;
+            } elseif (strpos($Line, 'Greylist') !== false) {
+                $ThisSectionMeta['Greylist']++;
+            } elseif (strpos($Line, 'Whitelist') !== false) {
+                $ThisSectionMeta['Whitelist']++;
             }
         }
-        if ($Details['Signatures']) {
-            if ($Details['Comments']) {
-                $Details['Comments'] = '<hr />' . $Details['Comments'];
+    }
+    $Class = 'ng2';
+    ksort($SectionsForIgnore);
+    foreach ($SectionsForIgnore as $Section => $State) {
+        $ThisCount = $CIDRAM['Number_L10N'](isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0);
+        $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
+        $SectionSafe = preg_replace('~[^\da-z]~i', '', $Section);
+        $SectionLabel = $Section . ' (<span class="txtRd">' . $ThisCount . '</span>)';
+        $SectionBreakdown = '';
+        $Next = '';
+        $HasOrigin = false;
+        foreach ($SectionMeta[$Section] as $BreakdownItem => $Quantity) {
+            if ($Next === 'Origin') {
+                $SectionBreakdown .= sprintf(
+                    '<span class="%1$s">' . ($SectionBreakdown ? ' – ' : '') . '<a href="javascript:void()" onclick="javascript:hide(\'%1$s\');show(\'%2$s\')">%3$s</a></span><span class="%2$s" style="display:none">',
+                    'originLink' . $SectionSafe,
+                    'originContent' . $SectionSafe,
+                    $CIDRAM['lang']['label_show_by_origin']
+                );
+                $HasOrigin = true;
             }
-            $Details['Signatures'] = $CIDRAM['Number_L10N']($Details['Signatures']);
-            $Out .= $CIDRAM['ParseVars']($Details, $CIDRAM['FE']['SectionsRow']);
-            $CIDRAM['FE']['SL_Sections']++;
-        } else {
-            $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
+            $Next = ($BreakdownItem === 'Whitelist') ? 'Origin' : '';
+            if ($Quantity) {
+                $Quantity = $CIDRAM['Number_L10N']($Quantity);
+                $SectionBreakdown .= ($SectionBreakdown ? ' – ' : '') . $BreakdownItem . ': ' . $Quantity;
+            }
         }
+        if ($HasOrigin) {
+            $SectionBreakdown .= "</span>";
+        }
+        $Out .= sprintf(
+            '<div class="%1$s sectionControlNotIgnored%2$s"><strong>%3$s%4$s</strong><br /><em>%5$s</em></div>',
+            $Class,
+            $State ? $SectionSafe : $SectionSafe . '" style="display:none',
+            $SectionLabel,
+            ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'ignore\',\'sectionControlNotIgnored' . $SectionSafe . '\',\'sectionControlIgnored' . $SectionSafe . '\')">' . $CIDRAM['lang']['label_ignore'] . '</a>',
+            $SectionBreakdown
+        ) . sprintf(
+            '<div class="%1$s sectionControlIgnored%2$s"><strong>%3$s%4$s</strong><br /><em>%5$s</em></div>',
+            $Class,
+            $SectionSafe . '" style="filter:grayscale(50%) contrast(50%)' . ($State ? ';display:none' : ''),
+            $SectionLabel . ' – ' . $CIDRAM['lang']['state_ignored'],
+            ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'unignore\',\'sectionControlIgnored' . $SectionSafe . '\',\'sectionControlNotIgnored' . $SectionSafe . '\')">' . $CIDRAM['lang']['label_unignore'] . '</a>',
+            $SectionBreakdown
+        );
     }
     return $Out;
 };

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2018.07.01).
+ * This file: CLI handler (last modified: 2018.08.26).
  */
 
 /** Fallback for missing $_SERVER superglobal. */
@@ -288,7 +288,7 @@ if ($CIDRAM['argv'][1] === '-h') {
             $Changes++;
             $Operations++;
         }
-        if (preg_match('~^(?:(?:Tag|Expires|Origin): |#)~', $ArrayToValidate[$i])) {
+        if (preg_match('~^(?:(?:Tag|Expires|Origin|Defers to): |#)~', $ArrayToValidate[$i])) {
             continue;
         }
         if ($YAMLM) {

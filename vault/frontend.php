@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.25).
+ * This file: Front-end handler (last modified: 2018.08.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2362,42 +2362,82 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
 /** Sections List. */
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Permissions'] === 1) {
 
-    /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_sections_list'], $CIDRAM['lang']['tip_sections_list'], false);
+    if (!$CIDRAM['FE']['ASYNC']) {
 
-    $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+        /** Page initial prepwork. */
+        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_sections_list'], $CIDRAM['lang']['tip_sections_list']);
 
-    /** Template for section rows. */
-    $CIDRAM['FE']['SectionsRow'] = $CIDRAM['ParseVars']($CIDRAM['lang'], $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_sections_row.html')));
+        /** Append async globals. */
+        $CIDRAM['FE']['JS'] .=
+            "function slx(a,b,c,d){window['SectionName']=a,window['Action']=b,$('POST','',['SectionName','Action'],null," .
+            "function(e){hide(c),show(d,'block')},null)}";
 
-    /** Process signature files. */
-    if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
-        $CIDRAM['FE']['Data'] = '        <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n";
-    } else {
-        $CIDRAM['FE']['Data'] = $CIDRAM['SectionsHandler'](
-            array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
+        $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+        /** Add flags CSS. */
+        if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
+            $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+        }
+
+        /** Process signature files. */
+        if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
+            $CIDRAM['FE']['Data'] = '        <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n";
+        } else {
+            $CIDRAM['FE']['Data'] = $CIDRAM['SectionsHandler'](
+                array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
+            );
+        }
+
+        /** Calculate and append page load time, and append totals. */
+        $CIDRAM['FE']['Data'] = '<div class="s">' . sprintf(
+            $CIDRAM['lang']['state_loadtime'],
+            $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3)
+        ) . '<br />' . sprintf(
+            $CIDRAM['lang']['state_sl_totals'],
+            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Signatures']) ? $CIDRAM['FE']['SL_Signatures'] : 0),
+            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Sections']) ? $CIDRAM['FE']['SL_Sections'] : 0),
+            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0)
+        ) . '</div><hr />' . $CIDRAM['FE']['Data'];
+
+        /** Parse output. */
+        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'],
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_sections.html'))
         );
+
+        /** Send output. */
+        echo $CIDRAM['SendOutput']();
+
+    } elseif (isset($_POST['SectionName'], $_POST['Action'])) {
+
+        /** Fetch current ignores data. */
+        $CIDRAM['IgnoreData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'ignore.dat') ?: '';
+
+        if ($_POST['Action'] === 'unignore' && preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $CIDRAM['IgnoreData'])) {
+            $CIDRAM['IgnoreData'] = preg_replace("~\nIgnore " . $_POST['SectionName'] . "\n~", "\n", $CIDRAM['IgnoreData']);
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ignore.dat', 'w');
+            fwrite($CIDRAM['Handle'], $CIDRAM['IgnoreData']);
+            fclose($CIDRAM['Handle']);
+        } elseif ($_POST['Action'] === 'ignore' && !preg_match("~\nIgnore " . $_POST['SectionName'] . "\n~", $CIDRAM['IgnoreData'])) {
+            if (strpos($CIDRAM['IgnoreData'], "\n# End front-end generated ignore rules.") === false) {
+                $CIDRAM['IgnoreData'] .= "\n# Begin front-end generated ignore rules.\n# End front-end generated ignore rules.\n";
+            }
+            $CIDRAM['IgnoreData'] = substr($CIDRAM['IgnoreData'], 0, strrpos(
+                $CIDRAM['IgnoreData'],
+                "# End front-end generated ignore rules.\n"
+            )) . "Ignore " . $_POST['SectionName'] . "\n" . substr($CIDRAM['IgnoreData'], strrpos(
+                $CIDRAM['IgnoreData'],
+                "# End front-end generated ignore rules.\n"
+            ));
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'ignore.dat', 'w');
+            fwrite($CIDRAM['Handle'], $CIDRAM['IgnoreData']);
+            fclose($CIDRAM['Handle']);
+        }
+
+        /** Cleanup. */
+        unset($CIDRAM['Handle'], $CIDRAM['IgnoreData']);
+
     }
-
-    /** Calculate and append page load time, and append totals. */
-    $CIDRAM['FE']['Data'] = '<div class="s">' . sprintf(
-        $CIDRAM['lang']['state_loadtime'],
-        $CIDRAM['Number_L10N'](microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 3)
-    ) . '<br />' . sprintf(
-        $CIDRAM['lang']['state_sl_totals'],
-        $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Signatures']) ? $CIDRAM['FE']['SL_Signatures'] : 0),
-        $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Sections']) ? $CIDRAM['FE']['SL_Sections'] : 0),
-        $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0)
-    ) . '</div><hr />' . $CIDRAM['FE']['Data'];
-
-    /** Parse output. */
-    $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
-        $CIDRAM['lang'] + $CIDRAM['FE'],
-        $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_sections.html'))
-    );
-
-    /** Send output. */
-    echo $CIDRAM['SendOutput']();
 
 }
 

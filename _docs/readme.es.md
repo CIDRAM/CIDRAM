@@ -183,7 +183,6 @@ Archivo | Descripción
 /vault/fe_assets/_range.html | Un archivo HTML para el front-end página tablas de rango.
 /vault/fe_assets/_range_row.html | Un archivo HTML para el front-end página tablas de rango.
 /vault/fe_assets/_sections.html | Una archivo HTML para la lista de secciones.
-/vault/fe_assets/_sections_row.html | Una archivo HTML para la lista de secciones.
 /vault/fe_assets/_statistics.html | Un archivo HTML para el front-end página de estadísticas.
 /vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
@@ -617,29 +616,29 @@ Relacionado a la salida HTML utilizado generar la página "Acceso Denegado". Si 
 ##### "css_url"
 - El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir CIDRAM de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, CIDRAM utilizará el plantilla archivo para el predefinida tema.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categoría)
+Configuración de PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Un archivo para registrar todos los eventos en relación con PHPMailer. Especificar el nombre del archivo, o dejar en blanco para desactivar.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Establecer esta directiva en `true` indica a PHPMailer que omita el proceso de autenticación normal que normalmente se produce cuando se envía un correo electrónico a través de SMTP. Esto debe evitarse, ya que omitir este proceso puede exponer el correo electrónico saliente a ataques MITM, pero puede ser necesario en los casos en que este proceso impida que PHPMailer se conecte a un servidor SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Esta directiva determina si se debe usar 2FA para las cuentas del front-end.
 
 ##### "Host"
-- @todo@
+- El host SMTP para usar para el correo electrónico saliente.
 
 ##### "Port"
-- @todo@
+- El número de puerto a usar para el correo electrónico saliente. Predefinido = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- El protocolo a usar cuando se envía un correo electrónico a través de SMTP (TLS o SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Esta directiva determina si autenticar sesiones SMTP (generalmente debería dejarse solo).
 
 ##### "Username"
 - @todo@

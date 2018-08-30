@@ -183,7 +183,6 @@ Fichier | Description
 /vault/fe_assets/_range.html | Un modèle HTML pour la page pour les tableaux de gamme de l'accès frontal.
 /vault/fe_assets/_range_row.html | Un modèle HTML pour la page pour les tableaux de gamme de l'accès frontal.
 /vault/fe_assets/_sections.html | Un modèle HTML pour la liste des sections.
-/vault/fe_assets/_sections_row.html | Un modèle HTML pour la liste des sections.
 /vault/fe_assets/_statistics.html | Un modèle HTML pour la page de statistiques de l'accès frontal.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
@@ -617,46 +616,46 @@ Correspond à la sortie HTML utilisé pour générer la page « Accès Refusé�
 ##### « css_url »
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire CIDRAM d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, CIDRAM va utiliser le modèle fichier pour le défaut thème.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### « PHPMailer » (Catégorie)
+Configuration de PHPMailer.
 
-##### "EventLog"
+##### « EventLog »
+- Fichier pour l'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver.
+
+##### « SkipAuthProcess »
+- Définir cette directive sur `true` instruit à PHPMailer de sauter le processus d'authentification qui se produit normalement lors de l'envoi d'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP.
+
+##### « Enable2FA »
+- Cette directive détermine s'il faut utiliser 2FA pour les comptes frontaux.
+
+##### « Host »
+- Hôte SMTP à utiliser pour les e-mails sortants.
+
+##### « Port »
+- Le numéro de port à utiliser pour l'e-mail sortant. Défaut = 587.
+
+##### « SMTPSecure »
+- Le protocole à utiliser lors de l'envoi d'e-mail via SMTP (TLS ou SSL).
+
+##### « SMTPAuth »
+- Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules).
+
+##### « Username »
 - @todo@
 
-##### "SkipAuthProcess"
+##### « Password »
 - @todo@
 
-##### "Enable2FA"
+##### « setFromAddress »
 - @todo@
 
-##### "Host"
+##### « setFromName »
 - @todo@
 
-##### "Port"
+##### « addReplyToAddress »
 - @todo@
 
-##### "SMTPSecure"
-- @todo@
-
-##### "SMTPAuth"
-- @todo@
-
-##### "Username"
-- @todo@
-
-##### "Password"
-- @todo@
-
-##### "setFromAddress"
-- @todo@
-
-##### "setFromName"
-- @todo@
-
-##### "addReplyToAddress"
-- @todo@
-
-##### "addReplyToName"
+##### « addReplyToName »
 - @todo@
 
 ---

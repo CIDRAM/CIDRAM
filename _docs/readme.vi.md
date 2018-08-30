@@ -183,7 +183,6 @@ Tập tin | Chi tiết
 /vault/fe_assets/_range.html | Tập tin mẫu HTML cho bảng dãy.
 /vault/fe_assets/_range_row.html | Tập tin mẫu HTML cho bảng dãy.
 /vault/fe_assets/_sections.html | Tập tin mẫu HTML cho danh sách phần.
-/vault/fe_assets/_sections_row.html | Tập tin mẫu HTML cho danh sách phần.
 /vault/fe_assets/_statistics.html | Tập tin mẫu HTML cho trang thống kê của front-end.
 /vault/fe_assets/_updates.html | Tập tin mẫu HTML cho trang cập nhật của front-end.
 /vault/fe_assets/_updates_row.html | Tập tin mẫu HTML cho trang cập nhật của front-end.
@@ -617,29 +616,29 @@ Liên quan đến đầu ra HTML sử dụng để tạo ra các trang "Truy c�
 ##### "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn CIDRAM để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, CIDRAM sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Thể loại)
+Cấu hình PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Đặt chỉ thị này thành `true` chỉ thị cho PHPMailer bỏ qua quy trình xác thực thông thường thường xảy ra khi gửi email qua SMTP. Điều này nên tránh, bởi vì bỏ qua quá trình này có thể tiết lộ email gửi đến các cuộc tấn công MITM, nhưng có thể cần thiết trong trường hợp quá trình này ngăn PHPMailer kết nối với máy chủ SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không.
 
 ##### "Host"
-- @todo@
+- Máy chủ SMTP để sử dụng cho email gửi đi.
 
 ##### "Port"
-- @todo@
+- Số cổng để sử dụng cho email gửi đi. Mặc định = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình).
 
 ##### "Username"
 - @todo@

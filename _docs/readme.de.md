@@ -183,7 +183,6 @@ Datei | Beschreibung
 /vault/fe_assets/_range.html | Ein HTML-Template für die Front-End Bereichstische-Seite.
 /vault/fe_assets/_range_row.html | Ein HTML-Template für die Front-End Bereichstische-Seite.
 /vault/fe_assets/_sections.html | Eine HTML-Template für die Sektionsliste.
-/vault/fe_assets/_sections_row.html | Eine HTML-Template für die Sektionsliste.
 /vault/fe_assets/_statistics.html | Ein HTML-Template für die Front-End Statistikseite.
 /vault/fe_assets/_updates.html | Ein HTML-Template für die Front-End Aktualisierungen-Seite.
 /vault/fe_assets/_updates_row.html | Ein HTML-Template für die Front-End Aktualisierungen-Seite.
@@ -617,29 +616,29 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Zug
 ##### "css_url"
 - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um CIDRAM anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird CIDRAM die Template-Datei für das normale Theme verwenden.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Kategorie)
+PHPMailer Konfiguration.
 
 ##### "EventLog"
-- @todo@
+- Eine Datei zum Protokollieren aller Ereignisse in Bezug auf PHPMailer. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Wenn Sie diese Direktive auf `true` setzen, wird PHPMailer angewiesen, den normalen Authentifizierungsprozess zu überspringen, der normalerweise beim Senden von E-Mails über SMTP auftritt. Dies sollte vermieden werden, da das Überspringen dieses Prozesses ausgehende E-Mails an MITM-Angriffe aussetzen kann. Dies kann jedoch in Fällen erforderlich sein, in denen dieser Prozess die Verbindung von PHPMailer zu einem SMTP-Server verhindert.
 
 ##### "Enable2FA"
-- @todo@
+- Diese Direktive bestimmt, ob 2FA für Front-End-Konten verwendet werden soll.
 
 ##### "Host"
-- @todo@
+- Der SMTP-Host zum Senden von ausgehende E-Mails.
 
 ##### "Port"
-- @todo@
+- Die Portnummer zum Senden von ausgehende E-Mails. Standardeinstellung = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Das Protokoll zum Senden von E-Mails über SMTP (TLS oder SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Diese Direktive bestimmt, ob SMTP-Sitzungen authentifiziert werden sollen (sollte normalerweise in Ruhe gelassen werden).
 
 ##### "Username"
 - @todo@

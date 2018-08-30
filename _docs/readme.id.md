@@ -183,7 +183,6 @@ Data | Deskripsi
 /vault/fe_assets/_range.html | Template HTML untuk tabel rentang.
 /vault/fe_assets/_range_row.html | Template HTML untuk tabel rentang.
 /vault/fe_assets/_sections.html | Template HTML untuk daftar bagian.
-/vault/fe_assets/_sections_row.html | Template HTML untuk daftar bagian.
 /vault/fe_assets/_statistics.html | Template HTML untuk halaman statistik.
 /vault/fe_assets/_updates.html | Template HTML untuk halaman pembaruan.
 /vault/fe_assets/_updates_row.html | Template HTML untuk halaman pembaruan.
@@ -617,29 +616,29 @@ Berkaitan dengan HTML digunakan untuk menghasilkan halaman "Akses Ditolak". Jika
 ##### "css_url"
 - File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan CIDRAM menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable `css_url`. Jika Anda biarkan kosong variabel ini, CIDRAM akan menggunakan file template untuk tema default.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Kategori)
+Konfigurasi PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Pengaturan direktif ini ke `true` menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan.
 
 ##### "Host"
-- @todo@
+- Host SMTP yang digunakan untuk email keluar.
 
 ##### "Port"
-- @todo@
+- Nomor port yang digunakan untuk email keluar. Default = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri).
 
 ##### "Username"
 - @todo@

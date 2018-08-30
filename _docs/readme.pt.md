@@ -183,7 +183,6 @@ Arquivo | Descrição
 /vault/fe_assets/_range.html | Um modelo HTML para as tabelas de alcance.
 /vault/fe_assets/_range_row.html | Um modelo HTML para as tabelas de alcance.
 /vault/fe_assets/_sections.html | Um modelo HTML para a lista de seções.
-/vault/fe_assets/_sections_row.html | Um modelo HTML para a lista de seções.
 /vault/fe_assets/_statistics.html | Um modelo HTML para o front-end página de estatísticas.
 /vault/fe_assets/_updates.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/_updates_row.html | Um modelo HTML para o front-end página de atualizações.
@@ -617,29 +616,29 @@ Relaciona-se com a saída HTML usado para gerar a página "Acesso Negado". Se vo
 ##### "css_url"
 - O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir CIDRAM para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, CIDRAM usará o template arquivo para o padrão tema.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categoria)
+Configuração do PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Definir essa diretiva como `true` instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Esta diretiva determina se deve usar 2FA para contas front-end.
 
 ##### "Host"
-- @todo@
+- O host SMTP a ser usado para e-mail de saída.
 
 ##### "Port"
-- @todo@
+- O número da porta a ser usado para o e-mail de saída. Padrão = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz).
 
 ##### "Username"
 - @todo@

@@ -105,7 +105,7 @@ De frontend is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen 
 
 1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het `false` (deze is `true` door standaard).
 
-2) Toegang tot `loader.php` vanuit uw browser (bijv., `http://localhost/cidram/loader.php`).
+2) Toegang tot `loader.php` vanuit uw browser (b.v., `http://localhost/cidram/loader.php`).
 
 3) Inloggen u aan met de standaard gebruikersnaam en wachtwoord (admin/password).
 
@@ -125,9 +125,9 @@ Ten eerste, om twee-factor authenticatie in te schakelen, gebruikt u de frontend
 
 Nadat u PHPMailer heeft geïnstalleerd, moet u de configuratie-richtlijnen voor PHPMailer invullen via de configuratiepagina of het configuratiebestand van CIDRAM. Meer informatie over deze configuratie-richtlijnen is opgenomen in de configuratiesectie van dit document. Nadat u de PHPMailer-configuratie-richtlijnen hebt ingevuld, stelt u `Enable2FA` in op `true`. Twee-factor authenticatie moet nu worden ingeschakeld.
 
-Next, you'll need to associate an email address with an account, so that CIDRAM knows where to send 2FA codes when logging in with that account. To do this, use the email address as the username for the account (like `foo@bar.tld`), or include the email address as part of the username in the same way that you would when sending an email normally (like `Foo Bar <foo@bar.tld>`).
+Volgende, u moet een e-mailadres koppelen aan een account, zodat CIDRAM weet waar 2FA-codes moeten worden verzonden wanneer hij zich aanmeldt met dat account. Om dit te doen, gebruik het e-mailadres als de gebruikersnaam voor het account (b.v., `foo@bar.tld`), of neem het e-mailadres op als onderdeel van de gebruikersnaam op dezelfde manier als bij het normaal verzenden van een e-mail (b.v., `Foo Bar <foo@bar.tld>`).
 
-Note: Protecting your vault against unauthorised access (e.g., by hardening your server's security and public access permissions), is particularly important here, due to that unauthorised access to your configuration file (which is stored in your vault), could risk exposing your outbound SMTP settings (including SMTP username and password). You should ensure that your vault is properly secured before enabling two-factor authentication. If you're unable to do this, then at least, you should create a new email account, dedicated for this purpose, as such to reduce the risks associated with exposed SMTP settings.
+Notitie: Het beschermen van uw vault tegen ongeautoriseerde toegang (b.v., door de beveiliging van uw server en openbare toegangsrechten te verbeteren), is hier bijzonder belangrijk, vanwege deze ongeautoriseerde toegang tot uw configuratiebestand (dat is opgeslagen in uw vault), kan het risico lopen dat uw uitgaande SMTP-instellingen (inclusief SMTP gebruikersnaam en wachtwoord) worden weergegeven. U moet ervoor zorgen dat uw vault correct is beveiligd voordat u twee-factor authenticatie inschakelt. Als u dit niet kunt doen, moet u op z'n minst een nieuw e-mailaccount maken, speciaal voor dit doel, om de risico's van blootgestelde SMTP-instellingen te verminderen.
 
 ---
 
@@ -183,7 +183,6 @@ Bestand | Beschrijving
 /vault/fe_assets/_range.html | Een HTML sjabloon voor de frontend reeks tafels pagina.
 /vault/fe_assets/_range_row.html | Een HTML sjabloon voor de frontend reeks tafels pagina.
 /vault/fe_assets/_sections.html | Een HTML sjabloon voor de sectielijst.
-/vault/fe_assets/_sections_row.html | Een HTML sjabloon voor de sectielijst.
 /vault/fe_assets/_statistics.html | Een HTML sjabloon voor de frontend statistieken pagina.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
@@ -617,29 +616,29 @@ Betreft de HTML-uitvoer gebruikt om de "Toegang Geweigerd" pagina te genereren. 
 ##### "css_url"
 - De sjabloonbestand voor aangepaste thema's maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om CIDRAM instrueren om de sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema's CSS-bestanden via de `css_url` variabele. Als u dit variabele leeg laat, CIDRAM zal de sjabloonbestand voor de standaardthema te gebruiken.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categorie)
+PHPMailer-configuratie.
 
 ##### "EventLog"
-- @todo@
+- Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Wanneer `true`, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server.
 
 ##### "Enable2FA"
-- @todo@
+- Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts.
 
 ##### "Host"
-- @todo@
+- De SMTP-host dat moet worden gebruikt voor uitgaande e-mail.
 
 ##### "Port"
-- @todo@
+- Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Het protocol dat moet worden gebruikt bij het verzenden van e-mail via SMTP (TLS of SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten).
 
 ##### "Username"
 - @todo@

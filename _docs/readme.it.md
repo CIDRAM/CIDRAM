@@ -119,15 +119,15 @@ Le istruzioni sono fornite su ciascuna pagina del front-end, per spiegare il mod
 
 #### 4.3 AUTENTICAZIONE A DUE FATTORI
 
-È possibile rendere il front-end più sicuro attivando l'autenticazione a due fattori ("2FA"). Quando si accede a un account attivato per 2FA, viene inviata una e-mail all'indirizzo e-mail associato a tale account. Questa e-mail contiene un "codice 2FA", che l'utente deve quindi inserire, inoltre al nome utente e alla password, per poter accedere utilizzando tale account. Ciò significa che l'ottenimento di una password dell'account non sarebbe sufficiente per consentire a qualsiasi hacker o potenziale utente malintenzionato di accedere a tale account, in quanto avrebbe anche bisogno di avere accesso all'indirizzo e-mail associato a tale account per poter ricevere e utilizzare il codice 2FA associato alla sessione, rendendo così il front-end più sicuro.
+È possibile rendere il front-end più sicuro attivando l'autenticazione a due fattori ("2FA"). Quando si accede a un account attivato per 2FA, viene inviata una posta elettronica all'indirizzo di posta elettronica associato a tale account. Questo indirizzo di posta elettronica contiene un "codice 2FA", che l'utente deve quindi inserire, inoltre al nome utente e alla password, per poter accedere utilizzando tale account. Ciò significa che l'ottenimento di una password dell'account non sarebbe sufficiente per consentire a qualsiasi hacker o potenziale utente malintenzionato di accedere a tale account, in quanto avrebbe anche bisogno di avere accesso all'indirizzo di posta elettronica associato a tale account per poter ricevere e utilizzare il codice 2FA associato alla sessione, rendendo così il front-end più sicuro.
 
-Innanzitutto, per attivare l'autenticazione a due fattori, utilizzando la pagina degli aggiornamenti front-end, installare il componente PHPMailer. CIDRAM utilizza PHPMailer per l'invio di e-mail. Va notato che sebbene CIDRAM, di per sé, sia compatibile con PHP >= 5.4.0, PHPMailer richiede PHP >= 5.5.0, e pertanto, l'attivazione dell'autenticazione a due fattori per il front-end CIDRAM non sarà possibile per gli utenti di PHP 5.4.
+Innanzitutto, per attivare l'autenticazione a due fattori, utilizzando la pagina degli aggiornamenti front-end, installare il componente PHPMailer. CIDRAM utilizza PHPMailer per l'invio di posta elettronica. Va notato che sebbene CIDRAM, di per sé, sia compatibile con PHP >= 5.4.0, PHPMailer richiede PHP >= 5.5.0, e pertanto, l'attivazione dell'autenticazione a due fattori per il front-end CIDRAM non sarà possibile per gli utenti di PHP 5.4.
 
 Dopo aver installato PHPMailer, dovrai compilare le direttive di configurazione per PHPMailer tramite la pagina di configurazione CIDRAM o il file di configurazione. Ulteriori informazioni su queste direttive di configurazione sono incluse nella sezione di configurazione di questo documento. Dopo aver compilato le direttive di configurazione di PHPMailer, imposta da `Enable2FA` x `true`. L'autenticazione a due fattori dovrebbe ora essere attivata.
 
-Successivamente, dovrai associare un indirizzo email a un account, in modo che CIDRAM sappia dove inviare i codici 2FA quando accede con quell'account. Per fare ciò, usa l'indirizzo email come nome utente per l'account (come `foo@bar.tld`), o includere l'indirizzo e-mail come parte del nome utente nello stesso modo in cui si farebbe quando si invia un'e-mail normalmente (come `Foo Bar <foo@bar.tld>`).
+Successivamente, dovrai associare un indirizzo di posta elettronica a un account, in modo che CIDRAM sappia dove inviare i codici 2FA quando accede con quell'account. Per fare ciò, usa l'indirizzo di posta elettronica come nome utente per l'account (come `foo@bar.tld`), o includere l'indirizzo di posta elettronica come parte del nome utente nello stesso modo in cui si farebbe quando si invia una posta elettronica normalmente (come `Foo Bar <foo@bar.tld>`).
 
-Nota: Proteggere il tuo vault dall'accesso non autorizzato (per esempio, per mezzo di rafforzando le autorizzazioni di sicurezza e di accesso pubblico del tuo server), è particolarmente importante qui, a causa di tale accesso non autorizzato al file di configurazione (che è memorizzato nel vault), potrebbe rischiare di esporre le impostazioni SMTP in uscita (incluso il nome utente e la password per il tuo SMTP). È meglio assicurarsi che il vault sia correttamente protetto prima di attivare l'autenticazione a due fattori. Se non sei in grado di farlo, almeno, dovresti creare un nuovo account di email, dedicato a questo scopo, in quanto tale per ridurre i rischi associati alle impostazioni SMTP esposte.
+Nota: Proteggere il tuo vault dall'accesso non autorizzato (per esempio, per mezzo di rafforzando le autorizzazioni di sicurezza e di accesso pubblico del tuo server), è particolarmente importante qui, a causa di tale accesso non autorizzato al file di configurazione (che è memorizzato nel vault), potrebbe rischiare di esporre le impostazioni SMTP in uscita (incluso il nome utente e la password per il tuo SMTP). È meglio assicurarsi che il vault sia correttamente protetto prima di attivare l'autenticazione a due fattori. Se non sei in grado di farlo, almeno, dovresti creare un nuovo account di posta elettronica, dedicato a questo scopo, in quanto tale per ridurre i rischi associati alle impostazioni SMTP esposte.
 
 ---
 
@@ -183,7 +183,6 @@ File | Descrizione
 /vault/fe_assets/_range.html | Un modello HTML per il front-end pagina per le tabelle della gamma.
 /vault/fe_assets/_range_row.html | Un modello HTML per il front-end pagina per le tabelle della gamma.
 /vault/fe_assets/_sections.html | Un modello HTML per la lista delle sezioni.
-/vault/fe_assets/_sections_row.html | Un modello HTML per la lista delle sezioni.
 /vault/fe_assets/_statistics.html | Un modello HTML per il front-end pagina delle statistiche.
 /vault/fe_assets/_updates.html | Un modello HTML per il front-end pagina degli aggiornamenti.
 /vault/fe_assets/_updates_row.html | Un modello HTML per il front-end pagina degli aggiornamenti.
@@ -413,10 +412,10 @@ Valore | Produce | Descrizione
 *Nota: Questi valori non sono standardizzati dovunque, e probabilmente non saranno rilevanti oltre il pacchetto. Inoltre, i valori supportati potrebbero cambiare in futuro.*
 
 ##### "emailaddr"
-- Se si desidera, è possibile fornire un indirizzo email qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l'indirizzo email si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo email qui, che si assicurare che l'indirizzo email si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi email).
+- Se si desidera, è possibile fornire un indirizzo di posta elettronica qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l'indirizzo di posta elettronica si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo di posta elettronica qui, che si assicurare che l'indirizzo di posta elettronica si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi di posta elettronica).
 
 ##### "emailaddr_display_style"
-- Come preferisci che l'indirizzo email venga presentato agli utenti? "default" = Link cliccabile. "noclick" = Testo non cliccabile.
+- Come preferisci che l'indirizzo di posta elettronica venga presentato agli utenti? "default" = Link cliccabile. "noclick" = Testo non cliccabile.
 
 ##### "disable_cli"
 - Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.
@@ -617,29 +616,29 @@ Si riferisce al HTML utilizzato per generare la pagina "Accesso Negato". Se stai
 ##### "css_url"
 - Il modello file per i temi personalizzati utilizzi esterni CSS proprietà, mentre il modello file per i temi personalizzati utilizzi interni CSS proprietà. Per istruire CIDRAM di utilizzare il modello file per i temi personalizzati, specificare l'indirizzo pubblico HTTP dei CSS file dei suoi tema personalizzato utilizzando la variabile `css_url`. Se si lascia questo variabile come vuoto, CIDRAM utilizzerà il modello file per il predefinito tema.
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### "PHPMailer" (Categoria)
+Configurazione PHPMailer.
 
 ##### "EventLog"
-- @todo@
+- Un file per registrare tutti gli eventi in relazione a PHPMailer. Specificare un nome di file, o lasciare vuoto per disabilitare.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Impostando questa direttiva su `true`, PHPMailer salta il normale processo di autenticazione che normalmente si verifica quando si invia una posta elettronica via SMTP. Questo dovrebbe essere evitato, perché saltare questo processo potrebbe esporre la posta elettronica in uscita agli attacchi MITM, ma potrebbe essere necessario nei casi in cui questo processo impedisce a PHPMailer di connettersi a un server SMTP.
 
 ##### "Enable2FA"
-- @todo@
+- Questa direttiva determina se utilizzare 2FA per gli account front-end.
 
 ##### "Host"
-- @todo@
+- L'host SMTP da utilizzare per la posta elettronica in uscita.
 
 ##### "Port"
-- @todo@
+- Il numero di porta da utilizzare per la posta elettronica in uscita. Predefinito = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- Il protocollo da utilizzare per l'invio di posta elettronica tramite SMTP (TLS o SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo).
 
 ##### "Username"
 - @todo@
@@ -822,7 +821,7 @@ Defers to: preferred_signatures.dat
 
 ##### 7.2.0 YAML BASI
 
-Una forma semplificata di YAML markup può essere utilizzato in file di firma al fine di definire comportamenti e le impostazioni specifiche per singole sezioni di firma. Questo può essere utile se si desidera che il valore delle vostre direttive di configurazione di differire sulla base delle singole firme e sezioni di firma (per esempio; se si desidera fornire un indirizzo e-mail per i biglietti di supporto per tutti gli utenti bloccati da una firma particolare, ma non desidera fornire un indirizzo e-mail per i biglietti di supporto per utenti bloccati con qualsiasi altro firme; se si desidera che alcune firme specifiche per innescare una reindirizzamento di pagina; se si desidera contrassegnare una sezione di firma per l'utilizzo con reCAPTCHA; se si desidera registrare i tentativi di accesso bloccati in file separati sulla base delle singole firme e/o sezioni di firma).
+Una forma semplificata di YAML markup può essere utilizzato in file di firma al fine di definire comportamenti e le impostazioni specifiche per singole sezioni di firma. Questo può essere utile se si desidera che il valore delle vostre direttive di configurazione di differire sulla base delle singole firme e sezioni di firma (per esempio; se si desidera fornire un indirizzo di posta elettronica per i biglietti di supporto per tutti gli utenti bloccati da una firma particolare, ma non desidera fornire un indirizzo di posta elettronica per i biglietti di supporto per utenti bloccati con qualsiasi altro firme; se si desidera che alcune firme specifiche per innescare una reindirizzamento di pagina; se si desidera contrassegnare una sezione di firma per l'utilizzo con reCAPTCHA; se si desidera registrare i tentativi di accesso bloccati in file separati sulla base delle singole firme e/o sezioni di firma).
 
 L'utilizzo di YAML markup nei file di firma è del tutto facoltativo (cioè, si può usare se si desidera farlo, ma non è richiesto a farlo), ed è in grado di sfruttare la maggior parte (ma non tutto) delle direttive di configurazione.
 
@@ -1264,9 +1263,9 @@ CIDRAM supporta facoltativamente [Google reCAPTCHA](https://www.google.com/recap
 
 ##### 11.2.4 STOP FORUM SPAM
 
-[Stop Forum Spam](https://www.stopforumspam.com/) è un servizio fantastico, disponibile gratuitamente che può aiutare a proteggere forum, blog, e siti Web dagli spammer. Lo fa fornendo un database di spammer conosciuti e un'API che può essere sfruttata per verificare se un indirizzo IP, un nome utente, o un indirizzo e-mail sono elencati nel suo database.
+[Stop Forum Spam](https://www.stopforumspam.com/) è un servizio fantastico, disponibile gratuitamente che può aiutare a proteggere forum, blog, e siti Web dagli spammer. Lo fa fornendo un database di spammer conosciuti e un'API che può essere sfruttata per verificare se un indirizzo IP, un nome utente, o un indirizzo di posta elettronica sono elencati nel suo database.
 
-CIDRAM fornisce un modulo opzionale che sfrutta questa API per verificare se l'indirizzo IP delle richieste in entrata appartiene a un sospetto spammer. Il modulo non è installato per impostazione predefinita, ma se si sceglie di installarlo, gli indirizzi IP dell'utente possono essere condivisi con l'API Stop Forum Spam in conformità con lo scopo previsto del modulo. Quando il modulo è installato, CIDRAM comunica con questa API ogni volta che una richiesta in entrata richiede una risorsa riconosciuta da CIDRAM come un tipo di risorsa spesso bersagliato dagli spammer (come pagine di login, pagine di registrazione, pagine di verifica e-mail, moduli di commento, ecc).
+CIDRAM fornisce un modulo opzionale che sfrutta questa API per verificare se l'indirizzo IP delle richieste in entrata appartiene a un sospetto spammer. Il modulo non è installato per impostazione predefinita, ma se si sceglie di installarlo, gli indirizzi IP dell'utente possono essere condivisi con l'API Stop Forum Spam in conformità con lo scopo previsto del modulo. Quando il modulo è installato, CIDRAM comunica con questa API ogni volta che una richiesta in entrata richiede una risorsa riconosciuta da CIDRAM come un tipo di risorsa spesso bersagliato dagli spammer (come pagine di login, pagine di registrazione, pagine di verifica di posta elettronica, moduli di commento, ecc).
 
 #### 11.3 REGISTRAZIONE
 

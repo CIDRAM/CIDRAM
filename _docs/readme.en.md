@@ -183,7 +183,6 @@ File | Description
 /vault/fe_assets/_range.html | An HTML template for the front-end range tables page.
 /vault/fe_assets/_range_row.html | An HTML template for the front-end range tables page.
 /vault/fe_assets/_sections.html | An HTML template for the sections list.
-/vault/fe_assets/_sections_row.html | An HTML template for the sections list.
 /vault/fe_assets/_statistics.html | An HTML template for the front-end statistics page.
 /vault/fe_assets/_updates.html | An HTML template for the front-end updates page.
 /vault/fe_assets/_updates_row.html | An HTML template for the front-end updates page.
@@ -621,25 +620,25 @@ Relates to the HTML output used to generate the "Access Denied" page. If you're 
 PHPMailer configuration.
 
 ##### "EventLog"
-- @todo@
+- A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable.
 
 ##### "SkipAuthProcess"
-- @todo@
+- Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server.
 
 ##### "Enable2FA"
-- @todo@
+- This directive determines whether to use 2FA for front-end accounts.
 
 ##### "Host"
-- @todo@
+- The SMTP host to use for outbound email.
 
 ##### "Port"
-- @todo@
+- The port number to use for outbound email. Default = 587.
 
 ##### "SMTPSecure"
-- @todo@
+- The protocol to use when sending email via SMTP (TLS or SSL).
 
 ##### "SMTPAuth"
-- @todo@
+- This directive determines whether to authenticate SMTP sessions (should usually be left alone).
 
 ##### "Username"
 - @todo@

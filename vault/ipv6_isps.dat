@@ -48,18 +48,6 @@ Origin: AT
 Tag: World4You
 
 
-# ASN 48159 ("Telecommunication Infrastructure Company").
-# %Listed, Google Malware Dashboard: 1.53%.
-# %Listed, CleanTalk.org: 10.39%.
-# %Listed, abuseat.org (CBL-Listed): 4.27%.
-# Stop Forum Spam (SFS) listings: 127.
-# Updated: 2016.07.13 / Checked: 2018.04.10
-
-2a03:57c0::/32 Deny Generic
-Origin: IR
-Tag: AS48159
-
-
 # ASNs 24940, 37153 ("Hetzner Online GmbH").
 # %Listed, Google Malware Dashboard: 0.16% (AS24940), 0.19% (AS37153).
 # %Listed, CleanTalk.org: 33.97% (AS24940), 32.17% (AS37153).
@@ -183,14 +171,13 @@ Tag: INFOBOX
 
 
 # ASN 49335 ("Mir Telematiki Ltd").
-# %Listed, Google Malware Dashboard: 0.74%.
+# %Listed, Google Malware Dashboard: 0.11%.
 # %Listed, CleanTalk.org: 41.69%.
-# Stop Forum Spam (SFS) listings: 7,342.
-# Updated: 2018.04.10
+# Stop Forum Spam (SFS) listings: 5,544.
+# Updated: 2018.09.01
 
-2a03:a960:1000::/48 Deny Spam
-2a0a:a600::/29 Deny Spam
-Origin: DE
+2a05:4f80::/29 Deny Spam
+Origin: ES
 2a0a:f9c4::/32 Deny Spam
 Origin: EU
 2a0b:b86:fff0::/44 Deny Spam
@@ -200,13 +187,9 @@ Origin: GB
 2a0b:7087:fff0::/44 Deny Spam
 Origin: NL
 2a05:b80::/29 Deny Spam
-2a0c:4480::/29 Deny Spam
+2a0a:b385::/32 Deny Spam
 2a0c:9d80::/29 Deny Spam
 Origin: RU
-2602:ff62:1::/48 Deny Spam
-Origin: US
-2c0f:f738:1::/48 Deny Spam
-Origin: ZA
 Tag: Mir Telematiki Ltd
 
 
@@ -508,10 +491,10 @@ recaptcha:
 
 
 # ASN 6876 ("TeNeT Scientific Production Enterprise LLC").
-# %Listed, Google Malware Dashboard: 1.47%.
+# %Listed, Google Malware Dashboard: 1.77%.
 # %Listed, CleanTalk.org: 23.14%.
-# Stop Forum Spam (SFS) listings: 1,015.
-# Updated: 2016.07.20 / Checked: 2018.04.10
+# Stop Forum Spam (SFS) listings: 1,474.
+# Updated: 2016.07.20 / Checked: 2018.09.01
 
 2a04:2c00::/29 Deny Generic
 Origin: UA
@@ -777,10 +760,10 @@ recaptcha:
 # section in their "ignore.dat" file as a means of minimising the potential impact of false positives. A balanced
 # approach for those that may expect some such traffic, but not a lot of it, would be to not ignore this section, but
 # to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 3.20%.
+# %Listed, Google Malware Dashboard: 2.40%.
 # %Listed, CleanTalk.org: 36.22%.
-# Stop Forum Spam (SFS) listings: 164,904.
-# Updated: 2018.01.13 / Checked: 2018.04.24
+# Stop Forum Spam (SFS) listings: 91,829.
+# Updated: 2018.09.01
 
 2406:8500::/32 Deny Generic
 240e::/24 Deny Generic
@@ -795,6 +778,8 @@ Origin: GB
 2400:9380:8000::/47 Deny Generic
 2400:9380:8020::/47 Deny Generic
 2400:9380:8030::/48 Deny Generic
+2400:9380:8040::/48 Deny Generic
+2400:9380:8140::/48 Deny Generic
 2400:9380:8200::/47 Deny Generic
 2400:9380:8221::/48 Deny Generic
 Origin: HK
@@ -803,8 +788,8 @@ Origin: HK
 2605:9d80:8031::/48 Deny Generic
 2605:9d80:8041::/48 Deny Generic
 Origin: US
-2c0f:f7a8:8010::/47 Deny Generic
-2c0f:f7a8:8210::/47 Deny Generic
+2c0f:f7a8:8011::/48 Deny Generic
+2c0f:f7a8:8211::/48 Deny Generic
 Origin: ZA
 Tag: China Backbone 4134
 ---
@@ -917,11 +902,11 @@ recaptcha:
 # the potential impact of false positives. A balanced approach for those that may expect some such traffic, but not a
 # lot of it, would be to not ignore this section, but to ensure that the reCAPTCHA feature is enabled in their
 # configuration.
-# %Listed, Google Malware Dashboard: 0.56%.
+# %Listed, Google Malware Dashboard: 0.27%.
 # %Listed, CleanTalk.org: 14.37%.
-# %Listed, abuseat.org (CBL-Listed): 3.78%.
-# Stop Forum Spam (SFS) listings: 12,345.
-# Updated: 2018.04.29
+# %Listed, abuseat.org (CBL-Listed): 2.75%.
+# Stop Forum Spam (SFS) listings: 17,155.
+# Updated: 2018.09.01
 
 2001:df2:ca00::/48 Deny Generic
 2001:df2:ce00::/48 Deny Generic
@@ -939,15 +924,16 @@ recaptcha:
 2001:ee0:4280::/42 Deny Generic
 2001:ee0:4340::/42 Deny Generic
 2001:ee0:4380::/42 Deny Generic
+2001:ee0:4400::/42 Deny Generic
 2001:ee0:44c0::/42 Deny Generic
 2001:ee0:4500::/42 Deny Generic
 2001:ee0:4580::/41 Deny Generic
 2001:ee0:4640::/42 Deny Generic
-2001:ee0:46c0::/42 Deny Generic
+2001:ee0:4680::/41 Deny Generic
 2001:ee0:4700::/41 Deny Generic
 2001:ee0:47c0::/42 Deny Generic
 2001:ee0:4840::/42 Deny Generic
-2001:ee0:4880::/42 Deny Generic
+2001:ee0:4880::/41 Deny Generic
 2001:ee0:4900::/40 Deny Generic
 2001:ee0:4b00::/40 Deny Generic
 2001:ee0:4c00::/40 Deny Generic
@@ -955,6 +941,7 @@ recaptcha:
 2001:ee0:4d80::/42 Deny Generic
 2001:ee0:4e00::/42 Deny Generic
 2001:ee0:4f00::/41 Deny Generic
+2001:ee0:5080::/41 Deny Generic
 2001:ee0:5100::/40 Deny Generic
 2001:ee0:5200::/40 Deny Generic
 2001:ee0:5300::/42 Deny Generic
@@ -968,15 +955,16 @@ recaptcha:
 2001:ee0:7280::/42 Deny Generic
 2001:ee0:7340::/42 Deny Generic
 2001:ee0:73c0::/42 Deny Generic
+2001:ee0:7400::/42 Deny Generic
 2001:ee0:74c0::/42 Deny Generic
 2001:ee0:7500::/42 Deny Generic
 2001:ee0:7580::/41 Deny Generic
 2001:ee0:7640::/42 Deny Generic
-2001:ee0:76c0::/42 Deny Generic
+2001:ee0:7680::/41 Deny Generic
 2001:ee0:7700::/42 Deny Generic
 2001:ee0:77c0::/42 Deny Generic
 2001:ee0:7840::/42 Deny Generic
-2001:ee0:7880::/42 Deny Generic
+2001:ee0:7880::/41 Deny Generic
 2001:ee0:7900::/40 Deny Generic
 2405:f980::/48 Deny Generic
 Origin: VN
@@ -1466,6 +1454,20 @@ recaptcha:
 2a00:1d88::/32 Deny Generic
 Origin: UA
 Tag: IT Systems LLC
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 31343 ("Intertelecom Ltd").
+# Caught trying to hack into WordPress sites.
+# %Listed, CleanTalk.org: 12.75%.
+# Stop Forum Spam (SFS) listings: 224.
+# Updated: 2018.09.01
+
+2a04:1d00::/29 Deny Generic
+Origin: UA
+Tag: Intertelecom Ltd
 ---
 recaptcha:
  enabled: true

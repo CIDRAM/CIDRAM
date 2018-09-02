@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.08.26).
+ * This file: Dutch language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Lege UA blocker module';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blokker module';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?cidram-page=logout">Uitloggen</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Uitloggen</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Deze configuratie richtlijnen kunnen vereist zijn voor functionaliteit waarbij e-mail wordt verzonden. Raadpleeg de documentatie voor meer informatie en aanbevolen waarden.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Deze richtlijn bepaalt of 2FA wordt gebruikt voor frontend-accounts.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'Een bestand voor het loggen van alle evenementen met betrekking tot PHPMailer. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'De SMTP-host dat moet worden gebruikt voor uitgaande e-mail.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'Het wachtwoord voor het verzenden van e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Het poortnummer dat moet worden gebruikt voor uitgaande e-mail. Standaard = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Deze richtlijn bepaalt of SMTP-sessies moeten worden geverifieerd (moet meestal alleen worden gelaten).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Het protocol voor het verzenden van e-mail via SMTP (TLS of SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Wanneer <code>true</code>, geeft PHPMailer opdracht om het verificatieproces over te slaan dat normaal optreedt bij het verzenden van e-mail via SMTP. Dit moet worden vermeden, omdat bij het overslaan van dit verificatieproces uitgaande e-mail aan MITM-aanvallen kan worden blootgesteld, maar kan nodig zijn in gevallen waarin dit verificatieproces verhindert dat PHPMailer verbinding maakt met een SMTP-server.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'De gebruikersnaam voor het verzenden van e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'Het antwoordadres voor het verzenden van e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'De antwoordnaam voor het verzenden van e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'Het afzenderadres voor het verzenden van e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'De naam van de afzender voor het verzenden van e-mail via SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Instabiel/Experimenteel!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Bestand om de frontend login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Zoeken op gethostbyaddr toestaan als UDP niet beschikbaar is? True = Ja [Standaard]; False = Nee.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet
 $CIDRAM['lang']['state_risk_high'] = 'Hoog';
 $CIDRAM['lang']['state_risk_low'] = 'Laag';
 $CIDRAM['lang']['state_risk_medium'] = 'Middelgroot';
-$CIDRAM['lang']['state_sl_totals'] = 'Totalen (Signatures: <span class="txtRd">%s</span> – Signature secties: <span class="txtRd">%s</span> – Signature bestanden: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totalen (Signatures: <span class="txtRd">%s</span> – Signature secties: <span class="txtRd">%s</span> – Signature bestanden: <span class="txtRd">%s</span> – Unieke sectie etiketten: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = ['Momenteel controleren %s IP.', 'Momenteel controleren %s IP\'s.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'De al bijgewerkt verbergen';

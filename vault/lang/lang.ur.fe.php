@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.08.26).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'خالی UA بلاکر ماڈیول';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex کی بلاکر ماڈیول';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ہوم</a> | <a href="?cidram-page=logout">لاگ آوٹ</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">لاگ آوٹ</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'ان ترتیبات کے ہدایات کی ضرورت ہوسکتی ہے جو ای میل بھیجنے میں شامل ہیں. مزید معلومات اور سفارش کردہ اقدار کیلئے دستاویزات کا حوالہ دیتے ہیں.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'یہ تعین کرتا ہے کہ 2FA استعمال کیا جانا چاہئے.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے SMTP میزبان.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'ای میل بھیجنے کے لئے پاس ورڈ.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے پورٹ نمبر. پہلے سے طے شدہ = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'کیا SMTP سیشن کو مستند کیا جاسکتا ہے؟ (عام طور پر اس کو نظر انداز کرنا چاہئے).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'ای میل بھیجنے پر پروٹوکول استعمال کرنے کے لئے (TLS یا SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'جب <code dir="ltr">true</code>، SMTP کی تصدیق کے عمل کو چھوڑ دیا گیا ہے. اس سے بچنا چاہئے. اگر عمل ختم ہو جاتا ہے تو، آؤٹ باؤنڈ ای میل MITM حملوں سے بے نقاب ہوسکتا ہے. مخصوص معاملات میں ضروری ہوسکتا ہے (مثال کے طور پر، جب SMTP سرور مناسب طریقے سے منسلک نہیں کرے گا).';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'ای میل بھیجنے کے لئے صارف کا نام.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'ای میل بھیجنے پر جواب کا پتہ.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'ای میل بھیجنے پر جواب کا نام.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'ای میل بھیجنے کے لئے بھیجنے والے کا پتہ.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'ای میل بھیجنے کے لئے بھیجنے کا نام.';
 $CIDRAM['lang']['config_experimental'] = 'غیر مستحکم / تجرباتی!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'سامنے کے آخر میں لاگ ان کوششوں لاگنگ کے لئے دائر. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'جب UDP دستیاب نہیں ہے تو gethostbyaddr کی تلاش کی اجازت دیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'انتباہ: یہ اکاؤنٹ �
 $CIDRAM['lang']['state_risk_high'] = 'اعلی';
 $CIDRAM['lang']['state_risk_low'] = 'کم';
 $CIDRAM['lang']['state_risk_medium'] = 'درمیانہ';
-$CIDRAM['lang']['state_sl_totals'] = 'مجموعی طور پر (دستخط: <span class="txtRd">%s</span> – دستخط حصوں: <span class="txtRd">%s</span> – دستخط فائلیں: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'مجموعی طور پر (دستخط: <span class="txtRd">%s</span> – دستخط حصوں: <span class="txtRd">%s</span> – دستخط فائلیں: <span class="txtRd">%s</span> – منفرد سیکشن ٹیگ: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'فی الحال %s IP ٹریکنگ.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'غیر فرسودہ مت چھپاو';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'غیر فرسودہ چھپائیں';

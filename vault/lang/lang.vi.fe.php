@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.08.26).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Mô-đun chặn UA trống';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Mô-đun cho chặn Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?cidram-page=logout">Đăng Xuất</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Đăng Xuất</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Các chỉ thị cấu hình này có thể được yêu cầu cho các chức năng liên quan đến việc gửi email. Vui lòng tham khảo tài liệu để biết thêm thông tin và các giá trị được đề xuất.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Chỉ thị này xác định có nên sử dụng 2FA cho tài khoản front-end hay không.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'Một tập tin để ghi nhật ký tất cả các sự kiện liên quan đến PHPMailer. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'Máy chủ SMTP để sử dụng cho email gửi đi.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'Mật khẩu để sử dụng khi gửi email qua SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Số cổng để sử dụng cho email gửi đi. Mặc định = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Chỉ thị này xác định xem có nên xác thực các phiên SMTP (thường nên để lại một mình).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Giao thức sử dụng khi gửi email qua SMTP (TLS hoặc SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Đặt chỉ thị này thành <code>true</code> chỉ thị cho PHPMailer bỏ qua quy trình xác thực thông thường thường xảy ra khi gửi email qua SMTP. Điều này nên tránh, bởi vì bỏ qua quá trình này có thể tiết lộ email gửi đến các cuộc tấn công MITM, nhưng có thể cần thiết trong trường hợp quá trình này ngăn PHPMailer kết nối với máy chủ SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'Tên người dùng để sử dụng khi gửi email qua SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'Địa chỉ trả lời để trích dẫn khi gửi email qua SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'Tên trả lời để trích dẫn khi gửi email qua SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'Địa chỉ người gửi để trích dẫn khi gửi email qua SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'Tên người gửi để trích dẫn khi gửi email qua SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Không ổn định / Thử nghiệm!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Cho phép tra cứu gethostbyaddr khi UDP không khả dụng? True = Vâng [Mặc định]; False = Không.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này kh
 $CIDRAM['lang']['state_risk_high'] = 'Cao';
 $CIDRAM['lang']['state_risk_low'] = 'Thấp';
 $CIDRAM['lang']['state_risk_medium'] = 'Trung bình';
-$CIDRAM['lang']['state_sl_totals'] = 'Tổng cộng (Chữ ký: <span class="txtRd">%s</span> – Phần chữ ký: <span class="txtRd">%s</span> – Tập tin chữ ký: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Tổng cộng (Chữ ký: <span class="txtRd">%s</span> – Phần chữ ký: <span class="txtRd">%s</span> – Tập tin chữ ký: <span class="txtRd">%s</span> – Gắn thẻ phần độc nhất: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Hiện đang giám sát %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';

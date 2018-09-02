@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.08.26).
+ * This file: Hindi language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'खाली UA अवरोधक म
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex अवरोधक मॉड्यूल';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">होमपेज</a> | <a href="?cidram-page=logout">लोग आउट</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">लोग आउट</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'इन कॉन्फ़िगरेशन निर्देशों को कार्यक्षमता के लिए आवश्यक हो सकता है जिसमें ईमेल भेजना शामिल है। कृपया अधिक जानकारी और अनुशंसित मानों के लिए प्रलेखन देखें।';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'यह निर्देश निर्धारित करता है कि सामने के अंत खाते 2FA का उपयोग करते हैं या नहीं।';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'PHPMailer के संबंध में सभी घटनाओं को लॉग इन करने के लिए एक फ़ाइल। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'आउटबाउंड ईमेल के लिए उपयोग करने के लिए SMTP होस्ट।';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'ईमेल भेजते समय उपयोग करने के लिए पासवर्ड।';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'आउटबाउंड ईमेल के लिए उपयोग करने के लिए पोर्ट नंबर। डिफ़ॉल्ट = 587।';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'यह निर्देश निर्धारित करता है कि SMTP सत्र प्रमाणित करना है या नहीं (आपको आमतौर पर इसे अकेला छोड़ देना चाहिए)।';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'ईमेल भेजने के दौरान उपयोग करने के लिए प्रोटोकॉल (TLS या SSL)।';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'इस निर्देश को <code>true</code> पर सेट करना प्रमाणीकरण प्रक्रिया को बंद कर देता है जो आमतौर पर तब होता है जब PHPMailer SMTP के माध्यम से ईमेल भेजता है। इससे बचा जाना चाहिए, क्योंकि इस प्रक्रिया को बंद करने से MITM हमलों के लिए आउटबाउंड ईमेल का खुलासा हो सकता है। हालांकि कुछ मामलों में यह आवश्यक हो सकता है, जैसे कि जब PHPMailer किसी SMTP सर्वर से कनेक्ट करने में सक्षम नहीं है।';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'ईमेल भेजने समय उपयोग करने के लिए उपयोगकर्ता नाम।';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'ईमेल भेजने के लिए उत्तर पता।';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'ईमेल भेजने के लिए उत्तर का नाम।';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'ईमेल भेजने के लिए प्रेषक पता।';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'ईमेल भेजने के लिए प्रेषक का नाम।';
 $CIDRAM['lang']['config_experimental'] = 'अस्थिर/प्रायोगिक!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'सामने के अंत में प्रवेश प्रयासों प्रवेश के लिए दायर। एक फाइल नाम निर्दिष्ट करें, या निष्क्रिय करने के लिए खाली छोड़।';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'जब UDP अनुपलब्ध हो तो gethostbyaddr लुकअप की अनुमति दें? True(सच्चे) = हाँ [डिफ़ॉल्ट]; False(झूठी) = नहीं।';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'चेतावनी: यह ख
 $CIDRAM['lang']['state_risk_high'] = 'भारी';
 $CIDRAM['lang']['state_risk_low'] = 'कम';
 $CIDRAM['lang']['state_risk_medium'] = 'मध्यम';
-$CIDRAM['lang']['state_sl_totals'] = 'समूचा (हस्ताक्षर: <span class="txtRd">%s</span> – हस्ताक्षर अनुभाग: <span class="txtRd">%s</span> – हस्ताक्षर फ़ाइलें: <span class="txtRd">%s</span>)।';
+$CIDRAM['lang']['state_sl_totals'] = 'समूचा (हस्ताक्षर: <span class="txtRd">%s</span> – हस्ताक्षर अनुभाग: <span class="txtRd">%s</span> – हस्ताक्षर फ़ाइलें: <span class="txtRd">%s</span> – अद्वितीय अनुभाग टैग: <span class="txtRd">%s</span>)।';
 $CIDRAM['lang']['state_tracking'] = ['वर्तमान में %s IP पता ट्रैकिंग।', 'वर्तमान में %s IP पते ट्रैकिंग'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'गैर पदावनत को छुपाएं न करें';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'गैर पदावनत को छिपाना';

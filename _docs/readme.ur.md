@@ -186,7 +186,6 @@
 &nbsp; <div dir="rtl" style="display:inline;">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range.html
 &nbsp; <div dir="rtl" style="display:inline;">رینج میزیں لئے ایک HTML سانچے.</div> | /vault/fe_assets/_range_row.html
 &nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections.html
-&nbsp; <div dir="rtl" style="display:inline;">حصوں کی فہرست کے لئے ایک HTML ٹیمپلیٹ.</div> | /vault/fe_assets/_sections_row.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اعداد و شمار صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_statistics.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
@@ -756,47 +755,73 @@
  <li>ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے CIDRAM ہدایت کرنے کے لئے، "css_url" متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، CIDRAM ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے.</li>
 </ul></div>
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### <div dir="rtl">"PHPMailer" (قسم)<br /></div>
+<div dir="rtl">PHPMailer ترتیب.<br /><br /></div>
 
-##### "EventLog"
-- @todo@
+##### <div dir="rtl">"EventLog"<br /></div>
+<div dir="rtl"><ul>
+ <li>PHPMailer کے سلسلے میں تمام واقعات کو لاگ ان کرنے کے لئے ایک فائل. ایک فائل کا نام کی وضاحت کریں، یا غیر فعال کرنے کو خالی چھوڑ.</li>
+</ul></div>
 
-##### "SkipAuthProcess"
-- @todo@
+##### <div dir="rtl">"SkipAuthProcess"<br /></div>
+<div dir="rtl"><ul>
+ <li>جب <code dir="ltr">true</code>، SMTP کی تصدیق کے عمل کو چھوڑ دیا گیا ہے. اس سے بچنا چاہئے. اگر عمل ختم ہو جاتا ہے تو، آؤٹ باؤنڈ ای میل MITM حملوں سے بے نقاب ہوسکتا ہے. مخصوص معاملات میں ضروری ہوسکتا ہے (مثال کے طور پر، جب SMTP سرور مناسب طریقے سے منسلک نہیں کرے گا).</li>
+</ul></div>
 
-##### "Enable2FA"
-- @todo@
+##### <div dir="rtl">"Enable2FA"<br /></div>
+<div dir="rtl"><ul>
+ <li>یہ تعین کرتا ہے کہ 2FA استعمال کیا جانا چاہئے.</li>
+</ul></div>
 
-##### "Host"
-- @todo@
+##### <div dir="rtl">"Host"<br /></div>
+<div dir="rtl"><ul>
+ <li>آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے SMTP میزبان.</li>
+</ul></div>
 
-##### "Port"
-- @todo@
+##### <div dir="rtl">"Port"<br /></div>
+<div dir="rtl"><ul>
+ <li>آؤٹ پاؤنڈ ای میل کے لئے استعمال کرنے کے لئے پورٹ نمبر. پہلے سے طے شدہ = 587.</li>
+</ul></div>
 
-##### "SMTPSecure"
-- @todo@
+##### <div dir="rtl">"SMTPSecure"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے پر پروٹوکول استعمال کرنے کے لئے (TLS یا SSL).</li>
+</ul></div>
 
-##### "SMTPAuth"
-- @todo@
+##### <div dir="rtl">"SMTPAuth"<br /></div>
+<div dir="rtl"><ul>
+ <li>کیا SMTP سیشن کو مستند کیا جاسکتا ہے؟ (عام طور پر اس کو نظر انداز کرنا چاہئے).</li>
+</ul></div>
 
-##### "Username"
-- @todo@
+##### <div dir="rtl">"Username"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے صارف کا نام.</li>
+</ul></div>
 
-##### "Password"
-- @todo@
+##### <div dir="rtl">"Password"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے پاس ورڈ.</li>
+</ul></div>
 
-##### "setFromAddress"
-- @todo@
+##### <div dir="rtl">"setFromAddress"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے بھیجنے والے کا پتہ.</li>
+</ul></div>
 
-##### "setFromName"
-- @todo@
+##### <div dir="rtl">"setFromName"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے کے لئے بھیجنے کا نام.</li>
+</ul></div>
 
-##### "addReplyToAddress"
-- @todo@
+##### <div dir="rtl">"addReplyToAddress"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے پر جواب کا پتہ.</li>
+</ul></div>
 
-##### "addReplyToName"
-- @todo@
+##### <div dir="rtl">"addReplyToName"<br /></div>
+<div dir="rtl"><ul>
+ <li>ای میل بھیجنے پر جواب کا نام.</li>
+</ul></div>
 
 ---
 
@@ -1637,4 +1662,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 10 اگست 2018 (2018.08.10).</div>
+<div dir="rtl">آخری تازہ کاری: 2 اگست 2018 (2018.09.02).</div>

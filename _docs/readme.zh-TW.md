@@ -184,7 +184,6 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 /vault/fe_assets/_range.html | 範圍表的HTML模板。
 /vault/fe_assets/_range_row.html | 範圍表的HTML模板。
 /vault/fe_assets/_sections.html | 章節列表的HTML模板。
-/vault/fe_assets/_sections_row.html | 章節列表的HTML模板。
 /vault/fe_assets/_statistics.html | 前端統計頁面的HTML模板。
 /vault/fe_assets/_updates.html | 前端更新頁面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新頁面的HTML模板。
@@ -618,47 +617,47 @@ CIDRAM可以手動或通過前端更新。​CIDRAM也可以通過Composer或Wor
 ##### 『css_url』
 - 模板文件為個性化主題使用外部CSS屬性，​而模板文件為t標準主題使用內部CSS屬性。​以指令CIDRAM使用模板文件為個性化主題，​指定公共HTTP地址的您的個性化主題的CSS文件使用`css_url`變量。​如果您離開這個變量空白，​CIDRAM將使用模板文件為默認主題。
 
-#### "PHPMailer" (Category)
-PHPMailer configuration.
+#### 『PHPMailer』 （類別）
+PHPMailer配置。
 
-##### "EventLog"
-- @todo@
+##### 『EventLog』
+- 用於記錄與PHPMailer相關的所有事件的文件。​指定一個文件名，​或留空以禁用。
 
-##### "SkipAuthProcess"
-- @todo@
+##### 『SkipAuthProcess』
+- 將此指令設置為`true`會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。
 
-##### "Enable2FA"
-- @todo@
+##### 『Enable2FA』
+- 該指令確定是否將2FA用於前端帳戶。
 
-##### "Host"
-- @todo@
+##### 『Host』
+- 用於出站電子郵件的SMTP主機。
 
-##### "Port"
-- @todo@
+##### 『Port』
+- 用於出站電子郵件的端口號。​標準=587。
 
-##### "SMTPSecure"
-- @todo@
+##### 『SMTPSecure』
+- 通過SMTP發送電子郵件時使用的協議（TLS或SSL）。
 
-##### "SMTPAuth"
-- @todo@
+##### 『SMTPAuth』
+- 此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。
 
-##### "Username"
-- @todo@
+##### 『Username』
+- 通過SMTP發送電子郵件時使用的用戶名。
 
-##### "Password"
-- @todo@
+##### 『Password』
+- 通過SMTP發送電子郵件時使用的密碼。
 
-##### "setFromAddress"
-- @todo@
+##### 『setFromAddress』
+- 通過SMTP發送電子郵件時引用的發件人地址。
 
-##### "setFromName"
-- @todo@
+##### 『setFromName』
+- 通過SMTP發送電子郵件時引用的發件人姓名。
 
-##### "addReplyToAddress"
-- @todo@
+##### 『addReplyToAddress』
+- 通過SMTP發送電子郵件時引用的回复地址。
 
-##### "addReplyToName"
-- @todo@
+##### 『addReplyToName』
+- 通過SMTP發送電子郵件時引用的回複姓名。
 
 ---
 
@@ -1458,4 +1457,4 @@ CIDRAM不收集或處理任何信息用於營銷或廣告目的，既不銷售�
 ---
 
 
-最後更新：2018年8月10日。
+最後更新：2018年9月2日。

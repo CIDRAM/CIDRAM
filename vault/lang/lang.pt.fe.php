@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2018.08.26).
+ * This file: Portuguese language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Módulo de bloqueador de UA vazio';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Módulo bloqueador de Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?cidram-page=logout">Sair</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Sair</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Essas diretivas de configuração podem ser necessárias para a funcionalidade que envolve o envio de email. Consulte a documentação para mais informações e valores recomendados.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Esta diretiva determina se deve usar 2FA para contas front-end.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'Um arquivo para registrar todos os eventos em relação ao PHPMailer. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'O host SMTP a ser usado para e-mail de saída.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'A senha a ser usada ao enviar e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'O número da porta a ser usado para o e-mail de saída. Padrão = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Esta diretiva determina se autenticar sessões SMTP (geralmente deve ser deixado em paz).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'O protocolo a ser usado ao enviar e-mail via SMTP (TLS ou SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Definir essa diretiva como <code>true</code> instrui o PHPMailer a ignorar o processo de autenticação que normalmente ocorre ao enviar e-mail via SMTP. Isso deve ser evitado, porque ignorar esse processo pode expor o e-mail de saída a ataques MITM, mas pode ser necessário nos casos em que esse processo impedir que o PHPMailer se conecte a um servidor SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'O nome de usuário a ser usada ao enviar e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'O endereço de resposta a ser citado ao enviar e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'O nome da resposta a ser citado ao enviar e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'O endereço do remetente a ser citado ao enviar e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'O nome do remetente a ser citado ao enviar e-mail via SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Instável/Experimental!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Permitir pesquisas gethostbyaddr quando o UDP não está disponível? True = Sim [Padrão]; False = Não.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Atenção: Esta conta não está 
 $CIDRAM['lang']['state_risk_high'] = 'Alto';
 $CIDRAM['lang']['state_risk_low'] = 'Baixo';
 $CIDRAM['lang']['state_risk_medium'] = 'Médio';
-$CIDRAM['lang']['state_sl_totals'] = 'Totais (Assinaturas: <span class="txtRd">%s</span> – Seções de assinatura: <span class="txtRd">%s</span> – Arquivos de assinatura: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totais (Assinaturas: <span class="txtRd">%s</span> – Seções de assinatura: <span class="txtRd">%s</span> – Arquivos de assinatura: <span class="txtRd">%s</span> – Etiquetas de seção único: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = ['Atualmente monitorando %s IP.', 'Atualmente monitorando %s IPs.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Não ocultar não desatualizado';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Ocultar não desatualizado';

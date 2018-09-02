@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.08.26).
+ * This file: Front-end functions file (last modified: 2018.09.02).
  */
 
 /**
@@ -2052,6 +2052,7 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
     $CIDRAM['FE']['SL_Signatures'] = 0;
     $CIDRAM['FE']['SL_Sections'] = 0;
     $CIDRAM['FE']['SL_Files'] = count($Files);
+    $CIDRAM['FE']['SL_Unique'] = 0;
     $Out = '';
     $SectionsForIgnore = [];
     $SignaturesCount = [];
@@ -2136,6 +2137,7 @@ $CIDRAM['SectionsHandler'] = function ($Files) use (&$CIDRAM) {
     }
     $Class = 'ng2';
     ksort($SectionsForIgnore);
+    $CIDRAM['FE']['SL_Unique'] = count($SectionsForIgnore);
     foreach ($SectionsForIgnore as $Section => $State) {
         $ThisCount = $CIDRAM['Number_L10N'](isset($SignaturesCount[$Section]) ? $SignaturesCount[$Section] : 0);
         $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';

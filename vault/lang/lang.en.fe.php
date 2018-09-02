@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2018.08.26).
+ * This file: English language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Empty UA blocker module';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blocker module';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?cidram-page=logout">Log Out</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Log Out</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'These configuration directives may be required for functionality that involves sending email. Please refer to the documentation for more information and recommended values.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'This directive determines whether to use 2FA for front-end accounts.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'A file for logging all events in relation to PHPMailer. Specify a filename, or leave blank to disable.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'The SMTP host to use for outbound email.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'The password to use when sending email via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'The port number to use for outbound email. Default = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'This directive determines whether to authenticate SMTP sessions (should usually be left alone).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'The protocol to use when sending email via SMTP (TLS or SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Setting this directive to `true` instructs PHPMailer to skip the normal authentication process that normally occurs when sending email via SMTP. This should be avoided, because skipping this process may expose outbound email to MITM attacks, but may be necessary in cases where this process prevents PHPMailer from connecting to an SMTP server.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'The username to use when sending email via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'The reply address to cite when sending email via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'The reply name to cite when sending email via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'The sender address to cite when sending email via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'The sender name to cite when sending email via SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Unstable/Experimental!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File for logging front-end login attempts. Specify a filename, or leave blank to disable.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Allow gethostbyaddr lookups when UDP is unavailable? True = Yes [Default]; False = No.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Warning: This account is not usin
 $CIDRAM['lang']['state_risk_high'] = 'High';
 $CIDRAM['lang']['state_risk_low'] = 'Low';
 $CIDRAM['lang']['state_risk_medium'] = 'Medium';
-$CIDRAM['lang']['state_sl_totals'] = 'Totals (Signatures: <span class="txtRd">%s</span> – Signature sections: <span class="txtRd">%s</span> – Signature files: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totals (Signatures: <span class="txtRd">%s</span> – Signature sections: <span class="txtRd">%s</span> – Signature files: <span class="txtRd">%s</span> – Unique section tags: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = ['Currently tracking %s IP.', 'Currently tracking %s IPs.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Don\'t hide non-outdated';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Hide non-outdated';

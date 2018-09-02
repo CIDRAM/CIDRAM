@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.08.26).
+ * This file: French language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Module bloqueur UA vide';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Module de blocage pour Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?cidram-page=logout">Déconnecter</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Déconnecter</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Ces directives de configuration peuvent être nécessaires pour les fonctionnalités impliquant l\'envoi d\'e-mails. Veuillez vous reporter à la documentation pour plus d\'informations et les valeurs recommandées.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Cette directive détermine s\'il faut utiliser 2FA pour les comptes frontaux.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'Fichier pour l\'enregistrement de tous les événements relatifs à PHPMailer. Spécifier un fichier, ou laisser vide à désactiver.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'Hôte SMTP à utiliser pour les e-mails sortants.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'Le mot de passe à utiliser lors de l\'envoi d\'e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Le numéro de port à utiliser pour l\'e-mail sortant. Défaut = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Cette directive détermine si les sessions SMTP doivent être authentifiées (elles doivent généralement être laissées seules).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Le protocole à utiliser lors de l\'envoi d\'e-mail via SMTP (TLS ou SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Définir cette directive sur <code>true</code> instruit à PHPMailer de sauter le processus d\'authentification qui se produit normalement lors de l\'envoi d\'e-mail via SMTP. Cela doit être évité, car sauter du processus peut exposer l\'e-mail sortant aux attaques MITM, mais peut être nécessaire dans les cas où ce processus empêche PHPMailer de se connecter à un serveur SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'Le nom d\'utilisateur à utiliser lors de l\'envoi d\'e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'L\'adresse de réponse à citer lors de l\'envoi d\'e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'Le nom pour répondre à citer lors de l\'envoi d\'e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'L\'adresse de l\'expéditeur à citer lors de l\'envoi d\'e-mail via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'Le nom de l\'expéditeur à citer lors de l\'envoi d\'e-mail via SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Instable/Expérimental !';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Autoriser les recherches par gethostbyaddr lorsque UDP est indisponible ? True = Yes [Default]; False = No.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Attention : Ce compte n\'utilise
 $CIDRAM['lang']['state_risk_high'] = 'Élevé';
 $CIDRAM['lang']['state_risk_low'] = 'Faible';
 $CIDRAM['lang']['state_risk_medium'] = 'Moyen';
-$CIDRAM['lang']['state_sl_totals'] = 'Totaux (Signatures : <span class="txtRd">%s</span> – Sections de signature : <span class="txtRd">%s</span> – Fichiers de signature : <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totaux (Signatures : <span class="txtRd">%s</span> – Sections de signature : <span class="txtRd">%s</span> – Fichiers de signature : <span class="txtRd">%s</span> – Étiquettes de section uniques : <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = ['Actuellement en cours de surveillance de %s adresse IP.', 'Actuellement en cours de surveillance de %s adresses IP.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non dépassé';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Masquer non dépassé';

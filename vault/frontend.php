@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.08.26).
+ * This file: Front-end handler (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2380,13 +2380,11 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
         }
 
         /** Process signature files. */
-        if (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6'])) {
-            $CIDRAM['FE']['Data'] = '        <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n";
-        } else {
-            $CIDRAM['FE']['Data'] = $CIDRAM['SectionsHandler'](
-                array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
-            );
-        }
+        $CIDRAM['FE']['Data'] = (
+            (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6']))
+        ) ? '        <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n" : $CIDRAM['SectionsHandler'](
+            array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
+        );
 
         /** Calculate and append page load time, and append totals. */
         $CIDRAM['FE']['Data'] = '<div class="s">' . sprintf(
@@ -2396,7 +2394,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
             $CIDRAM['lang']['state_sl_totals'],
             $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Signatures']) ? $CIDRAM['FE']['SL_Signatures'] : 0),
             $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Sections']) ? $CIDRAM['FE']['SL_Sections'] : 0),
-            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0)
+            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Files']) ? $CIDRAM['FE']['SL_Files'] : 0),
+            $CIDRAM['Number_L10N'](isset($CIDRAM['FE']['SL_Unique']) ? $CIDRAM['FE']['SL_Unique'] : 0)
         ) . '</div><hr />' . $CIDRAM['FE']['Data'];
 
         /** Parse output. */

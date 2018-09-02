@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.08.26).
+ * This file: Korean language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,9 +55,21 @@ $CIDRAM['lang']['Name: module_ua.php'] = '빈 UA 차단기 모듈';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex 차단기 모듈';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?cidram-page=logout">로그 아웃</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">로그 아웃</a>';
-$CIDRAM['lang']['config_PHPMailer'] = '이러한 구성 지시문은 전자 이메일 보내기와 관련된 기능에 필요할 수 있습니다. 자세한 정보 및 권장 값은 설명서를 참조하십시오.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = '이 지시문은 프런트 엔드 계정에 2FA를 사용할지 여부를 결정합니다.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'PHPMailer와 관련된 모든 이벤트를 기록하는 파일입니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = '아웃 바운드 전자 메일에 사용할 SMTP 호스트입니다.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'SMTP를 통해 이메일을 보낼 때 사용할 비밀번호입니다.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = '아웃 바운드 이메일에 사용할 포트 번호입니다. Default (기본 설정) = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = '이 지시문은 SMTP 세션을 인증할지 여부를 결정합니다 (보통 이것을 무시해야합니다).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'SMTP를 통해 이메일을 보낼 때 사용할 프로토콜 (TLS 또는 SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = '<code>true</code> 일 때, PHPMailer는 전자 메일 전송을위한 SMTP 인증 프로세스를 건너 뛰도록 지시합니다. 이 프로세스를 건너 뛰면 아웃 바운드 전자 메일이 MITM 공격에 노출 될 수 있으므로 피해야합니다. 특정 경우에 필요할 수 있음 (예 : PHPMailer가 SMTP 서버에 제대로 연결할 수없는 경우).';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'SMTP를 통해 이메일을 보낼 때 사용할 사용자 이름입니다.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'SMTP를 통해 전자 메일을 보낼 때 인용 할 회신 주소입니다.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'SMTP를 통해 이메일을 보낼 때 인용 할 회신 이름입니다.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 주소입니다.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'SMTP를 통해 전자 메일을 보낼 때 인용 할 보낸 사람 이름입니다.';
 $CIDRAM['lang']['config_experimental'] = '불안정/실험적!';
-$CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
+$CIDRAM['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP를 사용할 수 없을 때 gethostbyaddr 검색을 허용 하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오.';
 $CIDRAM['lang']['config_general_ban_override'] = '"infraction_limit"를 초과하면 "forbid_on_block"를 덮어 쓰시겠습니까? 덮어 쓸 때 : 차단 된 요청은 빈 페이지를 반환합니다 (템플릿 파일은 사용되지 않습니다). 200 = 덮어 쓰지 (Default / 기본값). 다른 값은 "forbid_on_block"에 사용할 수있는 값과 같습니다.';
 $CIDRAM['lang']['config_general_default_algo'] = '향후 모든 암호와 세션에 사용할 알고리즘을 정의합니다. 옵션 : PASSWORD_DEFAULT (default / 기본 설정), PASSWORD_BCRYPT, PASSWORD_ARGON2I (PHP &gt;= 7.2.0 가 필요합니다).';
@@ -76,9 +88,9 @@ $CIDRAM['lang']['config_general_lang'] = 'CIDRAM의 기본 언어를 설정합�
 $CIDRAM['lang']['config_general_log_banned_ips'] = '금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오.';
 $CIDRAM['lang']['config_general_log_rotation_action'] = '로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다. Delete = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 삭제하십시오. Archive = 제한이 더 이상 초과되지 않을 때까지, 가장 오래된 로그 파일을 보관 한 다음 삭제하십시오.';
 $CIDRAM['lang']['config_general_log_rotation_limit'] = '로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다.';
-$CIDRAM['lang']['config_general_logfile'] = '액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름 지정하거나 해제하려면 비워하십시오.';
-$CIDRAM['lang']['config_general_logfileApache'] = '액세스 시도 저지를 기록, Apache 스타일. 파일 이름 지정하거나 해제하려면 비워하십시오.';
-$CIDRAM['lang']['config_general_logfileSerialized'] = '액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름 지정하거나 해제하려면 비워하십시오.';
+$CIDRAM['lang']['config_general_logfile'] = '액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
+$CIDRAM['lang']['config_general_logfileApache'] = '액세스 시도 저지를 기록, Apache 스타일. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
+$CIDRAM['lang']['config_general_logfileSerialized'] = '액세스 시도 저지를 기록 직렬화되었습니다. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
 $CIDRAM['lang']['config_general_maintenance_mode'] = '유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.';
 $CIDRAM['lang']['config_general_max_login_attempts'] = '로그인 시도 최대 횟수입니다.';
 $CIDRAM['lang']['config_general_numbers'] = '어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오.';
@@ -100,7 +112,7 @@ $CIDRAM['lang']['config_recaptcha_api'] = '어떤 API를 사용할 수 있습니
 $CIDRAM['lang']['config_recaptcha_expiry'] = 'reCAPTCHA 인스턴스를 기억 시간.';
 $CIDRAM['lang']['config_recaptcha_lockip'] = 'reCAPTCHA를 IP로 잠금 하시겠습니까?';
 $CIDRAM['lang']['config_recaptcha_lockuser'] = 'reCAPTCHA를 사용자에 잠금 하시겠습니까?';
-$CIDRAM['lang']['config_recaptcha_logfile'] = 'reCAPTCHA 시도 기록. 파일 이름 지정하거나 해제하려면 비워하십시오.';
+$CIDRAM['lang']['config_recaptcha_logfile'] = 'reCAPTCHA 시도 기록. 파일 이름을 지정하십시오. 비활성화하려면 비워 둡니다.';
 $CIDRAM['lang']['config_recaptcha_secret'] = '이 값은 당신의 reCAPTCHA에 대한 "secret key" 에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다.';
 $CIDRAM['lang']['config_recaptcha_signature_limit'] = 'reCAPTCHA 인스턴스가 제공 될 때 트리거 될 수있는 최대 서명 수입니다. Default (기본 설정) = 1. 특정 요청에 대해이 수가 초과되면, reCAPTCHA 인스턴스가 제공되지 않습니다.';
 $CIDRAM['lang']['config_recaptcha_sitekey'] = '이 값은 당신의 reCAPTCHA에 대한 "site key" 에 대응하고있을 필요가 있습니다; 이것은 reCAPTCHA 대시 보드에서 찾을 수 있습니다.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른
 $CIDRAM['lang']['state_risk_high'] = '높은';
 $CIDRAM['lang']['state_risk_low'] = '낮은';
 $CIDRAM['lang']['state_risk_medium'] = '중간';
-$CIDRAM['lang']['state_sl_totals'] = '합계 (서명 : <span class="txtRd">%s</span> – 서명 섹션 : <span class="txtRd">%s</span> – 서명 파일 : <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = '합계 (서명 : <span class="txtRd">%s</span> – 서명 섹션 : <span class="txtRd">%s</span> – 서명 파일 : <span class="txtRd">%s</span> – 고유 섹션 태그 : <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = '현재 %s 개의 IP를 추적 중입니다.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지 않고';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';

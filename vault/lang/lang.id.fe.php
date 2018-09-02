@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.08.26).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Modul pemblokir UA kosong';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modul pemblokir untuk Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?cidram-page=logout">Keluar</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Keluar</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Direktif konfigurasi ini mungkin diperlukan untuk fungsionalitas yang melibatkan pengiriman email. Silahkan lihat dokumentasi untuk informasi lebih lanjut dan nilai yang direkomendasikan.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'Host SMTP yang digunakan untuk email keluar.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'Kata sandi yang digunakan saat mengirim email melalui SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Nomor port yang digunakan untuk email keluar. Default = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Pengaturan direktif ini ke `true` menginstruksikan PHPMailer untuk melewati proses otentikasi normal yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'Nama pengguna yang digunakan saat mengirim email melalui SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'Alamat balasan yang dikutip saat mengirim email melalui SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'Nama balasan yang dikutip saat mengirim email melalui SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'Alamat pengirim yang dikutip saat mengirim email melalui SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'Nama pengirim yang dikutip saat mengirim email melalui SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Tidak stabil / Eksperimental!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya masuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Izinkan menggunakan gethostbyaddr saat UDP tidak tersedia? True = Ya [Default]; False = Tidak.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggu
 $CIDRAM['lang']['state_risk_high'] = 'Tinggi';
 $CIDRAM['lang']['state_risk_low'] = 'Rendah';
 $CIDRAM['lang']['state_risk_medium'] = 'Menengah';
-$CIDRAM['lang']['state_sl_totals'] = 'Total (Tanda tangan: <span class="txtRd">%s</span> – Bagian tanda tangan: <span class="txtRd">%s</span> – File tanda tangan: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Total (Tanda tangan: <span class="txtRd">%s</span> – Bagian tanda tangan: <span class="txtRd">%s</span> – File tanda tangan: <span class="txtRd">%s</span> – Tag bagian unik: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Saat ini melacak %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';

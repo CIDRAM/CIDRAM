@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.08.26).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Boş UA engelleyici modülü';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex engelleyici modülü';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?cidram-page=logout">Çıkış</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Çıkış</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Bu yapılandırma yönergeleri, e-posta göndermeyi içeren işlevler için gerekli olabilir. Daha fazla bilgi ve tavsiye edilen değerler için lütfen dokümanlara bakınız.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Bu yönerge, ön uç hesapları için 2FA kullanılıp kullanılmayacağını belirler.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'Giden e-posta için kullanılacak SMTP ana bilgisayarı.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'SMTP ile e-posta gönderirken kullanılacak şifre.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Giden e-posta için kullanılacak bağlantı noktası numarası. Varsayılan = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Bu yönerge SMTP oturumlarının doğrulanıp onaylanmayacağını belirler (genellikle bunu yalnız bırakmalısın).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'SMTP ile e-posta gönderirken kullanılacak protokol (TLS veya SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = '<code>true</code> olduğunda, PHPMailer normalde SMTP yoluyla e-posta gönderirken oluşan kimlik doğrulama işlemini atlar. Bu işlemin atlanması, giden e-postaları MITM saldırılarına maruz bırakabilir. Bazı durumlarda olsa gerekli olabilir (ör., PHPMailer bir SMTP sunucusuna bağlanamadığında).';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'SMTP ile e-posta gönderirken kullanılacak kullanıcı adı.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'SMTP ile e-posta gönderirken kullanılacak cevap adresi.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'SMTP ile e-posta gönderirken kullanılacak cevap ismi.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'SMTP ile e-posta gönderirken kullanılacak gönderen adresi.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'SMTP ile e-posta gönderirken kullanılacak gönderenin adı.';
 $CIDRAM['lang']['config_experimental'] = 'Kararsız/Deneysel!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini kaydetmek için kullanılan dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'UDP kullanılamadığında gethostbyaddr aramalarına izin verilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şi
 $CIDRAM['lang']['state_risk_high'] = 'Yüksek';
 $CIDRAM['lang']['state_risk_low'] = 'Düşük';
 $CIDRAM['lang']['state_risk_medium'] = 'Orta';
-$CIDRAM['lang']['state_sl_totals'] = 'Toplamları (İmzalar: <span class="txtRd">%s</span> – İmza bölümleri: <span class="txtRd">%s</span> – İmza dosyaları: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Toplamları (İmzalar: <span class="txtRd">%s</span> – İmza bölümleri: <span class="txtRd">%s</span> – İmza dosyaları: <span class="txtRd">%s</span> – Benzersiz bölüm etiketleri: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Şu anda %s IP izleme.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları gizleme';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';

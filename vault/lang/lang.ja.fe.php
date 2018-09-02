@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.08.26).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = '空のＵＡブロッカー・モジ�
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandexブロッカーモジュール';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?cidram-page=logout">ログアウト</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">ログアウト</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'これらのコンフィギュレーション・ディレクティブは、電子Ｅメールを送信する機能に必要な場合があります。​詳細および推奨値については、ドキュメントを参照してください。';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'このディレクティブは、フロントエンド・アカウントに２ＦＡを使用するかどうかを決定します。';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'PHPMailerに関連してすべてのイベントを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
+$CIDRAM['lang']['config_PHPMailer_Host'] = '送信Ｅメールに使用するＳＭＴＰホスト。';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するパスワード。';
+$CIDRAM['lang']['config_PHPMailer_Port'] = '送信Ｅメールに使用するポート番号。​Default/デフォルルト = 587。';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'このディレクティブは、ＳＭＴＰセッションを認証するかどうかを決定します（通常はそれをそのまま残すべきです）。';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するプロトコル（ＴＬＳまたはＳＳＬ）。';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'このディレクティブを<code>true</code>に設定すると、PHPMailerはSMTP経由で電子Ｅメールを送信する際に通常発生する認証プロセスをスキップします。​このプロセスをスキップすると、送信ＥメールがＭＩＴＭ攻撃にさらされる可能性があるため、これは避けるべきです。​しかし、PHPMailerがSMTPサーバに接続できない場合、このプロセスが必要な場合があります。';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに使用するユーザー名。';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信アドレス。';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する返信名。';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する送信者アドレス。';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'ＳＭＴＰ経由で電子Ｅメールを送信するときに引用する送信者名。';
 $CIDRAM['lang']['config_experimental'] = '不安定/実験的！';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'ＵＤＰが利用できない場合、gethostbyaddrルックアップを許可しますか？​True = はい（Default/デフォルルト）；​False = いいえ。';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = '警告：このアカウントに
 $CIDRAM['lang']['state_risk_high'] = '高い';
 $CIDRAM['lang']['state_risk_low'] = '低い';
 $CIDRAM['lang']['state_risk_medium'] = '中程度';
-$CIDRAM['lang']['state_sl_totals'] = '合計（シグネチャ： <span class="txtRd">%s</span> – シグネチャ・セクション： <span class="txtRd">%s</span> – シグネチャ・ファイル： <span class="txtRd">%s</span>）。';
+$CIDRAM['lang']['state_sl_totals'] = '合計（シグネチャ： <span class="txtRd">%s</span> – シグネチャ・セクション： <span class="txtRd">%s</span> – シグネチャ・ファイル： <span class="txtRd">%s</span> – ユニークなセクション・タグ： <span class="txtRd">%s</span>）。';
 $CIDRAM['lang']['state_tracking'] = '現在、%s個のIPをトラッキングしています。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';

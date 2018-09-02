@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.08.26).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'فارغة وحدة مانع وا';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'بايدو وحدة مانع';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?cidram-page=logout">خروج</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">خروج</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'قد تكون إرشادات التهيئة هذه مطلوبة للوظيفة التي تتضمن إرسال البريد الإلكتروني. يرجى الرجوع إلى الوثائق لمزيد من المعلومات والقيم الموصى بها.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'يحدد هذا التوجيه ما إذا كان سيتم استخدام 2FA للحسابات front-end أم لا.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'ملف لتسجيل جميع الأحداث المتعلقة ب PHPMailer. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'مضيف SMTP الذي يستخدم للبريد الإلكتروني الصادر.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'كلمة المرور لاستخدامها عند إرسال البريد الإلكتروني عبر SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'رقم المنفذ المراد استخدامه للبريد الإلكتروني الصادر. افتراضي = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'يحدد هذا التوجيه ما إذا كنت تريد مصادقة جلسات SMTP (يجب ألا يغير هذا عادة).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'البروتوكول المستخدم عند إرسال البريد الإلكتروني عبر SMTP (TLS أو SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا ، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM ، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'اسم المستخدم لاستخدامه عند إرسال البريد الإلكتروني عبر SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'عنوان المرسل للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'اسم المرسل للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'غير مستقر / التجريبي!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'السماح بعمليات البحث gethostbyaddr عندما يكون UDP غير متوفر؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = ' تحذير: هذا الحساب 
 $CIDRAM['lang']['state_risk_high'] = 'عالية';
 $CIDRAM['lang']['state_risk_low'] = 'قليل';
 $CIDRAM['lang']['state_risk_medium'] = 'متوسطة';
-$CIDRAM['lang']['state_sl_totals'] = 'المجاميع (التوقيعات: <span class="txtRd">%s</span> – أقسام التوقيع: <span class="txtRd">%s</span> – ملفات التوقيع: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'المجاميع (التوقيعات: <span class="txtRd">%s</span> – أقسام التوقيع: <span class="txtRd">%s</span> – ملفات التوقيع: <span class="txtRd">%s</span> – علامات القسم الفريدة: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'تتبع حاليا %s عناوين IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'يخفون غير عفا عليها الزمن';

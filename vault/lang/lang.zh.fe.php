@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.08.26).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = '空UA阻塞模块';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex阻塞模块';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?cidram-page=logout">登出</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">登出</a>';
-$CIDRAM['lang']['config_PHPMailer'] = '涉及发送电子邮件的功能可能需要这些配置指令。​有关更多信息和建议值，请参阅文档。';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = '该指令确定是否将2FA用于前端帐户。';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = '用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。';
+$CIDRAM['lang']['config_PHPMailer_Host'] = '用于出站电子邮件的SMTP主机。';
+$CIDRAM['lang']['config_PHPMailer_Password'] = '通过SMTP发送电子邮件时使用的密码。';
+$CIDRAM['lang']['config_PHPMailer_Port'] = '用于出站电子邮件的端口号。​标准=587。';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = '此指令确定是否对SMTP会话进行身份验证（通常应该保持不变）。';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = '通过SMTP发送电子邮件时使用的协议（TLS或SSL）。';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = '将此指令设置为<code>true</code>会指示PHPMailer跳过通过SMTP发送电子邮件时通常会发生的正常身份验证过程。​应该避免这种情况，因为跳过此过程可能会将出站电子邮件暴露给MITM攻击，但在此过程阻止PHPMailer连接到SMTP服务器的情况下可能是必要的。';
+$CIDRAM['lang']['config_PHPMailer_Username'] = '通过SMTP发送电子邮件时使用的用户名。';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = '通过SMTP发送电子邮件时引用的回复地址。';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = '通过SMTP发送电子邮件时引用的回复姓名。';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = '通过SMTP发送电子邮件时引用的发件人地址。';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = '通过SMTP发送电子邮件时引用的发件人姓名。';
 $CIDRAM['lang']['config_experimental'] = '不稳定/实验！';
 $CIDRAM['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = '当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = '警告：此帐户不​使用有
 $CIDRAM['lang']['state_risk_high'] = '高';
 $CIDRAM['lang']['state_risk_low'] = '低';
 $CIDRAM['lang']['state_risk_medium'] = '中等';
-$CIDRAM['lang']['state_sl_totals'] = '汇总（签名： <span class="txtRd">%s</span> – 签名章节： <span class="txtRd">%s</span> – 签名文件： <span class="txtRd">%s</span>）。';
+$CIDRAM['lang']['state_sl_totals'] = '汇总（签名： <span class="txtRd">%s</span> – 签名章节： <span class="txtRd">%s</span> – 签名文件： <span class="txtRd">%s</span> – 独特的章节标签： <span class="txtRd">%s</span>）。';
 $CIDRAM['lang']['state_tracking'] = '目前正在跟踪%s个IP。';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.08.26).
+ * This file: Italian language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -33,7 +33,7 @@ unset($CIDRAM['Pre'], $CIDRAM['IPvX']);
 $CIDRAM['lang']['Extended Description: Bypasses'] = 'Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale.';
 $CIDRAM['lang']['Extended Description: CIDRAM'] = 'Il pacchetto principale (senza le firme, la documentazione, e la configurazione).';
 $CIDRAM['lang']['Extended Description: Chart.js'] = 'Consente al front-end di generare grafici a torta.<br /><a href="https://github.com/chartjs/Chart.js">Chart.js</a> è disponibile tramite la <a href="https://opensource.org/licenses/MIT">MIT license</a>.';
-$CIDRAM['lang']['Extended Description: PHPMailer'] = 'Richiesto per l\'utilizzo di qualsiasi funzionalità che implica l\'invio di e-mail.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> è disponibile tramite la licenza <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
+$CIDRAM['lang']['Extended Description: PHPMailer'] = 'Richiesto per l\'utilizzo di qualsiasi funzionalità che implica l\'invio di posta elettronica.<br /><a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a> è disponibile tramite la licenza <a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE">LGPLv2.1</a>.';
 $CIDRAM['lang']['Extended Description: module_badhosts.php'] = 'Blocchi host utilizzati frequentemente da spammer, hacker e altre entità nefande.';
 $CIDRAM['lang']['Extended Description: module_badhosts_isps.php'] = 'Blocchi host appartenenti agli ISP utilizzati frequentemente da spammer, hacker e altre entità malvagie.';
 $CIDRAM['lang']['Extended Description: module_badtlds.php'] = 'Blocchi host appartenenti agli TLD utilizzati frequentemente da spammer, hacker e altre entità malvagie.';
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Modulo blocco UA vuoto';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Modulo bloccante di Yandex';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Pagina Principale</a> | <a href="?cidram-page=logout">Disconnettersi</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Disconnettersi</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Queste direttive di configurazione possono essere richieste per funzionalità che implica l\'invio di e-mail. Si prega di fare riferimento alla documentazione per ulteriori informazioni e valori raccomandati.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Questa direttiva determina se utilizzare 2FA per gli account front-end.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'Un file per registrare tutti gli eventi in relazione a PHPMailer. Specificare un nome di file, o lasciare vuoto per disabilitare.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'L\'host SMTP per utilizzare per la posta elettronica in uscita.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'La password per utilizzare per l\'invio di posta elettronica tramite SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Il numero di porta per utilizzare per la posta elettronica in uscita. Predefinito = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Questa direttiva determina se autenticare le sessioni SMTP (di solito dovrebbe essere lasciato solo).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Il protocollo per utilizzare per l\'invio di posta elettronica tramite SMTP (TLS o SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Impostando questa direttiva su <code>true</code>, PHPMailer salta il normale processo di autenticazione che normalmente si verifica quando si invia una posta elettronica via SMTP. Questo dovrebbe essere evitato, perché saltare questo processo potrebbe esporre la posta elettronica in uscita agli attacchi MITM, ma potrebbe essere necessario nei casi in cui questo processo impedisce a PHPMailer di connettersi a un server SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'Il nome utente per utilizzare per l\'invio di posta elettronica tramite SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'L\'indirizzo di risposta per citare quando si invia una posta elettronica tramite SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'Il nome per la risposta per citare quando si invia una posta elettronica tramite SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'L\'indirizzo del mittente per citare quando si invia una posta elettronica tramite SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'Il nome del mittente per citare quando si invia una posta elettronica tramite SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Instabile/Sperimentale!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'File per la registrazione di l\'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No.';
@@ -65,8 +77,8 @@ $CIDRAM['lang']['config_general_default_dns'] = 'Un elenco delimitato con virgol
 $CIDRAM['lang']['config_general_disable_cli'] = 'Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.';
 $CIDRAM['lang']['config_general_disable_frontend'] = 'Disabilita l\'accesso front-end? L\'accesso front-end può rendere CIDRAM più gestibile, ma può anche essere un potenziale rischio per la sicurezza. Si consiglia di gestire CIDRAM attraverso il back-end, quando possibile, ma l\'accesso front-end è previsto per quando non è possibile. Mantenerlo disabilitato tranne se hai bisogno. False = Abilita l\'accesso front-end; True = Disabilita l\'accesso front-end [Predefinito].';
 $CIDRAM['lang']['config_general_disable_webfonts'] = 'Disabilita webfonts? True = Sì [Predefinito]; False = No.';
-$CIDRAM['lang']['config_general_emailaddr'] = 'Se si desidera, è possibile fornire un indirizzo email qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l\'indirizzo email si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo email qui, che si assicurare che l\'indirizzo email si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi email).';
-$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Come preferisci che l\'indirizzo email venga presentato agli utenti?';
+$CIDRAM['lang']['config_general_emailaddr'] = 'Se si desidera, è possibile fornire un indirizzo di posta elettronica qui a dare utenti quando sono bloccati, per loro di utilizzare come punto di contatto per supporto e/o assistenza per il caso di che vengano bloccate per errore. AVVERTIMENTO: Qualunque sia l\'indirizzo di posta elettronica si fornisce qui sarà certamente acquisito dal spambots e raschietti/scrapers nel corso del suo essere usato qui, e così, è fortemente raccomandato che se si sceglie di fornire un indirizzo di posta elettronica qui, che si assicurare che l\'indirizzo di posta elettronica si fornisce qui è un indirizzo monouso e/o un indirizzo che si non ti dispiace essere spammato (in altre parole, probabilmente si non vuole usare il personale primaria o commerciale primaria indirizzi di posta elettronica).';
+$CIDRAM['lang']['config_general_emailaddr_display_style'] = 'Come preferisci che l\'indirizzo di posta elettronica venga presentato agli utenti?';
 $CIDRAM['lang']['config_general_empty_fields'] = 'Come dovrebbe CIDRAM gestire i campi vuoti durante la registrazione e la visualizzazione delle informazioni sugli eventi di blocco? "include" = Includi campi vuoti. "omit" = Ometti campi vuoti [predefiniti].';
 $CIDRAM['lang']['config_general_forbid_on_block'] = 'Quale messaggio di stato HTTP dovrebbe inviare CIDRAM durante il blocco delle richieste? (Fare riferimento alla documentazione per ulteriori informazioni).';
 $CIDRAM['lang']['config_general_force_hostname_lookup'] = 'Forzare la ricerca degli nome di host? True = Sì; False = No [Predefinito]. Le ricerche di nome di host vengono normalmente eseguite su base della necessità, ma può essere forzato a tutte le richieste. Ciò può essere utile come mezzo per fornire informazioni più dettagliate nei file di log, ma può anche avere un effetto leggermente negativo sulle prestazioni.';
@@ -310,7 +322,7 @@ $CIDRAM['lang']['state_component_is_active'] = 'Componente è attivo.';
 $CIDRAM['lang']['state_component_is_inactive'] = 'Componente è inattivo.';
 $CIDRAM['lang']['state_component_is_provisional'] = 'Componente è provvisorio.';
 $CIDRAM['lang']['state_default_password'] = 'Avvertimento: Utilizzando la password predefinita!';
-$CIDRAM['lang']['state_email_sent'] = 'Email inviata con successo a "%s".';
+$CIDRAM['lang']['state_email_sent'] = 'Posta elettronica inviata con successo a "%s".';
 $CIDRAM['lang']['state_failed_missing'] = 'Attività non riuscita perché un componente necessario non è disponibile.';
 $CIDRAM['lang']['state_ignored'] = 'Ignorato';
 $CIDRAM['lang']['state_loading'] = 'Caricamento in corso...';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non 
 $CIDRAM['lang']['state_risk_high'] = 'Alto';
 $CIDRAM['lang']['state_risk_low'] = 'A basso';
 $CIDRAM['lang']['state_risk_medium'] = 'Medio';
-$CIDRAM['lang']['state_sl_totals'] = 'Totali (Firme: <span class="txtRd">%s</span> – Sezioni di firma: <span class="txtRd">%s</span> – File di firma: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totali (Firme: <span class="txtRd">%s</span> – Sezioni di firma: <span class="txtRd">%s</span> – File di firma: <span class="txtRd">%s</span> – Etichette di sezione univoci: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = 'Attualmente tracciamento di %s IP.';
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Non nascondere l\'aggiornato';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiornato';
@@ -334,7 +346,7 @@ $CIDRAM['lang']['switch-tracking-blocked-already-set-false'] = 'Non controllare 
 $CIDRAM['lang']['switch-tracking-blocked-already-set-true'] = 'Controllare i file di firme';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Non nascondere gli IP vietati/bloccati';
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Nascondere gli IP vietati/bloccati';
-$CIDRAM['lang']['tip_2fa_sent'] = 'Un\'email contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo email. Si prega di confermare questo codice qui sotto per ottenere l\'accesso al front-end. Se non hai ricevuto questa email, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova email contenente un nuovo codice.';
+$CIDRAM['lang']['tip_2fa_sent'] = 'Una posta elettronica contenente un codice di autenticazione a due fattori è stata inviata al tuo indirizzo di posta elettronica. Si prega di confermare questo codice qui sotto per ottenere l\'accesso al front-end. Se non hai ricevuto questa posta elettronica, prova a disconnettersi, attendere 10 minuti e accedi di nuovo per ricevere una nuova posta elettronica contenente un nuovo codice.';
 $CIDRAM['lang']['tip_accounts'] = 'Salve, {username}.<br />La pagina di conti permette di controllare chi può accedere il front-end di CIDRAM.';
 $CIDRAM['lang']['tip_cache_data'] = 'Salve, {username}.<br />Qui puoi rivedere il contenuto della cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salve, {username}.<br />La calcolatrice CIDR permette di calcolare che cosa CIDR un indirizzo IP appartiene.';

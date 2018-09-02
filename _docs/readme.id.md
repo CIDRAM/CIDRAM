@@ -641,22 +641,22 @@ Konfigurasi PHPMailer.
 - Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri).
 
 ##### "Username"
-- @todo@
+- Nama pengguna yang digunakan saat mengirim email melalui SMTP.
 
 ##### "Password"
-- @todo@
+- Kata sandi yang digunakan saat mengirim email melalui SMTP.
 
 ##### "setFromAddress"
-- @todo@
+- Alamat pengirim yang dikutip saat mengirim email melalui SMTP.
 
 ##### "setFromName"
-- @todo@
+- Nama pengirim yang dikutip saat mengirim email melalui SMTP.
 
 ##### "addReplyToAddress"
-- @todo@
+- Alamat balasan yang dikutip saat mengirim email melalui SMTP.
 
 ##### "addReplyToName"
-- @todo@
+- Nama balasan yang dikutip saat mengirim email melalui SMTP.
 
 ---
 
@@ -1448,4 +1448,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 10 Agustus 2018 (2018.08.10).
+Terakhir Diperbarui: 2 September 2018 (2018.09.02).

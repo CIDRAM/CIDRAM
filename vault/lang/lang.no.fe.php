@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.08.26).
+ * This file: Norwegian language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Tom UA-blokkeringsmodul';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blokkeringsmodul';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Hjem</a> | <a href="?cidram-page=logout">Logg Ut</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logg Ut</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Disse konfigurasjonsdirektene kan kreves for funksjonalitet som innebærer sending av e-post. Vennligst se dokumentasjonen for mer informasjon og anbefalte verdier.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Dette direktivet bestemmer om du skal bruke 2FA for frontend-kontoer.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'En fil for å logge alle hendelser i forhold til PHPMailer. Angi et filnavn, eller la det være tomt for å deaktivere.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'SMTP-verten til bruk for utgående e-post.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'Passordet som skal brukes når du sender e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Portnummeret som skal brukes til utgående e-post. Standardverdi = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Dette direktivet bestemmer om du skal autentisere SMTP-økter (bør vanligvis la det være alene).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Protokollen som skal brukes når du sender e-post via SMTP (TLS eller SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Innstilling av dette direktivet til <code>true</code> instruerer PHPMailer til å hoppe over den normale autentiseringsprosessen som normalt oppstår når du sender e-post via SMTP. Dette bør unngås, fordi hoppe over denne prosessen kan utsette utgående e-post til MITM-angrep, men kan være nødvendig i tilfeller der denne prosessen forhindrer PHPMailer fra å koble til en SMTP-server.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'Brukernavnet som skal brukes når du sender e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'Svaradressen for å sitere når du sender e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'Svarnavnet til å sitere når du sender e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'Avsenderadressen for å sitere når du sender e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'Avsendernavnet for å sitere når du sender e-post via SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Ustabil/Eksperimentell!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fil for å logge innloggingsforsøk på frontenden. Angi et filnavn, eller la det være tomt for å deaktivere.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Tillat gethostbyaddr oppslag når UDP er utilgjengelig? True = Ja [Standardverdi]; False = Nei.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Advarsel: Denne kontoen bruker ik
 $CIDRAM['lang']['state_risk_high'] = 'Høy';
 $CIDRAM['lang']['state_risk_low'] = 'Lav';
 $CIDRAM['lang']['state_risk_medium'] = 'Medium';
-$CIDRAM['lang']['state_sl_totals'] = 'Totals (Signaturer: <span class="txtRd">%s</span> – Signaturseksjoner: <span class="txtRd">%s</span> – Signaturfiler: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totals (Signaturer: <span class="txtRd">%s</span> – Signaturseksjoner: <span class="txtRd">%s</span> – Signaturfiler: <span class="txtRd">%s</span> – Unikke seksjonskoder: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = ['Foreløpig sporer %s IP-adresse.', 'Foreløpig sporer %s IP-adresser.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Ikke skjul hvis ikke utdatert';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Skjul hvis ikke utdatert';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.08.26).
+ * This file: Swedish language data for the front-end (last modified: 2018.09.02).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -55,7 +55,19 @@ $CIDRAM['lang']['Name: module_ua.php'] = 'Tom UA-blockeringsmodul';
 $CIDRAM['lang']['Name: module_yandexblocker.php'] = 'Yandex blockeringsmodul';
 $CIDRAM['lang']['bNav_home_logout'] = '<a href="?">Hem</a> | <a href="?cidram-page=logout">Logga Ut</a>';
 $CIDRAM['lang']['bNav_logout'] = '<a href="?cidram-page=logout">Logga Ut</a>';
-$CIDRAM['lang']['config_PHPMailer'] = 'Dessa konfigurationsdirektiv kan behövas för funktionalitet som involverar att skicka e-post. Se dokumentationen för mer information och rekommenderade värden.';
+$CIDRAM['lang']['config_PHPMailer_Enable2FA'] = 'Detta direktiv bestämmer huruvida du ska använda 2FA för frontend-konton.';
+$CIDRAM['lang']['config_PHPMailer_EventLog'] = 'En fil för att logga alla händelser i förhållande till PHPMailer. Ange ett filnamn, eller lämna tomt för att inaktivera.';
+$CIDRAM['lang']['config_PHPMailer_Host'] = 'Den SMTP-värd som används för utgående e-post.';
+$CIDRAM['lang']['config_PHPMailer_Password'] = 'Lösenordet som ska användas när du skickar e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_Port'] = 'Portnumret som ska användas för utgående e-post. Standard = 587.';
+$CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'Detta direktiv bestämmer huruvida du ska autentisera SMTP-sessioner (borde normalt lämna det här ensam).';
+$CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'Protokollet som ska användas när du skickar e-post via SMTP (TLS eller SSL).';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'Genom att ställa in detta direktiv till <code>true</code> instrueras PHPMailer att hoppa över den normala autentiseringsprocessen som normalt uppstår när du skickar e-post via SMTP. Detta bör undvikas, för att hoppa över den här processen kan avslöja utgående e-post till MITM-attacker, men kan vara nödvändigt i fall där denna process hindrar PHPMailer från att ansluta till en SMTP-server.';
+$CIDRAM['lang']['config_PHPMailer_Username'] = 'Användarnamnet som ska användas när du skickar e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'Svaradressen att citera när du skickar e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'Svarnamnet att citera när du skickar e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromAddress'] = 'Avsändarens adress att citera när du skickar e-post via SMTP.';
+$CIDRAM['lang']['config_PHPMailer_setFromName'] = 'Avsändarens namn för att citera när du skickar e-post via SMTP.';
 $CIDRAM['lang']['config_experimental'] = 'Instabil/Experimentell!';
 $CIDRAM['lang']['config_general_FrontEndLog'] = 'Fil för att logga in alla försök till inloggningar på front-end. Ange ett filnamn, eller lämna tomt för att inaktivera.';
 $CIDRAM['lang']['config_general_allow_gethostbyaddr_lookup'] = 'Tillåt gethostbyaddr-uppslag när UDP är otillgänglig? True = Ja [Standard]; False = Nej.';
@@ -324,7 +336,7 @@ $CIDRAM['lang']['state_password_not_valid'] = 'Varning: Det här kontot använde
 $CIDRAM['lang']['state_risk_high'] = 'Hög';
 $CIDRAM['lang']['state_risk_low'] = 'Låg';
 $CIDRAM['lang']['state_risk_medium'] = 'Medium';
-$CIDRAM['lang']['state_sl_totals'] = 'Totals (Signaturer: <span class="txtRd">%s</span> – Signatur sektioner: <span class="txtRd">%s</span> – Signaturfiler: <span class="txtRd">%s</span>).';
+$CIDRAM['lang']['state_sl_totals'] = 'Totals (Signaturer: <span class="txtRd">%s</span> – Signatur sektioner: <span class="txtRd">%s</span> – Signaturfiler: <span class="txtRd">%s</span> – Unika avsnitt taggar: <span class="txtRd">%s</span>).';
 $CIDRAM['lang']['state_tracking'] = ['Spårar för närvarande %s IP-adress.', 'Spårar för närvarande %s IP-adresser.'];
 $CIDRAM['lang']['switch-hide-non-outdated-set-false'] = 'Göm inte icke-föråldrade';
 $CIDRAM['lang']['switch-hide-non-outdated-set-true'] = 'Göm icke-föråldrade';

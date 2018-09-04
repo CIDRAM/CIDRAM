@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.02).
+ * This file: Front-end handler (last modified: 2018.09.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -372,6 +372,8 @@ if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode']) {
                             $CIDRAM['FE']['UserState'] = 1;
                         }
 
+                    } else {
+                        $CIDRAM['FE']['UserState'] = 1;
                     }
                     if ($CIDRAM['FE']['UserState'] !== 1) {
                         $CIDRAM['FE']['Permissions'] = 0;

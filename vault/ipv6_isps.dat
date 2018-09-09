@@ -659,11 +659,11 @@ Tag: PHOENIX NAP, LLC
 
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# %Listed, Google Malware Dashboard: 0.45% (AS24955).
+# %Listed, Google Malware Dashboard: 0.74% (AS24955).
 # %Listed, CleanTalk.org: 55.52% (AS24955), 10.94% (AS41704).
 # %Listed, abuseat.org (CBL-Listed): 1.17% (AS24955).
-# Stop Forum Spam (SFS) listings: 17,038 (AS24955), 33,218 (AS41704).
-# Updated: 2017.12.18 / Checked: 2018.03.29
+# Stop Forum Spam (SFS) listings: 20,444 (AS24955), 42,066 (AS41704).
+# Updated: 2017.12.18 / Checked: 2018.09.10
 
 2a02:1c8:1::/48 Deny Spam
 2a02:1c8:7::/48 Deny Spam
@@ -806,6 +806,37 @@ recaptcha:
 2605:9d80:a000::/48 Deny Generic
 Origin: US
 Tag: China Telecom USA
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 4812 ("China Telecom (Group)").
+# Interlaces with numerous providers and contains a large portion of Chinese human access endpoints; Would rather not
+# be including this section here due to the high risk of false positives, but the massive influx/uptick of undesirable
+# events (spamming, hacking, attempted brute-forcing, probing, etc) seen originating from across a wide range of CIDRs
+# tied this ASN, plus the presence of this ASN in numerous worst offenders lists and blacklists, are not considerations
+# that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
+# false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
+# traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
+# positives.
+# %Listed, Google Malware Dashboard: 2.61%.
+# %Listed, CleanTalk.org: 30.91%.
+# %Listed, abuseat.org (CBL-Listed): 0.21%.
+# Stop Forum Spam (SFS) listings: 985.
+# Updated: 2018.09.10
+
+240e:18::/31 Deny Generic
+240e:2e::/33 Deny Generic
+240e:58::/32 Deny Generic
+240e:59::/33 Deny Generic
+240e:e0::/32 Deny Generic
+240e:e1:8000::/33 Deny Generic
+240e:e3:8000::/33 Deny Generic
+240e:e5:8000::/33 Deny Generic
+240e:e6::/32 Deny Generic
+Origin: CN
+Tag: China Telecom 4812
 ---
 recaptcha:
  enabled: true
@@ -1069,17 +1100,17 @@ recaptcha:
  enabled: true
 
 
-# ASN 23944 ("SKYBroadband SKYCable Corporation").
-# ( No problems encountered from their IPv6 ranges yet, but included here anyhow for reference, but commented out. )
-# %Listed, CleanTalk.org: 4.87%.
-# Stop Forum Spam (SFS) listings: 139.
-# Updated: 2017.12.30 / Checked: 2018.03.31
+# ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
+# Numerous significant spam events caught originating from this network. IPs belong to mobile carriers in China, and
+# could cause false positives for websites with Chinese users. Should ignore this section in such cases.
+# %Listed, Google Malware Dashboard: 0.87%.
+# %Listed, CleanTalk.org: 55.80%.
+# Stop Forum Spam (SFS) listings: 1,487.
+# Updated: 2018.09.10
 
-# 2404:3c00:1000::/36 Deny Spam
-# 2404:3c00:2000::/35 Deny Spam
-# 2404:3c00:4000::/36 Deny Spam
-Origin: PH
-Tag: SKYBROADBAND
+2409:8000::/20 Deny Spam
+Origin: CN
+Tag: Guangdong Mobile
 ---
 recaptcha:
  enabled: true
@@ -1220,19 +1251,6 @@ recaptcha:
  enabled: true
 
 
-# ASN 44775 ("Closed Joint Stock Company TransTeleCom").
-# %Listed, CleanTalk.org: 5.36%.
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2017.07.08 / Checked: 2018.03.26
-
-2a02:28d8::/36 Deny Spam
-Origin: RU
-Tag: TransTeleCom
----
-recaptcha:
- enabled: true
-
-
 # ASNs 42682, 51570 ('JSC "ER-Telecom Holding"').
 # %Listed, CleanTalk.org: 61.30% (AS42682), 14.94% (AS51570).
 # Stop Forum Spam (SFS) listings: 17,958 (AS42682), 1,886 (AS51570).
@@ -1296,8 +1314,8 @@ recaptcha:
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
 # %Listed, CleanTalk.org: 90.91%.
-# Stop Forum Spam (SFS) listings: 29,737.
-# Updated: 2017.12.11 / Checked: 2018.03.26
+# Stop Forum Spam (SFS) listings: 44,083.
+# Updated: 2017.12.11 / Checked: 2018.09.09
 
 2001:67c:16b0::/48 Deny Spam
 2001:67c:289c::/48 Deny Spam

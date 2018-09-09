@@ -203,8 +203,8 @@ recaptcha:
 
 
 # ASN 133618 ("Trellian Pty. Limited").
-# %Listed, Google Malware Dashboard: 2.94%.
-# Updated: 2016.03.16 / Checked: 2018.03.26
+# %Listed, Google Malware Dashboard: 2.19%.
+# Updated: 2016.03.16 / Checked: 2018.09.09
 
 103.224.182.0/23 Deny Generic
 103.224.212.0/23 Deny Generic
@@ -962,10 +962,8 @@ recaptcha:
 
 # ASN 48271 ("City Telecom").
 # %Listed, CleanTalk.org: 20.19%.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2017.01.05 / Checked: 2018.03.26
+# Updated: 2018.09.09
 
-185.91.132.0/22 Deny Spam
 212.2.224.0/19 Deny Spam
 Origin: KG
 Tag: City Telecom
@@ -3174,11 +3172,11 @@ Tag: JSC Internet-Cosmos
 
 
 # ASNs 24955, 41704 ("Orenburgskaya Gorodskaya Set, ZAO").
-# %Listed, Google Malware Dashboard: 0.45% (AS24955).
+# %Listed, Google Malware Dashboard: 0.74% (AS24955).
 # %Listed, CleanTalk.org: 55.52% (AS24955), 10.94% (AS41704).
 # %Listed, abuseat.org (CBL-Listed): 1.17% (AS24955).
-# Stop Forum Spam (SFS) listings: 17,038 (AS24955), 33,218 (AS41704).
-# Updated: 2017.12.18 / Checked: 2018.03.29
+# Stop Forum Spam (SFS) listings: 20,444 (AS24955), 42,066 (AS41704).
+# Updated: 2018.09.10
 
 46.191.128.0/18 Deny Spam
 46.191.192.0/19 Deny Spam
@@ -3198,6 +3196,7 @@ Tag: JSC Internet-Cosmos
 95.105.0.0/17 Deny Spam
 136.169.128.0/17 Deny Spam
 145.255.0.0/19 Deny Spam
+178.214.224.0/19 Deny Spam
 Origin: RU
 Tag: Ufanet
 ---
@@ -4308,23 +4307,24 @@ recaptcha:
 # that can be easily ignored at this point in time. The section is marked for use with reCAPTCHA due to the risk of
 # false positives, and I would encourage any Chinese CIDRAM users, and any CIDRAM users expecting to receive any
 # traffic from China, to list this section in their ignore file as a means of minimising the potential impact of false
-# positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
-# ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.82%.
+# positives.
+# %Listed, Google Malware Dashboard: 2.61%.
 # %Listed, CleanTalk.org: 30.91%.
-# %Listed, abuseat.org (CBL-Listed): 0.19%.
-# Stop Forum Spam (SFS) listings: 961.
-# Updated: 2018.02.18 / Checked: 2018.03.29
+# %Listed, abuseat.org (CBL-Listed): 0.21%.
+# Stop Forum Spam (SFS) listings: 985.
+# Updated: 2018.09.10
 
 27.109.124.0/22 Deny Generic
 36.111.0.0/20 Deny Generic
 43.228.148.0/22 Deny Generic
 43.240.124.0/24 Deny Generic
 43.240.126.0/23 Deny Generic
+43.240.192.0/21 Deny Generic
 43.247.100.0/22 Deny Generic
 43.254.44.0/22 Deny Generic
 43.254.106.0/24 Deny Generic
 43.254.148.0/22 Deny Generic
+43.254.220.0/22 Deny Generic
 45.115.44.0/22 Deny Generic
 45.115.144.0/22 Deny Generic
 45.124.124.0/22 Deny Generic
@@ -4337,6 +4337,7 @@ recaptcha:
 61.165.0.0/16 Deny Generic
 61.169.0.0/16 Deny Generic
 61.170.0.0/18 Deny Generic
+61.170.80.0/21 Deny Generic
 61.170.128.0/17 Deny Generic
 61.171.0.0/16 Deny Generic
 61.172.0.0/15 Deny Generic
@@ -4357,6 +4358,9 @@ recaptcha:
 103.47.136.0/22 Deny Generic
 103.55.172.0/22 Deny Generic
 103.60.228.0/23 Deny Generic
+103.76.92.0/22 Deny Generic
+103.98.220.0/22 Deny Generic
+103.192.212.0/22 Deny Generic
 103.192.252.0/22 Deny Generic
 103.198.124.0/22 Deny Generic
 103.202.92.0/22 Deny Generic
@@ -4372,6 +4376,8 @@ recaptcha:
 103.243.252.0/22 Deny Generic
 103.245.80.0/22 Deny Generic
 106.75.208.0/20 Deny Generic
+106.75.224.0/19 Deny Generic
+110.43.64.0/20 Deny Generic
 114.28.68.0/22 Deny Generic
 114.28.72.0/21 Deny Generic
 114.28.128.0/19 Deny Generic
@@ -4393,16 +4399,18 @@ recaptcha:
 118.242.16.0/22 Deny Generic
 118.242.24.0/22 Deny Generic
 119.3.0.0/18 Deny Generic
+119.3.64.0/19 Deny Generic
 119.15.136.0/21 Deny Generic
 119.37.0.0/22 Deny Generic
 119.37.12.0/24 Deny Generic
 120.132.136.0/22 Deny Generic
 120.132.192.0/23 Deny Generic
+120.133.236.0/22 Deny Generic
 120.136.156.0/22 Deny Generic
 120.136.160.0/21 Deny Generic
 121.46.224.0/21 Deny Generic
 121.46.232.0/22 Deny Generic
-121.46.236.0/24 Deny Generic
+121.46.236.0/23 Deny Generic
 122.112.196.0/22 Deny Generic
 122.112.200.0/21 Deny Generic
 122.112.208.0/20 Deny Generic
@@ -6385,17 +6393,13 @@ recaptcha:
 
 
 # ASN 23944 ("SKYBroadband SKYCable Corporation").
-# ( CIDRs that we haven't yet seen any problems from have been commented out. )
+# ( CIDRs that we haven't yet seen any problems from have been omitted. )
 # %Listed, CleanTalk.org: 4.87%.
-# Stop Forum Spam (SFS) listings: 139.
-# Updated: 2017.12.30 / Checked: 2018.03.31
+# Stop Forum Spam (SFS) listings: 120.
+# Updated: 2017.12.30 / Checked: 2018.09.10
 
-# 45.127.164.0/22 Deny Spam
-# 103.196.104.0/22 Deny Spam
 111.68.32.0/19 Deny Spam
 114.108.192.0/18 Deny Spam
-# 124.158.32.0/22 Deny Spam
-# 124.158.56.0/23 Deny Spam
 130.105.0.0/16 Deny Spam
 182.18.192.0/18 Deny Spam
 Origin: PH
@@ -6407,12 +6411,11 @@ recaptcha:
 
 # ASN 9808 ("Guangdong Mobile Communication Co.Ltd").
 # Numerous significant spam events caught originating from this network. IPs belong to mobile carriers in China, and
-# could cause false positives for websites with Chinese users. Recommended to add this section to the "Ignores" list in
-# such cases, and may remove this section in the future if the number of future spam events decreases.
-# %Listed, Google Malware Dashboard: 1.63%.
+# could cause false positives for websites with Chinese users. Should ignore this section in such cases.
+# %Listed, Google Malware Dashboard: 0.87%.
 # %Listed, CleanTalk.org: 55.80%.
-# Stop Forum Spam (SFS) listings: 1,144.
-# Updated: 2017.09.20 / Checked: 2018.03.31
+# Stop Forum Spam (SFS) listings: 1,487.
+# Updated: 2018.09.10
 
 36.128.0.0/10 Deny Spam
 39.128.0.0/10 Deny Spam
@@ -6427,13 +6430,7 @@ recaptcha:
 113.18.0.0/20 Deny Spam
 113.18.32.0/19 Deny Spam
 113.18.64.0/18 Deny Spam
-113.18.128.0/18 Deny Spam
-113.18.192.0/19 Deny Spam
-113.18.224.0/20 Deny Spam
-113.18.240.0/21 Deny Spam
-113.18.248.0/22 Deny Spam
-113.18.252.0/23 Deny Spam
-113.18.254.0/24 Deny Spam
+113.18.128.0/17 Deny Spam
 117.128.0.0/10 Deny Spam
 120.192.0.0/10 Deny Spam
 121.255.0.0/16 Deny Spam
@@ -7684,22 +7681,13 @@ recaptcha:
  enabled: true
 
 
-# ASN 44775 ("Closed Joint Stock Company TransTeleCom").
-# %Listed, CleanTalk.org: 5.36%.
-# Stop Forum Spam (SFS) listings: 28.
-# Updated: 2017.07.08 / Checked: 2018.03.26
+# ASN 15774 ("Closed Joint Stock Company TransTeleCom").
+# Just including a limited subset here on proviso, to monitor for a while. May remove section in the near future.
+# %Listed, CleanTalk.org: 7.73%.
+# Stop Forum Spam (SFS) listings: 183.
+# Updated: 2018.09.09
 
-5.149.144.0/21 Deny Spam
-86.110.168.0/22 Deny Spam
-86.110.173.0/24 Deny Spam
-86.110.174.0/23 Deny Spam
-86.110.178.0/24 Deny Spam
-86.110.180.0/22 Deny Spam
-86.110.184.0/21 Deny Spam
-93.189.12.0/22 Deny Spam
-178.76.192.0/18 Deny Spam
-185.52.132.0/22 Deny Spam
-213.138.64.0/19 Deny Spam
+188.244.128.0/17 Deny Spam
 Origin: RU
 Tag: TransTeleCom
 ---
@@ -7774,7 +7762,7 @@ recaptcha:
 
 
 # ASNs 49775, 59665 ("Ultra-Telecom LLC").
-# Updated: 2017.07.12 / Checked: 2018.03.26
+# Updated: 2017.07.12 / Checked: 2018.09.09
 
 176.124.144.0/22 Deny Spam
 195.160.164.0/23 Deny Spam
@@ -7959,8 +7947,8 @@ recaptcha:
 # ASN 198093 ("Foreningen for digitala fri- och rattigheter").
 # Dead homepage and high levels of automated spam from this ASN.
 # %Listed, CleanTalk.org: 90.91%.
-# Stop Forum Spam (SFS) listings: 29,737.
-# Updated: 2017.12.11 / Checked: 2018.03.26
+# Stop Forum Spam (SFS) listings: 44,083.
+# Updated: 2017.12.11 / Checked: 2018.09.09
 
 171.25.193.0/24 Deny Spam
 194.0.61.0/24 Deny Spam

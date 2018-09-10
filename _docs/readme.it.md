@@ -668,8 +668,6 @@ Configurazione PHPMailer.
 
 #### 7.0 NOZIONI DI BASE (PER FILE DI FIRMA)
 
-Una descrizione del formato e la struttura delle firme utilizzate da CIDRAM può essere trovato documentato in testo semplice entro una delle due file di firma personalizzati. Si prega di fare riferimento a tale documentazione per saperne di più sul formato e la struttura delle firme di CIDRAM.
-
 Tutte le firme IPv4 seguono il formato: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` rappresenta l'inizio del blocco CIDR (gli ottetti dell'indirizzo IP iniziale nel blocco).
 - `yy` rappresenta la dimensione del blocco CIDR [1-32].

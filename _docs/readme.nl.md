@@ -668,8 +668,6 @@ PHPMailer-configuratie.
 
 #### 7.0 BASICS (VOOR SIGNATURE BESTANDEN)
 
-Een beschrijving van het formaat en de structuur van de signatures gebruikt door CIDRAM kan gevonden worden gedocumenteerd in platte tekst binnen een van de twee aangepaste signatures bestanden. Raadpleeg de documentatie om meer te leren over het formaat en de structuur van de signatures van CIDRAM.
-
 Alle IPv4 signatures volgt het formaat: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` vertegenwoordigt het begin van het CIDR blok (de octetten van de eerste IP-adres in het blok).
 - `yy` vertegenwoordigt het CIDR blokgrootte [1-32].

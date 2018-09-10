@@ -669,8 +669,6 @@ PHPMailer配置。
 
 #### 7.0 基本概念（对于签名文件）
 
-CIDRAM签名格式和结构描述可以被发现记录在纯文本在自定义签名文件。​请参阅该文档了解更多有关CIDRAM签名格式和结构。
-
 所有IPv4签名遵循格式：`xxx.xxx.xxx.xxx/yy [Function] [Param]`。
 - `xxx.xxx.xxx.xxx` 代表CIDR块开始（初始IP地址八比特组）。
 - `yy` 代表CIDR块大小 [1-32]。

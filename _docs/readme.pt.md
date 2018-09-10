@@ -668,8 +668,6 @@ Configuração do PHPMailer.
 
 #### 7.0 NOÇÕES BÁSICAS (PARA ARQUIVOS DE ASSINATURA)
 
-A descrição do formato e estrutura das assinaturas utilizadas por CIDRAM pode ser encontrada documentado em texto simples dentro de qualquer um dos dois arquivos de assinaturas personalizados. Por favor, consulte que a documentação para saber mais sobre o formato e estrutura das assinaturas de CIDRAM.
-
 Todas as assinaturas IPv4 seguir o formato: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` representa o início do bloco CIDR (os octetos do endereço IP inicial no bloco).
 - `yy` representa o tamanho do bloco CIDR [1-32].

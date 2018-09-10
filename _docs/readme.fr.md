@@ -668,8 +668,6 @@ Configuration de PHPMailer.
 
 #### 7.0 BASES (POUR LES FICHIERS DE SIGNATURE)
 
-Une description du format et de la structure du signatures utilisé par CIDRAM peut être trouvée documentée en plain-text dans les deux fichiers de signatures personnalisées. S'il vous plaît référez à cette documentation pour apprendre plus sur le format et la structure du signatures de CIDRAM.
-
 Toutes les signatures IPv4 suivre le format : `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` représente le début du bloc (les octets de l'adresse IP initiale dans le bloc).
 - `yy` représente la taille du bloc [1-32].

@@ -668,8 +668,6 @@ Konfigurasi PHPMailer.
 
 #### 7.0 DASAR-DASAR (UNTUK FILE TANDA TANGAN)
 
-Deskripsi untuk format dan struktur digunakan oleh tanda tangan dari CIDRAM dapat ditemukan didokumentasikan dalam teks biasa dalam apapun dari dua file-file tanda tangan kustom. Silahkan lihat dokumentasi ini untuk mempelajari lebih tentang format dan struktur digunakan oleh tanda tangan dari CIDRAM.
-
 Semua tanda tangan IPv4 mengikuti format: `xxx.xxx.xxx.xxx/yy [Function] [Param]`.
 - `xxx.xxx.xxx.xxx` merupakan awal dari blok CIDR (oktet dari alamat IP pertama dalam blok).
 - `yy` merupakan ukuran dari blok CIDR [1-32].

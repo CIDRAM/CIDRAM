@@ -1559,3 +1559,18 @@ Tag: Intertelecom Ltd
 ---
 recaptcha:
  enabled: true
+
+
+# ASN 31343 ("JSC Kazakhtelecom").
+# Legit ISP in Kazakhstan carrying human endpoints, but also a significant source of spam and other unwanted requests.
+# %Listed, Google Malware Dashboard: 0.12%.
+# %Listed, abuseat.org (CBL-Listed): 0.76%.
+# Stop Forum Spam (SFS) listings: 3,136.
+# Updated: 2018.09.15
+
+2a00:12f8::/32 Deny Spam
+Origin: KZ
+Tag: JSC Kazakhtelecom
+---
+recaptcha:
+ enabled: true

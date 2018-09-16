@@ -519,10 +519,12 @@ Tag: IPGLOBE DATACENTER
 
 
 # ASN 28271 ("DataCorpore Servios e Representaes").
-# Stop Forum Spam (SFS) listings: 65.
-# Updated: 2018.04.25
+# %Listed, Google Malware Dashboard: 0.72%.
+# Stop Forum Spam (SFS) listings: 69.
+# Updated: 2018.09.16
 
 2804:4c4::/32 Deny Cloud
+2804:cc0::/32 Deny Cloud
 Origin: BR
 Tag: DataCorpore Servios
 
@@ -719,9 +721,9 @@ Tag: myLoc
 
 
 # ASNs 57043, 395839 ("HOSTKEY B.V").
-# %Listed, Google Malware Dashboard: 0.13% (AS57043), 2.27% (AS395839).
-# Stop Forum Spam (SFS) listings: 16,365 (AS57043), 205 (AS395839).
-# Updated: 2018.04.24
+# %Listed, Google Malware Dashboard: 0.08% (AS57043), 0.33% (AS395839).
+# Stop Forum Spam (SFS) listings: 15,631 (AS57043), 205 (AS395839).
+# Updated: 2018.04.24 / Checked: 2018.09.16
 
 2a05:b40::/29 Deny Cloud
 Origin: NL
@@ -762,9 +764,9 @@ Tag: Swiftway
 
 
 # ASN 6939 ("Hurricane Electric, Inc").
-# %Listed, Google Malware Dashboard: 0.91%.
-# Stop Forum Spam (SFS) listings: 8,245.
-# Updated: 2018.04.23
+# %Listed, Google Malware Dashboard: 0.78%.
+# Stop Forum Spam (SFS) listings: 4,064.
+# Updated: 2018.09.17
 
 # Note for when updating: Some CIDRs appear in the announces that we don't want to be including here as signatures!
 # - "2001::/32" (provides "Teredo" tunneling).
@@ -780,23 +782,29 @@ Tag: Swiftway
 # When seen, just delete them from the list.
 # I.e., "^200(?:1\:\:\/32|2\:\:\/16).*$|^.*(?:AeroSurf|BLOOMINGDALE|Charter|Glasford|SeaKay|Telecom|Wicked).*$|^.*Authority$"
 
-2a06:1287:3480::/41 Run rules_as6939.php
-Origin: BY
 2602:ff22::/36 Run rules_as6939.php
 2620:10a:80fd::/48 Run rules_as6939.php
 2620:10a:80ff::/48 Run rules_as6939.php
 Origin: CA
+2a06:e881:160f::/48 Run rules_as6939.php
+2a06:e881:4201::/48 Run rules_as6939.php
+Origin: CH
 2001:df2:7900::/48 Run rules_as6939.php
 2400:7a00::/32 Run rules_as6939.php
 Origin: HK
-2a07:59c0:2300::/40 Run rules_as6939.php
-2a07:59c0:2400::/39 Run rules_as6939.php
-2a07:59c0:2600::/40 Run rules_as6939.php
-Origin: IT
-2001:67c:12e0::/48 Run rules_as6939.php
-Origin: KG
+2402:f4c0::/34 Run rules_as6939.php
+2402:f4c0:4000::/35 Run rules_as6939.php
+2402:f4c0:6000::/36 Run rules_as6939.php
+Origin: IN
 2a06:1c80::/32 Run rules_as6939.php
 Origin: NL
+2a03:f7c3:31fe::/48 Run rules_as6939.php
+2a03:f7c5:2967::/48 Run rules_as6939.php
+2a03:f7c5:3c9a::/48 Run rules_as6939.php
+2a03:f7c6:b78::/48 Run rules_as6939.php
+2a03:f7c7:3f4e::/48 Run rules_as6939.php
+2a0c:c646::/32 Run rules_as6939.php
+Origin: RU
 2001:470::/32 Run rules_as6939.php
 2001:49e8::/32 Run rules_as6939.php
 2600:7000::/24 Run rules_as6939.php
@@ -804,7 +812,8 @@ Origin: NL
 2604:a100:100::/48 Run rules_as6939.php
 2604:c800:ffff::/48 Run rules_as6939.php
 2620:0:50c0::/48 Run rules_as6939.php
-2620:ba:4000::/48 Run rules_as6939.php
+2620:138:c001::/48 Run rules_as6939.php
+2620:138:c002::/48 Run rules_as6939.php
 Origin: US
 Tag: Hurricane Electric
 
@@ -977,7 +986,7 @@ Tag: Reliable Hosting
 
 
 # ASN 33597 ("InfoRelay Online Systems, Inc").
-# Updated: 2017.09.09 / Checked: 2018.04.25
+# Updated: 2017.09.09 / Checked: 2018.09.17
 
 2a03:b280:1000::/48 Deny Cloud
 Origin: CZ
@@ -3175,8 +3184,8 @@ Tag: FASTVPS EESTI OU
 
 # ASN 43513 ("Sia Nano IT").
 # %Listed, Google Malware Dashboard: 0.27%.
-# Stop Forum Spam (SFS) listings: 1,778.
-# Updated: 2016.04.25 / Checked: 2018.04.25
+# Stop Forum Spam (SFS) listings: 1,333.
+# Updated: 2016.04.25 / Checked: 2018.09.17
 
 2a00:c68::/32 Deny Cloud
 2a05:8700::/29 Deny Cloud
@@ -4223,11 +4232,9 @@ Tag: Panamaserver.com
 
 
 # ASN 19133 ("Bird Hosting Inc").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Updated: 2018.04.25
+# No listings at last update.
+# Updated: 2018.09.16
 
-2a0c:2840::/29 Deny Cloud
-Origin: RU
 2605:7900:1::/48 Deny Cloud
 2605:7900:2::/47 Deny Cloud
 2605:7900:4::/48 Deny Cloud
@@ -4235,6 +4242,7 @@ Origin: RU
 2605:7900:10::/47 Deny Cloud
 2605:7900:16::/47 Deny Cloud
 2605:7900:18::/47 Deny Cloud
+2605:7900:20::/48 Deny Cloud
 2605:7900:42::/48 Deny Cloud
 2605:7900:100::/48 Deny Cloud
 Origin: US
@@ -6026,3 +6034,12 @@ Tag: Sprious LLC
 2a0d:2680::/29 Deny Cloud
 Origin: NL
 Tag: 3W Infra B.V
+
+
+# ASN 58073 ("YISP B.V").
+# Stop Forum Spam (SFS) listings: 32,348.
+# Updated: 2018.09.15
+
+2a02:2a38::/32 Deny Cloud
+Origin: NL
+Tag: YISP B.V

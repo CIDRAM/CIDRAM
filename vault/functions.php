@@ -188,12 +188,13 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
         $NAddr .= '0';
     }
     if (strpos($NAddr, '::') !== false) {
+        $Key = 7 - substr_count($Addr, ':');
         $Arr = [':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:'];
-        if (!isset($Arr[$c])) {
+        if (!isset($Arr[$Key])) {
             return false;
         }
-        $NAddr = str_replace('::', $Arr[7 - substr_count($Addr, ':')], $Addr);
-        unset($Arr);
+        $NAddr = str_replace('::', $Arr[$Key], $Addr);
+        unset($Arr, $Key);
     }
     $NAddr = explode(':', $NAddr);
     if (count($NAddr) !== 8) {

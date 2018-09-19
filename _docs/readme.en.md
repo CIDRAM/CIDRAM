@@ -1082,7 +1082,7 @@ CIDRAM *DOES* block an IP address | __False positive__ | True positive (correct 
 
 #### <a name="BLOCK_ENTIRE_COUNTRIES"></a>Can CIDRAM block entire countries?
 
-Yes. The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://macmathan.info/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
+Yes. The easiest way to achieve this would be to install some of the optional country blocklists provided by Macmathan. This can be done with a few simple clicks directly from the front-end updates page, or, if you'd prefer for the front-end to remain disabled, by downloading them directly from the **[optional blocklists download page](https://bitbucket.org/macmathan/blocklists)**, uploading them to the vault, and citing their names in the relevant configuration directives.
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>How frequently are signatures updated?
 

@@ -1082,7 +1082,7 @@ CIDRAM chặn một địa chỉ IP | __Sai tích cực__ | Đúng tích cực (
 
 #### <a name="BLOCK_ENTIRE_COUNTRIES"></a>CIDRAM có thể chặn toàn bộ quốc gia?
 
-Vâng. Cách dễ nhất để đạt được điều này sẽ được cài đặt một số các danh sách chặn quốc gia tùy chọn được cung cấp bởi Macmathan. Điều này có thể được thực hiện với một vài cú nhấp chuột đơn giản trực tiếp từ trang cập nhật của front-end, hoặc, nếu bạn thích các front-end ở lại vô hiệu hóa, bằng cách tải chúng trực tiếp từ **[trang tải xuống cho các danh sách chặn quốc gia tùy chọn](https://macmathan.info/blocklists)**, tải chúng lên vault, và trích dẫn tên của họ trong các chỉ thị cấu hình có liên quan.
+Vâng. Cách dễ nhất để đạt được điều này sẽ được cài đặt một số các danh sách chặn quốc gia tùy chọn được cung cấp bởi Macmathan. Điều này có thể được thực hiện với một vài cú nhấp chuột đơn giản trực tiếp từ trang cập nhật của front-end, hoặc, nếu bạn thích các front-end ở lại vô hiệu hóa, bằng cách tải chúng trực tiếp từ **[trang tải xuống cho các danh sách chặn quốc gia tùy chọn](https://bitbucket.org/macmathan/blocklists)**, tải chúng lên vault, và trích dẫn tên của họ trong các chỉ thị cấu hình có liên quan.
 
 #### <a name="SIGNATURE_UPDATE_FREQUENCY"></a>Tần suất cập nhật chữ ký là bao nhiêu?
 

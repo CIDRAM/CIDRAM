@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.09.02).
+ * This file: Thai language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'ล้มเหลวอัปโห
 $CIDRAM['lang']['response_verification_failed'] = 'การตรวจสอบล้มเหลว! คอมโพเนนต์อาจเสียหาย.';
 $CIDRAM['lang']['response_verification_success'] = 'การตรวจสอบสำเร็จ! ไม่พบปัญหา.';
 $CIDRAM['lang']['response_yes'] = 'ใช่แล้ว';
+$CIDRAM['lang']['security_warning'] = 'เกิดปัญหาที่ไม่คาดคิดขณะประมวลผลคำขอของคุณ. กรุณาลองอีกครั้ง. หากปัญหายังคงมีอยู่โปรดติดต่อฝ่ายสนับสนุน.';
 $CIDRAM['lang']['state_async_deny'] = 'สิทธิ์ไม่เพียงพอที่จะดำเนินการคำขอแบบอะซิงโครนัส. ลองเข้าสู่ระบบอีกครั้ง.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'แคชว่างเปล่า.';
 $CIDRAM['lang']['state_complete_access'] = 'เข้าถึงได้อย่างสมบูรณ์';

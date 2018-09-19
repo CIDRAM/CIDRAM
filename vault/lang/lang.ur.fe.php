@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.09.02).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'اپ لوڈ کرنے میں ناکا
 $CIDRAM['lang']['response_verification_failed'] = 'توثیقی ناکام ہوگئی! اجزاء خراب ہوسکتا ہے.';
 $CIDRAM['lang']['response_verification_success'] = 'توثیقی کامیابی! کوئی مسئلہ نہیں ملا.';
 $CIDRAM['lang']['response_yes'] = 'جی ہاں';
+$CIDRAM['lang']['security_warning'] = 'آپ کی درخواست پر عمل کرتے ہوئے ایک غیر متوقع مسئلہ پیش آیا. دوبارہ کوشش کریں. اگر مسائل جاری رہیں تو، معاون سے رابطہ کریں.';
 $CIDRAM['lang']['state_async_deny'] = 'اجازت غیر عارضی درخواستوں کو انجام دینے کے لئے کافی نہیں ہے. دوبارہ لاگ ان کرنے کی کوشش کریں.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'کیش خالی ہے.';
 $CIDRAM['lang']['state_complete_access'] = 'مکمل رسائی';

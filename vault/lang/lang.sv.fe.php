@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.09.02).
+ * This file: Swedish language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'Misslyckades med att ladda upp!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifiering misslyckades! Komponenten kan vara skadad.';
 $CIDRAM['lang']['response_verification_success'] = 'Verifiering succes! Inga problem hittades.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
+$CIDRAM['lang']['security_warning'] = 'Ett oväntat problem uppstod när du behandlade din förfrågan. Du kan försöka igen. Om problem kvarstår, kontaktar du support.';
 $CIDRAM['lang']['state_async_deny'] = 'Behörigheter är inte tillräckliga för att utföra asynkrona förfrågningar. Försök logga in igen.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'Cacheminnet är tomt.';
 $CIDRAM['lang']['state_complete_access'] = 'Fullständig tillgång';

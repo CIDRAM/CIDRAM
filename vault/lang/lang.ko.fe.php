@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.09.02).
+ * This file: Korean language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = '업로드에 실패했습니다!';
 $CIDRAM['lang']['response_verification_failed'] = '검증 실패했습니다! 구성 요소가 손상되었을 수 있습니다.';
 $CIDRAM['lang']['response_verification_success'] = '검증 성공! 문제는 발견되지 않았습니다.';
 $CIDRAM['lang']['response_yes'] = '예';
+$CIDRAM['lang']['security_warning'] = '요청을 처리하는 중에 예기치 않은 문제가 발생했습니다. 다시 시도하십시오. 문제가 지속되면 지원 부서에 문의하십시오.';
 $CIDRAM['lang']['state_async_deny'] = '권한이 비동기 요청을 수행하기에 충분하지 않습니다. 다시 로그인하십시오.';
 $CIDRAM['lang']['state_cache_is_empty'] = '캐시가 비어 있습니다.';
 $CIDRAM['lang']['state_complete_access'] = '전체 액세스';

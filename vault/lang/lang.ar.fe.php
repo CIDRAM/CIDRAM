@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.02).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -62,7 +62,7 @@ $CIDRAM['lang']['config_PHPMailer_Password'] = 'كلمة المرور لاستخ
 $CIDRAM['lang']['config_PHPMailer_Port'] = 'رقم المنفذ المراد استخدامه للبريد الإلكتروني الصادر. افتراضي = 587.';
 $CIDRAM['lang']['config_PHPMailer_SMTPAuth'] = 'يحدد هذا التوجيه ما إذا كنت تريد مصادقة جلسات SMTP (يجب ألا يغير هذا عادة).';
 $CIDRAM['lang']['config_PHPMailer_SMTPSecure'] = 'البروتوكول المستخدم عند إرسال البريد الإلكتروني عبر SMTP (TLS أو SSL).';
-$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا ، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM ، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.';
+$CIDRAM['lang']['config_PHPMailer_SkipAuthProcess'] = 'تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.';
 $CIDRAM['lang']['config_PHPMailer_Username'] = 'اسم المستخدم لاستخدامه عند إرسال البريد الإلكتروني عبر SMTP.';
 $CIDRAM['lang']['config_PHPMailer_addReplyToAddress'] = 'عنوان الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
 $CIDRAM['lang']['config_PHPMailer_addReplyToName'] = 'اسم الرد للاستشهاد عند إرسال البريد الإلكتروني عبر SMTP.';
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'فشل لتحميل!';
 $CIDRAM['lang']['response_verification_failed'] = 'فشل التحقق! يمكن أن يكون المكون تالفا.';
 $CIDRAM['lang']['response_verification_success'] = 'نجاح التحقق! لم يتم العثور على أية مشاكل.';
 $CIDRAM['lang']['response_yes'] = 'نعم';
+$CIDRAM['lang']['security_warning'] = 'حدثت مشكلة غير متوقعة أثناء معالجة طلبك. حاول مرة اخرى. إذا استمرت المشاكل، فاتصل بالدعم.';
 $CIDRAM['lang']['state_async_deny'] = 'أذونات غير كافية لأداء طلبات غير متزامنة. حاول تسجيل الدخول مرة أخرى.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'ذاكرة التخزين المؤقت فارغة.';
 $CIDRAM['lang']['state_complete_access'] = 'الوصول كامل';

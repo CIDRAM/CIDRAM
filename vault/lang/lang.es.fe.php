@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2018.09.02).
+ * This file: Spanish language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = '¡No se pudo subir!';
 $CIDRAM['lang']['response_verification_failed'] = '¡No se pudo verificar! Componente podría estar dañado.';
 $CIDRAM['lang']['response_verification_success'] = '¡Verificado con éxito! No se encontraron problemas.';
 $CIDRAM['lang']['response_yes'] = 'Sí';
+$CIDRAM['lang']['security_warning'] = 'Se produjo un problema inesperado al procesar su solicitud. Por favor, inténtalo de nuevo. Si este problema persiste, contáctese con soporte.';
 $CIDRAM['lang']['state_async_deny'] = 'Permisos no adecuados para realizar solicitudes asincrónicas. Intenta iniciar sesión de nuevo.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'El caché está vacío.';
 $CIDRAM['lang']['state_complete_access'] = 'Acceso completo';

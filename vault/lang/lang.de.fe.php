@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2018.09.02).
+ * This file: German language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'Hochladen-Fehler!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifizierung fehlgeschlagen! Komponente könnte beschädigt sein.';
 $CIDRAM['lang']['response_verification_success'] = 'Verifizierung war Erfolg! Keine Probleme gefunden.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
+$CIDRAM['lang']['security_warning'] = 'Bei der Verarbeitung Ihrer Anfrage ist ein unerwartetes Problem aufgetreten. Bitte versuche es erneut. Wenn dieses Problem weiterhin besteht, kontaktieren Sie Support.';
 $CIDRAM['lang']['state_async_deny'] = 'Berechtigungen sind nicht ausreichend, um asynchrone Anforderungen auszuführen. Versuchen Sie sich erneut anzumelden.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'Der Cache ist leer.';
 $CIDRAM['lang']['state_complete_access'] = 'Vollständiger Zugriff';

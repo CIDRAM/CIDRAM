@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.09.02).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'アップロードに失敗しまし
 $CIDRAM['lang']['response_verification_failed'] = '確認に失敗！​コンポーネントが破損している可能性があります。';
 $CIDRAM['lang']['response_verification_success'] = '検証の成功！​問題は見つかりませんでした。';
 $CIDRAM['lang']['response_yes'] = 'はい';
+$CIDRAM['lang']['security_warning'] = '要求の処理中に予期しない問題が発生しました。もう一度お試しください。問題が解決しない場合は、サポートに連絡してください。';
 $CIDRAM['lang']['state_async_deny'] = 'あなたのパーミッションは、非同期要求を実行するのに十分ではありません。​もう一度ログインしてみてください。';
 $CIDRAM['lang']['state_cache_is_empty'] = 'キャッシュは空です。';
 $CIDRAM['lang']['state_complete_access'] = '完全なアクセス';

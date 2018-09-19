@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.09.02).
+ * This file: Dutch language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verificatie mislukt! Component kan beschadigd zijn.';
 $CIDRAM['lang']['response_verification_success'] = 'Verificatie succes! Geen problemen gevonden.';
 $CIDRAM['lang']['response_yes'] = 'Ja';
+$CIDRAM['lang']['security_warning'] = 'Er is een onverwacht probleem opgetreden bij het verwerken van uw verzoek. Probeer het opnieuw. Neem contact op met support als het probleem aanhoudt.';
 $CIDRAM['lang']['state_async_deny'] = 'Machtigingen niet geschikt om asynchrone verzoeken uit te voeren. Probeer opnieuw in te loggen.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'De cache is leeg.';
 $CIDRAM['lang']['state_complete_access'] = 'Volledige toegang';

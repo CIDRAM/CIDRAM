@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.09.02).
+ * This file: Russian language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'Не удалось загрузит
 $CIDRAM['lang']['response_verification_failed'] = 'Ошибка проверки! Компонент может быть поврежден.';
 $CIDRAM['lang']['response_verification_success'] = 'Успех проверки! Нет проблем.';
 $CIDRAM['lang']['response_yes'] = 'Да';
+$CIDRAM['lang']['security_warning'] = 'При обработке запроса возникла непредвиденная проблема. Пожалуйста, попробуйте еще раз. Если проблемы сохраняются, обратитесь в службу поддержки.';
 $CIDRAM['lang']['state_async_deny'] = 'Разрешения не подходят для выполнения асинхронных запросов. Попробуйте снова войти в систему.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'Кэш пуст.';
 $CIDRAM['lang']['state_complete_access'] = 'Полный доступ';

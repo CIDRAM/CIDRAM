@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.02).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'Gagal mengupload!';
 $CIDRAM['lang']['response_verification_failed'] = 'Verifikasi gagal! Komponen mungkin rusak.';
 $CIDRAM['lang']['response_verification_success'] = 'Verifikasi sukses! Tidak ada masalah ditemukan.';
 $CIDRAM['lang']['response_yes'] = 'Ya';
+$CIDRAM['lang']['security_warning'] = 'Masalah yang tidak diharapkan terjadi saat memproses permintaan Anda. Silahkan coba lagi. Jika masalah terus berlanjut, hubungi dukungan.';
 $CIDRAM['lang']['state_async_deny'] = 'Izin tidak memadai untuk melakukan permintaan asinkron. Coba masuk lagi.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'Cache kosong.';
 $CIDRAM['lang']['state_complete_access'] = 'Akses lengkap';

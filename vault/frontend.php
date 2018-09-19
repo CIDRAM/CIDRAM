@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.05).
+ * This file: Front-end handler (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -240,14 +240,28 @@ if ($CIDRAM['QueryVars']['cidram-page'] === 'favicon') {
 /** Set form target if not already set. */
 $CIDRAM['FE']['FormTarget'] = empty($_POST['cidram-form-target']) ? '' : $_POST['cidram-form-target'];
 
-/** Fetch user list, sessions list and the front-end cache. */
-if (file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
-    $CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.dat');
+/** Used by a safety mechanism against a potential attack vector. */
+$CIDRAM['frontend.dat.safety'] = file_exists($CIDRAM['Vault'] . 'fe_assets/frontend.dat.safety');
+
+/** Fetch user list, sessions list, and the front-end cache, or rebuild it if it doesn't exist. */
+if ($CIDRAM['FE']['FrontEndData'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'fe_assets/frontend.dat')) {
     $CIDRAM['FE']['Rebuild'] = false;
 } else {
+    if ($CIDRAM['frontend.dat.safety']) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] ' . $CIDRAM['lang']['security_warning']);
+    }
     $CIDRAM['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $CIDRAM['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n\nCACHE\n-----\n";
     $CIDRAM['FE']['Rebuild'] = true;
 }
+
+/** Engage safety mechanism. */
+if (!$CIDRAM['frontend.dat.safety']) {
+    $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'fe_assets/frontend.dat.safety', 'w');
+    fwrite($CIDRAM['Handle'], '.');
+    fclose($CIDRAM['Handle']);
+}
+
 $CIDRAM['FE']['UserListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "USERS\n-----\n");
 $CIDRAM['FE']['SessionListPos'] = strpos($CIDRAM['FE']['FrontEndData'], "SESSIONS\n--------\n");
 $CIDRAM['FE']['CachePos'] = strpos($CIDRAM['FE']['FrontEndData'], "CACHE\n-----\n");

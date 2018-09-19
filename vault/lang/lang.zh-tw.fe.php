@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.02).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = '無法上傳！';
 $CIDRAM['lang']['response_verification_failed'] = '驗證失敗！組件可能已損壞。';
 $CIDRAM['lang']['response_verification_success'] = '驗證成功！沒有發現問題。';
 $CIDRAM['lang']['response_yes'] = '是';
+$CIDRAM['lang']['security_warning'] = '處理您的請求時出現意外問題。請再試一次。如果問題仍然存在，請聯繫技術支持。';
 $CIDRAM['lang']['state_async_deny'] = '權限不足以執行異步請求。嘗試再次登錄。';
 $CIDRAM['lang']['state_cache_is_empty'] = '緩存是空的。';
 $CIDRAM['lang']['state_complete_access'] = '完全訪問';

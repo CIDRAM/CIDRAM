@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.09.02).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -315,6 +315,7 @@ $CIDRAM['lang']['response_upload_error'] = 'Không thể tải lên!';
 $CIDRAM['lang']['response_verification_failed'] = 'Xác minh không thành công! Thành phần có thể bị hỏng.';
 $CIDRAM['lang']['response_verification_success'] = 'Xác minh thành công! Không tìm thấy vấn đề.';
 $CIDRAM['lang']['response_yes'] = 'Vâng';
+$CIDRAM['lang']['security_warning'] = 'Đã xảy ra sự cố khi xử lý yêu cầu của bạn. Vui lòng thử lại. Nếu sự cố vẫn tiếp diễn, hãy liên hệ với hỗ trợ.';
 $CIDRAM['lang']['state_async_deny'] = 'Quyền không đủ để thực hiện các yêu cầu không đồng bộ. Hãy thử đăng nhập lại.';
 $CIDRAM['lang']['state_cache_is_empty'] = 'Bộ nhớ cache là trống.';
 $CIDRAM['lang']['state_complete_access'] = 'Truy cập đầy đủ';

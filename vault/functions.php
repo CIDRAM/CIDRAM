@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.12).
+ * This file: Functions file (last modified: 2018.09.19).
  */
 
 /**
@@ -188,12 +188,11 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
         $NAddr .= '0';
     }
     if (strpos($NAddr, '::') !== false) {
-        $c = 7 - substr_count($Addr, ':');
         $Arr = [':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:'];
         if (!isset($Arr[$c])) {
             return false;
         }
-        $NAddr = str_replace('::', $Arr[$c], $Addr);
+        $NAddr = str_replace('::', $Arr[7 - substr_count($Addr, ':')], $Addr);
         unset($Arr);
     }
     $NAddr = explode(':', $NAddr);
@@ -1415,8 +1414,19 @@ $CIDRAM['Resolve6to4'] = function ($In) {
 $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
     $CIDRAM['CacheModified'] = false;
 
+    /** Used by a safety mechanism against a potential attack vector. */
+    $Safety = file_exists($CIDRAM['Vault'] . 'cache.dat.safety');
+
     /** Prepare the cache. */
-    if (!file_exists($CIDRAM['Vault'] . 'cache.dat')) {
+    if (!$CIDRAM['Cache'] = $CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat')) {
+        if ($Safety) {
+            $Status = $CIDRAM['GetStatusHTTP'](503);
+            header('HTTP/1.0 503 ' . $Status);
+            header('HTTP/1.1 503 ' . $Status);
+            header('Status: 503 ' . $Status);
+            header('Retry-After: 3600');
+            die;
+        }
         $Handle = fopen($CIDRAM['Vault'] . 'cache.dat', 'w');
         $CIDRAM['Cache'] = ['Counter' => 0];
         fwrite($Handle, serialize($CIDRAM['Cache']));
@@ -1426,11 +1436,18 @@ $CIDRAM['InitialiseCache'] = function () use (&$CIDRAM) {
             die('[CIDRAM] ' . $CIDRAM['lang']['Error_WriteCache']);
         }
     } else {
-        $CIDRAM['Cache'] = unserialize($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'cache.dat'));
+        $CIDRAM['Cache'] = unserialize($CIDRAM['Cache']);
         if (!isset($CIDRAM['Cache']['Counter'])) {
             $CIDRAM['CacheModified'] = true;
             $CIDRAM['Cache']['Counter'] = 0;
         }
+    }
+
+    /** Engage safety mechanism. */
+    if (!$Safety) {
+        $Handle = fopen($CIDRAM['Vault'] . 'cache.dat.safety', 'w');
+        fwrite($Handle, '.');
+        fclose($Handle);
     }
 
     /** Clear outdated IP tracking. */

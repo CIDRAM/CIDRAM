@@ -1,27 +1,30 @@
 <table>
 <tr>
-    <td class="nav big">
-{nav}    </td>
-    <td class="right extend">
-        <div class="s" id="stateMsg">{state_msg}{TrackingCount}</div>
-        <table><tr><td class="spanner">
-            <form action="?{TrackingFilter}" method="POST" name="SelectorForm"><select name="FilterSelector" class="ufts">
-                {TrackingFilterControls}
-            </select> <input type="submit" value="{field_ok}" class="auto" /></form><hr />
-            <form id="trackForm" action="?{TrackingFilter}" method="POST">
-                <input name="IPAddr" type="hidden" value="*" />
-                <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
-            </form>
-        </td></tr></table>
-        <table>
-        <tr>
-            <td class="h2"><div class="s">{field_ip_address}</div></td>
-            <td class="h2 big"><div class="s">{field_status} – {field_infractions}</div></td>
-            <td class="h2 big"><div class="s">{field_expiry}</div></td>
-            <td class="h2f"><div class="s">{field_options}</div></td>
-        </tr>
+  <td class="nav big">
+{nav}  </td>
+  <td class="right extend">
+    <div class="s" id="stateMsg">{state_msg}{TrackingCount}</div>
+    <table><tr><td class="spanner">
+      <form action="?{TrackingFilter}" method="POST" name="SelectorForm">
+        <select name="FilterSelector" class="ufts">
+          {TrackingFilterControls}
+        </select>
+        <input type="submit" value="{field_ok}" class="auto" />
+      </form><hr />
+      <form id="trackForm" action="?{TrackingFilter}" method="POST">
+        <input name="IPAddr" type="hidden" value="*" />
+        <input onclick="{Confirm-ClearAll}" type="button" value="{field_clear_all}" class="auto" />
+      </form>
+    </td></tr></table>
+    <table>
+    <tr>
+      <td class="h2"><div class="s">{field_ip_address}</div></td>
+      <td class="h2 big"><div class="s">{field_status} – {field_infractions}</div></td>
+      <td class="h2 big"><div class="s">{field_expiry}</div></td>
+      <td class="h2f"><div class="s">{field_options}</div></td>
+    </tr>
 {TrackingData}
-        </table>
-    </td>
+    </table>
+  </td>
 </tr>
 </table>

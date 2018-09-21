@@ -1,18 +1,26 @@
 <table>
 <tr>
-    <td class="nav big">
-{nav}    </td>
-    <td class="right extend">
-        {ProcTime}
-        <table>
-            <tr><td class="spanner"><select id="rangeCat" class="ufts" onchange="javascript:setRangeCat()">
+  <td class="nav big">
+{nav}  </td>
+  <td class="right extend">
+    {ProcTime}
+    <table>
+      <tr>
+        <td class="spanner">
+          <select id="rangeCat" class="ufts" onchange="javascript:setRangeCat()">
 {rangeCatOptions}
-            </select></td></tr>
-        </table>
-        <table>
-            <tr><td class="center h4f" colspan="2"><span class="s placeholder_loading">{state_loading}</span>{Labels}</td></tr>
-{RangeRows}        </table>
-    </td>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="center h4f" colspan="2">
+          <span class="s placeholder_loading">{state_loading}</span>{Labels}
+        </td>
+      </tr>
+{RangeRows}    </table>
+  </td>
 </tr>
 </table>
 <script type="text/javascript">function setRangeCat(){x=document.getElementById('rangeCat').value,null!==window.yCat&&hide(window.yCat),show(x),window.yCat=x}window.yCat='placeholder_loading',setRangeCat();{JSFOOT}</script>

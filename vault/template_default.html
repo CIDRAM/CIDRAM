@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{textDir}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="robots" content="noindex,nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- WebFont Begin -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" /><!-- WebFont End -->
-    <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
-    <title>CIDRAM</title>{recaptcha_api_include}
-    <style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- WebFont Begin -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" /><!-- WebFont End -->
+  <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
+  <title>CIDRAM</title>{recaptcha_api_include}
+  <style>
 #wrapper{border-style:solid;border-color:#999;width:98%;margin:auto;padding:2px}
 body,#wrapper{text-align:center}
 hr,#wrapper{border-width:1px}
@@ -27,32 +27,32 @@ hr{border-style:solid none none;margin:5px 2px 0;padding:2px;color:#900}
 input{font-size:calc(12pt * {Magnification});border:1px solid red}
 #results{margin:10px;padding:2px}
 .gForm{margin-left:auto;margin-right:auto;width:300px}
-    </style>
+  </style>
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="wrapper_inner">
-            <hr />
-            <div id="results">
-                <div id="denied">{denied}</div>
-            </div>
-            <div id="detected">{ReasonMessage}</div>
-            <div id="mailsupport">{EmailAddr}</div>{recaptcha_div_include}
-            <hr />
-            <div id="textBlock">
-                {Output}
-            </div>
-            <hr />
-            <div id="footer">
-                <div id="footer_inner">
-                    <div id="generated_by">{generated_by} </div>
-                    <div id="ScriptIdent">{ScriptIdent}</div>
-                </div>
-            </div>
+  <div id="wrapper">
+    <div id="wrapper_inner">
+      <hr />
+      <div id="results">
+        <div id="denied">{denied}</div>
+      </div>
+      <div id="detected">{ReasonMessage}</div>
+      <div id="mailsupport">{EmailAddr}</div>{recaptcha_div_include}
+      <hr />
+      <div id="textBlock">
+        {Output}
+      </div>
+      <hr />
+      <div id="footer">
+        <div id="footer_inner">
+          <div id="generated_by">{generated_by} </div>
+          <div id="ScriptIdent">{ScriptIdent}</div>
         </div>
+      </div>
     </div>
-    <div id="pp">{pp}</div>
+  </div>
+  <div id="pp">{pp}</div>
 </body>
 
 </html>

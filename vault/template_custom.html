@@ -1,37 +1,37 @@
 <!doctype html>
 <html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{textDir}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="robots" content="noindex,nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{css_url}/theme.min.css" />
-    <link rel="stylesheet" href="{css_url}/theme.colors.css" />
-    <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
-    <title>CIDRAM</title>{recaptcha_api_include}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{css_url}/theme.min.css" />
+  <link rel="stylesheet" href="{css_url}/theme.colors.css" />
+  <link rel="shortcut icon" type="image/gif" href="data:image/gif;base64,{favicon}" />
+  <title>CIDRAM</title>{recaptcha_api_include}
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="wrapper_inner">
-            <hr />
-            <div id="results">
-                <div id="denied">{denied}</div>
-            </div>
-            <div id="detected">{ReasonMessage}</div>
-            <div id="mailsupport">{EmailAddr}</div>{recaptcha_div_include}
-            <hr />
-            <div id="textBlock">
-                {Output}
-            </div>
-            <hr />
-            <div id="footer">
-                <div id="footer_inner">
-                    <div id="generated_by">{generated_by} </div>
-                    <div id="ScriptIdent">{ScriptIdent}</div>
-                </div>
-            </div>
+  <div id="wrapper">
+    <div id="wrapper_inner">
+      <hr />
+      <div id="results">
+        <div id="denied">{denied}</div>
+      </div>
+      <div id="detected">{ReasonMessage}</div>
+      <div id="mailsupport">{EmailAddr}</div>{recaptcha_div_include}
+      <hr />
+      <div id="textBlock">
+        {Output}
+      </div>
+      <hr />
+      <div id="footer">
+        <div id="footer_inner">
+          <div id="generated_by">{generated_by} </div>
+          <div id="ScriptIdent">{ScriptIdent}</div>
         </div>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>

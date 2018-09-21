@@ -1,30 +1,34 @@
 <table>
 <tr>
-    <td class="nav big">
-{nav}    </td>
-    <td class="right extend">
-        <div class="s">{state_msg}</div>
-        <table>
-        <tr><form action="?cidram-page=ip-test" method="POST">
-            <td class="h3">
-                <div class="center">
-                    <textarea name="ip-addr" placeholder="{tip_enter_ips_here}">{ip-addr}</textarea><br />
-                    <input type="text" name="custom-ua" placeholder="{tip_custom_ua}" value="{custom-ua}" class="txtf" />
-                </div>
-            </td>
-            <td class="h3f">
-                <div class="center">
-                    <input type="checkbox" name="ModuleSwitch" class="auto" {ModuleSwitch}/> <span class="s">{label_check_modules}</span><br />{tip_ip_test_module_switch}<br /><br />
-                    <input type="submit" value="{field_ok}" />
-                </div>
-            </td>
-        </form></tr>
-        <tr>
-            <td class="h4"><div class="s">{field_ip_address}</div></td>
-            <td class="h4f"><div class="s">{field_blocked}</div></td>
-        </tr>
+  <td class="nav big">
+{nav}  </td>
+  <td class="right extend">
+    <div class="s">{state_msg}</div>
+    <table>
+    <tr><form action="?cidram-page=ip-test" method="POST">
+      <td class="h3">
+        <div class="center">
+          <textarea name="ip-addr" placeholder="{tip_enter_ips_here}">{ip-addr}</textarea><br />
+          <input type="text" name="custom-ua" placeholder="{tip_custom_ua}" value="{custom-ua}" class="txtf" />
+        </div>
+      </td>
+      <td class="h3f">
+        <div class="center">
+          <input type="checkbox" name="ModuleSwitch" class="auto" {ModuleSwitch}/> <span class="s">{label_check_modules}</span><br />
+          <input type="checkbox" name="AuxSwitch" class="auto" {AuxSwitch}/> <span class="s">{label_check_aux}</span><br />
+          <br />
+          {tip_ip_test_switches}<br />
+          <br />
+          <input type="submit" value="{field_ok}" />
+        </div>
+      </td>
+    </form></tr>
+    <tr>
+      <td class="h4"><div class="s">{field_ip_address}</div></td>
+      <td class="h4f"><div class="s">{field_blocked}</div></td>
+    </tr>
 {IPTestResults}
-        </table>
-    </td>
+    </table>
+  </td>
 </tr>
 </table>

@@ -1,6 +1,9 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
+# Version: 2018.263.366
+# Last modified: 2018.09.21
+
 
 # ---
 # ASN 46844 ("Sharktech").
@@ -541,19 +544,19 @@ Tag: GorillaServers, Inc
 
 # Announcing as: "Data Center", "Data Centre" (w/ + w/o space).
 # Various ASNs; Sourced from HE.
-# Updated: 2018.04.26
+# Updated: 2018.09.21
 
 2a03:3180:f::/48 Deny Cloud
 Origin: AT
 2400:9c00::/32 Deny Cloud
 2404:3d00:400::/40 Deny Cloud
 Origin: AU
-2a02:1760::/32 Deny Cloud
-Origin: BE
 2804:160::/32 Deny Cloud
 2804:644::/32 Deny Cloud
 2804:6e8::/32 Deny Cloud
 2804:888::/32 Deny Cloud
+2804:938::/32 Deny Cloud
+2804:fd4::/32 Deny Cloud
 2804:1208::/32 Deny Cloud
 2804:122c::/32 Deny Cloud
 2804:1d40::/32 Deny Cloud
@@ -561,7 +564,11 @@ Origin: BE
 2804:3cb8::/32 Deny Cloud
 2804:3fe4::/32 Deny Cloud
 2804:4bbc::/32 Deny Cloud
+2804:4c30::/32 Deny Cloud
+2a02:1760::/32 Deny Cloud
 Origin: BR
+2607:8880::/32 Deny Cloud
+Origin: CA
 2001:67c:33c::/48 Deny Cloud
 2a00:7580:10::/48 Deny Cloud
 Origin: CH
@@ -574,11 +581,13 @@ Origin: CO
 2a06:9500:1002::/47 Deny Cloud
 2a06:9500:1004::/48 Deny Cloud
 2a0a:8ec0::/29 Deny Cloud
+2a0b:4340:550::/44 Deny Cloud
 2a0b:76c0::/29 Deny Cloud
 Origin: DE
 2a06:9fc0::/29 Deny Cloud
 Origin: DK
 2a01:a4c0::/32 Deny Cloud
+2a01:b5c0::/32 Deny Cloud
 2a03:7480::/43 Deny Cloud
 Origin: ES
 2a00:f5c0::/32 Deny Cloud
@@ -596,8 +605,7 @@ Origin: GB
 2401:9f00::/32 Deny Cloud
 2407:7200::/32 Deny Cloud
 Origin: HK
-2001:4c48:e::/47 Deny Cloud
-2001:4c48:10::/48 Deny Cloud
+2a05:9580::/29 Deny Cloud
 Origin: HU
 2401:8800::/40 Deny Cloud
 2401:8800:200::/40 Deny Cloud
@@ -606,16 +614,21 @@ Origin: HU
 2401:8800:800::/40 Deny Cloud
 2401:8800:a00::/40 Deny Cloud
 2401:8800:c00::/40 Deny Cloud
+2401:8800:e00::/40 Deny Cloud
 2404:7e80:1000::/36 Deny Cloud
 2404:7e80:2000::/36 Deny Cloud
 2404:7e80:4000::/36 Deny Cloud
 2404:a700::/32 Deny Cloud
-Origin: IN
+Origin: ID
 2402:7a00::/32 Deny Cloud
 2406:fe00::/32 Deny Cloud
 Origin: JP
+2a0b:1d40::/32 Deny Cloud
+Origin: LT
 2001:b20::/32 Deny Cloud
 Origin: LU
+2806:303::/32 Deny Cloud
+Origin: MX
 2401:200::/32 Deny Cloud
 2403:bc00:1::/48 Deny Cloud
 2403:bc00:7fff::/48 Deny Cloud
@@ -632,8 +645,6 @@ Origin: NO
 2401:9800::/32 Deny Cloud
 2404:d8::/32 Deny Cloud
 Origin: PH
-2a03:7580:1::/48 Deny Cloud
-Origin: PL
 2a00:a300::/32 Deny Cloud
 Origin: RU
 2405:2500:5::/48 Deny Cloud
@@ -656,6 +667,7 @@ Origin: UA
 2607:fd60:c938::/48 Deny Cloud
 Origin: US
 2c0f:f598:1::/48 Deny Cloud
+2c0f:f598:5::/48 Deny Cloud
 Origin: ZA
 Tag: Data Center
 
@@ -682,14 +694,13 @@ Tag: H88 S.A
 
 
 # ASN 46475 ("Limestone Networks, Inc").
-# %Listed, Google Malware Dashboard: 0.73%.
-# Stop Forum Spam (SFS) listings: 960.
-# Updated: 2018.04.27
+# %Listed, Google Malware Dashboard: 0.54%.
+# Stop Forum Spam (SFS) listings: 791.
+# Updated: 2018.09.21
 
-2a0d:f100::/29 Deny Cloud
-Origin: RU
 2400:ed00::/48 Deny Cloud
 Origin: SG
+2602:fe6b::/36 Deny Cloud
 2607:ff68::/32 Deny Cloud
 Origin: US
 Tag: Limestone Networks
@@ -4250,8 +4261,8 @@ Tag: Bird Hosting Inc
 
 
 # ASN 19624 ("Data Room, Inc").
-# Stop Forum Spam (SFS) listings: 1,015.
-# Updated: 2017.09.09 / Checked: 2018.04.29
+# Stop Forum Spam (SFS) listings: 320.
+# Updated: 2017.09.09 / Checked: 2018.09.21
 
 2a01:4ce0::/32 Deny Cloud
 Origin: RO
@@ -4515,9 +4526,9 @@ Tag: Accelerated IT
 
 
 # ASN 20278 ("Nexeon Technologies, Inc").
-# %Listed, Google Malware Dashboard: 1.32%.
-# Stop Forum Spam (SFS) listings: 5,007.
-# Updated: 2018.04.27
+# %Listed, Google Malware Dashboard: 0.31%.
+# Stop Forum Spam (SFS) listings: 2,913.
+# Updated: 2018.09.21
 
 2a0d:f800::/29 Deny Cloud
 Origin: GB
@@ -4526,10 +4537,6 @@ Origin: GB
 Origin: NL
 2401:f500:4::/48 Deny Cloud
 Origin: NZ
-2a0a:80::/29 Deny Cloud
-2a0a:b384::/32 Deny Cloud
-2a0c:c187::/32 Deny Cloud
-2a0d:5c04::/32 Deny Cloud
 2a0d:5c06::/32 Deny Cloud
 Origin: RU
 2602:ffc8::/32 Deny Cloud
@@ -4780,9 +4787,9 @@ Tag: IT Expert LLC
 
 
 # ASN 24806 ("INTERNET CZ, a.s").
-# %Listed, Google Malware Dashboard: 0.48%.
-# Stop Forum Spam (SFS) listings: 827.
-# Updated: 2017.01.23 / Checked: 2018.04.29
+# %Listed, Google Malware Dashboard: 0.13%.
+# Stop Forum Spam (SFS) listings: 1,044.
+# Updated: 2017.01.23 / Checked: 2018.09.21
 
 2001:15e8::/32 Deny Cloud
 Origin: CZ
@@ -5689,17 +5696,15 @@ Tag: Serverhosh
 
 
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").
-# %Listed, Google Malware Dashboard: 0.33%.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2018.04.27
+# %Listed, Google Malware Dashboard: 0.24%.
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2018.09.21
 
 2001:678:5e8::/48 Deny Cloud
-2a00:f826:4::/48 Deny Cloud
 2a02:d40:3::/48 Deny Cloud
 2a02:d40:7::/48 Deny Cloud
 2a02:d40:8::/48 Deny Cloud
 2a05:bec0::/29 Deny Cloud
-2a0b:bbc0::/32 Deny Cloud
 2a0c:3580::/29 Deny Cloud
 Origin: DE
 2a0b:aac0::/29 Deny Cloud

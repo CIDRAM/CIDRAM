@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.09.19).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -198,6 +198,7 @@ $CIDRAM['lang']['label_backup_location'] = 'Repository بیک اپ مقامات 
 $CIDRAM['lang']['label_banned'] = 'کی درخواستیں کالعدم';
 $CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
 $CIDRAM['lang']['label_branch'] = 'شاخ تازہ ترین مستحکم:';
+$CIDRAM['lang']['label_check_aux'] = 'معاون قوانین کے خلاف بھی ٹیسٹ کریں.';
 $CIDRAM['lang']['label_check_modules'] = 'ماڈیولز کے خلاف بھی ٹیسٹ کریں.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM ورژن استعمال کیا:';
 $CIDRAM['lang']['label_clientinfo'] = 'کلائنٹ کی معلومات:';
@@ -361,7 +362,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل می
 $CIDRAM['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ CIDRAM سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'ہیلو، {username}.<br />IP مجموعی طور پر آپ کو کم سے کم ممکنہ طریقے سے IP اور CIDR کا اظہار کرنے کی اجازت دیتا ہے. جمع کرنے کے لئے اعداد و شمار درج کریں اور "ٹھیک ہے" دبائیں.';
 $CIDRAM['lang']['tip_ip_test'] = 'ہیلو، {username}.<br />IP ٹیسٹ کے صفحے آپ کو ٹیسٹ کرنے IP پتوں موجودہ میں انسٹال دستخط کی طرف سے بلاک کر رہے ہیں کہ آیا کی اجازت دیتا ہے.';
-$CIDRAM['lang']['tip_ip_test_module_switch'] = '(جب منتخب نہ ہو، صرف دستخط فائلوں کے خلاف ٹیسٹ کیا جائے گا).';
+$CIDRAM['lang']['tip_ip_test_switches'] = '(جب منتخب نہ ہو، صرف دستخط فائلوں کے خلاف ٹیسٹ کیا جائے گا).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'ہیلو، {username}.<br />IP باخبر رہنے کے صفحے آپ/ان میں سے جو پابندی عائد کی گئی ہے کو چیک کرنے کے، اور پابندی ہٹانے کی، IP پتوں میں سے باخبر رہنے کے کی حیثیت کی جانچ کرنا اگر آپ ایسا کرنا چاہتے ہیں تو انہیں untrack کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
@@ -392,22 +393,22 @@ $CIDRAM['lang']['warning_php_2'] = 'آپ کے PHP ورژن شدید خطرناک
 $CIDRAM['lang']['warning_signatures_1'] = 'کوئی دستخط فائلیں فعال نہیں ہیں!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
-            <li><a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – CIDRAM لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ WordPress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
-            <li><a href="https://bitbucket.org/macmathan/blocklists" dir="ltr">macmathan/blocklists</a> – CIDRAM کے لئے اختیاری بلاسٹ لسٹ اور ماڈیولز پر مشتمل ہے جیسے خطرناک بٹس کو روکنے، ناپسندیدہ ممالک، پرانے براؤزر وغیرہ.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="http://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> –، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
-            <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
-            <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
-            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" dir="ltr">The Spamhaus Project</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="https://www.abuseat.org/public/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
-            <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – نام سے جانا توہین آمیز IP ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ IP ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
-            <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ IP/ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (HHVM، PHP، phpMyAdmin، Python، وغیرہ).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
+      <li><a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr">CIDRAM Issues @ GitHub</a> – CIDRAM لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
+      <li><a href="https://wordpress.org/plugins/cidram/" dir="ltr">CIDRAM @ WordPress.org</a> – CIDRAM کے لئے ورڈپریس پلگ ان.</li>
+      <li><a href="https://bitbucket.org/macmathan/blocklists" dir="ltr">macmathan/blocklists</a> – CIDRAM کے لئے اختیاری بلاسٹ لسٹ اور ماڈیولز پر مشتمل ہے جیسے خطرناک بٹس کو روکنے، ناپسندیدہ ممالک، پرانے براؤزر وغیرہ.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+      <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+      <li><a href="https://bgp.he.net/" dir="ltr">Hurricane Electric BGP Toolkit</a> –، ASNs سے CIDRs حاصل کریں ASN رشتے کا تعین نیٹ ورک ناموں، وغیرہ کی بنیاد پر ASNs دریافت.</li>
+      <li><a href="https://www.stopforumspam.com/forum/" dir="ltr">Forum @ Stop Forum Spam</a> – فورم کے سپیم روکنے کے بارے میں مفید فورم.</li>
+      <li><a href="https://radar.qrator.net/" dir="ltr">Radar by Qrator</a> – ASNs کی کنیکٹوٹی کی جانچ پڑتال کے لئے اس کے ساتھ ساتھ ASNs بارے مختلف دیگر معلومات کے لئے مفید آلہ.</li>
+      <li><a href="http://www.ipdeny.com/ipblocks/" dir="ltr">IPdeny IP country blocks</a> – ملک بھر دستخط پیدا کرنے کے لئے ایک تصوراتی، بہترین اور درست سروس.</li>
+      <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/" dir="ltr">Google Malware Dashboard</a> – ASNs لئے میلویئر انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+      <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" dir="ltr">The Spamhaus Project</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+      <li><a href="https://www.abuseat.org/public/asn.html" dir="ltr">Abuseat.org\'s Composite Blocking List</a> – ASNs لئے کی botnet انفیکشن کی شرح کے حوالے سے دکھاتا رپورٹیں.</li>
+      <li><a href="https://abuseipdb.com/" dir="ltr">AbuseIPDB</a> – نام سے جانا توہین آمیز IP ایس کی ایک ڈیٹا بیس کو برقرار رکھتا ہے؛ IP ایس کی جانچ پڑتال اور رپورٹنگ کے لئے ایک API فراہم.</li>
+      <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – نام سے جانا جاتا ردی باز کو کی لسٹنگ برقرار رکھتا ہے؛ IP/ASN کو فضول سرگرمیوں کی جانچ پڑتال کے لیے مفید.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – مختلف پیکجوں کے محفوظ اور غیر محفوظ ورژن لیتے ہیں (HHVM، PHP، phpMyAdmin، Python، وغیرہ).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – مختلف پیکجوں کے لئے مطابقت کی معلومات فہرست (CIDRAM، phpMussel، وغیرہ).</li>
         </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>ہیلو، %1$s.<br />

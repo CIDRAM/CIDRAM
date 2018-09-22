@@ -188,6 +188,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
 /vault/fe_assets/frontend.dat | Database voor de frontend (bevat accounts informatie, sessies informatie, en de cache; alleen gegenereerd als de frontend geactiveerd en gebruikt).
+/vault/fe_assets/frontend.dat.safety | Gegenereerd als veiligheidsmechanisme indien nodig.
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
 /vault/fe_assets/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
 /vault/fe_assets/pips.php | Pitten-handler (door de frontend bestandsbeheer gebruikt).
@@ -265,6 +266,7 @@ Bestand | Beschrijving
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/aggregator.php | IP-aggregator.
 /vault/cache.dat | Cache data/gegevens.
+/vault/cache.dat.safety | Gegenereerd als veiligheidsmechanisme indien nodig.
 /vault/cidramblocklists.dat | Metadata bestand voor de optionele blokkaderlijsten van Macmathan; Gebruikt door de frontend updates pagina.
 /vault/cli.php | CLI-handler.
 /vault/components.dat | Componenten metadata bestand; Gebruikt door de frontend updates pagina.
@@ -1454,4 +1456,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 2 September 2018 (2018.09.02).
+Laatste Bijgewerkt: 19 September 2018 (2018.09.19).

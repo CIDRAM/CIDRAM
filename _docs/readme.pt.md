@@ -188,6 +188,7 @@ Arquivo | Descrição
 /vault/fe_assets/_updates_row.html | Um modelo HTML para o front-end página de atualizações.
 /vault/fe_assets/frontend.css | Folha de estilo CSS para o front-end.
 /vault/fe_assets/frontend.dat | Banco de dados para o front-end (contém informações de contas, informações de sessões, eo cache; gerado só se o front-end está habilitado e usado).
+/vault/fe_assets/frontend.dat.safety | Gerado como um mecanismo de segurança quando necessário.
 /vault/fe_assets/frontend.html | O arquivo modelo HTML principal para o front-end.
 /vault/fe_assets/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
 /vault/fe_assets/pips.php | Módulo de pips (usado pelo gerenciador de arquivos do front-end).
@@ -265,6 +266,7 @@ Arquivo | Descrição
 /vault/.travis.yml | Usado pela Travis CI para testes (não é necessário para o correto funcionamento do script).
 /vault/aggregator.php | Agregador IP.
 /vault/cache.dat | Dados de cache.
+/vault/cache.dat.safety | Gerado como um mecanismo de segurança quando necessário.
 /vault/cidramblocklists.dat | Arquivo de metadados para as listas de bloqueio opcionais da Macmathan; Usado pela página de atualizações do front-end.
 /vault/cli.php | Módulo de CLI.
 /vault/components.dat | Arquivo de metadados de componentes; Usado pela página de atualizações do front-end.
@@ -1448,4 +1450,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 2 Setembro de 2018 (2018.09.02).
+Última Atualização: 19 Setembro de 2018 (2018.09.19).

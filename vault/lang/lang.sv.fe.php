@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.09.19).
+ * This file: Swedish language data for the front-end (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -198,6 +198,7 @@ $CIDRAM['lang']['label_backup_location'] = 'Repository backup platser (i nödfal
 $CIDRAM['lang']['label_banned'] = 'Förfrågningar förbjudna';
 $CIDRAM['lang']['label_blocked'] = 'Förfrågningar blockerade';
 $CIDRAM['lang']['label_branch'] = 'Branch senaste stabila:';
+$CIDRAM['lang']['label_check_aux'] = 'Testa även mot hjälpregler.';
 $CIDRAM['lang']['label_check_modules'] = 'Test även mot moduler.';
 $CIDRAM['lang']['label_cidram'] = 'CIDRAM-version som används:';
 $CIDRAM['lang']['label_clientinfo'] = 'Klientinformation:';
@@ -361,7 +362,7 @@ $CIDRAM['lang']['tip_file_manager'] = 'Hallå, {username}.<br />Du kan radera, r
 $CIDRAM['lang']['tip_home'] = 'Hallå, {username}.<br />Detta är hemsidan för CIDRAM front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta.';
 $CIDRAM['lang']['tip_ip_aggregator'] = 'Hallå, {username}.<br />Du kan aggregera IP-adresser och subnät till deras minsta möjliga uttryck med hjälp av IP-aggregatorn. Ange data som ska aggregeras och tryck på "OK".';
 $CIDRAM['lang']['tip_ip_test'] = 'Hallå, {username}.<br />Du kan testa om IP-adresser blockeras av nuvarande installerade signaturer med hjälp av IP-testsidan.';
-$CIDRAM['lang']['tip_ip_test_module_switch'] = '(När den inte är vald, endast signaturfiler kommer att testas mot).';
+$CIDRAM['lang']['tip_ip_test_switches'] = '(När den inte är vald, endast signaturfiler kommer att testas mot).';
 $CIDRAM['lang']['tip_ip_tracking'] = 'Hallå, {username}.<br />Med hjälp av IP-spårningssidan, du kan kontrollera vilka IP-adresser som spåras, vilka har blivit förbjudna, och du kan återkalla spårning och förbud om du vill.';
 $CIDRAM['lang']['tip_login'] = 'Standard användarnamn: <span class="txtRd">admin</span> – Standard lösenord: <span class="txtRd">password</span>';
 $CIDRAM['lang']['tip_logs'] = 'Hallå, {username}.<br />Välj en loggfil från listan nedan för att se innehållet i den loggfilen.';
@@ -392,22 +393,22 @@ $CIDRAM['lang']['warning_php_2'] = 'Din PHP-version är allvarligt sårbar! Uppd
 $CIDRAM['lang']['warning_signatures_1'] = 'Inga signaturfiler är aktiva!';
 
 $CIDRAM['lang']['info_some_useful_links'] = 'Några användbara länkar:<ul>
-            <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
-            <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin för CIDRAM.</li>
-            <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Innehåller valfria blocklistor och moduler för CIDRAM, t.ex. för blockering av farliga robotar, oönskade länder, föråldrade webbläsare, osv.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP lärande resurser och diskussion.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
-            <li><a href="http://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
-            <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Användbart diskussionsforum om att stoppa forums spam.</li>
-            <li><a href="https://radar.qrator.net/">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
-            <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – En fantastisk och exakt tjänst för att generera landsdäcks signaturer.</li>
-            <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visar rapporter om malwareinfektionshastigheter för ASNer.</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
-            <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
-            <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
-            <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Upprätthåller listor över kända spammare; Användbar för att kontrollera IP/ASN-spamaktiviteter.</li>
-            <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
-            <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
+      <li><a href="https://github.com/CIDRAM/CIDRAM/issues">CIDRAM Issues @ GitHub</a> – Issues sida för CIDRAM (stöd, hjälp, osv).</li>
+      <li><a href="https://wordpress.org/plugins/cidram/">CIDRAM @ WordPress.org</a> – WordPress plugin för CIDRAM.</li>
+      <li><a href="https://bitbucket.org/macmathan/blocklists">macmathan/blocklists</a> – Innehåller valfria blocklistor och moduler för CIDRAM, t.ex. för blockering av farliga robotar, oönskade länder, föråldrade webbläsare, osv.</li>
+      <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP lärande resurser och diskussion.</li>
+      <li><a href="https://php.earth/">PHP.earth</a> – PHP lärande resurser och diskussion.</li>
+      <li><a href="https://bgp.he.net/">Hurricane Electric BGP Toolkit</a> – Få CIDRer från ASNer, bestäm ASN-relationer, upptäck ASNer baserat på nätverksnamn, osv.</li>
+      <li><a href="https://www.stopforumspam.com/forum/">Forum @ Stop Forum Spam</a> – Användbart diskussionsforum om att stoppa forums spam.</li>
+      <li><a href="https://radar.qrator.net/">Radar av Qrator</a> – Användbart verktyg för att kontrollera ASN-anslutningar samt för annan information om ASNer.</li>
+      <li><a href="http://www.ipdeny.com/ipblocks/">IPdeny IP country blocks</a> – En fantastisk och exakt tjänst för att generera landsdäcks signaturer.</li>
+      <li><a href="https://www.google.com/transparencyreport/safebrowsing/malware/">Google Malware Dashboard</a> – Visar rapporter om malwareinfektionshastigheter för ASNer.</li>
+      <li><a href="https://www.spamhaus.org/statistics/botnet-asn/">Spamhausprojektet</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
+      <li><a href="https://www.abuseat.org/public/asn.html">Abuseat.orgs Sammansatta Blockeringslista</a> – Visar rapporter om botnätinfektionshastigheter för ASNer.</li>
+      <li><a href="https://abuseipdb.com/">AbuseIPDB</a> – Upprätthåller en databas med kända kränkande IP-adresser; Ger ett API för kontroll och rapportering av IP-adresser.</li>
+      <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Upprätthåller listor över kända spammare; Användbar för att kontrollera IP/ASN-spamaktiviteter.</li>
+      <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+      <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
         </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>Hallå, %1$s.<br />

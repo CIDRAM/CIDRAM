@@ -188,6 +188,7 @@ Fichier | Description
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes, informations sur les sessions, et le cache ; généré seulement si l'accès frontal est activé et utilisé).
+/vault/fe_assets/frontend.dat.safety | Généré comme un mécanisme de sécurité en cas de besoin.
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
 /vault/fe_assets/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/fe_assets/pips.php | Gestionnaire de pips (utilisé par le gestionnaire de fichiers de l'accès frontal).
@@ -265,6 +266,7 @@ Fichier | Description
 /vault/.travis.yml | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
 /vault/aggregator.php | Agrégateur IP.
 /vault/cache.dat | Données du cache.
+/vault/cache.dat.safety | Généré comme un mécanisme de sécurité en cas de besoin.
 /vault/cidramblocklists.dat | Fichier de métadonnées pour les listes de blocage facultatives de Macmathan ; Contient les valeurs par défaut de la configuration pour CIDRAM.
 /vault/cli.php | Module de CLI.
 /vault/components.dat | Fichier de métadonnées de composants ; Utilisé par la page des mises à jour frontales.
@@ -1452,4 +1454,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 2 Septembre 2018 (2018.09.02).
+Dernière mise à jour : 19 Septembre 2018 (2018.09.19).

@@ -188,6 +188,7 @@ Data | Deskripsi
 /vault/fe_assets/_updates_row.html | Template HTML untuk halaman pembaruan.
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
 /vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi akun, informasi sesi, dan cache; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
+/vault/fe_assets/frontend.dat.safety | Dihasilkan sebagai mekanisme keamanan bila diperlukan.
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
 /vault/fe_assets/icons.php | File ikon (digunakan oleh file manager bagian depan).
 /vault/fe_assets/pips.php | File pip (digunakan oleh file manager bagian depan).
@@ -265,6 +266,7 @@ Data | Deskripsi
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/aggregator.php | Agregator IP.
 /vault/cache.dat | Cache data.
+/vault/cache.dat.safety | Dihasilkan sebagai mekanisme keamanan bila diperlukan.
 /vault/cidramblocklists.dat | File metadata untuk daftar-daftar blokir yang opsional dari Macmathan; Digunakan oleh halaman pembaruan untuk bagian depan.
 /vault/cli.php | Modul CLI.
 /vault/components.dat | File metadata komponen; Digunakan oleh halaman pembaruan untuk bagian depan.
@@ -1446,4 +1448,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 2 September 2018 (2018.09.02).
+Terakhir Diperbarui: 19 September 2018 (2018.09.19).

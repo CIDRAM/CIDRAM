@@ -188,6 +188,7 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 /vault/fe_assets/_updates_row.html | フロントエンドのアップデート・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/frontend.css | フロントエンドのＣＳＳスタイルシート。
 /vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報とキャッシュが含まれています；​フロントエンドが有効になっているときに作成）。
+/vault/fe_assets/frontend.dat.safety | 必要に応じて安全機構として生成されます。
 /vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/fe_assets/icons.php | アイコン・ハンドラ（フロントエンド・ファイル・マネージャによって使用される）。
 /vault/fe_assets/pips.php | ピップス・ハンドラ（フロントエンド・ファイル・マネージャによって使用される）。
@@ -265,6 +266,7 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 /vault/.travis.yml | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/aggregator.php | ＩＰアグリゲータ。
 /vault/cache.dat | キャッシュ・データ。
+/vault/cache.dat.safety | 必要に応じて安全機構として生成されます。
 /vault/cidramblocklists.dat | Macmathanのオプションのブロックリストのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
 /vault/cli.php | ＣＬＩハンドラ。
 /vault/components.dat | コンポーネントのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
@@ -1451,4 +1453,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：2018年9月2日。
+最終アップデート：2018年9月19日。

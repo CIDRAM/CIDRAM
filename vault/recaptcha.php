@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: reCAPTCHA module (last modified: 2018.05.22).
+ * This file: reCAPTCHA module (last modified: 2018.09.22).
  */
 
 /**
@@ -54,7 +54,7 @@ $CIDRAM['reCAPTCHA']['GenerateCallbackData'] = function ($SiteKey, $API) {
     $Params = "'gForm',{'sitekey':'" . $SiteKey . "'" . ($API === 'Invisible' ? ",'size':'invisible'" : '') . '}';
     $More = ($API === 'Invisible') ? "grecaptcha.execute();" : '';
     return
-        "\n    <script type=\"text/javascript\">" .
+        "\n  <script type=\"text/javascript\">" .
         "var onloadCallback=function(){grecaptcha.render(" . $Params . ');' . $More . '}</script>';
 };
 

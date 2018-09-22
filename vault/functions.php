@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.19).
+ * This file: Functions file (last modified: 2018.09.22).
  */
 
 /**
@@ -159,7 +159,7 @@ $CIDRAM['ExpandIPv6'] = function ($Addr, $ValidateOnly = false, $FactorLimit = 1
     /**
      * The REGEX pattern used by this `preg_match` call was adapted from the
      * IPv6 REGEX pattern that can be found at
-     * http://sroze.io/2008/10/09/regex-ipv4-et-ipv6/
+     * https://sroze.io/regex-ip-v4-et-ipv6-6cc005cabe8c
      */
     if (!preg_match(
         '/^(([\da-f]{1,4}\:){7}[\da-f]{1,4})|(([\da-f]{1,4}\:){6}\:[\da-f]{1' .
@@ -1715,4 +1715,144 @@ $CIDRAM['GetStatusHTTP'] = function($Status) {
         503 => 'Service Unavailable'
     ];
     return isset($Message[$Status]) ? $Message[$Status] : '';
+};
+
+/**
+ * Used for matching auxiliary rule criteria.
+ *
+ * @param string|array $Criteria The criteria to accept for the match.
+ * @param string $Actual The actual value we're trying to match.
+ * @param string $Method The method for handling data when matching. @todo@
+ * @return bool Match succeeded (true) or failed (false).
+ */
+$CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM) {
+
+    /** Normalise criteria to an array. */
+    $CIDRAM['Arrayify']($Criteria);
+
+    /** Perform the match. */
+    foreach ($Criteria as $TestCase) {
+        if ($TestCase === $Actual) {
+            return true;
+        }
+    }
+
+    /** Failed to match anything. */
+    return false;
+
+};
+
+/** Procedure for parsing and processing auxiliary rules. */
+$CIDRAM['Aux'] = function () use (&$CIDRAM) {
+
+    /** Potential sources. */
+    static $Sources = [
+        'IPAddr',
+        'IPAddrResolved',
+        'Query',
+        'Referrer',
+        'UA',
+        'UALC',
+        'ReasonMessage',
+        'SignatureCount',
+        'Signatures',
+        'WhyReason',
+        'rURI'
+    ];
+
+    /** Potential modes. */
+    static $Modes = [
+        'Block',
+        'Bypass',
+        'Whitelist'
+    ];
+
+    /** Exit procedure early if the rules don't exist. */
+    if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
+        return;
+    }
+
+    if (!isset($CIDRAM['AuxData'])) {
+        /** Array to contain auxiliary rules. */
+        $CIDRAM['AuxData'] = [];
+
+        /** Attempt to parse the auxiliary rules file. */
+        $CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+    }
+
+    /** Iterate through the auxiliary rules. */
+    foreach ($CIDRAM['AuxData'] as $Name => $Data) {
+
+        /** Detailed reason. */
+        $Reason = empty($Data['Reason']) ? $Name : $Data['Reason'];
+
+        /** Iterate through modes. */
+        foreach ($Modes as $Mode) {
+            if (!empty($Data[$Mode])) {
+
+                /** Match exceptions. */
+                if (!empty($Data[$Mode]['But not if matches'])) {
+
+                    /** Iterate through sources. */
+                    foreach ($Sources as $Source) {
+                        if (isset($Data[$Mode]['But not if matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
+                            if ($CIDRAM['AuxMatch']($Data[$Mode]['But not if matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
+                                continue 2;
+                            }
+                        }
+                    }
+
+                    /** Check hostname when relevant. */
+                    if (isset($Data[$Mode]['But not if matches']['Hostname'], $CIDRAM['Hostname'])) {
+                        if ($CIDRAM['AuxMatch']($Data[$Mode]['But not if matches']['Hostname'], $CIDRAM['Hostname'])) {
+                            continue;
+                        }
+                    }
+
+                }
+
+                /** Matches. */
+                if (!empty($Data[$Mode]['If matches'])) {
+
+                    /** Iterate through sources. */
+                    foreach ($Sources as $Source) {
+                        if (isset($Data[$Mode]['If matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
+                            if ($CIDRAM['AuxMatch']($Data[$Mode]['If matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
+                                if ($Mode === 'Block') {
+                                    $CIDRAM['Trigger'](true, $Name, $Reason);
+                                } elseif ($Mode === 'Bypass') {
+                                    $CIDRAM['Bypass'](true, $Name);
+                                } elseif ($Mode === 'Whitelist') {
+                                    $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
+                                    $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                                    $CIDRAM['Whitelisted'] = true;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                    /** Check hostname when relevant. */
+                    if (isset($Data[$Mode]['If matches']['Hostname'], $CIDRAM['Hostname'])) {
+                        if ($CIDRAM['AuxMatch']($Data[$Mode]['If matches']['Hostname'], $CIDRAM['Hostname'])) {
+                            if ($Mode === 'Block') {
+                                $CIDRAM['Trigger'](true, $Name, $Reason);
+                            } elseif ($Mode === 'Bypass') {
+                                $CIDRAM['Bypass'](true, $Name);
+                            } elseif ($Mode === 'Whitelist') {
+                                $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
+                                $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                                $CIDRAM['Whitelisted'] = true;
+                                return;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
 };

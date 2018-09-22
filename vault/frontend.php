@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.19).
+ * This file: Front-end handler (last modified: 2018.09.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -146,11 +146,12 @@ if (empty($CIDRAM['Config']['general']['disable_webfonts'])) {
         'Begin' => strpos($CIDRAM['FE']['Template'], '<!-- WebFont Begin -->'),
         'End' => strpos($CIDRAM['FE']['Template'], '<!-- WebFont End -->')
     ];
-    $CIDRAM['FE']['Template'] = substr(
-        $CIDRAM['FE']['Template'], 0, $CIDRAM['WebFontPos']['Begin']
-    ) . substr(
-        $CIDRAM['FE']['Template'], $CIDRAM['WebFontPos']['End'] + 20
-    );
+    if ($CIDRAM['WebFontPos']['Begin'] !== false && $CIDRAM['WebFontPos']['End'] !== false) {
+        $CIDRAM['FE']['Template'] = (
+            substr($CIDRAM['FE']['Template'], 0, $CIDRAM['WebFontPos']['Begin']) .
+            substr($CIDRAM['FE']['Template'], $CIDRAM['WebFontPos']['End'] + 20)
+        );
+    }
     unset($CIDRAM['WebFontPos']);
 }
 
@@ -2392,13 +2393,13 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
 
         /** Add flags CSS. */
         if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
-            $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+            $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
         }
 
         /** Process signature files. */
         $CIDRAM['FE']['Data'] = (
             (empty($CIDRAM['Config']['signatures']['ipv4']) && empty($CIDRAM['Config']['signatures']['ipv6']))
-        ) ? '        <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n" : $CIDRAM['SectionsHandler'](
+        ) ? '    <div class="txtRd">' . $CIDRAM['lang']['warning_signatures_1'] . "</div>\n" : $CIDRAM['SectionsHandler'](
             array_unique(explode(',', $CIDRAM['Config']['signatures']['ipv4'] . ',' . $CIDRAM['Config']['signatures']['ipv6']))
         );
 
@@ -2469,7 +2470,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
 
     /** Add flags CSS. */
     if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
-        $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+        $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
     /** Template for range rows. */
@@ -2566,7 +2567,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
 
     /** Add flags CSS. */
     if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
-        $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+        $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
     /** Template for result rows. */
@@ -2578,8 +2579,14 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
     /** Module switch for SimulateBlockEvent closure. */
     $CIDRAM['ModuleSwitch'] = !empty($_POST['ModuleSwitch']);
 
+    /** Auxiliary switch for SimulateBlockEvent closure. */
+    $CIDRAM['AuxSwitch'] = !empty($_POST['AuxSwitch']);
+
     /** Module switch for HTML. */
     $CIDRAM['FE']['ModuleSwitch'] = $CIDRAM['ModuleSwitch'] ? ' checked' : '';
+
+    /** Auxiliary switch for HTML. */
+    $CIDRAM['FE']['AuxSwitch'] = $CIDRAM['AuxSwitch'] ? ' checked' : '';
 
     /** Fetch custom user agent if specified. */
     $CIDRAM['FE']['custom-ua'] = !empty($_POST['custom-ua']) ? $_POST['custom-ua'] : '';
@@ -2596,7 +2603,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Perm
             if (!$CIDRAM['ThisIP']['IPAddress']) {
                 continue;
             }
-            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch']);
+            $CIDRAM['SimulateBlockEvent']($CIDRAM['ThisIP']['IPAddress'], $CIDRAM['ModuleSwitch'], $CIDRAM['AuxSwitch']);
             if ($CIDRAM['Caught'] || empty($CIDRAM['LastTestIP']) || empty($CIDRAM['TestResults'])) {
                 $CIDRAM['ThisIP']['YesNo'] = $CIDRAM['lang']['response_error'];
                 $CIDRAM['ThisIP']['StatClass'] = 'txtOe';
@@ -3007,7 +3014,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
 
     /** Add flags CSS. */
     if ($CIDRAM['FE']['Flags'] = file_exists($CIDRAM['Vault'] . 'fe_assets/flags.css')) {
-        $CIDRAM['FE']['OtherHead'] .= "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
+        $CIDRAM['FE']['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
     /** How to display the log data? */
@@ -3137,7 +3144,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permiss
     /** Define logfile list. */
     array_walk($CIDRAM['FE']['LogFiles']['Files'], function ($Arr) use (&$CIDRAM) {
         $CIDRAM['FE']['LogFiles']['Out'] .= sprintf(
-            '            <a href="?cidram-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
+            '      <a href="?cidram-page=logs&logfile=%1$s&text-mode=%3$s">%1$s</a> – %2$s<br />',
             $Arr['Filename'],
             $Arr['Filesize'],
             $CIDRAM['FE']['TextModeLinks']

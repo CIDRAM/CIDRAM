@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Output generator (last modified: 2018.08.26).
+ * This file: Output generator (last modified: 2018.09.22).
  */
 
 /** Initialise cache. */
@@ -170,11 +170,9 @@ $CIDRAM['Trackable'] = $CIDRAM['Config']['signatures']['track_mode'];
 
 /** Perform forced hostname lookup if this has been enabled. */
 if ($CIDRAM['Config']['general']['force_hostname_lookup']) {
-    if (!empty($CIDRAM['BlockInfo']['IPAddrResolved'])) {
-        $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddrResolved']);
-    } else {
-        $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse']($CIDRAM['BlockInfo']['IPAddr']);
-    }
+    $CIDRAM['Hostname'] = $CIDRAM['DNS-Reverse'](
+        empty($CIDRAM['BlockInfo']['IPAddrResolved']) ? $CIDRAM['BlockInfo']['IPAddr'] : $CIDRAM['BlockInfo']['IPAddrResolved']
+    );
 }
 
 /**
@@ -204,6 +202,11 @@ $CIDRAM['SearchEngineVerification']();
 
 /** Execute social media verification. */
 $CIDRAM['SocialMediaVerification']();
+
+/** Process auxiliary rules, if any exist. */
+if ($CIDRAM['Protect'] && !$CIDRAM['Config']['general']['maintenance_mode'] && empty($CIDRAM['Whitelisted'])) {
+    $CIDRAM['Aux']();
+}
 
 /** Process tracking information for the inbound IP. */
 if (!empty($CIDRAM['TestResults']) && $CIDRAM['BlockInfo']['SignatureCount'] && $CIDRAM['Trackable']) {
@@ -557,11 +560,11 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                             $CIDRAM['Parsables'],
                             $CIDRAM['FieldTemplates']['Logs'] . "\n"
                         )) . '"><strong>' . $CIDRAM['lang']['click_here'] . '</strong></a>';
-                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars']([
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n  <p class=\"detected\">" . $CIDRAM['ParseVars']([
                         'ClickHereLink' => $CIDRAM['BlockInfo']['EmailAddr']
                     ], $CIDRAM['lang']['Support_Email']) . '</p>';
                 } elseif ($CIDRAM['Config']['general']['emailaddr_display_style'] === 'noclick') {
-                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n    <p class=\"detected\">" . $CIDRAM['ParseVars']([
+                    $CIDRAM['BlockInfo']['EmailAddr'] = "\n  <p class=\"detected\">" . $CIDRAM['ParseVars']([
                         'EmailAddr' => str_replace(
                             '@',
                             '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',
@@ -591,11 +594,12 @@ if ($CIDRAM['BlockInfo']['SignatureCount'] > 0) {
                     'Begin' => strpos($CIDRAM['HTML'], '<!-- WebFont Begin -->'),
                     'End' => strpos($CIDRAM['HTML'], '<!-- WebFont End -->')
                 ];
-                $CIDRAM['HTML'] = substr(
-                    $CIDRAM['HTML'], 0, $CIDRAM['WebFontPos']['Begin']
-                ) . substr(
-                    $CIDRAM['HTML'], $CIDRAM['WebFontPos']['End'] + 20
-                );
+                if ($CIDRAM['WebFontPos']['Begin'] !== false && $CIDRAM['WebFontPos']['End'] !== false) {
+                    $CIDRAM['HTML'] = (
+                        substr($CIDRAM['HTML'], 0, $CIDRAM['WebFontPos']['Begin']) .
+                        substr($CIDRAM['HTML'], $CIDRAM['WebFontPos']['End'] + 20)
+                    );
+                }
                 unset($CIDRAM['WebFontPos']);
             }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.02).
+ * This file: Front-end functions file (last modified: 2018.09.22).
  */
 
 /**
@@ -784,8 +784,9 @@ $CIDRAM['ComponentFunctionUpdatePrep'] = function () use (&$CIDRAM) {
  *
  * @param string $Addr The IP address to test against.
  * @param bool $Modules Specifies whether to test against modules.
+ * @param bool $Aux Specifies whether to test against auxiliary rules.
  */
-$CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM) {
+$CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false, $Aux = false) use (&$CIDRAM) {
 
     /** Initialise cache. */
     $CIDRAM['InitialiseCache']();
@@ -853,6 +854,11 @@ $CIDRAM['SimulateBlockEvent'] = function ($Addr, $Modules = false) use (&$CIDRAM
 
     /** Execute social media verification. */
     $CIDRAM['SocialMediaVerification']();
+
+    /** Auxiliary rule checks. */
+    if ($Aux) {
+        $CIDRAM['Aux']();
+    }
 
     /** Update the cache. */
     if ($CIDRAM['CacheModified']) {
@@ -2443,7 +2449,7 @@ $CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
     $JS = '';
     foreach ($SigTypes as $SigType) {
         $Class = 'sigtype_' . strtolower($SigType);
-        $CIDRAM['FE']['rangeCatOptions'] .= "\n            <option value=\"" . $Class . '">' . $SigType . '</option>';
+        $CIDRAM['FE']['rangeCatOptions'] .= "\n      <option value=\"" . $Class . '">' . $SigType . '</option>';
         $CIDRAM['FE']['Labels'] .= '<span style="display:none" class="s ' . $Class . '">' . $CIDRAM['lang']['label_signature_type'] . ' ' . $SigType . '</span>';
         if ($SigType === 'Run') {
             $ZeroPlus = 'txtOe';

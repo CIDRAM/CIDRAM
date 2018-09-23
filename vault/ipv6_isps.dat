@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.260.532
-# Last modified: 2018.09.18
+# Version: 2018.265.525
+# Last modified: 2018.09.23
 
 
 # ---
@@ -1240,10 +1240,10 @@ recaptcha:
 
 # ASN 12389 ("PJSC Rostelecom").
 # Careful about "2002::/16" listing: Never include this in the aggregated list!
-# %Listed, Google Malware Dashboard: 0.48%.
-# %Listed, abuseat.org (CBL-Listed): 1.37%.
-# Stop Forum Spam (SFS) listings: 308,824.
-# Updated: 2018.05.03
+# %Listed, Google Malware Dashboard: 0.43%.
+# %Listed, abuseat.org (CBL-Listed): 0.86%.
+# Stop Forum Spam (SFS) listings: 317,234.
+# Updated: 2018.05.03 / Checked: 2018.09.23
 
 2a00:1e88::/32 Deny Spam
 2a01:540::/36 Deny Spam
@@ -1574,6 +1574,24 @@ recaptcha:
 2a00:12f8::/32 Deny Spam
 Origin: KZ
 Tag: JSC Kazakhtelecom
+---
+recaptcha:
+ enabled: true
+
+
+# ASN 8359 ("MTS PJSC").
+# Caught trying to hack WordPress sites.
+# %Listed, Google Malware Dashboard: 0.17%.
+# Stop Forum Spam (SFS) listings: 5,151.
+# Updated: 2018.09.23
+
+2a00:f00::/32 Deny Generic
+2a00:1fa0::/29 Deny Generic
+2a02:28::/29 Deny Generic
+Origin: RU
+2a01:7c0::/32 Deny Generic
+Origin: UA
+Tag: MTS PJSC
 ---
 recaptcha:
  enabled: true

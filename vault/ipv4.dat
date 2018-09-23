@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4.dat
 
-# Version: 2018.263.366
-# Last modified: 2018.09.21
+# Version: 2018.265.525
+# Last modified: 2018.09.23
 
 
 # ---
@@ -192,8 +192,8 @@ Tag: VpsQuan LLC
 
 
 # ASN 16138 ("INTERIA.PL Sp z.o.o").
-# %Listed, Google Malware Dashboard: 0.24%.
-# Updated: 2016.03.17 / Checked: 2018.03.28
+# %Listed, Google Malware Dashboard: 0.25%.
+# Updated: 2016.03.17 / Checked: 2018.09.23
 
 185.69.192.0/22 Deny Cloud
 217.74.64.0/20 Deny Cloud
@@ -461,9 +461,9 @@ Tag: CST-NET
 
 
 # ASN 20248 ("Take 2 Hosting, Inc").
-# %Listed, Google Malware Dashboard: 16.40%.
-# Stop Forum Spam (SFS) listings: 26.
-# Updated: 2017.07.12 / Checked: 2018.03.29
+# %Listed, Google Malware Dashboard: 10.18%.
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2017.07.12 / Checked: 2018.09.23
 
 23.231.128.0/17 Deny Cloud
 50.115.128.0/20 Deny Cloud
@@ -2399,7 +2399,7 @@ Tag: Avesta Networks LLC
 # ASN 42244 ("Hosting Operator eServer.ru Ltd").
 # %Listed, Google Malware Dashboard: 0.06%.
 # Stop Forum Spam (SFS) listings: 5.
-# Updated: 2018.03.30 / Checked: 2018.08.25
+# Updated: 2018.03.30 / Checked: 2018.09.23
 
 80.77.168.0/24 Deny Cloud
 91.189.80.0/23 Deny Cloud
@@ -7136,7 +7136,7 @@ Tag: HEG US Inc
 # significantly with with a number of benign, innocent ISPs, human endpoint connections (A/DSL connections, etc), as
 # well as with backbone architecture and various IPs and CIDRs that we definitely shouldn't be blocking.
 
-# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we wan't to block, as
+# Because of this, I'm splitting their ASN into multiple sections pertaining the things that we want to block, as
 # opposed to just listing their ASN in entirety. Sections will be split across ipv[46].dat + ipv[46]_isps.dat +
 # ipv[46]_other.dat accordingly.
 
@@ -10012,9 +10012,9 @@ Tag: PDR
 
 
 # ASN 8342 ("OJSC RTComm.RU").
-# %Listed, Google Malware Dashboard: 1.38%.
-# Stop Forum Spam (SFS) listings: 252.
-# Updated: 2017.06.28 / Checked: 2018.03.28
+# %Listed, Google Malware Dashboard: 1.63%.
+# Stop Forum Spam (SFS) listings: 54.
+# Updated: 2017.06.28 / Checked: 2018.09.23
 
 81.176.0.0/16 Deny Cloud
 81.177.0.0/19 Deny Cloud
@@ -11712,8 +11712,8 @@ Tag: ZhengZhou GIANT
 
 
 # ASN 34233 ("Superior B.V").
-# %Listed, Google Malware Dashboard: 1.53%.
-# Updated: 2016.12.10 / Checked: 2018.03.28
+# %Listed, Google Malware Dashboard: 0.61%.
+# Updated: 2016.12.10 / Checked: 2018.09.23
 
 46.235.40.0/21 Deny Cloud
 83.137.192.0/21 Deny Cloud
@@ -12520,7 +12520,7 @@ Tag: ScaleUp Technologies
 # ASN 27458 ("Proxy Pipe, Inc").
 # Note: They claim to be a DDoS mitigation service (not actually a traditional proxy service, despite the name), and
 # so, designation of "Cloud" is correct.
-# Updated: 2017.09.25 / Checked: 2018.03.28
+# Updated: 2017.09.25 / Checked: 2018.09.23
 
 202.165.124.0/22 Deny Cloud
 Origin: AU
@@ -15789,9 +15789,9 @@ Tag: UK Dedicated Servers
 
 
 # ASN 30900 ("Sternforth Ltd").
-# %Listed, Google Malware Dashboard: 0.82%.
-# Stop Forum Spam (SFS) listings: 4,632.
-# Updated: 2017.12.19 / Checked: 2018.03.30
+# %Listed, Google Malware Dashboard: 0.53%.
+# Stop Forum Spam (SFS) listings: 2,282.
+# Updated: 2017.12.19 / Checked: 2018.09.23
 
 185.104.216.0/22 Deny Cloud
 Origin: GB
@@ -16354,9 +16354,9 @@ Tag: AS15615
 
 
 # ASN 49453 ("Global Layer B.V").
-# %Listed, Google Malware Dashboard: 0.36%.
-# Stop Forum Spam (SFS) listings: 11,459.
-# Updated: 2018.05.03
+# %Listed, Google Malware Dashboard: 0.27%.
+# Stop Forum Spam (SFS) listings: 10,336.
+# Updated: 2018.09.23
 
 130.185.250.0/24 Deny Cloud
 Origin: BG
@@ -16368,6 +16368,10 @@ Origin: BG
 Origin: CL
 185.185.124.0/24 Deny Cloud
 Origin: DE
+185.203.64.0/22 Deny Cloud
+Origin: IE
+37.252.220.0/22 Deny Cloud
+46.243.173.0/24 Deny Cloud
 109.202.98.0/23 Deny Cloud
 109.202.100.0/22 Deny Cloud
 109.202.105.0/24 Deny Cloud
@@ -16395,6 +16399,8 @@ Origin: DE
 213.152.188.0/22 Deny Cloud
 Origin: NL
 5.188.86.0/24 Deny Cloud
+31.184.237.0/24 Deny Cloud
+46.161.9.0/24 Deny Cloud
 185.223.160.0/23 Deny Cloud
 185.223.164.0/23 Deny Cloud
 193.93.193.0/24 Deny Cloud
@@ -18139,8 +18145,8 @@ Tag: TV Internacional
 
 
 # ASN 46975 ("BigTip, Inc").
-# Stop Forum Spam (SFS) listings: 4,252.
-# Updated: 2017.12.18 / Checked: 2018.03.30
+# Stop Forum Spam (SFS) listings: 1,761.
+# Updated: 2017.12.18 / Checked: 2018.09.23
 
 192.126.128.0/17 Deny Cloud
 Origin: US
@@ -19335,9 +19341,9 @@ Tag: active-servers.com
 
 # ASN 7979 ("Servers.com, Inc").
 # Some IPs here caught scraping website content without permission.
-# %Listed, Google Malware Dashboard: 0.80%.
-# Stop Forum Spam (SFS) listings: 342.
-# Updated: 2018.05.03
+# %Listed, Google Malware Dashboard: 0.10%.
+# Stop Forum Spam (SFS) listings: 174.
+# Updated: 2018.09.23
 
 185.106.212.0/22 Deny Cloud
 Origin: AT
@@ -19370,6 +19376,7 @@ Origin: LU
 23.111.224.0/20 Deny Cloud
 23.111.244.0/22 Deny Cloud
 142.91.120.0/21 Deny Cloud
+172.255.224.0/20 Deny Cloud
 185.82.208.0/22 Deny Cloud
 213.196.2.0/23 Deny Cloud
 213.196.4.0/23 Deny Cloud
@@ -19383,6 +19390,7 @@ Origin: RS
 23.105.224.0/19 Deny Cloud
 88.212.232.0/21 Deny Cloud
 88.212.240.0/20 Deny Cloud
+164.138.99.0/24 Deny Cloud
 185.194.107.0/24 Deny Cloud
 194.87.84.0/22 Deny Cloud
 194.226.133.0/24 Deny Cloud
@@ -19396,7 +19404,6 @@ Origin: SG
 142.0.192.0/20 Deny Cloud
 172.240.0.0/17 Deny Cloud
 173.0.144.0/20 Deny Cloud
-173.233.128.0/21 Deny Cloud
 173.233.156.0/24 Deny Cloud
 173.237.64.0/23 Deny Cloud
 204.74.224.0/19 Deny Cloud
@@ -20561,6 +20568,28 @@ Tag: YISP B.V
 185.14.224.0/22 Deny Cloud
 Origin: CZ
 Tag: Web4U s.r.o
+
+
+# ASN 25847 ("ServInt").
+# Caught trying to hack WordPress sites.
+# %Listed, Google Malware Dashboard: 0.45%.
+# Stop Forum Spam (SFS) listings: 20.
+# Updated: 2018.09.23
+
+64.64.0.0/19 Deny Cloud
+64.131.64.0/19 Deny Cloud
+199.38.112.0/21 Deny Cloud
+199.102.224.0/21 Deny Cloud
+199.167.40.0/21 Deny Cloud
+199.223.208.0/21 Deny Cloud
+199.230.52.0/22 Deny Cloud
+206.214.208.0/20 Deny Cloud
+207.58.128.0/18 Deny Cloud
+209.50.224.0/19 Deny Cloud
+216.22.0.0/18 Deny Cloud
+216.38.48.0/20 Deny Cloud
+Origin: US
+Tag: ServInt
 
 
 # ---

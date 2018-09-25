@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.09.22).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM için kullanılacak vars
 $CIDRAM['lang']['confirm_action'] = '"%s" istediğinden emin misin?';
 $CIDRAM['lang']['field_2fa'] = '2FA kodu';
 $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
+$CIDRAM['lang']['field_add_more_conditions'] = 'Daha fazla koşul ekle';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';
 $CIDRAM['lang']['field_blocked'] = 'Engellendi';
 $CIDRAM['lang']['field_clear'] = 'Temiz';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = 'Seçenekler';
 $CIDRAM['lang']['field_password'] = 'Parola';
 $CIDRAM['lang']['field_permissions'] = 'İzinler';
 $CIDRAM['lang']['field_range'] = 'Aralık (İlk – Son)';
+$CIDRAM['lang']['field_reasonmessage'] = 'Neden Engellendi (detaylı)';
 $CIDRAM['lang']['field_rename_file'] = 'Adını değiştirmek';
 $CIDRAM['lang']['field_reset'] = 'Sıfırla';
 $CIDRAM['lang']['field_set_new_password'] = 'Yeni Şifre Oluştur';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = 'Durum';
 $CIDRAM['lang']['field_system_timezone'] = 'Sistem varsayılan saat dilimini kullanın.';
 $CIDRAM['lang']['field_tracking'] = 'İzleme';
 $CIDRAM['lang']['field_true'] = 'True (Doğru)';
+$CIDRAM['lang']['field_ualc'] = 'Kullanıcı Aracısı (küçük harf)';
 $CIDRAM['lang']['field_uninstall'] = 'Kaldır';
 $CIDRAM['lang']['field_update'] = 'Güncelle';
 $CIDRAM['lang']['field_update_all'] = 'Tümünü güncelle';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = 'Sürümünüz';
 $CIDRAM['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $CIDRAM['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
 $CIDRAM['lang']['label_actual'] = 'Şimdiki';
+$CIDRAM['lang']['label_aux_actBlk'] = 'engelleyin';
+$CIDRAM['lang']['label_aux_actByp'] = 'atlayın';
+$CIDRAM['lang']['label_aux_actGrl'] = 'gri listeye ekleyin';
+$CIDRAM['lang']['label_aux_actWhl'] = 'beyaz listeye ekleyin';
+$CIDRAM['lang']['label_aux_create_new_rule'] = 'Yeni kural oluştur';
+$CIDRAM['lang']['label_aux_menu_action'] = 'Aşağıdaki koşullar karşılanırsa, isteği %s.';
+$CIDRAM['lang']['label_aux_menu_method'] = 'Koşulları test etmek için %s kullanın.';
+$CIDRAM['lang']['label_aux_mtdReg'] = 'düzenli ifadeler';
+$CIDRAM['lang']['label_aux_mtdStr'] = 'direkt dizi karşılaştırması';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'Windows tarzı joker karakterler';
+$CIDRAM['lang']['label_aux_name'] = 'Yeni kural için bir isim:';
+$CIDRAM['lang']['label_aux_reason'] = 'Engellendiğinde kullanıcıya verilen sebep:';
 $CIDRAM['lang']['label_backup_location'] = 'Repository yedek konumları (acil bir durumda, ya da her şey başarısız olursa):';
 $CIDRAM['lang']['label_banned'] = 'Yasaklı talepler';
 $CIDRAM['lang']['label_blocked'] = 'Engellenen talepler';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = 'İle kullanılan: ';
 $CIDRAM['lang']['label_your_ip'] = 'Senin IP:';
 $CIDRAM['lang']['label_your_ua'] = 'Senin UA:';
 $CIDRAM['lang']['link_accounts'] = 'Hesaplar';
+$CIDRAM['lang']['link_aux'] = 'Yardımcı Kurallar';
 $CIDRAM['lang']['link_cache_data'] = 'Önbellek Verileri';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR Hesaplayıcı';
 $CIDRAM['lang']['link_config'] = 'Yapılandırma';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Bu hesap mevcut değil.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Şifre başarıyla güncellendi!';
 $CIDRAM['lang']['response_activated'] = 'Başarıyla etkinleştirildi.';
 $CIDRAM['lang']['response_activation_failed'] = 'Etkinleştirilemedi!';
+$CIDRAM['lang']['response_aux_none'] = 'Şu anda herhangi bir yardımcı kural bulunmamaktadır.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = 'Yeni yardımcı kural, "%s", başarıyla oluşturuldu.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = 'Yardımcı kural, "%s", başarıyla silindi.';
 $CIDRAM['lang']['response_checksum_error'] = 'Checksum hatası! Dosya reddedildi!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Bileşen başarıyla yüklendi.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Bileşen başarıyla kaldırıldı.';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Yasaklanmı�
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Yasaklanmış/engellenen IP\'leri gizle';
 $CIDRAM['lang']['tip_2fa_sent'] = 'E-posta adresinize iki faktörlü bir kimlik doğrulama kodu içeren bir e-posta gönderildi. Ön tarafa erişmek için lütfen aşağıdaki kodu doğrulayın. Bu e-postayı almadıysanız, yeni bir kod içeren yeni bir e-posta almak için, çıkış yapmayı, 10 dakika beklemeyi ve tekrar giriş yapmayı deneyin.';
 $CIDRAM['lang']['tip_accounts'] = 'Merhaba, {username}.<br />Hesaplar sayfası, CIDRAM ön ucuna kimin erişebileceğini kontrol etmenizi mümkün kılar.';
+$CIDRAM['lang']['tip_aux'] = 'Merhaba, {username}.<br />CIDRAM için yardımcı kurallar oluşturmak, silmek ve değiştirmek için bu sayfayı kullanabilirsiniz.';
+$CIDRAM['lang']['tip_aux_precedence'] = 'Tüm "eşittir" (=) koşulları, tüm "eşit olmayan" (≠) koşullar da karşılandığı sürece kuralı tetikleyebilir.';
 $CIDRAM['lang']['tip_cache_data'] = 'Merhaba, {username}.<br />Burada önbellek içeriğini inceleyebilirsiniz.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Merhaba, {username}.<br />CIDR hesaplayıcısı, bir IP adresinin faktörünün hangi CIDR\'lerin olduğunu hesaplamanızı mümkün kılar.';
+$CIDRAM['lang']['tip_condition_placeholder'] = 'Bir değer belirtin veya göz ardı etmek için boş bırakın.';
 $CIDRAM['lang']['tip_config'] = 'Merhaba, {username}.<br />Yapılandırma sayfası, CIDRAM için yapılandırmayı ön uçtan değiştirmenizi mümkün kılar.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Buraya user agent girin (isteğe).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ücretsiz olarak sunulmaktadır, ancak projeye bağış yapmak isterseniz, bağış düğmesini tıklayarak bunu yapabilirsiniz.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, CIDRA
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $CIDRAM['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Hesaplar';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – Yardımcı Kurallar';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Önbellek Verileri';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Hesaplayıcı';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Yapılandırma';

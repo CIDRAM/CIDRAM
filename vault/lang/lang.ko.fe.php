@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.09.22).
+ * This file: Korean language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테�
 $CIDRAM['lang']['confirm_action'] = '"%s"하시겠습니까?';
 $CIDRAM['lang']['field_2fa'] = '2FA 코드';
 $CIDRAM['lang']['field_activate'] = '활성화';
+$CIDRAM['lang']['field_add_more_conditions'] = '조건 추가';
 $CIDRAM['lang']['field_banned'] = '금지 된';
 $CIDRAM['lang']['field_blocked'] = '차단 된셨습니까?';
 $CIDRAM['lang']['field_clear'] = '취소';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = '옵션';
 $CIDRAM['lang']['field_password'] = '비밀번호';
 $CIDRAM['lang']['field_permissions'] = '권한';
 $CIDRAM['lang']['field_range'] = '범위 (처음 – 마지막)';
+$CIDRAM['lang']['field_reasonmessage'] = '왜 차단이 되셨나요 (상세한)';
 $CIDRAM['lang']['field_rename_file'] = '이름을 변경하려면';
 $CIDRAM['lang']['field_reset'] = '재설정';
 $CIDRAM['lang']['field_set_new_password'] = '새 암호를 설정합니다';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = '상태';
 $CIDRAM['lang']['field_system_timezone'] = '시스템 기본 시간대를 사용하십시오.';
 $CIDRAM['lang']['field_tracking'] = '추적';
 $CIDRAM['lang']['field_true'] = 'True (참된)';
+$CIDRAM['lang']['field_ualc'] = '사용자 에이전트 (소문자)';
 $CIDRAM['lang']['field_uninstall'] = '제거';
 $CIDRAM['lang']['field_update'] = '업데이트';
 $CIDRAM['lang']['field_update_all'] = '모두 업데이트';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = '사용 버전';
 $CIDRAM['lang']['header_login'] = '계속하려면 로그인하십시오.';
 $CIDRAM['lang']['label_active_config_file'] = '활성 구성 파일 : ';
 $CIDRAM['lang']['label_actual'] = '현재';
+$CIDRAM['lang']['label_aux_actBlk'] = '차단하';
+$CIDRAM['lang']['label_aux_actByp'] = '우회하';
+$CIDRAM['lang']['label_aux_actGrl'] = '그레이리스트';
+$CIDRAM['lang']['label_aux_actWhl'] = '화이트리스트';
+$CIDRAM['lang']['label_aux_create_new_rule'] = '새 규칙 만들기';
+$CIDRAM['lang']['label_aux_menu_action'] = '다음 조건이 충족되면 요청을 %s십시오.';
+$CIDRAM['lang']['label_aux_menu_method'] = '%s를 사용하여 조건을 테스트하십시오.';
+$CIDRAM['lang']['label_aux_mtdReg'] = '정규식';
+$CIDRAM['lang']['label_aux_mtdStr'] = '직접 문자열 비교';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'Windows 스타일 와일드 카드';
+$CIDRAM['lang']['label_aux_name'] = '새 규칙의 이름 :';
+$CIDRAM['lang']['label_aux_reason'] = '차단되었을 때 사용자에게 주어진 이유 :';
 $CIDRAM['lang']['label_backup_location'] = '저장소 백업 위치 (비상 사태의 경우, 또는 다른 모든 것이 실패한 경우) :';
 $CIDRAM['lang']['label_banned'] = '금지 된 요청';
 $CIDRAM['lang']['label_blocked'] = '차단 된 요청';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = '용법 : ';
 $CIDRAM['lang']['label_your_ip'] = '당신의 IP :';
 $CIDRAM['lang']['label_your_ua'] = '당신의 UA :';
 $CIDRAM['lang']['link_accounts'] = '계정';
+$CIDRAM['lang']['link_aux'] = '보조 규칙';
 $CIDRAM['lang']['link_cache_data'] = '데이터 캐쉬';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR 계산기';
 $CIDRAM['lang']['link_config'] = '구성';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = '계정이 존재하지 않�
 $CIDRAM['lang']['response_accounts_password_updated'] = '암호 업데이트가 성공했습니다!';
 $CIDRAM['lang']['response_activated'] = '활성화했습니다.';
 $CIDRAM['lang']['response_activation_failed'] = '활성화에 실패했습니다!';
+$CIDRAM['lang']['response_aux_none'] = '현재 보조 규칙이 없습니다.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = '새 보조 규칙 "%s"가 성공적으로 작성되었습니다.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = '보조 규칙 "%s"가 성공적으로 삭제되었습니다.';
 $CIDRAM['lang']['response_checksum_error'] = '체크섬 오류! 파일이 거부되었습니다!';
 $CIDRAM['lang']['response_component_successfully_installed'] = '구성 요소의 설치에 성공했습니다.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '구성 요소의 제거는 성공했습니다.';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '금지/차�
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '금지/차단 된 IP를 숨기기';
 $CIDRAM['lang']['tip_2fa_sent'] = '2FA 코드가 포함 된 이메일이 귀하의 이메일 주소로 발송되었습니다. 프런트 엔드에 액세스하려면 아래 코드를 확인하십시오. 이 이메일을받지 못한 경우 로그 아웃을 시도하고 10 분을 기다린 후 다시 로그인하여 새 코드가 포함 된 새 이메일을 수신 할 수 있습니다.';
 $CIDRAM['lang']['tip_accounts'] = '안녕하세요, {username}.<br />계정 페이지는 CIDRAM 프론트 엔드에 액세스 할 수있는 사용자를 제어 할 수 있습니다.';
+$CIDRAM['lang']['tip_aux'] = '안녕하세요, {username}.<br />이 페이지를 사용하여 CIDRAM에 대한 보조 규칙을 작성, 삭제 및 수정할 수 있습니다.';
+$CIDRAM['lang']['tip_aux_precedence'] = '모든 "같지 않음"(≠) 조건도 충족되면 모든 "같음"(=) 조건이 규칙을 트리거 할 수 있습니다.';
 $CIDRAM['lang']['tip_cache_data'] = '안녕하세요, {username}.<br />여기서 캐시의 내용을 검토 할 수 있습니다.';
 $CIDRAM['lang']['tip_cidr_calc'] = '안녕하세요, {username}.<br />CIDR 계산기는 IP 주소가 어떻게 CIDR에 속해 있는지를 계산할 수 있습니다.';
+$CIDRAM['lang']['tip_condition_placeholder'] = '무시할 값을 지정하거나 공백으로 두십시오.';
 $CIDRAM['lang']['tip_config'] = '안녕하세요, {username}.<br />구성 페이지는 프론트 엔드에서 CIDRAM의 설정을 변경할 수 있습니다.';
 $CIDRAM['lang']['tip_custom_ua'] = '여기에 사용자 에이전트를 입력하십시오 (선택 사항이다).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM는 무료로 제공되고 있습니다, 하지만 당신이 원한다면 기부 버튼을 클릭하면 프로젝트에 기부 할 수 있습니다.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = '안녕하세요, {username}.<br />이 페�
 $CIDRAM['lang']['tip_statistics_disabled'] = '노트 : 통계 추적은 현재 비활성화되어, 있지만 구성 페이지를 통해 활성화 할 수 있습니다.';
 $CIDRAM['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 CIDRAM의 다양한 구성 요소를 설치·제거·업데이트 할 수 있습니다 (코어 패키지·서명·L10N 파일 등).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 계정';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – 보조 규칙';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – 데이터 캐쉬';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR 계산기';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 구성';

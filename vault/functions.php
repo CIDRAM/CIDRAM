@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.22).
+ * This file: Functions file (last modified: 2018.09.24).
  */
 
 /**
@@ -414,14 +414,11 @@ $CIDRAM['CheckFactors'] = function ($Files, $Factors) use (&$CIDRAM) {
                     }
                 }
                 if ($Category === 'Whitelist' || $RunExitCode === 3) {
-                    $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
-                    $CIDRAM['BlockInfo']['SignatureCount'] = 0;
-                    $CIDRAM['Whitelisted'] = true;
+                    $CIDRAM['ZeroOutBlockInfo'](true);
                     break 3;
                 }
                 if ($Category === 'Greylist' || $RunExitCode === 2) {
-                    $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
-                    $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+                    $CIDRAM['ZeroOutBlockInfo']();
                     break 2;
                 }
                 if ($Category === 'Deny') {
@@ -515,6 +512,21 @@ $CIDRAM['RunTests'] = function ($Addr) use (&$CIDRAM) {
         $IPv6Test = false;
     }
     return ($IPv4Test || $IPv6Test);
+};
+
+/**
+ * Zeros out blockinfo and optionally sets the whitelisted flag.
+ *
+ * @param bool $Whitelist Whether to set the whitelisted flag.
+ */
+$CIDRAM['ZeroOutBlockInfo'] = function ($Whitelist = false) use (&$CIDRAM) {
+    $CIDRAM['BlockInfo']['Signatures'] = '';
+    $CIDRAM['BlockInfo']['ReasonMessage'] = '';
+    $CIDRAM['BlockInfo']['WhyReason'] = '';
+    $CIDRAM['BlockInfo']['SignatureCount'] = 0;
+    if ($Whitelist) {
+        $CIDRAM['Whitelisted'] = true;
+    }
 };
 
 /**
@@ -739,6 +751,53 @@ $CIDRAM['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$CIDRAM) 
         }
     }
     return true;
+};
+
+/**
+ * Reconstruct an inner level of YAML (shouldn't be called directly).
+ *
+ * @param array $Arr The array to reconstruct from.
+ * @param string $Out The reconstructed YAML.
+ * @param int $Depth The level depth.
+ */
+$CIDRAM['YAML-Inner'] = function ($Arr, &$Out, $Depth = 0) use (&$CIDRAM) {
+    foreach ($Arr as $Key => $Value) {
+        if ($Key === '---' && $Value === false) {
+            $Out .= "---\n";
+            continue;
+        }
+        if (!isset($List)) {
+            $List = ($Key === 0);
+        }
+        $Out .= str_repeat(' ', $Depth) . (($List && is_int($Key)) ? '-' : $Key . ':');
+        if (is_array($Value)) {
+            $Depth++;
+            $Out .= "\n";
+            $CIDRAM['YAML-Inner']($Value, $Out, $Depth);
+            $Depth--;
+            continue;
+        }
+        if ($Value === true) {
+            $Out .= ' true';
+        } elseif ($Value === false) {
+            $Out .= ' false';
+        } else {
+            $Out .= ' ' . $Value;
+        }
+        $Out .= "\n";
+    }
+};
+
+/**
+ * Reconstruct YAML.
+ *
+ * @param array $Arr The array to reconstruct from.
+ * @return string The reconstructed YAML.
+ */
+$CIDRAM['YAML-Reconstruct'] = function ($Arr) use (&$CIDRAM) {
+    $Out = '';
+    $CIDRAM['YAML-Inner']($Arr, $Out);
+    return $Out . "\n";
 };
 
 /**
@@ -1684,7 +1743,7 @@ $CIDRAM['LogRotation'] = function ($Pattern) use (&$CIDRAM) {
  * @param string $IP An IP address.
  * @return string A pseudonymised IP address.
  */
-$CIDRAM['Pseudonymise-IP'] = function($IP) {
+$CIDRAM['Pseudonymise-IP'] = function ($IP) {
     if (($CPos = strpos($IP, ':')) !== false) {
         $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos +1) ?: '')];
         if (($CPos = strpos($Parts[1], ':')) !== false) {
@@ -1706,7 +1765,7 @@ $CIDRAM['Pseudonymise-IP'] = function($IP) {
  * @param int $Status HTTP status code.
  * @return string HTTP status message (empty when using non-supported codes).
  */
-$CIDRAM['GetStatusHTTP'] = function($Status) {
+$CIDRAM['GetStatusHTTP'] = function ($Status) {
     $Message = [
         403 => 'Forbidden',
         410 => 'Gone',
@@ -1722,15 +1781,37 @@ $CIDRAM['GetStatusHTTP'] = function($Status) {
  *
  * @param string|array $Criteria The criteria to accept for the match.
  * @param string $Actual The actual value we're trying to match.
- * @param string $Method The method for handling data when matching. @todo@
+ * @param string $Method The method for handling data when matching.
  * @return bool Match succeeded (true) or failed (false).
  */
 $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM) {
 
     /** Normalise criteria to an array. */
-    $CIDRAM['Arrayify']($Criteria);
+    if (!is_array($Criteria)) {
+        $Criteria = [$Criteria];
+    }
 
-    /** Perform the match. */
+    /** Perform a match using regular expressions. */
+    if ($Method === 'RegEx') {
+        foreach ($Criteria as $TestCase) {
+            if (preg_match($TestCase, $Actual)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** Perform a match using Windows-style wildcards. */
+    if ($Method === 'WinEx') {
+        foreach ($Criteria as $TestCase) {
+            if (preg_match('~^' . str_replace('\*', '.*', preg_quote($TestCase, '~')) . '$~', $Actual)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** Perform a match direct string comparison. */
     foreach ($Criteria as $TestCase) {
         if ($TestCase === $Actual) {
             return true;
@@ -1742,35 +1823,71 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
 
 };
 
+/**
+ * Used for performing action when an auxiliary rule matches.
+ *
+ * @param string $Action The type of action to take.
+ * @param string $Name The name of the rule.
+ * @param string $Reason The reason for taking action.
+ * @return bool Whether the calling parent should return immediately.
+ */
+$CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
+
+    /** Whitelist. */
+    if ($Action === 'Whitelist') {
+        $CIDRAM['ZeroOutBlockInfo'](true);
+        return true;
+    }
+
+    /** Greylist. */
+    if ($Action === 'Greylist') {
+        $CIDRAM['ZeroOutBlockInfo']();
+    }
+
+    /** Block. */
+    elseif ($Action === 'Block') {
+        $CIDRAM['Trigger'](true, $Name, $Reason);
+    }
+
+    /** Bypass. */
+    elseif ($Action === 'Bypass') {
+        $CIDRAM['Bypass'](true, $Name);
+        return false;
+    }
+
+    /** Exit. */
+    return false;
+
+};
+
 /** Procedure for parsing and processing auxiliary rules. */
 $CIDRAM['Aux'] = function () use (&$CIDRAM) {
-
-    /** Potential sources. */
-    static $Sources = [
-        'IPAddr',
-        'IPAddrResolved',
-        'Query',
-        'Referrer',
-        'UA',
-        'UALC',
-        'ReasonMessage',
-        'SignatureCount',
-        'Signatures',
-        'WhyReason',
-        'rURI'
-    ];
-
-    /** Potential modes. */
-    static $Modes = [
-        'Block',
-        'Bypass',
-        'Whitelist'
-    ];
 
     /** Exit procedure early if the rules don't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
         return;
     }
+
+    /** Potential sources. */
+    static $Sources = [
+        'Hostname',
+        'BlockInfo' => [
+            'IPAddr',
+            'IPAddrResolved',
+            'Query',
+            'Referrer',
+            'UA',
+            'UALC',
+            'ReasonMessage',
+            'SignatureCount',
+            'Signatures',
+            'WhyReason',
+            'rURI'
+        ]
+    ];
+
+    /** Potential modes. */
+    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass'];
 
     if (!isset($CIDRAM['AuxData'])) {
         /** Array to contain auxiliary rules. */
@@ -1786,71 +1903,101 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
         /** Detailed reason. */
         $Reason = empty($Data['Reason']) ? $Name : $Data['Reason'];
 
+        /** The matching method to use. */
+        $Method = empty($Data['Method']) ? '' : $Data['Method'];
+
         /** Iterate through modes. */
         foreach ($Modes as $Mode) {
-            if (!empty($Data[$Mode])) {
 
-                /** Match exceptions. */
-                if (!empty($Data[$Mode]['But not if matches'])) {
+            /** Skip mode if not used by this rule. */
+            if (empty($Data[$Mode])) {
+                continue;
+            }
 
-                    /** Iterate through sources. */
-                    foreach ($Sources as $Source) {
-                        if (isset($Data[$Mode]['But not if matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
-                            if ($CIDRAM['AuxMatch']($Data[$Mode]['But not if matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
-                                continue 2;
+            /** Match exceptions. */
+            if (!empty($Data[$Mode]['But not if matches'])) {
+
+                /** Iterate through sources. */
+                foreach ($Sources as $SourceKey => $SourceArr) {
+                    if (is_array($SourceArr)) {
+                        foreach ($SourceArr as $Source) {
+                            if (isset(
+                                $Data[$Mode]['But not if matches'][$Source],
+                                $CIDRAM[$SourceKey][$Source]
+                            )) {
+                                if (!is_array($Data[$Mode]['But not if matches'][$Source])) {
+                                    $Data[$Mode]['But not if matches'][$Source] = [$Data[$Mode]['But not if matches'][$Source]];
+                                }
+                                foreach ($Data[$Mode]['But not if matches'][$Source] as $Value) {
+                                    /** Perform match. */
+                                    if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
+                                        continue 4;
+                                    }
+                                }
+                            }
+                        }
+                        continue;
+                    }
+                    if (isset($Data[$Mode]['But not if matches'][$SourceArr], $CIDRAM[$SourceArr])) {
+                        if (!is_array($Data[$Mode]['But not if matches'][$SourceArr])) {
+                            $Data[$Mode]['But not if matches'][$SourceArr] = [$Data[$Mode]['But not if matches'][$SourceArr]];
+                        }
+                        foreach ($Data[$Mode]['But not if matches'][$SourceArr] as $Value) {
+                            /** Perform match. */
+                            if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
+                                continue 3;
                             }
                         }
                     }
-
-                    /** Check hostname when relevant. */
-                    if (isset($Data[$Mode]['But not if matches']['Hostname'], $CIDRAM['Hostname'])) {
-                        if ($CIDRAM['AuxMatch']($Data[$Mode]['But not if matches']['Hostname'], $CIDRAM['Hostname'])) {
-                            continue;
-                        }
-                    }
-
                 }
 
-                /** Matches. */
-                if (!empty($Data[$Mode]['If matches'])) {
+            }
 
-                    /** Iterate through sources. */
-                    foreach ($Sources as $Source) {
-                        if (isset($Data[$Mode]['If matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
-                            if ($CIDRAM['AuxMatch']($Data[$Mode]['If matches'][$Source], $CIDRAM['BlockInfo'][$Source])) {
-                                if ($Mode === 'Block') {
-                                    $CIDRAM['Trigger'](true, $Name, $Reason);
-                                } elseif ($Mode === 'Bypass') {
-                                    $CIDRAM['Bypass'](true, $Name);
-                                } elseif ($Mode === 'Whitelist') {
-                                    $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
-                                    $CIDRAM['BlockInfo']['SignatureCount'] = 0;
-                                    $CIDRAM['Whitelisted'] = true;
+            /** Matches. */
+            if (!empty($Data[$Mode]['If matches'])) {
+
+                /** Iterate through sources. */
+                foreach ($Sources as $SourceKey => $SourceArr) {
+                    if (is_array($SourceArr)) {
+                        foreach ($SourceArr as $Source) {
+                            if (isset(
+                                $Data[$Mode]['If matches'][$Source],
+                                $CIDRAM[$SourceKey][$Source]
+                            )) {
+                                if (!is_array($Data[$Mode]['If matches'][$Source])) {
+                                    $Data[$Mode]['If matches'][$Source] = [$Data[$Mode]['If matches'][$Source]];
+                                }
+                                foreach ($Data[$Mode]['If matches'][$Source] as $Value) {
+                                    /** Perform match. */
+                                    if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
+                                        /** Match successful. Perform corresponding action. */
+                                        if ($CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        continue;
+                    }
+                    if (isset($Data[$Mode]['If matches'][$SourceArr], $CIDRAM[$SourceArr])) {
+                        if (!is_array($Data[$Mode]['If matches'][$SourceArr])) {
+                            $Data[$Mode]['If matches'][$SourceArr] = [$Data[$Mode]['If matches'][$SourceArr]];
+                        }
+                        foreach ($Data[$Mode]['If matches'][$SourceArr] as $Value) {
+                            /** Perform match. */
+                            if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
+                                /** Match successful. Perform corresponding action. */
+                                if ($CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
                                     return;
                                 }
                             }
                         }
                     }
-
-                    /** Check hostname when relevant. */
-                    if (isset($Data[$Mode]['If matches']['Hostname'], $CIDRAM['Hostname'])) {
-                        if ($CIDRAM['AuxMatch']($Data[$Mode]['If matches']['Hostname'], $CIDRAM['Hostname'])) {
-                            if ($Mode === 'Block') {
-                                $CIDRAM['Trigger'](true, $Name, $Reason);
-                            } elseif ($Mode === 'Bypass') {
-                                $CIDRAM['Bypass'](true, $Name);
-                            } elseif ($Mode === 'Whitelist') {
-                                $CIDRAM['BlockInfo']['Signatures'] = $CIDRAM['BlockInfo']['ReasonMessage'] = $CIDRAM['BlockInfo']['WhyReason'] = '';
-                                $CIDRAM['BlockInfo']['SignatureCount'] = 0;
-                                $CIDRAM['Whitelisted'] = true;
-                                return;
-                            }
-                        }
-                    }
-
                 }
 
             }
+
         }
 
     }

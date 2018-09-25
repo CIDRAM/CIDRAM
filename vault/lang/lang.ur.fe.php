@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2018.09.22).
+ * This file: Urdu language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM لئے استعمال ک
 $CIDRAM['lang']['confirm_action'] = 'کیا آپ واقعی "%s" کرنا چاہتے ہیں؟';
 $CIDRAM['lang']['field_2fa'] = '2FA کوڈ';
 $CIDRAM['lang']['field_activate'] = 'فعال کریں';
+$CIDRAM['lang']['field_add_more_conditions'] = 'مزید شرائط شامل کریں';
 $CIDRAM['lang']['field_banned'] = 'کالعدم';
 $CIDRAM['lang']['field_blocked'] = 'بلاک';
 $CIDRAM['lang']['field_clear'] = 'صاف';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = 'اختیارات';
 $CIDRAM['lang']['field_password'] = 'پاس ورڈ';
 $CIDRAM['lang']['field_permissions'] = 'اجازتیں';
 $CIDRAM['lang']['field_range'] = 'رینج (پہلا – آخری)';
+$CIDRAM['lang']['field_reasonmessage'] = 'کیوں بلاک شدہ (تفصیلی)';
 $CIDRAM['lang']['field_rename_file'] = 'نام تبدیل کریں';
 $CIDRAM['lang']['field_reset'] = 'Reset';
 $CIDRAM['lang']['field_set_new_password'] = 'نیا پاس ورڈ مقرر';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = 'سٹیٹس';
 $CIDRAM['lang']['field_system_timezone'] = 'نظام کو پہلے سے طے شدہ ٹائم زون کا استعمال کریں.';
 $CIDRAM['lang']['field_tracking'] = 'ٹریکنگ';
 $CIDRAM['lang']['field_true'] = 'True (سچ)';
+$CIDRAM['lang']['field_ualc'] = 'صارف ایجنٹ (کم کیس)';
 $CIDRAM['lang']['field_uninstall'] = 'اانسٹال نہیں';
 $CIDRAM['lang']['field_update'] = 'اپ ڈیٹ';
 $CIDRAM['lang']['field_update_all'] = 'تمام تجدید کریں';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = 'آپ کے ورژن';
 $CIDRAM['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
 $CIDRAM['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
 $CIDRAM['lang']['label_actual'] = 'اس وقت';
+$CIDRAM['lang']['label_aux_actBlk'] = 'بلاک';
+$CIDRAM['lang']['label_aux_actByp'] = 'بائی پاس';
+$CIDRAM['lang']['label_aux_actGrl'] = 'گرینسٹسٹ';
+$CIDRAM['lang']['label_aux_actWhl'] = 'وائٹسٹسٹ';
+$CIDRAM['lang']['label_aux_create_new_rule'] = 'نیا قاعدہ بنائیں';
+$CIDRAM['lang']['label_aux_menu_action'] = 'اگر حالات مکمل ہو جائیں گے، درخواست %s.';
+$CIDRAM['lang']['label_aux_menu_method'] = 'شرائط کی جانچ کرنے کیلئے %s استعمال کریں.';
+$CIDRAM['lang']['label_aux_mtdReg'] = 'باقاعدگی سے اظہار';
+$CIDRAM['lang']['label_aux_mtdStr'] = 'براہ راست سٹرنگ مقابلے';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'ونڈوز سٹائل جنگلی کارڈ';
+$CIDRAM['lang']['label_aux_name'] = 'نئے قاعدہ کا نام:';
+$CIDRAM['lang']['label_aux_reason'] = 'جب صارف کو دی گئی ہے تو بلاک کی گئی وجہ:';
 $CIDRAM['lang']['label_backup_location'] = 'Repository بیک اپ مقامات (ہنگامی حالت میں، یا اگر سب کچھ ناکام ہوجاتا ہے):';
 $CIDRAM['lang']['label_banned'] = 'کی درخواستیں کالعدم';
 $CIDRAM['lang']['label_blocked'] = 'کی درخواستیں بلاک';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = 'کے ساتھ استعمال کیا جات
 $CIDRAM['lang']['label_your_ip'] = 'آپ کے IP:';
 $CIDRAM['lang']['label_your_ua'] = 'آپ کے UA:';
 $CIDRAM['lang']['link_accounts'] = 'اکاؤنٹس';
+$CIDRAM['lang']['link_aux'] = 'اضافی قواعد';
 $CIDRAM['lang']['link_cache_data'] = 'کیش ڈیٹا';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR کیلکولیٹر';
 $CIDRAM['lang']['link_config'] = 'کنفگریشن';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'اس اکاؤنٹ کا کو
 $CIDRAM['lang']['response_accounts_password_updated'] = 'پاس ورڈ کامیابی سے اپ ڈیٹ!';
 $CIDRAM['lang']['response_activated'] = 'کامیابی کے ساتھ فعال.';
 $CIDRAM['lang']['response_activation_failed'] = 'چالو کرنے میں ناکام!';
+$CIDRAM['lang']['response_aux_none'] = 'اس وقت کوئی اضافی قواعد موجود نہیں ہیں.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = 'نئے اضافی قاعدہ "%s" تشکیل دیا.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = 'اضافی قاعدہ "%s" حذف کردی گئی.';
 $CIDRAM['lang']['response_checksum_error'] = 'حیض کی خرابی! فائل کو مسترد کر دیا!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'اجزاء کامیابی سے نصب.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'اجزاء کامیابی سے ان انسٹال.';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'ممنوعہ
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'ممنوعہ/بلاک شدہ IP چھپائیں';
 $CIDRAM['lang']['tip_2fa_sent'] = 'ایک ای میل دو فیکٹر کے توثیق کوڈ پر مشتمل ہے جو آپ کے ای میل ایڈریس پر بھیج دیا گیا ہے. سامنے کے اختتام تک رسائی حاصل کرنے کے لئے براہ مہربانی ذیل میں اس کوڈ کی تصدیق کریں. اگر آپ نے یہ ای میل موصول نہیں کیا تو، 10 منٹ کے انتظار میں لاگ ان کرنے کی کوشش کریں، اور ایک نیا ای میل کے ساتھ نیا ای میل وصول کرنے کیلئے دوبارہ لاگ ان کریں.';
 $CIDRAM['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ CIDRAM سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
+$CIDRAM['lang']['tip_aux'] = 'ہیلو، {username}.<br />یہاں آپ CIDRAM کے لئے اضافی قواعد تخلیق، حذف، اور ترمیم کرسکتے ہیں.';
+$CIDRAM['lang']['tip_aux_precedence'] = 'کسی بھی "=" شرائط حکمران کو متحرک کرسکتے ہیں، جب تک کہ تمام "≠" شرائط پوری ہوجائے.';
 $CIDRAM['lang']['tip_cache_data'] = 'ہیلو، {username}.<br />یہاں آپ کیش کے مندرجات کا جائزہ لے سکتے ہیں.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'ہیلو، {username}.<br />CIDR کیلکولیٹر آپ کو ایک IP ایڈریس CIDRs جس کا حساب کرنے کی اجازت دیتا ہے کا ایک عنصر ہے.';
+$CIDRAM['lang']['tip_condition_placeholder'] = 'اعداد و شمار یہاں درج کریں. اگر ضرورت نہیں ہو تو اسے چھوڑ دو.';
 $CIDRAM['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے صفحے آپ کو سامنے کے آخر میں سے CIDRAM لئے ترتیب میں ترمیم کی اجازت دیتا ہے.';
 $CIDRAM['lang']['tip_custom_ua'] = 'یہاں صارف ایجنٹ (user agent) درج کریں (یہ اختیاری ہے).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM بلا معاوضہ پیش کی جاتی ہے، لیکن آپ کو اس منصوبے کے لئے عطیہ کرنا چاہتے ہیں تو، آپ کو عطیہ کے بٹن پر کلک کر کے ایسا کر سکتے ہیں.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = 'ہیلو، {username}.<br />یہ صفحہ �
 $CIDRAM['lang']['tip_statistics_disabled'] = 'نوٹ: اعداد و شمار کی ٹریکنگ فی الحال غیر فعال ہے، لیکن کنفگریشن کے صفحے کے ذریعہ فعال ہوسکتا ہے.';
 $CIDRAM['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو نصب کی اجازت دیتا ہے کے لئے، انسٹال، اور CIDRAM (بنیادی پیکج، دستخط، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – اکاؤنٹس';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – اضافی قواعد';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – کیش ڈیٹا';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR کیلکولیٹر';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – کنفگریشن';

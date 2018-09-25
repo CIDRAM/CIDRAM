@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.22).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。'
 $CIDRAM['lang']['confirm_action'] = '你确定要“%s”吗？';
 $CIDRAM['lang']['field_2fa'] = '2FA代码';
 $CIDRAM['lang']['field_activate'] = '启用';
+$CIDRAM['lang']['field_add_more_conditions'] = '添加更多条件';
 $CIDRAM['lang']['field_banned'] = '禁止';
 $CIDRAM['lang']['field_blocked'] = '已阻止';
 $CIDRAM['lang']['field_clear'] = '撤销';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = '选项';
 $CIDRAM['lang']['field_password'] = '密码';
 $CIDRAM['lang']['field_permissions'] = '权限';
 $CIDRAM['lang']['field_range'] = '范围 （初始 – 最后）';
+$CIDRAM['lang']['field_reasonmessage'] = '为什么被阻止（详细）';
 $CIDRAM['lang']['field_rename_file'] = '改名';
 $CIDRAM['lang']['field_reset'] = '重启';
 $CIDRAM['lang']['field_set_new_password'] = '保存新密码';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = '状态';
 $CIDRAM['lang']['field_system_timezone'] = '使用系统默认时区。';
 $CIDRAM['lang']['field_tracking'] = '跟踪';
 $CIDRAM['lang']['field_true'] = 'True（真）';
+$CIDRAM['lang']['field_ualc'] = '用户代理（小写）';
 $CIDRAM['lang']['field_uninstall'] = '卸载';
 $CIDRAM['lang']['field_update'] = '更新';
 $CIDRAM['lang']['field_update_all'] = '更新一切';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = '您的版本';
 $CIDRAM['lang']['header_login'] = '请登录以继续。';
 $CIDRAM['lang']['label_active_config_file'] = '活动配置文件：';
 $CIDRAM['lang']['label_actual'] = '目前';
+$CIDRAM['lang']['label_aux_actBlk'] = '阻止';
+$CIDRAM['lang']['label_aux_actByp'] = '绕行';
+$CIDRAM['lang']['label_aux_actGrl'] = '灰名单';
+$CIDRAM['lang']['label_aux_actWhl'] = '白名单';
+$CIDRAM['lang']['label_aux_create_new_rule'] = '创建新规则';
+$CIDRAM['lang']['label_aux_menu_action'] = '如果满足以下条件，%s该请求。';
+$CIDRAM['lang']['label_aux_menu_method'] = '使用%s来测试条件。';
+$CIDRAM['lang']['label_aux_mtdReg'] = '正则表达式';
+$CIDRAM['lang']['label_aux_mtdStr'] = '直接字符串比较';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'Windows风格的通配符';
+$CIDRAM['lang']['label_aux_name'] = '新规则的名称：';
+$CIDRAM['lang']['label_aux_reason'] = '显示给用户的阻止原因：';
 $CIDRAM['lang']['label_backup_location'] = '存储库备份位置（在紧急情况下，或如果一切都失败了）：';
 $CIDRAM['lang']['label_banned'] = '请求已禁止';
 $CIDRAM['lang']['label_blocked'] = '请求已阻止';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = '用于：';
 $CIDRAM['lang']['label_your_ip'] = '您的IP：';
 $CIDRAM['lang']['label_your_ua'] = '您的UA：';
 $CIDRAM['lang']['link_accounts'] = '帐户';
+$CIDRAM['lang']['link_aux'] = '辅助规则';
 $CIDRAM['lang']['link_cache_data'] = '缓存数据';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR计算器';
 $CIDRAM['lang']['link_config'] = '配置';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = '那个帐户不存在。';
 $CIDRAM['lang']['response_accounts_password_updated'] = '密码成功更新！';
 $CIDRAM['lang']['response_activated'] = '已成功启用。';
 $CIDRAM['lang']['response_activation_failed'] = '无法启用！';
+$CIDRAM['lang']['response_aux_none'] = '目前没有任何辅助规则。';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = '新辅助规则“%s”创建成功。';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = '辅助规则“%s”删除成功。';
 $CIDRAM['lang']['response_checksum_error'] = '校验和错误！​文件拒绝！';
 $CIDRAM['lang']['response_component_successfully_installed'] = '组件成功安装。';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = '组件成功卸载。';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = '不要隐藏
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = '隐藏被禁止/阻止的IP';
 $CIDRAM['lang']['tip_2fa_sent'] = '包含2FA代码的电子邮件已发送到您的电子邮件地址。​请确认以下代码以获取对前端的访问权限。​如果您没有收到此电子邮件，尝试登出，等待10分钟，然后再次登录以接收包含新代码的新电子邮件。';
 $CIDRAM['lang']['tip_accounts'] = '你好，​{username}。​<br />帐户页面允许您控制谁可以访问CIDRAM前端。';
+$CIDRAM['lang']['tip_aux'] = '你好，​{username}。<br />您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。';
+$CIDRAM['lang']['tip_aux_precedence'] = '只要满足所有“不等于”（≠）条件，任何“等于”（=）条件都可以触发规则。';
 $CIDRAM['lang']['tip_cache_data'] = '你好，​{username}。​<br />在这里您可以查看缓存的内容。';
 $CIDRAM['lang']['tip_cidr_calc'] = '你好，​{username}。​<br />CIDR计算器允许您计算IP地址属于哪个CIDR。';
+$CIDRAM['lang']['tip_condition_placeholder'] = '指定一个值，或留空以忽略。';
 $CIDRAM['lang']['tip_config'] = '你好，​{username}。​<br />配置页面允许您修改CIDRAM配置从前端。';
 $CIDRAM['lang']['tip_custom_ua'] = '在这里输入用户代理【user agent】（可选的）。';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM是免费提供的，​但如果您想捐赠给项目，​您可以通过点击捐赠按钮这样做。';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = '你好，​{username}。​<br />此页面
 $CIDRAM['lang']['tip_statistics_disabled'] = '注意：统计跟踪目前已被禁用，但可以通过配置页面启用。';
 $CIDRAM['lang']['tip_updates'] = '你好，​{username}。​<br />更新页面允许您安装，​卸载，​和更新CIDRAM的各种组件（核心包，​签名，​L10N文件，​等等）。';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – 帐户';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – 辅助规则';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – 缓存数据';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR计算器';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';

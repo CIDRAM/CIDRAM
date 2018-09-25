@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2018.09.22).
+ * This file: French language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'Le thème à utiliser par défa
 $CIDRAM['lang']['confirm_action'] = 'Êtes-vous sûr de vouloir « %s » ?';
 $CIDRAM['lang']['field_2fa'] = 'Code 2FA';
 $CIDRAM['lang']['field_activate'] = 'Activer';
+$CIDRAM['lang']['field_add_more_conditions'] = 'Ajouter plus de conditions';
 $CIDRAM['lang']['field_banned'] = 'Interdit';
 $CIDRAM['lang']['field_blocked'] = 'Bloqué';
 $CIDRAM['lang']['field_clear'] = 'Annuler';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = 'Options';
 $CIDRAM['lang']['field_password'] = 'Mot de Passe';
 $CIDRAM['lang']['field_permissions'] = 'Autorisations';
 $CIDRAM['lang']['field_range'] = 'Gamma (Première – Final)';
+$CIDRAM['lang']['field_reasonmessage'] = 'Raison Bloquée (détaillée)';
 $CIDRAM['lang']['field_rename_file'] = 'Renommer';
 $CIDRAM['lang']['field_reset'] = 'Réinitialiser';
 $CIDRAM['lang']['field_set_new_password'] = 'Définir nouveau mot de passe';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = 'Statut';
 $CIDRAM['lang']['field_system_timezone'] = 'Utilisez le fuseau horaire par défaut du système.';
 $CIDRAM['lang']['field_tracking'] = 'Surveillance';
 $CIDRAM['lang']['field_true'] = 'True (Vrai)';
+$CIDRAM['lang']['field_ualc'] = 'Agent Utilisateur (minuscule)';
 $CIDRAM['lang']['field_uninstall'] = 'Désinstaller';
 $CIDRAM['lang']['field_update'] = 'Mettre à jour';
 $CIDRAM['lang']['field_update_all'] = 'Tout mettre à jour';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = 'Votre Version';
 $CIDRAM['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $CIDRAM['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
 $CIDRAM['lang']['label_actual'] = 'Actuel';
+$CIDRAM['lang']['label_aux_actBlk'] = 'bloquer';
+$CIDRAM['lang']['label_aux_actByp'] = 'contourner';
+$CIDRAM['lang']['label_aux_actGrl'] = 'liste grise';
+$CIDRAM['lang']['label_aux_actWhl'] = 'liste blanche';
+$CIDRAM['lang']['label_aux_create_new_rule'] = 'Créer une nouvelle règle';
+$CIDRAM['lang']['label_aux_menu_action'] = 'Si les conditions suivantes sont remplies, %s la requête.';
+$CIDRAM['lang']['label_aux_menu_method'] = 'Utilisez %s pour tester les conditions.';
+$CIDRAM['lang']['label_aux_mtdReg'] = 'expressions régulières';
+$CIDRAM['lang']['label_aux_mtdStr'] = 'comparaison directe de chaînes';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'caractères génériques de style Windows';
+$CIDRAM['lang']['label_aux_name'] = 'Un nom pour la nouvelle règle :';
+$CIDRAM['lang']['label_aux_reason'] = 'La raison donnée à l\'utilisateur lorsqu\'il est bloqué :';
 $CIDRAM['lang']['label_backup_location'] = 'Emplacements de sauvegarde du référentiel (en cas d\'urgence, ou si tout le reste échoue) :';
 $CIDRAM['lang']['label_banned'] = 'Requêtes interdites';
 $CIDRAM['lang']['label_blocked'] = 'Requêtes bloquées';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = 'Utilisé avec : ';
 $CIDRAM['lang']['label_your_ip'] = 'Votre adresse IP :';
 $CIDRAM['lang']['label_your_ua'] = 'Votre UA :';
 $CIDRAM['lang']['link_accounts'] = 'Comptes';
+$CIDRAM['lang']['link_aux'] = 'Règles Auxiliaires';
 $CIDRAM['lang']['link_cache_data'] = 'Données de Cache';
 $CIDRAM['lang']['link_cidr_calc'] = 'Calculatrice CIDR';
 $CIDRAM['lang']['link_config'] = 'Configuration';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Ce compte n\'existe pas.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Mot de passe mis à jour avec succès !';
 $CIDRAM['lang']['response_activated'] = 'Activé avec succès.';
 $CIDRAM['lang']['response_activation_failed'] = 'Échec de l\'activation !';
+$CIDRAM['lang']['response_aux_none'] = 'Il n\'y a actuellement aucune règle auxiliaire.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = 'Nouvelle règle auxiliaire, "%s", créée avec succès.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = 'Règle auxiliaire, "%s", supprimée avec succès.';
 $CIDRAM['lang']['response_checksum_error'] = 'Erreur checksum ! Fichier rejeté !';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Composant installé avec succès.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Composant désinstallé avec succès.';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Ne pas omett
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Omettre les IP interdites/bloquées';
 $CIDRAM['lang']['tip_2fa_sent'] = 'Un e-mail contenant un code d\'authentification à deux facteurs a été envoyé à votre adresse e-mail. Veuillez confirmer ce code ci-dessous pour obtenir un accès frontal. Si vous n\'avez pas reçu cet e-mail, essayez de vous déconnecter, d\'attendre 10 minutes, et de vous reconnecter pour recevoir un nouvel e-mail contenant un nouveau code.';
 $CIDRAM['lang']['tip_accounts'] = 'Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l\'accès frontal de CIDRAM.';
+$CIDRAM['lang']['tip_aux'] = 'Bonjour, {username}.<br />Vous pouvez utiliser cette page pour créer, supprimer et modifier des règles auxiliaires pour CIDRAM.';
+$CIDRAM['lang']['tip_aux_precedence'] = 'Toute condition "égal" (=) peut déclencher la règle, tant que toutes les conditions "non égal" (≠) sont également remplies.';
 $CIDRAM['lang']['tip_cache_data'] = 'Bonjour, {username}.<br />Ici vous pouvez revoir le contenu du cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Bonjour, {username}.<br />Le calculatrice CIDR vous permet de calculer les CIDR auxquels une adresse IP appartient.';
+$CIDRAM['lang']['tip_condition_placeholder'] = 'Spécifiez une valeur, ou laissez vide pour ne pas en tenir compte.';
 $CIDRAM['lang']['tip_config'] = 'Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour CIDRAM à l\'accès frontal.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Entrez l\'agent utilisateur [user agent] ici (optionnel).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM est offert gratuitement, mais si vous voulez faire un don au projet, vous pouvez le faire en cliquant sur le bouton don.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Bonjour, {username}.<br />Cette page prése
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Remarque : Le suivi des statistiques est actuellement désactivé, mais peut être activé via la page de configuration.';
 $CIDRAM['lang']['tip_updates'] = 'Bonjour, {username}.<br />La page des mises à jour vous permet d\'installer, de désinstaller et de mettre à jour les différentes composantes de CIDRAM (le paquet de base, signatures, fichiers de L10N, etc).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Comptes';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – Règles Auxiliaires';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Données de Cache';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Calculatrice CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Configuration';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.22).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Anda yakin ingin "%s"?';
 $CIDRAM['lang']['field_2fa'] = 'Kode 2FA';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
+$CIDRAM['lang']['field_add_more_conditions'] = 'Tambahkan lebih banyak kondisi';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';
 $CIDRAM['lang']['field_blocked'] = 'Diblokir';
 $CIDRAM['lang']['field_clear'] = 'Cabut';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = 'Opsi';
 $CIDRAM['lang']['field_password'] = 'Kata Sandi';
 $CIDRAM['lang']['field_permissions'] = 'Izin';
 $CIDRAM['lang']['field_range'] = 'Jangkauan (Pertama – Terakhir)';
+$CIDRAM['lang']['field_reasonmessage'] = 'Mengapa Diblokir (terperinci)';
 $CIDRAM['lang']['field_rename_file'] = 'Memodifikasi nama';
 $CIDRAM['lang']['field_reset'] = 'Mengatur Kembali';
 $CIDRAM['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Gunakan zona waktu default sistem.';
 $CIDRAM['lang']['field_tracking'] = 'Pelacakan';
 $CIDRAM['lang']['field_true'] = 'True (Benar)';
+$CIDRAM['lang']['field_ualc'] = 'Agen Pengguna (huruf kecil)';
 $CIDRAM['lang']['field_uninstall'] = 'Uninstal';
 $CIDRAM['lang']['field_update'] = 'Perbarui';
 $CIDRAM['lang']['field_update_all'] = 'Memperbarui semua';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = 'Versi Anda';
 $CIDRAM['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $CIDRAM['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $CIDRAM['lang']['label_actual'] = 'Sebenarnya';
+$CIDRAM['lang']['label_aux_actBlk'] = 'blokir';
+$CIDRAM['lang']['label_aux_actByp'] = 'bypass';
+$CIDRAM['lang']['label_aux_actGrl'] = 'daftar abu-abu';
+$CIDRAM['lang']['label_aux_actWhl'] = 'daftar putih';
+$CIDRAM['lang']['label_aux_create_new_rule'] = 'Buat aturan baru';
+$CIDRAM['lang']['label_aux_menu_action'] = 'Jika kondisi berikut terpenuhi, %s permintaan.';
+$CIDRAM['lang']['label_aux_menu_method'] = 'Gunakan %s untuk menguji kondisi.';
+$CIDRAM['lang']['label_aux_mtdReg'] = 'ekspresi reguler';
+$CIDRAM['lang']['label_aux_mtdStr'] = 'perbandingan string langsung';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'wildcard bergaya Windows';
+$CIDRAM['lang']['label_aux_name'] = 'Nama untuk aturan baru:';
+$CIDRAM['lang']['label_aux_reason'] = 'Alasan diberikan kepada pengguna saat diblokir:';
 $CIDRAM['lang']['label_backup_location'] = 'Lokasi cadangan repositori (dalam keadaan darurat, atau jika semuanya gagal):';
 $CIDRAM['lang']['label_banned'] = 'Permintaan dilarang';
 $CIDRAM['lang']['label_blocked'] = 'Permintaan diblokir';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = 'Digunakan dengan: ';
 $CIDRAM['lang']['label_your_ip'] = 'IP Anda:';
 $CIDRAM['lang']['label_your_ua'] = 'UA Anda:';
 $CIDRAM['lang']['link_accounts'] = 'Akun';
+$CIDRAM['lang']['link_aux'] = 'Aturan Tambahan';
 $CIDRAM['lang']['link_cache_data'] = 'Data Cache';
 $CIDRAM['lang']['link_cidr_calc'] = 'Kalkulator CIDR';
 $CIDRAM['lang']['link_config'] = 'Konfigurasi';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Akun ini tidak ada.';
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Kata sandi berhasil diperbarui!';
 $CIDRAM['lang']['response_activated'] = 'Berhasil diaktifkan.';
 $CIDRAM['lang']['response_activation_failed'] = 'Kegagalan pengaktifan!';
+$CIDRAM['lang']['response_aux_none'] = 'Saat ini tidak ada aturan tambahan.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = 'Aturan tambahan baru, "%s", berhasil dibuat.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = 'Aturan tambahan, "%s", berhasil dihapus.';
 $CIDRAM['lang']['response_checksum_error'] = 'Kesalahan checksum! File ditolak!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Komponen berhasil diinstal.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponen berhasil diuninstal.';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Jangan sembu
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Sembunyikan IP yang dilarang/diblokir';
 $CIDRAM['lang']['tip_2fa_sent'] = 'Sebuah email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silahkan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru.';
 $CIDRAM['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM.';
+$CIDRAM['lang']['tip_aux'] = 'Salam, {username}.<br />Anda dapat menggunakan halaman ini untuk membuat, menghapus, dan mengubah aturan tambahan untuk CIDRAM.';
+$CIDRAM['lang']['tip_aux_precedence'] = 'Setiap "sama" (=) kondisi dapat memicu aturan, selama semua "tidak sama" (≠) kondisi juga terpenuhi.';
 $CIDRAM['lang']['tip_cache_data'] = 'Salam, {username}.<br />Disini Anda bisa meninjau isi cache.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Salam, {username}.<br />Kalkulator CIDR memungkinkan Anda untuk menghitung yang CIDR alamat IP adalah faktor.';
+$CIDRAM['lang']['tip_condition_placeholder'] = 'Tentukan nilai, atau biarkan kosong untuk diabaikan.';
 $CIDRAM['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk CIDRAM dari bagian depan.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Masukkan agen pengguna (user agent) disini (opsional).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunju
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $CIDRAM['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Akun';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – Aturan Tambahan';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Data Cache';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Kalkulator CIDR';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfigurasi';

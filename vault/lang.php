@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2018.03.25).
+ * This file: Language handler (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -17,7 +17,7 @@ if (!defined('CIDRAM')) {
 }
 
 /** Swaps two variables (in PHP7: "[$First, $Second] = [$Second, $First];"). */
-$CIDRAM['Swap'] = function(&$First, &$Second) {
+$CIDRAM['Swap'] = function (&$First, &$Second) {
     $Working = $First;
     $First = $Second;
     $Second = $Working;

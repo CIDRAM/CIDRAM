@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.22).
+ * This file: Front-end handler (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -2980,6 +2980,198 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['P
 
     /** Cleanup. */
     unset($CIDRAM['StatColour'], $CIDRAM['StatWorking'], $CIDRAM['TheseStats'], $CIDRAM['Cache']);
+
+}
+
+/** Auxiliary Rules. */
+elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissions'] === 1) {
+
+    /** Fetch and parse auxiliary rule data. */
+    if (!isset($CIDRAM['AuxData'])) {
+        /** Array to contain auxiliary rules. */
+        $CIDRAM['AuxData'] = [];
+
+        /** Attempt to parse the auxiliary rules file. */
+        if (file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
+            $CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+        }
+    }
+
+    /** Create new auxiliary rule. */
+    if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_POST['conSourceValue'], $_POST['act'], $_POST['mtd'])) {
+
+        /** Construct new rule array. */
+        $CIDRAM['AuxData'][$_POST['ruleName']] = [];
+
+        /** Construct new rule method. */
+        if ($_POST['mtd'] === 'mtdReg') {
+            $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'RegEx';
+        } elseif ($_POST['mtd'] === 'mtdWin') {
+            $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
+        }
+
+        /** Construct new rule block reason. */
+        if (!empty($_POST['ruleReason'])) {
+            $CIDRAM['AuxData'][$_POST['ruleName']]['Reason'] = $_POST['ruleReason'];
+        }
+
+        /** Determine appropriate action for new rule. */
+        if ($_POST['act'] === 'actWhl') {
+            $CIDRAM['Action'] = 'Whitelist';
+        } elseif ($_POST['act'] === 'actGrl') {
+            $CIDRAM['Action'] = 'Greylist';
+        } elseif ($_POST['act'] === 'actByp') {
+            $CIDRAM['Action'] = 'Bypass';
+        } else {
+            $CIDRAM['Action'] = 'Block';
+        }
+
+        /** Construct new rule action array. */
+        $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']] = ['If matches' => [], 'But not if matches' => []];
+
+        /** Determine number of new rule conditions to construct. */
+        $CIDRAM['AuxConditions'] = count($_POST['conSourceType']);
+
+        /** Construct new rule conditions. */
+        for ($CIDRAM['Iteration'] = 0; $CIDRAM['Iteration'] < $CIDRAM['AuxConditions']; $CIDRAM['Iteration']++) {
+
+            /** Skip if something went wrong during form submission. */
+            if (!isset(
+                $_POST['conSourceType'][$CIDRAM['Iteration']],
+                $_POST['conIfOrNot'][$CIDRAM['Iteration']],
+                $_POST['conSourceValue'][$CIDRAM['Iteration']]
+            )) {
+                continue;
+            }
+
+            /** Where to construct into. */
+            $CIDRAM['ConstructInto'] = (
+                $_POST['conIfOrNot'][$CIDRAM['Iteration']] === 'If'
+            ) ? 'If matches' : 'But not if matches';
+
+            /** Set source sub in rule if it doesn't already exist. */
+            if (!isset($CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']][$CIDRAM['ConstructInto']][
+                $_POST['conSourceType'][$CIDRAM['Iteration']]
+            ])) {
+                $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']][$CIDRAM['ConstructInto']][
+                    $_POST['conSourceType'][$CIDRAM['Iteration']]
+                ] = [];
+            }
+
+            /** Construct expected condition values. */
+            $CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']][$CIDRAM['ConstructInto']][
+                $_POST['conSourceType'][$CIDRAM['Iteration']]
+            ][] = $_POST['conSourceValue'][$CIDRAM['Iteration']];
+
+        }
+
+        /** Remove possible empty array. */
+        if (empty($CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']]['If matches'])) {
+            unset($CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']]['If matches']);
+        }
+
+        /** Remove possible empty array. */
+        if (empty($CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']]['But not if matches'])) {
+            unset($CIDRAM['AuxData'][$_POST['ruleName']][$CIDRAM['Action']]['But not if matches']);
+        }
+
+        /** Reconstruct and update auxiliary rules data. */
+        if ($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Reconstruct']($CIDRAM['AuxData'])) {
+            $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+            fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
+            fclose($CIDRAM['Handle']);
+        }
+
+        /** Cleanup. */
+        unset($CIDRAM['NewAuxData'], $CIDRAM['ConstructInto'], $CIDRAM['Iteration'], $CIDRAM['AuxConditions'], $CIDRAM['Action']);
+
+        /** Update state message. */
+        $CIDRAM['FE']['state_msg'] = sprintf(
+            $CIDRAM['lang']['response_aux_rule_created_successfully'],
+            $_POST['ruleName']
+        );
+
+    }
+
+    /** Prepare data for display. */
+    if (!$CIDRAM['FE']['ASYNC']) {
+
+        /** Page initial prepwork. */
+        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_aux'], $CIDRAM['lang']['tip_aux']);
+
+        /** Append async globals. */
+        $CIDRAM['FE']['JS'] .= "function delRule(a,i){window.auxD=a,$('POST','',['auxD'],null,function(a){null!=i&&hide(i);w('stateMsg',a)})}";
+
+        $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
+
+        /** Populate methods. */
+        $CIDRAM['FE']['optMtdStr'] = sprintf($CIDRAM['lang']['label_aux_menu_method'], $CIDRAM['lang']['label_aux_mtdStr']);
+        $CIDRAM['FE']['optMtdReg'] = sprintf($CIDRAM['lang']['label_aux_menu_method'], $CIDRAM['lang']['label_aux_mtdReg']);
+        $CIDRAM['FE']['optMtdWin'] = sprintf($CIDRAM['lang']['label_aux_menu_method'], $CIDRAM['lang']['label_aux_mtdWin']);
+
+        /** Populate actions. */
+        $CIDRAM['FE']['optActWhl'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actWhl']);
+        $CIDRAM['FE']['optActGrl'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actGrl']);
+        $CIDRAM['FE']['optActBlk'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actBlk']);
+        $CIDRAM['FE']['optActByp'] = sprintf($CIDRAM['lang']['label_aux_menu_action'], $CIDRAM['lang']['label_aux_actByp']);
+
+        /** Populate sources. */
+        $CIDRAM['FE']['conSources'] = $CIDRAM['GenerateOptions']([
+            'IPAddr' => $CIDRAM['lang']['field_ipaddr'],
+            'IPAddrResolved' => $CIDRAM['lang']['field_ipaddr_resolved'],
+            'Query' => $CIDRAM['lang']['field_query'],
+            'Referrer' => $CIDRAM['lang']['field_referrer'],
+            'UA' => $CIDRAM['lang']['field_ua'],
+            'UALC' => $CIDRAM['lang']['field_ualc'],
+            'SignatureCount' => $CIDRAM['lang']['field_sigcount'],
+            'Signatures' => $CIDRAM['lang']['field_sigref'],
+            'WhyReason' => $CIDRAM['lang']['field_whyreason'],
+            'ReasonMessage' => $CIDRAM['lang']['field_reasonmessage'],
+            'rURI' => $CIDRAM['lang']['field_rURI'],
+            'Hostname' => $CIDRAM['lang']['field_hostname']
+        ], '~(?: | )?(?:：|:) ?$~');
+
+        /** Process auxiliary rules. */
+        $CIDRAM['FE']['Data'] = file_exists($CIDRAM['Vault'] . 'auxiliary.yaml') ?
+            $CIDRAM['AuxGenerateFEData']() :
+            '        <tr><td class="h4f" colspan="2"><div class="s">' . $CIDRAM['lang']['response_aux_none'] . "</div></td></tr>";
+
+        /** Parse output. */
+        $CIDRAM['FE']['FE_Content'] = $CIDRAM['ParseVars'](
+            $CIDRAM['lang'] + $CIDRAM['FE'],
+            $CIDRAM['ReadFile']($CIDRAM['GetAssetPath']('_aux.html'))
+        );
+
+        /** Send output. */
+        echo $CIDRAM['SendOutput']();
+
+    } else {
+
+        /** Delete an auxiliary rule. */
+        if (isset($_POST['auxD'], $CIDRAM['AuxData'][$_POST['auxD']])) {
+
+            /** Destroy the target rule data array. */
+            unset($CIDRAM['AuxData'][$_POST['auxD']]);
+
+            /** Reconstruct and update auxiliary rules data. */
+            if (($CIDRAM['NewAuxData'] = $CIDRAM['YAML-Reconstruct']($CIDRAM['AuxData'])) && strlen($CIDRAM['NewAuxData']) > 2) {
+                $CIDRAM['Handle'] = fopen($CIDRAM['Vault'] . 'auxiliary.yaml', 'w');
+                fwrite($CIDRAM['Handle'], $CIDRAM['NewAuxData']);
+                fclose($CIDRAM['Handle']);
+            } elseif (file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
+                /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
+                unlink($CIDRAM['Vault'] . 'auxiliary.yaml');
+            }
+
+            /** Cleanup. */
+            unset($CIDRAM['NewAuxData']);
+
+            /** Confirm successful deletion. */
+            echo sprintf($CIDRAM['lang']['response_aux_rule_deleted_successfully'], $_POST['auxD']);
+
+        }
+
+    }
 
 }
 

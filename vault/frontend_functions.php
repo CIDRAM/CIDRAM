@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.22).
+ * This file: Front-end functions file (last modified: 2018.09.24).
  */
 
 /**
@@ -2504,12 +2504,6 @@ $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use 
         if (($AtChar = strpos($Username, '@')) !== false) {
             $Username = substr($Username, 0, $AtChar);
         }
-        $Username = preg_split('~[\s_.+]+~', $Username, -1, PREG_SPLIT_NO_EMPTY);
-        foreach ($Username as &$Part) {
-            $Part = ucfirst(strtolower($Part));
-        }
-        unset($Part);
-        $Username = implode(' ', $Username);
     }
 
     /** Prepare page tooltip/description. */
@@ -2814,4 +2808,149 @@ $CIDRAM['2FA-Number'] = function () {
         }
     }
     return isset($Key) ? $Key : rand($MinInt, $MaxInt);
+};
+
+/**
+ * Generates the rules data displayed on the auxiliary rules page.
+ */
+$CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
+
+    /** Populate output here. */
+    $Output = '';
+
+    /** Potential sources. */
+    $Sources = preg_replace('~(?: | )?(?:：|:) ?$~', '', [
+        'IPAddr' => $CIDRAM['lang']['field_ipaddr'],
+        'IPAddrResolved' => $CIDRAM['lang']['field_ipaddr_resolved'],
+        'Query' => $CIDRAM['lang']['field_query'],
+        'Referrer' => $CIDRAM['lang']['field_referrer'],
+        'UA' => $CIDRAM['lang']['field_ua'],
+        'UALC' => $CIDRAM['lang']['field_ualc'],
+        'SignatureCount' => $CIDRAM['lang']['field_sigcount'],
+        'Signatures' => $CIDRAM['lang']['field_sigref'],
+        'WhyReason' => $CIDRAM['lang']['field_whyreason'],
+        'ReasonMessage' => $CIDRAM['lang']['field_reasonmessage'],
+        'rURI' => $CIDRAM['lang']['field_rURI'],
+        'Hostname' => $CIDRAM['lang']['field_hostname']
+    ]);
+
+    /** Potential modes. */
+    static $Modes = ['Whitelist', 'Greylist', 'Block', 'Bypass'];
+
+    if (!isset($CIDRAM['AuxData'])) {
+        /** Array to contain auxiliary rules. */
+        $CIDRAM['AuxData'] = [];
+
+        /** Attempt to parse the auxiliary rules file. */
+        $CIDRAM['YAML']($CIDRAM['ReadFile']($CIDRAM['Vault'] . 'auxiliary.yaml'), $CIDRAM['AuxData']);
+    }
+
+    /** Iterate through the auxiliary rules. */
+    foreach ($CIDRAM['AuxData'] as $Name => $Data) {
+
+        /** Rule row ID. */
+        $RuleClass = preg_replace('~^0+~', '', bin2hex($Name));
+
+        /** Begin writing new rule. */
+        $Output .= '        <tr class="' . $RuleClass . "\">\n";
+        $Output .= '          <td class="h4"><div class="s">' . $Name . "</div></td>\n";
+        $Output .= '          <td class="h4f"><input type="button" onclick="javascript:delRule(\'' . $Name . "','" . $RuleClass . '\')" value="' . $CIDRAM['lang']['field_delete_file'] . "\" /></td>\n";
+        $Output .= "        </tr>\n        <tr class=\"" . $RuleClass . "\">\n          <td class=\"h3f\" colspan=\"2\">";
+
+        /** Detailed reason. */
+        if (!empty($Data['Reason'])) {
+            $Output .= '<span class="s">' . $CIDRAM['lang']['label_aux_reason'] . '</span><br />';
+            $Output .= '<ul><li>' . $Data['Reason'] . '</li></ul>';
+        }
+
+        /** Iterate through actions. */
+        foreach ([['Whitelist', 'optActWhl'], ['Greylist', 'optActGrl'], ['Block', 'optActBlk'], ['Bypass', 'optActByp']] as $Action) {
+
+            /** Skip action if the current rule doesn't use this action. */
+            if (empty($Data[$Action[0]])) {
+                continue;
+            }
+
+            /** Show the appropriate label for this action. */
+            $Output .= '<span class="s">' . $CIDRAM['FE'][$Action[1]] . '</span><br />';
+
+            /** Show the method to be used. */
+            if (isset($Data['Method'])) {
+                if ($Data['Method'] === 'RegEx') {
+                    $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdReg'] . '</span><br />';
+                } elseif ($Data['Method'] === 'WinEx') {
+                    $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdWin'] . '</span><br />';
+                } else {
+                    $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdStr'] . '</span><br />';
+                }
+            } else {
+                $Output .= '<span class="s">' . $CIDRAM['FE']['optMtdStr'] . '</span><br />';
+            }
+
+            /** Begin writing conditions list. */
+            $Output .= '<ul>';
+
+            /** List all "not equals" conditions . */
+            if (!empty($Data[$Action[0]]['But not if matches'])) {
+
+                /** Iterate through sources. */
+                foreach ($Data[$Action[0]]['But not if matches'] as $Source => $Values) {
+                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                    if (!is_array($Values)) {
+                        $Values = [$Values];
+                    }
+                    foreach ($Values as $Value) {
+                        $Output .= "\n            <li>" . $ThisSource . ' ≠ <code>' . $Value . '</code></li>';
+                    }
+                }
+
+            }
+
+            /** List all "equals" conditions . */
+            if (!empty($Data[$Action[0]]['If matches'])) {
+
+                /** Iterate through sources. */
+                foreach ($Data[$Action[0]]['If matches'] as $Source => $Values) {
+                    $ThisSource = isset($Sources[$Source]) ? $Sources[$Source] : $Source;
+                    if (!is_array($Values)) {
+                        $Values = [$Values];
+                    }
+                    foreach ($Values as $Value) {
+                        $Output .= "\n            <li>" . $ThisSource . ' = <code>' . $Value . '</code></li>';
+                    }
+                }
+
+            }
+
+            /** Finish writing conditions list. */
+            $Output .= "\n          </ul>";
+
+        }
+
+        /** Finish writing new rule. */
+        $Output .= "</td>\n        </tr>\n";
+
+    }
+
+    /** Exit with generated output. */
+    return $Output;
+
+};
+
+/**
+ * Generate select options from an associative array.
+ *
+ * @param array $Options An associative array of the options to generate.
+ * @param string $Trim An optional regex of data to remove from labels.
+ * @return string The generated options.
+ */
+$CIDRAM['GenerateOptions'] = function ($Options, $Trim = '') {
+    $Output = '';
+    foreach ($Options as $Value => $Label) {
+        if ($Trim) {
+            $Label = preg_replace($Trim, '', $Label);
+        }
+        $Output .= '<option value="' . $Value . '">' . $Label . '</option>';
+    }
+    return $Output;
 };

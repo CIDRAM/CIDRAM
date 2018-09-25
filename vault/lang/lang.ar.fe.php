@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.22).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'الموضوع الافتراض
 $CIDRAM['lang']['confirm_action'] = 'هل أنت متأكد من أنك تريد "%s"؟';
 $CIDRAM['lang']['field_2fa'] = 'كود 2FA';
 $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
+$CIDRAM['lang']['field_add_more_conditions'] = 'إضافة المزيد من الشروط';
 $CIDRAM['lang']['field_banned'] = 'محظور';
 $CIDRAM['lang']['field_blocked'] = 'مسدود';
 $CIDRAM['lang']['field_clear'] = 'إلغاء';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = 'خيارات';
 $CIDRAM['lang']['field_password'] = 'كلمه السر';
 $CIDRAM['lang']['field_permissions'] = 'أذونات';
 $CIDRAM['lang']['field_range'] = 'نطاق (الأول – الاخير)';
+$CIDRAM['lang']['field_reasonmessage'] = 'سبب الحظر (مفصلة)';
 $CIDRAM['lang']['field_rename_file'] = 'إعادة تسمية';
 $CIDRAM['lang']['field_reset'] = 'إعادة تعيين';
 $CIDRAM['lang']['field_set_new_password'] = 'تحديد جديد كلمه السر';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = 'الحالة';
 $CIDRAM['lang']['field_system_timezone'] = 'استخدام المنطقة الزمنية الافتراضية للنظام.';
 $CIDRAM['lang']['field_tracking'] = 'التتبع';
 $CIDRAM['lang']['field_true'] = 'True (صحيح)';
+$CIDRAM['lang']['field_ualc'] = 'وكيل المستخدم (أحرف صغيرة)';
 $CIDRAM['lang']['field_uninstall'] = 'الغاء التثبيت';
 $CIDRAM['lang']['field_update'] = 'تحديث';
 $CIDRAM['lang']['field_update_all'] = 'تحديث الجميع';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $CIDRAM['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
 $CIDRAM['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
 $CIDRAM['lang']['label_actual'] = 'فعلي';
+$CIDRAM['lang']['label_aux_actBlk'] = 'منع';
+$CIDRAM['lang']['label_aux_actByp'] = 'تجنب';
+$CIDRAM['lang']['label_aux_actGrl'] = 'قائمة رمادية';
+$CIDRAM['lang']['label_aux_actWhl'] = 'القائمة البيضاء';
+$CIDRAM['lang']['label_aux_create_new_rule'] = 'قم بإنشاء قاعدة جديدة';
+$CIDRAM['lang']['label_aux_menu_action'] = 'إذا تم استيفاء الشروط التالية، %s الطلب.';
+$CIDRAM['lang']['label_aux_menu_method'] = 'استخدم %s لاختبار الشروط.';
+$CIDRAM['lang']['label_aux_mtdReg'] = 'التعبيرات العادية';
+$CIDRAM['lang']['label_aux_mtdStr'] = 'المقارنة المباشرة للسلسلة';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'أحرف البدل على غرار ويندوز';
+$CIDRAM['lang']['label_aux_name'] = 'اسم للقاعدة الجديدة:';
+$CIDRAM['lang']['label_aux_reason'] = 'السبب المعطى للمستخدم عند حظره:';
 $CIDRAM['lang']['label_backup_location'] = 'مواقع النسخ الاحتياطي مستودع (في حالة الطوارئ، أو إذا فشل كل شيء آخر):';
 $CIDRAM['lang']['label_banned'] = 'طلبات محظورة ';
 $CIDRAM['lang']['label_blocked'] = 'الطلبات المحظورة';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = 'يستعمل مع: ';
 $CIDRAM['lang']['label_your_ip'] = 'عنوان IP الخاص بك:';
 $CIDRAM['lang']['label_your_ua'] = 'وكيل المستخدم الخاص بك:';
 $CIDRAM['lang']['link_accounts'] = 'حسابات';
+$CIDRAM['lang']['link_aux'] = 'القواعد المساعدة';
 $CIDRAM['lang']['link_cache_data'] = 'بيانات ذاكرة التخزين المؤقت';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR حاسبة';
 $CIDRAM['lang']['link_config'] = 'التكوين';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'حساب غير موجود.
 $CIDRAM['lang']['response_accounts_password_updated'] = 'تم تحديث كلمه السر بنجاح!';
 $CIDRAM['lang']['response_activated'] = 'نجحت في جعل نشطة';
 $CIDRAM['lang']['response_activation_failed'] = 'فشلت في جعله نشطة!';
+$CIDRAM['lang']['response_aux_none'] = 'لا توجد حاليا أي القواعد المساعدة.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = 'تم إنشاء قاعدة مساعدة جديدة "%s" بنجاح.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = 'تم حذف القاعدة المساعدة "%s" بنجاح.';
 $CIDRAM['lang']['response_checksum_error'] = 'خطأ أختباري! تم رفض الملف!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'تم تثبيت الوحدة بنجاح';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'تم الغاء تثبيت الوحدة بنجاح';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'لا تخف�
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'تخفي عناوين IP المحظورة';
 $CIDRAM['lang']['tip_2fa_sent'] = 'تم إرسال بريد إلكتروني يحتوي على رمز 2FA إلى عنوان بريدك الإلكتروني. يرجى تأكيد هذا الرمز أدناه للوصول إلى الواجهة الأمامية. إذا لم تتلقَ رسالة البريد الإلكتروني هذه، فحاول تسجيل الخروج، والانتظار لمدة 10 دقائق، وتسجيل الدخول مرة أخرى لتلقي رسالة إلكترونية جديدة تحتوي على رمز جديد.';
 $CIDRAM['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end CIDRAM.';
+$CIDRAM['lang']['tip_aux'] = 'مرحبا، {username}.<br />يمكنك استخدام هذه الصفحة لإنشاء قواعد إضافية لـ CIDRAM وحذفها وتعديلها.';
+$CIDRAM['lang']['tip_aux_precedence'] = 'قد تؤدي أي شروط "يساوي" (=) إلى تشغيل القاعدة، طالما تم استيفاء جميع الشروط "غير متساوية" (≠) أيضًا.';
 $CIDRAM['lang']['tip_cache_data'] = 'مرحبا، {username}.<br />هنا يمكنك مراجعة محتويات ذاكرة التخزين المؤقت.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'مرحبا، {username}.<br />آلة حاسبة CIDR يسمح لك لحساب CIDRs حيث عنوان IP هو عامل.';
+$CIDRAM['lang']['tip_condition_placeholder'] = 'حدد قيمة، أو اتركها فارغة للتجاهل.';
 $CIDRAM['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين CIDRAM عن طريق ألfront-end.';
 $CIDRAM['lang']['tip_custom_ua'] = 'أدخل وكيل المستخدم (user agent) هنا (انها اختيارية).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM يتم توفير مجانا، ولكن إذا كنت تريد التبرع للمشروع، يمكنك القيام بذلك عن طريق النقر على زر التبرع.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذ
 $CIDRAM['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $CIDRAM['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – حسابات';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – القواعد المساعدة';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – بيانات ذاكرة التخزين المؤقت';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR حاسبة';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';

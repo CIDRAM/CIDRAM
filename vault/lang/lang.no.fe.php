@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.09.22).
+ * This file: Norwegian language data for the front-end (last modified: 2018.09.25).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -136,6 +136,7 @@ $CIDRAM['lang']['config_template_data_theme'] = 'Standard tema som skal brukes t
 $CIDRAM['lang']['confirm_action'] = 'Er du sikker på at du vil "%s"?';
 $CIDRAM['lang']['field_2fa'] = '2FA kode';
 $CIDRAM['lang']['field_activate'] = 'Aktiver';
+$CIDRAM['lang']['field_add_more_conditions'] = 'Legg til en ny betingelse';
 $CIDRAM['lang']['field_banned'] = 'Utestengt';
 $CIDRAM['lang']['field_blocked'] = 'Blokkert';
 $CIDRAM['lang']['field_clear'] = 'Rydde';
@@ -170,6 +171,7 @@ $CIDRAM['lang']['field_options'] = 'Alternativer';
 $CIDRAM['lang']['field_password'] = 'Passord';
 $CIDRAM['lang']['field_permissions'] = 'Tillatelser';
 $CIDRAM['lang']['field_range'] = 'Område (Først – Siste)';
+$CIDRAM['lang']['field_reasonmessage'] = 'Hvorfor Blokkert (detaljert)';
 $CIDRAM['lang']['field_rename_file'] = 'Gi nytt navn';
 $CIDRAM['lang']['field_reset'] = 'Tilbakestille';
 $CIDRAM['lang']['field_set_new_password'] = 'Sett inn nytt passord';
@@ -183,6 +185,7 @@ $CIDRAM['lang']['field_status'] = 'Status';
 $CIDRAM['lang']['field_system_timezone'] = 'Bruk systemets standard tidssone.';
 $CIDRAM['lang']['field_tracking'] = 'Sporing';
 $CIDRAM['lang']['field_true'] = 'True (Ekte)';
+$CIDRAM['lang']['field_ualc'] = 'Bruker Agent (små bokstaver)';
 $CIDRAM['lang']['field_uninstall'] = 'Avinstaller';
 $CIDRAM['lang']['field_update'] = 'Oppdater';
 $CIDRAM['lang']['field_update_all'] = 'Oppdater alt';
@@ -194,6 +197,18 @@ $CIDRAM['lang']['field_your_version'] = 'Din Versjon';
 $CIDRAM['lang']['header_login'] = 'Vennligst logg inn for å fortsette.';
 $CIDRAM['lang']['label_active_config_file'] = 'Aktiv konfigurasjonsfil: ';
 $CIDRAM['lang']['label_actual'] = 'Faktiske';
+$CIDRAM['lang']['label_aux_actBlk'] = 'blokkere';
+$CIDRAM['lang']['label_aux_actByp'] = 'omgå';
+$CIDRAM['lang']['label_aux_actGrl'] = 'grå liste';
+$CIDRAM['lang']['label_aux_actWhl'] = 'hvit liste';
+$CIDRAM['lang']['label_aux_create_new_rule'] = 'Opprett ny regel';
+$CIDRAM['lang']['label_aux_menu_action'] = 'Hvis følgende betingelser er oppfylt, %s forespørselen.';
+$CIDRAM['lang']['label_aux_menu_method'] = 'Bruk %s for å teste betingelsene.';
+$CIDRAM['lang']['label_aux_mtdReg'] = 'regelmessig uttrykkene';
+$CIDRAM['lang']['label_aux_mtdStr'] = 'direkte streng sammenligning';
+$CIDRAM['lang']['label_aux_mtdWin'] = 'Windows-stil jokertegn';
+$CIDRAM['lang']['label_aux_name'] = 'Et navn på den nye regelen:';
+$CIDRAM['lang']['label_aux_reason'] = 'Årsaken til brukeren når den er blokkert:';
 $CIDRAM['lang']['label_backup_location'] = 'Repository backup steder (i nødstilfelle, eller hvis alt annet mislykkes):';
 $CIDRAM['lang']['label_banned'] = 'Forespørsler utestengt';
 $CIDRAM['lang']['label_blocked'] = 'Forespørsler blokkert';
@@ -241,6 +256,7 @@ $CIDRAM['lang']['label_used_with'] = 'Brukes med: ';
 $CIDRAM['lang']['label_your_ip'] = 'Din IP:';
 $CIDRAM['lang']['label_your_ua'] = 'Din UA:';
 $CIDRAM['lang']['link_accounts'] = 'Kontoer';
+$CIDRAM['lang']['link_aux'] = 'Tilleggsregler';
 $CIDRAM['lang']['link_cache_data'] = 'Cache Data';
 $CIDRAM['lang']['link_cidr_calc'] = 'CIDR-Kalkulator';
 $CIDRAM['lang']['link_config'] = 'Konfigurasjon';
@@ -276,6 +292,9 @@ $CIDRAM['lang']['response_accounts_doesnt_exist'] = 'Den kontoen eksisterer ikke
 $CIDRAM['lang']['response_accounts_password_updated'] = 'Passordet oppdatert!';
 $CIDRAM['lang']['response_activated'] = 'Aktivering vellykket.';
 $CIDRAM['lang']['response_activation_failed'] = 'Aktivering mislyktes!';
+$CIDRAM['lang']['response_aux_none'] = 'Det finnes for øyeblikket ingen tilleggsregler.';
+$CIDRAM['lang']['response_aux_rule_created_successfully'] = 'Ny tilleggsregel, "%s", opprettet vellykket.';
+$CIDRAM['lang']['response_aux_rule_deleted_successfully'] = 'Tilleggsregel, "%s", slettet vellykket.';
 $CIDRAM['lang']['response_checksum_error'] = 'Checksum feil! Fil avvist!';
 $CIDRAM['lang']['response_component_successfully_installed'] = 'Komponent installert.';
 $CIDRAM['lang']['response_component_successfully_uninstalled'] = 'Komponent avinstallert.';
@@ -350,8 +369,11 @@ $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-false'] = 'Ikke skjul u
 $CIDRAM['lang']['switch-tracking-hide-banned-blocked-set-true'] = 'Skjul utestengt/blokkert IP-adresser';
 $CIDRAM['lang']['tip_2fa_sent'] = 'En e-post som inneholder en 2FA-kode, er sendt til e-postadressen din. Vennligst bekreft denne koden nedenfor for å få tilgang til frontenden. Hvis du ikke mottok denne e-posten, kan du prøve å logge ut, vente i 10 minutter og logge på igjen for å motta en ny e-post som inneholder en ny kode.';
 $CIDRAM['lang']['tip_accounts'] = 'Hallo, {username}.<br />Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden.';
+$CIDRAM['lang']['tip_aux'] = 'Hallo, {username}.<br />Du kan bruke denne siden til å opprette, slette og endre tilleggsregler for CIDRAM.';
+$CIDRAM['lang']['tip_aux_precedence'] = 'Eventuelle "likeverdige" (=) betingelse kan utløse regelen, så lenge alle "ikke likeverdige" (≠) betingelser også er oppfylt.';
 $CIDRAM['lang']['tip_cache_data'] = 'Hallo, {username}.<br />Her kan du se innholdet i cachen.';
 $CIDRAM['lang']['tip_cidr_calc'] = 'Hallo, {username}.<br />CIDR-kalkulatoren lar deg beregne hvilke CIDRer en IP-adresse er en faktor av.';
+$CIDRAM['lang']['tip_condition_placeholder'] = 'Angi en verdi, eller legg blank for å se bort fra.';
 $CIDRAM['lang']['tip_config'] = 'Hallo, {username}.<br />Konfigurasjonssiden lar deg endre konfigurasjonen for CIDRAM fra frontenden.';
 $CIDRAM['lang']['tip_custom_ua'] = 'Skriv inn brukeragent (user agent) her (valgfritt).';
 $CIDRAM['lang']['tip_donate'] = 'CIDRAM tilbys gratis, men hvis du vil donere til prosjektet, du kan gjøre det ved å klikke på donate-knappen.';
@@ -373,6 +395,7 @@ $CIDRAM['lang']['tip_statistics'] = 'Hallo, {username}.<br />Denne siden viser n
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Merk: Statistikksporing er for øyeblikket deaktivert, men kan aktiveres via konfigurasjonssiden.';
 $CIDRAM['lang']['tip_updates'] = 'Hallo, {username}.<br />Oppdateringssiden lar deg installere, avinstallere og oppdatere de forskjellige komponentene i CIDRAM (kjernepakken, signaturer, L10N filer, osv).';
 $CIDRAM['lang']['title_accounts'] = 'CIDRAM – Kontoer';
+$CIDRAM['lang']['title_aux'] = 'CIDRAM – Tilleggsregler';
 $CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Cache Data';
 $CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR-Kalkulator';
 $CIDRAM['lang']['title_config'] = 'CIDRAM – Konfigurasjon';

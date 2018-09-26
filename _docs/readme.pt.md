@@ -161,6 +161,7 @@ Arquivo | Descrição
 /vault/fe_assets/_2fa.html | Um modelo HTML usado ao solicitar ao usuário para um código 2FA.
 /vault/fe_assets/_accounts.html | Um modelo HTML para o front-end página de contas.
 /vault/fe_assets/_accounts_row.html | Um modelo HTML para o front-end página de contas.
+/vault/fe_assets/_aux.html | Um modelo HTML para o front-end página de regras auxiliares.
 /vault/fe_assets/_cache.html | Um modelo HTML para o front-end página do dados de cache.
 /vault/fe_assets/_cidr_calc.html | Um modelo HTML para a calculadora CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Um modelo HTML para a calculadora CIDR.
@@ -265,6 +266,7 @@ Arquivo | Descrição
 /vault/.travis.php | Usado pela Travis CI para testes (não é necessário para o correto funcionamento do script).
 /vault/.travis.yml | Usado pela Travis CI para testes (não é necessário para o correto funcionamento do script).
 /vault/aggregator.php | Agregador IP.
+/vault/auxiliary.yaml | Contém regras auxiliares. Não incluído no pacote. Gerado pela página de regras auxiliares.
 /vault/cache.dat | Dados de cache.
 /vault/cache.dat.safety | Gerado como um mecanismo de segurança quando necessário.
 /vault/cidramblocklists.dat | Arquivo de metadados para as listas de bloqueio opcionais da Macmathan; Usado pela página de atualizações do front-end.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 AUXILIAR
 
+##### 7.3.0 IGNORANDO SEÇÕES DE ASSINATURA
+
 Em suplemento, se você quiser CIDRAM para ignorar completamente algumas seções específicas dentro de qualquer um dos arquivos de assinatura, você pode usar o arquivo `ignore.dat` para especificar quais seções para ignorar. Em uma nova linha, escreva `Ignore`, seguido por um espaço, seguido do nome da seção que você quer CIDRAM para ignorar (veja o exemplo abaixo).
 
 ```
 Ignore Seção 1
 ```
+
+Isso também pode ser alcançado usando a interface fornecida pela página "lista de seções" do front-end do CIDRAM.
+
+##### 7.3.1 REGRAS AUXILIARES
+
+Se você acha que escrever seus próprios arquivos de assinatura personalizados ou módulos personalizados é muito complicado para você, uma alternativa mais simples pode ser usar a interface fornecida pela página "regras auxiliares" do front-end do CIDRAM. Ao selecionar as opções apropriadas e especificar detalhes sobre os tipos de solicitações específicos, você pode instruir o CIDRAM sobre como responder a essas solicitações. "Regras auxiliares" são executadas depois que todos os arquivos de assinatura e módulos já tiverem terminado a execução.
 
 #### 7.4 <a name="MODULE_BASICS"></a>NOÇÕES BÁSICAS (PARA MÓDULOS)
 
@@ -920,19 +930,19 @@ Algumas funcionalidades são fornecidas pelo CIDRAM para os módulos a serem usa
 
 ##### 7.5.0 "$Trigger"
 
-As assinaturas do módulo geralmente são escritas com "$Trigger". Na maioria dos casos, esse closure será mais importante do que qualquer outra coisa com a finalidade de escrever módulos.
+As assinaturas do módulo geralmente são escritas com `$Trigger`. Na maioria dos casos, esse closure será mais importante do que qualquer outra coisa com a finalidade de escrever módulos.
 
-"$Trigger" aceita 4 parâmetros: "$Condition", "$ReasonShort", "$ReasonLong" (opcional), e "$DefineOptions" (opcional).
+`$Trigger` aceita 4 parâmetros: `$Condition`, `$ReasonShort`, `$ReasonLong` (opcional), e `$DefineOptions` (opcional).
 
-A verdade de "$Condition" é avaliada, e se for true/verdade, a assinatura é "desencadeada". Se false/falso, a assinatura *não* é "desencadeada". "$Condition" tipicamente contém código PHP para avaliar uma condição que deve causar um pedido para ser bloqueado.
+A verdade de `$Condition` é avaliada, e se for true/verdade, a assinatura é "desencadeada". Se false/falso, a assinatura *não* é "desencadeada". `$Condition` tipicamente contém código PHP para avaliar uma condição que deve causar um pedido para ser bloqueado.
 
-"$ReasonShort" é citado no campo "Razão Bloqueada" quando a assinatura é "desencadeada".
+`$ReasonShort` é citado no campo "Razão Bloqueada" quando a assinatura é "desencadeada".
 
-"$ReasonLong" é uma mensagem opcional a ser exibida para o usuário/cliente para quando eles estão bloqueados, para explicar por que eles foram bloqueados. Usa a mensagem padrão "Acesso Negado" quando omitido.
+`$ReasonLong` é uma mensagem opcional a ser exibida para o usuário/cliente para quando eles estão bloqueados, para explicar por que eles foram bloqueados. Usa a mensagem padrão "Acesso Negado" quando omitido.
 
-"$DefineOptions" é uma array opcional contendo pares de chave/valor, usada para definir opções de configuração específicas para a instância de solicitação. As opções de configuração serão aplicadas quando a assinatura é "desencadeada".
+`$DefineOptions` é uma array opcional contendo pares de chave/valor, usada para definir opções de configuração específicas para a instância de solicitação. As opções de configuração serão aplicadas quando a assinatura é "desencadeada".
 
-"$Trigger" retorna true/verdadeiro quando a assinatura é "desencadeada", e false/falsa quando não é.
+`$Trigger` retorna true/verdadeiro quando a assinatura é "desencadeada", e false/falsa quando não é.
 
 Para usar esse closure em seu módulo, lembre-se de herdá-lo do escopo pai:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-Os bypass de assinatura geralmente são escritos com "$Bypass".
+Os bypass de assinatura geralmente são escritos com `$Bypass`.
 
-"$Bypass" aceita 3 parâmetros: "$Condition", "$ReasonShort", e "$DefineOptions" (opcional).
+`$Bypass` aceita 3 parâmetros: `$Condition`, `$ReasonShort`, e `$DefineOptions` (opcional).
 
-A verdade de "$Condition" é avaliada, e se for true/verdade, o bypass é "desencadeado". Se false/falso, o bypass *não* é "desencadeado". "$Condition" tipicamente contém código PHP para avaliar uma condição *não* que deve causar um pedido para ser bloqueado.
+A verdade de `$Condition` é avaliada, e se for true/verdade, o bypass é "desencadeado". Se false/falso, o bypass *não* é "desencadeado". `$Condition` tipicamente contém código PHP para avaliar uma condição *não* que deve causar um pedido para ser bloqueado.
 
-"$ReasonShort" é citado no campo "Razão Bloqueada" quando o bypass é "desencadeado".
+`$ReasonShort` é citado no campo "Razão Bloqueada" quando o bypass é "desencadeado".
 
-"$DefineOptions" é uma array opcional contendo pares de chave/valor, usada para definir opções de configuração específicas para a instância de solicitação. As opções de configuração serão aplicadas quando o bypass é "desencadeado".
+`$DefineOptions` é uma array opcional contendo pares de chave/valor, usada para definir opções de configuração específicas para a instância de solicitação. As opções de configuração serão aplicadas quando o bypass é "desencadeado".
 
-"$Bypass" retorna true/verdadeiro quando o bypass é "desencadeado", e false/falsa quando não é.
+`$Bypass` retorna true/verdadeiro quando o bypass é "desencadeado", e false/falsa quando não é.
 
 Para usar esse closure em seu módulo, lembre-se de herdá-lo do escopo pai:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 VARIABLES DE MÓDULO
 
-Os módulos executam dentro do seu próprio escopo, e quaisquer variáveis definidas por um módulo, não serão acessíveis a outros módulos, nem ao script pai, a menos que estejam armazenados na array "$CIDRAM" (tudo o resto é liberado após a conclusão do módulo).
+Os módulos executam dentro do seu próprio escopo, e quaisquer variáveis definidas por um módulo, não serão acessíveis a outros módulos, nem ao script pai, a menos que estejam armazenados na array `$CIDRAM` (tudo o resto é liberado após a conclusão do módulo).
 
 Abaixo estão algumas das variáveis comuns que podem ser úteis para o seu módulo:
 
@@ -1450,4 +1460,4 @@ Alternativamente, há uma breve visão geral (não autoritativa) do GDPR/DSGVO d
 ---
 
 
-Última Atualização: 19 Setembro de 2018 (2018.09.19).
+Última Atualização: 26 Setembro de 2018 (2018.09.26).

@@ -161,6 +161,7 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 /vault/fe_assets/_2fa.html | ユーザーに２ＦＡコードを要求するときに使用されるＨＴＭＬテンプレート。
 /vault/fe_assets/_accounts.html | フロントエンドのアカウント・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウント・ページのＨＴＭＬテンプレート。
+/vault/fe_assets/_aux.html | フロントエンドの補助ルール・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_cache.html | フロントエンドのキャッシュ・データ・ページのＨＴＭＬテンプレート。
 /vault/fe_assets/_cidr_calc.html | ＣＩＤＲ計算機のＨＴＭＬテンプレート。
 /vault/fe_assets/_cidr_calc_row.html | ＣＩＤＲ計算機のＨＴＭＬテンプレート。
@@ -265,6 +266,7 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 /vault/.travis.php | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/.travis.yml | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/aggregator.php | ＩＰアグリゲータ。
+/vault/auxiliary.yaml | 補助ルールが含まれています。​パッケージには含まれていません。​補助ルール・ページによって生成されます。
 /vault/cache.dat | キャッシュ・データ。
 /vault/cache.dat.safety | 必要に応じて安全機構として生成されます。
 /vault/cidramblocklists.dat | Macmathanのオプションのブロックリストのメタデータ・ファイル。​フロントエンドのアップデート・ページで使用されます。
@@ -317,17 +319,17 @@ PHPMailerをインストールしたら、CIDRAMコンフィギュレーショ�
 ### ６.<a name="SECTION6"></a>コンフィギュレーション（設定オプション）
 以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
-#### "general" （全般、​カテゴリー）
+#### "general" （全般、カテゴリー）
 全般的な設定。
 
 ##### "logfile" （ログ・ファイル）
-- アクセス試行阻止の記録、​人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
+- アクセス試行阻止の記録、人間によって読み取り可能。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
 
 ##### "logfileApache" （ログ・ファイル・アパッチ）
-- アクセス試行阻止の記録、​Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
+- アクセス試行阻止の記録、Apacheスタイル。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
 
 ##### "logfileSerialized" （ログ・ファイル・シリアライズ）
-- アクセス試行阻止の記録、​シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
+- アクセス試行阻止の記録、シリアル化されました。​ファイル名指定するか、​無効にしたい場合は空白のままにして下さい。
 
 *有用な先端：​あなたがしたい場合は、​ログファイルの名前に日付/時刻情報を付加することができます、​名前にこれらを含めることで:完全な年のため`{yyyy}`、​省略された年のため`{yy}`、​月`{mm}`、​日`{dd}`、​時間`{hh}`。*
 
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 補助
 
+##### 7.3.0 シグネチャ・セクションを無視する
+
 さらに、​CIDRAMに特定のシグネチャセクションを完全に無視させたい場合、​「`ignore.dat`」ファイルを使用して、​無視するセクションを指定することができます。​新しい行に`Ignore`と書いてください、​次に、​スペース、​次に、​CIDRAMが無視するセクションの名前（以下の例を参照してください）。
 
 ```
 Ignore セクション１
 ```
+
+これは、CIDRAMフロントエンドの「セクション・リスト」ページで提供されるインターフェイスを使用しても実現できます。
+
+##### 7.3.1 補助ルール
+
+独自のカスタム・シグネチャ・ファイルまたはカスタム・モジュールの作成が複雑すぎると感じる場合は、CIDRAMフロントエンドの「補助ルール」ページで提供されるインターフェイスを使用する方が簡単な方法があります。​適切なオプションを選択し、特定のタイプの要求に関する詳細を指定することにより、CIDRAMに要求に対する応答方法を指示できます。​「補助ルール」は、すべてのシグネチャ・ファイルとモジュールが既に実行を終了した後に実行されます。
 
 #### 7.4 <a name="MODULE_BASICS"></a>基本原則 （モジュールの場合）
 
@@ -920,19 +930,19 @@ CIDRAMは、独自のモジュールを簡単かつ簡単に作成できる機�
 
 ##### 7.5.0 "$Trigger"
 
-モジュール・シグネチャは、通常、「$Trigger」で記述されます。​ほとんどの場合、このクロージャ（closure）はモジュールを書く目的のために何よりも重要になります。
+モジュール・シグネチャは、通常、`$Trigger`で記述されます。​ほとんどの場合、このクロージャ（closure）はモジュールを書く目的のために何よりも重要になります。
 
-「$Trigger」は４つのパラメータを受け取ります：​「$Condition」、「$ReasonShort」、「$ReasonLong」（オプショナル）、「$DefineOptions」（オプショナル）。
+`$Trigger`は４つのパラメータを受け取ります：​`$Condition`、`$ReasonShort`、`$ReasonLong`（オプショナル）、`$DefineOptions`（オプショナル）。
 
-「$Condition」の真実性が評価されます。​真の場合（true）、シグネチャはトリガーされます。​偽の場合（false）、シグネチャはトリガーされません。​「$Condition」には通常、リクエストをブロックする条件を評価するためのＰＨＰコードが含まれています。
+`$Condition`の真実性が評価されます。​真の場合（true）、シグネチャはトリガーされます。​偽の場合（false）、シグネチャはトリガーされません。​`$Condition`には通常、リクエストをブロックする条件を評価するためのＰＨＰコードが含まれています。
 
-シグネチャがトリガーされると、「なぜブロックされましたか」フィールドに「$ReasonShort」が引用されます。
+シグネチャがトリガーされると、「なぜブロックされましたか」フィールドに`$ReasonShort`が引用されます。
 
-「$ReasonLong」は、ユーザー/クライアントがブロックされたときにそれらがブロックされた理由を説明するためにユーザー/クライアントに表示されるオプションのメッセージです。​省略された場合、標準の「アクセス拒否」メッセージを使用します。
+`$ReasonLong`は、ユーザー/クライアントがブロックされたときにそれらがブロックされた理由を説明するためにユーザー/クライアントに表示されるオプションのメッセージです。​省略された場合、標準の「アクセス拒否」メッセージを使用します。
 
-「$DefineOptions」は、オプショナル・キーと値のペアを含む配列です。​これは、リクエスト・インスタンスに固有の設定オプションを定義するために使用されます。​設定オプションは、シグネチャがトリガーされたときに適用されます。
+`$DefineOptions`は、オプショナル・キーと値のペアを含む配列です。​これは、リクエスト・インスタンスに固有の設定オプションを定義するために使用されます。​設定オプションは、シグネチャがトリガーされたときに適用されます。
 
-「$Trigger」は、シグネチャがトリガされたときに真（true）を返し、そうでないときに偽（false）を返します。
+`$Trigger`は、シグネチャがトリガされたときに真（true）を返し、そうでないときに偽（false）を返します。
 
 このクロージャをモジュールで使用するには、最初に親スコープから継承することを忘れないでください：
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-シグネチャ・バイパスは、通常、「$Bypass」で記述されます。
+シグネチャ・バイパスは、通常、`$Bypass`で記述されます。
 
-「$Bypass」は３つのパラメータを受け取ります：​「$Condition」、「$ReasonShort」、「$DefineOptions」（オプショナル）。
+`$Bypass`は３つのパラメータを受け取ります：​`$Condition`、`$ReasonShort`、`$DefineOptions`（オプショナル）。
 
-「$Condition」の真実性が評価されます。​真の場合（true）、バイパスはトリガーされます。​偽の場合（false）、バイパスはトリガーされません。​「$Condition」には通常、リクエストをブロックしてはならない条件を評価するＰＨＰコードが含まれています。
+`$Condition`の真実性が評価されます。​真の場合（true）、バイパスはトリガーされます。​偽の場合（false）、バイパスはトリガーされません。​`$Condition`には通常、リクエストをブロックしてはならない条件を評価するＰＨＰコードが含まれています。
 
-バイパスがトリガーされると、「なぜブロックされましたか」フィールドに「$ReasonShort」が引用されます。
+バイパスがトリガーされると、「なぜブロックされましたか」フィールドに`$ReasonShort`が引用されます。
 
-「$DefineOptions」は、オプショナル・キーと値のペアを含む配列です。​これは、リクエスト・インスタンスに固有の設定オプションを定義するために使用されます。​設定オプションは、バイパスがトリガーされたときに適用されます。
+`$DefineOptions`は、オプショナル・キーと値のペアを含む配列です。​これは、リクエスト・インスタンスに固有の設定オプションを定義するために使用されます。​設定オプションは、バイパスがトリガーされたときに適用されます。
 
-「$Bypass」は、バイパスがトリガされたときに真（true）を返し、そうでないときに偽（false）を返します。
+`$Bypass`は、バイパスがトリガされたときに真（true）を返し、そうでないときに偽（false）を返します。
 
 このクロージャをモジュールで使用するには、最初に親スコープから継承することを忘れないでください：
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 モジュール変数
 
-モジュールは独自のスコープ内で実行され、モジュールで定義された変数は他のモジュールや親スクリプトにアクセスできません。​「$CIDRAM」配列に格納されている場合を除いて（この配列は保持されます；モジュールの実行が終了した後はすべてがフラッシュされます）。
+モジュールは独自のスコープ内で実行され、モジュールで定義された変数は他のモジュールや親スクリプトにアクセスできません。​`$CIDRAM`配列に格納されている場合を除いて（この配列は保持されます；モジュールの実行が終了した後はすべてがフラッシュされます）。
 
 あなたのモジュールに役立つ一般的な変数は次のとおりです：
 
@@ -1267,7 +1277,7 @@ CIDRAMは、このＡＰＩを利用するオプションモジュールを提�
 
 #### 11.3 ロギング
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+ロギングは、多くの理由からCIDRAMの重要な部分です。​ブロックイベントをロギングせずに、偽陽性が発生した場合、それを診断して解決することは困難です。​ロギングせずに、CIDRAMがいかに効果的に実行されているかを確かめること、その潜在的な問題を確認すること、機能させるために必要なコンフィギュレーションやシグネチャの変更を決定するのが難しいことがあります。​いずれにせよ、ロギングは一部のユーザーには望ましくなく、完全にオプションです。​CIDRAMでは、デフォルトでロギングは無効になっています。​これを有効にするには、それに応じてCIDRAMを設定する必要があります。
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
@@ -1453,4 +1463,4 @@ CIDRAMは、マーケティングやアドバタイジング目的で情報を�
 ---
 
 
-最終アップデート：2018年9月19日。
+最終アップデート：2018年9月26日。

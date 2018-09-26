@@ -162,6 +162,7 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 /vault/fe_assets/_2fa.html | 在向用户询问2FA代码时使用的HTML模板。
 /vault/fe_assets/_accounts.html | 前端帐户页面的HTML模板。
 /vault/fe_assets/_accounts_row.html | 前端帐户页面的HTML模板。
+/vault/fe_assets/_aux.html | 前端辅助规则页面的HTML模板。
 /vault/fe_assets/_cache.html | 前端缓存数据页面的HTML模板。
 /vault/fe_assets/_cidr_calc.html | CIDR计算器的HTML模板。
 /vault/fe_assets/_cidr_calc_row.html | CIDR计算器的HTML模板。
@@ -266,6 +267,7 @@ CIDRAM可以手动或通过前端更新。​CIDRAM也可以通过Composer或Wor
 /vault/.travis.php | 由Travis CI用于测试（不需要为正确经营脚本）。
 /vault/.travis.yml | 由Travis CI用于测试（不需要为正确经营脚本）。
 /vault/aggregator.php | IP聚合器。
+/vault/auxiliary.yaml | 包含辅助规则。不包括在包中。由辅助规则页面生成。
 /vault/cache.dat | 缓存数据。
 /vault/cache.dat.safety | 在需要时为安全目的而生成。
 /vault/cidramblocklists.dat | Macmathan的可选阻止列表的元数据文件。​由前端更新页面使用。
@@ -895,11 +897,19 @@ recaptcha:
 
 #### 7.3 辅
 
+##### 7.3.0 忽略签名章节
+
 此外，​如果您想CIDRAM完全忽略一些具体的章节内的任何签名文件，​您可以使用`ignore.dat`文件为指定忽略哪些章节。​在新行，​写`Ignore`，​空间，​然后该名称的章节您希望CIDRAM忽略（看下面的例子）。
 
 ```
 Ignore 章节一
 ```
+
+这也可以通过使用CIDRAM前端的“章节列表”页面提供的接口来实现。
+
+##### 7.3.1 辅助规则
+
+如果您觉得编写自己的自定义签名文件或自定义模块对您来说太复杂了，更简单的替代方案可能是使用CIDRAM前端的“辅助规则”页面提供的接口。​通过选择适当的选项并指定有关特定类型的请求的详细信息，您可以指示CIDRAM如何响应这些请求。​在所有签名文件和模块已经完成执行之后执行“辅助规则”。
 
 #### 7.4 <a name="MODULE_BASICS"></a>基本概念（对于模块）
 
@@ -921,19 +931,19 @@ CIDRAM提供了一些用于模块的功能，这将使编写自己的模块变�
 
 ##### 7.5.0 “$Trigger”
 
-模块签名通常使用“$Trigger”编写。​在大多数情况下，为了编写模块，这个闭包比其他任何东西都重要。
+模块签名通常使用`$Trigger`编写。​在大多数情况下，为了编写模块，这个闭包比其他任何东西都重要。
 
-“$Trigger”接受4个参数：“$Condition”、“$ReasonShort”、“$ReasonLong”（可选的）、和“$DefineOptions”（可选的）。
+`$Trigger`接受4个参数：`$Condition`、`$ReasonShort`、`$ReasonLong`（可选的）、和`$DefineOptions`（可选的）。
 
-“$Condition”感实性被评估，和如果是true（真），签名是“触发”。​如果是false（假），签名不是“触发”。​“$Condition”通常包含PHP代码来评估应该导致请求被阻止的条件。
+`$Condition`感实性被评估，和如果是true（真），签名是“触发”。​如果是false（假），签名不是“触发”。​`$Condition`通常包含PHP代码来评估应该导致请求被阻止的条件。
 
-当签名被“触发”时，“$ReasonShort”在“为什么被阻止”字段中被引用。
+当签名被“触发”时，`$ReasonShort`在“为什么被阻止”字段中被引用。
 
-“$ReasonLong”是一个可选消息，当用户/客户端被阻止时显示给用户/客户端，解释为什么他们被阻止。​省略时默认为标准的“拒绝访问”消息。
+`$ReasonLong`是一个可选消息，当用户/客户端被阻止时显示给用户/客户端，解释为什么他们被阻止。​省略时默认为标准的“拒绝访问”消息。
 
-“$DefineOptions”是一个包含键/值对的可选数组，用于定义特定于请求实例的配置选项。​配置选项将在签名被“触发”时应用。
+`$DefineOptions`是一个包含键/值对的可选数组，用于定义特定于请求实例的配置选项。​配置选项将在签名被“触发”时应用。
 
-“$Trigger”当签名是“触发”时将返回true（真），当签名不是“触发”时将返回false（假）。
+`$Trigger`当签名是“触发”时将返回true（真），当签名不是“触发”时将返回false（假）。
 
 要在模块中使用这个闭包，首先要记住从父范围继承它：
 ```PHP
@@ -942,17 +952,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 “$Bypass”
 
-签名旁路通常使用“$Bypass”编写。
+签名旁路通常使用`$Bypass`编写。
 
-“$Bypass”接受3个参数：“$Condition”、“$ReasonShort”、和“$DefineOptions”（可选的）。
+`$Bypass`接受3个参数：`$Condition`、`$ReasonShort`、和`$DefineOptions`（可选的）。
 
-“$Condition”感实性被评估，和如果是true（真），旁路是“触发”。​如果是false（假），旁路不是“触发”。​“$Condition”通常包含PHP代码来评估应不该导致请求被阻止的条件。
+`$Condition`感实性被评估，和如果是true（真），旁路是“触发”。​如果是false（假），旁路不是“触发”。​`$Condition`通常包含PHP代码来评估应不该导致请求被阻止的条件。
 
-当旁路被“触发”时，“$ReasonShort”在“为什么被阻止”字段中被引用。
+当旁路被“触发”时，`$ReasonShort`在“为什么被阻止”字段中被引用。
 
-“$DefineOptions”是一个包含键/值对的可选数组，用于定义特定于请求实例的配置选项。​配置选项将在旁路被“触发”时应用。
+`$DefineOptions`是一个包含键/值对的可选数组，用于定义特定于请求实例的配置选项。​配置选项将在旁路被“触发”时应用。
 
-“$Bypass”当旁路是“触发”时将返回true（真），当旁路不是“触发”时将返回false（假）。
+`$Bypass`当旁路是“触发”时将返回true（真），当旁路不是“触发”时将返回false（假）。
 
 要在模块中使用这个闭包，首先要记住从父范围继承它：
 ```PHP
@@ -982,7 +992,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 模块变量
 
-模块在其自己的范围内执行，并且由模块定义的任何变量将不能被其他模块访问，也不由父脚本，除非它们存储在“$CIDRAM”数组中（模块执行完成后，其他所有内容都将被擦洗）。
+模块在其自己的范围内执行，并且由模块定义的任何变量将不能被其他模块访问，也不由父脚本，除非它们存储在`$CIDRAM`数组中（模块执行完成后，其他所有内容都将被擦洗）。
 
 下面列出了一些可能对您的模块有用的常见变量：
 
@@ -1457,4 +1467,4 @@ CIDRAM不收集或处理任何信息用于营销或广告目的，既不销售�
 ---
 
 
-最后更新：2018年9月19日。
+最后更新：2018年9月26日。

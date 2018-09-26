@@ -161,6 +161,7 @@ Archivo | Descripción
 /vault/fe_assets/_2fa.html | Un archivo HTML utilizada al pedirle al usuario un código 2FA.
 /vault/fe_assets/_accounts.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
+/vault/fe_assets/_aux.html | Un archivo HTML para el front-end página de reglas auxiliares.
 /vault/fe_assets/_cache.html | Un archivo HTML para el front-end página del datos de caché.
 /vault/fe_assets/_cidr_calc.html | Un archivo HTML para la calculadora CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Un archivo HTML para la calculadora CIDR.
@@ -265,6 +266,7 @@ Archivo | Descripción
 /vault/.travis.php | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
 /vault/.travis.yml | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
 /vault/aggregator.php | Agregador IP.
+/vault/auxiliary.yaml | Contiene reglas auxiliares. No incluido en el paquete. Generado por la página de reglas auxiliares.
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Generado como un mecanismo de seguridad cuando es necesario.
 /vault/cidramblocklists.dat | Archivo de metadatos para las listas de bloqueo opcionales de Macmathan; Utilizado por la página de actualizaciones del front-end.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 AUXILIAR
 
+##### 7.3.0 IGNORANDO LAS SECCIONES DE FIRMA
+
 En adición, si quieres CIDRAM ignorar completamente algunas secciones específicas dentro de cualquiera de los archivos de firmas, puede utilizar el archivo `ignore.dat` para especificar qué secciones por ignorar. En una línea nueva, escribir `Ignore`, seguido de un espacio, seguido del nombre de la sección que desea CIDRAM ignorar (vea el ejemplo siguiente).
 
 ```
 Ignore Sección 1
 ```
+
+Esto también se puede lograr utilizando la interfaz proporcionada por la página de "lista de secciones" del front-end de CIDRAM.
+
+##### 7.3.1 REGLAS AUXILIARES
+
+Si cree que escribir sus propios archivos de firmas personalizadas o módulos personalizados es demasiado complicado para usted, una alternativa más simple puede ser utilizar la interfaz proporcionada por la página de "reglas auxiliares" del front-end de CIDRAM. Al seleccionar las opciones apropiadas y especificar detalles sobre tipos específicos de solicitudes, puede indicar a CIDRAM cómo responder a esas solicitudes. Las "reglas auxiliares" se ejecutan después de que todos los archivos y módulos de firmas ya hayan terminado de ejecutarse.
 
 #### 7.4 <a name="MODULE_BASICS"></a>LOS FUNDAMENTOS (PARA MÓDULOS)
 
@@ -920,19 +930,19 @@ CIDRAM brinda cierta funcionalidad que los módulos pueden usar, lo que simplifi
 
 ##### 7.5.0 "$Trigger"
 
-Las firmas de los módulos generalmente se escriben con "$Trigger". En la mayoría de los casos, este closure será más importante que cualquier otra cosa con el fin de escribir módulos.
+Las firmas de los módulos generalmente se escriben con `$Trigger`. En la mayoría de los casos, este closure será más importante que cualquier otra cosa con el fin de escribir módulos.
 
-"$Trigger" acepta 4 parámetros: "$Condition", "$ReasonShort", "$ReasonLong" (opcional), y "$DefineOptions" (opcional).
+`$Trigger` acepta 4 parámetros: `$Condition`, `$ReasonShort`, `$ReasonLong` (opcional), y `$DefineOptions` (opcional).
 
-La veracidad de "$Condition" se evalúa, y si es true/verdadera, la firma se "desencadena". Si es false/falso, la firma *no* se "desencadena". "$Condition" generalmente contiene código PHP para evaluar una condición que debe causar el bloqueo de una solicitud.
+La veracidad de `$Condition` se evalúa, y si es true/verdadera, la firma se "desencadena". Si es false/falso, la firma *no* se "desencadena". `$Condition` generalmente contiene código PHP para evaluar una condición que debe causar el bloqueo de una solicitud.
 
-"$ReasonShort" se cita en el campo "Razón Bloqueado" cuando la firma se "desencadena".
+`$ReasonShort` se cita en el campo "Razón Bloqueado" cuando la firma se "desencadena".
 
-"$ReasonLong" es un mensaje opcional que se mostrará al usuario/cliente para cuando estén bloqueados, para explicar por qué se han bloqueado. Se predetermina al mensaje estándar "¡Acceso Denegado!" cuando se omite.
+`$ReasonLong` es un mensaje opcional que se mostrará al usuario/cliente para cuando estén bloqueados, para explicar por qué se han bloqueado. Se predetermina al mensaje estándar "¡Acceso Denegado!" cuando se omite.
 
-"$DefineOptions" es una array opcional que contiene pares clave/valor, que se utiliza para definir opciones de configuración específicas para la instancia de solicitud. Las opciones de configuración se aplicarán cuando la firma se "desencadena".
+`$DefineOptions` es una array opcional que contiene pares clave/valor, que se utiliza para definir opciones de configuración específicas para la instancia de solicitud. Las opciones de configuración se aplicarán cuando la firma se "desencadena".
 
-"$Trigger" devuelve true/verdadero cuando la firma se "desencadena" y false/falso cuando no es así.
+`$Trigger` devuelve true/verdadero cuando la firma se "desencadena" y false/falso cuando no es así.
 
 Para usar este closure en su módulo, recuerde primero heredarlo del alcance principal:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-Los bypass de la firma generalmente se escriben con "$Bypass".
+Los bypass de la firma generalmente se escriben con `$Bypass`.
 
-"$Bypass" acepta 3 parámetros: "$Condition", "$ReasonShort", y "$DefineOptions" (opcional).
+`$Bypass` acepta 3 parámetros: `$Condition`, `$ReasonShort`, y `$DefineOptions` (opcional).
 
-La veracidad de "$Condition" se evalúa, y si es true/verdadera, el bypass se "desencadena". Si es false/falso, el bypass *no* se "desencadena". "$Condition" generalmente contiene código PHP para evaluar una condición que *no* debe causar el bloqueo de una solicitud.
+La veracidad de `$Condition` se evalúa, y si es true/verdadera, el bypass se "desencadena". Si es false/falso, el bypass *no* se "desencadena". `$Condition` generalmente contiene código PHP para evaluar una condición que *no* debe causar el bloqueo de una solicitud.
 
-"$ReasonShort" se cita en el campo "Razón Bloqueado" cuando el bypass se "desencadena".
+`$ReasonShort` se cita en el campo "Razón Bloqueado" cuando el bypass se "desencadena".
 
-"$DefineOptions" es una array opcional que contiene pares clave/valor, que se utiliza para definir opciones de configuración específicas para la instancia de solicitud. Las opciones de configuración se aplicarán cuando el bypass se "desencadena".
+`$DefineOptions` es una array opcional que contiene pares clave/valor, que se utiliza para definir opciones de configuración específicas para la instancia de solicitud. Las opciones de configuración se aplicarán cuando el bypass se "desencadena".
 
-"$Bypass" devuelve true/verdadero cuando el bypass se "desencadena" y false/falso cuando no es así.
+`$Bypass` devuelve true/verdadero cuando el bypass se "desencadena" y false/falso cuando no es así.
 
 Para usar este closure en su módulo, recuerde primero heredarlo del alcance principal:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 VARIABLES DE MÓDULO
 
-Los módulos se ejecutan dentro de su propio alcance, y cualquier variable definida por un módulo, no será accesible para otros módulos, o para el script principal, a menos que estén almacenados en la array "$CIDRAM" (todo lo demás se vacía después de que finaliza la ejecución del módulo).
+Los módulos se ejecutan dentro de su propio alcance, y cualquier variable definida por un módulo, no será accesible para otros módulos, o para el script principal, a menos que estén almacenados en la array `$CIDRAM` (todo lo demás se vacía después de que finaliza la ejecución del módulo).
 
 A continuación se enumeran algunas variables comunes que pueden ser útiles para su módulo:
 
@@ -1455,4 +1465,4 @@ Alternativamente, hay una breve descripción (no autoritativa) de GDPR/DSGVO dis
 ---
 
 
-Última Actualización: 19 Septiembre de 2018 (2018.09.19).
+Última Actualización: 26 Septiembre de 2018 (2018.09.26).

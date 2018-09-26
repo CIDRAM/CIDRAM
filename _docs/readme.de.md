@@ -161,6 +161,7 @@ Datei | Beschreibung
 /vault/fe_assets/_2fa.html | Ein HTML-Template die verwendet wird wenn der Benutzer nach einem 2FA-Code gefragt wird.
 /vault/fe_assets/_accounts.html | Ein HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Front-End Konten-Seite.
+/vault/fe_assets/_aux.html | Ein HTML-Template für das Front-End Hilfsregeln-Seite.
 /vault/fe_assets/_cache.html | Ein HTML-Template für die Front-End Datencache-Seite.
 /vault/fe_assets/_cidr_calc.html | Ein HTML-Template für den CIDR-Rechner.
 /vault/fe_assets/_cidr_calc_row.html | Ein HTML-Template für den CIDR-Rechner.
@@ -265,6 +266,7 @@ Datei | Beschreibung
 /vault/.travis.php | Wird von Travis CI zum Testen verwendet (für die korrekte Funktion des Scripts nicht notwendig).
 /vault/.travis.yml | Wird von Travis CI zum Testen verwendet (für die korrekte Funktion des Scripts nicht notwendig).
 /vault/aggregator.php | IP-Aggregator.
+/vault/auxiliary.yaml | Enthält Hilfsregeln. Nicht im Paket enthalten. Erstellt von der Hilfsregeln-Seite.
 /vault/cache.dat | Cache-Daten.
 /vault/cache.dat.safety | Als Sicherheitsmechanismus generiert wenn es benötigt wird.
 /vault/cidramblocklists.dat | Metadaten-Datei für die optionalen Blocklisten von Macmathan; Wird von der Front-End-Updates-Seite verwendet.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 ZUSATZINFORMATION
 
+##### 7.3.0 IGNORIEREN VON SIGNATUR-SEKTIONEN
+
 In Ergänzung, wenn Sie möchten dass CIDRAM wird bestimmte Sektionen innerhalb irgendein der Signaturdateien vollständig ignoriert, können Sie die Datei `ignore.dat` verwenden, um festzulegen welche Sektionen zu ignorieren. Auf einer neuen Linie, schreiben `Ignore`, gefolgt von einem Leerzeichen, gefolgt durch dem Namen das Sektion welche Sie möchten für CIDRAM zu ignorieren (siehe Beispiel unten).
 
 ```
 Ignore Sektion 1
 ```
+
+Dies kann auch erreicht werden, indem die Schnittstelle verwendet wird, die von der Seite "Sektionsliste" des CIDRAM-Front-End bereitgestellt wird.
+
+##### 7.3.1 HILFSREGELN
+
+Wenn Sie das Schreiben Ihrer eigenen benutzerdefinierten Signaturdateien oder benutzerdefinierten Module für zu kompliziert halten, eine einfachere Alternative könnte die Verwendung der Schnittstelle sein, die von der Seite "Hilfsregeln" des CIDRAM-Front-End bereitgestellt wird. Indem Sie die entsprechenden Optionen auswählen und Details zu bestimmten Anforderungsarten angeben, können Sie CIDRAM anweisen, wie auf diese Anfragen zu reagieren ist. "Hilfsregeln" werden ausgeführt, nachdem die Ausführung alle der Signaturdateien und Module bereits abgeschlossen haben.
 
 #### 7.4 <a name="MODULE_BASICS"></a>GRUNDLAGEN (FÜR MODULE)
 
@@ -920,19 +930,19 @@ Einige Funktionen werden von CIDRAM für Module zur Verfügung gestellt, die es 
 
 ##### 7.5.0 "$Trigger"
 
-Modul-Signaturen werden typischerweise mit "$Trigger" geschrieben. In den meisten Fällen ist diese Closure für das Schreiben von Modulen wichtiger als alles andere Closure.
+Modul-Signaturen werden typischerweise mit `$Trigger` geschrieben. In den meisten Fällen ist diese Closure für das Schreiben von Modulen wichtiger als alles andere Closure.
 
-"$Trigger" akzeptiert 4 Parameter: "$Condition", "$ReasonShort", "$ReasonLong" (optional), und "$DefineOptions" (optional).
+`$Trigger` akzeptiert 4 Parameter: `$Condition`, `$ReasonShort`, `$ReasonLong` (optional), und `$DefineOptions` (optional).
 
-Die Wahrheit von "$Condition" wird ausgewertet, und wenn dies wahr/true, wird die Signatur "ausgelöst". Wenn falsch/false, wird die Signatur *nicht* "ausgelöst". "$Condition" enthält typischerweise PHP-Code, um eine Bedingung auszuwerten, die dazu führen sollte, dass eine Anfrage blockiert wird.
+Die Wahrheit von `$Condition` wird ausgewertet, und wenn dies wahr/true, wird die Signatur "ausgelöst". Wenn falsch/false, wird die Signatur *nicht* "ausgelöst". `$Condition` enthält typischerweise PHP-Code, um eine Bedingung auszuwerten, die dazu führen sollte, dass eine Anfrage blockiert wird.
 
-"$ReasonShort" wird im Feld "Warum blockierte" angegeben, wenn die Signatur "ausgelöst" wird.
+`$ReasonShort` wird im Feld "Warum blockierte" angegeben, wenn die Signatur "ausgelöst" wird.
 
-"$ReasonLong" ist eine optionale Nachricht, die dem Benutzer/Client angezeigt wird, wenn sie blockiert sind, um zu erklären, warum sie blockiert wurden. Verwendet die Standardmeldung "Zugriff verweigert", wenn sie weggelassen wird.
+`$ReasonLong` ist eine optionale Nachricht, die dem Benutzer/Client angezeigt wird, wenn sie blockiert sind, um zu erklären, warum sie blockiert wurden. Verwendet die Standardmeldung "Zugriff verweigert", wenn sie weggelassen wird.
 
-"$DefineOptions" ist ein optionales Array, das Schlüssel/Wert-Paare enthält, mit denen Konfigurationsoptionen definiert werden, die für die Anforderungsinstanz spezifisch sind. Konfigurationsoptionen werden angewendet, wenn die Signatur "ausgelöst" wird.
+`$DefineOptions` ist ein optionales Array, das Schlüssel/Wert-Paare enthält, mit denen Konfigurationsoptionen definiert werden, die für die Anforderungsinstanz spezifisch sind. Konfigurationsoptionen werden angewendet, wenn die Signatur "ausgelöst" wird.
 
-"$Trigger" gibt wahr/true zurück, wenn die Signatur "ausgelöst" wird, und falsch/false, wenn dies nicht der Fall ist.
+`$Trigger` gibt wahr/true zurück, wenn die Signatur "ausgelöst" wird, und falsch/false, wenn dies nicht der Fall ist.
 
 Um diese Closure in Ihrem Modul zu verwenden, denken Sie daran sie zuerst vom übergeordneten Geltungsbereich zu übernehmen:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-Signatur-Bypass werden normalerweise mit "$Bypass" geschrieben.
+Signatur-Bypass werden normalerweise mit `$Bypass` geschrieben.
 
-"$Bypass" akzeptiert 3 Parameter: "$Condition", "$ReasonShort", und "$DefineOptions" (optional).
+`$Bypass` akzeptiert 3 Parameter: `$Condition`, `$ReasonShort`, und `$DefineOptions` (optional).
 
-Die Wahrheit von "$Condition" wird ausgewertet, und wenn dies wahr/true, wird die Signatur "ausgelöst". Wenn falsch/false, wird die Signatur *nicht* "ausgelöst". "$Condition" enthält typischerweise PHP-Code, um eine Bedingung auszuwerten, die dazu führen sollte *nicht*, dass eine Anfrage blockiert wird.
+Die Wahrheit von `$Condition` wird ausgewertet, und wenn dies wahr/true, wird die Signatur "ausgelöst". Wenn falsch/false, wird die Signatur *nicht* "ausgelöst". `$Condition` enthält typischerweise PHP-Code, um eine Bedingung auszuwerten, die dazu führen sollte *nicht*, dass eine Anfrage blockiert wird.
 
-"$ReasonShort" wird im Feld "Warum blockierte" angegeben, wenn der Bypass "ausgelöst" wird.
+`$ReasonShort` wird im Feld "Warum blockierte" angegeben, wenn der Bypass "ausgelöst" wird.
 
-"$DefineOptions" ist ein optionales Array, das Schlüssel/Wert-Paare enthält, mit denen Konfigurationsoptionen definiert werden, die für die Anforderungsinstanz spezifisch sind. Konfigurationsoptionen werden angewendet, wenn die Bypass "ausgelöst" wird.
+`$DefineOptions` ist ein optionales Array, das Schlüssel/Wert-Paare enthält, mit denen Konfigurationsoptionen definiert werden, die für die Anforderungsinstanz spezifisch sind. Konfigurationsoptionen werden angewendet, wenn die Bypass "ausgelöst" wird.
 
-"$Bypass" gibt wahr/true zurück, wenn die Bypass "ausgelöst" wird, und falsch/false, wenn dies nicht der Fall ist.
+`$Bypass` gibt wahr/true zurück, wenn die Bypass "ausgelöst" wird, und falsch/false, wenn dies nicht der Fall ist.
 
 Um diese Closure in Ihrem Modul zu verwenden, denken Sie daran sie zuerst vom übergeordneten Geltungsbereich zu übernehmen:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 MODUL VARIABLEN
 
-Module werden in ihrem eigenen Umfang ausgeführt, und alle Variablen, die von einem Modul definiert werden, sind für andere Module oder das übergeordnete Skript nicht zugänglich, es sei denn, sie sind im Array "$CIDRAM" gespeichert (alles andere wird gelöscht, nachdem die Modulausführung abgeschlossen ist).
+Module werden in ihrem eigenen Umfang ausgeführt, und alle Variablen, die von einem Modul definiert werden, sind für andere Module oder das übergeordnete Skript nicht zugänglich, es sei denn, sie sind im Array `$CIDRAM` gespeichert (alles andere wird gelöscht, nachdem die Modulausführung abgeschlossen ist).
 
 Im Folgenden finden Sie einige allgemeine Variablen, die für Ihr Modul nützlich sein könnten:
 
@@ -1458,4 +1468,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 19 September 2018 (2018.09.19).
+Zuletzt aktualisiert: 26 September 2018 (2018.09.26).

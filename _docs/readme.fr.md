@@ -161,6 +161,7 @@ Fichier | Description
 /vault/fe_assets/_2fa.html | Un modèle HTML utilisé pour demander à l'utilisateur un code 2FA.
 /vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
+/vault/fe_assets/_aux.html | Un modèle HTML pour la page des règles auxiliaires de l'accès frontal.
 /vault/fe_assets/_cache.html | Un modèle HTML pour la page del données de cache de l'accès frontal.
 /vault/fe_assets/_cidr_calc.html | Un modèle HTML pour le calculatrice CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Un modèle HTML pour le calculatrice CIDR.
@@ -265,6 +266,7 @@ Fichier | Description
 /vault/.travis.php | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
 /vault/.travis.yml | Utilisé par Travis CI pour le tester (pas nécessaire pour le bon fonctionnement du script).
 /vault/aggregator.php | Agrégateur IP.
+/vault/auxiliary.yaml | Contient des règles auxiliaires. Non inclus dans le package. Généré par la page des règles auxiliaires.
 /vault/cache.dat | Données du cache.
 /vault/cache.dat.safety | Généré comme un mécanisme de sécurité en cas de besoin.
 /vault/cidramblocklists.dat | Fichier de métadonnées pour les listes de blocage facultatives de Macmathan ; Contient les valeurs par défaut de la configuration pour CIDRAM.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 AUXILIAIRE
 
+##### 7.3.0 IGNORER LES SECTIONS DE SIGNATURE
+
 En addition, si vous voulez CIDRAM à ignorer complètement certaines sections spécifiques dans aucun des fichiers de signatures, vous pouvez utiliser le fichier `ignore.dat` pour spécifier les sections à ignorer. Sur une nouvelle ligne, écrire `Ignore`, suivi d'un espace, suivi du nom de la section que vous souhaitez CIDRAM à ignorer (voir l'exemple ci-dessous).
 
 ```
 Ignore Section 1
 ```
+
+Cela peut également être réalisé en utilisant l'interface fournie par la page pour la « liste des sections » de l'accès frontal.
+
+##### 7.3.1 RÈGLES AUXILIAIRES
+
+Si vous estimez que l'écriture de vos propres fichiers de signatures ou de modules personnalisés est trop compliquée pour vous, une alternative plus simple peut être d'utiliser l'interface fournie par la page "règles auxiliaires" de l'accès frontal. En sélectionnant les options appropriées et en spécifiant des détails sur des types spécifiques de requêtes, vous pouvez indiquer à CIDRAM comment répondre à ces requêtes. Les "règles auxiliaires" sont exécutées après que tous les fichiers de signatures et modules ont déjà été exécutés.
 
 #### 7.4 <a name="MODULE_BASICS"></a>BASES (POUR LES MODULES)
 
@@ -920,19 +930,19 @@ Certaines fonctionnalités sont fournies par CIDRAM pour les modules à utiliser
 
 ##### 7.5.0 « $Trigger »
 
-Les signatures de module sont typiquement écrites avec « $Trigger ». Dans la plupart des cas, cette closure sera plus importante que toute autre chose dans le but d'écrire des modules.
+Les signatures de module sont typiquement écrites avec `$Trigger`. Dans la plupart des cas, cette closure sera plus importante que toute autre chose dans le but d'écrire des modules.
 
-« $Trigger » accepte 4 paramètres : « $Condition », « $ReasonShort », « $ReasonLong » (optionnel), et « $DefineOptions » (optionnel).
+`$Trigger` accepte 4 paramètres : `$Condition`, `$ReasonShort`, `$ReasonLong` (optionnel), et `$DefineOptions` (optionnel).
 
-La véracité de « $Condition » est évaluée, et si elle est true/vraie, la signature est « déclenchée ». Si false/faux, la signature *n'est pas* « déclenchée ». « $Condition » contient typiquement du code PHP pour évaluer une condition qui devrait entraîner le blocage d'une requête.
+La véracité de `$Condition` est évaluée, et si elle est true/vraie, la signature est « déclenchée ». Si false/faux, la signature *n'est pas* « déclenchée ». `$Condition` contient typiquement du code PHP pour évaluer une condition qui devrait entraîner le blocage d'une requête.
 
-« $ReasonShort » est cité dans le champ « Raison Bloquée » lorsque la signature est « déclenchée ».
+`$ReasonShort` est cité dans le champ « Raison Bloquée » lorsque la signature est « déclenchée ».
 
-« $ReasonLong » est un message optionnel à afficher à l'utilisateur/client pour quand ils sont bloqués, pour expliquer pourquoi ils ont été bloqués. Utilise le message standard « Accès Refusé » lorsqu'il est omis.
+`$ReasonLong` est un message optionnel à afficher à l'utilisateur/client pour quand ils sont bloqués, pour expliquer pourquoi ils ont été bloqués. Utilise le message standard « Accès Refusé » lorsqu'il est omis.
 
-« $DefineOptions » est un tableau optionnel contenant des paires clé/valeur, utilisé pour définir les options de configuration spécifiques à l'instance de requête. Les options de configuration seront appliquées lorsque la signature est « déclenchée ».
+`$DefineOptions` est un tableau optionnel contenant des paires clé/valeur, utilisé pour définir les options de configuration spécifiques à l'instance de requête. Les options de configuration seront appliquées lorsque la signature est « déclenchée ».
 
-« $Trigger » retourne true/vrai lorsque la signature est « déclenchée », et false/faux quand ce n'est pas le cas.
+`$Trigger` retourne true/vrai lorsque la signature est « déclenchée », et false/faux quand ce n'est pas le cas.
 
 Pour utiliser cette closure dans votre module, souvenez-vous tout d'abord de l'hériter de la portée parent :
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 « $Bypass »
 
-Les contournements pour les signatures sont typiquement écrits avec « $Bypass ».
+Les contournements pour les signatures sont typiquement écrits avec `$Bypass`.
 
-« $Bypass » accepte 3 paramètres : « $Condition », « $ReasonShort », et « $DefineOptions » (optionnel).
+`$Bypass` accepte 3 paramètres : `$Condition`, `$ReasonShort`, et `$DefineOptions` (optionnel).
 
-La véracité de « $Condition » est évaluée, et si elle est true/vraie, la signature est « déclenchée ». Si false/faux, la signature *n'est pas* « déclenchée ». « $Condition » contient typiquement du code PHP pour évaluer une condition qui ne devrait *pas* entraîner le blocage d'une requête.
+La véracité de `$Condition` est évaluée, et si elle est true/vraie, la signature est « déclenchée ». Si false/faux, la signature *n'est pas* « déclenchée ». `$Condition` contient typiquement du code PHP pour évaluer une condition qui ne devrait *pas* entraîner le blocage d'une requête.
 
-« $ReasonShort » est cité dans le champ « Raison Bloquée » lorsque le contournement est « déclenchée ».
+`$ReasonShort` est cité dans le champ « Raison Bloquée » lorsque le contournement est « déclenchée ».
 
-« $DefineOptions » est un tableau optionnel contenant des paires clé/valeur, utilisé pour définir les options de configuration spécifiques à l'instance de requête. Les options de configuration seront appliquées lorsque la signature est « déclenchée ».
+`$DefineOptions` est un tableau optionnel contenant des paires clé/valeur, utilisé pour définir les options de configuration spécifiques à l'instance de requête. Les options de configuration seront appliquées lorsque la signature est « déclenchée ».
 
-« $Bypass » retourne true/vrai lorsque le contournement est « déclenchée », et false/faux quand ce n'est pas le cas.
+`$Bypass` retourne true/vrai lorsque le contournement est « déclenchée », et false/faux quand ce n'est pas le cas.
 
 Pour utiliser cette closure dans votre module, souvenez-vous tout d'abord de l'hériter de la portée parent :
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 MODULES VARIABLES
 
-Les modules s'exécutent dans leur propre portée, et toutes les variables définies par un module ne seront pas accessibles aux autres modules, ni au script parent, sauf s'ils sont stockés dans le tableau « $CIDRAM » (tout le reste est vidé après la fin de l'exécution du module).
+Les modules s'exécutent dans leur propre portée, et toutes les variables définies par un module ne seront pas accessibles aux autres modules, ni au script parent, sauf s'ils sont stockés dans le tableau `$CIDRAM` (tout le reste est vidé après la fin de l'exécution du module).
 
 Voici quelques variables communes qui pourraient être utiles pour votre module :
 
@@ -1454,4 +1464,4 @@ Alternativement, il y a un bref aperçu (non autorisé) de GDPR/DSGVO disponible
 ---
 
 
-Dernière mise à jour : 19 Septembre 2018 (2018.09.19).
+Dernière mise à jour : 26 Septembre 2018 (2018.09.26).

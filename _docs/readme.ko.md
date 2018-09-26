@@ -161,6 +161,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/fe_assets/_2fa.html | 사용자에게 2FA 코드를 요청할 때 사용되는 HTML 템플릿입니다.
 /vault/fe_assets/_accounts.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
 /vault/fe_assets/_accounts_row.html | 프론트 엔드의 계정 페이지의 HTML 템플릿.
+/vault/fe_assets/_aux.html | 프론트 엔드의 보조 규칙 페이지의 HTML 템플릿.
 /vault/fe_assets/_cache.html | 프론트 엔드 데이터 캐쉬 페이지의 HTML 템플릿.
 /vault/fe_assets/_cidr_calc.html | CIDR 계산기 HTML 템플릿.
 /vault/fe_assets/_cidr_calc_row.html | CIDR 계산기 HTML 템플릿.
@@ -265,6 +266,7 @@ PHPMailer를 설치 한 후 CIDRAM 구성 페이지 또는 구성 파일을 통�
 /vault/.travis.php | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/aggregator.php | IP 애그리게이터.
+/vault/auxiliary.yaml | 보조 규칙이 들어 있습니다. 패키지에 포함되어 있지 않습니다. 보조 규칙 페이지에 의해 생성됩니다.
 /vault/cache.dat | 캐시 데이터.
 /vault/cache.dat.safety | 필요한 경우 안전 메커니즘으로 생성됩니다.
 /vault/cidramblocklists.dat | Macmathan의 선택적 블록리스트 용 메타 데이터 파일; 프런트 엔드 업데이트 페이지에서 사용됩니다.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 보조
 
+##### 7.3.0 서명 섹션 무시
+
 또한 CIDRAM 특정 서명 섹션을 완전히 무시하려는 경우 `ignore.dat`파일을 사용하여 무시하는 섹션을 지정할 수 있습니다. 새로운 행에`Ignore`과 써주세요 다음, 공간, 그런 CIDRAM 무시하는 섹션의 이름 (다음의 예를 참조하십시오).
 
 ```
 Ignore 섹션 1
 ```
+
+CIDRAM 프런트 엔드의 "섹션 목록"페이지에서 제공하는 인터페이스를 사용하여이 작업을 수행 할 수도 있습니다.
+
+##### 7.3.1 보조 규칙
+
+나만의 맞춤 서명 파일이나 맞춤 모듈을 작성하는 것이 너무 복잡하다고 생각되면, 더 간단한 대안은 CIDRAM 프런트 엔드의 "보조 규칙"페이지에서 제공하는 인터페이스를 사용하는 것일 수 있습니다. 적절한 옵션을 선택하고 특정 유형의 요청에 대한 세부 정보를 지정하면 CIDRAM에 요청에 응답하는 방법을 지시 할 수 있습니다. "보조 규칙"은 모든 서명 파일과 모듈이 이미 실행을 마친 후에 실행됩니다.
 
 #### 7.4 <a name="MODULE_BASICS"></a>기초 (모듈 경우)
 
@@ -920,19 +930,19 @@ CIDRAM이 제공하는 일부 기능을 사용하면 모듈을 더 간단하고 
 
 ##### 7.5.0 "$Trigger"
 
-모듈 서명은 일반적으로 "$Trigger"로 작성됩니다. 대부분의 경우, 모듈 작성을 목적으로이 closure 다른 어떤 것보다 중요합니다.
+모듈 서명은 일반적으로 `$Trigger`로 작성됩니다. 대부분의 경우, 모듈 작성을 목적으로이 closure 다른 어떤 것보다 중요합니다.
 
-"$Trigger"는 4 개의 매개 변수를 허용합니다 : "$Condition", "$ReasonShort", "$ReasonLong" (선택 과목), 및 "$DefineOptions" (선택 과목).
+`$Trigger`는 4 개의 매개 변수를 허용합니다 : `$Condition`, `$ReasonShort`, `$ReasonLong` (선택 과목), 및 `$DefineOptions` (선택 과목).
 
-"$Condition"의 진실성이 평가됩니다. True의 경우, 서명은 트리거됩니다. False의 경우, 서명은 트리거되지 않습니다. "$Condition"에는 대개 요청을 차단해야하는 조건을 평가하는 PHP 코드가 들어 있습니다.
+`$Condition`의 진실성이 평가됩니다. True의 경우, 서명은 트리거됩니다. False의 경우, 서명은 트리거되지 않습니다. `$Condition`에는 대개 요청을 차단해야하는 조건을 평가하는 PHP 코드가 들어 있습니다.
 
-서명이 트리거되면, "$ReasonShort"가 "왜 차단이 되셨나요"필드에 표시됩니다.
+서명이 트리거되면, `$ReasonShort`가 "왜 차단이 되셨나요"필드에 표시됩니다.
 
-"$ReasonLong"은 차단되었을 때 사용자/클라이언트에게 차단 된 이유를 설명하기 위해 표시되는 선택적 메시지입니다. 생략시 표준 "액세스 거부"메시지를 사용합니다.
+`$ReasonLong`은 차단되었을 때 사용자/클라이언트에게 차단 된 이유를 설명하기 위해 표시되는 선택적 메시지입니다. 생략시 표준 "액세스 거부"메시지를 사용합니다.
 
-"$DefineOptions"는 키/값 쌍을 포함하는 선택적 배열입니다. 요청 인스턴스와 관련된 구성 옵션을 정의하는 데 사용됩니다. 구성 옵션은 서명이 트리거 될 때 적용됩니다.
+`$DefineOptions`는 키/값 쌍을 포함하는 선택적 배열입니다. 요청 인스턴스와 관련된 구성 옵션을 정의하는 데 사용됩니다. 구성 옵션은 서명이 트리거 될 때 적용됩니다.
 
-"$Trigger"는 서명이 트리거되면 true를 반환하고, 그렇지 않으면 false를 반환합니다.
+`$Trigger`는 서명이 트리거되면 true를 반환하고, 그렇지 않으면 false를 반환합니다.
 
 이 closure를 모듈에서 사용하려면 먼저 부모 범위에서 상속 받는다는 것을 기억하십시오 :
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-서명 우회는 일반적으로 "$Bypass"로 작성됩니다.
+서명 우회는 일반적으로 `$Bypass`로 작성됩니다.
 
-"$Bypass"는 3 개의 매개 변수를 허용합니다 : "$Condition", "$ReasonShort", 및 "$DefineOptions" (선택 과목).
+`$Bypass`는 3 개의 매개 변수를 허용합니다 : `$Condition`, `$ReasonShort`, 및 `$DefineOptions` (선택 과목).
 
-"$Condition"의 진실성이 평가됩니다. True의 경우, 우회가은 트리거됩니다. False의 경우, 우회가은 트리거되지 않습니다. "$Condition"에는 일반적으로 요청을 차단해서는 안되는 조건을 평가하는 PHP 코드가 들어 있습니다.
+`$Condition`의 진실성이 평가됩니다. True의 경우, 우회가은 트리거됩니다. False의 경우, 우회가은 트리거되지 않습니다. `$Condition`에는 일반적으로 요청을 차단해서는 안되는 조건을 평가하는 PHP 코드가 들어 있습니다.
 
-우회가이 트리거되면, "$ReasonShort"가 "왜 차단이 되셨나요"필드에 표시됩니다.
+우회가이 트리거되면, `$ReasonShort`가 "왜 차단이 되셨나요"필드에 표시됩니다.
 
-"$DefineOptions"는 키/값 쌍을 포함하는 선택적 배열입니다. 요청 인스턴스와 관련된 구성 옵션을 정의하는 데 사용됩니다. 구성 옵션은 우회가이 트리거 될 때 적용됩니다.
+`$DefineOptions`는 키/값 쌍을 포함하는 선택적 배열입니다. 요청 인스턴스와 관련된 구성 옵션을 정의하는 데 사용됩니다. 구성 옵션은 우회가이 트리거 될 때 적용됩니다.
 
-"$Bypass"는 우회가 트리거되면 true를, 그렇지 않으면 false를 반환합니다.
+`$Bypass`는 우회가 트리거되면 true를, 그렇지 않으면 false를 반환합니다.
 
 이 closure를 모듈에서 사용하려면 먼저 부모 범위에서 상속 받는다는 것을 기억하십시오 :
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 모듈 변수
 
-모듈은 자체 범위 내에서 실행되며 모듈에 정의 된 변수는 다른 모듈이나 상위 스크립트에 액세스 할 수 없습니다 ("$CIDRAM"배열에 저장되어 있지 않으면; 모듈 실행이 끝난 후에 다른 모든 것은 비워진다).
+모듈은 자체 범위 내에서 실행되며 모듈에 정의 된 변수는 다른 모듈이나 상위 스크립트에 액세스 할 수 없습니다 (`$CIDRAM`배열에 저장되어 있지 않으면; 모듈 실행이 끝난 후에 다른 모든 것은 비워진다).
 
 다음은 모듈에 유용한 몇 가지 일반적인 변수입니다 :
 
@@ -1265,9 +1275,9 @@ CIDRAM은 [Google reCAPTCHA](https://www.google.com/recaptcha/)를 지원하며 
 
 CIDRAM은이 API를 활용하는 선택적 모듈을 제공합니다. 인바운드 요청의 IP 주소가 스팸으로 의심되는 스팸에 속하는지 여부를 확인합니다. 모듈은 기본적으로 설치되지 않습니다. 이를 설치하면 사용자 IP 주소를 Stop Forum Spam API와 공유 할 수 있습니다. 모듈이 설치되면 CIDRAM은 인바운드 요청이 스패머가 자주 타겟팅하는 리소스를 요청할 때마다이 API와 통신합니다 (로그인 페이지, 등록 페이지, 전자 메일 확인 페이지, 의견 양식 등).
 
-#### 11.3 LOGGING
+#### 11.3 로깅
 
-Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
+로깅은 여러 가지 이유로 CIDRAM의 중요한 부분입니다. 로깅 차단 이벤트가 없으면 오탐 (false positive)이 발생하면이를 진단하고 해결하기 어려울 수 있습니다. 로깅 블록 이벤트가 없으면 CIDRAM이 얼마나 효과적으로 수행되는지를 확인하기 어려울 수 있습니다. 그것의 부족을 확인하는 것은 어려울 수 있으며 의도 한대로 기능을 계속 수행하려면 구성이나 서명에 어떤 변경이 필요할 수 있습니다. 어쨌든 로깅은 일부 사용자가 원하지 않는 경우도 있으며 전체적으로 선택 사항입니다. CIDRAM에서 로깅은 기본적으로 사용되지 않습니다. 이를 사용하려면 CIDRAM을 적절히 구성해야합니다.
 
 Additionally, whether logging is legally permissible, and to the extent that it is legally permissible (e.g., the types of information that may logged, for how long, and under what circumstances), may vary, depending on jurisdiction and on the context where CIDRAM is implemented (e.g., whether you're operating as an individual, as a corporate entity, and whether on a commercial or non-commercial basis). It may therefore be useful for you to read through this section carefully.
 
@@ -1451,4 +1461,4 @@ CIDRAM은 마케팅이나 광고 목적으로 정보를 수집하거나 처리�
 ---
 
 
-최종 업데이트 : 2018년 9월 19일.
+최종 업데이트 : 2018년 9월 26일.

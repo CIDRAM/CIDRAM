@@ -161,6 +161,7 @@ File | Descrizione
 /vault/fe_assets/_2fa.html | Un modello HTML utilizzato quando si richiede all'utente un codice 2FA.
 /vault/fe_assets/_accounts.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_accounts_row.html | Un modello HTML per il front-end pagina utenti.
+/vault/fe_assets/_aux.html | Un modello HTML per il front-end pagina delle regole ausiliarie.
 /vault/fe_assets/_cache.html | Un modello HTML per il front-end pagina di dati della cache.
 /vault/fe_assets/_cidr_calc.html | Un modello HTML per la calcolatrice CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Un modello HTML per la calcolatrice CIDR.
@@ -265,6 +266,7 @@ File | Descrizione
 /vault/.travis.php | Utilizzato da Travis CI per il test (non richiesto per il corretto funzionamento dello script).
 /vault/.travis.yml | Utilizzato da Travis CI per il test (non richiesto per il corretto funzionamento dello script).
 /vault/aggregator.php | Aggregatore IP.
+/vault/auxiliary.yaml | Contiene regole ausiliarie. Non incluso nel pacchetto. Generato dalla pagina delle regole ausiliarie.
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Generato come meccanismo di sicurezza quando necessario.
 /vault/cidramblocklists.dat | File di metadati per gli elenchi di blocchi opzionali di Macmathan; Utilizzato dalla pagina degli aggiornamenti del front-end.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 AUSILIARIO
 
+##### 7.3.0 IGNORANDO LE SEZIONI DI FIRMA
+
 In aggiunta, se si desidera CIDRAM di ignorare completamente alcune sezioni specifiche in qualsiasi una delle file di firma, è possibile utilizzare il file `ignore.dat` per specificare quali sezioni a ignorare. In una nuova riga, scivere `Ignore`, seguito da uno spazio, seguito dal nome della sezione che si desidera CIDRAM a ignorare (vedere l'esempio cui seguito).
 
 ```
 Ignore Sezione 1
 ```
+
+Ciò può anche essere raggiunto utilizzando l'interfaccia fornita dalla pagina "lista delle sezioni" del front-end CIDRAM.
+
+##### 7.3.1 REGOLE AUSILIARIE
+
+Se ritieni che scrivere i tuoi file di firme personalizzati o moduli personalizzati sia troppo complicato per te, un'alternativa più semplice potrebbe essere quella di utilizzare l'interfaccia fornita dalla pagina "regole ausiliarie" del front-end CIDRAM. Selezionando le opzioni appropriate e specificando i dettagli sui tipi specifici di richieste, è possibile istruire CIDRAM su come rispondere a tali richieste. Le "regole ausiliarie" vengono eseguite dopo che tutti i file di firme e i moduli hanno già completato l'esecuzione.
 
 #### 7.4 <a name="MODULE_BASICS"></a>NOZIONI DI BASE (PER MODULI)
 
@@ -920,19 +930,19 @@ Alcune funzionalità sono fornite da CIDRAM per essere utilizzato dai moduli, il
 
 ##### 7.5.0 "$Trigger"
 
-Le firme dei moduli sono scritte tipicamente con "$Trigger". Nella maggior parte dei casi, questa closure sarà più importante di ogni altra cosa allo scopo di scrivere moduli.
+Le firme dei moduli sono scritte tipicamente con `$Trigger`. Nella maggior parte dei casi, questa closure sarà più importante di ogni altra cosa allo scopo di scrivere moduli.
 
-"$Trigger" accetta 4 parametri: "$Condition", "$ReasonShort", "$ReasonLong" (opzionale), e "$DefineOptions" (opzionale).
+`$Trigger` accetta 4 parametri: `$Condition`, `$ReasonShort`, `$ReasonLong` (opzionale), e `$DefineOptions` (opzionale).
 
-La veridicità di "$Condition" è valutata e, se è true/vera, la firma è "innescato". Se false, la firma *non* è "innescato". "$Condition" contiene tipicamente codice PHP per valutare una condizione che dovrebbe causa una richiesta essere bloccare.
+La veridicità di `$Condition` è valutata e, se è true/vera, la firma è "innescato". Se false, la firma *non* è "innescato". `$Condition` contiene tipicamente codice PHP per valutare una condizione che dovrebbe causa una richiesta essere bloccare.
 
-"$ReasonShort" è citato nel campo "Perché Bloccato" quando la firma è "innescata".
+`$ReasonShort` è citato nel campo "Perché Bloccato" quando la firma è "innescata".
 
-"$ReasonLong" è un messaggio opzionale da mostrare all'utente/cliente per quando sono bloccati, per spiegare perché sono stati bloccati. Utilizza il messaggio standard "Accesso Negato" quando omesso.
+`$ReasonLong` è un messaggio opzionale da mostrare all'utente/cliente per quando sono bloccati, per spiegare perché sono stati bloccati. Utilizza il messaggio standard "Accesso Negato" quando omesso.
 
-"$DefineOptions" è un array opzionale contenente coppie chiave/valore, utilizzato per definire le opzioni di configurazione specifiche dell'istanza della richiesta. Le opzioni di configurazione verranno applicate quando la firma è "innescata".
+`$DefineOptions` è un array opzionale contenente coppie chiave/valore, utilizzato per definire le opzioni di configurazione specifiche dell'istanza della richiesta. Le opzioni di configurazione verranno applicate quando la firma è "innescata".
 
-"$Trigger" restituisce true quando la firma è "innescata", e false quando non lo è.
+`$Trigger` restituisce true quando la firma è "innescata", e false quando non lo è.
 
 Per utilizzare questa closure nel modulo, ricorda innanzitutto di ereditarlo dall'ambito principale:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-I bypass di firma sono scritte tipicamente con "$Bypass".
+I bypass di firma sono scritte tipicamente con `$Bypass`.
 
-"$Bypass" accetta 3 parametri: "$Condition", "$ReasonShort", e "$DefineOptions" (opzionale).
+`$Bypass` accetta 3 parametri: `$Condition`, `$ReasonShort`, e `$DefineOptions` (opzionale).
 
-La veridicità di "$Condition" è valutata e, se è true/vera, il bypass è "innescato". Se false, il bypass *non* è "innescato". "$Condition" contiene tipicamente codice PHP per valutare una condizione che *non* dovrebbe causa una richiesta essere bloccare.
+La veridicità di `$Condition` è valutata e, se è true/vera, il bypass è "innescato". Se false, il bypass *non* è "innescato". `$Condition` contiene tipicamente codice PHP per valutare una condizione che *non* dovrebbe causa una richiesta essere bloccare.
 
-"$ReasonShort" è citato nel campo "Perché Bloccato" quando il bypass è "innescata".
+`$ReasonShort` è citato nel campo "Perché Bloccato" quando il bypass è "innescata".
 
-"$DefineOptions" è un array opzionale contenente coppie chiave/valore, utilizzato per definire le opzioni di configurazione specifiche dell'istanza della richiesta. Le opzioni di configurazione verranno applicate quando il bypass è "innescata".
+`$DefineOptions` è un array opzionale contenente coppie chiave/valore, utilizzato per definire le opzioni di configurazione specifiche dell'istanza della richiesta. Le opzioni di configurazione verranno applicate quando il bypass è "innescata".
 
-"$Bypass" restituisce true quando il bypass è "innescata", e false quando non lo è.
+`$Bypass` restituisce true quando il bypass è "innescata", e false quando non lo è.
 
 Per utilizzare questa closure nel modulo, ricorda innanzitutto di ereditarlo dall'ambito principale:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 VARIABILI DEL MODULO
 
-I moduli eseguiti all'interno del proprio ambito, e qualsiasi variabile definita da un modulo, non saranno accessibili ad altri moduli, o allo script principale, tranne se sono memorizzati nella array "$CIDRAM" (tutto il resto viene svuotato al termine dell'esecuzione del modulo).
+I moduli eseguiti all'interno del proprio ambito, e qualsiasi variabile definita da un modulo, non saranno accessibili ad altri moduli, o allo script principale, tranne se sono memorizzati nella array `$CIDRAM` (tutto il resto viene svuotato al termine dell'esecuzione del modulo).
 
 Di seguito sono elencate alcune variabili comuni che potrebbero essere utili per il tuo modulo:
 
@@ -1453,4 +1463,4 @@ In alternativa, è disponibile una breve panoramica (non autorevole) di GDPR/DSG
 ---
 
 
-Ultimo Aggiornamento: 19 Settembre 2018 (2018.09.19).
+Ultimo Aggiornamento: 26 Settembre 2018 (2018.09.26).

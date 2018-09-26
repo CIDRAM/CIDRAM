@@ -161,6 +161,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_2fa.html | Tập tin mẫu HTML được sử dụng khi yêu cầu người dùng cho mã 2FA.
 /vault/fe_assets/_accounts.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Tập tin mẫu HTML cho trang tài khoản của front-end.
+/vault/fe_assets/_aux.html | Tập tin mẫu HTML cho trang quy tắc phụ trợ của front-end.
 /vault/fe_assets/_cache.html | Tập tin mẫu HTML cho trang dữ liệu cache của front-end.
 /vault/fe_assets/_cidr_calc.html | Tập tin mẫu HTML cho máy tính CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Tập tin mẫu HTML cho máy tính CIDR.
@@ -265,6 +266,7 @@ Tập tin | Chi tiết
 /vault/.travis.php | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/.travis.yml | Được sử dụng bởi Travis CI để thử nghiệm (không cần thiết cho chức năng phù hợp của kịch bản).
 /vault/aggregator.php | Tập hợp IP.
+/vault/auxiliary.yaml | Chứa các quy tắc phụ trợ. Không bao gồm trong gói. Được tạo bởi trang quy tắc phụ trợ.
 /vault/cache.dat | Dữ liệu bộ nhớ cache.
 /vault/cache.dat.safety | Được tạo ra như một cơ chế an toàn khi cần thiết.
 /vault/cidramblocklists.dat | Tập tin siêu dữ liệu cho danh sách chặn tùy chọn của Macmathan; Được sử dụng bởi trang cập nhật front-end.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 PHỤ TRỢ
 
+##### 7.3.0 BỎ QUA PHẦN CHỮ KÝ
+
 Ngoài ra, nếu bạn muốn CIDRAM để hoàn toàn bỏ qua một số phần cụ thể trong bất kỳ tập tin chữ ký, bạn có thể sử dụng các tập tin `ignore.dat` để xác định những phần để bỏ qua. Trên một dòng mới, viết `Ignore`, theo sau là một không gian, theo sau là tên của phần mà bạn muốn CIDRAM để bỏ qua (xem ví dụ dưới đây).
 
 ```
 Ignore Phần 1
 ```
+
+Điều này cũng có thể đạt được bằng cách sử dụng giao diện được cung cấp bởi trang "danh sách phần" front-end của CIDRAM.
+
+##### 7.3.1 QUY TẮC PHỤ TRỢ
+
+Nếu bạn cảm thấy việc viết các tập tin chữ ký tùy chỉnh hoặc các mô-đun tùy chỉnh của riêng bạn quá phức tạp đối với bạn, một lựa chọn đơn giản hơn có thể là sử dụng giao diện được cung cấp bởi trang "quy tắc phụ trợ" front-end của CIDRAM. Bằng cách chọn các tùy chọn thích hợp và chỉ định chi tiết về các loại yêu cầu cụ thể, bạn có thể hướng dẫn CIDRAM cách trả lời các yêu cầu đó. Các "quy tắc phụ trợ" được thực hiện sau khi tất cả các tập tin chữ ký và mô-đun đã hoàn thành thực hiện.
 
 #### 7.4 <a name="MODULE_BASICS"></a>KHÁI NIỆM CƠ BẢN (CHO MÔ-ĐUN)
 
@@ -920,19 +930,19 @@ Một số chức năng được cung cấp bởi CIDRAM cho các mô-đun để
 
 ##### 7.5.0 "$Trigger"
 
-Chữ ký mô-đun thường được viết bằng "$Trigger". Trong hầu hết các trường hợp, sự đóng này sẽ quan trọng hơn bất cứ thứ gì khác để viết mô-đun.
+Chữ ký mô-đun thường được viết bằng `$Trigger`. Trong hầu hết các trường hợp, sự đóng này sẽ quan trọng hơn bất cứ thứ gì khác để viết mô-đun.
 
-"$Trigger" chấp nhận 4 tham số: "$Condition", "$ReasonShort", "$ReasonLong" (không bắt buộc), và "$DefineOptions" (không bắt buộc).
+`$Trigger` chấp nhận 4 tham số: `$Condition`, `$ReasonShort`, `$ReasonLong` (không bắt buộc), và `$DefineOptions` (không bắt buộc).
 
-Thực tế của "$Condition" được đánh giá, và nếu true/đúng, chữ ký là "kích hoạt". Nếu false/sai, chữ ký không phải là "kích hoạt". "$Condition" thường có chứa mã PHP để đánh giá một điều kiện nên làm yêu cầu bị chặn.
+Thực tế của `$Condition` được đánh giá, và nếu true/đúng, chữ ký là "kích hoạt". Nếu false/sai, chữ ký không phải là "kích hoạt". `$Condition` thường có chứa mã PHP để đánh giá một điều kiện nên làm yêu cầu bị chặn.
 
-"$ReasonShort" được trích dẫn trong trường "Tại sao bị chặn" khi chữ ký được "kích hoạt".
+`$ReasonShort` được trích dẫn trong trường "Tại sao bị chặn" khi chữ ký được "kích hoạt".
 
-"$ReasonLong" là một thông báo tùy chọn được hiển thị cho người dùng / khách hàng khi chúng bị chặn, để giải thích tại sao chúng bị chặn. Nó sử dụng thông báo "Truy cập đã bị từ chối" thông thường khi bị bỏ qua.
+`$ReasonLong` là một thông báo tùy chọn được hiển thị cho người dùng / khách hàng khi chúng bị chặn, để giải thích tại sao chúng bị chặn. Nó sử dụng thông báo "Truy cập đã bị từ chối" thông thường khi bị bỏ qua.
 
-"$DefineOptions" là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi chữ ký được "kích hoạt".
+`$DefineOptions` là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi chữ ký được "kích hoạt".
 
-"$Trigger" trả về true/đúng khi chữ ký được "kích hoạt", và false/sai khi không.
+`$Trigger` trả về true/đúng khi chữ ký được "kích hoạt", và false/sai khi không.
 
 Để sử dụng sự đóng này trong mô-đun của bạn, trước tiên hãy nhớ kế thừa nó từ phạm vi cha mẹ:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-Đường tránh chữ ký thường được viết bằng "$Bypass".
+Đường tránh chữ ký thường được viết bằng `$Bypass`.
 
-"$Bypass" chấp nhận 3 tham số: "$Condition", "$ReasonShort", và "$DefineOptions" (không bắt buộc).
+`$Bypass` chấp nhận 3 tham số: `$Condition`, `$ReasonShort`, và `$DefineOptions` (không bắt buộc).
 
-Thực tế của "$Condition" được đánh giá, và nếu true/đúng, đường tránh là "kích hoạt". Nếu false/sai, đường tránh không phải là "kích hoạt". "$Condition" thường có chứa mã PHP để đánh giá một điều kiện *không* nên làm yêu cầu bị chặn.
+Thực tế của `$Condition` được đánh giá, và nếu true/đúng, đường tránh là "kích hoạt". Nếu false/sai, đường tránh không phải là "kích hoạt". `$Condition` thường có chứa mã PHP để đánh giá một điều kiện *không* nên làm yêu cầu bị chặn.
 
-"$ReasonShort" được trích dẫn trong trường "Tại sao bị chặn" khi đường tránh được "kích hoạt".
+`$ReasonShort` được trích dẫn trong trường "Tại sao bị chặn" khi đường tránh được "kích hoạt".
 
-"$DefineOptions" là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi đường tránh được "kích hoạt".
+`$DefineOptions` là một mảng tùy chọn có chứa cặp khóa / giá trị, được sử dụng để xác định các tùy chọn cấu hình cụ thể cho trường hợp yêu cầu. Tùy chọn cấu hình sẽ được áp dụng khi đường tránh được "kích hoạt".
 
-"$Bypass" trả về true/đúng khi đường tránh được "kích hoạt", và false/sai khi không.
+`$Bypass` trả về true/đúng khi đường tránh được "kích hoạt", và false/sai khi không.
 
 Để sử dụng sự đóng này trong mô-đun của bạn, trước tiên hãy nhớ kế thừa nó từ phạm vi cha mẹ:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 BIẾN MÔ-ĐUN
 
-Mô-đun thực hiện theo phạm vi riêng của chúng, và bất kỳ biến nào được xác định bởi mô-đun, sẽ không thể truy cập vào mô-đun khác, hoặc kịch bản cha mẹ, trừ khi chúng được lưu trữ trong mảng "$CIDRAM" (mọi thứ khác được làm sạch sau khi kết thúc thực hiện mô-đun).
+Mô-đun thực hiện theo phạm vi riêng của chúng, và bất kỳ biến nào được xác định bởi mô-đun, sẽ không thể truy cập vào mô-đun khác, hoặc kịch bản cha mẹ, trừ khi chúng được lưu trữ trong mảng `$CIDRAM` (mọi thứ khác được làm sạch sau khi kết thúc thực hiện mô-đun).
 
 Dưới đây là một số biến phổ biến có thể hữu ích cho mô-đun của bạn:
 
@@ -1448,4 +1458,4 @@ Một số tài nguyên được đề xuất để tìm hiểu thêm thông tin
 ---
 
 
-Lần cuối cập nhật: 19 Tháng Chín 2018 (2018.09.19).
+Lần cuối cập nhật: 26 Tháng Chín 2018 (2018.09.26).

@@ -161,6 +161,7 @@ Data | Deskripsi
 /vault/fe_assets/_2fa.html | Template HTML yang digunakan saat meminta pengguna untuk kode 2FA.
 /vault/fe_assets/_accounts.html | Template HTML untuk halaman akun.
 /vault/fe_assets/_accounts_row.html | Template HTML untuk halaman akun.
+/vault/fe_assets/_aux.html | Template HTML untuk halaman aturan tambahan.
 /vault/fe_assets/_cache.html | Template HTML untuk halaman data cache.
 /vault/fe_assets/_cidr_calc.html | Template HTML untuk kalkulator CIDR.
 /vault/fe_assets/_cidr_calc_row.html | Template HTML untuk kalkulator CIDR.
@@ -265,6 +266,7 @@ Data | Deskripsi
 /vault/.travis.php | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/.travis.yml | Digunakan oleh Travis CI untuk pengujian (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /vault/aggregator.php | Agregator IP.
+/vault/auxiliary.yaml | Berisi aturan tambahan. Tidak termasuk dalam paket. Dihasilkan oleh halaman aturan tambahan.
 /vault/cache.dat | Cache data.
 /vault/cache.dat.safety | Dihasilkan sebagai mekanisme keamanan bila diperlukan.
 /vault/cidramblocklists.dat | File metadata untuk daftar-daftar blokir yang opsional dari Macmathan; Digunakan oleh halaman pembaruan untuk bagian depan.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 INFORMASI TAMBAHAN
 
+##### 7.3.0 MENGABAIKAN BAGIAN TANDA TANGAN
+
 Juga, jika Anda ingin CIDRAM untuk sama sekali mengabaikan beberapa bagian tertentu dalam salah satu file tanda tangan, Anda dapat menggunakan file `ignore.dat` untuk menentukan bagian untuk mengabaikan. Pada baris baru, menulis `Ignore`, diikuti dengan spasi, diikuti dengan nama bagian yang Anda ingin CIDRAM untuk mengabaikan (lihat contoh dibawah ini).
 
 ```
 Ignore Bagian 1
 ```
+
+Ini juga dapat dicapai dengan menggunakan antarmuka yang disediakan oleh halaman "daftar bagian" dari bagian depan CIDRAM.
+
+##### 7.3.1 ATURAN TAMBAHAN
+
+Jika Anda merasa bahwa menulis file tanda tangan atau modul kustom Anda sendiri terlalu rumit untuk Anda, alternatif yang lebih sederhana mungkin menggunakan antarmuka yang disediakan oleh halaman "aturan tambahan" dari bagian depan CIDRAM. Dengan memilih opsi yang sesuai dan menentukan detail tentang jenis permintaan spesifik, Anda dapat menginstruksikan CIDRAM cara menanggapi permintaan tersebut. "Aturan tambahan" dijalankan setelah semua file tanda tangan dan modul telah selesai dijalankan.
 
 #### 7.4 <a name="MODULE_BASICS"></a>DASAR-DASAR (UNTUK MODUL)
 
@@ -920,19 +930,19 @@ Beberapa fungsi disediakan oleh CIDRAM yang dapat digunakan oleh modul, yang seh
 
 ##### 7.5.0 "$Trigger"
 
-Tanda tangan modul biasanya ditulis dengan "$Trigger". Dalam kebanyakan kasus, closure ini akan lebih penting daripada hal lain untuk tujuan penulisan modul.
+Tanda tangan modul biasanya ditulis dengan `$Trigger`. Dalam kebanyakan kasus, closure ini akan lebih penting daripada hal lain untuk tujuan penulisan modul.
 
-"$Trigger" menerima 4 parameter: "$Condition", "$ReasonShort", "$ReasonLong" (opsional), dan "$DefineOptions" (opsional).
+`$Trigger` menerima 4 parameter: `$Condition`, `$ReasonShort`, `$ReasonLong` (opsional), dan `$DefineOptions` (opsional).
 
-Kebenaran dari "$Condition" dievaluasi, dan jika true/benar, tanda tangan "dipicu". Jika false/salah, tanda tangan *tidak* "dipicu". "$Condition" biasanya berisi kode PHP untuk mengevaluasi suatu kondisi yang harus menyebabkan permintaan diblokir.
+Kebenaran dari `$Condition` dievaluasi, dan jika true/benar, tanda tangan "dipicu". Jika false/salah, tanda tangan *tidak* "dipicu". `$Condition` biasanya berisi kode PHP untuk mengevaluasi suatu kondisi yang harus menyebabkan permintaan diblokir.
 
-"$ReasonShort" dikutip di bidang "Mengapa Diblokir" saat tanda tangan "dipicu".
+`$ReasonShort` dikutip di bidang "Mengapa Diblokir" saat tanda tangan "dipicu".
 
-"$ReasonLong" adalah pesan opsional yang akan ditampilkan kepada pengguna/klien saat mereka diblokir, untuk menjelaskan mengapa mereka diblokir. Default ke pesan "Akses Ditolak" standar saat dihilangkan.
+`$ReasonLong` adalah pesan opsional yang akan ditampilkan kepada pengguna/klien saat mereka diblokir, untuk menjelaskan mengapa mereka diblokir. Default ke pesan "Akses Ditolak" standar saat dihilangkan.
 
-"$DefineOptions" adalah array opsional yang berisi pasangan kunci/nilai, digunakan untuk menentukan opsi konfigurasi yang spesifik untuk instance permintaan. Opsi konfigurasi akan diterapkan saat tanda tangan "dipicu".
+`$DefineOptions` adalah array opsional yang berisi pasangan kunci/nilai, digunakan untuk menentukan opsi konfigurasi yang spesifik untuk instance permintaan. Opsi konfigurasi akan diterapkan saat tanda tangan "dipicu".
 
-"$Trigger" kembali true/benar saat tanda tangan "dipicu", dan false/salah saat tidak.
+`$Trigger` kembali true/benar saat tanda tangan "dipicu", dan false/salah saat tidak.
 
 Untuk menggunakan closure ini di modul Anda, ingat dulu untuk mewarisi dari lingkup luar:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-Tanda tangan bypass biasanya ditulis dengan "$Bypass".
+Tanda tangan bypass biasanya ditulis dengan `$Bypass`.
 
-"$Bypass" menerima 3 parameter: "$Condition", "$ReasonShort", dan "$DefineOptions" (opsional).
+`$Bypass` menerima 3 parameter: `$Condition`, `$ReasonShort`, dan `$DefineOptions` (opsional).
 
-Kebenaran dari "$Condition" dievaluasi, dan jika true/benar, bypass "dipicu". Jika false/salah, bypass *tidak* "dipicu". "$Condition" biasanya berisi kode PHP untuk mengevaluasi suatu kondisi yang harus *tidak* menyebabkan permintaan diblokir.
+Kebenaran dari `$Condition` dievaluasi, dan jika true/benar, bypass "dipicu". Jika false/salah, bypass *tidak* "dipicu". `$Condition` biasanya berisi kode PHP untuk mengevaluasi suatu kondisi yang harus *tidak* menyebabkan permintaan diblokir.
 
-"$ReasonShort" dikutip di bidang "Mengapa Diblokir" saat bypass "dipicu".
+`$ReasonShort` dikutip di bidang "Mengapa Diblokir" saat bypass "dipicu".
 
-"$DefineOptions" adalah array opsional yang berisi pasangan kunci/nilai, digunakan untuk menentukan opsi konfigurasi yang spesifik untuk instance permintaan. Opsi konfigurasi akan diterapkan saat bypass "dipicu".
+`$DefineOptions` adalah array opsional yang berisi pasangan kunci/nilai, digunakan untuk menentukan opsi konfigurasi yang spesifik untuk instance permintaan. Opsi konfigurasi akan diterapkan saat bypass "dipicu".
 
-"$Bypass" kembali true/benar saat bypass "dipicu", dan false/salah saat tidak.
+`$Bypass` kembali true/benar saat bypass "dipicu", dan false/salah saat tidak.
 
 Untuk menggunakan closure ini di modul Anda, ingat dulu untuk mewarisi dari lingkup luar:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 MODUL VARIABEL
 
-Modul mengeksekusi dalam lingkup mereka sendiri, dan variabel apapun yang ditentukan oleh modul, tidak akan dapat diakses ke modul lain, atau ke skrip utama, kecuali jika disimpan dalam array "$CIDRAM" (segala sesuatu yang lain dibuang setelah eksekusi modul selesai).
+Modul mengeksekusi dalam lingkup mereka sendiri, dan variabel apapun yang ditentukan oleh modul, tidak akan dapat diakses ke modul lain, atau ke skrip utama, kecuali jika disimpan dalam array `$CIDRAM` (segala sesuatu yang lain dibuang setelah eksekusi modul selesai).
 
 Tercantum dibawah ini adalah beberapa variabel umum yang mungkin berguna untuk modul Anda:
 
@@ -1448,4 +1458,4 @@ Beberapa sumber bacaan yang direkomendasikan untuk mempelajari informasi lebih l
 ---
 
 
-Terakhir Diperbarui: 19 September 2018 (2018.09.19).
+Terakhir Diperbarui: 26 September 2018 (2018.09.26).

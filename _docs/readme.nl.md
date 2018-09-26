@@ -161,6 +161,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_2fa.html | Een HTML sjabloon die wordt gebruikt wanneer de gebruiker om een 2FA-code wordt gevraagd.
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_aux.html | Een HTML sjabloon voor de frontend aanvullende regels pagina.
 /vault/fe_assets/_cache.html | Een HTML sjabloon voor de frontend cachegegevens pagina.
 /vault/fe_assets/_cidr_calc.html | Een HTML sjabloon voor de CIDR calculator.
 /vault/fe_assets/_cidr_calc_row.html | Een HTML sjabloon voor de CIDR calculator.
@@ -265,6 +266,7 @@ Bestand | Beschrijving
 /vault/.travis.php | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/aggregator.php | IP-aggregator.
+/vault/auxiliary.yaml | Bevat aanvullende regels. Niet inbegrepen in het pakket. Gegenereerd op de hulpregels pagina.
 /vault/cache.dat | Cache data/gegevens.
 /vault/cache.dat.safety | Gegenereerd als veiligheidsmechanisme indien nodig.
 /vault/cidramblocklists.dat | Metadata bestand voor de optionele blokkaderlijsten van Macmathan; Gebruikt door de frontend updates pagina.
@@ -277,7 +279,7 @@ Bestand | Beschrijving
 /vault/frontend_functions.php | Frontend-functies bestand.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/hashes.dat | Bevat een lijst met geaccepteerde hashes (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
-/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke signature-secties CIDRAM moeten negeren).
+/vault/ignore.dat | Genegeerd file (gebruikt om aan te geven welke signatuursecties CIDRAM moeten negeren).
 /vault/ipbypass.dat | Bevat een lijst met IP rondwegen (relevant zijn voor de reCAPTCHA functie; alleen gegenereerd als de reCAPTCHA functie is ingeschakeld).
 /vault/ipv4.dat | IPv4 signatures bestand (ongewenste cloud-diensten en niet-menselijke eindpunten).
 /vault/ipv4_bogons.dat | IPv4 signatures bestand (bogon/martian CIDR's).
@@ -739,7 +741,7 @@ Als u wilt uw aangepaste signatures te splitsen in afzonderlijke secties, u kunt
 Tag: Sectie 1
 ```
 
-Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met signature-secties uit eerder in de signature bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere signature-secties. Een ongeëtiketteerd signatures wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten signatures worden getriggerd).
+Om sectie etiketteren te breken en zodat de etiketten zijn niet onjuist geïdentificeerd met signatuursecties uit eerder in de signature bestanden, gewoon ervoor zorgen dat er ten minste twee opeenvolgende regeleinden tussen uw etiket en uw eerdere signatuursecties. Een ongeëtiketteerd signatures wordt standaard om "IPv4" of "IPv6" (afhankelijk van welke soorten signatures worden getriggerd).
 
 ```
 1.2.3.4/32 Deny Bogon
@@ -821,13 +823,13 @@ Defers to: preferred_signatures.dat
 
 ##### 7.2.0 YAML BASICS
 
-Een vereenvoudigde vorm van YAML markup kan worden gebruikt in signature bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke signature-secties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele signatures en signature-secties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde signature, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere signatures; als u wilt een specifieke signatures te leiden tot een pagina redirect; als u wilt een signature-sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele signatures en/of signature-secties).
+Een vereenvoudigde vorm van YAML markup kan worden gebruikt in signature bestanden voor het bepalen van gedragingen en specifieke instellingen voor afzonderlijke signatuursecties. Dit kan handig zijn als u de waarde van uw configuratie richtlijnen willen afwijken op basis van individuele signatures en signatuursecties (bijvoorbeeld; als u wilt om een e-mailadres te leveren voor support tickets voor alle gebruikers geblokkeerd door een bepaalde signature, maar wil niet om een e-mailadres te leveren voor support tickets voor de gebruikers geblokkeerd door andere signatures; als u wilt een specifieke signatures te leiden tot een pagina redirect; als u wilt een signature-sectie voor gebruik met reCAPTCHA te markeren; als u wilt om geblokkeerde toegang pogingen te loggen in afzonderlijke bestanden op basis van individuele signatures en/of signatuursecties).
 
 Het gebruik van YAML markup in de signature bestanden is volledig optioneel (d.w.z., u kan het gebruiken als u wenst te doen, maar u bent niet verplicht om dit te doen), en is in staat om de meeste (maar niet alle) configuratie richtlijnen hefboomeffect.
 
 Notitie: YAML markup implementatie in CIDRAM is zeer simplistisch en zeer beperkt; Het is bedoeld om de specifieke eisen van CIDRAM te voldoen op een manier dat heeft de vertrouwdheid van YAML markup, maar noch volgt noch voldoet aan de officiële specificaties (en zal daarom niet zich op dezelfde wijze als grondiger implementaties elders, en is misschien niet geschikt voor alle andere projecten elders).
 
-In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signature-secties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature-sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDR's en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature-sectie wordt getriggerd (zie de onderstaande voorbeelden).
+In CIDRAM, YAML markup segmenten worden geïdentificeerd aan het script door drie streepjes ("---"), en eindigen naast hun bevattende signatuursecties door dubbel-regeleinden. Een typische YAML markup segment binnen een signature-sectie bestaat uit drie streepjes op een lijn onmiddellijk na de lijst van CIDR's en elke etiketten, gevolgd door een tweedimensionale lijst van sleutel-waarde paren (eerste dimensie, configuratie richtlijn categorieën; tweede dimensie, configuratie richtlijnen) voor welke configuratie richtlijnen moeten worden gewijzigd (en om welke waarden) wanneer een signature in die signature-sectie wordt getriggerd (zie de onderstaande voorbeelden).
 
 ```
 # Foobar 1.
@@ -874,11 +876,11 @@ general:
  silent_mode: "http://127.0.0.1/"
 ```
 
-##### 7.2.1 HOE OM SIGNATURE-SECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
+##### 7.2.1 HOE OM SIGNATUURSECTIES TE MARKEREN VOOR GEBRUIK MET reCAPTCHA
 
-Als "usemode" is 0 of 1, signature-secties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
+Als "usemode" is 0 of 1, signatuursecties hoeven niet voor gebruik met reCAPTCHA te markeren (omdat ze al wil of wil niet gebruik reCAPTCHA, afhankelijk van deze instelling).
 
-Als "usemode" is 2, om signature-secties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat signature-sectie (zie het onderstaande voorbeeld).
+Als "usemode" is 2, om signatuursecties te markeren voor gebruik met reCAPTCHA, een invoer wordt opgenomen in het YAML segment voor dat signature-sectie (zie het onderstaande voorbeeld).
 
 ```
 # Deze sectie zal reCAPTCHA te gebruiken.
@@ -894,11 +896,19 @@ recaptcha:
 
 #### 7.3 EXTRA INFORMATIE
 
+##### 7.3.0 SIGNATUURSECTIES TE NEGEREN
+
 Bovendien, als u wilt CIDRAM om enkele specifieke secties in iedereen van de signature bestanden te negeren, kunt u het `ignore.dat` bestand gebruiken om specificeren welke secties te negeren. Op een nieuwe regel, schrijven `Ignore`, gevolgd door een spatie, gevolgd door de naam van de sectie die u wilt CIDRAM te negeren (zie het onderstaande voorbeeld).
 
 ```
 Ignore Sectie 1
 ```
+
+Dit kan ook worden bereikt door de interface te gebruiken die wordt geboden door de pagina "sectielijst" van de frontend van CIDRAM.
+
+##### 7.3.1 HULPREGELS
+
+Als u vindt dat het schrijven van uw eigen aangepaste signatuurbestanden of aangepaste modules te ingewikkeld voor u is, kan een eenvoudiger alternatief zijn om de interface te gebruiken die wordt geboden door de "hulpregels"-pagina van de front-end van CIDRAM. Door de juiste opties te selecteren en details over specifieke soorten verzoeken op te geven, kunt u CIDRAM instrueren hoe op die verzoeken moet worden gereageerd. "Hulpregels" worden uitgevoerd nadat alle signatuurbestanden en modules al zijn uitgevoerd.
 
 #### 7.4 <a name="MODULE_BASICS"></a>BASICS (VOOR MODULES)
 
@@ -920,19 +930,19 @@ CIDRAM biedt een aantal functies voor het gebruik van modules, waardoor het eenv
 
 ##### 7.5.0 "$Trigger"
 
-Module-signatures worden meestal geschreven met "$Trigger". In de meeste gevallen zal deze closure belangrijker zijn dan iets anders om modules te schrijven.
+Module-signatures worden meestal geschreven met `$Trigger`. In de meeste gevallen zal deze closure belangrijker zijn dan iets anders om modules te schrijven.
 
-"$Trigger" accepteert 4 parameters: "$Condition", "$ReasonShort", "$ReasonLong" (optioneel), en "$DefineOptions" (optioneel).
+`$Trigger` accepteert 4 parameters: `$Condition`, `$ReasonShort`, `$ReasonLong` (optioneel), en `$DefineOptions` (optioneel).
 
-De waarachtigheid van "$Condition" wordt geëvalueerd, en indien true/waar, wordt de signature "getriggerd". Indien deze false/vals is, wordt de signature *niet* "getriggerd". "$Condition" bevat meestal PHP-code om een voorwaarde te evalueren die ervoor moet zorgen dat een verzoek wordt geblokkeerd.
+De waarachtigheid van `$Condition` wordt geëvalueerd, en indien true/waar, wordt de signature "getriggerd". Indien deze false/vals is, wordt de signature *niet* "getriggerd". `$Condition` bevat meestal PHP-code om een voorwaarde te evalueren die ervoor moet zorgen dat een verzoek wordt geblokkeerd.
 
-"$ReasonShort" wordt vermeld in het "Waarom Geblokkeerd" veld wanneer de signature wordt "getriggerd".
+`$ReasonShort` wordt vermeld in het "Waarom Geblokkeerd" veld wanneer de signature wordt "getriggerd".
 
-"$ReasonLong" is een optioneel bericht dat aan de gebruiker/client moet worden weergegeven voor wanneer ze zijn geblokkeerd, om uit te leggen waarom ze zijn geblokkeerd. Standaard ingesteld op het standaardbericht "Toegang Geweigerd" wanneer dit wordt weggelaten.
+`$ReasonLong` is een optioneel bericht dat aan de gebruiker/client moet worden weergegeven voor wanneer ze zijn geblokkeerd, om uit te leggen waarom ze zijn geblokkeerd. Standaard ingesteld op het standaardbericht "Toegang Geweigerd" wanneer dit wordt weggelaten.
 
-"$DefineOptions" is een optionele array met sleutel/waarde-paren, die wordt gebruikt om configuratie-opties te definiëren die specifiek zijn voor de instantie. Configuratie-opties worden toegepast wanneer de signature "getriggerd" is.
+`$DefineOptions` is een optionele array met sleutel/waarde-paren, die wordt gebruikt om configuratie-opties te definiëren die specifiek zijn voor de instantie. Configuratie-opties worden toegepast wanneer de signature "getriggerd" is.
 
-"$Trigger" retourneert true/waar als de signature "getriggerd" is, en false/vals als dat niet het geval is.
+`$Trigger` retourneert true/waar als de signature "getriggerd" is, en false/vals als dat niet het geval is.
 
 Als u deze closure in uw module wilt gebruiken, moet u deze eerst erven het van de bovenliggende-scope:
 ```PHP
@@ -941,17 +951,17 @@ $Trigger = $CIDRAM['Trigger'];
 
 ##### 7.5.1 "$Bypass"
 
-Signature-bypasses worden meestal geschreven met "$Bypass".
+Signature-bypasses worden meestal geschreven met `$Bypass`.
 
-"$Bypass" accepteert 3 parameters: "$Condition", "$ReasonShort", en "$DefineOptions" (optioneel).
+`$Bypass` accepteert 3 parameters: `$Condition`, `$ReasonShort`, en `$DefineOptions` (optioneel).
 
-De waarachtigheid van "$Condition" wordt geëvalueerd, en indien true/waar, wordt de bypass "getriggerd". Indien deze false/vals is, wordt de bypass *niet* "getriggerd". "$Condition" bevat meestal PHP-code om een voorwaarde te evalueren die ervoor moet zorgen dat een verzoek wordt *niet* geblokkeerd.
+De waarachtigheid van `$Condition` wordt geëvalueerd, en indien true/waar, wordt de bypass "getriggerd". Indien deze false/vals is, wordt de bypass *niet* "getriggerd". `$Condition` bevat meestal PHP-code om een voorwaarde te evalueren die ervoor moet zorgen dat een verzoek wordt *niet* geblokkeerd.
 
-"$ReasonShort" wordt vermeld in het "Waarom Geblokkeerd" veld wanneer de bypass wordt "getriggerd".
+`$ReasonShort` wordt vermeld in het "Waarom Geblokkeerd" veld wanneer de bypass wordt "getriggerd".
 
-"$DefineOptions" is een optionele array met sleutel/waarde-paren, die wordt gebruikt om configuratie-opties te definiëren die specifiek zijn voor de instantie. Configuratie-opties worden toegepast wanneer de bypass "getriggerd" is.
+`$DefineOptions` is een optionele array met sleutel/waarde-paren, die wordt gebruikt om configuratie-opties te definiëren die specifiek zijn voor de instantie. Configuratie-opties worden toegepast wanneer de bypass "getriggerd" is.
 
-"$Bypass" retourneert true/waar als de bypass "getriggerd" is, en false/vals als dat niet het geval is.
+`$Bypass` retourneert true/waar als de bypass "getriggerd" is, en false/vals als dat niet het geval is.
 
 Als u deze closure in uw module wilt gebruiken, moet u deze eerst erven het van de bovenliggende-scope:
 ```PHP
@@ -981,7 +991,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### 7.6 MODULE VARIABELEN
 
-Modules worden in hun eigen bereik uitgevoerd, en alle variabelen gedefinieerd door een module, zullen niet toegankelijk zijn voor andere modules, of naar het bovenliggende script, tenzij ze zijn opgeslagen in de array "$CIDRAM" (al het andere wordt gespoeld nadat de module-uitvoering is voltooid).
+Modules worden in hun eigen bereik uitgevoerd, en alle variabelen gedefinieerd door een module, zullen niet toegankelijk zijn voor andere modules, of naar het bovenliggende script, tenzij ze zijn opgeslagen in de array `$CIDRAM` (al het andere wordt gespoeld nadat de module-uitvoering is voltooid).
 
 Hieronder vindt u enkele veelvoorkomende variabelen die handig kunnen zijn voor uw module:
 
@@ -1057,7 +1067,7 @@ $Trigger(strpos($CIDRAM['BlockInfo']['UA'], 'Foobar') !== false, 'Foobar-UA', 'U
 
 *Notitie: Signatures voor "signature bestanden", en signatures voor "modules", zijn niet hetzelfde.*
 
-Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "signature-secties", vaak vergezeld van opmerkingen, markup, en/of gerelateerde metadata die kunnen om extra context voor de signatures en/of om verdere instructies worden gebruikt.
+Vaak (maar niet altijd), signatures bundelen samen in groepen, dat vormen van "signatuursecties", vaak vergezeld van opmerkingen, markup, en/of gerelateerde metadata die kunnen om extra context voor de signatures en/of om verdere instructies worden gebruikt.
 
 #### <a name="WHAT_IS_A_CIDR"></a>Wat is een "CIDR"?
 
@@ -1456,4 +1466,4 @@ Als alternatief is er een kort (niet-gezaghebbende) overzicht van GDPR/DSGVO/AVG
 ---
 
 
-Laatste Bijgewerkt: 19 September 2018 (2018.09.19).
+Laatste Bijgewerkt: 26 September 2018 (2018.09.26).

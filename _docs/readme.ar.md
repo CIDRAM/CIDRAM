@@ -164,6 +164,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML المستخدم عند طلب المستخدم للحصول على كود 2FA.</div> | /vault/fe_assets/_2fa.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة الحسابات.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة القواعد المساعدة.</div> | /vault/fe_assets/_aux.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لfront-end صفحة بيانات ذاكرة التخزين المؤقت.</div> | /vault/fe_assets/_cache.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لآلة حاسبة CIDR.</div> | /vault/fe_assets/_cidr_calc.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML لآلة حاسبة CIDR.</div> | /vault/fe_assets/_cidr_calc_row.html
@@ -268,6 +269,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.php
 &nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">IP aggregator.</div> | /vault/aggregator.php
+&nbsp; <div dir="rtl" style="display:inline;">يحتوي على قواعد مساعدة. غير المدرجة في الحزمة. يتم توليدها بواسطة صفحة القواعد المساعدة.</div> | /vault/auxiliary.yaml
 &nbsp; <div dir="rtl" style="display:inline;">بيانات ذاكرة التخزين المؤقت.</div> | /vault/cache.dat
 &nbsp; <div dir="rtl" style="display:inline;">يتم توليدها كآلية سلامة عند الحاجة.</div> | /vault/cache.dat.safety
 &nbsp; <div dir="rtl" style="display:inline;">ملف البيانات الوصفية لقوائم Macmathan الاختيارية؛ المستخدمة من قبل صفحة التحديثات.</div> | /vault/cidramblocklists.dat
@@ -532,7 +534,7 @@
 
 ##### <div dir="rtl">"protect_frontend"<br /></div>
 <div dir="rtl"><ul>
- <li>يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق الfront-end. صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.</li>
+ <li>يحدد ما إذا كانت الحماية التي توفرها عادة CIDRAM يجب أن تطبق لfront-end. صحيح/True = نعم [افتراضي]؛ زائفة/False = لا.</li>
 </ul></div>
 
 ##### <div dir="rtl">"disable_webfonts"<br /></div>
@@ -767,7 +769,7 @@
 
 ##### <div dir="rtl">"SkipAuthProcess"<br /></div>
 <div dir="rtl"><ul>
- <li>تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا ، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM ، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.</li>
+ <li>تعيين هذا التوجيه إلى <code dir="ltr">true</code> يرشد PHPMailer لتخطي عملية المصادقة التي تحدث عادة عند إرسال البريد الإلكتروني عبر SMTP. يجب تجنب هذا، لأن تخطي هذه العملية قد يعرض البريد الإلكتروني الصادر إلى هجمات MITM، ولكنه قد يكون ضروريًا في الحالات التي تمنع فيها هذه العملية من اتصال PHPMailer بخادم SMTP.</li>
 </ul></div>
 
 ##### <div dir="rtl">"Enable2FA"<br /></div>
@@ -1063,11 +1065,19 @@ recaptcha:
 
 #### <div dir="rtl">٧.٣ معلومات اضافية<br /><br /></div>
 
+##### <div dir="rtl">٧.٣.٠ تجاهل أقسام التوقيع<br /><br /></div>
+
 <div dir="rtl">إذا كنت تريد CIDRAM تجاهل تماما بعض المقاطع، يمكنك استخدام ملف "ignore.dat" لتحديد المقاطع التي ليمكن تجاهلها. على سطر جديد، اكتب "Ignore"، متبوعا بمسافة، يليه اسم المقطع ليمكن تجاهله (راجع الأمثلة أدناه).<br /><br /></div>
 
 ```
 Ignore القسم ١
 ```
+
+<div dir="rtl">ويمكن تحقيق ذلك أيضًا من خلال صفحة "لقائمة الأقسام" CIDRAM لfront-end.<br /><br /></div>
+
+##### <div dir="rtl">٧.٣.١ القواعد المساعدة<br /><br /></div>
+
+<div dir="rtl">إذا كنت تشعر أن كتابة ملفات التوقيع المخصصة الخاصة بك أو وحدات مخصصة معقدة للغاية بالنسبة لك، قد يكون بديل أبسط هو استخدام صفحة "القواعد المساعدة" الخاصة بـ CIDRAM لfront-end. من خلال تحديد الخيارات المناسبة وتحديد تفاصيل حول أنواع معينة من الطلبات، يمكنك توجيه CIDRAM إلى كيفية الرد على تلك الطلبات. يتم تنفيذ "القواعد المساعدة" بعد الانتهاء من جميع ملفات التوقيع والوحدات النمطية بالفعل التنفيذ.<br /><br /></div>
 
 #### <div dir="rtl">٧.٤ <a name="MODULE_BASICS"></a>مبادئ (للوحدات)<br /><br /></div>
 
@@ -1089,21 +1099,21 @@ Ignore القسم ١
 
 #### <div dir="rtl">٧.٥ وحدة نمطية<br /><br /></div>
 
-##### <div dir="rtl">٧.٥.٠ <code dir="ltr">"$Trigger"</code></div>
+##### <div dir="rtl">٧.٥.٠ <code dir="ltr">$Trigger</code></div>
 
-<div dir="rtl">وعادة ما تكتب تواقيع الوحدة مع <code dir="ltr">"$Trigger"</code>. في معظم الحالات، هذا الإغلاق سيكون أكثر أهمية من أي شيء آخر لغرض كتابة وحدات.<br /><br /></div>
+<div dir="rtl">وعادة ما تكتب تواقيع الوحدة مع <code dir="ltr">$Trigger</code>. في معظم الحالات، هذا الإغلاق سيكون أكثر أهمية من أي شيء آخر لغرض كتابة وحدات.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Trigger"</code> يقبل ٤ المعلمات: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$ReasonLong"</code> (اختياري)، <code dir="ltr">"$DefineOptions"</code> (اختياري).<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Trigger</code> يقبل ٤ المعلمات: <code dir="ltr">$Condition</code>، <code dir="ltr">$ReasonShort</code>، <code dir="ltr">$ReasonLong</code> (اختياري)، <code dir="ltr">$DefineOptions</code> (اختياري).<br /><br /></div>
 
-<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، التوقيع نشط. إذا كان "خاطئة" (<code dir="ltr">false</code>)، التوقيع غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على التعليمات البرمجية PHP التي يجب منع الطلبات.<br /><br /></div>
+<div dir="rtl">يتم تقييم <code dir="ltr">$Condition</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، التوقيع نشط. إذا كان "خاطئة" (<code dir="ltr">false</code>)، التوقيع غير نشط. <code dir="ltr">$Condition</code> عادة ما تحتوي على التعليمات البرمجية PHP التي يجب منع الطلبات.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> في حقل "سبب الحظر" عندما يكون التوقيع نشطا.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$ReasonShort</code> في حقل "سبب الحظر" عندما يكون التوقيع نشطا.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$ReasonLong"</code> هي رسالة اختيارية يتم عرضها للمستخدم عند حظرها، لشرح سبب حظرها. يستخدم الرسالة القياسية "سبب الحظر" عند حذفها.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$ReasonLong</code> هي رسالة اختيارية يتم عرضها للمستخدم عند حظرها، لشرح سبب حظرها. يستخدم الرسالة القياسية "سبب الحظر" عند حذفها.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> عبارة عن صفيف اختياري يحتوي على أزواج المفاتيح/القيم التي تحدد خيارات التكوين الخاصة بمثيل الطلب. سيتم تطبيق خيارات التهيئة عندما يكون التوقيع نشطا.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$DefineOptions</code> عبارة عن صفيف اختياري يحتوي على أزواج المفاتيح/القيم التي تحدد خيارات التكوين الخاصة بمثيل الطلب. سيتم تطبيق خيارات التهيئة عندما يكون التوقيع نشطا.<br /><br /></div>
 
-<div dir="rtl">ترجع <code dir="ltr">"$Trigger"</code> صحيح (<code dir="ltr">true</code>) عندما يكون التوقيع نشطا و خاطئة (<code dir="ltr">false</code>) عندما لا يكون.<br /><br /></div>
+<div dir="rtl">ترجع <code dir="ltr">$Trigger</code> صحيح (<code dir="ltr">true</code>) عندما يكون التوقيع نشطا و خاطئة (<code dir="ltr">false</code>) عندما لا يكون.<br /><br /></div>
 
 <div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
 
@@ -1111,19 +1121,19 @@ Ignore القسم ١
 $Trigger = $CIDRAM['Trigger'];
 ```
 
-##### <div dir="rtl">٧.٥.١ <code dir="ltr">"$Bypass"</code></div>
+##### <div dir="rtl">٧.٥.١ <code dir="ltr">$Bypass</code></div>
 
-<div dir="rtl">وعادة ما تكتب الالتفافية التوقيع مع <code dir="ltr">"$Bypass"</code>.<br /><br /></div>
+<div dir="rtl">وعادة ما تكتب الالتفافية التوقيع مع <code dir="ltr">$Bypass</code>.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Bypass"</code> يقبل ٣ المعلمات: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$DefineOptions"</code> (اختياري).<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Bypass</code> يقبل ٣ المعلمات: <code dir="ltr">$Condition</code>، <code dir="ltr">$ReasonShort</code>، <code dir="ltr">$DefineOptions</code> (اختياري).<br /><br /></div>
 
-<div dir="rtl">يتم تقييم <code dir="ltr">"$Condition"</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، الالتفافية نشط. إذا كان "خاطئة" (<code dir="ltr">false</code>)، الالتفافية غير نشط. <code dir="ltr">"$Condition"</code> عادة ما تحتوي على رمز PHP التي يجب عدم منع الطلبات.<br /><br /></div>
+<div dir="rtl">يتم تقييم <code dir="ltr">$Condition</code>، وإذا كان "صحيح" (<code dir="ltr">true</code>)، الالتفافية نشط. إذا كان "خاطئة" (<code dir="ltr">false</code>)، الالتفافية غير نشط. <code dir="ltr">$Condition</code> عادة ما تحتوي على رمز PHP التي يجب عدم منع الطلبات.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> في حقل "سبب الحظر" عندما يكون الالتفافية نشطا.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$ReasonShort</code> في حقل "سبب الحظر" عندما يكون الالتفافية نشطا.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> عبارة عن صفيف اختياري يحتوي على أزواج المفاتيح/القيم التي تحدد خيارات التكوين الخاصة بمثيل الطلب. سيتم تطبيق خيارات التهيئة عندما يكون الالتفافية نشطا.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$DefineOptions</code> عبارة عن صفيف اختياري يحتوي على أزواج المفاتيح/القيم التي تحدد خيارات التكوين الخاصة بمثيل الطلب. سيتم تطبيق خيارات التهيئة عندما يكون الالتفافية نشطا.<br /><br /></div>
 
-<div dir="rtl">ترجع <code dir="ltr">"$Bypass"</code> صحيح (<code dir="ltr">true</code>) عندما يكون الالتفافية نشطا و خاطئة (<code dir="ltr">false</code>) عندما لا يكون.<br /><br /></div>
+<div dir="rtl">ترجع <code dir="ltr">$Bypass</code> صحيح (<code dir="ltr">true</code>) عندما يكون الالتفافية نشطا و خاطئة (<code dir="ltr">false</code>) عندما لا يكون.<br /><br /></div>
 
 <div dir="rtl">لاستخدام هذا الإغلاق في الوحدة النمطية الخاصة بك، تذكر أولا أن ترثه من النطاق الأصلي:<br /><br /></div>
 
@@ -1155,7 +1165,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### <div dir="rtl">٧.٦ وحدة المتغيرات<br /><br /></div>
 
-<div dir="rtl">الوحدات النمطية تنفذ ضمن نطاقها الخاص، وأي متغيرات محددة من قبل وحدة نمطية، لن تكون في متناول وحدات أخرى، أو إلى السيناريو الأصل، إلا إذا كانت مخزنة في <code dir="ltr">"$CIDRAM"</code> مجموعة (يتم مسح كل شيء آخر بعد انتهاء تنفيذ الوحدة).<br /><br /></div>
+<div dir="rtl">الوحدات النمطية تنفذ ضمن نطاقها الخاص، وأي متغيرات محددة من قبل وحدة نمطية، لن تكون في متناول وحدات أخرى، أو إلى السيناريو الأصل، إلا إذا كانت مخزنة في <code dir="ltr">$CIDRAM</code> مجموعة (يتم مسح كل شيء آخر بعد انتهاء تنفيذ الوحدة).<br /><br /></div>
 
 <div dir="rtl">فيما يلي بعض المتغيرات الشائعة التي قد تكون مفيدة للوحدة النمطية الخاصة بك:<br /><br /></div>
 
@@ -1454,7 +1464,7 @@ IP | المشغل
 
 <div dir="rtl">يوفر CIDRAM وحدة اختيارية تستفيد من واجهة برمجة التطبيقات هذه للتحقق مما إذا كان عنوان IP للطلبات الواردة ينتمي إلى مرسلي بريد مزعوم مشتبه فيهم. لم يتم تثبيت الوحدة النمطية بشكل افتراضي، ولكن إذا اخترت تثبيتها، فقد تتم مشاركة عناوين IP الخاصة بالمستخدمين مع واجهة برمجة تطبيقات Stop Forum Spam API وفقًا للغرض المقصود من الوحدة. عند تثبيت الوحدة، يتصل CIDRAM مع واجهة برمجة التطبيقات هذه عندما يطلب أحد الطلبات الواردة موردًا يتعرف عليه CIDRAM كنوع من الموارد يتم استهدافه بشكل متكرر بواسطة مرسلي الرسائل غير المرغوب فيها (مثل صفحات تسجيل الدخول وصفحات التسجيل وصفحات التحقق من البريد الإلكتروني ونماذج التعليقات وما إلى ذلك).<br /><br /></div>
 
-#### 11.3 LOGGING
+#### <div dir="rtl">١١.٣ تسجيل<br /><br /></div>
 
 Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
@@ -1662,4 +1672,4 @@ If you want to take it a step further by preventing specific types of informatio
 ---
 
 
-<div dir="rtl">آخر تحديث: 19 سبتمبر 2018 (2018.09.19).</div>
+<div dir="rtl">آخر تحديث: 26 سبتمبر 2018 (2018.09.26).</div>

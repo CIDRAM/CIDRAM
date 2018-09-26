@@ -164,6 +164,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">صارف کو 2FA کوڈ کے لئے پوچھتے وقت ایک HTML ٹیمپلیٹ استعمال کیا جاتا ہے.</div> | /vault/fe_assets/_2fa.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اضافی قواعد صفحہ.</div> | /vault/fe_assets/_aux.html
 &nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کیش ڈیٹا صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cache.html
 &nbsp; <div dir="rtl" style="display:inline;">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc.html
 &nbsp; <div dir="rtl" style="display:inline;">CIDR کیلکولیٹر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_cidr_calc_row.html
@@ -268,6 +269,7 @@
 &nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
 &nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">IP مجموعی طور پر.</div> | /vault/aggregator.php
+&nbsp; <div dir="rtl" style="display:inline;">معاون قوانین پر مشتمل ہے. پیکیج میں شامل نہیں. معاون قواعد کے صفحے کی طرف سے پیدا.</div> | /vault/auxiliary.yaml
 &nbsp; <div dir="rtl" style="display:inline;">کیشے کے اعداد و شمار.</div> | /vault/cache.dat
 &nbsp; <div dir="rtl" style="display:inline;">جب ضرورت ہو تو ایک حفاظتی میکانزم کی حیثیت سے پیدا.</div> | /vault/cache.dat.safety
 &nbsp; <div dir="rtl" style="display:inline;">Macmathan طرف سے فراہم اختیاری ملک blocklists سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر میں اپ ڈیٹس صفحہ کے ذریعہ استعمال کیا جاتا ہے.</div> | /vault/cidramblocklists.dat
@@ -1063,11 +1065,19 @@ recaptcha:
 
 #### <div dir="rtl">٧.٣ معاون<br /><br /></div>
 
+##### <div dir="rtl">٧.٣.٠ دستخط کے حصوں کو نظر انداز کرنا<br /><br /></div>
+
 <div dir="rtl">کے علاوہ، آپ CIDRAM مکمل طور پر دستخط کی فائلوں میں سے کسی کے اندر کچھ مخصوص حصوں کو نظر انداز کرنا چاہتے ہیں تو، آپ "ignore.dat" فائل ہے جس میں حصوں کو نظر انداز کرنے کی وضاحت کرنے کے لئے استعمال کر سکتے ہیں. ایک نئی لائن پر، لکھنا "Ignore"، ایک کی جگہ کے بعد، آپ کو CIDRAM نظر انداز کرنا (ذیل کی مثال ملاحظہ کریں) چاہتے ہیں کہ سیکشن کے نام کے بعد<br /><br /></div>
 
 ```
 Ignore سیکشن 1
 ```
+
+<div dir="rtl">یہ CIDRAM سامنے کے آخر "حصوں کی فہرست" کے صفحے کے ذریعہ بھی حاصل کیا جا سکتا ہے.<br /><br /></div>
+
+##### <div dir="rtl">٧.٣.١ معاون قوانین<br /><br /></div>
+
+<div dir="rtl">اگر آپ محسوس کرتے ہیں کہ آپ اپنی مرضی کے دستخط شدہ فائلوں کو لکھتے ہیں یا اپنی مرضی کے مطابق ماڈیولز آپ کے لئے بہت پیچیدہ ہیں، ایک آسان متبادل سیڈامیم سامنے کے آخر "معاون قواعد" کے صفحے کا استعمال کرنا ہوسکتا ہے. مناسب اختیارات کا انتخاب کرتے ہوئے اور مخصوص قسم کے درخواستوں کے بارے میں تفصیلات کی وضاحت کرکے، آپ ان ہدایات کو جواب دینے کے بارے میں CIDRAM کو ہدایت کرسکتے ہیں. تمام دستخط شدہ فائلوں کے بعد "معاون قواعد" کو معطل کر دیا جاتا ہے اور ماڈیولز نے پہلے سے ہی عملدرآمد مکمل کر لیا ہے.<br /><br /></div>
 
 #### <div dir="rtl">٧.٤ <a name="MODULE_BASICS"></a>مبادیات (ماڈیولز کے لئے)<br /><br /></div>
 
@@ -1089,21 +1099,21 @@ Ignore سیکشن 1
 
 #### <div dir="rtl">٧.٥ ماڈیول فعالیت<br /><br /></div>
 
-##### <div dir="rtl">٧.٥.٠ <code dir="ltr">"$Trigger"</code></div>
+##### <div dir="rtl">٧.٥.٠ <code dir="ltr">$Trigger</code></div>
 
-<div dir="rtl">ماڈیول دستخط عام طور پر <code dir="ltr">"$Trigger"</code> کے ساتھ لکھا جاتا ہے. زیادہ تر معاملات میں، یہ بندش ماڈیول لکھنے کے مقصد کیلئے کسی اور سے کہیں زیادہ اہم ہو گی.<br /><br /></div>
+<div dir="rtl">ماڈیول دستخط عام طور پر <code dir="ltr">$Trigger</code> کے ساتھ لکھا جاتا ہے. زیادہ تر معاملات میں، یہ بندش ماڈیول لکھنے کے مقصد کیلئے کسی اور سے کہیں زیادہ اہم ہو گی.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Trigger"</code> ٤ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$ReasonLong"</code> (اختیاری)، <code dir="ltr">"$DefineOptions"</code> (اختیاری).<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Trigger</code> ٤ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">$Condition</code>، <code dir="ltr">$ReasonShort</code>، <code dir="ltr">$ReasonLong</code> (اختیاری)، <code dir="ltr">$DefineOptions</code> (اختیاری).<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Condition"</code> سچائی کا اندازہ کیا جاتا ہے. اگر یہ سچ (true) ہے تو، دستخط چالو ہے. اگر یہ غلط (false) ہے تو، دستخط چالو نہیں ہے. <code dir="ltr">"$Condition"</code> عام طور پر ایک ایسی شرط پر مشتمل ہے جس کی وجہ سے کسی درخواست کو بلاک کرنا ہوگا.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Condition</code> سچائی کا اندازہ کیا جاتا ہے. اگر یہ سچ (true) ہے تو، دستخط چالو ہے. اگر یہ غلط (false) ہے تو، دستخط چالو نہیں ہے. <code dir="ltr">$Condition</code> عام طور پر ایک ایسی شرط پر مشتمل ہے جس کی وجہ سے کسی درخواست کو بلاک کرنا ہوگا.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> کو "کیوں بلاک شدہ" فیلڈ میں حوالہ دیا جاتا ہے جب دستخط چالو ہوجاتا ہے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$ReasonShort</code> کو "کیوں بلاک شدہ" فیلڈ میں حوالہ دیا جاتا ہے جب دستخط چالو ہوجاتا ہے.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$ReasonLong"</code> صارف کو ظاہر ہونے پر ایک پیغام ہے جب وہ روک رہے ہیں، اس وجہ سے وضاحت کریں کہ. ختم ہونے پر معیاری "کیوں بلاک شدہ" پیغام استعمال کرتا ہے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$ReasonLong</code> صارف کو ظاہر ہونے پر ایک پیغام ہے جب وہ روک رہے ہیں، اس وجہ سے وضاحت کریں کہ. ختم ہونے پر معیاری "کیوں بلاک شدہ" پیغام استعمال کرتا ہے.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> ایک اختیاری سرنی ہے جس میں کلیدی/قدر شامل ہیں، درخواست کی مثال کے مطابق مخصوص ترتیبات کے اختیارات کی وضاحت کرنے کے لئے استعمال کیا جاتا ہے. جب دستخط چالو ہو تو ترتیب کے اختیارات لاگو کیے جائیں گے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$DefineOptions</code> ایک اختیاری سرنی ہے جس میں کلیدی/قدر شامل ہیں، درخواست کی مثال کے مطابق مخصوص ترتیبات کے اختیارات کی وضاحت کرنے کے لئے استعمال کیا جاتا ہے. جب دستخط چالو ہو تو ترتیب کے اختیارات لاگو کیے جائیں گے.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Trigger"</code> سچ ہے جب دستخط چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا تو غلط ہوتا ہے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Trigger</code> سچ ہے جب دستخط چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا تو غلط ہوتا ہے.<br /><br /></div>
 
 <div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
 
@@ -1111,19 +1121,19 @@ Ignore سیکشن 1
 $Trigger = $CIDRAM['Trigger'];
 ```
 
-##### <div dir="rtl">٧.٥.١ <code dir="ltr">"$Bypass"</code></div>
+##### <div dir="rtl">٧.٥.١ <code dir="ltr">$Bypass</code></div>
 
-<div dir="rtl">دستخط بائی پاسز عام طور پر <code dir="ltr">"$Bypass"</code> کے ساتھ لکھے جاتے ہیں.<br /><br /></div>
+<div dir="rtl">دستخط بائی پاسز عام طور پر <code dir="ltr">$Bypass</code> کے ساتھ لکھے جاتے ہیں.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Bypass"</code> ٣ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">"$Condition"</code>، <code dir="ltr">"$ReasonShort"</code>، <code dir="ltr">"$DefineOptions"</code> (اختیاری).<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Bypass</code> ٣ پیرامیٹرز کو قبول کرتا ہے: <code dir="ltr">$Condition</code>، <code dir="ltr">$ReasonShort</code>، <code dir="ltr">$DefineOptions</code> (اختیاری).<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Condition"</code> سچائی کا اندازہ کیا جاتا ہے. اگر یہ سچ (true) ہے تو، بائی پاس چالو ہے. اگر یہ غلط (false) ہے تو، بائی پاس چالو نہیں ہے. <code dir="ltr">"$Condition"</code> عام طور پر ایک ایسی شرط پر مشتمل ہے جو کسی کو بلاک کرنے کی درخواست نہیں بننی چاہئے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Condition</code> سچائی کا اندازہ کیا جاتا ہے. اگر یہ سچ (true) ہے تو، بائی پاس چالو ہے. اگر یہ غلط (false) ہے تو، بائی پاس چالو نہیں ہے. <code dir="ltr">$Condition</code> عام طور پر ایک ایسی شرط پر مشتمل ہے جو کسی کو بلاک کرنے کی درخواست نہیں بننی چاہئے.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$ReasonShort"</code> کو "کیوں بلاک شدہ" فیلڈ میں حوالہ دیا جاتا ہے جب بائی پاس چالو ہوجاتا ہے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$ReasonShort</code> کو "کیوں بلاک شدہ" فیلڈ میں حوالہ دیا جاتا ہے جب بائی پاس چالو ہوجاتا ہے.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$DefineOptions"</code> ایک اختیاری سرنی ہے جس میں کلیدی/قدر شامل ہیں، درخواست کی مثال کے مطابق مخصوص ترتیبات کے اختیارات کی وضاحت کرنے کے لئے استعمال کیا جاتا ہے. جب دستخط چالو ہو تو ترتیب کے اختیارات لاگو کیے جائیں گے.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$DefineOptions</code> ایک اختیاری سرنی ہے جس میں کلیدی/قدر شامل ہیں، درخواست کی مثال کے مطابق مخصوص ترتیبات کے اختیارات کی وضاحت کرنے کے لئے استعمال کیا جاتا ہے. جب دستخط چالو ہو تو ترتیب کے اختیارات لاگو کیے جائیں گے.<br /><br /></div>
 
-<div dir="rtl"><code dir="ltr">"$Bypass"</code> سچ ہے جب بائی پاس چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا.<br /><br /></div>
+<div dir="rtl"><code dir="ltr">$Bypass</code> سچ ہے جب بائی پاس چالو ہوجاتا ہے، اور جب غلط نہیں ہوتا.<br /><br /></div>
 
 <div dir="rtl">اپنے ماڈیول میں اس بندش کو استعمال کرنے کے لئے، سب سے پہلے اسے والدین کی دائرہ داری سے وارث کرنے کے لئے یاد رکھیں:<br /><br /></div>
 
@@ -1155,7 +1165,7 @@ if ($CIDRAM['Hostname'] && $CIDRAM['Hostname'] !== $CIDRAM['BlockInfo']['IPAddr'
 
 #### <div dir="rtl">٧.٦ ماڈیول متغیر<br /><br /></div>
 
-<div dir="rtl">ماڈیول ان کے اپنے گنجائش کے اندر عملدرآمد کرتے ہیں، اور کسی ماڈیول کی طرف سے وضاحت کردہ متغیرات، دوسرے ماڈیولز، یا پیراگراف اسکرپٹ تک نہیں پہنچ سکیں گے، جب تک کہ وہ <code dir="ltr">"$CIDRAM"</code> صف میں محفوظ نہ ہو جائیں (ماڈیول پھانسی ختم ہونے کے بعد سب کچھ صاف ہو گیا ہے).<br /><br /></div>
+<div dir="rtl">ماڈیول ان کے اپنے گنجائش کے اندر عملدرآمد کرتے ہیں، اور کسی ماڈیول کی طرف سے وضاحت کردہ متغیرات، دوسرے ماڈیولز، یا پیراگراف اسکرپٹ تک نہیں پہنچ سکیں گے، جب تک کہ وہ <code dir="ltr">$CIDRAM</code> صف میں محفوظ نہ ہو جائیں (ماڈیول پھانسی ختم ہونے کے بعد سب کچھ صاف ہو گیا ہے).<br /><br /></div>
 
 <div dir="rtl">مندرجہ ذیل فہرست کچھ عام متغیر ہیں جو آپ کے ماڈیول کے لئے مفید ہوسکتے ہیں:<br /><br /></div>
 
@@ -1454,7 +1464,7 @@ IP | آپریٹر
 
 <div dir="rtl">CIDRAM ایک ماڈیول فراہم کرتا ہے جو اس API کو چیک کرنے کے لۓ لیتا ہے کہ آیا درخواستوں کا IP ایڈریس مشتبہ اسپیمر سے تعلق رکھتا ہے. ماڈیول ڈیفالٹ کے ذریعہ انسٹال نہیں ہے، لیکن اگر آپ اسے نصب کرنے کا انتخاب کرتے ہیں تو، صارف IP پتے کو Stop Forum Spam API کے ساتھ اشتراک کیا جا سکتا ہے. جب ماڈیول انسٹال ہوجاتا ہے تو، CIDRAM اس API کے ساتھ بات چیت کرتا ہے جب بھی انباؤنڈ درخواست کسی وسائل کی درخواست کرتا ہے جس میں CIDRAM اکثر اسپیمرز کی طرف سے نشانہ بنایا جاتا وسائل کے ایک قسم کے طور پر تسلیم کرتا ہے (مثلا لاگ ان کے صفحات، رجسٹریشن کے صفحات، ای میل کی توثیق کے صفحات، تبصرہ فارم، وغیرہ جیسے).<br /><br /></div>
 
-#### 11.3 LOGGING
+#### <div dir="rtl">١١.٣ لاگ<br /><br /></div>
 
 Logging is an important part of CIDRAM for a number of reasons. It may be difficult to diagnose and resolve false positives when the block events that cause them aren't logged. Without logging block events, it may be difficult to ascertain exactly how performant CIDRAM is in any particular context, and it may be difficult to determine where its shortfalls may be, and what changes may be required to its configuration or signatures accordingly, in order for it to continue functioning as intended. Regardless, logging mightn't be desirable for all users, and remains entirely optional. In CIDRAM, logging is disabled by default. To enable it, CIDRAM must be configured accordingly.
 
@@ -1662,4 +1672,4 @@ CIDRAM doesn't encrypt its cache or any log information. Cache and log encryptio
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 19 اگست 2018 (2018.09.19).</div>
+<div dir="rtl">آخری تازہ کاری: 26 اگست 2018 (2018.09.26).</div>

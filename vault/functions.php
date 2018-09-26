@@ -1811,7 +1811,7 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
         return false;
     }
 
-    /** Perform a match direct string comparison. */
+    /** Perform a match using direct string comparison. */
     foreach ($Criteria as $TestCase) {
         if ($TestCase === $Actual) {
             return true;
@@ -1824,11 +1824,11 @@ $CIDRAM['AuxMatch'] = function ($Criteria, $Actual, $Method = '') use (&$CIDRAM)
 };
 
 /**
- * Used for performing action when an auxiliary rule matches.
+ * Used for performing actions when an auxiliary rule matches.
  *
- * @param string $Action The type of action to take.
+ * @param string $Action The type of action to perform.
  * @param string $Name The name of the rule.
- * @param string $Reason The reason for taking action.
+ * @param string $Reason The reason for performing the action.
  * @return bool Whether the calling parent should return immediately.
  */
 $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
@@ -1852,7 +1852,6 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '') use (&$CIDRAM) {
     /** Bypass. */
     elseif ($Action === 'Bypass') {
         $CIDRAM['Bypass'](true, $Name);
-        return false;
     }
 
     /** Exit. */

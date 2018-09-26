@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.25).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github
 $CIDRAM['lang']['tip_statistics'] = 'مرحبا، {username}.<br />تعرض هذه الصفحة بعض إحصاءات الاستخدام الأساسية المتعلقة بتثبيت CIDRAM.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'ملاحظة: يتم تعطيل تتبع الإحصاءات حاليا، ولكن يمكن تمكينه عبر صفحة التكوين.';
 $CIDRAM['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة CIDRAM (حزمة الأساسية، التوقيعات، الملفات L10N، إلخ).';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – حسابات';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – القواعد المساعدة';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – بيانات ذاكرة التخزين المؤقت';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR حاسبة';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – التكوين';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – مدير الملفات';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – الرئيسية';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP Aggregator';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – اختبار IP';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – التتبع IP';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – تسجيل الدخول';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – سجلات';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – جداول الشبكة الفرعية';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – قائمة الأقسام';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – الإحصاء';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – التحديثات';
+$CIDRAM['lang']['title_login'] = 'تسجيل الدخول';
 $CIDRAM['lang']['warning'] = 'تحذيرات:';
 $CIDRAM['lang']['warning_php_1'] = 'لم يتم دعم إصدار PHP الخاص بك بشكل نشط بعد الآن! يوصى بالتحديث!';
 $CIDRAM['lang']['warning_php_2'] = 'إصدار PHP الخاص بك معرض للخطر بشدة! ينصح بشدة تحديث!';
@@ -432,7 +417,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'بعض الروابط المفيد�
       <li><a href="https://www.megarbl.net/index.php" dir="ltr">MegaRBL.net</a> – يحافظ المعروضة من الاطر المعروفة؛ مفيدة لفحص أنشطة ASN/IP البريد المزعج.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" dir="ltr">Vulnerability Charts</a> – يسرد نسخ آمنة وغير آمنة من مختلف الحزم (HHVM، PHP، phpMyAdmin، Python، إلخ).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/" dir="ltr">Compatibility Charts</a> – قوائم معلومات التوافق لمختلف الحزم (CIDRAM، phpMussel، إلخ).</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>مرحبا، %1$s.<br />
 <br />

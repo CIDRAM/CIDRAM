@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.25).
+ * This file: Front-end handler (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -631,7 +631,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && !$CIDRAM['FE']['CronMode']) {
 elseif ($CIDRAM['QueryVars']['cidram-page'] === '' && !$CIDRAM['FE']['CronMode']) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_home'], $CIDRAM['lang']['tip_home'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_home'], $CIDRAM['lang']['tip_home'], false);
 
     /** CIDRAM version used. */
     $CIDRAM['FE']['ScriptVersion'] = $CIDRAM['ScriptVersion'];
@@ -953,7 +953,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
     if (!$CIDRAM['FE']['ASYNC']) {
 
         /** Page initial prepwork. */
-        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_accounts'], $CIDRAM['lang']['tip_accounts']);
+        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_accounts'], $CIDRAM['lang']['tip_accounts']);
 
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .= sprintf(
@@ -1044,7 +1044,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'accounts' && $CIDRAM['FE']['Per
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_config'], $CIDRAM['lang']['tip_config']);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_config'], $CIDRAM['lang']['tip_config']);
 
     /** Append number localisation JS. */
     $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
@@ -1303,7 +1303,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'config' && $CIDRAM['FE']['Permi
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_cache_data'], $CIDRAM['lang']['tip_cache_data']);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_cache_data'], $CIDRAM['lang']['tip_cache_data']);
 
     /** Initialise cache. */
     $CIDRAM['InitialiseCache']();
@@ -1506,7 +1506,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
     }
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_updates'], $CIDRAM['lang']['tip_updates']);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_updates'], $CIDRAM['lang']['tip_updates']);
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -2009,7 +2009,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'updates' && ($CIDRAM['FE']['Per
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_file_manager'], $CIDRAM['lang']['tip_file_manager'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_file_manager'], $CIDRAM['lang']['tip_file_manager'], false);
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -2382,7 +2382,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
     if (!$CIDRAM['FE']['ASYNC']) {
 
         /** Page initial prepwork. */
-        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_sections_list'], $CIDRAM['lang']['tip_sections_list']);
+        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_sections_list'], $CIDRAM['lang']['tip_sections_list']);
 
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .=
@@ -2461,7 +2461,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'sections' && $CIDRAM['FE']['Per
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_range'], $CIDRAM['lang']['tip_range']);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_range'], $CIDRAM['lang']['tip_range']);
 
     /** Append number localisation JS. */
     $CIDRAM['FE']['JS'] .= $CIDRAM['Number_L10N_JS']() . "\n";
@@ -2503,7 +2503,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'range' && $CIDRAM['FE']['Permis
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_ip_aggregator'], $CIDRAM['lang']['tip_ip_aggregator'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_ip_aggregator'], $CIDRAM['lang']['tip_ip_aggregator'], false);
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -2561,7 +2561,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-aggregator' && $CIDRAM['FE']
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-test' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_ip_test'], $CIDRAM['lang']['tip_ip_test'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_ip_test'], $CIDRAM['lang']['tip_ip_test'], false);
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -2672,7 +2672,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
     if (!$CIDRAM['FE']['ASYNC']) {
 
         /** Page initial prepwork. */
-        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_ip_tracking'], $CIDRAM['lang']['tip_ip_tracking']);
+        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_ip_tracking'], $CIDRAM['lang']['tip_ip_tracking']);
 
         $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -2827,7 +2827,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'ip-tracking' && $CIDRAM['FE']['
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_cidr_calc'], $CIDRAM['lang']['tip_cidr_calc'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_cidr_calc'], $CIDRAM['lang']['tip_cidr_calc'], false);
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 
@@ -2881,7 +2881,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cidr-calc' && $CIDRAM['FE']['Pe
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'statistics' && $CIDRAM['FE']['Permissions'] === 1) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_statistics'], $CIDRAM['lang']['tip_statistics'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_statistics'], $CIDRAM['lang']['tip_statistics'], false);
 
     /** Display how to enable statistics if currently disabled. */
     if (!$CIDRAM['Config']['general']['statistics']) {
@@ -3097,7 +3097,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
     if (!$CIDRAM['FE']['ASYNC']) {
 
         /** Page initial prepwork. */
-        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_aux'], $CIDRAM['lang']['tip_aux']);
+        $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_aux'], $CIDRAM['lang']['tip_aux']);
 
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .= "function delRule(a,i){window.auxD=a,$('POST','',['auxD'],null,function(a){null!=i&&hide(i);w('stateMsg',a)})}";
@@ -3179,7 +3179,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 elseif ($CIDRAM['QueryVars']['cidram-page'] === 'logs' && $CIDRAM['FE']['Permissions'] > 0) {
 
     /** Page initial prepwork. */
-    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['title_logs'], $CIDRAM['lang']['tip_logs'], false);
+    $CIDRAM['InitialPrepwork']($CIDRAM['lang']['link_logs'], $CIDRAM['lang']['tip_logs'], false);
 
     $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 

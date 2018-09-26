@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.25).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github
 $CIDRAM['lang']['tip_statistics'] = '你好，​{username}。​<br />此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。';
 $CIDRAM['lang']['tip_statistics_disabled'] = '注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。';
 $CIDRAM['lang']['tip_updates'] = '你好，​{username}。​<br />更新頁面允許您安裝，​卸載，​和更新CIDRAM的各種組件（核心包，​簽名，​L10N文件，​等等）。';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – 帳戶';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – 輔助規則';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – 緩存數據';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR計算器';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – 配置';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – 文件管理器';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – 主頁';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP聚合器';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP測試';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP跟踪';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – 登錄';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – 日誌';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – 範圍表';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – 章節列表';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – 統計';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – 更新';
+$CIDRAM['lang']['title_login'] = '登錄';
 $CIDRAM['lang']['warning'] = '警告：';
 $CIDRAM['lang']['warning_php_1'] = '您的PHP版本不再被積極支持！​推薦更新！';
 $CIDRAM['lang']['warning_php_2'] = '您的PHP版本非常脆弱！​強烈推薦更新！';
@@ -433,7 +418,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 維護已知垃圾郵件發送者的列表；有用為檢查IP/ASN垃圾郵件活動。</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性圖表</a> – 列出各種軟件包的安全/不安全版本（HHVM，PHP，phpMyAdmin，Python等等）。</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">兼容性圖表</a> – 列出各種軟件包的兼容性信息（CIDRAM，phpMussel，等等）。</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>你好，%1$s。<br />
 <br />

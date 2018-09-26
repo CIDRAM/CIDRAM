@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.09.25).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = '設定ディレクティブの�
 $CIDRAM['lang']['tip_statistics'] = 'こんにちは、​{username}。​<br />このページには、CIDRAMのインストールに関する基本的な使用状況の統計情報が表示されます。';
 $CIDRAM['lang']['tip_statistics_disabled'] = '注意：統計トラッキングは現在オフラインですが、コンフィギュレーション・ページで有効にすることができます。';
 $CIDRAM['lang']['tip_updates'] = 'こんにちは、​{username}。​<br />アップデート・ページは、​CIDRAMのさまざまなコンポーネントはインストール、​アンインストール、​更新が可能です（コアパッケージ、​シグネチャ、​Ｌ１０Ｎファイル、​等）。';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – アカウント';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – 補助ルール';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – キャッシュ・データ';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – ＣＩＤＲ計算機';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – コンフィギュレーション';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – ファイル・マネージャー';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – ホーム';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – ＩＰアグリゲータ';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – ＩＰテスト';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – ＩＰトラッキング';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – ログイン';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – ロゴス';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – 範囲テーブル';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – セクション・リスト';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – 統計';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – アップデート';
+$CIDRAM['lang']['title_login'] = 'ログイン';
 $CIDRAM['lang']['warning'] = '警告：';
 $CIDRAM['lang']['warning_php_1'] = 'あなたのＰＨＰバージョンはもはや積極的にサポートされていません！​​アップデートおすすめします！';
 $CIDRAM['lang']['warning_php_2'] = 'あなたのＰＨＰバージョンは深刻な脆弱性を持っています！​​アップデートを強くおすすめします！';
@@ -432,7 +417,7 @@ $CIDRAM['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – 既知のスパマーリストを維持する；​ＩＰ/ＡＳＮスパム活動のチェックに役立ちます。</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">脆弱性チャート</a> – さまざまなパッケージの安全で安全でないバージョンを一覧表示する（HHVM、PHP、phpMyAdmin、Python等）。</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">互換性チャート</a> – さまざまなパッケージの互換性情報を一覧表示します（CIDRAM、phpMussel、等）。</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>こんにちは、​%1$s。<br />
 <br />

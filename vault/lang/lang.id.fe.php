@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.25).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.co
 $CIDRAM['lang']['tip_statistics'] = 'Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi.';
 $CIDRAM['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll).';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – Akun';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – Aturan Tambahan';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Data Cache';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Kalkulator CIDR';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – Konfigurasi';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – File Manager';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – Halaman Utama';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Agregator IP';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Test';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Pelacakan IP';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – Masuk';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – Log';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – Tabel Rentang';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Daftar Bagian';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistik';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – Pembaruan';
+$CIDRAM['lang']['title_login'] = 'Masuk';
 $CIDRAM['lang']['warning'] = 'Peringatan:';
 $CIDRAM['lang']['warning_php_1'] = 'Versi PHP Anda tidak aktif didukung lagi! Memperbarui dianjurkan!';
 $CIDRAM['lang']['warning_php_2'] = 'Versi PHP Anda sangat rentan! Memperbarui sangat dianjurkan!';
@@ -432,7 +417,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Mempertahankan daftar spammer dikenal; Berguna untuk memeriksa aktivitas spam dari IP/ASN.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Tabel Kerentanan</a> – Mencantumkan berbagai versi dari paket-paket yang aman dan tidak aman (HHVM, PHP, phpMyAdmin, Python, dll).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Tabel Kompatibilitas</a> – Mencantumkan informasi kompatibilitas untuk berbagai paket (CIDRAM, phpMussel, dll).</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>Salam, %1$s.<br />
 <br />

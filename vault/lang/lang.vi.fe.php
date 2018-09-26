@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.09.25).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -198,9 +198,9 @@ $CIDRAM['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $CIDRAM['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
 $CIDRAM['lang']['label_actual'] = 'Thực tế';
 $CIDRAM['lang']['label_aux_actBlk'] = 'chặn';
-$CIDRAM['lang']['label_aux_actByp'] = 'bypass';
-$CIDRAM['lang']['label_aux_actGrl'] = 'greylist';
-$CIDRAM['lang']['label_aux_actWhl'] = 'whitelist';
+$CIDRAM['lang']['label_aux_actByp'] = 'đi qua';
+$CIDRAM['lang']['label_aux_actGrl'] = 'danh sách xám';
+$CIDRAM['lang']['label_aux_actWhl'] = 'danh sách trắng';
 $CIDRAM['lang']['label_aux_create_new_rule'] = 'Tạo quy tắc mới';
 $CIDRAM['lang']['label_aux_menu_action'] = 'Nếu các điều kiện sau được đáp ứng, %s yêu cầu.';
 $CIDRAM['lang']['label_aux_menu_method'] = 'Sử dụng %s để kiểm tra các điều kiện.';
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/
 $CIDRAM['lang']['tip_statistics'] = 'Xin chào, {username}.<br />Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Lưu ý: Giám sát thống kê hiện bị vô hiệu hóa, nhưng có thể được kích hoạt thông qua trang cấu hình.';
 $CIDRAM['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – Tài Khoản';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – Quy tắc phụ trợ';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Dữ liệu cache';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – Máy Tính CIDR';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – Cấu Hình';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Quản Lý Tập Tin';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – Trang Chủ';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – Tập Hợp IP';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – Kiểm Tra IP';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – Giám sát IP';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – Đăng Nhập';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – Bản Ghi';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – Bảng Dãy';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Danh sách phần';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Số liệu thống kê';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – Cập Nhật';
+$CIDRAM['lang']['title_login'] = 'Đăng Nhập';
 $CIDRAM['lang']['warning'] = 'Cảnh báo:';
 $CIDRAM['lang']['warning_php_1'] = 'Phiên bản PHP của bạn không được hỗ trợ tích cực nữa! Đang cập nhật được khuyến khích!';
 $CIDRAM['lang']['warning_php_2'] = 'Phiên bản PHP của bạn rất dễ bị tổn thương! Đang cập nhật được khuyến khích mạnh mẽ!';
@@ -432,7 +417,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<
       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Duy trì danh sách các spammer được biết; Hữu ích cho việc kiểm tra các hoạt động thư rác từ các IP/ASN.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Danh sách dễ bị tổn thương</a> – Liệt kê các phiên bản an toàn và không an toàn của các gói khác nhau (HHVM, PHP, phpMyAdmin, Python, vv).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Danh sách tương thích</a> – Liệt kê thông tin tương thích cho các gói khác nhau (CIDRAM, phpMussel, vv).</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>Xin chào, %1$s.<br />
 <br />

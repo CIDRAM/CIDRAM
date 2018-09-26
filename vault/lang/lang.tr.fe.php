@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.09.25).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Çeşitli yapılandırma yönerg
 $CIDRAM['lang']['tip_statistics'] = 'Merhaba, {username}.<br />Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Not: İstatistik izleme şu anda devre dışı, ancak yapılandırma sayfası aracılığıyla etkinleştirilebilir.';
 $CIDRAM['lang']['tip_updates'] = 'Merhaba, {username}.<br />Güncellemeler sayfası, CIDRAM\'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları vb.) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar.';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – Hesaplar';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – Yardımcı Kurallar';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Önbellek Verileri';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR Hesaplayıcı';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – Yapılandırma';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Dosya Yöneticisi';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – Ana Sayfa';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP Toplayıcı';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP Testi';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP İzleme';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – Giriş';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – Kayıtlar';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – İmza Tabloları';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Bölüm Listeleri';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – İstatistik';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – Güncellemeler';
+$CIDRAM['lang']['title_login'] = 'Giriş';
 $CIDRAM['lang']['warning'] = 'Uyarılar:';
 $CIDRAM['lang']['warning_php_1'] = 'PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!';
 $CIDRAM['lang']['warning_php_2'] = 'PHP sürümünüz ağır savunmasız! Güncelleme önerilir!';
@@ -432,7 +417,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<
       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Bilinen spam göndericilerinin listelerini sağlar; IP/ASN spam etkinliklerini kontrol etmek için yararlıdır.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Güvenlik Açığı Tabloları</a> – Çeşitli paketler (HHVM, PHP, phpMyAdmin, Python, vb.) güvenli/güvensiz sürümlerini listeler.</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Uyumluluk Tabloları</a> – Çeşitli paketler (CIDRAM, phpMussel, vb.) için uyumluluk bilgilerini listeler.</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>Merhaba, %1$s.<br />
 <br />

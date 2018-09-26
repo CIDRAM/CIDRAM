@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.09.25).
+ * This file: Swedish language data for the front-end (last modified: 2018.09.26).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -394,22 +394,7 @@ $CIDRAM['lang']['tip_see_the_documentation'] = 'Se <a href="https://github.com/C
 $CIDRAM['lang']['tip_statistics'] = 'Hallå, {username}.<br />Den här sidan visar en viss användarstatistik för din CIDRAM-installation.';
 $CIDRAM['lang']['tip_statistics_disabled'] = 'Notera: Statistikspårning är för närvarande inaktiverad, men kan aktiveras via konfigurationssidan.';
 $CIDRAM['lang']['tip_updates'] = 'Hallå, {username}.<br />Du kan installera, avinstallera och uppdatera de olika komponenterna i CIDRAM (kärnpaketet, signaturer, L10N-filer, osv) med hjälp av uppdateringssidan.';
-$CIDRAM['lang']['title_accounts'] = 'CIDRAM – Konton';
-$CIDRAM['lang']['title_aux'] = 'CIDRAM – Hjälpregler';
-$CIDRAM['lang']['title_cache_data'] = 'CIDRAM – Cacherdata';
-$CIDRAM['lang']['title_cidr_calc'] = 'CIDRAM – CIDR-Kalkylator';
-$CIDRAM['lang']['title_config'] = 'CIDRAM – Konfiguration';
-$CIDRAM['lang']['title_file_manager'] = 'CIDRAM – Filhanterare';
-$CIDRAM['lang']['title_home'] = 'CIDRAM – Hem';
-$CIDRAM['lang']['title_ip_aggregator'] = 'CIDRAM – IP-Aggregator';
-$CIDRAM['lang']['title_ip_test'] = 'CIDRAM – IP-Test';
-$CIDRAM['lang']['title_ip_tracking'] = 'CIDRAM – IP-Spårning';
-$CIDRAM['lang']['title_login'] = 'CIDRAM – Inloggning';
-$CIDRAM['lang']['title_logs'] = 'CIDRAM – Loggfiler';
-$CIDRAM['lang']['title_range'] = 'CIDRAM – Range Tabeller';
-$CIDRAM['lang']['title_sections_list'] = 'CIDRAM – Sektionslista';
-$CIDRAM['lang']['title_statistics'] = 'CIDRAM – Statistik';
-$CIDRAM['lang']['title_updates'] = 'CIDRAM – Uppdateringar';
+$CIDRAM['lang']['title_login'] = 'Inloggning';
 $CIDRAM['lang']['warning'] = 'Varningar:';
 $CIDRAM['lang']['warning_php_1'] = 'Din PHP-version stöds inte aktivt längre! Uppdatering rekommenderas!';
 $CIDRAM['lang']['warning_php_2'] = 'Din PHP-version är allvarligt sårbar! Uppdatering rekommenderas starkt!';
@@ -432,7 +417,7 @@ $CIDRAM['lang']['info_some_useful_links'] = 'Några användbara länkar:<ul>
       <li><a href="https://www.megarbl.net/index.php">MegaRBL.net</a> – Upprätthåller listor över kända spammare; Användbar för att kontrollera IP/ASN-spamaktiviteter.</li>
       <li><a href="https://maikuolan.github.io/Vulnerability-Charts/">Sårbarhetstabeller</a> – Listar säkra/osäkra versioner av olika paket (HHVM, PHP, phpMyAdmin, Python, osv).</li>
       <li><a href="https://maikuolan.github.io/Compatibility-Charts/">Kompatibilitetstabeller</a> – Visar kompatibilitetsinformation för olika paket (CIDRAM, phpMussel, osv).</li>
-        </ul>';
+    </ul>';
 
 $CIDRAM['lang']['msg_template_2fa'] = '<center><p>Hallå, %1$s.<br />
 <br />

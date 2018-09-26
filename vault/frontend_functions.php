@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.24).
+ * This file: Front-end functions file (last modified: 2018.09.26).
  */
 
 /**
@@ -2496,7 +2496,7 @@ $CIDRAM['RangeTablesHandler'] = function ($IPv4, $IPv6) use (&$CIDRAM) {
 $CIDRAM['InitialPrepwork'] = function ($Title = '', $Tips = '', $JS = true) use (&$CIDRAM) {
 
     /** Set page title. */
-    $CIDRAM['FE']['FE_Title'] = $Title;
+    $CIDRAM['FE']['FE_Title'] = 'CIDRAM – ' . $Title;
 
     /** Fetch and prepare username. */
     if ($Username = (empty($CIDRAM['FE']['UserRaw']) ? '' : $CIDRAM['FE']['UserRaw'])) {

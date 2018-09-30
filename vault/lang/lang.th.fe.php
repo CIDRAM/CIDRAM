@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2018.09.26).
+ * This file: Thai language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL ไฟล์ CSS สำ�
 $CIDRAM['lang']['config_template_data_theme'] = 'ธีมเริ่มต้นที่จะใช้สำหรับ CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'คุณแน่ใจหรือไม่ว่าต้องการ "%s"?';
 $CIDRAM['lang']['field_2fa'] = 'โค้ด 2FA';
+$CIDRAM['lang']['field_Request_Method'] = 'ขอวิธีการ';
 $CIDRAM['lang']['field_activate'] = 'เปิดใช้งาน';
 $CIDRAM['lang']['field_add_more_conditions'] = 'เพิ่มเงื่อนไขเพิ่มเติม';
 $CIDRAM['lang']['field_banned'] = 'ถูกห้าม';

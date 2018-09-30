@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bangla language data for the front-end (last modified: 2018.09.26).
+ * This file: Bangla language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'কাস্টম থিম�
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM এর জন্য ডিফল্ট থিম ব্যবহার করুন।';
 $CIDRAM['lang']['confirm_action'] = 'আপনি কি "%s" চান?';
 $CIDRAM['lang']['field_2fa'] = '2FA কোড';
+$CIDRAM['lang']['field_Request_Method'] = 'অনুরোধ পদ্ধতি';
 $CIDRAM['lang']['field_activate'] = 'সক্রিয় করা';
 $CIDRAM['lang']['field_add_more_conditions'] = 'আরো শর্ত যোগ করুন';
 $CIDRAM['lang']['field_banned'] = 'নিষিদ্ধ';

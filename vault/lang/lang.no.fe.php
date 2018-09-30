@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Norwegian language data for the front-end (last modified: 2018.09.26).
+ * This file: Norwegian language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL for CSS-fil for tilpassed
 $CIDRAM['lang']['config_template_data_theme'] = 'Standard tema som skal brukes til CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Er du sikker på at du vil "%s"?';
 $CIDRAM['lang']['field_2fa'] = '2FA kode';
+$CIDRAM['lang']['field_Request_Method'] = 'Forespørselsmetode';
 $CIDRAM['lang']['field_activate'] = 'Aktiver';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Legg til en ny betingelse';
 $CIDRAM['lang']['field_banned'] = 'Utestengt';

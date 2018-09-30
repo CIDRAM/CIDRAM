@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2018.09.26).
+ * This file: Vietnamese language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL của tập tin CSS cho c
 $CIDRAM['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Bạn có chắc chắn muốn "%s" không?';
 $CIDRAM['lang']['field_2fa'] = 'Mã 2FA';
+$CIDRAM['lang']['field_Request_Method'] = 'Phương thức yêu cầu';
 $CIDRAM['lang']['field_activate'] = 'Kích hoạt';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Thêm các điều kiện khác';
 $CIDRAM['lang']['field_banned'] = 'Bị cấm';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2018.09.24).
+ * This file: Functions file (last modified: 2018.09.30).
  */
 
 /**
@@ -1867,9 +1867,15 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
         return;
     }
 
+    /** Possibly used by some rules, but not used elsewhere. */
+    if (!isset($CIDRAM['Request_Method'])) {
+        $CIDRAM['Request_Method'] = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : '';
+    }
+
     /** Potential sources. */
     static $Sources = [
         'Hostname',
+        'Request_Method',
         'BlockInfo' => [
             'IPAddr',
             'IPAddrResolved',

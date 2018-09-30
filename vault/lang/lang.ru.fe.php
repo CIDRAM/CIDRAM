@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2018.09.26).
+ * This file: Russian language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL файла CSS для п�
 $CIDRAM['lang']['config_template_data_theme'] = 'Стандартная тема для CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Вы действительно хотите «%s»?';
 $CIDRAM['lang']['field_2fa'] = 'Код 2FA';
+$CIDRAM['lang']['field_Request_Method'] = 'Метод запроса';
 $CIDRAM['lang']['field_activate'] = 'Активировать';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Добавить дополнительные условия';
 $CIDRAM['lang']['field_banned'] = 'Запрещенный';

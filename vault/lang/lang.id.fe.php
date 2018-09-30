@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2018.09.26).
+ * This file: Indonesian language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL file CSS untuk tema kusto
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema default untuk CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Anda yakin ingin "%s"?';
 $CIDRAM['lang']['field_2fa'] = 'Kode 2FA';
+$CIDRAM['lang']['field_Request_Method'] = 'Metode permintaan';
 $CIDRAM['lang']['field_activate'] = 'Mengaktifkan';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Tambahkan lebih banyak kondisi';
 $CIDRAM['lang']['field_banned'] = 'Dilarang';

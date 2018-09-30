@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2018.09.26).
+ * This file: Front-end functions file (last modified: 2018.09.30).
  */
 
 /**
@@ -2831,6 +2831,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         'WhyReason' => $CIDRAM['lang']['field_whyreason'],
         'ReasonMessage' => $CIDRAM['lang']['field_reasonmessage'],
         'rURI' => $CIDRAM['lang']['field_rURI'],
+        'Request_Method' => $CIDRAM['lang']['field_Request_Method'],
         'Hostname' => $CIDRAM['lang']['field_hostname']
     ]);
 

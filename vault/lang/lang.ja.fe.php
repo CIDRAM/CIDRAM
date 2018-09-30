@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2018.09.26).
+ * This file: Japanese language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'カスタムテーマのＣ�
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAMに使用するデフォルトテーマ。';
 $CIDRAM['lang']['confirm_action'] = 'あなたは「%s」したいですか？';
 $CIDRAM['lang']['field_2fa'] = '２ＦＡコード';
+$CIDRAM['lang']['field_Request_Method'] = 'リクエスト・メソッド';
 $CIDRAM['lang']['field_activate'] = 'アクティブにする';
 $CIDRAM['lang']['field_add_more_conditions'] = '条件を追加する';
 $CIDRAM['lang']['field_banned'] = '禁止された';

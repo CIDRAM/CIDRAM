@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.26).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = '自定义主题的CSS文件UR
 $CIDRAM['lang']['config_template_data_theme'] = '用于CIDRAM的默认主题。';
 $CIDRAM['lang']['confirm_action'] = '你确定要“%s”吗？';
 $CIDRAM['lang']['field_2fa'] = '2FA代码';
+$CIDRAM['lang']['field_Request_Method'] = '请求方法';
 $CIDRAM['lang']['field_activate'] = '启用';
 $CIDRAM['lang']['field_add_more_conditions'] = '添加更多条件';
 $CIDRAM['lang']['field_banned'] = '禁止';

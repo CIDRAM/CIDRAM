@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2018.09.26).
+ * This file: Turkish language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosya
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM için kullanılacak varsayılan tema.';
 $CIDRAM['lang']['confirm_action'] = '"%s" istediğinden emin misin?';
 $CIDRAM['lang']['field_2fa'] = '2FA kodu';
+$CIDRAM['lang']['field_Request_Method'] = 'İstek yöntemi';
 $CIDRAM['lang']['field_activate'] = 'Etkinleştir';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Daha fazla koşul ekle';
 $CIDRAM['lang']['field_banned'] = 'Yasaklandı';

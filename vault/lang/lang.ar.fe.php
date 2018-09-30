@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2018.09.26).
+ * This file: Arabic language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL ملف CSS لمواضيع
 $CIDRAM['lang']['config_template_data_theme'] = 'الموضوع الافتراضي لاستخدام CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'هل أنت متأكد من أنك تريد "%s"؟';
 $CIDRAM['lang']['field_2fa'] = 'كود 2FA';
+$CIDRAM['lang']['field_Request_Method'] = 'Request method';
 $CIDRAM['lang']['field_activate'] = 'جعله نشطة';
 $CIDRAM['lang']['field_add_more_conditions'] = 'إضافة المزيد من الشروط';
 $CIDRAM['lang']['field_banned'] = 'محظور';

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Swedish language data for the front-end (last modified: 2018.09.26).
+ * This file: Swedish language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-filadress för anpassade 
 $CIDRAM['lang']['config_template_data_theme'] = 'Standardtema som ska användas för CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Är du säker på att du vill "%s"?';
 $CIDRAM['lang']['field_2fa'] = '2FA-kod';
+$CIDRAM['lang']['field_Request_Method'] = 'Förfrågan metod';
 $CIDRAM['lang']['field_activate'] = 'Aktivera';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Lägg till fler villkor';
 $CIDRAM['lang']['field_banned'] = 'Förbjudna';

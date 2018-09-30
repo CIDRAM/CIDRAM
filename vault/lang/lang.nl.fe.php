@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2018.09.26).
+ * This file: Dutch language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'CSS-bestand URL voor aangepas
 $CIDRAM['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Weet u zeker dat u wilt "%s"?';
 $CIDRAM['lang']['field_2fa'] = '2FA-code';
+$CIDRAM['lang']['field_Request_Method'] = 'Verzoek methode';
 $CIDRAM['lang']['field_activate'] = 'Activeren';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Voeg meer voorwaarden';
 $CIDRAM['lang']['field_banned'] = 'Verboden';

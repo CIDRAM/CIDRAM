@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2018.09.26).
+ * This file: Hindi language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'कस्टम थीम क
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM के इस्तेमाल के लिए डिफ़ॉल्ट थीम।';
 $CIDRAM['lang']['confirm_action'] = 'क्या आप वाकई "%s" चाहते हैं?';
 $CIDRAM['lang']['field_2fa'] = '2FA कोड';
+$CIDRAM['lang']['field_Request_Method'] = 'अनुरोध विधि';
 $CIDRAM['lang']['field_activate'] = 'सक्रिय करें';
 $CIDRAM['lang']['field_add_more_conditions'] = 'और शर्तें जोड़ें';
 $CIDRAM['lang']['field_banned'] = 'प्रतिबंधित';

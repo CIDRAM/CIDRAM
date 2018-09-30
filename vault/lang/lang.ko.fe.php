@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2018.09.26).
+ * This file: Korean language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = '사용자 정의 테마의 CS
 $CIDRAM['lang']['config_template_data_theme'] = 'CIDRAM에 사용할 기본 테마.';
 $CIDRAM['lang']['confirm_action'] = '"%s"하시겠습니까?';
 $CIDRAM['lang']['field_2fa'] = '2FA 코드';
+$CIDRAM['lang']['field_Request_Method'] = '요청 방법';
 $CIDRAM['lang']['field_activate'] = '활성화';
 $CIDRAM['lang']['field_add_more_conditions'] = '조건 추가';
 $CIDRAM['lang']['field_banned'] = '금지 된';

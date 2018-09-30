@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.26).
+ * This file: Front-end handler (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3035,12 +3035,12 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         /** Construct new rule conditions. */
         for ($CIDRAM['Iteration'] = 0; $CIDRAM['Iteration'] < $CIDRAM['AuxConditions']; $CIDRAM['Iteration']++) {
 
-            /** Skip if something went wrong during form submission. */
-            if (!isset(
-                $_POST['conSourceType'][$CIDRAM['Iteration']],
-                $_POST['conIfOrNot'][$CIDRAM['Iteration']],
-                $_POST['conSourceValue'][$CIDRAM['Iteration']]
-            )) {
+            /** Skip if something went wrong during form submission, or if the fields are empty. */
+            if (
+                empty($_POST['conSourceType'][$CIDRAM['Iteration']]) ||
+                empty($_POST['conIfOrNot'][$CIDRAM['Iteration']]) ||
+                empty($_POST['conSourceValue'][$CIDRAM['Iteration']])
+            ) {
                 continue;
             }
 
@@ -3128,6 +3128,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
             'WhyReason' => $CIDRAM['lang']['field_whyreason'],
             'ReasonMessage' => $CIDRAM['lang']['field_reasonmessage'],
             'rURI' => $CIDRAM['lang']['field_rURI'],
+            'Request_Method' => $CIDRAM['lang']['field_Request_Method'],
             'Hostname' => $CIDRAM['lang']['field_hostname']
         ], '~(?: | )?(?:：|:) ?$~');
 

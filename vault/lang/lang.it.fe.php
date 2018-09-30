@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2018.09.26).
+ * This file: Italian language data for the front-end (last modified: 2018.09.30).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -135,6 +135,7 @@ $CIDRAM['lang']['config_template_data_css_url'] = 'URL del file CSS per i temi p
 $CIDRAM['lang']['config_template_data_theme'] = 'Tema predefinito da utilizzare per CIDRAM.';
 $CIDRAM['lang']['confirm_action'] = 'Sei sicuro di voler "%s"?';
 $CIDRAM['lang']['field_2fa'] = 'Codice 2FA';
+$CIDRAM['lang']['field_Request_Method'] = 'Metodo di richiesta';
 $CIDRAM['lang']['field_activate'] = 'Attivarlo';
 $CIDRAM['lang']['field_add_more_conditions'] = 'Aggiungi più condizioni';
 $CIDRAM['lang']['field_banned'] = 'Vietato';

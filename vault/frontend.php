@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.09.30).
+ * This file: Front-end handler (last modified: 2018.10.01).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1399,7 +1399,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                 $CIDRAM['ThisCacheItem']['Len'],
                 $CIDRAM['lang']['label_expires'],
                 $CIDRAM['ThisCacheItem']['Time'],
-                $CIDRAM['lang']['field_delete_file'],
+                $CIDRAM['lang']['field_delete'],
                 $CIDRAM['lang']['label_show']
             ) . "\n";
         }
@@ -1430,7 +1430,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'cache-data' && $CIDRAM['FE']['P
                         $CIDRAM['Config']['general']['timeFormat']
                     ) : $CIDRAM['lang']['label_never']),
                     $CIDRAM['lang']['label_show'],
-                    $CIDRAM['lang']['field_delete_file']
+                    $CIDRAM['lang']['field_delete']
                 ) . "\n";
             }
         }
@@ -2336,7 +2336,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'file-manager' && $CIDRAM['FE'][
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
         $ThisFile['ThisOptions'] = '';
         if (!$ThisFile['Directory'] || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
-            $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $CIDRAM['lang']['field_delete_file'] . '</option>';
+            $ThisFile['ThisOptions'] .= '<option value="delete-file">' . $CIDRAM['lang']['field_delete'] . '</option>';
             $ThisFile['ThisOptions'] .= '<option value="rename-file">' . $CIDRAM['lang']['field_rename_file'] . '</option>';
         }
         if ($ThisFile['CanEdit']) {
@@ -2998,7 +2998,7 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
     }
 
     /** Create new auxiliary rule. */
-    if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_POST['conSourceValue'], $_POST['act'], $_POST['mtd'])) {
+    if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_POST['conSourceValue'], $_POST['act'], $_POST['mtd'], $_POST['logic'])) {
 
         /** Construct new rule array. */
         $CIDRAM['AuxData'][$_POST['ruleName']] = [];
@@ -3009,6 +3009,9 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         } elseif ($_POST['mtd'] === 'mtdWin') {
             $CIDRAM['AuxData'][$_POST['ruleName']]['Method'] = 'WinEx';
         }
+
+        /** Construct new rule matching logic. */
+        $CIDRAM['AuxData'][$_POST['ruleName']]['Logic'] = $_POST['logic'];
 
         /** Construct new rule block reason. */
         if (!empty($_POST['ruleReason'])) {
@@ -3101,6 +3104,20 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .= "function delRule(a,i){window.auxD=a,$('POST','',['auxD'],null,function(a){null!=i&&hide(i);w('stateMsg',a)})}";
+
+        /** Append other auxiliary rules JS. */
+        $CIDRAM['FE']['JS'] .=
+            'var conIn=1,conAdd=\'<select name="conSourceType[]" class="auto">{conSou' .
+            'rces}</select> <select name="conIfOrNot[]" class="auto"><option value="I' .
+            'f">=</option><option value="Not">≠</option></select><input type="text" n' .
+            'ame="conSourceValue[]" placeholder="' .
+            $CIDRAM['lang']['tip_condition_placeholder'] . '" style="width:400px" />' .
+            "',addCondition=function(){var conId='condition'+conIn,t=document.createE" .
+            "lement('div');t.setAttribute('id',conId),t.setAttribute('style','opacity" .
+            ":0.0;animation:xAux 2.0s ease 0s 1 normal'),document.getElementById('con" .
+            "ditions').appendChild(t),document.getElementById(conId).innerHTML=conAdd" .
+            ",setTimeout(function(){document.getElementById(conId).style.opacity='1.0" .
+            "'},1999),conIn++};";
 
         $CIDRAM['FE']['bNav'] = $CIDRAM['lang']['bNav_home_logout'];
 

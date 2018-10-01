@@ -1905,6 +1905,9 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
     /** Iterate through the auxiliary rules. */
     foreach ($CIDRAM['AuxData'] as $Name => $Data) {
 
+        /** Matching logic. */
+        $Logic = empty($Data['Logic']) ? 'Any' : $Data['Logic'];
+
         /** Detailed reason. */
         $Reason = empty($Data['Reason']) ? $Name : $Data['Reason'];
 
@@ -1918,6 +1921,9 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
             if (empty($Data[$Mode])) {
                 continue;
             }
+
+            /** Flag for successful matches. */
+            $Matched = false;
 
             /** Match exceptions. */
             if (!empty($Data[$Mode]['But not if matches'])) {
@@ -1975,10 +1981,16 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                                 foreach ($Data[$Mode]['If matches'][$Source] as $Value) {
                                     /** Perform match. */
                                     if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceKey][$Source], $Method)) {
-                                        /** Match successful. Perform corresponding action. */
+                                        $Matched = true;
+                                        if ($Logic === 'All') {
+                                            continue;
+                                        }
                                         if ($CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
                                             return;
                                         }
+                                        continue 4;
+                                    } elseif ($Logic === 'All') {
+                                        continue 4;
                                     }
                                 }
                             }
@@ -1992,15 +2004,26 @@ $CIDRAM['Aux'] = function () use (&$CIDRAM) {
                         foreach ($Data[$Mode]['If matches'][$SourceArr] as $Value) {
                             /** Perform match. */
                             if ($CIDRAM['AuxMatch']($Value, $CIDRAM[$SourceArr], $Method)) {
-                                /** Match successful. Perform corresponding action. */
+                                $Matched = true;
+                                if ($Logic === 'All') {
+                                    continue;
+                                }
                                 if ($CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
                                     return;
                                 }
+                                continue 3;
+                            } elseif ($Logic === 'All') {
+                                continue 3;
                             }
                         }
                     }
                 }
 
+            }
+
+            /** Perform action for matching rules requiring all conditions to be met. */
+            if ($Logic === 'All' && $Matched && $CIDRAM['AuxAction']($Mode, $Name, $Reason)) {
+                return;
             }
 
         }

@@ -2855,7 +2855,7 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
         /** Begin writing new rule. */
         $Output .= '        <tr class="' . $RuleClass . "\">\n";
         $Output .= '          <td class="h4"><div class="s">' . $Name . "</div></td>\n";
-        $Output .= '          <td class="h4f"><input type="button" onclick="javascript:delRule(\'' . $Name . "','" . $RuleClass . '\')" value="' . $CIDRAM['lang']['field_delete_file'] . "\" /></td>\n";
+        $Output .= '          <td class="h4f"><input type="button" onclick="javascript:delRule(\'' . $Name . "','" . $RuleClass . '\')" value="' . $CIDRAM['lang']['field_delete'] . "\" /></td>\n";
         $Output .= "        </tr>\n        <tr class=\"" . $RuleClass . "\">\n          <td class=\"h3f\" colspan=\"2\">";
 
         /** Detailed reason. */
@@ -2924,8 +2924,15 @@ $CIDRAM['AuxGenerateFEData'] = function () use (&$CIDRAM) {
             }
 
             /** Finish writing conditions list. */
-            $Output .= "\n          </ul>";
+            $Output .= "\n          </ul><br />";
 
+        }
+
+        /** Describe matching logic used. */
+        if (!empty($Data['Logic']) && $Data['Logic'] !== 'Any') {
+            $Output .= '<em>' . $CIDRAM['lang']['label_aux_logic_all'] . '</em>';
+        } else {
+            $Output .= '<em>' . $CIDRAM['lang']['label_aux_logic_any'] . '</em>';
         }
 
         /** Finish writing new rule. */

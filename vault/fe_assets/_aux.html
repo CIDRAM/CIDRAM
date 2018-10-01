@@ -59,7 +59,11 @@
           <td class="h3f" colspan="2">
             <input type="button" onclick="javascript:addCondition()" value="{field_add_more_conditions}" class="auto" />
             <input onclick="javascript:var doSub=!0;document.getElementById('ruleName').value||(doSub=!1,document.getElementById('ruleNameWarn').style.animation='nAux 0.5s ease 0s 1 normal',setTimeout(function(){document.getElementById('ruleNameWarn').style.animation=''},500)),document.getElementById('ruleReason').value||'actBlk'!=document.getElementById('act').value||(doSub=!1,document.getElementById('ruleReasonWarn').style.animation='nAux 0.5s ease 0s 1 normal',setTimeout(function(){document.getElementById('ruleReasonWarn').style.animation=''},500)),doSub&&document.getElementById('auxForm').submit()" type="button" value="{label_aux_create_new_rule}" class="auto" /><br />
-            <div id="conditions"></div>
+            <div id="conditions">
+              <select name="conSourceType[]" class="auto">{conSources}</select>
+              <select name="conIfOrNot[]" class="auto"><option value="If">=</option><option value="Not">≠</option></select>
+              <input type="text" name="conSourceValue[]" placeholder="{tip_condition_placeholder}" style="width:400px" />
+            </div>
           </td>
         </tr>
       </table>

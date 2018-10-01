@@ -3109,8 +3109,8 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
         $CIDRAM['FE']['JS'] .=
             'var conIn=1,conAdd=\'<select name="conSourceType[]" class="auto">{conSou' .
             'rces}</select> <select name="conIfOrNot[]" class="auto"><option value="I' .
-            'f">=</option><option value="Not">≠</option></select><input type="text" n' .
-            'ame="conSourceValue[]" placeholder="' .
+            'f">=</option><option value="Not">≠</option></select> <input type="text" ' .
+            'name="conSourceValue[]" placeholder="' .
             $CIDRAM['lang']['tip_condition_placeholder'] . '" style="width:400px" />' .
             "',addCondition=function(){var conId='condition'+conIn,t=document.createE" .
             "lement('div');t.setAttribute('id',conId),t.setAttribute('style','opacity" .

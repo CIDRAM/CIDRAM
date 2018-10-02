@@ -1475,4 +1475,4 @@ Alternativ gibt es einen kurzen (nicht autoritativen) Überblick über die GDPR/
 ---
 
 
-Zuletzt aktualisiert: 26 September 2018 (2018.09.26).
+Zuletzt aktualisiert: 03 Oktober 2018 (2018.10.03).

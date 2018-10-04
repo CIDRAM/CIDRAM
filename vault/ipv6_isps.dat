@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.265.525
-# Last modified: 2018.09.23
+# Version: 2018.277.977
+# Last modified: 2018.10.05
 
 
 # ---
@@ -567,9 +567,8 @@ Tag: Kyivstar
 
 
 # ASN 13188 ("CONTENT DELIVERY NETWORK LTD").
-# %Listed, Google Malware Dashboard: 0.92%.
-# Stop Forum Spam (SFS) listings: 305,441.
-# Updated: 2018.05.13
+# Stop Forum Spam (SFS) listings: 449,308.
+# Updated: 2018.10.05
 
 2a03:7380::/38 Deny Spam
 2a03:7380:400::/39 Deny Spam
@@ -583,7 +582,8 @@ Tag: Kyivstar
 2a03:7380:2400::/40 Deny Spam
 2a03:7380:2500::/42 Deny Spam
 2a03:7380:2fc0::/42 Deny Spam
-2a03:7380:3000::/39 Deny Spam
+2a03:7380:3000::/40 Deny Spam
+2a03:7380:3180::/41 Deny Spam
 2a03:7380:4000::/41 Deny Spam
 2a03:7380:4080::/42 Deny Spam
 2a03:7380:5400::/41 Deny Spam
@@ -998,10 +998,11 @@ recaptcha:
 # Taiwan, to list this section in their "ignore.dat" file as a means of minimising the potential impact of false
 # positives. A balanced approach for those that may expect some such traffic, but not a lot of it, would be to not
 # ignore this section, but to ensure that the reCAPTCHA feature is enabled in their configuration.
-# %Listed, Google Malware Dashboard: 2.44%.
-# Stop Forum Spam (SFS) listings: 3,391.
-# Updated: 2018.02.18 / Checked: 2018.05.13
+# %Listed, Google Malware Dashboard: 2.06%.
+# Stop Forum Spam (SFS) listings: 8,334.
+# Updated: 2018.10.05
 
+2405:1480::/32 Deny Generic
 2408:8000:1000::/36 Deny Generic
 2408:8020::/30 Deny Generic
 2408:8024::/33 Deny Generic
@@ -1009,6 +1010,16 @@ recaptcha:
 2408:80e0:8000::/33 Deny Generic
 2408:80f0:4000::/34 Deny Generic
 2408:80f0:8000::/33 Deny Generic
+2408:8140:2000::/48 Deny Generic
+2408:8206::/31 Deny Generic
+2408:8208::/30 Deny Generic
+2408:8306::/31 Deny Generic
+2408:8308::/30 Deny Generic
+2408:84e1::/32 Deny Generic
+2408:8606::/31 Deny Generic
+2408:8608::/30 Deny Generic
+2408:8706::/31 Deny Generic
+2408:8708::/30 Deny Generic
 Origin: CN
 Tag: China Unicom 4808
 ---

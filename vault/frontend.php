@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2018.10.01).
+ * This file: Front-end handler (last modified: 2018.10.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3104,6 +3104,18 @@ elseif ($CIDRAM['QueryVars']['cidram-page'] === 'aux' && $CIDRAM['FE']['Permissi
 
         /** Append async globals. */
         $CIDRAM['FE']['JS'] .= "function delRule(a,i){window.auxD=a,$('POST','',['auxD'],null,function(a){null!=i&&hide(i);w('stateMsg',a)})}";
+
+        /** Add new condition onclick event. */
+        $CIDRAM['FE']['JS'] .= sprintf(
+            "var createNewRule=function(){var doSub=!0;%1\$s('ruleName').value||(doSu" .
+            "b=!1,%1\$s('ruleName%2\$snAux 0.5s ease 0s 1 normal',setTimeout(function" .
+            "(){%1\$s('ruleName%2\$s'},500)),%1\$s('ruleReason').value||'actBlk'!=%1" .
+            "\$s('act').value||(doSub=!1,%1\$s('ruleReason%2\$snAux 0.5s ease 0s 1 no" .
+            "rmal',setTimeout(function(){%1\$s('ruleReason%2\$s'},500)),doSub&&%1\$s(" .
+            "'auxForm').submit()};",
+            'document.getElementById',
+            "Warn').style.animation='"
+        );
 
         /** Append other auxiliary rules JS. */
         $CIDRAM['FE']['JS'] .=

@@ -67,7 +67,7 @@ Oder in der `.htaccess` Datei:
 
 #### 2.1 INSTALLATION MIT COMPOSER
 
-Da [CIDRAM bei Packagist registriert ist](https://packagist.org/packages/cidram/cidram) können sie CIDRAM auch mittels composer installieren. Allerdings müssen sie immernoch die Hooks und die Konfiguration vorbereiten. (Siehe manuell installieren, Schritt 3 und 5)
+Da [CIDRAM bei Packagist registriert ist](https://packagist.org/packages/cidram/cidram), können sie CIDRAM auch mittels composer installieren. Allerdings müssen sie immernoch die Hooks und die Konfiguration vorbereiten. (Siehe manuell installieren, Schritt 2 und 5)
 
 `composer require cidram/cidram`
 
@@ -508,8 +508,6 @@ Konfiguration der Signaturen.
 - Eine Liste der IPv6-Signaturdateien, die CIDRAM zu analysieren versuchen sollte, getrennt durch Kommas. Hier können Sie Einträge hinzufügen, wenn Sie zusätzliche IPv6-Signaturdateien in CIDRAM aufnehmen möchten.
 
 ##### "block_cloud"
-<!-- - Blockieren Sie CIDRs identifiziert als zu Web-Hosting/Cloud-Services gehören? Wenn Sie einen API-Dienst von Ihrer Website aus betreiben, oder wenn Sie erwarten dass andere Websites eine Verbindung zu Ihrer Website herstellen, dies auf false (deaktiviert) sollte gesetzt werden. Wenn Sie nicht, dann, dies auf true (aktiviert) sollte gesetzt werden.
- -->
 - CIDRs blokieren, welche zu Web-/Server- Hostern gehören. Wenn sie eine API betreiben oder erwarten, dass sie oft Aufrufe von solchen Servern bekommen sollten sie diese option auf false (nicht blockieren) setzen. Wenn sie solche Anfragen blockieren möchen, setzen sie diese Option auf true [Standarteinstellung]
 
 ##### "block_bogons"

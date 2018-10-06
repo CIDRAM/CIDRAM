@@ -1576,19 +1576,21 @@ It's also possible to truncate individual logfiles when they exceed a certain si
  <li><code dir="ltr">truncate</code> &lt;- <code dir="ltr">general</code></li>
 </ul></div>
 
-##### 11.3.5 IP ADDRESS PSEUDONYMISATION
+##### <div dir="rtl">١١.٣.٥ عنوان IP PSEUDONYMISATION<br /><br /></div>
 
-Firstly, if you're not familiar with the term, "pseudonymisation" refers to the processing of personal data as such that it can't be identified to any specific data subject anymore without supplementary information, and provided that such supplementary information is maintained separately and subject to technical and organisational measures to ensure that personal data can't be identified to any natural person.
+<div dir="rtl">أولاً، إذا لم تكن على دراية بهذا المصطلح، "pseudonymisation" يشير إلى معالجة البيانات الشخصية على هذا النحو بحيث لا يمكن تحديدها لأي موضوع بيانات محدد بعد الآن بدون معلومات إضافية، وشريطة أن يتم الاحتفاظ بهذه المعلومات التكميلية بشكل منفصل وتخضع للتدابير التقنية والتنظيمية لضمان عدم إمكانية تحديد البيانات الشخصية لأي شخص طبيعي.<br /><br /></div>
 
-The following resources can help to explain it in more detail:
-- [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
-- [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
+<div dir="rtl">يمكن أن تساعد الموارد التالية في شرحها بمزيد من التفاصيل:</div>
+<div dir="rtl"><ul>
+ <li><a href="https://www.trust-hub.com/news/what-is-pseudonymisation/">[trust-hub.com] What is pseudonymisation?</a></li>
+ <li><a href="https://en.wikipedia.org/wiki/Pseudonymization">[Wikipedia] Pseudonymization]</a></li>
+</ul></div>
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+<div dir="rtl">في بعض الحالات، قد يُطلب منك قانونًا تنفيذ "anonymisation" أو "pseudonymisation" لأي معلومات PII تم جمعها أو معالجتها أو تخزينها. على الرغم من وجود هذا المفهوم منذ بعض الوقت، GDPR/DSGVO يذكر بشكل ملحوظ ويشجع "pseudonymisation".<br /><br /></div>
 
-CIDRAM is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When CIDRAM pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+<div dir="rtl">إذا أردت، يمكن لـ CIDRAM القيام بذلك لعناوين IP عند الكتابة إلى السجلات. عند الكتابة إلى السجلات، سيتم تمثيل الثمانية النهائية لعناوين IPv4 وكل شيء بعد الجزء الثاني من عناوين IPv6 بواسطة "x" (تقريب عناوين IPv4 إلى العنوان الأولي للشبكة الفرعية الـ 24 التي تدخلها، وعناوين IPv6 إلى العنوان الأولي للشبكة الفرعية 32 التي تدخلها).<br /><br /></div>
 
-*Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
+<div dir="rtl"><em>ملحوظة: ميزة تتبع IP من CIDRAM لا تملك هذه القدرة. إذا كانت هذه مشكلة بالنسبة لك، فقد يكون من الأفضل تعطيل تتبع IP بالكامل. ويمكن تحقيق ذلك عن طريق تعيين <code dir="ltr">track_mode</code> إلى <code dir="ltr">false</code> وعن طريق تجنب أي وحدات.</em><br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>
@@ -1596,11 +1598,11 @@ CIDRAM is able to pseudonymise IP addresses when logging them, if this is someth
  <li><code dir="ltr">pseudonymise_ip_addresses</code> &lt;- <code dir="ltr">legal</code></li>
 </ul></div>
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### <div dir="rtl">١١.٣.٦ حذف معلومات السجل<br /><br /></div>
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+<div dir="rtl">إذا كنت ترغب في منع تسجيل أنواع معينة من المعلومات بالكامل، فيمكنك القيام بذلك. يوفر CIDRAM توجيهات التهيئة للتحكم في ما إذا كانت عناوين IP وأسماء المضيفات ووكلاء المستخدمين مدرجة في السجلات. بشكل افتراضي، وعند توفرها، يتم تسجيل نقاط البيانات الثلاثة جميعها. يؤدي تعيين أي من توجيهات التهيئة هذه إلى <code dir="ltr">true</code> إلى حذف المعلومات المقابلة من السجلات.<br /><br /></div>
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+<div dir="rtl"><em>ملحوظة: لا يوجد سبب لاستخدام pseudonymisation لعناوين IP عند حذف عناوين IP من السجلات بالكامل.</em><br /><br /></div>
 
 <div dir="rtl">خيارات التكوين ذات الصلة:<br /></div>
 <div dir="rtl"><ul>

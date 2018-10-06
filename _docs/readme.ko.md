@@ -45,7 +45,7 @@ CIDRAM 저작권 2016 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 3) 콘텐츠 (CIDRAM 본체와 파일)을 먼저 정한 디렉토리에 업로드합니다. (`*.txt`또는 `*.md`파일 업로드 필요는 없지만, 대개는 모든 업로드 해달라고해도됩니다).
 
-4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). 간단히 말해서 : 패키지가 제대로 작동하려면 PHP가`vault` 디렉토리에서 파일을 읽고 쓸 수 있어야합니다. PHP가`vault` 디렉토리에 쓸 수 없다면 많은 것들 (업데이트, 로깅 등)은 불가능합니다. PHP가`vault` 디렉토리에서 읽을 수 없다면 패키지는 전혀 작동하지 않을 것입니다. 최적의 보안을 위해, `vault` 디렉토리는 공개적으로 접근 할 수 없어야합니다 (`vault` 디렉토리가 공개적으로 액세스 가능한 경우, `config.ini` 나`frontend.dat '에 포함 된 정보와 같은 민감한 정보는 잠재적 인 공격자에게 노출 될 수 있습니다).
+4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다). 간단히 말해서 : 패키지가 제대로 작동하려면 PHP가`vault` 디렉토리에서 파일을 읽고 쓸 수 있어야합니다. PHP가`vault` 디렉토리에 쓸 수 없다면 많은 것들 (업데이트, 로깅 등)은 불가능합니다. PHP가`vault` 디렉토리에서 읽을 수 없다면 패키지는 전혀 작동하지 않을 것입니다. 최적의 보안을 위해, `vault` 디렉토리는 공개적으로 접근 할 수 없어야합니다 (`vault` 디렉토리가 공개적으로 액세스 가능한 경우, `config.ini` 나`frontend.dat` 에 포함 된 정보와 같은 민감한 정보는 잠재적 인 공격자에게 노출 될 수 있습니다).
 
 5) 그 다음에 시스템 또는 CMS에 CIDRAM를 연결합니다. 방법에는 여러 가지가 있지만 가장 쉬운 것은`require`과`include`에서 스크립트를 시스템 또는 CMS 코어 파일의 첫 부분에 기재하는 방법입니다. (코어 파일은 사이트의 어떤 페이지에 접근이 있어도 반드시로드되는 파일입니다). 일반적으로는 `/includes`또는 `/assets`또는 `/functions`같은 디렉토리에있는 파일에서 `init.php`, `common_functions.php`, `functions.php`라는 파일 이름을 붙일 수 있습니다. 실제로 어떤 파일인지는 찾아도 바닥입니다해야합니다. 잘 모르는 경우 CIDRAM 지원 포럼을 참조하거나 GitHub 때문에 CIDRAM 문제의 페이지 또는 알려주십시오 (CMS 정보 필수). 나 자신을 포함하여 사용자에 유사한 CMS를 다룬 경험이 있으면, 무엇인가의 지원을 제공 할 수 있습니다. 코어 파일이 발견 된 경우, (`require` 또는`include`을 사용하여) 다음 코드를 파일의 맨 위에 삽입하십시오. 그러나 따옴표로 둘러싸인 부분은`loader.php` 파일의 정확한 주소 (HTTP 주소가 아닌 로컬 주소 전술의 vault 주소와 유사)로 바꿉니다.
 
@@ -1370,9 +1370,9 @@ Conversely, if you're required to retain logs for an extended period of time, yo
 - `general` -> `log_rotation_limit`
 - `general` -> `log_rotation_action`
 
-##### 11.3.4 LOG TRUNCATION
+##### 11.3.4 로그 자르기
 
-It's also possible to truncate individual logfiles when they exceed a certain size, if this is something you might need or want to do.
+원하는 경우 특정 크기를 초과하면 개별 로그 파일을자를 수 있습니다.
 
 *관련 설정 지시어 :*
 - `general` -> `truncate`
@@ -1385,21 +1385,21 @@ It's also possible to truncate individual logfiles when they exceed a certain si
 - [[trust-hub.com] What is pseudonymisation?](https://www.trust-hub.com/news/what-is-pseudonymisation/)
 - [[Wikipedia] Pseudonymization](https://en.wikipedia.org/wiki/Pseudonymization)
 
-In some circumstances, you may be legally required to anonymise or pseudonymise any PII collected, processed, or stored. Although this concept has existed for quite some time now, GDPR/DSGVO notably mentions, and specifically encourages "pseudonymisation".
+어떤 경우에는, 수집, 처리 또는 저장되는 "PII"에 대해 "anonymisation"또는 "pseudonymisation"을 구현할 법적 구속을받을 수 있습니다. 이 개념은 현재 상당 기간 존재 해 왔지만 GDPR/DSGVO는 "pseudonymisation"을 언급하고 장려합니다.
 
-CIDRAM is able to pseudonymise IP addresses when logging them, if this is something you might need or want to do. When CIDRAM pseudonymises IP addresses, when logged, the final octet of IPv4 addresses, and everything after the second part of IPv6 addresses is represented by an "x" (effectively rounding IPv4 addresses to the initial address of the 24th subnet they factor into, and IPv6 addresses to the initial address of the 32nd subnet they factor into).
+원하는 경우 CIDRAM은 IP 주소를 기록 할 때이 작업을 수행 할 수 있습니다. 기록 될 때 IPv4 주소의 마지막 옥텟과 IPv6 주소의 두 번째 부분 이후의 모든 항목은 "x"로 표시됩니다. 이것은 본질적으로 IPv4 주소를 24 번째 서브넷 요소의 초기 주소로 반올림하고 IPv6 주소를 32 번째 서브넷 요소의 초기 주소로 반올림합니다.
 
-*Note: CIDRAM's IP address pseudonymisation process doesn't affect CIDRAM's IP tracking feature. If this is a problem for you, it may be best to disable IP tracking entirely. This can be achieved by setting `track_mode` to `false` and by avoiding any modules.*
+*노트 : CIDRAM의 IP 주소 pseudonymisation 프로세스는 CIDRAM의 IP 추적 기능에 영향을 미치지 않습니다. 이것이 당신에게 문제가된다면, IP 추적을 완전히 비활성화하는 것이 가장 좋습니다. 이것은 `track_mode`를 `false`로 설정하고 모듈을 피함으로써 이루어질 수 있습니다.*
 
 *관련 설정 지시어 :*
 - `signatures` -> `track_mode`
 - `legal` -> `pseudonymise_ip_addresses`
 
-##### 11.3.6 OMITTING LOG INFORMATION
+##### 11.3.6 로그 정보 생략
 
-If you want to take it a step further by preventing specific types of information from being logged entirely, this is also possible to do. CIDRAM provides configuration directives to control whether IP addresses, hostnames, and user agents are included in logs. By default, all three of these data points are included in logs when available. Setting any of these configuration directives to `true` will omit the corresponding information from logs.
+특정 유형의 정보가 전적으로 기록되는 것을 방지하여 한 걸음 더 나아가고 싶다면 이렇게하는 것도 가능합니다. CIDRAM은 IP 주소, 호스트 이름 및 사용자 에이전트가 로그에 포함되는지 여부를 제어하는 구성 지정 문을 제공합니다. 기본적으로 이러한 데이터 포인트 세 개가 모두 사용 가능한 경우 로그에 포함됩니다. 이러한 설정 지시어를 `true`로 설정하면 로그에서 해당 정보가 생략됩니다.
 
-*Note: There's no reason to pseudonymise IP addresses when omitting them from logs entirely.*
+*노트 : 로그에서 IP 주소를 완전히 생략 할 때 IP 주소 pseudonymisation을 사용할 이유가 없습니다.*
 
 *관련 설정 지시어 :*
 - `legal` -> `omit_ip`

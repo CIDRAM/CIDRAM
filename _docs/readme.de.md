@@ -329,21 +329,11 @@ Generelle Konfiguration von CIDRAM.
 - Name einer Apache-Stil-Datei zu protokollieren alle blockierten Zugriffsversuche. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 ##### "logfileSerialized"
-- Name einer Datei in welcher serialisiert alle blokierten zugriffsversuche Protokolliert werden. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+- Name einer Datei zu protokollieren alle blockierten Zugriffsversuche (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
-*Nützlicher Tipp: Wenn Sie wollen, können Sie Datum/Uhrzeit-Information im Namen der Protokolldateien verwenend.*
+*Nützlicher Tipp: Wenn du willst, Sie können Datum/Uhrzeit-Information den Namen der Protokolldateien anhängen, durch diese im Namen einschließlich: `{yyyy}` für die komplette Jahr, `{yy}` für abgekürzte Jahr, `{mm}` für Monate, `{dd}` für Tag, `{hh}` für Stunde.*
 
-Platzhalter|Beschreibung|Beispiel
---- | --- | ---
-`{yyyy}`|Komplettes  Jahr|2018
-`{yy}`|Abgekürtztes Jahr|18
-`{mm}`|Monat|08
-`{dd}`|Tag|20
-`{hh}`|Stunde|12
-
-_Beispiele anhand des 20.08.2018 um 12:06_
-
-*Beispiele:*
+*Beispielen:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*

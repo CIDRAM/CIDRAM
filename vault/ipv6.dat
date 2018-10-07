@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6.dat
 
-# Version: 2018.277.977
-# Last modified: 2018.10.05
+# Version: 2018.279.250
+# Last modified: 2018.10.07
 
 
 # ---
@@ -217,14 +217,13 @@ Tag: Masterhost
 
 
 # ASN 26496 ("GoDaddy.com, LLC").
-# %Listed, Google Malware Dashboard: 0.89%.
-# Stop Forum Spam (SFS) listings: 3,010.
-# Updated: 2016.04.18 / Checked: 2018.05.23
+# %Listed, Google Malware Dashboard: 0.72%.
+# Stop Forum Spam (SFS) listings: 4,769.
+# Updated: 2018.10.07
 
 2a00:1168::/32 Deny Cloud
 Origin: NL
 2407:1c00::/32 Deny Cloud
-Origin: SG
 2603::/20 Deny Cloud
 2607:f208::/32 Deny Cloud
 Origin: US
@@ -1340,9 +1339,9 @@ Tag: Psychz Networks
 
 
 # ASN 36114 ("Versaweb, LLC").
-# %Listed, Google Malware Dashboard: 2.49%.
-# Stop Forum Spam (SFS) listings: 492.
-# Updated: 2016.01.23 / Checked: 2018.05.13
+# %Listed, Google Malware Dashboard: 0.36%.
+# Stop Forum Spam (SFS) listings: 276.
+# Updated: 2016.01.23 / Checked: 2018.10.07
 
 2605:6f80::/40 Deny Cloud
 Origin: US
@@ -5527,20 +5526,19 @@ Tag: CloudSol
 
 
 # ASN 55720 ("Gigabit Hosting Sdn Bhd").
-# %Listed, Google Malware Dashboard: 7.13%.
-# Stop Forum Spam (SFS) listings: 110.
-# Updated: 2018.05.13
+# %Listed, Google Malware Dashboard: 5.41%.
+# Stop Forum Spam (SFS) listings: 174.
+# Updated: 2018.10.07
 
 2407:a480::/32 Deny Cloud
 Origin: CN
 2402:90c0::/32 Deny Cloud
 Origin: HK
 2400:5680::/32 Deny Cloud
+2401:340::/32 Deny Cloud
 2402:9500::/32 Deny Cloud
 2407:1100::/32 Deny Cloud
 Origin: MY
-2a0a:da40::/29 Deny Cloud
-Origin: NL
 Tag: Gigabit Hosting
 
 
@@ -5847,9 +5845,9 @@ Tag: Hostio Solutions B.V
 
 
 # ASN 23338 ("DCS Pacific Star, LLC").
-# %Listed, Google Malware Dashboard: 9.52%.
-# Stop Forum Spam (SFS) listings: 629.
-# Updated: 2018.05.18
+# %Listed, Google Malware Dashboard: 3.77%.
+# Stop Forum Spam (SFS) listings: 672.
+# Updated: 2018.05.18 / Checked: 2018.10.07
 
 2606:b680::/32 Deny Cloud
 Origin: US
@@ -6141,8 +6139,21 @@ Origin: CZ
 Tag: Web4U s.r.o
 
 
+# "TakeWYN" (ASNs 3267, 48693).
+# Caught trying to hack WordPress sites.
+# %Listed, Google Malware Dashboard: 0.38% (AS3267).
+# Stop Forum Spam (SFS) listings: 20 (AS3267), 48 (AS48693).
+# Updated: 2018.10.05
+
+2001:b08::/32 Deny Cloud
+2a06:47c6::/32 Deny Cloud
+2a07:a6c0::/29 Deny Cloud
+Origin: RU
+Tag: TakeWYN
+
+
 # ASN 13768 ("Cogeco Peer 1").
-# Multi-player network, primarily offers infrastructure for webhosting services. Some unwanted traffic seen from their
+# Multi-play network, primarily offers infrastructure for webhosting services. Some unwanted traffic seen from their
 # ASN, probing for secure pages, spam attempts, etc. Also contains some broadband providers and human endpoints, which
 # shouldn't be included here: "Kijoma Broadband", "Fairleigh Dickinson University", "Qwest Communications Company".
 # %Listed, Google Malware Dashboard: 0.05%.

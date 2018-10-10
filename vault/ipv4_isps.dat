@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv4_isps.dat
 
-# Version: 2018.277.977
-# Last modified: 2018.10.05
+# Version: 2018.282.361
+# Last modified: 2018.10.10
 
 
 # ---
@@ -426,16 +426,15 @@ Tag: AS48159
 
 
 # ASN 12880 ("Information Technology Company (ITC)").
-# %Listed, Google Malware Dashboard: 0.12%.
-# %Listed, abuseat.org (CBL-Listed): 0.20%.
-# Stop Forum Spam (SFS) listings: 418.
-# Updated: 2018.05.25
+# %Listed, Google Malware Dashboard: 0.07%.
+# %Listed, abuseat.org (CBL-Listed): 1.05%.
+# Stop Forum Spam (SFS) listings: 423.
+# Updated: 2018.10.09
 
 2.176.0.0/12 Deny Generic
 5.62.160.0/19 Deny Generic
 5.74.0.0/16 Deny Generic
 5.232.0.0/13 Deny Generic
-37.156.160.0/21 Deny Generic
 37.156.212.0/22 Deny Generic
 46.100.0.0/16 Deny Generic
 77.81.32.0/20 Deny Generic
@@ -443,7 +442,6 @@ Tag: AS48159
 77.81.144.0/20 Deny Generic
 78.38.0.0/15 Deny Generic
 80.191.0.0/16 Deny Generic
-80.210.0.0/18 Deny Generic
 80.210.128.0/17 Deny Generic
 81.16.112.0/20 Deny Generic
 85.185.0.0/16 Deny Generic
@@ -463,8 +461,6 @@ Tag: AS48159
 89.37.208.0/22 Deny Generic
 89.38.244.0/22 Deny Generic
 89.39.8.0/22 Deny Generic
-89.45.112.0/21 Deny Generic
-89.45.152.0/21 Deny Generic
 89.46.184.0/21 Deny Generic
 89.219.64.0/18 Deny Generic
 89.219.192.0/18 Deny Generic
@@ -486,11 +482,8 @@ Tag: AS48159
 93.118.160.0/20 Deny Generic
 93.119.32.0/19 Deny Generic
 93.119.64.0/19 Deny Generic
-151.235.64.0/18 Deny Generic
-151.235.128.0/17 Deny Generic
+151.235.128.0/18 Deny Generic
 185.88.48.0/22 Deny Generic
-185.105.100.0/22 Deny Generic
-185.119.164.0/24 Deny Generic
 188.209.8.0/21 Deny Generic
 188.209.16.0/20 Deny Generic
 188.209.32.0/20 Deny Generic
@@ -502,11 +495,11 @@ Tag: AS48159
 188.211.64.0/18 Deny Generic
 188.211.176.0/20 Deny Generic
 188.212.144.0/21 Deny Generic
+188.212.160.0/19 Deny Generic
 188.215.160.0/20 Deny Generic
 188.240.248.0/21 Deny Generic
 195.146.32.0/19 Deny Generic
 195.181.0.0/19 Deny Generic
-213.195.52.0/22 Deny Generic
 217.218.0.0/15 Deny Generic
 Origin: IR
 Tag: AS12880
@@ -2664,9 +2657,11 @@ recaptcha:
 
 
 # ASN 23888 ("National Telecommunication Corporation HQ").
-# Stop Forum Spam (SFS) listings: 21.
-# Updated: 2018.05.25
+# %Listed, abuseat.org (CBL-Listed): 24.13%.
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2018.10.09
 
+43.250.85.0/24 Deny Spam
 43.250.86.0/23 Deny Spam
 103.253.156.0/22 Deny Spam
 113.197.48.0/21 Deny Spam
@@ -2685,8 +2680,9 @@ recaptcha:
 
 
 # ASN 45804 ("MEGHBELA BROADBAND").
-# Stop Forum Spam (SFS) listings: 81.
-# Updated: 2018.05.25
+# %Listed, abuseat.org (CBL-Listed): 19.20%.
+# Stop Forum Spam (SFS) listings: 141.
+# Updated: 2018.10.09
 
 43.239.80.0/22 Deny Spam
 43.251.168.0/21 Deny Spam
@@ -2698,33 +2694,34 @@ recaptcha:
 45.251.60.0/22 Deny Spam
 103.10.208.0/24 Deny Spam
 103.10.210.0/23 Deny Spam
+103.27.2.0/24 Deny Spam
 103.27.140.0/22 Deny Spam
 103.56.236.0/22 Deny Spam
 103.59.88.0/24 Deny Spam
 103.60.219.0/24 Deny Spam
+103.66.54.0/24 Deny Spam
 103.70.44.0/23 Deny Spam
 103.70.47.0/24 Deny Spam
 103.80.172.0/22 Deny Spam
 103.81.55.0/24 Deny Spam
-103.82.159.0/24 Deny Spam
 103.83.2.0/23 Deny Spam
 103.86.20.0/22 Deny Spam
 103.93.100.0/22 Deny Spam
 103.100.20.0/22 Deny Spam
-103.102.120.0/23 Deny Spam
-103.102.122.0/24 Deny Spam
+103.102.120.0/22 Deny Spam
 103.192.60.0/22 Deny Spam
 103.193.88.0/22 Deny Spam
 103.199.97.0/24 Deny Spam
-103.204.184.0/23 Deny Spam
 103.205.163.0/24 Deny Spam
 103.215.135.0/24 Deny Spam
 103.216.204.0/22 Deny Spam
-103.224.188.0/24 Deny Spam
-103.224.190.0/23 Deny Spam
+103.224.188.0/23 Deny Spam
+103.225.47.0/24 Deny Spam
+103.228.250.0/23 Deny Spam
 103.234.93.0/24 Deny Spam
 103.244.240.0/22 Deny Spam
 103.245.2.0/24 Deny Spam
+103.245.20.0/24 Deny Spam
 103.251.80.0/22 Deny Spam
 114.29.224.0/22 Deny Spam
 139.5.140.0/22 Deny Spam

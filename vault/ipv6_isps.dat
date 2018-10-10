@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.277.977
-# Last modified: 2018.10.05
+# Version: 2018.282.361
+# Last modified: 2018.10.10
 
 
 # ---
@@ -45,6 +45,17 @@ Tag: Vautron Rech. AG
 2a00:1a68::/32 Deny Generic
 Origin: AT
 Tag: World4You
+
+
+# ASN 12880 ("Information Technology Company (ITC)").
+# %Listed, Google Malware Dashboard: 0.07%.
+# %Listed, abuseat.org (CBL-Listed): 1.05%.
+# Stop Forum Spam (SFS) listings: 423.
+# Updated: 2018.10.09
+
+2001:4188::/48 Deny Generic
+Origin: IR
+Tag: AS12880
 
 
 # ASNs 24940, 37153 ("Hetzner Online GmbH").

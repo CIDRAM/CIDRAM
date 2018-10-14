@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/master/vault/ipv6_isps.dat
 
-# Version: 2018.282.361
-# Last modified: 2018.10.10
+# Version: 2018.286.284
+# Last modified: 2018.10.14
 
 
 # ---
@@ -434,9 +434,9 @@ Tag: Zyztm
 
 # ASN 43260 ("DGN TEKNOLOJI BILISIM YAYINCILIK SANAYI VE LIMITED SIRKETI").
 # Caught trying to DDoS SFS.
-# %Listed, Google Malware Dashboard: 0.20%.
-# Stop Forum Spam (SFS) listings: 132.
-# Updated: 2018.06.02
+# %Listed, Google Malware Dashboard: 0.23%.
+# Stop Forum Spam (SFS) listings: 118.
+# Updated: 2018.10.14
 
 2a0a:6040::/29 Deny Generic
 Origin: GL
@@ -444,19 +444,16 @@ Origin: GL
 2a04:8340::/29 Deny Generic
 2a05:abc0::/29 Deny Generic
 2a05:b140::/29 Deny Generic
-2a05:b2c0::/29 Deny Generic
 2a05:b380::/29 Deny Generic
 2a05:b440::/29 Deny Generic
 2a05:b700::/29 Deny Generic
-2a05:b900::/29 Deny Generic
 2a05:ba00::/29 Deny Generic
 2a05:ccc0::/29 Deny Generic
 2a05:e5c0::/29 Deny Generic
 2a05:f740::/29 Deny Generic
 2a05:f7c0::/29 Deny Generic
-2a06:a80::/29 Deny Generic
 2a07:21c0::/29 Deny Generic
-2a0b:a280::/32 Deny Generic
+2a0b:a280::/48 Deny Generic
 Origin: TR
 2402:1780:1::/48 Deny Generic
 Origin: TW
@@ -633,8 +630,9 @@ recaptcha:
 
 
 # ASN 200019 ("ALEXHOST SRL").
-# Stop Forum Spam (SFS) listings: 143.
-# Updated: 2018.06.02
+# %Listed, Google Malware Dashboard: 1.78%.
+# Stop Forum Spam (SFS) listings: 519.
+# Updated: 2018.06.02 / Checked: 2018.10.14
 
 2001:678:6d4::/48 Deny Generic
 Origin: MD
@@ -1314,12 +1312,11 @@ recaptcha:
 
 
 # ASN 31200 ("Novotelecom Ltd").
-# %Listed, Google Malware Dashboard: 0.28%.
-# Stop Forum Spam (SFS) listings: 1,525.
+# Stop Forum Spam (SFS) listings: 1,453.
 # Similarly to with the Rostelecom CIDRs, blocking the entirety of all the "Novotelecom" ASNs could be problematic.
 # Instead, we'll try to limit listings to those CIDRs known to be problematic (hacking events, spamming events,
 # etc).
-# Updated: 2017.09.30 / Checked: 2018.06.01
+# Updated: 2017.09.30 / Checked: 2018.10.11
 
 2a00:7700::/32 Deny Generic
 Origin: RU
@@ -1426,12 +1423,12 @@ Tag: Foreningen
 
 
 # ASN 31148 ("Freenet Ltd").
-# Stop Forum Spam (SFS) listings: 633.
+# Stop Forum Spam (SFS) listings: 396.
 # Legit human endpoint/ISP based in Ukraine, but have been encountering numerous hack attempts from their ASN in recent
 # months. Marking this section for use with reCAPTCHA, because we don't want to accidentally block human users if we
 # can avoid it at all. HUGE numbers of nefarious listings at MegaRBL.net and AbuseIPDB.com! Can't really afford to just
 # ignore it. Ukrainian CIDRAM users should probably add the name of this section to their ignore.dat file.
-# Updated: 2018.02.20 / Checked: 2018.06.01
+# Updated: 2018.02.20 / Checked: 2018.10.11
 
 2a00:1228::/32 Deny Generic
 Origin: UA
